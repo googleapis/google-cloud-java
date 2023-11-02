@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Environment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -175,10 +170,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dataplex.v1.Environment.InfrastructureSpec.OsImageRuntimeOrBuilder
         getOsImageOrBuilder();
 
-    public com.google.cloud.dataplex.v1.Environment.InfrastructureSpec.ResourcesCase
-        getResourcesCase();
+    com.google.cloud.dataplex.v1.Environment.InfrastructureSpec.ResourcesCase getResourcesCase();
 
-    public com.google.cloud.dataplex.v1.Environment.InfrastructureSpec.RuntimeCase getRuntimeCase();
+    com.google.cloud.dataplex.v1.Environment.InfrastructureSpec.RuntimeCase getRuntimeCase();
   }
   /**
    *
@@ -205,11 +199,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InfrastructureSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -299,11 +288,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ComputeResources();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1275,19 +1259,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
       private OsImageRuntime() {
         imageVersion_ = "";
-        javaLibraries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        pythonPackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        javaLibraries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        pythonPackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new OsImageRuntime();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1371,7 +1350,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       public static final int JAVA_LIBRARIES_FIELD_NUMBER = 2;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList javaLibraries_;
+      private com.google.protobuf.LazyStringArrayList javaLibraries_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -1442,7 +1422,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       public static final int PYTHON_PACKAGES_FIELD_NUMBER = 3;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList pythonPackages_;
+      private com.google.protobuf.LazyStringArrayList pythonPackages_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -1914,10 +1895,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           bitField0_ = 0;
           imageVersion_ = "";
-          javaLibraries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          pythonPackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          javaLibraries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          pythonPackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
           internalGetMutableProperties().clear();
           return this;
         }
@@ -1950,7 +1929,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.dataplex.v1.Environment.InfrastructureSpec.OsImageRuntime result =
               new com.google.cloud.dataplex.v1.Environment.InfrastructureSpec.OsImageRuntime(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -1958,25 +1936,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.dataplex.v1.Environment.InfrastructureSpec.OsImageRuntime result) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            javaLibraries_ = javaLibraries_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.javaLibraries_ = javaLibraries_;
-          if (((bitField0_ & 0x00000004) != 0)) {
-            pythonPackages_ = pythonPackages_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.pythonPackages_ = pythonPackages_;
-        }
-
         private void buildPartial0(
             com.google.cloud.dataplex.v1.Environment.InfrastructureSpec.OsImageRuntime result) {
           int from_bitField0_ = bitField0_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.imageVersion_ = imageVersion_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            javaLibraries_.makeImmutable();
+            result.javaLibraries_ = javaLibraries_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            pythonPackages_.makeImmutable();
+            result.pythonPackages_ = pythonPackages_;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.properties_ = internalGetProperties();
@@ -2045,7 +2017,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           if (!other.javaLibraries_.isEmpty()) {
             if (javaLibraries_.isEmpty()) {
               javaLibraries_ = other.javaLibraries_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ |= 0x00000002;
             } else {
               ensureJavaLibrariesIsMutable();
               javaLibraries_.addAll(other.javaLibraries_);
@@ -2055,7 +2027,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           if (!other.pythonPackages_.isEmpty()) {
             if (pythonPackages_.isEmpty()) {
               pythonPackages_ = other.pythonPackages_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ |= 0x00000004;
             } else {
               ensurePythonPackagesIsMutable();
               pythonPackages_.addAll(other.pythonPackages_);
@@ -2247,14 +2219,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.protobuf.LazyStringList javaLibraries_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList javaLibraries_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureJavaLibrariesIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!javaLibraries_.isModifiable()) {
             javaLibraries_ = new com.google.protobuf.LazyStringArrayList(javaLibraries_);
-            bitField0_ |= 0x00000002;
           }
+          bitField0_ |= 0x00000002;
         }
         /**
          *
@@ -2271,7 +2243,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the javaLibraries.
          */
         public com.google.protobuf.ProtocolStringList getJavaLibrariesList() {
-          return javaLibraries_.getUnmodifiableView();
+          javaLibraries_.makeImmutable();
+          return javaLibraries_;
         }
         /**
          *
@@ -2348,6 +2321,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           }
           ensureJavaLibrariesIsMutable();
           javaLibraries_.set(index, value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2372,6 +2346,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           }
           ensureJavaLibrariesIsMutable();
           javaLibraries_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2393,6 +2368,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllJavaLibraries(java.lang.Iterable<java.lang.String> values) {
           ensureJavaLibrariesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, javaLibraries_);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2411,8 +2387,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearJavaLibraries() {
-          javaLibraries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          javaLibraries_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
+          ;
           onChanged();
           return this;
         }
@@ -2438,18 +2415,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureJavaLibrariesIsMutable();
           javaLibraries_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringList pythonPackages_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList pythonPackages_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensurePythonPackagesIsMutable() {
-          if (!((bitField0_ & 0x00000004) != 0)) {
+          if (!pythonPackages_.isModifiable()) {
             pythonPackages_ = new com.google.protobuf.LazyStringArrayList(pythonPackages_);
-            bitField0_ |= 0x00000004;
           }
+          bitField0_ |= 0x00000004;
         }
         /**
          *
@@ -2466,7 +2444,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the pythonPackages.
          */
         public com.google.protobuf.ProtocolStringList getPythonPackagesList() {
-          return pythonPackages_.getUnmodifiableView();
+          pythonPackages_.makeImmutable();
+          return pythonPackages_;
         }
         /**
          *
@@ -2543,6 +2522,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           }
           ensurePythonPackagesIsMutable();
           pythonPackages_.set(index, value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2567,6 +2547,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           }
           ensurePythonPackagesIsMutable();
           pythonPackages_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2588,6 +2569,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllPythonPackages(java.lang.Iterable<java.lang.String> values) {
           ensurePythonPackagesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pythonPackages_);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2606,8 +2588,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearPythonPackages() {
-          pythonPackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          pythonPackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
+          ;
           onChanged();
           return this;
         }
@@ -2633,6 +2616,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensurePythonPackagesIsMutable();
           pythonPackages_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2901,6 +2885,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int resourcesCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object resources_;
 
     public enum ResourcesCase
@@ -2945,6 +2931,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int runtimeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object runtime_;
 
     public enum RuntimeCase
@@ -4248,11 +4236,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return new SessionSpec();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.AnalyzeProto
           .internal_static_google_cloud_dataplex_v1_Environment_SessionSpec_descriptor;
@@ -5112,11 +5095,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return new SessionStatus();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.AnalyzeProto
           .internal_static_google_cloud_dataplex_v1_Environment_SessionStatus_descriptor;
@@ -5699,11 +5677,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Endpoints();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

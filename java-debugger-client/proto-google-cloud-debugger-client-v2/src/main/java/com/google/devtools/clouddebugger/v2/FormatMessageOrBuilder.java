@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ public interface FormatMessageOrBuilder
    * Format template for the message. The `format` uses placeholders `$0`,
    * `$1`, etc. to reference parameters. `$$` can be used to denote the `$`
    * character.
+   *
    * Examples:
+   *
    * *   `Failed to load '$0' which helps debug $1 the first time it
    *     is loaded.  Again, $0 is very important.`
    * *   `Please pay $$10 to use $0 instead of $1.`
@@ -48,7 +50,9 @@ public interface FormatMessageOrBuilder
    * Format template for the message. The `format` uses placeholders `$0`,
    * `$1`, etc. to reference parameters. `$$` can be used to denote the `$`
    * character.
+   *
    * Examples:
+   *
    * *   `Failed to load '$0' which helps debug $1 the first time it
    *     is loaded.  Again, $0 is very important.`
    * *   `Please pay $$10 to use $0 instead of $1.`

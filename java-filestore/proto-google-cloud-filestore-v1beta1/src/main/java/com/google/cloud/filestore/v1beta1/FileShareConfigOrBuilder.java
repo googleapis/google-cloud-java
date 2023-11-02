@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -167,5 +167,5 @@ public interface FileShareConfigOrBuilder
   com.google.cloud.filestore.v1beta1.NfsExportOptionsOrBuilder getNfsExportOptionsOrBuilder(
       int index);
 
-  public com.google.cloud.filestore.v1beta1.FileShareConfig.SourceCase getSourceCase();
+  com.google.cloud.filestore.v1beta1.FileShareConfig.SourceCase getSourceCase();
 }

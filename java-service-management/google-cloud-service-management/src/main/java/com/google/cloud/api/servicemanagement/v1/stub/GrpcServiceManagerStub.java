@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.servicemanagement.v1.CreateServiceConfigRequest;
 import com.google.api.servicemanagement.v1.CreateServiceRequest;
@@ -50,7 +51,11 @@ import com.google.api.servicemanagement.v1.SubmitConfigSourceRequest;
 import com.google.api.servicemanagement.v1.SubmitConfigSourceResponse;
 import com.google.api.servicemanagement.v1.UndeleteServiceRequest;
 import com.google.api.servicemanagement.v1.UndeleteServiceResponse;
-import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -206,6 +211,33 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
                   ProtoUtils.marshaller(GenerateConfigReportResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable;
   private final UnaryCallable<ListServicesRequest, ListServicesPagedResponse>
       listServicesPagedCallable;
@@ -240,6 +272,10 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
       createServiceRolloutOperationCallable;
   private final UnaryCallable<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -294,9 +330,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(getServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateServiceRequest, Operation> createServiceTransportSettings =
@@ -308,9 +344,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(deleteServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UndeleteServiceRequest, Operation> undeleteServiceTransportSettings =
@@ -318,9 +354,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(undeleteServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListServiceConfigsRequest, ListServiceConfigsResponse>
@@ -329,9 +365,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
                 .setMethodDescriptor(listServiceConfigsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("service_name", String.valueOf(request.getServiceName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service_name", String.valueOf(request.getServiceName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetServiceConfigRequest, Service> getServiceConfigTransportSettings =
@@ -339,10 +375,10 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(getServiceConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("config_id", String.valueOf(request.getConfigId()));
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("config_id", String.valueOf(request.getConfigId()));
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateServiceConfigRequest, Service> createServiceConfigTransportSettings =
@@ -350,9 +386,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(createServiceConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SubmitConfigSourceRequest, Operation> submitConfigSourceTransportSettings =
@@ -360,9 +396,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(submitConfigSourceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListServiceRolloutsRequest, ListServiceRolloutsResponse>
@@ -371,9 +407,9 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
                 .setMethodDescriptor(listServiceRolloutsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("service_name", String.valueOf(request.getServiceName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service_name", String.valueOf(request.getServiceName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetServiceRolloutRequest, Rollout> getServiceRolloutTransportSettings =
@@ -381,10 +417,10 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(getServiceRolloutMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("rollout_id", String.valueOf(request.getRolloutId()));
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("rollout_id", String.valueOf(request.getRolloutId()));
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateServiceRolloutRequest, Operation> createServiceRolloutTransportSettings =
@@ -392,15 +428,46 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
             .setMethodDescriptor(createServiceRolloutMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service_name", String.valueOf(request.getServiceName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service_name", String.valueOf(request.getServiceName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GenerateConfigReportRequest, GenerateConfigReportResponse>
         generateConfigReportTransportSettings =
             GrpcCallSettings.<GenerateConfigReportRequest, GenerateConfigReportResponse>newBuilder()
                 .setMethodDescriptor(generateConfigReportMethodDescriptor)
+                .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listServicesCallable =
@@ -498,6 +565,17 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
         callableFactory.createUnaryCallable(
             generateConfigReportTransportSettings,
             settings.generateConfigReportSettings(),
+            clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -621,6 +699,22 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
   public UnaryCallable<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportCallable() {
     return generateConfigReportCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

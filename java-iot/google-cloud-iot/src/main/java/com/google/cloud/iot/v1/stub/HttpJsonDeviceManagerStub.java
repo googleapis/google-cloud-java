@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.iot.v1.BindDeviceToGatewayRequest;
 import com.google.cloud.iot.v1.BindDeviceToGatewayResponse;
@@ -893,23 +894,49 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
             HttpJsonCallSettings.<CreateDeviceRegistryRequest, DeviceRegistry>newBuilder()
                 .setMethodDescriptor(createDeviceRegistryMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetDeviceRegistryRequest, DeviceRegistry>
         getDeviceRegistryTransportSettings =
             HttpJsonCallSettings.<GetDeviceRegistryRequest, DeviceRegistry>newBuilder()
                 .setMethodDescriptor(getDeviceRegistryMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateDeviceRegistryRequest, DeviceRegistry>
         updateDeviceRegistryTransportSettings =
             HttpJsonCallSettings.<UpdateDeviceRegistryRequest, DeviceRegistry>newBuilder()
                 .setMethodDescriptor(updateDeviceRegistryMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "device_registry.name",
+                          String.valueOf(request.getDeviceRegistry().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryTransportSettings =
         HttpJsonCallSettings.<DeleteDeviceRegistryRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDeviceRegistryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse>
         listDeviceRegistriesTransportSettings =
@@ -917,37 +944,79 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                 .<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse>newBuilder()
                 .setMethodDescriptor(listDeviceRegistriesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateDeviceRequest, Device> createDeviceTransportSettings =
         HttpJsonCallSettings.<CreateDeviceRequest, Device>newBuilder()
             .setMethodDescriptor(createDeviceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetDeviceRequest, Device> getDeviceTransportSettings =
         HttpJsonCallSettings.<GetDeviceRequest, Device>newBuilder()
             .setMethodDescriptor(getDeviceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateDeviceRequest, Device> updateDeviceTransportSettings =
         HttpJsonCallSettings.<UpdateDeviceRequest, Device>newBuilder()
             .setMethodDescriptor(updateDeviceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("device.name", String.valueOf(request.getDevice().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteDeviceRequest, Empty> deleteDeviceTransportSettings =
         HttpJsonCallSettings.<DeleteDeviceRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDeviceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListDevicesRequest, ListDevicesResponse> listDevicesTransportSettings =
         HttpJsonCallSettings.<ListDevicesRequest, ListDevicesResponse>newBuilder()
             .setMethodDescriptor(listDevicesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
         modifyCloudToDeviceConfigTransportSettings =
             HttpJsonCallSettings.<ModifyCloudToDeviceConfigRequest, DeviceConfig>newBuilder()
                 .setMethodDescriptor(modifyCloudToDeviceConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
         listDeviceConfigVersionsTransportSettings =
@@ -955,28 +1024,58 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                 .<ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>newBuilder()
                 .setMethodDescriptor(listDeviceConfigVersionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListDeviceStatesRequest, ListDeviceStatesResponse>
         listDeviceStatesTransportSettings =
             HttpJsonCallSettings.<ListDeviceStatesRequest, ListDeviceStatesResponse>newBuilder()
                 .setMethodDescriptor(listDeviceStatesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
         sendCommandToDeviceTransportSettings =
@@ -984,6 +1083,12 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                 .<SendCommandToDeviceRequest, SendCommandToDeviceResponse>newBuilder()
                 .setMethodDescriptor(sendCommandToDeviceMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
         bindDeviceToGatewayTransportSettings =
@@ -991,6 +1096,12 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                 .<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>newBuilder()
                 .setMethodDescriptor(bindDeviceToGatewayMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
         unbindDeviceFromGatewayTransportSettings =
@@ -998,6 +1109,12 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                 .<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>newBuilder()
                 .setMethodDescriptor(unbindDeviceFromGatewayMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createDeviceRegistryCallable =

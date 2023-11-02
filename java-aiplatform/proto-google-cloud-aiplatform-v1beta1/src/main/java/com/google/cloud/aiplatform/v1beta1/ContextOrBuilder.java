@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,10 +27,10 @@ public interface ContextOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Context.
+   * Immutable. The resource name of the Context.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The name.
    */
@@ -39,10 +39,10 @@ public interface ContextOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Context.
+   * Immutable. The resource name of the Context.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for name.
    */
@@ -107,6 +107,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Contexts.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -122,6 +123,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Contexts.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -140,6 +142,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Contexts.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -155,6 +158,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Contexts.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -174,6 +178,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Contexts.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -329,6 +334,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * The title of the schema describing the metadata.
+   *
    * Schema title and version is expected to be registered in earlier Create
    * Schema calls. And both are used together as unique identifiers to identify
    * schemas within the local metadata store.
@@ -344,6 +350,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * The title of the schema describing the metadata.
+   *
    * Schema title and version is expected to be registered in earlier Create
    * Schema calls. And both are used together as unique identifiers to identify
    * schemas within the local metadata store.
@@ -360,6 +367,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * The version of the schema in schema_name to use.
+   *
    * Schema title and version is expected to be registered in earlier Create
    * Schema calls. And both are used together as unique identifiers to identify
    * schemas within the local metadata store.
@@ -375,6 +383,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * The version of the schema in schema_name to use.
+   *
    * Schema title and version is expected to be registered in earlier Create
    * Schema calls. And both are used together as unique identifiers to identify
    * schemas within the local metadata store.

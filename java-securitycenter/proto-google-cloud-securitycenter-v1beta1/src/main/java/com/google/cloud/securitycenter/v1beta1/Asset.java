@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.securitycenter.v1beta1;
  * <pre>
  * Security Command Center representation of a Google Cloud
  * resource.
+ *
  * The Asset is a Security Command Center resource that captures information
  * about a single Google Cloud resource. All modifications to an Asset are only
  * within the context of Security Command Center and don't affect the referenced
@@ -50,11 +51,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Asset();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -278,18 +274,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       resourceType_ = "";
       resourceParent_ = "";
       resourceProject_ = "";
-      resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourceOwners_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SecurityCenterProperties();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -528,7 +519,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public static final int RESOURCE_OWNERS_FIELD_NUMBER = 5;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList resourceOwners_;
+    private com.google.protobuf.LazyStringArrayList resourceOwners_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -841,8 +833,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         resourceType_ = "";
         resourceParent_ = "";
         resourceProject_ = "";
-        resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        resourceOwners_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -873,21 +864,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties buildPartial() {
         com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties result =
             new com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties result) {
-        if (((bitField0_ & 0x00000010) != 0)) {
-          resourceOwners_ = resourceOwners_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.resourceOwners_ = resourceOwners_;
       }
 
       private void buildPartial0(
@@ -904,6 +885,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.resourceProject_ = resourceProject_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          resourceOwners_.makeImmutable();
+          result.resourceOwners_ = resourceOwners_;
         }
       }
 
@@ -982,7 +967,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         if (!other.resourceOwners_.isEmpty()) {
           if (resourceOwners_.isEmpty()) {
             resourceOwners_ = other.resourceOwners_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ |= 0x00000010;
           } else {
             ensureResourceOwnersIsMutable();
             resourceOwners_.addAll(other.resourceOwners_);
@@ -1524,14 +1509,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList resourceOwners_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList resourceOwners_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureResourceOwnersIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!resourceOwners_.isModifiable()) {
           resourceOwners_ = new com.google.protobuf.LazyStringArrayList(resourceOwners_);
-          bitField0_ |= 0x00000010;
         }
+        bitField0_ |= 0x00000010;
       }
       /**
        *
@@ -1545,7 +1530,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the resourceOwners.
        */
       public com.google.protobuf.ProtocolStringList getResourceOwnersList() {
-        return resourceOwners_.getUnmodifiableView();
+        resourceOwners_.makeImmutable();
+        return resourceOwners_;
       }
       /**
        *
@@ -1610,6 +1596,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         ensureResourceOwnersIsMutable();
         resourceOwners_.set(index, value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1631,6 +1618,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         ensureResourceOwnersIsMutable();
         resourceOwners_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1649,6 +1637,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllResourceOwners(java.lang.Iterable<java.lang.String> values) {
         ensureResourceOwnersIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceOwners_);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1664,8 +1653,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearResourceOwners() {
-        resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        resourceOwners_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
+        ;
         onChanged();
         return this;
       }
@@ -1688,6 +1678,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureResourceOwnersIsMutable();
         resourceOwners_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2388,6 +2379,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Security Command Center representation of a Google Cloud
    * resource.
+   *
    * The Asset is a Security Command Center resource that captures information
    * about a single Google Cloud resource. All modifications to an Asset are only
    * within the context of Security Command Center and don't affect the referenced

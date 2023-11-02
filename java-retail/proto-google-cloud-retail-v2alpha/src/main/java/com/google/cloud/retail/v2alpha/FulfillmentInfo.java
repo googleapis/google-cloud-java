@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
 
   private FulfillmentInfo() {
     type_ = "";
-    placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FulfillmentInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -80,7 +75,9 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * The fulfillment type, including commonly used types (such as pickup in
    * store and same day delivery), and custom types. Customers have to map
    * custom types to their display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -90,6 +87,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
    * </pre>
@@ -117,7 +115,9 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * The fulfillment type, including commonly used types (such as pickup in
    * store and same day delivery), and custom types. Customers have to map
    * custom types to their display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -127,6 +127,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
    * </pre>
@@ -151,7 +152,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
   public static final int PLACE_IDS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList placeIds_;
+  private com.google.protobuf.LazyStringArrayList placeIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -161,6 +163,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+   *
    * A maximum of 3000 values are allowed. Each value must be a string with a
    * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
    * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -183,6 +186,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+   *
    * A maximum of 3000 values are allowed. Each value must be a string with a
    * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
    * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -205,6 +209,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+   *
    * A maximum of 3000 values are allowed. Each value must be a string with a
    * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
    * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -228,6 +233,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+   *
    * A maximum of 3000 values are allowed. Each value must be a string with a
    * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
    * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -459,8 +465,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       type_ = "";
-      placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -488,7 +493,6 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.retail.v2alpha.FulfillmentInfo buildPartial() {
       com.google.cloud.retail.v2alpha.FulfillmentInfo result =
           new com.google.cloud.retail.v2alpha.FulfillmentInfo(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -496,19 +500,14 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.retail.v2alpha.FulfillmentInfo result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        placeIds_ = placeIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.placeIds_ = placeIds_;
-    }
-
     private void buildPartial0(com.google.cloud.retail.v2alpha.FulfillmentInfo result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        placeIds_.makeImmutable();
+        result.placeIds_ = placeIds_;
       }
     }
 
@@ -566,7 +565,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
       if (!other.placeIds_.isEmpty()) {
         if (placeIds_.isEmpty()) {
           placeIds_ = other.placeIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePlaceIdsIsMutable();
           placeIds_.addAll(other.placeIds_);
@@ -639,7 +638,9 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * The fulfillment type, including commonly used types (such as pickup in
      * store and same day delivery), and custom types. Customers have to map
      * custom types to their display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -649,6 +650,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
      * </pre>
@@ -675,7 +677,9 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * The fulfillment type, including commonly used types (such as pickup in
      * store and same day delivery), and custom types. Customers have to map
      * custom types to their display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -685,6 +689,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
      * </pre>
@@ -711,7 +716,9 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * The fulfillment type, including commonly used types (such as pickup in
      * store and same day delivery), and custom types. Customers have to map
      * custom types to their display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -721,6 +728,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
      * </pre>
@@ -746,7 +754,9 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * The fulfillment type, including commonly used types (such as pickup in
      * store and same day delivery), and custom types. Customers have to map
      * custom types to their display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -756,6 +766,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
      * </pre>
@@ -777,7 +788,9 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * The fulfillment type, including commonly used types (such as pickup in
      * store and same day delivery), and custom types. Customers have to map
      * custom types to their display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -787,6 +800,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
      * </pre>
@@ -807,14 +821,14 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.LazyStringList placeIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList placeIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePlaceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!placeIds_.isModifiable()) {
         placeIds_ = new com.google.protobuf.LazyStringArrayList(placeIds_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -825,6 +839,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+     *
      * A maximum of 3000 values are allowed. Each value must be a string with a
      * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
      * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -836,7 +851,8 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the placeIds.
      */
     public com.google.protobuf.ProtocolStringList getPlaceIdsList() {
-      return placeIds_.getUnmodifiableView();
+      placeIds_.makeImmutable();
+      return placeIds_;
     }
     /**
      *
@@ -847,6 +863,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+     *
      * A maximum of 3000 values are allowed. Each value must be a string with a
      * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
      * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -869,6 +886,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+     *
      * A maximum of 3000 values are allowed. Each value must be a string with a
      * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
      * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -892,6 +910,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+     *
      * A maximum of 3000 values are allowed. Each value must be a string with a
      * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
      * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -915,6 +934,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+     *
      * A maximum of 3000 values are allowed. Each value must be a string with a
      * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
      * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -933,6 +953,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
       }
       ensurePlaceIdsIsMutable();
       placeIds_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,6 +966,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+     *
      * A maximum of 3000 values are allowed. Each value must be a string with a
      * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
      * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -962,6 +984,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
       }
       ensurePlaceIdsIsMutable();
       placeIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -974,6 +997,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+     *
      * A maximum of 3000 values are allowed. Each value must be a string with a
      * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
      * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -988,6 +1012,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
     public Builder addAllPlaceIds(java.lang.Iterable<java.lang.String> values) {
       ensurePlaceIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, placeIds_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1000,6 +1025,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+     *
      * A maximum of 3000 values are allowed. Each value must be a string with a
      * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
      * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -1011,8 +1037,9 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPlaceIds() {
-      placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1025,6 +1052,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
      * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
      * or the region IDs for
      * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+     *
      * A maximum of 3000 values are allowed. Each value must be a string with a
      * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
      * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -1043,6 +1071,7 @@ public final class FulfillmentInfo extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensurePlaceIdsIsMutable();
       placeIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListPropertiesRequest extends com.google.protobuf.GeneratedMe
     return new ListPropertiesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
         .internal_static_google_analytics_admin_v1alpha_ListPropertiesRequest_descriptor;
@@ -82,6 +77,7 @@ public final class ListPropertiesRequest extends com.google.protobuf.GeneratedMe
    * `ancestor:`(The resource name of the parent account) or
    * `firebase_project:`(The id or number of the linked firebase project).
    * Some examples of filters:
+   *
    * ```
    * | Filter                      | Description                               |
    * |-----------------------------|-------------------------------------------|
@@ -119,6 +115,7 @@ public final class ListPropertiesRequest extends com.google.protobuf.GeneratedMe
    * `ancestor:`(The resource name of the parent account) or
    * `firebase_project:`(The id or number of the linked firebase project).
    * Some examples of filters:
+   *
    * ```
    * | Filter                      | Description                               |
    * |-----------------------------|-------------------------------------------|
@@ -667,6 +664,7 @@ public final class ListPropertiesRequest extends com.google.protobuf.GeneratedMe
      * `ancestor:`(The resource name of the parent account) or
      * `firebase_project:`(The id or number of the linked firebase project).
      * Some examples of filters:
+     *
      * ```
      * | Filter                      | Description                               |
      * |-----------------------------|-------------------------------------------|
@@ -703,6 +701,7 @@ public final class ListPropertiesRequest extends com.google.protobuf.GeneratedMe
      * `ancestor:`(The resource name of the parent account) or
      * `firebase_project:`(The id or number of the linked firebase project).
      * Some examples of filters:
+     *
      * ```
      * | Filter                      | Description                               |
      * |-----------------------------|-------------------------------------------|
@@ -739,6 +738,7 @@ public final class ListPropertiesRequest extends com.google.protobuf.GeneratedMe
      * `ancestor:`(The resource name of the parent account) or
      * `firebase_project:`(The id or number of the linked firebase project).
      * Some examples of filters:
+     *
      * ```
      * | Filter                      | Description                               |
      * |-----------------------------|-------------------------------------------|
@@ -774,6 +774,7 @@ public final class ListPropertiesRequest extends com.google.protobuf.GeneratedMe
      * `ancestor:`(The resource name of the parent account) or
      * `firebase_project:`(The id or number of the linked firebase project).
      * Some examples of filters:
+     *
      * ```
      * | Filter                      | Description                               |
      * |-----------------------------|-------------------------------------------|
@@ -805,6 +806,7 @@ public final class ListPropertiesRequest extends com.google.protobuf.GeneratedMe
      * `ancestor:`(The resource name of the parent account) or
      * `firebase_project:`(The id or number of the linked firebase project).
      * Some examples of filters:
+     *
      * ```
      * | Filter                      | Description                               |
      * |-----------------------------|-------------------------------------------|

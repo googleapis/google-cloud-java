@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,8 +31,8 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   }
 
   private HistogramQueryPropertyNameFilter() {
-    documentSchemas_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    propertyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    documentSchemas_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    propertyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     yAxis_ = 0;
   }
 
@@ -40,11 +40,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new HistogramQueryPropertyNameFilter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -208,7 +203,8 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   public static final int DOCUMENT_SCHEMAS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList documentSchemas_;
+  private com.google.protobuf.LazyStringArrayList documentSchemas_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -217,6 +213,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * to run histogram query against. It is optional. It will perform histogram
    * for property names for all the document schemas if it is not set.
+   *
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -237,6 +234,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * to run histogram query against. It is optional. It will perform histogram
    * for property names for all the document schemas if it is not set.
+   *
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -257,6 +255,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * to run histogram query against. It is optional. It will perform histogram
    * for property names for all the document schemas if it is not set.
+   *
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -278,6 +277,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * to run histogram query against. It is optional. It will perform histogram
    * for property names for all the document schemas if it is not set.
+   *
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -295,7 +295,8 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
   public static final int PROPERTY_NAMES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList propertyNames_;
+  private com.google.protobuf.LazyStringArrayList propertyNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -656,10 +657,8 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      documentSchemas_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      propertyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      documentSchemas_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      propertyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       yAxis_ = 0;
       return this;
     }
@@ -690,7 +689,6 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter buildPartial() {
       com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter result =
           new com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -698,23 +696,17 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        documentSchemas_ = documentSchemas_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.documentSchemas_ = documentSchemas_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        propertyNames_ = propertyNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.propertyNames_ = propertyNames_;
-    }
-
     private void buildPartial0(
         com.google.cloud.contentwarehouse.v1.HistogramQueryPropertyNameFilter result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        documentSchemas_.makeImmutable();
+        result.documentSchemas_ = documentSchemas_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        propertyNames_.makeImmutable();
+        result.propertyNames_ = propertyNames_;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.yAxis_ = yAxis_;
       }
@@ -772,7 +764,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       if (!other.documentSchemas_.isEmpty()) {
         if (documentSchemas_.isEmpty()) {
           documentSchemas_ = other.documentSchemas_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureDocumentSchemasIsMutable();
           documentSchemas_.addAll(other.documentSchemas_);
@@ -782,7 +774,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       if (!other.propertyNames_.isEmpty()) {
         if (propertyNames_.isEmpty()) {
           propertyNames_ = other.propertyNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePropertyNamesIsMutable();
           propertyNames_.addAll(other.propertyNames_);
@@ -857,14 +849,14 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList documentSchemas_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList documentSchemas_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDocumentSchemasIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!documentSchemas_.isModifiable()) {
         documentSchemas_ = new com.google.protobuf.LazyStringArrayList(documentSchemas_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -874,6 +866,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * to run histogram query against. It is optional. It will perform histogram
      * for property names for all the document schemas if it is not set.
+     *
      * At most 10 document schema names are allowed.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -884,7 +877,8 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * @return A list containing the documentSchemas.
      */
     public com.google.protobuf.ProtocolStringList getDocumentSchemasList() {
-      return documentSchemas_.getUnmodifiableView();
+      documentSchemas_.makeImmutable();
+      return documentSchemas_;
     }
     /**
      *
@@ -894,6 +888,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * to run histogram query against. It is optional. It will perform histogram
      * for property names for all the document schemas if it is not set.
+     *
      * At most 10 document schema names are allowed.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -914,6 +909,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * to run histogram query against. It is optional. It will perform histogram
      * for property names for all the document schemas if it is not set.
+     *
      * At most 10 document schema names are allowed.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -935,6 +931,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * to run histogram query against. It is optional. It will perform histogram
      * for property names for all the document schemas if it is not set.
+     *
      * At most 10 document schema names are allowed.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -956,6 +953,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * to run histogram query against. It is optional. It will perform histogram
      * for property names for all the document schemas if it is not set.
+     *
      * At most 10 document schema names are allowed.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -973,6 +971,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       }
       ensureDocumentSchemasIsMutable();
       documentSchemas_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -984,6 +983,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * to run histogram query against. It is optional. It will perform histogram
      * for property names for all the document schemas if it is not set.
+     *
      * At most 10 document schema names are allowed.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -1000,6 +1000,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       }
       ensureDocumentSchemasIsMutable();
       documentSchemas_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1011,6 +1012,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * to run histogram query against. It is optional. It will perform histogram
      * for property names for all the document schemas if it is not set.
+     *
      * At most 10 document schema names are allowed.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -1024,6 +1026,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public Builder addAllDocumentSchemas(java.lang.Iterable<java.lang.String> values) {
       ensureDocumentSchemasIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, documentSchemas_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1035,6 +1038,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * to run histogram query against. It is optional. It will perform histogram
      * for property names for all the document schemas if it is not set.
+     *
      * At most 10 document schema names are allowed.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -1045,8 +1049,9 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearDocumentSchemas() {
-      documentSchemas_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      documentSchemas_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1058,6 +1063,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * to run histogram query against. It is optional. It will perform histogram
      * for property names for all the document schemas if it is not set.
+     *
      * At most 10 document schema names are allowed.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -1075,18 +1081,19 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       checkByteStringIsUtf8(value);
       ensureDocumentSchemasIsMutable();
       documentSchemas_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList propertyNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList propertyNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePropertyNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!propertyNames_.isModifiable()) {
         propertyNames_ = new com.google.protobuf.LazyStringArrayList(propertyNames_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1106,7 +1113,8 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * @return A list containing the propertyNames.
      */
     public com.google.protobuf.ProtocolStringList getPropertyNamesList() {
-      return propertyNames_.getUnmodifiableView();
+      propertyNames_.makeImmutable();
+      return propertyNames_;
     }
     /**
      *
@@ -1195,6 +1203,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       }
       ensurePropertyNamesIsMutable();
       propertyNames_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1222,6 +1231,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       }
       ensurePropertyNamesIsMutable();
       propertyNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1246,6 +1256,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
     public Builder addAllPropertyNames(java.lang.Iterable<java.lang.String> values) {
       ensurePropertyNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, propertyNames_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1267,8 +1278,9 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearPropertyNames() {
-      propertyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      propertyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1297,6 +1309,7 @@ public final class HistogramQueryPropertyNameFilter extends com.google.protobuf.
       checkByteStringIsUtf8(value);
       ensurePropertyNamesIsMutable();
       propertyNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

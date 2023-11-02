@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ package com.google.api.servicecontrol.v1;
  * Distribution represents a frequency distribution of double-valued sample
  * points. It contains the size of the population of sample points plus
  * additional optional information:
+ *
  * * the arithmetic mean of the samples
  * * the minimum and maximum of the samples
  * * the sum-squared-deviation of the samples, used to compute variance
@@ -52,11 +53,6 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Distribution();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -150,11 +146,6 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LinearBuckets();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -957,11 +948,6 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       return new ExponentialBuckets();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.api.servicecontrol.v1.DistributionProto
           .internal_static_google_api_servicecontrol_v1_Distribution_ExponentialBuckets_descriptor;
@@ -1706,12 +1692,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * 'bound' is a list of strictly increasing boundaries between
      * buckets. Note that a list of length N-1 defines N buckets because
      * of fenceposting. See comments on `bucket_options` for details.
+     *
      * The i'th finite bucket covers the interval
      *   [bound[i-1], bound[i])
      * where i ranges from 1 to bound_size() - 1. Note that there are no
      * finite buckets at all if 'bound' only contains a single element; in
      * that special case the single bound defines the boundary between the
      * underflow and overflow buckets.
+     *
      * bucket number                   lower bound    upper bound
      *  i == 0 (underflow)              -inf           bound[i]
      *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -1730,12 +1718,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * 'bound' is a list of strictly increasing boundaries between
      * buckets. Note that a list of length N-1 defines N buckets because
      * of fenceposting. See comments on `bucket_options` for details.
+     *
      * The i'th finite bucket covers the interval
      *   [bound[i-1], bound[i])
      * where i ranges from 1 to bound_size() - 1. Note that there are no
      * finite buckets at all if 'bound' only contains a single element; in
      * that special case the single bound defines the boundary between the
      * underflow and overflow buckets.
+     *
      * bucket number                   lower bound    upper bound
      *  i == 0 (underflow)              -inf           bound[i]
      *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -1754,12 +1744,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * 'bound' is a list of strictly increasing boundaries between
      * buckets. Note that a list of length N-1 defines N buckets because
      * of fenceposting. See comments on `bucket_options` for details.
+     *
      * The i'th finite bucket covers the interval
      *   [bound[i-1], bound[i])
      * where i ranges from 1 to bound_size() - 1. Note that there are no
      * finite buckets at all if 'bound' only contains a single element; in
      * that special case the single bound defines the boundary between the
      * underflow and overflow buckets.
+     *
      * bucket number                   lower bound    upper bound
      *  i == 0 (underflow)              -inf           bound[i]
      *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -1802,11 +1794,6 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       return new ExplicitBuckets();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.api.servicecontrol.v1.DistributionProto
           .internal_static_google_api_servicecontrol_v1_Distribution_ExplicitBuckets_descriptor;
@@ -1833,12 +1820,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * 'bound' is a list of strictly increasing boundaries between
      * buckets. Note that a list of length N-1 defines N buckets because
      * of fenceposting. See comments on `bucket_options` for details.
+     *
      * The i'th finite bucket covers the interval
      *   [bound[i-1], bound[i])
      * where i ranges from 1 to bound_size() - 1. Note that there are no
      * finite buckets at all if 'bound' only contains a single element; in
      * that special case the single bound defines the boundary between the
      * underflow and overflow buckets.
+     *
      * bucket number                   lower bound    upper bound
      *  i == 0 (underflow)              -inf           bound[i]
      *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -1860,12 +1849,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * 'bound' is a list of strictly increasing boundaries between
      * buckets. Note that a list of length N-1 defines N buckets because
      * of fenceposting. See comments on `bucket_options` for details.
+     *
      * The i'th finite bucket covers the interval
      *   [bound[i-1], bound[i])
      * where i ranges from 1 to bound_size() - 1. Note that there are no
      * finite buckets at all if 'bound' only contains a single element; in
      * that special case the single bound defines the boundary between the
      * underflow and overflow buckets.
+     *
      * bucket number                   lower bound    upper bound
      *  i == 0 (underflow)              -inf           bound[i]
      *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -1886,12 +1877,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * 'bound' is a list of strictly increasing boundaries between
      * buckets. Note that a list of length N-1 defines N buckets because
      * of fenceposting. See comments on `bucket_options` for details.
+     *
      * The i'th finite bucket covers the interval
      *   [bound[i-1], bound[i])
      * where i ranges from 1 to bound_size() - 1. Note that there are no
      * finite buckets at all if 'bound' only contains a single element; in
      * that special case the single bound defines the boundary between the
      * underflow and overflow buckets.
+     *
      * bucket number                   lower bound    upper bound
      *  i == 0 (underflow)              -inf           bound[i]
      *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -2313,12 +2306,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * 'bound' is a list of strictly increasing boundaries between
        * buckets. Note that a list of length N-1 defines N buckets because
        * of fenceposting. See comments on `bucket_options` for details.
+       *
        * The i'th finite bucket covers the interval
        *   [bound[i-1], bound[i])
        * where i ranges from 1 to bound_size() - 1. Note that there are no
        * finite buckets at all if 'bound' only contains a single element; in
        * that special case the single bound defines the boundary between the
        * underflow and overflow buckets.
+       *
        * bucket number                   lower bound    upper bound
        *  i == 0 (underflow)              -inf           bound[i]
        *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -2341,12 +2336,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * 'bound' is a list of strictly increasing boundaries between
        * buckets. Note that a list of length N-1 defines N buckets because
        * of fenceposting. See comments on `bucket_options` for details.
+       *
        * The i'th finite bucket covers the interval
        *   [bound[i-1], bound[i])
        * where i ranges from 1 to bound_size() - 1. Note that there are no
        * finite buckets at all if 'bound' only contains a single element; in
        * that special case the single bound defines the boundary between the
        * underflow and overflow buckets.
+       *
        * bucket number                   lower bound    upper bound
        *  i == 0 (underflow)              -inf           bound[i]
        *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -2367,12 +2364,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * 'bound' is a list of strictly increasing boundaries between
        * buckets. Note that a list of length N-1 defines N buckets because
        * of fenceposting. See comments on `bucket_options` for details.
+       *
        * The i'th finite bucket covers the interval
        *   [bound[i-1], bound[i])
        * where i ranges from 1 to bound_size() - 1. Note that there are no
        * finite buckets at all if 'bound' only contains a single element; in
        * that special case the single bound defines the boundary between the
        * underflow and overflow buckets.
+       *
        * bucket number                   lower bound    upper bound
        *  i == 0 (underflow)              -inf           bound[i]
        *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -2394,12 +2393,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * 'bound' is a list of strictly increasing boundaries between
        * buckets. Note that a list of length N-1 defines N buckets because
        * of fenceposting. See comments on `bucket_options` for details.
+       *
        * The i'th finite bucket covers the interval
        *   [bound[i-1], bound[i])
        * where i ranges from 1 to bound_size() - 1. Note that there are no
        * finite buckets at all if 'bound' only contains a single element; in
        * that special case the single bound defines the boundary between the
        * underflow and overflow buckets.
+       *
        * bucket number                   lower bound    upper bound
        *  i == 0 (underflow)              -inf           bound[i]
        *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -2426,12 +2427,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * 'bound' is a list of strictly increasing boundaries between
        * buckets. Note that a list of length N-1 defines N buckets because
        * of fenceposting. See comments on `bucket_options` for details.
+       *
        * The i'th finite bucket covers the interval
        *   [bound[i-1], bound[i])
        * where i ranges from 1 to bound_size() - 1. Note that there are no
        * finite buckets at all if 'bound' only contains a single element; in
        * that special case the single bound defines the boundary between the
        * underflow and overflow buckets.
+       *
        * bucket number                   lower bound    upper bound
        *  i == 0 (underflow)              -inf           bound[i]
        *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -2457,12 +2460,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * 'bound' is a list of strictly increasing boundaries between
        * buckets. Note that a list of length N-1 defines N buckets because
        * of fenceposting. See comments on `bucket_options` for details.
+       *
        * The i'th finite bucket covers the interval
        *   [bound[i-1], bound[i])
        * where i ranges from 1 to bound_size() - 1. Note that there are no
        * finite buckets at all if 'bound' only contains a single element; in
        * that special case the single bound defines the boundary between the
        * underflow and overflow buckets.
+       *
        * bucket number                   lower bound    upper bound
        *  i == 0 (underflow)              -inf           bound[i]
        *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -2487,12 +2492,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
        * 'bound' is a list of strictly increasing boundaries between
        * buckets. Note that a list of length N-1 defines N buckets because
        * of fenceposting. See comments on `bucket_options` for details.
+       *
        * The i'th finite bucket covers the interval
        *   [bound[i-1], bound[i])
        * where i ranges from 1 to bound_size() - 1. Note that there are no
        * finite buckets at all if 'bound' only contains a single element; in
        * that special case the single bound defines the boundary between the
        * underflow and overflow buckets.
+       *
        * bucket number                   lower bound    upper bound
        *  i == 0 (underflow)              -inf           bound[i]
        *  0 &lt; i &lt; bound_size()            bound[i-1]     bound[i]
@@ -2578,6 +2585,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bucketOptionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object bucketOption_;
 
   public enum BucketOptionCase
@@ -2731,12 +2740,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The number of samples in each histogram bucket. `bucket_counts` are
    * optional. If present, they must sum to the `count` value.
+   *
    * The buckets are defined below in `bucket_option`. There are N buckets.
    * `bucket_counts[0]` is the number of samples in the underflow bucket.
    * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
    * in each of the finite buckets. And `bucket_counts[N] is the number
    * of samples in the overflow bucket. See the comments of `bucket_option`
    * below for more details.
+   *
    * Any suffix of trailing zeros may be omitted.
    * </pre>
    *
@@ -2754,12 +2765,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The number of samples in each histogram bucket. `bucket_counts` are
    * optional. If present, they must sum to the `count` value.
+   *
    * The buckets are defined below in `bucket_option`. There are N buckets.
    * `bucket_counts[0]` is the number of samples in the underflow bucket.
    * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
    * in each of the finite buckets. And `bucket_counts[N] is the number
    * of samples in the overflow bucket. See the comments of `bucket_option`
    * below for more details.
+   *
    * Any suffix of trailing zeros may be omitted.
    * </pre>
    *
@@ -2776,12 +2789,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The number of samples in each histogram bucket. `bucket_counts` are
    * optional. If present, they must sum to the `count` value.
+   *
    * The buckets are defined below in `bucket_option`. There are N buckets.
    * `bucket_counts[0]` is the number of samples in the underflow bucket.
    * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
    * in each of the finite buckets. And `bucket_counts[N] is the number
    * of samples in the overflow bucket. See the comments of `bucket_option`
    * below for more details.
+   *
    * Any suffix of trailing zeros may be omitted.
    * </pre>
    *
@@ -3337,6 +3352,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    * Distribution represents a frequency distribution of double-valued sample
    * points. It contains the size of the population of sample points plus
    * additional optional information:
+   *
    * * the arithmetic mean of the samples
    * * the minimum and maximum of the samples
    * * the sum-squared-deviation of the samples, used to compute variance
@@ -4033,12 +4049,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The number of samples in each histogram bucket. `bucket_counts` are
      * optional. If present, they must sum to the `count` value.
+     *
      * The buckets are defined below in `bucket_option`. There are N buckets.
      * `bucket_counts[0]` is the number of samples in the underflow bucket.
      * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
      * in each of the finite buckets. And `bucket_counts[N] is the number
      * of samples in the overflow bucket. See the comments of `bucket_option`
      * below for more details.
+     *
      * Any suffix of trailing zeros may be omitted.
      * </pre>
      *
@@ -4057,12 +4075,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The number of samples in each histogram bucket. `bucket_counts` are
      * optional. If present, they must sum to the `count` value.
+     *
      * The buckets are defined below in `bucket_option`. There are N buckets.
      * `bucket_counts[0]` is the number of samples in the underflow bucket.
      * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
      * in each of the finite buckets. And `bucket_counts[N] is the number
      * of samples in the overflow bucket. See the comments of `bucket_option`
      * below for more details.
+     *
      * Any suffix of trailing zeros may be omitted.
      * </pre>
      *
@@ -4079,12 +4099,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The number of samples in each histogram bucket. `bucket_counts` are
      * optional. If present, they must sum to the `count` value.
+     *
      * The buckets are defined below in `bucket_option`. There are N buckets.
      * `bucket_counts[0]` is the number of samples in the underflow bucket.
      * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
      * in each of the finite buckets. And `bucket_counts[N] is the number
      * of samples in the overflow bucket. See the comments of `bucket_option`
      * below for more details.
+     *
      * Any suffix of trailing zeros may be omitted.
      * </pre>
      *
@@ -4102,12 +4124,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The number of samples in each histogram bucket. `bucket_counts` are
      * optional. If present, they must sum to the `count` value.
+     *
      * The buckets are defined below in `bucket_option`. There are N buckets.
      * `bucket_counts[0]` is the number of samples in the underflow bucket.
      * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
      * in each of the finite buckets. And `bucket_counts[N] is the number
      * of samples in the overflow bucket. See the comments of `bucket_option`
      * below for more details.
+     *
      * Any suffix of trailing zeros may be omitted.
      * </pre>
      *
@@ -4130,12 +4154,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The number of samples in each histogram bucket. `bucket_counts` are
      * optional. If present, they must sum to the `count` value.
+     *
      * The buckets are defined below in `bucket_option`. There are N buckets.
      * `bucket_counts[0]` is the number of samples in the underflow bucket.
      * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
      * in each of the finite buckets. And `bucket_counts[N] is the number
      * of samples in the overflow bucket. See the comments of `bucket_option`
      * below for more details.
+     *
      * Any suffix of trailing zeros may be omitted.
      * </pre>
      *
@@ -4157,12 +4183,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The number of samples in each histogram bucket. `bucket_counts` are
      * optional. If present, they must sum to the `count` value.
+     *
      * The buckets are defined below in `bucket_option`. There are N buckets.
      * `bucket_counts[0]` is the number of samples in the underflow bucket.
      * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
      * in each of the finite buckets. And `bucket_counts[N] is the number
      * of samples in the overflow bucket. See the comments of `bucket_option`
      * below for more details.
+     *
      * Any suffix of trailing zeros may be omitted.
      * </pre>
      *
@@ -4183,12 +4211,14 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The number of samples in each histogram bucket. `bucket_counts` are
      * optional. If present, they must sum to the `count` value.
+     *
      * The buckets are defined below in `bucket_option`. There are N buckets.
      * `bucket_counts[0]` is the number of samples in the underflow bucket.
      * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
      * in each of the finite buckets. And `bucket_counts[N] is the number
      * of samples in the overflow bucket. See the comments of `bucket_option`
      * below for more details.
+     *
      * Any suffix of trailing zeros may be omitted.
      * </pre>
      *

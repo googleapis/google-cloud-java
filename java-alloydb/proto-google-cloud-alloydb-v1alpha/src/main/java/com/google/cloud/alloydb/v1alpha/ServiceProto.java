@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,6 +120,10 @@ public final class ServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_alloydb_v1alpha_FailoverInstanceRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_alloydb_v1alpha_InjectFaultRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_alloydb_v1alpha_InjectFaultRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_alloydb_v1alpha_RestartInstanceRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_alloydb_v1alpha_RestartInstanceRequest_fieldAccessorTable;
@@ -171,6 +175,30 @@ public final class ServiceProto {
       internal_static_google_cloud_alloydb_v1alpha_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_alloydb_v1alpha_OperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_alloydb_v1alpha_ListUsersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_alloydb_v1alpha_ListUsersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_alloydb_v1alpha_ListUsersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_alloydb_v1alpha_ListUsersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_alloydb_v1alpha_GetUserRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_alloydb_v1alpha_GetUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_alloydb_v1alpha_CreateUserRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_alloydb_v1alpha_CreateUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_alloydb_v1alpha_UpdateUserRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_alloydb_v1alpha_UpdateUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_alloydb_v1alpha_DeleteUserRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_alloydb_v1alpha_DeleteUserRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -190,312 +218,377 @@ public final class ServiceProto {
           + "/protobuf/duration.proto\032\033google/protobu"
           + "f/empty.proto\032 google/protobuf/field_mas"
           + "k.proto\032\037google/protobuf/timestamp.proto"
-          + "\032\027google/rpc/status.proto\"\245\001\n\023ListCluste"
-          + "rsRequest\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \022\036alloy"
-          + "db.googleapis.com/Cluster\022\026\n\tpage_size\030\002"
-          + " \001(\005B\003\340A\001\022\022\n\npage_token\030\003 \001(\t\022\023\n\006filter\030"
-          + "\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"}\n\024Lis"
-          + "tClustersResponse\0227\n\010clusters\030\001 \003(\0132%.go"
-          + "ogle.cloud.alloydb.v1alpha.Cluster\022\027\n\017ne"
-          + "xt_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t"
-          + "\"I\n\021GetClusterRequest\0224\n\004name\030\001 \001(\tB&\340A\002"
-          + "\372A \n\036alloydb.googleapis.com/Cluster\"\342\001\n\035"
-          + "CreateSecondaryClusterRequest\0226\n\006parent\030"
-          + "\001 \001(\tB&\340A\002\372A \022\036alloydb.googleapis.com/Cl"
-          + "uster\022\027\n\ncluster_id\030\002 \001(\tB\003\340A\002\022;\n\007cluste"
-          + "r\030\003 \001(\0132%.google.cloud.alloydb.v1alpha.C"
-          + "lusterB\003\340A\002\022\027\n\nrequest_id\030\005 \001(\tB\003\340A\001\022\032\n\r"
-          + "validate_only\030\006 \001(\010B\003\340A\001\"\331\001\n\024CreateClust"
-          + "erRequest\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \022\036alloy"
-          + "db.googleapis.com/Cluster\022\027\n\ncluster_id\030"
-          + "\002 \001(\tB\003\340A\002\022;\n\007cluster\030\003 \001(\0132%.google.clo"
-          + "ud.alloydb.v1alpha.ClusterB\003\340A\002\022\027\n\nreque"
-          + "st_id\030\004 \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B"
-          + "\003\340A\001\"\332\001\n\024UpdateClusterRequest\0224\n\013update_"
-          + "mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003"
-          + "\340A\001\022;\n\007cluster\030\002 \001(\0132%.google.cloud.allo"
-          + "ydb.v1alpha.ClusterB\003\340A\002\022\027\n\nrequest_id\030\003"
-          + " \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\022\032\n"
-          + "\rallow_missing\030\005 \001(\010B\003\340A\001\"\250\001\n\024DeleteClus"
-          + "terRequest\0224\n\004name\030\001 \001(\tB&\340A\002\372A \n\036alloyd"
-          + "b.googleapis.com/Cluster\022\027\n\nrequest_id\030\002"
-          + " \001(\tB\003\340A\001\022\021\n\004etag\030\003 \001(\tB\003\340A\001\022\032\n\rvalidate"
-          + "_only\030\004 \001(\010B\003\340A\001\022\022\n\005force\030\005 \001(\010B\003\340A\001\"\225\001\n"
-          + "\025PromoteClusterRequest\0224\n\004name\030\001 \001(\tB&\340A"
-          + "\002\372A \n\036alloydb.googleapis.com/Cluster\022\027\n\n"
-          + "request_id\030\002 \001(\tB\003\340A\001\022\021\n\004etag\030\003 \001(\tB\003\340A\001"
-          + "\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\"\203\003\n\025Restore"
-          + "ClusterRequest\022C\n\rbackup_source\030\004 \001(\0132*."
-          + "google.cloud.alloydb.v1alpha.BackupSourc"
-          + "eH\000\022X\n\030continuous_backup_source\030\010 \001(\01324."
-          + "google.cloud.alloydb.v1alpha.ContinuousB"
-          + "ackupSourceH\000\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \022\036a"
-          + "lloydb.googleapis.com/Cluster\022\027\n\ncluster"
-          + "_id\030\002 \001(\tB\003\340A\002\022;\n\007cluster\030\003 \001(\0132%.google"
-          + ".cloud.alloydb.v1alpha.ClusterB\003\340A\002\022\027\n\nr"
-          + "equest_id\030\005 \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\006 "
-          + "\001(\010B\003\340A\001B\010\n\006source\"\247\001\n\024ListInstancesRequ"
-          + "est\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\022\037alloydb.goo"
-          + "gleapis.com/Instance\022\026\n\tpage_size\030\002 \001(\005B"
-          + "\003\340A\001\022\022\n\npage_token\030\003 \001(\t\022\023\n\006filter\030\004 \001(\t"
-          + "B\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"\200\001\n\025ListIns"
-          + "tancesResponse\0229\n\tinstances\030\001 \003(\0132&.goog"
-          + "le.cloud.alloydb.v1alpha.Instance\022\027\n\017nex"
-          + "t_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\""
-          + "\205\001\n\022GetInstanceRequest\0225\n\004name\030\001 \001(\tB\'\340A"
-          + "\002\372A!\n\037alloydb.googleapis.com/Instance\0228\n"
-          + "\004view\030\002 \001(\0162*.google.cloud.alloydb.v1alp"
-          + "ha.InstanceView\"\336\001\n\025CreateInstanceReques"
-          + "t\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\022\037alloydb.googl"
-          + "eapis.com/Instance\022\030\n\013instance_id\030\002 \001(\tB"
-          + "\003\340A\002\022=\n\010instance\030\003 \001(\0132&.google.cloud.al"
-          + "loydb.v1alpha.InstanceB\003\340A\002\022\027\n\nrequest_i"
-          + "d\030\004 \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001"
-          + "\"\347\001\n\036CreateSecondaryInstanceRequest\0227\n\006p"
-          + "arent\030\001 \001(\tB\'\340A\002\372A!\022\037alloydb.googleapis."
-          + "com/Instance\022\030\n\013instance_id\030\002 \001(\tB\003\340A\002\022="
-          + "\n\010instance\030\003 \001(\0132&.google.cloud.alloydb."
-          + "v1alpha.InstanceB\003\340A\002\022\027\n\nrequest_id\030\004 \001("
-          + "\tB\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\"t\n\026Cr"
-          + "eateInstanceRequests\022Z\n\030create_instance_"
-          + "requests\030\001 \003(\01323.google.cloud.alloydb.v1"
-          + "alpha.CreateInstanceRequestB\003\340A\002\"\274\001\n\033Bat"
-          + "chCreateInstancesRequest\0227\n\006parent\030\001 \001(\t"
-          + "B\'\340A\002\372A!\022\037alloydb.googleapis.com/Instanc"
-          + "e\022K\n\010requests\030\002 \001(\01324.google.cloud.alloy"
-          + "db.v1alpha.CreateInstanceRequestsB\003\340A\002\022\027"
-          + "\n\nrequest_id\030\003 \001(\tB\003\340A\001\"Y\n\034BatchCreateIn"
-          + "stancesResponse\0229\n\tinstances\030\001 \003(\0132&.goo"
-          + "gle.cloud.alloydb.v1alpha.Instance\"\227\002\n\034B"
-          + "atchCreateInstancesMetadata\022\030\n\020instance_"
-          + "targets\030\001 \003(\t\022k\n\021instance_statuses\030\002 \003(\013"
-          + "2P.google.cloud.alloydb.v1alpha.BatchCre"
-          + "ateInstancesMetadata.InstanceStatusesEnt"
-          + "ry\032p\n\025InstanceStatusesEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022F\n\005value\030\002 \001(\01327.google.cloud.alloydb.v"
-          + "1alpha.BatchCreateInstanceStatus:\0028\001\"\332\002\n"
-          + "\031BatchCreateInstanceStatus\022L\n\005state\030\001 \001("
-          + "\0162=.google.cloud.alloydb.v1alpha.BatchCr"
-          + "eateInstanceStatus.State\022\021\n\terror_msg\030\002 "
-          + "\001(\t\022!\n\005error\030\004 \001(\0132\022.google.rpc.Status\022A"
-          + "\n\004type\030\003 \001(\01623.google.cloud.alloydb.v1al"
-          + "pha.Instance.InstanceType\"v\n\005State\022\025\n\021ST"
-          + "ATE_UNSPECIFIED\020\000\022\022\n\016PENDING_CREATE\020\001\022\t\n"
-          + "\005READY\020\002\022\014\n\010CREATING\020\003\022\014\n\010DELETING\020\004\022\n\n\006"
-          + "FAILED\020\005\022\017\n\013ROLLED_BACK\020\006\"\335\001\n\025UpdateInst"
-          + "anceRequest\0224\n\013update_mask\030\001 \001(\0132\032.googl"
-          + "e.protobuf.FieldMaskB\003\340A\001\022=\n\010instance\030\002 "
-          + "\001(\0132&.google.cloud.alloydb.v1alpha.Insta"
-          + "nceB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\022\032\n\rval"
-          + "idate_only\030\004 \001(\010B\003\340A\001\022\032\n\rallow_missing\030\005"
-          + " \001(\010B\003\340A\001\"\226\001\n\025DeleteInstanceRequest\0225\n\004n"
-          + "ame\030\001 \001(\tB\'\340A\002\372A!\n\037alloydb.googleapis.co"
-          + "m/Instance\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\022\021\n\004e"
-          + "tag\030\003 \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340"
-          + "A\001\"\205\001\n\027FailoverInstanceRequest\0225\n\004name\030\001"
-          + " \001(\tB\'\340A\002\372A!\n\037alloydb.googleapis.com/Ins"
-          + "tance\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\022\032\n\rvalida"
-          + "te_only\030\003 \001(\010B\003\340A\001\"\204\001\n\026RestartInstanceRe"
-          + "quest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037alloydb.goo"
-          + "gleapis.com/Instance\022\027\n\nrequest_id\030\002 \001(\t"
-          + "B\003\340A\001\022\032\n\rvalidate_only\030\003 \001(\010B\003\340A\001\"\224\001\n\022Li"
-          + "stBackupsRequest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037"
-          + "\022\035alloydb.googleapis.com/Backup\022\021\n\tpage_"
-          + "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter"
-          + "\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"z\n\023ListBackupsR"
-          + "esponse\0225\n\007backups\030\001 \003(\0132$.google.cloud."
-          + "alloydb.v1alpha.Backup\022\027\n\017next_page_toke"
-          + "n\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"G\n\020GetBacku"
-          + "pRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035alloydb."
-          + "googleapis.com/Backup\"\324\001\n\023CreateBackupRe"
-          + "quest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\022\035alloydb.g"
-          + "oogleapis.com/Backup\022\026\n\tbackup_id\030\002 \001(\tB"
-          + "\003\340A\002\0229\n\006backup\030\003 \001(\0132$.google.cloud.allo"
-          + "ydb.v1alpha.BackupB\003\340A\002\022\027\n\nrequest_id\030\004 "
-          + "\001(\tB\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\"\327\001\n"
-          + "\023UpdateBackupRequest\0224\n\013update_mask\030\001 \001("
-          + "\0132\032.google.protobuf.FieldMaskB\003\340A\001\0229\n\006ba"
-          + "ckup\030\002 \001(\0132$.google.cloud.alloydb.v1alph"
-          + "a.BackupB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\022\032"
-          + "\n\rvalidate_only\030\004 \001(\010B\003\340A\001\022\032\n\rallow_miss"
-          + "ing\030\005 \001(\010B\003\340A\001\"\222\001\n\023DeleteBackupRequest\0223"
-          + "\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035alloydb.googleapis"
-          + ".com/Backup\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\022\032\n\r"
-          + "validate_only\030\003 \001(\010B\003\340A\001\022\021\n\004etag\030\004 \001(\tB\003"
-          + "\340A\001\"\220\001\n!ListSupportedDatabaseFlagsReques"
-          + "t\022D\n\006parent\030\001 \001(\tB4\340A\002\372A.\022,alloydb.googl"
-          + "eapis.com/SupportedDatabaseFlag\022\021\n\tpage_"
-          + "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\224\001\n\"ListS"
-          + "upportedDatabaseFlagsResponse\022U\n\030support"
-          + "ed_database_flags\030\001 \003(\01323.google.cloud.a"
-          + "lloydb.v1alpha.SupportedDatabaseFlag\022\027\n\017"
-          + "next_page_token\030\002 \001(\t\"\300\001\n GenerateClient"
-          + "CertificateRequest\0226\n\006parent\030\001 \001(\tB&\340A\002\372"
-          + "A \n\036alloydb.googleapis.com/Cluster\022\027\n\nre"
-          + "quest_id\030\002 \001(\tB\003\340A\001\022\024\n\007pem_csr\030\003 \001(\tB\003\340A"
-          + "\001\0225\n\rcert_duration\030\004 \001(\0132\031.google.protob"
-          + "uf.DurationB\003\340A\001\"e\n!GenerateClientCertif"
-          + "icateResponse\022\034\n\017pem_certificate\030\001 \001(\tB\003"
-          + "\340A\003\022\"\n\025pem_certificate_chain\030\002 \003(\tB\003\340A\003\""
-          + "l\n\030GetConnectionInfoRequest\0227\n\006parent\030\001 "
-          + "\001(\tB\'\340A\002\372A!\n\037alloydb.googleapis.com/Inst"
-          + "ance\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"\200\003\n\021Operat"
-          + "ionMetadata\022j\n\037batch_create_instances_me"
-          + "tadata\030\010 \001(\0132:.google.cloud.alloydb.v1al"
-          + "pha.BatchCreateInstancesMetadataB\003\340A\003H\000\022"
-          + "4\n\013create_time\030\001 \001(\0132\032.google.protobuf.T"
-          + "imestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\t"
-          + "B\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_messa"
-          + "ge\030\005 \001(\tB\003\340A\003\022#\n\026requested_cancellation\030"
-          + "\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\003B\022\n\020"
-          + "request_specific2\372+\n\014AlloyDBAdmin\022\271\001\n\014Li"
-          + "stClusters\0221.google.cloud.alloydb.v1alph"
-          + "a.ListClustersRequest\0322.google.cloud.all"
-          + "oydb.v1alpha.ListClustersResponse\"B\202\323\344\223\002"
-          + "3\0221/v1alpha/{parent=projects/*/locations"
-          + "/*}/clusters\332A\006parent\022\246\001\n\nGetCluster\022/.g"
-          + "oogle.cloud.alloydb.v1alpha.GetClusterRe"
-          + "quest\032%.google.cloud.alloydb.v1alpha.Clu"
-          + "ster\"@\202\323\344\223\0023\0221/v1alpha/{name=projects/*/"
-          + "locations/*/clusters/*}\332A\004name\022\341\001\n\rCreat"
-          + "eCluster\0222.google.cloud.alloydb.v1alpha."
-          + "CreateClusterRequest\032\035.google.longrunnin"
-          + "g.Operation\"}\202\323\344\223\002<\"1/v1alpha/{parent=pr"
-          + "ojects/*/locations/*}/clusters:\007cluster\332"
-          + "A\031parent,cluster,cluster_id\312A\034\n\007Cluster\022"
-          + "\021OperationMetadata\022\343\001\n\rUpdateCluster\0222.g"
-          + "oogle.cloud.alloydb.v1alpha.UpdateCluste"
-          + "rRequest\032\035.google.longrunning.Operation\""
-          + "\177\202\323\344\223\002D29/v1alpha/{cluster.name=projects"
-          + "/*/locations/*/clusters/*}:\007cluster\332A\023cl"
-          + "uster,update_mask\312A\034\n\007Cluster\022\021Operation"
-          + "Metadata\022\321\001\n\rDeleteCluster\0222.google.clou"
-          + "d.alloydb.v1alpha.DeleteClusterRequest\032\035"
-          + ".google.longrunning.Operation\"m\202\323\344\223\0023*1/"
-          + "v1alpha/{name=projects/*/locations/*/clu"
-          + "sters/*}\332A\004name\312A*\n\025google.protobuf.Empt"
-          + "y\022\021OperationMetadata\022\320\001\n\016PromoteCluster\022"
-          + "3.google.cloud.alloydb.v1alpha.PromoteCl"
-          + "usterRequest\032\035.google.longrunning.Operat"
-          + "ion\"j\202\323\344\223\002>\"9/v1alpha/{name=projects/*/l"
-          + "ocations/*/clusters/*}:promote:\001*\332A\004name"
-          + "\312A\034\n\007Cluster\022\021OperationMetadata\022\311\001\n\016Rest"
-          + "oreCluster\0223.google.cloud.alloydb.v1alph"
-          + "a.RestoreClusterRequest\032\035.google.longrun"
-          + "ning.Operation\"c\202\323\344\223\002>\"9/v1alpha/{parent"
-          + "=projects/*/locations/*}/clusters:restor"
-          + "e:\001*\312A\034\n\007Cluster\022\021OperationMetadata\022\204\002\n\026"
-          + "CreateSecondaryCluster\022;.google.cloud.al"
-          + "loydb.v1alpha.CreateSecondaryClusterRequ"
-          + "est\032\035.google.longrunning.Operation\"\215\001\202\323\344"
-          + "\223\002L\"A/v1alpha/{parent=projects/*/locatio"
-          + "ns/*}/clusters:createsecondary:\007cluster\332"
-          + "A\031parent,cluster,cluster_id\312A\034\n\007Cluster\022"
-          + "\021OperationMetadata\022\310\001\n\rListInstances\0222.g"
-          + "oogle.cloud.alloydb.v1alpha.ListInstance"
-          + "sRequest\0323.google.cloud.alloydb.v1alpha."
-          + "ListInstancesResponse\"N\202\323\344\223\002?\022=/v1alpha/"
-          + "{parent=projects/*/locations/*/clusters/"
-          + "*}/instances\332A\006parent\022\265\001\n\013GetInstance\0220."
-          + "google.cloud.alloydb.v1alpha.GetInstance"
-          + "Request\032&.google.cloud.alloydb.v1alpha.I"
-          + "nstance\"L\202\323\344\223\002?\022=/v1alpha/{name=projects"
-          + "/*/locations/*/clusters/*/instances/*}\332A"
-          + "\004name\022\364\001\n\016CreateInstance\0223.google.cloud."
-          + "alloydb.v1alpha.CreateInstanceRequest\032\035."
-          + "google.longrunning.Operation\"\215\001\202\323\344\223\002I\"=/"
-          + "v1alpha/{parent=projects/*/locations/*/c"
-          + "lusters/*}/instances:\010instance\332A\033parent,"
-          + "instance,instance_id\312A\035\n\010Instance\022\021Opera"
-          + "tionMetadata\022\226\002\n\027CreateSecondaryInstance"
-          + "\022<.google.cloud.alloydb.v1alpha.CreateSe"
-          + "condaryInstanceRequest\032\035.google.longrunn"
-          + "ing.Operation\"\235\001\202\323\344\223\002Y\"M/v1alpha/{parent"
-          + "=projects/*/locations/*/clusters/*}/inst"
-          + "ances:createsecondary:\010instance\332A\033parent"
-          + ",instance,instance_id\312A\035\n\010Instance\022\021Oper"
-          + "ationMetadata\022\202\002\n\024BatchCreateInstances\0229"
+          + "\032\027google/rpc/status.proto\"\251\001\n\023ListCluste"
+          + "rsRequest\0227\n\006parent\030\001 \001(\tB\'\342A\001\002\372A \022\036allo"
+          + "ydb.googleapis.com/Cluster\022\027\n\tpage_size\030"
+          + "\002 \001(\005B\004\342A\001\001\022\022\n\npage_token\030\003 \001(\t\022\024\n\006filte"
+          + "r\030\004 \001(\tB\004\342A\001\001\022\026\n\010order_by\030\005 \001(\tB\004\342A\001\001\"}\n"
+          + "\024ListClustersResponse\0227\n\010clusters\030\001 \003(\0132"
+          + "%.google.cloud.alloydb.v1alpha.Cluster\022\027"
+          + "\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003"
+          + " \003(\t\"\211\001\n\021GetClusterRequest\0225\n\004name\030\001 \001(\t"
+          + "B\'\342A\001\002\372A \n\036alloydb.googleapis.com/Cluste"
+          + "r\022=\n\004view\030\002 \001(\0162).google.cloud.alloydb.v"
+          + "1alpha.ClusterViewB\004\342A\001\001\"\347\001\n\035CreateSecon"
+          + "daryClusterRequest\0227\n\006parent\030\001 \001(\tB\'\342A\001\002"
+          + "\372A \022\036alloydb.googleapis.com/Cluster\022\030\n\nc"
+          + "luster_id\030\002 \001(\tB\004\342A\001\002\022<\n\007cluster\030\003 \001(\0132%"
+          + ".google.cloud.alloydb.v1alpha.ClusterB\004\342"
+          + "A\001\002\022\030\n\nrequest_id\030\005 \001(\tB\004\342A\001\001\022\033\n\rvalidat"
+          + "e_only\030\006 \001(\010B\004\342A\001\001\"\336\001\n\024CreateClusterRequ"
+          + "est\0227\n\006parent\030\001 \001(\tB\'\342A\001\002\372A \022\036alloydb.go"
+          + "ogleapis.com/Cluster\022\030\n\ncluster_id\030\002 \001(\t"
+          + "B\004\342A\001\002\022<\n\007cluster\030\003 \001(\0132%.google.cloud.a"
+          + "lloydb.v1alpha.ClusterB\004\342A\001\002\022\030\n\nrequest_"
+          + "id\030\004 \001(\tB\004\342A\001\001\022\033\n\rvalidate_only\030\005 \001(\010B\004\342"
+          + "A\001\001\"\337\001\n\024UpdateClusterRequest\0225\n\013update_m"
+          + "ask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\004\342"
+          + "A\001\001\022<\n\007cluster\030\002 \001(\0132%.google.cloud.allo"
+          + "ydb.v1alpha.ClusterB\004\342A\001\002\022\030\n\nrequest_id\030"
+          + "\003 \001(\tB\004\342A\001\001\022\033\n\rvalidate_only\030\004 \001(\010B\004\342A\001\001"
+          + "\022\033\n\rallow_missing\030\005 \001(\010B\004\342A\001\001\"\255\001\n\024Delete"
+          + "ClusterRequest\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A \n\036a"
+          + "lloydb.googleapis.com/Cluster\022\030\n\nrequest"
+          + "_id\030\002 \001(\tB\004\342A\001\001\022\022\n\004etag\030\003 \001(\tB\004\342A\001\001\022\033\n\rv"
+          + "alidate_only\030\004 \001(\010B\004\342A\001\001\022\023\n\005force\030\005 \001(\010B"
+          + "\004\342A\001\001\"\231\001\n\025PromoteClusterRequest\0225\n\004name\030"
+          + "\001 \001(\tB\'\342A\001\002\372A \n\036alloydb.googleapis.com/C"
+          + "luster\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\022\022\n\004etag"
+          + "\030\003 \001(\tB\004\342A\001\001\022\033\n\rvalidate_only\030\004 \001(\010B\004\342A\001"
+          + "\001\"\210\003\n\025RestoreClusterRequest\022C\n\rbackup_so"
+          + "urce\030\004 \001(\0132*.google.cloud.alloydb.v1alph"
+          + "a.BackupSourceH\000\022X\n\030continuous_backup_so"
+          + "urce\030\010 \001(\01324.google.cloud.alloydb.v1alph"
+          + "a.ContinuousBackupSourceH\000\0227\n\006parent\030\001 \001"
+          + "(\tB\'\342A\001\002\372A \022\036alloydb.googleapis.com/Clus"
+          + "ter\022\030\n\ncluster_id\030\002 \001(\tB\004\342A\001\002\022<\n\007cluster"
+          + "\030\003 \001(\0132%.google.cloud.alloydb.v1alpha.Cl"
+          + "usterB\004\342A\001\002\022\030\n\nrequest_id\030\005 \001(\tB\004\342A\001\001\022\033\n"
+          + "\rvalidate_only\030\006 \001(\010B\004\342A\001\001B\010\n\006source\"\253\001\n"
+          + "\024ListInstancesRequest\0228\n\006parent\030\001 \001(\tB(\342"
+          + "A\001\002\372A!\022\037alloydb.googleapis.com/Instance\022"
+          + "\027\n\tpage_size\030\002 \001(\005B\004\342A\001\001\022\022\n\npage_token\030\003"
+          + " \001(\t\022\024\n\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n\010order_by\030\005"
+          + " \001(\tB\004\342A\001\001\"\200\001\n\025ListInstancesResponse\0229\n\t"
+          + "instances\030\001 \003(\0132&.google.cloud.alloydb.v"
+          + "1alpha.Instance\022\027\n\017next_page_token\030\002 \001(\t"
+          + "\022\023\n\013unreachable\030\003 \003(\t\"\206\001\n\022GetInstanceReq"
+          + "uest\0226\n\004name\030\001 \001(\tB(\342A\001\002\372A!\n\037alloydb.goo"
+          + "gleapis.com/Instance\0228\n\004view\030\002 \001(\0162*.goo"
+          + "gle.cloud.alloydb.v1alpha.InstanceView\"\343"
+          + "\001\n\025CreateInstanceRequest\0228\n\006parent\030\001 \001(\t"
+          + "B(\342A\001\002\372A!\022\037alloydb.googleapis.com/Instan"
+          + "ce\022\031\n\013instance_id\030\002 \001(\tB\004\342A\001\002\022>\n\010instanc"
+          + "e\030\003 \001(\0132&.google.cloud.alloydb.v1alpha.I"
+          + "nstanceB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001\022"
+          + "\033\n\rvalidate_only\030\005 \001(\010B\004\342A\001\001\"\354\001\n\036CreateS"
+          + "econdaryInstanceRequest\0228\n\006parent\030\001 \001(\tB"
+          + "(\342A\001\002\372A!\022\037alloydb.googleapis.com/Instanc"
+          + "e\022\031\n\013instance_id\030\002 \001(\tB\004\342A\001\002\022>\n\010instance"
+          + "\030\003 \001(\0132&.google.cloud.alloydb.v1alpha.In"
+          + "stanceB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004\342A\001\001\022\033"
+          + "\n\rvalidate_only\030\005 \001(\010B\004\342A\001\001\"u\n\026CreateIns"
+          + "tanceRequests\022[\n\030create_instance_request"
+          + "s\030\001 \003(\01323.google.cloud.alloydb.v1alpha.C"
+          + "reateInstanceRequestB\004\342A\001\002\"\277\001\n\033BatchCrea"
+          + "teInstancesRequest\0228\n\006parent\030\001 \001(\tB(\342A\001\002"
+          + "\372A!\022\037alloydb.googleapis.com/Instance\022L\n\010"
+          + "requests\030\002 \001(\01324.google.cloud.alloydb.v1"
+          + "alpha.CreateInstanceRequestsB\004\342A\001\002\022\030\n\nre"
+          + "quest_id\030\003 \001(\tB\004\342A\001\001\"Y\n\034BatchCreateInsta"
+          + "ncesResponse\0229\n\tinstances\030\001 \003(\0132&.google"
+          + ".cloud.alloydb.v1alpha.Instance\"\227\002\n\034Batc"
+          + "hCreateInstancesMetadata\022\030\n\020instance_tar"
+          + "gets\030\001 \003(\t\022k\n\021instance_statuses\030\002 \003(\0132P."
+          + "google.cloud.alloydb.v1alpha.BatchCreate"
+          + "InstancesMetadata.InstanceStatusesEntry\032"
+          + "p\n\025InstanceStatusesEntry\022\013\n\003key\030\001 \001(\t\022F\n"
+          + "\005value\030\002 \001(\01327.google.cloud.alloydb.v1al"
+          + "pha.BatchCreateInstanceStatus:\0028\001\"\332\002\n\031Ba"
+          + "tchCreateInstanceStatus\022L\n\005state\030\001 \001(\0162="
           + ".google.cloud.alloydb.v1alpha.BatchCreat"
-          + "eInstancesRequest\032\035.google.longrunning.O"
-          + "peration\"\217\001\202\323\344\223\002U\"I/v1alpha/{parent=proj"
-          + "ects/*/locations/*/clusters/*}/instances"
-          + ":batchCreate:\010requests\312A1\n\034BatchCreateIn"
-          + "stancesResponse\022\021OperationMetadata\022\366\001\n\016U"
-          + "pdateInstance\0223.google.cloud.alloydb.v1a"
-          + "lpha.UpdateInstanceRequest\032\035.google.long"
-          + "running.Operation\"\217\001\202\323\344\223\002R2F/v1alpha/{in"
-          + "stance.name=projects/*/locations/*/clust"
-          + "ers/*/instances/*}:\010instance\332A\024instance,"
-          + "update_mask\312A\035\n\010Instance\022\021OperationMetad"
-          + "ata\022\337\001\n\016DeleteInstance\0223.google.cloud.al"
-          + "loydb.v1alpha.DeleteInstanceRequest\032\035.go"
-          + "ogle.longrunning.Operation\"y\202\323\344\223\002?*=/v1a"
-          + "lpha/{name=projects/*/locations/*/cluste"
-          + "rs/*/instances/*}\332A\004name\312A*\n\025google.prot"
-          + "obuf.Empty\022\021OperationMetadata\022\342\001\n\020Failov"
-          + "erInstance\0225.google.cloud.alloydb.v1alph"
-          + "a.FailoverInstanceRequest\032\035.google.longr"
-          + "unning.Operation\"x\202\323\344\223\002K\"F/v1alpha/{name"
+          + "eInstanceStatus.State\022\021\n\terror_msg\030\002 \001(\t"
+          + "\022!\n\005error\030\004 \001(\0132\022.google.rpc.Status\022A\n\004t"
+          + "ype\030\003 \001(\01623.google.cloud.alloydb.v1alpha"
+          + ".Instance.InstanceType\"v\n\005State\022\025\n\021STATE"
+          + "_UNSPECIFIED\020\000\022\022\n\016PENDING_CREATE\020\001\022\t\n\005RE"
+          + "ADY\020\002\022\014\n\010CREATING\020\003\022\014\n\010DELETING\020\004\022\n\n\006FAI"
+          + "LED\020\005\022\017\n\013ROLLED_BACK\020\006\"\342\001\n\025UpdateInstanc"
+          + "eRequest\0225\n\013update_mask\030\001 \001(\0132\032.google.p"
+          + "rotobuf.FieldMaskB\004\342A\001\001\022>\n\010instance\030\002 \001("
+          + "\0132&.google.cloud.alloydb.v1alpha.Instanc"
+          + "eB\004\342A\001\002\022\030\n\nrequest_id\030\003 \001(\tB\004\342A\001\001\022\033\n\rval"
+          + "idate_only\030\004 \001(\010B\004\342A\001\001\022\033\n\rallow_missing\030"
+          + "\005 \001(\010B\004\342A\001\001\"\232\001\n\025DeleteInstanceRequest\0226\n"
+          + "\004name\030\001 \001(\tB(\342A\001\002\372A!\n\037alloydb.googleapis"
+          + ".com/Instance\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\022"
+          + "\022\n\004etag\030\003 \001(\tB\004\342A\001\001\022\033\n\rvalidate_only\030\004 \001"
+          + "(\010B\004\342A\001\001\"\210\001\n\027FailoverInstanceRequest\0226\n\004"
+          + "name\030\001 \001(\tB(\342A\001\002\372A!\n\037alloydb.googleapis."
+          + "com/Instance\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\022\033"
+          + "\n\rvalidate_only\030\003 \001(\010B\004\342A\001\001\"\217\002\n\022InjectFa"
+          + "ultRequest\022T\n\nfault_type\030\001 \001(\0162:.google."
+          + "cloud.alloydb.v1alpha.InjectFaultRequest"
+          + ".FaultTypeB\004\342A\001\002\0226\n\004name\030\002 \001(\tB(\342A\001\002\372A!\n"
+          + "\037alloydb.googleapis.com/Instance\022\030\n\nrequ"
+          + "est_id\030\003 \001(\tB\004\342A\001\001\022\033\n\rvalidate_only\030\004 \001("
+          + "\010B\004\342A\001\001\"4\n\tFaultType\022\032\n\026FAULT_TYPE_UNSPE"
+          + "CIFIED\020\000\022\013\n\007STOP_VM\020\001\"\207\001\n\026RestartInstanc"
+          + "eRequest\0226\n\004name\030\001 \001(\tB(\342A\001\002\372A!\n\037alloydb"
+          + ".googleapis.com/Instance\022\030\n\nrequest_id\030\002"
+          + " \001(\tB\004\342A\001\001\022\033\n\rvalidate_only\030\003 \001(\010B\004\342A\001\001\""
+          + "\225\001\n\022ListBackupsRequest\0226\n\006parent\030\001 \001(\tB&"
+          + "\342A\001\002\372A\037\022\035alloydb.googleapis.com/Backup\022\021"
+          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n"
+          + "\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"z\n\023ListB"
+          + "ackupsResponse\0225\n\007backups\030\001 \003(\0132$.google"
+          + ".cloud.alloydb.v1alpha.Backup\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"H\n\020G"
+          + "etBackupRequest\0224\n\004name\030\001 \001(\tB&\342A\001\002\372A\037\n\035"
+          + "alloydb.googleapis.com/Backup\"\331\001\n\023Create"
+          + "BackupRequest\0226\n\006parent\030\001 \001(\tB&\342A\001\002\372A\037\022\035"
+          + "alloydb.googleapis.com/Backup\022\027\n\tbackup_"
+          + "id\030\002 \001(\tB\004\342A\001\002\022:\n\006backup\030\003 \001(\0132$.google."
+          + "cloud.alloydb.v1alpha.BackupB\004\342A\001\002\022\030\n\nre"
+          + "quest_id\030\004 \001(\tB\004\342A\001\001\022\033\n\rvalidate_only\030\005 "
+          + "\001(\010B\004\342A\001\001\"\334\001\n\023UpdateBackupRequest\0225\n\013upd"
+          + "ate_mask\030\001 \001(\0132\032.google.protobuf.FieldMa"
+          + "skB\004\342A\001\001\022:\n\006backup\030\002 \001(\0132$.google.cloud."
+          + "alloydb.v1alpha.BackupB\004\342A\001\002\022\030\n\nrequest_"
+          + "id\030\003 \001(\tB\004\342A\001\001\022\033\n\rvalidate_only\030\004 \001(\010B\004\342"
+          + "A\001\001\022\033\n\rallow_missing\030\005 \001(\010B\004\342A\001\001\"\226\001\n\023Del"
+          + "eteBackupRequest\0224\n\004name\030\001 \001(\tB&\342A\001\002\372A\037\n"
+          + "\035alloydb.googleapis.com/Backup\022\030\n\nreques"
+          + "t_id\030\002 \001(\tB\004\342A\001\001\022\033\n\rvalidate_only\030\003 \001(\010B"
+          + "\004\342A\001\001\022\022\n\004etag\030\004 \001(\tB\004\342A\001\001\"\221\001\n!ListSuppor"
+          + "tedDatabaseFlagsRequest\022E\n\006parent\030\001 \001(\tB"
+          + "5\342A\001\002\372A.\022,alloydb.googleapis.com/Support"
+          + "edDatabaseFlag\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npag"
+          + "e_token\030\003 \001(\t\"\224\001\n\"ListSupportedDatabaseF"
+          + "lagsResponse\022U\n\030supported_database_flags"
+          + "\030\001 \003(\01323.google.cloud.alloydb.v1alpha.Su"
+          + "pportedDatabaseFlag\022\027\n\017next_page_token\030\002"
+          + " \001(\t\"\205\002\n GenerateClientCertificateReques"
+          + "t\0227\n\006parent\030\001 \001(\tB\'\342A\001\002\372A \n\036alloydb.goog"
+          + "leapis.com/Cluster\022\030\n\nrequest_id\030\002 \001(\tB\004"
+          + "\342A\001\001\022\027\n\007pem_csr\030\003 \001(\tB\006\030\001\342A\001\001\0226\n\rcert_du"
+          + "ration\030\004 \001(\0132\031.google.protobuf.DurationB"
+          + "\004\342A\001\001\022\030\n\npublic_key\030\005 \001(\tB\004\342A\001\001\022#\n\025use_m"
+          + "etadata_exchange\030\006 \001(\010B\004\342A\001\001\"~\n!Generate"
+          + "ClientCertificateResponse\022\035\n\017pem_certifi"
+          + "cate\030\001 \001(\tB\004\342A\001\003\022#\n\025pem_certificate_chai"
+          + "n\030\002 \003(\tB\004\342A\001\003\022\025\n\007ca_cert\030\003 \001(\tB\004\342A\001\001\"n\n\030"
+          + "GetConnectionInfoRequest\0228\n\006parent\030\001 \001(\t"
+          + "B(\342A\001\002\372A!\n\037alloydb.googleapis.com/Instan"
+          + "ce\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\"\210\003\n\021Operati"
+          + "onMetadata\022k\n\037batch_create_instances_met"
+          + "adata\030\010 \001(\0132:.google.cloud.alloydb.v1alp"
+          + "ha.BatchCreateInstancesMetadataB\004\342A\001\003H\000\022"
+          + "5\n\013create_time\030\001 \001(\0132\032.google.protobuf.T"
+          + "imestampB\004\342A\001\003\0222\n\010end_time\030\002 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\004\342A\001\003\022\024\n\006target\030\003 \001"
+          + "(\tB\004\342A\001\003\022\022\n\004verb\030\004 \001(\tB\004\342A\001\003\022\034\n\016status_m"
+          + "essage\030\005 \001(\tB\004\342A\001\003\022$\n\026requested_cancella"
+          + "tion\030\006 \001(\010B\004\342A\001\003\022\031\n\013api_version\030\007 \001(\tB\004\342"
+          + "A\001\003B\022\n\020request_specific\"\251\001\n\020ListUsersReq"
+          + "uest\0224\n\006parent\030\001 \001(\tB$\342A\001\002\372A\035\022\033alloydb.g"
+          + "oogleapis.com/User\022\027\n\tpage_size\030\002 \001(\005B\004\342"
+          + "A\001\001\022\030\n\npage_token\030\003 \001(\tB\004\342A\001\001\022\024\n\006filter\030"
+          + "\004 \001(\tB\004\342A\001\001\022\026\n\010order_by\030\005 \001(\tB\004\342A\001\001\"t\n\021L"
+          + "istUsersResponse\0221\n\005users\030\001 \003(\0132\".google"
+          + ".cloud.alloydb.v1alpha.User\022\027\n\017next_page"
+          + "_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"D\n\016Get"
+          + "UserRequest\0222\n\004name\030\001 \001(\tB$\342A\001\002\372A\035\n\033allo"
+          + "ydb.googleapis.com/User\"\317\001\n\021CreateUserRe"
+          + "quest\0224\n\006parent\030\001 \001(\tB$\342A\001\002\372A\035\022\033alloydb."
+          + "googleapis.com/User\022\025\n\007user_id\030\002 \001(\tB\004\342A"
+          + "\001\002\0226\n\004user\030\003 \001(\0132\".google.cloud.alloydb."
+          + "v1alpha.UserB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004"
+          + "\342A\001\001\022\033\n\rvalidate_only\030\005 \001(\010B\004\342A\001\001\"\326\001\n\021Up"
+          + "dateUserRequest\0225\n\013update_mask\030\001 \001(\0132\032.g"
+          + "oogle.protobuf.FieldMaskB\004\342A\001\001\0226\n\004user\030\002"
+          + " \001(\0132\".google.cloud.alloydb.v1alpha.User"
+          + "B\004\342A\001\002\022\030\n\nrequest_id\030\003 \001(\tB\004\342A\001\001\022\033\n\rvali"
+          + "date_only\030\004 \001(\010B\004\342A\001\001\022\033\n\rallow_missing\030\005"
+          + " \001(\010B\004\342A\001\001\"~\n\021DeleteUserRequest\0222\n\004name\030"
+          + "\001 \001(\tB$\342A\001\002\372A\035\n\033alloydb.googleapis.com/U"
+          + "ser\022\030\n\nrequest_id\030\002 \001(\tB\004\342A\001\001\022\033\n\rvalidat"
+          + "e_only\030\003 \001(\010B\004\342A\001\0012\3614\n\014AlloyDBAdmin\022\271\001\n\014"
+          + "ListClusters\0221.google.cloud.alloydb.v1al"
+          + "pha.ListClustersRequest\0322.google.cloud.a"
+          + "lloydb.v1alpha.ListClustersResponse\"B\332A\006"
+          + "parent\202\323\344\223\0023\0221/v1alpha/{parent=projects/"
+          + "*/locations/*}/clusters\022\246\001\n\nGetCluster\022/"
+          + ".google.cloud.alloydb.v1alpha.GetCluster"
+          + "Request\032%.google.cloud.alloydb.v1alpha.C"
+          + "luster\"@\332A\004name\202\323\344\223\0023\0221/v1alpha/{name=pr"
+          + "ojects/*/locations/*/clusters/*}\022\341\001\n\rCre"
+          + "ateCluster\0222.google.cloud.alloydb.v1alph"
+          + "a.CreateClusterRequest\032\035.google.longrunn"
+          + "ing.Operation\"}\312A\034\n\007Cluster\022\021OperationMe"
+          + "tadata\332A\031parent,cluster,cluster_id\202\323\344\223\002<"
+          + "\"1/v1alpha/{parent=projects/*/locations/"
+          + "*}/clusters:\007cluster\022\343\001\n\rUpdateCluster\0222"
+          + ".google.cloud.alloydb.v1alpha.UpdateClus"
+          + "terRequest\032\035.google.longrunning.Operatio"
+          + "n\"\177\312A\034\n\007Cluster\022\021OperationMetadata\332A\023clu"
+          + "ster,update_mask\202\323\344\223\002D29/v1alpha/{cluste"
+          + "r.name=projects/*/locations/*/clusters/*"
+          + "}:\007cluster\022\321\001\n\rDeleteCluster\0222.google.cl"
+          + "oud.alloydb.v1alpha.DeleteClusterRequest"
+          + "\032\035.google.longrunning.Operation\"m\312A*\n\025go"
+          + "ogle.protobuf.Empty\022\021OperationMetadata\332A"
+          + "\004name\202\323\344\223\0023*1/v1alpha/{name=projects/*/l"
+          + "ocations/*/clusters/*}\022\320\001\n\016PromoteCluste"
+          + "r\0223.google.cloud.alloydb.v1alpha.Promote"
+          + "ClusterRequest\032\035.google.longrunning.Oper"
+          + "ation\"j\312A\034\n\007Cluster\022\021OperationMetadata\332A"
+          + "\004name\202\323\344\223\002>\"9/v1alpha/{name=projects/*/l"
+          + "ocations/*/clusters/*}:promote:\001*\022\311\001\n\016Re"
+          + "storeCluster\0223.google.cloud.alloydb.v1al"
+          + "pha.RestoreClusterRequest\032\035.google.longr"
+          + "unning.Operation\"c\312A\034\n\007Cluster\022\021Operatio"
+          + "nMetadata\202\323\344\223\002>\"9/v1alpha/{parent=projec"
+          + "ts/*/locations/*}/clusters:restore:\001*\022\204\002"
+          + "\n\026CreateSecondaryCluster\022;.google.cloud."
+          + "alloydb.v1alpha.CreateSecondaryClusterRe"
+          + "quest\032\035.google.longrunning.Operation\"\215\001\312"
+          + "A\034\n\007Cluster\022\021OperationMetadata\332A\031parent,"
+          + "cluster,cluster_id\202\323\344\223\002L\"A/v1alpha/{pare"
+          + "nt=projects/*/locations/*}/clusters:crea"
+          + "tesecondary:\007cluster\022\310\001\n\rListInstances\0222"
+          + ".google.cloud.alloydb.v1alpha.ListInstan"
+          + "cesRequest\0323.google.cloud.alloydb.v1alph"
+          + "a.ListInstancesResponse\"N\332A\006parent\202\323\344\223\002?"
+          + "\022=/v1alpha/{parent=projects/*/locations/"
+          + "*/clusters/*}/instances\022\265\001\n\013GetInstance\022"
+          + "0.google.cloud.alloydb.v1alpha.GetInstan"
+          + "ceRequest\032&.google.cloud.alloydb.v1alpha"
+          + ".Instance\"L\332A\004name\202\323\344\223\002?\022=/v1alpha/{name"
           + "=projects/*/locations/*/clusters/*/insta"
-          + "nces/*}:failover:\001*\332A\004name\312A\035\n\010Instance\022"
-          + "\021OperationMetadata\022\337\001\n\017RestartInstance\0224"
-          + ".google.cloud.alloydb.v1alpha.RestartIns"
-          + "tanceRequest\032\035.google.longrunning.Operat"
-          + "ion\"w\202\323\344\223\002J\"E/v1alpha/{name=projects/*/l"
-          + "ocations/*/clusters/*/instances/*}:resta"
-          + "rt:\001*\332A\004name\312A\035\n\010Instance\022\021OperationMeta"
-          + "data\022\265\001\n\013ListBackups\0220.google.cloud.allo"
-          + "ydb.v1alpha.ListBackupsRequest\0321.google."
-          + "cloud.alloydb.v1alpha.ListBackupsRespons"
-          + "e\"A\202\323\344\223\0022\0220/v1alpha/{parent=projects/*/l"
-          + "ocations/*}/backups\332A\006parent\022\242\001\n\tGetBack"
-          + "up\022..google.cloud.alloydb.v1alpha.GetBac"
-          + "kupRequest\032$.google.cloud.alloydb.v1alph"
-          + "a.Backup\"?\202\323\344\223\0022\0220/v1alpha/{name=project"
-          + "s/*/locations/*/backups/*}\332A\004name\022\332\001\n\014Cr"
-          + "eateBackup\0221.google.cloud.alloydb.v1alph"
-          + "a.CreateBackupRequest\032\035.google.longrunni"
-          + "ng.Operation\"x\202\323\344\223\002:\"0/v1alpha/{parent=p"
-          + "rojects/*/locations/*}/backups:\006backup\332A"
-          + "\027parent,backup,backup_id\312A\033\n\006Backup\022\021Ope"
-          + "rationMetadata\022\334\001\n\014UpdateBackup\0221.google"
-          + ".cloud.alloydb.v1alpha.UpdateBackupReque"
-          + "st\032\035.google.longrunning.Operation\"z\202\323\344\223\002"
-          + "A27/v1alpha/{backup.name=projects/*/loca"
-          + "tions/*/backups/*}:\006backup\332A\022backup,upda"
-          + "te_mask\312A\033\n\006Backup\022\021OperationMetadata\022\316\001"
-          + "\n\014DeleteBackup\0221.google.cloud.alloydb.v1"
-          + "alpha.DeleteBackupRequest\032\035.google.longr"
-          + "unning.Operation\"l\202\323\344\223\0022*0/v1alpha/{name"
-          + "=projects/*/locations/*/backups/*}\332A\004nam"
-          + "e\312A*\n\025google.protobuf.Empty\022\021OperationMe"
-          + "tadata\022\361\001\n\032ListSupportedDatabaseFlags\022?."
-          + "google.cloud.alloydb.v1alpha.ListSupport"
-          + "edDatabaseFlagsRequest\032@.google.cloud.al"
-          + "loydb.v1alpha.ListSupportedDatabaseFlags"
-          + "Response\"P\202\323\344\223\002A\022?/v1alpha/{parent=proje"
-          + "cts/*/locations/*}/supportedDatabaseFlag"
-          + "s\332A\006parent\022\377\001\n\031GenerateClientCertificate"
-          + "\022>.google.cloud.alloydb.v1alpha.Generate"
-          + "ClientCertificateRequest\032?.google.cloud."
-          + "alloydb.v1alpha.GenerateClientCertificat"
-          + "eResponse\"a\202\323\344\223\002R\"M/v1alpha/{parent=proj"
-          + "ects/*/locations/*/clusters/*}:generateC"
-          + "lientCertificate:\001*\332A\006parent\022\332\001\n\021GetConn"
-          + "ectionInfo\0226.google.cloud.alloydb.v1alph"
-          + "a.GetConnectionInfoRequest\032,.google.clou"
-          + "d.alloydb.v1alpha.ConnectionInfo\"_\202\323\344\223\002P"
-          + "\022N/v1alpha/{parent=projects/*/locations/"
-          + "*/clusters/*/instances/*}/connectionInfo"
-          + "\332A\006parent\032J\312A\026alloydb.googleapis.com\322A.h"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\316\001\n com.google.cloud.alloydb.v1alp"
-          + "haB\014ServiceProtoP\001Z:cloud.google.com/go/"
-          + "alloydb/apiv1alpha/alloydbpb;alloydbpb\252\002"
-          + "\034Google.Cloud.AlloyDb.V1Alpha\312\002\034Google\\C"
-          + "loud\\AlloyDb\\V1alpha\352\002\037Google::Cloud::Al"
-          + "loyDB::V1alphab\006proto3"
+          + "nces/*}\022\364\001\n\016CreateInstance\0223.google.clou"
+          + "d.alloydb.v1alpha.CreateInstanceRequest\032"
+          + "\035.google.longrunning.Operation\"\215\001\312A\035\n\010In"
+          + "stance\022\021OperationMetadata\332A\033parent,insta"
+          + "nce,instance_id\202\323\344\223\002I\"=/v1alpha/{parent="
+          + "projects/*/locations/*/clusters/*}/insta"
+          + "nces:\010instance\022\226\002\n\027CreateSecondaryInstan"
+          + "ce\022<.google.cloud.alloydb.v1alpha.Create"
+          + "SecondaryInstanceRequest\032\035.google.longru"
+          + "nning.Operation\"\235\001\312A\035\n\010Instance\022\021Operati"
+          + "onMetadata\332A\033parent,instance,instance_id"
+          + "\202\323\344\223\002Y\"M/v1alpha/{parent=projects/*/loca"
+          + "tions/*/clusters/*}/instances:createseco"
+          + "ndary:\010instance\022\202\002\n\024BatchCreateInstances"
+          + "\0229.google.cloud.alloydb.v1alpha.BatchCre"
+          + "ateInstancesRequest\032\035.google.longrunning"
+          + ".Operation\"\217\001\312A1\n\034BatchCreateInstancesRe"
+          + "sponse\022\021OperationMetadata\202\323\344\223\002U\"I/v1alph"
+          + "a/{parent=projects/*/locations/*/cluster"
+          + "s/*}/instances:batchCreate:\010requests\022\366\001\n"
+          + "\016UpdateInstance\0223.google.cloud.alloydb.v"
+          + "1alpha.UpdateInstanceRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\217\001\312A\035\n\010Instance\022\021Ope"
+          + "rationMetadata\332A\024instance,update_mask\202\323\344"
+          + "\223\002R2F/v1alpha/{instance.name=projects/*/"
+          + "locations/*/clusters/*/instances/*}:\010ins"
+          + "tance\022\337\001\n\016DeleteInstance\0223.google.cloud."
+          + "alloydb.v1alpha.DeleteInstanceRequest\032\035."
+          + "google.longrunning.Operation\"y\312A*\n\025googl"
+          + "e.protobuf.Empty\022\021OperationMetadata\332A\004na"
+          + "me\202\323\344\223\002?*=/v1alpha/{name=projects/*/loca"
+          + "tions/*/clusters/*/instances/*}\022\342\001\n\020Fail"
+          + "overInstance\0225.google.cloud.alloydb.v1al"
+          + "pha.FailoverInstanceRequest\032\035.google.lon"
+          + "grunning.Operation\"x\312A\035\n\010Instance\022\021Opera"
+          + "tionMetadata\332A\004name\202\323\344\223\002K\"F/v1alpha/{nam"
+          + "e=projects/*/locations/*/clusters/*/inst"
+          + "ances/*}:failover:\001*\022\347\001\n\013InjectFault\0220.g"
+          + "oogle.cloud.alloydb.v1alpha.InjectFaultR"
+          + "equest\032\035.google.longrunning.Operation\"\206\001"
+          + "\312A\035\n\010Instance\022\021OperationMetadata\332A\017fault"
+          + "_type,name\202\323\344\223\002N\"I/v1alpha/{name=project"
+          + "s/*/locations/*/clusters/*/instances/*}:"
+          + "injectFault:\001*\022\337\001\n\017RestartInstance\0224.goo"
+          + "gle.cloud.alloydb.v1alpha.RestartInstanc"
+          + "eRequest\032\035.google.longrunning.Operation\""
+          + "w\312A\035\n\010Instance\022\021OperationMetadata\332A\004name"
+          + "\202\323\344\223\002J\"E/v1alpha/{name=projects/*/locati"
+          + "ons/*/clusters/*/instances/*}:restart:\001*"
+          + "\022\265\001\n\013ListBackups\0220.google.cloud.alloydb."
+          + "v1alpha.ListBackupsRequest\0321.google.clou"
+          + "d.alloydb.v1alpha.ListBackupsResponse\"A\332"
+          + "A\006parent\202\323\344\223\0022\0220/v1alpha/{parent=project"
+          + "s/*/locations/*}/backups\022\242\001\n\tGetBackup\022."
+          + ".google.cloud.alloydb.v1alpha.GetBackupR"
+          + "equest\032$.google.cloud.alloydb.v1alpha.Ba"
+          + "ckup\"?\332A\004name\202\323\344\223\0022\0220/v1alpha/{name=proj"
+          + "ects/*/locations/*/backups/*}\022\332\001\n\014Create"
+          + "Backup\0221.google.cloud.alloydb.v1alpha.Cr"
+          + "eateBackupRequest\032\035.google.longrunning.O"
+          + "peration\"x\312A\033\n\006Backup\022\021OperationMetadata"
+          + "\332A\027parent,backup,backup_id\202\323\344\223\002:\"0/v1alp"
+          + "ha/{parent=projects/*/locations/*}/backu"
+          + "ps:\006backup\022\334\001\n\014UpdateBackup\0221.google.clo"
+          + "ud.alloydb.v1alpha.UpdateBackupRequest\032\035"
+          + ".google.longrunning.Operation\"z\312A\033\n\006Back"
+          + "up\022\021OperationMetadata\332A\022backup,update_ma"
+          + "sk\202\323\344\223\002A27/v1alpha/{backup.name=projects"
+          + "/*/locations/*/backups/*}:\006backup\022\316\001\n\014De"
+          + "leteBackup\0221.google.cloud.alloydb.v1alph"
+          + "a.DeleteBackupRequest\032\035.google.longrunni"
+          + "ng.Operation\"l\312A*\n\025google.protobuf.Empty"
+          + "\022\021OperationMetadata\332A\004name\202\323\344\223\0022*0/v1alp"
+          + "ha/{name=projects/*/locations/*/backups/"
+          + "*}\022\361\001\n\032ListSupportedDatabaseFlags\022?.goog"
+          + "le.cloud.alloydb.v1alpha.ListSupportedDa"
+          + "tabaseFlagsRequest\032@.google.cloud.alloyd"
+          + "b.v1alpha.ListSupportedDatabaseFlagsResp"
+          + "onse\"P\332A\006parent\202\323\344\223\002A\022?/v1alpha/{parent="
+          + "projects/*/locations/*}/supportedDatabas"
+          + "eFlags\022\377\001\n\031GenerateClientCertificate\022>.g"
+          + "oogle.cloud.alloydb.v1alpha.GenerateClie"
+          + "ntCertificateRequest\032?.google.cloud.allo"
+          + "ydb.v1alpha.GenerateClientCertificateRes"
+          + "ponse\"a\332A\006parent\202\323\344\223\002R\"M/v1alpha/{parent"
+          + "=projects/*/locations/*/clusters/*}:gene"
+          + "rateClientCertificate:\001*\022\332\001\n\021GetConnecti"
+          + "onInfo\0226.google.cloud.alloydb.v1alpha.Ge"
+          + "tConnectionInfoRequest\032,.google.cloud.al"
+          + "loydb.v1alpha.ConnectionInfo\"_\332A\006parent\202"
+          + "\323\344\223\002P\022N/v1alpha/{parent=projects/*/locat"
+          + "ions/*/clusters/*/instances/*}/connectio"
+          + "nInfo\022\270\001\n\tListUsers\022..google.cloud.alloy"
+          + "db.v1alpha.ListUsersRequest\032/.google.clo"
+          + "ud.alloydb.v1alpha.ListUsersResponse\"J\332A"
+          + "\006parent\202\323\344\223\002;\0229/v1alpha/{parent=projects"
+          + "/*/locations/*/clusters/*}/users\022\245\001\n\007Get"
+          + "User\022,.google.cloud.alloydb.v1alpha.GetU"
+          + "serRequest\032\".google.cloud.alloydb.v1alph"
+          + "a.User\"H\332A\004name\202\323\344\223\002;\0229/v1alpha/{name=pr"
+          + "ojects/*/locations/*/clusters/*/users/*}"
+          + "\022\300\001\n\nCreateUser\022/.google.cloud.alloydb.v"
+          + "1alpha.CreateUserRequest\032\".google.cloud."
+          + "alloydb.v1alpha.User\"]\332A\023parent,user,use"
+          + "r_id\202\323\344\223\002A\"9/v1alpha/{parent=projects/*/"
+          + "locations/*/clusters/*}/users:\004user\022\302\001\n\n"
+          + "UpdateUser\022/.google.cloud.alloydb.v1alph"
+          + "a.UpdateUserRequest\032\".google.cloud.alloy"
+          + "db.v1alpha.User\"_\332A\020user,update_mask\202\323\344\223"
+          + "\002F2>/v1alpha/{user.name=projects/*/locat"
+          + "ions/*/clusters/*/users/*}:\004user\022\237\001\n\nDel"
+          + "eteUser\022/.google.cloud.alloydb.v1alpha.D"
+          + "eleteUserRequest\032\026.google.protobuf.Empty"
+          + "\"H\332A\004name\202\323\344\223\002;*9/v1alpha/{name=projects"
+          + "/*/locations/*/clusters/*/users/*}\032J\312A\026a"
+          + "lloydb.googleapis.com\322A.https://www.goog"
+          + "leapis.com/auth/cloud-platformB\316\001\n com.g"
+          + "oogle.cloud.alloydb.v1alphaB\014ServiceProt"
+          + "oP\001Z:cloud.google.com/go/alloydb/apiv1al"
+          + "pha/alloydbpb;alloydbpb\252\002\034Google.Cloud.A"
+          + "lloyDb.V1Alpha\312\002\034Google\\Cloud\\AlloyDb\\V1"
+          + "alpha\352\002\037Google::Cloud::AlloyDB::V1alphab"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -535,7 +628,7 @@ public final class ServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_GetClusterRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "View",
             });
     internal_static_google_cloud_alloydb_v1alpha_CreateSecondaryClusterRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -706,8 +799,16 @@ public final class ServiceProto {
             new java.lang.String[] {
               "Name", "RequestId", "ValidateOnly",
             });
-    internal_static_google_cloud_alloydb_v1alpha_RestartInstanceRequest_descriptor =
+    internal_static_google_cloud_alloydb_v1alpha_InjectFaultRequest_descriptor =
         getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_alloydb_v1alpha_InjectFaultRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_alloydb_v1alpha_InjectFaultRequest_descriptor,
+            new java.lang.String[] {
+              "FaultType", "Name", "RequestId", "ValidateOnly",
+            });
+    internal_static_google_cloud_alloydb_v1alpha_RestartInstanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_alloydb_v1alpha_RestartInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_RestartInstanceRequest_descriptor,
@@ -715,7 +816,7 @@ public final class ServiceProto {
               "Name", "RequestId", "ValidateOnly",
             });
     internal_static_google_cloud_alloydb_v1alpha_ListBackupsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_alloydb_v1alpha_ListBackupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_ListBackupsRequest_descriptor,
@@ -723,7 +824,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_alloydb_v1alpha_ListBackupsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_alloydb_v1alpha_ListBackupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_ListBackupsResponse_descriptor,
@@ -731,7 +832,7 @@ public final class ServiceProto {
               "Backups", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_alloydb_v1alpha_GetBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_alloydb_v1alpha_GetBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_GetBackupRequest_descriptor,
@@ -739,7 +840,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_alloydb_v1alpha_CreateBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_alloydb_v1alpha_CreateBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_CreateBackupRequest_descriptor,
@@ -747,7 +848,7 @@ public final class ServiceProto {
               "Parent", "BackupId", "Backup", "RequestId", "ValidateOnly",
             });
     internal_static_google_cloud_alloydb_v1alpha_UpdateBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_alloydb_v1alpha_UpdateBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_UpdateBackupRequest_descriptor,
@@ -755,7 +856,7 @@ public final class ServiceProto {
               "UpdateMask", "Backup", "RequestId", "ValidateOnly", "AllowMissing",
             });
     internal_static_google_cloud_alloydb_v1alpha_DeleteBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_alloydb_v1alpha_DeleteBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_DeleteBackupRequest_descriptor,
@@ -763,7 +864,7 @@ public final class ServiceProto {
               "Name", "RequestId", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_alloydb_v1alpha_ListSupportedDatabaseFlagsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_alloydb_v1alpha_ListSupportedDatabaseFlagsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_ListSupportedDatabaseFlagsRequest_descriptor,
@@ -771,7 +872,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_alloydb_v1alpha_ListSupportedDatabaseFlagsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_alloydb_v1alpha_ListSupportedDatabaseFlagsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_ListSupportedDatabaseFlagsResponse_descriptor,
@@ -779,23 +880,23 @@ public final class ServiceProto {
               "SupportedDatabaseFlags", "NextPageToken",
             });
     internal_static_google_cloud_alloydb_v1alpha_GenerateClientCertificateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_alloydb_v1alpha_GenerateClientCertificateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_GenerateClientCertificateRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "RequestId", "PemCsr", "CertDuration",
+              "Parent", "RequestId", "PemCsr", "CertDuration", "PublicKey", "UseMetadataExchange",
             });
     internal_static_google_cloud_alloydb_v1alpha_GenerateClientCertificateResponse_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_alloydb_v1alpha_GenerateClientCertificateResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_GenerateClientCertificateResponse_descriptor,
             new java.lang.String[] {
-              "PemCertificate", "PemCertificateChain",
+              "PemCertificate", "PemCertificateChain", "CaCert",
             });
     internal_static_google_cloud_alloydb_v1alpha_GetConnectionInfoRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_alloydb_v1alpha_GetConnectionInfoRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_GetConnectionInfoRequest_descriptor,
@@ -803,7 +904,7 @@ public final class ServiceProto {
               "Parent", "RequestId",
             });
     internal_static_google_cloud_alloydb_v1alpha_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_alloydb_v1alpha_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1alpha_OperationMetadata_descriptor,
@@ -817,6 +918,54 @@ public final class ServiceProto {
               "RequestedCancellation",
               "ApiVersion",
               "RequestSpecific",
+            });
+    internal_static_google_cloud_alloydb_v1alpha_ListUsersRequest_descriptor =
+        getDescriptor().getMessageTypes().get(36);
+    internal_static_google_cloud_alloydb_v1alpha_ListUsersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_alloydb_v1alpha_ListUsersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_alloydb_v1alpha_ListUsersResponse_descriptor =
+        getDescriptor().getMessageTypes().get(37);
+    internal_static_google_cloud_alloydb_v1alpha_ListUsersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_alloydb_v1alpha_ListUsersResponse_descriptor,
+            new java.lang.String[] {
+              "Users", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_alloydb_v1alpha_GetUserRequest_descriptor =
+        getDescriptor().getMessageTypes().get(38);
+    internal_static_google_cloud_alloydb_v1alpha_GetUserRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_alloydb_v1alpha_GetUserRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_alloydb_v1alpha_CreateUserRequest_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_cloud_alloydb_v1alpha_CreateUserRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_alloydb_v1alpha_CreateUserRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "UserId", "User", "RequestId", "ValidateOnly",
+            });
+    internal_static_google_cloud_alloydb_v1alpha_UpdateUserRequest_descriptor =
+        getDescriptor().getMessageTypes().get(40);
+    internal_static_google_cloud_alloydb_v1alpha_UpdateUserRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_alloydb_v1alpha_UpdateUserRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "User", "RequestId", "ValidateOnly", "AllowMissing",
+            });
+    internal_static_google_cloud_alloydb_v1alpha_DeleteUserRequest_descriptor =
+        getDescriptor().getMessageTypes().get(41);
+    internal_static_google_cloud_alloydb_v1alpha_DeleteUserRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_alloydb_v1alpha_DeleteUserRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId", "ValidateOnly",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

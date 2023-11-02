@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnalyzeEntitySentimentResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -150,7 +145,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
-   * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+   * See [Document.language][google.cloud.language.v1beta2.Document.language]
+   * field for more details.
    * </pre>
    *
    * <code>string language = 2;</code>
@@ -175,7 +171,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
-   * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+   * See [Document.language][google.cloud.language.v1beta2.Document.language]
+   * field for more details.
    * </pre>
    *
    * <code>string language = 2;</code>
@@ -970,7 +967,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -994,7 +992,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -1018,7 +1017,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -1041,7 +1041,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -1060,7 +1061,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>

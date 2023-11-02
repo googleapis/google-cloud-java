@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2alpha.Product], such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
    * not it exists, a PERMISSION_DENIED error is returned.
@@ -49,6 +50,7 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2alpha.Product], such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
    * not it exists, a PERMISSION_DENIED error is returned.
@@ -68,7 +70,9 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * <pre>
    * Required. The fulfillment type, including commonly used types (such as
    * pickup in store and same day delivery), and custom types.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -78,8 +82,10 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * This field directly corresponds to
    * [Product.fulfillment_info.type][google.cloud.retail.v2alpha.FulfillmentInfo.type].
    * </pre>
@@ -95,7 +101,9 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * <pre>
    * Required. The fulfillment type, including commonly used types (such as
    * pickup in store and same day delivery), and custom types.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -105,8 +113,10 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * This field directly corresponds to
    * [Product.fulfillment_info.type][google.cloud.retail.v2alpha.FulfillmentInfo.type].
    * </pre>
@@ -127,10 +137,12 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * "same-day-delivery" to be added for this
    * [type][google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest.type].
    * Duplicate IDs will be automatically ignored.
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest.type] after
    * adding, then the update will be rejected.
@@ -151,10 +163,12 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * "same-day-delivery" to be added for this
    * [type][google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest.type].
    * Duplicate IDs will be automatically ignored.
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest.type] after
    * adding, then the update will be rejected.
@@ -175,10 +189,12 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * "same-day-delivery" to be added for this
    * [type][google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest.type].
    * Duplicate IDs will be automatically ignored.
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest.type] after
    * adding, then the update will be rejected.
@@ -200,10 +216,12 @@ public interface AddFulfillmentPlacesRequestOrBuilder
    * "same-day-delivery" to be added for this
    * [type][google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest.type].
    * Duplicate IDs will be automatically ignored.
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest.type] after
    * adding, then the update will be rejected.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service to call Cloud DocumentAI to process documents according to the
+ * Service to call Document AI to process documents according to the
  * processor's definition. Processors are built using state-of-the-art Google
  * AI such as natural language, computer vision, and translation to extract
  * structured information from unstructured or semi-structured documents.
@@ -35,7 +35,7 @@ public final class DocumentProcessorServiceGrpc {
 
   private DocumentProcessorServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.documentai.v1beta3.DocumentProcessorService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -1232,7 +1232,7 @@ public final class DocumentProcessorServiceGrpc {
    *
    *
    * <pre>
-   * Service to call Cloud DocumentAI to process documents according to the
+   * Service to call Document AI to process documents according to the
    * processor's definition. Processors are built using state-of-the-art Google
    * AI such as natural language, computer vision, and translation to extract
    * structured information from unstructured or semi-structured documents.
@@ -1274,8 +1274,9 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Fetches processor types. Note that we do not use ListProcessorTypes here
-     * because it is not paginated.
+     * Fetches processor types. Note that we don't use
+     * [ListProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorTypes]
+     * here, because it isn't paginated.
      * </pre>
      */
     default void fetchProcessorTypes(
@@ -1352,7 +1353,7 @@ public final class DocumentProcessorServiceGrpc {
      * <pre>
      * Trains a new processor version.
      * Operation metadata is returned as
-     * cloud_documentai_core.TrainProcessorVersionMetadata.
+     * [TrainProcessorVersionMetadata][google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata].
      * </pre>
      */
     default void trainProcessorVersion(
@@ -1440,8 +1441,9 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Creates a processor from the type processor that the user chose.
-     * The processor will be at "ENABLED" state by default after its creation.
+     * Creates a processor from the
+     * [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided.
+     * The processor will be at `ENABLED` state by default after its creation.
      * </pre>
      */
     default void createProcessor(
@@ -1592,7 +1594,7 @@ public final class DocumentProcessorServiceGrpc {
    * Base class for the server implementation of the service DocumentProcessorService.
    *
    * <pre>
-   * Service to call Cloud DocumentAI to process documents according to the
+   * Service to call Document AI to process documents according to the
    * processor's definition. Processors are built using state-of-the-art Google
    * AI such as natural language, computer vision, and translation to extract
    * structured information from unstructured or semi-structured documents.
@@ -1611,7 +1613,7 @@ public final class DocumentProcessorServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service DocumentProcessorService.
    *
    * <pre>
-   * Service to call Cloud DocumentAI to process documents according to the
+   * Service to call Document AI to process documents according to the
    * processor's definition. Processors are built using state-of-the-art Google
    * AI such as natural language, computer vision, and translation to extract
    * structured information from unstructured or semi-structured documents.
@@ -1667,8 +1669,9 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Fetches processor types. Note that we do not use ListProcessorTypes here
-     * because it is not paginated.
+     * Fetches processor types. Note that we don't use
+     * [ListProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorTypes]
+     * here, because it isn't paginated.
      * </pre>
      */
     public void fetchProcessorTypes(
@@ -1755,7 +1758,7 @@ public final class DocumentProcessorServiceGrpc {
      * <pre>
      * Trains a new processor version.
      * Operation metadata is returned as
-     * cloud_documentai_core.TrainProcessorVersionMetadata.
+     * [TrainProcessorVersionMetadata][google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata].
      * </pre>
      */
     public void trainProcessorVersion(
@@ -1855,8 +1858,9 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Creates a processor from the type processor that the user chose.
-     * The processor will be at "ENABLED" state by default after its creation.
+     * Creates a processor from the
+     * [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided.
+     * The processor will be at `ENABLED` state by default after its creation.
      * </pre>
      */
     public void createProcessor(
@@ -2027,7 +2031,7 @@ public final class DocumentProcessorServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service DocumentProcessorService.
    *
    * <pre>
-   * Service to call Cloud DocumentAI to process documents according to the
+   * Service to call Document AI to process documents according to the
    * processor's definition. Processors are built using state-of-the-art Google
    * AI such as natural language, computer vision, and translation to extract
    * structured information from unstructured or semi-structured documents.
@@ -2077,8 +2081,9 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Fetches processor types. Note that we do not use ListProcessorTypes here
-     * because it is not paginated.
+     * Fetches processor types. Note that we don't use
+     * [ListProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorTypes]
+     * here, because it isn't paginated.
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.FetchProcessorTypesResponse fetchProcessorTypes(
@@ -2145,7 +2150,7 @@ public final class DocumentProcessorServiceGrpc {
      * <pre>
      * Trains a new processor version.
      * Operation metadata is returned as
-     * cloud_documentai_core.TrainProcessorVersionMetadata.
+     * [TrainProcessorVersionMetadata][google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata].
      * </pre>
      */
     public com.google.longrunning.Operation trainProcessorVersion(
@@ -2224,8 +2229,9 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Creates a processor from the type processor that the user chose.
-     * The processor will be at "ENABLED" state by default after its creation.
+     * Creates a processor from the
+     * [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided.
+     * The processor will be at `ENABLED` state by default after its creation.
      * </pre>
      */
     public com.google.cloud.documentai.v1beta3.Processor createProcessor(
@@ -2364,7 +2370,7 @@ public final class DocumentProcessorServiceGrpc {
    * DocumentProcessorService.
    *
    * <pre>
-   * Service to call Cloud DocumentAI to process documents according to the
+   * Service to call Document AI to process documents according to the
    * processor's definition. Processors are built using state-of-the-art Google
    * AI such as natural language, computer vision, and translation to extract
    * structured information from unstructured or semi-structured documents.
@@ -2415,8 +2421,9 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Fetches processor types. Note that we do not use ListProcessorTypes here
-     * because it is not paginated.
+     * Fetches processor types. Note that we don't use
+     * [ListProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorTypes]
+     * here, because it isn't paginated.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2489,7 +2496,7 @@ public final class DocumentProcessorServiceGrpc {
      * <pre>
      * Trains a new processor version.
      * Operation metadata is returned as
-     * cloud_documentai_core.TrainProcessorVersionMetadata.
+     * [TrainProcessorVersionMetadata][google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2576,8 +2583,9 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Creates a processor from the type processor that the user chose.
-     * The processor will be at "ENABLED" state by default after its creation.
+     * Creates a processor from the
+     * [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType] provided.
+     * The processor will be at `ENABLED` state by default after its creation.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3086,9 +3094,9 @@ public final class DocumentProcessorServiceGrpc {
   private static final class DocumentProcessorServiceMethodDescriptorSupplier
       extends DocumentProcessorServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DocumentProcessorServiceMethodDescriptorSupplier(String methodName) {
+    DocumentProcessorServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

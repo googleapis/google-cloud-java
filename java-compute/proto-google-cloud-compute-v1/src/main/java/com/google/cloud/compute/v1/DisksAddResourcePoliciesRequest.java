@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
   }
 
   private DisksAddResourcePoliciesRequest() {
-    resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DisksAddResourcePoliciesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
   public static final int RESOURCE_POLICIES_FIELD_NUMBER = 22220385;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resourcePolicies_;
+  private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -336,8 +332,7 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -365,7 +360,6 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
     public com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest buildPartial() {
       com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest result =
           new com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -373,17 +367,12 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.resourcePolicies_ = resourcePolicies_;
-    }
-
     private void buildPartial0(com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        resourcePolicies_.makeImmutable();
+        result.resourcePolicies_ = resourcePolicies_;
+      }
     }
 
     @java.lang.Override
@@ -435,7 +424,7 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
       if (!other.resourcePolicies_.isEmpty()) {
         if (resourcePolicies_.isEmpty()) {
           resourcePolicies_ = other.resourcePolicies_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureResourcePoliciesIsMutable();
           resourcePolicies_.addAll(other.resourcePolicies_);
@@ -494,14 +483,14 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList resourcePolicies_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourcePoliciesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!resourcePolicies_.isModifiable()) {
         resourcePolicies_ = new com.google.protobuf.LazyStringArrayList(resourcePolicies_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -515,7 +504,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
      * @return A list containing the resourcePolicies.
      */
     public com.google.protobuf.ProtocolStringList getResourcePoliciesList() {
-      return resourcePolicies_.getUnmodifiableView();
+      resourcePolicies_.makeImmutable();
+      return resourcePolicies_;
     }
     /**
      *
@@ -580,6 +570,7 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
       }
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -601,6 +592,7 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
       }
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -619,6 +611,7 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
     public Builder addAllResourcePolicies(java.lang.Iterable<java.lang.String> values) {
       ensureResourcePoliciesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourcePolicies_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -634,8 +627,9 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearResourcePolicies() {
-      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -658,6 +652,7 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
       checkByteStringIsUtf8(value);
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

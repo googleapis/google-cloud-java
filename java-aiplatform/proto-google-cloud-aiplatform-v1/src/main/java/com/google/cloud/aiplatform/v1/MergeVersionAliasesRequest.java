@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
 
   private MergeVersionAliasesRequest() {
     name_ = "";
-    versionAliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    versionAliases_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MergeVersionAliasesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -79,6 +74,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The name of the model version to merge aliases, with a version ID
    * explicitly included.
+   *
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *
@@ -106,6 +102,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The name of the model version to merge aliases, with a version ID
    * explicitly included.
+   *
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *
@@ -131,7 +128,8 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
   public static final int VERSION_ALIASES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList versionAliases_;
+  private com.google.protobuf.LazyStringArrayList versionAliases_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -142,6 +140,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
    * Add the `-` prefix to an alias means removing that alias from the version.
    * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
    * the `golden` alias from the version.
+   *
    * There is NO ordering in aliases, which means
    * 1) The aliases returned from GetModel API might not have the exactly same
    * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -166,6 +165,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
    * Add the `-` prefix to an alias means removing that alias from the version.
    * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
    * the `golden` alias from the version.
+   *
    * There is NO ordering in aliases, which means
    * 1) The aliases returned from GetModel API might not have the exactly same
    * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -190,6 +190,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
    * Add the `-` prefix to an alias means removing that alias from the version.
    * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
    * the `golden` alias from the version.
+   *
    * There is NO ordering in aliases, which means
    * 1) The aliases returned from GetModel API might not have the exactly same
    * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -215,6 +216,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
    * Add the `-` prefix to an alias means removing that alias from the version.
    * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
    * the `golden` alias from the version.
+   *
    * There is NO ordering in aliases, which means
    * 1) The aliases returned from GetModel API might not have the exactly same
    * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -448,8 +450,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      versionAliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      versionAliases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -477,7 +478,6 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest buildPartial() {
       com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest result =
           new com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -485,19 +485,14 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        versionAliases_ = versionAliases_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.versionAliases_ = versionAliases_;
-    }
-
     private void buildPartial0(com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        versionAliases_.makeImmutable();
+        result.versionAliases_ = versionAliases_;
       }
     }
 
@@ -555,7 +550,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       if (!other.versionAliases_.isEmpty()) {
         if (versionAliases_.isEmpty()) {
           versionAliases_ = other.versionAliases_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureVersionAliasesIsMutable();
           versionAliases_.addAll(other.versionAliases_);
@@ -627,6 +622,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The name of the model version to merge aliases, with a version ID
      * explicitly included.
+     *
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -653,6 +649,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The name of the model version to merge aliases, with a version ID
      * explicitly included.
+     *
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -679,6 +676,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The name of the model version to merge aliases, with a version ID
      * explicitly included.
+     *
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -704,6 +702,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The name of the model version to merge aliases, with a version ID
      * explicitly included.
+     *
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -725,6 +724,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The name of the model version to merge aliases, with a version ID
      * explicitly included.
+     *
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -746,14 +746,14 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       return this;
     }
 
-    private com.google.protobuf.LazyStringList versionAliases_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList versionAliases_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureVersionAliasesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!versionAliases_.isModifiable()) {
         versionAliases_ = new com.google.protobuf.LazyStringArrayList(versionAliases_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -765,6 +765,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * Add the `-` prefix to an alias means removing that alias from the version.
      * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
      * the `golden` alias from the version.
+     *
      * There is NO ordering in aliases, which means
      * 1) The aliases returned from GetModel API might not have the exactly same
      * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -777,7 +778,8 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * @return A list containing the versionAliases.
      */
     public com.google.protobuf.ProtocolStringList getVersionAliasesList() {
-      return versionAliases_.getUnmodifiableView();
+      versionAliases_.makeImmutable();
+      return versionAliases_;
     }
     /**
      *
@@ -789,6 +791,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * Add the `-` prefix to an alias means removing that alias from the version.
      * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
      * the `golden` alias from the version.
+     *
      * There is NO ordering in aliases, which means
      * 1) The aliases returned from GetModel API might not have the exactly same
      * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -813,6 +816,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * Add the `-` prefix to an alias means removing that alias from the version.
      * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
      * the `golden` alias from the version.
+     *
      * There is NO ordering in aliases, which means
      * 1) The aliases returned from GetModel API might not have the exactly same
      * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -838,6 +842,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * Add the `-` prefix to an alias means removing that alias from the version.
      * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
      * the `golden` alias from the version.
+     *
      * There is NO ordering in aliases, which means
      * 1) The aliases returned from GetModel API might not have the exactly same
      * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -863,6 +868,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * Add the `-` prefix to an alias means removing that alias from the version.
      * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
      * the `golden` alias from the version.
+     *
      * There is NO ordering in aliases, which means
      * 1) The aliases returned from GetModel API might not have the exactly same
      * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -882,6 +888,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       }
       ensureVersionAliasesIsMutable();
       versionAliases_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -895,6 +902,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * Add the `-` prefix to an alias means removing that alias from the version.
      * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
      * the `golden` alias from the version.
+     *
      * There is NO ordering in aliases, which means
      * 1) The aliases returned from GetModel API might not have the exactly same
      * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -913,6 +921,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       }
       ensureVersionAliasesIsMutable();
       versionAliases_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -926,6 +935,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * Add the `-` prefix to an alias means removing that alias from the version.
      * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
      * the `golden` alias from the version.
+     *
      * There is NO ordering in aliases, which means
      * 1) The aliases returned from GetModel API might not have the exactly same
      * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -941,6 +951,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
     public Builder addAllVersionAliases(java.lang.Iterable<java.lang.String> values) {
       ensureVersionAliasesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, versionAliases_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -954,6 +965,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * Add the `-` prefix to an alias means removing that alias from the version.
      * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
      * the `golden` alias from the version.
+     *
      * There is NO ordering in aliases, which means
      * 1) The aliases returned from GetModel API might not have the exactly same
      * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -966,8 +978,9 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearVersionAliases() {
-      versionAliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      versionAliases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -981,6 +994,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
      * Add the `-` prefix to an alias means removing that alias from the version.
      * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
      * the `golden` alias from the version.
+     *
      * There is NO ordering in aliases, which means
      * 1) The aliases returned from GetModel API might not have the exactly same
      * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -1000,6 +1014,7 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       ensureVersionAliasesIsMutable();
       versionAliases_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

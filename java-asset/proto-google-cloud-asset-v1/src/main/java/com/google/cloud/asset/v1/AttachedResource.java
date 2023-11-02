@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
     return new AttachedResource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetProto
         .internal_static_google_cloud_asset_v1_AttachedResource_descriptor;
@@ -78,7 +73,9 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The type of this attached resource.
+   *
    * Example: `osconfig.googleapis.com/Inventory`
+   *
    * You can find the supported attached asset types of each resource in this
    * table:
    * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -105,7 +102,9 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The type of this attached resource.
+   *
    * Example: `osconfig.googleapis.com/Inventory`
+   *
    * You can find the supported attached asset types of each resource in this
    * table:
    * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -630,7 +629,9 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type of this attached resource.
+     *
      * Example: `osconfig.googleapis.com/Inventory`
+     *
      * You can find the supported attached asset types of each resource in this
      * table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -656,7 +657,9 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type of this attached resource.
+     *
      * Example: `osconfig.googleapis.com/Inventory`
+     *
      * You can find the supported attached asset types of each resource in this
      * table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -682,7 +685,9 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type of this attached resource.
+     *
      * Example: `osconfig.googleapis.com/Inventory`
+     *
      * You can find the supported attached asset types of each resource in this
      * table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -707,7 +712,9 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type of this attached resource.
+     *
      * Example: `osconfig.googleapis.com/Inventory`
+     *
      * You can find the supported attached asset types of each resource in this
      * table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -728,7 +735,9 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type of this attached resource.
+     *
      * Example: `osconfig.googleapis.com/Inventory`
+     *
      * You can find the supported attached asset types of each resource in this
      * table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`

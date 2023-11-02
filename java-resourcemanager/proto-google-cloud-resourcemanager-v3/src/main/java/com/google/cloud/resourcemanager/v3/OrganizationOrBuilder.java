@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -292,5 +292,5 @@ public interface OrganizationOrBuilder
    */
   com.google.protobuf.ByteString getEtagBytes();
 
-  public com.google.cloud.resourcemanager.v3.Organization.OwnerCase getOwnerCase();
+  com.google.cloud.resourcemanager.v3.Organization.OwnerCase getOwnerCase();
 }

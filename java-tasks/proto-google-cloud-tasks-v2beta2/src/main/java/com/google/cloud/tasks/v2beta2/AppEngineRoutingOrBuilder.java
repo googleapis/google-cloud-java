@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface AppEngineRoutingOrBuilder
    *
    * <pre>
    * App service.
+   *
    * By default, the task is sent to the service which is the default
    * service when the task is attempted.
+   *
    * For some queues or tasks which were created using the App Engine
    * Task Queue API, [host][google.cloud.tasks.v2beta2.AppEngineRouting.host] is
    * not parsable into
@@ -55,8 +57,10 @@ public interface AppEngineRoutingOrBuilder
    *
    * <pre>
    * App service.
+   *
    * By default, the task is sent to the service which is the default
    * service when the task is attempted.
+   *
    * For some queues or tasks which were created using the App Engine
    * Task Queue API, [host][google.cloud.tasks.v2beta2.AppEngineRouting.host] is
    * not parsable into
@@ -83,8 +87,10 @@ public interface AppEngineRoutingOrBuilder
    *
    * <pre>
    * App version.
+   *
    * By default, the task is sent to the version which is the default
    * version when the task is attempted.
+   *
    * For some queues or tasks which were created using the App Engine
    * Task Queue API, [host][google.cloud.tasks.v2beta2.AppEngineRouting.host] is
    * not parsable into
@@ -110,8 +116,10 @@ public interface AppEngineRoutingOrBuilder
    *
    * <pre>
    * App version.
+   *
    * By default, the task is sent to the version which is the default
    * version when the task is attempted.
+   *
    * For some queues or tasks which were created using the App Engine
    * Task Queue API, [host][google.cloud.tasks.v2beta2.AppEngineRouting.host] is
    * not parsable into
@@ -138,8 +146,10 @@ public interface AppEngineRoutingOrBuilder
    *
    * <pre>
    * App instance.
+   *
    * By default, the task is sent to an instance which is available when
    * the task is attempted.
+   *
    * Requests can only be sent to a specific instance if
    * [manual scaling is used in App Engine
    * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
@@ -160,8 +170,10 @@ public interface AppEngineRoutingOrBuilder
    *
    * <pre>
    * App instance.
+   *
    * By default, the task is sent to an instance which is available when
    * the task is attempted.
+   *
    * Requests can only be sent to a specific instance if
    * [manual scaling is used in App Engine
    * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
@@ -183,10 +195,14 @@ public interface AppEngineRoutingOrBuilder
    *
    * <pre>
    * Output only. The host that the task is sent to.
+   *
    * For more information, see
    * [How Requests are
    * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
+   *
    * The host is constructed as:
+   *
+   *
    * * `host = [application_domain_name]`&lt;/br&gt;
    *   `| [service] + '.' + [application_domain_name]`&lt;/br&gt;
    *   `| [version] + '.' + [application_domain_name]`&lt;/br&gt;
@@ -195,38 +211,50 @@ public interface AppEngineRoutingOrBuilder
    *   `| [instance_dot_service] + '.' + [application_domain_name]`&lt;/br&gt;
    *   `| [instance_dot_version] + '.' + [application_domain_name]`&lt;/br&gt;
    *   `| [instance_dot_version_dot_service] + '.' + [application_domain_name]`
+   *
    * * `application_domain_name` = The domain name of the app, for
    *   example &lt;app-id&gt;.appspot.com, which is associated with the
    *   queue's project ID. Some tasks which were created using the App Engine
    *   SDK use a custom domain name.
+   *
    * * `service =`
    * [service][google.cloud.tasks.v2beta2.AppEngineRouting.service]
+   *
    * * `version =`
    * [version][google.cloud.tasks.v2beta2.AppEngineRouting.version]
+   *
    * * `version_dot_service =`
    *   [version][google.cloud.tasks.v2beta2.AppEngineRouting.version] `+ '.' +`
    *   [service][google.cloud.tasks.v2beta2.AppEngineRouting.service]
+   *
    * * `instance =`
    * [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance]
+   *
    * * `instance_dot_service =`
    *   [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance] `+ '.'
    *   +` [service][google.cloud.tasks.v2beta2.AppEngineRouting.service]
+   *
    * * `instance_dot_version =`
    *   [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance] `+ '.'
    *   +` [version][google.cloud.tasks.v2beta2.AppEngineRouting.version]
+   *
    * * `instance_dot_version_dot_service =`
    *   [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance] `+ '.'
    *   +` [version][google.cloud.tasks.v2beta2.AppEngineRouting.version] `+ '.'
    *   +` [service][google.cloud.tasks.v2beta2.AppEngineRouting.service]
+   *
    * If [service][google.cloud.tasks.v2beta2.AppEngineRouting.service] is empty,
    * then the task will be sent to the service which is the default service when
    * the task is attempted.
+   *
    * If [version][google.cloud.tasks.v2beta2.AppEngineRouting.version] is empty,
    * then the task will be sent to the version which is the default version when
    * the task is attempted.
+   *
    * If [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance] is
    * empty, then the task will be sent to an instance which is available when
    * the task is attempted.
+   *
    * If [service][google.cloud.tasks.v2beta2.AppEngineRouting.service],
    * [version][google.cloud.tasks.v2beta2.AppEngineRouting.version], or
    * [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance] is
@@ -244,10 +272,14 @@ public interface AppEngineRoutingOrBuilder
    *
    * <pre>
    * Output only. The host that the task is sent to.
+   *
    * For more information, see
    * [How Requests are
    * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
+   *
    * The host is constructed as:
+   *
+   *
    * * `host = [application_domain_name]`&lt;/br&gt;
    *   `| [service] + '.' + [application_domain_name]`&lt;/br&gt;
    *   `| [version] + '.' + [application_domain_name]`&lt;/br&gt;
@@ -256,38 +288,50 @@ public interface AppEngineRoutingOrBuilder
    *   `| [instance_dot_service] + '.' + [application_domain_name]`&lt;/br&gt;
    *   `| [instance_dot_version] + '.' + [application_domain_name]`&lt;/br&gt;
    *   `| [instance_dot_version_dot_service] + '.' + [application_domain_name]`
+   *
    * * `application_domain_name` = The domain name of the app, for
    *   example &lt;app-id&gt;.appspot.com, which is associated with the
    *   queue's project ID. Some tasks which were created using the App Engine
    *   SDK use a custom domain name.
+   *
    * * `service =`
    * [service][google.cloud.tasks.v2beta2.AppEngineRouting.service]
+   *
    * * `version =`
    * [version][google.cloud.tasks.v2beta2.AppEngineRouting.version]
+   *
    * * `version_dot_service =`
    *   [version][google.cloud.tasks.v2beta2.AppEngineRouting.version] `+ '.' +`
    *   [service][google.cloud.tasks.v2beta2.AppEngineRouting.service]
+   *
    * * `instance =`
    * [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance]
+   *
    * * `instance_dot_service =`
    *   [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance] `+ '.'
    *   +` [service][google.cloud.tasks.v2beta2.AppEngineRouting.service]
+   *
    * * `instance_dot_version =`
    *   [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance] `+ '.'
    *   +` [version][google.cloud.tasks.v2beta2.AppEngineRouting.version]
+   *
    * * `instance_dot_version_dot_service =`
    *   [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance] `+ '.'
    *   +` [version][google.cloud.tasks.v2beta2.AppEngineRouting.version] `+ '.'
    *   +` [service][google.cloud.tasks.v2beta2.AppEngineRouting.service]
+   *
    * If [service][google.cloud.tasks.v2beta2.AppEngineRouting.service] is empty,
    * then the task will be sent to the service which is the default service when
    * the task is attempted.
+   *
    * If [version][google.cloud.tasks.v2beta2.AppEngineRouting.version] is empty,
    * then the task will be sent to the version which is the default version when
    * the task is attempted.
+   *
    * If [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance] is
    * empty, then the task will be sent to an instance which is available when
    * the task is attempted.
+   *
    * If [service][google.cloud.tasks.v2beta2.AppEngineRouting.service],
    * [version][google.cloud.tasks.v2beta2.AppEngineRouting.version], or
    * [instance][google.cloud.tasks.v2beta2.AppEngineRouting.instance] is

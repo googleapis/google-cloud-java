@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
     return new Transport();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.eventarc.v1.TriggerProto
         .internal_static_google_cloud_eventarc_v1_Transport_descriptor;
@@ -67,6 +62,8 @@ public final class Transport extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int intermediaryCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object intermediary_;
 
   public enum IntermediaryCase

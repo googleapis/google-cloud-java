@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,8 +155,10 @@ public interface SourceProvenanceOrBuilder
    * the original source integrity was maintained in the build. Note that
    * `FileHashes` will only be populated if `BuildOptions` has requested a
    * `SourceProvenanceHash`.
+   *
    * The keys to this map are file paths used as build source and the values
    * contain the hash values for those files.
+   *
    * If the build source came in a single package such as a gzipped tarfile
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
@@ -174,8 +176,10 @@ public interface SourceProvenanceOrBuilder
    * the original source integrity was maintained in the build. Note that
    * `FileHashes` will only be populated if `BuildOptions` has requested a
    * `SourceProvenanceHash`.
+   *
    * The keys to this map are file paths used as build source and the values
    * contain the hash values for those files.
+   *
    * If the build source came in a single package such as a gzipped tarfile
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
@@ -196,8 +200,10 @@ public interface SourceProvenanceOrBuilder
    * the original source integrity was maintained in the build. Note that
    * `FileHashes` will only be populated if `BuildOptions` has requested a
    * `SourceProvenanceHash`.
+   *
    * The keys to this map are file paths used as build source and the values
    * contain the hash values for those files.
+   *
    * If the build source came in a single package such as a gzipped tarfile
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
@@ -215,8 +221,10 @@ public interface SourceProvenanceOrBuilder
    * the original source integrity was maintained in the build. Note that
    * `FileHashes` will only be populated if `BuildOptions` has requested a
    * `SourceProvenanceHash`.
+   *
    * The keys to this map are file paths used as build source and the values
    * contain the hash values for those files.
+   *
    * If the build source came in a single package such as a gzipped tarfile
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>
@@ -238,8 +246,10 @@ public interface SourceProvenanceOrBuilder
    * the original source integrity was maintained in the build. Note that
    * `FileHashes` will only be populated if `BuildOptions` has requested a
    * `SourceProvenanceHash`.
+   *
    * The keys to this map are file paths used as build source and the values
    * contain the hash values for those files.
+   *
    * If the build source came in a single package such as a gzipped tarfile
    * (`.tar.gz`), the `FileHash` will be for the single path to that file.
    * </pre>

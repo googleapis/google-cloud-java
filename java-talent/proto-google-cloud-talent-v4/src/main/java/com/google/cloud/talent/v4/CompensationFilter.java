@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
     return new CompensationFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4.FiltersProto
         .internal_static_google_cloud_talent_v4_CompensationFilter_descriptor;
@@ -97,6 +92,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * CompensationEntry's unit matches provided
      * [units][google.cloud.talent.v4.CompensationFilter.units]. Populate one or
      * more [units][google.cloud.talent.v4.CompensationFilter.units].
+     *
      * See
      * [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
      * for definition of base compensation entry.
@@ -115,9 +111,11 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationUnit][google.cloud.talent.v4.CompensationInfo.CompensationUnit]
      * and amount or range overlaps with provided
      * [CompensationRange][google.cloud.talent.v4.CompensationInfo.CompensationRange].
+     *
      * See
      * [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
      * for definition of base compensation entry.
+     *
      * Set exactly one [units][google.cloud.talent.v4.CompensationFilter.units]
      * and populate [range][google.cloud.talent.v4.CompensationFilter.range].
      * </pre>
@@ -173,6 +171,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * CompensationEntry's unit matches provided
      * [units][google.cloud.talent.v4.CompensationFilter.units]. Populate one or
      * more [units][google.cloud.talent.v4.CompensationFilter.units].
+     *
      * See
      * [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
      * for definition of base compensation entry.
@@ -191,9 +190,11 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * [CompensationUnit][google.cloud.talent.v4.CompensationInfo.CompensationUnit]
      * and amount or range overlaps with provided
      * [CompensationRange][google.cloud.talent.v4.CompensationInfo.CompensationRange].
+     *
      * See
      * [CompensationInfo.CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
      * for definition of base compensation entry.
+     *
      * Set exactly one [units][google.cloud.talent.v4.CompensationFilter.units]
      * and populate [range][google.cloud.talent.v4.CompensationFilter.range].
      * </pre>

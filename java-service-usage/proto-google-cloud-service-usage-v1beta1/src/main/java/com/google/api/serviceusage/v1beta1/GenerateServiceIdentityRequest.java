@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
     return new GenerateServiceIdentityRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ServiceUsageProto
         .internal_static_google_api_serviceusage_v1beta1_GenerateServiceIdentityRequest_descriptor;
@@ -77,10 +72,14 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Name of the consumer and service to generate an identity for.
-   * The `GenerateServiceIdentity` methods currently only support projects.
-   * An example name would be:
-   * `projects/123/services/example.googleapis.com` where `123` is the
-   * project number.
+   *
+   * The `GenerateServiceIdentity` methods currently support projects, folders,
+   * organizations.
+   *
+   * Example parents would be:
+   * `projects/123/services/example.googleapis.com`
+   * `folders/123/services/example.googleapis.com`
+   * `organizations/123/services/example.googleapis.com`
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -104,10 +103,14 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Name of the consumer and service to generate an identity for.
-   * The `GenerateServiceIdentity` methods currently only support projects.
-   * An example name would be:
-   * `projects/123/services/example.googleapis.com` where `123` is the
-   * project number.
+   *
+   * The `GenerateServiceIdentity` methods currently support projects, folders,
+   * organizations.
+   *
+   * Example parents would be:
+   * `projects/123/services/example.googleapis.com`
+   * `folders/123/services/example.googleapis.com`
+   * `organizations/123/services/example.googleapis.com`
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -484,10 +487,14 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Name of the consumer and service to generate an identity for.
-     * The `GenerateServiceIdentity` methods currently only support projects.
-     * An example name would be:
-     * `projects/123/services/example.googleapis.com` where `123` is the
-     * project number.
+     *
+     * The `GenerateServiceIdentity` methods currently support projects, folders,
+     * organizations.
+     *
+     * Example parents would be:
+     * `projects/123/services/example.googleapis.com`
+     * `folders/123/services/example.googleapis.com`
+     * `organizations/123/services/example.googleapis.com`
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -510,10 +517,14 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Name of the consumer and service to generate an identity for.
-     * The `GenerateServiceIdentity` methods currently only support projects.
-     * An example name would be:
-     * `projects/123/services/example.googleapis.com` where `123` is the
-     * project number.
+     *
+     * The `GenerateServiceIdentity` methods currently support projects, folders,
+     * organizations.
+     *
+     * Example parents would be:
+     * `projects/123/services/example.googleapis.com`
+     * `folders/123/services/example.googleapis.com`
+     * `organizations/123/services/example.googleapis.com`
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -536,10 +547,14 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Name of the consumer and service to generate an identity for.
-     * The `GenerateServiceIdentity` methods currently only support projects.
-     * An example name would be:
-     * `projects/123/services/example.googleapis.com` where `123` is the
-     * project number.
+     *
+     * The `GenerateServiceIdentity` methods currently support projects, folders,
+     * organizations.
+     *
+     * Example parents would be:
+     * `projects/123/services/example.googleapis.com`
+     * `folders/123/services/example.googleapis.com`
+     * `organizations/123/services/example.googleapis.com`
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -561,10 +576,14 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Name of the consumer and service to generate an identity for.
-     * The `GenerateServiceIdentity` methods currently only support projects.
-     * An example name would be:
-     * `projects/123/services/example.googleapis.com` where `123` is the
-     * project number.
+     *
+     * The `GenerateServiceIdentity` methods currently support projects, folders,
+     * organizations.
+     *
+     * Example parents would be:
+     * `projects/123/services/example.googleapis.com`
+     * `folders/123/services/example.googleapis.com`
+     * `organizations/123/services/example.googleapis.com`
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -582,10 +601,14 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Name of the consumer and service to generate an identity for.
-     * The `GenerateServiceIdentity` methods currently only support projects.
-     * An example name would be:
-     * `projects/123/services/example.googleapis.com` where `123` is the
-     * project number.
+     *
+     * The `GenerateServiceIdentity` methods currently support projects, folders,
+     * organizations.
+     *
+     * Example parents would be:
+     * `projects/123/services/example.googleapis.com`
+     * `folders/123/services/example.googleapis.com`
+     * `organizations/123/services/example.googleapis.com`
      * </pre>
      *
      * <code>string parent = 1;</code>

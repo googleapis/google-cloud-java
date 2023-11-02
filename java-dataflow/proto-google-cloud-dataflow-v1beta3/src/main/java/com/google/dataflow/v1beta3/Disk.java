@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     return new Disk();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.EnvironmentProto
         .internal_static_google_dataflow_v1beta3_Disk_descriptor;
@@ -98,6 +93,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * must be a disk type appropriate to the project and zone in which
    * the workers will run.  If unknown or unspecified, the service
    * will attempt to choose a reasonable default.
+   *
    * For example, the standard persistent disk type is a resource name
    * typically ending in "pd-standard".  If SSD persistent disks are
    * available, the resource name typically ends with "pd-ssd".  The
@@ -105,9 +101,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * not by the Cloud Dataflow API; consult the Google Compute Engine
    * documentation for more information about determining the set of
    * available disk types for a particular project and zone.
+   *
    * Google Compute Engine Disk types are local to a particular
    * project in a particular zone, and so the resource name will
    * typically look something like this:
+   *
    * compute.googleapis.com/projects/project-id/zones/zone/diskTypes/pd-standard
    * </pre>
    *
@@ -135,6 +133,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * must be a disk type appropriate to the project and zone in which
    * the workers will run.  If unknown or unspecified, the service
    * will attempt to choose a reasonable default.
+   *
    * For example, the standard persistent disk type is a resource name
    * typically ending in "pd-standard".  If SSD persistent disks are
    * available, the resource name typically ends with "pd-ssd".  The
@@ -142,9 +141,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * not by the Cloud Dataflow API; consult the Google Compute Engine
    * documentation for more information about determining the set of
    * available disk types for a particular project and zone.
+   *
    * Google Compute Engine Disk types are local to a particular
    * project in a particular zone, and so the resource name will
    * typically look something like this:
+   *
    * compute.googleapis.com/projects/project-id/zones/zone/diskTypes/pd-standard
    * </pre>
    *
@@ -665,6 +666,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * must be a disk type appropriate to the project and zone in which
      * the workers will run.  If unknown or unspecified, the service
      * will attempt to choose a reasonable default.
+     *
      * For example, the standard persistent disk type is a resource name
      * typically ending in "pd-standard".  If SSD persistent disks are
      * available, the resource name typically ends with "pd-ssd".  The
@@ -672,9 +674,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * not by the Cloud Dataflow API; consult the Google Compute Engine
      * documentation for more information about determining the set of
      * available disk types for a particular project and zone.
+     *
      * Google Compute Engine Disk types are local to a particular
      * project in a particular zone, and so the resource name will
      * typically look something like this:
+     *
      * compute.googleapis.com/projects/project-id/zones/zone/diskTypes/pd-standard
      * </pre>
      *
@@ -701,6 +705,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * must be a disk type appropriate to the project and zone in which
      * the workers will run.  If unknown or unspecified, the service
      * will attempt to choose a reasonable default.
+     *
      * For example, the standard persistent disk type is a resource name
      * typically ending in "pd-standard".  If SSD persistent disks are
      * available, the resource name typically ends with "pd-ssd".  The
@@ -708,9 +713,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * not by the Cloud Dataflow API; consult the Google Compute Engine
      * documentation for more information about determining the set of
      * available disk types for a particular project and zone.
+     *
      * Google Compute Engine Disk types are local to a particular
      * project in a particular zone, and so the resource name will
      * typically look something like this:
+     *
      * compute.googleapis.com/projects/project-id/zones/zone/diskTypes/pd-standard
      * </pre>
      *
@@ -737,6 +744,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * must be a disk type appropriate to the project and zone in which
      * the workers will run.  If unknown or unspecified, the service
      * will attempt to choose a reasonable default.
+     *
      * For example, the standard persistent disk type is a resource name
      * typically ending in "pd-standard".  If SSD persistent disks are
      * available, the resource name typically ends with "pd-ssd".  The
@@ -744,9 +752,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * not by the Cloud Dataflow API; consult the Google Compute Engine
      * documentation for more information about determining the set of
      * available disk types for a particular project and zone.
+     *
      * Google Compute Engine Disk types are local to a particular
      * project in a particular zone, and so the resource name will
      * typically look something like this:
+     *
      * compute.googleapis.com/projects/project-id/zones/zone/diskTypes/pd-standard
      * </pre>
      *
@@ -772,6 +782,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * must be a disk type appropriate to the project and zone in which
      * the workers will run.  If unknown or unspecified, the service
      * will attempt to choose a reasonable default.
+     *
      * For example, the standard persistent disk type is a resource name
      * typically ending in "pd-standard".  If SSD persistent disks are
      * available, the resource name typically ends with "pd-ssd".  The
@@ -779,9 +790,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * not by the Cloud Dataflow API; consult the Google Compute Engine
      * documentation for more information about determining the set of
      * available disk types for a particular project and zone.
+     *
      * Google Compute Engine Disk types are local to a particular
      * project in a particular zone, and so the resource name will
      * typically look something like this:
+     *
      * compute.googleapis.com/projects/project-id/zones/zone/diskTypes/pd-standard
      * </pre>
      *
@@ -803,6 +816,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * must be a disk type appropriate to the project and zone in which
      * the workers will run.  If unknown or unspecified, the service
      * will attempt to choose a reasonable default.
+     *
      * For example, the standard persistent disk type is a resource name
      * typically ending in "pd-standard".  If SSD persistent disks are
      * available, the resource name typically ends with "pd-ssd".  The
@@ -810,9 +824,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * not by the Cloud Dataflow API; consult the Google Compute Engine
      * documentation for more information about determining the set of
      * available disk types for a particular project and zone.
+     *
      * Google Compute Engine Disk types are local to a particular
      * project in a particular zone, and so the resource name will
      * typically look something like this:
+     *
      * compute.googleapis.com/projects/project-id/zones/zone/diskTypes/pd-standard
      * </pre>
      *

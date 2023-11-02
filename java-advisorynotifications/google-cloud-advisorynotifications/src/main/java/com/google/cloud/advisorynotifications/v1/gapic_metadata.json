@@ -13,8 +13,14 @@
             "GetNotification": {
               "methods": ["getNotification", "getNotification", "getNotification", "getNotificationCallable"]
             },
+            "GetSettings": {
+              "methods": ["getSettings", "getSettings", "getSettings", "getSettingsCallable"]
+            },
             "ListNotifications": {
               "methods": ["listNotifications", "listNotifications", "listNotifications", "listNotificationsPagedCallable", "listNotificationsCallable"]
+            },
+            "UpdateSettings": {
+              "methods": ["updateSettings", "updateSettings", "updateSettingsCallable"]
             }
           }
         }

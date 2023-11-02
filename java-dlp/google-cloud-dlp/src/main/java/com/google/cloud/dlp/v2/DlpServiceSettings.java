@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.dlp.v2;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
@@ -38,6 +39,7 @@ import com.google.cloud.dlp.v2.stub.DlpServiceStubSettings;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
@@ -46,13 +48,16 @@ import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
@@ -66,6 +71,8 @@ import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
@@ -82,6 +89,7 @@ import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
@@ -257,6 +265,38 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
   /** Returns the object with the settings used for calls to activateJobTrigger. */
   public UnaryCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerSettings() {
     return ((DlpServiceStubSettings) getStubSettings()).activateJobTriggerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDiscoveryConfig. */
+  public UnaryCallSettings<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).createDiscoveryConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDiscoveryConfig. */
+  public UnaryCallSettings<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).updateDiscoveryConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDiscoveryConfig. */
+  public UnaryCallSettings<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).getDiscoveryConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDiscoveryConfigs. */
+  public PagedCallSettings<
+          ListDiscoveryConfigsRequest,
+          ListDiscoveryConfigsResponse,
+          ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).listDiscoveryConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDiscoveryConfig. */
+  public UnaryCallSettings<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).deleteDiscoveryConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to createDlpJob. */
@@ -574,6 +614,39 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
     public UnaryCallSettings.Builder<ActivateJobTriggerRequest, DlpJob>
         activateJobTriggerSettings() {
       return getStubSettingsBuilder().activateJobTriggerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDiscoveryConfig. */
+    public UnaryCallSettings.Builder<CreateDiscoveryConfigRequest, DiscoveryConfig>
+        createDiscoveryConfigSettings() {
+      return getStubSettingsBuilder().createDiscoveryConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDiscoveryConfig. */
+    public UnaryCallSettings.Builder<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+        updateDiscoveryConfigSettings() {
+      return getStubSettingsBuilder().updateDiscoveryConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDiscoveryConfig. */
+    public UnaryCallSettings.Builder<GetDiscoveryConfigRequest, DiscoveryConfig>
+        getDiscoveryConfigSettings() {
+      return getStubSettingsBuilder().getDiscoveryConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDiscoveryConfigs. */
+    public PagedCallSettings.Builder<
+            ListDiscoveryConfigsRequest,
+            ListDiscoveryConfigsResponse,
+            ListDiscoveryConfigsPagedResponse>
+        listDiscoveryConfigsSettings() {
+      return getStubSettingsBuilder().listDiscoveryConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDiscoveryConfig. */
+    public UnaryCallSettings.Builder<DeleteDiscoveryConfigRequest, Empty>
+        deleteDiscoveryConfigSettings() {
+      return getStubSettingsBuilder().deleteDiscoveryConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to createDlpJob. */

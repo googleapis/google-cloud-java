@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,26 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
+   * Cloud Spanner
+   * </pre>
+   *
+   * <code>CLOUD_SPANNER = 6;</code>
+   */
+  CLOUD_SPANNER(6),
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Bigtable
+   * </pre>
+   *
+   * <code>CLOUD_BIGTABLE = 7;</code>
+   */
+  CLOUD_BIGTABLE(7),
+  /**
+   *
+   *
+   * <pre>
    * Cloud Sql
    * </pre>
    *
@@ -98,6 +118,16 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LOOKER = 9;</code>
    */
   LOOKER(9),
+  /**
+   *
+   *
+   * <pre>
+   * Vertex AI
+   * </pre>
+   *
+   * <code>VERTEX_AI = 10;</code>
+   */
+  VERTEX_AI(10),
   UNRECOGNIZED(-1),
   ;
 
@@ -155,6 +185,26 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
+   * Cloud Spanner
+   * </pre>
+   *
+   * <code>CLOUD_SPANNER = 6;</code>
+   */
+  public static final int CLOUD_SPANNER_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Bigtable
+   * </pre>
+   *
+   * <code>CLOUD_BIGTABLE = 7;</code>
+   */
+  public static final int CLOUD_BIGTABLE_VALUE = 7;
+  /**
+   *
+   *
+   * <pre>
    * Cloud Sql
    * </pre>
    *
@@ -171,6 +221,16 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LOOKER = 9;</code>
    */
   public static final int LOOKER_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Vertex AI
+   * </pre>
+   *
+   * <code>VERTEX_AI = 10;</code>
+   */
+  public static final int VERTEX_AI_VALUE = 10;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -206,10 +266,16 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
         return DATAPROC_METASTORE;
       case 4:
         return DATAPLEX;
+      case 6:
+        return CLOUD_SPANNER;
+      case 7:
+        return CLOUD_BIGTABLE;
       case 8:
         return CLOUD_SQL;
       case 9:
         return LOOKER;
+      case 10:
+        return VERTEX_AI;
       default:
         return null;
     }

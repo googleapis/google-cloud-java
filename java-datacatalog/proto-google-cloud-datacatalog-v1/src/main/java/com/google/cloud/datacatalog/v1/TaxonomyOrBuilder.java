@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface TaxonomyOrBuilder
    *
    * <pre>
    * Output only. Resource name of this taxonomy in URL format.
+   *
    * Note: Policy tag manager generates unique taxonomy IDs.
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface TaxonomyOrBuilder
    *
    * <pre>
    * Output only. Resource name of this taxonomy in URL format.
+   *
    * Note: Policy tag manager generates unique taxonomy IDs.
    * </pre>
    *
@@ -55,9 +57,11 @@ public interface TaxonomyOrBuilder
    *
    * <pre>
    * Required. User-defined name of this taxonomy.
+   *
    * The name can't start or end with spaces, must contain only Unicode letters,
    * numbers, underscores, dashes, and spaces, and be at most 200 bytes long
    * when encoded in UTF-8.
+   *
    * The taxonomy display name must be unique within an organization.
    * </pre>
    *
@@ -71,9 +75,11 @@ public interface TaxonomyOrBuilder
    *
    * <pre>
    * Required. User-defined name of this taxonomy.
+   *
    * The name can't start or end with spaces, must contain only Unicode letters,
    * numbers, underscores, dashes, and spaces, and be at most 200 bytes long
    * when encoded in UTF-8.
+   *
    * The taxonomy display name must be unique within an organization.
    * </pre>
    *
@@ -88,6 +94,7 @@ public interface TaxonomyOrBuilder
    *
    * <pre>
    * Optional. Description of this taxonomy. If not set, defaults to empty.
+   *
    * The description must contain only Unicode characters, tabs, newlines,
    * carriage returns, and page breaks, and be at most 2000 bytes long when
    * encoded in UTF-8.
@@ -103,6 +110,7 @@ public interface TaxonomyOrBuilder
    *
    * <pre>
    * Optional. Description of this taxonomy. If not set, defaults to empty.
+   *
    * The description must contain only Unicode characters, tabs, newlines,
    * carriage returns, and page breaks, and be at most 2000 bytes long when
    * encoded in UTF-8.

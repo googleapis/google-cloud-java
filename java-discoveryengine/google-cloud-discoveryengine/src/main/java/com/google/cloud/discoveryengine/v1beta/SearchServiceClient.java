@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,11 +58,13 @@ import javax.annotation.Generated;
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
  *                   .toString())
  *           .setQuery("query107944136")
+ *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
  *           .setFilter("filter-1274492040")
  *           .setOrderBy("orderBy-1207110587")
+ *           .setUserInfo(UserInfo.newBuilder().build())
  *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
  *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
  *           .putAllParams(new HashMap<String, Value>())
@@ -70,6 +72,10 @@ import javax.annotation.Generated;
  *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
  *           .setUserPseudoId("userPseudoId-1155274652")
  *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+ *           .setEmbeddingSpec(SearchRequest.EmbeddingSpec.newBuilder().build())
+ *           .setRankingExpression("rankingExpression2110320494")
+ *           .setSafeSearch(true)
+ *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -222,11 +228,13 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setUserInfo(UserInfo.newBuilder().build())
    *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
    *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
    *           .putAllParams(new HashMap<String, Value>())
@@ -234,6 +242,10 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setUserPseudoId("userPseudoId-1155274652")
    *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setEmbeddingSpec(SearchRequest.EmbeddingSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
+   *           .setSafeSearch(true)
+   *           .putAllUserLabels(new HashMap<String, String>())
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -272,11 +284,13 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setUserInfo(UserInfo.newBuilder().build())
    *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
    *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
    *           .putAllParams(new HashMap<String, Value>())
@@ -284,6 +298,10 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setUserPseudoId("userPseudoId-1155274652")
    *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setEmbeddingSpec(SearchRequest.EmbeddingSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
+   *           .setSafeSearch(true)
+   *           .putAllUserLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -322,11 +340,13 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setUserInfo(UserInfo.newBuilder().build())
    *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
    *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
    *           .putAllParams(new HashMap<String, Value>())
@@ -334,6 +354,10 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
    *           .setUserPseudoId("userPseudoId-1155274652")
    *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+   *           .setEmbeddingSpec(SearchRequest.EmbeddingSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
+   *           .setSafeSearch(true)
+   *           .putAllUserLabels(new HashMap<String, String>())
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);

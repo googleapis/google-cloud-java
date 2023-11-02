@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,10 @@ public interface DeleteAwsClusterRequestOrBuilder
    * <pre>
    * Required. The resource name the
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] to delete.
+   *
    * `AwsCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -48,8 +50,10 @@ public interface DeleteAwsClusterRequestOrBuilder
    * <pre>
    * Required. The resource name the
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] to delete.
+   *
    * `AwsCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -83,6 +87,7 @@ public interface DeleteAwsClusterRequestOrBuilder
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource is not
    * found, the request will succeed but no action will be taken on the server
    * and a completed [Operation][google.longrunning.Operation] will be returned.
+   *
    * Useful for idempotent deletion.
    * </pre>
    *
@@ -98,7 +103,9 @@ public interface DeleteAwsClusterRequestOrBuilder
    * <pre>
    * The current etag of the
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+   *
    * Allows clients to perform deletions through optimistic concurrency control.
+   *
    * If the provided etag does not match the current etag of the cluster,
    * the request will fail and an ABORTED error will be returned.
    * </pre>
@@ -114,7 +121,9 @@ public interface DeleteAwsClusterRequestOrBuilder
    * <pre>
    * The current etag of the
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+   *
    * Allows clients to perform deletions through optimistic concurrency control.
+   *
    * If the provided etag does not match the current etag of the cluster,
    * the request will fail and an ABORTED error will be returned.
    * </pre>

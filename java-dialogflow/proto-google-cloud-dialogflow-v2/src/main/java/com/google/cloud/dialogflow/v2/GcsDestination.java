@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     return new GcsDestination();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.GcsProto
         .internal_static_google_cloud_dialogflow_v2_GcsDestination_descriptor;
@@ -77,7 +72,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The Google Cloud Storage URIs for the output. A URI is of the
    * form:
-   *   gs://bucket/object-prefix-or-name
+   * `gs://bucket/object-prefix-or-name`
    * Whether a prefix or name is used depends on the use case. The requesting
    * user must have "write-permission" to the bucket.
    * </pre>
@@ -104,7 +99,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The Google Cloud Storage URIs for the output. A URI is of the
    * form:
-   *   gs://bucket/object-prefix-or-name
+   * `gs://bucket/object-prefix-or-name`
    * Whether a prefix or name is used depends on the use case. The requesting
    * user must have "write-permission" to the bucket.
    * </pre>
@@ -474,7 +469,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Cloud Storage URIs for the output. A URI is of the
      * form:
-     *   gs://bucket/object-prefix-or-name
+     * `gs://bucket/object-prefix-or-name`
      * Whether a prefix or name is used depends on the use case. The requesting
      * user must have "write-permission" to the bucket.
      * </pre>
@@ -500,7 +495,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Cloud Storage URIs for the output. A URI is of the
      * form:
-     *   gs://bucket/object-prefix-or-name
+     * `gs://bucket/object-prefix-or-name`
      * Whether a prefix or name is used depends on the use case. The requesting
      * user must have "write-permission" to the bucket.
      * </pre>
@@ -526,7 +521,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Cloud Storage URIs for the output. A URI is of the
      * form:
-     *   gs://bucket/object-prefix-or-name
+     * `gs://bucket/object-prefix-or-name`
      * Whether a prefix or name is used depends on the use case. The requesting
      * user must have "write-permission" to the bucket.
      * </pre>
@@ -551,7 +546,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Cloud Storage URIs for the output. A URI is of the
      * form:
-     *   gs://bucket/object-prefix-or-name
+     * `gs://bucket/object-prefix-or-name`
      * Whether a prefix or name is used depends on the use case. The requesting
      * user must have "write-permission" to the bucket.
      * </pre>
@@ -572,7 +567,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google Cloud Storage URIs for the output. A URI is of the
      * form:
-     *   gs://bucket/object-prefix-or-name
+     * `gs://bucket/object-prefix-or-name`
      * Whether a prefix or name is used depends on the use case. The requesting
      * user must have "write-permission" to the bucket.
      * </pre>

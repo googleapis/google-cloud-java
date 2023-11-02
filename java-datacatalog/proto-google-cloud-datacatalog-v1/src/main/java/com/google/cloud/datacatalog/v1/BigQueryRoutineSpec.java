@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
   }
 
   private BigQueryRoutineSpec() {
-    importedLibraries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    importedLibraries_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BigQueryRoutineSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
   public static final int IMPORTED_LIBRARIES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList importedLibraries_;
+  private com.google.protobuf.LazyStringArrayList importedLibraries_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -335,8 +331,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      importedLibraries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      importedLibraries_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -364,7 +359,6 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datacatalog.v1.BigQueryRoutineSpec buildPartial() {
       com.google.cloud.datacatalog.v1.BigQueryRoutineSpec result =
           new com.google.cloud.datacatalog.v1.BigQueryRoutineSpec(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -372,17 +366,12 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.datacatalog.v1.BigQueryRoutineSpec result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        importedLibraries_ = importedLibraries_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.importedLibraries_ = importedLibraries_;
-    }
-
     private void buildPartial0(com.google.cloud.datacatalog.v1.BigQueryRoutineSpec result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        importedLibraries_.makeImmutable();
+        result.importedLibraries_ = importedLibraries_;
+      }
     }
 
     @java.lang.Override
@@ -434,7 +423,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
       if (!other.importedLibraries_.isEmpty()) {
         if (importedLibraries_.isEmpty()) {
           importedLibraries_ = other.importedLibraries_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureImportedLibrariesIsMutable();
           importedLibraries_.addAll(other.importedLibraries_);
@@ -493,14 +482,14 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList importedLibraries_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList importedLibraries_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureImportedLibrariesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!importedLibraries_.isModifiable()) {
         importedLibraries_ = new com.google.protobuf.LazyStringArrayList(importedLibraries_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -514,7 +503,8 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
      * @return A list containing the importedLibraries.
      */
     public com.google.protobuf.ProtocolStringList getImportedLibrariesList() {
-      return importedLibraries_.getUnmodifiableView();
+      importedLibraries_.makeImmutable();
+      return importedLibraries_;
     }
     /**
      *
@@ -579,6 +569,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
       }
       ensureImportedLibrariesIsMutable();
       importedLibraries_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -600,6 +591,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
       }
       ensureImportedLibrariesIsMutable();
       importedLibraries_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -618,6 +610,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
     public Builder addAllImportedLibraries(java.lang.Iterable<java.lang.String> values) {
       ensureImportedLibrariesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, importedLibraries_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +626,9 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearImportedLibraries() {
-      importedLibraries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      importedLibraries_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -657,6 +651,7 @@ public final class BigQueryRoutineSpec extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureImportedLibrariesIsMutable();
       importedLibraries_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

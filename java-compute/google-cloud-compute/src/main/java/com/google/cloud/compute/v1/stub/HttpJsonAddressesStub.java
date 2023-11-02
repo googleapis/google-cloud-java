@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressAggregatedList;
@@ -41,6 +42,7 @@ import com.google.cloud.compute.v1.DeleteAddressRequest;
 import com.google.cloud.compute.v1.GetAddressRequest;
 import com.google.cloud.compute.v1.InsertAddressRequest;
 import com.google.cloud.compute.v1.ListAddressesRequest;
+import com.google.cloud.compute.v1.MoveAddressRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.SetLabelsAddressRequest;
@@ -306,6 +308,62 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<MoveAddressRequest, Operation> moveMethodDescriptor =
+      ApiMethodDescriptor.<MoveAddressRequest, Operation>newBuilder()
+          .setFullMethodName("google.cloud.compute.v1.Addresses/Move")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<MoveAddressRequest>newBuilder()
+                  .setPath(
+                      "/compute/v1/projects/{project}/regions/{region}/addresses/{address}/move",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<MoveAddressRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "address", request.getAddress());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "region", request.getRegion());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<MoveAddressRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        }
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody(
+                                  "regionAddressesMoveRequestResource",
+                                  request.getRegionAddressesMoveRequestResource(),
+                                  false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (MoveAddressRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                opName.append(":").append(request.getRegion());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
+          .build();
+
   private static final ApiMethodDescriptor<SetLabelsAddressRequest, Operation>
       setLabelsMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsAddressRequest, Operation>newBuilder()
@@ -376,6 +434,8 @@ public class HttpJsonAddressesStub extends AddressesStub {
       insertOperationCallable;
   private final UnaryCallable<ListAddressesRequest, AddressList> listCallable;
   private final UnaryCallable<ListAddressesRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<MoveAddressRequest, Operation> moveCallable;
+  private final OperationCallable<MoveAddressRequest, Operation, Operation> moveOperationCallable;
   private final UnaryCallable<SetLabelsAddressRequest, Operation> setLabelsCallable;
   private final OperationCallable<SetLabelsAddressRequest, Operation, Operation>
       setLabelsOperationCallable;
@@ -428,31 +488,88 @@ public class HttpJsonAddressesStub extends AddressesStub {
             HttpJsonCallSettings.<AggregatedListAddressesRequest, AddressAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAddressRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteAddressRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("address", String.valueOf(request.getAddress()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetAddressRequest, Address> getTransportSettings =
         HttpJsonCallSettings.<GetAddressRequest, Address>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("address", String.valueOf(request.getAddress()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertAddressRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertAddressRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAddressesRequest, AddressList> listTransportSettings =
         HttpJsonCallSettings.<ListAddressesRequest, AddressList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<MoveAddressRequest, Operation> moveTransportSettings =
+        HttpJsonCallSettings.<MoveAddressRequest, Operation>newBuilder()
+            .setMethodDescriptor(moveMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("address", String.valueOf(request.getAddress()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetLabelsAddressRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsAddressRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
 
     this.aggregatedListCallable =
@@ -488,6 +605,15 @@ public class HttpJsonAddressesStub extends AddressesStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.moveCallable =
+        callableFactory.createUnaryCallable(
+            moveTransportSettings, settings.moveSettings(), clientContext);
+    this.moveOperationCallable =
+        callableFactory.createOperationCallable(
+            moveTransportSettings,
+            settings.moveOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setLabelsCallable =
         callableFactory.createUnaryCallable(
             setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
@@ -510,6 +636,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(moveMethodDescriptor);
     methodDescriptors.add(setLabelsMethodDescriptor);
     return methodDescriptors;
   }
@@ -559,6 +686,16 @@ public class HttpJsonAddressesStub extends AddressesStub {
   @Override
   public UnaryCallable<ListAddressesRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveAddressRequest, Operation> moveCallable() {
+    return moveCallable;
+  }
+
+  @Override
+  public OperationCallable<MoveAddressRequest, Operation, Operation> moveOperationCallable() {
+    return moveOperationCallable;
   }
 
   @Override

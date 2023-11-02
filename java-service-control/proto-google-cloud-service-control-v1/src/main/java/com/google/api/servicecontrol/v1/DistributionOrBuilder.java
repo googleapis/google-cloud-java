@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,12 +98,14 @@ public interface DistributionOrBuilder
    * <pre>
    * The number of samples in each histogram bucket. `bucket_counts` are
    * optional. If present, they must sum to the `count` value.
+   *
    * The buckets are defined below in `bucket_option`. There are N buckets.
    * `bucket_counts[0]` is the number of samples in the underflow bucket.
    * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
    * in each of the finite buckets. And `bucket_counts[N] is the number
    * of samples in the overflow bucket. See the comments of `bucket_option`
    * below for more details.
+   *
    * Any suffix of trailing zeros may be omitted.
    * </pre>
    *
@@ -118,12 +120,14 @@ public interface DistributionOrBuilder
    * <pre>
    * The number of samples in each histogram bucket. `bucket_counts` are
    * optional. If present, they must sum to the `count` value.
+   *
    * The buckets are defined below in `bucket_option`. There are N buckets.
    * `bucket_counts[0]` is the number of samples in the underflow bucket.
    * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
    * in each of the finite buckets. And `bucket_counts[N] is the number
    * of samples in the overflow bucket. See the comments of `bucket_option`
    * below for more details.
+   *
    * Any suffix of trailing zeros may be omitted.
    * </pre>
    *
@@ -138,12 +142,14 @@ public interface DistributionOrBuilder
    * <pre>
    * The number of samples in each histogram bucket. `bucket_counts` are
    * optional. If present, they must sum to the `count` value.
+   *
    * The buckets are defined below in `bucket_option`. There are N buckets.
    * `bucket_counts[0]` is the number of samples in the underflow bucket.
    * `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
    * in each of the finite buckets. And `bucket_counts[N] is the number
    * of samples in the overflow bucket. See the comments of `bucket_option`
    * below for more details.
+   *
    * Any suffix of trailing zeros may be omitted.
    * </pre>
    *
@@ -316,5 +322,5 @@ public interface DistributionOrBuilder
    */
   com.google.api.Distribution.ExemplarOrBuilder getExemplarsOrBuilder(int index);
 
-  public com.google.api.servicecontrol.v1.Distribution.BucketOptionCase getBucketOptionCase();
+  com.google.api.servicecontrol.v1.Distribution.BucketOptionCase getBucketOptionCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest;
 import com.google.cloud.compute.v1.AggregatedListDisksRequest;
+import com.google.cloud.compute.v1.BulkInsertDiskRequest;
 import com.google.cloud.compute.v1.CreateSnapshotDiskRequest;
 import com.google.cloud.compute.v1.DeleteDiskRequest;
 import com.google.cloud.compute.v1.Disk;
@@ -39,6 +40,9 @@ import com.google.cloud.compute.v1.RemoveResourcePoliciesDiskRequest;
 import com.google.cloud.compute.v1.ResizeDiskRequest;
 import com.google.cloud.compute.v1.SetIamPolicyDiskRequest;
 import com.google.cloud.compute.v1.SetLabelsDiskRequest;
+import com.google.cloud.compute.v1.StartAsyncReplicationDiskRequest;
+import com.google.cloud.compute.v1.StopAsyncReplicationDiskRequest;
+import com.google.cloud.compute.v1.StopGroupAsyncReplicationDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateDiskRequest;
@@ -70,6 +74,15 @@ public abstract class DisksStub implements BackgroundResource {
 
   public UnaryCallable<AggregatedListDisksRequest, DiskAggregatedList> aggregatedListCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
+  }
+
+  public OperationCallable<BulkInsertDiskRequest, Operation, Operation>
+      bulkInsertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkInsertOperationCallable()");
+  }
+
+  public UnaryCallable<BulkInsertDiskRequest, Operation> bulkInsertCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkInsertCallable()");
   }
 
   public OperationCallable<CreateSnapshotDiskRequest, Operation, Operation>
@@ -143,6 +156,38 @@ public abstract class DisksStub implements BackgroundResource {
 
   public UnaryCallable<SetLabelsDiskRequest, Operation> setLabelsCallable() {
     throw new UnsupportedOperationException("Not implemented: setLabelsCallable()");
+  }
+
+  public OperationCallable<StartAsyncReplicationDiskRequest, Operation, Operation>
+      startAsyncReplicationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: startAsyncReplicationOperationCallable()");
+  }
+
+  public UnaryCallable<StartAsyncReplicationDiskRequest, Operation>
+      startAsyncReplicationCallable() {
+    throw new UnsupportedOperationException("Not implemented: startAsyncReplicationCallable()");
+  }
+
+  public OperationCallable<StopAsyncReplicationDiskRequest, Operation, Operation>
+      stopAsyncReplicationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: stopAsyncReplicationOperationCallable()");
+  }
+
+  public UnaryCallable<StopAsyncReplicationDiskRequest, Operation> stopAsyncReplicationCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopAsyncReplicationCallable()");
+  }
+
+  public OperationCallable<StopGroupAsyncReplicationDiskRequest, Operation, Operation>
+      stopGroupAsyncReplicationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: stopGroupAsyncReplicationOperationCallable()");
+  }
+
+  public UnaryCallable<StopGroupAsyncReplicationDiskRequest, Operation>
+      stopGroupAsyncReplicationCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopGroupAsyncReplicationCallable()");
   }
 
   public UnaryCallable<TestIamPermissionsDiskRequest, TestPermissionsResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,4 +73,66 @@ public interface AdditionalPodRangesConfigOrBuilder
    * @return The bytes of the podRangeNames at the given index.
    */
   com.google.protobuf.ByteString getPodRangeNamesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.container.v1beta1.RangeInfo> getPodRangeInfoList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1beta1.RangeInfo getPodRangeInfo(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPodRangeInfoCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.container.v1beta1.RangeInfoOrBuilder>
+      getPodRangeInfoOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1beta1.RangeInfoOrBuilder getPodRangeInfoOrBuilder(int index);
 }

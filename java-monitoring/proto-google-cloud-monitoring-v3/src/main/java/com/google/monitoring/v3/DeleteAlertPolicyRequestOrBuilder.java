@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface DeleteAlertPolicyRequestOrBuilder
    *
    * <pre>
    * Required. The alerting policy to delete. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
+   *
    * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
    * </pre>
    *
@@ -44,7 +46,9 @@ public interface DeleteAlertPolicyRequestOrBuilder
    *
    * <pre>
    * Required. The alerting policy to delete. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
+   *
    * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
    * </pre>
    *

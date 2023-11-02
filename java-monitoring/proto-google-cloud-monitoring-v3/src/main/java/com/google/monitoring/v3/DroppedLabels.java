@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ package com.google.monitoring.v3;
  * A set of (label, value) pairs that were removed from a Distribution
  * time series during aggregation and then added as an attachment to a
  * Distribution.Exemplar.
+ *
  * The full label set for the exemplars is constructed by using the dropped
  * pairs in combination with the label values that remain on the aggregated
  * Distribution time series. The constructed full label set can be used to
@@ -32,6 +33,7 @@ package com.google.monitoring.v3;
  * contributing to a long-tail. However, with dropped labels, the storage
  * requirements are reduced because only the aggregated distribution values for
  * a large group of time series are stored.
+ *
  * Note that there are no guarantees on ordering of the labels from
  * exemplar-to-exemplar and from distribution-to-distribution in the same
  * stream, and there may be duplicates.  It is up to clients to resolve any
@@ -56,11 +58,6 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DroppedLabels();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -364,6 +361,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
    * A set of (label, value) pairs that were removed from a Distribution
    * time series during aggregation and then added as an attachment to a
    * Distribution.Exemplar.
+   *
    * The full label set for the exemplars is constructed by using the dropped
    * pairs in combination with the label values that remain on the aggregated
    * Distribution time series. The constructed full label set can be used to
@@ -371,6 +369,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
    * contributing to a long-tail. However, with dropped labels, the storage
    * requirements are reduced because only the aggregated distribution values for
    * a large group of time series are stored.
+   *
    * Note that there are no guarantees on ordering of the labels from
    * exemplar-to-exemplar and from distribution-to-distribution in the same
    * stream, and there may be duplicates.  It is up to clients to resolve any

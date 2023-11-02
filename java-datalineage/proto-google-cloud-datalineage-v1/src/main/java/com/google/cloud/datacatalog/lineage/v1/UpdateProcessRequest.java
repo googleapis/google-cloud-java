@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
     return new UpdateProcessRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.lineage.v1.LineageProto
         .internal_static_google_cloud_datacatalog_lineage_v1_UpdateProcessRequest_descriptor;
@@ -73,6 +68,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The lineage process to update.
+   *
    * The process's `name` field is used to identify the process to update.
    * </pre>
    *
@@ -91,6 +87,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The lineage process to update.
+   *
    * The process's `name` field is used to identify the process to update.
    * </pre>
    *
@@ -111,6 +108,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The lineage process to update.
+   *
    * The process's `name` field is used to identify the process to update.
    * </pre>
    *
@@ -610,6 +608,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The lineage process to update.
+     *
      * The process's `name` field is used to identify the process to update.
      * </pre>
      *
@@ -627,6 +626,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The lineage process to update.
+     *
      * The process's `name` field is used to identify the process to update.
      * </pre>
      *
@@ -650,6 +650,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The lineage process to update.
+     *
      * The process's `name` field is used to identify the process to update.
      * </pre>
      *
@@ -675,6 +676,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The lineage process to update.
+     *
      * The process's `name` field is used to identify the process to update.
      * </pre>
      *
@@ -698,6 +700,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The lineage process to update.
+     *
      * The process's `name` field is used to identify the process to update.
      * </pre>
      *
@@ -726,6 +729,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The lineage process to update.
+     *
      * The process's `name` field is used to identify the process to update.
      * </pre>
      *
@@ -748,6 +752,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The lineage process to update.
+     *
      * The process's `name` field is used to identify the process to update.
      * </pre>
      *
@@ -765,6 +770,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The lineage process to update.
+     *
      * The process's `name` field is used to identify the process to update.
      * </pre>
      *
@@ -786,6 +792,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The lineage process to update.
+     *
      * The process's `name` field is used to identify the process to update.
      * </pre>
      *

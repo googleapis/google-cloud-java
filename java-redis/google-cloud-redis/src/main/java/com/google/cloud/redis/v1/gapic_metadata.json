@@ -28,11 +28,17 @@
             "GetInstanceAuthString": {
               "methods": ["getInstanceAuthString", "getInstanceAuthString", "getInstanceAuthString", "getInstanceAuthStringCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ImportInstance": {
               "methods": ["importInstanceAsync", "importInstanceAsync", "importInstanceOperationCallable", "importInstanceCallable"]
             },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "RescheduleMaintenance": {
               "methods": ["rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceOperationCallable", "rescheduleMaintenanceCallable"]

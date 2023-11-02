@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,7 +147,9 @@ public interface ProductEventDetailOrBuilder
    *
    * <pre>
    * The main product details related to the event.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `checkout-start`
@@ -156,11 +158,15 @@ public interface ProductEventDetailOrBuilder
    * * `refund`
    * * `remove-from-cart`
    * * `remove-from-list`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_details' should be set for
    *   this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `category-page-view`
    * * `home-page-view`
    * * `search`
@@ -176,7 +182,9 @@ public interface ProductEventDetailOrBuilder
    *
    * <pre>
    * The main product details related to the event.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `checkout-start`
@@ -185,11 +193,15 @@ public interface ProductEventDetailOrBuilder
    * * `refund`
    * * `remove-from-cart`
    * * `remove-from-list`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_details' should be set for
    *   this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `category-page-view`
    * * `home-page-view`
    * * `search`
@@ -204,7 +216,9 @@ public interface ProductEventDetailOrBuilder
    *
    * <pre>
    * The main product details related to the event.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `checkout-start`
@@ -213,11 +227,15 @@ public interface ProductEventDetailOrBuilder
    * * `refund`
    * * `remove-from-cart`
    * * `remove-from-list`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_details' should be set for
    *   this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `category-page-view`
    * * `home-page-view`
    * * `search`
@@ -232,7 +250,9 @@ public interface ProductEventDetailOrBuilder
    *
    * <pre>
    * The main product details related to the event.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `checkout-start`
@@ -241,11 +261,15 @@ public interface ProductEventDetailOrBuilder
    * * `refund`
    * * `remove-from-cart`
    * * `remove-from-list`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_details' should be set for
    *   this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `category-page-view`
    * * `home-page-view`
    * * `search`
@@ -261,7 +285,9 @@ public interface ProductEventDetailOrBuilder
    *
    * <pre>
    * The main product details related to the event.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `checkout-start`
@@ -270,11 +296,15 @@ public interface ProductEventDetailOrBuilder
    * * `refund`
    * * `remove-from-cart`
    * * `remove-from-list`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_details' should be set for
    *   this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `category-page-view`
    * * `home-page-view`
    * * `search`
@@ -321,6 +351,7 @@ public interface ProductEventDetailOrBuilder
    * <pre>
    * Optional. The id or name of the associated shopping cart. This id is used
    * to associate multiple items added or present in the cart before purchase.
+   *
    * This can only be set for `add-to-cart`, `remove-from-cart`,
    * `checkout-start`, `purchase-complete`, or `shopping-cart-page-view` events.
    * </pre>
@@ -336,6 +367,7 @@ public interface ProductEventDetailOrBuilder
    * <pre>
    * Optional. The id or name of the associated shopping cart. This id is used
    * to associate multiple items added or present in the cart before purchase.
+   *
    * This can only be set for `add-to-cart`, `remove-from-cart`,
    * `checkout-start`, `purchase-complete`, or `shopping-cart-page-view` events.
    * </pre>

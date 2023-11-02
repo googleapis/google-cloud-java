@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Device();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -838,6 +833,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * **Beta Feature**
+   *
    * The logging verbosity for device activity. If unspecified,
    * DeviceRegistry.log_level will be used.
    * </pre>
@@ -855,6 +851,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * **Beta Feature**
+   *
    * The logging verbosity for device activity. If unspecified,
    * DeviceRegistry.log_level will be used.
    * </pre>
@@ -902,10 +899,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
    * information for the device.
+   *
    * Keys must conform to the regular expression [a-zA-Z][a-zA-Z0-9-_.+~%]+ and
    * be less than 128 bytes in length.
+   *
    * Values are free-form strings. Each value must be less than or equal to 32
    * KB in size.
+   *
    * The total size of all keys and values must be less than 256 KB, and the
    * maximum number of key-value pairs is 500.
    * </pre>
@@ -932,10 +932,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
    * information for the device.
+   *
    * Keys must conform to the regular expression [a-zA-Z][a-zA-Z0-9-_.+~%]+ and
    * be less than 128 bytes in length.
+   *
    * Values are free-form strings. Each value must be less than or equal to 32
    * KB in size.
+   *
    * The total size of all keys and values must be less than 256 KB, and the
    * maximum number of key-value pairs is 500.
    * </pre>
@@ -953,10 +956,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
    * information for the device.
+   *
    * Keys must conform to the regular expression [a-zA-Z][a-zA-Z0-9-_.+~%]+ and
    * be less than 128 bytes in length.
+   *
    * Values are free-form strings. Each value must be less than or equal to 32
    * KB in size.
+   *
    * The total size of all keys and values must be less than 256 KB, and the
    * maximum number of key-value pairs is 500.
    * </pre>
@@ -981,10 +987,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
    * information for the device.
+   *
    * Keys must conform to the regular expression [a-zA-Z][a-zA-Z0-9-_.+~%]+ and
    * be less than 128 bytes in length.
+   *
    * Values are free-form strings. Each value must be less than or equal to 32
    * KB in size.
+   *
    * The total size of all keys and values must be less than 256 KB, and the
    * maximum number of key-value pairs is 500.
    * </pre>
@@ -4570,6 +4579,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The logging verbosity for device activity. If unspecified,
      * DeviceRegistry.log_level will be used.
      * </pre>
@@ -4587,6 +4597,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The logging verbosity for device activity. If unspecified,
      * DeviceRegistry.log_level will be used.
      * </pre>
@@ -4607,6 +4618,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The logging verbosity for device activity. If unspecified,
      * DeviceRegistry.log_level will be used.
      * </pre>
@@ -4626,6 +4638,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The logging verbosity for device activity. If unspecified,
      * DeviceRegistry.log_level will be used.
      * </pre>
@@ -4649,6 +4662,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The logging verbosity for device activity. If unspecified,
      * DeviceRegistry.log_level will be used.
      * </pre>
@@ -4697,10 +4711,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
      * information for the device.
+     *
      * Keys must conform to the regular expression [a-zA-Z][a-zA-Z0-9-_.+~%]+ and
      * be less than 128 bytes in length.
+     *
      * Values are free-form strings. Each value must be less than or equal to 32
      * KB in size.
+     *
      * The total size of all keys and values must be less than 256 KB, and the
      * maximum number of key-value pairs is 500.
      * </pre>
@@ -4727,10 +4744,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
      * information for the device.
+     *
      * Keys must conform to the regular expression [a-zA-Z][a-zA-Z0-9-_.+~%]+ and
      * be less than 128 bytes in length.
+     *
      * Values are free-form strings. Each value must be less than or equal to 32
      * KB in size.
+     *
      * The total size of all keys and values must be less than 256 KB, and the
      * maximum number of key-value pairs is 500.
      * </pre>
@@ -4748,10 +4768,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
      * information for the device.
+     *
      * Keys must conform to the regular expression [a-zA-Z][a-zA-Z0-9-_.+~%]+ and
      * be less than 128 bytes in length.
+     *
      * Values are free-form strings. Each value must be less than or equal to 32
      * KB in size.
+     *
      * The total size of all keys and values must be less than 256 KB, and the
      * maximum number of key-value pairs is 500.
      * </pre>
@@ -4776,10 +4799,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
      * information for the device.
+     *
      * Keys must conform to the regular expression [a-zA-Z][a-zA-Z0-9-_.+~%]+ and
      * be less than 128 bytes in length.
+     *
      * Values are free-form strings. Each value must be less than or equal to 32
      * KB in size.
+     *
      * The total size of all keys and values must be less than 256 KB, and the
      * maximum number of key-value pairs is 500.
      * </pre>
@@ -4810,10 +4836,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
      * information for the device.
+     *
      * Keys must conform to the regular expression [a-zA-Z][a-zA-Z0-9-_.+~%]+ and
      * be less than 128 bytes in length.
+     *
      * Values are free-form strings. Each value must be less than or equal to 32
      * KB in size.
+     *
      * The total size of all keys and values must be less than 256 KB, and the
      * maximum number of key-value pairs is 500.
      * </pre>
@@ -4840,10 +4869,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
      * information for the device.
+     *
      * Keys must conform to the regular expression [a-zA-Z][a-zA-Z0-9-_.+~%]+ and
      * be less than 128 bytes in length.
+     *
      * Values are free-form strings. Each value must be less than or equal to 32
      * KB in size.
+     *
      * The total size of all keys and values must be less than 256 KB, and the
      * maximum number of key-value pairs is 500.
      * </pre>
@@ -4868,10 +4900,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
      * information for the device.
+     *
      * Keys must conform to the regular expression [a-zA-Z][a-zA-Z0-9-_.+~%]+ and
      * be less than 128 bytes in length.
+     *
      * Values are free-form strings. Each value must be less than or equal to 32
      * KB in size.
+     *
      * The total size of all keys and values must be less than 256 KB, and the
      * maximum number of key-value pairs is 500.
      * </pre>

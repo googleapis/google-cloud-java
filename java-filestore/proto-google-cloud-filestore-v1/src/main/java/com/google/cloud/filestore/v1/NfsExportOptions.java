@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
   }
 
   private NfsExportOptions() {
-    ipRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ipRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     accessMode_ = 0;
     squashMode_ = 0;
   }
@@ -47,11 +47,6 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NfsExportOptions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -386,7 +381,8 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
   public static final int IP_RANGES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ipRanges_;
+  private com.google.protobuf.LazyStringArrayList ipRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -847,8 +843,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      ipRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      ipRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       accessMode_ = 0;
       squashMode_ = 0;
       anonUid_ = 0L;
@@ -880,7 +875,6 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.filestore.v1.NfsExportOptions buildPartial() {
       com.google.cloud.filestore.v1.NfsExportOptions result =
           new com.google.cloud.filestore.v1.NfsExportOptions(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -888,16 +882,12 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.filestore.v1.NfsExportOptions result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        ipRanges_ = ipRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.ipRanges_ = ipRanges_;
-    }
-
     private void buildPartial0(com.google.cloud.filestore.v1.NfsExportOptions result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        ipRanges_.makeImmutable();
+        result.ipRanges_ = ipRanges_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.accessMode_ = accessMode_;
       }
@@ -960,7 +950,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       if (!other.ipRanges_.isEmpty()) {
         if (ipRanges_.isEmpty()) {
           ipRanges_ = other.ipRanges_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureIpRangesIsMutable();
           ipRanges_.addAll(other.ipRanges_);
@@ -1055,14 +1045,14 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList ipRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ipRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!ipRanges_.isModifiable()) {
         ipRanges_ = new com.google.protobuf.LazyStringArrayList(ipRanges_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1083,7 +1073,8 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      * @return A list containing the ipRanges.
      */
     public com.google.protobuf.ProtocolStringList getIpRangesList() {
-      return ipRanges_.getUnmodifiableView();
+      ipRanges_.makeImmutable();
+      return ipRanges_;
     }
     /**
      *
@@ -1176,6 +1167,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       }
       ensureIpRangesIsMutable();
       ipRanges_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1204,6 +1196,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       }
       ensureIpRangesIsMutable();
       ipRanges_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1229,6 +1222,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     public Builder addAllIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ipRanges_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1251,8 +1245,9 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIpRanges() {
-      ipRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ipRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1282,6 +1277,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureIpRangesIsMutable();
       ipRanges_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

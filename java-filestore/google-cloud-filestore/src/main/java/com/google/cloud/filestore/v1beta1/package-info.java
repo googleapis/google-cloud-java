@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,8 +38,8 @@
  *       resources of the form: `/projects/{project_id}/locations/{location_id}/backup/{backup_id}`
  * </ul>
  *
- * <p>Note that location_id can represent a GCP `zone` or `region` depending on the resource. for
- * example: A zonal Filestore instance:
+ * <p>Note that location_id can represent a Google Cloud `zone` or `region` depending on the
+ * resource. for example: A zonal Filestore instance:
  *
  * <ul>
  *   <li>`projects/my-project/locations/us-central1-c/instances/my-basic-tier-filer` A regional

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,17 +40,13 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
   private UrlRewrite() {
     hostRewrite_ = "";
     pathPrefixRewrite_ = "";
+    pathTemplateRewrite_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UrlRewrite();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -201,6 +197,72 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PATH_TEMPLATE_REWRITE_FIELD_NUMBER = 423409569;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pathTemplateRewrite_ = "";
+  /**
+   *
+   *
+   * <pre>
+   *  If specified, the pattern rewrites the URL path (based on the :path header) using the HTTP template syntax. A corresponding path_template_match must be specified. Any template variables must exist in the path_template_match field. - -At least one variable must be specified in the path_template_match field - You can omit variables from the rewritten URL - The * and ** operators cannot be matched unless they have a corresponding variable name - e.g. {format=*} or {var=**}. For example, a path_template_match of /static/{format=**} could be rewritten as /static/content/{format} to prefix /content to the URL. Variables can also be re-ordered in a rewrite, so that /{country}/{format}/{suffix=**} can be rewritten as /content/{format}/{country}/{suffix}. At least one non-empty routeRules[].matchRules[].path_template_match is required. Only one of path_prefix_rewrite or path_template_rewrite may be specified.
+   * </pre>
+   *
+   * <code>optional string path_template_rewrite = 423409569;</code>
+   *
+   * @return Whether the pathTemplateRewrite field is set.
+   */
+  @java.lang.Override
+  public boolean hasPathTemplateRewrite() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   *  If specified, the pattern rewrites the URL path (based on the :path header) using the HTTP template syntax. A corresponding path_template_match must be specified. Any template variables must exist in the path_template_match field. - -At least one variable must be specified in the path_template_match field - You can omit variables from the rewritten URL - The * and ** operators cannot be matched unless they have a corresponding variable name - e.g. {format=*} or {var=**}. For example, a path_template_match of /static/{format=**} could be rewritten as /static/content/{format} to prefix /content to the URL. Variables can also be re-ordered in a rewrite, so that /{country}/{format}/{suffix=**} can be rewritten as /content/{format}/{country}/{suffix}. At least one non-empty routeRules[].matchRules[].path_template_match is required. Only one of path_prefix_rewrite or path_template_rewrite may be specified.
+   * </pre>
+   *
+   * <code>optional string path_template_rewrite = 423409569;</code>
+   *
+   * @return The pathTemplateRewrite.
+   */
+  @java.lang.Override
+  public java.lang.String getPathTemplateRewrite() {
+    java.lang.Object ref = pathTemplateRewrite_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pathTemplateRewrite_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   *  If specified, the pattern rewrites the URL path (based on the :path header) using the HTTP template syntax. A corresponding path_template_match must be specified. Any template variables must exist in the path_template_match field. - -At least one variable must be specified in the path_template_match field - You can omit variables from the rewritten URL - The * and ** operators cannot be matched unless they have a corresponding variable name - e.g. {format=*} or {var=**}. For example, a path_template_match of /static/{format=**} could be rewritten as /static/content/{format} to prefix /content to the URL. Variables can also be re-ordered in a rewrite, so that /{country}/{format}/{suffix=**} can be rewritten as /content/{format}/{country}/{suffix}. At least one non-empty routeRules[].matchRules[].path_template_match is required. Only one of path_prefix_rewrite or path_template_rewrite may be specified.
+   * </pre>
+   *
+   * <code>optional string path_template_rewrite = 423409569;</code>
+   *
+   * @return The bytes for pathTemplateRewrite.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPathTemplateRewriteBytes() {
+    java.lang.Object ref = pathTemplateRewrite_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pathTemplateRewrite_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -221,6 +283,9 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 159819253, hostRewrite_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 423409569, pathTemplateRewrite_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -236,6 +301,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(159819253, hostRewrite_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(423409569, pathTemplateRewrite_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -260,6 +329,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     if (hasPathPrefixRewrite()) {
       if (!getPathPrefixRewrite().equals(other.getPathPrefixRewrite())) return false;
     }
+    if (hasPathTemplateRewrite() != other.hasPathTemplateRewrite()) return false;
+    if (hasPathTemplateRewrite()) {
+      if (!getPathTemplateRewrite().equals(other.getPathTemplateRewrite())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -278,6 +351,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
     if (hasPathPrefixRewrite()) {
       hash = (37 * hash) + PATH_PREFIX_REWRITE_FIELD_NUMBER;
       hash = (53 * hash) + getPathPrefixRewrite().hashCode();
+    }
+    if (hasPathTemplateRewrite()) {
+      hash = (37 * hash) + PATH_TEMPLATE_REWRITE_FIELD_NUMBER;
+      hash = (53 * hash) + getPathTemplateRewrite().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -420,6 +497,7 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       hostRewrite_ = "";
       pathPrefixRewrite_ = "";
+      pathTemplateRewrite_ = "";
       return this;
     }
 
@@ -464,6 +542,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.pathPrefixRewrite_ = pathPrefixRewrite_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pathTemplateRewrite_ = pathTemplateRewrite_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -523,6 +605,11 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasPathTemplateRewrite()) {
+        pathTemplateRewrite_ = other.pathTemplateRewrite_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -561,6 +648,12 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 1278554026
+            case -907690742:
+              {
+                pathTemplateRewrite_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -907690742
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -816,6 +909,126 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       pathPrefixRewrite_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pathTemplateRewrite_ = "";
+    /**
+     *
+     *
+     * <pre>
+     *  If specified, the pattern rewrites the URL path (based on the :path header) using the HTTP template syntax. A corresponding path_template_match must be specified. Any template variables must exist in the path_template_match field. - -At least one variable must be specified in the path_template_match field - You can omit variables from the rewritten URL - The * and ** operators cannot be matched unless they have a corresponding variable name - e.g. {format=*} or {var=**}. For example, a path_template_match of /static/{format=**} could be rewritten as /static/content/{format} to prefix /content to the URL. Variables can also be re-ordered in a rewrite, so that /{country}/{format}/{suffix=**} can be rewritten as /content/{format}/{country}/{suffix}. At least one non-empty routeRules[].matchRules[].path_template_match is required. Only one of path_prefix_rewrite or path_template_rewrite may be specified.
+     * </pre>
+     *
+     * <code>optional string path_template_rewrite = 423409569;</code>
+     *
+     * @return Whether the pathTemplateRewrite field is set.
+     */
+    public boolean hasPathTemplateRewrite() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     *  If specified, the pattern rewrites the URL path (based on the :path header) using the HTTP template syntax. A corresponding path_template_match must be specified. Any template variables must exist in the path_template_match field. - -At least one variable must be specified in the path_template_match field - You can omit variables from the rewritten URL - The * and ** operators cannot be matched unless they have a corresponding variable name - e.g. {format=*} or {var=**}. For example, a path_template_match of /static/{format=**} could be rewritten as /static/content/{format} to prefix /content to the URL. Variables can also be re-ordered in a rewrite, so that /{country}/{format}/{suffix=**} can be rewritten as /content/{format}/{country}/{suffix}. At least one non-empty routeRules[].matchRules[].path_template_match is required. Only one of path_prefix_rewrite or path_template_rewrite may be specified.
+     * </pre>
+     *
+     * <code>optional string path_template_rewrite = 423409569;</code>
+     *
+     * @return The pathTemplateRewrite.
+     */
+    public java.lang.String getPathTemplateRewrite() {
+      java.lang.Object ref = pathTemplateRewrite_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pathTemplateRewrite_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     *  If specified, the pattern rewrites the URL path (based on the :path header) using the HTTP template syntax. A corresponding path_template_match must be specified. Any template variables must exist in the path_template_match field. - -At least one variable must be specified in the path_template_match field - You can omit variables from the rewritten URL - The * and ** operators cannot be matched unless they have a corresponding variable name - e.g. {format=*} or {var=**}. For example, a path_template_match of /static/{format=**} could be rewritten as /static/content/{format} to prefix /content to the URL. Variables can also be re-ordered in a rewrite, so that /{country}/{format}/{suffix=**} can be rewritten as /content/{format}/{country}/{suffix}. At least one non-empty routeRules[].matchRules[].path_template_match is required. Only one of path_prefix_rewrite or path_template_rewrite may be specified.
+     * </pre>
+     *
+     * <code>optional string path_template_rewrite = 423409569;</code>
+     *
+     * @return The bytes for pathTemplateRewrite.
+     */
+    public com.google.protobuf.ByteString getPathTemplateRewriteBytes() {
+      java.lang.Object ref = pathTemplateRewrite_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pathTemplateRewrite_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     *  If specified, the pattern rewrites the URL path (based on the :path header) using the HTTP template syntax. A corresponding path_template_match must be specified. Any template variables must exist in the path_template_match field. - -At least one variable must be specified in the path_template_match field - You can omit variables from the rewritten URL - The * and ** operators cannot be matched unless they have a corresponding variable name - e.g. {format=*} or {var=**}. For example, a path_template_match of /static/{format=**} could be rewritten as /static/content/{format} to prefix /content to the URL. Variables can also be re-ordered in a rewrite, so that /{country}/{format}/{suffix=**} can be rewritten as /content/{format}/{country}/{suffix}. At least one non-empty routeRules[].matchRules[].path_template_match is required. Only one of path_prefix_rewrite or path_template_rewrite may be specified.
+     * </pre>
+     *
+     * <code>optional string path_template_rewrite = 423409569;</code>
+     *
+     * @param value The pathTemplateRewrite to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPathTemplateRewrite(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pathTemplateRewrite_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     *  If specified, the pattern rewrites the URL path (based on the :path header) using the HTTP template syntax. A corresponding path_template_match must be specified. Any template variables must exist in the path_template_match field. - -At least one variable must be specified in the path_template_match field - You can omit variables from the rewritten URL - The * and ** operators cannot be matched unless they have a corresponding variable name - e.g. {format=*} or {var=**}. For example, a path_template_match of /static/{format=**} could be rewritten as /static/content/{format} to prefix /content to the URL. Variables can also be re-ordered in a rewrite, so that /{country}/{format}/{suffix=**} can be rewritten as /content/{format}/{country}/{suffix}. At least one non-empty routeRules[].matchRules[].path_template_match is required. Only one of path_prefix_rewrite or path_template_rewrite may be specified.
+     * </pre>
+     *
+     * <code>optional string path_template_rewrite = 423409569;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPathTemplateRewrite() {
+      pathTemplateRewrite_ = getDefaultInstance().getPathTemplateRewrite();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     *  If specified, the pattern rewrites the URL path (based on the :path header) using the HTTP template syntax. A corresponding path_template_match must be specified. Any template variables must exist in the path_template_match field. - -At least one variable must be specified in the path_template_match field - You can omit variables from the rewritten URL - The * and ** operators cannot be matched unless they have a corresponding variable name - e.g. {format=*} or {var=**}. For example, a path_template_match of /static/{format=**} could be rewritten as /static/content/{format} to prefix /content to the URL. Variables can also be re-ordered in a rewrite, so that /{country}/{format}/{suffix=**} can be rewritten as /content/{format}/{country}/{suffix}. At least one non-empty routeRules[].matchRules[].path_template_match is required. Only one of path_prefix_rewrite or path_template_rewrite may be specified.
+     * </pre>
+     *
+     * <code>optional string path_template_rewrite = 423409569;</code>
+     *
+     * @param value The bytes for pathTemplateRewrite to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPathTemplateRewriteBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pathTemplateRewrite_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

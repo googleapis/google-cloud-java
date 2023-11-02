@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of tenant the completion is performed within.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/foo/tenants/bar".
    * </pre>
@@ -44,6 +45,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of tenant the completion is performed within.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/foo/tenants/bar".
    * </pre>
@@ -61,6 +63,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * Required. The query used to generate suggestions.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -74,6 +77,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * Required. The query used to generate suggestions.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -91,6 +95,7 @@ public interface CompleteQueryRequestOrBuilder
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -107,6 +112,7 @@ public interface CompleteQueryRequestOrBuilder
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -123,6 +129,7 @@ public interface CompleteQueryRequestOrBuilder
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -140,6 +147,7 @@ public interface CompleteQueryRequestOrBuilder
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -155,6 +163,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * Required. Completion result count.
+   *
    * The maximum allowed page size is 10.
    * </pre>
    *
@@ -169,6 +178,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * If provided, restricts completion to specified company.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/foo/tenants/bar/companies/baz".
@@ -184,6 +194,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * If provided, restricts completion to specified company.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/foo/tenants/bar/companies/baz".

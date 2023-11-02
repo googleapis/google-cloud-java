@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -249,4 +249,31 @@ public interface SearchDocumentsResponseOrBuilder
    */
   com.google.cloud.contentwarehouse.v1.HistogramQueryResultOrBuilder
       getHistogramQueryResultsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Experimental.
+   * Question answer from the query against the document.
+   * </pre>
+   *
+   * <code>string question_answer = 7;</code>
+   *
+   * @return The questionAnswer.
+   */
+  java.lang.String getQuestionAnswer();
+  /**
+   *
+   *
+   * <pre>
+   * Experimental.
+   * Question answer from the query against the document.
+   * </pre>
+   *
+   * <code>string question_answer = 7;</code>
+   *
+   * @return The bytes for questionAnswer.
+   */
+  com.google.protobuf.ByteString getQuestionAnswerBytes();
 }

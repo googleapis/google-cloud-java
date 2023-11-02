@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,10 @@ public final class AdvancedSettingsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_DtmfSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_DtmfSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_LoggingSettings_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_LoggingSettings_fieldAccessorTable;
@@ -48,20 +52,24 @@ public final class AdvancedSettingsProto {
           + "anced_settings.proto\022\"google.cloud.dialo"
           + "gflow.cx.v3beta1\032\037google/api/field_behav"
           + "ior.proto\032,google/cloud/dialogflow/cx/v3"
-          + "beta1/gcs.proto\"\247\002\n\020AdvancedSettings\022X\n\034"
+          + "beta1/gcs.proto\"\314\003\n\020AdvancedSettings\022X\n\034"
           + "audio_export_gcs_destination\030\002 \001(\01322.goo"
           + "gle.cloud.dialogflow.cx.v3beta1.GcsDesti"
-          + "nation\022^\n\020logging_settings\030\006 \001(\0132D.googl"
-          + "e.cloud.dialogflow.cx.v3beta1.AdvancedSe"
-          + "ttings.LoggingSettings\032Y\n\017LoggingSetting"
-          + "s\022\"\n\032enable_stackdriver_logging\030\002 \001(\010\022\"\n"
-          + "\032enable_interaction_logging\030\003 \001(\010B\317\001\n&co"
-          + "m.google.cloud.dialogflow.cx.v3beta1B\025Ad"
-          + "vancedSettingsProtoP\001Z6cloud.google.com/"
-          + "go/dialogflow/cx/apiv3beta1/cxpb;cxpb\370\001\001"
-          + "\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Bet"
-          + "a1\352\002&Google::Cloud::Dialogflow::CX::V3be"
-          + "ta1b\006proto3"
+          + "nation\022X\n\rdtmf_settings\030\005 \001(\0132A.google.c"
+          + "loud.dialogflow.cx.v3beta1.AdvancedSetti"
+          + "ngs.DtmfSettings\022^\n\020logging_settings\030\006 \001"
+          + "(\0132D.google.cloud.dialogflow.cx.v3beta1."
+          + "AdvancedSettings.LoggingSettings\032I\n\014Dtmf"
+          + "Settings\022\017\n\007enabled\030\001 \001(\010\022\022\n\nmax_digits\030"
+          + "\002 \001(\005\022\024\n\014finish_digit\030\003 \001(\t\032Y\n\017LoggingSe"
+          + "ttings\022\"\n\032enable_stackdriver_logging\030\002 \001"
+          + "(\010\022\"\n\032enable_interaction_logging\030\003 \001(\010B\317"
+          + "\001\n&com.google.cloud.dialogflow.cx.v3beta"
+          + "1B\025AdvancedSettingsProtoP\001Z6cloud.google"
+          + ".com/go/dialogflow/cx/apiv3beta1/cxpb;cx"
+          + "pb\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx."
+          + "V3Beta1\352\002&Google::Cloud::Dialogflow::CX:"
+          + ":V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -76,12 +84,22 @@ public final class AdvancedSettingsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_descriptor,
             new java.lang.String[] {
-              "AudioExportGcsDestination", "LoggingSettings",
+              "AudioExportGcsDestination", "DtmfSettings", "LoggingSettings",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_DtmfSettings_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_DtmfSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_DtmfSettings_descriptor,
+            new java.lang.String[] {
+              "Enabled", "MaxDigits", "FinishDigit",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_LoggingSettings_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_descriptor
             .getNestedTypes()
-            .get(0);
+            .get(1);
     internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_LoggingSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_LoggingSettings_descriptor,

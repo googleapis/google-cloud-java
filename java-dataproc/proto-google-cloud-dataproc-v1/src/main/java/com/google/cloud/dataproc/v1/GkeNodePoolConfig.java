@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
   }
 
   private GkeNodePoolConfig() {
-    locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GkeNodePoolConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -333,11 +328,6 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GkeNodeConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2452,11 +2442,6 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       return new GkeNodePoolAcceleratorConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataproc.v1.SharedProto
           .internal_static_google_cloud_dataproc_v1_GkeNodePoolConfig_GkeNodePoolAcceleratorConfig_descriptor;
@@ -3417,11 +3402,6 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       return new GkeNodePoolAutoscalingConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataproc.v1.SharedProto
           .internal_static_google_cloud_dataproc_v1_GkeNodePoolConfig_GkeNodePoolAutoscalingConfig_descriptor;
@@ -4107,7 +4087,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
   public static final int LOCATIONS_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList locations_;
+  private com.google.protobuf.LazyStringArrayList locations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -4116,9 +4097,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    * [zones](https://cloud.google.com/compute/docs/zones#available) where
    * node pool nodes associated with a Dataproc on GKE virtual cluster
    * will be located.
+   *
    * **Note:** All node pools associated with a virtual cluster
    * must be located in the same region as the virtual cluster, and they must
    * be located in the same zone within that region.
+   *
    * If a location is not specified during node pool creation, Dataproc on GKE
    * will choose the zone.
    * </pre>
@@ -4138,9 +4121,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    * [zones](https://cloud.google.com/compute/docs/zones#available) where
    * node pool nodes associated with a Dataproc on GKE virtual cluster
    * will be located.
+   *
    * **Note:** All node pools associated with a virtual cluster
    * must be located in the same region as the virtual cluster, and they must
    * be located in the same zone within that region.
+   *
    * If a location is not specified during node pool creation, Dataproc on GKE
    * will choose the zone.
    * </pre>
@@ -4160,9 +4145,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    * [zones](https://cloud.google.com/compute/docs/zones#available) where
    * node pool nodes associated with a Dataproc on GKE virtual cluster
    * will be located.
+   *
    * **Note:** All node pools associated with a virtual cluster
    * must be located in the same region as the virtual cluster, and they must
    * be located in the same zone within that region.
+   *
    * If a location is not specified during node pool creation, Dataproc on GKE
    * will choose the zone.
    * </pre>
@@ -4183,9 +4170,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    * [zones](https://cloud.google.com/compute/docs/zones#available) where
    * node pool nodes associated with a Dataproc on GKE virtual cluster
    * will be located.
+   *
    * **Note:** All node pools associated with a virtual cluster
    * must be located in the same region as the virtual cluster, and they must
    * be located in the same zone within that region.
+   *
    * If a location is not specified during node pool creation, Dataproc on GKE
    * will choose the zone.
    * </pre>
@@ -4501,8 +4490,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         configBuilder_.dispose();
         configBuilder_ = null;
       }
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       autoscaling_ = null;
       if (autoscalingBuilder_ != null) {
         autoscalingBuilder_.dispose();
@@ -4535,7 +4523,6 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataproc.v1.GkeNodePoolConfig buildPartial() {
       com.google.cloud.dataproc.v1.GkeNodePoolConfig result =
           new com.google.cloud.dataproc.v1.GkeNodePoolConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -4543,18 +4530,14 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.GkeNodePoolConfig result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.locations_ = locations_;
-    }
-
     private void buildPartial0(com.google.cloud.dataproc.v1.GkeNodePoolConfig result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        locations_.makeImmutable();
+        result.locations_ = locations_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.autoscaling_ =
@@ -4613,7 +4596,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -4892,14 +4875,14 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       return configBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList locations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList locations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!locations_.isModifiable()) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -4909,9 +4892,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
      * node pool nodes associated with a Dataproc on GKE virtual cluster
      * will be located.
+     *
      * **Note:** All node pools associated with a virtual cluster
      * must be located in the same region as the virtual cluster, and they must
      * be located in the same zone within that region.
+     *
      * If a location is not specified during node pool creation, Dataproc on GKE
      * will choose the zone.
      * </pre>
@@ -4921,7 +4906,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * @return A list containing the locations.
      */
     public com.google.protobuf.ProtocolStringList getLocationsList() {
-      return locations_.getUnmodifiableView();
+      locations_.makeImmutable();
+      return locations_;
     }
     /**
      *
@@ -4931,9 +4917,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
      * node pool nodes associated with a Dataproc on GKE virtual cluster
      * will be located.
+     *
      * **Note:** All node pools associated with a virtual cluster
      * must be located in the same region as the virtual cluster, and they must
      * be located in the same zone within that region.
+     *
      * If a location is not specified during node pool creation, Dataproc on GKE
      * will choose the zone.
      * </pre>
@@ -4953,9 +4941,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
      * node pool nodes associated with a Dataproc on GKE virtual cluster
      * will be located.
+     *
      * **Note:** All node pools associated with a virtual cluster
      * must be located in the same region as the virtual cluster, and they must
      * be located in the same zone within that region.
+     *
      * If a location is not specified during node pool creation, Dataproc on GKE
      * will choose the zone.
      * </pre>
@@ -4976,9 +4966,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
      * node pool nodes associated with a Dataproc on GKE virtual cluster
      * will be located.
+     *
      * **Note:** All node pools associated with a virtual cluster
      * must be located in the same region as the virtual cluster, and they must
      * be located in the same zone within that region.
+     *
      * If a location is not specified during node pool creation, Dataproc on GKE
      * will choose the zone.
      * </pre>
@@ -4999,9 +4991,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
      * node pool nodes associated with a Dataproc on GKE virtual cluster
      * will be located.
+     *
      * **Note:** All node pools associated with a virtual cluster
      * must be located in the same region as the virtual cluster, and they must
      * be located in the same zone within that region.
+     *
      * If a location is not specified during node pool creation, Dataproc on GKE
      * will choose the zone.
      * </pre>
@@ -5018,6 +5012,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       }
       ensureLocationsIsMutable();
       locations_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -5029,9 +5024,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
      * node pool nodes associated with a Dataproc on GKE virtual cluster
      * will be located.
+     *
      * **Note:** All node pools associated with a virtual cluster
      * must be located in the same region as the virtual cluster, and they must
      * be located in the same zone within that region.
+     *
      * If a location is not specified during node pool creation, Dataproc on GKE
      * will choose the zone.
      * </pre>
@@ -5047,6 +5044,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       }
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -5058,9 +5056,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
      * node pool nodes associated with a Dataproc on GKE virtual cluster
      * will be located.
+     *
      * **Note:** All node pools associated with a virtual cluster
      * must be located in the same region as the virtual cluster, and they must
      * be located in the same zone within that region.
+     *
      * If a location is not specified during node pool creation, Dataproc on GKE
      * will choose the zone.
      * </pre>
@@ -5073,6 +5073,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
       ensureLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, locations_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -5084,9 +5085,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
      * node pool nodes associated with a Dataproc on GKE virtual cluster
      * will be located.
+     *
      * **Note:** All node pools associated with a virtual cluster
      * must be located in the same region as the virtual cluster, and they must
      * be located in the same zone within that region.
+     *
      * If a location is not specified during node pool creation, Dataproc on GKE
      * will choose the zone.
      * </pre>
@@ -5096,8 +5099,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLocations() {
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -5109,9 +5113,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
      * node pool nodes associated with a Dataproc on GKE virtual cluster
      * will be located.
+     *
      * **Note:** All node pools associated with a virtual cluster
      * must be located in the same region as the virtual cluster, and they must
      * be located in the same zone within that region.
+     *
      * If a location is not specified during node pool creation, Dataproc on GKE
      * will choose the zone.
      * </pre>
@@ -5128,6 +5134,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * Required. The queue to create or update.
+   *
    * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
    * specified.
+   *
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
@@ -47,8 +49,10 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * Required. The queue to create or update.
+   *
    * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
    * specified.
+   *
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
@@ -66,8 +70,10 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * Required. The queue to create or update.
+   *
    * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
    * specified.
+   *
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
@@ -84,6 +90,7 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
+   *
    * If empty, then all fields will be updated.
    * </pre>
    *
@@ -97,6 +104,7 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
+   *
    * If empty, then all fields will be updated.
    * </pre>
    *
@@ -110,6 +118,7 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
+   *
    * If empty, then all fields will be updated.
    * </pre>
    *

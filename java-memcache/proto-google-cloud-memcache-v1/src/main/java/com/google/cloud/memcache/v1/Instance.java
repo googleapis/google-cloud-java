@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     displayName_ = "";
     authorizedNetwork_ = "";
-    zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
     memcacheVersion_ = 0;
     memcacheNodes_ = java.util.Collections.emptyList();
     state_ = 0;
@@ -54,11 +54,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Instance();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -368,11 +363,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NodeConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1145,11 +1135,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Node();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2906,11 +2891,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return new InstanceMessage();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.memcache.v1.CloudMemcacheProto
           .internal_static_google_cloud_memcache_v1_Instance_InstanceMessage_descriptor;
@@ -3781,6 +3761,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   *
    * Note: Memcached instances are managed and addressed at the regional level
    * so `location_id` here refers to a Google Cloud region; however, users may
    * choose which zones Memcached nodes should be provisioned in within an
@@ -3810,6 +3791,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   *
    * Note: Memcached instances are managed and addressed at the regional level
    * so `location_id` here refers to a Google Cloud region; however, users may
    * choose which zones Memcached nodes should be provisioned in within an
@@ -4056,7 +4038,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public static final int ZONES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList zones_;
+  private com.google.protobuf.LazyStringArrayList zones_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -5246,8 +5229,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       displayName_ = "";
       internalGetMutableLabels().clear();
       authorizedNetwork_ = "";
-      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       nodeCount_ = 0;
       nodeConfig_ = null;
       if (nodeConfigBuilder_ != null) {
@@ -5333,11 +5315,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.memcache.v1.Instance result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        zones_ = zones_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.zones_ = zones_;
       if (memcacheNodesBuilder_ == null) {
         if (((bitField0_ & 0x00000200) != 0)) {
           memcacheNodes_ = java.util.Collections.unmodifiableList(memcacheNodes_);
@@ -5372,6 +5349,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.authorizedNetwork_ = authorizedNetwork_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        zones_.makeImmutable();
+        result.zones_ = zones_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.nodeCount_ = nodeCount_;
@@ -5479,7 +5460,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!other.zones_.isEmpty()) {
         if (zones_.isEmpty()) {
           zones_ = other.zones_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureZonesIsMutable();
           zones_.addAll(other.zones_);
@@ -5762,6 +5743,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Memcached instances are managed and addressed at the regional level
      * so `location_id` here refers to a Google Cloud region; however, users may
      * choose which zones Memcached nodes should be provisioned in within an
@@ -5790,6 +5772,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Memcached instances are managed and addressed at the regional level
      * so `location_id` here refers to a Google Cloud region; however, users may
      * choose which zones Memcached nodes should be provisioned in within an
@@ -5818,6 +5801,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Memcached instances are managed and addressed at the regional level
      * so `location_id` here refers to a Google Cloud region; however, users may
      * choose which zones Memcached nodes should be provisioned in within an
@@ -5845,6 +5829,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Memcached instances are managed and addressed at the regional level
      * so `location_id` here refers to a Google Cloud region; however, users may
      * choose which zones Memcached nodes should be provisioned in within an
@@ -5868,6 +5853,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Memcached instances are managed and addressed at the regional level
      * so `location_id` here refers to a Google Cloud region; however, users may
      * choose which zones Memcached nodes should be provisioned in within an
@@ -6299,14 +6285,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList zones_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList zones_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureZonesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!zones_.isModifiable()) {
         zones_ = new com.google.protobuf.LazyStringArrayList(zones_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -6323,7 +6309,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the zones.
      */
     public com.google.protobuf.ProtocolStringList getZonesList() {
-      return zones_.getUnmodifiableView();
+      zones_.makeImmutable();
+      return zones_;
     }
     /**
      *
@@ -6400,6 +6387,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureZonesIsMutable();
       zones_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6424,6 +6412,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureZonesIsMutable();
       zones_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6445,6 +6434,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllZones(java.lang.Iterable<java.lang.String> values) {
       ensureZonesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, zones_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6463,8 +6453,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZones() {
-      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -6490,6 +6481,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureZonesIsMutable();
       zones_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

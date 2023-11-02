@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface VolumeOrBuilder
    *
    * <pre>
    * Name of the volume to mount.
+   *
    * Volume names must be unique per build step and must be valid names for
    * Docker volumes. Each named volume must be used by at least two build steps.
    * </pre>
@@ -42,6 +43,7 @@ public interface VolumeOrBuilder
    *
    * <pre>
    * Name of the volume to mount.
+   *
    * Volume names must be unique per build step and must be valid names for
    * Docker volumes. Each named volume must be used by at least two build steps.
    * </pre>
@@ -57,6 +59,7 @@ public interface VolumeOrBuilder
    *
    * <pre>
    * Path at which to mount the volume.
+   *
    * Paths must be absolute and cannot conflict with other volume paths on the
    * same build step or with certain reserved volume paths.
    * </pre>
@@ -71,6 +74,7 @@ public interface VolumeOrBuilder
    *
    * <pre>
    * Path at which to mount the volume.
+   *
    * Paths must be absolute and cannot conflict with other volume paths on the
    * same build step or with certain reserved volume paths.
    * </pre>

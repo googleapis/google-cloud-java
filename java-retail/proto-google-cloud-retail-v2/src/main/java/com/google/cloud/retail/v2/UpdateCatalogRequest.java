@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
     return new UpdateCatalogRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.CatalogServiceProto
         .internal_static_google_cloud_retail_v2_UpdateCatalogRequest_descriptor;
@@ -74,9 +69,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+   *
    * If the caller does not have permission to update the
    * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
+   *
    * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
    * a NOT_FOUND error is returned.
    * </pre>
@@ -95,9 +92,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+   *
    * If the caller does not have permission to update the
    * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
+   *
    * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
    * a NOT_FOUND error is returned.
    * </pre>
@@ -116,9 +115,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+   *
    * If the caller does not have permission to update the
    * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
+   *
    * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
    * a NOT_FOUND error is returned.
    * </pre>
@@ -139,6 +140,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Indicates which fields in the provided
    * [Catalog][google.cloud.retail.v2.Catalog] to update.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
@@ -157,6 +159,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Indicates which fields in the provided
    * [Catalog][google.cloud.retail.v2.Catalog] to update.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
@@ -175,6 +178,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Indicates which fields in the provided
    * [Catalog][google.cloud.retail.v2.Catalog] to update.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
@@ -579,9 +583,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If the caller does not have permission to update the
      * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
      * a NOT_FOUND error is returned.
      * </pre>
@@ -599,9 +605,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If the caller does not have permission to update the
      * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
      * a NOT_FOUND error is returned.
      * </pre>
@@ -625,9 +633,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If the caller does not have permission to update the
      * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
      * a NOT_FOUND error is returned.
      * </pre>
@@ -653,9 +663,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If the caller does not have permission to update the
      * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
      * a NOT_FOUND error is returned.
      * </pre>
@@ -678,9 +690,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If the caller does not have permission to update the
      * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
      * a NOT_FOUND error is returned.
      * </pre>
@@ -709,9 +723,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If the caller does not have permission to update the
      * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
      * a NOT_FOUND error is returned.
      * </pre>
@@ -734,9 +750,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If the caller does not have permission to update the
      * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
      * a NOT_FOUND error is returned.
      * </pre>
@@ -754,9 +772,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If the caller does not have permission to update the
      * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
      * a NOT_FOUND error is returned.
      * </pre>
@@ -778,9 +798,11 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If the caller does not have permission to update the
      * [Catalog][google.cloud.retail.v2.Catalog], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Catalog][google.cloud.retail.v2.Catalog] to update does not exist,
      * a NOT_FOUND error is returned.
      * </pre>
@@ -817,6 +839,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Indicates which fields in the provided
      * [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -834,6 +857,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Indicates which fields in the provided
      * [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -857,6 +881,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Indicates which fields in the provided
      * [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -882,6 +907,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Indicates which fields in the provided
      * [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -904,6 +930,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Indicates which fields in the provided
      * [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -932,6 +959,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Indicates which fields in the provided
      * [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -954,6 +982,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Indicates which fields in the provided
      * [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -971,6 +1000,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Indicates which fields in the provided
      * [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -992,6 +1022,7 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Indicates which fields in the provided
      * [Catalog][google.cloud.retail.v2.Catalog] to update.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>

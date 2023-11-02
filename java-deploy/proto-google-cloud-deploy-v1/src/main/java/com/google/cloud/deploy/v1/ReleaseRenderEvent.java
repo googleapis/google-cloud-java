@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,17 +41,13 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
   private ReleaseRenderEvent() {
     message_ = "";
     release_ = "";
+    releaseRenderState_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ReleaseRenderEvent();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,7 +126,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The name of the `Release`.
+   * The name of the release.
    * </pre>
    *
    * <code>string release = 2;</code>
@@ -153,7 +149,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The name of the `Release`.
+   * The name of the release.
    * </pre>
    *
    * <code>string release = 2;</code>
@@ -171,6 +167,41 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int RELEASE_RENDER_STATE_FIELD_NUMBER = 3;
+  private int releaseRenderState_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The state of the release render.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Release.RenderState release_render_state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for releaseRenderState.
+   */
+  @java.lang.Override
+  public int getReleaseRenderStateValue() {
+    return releaseRenderState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The state of the release render.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Release.RenderState release_render_state = 3;</code>
+   *
+   * @return The releaseRenderState.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.Release.RenderState getReleaseRenderState() {
+    com.google.cloud.deploy.v1.Release.RenderState result =
+        com.google.cloud.deploy.v1.Release.RenderState.forNumber(releaseRenderState_);
+    return result == null ? com.google.cloud.deploy.v1.Release.RenderState.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -193,6 +224,10 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(release_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, release_);
     }
+    if (releaseRenderState_
+        != com.google.cloud.deploy.v1.Release.RenderState.RENDER_STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(3, releaseRenderState_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -207,6 +242,10 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(release_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, release_);
+    }
+    if (releaseRenderState_
+        != com.google.cloud.deploy.v1.Release.RenderState.RENDER_STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, releaseRenderState_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -226,6 +265,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
 
     if (!getMessage().equals(other.getMessage())) return false;
     if (!getRelease().equals(other.getRelease())) return false;
+    if (releaseRenderState_ != other.releaseRenderState_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -241,6 +281,8 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getMessage().hashCode();
     hash = (37 * hash) + RELEASE_FIELD_NUMBER;
     hash = (53 * hash) + getRelease().hashCode();
+    hash = (37 * hash) + RELEASE_RENDER_STATE_FIELD_NUMBER;
+    hash = (53 * hash) + releaseRenderState_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -383,6 +425,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       bitField0_ = 0;
       message_ = "";
       release_ = "";
+      releaseRenderState_ = 0;
       return this;
     }
 
@@ -424,6 +467,9 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.release_ = release_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.releaseRenderState_ = releaseRenderState_;
       }
     }
 
@@ -482,6 +528,9 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.releaseRenderState_ != 0) {
+        setReleaseRenderStateValue(other.getReleaseRenderStateValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -520,6 +569,12 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                releaseRenderState_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -655,7 +710,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the `Release`.
+     * The name of the release.
      * </pre>
      *
      * <code>string release = 2;</code>
@@ -677,7 +732,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the `Release`.
+     * The name of the release.
      * </pre>
      *
      * <code>string release = 2;</code>
@@ -699,7 +754,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the `Release`.
+     * The name of the release.
      * </pre>
      *
      * <code>string release = 2;</code>
@@ -720,7 +775,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the `Release`.
+     * The name of the release.
      * </pre>
      *
      * <code>string release = 2;</code>
@@ -737,7 +792,7 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the `Release`.
+     * The name of the release.
      * </pre>
      *
      * <code>string release = 2;</code>
@@ -752,6 +807,96 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       release_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private int releaseRenderState_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The state of the release render.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Release.RenderState release_render_state = 3;</code>
+     *
+     * @return The enum numeric value on the wire for releaseRenderState.
+     */
+    @java.lang.Override
+    public int getReleaseRenderStateValue() {
+      return releaseRenderState_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the release render.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Release.RenderState release_render_state = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for releaseRenderState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReleaseRenderStateValue(int value) {
+      releaseRenderState_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the release render.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Release.RenderState release_render_state = 3;</code>
+     *
+     * @return The releaseRenderState.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Release.RenderState getReleaseRenderState() {
+      com.google.cloud.deploy.v1.Release.RenderState result =
+          com.google.cloud.deploy.v1.Release.RenderState.forNumber(releaseRenderState_);
+      return result == null ? com.google.cloud.deploy.v1.Release.RenderState.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the release render.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Release.RenderState release_render_state = 3;</code>
+     *
+     * @param value The releaseRenderState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReleaseRenderState(com.google.cloud.deploy.v1.Release.RenderState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      releaseRenderState_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the release render.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Release.RenderState release_render_state = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReleaseRenderState() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      releaseRenderState_ = 0;
       onChanged();
       return this;
     }

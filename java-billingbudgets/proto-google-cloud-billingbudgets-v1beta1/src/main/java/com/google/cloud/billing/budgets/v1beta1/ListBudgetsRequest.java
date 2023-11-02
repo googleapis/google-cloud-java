@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
 
   private ListBudgetsRequest() {
     parent_ = "";
+    scope_ = "";
     pageToken_ = "";
   }
 
@@ -46,11 +47,6 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListBudgetsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -119,6 +115,67 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SCOPE_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object scope_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set the scope of the budgets to be returned, in the format of the
+   * resource name. The scope of a budget is the cost that it tracks, such as
+   * costs for a single project, or the costs for all projects in a folder. Only
+   * project scope (in the format of "projects/project-id" or "projects/123") is
+   * supported in this field. When this field is set to a project's resource
+   * name, the budgets returned are tracking the costs for that project.
+   * </pre>
+   *
+   * <code>string scope = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The scope.
+   */
+  @java.lang.Override
+  public java.lang.String getScope() {
+    java.lang.Object ref = scope_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      scope_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set the scope of the budgets to be returned, in the format of the
+   * resource name. The scope of a budget is the cost that it tracks, such as
+   * costs for a single project, or the costs for all projects in a folder. Only
+   * project scope (in the format of "projects/project-id" or "projects/123") is
+   * supported in this field. When this field is set to a project's resource
+   * name, the budgets returned are tracking the costs for that project.
+   * </pre>
+   *
+   * <code>string scope = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for scope.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getScopeBytes() {
+    java.lang.Object ref = scope_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      scope_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -222,6 +279,9 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scope_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, scope_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -240,6 +300,9 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scope_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, scope_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -257,6 +320,7 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
         (com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
+    if (!getScope().equals(other.getScope())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -272,6 +336,8 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + SCOPE_FIELD_NUMBER;
+    hash = (53 * hash) + getScope().hashCode();
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
@@ -417,6 +483,7 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       parent_ = "";
+      scope_ = "";
       pageSize_ = 0;
       pageToken_ = "";
       return this;
@@ -459,9 +526,12 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
         result.parent_ = parent_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.pageSize_ = pageSize_;
+        result.scope_ = scope_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageToken_ = pageToken_;
       }
     }
@@ -517,12 +587,17 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getScope().isEmpty()) {
+        scope_ = other.scope_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -560,15 +635,21 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
             case 16:
               {
                 pageSize_ = input.readInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
+            case 34:
+              {
+                scope_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -709,6 +790,137 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private java.lang.Object scope_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the scope of the budgets to be returned, in the format of the
+     * resource name. The scope of a budget is the cost that it tracks, such as
+     * costs for a single project, or the costs for all projects in a folder. Only
+     * project scope (in the format of "projects/project-id" or "projects/123") is
+     * supported in this field. When this field is set to a project's resource
+     * name, the budgets returned are tracking the costs for that project.
+     * </pre>
+     *
+     * <code>string scope = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The scope.
+     */
+    public java.lang.String getScope() {
+      java.lang.Object ref = scope_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        scope_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the scope of the budgets to be returned, in the format of the
+     * resource name. The scope of a budget is the cost that it tracks, such as
+     * costs for a single project, or the costs for all projects in a folder. Only
+     * project scope (in the format of "projects/project-id" or "projects/123") is
+     * supported in this field. When this field is set to a project's resource
+     * name, the budgets returned are tracking the costs for that project.
+     * </pre>
+     *
+     * <code>string scope = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for scope.
+     */
+    public com.google.protobuf.ByteString getScopeBytes() {
+      java.lang.Object ref = scope_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        scope_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the scope of the budgets to be returned, in the format of the
+     * resource name. The scope of a budget is the cost that it tracks, such as
+     * costs for a single project, or the costs for all projects in a folder. Only
+     * project scope (in the format of "projects/project-id" or "projects/123") is
+     * supported in this field. When this field is set to a project's resource
+     * name, the budgets returned are tracking the costs for that project.
+     * </pre>
+     *
+     * <code>string scope = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The scope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScope(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      scope_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the scope of the budgets to be returned, in the format of the
+     * resource name. The scope of a budget is the cost that it tracks, such as
+     * costs for a single project, or the costs for all projects in a folder. Only
+     * project scope (in the format of "projects/project-id" or "projects/123") is
+     * supported in this field. When this field is set to a project's resource
+     * name, the budgets returned are tracking the costs for that project.
+     * </pre>
+     *
+     * <code>string scope = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScope() {
+      scope_ = getDefaultInstance().getScope();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set the scope of the budgets to be returned, in the format of the
+     * resource name. The scope of a budget is the cost that it tracks, such as
+     * costs for a single project, or the costs for all projects in a folder. Only
+     * project scope (in the format of "projects/project-id" or "projects/123") is
+     * supported in this field. When this field is set to a project's resource
+     * name, the budgets returned are tracking the costs for that project.
+     * </pre>
+     *
+     * <code>string scope = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for scope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScopeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      scope_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private int pageSize_;
     /**
      *
@@ -742,7 +954,7 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -759,7 +971,7 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -833,7 +1045,7 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       pageToken_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -852,7 +1064,7 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearPageToken() {
       pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -876,7 +1088,7 @@ public final class ListBudgetsRequest extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       pageToken_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

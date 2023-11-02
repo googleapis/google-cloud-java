@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ApplicationOrBuilder
    * <pre>
    * Full path to the Application resource in the API.
    * Example: `apps/myapp`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface ApplicationOrBuilder
    * <pre>
    * Full path to the Application resource in the API.
    * Example: `apps/myapp`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -151,6 +153,7 @@ public interface ApplicationOrBuilder
    * <pre>
    * Google Apps authentication domain that controls which users can access
    * this application.
+   *
    * Defaults to open access for any Google Account.
    * </pre>
    *
@@ -165,6 +168,7 @@ public interface ApplicationOrBuilder
    * <pre>
    * Google Apps authentication domain that controls which users can access
    * this application.
+   *
    * Defaults to open access for any Google Account.
    * </pre>
    *
@@ -181,7 +185,9 @@ public interface ApplicationOrBuilder
    * Location from which this application runs. Application instances
    * run out of the data centers in the specified location, which is also where
    * all of the application's end user content is stored.
+   *
    * Defaults to `us-central`.
+   *
    * View the list of
    * [supported locations](https://cloud.google.com/appengine/docs/locations).
    * </pre>
@@ -198,7 +204,9 @@ public interface ApplicationOrBuilder
    * Location from which this application runs. Application instances
    * run out of the data centers in the specified location, which is also where
    * all of the application's end user content is stored.
+   *
    * Defaults to `us-central`.
+   *
    * View the list of
    * [supported locations](https://cloud.google.com/appengine/docs/locations).
    * </pre>
@@ -216,6 +224,7 @@ public interface ApplicationOrBuilder
    * Google Cloud Storage bucket that can be used for storing files
    * associated with this application. This bucket is associated with the
    * application and can be used by the gcloud deployment commands.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -231,6 +240,7 @@ public interface ApplicationOrBuilder
    * Google Cloud Storage bucket that can be used for storing files
    * associated with this application. This bucket is associated with the
    * application and can be used by the gcloud deployment commands.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -305,6 +315,7 @@ public interface ApplicationOrBuilder
    *
    * <pre>
    * Hostname used to reach this application, as resolved by App Engine.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -318,6 +329,7 @@ public interface ApplicationOrBuilder
    *
    * <pre>
    * Hostname used to reach this application, as resolved by App Engine.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -333,6 +345,7 @@ public interface ApplicationOrBuilder
    * <pre>
    * Google Cloud Storage bucket that can be used by this application to store
    * content.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -347,6 +360,7 @@ public interface ApplicationOrBuilder
    * <pre>
    * Google Cloud Storage bucket that can be used by this application to store
    * content.
+   *
    * &#64;OutputOnly
    * </pre>
    *

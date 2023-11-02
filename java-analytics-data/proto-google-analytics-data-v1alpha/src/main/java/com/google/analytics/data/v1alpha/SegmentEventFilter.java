@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SegmentEventFilter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -149,6 +144,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
    * <pre>
    * If specified, this filter matches events that match both the single event
    * name and the parameter filter expressions.
+   *
    * Inside the parameter filter expression, only parameter filters are
    * available.
    * </pre>
@@ -169,6 +165,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
    * <pre>
    * If specified, this filter matches events that match both the single event
    * name and the parameter filter expressions.
+   *
    * Inside the parameter filter expression, only parameter filters are
    * available.
    * </pre>
@@ -192,6 +189,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
    * <pre>
    * If specified, this filter matches events that match both the single event
    * name and the parameter filter expressions.
+   *
    * Inside the parameter filter expression, only parameter filters are
    * available.
    * </pre>
@@ -750,6 +748,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * If specified, this filter matches events that match both the single event
      * name and the parameter filter expressions.
+     *
      * Inside the parameter filter expression, only parameter filters are
      * available.
      * </pre>
@@ -769,6 +768,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * If specified, this filter matches events that match both the single event
      * name and the parameter filter expressions.
+     *
      * Inside the parameter filter expression, only parameter filters are
      * available.
      * </pre>
@@ -796,6 +796,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * If specified, this filter matches events that match both the single event
      * name and the parameter filter expressions.
+     *
      * Inside the parameter filter expression, only parameter filters are
      * available.
      * </pre>
@@ -824,6 +825,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * If specified, this filter matches events that match both the single event
      * name and the parameter filter expressions.
+     *
      * Inside the parameter filter expression, only parameter filters are
      * available.
      * </pre>
@@ -850,6 +852,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * If specified, this filter matches events that match both the single event
      * name and the parameter filter expressions.
+     *
      * Inside the parameter filter expression, only parameter filters are
      * available.
      * </pre>
@@ -883,6 +886,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * If specified, this filter matches events that match both the single event
      * name and the parameter filter expressions.
+     *
      * Inside the parameter filter expression, only parameter filters are
      * available.
      * </pre>
@@ -907,6 +911,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * If specified, this filter matches events that match both the single event
      * name and the parameter filter expressions.
+     *
      * Inside the parameter filter expression, only parameter filters are
      * available.
      * </pre>
@@ -927,6 +932,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * If specified, this filter matches events that match both the single event
      * name and the parameter filter expressions.
+     *
      * Inside the parameter filter expression, only parameter filters are
      * available.
      * </pre>
@@ -952,6 +958,7 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
      * <pre>
      * If specified, this filter matches events that match both the single event
      * name and the parameter filter expressions.
+     *
      * Inside the parameter filter expression, only parameter filters are
      * available.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Resource();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -134,6 +129,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * The URL of the discovery document containing the resource's JSON schema.
    * Example:
    * `https://www.googleapis.com/discovery/v1/apis/compute/v1/rest`
+   *
    * This value is unspecified for resources that do not have an API based on a
    * discovery document, such as Cloud Bigtable.
    * </pre>
@@ -161,6 +157,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * The URL of the discovery document containing the resource's JSON schema.
    * Example:
    * `https://www.googleapis.com/discovery/v1/apis/compute/v1/rest`
+   *
    * This value is unspecified for resources that do not have an API based on a
    * discovery document, such as Cloud Bigtable.
    * </pre>
@@ -192,6 +189,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The JSON schema name listed in the discovery document. Example:
    * `Project`
+   *
    * This value is unspecified for resources that do not have an API based on a
    * discovery document, such as Cloud Bigtable.
    * </pre>
@@ -218,6 +216,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The JSON schema name listed in the discovery document. Example:
    * `Project`
+   *
    * This value is unspecified for resources that do not have an API based on a
    * discovery document, such as Cloud Bigtable.
    * </pre>
@@ -250,6 +249,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * The REST URL for accessing the resource. An HTTP `GET` request using this
    * URL returns the resource itself. Example:
    * `https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123`
+   *
    * This value is unspecified for resources without a REST API.
    * </pre>
    *
@@ -276,6 +276,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * The REST URL for accessing the resource. An HTTP `GET` request using this
    * URL returns the resource itself. Example:
    * `https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123`
+   *
    * This value is unspecified for resources without a REST API.
    * </pre>
    *
@@ -308,11 +309,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
+   *
    * For Google Cloud assets, this value is the parent resource defined in the
    * [IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * Example:
    * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
+   *
    * For third-party assets, this field may be set differently.
    * </pre>
    *
@@ -340,11 +343,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
+   *
    * For Google Cloud assets, this value is the parent resource defined in the
    * [IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * Example:
    * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
+   *
    * For third-party assets, this field may be set differently.
    * </pre>
    *
@@ -1073,6 +1078,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * The URL of the discovery document containing the resource's JSON schema.
      * Example:
      * `https://www.googleapis.com/discovery/v1/apis/compute/v1/rest`
+     *
      * This value is unspecified for resources that do not have an API based on a
      * discovery document, such as Cloud Bigtable.
      * </pre>
@@ -1099,6 +1105,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * The URL of the discovery document containing the resource's JSON schema.
      * Example:
      * `https://www.googleapis.com/discovery/v1/apis/compute/v1/rest`
+     *
      * This value is unspecified for resources that do not have an API based on a
      * discovery document, such as Cloud Bigtable.
      * </pre>
@@ -1125,6 +1132,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * The URL of the discovery document containing the resource's JSON schema.
      * Example:
      * `https://www.googleapis.com/discovery/v1/apis/compute/v1/rest`
+     *
      * This value is unspecified for resources that do not have an API based on a
      * discovery document, such as Cloud Bigtable.
      * </pre>
@@ -1150,6 +1158,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * The URL of the discovery document containing the resource's JSON schema.
      * Example:
      * `https://www.googleapis.com/discovery/v1/apis/compute/v1/rest`
+     *
      * This value is unspecified for resources that do not have an API based on a
      * discovery document, such as Cloud Bigtable.
      * </pre>
@@ -1171,6 +1180,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * The URL of the discovery document containing the resource's JSON schema.
      * Example:
      * `https://www.googleapis.com/discovery/v1/apis/compute/v1/rest`
+     *
      * This value is unspecified for resources that do not have an API based on a
      * discovery document, such as Cloud Bigtable.
      * </pre>
@@ -1198,6 +1208,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The JSON schema name listed in the discovery document. Example:
      * `Project`
+     *
      * This value is unspecified for resources that do not have an API based on a
      * discovery document, such as Cloud Bigtable.
      * </pre>
@@ -1223,6 +1234,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The JSON schema name listed in the discovery document. Example:
      * `Project`
+     *
      * This value is unspecified for resources that do not have an API based on a
      * discovery document, such as Cloud Bigtable.
      * </pre>
@@ -1248,6 +1260,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The JSON schema name listed in the discovery document. Example:
      * `Project`
+     *
      * This value is unspecified for resources that do not have an API based on a
      * discovery document, such as Cloud Bigtable.
      * </pre>
@@ -1272,6 +1285,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The JSON schema name listed in the discovery document. Example:
      * `Project`
+     *
      * This value is unspecified for resources that do not have an API based on a
      * discovery document, such as Cloud Bigtable.
      * </pre>
@@ -1292,6 +1306,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The JSON schema name listed in the discovery document. Example:
      * `Project`
+     *
      * This value is unspecified for resources that do not have an API based on a
      * discovery document, such as Cloud Bigtable.
      * </pre>
@@ -1320,6 +1335,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * The REST URL for accessing the resource. An HTTP `GET` request using this
      * URL returns the resource itself. Example:
      * `https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123`
+     *
      * This value is unspecified for resources without a REST API.
      * </pre>
      *
@@ -1345,6 +1361,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * The REST URL for accessing the resource. An HTTP `GET` request using this
      * URL returns the resource itself. Example:
      * `https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123`
+     *
      * This value is unspecified for resources without a REST API.
      * </pre>
      *
@@ -1370,6 +1387,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * The REST URL for accessing the resource. An HTTP `GET` request using this
      * URL returns the resource itself. Example:
      * `https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123`
+     *
      * This value is unspecified for resources without a REST API.
      * </pre>
      *
@@ -1394,6 +1412,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * The REST URL for accessing the resource. An HTTP `GET` request using this
      * URL returns the resource itself. Example:
      * `https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123`
+     *
      * This value is unspecified for resources without a REST API.
      * </pre>
      *
@@ -1414,6 +1433,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * The REST URL for accessing the resource. An HTTP `GET` request using this
      * URL returns the resource itself. Example:
      * `https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123`
+     *
      * This value is unspecified for resources without a REST API.
      * </pre>
      *
@@ -1442,11 +1462,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
+     *
      * For Google Cloud assets, this value is the parent resource defined in the
      * [IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * Example:
      * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
+     *
      * For third-party assets, this field may be set differently.
      * </pre>
      *
@@ -1473,11 +1495,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
+     *
      * For Google Cloud assets, this value is the parent resource defined in the
      * [IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * Example:
      * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
+     *
      * For third-party assets, this field may be set differently.
      * </pre>
      *
@@ -1504,11 +1528,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
+     *
      * For Google Cloud assets, this value is the parent resource defined in the
      * [IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * Example:
      * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
+     *
      * For third-party assets, this field may be set differently.
      * </pre>
      *
@@ -1534,11 +1560,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
+     *
      * For Google Cloud assets, this value is the parent resource defined in the
      * [IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * Example:
      * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
+     *
      * For third-party assets, this field may be set differently.
      * </pre>
      *
@@ -1560,11 +1588,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
+     *
      * For Google Cloud assets, this value is the parent resource defined in the
      * [IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * Example:
      * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
+     *
      * For third-party assets, this field may be set differently.
      * </pre>
      *

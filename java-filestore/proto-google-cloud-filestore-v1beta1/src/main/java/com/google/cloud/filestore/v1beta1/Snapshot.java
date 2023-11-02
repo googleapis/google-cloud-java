@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Snapshot();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -561,7 +556,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The amount of bytes needed to allocate a full copy of the snapshot content
+   * Output only. The amount of bytes needed to allocate a full copy of the
+   * snapshot content
    * </pre>
    *
    * <code>int64 filesystem_used_bytes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1762,7 +1758,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The amount of bytes needed to allocate a full copy of the snapshot content
+     * Output only. The amount of bytes needed to allocate a full copy of the
+     * snapshot content
      * </pre>
      *
      * <code>int64 filesystem_used_bytes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1777,7 +1774,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The amount of bytes needed to allocate a full copy of the snapshot content
+     * Output only. The amount of bytes needed to allocate a full copy of the
+     * snapshot content
      * </pre>
      *
      * <code>int64 filesystem_used_bytes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1796,7 +1794,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The amount of bytes needed to allocate a full copy of the snapshot content
+     * Output only. The amount of bytes needed to allocate a full copy of the
+     * snapshot content
      * </pre>
      *
      * <code>int64 filesystem_used_bytes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

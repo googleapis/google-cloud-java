@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ public interface ProvisionedServiceOrBuilder
    *
    * <pre>
    * Output only. Provisioning ID of the entitlement. For Google Workspace, this
-   * is the underlying Subscription ID. For Google Cloud Platform, this is the
-   * Billing Account ID of the billing subaccount."
+   * is the underlying Subscription ID. For Google Cloud, this is the Billing
+   * Account ID of the billing subaccount.
    * </pre>
    *
    * <code>string provisioning_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -42,8 +42,8 @@ public interface ProvisionedServiceOrBuilder
    *
    * <pre>
    * Output only. Provisioning ID of the entitlement. For Google Workspace, this
-   * is the underlying Subscription ID. For Google Cloud Platform, this is the
-   * Billing Account ID of the billing subaccount."
+   * is the underlying Subscription ID. For Google Cloud, this is the Billing
+   * Account ID of the billing subaccount.
    * </pre>
    *
    * <code>string provisioning_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

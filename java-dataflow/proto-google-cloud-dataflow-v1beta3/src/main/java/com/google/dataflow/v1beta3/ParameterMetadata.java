@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     name_ = "";
     label_ = "";
     helpText_ = "";
-    regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    regexes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     paramType_ = 0;
   }
 
@@ -49,11 +49,6 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ParameterMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -256,7 +251,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
   public static final int REGEXES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList regexes_;
+  private com.google.protobuf.LazyStringArrayList regexes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -748,8 +744,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       label_ = "";
       helpText_ = "";
       isOptional_ = false;
-      regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      regexes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       paramType_ = 0;
       internalGetMutableCustomMetadata().clear();
       return this;
@@ -779,20 +774,11 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.dataflow.v1beta3.ParameterMetadata buildPartial() {
       com.google.dataflow.v1beta3.ParameterMetadata result =
           new com.google.dataflow.v1beta3.ParameterMetadata(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.ParameterMetadata result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        regexes_ = regexes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.regexes_ = regexes_;
     }
 
     private void buildPartial0(com.google.dataflow.v1beta3.ParameterMetadata result) {
@@ -808,6 +794,10 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.isOptional_ = isOptional_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        regexes_.makeImmutable();
+        result.regexes_ = regexes_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.paramType_ = paramType_;
@@ -884,7 +874,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       if (!other.regexes_.isEmpty()) {
         if (regexes_.isEmpty()) {
           regexes_ = other.regexes_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureRegexesIsMutable();
           regexes_.addAll(other.regexes_);
@@ -1361,14 +1351,14 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList regexes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList regexes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRegexesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!regexes_.isModifiable()) {
         regexes_ = new com.google.protobuf.LazyStringArrayList(regexes_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1382,7 +1372,8 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      * @return A list containing the regexes.
      */
     public com.google.protobuf.ProtocolStringList getRegexesList() {
-      return regexes_.getUnmodifiableView();
+      regexes_.makeImmutable();
+      return regexes_;
     }
     /**
      *
@@ -1447,6 +1438,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       }
       ensureRegexesIsMutable();
       regexes_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1468,6 +1460,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       }
       ensureRegexesIsMutable();
       regexes_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1486,6 +1479,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public Builder addAllRegexes(java.lang.Iterable<java.lang.String> values) {
       ensureRegexesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, regexes_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1501,8 +1495,9 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRegexes() {
-      regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      regexes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1525,6 +1520,7 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureRegexesIsMutable();
       regexes_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

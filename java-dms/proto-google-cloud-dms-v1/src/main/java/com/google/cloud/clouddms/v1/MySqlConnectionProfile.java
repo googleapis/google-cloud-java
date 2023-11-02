@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MySqlConnectionProfile();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -147,8 +142,9 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The username that Database Migration Service will use to connect to the
-   * database. The value is encrypted when stored in Database Migration Service.
+   * Required. The username that Database Migration Service will use to connect
+   * to the database. The value is encrypted when stored in Database Migration
+   * Service.
    * </pre>
    *
    * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -171,8 +167,9 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The username that Database Migration Service will use to connect to the
-   * database. The value is encrypted when stored in Database Migration Service.
+   * Required. The username that Database Migration Service will use to connect
+   * to the database. The value is encrypted when stored in Database Migration
+   * Service.
    * </pre>
    *
    * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -200,9 +197,10 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Input only. The password for the user that Database Migration Service will be using to
-   * connect to the database. This field is not returned on request, and the
-   * value is encrypted when stored in Database Migration Service.
+   * Required. Input only. The password for the user that Database Migration
+   * Service will be using to connect to the database. This field is not
+   * returned on request, and the value is encrypted when stored in Database
+   * Migration Service.
    * </pre>
    *
    * <code>
@@ -227,9 +225,10 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Input only. The password for the user that Database Migration Service will be using to
-   * connect to the database. This field is not returned on request, and the
-   * value is encrypted when stored in Database Migration Service.
+   * Required. Input only. The password for the user that Database Migration
+   * Service will be using to connect to the database. This field is not
+   * returned on request, and the value is encrypted when stored in Database
+   * Migration Service.
    * </pre>
    *
    * <code>
@@ -1021,8 +1020,9 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The username that Database Migration Service will use to connect to the
-     * database. The value is encrypted when stored in Database Migration Service.
+     * Required. The username that Database Migration Service will use to connect
+     * to the database. The value is encrypted when stored in Database Migration
+     * Service.
      * </pre>
      *
      * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1044,8 +1044,9 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The username that Database Migration Service will use to connect to the
-     * database. The value is encrypted when stored in Database Migration Service.
+     * Required. The username that Database Migration Service will use to connect
+     * to the database. The value is encrypted when stored in Database Migration
+     * Service.
      * </pre>
      *
      * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1067,8 +1068,9 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The username that Database Migration Service will use to connect to the
-     * database. The value is encrypted when stored in Database Migration Service.
+     * Required. The username that Database Migration Service will use to connect
+     * to the database. The value is encrypted when stored in Database Migration
+     * Service.
      * </pre>
      *
      * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1089,8 +1091,9 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The username that Database Migration Service will use to connect to the
-     * database. The value is encrypted when stored in Database Migration Service.
+     * Required. The username that Database Migration Service will use to connect
+     * to the database. The value is encrypted when stored in Database Migration
+     * Service.
      * </pre>
      *
      * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1107,8 +1110,9 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The username that Database Migration Service will use to connect to the
-     * database. The value is encrypted when stored in Database Migration Service.
+     * Required. The username that Database Migration Service will use to connect
+     * to the database. The value is encrypted when stored in Database Migration
+     * Service.
      * </pre>
      *
      * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1132,9 +1136,10 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Input only. The password for the user that Database Migration Service will be using to
-     * connect to the database. This field is not returned on request, and the
-     * value is encrypted when stored in Database Migration Service.
+     * Required. Input only. The password for the user that Database Migration
+     * Service will be using to connect to the database. This field is not
+     * returned on request, and the value is encrypted when stored in Database
+     * Migration Service.
      * </pre>
      *
      * <code>
@@ -1158,9 +1163,10 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Input only. The password for the user that Database Migration Service will be using to
-     * connect to the database. This field is not returned on request, and the
-     * value is encrypted when stored in Database Migration Service.
+     * Required. Input only. The password for the user that Database Migration
+     * Service will be using to connect to the database. This field is not
+     * returned on request, and the value is encrypted when stored in Database
+     * Migration Service.
      * </pre>
      *
      * <code>
@@ -1184,9 +1190,10 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Input only. The password for the user that Database Migration Service will be using to
-     * connect to the database. This field is not returned on request, and the
-     * value is encrypted when stored in Database Migration Service.
+     * Required. Input only. The password for the user that Database Migration
+     * Service will be using to connect to the database. This field is not
+     * returned on request, and the value is encrypted when stored in Database
+     * Migration Service.
      * </pre>
      *
      * <code>
@@ -1209,9 +1216,10 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Input only. The password for the user that Database Migration Service will be using to
-     * connect to the database. This field is not returned on request, and the
-     * value is encrypted when stored in Database Migration Service.
+     * Required. Input only. The password for the user that Database Migration
+     * Service will be using to connect to the database. This field is not
+     * returned on request, and the value is encrypted when stored in Database
+     * Migration Service.
      * </pre>
      *
      * <code>
@@ -1230,9 +1238,10 @@ public final class MySqlConnectionProfile extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Input only. The password for the user that Database Migration Service will be using to
-     * connect to the database. This field is not returned on request, and the
-     * value is encrypted when stored in Database Migration Service.
+     * Required. Input only. The password for the user that Database Migration
+     * Service will be using to connect to the database. This field is not
+     * returned on request, and the value is encrypted when stored in Database
+     * Migration Service.
      * </pre>
      *
      * <code>

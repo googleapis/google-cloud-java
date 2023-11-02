@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public interface ServingConfigOrBuilder
    * <pre>
    * Required. The human readable serving config display name. Used in Retail
    * UI.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -71,6 +72,7 @@ public interface ServingConfigOrBuilder
    * <pre>
    * Required. The human readable serving config display name. Used in Retail
    * UI.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -91,6 +93,7 @@ public interface ServingConfigOrBuilder
    * https://cloud.google.com/retail/recommendations-ai/docs/create-models
    * Can be changed but only to a compatible model (e.g.
    * others-you-may-like CTR to others-you-may-like CVR).
+   *
    * Required when
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -112,6 +115,7 @@ public interface ServingConfigOrBuilder
    * https://cloud.google.com/retail/recommendations-ai/docs/create-models
    * Can be changed but only to a compatible model (e.g.
    * others-you-may-like CTR to others-you-may-like CVR).
+   *
    * Required when
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -134,12 +138,15 @@ public interface ServingConfigOrBuilder
    * highest-priced items first. This setting could result in a decrease in
    * click-through and conversion rates.
    *  Allowed values are:
+   *
    * * `no-price-reranking`
    * * `low-price-reranking`
    * * `medium-price-reranking`
    * * `high-price-reranking`
+   *
    * If not specified, we choose default based on model type. Default value:
    * `no-price-reranking`.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -161,12 +168,15 @@ public interface ServingConfigOrBuilder
    * highest-priced items first. This setting could result in a decrease in
    * click-through and conversion rates.
    *  Allowed values are:
+   *
    * * `no-price-reranking`
    * * `low-price-reranking`
    * * `medium-price-reranking`
    * * `high-price-reranking`
+   *
    * If not specified, we choose default based on model type. Default value:
    * `no-price-reranking`.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -190,6 +200,7 @@ public interface ServingConfigOrBuilder
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
    * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -212,6 +223,7 @@ public interface ServingConfigOrBuilder
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
    * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -234,6 +246,7 @@ public interface ServingConfigOrBuilder
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
    * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -257,6 +270,7 @@ public interface ServingConfigOrBuilder
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
    * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -276,6 +290,7 @@ public interface ServingConfigOrBuilder
    * <pre>
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -293,6 +308,7 @@ public interface ServingConfigOrBuilder
    * <pre>
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -310,6 +326,7 @@ public interface ServingConfigOrBuilder
    * <pre>
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -329,6 +346,7 @@ public interface ServingConfigOrBuilder
    * in the specifications, boost scores from these specifications are all
    * applied and combined in a non-linear way. Maximum number of
    * specifications is 100.
+   *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
    * and
@@ -336,6 +354,7 @@ public interface ServingConfigOrBuilder
    * are set, the boost conditions from both places are evaluated. If a search
    * request matches multiple boost conditions, the final boost score is equal
    * to the sum of the boost scores from all matched boost conditions.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -355,6 +374,7 @@ public interface ServingConfigOrBuilder
    * in the specifications, boost scores from these specifications are all
    * applied and combined in a non-linear way. Maximum number of
    * specifications is 100.
+   *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
    * and
@@ -362,6 +382,7 @@ public interface ServingConfigOrBuilder
    * are set, the boost conditions from both places are evaluated. If a search
    * request matches multiple boost conditions, the final boost score is equal
    * to the sum of the boost scores from all matched boost conditions.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -381,6 +402,7 @@ public interface ServingConfigOrBuilder
    * in the specifications, boost scores from these specifications are all
    * applied and combined in a non-linear way. Maximum number of
    * specifications is 100.
+   *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
    * and
@@ -388,6 +410,7 @@ public interface ServingConfigOrBuilder
    * are set, the boost conditions from both places are evaluated. If a search
    * request matches multiple boost conditions, the final boost score is equal
    * to the sum of the boost scores from all matched boost conditions.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -408,6 +431,7 @@ public interface ServingConfigOrBuilder
    * in the specifications, boost scores from these specifications are all
    * applied and combined in a non-linear way. Maximum number of
    * specifications is 100.
+   *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
    * and
@@ -415,6 +439,7 @@ public interface ServingConfigOrBuilder
    * are set, the boost conditions from both places are evaluated. If a search
    * request matches multiple boost conditions, the final boost score is equal
    * to the sum of the boost scores from all matched boost conditions.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -436,6 +461,7 @@ public interface ServingConfigOrBuilder
    * in the specifications, filters from these specifications are all
    * applied and combined via the AND operator. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -455,6 +481,7 @@ public interface ServingConfigOrBuilder
    * in the specifications, filters from these specifications are all
    * applied and combined via the AND operator. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -474,6 +501,7 @@ public interface ServingConfigOrBuilder
    * in the specifications, filters from these specifications are all
    * applied and combined via the AND operator. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -494,6 +522,7 @@ public interface ServingConfigOrBuilder
    * in the specifications, filters from these specifications are all
    * applied and combined via the AND operator. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -514,6 +543,7 @@ public interface ServingConfigOrBuilder
    * Condition redirect specifications. Only the first triggered redirect action
    * is applied, even if multiple apply. Maximum number of specifications is
    * 1000.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -532,6 +562,7 @@ public interface ServingConfigOrBuilder
    * Condition redirect specifications. Only the first triggered redirect action
    * is applied, even if multiple apply. Maximum number of specifications is
    * 1000.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -550,6 +581,7 @@ public interface ServingConfigOrBuilder
    * Condition redirect specifications. Only the first triggered redirect action
    * is applied, even if multiple apply. Maximum number of specifications is
    * 1000.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -569,6 +601,7 @@ public interface ServingConfigOrBuilder
    * Condition redirect specifications. Only the first triggered redirect action
    * is applied, even if multiple apply. Maximum number of specifications is
    * 1000.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -590,6 +623,7 @@ public interface ServingConfigOrBuilder
    * all matching synonyms control in the list will execute. Order of controls
    * in the list will not matter. Maximum number of specifications is
    * 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -609,6 +643,7 @@ public interface ServingConfigOrBuilder
    * all matching synonyms control in the list will execute. Order of controls
    * in the list will not matter. Maximum number of specifications is
    * 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -628,6 +663,7 @@ public interface ServingConfigOrBuilder
    * all matching synonyms control in the list will execute. Order of controls
    * in the list will not matter. Maximum number of specifications is
    * 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -648,6 +684,7 @@ public interface ServingConfigOrBuilder
    * all matching synonyms control in the list will execute. Order of controls
    * in the list will not matter. Maximum number of specifications is
    * 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -669,6 +706,7 @@ public interface ServingConfigOrBuilder
    * conditions match, all matching oneway synonyms controls in the list will
    * execute. Order of controls in the list will not matter. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -688,6 +726,7 @@ public interface ServingConfigOrBuilder
    * conditions match, all matching oneway synonyms controls in the list will
    * execute. Order of controls in the list will not matter. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -707,6 +746,7 @@ public interface ServingConfigOrBuilder
    * conditions match, all matching oneway synonyms controls in the list will
    * execute. Order of controls in the list will not matter. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -727,6 +767,7 @@ public interface ServingConfigOrBuilder
    * conditions match, all matching oneway synonyms controls in the list will
    * execute. Order of controls in the list will not matter. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -749,6 +790,7 @@ public interface ServingConfigOrBuilder
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -769,6 +811,7 @@ public interface ServingConfigOrBuilder
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -789,6 +832,7 @@ public interface ServingConfigOrBuilder
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -810,6 +854,7 @@ public interface ServingConfigOrBuilder
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -831,6 +876,7 @@ public interface ServingConfigOrBuilder
    * - Applied according to the order in the list.
    * - A previously replaced term can not be re-replaced.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -850,6 +896,7 @@ public interface ServingConfigOrBuilder
    * - Applied according to the order in the list.
    * - A previously replaced term can not be re-replaced.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -869,6 +916,7 @@ public interface ServingConfigOrBuilder
    * - Applied according to the order in the list.
    * - A previously replaced term can not be re-replaced.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -889,6 +937,7 @@ public interface ServingConfigOrBuilder
    * - Applied according to the order in the list.
    * - A previously replaced term can not be re-replaced.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -911,6 +960,7 @@ public interface ServingConfigOrBuilder
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -931,6 +981,7 @@ public interface ServingConfigOrBuilder
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -951,6 +1002,7 @@ public interface ServingConfigOrBuilder
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -972,6 +1024,7 @@ public interface ServingConfigOrBuilder
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -991,13 +1044,16 @@ public interface ServingConfigOrBuilder
    * <pre>
    * How much diversity to use in recommendation model results e.g.
    * `medium-diversity` or `high-diversity`. Currently supported values:
+   *
    * * `no-diversity`
    * * `low-diversity`
    * * `medium-diversity`
    * * `high-diversity`
    * * `auto-diversity`
+   *
    * If not specified, we choose default based on recommendation model
    * type. Default value: `no-diversity`.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1015,13 +1071,16 @@ public interface ServingConfigOrBuilder
    * <pre>
    * How much diversity to use in recommendation model results e.g.
    * `medium-diversity` or `high-diversity`. Currently supported values:
+   *
    * * `no-diversity`
    * * `low-diversity`
    * * `medium-diversity`
    * * `high-diversity`
    * * `auto-diversity`
+   *
    * If not specified, we choose default based on recommendation model
    * type. Default value: `no-diversity`.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1070,12 +1129,14 @@ public interface ServingConfigOrBuilder
    * Whether to add additional category filters on the `similar-items` model.
    * If not specified, we enable it by default.
    *  Allowed values are:
+   *
    * * `no-category-match`: No additional filtering of original results from
    *   the model and the customer's filters.
    * * `relaxed-category-match`: Only keep results with categories that match
    *   at least one item categories in the PredictRequests's context item.
    *   * If customer also sends filters in the PredictRequest, then the results
    *   will satisfy both conditions (user given and category match).
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1094,12 +1155,14 @@ public interface ServingConfigOrBuilder
    * Whether to add additional category filters on the `similar-items` model.
    * If not specified, we enable it by default.
    *  Allowed values are:
+   *
    * * `no-category-match`: No additional filtering of original results from
    *   the model and the customer's filters.
    * * `relaxed-category-match`: Only keep results with categories that match
    *   at least one item categories in the PredictRequests's context item.
    *   * If customer also sends filters in the PredictRequest, then the results
    *   will satisfy both conditions (user given and category match).
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1117,10 +1180,12 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * The specification for personalization spec.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   *
    * Notice that if both
    * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
    * and
@@ -1142,10 +1207,12 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * The specification for personalization spec.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   *
    * Notice that if both
    * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
    * and
@@ -1167,10 +1234,12 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * The specification for personalization spec.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   *
    * Notice that if both
    * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
    * and

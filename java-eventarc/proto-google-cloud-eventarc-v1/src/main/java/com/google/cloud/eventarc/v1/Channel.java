@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,11 +53,6 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Channel();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -126,9 +121,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The INACTIVE state indicates that the Channel cannot receive events
      * permanently. There are two possible cases this state can happen:
+     *
      * 1. The SaaS provider disconnected from this Channel.
      * 2. The Channel activation token has expired but the SaaS provider
      *    wasn't connected.
+     *
      * To re-establish a Connection with a provider, the subscriber
      * should create a new Channel and give it to the provider.
      * </pre>
@@ -180,9 +177,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The INACTIVE state indicates that the Channel cannot receive events
      * permanently. There are two possible cases this state can happen:
+     *
      * 1. The SaaS provider disconnected from this Channel.
      * 2. The Channel activation token has expired but the SaaS provider
      *    wasn't connected.
+     *
      * To re-establish a Connection with a provider, the subscriber
      * should create a new Channel and give it to the provider.
      * </pre>
@@ -277,6 +276,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int transportCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object transport_;
 
   public enum TransportCase
@@ -763,6 +764,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
+   *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
@@ -791,6 +793,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
+   *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
@@ -2518,6 +2521,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
+     *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
@@ -2545,6 +2549,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
+     *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
@@ -2572,6 +2577,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
+     *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
@@ -2598,6 +2604,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
+     *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
@@ -2620,6 +2627,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
+     *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>

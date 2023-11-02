@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.functions.v1;
  *
  * <pre>
  * Configuration for a secret environment variable. It has the information
- * necessary to fetch the secret value from secret manager and expose it as an
+ * necessary to fetch the secret value from Secret Manager and expose it as an
  * environment variable.
  * </pre>
  *
@@ -50,11 +50,6 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SecretEnvVar();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,9 +127,9 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Project identifier (preferrably project number but can also be the project
-   * ID) of the project that contains the secret. If not set, it will be
-   * populated with the function's project assuming that the secret exists in
-   * the same project as of the function.
+   * ID) of the project that contains the secret. If not set, it is
+   * populated with the function's project, assuming that the secret exists in
+   * the same project as the function.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -158,9 +153,9 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Project identifier (preferrably project number but can also be the project
-   * ID) of the project that contains the secret. If not set, it will be
-   * populated with the function's project assuming that the secret exists in
-   * the same project as of the function.
+   * ID) of the project that contains the secret. If not set, it is
+   * populated with the function's project, assuming that the secret exists in
+   * the same project as the function.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -188,7 +183,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the secret in secret manager (not the full resource name).
+   * Name of the secret in Secret Manager (not the full resource name).
    * </pre>
    *
    * <code>string secret = 3;</code>
@@ -211,7 +206,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the secret in secret manager (not the full resource name).
+   * Name of the secret in Secret Manager (not the full resource name).
    * </pre>
    *
    * <code>string secret = 3;</code>
@@ -477,7 +472,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration for a secret environment variable. It has the information
-   * necessary to fetch the secret value from secret manager and expose it as an
+   * necessary to fetch the secret value from Secret Manager and expose it as an
    * environment variable.
    * </pre>
    *
@@ -813,9 +808,9 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Project identifier (preferrably project number but can also be the project
-     * ID) of the project that contains the secret. If not set, it will be
-     * populated with the function's project assuming that the secret exists in
-     * the same project as of the function.
+     * ID) of the project that contains the secret. If not set, it is
+     * populated with the function's project, assuming that the secret exists in
+     * the same project as the function.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -838,9 +833,9 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Project identifier (preferrably project number but can also be the project
-     * ID) of the project that contains the secret. If not set, it will be
-     * populated with the function's project assuming that the secret exists in
-     * the same project as of the function.
+     * ID) of the project that contains the secret. If not set, it is
+     * populated with the function's project, assuming that the secret exists in
+     * the same project as the function.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -863,9 +858,9 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Project identifier (preferrably project number but can also be the project
-     * ID) of the project that contains the secret. If not set, it will be
-     * populated with the function's project assuming that the secret exists in
-     * the same project as of the function.
+     * ID) of the project that contains the secret. If not set, it is
+     * populated with the function's project, assuming that the secret exists in
+     * the same project as the function.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -887,9 +882,9 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Project identifier (preferrably project number but can also be the project
-     * ID) of the project that contains the secret. If not set, it will be
-     * populated with the function's project assuming that the secret exists in
-     * the same project as of the function.
+     * ID) of the project that contains the secret. If not set, it is
+     * populated with the function's project, assuming that the secret exists in
+     * the same project as the function.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -907,9 +902,9 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Project identifier (preferrably project number but can also be the project
-     * ID) of the project that contains the secret. If not set, it will be
-     * populated with the function's project assuming that the secret exists in
-     * the same project as of the function.
+     * ID) of the project that contains the secret. If not set, it is
+     * populated with the function's project, assuming that the secret exists in
+     * the same project as the function.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -933,7 +928,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the secret in secret manager (not the full resource name).
+     * Name of the secret in Secret Manager (not the full resource name).
      * </pre>
      *
      * <code>string secret = 3;</code>
@@ -955,7 +950,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the secret in secret manager (not the full resource name).
+     * Name of the secret in Secret Manager (not the full resource name).
      * </pre>
      *
      * <code>string secret = 3;</code>
@@ -977,7 +972,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the secret in secret manager (not the full resource name).
+     * Name of the secret in Secret Manager (not the full resource name).
      * </pre>
      *
      * <code>string secret = 3;</code>
@@ -998,7 +993,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the secret in secret manager (not the full resource name).
+     * Name of the secret in Secret Manager (not the full resource name).
      * </pre>
      *
      * <code>string secret = 3;</code>
@@ -1015,7 +1010,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the secret in secret manager (not the full resource name).
+     * Name of the secret in Secret Manager (not the full resource name).
      * </pre>
      *
      * <code>string secret = 3;</code>

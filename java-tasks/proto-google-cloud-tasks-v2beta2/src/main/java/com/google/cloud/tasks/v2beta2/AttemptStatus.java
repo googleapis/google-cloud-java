@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
     return new AttemptStatus();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tasks.v2beta2.TaskProto
         .internal_static_google_cloud_tasks_v2beta2_AttemptStatus_descriptor;
@@ -72,6 +67,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that this attempt was scheduled.
+   *
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -88,6 +84,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that this attempt was scheduled.
+   *
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -106,6 +103,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that this attempt was scheduled.
+   *
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -125,6 +123,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that this attempt was dispatched.
+   *
    * `dispatch_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -141,6 +140,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that this attempt was dispatched.
+   *
    * `dispatch_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -159,6 +159,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that this attempt was dispatched.
+   *
    * `dispatch_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -178,6 +179,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that this attempt response was received.
+   *
    * `response_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -194,6 +196,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that this attempt response was received.
+   *
    * `response_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -212,6 +215,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that this attempt response was received.
+   *
    * `response_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -231,6 +235,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The response from the target for this attempt.
+   *
    * If the task has not been attempted or the task is currently running
    * then the response status is unset.
    * </pre>
@@ -248,6 +253,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The response from the target for this attempt.
+   *
    * If the task has not been attempted or the task is currently running
    * then the response status is unset.
    * </pre>
@@ -265,6 +271,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The response from the target for this attempt.
+   *
    * If the task has not been attempted or the task is currently running
    * then the response status is unset.
    * </pre>
@@ -732,6 +739,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was scheduled.
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -747,6 +755,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was scheduled.
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -768,6 +777,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was scheduled.
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -791,6 +801,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was scheduled.
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -811,6 +822,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was scheduled.
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -837,6 +849,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was scheduled.
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -857,6 +870,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was scheduled.
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -872,6 +886,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was scheduled.
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -891,6 +906,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was scheduled.
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -924,6 +940,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was dispatched.
+     *
      * `dispatch_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -939,6 +956,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was dispatched.
+     *
      * `dispatch_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -960,6 +978,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was dispatched.
+     *
      * `dispatch_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -983,6 +1002,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was dispatched.
+     *
      * `dispatch_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1003,6 +1023,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was dispatched.
+     *
      * `dispatch_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1029,6 +1050,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was dispatched.
+     *
      * `dispatch_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1049,6 +1071,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was dispatched.
+     *
      * `dispatch_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1064,6 +1087,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was dispatched.
+     *
      * `dispatch_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1083,6 +1107,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt was dispatched.
+     *
      * `dispatch_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1116,6 +1141,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt response was received.
+     *
      * `response_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1131,6 +1157,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt response was received.
+     *
      * `response_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1152,6 +1179,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt response was received.
+     *
      * `response_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1175,6 +1203,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt response was received.
+     *
      * `response_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1195,6 +1224,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt response was received.
+     *
      * `response_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1221,6 +1251,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt response was received.
+     *
      * `response_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1241,6 +1272,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt response was received.
+     *
      * `response_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1256,6 +1288,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt response was received.
+     *
      * `response_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1275,6 +1308,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that this attempt response was received.
+     *
      * `response_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1306,6 +1340,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The response from the target for this attempt.
+     *
      * If the task has not been attempted or the task is currently running
      * then the response status is unset.
      * </pre>
@@ -1322,6 +1357,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The response from the target for this attempt.
+     *
      * If the task has not been attempted or the task is currently running
      * then the response status is unset.
      * </pre>
@@ -1344,6 +1380,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The response from the target for this attempt.
+     *
      * If the task has not been attempted or the task is currently running
      * then the response status is unset.
      * </pre>
@@ -1368,6 +1405,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The response from the target for this attempt.
+     *
      * If the task has not been attempted or the task is currently running
      * then the response status is unset.
      * </pre>
@@ -1389,6 +1427,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The response from the target for this attempt.
+     *
      * If the task has not been attempted or the task is currently running
      * then the response status is unset.
      * </pre>
@@ -1416,6 +1455,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The response from the target for this attempt.
+     *
      * If the task has not been attempted or the task is currently running
      * then the response status is unset.
      * </pre>
@@ -1437,6 +1477,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The response from the target for this attempt.
+     *
      * If the task has not been attempted or the task is currently running
      * then the response status is unset.
      * </pre>
@@ -1453,6 +1494,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The response from the target for this attempt.
+     *
      * If the task has not been attempted or the task is currently running
      * then the response status is unset.
      * </pre>
@@ -1473,6 +1515,7 @@ public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The response from the target for this attempt.
+     *
      * If the task has not been attempted or the task is currently running
      * then the response status is unset.
      * </pre>

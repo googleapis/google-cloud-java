@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
 
   private ProductSearchParams() {
     productSet_ = "";
-    productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    productCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
     filter_ = "";
   }
 
@@ -47,11 +47,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ProductSearchParams();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,6 +128,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * The resource name of a
    * [ProductSet][google.cloud.vision.v1p4beta1.ProductSet] to be searched for
    * similar images.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
@@ -160,6 +156,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * The resource name of a
    * [ProductSet][google.cloud.vision.v1p4beta1.ProductSet] to be searched for
    * similar images.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
@@ -184,7 +181,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   public static final int PRODUCT_CATEGORIES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList productCategories_;
+  private com.google.protobuf.LazyStringArrayList productCategories_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -280,6 +278,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * on Product labels. We currently support an AND of OR of key-value
    * expressions, where each expression within an OR must have the same key. An
    * '=' should be used to connect the key and value.
+   *
    * For example, "(color = red OR color = blue) AND brand = Google" is
    * acceptable, but "(color = red OR brand = Google)" is not acceptable.
    * "color: red" is not acceptable because it uses a ':' instead of an '='.
@@ -309,6 +308,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * on Product labels. We currently support an AND of OR of key-value
    * expressions, where each expression within an OR must have the same key. An
    * '=' should be used to connect the key and value.
+   *
    * For example, "(color = red OR color = blue) AND brand = Google" is
    * acceptable, but "(color = red OR brand = Google)" is not acceptable.
    * "color: red" is not acceptable because it uses a ':' instead of an '='.
@@ -575,8 +575,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
         boundingPolyBuilder_ = null;
       }
       productSet_ = "";
-      productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      productCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
       filter_ = "";
       return this;
     }
@@ -605,21 +604,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     public com.google.cloud.vision.v1p4beta1.ProductSearchParams buildPartial() {
       com.google.cloud.vision.v1p4beta1.ProductSearchParams result =
           new com.google.cloud.vision.v1p4beta1.ProductSearchParams(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.vision.v1p4beta1.ProductSearchParams result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        productCategories_ = productCategories_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.productCategories_ = productCategories_;
     }
 
     private void buildPartial0(com.google.cloud.vision.v1p4beta1.ProductSearchParams result) {
@@ -630,6 +619,10 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.productSet_ = productSet_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        productCategories_.makeImmutable();
+        result.productCategories_ = productCategories_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.filter_ = filter_;
@@ -693,7 +686,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       if (!other.productCategories_.isEmpty()) {
         if (productCategories_.isEmpty()) {
           productCategories_ = other.productCategories_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureProductCategoriesIsMutable();
           productCategories_.addAll(other.productCategories_);
@@ -977,6 +970,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * The resource name of a
      * [ProductSet][google.cloud.vision.v1p4beta1.ProductSet] to be searched for
      * similar images.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
@@ -1003,6 +997,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * The resource name of a
      * [ProductSet][google.cloud.vision.v1p4beta1.ProductSet] to be searched for
      * similar images.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
@@ -1029,6 +1024,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * The resource name of a
      * [ProductSet][google.cloud.vision.v1p4beta1.ProductSet] to be searched for
      * similar images.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
@@ -1054,6 +1050,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * The resource name of a
      * [ProductSet][google.cloud.vision.v1p4beta1.ProductSet] to be searched for
      * similar images.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
@@ -1075,6 +1072,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * The resource name of a
      * [ProductSet][google.cloud.vision.v1p4beta1.ProductSet] to be searched for
      * similar images.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
@@ -1095,14 +1093,14 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.LazyStringList productCategories_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList productCategories_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureProductCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!productCategories_.isModifiable()) {
         productCategories_ = new com.google.protobuf.LazyStringArrayList(productCategories_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1122,7 +1120,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * @return A list containing the productCategories.
      */
     public com.google.protobuf.ProtocolStringList getProductCategoriesList() {
-      return productCategories_.getUnmodifiableView();
+      productCategories_.makeImmutable();
+      return productCategories_;
     }
     /**
      *
@@ -1211,6 +1210,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       }
       ensureProductCategoriesIsMutable();
       productCategories_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1238,6 +1238,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       }
       ensureProductCategoriesIsMutable();
       productCategories_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1262,6 +1263,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     public Builder addAllProductCategories(java.lang.Iterable<java.lang.String> values) {
       ensureProductCategoriesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, productCategories_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1283,8 +1285,9 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearProductCategories() {
-      productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      productCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1313,6 +1316,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureProductCategoriesIsMutable();
       productCategories_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1326,6 +1330,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * on Product labels. We currently support an AND of OR of key-value
      * expressions, where each expression within an OR must have the same key. An
      * '=' should be used to connect the key and value.
+     *
      * For example, "(color = red OR color = blue) AND brand = Google" is
      * acceptable, but "(color = red OR brand = Google)" is not acceptable.
      * "color: red" is not acceptable because it uses a ':' instead of an '='.
@@ -1354,6 +1359,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * on Product labels. We currently support an AND of OR of key-value
      * expressions, where each expression within an OR must have the same key. An
      * '=' should be used to connect the key and value.
+     *
      * For example, "(color = red OR color = blue) AND brand = Google" is
      * acceptable, but "(color = red OR brand = Google)" is not acceptable.
      * "color: red" is not acceptable because it uses a ':' instead of an '='.
@@ -1382,6 +1388,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * on Product labels. We currently support an AND of OR of key-value
      * expressions, where each expression within an OR must have the same key. An
      * '=' should be used to connect the key and value.
+     *
      * For example, "(color = red OR color = blue) AND brand = Google" is
      * acceptable, but "(color = red OR brand = Google)" is not acceptable.
      * "color: red" is not acceptable because it uses a ':' instead of an '='.
@@ -1409,6 +1416,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * on Product labels. We currently support an AND of OR of key-value
      * expressions, where each expression within an OR must have the same key. An
      * '=' should be used to connect the key and value.
+     *
      * For example, "(color = red OR color = blue) AND brand = Google" is
      * acceptable, but "(color = red OR brand = Google)" is not acceptable.
      * "color: red" is not acceptable because it uses a ':' instead of an '='.
@@ -1432,6 +1440,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * on Product labels. We currently support an AND of OR of key-value
      * expressions, where each expression within an OR must have the same key. An
      * '=' should be used to connect the key and value.
+     *
      * For example, "(color = red OR color = blue) AND brand = Google" is
      * acceptable, but "(color = red OR brand = Google)" is not acceptable.
      * "color: red" is not acceptable because it uses a ':' instead of an '='.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AwsVolumeTemplate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -237,6 +232,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The size of the volume, in GiBs.
+   *
    * When unspecified, a default value is provided. See the specific reference
    * in the parent resource.
    * </pre>
@@ -257,6 +253,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Type of the EBS volume.
+   *
    * When unspecified, it defaults to GP2 volume.
    * </pre>
    *
@@ -275,6 +272,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Type of the EBS volume.
+   *
    * When unspecified, it defaults to GP2 volume.
    * </pre>
    *
@@ -322,6 +320,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. The Amazon Resource Name (ARN) of the Customer Managed Key (CMK)
    * used to encrypt AWS EBS volumes.
+   *
    * If not specified, the default Amazon managed key associated to
    * the AWS region where this cluster runs will be used.
    * </pre>
@@ -348,6 +347,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. The Amazon Resource Name (ARN) of the Customer Managed Key (CMK)
    * used to encrypt AWS EBS volumes.
+   *
    * If not specified, the default Amazon managed key associated to
    * the AWS region where this cluster runs will be used.
    * </pre>
@@ -787,6 +787,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the volume, in GiBs.
+     *
      * When unspecified, a default value is provided. See the specific reference
      * in the parent resource.
      * </pre>
@@ -804,6 +805,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the volume, in GiBs.
+     *
      * When unspecified, a default value is provided. See the specific reference
      * in the parent resource.
      * </pre>
@@ -825,6 +827,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the volume, in GiBs.
+     *
      * When unspecified, a default value is provided. See the specific reference
      * in the parent resource.
      * </pre>
@@ -846,6 +849,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Type of the EBS volume.
+     *
      * When unspecified, it defaults to GP2 volume.
      * </pre>
      *
@@ -864,6 +868,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Type of the EBS volume.
+     *
      * When unspecified, it defaults to GP2 volume.
      * </pre>
      *
@@ -885,6 +890,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Type of the EBS volume.
+     *
      * When unspecified, it defaults to GP2 volume.
      * </pre>
      *
@@ -907,6 +913,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Type of the EBS volume.
+     *
      * When unspecified, it defaults to GP2 volume.
      * </pre>
      *
@@ -932,6 +939,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Type of the EBS volume.
+     *
      * When unspecified, it defaults to GP2 volume.
      * </pre>
      *
@@ -1011,6 +1019,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The Amazon Resource Name (ARN) of the Customer Managed Key (CMK)
      * used to encrypt AWS EBS volumes.
+     *
      * If not specified, the default Amazon managed key associated to
      * the AWS region where this cluster runs will be used.
      * </pre>
@@ -1036,6 +1045,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The Amazon Resource Name (ARN) of the Customer Managed Key (CMK)
      * used to encrypt AWS EBS volumes.
+     *
      * If not specified, the default Amazon managed key associated to
      * the AWS region where this cluster runs will be used.
      * </pre>
@@ -1061,6 +1071,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The Amazon Resource Name (ARN) of the Customer Managed Key (CMK)
      * used to encrypt AWS EBS volumes.
+     *
      * If not specified, the default Amazon managed key associated to
      * the AWS region where this cluster runs will be used.
      * </pre>
@@ -1085,6 +1096,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The Amazon Resource Name (ARN) of the Customer Managed Key (CMK)
      * used to encrypt AWS EBS volumes.
+     *
      * If not specified, the default Amazon managed key associated to
      * the AWS region where this cluster runs will be used.
      * </pre>
@@ -1105,6 +1117,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The Amazon Resource Name (ARN) of the Customer Managed Key (CMK)
      * used to encrypt AWS EBS volumes.
+     *
      * If not specified, the default Amazon managed key associated to
      * the AWS region where this cluster runs will be used.
      * </pre>

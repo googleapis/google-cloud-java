@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OtherInfoTypeSummary();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,6 +125,25 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     return estimatedPrevalence_;
   }
 
+  public static final int EXCLUDED_FROM_ANALYSIS_FIELD_NUMBER = 3;
+  private boolean excludedFromAnalysis_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether this infoType was excluded from sensitivity and risk analysis due
+   * to factors such as low prevalence (subject to change).
+   * </pre>
+   *
+   * <code>bool excluded_from_analysis = 3;</code>
+   *
+   * @return The excludedFromAnalysis.
+   */
+  @java.lang.Override
+  public boolean getExcludedFromAnalysis() {
+    return excludedFromAnalysis_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -150,6 +164,9 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     if (estimatedPrevalence_ != 0) {
       output.writeInt32(2, estimatedPrevalence_);
     }
+    if (excludedFromAnalysis_ != false) {
+      output.writeBool(3, excludedFromAnalysis_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -164,6 +181,9 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     }
     if (estimatedPrevalence_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, estimatedPrevalence_);
+    }
+    if (excludedFromAnalysis_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, excludedFromAnalysis_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -186,6 +206,7 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
       if (!getInfoType().equals(other.getInfoType())) return false;
     }
     if (getEstimatedPrevalence() != other.getEstimatedPrevalence()) return false;
+    if (getExcludedFromAnalysis() != other.getExcludedFromAnalysis()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -203,6 +224,8 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + ESTIMATED_PREVALENCE_FIELD_NUMBER;
     hash = (53 * hash) + getEstimatedPrevalence();
+    hash = (37 * hash) + EXCLUDED_FROM_ANALYSIS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExcludedFromAnalysis());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -348,6 +371,7 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
         infoTypeBuilder_ = null;
       }
       estimatedPrevalence_ = 0;
+      excludedFromAnalysis_ = false;
       return this;
     }
 
@@ -389,6 +413,9 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.estimatedPrevalence_ = estimatedPrevalence_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.excludedFromAnalysis_ = excludedFromAnalysis_;
       }
     }
 
@@ -443,6 +470,9 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
       if (other.getEstimatedPrevalence() != 0) {
         setEstimatedPrevalence(other.getEstimatedPrevalence());
       }
+      if (other.getExcludedFromAnalysis() != false) {
+        setExcludedFromAnalysis(other.getExcludedFromAnalysis());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -481,6 +511,12 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                excludedFromAnalysis_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -735,6 +771,62 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     public Builder clearEstimatedPrevalence() {
       bitField0_ = (bitField0_ & ~0x00000002);
       estimatedPrevalence_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean excludedFromAnalysis_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether this infoType was excluded from sensitivity and risk analysis due
+     * to factors such as low prevalence (subject to change).
+     * </pre>
+     *
+     * <code>bool excluded_from_analysis = 3;</code>
+     *
+     * @return The excludedFromAnalysis.
+     */
+    @java.lang.Override
+    public boolean getExcludedFromAnalysis() {
+      return excludedFromAnalysis_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether this infoType was excluded from sensitivity and risk analysis due
+     * to factors such as low prevalence (subject to change).
+     * </pre>
+     *
+     * <code>bool excluded_from_analysis = 3;</code>
+     *
+     * @param value The excludedFromAnalysis to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExcludedFromAnalysis(boolean value) {
+
+      excludedFromAnalysis_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether this infoType was excluded from sensitivity and risk analysis due
+     * to factors such as low prevalence (subject to change).
+     * </pre>
+     *
+     * <code>bool excluded_from_analysis = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExcludedFromAnalysis() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      excludedFromAnalysis_ = false;
       onChanged();
       return this;
     }

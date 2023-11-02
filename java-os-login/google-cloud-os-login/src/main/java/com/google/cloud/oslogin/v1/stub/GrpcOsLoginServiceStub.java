@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.oslogin.common.OsLoginProto;
 import com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest;
@@ -32,7 +33,6 @@ import com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse;
 import com.google.cloud.oslogin.v1.LoginProfile;
 import com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -185,9 +185,9 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                 .setMethodDescriptor(createSshPublicKeyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountTransportSettings =
@@ -195,9 +195,9 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
             .setMethodDescriptor(deletePosixAccountMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeyTransportSettings =
@@ -205,9 +205,9 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
             .setMethodDescriptor(deleteSshPublicKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileTransportSettings =
@@ -215,9 +215,9 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
             .setMethodDescriptor(getLoginProfileMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetSshPublicKeyRequest, OsLoginProto.SshPublicKey>
@@ -226,9 +226,9 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                 .setMethodDescriptor(getSshPublicKeyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
@@ -237,9 +237,9 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                 .setMethodDescriptor(importSshPublicKeyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
@@ -248,9 +248,9 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                 .setMethodDescriptor(updateSshPublicKeyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
 

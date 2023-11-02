@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ListBackupsRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the service whose backups to
    * list, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface ListBackupsRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the service whose backups to
    * list, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups`.
    * </pre>
    *
@@ -78,7 +80,9 @@ public interface ListBackupsRequestOrBuilder
    * Optional. A page token, received from a previous
    * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
    * call. Provide this token to retrieve the subsequent page.
+   *
    * To retrieve the first page, supply an empty page token.
+   *
    * When paginating, other parameters provided to
    * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
    * must match the call that provided the page token.
@@ -96,7 +100,9 @@ public interface ListBackupsRequestOrBuilder
    * Optional. A page token, received from a previous
    * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
    * call. Provide this token to retrieve the subsequent page.
+   *
    * To retrieve the first page, supply an empty page token.
+   *
    * When paginating, other parameters provided to
    * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
    * must match the call that provided the page token.

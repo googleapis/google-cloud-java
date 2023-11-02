@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -225,7 +225,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+   * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
    * </pre>
    *
    * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -237,7 +237,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+   * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
    * </pre>
    *
    * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -249,7 +249,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+   * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
    * </pre>
    *
    * <code>optional string gateway_i_pv4 = 178678877;</code>

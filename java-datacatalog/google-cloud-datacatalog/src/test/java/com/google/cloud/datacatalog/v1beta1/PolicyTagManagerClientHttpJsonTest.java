@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,7 +95,10 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -144,7 +147,10 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -273,7 +279,10 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -282,7 +291,10 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
 
     Taxonomy actualResponse = client.updateTaxonomy(taxonomy);
@@ -316,7 +328,10 @@ public class PolicyTagManagerClientHttpJsonTest {
               .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
               .setDisplayName("displayName1714148973")
               .setDescription("description-1724546052")
+              .setPolicyTagCount(1074340189)
+              .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
               .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+              .setService(Taxonomy.Service.newBuilder().build())
               .build();
       client.updateTaxonomy(taxonomy);
       Assert.fail("No exception raised");
@@ -432,7 +447,10 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -479,7 +497,10 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

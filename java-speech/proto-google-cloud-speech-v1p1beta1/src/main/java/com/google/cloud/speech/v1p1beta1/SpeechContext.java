@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   private SpeechContext() {
-    phrases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    phrases_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SpeechContext();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
   public static final int PHRASES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList phrases_;
+  private com.google.protobuf.LazyStringArrayList phrases_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -82,6 +78,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
    * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+   *
    * List items can also be set to classes for groups of words that represent
    * common concepts that occur in natural language. For example, rather than
    * providing phrase hints for every month of the year, using the $MONTH class
@@ -106,6 +103,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
    * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+   *
    * List items can also be set to classes for groups of words that represent
    * common concepts that occur in natural language. For example, rather than
    * providing phrase hints for every month of the year, using the $MONTH class
@@ -130,6 +128,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
    * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+   *
    * List items can also be set to classes for groups of words that represent
    * common concepts that occur in natural language. For example, rather than
    * providing phrase hints for every month of the year, using the $MONTH class
@@ -155,6 +154,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
    * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+   *
    * List items can also be set to classes for groups of words that represent
    * common concepts that occur in natural language. For example, rather than
    * providing phrase hints for every month of the year, using the $MONTH class
@@ -412,8 +412,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      phrases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      phrases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       boost_ = 0F;
       return this;
     }
@@ -442,7 +441,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.speech.v1p1beta1.SpeechContext buildPartial() {
       com.google.cloud.speech.v1p1beta1.SpeechContext result =
           new com.google.cloud.speech.v1p1beta1.SpeechContext(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -450,17 +448,12 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.speech.v1p1beta1.SpeechContext result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        phrases_ = phrases_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.phrases_ = phrases_;
-    }
-
     private void buildPartial0(com.google.cloud.speech.v1p1beta1.SpeechContext result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        phrases_.makeImmutable();
+        result.phrases_ = phrases_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.boost_ = boost_;
       }
@@ -515,7 +508,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       if (!other.phrases_.isEmpty()) {
         if (phrases_.isEmpty()) {
           phrases_ = other.phrases_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensurePhrasesIsMutable();
           phrases_.addAll(other.phrases_);
@@ -583,14 +576,14 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList phrases_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList phrases_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePhrasesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!phrases_.isModifiable()) {
         phrases_ = new com.google.protobuf.LazyStringArrayList(phrases_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -602,6 +595,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
      * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+     *
      * List items can also be set to classes for groups of words that represent
      * common concepts that occur in natural language. For example, rather than
      * providing phrase hints for every month of the year, using the $MONTH class
@@ -614,7 +608,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the phrases.
      */
     public com.google.protobuf.ProtocolStringList getPhrasesList() {
-      return phrases_.getUnmodifiableView();
+      phrases_.makeImmutable();
+      return phrases_;
     }
     /**
      *
@@ -626,6 +621,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
      * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+     *
      * List items can also be set to classes for groups of words that represent
      * common concepts that occur in natural language. For example, rather than
      * providing phrase hints for every month of the year, using the $MONTH class
@@ -650,6 +646,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
      * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+     *
      * List items can also be set to classes for groups of words that represent
      * common concepts that occur in natural language. For example, rather than
      * providing phrase hints for every month of the year, using the $MONTH class
@@ -675,6 +672,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
      * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+     *
      * List items can also be set to classes for groups of words that represent
      * common concepts that occur in natural language. For example, rather than
      * providing phrase hints for every month of the year, using the $MONTH class
@@ -700,6 +698,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
      * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+     *
      * List items can also be set to classes for groups of words that represent
      * common concepts that occur in natural language. For example, rather than
      * providing phrase hints for every month of the year, using the $MONTH class
@@ -719,6 +718,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePhrasesIsMutable();
       phrases_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -732,6 +732,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
      * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+     *
      * List items can also be set to classes for groups of words that represent
      * common concepts that occur in natural language. For example, rather than
      * providing phrase hints for every month of the year, using the $MONTH class
@@ -750,6 +751,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePhrasesIsMutable();
       phrases_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -763,6 +765,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
      * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+     *
      * List items can also be set to classes for groups of words that represent
      * common concepts that occur in natural language. For example, rather than
      * providing phrase hints for every month of the year, using the $MONTH class
@@ -778,6 +781,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPhrases(java.lang.Iterable<java.lang.String> values) {
       ensurePhrasesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, phrases_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -791,6 +795,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
      * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+     *
      * List items can also be set to classes for groups of words that represent
      * common concepts that occur in natural language. For example, rather than
      * providing phrase hints for every month of the year, using the $MONTH class
@@ -803,8 +808,9 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPhrases() {
-      phrases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      phrases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -818,6 +824,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
      * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+     *
      * List items can also be set to classes for groups of words that represent
      * common concepts that occur in natural language. For example, rather than
      * providing phrase hints for every month of the year, using the $MONTH class
@@ -837,6 +844,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePhrasesIsMutable();
       phrases_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

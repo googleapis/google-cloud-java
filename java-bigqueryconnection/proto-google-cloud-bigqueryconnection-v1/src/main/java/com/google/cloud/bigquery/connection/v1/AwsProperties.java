@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     return new AwsProperties();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_AwsProperties_descriptor;
@@ -66,6 +61,8 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int authenticationMethodCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object authenticationMethod_;
 
   public enum AuthenticationMethodCase
@@ -128,7 +125,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is deprecated.
-   *     See google/cloud/bigquery/connection/v1/connection.proto;l=356
+   *     See google/cloud/bigquery/connection/v1/connection.proto;l=378
    * @return Whether the crossAccountRole field is set.
    */
   @java.lang.Override
@@ -150,7 +147,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is deprecated.
-   *     See google/cloud/bigquery/connection/v1/connection.proto;l=356
+   *     See google/cloud/bigquery/connection/v1/connection.proto;l=378
    * @return The crossAccountRole.
    */
   @java.lang.Override
@@ -681,7 +678,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is
-     *     deprecated. See google/cloud/bigquery/connection/v1/connection.proto;l=356
+     *     deprecated. See google/cloud/bigquery/connection/v1/connection.proto;l=378
      * @return Whether the crossAccountRole field is set.
      */
     @java.lang.Override
@@ -703,7 +700,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is
-     *     deprecated. See google/cloud/bigquery/connection/v1/connection.proto;l=356
+     *     deprecated. See google/cloud/bigquery/connection/v1/connection.proto;l=378
      * @return The crossAccountRole.
      */
     @java.lang.Override

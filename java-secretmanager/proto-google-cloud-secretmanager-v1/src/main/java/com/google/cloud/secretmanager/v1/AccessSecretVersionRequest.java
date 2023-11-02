@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
     return new AccessSecretVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.secretmanager.v1.ServiceProto
         .internal_static_google_cloud_secretmanager_v1_AccessSecretVersionRequest_descriptor;
@@ -77,6 +72,7 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   *
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
    * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
@@ -105,6 +101,7 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   *
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
    * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
@@ -481,6 +478,7 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     *
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
      * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
@@ -508,6 +506,7 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     *
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
      * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
@@ -535,6 +534,7 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     *
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
      * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
@@ -561,6 +561,7 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     *
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
      * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
@@ -583,6 +584,7 @@ public final class AccessSecretVersionRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     *
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
      * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>

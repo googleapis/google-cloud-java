@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,5 +60,5 @@ public interface EntrypointOrBuilder
    */
   com.google.protobuf.ByteString getShellBytes();
 
-  public com.google.appengine.v1.Entrypoint.CommandCase getCommandCase();
+  com.google.appengine.v1.Entrypoint.CommandCase getCommandCase();
 }

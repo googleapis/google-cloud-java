@@ -27,6 +27,9 @@
             },
             "ClassifyText": {
               "methods": ["classifyText", "classifyText", "classifyTextCallable"]
+            },
+            "ModerateText": {
+              "methods": ["moderateText", "moderateText", "moderateTextCallable"]
             }
           }
         }

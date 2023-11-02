@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * ConsumerProcurementService allows customers to make purchases of products
  * served by the Cloud Commerce platform.
  * When purchases are made, the
- * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService] programs the appropriate backends, including
- * both Google's own infrastructure, as well as third-party systems, and to
- * enable billing setup for charging for the procured item.
+ * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService]
+ * programs the appropriate backends, including both Google's own
+ * infrastructure, as well as third-party systems, and to enable billing setup
+ * for charging for the procured item.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -38,7 +39,7 @@ public final class ConsumerProcurementServiceGrpc {
 
   private ConsumerProcurementServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -232,9 +233,10 @@ public final class ConsumerProcurementServiceGrpc {
    * ConsumerProcurementService allows customers to make purchases of products
    * served by the Cloud Commerce platform.
    * When purchases are made, the
-   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService] programs the appropriate backends, including
-   * both Google's own infrastructure, as well as third-party systems, and to
-   * enable billing setup for charging for the procured item.
+   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService]
+   * programs the appropriate backends, including both Google's own
+   * infrastructure, as well as third-party systems, and to enable billing setup
+   * for charging for the procured item.
    * </pre>
    */
   public interface AsyncService {
@@ -243,11 +245,15 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
+     * Creates a new
+     * [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
+     * This API only supports GCP spend-based committed use
+     * discounts specified by GCP documentation.
      * The returned long-running operation is in-progress until the backend
      * completes the creation of the resource. Once completed, the order is
-     * in [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1alpha1.OrderState.ORDER_STATE_ACTIVE]. In case of failure, the
-     * order resource will be removed.
+     * in
+     * [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1alpha1.OrderState.ORDER_STATE_ACTIVE].
+     * In case of failure, the order resource will be removed.
      * </pre>
      */
     default void placeOrder(
@@ -260,7 +266,9 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Returns the requested [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order] resource.
+     * Returns the requested
+     * [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order]
+     * resource.
      * </pre>
      */
     default void getOrder(
@@ -274,8 +282,9 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Lists [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order] resources that the user has access to, within the
-     * scope of the parent resource.
+     * Lists [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order]
+     * resources that the user has access to, within the scope of the parent
+     * resource.
      * </pre>
      */
     default void listOrders(
@@ -294,9 +303,10 @@ public final class ConsumerProcurementServiceGrpc {
    * ConsumerProcurementService allows customers to make purchases of products
    * served by the Cloud Commerce platform.
    * When purchases are made, the
-   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService] programs the appropriate backends, including
-   * both Google's own infrastructure, as well as third-party systems, and to
-   * enable billing setup for charging for the procured item.
+   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService]
+   * programs the appropriate backends, including both Google's own
+   * infrastructure, as well as third-party systems, and to enable billing setup
+   * for charging for the procured item.
    * </pre>
    */
   public abstract static class ConsumerProcurementServiceImplBase
@@ -315,9 +325,10 @@ public final class ConsumerProcurementServiceGrpc {
    * ConsumerProcurementService allows customers to make purchases of products
    * served by the Cloud Commerce platform.
    * When purchases are made, the
-   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService] programs the appropriate backends, including
-   * both Google's own infrastructure, as well as third-party systems, and to
-   * enable billing setup for charging for the procured item.
+   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService]
+   * programs the appropriate backends, including both Google's own
+   * infrastructure, as well as third-party systems, and to enable billing setup
+   * for charging for the procured item.
    * </pre>
    */
   public static final class ConsumerProcurementServiceStub
@@ -337,11 +348,15 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
+     * Creates a new
+     * [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
+     * This API only supports GCP spend-based committed use
+     * discounts specified by GCP documentation.
      * The returned long-running operation is in-progress until the backend
      * completes the creation of the resource. Once completed, the order is
-     * in [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1alpha1.OrderState.ORDER_STATE_ACTIVE]. In case of failure, the
-     * order resource will be removed.
+     * in
+     * [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1alpha1.OrderState.ORDER_STATE_ACTIVE].
+     * In case of failure, the order resource will be removed.
      * </pre>
      */
     public void placeOrder(
@@ -355,7 +370,9 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Returns the requested [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order] resource.
+     * Returns the requested
+     * [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order]
+     * resource.
      * </pre>
      */
     public void getOrder(
@@ -370,8 +387,9 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Lists [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order] resources that the user has access to, within the
-     * scope of the parent resource.
+     * Lists [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order]
+     * resources that the user has access to, within the scope of the parent
+     * resource.
      * </pre>
      */
     public void listOrders(
@@ -391,9 +409,10 @@ public final class ConsumerProcurementServiceGrpc {
    * ConsumerProcurementService allows customers to make purchases of products
    * served by the Cloud Commerce platform.
    * When purchases are made, the
-   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService] programs the appropriate backends, including
-   * both Google's own infrastructure, as well as third-party systems, and to
-   * enable billing setup for charging for the procured item.
+   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService]
+   * programs the appropriate backends, including both Google's own
+   * infrastructure, as well as third-party systems, and to enable billing setup
+   * for charging for the procured item.
    * </pre>
    */
   public static final class ConsumerProcurementServiceBlockingStub
@@ -413,11 +432,15 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
+     * Creates a new
+     * [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
+     * This API only supports GCP spend-based committed use
+     * discounts specified by GCP documentation.
      * The returned long-running operation is in-progress until the backend
      * completes the creation of the resource. Once completed, the order is
-     * in [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1alpha1.OrderState.ORDER_STATE_ACTIVE]. In case of failure, the
-     * order resource will be removed.
+     * in
+     * [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1alpha1.OrderState.ORDER_STATE_ACTIVE].
+     * In case of failure, the order resource will be removed.
      * </pre>
      */
     public com.google.longrunning.Operation placeOrder(
@@ -430,7 +453,9 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Returns the requested [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order] resource.
+     * Returns the requested
+     * [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order]
+     * resource.
      * </pre>
      */
     public com.google.cloud.commerce.consumer.procurement.v1alpha1.Order getOrder(
@@ -443,8 +468,9 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Lists [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order] resources that the user has access to, within the
-     * scope of the parent resource.
+     * Lists [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order]
+     * resources that the user has access to, within the scope of the parent
+     * resource.
      * </pre>
      */
     public com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersResponse listOrders(
@@ -462,9 +488,10 @@ public final class ConsumerProcurementServiceGrpc {
    * ConsumerProcurementService allows customers to make purchases of products
    * served by the Cloud Commerce platform.
    * When purchases are made, the
-   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService] programs the appropriate backends, including
-   * both Google's own infrastructure, as well as third-party systems, and to
-   * enable billing setup for charging for the procured item.
+   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService]
+   * programs the appropriate backends, including both Google's own
+   * infrastructure, as well as third-party systems, and to enable billing setup
+   * for charging for the procured item.
    * </pre>
    */
   public static final class ConsumerProcurementServiceFutureStub
@@ -484,11 +511,15 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
+     * Creates a new
+     * [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
+     * This API only supports GCP spend-based committed use
+     * discounts specified by GCP documentation.
      * The returned long-running operation is in-progress until the backend
      * completes the creation of the resource. Once completed, the order is
-     * in [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1alpha1.OrderState.ORDER_STATE_ACTIVE]. In case of failure, the
-     * order resource will be removed.
+     * in
+     * [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1alpha1.OrderState.ORDER_STATE_ACTIVE].
+     * In case of failure, the order resource will be removed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -502,7 +533,9 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Returns the requested [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order] resource.
+     * Returns the requested
+     * [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order]
+     * resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -516,8 +549,9 @@ public final class ConsumerProcurementServiceGrpc {
      *
      *
      * <pre>
-     * Lists [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order] resources that the user has access to, within the
-     * scope of the parent resource.
+     * Lists [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order]
+     * resources that the user has access to, within the scope of the parent
+     * resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -635,9 +669,9 @@ public final class ConsumerProcurementServiceGrpc {
   private static final class ConsumerProcurementServiceMethodDescriptorSupplier
       extends ConsumerProcurementServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ConsumerProcurementServiceMethodDescriptorSupplier(String methodName) {
+    ConsumerProcurementServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

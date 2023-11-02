@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -244,5 +244,5 @@ public interface WorkerPoolSpecOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.DiskSpecOrBuilder getDiskSpecOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec.TaskCase getTaskCase();
+  com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec.TaskCase getTaskCase();
 }

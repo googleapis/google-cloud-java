@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CaPool();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -319,11 +314,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PublishingOptions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1424,11 +1414,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       return new IssuancePolicy();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
           .internal_static_google_cloud_security_privateca_v1_CaPool_IssuancePolicy_descriptor;
@@ -1536,7 +1521,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyTypeOrBuilder
           getEllipticCurveOrBuilder();
 
-      public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.KeyTypeCase
+      com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.KeyTypeCase
           getKeyTypeCase();
     }
     /**
@@ -1569,11 +1554,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new AllowedKeyType();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1655,11 +1635,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new RsaKeyType();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2402,11 +2377,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new EcKeyType();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3268,6 +3238,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int keyTypeCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object keyType_;
 
       public enum KeyTypeCase
@@ -4576,11 +4548,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new IssuanceModes();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

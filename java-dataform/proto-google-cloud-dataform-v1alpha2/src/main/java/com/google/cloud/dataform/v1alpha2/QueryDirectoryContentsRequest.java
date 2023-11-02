@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new QueryDirectoryContentsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -207,6 +202,7 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
    * <pre>
    * Optional. Page token received from a previous `QueryDirectoryContents` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryDirectoryContents` must match the call that provided the page
    * token.
@@ -234,6 +230,7 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
    * <pre>
    * Optional. Page token received from a previous `QueryDirectoryContents` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryDirectoryContents` must match the call that provided the page
    * token.
@@ -966,6 +963,7 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Page token received from a previous `QueryDirectoryContents` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryDirectoryContents` must match the call that provided the page
      * token.
@@ -992,6 +990,7 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Page token received from a previous `QueryDirectoryContents` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryDirectoryContents` must match the call that provided the page
      * token.
@@ -1018,6 +1017,7 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Page token received from a previous `QueryDirectoryContents` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryDirectoryContents` must match the call that provided the page
      * token.
@@ -1043,6 +1043,7 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Page token received from a previous `QueryDirectoryContents` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryDirectoryContents` must match the call that provided the page
      * token.
@@ -1064,6 +1065,7 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Page token received from a previous `QueryDirectoryContents` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryDirectoryContents` must match the call that provided the page
      * token.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,12 +22,17 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Represents database access information, such as queries.
- * A database may be a sub-resource of an instance (as in the case of CloudSQL
- * instances or Cloud Spanner instances), or the database instance itself.
- * Some database resources may not have the full resource name populated
- * because these resource types are not yet supported by Cloud Asset Inventory
- * (e.g. CloudSQL databases). In these cases only the display name will be
+ * Represents database access information, such as queries. A database may be a
+ * sub-resource of an instance (as in the case of Cloud SQL instances or Cloud
+ * Spanner instances), or the database instance itself. Some database resources
+ * might not have the [full resource
+ * name](https://google.aip.dev/122#full-resource-names) populated because these
+ * resource types, such as Cloud SQL databases, are not yet supported by Cloud
+ * Asset Inventory. In these cases only the display name is provided.
+ * Some database resources may not have the [full resource
+ * name](https://google.aip.dev/122#full-resource-names) populated because
+ * these resource types are not yet supported by Cloud Asset Inventory (e.g.
+ * Cloud SQL databases). In these cases only the display name will be
  * provided.
  * </pre>
  *
@@ -48,18 +53,13 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     userName_ = "";
     query_ = "";
-    grantees_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    grantees_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Database();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -85,8 +85,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full resource name of the database the user connected to, if it is
-   * supported by CAI. (https://google.aip.dev/122#full-resource-names)
+   * The [full resource name](https://google.aip.dev/122#full-resource-names) of
+   * the database that the user connected to, if it is supported by Cloud Asset
+   * Inventory.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -109,8 +110,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full resource name of the database the user connected to, if it is
-   * supported by CAI. (https://google.aip.dev/122#full-resource-names)
+   * The [full resource name](https://google.aip.dev/122#full-resource-names) of
+   * the database that the user connected to, if it is supported by Cloud Asset
+   * Inventory.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -138,7 +140,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The human readable name of the database the user connected to.
+   * The human-readable name of the database that the user connected to.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -161,7 +163,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The human readable name of the database the user connected to.
+   * The human-readable name of the database that the user connected to.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -189,8 +191,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The username used to connect to the DB. This may not necessarily be an IAM
-   * principal, and has no required format.
+   * The username used to connect to the database. The username might not be an
+   * IAM principal and does not have a set format.
    * </pre>
    *
    * <code>string user_name = 3;</code>
@@ -213,8 +215,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The username used to connect to the DB. This may not necessarily be an IAM
-   * principal, and has no required format.
+   * The username used to connect to the database. The username might not be an
+   * IAM principal and does not have a set format.
    * </pre>
    *
    * <code>string user_name = 3;</code>
@@ -242,7 +244,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The SQL statement associated with the relevant access.
+   * The SQL statement that is associated with the database access.
    * </pre>
    *
    * <code>string query = 4;</code>
@@ -265,7 +267,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The SQL statement associated with the relevant access.
+   * The SQL statement that is associated with the database access.
    * </pre>
    *
    * <code>string query = 4;</code>
@@ -288,13 +290,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public static final int GRANTEES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList grantees_;
+  private com.google.protobuf.LazyStringArrayList grantees_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-   * policy change).
+   * The target usernames, roles, or groups of an SQL privilege grant, which is
+   * not an IAM policy change.
    * </pre>
    *
    * <code>repeated string grantees = 5;</code>
@@ -308,8 +311,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-   * policy change).
+   * The target usernames, roles, or groups of an SQL privilege grant, which is
+   * not an IAM policy change.
    * </pre>
    *
    * <code>repeated string grantees = 5;</code>
@@ -323,8 +326,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-   * policy change).
+   * The target usernames, roles, or groups of an SQL privilege grant, which is
+   * not an IAM policy change.
    * </pre>
    *
    * <code>repeated string grantees = 5;</code>
@@ -339,8 +342,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-   * policy change).
+   * The target usernames, roles, or groups of an SQL privilege grant, which is
+   * not an IAM policy change.
    * </pre>
    *
    * <code>repeated string grantees = 5;</code>
@@ -558,12 +561,17 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents database access information, such as queries.
-   * A database may be a sub-resource of an instance (as in the case of CloudSQL
-   * instances or Cloud Spanner instances), or the database instance itself.
-   * Some database resources may not have the full resource name populated
-   * because these resource types are not yet supported by Cloud Asset Inventory
-   * (e.g. CloudSQL databases). In these cases only the display name will be
+   * Represents database access information, such as queries. A database may be a
+   * sub-resource of an instance (as in the case of Cloud SQL instances or Cloud
+   * Spanner instances), or the database instance itself. Some database resources
+   * might not have the [full resource
+   * name](https://google.aip.dev/122#full-resource-names) populated because these
+   * resource types, such as Cloud SQL databases, are not yet supported by Cloud
+   * Asset Inventory. In these cases only the display name is provided.
+   * Some database resources may not have the [full resource
+   * name](https://google.aip.dev/122#full-resource-names) populated because
+   * these resource types are not yet supported by Cloud Asset Inventory (e.g.
+   * Cloud SQL databases). In these cases only the display name will be
    * provided.
    * </pre>
    *
@@ -603,8 +611,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       displayName_ = "";
       userName_ = "";
       query_ = "";
-      grantees_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      grantees_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -632,20 +639,11 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Database buildPartial() {
       com.google.cloud.securitycenter.v1.Database result =
           new com.google.cloud.securitycenter.v1.Database(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.securitycenter.v1.Database result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        grantees_ = grantees_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.grantees_ = grantees_;
     }
 
     private void buildPartial0(com.google.cloud.securitycenter.v1.Database result) {
@@ -661,6 +659,10 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        grantees_.makeImmutable();
+        result.grantees_ = grantees_;
       }
     }
 
@@ -732,7 +734,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       if (!other.grantees_.isEmpty()) {
         if (grantees_.isEmpty()) {
           grantees_ = other.grantees_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureGranteesIsMutable();
           grantees_.addAll(other.grantees_);
@@ -820,8 +822,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the database the user connected to, if it is
-     * supported by CAI. (https://google.aip.dev/122#full-resource-names)
+     * The [full resource name](https://google.aip.dev/122#full-resource-names) of
+     * the database that the user connected to, if it is supported by Cloud Asset
+     * Inventory.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -843,8 +846,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the database the user connected to, if it is
-     * supported by CAI. (https://google.aip.dev/122#full-resource-names)
+     * The [full resource name](https://google.aip.dev/122#full-resource-names) of
+     * the database that the user connected to, if it is supported by Cloud Asset
+     * Inventory.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -866,8 +870,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the database the user connected to, if it is
-     * supported by CAI. (https://google.aip.dev/122#full-resource-names)
+     * The [full resource name](https://google.aip.dev/122#full-resource-names) of
+     * the database that the user connected to, if it is supported by Cloud Asset
+     * Inventory.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -888,8 +893,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the database the user connected to, if it is
-     * supported by CAI. (https://google.aip.dev/122#full-resource-names)
+     * The [full resource name](https://google.aip.dev/122#full-resource-names) of
+     * the database that the user connected to, if it is supported by Cloud Asset
+     * Inventory.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -906,8 +912,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the database the user connected to, if it is
-     * supported by CAI. (https://google.aip.dev/122#full-resource-names)
+     * The [full resource name](https://google.aip.dev/122#full-resource-names) of
+     * the database that the user connected to, if it is supported by Cloud Asset
+     * Inventory.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -931,7 +938,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The human readable name of the database the user connected to.
+     * The human-readable name of the database that the user connected to.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -953,7 +960,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The human readable name of the database the user connected to.
+     * The human-readable name of the database that the user connected to.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -975,7 +982,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The human readable name of the database the user connected to.
+     * The human-readable name of the database that the user connected to.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -996,7 +1003,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The human readable name of the database the user connected to.
+     * The human-readable name of the database that the user connected to.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1013,7 +1020,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The human readable name of the database the user connected to.
+     * The human-readable name of the database that the user connected to.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1037,8 +1044,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The username used to connect to the DB. This may not necessarily be an IAM
-     * principal, and has no required format.
+     * The username used to connect to the database. The username might not be an
+     * IAM principal and does not have a set format.
      * </pre>
      *
      * <code>string user_name = 3;</code>
@@ -1060,8 +1067,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The username used to connect to the DB. This may not necessarily be an IAM
-     * principal, and has no required format.
+     * The username used to connect to the database. The username might not be an
+     * IAM principal and does not have a set format.
      * </pre>
      *
      * <code>string user_name = 3;</code>
@@ -1083,8 +1090,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The username used to connect to the DB. This may not necessarily be an IAM
-     * principal, and has no required format.
+     * The username used to connect to the database. The username might not be an
+     * IAM principal and does not have a set format.
      * </pre>
      *
      * <code>string user_name = 3;</code>
@@ -1105,8 +1112,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The username used to connect to the DB. This may not necessarily be an IAM
-     * principal, and has no required format.
+     * The username used to connect to the database. The username might not be an
+     * IAM principal and does not have a set format.
      * </pre>
      *
      * <code>string user_name = 3;</code>
@@ -1123,8 +1130,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The username used to connect to the DB. This may not necessarily be an IAM
-     * principal, and has no required format.
+     * The username used to connect to the database. The username might not be an
+     * IAM principal and does not have a set format.
      * </pre>
      *
      * <code>string user_name = 3;</code>
@@ -1148,7 +1155,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The SQL statement associated with the relevant access.
+     * The SQL statement that is associated with the database access.
      * </pre>
      *
      * <code>string query = 4;</code>
@@ -1170,7 +1177,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The SQL statement associated with the relevant access.
+     * The SQL statement that is associated with the database access.
      * </pre>
      *
      * <code>string query = 4;</code>
@@ -1192,7 +1199,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The SQL statement associated with the relevant access.
+     * The SQL statement that is associated with the database access.
      * </pre>
      *
      * <code>string query = 4;</code>
@@ -1213,7 +1220,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The SQL statement associated with the relevant access.
+     * The SQL statement that is associated with the database access.
      * </pre>
      *
      * <code>string query = 4;</code>
@@ -1230,7 +1237,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The SQL statement associated with the relevant access.
+     * The SQL statement that is associated with the database access.
      * </pre>
      *
      * <code>string query = 4;</code>
@@ -1249,21 +1256,21 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList grantees_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList grantees_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureGranteesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!grantees_.isModifiable()) {
         grantees_ = new com.google.protobuf.LazyStringArrayList(grantees_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
      *
      * <pre>
-     * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-     * policy change).
+     * The target usernames, roles, or groups of an SQL privilege grant, which is
+     * not an IAM policy change.
      * </pre>
      *
      * <code>repeated string grantees = 5;</code>
@@ -1271,14 +1278,15 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the grantees.
      */
     public com.google.protobuf.ProtocolStringList getGranteesList() {
-      return grantees_.getUnmodifiableView();
+      grantees_.makeImmutable();
+      return grantees_;
     }
     /**
      *
      *
      * <pre>
-     * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-     * policy change).
+     * The target usernames, roles, or groups of an SQL privilege grant, which is
+     * not an IAM policy change.
      * </pre>
      *
      * <code>repeated string grantees = 5;</code>
@@ -1292,8 +1300,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-     * policy change).
+     * The target usernames, roles, or groups of an SQL privilege grant, which is
+     * not an IAM policy change.
      * </pre>
      *
      * <code>repeated string grantees = 5;</code>
@@ -1308,8 +1316,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-     * policy change).
+     * The target usernames, roles, or groups of an SQL privilege grant, which is
+     * not an IAM policy change.
      * </pre>
      *
      * <code>repeated string grantees = 5;</code>
@@ -1324,8 +1332,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-     * policy change).
+     * The target usernames, roles, or groups of an SQL privilege grant, which is
+     * not an IAM policy change.
      * </pre>
      *
      * <code>repeated string grantees = 5;</code>
@@ -1340,6 +1348,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       ensureGranteesIsMutable();
       grantees_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1347,8 +1356,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-     * policy change).
+     * The target usernames, roles, or groups of an SQL privilege grant, which is
+     * not an IAM policy change.
      * </pre>
      *
      * <code>repeated string grantees = 5;</code>
@@ -1362,6 +1371,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       ensureGranteesIsMutable();
       grantees_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1369,8 +1379,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-     * policy change).
+     * The target usernames, roles, or groups of an SQL privilege grant, which is
+     * not an IAM policy change.
      * </pre>
      *
      * <code>repeated string grantees = 5;</code>
@@ -1381,6 +1391,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllGrantees(java.lang.Iterable<java.lang.String> values) {
       ensureGranteesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, grantees_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1388,8 +1399,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-     * policy change).
+     * The target usernames, roles, or groups of an SQL privilege grant, which is
+     * not an IAM policy change.
      * </pre>
      *
      * <code>repeated string grantees = 5;</code>
@@ -1397,8 +1408,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGrantees() {
-      grantees_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      grantees_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1406,8 +1418,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-     * policy change).
+     * The target usernames, roles, or groups of an SQL privilege grant, which is
+     * not an IAM policy change.
      * </pre>
      *
      * <code>repeated string grantees = 5;</code>
@@ -1422,6 +1434,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureGranteesIsMutable();
       grantees_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

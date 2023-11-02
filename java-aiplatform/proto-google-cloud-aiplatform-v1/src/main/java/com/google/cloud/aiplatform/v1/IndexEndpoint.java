@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new IndexEndpoint();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -408,9 +403,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your IndexEndpoints.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -434,9 +431,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your IndexEndpoints.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -451,9 +450,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your IndexEndpoints.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -475,9 +476,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your IndexEndpoints.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -613,11 +616,14 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    * Optional. The full name of the Google Compute Engine
    * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
    * to which the IndexEndpoint should be peered.
+   *
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   *
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
    * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
    * are mutually exclusive.
+   *
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in '12345', and {network} is
@@ -647,11 +653,14 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    * Optional. The full name of the Google Compute Engine
    * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
    * to which the IndexEndpoint should be peered.
+   *
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   *
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
    * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
    * are mutually exclusive.
+   *
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in '12345', and {network} is
@@ -683,6 +692,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Deprecated: If true, expose the IndexEndpoint via private service
    * connect.
+   *
    * Only one of the fields,
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
    * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
@@ -694,7 +704,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect is
-   *     deprecated. See google/cloud/aiplatform/v1/index_endpoint.proto;l=103
+   *     deprecated. See google/cloud/aiplatform/v1/index_endpoint.proto;l=104
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Override
@@ -710,6 +720,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Configuration for private service connect.
+   *
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
    * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
    * are mutually exclusive.
@@ -730,6 +741,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Configuration for private service connect.
+   *
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
    * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
    * are mutually exclusive.
@@ -753,6 +765,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Configuration for private service connect.
+   *
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
    * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
    * are mutually exclusive.
@@ -848,6 +861,68 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 15;
+  private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+   * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return encryptionSpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+   * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+   * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -899,6 +974,9 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicEndpointDomainName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, publicEndpointDomainName_);
+    }
+    if (encryptionSpec_ != null) {
+      output.writeMessage(15, getEncryptionSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -959,6 +1037,9 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(14, publicEndpointDomainName_);
     }
+    if (encryptionSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getEncryptionSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -998,6 +1079,10 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
     }
     if (getPublicEndpointEnabled() != other.getPublicEndpointEnabled()) return false;
     if (!getPublicEndpointDomainName().equals(other.getPublicEndpointDomainName())) return false;
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1045,6 +1130,10 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPublicEndpointEnabled());
     hash = (37 * hash) + PUBLIC_ENDPOINT_DOMAIN_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getPublicEndpointDomainName().hashCode();
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1236,6 +1325,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
       }
       publicEndpointEnabled_ = false;
       publicEndpointDomainName_ = "";
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -1324,6 +1418,10 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.publicEndpointDomainName_ = publicEndpointDomainName_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
       }
     }
 
@@ -1446,6 +1544,9 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1564,6 +1665,12 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2447,9 +2554,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your IndexEndpoints.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -2473,9 +2582,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your IndexEndpoints.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -2490,9 +2601,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your IndexEndpoints.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -2514,9 +2627,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your IndexEndpoints.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -2544,9 +2659,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your IndexEndpoints.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -2570,9 +2687,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your IndexEndpoints.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -2594,9 +2713,11 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your IndexEndpoints.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -3045,11 +3166,14 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
+     *
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
+     *
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -3078,11 +3202,14 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
+     *
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
+     *
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -3111,11 +3238,14 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
+     *
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
+     *
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -3143,11 +3273,14 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
+     *
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
+     *
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -3171,11 +3304,14 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
+     *
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
+     *
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -3205,6 +3341,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Deprecated: If true, expose the IndexEndpoint via private service
      * connect.
+     *
      * Only one of the fields,
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
@@ -3216,7 +3353,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1/index_endpoint.proto;l=103
+     *     deprecated. See google/cloud/aiplatform/v1/index_endpoint.proto;l=104
      * @return The enablePrivateServiceConnect.
      */
     @java.lang.Override
@@ -3230,6 +3367,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Deprecated: If true, expose the IndexEndpoint via private service
      * connect.
+     *
      * Only one of the fields,
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
@@ -3241,7 +3379,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1/index_endpoint.proto;l=103
+     *     deprecated. See google/cloud/aiplatform/v1/index_endpoint.proto;l=104
      * @param value The enablePrivateServiceConnect to set.
      * @return This builder for chaining.
      */
@@ -3259,6 +3397,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Deprecated: If true, expose the IndexEndpoint via private service
      * connect.
+     *
      * Only one of the fields,
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
@@ -3270,7 +3409,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1/index_endpoint.proto;l=103
+     *     deprecated. See google/cloud/aiplatform/v1/index_endpoint.proto;l=104
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3292,6 +3431,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Configuration for private service connect.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
@@ -3311,6 +3451,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Configuration for private service connect.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
@@ -3337,6 +3478,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Configuration for private service connect.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
@@ -3365,6 +3507,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Configuration for private service connect.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
@@ -3390,6 +3533,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Configuration for private service connect.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
@@ -3423,6 +3567,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Configuration for private service connect.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
@@ -3447,6 +3592,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Configuration for private service connect.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
@@ -3467,6 +3613,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Configuration for private service connect.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
@@ -3491,6 +3638,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Configuration for private service connect.
+     *
      * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
      * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
      * are mutually exclusive.
@@ -3697,6 +3845,227 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00001000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+     * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+     * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+     * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+     * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+     * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
+        } else {
+          encryptionSpec_ = value;
+        }
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+     * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearEncryptionSpec() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+     * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+     * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+     * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.EncryptionSpec,
+                com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+                com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
 
     @java.lang.Override

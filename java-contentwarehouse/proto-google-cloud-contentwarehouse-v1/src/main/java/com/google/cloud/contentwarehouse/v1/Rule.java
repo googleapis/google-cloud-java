@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Rule();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -111,6 +106,26 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <code>ON_UPDATE = 4;</code>
      */
     ON_UPDATE(4),
+    /**
+     *
+     *
+     * <pre>
+     * Trigger for create link action.
+     * </pre>
+     *
+     * <code>ON_CREATE_LINK = 7;</code>
+     */
+    ON_CREATE_LINK(7),
+    /**
+     *
+     *
+     * <pre>
+     * Trigger for delete link action.
+     * </pre>
+     *
+     * <code>ON_DELETE_LINK = 8;</code>
+     */
+    ON_DELETE_LINK(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -144,6 +159,26 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <code>ON_UPDATE = 4;</code>
      */
     public static final int ON_UPDATE_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Trigger for create link action.
+     * </pre>
+     *
+     * <code>ON_CREATE_LINK = 7;</code>
+     */
+    public static final int ON_CREATE_LINK_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Trigger for delete link action.
+     * </pre>
+     *
+     * <code>ON_DELETE_LINK = 8;</code>
+     */
+    public static final int ON_DELETE_LINK_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -175,6 +210,10 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return ON_CREATE;
         case 4:
           return ON_UPDATE;
+        case 7:
+          return ON_CREATE_LINK;
+        case 8:
+          return ON_DELETE_LINK;
         default:
           return null;
       }

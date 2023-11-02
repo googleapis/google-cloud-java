@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
     return new CompletionInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1beta.UserEventProto
         .internal_static_google_cloud_discoveryengine_v1beta_CompletionInfo_descriptor;
@@ -76,7 +71,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * End user selected [CompleteQueryResponse.CompletionResult.suggestion][].
+   * End user selected
+   * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion].
    * </pre>
    *
    * <code>string selected_suggestion = 1;</code>
@@ -99,7 +95,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * End user selected [CompleteQueryResponse.CompletionResult.suggestion][].
+   * End user selected
+   * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion].
    * </pre>
    *
    * <code>string selected_suggestion = 1;</code>
@@ -125,7 +122,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * End user selected [CompleteQueryResponse.CompletionResult.suggestion][]
+   * End user selected
+   * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion]
    * position, starting from 0.
    * </pre>
    *
@@ -509,7 +507,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End user selected [CompleteQueryResponse.CompletionResult.suggestion][].
+     * End user selected
+     * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion].
      * </pre>
      *
      * <code>string selected_suggestion = 1;</code>
@@ -531,7 +530,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End user selected [CompleteQueryResponse.CompletionResult.suggestion][].
+     * End user selected
+     * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion].
      * </pre>
      *
      * <code>string selected_suggestion = 1;</code>
@@ -553,7 +553,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End user selected [CompleteQueryResponse.CompletionResult.suggestion][].
+     * End user selected
+     * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion].
      * </pre>
      *
      * <code>string selected_suggestion = 1;</code>
@@ -574,7 +575,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End user selected [CompleteQueryResponse.CompletionResult.suggestion][].
+     * End user selected
+     * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion].
      * </pre>
      *
      * <code>string selected_suggestion = 1;</code>
@@ -591,7 +593,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End user selected [CompleteQueryResponse.CompletionResult.suggestion][].
+     * End user selected
+     * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion].
      * </pre>
      *
      * <code>string selected_suggestion = 1;</code>
@@ -615,7 +618,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End user selected [CompleteQueryResponse.CompletionResult.suggestion][]
+     * End user selected
+     * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion]
      * position, starting from 0.
      * </pre>
      *
@@ -631,7 +635,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End user selected [CompleteQueryResponse.CompletionResult.suggestion][]
+     * End user selected
+     * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion]
      * position, starting from 0.
      * </pre>
      *
@@ -651,7 +656,8 @@ public final class CompletionInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End user selected [CompleteQueryResponse.CompletionResult.suggestion][]
+     * End user selected
+     * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion]
      * position, starting from 0.
      * </pre>
      *

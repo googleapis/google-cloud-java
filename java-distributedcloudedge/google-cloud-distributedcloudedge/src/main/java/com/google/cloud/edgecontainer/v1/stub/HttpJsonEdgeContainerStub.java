@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.edgecontainer.v1.Cluster;
 import com.google.cloud.edgecontainer.v1.CreateClusterRequest;
@@ -859,26 +860,56 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
         HttpJsonCallSettings.<ListClustersRequest, ListClustersResponse>newBuilder()
             .setMethodDescriptor(listClustersMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
             .setMethodDescriptor(getClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(createClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         HttpJsonCallSettings.<UpdateClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(updateClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("cluster.name", String.valueOf(request.getCluster().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         HttpJsonCallSettings.<DeleteClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenTransportSettings =
@@ -886,65 +917,137 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                 .<GenerateAccessTokenRequest, GenerateAccessTokenResponse>newBuilder()
                 .setMethodDescriptor(generateAccessTokenMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("cluster", String.valueOf(request.getCluster()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListNodePoolsRequest, ListNodePoolsResponse>
         listNodePoolsTransportSettings =
             HttpJsonCallSettings.<ListNodePoolsRequest, ListNodePoolsResponse>newBuilder()
                 .setMethodDescriptor(listNodePoolsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetNodePoolRequest, NodePool> getNodePoolTransportSettings =
         HttpJsonCallSettings.<GetNodePoolRequest, NodePool>newBuilder()
             .setMethodDescriptor(getNodePoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateNodePoolRequest, Operation> createNodePoolTransportSettings =
         HttpJsonCallSettings.<CreateNodePoolRequest, Operation>newBuilder()
             .setMethodDescriptor(createNodePoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateNodePoolRequest, Operation> updateNodePoolTransportSettings =
         HttpJsonCallSettings.<UpdateNodePoolRequest, Operation>newBuilder()
             .setMethodDescriptor(updateNodePoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("node_pool.name", String.valueOf(request.getNodePool().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolTransportSettings =
         HttpJsonCallSettings.<DeleteNodePoolRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteNodePoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListMachinesRequest, ListMachinesResponse> listMachinesTransportSettings =
         HttpJsonCallSettings.<ListMachinesRequest, ListMachinesResponse>newBuilder()
             .setMethodDescriptor(listMachinesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetMachineRequest, Machine> getMachineTransportSettings =
         HttpJsonCallSettings.<GetMachineRequest, Machine>newBuilder()
             .setMethodDescriptor(getMachineMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListVpnConnectionsRequest, ListVpnConnectionsResponse>
         listVpnConnectionsTransportSettings =
             HttpJsonCallSettings.<ListVpnConnectionsRequest, ListVpnConnectionsResponse>newBuilder()
                 .setMethodDescriptor(listVpnConnectionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetVpnConnectionRequest, VpnConnection> getVpnConnectionTransportSettings =
         HttpJsonCallSettings.<GetVpnConnectionRequest, VpnConnection>newBuilder()
             .setMethodDescriptor(getVpnConnectionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateVpnConnectionRequest, Operation>
         createVpnConnectionTransportSettings =
             HttpJsonCallSettings.<CreateVpnConnectionRequest, Operation>newBuilder()
                 .setMethodDescriptor(createVpnConnectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteVpnConnectionRequest, Operation>
         deleteVpnConnectionTransportSettings =
             HttpJsonCallSettings.<DeleteVpnConnectionRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteVpnConnectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listClustersCallable =

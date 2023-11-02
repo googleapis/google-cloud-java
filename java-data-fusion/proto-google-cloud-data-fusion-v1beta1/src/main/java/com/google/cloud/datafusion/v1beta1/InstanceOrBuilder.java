@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -802,6 +802,7 @@ public interface InstanceOrBuilder
    * <pre>
    * User-managed service account to set on Dataproc when Cloud Data Fusion
    * creates Dataproc to run data processing pipelines.
+   *
    * This allows users to have fine-grained access control on Dataproc's
    * accesses to cloud resources.
    * </pre>
@@ -817,6 +818,7 @@ public interface InstanceOrBuilder
    * <pre>
    * User-managed service account to set on Dataproc when Cloud Data Fusion
    * creates Dataproc to run data processing pipelines.
+   *
    * This allows users to have fine-grained access control on Dataproc's
    * accesses to cloud resources.
    * </pre>

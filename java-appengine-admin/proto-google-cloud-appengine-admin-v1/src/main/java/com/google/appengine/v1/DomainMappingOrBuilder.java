@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface DomainMappingOrBuilder
    * <pre>
    * Full path to the `DomainMapping` resource in the API. Example:
    * `apps/myapp/domainMapping/example.com`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface DomainMappingOrBuilder
    * <pre>
    * Full path to the `DomainMapping` resource in the API. Example:
    * `apps/myapp/domainMapping/example.com`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -124,6 +126,7 @@ public interface DomainMappingOrBuilder
    * The resource records required to configure this domain mapping. These
    * records must be added to the domain's DNS configuration in order to
    * serve the application via this domain mapping.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -137,6 +140,7 @@ public interface DomainMappingOrBuilder
    * The resource records required to configure this domain mapping. These
    * records must be added to the domain's DNS configuration in order to
    * serve the application via this domain mapping.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -150,6 +154,7 @@ public interface DomainMappingOrBuilder
    * The resource records required to configure this domain mapping. These
    * records must be added to the domain's DNS configuration in order to
    * serve the application via this domain mapping.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -163,6 +168,7 @@ public interface DomainMappingOrBuilder
    * The resource records required to configure this domain mapping. These
    * records must be added to the domain's DNS configuration in order to
    * serve the application via this domain mapping.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -177,6 +183,7 @@ public interface DomainMappingOrBuilder
    * The resource records required to configure this domain mapping. These
    * records must be added to the domain's DNS configuration in order to
    * serve the application via this domain mapping.
+   *
    * &#64;OutputOnly
    * </pre>
    *

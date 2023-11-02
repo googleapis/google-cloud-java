@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Budget();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -188,9 +183,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute the actual spend
-   * against the budget amount, such as projects, services, and the budget's
-   * time period, as well as other filters.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>
@@ -207,9 +202,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute the actual spend
-   * against the budget amount, such as projects, services, and the budget's
-   * time period, as well as other filters.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>
@@ -228,9 +223,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute the actual spend
-   * against the budget amount, such as projects, services, and the budget's
-   * time period, as well as other filters.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>
@@ -310,7 +305,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
    * Optional for `pubsubTopic` notifications.
+   *
    * Required if using email notifications.
    * </pre>
    *
@@ -329,7 +326,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
    * Optional for `pubsubTopic` notifications.
+   *
    * Required if using email notifications.
    * </pre>
    *
@@ -348,7 +347,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
    * Optional for `pubsubTopic` notifications.
+   *
    * Required if using email notifications.
    * </pre>
    *
@@ -366,7 +367,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
    * Optional for `pubsubTopic` notifications.
+   *
    * Required if using email notifications.
    * </pre>
    *
@@ -384,7 +387,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
    * Optional for `pubsubTopic` notifications.
+   *
    * Required if using email notifications.
    * </pre>
    *
@@ -404,7 +409,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>
@@ -421,7 +427,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>
@@ -440,7 +447,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>
@@ -1309,9 +1317,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute the actual spend
-     * against the budget amount, such as projects, services, and the budget's
-     * time period, as well as other filters.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1327,9 +1335,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute the actual spend
-     * against the budget amount, such as projects, services, and the budget's
-     * time period, as well as other filters.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1351,9 +1359,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute the actual spend
-     * against the budget amount, such as projects, services, and the budget's
-     * time period, as well as other filters.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1377,9 +1385,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute the actual spend
-     * against the budget amount, such as projects, services, and the budget's
-     * time period, as well as other filters.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1401,9 +1409,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute the actual spend
-     * against the budget amount, such as projects, services, and the budget's
-     * time period, as well as other filters.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1431,9 +1439,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute the actual spend
-     * against the budget amount, such as projects, services, and the budget's
-     * time period, as well as other filters.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1454,9 +1462,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute the actual spend
-     * against the budget amount, such as projects, services, and the budget's
-     * time period, as well as other filters.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1472,9 +1480,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute the actual spend
-     * against the budget amount, such as projects, services, and the budget's
-     * time period, as well as other filters.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1494,9 +1502,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute the actual spend
-     * against the budget amount, such as projects, services, and the budget's
-     * time period, as well as other filters.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1747,7 +1755,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -1769,7 +1779,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -1790,7 +1802,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -1811,7 +1825,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -1839,7 +1855,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -1864,7 +1882,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -1891,7 +1911,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -1919,7 +1941,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -1944,7 +1968,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -1969,7 +1995,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -1995,7 +2023,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -2019,7 +2049,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -2043,7 +2075,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -2061,7 +2095,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -2083,7 +2119,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -2105,7 +2143,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -2124,7 +2164,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -2144,7 +2186,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
      * Optional for `pubsubTopic` notifications.
+     *
      * Required if using email notifications.
      * </pre>
      *
@@ -2187,7 +2231,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2203,7 +2248,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2225,7 +2271,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2250,7 +2297,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2272,7 +2320,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2301,7 +2350,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2322,7 +2372,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2339,7 +2390,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2360,7 +2412,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>

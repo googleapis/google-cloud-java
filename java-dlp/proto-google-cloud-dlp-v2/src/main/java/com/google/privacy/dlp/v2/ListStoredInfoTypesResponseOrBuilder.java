@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@ public interface ListStoredInfoTypesResponseOrBuilder
    *
    * <pre>
    * If the next page is available then the next page token to be used
-   * in following ListStoredInfoTypes request.
+   * in the following ListStoredInfoTypes request.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -93,7 +93,7 @@ public interface ListStoredInfoTypesResponseOrBuilder
    *
    * <pre>
    * If the next page is available then the next page token to be used
-   * in following ListStoredInfoTypes request.
+   * in the following ListStoredInfoTypes request.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

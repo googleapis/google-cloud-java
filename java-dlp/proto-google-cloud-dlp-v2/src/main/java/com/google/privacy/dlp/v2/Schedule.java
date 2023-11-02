@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     return new Schedule();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_Schedule_descriptor;
@@ -66,6 +61,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int optionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object option_;
 
   public enum OptionCase
@@ -116,8 +113,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * With this option a job is started on a regular periodic basis. For
    * example: every day (86400 seconds).
+   *
    * A scheduled start time will be skipped if the previous
    * execution has not ended when its scheduled time occurs.
+   *
    * This value must be set to a time duration greater than or equal
    * to 1 day and can be no longer than 60 days.
    * </pre>
@@ -136,8 +135,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * With this option a job is started on a regular periodic basis. For
    * example: every day (86400 seconds).
+   *
    * A scheduled start time will be skipped if the previous
    * execution has not ended when its scheduled time occurs.
+   *
    * This value must be set to a time duration greater than or equal
    * to 1 day and can be no longer than 60 days.
    * </pre>
@@ -159,8 +160,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * With this option a job is started on a regular periodic basis. For
    * example: every day (86400 seconds).
+   *
    * A scheduled start time will be skipped if the previous
    * execution has not ended when its scheduled time occurs.
+   *
    * This value must be set to a time duration greater than or equal
    * to 1 day and can be no longer than 60 days.
    * </pre>
@@ -571,8 +574,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * With this option a job is started on a regular periodic basis. For
      * example: every day (86400 seconds).
+     *
      * A scheduled start time will be skipped if the previous
      * execution has not ended when its scheduled time occurs.
+     *
      * This value must be set to a time duration greater than or equal
      * to 1 day and can be no longer than 60 days.
      * </pre>
@@ -591,8 +596,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * With this option a job is started on a regular periodic basis. For
      * example: every day (86400 seconds).
+     *
      * A scheduled start time will be skipped if the previous
      * execution has not ended when its scheduled time occurs.
+     *
      * This value must be set to a time duration greater than or equal
      * to 1 day and can be no longer than 60 days.
      * </pre>
@@ -621,8 +628,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * With this option a job is started on a regular periodic basis. For
      * example: every day (86400 seconds).
+     *
      * A scheduled start time will be skipped if the previous
      * execution has not ended when its scheduled time occurs.
+     *
      * This value must be set to a time duration greater than or equal
      * to 1 day and can be no longer than 60 days.
      * </pre>
@@ -648,8 +657,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * With this option a job is started on a regular periodic basis. For
      * example: every day (86400 seconds).
+     *
      * A scheduled start time will be skipped if the previous
      * execution has not ended when its scheduled time occurs.
+     *
      * This value must be set to a time duration greater than or equal
      * to 1 day and can be no longer than 60 days.
      * </pre>
@@ -673,8 +684,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * With this option a job is started on a regular periodic basis. For
      * example: every day (86400 seconds).
+     *
      * A scheduled start time will be skipped if the previous
      * execution has not ended when its scheduled time occurs.
+     *
      * This value must be set to a time duration greater than or equal
      * to 1 day and can be no longer than 60 days.
      * </pre>
@@ -708,8 +721,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * With this option a job is started on a regular periodic basis. For
      * example: every day (86400 seconds).
+     *
      * A scheduled start time will be skipped if the previous
      * execution has not ended when its scheduled time occurs.
+     *
      * This value must be set to a time duration greater than or equal
      * to 1 day and can be no longer than 60 days.
      * </pre>
@@ -738,8 +753,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * With this option a job is started on a regular periodic basis. For
      * example: every day (86400 seconds).
+     *
      * A scheduled start time will be skipped if the previous
      * execution has not ended when its scheduled time occurs.
+     *
      * This value must be set to a time duration greater than or equal
      * to 1 day and can be no longer than 60 days.
      * </pre>
@@ -755,8 +772,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * With this option a job is started on a regular periodic basis. For
      * example: every day (86400 seconds).
+     *
      * A scheduled start time will be skipped if the previous
      * execution has not ended when its scheduled time occurs.
+     *
      * This value must be set to a time duration greater than or equal
      * to 1 day and can be no longer than 60 days.
      * </pre>
@@ -780,8 +799,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * With this option a job is started on a regular periodic basis. For
      * example: every day (86400 seconds).
+     *
      * A scheduled start time will be skipped if the previous
      * execution has not ended when its scheduled time occurs.
+     *
      * This value must be set to a time duration greater than or equal
      * to 1 day and can be no longer than 60 days.
      * </pre>

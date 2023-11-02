@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   private Certificate() {
     name_ = "";
     description_ = "";
-    sanDnsnames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    sanDnsnames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pemCertificate_ = "";
     scope_ = 0;
   }
@@ -49,11 +49,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Certificate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -310,11 +305,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SelfManagedCertificate();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1454,8 +1444,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private ManagedCertificate() {
-      domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      dnsAuthorizations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      domains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      dnsAuthorizations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       issuanceConfig_ = "";
       state_ = 0;
       authorizationAttemptInfo_ = java.util.Collections.emptyList();
@@ -1465,11 +1455,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ManagedCertificate();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1773,11 +1758,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ProvisioningIssue();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2951,11 +2931,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new AuthorizationAttemptInfo();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4571,7 +4546,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public static final int DOMAINS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList domains_;
+    private com.google.protobuf.LazyStringArrayList domains_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -4642,7 +4618,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public static final int DNS_AUTHORIZATIONS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList dnsAuthorizations_;
+    private com.google.protobuf.LazyStringArrayList dnsAuthorizations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -5268,10 +5245,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        dnsAuthorizations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        domains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        dnsAuthorizations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         issuanceConfig_ = "";
         state_ = 0;
         provisioningIssue_ = null;
@@ -5326,16 +5301,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartialRepeatedFields(
           com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          domains_ = domains_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.domains_ = domains_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          dnsAuthorizations_ = dnsAuthorizations_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.dnsAuthorizations_ = dnsAuthorizations_;
         if (authorizationAttemptInfoBuilder_ == null) {
           if (((bitField0_ & 0x00000020) != 0)) {
             authorizationAttemptInfo_ =
@@ -5351,6 +5316,14 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       private void buildPartial0(
           com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          domains_.makeImmutable();
+          result.domains_ = domains_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          dnsAuthorizations_.makeImmutable();
+          result.dnsAuthorizations_ = dnsAuthorizations_;
+        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.issuanceConfig_ = issuanceConfig_;
         }
@@ -5420,7 +5393,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         if (!other.domains_.isEmpty()) {
           if (domains_.isEmpty()) {
             domains_ = other.domains_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureDomainsIsMutable();
             domains_.addAll(other.domains_);
@@ -5430,7 +5403,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         if (!other.dnsAuthorizations_.isEmpty()) {
           if (dnsAuthorizations_.isEmpty()) {
             dnsAuthorizations_ = other.dnsAuthorizations_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureDnsAuthorizationsIsMutable();
             dnsAuthorizations_.addAll(other.dnsAuthorizations_);
@@ -5570,14 +5543,14 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList domains_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList domains_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureDomainsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!domains_.isModifiable()) {
           domains_ = new com.google.protobuf.LazyStringArrayList(domains_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -5593,7 +5566,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the domains.
        */
       public com.google.protobuf.ProtocolStringList getDomainsList() {
-        return domains_.getUnmodifiableView();
+        domains_.makeImmutable();
+        return domains_;
       }
       /**
        *
@@ -5666,6 +5640,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDomainsIsMutable();
         domains_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5689,6 +5664,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDomainsIsMutable();
         domains_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5709,6 +5685,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllDomains(java.lang.Iterable<java.lang.String> values) {
         ensureDomainsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, domains_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5726,8 +5703,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDomains() {
-        domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        domains_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -5752,18 +5730,19 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureDomainsIsMutable();
         domains_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList dnsAuthorizations_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList dnsAuthorizations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureDnsAuthorizationsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!dnsAuthorizations_.isModifiable()) {
           dnsAuthorizations_ = new com.google.protobuf.LazyStringArrayList(dnsAuthorizations_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -5780,7 +5759,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the dnsAuthorizations.
        */
       public com.google.protobuf.ProtocolStringList getDnsAuthorizationsList() {
-        return dnsAuthorizations_.getUnmodifiableView();
+        dnsAuthorizations_.makeImmutable();
+        return dnsAuthorizations_;
       }
       /**
        *
@@ -5857,6 +5837,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDnsAuthorizationsIsMutable();
         dnsAuthorizations_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5881,6 +5862,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDnsAuthorizationsIsMutable();
         dnsAuthorizations_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5902,6 +5884,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllDnsAuthorizations(java.lang.Iterable<java.lang.String> values) {
         ensureDnsAuthorizationsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dnsAuthorizations_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5920,8 +5903,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDnsAuthorizations() {
-        dnsAuthorizations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        dnsAuthorizations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -5947,6 +5931,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureDnsAuthorizationsIsMutable();
         dnsAuthorizations_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6976,6 +6961,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int typeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object type_;
 
   public enum TypeCase
@@ -7441,7 +7428,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   public static final int SAN_DNSNAMES_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList sanDnsnames_;
+  private com.google.protobuf.LazyStringArrayList sanDnsnames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -8034,8 +8022,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (managedBuilder_ != null) {
         managedBuilder_.clear();
       }
-      sanDnsnames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      sanDnsnames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       pemCertificate_ = "";
       expireTime_ = null;
       if (expireTimeBuilder_ != null) {
@@ -8072,22 +8059,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.certificatemanager.v1.Certificate buildPartial() {
       com.google.cloud.certificatemanager.v1.Certificate result =
           new com.google.cloud.certificatemanager.v1.Certificate(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.certificatemanager.v1.Certificate result) {
-      if (((bitField0_ & 0x00000080) != 0)) {
-        sanDnsnames_ = sanDnsnames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.sanDnsnames_ = sanDnsnames_;
     }
 
     private void buildPartial0(com.google.cloud.certificatemanager.v1.Certificate result) {
@@ -8107,6 +8084,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        sanDnsnames_.makeImmutable();
+        result.sanDnsnames_ = sanDnsnames_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.pemCertificate_ = pemCertificate_;
@@ -8197,7 +8178,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (!other.sanDnsnames_.isEmpty()) {
         if (sanDnsnames_.isEmpty()) {
           sanDnsnames_ = other.sanDnsnames_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureSanDnsnamesIsMutable();
           sanDnsnames_.addAll(other.sanDnsnames_);
@@ -9607,14 +9588,14 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       return managedBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList sanDnsnames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList sanDnsnames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSanDnsnamesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!sanDnsnames_.isModifiable()) {
         sanDnsnames_ = new com.google.protobuf.LazyStringArrayList(sanDnsnames_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -9631,7 +9612,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the sanDnsnames.
      */
     public com.google.protobuf.ProtocolStringList getSanDnsnamesList() {
-      return sanDnsnames_.getUnmodifiableView();
+      sanDnsnames_.makeImmutable();
+      return sanDnsnames_;
     }
     /**
      *
@@ -9708,6 +9690,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSanDnsnamesIsMutable();
       sanDnsnames_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9732,6 +9715,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSanDnsnamesIsMutable();
       sanDnsnames_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9753,6 +9737,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSanDnsnames(java.lang.Iterable<java.lang.String> values) {
       ensureSanDnsnamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sanDnsnames_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9771,8 +9756,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSanDnsnames() {
-      sanDnsnames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sanDnsnames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -9798,6 +9784,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSanDnsnamesIsMutable();
       sanDnsnames_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

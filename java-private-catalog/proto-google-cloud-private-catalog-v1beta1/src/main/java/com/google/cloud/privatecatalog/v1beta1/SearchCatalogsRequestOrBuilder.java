@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface SearchCatalogsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the resource context. It can be in following formats:
+   *
    * * `projects/{project}`
    * * `folders/{folder}`
    * * `organizations/{organization}`
@@ -43,6 +44,7 @@ public interface SearchCatalogsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the resource context. It can be in following formats:
+   *
    * * `projects/{project}`
    * * `folders/{folder}`
    * * `organizations/{organization}`
@@ -59,6 +61,7 @@ public interface SearchCatalogsRequestOrBuilder
    *
    * <pre>
    * The query to filter the catalogs. The supported queries are:
+   *
    * * Get a single catalog: `name=catalogs/{catalog}`
    * </pre>
    *
@@ -72,6 +75,7 @@ public interface SearchCatalogsRequestOrBuilder
    *
    * <pre>
    * The query to filter the catalogs. The supported queries are:
+   *
    * * Get a single catalog: `name=catalogs/{catalog}`
    * </pre>
    *

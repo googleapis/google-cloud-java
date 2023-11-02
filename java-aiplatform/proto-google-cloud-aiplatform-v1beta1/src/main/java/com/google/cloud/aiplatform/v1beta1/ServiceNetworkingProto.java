@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ public final class ServiceNetworkingProto {
       "\n8google/cloud/aiplatform/v1beta1/servic"
           + "e_networking.proto\022\037google.cloud.aiplatf"
           + "orm.v1beta1\032\037google/api/field_behavior.p"
-          + "roto\"e\n\033PrivateServiceConnectConfig\022+\n\036e"
-          + "nable_private_service_connect\030\001 \001(\010B\003\340A\002"
-          + "\022\031\n\021project_allowlist\030\002 \003(\tB\355\001\n#com.goog"
-          + "le.cloud.aiplatform.v1beta1B\026ServiceNetw"
-          + "orkingProtoP\001ZCcloud.google.com/go/aipla"
-          + "tform/apiv1beta1/aiplatformpb;aiplatform"
-          + "pb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
-          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
-          + ":Cloud::AIPlatform::V1beta1b\006proto3"
+          + "roto\"f\n\033PrivateServiceConnectConfig\022,\n\036e"
+          + "nable_private_service_connect\030\001 \001(\010B\004\342A\001"
+          + "\002\022\031\n\021project_allowlist\030\002 \003(\tB\355\001\n#com.goo"
+          + "gle.cloud.aiplatform.v1beta1B\026ServiceNet"
+          + "workingProtoP\001ZCcloud.google.com/go/aipl"
+          + "atform/apiv1beta1/aiplatformpb;aiplatfor"
+          + "mpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
+          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
+          + "::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

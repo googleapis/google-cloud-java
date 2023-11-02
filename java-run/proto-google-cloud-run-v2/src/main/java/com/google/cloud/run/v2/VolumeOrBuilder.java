@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,5 +124,40 @@ public interface VolumeOrBuilder
    */
   com.google.cloud.run.v2.CloudSqlInstanceOrBuilder getCloudSqlInstanceOrBuilder();
 
-  public com.google.cloud.run.v2.Volume.VolumeTypeCase getVolumeTypeCase();
+  /**
+   *
+   *
+   * <pre>
+   * Ephemeral storage used as a shared volume.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+   *
+   * @return Whether the emptyDir field is set.
+   */
+  boolean hasEmptyDir();
+  /**
+   *
+   *
+   * <pre>
+   * Ephemeral storage used as a shared volume.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+   *
+   * @return The emptyDir.
+   */
+  com.google.cloud.run.v2.EmptyDirVolumeSource getEmptyDir();
+  /**
+   *
+   *
+   * <pre>
+   * Ephemeral storage used as a shared volume.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+   */
+  com.google.cloud.run.v2.EmptyDirVolumeSourceOrBuilder getEmptyDirOrBuilder();
+
+  com.google.cloud.run.v2.Volume.VolumeTypeCase getVolumeTypeCase();
 }

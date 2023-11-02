@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,9 @@ public interface UpdateAttributesConfigRequestOrBuilder
    * Indicates which fields in the provided
    * [AttributesConfig][google.cloud.retail.v2beta.AttributesConfig] to update.
    * The following is the only supported field:
+   *
    * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2beta.AttributesConfig.catalog_attributes]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -90,7 +92,9 @@ public interface UpdateAttributesConfigRequestOrBuilder
    * Indicates which fields in the provided
    * [AttributesConfig][google.cloud.retail.v2beta.AttributesConfig] to update.
    * The following is the only supported field:
+   *
    * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2beta.AttributesConfig.catalog_attributes]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -106,7 +110,9 @@ public interface UpdateAttributesConfigRequestOrBuilder
    * Indicates which fields in the provided
    * [AttributesConfig][google.cloud.retail.v2beta.AttributesConfig] to update.
    * The following is the only supported field:
+   *
    * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2beta.AttributesConfig.catalog_attributes]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *

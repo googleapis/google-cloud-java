@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface ListRuntimesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location from which the runtimes should be listed,
-   * specified in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location from which the runtimes should be
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListRuntimesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location from which the runtimes should be listed,
-   * specified in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location from which the runtimes should be
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>

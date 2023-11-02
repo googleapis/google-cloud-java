@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface SensitivityScoreOrBuilder
    *
    *
    * <pre>
-   * The score applied to the resource.
+   * The sensitivity score applied to the resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel score = 1;</code>
@@ -39,7 +39,7 @@ public interface SensitivityScoreOrBuilder
    *
    *
    * <pre>
-   * The score applied to the resource.
+   * The sensitivity score applied to the resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel score = 1;</code>

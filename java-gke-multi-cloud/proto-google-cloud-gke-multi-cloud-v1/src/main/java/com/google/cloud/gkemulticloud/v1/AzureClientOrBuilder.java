@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface AzureClientOrBuilder
    *
    * <pre>
    * The name of this resource.
+   *
    * `AzureClient` resource names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -44,8 +46,10 @@ public interface AzureClientOrBuilder
    *
    * <pre>
    * The name of this resource.
+   *
    * `AzureClient` resource names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -124,6 +128,7 @@ public interface AzureClientOrBuilder
    *
    * <pre>
    * Optional. Annotations on the resource.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -142,6 +147,7 @@ public interface AzureClientOrBuilder
    *
    * <pre>
    * Optional. Annotations on the resource.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -163,6 +169,7 @@ public interface AzureClientOrBuilder
    *
    * <pre>
    * Optional. Annotations on the resource.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -181,6 +188,7 @@ public interface AzureClientOrBuilder
    *
    * <pre>
    * Optional. Annotations on the resource.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -203,6 +211,7 @@ public interface AzureClientOrBuilder
    *
    * <pre>
    * Optional. Annotations on the resource.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),

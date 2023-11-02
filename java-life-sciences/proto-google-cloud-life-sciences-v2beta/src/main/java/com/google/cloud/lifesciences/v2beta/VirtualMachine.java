@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     cpuPlatform_ = "";
     bootImage_ = "";
     nvidiaDriverVersion_ = "";
-    dockerCacheImages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    dockerCacheImages_ = com.google.protobuf.LazyStringArrayList.emptyList();
     volumes_ = java.util.Collections.emptyList();
     reservation_ = "";
   }
@@ -53,11 +53,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new VirtualMachine();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -201,7 +196,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    * These labels must adhere to the [name and value
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
    * VM labels imposed by Compute Engine.
+   *
    * Labels keys with the prefix 'google-' are reserved for use by Google.
+   *
    * Labels applied at creation time to the VM. Applied on a best-effort basis
    * to attached disk resources shortly after VM creation.
    * </pre>
@@ -229,7 +226,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    * These labels must adhere to the [name and value
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
    * VM labels imposed by Compute Engine.
+   *
    * Labels keys with the prefix 'google-' are reserved for use by Google.
+   *
    * Labels applied at creation time to the VM. Applied on a best-effort basis
    * to attached disk resources shortly after VM creation.
    * </pre>
@@ -248,7 +247,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    * These labels must adhere to the [name and value
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
    * VM labels imposed by Compute Engine.
+   *
    * Labels keys with the prefix 'google-' are reserved for use by Google.
+   *
    * Labels applied at creation time to the VM. Applied on a best-effort basis
    * to attached disk resources shortly after VM creation.
    * </pre>
@@ -274,7 +275,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    * These labels must adhere to the [name and value
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
    * VM labels imposed by Compute Engine.
+   *
    * Labels keys with the prefix 'google-' are reserved for use by Google.
+   *
    * Labels applied at creation time to the VM. Applied on a best-effort basis
    * to attached disk resources shortly after VM creation.
    * </pre>
@@ -302,6 +305,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of disks to create and attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -316,6 +320,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of disks to create and attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -331,6 +336,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of disks to create and attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -345,6 +351,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of disks to create and attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -359,6 +366,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of disks to create and attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -578,6 +586,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    * parameter must be a valid Compute Engine CPU platform name (such as "Intel
    * Skylake"). This parameter is only useful for carefully optimized work
    * loads where the CPU platform has a significant impact.
+   *
    * For more information about the effect of this parameter, see
    * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
    * </pre>
@@ -607,6 +616,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    * parameter must be a valid Compute Engine CPU platform name (such as "Intel
    * Skylake"). This parameter is only useful for carefully optimized work
    * loads where the CPU platform has a significant impact.
+   *
    * For more information about the effect of this parameter, see
    * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
    * </pre>
@@ -637,12 +647,16 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The host operating system image to use.
+   *
    * Currently, only Container-Optimized OS images can be used.
+   *
    * The default value is `projects/cos-cloud/global/images/family/cos-stable`,
    * which selects the latest stable release of Container-Optimized OS.
+   *
    * This option is provided to allow testing against the beta release of the
    * operating system to ensure that the new version does not interact
    * negatively with production pipelines.
+   *
    * To test a pipeline against the beta release of Container-Optimized OS,
    * use the value `projects/cos-cloud/global/images/family/cos-beta`.
    * </pre>
@@ -668,12 +682,16 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The host operating system image to use.
+   *
    * Currently, only Container-Optimized OS images can be used.
+   *
    * The default value is `projects/cos-cloud/global/images/family/cos-stable`,
    * which selects the latest stable release of Container-Optimized OS.
+   *
    * This option is provided to allow testing against the beta release of the
    * operating system to ensure that the new version does not interact
    * negatively with production pipelines.
+   *
    * To test a pipeline against the beta release of Container-Optimized OS,
    * use the value `projects/cos-cloud/global/images/family/cos-beta`.
    * </pre>
@@ -779,7 +797,8 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public static final int DOCKER_CACHE_IMAGES_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList dockerCacheImages_;
+  private com.google.protobuf.LazyStringArrayList dockerCacheImages_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -880,6 +899,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of disks and other storage to create or attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -894,6 +914,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of disks and other storage to create or attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -909,6 +930,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of disks and other storage to create or attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -923,6 +945,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of disks and other storage to create or attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -937,6 +960,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of disks and other storage to create or attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -1408,8 +1432,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       bootImage_ = "";
       nvidiaDriverVersion_ = "";
       enableStackdriverMonitoring_ = false;
-      dockerCacheImages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      dockerCacheImages_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
       } else {
@@ -1473,11 +1496,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.accelerators_ = acceleratorsBuilder_.build();
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        dockerCacheImages_ = dockerCacheImages_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00001000);
-      }
-      result.dockerCacheImages_ = dockerCacheImages_;
       if (volumesBuilder_ == null) {
         if (((bitField0_ & 0x00002000) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
@@ -1522,6 +1540,10 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.enableStackdriverMonitoring_ = enableStackdriverMonitoring_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        dockerCacheImages_.makeImmutable();
+        result.dockerCacheImages_ = dockerCacheImages_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.reservation_ = reservation_;
@@ -1668,7 +1690,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       if (!other.dockerCacheImages_.isEmpty()) {
         if (dockerCacheImages_.isEmpty()) {
           dockerCacheImages_ = other.dockerCacheImages_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ |= 0x00001000;
         } else {
           ensureDockerCacheImagesIsMutable();
           dockerCacheImages_.addAll(other.dockerCacheImages_);
@@ -2093,7 +2115,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * These labels must adhere to the [name and value
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
      * VM labels imposed by Compute Engine.
+     *
      * Labels keys with the prefix 'google-' are reserved for use by Google.
+     *
      * Labels applied at creation time to the VM. Applied on a best-effort basis
      * to attached disk resources shortly after VM creation.
      * </pre>
@@ -2121,7 +2145,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * These labels must adhere to the [name and value
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
      * VM labels imposed by Compute Engine.
+     *
      * Labels keys with the prefix 'google-' are reserved for use by Google.
+     *
      * Labels applied at creation time to the VM. Applied on a best-effort basis
      * to attached disk resources shortly after VM creation.
      * </pre>
@@ -2140,7 +2166,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * These labels must adhere to the [name and value
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
      * VM labels imposed by Compute Engine.
+     *
      * Labels keys with the prefix 'google-' are reserved for use by Google.
+     *
      * Labels applied at creation time to the VM. Applied on a best-effort basis
      * to attached disk resources shortly after VM creation.
      * </pre>
@@ -2166,7 +2194,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * These labels must adhere to the [name and value
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
      * VM labels imposed by Compute Engine.
+     *
      * Labels keys with the prefix 'google-' are reserved for use by Google.
+     *
      * Labels applied at creation time to the VM. Applied on a best-effort basis
      * to attached disk resources shortly after VM creation.
      * </pre>
@@ -2198,7 +2228,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * These labels must adhere to the [name and value
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
      * VM labels imposed by Compute Engine.
+     *
      * Labels keys with the prefix 'google-' are reserved for use by Google.
+     *
      * Labels applied at creation time to the VM. Applied on a best-effort basis
      * to attached disk resources shortly after VM creation.
      * </pre>
@@ -2226,7 +2258,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * These labels must adhere to the [name and value
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
      * VM labels imposed by Compute Engine.
+     *
      * Labels keys with the prefix 'google-' are reserved for use by Google.
+     *
      * Labels applied at creation time to the VM. Applied on a best-effort basis
      * to attached disk resources shortly after VM creation.
      * </pre>
@@ -2252,7 +2286,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * These labels must adhere to the [name and value
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
      * VM labels imposed by Compute Engine.
+     *
      * Labels keys with the prefix 'google-' are reserved for use by Google.
+     *
      * Labels applied at creation time to the VM. Applied on a best-effort basis
      * to attached disk resources shortly after VM creation.
      * </pre>
@@ -2286,6 +2322,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2303,6 +2340,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2320,6 +2358,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2337,6 +2376,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2360,6 +2400,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2381,6 +2422,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2404,6 +2446,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2427,6 +2470,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2447,6 +2491,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2468,6 +2513,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2489,6 +2535,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2509,6 +2556,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2529,6 +2577,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2542,6 +2591,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2559,6 +2609,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2577,6 +2628,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2591,6 +2643,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -2605,6 +2658,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks to create and attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -3439,6 +3493,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * parameter must be a valid Compute Engine CPU platform name (such as "Intel
      * Skylake"). This parameter is only useful for carefully optimized work
      * loads where the CPU platform has a significant impact.
+     *
      * For more information about the effect of this parameter, see
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
      * </pre>
@@ -3467,6 +3522,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * parameter must be a valid Compute Engine CPU platform name (such as "Intel
      * Skylake"). This parameter is only useful for carefully optimized work
      * loads where the CPU platform has a significant impact.
+     *
      * For more information about the effect of this parameter, see
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
      * </pre>
@@ -3495,6 +3551,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * parameter must be a valid Compute Engine CPU platform name (such as "Intel
      * Skylake"). This parameter is only useful for carefully optimized work
      * loads where the CPU platform has a significant impact.
+     *
      * For more information about the effect of this parameter, see
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
      * </pre>
@@ -3522,6 +3579,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * parameter must be a valid Compute Engine CPU platform name (such as "Intel
      * Skylake"). This parameter is only useful for carefully optimized work
      * loads where the CPU platform has a significant impact.
+     *
      * For more information about the effect of this parameter, see
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
      * </pre>
@@ -3545,6 +3603,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * parameter must be a valid Compute Engine CPU platform name (such as "Intel
      * Skylake"). This parameter is only useful for carefully optimized work
      * loads where the CPU platform has a significant impact.
+     *
      * For more information about the effect of this parameter, see
      * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
      * </pre>
@@ -3571,12 +3630,16 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The host operating system image to use.
+     *
      * Currently, only Container-Optimized OS images can be used.
+     *
      * The default value is `projects/cos-cloud/global/images/family/cos-stable`,
      * which selects the latest stable release of Container-Optimized OS.
+     *
      * This option is provided to allow testing against the beta release of the
      * operating system to ensure that the new version does not interact
      * negatively with production pipelines.
+     *
      * To test a pipeline against the beta release of Container-Optimized OS,
      * use the value `projects/cos-cloud/global/images/family/cos-beta`.
      * </pre>
@@ -3601,12 +3664,16 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The host operating system image to use.
+     *
      * Currently, only Container-Optimized OS images can be used.
+     *
      * The default value is `projects/cos-cloud/global/images/family/cos-stable`,
      * which selects the latest stable release of Container-Optimized OS.
+     *
      * This option is provided to allow testing against the beta release of the
      * operating system to ensure that the new version does not interact
      * negatively with production pipelines.
+     *
      * To test a pipeline against the beta release of Container-Optimized OS,
      * use the value `projects/cos-cloud/global/images/family/cos-beta`.
      * </pre>
@@ -3631,12 +3698,16 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The host operating system image to use.
+     *
      * Currently, only Container-Optimized OS images can be used.
+     *
      * The default value is `projects/cos-cloud/global/images/family/cos-stable`,
      * which selects the latest stable release of Container-Optimized OS.
+     *
      * This option is provided to allow testing against the beta release of the
      * operating system to ensure that the new version does not interact
      * negatively with production pipelines.
+     *
      * To test a pipeline against the beta release of Container-Optimized OS,
      * use the value `projects/cos-cloud/global/images/family/cos-beta`.
      * </pre>
@@ -3660,12 +3731,16 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The host operating system image to use.
+     *
      * Currently, only Container-Optimized OS images can be used.
+     *
      * The default value is `projects/cos-cloud/global/images/family/cos-stable`,
      * which selects the latest stable release of Container-Optimized OS.
+     *
      * This option is provided to allow testing against the beta release of the
      * operating system to ensure that the new version does not interact
      * negatively with production pipelines.
+     *
      * To test a pipeline against the beta release of Container-Optimized OS,
      * use the value `projects/cos-cloud/global/images/family/cos-beta`.
      * </pre>
@@ -3685,12 +3760,16 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The host operating system image to use.
+     *
      * Currently, only Container-Optimized OS images can be used.
+     *
      * The default value is `projects/cos-cloud/global/images/family/cos-stable`,
      * which selects the latest stable release of Container-Optimized OS.
+     *
      * This option is provided to allow testing against the beta release of the
      * operating system to ensure that the new version does not interact
      * negatively with production pipelines.
+     *
      * To test a pipeline against the beta release of Container-Optimized OS,
      * use the value `projects/cos-cloud/global/images/family/cos-beta`.
      * </pre>
@@ -3900,14 +3979,14 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList dockerCacheImages_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList dockerCacheImages_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDockerCacheImagesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!dockerCacheImages_.isModifiable()) {
         dockerCacheImages_ = new com.google.protobuf.LazyStringArrayList(dockerCacheImages_);
-        bitField0_ |= 0x00001000;
       }
+      bitField0_ |= 0x00001000;
     }
     /**
      *
@@ -3929,7 +4008,8 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the dockerCacheImages.
      */
     public com.google.protobuf.ProtocolStringList getDockerCacheImagesList() {
-      return dockerCacheImages_.getUnmodifiableView();
+      dockerCacheImages_.makeImmutable();
+      return dockerCacheImages_;
     }
     /**
      *
@@ -4026,6 +4106,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDockerCacheImagesIsMutable();
       dockerCacheImages_.set(index, value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4055,6 +4136,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDockerCacheImagesIsMutable();
       dockerCacheImages_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4081,6 +4163,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDockerCacheImages(java.lang.Iterable<java.lang.String> values) {
       ensureDockerCacheImagesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dockerCacheImages_);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4104,8 +4187,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDockerCacheImages() {
-      dockerCacheImages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      dockerCacheImages_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00001000);
+      ;
       onChanged();
       return this;
     }
@@ -4136,6 +4220,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDockerCacheImagesIsMutable();
       dockerCacheImages_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4161,6 +4246,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4178,6 +4264,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4195,6 +4282,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4212,6 +4300,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4235,6 +4324,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4256,6 +4346,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4279,6 +4370,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4302,6 +4394,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4322,6 +4415,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4343,6 +4437,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4364,6 +4459,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4384,6 +4480,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4404,6 +4501,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4417,6 +4515,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4434,6 +4533,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4452,6 +4552,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4466,6 +4567,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *
@@ -4480,6 +4582,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of disks and other storage to create or attach to the VM.
+     *
      * Specify either the `volumes[]` field or the `disks[]` field, but not both.
      * </pre>
      *

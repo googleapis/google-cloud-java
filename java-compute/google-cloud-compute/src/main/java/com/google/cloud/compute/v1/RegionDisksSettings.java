@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,17 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
   public OperationCallSettings<AddResourcePoliciesRegionDiskRequest, Operation, Operation>
       addResourcePoliciesOperationSettings() {
     return ((RegionDisksStubSettings) getStubSettings()).addResourcePoliciesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to bulkInsert. */
+  public UnaryCallSettings<BulkInsertRegionDiskRequest, Operation> bulkInsertSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).bulkInsertSettings();
+  }
+
+  /** Returns the object with the settings used for calls to bulkInsert. */
+  public OperationCallSettings<BulkInsertRegionDiskRequest, Operation, Operation>
+      bulkInsertOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).bulkInsertOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createSnapshot. */
@@ -171,6 +182,43 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
   public OperationCallSettings<SetLabelsRegionDiskRequest, Operation, Operation>
       setLabelsOperationSettings() {
     return ((RegionDisksStubSettings) getStubSettings()).setLabelsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startAsyncReplication. */
+  public UnaryCallSettings<StartAsyncReplicationRegionDiskRequest, Operation>
+      startAsyncReplicationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).startAsyncReplicationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startAsyncReplication. */
+  public OperationCallSettings<StartAsyncReplicationRegionDiskRequest, Operation, Operation>
+      startAsyncReplicationOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).startAsyncReplicationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopAsyncReplication. */
+  public UnaryCallSettings<StopAsyncReplicationRegionDiskRequest, Operation>
+      stopAsyncReplicationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).stopAsyncReplicationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopAsyncReplication. */
+  public OperationCallSettings<StopAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopAsyncReplicationOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).stopAsyncReplicationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopGroupAsyncReplication. */
+  public UnaryCallSettings<StopGroupAsyncReplicationRegionDiskRequest, Operation>
+      stopGroupAsyncReplicationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).stopGroupAsyncReplicationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopGroupAsyncReplication. */
+  public OperationCallSettings<StopGroupAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopGroupAsyncReplicationOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings())
+        .stopGroupAsyncReplicationOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -299,6 +347,17 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
       return getStubSettingsBuilder().addResourcePoliciesOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to bulkInsert. */
+    public UnaryCallSettings.Builder<BulkInsertRegionDiskRequest, Operation> bulkInsertSettings() {
+      return getStubSettingsBuilder().bulkInsertSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bulkInsert. */
+    public OperationCallSettings.Builder<BulkInsertRegionDiskRequest, Operation, Operation>
+        bulkInsertOperationSettings() {
+      return getStubSettingsBuilder().bulkInsertOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createSnapshot. */
     public UnaryCallSettings.Builder<CreateSnapshotRegionDiskRequest, Operation>
         createSnapshotSettings() {
@@ -387,6 +446,45 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
     public OperationCallSettings.Builder<SetLabelsRegionDiskRequest, Operation, Operation>
         setLabelsOperationSettings() {
       return getStubSettingsBuilder().setLabelsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startAsyncReplication. */
+    public UnaryCallSettings.Builder<StartAsyncReplicationRegionDiskRequest, Operation>
+        startAsyncReplicationSettings() {
+      return getStubSettingsBuilder().startAsyncReplicationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startAsyncReplication. */
+    public OperationCallSettings.Builder<
+            StartAsyncReplicationRegionDiskRequest, Operation, Operation>
+        startAsyncReplicationOperationSettings() {
+      return getStubSettingsBuilder().startAsyncReplicationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopAsyncReplication. */
+    public UnaryCallSettings.Builder<StopAsyncReplicationRegionDiskRequest, Operation>
+        stopAsyncReplicationSettings() {
+      return getStubSettingsBuilder().stopAsyncReplicationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopAsyncReplication. */
+    public OperationCallSettings.Builder<
+            StopAsyncReplicationRegionDiskRequest, Operation, Operation>
+        stopAsyncReplicationOperationSettings() {
+      return getStubSettingsBuilder().stopAsyncReplicationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopGroupAsyncReplication. */
+    public UnaryCallSettings.Builder<StopGroupAsyncReplicationRegionDiskRequest, Operation>
+        stopGroupAsyncReplicationSettings() {
+      return getStubSettingsBuilder().stopGroupAsyncReplicationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopGroupAsyncReplication. */
+    public OperationCallSettings.Builder<
+            StopGroupAsyncReplicationRegionDiskRequest, Operation, Operation>
+        stopGroupAsyncReplicationOperationSettings() {
+      return getStubSettingsBuilder().stopGroupAsyncReplicationOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

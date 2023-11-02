@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,9 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.run.v2.CancelExecutionRequest;
 import com.google.cloud.run.v2.DeleteExecutionRequest;
 import com.google.cloud.run.v2.Execution;
 import com.google.cloud.run.v2.GetExecutionRequest;
@@ -174,6 +176,46 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<CancelExecutionRequest, Operation>
+      cancelExecutionMethodDescriptor =
+          ApiMethodDescriptor.<CancelExecutionRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.run.v2.Executions/CancelExecution")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelExecutionRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/jobs/*/executions/*}:cancel",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelExecutionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelExecutionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CancelExecutionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private final UnaryCallable<GetExecutionRequest, Execution> getExecutionCallable;
   private final UnaryCallable<ListExecutionsRequest, ListExecutionsResponse> listExecutionsCallable;
   private final UnaryCallable<ListExecutionsRequest, ListExecutionsPagedResponse>
@@ -181,6 +223,9 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
   private final UnaryCallable<DeleteExecutionRequest, Operation> deleteExecutionCallable;
   private final OperationCallable<DeleteExecutionRequest, Execution, Execution>
       deleteExecutionOperationCallable;
+  private final UnaryCallable<CancelExecutionRequest, Operation> cancelExecutionCallable;
+  private final OperationCallable<CancelExecutionRequest, Execution, Execution>
+      cancelExecutionOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -256,17 +301,46 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
         HttpJsonCallSettings.<GetExecutionRequest, Execution>newBuilder()
             .setMethodDescriptor(getExecutionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListExecutionsRequest, ListExecutionsResponse>
         listExecutionsTransportSettings =
             HttpJsonCallSettings.<ListExecutionsRequest, ListExecutionsResponse>newBuilder()
                 .setMethodDescriptor(listExecutionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteExecutionRequest, Operation> deleteExecutionTransportSettings =
         HttpJsonCallSettings.<DeleteExecutionRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteExecutionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CancelExecutionRequest, Operation> cancelExecutionTransportSettings =
+        HttpJsonCallSettings.<CancelExecutionRequest, Operation>newBuilder()
+            .setMethodDescriptor(cancelExecutionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.getExecutionCallable =
@@ -287,6 +361,15 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
             settings.deleteExecutionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.cancelExecutionCallable =
+        callableFactory.createUnaryCallable(
+            cancelExecutionTransportSettings, settings.cancelExecutionSettings(), clientContext);
+    this.cancelExecutionOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelExecutionTransportSettings,
+            settings.cancelExecutionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -298,6 +381,7 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
     methodDescriptors.add(getExecutionMethodDescriptor);
     methodDescriptors.add(listExecutionsMethodDescriptor);
     methodDescriptors.add(deleteExecutionMethodDescriptor);
+    methodDescriptors.add(cancelExecutionMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -330,6 +414,17 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
   public OperationCallable<DeleteExecutionRequest, Execution, Execution>
       deleteExecutionOperationCallable() {
     return deleteExecutionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelExecutionRequest, Operation> cancelExecutionCallable() {
+    return cancelExecutionCallable;
+  }
+
+  @Override
+  public OperationCallable<CancelExecutionRequest, Execution, Execution>
+      cancelExecutionOperationCallable() {
+    return cancelExecutionOperationCallable;
   }
 
   @Override

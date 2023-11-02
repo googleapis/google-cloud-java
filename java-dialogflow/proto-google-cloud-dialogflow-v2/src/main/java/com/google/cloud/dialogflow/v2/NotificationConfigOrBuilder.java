@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,13 +32,16 @@ public interface NotificationConfigOrBuilder
    * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
    * as serialized
    * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
+   *
    * For telephony integration to receive notification, make sure either this
    * topic is in the same project as the conversation or you grant
    * `service-&lt;Conversation Project
    * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow Service
    * Agent` role in the topic project.
+   *
    * For chat integration to receive notification, make sure API caller has been
    * granted the `Dialogflow Service Agent` role for the topic.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/topics/&lt;Topic ID&gt;`.
    * </pre>
    *
@@ -56,13 +59,16 @@ public interface NotificationConfigOrBuilder
    * [CONVERSATION_STARTED][google.cloud.dialogflow.v2.ConversationEvent.Type.CONVERSATION_STARTED]
    * as serialized
    * [ConversationEvent][google.cloud.dialogflow.v2.ConversationEvent] protos.
+   *
    * For telephony integration to receive notification, make sure either this
    * topic is in the same project as the conversation or you grant
    * `service-&lt;Conversation Project
    * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow Service
    * Agent` role in the topic project.
+   *
    * For chat integration to receive notification, make sure API caller has been
    * granted the `Dialogflow Service Agent` role for the topic.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/topics/&lt;Topic ID&gt;`.
    * </pre>
    *

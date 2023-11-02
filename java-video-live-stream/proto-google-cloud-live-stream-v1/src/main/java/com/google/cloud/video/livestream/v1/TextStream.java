@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     return new TextStream();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.livestream.v1.OutputsProto
         .internal_static_google_cloud_video_livestream_v1_TextStream_descriptor;
@@ -76,7 +71,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The codec for this text stream.
+   *
    * Supported text codecs:
+   *
    * - `cea608`
    * - `cea708`
    * </pre>
@@ -102,7 +99,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The codec for this text stream.
+   *
    * Supported text codecs:
+   *
    * - `cea608`
    * - `cea708`
    * </pre>
@@ -472,7 +471,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The codec for this text stream.
+     *
      * Supported text codecs:
+     *
      * - `cea608`
      * - `cea708`
      * </pre>
@@ -497,7 +498,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The codec for this text stream.
+     *
      * Supported text codecs:
+     *
      * - `cea608`
      * - `cea708`
      * </pre>
@@ -522,7 +525,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The codec for this text stream.
+     *
      * Supported text codecs:
+     *
      * - `cea608`
      * - `cea708`
      * </pre>
@@ -546,7 +551,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The codec for this text stream.
+     *
      * Supported text codecs:
+     *
      * - `cea608`
      * - `cea708`
      * </pre>
@@ -566,7 +573,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The codec for this text stream.
+     *
      * Supported text codecs:
+     *
      * - `cea608`
      * - `cea708`
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExplicitDecodingConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -300,8 +295,11 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
    * sampling rate of the audio source to 16000 Hz. If that's not possible, use
    * the native sample rate of the audio source (instead of re-sampling).
    * Supported for the following encodings:
+   *
    * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
+   *
    * * MULAW: Headerless 8-bit companded mulaw samples.
+   *
    * * ALAW: Headerless 8-bit companded alaw samples.
    * </pre>
    *
@@ -322,9 +320,13 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
    * <pre>
    * Number of channels present in the audio data sent for recognition.
    * Supported for the following encodings:
+   *
    * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
+   *
    * * MULAW: Headerless 8-bit companded mulaw samples.
+   *
    * * ALAW: Headerless 8-bit companded alaw samples.
+   *
    * The maximum allowed value is 8.
    * </pre>
    *
@@ -840,8 +842,11 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * sampling rate of the audio source to 16000 Hz. If that's not possible, use
      * the native sample rate of the audio source (instead of re-sampling).
      * Supported for the following encodings:
+     *
      * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
+     *
      * * MULAW: Headerless 8-bit companded mulaw samples.
+     *
      * * ALAW: Headerless 8-bit companded alaw samples.
      * </pre>
      *
@@ -862,8 +867,11 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * sampling rate of the audio source to 16000 Hz. If that's not possible, use
      * the native sample rate of the audio source (instead of re-sampling).
      * Supported for the following encodings:
+     *
      * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
+     *
      * * MULAW: Headerless 8-bit companded mulaw samples.
+     *
      * * ALAW: Headerless 8-bit companded alaw samples.
      * </pre>
      *
@@ -888,8 +896,11 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * sampling rate of the audio source to 16000 Hz. If that's not possible, use
      * the native sample rate of the audio source (instead of re-sampling).
      * Supported for the following encodings:
+     *
      * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
+     *
      * * MULAW: Headerless 8-bit companded mulaw samples.
+     *
      * * ALAW: Headerless 8-bit companded alaw samples.
      * </pre>
      *
@@ -911,9 +922,13 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <pre>
      * Number of channels present in the audio data sent for recognition.
      * Supported for the following encodings:
+     *
      * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
+     *
      * * MULAW: Headerless 8-bit companded mulaw samples.
+     *
      * * ALAW: Headerless 8-bit companded alaw samples.
+     *
      * The maximum allowed value is 8.
      * </pre>
      *
@@ -931,9 +946,13 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <pre>
      * Number of channels present in the audio data sent for recognition.
      * Supported for the following encodings:
+     *
      * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
+     *
      * * MULAW: Headerless 8-bit companded mulaw samples.
+     *
      * * ALAW: Headerless 8-bit companded alaw samples.
+     *
      * The maximum allowed value is 8.
      * </pre>
      *
@@ -955,9 +974,13 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <pre>
      * Number of channels present in the audio data sent for recognition.
      * Supported for the following encodings:
+     *
      * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
+     *
      * * MULAW: Headerless 8-bit companded mulaw samples.
+     *
      * * ALAW: Headerless 8-bit companded alaw samples.
+     *
      * The maximum allowed value is 8.
      * </pre>
      *

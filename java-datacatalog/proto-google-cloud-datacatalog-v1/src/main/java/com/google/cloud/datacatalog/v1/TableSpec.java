@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
     return new TableSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.TableSpecOuterClass
         .internal_static_google_cloud_datacatalog_v1_TableSpec_descriptor;
@@ -78,7 +73,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * Output only. If the table is date-sharded, that is, it matches the
    * `[prefix]YYYYMMDD` name pattern, this field is the Data Catalog resource
    * name of the date-sharded grouped entry. For example:
+   *
    * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
+   *
    * Otherwise, `grouped_entry` is empty.
    * </pre>
    *
@@ -107,7 +104,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    * Output only. If the table is date-sharded, that is, it matches the
    * `[prefix]YYYYMMDD` name pattern, this field is the Data Catalog resource
    * name of the date-sharded grouped entry. For example:
+   *
    * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
+   *
    * Otherwise, `grouped_entry` is empty.
    * </pre>
    *
@@ -479,7 +478,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * Output only. If the table is date-sharded, that is, it matches the
      * `[prefix]YYYYMMDD` name pattern, this field is the Data Catalog resource
      * name of the date-sharded grouped entry. For example:
+     *
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
+     *
      * Otherwise, `grouped_entry` is empty.
      * </pre>
      *
@@ -507,7 +508,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * Output only. If the table is date-sharded, that is, it matches the
      * `[prefix]YYYYMMDD` name pattern, this field is the Data Catalog resource
      * name of the date-sharded grouped entry. For example:
+     *
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
+     *
      * Otherwise, `grouped_entry` is empty.
      * </pre>
      *
@@ -535,7 +538,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * Output only. If the table is date-sharded, that is, it matches the
      * `[prefix]YYYYMMDD` name pattern, this field is the Data Catalog resource
      * name of the date-sharded grouped entry. For example:
+     *
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
+     *
      * Otherwise, `grouped_entry` is empty.
      * </pre>
      *
@@ -562,7 +567,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * Output only. If the table is date-sharded, that is, it matches the
      * `[prefix]YYYYMMDD` name pattern, this field is the Data Catalog resource
      * name of the date-sharded grouped entry. For example:
+     *
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
+     *
      * Otherwise, `grouped_entry` is empty.
      * </pre>
      *
@@ -585,7 +592,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      * Output only. If the table is date-sharded, that is, it matches the
      * `[prefix]YYYYMMDD` name pattern, this field is the Data Catalog resource
      * name of the date-sharded grouped entry. For example:
+     *
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
+     *
      * Otherwise, `grouped_entry` is empty.
      * </pre>
      *

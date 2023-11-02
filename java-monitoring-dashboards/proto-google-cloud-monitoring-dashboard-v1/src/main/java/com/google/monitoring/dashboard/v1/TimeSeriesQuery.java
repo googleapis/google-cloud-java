@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     return new TimeSeriesQuery();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.MetricsProto
         .internal_static_google_monitoring_dashboard_v1_TimeSeriesQuery_descriptor;
@@ -69,6 +64,8 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase

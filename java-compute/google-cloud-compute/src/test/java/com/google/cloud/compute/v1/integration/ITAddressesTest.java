@@ -15,8 +15,6 @@
  */
 package com.google.cloud.compute.v1.integration;
 
-import static org.junit.Assert.fail;
-
 import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressesClient;
 import com.google.cloud.compute.v1.AddressesScopedList;
@@ -32,7 +30,6 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITAddressesTest extends BaseTest {
@@ -81,7 +78,6 @@ public class ITAddressesTest extends BaseTest {
         presented = true;
       }
     }
-    System.out.println(presented);
     Assert.assertTrue(presented);
   }
 
@@ -103,7 +99,6 @@ public class ITAddressesTest extends BaseTest {
     Assert.assertTrue(presented);
   }
 
-  @Ignore("Non ascii symbols are not converted correctly, b/188905787")
   @Test
   public void testNonAscii() {
     insertAddress("тест");
@@ -123,7 +118,7 @@ public class ITAddressesTest extends BaseTest {
           .insertAsync(DEFAULT_PROJECT, DEFAULT_REGION, address)
           .get(60, TimeUnit.SECONDS);
     } catch (InterruptedException | ExecutionException | TimeoutException e) {
-      fail("Insert operation failed.");
+      throw new RuntimeException("Insert operation failed.", e);
     }
     addresses.add(address);
   }

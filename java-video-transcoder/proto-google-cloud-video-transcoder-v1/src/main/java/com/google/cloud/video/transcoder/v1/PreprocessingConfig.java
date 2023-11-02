@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PreprocessingConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -120,6 +115,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Color preprocessing configuration.
+   *
    * **Note:** This configuration is not supported.
    * </pre>
    *
@@ -141,11 +137,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Color();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -419,6 +410,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Color preprocessing configuration.
+     *
      * **Note:** This configuration is not supported.
      * </pre>
      *
@@ -897,7 +889,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Set the denoiser mode. The default is `standard`.
+     *
      * Supported denoiser modes:
+     *
      * - `standard`
      * - `grain`
      * </pre>
@@ -912,7 +906,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Set the denoiser mode. The default is `standard`.
+     *
      * Supported denoiser modes:
+     *
      * - `standard`
      * - `grain`
      * </pre>
@@ -928,6 +924,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Denoise preprocessing configuration.
+   *
    * **Note:** This configuration is not supported.
    * </pre>
    *
@@ -951,11 +948,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Denoise();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1001,7 +993,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Set the denoiser mode. The default is `standard`.
+     *
      * Supported denoiser modes:
+     *
      * - `standard`
      * - `grain`
      * </pre>
@@ -1027,7 +1021,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Set the denoiser mode. The default is `standard`.
+     *
      * Supported denoiser modes:
+     *
      * - `standard`
      * - `grain`
      * </pre>
@@ -1229,6 +1225,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Denoise preprocessing configuration.
+     *
      * **Note:** This configuration is not supported.
      * </pre>
      *
@@ -1493,7 +1490,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Set the denoiser mode. The default is `standard`.
+       *
        * Supported denoiser modes:
+       *
        * - `standard`
        * - `grain`
        * </pre>
@@ -1518,7 +1517,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Set the denoiser mode. The default is `standard`.
+       *
        * Supported denoiser modes:
+       *
        * - `standard`
        * - `grain`
        * </pre>
@@ -1543,7 +1544,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Set the denoiser mode. The default is `standard`.
+       *
        * Supported denoiser modes:
+       *
        * - `standard`
        * - `grain`
        * </pre>
@@ -1567,7 +1570,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Set the denoiser mode. The default is `standard`.
+       *
        * Supported denoiser modes:
+       *
        * - `standard`
        * - `grain`
        * </pre>
@@ -1587,7 +1592,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Set the denoiser mode. The default is `standard`.
+       *
        * Supported denoiser modes:
+       *
        * - `standard`
        * - `grain`
        * </pre>
@@ -1713,6 +1720,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Deblock preprocessing configuration.
+   *
    * **Note:** This configuration is not supported.
    * </pre>
    *
@@ -1734,11 +1742,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Deblock();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1974,6 +1977,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Deblock preprocessing configuration.
+     *
      * **Note:** This configuration is not supported.
      * </pre>
      *
@@ -2364,6 +2368,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Specify audio loudness normalization in loudness units relative to full
      * scale (LUFS). Enter a value between -24 and 0 (the default), where:
+     *
      * *   -24 is the Advanced Television Systems Committee (ATSC A/85) standard
      * *   -23 is the EU R128 broadcast standard
      * *   -19 is the prior standard for online mono audio
@@ -2385,6 +2390,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Enable boosting high frequency components. The default is `false`.
+     *
      * **Note:** This field is not supported.
      * </pre>
      *
@@ -2399,6 +2405,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Enable boosting low frequency components. The default is `false`.
+     *
      * **Note:** This field is not supported.
      * </pre>
      *
@@ -2435,11 +2442,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       return new Audio();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.transcoder.v1.ResourcesProto
           .internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Audio_descriptor;
@@ -2463,6 +2465,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Specify audio loudness normalization in loudness units relative to full
      * scale (LUFS). Enter a value between -24 and 0 (the default), where:
+     *
      * *   -24 is the Advanced Television Systems Committee (ATSC A/85) standard
      * *   -23 is the EU R128 broadcast standard
      * *   -19 is the prior standard for online mono audio
@@ -2489,6 +2492,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Enable boosting high frequency components. The default is `false`.
+     *
      * **Note:** This field is not supported.
      * </pre>
      *
@@ -2508,6 +2512,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Enable boosting low frequency components. The default is `false`.
+     *
      * **Note:** This field is not supported.
      * </pre>
      *
@@ -2923,6 +2928,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * <pre>
        * Specify audio loudness normalization in loudness units relative to full
        * scale (LUFS). Enter a value between -24 and 0 (the default), where:
+       *
        * *   -24 is the Advanced Television Systems Committee (ATSC A/85) standard
        * *   -23 is the EU R128 broadcast standard
        * *   -19 is the prior standard for online mono audio
@@ -2947,6 +2953,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * <pre>
        * Specify audio loudness normalization in loudness units relative to full
        * scale (LUFS). Enter a value between -24 and 0 (the default), where:
+       *
        * *   -24 is the Advanced Television Systems Committee (ATSC A/85) standard
        * *   -23 is the EU R128 broadcast standard
        * *   -19 is the prior standard for online mono audio
@@ -2975,6 +2982,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * <pre>
        * Specify audio loudness normalization in loudness units relative to full
        * scale (LUFS). Enter a value between -24 and 0 (the default), where:
+       *
        * *   -24 is the Advanced Television Systems Committee (ATSC A/85) standard
        * *   -23 is the EU R128 broadcast standard
        * *   -19 is the prior standard for online mono audio
@@ -3002,6 +3010,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting high frequency components. The default is `false`.
+       *
        * **Note:** This field is not supported.
        * </pre>
        *
@@ -3018,6 +3027,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting high frequency components. The default is `false`.
+       *
        * **Note:** This field is not supported.
        * </pre>
        *
@@ -3038,6 +3048,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting high frequency components. The default is `false`.
+       *
        * **Note:** This field is not supported.
        * </pre>
        *
@@ -3058,6 +3069,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting low frequency components. The default is `false`.
+       *
        * **Note:** This field is not supported.
        * </pre>
        *
@@ -3074,6 +3086,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting low frequency components. The default is `false`.
+       *
        * **Note:** This field is not supported.
        * </pre>
        *
@@ -3094,6 +3107,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting low frequency components. The default is `false`.
+       *
        * **Note:** This field is not supported.
        * </pre>
        *
@@ -3258,11 +3272,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Crop();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4130,11 +4139,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Pad();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5007,8 +5011,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.BwdifConfigOrBuilder
         getBwdifOrBuilder();
 
-    public com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace
-            .DeinterlacingFilterCase
+    com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace.DeinterlacingFilterCase
         getDeinterlacingFilterCase();
   }
   /**
@@ -5038,11 +5041,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       return new Deinterlace();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.transcoder.v1.ResourcesProto
           .internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_descriptor;
@@ -5070,6 +5068,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * Specifies the deinterlacing mode to adopt.
        * The default is `send_frame`.
        * Supported values:
+       *
        * - `send_frame`: Output one frame for each frame
        * - `send_field`: Output one frame for each field
        * </pre>
@@ -5086,6 +5085,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * Specifies the deinterlacing mode to adopt.
        * The default is `send_frame`.
        * Supported values:
+       *
        * - `send_frame`: Output one frame for each frame
        * - `send_field`: Output one frame for each field
        * </pre>
@@ -5117,6 +5117,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * The picture field parity assumed for the input interlaced video.
        * The default is `auto`.
        * Supported values:
+       *
        * - `tff`: Assume the top field is first
        * - `bff`: Assume the bottom field is first
        * - `auto`: Enable automatic detection of field parity
@@ -5134,6 +5135,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * The picture field parity assumed for the input interlaced video.
        * The default is `auto`.
        * Supported values:
+       *
        * - `tff`: Assume the top field is first
        * - `bff`: Assume the bottom field is first
        * - `auto`: Enable automatic detection of field parity
@@ -5190,11 +5192,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         return new YadifConfig();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.video.transcoder.v1.ResourcesProto
             .internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_YadifConfig_descriptor;
@@ -5223,6 +5220,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * Specifies the deinterlacing mode to adopt.
        * The default is `send_frame`.
        * Supported values:
+       *
        * - `send_frame`: Output one frame for each frame
        * - `send_field`: Output one frame for each field
        * </pre>
@@ -5250,6 +5248,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * Specifies the deinterlacing mode to adopt.
        * The default is `send_frame`.
        * Supported values:
+       *
        * - `send_frame`: Output one frame for each frame
        * - `send_field`: Output one frame for each field
        * </pre>
@@ -5301,6 +5300,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * The picture field parity assumed for the input interlaced video.
        * The default is `auto`.
        * Supported values:
+       *
        * - `tff`: Assume the top field is first
        * - `bff`: Assume the bottom field is first
        * - `auto`: Enable automatic detection of field parity
@@ -5329,6 +5329,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * The picture field parity assumed for the input interlaced video.
        * The default is `auto`.
        * Supported values:
+       *
        * - `tff`: Assume the top field is first
        * - `bff`: Assume the bottom field is first
        * - `auto`: Enable automatic detection of field parity
@@ -5826,6 +5827,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * Specifies the deinterlacing mode to adopt.
          * The default is `send_frame`.
          * Supported values:
+         *
          * - `send_frame`: Output one frame for each frame
          * - `send_field`: Output one frame for each field
          * </pre>
@@ -5852,6 +5854,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * Specifies the deinterlacing mode to adopt.
          * The default is `send_frame`.
          * Supported values:
+         *
          * - `send_frame`: Output one frame for each frame
          * - `send_field`: Output one frame for each field
          * </pre>
@@ -5878,6 +5881,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * Specifies the deinterlacing mode to adopt.
          * The default is `send_frame`.
          * Supported values:
+         *
          * - `send_frame`: Output one frame for each frame
          * - `send_field`: Output one frame for each field
          * </pre>
@@ -5903,6 +5907,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * Specifies the deinterlacing mode to adopt.
          * The default is `send_frame`.
          * Supported values:
+         *
          * - `send_frame`: Output one frame for each frame
          * - `send_field`: Output one frame for each field
          * </pre>
@@ -5924,6 +5929,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * Specifies the deinterlacing mode to adopt.
          * The default is `send_frame`.
          * Supported values:
+         *
          * - `send_frame`: Output one frame for each frame
          * - `send_field`: Output one frame for each field
          * </pre>
@@ -6008,6 +6014,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * The picture field parity assumed for the input interlaced video.
          * The default is `auto`.
          * Supported values:
+         *
          * - `tff`: Assume the top field is first
          * - `bff`: Assume the bottom field is first
          * - `auto`: Enable automatic detection of field parity
@@ -6035,6 +6042,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * The picture field parity assumed for the input interlaced video.
          * The default is `auto`.
          * Supported values:
+         *
          * - `tff`: Assume the top field is first
          * - `bff`: Assume the bottom field is first
          * - `auto`: Enable automatic detection of field parity
@@ -6062,6 +6070,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * The picture field parity assumed for the input interlaced video.
          * The default is `auto`.
          * Supported values:
+         *
          * - `tff`: Assume the top field is first
          * - `bff`: Assume the bottom field is first
          * - `auto`: Enable automatic detection of field parity
@@ -6088,6 +6097,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * The picture field parity assumed for the input interlaced video.
          * The default is `auto`.
          * Supported values:
+         *
          * - `tff`: Assume the top field is first
          * - `bff`: Assume the bottom field is first
          * - `auto`: Enable automatic detection of field parity
@@ -6110,6 +6120,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * The picture field parity assumed for the input interlaced video.
          * The default is `auto`.
          * Supported values:
+         *
          * - `tff`: Assume the top field is first
          * - `bff`: Assume the bottom field is first
          * - `auto`: Enable automatic detection of field parity
@@ -6268,6 +6279,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * Specifies the deinterlacing mode to adopt.
        * The default is `send_frame`.
        * Supported values:
+       *
        * - `send_frame`: Output one frame for each frame
        * - `send_field`: Output one frame for each field
        * </pre>
@@ -6284,6 +6296,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * Specifies the deinterlacing mode to adopt.
        * The default is `send_frame`.
        * Supported values:
+       *
        * - `send_frame`: Output one frame for each frame
        * - `send_field`: Output one frame for each field
        * </pre>
@@ -6301,6 +6314,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * The picture field parity assumed for the input interlaced video.
        * The default is `auto`.
        * Supported values:
+       *
        * - `tff`: Assume the top field is first
        * - `bff`: Assume the bottom field is first
        * - `auto`: Enable automatic detection of field parity
@@ -6318,6 +6332,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * The picture field parity assumed for the input interlaced video.
        * The default is `auto`.
        * Supported values:
+       *
        * - `tff`: Assume the top field is first
        * - `bff`: Assume the bottom field is first
        * - `auto`: Enable automatic detection of field parity
@@ -6374,11 +6389,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         return new BwdifConfig();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.video.transcoder.v1.ResourcesProto
             .internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_BwdifConfig_descriptor;
@@ -6407,6 +6417,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * Specifies the deinterlacing mode to adopt.
        * The default is `send_frame`.
        * Supported values:
+       *
        * - `send_frame`: Output one frame for each frame
        * - `send_field`: Output one frame for each field
        * </pre>
@@ -6434,6 +6445,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * Specifies the deinterlacing mode to adopt.
        * The default is `send_frame`.
        * Supported values:
+       *
        * - `send_frame`: Output one frame for each frame
        * - `send_field`: Output one frame for each field
        * </pre>
@@ -6466,6 +6478,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * The picture field parity assumed for the input interlaced video.
        * The default is `auto`.
        * Supported values:
+       *
        * - `tff`: Assume the top field is first
        * - `bff`: Assume the bottom field is first
        * - `auto`: Enable automatic detection of field parity
@@ -6494,6 +6507,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        * The picture field parity assumed for the input interlaced video.
        * The default is `auto`.
        * Supported values:
+       *
        * - `tff`: Assume the top field is first
        * - `bff`: Assume the bottom field is first
        * - `auto`: Enable automatic detection of field parity
@@ -6967,6 +6981,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * Specifies the deinterlacing mode to adopt.
          * The default is `send_frame`.
          * Supported values:
+         *
          * - `send_frame`: Output one frame for each frame
          * - `send_field`: Output one frame for each field
          * </pre>
@@ -6993,6 +7008,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * Specifies the deinterlacing mode to adopt.
          * The default is `send_frame`.
          * Supported values:
+         *
          * - `send_frame`: Output one frame for each frame
          * - `send_field`: Output one frame for each field
          * </pre>
@@ -7019,6 +7035,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * Specifies the deinterlacing mode to adopt.
          * The default is `send_frame`.
          * Supported values:
+         *
          * - `send_frame`: Output one frame for each frame
          * - `send_field`: Output one frame for each field
          * </pre>
@@ -7044,6 +7061,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * Specifies the deinterlacing mode to adopt.
          * The default is `send_frame`.
          * Supported values:
+         *
          * - `send_frame`: Output one frame for each frame
          * - `send_field`: Output one frame for each field
          * </pre>
@@ -7065,6 +7083,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * Specifies the deinterlacing mode to adopt.
          * The default is `send_frame`.
          * Supported values:
+         *
          * - `send_frame`: Output one frame for each frame
          * - `send_field`: Output one frame for each field
          * </pre>
@@ -7093,6 +7112,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * The picture field parity assumed for the input interlaced video.
          * The default is `auto`.
          * Supported values:
+         *
          * - `tff`: Assume the top field is first
          * - `bff`: Assume the bottom field is first
          * - `auto`: Enable automatic detection of field parity
@@ -7120,6 +7140,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * The picture field parity assumed for the input interlaced video.
          * The default is `auto`.
          * Supported values:
+         *
          * - `tff`: Assume the top field is first
          * - `bff`: Assume the bottom field is first
          * - `auto`: Enable automatic detection of field parity
@@ -7147,6 +7168,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * The picture field parity assumed for the input interlaced video.
          * The default is `auto`.
          * Supported values:
+         *
          * - `tff`: Assume the top field is first
          * - `bff`: Assume the bottom field is first
          * - `auto`: Enable automatic detection of field parity
@@ -7173,6 +7195,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * The picture field parity assumed for the input interlaced video.
          * The default is `auto`.
          * Supported values:
+         *
          * - `tff`: Assume the top field is first
          * - `bff`: Assume the bottom field is first
          * - `auto`: Enable automatic detection of field parity
@@ -7195,6 +7218,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
          * The picture field parity assumed for the input interlaced video.
          * The default is `auto`.
          * Supported values:
+         *
          * - `tff`: Assume the top field is first
          * - `bff`: Assume the bottom field is first
          * - `auto`: Enable automatic detection of field parity
@@ -7342,6 +7366,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     private int deinterlacingFilterCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object deinterlacingFilter_;
 
     public enum DeinterlacingFilterCase

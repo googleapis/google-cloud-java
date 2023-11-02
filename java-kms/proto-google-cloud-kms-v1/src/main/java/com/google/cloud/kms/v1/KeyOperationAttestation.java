@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     return new KeyOperationAttestation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsResourcesProto
         .internal_static_google_cloud_kms_v1_KeyOperationAttestation_descriptor;
@@ -96,6 +91,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * <pre>
      * Cavium HSM attestation compressed with gzip. Note that this format is
      * defined by Cavium and subject to change at any time.
+     *
      * See
      * https://www.marvell.com/products/security-solutions/nitrox-hs-adapters/software-key-attestation.html.
      * </pre>
@@ -133,6 +129,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * <pre>
      * Cavium HSM attestation compressed with gzip. Note that this format is
      * defined by Cavium and subject to change at any time.
+     *
      * See
      * https://www.marvell.com/products/security-solutions/nitrox-hs-adapters/software-key-attestation.html.
      * </pre>
@@ -418,20 +415,15 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     }
 
     private CertificateChains() {
-      caviumCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      googleCardCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      googlePartitionCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      caviumCerts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      googleCardCerts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      googlePartitionCerts_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CertificateChains();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -452,7 +444,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public static final int CAVIUM_CERTS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList caviumCerts_;
+    private com.google.protobuf.LazyStringArrayList caviumCerts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -515,7 +508,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public static final int GOOGLE_CARD_CERTS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList googleCardCerts_;
+    private com.google.protobuf.LazyStringArrayList googleCardCerts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -578,7 +572,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public static final int GOOGLE_PARTITION_CERTS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList googlePartitionCerts_;
+    private com.google.protobuf.LazyStringArrayList googlePartitionCerts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -883,12 +878,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        caviumCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        googleCardCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        googlePartitionCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        caviumCerts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        googleCardCerts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        googlePartitionCerts_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -918,7 +910,6 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains buildPartial() {
         com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains result =
             new com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -926,28 +917,21 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          caviumCerts_ = caviumCerts_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.caviumCerts_ = caviumCerts_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          googleCardCerts_ = googleCardCerts_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.googleCardCerts_ = googleCardCerts_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          googlePartitionCerts_ = googlePartitionCerts_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.googlePartitionCerts_ = googlePartitionCerts_;
-      }
-
       private void buildPartial0(
           com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          caviumCerts_.makeImmutable();
+          result.caviumCerts_ = caviumCerts_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          googleCardCerts_.makeImmutable();
+          result.googleCardCerts_ = googleCardCerts_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          googlePartitionCerts_.makeImmutable();
+          result.googlePartitionCerts_ = googlePartitionCerts_;
+        }
       }
 
       @java.lang.Override
@@ -1004,7 +988,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         if (!other.caviumCerts_.isEmpty()) {
           if (caviumCerts_.isEmpty()) {
             caviumCerts_ = other.caviumCerts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureCaviumCertsIsMutable();
             caviumCerts_.addAll(other.caviumCerts_);
@@ -1014,7 +998,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         if (!other.googleCardCerts_.isEmpty()) {
           if (googleCardCerts_.isEmpty()) {
             googleCardCerts_ = other.googleCardCerts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureGoogleCardCertsIsMutable();
             googleCardCerts_.addAll(other.googleCardCerts_);
@@ -1024,7 +1008,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         if (!other.googlePartitionCerts_.isEmpty()) {
           if (googlePartitionCerts_.isEmpty()) {
             googlePartitionCerts_ = other.googlePartitionCerts_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureGooglePartitionCertsIsMutable();
             googlePartitionCerts_.addAll(other.googlePartitionCerts_);
@@ -1097,14 +1081,14 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList caviumCerts_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList caviumCerts_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureCaviumCertsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!caviumCerts_.isModifiable()) {
           caviumCerts_ = new com.google.protobuf.LazyStringArrayList(caviumCerts_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -1118,7 +1102,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
        * @return A list containing the caviumCerts.
        */
       public com.google.protobuf.ProtocolStringList getCaviumCertsList() {
-        return caviumCerts_.getUnmodifiableView();
+        caviumCerts_.makeImmutable();
+        return caviumCerts_;
       }
       /**
        *
@@ -1183,6 +1168,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         }
         ensureCaviumCertsIsMutable();
         caviumCerts_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1204,6 +1190,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         }
         ensureCaviumCertsIsMutable();
         caviumCerts_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1222,6 +1209,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public Builder addAllCaviumCerts(java.lang.Iterable<java.lang.String> values) {
         ensureCaviumCertsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, caviumCerts_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1237,8 +1225,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearCaviumCerts() {
-        caviumCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        caviumCerts_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1261,18 +1250,19 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensureCaviumCertsIsMutable();
         caviumCerts_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList googleCardCerts_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList googleCardCerts_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureGoogleCardCertsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!googleCardCerts_.isModifiable()) {
           googleCardCerts_ = new com.google.protobuf.LazyStringArrayList(googleCardCerts_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1286,7 +1276,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
        * @return A list containing the googleCardCerts.
        */
       public com.google.protobuf.ProtocolStringList getGoogleCardCertsList() {
-        return googleCardCerts_.getUnmodifiableView();
+        googleCardCerts_.makeImmutable();
+        return googleCardCerts_;
       }
       /**
        *
@@ -1351,6 +1342,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         }
         ensureGoogleCardCertsIsMutable();
         googleCardCerts_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1372,6 +1364,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         }
         ensureGoogleCardCertsIsMutable();
         googleCardCerts_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1390,6 +1383,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public Builder addAllGoogleCardCerts(java.lang.Iterable<java.lang.String> values) {
         ensureGoogleCardCertsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, googleCardCerts_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1405,8 +1399,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearGoogleCardCerts() {
-        googleCardCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        googleCardCerts_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1429,19 +1424,20 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensureGoogleCardCertsIsMutable();
         googleCardCerts_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList googlePartitionCerts_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList googlePartitionCerts_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureGooglePartitionCertsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!googlePartitionCerts_.isModifiable()) {
           googlePartitionCerts_ =
               new com.google.protobuf.LazyStringArrayList(googlePartitionCerts_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -1455,7 +1451,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
        * @return A list containing the googlePartitionCerts.
        */
       public com.google.protobuf.ProtocolStringList getGooglePartitionCertsList() {
-        return googlePartitionCerts_.getUnmodifiableView();
+        googlePartitionCerts_.makeImmutable();
+        return googlePartitionCerts_;
       }
       /**
        *
@@ -1520,6 +1517,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         }
         ensureGooglePartitionCertsIsMutable();
         googlePartitionCerts_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1541,6 +1539,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         }
         ensureGooglePartitionCertsIsMutable();
         googlePartitionCerts_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1559,6 +1558,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public Builder addAllGooglePartitionCerts(java.lang.Iterable<java.lang.String> values) {
         ensureGooglePartitionCertsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, googlePartitionCerts_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1574,8 +1574,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearGooglePartitionCerts() {
-        googlePartitionCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        googlePartitionCerts_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -1598,6 +1599,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensureGooglePartitionCertsIsMutable();
         googlePartitionCerts_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest;
@@ -77,7 +78,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -509,9 +509,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(createFeaturestoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetFeaturestoreRequest, Featurestore> getFeaturestoreTransportSettings =
@@ -519,9 +519,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(getFeaturestoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListFeaturestoresRequest, ListFeaturestoresResponse>
@@ -530,9 +530,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                 .setMethodDescriptor(listFeaturestoresMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateFeaturestoreRequest, Operation> updateFeaturestoreTransportSettings =
@@ -540,10 +540,10 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(updateFeaturestoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "featurestore.name", String.valueOf(request.getFeaturestore().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteFeaturestoreRequest, Operation> deleteFeaturestoreTransportSettings =
@@ -551,9 +551,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(deleteFeaturestoreMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateEntityTypeRequest, Operation> createEntityTypeTransportSettings =
@@ -561,9 +561,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(createEntityTypeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeTransportSettings =
@@ -571,9 +571,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(getEntityTypeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
@@ -582,9 +582,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                 .setMethodDescriptor(listEntityTypesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeTransportSettings =
@@ -592,9 +592,10 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(updateEntityTypeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("entity_type.name", String.valueOf(request.getEntityType().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "entity_type.name", String.valueOf(request.getEntityType().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteEntityTypeRequest, Operation> deleteEntityTypeTransportSettings =
@@ -602,9 +603,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(deleteEntityTypeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateFeatureRequest, Operation> createFeatureTransportSettings =
@@ -612,9 +613,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(createFeatureMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesTransportSettings =
@@ -622,9 +623,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(batchCreateFeaturesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetFeatureRequest, Feature> getFeatureTransportSettings =
@@ -632,9 +633,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(getFeatureMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListFeaturesRequest, ListFeaturesResponse> listFeaturesTransportSettings =
@@ -642,9 +643,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(listFeaturesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateFeatureRequest, Feature> updateFeatureTransportSettings =
@@ -652,9 +653,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(updateFeatureMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("feature.name", String.valueOf(request.getFeature().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("feature.name", String.valueOf(request.getFeature().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteFeatureRequest, Operation> deleteFeatureTransportSettings =
@@ -662,9 +663,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(deleteFeatureMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ImportFeatureValuesRequest, Operation> importFeatureValuesTransportSettings =
@@ -672,9 +673,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(importFeatureValuesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("entity_type", String.valueOf(request.getEntityType()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("entity_type", String.valueOf(request.getEntityType()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<BatchReadFeatureValuesRequest, Operation>
@@ -683,9 +684,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                 .setMethodDescriptor(batchReadFeatureValuesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("featurestore", String.valueOf(request.getFeaturestore()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("featurestore", String.valueOf(request.getFeaturestore()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ExportFeatureValuesRequest, Operation> exportFeatureValuesTransportSettings =
@@ -693,9 +694,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(exportFeatureValuesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("entity_type", String.valueOf(request.getEntityType()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("entity_type", String.valueOf(request.getEntityType()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteFeatureValuesRequest, Operation> deleteFeatureValuesTransportSettings =
@@ -703,9 +704,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(deleteFeatureValuesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("entity_type", String.valueOf(request.getEntityType()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("entity_type", String.valueOf(request.getEntityType()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SearchFeaturesRequest, SearchFeaturesResponse>
@@ -714,9 +715,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                 .setMethodDescriptor(searchFeaturesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("location", String.valueOf(request.getLocation()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -724,9 +725,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -734,9 +735,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -744,9 +745,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -754,9 +755,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -765,9 +766,9 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ListProcessorsRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListProcessorsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,8 +127,8 @@ public final class ListProcessorsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The maximum number of processors to return.
-   * If unspecified, at most 50 processors will be returned.
-   * The maximum value is 100; values above 100 will be coerced to 100.
+   * If unspecified, at most `50` processors will be returned.
+   * The maximum value is `100`. Values above `100` will be coerced to `100`.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -714,8 +709,8 @@ public final class ListProcessorsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The maximum number of processors to return.
-     * If unspecified, at most 50 processors will be returned.
-     * The maximum value is 100; values above 100 will be coerced to 100.
+     * If unspecified, at most `50` processors will be returned.
+     * The maximum value is `100`. Values above `100` will be coerced to `100`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -731,8 +726,8 @@ public final class ListProcessorsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The maximum number of processors to return.
-     * If unspecified, at most 50 processors will be returned.
-     * The maximum value is 100; values above 100 will be coerced to 100.
+     * If unspecified, at most `50` processors will be returned.
+     * The maximum value is `100`. Values above `100` will be coerced to `100`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -752,8 +747,8 @@ public final class ListProcessorsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The maximum number of processors to return.
-     * If unspecified, at most 50 processors will be returned.
-     * The maximum value is 100; values above 100 will be coerced to 100.
+     * If unspecified, at most `50` processors will be returned.
+     * The maximum value is `100`. Values above `100` will be coerced to `100`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

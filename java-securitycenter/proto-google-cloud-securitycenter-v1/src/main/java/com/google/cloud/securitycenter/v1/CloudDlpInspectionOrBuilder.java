@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,8 +54,8 @@ public interface CloudDlpInspectionOrBuilder
    *
    *
    * <pre>
-   * The [type of
-   * information](https://cloud.google.com/dlp/docs/infotypes-reference) found,
+   * The type of information (or
+   * *[infoType](https://cloud.google.com/dlp/docs/infotypes-reference)*) found,
    * for example, `EMAIL_ADDRESS` or `STREET_ADDRESS`.
    * </pre>
    *
@@ -68,8 +68,8 @@ public interface CloudDlpInspectionOrBuilder
    *
    *
    * <pre>
-   * The [type of
-   * information](https://cloud.google.com/dlp/docs/infotypes-reference) found,
+   * The type of information (or
+   * *[infoType](https://cloud.google.com/dlp/docs/infotypes-reference)*) found,
    * for example, `EMAIL_ADDRESS` or `STREET_ADDRESS`.
    * </pre>
    *

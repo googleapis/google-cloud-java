@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ import com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1beta1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1beta1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1beta1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest;
 import com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse;
@@ -166,6 +167,12 @@ public abstract class DataCatalogStub implements BackgroundResource {
   public UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldCallable() {
     throw new UnsupportedOperationException("Not implemented: renameTagTemplateFieldCallable()");
+  }
+
+  public UnaryCallable<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: renameTagTemplateFieldEnumValueCallable()");
   }
 
   public UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable() {

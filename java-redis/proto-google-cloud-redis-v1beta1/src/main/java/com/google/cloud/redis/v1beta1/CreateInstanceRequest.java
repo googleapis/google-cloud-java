@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateInstanceRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,6 +132,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The logical name of the Redis instance in the customer project
    * with the following restrictions:
+   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-40 characters.
@@ -166,6 +162,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The logical name of the Redis instance in the customer project
    * with the following restrictions:
+   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-40 characters.
@@ -776,6 +773,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The logical name of the Redis instance in the customer project
      * with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-40 characters.
@@ -804,6 +802,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The logical name of the Redis instance in the customer project
      * with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-40 characters.
@@ -832,6 +831,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The logical name of the Redis instance in the customer project
      * with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-40 characters.
@@ -859,6 +859,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The logical name of the Redis instance in the customer project
      * with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-40 characters.
@@ -882,6 +883,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The logical name of the Redis instance in the customer project
      * with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-40 characters.

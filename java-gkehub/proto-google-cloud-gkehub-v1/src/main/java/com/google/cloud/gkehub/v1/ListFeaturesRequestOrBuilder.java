@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,12 +100,19 @@ public interface ListFeaturesRequestOrBuilder
    * <pre>
    * Lists Features that match the filter expression, following the syntax
    * outlined in https://google.aip.dev/160.
+   *
    * Examples:
+   *
    *   - Feature with the name "servicemesh" in project "foo-proj":
+   *
    *       name = "projects/foo-proj/locations/global/features/servicemesh"
+   *
    *   - Features that have a label called `foo`:
+   *
    *       labels.foo:*
+   *
    *   - Features that have a label called `foo` whose value is `bar`:
+   *
    *       labels.foo = bar
    * </pre>
    *
@@ -120,12 +127,19 @@ public interface ListFeaturesRequestOrBuilder
    * <pre>
    * Lists Features that match the filter expression, following the syntax
    * outlined in https://google.aip.dev/160.
+   *
    * Examples:
+   *
    *   - Feature with the name "servicemesh" in project "foo-proj":
+   *
    *       name = "projects/foo-proj/locations/global/features/servicemesh"
+   *
    *   - Features that have a label called `foo`:
+   *
    *       labels.foo:*
+   *
    *   - Features that have a label called `foo` whose value is `bar`:
+   *
    *       labels.foo = bar
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,8 +26,10 @@ package com.google.cloud.dialogflow.v2;
  * provide to Dialogflow. Your knowledge documents contain information that may
  * be useful during conversations with end-users. Some Dialogflow features use
  * knowledge bases when looking for a response to an end-user input.
+ *
  * For more information, see the [knowledge base
  * guide](https://cloud.google.com/dialogflow/docs/how/knowledge-bases).
+ *
  * Note: The `projects.agent.knowledgeBases` resource is deprecated;
  * only use `projects.knowledgeBases`.
  * </pre>
@@ -54,11 +56,6 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new KnowledgeBase();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -426,8 +423,10 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    * provide to Dialogflow. Your knowledge documents contain information that may
    * be useful during conversations with end-users. Some Dialogflow features use
    * knowledge bases when looking for a response to an end-user input.
+   *
    * For more information, see the [knowledge base
    * guide](https://cloud.google.com/dialogflow/docs/how/knowledge-bases).
+   *
    * Note: The `projects.agent.knowledgeBases` resource is deprecated;
    * only use `projects.knowledgeBases`.
    * </pre>

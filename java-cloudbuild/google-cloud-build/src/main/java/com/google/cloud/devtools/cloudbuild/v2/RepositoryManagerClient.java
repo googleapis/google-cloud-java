@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,8 @@ import com.google.cloudbuild.v2.CreateConnectionRequest;
 import com.google.cloudbuild.v2.CreateRepositoryRequest;
 import com.google.cloudbuild.v2.DeleteConnectionRequest;
 import com.google.cloudbuild.v2.DeleteRepositoryRequest;
+import com.google.cloudbuild.v2.FetchGitRefsRequest;
+import com.google.cloudbuild.v2.FetchGitRefsResponse;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse;
 import com.google.cloudbuild.v2.FetchReadTokenRequest;
@@ -71,7 +73,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Manages connections to source code repostiories.
+ * Service Description: Manages connections to source code repositories.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -2100,6 +2102,126 @@ public class RepositoryManagerClient implements BackgroundResource {
   public final UnaryCallable<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse>
       fetchLinkableRepositoriesCallable() {
     return stub.fetchLinkableRepositoriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch the list of branches or tags for a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RepositoryManagerClient repositoryManagerClient = RepositoryManagerClient.create()) {
+   *   RepositoryName repository =
+   *       RepositoryName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]", "[REPOSITORY]");
+   *   FetchGitRefsResponse response = repositoryManagerClient.fetchGitRefs(repository);
+   * }
+   * }</pre>
+   *
+   * @param repository Required. The resource name of the repository in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/repositories/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRefsResponse fetchGitRefs(RepositoryName repository) {
+    FetchGitRefsRequest request =
+        FetchGitRefsRequest.newBuilder()
+            .setRepository(repository == null ? null : repository.toString())
+            .build();
+    return fetchGitRefs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch the list of branches or tags for a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RepositoryManagerClient repositoryManagerClient = RepositoryManagerClient.create()) {
+   *   String repository =
+   *       RepositoryName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]", "[REPOSITORY]").toString();
+   *   FetchGitRefsResponse response = repositoryManagerClient.fetchGitRefs(repository);
+   * }
+   * }</pre>
+   *
+   * @param repository Required. The resource name of the repository in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/repositories/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRefsResponse fetchGitRefs(String repository) {
+    FetchGitRefsRequest request =
+        FetchGitRefsRequest.newBuilder().setRepository(repository).build();
+    return fetchGitRefs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch the list of branches or tags for a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RepositoryManagerClient repositoryManagerClient = RepositoryManagerClient.create()) {
+   *   FetchGitRefsRequest request =
+   *       FetchGitRefsRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]", "[REPOSITORY]")
+   *                   .toString())
+   *           .build();
+   *   FetchGitRefsResponse response = repositoryManagerClient.fetchGitRefs(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRefsResponse fetchGitRefs(FetchGitRefsRequest request) {
+    return fetchGitRefsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch the list of branches or tags for a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RepositoryManagerClient repositoryManagerClient = RepositoryManagerClient.create()) {
+   *   FetchGitRefsRequest request =
+   *       FetchGitRefsRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]", "[REPOSITORY]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<FetchGitRefsResponse> future =
+   *       repositoryManagerClient.fetchGitRefsCallable().futureCall(request);
+   *   // Do something.
+   *   FetchGitRefsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable() {
+    return stub.fetchGitRefsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

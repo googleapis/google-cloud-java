@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface RunPivotReportResponseOrBuilder
    * Summarizes the columns and rows created by a pivot. Each pivot in the
    * request produces one header in the response. If we have a request like
    * this:
+   *
    *     "pivots": [{
    *       "fieldNames": ["country",
    *         "city"]
@@ -37,7 +38,9 @@ public interface RunPivotReportResponseOrBuilder
    *     {
    *       "fieldNames": "eventName"
    *     }]
+   *
    * We will have the following `pivotHeaders` in the response:
+   *
    *     "pivotHeaders" : [{
    *       "dimensionHeaders": [{
    *         "dimensionValues": [
@@ -72,6 +75,7 @@ public interface RunPivotReportResponseOrBuilder
    * Summarizes the columns and rows created by a pivot. Each pivot in the
    * request produces one header in the response. If we have a request like
    * this:
+   *
    *     "pivots": [{
    *       "fieldNames": ["country",
    *         "city"]
@@ -79,7 +83,9 @@ public interface RunPivotReportResponseOrBuilder
    *     {
    *       "fieldNames": "eventName"
    *     }]
+   *
    * We will have the following `pivotHeaders` in the response:
+   *
    *     "pivotHeaders" : [{
    *       "dimensionHeaders": [{
    *         "dimensionValues": [
@@ -114,6 +120,7 @@ public interface RunPivotReportResponseOrBuilder
    * Summarizes the columns and rows created by a pivot. Each pivot in the
    * request produces one header in the response. If we have a request like
    * this:
+   *
    *     "pivots": [{
    *       "fieldNames": ["country",
    *         "city"]
@@ -121,7 +128,9 @@ public interface RunPivotReportResponseOrBuilder
    *     {
    *       "fieldNames": "eventName"
    *     }]
+   *
    * We will have the following `pivotHeaders` in the response:
+   *
    *     "pivotHeaders" : [{
    *       "dimensionHeaders": [{
    *         "dimensionValues": [
@@ -156,6 +165,7 @@ public interface RunPivotReportResponseOrBuilder
    * Summarizes the columns and rows created by a pivot. Each pivot in the
    * request produces one header in the response. If we have a request like
    * this:
+   *
    *     "pivots": [{
    *       "fieldNames": ["country",
    *         "city"]
@@ -163,7 +173,9 @@ public interface RunPivotReportResponseOrBuilder
    *     {
    *       "fieldNames": "eventName"
    *     }]
+   *
    * We will have the following `pivotHeaders` in the response:
+   *
    *     "pivotHeaders" : [{
    *       "dimensionHeaders": [{
    *         "dimensionValues": [
@@ -199,6 +211,7 @@ public interface RunPivotReportResponseOrBuilder
    * Summarizes the columns and rows created by a pivot. Each pivot in the
    * request produces one header in the response. If we have a request like
    * this:
+   *
    *     "pivots": [{
    *       "fieldNames": ["country",
    *         "city"]
@@ -206,7 +219,9 @@ public interface RunPivotReportResponseOrBuilder
    *     {
    *       "fieldNames": "eventName"
    *     }]
+   *
    * We will have the following `pivotHeaders` in the response:
+   *
    *     "pivotHeaders" : [{
    *       "dimensionHeaders": [{
    *         "dimensionValues": [

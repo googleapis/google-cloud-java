@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1402,6 +1402,89 @@ public class ConversationsClient implements BackgroundResource {
   public final UnaryCallable<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
       generateStatelessSummaryCallable() {
     return stub.generateStatelessSummaryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get answers for the given query based on knowledge documents.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   SearchKnowledgeRequest request =
+   *       SearchKnowledgeRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setQuery(TextInput.newBuilder().build())
+   *           .setConversationProfile(
+   *               ConversationProfileName.ofProjectConversationProfileName(
+   *                       "[PROJECT]", "[CONVERSATION_PROFILE]")
+   *                   .toString())
+   *           .setSessionId("sessionId607796817")
+   *           .setConversation(
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .build();
+   *   SearchKnowledgeResponse response = conversationsClient.searchKnowledge(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchKnowledgeResponse searchKnowledge(SearchKnowledgeRequest request) {
+    return searchKnowledgeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get answers for the given query based on knowledge documents.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   SearchKnowledgeRequest request =
+   *       SearchKnowledgeRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setQuery(TextInput.newBuilder().build())
+   *           .setConversationProfile(
+   *               ConversationProfileName.ofProjectConversationProfileName(
+   *                       "[PROJECT]", "[CONVERSATION_PROFILE]")
+   *                   .toString())
+   *           .setSessionId("sessionId607796817")
+   *           .setConversation(
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SearchKnowledgeResponse> future =
+   *       conversationsClient.searchKnowledgeCallable().futureCall(request);
+   *   // Do something.
+   *   SearchKnowledgeResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse>
+      searchKnowledgeCallable() {
+    return stub.searchKnowledgeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

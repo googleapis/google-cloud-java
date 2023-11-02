@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,33 +27,46 @@ package com.google.cloud.speech.v1p1beta1;
  * messages are streamed back to the client. If there is no recognizable
  * audio, and `single_utterance` is set to false, then no messages are streamed
  * back to the client.
+ *
  * Here's an example of a series of `StreamingRecognizeResponse`s that might be
  * returned while processing audio:
+ *
  * 1. results { alternatives { transcript: "tube" } stability: 0.01 }
+ *
  * 2. results { alternatives { transcript: "to be a" } stability: 0.01 }
+ *
  * 3. results { alternatives { transcript: "to be" } stability: 0.9 }
  *    results { alternatives { transcript: " or not to be" } stability: 0.01 }
+ *
  * 4. results { alternatives { transcript: "to be or not to be"
  *                             confidence: 0.92 }
  *              alternatives { transcript: "to bee or not to bee" }
  *              is_final: true }
+ *
  * 5. results { alternatives { transcript: " that's" } stability: 0.01 }
+ *
  * 6. results { alternatives { transcript: " that is" } stability: 0.9 }
  *    results { alternatives { transcript: " the question" } stability: 0.01 }
+ *
  * 7. results { alternatives { transcript: " that is the question"
  *                             confidence: 0.98 }
  *              alternatives { transcript: " that was the question" }
  *              is_final: true }
+ *
  * Notes:
+ *
  * - Only two of the above responses #4 and #7 contain final results; they are
  *   indicated by `is_final: true`. Concatenating these together generates the
  *   full transcript: "to be or not to be that is the question".
+ *
  * - The others contain interim `results`. #3 and #6 contain two interim
  *   `results`: the first portion has a high stability and is less likely to
  *   change; the second portion has a low stability and is very likely to
  *   change. A UI designer might choose to show only high stability `results`.
+ *
  * - The specific `stability` and `confidence` values shown above are only for
  *   illustrative purposes. Actual values may vary.
+ *
  * - In each response, only one of these fields will be set:
  *     `error`,
  *     `speech_event_type`, or
@@ -81,11 +94,6 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StreamingRecognizeResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -942,33 +950,46 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    * messages are streamed back to the client. If there is no recognizable
    * audio, and `single_utterance` is set to false, then no messages are streamed
    * back to the client.
+   *
    * Here's an example of a series of `StreamingRecognizeResponse`s that might be
    * returned while processing audio:
+   *
    * 1. results { alternatives { transcript: "tube" } stability: 0.01 }
+   *
    * 2. results { alternatives { transcript: "to be a" } stability: 0.01 }
+   *
    * 3. results { alternatives { transcript: "to be" } stability: 0.9 }
    *    results { alternatives { transcript: " or not to be" } stability: 0.01 }
+   *
    * 4. results { alternatives { transcript: "to be or not to be"
    *                             confidence: 0.92 }
    *              alternatives { transcript: "to bee or not to bee" }
    *              is_final: true }
+   *
    * 5. results { alternatives { transcript: " that's" } stability: 0.01 }
+   *
    * 6. results { alternatives { transcript: " that is" } stability: 0.9 }
    *    results { alternatives { transcript: " the question" } stability: 0.01 }
+   *
    * 7. results { alternatives { transcript: " that is the question"
    *                             confidence: 0.98 }
    *              alternatives { transcript: " that was the question" }
    *              is_final: true }
+   *
    * Notes:
+   *
    * - Only two of the above responses #4 and #7 contain final results; they are
    *   indicated by `is_final: true`. Concatenating these together generates the
    *   full transcript: "to be or not to be that is the question".
+   *
    * - The others contain interim `results`. #3 and #6 contain two interim
    *   `results`: the first portion has a high stability and is less likely to
    *   change; the second portion has a low stability and is very likely to
    *   change. A UI designer might choose to show only high stability `results`.
+   *
    * - The specific `stability` and `confidence` values shown above are only for
    *   illustrative purposes. Actual values may vary.
+   *
    * - In each response, only one of these fields will be set:
    *     `error`,
    *     `speech_event_type`, or

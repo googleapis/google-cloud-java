@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,6 +160,115 @@ public class MockDataformImpl extends DataformImplBase {
                   "Unrecognized response type %s for method DeleteRepository, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void commitRepositoryChanges(
+      CommitRepositoryChangesRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CommitRepositoryChanges, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void readRepositoryFile(
+      ReadRepositoryFileRequest request,
+      StreamObserver<ReadRepositoryFileResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReadRepositoryFileResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ReadRepositoryFileResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReadRepositoryFile, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReadRepositoryFileResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void queryRepositoryDirectoryContents(
+      QueryRepositoryDirectoryContentsRequest request,
+      StreamObserver<QueryRepositoryDirectoryContentsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryRepositoryDirectoryContentsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((QueryRepositoryDirectoryContentsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryRepositoryDirectoryContents, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryRepositoryDirectoryContentsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchRepositoryHistory(
+      FetchRepositoryHistoryRequest request,
+      StreamObserver<FetchRepositoryHistoryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchRepositoryHistoryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchRepositoryHistoryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchRepositoryHistory, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchRepositoryHistoryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void computeRepositoryAccessTokenStatus(
+      ComputeRepositoryAccessTokenStatusRequest request,
+      StreamObserver<ComputeRepositoryAccessTokenStatusResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ComputeRepositoryAccessTokenStatusResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ComputeRepositoryAccessTokenStatusResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ComputeRepositoryAccessTokenStatus, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ComputeRepositoryAccessTokenStatusResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -608,6 +717,112 @@ public class MockDataformImpl extends DataformImplBase {
   }
 
   @Override
+  public void listReleaseConfigs(
+      ListReleaseConfigsRequest request,
+      StreamObserver<ListReleaseConfigsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListReleaseConfigsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListReleaseConfigsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListReleaseConfigs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListReleaseConfigsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getReleaseConfig(
+      GetReleaseConfigRequest request, StreamObserver<ReleaseConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReleaseConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ReleaseConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetReleaseConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReleaseConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createReleaseConfig(
+      CreateReleaseConfigRequest request, StreamObserver<ReleaseConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReleaseConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ReleaseConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateReleaseConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReleaseConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateReleaseConfig(
+      UpdateReleaseConfigRequest request, StreamObserver<ReleaseConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReleaseConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ReleaseConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateReleaseConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReleaseConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteReleaseConfig(
+      DeleteReleaseConfigRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteReleaseConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listCompilationResults(
       ListCompilationResultsRequest request,
       StreamObserver<ListCompilationResultsResponse> responseObserver) {
@@ -689,6 +904,112 @@ public class MockDataformImpl extends DataformImplBase {
                   "Unrecognized response type %s for method QueryCompilationResultActions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QueryCompilationResultActionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listWorkflowConfigs(
+      ListWorkflowConfigsRequest request,
+      StreamObserver<ListWorkflowConfigsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListWorkflowConfigsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListWorkflowConfigsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWorkflowConfigs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListWorkflowConfigsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getWorkflowConfig(
+      GetWorkflowConfigRequest request, StreamObserver<WorkflowConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof WorkflowConfig) {
+      requests.add(request);
+      responseObserver.onNext(((WorkflowConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetWorkflowConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  WorkflowConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createWorkflowConfig(
+      CreateWorkflowConfigRequest request, StreamObserver<WorkflowConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof WorkflowConfig) {
+      requests.add(request);
+      responseObserver.onNext(((WorkflowConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateWorkflowConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  WorkflowConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateWorkflowConfig(
+      UpdateWorkflowConfigRequest request, StreamObserver<WorkflowConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof WorkflowConfig) {
+      requests.add(request);
+      responseObserver.onNext(((WorkflowConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateWorkflowConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  WorkflowConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteWorkflowConfig(
+      DeleteWorkflowConfigRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteWorkflowConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

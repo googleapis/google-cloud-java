@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -3375,6 +3375,160 @@ public class KeyManagementServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DecryptRequest, DecryptResponse> decryptCallable() {
     return stub.decryptCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Encrypts data using portable cryptographic primitives. Most users should choose
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] and
+   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt] rather than their raw counterparts.
+   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   RawEncryptRequest request =
+   *       RawEncryptRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setPlaintext(ByteString.EMPTY)
+   *           .setAdditionalAuthenticatedData(ByteString.EMPTY)
+   *           .setPlaintextCrc32C(Int64Value.newBuilder().build())
+   *           .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+   *           .setInitializationVector(ByteString.EMPTY)
+   *           .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+   *           .build();
+   *   RawEncryptResponse response = keyManagementServiceClient.rawEncrypt(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RawEncryptResponse rawEncrypt(RawEncryptRequest request) {
+    return rawEncryptCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Encrypts data using portable cryptographic primitives. Most users should choose
+   * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] and
+   * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt] rather than their raw counterparts.
+   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   RawEncryptRequest request =
+   *       RawEncryptRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setPlaintext(ByteString.EMPTY)
+   *           .setAdditionalAuthenticatedData(ByteString.EMPTY)
+   *           .setPlaintextCrc32C(Int64Value.newBuilder().build())
+   *           .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+   *           .setInitializationVector(ByteString.EMPTY)
+   *           .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RawEncryptResponse> future =
+   *       keyManagementServiceClient.rawEncryptCallable().futureCall(request);
+   *   // Do something.
+   *   RawEncryptResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RawEncryptRequest, RawEncryptResponse> rawEncryptCallable() {
+    return stub.rawEncryptCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Decrypts data that was originally encrypted using a raw cryptographic mechanism. The
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   RawDecryptRequest request =
+   *       RawDecryptRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setCiphertext(ByteString.EMPTY)
+   *           .setAdditionalAuthenticatedData(ByteString.EMPTY)
+   *           .setInitializationVector(ByteString.EMPTY)
+   *           .setTagLength(172791595)
+   *           .setCiphertextCrc32C(Int64Value.newBuilder().build())
+   *           .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+   *           .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+   *           .build();
+   *   RawDecryptResponse response = keyManagementServiceClient.rawDecrypt(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RawDecryptResponse rawDecrypt(RawDecryptRequest request) {
+    return rawDecryptCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Decrypts data that was originally encrypted using a raw cryptographic mechanism. The
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   RawDecryptRequest request =
+   *       RawDecryptRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setCiphertext(ByteString.EMPTY)
+   *           .setAdditionalAuthenticatedData(ByteString.EMPTY)
+   *           .setInitializationVector(ByteString.EMPTY)
+   *           .setTagLength(172791595)
+   *           .setCiphertextCrc32C(Int64Value.newBuilder().build())
+   *           .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+   *           .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RawDecryptResponse> future =
+   *       keyManagementServiceClient.rawDecryptCallable().futureCall(request);
+   *   // Do something.
+   *   RawDecryptResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RawDecryptRequest, RawDecryptResponse> rawDecryptCallable() {
+    return stub.rawDecryptCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

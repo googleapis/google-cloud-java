@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
 
   private BatchSearchLinkProcessesRequest() {
     parent_ = "";
-    links_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    links_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pageToken_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchSearchLinkProcessesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -129,15 +124,18 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
   public static final int LINKS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList links_;
+  private com.google.protobuf.LazyStringArrayList links_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Required. An array of links to check for their associated LineageProcesses.
+   *
    * The maximum number of items in this array is 100.
    * If the request contains more than 100 links, it returns the
    * `INVALID_ARGUMENT` error.
+   *
    * Format: `projects/{project}/locations/{location}/links/{link}`.
    * </pre>
    *
@@ -153,9 +151,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. An array of links to check for their associated LineageProcesses.
+   *
    * The maximum number of items in this array is 100.
    * If the request contains more than 100 links, it returns the
    * `INVALID_ARGUMENT` error.
+   *
    * Format: `projects/{project}/locations/{location}/links/{link}`.
    * </pre>
    *
@@ -171,9 +171,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. An array of links to check for their associated LineageProcesses.
+   *
    * The maximum number of items in this array is 100.
    * If the request contains more than 100 links, it returns the
    * `INVALID_ARGUMENT` error.
+   *
    * Format: `projects/{project}/locations/{location}/links/{link}`.
    * </pre>
    *
@@ -190,9 +192,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. An array of links to check for their associated LineageProcesses.
+   *
    * The maximum number of items in this array is 100.
    * If the request contains more than 100 links, it returns the
    * `INVALID_ARGUMENT` error.
+   *
    * Format: `projects/{project}/locations/{location}/links/{link}`.
    * </pre>
    *
@@ -234,6 +238,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
    * <pre>
    * The page token received from a previous `BatchSearchLinkProcesses` call.
    * Use it to get the next page.
+   *
    * When requesting subsequent pages of a response, remember that
    * all parameters must match the values you provided
    * in the original request.
@@ -261,6 +266,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
    * <pre>
    * The page token received from a previous `BatchSearchLinkProcesses` call.
    * Use it to get the next page.
+   *
    * When requesting subsequent pages of a response, remember that
    * all parameters must match the values you provided
    * in the original request.
@@ -521,8 +527,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
       super.clear();
       bitField0_ = 0;
       parent_ = "";
-      links_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      links_ = com.google.protobuf.LazyStringArrayList.emptyList();
       pageSize_ = 0;
       pageToken_ = "";
       return this;
@@ -555,7 +560,6 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
     public com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest result =
           new com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -563,20 +567,15 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        links_ = links_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.links_ = links_;
-    }
-
     private void buildPartial0(
         com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        links_.makeImmutable();
+        result.links_ = links_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageSize_ = pageSize_;
@@ -644,7 +643,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
       if (!other.links_.isEmpty()) {
         if (links_.isEmpty()) {
           links_ = other.links_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureLinksIsMutable();
           links_.addAll(other.links_);
@@ -845,23 +844,25 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
       return this;
     }
 
-    private com.google.protobuf.LazyStringList links_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList links_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLinksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!links_.isModifiable()) {
         links_ = new com.google.protobuf.LazyStringArrayList(links_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
      *
      * <pre>
      * Required. An array of links to check for their associated LineageProcesses.
+     *
      * The maximum number of items in this array is 100.
      * If the request contains more than 100 links, it returns the
      * `INVALID_ARGUMENT` error.
+     *
      * Format: `projects/{project}/locations/{location}/links/{link}`.
      * </pre>
      *
@@ -870,16 +871,19 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      * @return A list containing the links.
      */
     public com.google.protobuf.ProtocolStringList getLinksList() {
-      return links_.getUnmodifiableView();
+      links_.makeImmutable();
+      return links_;
     }
     /**
      *
      *
      * <pre>
      * Required. An array of links to check for their associated LineageProcesses.
+     *
      * The maximum number of items in this array is 100.
      * If the request contains more than 100 links, it returns the
      * `INVALID_ARGUMENT` error.
+     *
      * Format: `projects/{project}/locations/{location}/links/{link}`.
      * </pre>
      *
@@ -895,9 +899,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. An array of links to check for their associated LineageProcesses.
+     *
      * The maximum number of items in this array is 100.
      * If the request contains more than 100 links, it returns the
      * `INVALID_ARGUMENT` error.
+     *
      * Format: `projects/{project}/locations/{location}/links/{link}`.
      * </pre>
      *
@@ -914,9 +920,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. An array of links to check for their associated LineageProcesses.
+     *
      * The maximum number of items in this array is 100.
      * If the request contains more than 100 links, it returns the
      * `INVALID_ARGUMENT` error.
+     *
      * Format: `projects/{project}/locations/{location}/links/{link}`.
      * </pre>
      *
@@ -933,9 +941,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. An array of links to check for their associated LineageProcesses.
+     *
      * The maximum number of items in this array is 100.
      * If the request contains more than 100 links, it returns the
      * `INVALID_ARGUMENT` error.
+     *
      * Format: `projects/{project}/locations/{location}/links/{link}`.
      * </pre>
      *
@@ -951,6 +961,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
       }
       ensureLinksIsMutable();
       links_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -959,9 +970,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. An array of links to check for their associated LineageProcesses.
+     *
      * The maximum number of items in this array is 100.
      * If the request contains more than 100 links, it returns the
      * `INVALID_ARGUMENT` error.
+     *
      * Format: `projects/{project}/locations/{location}/links/{link}`.
      * </pre>
      *
@@ -976,6 +989,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
       }
       ensureLinksIsMutable();
       links_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -984,9 +998,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. An array of links to check for their associated LineageProcesses.
+     *
      * The maximum number of items in this array is 100.
      * If the request contains more than 100 links, it returns the
      * `INVALID_ARGUMENT` error.
+     *
      * Format: `projects/{project}/locations/{location}/links/{link}`.
      * </pre>
      *
@@ -998,6 +1014,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
     public Builder addAllLinks(java.lang.Iterable<java.lang.String> values) {
       ensureLinksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, links_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1006,9 +1023,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. An array of links to check for their associated LineageProcesses.
+     *
      * The maximum number of items in this array is 100.
      * If the request contains more than 100 links, it returns the
      * `INVALID_ARGUMENT` error.
+     *
      * Format: `projects/{project}/locations/{location}/links/{link}`.
      * </pre>
      *
@@ -1017,8 +1036,9 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearLinks() {
-      links_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      links_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1027,9 +1047,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. An array of links to check for their associated LineageProcesses.
+     *
      * The maximum number of items in this array is 100.
      * If the request contains more than 100 links, it returns the
      * `INVALID_ARGUMENT` error.
+     *
      * Format: `projects/{project}/locations/{location}/links/{link}`.
      * </pre>
      *
@@ -1045,6 +1067,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
       checkByteStringIsUtf8(value);
       ensureLinksIsMutable();
       links_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1112,6 +1135,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      * <pre>
      * The page token received from a previous `BatchSearchLinkProcesses` call.
      * Use it to get the next page.
+     *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
@@ -1138,6 +1162,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      * <pre>
      * The page token received from a previous `BatchSearchLinkProcesses` call.
      * Use it to get the next page.
+     *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
@@ -1164,6 +1189,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      * <pre>
      * The page token received from a previous `BatchSearchLinkProcesses` call.
      * Use it to get the next page.
+     *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
@@ -1189,6 +1215,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      * <pre>
      * The page token received from a previous `BatchSearchLinkProcesses` call.
      * Use it to get the next page.
+     *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
@@ -1210,6 +1237,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      * <pre>
      * The page token received from a previous `BatchSearchLinkProcesses` call.
      * Use it to get the next page.
+     *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.

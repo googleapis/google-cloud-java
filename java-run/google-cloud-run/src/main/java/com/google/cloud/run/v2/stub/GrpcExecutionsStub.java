@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,13 +24,14 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.run.v2.CancelExecutionRequest;
 import com.google.cloud.run.v2.DeleteExecutionRequest;
 import com.google.cloud.run.v2.Execution;
 import com.google.cloud.run.v2.GetExecutionRequest;
 import com.google.cloud.run.v2.ListExecutionsRequest;
 import com.google.cloud.run.v2.ListExecutionsResponse;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -77,6 +78,16 @@ public class GrpcExecutionsStub extends ExecutionsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CancelExecutionRequest, Operation>
+      cancelExecutionMethodDescriptor =
+          MethodDescriptor.<CancelExecutionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.run.v2.Executions/CancelExecution")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CancelExecutionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetExecutionRequest, Execution> getExecutionCallable;
   private final UnaryCallable<ListExecutionsRequest, ListExecutionsResponse> listExecutionsCallable;
   private final UnaryCallable<ListExecutionsRequest, ListExecutionsPagedResponse>
@@ -84,6 +95,9 @@ public class GrpcExecutionsStub extends ExecutionsStub {
   private final UnaryCallable<DeleteExecutionRequest, Operation> deleteExecutionCallable;
   private final OperationCallable<DeleteExecutionRequest, Execution, Execution>
       deleteExecutionOperationCallable;
+  private final UnaryCallable<CancelExecutionRequest, Operation> cancelExecutionCallable;
+  private final OperationCallable<CancelExecutionRequest, Execution, Execution>
+      cancelExecutionOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -132,9 +146,9 @@ public class GrpcExecutionsStub extends ExecutionsStub {
             .setMethodDescriptor(getExecutionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListExecutionsRequest, ListExecutionsResponse>
@@ -143,9 +157,9 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                 .setMethodDescriptor(listExecutionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteExecutionRequest, Operation> deleteExecutionTransportSettings =
@@ -153,9 +167,19 @@ public class GrpcExecutionsStub extends ExecutionsStub {
             .setMethodDescriptor(deleteExecutionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CancelExecutionRequest, Operation> cancelExecutionTransportSettings =
+        GrpcCallSettings.<CancelExecutionRequest, Operation>newBuilder()
+            .setMethodDescriptor(cancelExecutionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 
@@ -175,6 +199,15 @@ public class GrpcExecutionsStub extends ExecutionsStub {
         callableFactory.createOperationCallable(
             deleteExecutionTransportSettings,
             settings.deleteExecutionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.cancelExecutionCallable =
+        callableFactory.createUnaryCallable(
+            cancelExecutionTransportSettings, settings.cancelExecutionSettings(), clientContext);
+    this.cancelExecutionOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelExecutionTransportSettings,
+            settings.cancelExecutionOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -211,6 +244,17 @@ public class GrpcExecutionsStub extends ExecutionsStub {
   public OperationCallable<DeleteExecutionRequest, Execution, Execution>
       deleteExecutionOperationCallable() {
     return deleteExecutionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelExecutionRequest, Operation> cancelExecutionCallable() {
+    return cancelExecutionCallable;
+  }
+
+  @Override
+  public OperationCallable<CancelExecutionRequest, Execution, Execution>
+      cancelExecutionOperationCallable() {
+    return cancelExecutionOperationCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -745,6 +745,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -798,6 +799,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -851,6 +853,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -862,6 +865,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
 
     Entry actualResponse = client.updateEntry(entry);
@@ -898,6 +902,7 @@ public class DataCatalogClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setSchema(Schema.newBuilder().build())
               .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+              .setUsageSignal(UsageSignal.newBuilder().build())
               .build();
       client.updateEntry(entry);
       Assert.fail("No exception raised");
@@ -916,6 +921,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -927,6 +933,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -964,6 +971,7 @@ public class DataCatalogClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setSchema(Schema.newBuilder().build())
               .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+              .setUsageSignal(UsageSignal.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEntry(entry, updateMask);
@@ -1065,6 +1073,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1114,6 +1123,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1165,6 +1175,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1704,6 +1715,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockService.addResponse(expectedResponse);
@@ -1759,6 +1771,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockService.addResponse(expectedResponse);
@@ -1814,6 +1827,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockService.addResponse(expectedResponse);
@@ -1868,6 +1882,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockService.addResponse(expectedResponse);
@@ -1922,6 +1937,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockService.addResponse(expectedResponse);
@@ -1979,6 +1995,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockService.addResponse(expectedResponse);
@@ -2036,6 +2053,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockService.addResponse(expectedResponse);
@@ -2090,6 +2108,7 @@ public class DataCatalogClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockService.addResponse(expectedResponse);
@@ -2128,6 +2147,128 @@ public class DataCatalogClientHttpJsonTest {
           "projects/project-2324/locations/location-2324/tagTemplates/tagTemplate-2324/fields/field-2324";
       String newTagTemplateFieldId = "newTagTemplateFieldId2008993953";
       client.renameTagTemplateField(name, newTagTemplateFieldId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameTagTemplateFieldEnumValueTest() throws Exception {
+    TagTemplateField expectedResponse =
+        TagTemplateField.newBuilder()
+            .setName(
+                TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setType(FieldType.newBuilder().build())
+            .setIsRequired(true)
+            .setDescription("description-1724546052")
+            .setOrder(106006350)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TagTemplateFieldEnumValueName name =
+        TagTemplateFieldEnumValueName.of(
+            "[PROJECT]",
+            "[LOCATION]",
+            "[TAG_TEMPLATE]",
+            "[TAG_TEMPLATE_FIELD_ID]",
+            "[ENUM_VALUE_DISPLAY_NAME]");
+    String newEnumValueDisplayName = "newEnumValueDisplayName-1119629027";
+
+    TagTemplateField actualResponse =
+        client.renameTagTemplateFieldEnumValue(name, newEnumValueDisplayName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void renameTagTemplateFieldEnumValueExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TagTemplateFieldEnumValueName name =
+          TagTemplateFieldEnumValueName.of(
+              "[PROJECT]",
+              "[LOCATION]",
+              "[TAG_TEMPLATE]",
+              "[TAG_TEMPLATE_FIELD_ID]",
+              "[ENUM_VALUE_DISPLAY_NAME]");
+      String newEnumValueDisplayName = "newEnumValueDisplayName-1119629027";
+      client.renameTagTemplateFieldEnumValue(name, newEnumValueDisplayName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameTagTemplateFieldEnumValueTest2() throws Exception {
+    TagTemplateField expectedResponse =
+        TagTemplateField.newBuilder()
+            .setName(
+                TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setType(FieldType.newBuilder().build())
+            .setIsRequired(true)
+            .setDescription("description-1724546052")
+            .setOrder(106006350)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9639/locations/location-9639/tagTemplates/tagTemplate-9639/fields/field-9639/enumValues/enumValue-9639";
+    String newEnumValueDisplayName = "newEnumValueDisplayName-1119629027";
+
+    TagTemplateField actualResponse =
+        client.renameTagTemplateFieldEnumValue(name, newEnumValueDisplayName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void renameTagTemplateFieldEnumValueExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9639/locations/location-9639/tagTemplates/tagTemplate-9639/fields/field-9639/enumValues/enumValue-9639";
+      String newEnumValueDisplayName = "newEnumValueDisplayName-1119629027";
+      client.renameTagTemplateFieldEnumValue(name, newEnumValueDisplayName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

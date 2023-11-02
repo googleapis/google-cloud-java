@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -247,6 +247,7 @@ public interface InputOrBuilder
    * Output only. URI to push the input stream to.
    * Its format depends on the input
    * [type][google.cloud.video.livestream.v1.Input.type], for example:
+   *
    * *  `RTMP_PUSH`: `rtmp://1.2.3.4/live/{STREAM-ID}`
    * *  `SRT_PUSH`: `srt://1.2.3.4:4201?streamid={STREAM-ID}`
    * </pre>
@@ -263,6 +264,7 @@ public interface InputOrBuilder
    * Output only. URI to push the input stream to.
    * Its format depends on the input
    * [type][google.cloud.video.livestream.v1.Input.type], for example:
+   *
    * *  `RTMP_PUSH`: `rtmp://1.2.3.4/live/{STREAM-ID}`
    * *  `SRT_PUSH`: `srt://1.2.3.4:4201?streamid={STREAM-ID}`
    * </pre>

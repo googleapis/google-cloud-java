@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,11 +60,11 @@ public interface DeleteWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If this is provided, it must match the server's etag on the
-   * workerpool for the request to be processed.
+   * Optional. If provided, it must match the server's etag on the workerpool
+   * for the request to be processed.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -73,11 +73,11 @@ public interface DeleteWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If this is provided, it must match the server's etag on the
-   * workerpool for the request to be processed.
+   * Optional. If provided, it must match the server's etag on the workerpool
+   * for the request to be processed.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */

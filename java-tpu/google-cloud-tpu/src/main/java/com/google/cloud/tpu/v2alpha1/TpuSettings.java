@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -183,6 +183,17 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
   public OperationCallSettings<DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
       deleteQueuedResourceOperationSettings() {
     return ((TpuStubSettings) getStubSettings()).deleteQueuedResourceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resetQueuedResource. */
+  public UnaryCallSettings<ResetQueuedResourceRequest, Operation> resetQueuedResourceSettings() {
+    return ((TpuStubSettings) getStubSettings()).resetQueuedResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resetQueuedResource. */
+  public OperationCallSettings<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+      resetQueuedResourceOperationSettings() {
+    return ((TpuStubSettings) getStubSettings()).resetQueuedResourceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to generateServiceIdentity. */
@@ -448,6 +459,19 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
             DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
         deleteQueuedResourceOperationSettings() {
       return getStubSettingsBuilder().deleteQueuedResourceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resetQueuedResource. */
+    public UnaryCallSettings.Builder<ResetQueuedResourceRequest, Operation>
+        resetQueuedResourceSettings() {
+      return getStubSettingsBuilder().resetQueuedResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resetQueuedResource. */
+    public OperationCallSettings.Builder<
+            ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+        resetQueuedResourceOperationSettings() {
+      return getStubSettingsBuilder().resetQueuedResourceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to generateServiceIdentity. */

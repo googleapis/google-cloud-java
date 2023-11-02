@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SecurityPolicyRuleMatcher();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -264,7 +259,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+   * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -279,7 +274,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+   * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -294,7 +289,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+   * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1004,7 +999,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1018,7 +1013,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1036,7 +1031,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1058,7 +1053,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1077,7 +1072,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1102,7 +1097,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1121,7 +1116,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1135,7 +1130,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1151,7 +1146,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
+     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>

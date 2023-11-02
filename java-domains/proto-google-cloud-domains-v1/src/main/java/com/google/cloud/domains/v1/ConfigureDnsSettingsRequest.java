@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ConfigureDnsSettingsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -184,6 +179,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
    * For example, if only the name servers are being updated for an existing
    * Custom DNS configuration, the `update_mask` is
    * `"custom_dns.name_servers"`.
+   *
    * When changing the DNS provider from one type to another, pass the new
    * provider's field name as part of the field mask. For example, when changing
    * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -207,6 +203,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
    * For example, if only the name servers are being updated for an existing
    * Custom DNS configuration, the `update_mask` is
    * `"custom_dns.name_servers"`.
+   *
    * When changing the DNS provider from one type to another, pass the new
    * provider's field name as part of the field mask. For example, when changing
    * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -230,6 +227,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
    * For example, if only the name servers are being updated for an existing
    * Custom DNS configuration, the `update_mask` is
    * `"custom_dns.name_servers"`.
+   *
    * When changing the DNS provider from one type to another, pass the new
    * provider's field name as part of the field mask. For example, when changing
    * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -1008,6 +1006,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * For example, if only the name servers are being updated for an existing
      * Custom DNS configuration, the `update_mask` is
      * `"custom_dns.name_servers"`.
+     *
      * When changing the DNS provider from one type to another, pass the new
      * provider's field name as part of the field mask. For example, when changing
      * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -1030,6 +1029,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * For example, if only the name servers are being updated for an existing
      * Custom DNS configuration, the `update_mask` is
      * `"custom_dns.name_servers"`.
+     *
      * When changing the DNS provider from one type to another, pass the new
      * provider's field name as part of the field mask. For example, when changing
      * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -1058,6 +1058,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * For example, if only the name servers are being updated for an existing
      * Custom DNS configuration, the `update_mask` is
      * `"custom_dns.name_servers"`.
+     *
      * When changing the DNS provider from one type to another, pass the new
      * provider's field name as part of the field mask. For example, when changing
      * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -1088,6 +1089,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * For example, if only the name servers are being updated for an existing
      * Custom DNS configuration, the `update_mask` is
      * `"custom_dns.name_servers"`.
+     *
      * When changing the DNS provider from one type to another, pass the new
      * provider's field name as part of the field mask. For example, when changing
      * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -1115,6 +1117,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * For example, if only the name servers are being updated for an existing
      * Custom DNS configuration, the `update_mask` is
      * `"custom_dns.name_servers"`.
+     *
      * When changing the DNS provider from one type to another, pass the new
      * provider's field name as part of the field mask. For example, when changing
      * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -1148,6 +1151,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * For example, if only the name servers are being updated for an existing
      * Custom DNS configuration, the `update_mask` is
      * `"custom_dns.name_servers"`.
+     *
      * When changing the DNS provider from one type to another, pass the new
      * provider's field name as part of the field mask. For example, when changing
      * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -1175,6 +1179,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * For example, if only the name servers are being updated for an existing
      * Custom DNS configuration, the `update_mask` is
      * `"custom_dns.name_servers"`.
+     *
      * When changing the DNS provider from one type to another, pass the new
      * provider's field name as part of the field mask. For example, when changing
      * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -1197,6 +1202,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * For example, if only the name servers are being updated for an existing
      * Custom DNS configuration, the `update_mask` is
      * `"custom_dns.name_servers"`.
+     *
      * When changing the DNS provider from one type to another, pass the new
      * provider's field name as part of the field mask. For example, when changing
      * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -1223,6 +1229,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * For example, if only the name servers are being updated for an existing
      * Custom DNS configuration, the `update_mask` is
      * `"custom_dns.name_servers"`.
+     *
      * When changing the DNS provider from one type to another, pass the new
      * provider's field name as part of the field mask. For example, when changing
      * from a Google Domains DNS configuration to a Custom DNS configuration, the

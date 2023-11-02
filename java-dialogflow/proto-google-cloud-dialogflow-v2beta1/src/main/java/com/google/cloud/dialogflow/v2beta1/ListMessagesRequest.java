@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListMessagesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -142,6 +137,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    * support milliseconds accuracy. E.g.,
    * `create_time_epoch_microseconds &gt; 1551790877964485` or
    * `create_time &gt; "2017-01-15T01:30:15.01Z"`.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -171,6 +167,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    * support milliseconds accuracy. E.g.,
    * `create_time_epoch_microseconds &gt; 1551790877964485` or
    * `create_time &gt; "2017-01-15T01:30:15.01Z"`.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -812,6 +809,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds &gt; 1551790877964485` or
      * `create_time &gt; "2017-01-15T01:30:15.01Z"`.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -840,6 +838,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds &gt; 1551790877964485` or
      * `create_time &gt; "2017-01-15T01:30:15.01Z"`.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -868,6 +867,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds &gt; 1551790877964485` or
      * `create_time &gt; "2017-01-15T01:30:15.01Z"`.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -895,6 +895,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds &gt; 1551790877964485` or
      * `create_time &gt; "2017-01-15T01:30:15.01Z"`.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -918,6 +919,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      * support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds &gt; 1551790877964485` or
      * `create_time &gt; "2017-01-15T01:30:15.01Z"`.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,9 +61,11 @@ public interface CryptoKeyOrBuilder
    * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
    * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+   *
    * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
    * updated via
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * may have a primary. For other keys, this field will be omitted.
@@ -85,9 +87,11 @@ public interface CryptoKeyOrBuilder
    * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
    * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+   *
    * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
    * updated via
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * may have a primary. For other keys, this field will be omitted.
@@ -109,9 +113,11 @@ public interface CryptoKeyOrBuilder
    * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
    * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+   *
    * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
    * updated via
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * may have a primary. For other keys, this field will be omitted.
@@ -201,14 +207,17 @@ public interface CryptoKeyOrBuilder
    * <pre>
    * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
    * the Key Management Service will automatically:
+   *
    * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * 2. Mark the new version as primary.
+   *
    * Key rotations performed manually via
    * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
    * and
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
    * do not affect
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -225,14 +234,17 @@ public interface CryptoKeyOrBuilder
    * <pre>
    * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
    * the Key Management Service will automatically:
+   *
    * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * 2. Mark the new version as primary.
+   *
    * Key rotations performed manually via
    * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
    * and
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
    * do not affect
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -249,14 +261,17 @@ public interface CryptoKeyOrBuilder
    * <pre>
    * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
    * the Key Management Service will automatically:
+   *
    * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * 2. Mark the new version as primary.
+   *
    * Key rotations performed manually via
    * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
    * and
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
    * do not affect
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -273,10 +288,12 @@ public interface CryptoKeyOrBuilder
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * will be advanced by this period when the service automatically rotates a
    * key. Must be at least 24 hours and at most 876,000 hours.
+   *
    * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
    * set,
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * must also be set.
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -294,10 +311,12 @@ public interface CryptoKeyOrBuilder
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * will be advanced by this period when the service automatically rotates a
    * key. Must be at least 24 hours and at most 876,000 hours.
+   *
    * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
    * set,
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * must also be set.
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -315,10 +334,12 @@ public interface CryptoKeyOrBuilder
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * will be advanced by this period when the service automatically rotates a
    * key. Must be at least 24 hours and at most 876,000 hours.
+   *
    * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
    * set,
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * must also be set.
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -554,5 +575,5 @@ public interface CryptoKeyOrBuilder
    */
   com.google.protobuf.ByteString getCryptoKeyBackendBytes();
 
-  public com.google.cloud.kms.v1.CryptoKey.RotationScheduleCase getRotationScheduleCase();
+  com.google.cloud.kms.v1.CryptoKey.RotationScheduleCase getRotationScheduleCase();
 }

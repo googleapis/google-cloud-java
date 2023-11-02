@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -144,6 +144,7 @@ public class StorageTransferServiceClientTest {
             .setNotificationConfig(TransferTypes.NotificationConfig.newBuilder().build())
             .setLoggingConfig(TransferTypes.LoggingConfig.newBuilder().build())
             .setSchedule(TransferTypes.Schedule.newBuilder().build())
+            .setEventStream(TransferTypes.EventStream.newBuilder().build())
             .setCreationTime(Timestamp.newBuilder().build())
             .setLastModificationTime(Timestamp.newBuilder().build())
             .setDeletionTime(Timestamp.newBuilder().build())
@@ -199,6 +200,7 @@ public class StorageTransferServiceClientTest {
             .setNotificationConfig(TransferTypes.NotificationConfig.newBuilder().build())
             .setLoggingConfig(TransferTypes.LoggingConfig.newBuilder().build())
             .setSchedule(TransferTypes.Schedule.newBuilder().build())
+            .setEventStream(TransferTypes.EventStream.newBuilder().build())
             .setCreationTime(Timestamp.newBuilder().build())
             .setLastModificationTime(Timestamp.newBuilder().build())
             .setDeletionTime(Timestamp.newBuilder().build())
@@ -264,6 +266,7 @@ public class StorageTransferServiceClientTest {
             .setNotificationConfig(TransferTypes.NotificationConfig.newBuilder().build())
             .setLoggingConfig(TransferTypes.LoggingConfig.newBuilder().build())
             .setSchedule(TransferTypes.Schedule.newBuilder().build())
+            .setEventStream(TransferTypes.EventStream.newBuilder().build())
             .setCreationTime(Timestamp.newBuilder().build())
             .setLastModificationTime(Timestamp.newBuilder().build())
             .setDeletionTime(Timestamp.newBuilder().build())

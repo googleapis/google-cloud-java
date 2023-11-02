@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
 
   private ReusableConfigValues() {
     policyIds_ = java.util.Collections.emptyList();
-    aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
     additionalExtensions_ = java.util.Collections.emptyList();
   }
 
@@ -49,11 +49,6 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ReusableConfigValues();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -195,11 +190,6 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CaOptions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1466,7 +1456,8 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
   public static final int AIA_OCSP_SERVERS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList aiaOcspServers_;
+  private com.google.protobuf.LazyStringArrayList aiaOcspServers_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1896,8 +1887,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
         policyIdsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (additionalExtensionsBuilder_ == null) {
         additionalExtensions_ = java.util.Collections.emptyList();
       } else {
@@ -1952,11 +1942,6 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
       } else {
         result.policyIds_ = policyIdsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        aiaOcspServers_ = aiaOcspServers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.aiaOcspServers_ = aiaOcspServers_;
       if (additionalExtensionsBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
           additionalExtensions_ = java.util.Collections.unmodifiableList(additionalExtensions_);
@@ -1976,6 +1961,10 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.caOptions_ = caOptionsBuilder_ == null ? caOptions_ : caOptionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        aiaOcspServers_.makeImmutable();
+        result.aiaOcspServers_ = aiaOcspServers_;
       }
     }
 
@@ -2063,7 +2052,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
       if (!other.aiaOcspServers_.isEmpty()) {
         if (aiaOcspServers_.isEmpty()) {
           aiaOcspServers_ = other.aiaOcspServers_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureAiaOcspServersIsMutable();
           aiaOcspServers_.addAll(other.aiaOcspServers_);
@@ -3025,14 +3014,14 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
       return policyIdsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList aiaOcspServers_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList aiaOcspServers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAiaOcspServersIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!aiaOcspServers_.isModifiable()) {
         aiaOcspServers_ = new com.google.protobuf.LazyStringArrayList(aiaOcspServers_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -3048,7 +3037,8 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      * @return A list containing the aiaOcspServers.
      */
     public com.google.protobuf.ProtocolStringList getAiaOcspServersList() {
-      return aiaOcspServers_.getUnmodifiableView();
+      aiaOcspServers_.makeImmutable();
+      return aiaOcspServers_;
     }
     /**
      *
@@ -3121,6 +3111,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
       }
       ensureAiaOcspServersIsMutable();
       aiaOcspServers_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3144,6 +3135,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
       }
       ensureAiaOcspServersIsMutable();
       aiaOcspServers_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3164,6 +3156,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
     public Builder addAllAiaOcspServers(java.lang.Iterable<java.lang.String> values) {
       ensureAiaOcspServersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, aiaOcspServers_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3181,8 +3174,9 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAiaOcspServers() {
-      aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -3207,6 +3201,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureAiaOcspServersIsMutable();
       aiaOcspServers_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

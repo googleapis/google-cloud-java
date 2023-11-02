@@ -22,6 +22,9 @@
             "CreatePrivateCloud": {
               "methods": ["createPrivateCloudAsync", "createPrivateCloudAsync", "createPrivateCloudAsync", "createPrivateCloudOperationCallable", "createPrivateCloudCallable"]
             },
+            "CreatePrivateConnection": {
+              "methods": ["createPrivateConnectionAsync", "createPrivateConnectionAsync", "createPrivateConnectionAsync", "createPrivateConnectionOperationCallable", "createPrivateConnectionCallable"]
+            },
             "CreateVmwareEngineNetwork": {
               "methods": ["createVmwareEngineNetworkAsync", "createVmwareEngineNetworkAsync", "createVmwareEngineNetworkAsync", "createVmwareEngineNetworkOperationCallable", "createVmwareEngineNetworkCallable"]
             },
@@ -33,6 +36,9 @@
             },
             "DeletePrivateCloud": {
               "methods": ["deletePrivateCloudAsync", "deletePrivateCloudAsync", "deletePrivateCloudAsync", "deletePrivateCloudOperationCallable", "deletePrivateCloudCallable"]
+            },
+            "DeletePrivateConnection": {
+              "methods": ["deletePrivateConnectionAsync", "deletePrivateConnectionAsync", "deletePrivateConnectionAsync", "deletePrivateConnectionOperationCallable", "deletePrivateConnectionCallable"]
             },
             "DeleteVmwareEngineNetwork": {
               "methods": ["deleteVmwareEngineNetworkAsync", "deleteVmwareEngineNetworkAsync", "deleteVmwareEngineNetworkAsync", "deleteVmwareEngineNetworkOperationCallable", "deleteVmwareEngineNetworkCallable"]
@@ -58,6 +64,12 @@
             "GetPrivateCloud": {
               "methods": ["getPrivateCloud", "getPrivateCloud", "getPrivateCloud", "getPrivateCloudCallable"]
             },
+            "GetPrivateConnection": {
+              "methods": ["getPrivateConnection", "getPrivateConnection", "getPrivateConnection", "getPrivateConnectionCallable"]
+            },
+            "GetSubnet": {
+              "methods": ["getSubnet", "getSubnet", "getSubnet", "getSubnetCallable"]
+            },
             "GetVmwareEngineNetwork": {
               "methods": ["getVmwareEngineNetwork", "getVmwareEngineNetwork", "getVmwareEngineNetwork", "getVmwareEngineNetworkCallable"]
             },
@@ -78,6 +90,12 @@
             },
             "ListPrivateClouds": {
               "methods": ["listPrivateClouds", "listPrivateClouds", "listPrivateClouds", "listPrivateCloudsPagedCallable", "listPrivateCloudsCallable"]
+            },
+            "ListPrivateConnectionPeeringRoutes": {
+              "methods": ["listPrivateConnectionPeeringRoutes", "listPrivateConnectionPeeringRoutes", "listPrivateConnectionPeeringRoutes", "listPrivateConnectionPeeringRoutesPagedCallable", "listPrivateConnectionPeeringRoutesCallable"]
+            },
+            "ListPrivateConnections": {
+              "methods": ["listPrivateConnections", "listPrivateConnections", "listPrivateConnections", "listPrivateConnectionsPagedCallable", "listPrivateConnectionsCallable"]
             },
             "ListSubnets": {
               "methods": ["listSubnets", "listSubnets", "listSubnets", "listSubnetsPagedCallable", "listSubnetsCallable"]
@@ -114,6 +132,12 @@
             },
             "UpdatePrivateCloud": {
               "methods": ["updatePrivateCloudAsync", "updatePrivateCloudAsync", "updatePrivateCloudOperationCallable", "updatePrivateCloudCallable"]
+            },
+            "UpdatePrivateConnection": {
+              "methods": ["updatePrivateConnectionAsync", "updatePrivateConnectionAsync", "updatePrivateConnectionOperationCallable", "updatePrivateConnectionCallable"]
+            },
+            "UpdateSubnet": {
+              "methods": ["updateSubnetAsync", "updateSubnetAsync", "updateSubnetOperationCallable", "updateSubnetCallable"]
             },
             "UpdateVmwareEngineNetwork": {
               "methods": ["updateVmwareEngineNetworkAsync", "updateVmwareEngineNetworkAsync", "updateVmwareEngineNetworkOperationCallable", "updateVmwareEngineNetworkCallable"]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface AccessApprovalServiceAccountOrBuilder
    *
    * <pre>
    * The resource name of the Access Approval service account. Format is one of:
+   *
    *   * "projects/{project}/serviceAccount"
    *   * "folders/{folder}/serviceAccount"
    *   * "organizations/{organization}/serviceAccount"
@@ -43,6 +44,7 @@ public interface AccessApprovalServiceAccountOrBuilder
    *
    * <pre>
    * The resource name of the Access Approval service account. Format is one of:
+   *
    *   * "projects/{project}/serviceAccount"
    *   * "folders/{folder}/serviceAccount"
    *   * "organizations/{organization}/serviceAccount"

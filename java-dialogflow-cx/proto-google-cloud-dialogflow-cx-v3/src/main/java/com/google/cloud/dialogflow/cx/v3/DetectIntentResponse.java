@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DetectIntentResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -348,6 +343,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
    * field. If multiple default text responses exist, they will be concatenated
    * when generating audio. If no default platform text responses exist, the
    * generated audio content will be empty.
+   *
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
    * has content.
@@ -1262,6 +1258,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * field. If multiple default text responses exist, they will be concatenated
      * when generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1286,6 +1283,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * field. If multiple default text responses exist, they will be concatenated
      * when generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1316,6 +1314,7 @@ public final class DetectIntentResponse extends com.google.protobuf.GeneratedMes
      * field. If multiple default text responses exist, they will be concatenated
      * when generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.

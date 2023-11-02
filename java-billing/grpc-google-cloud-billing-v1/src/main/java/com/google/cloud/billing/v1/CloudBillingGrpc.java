@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public final class CloudBillingGrpc {
 
   private CloudBillingGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.billing.v1.CloudBilling";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.billing.v1.CloudBilling";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -613,7 +613,7 @@ public final class CloudBillingGrpc {
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
      * This method will return an error if the parent account has not been
-     * provisioned as a reseller account.
+     * provisioned for subaccounts.
      * </pre>
      */
     default void createBillingAccount(
@@ -864,7 +864,7 @@ public final class CloudBillingGrpc {
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
      * This method will return an error if the parent account has not been
-     * provisioned as a reseller account.
+     * provisioned for subaccounts.
      * </pre>
      */
     public void createBillingAccount(
@@ -1103,7 +1103,7 @@ public final class CloudBillingGrpc {
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
      * This method will return an error if the parent account has not been
-     * provisioned as a reseller account.
+     * provisioned for subaccounts.
      * </pre>
      */
     public com.google.cloud.billing.v1.BillingAccount createBillingAccount(
@@ -1318,7 +1318,7 @@ public final class CloudBillingGrpc {
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
      * This method will return an error if the parent account has not been
-     * provisioned as a reseller account.
+     * provisioned for subaccounts.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1652,9 +1652,9 @@ public final class CloudBillingGrpc {
   private static final class CloudBillingMethodDescriptorSupplier
       extends CloudBillingBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudBillingMethodDescriptorSupplier(String methodName) {
+    CloudBillingMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,8 +151,8 @@ public interface ObjectMetadataReportOptionsOrBuilder
   com.google.cloud.storageinsights.v1.CloudStorageDestinationOptionsOrBuilder
       getStorageDestinationOptionsOrBuilder();
 
-  public com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions.FilterCase getFilterCase();
+  com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions.FilterCase getFilterCase();
 
-  public com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions.DestinationOptionsCase
+  com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions.DestinationOptionsCase
       getDestinationOptionsCase();
 }

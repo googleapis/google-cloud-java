@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateOrganizationSettingsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -131,6 +126,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
    *
    * <pre>
    * The FieldMask to use when updating the settings resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -147,6 +143,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
    *
    * <pre>
    * The FieldMask to use when updating the settings resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -163,6 +160,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
    *
    * <pre>
    * The FieldMask to use when updating the settings resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -797,6 +795,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      * <pre>
      * The FieldMask to use when updating the settings resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -812,6 +811,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      * <pre>
      * The FieldMask to use when updating the settings resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -833,6 +833,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      * <pre>
      * The FieldMask to use when updating the settings resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -856,6 +857,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      * <pre>
      * The FieldMask to use when updating the settings resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -876,6 +878,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      * <pre>
      * The FieldMask to use when updating the settings resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -902,6 +905,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      * <pre>
      * The FieldMask to use when updating the settings resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -922,6 +926,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      * <pre>
      * The FieldMask to use when updating the settings resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -937,6 +942,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      * <pre>
      * The FieldMask to use when updating the settings resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -956,6 +962,7 @@ public final class UpdateOrganizationSettingsRequest extends com.google.protobuf
      *
      * <pre>
      * The FieldMask to use when updating the settings resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *

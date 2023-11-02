@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,10 +93,13 @@ public interface ListBuildsRequestOrBuilder
    *
    * <pre>
    * The page token for the next page of Builds.
+   *
    * If unspecified, the first page of results is returned.
+   *
    * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
    * In this case, the token should be discarded, and pagination should be
    * restarted from the first page of results.
+   *
    * See https://google.aip.dev/158 for more.
    * </pre>
    *
@@ -110,10 +113,13 @@ public interface ListBuildsRequestOrBuilder
    *
    * <pre>
    * The page token for the next page of Builds.
+   *
    * If unspecified, the first page of results is returned.
+   *
    * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
    * In this case, the token should be discarded, and pagination should be
    * restarted from the first page of results.
+   *
    * See https://google.aip.dev/158 for more.
    * </pre>
    *

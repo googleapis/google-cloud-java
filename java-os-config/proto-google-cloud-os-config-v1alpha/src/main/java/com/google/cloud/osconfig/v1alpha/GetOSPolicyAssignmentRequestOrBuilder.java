@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface GetOSPolicyAssignmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of OS policy assignment.
+   *
    * Format:
    * `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
    * </pre>
@@ -44,6 +45,7 @@ public interface GetOSPolicyAssignmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of OS policy assignment.
+   *
    * Format:
    * `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
    * </pre>

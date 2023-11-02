@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,13 @@
 
 package com.google.cloud.clouddms.v1.stub;
 
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.DescribeDatabaseEntitiesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.FetchStaticIpsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConnectionProfilesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConversionWorkspacesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMappingRulesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMigrationJobsPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListPrivateConnectionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -45,27 +50,63 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.clouddms.v1.ApplyConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.CommitConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.ConnectionProfile;
+import com.google.cloud.clouddms.v1.ConversionWorkspace;
+import com.google.cloud.clouddms.v1.ConvertConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.CreateConnectionProfileRequest;
+import com.google.cloud.clouddms.v1.CreateConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.CreateMappingRuleRequest;
 import com.google.cloud.clouddms.v1.CreateMigrationJobRequest;
+import com.google.cloud.clouddms.v1.CreatePrivateConnectionRequest;
+import com.google.cloud.clouddms.v1.DatabaseEntity;
 import com.google.cloud.clouddms.v1.DeleteConnectionProfileRequest;
+import com.google.cloud.clouddms.v1.DeleteConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.DeleteMappingRuleRequest;
 import com.google.cloud.clouddms.v1.DeleteMigrationJobRequest;
+import com.google.cloud.clouddms.v1.DeletePrivateConnectionRequest;
+import com.google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsRequest;
+import com.google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsResponse;
+import com.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest;
+import com.google.cloud.clouddms.v1.DescribeDatabaseEntitiesResponse;
+import com.google.cloud.clouddms.v1.FetchStaticIpsRequest;
+import com.google.cloud.clouddms.v1.FetchStaticIpsResponse;
 import com.google.cloud.clouddms.v1.GenerateSshScriptRequest;
+import com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest;
 import com.google.cloud.clouddms.v1.GetConnectionProfileRequest;
+import com.google.cloud.clouddms.v1.GetConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.GetMappingRuleRequest;
 import com.google.cloud.clouddms.v1.GetMigrationJobRequest;
+import com.google.cloud.clouddms.v1.GetPrivateConnectionRequest;
+import com.google.cloud.clouddms.v1.ImportMappingRulesRequest;
 import com.google.cloud.clouddms.v1.ListConnectionProfilesRequest;
 import com.google.cloud.clouddms.v1.ListConnectionProfilesResponse;
+import com.google.cloud.clouddms.v1.ListConversionWorkspacesRequest;
+import com.google.cloud.clouddms.v1.ListConversionWorkspacesResponse;
+import com.google.cloud.clouddms.v1.ListMappingRulesRequest;
+import com.google.cloud.clouddms.v1.ListMappingRulesResponse;
 import com.google.cloud.clouddms.v1.ListMigrationJobsRequest;
 import com.google.cloud.clouddms.v1.ListMigrationJobsResponse;
+import com.google.cloud.clouddms.v1.ListPrivateConnectionsRequest;
+import com.google.cloud.clouddms.v1.ListPrivateConnectionsResponse;
+import com.google.cloud.clouddms.v1.MappingRule;
 import com.google.cloud.clouddms.v1.MigrationJob;
 import com.google.cloud.clouddms.v1.OperationMetadata;
+import com.google.cloud.clouddms.v1.PrivateConnection;
 import com.google.cloud.clouddms.v1.PromoteMigrationJobRequest;
 import com.google.cloud.clouddms.v1.RestartMigrationJobRequest;
 import com.google.cloud.clouddms.v1.ResumeMigrationJobRequest;
+import com.google.cloud.clouddms.v1.RollbackConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.SearchBackgroundJobsRequest;
+import com.google.cloud.clouddms.v1.SearchBackgroundJobsResponse;
+import com.google.cloud.clouddms.v1.SeedConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.SshScript;
 import com.google.cloud.clouddms.v1.StartMigrationJobRequest;
 import com.google.cloud.clouddms.v1.StopMigrationJobRequest;
+import com.google.cloud.clouddms.v1.TcpProxyScript;
 import com.google.cloud.clouddms.v1.UpdateConnectionProfileRequest;
+import com.google.cloud.clouddms.v1.UpdateConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.UpdateMigrationJobRequest;
 import com.google.cloud.clouddms.v1.VerifyMigrationJobRequest;
 import com.google.common.collect.ImmutableList;
@@ -158,6 +199,8 @@ public class DataMigrationServiceStubSettings
   private final OperationCallSettings<RestartMigrationJobRequest, MigrationJob, OperationMetadata>
       restartMigrationJobOperationSettings;
   private final UnaryCallSettings<GenerateSshScriptRequest, SshScript> generateSshScriptSettings;
+  private final UnaryCallSettings<GenerateTcpProxyScriptRequest, TcpProxyScript>
+      generateTcpProxyScriptSettings;
   private final PagedCallSettings<
           ListConnectionProfilesRequest,
           ListConnectionProfilesResponse,
@@ -179,6 +222,91 @@ public class DataMigrationServiceStubSettings
       deleteConnectionProfileSettings;
   private final OperationCallSettings<DeleteConnectionProfileRequest, Empty, OperationMetadata>
       deleteConnectionProfileOperationSettings;
+  private final UnaryCallSettings<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionSettings;
+  private final OperationCallSettings<
+          CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationSettings;
+  private final UnaryCallSettings<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionSettings;
+  private final PagedCallSettings<
+          ListPrivateConnectionsRequest,
+          ListPrivateConnectionsResponse,
+          ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsSettings;
+  private final UnaryCallSettings<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionSettings;
+  private final OperationCallSettings<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationSettings;
+  private final UnaryCallSettings<GetConversionWorkspaceRequest, ConversionWorkspace>
+      getConversionWorkspaceSettings;
+  private final PagedCallSettings<
+          ListConversionWorkspacesRequest,
+          ListConversionWorkspacesResponse,
+          ListConversionWorkspacesPagedResponse>
+      listConversionWorkspacesSettings;
+  private final UnaryCallSettings<CreateConversionWorkspaceRequest, Operation>
+      createConversionWorkspaceSettings;
+  private final OperationCallSettings<
+          CreateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      createConversionWorkspaceOperationSettings;
+  private final UnaryCallSettings<UpdateConversionWorkspaceRequest, Operation>
+      updateConversionWorkspaceSettings;
+  private final OperationCallSettings<
+          UpdateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      updateConversionWorkspaceOperationSettings;
+  private final UnaryCallSettings<DeleteConversionWorkspaceRequest, Operation>
+      deleteConversionWorkspaceSettings;
+  private final OperationCallSettings<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
+      deleteConversionWorkspaceOperationSettings;
+  private final UnaryCallSettings<CreateMappingRuleRequest, MappingRule> createMappingRuleSettings;
+  private final UnaryCallSettings<DeleteMappingRuleRequest, Empty> deleteMappingRuleSettings;
+  private final PagedCallSettings<
+          ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+      listMappingRulesSettings;
+  private final UnaryCallSettings<GetMappingRuleRequest, MappingRule> getMappingRuleSettings;
+  private final UnaryCallSettings<SeedConversionWorkspaceRequest, Operation>
+      seedConversionWorkspaceSettings;
+  private final OperationCallSettings<
+          SeedConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      seedConversionWorkspaceOperationSettings;
+  private final UnaryCallSettings<ImportMappingRulesRequest, Operation> importMappingRulesSettings;
+  private final OperationCallSettings<
+          ImportMappingRulesRequest, ConversionWorkspace, OperationMetadata>
+      importMappingRulesOperationSettings;
+  private final UnaryCallSettings<ConvertConversionWorkspaceRequest, Operation>
+      convertConversionWorkspaceSettings;
+  private final OperationCallSettings<
+          ConvertConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      convertConversionWorkspaceOperationSettings;
+  private final UnaryCallSettings<CommitConversionWorkspaceRequest, Operation>
+      commitConversionWorkspaceSettings;
+  private final OperationCallSettings<
+          CommitConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      commitConversionWorkspaceOperationSettings;
+  private final UnaryCallSettings<RollbackConversionWorkspaceRequest, Operation>
+      rollbackConversionWorkspaceSettings;
+  private final OperationCallSettings<
+          RollbackConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      rollbackConversionWorkspaceOperationSettings;
+  private final UnaryCallSettings<ApplyConversionWorkspaceRequest, Operation>
+      applyConversionWorkspaceSettings;
+  private final OperationCallSettings<
+          ApplyConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      applyConversionWorkspaceOperationSettings;
+  private final PagedCallSettings<
+          DescribeDatabaseEntitiesRequest,
+          DescribeDatabaseEntitiesResponse,
+          DescribeDatabaseEntitiesPagedResponse>
+      describeDatabaseEntitiesSettings;
+  private final UnaryCallSettings<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>
+      searchBackgroundJobsSettings;
+  private final UnaryCallSettings<
+          DescribeConversionWorkspaceRevisionsRequest, DescribeConversionWorkspaceRevisionsResponse>
+      describeConversionWorkspaceRevisionsSettings;
+  private final PagedCallSettings<
+          FetchStaticIpsRequest, FetchStaticIpsResponse, FetchStaticIpsPagedResponse>
+      fetchStaticIpsSettings;
 
   private static final PagedListDescriptor<
           ListMigrationJobsRequest, ListMigrationJobsResponse, MigrationJob>
@@ -263,6 +391,218 @@ public class DataMigrationServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
+      LIST_PRIVATE_CONNECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPrivateConnectionsRequest injectToken(
+                ListPrivateConnectionsRequest payload, String token) {
+              return ListPrivateConnectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPrivateConnectionsRequest injectPageSize(
+                ListPrivateConnectionsRequest payload, int pageSize) {
+              return ListPrivateConnectionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPrivateConnectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPrivateConnectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PrivateConnection> extractResources(
+                ListPrivateConnectionsResponse payload) {
+              return payload.getPrivateConnectionsList() == null
+                  ? ImmutableList.<PrivateConnection>of()
+                  : payload.getPrivateConnectionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListConversionWorkspacesRequest, ListConversionWorkspacesResponse, ConversionWorkspace>
+      LIST_CONVERSION_WORKSPACES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListConversionWorkspacesRequest,
+              ListConversionWorkspacesResponse,
+              ConversionWorkspace>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListConversionWorkspacesRequest injectToken(
+                ListConversionWorkspacesRequest payload, String token) {
+              return ListConversionWorkspacesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListConversionWorkspacesRequest injectPageSize(
+                ListConversionWorkspacesRequest payload, int pageSize) {
+              return ListConversionWorkspacesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListConversionWorkspacesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListConversionWorkspacesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ConversionWorkspace> extractResources(
+                ListConversionWorkspacesResponse payload) {
+              return payload.getConversionWorkspacesList() == null
+                  ? ImmutableList.<ConversionWorkspace>of()
+                  : payload.getConversionWorkspacesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListMappingRulesRequest, ListMappingRulesResponse, MappingRule>
+      LIST_MAPPING_RULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListMappingRulesRequest, ListMappingRulesResponse, MappingRule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMappingRulesRequest injectToken(
+                ListMappingRulesRequest payload, String token) {
+              return ListMappingRulesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMappingRulesRequest injectPageSize(
+                ListMappingRulesRequest payload, int pageSize) {
+              return ListMappingRulesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMappingRulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMappingRulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MappingRule> extractResources(ListMappingRulesResponse payload) {
+              return payload.getMappingRulesList() == null
+                  ? ImmutableList.<MappingRule>of()
+                  : payload.getMappingRulesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse, DatabaseEntity>
+      DESCRIBE_DATABASE_ENTITIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse, DatabaseEntity>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public DescribeDatabaseEntitiesRequest injectToken(
+                DescribeDatabaseEntitiesRequest payload, String token) {
+              return DescribeDatabaseEntitiesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public DescribeDatabaseEntitiesRequest injectPageSize(
+                DescribeDatabaseEntitiesRequest payload, int pageSize) {
+              return DescribeDatabaseEntitiesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(DescribeDatabaseEntitiesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(DescribeDatabaseEntitiesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DatabaseEntity> extractResources(
+                DescribeDatabaseEntitiesResponse payload) {
+              return payload.getDatabaseEntitiesList() == null
+                  ? ImmutableList.<DatabaseEntity>of()
+                  : payload.getDatabaseEntitiesList();
+            }
+          };
+
+  private static final PagedListDescriptor<FetchStaticIpsRequest, FetchStaticIpsResponse, String>
+      FETCH_STATIC_IPS_PAGE_STR_DESC =
+          new PagedListDescriptor<FetchStaticIpsRequest, FetchStaticIpsResponse, String>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchStaticIpsRequest injectToken(FetchStaticIpsRequest payload, String token) {
+              return FetchStaticIpsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public FetchStaticIpsRequest injectPageSize(
+                FetchStaticIpsRequest payload, int pageSize) {
+              return FetchStaticIpsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(FetchStaticIpsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(FetchStaticIpsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<String> extractResources(FetchStaticIpsResponse payload) {
+              return payload.getStaticIpsList() == null
+                  ? ImmutableList.<String>of()
+                  : payload.getStaticIpsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListMigrationJobsRequest, ListMigrationJobsResponse, ListMigrationJobsPagedResponse>
       LIST_MIGRATION_JOBS_PAGE_STR_FACT =
@@ -308,6 +648,123 @@ public class DataMigrationServiceStubSettings
                       PageContext.create(
                           callable, LIST_CONNECTION_PROFILES_PAGE_STR_DESC, request, context);
               return ListConnectionProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPrivateConnectionsRequest,
+          ListPrivateConnectionsResponse,
+          ListPrivateConnectionsPagedResponse>
+      LIST_PRIVATE_CONNECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPrivateConnectionsRequest,
+              ListPrivateConnectionsResponse,
+              ListPrivateConnectionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPrivateConnectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+                    callable,
+                ListPrivateConnectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPrivateConnectionsResponse> futureResponse) {
+              PageContext<
+                      ListPrivateConnectionsRequest,
+                      ListPrivateConnectionsResponse,
+                      PrivateConnection>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PRIVATE_CONNECTIONS_PAGE_STR_DESC, request, context);
+              return ListPrivateConnectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListConversionWorkspacesRequest,
+          ListConversionWorkspacesResponse,
+          ListConversionWorkspacesPagedResponse>
+      LIST_CONVERSION_WORKSPACES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListConversionWorkspacesRequest,
+              ListConversionWorkspacesResponse,
+              ListConversionWorkspacesPagedResponse>() {
+            @Override
+            public ApiFuture<ListConversionWorkspacesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListConversionWorkspacesRequest, ListConversionWorkspacesResponse>
+                    callable,
+                ListConversionWorkspacesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListConversionWorkspacesResponse> futureResponse) {
+              PageContext<
+                      ListConversionWorkspacesRequest,
+                      ListConversionWorkspacesResponse,
+                      ConversionWorkspace>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CONVERSION_WORKSPACES_PAGE_STR_DESC, request, context);
+              return ListConversionWorkspacesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+      LIST_MAPPING_RULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListMappingRulesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMappingRulesRequest, ListMappingRulesResponse> callable,
+                ListMappingRulesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMappingRulesResponse> futureResponse) {
+              PageContext<ListMappingRulesRequest, ListMappingRulesResponse, MappingRule>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MAPPING_RULES_PAGE_STR_DESC, request, context);
+              return ListMappingRulesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          DescribeDatabaseEntitiesRequest,
+          DescribeDatabaseEntitiesResponse,
+          DescribeDatabaseEntitiesPagedResponse>
+      DESCRIBE_DATABASE_ENTITIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              DescribeDatabaseEntitiesRequest,
+              DescribeDatabaseEntitiesResponse,
+              DescribeDatabaseEntitiesPagedResponse>() {
+            @Override
+            public ApiFuture<DescribeDatabaseEntitiesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse>
+                    callable,
+                DescribeDatabaseEntitiesRequest request,
+                ApiCallContext context,
+                ApiFuture<DescribeDatabaseEntitiesResponse> futureResponse) {
+              PageContext<
+                      DescribeDatabaseEntitiesRequest,
+                      DescribeDatabaseEntitiesResponse,
+                      DatabaseEntity>
+                  pageContext =
+                      PageContext.create(
+                          callable, DESCRIBE_DATABASE_ENTITIES_PAGE_STR_DESC, request, context);
+              return DescribeDatabaseEntitiesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          FetchStaticIpsRequest, FetchStaticIpsResponse, FetchStaticIpsPagedResponse>
+      FETCH_STATIC_IPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchStaticIpsRequest, FetchStaticIpsResponse, FetchStaticIpsPagedResponse>() {
+            @Override
+            public ApiFuture<FetchStaticIpsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<FetchStaticIpsRequest, FetchStaticIpsResponse> callable,
+                FetchStaticIpsRequest request,
+                ApiCallContext context,
+                ApiFuture<FetchStaticIpsResponse> futureResponse) {
+              PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> pageContext =
+                  PageContext.create(callable, FETCH_STATIC_IPS_PAGE_STR_DESC, request, context);
+              return FetchStaticIpsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -427,6 +884,12 @@ public class DataMigrationServiceStubSettings
     return generateSshScriptSettings;
   }
 
+  /** Returns the object with the settings used for calls to generateTcpProxyScript. */
+  public UnaryCallSettings<GenerateTcpProxyScriptRequest, TcpProxyScript>
+      generateTcpProxyScriptSettings() {
+    return generateTcpProxyScriptSettings;
+  }
+
   /** Returns the object with the settings used for calls to listConnectionProfiles. */
   public PagedCallSettings<
           ListConnectionProfilesRequest,
@@ -476,6 +939,227 @@ public class DataMigrationServiceStubSettings
   public OperationCallSettings<DeleteConnectionProfileRequest, Empty, OperationMetadata>
       deleteConnectionProfileOperationSettings() {
     return deleteConnectionProfileOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createPrivateConnection. */
+  public UnaryCallSettings<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionSettings() {
+    return createPrivateConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createPrivateConnection. */
+  public OperationCallSettings<CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationSettings() {
+    return createPrivateConnectionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPrivateConnection. */
+  public UnaryCallSettings<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionSettings() {
+    return getPrivateConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPrivateConnections. */
+  public PagedCallSettings<
+          ListPrivateConnectionsRequest,
+          ListPrivateConnectionsResponse,
+          ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsSettings() {
+    return listPrivateConnectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePrivateConnection. */
+  public UnaryCallSettings<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionSettings() {
+    return deletePrivateConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePrivateConnection. */
+  public OperationCallSettings<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationSettings() {
+    return deletePrivateConnectionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getConversionWorkspace. */
+  public UnaryCallSettings<GetConversionWorkspaceRequest, ConversionWorkspace>
+      getConversionWorkspaceSettings() {
+    return getConversionWorkspaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listConversionWorkspaces. */
+  public PagedCallSettings<
+          ListConversionWorkspacesRequest,
+          ListConversionWorkspacesResponse,
+          ListConversionWorkspacesPagedResponse>
+      listConversionWorkspacesSettings() {
+    return listConversionWorkspacesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createConversionWorkspace. */
+  public UnaryCallSettings<CreateConversionWorkspaceRequest, Operation>
+      createConversionWorkspaceSettings() {
+    return createConversionWorkspaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createConversionWorkspace. */
+  public OperationCallSettings<
+          CreateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      createConversionWorkspaceOperationSettings() {
+    return createConversionWorkspaceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateConversionWorkspace. */
+  public UnaryCallSettings<UpdateConversionWorkspaceRequest, Operation>
+      updateConversionWorkspaceSettings() {
+    return updateConversionWorkspaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateConversionWorkspace. */
+  public OperationCallSettings<
+          UpdateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      updateConversionWorkspaceOperationSettings() {
+    return updateConversionWorkspaceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteConversionWorkspace. */
+  public UnaryCallSettings<DeleteConversionWorkspaceRequest, Operation>
+      deleteConversionWorkspaceSettings() {
+    return deleteConversionWorkspaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteConversionWorkspace. */
+  public OperationCallSettings<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
+      deleteConversionWorkspaceOperationSettings() {
+    return deleteConversionWorkspaceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createMappingRule. */
+  public UnaryCallSettings<CreateMappingRuleRequest, MappingRule> createMappingRuleSettings() {
+    return createMappingRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteMappingRule. */
+  public UnaryCallSettings<DeleteMappingRuleRequest, Empty> deleteMappingRuleSettings() {
+    return deleteMappingRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMappingRules. */
+  public PagedCallSettings<
+          ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+      listMappingRulesSettings() {
+    return listMappingRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMappingRule. */
+  public UnaryCallSettings<GetMappingRuleRequest, MappingRule> getMappingRuleSettings() {
+    return getMappingRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to seedConversionWorkspace. */
+  public UnaryCallSettings<SeedConversionWorkspaceRequest, Operation>
+      seedConversionWorkspaceSettings() {
+    return seedConversionWorkspaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to seedConversionWorkspace. */
+  public OperationCallSettings<
+          SeedConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      seedConversionWorkspaceOperationSettings() {
+    return seedConversionWorkspaceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importMappingRules. */
+  public UnaryCallSettings<ImportMappingRulesRequest, Operation> importMappingRulesSettings() {
+    return importMappingRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importMappingRules. */
+  public OperationCallSettings<ImportMappingRulesRequest, ConversionWorkspace, OperationMetadata>
+      importMappingRulesOperationSettings() {
+    return importMappingRulesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to convertConversionWorkspace. */
+  public UnaryCallSettings<ConvertConversionWorkspaceRequest, Operation>
+      convertConversionWorkspaceSettings() {
+    return convertConversionWorkspaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to convertConversionWorkspace. */
+  public OperationCallSettings<
+          ConvertConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      convertConversionWorkspaceOperationSettings() {
+    return convertConversionWorkspaceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to commitConversionWorkspace. */
+  public UnaryCallSettings<CommitConversionWorkspaceRequest, Operation>
+      commitConversionWorkspaceSettings() {
+    return commitConversionWorkspaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to commitConversionWorkspace. */
+  public OperationCallSettings<
+          CommitConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      commitConversionWorkspaceOperationSettings() {
+    return commitConversionWorkspaceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rollbackConversionWorkspace. */
+  public UnaryCallSettings<RollbackConversionWorkspaceRequest, Operation>
+      rollbackConversionWorkspaceSettings() {
+    return rollbackConversionWorkspaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rollbackConversionWorkspace. */
+  public OperationCallSettings<
+          RollbackConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      rollbackConversionWorkspaceOperationSettings() {
+    return rollbackConversionWorkspaceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to applyConversionWorkspace. */
+  public UnaryCallSettings<ApplyConversionWorkspaceRequest, Operation>
+      applyConversionWorkspaceSettings() {
+    return applyConversionWorkspaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to applyConversionWorkspace. */
+  public OperationCallSettings<
+          ApplyConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      applyConversionWorkspaceOperationSettings() {
+    return applyConversionWorkspaceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to describeDatabaseEntities. */
+  public PagedCallSettings<
+          DescribeDatabaseEntitiesRequest,
+          DescribeDatabaseEntitiesResponse,
+          DescribeDatabaseEntitiesPagedResponse>
+      describeDatabaseEntitiesSettings() {
+    return describeDatabaseEntitiesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchBackgroundJobs. */
+  public UnaryCallSettings<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>
+      searchBackgroundJobsSettings() {
+    return searchBackgroundJobsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to describeConversionWorkspaceRevisions.
+   */
+  public UnaryCallSettings<
+          DescribeConversionWorkspaceRevisionsRequest, DescribeConversionWorkspaceRevisionsResponse>
+      describeConversionWorkspaceRevisionsSettings() {
+    return describeConversionWorkspaceRevisionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchStaticIps. */
+  public PagedCallSettings<
+          FetchStaticIpsRequest, FetchStaticIpsResponse, FetchStaticIpsPagedResponse>
+      fetchStaticIpsSettings() {
+    return fetchStaticIpsSettings;
   }
 
   public DataMigrationServiceStub createStub() throws IOException {
@@ -582,6 +1266,7 @@ public class DataMigrationServiceStubSettings
     restartMigrationJobOperationSettings =
         settingsBuilder.restartMigrationJobOperationSettings().build();
     generateSshScriptSettings = settingsBuilder.generateSshScriptSettings().build();
+    generateTcpProxyScriptSettings = settingsBuilder.generateTcpProxyScriptSettings().build();
     listConnectionProfilesSettings = settingsBuilder.listConnectionProfilesSettings().build();
     getConnectionProfileSettings = settingsBuilder.getConnectionProfileSettings().build();
     createConnectionProfileSettings = settingsBuilder.createConnectionProfileSettings().build();
@@ -593,6 +1278,54 @@ public class DataMigrationServiceStubSettings
     deleteConnectionProfileSettings = settingsBuilder.deleteConnectionProfileSettings().build();
     deleteConnectionProfileOperationSettings =
         settingsBuilder.deleteConnectionProfileOperationSettings().build();
+    createPrivateConnectionSettings = settingsBuilder.createPrivateConnectionSettings().build();
+    createPrivateConnectionOperationSettings =
+        settingsBuilder.createPrivateConnectionOperationSettings().build();
+    getPrivateConnectionSettings = settingsBuilder.getPrivateConnectionSettings().build();
+    listPrivateConnectionsSettings = settingsBuilder.listPrivateConnectionsSettings().build();
+    deletePrivateConnectionSettings = settingsBuilder.deletePrivateConnectionSettings().build();
+    deletePrivateConnectionOperationSettings =
+        settingsBuilder.deletePrivateConnectionOperationSettings().build();
+    getConversionWorkspaceSettings = settingsBuilder.getConversionWorkspaceSettings().build();
+    listConversionWorkspacesSettings = settingsBuilder.listConversionWorkspacesSettings().build();
+    createConversionWorkspaceSettings = settingsBuilder.createConversionWorkspaceSettings().build();
+    createConversionWorkspaceOperationSettings =
+        settingsBuilder.createConversionWorkspaceOperationSettings().build();
+    updateConversionWorkspaceSettings = settingsBuilder.updateConversionWorkspaceSettings().build();
+    updateConversionWorkspaceOperationSettings =
+        settingsBuilder.updateConversionWorkspaceOperationSettings().build();
+    deleteConversionWorkspaceSettings = settingsBuilder.deleteConversionWorkspaceSettings().build();
+    deleteConversionWorkspaceOperationSettings =
+        settingsBuilder.deleteConversionWorkspaceOperationSettings().build();
+    createMappingRuleSettings = settingsBuilder.createMappingRuleSettings().build();
+    deleteMappingRuleSettings = settingsBuilder.deleteMappingRuleSettings().build();
+    listMappingRulesSettings = settingsBuilder.listMappingRulesSettings().build();
+    getMappingRuleSettings = settingsBuilder.getMappingRuleSettings().build();
+    seedConversionWorkspaceSettings = settingsBuilder.seedConversionWorkspaceSettings().build();
+    seedConversionWorkspaceOperationSettings =
+        settingsBuilder.seedConversionWorkspaceOperationSettings().build();
+    importMappingRulesSettings = settingsBuilder.importMappingRulesSettings().build();
+    importMappingRulesOperationSettings =
+        settingsBuilder.importMappingRulesOperationSettings().build();
+    convertConversionWorkspaceSettings =
+        settingsBuilder.convertConversionWorkspaceSettings().build();
+    convertConversionWorkspaceOperationSettings =
+        settingsBuilder.convertConversionWorkspaceOperationSettings().build();
+    commitConversionWorkspaceSettings = settingsBuilder.commitConversionWorkspaceSettings().build();
+    commitConversionWorkspaceOperationSettings =
+        settingsBuilder.commitConversionWorkspaceOperationSettings().build();
+    rollbackConversionWorkspaceSettings =
+        settingsBuilder.rollbackConversionWorkspaceSettings().build();
+    rollbackConversionWorkspaceOperationSettings =
+        settingsBuilder.rollbackConversionWorkspaceOperationSettings().build();
+    applyConversionWorkspaceSettings = settingsBuilder.applyConversionWorkspaceSettings().build();
+    applyConversionWorkspaceOperationSettings =
+        settingsBuilder.applyConversionWorkspaceOperationSettings().build();
+    describeDatabaseEntitiesSettings = settingsBuilder.describeDatabaseEntitiesSettings().build();
+    searchBackgroundJobsSettings = settingsBuilder.searchBackgroundJobsSettings().build();
+    describeConversionWorkspaceRevisionsSettings =
+        settingsBuilder.describeConversionWorkspaceRevisionsSettings().build();
+    fetchStaticIpsSettings = settingsBuilder.fetchStaticIpsSettings().build();
   }
 
   /** Builder for DataMigrationServiceStubSettings. */
@@ -650,6 +1383,8 @@ public class DataMigrationServiceStubSettings
         restartMigrationJobOperationSettings;
     private final UnaryCallSettings.Builder<GenerateSshScriptRequest, SshScript>
         generateSshScriptSettings;
+    private final UnaryCallSettings.Builder<GenerateTcpProxyScriptRequest, TcpProxyScript>
+        generateTcpProxyScriptSettings;
     private final PagedCallSettings.Builder<
             ListConnectionProfilesRequest,
             ListConnectionProfilesResponse,
@@ -672,6 +1407,99 @@ public class DataMigrationServiceStubSettings
     private final OperationCallSettings.Builder<
             DeleteConnectionProfileRequest, Empty, OperationMetadata>
         deleteConnectionProfileOperationSettings;
+    private final UnaryCallSettings.Builder<CreatePrivateConnectionRequest, Operation>
+        createPrivateConnectionSettings;
+    private final OperationCallSettings.Builder<
+            CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+        createPrivateConnectionOperationSettings;
+    private final UnaryCallSettings.Builder<GetPrivateConnectionRequest, PrivateConnection>
+        getPrivateConnectionSettings;
+    private final PagedCallSettings.Builder<
+            ListPrivateConnectionsRequest,
+            ListPrivateConnectionsResponse,
+            ListPrivateConnectionsPagedResponse>
+        listPrivateConnectionsSettings;
+    private final UnaryCallSettings.Builder<DeletePrivateConnectionRequest, Operation>
+        deletePrivateConnectionSettings;
+    private final OperationCallSettings.Builder<
+            DeletePrivateConnectionRequest, Empty, OperationMetadata>
+        deletePrivateConnectionOperationSettings;
+    private final UnaryCallSettings.Builder<GetConversionWorkspaceRequest, ConversionWorkspace>
+        getConversionWorkspaceSettings;
+    private final PagedCallSettings.Builder<
+            ListConversionWorkspacesRequest,
+            ListConversionWorkspacesResponse,
+            ListConversionWorkspacesPagedResponse>
+        listConversionWorkspacesSettings;
+    private final UnaryCallSettings.Builder<CreateConversionWorkspaceRequest, Operation>
+        createConversionWorkspaceSettings;
+    private final OperationCallSettings.Builder<
+            CreateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        createConversionWorkspaceOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateConversionWorkspaceRequest, Operation>
+        updateConversionWorkspaceSettings;
+    private final OperationCallSettings.Builder<
+            UpdateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        updateConversionWorkspaceOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteConversionWorkspaceRequest, Operation>
+        deleteConversionWorkspaceSettings;
+    private final OperationCallSettings.Builder<
+            DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
+        deleteConversionWorkspaceOperationSettings;
+    private final UnaryCallSettings.Builder<CreateMappingRuleRequest, MappingRule>
+        createMappingRuleSettings;
+    private final UnaryCallSettings.Builder<DeleteMappingRuleRequest, Empty>
+        deleteMappingRuleSettings;
+    private final PagedCallSettings.Builder<
+            ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+        listMappingRulesSettings;
+    private final UnaryCallSettings.Builder<GetMappingRuleRequest, MappingRule>
+        getMappingRuleSettings;
+    private final UnaryCallSettings.Builder<SeedConversionWorkspaceRequest, Operation>
+        seedConversionWorkspaceSettings;
+    private final OperationCallSettings.Builder<
+            SeedConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        seedConversionWorkspaceOperationSettings;
+    private final UnaryCallSettings.Builder<ImportMappingRulesRequest, Operation>
+        importMappingRulesSettings;
+    private final OperationCallSettings.Builder<
+            ImportMappingRulesRequest, ConversionWorkspace, OperationMetadata>
+        importMappingRulesOperationSettings;
+    private final UnaryCallSettings.Builder<ConvertConversionWorkspaceRequest, Operation>
+        convertConversionWorkspaceSettings;
+    private final OperationCallSettings.Builder<
+            ConvertConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        convertConversionWorkspaceOperationSettings;
+    private final UnaryCallSettings.Builder<CommitConversionWorkspaceRequest, Operation>
+        commitConversionWorkspaceSettings;
+    private final OperationCallSettings.Builder<
+            CommitConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        commitConversionWorkspaceOperationSettings;
+    private final UnaryCallSettings.Builder<RollbackConversionWorkspaceRequest, Operation>
+        rollbackConversionWorkspaceSettings;
+    private final OperationCallSettings.Builder<
+            RollbackConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        rollbackConversionWorkspaceOperationSettings;
+    private final UnaryCallSettings.Builder<ApplyConversionWorkspaceRequest, Operation>
+        applyConversionWorkspaceSettings;
+    private final OperationCallSettings.Builder<
+            ApplyConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        applyConversionWorkspaceOperationSettings;
+    private final PagedCallSettings.Builder<
+            DescribeDatabaseEntitiesRequest,
+            DescribeDatabaseEntitiesResponse,
+            DescribeDatabaseEntitiesPagedResponse>
+        describeDatabaseEntitiesSettings;
+    private final UnaryCallSettings.Builder<
+            SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>
+        searchBackgroundJobsSettings;
+    private final UnaryCallSettings.Builder<
+            DescribeConversionWorkspaceRevisionsRequest,
+            DescribeConversionWorkspaceRevisionsResponse>
+        describeConversionWorkspaceRevisionsSettings;
+    private final PagedCallSettings.Builder<
+            FetchStaticIpsRequest, FetchStaticIpsResponse, FetchStaticIpsPagedResponse>
+        fetchStaticIpsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -680,6 +1508,9 @@ public class DataMigrationServiceStubSettings
           ImmutableMap.builder();
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -696,6 +1527,17 @@ public class DataMigrationServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(10000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -727,6 +1569,7 @@ public class DataMigrationServiceStubSettings
       restartMigrationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restartMigrationJobOperationSettings = OperationCallSettings.newBuilder();
       generateSshScriptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateTcpProxyScriptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConnectionProfilesSettings =
           PagedCallSettings.newBuilder(LIST_CONNECTION_PROFILES_PAGE_STR_FACT);
       getConnectionProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -736,6 +1579,44 @@ public class DataMigrationServiceStubSettings
       updateConnectionProfileOperationSettings = OperationCallSettings.newBuilder();
       deleteConnectionProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteConnectionProfileOperationSettings = OperationCallSettings.newBuilder();
+      createPrivateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createPrivateConnectionOperationSettings = OperationCallSettings.newBuilder();
+      getPrivateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPrivateConnectionsSettings =
+          PagedCallSettings.newBuilder(LIST_PRIVATE_CONNECTIONS_PAGE_STR_FACT);
+      deletePrivateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deletePrivateConnectionOperationSettings = OperationCallSettings.newBuilder();
+      getConversionWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listConversionWorkspacesSettings =
+          PagedCallSettings.newBuilder(LIST_CONVERSION_WORKSPACES_PAGE_STR_FACT);
+      createConversionWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createConversionWorkspaceOperationSettings = OperationCallSettings.newBuilder();
+      updateConversionWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateConversionWorkspaceOperationSettings = OperationCallSettings.newBuilder();
+      deleteConversionWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteConversionWorkspaceOperationSettings = OperationCallSettings.newBuilder();
+      createMappingRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteMappingRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listMappingRulesSettings = PagedCallSettings.newBuilder(LIST_MAPPING_RULES_PAGE_STR_FACT);
+      getMappingRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      seedConversionWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      seedConversionWorkspaceOperationSettings = OperationCallSettings.newBuilder();
+      importMappingRulesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importMappingRulesOperationSettings = OperationCallSettings.newBuilder();
+      convertConversionWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      convertConversionWorkspaceOperationSettings = OperationCallSettings.newBuilder();
+      commitConversionWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      commitConversionWorkspaceOperationSettings = OperationCallSettings.newBuilder();
+      rollbackConversionWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rollbackConversionWorkspaceOperationSettings = OperationCallSettings.newBuilder();
+      applyConversionWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      applyConversionWorkspaceOperationSettings = OperationCallSettings.newBuilder();
+      describeDatabaseEntitiesSettings =
+          PagedCallSettings.newBuilder(DESCRIBE_DATABASE_ENTITIES_PAGE_STR_FACT);
+      searchBackgroundJobsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      describeConversionWorkspaceRevisionsSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchStaticIpsSettings = PagedCallSettings.newBuilder(FETCH_STATIC_IPS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -751,11 +1632,35 @@ public class DataMigrationServiceStubSettings
               verifyMigrationJobSettings,
               restartMigrationJobSettings,
               generateSshScriptSettings,
+              generateTcpProxyScriptSettings,
               listConnectionProfilesSettings,
               getConnectionProfileSettings,
               createConnectionProfileSettings,
               updateConnectionProfileSettings,
-              deleteConnectionProfileSettings);
+              deleteConnectionProfileSettings,
+              createPrivateConnectionSettings,
+              getPrivateConnectionSettings,
+              listPrivateConnectionsSettings,
+              deletePrivateConnectionSettings,
+              getConversionWorkspaceSettings,
+              listConversionWorkspacesSettings,
+              createConversionWorkspaceSettings,
+              updateConversionWorkspaceSettings,
+              deleteConversionWorkspaceSettings,
+              createMappingRuleSettings,
+              deleteMappingRuleSettings,
+              listMappingRulesSettings,
+              getMappingRuleSettings,
+              seedConversionWorkspaceSettings,
+              importMappingRulesSettings,
+              convertConversionWorkspaceSettings,
+              commitConversionWorkspaceSettings,
+              rollbackConversionWorkspaceSettings,
+              applyConversionWorkspaceSettings,
+              describeDatabaseEntitiesSettings,
+              searchBackgroundJobsSettings,
+              describeConversionWorkspaceRevisionsSettings,
+              fetchStaticIpsSettings);
       initDefaults(this);
     }
 
@@ -790,6 +1695,7 @@ public class DataMigrationServiceStubSettings
       restartMigrationJobOperationSettings =
           settings.restartMigrationJobOperationSettings.toBuilder();
       generateSshScriptSettings = settings.generateSshScriptSettings.toBuilder();
+      generateTcpProxyScriptSettings = settings.generateTcpProxyScriptSettings.toBuilder();
       listConnectionProfilesSettings = settings.listConnectionProfilesSettings.toBuilder();
       getConnectionProfileSettings = settings.getConnectionProfileSettings.toBuilder();
       createConnectionProfileSettings = settings.createConnectionProfileSettings.toBuilder();
@@ -801,6 +1707,53 @@ public class DataMigrationServiceStubSettings
       deleteConnectionProfileSettings = settings.deleteConnectionProfileSettings.toBuilder();
       deleteConnectionProfileOperationSettings =
           settings.deleteConnectionProfileOperationSettings.toBuilder();
+      createPrivateConnectionSettings = settings.createPrivateConnectionSettings.toBuilder();
+      createPrivateConnectionOperationSettings =
+          settings.createPrivateConnectionOperationSettings.toBuilder();
+      getPrivateConnectionSettings = settings.getPrivateConnectionSettings.toBuilder();
+      listPrivateConnectionsSettings = settings.listPrivateConnectionsSettings.toBuilder();
+      deletePrivateConnectionSettings = settings.deletePrivateConnectionSettings.toBuilder();
+      deletePrivateConnectionOperationSettings =
+          settings.deletePrivateConnectionOperationSettings.toBuilder();
+      getConversionWorkspaceSettings = settings.getConversionWorkspaceSettings.toBuilder();
+      listConversionWorkspacesSettings = settings.listConversionWorkspacesSettings.toBuilder();
+      createConversionWorkspaceSettings = settings.createConversionWorkspaceSettings.toBuilder();
+      createConversionWorkspaceOperationSettings =
+          settings.createConversionWorkspaceOperationSettings.toBuilder();
+      updateConversionWorkspaceSettings = settings.updateConversionWorkspaceSettings.toBuilder();
+      updateConversionWorkspaceOperationSettings =
+          settings.updateConversionWorkspaceOperationSettings.toBuilder();
+      deleteConversionWorkspaceSettings = settings.deleteConversionWorkspaceSettings.toBuilder();
+      deleteConversionWorkspaceOperationSettings =
+          settings.deleteConversionWorkspaceOperationSettings.toBuilder();
+      createMappingRuleSettings = settings.createMappingRuleSettings.toBuilder();
+      deleteMappingRuleSettings = settings.deleteMappingRuleSettings.toBuilder();
+      listMappingRulesSettings = settings.listMappingRulesSettings.toBuilder();
+      getMappingRuleSettings = settings.getMappingRuleSettings.toBuilder();
+      seedConversionWorkspaceSettings = settings.seedConversionWorkspaceSettings.toBuilder();
+      seedConversionWorkspaceOperationSettings =
+          settings.seedConversionWorkspaceOperationSettings.toBuilder();
+      importMappingRulesSettings = settings.importMappingRulesSettings.toBuilder();
+      importMappingRulesOperationSettings =
+          settings.importMappingRulesOperationSettings.toBuilder();
+      convertConversionWorkspaceSettings = settings.convertConversionWorkspaceSettings.toBuilder();
+      convertConversionWorkspaceOperationSettings =
+          settings.convertConversionWorkspaceOperationSettings.toBuilder();
+      commitConversionWorkspaceSettings = settings.commitConversionWorkspaceSettings.toBuilder();
+      commitConversionWorkspaceOperationSettings =
+          settings.commitConversionWorkspaceOperationSettings.toBuilder();
+      rollbackConversionWorkspaceSettings =
+          settings.rollbackConversionWorkspaceSettings.toBuilder();
+      rollbackConversionWorkspaceOperationSettings =
+          settings.rollbackConversionWorkspaceOperationSettings.toBuilder();
+      applyConversionWorkspaceSettings = settings.applyConversionWorkspaceSettings.toBuilder();
+      applyConversionWorkspaceOperationSettings =
+          settings.applyConversionWorkspaceOperationSettings.toBuilder();
+      describeDatabaseEntitiesSettings = settings.describeDatabaseEntitiesSettings.toBuilder();
+      searchBackgroundJobsSettings = settings.searchBackgroundJobsSettings.toBuilder();
+      describeConversionWorkspaceRevisionsSettings =
+          settings.describeConversionWorkspaceRevisionsSettings.toBuilder();
+      fetchStaticIpsSettings = settings.fetchStaticIpsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -816,11 +1769,35 @@ public class DataMigrationServiceStubSettings
               verifyMigrationJobSettings,
               restartMigrationJobSettings,
               generateSshScriptSettings,
+              generateTcpProxyScriptSettings,
               listConnectionProfilesSettings,
               getConnectionProfileSettings,
               createConnectionProfileSettings,
               updateConnectionProfileSettings,
-              deleteConnectionProfileSettings);
+              deleteConnectionProfileSettings,
+              createPrivateConnectionSettings,
+              getPrivateConnectionSettings,
+              listPrivateConnectionsSettings,
+              deletePrivateConnectionSettings,
+              getConversionWorkspaceSettings,
+              listConversionWorkspacesSettings,
+              createConversionWorkspaceSettings,
+              updateConversionWorkspaceSettings,
+              deleteConversionWorkspaceSettings,
+              createMappingRuleSettings,
+              deleteMappingRuleSettings,
+              listMappingRulesSettings,
+              getMappingRuleSettings,
+              seedConversionWorkspaceSettings,
+              importMappingRulesSettings,
+              convertConversionWorkspaceSettings,
+              commitConversionWorkspaceSettings,
+              rollbackConversionWorkspaceSettings,
+              applyConversionWorkspaceSettings,
+              describeDatabaseEntitiesSettings,
+              searchBackgroundJobsSettings,
+              describeConversionWorkspaceRevisionsSettings,
+              fetchStaticIpsSettings);
     }
 
     private static Builder createDefault() {
@@ -898,6 +1875,11 @@ public class DataMigrationServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .generateTcpProxyScriptSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listConnectionProfilesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -919,6 +1901,121 @@ public class DataMigrationServiceStubSettings
 
       builder
           .deleteConnectionProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createPrivateConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getPrivateConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listPrivateConnectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deletePrivateConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getConversionWorkspaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listConversionWorkspacesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createConversionWorkspaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateConversionWorkspaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteConversionWorkspaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createMappingRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteMappingRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listMappingRulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getMappingRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .seedConversionWorkspaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .importMappingRulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .convertConversionWorkspaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .commitConversionWorkspaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .rollbackConversionWorkspaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .applyConversionWorkspaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .describeDatabaseEntitiesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .searchBackgroundJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .describeConversionWorkspaceRevisionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .fetchStaticIpsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1210,6 +2307,276 @@ public class DataMigrationServiceStubSettings
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createPrivateConnectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreatePrivateConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PrivateConnection.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deletePrivateConnectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeletePrivateConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createConversionWorkspaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateConversionWorkspaceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ConversionWorkspace.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateConversionWorkspaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateConversionWorkspaceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ConversionWorkspace.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteConversionWorkspaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteConversionWorkspaceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .seedConversionWorkspaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SeedConversionWorkspaceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ConversionWorkspace.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importMappingRulesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportMappingRulesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ConversionWorkspace.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .convertConversionWorkspaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ConvertConversionWorkspaceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ConversionWorkspace.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .commitConversionWorkspaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CommitConversionWorkspaceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ConversionWorkspace.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .rollbackConversionWorkspaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RollbackConversionWorkspaceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ConversionWorkspace.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .applyConversionWorkspaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ApplyConversionWorkspaceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ConversionWorkspace.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1375,6 +2742,12 @@ public class DataMigrationServiceStubSettings
       return generateSshScriptSettings;
     }
 
+    /** Returns the builder for the settings used for calls to generateTcpProxyScript. */
+    public UnaryCallSettings.Builder<GenerateTcpProxyScriptRequest, TcpProxyScript>
+        generateTcpProxyScriptSettings() {
+      return generateTcpProxyScriptSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listConnectionProfiles. */
     public PagedCallSettings.Builder<
             ListConnectionProfilesRequest,
@@ -1432,6 +2805,254 @@ public class DataMigrationServiceStubSettings
     public OperationCallSettings.Builder<DeleteConnectionProfileRequest, Empty, OperationMetadata>
         deleteConnectionProfileOperationSettings() {
       return deleteConnectionProfileOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPrivateConnection. */
+    public UnaryCallSettings.Builder<CreatePrivateConnectionRequest, Operation>
+        createPrivateConnectionSettings() {
+      return createPrivateConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPrivateConnection. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+        createPrivateConnectionOperationSettings() {
+      return createPrivateConnectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPrivateConnection. */
+    public UnaryCallSettings.Builder<GetPrivateConnectionRequest, PrivateConnection>
+        getPrivateConnectionSettings() {
+      return getPrivateConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPrivateConnections. */
+    public PagedCallSettings.Builder<
+            ListPrivateConnectionsRequest,
+            ListPrivateConnectionsResponse,
+            ListPrivateConnectionsPagedResponse>
+        listPrivateConnectionsSettings() {
+      return listPrivateConnectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePrivateConnection. */
+    public UnaryCallSettings.Builder<DeletePrivateConnectionRequest, Operation>
+        deletePrivateConnectionSettings() {
+      return deletePrivateConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePrivateConnection. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+        deletePrivateConnectionOperationSettings() {
+      return deletePrivateConnectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getConversionWorkspace. */
+    public UnaryCallSettings.Builder<GetConversionWorkspaceRequest, ConversionWorkspace>
+        getConversionWorkspaceSettings() {
+      return getConversionWorkspaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listConversionWorkspaces. */
+    public PagedCallSettings.Builder<
+            ListConversionWorkspacesRequest,
+            ListConversionWorkspacesResponse,
+            ListConversionWorkspacesPagedResponse>
+        listConversionWorkspacesSettings() {
+      return listConversionWorkspacesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createConversionWorkspace. */
+    public UnaryCallSettings.Builder<CreateConversionWorkspaceRequest, Operation>
+        createConversionWorkspaceSettings() {
+      return createConversionWorkspaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createConversionWorkspace. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            CreateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        createConversionWorkspaceOperationSettings() {
+      return createConversionWorkspaceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateConversionWorkspace. */
+    public UnaryCallSettings.Builder<UpdateConversionWorkspaceRequest, Operation>
+        updateConversionWorkspaceSettings() {
+      return updateConversionWorkspaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateConversionWorkspace. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UpdateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        updateConversionWorkspaceOperationSettings() {
+      return updateConversionWorkspaceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConversionWorkspace. */
+    public UnaryCallSettings.Builder<DeleteConversionWorkspaceRequest, Operation>
+        deleteConversionWorkspaceSettings() {
+      return deleteConversionWorkspaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConversionWorkspace. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
+        deleteConversionWorkspaceOperationSettings() {
+      return deleteConversionWorkspaceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMappingRule. */
+    public UnaryCallSettings.Builder<CreateMappingRuleRequest, MappingRule>
+        createMappingRuleSettings() {
+      return createMappingRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMappingRule. */
+    public UnaryCallSettings.Builder<DeleteMappingRuleRequest, Empty> deleteMappingRuleSettings() {
+      return deleteMappingRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listMappingRules. */
+    public PagedCallSettings.Builder<
+            ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+        listMappingRulesSettings() {
+      return listMappingRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMappingRule. */
+    public UnaryCallSettings.Builder<GetMappingRuleRequest, MappingRule> getMappingRuleSettings() {
+      return getMappingRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to seedConversionWorkspace. */
+    public UnaryCallSettings.Builder<SeedConversionWorkspaceRequest, Operation>
+        seedConversionWorkspaceSettings() {
+      return seedConversionWorkspaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to seedConversionWorkspace. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SeedConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        seedConversionWorkspaceOperationSettings() {
+      return seedConversionWorkspaceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importMappingRules. */
+    public UnaryCallSettings.Builder<ImportMappingRulesRequest, Operation>
+        importMappingRulesSettings() {
+      return importMappingRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importMappingRules. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportMappingRulesRequest, ConversionWorkspace, OperationMetadata>
+        importMappingRulesOperationSettings() {
+      return importMappingRulesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to convertConversionWorkspace. */
+    public UnaryCallSettings.Builder<ConvertConversionWorkspaceRequest, Operation>
+        convertConversionWorkspaceSettings() {
+      return convertConversionWorkspaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to convertConversionWorkspace. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ConvertConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        convertConversionWorkspaceOperationSettings() {
+      return convertConversionWorkspaceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to commitConversionWorkspace. */
+    public UnaryCallSettings.Builder<CommitConversionWorkspaceRequest, Operation>
+        commitConversionWorkspaceSettings() {
+      return commitConversionWorkspaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to commitConversionWorkspace. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            CommitConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        commitConversionWorkspaceOperationSettings() {
+      return commitConversionWorkspaceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rollbackConversionWorkspace. */
+    public UnaryCallSettings.Builder<RollbackConversionWorkspaceRequest, Operation>
+        rollbackConversionWorkspaceSettings() {
+      return rollbackConversionWorkspaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rollbackConversionWorkspace. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            RollbackConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        rollbackConversionWorkspaceOperationSettings() {
+      return rollbackConversionWorkspaceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to applyConversionWorkspace. */
+    public UnaryCallSettings.Builder<ApplyConversionWorkspaceRequest, Operation>
+        applyConversionWorkspaceSettings() {
+      return applyConversionWorkspaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to applyConversionWorkspace. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ApplyConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        applyConversionWorkspaceOperationSettings() {
+      return applyConversionWorkspaceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to describeDatabaseEntities. */
+    public PagedCallSettings.Builder<
+            DescribeDatabaseEntitiesRequest,
+            DescribeDatabaseEntitiesResponse,
+            DescribeDatabaseEntitiesPagedResponse>
+        describeDatabaseEntitiesSettings() {
+      return describeDatabaseEntitiesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchBackgroundJobs. */
+    public UnaryCallSettings.Builder<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>
+        searchBackgroundJobsSettings() {
+      return searchBackgroundJobsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to describeConversionWorkspaceRevisions.
+     */
+    public UnaryCallSettings.Builder<
+            DescribeConversionWorkspaceRevisionsRequest,
+            DescribeConversionWorkspaceRevisionsResponse>
+        describeConversionWorkspaceRevisionsSettings() {
+      return describeConversionWorkspaceRevisionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchStaticIps. */
+    public PagedCallSettings.Builder<
+            FetchStaticIpsRequest, FetchStaticIpsResponse, FetchStaticIpsPagedResponse>
+        fetchStaticIpsSettings() {
+      return fetchStaticIpsSettings;
     }
 
     @Override

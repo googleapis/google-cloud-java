@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.recommender.v1;
  *
  * <pre>
  * An insight along with the information used to derive the insight. The insight
- * may have associated recomendations as well.
+ * may have associated recommendations as well.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recommender.v1.Insight}
@@ -41,7 +41,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   private Insight() {
     name_ = "";
     description_ = "";
-    targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
     insightSubtype_ = "";
     category_ = 0;
     severity_ = 0;
@@ -53,11 +53,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Insight();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -135,6 +130,26 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>MANAGEABILITY = 4;</code>
      */
     MANAGEABILITY(4),
+    /**
+     *
+     *
+     * <pre>
+     * The insight is related to sustainability.
+     * </pre>
+     *
+     * <code>SUSTAINABILITY = 5;</code>
+     */
+    SUSTAINABILITY(5),
+    /**
+     *
+     *
+     * <pre>
+     * This insight is related to reliability.
+     * </pre>
+     *
+     * <code>RELIABILITY = 6;</code>
+     */
+    RELIABILITY(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -188,6 +203,26 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>MANAGEABILITY = 4;</code>
      */
     public static final int MANAGEABILITY_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The insight is related to sustainability.
+     * </pre>
+     *
+     * <code>SUSTAINABILITY = 5;</code>
+     */
+    public static final int SUSTAINABILITY_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * This insight is related to reliability.
+     * </pre>
+     *
+     * <code>RELIABILITY = 6;</code>
+     */
+    public static final int RELIABILITY_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -223,6 +258,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           return PERFORMANCE;
         case 4:
           return MANAGEABILITY;
+        case 5:
+          return SUSTAINABILITY;
+        case 6:
+          return RELIABILITY;
         default:
           return null;
       }
@@ -536,11 +575,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new RecommendationReference();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1249,7 +1283,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public static final int TARGET_RESOURCES_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList targetResources_;
+  private com.google.protobuf.LazyStringArrayList targetResources_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2072,7 +2107,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * An insight along with the information used to derive the insight. The insight
-   * may have associated recomendations as well.
+   * may have associated recommendations as well.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recommender.v1.Insight}
@@ -2109,8 +2144,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       description_ = "";
-      targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       insightSubtype_ = "";
       content_ = null;
       if (contentBuilder_ != null) {
@@ -2178,11 +2212,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.recommender.v1.Insight result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        targetResources_ = targetResources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.targetResources_ = targetResources_;
       if (associatedRecommendationsBuilder_ == null) {
         if (((bitField0_ & 0x00000800) != 0)) {
           associatedRecommendations_ =
@@ -2202,6 +2231,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        targetResources_.makeImmutable();
+        result.targetResources_ = targetResources_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.insightSubtype_ = insightSubtype_;
@@ -2291,7 +2324,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       if (!other.targetResources_.isEmpty()) {
         if (targetResources_.isEmpty()) {
           targetResources_ = other.targetResources_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureTargetResourcesIsMutable();
           targetResources_.addAll(other.targetResources_);
@@ -2697,14 +2730,14 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList targetResources_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList targetResources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTargetResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!targetResources_.isModifiable()) {
         targetResources_ = new com.google.protobuf.LazyStringArrayList(targetResources_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -2718,7 +2751,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the targetResources.
      */
     public com.google.protobuf.ProtocolStringList getTargetResourcesList() {
-      return targetResources_.getUnmodifiableView();
+      targetResources_.makeImmutable();
+      return targetResources_;
     }
     /**
      *
@@ -2783,6 +2817,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTargetResourcesIsMutable();
       targetResources_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2804,6 +2839,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTargetResourcesIsMutable();
       targetResources_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2822,6 +2858,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTargetResources(java.lang.Iterable<java.lang.String> values) {
       ensureTargetResourcesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetResources_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2837,8 +2874,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetResources() {
-      targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -2861,6 +2899,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTargetResourcesIsMutable();
       targetResources_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

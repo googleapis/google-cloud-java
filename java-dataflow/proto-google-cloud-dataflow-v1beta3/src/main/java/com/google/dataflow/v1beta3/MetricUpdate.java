@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MetricUpdate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -128,6 +123,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessageV3
    * Metric aggregation kind.  The possible metric aggregation kinds are
    * "Sum", "Max", "Min", "Mean", "Set", "And", "Or", and "Distribution".
    * The specified aggregation kind is case-insensitive.
+   *
    * If omitted, this is not an aggregated value but instead
    * a single metric sample value.
    * </pre>
@@ -155,6 +151,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessageV3
    * Metric aggregation kind.  The possible metric aggregation kinds are
    * "Sum", "Max", "Min", "Mean", "Set", "And", "Or", and "Distribution".
    * The specified aggregation kind is case-insensitive.
+   *
    * If omitted, this is not an aggregated value but instead
    * a single metric sample value.
    * </pre>
@@ -1444,6 +1441,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessageV3
      * Metric aggregation kind.  The possible metric aggregation kinds are
      * "Sum", "Max", "Min", "Mean", "Set", "And", "Or", and "Distribution".
      * The specified aggregation kind is case-insensitive.
+     *
      * If omitted, this is not an aggregated value but instead
      * a single metric sample value.
      * </pre>
@@ -1470,6 +1468,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessageV3
      * Metric aggregation kind.  The possible metric aggregation kinds are
      * "Sum", "Max", "Min", "Mean", "Set", "And", "Or", and "Distribution".
      * The specified aggregation kind is case-insensitive.
+     *
      * If omitted, this is not an aggregated value but instead
      * a single metric sample value.
      * </pre>
@@ -1496,6 +1495,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessageV3
      * Metric aggregation kind.  The possible metric aggregation kinds are
      * "Sum", "Max", "Min", "Mean", "Set", "And", "Or", and "Distribution".
      * The specified aggregation kind is case-insensitive.
+     *
      * If omitted, this is not an aggregated value but instead
      * a single metric sample value.
      * </pre>
@@ -1521,6 +1521,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessageV3
      * Metric aggregation kind.  The possible metric aggregation kinds are
      * "Sum", "Max", "Min", "Mean", "Set", "And", "Or", and "Distribution".
      * The specified aggregation kind is case-insensitive.
+     *
      * If omitted, this is not an aggregated value but instead
      * a single metric sample value.
      * </pre>
@@ -1542,6 +1543,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessageV3
      * Metric aggregation kind.  The possible metric aggregation kinds are
      * "Sum", "Max", "Min", "Mean", "Set", "And", "Or", and "Distribution".
      * The specified aggregation kind is case-insensitive.
+     *
      * If omitted, this is not an aggregated value but instead
      * a single metric sample value.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -149,6 +149,7 @@ public interface UpdateClusterRequestOrBuilder
    * interrupting jobs). Default timeout is 0 (for forceful decommission), and
    * the maximum allowed timeout is 1 day. (see JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *
@@ -170,6 +171,7 @@ public interface UpdateClusterRequestOrBuilder
    * interrupting jobs). Default timeout is 0 (for forceful decommission), and
    * the maximum allowed timeout is 1 day. (see JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *
@@ -191,6 +193,7 @@ public interface UpdateClusterRequestOrBuilder
    * interrupting jobs). Default timeout is 0 (for forceful decommission), and
    * the maximum allowed timeout is 1 day. (see JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *
@@ -209,6 +212,7 @@ public interface UpdateClusterRequestOrBuilder
    * in a cluster to 5, the `update_mask` parameter would be
    * specified as `config.worker_config.num_instances`,
    * and the `PATCH` request body would specify the new value, as follows:
+   *
    *     {
    *       "config":{
    *         "workerConfig":{
@@ -220,6 +224,7 @@ public interface UpdateClusterRequestOrBuilder
    * the `update_mask` parameter would be
    * `config.secondary_worker_config.num_instances`, and the `PATCH` request
    * body would be set as follows:
+   *
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -228,6 +233,7 @@ public interface UpdateClusterRequestOrBuilder
    *       }
    *     }
    * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+   *
    *  &lt;table&gt;
    *  &lt;tbody&gt;
    *  &lt;tr&gt;
@@ -269,6 +275,7 @@ public interface UpdateClusterRequestOrBuilder
    * in a cluster to 5, the `update_mask` parameter would be
    * specified as `config.worker_config.num_instances`,
    * and the `PATCH` request body would specify the new value, as follows:
+   *
    *     {
    *       "config":{
    *         "workerConfig":{
@@ -280,6 +287,7 @@ public interface UpdateClusterRequestOrBuilder
    * the `update_mask` parameter would be
    * `config.secondary_worker_config.num_instances`, and the `PATCH` request
    * body would be set as follows:
+   *
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -288,6 +296,7 @@ public interface UpdateClusterRequestOrBuilder
    *       }
    *     }
    * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+   *
    *  &lt;table&gt;
    *  &lt;tbody&gt;
    *  &lt;tr&gt;
@@ -329,6 +338,7 @@ public interface UpdateClusterRequestOrBuilder
    * in a cluster to 5, the `update_mask` parameter would be
    * specified as `config.worker_config.num_instances`,
    * and the `PATCH` request body would specify the new value, as follows:
+   *
    *     {
    *       "config":{
    *         "workerConfig":{
@@ -340,6 +350,7 @@ public interface UpdateClusterRequestOrBuilder
    * the `update_mask` parameter would be
    * `config.secondary_worker_config.num_instances`, and the `PATCH` request
    * body would be set as follows:
+   *
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -348,6 +359,7 @@ public interface UpdateClusterRequestOrBuilder
    *       }
    *     }
    * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+   *
    *  &lt;table&gt;
    *  &lt;tbody&gt;
    *  &lt;tr&gt;
@@ -389,8 +401,10 @@ public interface UpdateClusterRequestOrBuilder
    * with the same id, then the second request will be ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created
    * and stored in the backend is returned.
+   *
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
@@ -410,8 +424,10 @@ public interface UpdateClusterRequestOrBuilder
    * with the same id, then the second request will be ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created
    * and stored in the backend is returned.
+   *
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>

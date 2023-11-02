@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     description_ = "";
     timeZone_ = "";
-    subscriberEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    subscriberEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     state_ = 0;
     contactEmail_ = "";
     languageCode_ = "";
@@ -53,11 +53,6 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Case();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -787,7 +782,8 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
   public static final int SUBSCRIBER_EMAIL_ADDRESSES_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList subscriberEmailAddresses_;
+  private com.google.protobuf.LazyStringArrayList subscriberEmailAddresses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -991,6 +987,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user who created the case.
+   *
    * Note: The name and email will be obfuscated if the case was created by
    * Google Support.
    * </pre>
@@ -1008,6 +1005,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user who created the case.
+   *
    * Note: The name and email will be obfuscated if the case was created by
    * Google Support.
    * </pre>
@@ -1025,6 +1023,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user who created the case.
+   *
    * Note: The name and email will be obfuscated if the case was created by
    * Google Support.
    * </pre>
@@ -1140,6 +1139,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
    * BCP 47 language code (e.g., `"en"`, `"zh-CN"`, `"zh-TW"`, `"ja"`, `"ko"`).
    * If no language or an unsupported language is specified, this field defaults
    * to English (en).
+   *
    * Language selection during case creation may affect your available support
    * options. For a list of supported languages and their support working hours,
    * see: https://cloud.google.com/support/docs/language-working-hours
@@ -1169,6 +1169,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
    * BCP 47 language code (e.g., `"en"`, `"zh-CN"`, `"zh-TW"`, `"ja"`, `"ko"`).
    * If no language or an unsupported language is specified, this field defaults
    * to English (en).
+   *
    * Language selection during case creation may affect your available support
    * options. For a list of supported languages and their support working hours,
    * see: https://cloud.google.com/support/docs/language-working-hours
@@ -1586,8 +1587,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
         classificationBuilder_ = null;
       }
       timeZone_ = "";
-      subscriberEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      subscriberEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       state_ = 0;
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -1635,20 +1635,11 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.support.v2.Case buildPartial() {
       com.google.cloud.support.v2.Case result = new com.google.cloud.support.v2.Case(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.support.v2.Case result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        subscriberEmailAddresses_ = subscriberEmailAddresses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.subscriberEmailAddresses_ = subscriberEmailAddresses_;
     }
 
     private void buildPartial0(com.google.cloud.support.v2.Case result) {
@@ -1668,6 +1659,10 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.timeZone_ = timeZone_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        subscriberEmailAddresses_.makeImmutable();
+        result.subscriberEmailAddresses_ = subscriberEmailAddresses_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.state_ = state_;
@@ -1769,7 +1764,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       if (!other.subscriberEmailAddresses_.isEmpty()) {
         if (subscriberEmailAddresses_.isEmpty()) {
           subscriberEmailAddresses_ = other.subscriberEmailAddresses_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureSubscriberEmailAddressesIsMutable();
           subscriberEmailAddresses_.addAll(other.subscriberEmailAddresses_);
@@ -2562,15 +2557,15 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList subscriberEmailAddresses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList subscriberEmailAddresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSubscriberEmailAddressesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!subscriberEmailAddresses_.isModifiable()) {
         subscriberEmailAddresses_ =
             new com.google.protobuf.LazyStringArrayList(subscriberEmailAddresses_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2584,7 +2579,8 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the subscriberEmailAddresses.
      */
     public com.google.protobuf.ProtocolStringList getSubscriberEmailAddressesList() {
-      return subscriberEmailAddresses_.getUnmodifiableView();
+      subscriberEmailAddresses_.makeImmutable();
+      return subscriberEmailAddresses_;
     }
     /**
      *
@@ -2649,6 +2645,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSubscriberEmailAddressesIsMutable();
       subscriberEmailAddresses_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2670,6 +2667,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSubscriberEmailAddressesIsMutable();
       subscriberEmailAddresses_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2688,6 +2686,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSubscriberEmailAddresses(java.lang.Iterable<java.lang.String> values) {
       ensureSubscriberEmailAddressesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subscriberEmailAddresses_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2703,8 +2702,9 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubscriberEmailAddresses() {
-      subscriberEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      subscriberEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2727,6 +2727,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSubscriberEmailAddressesIsMutable();
       subscriberEmailAddresses_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3244,6 +3245,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user who created the case.
+     *
      * Note: The name and email will be obfuscated if the case was created by
      * Google Support.
      * </pre>
@@ -3260,6 +3262,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user who created the case.
+     *
      * Note: The name and email will be obfuscated if the case was created by
      * Google Support.
      * </pre>
@@ -3280,6 +3283,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user who created the case.
+     *
      * Note: The name and email will be obfuscated if the case was created by
      * Google Support.
      * </pre>
@@ -3304,6 +3308,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user who created the case.
+     *
      * Note: The name and email will be obfuscated if the case was created by
      * Google Support.
      * </pre>
@@ -3325,6 +3330,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user who created the case.
+     *
      * Note: The name and email will be obfuscated if the case was created by
      * Google Support.
      * </pre>
@@ -3352,6 +3358,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user who created the case.
+     *
      * Note: The name and email will be obfuscated if the case was created by
      * Google Support.
      * </pre>
@@ -3373,6 +3380,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user who created the case.
+     *
      * Note: The name and email will be obfuscated if the case was created by
      * Google Support.
      * </pre>
@@ -3389,6 +3397,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user who created the case.
+     *
      * Note: The name and email will be obfuscated if the case was created by
      * Google Support.
      * </pre>
@@ -3407,6 +3416,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user who created the case.
+     *
      * Note: The name and email will be obfuscated if the case was created by
      * Google Support.
      * </pre>
@@ -3664,6 +3674,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * BCP 47 language code (e.g., `"en"`, `"zh-CN"`, `"zh-TW"`, `"ja"`, `"ko"`).
      * If no language or an unsupported language is specified, this field defaults
      * to English (en).
+     *
      * Language selection during case creation may affect your available support
      * options. For a list of supported languages and their support working hours,
      * see: https://cloud.google.com/support/docs/language-working-hours
@@ -3692,6 +3703,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * BCP 47 language code (e.g., `"en"`, `"zh-CN"`, `"zh-TW"`, `"ja"`, `"ko"`).
      * If no language or an unsupported language is specified, this field defaults
      * to English (en).
+     *
      * Language selection during case creation may affect your available support
      * options. For a list of supported languages and their support working hours,
      * see: https://cloud.google.com/support/docs/language-working-hours
@@ -3720,6 +3732,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * BCP 47 language code (e.g., `"en"`, `"zh-CN"`, `"zh-TW"`, `"ja"`, `"ko"`).
      * If no language or an unsupported language is specified, this field defaults
      * to English (en).
+     *
      * Language selection during case creation may affect your available support
      * options. For a list of supported languages and their support working hours,
      * see: https://cloud.google.com/support/docs/language-working-hours
@@ -3747,6 +3760,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * BCP 47 language code (e.g., `"en"`, `"zh-CN"`, `"zh-TW"`, `"ja"`, `"ko"`).
      * If no language or an unsupported language is specified, this field defaults
      * to English (en).
+     *
      * Language selection during case creation may affect your available support
      * options. For a list of supported languages and their support working hours,
      * see: https://cloud.google.com/support/docs/language-working-hours
@@ -3770,6 +3784,7 @@ public final class Case extends com.google.protobuf.GeneratedMessageV3
      * BCP 47 language code (e.g., `"en"`, `"zh-CN"`, `"zh-TW"`, `"ja"`, `"ko"`).
      * If no language or an unsupported language is specified, this field defaults
      * to English (en).
+     *
      * Language selection during case creation may affect your available support
      * options. For a list of supported languages and their support working hours,
      * see: https://cloud.google.com/support/docs/language-working-hours

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.gkebackup.v1;
  *
  * <pre>
  * Configuration of a restore.
- * Next id: 9
+ * Next id: 12
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig}
@@ -43,17 +43,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     clusterResourceConflictPolicy_ = 0;
     namespacedResourceRestoreMode_ = 0;
     substitutionRules_ = java.util.Collections.emptyList();
+    transformationRules_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RestoreConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -75,7 +71,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines how volume data should be restored
+   * Defines how volume data should be restored.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy}
@@ -95,7 +91,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For each PVC to be restored, will create a new underlying volume (and PV)
+     * For each PVC to be restored, create a new underlying volume and PV
      * from the corresponding VolumeBackup contained within the Backup.
      * </pre>
      *
@@ -107,7 +103,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For each PVC to be restored, attempt to reuse the original PV contained
-     * in the Backup (with its original underlying volume).  Note that option
+     * in the Backup (with its original underlying volume). This option
      * is likely only usable when restoring a workload to its original cluster.
      * </pre>
      *
@@ -118,8 +114,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For each PVC to be restored, PVCs will be created without any particular
-     * action to restore data.  In this case, the normal Kubernetes provisioning
+     * For each PVC to be restored, create PVC without any particular
+     * action to restore data. In this case, the normal Kubernetes provisioning
      * logic would kick in, and this would likely result in either dynamically
      * provisioning blank PVs or binding to statically provisioned PVs.
      * </pre>
@@ -144,7 +140,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For each PVC to be restored, will create a new underlying volume (and PV)
+     * For each PVC to be restored, create a new underlying volume and PV
      * from the corresponding VolumeBackup contained within the Backup.
      * </pre>
      *
@@ -156,7 +152,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For each PVC to be restored, attempt to reuse the original PV contained
-     * in the Backup (with its original underlying volume).  Note that option
+     * in the Backup (with its original underlying volume). This option
      * is likely only usable when restoring a workload to its original cluster.
      * </pre>
      *
@@ -167,8 +163,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For each PVC to be restored, PVCs will be created without any particular
-     * action to restore data.  In this case, the normal Kubernetes provisioning
+     * For each PVC to be restored, create PVC without any particular
+     * action to restore data. In this case, the normal Kubernetes provisioning
      * logic would kick in, and this would likely result in either dynamically
      * provisioning blank PVs or binding to statically provisioned PVs.
      * </pre>
@@ -302,8 +298,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Delete the existing version before re-creating it from the Backup.
-     * Note that this is a dangerous option which could cause unintentional
-     * data loss if used inappropriately - for example, deleting a CRD will
+     * This is a dangerous option which could cause unintentional
+     * data loss if used inappropriately. For example, deleting a CRD will
      * cause Kubernetes to delete all CRs of that type.
      * </pre>
      *
@@ -339,8 +335,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Delete the existing version before re-creating it from the Backup.
-     * Note that this is a dangerous option which could cause unintentional
-     * data loss if used inappropriately - for example, deleting a CRD will
+     * This is a dangerous option which could cause unintentional
+     * data loss if used inappropriately. For example, deleting a CRD will
      * cause Kubernetes to delete all CRs of that type.
      * </pre>
      *
@@ -706,11 +702,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GroupKind();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1509,10 +1500,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of "types" of cluster-scoped resources to be restored from the
-     * Backup.  An empty list means that NO cluster-scoped resources will be
-     * restored. Note that Namespaces and PersistentVolume restoration is
-     * handled separately and is not governed by this field.
+     * A list of cluster-scoped resource group kinds to restore from the
+     * backup. If specified, only the selected resources will be restored.
+     * Mutually exclusive to any other field in the message.
      * </pre>
      *
      * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -1524,10 +1514,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of "types" of cluster-scoped resources to be restored from the
-     * Backup.  An empty list means that NO cluster-scoped resources will be
-     * restored. Note that Namespaces and PersistentVolume restoration is
-     * handled separately and is not governed by this field.
+     * A list of cluster-scoped resource group kinds to restore from the
+     * backup. If specified, only the selected resources will be restored.
+     * Mutually exclusive to any other field in the message.
      * </pre>
      *
      * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -1538,10 +1527,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of "types" of cluster-scoped resources to be restored from the
-     * Backup.  An empty list means that NO cluster-scoped resources will be
-     * restored. Note that Namespaces and PersistentVolume restoration is
-     * handled separately and is not governed by this field.
+     * A list of cluster-scoped resource group kinds to restore from the
+     * backup. If specified, only the selected resources will be restored.
+     * Mutually exclusive to any other field in the message.
      * </pre>
      *
      * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -1552,10 +1540,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of "types" of cluster-scoped resources to be restored from the
-     * Backup.  An empty list means that NO cluster-scoped resources will be
-     * restored. Note that Namespaces and PersistentVolume restoration is
-     * handled separately and is not governed by this field.
+     * A list of cluster-scoped resource group kinds to restore from the
+     * backup. If specified, only the selected resources will be restored.
+     * Mutually exclusive to any other field in the message.
      * </pre>
      *
      * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -1567,10 +1554,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of "types" of cluster-scoped resources to be restored from the
-     * Backup.  An empty list means that NO cluster-scoped resources will be
-     * restored. Note that Namespaces and PersistentVolume restoration is
-     * handled separately and is not governed by this field.
+     * A list of cluster-scoped resource group kinds to restore from the
+     * backup. If specified, only the selected resources will be restored.
+     * Mutually exclusive to any other field in the message.
      * </pre>
      *
      * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -1578,12 +1564,132 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getSelectedGroupKindsOrBuilder(
         int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of cluster-scoped resource group kinds to NOT restore from the
+     * backup. If specified, all valid cluster-scoped resources will be
+     * restored except for those specified in the list.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * </code>
+     */
+    java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
+        getExcludedGroupKindsList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of cluster-scoped resource group kinds to NOT restore from the
+     * backup. If specified, all valid cluster-scoped resources will be
+     * restored except for those specified in the list.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getExcludedGroupKinds(int index);
+    /**
+     *
+     *
+     * <pre>
+     * A list of cluster-scoped resource group kinds to NOT restore from the
+     * backup. If specified, all valid cluster-scoped resources will be
+     * restored except for those specified in the list.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * </code>
+     */
+    int getExcludedGroupKindsCount();
+    /**
+     *
+     *
+     * <pre>
+     * A list of cluster-scoped resource group kinds to NOT restore from the
+     * backup. If specified, all valid cluster-scoped resources will be
+     * restored except for those specified in the list.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+        getExcludedGroupKindsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of cluster-scoped resource group kinds to NOT restore from the
+     * backup. If specified, all valid cluster-scoped resources will be
+     * restored except for those specified in the list.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getExcludedGroupKindsOrBuilder(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * If True, all valid cluster-scoped resources will be restored.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>bool all_group_kinds = 3;</code>
+     *
+     * @return The allGroupKinds.
+     */
+    boolean getAllGroupKinds();
+
+    /**
+     *
+     *
+     * <pre>
+     * If True, no cluster-scoped resources will be restored.
+     * This has the same restore scope as if the message is not defined.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>bool no_group_kinds = 4;</code>
+     *
+     * @return The noGroupKinds.
+     */
+    boolean getNoGroupKinds();
   }
   /**
    *
    *
    * <pre>
-   * Identifies the cluster-scoped resources to restore from the Backup.
+   * Defines the scope of cluster-scoped resources to restore.
+   *
+   * Some group kinds are not reasonable choices for a restore, and will cause
+   * an error if selected here. Any scope selection that would restore
+   * "all valid" resources automatically excludes these group kinds.
+   * - gkebackup.gke.io/BackupJob
+   * - gkebackup.gke.io/RestoreJob
+   * - metrics.k8s.io/NodeMetrics
+   * - migration.k8s.io/StorageState
+   * - migration.k8s.io/StorageVersionMigration
+   * - Node
+   * - snapshot.storage.k8s.io/VolumeSnapshotContent
+   * - storage.k8s.io/CSINode
+   *
+   * Some group kinds are driven by restore configuration elsewhere,
+   * and will cause an error if selected here.
+   * - Namespace
+   * - PersistentVolume
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope}
@@ -1601,17 +1707,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     private ClusterResourceRestoreScope() {
       selectedGroupKinds_ = java.util.Collections.emptyList();
+      excludedGroupKinds_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ClusterResourceRestoreScope();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1639,10 +1741,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of "types" of cluster-scoped resources to be restored from the
-     * Backup.  An empty list means that NO cluster-scoped resources will be
-     * restored. Note that Namespaces and PersistentVolume restoration is
-     * handled separately and is not governed by this field.
+     * A list of cluster-scoped resource group kinds to restore from the
+     * backup. If specified, only the selected resources will be restored.
+     * Mutually exclusive to any other field in the message.
      * </pre>
      *
      * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -1657,10 +1758,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of "types" of cluster-scoped resources to be restored from the
-     * Backup.  An empty list means that NO cluster-scoped resources will be
-     * restored. Note that Namespaces and PersistentVolume restoration is
-     * handled separately and is not governed by this field.
+     * A list of cluster-scoped resource group kinds to restore from the
+     * backup. If specified, only the selected resources will be restored.
+     * Mutually exclusive to any other field in the message.
      * </pre>
      *
      * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -1675,10 +1775,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of "types" of cluster-scoped resources to be restored from the
-     * Backup.  An empty list means that NO cluster-scoped resources will be
-     * restored. Note that Namespaces and PersistentVolume restoration is
-     * handled separately and is not governed by this field.
+     * A list of cluster-scoped resource group kinds to restore from the
+     * backup. If specified, only the selected resources will be restored.
+     * Mutually exclusive to any other field in the message.
      * </pre>
      *
      * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -1692,10 +1791,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of "types" of cluster-scoped resources to be restored from the
-     * Backup.  An empty list means that NO cluster-scoped resources will be
-     * restored. Note that Namespaces and PersistentVolume restoration is
-     * handled separately and is not governed by this field.
+     * A list of cluster-scoped resource group kinds to restore from the
+     * backup. If specified, only the selected resources will be restored.
+     * Mutually exclusive to any other field in the message.
      * </pre>
      *
      * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -1709,10 +1807,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of "types" of cluster-scoped resources to be restored from the
-     * Backup.  An empty list means that NO cluster-scoped resources will be
-     * restored. Note that Namespaces and PersistentVolume restoration is
-     * handled separately and is not governed by this field.
+     * A list of cluster-scoped resource group kinds to restore from the
+     * backup. If specified, only the selected resources will be restored.
+     * Mutually exclusive to any other field in the message.
      * </pre>
      *
      * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -1722,6 +1819,139 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder
         getSelectedGroupKindsOrBuilder(int index) {
       return selectedGroupKinds_.get(index);
+    }
+
+    public static final int EXCLUDED_GROUP_KINDS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
+        excludedGroupKinds_;
+    /**
+     *
+     *
+     * <pre>
+     * A list of cluster-scoped resource group kinds to NOT restore from the
+     * backup. If specified, all valid cluster-scoped resources will be
+     * restored except for those specified in the list.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
+        getExcludedGroupKindsList() {
+      return excludedGroupKinds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of cluster-scoped resource group kinds to NOT restore from the
+     * backup. If specified, all valid cluster-scoped resources will be
+     * restored except for those specified in the list.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+        getExcludedGroupKindsOrBuilderList() {
+      return excludedGroupKinds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of cluster-scoped resource group kinds to NOT restore from the
+     * backup. If specified, all valid cluster-scoped resources will be
+     * restored except for those specified in the list.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public int getExcludedGroupKindsCount() {
+      return excludedGroupKinds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of cluster-scoped resource group kinds to NOT restore from the
+     * backup. If specified, all valid cluster-scoped resources will be
+     * restored except for those specified in the list.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getExcludedGroupKinds(int index) {
+      return excludedGroupKinds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of cluster-scoped resource group kinds to NOT restore from the
+     * backup. If specified, all valid cluster-scoped resources will be
+     * restored except for those specified in the list.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder
+        getExcludedGroupKindsOrBuilder(int index) {
+      return excludedGroupKinds_.get(index);
+    }
+
+    public static final int ALL_GROUP_KINDS_FIELD_NUMBER = 3;
+    private boolean allGroupKinds_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * If True, all valid cluster-scoped resources will be restored.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>bool all_group_kinds = 3;</code>
+     *
+     * @return The allGroupKinds.
+     */
+    @java.lang.Override
+    public boolean getAllGroupKinds() {
+      return allGroupKinds_;
+    }
+
+    public static final int NO_GROUP_KINDS_FIELD_NUMBER = 4;
+    private boolean noGroupKinds_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * If True, no cluster-scoped resources will be restored.
+     * This has the same restore scope as if the message is not defined.
+     * Mutually exclusive to any other field in the message.
+     * </pre>
+     *
+     * <code>bool no_group_kinds = 4;</code>
+     *
+     * @return The noGroupKinds.
+     */
+    @java.lang.Override
+    public boolean getNoGroupKinds() {
+      return noGroupKinds_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1741,6 +1971,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < selectedGroupKinds_.size(); i++) {
         output.writeMessage(1, selectedGroupKinds_.get(i));
       }
+      for (int i = 0; i < excludedGroupKinds_.size(); i++) {
+        output.writeMessage(2, excludedGroupKinds_.get(i));
+      }
+      if (allGroupKinds_ != false) {
+        output.writeBool(3, allGroupKinds_);
+      }
+      if (noGroupKinds_ != false) {
+        output.writeBool(4, noGroupKinds_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1753,6 +1992,16 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < selectedGroupKinds_.size(); i++) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(1, selectedGroupKinds_.get(i));
+      }
+      for (int i = 0; i < excludedGroupKinds_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, excludedGroupKinds_.get(i));
+      }
+      if (allGroupKinds_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, allGroupKinds_);
+      }
+      if (noGroupKinds_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, noGroupKinds_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1772,6 +2021,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope) obj;
 
       if (!getSelectedGroupKindsList().equals(other.getSelectedGroupKindsList())) return false;
+      if (!getExcludedGroupKindsList().equals(other.getExcludedGroupKindsList())) return false;
+      if (getAllGroupKinds() != other.getAllGroupKinds()) return false;
+      if (getNoGroupKinds() != other.getNoGroupKinds()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1787,6 +2039,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + SELECTED_GROUP_KINDS_FIELD_NUMBER;
         hash = (53 * hash) + getSelectedGroupKindsList().hashCode();
       }
+      if (getExcludedGroupKindsCount() > 0) {
+        hash = (37 * hash) + EXCLUDED_GROUP_KINDS_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludedGroupKindsList().hashCode();
+      }
+      hash = (37 * hash) + ALL_GROUP_KINDS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllGroupKinds());
+      hash = (37 * hash) + NO_GROUP_KINDS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNoGroupKinds());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1894,7 +2154,24 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the cluster-scoped resources to restore from the Backup.
+     * Defines the scope of cluster-scoped resources to restore.
+     *
+     * Some group kinds are not reasonable choices for a restore, and will cause
+     * an error if selected here. Any scope selection that would restore
+     * "all valid" resources automatically excludes these group kinds.
+     * - gkebackup.gke.io/BackupJob
+     * - gkebackup.gke.io/RestoreJob
+     * - metrics.k8s.io/NodeMetrics
+     * - migration.k8s.io/StorageState
+     * - migration.k8s.io/StorageVersionMigration
+     * - Node
+     * - snapshot.storage.k8s.io/VolumeSnapshotContent
+     * - storage.k8s.io/CSINode
+     *
+     * Some group kinds are driven by restore configuration elsewhere,
+     * and will cause an error if selected here.
+     * - Namespace
+     * - PersistentVolume
      * </pre>
      *
      * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope}
@@ -1939,6 +2216,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           selectedGroupKindsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        if (excludedGroupKindsBuilder_ == null) {
+          excludedGroupKinds_ = java.util.Collections.emptyList();
+        } else {
+          excludedGroupKinds_ = null;
+          excludedGroupKindsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        allGroupKinds_ = false;
+        noGroupKinds_ = false;
         return this;
       }
 
@@ -1989,11 +2275,26 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.selectedGroupKinds_ = selectedGroupKindsBuilder_.build();
         }
+        if (excludedGroupKindsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            excludedGroupKinds_ = java.util.Collections.unmodifiableList(excludedGroupKinds_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.excludedGroupKinds_ = excludedGroupKinds_;
+        } else {
+          result.excludedGroupKinds_ = excludedGroupKindsBuilder_.build();
+        }
       }
 
       private void buildPartial0(
           com.google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.allGroupKinds_ = allGroupKinds_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.noGroupKinds_ = noGroupKinds_;
+        }
       }
 
       @java.lang.Override
@@ -2075,6 +2376,39 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
+        if (excludedGroupKindsBuilder_ == null) {
+          if (!other.excludedGroupKinds_.isEmpty()) {
+            if (excludedGroupKinds_.isEmpty()) {
+              excludedGroupKinds_ = other.excludedGroupKinds_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureExcludedGroupKindsIsMutable();
+              excludedGroupKinds_.addAll(other.excludedGroupKinds_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.excludedGroupKinds_.isEmpty()) {
+            if (excludedGroupKindsBuilder_.isEmpty()) {
+              excludedGroupKindsBuilder_.dispose();
+              excludedGroupKindsBuilder_ = null;
+              excludedGroupKinds_ = other.excludedGroupKinds_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              excludedGroupKindsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getExcludedGroupKindsFieldBuilder()
+                      : null;
+            } else {
+              excludedGroupKindsBuilder_.addAllMessages(other.excludedGroupKinds_);
+            }
+          }
+        }
+        if (other.getAllGroupKinds() != false) {
+          setAllGroupKinds(other.getAllGroupKinds());
+        }
+        if (other.getNoGroupKinds() != false) {
+          setNoGroupKinds(other.getNoGroupKinds());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2115,6 +2449,32 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                   }
                   break;
                 } // case 10
+              case 18:
+                {
+                  com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind m =
+                      input.readMessage(
+                          com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.parser(),
+                          extensionRegistry);
+                  if (excludedGroupKindsBuilder_ == null) {
+                    ensureExcludedGroupKindsIsMutable();
+                    excludedGroupKinds_.add(m);
+                  } else {
+                    excludedGroupKindsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 24:
+                {
+                  allGroupKinds_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  noGroupKinds_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2156,10 +2516,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2177,10 +2536,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2197,10 +2555,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2218,10 +2575,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2245,10 +2601,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2270,10 +2625,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2297,10 +2651,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2324,10 +2677,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2348,10 +2700,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2373,10 +2724,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2398,10 +2748,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2421,10 +2770,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2444,10 +2792,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2461,10 +2808,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2482,10 +2828,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2504,10 +2849,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2522,10 +2866,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2541,10 +2884,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of "types" of cluster-scoped resources to be restored from the
-       * Backup.  An empty list means that NO cluster-scoped resources will be
-       * restored. Note that Namespaces and PersistentVolume restoration is
-       * handled separately and is not governed by this field.
+       * A list of cluster-scoped resource group kinds to restore from the
+       * backup. If specified, only the selected resources will be restored.
+       * Mutually exclusive to any other field in the message.
        * </pre>
        *
        * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
@@ -2573,6 +2915,562 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           selectedGroupKinds_ = null;
         }
         return selectedGroupKindsBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
+          excludedGroupKinds_ = java.util.Collections.emptyList();
+
+      private void ensureExcludedGroupKindsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          excludedGroupKinds_ =
+              new java.util.ArrayList<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>(
+                  excludedGroupKinds_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+          excludedGroupKindsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
+          getExcludedGroupKindsList() {
+        if (excludedGroupKindsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(excludedGroupKinds_);
+        } else {
+          return excludedGroupKindsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public int getExcludedGroupKindsCount() {
+        if (excludedGroupKindsBuilder_ == null) {
+          return excludedGroupKinds_.size();
+        } else {
+          return excludedGroupKindsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getExcludedGroupKinds(
+          int index) {
+        if (excludedGroupKindsBuilder_ == null) {
+          return excludedGroupKinds_.get(index);
+        } else {
+          return excludedGroupKindsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public Builder setExcludedGroupKinds(
+          int index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
+        if (excludedGroupKindsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludedGroupKindsIsMutable();
+          excludedGroupKinds_.set(index, value);
+          onChanged();
+        } else {
+          excludedGroupKindsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public Builder setExcludedGroupKinds(
+          int index,
+          com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder builderForValue) {
+        if (excludedGroupKindsBuilder_ == null) {
+          ensureExcludedGroupKindsIsMutable();
+          excludedGroupKinds_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          excludedGroupKindsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public Builder addExcludedGroupKinds(
+          com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
+        if (excludedGroupKindsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludedGroupKindsIsMutable();
+          excludedGroupKinds_.add(value);
+          onChanged();
+        } else {
+          excludedGroupKindsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public Builder addExcludedGroupKinds(
+          int index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
+        if (excludedGroupKindsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludedGroupKindsIsMutable();
+          excludedGroupKinds_.add(index, value);
+          onChanged();
+        } else {
+          excludedGroupKindsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public Builder addExcludedGroupKinds(
+          com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder builderForValue) {
+        if (excludedGroupKindsBuilder_ == null) {
+          ensureExcludedGroupKindsIsMutable();
+          excludedGroupKinds_.add(builderForValue.build());
+          onChanged();
+        } else {
+          excludedGroupKindsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public Builder addExcludedGroupKinds(
+          int index,
+          com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder builderForValue) {
+        if (excludedGroupKindsBuilder_ == null) {
+          ensureExcludedGroupKindsIsMutable();
+          excludedGroupKinds_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          excludedGroupKindsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public Builder addAllExcludedGroupKinds(
+          java.lang.Iterable<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
+              values) {
+        if (excludedGroupKindsBuilder_ == null) {
+          ensureExcludedGroupKindsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedGroupKinds_);
+          onChanged();
+        } else {
+          excludedGroupKindsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public Builder clearExcludedGroupKinds() {
+        if (excludedGroupKindsBuilder_ == null) {
+          excludedGroupKinds_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          excludedGroupKindsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public Builder removeExcludedGroupKinds(int index) {
+        if (excludedGroupKindsBuilder_ == null) {
+          ensureExcludedGroupKindsIsMutable();
+          excludedGroupKinds_.remove(index);
+          onChanged();
+        } else {
+          excludedGroupKindsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
+          getExcludedGroupKindsBuilder(int index) {
+        return getExcludedGroupKindsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder
+          getExcludedGroupKindsOrBuilder(int index) {
+        if (excludedGroupKindsBuilder_ == null) {
+          return excludedGroupKinds_.get(index);
+        } else {
+          return excludedGroupKindsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+          getExcludedGroupKindsOrBuilderList() {
+        if (excludedGroupKindsBuilder_ != null) {
+          return excludedGroupKindsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(excludedGroupKinds_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
+          addExcludedGroupKindsBuilder() {
+        return getExcludedGroupKindsFieldBuilder()
+            .addBuilder(com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
+          addExcludedGroupKindsBuilder(int index) {
+        return getExcludedGroupKindsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of cluster-scoped resource group kinds to NOT restore from the
+       * backup. If specified, all valid cluster-scoped resources will be
+       * restored except for those specified in the list.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder>
+          getExcludedGroupKindsBuilderList() {
+        return getExcludedGroupKindsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+          getExcludedGroupKindsFieldBuilder() {
+        if (excludedGroupKindsBuilder_ == null) {
+          excludedGroupKindsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+                  com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+                  com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>(
+                  excludedGroupKinds_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          excludedGroupKinds_ = null;
+        }
+        return excludedGroupKindsBuilder_;
+      }
+
+      private boolean allGroupKinds_;
+      /**
+       *
+       *
+       * <pre>
+       * If True, all valid cluster-scoped resources will be restored.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>bool all_group_kinds = 3;</code>
+       *
+       * @return The allGroupKinds.
+       */
+      @java.lang.Override
+      public boolean getAllGroupKinds() {
+        return allGroupKinds_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If True, all valid cluster-scoped resources will be restored.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>bool all_group_kinds = 3;</code>
+       *
+       * @param value The allGroupKinds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllGroupKinds(boolean value) {
+
+        allGroupKinds_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If True, all valid cluster-scoped resources will be restored.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>bool all_group_kinds = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllGroupKinds() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        allGroupKinds_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean noGroupKinds_;
+      /**
+       *
+       *
+       * <pre>
+       * If True, no cluster-scoped resources will be restored.
+       * This has the same restore scope as if the message is not defined.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>bool no_group_kinds = 4;</code>
+       *
+       * @return The noGroupKinds.
+       */
+      @java.lang.Override
+      public boolean getNoGroupKinds() {
+        return noGroupKinds_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If True, no cluster-scoped resources will be restored.
+       * This has the same restore scope as if the message is not defined.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>bool no_group_kinds = 4;</code>
+       *
+       * @param value The noGroupKinds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNoGroupKinds(boolean value) {
+
+        noGroupKinds_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If True, no cluster-scoped resources will be restored.
+       * This has the same restore scope as if the message is not defined.
+       * Mutually exclusive to any other field in the message.
+       * </pre>
+       *
+       * <code>bool no_group_kinds = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNoGroupKinds() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        noGroupKinds_ = false;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -2850,7 +3748,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * value does not match this expression. If this field is NOT specified,
      * then ALL fields matched by the target_json_path expression will undergo
      * substitution. Note that an empty (e.g., "", rather than unspecified)
-     * value for for this field will only match empty fields.
+     * value for this field will only match empty fields.
      * </pre>
      *
      * <code>string original_value_pattern = 4;</code>
@@ -2870,7 +3768,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * value does not match this expression. If this field is NOT specified,
      * then ALL fields matched by the target_json_path expression will undergo
      * substitution. Note that an empty (e.g., "", rather than unspecified)
-     * value for for this field will only match empty fields.
+     * value for this field will only match empty fields.
      * </pre>
      *
      * <code>string original_value_pattern = 4;</code>
@@ -2930,7 +3828,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private SubstitutionRule() {
-      targetNamespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      targetNamespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
       targetGroupKinds_ = java.util.Collections.emptyList();
       targetJsonPath_ = "";
       originalValuePattern_ = "";
@@ -2941,11 +3839,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SubstitutionRule();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2966,7 +3859,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public static final int TARGET_NAMESPACES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList targetNamespaces_;
+    private com.google.protobuf.LazyStringArrayList targetNamespaces_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3227,7 +4121,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * value does not match this expression. If this field is NOT specified,
      * then ALL fields matched by the target_json_path expression will undergo
      * substitution. Note that an empty (e.g., "", rather than unspecified)
-     * value for for this field will only match empty fields.
+     * value for this field will only match empty fields.
      * </pre>
      *
      * <code>string original_value_pattern = 4;</code>
@@ -3258,7 +4152,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * value does not match this expression. If this field is NOT specified,
      * then ALL fields matched by the target_json_path expression will undergo
      * substitution. Note that an empty (e.g., "", rather than unspecified)
-     * value for for this field will only match empty fields.
+     * value for this field will only match empty fields.
      * </pre>
      *
      * <code>string original_value_pattern = 4;</code>
@@ -3582,8 +4476,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        targetNamespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        targetNamespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
         if (targetGroupKindsBuilder_ == null) {
           targetGroupKinds_ = java.util.Collections.emptyList();
         } else {
@@ -3632,11 +4525,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartialRepeatedFields(
           com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          targetNamespaces_ = targetNamespaces_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.targetNamespaces_ = targetNamespaces_;
         if (targetGroupKindsBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             targetGroupKinds_ = java.util.Collections.unmodifiableList(targetGroupKinds_);
@@ -3651,6 +4539,10 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       private void buildPartial0(
           com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          targetNamespaces_.makeImmutable();
+          result.targetNamespaces_ = targetNamespaces_;
+        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.targetJsonPath_ = targetJsonPath_;
         }
@@ -3714,7 +4606,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.targetNamespaces_.isEmpty()) {
           if (targetNamespaces_.isEmpty()) {
             targetNamespaces_ = other.targetNamespaces_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureTargetNamespacesIsMutable();
             targetNamespaces_.addAll(other.targetNamespaces_);
@@ -3847,14 +4739,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList targetNamespaces_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList targetNamespaces_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureTargetNamespacesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!targetNamespaces_.isModifiable()) {
           targetNamespaces_ = new com.google.protobuf.LazyStringArrayList(targetNamespaces_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -3874,7 +4766,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the targetNamespaces.
        */
       public com.google.protobuf.ProtocolStringList getTargetNamespacesList() {
-        return targetNamespaces_.getUnmodifiableView();
+        targetNamespaces_.makeImmutable();
+        return targetNamespaces_;
       }
       /**
        *
@@ -3963,6 +4856,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         ensureTargetNamespacesIsMutable();
         targetNamespaces_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3990,6 +4884,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         ensureTargetNamespacesIsMutable();
         targetNamespaces_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4014,6 +4909,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllTargetNamespaces(java.lang.Iterable<java.lang.String> values) {
         ensureTargetNamespacesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetNamespaces_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4035,8 +4931,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTargetNamespaces() {
-        targetNamespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        targetNamespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -4065,6 +4962,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureTargetNamespacesIsMutable();
         targetNamespaces_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4676,7 +5574,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * value does not match this expression. If this field is NOT specified,
        * then ALL fields matched by the target_json_path expression will undergo
        * substitution. Note that an empty (e.g., "", rather than unspecified)
-       * value for for this field will only match empty fields.
+       * value for this field will only match empty fields.
        * </pre>
        *
        * <code>string original_value_pattern = 4;</code>
@@ -4706,7 +5604,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * value does not match this expression. If this field is NOT specified,
        * then ALL fields matched by the target_json_path expression will undergo
        * substitution. Note that an empty (e.g., "", rather than unspecified)
-       * value for for this field will only match empty fields.
+       * value for this field will only match empty fields.
        * </pre>
        *
        * <code>string original_value_pattern = 4;</code>
@@ -4736,7 +5634,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * value does not match this expression. If this field is NOT specified,
        * then ALL fields matched by the target_json_path expression will undergo
        * substitution. Note that an empty (e.g., "", rather than unspecified)
-       * value for for this field will only match empty fields.
+       * value for this field will only match empty fields.
        * </pre>
        *
        * <code>string original_value_pattern = 4;</code>
@@ -4765,7 +5663,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * value does not match this expression. If this field is NOT specified,
        * then ALL fields matched by the target_json_path expression will undergo
        * substitution. Note that an empty (e.g., "", rather than unspecified)
-       * value for for this field will only match empty fields.
+       * value for this field will only match empty fields.
        * </pre>
        *
        * <code>string original_value_pattern = 4;</code>
@@ -4790,7 +5688,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * value does not match this expression. If this field is NOT specified,
        * then ALL fields matched by the target_json_path expression will undergo
        * substitution. Note that an empty (e.g., "", rather than unspecified)
-       * value for for this field will only match empty fields.
+       * value for this field will only match empty fields.
        * </pre>
        *
        * <code>string original_value_pattern = 4;</code>
@@ -4992,7 +5890,5092 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface TransformationRuleActionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. op specifies the operation to perform.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op op = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for op.
+     */
+    int getOpValue();
+    /**
+     *
+     *
+     * <pre>
+     * Required. op specifies the operation to perform.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op op = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The op.
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op getOp();
+
+    /**
+     *
+     *
+     * <pre>
+     * A string containing a JSON Pointer value that references the location in
+     * the target document to move the value from.
+     * </pre>
+     *
+     * <code>string from_path = 2;</code>
+     *
+     * @return The fromPath.
+     */
+    java.lang.String getFromPath();
+    /**
+     *
+     *
+     * <pre>
+     * A string containing a JSON Pointer value that references the location in
+     * the target document to move the value from.
+     * </pre>
+     *
+     * <code>string from_path = 2;</code>
+     *
+     * @return The bytes for fromPath.
+     */
+    com.google.protobuf.ByteString getFromPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * A string containing a JSON-Pointer value that references a location
+     * within the target document where the operation is performed.
+     * </pre>
+     *
+     * <code>string path = 3;</code>
+     *
+     * @return The path.
+     */
+    java.lang.String getPath();
+    /**
+     *
+     *
+     * <pre>
+     * A string containing a JSON-Pointer value that references a location
+     * within the target document where the operation is performed.
+     * </pre>
+     *
+     * <code>string path = 3;</code>
+     *
+     * @return The bytes for path.
+     */
+    com.google.protobuf.ByteString getPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * A string that specifies the desired value in string format to
+     * use for transformation.
+     * </pre>
+     *
+     * <code>string value = 4;</code>
+     *
+     * @return The value.
+     */
+    java.lang.String getValue();
+    /**
+     *
+     *
+     * <pre>
+     * A string that specifies the desired value in string format to
+     * use for transformation.
+     * </pre>
+     *
+     * <code>string value = 4;</code>
+     *
+     * @return The bytes for value.
+     */
+    com.google.protobuf.ByteString getValueBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * TransformationRuleAction defines a TransformationRule action based on the
+   * JSON Patch RFC (https://www.rfc-editor.org/rfc/rfc6902)
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction}
+   */
+  public static final class TransformationRuleAction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction)
+      TransformationRuleActionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TransformationRuleAction.newBuilder() to construct.
+    private TransformationRuleAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TransformationRuleAction() {
+      op_ = 0;
+      fromPath_ = "";
+      path_ = "";
+      value_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TransformationRuleAction();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRuleAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRuleAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.class,
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Possible values for operations of a transformation rule action.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op}
+     */
+    public enum Op implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified operation
+       * </pre>
+       *
+       * <code>OP_UNSPECIFIED = 0;</code>
+       */
+      OP_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The "remove" operation removes the value at the target location.
+       * </pre>
+       *
+       * <code>REMOVE = 1;</code>
+       */
+      REMOVE(1),
+      /**
+       *
+       *
+       * <pre>
+       * The "move" operation removes the value at a specified location and
+       * adds it to the target location.
+       * </pre>
+       *
+       * <code>MOVE = 2;</code>
+       */
+      MOVE(2),
+      /**
+       *
+       *
+       * <pre>
+       * The "copy" operation copies the value at a specified location to the
+       * target location.
+       * </pre>
+       *
+       * <code>COPY = 3;</code>
+       */
+      COPY(3),
+      /**
+       *
+       *
+       * <pre>
+       * The "add" operation performs one of the following functions,
+       * depending upon what the target location references:
+       * 1. If the target location specifies an array index, a new value is
+       * inserted into the array at the specified index.
+       * 2. If the target location specifies an object member that does not
+       * already exist, a new member is added to the object.
+       * 3. If the target location specifies an object member that does exist,
+       * that member's value is replaced.
+       * </pre>
+       *
+       * <code>ADD = 4;</code>
+       */
+      ADD(4),
+      /**
+       *
+       *
+       * <pre>
+       * The "test" operation tests that a value at the target location is
+       * equal to a specified value.
+       * </pre>
+       *
+       * <code>TEST = 5;</code>
+       */
+      TEST(5),
+      /**
+       *
+       *
+       * <pre>
+       * The "replace" operation replaces the value at the target location
+       * with a new value.  The operation object MUST contain a "value" member
+       * whose content specifies the replacement value.
+       * </pre>
+       *
+       * <code>REPLACE = 6;</code>
+       */
+      REPLACE(6),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified operation
+       * </pre>
+       *
+       * <code>OP_UNSPECIFIED = 0;</code>
+       */
+      public static final int OP_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The "remove" operation removes the value at the target location.
+       * </pre>
+       *
+       * <code>REMOVE = 1;</code>
+       */
+      public static final int REMOVE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * The "move" operation removes the value at a specified location and
+       * adds it to the target location.
+       * </pre>
+       *
+       * <code>MOVE = 2;</code>
+       */
+      public static final int MOVE_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * The "copy" operation copies the value at a specified location to the
+       * target location.
+       * </pre>
+       *
+       * <code>COPY = 3;</code>
+       */
+      public static final int COPY_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * The "add" operation performs one of the following functions,
+       * depending upon what the target location references:
+       * 1. If the target location specifies an array index, a new value is
+       * inserted into the array at the specified index.
+       * 2. If the target location specifies an object member that does not
+       * already exist, a new member is added to the object.
+       * 3. If the target location specifies an object member that does exist,
+       * that member's value is replaced.
+       * </pre>
+       *
+       * <code>ADD = 4;</code>
+       */
+      public static final int ADD_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
+       * The "test" operation tests that a value at the target location is
+       * equal to a specified value.
+       * </pre>
+       *
+       * <code>TEST = 5;</code>
+       */
+      public static final int TEST_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * The "replace" operation replaces the value at the target location
+       * with a new value.  The operation object MUST contain a "value" member
+       * whose content specifies the replacement value.
+       * </pre>
+       *
+       * <code>REPLACE = 6;</code>
+       */
+      public static final int REPLACE_VALUE = 6;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Op valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Op forNumber(int value) {
+        switch (value) {
+          case 0:
+            return OP_UNSPECIFIED;
+          case 1:
+            return REMOVE;
+          case 2:
+            return MOVE;
+          case 3:
+            return COPY;
+          case 4:
+            return ADD;
+          case 5:
+            return TEST;
+          case 6:
+            return REPLACE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Op> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Op> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Op>() {
+            public Op findValueByNumber(int number) {
+              return Op.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Op[] VALUES = values();
+
+      public static Op valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Op(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op)
+    }
+
+    public static final int OP_FIELD_NUMBER = 1;
+    private int op_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Required. op specifies the operation to perform.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op op = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for op.
+     */
+    @java.lang.Override
+    public int getOpValue() {
+      return op_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. op specifies the operation to perform.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op op = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The op.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op getOp() {
+      com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op result =
+          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op.forNumber(op_);
+      return result == null
+          ? com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int FROM_PATH_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fromPath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A string containing a JSON Pointer value that references the location in
+     * the target document to move the value from.
+     * </pre>
+     *
+     * <code>string from_path = 2;</code>
+     *
+     * @return The fromPath.
+     */
+    @java.lang.Override
+    public java.lang.String getFromPath() {
+      java.lang.Object ref = fromPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fromPath_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A string containing a JSON Pointer value that references the location in
+     * the target document to move the value from.
+     * </pre>
+     *
+     * <code>string from_path = 2;</code>
+     *
+     * @return The bytes for fromPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFromPathBytes() {
+      java.lang.Object ref = fromPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        fromPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PATH_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A string containing a JSON-Pointer value that references a location
+     * within the target document where the operation is performed.
+     * </pre>
+     *
+     * <code>string path = 3;</code>
+     *
+     * @return The path.
+     */
+    @java.lang.Override
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A string containing a JSON-Pointer value that references a location
+     * within the target document where the operation is performed.
+     * </pre>
+     *
+     * <code>string path = 3;</code>
+     *
+     * @return The bytes for path.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A string that specifies the desired value in string format to
+     * use for transformation.
+     * </pre>
+     *
+     * <code>string value = 4;</code>
+     *
+     * @return The value.
+     */
+    @java.lang.Override
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A string that specifies the desired value in string format to
+     * use for transformation.
+     * </pre>
+     *
+     * <code>string value = 4;</code>
+     *
+     * @return The bytes for value.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (op_
+          != com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op.OP_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, op_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fromPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fromPath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, value_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (op_
+          != com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op.OP_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, op_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fromPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fromPath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, value_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction other =
+          (com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction) obj;
+
+      if (op_ != other.op_) return false;
+      if (!getFromPath().equals(other.getFromPath())) return false;
+      if (!getPath().equals(other.getPath())) return false;
+      if (!getValue().equals(other.getValue())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OP_FIELD_NUMBER;
+      hash = (53 * hash) + op_;
+      hash = (37 * hash) + FROM_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getFromPath().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TransformationRuleAction defines a TransformationRule action based on the
+     * JSON Patch RFC (https://www.rfc-editor.org/rfc/rfc6902)
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction)
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRuleAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRuleAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.class,
+                com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        op_ = 0;
+        fromPath_ = "";
+        path_ = "";
+        value_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRuleAction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
+          getDefaultInstanceForType() {
+        return com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction build() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction buildPartial() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction result =
+            new com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.op_ = op_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fromPath_ = fromPath_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.value_ = value_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction) {
+          return mergeFrom(
+              (com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction other) {
+        if (other
+            == com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
+                .getDefaultInstance()) return this;
+        if (other.op_ != 0) {
+          setOpValue(other.getOpValue());
+        }
+        if (!other.getFromPath().isEmpty()) {
+          fromPath_ = other.fromPath_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  op_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  fromPath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  path_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  value_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int op_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Required. op specifies the operation to perform.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op op = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for op.
+       */
+      @java.lang.Override
+      public int getOpValue() {
+        return op_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. op specifies the operation to perform.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op op = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for op to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOpValue(int value) {
+        op_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. op specifies the operation to perform.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op op = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The op.
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op getOp() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op result =
+            com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op.forNumber(op_);
+        return result == null
+            ? com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. op specifies the operation to perform.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op op = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The op to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOp(
+          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        op_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. op specifies the operation to perform.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Op op = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOp() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        op_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fromPath_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * A string containing a JSON Pointer value that references the location in
+       * the target document to move the value from.
+       * </pre>
+       *
+       * <code>string from_path = 2;</code>
+       *
+       * @return The fromPath.
+       */
+      public java.lang.String getFromPath() {
+        java.lang.Object ref = fromPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fromPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string containing a JSON Pointer value that references the location in
+       * the target document to move the value from.
+       * </pre>
+       *
+       * <code>string from_path = 2;</code>
+       *
+       * @return The bytes for fromPath.
+       */
+      public com.google.protobuf.ByteString getFromPathBytes() {
+        java.lang.Object ref = fromPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          fromPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string containing a JSON Pointer value that references the location in
+       * the target document to move the value from.
+       * </pre>
+       *
+       * <code>string from_path = 2;</code>
+       *
+       * @param value The fromPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFromPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fromPath_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string containing a JSON Pointer value that references the location in
+       * the target document to move the value from.
+       * </pre>
+       *
+       * <code>string from_path = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFromPath() {
+        fromPath_ = getDefaultInstance().getFromPath();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string containing a JSON Pointer value that references the location in
+       * the target document to move the value from.
+       * </pre>
+       *
+       * <code>string from_path = 2;</code>
+       *
+       * @param value The bytes for fromPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFromPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        fromPath_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object path_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * A string containing a JSON-Pointer value that references a location
+       * within the target document where the operation is performed.
+       * </pre>
+       *
+       * <code>string path = 3;</code>
+       *
+       * @return The path.
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string containing a JSON-Pointer value that references a location
+       * within the target document where the operation is performed.
+       * </pre>
+       *
+       * <code>string path = 3;</code>
+       *
+       * @return The bytes for path.
+       */
+      public com.google.protobuf.ByteString getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string containing a JSON-Pointer value that references a location
+       * within the target document where the operation is performed.
+       * </pre>
+       *
+       * <code>string path = 3;</code>
+       *
+       * @param value The path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        path_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string containing a JSON-Pointer value that references a location
+       * within the target document where the operation is performed.
+       * </pre>
+       *
+       * <code>string path = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPath() {
+        path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string containing a JSON-Pointer value that references a location
+       * within the target document where the operation is performed.
+       * </pre>
+       *
+       * <code>string path = 3;</code>
+       *
+       * @param value The bytes for path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        path_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * A string that specifies the desired value in string format to
+       * use for transformation.
+       * </pre>
+       *
+       * <code>string value = 4;</code>
+       *
+       * @return The value.
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string that specifies the desired value in string format to
+       * use for transformation.
+       * </pre>
+       *
+       * <code>string value = 4;</code>
+       *
+       * @return The bytes for value.
+       */
+      public com.google.protobuf.ByteString getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string that specifies the desired value in string format to
+       * use for transformation.
+       * </pre>
+       *
+       * <code>string value = 4;</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string that specifies the desired value in string format to
+       * use for transformation.
+       * </pre>
+       *
+       * <code>string value = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A string that specifies the desired value in string format to
+       * use for transformation.
+       * </pre>
+       *
+       * <code>string value = 4;</code>
+       *
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        value_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction)
+    private static final com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction();
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TransformationRuleAction> PARSER =
+        new com.google.protobuf.AbstractParser<TransformationRuleAction>() {
+          @java.lang.Override
+          public TransformationRuleAction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TransformationRuleAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TransformationRuleAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ResourceFilterOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must be
+     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * If this field is not provided, no namespace filtering will be performed
+     * (all resources in all Namespaces, including all cluster-scoped resources,
+     * will be candidates for transformation).
+     * To mix cluster-scoped and namespaced resources in the same rule, use an
+     * empty string ("") as one of the target namespaces.
+     * </pre>
+     *
+     * <code>repeated string namespaces = 1;</code>
+     *
+     * @return A list containing the namespaces.
+     */
+    java.util.List<java.lang.String> getNamespacesList();
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must be
+     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * If this field is not provided, no namespace filtering will be performed
+     * (all resources in all Namespaces, including all cluster-scoped resources,
+     * will be candidates for transformation).
+     * To mix cluster-scoped and namespaced resources in the same rule, use an
+     * empty string ("") as one of the target namespaces.
+     * </pre>
+     *
+     * <code>repeated string namespaces = 1;</code>
+     *
+     * @return The count of namespaces.
+     */
+    int getNamespacesCount();
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must be
+     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * If this field is not provided, no namespace filtering will be performed
+     * (all resources in all Namespaces, including all cluster-scoped resources,
+     * will be candidates for transformation).
+     * To mix cluster-scoped and namespaced resources in the same rule, use an
+     * empty string ("") as one of the target namespaces.
+     * </pre>
+     *
+     * <code>repeated string namespaces = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The namespaces at the given index.
+     */
+    java.lang.String getNamespaces(int index);
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must be
+     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * If this field is not provided, no namespace filtering will be performed
+     * (all resources in all Namespaces, including all cluster-scoped resources,
+     * will be candidates for transformation).
+     * To mix cluster-scoped and namespaced resources in the same rule, use an
+     * empty string ("") as one of the target namespaces.
+     * </pre>
+     *
+     * <code>repeated string namespaces = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the namespaces at the given index.
+     */
+    com.google.protobuf.ByteString getNamespacesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must belong
+     * to one of the listed "types". If this field is not provided, no type
+     * filtering will be performed (all resources of all types matching previous
+     * filtering parameters will be candidates for transformation).
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     */
+    java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind> getGroupKindsList();
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must belong
+     * to one of the listed "types". If this field is not provided, no type
+     * filtering will be performed (all resources of all types matching previous
+     * filtering parameters will be candidates for transformation).
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getGroupKinds(int index);
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must belong
+     * to one of the listed "types". If this field is not provided, no type
+     * filtering will be performed (all resources of all types matching previous
+     * filtering parameters will be candidates for transformation).
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     */
+    int getGroupKindsCount();
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must belong
+     * to one of the listed "types". If this field is not provided, no type
+     * filtering will be performed (all resources of all types matching previous
+     * filtering parameters will be candidates for transformation).
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     */
+    java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+        getGroupKindsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must belong
+     * to one of the listed "types". If this field is not provided, no type
+     * filtering will be performed (all resources of all types matching previous
+     * filtering parameters will be candidates for transformation).
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getGroupKindsOrBuilder(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a [JSONPath]
+     * (https://github.com/json-path/JsonPath/blob/master/README.md)
+     * expression that matches specific fields of candidate
+     * resources and it operates as a filtering parameter (resources that
+     * are not matched with this expression will not be candidates for
+     * transformation).
+     * </pre>
+     *
+     * <code>string json_path = 3;</code>
+     *
+     * @return The jsonPath.
+     */
+    java.lang.String getJsonPath();
+    /**
+     *
+     *
+     * <pre>
+     * This is a [JSONPath]
+     * (https://github.com/json-path/JsonPath/blob/master/README.md)
+     * expression that matches specific fields of candidate
+     * resources and it operates as a filtering parameter (resources that
+     * are not matched with this expression will not be candidates for
+     * transformation).
+     * </pre>
+     *
+     * <code>string json_path = 3;</code>
+     *
+     * @return The bytes for jsonPath.
+     */
+    com.google.protobuf.ByteString getJsonPathBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ResourceFilter specifies matching criteria to limit the scope of a
+   * change to a specific set of kubernetes resources that are selected for
+   * restoration from a backup.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter}
+   */
+  public static final class ResourceFilter extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter)
+      ResourceFilterOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ResourceFilter.newBuilder() to construct.
+    private ResourceFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ResourceFilter() {
+      namespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      groupKinds_ = java.util.Collections.emptyList();
+      jsonPath_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ResourceFilter();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_RestoreConfig_ResourceFilter_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_RestoreConfig_ResourceFilter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.class,
+              com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.Builder.class);
+    }
+
+    public static final int NAMESPACES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList namespaces_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must be
+     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * If this field is not provided, no namespace filtering will be performed
+     * (all resources in all Namespaces, including all cluster-scoped resources,
+     * will be candidates for transformation).
+     * To mix cluster-scoped and namespaced resources in the same rule, use an
+     * empty string ("") as one of the target namespaces.
+     * </pre>
+     *
+     * <code>repeated string namespaces = 1;</code>
+     *
+     * @return A list containing the namespaces.
+     */
+    public com.google.protobuf.ProtocolStringList getNamespacesList() {
+      return namespaces_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must be
+     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * If this field is not provided, no namespace filtering will be performed
+     * (all resources in all Namespaces, including all cluster-scoped resources,
+     * will be candidates for transformation).
+     * To mix cluster-scoped and namespaced resources in the same rule, use an
+     * empty string ("") as one of the target namespaces.
+     * </pre>
+     *
+     * <code>repeated string namespaces = 1;</code>
+     *
+     * @return The count of namespaces.
+     */
+    public int getNamespacesCount() {
+      return namespaces_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must be
+     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * If this field is not provided, no namespace filtering will be performed
+     * (all resources in all Namespaces, including all cluster-scoped resources,
+     * will be candidates for transformation).
+     * To mix cluster-scoped and namespaced resources in the same rule, use an
+     * empty string ("") as one of the target namespaces.
+     * </pre>
+     *
+     * <code>repeated string namespaces = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The namespaces at the given index.
+     */
+    public java.lang.String getNamespaces(int index) {
+      return namespaces_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must be
+     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * If this field is not provided, no namespace filtering will be performed
+     * (all resources in all Namespaces, including all cluster-scoped resources,
+     * will be candidates for transformation).
+     * To mix cluster-scoped and namespaced resources in the same rule, use an
+     * empty string ("") as one of the target namespaces.
+     * </pre>
+     *
+     * <code>repeated string namespaces = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the namespaces at the given index.
+     */
+    public com.google.protobuf.ByteString getNamespacesBytes(int index) {
+      return namespaces_.getByteString(index);
+    }
+
+    public static final int GROUP_KINDS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind> groupKinds_;
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must belong
+     * to one of the listed "types". If this field is not provided, no type
+     * filtering will be performed (all resources of all types matching previous
+     * filtering parameters will be candidates for transformation).
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
+        getGroupKindsList() {
+      return groupKinds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must belong
+     * to one of the listed "types". If this field is not provided, no type
+     * filtering will be performed (all resources of all types matching previous
+     * filtering parameters will be candidates for transformation).
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+        getGroupKindsOrBuilderList() {
+      return groupKinds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must belong
+     * to one of the listed "types". If this field is not provided, no type
+     * filtering will be performed (all resources of all types matching previous
+     * filtering parameters will be candidates for transformation).
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     */
+    @java.lang.Override
+    public int getGroupKindsCount() {
+      return groupKinds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must belong
+     * to one of the listed "types". If this field is not provided, no type
+     * filtering will be performed (all resources of all types matching previous
+     * filtering parameters will be candidates for transformation).
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getGroupKinds(int index) {
+      return groupKinds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * (Filtering parameter) Any resource subject to transformation must belong
+     * to one of the listed "types". If this field is not provided, no type
+     * filtering will be performed (all resources of all types matching previous
+     * filtering parameters will be candidates for transformation).
+     * </pre>
+     *
+     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getGroupKindsOrBuilder(
+        int index) {
+      return groupKinds_.get(index);
+    }
+
+    public static final int JSON_PATH_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jsonPath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * This is a [JSONPath]
+     * (https://github.com/json-path/JsonPath/blob/master/README.md)
+     * expression that matches specific fields of candidate
+     * resources and it operates as a filtering parameter (resources that
+     * are not matched with this expression will not be candidates for
+     * transformation).
+     * </pre>
+     *
+     * <code>string json_path = 3;</code>
+     *
+     * @return The jsonPath.
+     */
+    @java.lang.Override
+    public java.lang.String getJsonPath() {
+      java.lang.Object ref = jsonPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jsonPath_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This is a [JSONPath]
+     * (https://github.com/json-path/JsonPath/blob/master/README.md)
+     * expression that matches specific fields of candidate
+     * resources and it operates as a filtering parameter (resources that
+     * are not matched with this expression will not be candidates for
+     * transformation).
+     * </pre>
+     *
+     * <code>string json_path = 3;</code>
+     *
+     * @return The bytes for jsonPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getJsonPathBytes() {
+      java.lang.Object ref = jsonPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        jsonPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < namespaces_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespaces_.getRaw(i));
+      }
+      for (int i = 0; i < groupKinds_.size(); i++) {
+        output.writeMessage(2, groupKinds_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jsonPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jsonPath_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < namespaces_.size(); i++) {
+          dataSize += computeStringSizeNoTag(namespaces_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getNamespacesList().size();
+      }
+      for (int i = 0; i < groupKinds_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, groupKinds_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jsonPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jsonPath_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter other =
+          (com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter) obj;
+
+      if (!getNamespacesList().equals(other.getNamespacesList())) return false;
+      if (!getGroupKindsList().equals(other.getGroupKindsList())) return false;
+      if (!getJsonPath().equals(other.getJsonPath())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getNamespacesCount() > 0) {
+        hash = (37 * hash) + NAMESPACES_FIELD_NUMBER;
+        hash = (53 * hash) + getNamespacesList().hashCode();
+      }
+      if (getGroupKindsCount() > 0) {
+        hash = (37 * hash) + GROUP_KINDS_FIELD_NUMBER;
+        hash = (53 * hash) + getGroupKindsList().hashCode();
+      }
+      hash = (37 * hash) + JSON_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getJsonPath().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ResourceFilter specifies matching criteria to limit the scope of a
+     * change to a specific set of kubernetes resources that are selected for
+     * restoration from a backup.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter)
+        com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_ResourceFilter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_ResourceFilter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.class,
+                com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.Builder.class);
+      }
+
+      // Construct using com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        namespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        if (groupKindsBuilder_ == null) {
+          groupKinds_ = java.util.Collections.emptyList();
+        } else {
+          groupKinds_ = null;
+          groupKindsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        jsonPath_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_ResourceFilter_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter
+          getDefaultInstanceForType() {
+        return com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter build() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter buildPartial() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter result =
+            new com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter result) {
+        if (groupKindsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            groupKinds_ = java.util.Collections.unmodifiableList(groupKinds_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.groupKinds_ = groupKinds_;
+        } else {
+          result.groupKinds_ = groupKindsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          namespaces_.makeImmutable();
+          result.namespaces_ = namespaces_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.jsonPath_ = jsonPath_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter) {
+          return mergeFrom((com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter other) {
+        if (other
+            == com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.getDefaultInstance())
+          return this;
+        if (!other.namespaces_.isEmpty()) {
+          if (namespaces_.isEmpty()) {
+            namespaces_ = other.namespaces_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureNamespacesIsMutable();
+            namespaces_.addAll(other.namespaces_);
+          }
+          onChanged();
+        }
+        if (groupKindsBuilder_ == null) {
+          if (!other.groupKinds_.isEmpty()) {
+            if (groupKinds_.isEmpty()) {
+              groupKinds_ = other.groupKinds_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureGroupKindsIsMutable();
+              groupKinds_.addAll(other.groupKinds_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.groupKinds_.isEmpty()) {
+            if (groupKindsBuilder_.isEmpty()) {
+              groupKindsBuilder_.dispose();
+              groupKindsBuilder_ = null;
+              groupKinds_ = other.groupKinds_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              groupKindsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getGroupKindsFieldBuilder()
+                      : null;
+            } else {
+              groupKindsBuilder_.addAllMessages(other.groupKinds_);
+            }
+          }
+        }
+        if (!other.getJsonPath().isEmpty()) {
+          jsonPath_ = other.jsonPath_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureNamespacesIsMutable();
+                  namespaces_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind m =
+                      input.readMessage(
+                          com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.parser(),
+                          extensionRegistry);
+                  if (groupKindsBuilder_ == null) {
+                    ensureGroupKindsIsMutable();
+                    groupKinds_.add(m);
+                  } else {
+                    groupKindsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 26:
+                {
+                  jsonPath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList namespaces_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureNamespacesIsMutable() {
+        if (!namespaces_.isModifiable()) {
+          namespaces_ = new com.google.protobuf.LazyStringArrayList(namespaces_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must be
+       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * If this field is not provided, no namespace filtering will be performed
+       * (all resources in all Namespaces, including all cluster-scoped resources,
+       * will be candidates for transformation).
+       * To mix cluster-scoped and namespaced resources in the same rule, use an
+       * empty string ("") as one of the target namespaces.
+       * </pre>
+       *
+       * <code>repeated string namespaces = 1;</code>
+       *
+       * @return A list containing the namespaces.
+       */
+      public com.google.protobuf.ProtocolStringList getNamespacesList() {
+        namespaces_.makeImmutable();
+        return namespaces_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must be
+       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * If this field is not provided, no namespace filtering will be performed
+       * (all resources in all Namespaces, including all cluster-scoped resources,
+       * will be candidates for transformation).
+       * To mix cluster-scoped and namespaced resources in the same rule, use an
+       * empty string ("") as one of the target namespaces.
+       * </pre>
+       *
+       * <code>repeated string namespaces = 1;</code>
+       *
+       * @return The count of namespaces.
+       */
+      public int getNamespacesCount() {
+        return namespaces_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must be
+       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * If this field is not provided, no namespace filtering will be performed
+       * (all resources in all Namespaces, including all cluster-scoped resources,
+       * will be candidates for transformation).
+       * To mix cluster-scoped and namespaced resources in the same rule, use an
+       * empty string ("") as one of the target namespaces.
+       * </pre>
+       *
+       * <code>repeated string namespaces = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The namespaces at the given index.
+       */
+      public java.lang.String getNamespaces(int index) {
+        return namespaces_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must be
+       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * If this field is not provided, no namespace filtering will be performed
+       * (all resources in all Namespaces, including all cluster-scoped resources,
+       * will be candidates for transformation).
+       * To mix cluster-scoped and namespaced resources in the same rule, use an
+       * empty string ("") as one of the target namespaces.
+       * </pre>
+       *
+       * <code>repeated string namespaces = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the namespaces at the given index.
+       */
+      public com.google.protobuf.ByteString getNamespacesBytes(int index) {
+        return namespaces_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must be
+       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * If this field is not provided, no namespace filtering will be performed
+       * (all resources in all Namespaces, including all cluster-scoped resources,
+       * will be candidates for transformation).
+       * To mix cluster-scoped and namespaced resources in the same rule, use an
+       * empty string ("") as one of the target namespaces.
+       * </pre>
+       *
+       * <code>repeated string namespaces = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The namespaces to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespaces(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNamespacesIsMutable();
+        namespaces_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must be
+       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * If this field is not provided, no namespace filtering will be performed
+       * (all resources in all Namespaces, including all cluster-scoped resources,
+       * will be candidates for transformation).
+       * To mix cluster-scoped and namespaced resources in the same rule, use an
+       * empty string ("") as one of the target namespaces.
+       * </pre>
+       *
+       * <code>repeated string namespaces = 1;</code>
+       *
+       * @param value The namespaces to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNamespaces(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNamespacesIsMutable();
+        namespaces_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must be
+       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * If this field is not provided, no namespace filtering will be performed
+       * (all resources in all Namespaces, including all cluster-scoped resources,
+       * will be candidates for transformation).
+       * To mix cluster-scoped and namespaced resources in the same rule, use an
+       * empty string ("") as one of the target namespaces.
+       * </pre>
+       *
+       * <code>repeated string namespaces = 1;</code>
+       *
+       * @param values The namespaces to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllNamespaces(java.lang.Iterable<java.lang.String> values) {
+        ensureNamespacesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, namespaces_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must be
+       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * If this field is not provided, no namespace filtering will be performed
+       * (all resources in all Namespaces, including all cluster-scoped resources,
+       * will be candidates for transformation).
+       * To mix cluster-scoped and namespaced resources in the same rule, use an
+       * empty string ("") as one of the target namespaces.
+       * </pre>
+       *
+       * <code>repeated string namespaces = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNamespaces() {
+        namespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must be
+       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * If this field is not provided, no namespace filtering will be performed
+       * (all resources in all Namespaces, including all cluster-scoped resources,
+       * will be candidates for transformation).
+       * To mix cluster-scoped and namespaced resources in the same rule, use an
+       * empty string ("") as one of the target namespaces.
+       * </pre>
+       *
+       * <code>repeated string namespaces = 1;</code>
+       *
+       * @param value The bytes of the namespaces to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNamespacesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureNamespacesIsMutable();
+        namespaces_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind> groupKinds_ =
+          java.util.Collections.emptyList();
+
+      private void ensureGroupKindsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          groupKinds_ =
+              new java.util.ArrayList<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>(
+                  groupKinds_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+          groupKindsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
+          getGroupKindsList() {
+        if (groupKindsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(groupKinds_);
+        } else {
+          return groupKindsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public int getGroupKindsCount() {
+        if (groupKindsBuilder_ == null) {
+          return groupKinds_.size();
+        } else {
+          return groupKindsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getGroupKinds(int index) {
+        if (groupKindsBuilder_ == null) {
+          return groupKinds_.get(index);
+        } else {
+          return groupKindsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public Builder setGroupKinds(
+          int index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
+        if (groupKindsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGroupKindsIsMutable();
+          groupKinds_.set(index, value);
+          onChanged();
+        } else {
+          groupKindsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public Builder setGroupKinds(
+          int index,
+          com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder builderForValue) {
+        if (groupKindsBuilder_ == null) {
+          ensureGroupKindsIsMutable();
+          groupKinds_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          groupKindsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public Builder addGroupKinds(com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
+        if (groupKindsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGroupKindsIsMutable();
+          groupKinds_.add(value);
+          onChanged();
+        } else {
+          groupKindsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public Builder addGroupKinds(
+          int index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
+        if (groupKindsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGroupKindsIsMutable();
+          groupKinds_.add(index, value);
+          onChanged();
+        } else {
+          groupKindsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public Builder addGroupKinds(
+          com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder builderForValue) {
+        if (groupKindsBuilder_ == null) {
+          ensureGroupKindsIsMutable();
+          groupKinds_.add(builderForValue.build());
+          onChanged();
+        } else {
+          groupKindsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public Builder addGroupKinds(
+          int index,
+          com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder builderForValue) {
+        if (groupKindsBuilder_ == null) {
+          ensureGroupKindsIsMutable();
+          groupKinds_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          groupKindsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public Builder addAllGroupKinds(
+          java.lang.Iterable<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
+              values) {
+        if (groupKindsBuilder_ == null) {
+          ensureGroupKindsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, groupKinds_);
+          onChanged();
+        } else {
+          groupKindsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public Builder clearGroupKinds() {
+        if (groupKindsBuilder_ == null) {
+          groupKinds_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          groupKindsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public Builder removeGroupKinds(int index) {
+        if (groupKindsBuilder_ == null) {
+          ensureGroupKindsIsMutable();
+          groupKinds_.remove(index);
+          onChanged();
+        } else {
+          groupKindsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder getGroupKindsBuilder(
+          int index) {
+        return getGroupKindsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getGroupKindsOrBuilder(
+          int index) {
+        if (groupKindsBuilder_ == null) {
+          return groupKinds_.get(index);
+        } else {
+          return groupKindsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+          getGroupKindsOrBuilderList() {
+        if (groupKindsBuilder_ != null) {
+          return groupKindsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(groupKinds_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder addGroupKindsBuilder() {
+        return getGroupKindsFieldBuilder()
+            .addBuilder(com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder addGroupKindsBuilder(
+          int index) {
+        return getGroupKindsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * (Filtering parameter) Any resource subject to transformation must belong
+       * to one of the listed "types". If this field is not provided, no type
+       * filtering will be performed (all resources of all types matching previous
+       * filtering parameters will be candidates for transformation).
+       * </pre>
+       *
+       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       */
+      public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder>
+          getGroupKindsBuilderList() {
+        return getGroupKindsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+              com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
+          getGroupKindsFieldBuilder() {
+        if (groupKindsBuilder_ == null) {
+          groupKindsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind,
+                  com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder,
+                  com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>(
+                  groupKinds_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+          groupKinds_ = null;
+        }
+        return groupKindsBuilder_;
+      }
+
+      private java.lang.Object jsonPath_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * This is a [JSONPath]
+       * (https://github.com/json-path/JsonPath/blob/master/README.md)
+       * expression that matches specific fields of candidate
+       * resources and it operates as a filtering parameter (resources that
+       * are not matched with this expression will not be candidates for
+       * transformation).
+       * </pre>
+       *
+       * <code>string json_path = 3;</code>
+       *
+       * @return The jsonPath.
+       */
+      public java.lang.String getJsonPath() {
+        java.lang.Object ref = jsonPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jsonPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This is a [JSONPath]
+       * (https://github.com/json-path/JsonPath/blob/master/README.md)
+       * expression that matches specific fields of candidate
+       * resources and it operates as a filtering parameter (resources that
+       * are not matched with this expression will not be candidates for
+       * transformation).
+       * </pre>
+       *
+       * <code>string json_path = 3;</code>
+       *
+       * @return The bytes for jsonPath.
+       */
+      public com.google.protobuf.ByteString getJsonPathBytes() {
+        java.lang.Object ref = jsonPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          jsonPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This is a [JSONPath]
+       * (https://github.com/json-path/JsonPath/blob/master/README.md)
+       * expression that matches specific fields of candidate
+       * resources and it operates as a filtering parameter (resources that
+       * are not matched with this expression will not be candidates for
+       * transformation).
+       * </pre>
+       *
+       * <code>string json_path = 3;</code>
+       *
+       * @param value The jsonPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJsonPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jsonPath_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This is a [JSONPath]
+       * (https://github.com/json-path/JsonPath/blob/master/README.md)
+       * expression that matches specific fields of candidate
+       * resources and it operates as a filtering parameter (resources that
+       * are not matched with this expression will not be candidates for
+       * transformation).
+       * </pre>
+       *
+       * <code>string json_path = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearJsonPath() {
+        jsonPath_ = getDefaultInstance().getJsonPath();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This is a [JSONPath]
+       * (https://github.com/json-path/JsonPath/blob/master/README.md)
+       * expression that matches specific fields of candidate
+       * resources and it operates as a filtering parameter (resources that
+       * are not matched with this expression will not be candidates for
+       * transformation).
+       * </pre>
+       *
+       * <code>string json_path = 3;</code>
+       *
+       * @param value The bytes for jsonPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJsonPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        jsonPath_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter)
+    private static final com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter();
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResourceFilter> PARSER =
+        new com.google.protobuf.AbstractParser<ResourceFilter>() {
+          @java.lang.Override
+          public ResourceFilter parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ResourceFilter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResourceFilter> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface TransformationRuleOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.gkebackup.v1.RestoreConfig.TransformationRule)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of transformation rule actions to take against candidate
+     * resources. Actions are executed in order defined - this order matters, as
+     * they could potentially interfere with each other and the first operation
+     * could affect the outcome of the second operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction>
+        getFieldActionsList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of transformation rule actions to take against candidate
+     * resources. Actions are executed in order defined - this order matters, as
+     * they could potentially interfere with each other and the first operation
+     * could affect the outcome of the second operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction getFieldActions(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of transformation rule actions to take against candidate
+     * resources. Actions are executed in order defined - this order matters, as
+     * they could potentially interfere with each other and the first operation
+     * could affect the outcome of the second operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    int getFieldActionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of transformation rule actions to take against candidate
+     * resources. Actions are executed in order defined - this order matters, as
+     * they could potentially interfere with each other and the first operation
+     * could affect the outcome of the second operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<
+            ? extends com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleActionOrBuilder>
+        getFieldActionsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of transformation rule actions to take against candidate
+     * resources. Actions are executed in order defined - this order matters, as
+     * they could potentially interfere with each other and the first operation
+     * could affect the outcome of the second operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleActionOrBuilder
+        getFieldActionsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to specify a set of fields that should be used to
+     * determine which resources in backup should be acted upon by the supplied
+     * transformation rule actions, and this will ensure that only specific
+     * resources are affected by transformation rule actions.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     *
+     * @return Whether the resourceFilter field is set.
+     */
+    boolean hasResourceFilter();
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to specify a set of fields that should be used to
+     * determine which resources in backup should be acted upon by the supplied
+     * transformation rule actions, and this will ensure that only specific
+     * resources are affected by transformation rule actions.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     *
+     * @return The resourceFilter.
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter getResourceFilter();
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to specify a set of fields that should be used to
+     * determine which resources in backup should be acted upon by the supplied
+     * transformation rule actions, and this will ensure that only specific
+     * resources are affected by transformation rule actions.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     */
+    com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilterOrBuilder
+        getResourceFilterOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The description is a user specified string description of the
+     * transformation rule.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     *
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     *
+     *
+     * <pre>
+     * The description is a user specified string description of the
+     * transformation rule.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     *
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString getDescriptionBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A transformation rule to be applied against Kubernetes resources as they
+   * are selected for restoration from a Backup. A rule contains both filtering
+   * logic (which resources are subject to transform) and transformation logic.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.TransformationRule}
+   */
+  public static final class TransformationRule extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.RestoreConfig.TransformationRule)
+      TransformationRuleOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TransformationRule.newBuilder() to construct.
+    private TransformationRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TransformationRule() {
+      fieldActions_ = java.util.Collections.emptyList();
+      description_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TransformationRule();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRule_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.gkebackup.v1.RestoreProto
+          .internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRule_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.class,
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder.class);
+    }
+
+    public static final int FIELD_ACTIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction>
+        fieldActions_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of transformation rule actions to take against candidate
+     * resources. Actions are executed in order defined - this order matters, as
+     * they could potentially interfere with each other and the first operation
+     * could affect the outcome of the second operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction>
+        getFieldActionsList() {
+      return fieldActions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of transformation rule actions to take against candidate
+     * resources. Actions are executed in order defined - this order matters, as
+     * they could potentially interfere with each other and the first operation
+     * could affect the outcome of the second operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleActionOrBuilder>
+        getFieldActionsOrBuilderList() {
+      return fieldActions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of transformation rule actions to take against candidate
+     * resources. Actions are executed in order defined - this order matters, as
+     * they could potentially interfere with each other and the first operation
+     * could affect the outcome of the second operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public int getFieldActionsCount() {
+      return fieldActions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of transformation rule actions to take against candidate
+     * resources. Actions are executed in order defined - this order matters, as
+     * they could potentially interfere with each other and the first operation
+     * could affect the outcome of the second operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction getFieldActions(
+        int index) {
+      return fieldActions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of transformation rule actions to take against candidate
+     * resources. Actions are executed in order defined - this order matters, as
+     * they could potentially interfere with each other and the first operation
+     * could affect the outcome of the second operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleActionOrBuilder
+        getFieldActionsOrBuilder(int index) {
+      return fieldActions_.get(index);
+    }
+
+    public static final int RESOURCE_FILTER_FIELD_NUMBER = 2;
+    private com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resourceFilter_;
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to specify a set of fields that should be used to
+     * determine which resources in backup should be acted upon by the supplied
+     * transformation rule actions, and this will ensure that only specific
+     * resources are affected by transformation rule actions.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     *
+     * @return Whether the resourceFilter field is set.
+     */
+    @java.lang.Override
+    public boolean hasResourceFilter() {
+      return resourceFilter_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to specify a set of fields that should be used to
+     * determine which resources in backup should be acted upon by the supplied
+     * transformation rule actions, and this will ensure that only specific
+     * resources are affected by transformation rule actions.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     *
+     * @return The resourceFilter.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter getResourceFilter() {
+      return resourceFilter_ == null
+          ? com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.getDefaultInstance()
+          : resourceFilter_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to specify a set of fields that should be used to
+     * determine which resources in backup should be acted upon by the supplied
+     * transformation rule actions, and this will ensure that only specific
+     * resources are affected by transformation rule actions.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilterOrBuilder
+        getResourceFilterOrBuilder() {
+      return resourceFilter_ == null
+          ? com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.getDefaultInstance()
+          : resourceFilter_;
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The description is a user specified string description of the
+     * transformation rule.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     *
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description is a user specified string description of the
+     * transformation rule.
+     * </pre>
+     *
+     * <code>string description = 3;</code>
+     *
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < fieldActions_.size(); i++) {
+        output.writeMessage(1, fieldActions_.get(i));
+      }
+      if (resourceFilter_ != null) {
+        output.writeMessage(2, getResourceFilter());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < fieldActions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, fieldActions_.get(i));
+      }
+      if (resourceFilter_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getResourceFilter());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule other =
+          (com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule) obj;
+
+      if (!getFieldActionsList().equals(other.getFieldActionsList())) return false;
+      if (hasResourceFilter() != other.hasResourceFilter()) return false;
+      if (hasResourceFilter()) {
+        if (!getResourceFilter().equals(other.getResourceFilter())) return false;
+      }
+      if (!getDescription().equals(other.getDescription())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getFieldActionsCount() > 0) {
+        hash = (37 * hash) + FIELD_ACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getFieldActionsList().hashCode();
+      }
+      if (hasResourceFilter()) {
+        hash = (37 * hash) + RESOURCE_FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getResourceFilter().hashCode();
+      }
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A transformation rule to be applied against Kubernetes resources as they
+     * are selected for restoration from a Backup. A rule contains both filtering
+     * logic (which resources are subject to transform) and transformation logic.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig.TransformationRule}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.gkebackup.v1.RestoreConfig.TransformationRule)
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRule_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRule_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.class,
+                com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder.class);
+      }
+
+      // Construct using com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (fieldActionsBuilder_ == null) {
+          fieldActions_ = java.util.Collections.emptyList();
+        } else {
+          fieldActions_ = null;
+          fieldActionsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resourceFilter_ = null;
+        if (resourceFilterBuilder_ != null) {
+          resourceFilterBuilder_.dispose();
+          resourceFilterBuilder_ = null;
+        }
+        description_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.gkebackup.v1.RestoreProto
+            .internal_static_google_cloud_gkebackup_v1_RestoreConfig_TransformationRule_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule
+          getDefaultInstanceForType() {
+        return com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule build() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule buildPartial() {
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule result =
+            new com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule result) {
+        if (fieldActionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            fieldActions_ = java.util.Collections.unmodifiableList(fieldActions_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.fieldActions_ = fieldActions_;
+        } else {
+          result.fieldActions_ = fieldActionsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.resourceFilter_ =
+              resourceFilterBuilder_ == null ? resourceFilter_ : resourceFilterBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.description_ = description_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule) {
+          return mergeFrom((com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule other) {
+        if (other
+            == com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.getDefaultInstance())
+          return this;
+        if (fieldActionsBuilder_ == null) {
+          if (!other.fieldActions_.isEmpty()) {
+            if (fieldActions_.isEmpty()) {
+              fieldActions_ = other.fieldActions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureFieldActionsIsMutable();
+              fieldActions_.addAll(other.fieldActions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.fieldActions_.isEmpty()) {
+            if (fieldActionsBuilder_.isEmpty()) {
+              fieldActionsBuilder_.dispose();
+              fieldActionsBuilder_ = null;
+              fieldActions_ = other.fieldActions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              fieldActionsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getFieldActionsFieldBuilder()
+                      : null;
+            } else {
+              fieldActionsBuilder_.addAllMessages(other.fieldActions_);
+            }
+          }
+        }
+        if (other.hasResourceFilter()) {
+          mergeResourceFilter(other.getResourceFilter());
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction m =
+                      input.readMessage(
+                          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
+                              .parser(),
+                          extensionRegistry);
+                  if (fieldActionsBuilder_ == null) {
+                    ensureFieldActionsIsMutable();
+                    fieldActions_.add(m);
+                  } else {
+                    fieldActionsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getResourceFilterFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  description_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction>
+          fieldActions_ = java.util.Collections.emptyList();
+
+      private void ensureFieldActionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          fieldActions_ =
+              new java.util.ArrayList<
+                  com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction>(
+                  fieldActions_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction,
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder,
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleActionOrBuilder>
+          fieldActionsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction>
+          getFieldActionsList() {
+        if (fieldActionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(fieldActions_);
+        } else {
+          return fieldActionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public int getFieldActionsCount() {
+        if (fieldActionsBuilder_ == null) {
+          return fieldActions_.size();
+        } else {
+          return fieldActionsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction getFieldActions(
+          int index) {
+        if (fieldActionsBuilder_ == null) {
+          return fieldActions_.get(index);
+        } else {
+          return fieldActionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setFieldActions(
+          int index, com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction value) {
+        if (fieldActionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFieldActionsIsMutable();
+          fieldActions_.set(index, value);
+          onChanged();
+        } else {
+          fieldActionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setFieldActions(
+          int index,
+          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder
+              builderForValue) {
+        if (fieldActionsBuilder_ == null) {
+          ensureFieldActionsIsMutable();
+          fieldActions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          fieldActionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addFieldActions(
+          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction value) {
+        if (fieldActionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFieldActionsIsMutable();
+          fieldActions_.add(value);
+          onChanged();
+        } else {
+          fieldActionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addFieldActions(
+          int index, com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction value) {
+        if (fieldActionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFieldActionsIsMutable();
+          fieldActions_.add(index, value);
+          onChanged();
+        } else {
+          fieldActionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addFieldActions(
+          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder
+              builderForValue) {
+        if (fieldActionsBuilder_ == null) {
+          ensureFieldActionsIsMutable();
+          fieldActions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          fieldActionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addFieldActions(
+          int index,
+          com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder
+              builderForValue) {
+        if (fieldActionsBuilder_ == null) {
+          ensureFieldActionsIsMutable();
+          fieldActions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          fieldActionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addAllFieldActions(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction>
+              values) {
+        if (fieldActionsBuilder_ == null) {
+          ensureFieldActionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fieldActions_);
+          onChanged();
+        } else {
+          fieldActionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearFieldActions() {
+        if (fieldActionsBuilder_ == null) {
+          fieldActions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          fieldActionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder removeFieldActions(int index) {
+        if (fieldActionsBuilder_ == null) {
+          ensureFieldActionsIsMutable();
+          fieldActions_.remove(index);
+          onChanged();
+        } else {
+          fieldActionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder
+          getFieldActionsBuilder(int index) {
+        return getFieldActionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleActionOrBuilder
+          getFieldActionsOrBuilder(int index) {
+        if (fieldActionsBuilder_ == null) {
+          return fieldActions_.get(index);
+        } else {
+          return fieldActionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleActionOrBuilder>
+          getFieldActionsOrBuilderList() {
+        if (fieldActionsBuilder_ != null) {
+          return fieldActionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(fieldActions_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder
+          addFieldActionsBuilder() {
+        return getFieldActionsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder
+          addFieldActionsBuilder(int index) {
+        return getFieldActionsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of transformation rule actions to take against candidate
+       * resources. Actions are executed in order defined - this order matters, as
+       * they could potentially interfere with each other and the first operation
+       * could affect the outcome of the second operation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction field_actions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder>
+          getFieldActionsBuilderList() {
+        return getFieldActionsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction,
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder,
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleActionOrBuilder>
+          getFieldActionsFieldBuilder() {
+        if (fieldActionsBuilder_ == null) {
+          fieldActionsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction,
+                  com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleAction.Builder,
+                  com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleActionOrBuilder>(
+                  fieldActions_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          fieldActions_ = null;
+        }
+        return fieldActionsBuilder_;
+      }
+
+      private com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resourceFilter_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter,
+              com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.Builder,
+              com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilterOrBuilder>
+          resourceFilterBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * This field is used to specify a set of fields that should be used to
+       * determine which resources in backup should be acted upon by the supplied
+       * transformation rule actions, and this will ensure that only specific
+       * resources are affected by transformation rule actions.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       *
+       * @return Whether the resourceFilter field is set.
+       */
+      public boolean hasResourceFilter() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field is used to specify a set of fields that should be used to
+       * determine which resources in backup should be acted upon by the supplied
+       * transformation rule actions, and this will ensure that only specific
+       * resources are affected by transformation rule actions.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       *
+       * @return The resourceFilter.
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter getResourceFilter() {
+        if (resourceFilterBuilder_ == null) {
+          return resourceFilter_ == null
+              ? com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.getDefaultInstance()
+              : resourceFilter_;
+        } else {
+          return resourceFilterBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field is used to specify a set of fields that should be used to
+       * determine which resources in backup should be acted upon by the supplied
+       * transformation rule actions, and this will ensure that only specific
+       * resources are affected by transformation rule actions.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       */
+      public Builder setResourceFilter(
+          com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter value) {
+        if (resourceFilterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resourceFilter_ = value;
+        } else {
+          resourceFilterBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field is used to specify a set of fields that should be used to
+       * determine which resources in backup should be acted upon by the supplied
+       * transformation rule actions, and this will ensure that only specific
+       * resources are affected by transformation rule actions.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       */
+      public Builder setResourceFilter(
+          com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.Builder builderForValue) {
+        if (resourceFilterBuilder_ == null) {
+          resourceFilter_ = builderForValue.build();
+        } else {
+          resourceFilterBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field is used to specify a set of fields that should be used to
+       * determine which resources in backup should be acted upon by the supplied
+       * transformation rule actions, and this will ensure that only specific
+       * resources are affected by transformation rule actions.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       */
+      public Builder mergeResourceFilter(
+          com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter value) {
+        if (resourceFilterBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && resourceFilter_ != null
+              && resourceFilter_
+                  != com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter
+                      .getDefaultInstance()) {
+            getResourceFilterBuilder().mergeFrom(value);
+          } else {
+            resourceFilter_ = value;
+          }
+        } else {
+          resourceFilterBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field is used to specify a set of fields that should be used to
+       * determine which resources in backup should be acted upon by the supplied
+       * transformation rule actions, and this will ensure that only specific
+       * resources are affected by transformation rule actions.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       */
+      public Builder clearResourceFilter() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resourceFilter_ = null;
+        if (resourceFilterBuilder_ != null) {
+          resourceFilterBuilder_.dispose();
+          resourceFilterBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field is used to specify a set of fields that should be used to
+       * determine which resources in backup should be acted upon by the supplied
+       * transformation rule actions, and this will ensure that only specific
+       * resources are affected by transformation rule actions.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.Builder
+          getResourceFilterBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getResourceFilterFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field is used to specify a set of fields that should be used to
+       * determine which resources in backup should be acted upon by the supplied
+       * transformation rule actions, and this will ensure that only specific
+       * resources are affected by transformation rule actions.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       */
+      public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilterOrBuilder
+          getResourceFilterOrBuilder() {
+        if (resourceFilterBuilder_ != null) {
+          return resourceFilterBuilder_.getMessageOrBuilder();
+        } else {
+          return resourceFilter_ == null
+              ? com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.getDefaultInstance()
+              : resourceFilter_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This field is used to specify a set of fields that should be used to
+       * determine which resources in backup should be acted upon by the supplied
+       * transformation rule actions, and this will ensure that only specific
+       * resources are affected by transformation rule actions.
+       * </pre>
+       *
+       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter,
+              com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.Builder,
+              com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilterOrBuilder>
+          getResourceFilterFieldBuilder() {
+        if (resourceFilterBuilder_ == null) {
+          resourceFilterBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter,
+                  com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.Builder,
+                  com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilterOrBuilder>(
+                  getResourceFilter(), getParentForChildren(), isClean());
+          resourceFilter_ = null;
+        }
+        return resourceFilterBuilder_;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The description is a user specified string description of the
+       * transformation rule.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       *
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The description is a user specified string description of the
+       * transformation rule.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       *
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The description is a user specified string description of the
+       * transformation rule.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       *
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        description_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The description is a user specified string description of the
+       * transformation rule.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The description is a user specified string description of the
+       * transformation rule.
+       * </pre>
+       *
+       * <code>string description = 3;</code>
+       *
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        description_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.gkebackup.v1.RestoreConfig.TransformationRule)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.gkebackup.v1.RestoreConfig.TransformationRule)
+    private static final com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule();
+    }
+
+    public static com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TransformationRule> PARSER =
+        new com.google.protobuf.AbstractParser<TransformationRule>() {
+          @java.lang.Override
+          public TransformationRule parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TransformationRule> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TransformationRule> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int namespacedResourceRestoreScopeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object namespacedResourceRestoreScope_;
 
   public enum NamespacedResourceRestoreScopeCase
@@ -5002,6 +10985,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     ALL_NAMESPACES(5),
     SELECTED_NAMESPACES(6),
     SELECTED_APPLICATIONS(7),
+    NO_NAMESPACES(9),
+    EXCLUDED_NAMESPACES(10),
     NAMESPACEDRESOURCERESTORESCOPE_NOT_SET(0);
     private final int value;
 
@@ -5026,6 +11011,10 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
           return SELECTED_NAMESPACES;
         case 7:
           return SELECTED_APPLICATIONS;
+        case 9:
+          return NO_NAMESPACES;
+        case 10:
+          return EXCLUDED_NAMESPACES;
         case 0:
           return NAMESPACEDRESOURCERESTORESCOPE_NOT_SET;
         default:
@@ -5098,7 +11087,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    * Defines the behavior for handling the situation where cluster-scoped
    * resources being restored already exist in the target cluster. This MUST be
    * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
-   * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope] is not empty.
+   * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
+   * is not empty.
    * </pre>
    *
    * <code>
@@ -5118,7 +11108,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    * Defines the behavior for handling the situation where cluster-scoped
    * resources being restored already exist in the target cluster. This MUST be
    * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
-   * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope] is not empty.
+   * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
+   * is not empty.
    * </pre>
    *
    * <code>
@@ -5397,6 +11388,97 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
   }
 
+  public static final int NO_NAMESPACES_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Do not restore any namespaced resources if set to "True".
+   * Specifying this field to "False" is not allowed.
+   * </pre>
+   *
+   * <code>bool no_namespaces = 9;</code>
+   *
+   * @return Whether the noNamespaces field is set.
+   */
+  @java.lang.Override
+  public boolean hasNoNamespaces() {
+    return namespacedResourceRestoreScopeCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Do not restore any namespaced resources if set to "True".
+   * Specifying this field to "False" is not allowed.
+   * </pre>
+   *
+   * <code>bool no_namespaces = 9;</code>
+   *
+   * @return The noNamespaces.
+   */
+  @java.lang.Override
+  public boolean getNoNamespaces() {
+    if (namespacedResourceRestoreScopeCase_ == 9) {
+      return (java.lang.Boolean) namespacedResourceRestoreScope_;
+    }
+    return false;
+  }
+
+  public static final int EXCLUDED_NAMESPACES_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * A list of selected namespaces excluded from restoration. All
+   * namespaces except those in this list will be restored.
+   * </pre>
+   *
+   * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+   *
+   * @return Whether the excludedNamespaces field is set.
+   */
+  @java.lang.Override
+  public boolean hasExcludedNamespaces() {
+    return namespacedResourceRestoreScopeCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of selected namespaces excluded from restoration. All
+   * namespaces except those in this list will be restored.
+   * </pre>
+   *
+   * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+   *
+   * @return The excludedNamespaces.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.Namespaces getExcludedNamespaces() {
+    if (namespacedResourceRestoreScopeCase_ == 10) {
+      return (com.google.cloud.gkebackup.v1.Namespaces) namespacedResourceRestoreScope_;
+    }
+    return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of selected namespaces excluded from restoration. All
+   * namespaces except those in this list will be restored.
+   * </pre>
+   *
+   * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.NamespacesOrBuilder getExcludedNamespacesOrBuilder() {
+    if (namespacedResourceRestoreScopeCase_ == 10) {
+      return (com.google.cloud.gkebackup.v1.Namespaces) namespacedResourceRestoreScope_;
+    }
+    return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+  }
+
   public static final int SUBSTITUTION_RULES_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
@@ -5503,6 +11585,112 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     return substitutionRules_.get(index);
   }
 
+  public static final int TRANSFORMATION_RULES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule>
+      transformationRules_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of transformation rules to be applied against Kubernetes resources
+   * as they are selected for restoration from a Backup. Rules are executed in
+   * order defined - this order matters, as changes made by a rule may impact
+   * the filtering logic of subsequent rules. An empty list means no
+   * transformation will occur.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule>
+      getTransformationRulesList() {
+    return transformationRules_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of transformation rules to be applied against Kubernetes resources
+   * as they are selected for restoration from a Backup. Rules are executed in
+   * order defined - this order matters, as changes made by a rule may impact
+   * the filtering logic of subsequent rules. An empty list means no
+   * transformation will occur.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder>
+      getTransformationRulesOrBuilderList() {
+    return transformationRules_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of transformation rules to be applied against Kubernetes resources
+   * as they are selected for restoration from a Backup. Rules are executed in
+   * order defined - this order matters, as changes made by a rule may impact
+   * the filtering logic of subsequent rules. An empty list means no
+   * transformation will occur.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public int getTransformationRulesCount() {
+    return transformationRules_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of transformation rules to be applied against Kubernetes resources
+   * as they are selected for restoration from a Backup. Rules are executed in
+   * order defined - this order matters, as changes made by a rule may impact
+   * the filtering logic of subsequent rules. An empty list means no
+   * transformation will occur.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule getTransformationRules(
+      int index) {
+    return transformationRules_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of transformation rules to be applied against Kubernetes resources
+   * as they are selected for restoration from a Backup. Rules are executed in
+   * order defined - this order matters, as changes made by a rule may impact
+   * the filtering logic of subsequent rules. An empty list means no
+   * transformation will occur.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder
+      getTransformationRulesOrBuilder(int index) {
+    return transformationRules_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5551,6 +11739,16 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < substitutionRules_.size(); i++) {
       output.writeMessage(8, substitutionRules_.get(i));
+    }
+    if (namespacedResourceRestoreScopeCase_ == 9) {
+      output.writeBool(9, (boolean) ((java.lang.Boolean) namespacedResourceRestoreScope_));
+    }
+    if (namespacedResourceRestoreScopeCase_ == 10) {
+      output.writeMessage(
+          10, (com.google.cloud.gkebackup.v1.Namespaces) namespacedResourceRestoreScope_);
+    }
+    for (int i = 0; i < transformationRules_.size(); i++) {
+      output.writeMessage(11, transformationRules_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -5605,6 +11803,20 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, substitutionRules_.get(i));
     }
+    if (namespacedResourceRestoreScopeCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              9, (boolean) ((java.lang.Boolean) namespacedResourceRestoreScope_));
+    }
+    if (namespacedResourceRestoreScopeCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.gkebackup.v1.Namespaces) namespacedResourceRestoreScope_);
+    }
+    for (int i = 0; i < transformationRules_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, transformationRules_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5630,6 +11842,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         return false;
     }
     if (!getSubstitutionRulesList().equals(other.getSubstitutionRulesList())) return false;
+    if (!getTransformationRulesList().equals(other.getTransformationRulesList())) return false;
     if (!getNamespacedResourceRestoreScopeCase()
         .equals(other.getNamespacedResourceRestoreScopeCase())) return false;
     switch (namespacedResourceRestoreScopeCase_) {
@@ -5641,6 +11854,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         break;
       case 7:
         if (!getSelectedApplications().equals(other.getSelectedApplications())) return false;
+        break;
+      case 9:
+        if (getNoNamespaces() != other.getNoNamespaces()) return false;
+        break;
+      case 10:
+        if (!getExcludedNamespaces().equals(other.getExcludedNamespaces())) return false;
         break;
       case 0:
       default:
@@ -5670,6 +11889,10 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SUBSTITUTION_RULES_FIELD_NUMBER;
       hash = (53 * hash) + getSubstitutionRulesList().hashCode();
     }
+    if (getTransformationRulesCount() > 0) {
+      hash = (37 * hash) + TRANSFORMATION_RULES_FIELD_NUMBER;
+      hash = (53 * hash) + getTransformationRulesList().hashCode();
+    }
     switch (namespacedResourceRestoreScopeCase_) {
       case 5:
         hash = (37 * hash) + ALL_NAMESPACES_FIELD_NUMBER;
@@ -5682,6 +11905,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       case 7:
         hash = (37 * hash) + SELECTED_APPLICATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getSelectedApplications().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + NO_NAMESPACES_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNoNamespaces());
+        break;
+      case 10:
+        hash = (37 * hash) + EXCLUDED_NAMESPACES_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludedNamespaces().hashCode();
         break;
       case 0:
       default:
@@ -5791,7 +12022,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration of a restore.
-   * Next id: 9
+   * Next id: 12
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig}
@@ -5840,13 +12071,23 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       if (selectedApplicationsBuilder_ != null) {
         selectedApplicationsBuilder_.clear();
       }
+      if (excludedNamespacesBuilder_ != null) {
+        excludedNamespacesBuilder_.clear();
+      }
       if (substitutionRulesBuilder_ == null) {
         substitutionRules_ = java.util.Collections.emptyList();
       } else {
         substitutionRules_ = null;
         substitutionRulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
+      if (transformationRulesBuilder_ == null) {
+        transformationRules_ = java.util.Collections.emptyList();
+      } else {
+        transformationRules_ = null;
+        transformationRulesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
       namespacedResourceRestoreScopeCase_ = 0;
       namespacedResourceRestoreScope_ = null;
       return this;
@@ -5887,13 +12128,22 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.gkebackup.v1.RestoreConfig result) {
       if (substitutionRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           substitutionRules_ = java.util.Collections.unmodifiableList(substitutionRules_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.substitutionRules_ = substitutionRules_;
       } else {
         result.substitutionRules_ = substitutionRulesBuilder_.build();
+      }
+      if (transformationRulesBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          transformationRules_ = java.util.Collections.unmodifiableList(transformationRules_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.transformationRules_ = transformationRules_;
+      } else {
+        result.transformationRules_ = transformationRulesBuilder_.build();
       }
     }
 
@@ -5924,6 +12174,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (namespacedResourceRestoreScopeCase_ == 7 && selectedApplicationsBuilder_ != null) {
         result.namespacedResourceRestoreScope_ = selectedApplicationsBuilder_.build();
+      }
+      if (namespacedResourceRestoreScopeCase_ == 10 && excludedNamespacesBuilder_ != null) {
+        result.namespacedResourceRestoreScope_ = excludedNamespacesBuilder_.build();
       }
     }
 
@@ -5988,7 +12241,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.substitutionRules_.isEmpty()) {
           if (substitutionRules_.isEmpty()) {
             substitutionRules_ = other.substitutionRules_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureSubstitutionRulesIsMutable();
             substitutionRules_.addAll(other.substitutionRules_);
@@ -6001,13 +12254,40 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
             substitutionRulesBuilder_.dispose();
             substitutionRulesBuilder_ = null;
             substitutionRules_ = other.substitutionRules_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000200);
             substitutionRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSubstitutionRulesFieldBuilder()
                     : null;
           } else {
             substitutionRulesBuilder_.addAllMessages(other.substitutionRules_);
+          }
+        }
+      }
+      if (transformationRulesBuilder_ == null) {
+        if (!other.transformationRules_.isEmpty()) {
+          if (transformationRules_.isEmpty()) {
+            transformationRules_ = other.transformationRules_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureTransformationRulesIsMutable();
+            transformationRules_.addAll(other.transformationRules_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.transformationRules_.isEmpty()) {
+          if (transformationRulesBuilder_.isEmpty()) {
+            transformationRulesBuilder_.dispose();
+            transformationRulesBuilder_ = null;
+            transformationRules_ = other.transformationRules_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            transformationRulesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTransformationRulesFieldBuilder()
+                    : null;
+          } else {
+            transformationRulesBuilder_.addAllMessages(other.transformationRules_);
           }
         }
       }
@@ -6025,6 +12305,16 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         case SELECTED_APPLICATIONS:
           {
             mergeSelectedApplications(other.getSelectedApplications());
+            break;
+          }
+        case NO_NAMESPACES:
+          {
+            setNoNamespaces(other.getNoNamespaces());
+            break;
+          }
+        case EXCLUDED_NAMESPACES:
+          {
+            mergeExcludedNamespaces(other.getExcludedNamespaces());
             break;
           }
         case NAMESPACEDRESOURCERESTORESCOPE_NOT_SET:
@@ -6117,6 +12407,33 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 66
+            case 72:
+              {
+                namespacedResourceRestoreScope_ = input.readBool();
+                namespacedResourceRestoreScopeCase_ = 9;
+                break;
+              } // case 72
+            case 82:
+              {
+                input.readMessage(
+                    getExcludedNamespacesFieldBuilder().getBuilder(), extensionRegistry);
+                namespacedResourceRestoreScopeCase_ = 10;
+                break;
+              } // case 82
+            case 90:
+              {
+                com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule m =
+                    input.readMessage(
+                        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.parser(),
+                        extensionRegistry);
+                if (transformationRulesBuilder_ == null) {
+                  ensureTransformationRulesIsMutable();
+                  transformationRules_.add(m);
+                } else {
+                  transformationRulesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6273,7 +12590,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * Defines the behavior for handling the situation where cluster-scoped
      * resources being restored already exist in the target cluster. This MUST be
      * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
-     * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope] is not empty.
+     * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
+     * is not empty.
      * </pre>
      *
      * <code>
@@ -6293,7 +12611,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * Defines the behavior for handling the situation where cluster-scoped
      * resources being restored already exist in the target cluster. This MUST be
      * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
-     * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope] is not empty.
+     * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
+     * is not empty.
      * </pre>
      *
      * <code>
@@ -6316,7 +12635,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * Defines the behavior for handling the situation where cluster-scoped
      * resources being restored already exist in the target cluster. This MUST be
      * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
-     * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope] is not empty.
+     * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
+     * is not empty.
      * </pre>
      *
      * <code>
@@ -6342,7 +12662,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * Defines the behavior for handling the situation where cluster-scoped
      * resources being restored already exist in the target cluster. This MUST be
      * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
-     * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope] is not empty.
+     * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
+     * is not empty.
      * </pre>
      *
      * <code>
@@ -6369,7 +12690,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * Defines the behavior for handling the situation where cluster-scoped
      * resources being restored already exist in the target cluster. This MUST be
      * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
-     * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope] is not empty.
+     * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
+     * is not empty.
      * </pre>
      *
      * <code>
@@ -7247,15 +13569,309 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       return selectedApplicationsBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Do not restore any namespaced resources if set to "True".
+     * Specifying this field to "False" is not allowed.
+     * </pre>
+     *
+     * <code>bool no_namespaces = 9;</code>
+     *
+     * @return Whether the noNamespaces field is set.
+     */
+    public boolean hasNoNamespaces() {
+      return namespacedResourceRestoreScopeCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Do not restore any namespaced resources if set to "True".
+     * Specifying this field to "False" is not allowed.
+     * </pre>
+     *
+     * <code>bool no_namespaces = 9;</code>
+     *
+     * @return The noNamespaces.
+     */
+    public boolean getNoNamespaces() {
+      if (namespacedResourceRestoreScopeCase_ == 9) {
+        return (java.lang.Boolean) namespacedResourceRestoreScope_;
+      }
+      return false;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Do not restore any namespaced resources if set to "True".
+     * Specifying this field to "False" is not allowed.
+     * </pre>
+     *
+     * <code>bool no_namespaces = 9;</code>
+     *
+     * @param value The noNamespaces to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNoNamespaces(boolean value) {
+
+      namespacedResourceRestoreScopeCase_ = 9;
+      namespacedResourceRestoreScope_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Do not restore any namespaced resources if set to "True".
+     * Specifying this field to "False" is not allowed.
+     * </pre>
+     *
+     * <code>bool no_namespaces = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNoNamespaces() {
+      if (namespacedResourceRestoreScopeCase_ == 9) {
+        namespacedResourceRestoreScopeCase_ = 0;
+        namespacedResourceRestoreScope_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.Namespaces,
+            com.google.cloud.gkebackup.v1.Namespaces.Builder,
+            com.google.cloud.gkebackup.v1.NamespacesOrBuilder>
+        excludedNamespacesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A list of selected namespaces excluded from restoration. All
+     * namespaces except those in this list will be restored.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+     *
+     * @return Whether the excludedNamespaces field is set.
+     */
+    @java.lang.Override
+    public boolean hasExcludedNamespaces() {
+      return namespacedResourceRestoreScopeCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of selected namespaces excluded from restoration. All
+     * namespaces except those in this list will be restored.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+     *
+     * @return The excludedNamespaces.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.Namespaces getExcludedNamespaces() {
+      if (excludedNamespacesBuilder_ == null) {
+        if (namespacedResourceRestoreScopeCase_ == 10) {
+          return (com.google.cloud.gkebackup.v1.Namespaces) namespacedResourceRestoreScope_;
+        }
+        return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+      } else {
+        if (namespacedResourceRestoreScopeCase_ == 10) {
+          return excludedNamespacesBuilder_.getMessage();
+        }
+        return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of selected namespaces excluded from restoration. All
+     * namespaces except those in this list will be restored.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+     */
+    public Builder setExcludedNamespaces(com.google.cloud.gkebackup.v1.Namespaces value) {
+      if (excludedNamespacesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        namespacedResourceRestoreScope_ = value;
+        onChanged();
+      } else {
+        excludedNamespacesBuilder_.setMessage(value);
+      }
+      namespacedResourceRestoreScopeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of selected namespaces excluded from restoration. All
+     * namespaces except those in this list will be restored.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+     */
+    public Builder setExcludedNamespaces(
+        com.google.cloud.gkebackup.v1.Namespaces.Builder builderForValue) {
+      if (excludedNamespacesBuilder_ == null) {
+        namespacedResourceRestoreScope_ = builderForValue.build();
+        onChanged();
+      } else {
+        excludedNamespacesBuilder_.setMessage(builderForValue.build());
+      }
+      namespacedResourceRestoreScopeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of selected namespaces excluded from restoration. All
+     * namespaces except those in this list will be restored.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+     */
+    public Builder mergeExcludedNamespaces(com.google.cloud.gkebackup.v1.Namespaces value) {
+      if (excludedNamespacesBuilder_ == null) {
+        if (namespacedResourceRestoreScopeCase_ == 10
+            && namespacedResourceRestoreScope_
+                != com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance()) {
+          namespacedResourceRestoreScope_ =
+              com.google.cloud.gkebackup.v1.Namespaces.newBuilder(
+                      (com.google.cloud.gkebackup.v1.Namespaces) namespacedResourceRestoreScope_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          namespacedResourceRestoreScope_ = value;
+        }
+        onChanged();
+      } else {
+        if (namespacedResourceRestoreScopeCase_ == 10) {
+          excludedNamespacesBuilder_.mergeFrom(value);
+        } else {
+          excludedNamespacesBuilder_.setMessage(value);
+        }
+      }
+      namespacedResourceRestoreScopeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of selected namespaces excluded from restoration. All
+     * namespaces except those in this list will be restored.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+     */
+    public Builder clearExcludedNamespaces() {
+      if (excludedNamespacesBuilder_ == null) {
+        if (namespacedResourceRestoreScopeCase_ == 10) {
+          namespacedResourceRestoreScopeCase_ = 0;
+          namespacedResourceRestoreScope_ = null;
+          onChanged();
+        }
+      } else {
+        if (namespacedResourceRestoreScopeCase_ == 10) {
+          namespacedResourceRestoreScopeCase_ = 0;
+          namespacedResourceRestoreScope_ = null;
+        }
+        excludedNamespacesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of selected namespaces excluded from restoration. All
+     * namespaces except those in this list will be restored.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+     */
+    public com.google.cloud.gkebackup.v1.Namespaces.Builder getExcludedNamespacesBuilder() {
+      return getExcludedNamespacesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of selected namespaces excluded from restoration. All
+     * namespaces except those in this list will be restored.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.NamespacesOrBuilder getExcludedNamespacesOrBuilder() {
+      if ((namespacedResourceRestoreScopeCase_ == 10) && (excludedNamespacesBuilder_ != null)) {
+        return excludedNamespacesBuilder_.getMessageOrBuilder();
+      } else {
+        if (namespacedResourceRestoreScopeCase_ == 10) {
+          return (com.google.cloud.gkebackup.v1.Namespaces) namespacedResourceRestoreScope_;
+        }
+        return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of selected namespaces excluded from restoration. All
+     * namespaces except those in this list will be restored.
+     * </pre>
+     *
+     * <code>.google.cloud.gkebackup.v1.Namespaces excluded_namespaces = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.Namespaces,
+            com.google.cloud.gkebackup.v1.Namespaces.Builder,
+            com.google.cloud.gkebackup.v1.NamespacesOrBuilder>
+        getExcludedNamespacesFieldBuilder() {
+      if (excludedNamespacesBuilder_ == null) {
+        if (!(namespacedResourceRestoreScopeCase_ == 10)) {
+          namespacedResourceRestoreScope_ =
+              com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+        }
+        excludedNamespacesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.Namespaces,
+                com.google.cloud.gkebackup.v1.Namespaces.Builder,
+                com.google.cloud.gkebackup.v1.NamespacesOrBuilder>(
+                (com.google.cloud.gkebackup.v1.Namespaces) namespacedResourceRestoreScope_,
+                getParentForChildren(),
+                isClean());
+        namespacedResourceRestoreScope_ = null;
+      }
+      namespacedResourceRestoreScopeCase_ = 10;
+      onChanged();
+      return excludedNamespacesBuilder_;
+    }
+
     private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule>
         substitutionRules_ = java.util.Collections.emptyList();
 
     private void ensureSubstitutionRulesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         substitutionRules_ =
             new java.util.ArrayList<com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule>(
                 substitutionRules_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -7545,7 +14161,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSubstitutionRules() {
       if (substitutionRulesBuilder_ == null) {
         substitutionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         substitutionRulesBuilder_.clear();
@@ -7718,12 +14334,491 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule.Builder,
                 com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRuleOrBuilder>(
                 substitutionRules_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         substitutionRules_ = null;
       }
       return substitutionRulesBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule>
+        transformationRules_ = java.util.Collections.emptyList();
+
+    private void ensureTransformationRulesIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        transformationRules_ =
+            new java.util.ArrayList<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule>(
+                transformationRules_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule,
+            com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder,
+            com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder>
+        transformationRulesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule>
+        getTransformationRulesList() {
+      if (transformationRulesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(transformationRules_);
+      } else {
+        return transformationRulesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public int getTransformationRulesCount() {
+      if (transformationRulesBuilder_ == null) {
+        return transformationRules_.size();
+      } else {
+        return transformationRulesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule getTransformationRules(
+        int index) {
+      if (transformationRulesBuilder_ == null) {
+        return transformationRules_.get(index);
+      } else {
+        return transformationRulesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public Builder setTransformationRules(
+        int index, com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule value) {
+      if (transformationRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTransformationRulesIsMutable();
+        transformationRules_.set(index, value);
+        onChanged();
+      } else {
+        transformationRulesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public Builder setTransformationRules(
+        int index,
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder builderForValue) {
+      if (transformationRulesBuilder_ == null) {
+        ensureTransformationRulesIsMutable();
+        transformationRules_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        transformationRulesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public Builder addTransformationRules(
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule value) {
+      if (transformationRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTransformationRulesIsMutable();
+        transformationRules_.add(value);
+        onChanged();
+      } else {
+        transformationRulesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public Builder addTransformationRules(
+        int index, com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule value) {
+      if (transformationRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTransformationRulesIsMutable();
+        transformationRules_.add(index, value);
+        onChanged();
+      } else {
+        transformationRulesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public Builder addTransformationRules(
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder builderForValue) {
+      if (transformationRulesBuilder_ == null) {
+        ensureTransformationRulesIsMutable();
+        transformationRules_.add(builderForValue.build());
+        onChanged();
+      } else {
+        transformationRulesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public Builder addTransformationRules(
+        int index,
+        com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder builderForValue) {
+      if (transformationRulesBuilder_ == null) {
+        ensureTransformationRulesIsMutable();
+        transformationRules_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        transformationRulesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public Builder addAllTransformationRules(
+        java.lang.Iterable<? extends com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule>
+            values) {
+      if (transformationRulesBuilder_ == null) {
+        ensureTransformationRulesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, transformationRules_);
+        onChanged();
+      } else {
+        transformationRulesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public Builder clearTransformationRules() {
+      if (transformationRulesBuilder_ == null) {
+        transformationRules_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        transformationRulesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public Builder removeTransformationRules(int index) {
+      if (transformationRulesBuilder_ == null) {
+        ensureTransformationRulesIsMutable();
+        transformationRules_.remove(index);
+        onChanged();
+      } else {
+        transformationRulesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder
+        getTransformationRulesBuilder(int index) {
+      return getTransformationRulesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder
+        getTransformationRulesOrBuilder(int index) {
+      if (transformationRulesBuilder_ == null) {
+        return transformationRules_.get(index);
+      } else {
+        return transformationRulesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder>
+        getTransformationRulesOrBuilderList() {
+      if (transformationRulesBuilder_ != null) {
+        return transformationRulesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(transformationRules_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder
+        addTransformationRulesBuilder() {
+      return getTransformationRulesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder
+        addTransformationRulesBuilder(int index) {
+      return getTransformationRulesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of transformation rules to be applied against Kubernetes resources
+     * as they are selected for restoration from a Backup. Rules are executed in
+     * order defined - this order matters, as changes made by a rule may impact
+     * the filtering logic of subsequent rules. An empty list means no
+     * transformation will occur.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder>
+        getTransformationRulesBuilderList() {
+      return getTransformationRulesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule,
+            com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder,
+            com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder>
+        getTransformationRulesFieldBuilder() {
+      if (transformationRulesBuilder_ == null) {
+        transformationRulesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule,
+                com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder,
+                com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder>(
+                transformationRules_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        transformationRules_ = null;
+      }
+      return transformationRulesBuilder_;
     }
 
     @java.lang.Override

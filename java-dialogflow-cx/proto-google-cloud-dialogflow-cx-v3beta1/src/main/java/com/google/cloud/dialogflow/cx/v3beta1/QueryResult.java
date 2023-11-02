@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     return new QueryResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.SessionProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_QueryResult_descriptor;
@@ -71,6 +66,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int queryCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object query_;
 
   public enum QueryCase
@@ -549,9 +546,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The collected [session
    * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -576,9 +575,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The collected [session
    * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -603,9 +604,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The collected [session
    * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -941,7 +944,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=718
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
    * @return Whether the intent field is set.
    */
   @java.lang.Override
@@ -964,7 +967,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=718
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
    * @return The intent.
    */
   @java.lang.Override
@@ -1016,7 +1019,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=740
    * @return The intentDetectionConfidence.
    */
   @java.lang.Override
@@ -1084,8 +1087,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * The free-form diagnostic info. For example, this field could contain
    * webhook call latency. The fields of this data can change without notice,
    * so you should not write code that depends on its structure.
+   *
    * One of the fields is called "Alternative Matched Intents", which may
    * aid with debugging. The following describes these intent results:
+   *
    * - The list is empty if no intent was matched to end-user input.
    * - Only intents that are referenced in the currently active flow are
    *   included.
@@ -1113,8 +1118,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * The free-form diagnostic info. For example, this field could contain
    * webhook call latency. The fields of this data can change without notice,
    * so you should not write code that depends on its structure.
+   *
    * One of the fields is called "Alternative Matched Intents", which may
    * aid with debugging. The following describes these intent results:
+   *
    * - The list is empty if no intent was matched to end-user input.
    * - Only intents that are referenced in the currently active flow are
    *   included.
@@ -1144,8 +1151,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * The free-form diagnostic info. For example, this field could contain
    * webhook call latency. The fields of this data can change without notice,
    * so you should not write code that depends on its structure.
+   *
    * One of the fields is called "Alternative Matched Intents", which may
    * aid with debugging. The following describes these intent results:
+   *
    * - The list is empty if no intent was matched to end-user input.
    * - Only intents that are referenced in the currently active flow are
    *   included.
@@ -1234,6 +1243,69 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         : sentimentAnalysisResult_;
   }
 
+  public static final int ADVANCED_SETTINGS_FIELD_NUMBER = 21;
+  private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advancedSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Returns the current advanced settings including IVR settings. Even though
+   * the operations configured by these settings are performed by Dialogflow,
+   * the client may need to perform special logic at the moment. For example, if
+   * Dialogflow exports audio to Google Cloud Storage, then the client may need
+   * to wait for the resulting object to appear in the bucket before proceeding.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvancedSettings() {
+    return advancedSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Returns the current advanced settings including IVR settings. Even though
+   * the operations configured by these settings are performed by Dialogflow,
+   * the client may need to perform special logic at the moment. For example, if
+   * Dialogflow exports audio to Google Cloud Storage, then the client may need
+   * to wait for the resulting object to appear in the bucket before proceeding.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+   *
+   * @return The advancedSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings() {
+    return advancedSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()
+        : advancedSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Returns the current advanced settings including IVR settings. Even though
+   * the operations configured by these settings are performed by Dialogflow,
+   * the client may need to perform special logic at the moment. For example, if
+   * Dialogflow exports audio to Google Cloud Storage, then the client may need
+   * to wait for the resulting object to appear in the bucket before proceeding.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder
+      getAdvancedSettingsOrBuilder() {
+    return advancedSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()
+        : advancedSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1292,6 +1364,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     }
     if (sentimentAnalysisResult_ != null) {
       output.writeMessage(17, getSentimentAnalysisResult());
+    }
+    if (advancedSettings_ != null) {
+      output.writeMessage(21, getAdvancedSettings());
     }
     if (queryCase_ == 23) {
       output.writeMessage(23, (com.google.cloud.dialogflow.cx.v3beta1.DtmfInput) query_);
@@ -1352,6 +1427,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, getSentimentAnalysisResult());
     }
+    if (advancedSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getAdvancedSettings());
+    }
     if (queryCase_ == 23) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1402,6 +1480,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (hasSentimentAnalysisResult() != other.hasSentimentAnalysisResult()) return false;
     if (hasSentimentAnalysisResult()) {
       if (!getSentimentAnalysisResult().equals(other.getSentimentAnalysisResult())) return false;
+    }
+    if (hasAdvancedSettings() != other.hasAdvancedSettings()) return false;
+    if (hasAdvancedSettings()) {
+      if (!getAdvancedSettings().equals(other.getAdvancedSettings())) return false;
     }
     if (!getQueryCase().equals(other.getQueryCase())) return false;
     switch (queryCase_) {
@@ -1473,6 +1555,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (hasSentimentAnalysisResult()) {
       hash = (37 * hash) + SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getSentimentAnalysisResult().hashCode();
+    }
+    if (hasAdvancedSettings()) {
+      hash = (37 * hash) + ADVANCED_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedSettings().hashCode();
     }
     switch (queryCase_) {
       case 1:
@@ -1693,6 +1779,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         sentimentAnalysisResultBuilder_.dispose();
         sentimentAnalysisResultBuilder_ = null;
       }
+      advancedSettings_ = null;
+      if (advancedSettingsBuilder_ != null) {
+        advancedSettingsBuilder_.dispose();
+        advancedSettingsBuilder_ = null;
+      }
       queryCase_ = 0;
       query_ = null;
       return this;
@@ -1792,6 +1883,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
             sentimentAnalysisResultBuilder_ == null
                 ? sentimentAnalysisResult_
                 : sentimentAnalysisResultBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.advancedSettings_ =
+            advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
       }
     }
 
@@ -1955,6 +2050,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSentimentAnalysisResult()) {
         mergeSentimentAnalysisResult(other.getSentimentAnalysisResult());
+      }
+      if (other.hasAdvancedSettings()) {
+        mergeAdvancedSettings(other.getAdvancedSettings());
       }
       switch (other.getQueryCase()) {
         case TEXT:
@@ -2136,6 +2234,13 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00008000;
                 break;
               } // case 138
+            case 170:
+              {
+                input.readMessage(
+                    getAdvancedSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 170
             case 186:
               {
                 input.readMessage(getDtmfFieldBuilder().getBuilder(), extensionRegistry);
@@ -3113,9 +3218,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3139,9 +3246,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3169,9 +3278,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3203,9 +3314,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3234,9 +3347,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3271,9 +3386,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3302,9 +3419,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3328,9 +3447,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3356,9 +3477,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -4780,7 +4903,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=718
+     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
      * @return Whether the intent field is set.
      */
     @java.lang.Deprecated
@@ -4802,7 +4925,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=718
+     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
      * @return The intent.
      */
     @java.lang.Deprecated
@@ -5019,7 +5142,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=740
      * @return The intentDetectionConfidence.
      */
     @java.lang.Override
@@ -5045,7 +5168,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=740
      * @param value The intentDetectionConfidence to set.
      * @return This builder for chaining.
      */
@@ -5075,7 +5198,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=740
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5282,8 +5405,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5310,8 +5435,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5344,8 +5471,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5380,8 +5509,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5413,8 +5544,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5452,8 +5585,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5485,8 +5620,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5513,8 +5650,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5545,8 +5684,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5812,6 +5953,231 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         sentimentAnalysisResult_ = null;
       }
       return sentimentAnalysisResultBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advancedSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder>
+        advancedSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Returns the current advanced settings including IVR settings. Even though
+     * the operations configured by these settings are performed by Dialogflow,
+     * the client may need to perform special logic at the moment. For example, if
+     * Dialogflow exports audio to Google Cloud Storage, then the client may need
+     * to wait for the resulting object to appear in the bucket before proceeding.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+     *
+     * @return Whether the advancedSettings field is set.
+     */
+    public boolean hasAdvancedSettings() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the current advanced settings including IVR settings. Even though
+     * the operations configured by these settings are performed by Dialogflow,
+     * the client may need to perform special logic at the moment. For example, if
+     * Dialogflow exports audio to Google Cloud Storage, then the client may need
+     * to wait for the resulting object to appear in the bucket before proceeding.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+     *
+     * @return The advancedSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings() {
+      if (advancedSettingsBuilder_ == null) {
+        return advancedSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()
+            : advancedSettings_;
+      } else {
+        return advancedSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the current advanced settings including IVR settings. Even though
+     * the operations configured by these settings are performed by Dialogflow,
+     * the client may need to perform special logic at the moment. For example, if
+     * Dialogflow exports audio to Google Cloud Storage, then the client may need
+     * to wait for the resulting object to appear in the bucket before proceeding.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+     */
+    public Builder setAdvancedSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings value) {
+      if (advancedSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        advancedSettings_ = value;
+      } else {
+        advancedSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the current advanced settings including IVR settings. Even though
+     * the operations configured by these settings are performed by Dialogflow,
+     * the client may need to perform special logic at the moment. For example, if
+     * Dialogflow exports audio to Google Cloud Storage, then the client may need
+     * to wait for the resulting object to appear in the bucket before proceeding.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+     */
+    public Builder setAdvancedSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder builderForValue) {
+      if (advancedSettingsBuilder_ == null) {
+        advancedSettings_ = builderForValue.build();
+      } else {
+        advancedSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the current advanced settings including IVR settings. Even though
+     * the operations configured by these settings are performed by Dialogflow,
+     * the client may need to perform special logic at the moment. For example, if
+     * Dialogflow exports audio to Google Cloud Storage, then the client may need
+     * to wait for the resulting object to appear in the bucket before proceeding.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+     */
+    public Builder mergeAdvancedSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings value) {
+      if (advancedSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && advancedSettings_ != null
+            && advancedSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()) {
+          getAdvancedSettingsBuilder().mergeFrom(value);
+        } else {
+          advancedSettings_ = value;
+        }
+      } else {
+        advancedSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the current advanced settings including IVR settings. Even though
+     * the operations configured by these settings are performed by Dialogflow,
+     * the client may need to perform special logic at the moment. For example, if
+     * Dialogflow exports audio to Google Cloud Storage, then the client may need
+     * to wait for the resulting object to appear in the bucket before proceeding.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+     */
+    public Builder clearAdvancedSettings() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      advancedSettings_ = null;
+      if (advancedSettingsBuilder_ != null) {
+        advancedSettingsBuilder_.dispose();
+        advancedSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the current advanced settings including IVR settings. Even though
+     * the operations configured by these settings are performed by Dialogflow,
+     * the client may need to perform special logic at the moment. For example, if
+     * Dialogflow exports audio to Google Cloud Storage, then the client may need
+     * to wait for the resulting object to appear in the bucket before proceeding.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder
+        getAdvancedSettingsBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getAdvancedSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the current advanced settings including IVR settings. Even though
+     * the operations configured by these settings are performed by Dialogflow,
+     * the client may need to perform special logic at the moment. For example, if
+     * Dialogflow exports audio to Google Cloud Storage, then the client may need
+     * to wait for the resulting object to appear in the bucket before proceeding.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder
+        getAdvancedSettingsOrBuilder() {
+      if (advancedSettingsBuilder_ != null) {
+        return advancedSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return advancedSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()
+            : advancedSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returns the current advanced settings including IVR settings. Even though
+     * the operations configured by these settings are performed by Dialogflow,
+     * the client may need to perform special logic at the moment. For example, if
+     * Dialogflow exports audio to Google Cloud Storage, then the client may need
+     * to wait for the resulting object to appear in the bucket before proceeding.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder>
+        getAdvancedSettingsFieldBuilder() {
+      if (advancedSettingsBuilder_ == null) {
+        advancedSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder>(
+                getAdvancedSettings(), getParentForChildren(), isClean());
+        advancedSettings_ = null;
+      }
+      return advancedSettingsBuilder_;
     }
 
     @java.lang.Override

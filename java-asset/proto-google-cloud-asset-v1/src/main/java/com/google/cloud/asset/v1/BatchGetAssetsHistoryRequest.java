@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,20 +39,15 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
 
   private BatchGetAssetsHistoryRequest() {
     parent_ = "";
-    assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    assetNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     contentType_ = 0;
-    relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    relationshipTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchGetAssetsHistoryRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,7 +127,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   public static final int ASSET_NAMES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList assetNames_;
+  private com.google.protobuf.LazyStringArrayList assetNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -140,7 +136,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * A list of the full names of the assets.
    * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
    * Example:
+   *
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   *
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
    * </pre>
@@ -159,7 +157,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * A list of the full names of the assets.
    * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
    * Example:
+   *
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   *
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
    * </pre>
@@ -178,7 +178,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * A list of the full names of the assets.
    * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
    * Example:
+   *
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   *
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
    * </pre>
@@ -198,7 +200,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * A list of the full names of the assets.
    * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
    * Example:
+   *
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   *
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
    * </pre>
@@ -325,7 +329,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   public static final int RELATIONSHIP_TYPES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList relationshipTypes_;
+  private com.google.protobuf.LazyStringArrayList relationshipTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -702,16 +707,14 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       super.clear();
       bitField0_ = 0;
       parent_ = "";
-      assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      assetNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       contentType_ = 0;
       readTimeWindow_ = null;
       if (readTimeWindowBuilder_ != null) {
         readTimeWindowBuilder_.dispose();
         readTimeWindowBuilder_ = null;
       }
-      relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      relationshipTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -739,7 +742,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest buildPartial() {
       com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest result =
           new com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -747,24 +749,14 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        assetNames_ = assetNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.assetNames_ = assetNames_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        relationshipTypes_ = relationshipTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.relationshipTypes_ = relationshipTypes_;
-    }
-
     private void buildPartial0(com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        assetNames_.makeImmutable();
+        result.assetNames_ = assetNames_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.contentType_ = contentType_;
@@ -772,6 +764,10 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.readTimeWindow_ =
             readTimeWindowBuilder_ == null ? readTimeWindow_ : readTimeWindowBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        relationshipTypes_.makeImmutable();
+        result.relationshipTypes_ = relationshipTypes_;
       }
     }
 
@@ -829,7 +825,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       if (!other.assetNames_.isEmpty()) {
         if (assetNames_.isEmpty()) {
           assetNames_ = other.assetNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAssetNamesIsMutable();
           assetNames_.addAll(other.assetNames_);
@@ -845,7 +841,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       if (!other.relationshipTypes_.isEmpty()) {
         if (relationshipTypes_.isEmpty()) {
           relationshipTypes_ = other.relationshipTypes_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureRelationshipTypesIsMutable();
           relationshipTypes_.addAll(other.relationshipTypes_);
@@ -1055,14 +1051,14 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       return this;
     }
 
-    private com.google.protobuf.LazyStringList assetNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList assetNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAssetNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!assetNames_.isModifiable()) {
         assetNames_ = new com.google.protobuf.LazyStringArrayList(assetNames_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1071,7 +1067,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * A list of the full names of the assets.
      * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
      * Example:
+     *
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     *
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
      * </pre>
@@ -1081,7 +1079,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * @return A list containing the assetNames.
      */
     public com.google.protobuf.ProtocolStringList getAssetNamesList() {
-      return assetNames_.getUnmodifiableView();
+      assetNames_.makeImmutable();
+      return assetNames_;
     }
     /**
      *
@@ -1090,7 +1089,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * A list of the full names of the assets.
      * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
      * Example:
+     *
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     *
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
      * </pre>
@@ -1109,7 +1110,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * A list of the full names of the assets.
      * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
      * Example:
+     *
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     *
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
      * </pre>
@@ -1129,7 +1132,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * A list of the full names of the assets.
      * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
      * Example:
+     *
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     *
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
      * </pre>
@@ -1149,7 +1154,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * A list of the full names of the assets.
      * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
      * Example:
+     *
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     *
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
      * </pre>
@@ -1166,6 +1173,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       }
       ensureAssetNamesIsMutable();
       assetNames_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1176,7 +1184,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * A list of the full names of the assets.
      * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
      * Example:
+     *
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     *
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
      * </pre>
@@ -1192,6 +1202,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       }
       ensureAssetNamesIsMutable();
       assetNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1202,7 +1213,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * A list of the full names of the assets.
      * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
      * Example:
+     *
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     *
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
      * </pre>
@@ -1215,6 +1228,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public Builder addAllAssetNames(java.lang.Iterable<java.lang.String> values) {
       ensureAssetNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetNames_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1225,7 +1239,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * A list of the full names of the assets.
      * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
      * Example:
+     *
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     *
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
      * </pre>
@@ -1235,8 +1251,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearAssetNames() {
-      assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      assetNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1247,7 +1264,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * A list of the full names of the assets.
      * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
      * Example:
+     *
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     *
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
      * </pre>
@@ -1264,6 +1283,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
       ensureAssetNamesIsMutable();
       assetNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1614,14 +1634,14 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       return readTimeWindowBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList relationshipTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList relationshipTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRelationshipTypesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!relationshipTypes_.isModifiable()) {
         relationshipTypes_ = new com.google.protobuf.LazyStringArrayList(relationshipTypes_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1651,7 +1671,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * @return A list containing the relationshipTypes.
      */
     public com.google.protobuf.ProtocolStringList getRelationshipTypesList() {
-      return relationshipTypes_.getUnmodifiableView();
+      relationshipTypes_.makeImmutable();
+      return relationshipTypes_;
     }
     /**
      *
@@ -1780,6 +1801,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       }
       ensureRelationshipTypesIsMutable();
       relationshipTypes_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1817,6 +1839,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       }
       ensureRelationshipTypesIsMutable();
       relationshipTypes_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1851,6 +1874,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public Builder addAllRelationshipTypes(java.lang.Iterable<java.lang.String> values) {
       ensureRelationshipTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, relationshipTypes_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1882,8 +1906,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRelationshipTypes() {
-      relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      relationshipTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1922,6 +1947,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
       ensureRelationshipTypesIsMutable();
       relationshipTypes_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

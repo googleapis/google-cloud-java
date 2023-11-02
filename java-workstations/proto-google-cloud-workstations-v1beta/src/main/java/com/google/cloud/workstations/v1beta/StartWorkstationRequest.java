@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StartWorkstationRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -129,11 +124,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * If set, validate the request and preview the review, but do not actually
-   * apply it.
+   * Optional. If set, validate the request and preview the review, but do not
+   * actually apply it.
    * </pre>
    *
-   * <code>bool validate_only = 2;</code>
+   * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The validateOnly.
    */
@@ -150,11 +145,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the
-   * workstation on the server does not have this etag.
+   * Optional. If set, the request will be rejected if the latest version of the
+   * workstation on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -174,11 +169,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the
-   * workstation on the server does not have this etag.
+   * Optional. If set, the request will be rejected if the latest version of the
+   * workstation on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -708,11 +703,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * actually apply it.
      * </pre>
      *
-     * <code>bool validate_only = 2;</code>
+     * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The validateOnly.
      */
@@ -724,11 +719,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * actually apply it.
      * </pre>
      *
-     * <code>bool validate_only = 2;</code>
+     * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The validateOnly to set.
      * @return This builder for chaining.
@@ -744,11 +739,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * actually apply it.
      * </pre>
      *
-     * <code>bool validate_only = 2;</code>
+     * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -764,11 +759,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the
-     * workstation on the server does not have this etag.
+     * Optional. If set, the request will be rejected if the latest version of the
+     * workstation on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -787,11 +782,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the
-     * workstation on the server does not have this etag.
+     * Optional. If set, the request will be rejected if the latest version of the
+     * workstation on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -810,11 +805,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the
-     * workstation on the server does not have this etag.
+     * Optional. If set, the request will be rejected if the latest version of the
+     * workstation on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -832,11 +827,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the
-     * workstation on the server does not have this etag.
+     * Optional. If set, the request will be rejected if the latest version of the
+     * workstation on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -850,11 +845,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the
-     * workstation on the server does not have this etag.
+     * Optional. If set, the request will be rejected if the latest version of the
+     * workstation on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.

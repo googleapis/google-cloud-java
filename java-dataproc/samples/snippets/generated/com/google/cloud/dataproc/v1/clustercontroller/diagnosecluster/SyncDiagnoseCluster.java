@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,8 @@ package com.google.cloud.dataproc.v1.samples;
 import com.google.cloud.dataproc.v1.ClusterControllerClient;
 import com.google.cloud.dataproc.v1.DiagnoseClusterRequest;
 import com.google.cloud.dataproc.v1.DiagnoseClusterResults;
+import com.google.type.Interval;
+import java.util.ArrayList;
 
 public class SyncDiagnoseCluster {
 
@@ -39,6 +41,10 @@ public class SyncDiagnoseCluster {
               .setProjectId("projectId-894832108")
               .setRegion("region-934795532")
               .setClusterName("clusterName-1141738587")
+              .setTarballGcsDir("tarballGcsDir-1602093510")
+              .setDiagnosisInterval(Interval.newBuilder().build())
+              .addAllJobs(new ArrayList<String>())
+              .addAllYarnApplicationIds(new ArrayList<String>())
               .build();
       DiagnoseClusterResults response = clusterControllerClient.diagnoseClusterAsync(request).get();
     }

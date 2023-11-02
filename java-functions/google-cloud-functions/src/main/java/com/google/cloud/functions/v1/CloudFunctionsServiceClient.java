@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,9 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.functions.v1.stub.CloudFunctionsServiceStub;
 import com.google.cloud.functions.v1.stub.CloudFunctionsServiceStubSettings;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -436,7 +439,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation will return `ALREADY_EXISTS` error.
+   * project, the long running operation returns an `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -473,7 +476,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation will return `ALREADY_EXISTS` error.
+   * project, the long running operation returns an `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -507,7 +510,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation will return `ALREADY_EXISTS` error.
+   * project, the long running operation returns an `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -539,7 +542,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation will return `ALREADY_EXISTS` error.
+   * project, the long running operation returns an `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -571,7 +574,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new function. If a function with the given name already exists in the specified
-   * project, the long running operation will return `ALREADY_EXISTS` error.
+   * project, the long running operation returns an `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
    *
@@ -723,7 +726,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger will be updated to remove this function.
+   * used by some trigger, the trigger is updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -753,7 +756,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger will be updated to remove this function.
+   * used by some trigger, the trigger is updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -781,7 +784,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger will be updated to remove this function.
+   * used by some trigger, the trigger is updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -812,7 +815,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger will be updated to remove this function.
+   * used by some trigger, the trigger is updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -843,7 +846,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a function with the given name from the specified project. If the given function is
-   * used by some trigger, the trigger will be updated to remove this function.
+   * used by some trigger, the trigger is updated to remove this function.
    *
    * <p>Sample code:
    *
@@ -1019,14 +1022,14 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *       the URL.
    * </ul>
    *
-   * <p>When making a HTTP PUT request, these two headers need to be specified:
+   * <p>When making an HTTP PUT request, these two headers must be specified:
    *
    * <ul>
    *   <li>`content-type: application/zip`
    *   <li>`x-goog-content-length-range: 0,104857600`
    * </ul>
    *
-   * <p>And this header SHOULD NOT be specified:
+   * <p>And this header must NOT be specified:
    *
    * <ul>
    *   <li>`Authorization: Bearer YOUR_TOKEN`
@@ -1078,14 +1081,14 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *       the URL.
    * </ul>
    *
-   * <p>When making a HTTP PUT request, these two headers need to be specified:
+   * <p>When making an HTTP PUT request, these two headers must be specified:
    *
    * <ul>
    *   <li>`content-type: application/zip`
    *   <li>`x-goog-content-length-range: 0,104857600`
    * </ul>
    *
-   * <p>And this header SHOULD NOT be specified:
+   * <p>And this header must NOT be specified:
    *
    * <ul>
    *   <li>`Authorization: Bearer YOUR_TOKEN`
@@ -1123,8 +1126,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a signed URL for downloading deployed function source code. The URL is only valid for a
-   * limited period and should be used within minutes after generation. For more information about
-   * the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls
+   * limited period and must be used within minutes after generation. For more information about the
+   * signed URL usage, see: https://cloud.google.com/storage/docs/access-control/signed-urls
    *
    * <p>Sample code:
    *
@@ -1156,8 +1159,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a signed URL for downloading deployed function source code. The URL is only valid for a
-   * limited period and should be used within minutes after generation. For more information about
-   * the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls
+   * limited period and must be used within minutes after generation. For more information about the
+   * signed URL usage, see: https://cloud.google.com/storage/docs/access-control/signed-urls
    *
    * <p>Sample code:
    *
@@ -1313,7 +1316,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Tests the specified permissions against the IAM access control policy for a function. If the
-   * function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   * function does not exist, this returns an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *
@@ -1344,7 +1347,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Tests the specified permissions against the IAM access control policy for a function. If the
-   * function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   * function does not exist, this returns an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *
@@ -1371,6 +1374,116 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : cloudFunctionsServiceClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       cloudFunctionsServiceClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response =
+   *         cloudFunctionsServiceClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
   }
 
   @Override
@@ -1476,6 +1589,82 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
     protected ListFunctionsFixedSizeCollection createCollection(
         List<ListFunctionsPage> pages, int collectionSize) {
       return new ListFunctionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

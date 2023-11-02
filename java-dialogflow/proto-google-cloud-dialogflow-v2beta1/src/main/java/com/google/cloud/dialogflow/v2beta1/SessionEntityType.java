@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ package com.google.cloud.dialogflow.v2beta1;
  * session. Session entities can extend or replace custom entity types and only
  * exist during the session that they were created for. All session data,
  * including session entities, is stored by Dialogflow for 20 minutes.
+ *
  * For more information, see the [session entity
  * guide](https://cloud.google.com/dialogflow/docs/entities-session).
  * </pre>
@@ -53,11 +54,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SessionEntityType();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -112,6 +108,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The collection of session entities extends the collection of entities in
      * the corresponding custom entity type.
+     *
      * Note: Even in this override mode calls to `ListSessionEntityTypes`,
      * `GetSessionEntityType`, `CreateSessionEntityType` and
      * `UpdateSessionEntityType` only return the additional entities added in
@@ -154,6 +151,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The collection of session entities extends the collection of entities in
      * the corresponding custom entity type.
+     *
      * Note: Even in this override mode calls to `ListSessionEntityTypes`,
      * `GetSessionEntityType`, `CreateSessionEntityType` and
      * `UpdateSessionEntityType` only return the additional entities added in
@@ -274,6 +272,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
    *   &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+   *
    * If `Location ID` is not specified we assume default 'us' location. If
    * `Environment ID` is not specified, we assume default 'draft' environment.
    * If `User ID` is not specified, we assume default '-' user.
@@ -312,6 +311,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
    *   &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+   *
    * If `Location ID` is not specified we assume default 'us' location. If
    * `Environment ID` is not specified, we assume default 'draft' environment.
    * If `User ID` is not specified, we assume default '-' user.
@@ -653,6 +653,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * session. Session entities can extend or replace custom entity types and only
    * exist during the session that they were created for. All session data,
    * including session entities, is stored by Dialogflow for 20 minutes.
+   *
    * For more information, see the [session entity
    * guide](https://cloud.google.com/dialogflow/docs/entities-session).
    * </pre>
@@ -924,6 +925,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
      *   &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
      *   ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+     *
      * If `Location ID` is not specified we assume default 'us' location. If
      * `Environment ID` is not specified, we assume default 'draft' environment.
      * If `User ID` is not specified, we assume default '-' user.
@@ -961,6 +963,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
      *   &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
      *   ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+     *
      * If `Location ID` is not specified we assume default 'us' location. If
      * `Environment ID` is not specified, we assume default 'draft' environment.
      * If `User ID` is not specified, we assume default '-' user.
@@ -998,6 +1001,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
      *   &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
      *   ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+     *
      * If `Location ID` is not specified we assume default 'us' location. If
      * `Environment ID` is not specified, we assume default 'draft' environment.
      * If `User ID` is not specified, we assume default '-' user.
@@ -1034,6 +1038,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
      *   &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
      *   ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+     *
      * If `Location ID` is not specified we assume default 'us' location. If
      * `Environment ID` is not specified, we assume default 'draft' environment.
      * If `User ID` is not specified, we assume default '-' user.
@@ -1066,6 +1071,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
      *   &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
      *   ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+     *
      * If `Location ID` is not specified we assume default 'us' location. If
      * `Environment ID` is not specified, we assume default 'draft' environment.
      * If `User ID` is not specified, we assume default '-' user.

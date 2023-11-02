@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   private Hub() {
     name_ = "";
     description_ = "";
-    spokes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    spokes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     uniqueId_ = "";
     state_ = 0;
   }
@@ -52,11 +52,6 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Hub();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -384,7 +379,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public static final int SPOKES_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList spokes_;
+  private com.google.protobuf.LazyStringArrayList spokes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -872,8 +868,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().clear();
       description_ = "";
-      spokes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      spokes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       uniqueId_ = "";
       state_ = 0;
       return this;
@@ -903,21 +898,11 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkconnectivity.v1alpha1.Hub buildPartial() {
       com.google.cloud.networkconnectivity.v1alpha1.Hub result =
           new com.google.cloud.networkconnectivity.v1alpha1.Hub(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.networkconnectivity.v1alpha1.Hub result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        spokes_ = spokes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.spokes_ = spokes_;
     }
 
     private void buildPartial0(com.google.cloud.networkconnectivity.v1alpha1.Hub result) {
@@ -937,6 +922,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        spokes_.makeImmutable();
+        result.spokes_ = spokes_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.uniqueId_ = uniqueId_;
@@ -1013,7 +1002,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       if (!other.spokes_.isEmpty()) {
         if (spokes_.isEmpty()) {
           spokes_ = other.spokes_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureSpokesIsMutable();
           spokes_.addAll(other.spokes_);
@@ -1869,14 +1858,14 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList spokes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList spokes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSpokesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!spokes_.isModifiable()) {
         spokes_ = new com.google.protobuf.LazyStringArrayList(spokes_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -1892,7 +1881,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the spokes.
      */
     public com.google.protobuf.ProtocolStringList getSpokesList() {
-      return spokes_.getUnmodifiableView();
+      spokes_.makeImmutable();
+      return spokes_;
     }
     /**
      *
@@ -1965,6 +1955,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSpokesIsMutable();
       spokes_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1988,6 +1979,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSpokesIsMutable();
       spokes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2008,6 +2000,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSpokes(java.lang.Iterable<java.lang.String> values) {
       ensureSpokesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, spokes_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2025,8 +2018,9 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpokes() {
-      spokes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      spokes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2051,6 +2045,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSpokesIsMutable();
       spokes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

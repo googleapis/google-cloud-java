@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.video.livestream.v1.stub;
 
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
@@ -27,24 +28,32 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.video.livestream.v1.Asset;
 import com.google.cloud.video.livestream.v1.Channel;
 import com.google.cloud.video.livestream.v1.ChannelOperationResponse;
+import com.google.cloud.video.livestream.v1.CreateAssetRequest;
 import com.google.cloud.video.livestream.v1.CreateChannelRequest;
 import com.google.cloud.video.livestream.v1.CreateEventRequest;
 import com.google.cloud.video.livestream.v1.CreateInputRequest;
+import com.google.cloud.video.livestream.v1.DeleteAssetRequest;
 import com.google.cloud.video.livestream.v1.DeleteChannelRequest;
 import com.google.cloud.video.livestream.v1.DeleteEventRequest;
 import com.google.cloud.video.livestream.v1.DeleteInputRequest;
 import com.google.cloud.video.livestream.v1.Event;
+import com.google.cloud.video.livestream.v1.GetAssetRequest;
 import com.google.cloud.video.livestream.v1.GetChannelRequest;
 import com.google.cloud.video.livestream.v1.GetEventRequest;
 import com.google.cloud.video.livestream.v1.GetInputRequest;
+import com.google.cloud.video.livestream.v1.GetPoolRequest;
 import com.google.cloud.video.livestream.v1.Input;
+import com.google.cloud.video.livestream.v1.ListAssetsRequest;
+import com.google.cloud.video.livestream.v1.ListAssetsResponse;
 import com.google.cloud.video.livestream.v1.ListChannelsRequest;
 import com.google.cloud.video.livestream.v1.ListChannelsResponse;
 import com.google.cloud.video.livestream.v1.ListEventsRequest;
@@ -52,11 +61,12 @@ import com.google.cloud.video.livestream.v1.ListEventsResponse;
 import com.google.cloud.video.livestream.v1.ListInputsRequest;
 import com.google.cloud.video.livestream.v1.ListInputsResponse;
 import com.google.cloud.video.livestream.v1.OperationMetadata;
+import com.google.cloud.video.livestream.v1.Pool;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
-import com.google.common.collect.ImmutableMap;
+import com.google.cloud.video.livestream.v1.UpdatePoolRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -213,6 +223,55 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<CreateAssetRequest, Operation> createAssetMethodDescriptor =
+      MethodDescriptor.<CreateAssetRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/CreateAsset")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateAssetRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteAssetRequest, Operation> deleteAssetMethodDescriptor =
+      MethodDescriptor.<DeleteAssetRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/DeleteAsset")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteAssetRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetAssetRequest, Asset> getAssetMethodDescriptor =
+      MethodDescriptor.<GetAssetRequest, Asset>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetAsset")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetAssetRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Asset.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
+      listAssetsMethodDescriptor =
+          MethodDescriptor.<ListAssetsRequest, ListAssetsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/ListAssets")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetPoolRequest, Pool> getPoolMethodDescriptor =
+      MethodDescriptor.<GetPoolRequest, Pool>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetPool")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetPoolRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Pool.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdatePoolRequest, Operation> updatePoolMethodDescriptor =
+      MethodDescriptor.<UpdatePoolRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/UpdatePool")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdatePoolRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -268,6 +327,19 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
   private final UnaryCallable<GetEventRequest, Event> getEventCallable;
   private final UnaryCallable<DeleteEventRequest, Empty> deleteEventCallable;
+  private final UnaryCallable<CreateAssetRequest, Operation> createAssetCallable;
+  private final OperationCallable<CreateAssetRequest, Asset, OperationMetadata>
+      createAssetOperationCallable;
+  private final UnaryCallable<DeleteAssetRequest, Operation> deleteAssetCallable;
+  private final OperationCallable<DeleteAssetRequest, Empty, OperationMetadata>
+      deleteAssetOperationCallable;
+  private final UnaryCallable<GetAssetRequest, Asset> getAssetCallable;
+  private final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable;
+  private final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable;
+  private final UnaryCallable<GetPoolRequest, Pool> getPoolCallable;
+  private final UnaryCallable<UpdatePoolRequest, Operation> updatePoolCallable;
+  private final OperationCallable<UpdatePoolRequest, Pool, OperationMetadata>
+      updatePoolOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -322,9 +394,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(createChannelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListChannelsRequest, ListChannelsResponse> listChannelsTransportSettings =
@@ -332,9 +404,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(listChannelsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetChannelRequest, Channel> getChannelTransportSettings =
@@ -342,9 +414,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(getChannelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteChannelRequest, Operation> deleteChannelTransportSettings =
@@ -352,9 +424,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(deleteChannelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateChannelRequest, Operation> updateChannelTransportSettings =
@@ -362,9 +434,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(updateChannelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("channel.name", String.valueOf(request.getChannel().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("channel.name", String.valueOf(request.getChannel().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StartChannelRequest, Operation> startChannelTransportSettings =
@@ -372,9 +444,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(startChannelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StopChannelRequest, Operation> stopChannelTransportSettings =
@@ -382,9 +454,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(stopChannelMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateInputRequest, Operation> createInputTransportSettings =
@@ -392,9 +464,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(createInputMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListInputsRequest, ListInputsResponse> listInputsTransportSettings =
@@ -402,9 +474,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(listInputsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetInputRequest, Input> getInputTransportSettings =
@@ -412,9 +484,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(getInputMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteInputRequest, Operation> deleteInputTransportSettings =
@@ -422,9 +494,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(deleteInputMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateInputRequest, Operation> updateInputTransportSettings =
@@ -432,9 +504,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(updateInputMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("input.name", String.valueOf(request.getInput().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("input.name", String.valueOf(request.getInput().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateEventRequest, Event> createEventTransportSettings =
@@ -442,9 +514,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(createEventMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
@@ -452,9 +524,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(listEventsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetEventRequest, Event> getEventTransportSettings =
@@ -462,9 +534,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(getEventMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteEventRequest, Empty> deleteEventTransportSettings =
@@ -472,9 +544,69 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(deleteEventMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateAssetRequest, Operation> createAssetTransportSettings =
+        GrpcCallSettings.<CreateAssetRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAssetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteAssetRequest, Operation> deleteAssetTransportSettings =
+        GrpcCallSettings.<DeleteAssetRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAssetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetAssetRequest, Asset> getAssetTransportSettings =
+        GrpcCallSettings.<GetAssetRequest, Asset>newBuilder()
+            .setMethodDescriptor(getAssetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
+        GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
+            .setMethodDescriptor(listAssetsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetPoolRequest, Pool> getPoolTransportSettings =
+        GrpcCallSettings.<GetPoolRequest, Pool>newBuilder()
+            .setMethodDescriptor(getPoolMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdatePoolRequest, Operation> updatePoolTransportSettings =
+        GrpcCallSettings.<UpdatePoolRequest, Operation>newBuilder()
+            .setMethodDescriptor(updatePoolMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("pool.name", String.valueOf(request.getPool().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -482,9 +614,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -492,9 +624,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 
@@ -603,6 +735,45 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
     this.deleteEventCallable =
         callableFactory.createUnaryCallable(
             deleteEventTransportSettings, settings.deleteEventSettings(), clientContext);
+    this.createAssetCallable =
+        callableFactory.createUnaryCallable(
+            createAssetTransportSettings, settings.createAssetSettings(), clientContext);
+    this.createAssetOperationCallable =
+        callableFactory.createOperationCallable(
+            createAssetTransportSettings,
+            settings.createAssetOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteAssetCallable =
+        callableFactory.createUnaryCallable(
+            deleteAssetTransportSettings, settings.deleteAssetSettings(), clientContext);
+    this.deleteAssetOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAssetTransportSettings,
+            settings.deleteAssetOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getAssetCallable =
+        callableFactory.createUnaryCallable(
+            getAssetTransportSettings, settings.getAssetSettings(), clientContext);
+    this.listAssetsCallable =
+        callableFactory.createUnaryCallable(
+            listAssetsTransportSettings, settings.listAssetsSettings(), clientContext);
+    this.listAssetsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAssetsTransportSettings, settings.listAssetsSettings(), clientContext);
+    this.getPoolCallable =
+        callableFactory.createUnaryCallable(
+            getPoolTransportSettings, settings.getPoolSettings(), clientContext);
+    this.updatePoolCallable =
+        callableFactory.createUnaryCallable(
+            updatePoolTransportSettings, settings.updatePoolSettings(), clientContext);
+    this.updatePoolOperationCallable =
+        callableFactory.createOperationCallable(
+            updatePoolTransportSettings,
+            settings.updatePoolOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -762,6 +933,59 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
   @Override
   public UnaryCallable<DeleteEventRequest, Empty> deleteEventCallable() {
     return deleteEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAssetRequest, Operation> createAssetCallable() {
+    return createAssetCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAssetRequest, Asset, OperationMetadata>
+      createAssetOperationCallable() {
+    return createAssetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAssetRequest, Operation> deleteAssetCallable() {
+    return deleteAssetCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAssetRequest, Empty, OperationMetadata>
+      deleteAssetOperationCallable() {
+    return deleteAssetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAssetRequest, Asset> getAssetCallable() {
+    return getAssetCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
+    return listAssetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
+    return listAssetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPoolRequest, Pool> getPoolCallable() {
+    return getPoolCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdatePoolRequest, Operation> updatePoolCallable() {
+    return updatePoolCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdatePoolRequest, Pool, OperationMetadata>
+      updatePoolOperationCallable() {
+    return updatePoolOperationCallable;
   }
 
   @Override

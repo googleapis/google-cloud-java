@@ -7,5 +7,5 @@ markupsafe==2.0.1
 colorlog==6.7.0
 protobuf==3.19.5
 watchdog==2.1.9
-requests==2.27.1
+requests==2.31.0
 pyyaml==6.0

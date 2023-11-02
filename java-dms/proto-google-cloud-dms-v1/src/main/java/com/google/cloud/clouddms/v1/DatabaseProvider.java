@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,26 @@ public enum DatabaseProvider implements com.google.protobuf.ProtocolMessageEnum 
    * <code>RDS = 2;</code>
    */
   RDS(2),
+  /**
+   *
+   *
+   * <pre>
+   * Amazon Aurora.
+   * </pre>
+   *
+   * <code>AURORA = 3;</code>
+   */
+  AURORA(3),
+  /**
+   *
+   *
+   * <pre>
+   * AlloyDB.
+   * </pre>
+   *
+   * <code>ALLOYDB = 4;</code>
+   */
+  ALLOYDB(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -91,6 +111,26 @@ public enum DatabaseProvider implements com.google.protobuf.ProtocolMessageEnum 
    * <code>RDS = 2;</code>
    */
   public static final int RDS_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Amazon Aurora.
+   * </pre>
+   *
+   * <code>AURORA = 3;</code>
+   */
+  public static final int AURORA_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * AlloyDB.
+   * </pre>
+   *
+   * <code>ALLOYDB = 4;</code>
+   */
+  public static final int ALLOYDB_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -122,6 +162,10 @@ public enum DatabaseProvider implements com.google.protobuf.ProtocolMessageEnum 
         return CLOUDSQL;
       case 2:
         return RDS;
+      case 3:
+        return AURORA;
+      case 4:
+        return ALLOYDB;
       default:
         return null;
     }
@@ -153,7 +197,7 @@ public enum DatabaseProvider implements com.google.protobuf.ProtocolMessageEnum 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(2);
   }
 
   private static final DatabaseProvider[] VALUES = values();

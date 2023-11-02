@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -162,6 +162,7 @@ public interface BuildOptionsOrBuilder
    * <pre>
    * Option to specify behavior when there is an error in the substitution
    * checks.
+   *
    * NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
    * be overridden in the build configuration file.
    * </pre>
@@ -178,6 +179,7 @@ public interface BuildOptionsOrBuilder
    * <pre>
    * Option to specify behavior when there is an error in the substitution
    * checks.
+   *
    * NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
    * be overridden in the build configuration file.
    * </pre>
@@ -195,6 +197,7 @@ public interface BuildOptionsOrBuilder
    * <pre>
    * Option to specify whether or not to apply bash style string
    * operations to the substitutions.
+   *
    * NOTE: this is always enabled for triggered builds and cannot be
    * overridden in the build configuration file.
    * </pre>
@@ -209,7 +212,21 @@ public interface BuildOptionsOrBuilder
    *
    *
    * <pre>
-   * Option to define build log streaming behavior to Google Cloud
+   * Option to include built-in and custom substitutions as env variables
+   * for all build steps.
+   * </pre>
+   *
+   * <code>bool automap_substitutions = 22;</code>
+   *
+   * @return The automapSubstitutions.
+   */
+  boolean getAutomapSubstitutions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Option to define build log streaming behavior to Cloud
    * Storage.
    * </pre>
    *
@@ -223,7 +240,7 @@ public interface BuildOptionsOrBuilder
    *
    *
    * <pre>
-   * Option to define build log streaming behavior to Google Cloud
+   * Option to define build log streaming behavior to Cloud
    * Storage.
    * </pre>
    *
@@ -244,7 +261,7 @@ public interface BuildOptionsOrBuilder
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1969
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2281
    * @return The workerPool.
    */
   @java.lang.Deprecated
@@ -259,7 +276,7 @@ public interface BuildOptionsOrBuilder
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1969
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2281
    * @return The bytes for workerPool.
    */
   @java.lang.Deprecated
@@ -270,6 +287,7 @@ public interface BuildOptionsOrBuilder
    *
    * <pre>
    * Optional. Specification for execution on a `WorkerPool`.
+   *
    * See [running builds in a private
    * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
    * for more information.
@@ -287,6 +305,7 @@ public interface BuildOptionsOrBuilder
    *
    * <pre>
    * Optional. Specification for execution on a `WorkerPool`.
+   *
    * See [running builds in a private
    * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
    * for more information.
@@ -304,6 +323,7 @@ public interface BuildOptionsOrBuilder
    *
    * <pre>
    * Optional. Specification for execution on a `WorkerPool`.
+   *
    * See [running builds in a private
    * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
    * for more information.
@@ -349,6 +369,7 @@ public interface BuildOptionsOrBuilder
    * A list of global environment variable definitions that will exist for all
    * build steps in this build. If a variable is defined in both globally and in
    * a build step, the variable will use the build step value.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -365,6 +386,7 @@ public interface BuildOptionsOrBuilder
    * A list of global environment variable definitions that will exist for all
    * build steps in this build. If a variable is defined in both globally and in
    * a build step, the variable will use the build step value.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -381,6 +403,7 @@ public interface BuildOptionsOrBuilder
    * A list of global environment variable definitions that will exist for all
    * build steps in this build. If a variable is defined in both globally and in
    * a build step, the variable will use the build step value.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -398,6 +421,7 @@ public interface BuildOptionsOrBuilder
    * A list of global environment variable definitions that will exist for all
    * build steps in this build. If a variable is defined in both globally and in
    * a build step, the variable will use the build step value.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -477,10 +501,12 @@ public interface BuildOptionsOrBuilder
    *
    * <pre>
    * Global list of volumes to mount for ALL build steps
+   *
    * Each volume is created as an empty volume prior to starting the build
    * process. Upon completion of the build, volumes and their contents are
    * discarded. Global volume names and paths cannot conflict with the volumes
    * defined a build step.
+   *
    * Using a global volume in a build with only one step is not valid as
    * it is indicative of a build request with an incorrect configuration.
    * </pre>
@@ -493,10 +519,12 @@ public interface BuildOptionsOrBuilder
    *
    * <pre>
    * Global list of volumes to mount for ALL build steps
+   *
    * Each volume is created as an empty volume prior to starting the build
    * process. Upon completion of the build, volumes and their contents are
    * discarded. Global volume names and paths cannot conflict with the volumes
    * defined a build step.
+   *
    * Using a global volume in a build with only one step is not valid as
    * it is indicative of a build request with an incorrect configuration.
    * </pre>
@@ -509,10 +537,12 @@ public interface BuildOptionsOrBuilder
    *
    * <pre>
    * Global list of volumes to mount for ALL build steps
+   *
    * Each volume is created as an empty volume prior to starting the build
    * process. Upon completion of the build, volumes and their contents are
    * discarded. Global volume names and paths cannot conflict with the volumes
    * defined a build step.
+   *
    * Using a global volume in a build with only one step is not valid as
    * it is indicative of a build request with an incorrect configuration.
    * </pre>
@@ -525,10 +555,12 @@ public interface BuildOptionsOrBuilder
    *
    * <pre>
    * Global list of volumes to mount for ALL build steps
+   *
    * Each volume is created as an empty volume prior to starting the build
    * process. Upon completion of the build, volumes and their contents are
    * discarded. Global volume names and paths cannot conflict with the volumes
    * defined a build step.
+   *
    * Using a global volume in a build with only one step is not valid as
    * it is indicative of a build request with an incorrect configuration.
    * </pre>
@@ -541,10 +573,12 @@ public interface BuildOptionsOrBuilder
    *
    * <pre>
    * Global list of volumes to mount for ALL build steps
+   *
    * Each volume is created as an empty volume prior to starting the build
    * process. Upon completion of the build, volumes and their contents are
    * discarded. Global volume names and paths cannot conflict with the volumes
    * defined a build step.
+   *
    * Using a global volume in a build with only one step is not valid as
    * it is indicative of a build request with an incorrect configuration.
    * </pre>

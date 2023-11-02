@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
     return new ListUptimeCheckConfigsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.UptimeServiceProto
         .internal_static_google_monitoring_v3_ListUptimeCheckConfigsRequest_descriptor;
@@ -80,6 +75,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
    * Required. The
    * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
    * Uptime check configurations are listed. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -108,6 +104,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
    * Required. The
    * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
    * Uptime check configurations are listed. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -140,6 +137,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * uptime checks to be included in the response.
+   *
    * For more details, see [Filtering
    * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
    * </pre>
@@ -166,6 +164,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * uptime checks to be included in the response.
+   *
    * For more details, see [Filtering
    * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
    * </pre>
@@ -684,6 +683,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      * Required. The
      * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
      * Uptime check configurations are listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -711,6 +711,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      * Required. The
      * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
      * Uptime check configurations are listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -738,6 +739,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      * Required. The
      * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
      * Uptime check configurations are listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -764,6 +766,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      * Required. The
      * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
      * Uptime check configurations are listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -786,6 +789,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      * Required. The
      * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
      * Uptime check configurations are listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -814,6 +818,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * uptime checks to be included in the response.
+     *
      * For more details, see [Filtering
      * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
      * </pre>
@@ -839,6 +844,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * uptime checks to be included in the response.
+     *
      * For more details, see [Filtering
      * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
      * </pre>
@@ -864,6 +870,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * uptime checks to be included in the response.
+     *
      * For more details, see [Filtering
      * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
      * </pre>
@@ -888,6 +895,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * uptime checks to be included in the response.
+     *
      * For more details, see [Filtering
      * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
      * </pre>
@@ -908,6 +916,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * uptime checks to be included in the response.
+     *
      * For more details, see [Filtering
      * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,7 +101,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address to be used for reverse DNS verification.
+   * The address to be used for reverse DNS verification.
    * </pre>
    *
    * <code>optional string dns_verification_ip = 241011381;</code>
@@ -113,7 +113,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address to be used for reverse DNS verification.
+   * The address to be used for reverse DNS verification.
    * </pre>
    *
    * <code>optional string dns_verification_ip = 241011381;</code>
@@ -125,7 +125,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address to be used for reverse DNS verification.
+   * The address to be used for reverse DNS verification.
    * </pre>
    *
    * <code>optional string dns_verification_ip = 241011381;</code>
@@ -200,7 +200,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -212,7 +212,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -224,7 +224,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>

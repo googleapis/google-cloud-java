@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     return new ImportDocumentsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.DocumentProto
         .internal_static_google_cloud_dialogflow_v2beta1_ImportDocumentsRequest_descriptor;
@@ -69,6 +64,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -176,14 +173,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The Google Cloud Storage location for the documents.
+   * Optional. The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the gcsSource field is set.
    */
@@ -195,14 +195,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The Google Cloud Storage location for the documents.
+   * Optional. The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The gcsSource.
    */
@@ -217,14 +220,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The Google Cloud Storage location for the documents.
+   * Optional. The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.GcsSourcesOrBuilder getGcsSourceOrBuilder() {
@@ -914,14 +920,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The Google Cloud Storage location for the documents.
+     * Optional. The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the gcsSource field is set.
      */
@@ -933,14 +942,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The Google Cloud Storage location for the documents.
+     * Optional. The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The gcsSource.
      */
@@ -962,14 +974,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The Google Cloud Storage location for the documents.
+     * Optional. The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGcsSource(com.google.cloud.dialogflow.v2beta1.GcsSources value) {
       if (gcsSourceBuilder_ == null) {
@@ -988,14 +1003,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The Google Cloud Storage location for the documents.
+     * Optional. The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGcsSource(
         com.google.cloud.dialogflow.v2beta1.GcsSources.Builder builderForValue) {
@@ -1012,14 +1030,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The Google Cloud Storage location for the documents.
+     * Optional. The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeGcsSource(com.google.cloud.dialogflow.v2beta1.GcsSources value) {
       if (gcsSourceBuilder_ == null) {
@@ -1048,14 +1069,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The Google Cloud Storage location for the documents.
+     * Optional. The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearGcsSource() {
       if (gcsSourceBuilder_ == null) {
@@ -1077,14 +1101,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The Google Cloud Storage location for the documents.
+     * Optional. The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.GcsSources.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
@@ -1093,14 +1120,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The Google Cloud Storage location for the documents.
+     * Optional. The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.GcsSourcesOrBuilder getGcsSourceOrBuilder() {
@@ -1117,14 +1147,17 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The Google Cloud Storage location for the documents.
+     * Optional. The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.GcsSources,

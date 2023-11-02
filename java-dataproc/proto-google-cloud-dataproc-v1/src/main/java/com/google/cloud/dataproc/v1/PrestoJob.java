@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,18 +43,13 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
 
   private PrestoJob() {
     outputFormat_ = "";
-    clientTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    clientTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PrestoJob();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -84,6 +79,8 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int queriesCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object queries_;
 
   public enum QueriesCase
@@ -327,7 +324,8 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   public static final int CLIENT_TAGS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList clientTags_;
+  private com.google.protobuf.LazyStringArrayList clientTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -876,8 +874,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       }
       continueOnFailure_ = false;
       outputFormat_ = "";
-      clientTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      clientTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableProperties().clear();
       loggingConfig_ = null;
       if (loggingConfigBuilder_ != null) {
@@ -913,21 +910,12 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.PrestoJob buildPartial() {
       com.google.cloud.dataproc.v1.PrestoJob result =
           new com.google.cloud.dataproc.v1.PrestoJob(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.PrestoJob result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        clientTags_ = clientTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.clientTags_ = clientTags_;
     }
 
     private void buildPartial0(com.google.cloud.dataproc.v1.PrestoJob result) {
@@ -937,6 +925,10 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.outputFormat_ = outputFormat_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        clientTags_.makeImmutable();
+        result.clientTags_ = clientTags_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.properties_ = internalGetProperties();
@@ -1012,7 +1004,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.clientTags_.isEmpty()) {
         if (clientTags_.isEmpty()) {
           clientTags_ = other.clientTags_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureClientTagsIsMutable();
           clientTags_.addAll(other.clientTags_);
@@ -1663,14 +1655,14 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList clientTags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList clientTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureClientTagsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!clientTags_.isModifiable()) {
         clientTags_ = new com.google.protobuf.LazyStringArrayList(clientTags_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1684,7 +1676,8 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the clientTags.
      */
     public com.google.protobuf.ProtocolStringList getClientTagsList() {
-      return clientTags_.getUnmodifiableView();
+      clientTags_.makeImmutable();
+      return clientTags_;
     }
     /**
      *
@@ -1749,6 +1742,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       }
       ensureClientTagsIsMutable();
       clientTags_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1770,6 +1764,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       }
       ensureClientTagsIsMutable();
       clientTags_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1788,6 +1783,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllClientTags(java.lang.Iterable<java.lang.String> values) {
       ensureClientTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, clientTags_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1803,8 +1799,9 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClientTags() {
-      clientTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      clientTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1827,6 +1824,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureClientTagsIsMutable();
       clientTags_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

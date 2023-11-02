@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ package com.google.cloud.bigquery.analyticshub.v1;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -27,6 +29,8 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
@@ -36,16 +40,21 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -236,6 +245,7 @@ public class AnalyticsHubServiceClientTest {
             .setDocumentation("documentation1587405498")
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
+            .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -280,6 +290,7 @@ public class AnalyticsHubServiceClientTest {
             .setDocumentation("documentation1587405498")
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
+            .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -324,6 +335,7 @@ public class AnalyticsHubServiceClientTest {
             .setDocumentation("documentation1587405498")
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
+            .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -371,6 +383,7 @@ public class AnalyticsHubServiceClientTest {
             .setDocumentation("documentation1587405498")
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
+            .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -418,6 +431,7 @@ public class AnalyticsHubServiceClientTest {
             .setDocumentation("documentation1587405498")
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
+            .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -626,6 +640,7 @@ public class AnalyticsHubServiceClientTest {
             .addAllCategories(new ArrayList<Listing.Category>())
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
+            .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -675,6 +690,7 @@ public class AnalyticsHubServiceClientTest {
             .addAllCategories(new ArrayList<Listing.Category>())
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
+            .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -724,6 +740,7 @@ public class AnalyticsHubServiceClientTest {
             .addAllCategories(new ArrayList<Listing.Category>())
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
+            .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -776,6 +793,7 @@ public class AnalyticsHubServiceClientTest {
             .addAllCategories(new ArrayList<Listing.Category>())
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
+            .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -828,6 +846,7 @@ public class AnalyticsHubServiceClientTest {
             .addAllCategories(new ArrayList<Listing.Category>())
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
+            .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -934,7 +953,10 @@ public class AnalyticsHubServiceClientTest {
 
   @Test
   public void subscribeListingTest() throws Exception {
-    SubscribeListingResponse expectedResponse = SubscribeListingResponse.newBuilder().build();
+    SubscribeListingResponse expectedResponse =
+        SubscribeListingResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
     ListingName name = ListingName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[LISTING]");
@@ -969,7 +991,10 @@ public class AnalyticsHubServiceClientTest {
 
   @Test
   public void subscribeListingTest2() throws Exception {
-    SubscribeListingResponse expectedResponse = SubscribeListingResponse.newBuilder().build();
+    SubscribeListingResponse expectedResponse =
+        SubscribeListingResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
     String name = "name3373707";
@@ -999,6 +1024,616 @@ public class AnalyticsHubServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void subscribeDataExchangeTest() throws Exception {
+    SubscribeDataExchangeResponse expectedResponse =
+        SubscribeDataExchangeResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("subscribeDataExchangeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAnalyticsHubService.addResponse(resultOperation);
+
+    DataExchangeName name = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+
+    SubscribeDataExchangeResponse actualResponse = client.subscribeDataExchangeAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SubscribeDataExchangeRequest actualRequest =
+        ((SubscribeDataExchangeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void subscribeDataExchangeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      DataExchangeName name = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+      client.subscribeDataExchangeAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void subscribeDataExchangeTest2() throws Exception {
+    SubscribeDataExchangeResponse expectedResponse =
+        SubscribeDataExchangeResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("subscribeDataExchangeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAnalyticsHubService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    SubscribeDataExchangeResponse actualResponse = client.subscribeDataExchangeAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SubscribeDataExchangeRequest actualRequest =
+        ((SubscribeDataExchangeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void subscribeDataExchangeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.subscribeDataExchangeAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void refreshSubscriptionTest() throws Exception {
+    RefreshSubscriptionResponse expectedResponse =
+        RefreshSubscriptionResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("refreshSubscriptionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAnalyticsHubService.addResponse(resultOperation);
+
+    SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+
+    RefreshSubscriptionResponse actualResponse = client.refreshSubscriptionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RefreshSubscriptionRequest actualRequest = ((RefreshSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void refreshSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+      client.refreshSubscriptionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void refreshSubscriptionTest2() throws Exception {
+    RefreshSubscriptionResponse expectedResponse =
+        RefreshSubscriptionResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("refreshSubscriptionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAnalyticsHubService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    RefreshSubscriptionResponse actualResponse = client.refreshSubscriptionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RefreshSubscriptionRequest actualRequest = ((RefreshSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void refreshSubscriptionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.refreshSubscriptionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getSubscriptionTest() throws Exception {
+    Subscription expectedResponse =
+        Subscription.newBuilder()
+            .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setLastModifyTime(Timestamp.newBuilder().build())
+            .setOrganizationId("organizationId-927042130")
+            .setOrganizationDisplayName("organizationDisplayName-1353817286")
+            .putAllLinkedDatasetMap(new HashMap<String, Subscription.LinkedResource>())
+            .setSubscriberContact("subscriberContact-847205736")
+            .build();
+    mockAnalyticsHubService.addResponse(expectedResponse);
+
+    SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+
+    Subscription actualResponse = client.getSubscription(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSubscriptionRequest actualRequest = ((GetSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+      client.getSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSubscriptionTest2() throws Exception {
+    Subscription expectedResponse =
+        Subscription.newBuilder()
+            .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setLastModifyTime(Timestamp.newBuilder().build())
+            .setOrganizationId("organizationId-927042130")
+            .setOrganizationDisplayName("organizationDisplayName-1353817286")
+            .putAllLinkedDatasetMap(new HashMap<String, Subscription.LinkedResource>())
+            .setSubscriberContact("subscriberContact-847205736")
+            .build();
+    mockAnalyticsHubService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Subscription actualResponse = client.getSubscription(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSubscriptionRequest actualRequest = ((GetSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSubscriptionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubscriptionsTest() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSubscriptionsResponse expectedResponse =
+        ListSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsHubService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListSubscriptionsPagedResponse pagedListResponse = client.listSubscriptions(parent);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSubscriptionsRequest actualRequest = ((ListSubscriptionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSubscriptionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listSubscriptions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubscriptionsTest2() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSubscriptionsResponse expectedResponse =
+        ListSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsHubService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSubscriptionsPagedResponse pagedListResponse = client.listSubscriptions(parent);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSubscriptionsRequest actualRequest = ((ListSubscriptionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSubscriptionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSubscriptions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSharedResourceSubscriptionsTest() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSharedResourceSubscriptionsResponse expectedResponse =
+        ListSharedResourceSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSharedResourceSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsHubService.addResponse(expectedResponse);
+
+    ResourceName resource = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+
+    ListSharedResourceSubscriptionsPagedResponse pagedListResponse =
+        client.listSharedResourceSubscriptions(resource);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSharedResourceSubscriptionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSharedResourceSubscriptionsRequest actualRequest =
+        ((ListSharedResourceSubscriptionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource.toString(), actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSharedResourceSubscriptionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      ResourceName resource = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+      client.listSharedResourceSubscriptions(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSharedResourceSubscriptionsTest2() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSharedResourceSubscriptionsResponse expectedResponse =
+        ListSharedResourceSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSharedResourceSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsHubService.addResponse(expectedResponse);
+
+    String resource = "resource-341064690";
+
+    ListSharedResourceSubscriptionsPagedResponse pagedListResponse =
+        client.listSharedResourceSubscriptions(resource);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSharedResourceSubscriptionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSharedResourceSubscriptionsRequest actualRequest =
+        ((ListSharedResourceSubscriptionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource, actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSharedResourceSubscriptionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      String resource = "resource-341064690";
+      client.listSharedResourceSubscriptions(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void revokeSubscriptionTest() throws Exception {
+    RevokeSubscriptionResponse expectedResponse = RevokeSubscriptionResponse.newBuilder().build();
+    mockAnalyticsHubService.addResponse(expectedResponse);
+
+    SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+
+    RevokeSubscriptionResponse actualResponse = client.revokeSubscription(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RevokeSubscriptionRequest actualRequest = ((RevokeSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void revokeSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+      client.revokeSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void revokeSubscriptionTest2() throws Exception {
+    RevokeSubscriptionResponse expectedResponse = RevokeSubscriptionResponse.newBuilder().build();
+    mockAnalyticsHubService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RevokeSubscriptionResponse actualResponse = client.revokeSubscription(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RevokeSubscriptionRequest actualRequest = ((RevokeSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void revokeSubscriptionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.revokeSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSubscriptionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSubscriptionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAnalyticsHubService.addResponse(resultOperation);
+
+    SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+
+    client.deleteSubscriptionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSubscriptionRequest actualRequest = ((DeleteSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+      client.deleteSubscriptionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteSubscriptionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSubscriptionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAnalyticsHubService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteSubscriptionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockAnalyticsHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSubscriptionRequest actualRequest = ((DeleteSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSubscriptionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSubscriptionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,5 +100,5 @@ public interface BlueGreenSettingsOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getNodePoolSoakDurationOrBuilder();
 
-  public com.google.container.v1.BlueGreenSettings.RolloutPolicyCase getRolloutPolicyCase();
+  com.google.container.v1.BlueGreenSettings.RolloutPolicyCase getRolloutPolicyCase();
 }

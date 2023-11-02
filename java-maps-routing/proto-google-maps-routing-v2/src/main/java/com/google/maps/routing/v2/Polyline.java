@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
     return new Polyline();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.PolylineProto
         .internal_static_google_maps_routing_v2_Polyline_descriptor;
@@ -66,6 +61,8 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int polylineTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object polylineType_;
 
   public enum PolylineTypeCase

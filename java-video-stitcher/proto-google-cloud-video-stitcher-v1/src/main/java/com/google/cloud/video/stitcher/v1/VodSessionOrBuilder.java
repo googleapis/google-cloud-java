@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,8 +175,11 @@ public interface VodSessionOrBuilder
    * to the value that will replace the macro in the ad tag URI.
    * Macros are designated by square brackets.
    * For example:
+   *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
+   *
    *   Ad tag macro map: `{"geoId": "123"}`
+   *
    *   Fully qualified ad tag:
    *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
@@ -193,8 +196,11 @@ public interface VodSessionOrBuilder
    * to the value that will replace the macro in the ad tag URI.
    * Macros are designated by square brackets.
    * For example:
+   *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
+   *
    *   Ad tag macro map: `{"geoId": "123"}`
+   *
    *   Fully qualified ad tag:
    *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
@@ -214,8 +220,11 @@ public interface VodSessionOrBuilder
    * to the value that will replace the macro in the ad tag URI.
    * Macros are designated by square brackets.
    * For example:
+   *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
+   *
    *   Ad tag macro map: `{"geoId": "123"}`
+   *
    *   Fully qualified ad tag:
    *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
@@ -232,8 +241,11 @@ public interface VodSessionOrBuilder
    * to the value that will replace the macro in the ad tag URI.
    * Macros are designated by square brackets.
    * For example:
+   *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
+   *
    *   Ad tag macro map: `{"geoId": "123"}`
+   *
    *   Fully qualified ad tag:
    *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
@@ -254,8 +266,11 @@ public interface VodSessionOrBuilder
    * to the value that will replace the macro in the ad tag URI.
    * Macros are designated by square brackets.
    * For example:
+   *
    *   Ad tag URI: `"https://doubleclick.google.com/ad/1?geo_id=[geoId]"`
+   *
    *   Ad tag macro map: `{"geoId": "123"}`
+   *
    *   Fully qualified ad tag:
    *   `"`https://doubleclick.google.com/ad/1?geo_id=123"`
    * </pre>
@@ -263,24 +278,6 @@ public interface VodSessionOrBuilder
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
    */
   java.lang.String getAdTagMacroMapOrThrow(java.lang.String key);
-
-  /**
-   *
-   *
-   * <pre>
-   * Indicates whether client side ad tracking is enabled. If client
-   * side ad tracking is enabled, then the client player is expected
-   * to trigger playback and activity events itself.
-   * If this is set to false, server side ad tracking is enabled,
-   * causing the Video Stitcher service will trigger playback events
-   * on behalf of the client player.
-   * </pre>
-   *
-   * <code>bool client_ad_tracking = 8;</code>
-   *
-   * @return The clientAdTracking.
-   */
-  boolean getClientAdTracking();
 
   /**
    *
@@ -341,4 +338,71 @@ public interface VodSessionOrBuilder
    * @return The bytes for assetId.
    */
   com.google.protobuf.ByteString getAssetIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Determines how the ad should be tracked.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.stitcher.v1.AdTracking ad_tracking = 11 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for adTracking.
+   */
+  int getAdTrackingValue();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Determines how the ad should be tracked.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.stitcher.v1.AdTracking ad_tracking = 11 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The adTracking.
+   */
+  com.google.cloud.video.stitcher.v1.AdTracking getAdTracking();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field should be set with appropriate values if GAM is being used for
+   * ads.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.VodSession.GamSettings gam_settings = 13;</code>
+   *
+   * @return Whether the gamSettings field is set.
+   */
+  boolean hasGamSettings();
+  /**
+   *
+   *
+   * <pre>
+   * This field should be set with appropriate values if GAM is being used for
+   * ads.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.VodSession.GamSettings gam_settings = 13;</code>
+   *
+   * @return The gamSettings.
+   */
+  com.google.cloud.video.stitcher.v1.VodSession.GamSettings getGamSettings();
+  /**
+   *
+   *
+   * <pre>
+   * This field should be set with appropriate values if GAM is being used for
+   * ads.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.VodSession.GamSettings gam_settings = 13;</code>
+   */
+  com.google.cloud.video.stitcher.v1.VodSession.GamSettingsOrBuilder getGamSettingsOrBuilder();
 }

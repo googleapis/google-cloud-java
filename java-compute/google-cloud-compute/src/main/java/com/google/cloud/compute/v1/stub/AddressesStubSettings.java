@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ import com.google.cloud.compute.v1.DeleteAddressRequest;
 import com.google.cloud.compute.v1.GetAddressRequest;
 import com.google.cloud.compute.v1.InsertAddressRequest;
 import com.google.cloud.compute.v1.ListAddressesRequest;
+import com.google.cloud.compute.v1.MoveAddressRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetLabelsAddressRequest;
 import com.google.common.collect.ImmutableList;
@@ -124,6 +125,9 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
       insertOperationSettings;
   private final PagedCallSettings<ListAddressesRequest, AddressList, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<MoveAddressRequest, Operation> moveSettings;
+  private final OperationCallSettings<MoveAddressRequest, Operation, Operation>
+      moveOperationSettings;
   private final UnaryCallSettings<SetLabelsAddressRequest, Operation> setLabelsSettings;
   private final OperationCallSettings<SetLabelsAddressRequest, Operation, Operation>
       setLabelsOperationSettings;
@@ -289,6 +293,16 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to move. */
+  public UnaryCallSettings<MoveAddressRequest, Operation> moveSettings() {
+    return moveSettings;
+  }
+
+  /** Returns the object with the settings used for calls to move. */
+  public OperationCallSettings<MoveAddressRequest, Operation, Operation> moveOperationSettings() {
+    return moveOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setLabels. */
   public UnaryCallSettings<SetLabelsAddressRequest, Operation> setLabelsSettings() {
     return setLabelsSettings;
@@ -382,6 +396,8 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    moveSettings = settingsBuilder.moveSettings().build();
+    moveOperationSettings = settingsBuilder.moveOperationSettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
     setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
   }
@@ -401,6 +417,9 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
         insertOperationSettings;
     private final PagedCallSettings.Builder<ListAddressesRequest, AddressList, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<MoveAddressRequest, Operation> moveSettings;
+    private final OperationCallSettings.Builder<MoveAddressRequest, Operation, Operation>
+        moveOperationSettings;
     private final UnaryCallSettings.Builder<SetLabelsAddressRequest, Operation> setLabelsSettings;
     private final OperationCallSettings.Builder<SetLabelsAddressRequest, Operation, Operation>
         setLabelsOperationSettings;
@@ -461,6 +480,8 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      moveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      moveOperationSettings = OperationCallSettings.newBuilder();
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsOperationSettings = OperationCallSettings.newBuilder();
 
@@ -471,6 +492,7 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
               getSettings,
               insertSettings,
               listSettings,
+              moveSettings,
               setLabelsSettings);
       initDefaults(this);
     }
@@ -485,6 +507,8 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      moveSettings = settings.moveSettings.toBuilder();
+      moveOperationSettings = settings.moveOperationSettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
       setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
 
@@ -495,6 +519,7 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
               getSettings,
               insertSettings,
               listSettings,
+              moveSettings,
               setLabelsSettings);
     }
 
@@ -538,6 +563,11 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .moveSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .setLabelsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -571,6 +601,29 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertAddressRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .moveOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<MoveAddressRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -674,6 +727,19 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
     public PagedCallSettings.Builder<ListAddressesRequest, AddressList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to move. */
+    public UnaryCallSettings.Builder<MoveAddressRequest, Operation> moveSettings() {
+      return moveSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to move. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<MoveAddressRequest, Operation, Operation>
+        moveOperationSettings() {
+      return moveOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setLabels. */

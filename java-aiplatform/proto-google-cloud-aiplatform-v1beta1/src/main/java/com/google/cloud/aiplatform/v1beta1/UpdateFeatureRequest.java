@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@ package com.google.cloud.aiplatform.v1beta1;
  * <pre>
  * Request message for
  * [FeaturestoreService.UpdateFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateFeature].
+ * Request message for
+ * [FeatureRegistryService.UpdateFeature][google.cloud.aiplatform.v1beta1.FeatureRegistryService.UpdateFeature].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.UpdateFeatureRequest}
@@ -44,11 +46,6 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateFeatureRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -76,6 +73,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -96,6 +94,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -118,6 +117,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -144,7 +144,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `disable_monitoring`
@@ -169,7 +171,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `disable_monitoring`
@@ -194,7 +198,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `disable_monitoring`
@@ -392,6 +398,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Request message for
    * [FeaturestoreService.UpdateFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateFeature].
+   * Request message for
+   * [FeatureRegistryService.UpdateFeature][google.cloud.aiplatform.v1beta1.FeatureRegistryService.UpdateFeature].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.UpdateFeatureRequest}
@@ -603,6 +611,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -622,6 +631,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -647,6 +657,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -674,6 +685,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -698,6 +710,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -728,6 +741,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -752,6 +766,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -771,6 +786,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -794,6 +810,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -834,7 +851,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -858,7 +877,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -888,7 +909,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -920,7 +943,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -949,7 +974,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -984,7 +1011,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -1013,7 +1042,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -1037,7 +1068,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -1065,7 +1098,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`

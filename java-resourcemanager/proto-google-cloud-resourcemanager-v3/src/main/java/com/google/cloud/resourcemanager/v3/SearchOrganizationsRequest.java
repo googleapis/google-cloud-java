@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchOrganizationsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -151,6 +146,8 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
    * <pre>
    * Optional. An optional query string used to filter the Organizations to
    * return in the response. Query rules are case-insensitive.
+   *
+   *
    * ```
    * | Field            | Description                                |
    * |------------------|--------------------------------------------|
@@ -158,8 +155,10 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
    * customer id. |
    * | domain           | Filters by domain.                         |
    * ```
+   *
    * Organizations may be queried by `directoryCustomerId` or by
    * `domain`, where the domain is a G Suite domain, for example:
+   *
    * * Query `directorycustomerid:123456789` returns Organization
    * resources with `owner.directory_customer_id` equal to `123456789`.
    * * Query `domain:google.com` returns Organization resources corresponding
@@ -188,6 +187,8 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
    * <pre>
    * Optional. An optional query string used to filter the Organizations to
    * return in the response. Query rules are case-insensitive.
+   *
+   *
    * ```
    * | Field            | Description                                |
    * |------------------|--------------------------------------------|
@@ -195,8 +196,10 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
    * customer id. |
    * | domain           | Filters by domain.                         |
    * ```
+   *
    * Organizations may be queried by `directoryCustomerId` or by
    * `domain`, where the domain is a G Suite domain, for example:
+   *
    * * Query `directorycustomerid:123456789` returns Organization
    * resources with `owner.directory_customer_id` equal to `123456789`.
    * * Query `domain:google.com` returns Organization resources corresponding
@@ -789,6 +792,8 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. An optional query string used to filter the Organizations to
      * return in the response. Query rules are case-insensitive.
+     *
+     *
      * ```
      * | Field            | Description                                |
      * |------------------|--------------------------------------------|
@@ -796,8 +801,10 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
      * customer id. |
      * | domain           | Filters by domain.                         |
      * ```
+     *
      * Organizations may be queried by `directoryCustomerId` or by
      * `domain`, where the domain is a G Suite domain, for example:
+     *
      * * Query `directorycustomerid:123456789` returns Organization
      * resources with `owner.directory_customer_id` equal to `123456789`.
      * * Query `domain:google.com` returns Organization resources corresponding
@@ -825,6 +832,8 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. An optional query string used to filter the Organizations to
      * return in the response. Query rules are case-insensitive.
+     *
+     *
      * ```
      * | Field            | Description                                |
      * |------------------|--------------------------------------------|
@@ -832,8 +841,10 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
      * customer id. |
      * | domain           | Filters by domain.                         |
      * ```
+     *
      * Organizations may be queried by `directoryCustomerId` or by
      * `domain`, where the domain is a G Suite domain, for example:
+     *
      * * Query `directorycustomerid:123456789` returns Organization
      * resources with `owner.directory_customer_id` equal to `123456789`.
      * * Query `domain:google.com` returns Organization resources corresponding
@@ -861,6 +872,8 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. An optional query string used to filter the Organizations to
      * return in the response. Query rules are case-insensitive.
+     *
+     *
      * ```
      * | Field            | Description                                |
      * |------------------|--------------------------------------------|
@@ -868,8 +881,10 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
      * customer id. |
      * | domain           | Filters by domain.                         |
      * ```
+     *
      * Organizations may be queried by `directoryCustomerId` or by
      * `domain`, where the domain is a G Suite domain, for example:
+     *
      * * Query `directorycustomerid:123456789` returns Organization
      * resources with `owner.directory_customer_id` equal to `123456789`.
      * * Query `domain:google.com` returns Organization resources corresponding
@@ -896,6 +911,8 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. An optional query string used to filter the Organizations to
      * return in the response. Query rules are case-insensitive.
+     *
+     *
      * ```
      * | Field            | Description                                |
      * |------------------|--------------------------------------------|
@@ -903,8 +920,10 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
      * customer id. |
      * | domain           | Filters by domain.                         |
      * ```
+     *
      * Organizations may be queried by `directoryCustomerId` or by
      * `domain`, where the domain is a G Suite domain, for example:
+     *
      * * Query `directorycustomerid:123456789` returns Organization
      * resources with `owner.directory_customer_id` equal to `123456789`.
      * * Query `domain:google.com` returns Organization resources corresponding
@@ -927,6 +946,8 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. An optional query string used to filter the Organizations to
      * return in the response. Query rules are case-insensitive.
+     *
+     *
      * ```
      * | Field            | Description                                |
      * |------------------|--------------------------------------------|
@@ -934,8 +955,10 @@ public final class SearchOrganizationsRequest extends com.google.protobuf.Genera
      * customer id. |
      * | domain           | Filters by domain.                         |
      * ```
+     *
      * Organizations may be queried by `directoryCustomerId` or by
      * `domain`, where the domain is a G Suite domain, for example:
+     *
      * * Query `directorycustomerid:123456789` returns Organization
      * resources with `owner.directory_customer_id` equal to `123456789`.
      * * Query `domain:google.com` returns Organization resources corresponding

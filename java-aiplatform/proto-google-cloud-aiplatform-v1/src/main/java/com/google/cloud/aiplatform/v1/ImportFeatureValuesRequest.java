@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImportFeatureValuesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -157,11 +152,6 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FeatureSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -958,6 +948,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -1008,6 +1000,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
   }
 
   private int featureTimeSourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object featureTimeSource_;
 
   public enum FeatureTimeSourceCase
@@ -1342,7 +1336,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Source column that holds entity IDs. If not provided, entity IDs are
-   * extracted from the column named `entity_id`.
+   * extracted from the column named entity_id.
    * </pre>
    *
    * <code>string entity_id_field = 5;</code>
@@ -1366,7 +1360,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Source column that holds entity IDs. If not provided, entity IDs are
-   * extracted from the column named `entity_id`.
+   * extracted from the column named entity_id.
    * </pre>
    *
    * <code>string entity_id_field = 5;</code>
@@ -3188,7 +3182,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Source column that holds entity IDs. If not provided, entity IDs are
-     * extracted from the column named `entity_id`.
+     * extracted from the column named entity_id.
      * </pre>
      *
      * <code>string entity_id_field = 5;</code>
@@ -3211,7 +3205,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Source column that holds entity IDs. If not provided, entity IDs are
-     * extracted from the column named `entity_id`.
+     * extracted from the column named entity_id.
      * </pre>
      *
      * <code>string entity_id_field = 5;</code>
@@ -3234,7 +3228,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Source column that holds entity IDs. If not provided, entity IDs are
-     * extracted from the column named `entity_id`.
+     * extracted from the column named entity_id.
      * </pre>
      *
      * <code>string entity_id_field = 5;</code>
@@ -3256,7 +3250,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Source column that holds entity IDs. If not provided, entity IDs are
-     * extracted from the column named `entity_id`.
+     * extracted from the column named entity_id.
      * </pre>
      *
      * <code>string entity_id_field = 5;</code>
@@ -3274,7 +3268,7 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Source column that holds entity IDs. If not provided, entity IDs are
-     * extracted from the column named `entity_id`.
+     * extracted from the column named entity_id.
      * </pre>
      *
      * <code>string entity_id_field = 5;</code>

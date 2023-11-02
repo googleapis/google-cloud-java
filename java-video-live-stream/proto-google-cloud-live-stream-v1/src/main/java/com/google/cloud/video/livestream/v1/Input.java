@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Input();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -504,18 +499,13 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
     }
 
     private SecurityRule() {
-      ipRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ipRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SecurityRule();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -536,7 +526,8 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
     public static final int IP_RANGES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList ipRanges_;
+    private com.google.protobuf.LazyStringArrayList ipRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -814,8 +805,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        ipRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        ipRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -843,7 +833,6 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.video.livestream.v1.Input.SecurityRule buildPartial() {
         com.google.cloud.video.livestream.v1.Input.SecurityRule result =
             new com.google.cloud.video.livestream.v1.Input.SecurityRule(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -851,17 +840,12 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.video.livestream.v1.Input.SecurityRule result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          ipRanges_ = ipRanges_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.ipRanges_ = ipRanges_;
-      }
-
       private void buildPartial0(com.google.cloud.video.livestream.v1.Input.SecurityRule result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          ipRanges_.makeImmutable();
+          result.ipRanges_ = ipRanges_;
+        }
       }
 
       @java.lang.Override
@@ -915,7 +899,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
         if (!other.ipRanges_.isEmpty()) {
           if (ipRanges_.isEmpty()) {
             ipRanges_ = other.ipRanges_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureIpRangesIsMutable();
             ipRanges_.addAll(other.ipRanges_);
@@ -974,14 +958,14 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList ipRanges_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList ipRanges_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIpRangesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!ipRanges_.isModifiable()) {
           ipRanges_ = new com.google.protobuf.LazyStringArrayList(ipRanges_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -997,7 +981,8 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the ipRanges.
        */
       public com.google.protobuf.ProtocolStringList getIpRangesList() {
-        return ipRanges_.getUnmodifiableView();
+        ipRanges_.makeImmutable();
+        return ipRanges_;
       }
       /**
        *
@@ -1070,6 +1055,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
         }
         ensureIpRangesIsMutable();
         ipRanges_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1093,6 +1079,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
         }
         ensureIpRangesIsMutable();
         ipRanges_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1113,6 +1100,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllIpRanges(java.lang.Iterable<java.lang.String> values) {
         ensureIpRangesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ipRanges_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1130,8 +1118,9 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearIpRanges() {
-        ipRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        ipRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1156,6 +1145,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureIpRangesIsMutable();
         ipRanges_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1564,6 +1554,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
    * Output only. URI to push the input stream to.
    * Its format depends on the input
    * [type][google.cloud.video.livestream.v1.Input.type], for example:
+   *
    * *  `RTMP_PUSH`: `rtmp://1.2.3.4/live/{STREAM-ID}`
    * *  `SRT_PUSH`: `srt://1.2.3.4:4201?streamid={STREAM-ID}`
    * </pre>
@@ -1591,6 +1582,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
    * Output only. URI to push the input stream to.
    * Its format depends on the input
    * [type][google.cloud.video.livestream.v1.Input.type], for example:
+   *
    * *  `RTMP_PUSH`: `rtmp://1.2.3.4/live/{STREAM-ID}`
    * *  `SRT_PUSH`: `srt://1.2.3.4:4201?streamid={STREAM-ID}`
    * </pre>
@@ -3284,6 +3276,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      * Output only. URI to push the input stream to.
      * Its format depends on the input
      * [type][google.cloud.video.livestream.v1.Input.type], for example:
+     *
      * *  `RTMP_PUSH`: `rtmp://1.2.3.4/live/{STREAM-ID}`
      * *  `SRT_PUSH`: `srt://1.2.3.4:4201?streamid={STREAM-ID}`
      * </pre>
@@ -3310,6 +3303,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      * Output only. URI to push the input stream to.
      * Its format depends on the input
      * [type][google.cloud.video.livestream.v1.Input.type], for example:
+     *
      * *  `RTMP_PUSH`: `rtmp://1.2.3.4/live/{STREAM-ID}`
      * *  `SRT_PUSH`: `srt://1.2.3.4:4201?streamid={STREAM-ID}`
      * </pre>
@@ -3336,6 +3330,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      * Output only. URI to push the input stream to.
      * Its format depends on the input
      * [type][google.cloud.video.livestream.v1.Input.type], for example:
+     *
      * *  `RTMP_PUSH`: `rtmp://1.2.3.4/live/{STREAM-ID}`
      * *  `SRT_PUSH`: `srt://1.2.3.4:4201?streamid={STREAM-ID}`
      * </pre>
@@ -3361,6 +3356,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      * Output only. URI to push the input stream to.
      * Its format depends on the input
      * [type][google.cloud.video.livestream.v1.Input.type], for example:
+     *
      * *  `RTMP_PUSH`: `rtmp://1.2.3.4/live/{STREAM-ID}`
      * *  `SRT_PUSH`: `srt://1.2.3.4:4201?streamid={STREAM-ID}`
      * </pre>
@@ -3382,6 +3378,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      * Output only. URI to push the input stream to.
      * Its format depends on the input
      * [type][google.cloud.video.livestream.v1.Input.type], for example:
+     *
      * *  `RTMP_PUSH`: `rtmp://1.2.3.4/live/{STREAM-ID}`
      * *  `SRT_PUSH`: `srt://1.2.3.4:4201?streamid={STREAM-ID}`
      * </pre>

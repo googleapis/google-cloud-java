@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,8 @@ public final class BareMetalSolutionGrpc {
 
   private BareMetalSolutionGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.baremetalsolution.v2.BareMetalSolution";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.baremetalsolution.v2.BareMetalSolution";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -181,6 +182,52 @@ public final class BareMetalSolutionGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.RenameInstanceRequest,
+          com.google.cloud.baremetalsolution.v2.Instance>
+      getRenameInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RenameInstance",
+      requestType = com.google.cloud.baremetalsolution.v2.RenameInstanceRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.Instance.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.RenameInstanceRequest,
+          com.google.cloud.baremetalsolution.v2.Instance>
+      getRenameInstanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.RenameInstanceRequest,
+            com.google.cloud.baremetalsolution.v2.Instance>
+        getRenameInstanceMethod;
+    if ((getRenameInstanceMethod = BareMetalSolutionGrpc.getRenameInstanceMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getRenameInstanceMethod = BareMetalSolutionGrpc.getRenameInstanceMethod) == null) {
+          BareMetalSolutionGrpc.getRenameInstanceMethod =
+              getRenameInstanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.RenameInstanceRequest,
+                          com.google.cloud.baremetalsolution.v2.Instance>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RenameInstance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.RenameInstanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.Instance.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("RenameInstance"))
+                      .build();
+        }
+      }
+    }
+    return getRenameInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.baremetalsolution.v2.ResetInstanceRequest,
           com.google.longrunning.Operation>
       getResetInstanceMethod;
@@ -319,6 +366,113 @@ public final class BareMetalSolutionGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest,
+          com.google.longrunning.Operation>
+      getEnableInteractiveSerialConsoleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnableInteractiveSerialConsole",
+      requestType =
+          com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest,
+          com.google.longrunning.Operation>
+      getEnableInteractiveSerialConsoleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest,
+            com.google.longrunning.Operation>
+        getEnableInteractiveSerialConsoleMethod;
+    if ((getEnableInteractiveSerialConsoleMethod =
+            BareMetalSolutionGrpc.getEnableInteractiveSerialConsoleMethod)
+        == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getEnableInteractiveSerialConsoleMethod =
+                BareMetalSolutionGrpc.getEnableInteractiveSerialConsoleMethod)
+            == null) {
+          BareMetalSolutionGrpc.getEnableInteractiveSerialConsoleMethod =
+              getEnableInteractiveSerialConsoleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "EnableInteractiveSerialConsole"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2
+                                  .EnableInteractiveSerialConsoleRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier(
+                              "EnableInteractiveSerialConsole"))
+                      .build();
+        }
+      }
+    }
+    return getEnableInteractiveSerialConsoleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest,
+          com.google.longrunning.Operation>
+      getDisableInteractiveSerialConsoleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisableInteractiveSerialConsole",
+      requestType =
+          com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest,
+          com.google.longrunning.Operation>
+      getDisableInteractiveSerialConsoleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest,
+            com.google.longrunning.Operation>
+        getDisableInteractiveSerialConsoleMethod;
+    if ((getDisableInteractiveSerialConsoleMethod =
+            BareMetalSolutionGrpc.getDisableInteractiveSerialConsoleMethod)
+        == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getDisableInteractiveSerialConsoleMethod =
+                BareMetalSolutionGrpc.getDisableInteractiveSerialConsoleMethod)
+            == null) {
+          BareMetalSolutionGrpc.getDisableInteractiveSerialConsoleMethod =
+              getDisableInteractiveSerialConsoleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2
+                              .DisableInteractiveSerialConsoleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DisableInteractiveSerialConsole"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2
+                                  .DisableInteractiveSerialConsoleRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier(
+                              "DisableInteractiveSerialConsole"))
+                      .build();
+        }
+      }
+    }
+    return getDisableInteractiveSerialConsoleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.baremetalsolution.v2.DetachLunRequest, com.google.longrunning.Operation>
       getDetachLunMethod;
 
@@ -360,6 +514,142 @@ public final class BareMetalSolutionGrpc {
       }
     }
     return getDetachLunMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest,
+          com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse>
+      getListSSHKeysMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSSHKeys",
+      requestType = com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest,
+          com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse>
+      getListSSHKeysMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest,
+            com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse>
+        getListSSHKeysMethod;
+    if ((getListSSHKeysMethod = BareMetalSolutionGrpc.getListSSHKeysMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getListSSHKeysMethod = BareMetalSolutionGrpc.getListSSHKeysMethod) == null) {
+          BareMetalSolutionGrpc.getListSSHKeysMethod =
+              getListSSHKeysMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest,
+                          com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSSHKeys"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("ListSSHKeys"))
+                      .build();
+        }
+      }
+    }
+    return getListSSHKeysMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest,
+          com.google.cloud.baremetalsolution.v2.SSHKey>
+      getCreateSSHKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSSHKey",
+      requestType = com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.SSHKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest,
+          com.google.cloud.baremetalsolution.v2.SSHKey>
+      getCreateSSHKeyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest,
+            com.google.cloud.baremetalsolution.v2.SSHKey>
+        getCreateSSHKeyMethod;
+    if ((getCreateSSHKeyMethod = BareMetalSolutionGrpc.getCreateSSHKeyMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getCreateSSHKeyMethod = BareMetalSolutionGrpc.getCreateSSHKeyMethod) == null) {
+          BareMetalSolutionGrpc.getCreateSSHKeyMethod =
+              getCreateSSHKeyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest,
+                          com.google.cloud.baremetalsolution.v2.SSHKey>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSSHKey"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.SSHKey.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("CreateSSHKey"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSSHKeyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest, com.google.protobuf.Empty>
+      getDeleteSSHKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSSHKey",
+      requestType = com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest, com.google.protobuf.Empty>
+      getDeleteSSHKeyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest, com.google.protobuf.Empty>
+        getDeleteSSHKeyMethod;
+    if ((getDeleteSSHKeyMethod = BareMetalSolutionGrpc.getDeleteSSHKeyMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getDeleteSSHKeyMethod = BareMetalSolutionGrpc.getDeleteSSHKeyMethod) == null) {
+          BareMetalSolutionGrpc.getDeleteSSHKeyMethod =
+              getDeleteSSHKeyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSSHKey"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("DeleteSSHKey"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSSHKeyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -499,6 +789,98 @@ public final class BareMetalSolutionGrpc {
       }
     }
     return getUpdateVolumeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.RenameVolumeRequest,
+          com.google.cloud.baremetalsolution.v2.Volume>
+      getRenameVolumeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RenameVolume",
+      requestType = com.google.cloud.baremetalsolution.v2.RenameVolumeRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.Volume.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.RenameVolumeRequest,
+          com.google.cloud.baremetalsolution.v2.Volume>
+      getRenameVolumeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.RenameVolumeRequest,
+            com.google.cloud.baremetalsolution.v2.Volume>
+        getRenameVolumeMethod;
+    if ((getRenameVolumeMethod = BareMetalSolutionGrpc.getRenameVolumeMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getRenameVolumeMethod = BareMetalSolutionGrpc.getRenameVolumeMethod) == null) {
+          BareMetalSolutionGrpc.getRenameVolumeMethod =
+              getRenameVolumeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.RenameVolumeRequest,
+                          com.google.cloud.baremetalsolution.v2.Volume>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RenameVolume"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.RenameVolumeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.Volume.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("RenameVolume"))
+                      .build();
+        }
+      }
+    }
+    return getRenameVolumeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.EvictVolumeRequest,
+          com.google.longrunning.Operation>
+      getEvictVolumeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EvictVolume",
+      requestType = com.google.cloud.baremetalsolution.v2.EvictVolumeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.EvictVolumeRequest,
+          com.google.longrunning.Operation>
+      getEvictVolumeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.EvictVolumeRequest,
+            com.google.longrunning.Operation>
+        getEvictVolumeMethod;
+    if ((getEvictVolumeMethod = BareMetalSolutionGrpc.getEvictVolumeMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getEvictVolumeMethod = BareMetalSolutionGrpc.getEvictVolumeMethod) == null) {
+          BareMetalSolutionGrpc.getEvictVolumeMethod =
+              getEvictVolumeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.EvictVolumeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EvictVolume"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.EvictVolumeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("EvictVolume"))
+                      .build();
+        }
+      }
+    }
+    return getEvictVolumeMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -734,6 +1116,252 @@ public final class BareMetalSolutionGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest,
+          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+      getCreateVolumeSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateVolumeSnapshot",
+      requestType = com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.VolumeSnapshot.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest,
+          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+      getCreateVolumeSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest,
+            com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+        getCreateVolumeSnapshotMethod;
+    if ((getCreateVolumeSnapshotMethod = BareMetalSolutionGrpc.getCreateVolumeSnapshotMethod)
+        == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getCreateVolumeSnapshotMethod = BareMetalSolutionGrpc.getCreateVolumeSnapshotMethod)
+            == null) {
+          BareMetalSolutionGrpc.getCreateVolumeSnapshotMethod =
+              getCreateVolumeSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest,
+                          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateVolumeSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.VolumeSnapshot
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("CreateVolumeSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getCreateVolumeSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest,
+          com.google.longrunning.Operation>
+      getRestoreVolumeSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestoreVolumeSnapshot",
+      requestType = com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest,
+          com.google.longrunning.Operation>
+      getRestoreVolumeSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest,
+            com.google.longrunning.Operation>
+        getRestoreVolumeSnapshotMethod;
+    if ((getRestoreVolumeSnapshotMethod = BareMetalSolutionGrpc.getRestoreVolumeSnapshotMethod)
+        == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getRestoreVolumeSnapshotMethod = BareMetalSolutionGrpc.getRestoreVolumeSnapshotMethod)
+            == null) {
+          BareMetalSolutionGrpc.getRestoreVolumeSnapshotMethod =
+              getRestoreVolumeSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RestoreVolumeSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("RestoreVolumeSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getRestoreVolumeSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest,
+          com.google.protobuf.Empty>
+      getDeleteVolumeSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteVolumeSnapshot",
+      requestType = com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest,
+          com.google.protobuf.Empty>
+      getDeleteVolumeSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest,
+            com.google.protobuf.Empty>
+        getDeleteVolumeSnapshotMethod;
+    if ((getDeleteVolumeSnapshotMethod = BareMetalSolutionGrpc.getDeleteVolumeSnapshotMethod)
+        == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getDeleteVolumeSnapshotMethod = BareMetalSolutionGrpc.getDeleteVolumeSnapshotMethod)
+            == null) {
+          BareMetalSolutionGrpc.getDeleteVolumeSnapshotMethod =
+              getDeleteVolumeSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteVolumeSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("DeleteVolumeSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteVolumeSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest,
+          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+      getGetVolumeSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetVolumeSnapshot",
+      requestType = com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.VolumeSnapshot.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest,
+          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+      getGetVolumeSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest,
+            com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+        getGetVolumeSnapshotMethod;
+    if ((getGetVolumeSnapshotMethod = BareMetalSolutionGrpc.getGetVolumeSnapshotMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getGetVolumeSnapshotMethod = BareMetalSolutionGrpc.getGetVolumeSnapshotMethod)
+            == null) {
+          BareMetalSolutionGrpc.getGetVolumeSnapshotMethod =
+              getGetVolumeSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest,
+                          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVolumeSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.VolumeSnapshot
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("GetVolumeSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getGetVolumeSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest,
+          com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
+      getListVolumeSnapshotsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListVolumeSnapshots",
+      requestType = com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest,
+          com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
+      getListVolumeSnapshotsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest,
+            com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
+        getListVolumeSnapshotsMethod;
+    if ((getListVolumeSnapshotsMethod = BareMetalSolutionGrpc.getListVolumeSnapshotsMethod)
+        == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getListVolumeSnapshotsMethod = BareMetalSolutionGrpc.getListVolumeSnapshotsMethod)
+            == null) {
+          BareMetalSolutionGrpc.getListVolumeSnapshotsMethod =
+              getListVolumeSnapshotsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest,
+                          com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListVolumeSnapshots"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("ListVolumeSnapshots"))
+                      .build();
+        }
+      }
+    }
+    return getListVolumeSnapshotsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.baremetalsolution.v2.GetLunRequest,
           com.google.cloud.baremetalsolution.v2.Lun>
       getGetLunMethod;
@@ -823,6 +1451,49 @@ public final class BareMetalSolutionGrpc {
       }
     }
     return getListLunsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.EvictLunRequest, com.google.longrunning.Operation>
+      getEvictLunMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EvictLun",
+      requestType = com.google.cloud.baremetalsolution.v2.EvictLunRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.EvictLunRequest, com.google.longrunning.Operation>
+      getEvictLunMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.EvictLunRequest, com.google.longrunning.Operation>
+        getEvictLunMethod;
+    if ((getEvictLunMethod = BareMetalSolutionGrpc.getEvictLunMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getEvictLunMethod = BareMetalSolutionGrpc.getEvictLunMethod) == null) {
+          BareMetalSolutionGrpc.getEvictLunMethod =
+              getEvictLunMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.EvictLunRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EvictLun"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.EvictLunRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("EvictLun"))
+                      .build();
+        }
+      }
+    }
+    return getEvictLunMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -964,6 +1635,494 @@ public final class BareMetalSolutionGrpc {
     return getUpdateNfsShareMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest,
+          com.google.longrunning.Operation>
+      getCreateNfsShareMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateNfsShare",
+      requestType = com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest,
+          com.google.longrunning.Operation>
+      getCreateNfsShareMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest,
+            com.google.longrunning.Operation>
+        getCreateNfsShareMethod;
+    if ((getCreateNfsShareMethod = BareMetalSolutionGrpc.getCreateNfsShareMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getCreateNfsShareMethod = BareMetalSolutionGrpc.getCreateNfsShareMethod) == null) {
+          BareMetalSolutionGrpc.getCreateNfsShareMethod =
+              getCreateNfsShareMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateNfsShare"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("CreateNfsShare"))
+                      .build();
+        }
+      }
+    }
+    return getCreateNfsShareMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest,
+          com.google.cloud.baremetalsolution.v2.NfsShare>
+      getRenameNfsShareMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RenameNfsShare",
+      requestType = com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.NfsShare.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest,
+          com.google.cloud.baremetalsolution.v2.NfsShare>
+      getRenameNfsShareMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest,
+            com.google.cloud.baremetalsolution.v2.NfsShare>
+        getRenameNfsShareMethod;
+    if ((getRenameNfsShareMethod = BareMetalSolutionGrpc.getRenameNfsShareMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getRenameNfsShareMethod = BareMetalSolutionGrpc.getRenameNfsShareMethod) == null) {
+          BareMetalSolutionGrpc.getRenameNfsShareMethod =
+              getRenameNfsShareMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest,
+                          com.google.cloud.baremetalsolution.v2.NfsShare>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RenameNfsShare"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.NfsShare.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("RenameNfsShare"))
+                      .build();
+        }
+      }
+    }
+    return getRenameNfsShareMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest,
+          com.google.longrunning.Operation>
+      getDeleteNfsShareMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteNfsShare",
+      requestType = com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest,
+          com.google.longrunning.Operation>
+      getDeleteNfsShareMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest,
+            com.google.longrunning.Operation>
+        getDeleteNfsShareMethod;
+    if ((getDeleteNfsShareMethod = BareMetalSolutionGrpc.getDeleteNfsShareMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getDeleteNfsShareMethod = BareMetalSolutionGrpc.getDeleteNfsShareMethod) == null) {
+          BareMetalSolutionGrpc.getDeleteNfsShareMethod =
+              getDeleteNfsShareMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteNfsShare"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("DeleteNfsShare"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteNfsShareMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest,
+          com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse>
+      getListProvisioningQuotasMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListProvisioningQuotas",
+      requestType = com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest,
+          com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse>
+      getListProvisioningQuotasMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest,
+            com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse>
+        getListProvisioningQuotasMethod;
+    if ((getListProvisioningQuotasMethod = BareMetalSolutionGrpc.getListProvisioningQuotasMethod)
+        == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getListProvisioningQuotasMethod =
+                BareMetalSolutionGrpc.getListProvisioningQuotasMethod)
+            == null) {
+          BareMetalSolutionGrpc.getListProvisioningQuotasMethod =
+              getListProvisioningQuotasMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest,
+                          com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListProvisioningQuotas"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("ListProvisioningQuotas"))
+                      .build();
+        }
+      }
+    }
+    return getListProvisioningQuotasMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest,
+          com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse>
+      getSubmitProvisioningConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubmitProvisioningConfig",
+      requestType = com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest,
+          com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse>
+      getSubmitProvisioningConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest,
+            com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse>
+        getSubmitProvisioningConfigMethod;
+    if ((getSubmitProvisioningConfigMethod =
+            BareMetalSolutionGrpc.getSubmitProvisioningConfigMethod)
+        == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getSubmitProvisioningConfigMethod =
+                BareMetalSolutionGrpc.getSubmitProvisioningConfigMethod)
+            == null) {
+          BareMetalSolutionGrpc.getSubmitProvisioningConfigMethod =
+              getSubmitProvisioningConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest,
+                          com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SubmitProvisioningConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("SubmitProvisioningConfig"))
+                      .build();
+        }
+      }
+    }
+    return getSubmitProvisioningConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest,
+          com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+      getGetProvisioningConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProvisioningConfig",
+      requestType = com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.ProvisioningConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest,
+          com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+      getGetProvisioningConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest,
+            com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+        getGetProvisioningConfigMethod;
+    if ((getGetProvisioningConfigMethod = BareMetalSolutionGrpc.getGetProvisioningConfigMethod)
+        == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getGetProvisioningConfigMethod = BareMetalSolutionGrpc.getGetProvisioningConfigMethod)
+            == null) {
+          BareMetalSolutionGrpc.getGetProvisioningConfigMethod =
+              getGetProvisioningConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest,
+                          com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetProvisioningConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ProvisioningConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("GetProvisioningConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetProvisioningConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest,
+          com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+      getCreateProvisioningConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateProvisioningConfig",
+      requestType = com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.ProvisioningConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest,
+          com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+      getCreateProvisioningConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest,
+            com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+        getCreateProvisioningConfigMethod;
+    if ((getCreateProvisioningConfigMethod =
+            BareMetalSolutionGrpc.getCreateProvisioningConfigMethod)
+        == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getCreateProvisioningConfigMethod =
+                BareMetalSolutionGrpc.getCreateProvisioningConfigMethod)
+            == null) {
+          BareMetalSolutionGrpc.getCreateProvisioningConfigMethod =
+              getCreateProvisioningConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest,
+                          com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateProvisioningConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ProvisioningConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("CreateProvisioningConfig"))
+                      .build();
+        }
+      }
+    }
+    return getCreateProvisioningConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest,
+          com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+      getUpdateProvisioningConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateProvisioningConfig",
+      requestType = com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.ProvisioningConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest,
+          com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+      getUpdateProvisioningConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest,
+            com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+        getUpdateProvisioningConfigMethod;
+    if ((getUpdateProvisioningConfigMethod =
+            BareMetalSolutionGrpc.getUpdateProvisioningConfigMethod)
+        == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getUpdateProvisioningConfigMethod =
+                BareMetalSolutionGrpc.getUpdateProvisioningConfigMethod)
+            == null) {
+          BareMetalSolutionGrpc.getUpdateProvisioningConfigMethod =
+              getUpdateProvisioningConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest,
+                          com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateProvisioningConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ProvisioningConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("UpdateProvisioningConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateProvisioningConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.RenameNetworkRequest,
+          com.google.cloud.baremetalsolution.v2.Network>
+      getRenameNetworkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RenameNetwork",
+      requestType = com.google.cloud.baremetalsolution.v2.RenameNetworkRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.Network.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.RenameNetworkRequest,
+          com.google.cloud.baremetalsolution.v2.Network>
+      getRenameNetworkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.RenameNetworkRequest,
+            com.google.cloud.baremetalsolution.v2.Network>
+        getRenameNetworkMethod;
+    if ((getRenameNetworkMethod = BareMetalSolutionGrpc.getRenameNetworkMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getRenameNetworkMethod = BareMetalSolutionGrpc.getRenameNetworkMethod) == null) {
+          BareMetalSolutionGrpc.getRenameNetworkMethod =
+              getRenameNetworkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.RenameNetworkRequest,
+                          com.google.cloud.baremetalsolution.v2.Network>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RenameNetwork"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.RenameNetworkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.Network.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("RenameNetwork"))
+                      .build();
+        }
+      }
+    }
+    return getRenameNetworkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListOSImagesRequest,
+          com.google.cloud.baremetalsolution.v2.ListOSImagesResponse>
+      getListOSImagesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOSImages",
+      requestType = com.google.cloud.baremetalsolution.v2.ListOSImagesRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.ListOSImagesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListOSImagesRequest,
+          com.google.cloud.baremetalsolution.v2.ListOSImagesResponse>
+      getListOSImagesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.ListOSImagesRequest,
+            com.google.cloud.baremetalsolution.v2.ListOSImagesResponse>
+        getListOSImagesMethod;
+    if ((getListOSImagesMethod = BareMetalSolutionGrpc.getListOSImagesMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getListOSImagesMethod = BareMetalSolutionGrpc.getListOSImagesMethod) == null) {
+          BareMetalSolutionGrpc.getListOSImagesMethod =
+              getListOSImagesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.ListOSImagesRequest,
+                          com.google.cloud.baremetalsolution.v2.ListOSImagesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListOSImages"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListOSImagesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListOSImagesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("ListOSImages"))
+                      .build();
+        }
+      }
+    }
+    return getListOSImagesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BareMetalSolutionStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BareMetalSolutionStub> factory =
@@ -1068,6 +2227,22 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * RenameInstance sets a new name for an instance.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    default void renameInstance(
+        com.google.cloud.baremetalsolution.v2.RenameInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Instance>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRenameInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an ungraceful, hard reset on a server. Equivalent to shutting the
      * power off and then turning it back on.
      * </pre>
@@ -1111,6 +2286,34 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Enable the interactive serial console feature on an instance.
+     * </pre>
+     */
+    default void enableInteractiveSerialConsole(
+        com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEnableInteractiveSerialConsoleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disable the interactive serial console feature on an instance.
+     * </pre>
+     */
+    default void disableInteractiveSerialConsole(
+        com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDisableInteractiveSerialConsoleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Detach LUN from Instance.
      * </pre>
      */
@@ -1118,6 +2321,52 @@ public final class BareMetalSolutionGrpc {
         com.google.cloud.baremetalsolution.v2.DetachLunRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDetachLunMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the public SSH keys registered for the specified project.
+     * These SSH keys are used only for the interactive serial console feature.
+     * </pre>
+     */
+    default void listSSHKeys(
+        com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSSHKeysMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Register a public SSH key in the specified project for use with the
+     * interactive serial console feature.
+     * </pre>
+     */
+    default void createSSHKey(
+        com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.SSHKey>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSSHKeyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a public SSH key registered in the specified project.
+     * </pre>
+     */
+    default void deleteSSHKey(
+        com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSSHKeyMethod(), responseObserver);
     }
 
     /**
@@ -1161,6 +2410,37 @@ public final class BareMetalSolutionGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateVolumeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameVolume sets a new name for a volume.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    default void renameVolume(
+        com.google.cloud.baremetalsolution.v2.RenameVolumeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Volume>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRenameVolumeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skips volume's cooloff and deletes it now.
+     * Volume must be in cooloff state.
+     * </pre>
+     */
+    default void evictVolume(
+        com.google.cloud.baremetalsolution.v2.EvictVolumeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEvictVolumeMethod(), responseObserver);
     }
 
     /**
@@ -1240,6 +2520,86 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Takes a snapshot of a boot volume.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    default void createVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateVolumeSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Uses the specified snapshot to restore its parent volume.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    default void restoreVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestoreVolumeSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a volume snapshot.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    default void deleteVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteVolumeSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified snapshot resource.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    default void getVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetVolumeSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the list of snapshots for the specified volume.
+     * Returns a response with an empty list of snapshots if called
+     * for a non-boot volume.
+     * </pre>
+     */
+    default void listVolumeSnapshots(
+        com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListVolumeSnapshotsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get details of a single storage logical unit number(LUN).
      * </pre>
      */
@@ -1261,6 +2621,20 @@ public final class BareMetalSolutionGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListLunsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListLunsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skips lun's cooloff and deletes it now.
+     * Lun must be in cooloff state.
+     * </pre>
+     */
+    default void evictLun(
+        com.google.cloud.baremetalsolution.v2.EvictLunRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEvictLunMethod(), responseObserver);
     }
 
     /**
@@ -1305,6 +2679,158 @@ public final class BareMetalSolutionGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateNfsShareMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create an NFS share.
+     * </pre>
+     */
+    default void createNfsShare(
+        com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateNfsShareMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameNfsShare sets a new name for an nfsshare.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    default void renameNfsShare(
+        com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.NfsShare>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRenameNfsShareMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete an NFS share. The underlying volume is automatically deleted.
+     * </pre>
+     */
+    default void deleteNfsShare(
+        com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteNfsShareMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the budget details to provision resources on a given project.
+     * </pre>
+     */
+    default void listProvisioningQuotas(
+        com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListProvisioningQuotasMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submit a provisiong configuration for a given project.
+     * </pre>
+     */
+    default void submitProvisioningConfig(
+        com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSubmitProvisioningConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get ProvisioningConfig by name.
+     * </pre>
+     */
+    default void getProvisioningConfig(
+        com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetProvisioningConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create new ProvisioningConfig.
+     * </pre>
+     */
+    default void createProvisioningConfig(
+        com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateProvisioningConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update existing ProvisioningConfig.
+     * </pre>
+     */
+    default void updateProvisioningConfig(
+        com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateProvisioningConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameNetwork sets a new name for a network.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    default void renameNetwork(
+        com.google.cloud.baremetalsolution.v2.RenameNetworkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Network>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRenameNetworkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the list of OS images which are currently approved.
+     * </pre>
+     */
+    default void listOSImages(
+        com.google.cloud.baremetalsolution.v2.ListOSImagesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListOSImagesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListOSImagesMethod(), responseObserver);
     }
   }
 
@@ -1409,6 +2935,24 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * RenameInstance sets a new name for an instance.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public void renameInstance(
+        com.google.cloud.baremetalsolution.v2.RenameInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Instance>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRenameInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an ungraceful, hard reset on a server. Equivalent to shutting the
      * power off and then turning it back on.
      * </pre>
@@ -1458,6 +3002,38 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Enable the interactive serial console feature on an instance.
+     * </pre>
+     */
+    public void enableInteractiveSerialConsole(
+        com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnableInteractiveSerialConsoleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disable the interactive serial console feature on an instance.
+     * </pre>
+     */
+    public void disableInteractiveSerialConsole(
+        com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDisableInteractiveSerialConsoleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Detach LUN from Instance.
      * </pre>
      */
@@ -1466,6 +3042,58 @@ public final class BareMetalSolutionGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDetachLunMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the public SSH keys registered for the specified project.
+     * These SSH keys are used only for the interactive serial console feature.
+     * </pre>
+     */
+    public void listSSHKeys(
+        com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSSHKeysMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Register a public SSH key in the specified project for use with the
+     * interactive serial console feature.
+     * </pre>
+     */
+    public void createSSHKey(
+        com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.SSHKey>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSSHKeyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a public SSH key registered in the specified project.
+     * </pre>
+     */
+    public void deleteSSHKey(
+        com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSSHKeyMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -1512,6 +3140,41 @@ public final class BareMetalSolutionGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateVolumeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameVolume sets a new name for a volume.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public void renameVolume(
+        com.google.cloud.baremetalsolution.v2.RenameVolumeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Volume>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRenameVolumeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skips volume's cooloff and deletes it now.
+     * Volume must be in cooloff state.
+     * </pre>
+     */
+    public void evictVolume(
+        com.google.cloud.baremetalsolution.v2.EvictVolumeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEvictVolumeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1602,6 +3265,96 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Takes a snapshot of a boot volume.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public void createVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateVolumeSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Uses the specified snapshot to restore its parent volume.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public void restoreVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestoreVolumeSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a volume snapshot.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public void deleteVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteVolumeSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified snapshot resource.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public void getVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetVolumeSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the list of snapshots for the specified volume.
+     * Returns a response with an empty list of snapshots if called
+     * for a non-boot volume.
+     * </pre>
+     */
+    public void listVolumeSnapshots(
+        com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListVolumeSnapshotsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get details of a single storage logical unit number(LUN).
      * </pre>
      */
@@ -1625,6 +3378,21 @@ public final class BareMetalSolutionGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListLunsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skips lun's cooloff and deletes it now.
+     * Lun must be in cooloff state.
+     * </pre>
+     */
+    public void evictLun(
+        com.google.cloud.baremetalsolution.v2.EvictLunRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEvictLunMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1673,6 +3441,178 @@ public final class BareMetalSolutionGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateNfsShareMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create an NFS share.
+     * </pre>
+     */
+    public void createNfsShare(
+        com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateNfsShareMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameNfsShare sets a new name for an nfsshare.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public void renameNfsShare(
+        com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.NfsShare>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRenameNfsShareMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete an NFS share. The underlying volume is automatically deleted.
+     * </pre>
+     */
+    public void deleteNfsShare(
+        com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteNfsShareMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the budget details to provision resources on a given project.
+     * </pre>
+     */
+    public void listProvisioningQuotas(
+        com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListProvisioningQuotasMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submit a provisiong configuration for a given project.
+     * </pre>
+     */
+    public void submitProvisioningConfig(
+        com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSubmitProvisioningConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get ProvisioningConfig by name.
+     * </pre>
+     */
+    public void getProvisioningConfig(
+        com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetProvisioningConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create new ProvisioningConfig.
+     * </pre>
+     */
+    public void createProvisioningConfig(
+        com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateProvisioningConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update existing ProvisioningConfig.
+     * </pre>
+     */
+    public void updateProvisioningConfig(
+        com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateProvisioningConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameNetwork sets a new name for a network.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public void renameNetwork(
+        com.google.cloud.baremetalsolution.v2.RenameNetworkRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Network>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRenameNetworkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the list of OS images which are currently approved.
+     * </pre>
+     */
+    public void listOSImages(
+        com.google.cloud.baremetalsolution.v2.ListOSImagesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListOSImagesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListOSImagesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1747,6 +3687,20 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * RenameInstance sets a new name for an instance.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.Instance renameInstance(
+        com.google.cloud.baremetalsolution.v2.RenameInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenameInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an ungraceful, hard reset on a server. Equivalent to shutting the
      * power off and then turning it back on.
      * </pre>
@@ -1787,6 +3741,32 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Enable the interactive serial console feature on an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation enableInteractiveSerialConsole(
+        com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableInteractiveSerialConsoleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disable the interactive serial console feature on an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableInteractiveSerialConsole(
+        com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableInteractiveSerialConsoleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Detach LUN from Instance.
      * </pre>
      */
@@ -1794,6 +3774,47 @@ public final class BareMetalSolutionGrpc {
         com.google.cloud.baremetalsolution.v2.DetachLunRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDetachLunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the public SSH keys registered for the specified project.
+     * These SSH keys are used only for the interactive serial console feature.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse listSSHKeys(
+        com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSSHKeysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Register a public SSH key in the specified project for use with the
+     * interactive serial console feature.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.SSHKey createSSHKey(
+        com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSSHKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a public SSH key registered in the specified project.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSSHKey(
+        com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSSHKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1833,6 +3854,34 @@ public final class BareMetalSolutionGrpc {
         com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameVolume sets a new name for a volume.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.Volume renameVolume(
+        com.google.cloud.baremetalsolution.v2.RenameVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenameVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skips volume's cooloff and deletes it now.
+     * Volume must be in cooloff state.
+     * </pre>
+     */
+    public com.google.longrunning.Operation evictVolume(
+        com.google.cloud.baremetalsolution.v2.EvictVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEvictVolumeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1905,6 +3954,77 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Takes a snapshot of a boot volume.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.VolumeSnapshot createVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVolumeSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Uses the specified snapshot to restore its parent volume.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreVolumeSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a volume snapshot.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVolumeSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified snapshot resource.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.VolumeSnapshot getVolumeSnapshot(
+        com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVolumeSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the list of snapshots for the specified volume.
+     * Returns a response with an empty list of snapshots if called
+     * for a non-boot volume.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse listVolumeSnapshots(
+        com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVolumeSnapshotsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get details of a single storage logical unit number(LUN).
      * </pre>
      */
@@ -1925,6 +4045,20 @@ public final class BareMetalSolutionGrpc {
         com.google.cloud.baremetalsolution.v2.ListLunsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListLunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skips lun's cooloff and deletes it now.
+     * Lun must be in cooloff state.
+     * </pre>
+     */
+    public com.google.longrunning.Operation evictLun(
+        com.google.cloud.baremetalsolution.v2.EvictLunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEvictLunMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1964,6 +4098,140 @@ public final class BareMetalSolutionGrpc {
         com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateNfsShareMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create an NFS share.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNfsShare(
+        com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNfsShareMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameNfsShare sets a new name for an nfsshare.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.NfsShare renameNfsShare(
+        com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenameNfsShareMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete an NFS share. The underlying volume is automatically deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNfsShare(
+        com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNfsShareMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the budget details to provision resources on a given project.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse
+        listProvisioningQuotas(
+            com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProvisioningQuotasMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submit a provisiong configuration for a given project.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse
+        submitProvisioningConfig(
+            com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitProvisioningConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get ProvisioningConfig by name.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.ProvisioningConfig getProvisioningConfig(
+        com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProvisioningConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create new ProvisioningConfig.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.ProvisioningConfig createProvisioningConfig(
+        com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateProvisioningConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update existing ProvisioningConfig.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.ProvisioningConfig updateProvisioningConfig(
+        com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProvisioningConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameNetwork sets a new name for a network.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.Network renameNetwork(
+        com.google.cloud.baremetalsolution.v2.RenameNetworkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenameNetworkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the list of OS images which are currently approved.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.ListOSImagesResponse listOSImages(
+        com.google.cloud.baremetalsolution.v2.ListOSImagesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOSImagesMethod(), getCallOptions(), request);
     }
   }
 
@@ -2037,6 +4305,21 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * RenameInstance sets a new name for an instance.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.Instance>
+        renameInstance(com.google.cloud.baremetalsolution.v2.RenameInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRenameInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an ungraceful, hard reset on a server. Equivalent to shutting the
      * power off and then turning it back on.
      * </pre>
@@ -2077,6 +4360,36 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Enable the interactive serial console feature on an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        enableInteractiveSerialConsole(
+            com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnableInteractiveSerialConsoleMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disable the interactive serial console feature on an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        disableInteractiveSerialConsole(
+            com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDisableInteractiveSerialConsoleMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Detach LUN from Instance.
      * </pre>
      */
@@ -2084,6 +4397,49 @@ public final class BareMetalSolutionGrpc {
         detachLun(com.google.cloud.baremetalsolution.v2.DetachLunRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDetachLunMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the public SSH keys registered for the specified project.
+     * These SSH keys are used only for the interactive serial console feature.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse>
+        listSSHKeys(com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSSHKeysMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Register a public SSH key in the specified project for use with the
+     * interactive serial console feature.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.SSHKey>
+        createSSHKey(com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSSHKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a public SSH key registered in the specified project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteSSHKey(com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSSHKeyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2125,6 +4481,35 @@ public final class BareMetalSolutionGrpc {
         updateVolume(com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateVolumeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameVolume sets a new name for a volume.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.Volume>
+        renameVolume(com.google.cloud.baremetalsolution.v2.RenameVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRenameVolumeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skips volume's cooloff and deletes it now.
+     * Volume must be in cooloff state.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        evictVolume(com.google.cloud.baremetalsolution.v2.EvictVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEvictVolumeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2200,6 +4585,84 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Takes a snapshot of a boot volume.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+        createVolumeSnapshot(
+            com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateVolumeSnapshotMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Uses the specified snapshot to restore its parent volume.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        restoreVolumeSnapshot(
+            com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestoreVolumeSnapshotMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a volume snapshot.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteVolumeSnapshot(
+            com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteVolumeSnapshotMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified snapshot resource.
+     * Returns INVALID_ARGUMENT if called for a non-boot volume.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
+        getVolumeSnapshot(com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetVolumeSnapshotMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the list of snapshots for the specified volume.
+     * Returns a response with an empty list of snapshots if called
+     * for a non-boot volume.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
+        listVolumeSnapshots(
+            com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListVolumeSnapshotsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get details of a single storage logical unit number(LUN).
      * </pre>
      */
@@ -2222,6 +4685,20 @@ public final class BareMetalSolutionGrpc {
         listLuns(com.google.cloud.baremetalsolution.v2.ListLunsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListLunsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skips lun's cooloff and deletes it now.
+     * Lun must be in cooloff state.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        evictLun(com.google.cloud.baremetalsolution.v2.EvictLunRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEvictLunMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2264,28 +4741,197 @@ public final class BareMetalSolutionGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateNfsShareMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create an NFS share.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createNfsShare(com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateNfsShareMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameNfsShare sets a new name for an nfsshare.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.NfsShare>
+        renameNfsShare(com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRenameNfsShareMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete an NFS share. The underlying volume is automatically deleted.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteNfsShare(com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteNfsShareMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the budget details to provision resources on a given project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse>
+        listProvisioningQuotas(
+            com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListProvisioningQuotasMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submit a provisiong configuration for a given project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse>
+        submitProvisioningConfig(
+            com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubmitProvisioningConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get ProvisioningConfig by name.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+        getProvisioningConfig(
+            com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetProvisioningConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create new ProvisioningConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+        createProvisioningConfig(
+            com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateProvisioningConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update existing ProvisioningConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.ProvisioningConfig>
+        updateProvisioningConfig(
+            com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateProvisioningConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RenameNetwork sets a new name for a network.
+     * Use with caution, previous names become immediately invalidated.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.Network>
+        renameNetwork(com.google.cloud.baremetalsolution.v2.RenameNetworkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRenameNetworkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the list of OS images which are currently approved.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.ListOSImagesResponse>
+        listOSImages(com.google.cloud.baremetalsolution.v2.ListOSImagesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListOSImagesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSTANCES = 0;
   private static final int METHODID_GET_INSTANCE = 1;
   private static final int METHODID_UPDATE_INSTANCE = 2;
-  private static final int METHODID_RESET_INSTANCE = 3;
-  private static final int METHODID_START_INSTANCE = 4;
-  private static final int METHODID_STOP_INSTANCE = 5;
-  private static final int METHODID_DETACH_LUN = 6;
-  private static final int METHODID_LIST_VOLUMES = 7;
-  private static final int METHODID_GET_VOLUME = 8;
-  private static final int METHODID_UPDATE_VOLUME = 9;
-  private static final int METHODID_RESIZE_VOLUME = 10;
-  private static final int METHODID_LIST_NETWORKS = 11;
-  private static final int METHODID_LIST_NETWORK_USAGE = 12;
-  private static final int METHODID_GET_NETWORK = 13;
-  private static final int METHODID_UPDATE_NETWORK = 14;
-  private static final int METHODID_GET_LUN = 15;
-  private static final int METHODID_LIST_LUNS = 16;
-  private static final int METHODID_GET_NFS_SHARE = 17;
-  private static final int METHODID_LIST_NFS_SHARES = 18;
-  private static final int METHODID_UPDATE_NFS_SHARE = 19;
+  private static final int METHODID_RENAME_INSTANCE = 3;
+  private static final int METHODID_RESET_INSTANCE = 4;
+  private static final int METHODID_START_INSTANCE = 5;
+  private static final int METHODID_STOP_INSTANCE = 6;
+  private static final int METHODID_ENABLE_INTERACTIVE_SERIAL_CONSOLE = 7;
+  private static final int METHODID_DISABLE_INTERACTIVE_SERIAL_CONSOLE = 8;
+  private static final int METHODID_DETACH_LUN = 9;
+  private static final int METHODID_LIST_SSHKEYS = 10;
+  private static final int METHODID_CREATE_SSHKEY = 11;
+  private static final int METHODID_DELETE_SSHKEY = 12;
+  private static final int METHODID_LIST_VOLUMES = 13;
+  private static final int METHODID_GET_VOLUME = 14;
+  private static final int METHODID_UPDATE_VOLUME = 15;
+  private static final int METHODID_RENAME_VOLUME = 16;
+  private static final int METHODID_EVICT_VOLUME = 17;
+  private static final int METHODID_RESIZE_VOLUME = 18;
+  private static final int METHODID_LIST_NETWORKS = 19;
+  private static final int METHODID_LIST_NETWORK_USAGE = 20;
+  private static final int METHODID_GET_NETWORK = 21;
+  private static final int METHODID_UPDATE_NETWORK = 22;
+  private static final int METHODID_CREATE_VOLUME_SNAPSHOT = 23;
+  private static final int METHODID_RESTORE_VOLUME_SNAPSHOT = 24;
+  private static final int METHODID_DELETE_VOLUME_SNAPSHOT = 25;
+  private static final int METHODID_GET_VOLUME_SNAPSHOT = 26;
+  private static final int METHODID_LIST_VOLUME_SNAPSHOTS = 27;
+  private static final int METHODID_GET_LUN = 28;
+  private static final int METHODID_LIST_LUNS = 29;
+  private static final int METHODID_EVICT_LUN = 30;
+  private static final int METHODID_GET_NFS_SHARE = 31;
+  private static final int METHODID_LIST_NFS_SHARES = 32;
+  private static final int METHODID_UPDATE_NFS_SHARE = 33;
+  private static final int METHODID_CREATE_NFS_SHARE = 34;
+  private static final int METHODID_RENAME_NFS_SHARE = 35;
+  private static final int METHODID_DELETE_NFS_SHARE = 36;
+  private static final int METHODID_LIST_PROVISIONING_QUOTAS = 37;
+  private static final int METHODID_SUBMIT_PROVISIONING_CONFIG = 38;
+  private static final int METHODID_GET_PROVISIONING_CONFIG = 39;
+  private static final int METHODID_CREATE_PROVISIONING_CONFIG = 40;
+  private static final int METHODID_UPDATE_PROVISIONING_CONFIG = 41;
+  private static final int METHODID_RENAME_NETWORK = 42;
+  private static final int METHODID_LIST_OSIMAGES = 43;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2322,6 +4968,12 @@ public final class BareMetalSolutionGrpc {
               (com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_RENAME_INSTANCE:
+          serviceImpl.renameInstance(
+              (com.google.cloud.baremetalsolution.v2.RenameInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Instance>)
+                  responseObserver);
+          break;
         case METHODID_RESET_INSTANCE:
           serviceImpl.resetInstance(
               (com.google.cloud.baremetalsolution.v2.ResetInstanceRequest) request,
@@ -2337,10 +4989,39 @@ public final class BareMetalSolutionGrpc {
               (com.google.cloud.baremetalsolution.v2.StopInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_ENABLE_INTERACTIVE_SERIAL_CONSOLE:
+          serviceImpl.enableInteractiveSerialConsole(
+              (com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DISABLE_INTERACTIVE_SERIAL_CONSOLE:
+          serviceImpl.disableInteractiveSerialConsole(
+              (com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DETACH_LUN:
           serviceImpl.detachLun(
               (com.google.cloud.baremetalsolution.v2.DetachLunRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_SSHKEYS:
+          serviceImpl.listSSHKeys(
+              (com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_SSHKEY:
+          serviceImpl.createSSHKey(
+              (com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.SSHKey>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_SSHKEY:
+          serviceImpl.deleteSSHKey(
+              (com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_LIST_VOLUMES:
           serviceImpl.listVolumes(
@@ -2358,6 +5039,17 @@ public final class BareMetalSolutionGrpc {
         case METHODID_UPDATE_VOLUME:
           serviceImpl.updateVolume(
               (com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RENAME_VOLUME:
+          serviceImpl.renameVolume(
+              (com.google.cloud.baremetalsolution.v2.RenameVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Volume>)
+                  responseObserver);
+          break;
+        case METHODID_EVICT_VOLUME:
+          serviceImpl.evictVolume(
+              (com.google.cloud.baremetalsolution.v2.EvictVolumeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_RESIZE_VOLUME:
@@ -2390,6 +5082,35 @@ public final class BareMetalSolutionGrpc {
               (com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_CREATE_VOLUME_SNAPSHOT:
+          serviceImpl.createVolumeSnapshot(
+              (com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>)
+                  responseObserver);
+          break;
+        case METHODID_RESTORE_VOLUME_SNAPSHOT:
+          serviceImpl.restoreVolumeSnapshot(
+              (com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_VOLUME_SNAPSHOT:
+          serviceImpl.deleteVolumeSnapshot(
+              (com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_VOLUME_SNAPSHOT:
+          serviceImpl.getVolumeSnapshot(
+              (com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_VOLUME_SNAPSHOTS:
+          serviceImpl.listVolumeSnapshots(
+              (com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>)
+                  responseObserver);
+          break;
         case METHODID_GET_LUN:
           serviceImpl.getLun(
               (com.google.cloud.baremetalsolution.v2.GetLunRequest) request,
@@ -2401,6 +5122,11 @@ public final class BareMetalSolutionGrpc {
               (com.google.cloud.baremetalsolution.v2.ListLunsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListLunsResponse>)
                   responseObserver);
+          break;
+        case METHODID_EVICT_LUN:
+          serviceImpl.evictLun(
+              (com.google.cloud.baremetalsolution.v2.EvictLunRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_NFS_SHARE:
           serviceImpl.getNfsShare(
@@ -2419,6 +5145,70 @@ public final class BareMetalSolutionGrpc {
           serviceImpl.updateNfsShare(
               (com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_NFS_SHARE:
+          serviceImpl.createNfsShare(
+              (com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RENAME_NFS_SHARE:
+          serviceImpl.renameNfsShare(
+              (com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.NfsShare>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_NFS_SHARE:
+          serviceImpl.deleteNfsShare(
+              (com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_PROVISIONING_QUOTAS:
+          serviceImpl.listProvisioningQuotas(
+              (com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SUBMIT_PROVISIONING_CONFIG:
+          serviceImpl.submitProvisioningConfig(
+              (com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_PROVISIONING_CONFIG:
+          serviceImpl.getProvisioningConfig(
+              (com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.baremetalsolution.v2.ProvisioningConfig>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_PROVISIONING_CONFIG:
+          serviceImpl.createProvisioningConfig(
+              (com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.baremetalsolution.v2.ProvisioningConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_PROVISIONING_CONFIG:
+          serviceImpl.updateProvisioningConfig(
+              (com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.baremetalsolution.v2.ProvisioningConfig>)
+                  responseObserver);
+          break;
+        case METHODID_RENAME_NETWORK:
+          serviceImpl.renameNetwork(
+              (com.google.cloud.baremetalsolution.v2.RenameNetworkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Network>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_OSIMAGES:
+          serviceImpl.listOSImages(
+              (com.google.cloud.baremetalsolution.v2.ListOSImagesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.baremetalsolution.v2.ListOSImagesResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2459,6 +5249,13 @@ public final class BareMetalSolutionGrpc {
                     com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_INSTANCE)))
         .addMethod(
+            getRenameInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.RenameInstanceRequest,
+                    com.google.cloud.baremetalsolution.v2.Instance>(
+                    service, METHODID_RENAME_INSTANCE)))
+        .addMethod(
             getResetInstanceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2477,11 +5274,44 @@ public final class BareMetalSolutionGrpc {
                     com.google.cloud.baremetalsolution.v2.StopInstanceRequest,
                     com.google.longrunning.Operation>(service, METHODID_STOP_INSTANCE)))
         .addMethod(
+            getEnableInteractiveSerialConsoleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_ENABLE_INTERACTIVE_SERIAL_CONSOLE)))
+        .addMethod(
+            getDisableInteractiveSerialConsoleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DISABLE_INTERACTIVE_SERIAL_CONSOLE)))
+        .addMethod(
             getDetachLunMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.baremetalsolution.v2.DetachLunRequest,
                     com.google.longrunning.Operation>(service, METHODID_DETACH_LUN)))
+        .addMethod(
+            getListSSHKeysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest,
+                    com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse>(
+                    service, METHODID_LIST_SSHKEYS)))
+        .addMethod(
+            getCreateSSHKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest,
+                    com.google.cloud.baremetalsolution.v2.SSHKey>(service, METHODID_CREATE_SSHKEY)))
+        .addMethod(
+            getDeleteSSHKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SSHKEY)))
         .addMethod(
             getListVolumesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2501,6 +5331,18 @@ public final class BareMetalSolutionGrpc {
                 new MethodHandlers<
                     com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_VOLUME)))
+        .addMethod(
+            getRenameVolumeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.RenameVolumeRequest,
+                    com.google.cloud.baremetalsolution.v2.Volume>(service, METHODID_RENAME_VOLUME)))
+        .addMethod(
+            getEvictVolumeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.EvictVolumeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EVICT_VOLUME)))
         .addMethod(
             getResizeVolumeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2534,6 +5376,39 @@ public final class BareMetalSolutionGrpc {
                     com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_NETWORK)))
         .addMethod(
+            getCreateVolumeSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest,
+                    com.google.cloud.baremetalsolution.v2.VolumeSnapshot>(
+                    service, METHODID_CREATE_VOLUME_SNAPSHOT)))
+        .addMethod(
+            getRestoreVolumeSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESTORE_VOLUME_SNAPSHOT)))
+        .addMethod(
+            getDeleteVolumeSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_VOLUME_SNAPSHOT)))
+        .addMethod(
+            getGetVolumeSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest,
+                    com.google.cloud.baremetalsolution.v2.VolumeSnapshot>(
+                    service, METHODID_GET_VOLUME_SNAPSHOT)))
+        .addMethod(
+            getListVolumeSnapshotsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest,
+                    com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>(
+                    service, METHODID_LIST_VOLUME_SNAPSHOTS)))
+        .addMethod(
             getGetLunMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2546,6 +5421,12 @@ public final class BareMetalSolutionGrpc {
                     com.google.cloud.baremetalsolution.v2.ListLunsRequest,
                     com.google.cloud.baremetalsolution.v2.ListLunsResponse>(
                     service, METHODID_LIST_LUNS)))
+        .addMethod(
+            getEvictLunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.EvictLunRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EVICT_LUN)))
         .addMethod(
             getGetNfsShareMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2566,6 +5447,74 @@ public final class BareMetalSolutionGrpc {
                 new MethodHandlers<
                     com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_NFS_SHARE)))
+        .addMethod(
+            getCreateNfsShareMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_NFS_SHARE)))
+        .addMethod(
+            getRenameNfsShareMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest,
+                    com.google.cloud.baremetalsolution.v2.NfsShare>(
+                    service, METHODID_RENAME_NFS_SHARE)))
+        .addMethod(
+            getDeleteNfsShareMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_NFS_SHARE)))
+        .addMethod(
+            getListProvisioningQuotasMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest,
+                    com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse>(
+                    service, METHODID_LIST_PROVISIONING_QUOTAS)))
+        .addMethod(
+            getSubmitProvisioningConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest,
+                    com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse>(
+                    service, METHODID_SUBMIT_PROVISIONING_CONFIG)))
+        .addMethod(
+            getGetProvisioningConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest,
+                    com.google.cloud.baremetalsolution.v2.ProvisioningConfig>(
+                    service, METHODID_GET_PROVISIONING_CONFIG)))
+        .addMethod(
+            getCreateProvisioningConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest,
+                    com.google.cloud.baremetalsolution.v2.ProvisioningConfig>(
+                    service, METHODID_CREATE_PROVISIONING_CONFIG)))
+        .addMethod(
+            getUpdateProvisioningConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest,
+                    com.google.cloud.baremetalsolution.v2.ProvisioningConfig>(
+                    service, METHODID_UPDATE_PROVISIONING_CONFIG)))
+        .addMethod(
+            getRenameNetworkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.RenameNetworkRequest,
+                    com.google.cloud.baremetalsolution.v2.Network>(
+                    service, METHODID_RENAME_NETWORK)))
+        .addMethod(
+            getListOSImagesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ListOSImagesRequest,
+                    com.google.cloud.baremetalsolution.v2.ListOSImagesResponse>(
+                    service, METHODID_LIST_OSIMAGES)))
         .build();
   }
 
@@ -2593,9 +5542,9 @@ public final class BareMetalSolutionGrpc {
   private static final class BareMetalSolutionMethodDescriptorSupplier
       extends BareMetalSolutionBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    BareMetalSolutionMethodDescriptorSupplier(String methodName) {
+    BareMetalSolutionMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -2620,23 +5569,47 @@ public final class BareMetalSolutionGrpc {
                       .addMethod(getListInstancesMethod())
                       .addMethod(getGetInstanceMethod())
                       .addMethod(getUpdateInstanceMethod())
+                      .addMethod(getRenameInstanceMethod())
                       .addMethod(getResetInstanceMethod())
                       .addMethod(getStartInstanceMethod())
                       .addMethod(getStopInstanceMethod())
+                      .addMethod(getEnableInteractiveSerialConsoleMethod())
+                      .addMethod(getDisableInteractiveSerialConsoleMethod())
                       .addMethod(getDetachLunMethod())
+                      .addMethod(getListSSHKeysMethod())
+                      .addMethod(getCreateSSHKeyMethod())
+                      .addMethod(getDeleteSSHKeyMethod())
                       .addMethod(getListVolumesMethod())
                       .addMethod(getGetVolumeMethod())
                       .addMethod(getUpdateVolumeMethod())
+                      .addMethod(getRenameVolumeMethod())
+                      .addMethod(getEvictVolumeMethod())
                       .addMethod(getResizeVolumeMethod())
                       .addMethod(getListNetworksMethod())
                       .addMethod(getListNetworkUsageMethod())
                       .addMethod(getGetNetworkMethod())
                       .addMethod(getUpdateNetworkMethod())
+                      .addMethod(getCreateVolumeSnapshotMethod())
+                      .addMethod(getRestoreVolumeSnapshotMethod())
+                      .addMethod(getDeleteVolumeSnapshotMethod())
+                      .addMethod(getGetVolumeSnapshotMethod())
+                      .addMethod(getListVolumeSnapshotsMethod())
                       .addMethod(getGetLunMethod())
                       .addMethod(getListLunsMethod())
+                      .addMethod(getEvictLunMethod())
                       .addMethod(getGetNfsShareMethod())
                       .addMethod(getListNfsSharesMethod())
                       .addMethod(getUpdateNfsShareMethod())
+                      .addMethod(getCreateNfsShareMethod())
+                      .addMethod(getRenameNfsShareMethod())
+                      .addMethod(getDeleteNfsShareMethod())
+                      .addMethod(getListProvisioningQuotasMethod())
+                      .addMethod(getSubmitProvisioningConfigMethod())
+                      .addMethod(getGetProvisioningConfigMethod())
+                      .addMethod(getCreateProvisioningConfigMethod())
+                      .addMethod(getUpdateProvisioningConfigMethod())
+                      .addMethod(getRenameNetworkMethod())
+                      .addMethod(getListOSImagesMethod())
                       .build();
         }
       }

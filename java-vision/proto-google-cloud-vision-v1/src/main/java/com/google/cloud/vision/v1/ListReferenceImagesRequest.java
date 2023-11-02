@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
     return new ListReferenceImagesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ProductSearchServiceProto
         .internal_static_google_cloud_vision_v1_ListReferenceImagesRequest_descriptor;
@@ -77,6 +72,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Resource name of the product containing the reference images.
+   *
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>
@@ -104,6 +100,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Resource name of the product containing the reference images.
+   *
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>
@@ -155,6 +152,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
    * <pre>
    * A token identifying a page of results to be returned. This is the value
    * of `nextPageToken` returned in a previous reference image list request.
+   *
    * Defaults to the first page if not specified.
    * </pre>
    *
@@ -180,6 +178,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
    * <pre>
    * A token identifying a page of results to be returned. This is the value
    * of `nextPageToken` returned in a previous reference image list request.
+   *
    * Defaults to the first page if not specified.
    * </pre>
    *
@@ -595,6 +594,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Resource name of the product containing the reference images.
+     *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
      * </pre>
@@ -621,6 +621,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Resource name of the product containing the reference images.
+     *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
      * </pre>
@@ -647,6 +648,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Resource name of the product containing the reference images.
+     *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
      * </pre>
@@ -672,6 +674,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Resource name of the product containing the reference images.
+     *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
      * </pre>
@@ -693,6 +696,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Resource name of the product containing the reference images.
+     *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
      * </pre>
@@ -775,6 +779,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
      * <pre>
      * A token identifying a page of results to be returned. This is the value
      * of `nextPageToken` returned in a previous reference image list request.
+     *
      * Defaults to the first page if not specified.
      * </pre>
      *
@@ -799,6 +804,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
      * <pre>
      * A token identifying a page of results to be returned. This is the value
      * of `nextPageToken` returned in a previous reference image list request.
+     *
      * Defaults to the first page if not specified.
      * </pre>
      *
@@ -823,6 +829,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
      * <pre>
      * A token identifying a page of results to be returned. This is the value
      * of `nextPageToken` returned in a previous reference image list request.
+     *
      * Defaults to the first page if not specified.
      * </pre>
      *
@@ -846,6 +853,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
      * <pre>
      * A token identifying a page of results to be returned. This is the value
      * of `nextPageToken` returned in a previous reference image list request.
+     *
      * Defaults to the first page if not specified.
      * </pre>
      *
@@ -865,6 +873,7 @@ public final class ListReferenceImagesRequest extends com.google.protobuf.Genera
      * <pre>
      * A token identifying a page of results to be returned. This is the value
      * of `nextPageToken` returned in a previous reference image list request.
+     *
      * Defaults to the first page if not specified.
      * </pre>
      *

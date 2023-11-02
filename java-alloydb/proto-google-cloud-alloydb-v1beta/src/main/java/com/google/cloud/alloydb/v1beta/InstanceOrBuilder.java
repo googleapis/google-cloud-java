@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -389,8 +389,11 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Availability type of an Instance.
-   * Defaults to REGIONAL for both primary and read instances.
-   * Note that primary and read instances can have different availability types.
+   * If empty, defaults to REGIONAL for primary instances.
+   * For read pools, availability_type is always UNSPECIFIED. Instances in the
+   * read pools are evenly distributed across available zones within the region
+   * (i.e. read pools with more than one node will have a node in at
+   * least two zones).
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1beta.Instance.AvailabilityType availability_type = 11;</code>
@@ -403,8 +406,11 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Availability type of an Instance.
-   * Defaults to REGIONAL for both primary and read instances.
-   * Note that primary and read instances can have different availability types.
+   * If empty, defaults to REGIONAL for primary instances.
+   * For read pools, availability_type is always UNSPECIFIED. Instances in the
+   * read pools are evenly distributed across available zones within the region
+   * (i.e. read pools with more than one node will have a node in at
+   * least two zones).
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1beta.Instance.AvailabilityType availability_type = 11;</code>
@@ -457,6 +463,8 @@ public interface InstanceOrBuilder
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -478,6 +486,8 @@ public interface InstanceOrBuilder
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -502,6 +512,8 @@ public interface InstanceOrBuilder
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -523,6 +535,8 @@ public interface InstanceOrBuilder
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -548,6 +562,8 @@ public interface InstanceOrBuilder
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -885,4 +901,90 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; annotations = 18;</code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Update policy that will be applied during instance update.
+   * This field is not persisted when you update the instance.
+   * To use a non-default update policy, you must
+   * specify explicitly specify the value in each update request.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+   *
+   * @return Whether the updatePolicy field is set.
+   */
+  boolean hasUpdatePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Update policy that will be applied during instance update.
+   * This field is not persisted when you update the instance.
+   * To use a non-default update policy, you must
+   * specify explicitly specify the value in each update request.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+   *
+   * @return The updatePolicy.
+   */
+  com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy getUpdatePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Update policy that will be applied during instance update.
+   * This field is not persisted when you update the instance.
+   * To use a non-default update policy, you must
+   * specify explicitly specify the value in each update request.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+   */
+  com.google.cloud.alloydb.v1beta.Instance.UpdatePolicyOrBuilder getUpdatePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientConnectionConfig field is set.
+   */
+  boolean hasClientConnectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientConnectionConfig.
+   */
+  com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig getClientConnectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfigOrBuilder
+      getClientConnectionConfigOrBuilder();
 }

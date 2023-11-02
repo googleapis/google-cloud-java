@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ModelMonitoringObjectiveConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -192,8 +187,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * Data format of the dataset, only applicable if the input is from
      * Google Cloud Storage.
      * The possible formats are:
+     *
      * "tf-record"
      * The source file is a TFRecord file.
+     *
      * "csv"
      * The source file is a CSV file.
      * "jsonl"
@@ -212,8 +209,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * Data format of the dataset, only applicable if the input is from
      * Google Cloud Storage.
      * The possible formats are:
+     *
      * "tf-record"
      * The source file is a TFRecord file.
+     *
      * "csv"
      * The source file is a CSV file.
      * "jsonl"
@@ -293,8 +292,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      */
     com.google.cloud.aiplatform.v1.SamplingStrategyOrBuilder getLoggingSamplingStrategyOrBuilder();
 
-    public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset
-            .DataSourceCase
+    com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.TrainingDataset.DataSourceCase
         getDataSourceCase();
   }
   /**
@@ -327,11 +325,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       return new TrainingDataset();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.ModelMonitoringProto
           .internal_static_google_cloud_aiplatform_v1_ModelMonitoringObjectiveConfig_TrainingDataset_descriptor;
@@ -349,6 +342,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     }
 
     private int dataSourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object dataSource_;
 
     public enum DataSourceCase
@@ -587,8 +582,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * Data format of the dataset, only applicable if the input is from
      * Google Cloud Storage.
      * The possible formats are:
+     *
      * "tf-record"
      * The source file is a TFRecord file.
+     *
      * "csv"
      * The source file is a CSV file.
      * "jsonl"
@@ -618,8 +615,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * Data format of the dataset, only applicable if the input is from
      * Google Cloud Storage.
      * The possible formats are:
+     *
      * "tf-record"
      * The source file is a TFRecord file.
+     *
      * "csv"
      * The source file is a CSV file.
      * "jsonl"
@@ -1891,8 +1890,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * Data format of the dataset, only applicable if the input is from
        * Google Cloud Storage.
        * The possible formats are:
+       *
        * "tf-record"
        * The source file is a TFRecord file.
+       *
        * "csv"
        * The source file is a CSV file.
        * "jsonl"
@@ -1921,8 +1922,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * Data format of the dataset, only applicable if the input is from
        * Google Cloud Storage.
        * The possible formats are:
+       *
        * "tf-record"
        * The source file is a TFRecord file.
+       *
        * "csv"
        * The source file is a CSV file.
        * "jsonl"
@@ -1951,8 +1954,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * Data format of the dataset, only applicable if the input is from
        * Google Cloud Storage.
        * The possible formats are:
+       *
        * "tf-record"
        * The source file is a TFRecord file.
+       *
        * "csv"
        * The source file is a CSV file.
        * "jsonl"
@@ -1980,8 +1985,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * Data format of the dataset, only applicable if the input is from
        * Google Cloud Storage.
        * The possible formats are:
+       *
        * "tf-record"
        * The source file is a TFRecord file.
+       *
        * "csv"
        * The source file is a CSV file.
        * "jsonl"
@@ -2005,8 +2012,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * Data format of the dataset, only applicable if the input is from
        * Google Cloud Storage.
        * The possible formats are:
+       *
        * "tf-record"
        * The source file is a TFRecord file.
+       *
        * "csv"
        * The source file is a CSV file.
        * "jsonl"
@@ -2648,11 +2657,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TrainingPredictionSkewDetectionConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4464,11 +4468,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       return new PredictionDriftDetectionConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.ModelMonitoringProto
           .internal_static_google_cloud_aiplatform_v1_ModelMonitoringObjectiveConfig_PredictionDriftDetectionConfig_descriptor;
@@ -6126,11 +6125,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       return new ExplanationConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.ModelMonitoringProto
           .internal_static_google_cloud_aiplatform_v1_ModelMonitoringObjectiveConfig_ExplanationConfig_descriptor;
@@ -6253,7 +6247,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
               .ExplanationBaseline.PredictionFormat
           getPredictionFormat();
 
-      public com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
+      com.google.cloud.aiplatform.v1.ModelMonitoringObjectiveConfig.ExplanationConfig
               .ExplanationBaseline.DestinationCase
           getDestinationCase();
     }
@@ -6288,11 +6282,6 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ExplanationBaseline();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6478,6 +6467,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       }
 
       private int destinationCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object destination_;
 
       public enum DestinationCase

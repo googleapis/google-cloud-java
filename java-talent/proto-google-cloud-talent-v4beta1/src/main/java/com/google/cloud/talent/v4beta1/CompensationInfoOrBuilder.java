@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface CompensationInfoOrBuilder
    *
    * <pre>
    * Job compensation information.
+   *
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -43,6 +44,7 @@ public interface CompensationInfoOrBuilder
    *
    * <pre>
    * Job compensation information.
+   *
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -57,6 +59,7 @@ public interface CompensationInfoOrBuilder
    *
    * <pre>
    * Job compensation information.
+   *
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -71,6 +74,7 @@ public interface CompensationInfoOrBuilder
    *
    * <pre>
    * Job compensation information.
+   *
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -87,6 +91,7 @@ public interface CompensationInfoOrBuilder
    *
    * <pre>
    * Job compensation information.
+   *
    * At most one entry can be of type
    * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4beta1.CompensationInfo.CompensationType.BASE],
    * which is referred as **base compensation entry** for the job.
@@ -107,6 +112,7 @@ public interface CompensationInfoOrBuilder
    * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
    * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
+   *
    * See
    * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
    * for explanation on compensation annualization.
@@ -128,6 +134,7 @@ public interface CompensationInfoOrBuilder
    * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
    * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
+   *
    * See
    * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
    * for explanation on compensation annualization.
@@ -150,6 +157,7 @@ public interface CompensationInfoOrBuilder
    * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
    * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
+   *
    * See
    * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
    * for explanation on compensation annualization.
@@ -171,6 +179,7 @@ public interface CompensationInfoOrBuilder
    * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
    * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
+   *
    * See
    * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
    * for explanation on compensation annualization.
@@ -192,6 +201,7 @@ public interface CompensationInfoOrBuilder
    * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
    * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
+   *
    * See
    * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
    * for explanation on compensation annualization.
@@ -214,6 +224,7 @@ public interface CompensationInfoOrBuilder
    * [CompensationEntry.amount][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.amount]
    * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.expected_units_per_year].
+   *
    * See
    * [CompensationEntry][google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry]
    * for explanation on compensation annualization.

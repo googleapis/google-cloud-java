@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     return new Autopilot();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_Autopilot_descriptor;
@@ -83,6 +78,56 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     return enabled_;
   }
 
+  public static final int WORKLOAD_POLICY_CONFIG_FIELD_NUMBER = 2;
+  private com.google.container.v1.WorkloadPolicyConfig workloadPolicyConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Workload policy configuration for Autopilot.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+   *
+   * @return Whether the workloadPolicyConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkloadPolicyConfig() {
+    return workloadPolicyConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Workload policy configuration for Autopilot.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+   *
+   * @return The workloadPolicyConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.WorkloadPolicyConfig getWorkloadPolicyConfig() {
+    return workloadPolicyConfig_ == null
+        ? com.google.container.v1.WorkloadPolicyConfig.getDefaultInstance()
+        : workloadPolicyConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Workload policy configuration for Autopilot.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.WorkloadPolicyConfigOrBuilder getWorkloadPolicyConfigOrBuilder() {
+    return workloadPolicyConfig_ == null
+        ? com.google.container.v1.WorkloadPolicyConfig.getDefaultInstance()
+        : workloadPolicyConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -100,6 +145,9 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     if (enabled_ != false) {
       output.writeBool(1, enabled_);
     }
+    if (workloadPolicyConfig_ != null) {
+      output.writeMessage(2, getWorkloadPolicyConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -111,6 +159,10 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (enabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+    }
+    if (workloadPolicyConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(2, getWorkloadPolicyConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -128,6 +180,10 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     com.google.container.v1.Autopilot other = (com.google.container.v1.Autopilot) obj;
 
     if (getEnabled() != other.getEnabled()) return false;
+    if (hasWorkloadPolicyConfig() != other.hasWorkloadPolicyConfig()) return false;
+    if (hasWorkloadPolicyConfig()) {
+      if (!getWorkloadPolicyConfig().equals(other.getWorkloadPolicyConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -141,6 +197,10 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+    if (hasWorkloadPolicyConfig()) {
+      hash = (37 * hash) + WORKLOAD_POLICY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkloadPolicyConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -280,6 +340,11 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       enabled_ = false;
+      workloadPolicyConfig_ = null;
+      if (workloadPolicyConfigBuilder_ != null) {
+        workloadPolicyConfigBuilder_.dispose();
+        workloadPolicyConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -317,6 +382,12 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.workloadPolicyConfig_ =
+            workloadPolicyConfigBuilder_ == null
+                ? workloadPolicyConfig_
+                : workloadPolicyConfigBuilder_.build();
       }
     }
 
@@ -368,6 +439,9 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnabled() != false) {
         setEnabled(other.getEnabled());
       }
+      if (other.hasWorkloadPolicyConfig()) {
+        mergeWorkloadPolicyConfig(other.getWorkloadPolicyConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -400,6 +474,13 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 18:
+              {
+                input.readMessage(
+                    getWorkloadPolicyConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -470,6 +551,192 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       enabled_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.WorkloadPolicyConfig workloadPolicyConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.WorkloadPolicyConfig,
+            com.google.container.v1.WorkloadPolicyConfig.Builder,
+            com.google.container.v1.WorkloadPolicyConfigOrBuilder>
+        workloadPolicyConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Workload policy configuration for Autopilot.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+     *
+     * @return Whether the workloadPolicyConfig field is set.
+     */
+    public boolean hasWorkloadPolicyConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Workload policy configuration for Autopilot.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+     *
+     * @return The workloadPolicyConfig.
+     */
+    public com.google.container.v1.WorkloadPolicyConfig getWorkloadPolicyConfig() {
+      if (workloadPolicyConfigBuilder_ == null) {
+        return workloadPolicyConfig_ == null
+            ? com.google.container.v1.WorkloadPolicyConfig.getDefaultInstance()
+            : workloadPolicyConfig_;
+      } else {
+        return workloadPolicyConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Workload policy configuration for Autopilot.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+     */
+    public Builder setWorkloadPolicyConfig(com.google.container.v1.WorkloadPolicyConfig value) {
+      if (workloadPolicyConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workloadPolicyConfig_ = value;
+      } else {
+        workloadPolicyConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Workload policy configuration for Autopilot.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+     */
+    public Builder setWorkloadPolicyConfig(
+        com.google.container.v1.WorkloadPolicyConfig.Builder builderForValue) {
+      if (workloadPolicyConfigBuilder_ == null) {
+        workloadPolicyConfig_ = builderForValue.build();
+      } else {
+        workloadPolicyConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Workload policy configuration for Autopilot.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+     */
+    public Builder mergeWorkloadPolicyConfig(com.google.container.v1.WorkloadPolicyConfig value) {
+      if (workloadPolicyConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && workloadPolicyConfig_ != null
+            && workloadPolicyConfig_
+                != com.google.container.v1.WorkloadPolicyConfig.getDefaultInstance()) {
+          getWorkloadPolicyConfigBuilder().mergeFrom(value);
+        } else {
+          workloadPolicyConfig_ = value;
+        }
+      } else {
+        workloadPolicyConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Workload policy configuration for Autopilot.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+     */
+    public Builder clearWorkloadPolicyConfig() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      workloadPolicyConfig_ = null;
+      if (workloadPolicyConfigBuilder_ != null) {
+        workloadPolicyConfigBuilder_.dispose();
+        workloadPolicyConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Workload policy configuration for Autopilot.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+     */
+    public com.google.container.v1.WorkloadPolicyConfig.Builder getWorkloadPolicyConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getWorkloadPolicyConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Workload policy configuration for Autopilot.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+     */
+    public com.google.container.v1.WorkloadPolicyConfigOrBuilder
+        getWorkloadPolicyConfigOrBuilder() {
+      if (workloadPolicyConfigBuilder_ != null) {
+        return workloadPolicyConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workloadPolicyConfig_ == null
+            ? com.google.container.v1.WorkloadPolicyConfig.getDefaultInstance()
+            : workloadPolicyConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Workload policy configuration for Autopilot.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.WorkloadPolicyConfig,
+            com.google.container.v1.WorkloadPolicyConfig.Builder,
+            com.google.container.v1.WorkloadPolicyConfigOrBuilder>
+        getWorkloadPolicyConfigFieldBuilder() {
+      if (workloadPolicyConfigBuilder_ == null) {
+        workloadPolicyConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.WorkloadPolicyConfig,
+                com.google.container.v1.WorkloadPolicyConfig.Builder,
+                com.google.container.v1.WorkloadPolicyConfigOrBuilder>(
+                getWorkloadPolicyConfig(), getParentForChildren(), isClean());
+        workloadPolicyConfig_ = null;
+      }
+      return workloadPolicyConfigBuilder_;
     }
 
     @java.lang.Override

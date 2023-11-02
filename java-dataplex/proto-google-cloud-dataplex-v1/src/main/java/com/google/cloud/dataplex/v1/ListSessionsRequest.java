@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListSessionsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -218,6 +213,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
    * is sent default to USER mode. NOTE: When the mode is ADMIN, the requester
    * should have `dataplex.environments.listAllSessions` permission to list all
    * sessions, in absence of the permission, the request fails.
+   *
    * mode = ADMIN | USER
    * </pre>
    *
@@ -247,6 +243,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
    * is sent default to USER mode. NOTE: When the mode is ADMIN, the requester
    * should have `dataplex.environments.listAllSessions` permission to list all
    * sessions, in absence of the permission, the request fails.
+   *
    * mode = ADMIN | USER
    * </pre>
    *
@@ -994,6 +991,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      * is sent default to USER mode. NOTE: When the mode is ADMIN, the requester
      * should have `dataplex.environments.listAllSessions` permission to list all
      * sessions, in absence of the permission, the request fails.
+     *
      * mode = ADMIN | USER
      * </pre>
      *
@@ -1022,6 +1020,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      * is sent default to USER mode. NOTE: When the mode is ADMIN, the requester
      * should have `dataplex.environments.listAllSessions` permission to list all
      * sessions, in absence of the permission, the request fails.
+     *
      * mode = ADMIN | USER
      * </pre>
      *
@@ -1050,6 +1049,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      * is sent default to USER mode. NOTE: When the mode is ADMIN, the requester
      * should have `dataplex.environments.listAllSessions` permission to list all
      * sessions, in absence of the permission, the request fails.
+     *
      * mode = ADMIN | USER
      * </pre>
      *
@@ -1077,6 +1077,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      * is sent default to USER mode. NOTE: When the mode is ADMIN, the requester
      * should have `dataplex.environments.listAllSessions` permission to list all
      * sessions, in absence of the permission, the request fails.
+     *
      * mode = ADMIN | USER
      * </pre>
      *
@@ -1100,6 +1101,7 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      * is sent default to USER mode. NOTE: When the mode is ADMIN, the requester
      * should have `dataplex.environments.listAllSessions` permission to list all
      * sessions, in absence of the permission, the request fails.
+     *
      * mode = ADMIN | USER
      * </pre>
      *

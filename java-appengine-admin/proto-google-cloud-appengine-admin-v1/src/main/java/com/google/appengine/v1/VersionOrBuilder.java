@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface VersionOrBuilder
    * <pre>
    * Full path to the Version resource in the API.  Example:
    * `apps/myapp/services/default/versions/v1`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface VersionOrBuilder
    * <pre>
    * Full path to the Version resource in the API.  Example:
    * `apps/myapp/services/default/versions/v1`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -280,8 +282,10 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Instance class that is used to run this version. Valid values are:
+   *
    * * AutomaticScaling: `F1`, `F2`, `F4`, `F4_1G`
    * * ManualScaling or BasicScaling: `B1`, `B2`, `B4`, `B8`, `B4_1G`
+   *
    * Defaults to `F1` for AutomaticScaling and `B1` for ManualScaling or
    * BasicScaling.
    * </pre>
@@ -296,8 +300,10 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Instance class that is used to run this version. Valid values are:
+   *
    * * AutomaticScaling: `F1`, `F2`, `F4`, `F4_1G`
    * * ManualScaling or BasicScaling: `B1`, `B2`, `B4`, `B8`, `B4_1G`
+   *
    * Defaults to `F1` for AutomaticScaling and `B1` for ManualScaling or
    * BasicScaling.
    * </pre>
@@ -599,6 +605,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * App Engine execution environment for this version.
+   *
    * Defaults to `standard`.
    * </pre>
    *
@@ -612,6 +619,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * App Engine execution environment for this version.
+   *
    * Defaults to `standard`.
    * </pre>
    *
@@ -627,6 +635,7 @@ public interface VersionOrBuilder
    * <pre>
    * Current serving status of this version. Only the versions with a
    * `SERVING` status create instances and can be billed.
+   *
    * `SERVING_STATUS_UNSPECIFIED` is an invalid value. Defaults to `SERVING`.
    * </pre>
    *
@@ -641,6 +650,7 @@ public interface VersionOrBuilder
    * <pre>
    * Current serving status of this version. Only the versions with a
    * `SERVING` status create instances and can be billed.
+   *
    * `SERVING_STATUS_UNSPECIFIED` is an invalid value. Defaults to `SERVING`.
    * </pre>
    *
@@ -655,6 +665,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Email address of the user who created this version.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -668,6 +679,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Email address of the user who created this version.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -682,6 +694,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Time that this version was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -695,6 +708,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Time that this version was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -708,6 +722,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Time that this version was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -721,6 +736,7 @@ public interface VersionOrBuilder
    * <pre>
    * Total size in bytes of all the files that are included in this version
    * and currently hosted on the App Engine disk.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -820,6 +836,7 @@ public interface VersionOrBuilder
    * An ordered list of URL-matching patterns that should be applied to incoming
    * requests. The first matching URL handles the request and other request
    * handlers are not attempted.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -833,6 +850,7 @@ public interface VersionOrBuilder
    * An ordered list of URL-matching patterns that should be applied to incoming
    * requests. The first matching URL handles the request and other request
    * handlers are not attempted.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -846,6 +864,7 @@ public interface VersionOrBuilder
    * An ordered list of URL-matching patterns that should be applied to incoming
    * requests. The first matching URL handles the request and other request
    * handlers are not attempted.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -859,6 +878,7 @@ public interface VersionOrBuilder
    * An ordered list of URL-matching patterns that should be applied to incoming
    * requests. The first matching URL handles the request and other request
    * handlers are not attempted.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -872,6 +892,7 @@ public interface VersionOrBuilder
    * An ordered list of URL-matching patterns that should be applied to incoming
    * requests. The first matching URL handles the request and other request
    * handlers are not attempted.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -884,6 +905,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Custom static error pages. Limited to 10KB per page.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -895,6 +917,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Custom static error pages. Limited to 10KB per page.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -906,6 +929,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Custom static error pages. Limited to 10KB per page.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -917,6 +941,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Custom static error pages. Limited to 10KB per page.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -929,6 +954,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Custom static error pages. Limited to 10KB per page.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -942,6 +968,7 @@ public interface VersionOrBuilder
    * <pre>
    * Configuration for third-party Python runtime libraries that are required
    * by the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -954,6 +981,7 @@ public interface VersionOrBuilder
    * <pre>
    * Configuration for third-party Python runtime libraries that are required
    * by the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -966,6 +994,7 @@ public interface VersionOrBuilder
    * <pre>
    * Configuration for third-party Python runtime libraries that are required
    * by the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -978,6 +1007,7 @@ public interface VersionOrBuilder
    * <pre>
    * Configuration for third-party Python runtime libraries that are required
    * by the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -990,6 +1020,7 @@ public interface VersionOrBuilder
    * <pre>
    * Configuration for third-party Python runtime libraries that are required
    * by the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1003,6 +1034,7 @@ public interface VersionOrBuilder
    * <pre>
    * Serving configuration for
    * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1017,6 +1049,7 @@ public interface VersionOrBuilder
    * <pre>
    * Serving configuration for
    * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1031,6 +1064,7 @@ public interface VersionOrBuilder
    * <pre>
    * Serving configuration for
    * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1043,6 +1077,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Environment variables available to the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1054,6 +1089,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Environment variables available to the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1068,6 +1104,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Environment variables available to the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1079,6 +1116,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Environment variables available to the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1094,6 +1132,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Environment variables available to the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1106,6 +1145,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Environment variables available to the build environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1117,6 +1157,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Environment variables available to the build environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1131,6 +1172,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Environment variables available to the build environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1142,6 +1184,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Environment variables available to the build environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1157,6 +1200,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Environment variables available to the build environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1172,6 +1216,7 @@ public interface VersionOrBuilder
    * Only applicable if the corresponding
    * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
    * does not specify its own expiration time.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1188,6 +1233,7 @@ public interface VersionOrBuilder
    * Only applicable if the corresponding
    * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
    * does not specify its own expiration time.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1204,6 +1250,7 @@ public interface VersionOrBuilder
    * Only applicable if the corresponding
    * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
    * does not specify its own expiration time.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1218,6 +1265,7 @@ public interface VersionOrBuilder
    * Configures health checking for instances. Unhealthy instances are
    * stopped and replaced with new instances.
    * Only applicable in the App Engine flexible environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1233,6 +1281,7 @@ public interface VersionOrBuilder
    * Configures health checking for instances. Unhealthy instances are
    * stopped and replaced with new instances.
    * Only applicable in the App Engine flexible environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1248,6 +1297,7 @@ public interface VersionOrBuilder
    * Configures health checking for instances. Unhealthy instances are
    * stopped and replaced with new instances.
    * Only applicable in the App Engine flexible environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1261,6 +1311,7 @@ public interface VersionOrBuilder
    * <pre>
    * Configures readiness health checking for instances.
    * Unhealthy instances are not put into the backend traffic rotation.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1275,6 +1326,7 @@ public interface VersionOrBuilder
    * <pre>
    * Configures readiness health checking for instances.
    * Unhealthy instances are not put into the backend traffic rotation.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1289,6 +1341,7 @@ public interface VersionOrBuilder
    * <pre>
    * Configures readiness health checking for instances.
    * Unhealthy instances are not put into the backend traffic rotation.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1302,6 +1355,7 @@ public interface VersionOrBuilder
    * <pre>
    * Configures liveness health checking for instances.
    * Unhealthy instances are stopped and replaced with new instances
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1316,6 +1370,7 @@ public interface VersionOrBuilder
    * <pre>
    * Configures liveness health checking for instances.
    * Unhealthy instances are stopped and replaced with new instances
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1330,6 +1385,7 @@ public interface VersionOrBuilder
    * <pre>
    * Configures liveness health checking for instances.
    * Unhealthy instances are stopped and replaced with new instances
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1343,6 +1399,7 @@ public interface VersionOrBuilder
    * <pre>
    * Files that match this pattern will not be built into this version.
    * Only applicable for Go runtimes.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1357,6 +1414,7 @@ public interface VersionOrBuilder
    * <pre>
    * Files that match this pattern will not be built into this version.
    * Only applicable for Go runtimes.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1371,6 +1429,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Code and application artifacts that make up this version.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1384,6 +1443,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Code and application artifacts that make up this version.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1397,6 +1457,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Code and application artifacts that make up this version.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1410,6 +1471,7 @@ public interface VersionOrBuilder
    * <pre>
    * Serving URL for this version. Example:
    * "https://myversion-dot-myservice-dot-myapp.appspot.com"
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -1424,6 +1486,7 @@ public interface VersionOrBuilder
    * <pre>
    * Serving URL for this version. Example:
    * "https://myversion-dot-myservice-dot-myapp.appspot.com"
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -1438,6 +1501,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Cloud Endpoints configuration.
+   *
    * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
    * Proxy will be provided to serve the API implemented by the app.
    * </pre>
@@ -1452,6 +1516,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Cloud Endpoints configuration.
+   *
    * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
    * Proxy will be provided to serve the API implemented by the app.
    * </pre>
@@ -1466,6 +1531,7 @@ public interface VersionOrBuilder
    *
    * <pre>
    * Cloud Endpoints configuration.
+   *
    * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
    * Proxy will be provided to serve the API implemented by the app.
    * </pre>
@@ -1544,5 +1610,5 @@ public interface VersionOrBuilder
    */
   com.google.appengine.v1.VpcAccessConnectorOrBuilder getVpcAccessConnectorOrBuilder();
 
-  public com.google.appengine.v1.Version.ScalingCase getScalingCase();
+  com.google.appengine.v1.Version.ScalingCase getScalingCase();
 }

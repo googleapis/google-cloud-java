@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,17 +42,13 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
     cloudSqlId_ = "";
     privateIp_ = "";
     publicIp_ = "";
+    additionalPublicIp_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CloudSqlConnectionProfile();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,7 +74,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The Cloud SQL instance ID that this connection profile is associated with.
+   * Output only. The Cloud SQL instance ID that this connection profile is
+   * associated with.
    * </pre>
    *
    * <code>string cloud_sql_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -101,7 +98,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The Cloud SQL instance ID that this connection profile is associated with.
+   * Output only. The Cloud SQL instance ID that this connection profile is
+   * associated with.
    * </pre>
    *
    * <code>string cloud_sql_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -279,6 +277,61 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
     }
   }
 
+  public static final int ADDITIONAL_PUBLIC_IP_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object additionalPublicIp_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Cloud SQL database instance's additional (outgoing) public
+   * IP. Used when the Cloud SQL database availability type is REGIONAL (i.e.
+   * multiple zones / highly available).
+   * </pre>
+   *
+   * <code>string additional_public_ip = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The additionalPublicIp.
+   */
+  @java.lang.Override
+  public java.lang.String getAdditionalPublicIp() {
+    java.lang.Object ref = additionalPublicIp_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      additionalPublicIp_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Cloud SQL database instance's additional (outgoing) public
+   * IP. Used when the Cloud SQL database availability type is REGIONAL (i.e.
+   * multiple zones / highly available).
+   * </pre>
+   *
+   * <code>string additional_public_ip = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for additionalPublicIp.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAdditionalPublicIpBytes() {
+    java.lang.Object ref = additionalPublicIp_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      additionalPublicIp_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -305,6 +358,9 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, publicIp_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(additionalPublicIp_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, additionalPublicIp_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -325,6 +381,9 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, publicIp_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(additionalPublicIp_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, additionalPublicIp_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -349,6 +408,7 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
     }
     if (!getPrivateIp().equals(other.getPrivateIp())) return false;
     if (!getPublicIp().equals(other.getPublicIp())) return false;
+    if (!getAdditionalPublicIp().equals(other.getAdditionalPublicIp())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -370,6 +430,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
     hash = (53 * hash) + getPrivateIp().hashCode();
     hash = (37 * hash) + PUBLIC_IP_FIELD_NUMBER;
     hash = (53 * hash) + getPublicIp().hashCode();
+    hash = (37 * hash) + ADDITIONAL_PUBLIC_IP_FIELD_NUMBER;
+    hash = (53 * hash) + getAdditionalPublicIp().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -519,6 +581,7 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
       }
       privateIp_ = "";
       publicIp_ = "";
+      additionalPublicIp_ = "";
       return this;
     }
 
@@ -566,6 +629,9 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.publicIp_ = publicIp_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.additionalPublicIp_ = additionalPublicIp_;
       }
     }
 
@@ -633,6 +699,11 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.getAdditionalPublicIp().isEmpty()) {
+        additionalPublicIp_ = other.additionalPublicIp_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -683,6 +754,12 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                additionalPublicIp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -707,7 +784,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The Cloud SQL instance ID that this connection profile is associated with.
+     * Output only. The Cloud SQL instance ID that this connection profile is
+     * associated with.
      * </pre>
      *
      * <code>string cloud_sql_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -729,7 +807,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The Cloud SQL instance ID that this connection profile is associated with.
+     * Output only. The Cloud SQL instance ID that this connection profile is
+     * associated with.
      * </pre>
      *
      * <code>string cloud_sql_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -751,7 +830,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The Cloud SQL instance ID that this connection profile is associated with.
+     * Output only. The Cloud SQL instance ID that this connection profile is
+     * associated with.
      * </pre>
      *
      * <code>string cloud_sql_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -772,7 +852,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The Cloud SQL instance ID that this connection profile is associated with.
+     * Output only. The Cloud SQL instance ID that this connection profile is
+     * associated with.
      * </pre>
      *
      * <code>string cloud_sql_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -789,7 +870,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The Cloud SQL instance ID that this connection profile is associated with.
+     * Output only. The Cloud SQL instance ID that this connection profile is
+     * associated with.
      * </pre>
      *
      * <code>string cloud_sql_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1218,6 +1300,122 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       publicIp_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object additionalPublicIp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Cloud SQL database instance's additional (outgoing) public
+     * IP. Used when the Cloud SQL database availability type is REGIONAL (i.e.
+     * multiple zones / highly available).
+     * </pre>
+     *
+     * <code>string additional_public_ip = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The additionalPublicIp.
+     */
+    public java.lang.String getAdditionalPublicIp() {
+      java.lang.Object ref = additionalPublicIp_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        additionalPublicIp_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Cloud SQL database instance's additional (outgoing) public
+     * IP. Used when the Cloud SQL database availability type is REGIONAL (i.e.
+     * multiple zones / highly available).
+     * </pre>
+     *
+     * <code>string additional_public_ip = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for additionalPublicIp.
+     */
+    public com.google.protobuf.ByteString getAdditionalPublicIpBytes() {
+      java.lang.Object ref = additionalPublicIp_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        additionalPublicIp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Cloud SQL database instance's additional (outgoing) public
+     * IP. Used when the Cloud SQL database availability type is REGIONAL (i.e.
+     * multiple zones / highly available).
+     * </pre>
+     *
+     * <code>string additional_public_ip = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The additionalPublicIp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalPublicIp(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      additionalPublicIp_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Cloud SQL database instance's additional (outgoing) public
+     * IP. Used when the Cloud SQL database availability type is REGIONAL (i.e.
+     * multiple zones / highly available).
+     * </pre>
+     *
+     * <code>string additional_public_ip = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalPublicIp() {
+      additionalPublicIp_ = getDefaultInstance().getAdditionalPublicIp();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Cloud SQL database instance's additional (outgoing) public
+     * IP. Used when the Cloud SQL database availability type is REGIONAL (i.e.
+     * multiple zones / highly available).
+     * </pre>
+     *
+     * <code>string additional_public_ip = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for additionalPublicIp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalPublicIpBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      additionalPublicIp_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

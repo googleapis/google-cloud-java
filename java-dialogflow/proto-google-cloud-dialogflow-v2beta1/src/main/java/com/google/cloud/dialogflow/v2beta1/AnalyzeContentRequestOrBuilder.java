@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -165,6 +165,41 @@ public interface AnalyzeContentRequestOrBuilder
    *
    *
    * <pre>
+   * An input representing the selection of a suggestion.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+   *
+   * @return Whether the suggestionInput field is set.
+   */
+  boolean hasSuggestionInput();
+  /**
+   *
+   *
+   * <pre>
+   * An input representing the selection of a suggestion.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+   *
+   * @return The suggestionInput.
+   */
+  com.google.cloud.dialogflow.v2beta1.SuggestionInput getSuggestionInput();
+  /**
+   *
+   *
+   * <pre>
+   * An input representing the selection of a suggestion.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder getSuggestionInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Speech synthesis configuration.
    * The speech synthesis settings for a virtual agent that may be configured
    * for the associated conversation profile are not used when calling
@@ -286,6 +321,7 @@ public interface AnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -302,6 +338,7 @@ public interface AnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -318,6 +355,7 @@ public interface AnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -334,12 +372,14 @@ public interface AnalyzeContentRequestOrBuilder
    * session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * If `cx_current_page` is specified, the previous state of the session will
    * be ignored by Dialogflow CX, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
    * `cx_parameters` should be configured together to direct a session to a
    * specific state.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -357,12 +397,14 @@ public interface AnalyzeContentRequestOrBuilder
    * session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * If `cx_current_page` is specified, the previous state of the session will
    * be ignored by Dialogflow CX, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
    * `cx_parameters` should be configured together to direct a session to a
    * specific state.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -380,13 +422,15 @@ public interface AnalyzeContentRequestOrBuilder
    * Optional. The send time of the message from end user or human agent's
    * perspective. It is used for identifying the same message under one
    * participant.
+   *
    * Given two messages under the same participant:
-   *  - If send time are different regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  two distinct messages sent by the participant.
-   *  - If send time is the same regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  same message, and ignore the message received later.
+   * * If send time are different regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * two distinct messages sent by the participant.
+   * * If send time is the same regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * same message, and ignore the message received later.
+   *
    * If the value is not provided, a new request will always be regarded as a
    * new message without any de-duplication.
    * </pre>
@@ -403,13 +447,15 @@ public interface AnalyzeContentRequestOrBuilder
    * Optional. The send time of the message from end user or human agent's
    * perspective. It is used for identifying the same message under one
    * participant.
+   *
    * Given two messages under the same participant:
-   *  - If send time are different regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  two distinct messages sent by the participant.
-   *  - If send time is the same regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  same message, and ignore the message received later.
+   * * If send time are different regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * two distinct messages sent by the participant.
+   * * If send time is the same regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * same message, and ignore the message received later.
+   *
    * If the value is not provided, a new request will always be regarded as a
    * new message without any de-duplication.
    * </pre>
@@ -426,13 +472,15 @@ public interface AnalyzeContentRequestOrBuilder
    * Optional. The send time of the message from end user or human agent's
    * perspective. It is used for identifying the same message under one
    * participant.
+   *
    * Given two messages under the same participant:
-   *  - If send time are different regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  two distinct messages sent by the participant.
-   *  - If send time is the same regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  same message, and ignore the message received later.
+   * * If send time are different regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * two distinct messages sent by the participant.
+   * * If send time is the same regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * same message, and ignore the message received later.
+   *
    * If the value is not provided, a new request will always be regarded as a
    * new message without any de-duplication.
    * </pre>
@@ -470,5 +518,5 @@ public interface AnalyzeContentRequestOrBuilder
    */
   com.google.protobuf.ByteString getRequestIdBytes();
 
-  public com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.InputCase getInputCase();
+  com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.InputCase getInputCase();
 }

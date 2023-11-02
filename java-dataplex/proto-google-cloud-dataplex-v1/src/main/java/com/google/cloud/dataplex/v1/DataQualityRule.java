@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,17 +40,14 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   private DataQualityRule() {
     column_ = "";
     dimension_ = "";
+    name_ = "";
+    description_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DataQualityRule();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,6 +134,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Whether each value needs to be strictly greater than ('&gt;') the
      * minimum, or if equality is allowed.
+     *
      * Only relevant if a `min_value` has been defined. Default = false.
      * </pre>
      *
@@ -152,6 +150,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Whether each value needs to be strictly lesser than ('&lt;') the
      * maximum, or if equality is allowed.
+     *
      * Only relevant if a `max_value` has been defined. Default = false.
      * </pre>
      *
@@ -189,11 +188,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new RangeExpectation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -329,6 +323,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Whether each value needs to be strictly greater than ('&gt;') the
      * minimum, or if equality is allowed.
+     *
      * Only relevant if a `min_value` has been defined. Default = false.
      * </pre>
      *
@@ -349,6 +344,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Whether each value needs to be strictly lesser than ('&lt;') the
      * maximum, or if equality is allowed.
+     *
      * Only relevant if a `max_value` has been defined. Default = false.
      * </pre>
      *
@@ -1019,6 +1015,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Optional. Whether each value needs to be strictly greater than ('&gt;') the
        * minimum, or if equality is allowed.
+       *
        * Only relevant if a `min_value` has been defined. Default = false.
        * </pre>
        *
@@ -1036,6 +1033,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Optional. Whether each value needs to be strictly greater than ('&gt;') the
        * minimum, or if equality is allowed.
+       *
        * Only relevant if a `min_value` has been defined. Default = false.
        * </pre>
        *
@@ -1057,6 +1055,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Optional. Whether each value needs to be strictly greater than ('&gt;') the
        * minimum, or if equality is allowed.
+       *
        * Only relevant if a `min_value` has been defined. Default = false.
        * </pre>
        *
@@ -1078,6 +1077,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Optional. Whether each value needs to be strictly lesser than ('&lt;') the
        * maximum, or if equality is allowed.
+       *
        * Only relevant if a `max_value` has been defined. Default = false.
        * </pre>
        *
@@ -1095,6 +1095,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Optional. Whether each value needs to be strictly lesser than ('&lt;') the
        * maximum, or if equality is allowed.
+       *
        * Only relevant if a `max_value` has been defined. Default = false.
        * </pre>
        *
@@ -1116,6 +1117,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Optional. Whether each value needs to be strictly lesser than ('&lt;') the
        * maximum, or if equality is allowed.
+       *
        * Only relevant if a `max_value` has been defined. Default = false.
        * </pre>
        *
@@ -1226,11 +1228,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NonNullExpectation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1642,10 +1639,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Expected values for the column value.
+     * Optional. Expected values for the column value.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the values.
      */
@@ -1654,10 +1651,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Expected values for the column value.
+     * Optional. Expected values for the column value.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of values.
      */
@@ -1666,10 +1663,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Expected values for the column value.
+     * Optional. Expected values for the column value.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The values at the given index.
@@ -1679,10 +1676,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Expected values for the column value.
+     * Optional. Expected values for the column value.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the values at the given index.
@@ -1709,18 +1706,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     private SetExpectation() {
-      values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      values_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SetExpectation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1741,15 +1733,16 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public static final int VALUES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList values_;
+    private com.google.protobuf.LazyStringArrayList values_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
      * <pre>
-     * Expected values for the column value.
+     * Optional. Expected values for the column value.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the values.
      */
@@ -1760,10 +1753,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Expected values for the column value.
+     * Optional. Expected values for the column value.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of values.
      */
@@ -1774,10 +1767,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Expected values for the column value.
+     * Optional. Expected values for the column value.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The values at the given index.
@@ -1789,10 +1782,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Expected values for the column value.
+     * Optional. Expected values for the column value.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the values at the given index.
@@ -2009,8 +2002,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        values_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -2039,7 +2031,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation buildPartial() {
         com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation result =
             new com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -2047,18 +2038,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          values_ = values_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.values_ = values_;
-      }
-
       private void buildPartial0(
           com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          result.values_ = values_;
+        }
       }
 
       @java.lang.Override
@@ -2113,7 +2099,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         if (!other.values_.isEmpty()) {
           if (values_.isEmpty()) {
             values_ = other.values_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureValuesIsMutable();
             values_.addAll(other.values_);
@@ -2172,37 +2158,38 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList values_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList values_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureValuesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!values_.isModifiable()) {
           values_ = new com.google.protobuf.LazyStringArrayList(values_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
        *
        * <pre>
-       * Expected values for the column value.
+       * Optional. Expected values for the column value.
        * </pre>
        *
-       * <code>repeated string values = 1;</code>
+       * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the values.
        */
       public com.google.protobuf.ProtocolStringList getValuesList() {
-        return values_.getUnmodifiableView();
+        values_.makeImmutable();
+        return values_;
       }
       /**
        *
        *
        * <pre>
-       * Expected values for the column value.
+       * Optional. Expected values for the column value.
        * </pre>
        *
-       * <code>repeated string values = 1;</code>
+       * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of values.
        */
@@ -2213,10 +2200,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Expected values for the column value.
+       * Optional. Expected values for the column value.
        * </pre>
        *
-       * <code>repeated string values = 1;</code>
+       * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The values at the given index.
@@ -2228,10 +2215,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Expected values for the column value.
+       * Optional. Expected values for the column value.
        * </pre>
        *
-       * <code>repeated string values = 1;</code>
+       * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the values at the given index.
@@ -2243,10 +2230,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Expected values for the column value.
+       * Optional. Expected values for the column value.
        * </pre>
        *
-       * <code>repeated string values = 1;</code>
+       * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index to set the value at.
        * @param value The values to set.
@@ -2258,6 +2245,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         }
         ensureValuesIsMutable();
         values_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2265,10 +2253,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Expected values for the column value.
+       * Optional. Expected values for the column value.
        * </pre>
        *
-       * <code>repeated string values = 1;</code>
+       * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The values to add.
        * @return This builder for chaining.
@@ -2279,6 +2267,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         }
         ensureValuesIsMutable();
         values_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2286,10 +2275,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Expected values for the column value.
+       * Optional. Expected values for the column value.
        * </pre>
        *
-       * <code>repeated string values = 1;</code>
+       * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param values The values to add.
        * @return This builder for chaining.
@@ -2297,6 +2286,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
         ensureValuesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2304,16 +2294,17 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Expected values for the column value.
+       * Optional. Expected values for the column value.
        * </pre>
        *
-       * <code>repeated string values = 1;</code>
+       * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
       public Builder clearValues() {
-        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        values_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -2321,10 +2312,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Expected values for the column value.
+       * Optional. Expected values for the column value.
        * </pre>
        *
-       * <code>repeated string values = 1;</code>
+       * <code>repeated string values = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes of the values to add.
        * @return This builder for chaining.
@@ -2336,6 +2327,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         checkByteStringIsUtf8(value);
         ensureValuesIsMutable();
         values_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2414,10 +2406,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A regular expression the column value is expected to match.
+     * Optional. A regular expression the column value is expected to match.
      * </pre>
      *
-     * <code>string regex = 1;</code>
+     * <code>string regex = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The regex.
      */
@@ -2426,10 +2418,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A regular expression the column value is expected to match.
+     * Optional. A regular expression the column value is expected to match.
      * </pre>
      *
-     * <code>string regex = 1;</code>
+     * <code>string regex = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for regex.
      */
@@ -2464,11 +2456,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       return new RegexExpectation();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.DataQualityProto
           .internal_static_google_cloud_dataplex_v1_DataQualityRule_RegexExpectation_descriptor;
@@ -2492,10 +2479,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A regular expression the column value is expected to match.
+     * Optional. A regular expression the column value is expected to match.
      * </pre>
      *
-     * <code>string regex = 1;</code>
+     * <code>string regex = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The regex.
      */
@@ -2515,10 +2502,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A regular expression the column value is expected to match.
+     * Optional. A regular expression the column value is expected to match.
      * </pre>
      *
-     * <code>string regex = 1;</code>
+     * <code>string regex = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for regex.
      */
@@ -2891,10 +2878,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A regular expression the column value is expected to match.
+       * Optional. A regular expression the column value is expected to match.
        * </pre>
        *
-       * <code>string regex = 1;</code>
+       * <code>string regex = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The regex.
        */
@@ -2913,10 +2900,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A regular expression the column value is expected to match.
+       * Optional. A regular expression the column value is expected to match.
        * </pre>
        *
-       * <code>string regex = 1;</code>
+       * <code>string regex = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for regex.
        */
@@ -2935,10 +2922,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A regular expression the column value is expected to match.
+       * Optional. A regular expression the column value is expected to match.
        * </pre>
        *
-       * <code>string regex = 1;</code>
+       * <code>string regex = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The regex to set.
        * @return This builder for chaining.
@@ -2956,10 +2943,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A regular expression the column value is expected to match.
+       * Optional. A regular expression the column value is expected to match.
        * </pre>
        *
-       * <code>string regex = 1;</code>
+       * <code>string regex = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -2973,10 +2960,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * A regular expression the column value is expected to match.
+       * Optional. A regular expression the column value is expected to match.
        * </pre>
        *
-       * <code>string regex = 1;</code>
+       * <code>string regex = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for regex to set.
        * @return This builder for chaining.
@@ -3088,11 +3075,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new UniquenessExpectation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3506,11 +3488,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The aggregate metric to evaluate.
+     * Optional. The aggregate metric to evaluate.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1;
+     * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for statistic.
@@ -3520,11 +3502,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The aggregate metric to evaluate.
+     * Optional. The aggregate metric to evaluate.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1;
+     * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The statistic.
@@ -3536,12 +3518,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The minimum column statistic value allowed for a row to pass this
-     * validation.
+     * Optional. The minimum column statistic value allowed for a row to pass
+     * this validation.
+     *
      * At least one of `min_value` and `max_value` need to be provided.
      * </pre>
      *
-     * <code>string min_value = 2;</code>
+     * <code>string min_value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The minValue.
      */
@@ -3550,12 +3533,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The minimum column statistic value allowed for a row to pass this
-     * validation.
+     * Optional. The minimum column statistic value allowed for a row to pass
+     * this validation.
+     *
      * At least one of `min_value` and `max_value` need to be provided.
      * </pre>
      *
-     * <code>string min_value = 2;</code>
+     * <code>string min_value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for minValue.
      */
@@ -3565,12 +3549,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum column statistic value allowed for a row to pass this
-     * validation.
+     * Optional. The maximum column statistic value allowed for a row to pass
+     * this validation.
+     *
      * At least one of `min_value` and `max_value` need to be provided.
      * </pre>
      *
-     * <code>string max_value = 3;</code>
+     * <code>string max_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The maxValue.
      */
@@ -3579,12 +3564,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum column statistic value allowed for a row to pass this
-     * validation.
+     * Optional. The maximum column statistic value allowed for a row to pass
+     * this validation.
+     *
      * At least one of `min_value` and `max_value` need to be provided.
      * </pre>
      *
-     * <code>string max_value = 3;</code>
+     * <code>string max_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for maxValue.
      */
@@ -3594,12 +3580,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether column statistic needs to be strictly greater than ('&gt;')
-     * the minimum, or if equality is allowed.
+     * Optional. Whether column statistic needs to be strictly greater than
+     * ('&gt;') the minimum, or if equality is allowed.
+     *
      * Only relevant if a `min_value` has been defined. Default = false.
      * </pre>
      *
-     * <code>bool strict_min_enabled = 4;</code>
+     * <code>bool strict_min_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The strictMinEnabled.
      */
@@ -3609,12 +3596,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether column statistic needs to be strictly lesser than ('&lt;') the
-     * maximum, or if equality is allowed.
+     * Optional. Whether column statistic needs to be strictly lesser than ('&lt;')
+     * the maximum, or if equality is allowed.
+     *
      * Only relevant if a `max_value` has been defined. Default = false.
      * </pre>
      *
-     * <code>bool strict_max_enabled = 5;</code>
+     * <code>bool strict_max_enabled = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The strictMaxEnabled.
      */
@@ -3650,11 +3638,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new StatisticRangeExpectation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3864,11 +3847,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The aggregate metric to evaluate.
+     * Optional. The aggregate metric to evaluate.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1;
+     * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for statistic.
@@ -3881,11 +3864,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The aggregate metric to evaluate.
+     * Optional. The aggregate metric to evaluate.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1;
+     * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The statistic.
@@ -3911,12 +3894,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The minimum column statistic value allowed for a row to pass this
-     * validation.
+     * Optional. The minimum column statistic value allowed for a row to pass
+     * this validation.
+     *
      * At least one of `min_value` and `max_value` need to be provided.
      * </pre>
      *
-     * <code>string min_value = 2;</code>
+     * <code>string min_value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The minValue.
      */
@@ -3936,12 +3920,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The minimum column statistic value allowed for a row to pass this
-     * validation.
+     * Optional. The minimum column statistic value allowed for a row to pass
+     * this validation.
+     *
      * At least one of `min_value` and `max_value` need to be provided.
      * </pre>
      *
-     * <code>string min_value = 2;</code>
+     * <code>string min_value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for minValue.
      */
@@ -3966,12 +3951,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum column statistic value allowed for a row to pass this
-     * validation.
+     * Optional. The maximum column statistic value allowed for a row to pass
+     * this validation.
+     *
      * At least one of `min_value` and `max_value` need to be provided.
      * </pre>
      *
-     * <code>string max_value = 3;</code>
+     * <code>string max_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The maxValue.
      */
@@ -3991,12 +3977,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum column statistic value allowed for a row to pass this
-     * validation.
+     * Optional. The maximum column statistic value allowed for a row to pass
+     * this validation.
+     *
      * At least one of `min_value` and `max_value` need to be provided.
      * </pre>
      *
-     * <code>string max_value = 3;</code>
+     * <code>string max_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for maxValue.
      */
@@ -4019,12 +4006,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether column statistic needs to be strictly greater than ('&gt;')
-     * the minimum, or if equality is allowed.
+     * Optional. Whether column statistic needs to be strictly greater than
+     * ('&gt;') the minimum, or if equality is allowed.
+     *
      * Only relevant if a `min_value` has been defined. Default = false.
      * </pre>
      *
-     * <code>bool strict_min_enabled = 4;</code>
+     * <code>bool strict_min_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The strictMinEnabled.
      */
@@ -4039,12 +4027,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether column statistic needs to be strictly lesser than ('&lt;') the
-     * maximum, or if equality is allowed.
+     * Optional. Whether column statistic needs to be strictly lesser than ('&lt;')
+     * the maximum, or if equality is allowed.
+     *
      * Only relevant if a `max_value` has been defined. Default = false.
      * </pre>
      *
-     * <code>bool strict_max_enabled = 5;</code>
+     * <code>bool strict_max_enabled = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The strictMaxEnabled.
      */
@@ -4514,11 +4503,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The aggregate metric to evaluate.
+       * Optional. The aggregate metric to evaluate.
        * </pre>
        *
        * <code>
-       * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1;
+       * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The enum numeric value on the wire for statistic.
@@ -4531,11 +4520,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The aggregate metric to evaluate.
+       * Optional. The aggregate metric to evaluate.
        * </pre>
        *
        * <code>
-       * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1;
+       * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The enum numeric value on the wire for statistic to set.
@@ -4551,11 +4540,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The aggregate metric to evaluate.
+       * Optional. The aggregate metric to evaluate.
        * </pre>
        *
        * <code>
-       * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1;
+       * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The statistic.
@@ -4576,11 +4565,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The aggregate metric to evaluate.
+       * Optional. The aggregate metric to evaluate.
        * </pre>
        *
        * <code>
-       * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1;
+       * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The statistic to set.
@@ -4601,11 +4590,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The aggregate metric to evaluate.
+       * Optional. The aggregate metric to evaluate.
        * </pre>
        *
        * <code>
-       * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1;
+       * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return This builder for chaining.
@@ -4622,12 +4611,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The minimum column statistic value allowed for a row to pass this
-       * validation.
+       * Optional. The minimum column statistic value allowed for a row to pass
+       * this validation.
+       *
        * At least one of `min_value` and `max_value` need to be provided.
        * </pre>
        *
-       * <code>string min_value = 2;</code>
+       * <code>string min_value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The minValue.
        */
@@ -4646,12 +4636,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The minimum column statistic value allowed for a row to pass this
-       * validation.
+       * Optional. The minimum column statistic value allowed for a row to pass
+       * this validation.
+       *
        * At least one of `min_value` and `max_value` need to be provided.
        * </pre>
        *
-       * <code>string min_value = 2;</code>
+       * <code>string min_value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for minValue.
        */
@@ -4670,12 +4661,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The minimum column statistic value allowed for a row to pass this
-       * validation.
+       * Optional. The minimum column statistic value allowed for a row to pass
+       * this validation.
+       *
        * At least one of `min_value` and `max_value` need to be provided.
        * </pre>
        *
-       * <code>string min_value = 2;</code>
+       * <code>string min_value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The minValue to set.
        * @return This builder for chaining.
@@ -4693,12 +4685,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The minimum column statistic value allowed for a row to pass this
-       * validation.
+       * Optional. The minimum column statistic value allowed for a row to pass
+       * this validation.
+       *
        * At least one of `min_value` and `max_value` need to be provided.
        * </pre>
        *
-       * <code>string min_value = 2;</code>
+       * <code>string min_value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -4712,12 +4705,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The minimum column statistic value allowed for a row to pass this
-       * validation.
+       * Optional. The minimum column statistic value allowed for a row to pass
+       * this validation.
+       *
        * At least one of `min_value` and `max_value` need to be provided.
        * </pre>
        *
-       * <code>string min_value = 2;</code>
+       * <code>string min_value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for minValue to set.
        * @return This builder for chaining.
@@ -4738,12 +4732,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The maximum column statistic value allowed for a row to pass this
-       * validation.
+       * Optional. The maximum column statistic value allowed for a row to pass
+       * this validation.
+       *
        * At least one of `min_value` and `max_value` need to be provided.
        * </pre>
        *
-       * <code>string max_value = 3;</code>
+       * <code>string max_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The maxValue.
        */
@@ -4762,12 +4757,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The maximum column statistic value allowed for a row to pass this
-       * validation.
+       * Optional. The maximum column statistic value allowed for a row to pass
+       * this validation.
+       *
        * At least one of `min_value` and `max_value` need to be provided.
        * </pre>
        *
-       * <code>string max_value = 3;</code>
+       * <code>string max_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for maxValue.
        */
@@ -4786,12 +4782,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The maximum column statistic value allowed for a row to pass this
-       * validation.
+       * Optional. The maximum column statistic value allowed for a row to pass
+       * this validation.
+       *
        * At least one of `min_value` and `max_value` need to be provided.
        * </pre>
        *
-       * <code>string max_value = 3;</code>
+       * <code>string max_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The maxValue to set.
        * @return This builder for chaining.
@@ -4809,12 +4806,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The maximum column statistic value allowed for a row to pass this
-       * validation.
+       * Optional. The maximum column statistic value allowed for a row to pass
+       * this validation.
+       *
        * At least one of `min_value` and `max_value` need to be provided.
        * </pre>
        *
-       * <code>string max_value = 3;</code>
+       * <code>string max_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -4828,12 +4826,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The maximum column statistic value allowed for a row to pass this
-       * validation.
+       * Optional. The maximum column statistic value allowed for a row to pass
+       * this validation.
+       *
        * At least one of `min_value` and `max_value` need to be provided.
        * </pre>
        *
-       * <code>string max_value = 3;</code>
+       * <code>string max_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for maxValue to set.
        * @return This builder for chaining.
@@ -4854,12 +4853,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether column statistic needs to be strictly greater than ('&gt;')
-       * the minimum, or if equality is allowed.
+       * Optional. Whether column statistic needs to be strictly greater than
+       * ('&gt;') the minimum, or if equality is allowed.
+       *
        * Only relevant if a `min_value` has been defined. Default = false.
        * </pre>
        *
-       * <code>bool strict_min_enabled = 4;</code>
+       * <code>bool strict_min_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The strictMinEnabled.
        */
@@ -4871,12 +4871,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether column statistic needs to be strictly greater than ('&gt;')
-       * the minimum, or if equality is allowed.
+       * Optional. Whether column statistic needs to be strictly greater than
+       * ('&gt;') the minimum, or if equality is allowed.
+       *
        * Only relevant if a `min_value` has been defined. Default = false.
        * </pre>
        *
-       * <code>bool strict_min_enabled = 4;</code>
+       * <code>bool strict_min_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The strictMinEnabled to set.
        * @return This builder for chaining.
@@ -4892,12 +4893,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether column statistic needs to be strictly greater than ('&gt;')
-       * the minimum, or if equality is allowed.
+       * Optional. Whether column statistic needs to be strictly greater than
+       * ('&gt;') the minimum, or if equality is allowed.
+       *
        * Only relevant if a `min_value` has been defined. Default = false.
        * </pre>
        *
-       * <code>bool strict_min_enabled = 4;</code>
+       * <code>bool strict_min_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -4913,12 +4915,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether column statistic needs to be strictly lesser than ('&lt;') the
-       * maximum, or if equality is allowed.
+       * Optional. Whether column statistic needs to be strictly lesser than ('&lt;')
+       * the maximum, or if equality is allowed.
+       *
        * Only relevant if a `max_value` has been defined. Default = false.
        * </pre>
        *
-       * <code>bool strict_max_enabled = 5;</code>
+       * <code>bool strict_max_enabled = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The strictMaxEnabled.
        */
@@ -4930,12 +4933,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether column statistic needs to be strictly lesser than ('&lt;') the
-       * maximum, or if equality is allowed.
+       * Optional. Whether column statistic needs to be strictly lesser than ('&lt;')
+       * the maximum, or if equality is allowed.
+       *
        * Only relevant if a `max_value` has been defined. Default = false.
        * </pre>
        *
-       * <code>bool strict_max_enabled = 5;</code>
+       * <code>bool strict_max_enabled = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The strictMaxEnabled to set.
        * @return This builder for chaining.
@@ -4951,12 +4955,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether column statistic needs to be strictly lesser than ('&lt;') the
-       * maximum, or if equality is allowed.
+       * Optional. Whether column statistic needs to be strictly lesser than ('&lt;')
+       * the maximum, or if equality is allowed.
+       *
        * Only relevant if a `max_value` has been defined. Default = false.
        * </pre>
        *
-       * <code>bool strict_max_enabled = 5;</code>
+       * <code>bool strict_max_enabled = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -5044,10 +5049,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The SQL expression.
+     * Optional. The SQL expression.
      * </pre>
      *
-     * <code>string sql_expression = 1;</code>
+     * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The sqlExpression.
      */
@@ -5056,10 +5061,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The SQL expression.
+     * Optional. The SQL expression.
      * </pre>
      *
-     * <code>string sql_expression = 1;</code>
+     * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for sqlExpression.
      */
@@ -5070,8 +5075,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Evaluates whether each row passes the specified condition.
+   *
    * The SQL expression needs to use BigQuery standard SQL syntax and should
    * produce a boolean value per row as the result.
+   *
    * Example: col1 &gt;= 0 AND col2 &lt; 10
    * </pre>
    *
@@ -5097,11 +5104,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       return new RowConditionExpectation();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.DataQualityProto
           .internal_static_google_cloud_dataplex_v1_DataQualityRule_RowConditionExpectation_descriptor;
@@ -5125,10 +5127,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The SQL expression.
+     * Optional. The SQL expression.
      * </pre>
      *
-     * <code>string sql_expression = 1;</code>
+     * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The sqlExpression.
      */
@@ -5148,10 +5150,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The SQL expression.
+     * Optional. The SQL expression.
      * </pre>
      *
-     * <code>string sql_expression = 1;</code>
+     * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for sqlExpression.
      */
@@ -5335,8 +5337,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Evaluates whether each row passes the specified condition.
+     *
      * The SQL expression needs to use BigQuery standard SQL syntax and should
      * produce a boolean value per row as the result.
+     *
      * Example: col1 &gt;= 0 AND col2 &lt; 10
      * </pre>
      *
@@ -5532,10 +5536,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The SQL expression.
+       * Optional. The SQL expression.
        * </pre>
        *
-       * <code>string sql_expression = 1;</code>
+       * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The sqlExpression.
        */
@@ -5554,10 +5558,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The SQL expression.
+       * Optional. The SQL expression.
        * </pre>
        *
-       * <code>string sql_expression = 1;</code>
+       * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for sqlExpression.
        */
@@ -5576,10 +5580,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The SQL expression.
+       * Optional. The SQL expression.
        * </pre>
        *
-       * <code>string sql_expression = 1;</code>
+       * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The sqlExpression to set.
        * @return This builder for chaining.
@@ -5597,10 +5601,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The SQL expression.
+       * Optional. The SQL expression.
        * </pre>
        *
-       * <code>string sql_expression = 1;</code>
+       * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -5614,10 +5618,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The SQL expression.
+       * Optional. The SQL expression.
        * </pre>
        *
-       * <code>string sql_expression = 1;</code>
+       * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for sqlExpression to set.
        * @return This builder for chaining.
@@ -5709,10 +5713,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The SQL expression.
+     * Optional. The SQL expression.
      * </pre>
      *
-     * <code>string sql_expression = 1;</code>
+     * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The sqlExpression.
      */
@@ -5721,10 +5725,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The SQL expression.
+     * Optional. The SQL expression.
      * </pre>
      *
-     * <code>string sql_expression = 1;</code>
+     * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for sqlExpression.
      */
@@ -5735,8 +5739,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Evaluates whether the provided expression is true.
+   *
    * The SQL expression needs to use BigQuery standard SQL syntax and should
    * produce a scalar boolean result.
+   *
    * Example: MIN(col1) &gt;= 0
    * </pre>
    *
@@ -5762,11 +5768,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       return new TableConditionExpectation();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.DataQualityProto
           .internal_static_google_cloud_dataplex_v1_DataQualityRule_TableConditionExpectation_descriptor;
@@ -5790,10 +5791,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The SQL expression.
+     * Optional. The SQL expression.
      * </pre>
      *
-     * <code>string sql_expression = 1;</code>
+     * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The sqlExpression.
      */
@@ -5813,10 +5814,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The SQL expression.
+     * Optional. The SQL expression.
      * </pre>
      *
-     * <code>string sql_expression = 1;</code>
+     * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for sqlExpression.
      */
@@ -6001,8 +6002,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Evaluates whether the provided expression is true.
+     *
      * The SQL expression needs to use BigQuery standard SQL syntax and should
      * produce a scalar boolean result.
+     *
      * Example: MIN(col1) &gt;= 0
      * </pre>
      *
@@ -6200,10 +6203,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The SQL expression.
+       * Optional. The SQL expression.
        * </pre>
        *
-       * <code>string sql_expression = 1;</code>
+       * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The sqlExpression.
        */
@@ -6222,10 +6225,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The SQL expression.
+       * Optional. The SQL expression.
        * </pre>
        *
-       * <code>string sql_expression = 1;</code>
+       * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for sqlExpression.
        */
@@ -6244,10 +6247,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The SQL expression.
+       * Optional. The SQL expression.
        * </pre>
        *
-       * <code>string sql_expression = 1;</code>
+       * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The sqlExpression to set.
        * @return This builder for chaining.
@@ -6265,10 +6268,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The SQL expression.
+       * Optional. The SQL expression.
        * </pre>
        *
-       * <code>string sql_expression = 1;</code>
+       * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -6282,10 +6285,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The SQL expression.
+       * Optional. The SQL expression.
        * </pre>
        *
-       * <code>string sql_expression = 1;</code>
+       * <code>string sql_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for sqlExpression to set.
        * @return This builder for chaining.
@@ -6370,6 +6373,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   private int ruleTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object ruleType_;
 
   public enum RuleTypeCase
@@ -6439,7 +6444,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value lies between a
+   * Row-level rule which evaluates whether each column value lies between a
    * specified range.
    * </pre>
    *
@@ -6455,7 +6460,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value lies between a
+   * Row-level rule which evaluates whether each column value lies between a
    * specified range.
    * </pre>
    *
@@ -6474,7 +6479,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value lies between a
+   * Row-level rule which evaluates whether each column value lies between a
    * specified range.
    * </pre>
    *
@@ -6494,7 +6499,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is null.
+   * Row-level rule which evaluates whether each column value is null.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -6510,7 +6515,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is null.
+   * Row-level rule which evaluates whether each column value is null.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -6529,7 +6534,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is null.
+   * Row-level rule which evaluates whether each column value is null.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -6549,7 +6554,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is contained by
+   * Row-level rule which evaluates whether each column value is contained by
    * a specified set.
    * </pre>
    *
@@ -6565,7 +6570,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is contained by
+   * Row-level rule which evaluates whether each column value is contained by
    * a specified set.
    * </pre>
    *
@@ -6584,7 +6589,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is contained by
+   * Row-level rule which evaluates whether each column value is contained by
    * a specified set.
    * </pre>
    *
@@ -6604,7 +6609,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value matches a
+   * Row-level rule which evaluates whether each column value matches a
    * specified regex.
    * </pre>
    *
@@ -6620,7 +6625,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value matches a
+   * Row-level rule which evaluates whether each column value matches a
    * specified regex.
    * </pre>
    *
@@ -6639,7 +6644,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value matches a
+   * Row-level rule which evaluates whether each column value matches a
    * specified regex.
    * </pre>
    *
@@ -6659,7 +6664,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column has duplicates.
+   * Row-level rule which evaluates whether each column value is unique.
    * </pre>
    *
    * <code>
@@ -6676,7 +6681,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column has duplicates.
+   * Row-level rule which evaluates whether each column value is unique.
    * </pre>
    *
    * <code>
@@ -6697,7 +6702,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column has duplicates.
+   * Row-level rule which evaluates whether each column value is unique.
    * </pre>
    *
    * <code>
@@ -6718,7 +6723,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column aggregate
+   * Aggregate rule which evaluates whether the column aggregate
    * statistic lies between a specified range.
    * </pre>
    *
@@ -6736,7 +6741,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column aggregate
+   * Aggregate rule which evaluates whether the column aggregate
    * statistic lies between a specified range.
    * </pre>
    *
@@ -6759,7 +6764,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column aggregate
+   * Aggregate rule which evaluates whether the column aggregate
    * statistic lies between a specified range.
    * </pre>
    *
@@ -6782,8 +6787,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Table rule which evaluates whether each row passes the specified
-   * condition.
+   * Row-level rule which evaluates whether each row in a table passes the
+   * specified condition.
    * </pre>
    *
    * <code>
@@ -6800,8 +6805,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Table rule which evaluates whether each row passes the specified
-   * condition.
+   * Row-level rule which evaluates whether each row in a table passes the
+   * specified condition.
    * </pre>
    *
    * <code>
@@ -6823,8 +6828,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Table rule which evaluates whether each row passes the specified
-   * condition.
+   * Row-level rule which evaluates whether each row in a table passes the
+   * specified condition.
    * </pre>
    *
    * <code>
@@ -6846,7 +6851,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Table rule which evaluates whether the provided expression is true.
+   * Aggregate rule which evaluates whether the provided expression is true
+   * for a table.
    * </pre>
    *
    * <code>
@@ -6863,7 +6869,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Table rule which evaluates whether the provided expression is true.
+   * Aggregate rule which evaluates whether the provided expression is true
+   * for a table.
    * </pre>
    *
    * <code>
@@ -6885,7 +6892,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Table rule which evaluates whether the provided expression is true.
+   * Aggregate rule which evaluates whether the provided expression is true
+   * for a table.
    * </pre>
    *
    * <code>
@@ -6962,7 +6970,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    * Optional. Rows with `null` values will automatically fail a rule, unless
    * `ignore_null` is `true`. In that case, such `null` rows are trivially
    * considered passing.
-   * Only applicable to ColumnMap rules.
+   *
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>bool ignore_null = 501 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7037,7 +7046,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. The minimum ratio of **passing_rows / total_rows** required to
    * pass this rule, with a range of [0.0, 1.0].
+   *
    * 0 indicates default value (i.e. 1.0).
+   *
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>double threshold = 503 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7047,6 +7059,124 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public double getThreshold() {
     return threshold_;
+  }
+
+  public static final int NAME_FIELD_NUMBER = 504;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A mutable name for the rule.
+   *
+   * * The name must contain only letters (a-z, A-Z), numbers (0-9), or
+   * hyphens (-).
+   * * The maximum length is 63 characters.
+   * * Must start with a letter.
+   * * Must end with a number or a letter.
+   * </pre>
+   *
+   * <code>string name = 504 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A mutable name for the rule.
+   *
+   * * The name must contain only letters (a-z, A-Z), numbers (0-9), or
+   * hyphens (-).
+   * * The maximum length is 63 characters.
+   * * Must start with a letter.
+   * * Must end with a number or a letter.
+   * </pre>
+   *
+   * <code>string name = 504 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 505;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Description of the rule.
+   *
+   * * The maximum length is 1,024 characters.
+   * </pre>
+   *
+   * <code>string description = 505 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Description of the rule.
+   *
+   * * The maximum length is 1,024 characters.
+   * </pre>
+   *
+   * <code>string description = 505 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -7106,6 +7236,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
     if (java.lang.Double.doubleToRawLongBits(threshold_) != 0) {
       output.writeDouble(503, threshold_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 504, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 505, description_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -7171,6 +7307,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     if (java.lang.Double.doubleToRawLongBits(threshold_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(503, threshold_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(504, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(505, description_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7192,6 +7334,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     if (!getDimension().equals(other.getDimension())) return false;
     if (java.lang.Double.doubleToLongBits(getThreshold())
         != java.lang.Double.doubleToLongBits(other.getThreshold())) return false;
+    if (!getName().equals(other.getName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (!getRuleTypeCase().equals(other.getRuleTypeCase())) return false;
     switch (ruleTypeCase_) {
       case 1:
@@ -7245,6 +7389,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(
                 java.lang.Double.doubleToLongBits(getThreshold()));
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     switch (ruleTypeCase_) {
       case 1:
         hash = (37 * hash) + RANGE_EXPECTATION_FIELD_NUMBER;
@@ -7448,6 +7596,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       ignoreNull_ = false;
       dimension_ = "";
       threshold_ = 0D;
+      name_ = "";
+      description_ = "";
       ruleTypeCase_ = 0;
       ruleType_ = null;
       return this;
@@ -7498,6 +7648,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.threshold_ = threshold_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.description_ = description_;
       }
     }
 
@@ -7590,6 +7746,16 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       if (other.getThreshold() != 0D) {
         setThreshold(other.getThreshold());
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        bitField0_ |= 0x00002000;
+        onChanged();
       }
       switch (other.getRuleTypeCase()) {
         case RANGE_EXPECTATION:
@@ -7742,6 +7908,18 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000800;
                 break;
               } // case 4025
+            case 4034:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 4034
+            case 4042:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 4042
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7784,7 +7962,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value lies between a
+     * Row-level rule which evaluates whether each column value lies between a
      * specified range.
      * </pre>
      *
@@ -7801,7 +7979,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value lies between a
+     * Row-level rule which evaluates whether each column value lies between a
      * specified range.
      * </pre>
      *
@@ -7828,7 +8006,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value lies between a
+     * Row-level rule which evaluates whether each column value lies between a
      * specified range.
      * </pre>
      *
@@ -7853,7 +8031,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value lies between a
+     * Row-level rule which evaluates whether each column value lies between a
      * specified range.
      * </pre>
      *
@@ -7875,7 +8053,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value lies between a
+     * Row-level rule which evaluates whether each column value lies between a
      * specified range.
      * </pre>
      *
@@ -7912,7 +8090,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value lies between a
+     * Row-level rule which evaluates whether each column value lies between a
      * specified range.
      * </pre>
      *
@@ -7939,7 +8117,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value lies between a
+     * Row-level rule which evaluates whether each column value lies between a
      * specified range.
      * </pre>
      *
@@ -7954,7 +8132,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value lies between a
+     * Row-level rule which evaluates whether each column value lies between a
      * specified range.
      * </pre>
      *
@@ -7977,7 +8155,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value lies between a
+     * Row-level rule which evaluates whether each column value lies between a
      * specified range.
      * </pre>
      *
@@ -8018,7 +8196,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is null.
+     * Row-level rule which evaluates whether each column value is null.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -8034,7 +8212,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is null.
+     * Row-level rule which evaluates whether each column value is null.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -8060,7 +8238,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is null.
+     * Row-level rule which evaluates whether each column value is null.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -8084,7 +8262,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is null.
+     * Row-level rule which evaluates whether each column value is null.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -8105,7 +8283,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is null.
+     * Row-level rule which evaluates whether each column value is null.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -8141,7 +8319,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is null.
+     * Row-level rule which evaluates whether each column value is null.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -8167,7 +8345,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is null.
+     * Row-level rule which evaluates whether each column value is null.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -8181,7 +8359,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is null.
+     * Row-level rule which evaluates whether each column value is null.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -8203,7 +8381,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is null.
+     * Row-level rule which evaluates whether each column value is null.
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -8243,7 +8421,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is contained by
+     * Row-level rule which evaluates whether each column value is contained by
      * a specified set.
      * </pre>
      *
@@ -8259,7 +8437,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is contained by
+     * Row-level rule which evaluates whether each column value is contained by
      * a specified set.
      * </pre>
      *
@@ -8285,7 +8463,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is contained by
+     * Row-level rule which evaluates whether each column value is contained by
      * a specified set.
      * </pre>
      *
@@ -8309,7 +8487,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is contained by
+     * Row-level rule which evaluates whether each column value is contained by
      * a specified set.
      * </pre>
      *
@@ -8330,7 +8508,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is contained by
+     * Row-level rule which evaluates whether each column value is contained by
      * a specified set.
      * </pre>
      *
@@ -8366,7 +8544,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is contained by
+     * Row-level rule which evaluates whether each column value is contained by
      * a specified set.
      * </pre>
      *
@@ -8392,7 +8570,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is contained by
+     * Row-level rule which evaluates whether each column value is contained by
      * a specified set.
      * </pre>
      *
@@ -8406,7 +8584,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is contained by
+     * Row-level rule which evaluates whether each column value is contained by
      * a specified set.
      * </pre>
      *
@@ -8428,7 +8606,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value is contained by
+     * Row-level rule which evaluates whether each column value is contained by
      * a specified set.
      * </pre>
      *
@@ -8468,7 +8646,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value matches a
+     * Row-level rule which evaluates whether each column value matches a
      * specified regex.
      * </pre>
      *
@@ -8485,7 +8663,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value matches a
+     * Row-level rule which evaluates whether each column value matches a
      * specified regex.
      * </pre>
      *
@@ -8512,7 +8690,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value matches a
+     * Row-level rule which evaluates whether each column value matches a
      * specified regex.
      * </pre>
      *
@@ -8537,7 +8715,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value matches a
+     * Row-level rule which evaluates whether each column value matches a
      * specified regex.
      * </pre>
      *
@@ -8559,7 +8737,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value matches a
+     * Row-level rule which evaluates whether each column value matches a
      * specified regex.
      * </pre>
      *
@@ -8596,7 +8774,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value matches a
+     * Row-level rule which evaluates whether each column value matches a
      * specified regex.
      * </pre>
      *
@@ -8623,7 +8801,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value matches a
+     * Row-level rule which evaluates whether each column value matches a
      * specified regex.
      * </pre>
      *
@@ -8638,7 +8816,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value matches a
+     * Row-level rule which evaluates whether each column value matches a
      * specified regex.
      * </pre>
      *
@@ -8661,7 +8839,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnMap rule which evaluates whether each column value matches a
+     * Row-level rule which evaluates whether each column value matches a
      * specified regex.
      * </pre>
      *
@@ -8702,7 +8880,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column has duplicates.
+     * Row-level rule which evaluates whether each column value is unique.
      * </pre>
      *
      * <code>
@@ -8719,7 +8897,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column has duplicates.
+     * Row-level rule which evaluates whether each column value is unique.
      * </pre>
      *
      * <code>
@@ -8749,7 +8927,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column has duplicates.
+     * Row-level rule which evaluates whether each column value is unique.
      * </pre>
      *
      * <code>
@@ -8774,7 +8952,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column has duplicates.
+     * Row-level rule which evaluates whether each column value is unique.
      * </pre>
      *
      * <code>
@@ -8797,7 +8975,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column has duplicates.
+     * Row-level rule which evaluates whether each column value is unique.
      * </pre>
      *
      * <code>
@@ -8835,7 +9013,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column has duplicates.
+     * Row-level rule which evaluates whether each column value is unique.
      * </pre>
      *
      * <code>
@@ -8862,7 +9040,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column has duplicates.
+     * Row-level rule which evaluates whether each column value is unique.
      * </pre>
      *
      * <code>
@@ -8877,7 +9055,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column has duplicates.
+     * Row-level rule which evaluates whether each column value is unique.
      * </pre>
      *
      * <code>
@@ -8901,7 +9079,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column has duplicates.
+     * Row-level rule which evaluates whether each column value is unique.
      * </pre>
      *
      * <code>
@@ -8943,7 +9121,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column aggregate
+     * Aggregate rule which evaluates whether the column aggregate
      * statistic lies between a specified range.
      * </pre>
      *
@@ -8961,7 +9139,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column aggregate
+     * Aggregate rule which evaluates whether the column aggregate
      * statistic lies between a specified range.
      * </pre>
      *
@@ -8992,7 +9170,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column aggregate
+     * Aggregate rule which evaluates whether the column aggregate
      * statistic lies between a specified range.
      * </pre>
      *
@@ -9018,7 +9196,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column aggregate
+     * Aggregate rule which evaluates whether the column aggregate
      * statistic lies between a specified range.
      * </pre>
      *
@@ -9042,7 +9220,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column aggregate
+     * Aggregate rule which evaluates whether the column aggregate
      * statistic lies between a specified range.
      * </pre>
      *
@@ -9081,7 +9259,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column aggregate
+     * Aggregate rule which evaluates whether the column aggregate
      * statistic lies between a specified range.
      * </pre>
      *
@@ -9109,7 +9287,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column aggregate
+     * Aggregate rule which evaluates whether the column aggregate
      * statistic lies between a specified range.
      * </pre>
      *
@@ -9125,7 +9303,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column aggregate
+     * Aggregate rule which evaluates whether the column aggregate
      * statistic lies between a specified range.
      * </pre>
      *
@@ -9150,7 +9328,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ColumnAggregate rule which evaluates whether the column aggregate
+     * Aggregate rule which evaluates whether the column aggregate
      * statistic lies between a specified range.
      * </pre>
      *
@@ -9193,8 +9371,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether each row passes the specified
-     * condition.
+     * Row-level rule which evaluates whether each row in a table passes the
+     * specified condition.
      * </pre>
      *
      * <code>
@@ -9211,8 +9389,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether each row passes the specified
-     * condition.
+     * Row-level rule which evaluates whether each row in a table passes the
+     * specified condition.
      * </pre>
      *
      * <code>
@@ -9242,8 +9420,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether each row passes the specified
-     * condition.
+     * Row-level rule which evaluates whether each row in a table passes the
+     * specified condition.
      * </pre>
      *
      * <code>
@@ -9268,8 +9446,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether each row passes the specified
-     * condition.
+     * Row-level rule which evaluates whether each row in a table passes the
+     * specified condition.
      * </pre>
      *
      * <code>
@@ -9292,8 +9470,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether each row passes the specified
-     * condition.
+     * Row-level rule which evaluates whether each row in a table passes the
+     * specified condition.
      * </pre>
      *
      * <code>
@@ -9331,8 +9509,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether each row passes the specified
-     * condition.
+     * Row-level rule which evaluates whether each row in a table passes the
+     * specified condition.
      * </pre>
      *
      * <code>
@@ -9359,8 +9537,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether each row passes the specified
-     * condition.
+     * Row-level rule which evaluates whether each row in a table passes the
+     * specified condition.
      * </pre>
      *
      * <code>
@@ -9375,8 +9553,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether each row passes the specified
-     * condition.
+     * Row-level rule which evaluates whether each row in a table passes the
+     * specified condition.
      * </pre>
      *
      * <code>
@@ -9400,8 +9578,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether each row passes the specified
-     * condition.
+     * Row-level rule which evaluates whether each row in a table passes the
+     * specified condition.
      * </pre>
      *
      * <code>
@@ -9443,7 +9621,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether the provided expression is true.
+     * Aggregate rule which evaluates whether the provided expression is true
+     * for a table.
      * </pre>
      *
      * <code>
@@ -9460,7 +9639,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether the provided expression is true.
+     * Aggregate rule which evaluates whether the provided expression is true
+     * for a table.
      * </pre>
      *
      * <code>
@@ -9490,7 +9670,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether the provided expression is true.
+     * Aggregate rule which evaluates whether the provided expression is true
+     * for a table.
      * </pre>
      *
      * <code>
@@ -9515,7 +9696,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether the provided expression is true.
+     * Aggregate rule which evaluates whether the provided expression is true
+     * for a table.
      * </pre>
      *
      * <code>
@@ -9538,7 +9720,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether the provided expression is true.
+     * Aggregate rule which evaluates whether the provided expression is true
+     * for a table.
      * </pre>
      *
      * <code>
@@ -9576,7 +9759,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether the provided expression is true.
+     * Aggregate rule which evaluates whether the provided expression is true
+     * for a table.
      * </pre>
      *
      * <code>
@@ -9603,7 +9787,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether the provided expression is true.
+     * Aggregate rule which evaluates whether the provided expression is true
+     * for a table.
      * </pre>
      *
      * <code>
@@ -9618,7 +9803,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether the provided expression is true.
+     * Aggregate rule which evaluates whether the provided expression is true
+     * for a table.
      * </pre>
      *
      * <code>
@@ -9642,7 +9828,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Table rule which evaluates whether the provided expression is true.
+     * Aggregate rule which evaluates whether the provided expression is true
+     * for a table.
      * </pre>
      *
      * <code>
@@ -9789,7 +9976,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * Optional. Rows with `null` values will automatically fail a rule, unless
      * `ignore_null` is `true`. In that case, such `null` rows are trivially
      * considered passing.
-     * Only applicable to ColumnMap rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>bool ignore_null = 501 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9807,7 +9995,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * Optional. Rows with `null` values will automatically fail a rule, unless
      * `ignore_null` is `true`. In that case, such `null` rows are trivially
      * considered passing.
-     * Only applicable to ColumnMap rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>bool ignore_null = 501 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9829,7 +10018,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * Optional. Rows with `null` values will automatically fail a rule, unless
      * `ignore_null` is `true`. In that case, such `null` rows are trivially
      * considered passing.
-     * Only applicable to ColumnMap rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>bool ignore_null = 501 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9966,7 +10156,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The minimum ratio of **passing_rows / total_rows** required to
      * pass this rule, with a range of [0.0, 1.0].
+     *
      * 0 indicates default value (i.e. 1.0).
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>double threshold = 503 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9983,7 +10176,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The minimum ratio of **passing_rows / total_rows** required to
      * pass this rule, with a range of [0.0, 1.0].
+     *
      * 0 indicates default value (i.e. 1.0).
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>double threshold = 503 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10004,7 +10200,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The minimum ratio of **passing_rows / total_rows** required to
      * pass this rule, with a range of [0.0, 1.0].
+     *
      * 0 indicates default value (i.e. 1.0).
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>double threshold = 503 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10014,6 +10213,258 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public Builder clearThreshold() {
       bitField0_ = (bitField0_ & ~0x00000800);
       threshold_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A mutable name for the rule.
+     *
+     * * The name must contain only letters (a-z, A-Z), numbers (0-9), or
+     * hyphens (-).
+     * * The maximum length is 63 characters.
+     * * Must start with a letter.
+     * * Must end with a number or a letter.
+     * </pre>
+     *
+     * <code>string name = 504 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A mutable name for the rule.
+     *
+     * * The name must contain only letters (a-z, A-Z), numbers (0-9), or
+     * hyphens (-).
+     * * The maximum length is 63 characters.
+     * * Must start with a letter.
+     * * Must end with a number or a letter.
+     * </pre>
+     *
+     * <code>string name = 504 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A mutable name for the rule.
+     *
+     * * The name must contain only letters (a-z, A-Z), numbers (0-9), or
+     * hyphens (-).
+     * * The maximum length is 63 characters.
+     * * Must start with a letter.
+     * * Must end with a number or a letter.
+     * </pre>
+     *
+     * <code>string name = 504 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      name_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A mutable name for the rule.
+     *
+     * * The name must contain only letters (a-z, A-Z), numbers (0-9), or
+     * hyphens (-).
+     * * The maximum length is 63 characters.
+     * * Must start with a letter.
+     * * Must end with a number or a letter.
+     * </pre>
+     *
+     * <code>string name = 504 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A mutable name for the rule.
+     *
+     * * The name must contain only letters (a-z, A-Z), numbers (0-9), or
+     * hyphens (-).
+     * * The maximum length is 63 characters.
+     * * Must start with a letter.
+     * * Must end with a number or a letter.
+     * </pre>
+     *
+     * <code>string name = 504 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      name_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Description of the rule.
+     *
+     * * The maximum length is 1,024 characters.
+     * </pre>
+     *
+     * <code>string description = 505 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Description of the rule.
+     *
+     * * The maximum length is 1,024 characters.
+     * </pre>
+     *
+     * <code>string description = 505 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Description of the rule.
+     *
+     * * The maximum length is 1,024 characters.
+     * </pre>
+     *
+     * <code>string description = 505 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      description_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Description of the rule.
+     *
+     * * The maximum length is 1,024 characters.
+     * </pre>
+     *
+     * <code>string description = 505 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Description of the rule.
+     *
+     * * The maximum length is 1,024 characters.
+     * </pre>
+     *
+     * <code>string description = 505 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      description_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

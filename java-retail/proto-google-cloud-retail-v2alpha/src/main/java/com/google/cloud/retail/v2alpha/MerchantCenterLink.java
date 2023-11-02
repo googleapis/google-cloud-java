@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
 
   private MerchantCenterLink() {
     branchId_ = "";
-    destinations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    destinations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     regionCode_ = "";
     languageCode_ = "";
     feeds_ = java.util.Collections.emptyList();
@@ -51,11 +51,6 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MerchantCenterLink();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -105,6 +100,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
+   *
    * A single branch ID can only have one linked merchant center account ID.
    * </pre>
    *
@@ -132,6 +128,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
+   *
    * A single branch ID can only have one linked merchant center account ID.
    * </pre>
    *
@@ -155,7 +152,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
   public static final int DESTINATIONS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList destinations_;
+  private com.google.protobuf.LazyStringArrayList destinations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -252,6 +250,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    * [here](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
    * under the `region` tag. If left blank no region filtering will be
    * performed.
+   *
    * Example value: `US`.
    * </pre>
    *
@@ -280,6 +279,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    * [here](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
    * under the `region` tag. If left blank no region filtering will be
    * performed.
+   *
    * Example value: `US`.
    * </pre>
    *
@@ -311,8 +311,10 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    * Language of the title/description and other string attributes. Use language
    * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
    * ISO 639-1.
+   *
    * This specifies the language of offers in Merchant Center that will be
    * accepted. If  empty no language filtering will be performed.
+   *
    * Example value: `en`.
    * </pre>
    *
@@ -339,8 +341,10 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    * Language of the title/description and other string attributes. Use language
    * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
    * ISO 639-1.
+   *
    * This specifies the language of offers in Merchant Center that will be
    * accepted. If  empty no language filtering will be performed.
+   *
    * Example value: `en`.
    * </pre>
    *
@@ -699,8 +703,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       bitField0_ = 0;
       merchantCenterAccountId_ = 0L;
       branchId_ = "";
-      destinations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      destinations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       regionCode_ = "";
       languageCode_ = "";
       if (feedsBuilder_ == null) {
@@ -747,11 +750,6 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
 
     private void buildPartialRepeatedFields(
         com.google.cloud.retail.v2alpha.MerchantCenterLink result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        destinations_ = destinations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.destinations_ = destinations_;
       if (feedsBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           feeds_ = java.util.Collections.unmodifiableList(feeds_);
@@ -770,6 +768,10 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.branchId_ = branchId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        destinations_.makeImmutable();
+        result.destinations_ = destinations_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.regionCode_ = regionCode_;
@@ -836,7 +838,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       if (!other.destinations_.isEmpty()) {
         if (destinations_.isEmpty()) {
           destinations_ = other.destinations_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureDestinationsIsMutable();
           destinations_.addAll(other.destinations_);
@@ -1038,6 +1040,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
+     *
      * A single branch ID can only have one linked merchant center account ID.
      * </pre>
      *
@@ -1064,6 +1067,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
+     *
      * A single branch ID can only have one linked merchant center account ID.
      * </pre>
      *
@@ -1090,6 +1094,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
+     *
      * A single branch ID can only have one linked merchant center account ID.
      * </pre>
      *
@@ -1115,6 +1120,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
+     *
      * A single branch ID can only have one linked merchant center account ID.
      * </pre>
      *
@@ -1136,6 +1142,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
+     *
      * A single branch ID can only have one linked merchant center account ID.
      * </pre>
      *
@@ -1155,14 +1162,14 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.LazyStringList destinations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList destinations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDestinationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!destinations_.isModifiable()) {
         destinations_ = new com.google.protobuf.LazyStringArrayList(destinations_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1182,7 +1189,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * @return A list containing the destinations.
      */
     public com.google.protobuf.ProtocolStringList getDestinationsList() {
-      return destinations_.getUnmodifiableView();
+      destinations_.makeImmutable();
+      return destinations_;
     }
     /**
      *
@@ -1271,6 +1279,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       ensureDestinationsIsMutable();
       destinations_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1298,6 +1307,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       }
       ensureDestinationsIsMutable();
       destinations_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1322,6 +1332,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     public Builder addAllDestinations(java.lang.Iterable<java.lang.String> values) {
       ensureDestinationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destinations_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1343,8 +1354,9 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDestinations() {
-      destinations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      destinations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1373,6 +1385,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureDestinationsIsMutable();
       destinations_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1387,6 +1400,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * [here](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
      * under the `region` tag. If left blank no region filtering will be
      * performed.
+     *
      * Example value: `US`.
      * </pre>
      *
@@ -1414,6 +1428,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * [here](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
      * under the `region` tag. If left blank no region filtering will be
      * performed.
+     *
      * Example value: `US`.
      * </pre>
      *
@@ -1441,6 +1456,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * [here](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
      * under the `region` tag. If left blank no region filtering will be
      * performed.
+     *
      * Example value: `US`.
      * </pre>
      *
@@ -1467,6 +1483,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * [here](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
      * under the `region` tag. If left blank no region filtering will be
      * performed.
+     *
      * Example value: `US`.
      * </pre>
      *
@@ -1489,6 +1506,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * [here](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
      * under the `region` tag. If left blank no region filtering will be
      * performed.
+     *
      * Example value: `US`.
      * </pre>
      *
@@ -1516,8 +1534,10 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * Language of the title/description and other string attributes. Use language
      * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * ISO 639-1.
+     *
      * This specifies the language of offers in Merchant Center that will be
      * accepted. If  empty no language filtering will be performed.
+     *
      * Example value: `en`.
      * </pre>
      *
@@ -1543,8 +1563,10 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * Language of the title/description and other string attributes. Use language
      * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * ISO 639-1.
+     *
      * This specifies the language of offers in Merchant Center that will be
      * accepted. If  empty no language filtering will be performed.
+     *
      * Example value: `en`.
      * </pre>
      *
@@ -1570,8 +1592,10 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * Language of the title/description and other string attributes. Use language
      * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * ISO 639-1.
+     *
      * This specifies the language of offers in Merchant Center that will be
      * accepted. If  empty no language filtering will be performed.
+     *
      * Example value: `en`.
      * </pre>
      *
@@ -1596,8 +1620,10 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * Language of the title/description and other string attributes. Use language
      * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * ISO 639-1.
+     *
      * This specifies the language of offers in Merchant Center that will be
      * accepted. If  empty no language filtering will be performed.
+     *
      * Example value: `en`.
      * </pre>
      *
@@ -1618,8 +1644,10 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      * Language of the title/description and other string attributes. Use language
      * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * ISO 639-1.
+     *
      * This specifies the language of offers in Merchant Center that will be
      * accepted. If  empty no language filtering will be performed.
+     *
      * Example value: `en`.
      * </pre>
      *

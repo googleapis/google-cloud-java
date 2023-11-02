@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface ReportOrBuilder
    * Required. The report's resource name. Specifies the account and report used
    * to generate report data. The report_id identifier is a UID (for example,
    * `613bf59q`).
+   *
    * Name uses the format:
    * accounts/{account_id}/reports/{report_id}
    * </pre>
@@ -46,6 +47,7 @@ public interface ReportOrBuilder
    * Required. The report's resource name. Specifies the account and report used
    * to generate report data. The report_id identifier is a UID (for example,
    * `613bf59q`).
+   *
    * Name uses the format:
    * accounts/{account_id}/reports/{report_id}
    * </pre>

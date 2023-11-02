@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CustomCanaryDeployment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -190,6 +185,94 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      * @return The verify.
      */
     boolean getVerify();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the predeploy job of this phase. If this is
+     * not configured, there will be no predeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the predeploy field is set.
+     */
+    boolean hasPredeploy();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the predeploy job of this phase. If this is
+     * not configured, there will be no predeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The predeploy.
+     */
+    com.google.cloud.deploy.v1.Predeploy getPredeploy();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the predeploy job of this phase. If this is
+     * not configured, there will be no predeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.deploy.v1.PredeployOrBuilder getPredeployOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the postdeploy job of this phase. If this is
+     * not configured, there will be no postdeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the postdeploy field is set.
+     */
+    boolean hasPostdeploy();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the postdeploy job of this phase. If this is
+     * not configured, there will be no postdeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The postdeploy.
+     */
+    com.google.cloud.deploy.v1.Postdeploy getPostdeploy();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the postdeploy job of this phase. If this is
+     * not configured, there will be no postdeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.deploy.v1.PostdeployOrBuilder getPostdeployOrBuilder();
   }
   /**
    *
@@ -213,18 +296,13 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
 
     private PhaseConfig() {
       phaseId_ = "";
-      profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      profiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PhaseConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -322,7 +400,8 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
     public static final int PROFILES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList profiles_;
+    private com.google.protobuf.LazyStringArrayList profiles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -408,6 +487,124 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       return verify_;
     }
 
+    public static final int PREDEPLOY_FIELD_NUMBER = 5;
+    private com.google.cloud.deploy.v1.Predeploy predeploy_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the predeploy job of this phase. If this is
+     * not configured, there will be no predeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the predeploy field is set.
+     */
+    @java.lang.Override
+    public boolean hasPredeploy() {
+      return predeploy_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the predeploy job of this phase. If this is
+     * not configured, there will be no predeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The predeploy.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Predeploy getPredeploy() {
+      return predeploy_ == null
+          ? com.google.cloud.deploy.v1.Predeploy.getDefaultInstance()
+          : predeploy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the predeploy job of this phase. If this is
+     * not configured, there will be no predeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.PredeployOrBuilder getPredeployOrBuilder() {
+      return predeploy_ == null
+          ? com.google.cloud.deploy.v1.Predeploy.getDefaultInstance()
+          : predeploy_;
+    }
+
+    public static final int POSTDEPLOY_FIELD_NUMBER = 6;
+    private com.google.cloud.deploy.v1.Postdeploy postdeploy_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the postdeploy job of this phase. If this is
+     * not configured, there will be no postdeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the postdeploy field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostdeploy() {
+      return postdeploy_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the postdeploy job of this phase. If this is
+     * not configured, there will be no postdeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The postdeploy.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Postdeploy getPostdeploy() {
+      return postdeploy_ == null
+          ? com.google.cloud.deploy.v1.Postdeploy.getDefaultInstance()
+          : postdeploy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the postdeploy job of this phase. If this is
+     * not configured, there will be no postdeploy job for this phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.PostdeployOrBuilder getPostdeployOrBuilder() {
+      return postdeploy_ == null
+          ? com.google.cloud.deploy.v1.Postdeploy.getDefaultInstance()
+          : postdeploy_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -433,6 +630,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
       if (verify_ != false) {
         output.writeBool(4, verify_);
+      }
+      if (predeploy_ != null) {
+        output.writeMessage(5, getPredeploy());
+      }
+      if (postdeploy_ != null) {
+        output.writeMessage(6, getPostdeploy());
       }
       getUnknownFields().writeTo(output);
     }
@@ -460,6 +663,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       if (verify_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, verify_);
       }
+      if (predeploy_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPredeploy());
+      }
+      if (postdeploy_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPostdeploy());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -480,6 +689,14 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       if (getPercentage() != other.getPercentage()) return false;
       if (!getProfilesList().equals(other.getProfilesList())) return false;
       if (getVerify() != other.getVerify()) return false;
+      if (hasPredeploy() != other.hasPredeploy()) return false;
+      if (hasPredeploy()) {
+        if (!getPredeploy().equals(other.getPredeploy())) return false;
+      }
+      if (hasPostdeploy() != other.hasPostdeploy()) return false;
+      if (hasPostdeploy()) {
+        if (!getPostdeploy().equals(other.getPostdeploy())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -501,6 +718,14 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       }
       hash = (37 * hash) + VERIFY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVerify());
+      if (hasPredeploy()) {
+        hash = (37 * hash) + PREDEPLOY_FIELD_NUMBER;
+        hash = (53 * hash) + getPredeploy().hashCode();
+      }
+      if (hasPostdeploy()) {
+        hash = (37 * hash) + POSTDEPLOY_FIELD_NUMBER;
+        hash = (53 * hash) + getPostdeploy().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -646,9 +871,18 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         bitField0_ = 0;
         phaseId_ = "";
         percentage_ = 0;
-        profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        profiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
         verify_ = false;
+        predeploy_ = null;
+        if (predeployBuilder_ != null) {
+          predeployBuilder_.dispose();
+          predeployBuilder_ = null;
+        }
+        postdeploy_ = null;
+        if (postdeployBuilder_ != null) {
+          postdeployBuilder_.dispose();
+          postdeployBuilder_ = null;
+        }
         return this;
       }
 
@@ -677,21 +911,11 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       public com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig buildPartial() {
         com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig result =
             new com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
-          profiles_ = profiles_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.profiles_ = profiles_;
       }
 
       private void buildPartial0(
@@ -703,8 +927,19 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.percentage_ = percentage_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          profiles_.makeImmutable();
+          result.profiles_ = profiles_;
+        }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.verify_ = verify_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.predeploy_ = predeployBuilder_ == null ? predeploy_ : predeployBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.postdeploy_ =
+              postdeployBuilder_ == null ? postdeploy_ : postdeployBuilder_.build();
         }
       }
 
@@ -769,7 +1004,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         if (!other.profiles_.isEmpty()) {
           if (profiles_.isEmpty()) {
             profiles_ = other.profiles_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureProfilesIsMutable();
             profiles_.addAll(other.profiles_);
@@ -778,6 +1013,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         }
         if (other.getVerify() != false) {
           setVerify(other.getVerify());
+        }
+        if (other.hasPredeploy()) {
+          mergePredeploy(other.getPredeploy());
+        }
+        if (other.hasPostdeploy()) {
+          mergePostdeploy(other.getPostdeploy());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -830,6 +1071,18 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 32
+              case 42:
+                {
+                  input.readMessage(getPredeployFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(getPostdeployFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1028,14 +1281,14 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         return this;
       }
 
-      private com.google.protobuf.LazyStringList profiles_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList profiles_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureProfilesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!profiles_.isModifiable()) {
           profiles_ = new com.google.protobuf.LazyStringArrayList(profiles_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -1051,7 +1304,8 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        * @return A list containing the profiles.
        */
       public com.google.protobuf.ProtocolStringList getProfilesList() {
-        return profiles_.getUnmodifiableView();
+        profiles_.makeImmutable();
+        return profiles_;
       }
       /**
        *
@@ -1124,6 +1378,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         }
         ensureProfilesIsMutable();
         profiles_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1147,6 +1402,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         }
         ensureProfilesIsMutable();
         profiles_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1167,6 +1423,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       public Builder addAllProfiles(java.lang.Iterable<java.lang.String> values) {
         ensureProfilesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, profiles_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1184,8 +1441,9 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearProfiles() {
-        profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        profiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -1210,6 +1468,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         checkByteStringIsUtf8(value);
         ensureProfilesIsMutable();
         profiles_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1265,6 +1524,426 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         verify_ = false;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.deploy.v1.Predeploy predeploy_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.Predeploy,
+              com.google.cloud.deploy.v1.Predeploy.Builder,
+              com.google.cloud.deploy.v1.PredeployOrBuilder>
+          predeployBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the predeploy job of this phase. If this is
+       * not configured, there will be no predeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the predeploy field is set.
+       */
+      public boolean hasPredeploy() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the predeploy job of this phase. If this is
+       * not configured, there will be no predeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The predeploy.
+       */
+      public com.google.cloud.deploy.v1.Predeploy getPredeploy() {
+        if (predeployBuilder_ == null) {
+          return predeploy_ == null
+              ? com.google.cloud.deploy.v1.Predeploy.getDefaultInstance()
+              : predeploy_;
+        } else {
+          return predeployBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the predeploy job of this phase. If this is
+       * not configured, there will be no predeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPredeploy(com.google.cloud.deploy.v1.Predeploy value) {
+        if (predeployBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          predeploy_ = value;
+        } else {
+          predeployBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the predeploy job of this phase. If this is
+       * not configured, there will be no predeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPredeploy(com.google.cloud.deploy.v1.Predeploy.Builder builderForValue) {
+        if (predeployBuilder_ == null) {
+          predeploy_ = builderForValue.build();
+        } else {
+          predeployBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the predeploy job of this phase. If this is
+       * not configured, there will be no predeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergePredeploy(com.google.cloud.deploy.v1.Predeploy value) {
+        if (predeployBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && predeploy_ != null
+              && predeploy_ != com.google.cloud.deploy.v1.Predeploy.getDefaultInstance()) {
+            getPredeployBuilder().mergeFrom(value);
+          } else {
+            predeploy_ = value;
+          }
+        } else {
+          predeployBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the predeploy job of this phase. If this is
+       * not configured, there will be no predeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearPredeploy() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        predeploy_ = null;
+        if (predeployBuilder_ != null) {
+          predeployBuilder_.dispose();
+          predeployBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the predeploy job of this phase. If this is
+       * not configured, there will be no predeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.Predeploy.Builder getPredeployBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getPredeployFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the predeploy job of this phase. If this is
+       * not configured, there will be no predeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.PredeployOrBuilder getPredeployOrBuilder() {
+        if (predeployBuilder_ != null) {
+          return predeployBuilder_.getMessageOrBuilder();
+        } else {
+          return predeploy_ == null
+              ? com.google.cloud.deploy.v1.Predeploy.getDefaultInstance()
+              : predeploy_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the predeploy job of this phase. If this is
+       * not configured, there will be no predeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Predeploy predeploy = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.Predeploy,
+              com.google.cloud.deploy.v1.Predeploy.Builder,
+              com.google.cloud.deploy.v1.PredeployOrBuilder>
+          getPredeployFieldBuilder() {
+        if (predeployBuilder_ == null) {
+          predeployBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.deploy.v1.Predeploy,
+                  com.google.cloud.deploy.v1.Predeploy.Builder,
+                  com.google.cloud.deploy.v1.PredeployOrBuilder>(
+                  getPredeploy(), getParentForChildren(), isClean());
+          predeploy_ = null;
+        }
+        return predeployBuilder_;
+      }
+
+      private com.google.cloud.deploy.v1.Postdeploy postdeploy_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.Postdeploy,
+              com.google.cloud.deploy.v1.Postdeploy.Builder,
+              com.google.cloud.deploy.v1.PostdeployOrBuilder>
+          postdeployBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the postdeploy job of this phase. If this is
+       * not configured, there will be no postdeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the postdeploy field is set.
+       */
+      public boolean hasPostdeploy() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the postdeploy job of this phase. If this is
+       * not configured, there will be no postdeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The postdeploy.
+       */
+      public com.google.cloud.deploy.v1.Postdeploy getPostdeploy() {
+        if (postdeployBuilder_ == null) {
+          return postdeploy_ == null
+              ? com.google.cloud.deploy.v1.Postdeploy.getDefaultInstance()
+              : postdeploy_;
+        } else {
+          return postdeployBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the postdeploy job of this phase. If this is
+       * not configured, there will be no postdeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPostdeploy(com.google.cloud.deploy.v1.Postdeploy value) {
+        if (postdeployBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postdeploy_ = value;
+        } else {
+          postdeployBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the postdeploy job of this phase. If this is
+       * not configured, there will be no postdeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPostdeploy(com.google.cloud.deploy.v1.Postdeploy.Builder builderForValue) {
+        if (postdeployBuilder_ == null) {
+          postdeploy_ = builderForValue.build();
+        } else {
+          postdeployBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the postdeploy job of this phase. If this is
+       * not configured, there will be no postdeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergePostdeploy(com.google.cloud.deploy.v1.Postdeploy value) {
+        if (postdeployBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && postdeploy_ != null
+              && postdeploy_ != com.google.cloud.deploy.v1.Postdeploy.getDefaultInstance()) {
+            getPostdeployBuilder().mergeFrom(value);
+          } else {
+            postdeploy_ = value;
+          }
+        } else {
+          postdeployBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the postdeploy job of this phase. If this is
+       * not configured, there will be no postdeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearPostdeploy() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        postdeploy_ = null;
+        if (postdeployBuilder_ != null) {
+          postdeployBuilder_.dispose();
+          postdeployBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the postdeploy job of this phase. If this is
+       * not configured, there will be no postdeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.Postdeploy.Builder getPostdeployBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getPostdeployFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the postdeploy job of this phase. If this is
+       * not configured, there will be no postdeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.PostdeployOrBuilder getPostdeployOrBuilder() {
+        if (postdeployBuilder_ != null) {
+          return postdeployBuilder_.getMessageOrBuilder();
+        } else {
+          return postdeploy_ == null
+              ? com.google.cloud.deploy.v1.Postdeploy.getDefaultInstance()
+              : postdeploy_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for the postdeploy job of this phase. If this is
+       * not configured, there will be no postdeploy job for this phase.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Postdeploy postdeploy = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.Postdeploy,
+              com.google.cloud.deploy.v1.Postdeploy.Builder,
+              com.google.cloud.deploy.v1.PostdeployOrBuilder>
+          getPostdeployFieldBuilder() {
+        if (postdeployBuilder_ == null) {
+          postdeployBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.deploy.v1.Postdeploy,
+                  com.google.cloud.deploy.v1.Postdeploy.Builder,
+                  com.google.cloud.deploy.v1.PostdeployOrBuilder>(
+                  getPostdeploy(), getParentForChildren(), isClean());
+          postdeploy_ = null;
+        }
+        return postdeployBuilder_;
       }
 
       @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListActiveBreakpointsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -185,6 +180,7 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
    * If set to `true` (recommended), returns `google.rpc.Code.OK` status and
    * sets the `wait_expired` response field to `true` when the server-selected
    * timeout has expired.
+   *
    * If set to `false` (deprecated), returns `google.rpc.Code.ABORTED` status
    * when the server-selected timeout has expired.
    * </pre>
@@ -828,6 +824,7 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
      * If set to `true` (recommended), returns `google.rpc.Code.OK` status and
      * sets the `wait_expired` response field to `true` when the server-selected
      * timeout has expired.
+     *
      * If set to `false` (deprecated), returns `google.rpc.Code.ABORTED` status
      * when the server-selected timeout has expired.
      * </pre>
@@ -847,6 +844,7 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
      * If set to `true` (recommended), returns `google.rpc.Code.OK` status and
      * sets the `wait_expired` response field to `true` when the server-selected
      * timeout has expired.
+     *
      * If set to `false` (deprecated), returns `google.rpc.Code.ABORTED` status
      * when the server-selected timeout has expired.
      * </pre>
@@ -870,6 +868,7 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
      * If set to `true` (recommended), returns `google.rpc.Code.OK` status and
      * sets the `wait_expired` response field to `true` when the server-selected
      * timeout has expired.
+     *
      * If set to `false` (deprecated), returns `google.rpc.Code.ABORTED` status
      * when the server-selected timeout has expired.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
     return new AutoscalingConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_AutoscalingConfig_descriptor;
@@ -76,10 +71,13 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The autoscaling policy used by the cluster.
+   *
    * Only resource names including projectid and location (region) are valid.
    * Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
    * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
+   *
    * Note that the policy must be in the same project and Dataproc region.
    * </pre>
    *
@@ -104,10 +102,13 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The autoscaling policy used by the cluster.
+   *
    * Only resource names including projectid and location (region) are valid.
    * Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
    * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
+   *
    * Note that the policy must be in the same project and Dataproc region.
    * </pre>
    *
@@ -475,10 +476,13 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The autoscaling policy used by the cluster.
+     *
      * Only resource names including projectid and location (region) are valid.
      * Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
      * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
+     *
      * Note that the policy must be in the same project and Dataproc region.
      * </pre>
      *
@@ -502,10 +506,13 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The autoscaling policy used by the cluster.
+     *
      * Only resource names including projectid and location (region) are valid.
      * Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
      * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
+     *
      * Note that the policy must be in the same project and Dataproc region.
      * </pre>
      *
@@ -529,10 +536,13 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The autoscaling policy used by the cluster.
+     *
      * Only resource names including projectid and location (region) are valid.
      * Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
      * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
+     *
      * Note that the policy must be in the same project and Dataproc region.
      * </pre>
      *
@@ -555,10 +565,13 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The autoscaling policy used by the cluster.
+     *
      * Only resource names including projectid and location (region) are valid.
      * Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
      * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
+     *
      * Note that the policy must be in the same project and Dataproc region.
      * </pre>
      *
@@ -577,10 +590,13 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The autoscaling policy used by the cluster.
+     *
      * Only resource names including projectid and location (region) are valid.
      * Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
      * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
+     *
      * Note that the policy must be in the same project and Dataproc region.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,6 +116,5 @@ public interface SignatureInfoOrBuilder
    */
   com.google.protobuf.ByteString getCustomerKmsKeyVersionBytes();
 
-  public com.google.cloud.accessapproval.v1.SignatureInfo.VerificationInfoCase
-      getVerificationInfoCase();
+  com.google.cloud.accessapproval.v1.SignatureInfo.VerificationInfoCase getVerificationInfoCase();
 }

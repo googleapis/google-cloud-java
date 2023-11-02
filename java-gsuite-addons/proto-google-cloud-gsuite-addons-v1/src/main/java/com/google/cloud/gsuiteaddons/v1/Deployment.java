@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
 
   private Deployment() {
     name_ = "";
-    oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     etag_ = "";
   }
 
@@ -47,11 +47,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Deployment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -125,7 +120,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   public static final int OAUTH_SCOPES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList oauthScopes_;
+  private com.google.protobuf.LazyStringArrayList oauthScopes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -528,8 +524,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       addOns_ = null;
       if (addOnsBuilder_ != null) {
         addOnsBuilder_.dispose();
@@ -563,7 +558,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gsuiteaddons.v1.Deployment buildPartial() {
       com.google.cloud.gsuiteaddons.v1.Deployment result =
           new com.google.cloud.gsuiteaddons.v1.Deployment(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -571,18 +565,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.gsuiteaddons.v1.Deployment result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        oauthScopes_ = oauthScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.oauthScopes_ = oauthScopes_;
-    }
-
     private void buildPartial0(com.google.cloud.gsuiteaddons.v1.Deployment result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        oauthScopes_.makeImmutable();
+        result.oauthScopes_ = oauthScopes_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.addOns_ = addOnsBuilder_ == null ? addOns_ : addOnsBuilder_.build();
@@ -645,7 +635,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (!other.oauthScopes_.isEmpty()) {
         if (oauthScopes_.isEmpty()) {
           oauthScopes_ = other.oauthScopes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureOauthScopesIsMutable();
           oauthScopes_.addAll(other.oauthScopes_);
@@ -841,14 +831,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList oauthScopes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList oauthScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureOauthScopesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!oauthScopes_.isModifiable()) {
         oauthScopes_ = new com.google.protobuf.LazyStringArrayList(oauthScopes_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -863,7 +853,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the oauthScopes.
      */
     public com.google.protobuf.ProtocolStringList getOauthScopesList() {
-      return oauthScopes_.getUnmodifiableView();
+      oauthScopes_.makeImmutable();
+      return oauthScopes_;
     }
     /**
      *
@@ -932,6 +923,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       }
       ensureOauthScopesIsMutable();
       oauthScopes_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -954,6 +946,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       }
       ensureOauthScopesIsMutable();
       oauthScopes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -973,6 +966,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllOauthScopes(java.lang.Iterable<java.lang.String> values) {
       ensureOauthScopesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, oauthScopes_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -989,8 +983,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOauthScopes() {
-      oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1014,6 +1009,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureOauthScopesIsMutable();
       oauthScopes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

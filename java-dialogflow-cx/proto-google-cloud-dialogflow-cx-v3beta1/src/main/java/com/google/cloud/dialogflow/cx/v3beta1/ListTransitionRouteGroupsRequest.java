@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
     return new ListTransitionRouteGroupsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_ListTransitionRouteGroupsRequest_descriptor;
@@ -81,7 +76,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
    * <pre>
    * Required. The flow to list all transition route groups for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
    * </pre>
    *
    * <code>
@@ -108,7 +104,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
    * <pre>
    * Required. The flow to list all transition route groups for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
    * </pre>
    *
    * <code>
@@ -210,9 +207,11 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
    * <pre>
    * The language to list transition route groups for. The following fields are
    * language dependent:
+   *
    * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
    * *
    * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -242,9 +241,11 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
    * <pre>
    * The language to list transition route groups for. The following fields are
    * language dependent:
+   *
    * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
    * *
    * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -701,7 +702,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * Required. The flow to list all transition route groups for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
      * </pre>
      *
      * <code>
@@ -727,7 +729,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * Required. The flow to list all transition route groups for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
      * </pre>
      *
      * <code>
@@ -753,7 +756,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * Required. The flow to list all transition route groups for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
      * </pre>
      *
      * <code>
@@ -778,7 +782,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * Required. The flow to list all transition route groups for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
      * </pre>
      *
      * <code>
@@ -799,7 +804,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * Required. The flow to list all transition route groups for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
      * </pre>
      *
      * <code>
@@ -989,9 +995,11 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * The language to list transition route groups for. The following fields are
      * language dependent:
+     *
      * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
      * *
      * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -1020,9 +1028,11 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * The language to list transition route groups for. The following fields are
      * language dependent:
+     *
      * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
      * *
      * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -1051,9 +1061,11 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * The language to list transition route groups for. The following fields are
      * language dependent:
+     *
      * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
      * *
      * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -1081,9 +1093,11 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * The language to list transition route groups for. The following fields are
      * language dependent:
+     *
      * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
      * *
      * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -1107,9 +1121,11 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * The language to list transition route groups for. The following fields are
      * language dependent:
+     *
      * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
      * *
      * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    *
    * <pre>
    * The `OSPolicyAssignmentReport` API resource name.
+   *
    * Format:
    * `projects/{project_number}/locations/{location}/instances/{instance_id}/osPolicyAssignments/{os_policy_assignment_id}/report`
    * </pre>
@@ -42,6 +43,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    *
    * <pre>
    * The `OSPolicyAssignmentReport` API resource name.
+   *
    * Format:
    * `projects/{project_number}/locations/{location}/instances/{instance_id}/osPolicyAssignments/{os_policy_assignment_id}/report`
    * </pre>
@@ -83,6 +85,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    * <pre>
    * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
    * belongs to.
+   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
    * </pre>
@@ -98,6 +101,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    * <pre>
    * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
    * belongs to.
+   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
    * </pre>
@@ -217,6 +221,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    * <pre>
    * Unique identifier of the last attempted run to apply the OS policies
    * associated with this assignment on the VM.
+   *
    * This ID is logged by the OS Config agent while applying the OS
    * policies associated with this assignment on the VM.
    * NOTE: If the service is unable to successfully connect to the agent for
@@ -234,6 +239,7 @@ public interface OSPolicyAssignmentReportOrBuilder
    * <pre>
    * Unique identifier of the last attempted run to apply the OS policies
    * associated with this assignment on the VM.
+   *
    * This ID is logged by the OS Config agent while applying the OS
    * policies associated with this assignment on the VM.
    * NOTE: If the service is unable to successfully connect to the agent for

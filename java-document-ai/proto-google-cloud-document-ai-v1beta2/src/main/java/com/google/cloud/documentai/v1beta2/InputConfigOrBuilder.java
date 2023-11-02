@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,7 @@ public interface InputConfigOrBuilder
    * Content in bytes, represented as a stream of bytes.
    * Note: As with all `bytes` fields, proto buffer messages use a pure binary
    * representation, whereas JSON representations use base64.
+   *
    * This field only works for synchronous ProcessDocument method.
    * </pre>
    *
@@ -83,6 +84,7 @@ public interface InputConfigOrBuilder
    * Content in bytes, represented as a stream of bytes.
    * Note: As with all `bytes` fields, proto buffer messages use a pure binary
    * representation, whereas JSON representations use base64.
+   *
    * This field only works for synchronous ProcessDocument method.
    * </pre>
    *
@@ -96,11 +98,12 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Mimetype of the input. Current supported mimetypes are application/pdf,
-   * image/tiff, and image/gif.
-   * In addition, application/json type is supported for requests with
-   * [ProcessDocumentRequest.automl_params][google.cloud.documentai.v1beta2.ProcessDocumentRequest.automl_params] field set. The JSON file needs to
-   * be in [Document][google.cloud.documentai.v1beta2.Document] format.
+   * Required. Mimetype of the input. Current supported mimetypes are
+   * application/pdf, image/tiff, and image/gif. In addition, application/json
+   * type is supported for requests with
+   * [ProcessDocumentRequest.automl_params][google.cloud.documentai.v1beta2.ProcessDocumentRequest.automl_params]
+   * field set. The JSON file needs to be in
+   * [Document][google.cloud.documentai.v1beta2.Document] format.
    * </pre>
    *
    * <code>string mime_type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -112,11 +115,12 @@ public interface InputConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Mimetype of the input. Current supported mimetypes are application/pdf,
-   * image/tiff, and image/gif.
-   * In addition, application/json type is supported for requests with
-   * [ProcessDocumentRequest.automl_params][google.cloud.documentai.v1beta2.ProcessDocumentRequest.automl_params] field set. The JSON file needs to
-   * be in [Document][google.cloud.documentai.v1beta2.Document] format.
+   * Required. Mimetype of the input. Current supported mimetypes are
+   * application/pdf, image/tiff, and image/gif. In addition, application/json
+   * type is supported for requests with
+   * [ProcessDocumentRequest.automl_params][google.cloud.documentai.v1beta2.ProcessDocumentRequest.automl_params]
+   * field set. The JSON file needs to be in
+   * [Document][google.cloud.documentai.v1beta2.Document] format.
    * </pre>
    *
    * <code>string mime_type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -125,5 +129,5 @@ public interface InputConfigOrBuilder
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
-  public com.google.cloud.documentai.v1beta2.InputConfig.SourceCase getSourceCase();
+  com.google.cloud.documentai.v1beta2.InputConfig.SourceCase getSourceCase();
 }

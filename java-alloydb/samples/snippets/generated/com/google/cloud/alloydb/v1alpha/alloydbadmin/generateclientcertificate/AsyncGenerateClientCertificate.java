@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ public class AsyncGenerateClientCertificate {
               .setRequestId("requestId693933066")
               .setPemCsr("pemCsr-991911478")
               .setCertDuration(Duration.newBuilder().build())
+              .setPublicKey("publicKey1446899510")
+              .setUseMetadataExchange(true)
               .build();
       ApiFuture<GenerateClientCertificateResponse> future =
           alloyDBAdminClient.generateClientCertificateCallable().futureCall(request);

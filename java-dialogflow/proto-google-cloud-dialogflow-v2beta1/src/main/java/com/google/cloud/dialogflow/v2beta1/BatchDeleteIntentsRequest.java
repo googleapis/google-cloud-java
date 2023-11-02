@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
     return new BatchDeleteIntentsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.IntentProto
         .internal_static_google_cloud_dialogflow_v2beta1_BatchDeleteIntentsRequest_descriptor;
@@ -79,6 +74,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The name of the agent to delete all entities types for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
@@ -107,6 +103,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The name of the agent to delete all entities types for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
@@ -642,6 +639,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The name of the agent to delete all entities types for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
@@ -669,6 +667,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The name of the agent to delete all entities types for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
@@ -696,6 +695,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The name of the agent to delete all entities types for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
@@ -722,6 +722,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The name of the agent to delete all entities types for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
@@ -744,6 +745,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The name of the agent to delete all entities types for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>

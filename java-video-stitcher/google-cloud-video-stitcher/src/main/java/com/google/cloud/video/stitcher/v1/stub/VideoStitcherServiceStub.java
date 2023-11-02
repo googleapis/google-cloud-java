@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,21 +18,26 @@ package com.google.cloud.video.stitcher.v1.stub;
 
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListCdnKeysPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListLiveAdTagDetailsPagedResponse;
+import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListLiveConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListSlatesPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodAdTagDetailsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodStitchDetailsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.video.stitcher.v1.CdnKey;
 import com.google.cloud.video.stitcher.v1.CreateCdnKeyRequest;
+import com.google.cloud.video.stitcher.v1.CreateLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest;
 import com.google.cloud.video.stitcher.v1.CreateSlateRequest;
 import com.google.cloud.video.stitcher.v1.CreateVodSessionRequest;
 import com.google.cloud.video.stitcher.v1.DeleteCdnKeyRequest;
+import com.google.cloud.video.stitcher.v1.DeleteLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.DeleteSlateRequest;
 import com.google.cloud.video.stitcher.v1.GetCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveAdTagDetailRequest;
+import com.google.cloud.video.stitcher.v1.GetLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveSessionRequest;
 import com.google.cloud.video.stitcher.v1.GetSlateRequest;
 import com.google.cloud.video.stitcher.v1.GetVodAdTagDetailRequest;
@@ -42,6 +47,8 @@ import com.google.cloud.video.stitcher.v1.ListCdnKeysRequest;
 import com.google.cloud.video.stitcher.v1.ListCdnKeysResponse;
 import com.google.cloud.video.stitcher.v1.ListLiveAdTagDetailsRequest;
 import com.google.cloud.video.stitcher.v1.ListLiveAdTagDetailsResponse;
+import com.google.cloud.video.stitcher.v1.ListLiveConfigsRequest;
+import com.google.cloud.video.stitcher.v1.ListLiveConfigsResponse;
 import com.google.cloud.video.stitcher.v1.ListSlatesRequest;
 import com.google.cloud.video.stitcher.v1.ListSlatesResponse;
 import com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsRequest;
@@ -49,13 +56,17 @@ import com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsResponse;
 import com.google.cloud.video.stitcher.v1.ListVodStitchDetailsRequest;
 import com.google.cloud.video.stitcher.v1.ListVodStitchDetailsResponse;
 import com.google.cloud.video.stitcher.v1.LiveAdTagDetail;
+import com.google.cloud.video.stitcher.v1.LiveConfig;
 import com.google.cloud.video.stitcher.v1.LiveSession;
+import com.google.cloud.video.stitcher.v1.OperationMetadata;
 import com.google.cloud.video.stitcher.v1.Slate;
 import com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.UpdateSlateRequest;
 import com.google.cloud.video.stitcher.v1.VodAdTagDetail;
 import com.google.cloud.video.stitcher.v1.VodSession;
 import com.google.cloud.video.stitcher.v1.VodStitchDetail;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -68,7 +79,16 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class VideoStitcherServiceStub implements BackgroundResource {
 
-  public UnaryCallable<CreateCdnKeyRequest, CdnKey> createCdnKeyCallable() {
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
+
+  public OperationCallable<CreateCdnKeyRequest, CdnKey, OperationMetadata>
+      createCdnKeyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCdnKeyOperationCallable()");
+  }
+
+  public UnaryCallable<CreateCdnKeyRequest, Operation> createCdnKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: createCdnKeyCallable()");
   }
 
@@ -84,11 +104,21 @@ public abstract class VideoStitcherServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getCdnKeyCallable()");
   }
 
-  public UnaryCallable<DeleteCdnKeyRequest, Empty> deleteCdnKeyCallable() {
+  public OperationCallable<DeleteCdnKeyRequest, Empty, OperationMetadata>
+      deleteCdnKeyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCdnKeyOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteCdnKeyRequest, Operation> deleteCdnKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteCdnKeyCallable()");
   }
 
-  public UnaryCallable<UpdateCdnKeyRequest, CdnKey> updateCdnKeyCallable() {
+  public OperationCallable<UpdateCdnKeyRequest, CdnKey, OperationMetadata>
+      updateCdnKeyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCdnKeyOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateCdnKeyRequest, Operation> updateCdnKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: updateCdnKeyCallable()");
   }
 
@@ -142,7 +172,12 @@ public abstract class VideoStitcherServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getLiveAdTagDetailCallable()");
   }
 
-  public UnaryCallable<CreateSlateRequest, Slate> createSlateCallable() {
+  public OperationCallable<CreateSlateRequest, Slate, OperationMetadata>
+      createSlateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSlateOperationCallable()");
+  }
+
+  public UnaryCallable<CreateSlateRequest, Operation> createSlateCallable() {
     throw new UnsupportedOperationException("Not implemented: createSlateCallable()");
   }
 
@@ -158,11 +193,21 @@ public abstract class VideoStitcherServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getSlateCallable()");
   }
 
-  public UnaryCallable<UpdateSlateRequest, Slate> updateSlateCallable() {
+  public OperationCallable<UpdateSlateRequest, Slate, OperationMetadata>
+      updateSlateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSlateOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateSlateRequest, Operation> updateSlateCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSlateCallable()");
   }
 
-  public UnaryCallable<DeleteSlateRequest, Empty> deleteSlateCallable() {
+  public OperationCallable<DeleteSlateRequest, Empty, OperationMetadata>
+      deleteSlateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSlateOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteSlateRequest, Operation> deleteSlateCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSlateCallable()");
   }
 
@@ -172,6 +217,37 @@ public abstract class VideoStitcherServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetLiveSessionRequest, LiveSession> getLiveSessionCallable() {
     throw new UnsupportedOperationException("Not implemented: getLiveSessionCallable()");
+  }
+
+  public OperationCallable<CreateLiveConfigRequest, LiveConfig, OperationMetadata>
+      createLiveConfigOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createLiveConfigOperationCallable()");
+  }
+
+  public UnaryCallable<CreateLiveConfigRequest, Operation> createLiveConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: createLiveConfigCallable()");
+  }
+
+  public UnaryCallable<ListLiveConfigsRequest, ListLiveConfigsPagedResponse>
+      listLiveConfigsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLiveConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLiveConfigsRequest, ListLiveConfigsResponse> listLiveConfigsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLiveConfigsCallable()");
+  }
+
+  public UnaryCallable<GetLiveConfigRequest, LiveConfig> getLiveConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLiveConfigCallable()");
+  }
+
+  public OperationCallable<DeleteLiveConfigRequest, Empty, OperationMetadata>
+      deleteLiveConfigOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteLiveConfigOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteLiveConfigRequest, Operation> deleteLiveConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteLiveConfigCallable()");
   }
 
   @Override

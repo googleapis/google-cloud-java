@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,17 +41,13 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
 
   private ImportEntriesRequest() {
     parent_ = "";
+    jobId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImportEntriesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +66,8 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -238,6 +236,59 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int JOB_ID_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object jobId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. (Optional) Dataplex task job id, if specified will be used as
+   * part of ImportEntries LRO ID
+   * </pre>
+   *
+   * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The jobId.
+   */
+  @java.lang.Override
+  public java.lang.String getJobId() {
+    java.lang.Object ref = jobId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      jobId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. (Optional) Dataplex task job id, if specified will be used as
+   * part of ImportEntries LRO ID
+   * </pre>
+   *
+   * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for jobId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getJobIdBytes() {
+    java.lang.Object ref = jobId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      jobId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -258,6 +309,9 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
     if (sourceCase_ == 2) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, source_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jobId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -272,6 +326,9 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
     }
     if (sourceCase_ == 2) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, source_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jobId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -290,6 +347,7 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
         (com.google.cloud.datacatalog.v1.ImportEntriesRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
+    if (!getJobId().equals(other.getJobId())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 2:
@@ -311,6 +369,8 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getJobId().hashCode();
     switch (sourceCase_) {
       case 2:
         hash = (37 * hash) + GCS_BUCKET_PATH_FIELD_NUMBER;
@@ -461,6 +521,7 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       super.clear();
       bitField0_ = 0;
       parent_ = "";
+      jobId_ = "";
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -502,6 +563,9 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.jobId_ = jobId_;
       }
     }
 
@@ -561,6 +625,11 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getJobId().isEmpty()) {
+        jobId_ = other.jobId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       switch (other.getSourceCase()) {
         case GCS_BUCKET_PATH:
           {
@@ -613,6 +682,12 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
                 source_ = s;
                 break;
               } // case 18
+            case 26:
+              {
+                jobId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -892,6 +967,117 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       sourceCase_ = 2;
       source_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object jobId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. (Optional) Dataplex task job id, if specified will be used as
+     * part of ImportEntries LRO ID
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The jobId.
+     */
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. (Optional) Dataplex task job id, if specified will be used as
+     * part of ImportEntries LRO ID
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for jobId.
+     */
+    public com.google.protobuf.ByteString getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. (Optional) Dataplex task job id, if specified will be used as
+     * part of ImportEntries LRO ID
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The jobId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJobId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      jobId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. (Optional) Dataplex task job id, if specified will be used as
+     * part of ImportEntries LRO ID
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearJobId() {
+      jobId_ = getDefaultInstance().getJobId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. (Optional) Dataplex task job id, if specified will be used as
+     * part of ImportEntries LRO ID
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for jobId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      jobId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

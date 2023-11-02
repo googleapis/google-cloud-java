@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.talent.v4beta1;
  *
  * <pre>
  * Deprecated. All resources are only visible to the owner.
+ *
  * An enum that represents who has view access to the resource.
  * </pre>
  *

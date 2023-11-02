@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -255,4 +255,29 @@ public interface JobEventOrBuilder
    * @return The bytes for serviceJob.
    */
   com.google.protobuf.ByteString getServiceJobBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Job execution trigger.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger execution_trigger = 11;</code>
+   *
+   * @return The enum numeric value on the wire for executionTrigger.
+   */
+  int getExecutionTriggerValue();
+  /**
+   *
+   *
+   * <pre>
+   * Job execution trigger.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger execution_trigger = 11;</code>
+   *
+   * @return The executionTrigger.
+   */
+  com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger getExecutionTrigger();
 }

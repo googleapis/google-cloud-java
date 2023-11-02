@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -271,6 +272,154 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
       String name =
           "organizations/organization-2434/locations/location-2434/notifications/notification-2434";
       client.getNotification(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSettingsTest() throws Exception {
+    Settings expectedResponse =
+        Settings.newBuilder()
+            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SettingsName name = SettingsName.of("[ORGANIZATION]", "[LOCATION]");
+
+    Settings actualResponse = client.getSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SettingsName name = SettingsName.of("[ORGANIZATION]", "[LOCATION]");
+      client.getSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSettingsTest2() throws Exception {
+    Settings expectedResponse =
+        Settings.newBuilder()
+            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "organizations/organization-2136/locations/location-2136/settings";
+
+    Settings actualResponse = client.getSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSettingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "organizations/organization-2136/locations/location-2136/settings";
+      client.getSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSettingsTest() throws Exception {
+    Settings expectedResponse =
+        Settings.newBuilder()
+            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Settings settings =
+        Settings.newBuilder()
+            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
+            .setEtag("etag3123477")
+            .build();
+
+    Settings actualResponse = client.updateSettings(settings);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Settings settings =
+          Settings.newBuilder()
+              .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+              .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
+              .setEtag("etag3123477")
+              .build();
+      client.updateSettings(settings);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

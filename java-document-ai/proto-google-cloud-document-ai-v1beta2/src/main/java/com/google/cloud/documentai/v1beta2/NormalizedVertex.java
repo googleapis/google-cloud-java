@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
     return new NormalizedVertex();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta2.GeometryProto
         .internal_static_google_cloud_documentai_v1beta2_NormalizedVertex_descriptor;
@@ -91,7 +86,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Y coordinate.
+   * Y coordinate (starts from the top of the image).
    * </pre>
    *
    * <code>float y = 2;</code>
@@ -527,7 +522,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>float y = 2;</code>
@@ -542,7 +537,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>float y = 2;</code>
@@ -561,7 +556,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>float y = 2;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
     return new IntegratedGradientsAttribution();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ExplanationProto
         .internal_static_google_cloud_aiplatform_v1_IntegratedGradientsAttribution_descriptor;
@@ -77,6 +72,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
    * Required. The number of steps for approximating the path integral.
    * A good value to start is 50 and gradually increase until the
    * sum to diff property is within the desired error range.
+   *
    * Valid range of its value is [1, 100], inclusively.
    * </pre>
    *
@@ -96,6 +92,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
    *
    * <pre>
    * Config for SmoothGrad approximation of gradients.
+   *
    * When enabled, the gradients are approximated by averaging the gradients
    * from noisy samples in the vicinity of the inputs. Adding
    * noise can help improve the computed gradients. Refer to this paper for more
@@ -115,6 +112,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
    *
    * <pre>
    * Config for SmoothGrad approximation of gradients.
+   *
    * When enabled, the gradients are approximated by averaging the gradients
    * from noisy samples in the vicinity of the inputs. Adding
    * noise can help improve the computed gradients. Refer to this paper for more
@@ -136,6 +134,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
    *
    * <pre>
    * Config for SmoothGrad approximation of gradients.
+   *
    * When enabled, the gradients are approximated by averaging the gradients
    * from noisy samples in the vicinity of the inputs. Adding
    * noise can help improve the computed gradients. Refer to this paper for more
@@ -158,6 +157,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
    *
    * <pre>
    * Config for IG with blur baseline.
+   *
    * When enabled, a linear path from the maximally blurred image to the input
    * image is created. Using a blurred baseline instead of zero (black image) is
    * motivated by the BlurIG approach explained here:
@@ -177,6 +177,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
    *
    * <pre>
    * Config for IG with blur baseline.
+   *
    * When enabled, a linear path from the maximally blurred image to the input
    * image is created. Using a blurred baseline instead of zero (black image) is
    * motivated by the BlurIG approach explained here:
@@ -198,6 +199,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
    *
    * <pre>
    * Config for IG with blur baseline.
+   *
    * When enabled, a linear path from the maximally blurred image to the input
    * image is created. Using a blurred baseline instead of zero (black image) is
    * motivated by the BlurIG approach explained here:
@@ -636,6 +638,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      * Required. The number of steps for approximating the path integral.
      * A good value to start is 50 and gradually increase until the
      * sum to diff property is within the desired error range.
+     *
      * Valid range of its value is [1, 100], inclusively.
      * </pre>
      *
@@ -654,6 +657,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      * Required. The number of steps for approximating the path integral.
      * A good value to start is 50 and gradually increase until the
      * sum to diff property is within the desired error range.
+     *
      * Valid range of its value is [1, 100], inclusively.
      * </pre>
      *
@@ -676,6 +680,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      * Required. The number of steps for approximating the path integral.
      * A good value to start is 50 and gradually increase until the
      * sum to diff property is within the desired error range.
+     *
      * Valid range of its value is [1, 100], inclusively.
      * </pre>
      *
@@ -701,6 +706,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for SmoothGrad approximation of gradients.
+     *
      * When enabled, the gradients are approximated by averaging the gradients
      * from noisy samples in the vicinity of the inputs. Adding
      * noise can help improve the computed gradients. Refer to this paper for more
@@ -719,6 +725,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for SmoothGrad approximation of gradients.
+     *
      * When enabled, the gradients are approximated by averaging the gradients
      * from noisy samples in the vicinity of the inputs. Adding
      * noise can help improve the computed gradients. Refer to this paper for more
@@ -743,6 +750,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for SmoothGrad approximation of gradients.
+     *
      * When enabled, the gradients are approximated by averaging the gradients
      * from noisy samples in the vicinity of the inputs. Adding
      * noise can help improve the computed gradients. Refer to this paper for more
@@ -769,6 +777,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for SmoothGrad approximation of gradients.
+     *
      * When enabled, the gradients are approximated by averaging the gradients
      * from noisy samples in the vicinity of the inputs. Adding
      * noise can help improve the computed gradients. Refer to this paper for more
@@ -793,6 +802,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for SmoothGrad approximation of gradients.
+     *
      * When enabled, the gradients are approximated by averaging the gradients
      * from noisy samples in the vicinity of the inputs. Adding
      * noise can help improve the computed gradients. Refer to this paper for more
@@ -823,6 +833,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for SmoothGrad approximation of gradients.
+     *
      * When enabled, the gradients are approximated by averaging the gradients
      * from noisy samples in the vicinity of the inputs. Adding
      * noise can help improve the computed gradients. Refer to this paper for more
@@ -846,6 +857,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for SmoothGrad approximation of gradients.
+     *
      * When enabled, the gradients are approximated by averaging the gradients
      * from noisy samples in the vicinity of the inputs. Adding
      * noise can help improve the computed gradients. Refer to this paper for more
@@ -864,6 +876,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for SmoothGrad approximation of gradients.
+     *
      * When enabled, the gradients are approximated by averaging the gradients
      * from noisy samples in the vicinity of the inputs. Adding
      * noise can help improve the computed gradients. Refer to this paper for more
@@ -886,6 +899,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for SmoothGrad approximation of gradients.
+     *
      * When enabled, the gradients are approximated by averaging the gradients
      * from noisy samples in the vicinity of the inputs. Adding
      * noise can help improve the computed gradients. Refer to this paper for more
@@ -922,6 +936,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for IG with blur baseline.
+     *
      * When enabled, a linear path from the maximally blurred image to the input
      * image is created. Using a blurred baseline instead of zero (black image) is
      * motivated by the BlurIG approach explained here:
@@ -940,6 +955,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for IG with blur baseline.
+     *
      * When enabled, a linear path from the maximally blurred image to the input
      * image is created. Using a blurred baseline instead of zero (black image) is
      * motivated by the BlurIG approach explained here:
@@ -964,6 +980,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for IG with blur baseline.
+     *
      * When enabled, a linear path from the maximally blurred image to the input
      * image is created. Using a blurred baseline instead of zero (black image) is
      * motivated by the BlurIG approach explained here:
@@ -990,6 +1007,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for IG with blur baseline.
+     *
      * When enabled, a linear path from the maximally blurred image to the input
      * image is created. Using a blurred baseline instead of zero (black image) is
      * motivated by the BlurIG approach explained here:
@@ -1014,6 +1032,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for IG with blur baseline.
+     *
      * When enabled, a linear path from the maximally blurred image to the input
      * image is created. Using a blurred baseline instead of zero (black image) is
      * motivated by the BlurIG approach explained here:
@@ -1045,6 +1064,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for IG with blur baseline.
+     *
      * When enabled, a linear path from the maximally blurred image to the input
      * image is created. Using a blurred baseline instead of zero (black image) is
      * motivated by the BlurIG approach explained here:
@@ -1068,6 +1088,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for IG with blur baseline.
+     *
      * When enabled, a linear path from the maximally blurred image to the input
      * image is created. Using a blurred baseline instead of zero (black image) is
      * motivated by the BlurIG approach explained here:
@@ -1087,6 +1108,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for IG with blur baseline.
+     *
      * When enabled, a linear path from the maximally blurred image to the input
      * image is created. Using a blurred baseline instead of zero (black image) is
      * motivated by the BlurIG approach explained here:
@@ -1110,6 +1132,7 @@ public final class IntegratedGradientsAttribution extends com.google.protobuf.Ge
      *
      * <pre>
      * Config for IG with blur baseline.
+     *
      * When enabled, a linear path from the maximally blurred image to the input
      * image is created. Using a blurred baseline instead of zero (black image) is
      * motivated by the BlurIG approach explained here:

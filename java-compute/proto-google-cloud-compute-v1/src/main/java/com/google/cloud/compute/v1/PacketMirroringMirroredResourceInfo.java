@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class PacketMirroringMirroredResourceInfo
   private PacketMirroringMirroredResourceInfo() {
     instances_ = java.util.Collections.emptyList();
     subnetworks_ = java.util.Collections.emptyList();
-    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PacketMirroringMirroredResourceInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -248,7 +243,8 @@ public final class PacketMirroringMirroredResourceInfo
   public static final int TAGS_FIELD_NUMBER = 3552281;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tags_;
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -550,8 +546,7 @@ public final class PacketMirroringMirroredResourceInfo
         subnetworksBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -608,16 +603,15 @@ public final class PacketMirroringMirroredResourceInfo
       } else {
         result.subnetworks_ = subnetworksBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.tags_ = tags_;
     }
 
     private void buildPartial0(
         com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfo result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
+      }
     }
 
     @java.lang.Override
@@ -725,7 +719,7 @@ public final class PacketMirroringMirroredResourceInfo
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -1650,14 +1644,14 @@ public final class PacketMirroringMirroredResourceInfo
       return subnetworksBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList tags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1671,7 +1665,8 @@ public final class PacketMirroringMirroredResourceInfo
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      return tags_.getUnmodifiableView();
+      tags_.makeImmutable();
+      return tags_;
     }
     /**
      *
@@ -1736,6 +1731,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1757,6 +1753,7 @@ public final class PacketMirroringMirroredResourceInfo
       }
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1775,6 +1772,7 @@ public final class PacketMirroringMirroredResourceInfo
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1790,8 +1788,9 @@ public final class PacketMirroringMirroredResourceInfo
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1814,6 +1813,7 @@ public final class PacketMirroringMirroredResourceInfo
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

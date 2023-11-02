@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1049,7 +1049,11 @@ public class DataCatalogClientTest {
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
-    LookupEntryRequest request = LookupEntryRequest.newBuilder().build();
+    LookupEntryRequest request =
+        LookupEntryRequest.newBuilder()
+            .setProject("project-309310695")
+            .setLocation("location1901043637")
+            .build();
 
     Entry actualResponse = client.lookupEntry(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1061,6 +1065,8 @@ public class DataCatalogClientTest {
     Assert.assertEquals(request.getLinkedResource(), actualRequest.getLinkedResource());
     Assert.assertEquals(request.getSqlResource(), actualRequest.getSqlResource());
     Assert.assertEquals(request.getFullyQualifiedName(), actualRequest.getFullyQualifiedName());
+    Assert.assertEquals(request.getProject(), actualRequest.getProject());
+    Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1073,7 +1079,11 @@ public class DataCatalogClientTest {
     mockDataCatalog.addException(exception);
 
     try {
-      LookupEntryRequest request = LookupEntryRequest.newBuilder().build();
+      LookupEntryRequest request =
+          LookupEntryRequest.newBuilder()
+              .setProject("project-309310695")
+              .setLocation("location1901043637")
+              .build();
       client.lookupEntry(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2979,6 +2989,7 @@ public class DataCatalogClientTest {
     ImportEntriesRequest request =
         ImportEntriesRequest.newBuilder()
             .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+            .setJobId("jobId101296568")
             .build();
 
     ImportEntriesResponse actualResponse = client.importEntriesAsync(request).get();
@@ -2990,6 +3001,7 @@ public class DataCatalogClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getGcsBucketPath(), actualRequest.getGcsBucketPath());
+    Assert.assertEquals(request.getJobId(), actualRequest.getJobId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -3005,6 +3017,7 @@ public class DataCatalogClientTest {
       ImportEntriesRequest request =
           ImportEntriesRequest.newBuilder()
               .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+              .setJobId("jobId101296568")
               .build();
       client.importEntriesAsync(request).get();
       Assert.fail("No exception raised");

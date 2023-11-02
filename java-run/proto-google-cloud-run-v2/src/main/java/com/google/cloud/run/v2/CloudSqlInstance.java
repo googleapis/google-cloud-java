@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
   }
 
   private CloudSqlInstance() {
-    instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CloudSqlInstance();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -73,7 +68,8 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
   public static final int INSTANCES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList instances_;
+  private com.google.protobuf.LazyStringArrayList instances_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -356,8 +352,7 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -385,7 +380,6 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.run.v2.CloudSqlInstance buildPartial() {
       com.google.cloud.run.v2.CloudSqlInstance result =
           new com.google.cloud.run.v2.CloudSqlInstance(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -393,16 +387,12 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.run.v2.CloudSqlInstance result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        instances_ = instances_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.instances_ = instances_;
-    }
-
     private void buildPartial0(com.google.cloud.run.v2.CloudSqlInstance result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        instances_.makeImmutable();
+        result.instances_ = instances_;
+      }
     }
 
     @java.lang.Override
@@ -453,7 +443,7 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       if (!other.instances_.isEmpty()) {
         if (instances_.isEmpty()) {
           instances_ = other.instances_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureInstancesIsMutable();
           instances_.addAll(other.instances_);
@@ -512,14 +502,14 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList instances_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList instances_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInstancesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!instances_.isModifiable()) {
         instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -537,7 +527,8 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
      * @return A list containing the instances.
      */
     public com.google.protobuf.ProtocolStringList getInstancesList() {
-      return instances_.getUnmodifiableView();
+      instances_.makeImmutable();
+      return instances_;
     }
     /**
      *
@@ -618,6 +609,7 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       }
       ensureInstancesIsMutable();
       instances_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -643,6 +635,7 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       }
       ensureInstancesIsMutable();
       instances_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,6 +658,7 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     public Builder addAllInstances(java.lang.Iterable<java.lang.String> values) {
       ensureInstancesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,8 +678,9 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInstances() {
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -712,6 +707,7 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureInstancesIsMutable();
       instances_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

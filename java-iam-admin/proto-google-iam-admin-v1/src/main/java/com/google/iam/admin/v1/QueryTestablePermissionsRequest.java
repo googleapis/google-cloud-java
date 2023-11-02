@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
     return new QueryTestablePermissionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_QueryTestablePermissionsRequest_descriptor;
@@ -79,6 +74,7 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
    * <pre>
    * Required. The full resource name to query from the list of testable
    * permissions.
+   *
    * The name follows the Google Cloud Platform resource format.
    * For example, a Cloud Platform project with id `my-project` will be named
    * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -106,6 +102,7 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
    * <pre>
    * Required. The full resource name to query from the list of testable
    * permissions.
+   *
    * The name follows the Google Cloud Platform resource format.
    * For example, a Cloud Platform project with id `my-project` will be named
    * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -135,6 +132,7 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
    *
    * <pre>
    * Optional limit on the number of permissions to include in the response.
+   *
    * The default is 100, and the maximum is 1,000.
    * </pre>
    *
@@ -596,6 +594,7 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
      * <pre>
      * Required. The full resource name to query from the list of testable
      * permissions.
+     *
      * The name follows the Google Cloud Platform resource format.
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -622,6 +621,7 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
      * <pre>
      * Required. The full resource name to query from the list of testable
      * permissions.
+     *
      * The name follows the Google Cloud Platform resource format.
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -648,6 +648,7 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
      * <pre>
      * Required. The full resource name to query from the list of testable
      * permissions.
+     *
      * The name follows the Google Cloud Platform resource format.
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -673,6 +674,7 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
      * <pre>
      * Required. The full resource name to query from the list of testable
      * permissions.
+     *
      * The name follows the Google Cloud Platform resource format.
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -694,6 +696,7 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
      * <pre>
      * Required. The full resource name to query from the list of testable
      * permissions.
+     *
      * The name follows the Google Cloud Platform resource format.
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -721,6 +724,7 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional limit on the number of permissions to include in the response.
+     *
      * The default is 100, and the maximum is 1,000.
      * </pre>
      *
@@ -737,6 +741,7 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional limit on the number of permissions to include in the response.
+     *
      * The default is 100, and the maximum is 1,000.
      * </pre>
      *
@@ -757,6 +762,7 @@ public final class QueryTestablePermissionsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional limit on the number of permissions to include in the response.
+     *
      * The default is 100, and the maximum is 1,000.
      * </pre>
      *

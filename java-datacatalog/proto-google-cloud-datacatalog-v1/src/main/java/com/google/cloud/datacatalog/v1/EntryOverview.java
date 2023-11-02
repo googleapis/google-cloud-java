@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class EntryOverview extends com.google.protobuf.GeneratedMessageV3
     return new EntryOverview();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_EntryOverview_descriptor;
@@ -76,6 +71,7 @@ public final class EntryOverview extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Entry overview with support for rich text.
+   *
    * The overview must only contain Unicode characters, and should be
    * formatted using HTML.
    * The maximum length is 10 MiB as this value holds HTML descriptions
@@ -104,6 +100,7 @@ public final class EntryOverview extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Entry overview with support for rich text.
+   *
    * The overview must only contain Unicode characters, and should be
    * formatted using HTML.
    * The maximum length is 10 MiB as this value holds HTML descriptions
@@ -475,6 +472,7 @@ public final class EntryOverview extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Entry overview with support for rich text.
+     *
      * The overview must only contain Unicode characters, and should be
      * formatted using HTML.
      * The maximum length is 10 MiB as this value holds HTML descriptions
@@ -502,6 +500,7 @@ public final class EntryOverview extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Entry overview with support for rich text.
+     *
      * The overview must only contain Unicode characters, and should be
      * formatted using HTML.
      * The maximum length is 10 MiB as this value holds HTML descriptions
@@ -529,6 +528,7 @@ public final class EntryOverview extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Entry overview with support for rich text.
+     *
      * The overview must only contain Unicode characters, and should be
      * formatted using HTML.
      * The maximum length is 10 MiB as this value holds HTML descriptions
@@ -555,6 +555,7 @@ public final class EntryOverview extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Entry overview with support for rich text.
+     *
      * The overview must only contain Unicode characters, and should be
      * formatted using HTML.
      * The maximum length is 10 MiB as this value holds HTML descriptions
@@ -577,6 +578,7 @@ public final class EntryOverview extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Entry overview with support for rich text.
+     *
      * The overview must only contain Unicode characters, and should be
      * formatted using HTML.
      * The maximum length is 10 MiB as this value holds HTML descriptions

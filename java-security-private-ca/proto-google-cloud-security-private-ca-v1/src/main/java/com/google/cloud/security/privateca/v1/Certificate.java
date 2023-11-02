@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,18 +45,13 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     certificateTemplate_ = "";
     subjectMode_ = 0;
     pemCertificate_ = "";
-    pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Certificate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -188,11 +183,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new RevocationDetails();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1071,6 +1061,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int certificateConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object certificateConfig_;
 
   public enum CertificateConfigCase
@@ -1720,7 +1712,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   public static final int PEM_CERTIFICATE_CHAIN_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList pemCertificateChain_;
+  private com.google.protobuf.LazyStringArrayList pemCertificateChain_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2424,8 +2417,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         certificateDescriptionBuilder_.dispose();
         certificateDescriptionBuilder_ = null;
       }
-      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2466,22 +2458,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.security.privateca.v1.Certificate buildPartial() {
       com.google.cloud.security.privateca.v1.Certificate result =
           new com.google.cloud.security.privateca.v1.Certificate(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.security.privateca.v1.Certificate result) {
-      if (((bitField0_ & 0x00000400) != 0)) {
-        pemCertificateChain_ = pemCertificateChain_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.pemCertificateChain_ = pemCertificateChain_;
     }
 
     private void buildPartial0(com.google.cloud.security.privateca.v1.Certificate result) {
@@ -2515,6 +2497,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             certificateDescriptionBuilder_ == null
                 ? certificateDescription_
                 : certificateDescriptionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        pemCertificateChain_.makeImmutable();
+        result.pemCertificateChain_ = pemCertificateChain_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
@@ -2617,7 +2603,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (!other.pemCertificateChain_.isEmpty()) {
         if (pemCertificateChain_.isEmpty()) {
           pemCertificateChain_ = other.pemCertificateChain_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensurePemCertificateChainIsMutable();
           pemCertificateChain_.addAll(other.pemCertificateChain_);
@@ -4473,14 +4459,14 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       return certificateDescriptionBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList pemCertificateChain_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList pemCertificateChain_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePemCertificateChainIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!pemCertificateChain_.isModifiable()) {
         pemCertificateChain_ = new com.google.protobuf.LazyStringArrayList(pemCertificateChain_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -4497,7 +4483,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the pemCertificateChain.
      */
     public com.google.protobuf.ProtocolStringList getPemCertificateChainList() {
-      return pemCertificateChain_.getUnmodifiableView();
+      pemCertificateChain_.makeImmutable();
+      return pemCertificateChain_;
     }
     /**
      *
@@ -4574,6 +4561,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4598,6 +4586,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4619,6 +4608,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPemCertificateChain(java.lang.Iterable<java.lang.String> values) {
       ensurePemCertificateChainIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pemCertificateChain_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4637,8 +4627,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPemCertificateChain() {
-      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -4664,6 +4655,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Key();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -180,13 +175,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNameBytes();
 
-    public com.google.privacy.dlp.v2.Key.PathElement.IdTypeCase getIdTypeCase();
+    com.google.privacy.dlp.v2.Key.PathElement.IdTypeCase getIdTypeCase();
   }
   /**
    *
    *
    * <pre>
    * A (kind, ID/name) pair used to construct a key path.
+   *
    * If either name or ID is set, the element is complete.
    * If neither is set, the element is incomplete.
    * </pre>
@@ -213,11 +209,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       return new PathElement();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpStorage
           .internal_static_google_privacy_dlp_v2_Key_PathElement_descriptor;
@@ -234,6 +225,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int idTypeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object idType_;
 
     public enum IdTypeCase
@@ -657,6 +650,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A (kind, ID/name) pair used to construct a key path.
+     *
      * If either name or ID is set, the element is complete.
      * If neither is set, the element is incomplete.
      * </pre>
@@ -1378,6 +1372,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -1398,6 +1393,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -1419,6 +1415,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -1439,6 +1436,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -1459,6 +1457,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -2116,6 +2115,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2139,6 +2139,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2162,6 +2163,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2185,6 +2187,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2214,6 +2217,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2241,6 +2245,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2270,6 +2275,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2299,6 +2305,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2325,6 +2332,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2352,6 +2360,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2379,6 +2388,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2405,6 +2415,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2431,6 +2442,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2450,6 +2462,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2473,6 +2486,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2497,6 +2511,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2517,6 +2532,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2537,6 +2553,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *

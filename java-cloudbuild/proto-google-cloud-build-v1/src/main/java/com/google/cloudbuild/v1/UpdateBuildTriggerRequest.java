@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateBuildTriggerRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -222,6 +217,58 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
     return trigger_ == null ? com.google.cloudbuild.v1.BuildTrigger.getDefaultInstance() : trigger_;
   }
 
+  public static final int UPDATE_MASK_FIELD_NUMBER = 5;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   *
+   *
+   * <pre>
+   * Update mask for the resource. If this is set,
+   * the server will only update the fields specified in the field mask.
+   * Otherwise, a full update of the mutable resource fields will be performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Update mask for the resource. If this is set,
+   * the server will only update the fields specified in the field mask.
+   * Otherwise, a full update of the mutable resource fields will be performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Update mask for the resource. If this is set,
+   * the server will only update the fields specified in the field mask.
+   * Otherwise, a full update of the mutable resource fields will be performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -245,6 +292,9 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
     if (trigger_ != null) {
       output.writeMessage(3, getTrigger());
     }
+    if (updateMask_ != null) {
+      output.writeMessage(5, getUpdateMask());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -262,6 +312,9 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
     }
     if (trigger_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTrigger());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUpdateMask());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -285,6 +338,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
     if (hasTrigger()) {
       if (!getTrigger().equals(other.getTrigger())) return false;
     }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -303,6 +360,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
     if (hasTrigger()) {
       hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
       hash = (53 * hash) + getTrigger().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -450,6 +511,11 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
         triggerBuilder_.dispose();
         triggerBuilder_ = null;
       }
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
+      }
       return this;
     }
 
@@ -494,6 +560,9 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.trigger_ = triggerBuilder_ == null ? trigger_ : triggerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
       }
     }
 
@@ -556,6 +625,9 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
       if (other.hasTrigger()) {
         mergeTrigger(other.getTrigger());
       }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -600,6 +672,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 42:
+              {
+                input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1030,6 +1108,207 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
         trigger_ = null;
       }
       return triggerBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Update mask for the resource. If this is set,
+     * the server will only update the fields specified in the field mask.
+     * Otherwise, a full update of the mutable resource fields will be performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update mask for the resource. If this is set,
+     * the server will only update the fields specified in the field mask.
+     * Otherwise, a full update of the mutable resource fields will be performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     *
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update mask for the resource. If this is set,
+     * the server will only update the fields specified in the field mask.
+     * Otherwise, a full update of the mutable resource fields will be performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update mask for the resource. If this is set,
+     * the server will only update the fields specified in the field mask.
+     * Otherwise, a full update of the mutable resource fields will be performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update mask for the resource. If this is set,
+     * the server will only update the fields specified in the field mask.
+     * Otherwise, a full update of the mutable resource fields will be performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
+        } else {
+          updateMask_ = value;
+        }
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update mask for the resource. If this is set,
+     * the server will only update the fields specified in the field mask.
+     * Otherwise, a full update of the mutable resource fields will be performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public Builder clearUpdateMask() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update mask for the resource. If this is set,
+     * the server will only update the fields specified in the field mask.
+     * Otherwise, a full update of the mutable resource fields will be performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update mask for the resource. If this is set,
+     * the server will only update the fields specified in the field mask.
+     * Otherwise, a full update of the mutable resource fields will be performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update mask for the resource. If this is set,
+     * the server will only update the fields specified in the field mask.
+     * Otherwise, a full update of the mutable resource fields will be performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
 
     @java.lang.Override

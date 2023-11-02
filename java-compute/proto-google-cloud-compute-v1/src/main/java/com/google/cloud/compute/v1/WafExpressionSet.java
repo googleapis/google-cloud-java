@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   }
 
   private WafExpressionSet() {
-    aliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    aliases_ = com.google.protobuf.LazyStringArrayList.emptyList();
     expressions_ = java.util.Collections.emptyList();
     id_ = "";
   }
@@ -46,11 +46,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WafExpressionSet();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,7 +67,8 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
   public static final int ALIASES_FIELD_NUMBER = 159207166;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList aliases_;
+  private com.google.protobuf.LazyStringArrayList aliases_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -506,8 +502,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      aliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      aliases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (expressionsBuilder_ == null) {
         expressions_ = java.util.Collections.emptyList();
       } else {
@@ -552,11 +547,6 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.WafExpressionSet result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        aliases_ = aliases_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.aliases_ = aliases_;
       if (expressionsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           expressions_ = java.util.Collections.unmodifiableList(expressions_);
@@ -570,6 +560,10 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.compute.v1.WafExpressionSet result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        aliases_.makeImmutable();
+        result.aliases_ = aliases_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.id_ = id_;
@@ -626,7 +620,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       if (!other.aliases_.isEmpty()) {
         if (aliases_.isEmpty()) {
           aliases_ = other.aliases_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureAliasesIsMutable();
           aliases_.addAll(other.aliases_);
@@ -737,14 +731,14 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList aliases_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList aliases_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAliasesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!aliases_.isModifiable()) {
         aliases_ = new com.google.protobuf.LazyStringArrayList(aliases_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -758,7 +752,8 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
      * @return A list containing the aliases.
      */
     public com.google.protobuf.ProtocolStringList getAliasesList() {
-      return aliases_.getUnmodifiableView();
+      aliases_.makeImmutable();
+      return aliases_;
     }
     /**
      *
@@ -823,6 +818,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       ensureAliasesIsMutable();
       aliases_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -844,6 +840,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       }
       ensureAliasesIsMutable();
       aliases_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -862,6 +859,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
     public Builder addAllAliases(java.lang.Iterable<java.lang.String> values) {
       ensureAliasesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, aliases_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -877,8 +875,9 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAliases() {
-      aliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      aliases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -901,6 +900,7 @@ public final class WafExpressionSet extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureAliasesIsMutable();
       aliases_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

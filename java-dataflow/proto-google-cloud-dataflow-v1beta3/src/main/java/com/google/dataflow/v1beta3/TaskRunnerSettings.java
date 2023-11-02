@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   private TaskRunnerSettings() {
     taskUser_ = "";
     taskGroup_ = "";
-    oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     baseUrl_ = "";
     dataflowApiVersion_ = "";
     baseTaskDir_ = "";
@@ -59,11 +59,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TaskRunnerSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -190,7 +185,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
   public static final int OAUTH_SCOPES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList oauthScopes_;
+  private com.google.protobuf.LazyStringArrayList oauthScopes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -263,11 +259,13 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The base URL for the taskrunner to use when accessing Google Cloud APIs.
+   *
    * When workers access Google Cloud APIs, they logically do so via
    * relative URLs.  If this field is specified, it supplies the base
    * URL to use for resolving these relative URLs.  The normative
    * algorithm used is defined by RFC 1808, "Relative Uniform Resource
    * Locators".
+   *
    * If not specified, the default value is "http://www.googleapis.com/"
    * </pre>
    *
@@ -292,11 +290,13 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The base URL for the taskrunner to use when accessing Google Cloud APIs.
+   *
    * When workers access Google Cloud APIs, they logically do so via
    * relative URLs.  If this field is specified, it supplies the base
    * URL to use for resolving these relative URLs.  The normative
    * algorithm used is defined by RFC 1808, "Relative Uniform Resource
    * Locators".
+   *
    * If not specified, the default value is "http://www.googleapis.com/"
    * </pre>
    *
@@ -534,7 +534,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Indicates where to put logs.  If this is not specified, the logs
    * will not be uploaded.
+   *
    * The supported resource type is:
+   *
    * Google Cloud Storage:
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
@@ -562,7 +564,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Indicates where to put logs.  If this is not specified, the logs
    * will not be uploaded.
+   *
    * The supported resource type is:
+   *
    * Google Cloud Storage:
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
@@ -646,7 +650,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The prefix of the resources the taskrunner should use for
    * temporary storage.
+   *
    * The supported resource type is:
+   *
    * Google Cloud Storage:
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
@@ -674,7 +680,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The prefix of the resources the taskrunner should use for
    * temporary storage.
+   *
    * The supported resource type is:
+   *
    * Google Cloud Storage:
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
@@ -1379,8 +1387,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       bitField0_ = 0;
       taskUser_ = "";
       taskGroup_ = "";
-      oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       baseUrl_ = "";
       dataflowApiVersion_ = "";
       parallelWorkerSettings_ = null;
@@ -1428,20 +1435,11 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public com.google.dataflow.v1beta3.TaskRunnerSettings buildPartial() {
       com.google.dataflow.v1beta3.TaskRunnerSettings result =
           new com.google.dataflow.v1beta3.TaskRunnerSettings(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.TaskRunnerSettings result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        oauthScopes_ = oauthScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.oauthScopes_ = oauthScopes_;
     }
 
     private void buildPartial0(com.google.dataflow.v1beta3.TaskRunnerSettings result) {
@@ -1451,6 +1449,10 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.taskGroup_ = taskGroup_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        oauthScopes_.makeImmutable();
+        result.oauthScopes_ = oauthScopes_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.baseUrl_ = baseUrl_;
@@ -1563,7 +1565,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       if (!other.oauthScopes_.isEmpty()) {
         if (oauthScopes_.isEmpty()) {
           oauthScopes_ = other.oauthScopes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureOauthScopesIsMutable();
           oauthScopes_.addAll(other.oauthScopes_);
@@ -2025,14 +2027,14 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.LazyStringList oauthScopes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList oauthScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureOauthScopesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!oauthScopes_.isModifiable()) {
         oauthScopes_ = new com.google.protobuf.LazyStringArrayList(oauthScopes_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -2047,7 +2049,8 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return A list containing the oauthScopes.
      */
     public com.google.protobuf.ProtocolStringList getOauthScopesList() {
-      return oauthScopes_.getUnmodifiableView();
+      oauthScopes_.makeImmutable();
+      return oauthScopes_;
     }
     /**
      *
@@ -2116,6 +2119,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       }
       ensureOauthScopesIsMutable();
       oauthScopes_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2138,6 +2142,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       }
       ensureOauthScopesIsMutable();
       oauthScopes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2157,6 +2162,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     public Builder addAllOauthScopes(java.lang.Iterable<java.lang.String> values) {
       ensureOauthScopesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, oauthScopes_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2173,8 +2179,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearOauthScopes() {
-      oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -2198,6 +2205,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureOauthScopesIsMutable();
       oauthScopes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2208,11 +2216,13 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The base URL for the taskrunner to use when accessing Google Cloud APIs.
+     *
      * When workers access Google Cloud APIs, they logically do so via
      * relative URLs.  If this field is specified, it supplies the base
      * URL to use for resolving these relative URLs.  The normative
      * algorithm used is defined by RFC 1808, "Relative Uniform Resource
      * Locators".
+     *
      * If not specified, the default value is "http://www.googleapis.com/"
      * </pre>
      *
@@ -2236,11 +2246,13 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The base URL for the taskrunner to use when accessing Google Cloud APIs.
+     *
      * When workers access Google Cloud APIs, they logically do so via
      * relative URLs.  If this field is specified, it supplies the base
      * URL to use for resolving these relative URLs.  The normative
      * algorithm used is defined by RFC 1808, "Relative Uniform Resource
      * Locators".
+     *
      * If not specified, the default value is "http://www.googleapis.com/"
      * </pre>
      *
@@ -2264,11 +2276,13 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The base URL for the taskrunner to use when accessing Google Cloud APIs.
+     *
      * When workers access Google Cloud APIs, they logically do so via
      * relative URLs.  If this field is specified, it supplies the base
      * URL to use for resolving these relative URLs.  The normative
      * algorithm used is defined by RFC 1808, "Relative Uniform Resource
      * Locators".
+     *
      * If not specified, the default value is "http://www.googleapis.com/"
      * </pre>
      *
@@ -2291,11 +2305,13 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The base URL for the taskrunner to use when accessing Google Cloud APIs.
+     *
      * When workers access Google Cloud APIs, they logically do so via
      * relative URLs.  If this field is specified, it supplies the base
      * URL to use for resolving these relative URLs.  The normative
      * algorithm used is defined by RFC 1808, "Relative Uniform Resource
      * Locators".
+     *
      * If not specified, the default value is "http://www.googleapis.com/"
      * </pre>
      *
@@ -2314,11 +2330,13 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The base URL for the taskrunner to use when accessing Google Cloud APIs.
+     *
      * When workers access Google Cloud APIs, they logically do so via
      * relative URLs.  If this field is specified, it supplies the base
      * URL to use for resolving these relative URLs.  The normative
      * algorithm used is defined by RFC 1808, "Relative Uniform Resource
      * Locators".
+     *
      * If not specified, the default value is "http://www.googleapis.com/"
      * </pre>
      *
@@ -2905,7 +2923,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Indicates where to put logs.  If this is not specified, the logs
      * will not be uploaded.
+     *
      * The supported resource type is:
+     *
      * Google Cloud Storage:
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
@@ -2932,7 +2952,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Indicates where to put logs.  If this is not specified, the logs
      * will not be uploaded.
+     *
      * The supported resource type is:
+     *
      * Google Cloud Storage:
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
@@ -2959,7 +2981,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Indicates where to put logs.  If this is not specified, the logs
      * will not be uploaded.
+     *
      * The supported resource type is:
+     *
      * Google Cloud Storage:
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
@@ -2985,7 +3009,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Indicates where to put logs.  If this is not specified, the logs
      * will not be uploaded.
+     *
      * The supported resource type is:
+     *
      * Google Cloud Storage:
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
@@ -3007,7 +3033,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Indicates where to put logs.  If this is not specified, the logs
      * will not be uploaded.
+     *
      * The supported resource type is:
+     *
      * Google Cloud Storage:
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
@@ -3142,7 +3170,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The prefix of the resources the taskrunner should use for
      * temporary storage.
+     *
      * The supported resource type is:
+     *
      * Google Cloud Storage:
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
@@ -3169,7 +3199,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The prefix of the resources the taskrunner should use for
      * temporary storage.
+     *
      * The supported resource type is:
+     *
      * Google Cloud Storage:
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
@@ -3196,7 +3228,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The prefix of the resources the taskrunner should use for
      * temporary storage.
+     *
      * The supported resource type is:
+     *
      * Google Cloud Storage:
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
@@ -3222,7 +3256,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The prefix of the resources the taskrunner should use for
      * temporary storage.
+     *
      * The supported resource type is:
+     *
      * Google Cloud Storage:
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
@@ -3244,7 +3280,9 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The prefix of the resources the taskrunner should use for
      * temporary storage.
+     *
      * The supported resource type is:
+     *
      * Google Cloud Storage:
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}

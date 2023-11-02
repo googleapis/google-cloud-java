@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DeleteApiSpecRevisionRequest extends com.google.protobuf.Gene
     return new DeleteApiSpecRevisionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryServiceProto
         .internal_static_google_cloud_apigeeregistry_v1_DeleteApiSpecRevisionRequest_descriptor;
@@ -77,6 +72,7 @@ public final class DeleteApiSpecRevisionRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The name of the spec revision to be deleted,
    * with a revision ID explicitly included.
+   *
    * Example:
    * `projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml&#64;c7cfa2a8`
    * </pre>
@@ -105,6 +101,7 @@ public final class DeleteApiSpecRevisionRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The name of the spec revision to be deleted,
    * with a revision ID explicitly included.
+   *
    * Example:
    * `projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml&#64;c7cfa2a8`
    * </pre>
@@ -482,6 +479,7 @@ public final class DeleteApiSpecRevisionRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the spec revision to be deleted,
      * with a revision ID explicitly included.
+     *
      * Example:
      * `projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml&#64;c7cfa2a8`
      * </pre>
@@ -509,6 +507,7 @@ public final class DeleteApiSpecRevisionRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the spec revision to be deleted,
      * with a revision ID explicitly included.
+     *
      * Example:
      * `projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml&#64;c7cfa2a8`
      * </pre>
@@ -536,6 +535,7 @@ public final class DeleteApiSpecRevisionRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the spec revision to be deleted,
      * with a revision ID explicitly included.
+     *
      * Example:
      * `projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml&#64;c7cfa2a8`
      * </pre>
@@ -562,6 +562,7 @@ public final class DeleteApiSpecRevisionRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the spec revision to be deleted,
      * with a revision ID explicitly included.
+     *
      * Example:
      * `projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml&#64;c7cfa2a8`
      * </pre>
@@ -584,6 +585,7 @@ public final class DeleteApiSpecRevisionRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the spec revision to be deleted,
      * with a revision ID explicitly included.
+     *
      * Example:
      * `projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml&#64;c7cfa2a8`
      * </pre>

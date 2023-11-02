@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.automl.v1.AnnotationSpec;
 import com.google.cloud.automl.v1.CreateDatasetRequest;
@@ -887,88 +888,190 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
         HttpJsonCallSettings.<CreateDatasetRequest, Operation>newBuilder()
             .setMethodDescriptor(createDatasetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         HttpJsonCallSettings.<GetDatasetRequest, Dataset>newBuilder()
             .setMethodDescriptor(getDatasetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         HttpJsonCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
             .setMethodDescriptor(listDatasetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateDatasetRequest, Dataset> updateDatasetTransportSettings =
         HttpJsonCallSettings.<UpdateDatasetRequest, Dataset>newBuilder()
             .setMethodDescriptor(updateDatasetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("dataset.name", String.valueOf(request.getDataset().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteDatasetRequest, Operation> deleteDatasetTransportSettings =
         HttpJsonCallSettings.<DeleteDatasetRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteDatasetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         HttpJsonCallSettings.<ImportDataRequest, Operation>newBuilder()
             .setMethodDescriptor(importDataMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
         HttpJsonCallSettings.<ExportDataRequest, Operation>newBuilder()
             .setMethodDescriptor(exportDataMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetAnnotationSpecRequest, AnnotationSpec>
         getAnnotationSpecTransportSettings =
             HttpJsonCallSettings.<GetAnnotationSpecRequest, AnnotationSpec>newBuilder()
                 .setMethodDescriptor(getAnnotationSpecMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateModelRequest, Operation> createModelTransportSettings =
         HttpJsonCallSettings.<CreateModelRequest, Operation>newBuilder()
             .setMethodDescriptor(createModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetModelRequest, Model> getModelTransportSettings =
         HttpJsonCallSettings.<GetModelRequest, Model>newBuilder()
             .setMethodDescriptor(getModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         HttpJsonCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
             .setMethodDescriptor(listModelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
         HttpJsonCallSettings.<DeleteModelRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateModelRequest, Model> updateModelTransportSettings =
         HttpJsonCallSettings.<UpdateModelRequest, Model>newBuilder()
             .setMethodDescriptor(updateModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("model.name", String.valueOf(request.getModel().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeployModelRequest, Operation> deployModelTransportSettings =
         HttpJsonCallSettings.<DeployModelRequest, Operation>newBuilder()
             .setMethodDescriptor(deployModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UndeployModelRequest, Operation> undeployModelTransportSettings =
         HttpJsonCallSettings.<UndeployModelRequest, Operation>newBuilder()
             .setMethodDescriptor(undeployModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ExportModelRequest, Operation> exportModelTransportSettings =
         HttpJsonCallSettings.<ExportModelRequest, Operation>newBuilder()
             .setMethodDescriptor(exportModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationTransportSettings =
             HttpJsonCallSettings.<GetModelEvaluationRequest, ModelEvaluation>newBuilder()
                 .setMethodDescriptor(getModelEvaluationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
         listModelEvaluationsTransportSettings =
@@ -976,6 +1079,12 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                 .<ListModelEvaluationsRequest, ListModelEvaluationsResponse>newBuilder()
                 .setMethodDescriptor(listModelEvaluationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createDatasetCallable =

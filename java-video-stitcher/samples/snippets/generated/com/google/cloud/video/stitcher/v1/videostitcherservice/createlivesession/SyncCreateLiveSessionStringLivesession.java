@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package com.google.cloud.video.stitcher.v1.samples;
 
 // [START videostitcher_v1_generated_VideoStitcherService_CreateLiveSession_StringLivesession_sync]
 import com.google.cloud.video.stitcher.v1.LiveSession;
-import com.google.cloud.video.stitcher.v1.LiveSessionName;
+import com.google.cloud.video.stitcher.v1.LocationName;
 import com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient;
 
 public class SyncCreateLiveSessionStringLivesession {
@@ -35,7 +35,7 @@ public class SyncCreateLiveSessionStringLivesession {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (VideoStitcherServiceClient videoStitcherServiceClient =
         VideoStitcherServiceClient.create()) {
-      String parent = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]").toString();
+      String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       LiveSession liveSession = LiveSession.newBuilder().build();
       LiveSession response = videoStitcherServiceClient.createLiveSession(parent, liveSession);
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +22,12 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * A Network Connectivity Center hub is a collection of spokes. A single hub
- * can contain spokes from multiple regions. However, if any of a hub's spokes
- * use the data transfer feature, the resources associated with those spokes
- * must all reside in the same VPC network. Spokes that do not use data
- * transfer can be associated with any VPC network in your project.
+ * A Network Connectivity Center hub is a global management resource to which
+ * you attach spokes. A single hub can contain spokes from multiple regions.
+ * However, if any of a hub's spokes use the site-to-site data transfer feature,
+ * the resources associated with those spokes must all be in the same VPC
+ * network. Spokes that do not use site-to-site data transfer can be associated
+ * with any VPC network in your project.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.Hub}
@@ -47,17 +48,13 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     uniqueId_ = "";
     state_ = 0;
     routingVpcs_ = java.util.Collections.emptyList();
+    routeTables_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Hub();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -269,8 +266,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -293,8 +290,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -308,8 +305,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -330,8 +327,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -503,6 +500,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -518,6 +516,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -534,6 +533,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -549,6 +549,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -564,6 +565,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -574,6 +576,158 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.networkconnectivity.v1.RoutingVPCOrBuilder getRoutingVpcsOrBuilder(
       int index) {
     return routingVpcs_.get(index);
+  }
+
+  public static final int ROUTE_TABLES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList routeTables_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The route tables that belong to this hub. They use the
+   * following form:
+   *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   *
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the route tables nested under the hub.
+   * </pre>
+   *
+   * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the routeTables.
+   */
+  public com.google.protobuf.ProtocolStringList getRouteTablesList() {
+    return routeTables_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The route tables that belong to this hub. They use the
+   * following form:
+   *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   *
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the route tables nested under the hub.
+   * </pre>
+   *
+   * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of routeTables.
+   */
+  public int getRouteTablesCount() {
+    return routeTables_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The route tables that belong to this hub. They use the
+   * following form:
+   *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   *
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the route tables nested under the hub.
+   * </pre>
+   *
+   * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The routeTables at the given index.
+   */
+  public java.lang.String getRouteTables(int index) {
+    return routeTables_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The route tables that belong to this hub. They use the
+   * following form:
+   *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   *
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the route tables nested under the hub.
+   * </pre>
+   *
+   * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the routeTables at the given index.
+   */
+  public com.google.protobuf.ByteString getRouteTablesBytes(int index) {
+    return routeTables_.getByteString(index);
+  }
+
+  public static final int SPOKE_SUMMARY_FIELD_NUMBER = 12;
+  private com.google.cloud.networkconnectivity.v1.SpokeSummary spokeSummary_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A summary of the spokes associated with a hub. The
+   * summary includes a count of spokes according to type
+   * and according to state. If any spokes are inactive,
+   * the summary also lists the reasons they are inactive,
+   * including a count for each reason.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the spokeSummary field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpokeSummary() {
+    return spokeSummary_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A summary of the spokes associated with a hub. The
+   * summary includes a count of spokes according to type
+   * and according to state. If any spokes are inactive,
+   * the summary also lists the reasons they are inactive,
+   * including a count for each reason.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The spokeSummary.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.SpokeSummary getSpokeSummary() {
+    return spokeSummary_ == null
+        ? com.google.cloud.networkconnectivity.v1.SpokeSummary.getDefaultInstance()
+        : spokeSummary_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A summary of the spokes associated with a hub. The
+   * summary includes a count of spokes according to type
+   * and according to state. If any spokes are inactive,
+   * the summary also lists the reasons they are inactive,
+   * including a count for each reason.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.SpokeSummaryOrBuilder getSpokeSummaryOrBuilder() {
+    return spokeSummary_ == null
+        ? com.google.cloud.networkconnectivity.v1.SpokeSummary.getDefaultInstance()
+        : spokeSummary_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -612,6 +766,12 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < routingVpcs_.size(); i++) {
       output.writeMessage(10, routingVpcs_.get(i));
+    }
+    for (int i = 0; i < routeTables_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, routeTables_.getRaw(i));
+    }
+    if (spokeSummary_ != null) {
+      output.writeMessage(12, getSpokeSummary());
     }
     getUnknownFields().writeTo(output);
   }
@@ -653,6 +813,17 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < routingVpcs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, routingVpcs_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < routeTables_.size(); i++) {
+        dataSize += computeStringSizeNoTag(routeTables_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRouteTablesList().size();
+    }
+    if (spokeSummary_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getSpokeSummary());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -683,6 +854,11 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     if (!getUniqueId().equals(other.getUniqueId())) return false;
     if (state_ != other.state_) return false;
     if (!getRoutingVpcsList().equals(other.getRoutingVpcsList())) return false;
+    if (!getRouteTablesList().equals(other.getRouteTablesList())) return false;
+    if (hasSpokeSummary() != other.hasSpokeSummary()) return false;
+    if (hasSpokeSummary()) {
+      if (!getSpokeSummary().equals(other.getSpokeSummary())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -717,6 +893,14 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     if (getRoutingVpcsCount() > 0) {
       hash = (37 * hash) + ROUTING_VPCS_FIELD_NUMBER;
       hash = (53 * hash) + getRoutingVpcsList().hashCode();
+    }
+    if (getRouteTablesCount() > 0) {
+      hash = (37 * hash) + ROUTE_TABLES_FIELD_NUMBER;
+      hash = (53 * hash) + getRouteTablesList().hashCode();
+    }
+    if (hasSpokeSummary()) {
+      hash = (37 * hash) + SPOKE_SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getSpokeSummary().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -822,11 +1006,12 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Network Connectivity Center hub is a collection of spokes. A single hub
-   * can contain spokes from multiple regions. However, if any of a hub's spokes
-   * use the data transfer feature, the resources associated with those spokes
-   * must all reside in the same VPC network. Spokes that do not use data
-   * transfer can be associated with any VPC network in your project.
+   * A Network Connectivity Center hub is a global management resource to which
+   * you attach spokes. A single hub can contain spokes from multiple regions.
+   * However, if any of a hub's spokes use the site-to-site data transfer feature,
+   * the resources associated with those spokes must all be in the same VPC
+   * network. Spokes that do not use site-to-site data transfer can be associated
+   * with any VPC network in your project.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.Hub}
@@ -903,6 +1088,12 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         routingVpcsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000080);
+      routeTables_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      spokeSummary_ = null;
+      if (spokeSummaryBuilder_ != null) {
+        spokeSummaryBuilder_.dispose();
+        spokeSummaryBuilder_ = null;
+      }
       return this;
     }
 
@@ -973,6 +1164,14 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        routeTables_.makeImmutable();
+        result.routeTables_ = routeTables_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.spokeSummary_ =
+            spokeSummaryBuilder_ == null ? spokeSummary_ : spokeSummaryBuilder_.build();
       }
     }
 
@@ -1074,6 +1273,19 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.routeTables_.isEmpty()) {
+        if (routeTables_.isEmpty()) {
+          routeTables_ = other.routeTables_;
+          bitField0_ |= 0x00000100;
+        } else {
+          ensureRouteTablesIsMutable();
+          routeTables_.addAll(other.routeTables_);
+        }
+        onChanged();
+      }
+      if (other.hasSpokeSummary()) {
+        mergeSpokeSummary(other.getSpokeSummary());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1162,6 +1374,19 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRouteTablesIsMutable();
+                routeTables_.add(s);
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getSpokeSummaryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1728,8 +1953,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -1752,8 +1977,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -1767,8 +1992,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -1789,8 +2014,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -1817,8 +2042,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -1841,8 +2066,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -1863,8 +2088,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -2221,6 +2446,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2239,6 +2465,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2257,6 +2484,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2275,6 +2503,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2300,6 +2529,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2322,6 +2552,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2346,6 +2577,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2371,6 +2603,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2393,6 +2626,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2415,6 +2649,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2437,6 +2672,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2458,6 +2694,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2479,6 +2716,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2494,6 +2732,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2513,6 +2752,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2532,6 +2772,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2547,6 +2788,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2564,6 +2806,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2590,6 +2833,465 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
         routingVpcs_ = null;
       }
       return routingVpcsBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList routeTables_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureRouteTablesIsMutable() {
+      if (!routeTables_.isModifiable()) {
+        routeTables_ = new com.google.protobuf.LazyStringArrayList(routeTables_);
+      }
+      bitField0_ |= 0x00000100;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The route tables that belong to this hub. They use the
+     * following form:
+     *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     *
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the route tables nested under the hub.
+     * </pre>
+     *
+     * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return A list containing the routeTables.
+     */
+    public com.google.protobuf.ProtocolStringList getRouteTablesList() {
+      routeTables_.makeImmutable();
+      return routeTables_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The route tables that belong to this hub. They use the
+     * following form:
+     *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     *
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the route tables nested under the hub.
+     * </pre>
+     *
+     * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The count of routeTables.
+     */
+    public int getRouteTablesCount() {
+      return routeTables_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The route tables that belong to this hub. They use the
+     * following form:
+     *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     *
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the route tables nested under the hub.
+     * </pre>
+     *
+     * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The routeTables at the given index.
+     */
+    public java.lang.String getRouteTables(int index) {
+      return routeTables_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The route tables that belong to this hub. They use the
+     * following form:
+     *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     *
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the route tables nested under the hub.
+     * </pre>
+     *
+     * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the routeTables at the given index.
+     */
+    public com.google.protobuf.ByteString getRouteTablesBytes(int index) {
+      return routeTables_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The route tables that belong to this hub. They use the
+     * following form:
+     *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     *
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the route tables nested under the hub.
+     * </pre>
+     *
+     * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The routeTables to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteTables(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRouteTablesIsMutable();
+      routeTables_.set(index, value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The route tables that belong to this hub. They use the
+     * following form:
+     *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     *
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the route tables nested under the hub.
+     * </pre>
+     *
+     * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The routeTables to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRouteTables(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRouteTablesIsMutable();
+      routeTables_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The route tables that belong to this hub. They use the
+     * following form:
+     *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     *
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the route tables nested under the hub.
+     * </pre>
+     *
+     * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param values The routeTables to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRouteTables(java.lang.Iterable<java.lang.String> values) {
+      ensureRouteTablesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, routeTables_);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The route tables that belong to this hub. They use the
+     * following form:
+     *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     *
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the route tables nested under the hub.
+     * </pre>
+     *
+     * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRouteTables() {
+      routeTables_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The route tables that belong to this hub. They use the
+     * following form:
+     *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+     *
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the route tables nested under the hub.
+     * </pre>
+     *
+     * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes of the routeTables to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRouteTablesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureRouteTablesIsMutable();
+      routeTables_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.networkconnectivity.v1.SpokeSummary spokeSummary_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.SpokeSummary,
+            com.google.cloud.networkconnectivity.v1.SpokeSummary.Builder,
+            com.google.cloud.networkconnectivity.v1.SpokeSummaryOrBuilder>
+        spokeSummaryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A summary of the spokes associated with a hub. The
+     * summary includes a count of spokes according to type
+     * and according to state. If any spokes are inactive,
+     * the summary also lists the reasons they are inactive,
+     * including a count for each reason.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the spokeSummary field is set.
+     */
+    public boolean hasSpokeSummary() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A summary of the spokes associated with a hub. The
+     * summary includes a count of spokes according to type
+     * and according to state. If any spokes are inactive,
+     * the summary also lists the reasons they are inactive,
+     * including a count for each reason.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The spokeSummary.
+     */
+    public com.google.cloud.networkconnectivity.v1.SpokeSummary getSpokeSummary() {
+      if (spokeSummaryBuilder_ == null) {
+        return spokeSummary_ == null
+            ? com.google.cloud.networkconnectivity.v1.SpokeSummary.getDefaultInstance()
+            : spokeSummary_;
+      } else {
+        return spokeSummaryBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A summary of the spokes associated with a hub. The
+     * summary includes a count of spokes according to type
+     * and according to state. If any spokes are inactive,
+     * the summary also lists the reasons they are inactive,
+     * including a count for each reason.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSpokeSummary(com.google.cloud.networkconnectivity.v1.SpokeSummary value) {
+      if (spokeSummaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spokeSummary_ = value;
+      } else {
+        spokeSummaryBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A summary of the spokes associated with a hub. The
+     * summary includes a count of spokes according to type
+     * and according to state. If any spokes are inactive,
+     * the summary also lists the reasons they are inactive,
+     * including a count for each reason.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSpokeSummary(
+        com.google.cloud.networkconnectivity.v1.SpokeSummary.Builder builderForValue) {
+      if (spokeSummaryBuilder_ == null) {
+        spokeSummary_ = builderForValue.build();
+      } else {
+        spokeSummaryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A summary of the spokes associated with a hub. The
+     * summary includes a count of spokes according to type
+     * and according to state. If any spokes are inactive,
+     * the summary also lists the reasons they are inactive,
+     * including a count for each reason.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeSpokeSummary(com.google.cloud.networkconnectivity.v1.SpokeSummary value) {
+      if (spokeSummaryBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && spokeSummary_ != null
+            && spokeSummary_
+                != com.google.cloud.networkconnectivity.v1.SpokeSummary.getDefaultInstance()) {
+          getSpokeSummaryBuilder().mergeFrom(value);
+        } else {
+          spokeSummary_ = value;
+        }
+      } else {
+        spokeSummaryBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A summary of the spokes associated with a hub. The
+     * summary includes a count of spokes according to type
+     * and according to state. If any spokes are inactive,
+     * the summary also lists the reasons they are inactive,
+     * including a count for each reason.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSpokeSummary() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      spokeSummary_ = null;
+      if (spokeSummaryBuilder_ != null) {
+        spokeSummaryBuilder_.dispose();
+        spokeSummaryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A summary of the spokes associated with a hub. The
+     * summary includes a count of spokes according to type
+     * and according to state. If any spokes are inactive,
+     * the summary also lists the reasons they are inactive,
+     * including a count for each reason.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.SpokeSummary.Builder getSpokeSummaryBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getSpokeSummaryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A summary of the spokes associated with a hub. The
+     * summary includes a count of spokes according to type
+     * and according to state. If any spokes are inactive,
+     * the summary also lists the reasons they are inactive,
+     * including a count for each reason.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.SpokeSummaryOrBuilder
+        getSpokeSummaryOrBuilder() {
+      if (spokeSummaryBuilder_ != null) {
+        return spokeSummaryBuilder_.getMessageOrBuilder();
+      } else {
+        return spokeSummary_ == null
+            ? com.google.cloud.networkconnectivity.v1.SpokeSummary.getDefaultInstance()
+            : spokeSummary_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A summary of the spokes associated with a hub. The
+     * summary includes a count of spokes according to type
+     * and according to state. If any spokes are inactive,
+     * the summary also lists the reasons they are inactive,
+     * including a count for each reason.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.SpokeSummary,
+            com.google.cloud.networkconnectivity.v1.SpokeSummary.Builder,
+            com.google.cloud.networkconnectivity.v1.SpokeSummaryOrBuilder>
+        getSpokeSummaryFieldBuilder() {
+      if (spokeSummaryBuilder_ == null) {
+        spokeSummaryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkconnectivity.v1.SpokeSummary,
+                com.google.cloud.networkconnectivity.v1.SpokeSummary.Builder,
+                com.google.cloud.networkconnectivity.v1.SpokeSummaryOrBuilder>(
+                getSpokeSummary(), getParentForChildren(), isClean());
+        spokeSummary_ = null;
+      }
+      return spokeSummaryBuilder_;
     }
 
     @java.lang.Override

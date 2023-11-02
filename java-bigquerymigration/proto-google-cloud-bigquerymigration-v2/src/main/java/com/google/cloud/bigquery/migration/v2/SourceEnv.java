@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
 
   private SourceEnv() {
     defaultDatabase_ = "";
-    schemaSearchPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    schemaSearchPath_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SourceEnv();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -124,7 +119,8 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
   public static final int SCHEMA_SEARCH_PATH_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList schemaSearchPath_;
+  private com.google.protobuf.LazyStringArrayList schemaSearchPath_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -403,8 +399,7 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       defaultDatabase_ = "";
-      schemaSearchPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      schemaSearchPath_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -432,7 +427,6 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2.SourceEnv buildPartial() {
       com.google.cloud.bigquery.migration.v2.SourceEnv result =
           new com.google.cloud.bigquery.migration.v2.SourceEnv(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -440,19 +434,14 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.bigquery.migration.v2.SourceEnv result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        schemaSearchPath_ = schemaSearchPath_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.schemaSearchPath_ = schemaSearchPath_;
-    }
-
     private void buildPartial0(com.google.cloud.bigquery.migration.v2.SourceEnv result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.defaultDatabase_ = defaultDatabase_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        schemaSearchPath_.makeImmutable();
+        result.schemaSearchPath_ = schemaSearchPath_;
       }
     }
 
@@ -510,7 +499,7 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       if (!other.schemaSearchPath_.isEmpty()) {
         if (schemaSearchPath_.isEmpty()) {
           schemaSearchPath_ = other.schemaSearchPath_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureSchemaSearchPathIsMutable();
           schemaSearchPath_.addAll(other.schemaSearchPath_);
@@ -686,14 +675,14 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList schemaSearchPath_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList schemaSearchPath_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSchemaSearchPathIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!schemaSearchPath_.isModifiable()) {
         schemaSearchPath_ = new com.google.protobuf.LazyStringArrayList(schemaSearchPath_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -708,7 +697,8 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the schemaSearchPath.
      */
     public com.google.protobuf.ProtocolStringList getSchemaSearchPathList() {
-      return schemaSearchPath_.getUnmodifiableView();
+      schemaSearchPath_.makeImmutable();
+      return schemaSearchPath_;
     }
     /**
      *
@@ -777,6 +767,7 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSchemaSearchPathIsMutable();
       schemaSearchPath_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -799,6 +790,7 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSchemaSearchPathIsMutable();
       schemaSearchPath_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -818,6 +810,7 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSchemaSearchPath(java.lang.Iterable<java.lang.String> values) {
       ensureSchemaSearchPathIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, schemaSearchPath_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -834,8 +827,9 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSchemaSearchPath() {
-      schemaSearchPath_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      schemaSearchPath_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -859,6 +853,7 @@ public final class SourceEnv extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSchemaSearchPathIsMutable();
       schemaSearchPath_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

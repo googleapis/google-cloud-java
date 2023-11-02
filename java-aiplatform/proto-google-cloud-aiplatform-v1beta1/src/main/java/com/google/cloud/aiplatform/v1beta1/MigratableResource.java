@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     return new MigratableResource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.MigratableResourceProto
         .internal_static_google_cloud_aiplatform_v1beta1_MigratableResource_descriptor;
@@ -78,6 +73,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * The ml.googleapis.com endpoint that this model Version currently lives
      * in.
      * Example values:
+     *
      * * ml.googleapis.com
      * * us-centrall-ml.googleapis.com
      * * europe-west4-ml.googleapis.com
@@ -96,6 +92,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * The ml.googleapis.com endpoint that this model Version currently lives
      * in.
      * Example values:
+     *
      * * ml.googleapis.com
      * * us-centrall-ml.googleapis.com
      * * europe-west4-ml.googleapis.com
@@ -165,11 +162,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       return new MlEngineModelVersion();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.MigratableResourceProto
           .internal_static_google_cloud_aiplatform_v1beta1_MigratableResource_MlEngineModelVersion_descriptor;
@@ -197,6 +189,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * The ml.googleapis.com endpoint that this model Version currently lives
      * in.
      * Example values:
+     *
      * * ml.googleapis.com
      * * us-centrall-ml.googleapis.com
      * * europe-west4-ml.googleapis.com
@@ -226,6 +219,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * The ml.googleapis.com endpoint that this model Version currently lives
      * in.
      * Example values:
+     *
      * * ml.googleapis.com
      * * us-centrall-ml.googleapis.com
      * * europe-west4-ml.googleapis.com
@@ -700,6 +694,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * The ml.googleapis.com endpoint that this model Version currently lives
        * in.
        * Example values:
+       *
        * * ml.googleapis.com
        * * us-centrall-ml.googleapis.com
        * * europe-west4-ml.googleapis.com
@@ -728,6 +723,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * The ml.googleapis.com endpoint that this model Version currently lives
        * in.
        * Example values:
+       *
        * * ml.googleapis.com
        * * us-centrall-ml.googleapis.com
        * * europe-west4-ml.googleapis.com
@@ -756,6 +752,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * The ml.googleapis.com endpoint that this model Version currently lives
        * in.
        * Example values:
+       *
        * * ml.googleapis.com
        * * us-centrall-ml.googleapis.com
        * * europe-west4-ml.googleapis.com
@@ -783,6 +780,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * The ml.googleapis.com endpoint that this model Version currently lives
        * in.
        * Example values:
+       *
        * * ml.googleapis.com
        * * us-centrall-ml.googleapis.com
        * * europe-west4-ml.googleapis.com
@@ -806,6 +804,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * The ml.googleapis.com endpoint that this model Version currently lives
        * in.
        * Example values:
+       *
        * * ml.googleapis.com
        * * us-centrall-ml.googleapis.com
        * * europe-west4-ml.googleapis.com
@@ -1094,11 +1093,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AutomlModel();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1977,11 +1971,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AutomlDataset();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2941,11 +2930,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       return new DataLabelingDataset();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.MigratableResourceProto
           .internal_static_google_cloud_aiplatform_v1beta1_MigratableResource_DataLabelingDataset_descriptor;
@@ -3052,11 +3036,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new DataLabelingAnnotatedDataset();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5344,6 +5323,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
   }
 
   private int resourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object resource_;
 
   public enum ResourceCase

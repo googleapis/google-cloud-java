@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetSavedQueryRequest extends com.google.protobuf.GeneratedMes
     return new GetSavedQueryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_GetSavedQueryRequest_descriptor;
@@ -76,6 +71,7 @@ public final class GetSavedQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The name of the saved query and it must be in the format of:
+   *
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id
@@ -104,6 +100,7 @@ public final class GetSavedQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The name of the saved query and it must be in the format of:
+   *
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id
@@ -475,6 +472,7 @@ public final class GetSavedQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the saved query and it must be in the format of:
+     *
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -502,6 +500,7 @@ public final class GetSavedQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the saved query and it must be in the format of:
+     *
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -529,6 +528,7 @@ public final class GetSavedQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the saved query and it must be in the format of:
+     *
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -555,6 +555,7 @@ public final class GetSavedQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the saved query and it must be in the format of:
+     *
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -577,6 +578,7 @@ public final class GetSavedQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the saved query and it must be in the format of:
+     *
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id

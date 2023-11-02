@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,6 +77,7 @@ public interface ListComponentsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListComponents` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListComponents` must
    * match the call that provided the page token.
    * </pre>
@@ -92,6 +93,7 @@ public interface ListComponentsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListComponents` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListComponents` must
    * match the call that provided the page token.
    * </pre>

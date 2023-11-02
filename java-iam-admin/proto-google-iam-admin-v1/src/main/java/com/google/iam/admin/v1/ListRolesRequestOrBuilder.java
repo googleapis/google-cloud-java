@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,23 +34,27 @@ public interface ListRolesRequestOrBuilder
    * or
    * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
    * Each resource type's `parent` value format is described below:
+   *
    * * [`roles.list()`](https://cloud.google.com/iam/reference/rest/v1/roles/list): An empty string.
    *   This method doesn't require a resource; it simply returns all
    *   [predefined
    *   roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
    *   in Cloud IAM. Example request URL: `https://iam.googleapis.com/v1/roles`
+   *
    * * [`projects.roles.list()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/list):
    *   `projects/{PROJECT_ID}`. This method lists all project-level
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+   *
    * * [`organizations.roles.list()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/list):
    *   `organizations/{ORGANIZATION_ID}`. This method lists all
    *   organization-level [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+   *
    * Note: Wildcard (*) values are invalid; you must specify a complete project
    * ID or organization ID.
    * </pre>
@@ -71,23 +75,27 @@ public interface ListRolesRequestOrBuilder
    * or
    * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
    * Each resource type's `parent` value format is described below:
+   *
    * * [`roles.list()`](https://cloud.google.com/iam/reference/rest/v1/roles/list): An empty string.
    *   This method doesn't require a resource; it simply returns all
    *   [predefined
    *   roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
    *   in Cloud IAM. Example request URL: `https://iam.googleapis.com/v1/roles`
+   *
    * * [`projects.roles.list()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/list):
    *   `projects/{PROJECT_ID}`. This method lists all project-level
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+   *
    * * [`organizations.roles.list()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/list):
    *   `organizations/{ORGANIZATION_ID}`. This method lists all
    *   organization-level [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+   *
    * Note: Wildcard (*) values are invalid; you must specify a complete project
    * ID or organization ID.
    * </pre>
@@ -103,6 +111,7 @@ public interface ListRolesRequestOrBuilder
    *
    * <pre>
    * Optional limit on the number of roles to include in the response.
+   *
    * The default is 300, and the maximum is 1,000.
    * </pre>
    *

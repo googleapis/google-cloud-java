@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,6 +66,7 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
@@ -80,6 +81,7 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
@@ -173,6 +175,7 @@ public interface ProductSearchParamsOrBuilder
    * on Product labels. We currently support an AND of OR of key-value
    * expressions, where each expression within an OR must have the same key. An
    * '=' should be used to connect the key and value.
+   *
    * For example, "(color = red OR color = blue) AND brand = Google" is
    * acceptable, but "(color = red OR brand = Google)" is not acceptable.
    * "color: red" is not acceptable because it uses a ':' instead of an '='.
@@ -191,6 +194,7 @@ public interface ProductSearchParamsOrBuilder
    * on Product labels. We currently support an AND of OR of key-value
    * expressions, where each expression within an OR must have the same key. An
    * '=' should be used to connect the key and value.
+   *
    * For example, "(color = red OR color = blue) AND brand = Google" is
    * acceptable, but "(color = red OR brand = Google)" is not acceptable.
    * "color: red" is not acceptable because it uses a ':' instead of an '='.

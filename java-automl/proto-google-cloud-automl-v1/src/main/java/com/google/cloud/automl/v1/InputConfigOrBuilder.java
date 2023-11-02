@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,9 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
    *   The version of the
@@ -89,7 +91,9 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
    *   The version of the
@@ -110,7 +114,9 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
    *   The version of the
@@ -128,7 +134,9 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
    *   The version of the
@@ -150,7 +158,9 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
    *   The version of the
@@ -162,5 +172,5 @@ public interface InputConfigOrBuilder
    */
   java.lang.String getParamsOrThrow(java.lang.String key);
 
-  public com.google.cloud.automl.v1.InputConfig.SourceCase getSourceCase();
+  com.google.cloud.automl.v1.InputConfig.SourceCase getSourceCase();
 }

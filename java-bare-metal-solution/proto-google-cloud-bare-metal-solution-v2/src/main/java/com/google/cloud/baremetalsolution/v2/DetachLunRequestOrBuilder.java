@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,4 +80,17 @@ public interface DetachLunRequestOrBuilder
    * @return The bytes for lun.
    */
   com.google.protobuf.ByteString getLunBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, performs lun unmapping without instance reboot.
+   * </pre>
+   *
+   * <code>bool skip_reboot = 3;</code>
+   *
+   * @return The skipReboot.
+   */
+  boolean getSkipReboot();
 }

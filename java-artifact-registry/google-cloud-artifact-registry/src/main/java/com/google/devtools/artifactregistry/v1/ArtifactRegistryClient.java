@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1805,8 +1805,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the parent resource where the repository will be created.
-   * @param repository The repository to be created.
-   * @param repositoryId The repository id to use for this repository.
+   * @param repository Required. The repository to be created.
+   * @param repositoryId Required. The repository id to use for this repository.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Repository, OperationMetadata> createRepositoryAsync(
@@ -1843,8 +1843,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the parent resource where the repository will be created.
-   * @param repository The repository to be created.
-   * @param repositoryId The repository id to use for this repository.
+   * @param repository Required. The repository to be created.
+   * @param repositoryId Required. The repository id to use for this repository.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Repository, OperationMetadata> createRepositoryAsync(
@@ -2947,6 +2947,172 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes multiple versions across a repository. The returned operation will complete once the
+   * versions have been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   PackageName parent = PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]");
+   *   List<String> names = new ArrayList<>();
+   *   artifactRegistryClient.batchDeleteVersionsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent The name of the repository holding all requested versions.
+   * @param names Required. The names of the versions to delete. A maximum of 10000 versions can be
+   *     deleted in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, BatchDeleteVersionsMetadata> batchDeleteVersionsAsync(
+      PackageName parent, List<String> names) {
+    BatchDeleteVersionsRequest request =
+        BatchDeleteVersionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchDeleteVersionsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple versions across a repository. The returned operation will complete once the
+   * versions have been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent =
+   *       PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   artifactRegistryClient.batchDeleteVersionsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent The name of the repository holding all requested versions.
+   * @param names Required. The names of the versions to delete. A maximum of 10000 versions can be
+   *     deleted in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, BatchDeleteVersionsMetadata> batchDeleteVersionsAsync(
+      String parent, List<String> names) {
+    BatchDeleteVersionsRequest request =
+        BatchDeleteVersionsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return batchDeleteVersionsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple versions across a repository. The returned operation will complete once the
+   * versions have been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   BatchDeleteVersionsRequest request =
+   *       BatchDeleteVersionsRequest.newBuilder()
+   *           .setParent(
+   *               PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   artifactRegistryClient.batchDeleteVersionsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, BatchDeleteVersionsMetadata> batchDeleteVersionsAsync(
+      BatchDeleteVersionsRequest request) {
+    return batchDeleteVersionsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple versions across a repository. The returned operation will complete once the
+   * versions have been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   BatchDeleteVersionsRequest request =
+   *       BatchDeleteVersionsRequest.newBuilder()
+   *           .setParent(
+   *               PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Empty, BatchDeleteVersionsMetadata> future =
+   *       artifactRegistryClient.batchDeleteVersionsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationCallable() {
+    return stub.batchDeleteVersionsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple versions across a repository. The returned operation will complete once the
+   * versions have been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   BatchDeleteVersionsRequest request =
+   *       BatchDeleteVersionsRequest.newBuilder()
+   *           .setParent(
+   *               PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       artifactRegistryClient.batchDeleteVersionsCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable() {
+    return stub.batchDeleteVersionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists files.
    *
    * <p>Sample code:
@@ -3239,7 +3405,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The name of the parent resource whose tags will be listed.
+   * @param parent The name of the parent package whose tags will be listed. For example:
+   *     `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTagsPagedResponse listTags(String parent) {

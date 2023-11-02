@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListMembershipsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -214,14 +209,23 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. Lists Memberships that match the filter expression, following the
    * syntax outlined in https://google.aip.dev/160.
+   *
    * Examples:
+   *
    *   - Name is `bar` in project `foo-proj` and location `global`:
+   *
    *       name = "projects/foo-proj/locations/global/membership/bar"
+   *
    *   - Memberships that have a label called `foo`:
+   *
    *       labels.foo:*
+   *
    *   - Memberships that have a label called `foo` whose value is `bar`:
+   *
    *       labels.foo = bar
+   *
    *   - Memberships in the CREATING state:
+   *
    *       state = CREATING
    * </pre>
    *
@@ -247,14 +251,23 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. Lists Memberships that match the filter expression, following the
    * syntax outlined in https://google.aip.dev/160.
+   *
    * Examples:
+   *
    *   - Name is `bar` in project `foo-proj` and location `global`:
+   *
    *       name = "projects/foo-proj/locations/global/membership/bar"
+   *
    *   - Memberships that have a label called `foo`:
+   *
    *       labels.foo:*
+   *
    *   - Memberships that have a label called `foo` whose value is `bar`:
+   *
    *       labels.foo = bar
+   *
    *   - Memberships in the CREATING state:
+   *
    *       state = CREATING
    * </pre>
    *
@@ -1073,14 +1086,23 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Lists Memberships that match the filter expression, following the
      * syntax outlined in https://google.aip.dev/160.
+     *
      * Examples:
+     *
      *   - Name is `bar` in project `foo-proj` and location `global`:
+     *
      *       name = "projects/foo-proj/locations/global/membership/bar"
+     *
      *   - Memberships that have a label called `foo`:
+     *
      *       labels.foo:*
+     *
      *   - Memberships that have a label called `foo` whose value is `bar`:
+     *
      *       labels.foo = bar
+     *
      *   - Memberships in the CREATING state:
+     *
      *       state = CREATING
      * </pre>
      *
@@ -1105,14 +1127,23 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Lists Memberships that match the filter expression, following the
      * syntax outlined in https://google.aip.dev/160.
+     *
      * Examples:
+     *
      *   - Name is `bar` in project `foo-proj` and location `global`:
+     *
      *       name = "projects/foo-proj/locations/global/membership/bar"
+     *
      *   - Memberships that have a label called `foo`:
+     *
      *       labels.foo:*
+     *
      *   - Memberships that have a label called `foo` whose value is `bar`:
+     *
      *       labels.foo = bar
+     *
      *   - Memberships in the CREATING state:
+     *
      *       state = CREATING
      * </pre>
      *
@@ -1137,14 +1168,23 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Lists Memberships that match the filter expression, following the
      * syntax outlined in https://google.aip.dev/160.
+     *
      * Examples:
+     *
      *   - Name is `bar` in project `foo-proj` and location `global`:
+     *
      *       name = "projects/foo-proj/locations/global/membership/bar"
+     *
      *   - Memberships that have a label called `foo`:
+     *
      *       labels.foo:*
+     *
      *   - Memberships that have a label called `foo` whose value is `bar`:
+     *
      *       labels.foo = bar
+     *
      *   - Memberships in the CREATING state:
+     *
      *       state = CREATING
      * </pre>
      *
@@ -1168,14 +1208,23 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Lists Memberships that match the filter expression, following the
      * syntax outlined in https://google.aip.dev/160.
+     *
      * Examples:
+     *
      *   - Name is `bar` in project `foo-proj` and location `global`:
+     *
      *       name = "projects/foo-proj/locations/global/membership/bar"
+     *
      *   - Memberships that have a label called `foo`:
+     *
      *       labels.foo:*
+     *
      *   - Memberships that have a label called `foo` whose value is `bar`:
+     *
      *       labels.foo = bar
+     *
      *   - Memberships in the CREATING state:
+     *
      *       state = CREATING
      * </pre>
      *
@@ -1195,14 +1244,23 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Lists Memberships that match the filter expression, following the
      * syntax outlined in https://google.aip.dev/160.
+     *
      * Examples:
+     *
      *   - Name is `bar` in project `foo-proj` and location `global`:
+     *
      *       name = "projects/foo-proj/locations/global/membership/bar"
+     *
      *   - Memberships that have a label called `foo`:
+     *
      *       labels.foo:*
+     *
      *   - Memberships that have a label called `foo` whose value is `bar`:
+     *
      *       labels.foo = bar
+     *
      *   - Memberships in the CREATING state:
+     *
      *       state = CREATING
      * </pre>
      *

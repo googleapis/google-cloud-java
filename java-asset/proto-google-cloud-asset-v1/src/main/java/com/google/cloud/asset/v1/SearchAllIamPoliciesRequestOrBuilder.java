@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,9 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * be granted the
    * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
+   *
    * The allowed values are:
+   *
    * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
    * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
    * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -53,7 +55,9 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * be granted the
    * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
+   *
    * The allowed values are:
+   *
    * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
    * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
    * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -79,7 +83,9 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * contain the bindings that match your query. To learn more about the IAM
    * policy structure, see the [IAM policy
    * documentation](https://cloud.google.com/iam/help/allow-policies/structure).
+   *
    * Examples:
+   *
    * * `policy:amy&#64;gmail.com` to find IAM policy bindings that specify user
    *   "amy&#64;gmail.com".
    * * `policy:roles/compute.admin` to find IAM policy bindings that specify
@@ -130,7 +136,9 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * contain the bindings that match your query. To learn more about the IAM
    * policy structure, see the [IAM policy
    * documentation](https://cloud.google.com/iam/help/allow-policies/structure).
+   *
    * Examples:
+   *
    * * `policy:amy&#64;gmail.com` to find IAM policy bindings that specify user
    *   "amy&#64;gmail.com".
    * * `policy:roles/compute.admin` to find IAM policy bindings that specify
@@ -174,10 +182,10 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    *
    * <pre>
    * Optional. The page size for search result pagination. Page size is capped
-   * at 500 even if a larger value is given. If set to zero, server will pick an
-   * appropriate default. Returned results may be fewer than requested. When
-   * this happens, there could be more results as long as `next_page_token` is
-   * returned.
+   * at 500 even if a larger value is given. If set to zero or a negative value,
+   * server will pick an appropriate default. Returned results may be fewer than
+   * requested. When this happens, there could be more results as long as
+   * `next_page_token` is returned.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -225,13 +233,16 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * empty, it will search the IAM policies that are attached to all the
    * [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
    * starts with "compute.googleapis.com".
    * * ".*Instance" snapshots IAM policies attached to asset type ends with
    * "Instance".
    * * ".*Instance.*" snapshots IAM policies attached to asset type contains
    * "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -250,13 +261,16 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * empty, it will search the IAM policies that are attached to all the
    * [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
    * starts with "compute.googleapis.com".
    * * ".*Instance" snapshots IAM policies attached to asset type ends with
    * "Instance".
    * * ".*Instance.*" snapshots IAM policies attached to asset type contains
    * "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -275,13 +289,16 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * empty, it will search the IAM policies that are attached to all the
    * [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
    * starts with "compute.googleapis.com".
    * * ".*Instance" snapshots IAM policies attached to asset type ends with
    * "Instance".
    * * ".*Instance.*" snapshots IAM policies attached to asset type contains
    * "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -301,13 +318,16 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * empty, it will search the IAM policies that are attached to all the
    * [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
    * starts with "compute.googleapis.com".
    * * ".*Instance" snapshots IAM policies attached to asset type ends with
    * "Instance".
    * * ".*Instance.*" snapshots IAM policies attached to asset type contains
    * "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.

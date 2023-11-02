@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private EventConfig() {
-    annotationSpecSets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    annotationSpecSets_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EventConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int ANNOTATION_SPEC_SETS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList annotationSpecSets_;
+  private com.google.protobuf.LazyStringArrayList annotationSpecSets_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -347,8 +343,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      annotationSpecSets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      annotationSpecSets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -376,7 +371,6 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.EventConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.EventConfig result =
           new com.google.cloud.datalabeling.v1beta1.EventConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -384,17 +378,12 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.datalabeling.v1beta1.EventConfig result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        annotationSpecSets_ = annotationSpecSets_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.annotationSpecSets_ = annotationSpecSets_;
-    }
-
     private void buildPartial0(com.google.cloud.datalabeling.v1beta1.EventConfig result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        annotationSpecSets_.makeImmutable();
+        result.annotationSpecSets_ = annotationSpecSets_;
+      }
     }
 
     @java.lang.Override
@@ -446,7 +435,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.annotationSpecSets_.isEmpty()) {
         if (annotationSpecSets_.isEmpty()) {
           annotationSpecSets_ = other.annotationSpecSets_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureAnnotationSpecSetsIsMutable();
           annotationSpecSets_.addAll(other.annotationSpecSets_);
@@ -505,14 +494,14 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList annotationSpecSets_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList annotationSpecSets_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAnnotationSpecSetsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!annotationSpecSets_.isModifiable()) {
         annotationSpecSets_ = new com.google.protobuf.LazyStringArrayList(annotationSpecSets_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -529,7 +518,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the annotationSpecSets.
      */
     public com.google.protobuf.ProtocolStringList getAnnotationSpecSetsList() {
-      return annotationSpecSets_.getUnmodifiableView();
+      annotationSpecSets_.makeImmutable();
+      return annotationSpecSets_;
     }
     /**
      *
@@ -606,6 +596,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAnnotationSpecSetsIsMutable();
       annotationSpecSets_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -630,6 +621,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAnnotationSpecSetsIsMutable();
       annotationSpecSets_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -651,6 +643,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAnnotationSpecSets(java.lang.Iterable<java.lang.String> values) {
       ensureAnnotationSpecSetsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, annotationSpecSets_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -669,8 +662,9 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecSets() {
-      annotationSpecSets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      annotationSpecSets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -696,6 +690,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAnnotationSpecSetsIsMutable();
       annotationSpecSets_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

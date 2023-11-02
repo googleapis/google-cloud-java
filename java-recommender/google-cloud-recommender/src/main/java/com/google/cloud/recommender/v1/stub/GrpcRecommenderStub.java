@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommender.v1.GetInsightRequest;
 import com.google.cloud.recommender.v1.GetInsightTypeConfigRequest;
@@ -37,13 +38,13 @@ import com.google.cloud.recommender.v1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1.ListRecommendationsResponse;
 import com.google.cloud.recommender.v1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest;
+import com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1.Recommendation;
 import com.google.cloud.recommender.v1.RecommenderConfig;
 import com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest;
 import com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -105,6 +106,17 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setFullMethodName("google.cloud.recommender.v1.Recommender/GetRecommendation")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRecommendationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedMethodDescriptor =
+          MethodDescriptor.<MarkRecommendationDismissedRequest, Recommendation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recommender.v1.Recommender/MarkRecommendationDismissed")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MarkRecommendationDismissedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
               .build();
 
@@ -190,6 +202,8 @@ public class GrpcRecommenderStub extends RecommenderStub {
   private final UnaryCallable<ListRecommendationsRequest, ListRecommendationsPagedResponse>
       listRecommendationsPagedCallable;
   private final UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable;
+  private final UnaryCallable<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedCallable;
   private final UnaryCallable<MarkRecommendationClaimedRequest, Recommendation>
       markRecommendationClaimedCallable;
   private final UnaryCallable<MarkRecommendationSucceededRequest, Recommendation>
@@ -252,9 +266,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
             .setMethodDescriptor(listInsightsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetInsightRequest, Insight> getInsightTransportSettings =
@@ -262,9 +276,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
             .setMethodDescriptor(getInsightMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<MarkInsightAcceptedRequest, Insight> markInsightAcceptedTransportSettings =
@@ -272,9 +286,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
             .setMethodDescriptor(markInsightAcceptedMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListRecommendationsRequest, ListRecommendationsResponse>
@@ -283,9 +297,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(listRecommendationsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetRecommendationRequest, Recommendation> getRecommendationTransportSettings =
@@ -293,20 +307,31 @@ public class GrpcRecommenderStub extends RecommenderStub {
             .setMethodDescriptor(getRecommendationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
+    GrpcCallSettings<MarkRecommendationDismissedRequest, Recommendation>
+        markRecommendationDismissedTransportSettings =
+            GrpcCallSettings.<MarkRecommendationDismissedRequest, Recommendation>newBuilder()
+                .setMethodDescriptor(markRecommendationDismissedMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<MarkRecommendationClaimedRequest, Recommendation>
         markRecommendationClaimedTransportSettings =
             GrpcCallSettings.<MarkRecommendationClaimedRequest, Recommendation>newBuilder()
                 .setMethodDescriptor(markRecommendationClaimedMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<MarkRecommendationSucceededRequest, Recommendation>
@@ -315,9 +340,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(markRecommendationSucceededMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<MarkRecommendationFailedRequest, Recommendation>
@@ -326,9 +351,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(markRecommendationFailedMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetRecommenderConfigRequest, RecommenderConfig>
@@ -337,9 +362,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(getRecommenderConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateRecommenderConfigRequest, RecommenderConfig>
@@ -348,11 +373,11 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(updateRecommenderConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "recommender_config.name",
                           String.valueOf(request.getRecommenderConfig().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetInsightTypeConfigRequest, InsightTypeConfig>
@@ -361,9 +386,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(getInsightTypeConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
@@ -372,11 +397,11 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(updateInsightTypeConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "insight_type_config.name",
                           String.valueOf(request.getInsightTypeConfig().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
 
@@ -408,6 +433,11 @@ public class GrpcRecommenderStub extends RecommenderStub {
         callableFactory.createUnaryCallable(
             getRecommendationTransportSettings,
             settings.getRecommendationSettings(),
+            clientContext);
+    this.markRecommendationDismissedCallable =
+        callableFactory.createUnaryCallable(
+            markRecommendationDismissedTransportSettings,
+            settings.markRecommendationDismissedSettings(),
             clientContext);
     this.markRecommendationClaimedCallable =
         callableFactory.createUnaryCallable(
@@ -488,6 +518,12 @@ public class GrpcRecommenderStub extends RecommenderStub {
   @Override
   public UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable() {
     return getRecommendationCallable;
+  }
+
+  @Override
+  public UnaryCallable<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedCallable() {
+    return markRecommendationDismissedCallable;
   }
 
   @Override

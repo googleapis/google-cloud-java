@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,8 +40,8 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: CloudChannelReportsService lets Google Cloud resellers and distributors
- * retrieve and combine a variety of data in Cloud Channel for multiple products (Google Cloud
- * Platform (GCP), Google Voice, and Google Workspace.)
+ * retrieve and combine a variety of data in Cloud Channel for multiple products (Google Cloud,
+ * Google Voice, and Google Workspace.)
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -478,6 +478,7 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
    *           .setReportJob(ReportJobName.of("[ACCOUNT]", "[REPORT_JOB]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .addAllPartitionKeys(new ArrayList<String>())
    *           .build();
    *   for (Row element :
    *       cloudChannelReportsServiceClient.fetchReportResults(request).iterateAll()) {
@@ -514,6 +515,7 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
    *           .setReportJob(ReportJobName.of("[ACCOUNT]", "[REPORT_JOB]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .addAllPartitionKeys(new ArrayList<String>())
    *           .build();
    *   ApiFuture<Row> future =
    *       cloudChannelReportsServiceClient.fetchReportResultsPagedCallable().futureCall(request);
@@ -549,6 +551,7 @@ public class CloudChannelReportsServiceClient implements BackgroundResource {
    *           .setReportJob(ReportJobName.of("[ACCOUNT]", "[REPORT_JOB]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .addAllPartitionKeys(new ArrayList<String>())
    *           .build();
    *   while (true) {
    *     FetchReportResultsResponse response =

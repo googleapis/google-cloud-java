@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AwsServicesAuthentication();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,6 +125,7 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. An identifier for the assumed role session.
+   *
    * When unspecified, it defaults to `multicloud-service-agent`.
    * </pre>
    *
@@ -154,6 +150,7 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. An identifier for the assumed role session.
+   *
    * When unspecified, it defaults to `multicloud-service-agent`.
    * </pre>
    *
@@ -658,6 +655,7 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. An identifier for the assumed role session.
+     *
      * When unspecified, it defaults to `multicloud-service-agent`.
      * </pre>
      *
@@ -681,6 +679,7 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. An identifier for the assumed role session.
+     *
      * When unspecified, it defaults to `multicloud-service-agent`.
      * </pre>
      *
@@ -704,6 +703,7 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. An identifier for the assumed role session.
+     *
      * When unspecified, it defaults to `multicloud-service-agent`.
      * </pre>
      *
@@ -726,6 +726,7 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. An identifier for the assumed role session.
+     *
      * When unspecified, it defaults to `multicloud-service-agent`.
      * </pre>
      *
@@ -744,6 +745,7 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. An identifier for the assumed role session.
+     *
      * When unspecified, it defaults to `multicloud-service-agent`.
      * </pre>
      *

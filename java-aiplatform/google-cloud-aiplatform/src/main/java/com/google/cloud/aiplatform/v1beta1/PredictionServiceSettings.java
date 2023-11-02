@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.aiplatform.v1beta1.stub.PredictionServiceStubSettings;
@@ -95,9 +96,20 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     return ((PredictionServiceStubSettings) getStubSettings()).rawPredictSettings();
   }
 
+  /** Returns the object with the settings used for calls to serverStreamingPredict. */
+  public ServerStreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).serverStreamingPredictSettings();
+  }
+
   /** Returns the object with the settings used for calls to explain. */
   public UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).explainSettings();
+  }
+
+  /** Returns the object with the settings used for calls to countTokens. */
+  public UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).countTokensSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -234,9 +246,21 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
       return getStubSettingsBuilder().rawPredictSettings();
     }
 
+    /** Returns the builder for the settings used for calls to serverStreamingPredict. */
+    public ServerStreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
+        serverStreamingPredictSettings() {
+      return getStubSettingsBuilder().serverStreamingPredictSettings();
+    }
+
     /** Returns the builder for the settings used for calls to explain. */
     public UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings() {
       return getStubSettingsBuilder().explainSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to countTokens. */
+    public UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
+        countTokensSettings() {
+      return getStubSettingsBuilder().countTokensSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

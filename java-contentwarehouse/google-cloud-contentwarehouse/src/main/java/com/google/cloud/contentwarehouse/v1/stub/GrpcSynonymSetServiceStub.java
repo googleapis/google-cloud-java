@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.contentwarehouse.v1.CreateSynonymSetRequest;
 import com.google.cloud.contentwarehouse.v1.DeleteSynonymSetRequest;
@@ -31,7 +32,6 @@ import com.google.cloud.contentwarehouse.v1.ListSynonymSetsRequest;
 import com.google.cloud.contentwarehouse.v1.ListSynonymSetsResponse;
 import com.google.cloud.contentwarehouse.v1.SynonymSet;
 import com.google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -161,9 +161,9 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
             .setMethodDescriptor(createSynonymSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetSynonymSetRequest, SynonymSet> getSynonymSetTransportSettings =
@@ -171,9 +171,9 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
             .setMethodDescriptor(getSynonymSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateSynonymSetRequest, SynonymSet> updateSynonymSetTransportSettings =
@@ -181,9 +181,9 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
             .setMethodDescriptor(updateSynonymSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteSynonymSetRequest, Empty> deleteSynonymSetTransportSettings =
@@ -191,9 +191,9 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
             .setMethodDescriptor(deleteSynonymSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListSynonymSetsRequest, ListSynonymSetsResponse>
@@ -202,9 +202,9 @@ public class GrpcSynonymSetServiceStub extends SynonymSetServiceStub {
                 .setMethodDescriptor(listSynonymSetsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
 

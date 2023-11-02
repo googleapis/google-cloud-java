@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,17 +40,13 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
   private ManagedGroupConfig() {
     instanceTemplateName_ = "";
     instanceGroupManagerName_ = "";
+    instanceGroupManagerUri_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ManagedGroupConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -174,6 +170,61 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int INSTANCE_GROUP_MANAGER_URI_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceGroupManagerUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The partial URI to the instance group manager for this group.
+   * E.g. projects/my-project/regions/us-central1/instanceGroupManagers/my-igm.
+   * </pre>
+   *
+   * <code>string instance_group_manager_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The instanceGroupManagerUri.
+   */
+  @java.lang.Override
+  public java.lang.String getInstanceGroupManagerUri() {
+    java.lang.Object ref = instanceGroupManagerUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      instanceGroupManagerUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The partial URI to the instance group manager for this group.
+   * E.g. projects/my-project/regions/us-central1/instanceGroupManagers/my-igm.
+   * </pre>
+   *
+   * <code>string instance_group_manager_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for instanceGroupManagerUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInstanceGroupManagerUriBytes() {
+    java.lang.Object ref = instanceGroupManagerUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      instanceGroupManagerUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -194,6 +245,9 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceGroupManagerName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instanceGroupManagerName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceGroupManagerUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instanceGroupManagerUri_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -209,6 +263,9 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceGroupManagerName_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(2, instanceGroupManagerName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceGroupManagerUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instanceGroupManagerUri_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -228,6 +285,7 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
 
     if (!getInstanceTemplateName().equals(other.getInstanceTemplateName())) return false;
     if (!getInstanceGroupManagerName().equals(other.getInstanceGroupManagerName())) return false;
+    if (!getInstanceGroupManagerUri().equals(other.getInstanceGroupManagerUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -243,6 +301,8 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getInstanceTemplateName().hashCode();
     hash = (37 * hash) + INSTANCE_GROUP_MANAGER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getInstanceGroupManagerName().hashCode();
+    hash = (37 * hash) + INSTANCE_GROUP_MANAGER_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getInstanceGroupManagerUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -384,6 +444,7 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
       bitField0_ = 0;
       instanceTemplateName_ = "";
       instanceGroupManagerName_ = "";
+      instanceGroupManagerUri_ = "";
       return this;
     }
 
@@ -425,6 +486,9 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.instanceGroupManagerName_ = instanceGroupManagerName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.instanceGroupManagerUri_ = instanceGroupManagerUri_;
       }
     }
 
@@ -484,6 +548,11 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getInstanceGroupManagerUri().isEmpty()) {
+        instanceGroupManagerUri_ = other.instanceGroupManagerUri_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -522,6 +591,12 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                instanceGroupManagerUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -759,6 +834,122 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       instanceGroupManagerName_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object instanceGroupManagerUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The partial URI to the instance group manager for this group.
+     * E.g. projects/my-project/regions/us-central1/instanceGroupManagers/my-igm.
+     * </pre>
+     *
+     * <code>string instance_group_manager_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The instanceGroupManagerUri.
+     */
+    public java.lang.String getInstanceGroupManagerUri() {
+      java.lang.Object ref = instanceGroupManagerUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceGroupManagerUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The partial URI to the instance group manager for this group.
+     * E.g. projects/my-project/regions/us-central1/instanceGroupManagers/my-igm.
+     * </pre>
+     *
+     * <code>string instance_group_manager_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for instanceGroupManagerUri.
+     */
+    public com.google.protobuf.ByteString getInstanceGroupManagerUriBytes() {
+      java.lang.Object ref = instanceGroupManagerUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        instanceGroupManagerUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The partial URI to the instance group manager for this group.
+     * E.g. projects/my-project/regions/us-central1/instanceGroupManagers/my-igm.
+     * </pre>
+     *
+     * <code>string instance_group_manager_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The instanceGroupManagerUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstanceGroupManagerUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      instanceGroupManagerUri_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The partial URI to the instance group manager for this group.
+     * E.g. projects/my-project/regions/us-central1/instanceGroupManagers/my-igm.
+     * </pre>
+     *
+     * <code>string instance_group_manager_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInstanceGroupManagerUri() {
+      instanceGroupManagerUri_ = getDefaultInstance().getInstanceGroupManagerUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The partial URI to the instance group manager for this group.
+     * E.g. projects/my-project/regions/us-central1/instanceGroupManagers/my-igm.
+     * </pre>
+     *
+     * <code>string instance_group_manager_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for instanceGroupManagerUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstanceGroupManagerUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      instanceGroupManagerUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

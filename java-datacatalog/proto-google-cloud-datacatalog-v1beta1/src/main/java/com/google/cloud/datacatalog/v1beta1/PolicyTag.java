@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,18 +45,13 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     description_ = "";
     parentPolicyTag_ = "";
-    childPolicyTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    childPolicyTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PolicyTag();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -135,10 +130,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. User defined name of this policy tag. It must: be unique within the parent
-   * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-   * spaces; not start or end with spaces; and be at most 200 bytes long when
-   * encoded in UTF-8.
+   * Required. User defined name of this policy tag. It must: be unique within
+   * the parent taxonomy; contain only unicode letters, numbers, underscores,
+   * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+   * long when encoded in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -161,10 +156,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. User defined name of this policy tag. It must: be unique within the parent
-   * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-   * spaces; not start or end with spaces; and be at most 200 bytes long when
-   * encoded in UTF-8.
+   * Required. User defined name of this policy tag. It must: be unique within
+   * the parent taxonomy; contain only unicode letters, numbers, underscores,
+   * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+   * long when encoded in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -305,7 +300,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
   public static final int CHILD_POLICY_TAGS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList childPolicyTags_;
+  private com.google.protobuf.LazyStringArrayList childPolicyTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -617,8 +613,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
       displayName_ = "";
       description_ = "";
       parentPolicyTag_ = "";
-      childPolicyTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      childPolicyTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -646,20 +641,11 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1beta1.PolicyTag buildPartial() {
       com.google.cloud.datacatalog.v1beta1.PolicyTag result =
           new com.google.cloud.datacatalog.v1beta1.PolicyTag(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.datacatalog.v1beta1.PolicyTag result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        childPolicyTags_ = childPolicyTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.childPolicyTags_ = childPolicyTags_;
     }
 
     private void buildPartial0(com.google.cloud.datacatalog.v1beta1.PolicyTag result) {
@@ -675,6 +661,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.parentPolicyTag_ = parentPolicyTag_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        childPolicyTags_.makeImmutable();
+        result.childPolicyTags_ = childPolicyTags_;
       }
     }
 
@@ -746,7 +736,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
       if (!other.childPolicyTags_.isEmpty()) {
         if (childPolicyTags_.isEmpty()) {
           childPolicyTags_ = other.childPolicyTags_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureChildPolicyTagsIsMutable();
           childPolicyTags_.addAll(other.childPolicyTags_);
@@ -945,10 +935,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this policy tag. It must: be unique within the parent
-     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-     * spaces; not start or end with spaces; and be at most 200 bytes long when
-     * encoded in UTF-8.
+     * Required. User defined name of this policy tag. It must: be unique within
+     * the parent taxonomy; contain only unicode letters, numbers, underscores,
+     * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+     * long when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -970,10 +960,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this policy tag. It must: be unique within the parent
-     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-     * spaces; not start or end with spaces; and be at most 200 bytes long when
-     * encoded in UTF-8.
+     * Required. User defined name of this policy tag. It must: be unique within
+     * the parent taxonomy; contain only unicode letters, numbers, underscores,
+     * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+     * long when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -995,10 +985,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this policy tag. It must: be unique within the parent
-     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-     * spaces; not start or end with spaces; and be at most 200 bytes long when
-     * encoded in UTF-8.
+     * Required. User defined name of this policy tag. It must: be unique within
+     * the parent taxonomy; contain only unicode letters, numbers, underscores,
+     * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+     * long when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1019,10 +1009,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this policy tag. It must: be unique within the parent
-     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-     * spaces; not start or end with spaces; and be at most 200 bytes long when
-     * encoded in UTF-8.
+     * Required. User defined name of this policy tag. It must: be unique within
+     * the parent taxonomy; contain only unicode letters, numbers, underscores,
+     * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+     * long when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1039,10 +1029,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this policy tag. It must: be unique within the parent
-     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
-     * spaces; not start or end with spaces; and be at most 200 bytes long when
-     * encoded in UTF-8.
+     * Required. User defined name of this policy tag. It must: be unique within
+     * the parent taxonomy; contain only unicode letters, numbers, underscores,
+     * dashes and spaces; not start or end with spaces; and be at most 200 bytes
+     * long when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1313,14 +1303,14 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList childPolicyTags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList childPolicyTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureChildPolicyTagsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!childPolicyTags_.isModifiable()) {
         childPolicyTags_ = new com.google.protobuf.LazyStringArrayList(childPolicyTags_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1335,7 +1325,8 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the childPolicyTags.
      */
     public com.google.protobuf.ProtocolStringList getChildPolicyTagsList() {
-      return childPolicyTags_.getUnmodifiableView();
+      childPolicyTags_.makeImmutable();
+      return childPolicyTags_;
     }
     /**
      *
@@ -1404,6 +1395,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
       }
       ensureChildPolicyTagsIsMutable();
       childPolicyTags_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1426,6 +1418,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
       }
       ensureChildPolicyTagsIsMutable();
       childPolicyTags_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1445,6 +1438,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllChildPolicyTags(java.lang.Iterable<java.lang.String> values) {
       ensureChildPolicyTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, childPolicyTags_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1461,8 +1455,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearChildPolicyTags() {
-      childPolicyTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      childPolicyTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1486,6 +1481,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureChildPolicyTagsIsMutable();
       childPolicyTags_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

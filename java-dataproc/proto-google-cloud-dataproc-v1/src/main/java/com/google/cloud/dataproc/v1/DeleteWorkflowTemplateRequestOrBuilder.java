@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,11 @@ public interface DeleteWorkflowTemplateRequestOrBuilder
    * <pre>
    * Required. The resource name of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.workflowTemplates.delete`, the resource name
    * of the template has the following format:
    *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *
    * * For `projects.locations.workflowTemplates.instantiate`, the resource name
    *   of the template has the following format:
    *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -50,9 +52,11 @@ public interface DeleteWorkflowTemplateRequestOrBuilder
    * <pre>
    * Required. The resource name of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.workflowTemplates.delete`, the resource name
    * of the template has the following format:
    *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *
    * * For `projects.locations.workflowTemplates.instantiate`, the resource name
    *   of the template has the following format:
    *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`

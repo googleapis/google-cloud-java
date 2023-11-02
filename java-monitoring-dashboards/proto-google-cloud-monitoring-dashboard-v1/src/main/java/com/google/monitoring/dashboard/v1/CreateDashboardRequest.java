@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
     return new CreateDashboardRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.DashboardsServiceProto
         .internal_static_google_monitoring_dashboard_v1_CreateDashboardRequest_descriptor;
@@ -76,7 +71,9 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The project on which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *
    * The `[PROJECT_ID_OR_NUMBER]` must match the dashboard resource name.
    * </pre>
    *
@@ -101,7 +98,9 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The project on which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *
    * The `[PROJECT_ID_OR_NUMBER]` must match the dashboard resource name.
    * </pre>
    *
@@ -599,7 +598,9 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The project on which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * The `[PROJECT_ID_OR_NUMBER]` must match the dashboard resource name.
      * </pre>
      *
@@ -623,7 +624,9 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The project on which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * The `[PROJECT_ID_OR_NUMBER]` must match the dashboard resource name.
      * </pre>
      *
@@ -647,7 +650,9 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The project on which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * The `[PROJECT_ID_OR_NUMBER]` must match the dashboard resource name.
      * </pre>
      *
@@ -670,7 +675,9 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The project on which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * The `[PROJECT_ID_OR_NUMBER]` must match the dashboard resource name.
      * </pre>
      *
@@ -689,7 +696,9 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The project on which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * The `[PROJECT_ID_OR_NUMBER]` must match the dashboard resource name.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -465,10 +465,12 @@ public interface TrialOrBuilder
    * and the job's
    * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access]
    * field is `true`.
+   *
    * The keys are names of each node used for the trial; for example,
    * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
    * the second worker pool, and `workerpool1-1` for the second node in the
    * second worker pool.
+   *
    * The values are the URIs for each node's interactive shell.
    * </pre>
    *
@@ -489,10 +491,12 @@ public interface TrialOrBuilder
    * and the job's
    * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access]
    * field is `true`.
+   *
    * The keys are names of each node used for the trial; for example,
    * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
    * the second worker pool, and `workerpool1-1` for the second node in the
    * second worker pool.
+   *
    * The values are the URIs for each node's interactive shell.
    * </pre>
    *
@@ -516,10 +520,12 @@ public interface TrialOrBuilder
    * and the job's
    * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access]
    * field is `true`.
+   *
    * The keys are names of each node used for the trial; for example,
    * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
    * the second worker pool, and `workerpool1-1` for the second node in the
    * second worker pool.
+   *
    * The values are the URIs for each node's interactive shell.
    * </pre>
    *
@@ -540,10 +546,12 @@ public interface TrialOrBuilder
    * and the job's
    * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access]
    * field is `true`.
+   *
    * The keys are names of each node used for the trial; for example,
    * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
    * the second worker pool, and `workerpool1-1` for the second node in the
    * second worker pool.
+   *
    * The values are the URIs for each node's interactive shell.
    * </pre>
    *
@@ -568,10 +576,12 @@ public interface TrialOrBuilder
    * and the job's
    * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access]
    * field is `true`.
+   *
    * The keys are names of each node used for the trial; for example,
    * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
    * the second worker pool, and `workerpool1-1` for the second node in the
    * second worker pool.
+   *
    * The values are the URIs for each node's interactive shell.
    * </pre>
    *

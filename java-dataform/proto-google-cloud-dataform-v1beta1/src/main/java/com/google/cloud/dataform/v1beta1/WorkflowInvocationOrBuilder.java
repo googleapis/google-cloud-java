@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,24 @@ public interface WorkflowInvocationOrBuilder
    *
    *
    * <pre>
-   * Immutable. The name of the compilation result to compile. Must be in the format
+   * Immutable. The name of the compilation result to use for this invocation.
+   * Must be in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string compilation_result = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the compilationResult field is set.
+   */
+  boolean hasCompilationResult();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The name of the compilation result to use for this invocation.
+   * Must be in the format
    * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
    * </pre>
    *
@@ -67,7 +84,8 @@ public interface WorkflowInvocationOrBuilder
    *
    *
    * <pre>
-   * Immutable. The name of the compilation result to compile. Must be in the format
+   * Immutable. The name of the compilation result to use for this invocation.
+   * Must be in the format
    * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
    * </pre>
    *
@@ -83,11 +101,57 @@ public interface WorkflowInvocationOrBuilder
    *
    *
    * <pre>
+   * Immutable. The name of the workflow config to invoke. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the workflowConfig field is set.
+   */
+  boolean hasWorkflowConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The name of the workflow config to invoke. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The workflowConfig.
+   */
+  java.lang.String getWorkflowConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The name of the workflow config to invoke. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for workflowConfig.
+   */
+  com.google.protobuf.ByteString getWorkflowConfigBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. If left unset, a default InvocationConfig will be used.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the invocationConfig field is set.
@@ -101,12 +165,12 @@ public interface WorkflowInvocationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The invocationConfig.
    */
-  com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig getInvocationConfig();
+  com.google.cloud.dataform.v1beta1.InvocationConfig getInvocationConfig();
   /**
    *
    *
@@ -115,11 +179,10 @@ public interface WorkflowInvocationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
-  com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfigOrBuilder
-      getInvocationConfigOrBuilder();
+  com.google.cloud.dataform.v1beta1.InvocationConfigOrBuilder getInvocationConfigOrBuilder();
 
   /**
    *
@@ -187,4 +250,7 @@ public interface WorkflowInvocationOrBuilder
    * </code>
    */
   com.google.type.IntervalOrBuilder getInvocationTimingOrBuilder();
+
+  com.google.cloud.dataform.v1beta1.WorkflowInvocation.CompilationSourceCase
+      getCompilationSourceCase();
 }

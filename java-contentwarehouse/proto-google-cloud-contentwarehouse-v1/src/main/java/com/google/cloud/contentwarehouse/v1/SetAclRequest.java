@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SetAclRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -138,14 +133,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
    * The size of the policy is limited to a few 10s of KB. This refers to an
    * Identity and Access (IAM) policy, which specifies access controls for the
    * Document.
+   *
    * You can set ACL with condition for projects only.
+   *
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
    * the left of the operator is `DocumentSchemaId` or property name and the
    * right of the operator is a number or a quoted string. You must escape
    * backslash (&#92;&#92;) and quote (&#92;") characters.
+   *
    * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
    * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
    * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+   *
    * Sample condition:
    *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
    *     &gt;= 10"`
@@ -167,14 +166,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
    * The size of the policy is limited to a few 10s of KB. This refers to an
    * Identity and Access (IAM) policy, which specifies access controls for the
    * Document.
+   *
    * You can set ACL with condition for projects only.
+   *
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
    * the left of the operator is `DocumentSchemaId` or property name and the
    * right of the operator is a number or a quoted string. You must escape
    * backslash (&#92;&#92;) and quote (&#92;") characters.
+   *
    * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
    * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
    * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+   *
    * Sample condition:
    *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
    *     &gt;= 10"`
@@ -196,14 +199,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
    * The size of the policy is limited to a few 10s of KB. This refers to an
    * Identity and Access (IAM) policy, which specifies access controls for the
    * Document.
+   *
    * You can set ACL with condition for projects only.
+   *
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
    * the left of the operator is `DocumentSchemaId` or property name and the
    * right of the operator is a number or a quoted string. You must escape
    * backslash (&#92;&#92;) and quote (&#92;") characters.
+   *
    * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
    * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
    * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+   *
    * Sample condition:
    *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
    *     &gt;= 10"`
@@ -861,14 +868,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * The size of the policy is limited to a few 10s of KB. This refers to an
      * Identity and Access (IAM) policy, which specifies access controls for the
      * Document.
+     *
      * You can set ACL with condition for projects only.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
      * the left of the operator is `DocumentSchemaId` or property name and the
      * right of the operator is a number or a quoted string. You must escape
      * backslash (&#92;&#92;) and quote (&#92;") characters.
+     *
      * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
      * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
      * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+     *
      * Sample condition:
      *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
      *     &gt;= 10"`
@@ -889,14 +900,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * The size of the policy is limited to a few 10s of KB. This refers to an
      * Identity and Access (IAM) policy, which specifies access controls for the
      * Document.
+     *
      * You can set ACL with condition for projects only.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
      * the left of the operator is `DocumentSchemaId` or property name and the
      * right of the operator is a number or a quoted string. You must escape
      * backslash (&#92;&#92;) and quote (&#92;") characters.
+     *
      * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
      * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
      * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+     *
      * Sample condition:
      *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
      *     &gt;= 10"`
@@ -921,14 +936,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * The size of the policy is limited to a few 10s of KB. This refers to an
      * Identity and Access (IAM) policy, which specifies access controls for the
      * Document.
+     *
      * You can set ACL with condition for projects only.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
      * the left of the operator is `DocumentSchemaId` or property name and the
      * right of the operator is a number or a quoted string. You must escape
      * backslash (&#92;&#92;) and quote (&#92;") characters.
+     *
      * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
      * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
      * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+     *
      * Sample condition:
      *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
      *     &gt;= 10"`
@@ -957,14 +976,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * The size of the policy is limited to a few 10s of KB. This refers to an
      * Identity and Access (IAM) policy, which specifies access controls for the
      * Document.
+     *
      * You can set ACL with condition for projects only.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
      * the left of the operator is `DocumentSchemaId` or property name and the
      * right of the operator is a number or a quoted string. You must escape
      * backslash (&#92;&#92;) and quote (&#92;") characters.
+     *
      * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
      * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
      * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+     *
      * Sample condition:
      *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
      *     &gt;= 10"`
@@ -990,14 +1013,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * The size of the policy is limited to a few 10s of KB. This refers to an
      * Identity and Access (IAM) policy, which specifies access controls for the
      * Document.
+     *
      * You can set ACL with condition for projects only.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
      * the left of the operator is `DocumentSchemaId` or property name and the
      * right of the operator is a number or a quoted string. You must escape
      * backslash (&#92;&#92;) and quote (&#92;") characters.
+     *
      * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
      * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
      * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+     *
      * Sample condition:
      *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
      *     &gt;= 10"`
@@ -1029,14 +1056,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * The size of the policy is limited to a few 10s of KB. This refers to an
      * Identity and Access (IAM) policy, which specifies access controls for the
      * Document.
+     *
      * You can set ACL with condition for projects only.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
      * the left of the operator is `DocumentSchemaId` or property name and the
      * right of the operator is a number or a quoted string. You must escape
      * backslash (&#92;&#92;) and quote (&#92;") characters.
+     *
      * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
      * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
      * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+     *
      * Sample condition:
      *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
      *     &gt;= 10"`
@@ -1062,14 +1093,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * The size of the policy is limited to a few 10s of KB. This refers to an
      * Identity and Access (IAM) policy, which specifies access controls for the
      * Document.
+     *
      * You can set ACL with condition for projects only.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
      * the left of the operator is `DocumentSchemaId` or property name and the
      * right of the operator is a number or a quoted string. You must escape
      * backslash (&#92;&#92;) and quote (&#92;") characters.
+     *
      * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
      * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
      * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+     *
      * Sample condition:
      *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
      *     &gt;= 10"`
@@ -1090,14 +1125,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * The size of the policy is limited to a few 10s of KB. This refers to an
      * Identity and Access (IAM) policy, which specifies access controls for the
      * Document.
+     *
      * You can set ACL with condition for projects only.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
      * the left of the operator is `DocumentSchemaId` or property name and the
      * right of the operator is a number or a quoted string. You must escape
      * backslash (&#92;&#92;) and quote (&#92;") characters.
+     *
      * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
      * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
      * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+     *
      * Sample condition:
      *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
      *     &gt;= 10"`
@@ -1120,14 +1159,18 @@ public final class SetAclRequest extends com.google.protobuf.GeneratedMessageV3
      * The size of the policy is limited to a few 10s of KB. This refers to an
      * Identity and Access (IAM) policy, which specifies access controls for the
      * Document.
+     *
      * You can set ACL with condition for projects only.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where
      * the left of the operator is `DocumentSchemaId` or property name and the
      * right of the operator is a number or a quoted string. You must escape
      * backslash (&#92;&#92;) and quote (&#92;") characters.
+     *
      * Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for
      * example, "((A AND B AND C) OR D) AND E"), a maximum of 10 comparisons are
      * allowed in the expression. The expression must be &lt; 6000 bytes in length.
+     *
      * Sample condition:
      *     `"DocumentSchemaId = &#92;"some schema id&#92;" OR SchemaId.floatPropertyName
      *     &gt;= 10"`

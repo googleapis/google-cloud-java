@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
     return new GetEnvironmentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.EnvironmentProto
         .internal_static_google_cloud_dialogflow_v2beta1_GetEnvironmentRequest_descriptor;
@@ -78,8 +73,8 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The name of the environment.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
@@ -107,8 +102,8 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The name of the environment.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
@@ -482,8 +477,8 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The name of the environment.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -510,8 +505,8 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The name of the environment.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -538,8 +533,8 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The name of the environment.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -565,8 +560,8 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The name of the environment.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -588,8 +583,8 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The name of the environment.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *

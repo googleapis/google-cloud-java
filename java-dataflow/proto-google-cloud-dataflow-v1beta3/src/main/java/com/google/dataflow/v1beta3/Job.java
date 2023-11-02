@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     replaceJobId_ = "";
     clientRequestId_ = "";
     replacedByJobId_ = "";
-    tempFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tempFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
     location_ = "";
     stageStates_ = java.util.Collections.emptyList();
     createdFromSnapshotId_ = "";
@@ -59,11 +59,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Job();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -102,6 +97,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique ID of this job.
+   *
    * This field is set by the Cloud Dataflow service when the Job is
    * created, and is immutable for the life of the job.
    * </pre>
@@ -127,6 +123,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique ID of this job.
+   *
    * This field is set by the Cloud Dataflow service when the Job is
    * created, and is immutable for the life of the job.
    * </pre>
@@ -208,10 +205,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user-specified Cloud Dataflow job name.
+   *
    * Only one Job with a given name may exist in a project at any
    * given time. If a caller attempts to create a Job with the same
    * name as an already-existing Job, the attempt returns the
    * existing Job.
+   *
    * The name must match the regular expression
    * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
@@ -237,10 +236,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user-specified Cloud Dataflow job name.
+   *
    * Only one Job with a given name may exist in a project at any
    * given time. If a caller attempts to create a Job with the same
    * name as an already-existing Job, the attempt returns the
    * existing Job.
+   *
    * The name must match the regular expression
    * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
@@ -356,6 +357,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Exactly one of step or steps_location should be specified.
+   *
    * The top-level steps that constitute the entire job. Only retrieved with
    * JOB_VIEW_ALL.
    * </pre>
@@ -371,6 +373,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Exactly one of step or steps_location should be specified.
+   *
    * The top-level steps that constitute the entire job. Only retrieved with
    * JOB_VIEW_ALL.
    * </pre>
@@ -387,6 +390,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Exactly one of step or steps_location should be specified.
+   *
    * The top-level steps that constitute the entire job. Only retrieved with
    * JOB_VIEW_ALL.
    * </pre>
@@ -402,6 +406,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Exactly one of step or steps_location should be specified.
+   *
    * The top-level steps that constitute the entire job. Only retrieved with
    * JOB_VIEW_ALL.
    * </pre>
@@ -417,6 +422,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Exactly one of step or steps_location should be specified.
+   *
    * The top-level steps that constitute the entire job. Only retrieved with
    * JOB_VIEW_ALL.
    * </pre>
@@ -486,11 +492,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The current state of the job.
+   *
    * Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise
    * specified.
+   *
    * A job in the `JOB_STATE_RUNNING` state may asynchronously enter a
    * terminal state. After a job has reached a terminal state, no
    * further state updates may be made.
+   *
    * This field may be mutated by the Cloud Dataflow service;
    * callers cannot mutate it.
    * </pre>
@@ -508,11 +517,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The current state of the job.
+   *
    * Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise
    * specified.
+   *
    * A job in the `JOB_STATE_RUNNING` state may asynchronously enter a
    * terminal state. After a job has reached a terminal state, no
    * further state updates may be made.
+   *
    * This field may be mutated by the Cloud Dataflow service;
    * callers cannot mutate it.
    * </pre>
@@ -585,6 +597,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The job's requested state.
+   *
    * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
    * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
    * also be used to directly set a job's requested state to
@@ -605,6 +618,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The job's requested state.
+   *
    * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
    * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
    * also be used to directly set a job's requested state to
@@ -732,6 +746,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If this job is an update of an existing job, this field is the job ID
    * of the job it replaced.
+   *
    * When sending a `CreateJobRequest`, you can update a job by specifying it
    * here. The job named here is stopped, and its intermediate state is
    * transferred to this job.
@@ -759,6 +774,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If this job is an update of an existing job, this field is the job ID
    * of the job it replaced.
+   *
    * When sending a `CreateJobRequest`, you can update a job by specifying it
    * here. The job named here is stopped, and its intermediate state is
    * transferred to this job.
@@ -1010,7 +1026,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   public static final int TEMP_FILES_FIELD_NUMBER = 16;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tempFiles_;
+  private com.google.protobuf.LazyStringArrayList tempFiles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1020,8 +1037,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * removed on job completion.
    * No duplicates are allowed.
    * No file patterns are supported.
+   *
    * The supported files are:
+   *
    * Google Cloud Storage:
+   *
    *    storage.googleapis.com/{bucket}/{object}
    *    bucket.storage.googleapis.com/{object}
    * </pre>
@@ -1042,8 +1062,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * removed on job completion.
    * No duplicates are allowed.
    * No file patterns are supported.
+   *
    * The supported files are:
+   *
    * Google Cloud Storage:
+   *
    *    storage.googleapis.com/{bucket}/{object}
    *    bucket.storage.googleapis.com/{object}
    * </pre>
@@ -1064,8 +1087,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * removed on job completion.
    * No duplicates are allowed.
    * No file patterns are supported.
+   *
    * The supported files are:
+   *
    * Google Cloud Storage:
+   *
    *    storage.googleapis.com/{bucket}/{object}
    *    bucket.storage.googleapis.com/{object}
    * </pre>
@@ -1087,8 +1113,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * removed on job completion.
    * No duplicates are allowed.
    * No file patterns are supported.
+   *
    * The supported files are:
+   *
    * Google Cloud Storage:
+   *
    *    storage.googleapis.com/{bucket}/{object}
    *    bucket.storage.googleapis.com/{object}
    * </pre>
@@ -1133,8 +1162,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User-defined labels for this job.
+   *
    * The labels map can contain no more than 64 entries.  Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -1161,8 +1192,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User-defined labels for this job.
+   *
    * The labels map can contain no more than 64 entries.  Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -1180,8 +1213,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User-defined labels for this job.
+   *
    * The labels map can contain no more than 64 entries.  Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -1206,8 +1241,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User-defined labels for this job.
+   *
    * The labels map can contain no more than 64 entries.  Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -2149,8 +2186,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableTransformNameMapping().clear();
       clientRequestId_ = "";
       replacedByJobId_ = "";
-      tempFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00010000);
+      tempFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableLabels().clear();
       location_ = "";
       pipelineDescription_ = null;
@@ -2221,11 +2257,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.steps_ = stepsBuilder_.build();
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
-        tempFiles_ = tempFiles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00010000);
-      }
-      result.tempFiles_ = tempFiles_;
       if (stageStatesBuilder_ == null) {
         if (((bitField0_ & 0x00100000) != 0)) {
           stageStates_ = java.util.Collections.unmodifiableList(stageStates_);
@@ -2287,6 +2318,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.replacedByJobId_ = replacedByJobId_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        tempFiles_.makeImmutable();
+        result.tempFiles_ = tempFiles_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.labels_ = internalGetLabels();
@@ -2449,7 +2484,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (!other.tempFiles_.isEmpty()) {
         if (tempFiles_.isEmpty()) {
           tempFiles_ = other.tempFiles_;
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ |= 0x00010000;
         } else {
           ensureTempFilesIsMutable();
           tempFiles_.addAll(other.tempFiles_);
@@ -2738,6 +2773,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique ID of this job.
+     *
      * This field is set by the Cloud Dataflow service when the Job is
      * created, and is immutable for the life of the job.
      * </pre>
@@ -2762,6 +2798,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique ID of this job.
+     *
      * This field is set by the Cloud Dataflow service when the Job is
      * created, and is immutable for the life of the job.
      * </pre>
@@ -2786,6 +2823,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique ID of this job.
+     *
      * This field is set by the Cloud Dataflow service when the Job is
      * created, and is immutable for the life of the job.
      * </pre>
@@ -2809,6 +2847,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique ID of this job.
+     *
      * This field is set by the Cloud Dataflow service when the Job is
      * created, and is immutable for the life of the job.
      * </pre>
@@ -2828,6 +2867,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique ID of this job.
+     *
      * This field is set by the Cloud Dataflow service when the Job is
      * created, and is immutable for the life of the job.
      * </pre>
@@ -2960,10 +3000,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user-specified Cloud Dataflow job name.
+     *
      * Only one Job with a given name may exist in a project at any
      * given time. If a caller attempts to create a Job with the same
      * name as an already-existing Job, the attempt returns the
      * existing Job.
+     *
      * The name must match the regular expression
      * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
@@ -2988,10 +3030,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user-specified Cloud Dataflow job name.
+     *
      * Only one Job with a given name may exist in a project at any
      * given time. If a caller attempts to create a Job with the same
      * name as an already-existing Job, the attempt returns the
      * existing Job.
+     *
      * The name must match the regular expression
      * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
@@ -3016,10 +3060,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user-specified Cloud Dataflow job name.
+     *
      * Only one Job with a given name may exist in a project at any
      * given time. If a caller attempts to create a Job with the same
      * name as an already-existing Job, the attempt returns the
      * existing Job.
+     *
      * The name must match the regular expression
      * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
@@ -3043,10 +3089,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user-specified Cloud Dataflow job name.
+     *
      * Only one Job with a given name may exist in a project at any
      * given time. If a caller attempts to create a Job with the same
      * name as an already-existing Job, the attempt returns the
      * existing Job.
+     *
      * The name must match the regular expression
      * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
@@ -3066,10 +3114,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user-specified Cloud Dataflow job name.
+     *
      * Only one Job with a given name may exist in a project at any
      * given time. If a caller attempts to create a Job with the same
      * name as an already-existing Job, the attempt returns the
      * existing Job.
+     *
      * The name must match the regular expression
      * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
@@ -3384,6 +3434,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3402,6 +3453,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3420,6 +3472,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3438,6 +3491,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3462,6 +3516,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3483,6 +3538,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3507,6 +3563,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3531,6 +3588,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3552,6 +3610,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3573,6 +3632,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3595,6 +3655,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3616,6 +3677,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3637,6 +3699,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3651,6 +3714,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3669,6 +3733,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3688,6 +3753,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3703,6 +3769,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3718,6 +3785,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Exactly one of step or steps_location should be specified.
+     *
      * The top-level steps that constitute the entire job. Only retrieved with
      * JOB_VIEW_ALL.
      * </pre>
@@ -3857,11 +3925,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The current state of the job.
+     *
      * Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise
      * specified.
+     *
      * A job in the `JOB_STATE_RUNNING` state may asynchronously enter a
      * terminal state. After a job has reached a terminal state, no
      * further state updates may be made.
+     *
      * This field may be mutated by the Cloud Dataflow service;
      * callers cannot mutate it.
      * </pre>
@@ -3879,11 +3950,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The current state of the job.
+     *
      * Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise
      * specified.
+     *
      * A job in the `JOB_STATE_RUNNING` state may asynchronously enter a
      * terminal state. After a job has reached a terminal state, no
      * further state updates may be made.
+     *
      * This field may be mutated by the Cloud Dataflow service;
      * callers cannot mutate it.
      * </pre>
@@ -3904,11 +3978,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The current state of the job.
+     *
      * Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise
      * specified.
+     *
      * A job in the `JOB_STATE_RUNNING` state may asynchronously enter a
      * terminal state. After a job has reached a terminal state, no
      * further state updates may be made.
+     *
      * This field may be mutated by the Cloud Dataflow service;
      * callers cannot mutate it.
      * </pre>
@@ -3928,11 +4005,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The current state of the job.
+     *
      * Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise
      * specified.
+     *
      * A job in the `JOB_STATE_RUNNING` state may asynchronously enter a
      * terminal state. After a job has reached a terminal state, no
      * further state updates may be made.
+     *
      * This field may be mutated by the Cloud Dataflow service;
      * callers cannot mutate it.
      * </pre>
@@ -3956,11 +4036,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The current state of the job.
+     *
      * Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise
      * specified.
+     *
      * A job in the `JOB_STATE_RUNNING` state may asynchronously enter a
      * terminal state. After a job has reached a terminal state, no
      * further state updates may be made.
+     *
      * This field may be mutated by the Cloud Dataflow service;
      * callers cannot mutate it.
      * </pre>
@@ -4165,6 +4248,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The job's requested state.
+     *
      * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
      * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
      * also be used to directly set a job's requested state to
@@ -4185,6 +4269,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The job's requested state.
+     *
      * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
      * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
      * also be used to directly set a job's requested state to
@@ -4208,6 +4293,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The job's requested state.
+     *
      * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
      * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
      * also be used to directly set a job's requested state to
@@ -4230,6 +4316,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The job's requested state.
+     *
      * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
      * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
      * also be used to directly set a job's requested state to
@@ -4256,6 +4343,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The job's requested state.
+     *
      * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
      * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
      * also be used to directly set a job's requested state to
@@ -4658,6 +4746,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If this job is an update of an existing job, this field is the job ID
      * of the job it replaced.
+     *
      * When sending a `CreateJobRequest`, you can update a job by specifying it
      * here. The job named here is stopped, and its intermediate state is
      * transferred to this job.
@@ -4684,6 +4773,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If this job is an update of an existing job, this field is the job ID
      * of the job it replaced.
+     *
      * When sending a `CreateJobRequest`, you can update a job by specifying it
      * here. The job named here is stopped, and its intermediate state is
      * transferred to this job.
@@ -4710,6 +4800,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If this job is an update of an existing job, this field is the job ID
      * of the job it replaced.
+     *
      * When sending a `CreateJobRequest`, you can update a job by specifying it
      * here. The job named here is stopped, and its intermediate state is
      * transferred to this job.
@@ -4735,6 +4826,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If this job is an update of an existing job, this field is the job ID
      * of the job it replaced.
+     *
      * When sending a `CreateJobRequest`, you can update a job by specifying it
      * here. The job named here is stopped, and its intermediate state is
      * transferred to this job.
@@ -4756,6 +4848,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If this job is an update of an existing job, this field is the job ID
      * of the job it replaced.
+     *
      * When sending a `CreateJobRequest`, you can update a job by specifying it
      * here. The job named here is stopped, and its intermediate state is
      * transferred to this job.
@@ -5201,14 +5294,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tempFiles_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tempFiles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTempFilesIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!tempFiles_.isModifiable()) {
         tempFiles_ = new com.google.protobuf.LazyStringArrayList(tempFiles_);
-        bitField0_ |= 0x00010000;
       }
+      bitField0_ |= 0x00010000;
     }
     /**
      *
@@ -5219,8 +5312,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * removed on job completion.
      * No duplicates are allowed.
      * No file patterns are supported.
+     *
      * The supported files are:
+     *
      * Google Cloud Storage:
+     *
      *    storage.googleapis.com/{bucket}/{object}
      *    bucket.storage.googleapis.com/{object}
      * </pre>
@@ -5230,7 +5326,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tempFiles.
      */
     public com.google.protobuf.ProtocolStringList getTempFilesList() {
-      return tempFiles_.getUnmodifiableView();
+      tempFiles_.makeImmutable();
+      return tempFiles_;
     }
     /**
      *
@@ -5241,8 +5338,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * removed on job completion.
      * No duplicates are allowed.
      * No file patterns are supported.
+     *
      * The supported files are:
+     *
      * Google Cloud Storage:
+     *
      *    storage.googleapis.com/{bucket}/{object}
      *    bucket.storage.googleapis.com/{object}
      * </pre>
@@ -5263,8 +5363,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * removed on job completion.
      * No duplicates are allowed.
      * No file patterns are supported.
+     *
      * The supported files are:
+     *
      * Google Cloud Storage:
+     *
      *    storage.googleapis.com/{bucket}/{object}
      *    bucket.storage.googleapis.com/{object}
      * </pre>
@@ -5286,8 +5389,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * removed on job completion.
      * No duplicates are allowed.
      * No file patterns are supported.
+     *
      * The supported files are:
+     *
      * Google Cloud Storage:
+     *
      *    storage.googleapis.com/{bucket}/{object}
      *    bucket.storage.googleapis.com/{object}
      * </pre>
@@ -5309,8 +5415,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * removed on job completion.
      * No duplicates are allowed.
      * No file patterns are supported.
+     *
      * The supported files are:
+     *
      * Google Cloud Storage:
+     *
      *    storage.googleapis.com/{bucket}/{object}
      *    bucket.storage.googleapis.com/{object}
      * </pre>
@@ -5327,6 +5436,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTempFilesIsMutable();
       tempFiles_.set(index, value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5339,8 +5449,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * removed on job completion.
      * No duplicates are allowed.
      * No file patterns are supported.
+     *
      * The supported files are:
+     *
      * Google Cloud Storage:
+     *
      *    storage.googleapis.com/{bucket}/{object}
      *    bucket.storage.googleapis.com/{object}
      * </pre>
@@ -5356,6 +5469,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTempFilesIsMutable();
       tempFiles_.add(value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5368,8 +5482,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * removed on job completion.
      * No duplicates are allowed.
      * No file patterns are supported.
+     *
      * The supported files are:
+     *
      * Google Cloud Storage:
+     *
      *    storage.googleapis.com/{bucket}/{object}
      *    bucket.storage.googleapis.com/{object}
      * </pre>
@@ -5382,6 +5499,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTempFiles(java.lang.Iterable<java.lang.String> values) {
       ensureTempFilesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tempFiles_);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5394,8 +5512,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * removed on job completion.
      * No duplicates are allowed.
      * No file patterns are supported.
+     *
      * The supported files are:
+     *
      * Google Cloud Storage:
+     *
      *    storage.googleapis.com/{bucket}/{object}
      *    bucket.storage.googleapis.com/{object}
      * </pre>
@@ -5405,8 +5526,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTempFiles() {
-      tempFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tempFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00010000);
+      ;
       onChanged();
       return this;
     }
@@ -5419,8 +5541,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * removed on job completion.
      * No duplicates are allowed.
      * No file patterns are supported.
+     *
      * The supported files are:
+     *
      * Google Cloud Storage:
+     *
      *    storage.googleapis.com/{bucket}/{object}
      *    bucket.storage.googleapis.com/{object}
      * </pre>
@@ -5437,6 +5562,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTempFilesIsMutable();
       tempFiles_.add(value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5471,8 +5597,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-defined labels for this job.
+     *
      * The labels map can contain no more than 64 entries.  Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
+     *
      * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -5499,8 +5627,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-defined labels for this job.
+     *
      * The labels map can contain no more than 64 entries.  Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
+     *
      * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -5518,8 +5648,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-defined labels for this job.
+     *
      * The labels map can contain no more than 64 entries.  Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
+     *
      * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -5544,8 +5676,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-defined labels for this job.
+     *
      * The labels map can contain no more than 64 entries.  Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
+     *
      * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -5576,8 +5710,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-defined labels for this job.
+     *
      * The labels map can contain no more than 64 entries.  Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
+     *
      * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -5604,8 +5740,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-defined labels for this job.
+     *
      * The labels map can contain no more than 64 entries.  Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
+     *
      * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -5630,8 +5768,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User-defined labels for this job.
+     *
      * The labels map can contain no more than 64 entries.  Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
+     *
      * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in

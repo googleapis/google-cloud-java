@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.websecurityscanner.v1beta.CreateScanConfigRequest;
 import com.google.cloud.websecurityscanner.v1beta.DeleteScanConfigRequest;
@@ -49,7 +50,6 @@ import com.google.cloud.websecurityscanner.v1beta.ScanRun;
 import com.google.cloud.websecurityscanner.v1beta.StartScanRunRequest;
 import com.google.cloud.websecurityscanner.v1beta.StopScanRunRequest;
 import com.google.cloud.websecurityscanner.v1beta.UpdateScanConfigRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -277,9 +277,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             .setMethodDescriptor(createScanConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigTransportSettings =
@@ -287,9 +287,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             .setMethodDescriptor(deleteScanConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetScanConfigRequest, ScanConfig> getScanConfigTransportSettings =
@@ -297,9 +297,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             .setMethodDescriptor(getScanConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListScanConfigsRequest, ListScanConfigsResponse>
@@ -308,9 +308,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                 .setMethodDescriptor(listScanConfigsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateScanConfigRequest, ScanConfig> updateScanConfigTransportSettings =
@@ -318,9 +318,10 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             .setMethodDescriptor(updateScanConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("scan_config.name", String.valueOf(request.getScanConfig().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "scan_config.name", String.valueOf(request.getScanConfig().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StartScanRunRequest, ScanRun> startScanRunTransportSettings =
@@ -328,9 +329,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             .setMethodDescriptor(startScanRunMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetScanRunRequest, ScanRun> getScanRunTransportSettings =
@@ -338,9 +339,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             .setMethodDescriptor(getScanRunMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListScanRunsRequest, ListScanRunsResponse> listScanRunsTransportSettings =
@@ -348,9 +349,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             .setMethodDescriptor(listScanRunsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StopScanRunRequest, ScanRun> stopScanRunTransportSettings =
@@ -358,9 +359,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             .setMethodDescriptor(stopScanRunMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCrawledUrlsRequest, ListCrawledUrlsResponse>
@@ -369,9 +370,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                 .setMethodDescriptor(listCrawledUrlsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetFindingRequest, Finding> getFindingTransportSettings =
@@ -379,9 +380,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             .setMethodDescriptor(getFindingMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
@@ -389,9 +390,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             .setMethodDescriptor(listFindingsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
@@ -400,9 +401,9 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                 .setMethodDescriptor(listFindingTypeStatsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
     return new ContainerRegistryDestination();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.IoProto
         .internal_static_google_cloud_aiplatform_v1beta1_ContainerRegistryDestination_descriptor;
@@ -78,10 +73,13 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
    * Required. Container Registry URI of a container image.
    * Only Google Container Registry and Artifact Registry are supported now.
    * Accepted forms:
+   *
    * *  Google Container Registry path. For example:
    *    `gcr.io/projectId/imageName:tag`.
+   *
    * *  Artifact Registry path. For example:
    *    `us-central1-docker.pkg.dev/projectId/repoName/imageName:tag`.
+   *
    * If a tag is not specified, "latest" will be used as the default tag.
    * </pre>
    *
@@ -108,10 +106,13 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
    * Required. Container Registry URI of a container image.
    * Only Google Container Registry and Artifact Registry are supported now.
    * Accepted forms:
+   *
    * *  Google Container Registry path. For example:
    *    `gcr.io/projectId/imageName:tag`.
+   *
    * *  Artifact Registry path. For example:
    *    `us-central1-docker.pkg.dev/projectId/repoName/imageName:tag`.
+   *
    * If a tag is not specified, "latest" will be used as the default tag.
    * </pre>
    *
@@ -487,10 +488,13 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
      * Required. Container Registry URI of a container image.
      * Only Google Container Registry and Artifact Registry are supported now.
      * Accepted forms:
+     *
      * *  Google Container Registry path. For example:
      *    `gcr.io/projectId/imageName:tag`.
+     *
      * *  Artifact Registry path. For example:
      *    `us-central1-docker.pkg.dev/projectId/repoName/imageName:tag`.
+     *
      * If a tag is not specified, "latest" will be used as the default tag.
      * </pre>
      *
@@ -516,10 +520,13 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
      * Required. Container Registry URI of a container image.
      * Only Google Container Registry and Artifact Registry are supported now.
      * Accepted forms:
+     *
      * *  Google Container Registry path. For example:
      *    `gcr.io/projectId/imageName:tag`.
+     *
      * *  Artifact Registry path. For example:
      *    `us-central1-docker.pkg.dev/projectId/repoName/imageName:tag`.
+     *
      * If a tag is not specified, "latest" will be used as the default tag.
      * </pre>
      *
@@ -545,10 +552,13 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
      * Required. Container Registry URI of a container image.
      * Only Google Container Registry and Artifact Registry are supported now.
      * Accepted forms:
+     *
      * *  Google Container Registry path. For example:
      *    `gcr.io/projectId/imageName:tag`.
+     *
      * *  Artifact Registry path. For example:
      *    `us-central1-docker.pkg.dev/projectId/repoName/imageName:tag`.
+     *
      * If a tag is not specified, "latest" will be used as the default tag.
      * </pre>
      *
@@ -573,10 +583,13 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
      * Required. Container Registry URI of a container image.
      * Only Google Container Registry and Artifact Registry are supported now.
      * Accepted forms:
+     *
      * *  Google Container Registry path. For example:
      *    `gcr.io/projectId/imageName:tag`.
+     *
      * *  Artifact Registry path. For example:
      *    `us-central1-docker.pkg.dev/projectId/repoName/imageName:tag`.
+     *
      * If a tag is not specified, "latest" will be used as the default tag.
      * </pre>
      *
@@ -597,10 +610,13 @@ public final class ContainerRegistryDestination extends com.google.protobuf.Gene
      * Required. Container Registry URI of a container image.
      * Only Google Container Registry and Artifact Registry are supported now.
      * Accepted forms:
+     *
      * *  Google Container Registry path. For example:
      *    `gcr.io/projectId/imageName:tag`.
+     *
      * *  Artifact Registry path. For example:
      *    `us-central1-docker.pkg.dev/projectId/repoName/imageName:tag`.
+     *
      * If a tag is not specified, "latest" will be used as the default tag.
      * </pre>
      *

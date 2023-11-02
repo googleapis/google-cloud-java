@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -205,7 +205,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * }</pre>
    *
    * @param parent Required. The name of the project in which the assessment will be created, in the
-   *     format "projects/{project_number}".
+   *     format `projects/{project_number}`.
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -240,7 +240,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * }</pre>
    *
    * @param parent Required. The name of the project in which the assessment will be created, in the
-   *     format "projects/{project_number}".
+   *     format `projects/{project_number}`.
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -334,7 +334,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * }</pre>
    *
    * @param name Required. The resource name of the Assessment, in the format
-   *     "projects/{project_number}/assessments/{assessment_id}".
+   *     `projects/{project_number}/assessments/{assessment_id}`.
    * @param annotation Optional. The annotation that will be assigned to the Event. This field can
    *     be left empty to provide reasons that apply to an event without concluding whether the
    *     event is legitimate or fraudulent.
@@ -374,7 +374,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * }</pre>
    *
    * @param name Required. The resource name of the Assessment, in the format
-   *     "projects/{project_number}/assessments/{assessment_id}".
+   *     `projects/{project_number}/assessments/{assessment_id}`.
    * @param annotation Optional. The annotation that will be assigned to the Event. This field can
    *     be left empty to provide reasons that apply to an event without concluding whether the
    *     event is legitimate or fraudulent.

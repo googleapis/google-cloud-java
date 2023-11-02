@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExportAgentRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -138,6 +133,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
    * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
    * left unspecified, the serialized agent is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -169,6 +165,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
    * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
    * left unspecified, the serialized agent is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -690,6 +687,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
      * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
      * left unspecified, the serialized agent is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -720,6 +718,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
      * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
      * left unspecified, the serialized agent is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -750,6 +749,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
      * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
      * left unspecified, the serialized agent is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -779,6 +779,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
      * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
      * left unspecified, the serialized agent is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -804,6 +805,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
      * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
      * left unspecified, the serialized agent is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see

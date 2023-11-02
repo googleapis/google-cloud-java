@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,7 @@ public interface ListJobsResponseOrBuilder
    * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
    * retrieve the next page of results. If this is empty it indicates that there
    * are no more results through which to paginate.
+   *
    * The page token is valid for only 2 hours.
    * </pre>
    *
@@ -102,6 +103,7 @@ public interface ListJobsResponseOrBuilder
    * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
    * retrieve the next page of results. If this is empty it indicates that there
    * are no more results through which to paginate.
+   *
    * The page token is valid for only 2 hours.
    * </pre>
    *

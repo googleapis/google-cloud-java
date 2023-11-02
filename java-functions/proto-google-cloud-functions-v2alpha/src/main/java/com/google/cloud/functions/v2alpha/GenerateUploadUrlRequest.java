@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,17 +39,13 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
 
   private GenerateUploadUrlRequest() {
     parent_ = "";
+    kmsKeyName_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GenerateUploadUrlRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -75,8 +71,8 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The project and location in which the Google Cloud Storage signed URL
-   * should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The project and location in which the Google Cloud Storage signed
+   * URL should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -101,8 +97,8 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The project and location in which the Google Cloud Storage signed URL
-   * should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The project and location in which the Google Cloud Storage signed
+   * URL should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -118,6 +114,85 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int KMS_KEY_NAME_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function source code objects in intermediate Cloud Storage
+   * buckets. When you generate an upload url and upload your source code, it
+   * gets copied to an intermediate Cloud Storage bucket. The source code is
+   * then copied to a versioned directory in the sources bucket in the consumer
+   * project during the function deployment.
+   *
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
+   * The Google Cloud Functions service account
+   * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
+   * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
+   * (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the
+   * Key/KeyRing/Project/Organization (least access preferred).
+   * </pre>
+   *
+   * <code>string kms_key_name = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The kmsKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyName() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function source code objects in intermediate Cloud Storage
+   * buckets. When you generate an upload url and upload your source code, it
+   * gets copied to an intermediate Cloud Storage bucket. The source code is
+   * then copied to a versioned directory in the sources bucket in the consumer
+   * project during the function deployment.
+   *
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
+   * The Google Cloud Functions service account
+   * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
+   * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
+   * (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the
+   * Key/KeyRing/Project/Organization (least access preferred).
+   * </pre>
+   *
+   * <code>string kms_key_name = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -141,6 +216,9 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, kmsKeyName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -152,6 +230,9 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, kmsKeyName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -170,6 +251,7 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
         (com.google.cloud.functions.v2alpha.GenerateUploadUrlRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
+    if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -183,6 +265,8 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKeyName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,6 +408,7 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
       super.clear();
       bitField0_ = 0;
       parent_ = "";
+      kmsKeyName_ = "";
       return this;
     }
 
@@ -362,6 +447,9 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
       }
     }
 
@@ -416,6 +504,11 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getKmsKeyName().isEmpty()) {
+        kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -448,6 +541,12 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                kmsKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -472,8 +571,8 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The project and location in which the Google Cloud Storage signed URL
-     * should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The project and location in which the Google Cloud Storage signed
+     * URL should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -497,8 +596,8 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The project and location in which the Google Cloud Storage signed URL
-     * should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The project and location in which the Google Cloud Storage signed
+     * URL should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -522,8 +621,8 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The project and location in which the Google Cloud Storage signed URL
-     * should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The project and location in which the Google Cloud Storage signed
+     * URL should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -546,8 +645,8 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The project and location in which the Google Cloud Storage signed URL
-     * should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The project and location in which the Google Cloud Storage signed
+     * URL should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -566,8 +665,8 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The project and location in which the Google Cloud Storage signed URL
-     * should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The project and location in which the Google Cloud Storage signed
+     * URL should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -584,6 +683,182 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       parent_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object kmsKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function source code objects in intermediate Cloud Storage
+     * buckets. When you generate an upload url and upload your source code, it
+     * gets copied to an intermediate Cloud Storage bucket. The source code is
+     * then copied to a versioned directory in the sources bucket in the consumer
+     * project during the function deployment.
+     *
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
+     * The Google Cloud Functions service account
+     * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
+     * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
+     * (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the
+     * Key/KeyRing/Project/Organization (least access preferred).
+     * </pre>
+     *
+     * <code>string kms_key_name = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The kmsKeyName.
+     */
+    public java.lang.String getKmsKeyName() {
+      java.lang.Object ref = kmsKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function source code objects in intermediate Cloud Storage
+     * buckets. When you generate an upload url and upload your source code, it
+     * gets copied to an intermediate Cloud Storage bucket. The source code is
+     * then copied to a versioned directory in the sources bucket in the consumer
+     * project during the function deployment.
+     *
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
+     * The Google Cloud Functions service account
+     * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
+     * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
+     * (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the
+     * Key/KeyRing/Project/Organization (least access preferred).
+     * </pre>
+     *
+     * <code>string kms_key_name = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for kmsKeyName.
+     */
+    public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+      java.lang.Object ref = kmsKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function source code objects in intermediate Cloud Storage
+     * buckets. When you generate an upload url and upload your source code, it
+     * gets copied to an intermediate Cloud Storage bucket. The source code is
+     * then copied to a versioned directory in the sources bucket in the consumer
+     * project during the function deployment.
+     *
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
+     * The Google Cloud Functions service account
+     * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
+     * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
+     * (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the
+     * Key/KeyRing/Project/Organization (least access preferred).
+     * </pre>
+     *
+     * <code>string kms_key_name = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function source code objects in intermediate Cloud Storage
+     * buckets. When you generate an upload url and upload your source code, it
+     * gets copied to an intermediate Cloud Storage bucket. The source code is
+     * then copied to a versioned directory in the sources bucket in the consumer
+     * project during the function deployment.
+     *
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
+     * The Google Cloud Functions service account
+     * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
+     * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
+     * (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the
+     * Key/KeyRing/Project/Organization (least access preferred).
+     * </pre>
+     *
+     * <code>string kms_key_name = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyName() {
+      kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function source code objects in intermediate Cloud Storage
+     * buckets. When you generate an upload url and upload your source code, it
+     * gets copied to an intermediate Cloud Storage bucket. The source code is
+     * then copied to a versioned directory in the sources bucket in the consumer
+     * project during the function deployment.
+     *
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
+     * The Google Cloud Functions service account
+     * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
+     * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
+     * (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the
+     * Key/KeyRing/Project/Organization (least access preferred).
+     * </pre>
+     *
+     * <code>string kms_key_name = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

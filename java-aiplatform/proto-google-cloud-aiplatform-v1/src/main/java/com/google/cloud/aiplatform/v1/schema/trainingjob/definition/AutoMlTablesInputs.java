@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,18 +37,13 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     transformations_ = java.util.Collections.emptyList();
     optimizationObjective_ = "";
     weightColumnName_ = "";
-    additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    additionalExperiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AutoMlTablesInputs();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -288,8 +283,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             .TextArrayTransformationOrBuilder
         getRepeatedTextOrBuilder();
 
-    public com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-            .Transformation.TransformationDetailCase
+    com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation
+            .TransformationDetailCase
         getTransformationDetailCase();
   }
   /**
@@ -312,11 +307,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Transformation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -383,11 +373,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new AutoTransformation();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1072,11 +1057,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new NumericTransformation();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1860,11 +1840,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         return new CategoricalTransformation();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTablesProto
             .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTablesInputs_Transformation_CategoricalTransformation_descriptor;
@@ -2597,11 +2572,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new TimestampTransformation();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3634,11 +3604,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         return new TextTransformation();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTablesProto
             .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTablesInputs_Transformation_TextTransformation_descriptor;
@@ -4327,11 +4292,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new NumericArrayTransformation();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5110,11 +5070,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         return new CategoricalArrayTransformation();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTablesProto
             .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTablesInputs_Transformation_CategoricalArrayTransformation_descriptor;
@@ -5786,11 +5741,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         return new TextArrayTransformation();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTablesProto
             .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTablesInputs_Transformation_TextArrayTransformation_descriptor;
@@ -6408,6 +6358,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     }
 
     private int transformationDetailCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object transformationDetail_;
 
     public enum TransformationDetailCase
@@ -9360,6 +9312,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
   }
 
   private int additionalOptimizationObjectiveConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object additionalOptimizationObjectiveConfig_;
 
   public enum AdditionalOptimizationObjectiveConfigCase
@@ -9715,8 +9669,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
    * Objective function the model is optimizing towards. The training process
    * creates a model that maximizes/minimizes the value of the objective
    * function over the validation set.
+   *
    * The supported optimization objectives depend on the prediction type.
    * If the field is not set, a default objective function is used.
+   *
    * classification (binary):
    *   "maximize-au-roc" (default) - Maximize the area under the receiver
    *                                 operating characteristic (ROC) curve.
@@ -9726,8 +9682,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
    *                                   recall value.
    *   "maximize-recall-at-precision" - Maximize recall for a specified
    *                                    precision value.
+   *
    * classification (multi-class):
    *   "minimize-log-loss" (default) - Minimize log loss.
+   *
    * regression:
    *   "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
    *   "minimize-mae" - Minimize mean-absolute error (MAE).
@@ -9757,8 +9715,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
    * Objective function the model is optimizing towards. The training process
    * creates a model that maximizes/minimizes the value of the objective
    * function over the validation set.
+   *
    * The supported optimization objectives depend on the prediction type.
    * If the field is not set, a default objective function is used.
+   *
    * classification (binary):
    *   "maximize-au-roc" (default) - Maximize the area under the receiver
    *                                 operating characteristic (ROC) curve.
@@ -9768,8 +9728,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
    *                                   recall value.
    *   "maximize-recall-at-precision" - Maximize recall for a specified
    *                                    precision value.
+   *
    * classification (multi-class):
    *   "minimize-log-loss" (default) - Minimize log loss.
+   *
    * regression:
    *   "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
    *   "minimize-mae" - Minimize mean-absolute error (MAE).
@@ -9801,13 +9763,16 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The train budget of creating this model, expressed in milli node
    * hours i.e. 1,000 value in this field means 1 node hour.
+   *
    * The training cost of the model will not exceed this budget. The final cost
    * will be attempted to be close to the budget, though may end up being (even)
    * noticeably smaller - at the backend's discretion. This especially may
    * happen when further model training ceases to provide any improvements.
+   *
    * If the budget is set to a value known to be insufficient to train a
    * model for the given dataset, the training won't be attempted and
    * will error.
+   *
    * The train budget must be between 1,000 and 72,000 milli node hours,
    * inclusive.
    * </pre>
@@ -9971,7 +9936,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
   public static final int ADDITIONAL_EXPERIMENTS_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList additionalExperiments_;
+  private com.google.protobuf.LazyStringArrayList additionalExperiments_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -10389,8 +10355,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         exportEvaluatedDataItemsConfigBuilder_.dispose();
         exportEvaluatedDataItemsConfigBuilder_ = null;
       }
-      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       additionalOptimizationObjectiveConfigCase_ = 0;
       additionalOptimizationObjectiveConfig_ = null;
       return this;
@@ -10444,11 +10409,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       } else {
         result.transformations_ = transformationsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
-        additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.additionalExperiments_ = additionalExperiments_;
     }
 
     private void buildPartial0(
@@ -10477,6 +10437,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             exportEvaluatedDataItemsConfigBuilder_ == null
                 ? exportEvaluatedDataItemsConfig_
                 : exportEvaluatedDataItemsConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        additionalExperiments_.makeImmutable();
+        result.additionalExperiments_ = additionalExperiments_;
       }
     }
 
@@ -10598,7 +10562,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       if (!other.additionalExperiments_.isEmpty()) {
         if (additionalExperiments_.isEmpty()) {
           additionalExperiments_ = other.additionalExperiments_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensureAdditionalExperimentsIsMutable();
           additionalExperiments_.addAll(other.additionalExperiments_);
@@ -11663,8 +11627,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
+     *
      * classification (binary):
      *   "maximize-au-roc" (default) - Maximize the area under the receiver
      *                                 operating characteristic (ROC) curve.
@@ -11674,8 +11640,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      *                                   recall value.
      *   "maximize-recall-at-precision" - Maximize recall for a specified
      *                                    precision value.
+     *
      * classification (multi-class):
      *   "minimize-log-loss" (default) - Minimize log loss.
+     *
      * regression:
      *   "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
      *   "minimize-mae" - Minimize mean-absolute error (MAE).
@@ -11704,8 +11672,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
+     *
      * classification (binary):
      *   "maximize-au-roc" (default) - Maximize the area under the receiver
      *                                 operating characteristic (ROC) curve.
@@ -11715,8 +11685,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      *                                   recall value.
      *   "maximize-recall-at-precision" - Maximize recall for a specified
      *                                    precision value.
+     *
      * classification (multi-class):
      *   "minimize-log-loss" (default) - Minimize log loss.
+     *
      * regression:
      *   "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
      *   "minimize-mae" - Minimize mean-absolute error (MAE).
@@ -11745,8 +11717,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
+     *
      * classification (binary):
      *   "maximize-au-roc" (default) - Maximize the area under the receiver
      *                                 operating characteristic (ROC) curve.
@@ -11756,8 +11730,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      *                                   recall value.
      *   "maximize-recall-at-precision" - Maximize recall for a specified
      *                                    precision value.
+     *
      * classification (multi-class):
      *   "minimize-log-loss" (default) - Minimize log loss.
+     *
      * regression:
      *   "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
      *   "minimize-mae" - Minimize mean-absolute error (MAE).
@@ -11785,8 +11761,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
+     *
      * classification (binary):
      *   "maximize-au-roc" (default) - Maximize the area under the receiver
      *                                 operating characteristic (ROC) curve.
@@ -11796,8 +11774,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      *                                   recall value.
      *   "maximize-recall-at-precision" - Maximize recall for a specified
      *                                    precision value.
+     *
      * classification (multi-class):
      *   "minimize-log-loss" (default) - Minimize log loss.
+     *
      * regression:
      *   "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
      *   "minimize-mae" - Minimize mean-absolute error (MAE).
@@ -11821,8 +11801,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
+     *
      * classification (binary):
      *   "maximize-au-roc" (default) - Maximize the area under the receiver
      *                                 operating characteristic (ROC) curve.
@@ -11832,8 +11814,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      *                                   recall value.
      *   "maximize-recall-at-precision" - Maximize recall for a specified
      *                                    precision value.
+     *
      * classification (multi-class):
      *   "minimize-log-loss" (default) - Minimize log loss.
+     *
      * regression:
      *   "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
      *   "minimize-mae" - Minimize mean-absolute error (MAE).
@@ -11863,13 +11847,16 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The train budget of creating this model, expressed in milli node
      * hours i.e. 1,000 value in this field means 1 node hour.
+     *
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
      * happen when further model training ceases to provide any improvements.
+     *
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     *
      * The train budget must be between 1,000 and 72,000 milli node hours,
      * inclusive.
      * </pre>
@@ -11888,13 +11875,16 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The train budget of creating this model, expressed in milli node
      * hours i.e. 1,000 value in this field means 1 node hour.
+     *
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
      * happen when further model training ceases to provide any improvements.
+     *
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     *
      * The train budget must be between 1,000 and 72,000 milli node hours,
      * inclusive.
      * </pre>
@@ -11917,13 +11907,16 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The train budget of creating this model, expressed in milli node
      * hours i.e. 1,000 value in this field means 1 node hour.
+     *
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
      * happen when further model training ceases to provide any improvements.
+     *
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     *
      * The train budget must be between 1,000 and 72,000 milli node hours,
      * inclusive.
      * </pre>
@@ -12367,15 +12360,15 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       return exportEvaluatedDataItemsConfigBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList additionalExperiments_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList additionalExperiments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAdditionalExperimentsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!additionalExperiments_.isModifiable()) {
         additionalExperiments_ =
             new com.google.protobuf.LazyStringArrayList(additionalExperiments_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -12389,7 +12382,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * @return A list containing the additionalExperiments.
      */
     public com.google.protobuf.ProtocolStringList getAdditionalExperimentsList() {
-      return additionalExperiments_.getUnmodifiableView();
+      additionalExperiments_.makeImmutable();
+      return additionalExperiments_;
     }
     /**
      *
@@ -12454,6 +12448,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
       ensureAdditionalExperimentsIsMutable();
       additionalExperiments_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -12475,6 +12470,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
       ensureAdditionalExperimentsIsMutable();
       additionalExperiments_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -12493,6 +12489,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     public Builder addAllAdditionalExperiments(java.lang.Iterable<java.lang.String> values) {
       ensureAdditionalExperimentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalExperiments_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -12508,8 +12505,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAdditionalExperiments() {
-      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -12532,6 +12530,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureAdditionalExperimentsIsMutable();
       additionalExperiments_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

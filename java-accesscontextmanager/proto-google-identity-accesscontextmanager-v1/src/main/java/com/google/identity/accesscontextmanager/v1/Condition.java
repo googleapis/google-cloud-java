@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,21 +42,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Condition() {
-    ipSubnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    requiredAccessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ipSubnetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    requiredAccessLevels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    members_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Condition();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,7 +72,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public static final int IP_SUBNETWORKS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ipSubnetworks_;
+  private com.google.protobuf.LazyStringArrayList ipSubnetworks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -222,7 +218,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public static final int REQUIRED_ACCESS_LEVELS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList requiredAccessLevels_;
+  private com.google.protobuf.LazyStringArrayList requiredAccessLevels_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -321,7 +318,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public static final int MEMBERS_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList members_;
+  private com.google.protobuf.LazyStringArrayList members_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -404,7 +402,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   public static final int REGIONS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList regions_;
+  private com.google.protobuf.LazyStringArrayList regions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -750,20 +749,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      ipSubnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      ipSubnetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       devicePolicy_ = null;
       if (devicePolicyBuilder_ != null) {
         devicePolicyBuilder_.dispose();
         devicePolicyBuilder_ = null;
       }
-      requiredAccessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      requiredAccessLevels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       negate_ = false;
-      members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
-      regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      members_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -791,7 +786,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public com.google.identity.accesscontextmanager.v1.Condition buildPartial() {
       com.google.identity.accesscontextmanager.v1.Condition result =
           new com.google.identity.accesscontextmanager.v1.Condition(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -799,38 +793,30 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.identity.accesscontextmanager.v1.Condition result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        ipSubnetworks_ = ipSubnetworks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.ipSubnetworks_ = ipSubnetworks_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        requiredAccessLevels_ = requiredAccessLevels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.requiredAccessLevels_ = requiredAccessLevels_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        members_ = members_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.members_ = members_;
-      if (((bitField0_ & 0x00000020) != 0)) {
-        regions_ = regions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.regions_ = regions_;
-    }
-
     private void buildPartial0(com.google.identity.accesscontextmanager.v1.Condition result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        ipSubnetworks_.makeImmutable();
+        result.ipSubnetworks_ = ipSubnetworks_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.devicePolicy_ =
             devicePolicyBuilder_ == null ? devicePolicy_ : devicePolicyBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        requiredAccessLevels_.makeImmutable();
+        result.requiredAccessLevels_ = requiredAccessLevels_;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.negate_ = negate_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        members_.makeImmutable();
+        result.members_ = members_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        regions_.makeImmutable();
+        result.regions_ = regions_;
       }
     }
 
@@ -883,7 +869,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (!other.ipSubnetworks_.isEmpty()) {
         if (ipSubnetworks_.isEmpty()) {
           ipSubnetworks_ = other.ipSubnetworks_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureIpSubnetworksIsMutable();
           ipSubnetworks_.addAll(other.ipSubnetworks_);
@@ -896,7 +882,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (!other.requiredAccessLevels_.isEmpty()) {
         if (requiredAccessLevels_.isEmpty()) {
           requiredAccessLevels_ = other.requiredAccessLevels_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureRequiredAccessLevelsIsMutable();
           requiredAccessLevels_.addAll(other.requiredAccessLevels_);
@@ -909,7 +895,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (!other.members_.isEmpty()) {
         if (members_.isEmpty()) {
           members_ = other.members_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureMembersIsMutable();
           members_.addAll(other.members_);
@@ -919,7 +905,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (!other.regions_.isEmpty()) {
         if (regions_.isEmpty()) {
           regions_ = other.regions_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureRegionsIsMutable();
           regions_.addAll(other.regions_);
@@ -1011,14 +997,14 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList ipSubnetworks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ipSubnetworks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIpSubnetworksIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!ipSubnetworks_.isModifiable()) {
         ipSubnetworks_ = new com.google.protobuf.LazyStringArrayList(ipSubnetworks_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1039,7 +1025,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ipSubnetworks.
      */
     public com.google.protobuf.ProtocolStringList getIpSubnetworksList() {
-      return ipSubnetworks_.getUnmodifiableView();
+      ipSubnetworks_.makeImmutable();
+      return ipSubnetworks_;
     }
     /**
      *
@@ -1132,6 +1119,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIpSubnetworksIsMutable();
       ipSubnetworks_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1160,6 +1148,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIpSubnetworksIsMutable();
       ipSubnetworks_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1185,6 +1174,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIpSubnetworks(java.lang.Iterable<java.lang.String> values) {
       ensureIpSubnetworksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ipSubnetworks_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1207,8 +1197,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpSubnetworks() {
-      ipSubnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ipSubnetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1238,6 +1229,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIpSubnetworksIsMutable();
       ipSubnetworks_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1439,14 +1431,14 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       return devicePolicyBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList requiredAccessLevels_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList requiredAccessLevels_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRequiredAccessLevelsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!requiredAccessLevels_.isModifiable()) {
         requiredAccessLevels_ = new com.google.protobuf.LazyStringArrayList(requiredAccessLevels_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1464,7 +1456,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the requiredAccessLevels.
      */
     public com.google.protobuf.ProtocolStringList getRequiredAccessLevelsList() {
-      return requiredAccessLevels_.getUnmodifiableView();
+      requiredAccessLevels_.makeImmutable();
+      return requiredAccessLevels_;
     }
     /**
      *
@@ -1545,6 +1538,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequiredAccessLevelsIsMutable();
       requiredAccessLevels_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1570,6 +1564,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequiredAccessLevelsIsMutable();
       requiredAccessLevels_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1592,6 +1587,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRequiredAccessLevels(java.lang.Iterable<java.lang.String> values) {
       ensureRequiredAccessLevelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, requiredAccessLevels_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1611,8 +1607,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequiredAccessLevels() {
-      requiredAccessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      requiredAccessLevels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1639,6 +1636,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRequiredAccessLevelsIsMutable();
       requiredAccessLevels_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1702,14 +1700,14 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList members_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList members_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMembersIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!members_.isModifiable()) {
         members_ = new com.google.protobuf.LazyStringArrayList(members_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1728,7 +1726,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the members.
      */
     public com.google.protobuf.ProtocolStringList getMembersList() {
-      return members_.getUnmodifiableView();
+      members_.makeImmutable();
+      return members_;
     }
     /**
      *
@@ -1813,6 +1812,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMembersIsMutable();
       members_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1839,6 +1839,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMembersIsMutable();
       members_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1862,6 +1863,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMembers(java.lang.Iterable<java.lang.String> values) {
       ensureMembersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, members_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1882,8 +1884,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMembers() {
-      members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      members_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1911,18 +1914,19 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMembersIsMutable();
       members_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList regions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList regions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!regions_.isModifiable()) {
         regions_ = new com.google.protobuf.LazyStringArrayList(regions_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -1937,7 +1941,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the regions.
      */
     public com.google.protobuf.ProtocolStringList getRegionsList() {
-      return regions_.getUnmodifiableView();
+      regions_.makeImmutable();
+      return regions_;
     }
     /**
      *
@@ -2006,6 +2011,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRegionsIsMutable();
       regions_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2028,6 +2034,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRegionsIsMutable();
       regions_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2047,6 +2054,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRegions(java.lang.Iterable<java.lang.String> values) {
       ensureRegionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, regions_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2063,8 +2071,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegions() {
-      regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2088,6 +2097,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRegionsIsMutable();
       regions_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

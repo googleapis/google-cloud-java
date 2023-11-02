@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,17 +40,13 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
 
   private HiveMetastoreConfig() {
     version_ = "";
+    endpointProtocol_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new HiveMetastoreConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -79,6 +75,167 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         .ensureFieldAccessorsInitialized(
             com.google.cloud.metastore.v1.HiveMetastoreConfig.class,
             com.google.cloud.metastore.v1.HiveMetastoreConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Protocols available for serving the metastore service endpoint.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol}
+   */
+  public enum EndpointProtocol implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The protocol is not set.
+     * </pre>
+     *
+     * <code>ENDPOINT_PROTOCOL_UNSPECIFIED = 0;</code>
+     */
+    ENDPOINT_PROTOCOL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use the legacy Apache Thrift protocol for the metastore service endpoint.
+     * </pre>
+     *
+     * <code>THRIFT = 1;</code>
+     */
+    THRIFT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Use the modernized gRPC protocol for the metastore service endpoint.
+     * </pre>
+     *
+     * <code>GRPC = 2;</code>
+     */
+    GRPC(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The protocol is not set.
+     * </pre>
+     *
+     * <code>ENDPOINT_PROTOCOL_UNSPECIFIED = 0;</code>
+     */
+    public static final int ENDPOINT_PROTOCOL_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Use the legacy Apache Thrift protocol for the metastore service endpoint.
+     * </pre>
+     *
+     * <code>THRIFT = 1;</code>
+     */
+    public static final int THRIFT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Use the modernized gRPC protocol for the metastore service endpoint.
+     * </pre>
+     *
+     * <code>GRPC = 2;</code>
+     */
+    public static final int GRPC_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EndpointProtocol valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EndpointProtocol forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ENDPOINT_PROTOCOL_UNSPECIFIED;
+        case 1:
+          return THRIFT;
+        case 2:
+          return GRPC;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EndpointProtocol> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EndpointProtocol>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EndpointProtocol>() {
+              public EndpointProtocol findValueByNumber(int number) {
+                return EndpointProtocol.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.metastore.v1.HiveMetastoreConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final EndpointProtocol[] VALUES = values();
+
+    public static EndpointProtocol valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EndpointProtocol(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol)
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
@@ -314,6 +471,48 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         : kerberosConfig_;
   }
 
+  public static final int ENDPOINT_PROTOCOL_FIELD_NUMBER = 4;
+  private int endpointProtocol_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The protocol to use for the metastore service endpoint. If unspecified,
+   * defaults to `THRIFT`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for endpointProtocol.
+   */
+  @java.lang.Override
+  public int getEndpointProtocolValue() {
+    return endpointProtocol_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The protocol to use for the metastore service endpoint. If unspecified,
+   * defaults to `THRIFT`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+   * </code>
+   *
+   * @return The endpointProtocol.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol getEndpointProtocol() {
+    com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol result =
+        com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol.forNumber(
+            endpointProtocol_);
+    return result == null
+        ? com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol.UNRECOGNIZED
+        : result;
+  }
+
   public static final int AUXILIARY_VERSIONS_FIELD_NUMBER = 5;
 
   private static final class AuxiliaryVersionsDefaultEntryHolder {
@@ -489,6 +688,12 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     if (kerberosConfig_ != null) {
       output.writeMessage(3, getKerberosConfig());
     }
+    if (endpointProtocol_
+        != com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol
+            .ENDPOINT_PROTOCOL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, endpointProtocol_);
+    }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output,
         internalGetAuxiliaryVersions(),
@@ -518,6 +723,12 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     }
     if (kerberosConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getKerberosConfig());
+    }
+    if (endpointProtocol_
+        != com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol
+            .ENDPOINT_PROTOCOL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, endpointProtocol_);
     }
     for (java.util.Map.Entry<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
         entry : internalGetAuxiliaryVersions().getMap().entrySet()) {
@@ -553,6 +764,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     if (hasKerberosConfig()) {
       if (!getKerberosConfig().equals(other.getKerberosConfig())) return false;
     }
+    if (endpointProtocol_ != other.endpointProtocol_) return false;
     if (!internalGetAuxiliaryVersions().equals(other.internalGetAuxiliaryVersions())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -575,6 +787,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + KERBEROS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getKerberosConfig().hashCode();
     }
+    hash = (37 * hash) + ENDPOINT_PROTOCOL_FIELD_NUMBER;
+    hash = (53 * hash) + endpointProtocol_;
     if (!internalGetAuxiliaryVersions().getMap().isEmpty()) {
       hash = (37 * hash) + AUXILIARY_VERSIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAuxiliaryVersions().hashCode();
@@ -750,6 +964,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         kerberosConfigBuilder_.dispose();
         kerberosConfigBuilder_ = null;
       }
+      endpointProtocol_ = 0;
       internalGetMutableAuxiliaryVersions().clear();
       return this;
     }
@@ -799,6 +1014,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
             kerberosConfigBuilder_ == null ? kerberosConfig_ : kerberosConfigBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.endpointProtocol_ = endpointProtocol_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.auxiliaryVersions_ = internalGetAuxiliaryVersions();
         result.auxiliaryVersions_.makeImmutable();
       }
@@ -860,8 +1078,11 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       if (other.hasKerberosConfig()) {
         mergeKerberosConfig(other.getKerberosConfig());
       }
+      if (other.endpointProtocol_ != 0) {
+        setEndpointProtocolValue(other.getEndpointProtocolValue());
+      }
       internalGetMutableAuxiliaryVersions().mergeFrom(other.internalGetAuxiliaryVersions());
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -912,6 +1133,12 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                endpointProtocol_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             case 42:
               {
                 com.google.protobuf.MapEntry<
@@ -923,7 +1150,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
                 internalGetMutableAuxiliaryVersions()
                     .getMutableMap()
                     .put(auxiliaryVersions__.getKey(), auxiliaryVersions__.getValue());
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -1467,6 +1694,111 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       return kerberosConfigBuilder_;
     }
 
+    private int endpointProtocol_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The protocol to use for the metastore service endpoint. If unspecified,
+     * defaults to `THRIFT`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for endpointProtocol.
+     */
+    @java.lang.Override
+    public int getEndpointProtocolValue() {
+      return endpointProtocol_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The protocol to use for the metastore service endpoint. If unspecified,
+     * defaults to `THRIFT`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for endpointProtocol to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointProtocolValue(int value) {
+      endpointProtocol_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The protocol to use for the metastore service endpoint. If unspecified,
+     * defaults to `THRIFT`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+     * </code>
+     *
+     * @return The endpointProtocol.
+     */
+    @java.lang.Override
+    public com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol
+        getEndpointProtocol() {
+      com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol result =
+          com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol.forNumber(
+              endpointProtocol_);
+      return result == null
+          ? com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The protocol to use for the metastore service endpoint. If unspecified,
+     * defaults to `THRIFT`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+     * </code>
+     *
+     * @param value The endpointProtocol to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointProtocol(
+        com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      endpointProtocol_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The protocol to use for the metastore service endpoint. If unspecified,
+     * defaults to `THRIFT`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEndpointProtocol() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      endpointProtocol_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
         auxiliaryVersions_;
@@ -1492,7 +1824,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       if (!auxiliaryVersions_.isMutable()) {
         auxiliaryVersions_ = auxiliaryVersions_.copy();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return auxiliaryVersions_;
     }
@@ -1619,7 +1951,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearAuxiliaryVersions() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableAuxiliaryVersions().getMutableMap().clear();
       return this;
     }
@@ -1652,7 +1984,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
         getMutableAuxiliaryVersions() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return internalGetMutableAuxiliaryVersions().getMutableMap();
     }
     /**
@@ -1682,7 +2014,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException("map value");
       }
       internalGetMutableAuxiliaryVersions().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1707,7 +2039,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
             values) {
       internalGetMutableAuxiliaryVersions().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
 

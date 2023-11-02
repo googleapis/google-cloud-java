@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
   }
 
   private TargetsPresentCondition() {
-    missingTargets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    missingTargets_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TargetsPresentCondition();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -89,13 +84,14 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
   public static final int MISSING_TARGETS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList missingTargets_;
+  private com.google.protobuf.LazyStringArrayList missingTargets_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * The list of Target names that do not exist. For example,
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -110,7 +106,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
    *
    * <pre>
    * The list of Target names that do not exist. For example,
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -125,7 +121,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
    *
    * <pre>
    * The list of Target names that do not exist. For example,
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -141,7 +137,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
    *
    * <pre>
    * The list of Target names that do not exist. For example,
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -429,8 +425,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       super.clear();
       bitField0_ = 0;
       status_ = false;
-      missingTargets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      missingTargets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -463,7 +458,6 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
     public com.google.cloud.deploy.v1.TargetsPresentCondition buildPartial() {
       com.google.cloud.deploy.v1.TargetsPresentCondition result =
           new com.google.cloud.deploy.v1.TargetsPresentCondition(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -471,19 +465,14 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.deploy.v1.TargetsPresentCondition result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        missingTargets_ = missingTargets_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.missingTargets_ = missingTargets_;
-    }
-
     private void buildPartial0(com.google.cloud.deploy.v1.TargetsPresentCondition result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        missingTargets_.makeImmutable();
+        result.missingTargets_ = missingTargets_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
@@ -542,7 +531,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       if (!other.missingTargets_.isEmpty()) {
         if (missingTargets_.isEmpty()) {
           missingTargets_ = other.missingTargets_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureMissingTargetsIsMutable();
           missingTargets_.addAll(other.missingTargets_);
@@ -669,21 +658,21 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.protobuf.LazyStringList missingTargets_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList missingTargets_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMissingTargetsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!missingTargets_.isModifiable()) {
         missingTargets_ = new com.google.protobuf.LazyStringArrayList(missingTargets_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -691,14 +680,15 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      * @return A list containing the missingTargets.
      */
     public com.google.protobuf.ProtocolStringList getMissingTargetsList() {
-      return missingTargets_.getUnmodifiableView();
+      missingTargets_.makeImmutable();
+      return missingTargets_;
     }
     /**
      *
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -713,7 +703,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -729,7 +719,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -745,7 +735,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -760,6 +750,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       }
       ensureMissingTargetsIsMutable();
       missingTargets_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -768,7 +759,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -782,6 +773,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       }
       ensureMissingTargetsIsMutable();
       missingTargets_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -790,7 +782,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -801,6 +793,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
     public Builder addAllMissingTargets(java.lang.Iterable<java.lang.String> values) {
       ensureMissingTargetsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, missingTargets_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -809,7 +802,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -817,8 +810,9 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMissingTargets() {
-      missingTargets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      missingTargets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -827,7 +821,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -842,6 +836,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureMissingTargetsIsMutable();
       missingTargets_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

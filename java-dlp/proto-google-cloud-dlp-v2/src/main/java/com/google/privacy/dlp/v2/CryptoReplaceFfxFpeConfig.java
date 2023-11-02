@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ package com.google.privacy.dlp.v2;
  * characters long. In the case that the identifier is the empty string, it will
  * be skipped. See https://cloud.google.com/dlp/docs/pseudonymization to learn
  * more.
+ *
  * Note: We recommend using  CryptoDeterministicConfig for all use cases which
  * do not require preserving the input alphabet space and size, plus warrant
  * referential integrity.
@@ -54,11 +55,6 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CryptoReplaceFfxFpeConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -285,6 +281,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
   }
 
   private int alphabetCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object alphabet_;
 
   public enum AlphabetCase
@@ -399,15 +397,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
    * the context is not set, a default tweak will be used.
+   *
    * If the context is set but:
+   *
    * 1. there is no record present when transforming a given value or
    * 1. the field is not present when transforming a given value,
+   *
    * a default tweak will be used.
+   *
    * Note that case (1) is expected when an `InfoTypeTransformation` is
    * applied to both structured and unstructured `ContentItem`s.
    * Currently, the referenced field may be of value type integer or string.
+   *
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
+   *
    * - a 64 bit integer is encoded followed by a single byte of value 1
    * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
@@ -427,15 +431,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
    * the context is not set, a default tweak will be used.
+   *
    * If the context is set but:
+   *
    * 1. there is no record present when transforming a given value or
    * 1. the field is not present when transforming a given value,
+   *
    * a default tweak will be used.
+   *
    * Note that case (1) is expected when an `InfoTypeTransformation` is
    * applied to both structured and unstructured `ContentItem`s.
    * Currently, the referenced field may be of value type integer or string.
+   *
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
+   *
    * - a 64 bit integer is encoded followed by a single byte of value 1
    * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
@@ -455,15 +465,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
    * the context is not set, a default tweak will be used.
+   *
    * If the context is set but:
+   *
    * 1. there is no record present when transforming a given value or
    * 1. the field is not present when transforming a given value,
+   *
    * a default tweak will be used.
+   *
    * Note that case (1) is expected when an `InfoTypeTransformation` is
    * applied to both structured and unstructured `ContentItem`s.
    * Currently, the referenced field may be of value type integer or string.
+   *
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
+   *
    * - a 64 bit integer is encoded followed by a single byte of value 1
    * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
@@ -681,13 +697,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * the name of the custom infoType followed by the number of
    * characters comprising the surrogate. The following scheme defines the
    * format: info_type_name(surrogate_character_count):surrogate
+   *
    * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+   *
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
    * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
+   *
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may
    * find a surrogate that does not correspond to an actual identifier.
@@ -717,13 +736,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * the name of the custom infoType followed by the number of
    * characters comprising the surrogate. The following scheme defines the
    * format: info_type_name(surrogate_character_count):surrogate
+   *
    * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+   *
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
    * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
+   *
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may
    * find a surrogate that does not correspond to an actual identifier.
@@ -755,13 +777,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * the name of the custom infoType followed by the number of
    * characters comprising the surrogate. The following scheme defines the
    * format: info_type_name(surrogate_character_count):surrogate
+   *
    * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+   *
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
    * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
+   *
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may
    * find a surrogate that does not correspond to an actual identifier.
@@ -1039,6 +1064,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * characters long. In the case that the identifier is the empty string, it will
    * be skipped. See https://cloud.google.com/dlp/docs/pseudonymization to learn
    * more.
+   *
    * Note: We recommend using  CryptoDeterministicConfig for all use cases which
    * do not require preserving the input alphabet space and size, plus warrant
    * referential integrity.
@@ -1539,15 +1565,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
      * the context is not set, a default tweak will be used.
+     *
      * If the context is set but:
+     *
      * 1. there is no record present when transforming a given value or
      * 1. the field is not present when transforming a given value,
+     *
      * a default tweak will be used.
+     *
      * Note that case (1) is expected when an `InfoTypeTransformation` is
      * applied to both structured and unstructured `ContentItem`s.
      * Currently, the referenced field may be of value type integer or string.
+     *
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
+     *
      * - a 64 bit integer is encoded followed by a single byte of value 1
      * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
@@ -1566,15 +1598,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
      * the context is not set, a default tweak will be used.
+     *
      * If the context is set but:
+     *
      * 1. there is no record present when transforming a given value or
      * 1. the field is not present when transforming a given value,
+     *
      * a default tweak will be used.
+     *
      * Note that case (1) is expected when an `InfoTypeTransformation` is
      * applied to both structured and unstructured `ContentItem`s.
      * Currently, the referenced field may be of value type integer or string.
+     *
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
+     *
      * - a 64 bit integer is encoded followed by a single byte of value 1
      * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
@@ -1597,15 +1635,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
      * the context is not set, a default tweak will be used.
+     *
      * If the context is set but:
+     *
      * 1. there is no record present when transforming a given value or
      * 1. the field is not present when transforming a given value,
+     *
      * a default tweak will be used.
+     *
      * Note that case (1) is expected when an `InfoTypeTransformation` is
      * applied to both structured and unstructured `ContentItem`s.
      * Currently, the referenced field may be of value type integer or string.
+     *
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
+     *
      * - a 64 bit integer is encoded followed by a single byte of value 1
      * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
@@ -1632,15 +1676,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
      * the context is not set, a default tweak will be used.
+     *
      * If the context is set but:
+     *
      * 1. there is no record present when transforming a given value or
      * 1. the field is not present when transforming a given value,
+     *
      * a default tweak will be used.
+     *
      * Note that case (1) is expected when an `InfoTypeTransformation` is
      * applied to both structured and unstructured `ContentItem`s.
      * Currently, the referenced field may be of value type integer or string.
+     *
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
+     *
      * - a 64 bit integer is encoded followed by a single byte of value 1
      * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
@@ -1664,15 +1714,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
      * the context is not set, a default tweak will be used.
+     *
      * If the context is set but:
+     *
      * 1. there is no record present when transforming a given value or
      * 1. the field is not present when transforming a given value,
+     *
      * a default tweak will be used.
+     *
      * Note that case (1) is expected when an `InfoTypeTransformation` is
      * applied to both structured and unstructured `ContentItem`s.
      * Currently, the referenced field may be of value type integer or string.
+     *
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
+     *
      * - a 64 bit integer is encoded followed by a single byte of value 1
      * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
@@ -1702,15 +1758,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
      * the context is not set, a default tweak will be used.
+     *
      * If the context is set but:
+     *
      * 1. there is no record present when transforming a given value or
      * 1. the field is not present when transforming a given value,
+     *
      * a default tweak will be used.
+     *
      * Note that case (1) is expected when an `InfoTypeTransformation` is
      * applied to both structured and unstructured `ContentItem`s.
      * Currently, the referenced field may be of value type integer or string.
+     *
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
+     *
      * - a 64 bit integer is encoded followed by a single byte of value 1
      * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
@@ -1734,15 +1796,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
      * the context is not set, a default tweak will be used.
+     *
      * If the context is set but:
+     *
      * 1. there is no record present when transforming a given value or
      * 1. the field is not present when transforming a given value,
+     *
      * a default tweak will be used.
+     *
      * Note that case (1) is expected when an `InfoTypeTransformation` is
      * applied to both structured and unstructured `ContentItem`s.
      * Currently, the referenced field may be of value type integer or string.
+     *
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
+     *
      * - a 64 bit integer is encoded followed by a single byte of value 1
      * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
@@ -1761,15 +1829,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
      * the context is not set, a default tweak will be used.
+     *
      * If the context is set but:
+     *
      * 1. there is no record present when transforming a given value or
      * 1. the field is not present when transforming a given value,
+     *
      * a default tweak will be used.
+     *
      * Note that case (1) is expected when an `InfoTypeTransformation` is
      * applied to both structured and unstructured `ContentItem`s.
      * Currently, the referenced field may be of value type integer or string.
+     *
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
+     *
      * - a 64 bit integer is encoded followed by a single byte of value 1
      * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
@@ -1790,15 +1864,21 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
      * the context is not set, a default tweak will be used.
+     *
      * If the context is set but:
+     *
      * 1. there is no record present when transforming a given value or
      * 1. the field is not present when transforming a given value,
+     *
      * a default tweak will be used.
+     *
      * Note that case (1) is expected when an `InfoTypeTransformation` is
      * applied to both structured and unstructured `ContentItem`s.
      * Currently, the referenced field may be of value type integer or string.
+     *
      * The tweak is constructed as a sequence of bytes in big endian byte order
      * such that:
+     *
      * - a 64 bit integer is encoded followed by a single byte of value 1
      * - a string is encoded in UTF-8 format followed by a single byte of value 2
      * </pre>
@@ -2226,13 +2306,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * the name of the custom infoType followed by the number of
      * characters comprising the surrogate. The following scheme defines the
      * format: info_type_name(surrogate_character_count):surrogate
+     *
      * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+     *
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
      * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
+     *
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
      * find a surrogate that does not correspond to an actual identifier.
@@ -2261,13 +2344,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * the name of the custom infoType followed by the number of
      * characters comprising the surrogate. The following scheme defines the
      * format: info_type_name(surrogate_character_count):surrogate
+     *
      * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+     *
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
      * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
+     *
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
      * find a surrogate that does not correspond to an actual identifier.
@@ -2302,13 +2388,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * the name of the custom infoType followed by the number of
      * characters comprising the surrogate. The following scheme defines the
      * format: info_type_name(surrogate_character_count):surrogate
+     *
      * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+     *
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
      * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
+     *
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
      * find a surrogate that does not correspond to an actual identifier.
@@ -2345,13 +2434,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * the name of the custom infoType followed by the number of
      * characters comprising the surrogate. The following scheme defines the
      * format: info_type_name(surrogate_character_count):surrogate
+     *
      * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+     *
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
      * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
+     *
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
      * find a surrogate that does not correspond to an actual identifier.
@@ -2386,13 +2478,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * the name of the custom infoType followed by the number of
      * characters comprising the surrogate. The following scheme defines the
      * format: info_type_name(surrogate_character_count):surrogate
+     *
      * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+     *
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
      * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
+     *
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
      * find a surrogate that does not correspond to an actual identifier.
@@ -2432,13 +2527,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * the name of the custom infoType followed by the number of
      * characters comprising the surrogate. The following scheme defines the
      * format: info_type_name(surrogate_character_count):surrogate
+     *
      * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+     *
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
      * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
+     *
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
      * find a surrogate that does not correspond to an actual identifier.
@@ -2472,13 +2570,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * the name of the custom infoType followed by the number of
      * characters comprising the surrogate. The following scheme defines the
      * format: info_type_name(surrogate_character_count):surrogate
+     *
      * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+     *
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
      * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
+     *
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
      * find a surrogate that does not correspond to an actual identifier.
@@ -2507,13 +2608,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * the name of the custom infoType followed by the number of
      * characters comprising the surrogate. The following scheme defines the
      * format: info_type_name(surrogate_character_count):surrogate
+     *
      * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+     *
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
      * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
+     *
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
      * find a surrogate that does not correspond to an actual identifier.
@@ -2546,13 +2650,16 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * the name of the custom infoType followed by the number of
      * characters comprising the surrogate. The following scheme defines the
      * format: info_type_name(surrogate_character_count):surrogate
+     *
      * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
      * the surrogate is 'abc', the full replacement value
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+     *
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
      * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
+     *
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
      * find a surrogate that does not correspond to an actual identifier.

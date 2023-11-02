@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     return new DocumentInputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3.TranslationServiceProto
         .internal_static_google_cloud_translation_v3_DocumentInputConfig_descriptor;
@@ -68,6 +63,8 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -212,6 +209,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Specifies the input document's mime_type.
+   *
    * If not specified it will be determined using the file extension for
    * gcs_source provided files. For a file provided through bytes content the
    * mime_type must be provided.
@@ -243,6 +241,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Specifies the input document's mime_type.
+   *
    * If not specified it will be determined using the file extension for
    * gcs_source provided files. For a file provided through bytes content the
    * mime_type must be provided.
@@ -1002,6 +1001,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Specifies the input document's mime_type.
+     *
      * If not specified it will be determined using the file extension for
      * gcs_source provided files. For a file provided through bytes content the
      * mime_type must be provided.
@@ -1032,6 +1032,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Specifies the input document's mime_type.
+     *
      * If not specified it will be determined using the file extension for
      * gcs_source provided files. For a file provided through bytes content the
      * mime_type must be provided.
@@ -1062,6 +1063,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Specifies the input document's mime_type.
+     *
      * If not specified it will be determined using the file extension for
      * gcs_source provided files. For a file provided through bytes content the
      * mime_type must be provided.
@@ -1091,6 +1093,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Specifies the input document's mime_type.
+     *
      * If not specified it will be determined using the file extension for
      * gcs_source provided files. For a file provided through bytes content the
      * mime_type must be provided.
@@ -1116,6 +1119,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Specifies the input document's mime_type.
+     *
      * If not specified it will be determined using the file extension for
      * gcs_source provided files. For a file provided through bytes content the
      * mime_type must be provided.

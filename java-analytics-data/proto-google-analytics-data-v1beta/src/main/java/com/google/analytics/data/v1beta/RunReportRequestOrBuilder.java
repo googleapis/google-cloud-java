@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ public interface RunReportRequestOrBuilder
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -51,6 +52,7 @@ public interface RunReportRequestOrBuilder
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -240,7 +242,7 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * Dimension filters allow you to ask for only specific dimension values in
+   * Dimension filters let you ask for only specific dimension values in
    * the report. To learn more, see [Fundamentals of Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
    * for examples. Metrics cannot be used in this filter.
@@ -255,7 +257,7 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * Dimension filters allow you to ask for only specific dimension values in
+   * Dimension filters let you ask for only specific dimension values in
    * the report. To learn more, see [Fundamentals of Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
    * for examples. Metrics cannot be used in this filter.
@@ -270,7 +272,7 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * Dimension filters allow you to ask for only specific dimension values in
+   * Dimension filters let you ask for only specific dimension values in
    * the report. To learn more, see [Fundamentals of Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
    * for examples. Metrics cannot be used in this filter.
@@ -323,10 +325,12 @@ public interface RunReportRequestOrBuilder
    *
    * <pre>
    * The row count of the start row. The first row is counted as row 0.
+   *
    * When paging, the first request does not specify offset; or equivalently,
    * sets offset to 0; the first request returns the first `limit` of rows. The
    * second request sets offset to the `limit` of the first request; the second
    * request returns the second `limit` of rows.
+   *
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
@@ -342,13 +346,15 @@ public interface RunReportRequestOrBuilder
    *
    * <pre>
    * The number of rows to return. If unspecified, 10,000 rows are returned. The
-   * API returns a maximum of 100,000 rows per request, no matter how many you
+   * API returns a maximum of 250,000 rows per request, no matter how many you
    * ask for. `limit` must be positive.
+   *
    * The API can also return fewer rows than the requested `limit`, if there
    * aren't as many dimension values as the `limit`. For instance, there are
    * fewer than 300 possible values for the dimension `country`, so when
    * reporting on only `country`, you can't get more than 300 rows, even if you
    * set `limit` to a higher value.
+   *
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
@@ -551,6 +557,13 @@ public interface RunReportRequestOrBuilder
    * If false or unspecified, each row with all metrics equal to 0 will not be
    * returned. If true, these rows will be returned if they are not separately
    * removed by a filter.
+   *
+   * Regardless of this `keep_empty_rows` setting, only data recorded by the
+   * Google Analytics (GA4) property can be displayed in a report.
+   *
+   * For example if a property never logs a `purchase` event, then a query for
+   * the `eventName` dimension and  `eventCount` metric will not have a row
+   * eventName: "purchase" and eventCount: 0.
    * </pre>
    *
    * <code>bool keep_empty_rows = 13;</code>

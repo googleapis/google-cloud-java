@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.orgpolicy.v2.CreatePolicyRequest;
 import com.google.cloud.orgpolicy.v2.DeletePolicyRequest;
@@ -390,36 +391,78 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
             HttpJsonCallSettings.<ListConstraintsRequest, ListConstraintsResponse>newBuilder()
                 .setMethodDescriptor(listConstraintsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListPoliciesRequest, ListPoliciesResponse> listPoliciesTransportSettings =
         HttpJsonCallSettings.<ListPoliciesRequest, ListPoliciesResponse>newBuilder()
             .setMethodDescriptor(listPoliciesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetPolicyRequest, Policy> getPolicyTransportSettings =
         HttpJsonCallSettings.<GetPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetEffectivePolicyRequest, Policy> getEffectivePolicyTransportSettings =
         HttpJsonCallSettings.<GetEffectivePolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getEffectivePolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreatePolicyRequest, Policy> createPolicyTransportSettings =
         HttpJsonCallSettings.<CreatePolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(createPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdatePolicyRequest, Policy> updatePolicyTransportSettings =
         HttpJsonCallSettings.<UpdatePolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(updatePolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("policy.name", String.valueOf(request.getPolicy().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeletePolicyRequest, Empty> deletePolicyTransportSettings =
         HttpJsonCallSettings.<DeletePolicyRequest, Empty>newBuilder()
             .setMethodDescriptor(deletePolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listConstraintsCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,4 +96,42 @@ public interface RunJobRequestOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Overrides specification for a given execution of a job. If provided,
+   * overrides will be applied to update the execution or task spec.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.RunJobRequest.Overrides overrides = 4;</code>
+   *
+   * @return Whether the overrides field is set.
+   */
+  boolean hasOverrides();
+  /**
+   *
+   *
+   * <pre>
+   * Overrides specification for a given execution of a job. If provided,
+   * overrides will be applied to update the execution or task spec.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.RunJobRequest.Overrides overrides = 4;</code>
+   *
+   * @return The overrides.
+   */
+  com.google.cloud.run.v2.RunJobRequest.Overrides getOverrides();
+  /**
+   *
+   *
+   * <pre>
+   * Overrides specification for a given execution of a job. If provided,
+   * overrides will be applied to update the execution or task spec.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.RunJobRequest.Overrides overrides = 4;</code>
+   */
+  com.google.cloud.run.v2.RunJobRequest.OverridesOrBuilder getOverridesOrBuilder();
 }

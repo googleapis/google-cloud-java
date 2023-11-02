@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -181,6 +181,6 @@ public interface ExportInsightsDataRequestOrBuilder
   com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition
       getWriteDisposition();
 
-  public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.DestinationCase
+  com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.DestinationCase
       getDestinationCase();
 }

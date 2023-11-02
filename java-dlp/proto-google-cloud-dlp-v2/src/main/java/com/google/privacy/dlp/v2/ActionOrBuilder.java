@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -283,5 +283,5 @@ public interface ActionOrBuilder
    */
   com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder getPublishToStackdriverOrBuilder();
 
-  public com.google.privacy.dlp.v2.Action.ActionCase getActionCase();
+  com.google.privacy.dlp.v2.Action.ActionCase getActionCase();
 }

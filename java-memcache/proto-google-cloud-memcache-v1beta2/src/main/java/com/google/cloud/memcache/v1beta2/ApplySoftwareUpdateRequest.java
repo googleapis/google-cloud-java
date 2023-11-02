@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
 
   private ApplySoftwareUpdateRequest() {
     instance_ = "";
-    nodeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    nodeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ApplySoftwareUpdateRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -128,7 +123,8 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
   public static final int NODE_IDS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList nodeIds_;
+  private com.google.protobuf.LazyStringArrayList nodeIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -437,8 +433,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       super.clear();
       bitField0_ = 0;
       instance_ = "";
-      nodeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      nodeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       applyAll_ = false;
       return this;
     }
@@ -468,7 +463,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     public com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest buildPartial() {
       com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest result =
           new com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -476,20 +470,15 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        nodeIds_ = nodeIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.nodeIds_ = nodeIds_;
-    }
-
     private void buildPartial0(
         com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        nodeIds_.makeImmutable();
+        result.nodeIds_ = nodeIds_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.applyAll_ = applyAll_;
@@ -551,7 +540,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       if (!other.nodeIds_.isEmpty()) {
         if (nodeIds_.isEmpty()) {
           nodeIds_ = other.nodeIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureNodeIdsIsMutable();
           nodeIds_.addAll(other.nodeIds_);
@@ -746,14 +735,14 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       return this;
     }
 
-    private com.google.protobuf.LazyStringList nodeIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList nodeIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNodeIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!nodeIds_.isModifiable()) {
         nodeIds_ = new com.google.protobuf.LazyStringArrayList(nodeIds_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -768,7 +757,8 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
      * @return A list containing the nodeIds.
      */
     public com.google.protobuf.ProtocolStringList getNodeIdsList() {
-      return nodeIds_.getUnmodifiableView();
+      nodeIds_.makeImmutable();
+      return nodeIds_;
     }
     /**
      *
@@ -837,6 +827,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       }
       ensureNodeIdsIsMutable();
       nodeIds_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -859,6 +850,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       }
       ensureNodeIdsIsMutable();
       nodeIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -878,6 +870,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     public Builder addAllNodeIds(java.lang.Iterable<java.lang.String> values) {
       ensureNodeIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nodeIds_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -894,8 +887,9 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearNodeIds() {
-      nodeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      nodeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -919,6 +913,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       ensureNodeIdsIsMutable();
       nodeIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

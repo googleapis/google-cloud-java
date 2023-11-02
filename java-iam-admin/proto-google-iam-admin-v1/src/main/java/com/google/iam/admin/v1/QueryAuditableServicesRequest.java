@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
     return new QueryAuditableServicesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_QueryAuditableServicesRequest_descriptor;
@@ -77,6 +72,7 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The full resource name to query from the list of auditable
    * services.
+   *
    * The name follows the Google Cloud Platform resource format.
    * For example, a Cloud Platform project with id `my-project` will be named
    * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -104,6 +100,7 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The full resource name to query from the list of auditable
    * services.
+   *
    * The name follows the Google Cloud Platform resource format.
    * For example, a Cloud Platform project with id `my-project` will be named
    * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -476,6 +473,7 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The full resource name to query from the list of auditable
      * services.
+     *
      * The name follows the Google Cloud Platform resource format.
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -502,6 +500,7 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The full resource name to query from the list of auditable
      * services.
+     *
      * The name follows the Google Cloud Platform resource format.
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -528,6 +527,7 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The full resource name to query from the list of auditable
      * services.
+     *
      * The name follows the Google Cloud Platform resource format.
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -553,6 +553,7 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The full resource name to query from the list of auditable
      * services.
+     *
      * The name follows the Google Cloud Platform resource format.
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -574,6 +575,7 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The full resource name to query from the list of auditable
      * services.
+     *
      * The name follows the Google Cloud Platform resource format.
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.

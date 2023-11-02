@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
 
   private HybridOptions() {
     description_ = "";
-    requiredFindingLabelKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    requiredFindingLabelKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new HybridOptions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -136,7 +131,8 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
   public static final int REQUIRED_FINDING_LABEL_KEYS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList requiredFindingLabelKeys_;
+  private com.google.protobuf.LazyStringArrayList requiredFindingLabelKeys_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -144,8 +140,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    * These are labels that each inspection request must include within their
    * 'finding_labels' map. Request may contain others, but any missing one of
    * these will be rejected.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * No more than 10 keys can be required.
    * </pre>
    *
@@ -163,8 +161,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    * These are labels that each inspection request must include within their
    * 'finding_labels' map. Request may contain others, but any missing one of
    * these will be rejected.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * No more than 10 keys can be required.
    * </pre>
    *
@@ -182,8 +182,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    * These are labels that each inspection request must include within their
    * 'finding_labels' map. Request may contain others, but any missing one of
    * these will be rejected.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * No more than 10 keys can be required.
    * </pre>
    *
@@ -202,8 +204,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    * These are labels that each inspection request must include within their
    * 'finding_labels' map. Request may contain others, but any missing one of
    * these will be rejected.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * No more than 10 keys can be required.
    * </pre>
    *
@@ -247,11 +251,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * To organize findings, these labels will be added to each finding.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * Label values must be between 0 and 63 characters long and must conform
    * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+   *
    * No more than 10 labels can be associated with a given finding.
+   *
    * Examples:
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
@@ -277,11 +285,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * To organize findings, these labels will be added to each finding.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * Label values must be between 0 and 63 characters long and must conform
    * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+   *
    * No more than 10 labels can be associated with a given finding.
+   *
    * Examples:
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
@@ -298,11 +310,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * To organize findings, these labels will be added to each finding.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * Label values must be between 0 and 63 characters long and must conform
    * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+   *
    * No more than 10 labels can be associated with a given finding.
+   *
    * Examples:
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
@@ -326,11 +342,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * To organize findings, these labels will be added to each finding.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * Label values must be between 0 and 63 characters long and must conform
    * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+   *
    * No more than 10 labels can be associated with a given finding.
+   *
    * Examples:
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
@@ -671,8 +691,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       description_ = "";
-      requiredFindingLabelKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      requiredFindingLabelKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableLabels().clear();
       tableOptions_ = null;
       if (tableOptionsBuilder_ != null) {
@@ -706,7 +725,6 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.HybridOptions buildPartial() {
       com.google.privacy.dlp.v2.HybridOptions result =
           new com.google.privacy.dlp.v2.HybridOptions(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -714,18 +732,14 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.HybridOptions result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        requiredFindingLabelKeys_ = requiredFindingLabelKeys_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.requiredFindingLabelKeys_ = requiredFindingLabelKeys_;
-    }
-
     private void buildPartial0(com.google.privacy.dlp.v2.HybridOptions result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        requiredFindingLabelKeys_.makeImmutable();
+        result.requiredFindingLabelKeys_ = requiredFindingLabelKeys_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.labels_ = internalGetLabels();
@@ -790,7 +804,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
       if (!other.requiredFindingLabelKeys_.isEmpty()) {
         if (requiredFindingLabelKeys_.isEmpty()) {
           requiredFindingLabelKeys_ = other.requiredFindingLabelKeys_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureRequiredFindingLabelKeysIsMutable();
           requiredFindingLabelKeys_.addAll(other.requiredFindingLabelKeys_);
@@ -989,15 +1003,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList requiredFindingLabelKeys_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList requiredFindingLabelKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRequiredFindingLabelKeysIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!requiredFindingLabelKeys_.isModifiable()) {
         requiredFindingLabelKeys_ =
             new com.google.protobuf.LazyStringArrayList(requiredFindingLabelKeys_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1006,8 +1020,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * These are labels that each inspection request must include within their
      * 'finding_labels' map. Request may contain others, but any missing one of
      * these will be rejected.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * No more than 10 keys can be required.
      * </pre>
      *
@@ -1016,7 +1032,8 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the requiredFindingLabelKeys.
      */
     public com.google.protobuf.ProtocolStringList getRequiredFindingLabelKeysList() {
-      return requiredFindingLabelKeys_.getUnmodifiableView();
+      requiredFindingLabelKeys_.makeImmutable();
+      return requiredFindingLabelKeys_;
     }
     /**
      *
@@ -1025,8 +1042,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * These are labels that each inspection request must include within their
      * 'finding_labels' map. Request may contain others, but any missing one of
      * these will be rejected.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * No more than 10 keys can be required.
      * </pre>
      *
@@ -1044,8 +1063,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * These are labels that each inspection request must include within their
      * 'finding_labels' map. Request may contain others, but any missing one of
      * these will be rejected.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * No more than 10 keys can be required.
      * </pre>
      *
@@ -1064,8 +1085,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * These are labels that each inspection request must include within their
      * 'finding_labels' map. Request may contain others, but any missing one of
      * these will be rejected.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * No more than 10 keys can be required.
      * </pre>
      *
@@ -1084,8 +1107,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * These are labels that each inspection request must include within their
      * 'finding_labels' map. Request may contain others, but any missing one of
      * these will be rejected.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * No more than 10 keys can be required.
      * </pre>
      *
@@ -1101,6 +1126,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequiredFindingLabelKeysIsMutable();
       requiredFindingLabelKeys_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1111,8 +1137,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * These are labels that each inspection request must include within their
      * 'finding_labels' map. Request may contain others, but any missing one of
      * these will be rejected.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * No more than 10 keys can be required.
      * </pre>
      *
@@ -1127,6 +1155,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequiredFindingLabelKeysIsMutable();
       requiredFindingLabelKeys_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1137,8 +1166,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * These are labels that each inspection request must include within their
      * 'finding_labels' map. Request may contain others, but any missing one of
      * these will be rejected.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * No more than 10 keys can be required.
      * </pre>
      *
@@ -1150,6 +1181,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRequiredFindingLabelKeys(java.lang.Iterable<java.lang.String> values) {
       ensureRequiredFindingLabelKeysIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, requiredFindingLabelKeys_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1160,8 +1192,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * These are labels that each inspection request must include within their
      * 'finding_labels' map. Request may contain others, but any missing one of
      * these will be rejected.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * No more than 10 keys can be required.
      * </pre>
      *
@@ -1170,8 +1204,9 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequiredFindingLabelKeys() {
-      requiredFindingLabelKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      requiredFindingLabelKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1182,8 +1217,10 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      * These are labels that each inspection request must include within their
      * 'finding_labels' map. Request may contain others, but any missing one of
      * these will be rejected.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * No more than 10 keys can be required.
      * </pre>
      *
@@ -1199,6 +1236,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRequiredFindingLabelKeysIsMutable();
       requiredFindingLabelKeys_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1233,11 +1271,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * To organize findings, these labels will be added to each finding.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1263,11 +1305,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * To organize findings, these labels will be added to each finding.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1284,11 +1330,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * To organize findings, these labels will be added to each finding.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1312,11 +1362,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * To organize findings, these labels will be added to each finding.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1346,11 +1400,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * To organize findings, these labels will be added to each finding.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1376,11 +1434,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * To organize findings, these labels will be added to each finding.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1404,11 +1466,15 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * To organize findings, these labels will be added to each finding.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,20 +38,16 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
   }
 
   private NfsExportOptions() {
-    ipRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ipRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     accessMode_ = 0;
     squashMode_ = 0;
+    securityFlavors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NfsExportOptions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -387,10 +383,221 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.filestore.v1beta1.NfsExportOptions.SquashMode)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The security flavor. In general, a "flavor" represents a designed process
+   * or system. A "security flavor" is a system designed for the purpose of
+   * authenticating a data originator (client), recipient (server), and the data
+   * they transmit between one another.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor}
+   */
+  public enum SecurityFlavor implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * SecurityFlavor not set.
+     * </pre>
+     *
+     * <code>SECURITY_FLAVOR_UNSPECIFIED = 0;</code>
+     */
+    SECURITY_FLAVOR_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The user's UNIX user-id and group-ids are transferred "in the clear" (not
+     * encrypted) on the network, unauthenticated by the NFS server (default).
+     * </pre>
+     *
+     * <code>AUTH_SYS = 1;</code>
+     */
+    AUTH_SYS(1),
+    /**
+     *
+     *
+     * <pre>
+     * End-user authentication through Kerberos V5.
+     * </pre>
+     *
+     * <code>KRB5 = 2;</code>
+     */
+    KRB5(2),
+    /**
+     *
+     *
+     * <pre>
+     * krb5 plus integrity protection (data packets are tamper proof).
+     * </pre>
+     *
+     * <code>KRB5I = 3;</code>
+     */
+    KRB5I(3),
+    /**
+     *
+     *
+     * <pre>
+     * krb5i plus privacy protection (data packets are tamper proof and
+     * encrypted).
+     * </pre>
+     *
+     * <code>KRB5P = 4;</code>
+     */
+    KRB5P(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * SecurityFlavor not set.
+     * </pre>
+     *
+     * <code>SECURITY_FLAVOR_UNSPECIFIED = 0;</code>
+     */
+    public static final int SECURITY_FLAVOR_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The user's UNIX user-id and group-ids are transferred "in the clear" (not
+     * encrypted) on the network, unauthenticated by the NFS server (default).
+     * </pre>
+     *
+     * <code>AUTH_SYS = 1;</code>
+     */
+    public static final int AUTH_SYS_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * End-user authentication through Kerberos V5.
+     * </pre>
+     *
+     * <code>KRB5 = 2;</code>
+     */
+    public static final int KRB5_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * krb5 plus integrity protection (data packets are tamper proof).
+     * </pre>
+     *
+     * <code>KRB5I = 3;</code>
+     */
+    public static final int KRB5I_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * krb5i plus privacy protection (data packets are tamper proof and
+     * encrypted).
+     * </pre>
+     *
+     * <code>KRB5P = 4;</code>
+     */
+    public static final int KRB5P_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SecurityFlavor valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SecurityFlavor forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SECURITY_FLAVOR_UNSPECIFIED;
+        case 1:
+          return AUTH_SYS;
+        case 2:
+          return KRB5;
+        case 3:
+          return KRB5I;
+        case 4:
+          return KRB5P;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SecurityFlavor> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SecurityFlavor> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SecurityFlavor>() {
+          public SecurityFlavor findValueByNumber(int number) {
+            return SecurityFlavor.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.filestore.v1beta1.NfsExportOptions.getDescriptor()
+          .getEnumTypes()
+          .get(2);
+    }
+
+    private static final SecurityFlavor[] VALUES = values();
+
+    public static SecurityFlavor valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SecurityFlavor(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor)
+  }
+
   public static final int IP_RANGES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ipRanges_;
+  private com.google.protobuf.LazyStringArrayList ipRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -602,6 +809,126 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     return anonGid_;
   }
 
+  public static final int SECURITY_FLAVORS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> securityFlavors_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor>
+      securityFlavors_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer,
+              com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor>() {
+            public com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor convert(
+                java.lang.Integer from) {
+              com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor result =
+                  com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor.forNumber(
+                      from);
+              return result == null
+                  ? com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor.UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * The security flavors allowed for mount operations.
+   * The default is AUTH_SYS.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+   * </code>
+   *
+   * @return A list containing the securityFlavors.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor>
+      getSecurityFlavorsList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor>(
+        securityFlavors_, securityFlavors_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The security flavors allowed for mount operations.
+   * The default is AUTH_SYS.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+   * </code>
+   *
+   * @return The count of securityFlavors.
+   */
+  @java.lang.Override
+  public int getSecurityFlavorsCount() {
+    return securityFlavors_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The security flavors allowed for mount operations.
+   * The default is AUTH_SYS.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The securityFlavors at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor getSecurityFlavors(
+      int index) {
+    return securityFlavors_converter_.convert(securityFlavors_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The security flavors allowed for mount operations.
+   * The default is AUTH_SYS.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for securityFlavors.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getSecurityFlavorsValueList() {
+    return securityFlavors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The security flavors allowed for mount operations.
+   * The default is AUTH_SYS.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of securityFlavors at the given index.
+   */
+  @java.lang.Override
+  public int getSecurityFlavorsValue(int index) {
+    return securityFlavors_.get(index);
+  }
+
+  private int securityFlavorsMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -616,6 +943,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     for (int i = 0; i < ipRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ipRanges_.getRaw(i));
     }
@@ -634,6 +962,13 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     }
     if (anonGid_ != 0L) {
       output.writeInt64(5, anonGid_);
+    }
+    if (getSecurityFlavorsList().size() > 0) {
+      output.writeUInt32NoTag(50);
+      output.writeUInt32NoTag(securityFlavorsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < securityFlavors_.size(); i++) {
+      output.writeEnumNoTag(securityFlavors_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -668,6 +1003,19 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     if (anonGid_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, anonGid_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < securityFlavors_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(securityFlavors_.get(i));
+      }
+      size += dataSize;
+      if (!getSecurityFlavorsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      securityFlavorsMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -689,6 +1037,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     if (squashMode_ != other.squashMode_) return false;
     if (getAnonUid() != other.getAnonUid()) return false;
     if (getAnonGid() != other.getAnonGid()) return false;
+    if (!securityFlavors_.equals(other.securityFlavors_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -712,6 +1061,10 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAnonUid());
     hash = (37 * hash) + ANON_GID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAnonGid());
+    if (getSecurityFlavorsCount() > 0) {
+      hash = (37 * hash) + SECURITY_FLAVORS_FIELD_NUMBER;
+      hash = (53 * hash) + securityFlavors_.hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -851,12 +1204,13 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      ipRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      ipRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       accessMode_ = 0;
       squashMode_ = 0;
       anonUid_ = 0L;
       anonGid_ = 0L;
+      securityFlavors_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -894,15 +1248,19 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(
         com.google.cloud.filestore.v1beta1.NfsExportOptions result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        ipRanges_ = ipRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (((bitField0_ & 0x00000020) != 0)) {
+        securityFlavors_ = java.util.Collections.unmodifiableList(securityFlavors_);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
-      result.ipRanges_ = ipRanges_;
+      result.securityFlavors_ = securityFlavors_;
     }
 
     private void buildPartial0(com.google.cloud.filestore.v1beta1.NfsExportOptions result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        ipRanges_.makeImmutable();
+        result.ipRanges_ = ipRanges_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.accessMode_ = accessMode_;
       }
@@ -966,7 +1324,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       if (!other.ipRanges_.isEmpty()) {
         if (ipRanges_.isEmpty()) {
           ipRanges_ = other.ipRanges_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureIpRangesIsMutable();
           ipRanges_.addAll(other.ipRanges_);
@@ -984,6 +1342,16 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       }
       if (other.getAnonGid() != 0L) {
         setAnonGid(other.getAnonGid());
+      }
+      if (!other.securityFlavors_.isEmpty()) {
+        if (securityFlavors_.isEmpty()) {
+          securityFlavors_ = other.securityFlavors_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureSecurityFlavorsIsMutable();
+          securityFlavors_.addAll(other.securityFlavors_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1042,6 +1410,25 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 48:
+              {
+                int tmpRaw = input.readEnum();
+                ensureSecurityFlavorsIsMutable();
+                securityFlavors_.add(tmpRaw);
+                break;
+              } // case 48
+            case 50:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureSecurityFlavorsIsMutable();
+                  securityFlavors_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1061,14 +1448,14 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList ipRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ipRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!ipRanges_.isModifiable()) {
         ipRanges_ = new com.google.protobuf.LazyStringArrayList(ipRanges_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1089,7 +1476,8 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      * @return A list containing the ipRanges.
      */
     public com.google.protobuf.ProtocolStringList getIpRangesList() {
-      return ipRanges_.getUnmodifiableView();
+      ipRanges_.makeImmutable();
+      return ipRanges_;
     }
     /**
      *
@@ -1182,6 +1570,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       }
       ensureIpRangesIsMutable();
       ipRanges_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1210,6 +1599,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       }
       ensureIpRangesIsMutable();
       ipRanges_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1235,6 +1625,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     public Builder addAllIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ipRanges_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1257,8 +1648,9 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIpRanges() {
-      ipRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ipRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1288,6 +1680,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureIpRangesIsMutable();
       ipRanges_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1618,6 +2011,269 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     public Builder clearAnonGid() {
       bitField0_ = (bitField0_ & ~0x00000010);
       anonGid_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> securityFlavors_ = java.util.Collections.emptyList();
+
+    private void ensureSecurityFlavorsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        securityFlavors_ = new java.util.ArrayList<java.lang.Integer>(securityFlavors_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @return A list containing the securityFlavors.
+     */
+    public java.util.List<com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor>
+        getSecurityFlavorsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor>(
+          securityFlavors_, securityFlavors_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @return The count of securityFlavors.
+     */
+    public int getSecurityFlavorsCount() {
+      return securityFlavors_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The securityFlavors at the given index.
+     */
+    public com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor getSecurityFlavors(
+        int index) {
+      return securityFlavors_converter_.convert(securityFlavors_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The securityFlavors to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecurityFlavors(
+        int index, com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSecurityFlavorsIsMutable();
+      securityFlavors_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @param value The securityFlavors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSecurityFlavors(
+        com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSecurityFlavorsIsMutable();
+      securityFlavors_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @param values The securityFlavors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSecurityFlavors(
+        java.lang.Iterable<
+                ? extends com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor>
+            values) {
+      ensureSecurityFlavorsIsMutable();
+      for (com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor value : values) {
+        securityFlavors_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecurityFlavors() {
+      securityFlavors_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for securityFlavors.
+     */
+    public java.util.List<java.lang.Integer> getSecurityFlavorsValueList() {
+      return java.util.Collections.unmodifiableList(securityFlavors_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of securityFlavors at the given index.
+     */
+    public int getSecurityFlavorsValue(int index) {
+      return securityFlavors_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for securityFlavors to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecurityFlavorsValue(int index, int value) {
+      ensureSecurityFlavorsIsMutable();
+      securityFlavors_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for securityFlavors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSecurityFlavorsValue(int value) {
+      ensureSecurityFlavorsIsMutable();
+      securityFlavors_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security flavors allowed for mount operations.
+     * The default is AUTH_SYS.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for securityFlavors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSecurityFlavorsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureSecurityFlavorsIsMutable();
+      for (int value : values) {
+        securityFlavors_.add(value);
+      }
       onChanged();
       return this;
     }

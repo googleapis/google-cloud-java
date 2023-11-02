@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,11 +54,10 @@ public interface DataExchangeOrBuilder
    *
    *
    * <pre>
-   * Required. Human-readable display name of the data exchange. The display name must
-   * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-   * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
-   * Default value is an empty string.
-   * Max length: 63 bytes.
+   * Required. Human-readable display name of the data exchange. The display
+   * name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), ampersands (&amp;) and must not start or end with
+   * spaces. Default value is an empty string. Max length: 63 bytes.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -70,11 +69,10 @@ public interface DataExchangeOrBuilder
    *
    *
    * <pre>
-   * Required. Human-readable display name of the data exchange. The display name must
-   * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-   * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
-   * Default value is an empty string.
-   * Max length: 63 bytes.
+   * Required. Human-readable display name of the data exchange. The display
+   * name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), ampersands (&amp;) and must not start or end with
+   * spaces. Default value is an empty string. Max length: 63 bytes.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -87,9 +85,9 @@ public interface DataExchangeOrBuilder
    *
    *
    * <pre>
-   * Optional. Description of the data exchange. The description must not contain Unicode
-   * non-characters as well as C0 and C1 control codes except tabs (HT),
-   * new lines (LF), carriage returns (CR), and page breaks (FF).
+   * Optional. Description of the data exchange. The description must not
+   * contain Unicode non-characters as well as C0 and C1 control codes except
+   * tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
    * Default value is an empty string.
    * Max length: 2000 bytes.
    * </pre>
@@ -103,9 +101,9 @@ public interface DataExchangeOrBuilder
    *
    *
    * <pre>
-   * Optional. Description of the data exchange. The description must not contain Unicode
-   * non-characters as well as C0 and C1 control codes except tabs (HT),
-   * new lines (LF), carriage returns (CR), and page breaks (FF).
+   * Optional. Description of the data exchange. The description must not
+   * contain Unicode non-characters as well as C0 and C1 control codes except
+   * tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
    * Default value is an empty string.
    * Max length: 2000 bytes.
    * </pre>
@@ -120,8 +118,8 @@ public interface DataExchangeOrBuilder
    *
    *
    * <pre>
-   * Optional. Email or URL of the primary point of contact of the data exchange.
-   * Max Length: 1000 bytes.
+   * Optional. Email or URL of the primary point of contact of the data
+   * exchange. Max Length: 1000 bytes.
    * </pre>
    *
    * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -133,8 +131,8 @@ public interface DataExchangeOrBuilder
    *
    *
    * <pre>
-   * Optional. Email or URL of the primary point of contact of the data exchange.
-   * Max Length: 1000 bytes.
+   * Optional. Email or URL of the primary point of contact of the data
+   * exchange. Max Length: 1000 bytes.
    * </pre>
    *
    * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -185,11 +183,11 @@ public interface DataExchangeOrBuilder
    *
    *
    * <pre>
-   * Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB
-   * Expected image dimensions are 512x512 pixels, however the API only
-   * performs validation on size of the encoded data.
-   * Note: For byte fields, the content of the fields are base64-encoded (which
-   * increases the size of the data by 33-36%) when using JSON on the wire.
+   * Optional. Base64 encoded image representing the data exchange. Max
+   * Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API
+   * only performs validation on size of the encoded data. Note: For byte
+   * fields, the content of the fields are base64-encoded (which increases the
+   * size of the data by 33-36%) when using JSON on the wire.
    * </pre>
    *
    * <code>bytes icon = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -197,4 +195,46 @@ public interface DataExchangeOrBuilder
    * @return The icon.
    */
   com.google.protobuf.ByteString getIcon();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurable data sharing environment option for a data exchange.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sharingEnvironmentConfig field is set.
+   */
+  boolean hasSharingEnvironmentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurable data sharing environment option for a data exchange.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sharingEnvironmentConfig.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig getSharingEnvironmentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurable data sharing environment option for a data exchange.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfigOrBuilder
+      getSharingEnvironmentConfigOrBuilder();
 }

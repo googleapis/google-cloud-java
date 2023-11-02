@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,9 @@ public interface OutputAudioConfigOrBuilder
    *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
+   * If not specified,
+   * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+   * is applied.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -87,6 +90,9 @@ public interface OutputAudioConfigOrBuilder
    *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
+   * If not specified,
+   * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+   * is applied.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -100,6 +106,9 @@ public interface OutputAudioConfigOrBuilder
    *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
+   * If not specified,
+   * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+   * is applied.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;

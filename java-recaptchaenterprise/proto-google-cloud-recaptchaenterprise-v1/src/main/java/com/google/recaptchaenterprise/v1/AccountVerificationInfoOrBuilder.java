@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,7 +148,7 @@ public interface AccountVerificationInfoOrBuilder
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=503
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=552
    * @return The username.
    */
   @java.lang.Deprecated
@@ -164,7 +164,7 @@ public interface AccountVerificationInfoOrBuilder
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=503
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=552
    * @return The bytes for username.
    */
   @java.lang.Deprecated

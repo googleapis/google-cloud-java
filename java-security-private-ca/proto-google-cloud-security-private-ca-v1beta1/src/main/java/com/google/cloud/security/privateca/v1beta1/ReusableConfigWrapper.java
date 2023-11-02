@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
     return new ReusableConfigWrapper();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.security.privateca.v1beta1.PrivateCaResourcesProto
         .internal_static_google_cloud_security_privateca_v1beta1_ReusableConfigWrapper_descriptor;
@@ -67,6 +62,8 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
   }
 
   private int configValuesCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object configValues_;
 
   public enum ConfigValuesCase

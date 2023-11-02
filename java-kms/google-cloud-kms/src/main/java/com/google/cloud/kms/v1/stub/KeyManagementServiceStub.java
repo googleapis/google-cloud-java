@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,10 @@ import com.google.cloud.kms.v1.MacSignResponse;
 import com.google.cloud.kms.v1.MacVerifyRequest;
 import com.google.cloud.kms.v1.MacVerifyResponse;
 import com.google.cloud.kms.v1.PublicKey;
+import com.google.cloud.kms.v1.RawDecryptRequest;
+import com.google.cloud.kms.v1.RawDecryptResponse;
+import com.google.cloud.kms.v1.RawEncryptRequest;
+import com.google.cloud.kms.v1.RawEncryptResponse;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyRequest;
@@ -196,6 +200,14 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
 
   public UnaryCallable<DecryptRequest, DecryptResponse> decryptCallable() {
     throw new UnsupportedOperationException("Not implemented: decryptCallable()");
+  }
+
+  public UnaryCallable<RawEncryptRequest, RawEncryptResponse> rawEncryptCallable() {
+    throw new UnsupportedOperationException("Not implemented: rawEncryptCallable()");
+  }
+
+  public UnaryCallable<RawDecryptRequest, RawDecryptResponse> rawDecryptCallable() {
+    throw new UnsupportedOperationException("Not implemented: rawDecryptCallable()");
   }
 
   public UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignCallable() {

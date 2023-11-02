@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
   private CertificateMapEntry() {
     name_ = "";
     description_ = "";
-    certificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    certificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
     state_ = 0;
   }
 
@@ -48,11 +48,6 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CertificateMapEntry();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -222,6 +217,8 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
   }
 
   private int matchCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object match_;
 
   public enum MatchCase
@@ -708,7 +705,8 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
   public static final int CERTIFICATES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList certificates_;
+  private com.google.protobuf.LazyStringArrayList certificates_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1168,8 +1166,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
-      certificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      certificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       state_ = 0;
       matchCase_ = 0;
       match_ = null;
@@ -1200,22 +1197,12 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
     public com.google.cloud.certificatemanager.v1.CertificateMapEntry buildPartial() {
       com.google.cloud.certificatemanager.v1.CertificateMapEntry result =
           new com.google.cloud.certificatemanager.v1.CertificateMapEntry(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.certificatemanager.v1.CertificateMapEntry result) {
-      if (((bitField0_ & 0x00000080) != 0)) {
-        certificates_ = certificates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.certificates_ = certificates_;
     }
 
     private void buildPartial0(com.google.cloud.certificatemanager.v1.CertificateMapEntry result) {
@@ -1235,6 +1222,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        certificates_.makeImmutable();
+        result.certificates_ = certificates_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.state_ = state_;
@@ -1314,7 +1305,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
       if (!other.certificates_.isEmpty()) {
         if (certificates_.isEmpty()) {
           certificates_ = other.certificates_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureCertificatesIsMutable();
           certificates_.addAll(other.certificates_);
@@ -2513,14 +2504,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.LazyStringList certificates_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList certificates_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCertificatesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!certificates_.isModifiable()) {
         certificates_ = new com.google.protobuf.LazyStringArrayList(certificates_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -2536,7 +2527,8 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      * @return A list containing the certificates.
      */
     public com.google.protobuf.ProtocolStringList getCertificatesList() {
-      return certificates_.getUnmodifiableView();
+      certificates_.makeImmutable();
+      return certificates_;
     }
     /**
      *
@@ -2609,6 +2601,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
       }
       ensureCertificatesIsMutable();
       certificates_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2632,6 +2625,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
       }
       ensureCertificatesIsMutable();
       certificates_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2652,6 +2646,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
     public Builder addAllCertificates(java.lang.Iterable<java.lang.String> values) {
       ensureCertificatesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, certificates_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2669,8 +2664,9 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCertificates() {
-      certificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      certificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -2695,6 +2691,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureCertificatesIsMutable();
       certificates_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

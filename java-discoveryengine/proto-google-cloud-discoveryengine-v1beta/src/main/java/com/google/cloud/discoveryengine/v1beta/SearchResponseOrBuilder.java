@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -231,6 +231,41 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
+   * The URI of a customer-defined redirect page. If redirect action is
+   * triggered, no search is performed, and only
+   * [redirect_uri][google.cloud.discoveryengine.v1beta.SearchResponse.redirect_uri]
+   * and
+   * [attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token]
+   * are set in the response.
+   * </pre>
+   *
+   * <code>string redirect_uri = 12;</code>
+   *
+   * @return The redirectUri.
+   */
+  java.lang.String getRedirectUri();
+  /**
+   *
+   *
+   * <pre>
+   * The URI of a customer-defined redirect page. If redirect action is
+   * triggered, no search is performed, and only
+   * [redirect_uri][google.cloud.discoveryengine.v1beta.SearchResponse.redirect_uri]
+   * and
+   * [attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token]
+   * are set in the response.
+   * </pre>
+   *
+   * <code>string redirect_uri = 12;</code>
+   *
+   * @return The bytes for redirectUri.
+   */
+  com.google.protobuf.ByteString getRedirectUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A token that can be sent as
    * [SearchRequest.page_token][google.cloud.discoveryengine.v1beta.SearchRequest.page_token]
    * to retrieve the next page. If this field is omitted, there are no
@@ -381,4 +416,46 @@ public interface SearchResponseOrBuilder
    * @return The bytes of the appliedControls at the given index.
    */
   com.google.protobuf.ByteString getAppliedControlsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   *
+   * @return Whether the queryExpansionInfo field is set.
+   */
+  boolean hasQueryExpansionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   *
+   * @return The queryExpansionInfo.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo getQueryExpansionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfoOrBuilder
+      getQueryExpansionInfoOrBuilder();
 }

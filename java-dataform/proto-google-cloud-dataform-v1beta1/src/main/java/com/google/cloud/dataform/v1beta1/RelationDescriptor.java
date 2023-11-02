@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RelationDescriptor();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -235,20 +230,15 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     }
 
     private ColumnDescriptor() {
-      path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      path_ = com.google.protobuf.LazyStringArrayList.emptyList();
       description_ = "";
-      bigqueryPolicyTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bigqueryPolicyTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ColumnDescriptor();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -269,7 +259,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public static final int PATH_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList path_;
+    private com.google.protobuf.LazyStringArrayList path_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -387,7 +378,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
     public static final int BIGQUERY_POLICY_TAGS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList bigqueryPolicyTags_;
+    private com.google.protobuf.LazyStringArrayList bigqueryPolicyTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -684,11 +676,9 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        path_ = com.google.protobuf.LazyStringArrayList.emptyList();
         description_ = "";
-        bigqueryPolicyTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bigqueryPolicyTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -719,7 +709,6 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor buildPartial() {
         com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor result =
             new com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -727,25 +716,19 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          path_ = path_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.path_ = path_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          bigqueryPolicyTags_ = bigqueryPolicyTags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.bigqueryPolicyTags_ = bigqueryPolicyTags_;
-      }
-
       private void buildPartial0(
           com.google.cloud.dataform.v1beta1.RelationDescriptor.ColumnDescriptor result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          path_.makeImmutable();
+          result.path_ = path_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          bigqueryPolicyTags_.makeImmutable();
+          result.bigqueryPolicyTags_ = bigqueryPolicyTags_;
         }
       }
 
@@ -804,7 +787,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         if (!other.path_.isEmpty()) {
           if (path_.isEmpty()) {
             path_ = other.path_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensurePathIsMutable();
             path_.addAll(other.path_);
@@ -819,7 +802,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         if (!other.bigqueryPolicyTags_.isEmpty()) {
           if (bigqueryPolicyTags_.isEmpty()) {
             bigqueryPolicyTags_ = other.bigqueryPolicyTags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureBigqueryPolicyTagsIsMutable();
             bigqueryPolicyTags_.addAll(other.bigqueryPolicyTags_);
@@ -891,14 +874,14 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList path_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList path_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensurePathIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!path_.isModifiable()) {
           path_ = new com.google.protobuf.LazyStringArrayList(path_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -913,7 +896,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
        * @return A list containing the path.
        */
       public com.google.protobuf.ProtocolStringList getPathList() {
-        return path_.getUnmodifiableView();
+        path_.makeImmutable();
+        return path_;
       }
       /**
        *
@@ -982,6 +966,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         }
         ensurePathIsMutable();
         path_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1004,6 +989,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         }
         ensurePathIsMutable();
         path_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1023,6 +1009,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       public Builder addAllPath(java.lang.Iterable<java.lang.String> values) {
         ensurePathIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, path_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1039,8 +1026,9 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-        path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        path_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1064,6 +1052,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         checkByteStringIsUtf8(value);
         ensurePathIsMutable();
         path_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1174,14 +1163,14 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
-      private com.google.protobuf.LazyStringList bigqueryPolicyTags_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList bigqueryPolicyTags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureBigqueryPolicyTagsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!bigqueryPolicyTags_.isModifiable()) {
           bigqueryPolicyTags_ = new com.google.protobuf.LazyStringArrayList(bigqueryPolicyTags_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -1195,7 +1184,8 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
        * @return A list containing the bigqueryPolicyTags.
        */
       public com.google.protobuf.ProtocolStringList getBigqueryPolicyTagsList() {
-        return bigqueryPolicyTags_.getUnmodifiableView();
+        bigqueryPolicyTags_.makeImmutable();
+        return bigqueryPolicyTags_;
       }
       /**
        *
@@ -1260,6 +1250,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         }
         ensureBigqueryPolicyTagsIsMutable();
         bigqueryPolicyTags_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1281,6 +1272,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         }
         ensureBigqueryPolicyTagsIsMutable();
         bigqueryPolicyTags_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1299,6 +1291,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
       public Builder addAllBigqueryPolicyTags(java.lang.Iterable<java.lang.String> values) {
         ensureBigqueryPolicyTagsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, bigqueryPolicyTags_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1314,8 +1307,9 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearBigqueryPolicyTags() {
-        bigqueryPolicyTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bigqueryPolicyTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -1338,6 +1332,7 @@ public final class RelationDescriptor extends com.google.protobuf.GeneratedMessa
         checkByteStringIsUtf8(value);
         ensureBigqueryPolicyTagsIsMutable();
         bigqueryPolicyTags_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

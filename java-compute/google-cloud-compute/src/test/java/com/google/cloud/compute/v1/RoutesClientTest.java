@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -158,6 +158,7 @@ public class RoutesClientTest {
             .setName("name3373707")
             .setNetwork("network1843485230")
             .setNextHopGateway("nextHopGateway45033742")
+            .setNextHopHub("nextHopHub-1583649601")
             .setNextHopIlb("nextHopIlb-1583648919")
             .setNextHopInstance("nextHopInstance-776074485")
             .setNextHopIp("nextHopIp1195840541")

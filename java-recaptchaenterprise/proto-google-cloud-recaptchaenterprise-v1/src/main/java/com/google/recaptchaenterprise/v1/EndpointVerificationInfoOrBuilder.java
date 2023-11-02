@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,5 +171,5 @@ public interface EndpointVerificationInfoOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getLastVerificationTimeOrBuilder();
 
-  public com.google.recaptchaenterprise.v1.EndpointVerificationInfo.EndpointCase getEndpointCase();
+  com.google.recaptchaenterprise.v1.EndpointVerificationInfo.EndpointCase getEndpointCase();
 }

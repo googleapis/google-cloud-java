@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
     return new TargetHttpsProxiesSetCertificateMapRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_TargetHttpsProxiesSetCertificateMapRequest_descriptor;
@@ -77,7 +72,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
    *
    *
    * <pre>
-   * URL of the Certificate Map to associate with this TargetHttpsProxy.
+   * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>
@@ -92,7 +87,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
    *
    *
    * <pre>
-   * URL of the Certificate Map to associate with this TargetHttpsProxy.
+   * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>
@@ -115,7 +110,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
    *
    *
    * <pre>
-   * URL of the Certificate Map to associate with this TargetHttpsProxy.
+   * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>
@@ -499,7 +494,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
      *
      *
      * <pre>
-     * URL of the Certificate Map to associate with this TargetHttpsProxy.
+     * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -513,7 +508,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
      *
      *
      * <pre>
-     * URL of the Certificate Map to associate with this TargetHttpsProxy.
+     * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -535,7 +530,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
      *
      *
      * <pre>
-     * URL of the Certificate Map to associate with this TargetHttpsProxy.
+     * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -557,7 +552,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
      *
      *
      * <pre>
-     * URL of the Certificate Map to associate with this TargetHttpsProxy.
+     * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -578,7 +573,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
      *
      *
      * <pre>
-     * URL of the Certificate Map to associate with this TargetHttpsProxy.
+     * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -595,7 +590,7 @@ public final class TargetHttpsProxiesSetCertificateMapRequest
      *
      *
      * <pre>
-     * URL of the Certificate Map to associate with this TargetHttpsProxy.
+     * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>

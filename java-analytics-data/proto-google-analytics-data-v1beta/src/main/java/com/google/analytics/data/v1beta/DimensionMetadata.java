@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
     apiName_ = "";
     uiName_ = "";
     description_ = "";
-    deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     category_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DimensionMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -231,7 +226,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
   public static final int DEPRECATED_API_NAMES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList deprecatedApiNames_;
+  private com.google.protobuf.LazyStringArrayList deprecatedApiNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -627,8 +623,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       apiName_ = "";
       uiName_ = "";
       description_ = "";
-      deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       customDefinition_ = false;
       category_ = "";
       return this;
@@ -658,21 +653,11 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.analytics.data.v1beta.DimensionMetadata buildPartial() {
       com.google.analytics.data.v1beta.DimensionMetadata result =
           new com.google.analytics.data.v1beta.DimensionMetadata(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.analytics.data.v1beta.DimensionMetadata result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        deprecatedApiNames_ = deprecatedApiNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.deprecatedApiNames_ = deprecatedApiNames_;
     }
 
     private void buildPartial0(com.google.analytics.data.v1beta.DimensionMetadata result) {
@@ -685,6 +670,10 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        deprecatedApiNames_.makeImmutable();
+        result.deprecatedApiNames_ = deprecatedApiNames_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.customDefinition_ = customDefinition_;
@@ -758,7 +747,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       if (!other.deprecatedApiNames_.isEmpty()) {
         if (deprecatedApiNames_.isEmpty()) {
           deprecatedApiNames_ = other.deprecatedApiNames_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureDeprecatedApiNamesIsMutable();
           deprecatedApiNames_.addAll(other.deprecatedApiNames_);
@@ -1183,14 +1172,14 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList deprecatedApiNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList deprecatedApiNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDeprecatedApiNamesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!deprecatedApiNames_.isModifiable()) {
         deprecatedApiNames_ = new com.google.protobuf.LazyStringArrayList(deprecatedApiNames_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1207,7 +1196,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
      * @return A list containing the deprecatedApiNames.
      */
     public com.google.protobuf.ProtocolStringList getDeprecatedApiNamesList() {
-      return deprecatedApiNames_.getUnmodifiableView();
+      deprecatedApiNames_.makeImmutable();
+      return deprecatedApiNames_;
     }
     /**
      *
@@ -1284,6 +1274,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       }
       ensureDeprecatedApiNamesIsMutable();
       deprecatedApiNames_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1308,6 +1299,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       }
       ensureDeprecatedApiNamesIsMutable();
       deprecatedApiNames_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1329,6 +1321,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
     public Builder addAllDeprecatedApiNames(java.lang.Iterable<java.lang.String> values) {
       ensureDeprecatedApiNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deprecatedApiNames_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1347,8 +1340,9 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDeprecatedApiNames() {
-      deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1374,6 +1368,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureDeprecatedApiNamesIsMutable();
       deprecatedApiNames_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

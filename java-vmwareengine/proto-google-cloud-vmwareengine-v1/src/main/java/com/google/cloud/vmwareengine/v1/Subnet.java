@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Subnet();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,6 +127,27 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 4;</code>
      */
     DELETING(4),
+    /**
+     *
+     *
+     * <pre>
+     * Changes requested in the last operation are being propagated.
+     * </pre>
+     *
+     * <code>RECONCILING = 5;</code>
+     */
+    RECONCILING(5),
+    /**
+     *
+     *
+     * <pre>
+     * Last operation on the subnet did not succeed. Subnet's payload is
+     * reverted back to its most recent working state.
+     * </pre>
+     *
+     * <code>FAILED = 6;</code>
+     */
+    FAILED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -185,6 +201,27 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 4;</code>
      */
     public static final int DELETING_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Changes requested in the last operation are being propagated.
+     * </pre>
+     *
+     * <code>RECONCILING = 5;</code>
+     */
+    public static final int RECONCILING_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Last operation on the subnet did not succeed. Subnet's payload is
+     * reverted back to its most recent working state.
+     * </pre>
+     *
+     * <code>FAILED = 6;</code>
+     */
+    public static final int FAILED_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -220,6 +257,10 @@ public final class Subnet extends com.google.protobuf.GeneratedMessageV3
           return UPDATING;
         case 4:
           return DELETING;
+        case 5:
+          return RECONCILING;
+        case 6:
+          return FAILED;
         default:
           return null;
       }

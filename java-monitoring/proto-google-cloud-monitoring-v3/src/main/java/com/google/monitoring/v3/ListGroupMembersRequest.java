@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
     return new ListGroupMembersRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.GroupServiceProto
         .internal_static_google_monitoring_v3_ListGroupMembersRequest_descriptor;
@@ -78,6 +73,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The group whose members are listed. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *
@@ -104,6 +100,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The group whose members are listed. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *
@@ -213,6 +210,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
    * labels, and metadata of monitored resources that comprise the group. For
    * example, to return only resources representing Compute Engine VM instances,
    * use this filter:
+   *
    *     `resource.type = "gce_instance"`
    * </pre>
    *
@@ -242,6 +240,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
    * labels, and metadata of monitored resources that comprise the group. For
    * example, to return only resources representing Compute Engine VM instances,
    * use this filter:
+   *
    *     `resource.type = "gce_instance"`
    * </pre>
    *
@@ -770,6 +769,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The group whose members are listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
@@ -795,6 +795,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The group whose members are listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
@@ -820,6 +821,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The group whose members are listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
@@ -844,6 +846,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The group whose members are listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
@@ -864,6 +867,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The group whose members are listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
      * </pre>
      *
@@ -1065,6 +1069,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * labels, and metadata of monitored resources that comprise the group. For
      * example, to return only resources representing Compute Engine VM instances,
      * use this filter:
+     *
      *     `resource.type = "gce_instance"`
      * </pre>
      *
@@ -1093,6 +1098,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * labels, and metadata of monitored resources that comprise the group. For
      * example, to return only resources representing Compute Engine VM instances,
      * use this filter:
+     *
      *     `resource.type = "gce_instance"`
      * </pre>
      *
@@ -1121,6 +1127,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * labels, and metadata of monitored resources that comprise the group. For
      * example, to return only resources representing Compute Engine VM instances,
      * use this filter:
+     *
      *     `resource.type = "gce_instance"`
      * </pre>
      *
@@ -1148,6 +1155,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * labels, and metadata of monitored resources that comprise the group. For
      * example, to return only resources representing Compute Engine VM instances,
      * use this filter:
+     *
      *     `resource.type = "gce_instance"`
      * </pre>
      *
@@ -1171,6 +1179,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * labels, and metadata of monitored resources that comprise the group. For
      * example, to return only resources representing Compute Engine VM instances,
      * use this filter:
+     *
      *     `resource.type = "gce_instance"`
      * </pre>
      *

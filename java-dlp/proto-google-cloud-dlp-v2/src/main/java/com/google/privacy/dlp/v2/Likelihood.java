@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,21 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Categorization of results based on how likely they are to represent a match,
- * based on the number of elements they contain which imply a match.
+ * Coarse-grained confidence level of how well a particular finding
+ * satisfies the criteria to match a particular infoType.
+ *
+ * Likelihood is calculated based on the number of signals a
+ * finding has that implies that the finding matches the infoType. For
+ * example, a string that has an '&#64;' and a '.com' is more likely to be a
+ * match for an email address than a string that only has an '&#64;'.
+ *
+ * In general, the highest likelihood level has the strongest signals that
+ * indicate a match. That is, a finding with a high likelihood has a low chance
+ * of being a false positive.
+ *
+ * For more information about each likelihood level
+ * and how likelihood works, see [Match
+ * likelihood](https://cloud.google.com/dlp/docs/likelihood).
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.Likelihood}
@@ -43,31 +56,47 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Few matching elements.
+   * Highest chance of a false positive.
    * </pre>
    *
    * <code>VERY_UNLIKELY = 1;</code>
    */
   VERY_UNLIKELY(1),
-  /** <code>UNLIKELY = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * High chance of a false positive.
+   * </pre>
+   *
+   * <code>UNLIKELY = 2;</code>
+   */
   UNLIKELY(2),
   /**
    *
    *
    * <pre>
-   * Some matching elements.
+   * Some matching signals. The default value.
    * </pre>
    *
    * <code>POSSIBLE = 3;</code>
    */
   POSSIBLE(3),
-  /** <code>LIKELY = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Low chance of a false positive.
+   * </pre>
+   *
+   * <code>LIKELY = 4;</code>
+   */
   LIKELY(4),
   /**
    *
    *
    * <pre>
-   * Many matching elements.
+   * Confidence level is high. Lowest chance of a false positive.
    * </pre>
    *
    * <code>VERY_LIKELY = 5;</code>
@@ -90,31 +119,47 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Few matching elements.
+   * Highest chance of a false positive.
    * </pre>
    *
    * <code>VERY_UNLIKELY = 1;</code>
    */
   public static final int VERY_UNLIKELY_VALUE = 1;
-  /** <code>UNLIKELY = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * High chance of a false positive.
+   * </pre>
+   *
+   * <code>UNLIKELY = 2;</code>
+   */
   public static final int UNLIKELY_VALUE = 2;
   /**
    *
    *
    * <pre>
-   * Some matching elements.
+   * Some matching signals. The default value.
    * </pre>
    *
    * <code>POSSIBLE = 3;</code>
    */
   public static final int POSSIBLE_VALUE = 3;
-  /** <code>LIKELY = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Low chance of a false positive.
+   * </pre>
+   *
+   * <code>LIKELY = 4;</code>
+   */
   public static final int LIKELY_VALUE = 4;
   /**
    *
    *
    * <pre>
-   * Many matching elements.
+   * Confidence level is high. Lowest chance of a false positive.
    * </pre>
    *
    * <code>VERY_LIKELY = 5;</code>

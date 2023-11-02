@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ package com.google.cloud.orgpolicy.v2;
  * down the resource hierarchy from higher levels, but can also be overridden.
  * For details about the inheritance rules please read about
  * [`policies`][google.cloud.OrgPolicy.v2.Policy].
+ *
  * `Constraints` have a default behavior determined by the `constraint_default`
  * field, which is the enforcement behavior that is used in the absence of a
  * `policy` being defined or inherited for the resource in question.
@@ -62,11 +63,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     return new Constraint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orgpolicy.v2.ConstraintProto
         .internal_static_google_cloud_orgpolicy_v2_Constraint_descriptor;
@@ -88,6 +84,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Specifies the default behavior in the absence of any `Policy` for the
    * `Constraint`. This must not be `CONSTRAINT_DEFAULT_UNSPECIFIED`.
+   *
    * Immutable after creation.
    * </pre>
    *
@@ -312,11 +309,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ListConstraint();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -937,6 +929,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A `Constraint` that is either enforced or not.
+   *
    * For example a constraint `constraints/compute.disableSerialPortAccess`.
    * If it is enforced on a VM instance, serial port connections will not be
    * opened to that instance.
@@ -960,11 +953,6 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BooleanConstraint();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1139,6 +1127,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A `Constraint` that is either enforced or not.
+     *
      * For example a constraint `constraints/compute.disableSerialPortAccess`.
      * If it is enforced on a VM instance, serial port connections will not be
      * opened to that instance.
@@ -1366,6 +1355,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int constraintTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object constraintType_;
 
   public enum ConstraintTypeCase
@@ -1425,6 +1416,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    * * `projects/{project_number}/constraints/{constraint_name}`
    * * `folders/{folder_id}/constraints/{constraint_name}`
    * * `organizations/{organization_id}/constraints/{constraint_name}`
+   *
    * For example, "/projects/123/constraints/compute.disableSerialPortAccess".
    * </pre>
    *
@@ -1453,6 +1445,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    * * `projects/{project_number}/constraints/{constraint_name}`
    * * `folders/{folder_id}/constraints/{constraint_name}`
    * * `organizations/{organization_id}/constraints/{constraint_name}`
+   *
    * For example, "/projects/123/constraints/compute.disableSerialPortAccess".
    * </pre>
    *
@@ -1482,6 +1475,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The human readable name.
+   *
    * Mutable.
    * </pre>
    *
@@ -1506,6 +1500,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The human readable name.
+   *
    * Mutable.
    * </pre>
    *
@@ -1536,6 +1531,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Detailed description of what this `Constraint` controls as well as how and
    * where it is enforced.
+   *
    * Mutable.
    * </pre>
    *
@@ -1561,6 +1557,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Detailed description of what this `Constraint` controls as well as how and
    * where it is enforced.
+   *
    * Mutable.
    * </pre>
    *
@@ -1966,6 +1963,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    * down the resource hierarchy from higher levels, but can also be overridden.
    * For details about the inheritance rules please read about
    * [`policies`][google.cloud.OrgPolicy.v2.Policy].
+   *
    * `Constraints` have a default behavior determined by the `constraint_default`
    * field, which is the enforcement behavior that is used in the absence of a
    * `policy` being defined or inherited for the resource in question.
@@ -2262,6 +2260,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * * `projects/{project_number}/constraints/{constraint_name}`
      * * `folders/{folder_id}/constraints/{constraint_name}`
      * * `organizations/{organization_id}/constraints/{constraint_name}`
+     *
      * For example, "/projects/123/constraints/compute.disableSerialPortAccess".
      * </pre>
      *
@@ -2289,6 +2288,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * * `projects/{project_number}/constraints/{constraint_name}`
      * * `folders/{folder_id}/constraints/{constraint_name}`
      * * `organizations/{organization_id}/constraints/{constraint_name}`
+     *
      * For example, "/projects/123/constraints/compute.disableSerialPortAccess".
      * </pre>
      *
@@ -2316,6 +2316,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * * `projects/{project_number}/constraints/{constraint_name}`
      * * `folders/{folder_id}/constraints/{constraint_name}`
      * * `organizations/{organization_id}/constraints/{constraint_name}`
+     *
      * For example, "/projects/123/constraints/compute.disableSerialPortAccess".
      * </pre>
      *
@@ -2342,6 +2343,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * * `projects/{project_number}/constraints/{constraint_name}`
      * * `folders/{folder_id}/constraints/{constraint_name}`
      * * `organizations/{organization_id}/constraints/{constraint_name}`
+     *
      * For example, "/projects/123/constraints/compute.disableSerialPortAccess".
      * </pre>
      *
@@ -2364,6 +2366,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * * `projects/{project_number}/constraints/{constraint_name}`
      * * `folders/{folder_id}/constraints/{constraint_name}`
      * * `organizations/{organization_id}/constraints/{constraint_name}`
+     *
      * For example, "/projects/123/constraints/compute.disableSerialPortAccess".
      * </pre>
      *
@@ -2389,6 +2392,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The human readable name.
+     *
      * Mutable.
      * </pre>
      *
@@ -2412,6 +2416,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The human readable name.
+     *
      * Mutable.
      * </pre>
      *
@@ -2435,6 +2440,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The human readable name.
+     *
      * Mutable.
      * </pre>
      *
@@ -2457,6 +2463,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The human readable name.
+     *
      * Mutable.
      * </pre>
      *
@@ -2475,6 +2482,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The human readable name.
+     *
      * Mutable.
      * </pre>
      *
@@ -2501,6 +2509,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Detailed description of what this `Constraint` controls as well as how and
      * where it is enforced.
+     *
      * Mutable.
      * </pre>
      *
@@ -2525,6 +2534,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Detailed description of what this `Constraint` controls as well as how and
      * where it is enforced.
+     *
      * Mutable.
      * </pre>
      *
@@ -2549,6 +2559,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Detailed description of what this `Constraint` controls as well as how and
      * where it is enforced.
+     *
      * Mutable.
      * </pre>
      *
@@ -2572,6 +2583,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Detailed description of what this `Constraint` controls as well as how and
      * where it is enforced.
+     *
      * Mutable.
      * </pre>
      *
@@ -2591,6 +2603,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Detailed description of what this `Constraint` controls as well as how and
      * where it is enforced.
+     *
      * Mutable.
      * </pre>
      *

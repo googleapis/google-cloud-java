@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,7 +106,9 @@ public interface FieldTransformationOrBuilder
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
    * that are not used in the actual transformation.
+   *
    * Example Use Cases:
+   *
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
    * - Redact a field if the date of birth field is greater than 85.
@@ -124,7 +126,9 @@ public interface FieldTransformationOrBuilder
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
    * that are not used in the actual transformation.
+   *
    * Example Use Cases:
+   *
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
    * - Redact a field if the date of birth field is greater than 85.
@@ -142,7 +146,9 @@ public interface FieldTransformationOrBuilder
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
    * that are not used in the actual transformation.
+   *
    * Example Use Cases:
+   *
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
    * - Redact a field if the date of birth field is greater than 85.
@@ -225,5 +231,5 @@ public interface FieldTransformationOrBuilder
    */
   com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder getInfoTypeTransformationsOrBuilder();
 
-  public com.google.privacy.dlp.v2.FieldTransformation.TransformationCase getTransformationCase();
+  com.google.privacy.dlp.v2.FieldTransformation.TransformationCase getTransformationCase();
 }

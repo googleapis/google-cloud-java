@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,13 +30,20 @@ public interface TextToSpeechSettingsOrBuilder
    * Configuration of how speech should be synthesized, mapping from language
    * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
    * SynthesizeSpeechConfig.
+   *
    * These settings affect:
-   *  - The synthesize configuration used in [phone
-   *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
-   *  - You no longer need to specify
+   *
+   *  - The [phone
+   *  gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway)
+   *    synthesize configuration set via
+   *    [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings].
+   *
+   *  - How speech is synthesized when invoking
+   *  [session][google.cloud.dialogflow.cx.v3beta1.Sessions] APIs.
+   *    [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+   *    only applies if
    *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
-   *    when invoking API calls. Your agent will use the pre-configured options
-   *    for speech synthesizing.
+   *    is not specified.
    * </pre>
    *
    * <code>
@@ -51,13 +58,20 @@ public interface TextToSpeechSettingsOrBuilder
    * Configuration of how speech should be synthesized, mapping from language
    * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
    * SynthesizeSpeechConfig.
+   *
    * These settings affect:
-   *  - The synthesize configuration used in [phone
-   *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
-   *  - You no longer need to specify
+   *
+   *  - The [phone
+   *  gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway)
+   *    synthesize configuration set via
+   *    [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings].
+   *
+   *  - How speech is synthesized when invoking
+   *  [session][google.cloud.dialogflow.cx.v3beta1.Sessions] APIs.
+   *    [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+   *    only applies if
    *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
-   *    when invoking API calls. Your agent will use the pre-configured options
-   *    for speech synthesizing.
+   *    is not specified.
    * </pre>
    *
    * <code>
@@ -76,13 +90,20 @@ public interface TextToSpeechSettingsOrBuilder
    * Configuration of how speech should be synthesized, mapping from language
    * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
    * SynthesizeSpeechConfig.
+   *
    * These settings affect:
-   *  - The synthesize configuration used in [phone
-   *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
-   *  - You no longer need to specify
+   *
+   *  - The [phone
+   *  gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway)
+   *    synthesize configuration set via
+   *    [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings].
+   *
+   *  - How speech is synthesized when invoking
+   *  [session][google.cloud.dialogflow.cx.v3beta1.Sessions] APIs.
+   *    [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+   *    only applies if
    *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
-   *    when invoking API calls. Your agent will use the pre-configured options
-   *    for speech synthesizing.
+   *    is not specified.
    * </pre>
    *
    * <code>
@@ -98,13 +119,20 @@ public interface TextToSpeechSettingsOrBuilder
    * Configuration of how speech should be synthesized, mapping from language
    * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
    * SynthesizeSpeechConfig.
+   *
    * These settings affect:
-   *  - The synthesize configuration used in [phone
-   *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
-   *  - You no longer need to specify
+   *
+   *  - The [phone
+   *  gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway)
+   *    synthesize configuration set via
+   *    [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings].
+   *
+   *  - How speech is synthesized when invoking
+   *  [session][google.cloud.dialogflow.cx.v3beta1.Sessions] APIs.
+   *    [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+   *    only applies if
    *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
-   *    when invoking API calls. Your agent will use the pre-configured options
-   *    for speech synthesizing.
+   *    is not specified.
    * </pre>
    *
    * <code>
@@ -123,13 +151,20 @@ public interface TextToSpeechSettingsOrBuilder
    * Configuration of how speech should be synthesized, mapping from language
    * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
    * SynthesizeSpeechConfig.
+   *
    * These settings affect:
-   *  - The synthesize configuration used in [phone
-   *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
-   *  - You no longer need to specify
+   *
+   *  - The [phone
+   *  gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway)
+   *    synthesize configuration set via
+   *    [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings].
+   *
+   *  - How speech is synthesized when invoking
+   *  [session][google.cloud.dialogflow.cx.v3beta1.Sessions] APIs.
+   *    [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3beta1.Agent.text_to_speech_settings]
+   *    only applies if
    *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
-   *    when invoking API calls. Your agent will use the pre-configured options
-   *    for speech synthesizing.
+   *    is not specified.
    * </pre>
    *
    * <code>

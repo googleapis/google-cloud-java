@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -473,5 +473,5 @@ public interface EventOrBuilder
    */
   com.google.cloud.lifesciences.v2beta.FailedEventOrBuilder getFailedOrBuilder();
 
-  public com.google.cloud.lifesciences.v2beta.Event.DetailsCase getDetailsCase();
+  com.google.cloud.lifesciences.v2beta.Event.DetailsCase getDetailsCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -215,6 +216,8 @@ public class InterconnectAttachmentsClientTest {
             .setCloudRouterIpAddress("cloudRouterIpAddress586092687")
             .setCloudRouterIpv6Address("cloudRouterIpv6Address-675975345")
             .setCloudRouterIpv6InterfaceId("cloudRouterIpv6InterfaceId-565331441")
+            .setConfigurationConstraints(
+                InterconnectAttachmentConfigurationConstraints.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setCustomerRouterIpAddress("customerRouterIpAddress-2065119290")
             .setCustomerRouterIpv6Address("customerRouterIpv6Address-1575078714")
@@ -228,6 +231,8 @@ public class InterconnectAttachmentsClientTest {
             .setInterconnect("interconnect-849140594")
             .addAllIpsecInternalAddresses(new ArrayList<String>())
             .setKind("kind3292052")
+            .setLabelFingerprint("labelFingerprint379449680")
+            .putAllLabels(new HashMap<String, String>())
             .setMtu(108462)
             .setName("name3373707")
             .setOperationalStatus("operationalStatus-2103166364")
@@ -236,11 +241,13 @@ public class InterconnectAttachmentsClientTest {
             .setPartnerMetadata(InterconnectAttachmentPartnerMetadata.newBuilder().build())
             .setPrivateInterconnectInfo(InterconnectAttachmentPrivateInfo.newBuilder().build())
             .setRegion("region-934795532")
+            .setRemoteService("remoteService-1795380337")
             .setRouter("router-925132983")
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
             .setStackType("stackType1727939042")
             .setState("state109757585")
+            .setSubnetLength(-1867652600)
             .setType("type3575610")
             .setVlanTag8021Q(1730540572)
             .build();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,5 +58,5 @@ public interface OutputConfigOrBuilder
    */
   com.google.cloud.redis.v1.GcsDestinationOrBuilder getGcsDestinationOrBuilder();
 
-  public com.google.cloud.redis.v1.OutputConfig.DestinationCase getDestinationCase();
+  com.google.cloud.redis.v1.OutputConfig.DestinationCase getDestinationCase();
 }

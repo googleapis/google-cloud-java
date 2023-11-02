@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
     return new SearchExampleComparisonsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.DataLabelingServiceOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_SearchExampleComparisonsRequest_descriptor;
@@ -79,6 +74,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
    * <pre>
    * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
    * comparisons from. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
    * </pre>
    *
@@ -106,6 +102,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
    * <pre>
    * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
    * comparisons from. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
    * </pre>
    *
@@ -159,6 +156,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
    * Typically obtained by the
    * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
    * to a previous search rquest.
+   *
    * If you don't specify this field, the API call requests the first page of
    * the search.
    * </pre>
@@ -187,6 +185,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
    * Typically obtained by the
    * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
    * to a previous search rquest.
+   *
    * If you don't specify this field, the API call requests the first page of
    * the search.
    * </pre>
@@ -612,6 +611,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * <pre>
      * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
      * comparisons from. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
      * </pre>
      *
@@ -638,6 +638,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * <pre>
      * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
      * comparisons from. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
      * </pre>
      *
@@ -664,6 +665,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * <pre>
      * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
      * comparisons from. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
      * </pre>
      *
@@ -689,6 +691,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * <pre>
      * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
      * comparisons from. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
      * </pre>
      *
@@ -710,6 +713,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * <pre>
      * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
      * comparisons from. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
      * </pre>
      *
@@ -796,6 +800,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * Typically obtained by the
      * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
      * to a previous search rquest.
+     *
      * If you don't specify this field, the API call requests the first page of
      * the search.
      * </pre>
@@ -823,6 +828,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * Typically obtained by the
      * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
      * to a previous search rquest.
+     *
      * If you don't specify this field, the API call requests the first page of
      * the search.
      * </pre>
@@ -850,6 +856,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * Typically obtained by the
      * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
      * to a previous search rquest.
+     *
      * If you don't specify this field, the API call requests the first page of
      * the search.
      * </pre>
@@ -876,6 +883,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * Typically obtained by the
      * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
      * to a previous search rquest.
+     *
      * If you don't specify this field, the API call requests the first page of
      * the search.
      * </pre>
@@ -898,6 +906,7 @@ public final class SearchExampleComparisonsRequest extends com.google.protobuf.G
      * Typically obtained by the
      * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
      * to a previous search rquest.
+     *
      * If you don't specify this field, the API call requests the first page of
      * the search.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
     return new ListBackupsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1alpha.MetastoreProto
         .internal_static_google_cloud_metastore_v1alpha_ListBackupsRequest_descriptor;
@@ -81,6 +76,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The relative resource name of the service whose backups to
    * list, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups`.
    * </pre>
    *
@@ -108,6 +104,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The relative resource name of the service whose backups to
    * list, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups`.
    * </pre>
    *
@@ -161,7 +158,9 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    * Optional. A page token, received from a previous
    * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
    * call. Provide this token to retrieve the subsequent page.
+   *
    * To retrieve the first page, supply an empty page token.
+   *
    * When paginating, other parameters provided to
    * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
    * must match the call that provided the page token.
@@ -190,7 +189,9 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    * Optional. A page token, received from a previous
    * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
    * call. Provide this token to retrieve the subsequent page.
+   *
    * To retrieve the first page, supply an empty page token.
+   *
    * When paginating, other parameters provided to
    * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
    * must match the call that provided the page token.
@@ -764,6 +765,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The relative resource name of the service whose backups to
      * list, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups`.
      * </pre>
      *
@@ -790,6 +792,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The relative resource name of the service whose backups to
      * list, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups`.
      * </pre>
      *
@@ -816,6 +819,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The relative resource name of the service whose backups to
      * list, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups`.
      * </pre>
      *
@@ -841,6 +845,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The relative resource name of the service whose backups to
      * list, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups`.
      * </pre>
      *
@@ -862,6 +867,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The relative resource name of the service whose backups to
      * list, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups`.
      * </pre>
      *
@@ -950,7 +956,9 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * Optional. A page token, received from a previous
      * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
      * must match the call that provided the page token.
@@ -978,7 +986,9 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * Optional. A page token, received from a previous
      * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
      * must match the call that provided the page token.
@@ -1006,7 +1016,9 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * Optional. A page token, received from a previous
      * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
      * must match the call that provided the page token.
@@ -1033,7 +1045,9 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * Optional. A page token, received from a previous
      * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
      * must match the call that provided the page token.
@@ -1056,7 +1070,9 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * Optional. A page token, received from a previous
      * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
      * must match the call that provided the page token.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PriceInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -200,11 +195,6 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PriceRange();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1268,8 +1258,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The 3-letter currency code defined in [ISO
    * 4217](https://www.iso.org/iso-4217-currency-codes.html).
+   *
    * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
    * error is returned.
+   *
    * The [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
    * [Product][google.cloud.retail.v2beta.Product]s with the same
    * [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
@@ -1300,8 +1292,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The 3-letter currency code defined in [ISO
    * 4217](https://www.iso.org/iso-4217-currency-codes.html).
+   *
    * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
    * error is returned.
+   *
    * The [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
    * [Product][google.cloud.retail.v2beta.Product]s with the same
    * [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
@@ -1334,6 +1328,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Price of the product.
+   *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371). Schema.org
    * property [Offer.price](https://schema.org/price).
@@ -1379,8 +1374,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The costs associated with the sale of a particular product. Used for gross
    * profit reporting.
+   *
    * * Profit = [price][google.cloud.retail.v2beta.PriceInfo.price] -
    * [cost][google.cloud.retail.v2beta.PriceInfo.cost]
+   *
    * Google Merchant Center property
    * [cost_of_goods_sold](https://support.google.com/merchants/answer/9017895).
    * </pre>
@@ -1411,6 +1408,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
    * used before
    * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+   *
    * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
    * effective because it will cause additional latency during search.
    * </pre>
@@ -1438,6 +1436,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
    * used before
    * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+   *
    * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
    * effective because it will cause additional latency during search.
    * </pre>
@@ -1467,6 +1466,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
    * used before
    * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+   *
    * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
    * effective because it will cause additional latency during search.
    * </pre>
@@ -1497,6 +1497,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
    * used after
    * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+   *
    * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
    * effective because it will cause additional latency during search.
    * </pre>
@@ -1524,6 +1525,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
    * used after
    * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+   *
    * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
    * effective because it will cause additional latency during search.
    * </pre>
@@ -1553,6 +1555,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
    * used after
    * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+   *
    * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
    * effective because it will cause additional latency during search.
    * </pre>
@@ -1579,6 +1582,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * [Product][google.cloud.retail.v2beta.Product]. Only populated for
    * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
    * [Product][google.cloud.retail.v2beta.Product]s.
+   *
    * Note: This field is OUTPUT_ONLY for
    * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
    * Do not set this field in API requests.
@@ -1605,6 +1609,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * [Product][google.cloud.retail.v2beta.Product]. Only populated for
    * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
    * [Product][google.cloud.retail.v2beta.Product]s.
+   *
    * Note: This field is OUTPUT_ONLY for
    * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
    * Do not set this field in API requests.
@@ -1633,6 +1638,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * [Product][google.cloud.retail.v2beta.Product]. Only populated for
    * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
    * [Product][google.cloud.retail.v2beta.Product]s.
+   *
    * Note: This field is OUTPUT_ONLY for
    * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
    * Do not set this field in API requests.
@@ -2163,8 +2169,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The 3-letter currency code defined in [ISO
      * 4217](https://www.iso.org/iso-4217-currency-codes.html).
+     *
      * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
      * error is returned.
+     *
      * The [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
      * [Product][google.cloud.retail.v2beta.Product]s with the same
      * [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
@@ -2194,8 +2202,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The 3-letter currency code defined in [ISO
      * 4217](https://www.iso.org/iso-4217-currency-codes.html).
+     *
      * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
      * error is returned.
+     *
      * The [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
      * [Product][google.cloud.retail.v2beta.Product]s with the same
      * [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
@@ -2225,8 +2235,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The 3-letter currency code defined in [ISO
      * 4217](https://www.iso.org/iso-4217-currency-codes.html).
+     *
      * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
      * error is returned.
+     *
      * The [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
      * [Product][google.cloud.retail.v2beta.Product]s with the same
      * [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
@@ -2255,8 +2267,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The 3-letter currency code defined in [ISO
      * 4217](https://www.iso.org/iso-4217-currency-codes.html).
+     *
      * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
      * error is returned.
+     *
      * The [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
      * [Product][google.cloud.retail.v2beta.Product]s with the same
      * [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
@@ -2281,8 +2295,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The 3-letter currency code defined in [ISO
      * 4217](https://www.iso.org/iso-4217-currency-codes.html).
+     *
      * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
      * error is returned.
+     *
      * The [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
      * [Product][google.cloud.retail.v2beta.Product]s with the same
      * [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
@@ -2313,6 +2329,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Price of the product.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371). Schema.org
      * property [Offer.price](https://schema.org/price).
@@ -2331,6 +2348,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Price of the product.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371). Schema.org
      * property [Offer.price](https://schema.org/price).
@@ -2353,6 +2371,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Price of the product.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371). Schema.org
      * property [Offer.price](https://schema.org/price).
@@ -2444,8 +2463,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The costs associated with the sale of a particular product. Used for gross
      * profit reporting.
+     *
      * * Profit = [price][google.cloud.retail.v2beta.PriceInfo.price] -
      * [cost][google.cloud.retail.v2beta.PriceInfo.cost]
+     *
      * Google Merchant Center property
      * [cost_of_goods_sold](https://support.google.com/merchants/answer/9017895).
      * </pre>
@@ -2464,8 +2485,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The costs associated with the sale of a particular product. Used for gross
      * profit reporting.
+     *
      * * Profit = [price][google.cloud.retail.v2beta.PriceInfo.price] -
      * [cost][google.cloud.retail.v2beta.PriceInfo.cost]
+     *
      * Google Merchant Center property
      * [cost_of_goods_sold](https://support.google.com/merchants/answer/9017895).
      * </pre>
@@ -2488,8 +2511,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The costs associated with the sale of a particular product. Used for gross
      * profit reporting.
+     *
      * * Profit = [price][google.cloud.retail.v2beta.PriceInfo.price] -
      * [cost][google.cloud.retail.v2beta.PriceInfo.cost]
+     *
      * Google Merchant Center property
      * [cost_of_goods_sold](https://support.google.com/merchants/answer/9017895).
      * </pre>
@@ -2526,6 +2551,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used before
      * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2552,6 +2578,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used before
      * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2584,6 +2611,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used before
      * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2618,6 +2646,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used before
      * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2649,6 +2678,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used before
      * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2686,6 +2716,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used before
      * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2717,6 +2748,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used before
      * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2743,6 +2775,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used before
      * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2773,6 +2806,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used before
      * [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2817,6 +2851,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used after
      * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2843,6 +2878,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used after
      * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2875,6 +2911,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used after
      * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2909,6 +2946,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used after
      * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2940,6 +2978,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used after
      * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -2977,6 +3016,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used after
      * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -3008,6 +3048,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used after
      * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -3034,6 +3075,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used after
      * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -3064,6 +3106,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
      * used after
      * [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+     *
      * Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
      * effective because it will cause additional latency during search.
      * </pre>
@@ -3104,6 +3147,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [Product][google.cloud.retail.v2beta.Product]. Only populated for
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product]s.
+     *
      * Note: This field is OUTPUT_ONLY for
      * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
      * Do not set this field in API requests.
@@ -3129,6 +3173,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [Product][google.cloud.retail.v2beta.Product]. Only populated for
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product]s.
+     *
      * Note: This field is OUTPUT_ONLY for
      * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
      * Do not set this field in API requests.
@@ -3160,6 +3205,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [Product][google.cloud.retail.v2beta.Product]. Only populated for
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product]s.
+     *
      * Note: This field is OUTPUT_ONLY for
      * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
      * Do not set this field in API requests.
@@ -3193,6 +3239,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [Product][google.cloud.retail.v2beta.Product]. Only populated for
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product]s.
+     *
      * Note: This field is OUTPUT_ONLY for
      * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
      * Do not set this field in API requests.
@@ -3224,6 +3271,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [Product][google.cloud.retail.v2beta.Product]. Only populated for
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product]s.
+     *
      * Note: This field is OUTPUT_ONLY for
      * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
      * Do not set this field in API requests.
@@ -3261,6 +3309,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [Product][google.cloud.retail.v2beta.Product]. Only populated for
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product]s.
+     *
      * Note: This field is OUTPUT_ONLY for
      * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
      * Do not set this field in API requests.
@@ -3291,6 +3340,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [Product][google.cloud.retail.v2beta.Product]. Only populated for
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product]s.
+     *
      * Note: This field is OUTPUT_ONLY for
      * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
      * Do not set this field in API requests.
@@ -3316,6 +3366,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [Product][google.cloud.retail.v2beta.Product]. Only populated for
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product]s.
+     *
      * Note: This field is OUTPUT_ONLY for
      * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
      * Do not set this field in API requests.
@@ -3345,6 +3396,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * [Product][google.cloud.retail.v2beta.Product]. Only populated for
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product]s.
+     *
      * Note: This field is OUTPUT_ONLY for
      * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
      * Do not set this field in API requests.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,10 @@ package com.google.cloud.dialogflow.v2beta1;
  * <pre>
  * A knowledge document to be used by a
  * [KnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBase].
+ *
  * For more information, see the [knowledge base
  * guide](https://cloud.google.com/dialogflow/docs/how/knowledge-bases).
+ *
  * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
  * only use `projects.knowledgeBases.documents`.
  * </pre>
@@ -54,11 +56,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Document();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -114,6 +111,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The document content contains question and answer pairs as either HTML or
      * CSV. Typical FAQ HTML formats are parsed accurately, but unusual formats
      * may fail to be parsed.
+     *
      * CSV must have questions in the first column and answers in the second,
      * with no header. Because of this explicit format, they are always parsed
      * accurately.
@@ -184,6 +182,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The document content contains question and answer pairs as either HTML or
      * CSV. Typical FAQ HTML formats are parsed accurately, but unusual formats
      * may fail to be parsed.
+     *
      * CSV must have questions in the first column and answers in the second,
      * with no header. Because of this explicit format, they are always parsed
      * accurately.
@@ -662,11 +661,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ReloadStatus();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1603,6 +1597,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -1932,8 +1928,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The URI where the file content is located.
+   *
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * NOTE: External URLs must correspond to public webpages, i.e., they must
    * be indexed by Google Search. In particular, URLs for showing documents in
    * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -1952,8 +1950,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The URI where the file content is located.
+   *
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * NOTE: External URLs must correspond to public webpages, i.e., they must
    * be indexed by Google Search. In particular, URLs for showing documents in
    * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -1985,8 +1985,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The URI where the file content is located.
+   *
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * NOTE: External URLs must correspond to public webpages, i.e., they must
    * be indexed by Google Search. In particular, URLs for showing documents in
    * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -2148,10 +2150,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Optional. If true, we try to automatically reload the document every day
    * (at a time picked by the system). If false or unspecified, we don't try
    * to automatically reload the document.
+   *
    * Currently you can only enable automatic reload for documents sourced from
    * a public url, see `source` field for the source types.
+   *
    * Reload status can be tracked in `latest_reload_status`. If a reload
    * fails, we will keep the document unchanged.
+   *
    * If a reload fails with internal errors, the system will try to reload the
    * document on the next day.
    * If a reload fails with non-retriable errors (e.g. PERMISSION_DENIED), the
@@ -2697,8 +2702,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A knowledge document to be used by a
    * [KnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBase].
+   *
    * For more information, see the [knowledge base
    * guide](https://cloud.google.com/dialogflow/docs/how/knowledge-bases).
+   *
    * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
    * only use `projects.knowledgeBases.documents`.
    * </pre>
@@ -3693,8 +3700,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URI where the file content is located.
+     *
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * NOTE: External URLs must correspond to public webpages, i.e., they must
      * be indexed by Google Search. In particular, URLs for showing documents in
      * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -3714,8 +3723,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URI where the file content is located.
+     *
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * NOTE: External URLs must correspond to public webpages, i.e., they must
      * be indexed by Google Search. In particular, URLs for showing documents in
      * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -3748,8 +3759,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URI where the file content is located.
+     *
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * NOTE: External URLs must correspond to public webpages, i.e., they must
      * be indexed by Google Search. In particular, URLs for showing documents in
      * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -3782,8 +3795,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URI where the file content is located.
+     *
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * NOTE: External URLs must correspond to public webpages, i.e., they must
      * be indexed by Google Search. In particular, URLs for showing documents in
      * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -3809,8 +3824,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URI where the file content is located.
+     *
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * NOTE: External URLs must correspond to public webpages, i.e., they must
      * be indexed by Google Search. In particular, URLs for showing documents in
      * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -3834,8 +3851,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URI where the file content is located.
+     *
      * For documents stored in Google Cloud Storage, these URIs must have
      * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * NOTE: External URLs must correspond to public webpages, i.e., they must
      * be indexed by Google Search. In particular, URLs for showing documents in
      * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -4112,10 +4131,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Optional. If true, we try to automatically reload the document every day
      * (at a time picked by the system). If false or unspecified, we don't try
      * to automatically reload the document.
+     *
      * Currently you can only enable automatic reload for documents sourced from
      * a public url, see `source` field for the source types.
+     *
      * Reload status can be tracked in `latest_reload_status`. If a reload
      * fails, we will keep the document unchanged.
+     *
      * If a reload fails with internal errors, the system will try to reload the
      * document on the next day.
      * If a reload fails with non-retriable errors (e.g. PERMISSION_DENIED), the
@@ -4139,10 +4161,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Optional. If true, we try to automatically reload the document every day
      * (at a time picked by the system). If false or unspecified, we don't try
      * to automatically reload the document.
+     *
      * Currently you can only enable automatic reload for documents sourced from
      * a public url, see `source` field for the source types.
+     *
      * Reload status can be tracked in `latest_reload_status`. If a reload
      * fails, we will keep the document unchanged.
+     *
      * If a reload fails with internal errors, the system will try to reload the
      * document on the next day.
      * If a reload fails with non-retriable errors (e.g. PERMISSION_DENIED), the
@@ -4170,10 +4195,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Optional. If true, we try to automatically reload the document every day
      * (at a time picked by the system). If false or unspecified, we don't try
      * to automatically reload the document.
+     *
      * Currently you can only enable automatic reload for documents sourced from
      * a public url, see `source` field for the source types.
+     *
      * Reload status can be tracked in `latest_reload_status`. If a reload
      * fails, we will keep the document unchanged.
+     *
      * If a reload fails with internal errors, the system will try to reload the
      * document on the next day.
      * If a reload fails with non-retriable errors (e.g. PERMISSION_DENIED), the

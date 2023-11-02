@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
     return new GetWorkflowTemplateRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
         .internal_static_google_cloud_dataproc_v1_GetWorkflowTemplateRequest_descriptor;
@@ -77,9 +72,11 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The resource name of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.workflowTemplates.get`, the resource name of the
    *   template has the following format:
    *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *
    * * For `projects.locations.workflowTemplates.get`, the resource name of the
    *   template has the following format:
    *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -109,9 +106,11 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The resource name of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.workflowTemplates.get`, the resource name of the
    *   template has the following format:
    *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *
    * * For `projects.locations.workflowTemplates.get`, the resource name of the
    *   template has the following format:
    *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -144,6 +143,7 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
    * <pre>
    * Optional. The version of workflow template to retrieve. Only previously
    * instantiated versions can be retrieved.
+   *
    * If unspecified, retrieves the current version.
    * </pre>
    *
@@ -528,9 +528,11 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates.get`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates.get`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -559,9 +561,11 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates.get`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates.get`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -590,9 +594,11 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates.get`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates.get`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -620,9 +626,11 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates.get`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates.get`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -646,9 +654,11 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates.get`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates.get`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -679,6 +689,7 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The version of workflow template to retrieve. Only previously
      * instantiated versions can be retrieved.
+     *
      * If unspecified, retrieves the current version.
      * </pre>
      *
@@ -696,6 +707,7 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The version of workflow template to retrieve. Only previously
      * instantiated versions can be retrieved.
+     *
      * If unspecified, retrieves the current version.
      * </pre>
      *
@@ -717,6 +729,7 @@ public final class GetWorkflowTemplateRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The version of workflow template to retrieve. Only previously
      * instantiated versions can be retrieved.
+     *
      * If unspecified, retrieves the current version.
      * </pre>
      *

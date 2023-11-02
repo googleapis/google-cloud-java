@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,12 @@ public interface SynthesizeSpeechConfigOrBuilder
    *
    * <pre>
    * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
-   * native speed supported by the specific voice. 2.0 is twice as fast, and
-   * 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any
-   * other values &lt; 0.25 or &gt; 4.0 will return an error.
+   * native speed supported by the specific voice. 2.0 is twice as fast, and 0.5
+   * is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other
+   * values &lt; 0.25 or &gt; 4.0 will return an error.
    * </pre>
    *
-   * <code>double speaking_rate = 1;</code>
+   * <code>double speaking_rate = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The speakingRate.
    */
@@ -48,7 +48,7 @@ public interface SynthesizeSpeechConfigOrBuilder
    * original pitch.
    * </pre>
    *
-   * <code>double pitch = 2;</code>
+   * <code>double pitch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pitch.
    */
@@ -68,7 +68,7 @@ public interface SynthesizeSpeechConfigOrBuilder
    * any value greater than that.
    * </pre>
    *
-   * <code>double volume_gain_db = 3;</code>
+   * <code>double volume_gain_db = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The volumeGainDb.
    */
@@ -83,7 +83,7 @@ public interface SynthesizeSpeechConfigOrBuilder
    * each other in the order they are given.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 5;</code>
+   * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the effectsProfileId.
    */
@@ -97,7 +97,7 @@ public interface SynthesizeSpeechConfigOrBuilder
    * each other in the order they are given.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 5;</code>
+   * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of effectsProfileId.
    */
@@ -111,7 +111,7 @@ public interface SynthesizeSpeechConfigOrBuilder
    * each other in the order they are given.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 5;</code>
+   * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The effectsProfileId at the given index.
@@ -126,7 +126,7 @@ public interface SynthesizeSpeechConfigOrBuilder
    * each other in the order they are given.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 5;</code>
+   * <code>repeated string effects_profile_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the effectsProfileId at the given index.
@@ -140,7 +140,9 @@ public interface SynthesizeSpeechConfigOrBuilder
    * Optional. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.VoiceSelectionParams voice = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the voice field is set.
    */
@@ -152,7 +154,9 @@ public interface SynthesizeSpeechConfigOrBuilder
    * Optional. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.VoiceSelectionParams voice = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The voice.
    */
@@ -164,7 +168,9 @@ public interface SynthesizeSpeechConfigOrBuilder
    * Optional. The desired voice of the synthesized audio.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.VoiceSelectionParams voice = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.VoiceSelectionParams voice = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.VoiceSelectionParamsOrBuilder getVoiceOrBuilder();
 }

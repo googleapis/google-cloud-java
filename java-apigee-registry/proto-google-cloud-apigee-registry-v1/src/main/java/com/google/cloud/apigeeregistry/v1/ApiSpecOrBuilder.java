@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -383,11 +383,13 @@ public interface ApiSpecOrBuilder
    * <pre>
    * Labels attach identifying metadata to resources. Identifying metadata can
    * be used to filter list operations.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one resource (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
    * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -402,11 +404,13 @@ public interface ApiSpecOrBuilder
    * <pre>
    * Labels attach identifying metadata to resources. Identifying metadata can
    * be used to filter list operations.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one resource (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
    * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -424,11 +428,13 @@ public interface ApiSpecOrBuilder
    * <pre>
    * Labels attach identifying metadata to resources. Identifying metadata can
    * be used to filter list operations.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one resource (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
    * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -443,11 +449,13 @@ public interface ApiSpecOrBuilder
    * <pre>
    * Labels attach identifying metadata to resources. Identifying metadata can
    * be used to filter list operations.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one resource (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
    * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -466,11 +474,13 @@ public interface ApiSpecOrBuilder
    * <pre>
    * Labels attach identifying metadata to resources. Identifying metadata can
    * be used to filter list operations.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one resource (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
    * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -485,6 +495,7 @@ public interface ApiSpecOrBuilder
    *
    * <pre>
    * Annotations attach non-identifying metadata to resources.
+   *
    * Annotation keys and values are less restricted than those of labels, but
    * should be generally used for small values of broad interest. Larger, topic-
    * specific metadata should be stored in Artifacts.
@@ -498,6 +509,7 @@ public interface ApiSpecOrBuilder
    *
    * <pre>
    * Annotations attach non-identifying metadata to resources.
+   *
    * Annotation keys and values are less restricted than those of labels, but
    * should be generally used for small values of broad interest. Larger, topic-
    * specific metadata should be stored in Artifacts.
@@ -514,6 +526,7 @@ public interface ApiSpecOrBuilder
    *
    * <pre>
    * Annotations attach non-identifying metadata to resources.
+   *
    * Annotation keys and values are less restricted than those of labels, but
    * should be generally used for small values of broad interest. Larger, topic-
    * specific metadata should be stored in Artifacts.
@@ -527,6 +540,7 @@ public interface ApiSpecOrBuilder
    *
    * <pre>
    * Annotations attach non-identifying metadata to resources.
+   *
    * Annotation keys and values are less restricted than those of labels, but
    * should be generally used for small values of broad interest. Larger, topic-
    * specific metadata should be stored in Artifacts.
@@ -544,6 +558,7 @@ public interface ApiSpecOrBuilder
    *
    * <pre>
    * Annotations attach non-identifying metadata to resources.
+   *
    * Annotation keys and values are less restricted than those of labels, but
    * should be generally used for small values of broad interest. Larger, topic-
    * specific metadata should be stored in Artifacts.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CustomConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -376,11 +371,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       return new CustomOutputSpec();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomConfigProto
           .internal_static_google_cloud_securitycenter_v1_CustomConfig_CustomOutputSpec_descriptor;
@@ -494,11 +484,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Property();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2457,18 +2442,13 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private ResourceSelector() {
-      resourceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ResourceSelector();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2489,7 +2469,8 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     public static final int RESOURCE_TYPES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList resourceTypes_;
+    private com.google.protobuf.LazyStringArrayList resourceTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -2759,8 +2740,7 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        resourceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -2790,7 +2770,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.securitycenter.v1.CustomConfig.ResourceSelector buildPartial() {
         com.google.cloud.securitycenter.v1.CustomConfig.ResourceSelector result =
             new com.google.cloud.securitycenter.v1.CustomConfig.ResourceSelector(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -2798,18 +2777,13 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.securitycenter.v1.CustomConfig.ResourceSelector result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          resourceTypes_ = resourceTypes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.resourceTypes_ = resourceTypes_;
-      }
-
       private void buildPartial0(
           com.google.cloud.securitycenter.v1.CustomConfig.ResourceSelector result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          resourceTypes_.makeImmutable();
+          result.resourceTypes_ = resourceTypes_;
+        }
       }
 
       @java.lang.Override
@@ -2866,7 +2840,7 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.resourceTypes_.isEmpty()) {
           if (resourceTypes_.isEmpty()) {
             resourceTypes_ = other.resourceTypes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureResourceTypesIsMutable();
             resourceTypes_.addAll(other.resourceTypes_);
@@ -2925,14 +2899,14 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList resourceTypes_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList resourceTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureResourceTypesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!resourceTypes_.isModifiable()) {
           resourceTypes_ = new com.google.protobuf.LazyStringArrayList(resourceTypes_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -2946,7 +2920,8 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the resourceTypes.
        */
       public com.google.protobuf.ProtocolStringList getResourceTypesList() {
-        return resourceTypes_.getUnmodifiableView();
+        resourceTypes_.makeImmutable();
+        return resourceTypes_;
       }
       /**
        *
@@ -3011,6 +2986,7 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         ensureResourceTypesIsMutable();
         resourceTypes_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3032,6 +3008,7 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         ensureResourceTypesIsMutable();
         resourceTypes_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3050,6 +3027,7 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllResourceTypes(java.lang.Iterable<java.lang.String> values) {
         ensureResourceTypesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceTypes_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3065,8 +3043,9 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearResourceTypes() {
-        resourceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -3089,6 +3068,7 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureResourceTypesIsMutable();
         resourceTypes_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }

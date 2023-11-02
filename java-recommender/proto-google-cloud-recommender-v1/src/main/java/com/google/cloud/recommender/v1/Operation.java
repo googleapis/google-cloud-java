@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.recommender.v1;
  * <pre>
  * Contains an operation for a resource loosely based on the JSON-PATCH format
  * with support for:
+ *
  * * Custom filters for describing partial array patch.
  * * Extended path values for describing nested arrays.
  * * Custom fields for describing the resource for which the operation is being
@@ -59,11 +60,6 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     return new Operation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1.RecommendationOuterClass
         .internal_static_google_cloud_recommender_v1_Operation_descriptor;
@@ -93,6 +89,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int pathValueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object pathValue_;
 
   public enum PathValueCase
@@ -616,6 +614,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
+   *
    * * Example:
    * ```
    * {
@@ -665,6 +664,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
+   *
    * * Example:
    * ```
    * {
@@ -705,6 +705,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
+   *
    * * Example:
    * ```
    * {
@@ -753,6 +754,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
+   *
    * * Example:
    * ```
    * {
@@ -1215,6 +1217,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Contains an operation for a resource loosely based on the JSON-PATCH format
    * with support for:
+   *
    * * Custom filters for describing partial array patch.
    * * Extended path values for describing nested arrays.
    * * Custom fields for describing the resource for which the operation is being
@@ -2768,6 +2771,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
+     *
      * * Example:
      * ```
      * {
@@ -2817,6 +2821,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
+     *
      * * Example:
      * ```
      * {
@@ -2857,6 +2862,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
+     *
      * * Example:
      * ```
      * {
@@ -2905,6 +2911,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
+     *
      * * Example:
      * ```
      * {
@@ -2959,6 +2966,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
+     *
      * * Example:
      * ```
      * {
@@ -3008,6 +3016,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
+     *
      * * Example:
      * ```
      * {
@@ -3055,6 +3064,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * tested/modified.
      * This is intended to be an exact match per filter. To perform advanced
      * matching, use path_value_matchers.
+     *
      * * Example:
      * ```
      * {

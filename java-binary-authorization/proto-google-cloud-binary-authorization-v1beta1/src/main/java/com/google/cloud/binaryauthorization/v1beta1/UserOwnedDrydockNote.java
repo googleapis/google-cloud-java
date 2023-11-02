@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     return new UserOwnedDrydockNote();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.binaryauthorization.v1beta1.BinaryAuthorizationResourcesProto
         .internal_static_google_cloud_binaryauthorization_v1beta1_UserOwnedDrydockNote_descriptor;
@@ -81,6 +76,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
    * Required. The Drydock resource name of a ATTESTATION_AUTHORITY Note,
    * created by the user, in the format: `projects/&#42;&#47;notes/&#42;` (or the legacy
    * `providers/&#42;&#47;notes/&#42;`). This field may not be updated.
+   *
    * An attestation by this attestor is stored as a Drydock
    * ATTESTATION_AUTHORITY Occurrence that names a container image and that
    * links to this Note. Drydock is an external dependency.
@@ -109,6 +105,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
    * Required. The Drydock resource name of a ATTESTATION_AUTHORITY Note,
    * created by the user, in the format: `projects/&#42;&#47;notes/&#42;` (or the legacy
    * `providers/&#42;&#47;notes/&#42;`). This field may not be updated.
+   *
    * An attestation by this attestor is stored as a Drydock
    * ATTESTATION_AUTHORITY Occurrence that names a container image and that
    * links to this Note. Drydock is an external dependency.
@@ -142,9 +139,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Public keys that verify attestations signed by this
    * attestor.  This field may be updated.
+   *
    * If this field is non-empty, one of the specified public keys must
    * verify that an attestation was signed by this attestor for the
    * image specified in the admission request.
+   *
    * If this field is empty, this attestor always returns that no
    * valid attestations exist.
    * </pre>
@@ -164,9 +163,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Public keys that verify attestations signed by this
    * attestor.  This field may be updated.
+   *
    * If this field is non-empty, one of the specified public keys must
    * verify that an attestation was signed by this attestor for the
    * image specified in the admission request.
+   *
    * If this field is empty, this attestor always returns that no
    * valid attestations exist.
    * </pre>
@@ -187,9 +188,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Public keys that verify attestations signed by this
    * attestor.  This field may be updated.
+   *
    * If this field is non-empty, one of the specified public keys must
    * verify that an attestation was signed by this attestor for the
    * image specified in the admission request.
+   *
    * If this field is empty, this attestor always returns that no
    * valid attestations exist.
    * </pre>
@@ -208,9 +211,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Public keys that verify attestations signed by this
    * attestor.  This field may be updated.
+   *
    * If this field is non-empty, one of the specified public keys must
    * verify that an attestation was signed by this attestor for the
    * image specified in the admission request.
+   *
    * If this field is empty, this attestor always returns that no
    * valid attestations exist.
    * </pre>
@@ -229,9 +234,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Public keys that verify attestations signed by this
    * attestor.  This field may be updated.
+   *
    * If this field is non-empty, one of the specified public keys must
    * verify that an attestation was signed by this attestor for the
    * image specified in the admission request.
+   *
    * If this field is empty, this attestor always returns that no
    * valid attestations exist.
    * </pre>
@@ -259,6 +266,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
    * Analysis. Attestor administrators must grant this service account the
    * IAM role needed to read attestations from the [note_reference][Note] in
    * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+   *
    * This email address is fixed for the lifetime of the Attestor, but callers
    * should not make any other assumptions about the service account email;
    * future versions may use an email based on a different naming pattern.
@@ -290,6 +298,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
    * Analysis. Attestor administrators must grant this service account the
    * IAM role needed to read attestations from the [note_reference][Note] in
    * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+   *
    * This email address is fixed for the lifetime of the Attestor, but callers
    * should not make any other assumptions about the service account email;
    * future versions may use an email based on a different naming pattern.
@@ -771,6 +780,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * Required. The Drydock resource name of a ATTESTATION_AUTHORITY Note,
      * created by the user, in the format: `projects/&#42;&#47;notes/&#42;` (or the legacy
      * `providers/&#42;&#47;notes/&#42;`). This field may not be updated.
+     *
      * An attestation by this attestor is stored as a Drydock
      * ATTESTATION_AUTHORITY Occurrence that names a container image and that
      * links to this Note. Drydock is an external dependency.
@@ -798,6 +808,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * Required. The Drydock resource name of a ATTESTATION_AUTHORITY Note,
      * created by the user, in the format: `projects/&#42;&#47;notes/&#42;` (or the legacy
      * `providers/&#42;&#47;notes/&#42;`). This field may not be updated.
+     *
      * An attestation by this attestor is stored as a Drydock
      * ATTESTATION_AUTHORITY Occurrence that names a container image and that
      * links to this Note. Drydock is an external dependency.
@@ -825,6 +836,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * Required. The Drydock resource name of a ATTESTATION_AUTHORITY Note,
      * created by the user, in the format: `projects/&#42;&#47;notes/&#42;` (or the legacy
      * `providers/&#42;&#47;notes/&#42;`). This field may not be updated.
+     *
      * An attestation by this attestor is stored as a Drydock
      * ATTESTATION_AUTHORITY Occurrence that names a container image and that
      * links to this Note. Drydock is an external dependency.
@@ -851,6 +863,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * Required. The Drydock resource name of a ATTESTATION_AUTHORITY Note,
      * created by the user, in the format: `projects/&#42;&#47;notes/&#42;` (or the legacy
      * `providers/&#42;&#47;notes/&#42;`). This field may not be updated.
+     *
      * An attestation by this attestor is stored as a Drydock
      * ATTESTATION_AUTHORITY Occurrence that names a container image and that
      * links to this Note. Drydock is an external dependency.
@@ -873,6 +886,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * Required. The Drydock resource name of a ATTESTATION_AUTHORITY Note,
      * created by the user, in the format: `projects/&#42;&#47;notes/&#42;` (or the legacy
      * `providers/&#42;&#47;notes/&#42;`). This field may not be updated.
+     *
      * An attestation by this attestor is stored as a Drydock
      * ATTESTATION_AUTHORITY Occurrence that names a container image and that
      * links to this Note. Drydock is an external dependency.
@@ -918,9 +932,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -943,9 +959,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -967,9 +985,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -991,9 +1011,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1022,9 +1044,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1051,9 +1075,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1082,9 +1108,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1113,9 +1141,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1141,9 +1171,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1170,9 +1202,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1199,9 +1233,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1226,9 +1262,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1253,9 +1291,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1274,9 +1314,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1299,9 +1341,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1325,9 +1369,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1348,9 +1394,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1372,9 +1420,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -1415,6 +1465,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * Analysis. Attestor administrators must grant this service account the
      * IAM role needed to read attestations from the [note_reference][Note] in
      * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     *
      * This email address is fixed for the lifetime of the Attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
@@ -1446,6 +1497,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * Analysis. Attestor administrators must grant this service account the
      * IAM role needed to read attestations from the [note_reference][Note] in
      * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     *
      * This email address is fixed for the lifetime of the Attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
@@ -1477,6 +1529,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * Analysis. Attestor administrators must grant this service account the
      * IAM role needed to read attestations from the [note_reference][Note] in
      * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     *
      * This email address is fixed for the lifetime of the Attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
@@ -1507,6 +1560,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * Analysis. Attestor administrators must grant this service account the
      * IAM role needed to read attestations from the [note_reference][Note] in
      * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     *
      * This email address is fixed for the lifetime of the Attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
@@ -1533,6 +1587,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
      * Analysis. Attestor administrators must grant this service account the
      * IAM role needed to read attestations from the [note_reference][Note] in
      * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     *
      * This email address is fixed for the lifetime of the Attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.

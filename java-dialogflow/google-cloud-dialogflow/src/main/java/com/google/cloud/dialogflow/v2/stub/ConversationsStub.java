@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,8 @@ import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
 import com.google.cloud.dialogflow.v2.ListMessagesResponse;
+import com.google.cloud.dialogflow.v2.SearchKnowledgeRequest;
+import com.google.cloud.dialogflow.v2.SearchKnowledgeResponse;
 import com.google.cloud.dialogflow.v2.SuggestConversationSummaryRequest;
 import com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -88,6 +90,10 @@ public abstract class ConversationsStub implements BackgroundResource {
   public UnaryCallable<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
       generateStatelessSummaryCallable() {
     throw new UnsupportedOperationException("Not implemented: generateStatelessSummaryCallable()");
+  }
+
+  public UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse> searchKnowledgeCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchKnowledgeCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

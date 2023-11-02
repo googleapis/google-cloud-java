@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
   private SdkHarnessContainerImage() {
     containerImage_ = "";
     environmentId_ = "";
-    capabilities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    capabilities_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SdkHarnessContainerImage();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -198,7 +193,8 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
   public static final int CAPABILITIES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList capabilities_;
+  private com.google.protobuf.LazyStringArrayList capabilities_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -497,8 +493,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       containerImage_ = "";
       useSingleCorePerContainer_ = false;
       environmentId_ = "";
-      capabilities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      capabilities_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -526,21 +521,11 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     public com.google.dataflow.v1beta3.SdkHarnessContainerImage buildPartial() {
       com.google.dataflow.v1beta3.SdkHarnessContainerImage result =
           new com.google.dataflow.v1beta3.SdkHarnessContainerImage(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.dataflow.v1beta3.SdkHarnessContainerImage result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        capabilities_ = capabilities_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.capabilities_ = capabilities_;
     }
 
     private void buildPartial0(com.google.dataflow.v1beta3.SdkHarnessContainerImage result) {
@@ -553,6 +538,10 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.environmentId_ = environmentId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        capabilities_.makeImmutable();
+        result.capabilities_ = capabilities_;
       }
     }
 
@@ -618,7 +607,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       if (!other.capabilities_.isEmpty()) {
         if (capabilities_.isEmpty()) {
           capabilities_ = other.capabilities_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureCapabilitiesIsMutable();
           capabilities_.addAll(other.capabilities_);
@@ -977,14 +966,14 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.protobuf.LazyStringList capabilities_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList capabilities_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCapabilitiesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!capabilities_.isModifiable()) {
         capabilities_ = new com.google.protobuf.LazyStringArrayList(capabilities_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -999,7 +988,8 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      * @return A list containing the capabilities.
      */
     public com.google.protobuf.ProtocolStringList getCapabilitiesList() {
-      return capabilities_.getUnmodifiableView();
+      capabilities_.makeImmutable();
+      return capabilities_;
     }
     /**
      *
@@ -1068,6 +1058,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       }
       ensureCapabilitiesIsMutable();
       capabilities_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1090,6 +1081,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       }
       ensureCapabilitiesIsMutable();
       capabilities_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1109,6 +1101,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
     public Builder addAllCapabilities(java.lang.Iterable<java.lang.String> values) {
       ensureCapabilitiesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, capabilities_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1125,8 +1118,9 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearCapabilities() {
-      capabilities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      capabilities_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1150,6 +1144,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureCapabilitiesIsMutable();
       capabilities_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

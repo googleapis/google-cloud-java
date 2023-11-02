@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.video.livestream.v1;
 
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
@@ -1523,6 +1524,515 @@ public class LivestreamServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAssetTest() throws Exception {
+    Asset expectedResponse =
+        Asset.newBuilder()
+            .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCrc32C("crc32C-1352400016")
+            .setError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAssetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Asset asset = Asset.newBuilder().build();
+    String assetId = "assetId-704776149";
+
+    Asset actualResponse = client.createAssetAsync(parent, asset, assetId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAssetRequest actualRequest = ((CreateAssetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(asset, actualRequest.getAsset());
+    Assert.assertEquals(assetId, actualRequest.getAssetId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAssetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Asset asset = Asset.newBuilder().build();
+      String assetId = "assetId-704776149";
+      client.createAssetAsync(parent, asset, assetId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createAssetTest2() throws Exception {
+    Asset expectedResponse =
+        Asset.newBuilder()
+            .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCrc32C("crc32C-1352400016")
+            .setError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAssetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Asset asset = Asset.newBuilder().build();
+    String assetId = "assetId-704776149";
+
+    Asset actualResponse = client.createAssetAsync(parent, asset, assetId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAssetRequest actualRequest = ((CreateAssetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(asset, actualRequest.getAsset());
+    Assert.assertEquals(assetId, actualRequest.getAssetId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAssetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Asset asset = Asset.newBuilder().build();
+      String assetId = "assetId-704776149";
+      client.createAssetAsync(parent, asset, assetId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAssetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAssetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    AssetName name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]");
+
+    client.deleteAssetAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAssetRequest actualRequest = ((DeleteAssetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAssetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      AssetName name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]");
+      client.deleteAssetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAssetTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAssetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteAssetAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAssetRequest actualRequest = ((DeleteAssetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAssetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAssetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getAssetTest() throws Exception {
+    Asset expectedResponse =
+        Asset.newBuilder()
+            .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCrc32C("crc32C-1352400016")
+            .setError(Status.newBuilder().build())
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    AssetName name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]");
+
+    Asset actualResponse = client.getAsset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAssetRequest actualRequest = ((GetAssetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAssetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      AssetName name = AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]");
+      client.getAsset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAssetTest2() throws Exception {
+    Asset expectedResponse =
+        Asset.newBuilder()
+            .setName(AssetName.of("[PROJECT]", "[LOCATION]", "[ASSET]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCrc32C("crc32C-1352400016")
+            .setError(Status.newBuilder().build())
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Asset actualResponse = client.getAsset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAssetRequest actualRequest = ((GetAssetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAssetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAsset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAssetsTest() throws Exception {
+    Asset responsesElement = Asset.newBuilder().build();
+    ListAssetsResponse expectedResponse =
+        ListAssetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAssets(Arrays.asList(responsesElement))
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAssetsPagedResponse pagedListResponse = client.listAssets(parent);
+
+    List<Asset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAssetsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAssetsRequest actualRequest = ((ListAssetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAssetsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAssets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAssetsTest2() throws Exception {
+    Asset responsesElement = Asset.newBuilder().build();
+    ListAssetsResponse expectedResponse =
+        ListAssetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAssets(Arrays.asList(responsesElement))
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAssetsPagedResponse pagedListResponse = client.listAssets(parent);
+
+    List<Asset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAssetsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAssetsRequest actualRequest = ((ListAssetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAssetsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAssets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPoolTest() throws Exception {
+    Pool expectedResponse =
+        Pool.newBuilder()
+            .setName(PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetworkConfig(Pool.NetworkConfig.newBuilder().build())
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    PoolName name = PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]");
+
+    Pool actualResponse = client.getPool(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPoolRequest actualRequest = ((GetPoolRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPoolExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      PoolName name = PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]");
+      client.getPool(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPoolTest2() throws Exception {
+    Pool expectedResponse =
+        Pool.newBuilder()
+            .setName(PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetworkConfig(Pool.NetworkConfig.newBuilder().build())
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Pool actualResponse = client.getPool(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPoolRequest actualRequest = ((GetPoolRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPoolExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getPool(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updatePoolTest() throws Exception {
+    Pool expectedResponse =
+        Pool.newBuilder()
+            .setName(PoolName.of("[PROJECT]", "[LOCATION]", "[POOL]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetworkConfig(Pool.NetworkConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updatePoolTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    Pool pool = Pool.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Pool actualResponse = client.updatePoolAsync(pool, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdatePoolRequest actualRequest = ((UpdatePoolRequest) actualRequests.get(0));
+
+    Assert.assertEquals(pool, actualRequest.getPool());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updatePoolExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      Pool pool = Pool.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updatePoolAsync(pool, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Action();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,11 +128,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SaveFindings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -880,11 +870,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return new PublishToPubSub();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_Action_PublishToPubSub_descriptor;
@@ -1500,16 +1485,14 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Publish the result summary of a DlpJob to the Cloud Security
-   * Command Center (CSCC Alpha).
-   * This action is only available for projects which are parts of
-   * an organization and whitelisted for the alpha Cloud Security Command
-   * Center.
-   * The action will publish the count of finding instances and their info
-   * types. The summary of findings will be persisted in CSCC and are governed
-   * by CSCC service-specific policy, see
-   * https://cloud.google.com/terms/service-terms Only a single instance of this
-   * action can be specified. Compatible with: Inspect
+   * Publish the result summary of a DlpJob to [Security Command
+   * Center](https://cloud.google.com/security-command-center). This action is
+   * available for only projects that belong to an organization. This action
+   * publishes the count of finding instances and their infoTypes. The summary
+   * of findings are persisted in Security Command Center and are governed by
+   * [service-specific policies for Security Command
+   * Center](https://cloud.google.com/terms/service-terms). Only a single
+   * instance of this action can be specified. Compatible with: Inspect
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.Action.PublishSummaryToCscc}
@@ -1530,11 +1513,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PublishSummaryToCscc();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1708,16 +1686,14 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish the result summary of a DlpJob to the Cloud Security
-     * Command Center (CSCC Alpha).
-     * This action is only available for projects which are parts of
-     * an organization and whitelisted for the alpha Cloud Security Command
-     * Center.
-     * The action will publish the count of finding instances and their info
-     * types. The summary of findings will be persisted in CSCC and are governed
-     * by CSCC service-specific policy, see
-     * https://cloud.google.com/terms/service-terms Only a single instance of this
-     * action can be specified. Compatible with: Inspect
+     * Publish the result summary of a DlpJob to [Security Command
+     * Center](https://cloud.google.com/security-command-center). This action is
+     * available for only projects that belong to an organization. This action
+     * publishes the count of finding instances and their infoTypes. The summary
+     * of findings are persisted in Security Command Center and are governed by
+     * [service-specific policies for Security Command
+     * Center](https://cloud.google.com/terms/service-terms). Only a single
+     * instance of this action can be specified. Compatible with: Inspect
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.Action.PublishSummaryToCscc}
@@ -1956,9 +1932,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * values previously written by another DlpJob are deleted. [InfoType naming
    * patterns][google.privacy.dlp.v2.InfoType] are strictly enforced when using
    * this feature.
+   *
    * Findings are persisted in Data Catalog storage and are governed by
    * service-specific policies for Data Catalog. For more information, see
    * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
+   *
    * Only a single instance of this action can be specified. This action is
    * allowed only if all resources being scanned are BigQuery tables.
    * Compatible with: Inspect
@@ -1984,11 +1962,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PublishFindingsToCloudDataCatalog();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2173,9 +2146,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * values previously written by another DlpJob are deleted. [InfoType naming
      * patterns][google.privacy.dlp.v2.InfoType] are strictly enforced when using
      * this feature.
+     *
      * Findings are persisted in Data Catalog storage and are governed by
      * service-specific policies for Data Catalog. For more information, see
      * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
+     *
      * Only a single instance of this action can be specified. This action is
      * allowed only if all resources being scanned are BigQuery tables.
      * Compatible with: Inspect
@@ -2516,10 +2491,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
+     *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
      *
@@ -2532,10 +2509,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
+     *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
      *
@@ -2548,10 +2527,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
+     *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
      *
@@ -2654,14 +2635,16 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      */
     int getFileTypesToTransformValue(int index);
 
-    public com.google.privacy.dlp.v2.Action.Deidentify.OutputCase getOutputCase();
+    com.google.privacy.dlp.v2.Action.Deidentify.OutputCase getOutputCase();
   }
   /**
    *
    *
    * <pre>
    * Create a de-identified copy of the requested table or files.
+   *
    * A TransformationDetail will be created for each transformation.
+   *
    * If any rows in BigQuery are skipped during de-identification
    * (transformation errors or row size exceeds BigQuery insert API limits) they
    * are placed in the failure output table. If the original row exceeds
@@ -2670,6 +2653,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * action.deidentify.output.big_query_output.deidentified_failure_output_table
    * field, if no table is set, a table will be automatically created in the
    * same project and dataset as the original table.
+   *
    * Compatible with: Inspect
    * </pre>
    *
@@ -2695,11 +2679,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return new Deidentify();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_Action_Deidentify_descriptor;
@@ -2716,6 +2695,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int outputCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object output_;
 
     public enum OutputCase
@@ -2895,10 +2876,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
+     *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
      *
@@ -2913,10 +2896,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
+     *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
      *
@@ -2944,10 +2929,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
+     *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
      *
@@ -3338,7 +3325,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Create a de-identified copy of the requested table or files.
+     *
      * A TransformationDetail will be created for each transformation.
+     *
      * If any rows in BigQuery are skipped during de-identification
      * (transformation errors or row size exceeds BigQuery insert API limits) they
      * are placed in the failure output table. If the original row exceeds
@@ -3347,6 +3336,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * action.deidentify.output.big_query_output.deidentified_failure_output_table
      * field, if no table is set, a table will be automatically created in the
      * same project and dataset as the original table.
+     *
      * Compatible with: Inspect
      * </pre>
      *
@@ -4103,10 +4093,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
+       *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>
        *
@@ -4122,10 +4114,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
+       *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>
        *
@@ -4154,10 +4148,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
+       *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>
        *
@@ -4186,10 +4182,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
+       *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>
        *
@@ -4211,10 +4209,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
+       *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>
        *
@@ -4234,10 +4234,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
+       *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>
        *
@@ -4646,11 +4648,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new JobNotificationEmails();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5081,11 +5078,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return new PublishToStackdriver();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_Action_PublishToStackdriver_descriptor;
@@ -5482,6 +5474,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int actionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object action_;
 
   public enum ActionCase

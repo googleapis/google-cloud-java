@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     return new BasicAutoscalingAlgorithm();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.AutoscalingPoliciesProto
         .internal_static_google_cloud_dataproc_v1_BasicAutoscalingAlgorithm_descriptor;
@@ -66,6 +61,8 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
   }
 
   private int configCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object config_;
 
   public enum ConfigCase
@@ -174,6 +171,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    * <pre>
    * Optional. Duration between scaling events. A scaling period starts after
    * the update operation from the previous event has completed.
+   *
    * Bounds: [2m, 1d]. Default: 2m.
    * </pre>
    *
@@ -192,6 +190,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    * <pre>
    * Optional. Duration between scaling events. A scaling period starts after
    * the update operation from the previous event has completed.
+   *
    * Bounds: [2m, 1d]. Default: 2m.
    * </pre>
    *
@@ -212,6 +211,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    * <pre>
    * Optional. Duration between scaling events. A scaling period starts after
    * the update operation from the previous event has completed.
+   *
    * Bounds: [2m, 1d]. Default: 2m.
    * </pre>
    *
@@ -886,6 +886,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * <pre>
      * Optional. Duration between scaling events. A scaling period starts after
      * the update operation from the previous event has completed.
+     *
      * Bounds: [2m, 1d]. Default: 2m.
      * </pre>
      *
@@ -904,6 +905,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * <pre>
      * Optional. Duration between scaling events. A scaling period starts after
      * the update operation from the previous event has completed.
+     *
      * Bounds: [2m, 1d]. Default: 2m.
      * </pre>
      *
@@ -928,6 +930,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * <pre>
      * Optional. Duration between scaling events. A scaling period starts after
      * the update operation from the previous event has completed.
+     *
      * Bounds: [2m, 1d]. Default: 2m.
      * </pre>
      *
@@ -954,6 +957,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * <pre>
      * Optional. Duration between scaling events. A scaling period starts after
      * the update operation from the previous event has completed.
+     *
      * Bounds: [2m, 1d]. Default: 2m.
      * </pre>
      *
@@ -977,6 +981,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * <pre>
      * Optional. Duration between scaling events. A scaling period starts after
      * the update operation from the previous event has completed.
+     *
      * Bounds: [2m, 1d]. Default: 2m.
      * </pre>
      *
@@ -1006,6 +1011,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * <pre>
      * Optional. Duration between scaling events. A scaling period starts after
      * the update operation from the previous event has completed.
+     *
      * Bounds: [2m, 1d]. Default: 2m.
      * </pre>
      *
@@ -1029,6 +1035,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * <pre>
      * Optional. Duration between scaling events. A scaling period starts after
      * the update operation from the previous event has completed.
+     *
      * Bounds: [2m, 1d]. Default: 2m.
      * </pre>
      *
@@ -1047,6 +1054,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * <pre>
      * Optional. Duration between scaling events. A scaling period starts after
      * the update operation from the previous event has completed.
+     *
      * Bounds: [2m, 1d]. Default: 2m.
      * </pre>
      *
@@ -1069,6 +1077,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * <pre>
      * Optional. Duration between scaling events. A scaling period starts after
      * the update operation from the previous event has completed.
+     *
      * Bounds: [2m, 1d]. Default: 2m.
      * </pre>
      *

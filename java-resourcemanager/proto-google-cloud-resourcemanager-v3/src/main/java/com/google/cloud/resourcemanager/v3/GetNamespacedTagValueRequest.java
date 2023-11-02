@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetNamespacedTagValueRequest extends com.google.protobuf.Gene
     return new GetNamespacedTagValueRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.TagValuesProto
         .internal_static_google_cloud_resourcemanager_v3_GetNamespacedTagValueRequest_descriptor;
@@ -76,7 +71,9 @@ public final class GetNamespacedTagValueRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. A namespaced tag value name in the following format:
+   *
    *   `{parentId}/{tagKeyShort}/{tagValueShort}`
+   *
    * Examples:
    * - `42/foo/abc` for a value with short name "abc" under the key with short
    *   name "foo" under the organization with ID 42
@@ -107,7 +104,9 @@ public final class GetNamespacedTagValueRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. A namespaced tag value name in the following format:
+   *
    *   `{parentId}/{tagKeyShort}/{tagValueShort}`
+   *
    * Examples:
    * - `42/foo/abc` for a value with short name "abc" under the key with short
    *   name "foo" under the organization with ID 42
@@ -487,7 +486,9 @@ public final class GetNamespacedTagValueRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. A namespaced tag value name in the following format:
+     *
      *   `{parentId}/{tagKeyShort}/{tagValueShort}`
+     *
      * Examples:
      * - `42/foo/abc` for a value with short name "abc" under the key with short
      *   name "foo" under the organization with ID 42
@@ -517,7 +518,9 @@ public final class GetNamespacedTagValueRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. A namespaced tag value name in the following format:
+     *
      *   `{parentId}/{tagKeyShort}/{tagValueShort}`
+     *
      * Examples:
      * - `42/foo/abc` for a value with short name "abc" under the key with short
      *   name "foo" under the organization with ID 42
@@ -547,7 +550,9 @@ public final class GetNamespacedTagValueRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. A namespaced tag value name in the following format:
+     *
      *   `{parentId}/{tagKeyShort}/{tagValueShort}`
+     *
      * Examples:
      * - `42/foo/abc` for a value with short name "abc" under the key with short
      *   name "foo" under the organization with ID 42
@@ -576,7 +581,9 @@ public final class GetNamespacedTagValueRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. A namespaced tag value name in the following format:
+     *
      *   `{parentId}/{tagKeyShort}/{tagValueShort}`
+     *
      * Examples:
      * - `42/foo/abc` for a value with short name "abc" under the key with short
      *   name "foo" under the organization with ID 42
@@ -601,7 +608,9 @@ public final class GetNamespacedTagValueRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. A namespaced tag value name in the following format:
+     *
      *   `{parentId}/{tagKeyShort}/{tagValueShort}`
+     *
      * Examples:
      * - `42/foo/abc` for a value with short name "abc" under the key with short
      *   name "foo" under the organization with ID 42

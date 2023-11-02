@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,27 +50,27 @@ public final class AnnotationProto {
           + "esource.proto\0326google/cloud/aiplatform/v"
           + "1/user_action_reference.proto\032\034google/pr"
           + "otobuf/struct.proto\032\037google/protobuf/tim"
-          + "estamp.proto\"\316\004\n\nAnnotation\022\021\n\004name\030\001 \001("
-          + "\tB\003\340A\003\022\037\n\022payload_schema_uri\030\002 \001(\tB\003\340A\002\022"
-          + ",\n\007payload\030\003 \001(\0132\026.google.protobuf.Value"
-          + "B\003\340A\002\0224\n\013create_time\030\004 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\0224\n\013update_time\030\007 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\022\021\n\004eta"
-          + "g\030\010 \001(\tB\003\340A\001\022O\n\021annotation_source\030\005 \001(\0132"
-          + "/.google.cloud.aiplatform.v1.UserActionR"
-          + "eferenceB\003\340A\003\022G\n\006labels\030\006 \003(\01322.google.c"
-          + "loud.aiplatform.v1.Annotation.LabelsEntr"
-          + "yB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-          + "lue\030\002 \001(\t:\0028\001:\225\001\352A\221\001\n$aiplatform.googlea"
-          + "pis.com/Annotation\022iprojects/{project}/l"
-          + "ocations/{location}/datasets/{dataset}/d"
-          + "ataItems/{data_item}/annotations/{annota"
-          + "tion}B\315\001\n\036com.google.cloud.aiplatform.v1"
-          + "B\017AnnotationProtoP\001Z>cloud.google.com/go"
-          + "/aiplatform/apiv1/aiplatformpb;aiplatfor"
-          + "mpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Googl"
-          + "e\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::A"
-          + "IPlatform::V1b\006proto3"
+          + "estamp.proto\"\326\004\n\nAnnotation\022\022\n\004name\030\001 \001("
+          + "\tB\004\342A\001\003\022 \n\022payload_schema_uri\030\002 \001(\tB\004\342A\001"
+          + "\002\022-\n\007payload\030\003 \001(\0132\026.google.protobuf.Val"
+          + "ueB\004\342A\001\002\0225\n\013create_time\030\004 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\004\342A\001\003\0225\n\013update_time\030\007"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\022"
+          + "\n\004etag\030\010 \001(\tB\004\342A\001\001\022P\n\021annotation_source\030"
+          + "\005 \001(\0132/.google.cloud.aiplatform.v1.UserA"
+          + "ctionReferenceB\004\342A\001\003\022H\n\006labels\030\006 \003(\01322.g"
+          + "oogle.cloud.aiplatform.v1.Annotation.Lab"
+          + "elsEntryB\004\342A\001\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001"
+          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\225\001\352A\221\001\n$aiplatform"
+          + ".googleapis.com/Annotation\022iprojects/{pr"
+          + "oject}/locations/{location}/datasets/{da"
+          + "taset}/dataItems/{data_item}/annotations"
+          + "/{annotation}B\315\001\n\036com.google.cloud.aipla"
+          + "tform.v1B\017AnnotationProtoP\001Z>cloud.googl"
+          + "e.com/go/aiplatform/apiv1/aiplatformpb;a"
+          + "iplatformpb\252\002\032Google.Cloud.AIPlatform.V1"
+          + "\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::"
+          + "Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

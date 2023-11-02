@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
     return new CreateTagRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_CreateTagRequest_descriptor;
@@ -77,8 +72,10 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The name of the resource to attach this tag to.
+   *
    * Tags can be attached to entries or entry groups. An entry can have up to
    * 1000 attached tags.
+   *
    * Note: The tag and its child resources might not be stored in
    * the location specified in its name.
    * </pre>
@@ -106,8 +103,10 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The name of the resource to attach this tag to.
+   *
    * Tags can be attached to entries or entry groups. An entry can have up to
    * 1000 attached tags.
+   *
    * Note: The tag and its child resources might not be stored in
    * the location specified in its name.
    * </pre>
@@ -560,8 +559,10 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the resource to attach this tag to.
+     *
      * Tags can be attached to entries or entry groups. An entry can have up to
      * 1000 attached tags.
+     *
      * Note: The tag and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -588,8 +589,10 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the resource to attach this tag to.
+     *
      * Tags can be attached to entries or entry groups. An entry can have up to
      * 1000 attached tags.
+     *
      * Note: The tag and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -616,8 +619,10 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the resource to attach this tag to.
+     *
      * Tags can be attached to entries or entry groups. An entry can have up to
      * 1000 attached tags.
+     *
      * Note: The tag and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -643,8 +648,10 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the resource to attach this tag to.
+     *
      * Tags can be attached to entries or entry groups. An entry can have up to
      * 1000 attached tags.
+     *
      * Note: The tag and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -666,8 +673,10 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the resource to attach this tag to.
+     *
      * Tags can be attached to entries or entry groups. An entry can have up to
      * 1000 attached tags.
+     *
      * Note: The tag and its child resources might not be stored in
      * the location specified in its name.
      * </pre>

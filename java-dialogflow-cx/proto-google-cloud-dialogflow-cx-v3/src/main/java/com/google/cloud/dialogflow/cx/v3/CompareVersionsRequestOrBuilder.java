@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface CompareVersionsRequestOrBuilder
    * <pre>
    * Required. Name of the base flow version to compare with the target version.
    * Use version ID `0` to indicate the draft version of the specified flow.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
    * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
@@ -46,6 +47,7 @@ public interface CompareVersionsRequestOrBuilder
    * <pre>
    * Required. Name of the base flow version to compare with the target version.
    * Use version ID `0` to indicate the draft version of the specified flow.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
    * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
@@ -98,6 +100,7 @@ public interface CompareVersionsRequestOrBuilder
    *
    * <pre>
    * The language to compare the flow versions for.
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/docs/reference/language) are
@@ -115,6 +118,7 @@ public interface CompareVersionsRequestOrBuilder
    *
    * <pre>
    * The language to compare the flow versions for.
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/docs/reference/language) are

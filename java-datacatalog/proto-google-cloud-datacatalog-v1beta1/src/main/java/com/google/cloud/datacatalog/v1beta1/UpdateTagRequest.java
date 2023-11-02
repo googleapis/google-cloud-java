@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateTagRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -121,8 +116,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The fields to update on the Tag. If absent or empty, all modifiable fields
-   * are updated. Currently the only modifiable field is the field `fields`.
+   * Note: Currently, this parameter can only take `"fields"` as value.
+   *
+   * Names of fields whose values to overwrite on a tag. Currently, a tag has
+   * the only modifiable field with the name `fields`.
+   *
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -137,8 +138,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The fields to update on the Tag. If absent or empty, all modifiable fields
-   * are updated. Currently the only modifiable field is the field `fields`.
+   * Note: Currently, this parameter can only take `"fields"` as value.
+   *
+   * Names of fields whose values to overwrite on a tag. Currently, a tag has
+   * the only modifiable field with the name `fields`.
+   *
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -153,8 +160,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The fields to update on the Tag. If absent or empty, all modifiable fields
-   * are updated. Currently the only modifiable field is the field `fields`.
+   * Note: Currently, this parameter can only take `"fields"` as value.
+   *
+   * Names of fields whose values to overwrite on a tag. Currently, a tag has
+   * the only modifiable field with the name `fields`.
+   *
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -753,8 +766,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fields to update on the Tag. If absent or empty, all modifiable fields
-     * are updated. Currently the only modifiable field is the field `fields`.
+     * Note: Currently, this parameter can only take `"fields"` as value.
+     *
+     * Names of fields whose values to overwrite on a tag. Currently, a tag has
+     * the only modifiable field with the name `fields`.
+     *
+     * In general, if this parameter is absent or empty, all modifiable fields
+     * are overwritten. If such fields are non-required and omitted in the
+     * request body, their values are emptied.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -768,8 +787,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fields to update on the Tag. If absent or empty, all modifiable fields
-     * are updated. Currently the only modifiable field is the field `fields`.
+     * Note: Currently, this parameter can only take `"fields"` as value.
+     *
+     * Names of fields whose values to overwrite on a tag. Currently, a tag has
+     * the only modifiable field with the name `fields`.
+     *
+     * In general, if this parameter is absent or empty, all modifiable fields
+     * are overwritten. If such fields are non-required and omitted in the
+     * request body, their values are emptied.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -789,8 +814,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fields to update on the Tag. If absent or empty, all modifiable fields
-     * are updated. Currently the only modifiable field is the field `fields`.
+     * Note: Currently, this parameter can only take `"fields"` as value.
+     *
+     * Names of fields whose values to overwrite on a tag. Currently, a tag has
+     * the only modifiable field with the name `fields`.
+     *
+     * In general, if this parameter is absent or empty, all modifiable fields
+     * are overwritten. If such fields are non-required and omitted in the
+     * request body, their values are emptied.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -812,8 +843,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fields to update on the Tag. If absent or empty, all modifiable fields
-     * are updated. Currently the only modifiable field is the field `fields`.
+     * Note: Currently, this parameter can only take `"fields"` as value.
+     *
+     * Names of fields whose values to overwrite on a tag. Currently, a tag has
+     * the only modifiable field with the name `fields`.
+     *
+     * In general, if this parameter is absent or empty, all modifiable fields
+     * are overwritten. If such fields are non-required and omitted in the
+     * request body, their values are emptied.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -832,8 +869,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fields to update on the Tag. If absent or empty, all modifiable fields
-     * are updated. Currently the only modifiable field is the field `fields`.
+     * Note: Currently, this parameter can only take `"fields"` as value.
+     *
+     * Names of fields whose values to overwrite on a tag. Currently, a tag has
+     * the only modifiable field with the name `fields`.
+     *
+     * In general, if this parameter is absent or empty, all modifiable fields
+     * are overwritten. If such fields are non-required and omitted in the
+     * request body, their values are emptied.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -858,8 +901,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fields to update on the Tag. If absent or empty, all modifiable fields
-     * are updated. Currently the only modifiable field is the field `fields`.
+     * Note: Currently, this parameter can only take `"fields"` as value.
+     *
+     * Names of fields whose values to overwrite on a tag. Currently, a tag has
+     * the only modifiable field with the name `fields`.
+     *
+     * In general, if this parameter is absent or empty, all modifiable fields
+     * are overwritten. If such fields are non-required and omitted in the
+     * request body, their values are emptied.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -878,8 +927,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fields to update on the Tag. If absent or empty, all modifiable fields
-     * are updated. Currently the only modifiable field is the field `fields`.
+     * Note: Currently, this parameter can only take `"fields"` as value.
+     *
+     * Names of fields whose values to overwrite on a tag. Currently, a tag has
+     * the only modifiable field with the name `fields`.
+     *
+     * In general, if this parameter is absent or empty, all modifiable fields
+     * are overwritten. If such fields are non-required and omitted in the
+     * request body, their values are emptied.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -893,8 +948,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fields to update on the Tag. If absent or empty, all modifiable fields
-     * are updated. Currently the only modifiable field is the field `fields`.
+     * Note: Currently, this parameter can only take `"fields"` as value.
+     *
+     * Names of fields whose values to overwrite on a tag. Currently, a tag has
+     * the only modifiable field with the name `fields`.
+     *
+     * In general, if this parameter is absent or empty, all modifiable fields
+     * are overwritten. If such fields are non-required and omitted in the
+     * request body, their values are emptied.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -912,8 +973,14 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fields to update on the Tag. If absent or empty, all modifiable fields
-     * are updated. Currently the only modifiable field is the field `fields`.
+     * Note: Currently, this parameter can only take `"fields"` as value.
+     *
+     * Names of fields whose values to overwrite on a tag. Currently, a tag has
+     * the only modifiable field with the name `fields`.
+     *
+     * In general, if this parameter is absent or empty, all modifiable fields
+     * are overwritten. If such fields are non-required and omitted in the
+     * request body, their values are emptied.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,4 +95,20 @@ public interface CompleteQueryResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestionOrBuilder
       getQuerySuggestionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * True if the returned suggestions are all tail suggestions.
+   *
+   * For tail matching to be triggered, include_tail_suggestions in the request
+   * must be true and there must be no suggestions that match the full query.
+   * </pre>
+   *
+   * <code>bool tail_match_triggered = 2;</code>
+   *
+   * @return The tailMatchTriggered.
+   */
+  boolean getTailMatchTriggered();
 }

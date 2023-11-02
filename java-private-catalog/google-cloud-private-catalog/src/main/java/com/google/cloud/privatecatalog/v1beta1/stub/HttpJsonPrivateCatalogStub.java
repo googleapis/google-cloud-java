@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.privatecatalog.v1beta1.SearchCatalogsRequest;
 import com.google.cloud.privatecatalog.v1beta1.SearchCatalogsResponse;
@@ -238,18 +239,36 @@ public class HttpJsonPrivateCatalogStub extends PrivateCatalogStub {
             HttpJsonCallSettings.<SearchCatalogsRequest, SearchCatalogsResponse>newBuilder()
                 .setMethodDescriptor(searchCatalogsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SearchProductsRequest, SearchProductsResponse>
         searchProductsTransportSettings =
             HttpJsonCallSettings.<SearchProductsRequest, SearchProductsResponse>newBuilder()
                 .setMethodDescriptor(searchProductsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SearchVersionsRequest, SearchVersionsResponse>
         searchVersionsTransportSettings =
             HttpJsonCallSettings.<SearchVersionsRequest, SearchVersionsResponse>newBuilder()
                 .setMethodDescriptor(searchVersionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.searchCatalogsCallable =

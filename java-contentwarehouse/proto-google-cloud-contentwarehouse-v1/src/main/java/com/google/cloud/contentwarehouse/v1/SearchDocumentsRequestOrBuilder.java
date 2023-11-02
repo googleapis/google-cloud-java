@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,7 +136,9 @@ public interface SearchDocumentsRequestOrBuilder
    * results. This field is only considered if
    * [page_token][google.cloud.contentwarehouse.v1.SearchDocumentsRequest.page_token]
    * is unset.
+   *
    * The maximum allowed value is 5000. Otherwise an error is thrown.
+   *
    * For example, 0 means to  return results starting from the first matching
    * document, and 10 means to return from the 11th document. This can be used
    * for pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -202,7 +204,9 @@ public interface SearchDocumentsRequestOrBuilder
    * The criteria determining how search results are sorted. For non-empty
    * query, default is `"relevance desc"`. For empty query, default is
    * `"upload_date desc"`.
+   *
    * Supported options are:
+   *
    * * `"relevance desc"`: By relevance descending, as determined by the API
    *   algorithms.
    * * `"upload_date desc"`: By upload date descending.
@@ -226,7 +230,9 @@ public interface SearchDocumentsRequestOrBuilder
    * The criteria determining how search results are sorted. For non-empty
    * query, default is `"relevance desc"`. For empty query, default is
    * `"upload_date desc"`.
+   *
    * Supported options are:
+   *
    * * `"relevance desc"`: By relevance descending, as determined by the API
    *   algorithms.
    * * `"upload_date desc"`: By upload date descending.
@@ -251,10 +257,14 @@ public interface SearchDocumentsRequestOrBuilder
    * An expression specifying a histogram request against matching
    * documents. Expression syntax is an aggregation function call with
    * histogram facets and other options.
+   *
    * The following aggregation functions are supported:
+   *
    * * `count(string_histogram_facet)`: Count the number of matching entities
    * for each distinct attribute value.
+   *
    * Data types:
+   *
    * * Histogram facet (aka filterable properties): Facet names with format
    * &amp;lt;schema id&amp;gt;.&amp;lt;facet&amp;gt;. Facets will have the
    * format of: `[a-zA-Z][a-zA-Z0-9_:/-.]`. If the facet is a child
@@ -266,9 +276,12 @@ public interface SearchDocumentsRequestOrBuilder
    * * DocumentSchemaId: (with no schema id prefix) to get
    * histograms for each document type (returns the schema id path, e.g.
    * projects/12345/locations/us-west/documentSchemas/abc123).
+   *
    * Example expression:
+   *
    * * Document type counts:
    *   count('DocumentSchemaId')
+   *
    * * For schema id, abc123, get the counts for MORTGAGE_TYPE:
    *   count('abc123.MORTGAGE_TYPE')
    * </pre>
@@ -283,10 +296,14 @@ public interface SearchDocumentsRequestOrBuilder
    * An expression specifying a histogram request against matching
    * documents. Expression syntax is an aggregation function call with
    * histogram facets and other options.
+   *
    * The following aggregation functions are supported:
+   *
    * * `count(string_histogram_facet)`: Count the number of matching entities
    * for each distinct attribute value.
+   *
    * Data types:
+   *
    * * Histogram facet (aka filterable properties): Facet names with format
    * &amp;lt;schema id&amp;gt;.&amp;lt;facet&amp;gt;. Facets will have the
    * format of: `[a-zA-Z][a-zA-Z0-9_:/-.]`. If the facet is a child
@@ -298,9 +315,12 @@ public interface SearchDocumentsRequestOrBuilder
    * * DocumentSchemaId: (with no schema id prefix) to get
    * histograms for each document type (returns the schema id path, e.g.
    * projects/12345/locations/us-west/documentSchemas/abc123).
+   *
    * Example expression:
+   *
    * * Document type counts:
    *   count('DocumentSchemaId')
+   *
    * * For schema id, abc123, get the counts for MORTGAGE_TYPE:
    *   count('abc123.MORTGAGE_TYPE')
    * </pre>
@@ -315,10 +335,14 @@ public interface SearchDocumentsRequestOrBuilder
    * An expression specifying a histogram request against matching
    * documents. Expression syntax is an aggregation function call with
    * histogram facets and other options.
+   *
    * The following aggregation functions are supported:
+   *
    * * `count(string_histogram_facet)`: Count the number of matching entities
    * for each distinct attribute value.
+   *
    * Data types:
+   *
    * * Histogram facet (aka filterable properties): Facet names with format
    * &amp;lt;schema id&amp;gt;.&amp;lt;facet&amp;gt;. Facets will have the
    * format of: `[a-zA-Z][a-zA-Z0-9_:/-.]`. If the facet is a child
@@ -330,9 +354,12 @@ public interface SearchDocumentsRequestOrBuilder
    * * DocumentSchemaId: (with no schema id prefix) to get
    * histograms for each document type (returns the schema id path, e.g.
    * projects/12345/locations/us-west/documentSchemas/abc123).
+   *
    * Example expression:
+   *
    * * Document type counts:
    *   count('DocumentSchemaId')
+   *
    * * For schema id, abc123, get the counts for MORTGAGE_TYPE:
    *   count('abc123.MORTGAGE_TYPE')
    * </pre>
@@ -347,10 +374,14 @@ public interface SearchDocumentsRequestOrBuilder
    * An expression specifying a histogram request against matching
    * documents. Expression syntax is an aggregation function call with
    * histogram facets and other options.
+   *
    * The following aggregation functions are supported:
+   *
    * * `count(string_histogram_facet)`: Count the number of matching entities
    * for each distinct attribute value.
+   *
    * Data types:
+   *
    * * Histogram facet (aka filterable properties): Facet names with format
    * &amp;lt;schema id&amp;gt;.&amp;lt;facet&amp;gt;. Facets will have the
    * format of: `[a-zA-Z][a-zA-Z0-9_:/-.]`. If the facet is a child
@@ -362,9 +393,12 @@ public interface SearchDocumentsRequestOrBuilder
    * * DocumentSchemaId: (with no schema id prefix) to get
    * histograms for each document type (returns the schema id path, e.g.
    * projects/12345/locations/us-west/documentSchemas/abc123).
+   *
    * Example expression:
+   *
    * * Document type counts:
    *   count('DocumentSchemaId')
+   *
    * * For schema id, abc123, get the counts for MORTGAGE_TYPE:
    *   count('abc123.MORTGAGE_TYPE')
    * </pre>
@@ -380,10 +414,14 @@ public interface SearchDocumentsRequestOrBuilder
    * An expression specifying a histogram request against matching
    * documents. Expression syntax is an aggregation function call with
    * histogram facets and other options.
+   *
    * The following aggregation functions are supported:
+   *
    * * `count(string_histogram_facet)`: Count the number of matching entities
    * for each distinct attribute value.
+   *
    * Data types:
+   *
    * * Histogram facet (aka filterable properties): Facet names with format
    * &amp;lt;schema id&amp;gt;.&amp;lt;facet&amp;gt;. Facets will have the
    * format of: `[a-zA-Z][a-zA-Z0-9_:/-.]`. If the facet is a child
@@ -395,9 +433,12 @@ public interface SearchDocumentsRequestOrBuilder
    * * DocumentSchemaId: (with no schema id prefix) to get
    * histograms for each document type (returns the schema id path, e.g.
    * projects/12345/locations/us-west/documentSchemas/abc123).
+   *
    * Example expression:
+   *
    * * Document type counts:
    *   count('DocumentSchemaId')
+   *
    * * For schema id, abc123, get the counts for MORTGAGE_TYPE:
    *   count('abc123.MORTGAGE_TYPE')
    * </pre>
@@ -414,9 +455,11 @@ public interface SearchDocumentsRequestOrBuilder
    * Controls if the search document request requires the return of a total size
    * of matched documents. See
    * [SearchDocumentsResponse.total_size][google.cloud.contentwarehouse.v1.SearchDocumentsResponse.total_size].
+   *
    * Enabling this flag may adversely impact performance. Hint: If this is
    * used with pagination, set this flag on the initial query but set this
    * to false on subsequent page calls (keep the total count locally).
+   *
    * Defaults to false.
    * </pre>
    *

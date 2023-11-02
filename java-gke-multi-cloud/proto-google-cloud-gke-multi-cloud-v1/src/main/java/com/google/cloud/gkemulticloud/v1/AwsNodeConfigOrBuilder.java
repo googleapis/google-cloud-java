@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface AwsNodeConfigOrBuilder
    *
    * <pre>
    * Optional. The AWS instance type.
+   *
    * When unspecified, it uses a default based on the node pool's version.
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface AwsNodeConfigOrBuilder
    *
    * <pre>
    * Optional. The AWS instance type.
+   *
    * When unspecified, it uses a default based on the node pool's version.
    * </pre>
    *
@@ -57,6 +59,7 @@ public interface AwsNodeConfigOrBuilder
    * Optional. Template for the root volume provisioned for node pool nodes.
    * Volumes will be provisioned in the availability zone assigned
    * to the node pool subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -74,6 +77,7 @@ public interface AwsNodeConfigOrBuilder
    * Optional. Template for the root volume provisioned for node pool nodes.
    * Volumes will be provisioned in the availability zone assigned
    * to the node pool subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -91,6 +95,7 @@ public interface AwsNodeConfigOrBuilder
    * Optional. Template for the root volume provisioned for node pool nodes.
    * Volumes will be provisioned in the availability zone assigned
    * to the node pool subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -337,6 +342,7 @@ public interface AwsNodeConfigOrBuilder
    * Optional. The OS image type to use on node pool instances.
    * Can have a value of `ubuntu`, or `windows` if the cluster enables
    * the Windows node pool preview feature.
+   *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
    *
@@ -352,6 +358,7 @@ public interface AwsNodeConfigOrBuilder
    * Optional. The OS image type to use on node pool instances.
    * Can have a value of `ubuntu`, or `windows` if the cluster enables
    * the Windows node pool preview feature.
+   *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
    *
@@ -593,6 +600,7 @@ public interface AwsNodeConfigOrBuilder
    * <pre>
    * Optional. Configuration related to CloudWatch metrics collection on the
    * Auto Scaling group of the node pool.
+   *
    * When unspecified, metrics collection is disabled.
    * </pre>
    *
@@ -609,6 +617,7 @@ public interface AwsNodeConfigOrBuilder
    * <pre>
    * Optional. Configuration related to CloudWatch metrics collection on the
    * Auto Scaling group of the node pool.
+   *
    * When unspecified, metrics collection is disabled.
    * </pre>
    *
@@ -626,6 +635,7 @@ public interface AwsNodeConfigOrBuilder
    * <pre>
    * Optional. Configuration related to CloudWatch metrics collection on the
    * Auto Scaling group of the node pool.
+   *
    * When unspecified, metrics collection is disabled.
    * </pre>
    *

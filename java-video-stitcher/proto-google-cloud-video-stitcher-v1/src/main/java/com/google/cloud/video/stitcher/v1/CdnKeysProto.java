@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,14 +64,15 @@ public final class CdnKeysProto {
           + "eyH\000\022\014\n\004name\030\001 \001(\t\022\020\n\010hostname\030\004 \001(\t:c\352A"
           + "`\n#videostitcher.googleapis.com/CdnKey\0229"
           + "projects/{project}/locations/{location}/"
-          + "cdnKeys/{cdn_key}B\020\n\016cdn_key_config\":\n\014G"
-          + "oogleCdnKey\022\030\n\013private_key\030\001 \001(\014B\003\340A\004\022\020\n"
-          + "\010key_name\030\002 \001(\t\"&\n\014AkamaiCdnKey\022\026\n\ttoken"
-          + "_key\030\001 \001(\014B\003\340A\004\"9\n\013MediaCdnKey\022\030\n\013privat"
-          + "e_key\030\001 \001(\014B\003\340A\004\022\020\n\010key_name\030\002 \001(\tBt\n\"co"
-          + "m.google.cloud.video.stitcher.v1B\014CdnKey"
-          + "sProtoP\001Z>cloud.google.com/go/video/stit"
-          + "cher/apiv1/stitcherpb;stitcherpbb\006proto3"
+          + "cdnKeys/{cdn_key}B\020\n\016cdn_key_config\";\n\014G"
+          + "oogleCdnKey\022\031\n\013private_key\030\001 \001(\014B\004\342A\001\004\022\020"
+          + "\n\010key_name\030\002 \001(\t\"\'\n\014AkamaiCdnKey\022\027\n\ttoke"
+          + "n_key\030\001 \001(\014B\004\342A\001\004\":\n\013MediaCdnKey\022\031\n\013priv"
+          + "ate_key\030\001 \001(\014B\004\342A\001\004\022\020\n\010key_name\030\002 \001(\tBt\n"
+          + "\"com.google.cloud.video.stitcher.v1B\014Cdn"
+          + "KeysProtoP\001Z>cloud.google.com/go/video/s"
+          + "titcher/apiv1/stitcherpb;stitcherpbb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

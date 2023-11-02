@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Task();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -204,11 +199,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetworkOrBuilder
         getVpcNetworkOrBuilder();
 
-    public com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ResourcesCase getResourcesCase();
+    com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ResourcesCase getResourcesCase();
 
-    public com.google.cloud.dataplex.v1.Task.InfrastructureSpec.RuntimeCase getRuntimeCase();
+    com.google.cloud.dataplex.v1.Task.InfrastructureSpec.RuntimeCase getRuntimeCase();
 
-    public com.google.cloud.dataplex.v1.Task.InfrastructureSpec.NetworkCase getNetworkCase();
+    com.google.cloud.dataplex.v1.Task.InfrastructureSpec.NetworkCase getNetworkCase();
   }
   /**
    *
@@ -235,11 +230,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InfrastructureSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -316,11 +306,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new BatchComputeResources();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1204,19 +1189,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
       private ContainerImageRuntime() {
         image_ = "";
-        javaJars_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        pythonPackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        javaJars_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        pythonPackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ContainerImageRuntime();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1300,7 +1280,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public static final int JAVA_JARS_FIELD_NUMBER = 2;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList javaJars_;
+      private com.google.protobuf.LazyStringArrayList javaJars_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -1371,7 +1352,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public static final int PYTHON_PACKAGES_FIELD_NUMBER = 3;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList pythonPackages_;
+      private com.google.protobuf.LazyStringArrayList pythonPackages_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -1847,10 +1829,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           bitField0_ = 0;
           image_ = "";
-          javaJars_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          pythonPackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          javaJars_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          pythonPackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
           internalGetMutableProperties().clear();
           return this;
         }
@@ -1883,7 +1863,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime result =
               new com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -1891,25 +1870,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime result) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            javaJars_ = javaJars_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.javaJars_ = javaJars_;
-          if (((bitField0_ & 0x00000004) != 0)) {
-            pythonPackages_ = pythonPackages_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.pythonPackages_ = pythonPackages_;
-        }
-
         private void buildPartial0(
             com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime result) {
           int from_bitField0_ = bitField0_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.image_ = image_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            javaJars_.makeImmutable();
+            result.javaJars_ = javaJars_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            pythonPackages_.makeImmutable();
+            result.pythonPackages_ = pythonPackages_;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.properties_ = internalGetProperties();
@@ -1978,7 +1951,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           if (!other.javaJars_.isEmpty()) {
             if (javaJars_.isEmpty()) {
               javaJars_ = other.javaJars_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ |= 0x00000002;
             } else {
               ensureJavaJarsIsMutable();
               javaJars_.addAll(other.javaJars_);
@@ -1988,7 +1961,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           if (!other.pythonPackages_.isEmpty()) {
             if (pythonPackages_.isEmpty()) {
               pythonPackages_ = other.pythonPackages_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ |= 0x00000004;
             } else {
               ensurePythonPackagesIsMutable();
               pythonPackages_.addAll(other.pythonPackages_);
@@ -2180,14 +2153,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.protobuf.LazyStringList javaJars_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList javaJars_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureJavaJarsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!javaJars_.isModifiable()) {
             javaJars_ = new com.google.protobuf.LazyStringArrayList(javaJars_);
-            bitField0_ |= 0x00000002;
           }
+          bitField0_ |= 0x00000002;
         }
         /**
          *
@@ -2203,7 +2176,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the javaJars.
          */
         public com.google.protobuf.ProtocolStringList getJavaJarsList() {
-          return javaJars_.getUnmodifiableView();
+          javaJars_.makeImmutable();
+          return javaJars_;
         }
         /**
          *
@@ -2276,6 +2250,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           }
           ensureJavaJarsIsMutable();
           javaJars_.set(index, value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2299,6 +2274,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           }
           ensureJavaJarsIsMutable();
           javaJars_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2319,6 +2295,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllJavaJars(java.lang.Iterable<java.lang.String> values) {
           ensureJavaJarsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, javaJars_);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2336,8 +2313,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearJavaJars() {
-          javaJars_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          javaJars_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
+          ;
           onChanged();
           return this;
         }
@@ -2362,18 +2340,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureJavaJarsIsMutable();
           javaJars_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringList pythonPackages_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList pythonPackages_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensurePythonPackagesIsMutable() {
-          if (!((bitField0_ & 0x00000004) != 0)) {
+          if (!pythonPackages_.isModifiable()) {
             pythonPackages_ = new com.google.protobuf.LazyStringArrayList(pythonPackages_);
-            bitField0_ |= 0x00000004;
           }
+          bitField0_ |= 0x00000004;
         }
         /**
          *
@@ -2390,7 +2369,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the pythonPackages.
          */
         public com.google.protobuf.ProtocolStringList getPythonPackagesList() {
-          return pythonPackages_.getUnmodifiableView();
+          pythonPackages_.makeImmutable();
+          return pythonPackages_;
         }
         /**
          *
@@ -2467,6 +2447,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           }
           ensurePythonPackagesIsMutable();
           pythonPackages_.set(index, value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2491,6 +2472,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           }
           ensurePythonPackagesIsMutable();
           pythonPackages_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2512,6 +2494,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllPythonPackages(java.lang.Iterable<java.lang.String> values) {
           ensurePythonPackagesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pythonPackages_);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2530,8 +2513,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearPythonPackages() {
-          pythonPackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          pythonPackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
+          ;
           onChanged();
           return this;
         }
@@ -2557,6 +2541,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensurePythonPackagesIsMutable();
           pythonPackages_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2964,7 +2949,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getNetworkTagsBytes(int index);
 
-      public com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork.NetworkNameCase
+      com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork.NetworkNameCase
           getNetworkNameCase();
     }
     /**
@@ -2987,18 +2972,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
 
       private VpcNetwork() {
-        networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new VpcNetwork();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3017,6 +2997,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int networkNameCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object networkName_;
 
       public enum NetworkNameCase
@@ -3209,7 +3191,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public static final int NETWORK_TAGS_FIELD_NUMBER = 3;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList networkTags_;
+      private com.google.protobuf.LazyStringArrayList networkTags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -3515,8 +3498,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
           networkNameCase_ = 0;
           networkName_ = null;
           return this;
@@ -3548,7 +3530,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork buildPartial() {
           com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork result =
               new com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -3557,18 +3538,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork result) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            networkTags_ = networkTags_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.networkTags_ = networkTags_;
-        }
-
         private void buildPartial0(
             com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            networkTags_.makeImmutable();
+            result.networkTags_ = networkTags_;
+          }
         }
 
         private void buildPartialOneofs(
@@ -3631,7 +3607,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           if (!other.networkTags_.isEmpty()) {
             if (networkTags_.isEmpty()) {
               networkTags_ = other.networkTags_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ |= 0x00000004;
             } else {
               ensureNetworkTagsIsMutable();
               networkTags_.addAll(other.networkTags_);
@@ -4012,14 +3988,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.protobuf.LazyStringList networkTags_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList networkTags_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureNetworkTagsIsMutable() {
-          if (!((bitField0_ & 0x00000004) != 0)) {
+          if (!networkTags_.isModifiable()) {
             networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
-            bitField0_ |= 0x00000004;
           }
+          bitField0_ |= 0x00000004;
         }
         /**
          *
@@ -4033,7 +4009,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the networkTags.
          */
         public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
-          return networkTags_.getUnmodifiableView();
+          networkTags_.makeImmutable();
+          return networkTags_;
         }
         /**
          *
@@ -4098,6 +4075,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           }
           ensureNetworkTagsIsMutable();
           networkTags_.set(index, value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4119,6 +4097,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           }
           ensureNetworkTagsIsMutable();
           networkTags_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4137,6 +4116,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
           ensureNetworkTagsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4152,8 +4132,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearNetworkTags() {
-          networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
+          ;
           onChanged();
           return this;
         }
@@ -4176,6 +4157,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureNetworkTagsIsMutable();
           networkTags_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4248,6 +4230,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int resourcesCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object resources_;
 
     public enum ResourcesCase
@@ -4292,6 +4276,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int runtimeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object runtime_;
 
     public enum RuntimeCase
@@ -4336,6 +4322,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int networkCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object network_;
 
     public enum NetworkCase
@@ -6025,7 +6013,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getScheduleBytes();
 
-    public com.google.cloud.dataplex.v1.Task.TriggerSpec.TriggerCase getTriggerCase();
+    com.google.cloud.dataplex.v1.Task.TriggerSpec.TriggerCase getTriggerCase();
   }
   /**
    *
@@ -6054,11 +6042,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TriggerSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6234,6 +6217,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int triggerCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object trigger_;
 
     public enum TriggerCase
@@ -7921,11 +7906,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExecutionSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10044,7 +10024,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dataplex.v1.Task.InfrastructureSpecOrBuilder getInfrastructureSpecOrBuilder();
 
-    public com.google.cloud.dataplex.v1.Task.SparkTaskConfig.DriverCase getDriverCase();
+    com.google.cloud.dataplex.v1.Task.SparkTaskConfig.DriverCase getDriverCase();
   }
   /**
    *
@@ -10066,19 +10046,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private SparkTaskConfig() {
-      fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      fileUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      archiveUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SparkTaskConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10097,6 +10072,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int driverCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object driver_;
 
     public enum DriverCase
@@ -10544,7 +10521,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public static final int FILE_URIS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList fileUris_;
+    private com.google.protobuf.LazyStringArrayList fileUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -10611,7 +10589,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public static final int ARCHIVE_URIS_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList archiveUris_;
+    private com.google.protobuf.LazyStringArrayList archiveUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -11048,10 +11027,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
+        fileUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        archiveUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
         infrastructureSpec_ = null;
         if (infrastructureSpecBuilder_ != null) {
           infrastructureSpecBuilder_.dispose();
@@ -11086,7 +11063,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.Task.SparkTaskConfig buildPartial() {
         com.google.cloud.dataplex.v1.Task.SparkTaskConfig result =
             new com.google.cloud.dataplex.v1.Task.SparkTaskConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -11095,22 +11071,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dataplex.v1.Task.SparkTaskConfig result) {
-        if (((bitField0_ & 0x00000020) != 0)) {
-          fileUris_ = fileUris_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.fileUris_ = fileUris_;
-        if (((bitField0_ & 0x00000040) != 0)) {
-          archiveUris_ = archiveUris_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000040);
-        }
-        result.archiveUris_ = archiveUris_;
-      }
-
       private void buildPartial0(com.google.cloud.dataplex.v1.Task.SparkTaskConfig result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          fileUris_.makeImmutable();
+          result.fileUris_ = fileUris_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          archiveUris_.makeImmutable();
+          result.archiveUris_ = archiveUris_;
+        }
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.infrastructureSpec_ =
               infrastructureSpecBuilder_ == null
@@ -11175,7 +11145,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         if (!other.fileUris_.isEmpty()) {
           if (fileUris_.isEmpty()) {
             fileUris_ = other.fileUris_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ |= 0x00000020;
           } else {
             ensureFileUrisIsMutable();
             fileUris_.addAll(other.fileUris_);
@@ -11185,7 +11155,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         if (!other.archiveUris_.isEmpty()) {
           if (archiveUris_.isEmpty()) {
             archiveUris_ = other.archiveUris_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ |= 0x00000040;
           } else {
             ensureArchiveUrisIsMutable();
             archiveUris_.addAll(other.archiveUris_);
@@ -12099,14 +12069,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList fileUris_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList fileUris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureFileUrisIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!fileUris_.isModifiable()) {
           fileUris_ = new com.google.protobuf.LazyStringArrayList(fileUris_);
-          bitField0_ |= 0x00000020;
         }
+        bitField0_ |= 0x00000020;
       }
       /**
        *
@@ -12121,7 +12091,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the fileUris.
        */
       public com.google.protobuf.ProtocolStringList getFileUrisList() {
-        return fileUris_.getUnmodifiableView();
+        fileUris_.makeImmutable();
+        return fileUris_;
       }
       /**
        *
@@ -12190,6 +12161,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         ensureFileUrisIsMutable();
         fileUris_.set(index, value);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -12212,6 +12184,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         ensureFileUrisIsMutable();
         fileUris_.add(value);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -12231,6 +12204,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllFileUris(java.lang.Iterable<java.lang.String> values) {
         ensureFileUrisIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fileUris_);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -12247,8 +12221,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFileUris() {
-        fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        fileUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000020);
+        ;
         onChanged();
         return this;
       }
@@ -12272,18 +12247,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureFileUrisIsMutable();
         fileUris_.add(value);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList archiveUris_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList archiveUris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureArchiveUrisIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!archiveUris_.isModifiable()) {
           archiveUris_ = new com.google.protobuf.LazyStringArrayList(archiveUris_);
-          bitField0_ |= 0x00000040;
         }
+        bitField0_ |= 0x00000040;
       }
       /**
        *
@@ -12299,7 +12275,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the archiveUris.
        */
       public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
-        return archiveUris_.getUnmodifiableView();
+        archiveUris_.makeImmutable();
+        return archiveUris_;
       }
       /**
        *
@@ -12372,6 +12349,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         ensureArchiveUrisIsMutable();
         archiveUris_.set(index, value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -12395,6 +12373,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         ensureArchiveUrisIsMutable();
         archiveUris_.add(value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -12415,6 +12394,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllArchiveUris(java.lang.Iterable<java.lang.String> values) {
         ensureArchiveUrisIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, archiveUris_);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -12432,8 +12412,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearArchiveUris() {
-        archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        archiveUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000040);
+        ;
         onChanged();
         return this;
       }
@@ -12458,6 +12439,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureArchiveUrisIsMutable();
         archiveUris_.add(value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -12945,19 +12927,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
     private NotebookTaskConfig() {
       notebook_ = "";
-      fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      fileUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      archiveUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NotebookTaskConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -13092,7 +13069,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public static final int FILE_URIS_FIELD_NUMBER = 5;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList fileUris_;
+    private com.google.protobuf.LazyStringArrayList fileUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -13159,7 +13137,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public static final int ARCHIVE_URIS_FIELD_NUMBER = 6;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList archiveUris_;
+    private com.google.protobuf.LazyStringArrayList archiveUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -13481,10 +13460,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           infrastructureSpecBuilder_.dispose();
           infrastructureSpecBuilder_ = null;
         }
-        fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        fileUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        archiveUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -13512,26 +13489,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.Task.NotebookTaskConfig buildPartial() {
         com.google.cloud.dataplex.v1.Task.NotebookTaskConfig result =
             new com.google.cloud.dataplex.v1.Task.NotebookTaskConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dataplex.v1.Task.NotebookTaskConfig result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
-          fileUris_ = fileUris_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.fileUris_ = fileUris_;
-        if (((bitField0_ & 0x00000008) != 0)) {
-          archiveUris_ = archiveUris_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.archiveUris_ = archiveUris_;
       }
 
       private void buildPartial0(com.google.cloud.dataplex.v1.Task.NotebookTaskConfig result) {
@@ -13544,6 +13506,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               infrastructureSpecBuilder_ == null
                   ? infrastructureSpec_
                   : infrastructureSpecBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          fileUris_.makeImmutable();
+          result.fileUris_ = fileUris_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          archiveUris_.makeImmutable();
+          result.archiveUris_ = archiveUris_;
         }
       }
 
@@ -13606,7 +13576,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         if (!other.fileUris_.isEmpty()) {
           if (fileUris_.isEmpty()) {
             fileUris_ = other.fileUris_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureFileUrisIsMutable();
             fileUris_.addAll(other.fileUris_);
@@ -13616,7 +13586,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         if (!other.archiveUris_.isEmpty()) {
           if (archiveUris_.isEmpty()) {
             archiveUris_ = other.archiveUris_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureArchiveUrisIsMutable();
             archiveUris_.addAll(other.archiveUris_);
@@ -14023,14 +13993,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return infrastructureSpecBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList fileUris_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList fileUris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureFileUrisIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!fileUris_.isModifiable()) {
           fileUris_ = new com.google.protobuf.LazyStringArrayList(fileUris_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -14045,7 +14015,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the fileUris.
        */
       public com.google.protobuf.ProtocolStringList getFileUrisList() {
-        return fileUris_.getUnmodifiableView();
+        fileUris_.makeImmutable();
+        return fileUris_;
       }
       /**
        *
@@ -14114,6 +14085,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         ensureFileUrisIsMutable();
         fileUris_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -14136,6 +14108,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         ensureFileUrisIsMutable();
         fileUris_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -14155,6 +14128,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllFileUris(java.lang.Iterable<java.lang.String> values) {
         ensureFileUrisIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fileUris_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -14171,8 +14145,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFileUris() {
-        fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        fileUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -14196,18 +14171,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureFileUrisIsMutable();
         fileUris_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList archiveUris_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList archiveUris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureArchiveUrisIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!archiveUris_.isModifiable()) {
           archiveUris_ = new com.google.protobuf.LazyStringArrayList(archiveUris_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -14223,7 +14199,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the archiveUris.
        */
       public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
-        return archiveUris_.getUnmodifiableView();
+        archiveUris_.makeImmutable();
+        return archiveUris_;
       }
       /**
        *
@@ -14296,6 +14273,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         ensureArchiveUrisIsMutable();
         archiveUris_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -14319,6 +14297,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         ensureArchiveUrisIsMutable();
         archiveUris_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -14339,6 +14318,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllArchiveUris(java.lang.Iterable<java.lang.String> values) {
         ensureArchiveUrisIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, archiveUris_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -14356,8 +14336,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearArchiveUris() {
-        archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        archiveUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -14382,6 +14363,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureArchiveUrisIsMutable();
         archiveUris_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -14562,11 +14544,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExecutionStatus();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -15544,6 +15521,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int configCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object config_;
 
   public enum ConfigCase

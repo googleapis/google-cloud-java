@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,8 +43,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
 
   private Feed() {
     name_ = "";
-    assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    assetNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     contentType_ = 0;
   }
 
@@ -52,11 +52,6 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Feed();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -86,6 +81,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
    * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
    * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+   *
    * The client-assigned feed identifier must be unique within the parent
    * project/folder/organization.
    * </pre>
@@ -114,6 +110,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
    * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
    * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+   *
    * The client-assigned feed identifier must be unique within the parent
    * project/folder/organization.
    * </pre>
@@ -138,7 +135,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
   public static final int ASSET_NAMES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList assetNames_;
+  private com.google.protobuf.LazyStringArrayList assetNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -229,7 +227,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
   public static final int ASSET_TYPES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList assetTypes_;
+  private com.google.protobuf.LazyStringArrayList assetTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -667,10 +666,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      assetNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       contentType_ = 0;
       feedOutputConfig_ = null;
       if (feedOutputConfigBuilder_ != null) {
@@ -704,7 +701,6 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1p2beta1.Feed buildPartial() {
       com.google.cloud.asset.v1p2beta1.Feed result =
           new com.google.cloud.asset.v1p2beta1.Feed(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -712,23 +708,18 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.asset.v1p2beta1.Feed result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        assetNames_ = assetNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.assetNames_ = assetNames_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        assetTypes_ = assetTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.assetTypes_ = assetTypes_;
-    }
-
     private void buildPartial0(com.google.cloud.asset.v1p2beta1.Feed result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        assetNames_.makeImmutable();
+        result.assetNames_ = assetNames_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        assetTypes_.makeImmutable();
+        result.assetTypes_ = assetTypes_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.contentType_ = contentType_;
@@ -792,7 +783,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (!other.assetNames_.isEmpty()) {
         if (assetNames_.isEmpty()) {
           assetNames_ = other.assetNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAssetNamesIsMutable();
           assetNames_.addAll(other.assetNames_);
@@ -802,7 +793,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (!other.assetTypes_.isEmpty()) {
         if (assetTypes_.isEmpty()) {
           assetTypes_ = other.assetTypes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureAssetTypesIsMutable();
           assetTypes_.addAll(other.assetTypes_);
@@ -902,6 +893,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
      * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
      * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+     *
      * The client-assigned feed identifier must be unique within the parent
      * project/folder/organization.
      * </pre>
@@ -929,6 +921,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
      * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
      * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+     *
      * The client-assigned feed identifier must be unique within the parent
      * project/folder/organization.
      * </pre>
@@ -956,6 +949,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
      * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
      * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+     *
      * The client-assigned feed identifier must be unique within the parent
      * project/folder/organization.
      * </pre>
@@ -982,6 +976,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
      * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
      * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+     *
      * The client-assigned feed identifier must be unique within the parent
      * project/folder/organization.
      * </pre>
@@ -1004,6 +999,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
      * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
      * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+     *
      * The client-assigned feed identifier must be unique within the parent
      * project/folder/organization.
      * </pre>
@@ -1024,14 +1020,14 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList assetNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList assetNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAssetNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!assetNames_.isModifiable()) {
         assetNames_ = new com.google.protobuf.LazyStringArrayList(assetNames_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1052,7 +1048,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the assetNames.
      */
     public com.google.protobuf.ProtocolStringList getAssetNamesList() {
-      return assetNames_.getUnmodifiableView();
+      assetNames_.makeImmutable();
+      return assetNames_;
     }
     /**
      *
@@ -1145,6 +1142,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssetNamesIsMutable();
       assetNames_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1173,6 +1171,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssetNamesIsMutable();
       assetNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1198,6 +1197,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAssetNames(java.lang.Iterable<java.lang.String> values) {
       ensureAssetNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetNames_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1220,8 +1220,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssetNames() {
-      assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      assetNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1251,18 +1252,19 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAssetNamesIsMutable();
       assetNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList assetTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList assetTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!assetTypes_.isModifiable()) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1282,7 +1284,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the assetTypes.
      */
     public com.google.protobuf.ProtocolStringList getAssetTypesList() {
-      return assetTypes_.getUnmodifiableView();
+      assetTypes_.makeImmutable();
+      return assetTypes_;
     }
     /**
      *
@@ -1371,6 +1374,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssetTypesIsMutable();
       assetTypes_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1398,6 +1402,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1422,6 +1427,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAssetTypes(java.lang.Iterable<java.lang.String> values) {
       ensureAssetTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetTypes_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1443,8 +1449,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssetTypes() {
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1473,6 +1480,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

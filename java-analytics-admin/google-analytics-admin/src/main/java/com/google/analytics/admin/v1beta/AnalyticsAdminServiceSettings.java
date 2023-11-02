@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -259,6 +259,12 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   public UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
       createConversionEventSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createConversionEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateConversionEvent. */
+  public UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateConversionEventSettings();
   }
 
   /** Returns the object with the settings used for calls to getConversionEvent. */
@@ -672,6 +678,12 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings() {
       return getStubSettingsBuilder().createConversionEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateConversionEvent. */
+    public UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventSettings() {
+      return getStubSettingsBuilder().updateConversionEventSettings();
     }
 
     /** Returns the builder for the settings used for calls to getConversionEvent. */

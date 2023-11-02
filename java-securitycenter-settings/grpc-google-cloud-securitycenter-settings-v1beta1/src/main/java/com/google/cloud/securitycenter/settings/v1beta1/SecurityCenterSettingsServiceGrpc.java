@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class SecurityCenterSettingsServiceGrpc {
 
   private SecurityCenterSettingsServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.securitycenter.settings.v1beta1.SecurityCenterSettingsService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -2077,9 +2077,9 @@ public final class SecurityCenterSettingsServiceGrpc {
   private static final class SecurityCenterSettingsServiceMethodDescriptorSupplier
       extends SecurityCenterSettingsServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SecurityCenterSettingsServiceMethodDescriptorSupplier(String methodName) {
+    SecurityCenterSettingsServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

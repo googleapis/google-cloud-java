@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,9 +83,9 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute the actual spend
-   * against the budget amount, such as projects, services, and the budget's
-   * time period, as well as other filters.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>
@@ -99,9 +99,9 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute the actual spend
-   * against the budget amount, such as projects, services, and the budget's
-   * time period, as well as other filters.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>
@@ -115,9 +115,9 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute the actual spend
-   * against the budget amount, such as projects, services, and the budget's
-   * time period, as well as other filters.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>
@@ -173,7 +173,9 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
    * Optional for `pubsubTopic` notifications.
+   *
    * Required if using email notifications.
    * </pre>
    *
@@ -188,7 +190,9 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
    * Optional for `pubsubTopic` notifications.
+   *
    * Required if using email notifications.
    * </pre>
    *
@@ -203,7 +207,9 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
    * Optional for `pubsubTopic` notifications.
+   *
    * Required if using email notifications.
    * </pre>
    *
@@ -218,7 +224,9 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
    * Optional for `pubsubTopic` notifications.
+   *
    * Required if using email notifications.
    * </pre>
    *
@@ -234,7 +242,9 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
    * Optional for `pubsubTopic` notifications.
+   *
    * Required if using email notifications.
    * </pre>
    *
@@ -249,7 +259,8 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>
@@ -263,7 +274,8 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>
@@ -277,7 +289,8 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Rules to apply to notifications sent based on budget spend and thresholds.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>

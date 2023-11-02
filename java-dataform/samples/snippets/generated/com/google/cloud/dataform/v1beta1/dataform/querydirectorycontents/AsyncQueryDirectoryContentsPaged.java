@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.dataform.v1beta1.samples;
 
 // [START dataform_v1beta1_generated_Dataform_QueryDirectoryContents_Paged_async]
 import com.google.cloud.dataform.v1beta1.DataformClient;
+import com.google.cloud.dataform.v1beta1.DirectoryEntry;
 import com.google.cloud.dataform.v1beta1.QueryDirectoryContentsRequest;
 import com.google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
@@ -48,8 +49,7 @@ public class AsyncQueryDirectoryContentsPaged {
       while (true) {
         QueryDirectoryContentsResponse response =
             dataformClient.queryDirectoryContentsCallable().call(request);
-        for (QueryDirectoryContentsResponse.DirectoryEntry element :
-            response.getDirectoryEntriesList()) {
+        for (DirectoryEntry element : response.getDirectoryEntriesList()) {
           // doThingsWith(element);
         }
         String nextPageToken = response.getNextPageToken();

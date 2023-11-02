@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     revisionId_ = "";
     serviceAccount_ = "";
+    cryptoKeyName_ = "";
+    callLogLevel_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Workflow();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -67,6 +64,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 8:
         return internalGetLabels();
+      case 14:
+        return internalGetUserEnvVars();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -86,8 +85,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes the current state of workflow deployment. More states may be
-   * added in the future.
+   * Describes the current state of workflow deployment.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.workflows.v1.Workflow.State}
@@ -113,6 +111,16 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     ACTIVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Workflow data is unavailable. See the `state_error` field.
+     * </pre>
+     *
+     * <code>UNAVAILABLE = 2;</code>
+     */
+    UNAVAILABLE(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -136,6 +144,16 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Workflow data is unavailable. See the `state_error` field.
+     * </pre>
+     *
+     * <code>UNAVAILABLE = 2;</code>
+     */
+    public static final int UNAVAILABLE_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -165,6 +183,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
           return STATE_UNSPECIFIED;
         case 1:
           return ACTIVE;
+        case 2:
+          return UNAVAILABLE;
         default:
           return null;
       }
@@ -218,7 +238,1148 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.workflows.v1.Workflow.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Describes the level of platform logging to apply to calls and call
+   * responses during workflow executions.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.workflows.v1.Workflow.CallLogLevel}
+   */
+  public enum CallLogLevel implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No call logging level specified.
+     * </pre>
+     *
+     * <code>CALL_LOG_LEVEL_UNSPECIFIED = 0;</code>
+     */
+    CALL_LOG_LEVEL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Log all call steps within workflows, all call returns, and all exceptions
+     * raised.
+     * </pre>
+     *
+     * <code>LOG_ALL_CALLS = 1;</code>
+     */
+    LOG_ALL_CALLS(1),
+    /**
+     *
+     *
+     * <pre>
+     * Log only exceptions that are raised from call steps within workflows.
+     * </pre>
+     *
+     * <code>LOG_ERRORS_ONLY = 2;</code>
+     */
+    LOG_ERRORS_ONLY(2),
+    /**
+     *
+     *
+     * <pre>
+     * Explicitly log nothing.
+     * </pre>
+     *
+     * <code>LOG_NONE = 3;</code>
+     */
+    LOG_NONE(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * No call logging level specified.
+     * </pre>
+     *
+     * <code>CALL_LOG_LEVEL_UNSPECIFIED = 0;</code>
+     */
+    public static final int CALL_LOG_LEVEL_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Log all call steps within workflows, all call returns, and all exceptions
+     * raised.
+     * </pre>
+     *
+     * <code>LOG_ALL_CALLS = 1;</code>
+     */
+    public static final int LOG_ALL_CALLS_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Log only exceptions that are raised from call steps within workflows.
+     * </pre>
+     *
+     * <code>LOG_ERRORS_ONLY = 2;</code>
+     */
+    public static final int LOG_ERRORS_ONLY_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Explicitly log nothing.
+     * </pre>
+     *
+     * <code>LOG_NONE = 3;</code>
+     */
+    public static final int LOG_NONE_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CallLogLevel valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CallLogLevel forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CALL_LOG_LEVEL_UNSPECIFIED;
+        case 1:
+          return LOG_ALL_CALLS;
+        case 2:
+          return LOG_ERRORS_ONLY;
+        case 3:
+          return LOG_NONE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CallLogLevel> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<CallLogLevel> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<CallLogLevel>() {
+          public CallLogLevel findValueByNumber(int number) {
+            return CallLogLevel.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.workflows.v1.Workflow.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final CallLogLevel[] VALUES = values();
+
+    public static CallLogLevel valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CallLogLevel(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.workflows.v1.Workflow.CallLogLevel)
+  }
+
+  public interface StateErrorOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.workflows.v1.Workflow.StateError)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Provides specifics about the error.
+     * </pre>
+     *
+     * <code>string details = 1;</code>
+     *
+     * @return The details.
+     */
+    java.lang.String getDetails();
+    /**
+     *
+     *
+     * <pre>
+     * Provides specifics about the error.
+     * </pre>
+     *
+     * <code>string details = 1;</code>
+     *
+     * @return The bytes for details.
+     */
+    com.google.protobuf.ByteString getDetailsBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of this state error.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.v1.Workflow.StateError.Type type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * The type of this state error.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.v1.Workflow.StateError.Type type = 2;</code>
+     *
+     * @return The type.
+     */
+    com.google.cloud.workflows.v1.Workflow.StateError.Type getType();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes an error related to the current state of the workflow.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.workflows.v1.Workflow.StateError}
+   */
+  public static final class StateError extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.workflows.v1.Workflow.StateError)
+      StateErrorOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use StateError.newBuilder() to construct.
+    private StateError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private StateError() {
+      details_ = "";
+      type_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StateError();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.workflows.v1.WorkflowsProto
+          .internal_static_google_cloud_workflows_v1_Workflow_StateError_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.workflows.v1.WorkflowsProto
+          .internal_static_google_cloud_workflows_v1_Workflow_StateError_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.workflows.v1.Workflow.StateError.class,
+              com.google.cloud.workflows.v1.Workflow.StateError.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes the possibled types of a state error.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.workflows.v1.Workflow.StateError.Type}
+     */
+    public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * No type specified.
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Caused by an issue with KMS.
+       * </pre>
+       *
+       * <code>KMS_ERROR = 1;</code>
+       */
+      KMS_ERROR(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * No type specified.
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Caused by an issue with KMS.
+       * </pre>
+       *
+       * <code>KMS_ERROR = 1;</code>
+       */
+      public static final int KMS_ERROR_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TYPE_UNSPECIFIED;
+          case 1:
+            return KMS_ERROR;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+            public Type findValueByNumber(int number) {
+              return Type.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.workflows.v1.Workflow.StateError.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.workflows.v1.Workflow.StateError.Type)
+    }
+
+    public static final int DETAILS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object details_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Provides specifics about the error.
+     * </pre>
+     *
+     * <code>string details = 1;</code>
+     *
+     * @return The details.
+     */
+    @java.lang.Override
+    public java.lang.String getDetails() {
+      java.lang.Object ref = details_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        details_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides specifics about the error.
+     * </pre>
+     *
+     * <code>string details = 1;</code>
+     *
+     * @return The bytes for details.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDetailsBytes() {
+      java.lang.Object ref = details_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        details_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The type of this state error.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.v1.Workflow.StateError.Type type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of this state error.
+     * </pre>
+     *
+     * <code>.google.cloud.workflows.v1.Workflow.StateError.Type type = 2;</code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.workflows.v1.Workflow.StateError.Type getType() {
+      com.google.cloud.workflows.v1.Workflow.StateError.Type result =
+          com.google.cloud.workflows.v1.Workflow.StateError.Type.forNumber(type_);
+      return result == null
+          ? com.google.cloud.workflows.v1.Workflow.StateError.Type.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, details_);
+      }
+      if (type_
+          != com.google.cloud.workflows.v1.Workflow.StateError.Type.TYPE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(2, type_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, details_);
+      }
+      if (type_
+          != com.google.cloud.workflows.v1.Workflow.StateError.Type.TYPE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.workflows.v1.Workflow.StateError)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.workflows.v1.Workflow.StateError other =
+          (com.google.cloud.workflows.v1.Workflow.StateError) obj;
+
+      if (!getDetails().equals(other.getDetails())) return false;
+      if (type_ != other.type_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getDetails().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.workflows.v1.Workflow.StateError prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes an error related to the current state of the workflow.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.workflows.v1.Workflow.StateError}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.workflows.v1.Workflow.StateError)
+        com.google.cloud.workflows.v1.Workflow.StateErrorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.workflows.v1.WorkflowsProto
+            .internal_static_google_cloud_workflows_v1_Workflow_StateError_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.workflows.v1.WorkflowsProto
+            .internal_static_google_cloud_workflows_v1_Workflow_StateError_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.workflows.v1.Workflow.StateError.class,
+                com.google.cloud.workflows.v1.Workflow.StateError.Builder.class);
+      }
+
+      // Construct using com.google.cloud.workflows.v1.Workflow.StateError.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        details_ = "";
+        type_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.workflows.v1.WorkflowsProto
+            .internal_static_google_cloud_workflows_v1_Workflow_StateError_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workflows.v1.Workflow.StateError getDefaultInstanceForType() {
+        return com.google.cloud.workflows.v1.Workflow.StateError.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workflows.v1.Workflow.StateError build() {
+        com.google.cloud.workflows.v1.Workflow.StateError result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workflows.v1.Workflow.StateError buildPartial() {
+        com.google.cloud.workflows.v1.Workflow.StateError result =
+            new com.google.cloud.workflows.v1.Workflow.StateError(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.workflows.v1.Workflow.StateError result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.details_ = details_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.workflows.v1.Workflow.StateError) {
+          return mergeFrom((com.google.cloud.workflows.v1.Workflow.StateError) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.workflows.v1.Workflow.StateError other) {
+        if (other == com.google.cloud.workflows.v1.Workflow.StateError.getDefaultInstance())
+          return this;
+        if (!other.getDetails().isEmpty()) {
+          details_ = other.details_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  details_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  type_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object details_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Provides specifics about the error.
+       * </pre>
+       *
+       * <code>string details = 1;</code>
+       *
+       * @return The details.
+       */
+      public java.lang.String getDetails() {
+        java.lang.Object ref = details_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          details_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provides specifics about the error.
+       * </pre>
+       *
+       * <code>string details = 1;</code>
+       *
+       * @return The bytes for details.
+       */
+      public com.google.protobuf.ByteString getDetailsBytes() {
+        java.lang.Object ref = details_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          details_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provides specifics about the error.
+       * </pre>
+       *
+       * <code>string details = 1;</code>
+       *
+       * @param value The details to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetails(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provides specifics about the error.
+       * </pre>
+       *
+       * <code>string details = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDetails() {
+        details_ = getDefaultInstance().getDetails();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provides specifics about the error.
+       * </pre>
+       *
+       * <code>string details = 1;</code>
+       *
+       * @param value The bytes for details to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetailsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        details_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The type of this state error.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.v1.Workflow.StateError.Type type = 2;</code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of this state error.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.v1.Workflow.StateError.Type type = 2;</code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of this state error.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.v1.Workflow.StateError.Type type = 2;</code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.cloud.workflows.v1.Workflow.StateError.Type getType() {
+        com.google.cloud.workflows.v1.Workflow.StateError.Type result =
+            com.google.cloud.workflows.v1.Workflow.StateError.Type.forNumber(type_);
+        return result == null
+            ? com.google.cloud.workflows.v1.Workflow.StateError.Type.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of this state error.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.v1.Workflow.StateError.Type type = 2;</code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.google.cloud.workflows.v1.Workflow.StateError.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of this state error.
+       * </pre>
+       *
+       * <code>.google.cloud.workflows.v1.Workflow.StateError.Type type = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.workflows.v1.Workflow.StateError)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.workflows.v1.Workflow.StateError)
+    private static final com.google.cloud.workflows.v1.Workflow.StateError DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.workflows.v1.Workflow.StateError();
+    }
+
+    public static com.google.cloud.workflows.v1.Workflow.StateError getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StateError> PARSER =
+        new com.google.protobuf.AbstractParser<StateError>() {
+          @java.lang.Override
+          public StateError parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<StateError> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StateError> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.workflows.v1.Workflow.StateError getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int sourceCodeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object sourceCode_;
 
   public enum SourceCodeCase
@@ -418,11 +1579,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * Output only. The revision of the workflow.
    * A new revision of a workflow is created as a result of updating the
    * following properties of a workflow:
+   *
    * - [Service account][google.cloud.workflows.v1.Workflow.service_account]
-   * - [Workflow code to be executed][google.cloud.workflows.v1.Workflow.source_contents]
-   * The format is "000001-a4d", where the first 6 characters define
+   * - [Workflow code to be
+   * executed][google.cloud.workflows.v1.Workflow.source_contents]
+   *
+   * The format is "000001-a4d", where the first six characters define
    * the zero-padded revision ordinal number. They are followed by a hyphen and
-   * 3 hexadecimal random characters.
+   * three hexadecimal random characters.
    * </pre>
    *
    * <code>string revision_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -448,11 +1612,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * Output only. The revision of the workflow.
    * A new revision of a workflow is created as a result of updating the
    * following properties of a workflow:
+   *
    * - [Service account][google.cloud.workflows.v1.Workflow.service_account]
-   * - [Workflow code to be executed][google.cloud.workflows.v1.Workflow.source_contents]
-   * The format is "000001-a4d", where the first 6 characters define
+   * - [Workflow code to be
+   * executed][google.cloud.workflows.v1.Workflow.source_contents]
+   *
+   * The format is "000001-a4d", where the first six characters define
    * the zero-padded revision ordinal number. They are followed by a hyphen and
-   * 3 hexadecimal random characters.
+   * three hexadecimal random characters.
    * </pre>
    *
    * <code>string revision_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -478,7 +1645,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp of when the workflow was created.
+   * Output only. The timestamp for when the workflow was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -494,7 +1661,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp of when the workflow was created.
+   * Output only. The timestamp for when the workflow was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -510,7 +1677,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp of when the workflow was created.
+   * Output only. The timestamp for when the workflow was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -527,7 +1694,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the workflow.
+   * Output only. The timestamp for when the workflow was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -543,7 +1710,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the workflow.
+   * Output only. The timestamp for when the workflow was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -559,7 +1726,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the workflow.
+   * Output only. The timestamp for when the workflow was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -576,8 +1743,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp that the latest revision of the workflow
-   * was created.
+   * Output only. The timestamp for the latest revision of the workflow's
+   * creation.
    * </pre>
    *
    * <code>
@@ -594,8 +1761,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp that the latest revision of the workflow
-   * was created.
+   * Output only. The timestamp for the latest revision of the workflow's
+   * creation.
    * </pre>
    *
    * <code>
@@ -614,8 +1781,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp that the latest revision of the workflow
-   * was created.
+   * Output only. The timestamp for the latest revision of the workflow's
+   * creation.
    * </pre>
    *
    * <code>
@@ -662,7 +1829,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * Labels associated with this workflow.
    * Labels can contain at most 64 entries. Keys and values can be no longer
    * than 63 characters and can only contain lowercase letters, numeric
-   * characters, underscores and dashes. Label keys must start with a letter.
+   * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
    * </pre>
    *
@@ -688,7 +1855,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * Labels associated with this workflow.
    * Labels can contain at most 64 entries. Keys and values can be no longer
    * than 63 characters and can only contain lowercase letters, numeric
-   * characters, underscores and dashes. Label keys must start with a letter.
+   * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
    * </pre>
    *
@@ -705,7 +1872,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * Labels associated with this workflow.
    * Labels can contain at most 64 entries. Keys and values can be no longer
    * than 63 characters and can only contain lowercase letters, numeric
-   * characters, underscores and dashes. Label keys must start with a letter.
+   * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
    * </pre>
    *
@@ -729,7 +1896,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * Labels associated with this workflow.
    * Labels can contain at most 64 entries. Keys and values can be no longer
    * than 63 characters and can only contain lowercase letters, numeric
-   * characters, underscores and dashes. Label keys must start with a letter.
+   * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
    * </pre>
    *
@@ -759,9 +1926,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * This service account represents the identity of the workflow and determines
    * what permissions the workflow has.
    * Format: projects/{project}/serviceAccounts/{account} or {account}
+   *
    * Using `-` as a wildcard for the `{project}` or not providing one at all
    * will infer the project from the account. The `{account}` value can be the
    * `email` address or the `unique_id` of the service account.
+   *
    * If not provided, workflow will use the project's default service account.
    * Modifying this field for an existing workflow results in a new workflow
    * revision.
@@ -791,9 +1960,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * This service account represents the identity of the workflow and determines
    * what permissions the workflow has.
    * Format: projects/{project}/serviceAccounts/{account} or {account}
+   *
    * Using `-` as a wildcard for the `{project}` or not providing one at all
    * will infer the project from the account. The `{account}` value can be the
    * `email` address or the `unique_id` of the service account.
+   *
    * If not provided, workflow will use the project's default service account.
    * Modifying this field for an existing workflow results in a new workflow
    * revision.
@@ -886,6 +2057,309 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CRYPTO_KEY_NAME_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cryptoKeyName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of a KMS crypto key used to encrypt or decrypt
+   * the data associated with the workflow.
+   *
+   * Format:
+   * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
+   *
+   * Using `-` as a wildcard for the `{project}` or not providing one at all
+   * will infer the project from the account.
+   *
+   * If not provided, data associated with the workflow will not be
+   * CMEK-encrypted.
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cryptoKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getCryptoKeyName() {
+    java.lang.Object ref = cryptoKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cryptoKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of a KMS crypto key used to encrypt or decrypt
+   * the data associated with the workflow.
+   *
+   * Format:
+   * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
+   *
+   * Using `-` as a wildcard for the `{project}` or not providing one at all
+   * will infer the project from the account.
+   *
+   * If not provided, data associated with the workflow will not be
+   * CMEK-encrypted.
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cryptoKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCryptoKeyNameBytes() {
+    java.lang.Object ref = cryptoKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cryptoKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATE_ERROR_FIELD_NUMBER = 12;
+  private com.google.cloud.workflows.v1.Workflow.StateError stateError_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error regarding the state of the workflow. For example, this
+   * field will have error details if the execution data is unavailable due to
+   * revoked KMS key permissions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the stateError field is set.
+   */
+  @java.lang.Override
+  public boolean hasStateError() {
+    return stateError_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error regarding the state of the workflow. For example, this
+   * field will have error details if the execution data is unavailable due to
+   * revoked KMS key permissions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The stateError.
+   */
+  @java.lang.Override
+  public com.google.cloud.workflows.v1.Workflow.StateError getStateError() {
+    return stateError_ == null
+        ? com.google.cloud.workflows.v1.Workflow.StateError.getDefaultInstance()
+        : stateError_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error regarding the state of the workflow. For example, this
+   * field will have error details if the execution data is unavailable due to
+   * revoked KMS key permissions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.workflows.v1.Workflow.StateErrorOrBuilder getStateErrorOrBuilder() {
+    return stateError_ == null
+        ? com.google.cloud.workflows.v1.Workflow.StateError.getDefaultInstance()
+        : stateError_;
+  }
+
+  public static final int CALL_LOG_LEVEL_FIELD_NUMBER = 13;
+  private int callLogLevel_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the level of platform logging to apply to calls and
+   * call responses during executions of this workflow. If both the workflow and
+   * the execution specify a logging level, the execution level takes
+   * precedence.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.Workflow.CallLogLevel call_log_level = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for callLogLevel.
+   */
+  @java.lang.Override
+  public int getCallLogLevelValue() {
+    return callLogLevel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the level of platform logging to apply to calls and
+   * call responses during executions of this workflow. If both the workflow and
+   * the execution specify a logging level, the execution level takes
+   * precedence.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.Workflow.CallLogLevel call_log_level = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The callLogLevel.
+   */
+  @java.lang.Override
+  public com.google.cloud.workflows.v1.Workflow.CallLogLevel getCallLogLevel() {
+    com.google.cloud.workflows.v1.Workflow.CallLogLevel result =
+        com.google.cloud.workflows.v1.Workflow.CallLogLevel.forNumber(callLogLevel_);
+    return result == null
+        ? com.google.cloud.workflows.v1.Workflow.CallLogLevel.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int USER_ENV_VARS_FIELD_NUMBER = 14;
+
+  private static final class UserEnvVarsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.workflows.v1.WorkflowsProto
+                .internal_static_google_cloud_workflows_v1_Workflow_UserEnvVarsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> userEnvVars_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetUserEnvVars() {
+    if (userEnvVars_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(UserEnvVarsDefaultEntryHolder.defaultEntry);
+    }
+    return userEnvVars_;
+  }
+
+  public int getUserEnvVarsCount() {
+    return internalGetUserEnvVars().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined environment variables associated with this workflow
+   * revision. This map has a maximum length of 20. Each string can take up to
+   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+   * “WORKFLOWS".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsUserEnvVars(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetUserEnvVars().getMap().containsKey(key);
+  }
+  /** Use {@link #getUserEnvVarsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getUserEnvVars() {
+    return getUserEnvVarsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined environment variables associated with this workflow
+   * revision. This map has a maximum length of 20. Each string can take up to
+   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+   * “WORKFLOWS".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getUserEnvVarsMap() {
+    return internalGetUserEnvVars().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined environment variables associated with this workflow
+   * revision. This map has a maximum length of 20. Each string can take up to
+   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+   * “WORKFLOWS".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getUserEnvVarsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserEnvVars().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined environment variables associated with this workflow
+   * revision. This map has a maximum length of 20. Each string can take up to
+   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+   * “WORKFLOWS".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getUserEnvVarsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserEnvVars().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -929,6 +2403,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     if (sourceCodeCase_ == 10) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, sourceCode_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, cryptoKeyName_);
+    }
+    if (stateError_ != null) {
+      output.writeMessage(12, getStateError());
+    }
+    if (callLogLevel_
+        != com.google.cloud.workflows.v1.Workflow.CallLogLevel.CALL_LOG_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(13, callLogLevel_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetUserEnvVars(), UserEnvVarsDefaultEntryHolder.defaultEntry, 14);
     getUnknownFields().writeTo(output);
   }
 
@@ -975,6 +2462,27 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     if (sourceCodeCase_ == 10) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, sourceCode_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, cryptoKeyName_);
+    }
+    if (stateError_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getStateError());
+    }
+    if (callLogLevel_
+        != com.google.cloud.workflows.v1.Workflow.CallLogLevel.CALL_LOG_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, callLogLevel_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetUserEnvVars().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userEnvVars__ =
+          UserEnvVarsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, userEnvVars__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1008,6 +2516,13 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (!getCryptoKeyName().equals(other.getCryptoKeyName())) return false;
+    if (hasStateError() != other.hasStateError()) return false;
+    if (hasStateError()) {
+      if (!getStateError().equals(other.getStateError())) return false;
+    }
+    if (callLogLevel_ != other.callLogLevel_) return false;
+    if (!internalGetUserEnvVars().equals(other.internalGetUserEnvVars())) return false;
     if (!getSourceCodeCase().equals(other.getSourceCodeCase())) return false;
     switch (sourceCodeCase_) {
       case 10:
@@ -1053,6 +2568,18 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
+    hash = (37 * hash) + CRYPTO_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getCryptoKeyName().hashCode();
+    if (hasStateError()) {
+      hash = (37 * hash) + STATE_ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getStateError().hashCode();
+    }
+    hash = (37 * hash) + CALL_LOG_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + callLogLevel_;
+    if (!internalGetUserEnvVars().getMap().isEmpty()) {
+      hash = (37 * hash) + USER_ENV_VARS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUserEnvVars().hashCode();
+    }
     switch (sourceCodeCase_) {
       case 10:
         hash = (37 * hash) + SOURCE_CONTENTS_FIELD_NUMBER;
@@ -1184,6 +2711,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 8:
           return internalGetLabels();
+        case 14:
+          return internalGetUserEnvVars();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1194,6 +2723,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 8:
           return internalGetMutableLabels();
+        case 14:
+          return internalGetMutableUserEnvVars();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1241,6 +2772,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().clear();
       serviceAccount_ = "";
+      cryptoKeyName_ = "";
+      stateError_ = null;
+      if (stateErrorBuilder_ != null) {
+        stateErrorBuilder_.dispose();
+        stateErrorBuilder_ = null;
+      }
+      callLogLevel_ = 0;
+      internalGetMutableUserEnvVars().clear();
       sourceCodeCase_ = 0;
       sourceCode_ = null;
       return this;
@@ -1310,6 +2849,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.cryptoKeyName_ = cryptoKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.stateError_ = stateErrorBuilder_ == null ? stateError_ : stateErrorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.callLogLevel_ = callLogLevel_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.userEnvVars_ = internalGetUserEnvVars();
+        result.userEnvVars_.makeImmutable();
       }
     }
 
@@ -1397,6 +2949,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (!other.getCryptoKeyName().isEmpty()) {
+        cryptoKeyName_ = other.cryptoKeyName_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (other.hasStateError()) {
+        mergeStateError(other.getStateError());
+      }
+      if (other.callLogLevel_ != 0) {
+        setCallLogLevelValue(other.getCallLogLevelValue());
+      }
+      internalGetMutableUserEnvVars().mergeFrom(other.internalGetUserEnvVars());
+      bitField0_ |= 0x00002000;
       switch (other.getSourceCodeCase()) {
         case SOURCE_CONTENTS:
           {
@@ -1504,6 +3069,36 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
                 sourceCode_ = s;
                 break;
               } // case 82
+            case 90:
+              {
+                cryptoKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getStateErrorFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+            case 104:
+              {
+                callLogLevel_ = input.readEnum();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
+            case 114:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userEnvVars__ =
+                    input.readMessage(
+                        UserEnvVarsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableUserEnvVars()
+                    .getMutableMap()
+                    .put(userEnvVars__.getKey(), userEnvVars__.getValue());
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1867,11 +3462,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Output only. The revision of the workflow.
      * A new revision of a workflow is created as a result of updating the
      * following properties of a workflow:
+     *
      * - [Service account][google.cloud.workflows.v1.Workflow.service_account]
-     * - [Workflow code to be executed][google.cloud.workflows.v1.Workflow.source_contents]
-     * The format is "000001-a4d", where the first 6 characters define
+     * - [Workflow code to be
+     * executed][google.cloud.workflows.v1.Workflow.source_contents]
+     *
+     * The format is "000001-a4d", where the first six characters define
      * the zero-padded revision ordinal number. They are followed by a hyphen and
-     * 3 hexadecimal random characters.
+     * three hexadecimal random characters.
      * </pre>
      *
      * <code>string revision_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1896,11 +3494,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Output only. The revision of the workflow.
      * A new revision of a workflow is created as a result of updating the
      * following properties of a workflow:
+     *
      * - [Service account][google.cloud.workflows.v1.Workflow.service_account]
-     * - [Workflow code to be executed][google.cloud.workflows.v1.Workflow.source_contents]
-     * The format is "000001-a4d", where the first 6 characters define
+     * - [Workflow code to be
+     * executed][google.cloud.workflows.v1.Workflow.source_contents]
+     *
+     * The format is "000001-a4d", where the first six characters define
      * the zero-padded revision ordinal number. They are followed by a hyphen and
-     * 3 hexadecimal random characters.
+     * three hexadecimal random characters.
      * </pre>
      *
      * <code>string revision_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1925,11 +3526,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Output only. The revision of the workflow.
      * A new revision of a workflow is created as a result of updating the
      * following properties of a workflow:
+     *
      * - [Service account][google.cloud.workflows.v1.Workflow.service_account]
-     * - [Workflow code to be executed][google.cloud.workflows.v1.Workflow.source_contents]
-     * The format is "000001-a4d", where the first 6 characters define
+     * - [Workflow code to be
+     * executed][google.cloud.workflows.v1.Workflow.source_contents]
+     *
+     * The format is "000001-a4d", where the first six characters define
      * the zero-padded revision ordinal number. They are followed by a hyphen and
-     * 3 hexadecimal random characters.
+     * three hexadecimal random characters.
      * </pre>
      *
      * <code>string revision_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1953,11 +3557,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Output only. The revision of the workflow.
      * A new revision of a workflow is created as a result of updating the
      * following properties of a workflow:
+     *
      * - [Service account][google.cloud.workflows.v1.Workflow.service_account]
-     * - [Workflow code to be executed][google.cloud.workflows.v1.Workflow.source_contents]
-     * The format is "000001-a4d", where the first 6 characters define
+     * - [Workflow code to be
+     * executed][google.cloud.workflows.v1.Workflow.source_contents]
+     *
+     * The format is "000001-a4d", where the first six characters define
      * the zero-padded revision ordinal number. They are followed by a hyphen and
-     * 3 hexadecimal random characters.
+     * three hexadecimal random characters.
      * </pre>
      *
      * <code>string revision_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1977,11 +3584,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Output only. The revision of the workflow.
      * A new revision of a workflow is created as a result of updating the
      * following properties of a workflow:
+     *
      * - [Service account][google.cloud.workflows.v1.Workflow.service_account]
-     * - [Workflow code to be executed][google.cloud.workflows.v1.Workflow.source_contents]
-     * The format is "000001-a4d", where the first 6 characters define
+     * - [Workflow code to be
+     * executed][google.cloud.workflows.v1.Workflow.source_contents]
+     *
+     * The format is "000001-a4d", where the first six characters define
      * the zero-padded revision ordinal number. They are followed by a hyphen and
-     * 3 hexadecimal random characters.
+     * three hexadecimal random characters.
      * </pre>
      *
      * <code>string revision_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2010,7 +3620,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp of when the workflow was created.
+     * Output only. The timestamp for when the workflow was created.
      * </pre>
      *
      * <code>
@@ -2026,7 +3636,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp of when the workflow was created.
+     * Output only. The timestamp for when the workflow was created.
      * </pre>
      *
      * <code>
@@ -2048,7 +3658,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp of when the workflow was created.
+     * Output only. The timestamp for when the workflow was created.
      * </pre>
      *
      * <code>
@@ -2072,7 +3682,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp of when the workflow was created.
+     * Output only. The timestamp for when the workflow was created.
      * </pre>
      *
      * <code>
@@ -2093,7 +3703,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp of when the workflow was created.
+     * Output only. The timestamp for when the workflow was created.
      * </pre>
      *
      * <code>
@@ -2120,7 +3730,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp of when the workflow was created.
+     * Output only. The timestamp for when the workflow was created.
      * </pre>
      *
      * <code>
@@ -2141,7 +3751,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp of when the workflow was created.
+     * Output only. The timestamp for when the workflow was created.
      * </pre>
      *
      * <code>
@@ -2157,7 +3767,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp of when the workflow was created.
+     * Output only. The timestamp for when the workflow was created.
      * </pre>
      *
      * <code>
@@ -2177,7 +3787,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp of when the workflow was created.
+     * Output only. The timestamp for when the workflow was created.
      * </pre>
      *
      * <code>
@@ -2211,7 +3821,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the workflow.
+     * Output only. The timestamp for when the workflow was last updated.
      * </pre>
      *
      * <code>
@@ -2227,7 +3837,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the workflow.
+     * Output only. The timestamp for when the workflow was last updated.
      * </pre>
      *
      * <code>
@@ -2249,7 +3859,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the workflow.
+     * Output only. The timestamp for when the workflow was last updated.
      * </pre>
      *
      * <code>
@@ -2273,7 +3883,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the workflow.
+     * Output only. The timestamp for when the workflow was last updated.
      * </pre>
      *
      * <code>
@@ -2294,7 +3904,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the workflow.
+     * Output only. The timestamp for when the workflow was last updated.
      * </pre>
      *
      * <code>
@@ -2321,7 +3931,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the workflow.
+     * Output only. The timestamp for when the workflow was last updated.
      * </pre>
      *
      * <code>
@@ -2342,7 +3952,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the workflow.
+     * Output only. The timestamp for when the workflow was last updated.
      * </pre>
      *
      * <code>
@@ -2358,7 +3968,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the workflow.
+     * Output only. The timestamp for when the workflow was last updated.
      * </pre>
      *
      * <code>
@@ -2378,7 +3988,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the workflow.
+     * Output only. The timestamp for when the workflow was last updated.
      * </pre>
      *
      * <code>
@@ -2412,8 +4022,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp that the latest revision of the workflow
-     * was created.
+     * Output only. The timestamp for the latest revision of the workflow's
+     * creation.
      * </pre>
      *
      * <code>
@@ -2429,8 +4039,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp that the latest revision of the workflow
-     * was created.
+     * Output only. The timestamp for the latest revision of the workflow's
+     * creation.
      * </pre>
      *
      * <code>
@@ -2452,8 +4062,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp that the latest revision of the workflow
-     * was created.
+     * Output only. The timestamp for the latest revision of the workflow's
+     * creation.
      * </pre>
      *
      * <code>
@@ -2477,8 +4087,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp that the latest revision of the workflow
-     * was created.
+     * Output only. The timestamp for the latest revision of the workflow's
+     * creation.
      * </pre>
      *
      * <code>
@@ -2499,8 +4109,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp that the latest revision of the workflow
-     * was created.
+     * Output only. The timestamp for the latest revision of the workflow's
+     * creation.
      * </pre>
      *
      * <code>
@@ -2527,8 +4137,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp that the latest revision of the workflow
-     * was created.
+     * Output only. The timestamp for the latest revision of the workflow's
+     * creation.
      * </pre>
      *
      * <code>
@@ -2549,8 +4159,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp that the latest revision of the workflow
-     * was created.
+     * Output only. The timestamp for the latest revision of the workflow's
+     * creation.
      * </pre>
      *
      * <code>
@@ -2566,8 +4176,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp that the latest revision of the workflow
-     * was created.
+     * Output only. The timestamp for the latest revision of the workflow's
+     * creation.
      * </pre>
      *
      * <code>
@@ -2587,8 +4197,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp that the latest revision of the workflow
-     * was created.
+     * Output only. The timestamp for the latest revision of the workflow's
+     * creation.
      * </pre>
      *
      * <code>
@@ -2644,7 +4254,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Labels associated with this workflow.
      * Labels can contain at most 64 entries. Keys and values can be no longer
      * than 63 characters and can only contain lowercase letters, numeric
-     * characters, underscores and dashes. Label keys must start with a letter.
+     * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
      * </pre>
      *
@@ -2670,7 +4280,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Labels associated with this workflow.
      * Labels can contain at most 64 entries. Keys and values can be no longer
      * than 63 characters and can only contain lowercase letters, numeric
-     * characters, underscores and dashes. Label keys must start with a letter.
+     * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
      * </pre>
      *
@@ -2687,7 +4297,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Labels associated with this workflow.
      * Labels can contain at most 64 entries. Keys and values can be no longer
      * than 63 characters and can only contain lowercase letters, numeric
-     * characters, underscores and dashes. Label keys must start with a letter.
+     * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
      * </pre>
      *
@@ -2711,7 +4321,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Labels associated with this workflow.
      * Labels can contain at most 64 entries. Keys and values can be no longer
      * than 63 characters and can only contain lowercase letters, numeric
-     * characters, underscores and dashes. Label keys must start with a letter.
+     * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
      * </pre>
      *
@@ -2741,7 +4351,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Labels associated with this workflow.
      * Labels can contain at most 64 entries. Keys and values can be no longer
      * than 63 characters and can only contain lowercase letters, numeric
-     * characters, underscores and dashes. Label keys must start with a letter.
+     * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
      * </pre>
      *
@@ -2767,7 +4377,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Labels associated with this workflow.
      * Labels can contain at most 64 entries. Keys and values can be no longer
      * than 63 characters and can only contain lowercase letters, numeric
-     * characters, underscores and dashes. Label keys must start with a letter.
+     * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
      * </pre>
      *
@@ -2791,7 +4401,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * Labels associated with this workflow.
      * Labels can contain at most 64 entries. Keys and values can be no longer
      * than 63 characters and can only contain lowercase letters, numeric
-     * characters, underscores and dashes. Label keys must start with a letter.
+     * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
      * </pre>
      *
@@ -2812,9 +4422,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
      * Format: projects/{project}/serviceAccounts/{account} or {account}
+     *
      * Using `-` as a wildcard for the `{project}` or not providing one at all
      * will infer the project from the account. The `{account}` value can be the
      * `email` address or the `unique_id` of the service account.
+     *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
      * revision.
@@ -2843,9 +4455,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
      * Format: projects/{project}/serviceAccounts/{account} or {account}
+     *
      * Using `-` as a wildcard for the `{project}` or not providing one at all
      * will infer the project from the account. The `{account}` value can be the
      * `email` address or the `unique_id` of the service account.
+     *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
      * revision.
@@ -2874,9 +4488,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
      * Format: projects/{project}/serviceAccounts/{account} or {account}
+     *
      * Using `-` as a wildcard for the `{project}` or not providing one at all
      * will infer the project from the account. The `{account}` value can be the
      * `email` address or the `unique_id` of the service account.
+     *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
      * revision.
@@ -2904,9 +4520,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
      * Format: projects/{project}/serviceAccounts/{account} or {account}
+     *
      * Using `-` as a wildcard for the `{project}` or not providing one at all
      * will infer the project from the account. The `{account}` value can be the
      * `email` address or the `unique_id` of the service account.
+     *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
      * revision.
@@ -2930,9 +4548,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
      * Format: projects/{project}/serviceAccounts/{account} or {account}
+     *
      * Using `-` as a wildcard for the `{project}` or not providing one at all
      * will infer the project from the account. The `{account}` value can be the
      * `email` address or the `unique_id` of the service account.
+     *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
      * revision.
@@ -3085,6 +4705,704 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       sourceCodeCase_ = 10;
       sourceCode_ = value;
       onChanged();
+      return this;
+    }
+
+    private java.lang.Object cryptoKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a KMS crypto key used to encrypt or decrypt
+     * the data associated with the workflow.
+     *
+     * Format:
+     * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
+     *
+     * Using `-` as a wildcard for the `{project}` or not providing one at all
+     * will infer the project from the account.
+     *
+     * If not provided, data associated with the workflow will not be
+     * CMEK-encrypted.
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The cryptoKeyName.
+     */
+    public java.lang.String getCryptoKeyName() {
+      java.lang.Object ref = cryptoKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cryptoKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a KMS crypto key used to encrypt or decrypt
+     * the data associated with the workflow.
+     *
+     * Format:
+     * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
+     *
+     * Using `-` as a wildcard for the `{project}` or not providing one at all
+     * will infer the project from the account.
+     *
+     * If not provided, data associated with the workflow will not be
+     * CMEK-encrypted.
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for cryptoKeyName.
+     */
+    public com.google.protobuf.ByteString getCryptoKeyNameBytes() {
+      java.lang.Object ref = cryptoKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cryptoKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a KMS crypto key used to encrypt or decrypt
+     * the data associated with the workflow.
+     *
+     * Format:
+     * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
+     *
+     * Using `-` as a wildcard for the `{project}` or not providing one at all
+     * will infer the project from the account.
+     *
+     * If not provided, data associated with the workflow will not be
+     * CMEK-encrypted.
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The cryptoKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCryptoKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      cryptoKeyName_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a KMS crypto key used to encrypt or decrypt
+     * the data associated with the workflow.
+     *
+     * Format:
+     * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
+     *
+     * Using `-` as a wildcard for the `{project}` or not providing one at all
+     * will infer the project from the account.
+     *
+     * If not provided, data associated with the workflow will not be
+     * CMEK-encrypted.
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCryptoKeyName() {
+      cryptoKeyName_ = getDefaultInstance().getCryptoKeyName();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a KMS crypto key used to encrypt or decrypt
+     * the data associated with the workflow.
+     *
+     * Format:
+     * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
+     *
+     * Using `-` as a wildcard for the `{project}` or not providing one at all
+     * will infer the project from the account.
+     *
+     * If not provided, data associated with the workflow will not be
+     * CMEK-encrypted.
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for cryptoKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCryptoKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      cryptoKeyName_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.workflows.v1.Workflow.StateError stateError_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.workflows.v1.Workflow.StateError,
+            com.google.cloud.workflows.v1.Workflow.StateError.Builder,
+            com.google.cloud.workflows.v1.Workflow.StateErrorOrBuilder>
+        stateErrorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error regarding the state of the workflow. For example, this
+     * field will have error details if the execution data is unavailable due to
+     * revoked KMS key permissions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the stateError field is set.
+     */
+    public boolean hasStateError() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error regarding the state of the workflow. For example, this
+     * field will have error details if the execution data is unavailable due to
+     * revoked KMS key permissions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The stateError.
+     */
+    public com.google.cloud.workflows.v1.Workflow.StateError getStateError() {
+      if (stateErrorBuilder_ == null) {
+        return stateError_ == null
+            ? com.google.cloud.workflows.v1.Workflow.StateError.getDefaultInstance()
+            : stateError_;
+      } else {
+        return stateErrorBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error regarding the state of the workflow. For example, this
+     * field will have error details if the execution data is unavailable due to
+     * revoked KMS key permissions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setStateError(com.google.cloud.workflows.v1.Workflow.StateError value) {
+      if (stateErrorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stateError_ = value;
+      } else {
+        stateErrorBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error regarding the state of the workflow. For example, this
+     * field will have error details if the execution data is unavailable due to
+     * revoked KMS key permissions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setStateError(
+        com.google.cloud.workflows.v1.Workflow.StateError.Builder builderForValue) {
+      if (stateErrorBuilder_ == null) {
+        stateError_ = builderForValue.build();
+      } else {
+        stateErrorBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error regarding the state of the workflow. For example, this
+     * field will have error details if the execution data is unavailable due to
+     * revoked KMS key permissions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeStateError(com.google.cloud.workflows.v1.Workflow.StateError value) {
+      if (stateErrorBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && stateError_ != null
+            && stateError_
+                != com.google.cloud.workflows.v1.Workflow.StateError.getDefaultInstance()) {
+          getStateErrorBuilder().mergeFrom(value);
+        } else {
+          stateError_ = value;
+        }
+      } else {
+        stateErrorBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error regarding the state of the workflow. For example, this
+     * field will have error details if the execution data is unavailable due to
+     * revoked KMS key permissions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearStateError() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      stateError_ = null;
+      if (stateErrorBuilder_ != null) {
+        stateErrorBuilder_.dispose();
+        stateErrorBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error regarding the state of the workflow. For example, this
+     * field will have error details if the execution data is unavailable due to
+     * revoked KMS key permissions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.workflows.v1.Workflow.StateError.Builder getStateErrorBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getStateErrorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error regarding the state of the workflow. For example, this
+     * field will have error details if the execution data is unavailable due to
+     * revoked KMS key permissions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.workflows.v1.Workflow.StateErrorOrBuilder getStateErrorOrBuilder() {
+      if (stateErrorBuilder_ != null) {
+        return stateErrorBuilder_.getMessageOrBuilder();
+      } else {
+        return stateError_ == null
+            ? com.google.cloud.workflows.v1.Workflow.StateError.getDefaultInstance()
+            : stateError_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error regarding the state of the workflow. For example, this
+     * field will have error details if the execution data is unavailable due to
+     * revoked KMS key permissions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.workflows.v1.Workflow.StateError,
+            com.google.cloud.workflows.v1.Workflow.StateError.Builder,
+            com.google.cloud.workflows.v1.Workflow.StateErrorOrBuilder>
+        getStateErrorFieldBuilder() {
+      if (stateErrorBuilder_ == null) {
+        stateErrorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.workflows.v1.Workflow.StateError,
+                com.google.cloud.workflows.v1.Workflow.StateError.Builder,
+                com.google.cloud.workflows.v1.Workflow.StateErrorOrBuilder>(
+                getStateError(), getParentForChildren(), isClean());
+        stateError_ = null;
+      }
+      return stateErrorBuilder_;
+    }
+
+    private int callLogLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the level of platform logging to apply to calls and
+     * call responses during executions of this workflow. If both the workflow and
+     * the execution specify a logging level, the execution level takes
+     * precedence.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.CallLogLevel call_log_level = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for callLogLevel.
+     */
+    @java.lang.Override
+    public int getCallLogLevelValue() {
+      return callLogLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the level of platform logging to apply to calls and
+     * call responses during executions of this workflow. If both the workflow and
+     * the execution specify a logging level, the execution level takes
+     * precedence.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.CallLogLevel call_log_level = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for callLogLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCallLogLevelValue(int value) {
+      callLogLevel_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the level of platform logging to apply to calls and
+     * call responses during executions of this workflow. If both the workflow and
+     * the execution specify a logging level, the execution level takes
+     * precedence.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.CallLogLevel call_log_level = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The callLogLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.workflows.v1.Workflow.CallLogLevel getCallLogLevel() {
+      com.google.cloud.workflows.v1.Workflow.CallLogLevel result =
+          com.google.cloud.workflows.v1.Workflow.CallLogLevel.forNumber(callLogLevel_);
+      return result == null
+          ? com.google.cloud.workflows.v1.Workflow.CallLogLevel.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the level of platform logging to apply to calls and
+     * call responses during executions of this workflow. If both the workflow and
+     * the execution specify a logging level, the execution level takes
+     * precedence.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.CallLogLevel call_log_level = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The callLogLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCallLogLevel(com.google.cloud.workflows.v1.Workflow.CallLogLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00001000;
+      callLogLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the level of platform logging to apply to calls and
+     * call responses during executions of this workflow. If both the workflow and
+     * the execution specify a logging level, the execution level takes
+     * precedence.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.Workflow.CallLogLevel call_log_level = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCallLogLevel() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      callLogLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> userEnvVars_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetUserEnvVars() {
+      if (userEnvVars_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UserEnvVarsDefaultEntryHolder.defaultEntry);
+      }
+      return userEnvVars_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableUserEnvVars() {
+      if (userEnvVars_ == null) {
+        userEnvVars_ =
+            com.google.protobuf.MapField.newMapField(UserEnvVarsDefaultEntryHolder.defaultEntry);
+      }
+      if (!userEnvVars_.isMutable()) {
+        userEnvVars_ = userEnvVars_.copy();
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return userEnvVars_;
+    }
+
+    public int getUserEnvVarsCount() {
+      return internalGetUserEnvVars().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined environment variables associated with this workflow
+     * revision. This map has a maximum length of 20. Each string can take up to
+     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+     * “WORKFLOWS".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsUserEnvVars(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetUserEnvVars().getMap().containsKey(key);
+    }
+    /** Use {@link #getUserEnvVarsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getUserEnvVars() {
+      return getUserEnvVarsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined environment variables associated with this workflow
+     * revision. This map has a maximum length of 20. Each string can take up to
+     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+     * “WORKFLOWS".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getUserEnvVarsMap() {
+      return internalGetUserEnvVars().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined environment variables associated with this workflow
+     * revision. This map has a maximum length of 20. Each string can take up to
+     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+     * “WORKFLOWS".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getUserEnvVarsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserEnvVars().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined environment variables associated with this workflow
+     * revision. This map has a maximum length of 20. Each string can take up to
+     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+     * “WORKFLOWS".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getUserEnvVarsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserEnvVars().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearUserEnvVars() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      internalGetMutableUserEnvVars().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined environment variables associated with this workflow
+     * revision. This map has a maximum length of 20. Each string can take up to
+     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+     * “WORKFLOWS".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeUserEnvVars(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableUserEnvVars().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableUserEnvVars() {
+      bitField0_ |= 0x00002000;
+      return internalGetMutableUserEnvVars().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined environment variables associated with this workflow
+     * revision. This map has a maximum length of 20. Each string can take up to
+     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+     * “WORKFLOWS".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putUserEnvVars(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableUserEnvVars().getMutableMap().put(key, value);
+      bitField0_ |= 0x00002000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined environment variables associated with this workflow
+     * revision. This map has a maximum length of 20. Each string can take up to
+     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+     * “WORKFLOWS".
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllUserEnvVars(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableUserEnvVars().getMutableMap().putAll(values);
+      bitField0_ |= 0x00002000;
       return this;
     }
 

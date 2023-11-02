@@ -221,6 +221,10 @@ message SearchDocumentsResponse {
     // Experimental.
     // Additional result info if the question-answering feature is enabled.
     QAResult qa_result = 3;
+
+    // Return the 1-based page indices where those pages have one or more
+    // matched tokens.
+    repeated int64 matched_token_page_indices = 4;
   }
 
   // The document entities that match the specified
@@ -248,6 +252,10 @@ message SearchDocumentsResponse {
   // The histogram results that match with the specified
   // [SearchDocumentsRequest.histogram_queries][google.cloud.contentwarehouse.v1.SearchDocumentsRequest.histogram_queries].
   repeated HistogramQueryResult histogram_query_results = 6;
+
+  // Experimental.
+  // Question answer from the query against the document.
+  string question_answer = 7;
 }
 
 // Response message for DocumentService.FetchAcl.

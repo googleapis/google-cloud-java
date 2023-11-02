@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     return new BigQueryDestination();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.IoProto
         .internal_static_google_cloud_aiplatform_v1_BigQueryDestination_descriptor;
@@ -76,10 +71,13 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. BigQuery URI to a project or table, up to 2000 characters long.
+   *
    * When only the project is specified, the Dataset and Table is created.
    * When the full table reference is specified, the Dataset must exist and
    * table must not exist.
+   *
    * Accepted forms:
+   *
    * *  BigQuery path. For example:
    * `bq://projectId` or `bq://projectId.bqDatasetId` or
    * `bq://projectId.bqDatasetId.bqTableId`.
@@ -106,10 +104,13 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. BigQuery URI to a project or table, up to 2000 characters long.
+   *
    * When only the project is specified, the Dataset and Table is created.
    * When the full table reference is specified, the Dataset must exist and
    * table must not exist.
+   *
    * Accepted forms:
+   *
    * *  BigQuery path. For example:
    * `bq://projectId` or `bq://projectId.bqDatasetId` or
    * `bq://projectId.bqDatasetId.bqTableId`.
@@ -480,10 +481,13 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. BigQuery URI to a project or table, up to 2000 characters long.
+     *
      * When only the project is specified, the Dataset and Table is created.
      * When the full table reference is specified, the Dataset must exist and
      * table must not exist.
+     *
      * Accepted forms:
+     *
      * *  BigQuery path. For example:
      * `bq://projectId` or `bq://projectId.bqDatasetId` or
      * `bq://projectId.bqDatasetId.bqTableId`.
@@ -509,10 +513,13 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. BigQuery URI to a project or table, up to 2000 characters long.
+     *
      * When only the project is specified, the Dataset and Table is created.
      * When the full table reference is specified, the Dataset must exist and
      * table must not exist.
+     *
      * Accepted forms:
+     *
      * *  BigQuery path. For example:
      * `bq://projectId` or `bq://projectId.bqDatasetId` or
      * `bq://projectId.bqDatasetId.bqTableId`.
@@ -538,10 +545,13 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. BigQuery URI to a project or table, up to 2000 characters long.
+     *
      * When only the project is specified, the Dataset and Table is created.
      * When the full table reference is specified, the Dataset must exist and
      * table must not exist.
+     *
      * Accepted forms:
+     *
      * *  BigQuery path. For example:
      * `bq://projectId` or `bq://projectId.bqDatasetId` or
      * `bq://projectId.bqDatasetId.bqTableId`.
@@ -566,10 +576,13 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. BigQuery URI to a project or table, up to 2000 characters long.
+     *
      * When only the project is specified, the Dataset and Table is created.
      * When the full table reference is specified, the Dataset must exist and
      * table must not exist.
+     *
      * Accepted forms:
+     *
      * *  BigQuery path. For example:
      * `bq://projectId` or `bq://projectId.bqDatasetId` or
      * `bq://projectId.bqDatasetId.bqTableId`.
@@ -590,10 +603,13 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. BigQuery URI to a project or table, up to 2000 characters long.
+     *
      * When only the project is specified, the Dataset and Table is created.
      * When the full table reference is specified, the Dataset must exist and
      * table must not exist.
+     *
      * Accepted forms:
+     *
      * *  BigQuery path. For example:
      * `bq://projectId` or `bq://projectId.bqDatasetId` or
      * `bq://projectId.bqDatasetId.bqTableId`.

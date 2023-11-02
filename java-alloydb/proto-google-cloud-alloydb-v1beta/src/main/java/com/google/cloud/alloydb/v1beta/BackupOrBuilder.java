@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -399,7 +399,7 @@ public interface BackupOrBuilder
    *
    * <pre>
    * Required. The full resource name of the backup source cluster
-   * (e.g., projects/&lt;project&gt;/locations/&lt;location&gt;/clusters/&lt;cluster_id&gt;).
+   * (e.g., projects/{project}/locations/{region}/clusters/{cluster_id}).
    * </pre>
    *
    * <code>
@@ -414,7 +414,7 @@ public interface BackupOrBuilder
    *
    * <pre>
    * Required. The full resource name of the backup source cluster
-   * (e.g., projects/&lt;project&gt;/locations/&lt;location&gt;/clusters/&lt;cluster_id&gt;).
+   * (e.g., projects/{project}/locations/{region}/clusters/{cluster_id}).
    * </pre>
    *
    * <code>
@@ -681,4 +681,84 @@ public interface BackupOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getExpiryTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The QuantityBasedExpiry of the backup, specified by the
+   * backup's retention policy. Once the expiry quantity is over retention, the
+   * backup is eligible to be garbage collected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the expiryQuantity field is set.
+   */
+  boolean hasExpiryQuantity();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The QuantityBasedExpiry of the backup, specified by the
+   * backup's retention policy. Once the expiry quantity is over retention, the
+   * backup is eligible to be garbage collected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The expiryQuantity.
+   */
+  com.google.cloud.alloydb.v1beta.Backup.QuantityBasedExpiry getExpiryQuantity();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The QuantityBasedExpiry of the backup, specified by the
+   * backup's retention policy. Once the expiry quantity is over retention, the
+   * backup is eligible to be garbage collected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.Backup.QuantityBasedExpiryOrBuilder getExpiryQuantityOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database engine major version of the cluster this backup
+   * was created from. Any restored cluster created from this backup will have
+   * the same database version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for databaseVersion.
+   */
+  int getDatabaseVersionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database engine major version of the cluster this backup
+   * was created from. Any restored cluster created from this backup will have
+   * the same database version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The databaseVersion.
+   */
+  com.google.cloud.alloydb.v1beta.DatabaseVersion getDatabaseVersion();
 }

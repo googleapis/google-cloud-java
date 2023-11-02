@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface TranslateTextGlossaryConfigOrBuilder
    *
    * <pre>
    * Required. The `glossary` to be applied for this translation.
+   *
    * The format depends on the glossary:
+   *
    * - User-provided custom glossary:
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
@@ -43,7 +45,9 @@ public interface TranslateTextGlossaryConfigOrBuilder
    *
    * <pre>
    * Required. The `glossary` to be applied for this translation.
+   *
    * The format depends on the glossary:
+   *
    * - User-provided custom glossary:
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>

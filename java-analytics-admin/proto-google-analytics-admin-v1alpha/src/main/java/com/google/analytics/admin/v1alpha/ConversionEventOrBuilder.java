@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,4 +146,37 @@ public interface ConversionEventOrBuilder
    * @return The custom.
    */
   boolean getCustom();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The method by which conversions will be counted across multiple
+   * events within a session. If this value is not provided, it will be set to
+   * `ONCE_PER_EVENT`.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.ConversionEvent.ConversionCountingMethod counting_method = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for countingMethod.
+   */
+  int getCountingMethodValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The method by which conversions will be counted across multiple
+   * events within a session. If this value is not provided, it will be set to
+   * `ONCE_PER_EVENT`.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.ConversionEvent.ConversionCountingMethod counting_method = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The countingMethod.
+   */
+  com.google.analytics.admin.v1alpha.ConversionEvent.ConversionCountingMethod getCountingMethod();
 }

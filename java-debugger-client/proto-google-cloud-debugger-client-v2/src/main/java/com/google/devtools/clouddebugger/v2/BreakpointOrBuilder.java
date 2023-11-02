@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -211,6 +211,7 @@ public interface BreakpointOrBuilder
    * `$1`, etc. These placeholders are replaced with the evaluated value
    * of the appropriate expression. Expressions not referenced in
    * `log_message_format` are not logged.
+   *
    * Example: `Message received, id = $0, count = $1` with
    * `expressions` = `[ message.id, message.count ]`.
    * </pre>
@@ -229,6 +230,7 @@ public interface BreakpointOrBuilder
    * `$1`, etc. These placeholders are replaced with the evaluated value
    * of the appropriate expression. Expressions not referenced in
    * `log_message_format` are not logged.
+   *
    * Example: `Message received, id = $0, count = $1` with
    * `expressions` = `[ message.id, message.count ]`.
    * </pre>
@@ -381,13 +383,18 @@ public interface BreakpointOrBuilder
    *
    * <pre>
    * Breakpoint status.
+   *
    * The status includes an error flag and a human readable message.
    * This field is usually unset. The message can be either
    * informational or an error message. Regardless, clients should always
    * display the text message back to the user.
+   *
    * Error status indicates complete failure of the breakpoint.
+   *
    * Example (non-final state): `Still loading symbols...`
+   *
    * Examples (final state):
+   *
    * *   `Invalid line number` referring to location
    * *   `Field f not found in class C` referring to condition
    * </pre>
@@ -402,13 +409,18 @@ public interface BreakpointOrBuilder
    *
    * <pre>
    * Breakpoint status.
+   *
    * The status includes an error flag and a human readable message.
    * This field is usually unset. The message can be either
    * informational or an error message. Regardless, clients should always
    * display the text message back to the user.
+   *
    * Error status indicates complete failure of the breakpoint.
+   *
    * Example (non-final state): `Still loading symbols...`
+   *
    * Examples (final state):
+   *
    * *   `Invalid line number` referring to location
    * *   `Field f not found in class C` referring to condition
    * </pre>
@@ -423,13 +435,18 @@ public interface BreakpointOrBuilder
    *
    * <pre>
    * Breakpoint status.
+   *
    * The status includes an error flag and a human readable message.
    * This field is usually unset. The message can be either
    * informational or an error message. Regardless, clients should always
    * display the text message back to the user.
+   *
    * Error status indicates complete failure of the breakpoint.
+   *
    * Example (non-final state): `Still loading symbols...`
+   *
    * Examples (final state):
+   *
    * *   `Invalid line number` referring to location
    * *   `Field f not found in class C` referring to condition
    * </pre>
@@ -589,6 +606,7 @@ public interface BreakpointOrBuilder
    * For example, the same `this` object, which may appear at many levels of
    * the stack, can have all of its data stored once in this table.  The
    * stack frame variables then would hold only a reference to it.
+   *
    * The variable `var_table_index` field is an index into this repeated field.
    * The stored objects are nameless and get their name from the referencing
    * variable. The effective variable is a merge of the referencing variable
@@ -609,6 +627,7 @@ public interface BreakpointOrBuilder
    * For example, the same `this` object, which may appear at many levels of
    * the stack, can have all of its data stored once in this table.  The
    * stack frame variables then would hold only a reference to it.
+   *
    * The variable `var_table_index` field is an index into this repeated field.
    * The stored objects are nameless and get their name from the referencing
    * variable. The effective variable is a merge of the referencing variable
@@ -629,6 +648,7 @@ public interface BreakpointOrBuilder
    * For example, the same `this` object, which may appear at many levels of
    * the stack, can have all of its data stored once in this table.  The
    * stack frame variables then would hold only a reference to it.
+   *
    * The variable `var_table_index` field is an index into this repeated field.
    * The stored objects are nameless and get their name from the referencing
    * variable. The effective variable is a merge of the referencing variable
@@ -649,6 +669,7 @@ public interface BreakpointOrBuilder
    * For example, the same `this` object, which may appear at many levels of
    * the stack, can have all of its data stored once in this table.  The
    * stack frame variables then would hold only a reference to it.
+   *
    * The variable `var_table_index` field is an index into this repeated field.
    * The stored objects are nameless and get their name from the referencing
    * variable. The effective variable is a merge of the referencing variable
@@ -670,6 +691,7 @@ public interface BreakpointOrBuilder
    * For example, the same `this` object, which may appear at many levels of
    * the stack, can have all of its data stored once in this table.  The
    * stack frame variables then would hold only a reference to it.
+   *
    * The variable `var_table_index` field is an index into this repeated field.
    * The stored objects are nameless and get their name from the referencing
    * variable. The effective variable is a merge of the referencing variable

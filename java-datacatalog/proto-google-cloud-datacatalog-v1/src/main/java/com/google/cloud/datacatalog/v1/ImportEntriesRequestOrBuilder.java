@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,5 +89,32 @@ public interface ImportEntriesRequestOrBuilder
    */
   com.google.protobuf.ByteString getGcsBucketPathBytes();
 
-  public com.google.cloud.datacatalog.v1.ImportEntriesRequest.SourceCase getSourceCase();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. (Optional) Dataplex task job id, if specified will be used as
+   * part of ImportEntries LRO ID
+   * </pre>
+   *
+   * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The jobId.
+   */
+  java.lang.String getJobId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. (Optional) Dataplex task job id, if specified will be used as
+   * part of ImportEntries LRO ID
+   * </pre>
+   *
+   * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for jobId.
+   */
+  com.google.protobuf.ByteString getJobIdBytes();
+
+  com.google.cloud.datacatalog.v1.ImportEntriesRequest.SourceCase getSourceCase();
 }

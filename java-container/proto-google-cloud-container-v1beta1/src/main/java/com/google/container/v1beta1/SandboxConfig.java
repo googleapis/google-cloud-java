@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SandboxConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -217,7 +212,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>string sandbox_type = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=940
+   *     google/container/v1beta1/cluster_service.proto;l=1006
    * @return The sandboxType.
    */
   @java.lang.Override
@@ -243,7 +238,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>string sandbox_type = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=940
+   *     google/container/v1beta1/cluster_service.proto;l=1006
    * @return The bytes for sandboxType.
    */
   @java.lang.Override
@@ -669,7 +664,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string sandbox_type = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=940
+     *     google/container/v1beta1/cluster_service.proto;l=1006
      * @return The sandboxType.
      */
     @java.lang.Deprecated
@@ -694,7 +689,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string sandbox_type = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=940
+     *     google/container/v1beta1/cluster_service.proto;l=1006
      * @return The bytes for sandboxType.
      */
     @java.lang.Deprecated
@@ -719,7 +714,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string sandbox_type = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=940
+     *     google/container/v1beta1/cluster_service.proto;l=1006
      * @param value The sandboxType to set.
      * @return This builder for chaining.
      */
@@ -743,7 +738,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string sandbox_type = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=940
+     *     google/container/v1beta1/cluster_service.proto;l=1006
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -763,7 +758,7 @@ public final class SandboxConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>string sandbox_type = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=940
+     *     google/container/v1beta1/cluster_service.proto;l=1006
      * @param value The bytes for sandboxType to set.
      * @return This builder for chaining.
      */

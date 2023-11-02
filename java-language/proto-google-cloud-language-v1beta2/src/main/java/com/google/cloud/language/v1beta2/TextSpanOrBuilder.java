@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,9 @@ public interface TextSpanOrBuilder
    *
    * <pre>
    * The API calculates the beginning offset of the content in the original
-   * document according to the [EncodingType][google.cloud.language.v1beta2.EncodingType] specified in the API request.
+   * document according to the
+   * [EncodingType][google.cloud.language.v1beta2.EncodingType] specified in the
+   * API request.
    * </pre>
    *
    * <code>int32 begin_offset = 2;</code>

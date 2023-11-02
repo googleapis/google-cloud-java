@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
   private ListBackupsResponse() {
     backups_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
-    unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListBackupsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,6 +73,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A list of backups in the project for the specified location.
+   *
    * If the `{location}` value in the request is "-", the response contains a
    * list of backups from all locations. If any location is unreachable, the
    * response will only return backups in reachable locations and the
@@ -96,6 +92,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A list of backups in the project for the specified location.
+   *
    * If the `{location}` value in the request is "-", the response contains a
    * list of backups from all locations. If any location is unreachable, the
    * response will only return backups in reachable locations and the
@@ -115,6 +112,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A list of backups in the project for the specified location.
+   *
    * If the `{location}` value in the request is "-", the response contains a
    * list of backups from all locations. If any location is unreachable, the
    * response will only return backups in reachable locations and the
@@ -133,6 +131,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A list of backups in the project for the specified location.
+   *
    * If the `{location}` value in the request is "-", the response contains a
    * list of backups from all locations. If any location is unreachable, the
    * response will only return backups in reachable locations and the
@@ -151,6 +150,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A list of backups in the project for the specified location.
+   *
    * If the `{location}` value in the request is "-", the response contains a
    * list of backups from all locations. If any location is unreachable, the
    * response will only return backups in reachable locations and the
@@ -221,7 +221,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
   public static final int UNREACHABLE_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unreachable_;
+  private com.google.protobuf.LazyStringArrayList unreachable_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -515,8 +516,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -563,17 +563,16 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       } else {
         result.backups_ = backupsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        unreachable_ = unreachable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.unreachable_ = unreachable_;
     }
 
     private void buildPartial0(com.google.cloud.filestore.v1beta1.ListBackupsResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        unreachable_.makeImmutable();
+        result.unreachable_ = unreachable_;
       }
     }
 
@@ -658,7 +657,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       if (!other.unreachable_.isEmpty()) {
         if (unreachable_.isEmpty()) {
           unreachable_ = other.unreachable_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureUnreachableIsMutable();
           unreachable_.addAll(other.unreachable_);
@@ -757,6 +756,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -778,6 +778,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -799,6 +800,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -820,6 +822,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -847,6 +850,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -872,6 +876,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -899,6 +904,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -926,6 +932,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -950,6 +957,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -975,6 +983,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -1000,6 +1009,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -1024,6 +1034,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -1048,6 +1059,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -1065,6 +1077,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -1086,6 +1099,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -1108,6 +1122,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -1126,6 +1141,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -1144,6 +1160,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of backups in the project for the specified location.
+     *
      * If the `{location}` value in the request is "-", the response contains a
      * list of backups from all locations. If any location is unreachable, the
      * response will only return backups in reachable locations and the
@@ -1286,14 +1303,14 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.LazyStringList unreachable_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUnreachableIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!unreachable_.isModifiable()) {
         unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1307,7 +1324,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      * @return A list containing the unreachable.
      */
     public com.google.protobuf.ProtocolStringList getUnreachableList() {
-      return unreachable_.getUnmodifiableView();
+      unreachable_.makeImmutable();
+      return unreachable_;
     }
     /**
      *
@@ -1372,6 +1390,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       ensureUnreachableIsMutable();
       unreachable_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1393,6 +1412,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1411,6 +1431,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
       ensureUnreachableIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1426,8 +1447,9 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearUnreachable() {
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1450,6 +1472,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

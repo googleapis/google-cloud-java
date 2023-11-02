@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,12 +24,16 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -38,6 +42,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.webrisk.v1.ComputeThreatListDiffRequest;
 import com.google.webrisk.v1.ComputeThreatListDiffResponse;
 import com.google.webrisk.v1.CreateSubmissionRequest;
@@ -46,6 +51,8 @@ import com.google.webrisk.v1.SearchHashesResponse;
 import com.google.webrisk.v1.SearchUrisRequest;
 import com.google.webrisk.v1.SearchUrisResponse;
 import com.google.webrisk.v1.Submission;
+import com.google.webrisk.v1.SubmitUriMetadata;
+import com.google.webrisk.v1.SubmitUriRequest;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -99,6 +106,9 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
   private final UnaryCallSettings<SearchUrisRequest, SearchUrisResponse> searchUrisSettings;
   private final UnaryCallSettings<SearchHashesRequest, SearchHashesResponse> searchHashesSettings;
   private final UnaryCallSettings<CreateSubmissionRequest, Submission> createSubmissionSettings;
+  private final UnaryCallSettings<SubmitUriRequest, Operation> submitUriSettings;
+  private final OperationCallSettings<SubmitUriRequest, Submission, SubmitUriMetadata>
+      submitUriOperationSettings;
 
   /** Returns the object with the settings used for calls to computeThreatListDiff. */
   public UnaryCallSettings<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
@@ -119,6 +129,17 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
   /** Returns the object with the settings used for calls to createSubmission. */
   public UnaryCallSettings<CreateSubmissionRequest, Submission> createSubmissionSettings() {
     return createSubmissionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to submitUri. */
+  public UnaryCallSettings<SubmitUriRequest, Operation> submitUriSettings() {
+    return submitUriSettings;
+  }
+
+  /** Returns the object with the settings used for calls to submitUri. */
+  public OperationCallSettings<SubmitUriRequest, Submission, SubmitUriMetadata>
+      submitUriOperationSettings() {
+    return submitUriOperationSettings;
   }
 
   public WebRiskServiceStub createStub() throws IOException {
@@ -231,6 +252,8 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
     searchUrisSettings = settingsBuilder.searchUrisSettings().build();
     searchHashesSettings = settingsBuilder.searchHashesSettings().build();
     createSubmissionSettings = settingsBuilder.createSubmissionSettings().build();
+    submitUriSettings = settingsBuilder.submitUriSettings().build();
+    submitUriOperationSettings = settingsBuilder.submitUriOperationSettings().build();
   }
 
   /** Builder for WebRiskServiceStubSettings. */
@@ -245,6 +268,9 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
         searchHashesSettings;
     private final UnaryCallSettings.Builder<CreateSubmissionRequest, Submission>
         createSubmissionSettings;
+    private final UnaryCallSettings.Builder<SubmitUriRequest, Operation> submitUriSettings;
+    private final OperationCallSettings.Builder<SubmitUriRequest, Submission, SubmitUriMetadata>
+        submitUriOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -258,6 +284,7 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -285,6 +312,8 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -299,13 +328,16 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
       searchUrisSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchHashesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSubmissionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      submitUriSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      submitUriOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               computeThreatListDiffSettings,
               searchUrisSettings,
               searchHashesSettings,
-              createSubmissionSettings);
+              createSubmissionSettings,
+              submitUriSettings);
       initDefaults(this);
     }
 
@@ -316,13 +348,16 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
       searchUrisSettings = settings.searchUrisSettings.toBuilder();
       searchHashesSettings = settings.searchHashesSettings.toBuilder();
       createSubmissionSettings = settings.createSubmissionSettings.toBuilder();
+      submitUriSettings = settings.submitUriSettings.toBuilder();
+      submitUriOperationSettings = settings.submitUriOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               computeThreatListDiffSettings,
               searchUrisSettings,
               searchHashesSettings,
-              createSubmissionSettings);
+              createSubmissionSettings,
+              submitUriSettings);
     }
 
     private static Builder createDefault() {
@@ -372,6 +407,34 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .submitUriSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .submitUriOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<SubmitUriRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Submission.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(SubmitUriMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -411,6 +474,19 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
     public UnaryCallSettings.Builder<CreateSubmissionRequest, Submission>
         createSubmissionSettings() {
       return createSubmissionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to submitUri. */
+    public UnaryCallSettings.Builder<SubmitUriRequest, Operation> submitUriSettings() {
+      return submitUriSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to submitUri. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SubmitUriRequest, Submission, SubmitUriMetadata>
+        submitUriOperationSettings() {
+      return submitUriOperationSettings;
     }
 
     @Override

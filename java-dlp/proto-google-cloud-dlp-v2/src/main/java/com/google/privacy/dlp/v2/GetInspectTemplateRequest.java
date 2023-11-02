@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
     return new GetInspectTemplateRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_GetInspectTemplateRequest_descriptor;
@@ -75,8 +70,8 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Resource name of the organization and inspectTemplate to be read, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
+   * Required. Resource name of the organization and inspectTemplate to be read,
+   * for example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
@@ -102,8 +97,8 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Resource name of the organization and inspectTemplate to be read, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
+   * Required. Resource name of the organization and inspectTemplate to be read,
+   * for example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
@@ -473,8 +468,8 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Resource name of the organization and inspectTemplate to be read, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of the organization and inspectTemplate to be read,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -499,8 +494,8 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Resource name of the organization and inspectTemplate to be read, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of the organization and inspectTemplate to be read,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -525,8 +520,8 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Resource name of the organization and inspectTemplate to be read, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of the organization and inspectTemplate to be read,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -550,8 +545,8 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Resource name of the organization and inspectTemplate to be read, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of the organization and inspectTemplate to be read,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -571,8 +566,8 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Resource name of the organization and inspectTemplate to be read, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of the organization and inspectTemplate to be read,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *

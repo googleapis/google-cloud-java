@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,10 @@ public final class MachineResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_DiskSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_PersistentDiskSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_PersistentDiskSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_NfsMount_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_NfsMount_fieldAccessorTable;
@@ -72,35 +76,37 @@ public final class MachineResourcesProto {
           + "ources.proto\022\032google.cloud.aiplatform.v1"
           + "\032\037google/api/field_behavior.proto\0321googl"
           + "e/cloud/aiplatform/v1/accelerator_type.p"
-          + "roto\"\217\001\n\013MachineSpec\022\031\n\014machine_type\030\001 \001"
-          + "(\tB\003\340A\005\022J\n\020accelerator_type\030\002 \001(\0162+.goog"
-          + "le.cloud.aiplatform.v1.AcceleratorTypeB\003"
-          + "\340A\005\022\031\n\021accelerator_count\030\003 \001(\005\"\370\001\n\022Dedic"
-          + "atedResources\022E\n\014machine_spec\030\001 \001(\0132\'.go"
-          + "ogle.cloud.aiplatform.v1.MachineSpecB\006\340A"
-          + "\002\340A\005\022!\n\021min_replica_count\030\002 \001(\005B\006\340A\002\340A\005\022"
-          + "\036\n\021max_replica_count\030\003 \001(\005B\003\340A\005\022X\n\030autos"
-          + "caling_metric_specs\030\004 \003(\01321.google.cloud"
-          + ".aiplatform.v1.AutoscalingMetricSpecB\003\340A"
-          + "\005\"T\n\022AutomaticResources\022\036\n\021min_replica_c"
-          + "ount\030\001 \001(\005B\003\340A\005\022\036\n\021max_replica_count\030\002 \001"
-          + "(\005B\003\340A\005\"\245\001\n\027BatchDedicatedResources\022E\n\014m"
-          + "achine_spec\030\001 \001(\0132\'.google.cloud.aiplatf"
-          + "orm.v1.MachineSpecB\006\340A\002\340A\005\022#\n\026starting_r"
-          + "eplica_count\030\002 \001(\005B\003\340A\005\022\036\n\021max_replica_c"
-          + "ount\030\003 \001(\005B\003\340A\005\"/\n\021ResourcesConsumed\022\032\n\r"
-          + "replica_hours\030\001 \001(\001B\003\340A\003\"=\n\010DiskSpec\022\026\n\016"
-          + "boot_disk_type\030\001 \001(\t\022\031\n\021boot_disk_size_g"
-          + "b\030\002 \001(\005\"L\n\010NfsMount\022\023\n\006server\030\001 \001(\tB\003\340A\002"
-          + "\022\021\n\004path\030\002 \001(\tB\003\340A\002\022\030\n\013mount_point\030\003 \001(\t"
-          + "B\003\340A\002\"A\n\025AutoscalingMetricSpec\022\030\n\013metric"
-          + "_name\030\001 \001(\tB\003\340A\002\022\016\n\006target\030\002 \001(\005B\323\001\n\036com"
-          + ".google.cloud.aiplatform.v1B\025MachineReso"
-          + "urcesProtoP\001Z>cloud.google.com/go/aiplat"
-          + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
-          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
-          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
-          + "rm::V1b\006proto3"
+          + "roto\"\221\001\n\013MachineSpec\022\032\n\014machine_type\030\001 \001"
+          + "(\tB\004\342A\001\005\022K\n\020accelerator_type\030\002 \001(\0162+.goo"
+          + "gle.cloud.aiplatform.v1.AcceleratorTypeB"
+          + "\004\342A\001\005\022\031\n\021accelerator_count\030\003 \001(\005\"\370\001\n\022Ded"
+          + "icatedResources\022D\n\014machine_spec\030\001 \001(\0132\'."
+          + "google.cloud.aiplatform.v1.MachineSpecB\005"
+          + "\342A\002\002\005\022 \n\021min_replica_count\030\002 \001(\005B\005\342A\002\002\005\022"
+          + "\037\n\021max_replica_count\030\003 \001(\005B\004\342A\001\005\022Y\n\030auto"
+          + "scaling_metric_specs\030\004 \003(\01321.google.clou"
+          + "d.aiplatform.v1.AutoscalingMetricSpecB\004\342"
+          + "A\001\005\"V\n\022AutomaticResources\022\037\n\021min_replica"
+          + "_count\030\001 \001(\005B\004\342A\001\005\022\037\n\021max_replica_count\030"
+          + "\002 \001(\005B\004\342A\001\005\"\246\001\n\027BatchDedicatedResources\022"
+          + "D\n\014machine_spec\030\001 \001(\0132\'.google.cloud.aip"
+          + "latform.v1.MachineSpecB\005\342A\002\002\005\022$\n\026startin"
+          + "g_replica_count\030\002 \001(\005B\004\342A\001\005\022\037\n\021max_repli"
+          + "ca_count\030\003 \001(\005B\004\342A\001\005\"0\n\021ResourcesConsume"
+          + "d\022\033\n\rreplica_hours\030\001 \001(\001B\004\342A\001\003\"=\n\010DiskSp"
+          + "ec\022\026\n\016boot_disk_type\030\001 \001(\t\022\031\n\021boot_disk_"
+          + "size_gb\030\002 \001(\005\"=\n\022PersistentDiskSpec\022\021\n\td"
+          + "isk_type\030\001 \001(\t\022\024\n\014disk_size_gb\030\002 \001(\003\"O\n\010"
+          + "NfsMount\022\024\n\006server\030\001 \001(\tB\004\342A\001\002\022\022\n\004path\030\002"
+          + " \001(\tB\004\342A\001\002\022\031\n\013mount_point\030\003 \001(\tB\004\342A\001\002\"B\n"
+          + "\025AutoscalingMetricSpec\022\031\n\013metric_name\030\001 "
+          + "\001(\tB\004\342A\001\002\022\016\n\006target\030\002 \001(\005B\323\001\n\036com.google"
+          + ".cloud.aiplatform.v1B\025MachineResourcesPr"
+          + "otoP\001Z>cloud.google.com/go/aiplatform/ap"
+          + "iv1/aiplatformpb;aiplatformpb\252\002\032Google.C"
+          + "loud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlat"
+          + "form\\V1\352\002\035Google::Cloud::AIPlatform::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -157,8 +163,16 @@ public final class MachineResourcesProto {
             new java.lang.String[] {
               "BootDiskType", "BootDiskSizeGb",
             });
-    internal_static_google_cloud_aiplatform_v1_NfsMount_descriptor =
+    internal_static_google_cloud_aiplatform_v1_PersistentDiskSpec_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1_PersistentDiskSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_PersistentDiskSpec_descriptor,
+            new java.lang.String[] {
+              "DiskType", "DiskSizeGb",
+            });
+    internal_static_google_cloud_aiplatform_v1_NfsMount_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_aiplatform_v1_NfsMount_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_NfsMount_descriptor,
@@ -166,7 +180,7 @@ public final class MachineResourcesProto {
               "Server", "Path", "MountPoint",
             });
     internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_descriptor,

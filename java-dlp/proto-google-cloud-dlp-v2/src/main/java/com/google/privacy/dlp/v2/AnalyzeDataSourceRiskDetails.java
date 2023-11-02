@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnalyzeDataSourceRiskDetails();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -224,11 +219,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NumericalStatsResult();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1802,11 +1792,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return new CategoricalStatsResult();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_CategoricalStatsResult_descriptor;
@@ -1967,11 +1952,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new CategoricalStatsHistogramBucket();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4487,11 +4467,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return new KAnonymityResult();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KAnonymityResult_descriptor;
@@ -4619,11 +4594,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new KAnonymityEquivalenceClass();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5902,11 +5872,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new KAnonymityHistogramBucket();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8542,11 +8507,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return new LDiversityResult();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_LDiversityResult_descriptor;
@@ -8734,11 +8694,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new LDiversityEquivalenceClass();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10589,11 +10544,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new LDiversityHistogramBucket();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -13279,11 +13229,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return new KMapEstimationResult();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_KMapEstimationResult_descriptor;
@@ -13400,11 +13345,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new KMapEstimationQuasiIdValues();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -14641,11 +14581,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new KMapEstimationHistogramBucket();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -17482,11 +17417,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return new DeltaPresenceEstimationResult();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_DeltaPresenceEstimationResult_descriptor;
@@ -17611,11 +17541,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new DeltaPresenceEstimationQuasiIdValues();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -18888,11 +18813,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new DeltaPresenceEstimationHistogramBucket();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -21708,11 +21628,6 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       return new RequestedRiskAnalysisOptions();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_RequestedRiskAnalysisOptions_descriptor;
@@ -22431,6 +22346,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
   }
 
   private int resultCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object result_;
 
   public enum ResultCase

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,13 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     environmentSize_ = 0;
     airflowUri_ = "";
     airflowByoidUri_ = "";
+    resilienceMode_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EnvironmentConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -255,6 +251,144 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Resilience mode of the Cloud Composer Environment.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode}
+   */
+  public enum ResilienceMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default mode doesn't change environment parameters.
+     * </pre>
+     *
+     * <code>RESILIENCE_MODE_UNSPECIFIED = 0;</code>
+     */
+    RESILIENCE_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Enabled High Resilience mode, including Cloud SQL HA.
+     * </pre>
+     *
+     * <code>HIGH_RESILIENCE = 1;</code>
+     */
+    HIGH_RESILIENCE(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default mode doesn't change environment parameters.
+     * </pre>
+     *
+     * <code>RESILIENCE_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int RESILIENCE_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Enabled High Resilience mode, including Cloud SQL HA.
+     * </pre>
+     *
+     * <code>HIGH_RESILIENCE = 1;</code>
+     */
+    public static final int HIGH_RESILIENCE_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ResilienceMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ResilienceMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RESILIENCE_MODE_UNSPECIFIED;
+        case 1:
+          return HIGH_RESILIENCE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ResilienceMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ResilienceMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ResilienceMode>() {
+          public ResilienceMode findValueByNumber(int number) {
+            return ResilienceMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final ResilienceMode[] VALUES = values();
+
+    public static ResilienceMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ResilienceMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode)
+  }
+
   public static final int GKE_CLUSTER_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -373,6 +507,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The number of nodes in the Kubernetes Engine cluster that will be
    * used to run this environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -805,12 +940,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The maintenance window is the period when Cloud Composer
    * components may undergo maintenance. It is defined so that maintenance is
    * not executed during peak hours or critical time periods.
+   *
    * The system will not be under maintenance for every occurrence of this
    * window, but when maintenance is planned, it will be scheduled
    * during the window.
+   *
    * The maintenance window period must encompass at least 12 hours per week.
    * This may be split into multiple chunks, each with a size of
    * at least 4 hours.
+   *
    * If this value is omitted, the default value for maintenance window will be
    * applied. The default value is Saturday and Sunday 00-06 GMT.
    * </pre>
@@ -832,12 +970,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The maintenance window is the period when Cloud Composer
    * components may undergo maintenance. It is defined so that maintenance is
    * not executed during peak hours or critical time periods.
+   *
    * The system will not be under maintenance for every occurrence of this
    * window, but when maintenance is planned, it will be scheduled
    * during the window.
+   *
    * The maintenance window period must encompass at least 12 hours per week.
    * This may be split into multiple chunks, each with a size of
    * at least 4 hours.
+   *
    * If this value is omitted, the default value for maintenance window will be
    * applied. The default value is Saturday and Sunday 00-06 GMT.
    * </pre>
@@ -862,12 +1003,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The maintenance window is the period when Cloud Composer
    * components may undergo maintenance. It is defined so that maintenance is
    * not executed during peak hours or critical time periods.
+   *
    * The system will not be under maintenance for every occurrence of this
    * window, but when maintenance is planned, it will be scheduled
    * during the window.
+   *
    * The maintenance window period must encompass at least 12 hours per week.
    * This may be split into multiple chunks, each with a size of
    * at least 4 hours.
+   *
    * If this value is omitted, the default value for maintenance window will be
    * applied. The default value is Saturday and Sunday 00-06 GMT.
    * </pre>
@@ -893,6 +1037,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The workloads configuration settings for the GKE cluster
    * associated with the Cloud Composer environment. The GKE cluster runs
    * Airflow scheduler, web server and workers workloads.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -914,6 +1059,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The workloads configuration settings for the GKE cluster
    * associated with the Cloud Composer environment. The GKE cluster runs
    * Airflow scheduler, web server and workers workloads.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -937,6 +1083,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The workloads configuration settings for the GKE cluster
    * associated with the Cloud Composer environment. The GKE cluster runs
    * Airflow scheduler, web server and workers workloads.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -960,6 +1107,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The size of the Cloud Composer environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -979,6 +1127,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The size of the Cloud Composer environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -1195,6 +1344,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The Recovery settings configuration of an environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -1214,6 +1364,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The Recovery settings configuration of an environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -1235,6 +1386,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The Recovery settings configuration of an environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -1249,6 +1401,56 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     return recoveryConfig_ == null
         ? com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig.getDefaultInstance()
         : recoveryConfig_;
+  }
+
+  public static final int RESILIENCE_MODE_FIELD_NUMBER = 19;
+  private int resilienceMode_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resilience mode of the Cloud Composer Environment.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.2.0-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode resilience_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for resilienceMode.
+   */
+  @java.lang.Override
+  public int getResilienceModeValue() {
+    return resilienceMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resilience mode of the Cloud Composer Environment.
+   *
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.2.0-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode resilience_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The resilienceMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode
+      getResilienceMode() {
+    com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode result =
+        com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode
+            .forNumber(resilienceMode_);
+    return result == null
+        ? com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode
+            .UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1315,6 +1517,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
     if (recoveryConfig_ != null) {
       output.writeMessage(18, getRecoveryConfig());
+    }
+    if (resilienceMode_
+        != com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode
+            .RESILIENCE_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(19, resilienceMode_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(airflowByoidUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, airflowByoidUri_);
@@ -1384,6 +1592,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
     if (recoveryConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getRecoveryConfig());
+    }
+    if (resilienceMode_
+        != com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode
+            .RESILIENCE_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, resilienceMode_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(airflowByoidUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, airflowByoidUri_);
@@ -1458,6 +1672,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     if (hasRecoveryConfig()) {
       if (!getRecoveryConfig().equals(other.getRecoveryConfig())) return false;
     }
+    if (resilienceMode_ != other.resilienceMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1525,6 +1740,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + RECOVERY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRecoveryConfig().hashCode();
     }
+    hash = (37 * hash) + RESILIENCE_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + resilienceMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1728,6 +1945,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         recoveryConfigBuilder_.dispose();
         recoveryConfigBuilder_ = null;
       }
+      resilienceMode_ = 0;
       return this;
     }
 
@@ -1835,6 +2053,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.recoveryConfig_ =
             recoveryConfigBuilder_ == null ? recoveryConfig_ : recoveryConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.resilienceMode_ = resilienceMode_;
       }
     }
 
@@ -1945,6 +2166,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasRecoveryConfig()) {
         mergeRecoveryConfig(other.getRecoveryConfig());
+      }
+      if (other.resilienceMode_ != 0) {
+        setResilienceModeValue(other.getResilienceModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2074,6 +2298,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00010000;
                 break;
               } // case 146
+            case 152:
+              {
+                resilienceMode_ = input.readEnum();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 152
             case 162:
               {
                 airflowByoidUri_ = input.readStringRequireUtf8();
@@ -2338,6 +2568,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2356,6 +2587,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2378,6 +2610,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -3899,12 +4132,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -3925,12 +4161,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -3959,12 +4198,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -3994,12 +4236,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4027,12 +4272,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4067,12 +4315,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4098,12 +4349,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4125,12 +4379,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4157,12 +4414,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4201,6 +4461,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4221,6 +4482,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4247,6 +4509,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4276,6 +4539,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4302,6 +4566,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4336,6 +4601,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4361,6 +4627,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4382,6 +4649,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4407,6 +4675,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4438,6 +4707,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the Cloud Composer environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4457,6 +4727,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the Cloud Composer environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4479,6 +4750,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the Cloud Composer environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4505,6 +4777,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the Cloud Composer environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4531,6 +4804,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the Cloud Composer environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5056,6 +5330,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5074,6 +5349,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5098,6 +5374,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5125,6 +5402,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5149,6 +5427,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5181,6 +5460,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5204,6 +5484,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5223,6 +5504,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5246,6 +5528,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5269,6 +5552,127 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         recoveryConfig_ = null;
       }
       return recoveryConfigBuilder_;
+    }
+
+    private int resilienceMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resilience mode of the Cloud Composer Environment.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.2.0-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode resilience_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for resilienceMode.
+     */
+    @java.lang.Override
+    public int getResilienceModeValue() {
+      return resilienceMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resilience mode of the Cloud Composer Environment.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.2.0-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode resilience_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for resilienceMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResilienceModeValue(int value) {
+      resilienceMode_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resilience mode of the Cloud Composer Environment.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.2.0-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode resilience_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The resilienceMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode
+        getResilienceMode() {
+      com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode result =
+          com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode
+              .forNumber(resilienceMode_);
+      return result == null
+          ? com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode
+              .UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resilience mode of the Cloud Composer Environment.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.2.0-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode resilience_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The resilienceMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResilienceMode(
+        com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00020000;
+      resilienceMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resilience mode of the Cloud Composer Environment.
+     *
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.2.0-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.ResilienceMode resilience_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResilienceMode() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      resilienceMode_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

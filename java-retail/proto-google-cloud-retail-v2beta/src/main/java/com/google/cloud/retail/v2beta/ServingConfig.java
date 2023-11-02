@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,15 +43,15 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     modelId_ = "";
     priceRerankingLevel_ = "";
-    facetControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    boostControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    filterControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    redirectControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    twowaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    onewaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    doNotAssociateControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    replacementControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    facetControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    boostControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    filterControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    redirectControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    twowaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    onewaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    doNotAssociateControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    replacementControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     diversityLevel_ = "";
     diversityType_ = 0;
     enableCategoryFilterLevel_ = "";
@@ -62,11 +62,6 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ServingConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -304,6 +299,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The human readable serving config display name. Used in Retail
    * UI.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -330,6 +326,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The human readable serving config display name. Used in Retail
    * UI.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -365,6 +362,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * https://cloud.google.com/retail/recommendations-ai/docs/create-models
    * Can be changed but only to a compatible model (e.g.
    * others-you-may-like CTR to others-you-may-like CVR).
+   *
    * Required when
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -397,6 +395,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * https://cloud.google.com/retail/recommendations-ai/docs/create-models
    * Can be changed but only to a compatible model (e.g.
    * others-you-may-like CTR to others-you-may-like CVR).
+   *
    * Required when
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -434,12 +433,15 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * highest-priced items first. This setting could result in a decrease in
    * click-through and conversion rates.
    *  Allowed values are:
+   *
    * * `no-price-reranking`
    * * `low-price-reranking`
    * * `medium-price-reranking`
    * * `high-price-reranking`
+   *
    * If not specified, we choose default based on model type. Default value:
    * `no-price-reranking`.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -472,12 +474,15 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * highest-priced items first. This setting could result in a decrease in
    * click-through and conversion rates.
    *  Allowed values are:
+   *
    * * `no-price-reranking`
    * * `low-price-reranking`
    * * `medium-price-reranking`
    * * `high-price-reranking`
+   *
    * If not specified, we choose default based on model type. Default value:
    * `no-price-reranking`.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -504,7 +509,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int FACET_CONTROL_IDS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList facetControlIds_;
+  private com.google.protobuf.LazyStringArrayList facetControlIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -516,6 +522,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
    * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -540,6 +547,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
    * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -564,6 +572,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
    * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -589,6 +598,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
    * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -612,6 +622,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -632,6 +643,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -654,6 +666,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -673,7 +686,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int BOOST_CONTROL_IDS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList boostControlIds_;
+  private com.google.protobuf.LazyStringArrayList boostControlIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -682,6 +696,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * in the specifications, boost scores from these specifications are all
    * applied and combined in a non-linear way. Maximum number of
    * specifications is 100.
+   *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
    * and
@@ -689,6 +704,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * are set, the boost conditions from both places are evaluated. If a search
    * request matches multiple boost conditions, the final boost score is equal
    * to the sum of the boost scores from all matched boost conditions.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -710,6 +726,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * in the specifications, boost scores from these specifications are all
    * applied and combined in a non-linear way. Maximum number of
    * specifications is 100.
+   *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
    * and
@@ -717,6 +734,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * are set, the boost conditions from both places are evaluated. If a search
    * request matches multiple boost conditions, the final boost score is equal
    * to the sum of the boost scores from all matched boost conditions.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -738,6 +756,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * in the specifications, boost scores from these specifications are all
    * applied and combined in a non-linear way. Maximum number of
    * specifications is 100.
+   *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
    * and
@@ -745,6 +764,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * are set, the boost conditions from both places are evaluated. If a search
    * request matches multiple boost conditions, the final boost score is equal
    * to the sum of the boost scores from all matched boost conditions.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -767,6 +787,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * in the specifications, boost scores from these specifications are all
    * applied and combined in a non-linear way. Maximum number of
    * specifications is 100.
+   *
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
    * and
@@ -774,6 +795,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * are set, the boost conditions from both places are evaluated. If a search
    * request matches multiple boost conditions, the final boost score is equal
    * to the sum of the boost scores from all matched boost conditions.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -792,7 +814,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int FILTER_CONTROL_IDS_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList filterControlIds_;
+  private com.google.protobuf.LazyStringArrayList filterControlIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -801,6 +824,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * in the specifications, filters from these specifications are all
    * applied and combined via the AND operator. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -822,6 +846,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * in the specifications, filters from these specifications are all
    * applied and combined via the AND operator. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -843,6 +868,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * in the specifications, filters from these specifications are all
    * applied and combined via the AND operator. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -865,6 +891,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * in the specifications, filters from these specifications are all
    * applied and combined via the AND operator. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -883,7 +910,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int REDIRECT_CONTROL_IDS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList redirectControlIds_;
+  private com.google.protobuf.LazyStringArrayList redirectControlIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -891,6 +919,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Condition redirect specifications. Only the first triggered redirect action
    * is applied, even if multiple apply. Maximum number of specifications is
    * 1000.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -911,6 +940,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Condition redirect specifications. Only the first triggered redirect action
    * is applied, even if multiple apply. Maximum number of specifications is
    * 1000.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -931,6 +961,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Condition redirect specifications. Only the first triggered redirect action
    * is applied, even if multiple apply. Maximum number of specifications is
    * 1000.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -952,6 +983,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Condition redirect specifications. Only the first triggered redirect action
    * is applied, even if multiple apply. Maximum number of specifications is
    * 1000.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -970,7 +1002,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int TWOWAY_SYNONYMS_CONTROL_IDS_FIELD_NUMBER = 18;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList twowaySynonymsControlIds_;
+  private com.google.protobuf.LazyStringArrayList twowaySynonymsControlIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -979,6 +1012,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * all matching synonyms control in the list will execute. Order of controls
    * in the list will not matter. Maximum number of specifications is
    * 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1000,6 +1034,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * all matching synonyms control in the list will execute. Order of controls
    * in the list will not matter. Maximum number of specifications is
    * 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1021,6 +1056,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * all matching synonyms control in the list will execute. Order of controls
    * in the list will not matter. Maximum number of specifications is
    * 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1043,6 +1079,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * all matching synonyms control in the list will execute. Order of controls
    * in the list will not matter. Maximum number of specifications is
    * 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1061,7 +1098,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int ONEWAY_SYNONYMS_CONTROL_IDS_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList onewaySynonymsControlIds_;
+  private com.google.protobuf.LazyStringArrayList onewaySynonymsControlIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1070,6 +1108,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * conditions match, all matching oneway synonyms controls in the list will
    * execute. Order of controls in the list will not matter. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1091,6 +1130,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * conditions match, all matching oneway synonyms controls in the list will
    * execute. Order of controls in the list will not matter. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1112,6 +1152,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * conditions match, all matching oneway synonyms controls in the list will
    * execute. Order of controls in the list will not matter. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1134,6 +1175,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * conditions match, all matching oneway synonyms controls in the list will
    * execute. Order of controls in the list will not matter. Maximum number of
    * specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1152,7 +1194,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int DO_NOT_ASSOCIATE_CONTROL_IDS_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList doNotAssociateControlIds_;
+  private com.google.protobuf.LazyStringArrayList doNotAssociateControlIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1162,6 +1205,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1184,6 +1228,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1206,6 +1251,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1229,6 +1275,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1247,7 +1294,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int REPLACEMENT_CONTROL_IDS_FIELD_NUMBER = 14;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList replacementControlIds_;
+  private com.google.protobuf.LazyStringArrayList replacementControlIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1256,6 +1304,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * - Applied according to the order in the list.
    * - A previously replaced term can not be re-replaced.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1277,6 +1326,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * - Applied according to the order in the list.
    * - A previously replaced term can not be re-replaced.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1298,6 +1348,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * - Applied according to the order in the list.
    * - A previously replaced term can not be re-replaced.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1320,6 +1371,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * - Applied according to the order in the list.
    * - A previously replaced term can not be re-replaced.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1338,7 +1390,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int IGNORE_CONTROL_IDS_FIELD_NUMBER = 15;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ignoreControlIds_;
+  private com.google.protobuf.LazyStringArrayList ignoreControlIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1348,6 +1401,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1370,6 +1424,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1392,6 +1447,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1415,6 +1471,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * execute.
    * - Order does not matter.
    * - Maximum number of specifications is 100.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1440,13 +1497,16 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * How much diversity to use in recommendation model results e.g.
    * `medium-diversity` or `high-diversity`. Currently supported values:
+   *
    * * `no-diversity`
    * * `low-diversity`
    * * `medium-diversity`
    * * `high-diversity`
    * * `auto-diversity`
+   *
    * If not specified, we choose default based on recommendation model
    * type. Default value: `no-diversity`.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1475,13 +1535,16 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * How much diversity to use in recommendation model results e.g.
    * `medium-diversity` or `high-diversity`. Currently supported values:
+   *
    * * `no-diversity`
    * * `low-diversity`
    * * `medium-diversity`
    * * `high-diversity`
    * * `auto-diversity`
+   *
    * If not specified, we choose default based on recommendation model
    * type. Default value: `no-diversity`.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1557,12 +1620,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Whether to add additional category filters on the `similar-items` model.
    * If not specified, we enable it by default.
    *  Allowed values are:
+   *
    * * `no-category-match`: No additional filtering of original results from
    *   the model and the customer's filters.
    * * `relaxed-category-match`: Only keep results with categories that match
    *   at least one item categories in the PredictRequests's context item.
    *   * If customer also sends filters in the PredictRequest, then the results
    *   will satisfy both conditions (user given and category match).
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1592,12 +1657,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * Whether to add additional category filters on the `similar-items` model.
    * If not specified, we enable it by default.
    *  Allowed values are:
+   *
    * * `no-category-match`: No additional filtering of original results from
    *   the model and the customer's filters.
    * * `relaxed-category-match`: Only keep results with categories that match
    *   at least one item categories in the PredictRequests's context item.
    *   * If customer also sends filters in the PredictRequest, then the results
    *   will satisfy both conditions (user given and category match).
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -1628,10 +1695,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The specification for personalization spec.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   *
    * Notice that if both
    * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
    * and
@@ -1656,10 +1725,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The specification for personalization spec.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   *
    * Notice that if both
    * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
    * and
@@ -1686,10 +1757,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The specification for personalization spec.
+   *
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   *
    * Notice that if both
    * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
    * and
@@ -2294,29 +2367,20 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       displayName_ = "";
       modelId_ = "";
       priceRerankingLevel_ = "";
-      facetControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      facetControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       dynamicFacetSpec_ = null;
       if (dynamicFacetSpecBuilder_ != null) {
         dynamicFacetSpecBuilder_.dispose();
         dynamicFacetSpecBuilder_ = null;
       }
-      boostControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
-      filterControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
-      redirectControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
-      twowaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
-      onewaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
-      doNotAssociateControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
-      replacementControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
-      ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00002000);
+      boostControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      filterControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      redirectControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      twowaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      onewaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      doNotAssociateControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      replacementControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       diversityLevel_ = "";
       diversityType_ = 0;
       enableCategoryFilterLevel_ = "";
@@ -2363,51 +2427,6 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.retail.v2beta.ServingConfig result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        facetControlIds_ = facetControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.facetControlIds_ = facetControlIds_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        boostControlIds_ = boostControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.boostControlIds_ = boostControlIds_;
-      if (((bitField0_ & 0x00000080) != 0)) {
-        filterControlIds_ = filterControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.filterControlIds_ = filterControlIds_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        redirectControlIds_ = redirectControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.redirectControlIds_ = redirectControlIds_;
-      if (((bitField0_ & 0x00000200) != 0)) {
-        twowaySynonymsControlIds_ = twowaySynonymsControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.twowaySynonymsControlIds_ = twowaySynonymsControlIds_;
-      if (((bitField0_ & 0x00000400) != 0)) {
-        onewaySynonymsControlIds_ = onewaySynonymsControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.onewaySynonymsControlIds_ = onewaySynonymsControlIds_;
-      if (((bitField0_ & 0x00000800) != 0)) {
-        doNotAssociateControlIds_ = doNotAssociateControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
-      }
-      result.doNotAssociateControlIds_ = doNotAssociateControlIds_;
-      if (((bitField0_ & 0x00001000) != 0)) {
-        replacementControlIds_ = replacementControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00001000);
-      }
-      result.replacementControlIds_ = replacementControlIds_;
-      if (((bitField0_ & 0x00002000) != 0)) {
-        ignoreControlIds_ = ignoreControlIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00002000);
-      }
-      result.ignoreControlIds_ = ignoreControlIds_;
       if (((bitField0_ & 0x00040000) != 0)) {
         solutionTypes_ = java.util.Collections.unmodifiableList(solutionTypes_);
         bitField0_ = (bitField0_ & ~0x00040000);
@@ -2429,9 +2448,45 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.priceRerankingLevel_ = priceRerankingLevel_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        facetControlIds_.makeImmutable();
+        result.facetControlIds_ = facetControlIds_;
+      }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.dynamicFacetSpec_ =
             dynamicFacetSpecBuilder_ == null ? dynamicFacetSpec_ : dynamicFacetSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        boostControlIds_.makeImmutable();
+        result.boostControlIds_ = boostControlIds_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        filterControlIds_.makeImmutable();
+        result.filterControlIds_ = filterControlIds_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        redirectControlIds_.makeImmutable();
+        result.redirectControlIds_ = redirectControlIds_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        twowaySynonymsControlIds_.makeImmutable();
+        result.twowaySynonymsControlIds_ = twowaySynonymsControlIds_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        onewaySynonymsControlIds_.makeImmutable();
+        result.onewaySynonymsControlIds_ = onewaySynonymsControlIds_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        doNotAssociateControlIds_.makeImmutable();
+        result.doNotAssociateControlIds_ = doNotAssociateControlIds_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        replacementControlIds_.makeImmutable();
+        result.replacementControlIds_ = replacementControlIds_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        ignoreControlIds_.makeImmutable();
+        result.ignoreControlIds_ = ignoreControlIds_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.diversityLevel_ = diversityLevel_;
@@ -2518,7 +2573,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.facetControlIds_.isEmpty()) {
         if (facetControlIds_.isEmpty()) {
           facetControlIds_ = other.facetControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureFacetControlIdsIsMutable();
           facetControlIds_.addAll(other.facetControlIds_);
@@ -2531,7 +2586,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.boostControlIds_.isEmpty()) {
         if (boostControlIds_.isEmpty()) {
           boostControlIds_ = other.boostControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureBoostControlIdsIsMutable();
           boostControlIds_.addAll(other.boostControlIds_);
@@ -2541,7 +2596,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.filterControlIds_.isEmpty()) {
         if (filterControlIds_.isEmpty()) {
           filterControlIds_ = other.filterControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureFilterControlIdsIsMutable();
           filterControlIds_.addAll(other.filterControlIds_);
@@ -2551,7 +2606,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.redirectControlIds_.isEmpty()) {
         if (redirectControlIds_.isEmpty()) {
           redirectControlIds_ = other.redirectControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureRedirectControlIdsIsMutable();
           redirectControlIds_.addAll(other.redirectControlIds_);
@@ -2561,7 +2616,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.twowaySynonymsControlIds_.isEmpty()) {
         if (twowaySynonymsControlIds_.isEmpty()) {
           twowaySynonymsControlIds_ = other.twowaySynonymsControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureTwowaySynonymsControlIdsIsMutable();
           twowaySynonymsControlIds_.addAll(other.twowaySynonymsControlIds_);
@@ -2571,7 +2626,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.onewaySynonymsControlIds_.isEmpty()) {
         if (onewaySynonymsControlIds_.isEmpty()) {
           onewaySynonymsControlIds_ = other.onewaySynonymsControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensureOnewaySynonymsControlIdsIsMutable();
           onewaySynonymsControlIds_.addAll(other.onewaySynonymsControlIds_);
@@ -2581,7 +2636,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.doNotAssociateControlIds_.isEmpty()) {
         if (doNotAssociateControlIds_.isEmpty()) {
           doNotAssociateControlIds_ = other.doNotAssociateControlIds_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ |= 0x00000800;
         } else {
           ensureDoNotAssociateControlIdsIsMutable();
           doNotAssociateControlIds_.addAll(other.doNotAssociateControlIds_);
@@ -2591,7 +2646,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.replacementControlIds_.isEmpty()) {
         if (replacementControlIds_.isEmpty()) {
           replacementControlIds_ = other.replacementControlIds_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ |= 0x00001000;
         } else {
           ensureReplacementControlIdsIsMutable();
           replacementControlIds_.addAll(other.replacementControlIds_);
@@ -2601,7 +2656,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.ignoreControlIds_.isEmpty()) {
         if (ignoreControlIds_.isEmpty()) {
           ignoreControlIds_ = other.ignoreControlIds_;
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ |= 0x00002000;
         } else {
           ensureIgnoreControlIdsIsMutable();
           ignoreControlIds_.addAll(other.ignoreControlIds_);
@@ -2935,6 +2990,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The human readable serving config display name. Used in Retail
      * UI.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -2960,6 +3016,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The human readable serving config display name. Used in Retail
      * UI.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -2985,6 +3042,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The human readable serving config display name. Used in Retail
      * UI.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -3009,6 +3067,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The human readable serving config display name. Used in Retail
      * UI.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -3029,6 +3088,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The human readable serving config display name. Used in Retail
      * UI.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -3060,6 +3120,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * https://cloud.google.com/retail/recommendations-ai/docs/create-models
      * Can be changed but only to a compatible model (e.g.
      * others-you-may-like CTR to others-you-may-like CVR).
+     *
      * Required when
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3091,6 +3152,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * https://cloud.google.com/retail/recommendations-ai/docs/create-models
      * Can be changed but only to a compatible model (e.g.
      * others-you-may-like CTR to others-you-may-like CVR).
+     *
      * Required when
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3122,6 +3184,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * https://cloud.google.com/retail/recommendations-ai/docs/create-models
      * Can be changed but only to a compatible model (e.g.
      * others-you-may-like CTR to others-you-may-like CVR).
+     *
      * Required when
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3152,6 +3215,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * https://cloud.google.com/retail/recommendations-ai/docs/create-models
      * Can be changed but only to a compatible model (e.g.
      * others-you-may-like CTR to others-you-may-like CVR).
+     *
      * Required when
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3178,6 +3242,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * https://cloud.google.com/retail/recommendations-ai/docs/create-models
      * Can be changed but only to a compatible model (e.g.
      * others-you-may-like CTR to others-you-may-like CVR).
+     *
      * Required when
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3211,12 +3276,15 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * highest-priced items first. This setting could result in a decrease in
      * click-through and conversion rates.
      *  Allowed values are:
+     *
      * * `no-price-reranking`
      * * `low-price-reranking`
      * * `medium-price-reranking`
      * * `high-price-reranking`
+     *
      * If not specified, we choose default based on model type. Default value:
      * `no-price-reranking`.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3248,12 +3316,15 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * highest-priced items first. This setting could result in a decrease in
      * click-through and conversion rates.
      *  Allowed values are:
+     *
      * * `no-price-reranking`
      * * `low-price-reranking`
      * * `medium-price-reranking`
      * * `high-price-reranking`
+     *
      * If not specified, we choose default based on model type. Default value:
      * `no-price-reranking`.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3285,12 +3356,15 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * highest-priced items first. This setting could result in a decrease in
      * click-through and conversion rates.
      *  Allowed values are:
+     *
      * * `no-price-reranking`
      * * `low-price-reranking`
      * * `medium-price-reranking`
      * * `high-price-reranking`
+     *
      * If not specified, we choose default based on model type. Default value:
      * `no-price-reranking`.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3321,12 +3395,15 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * highest-priced items first. This setting could result in a decrease in
      * click-through and conversion rates.
      *  Allowed values are:
+     *
      * * `no-price-reranking`
      * * `low-price-reranking`
      * * `medium-price-reranking`
      * * `high-price-reranking`
+     *
      * If not specified, we choose default based on model type. Default value:
      * `no-price-reranking`.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3353,12 +3430,15 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * highest-priced items first. This setting could result in a decrease in
      * click-through and conversion rates.
      *  Allowed values are:
+     *
      * * `no-price-reranking`
      * * `low-price-reranking`
      * * `medium-price-reranking`
      * * `high-price-reranking`
+     *
      * If not specified, we choose default based on model type. Default value:
      * `no-price-reranking`.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3381,14 +3461,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList facetControlIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList facetControlIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFacetControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!facetControlIds_.isModifiable()) {
         facetControlIds_ = new com.google.protobuf.LazyStringArrayList(facetControlIds_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -3401,6 +3481,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3412,7 +3493,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the facetControlIds.
      */
     public com.google.protobuf.ProtocolStringList getFacetControlIdsList() {
-      return facetControlIds_.getUnmodifiableView();
+      facetControlIds_.makeImmutable();
+      return facetControlIds_;
     }
     /**
      *
@@ -3425,6 +3507,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3449,6 +3532,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3474,6 +3558,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3499,6 +3584,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3517,6 +3603,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureFacetControlIdsIsMutable();
       facetControlIds_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3531,6 +3618,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3548,6 +3636,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureFacetControlIdsIsMutable();
       facetControlIds_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3562,6 +3651,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3576,6 +3666,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllFacetControlIds(java.lang.Iterable<java.lang.String> values) {
       ensureFacetControlIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, facetControlIds_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3590,6 +3681,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3601,8 +3693,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFacetControlIds() {
-      facetControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      facetControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -3617,6 +3710,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig].
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3635,6 +3729,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureFacetControlIdsIsMutable();
       facetControlIds_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3651,6 +3746,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3671,6 +3767,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3697,6 +3794,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3726,6 +3824,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3752,6 +3851,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3786,6 +3886,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3811,6 +3912,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3832,6 +3934,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3857,6 +3960,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3883,14 +3987,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       return dynamicFacetSpecBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList boostControlIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList boostControlIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureBoostControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!boostControlIds_.isModifiable()) {
         boostControlIds_ = new com.google.protobuf.LazyStringArrayList(boostControlIds_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -3900,6 +4004,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 100.
+     *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
      * and
@@ -3907,6 +4012,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
      * to the sum of the boost scores from all matched boost conditions.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3918,7 +4024,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the boostControlIds.
      */
     public com.google.protobuf.ProtocolStringList getBoostControlIdsList() {
-      return boostControlIds_.getUnmodifiableView();
+      boostControlIds_.makeImmutable();
+      return boostControlIds_;
     }
     /**
      *
@@ -3928,6 +4035,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 100.
+     *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
      * and
@@ -3935,6 +4043,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
      * to the sum of the boost scores from all matched boost conditions.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3956,6 +4065,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 100.
+     *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
      * and
@@ -3963,6 +4073,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
      * to the sum of the boost scores from all matched boost conditions.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -3985,6 +4096,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 100.
+     *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
      * and
@@ -3992,6 +4104,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
      * to the sum of the boost scores from all matched boost conditions.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4014,6 +4127,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 100.
+     *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
      * and
@@ -4021,6 +4135,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
      * to the sum of the boost scores from all matched boost conditions.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4039,6 +4154,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureBoostControlIdsIsMutable();
       boostControlIds_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4050,6 +4166,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 100.
+     *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
      * and
@@ -4057,6 +4174,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
      * to the sum of the boost scores from all matched boost conditions.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4074,6 +4192,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureBoostControlIdsIsMutable();
       boostControlIds_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4085,6 +4204,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 100.
+     *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
      * and
@@ -4092,6 +4212,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
      * to the sum of the boost scores from all matched boost conditions.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4106,6 +4227,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllBoostControlIds(java.lang.Iterable<java.lang.String> values) {
       ensureBoostControlIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, boostControlIds_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4117,6 +4239,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 100.
+     *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
      * and
@@ -4124,6 +4247,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
      * to the sum of the boost scores from all matched boost conditions.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4135,8 +4259,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBoostControlIds() {
-      boostControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      boostControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -4148,6 +4273,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 100.
+     *
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
      * and
@@ -4155,6 +4281,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
      * to the sum of the boost scores from all matched boost conditions.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4173,18 +4300,19 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureBoostControlIdsIsMutable();
       boostControlIds_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList filterControlIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList filterControlIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFilterControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!filterControlIds_.isModifiable()) {
         filterControlIds_ = new com.google.protobuf.LazyStringArrayList(filterControlIds_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -4194,6 +4322,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, filters from these specifications are all
      * applied and combined via the AND operator. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4205,7 +4334,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the filterControlIds.
      */
     public com.google.protobuf.ProtocolStringList getFilterControlIdsList() {
-      return filterControlIds_.getUnmodifiableView();
+      filterControlIds_.makeImmutable();
+      return filterControlIds_;
     }
     /**
      *
@@ -4215,6 +4345,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, filters from these specifications are all
      * applied and combined via the AND operator. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4236,6 +4367,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, filters from these specifications are all
      * applied and combined via the AND operator. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4258,6 +4390,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, filters from these specifications are all
      * applied and combined via the AND operator. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4280,6 +4413,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, filters from these specifications are all
      * applied and combined via the AND operator. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4298,6 +4432,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureFilterControlIdsIsMutable();
       filterControlIds_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4309,6 +4444,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, filters from these specifications are all
      * applied and combined via the AND operator. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4326,6 +4462,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureFilterControlIdsIsMutable();
       filterControlIds_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4337,6 +4474,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, filters from these specifications are all
      * applied and combined via the AND operator. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4351,6 +4489,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllFilterControlIds(java.lang.Iterable<java.lang.String> values) {
       ensureFilterControlIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, filterControlIds_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4362,6 +4501,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, filters from these specifications are all
      * applied and combined via the AND operator. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4373,8 +4513,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFilterControlIds() {
-      filterControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      filterControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -4386,6 +4527,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * in the specifications, filters from these specifications are all
      * applied and combined via the AND operator. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4404,18 +4546,19 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureFilterControlIdsIsMutable();
       filterControlIds_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList redirectControlIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList redirectControlIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRedirectControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!redirectControlIds_.isModifiable()) {
         redirectControlIds_ = new com.google.protobuf.LazyStringArrayList(redirectControlIds_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -4424,6 +4567,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Condition redirect specifications. Only the first triggered redirect action
      * is applied, even if multiple apply. Maximum number of specifications is
      * 1000.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4435,7 +4579,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the redirectControlIds.
      */
     public com.google.protobuf.ProtocolStringList getRedirectControlIdsList() {
-      return redirectControlIds_.getUnmodifiableView();
+      redirectControlIds_.makeImmutable();
+      return redirectControlIds_;
     }
     /**
      *
@@ -4444,6 +4589,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Condition redirect specifications. Only the first triggered redirect action
      * is applied, even if multiple apply. Maximum number of specifications is
      * 1000.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4464,6 +4610,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Condition redirect specifications. Only the first triggered redirect action
      * is applied, even if multiple apply. Maximum number of specifications is
      * 1000.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4485,6 +4632,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Condition redirect specifications. Only the first triggered redirect action
      * is applied, even if multiple apply. Maximum number of specifications is
      * 1000.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4506,6 +4654,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Condition redirect specifications. Only the first triggered redirect action
      * is applied, even if multiple apply. Maximum number of specifications is
      * 1000.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4524,6 +4673,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRedirectControlIdsIsMutable();
       redirectControlIds_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4534,6 +4684,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Condition redirect specifications. Only the first triggered redirect action
      * is applied, even if multiple apply. Maximum number of specifications is
      * 1000.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4551,6 +4702,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRedirectControlIdsIsMutable();
       redirectControlIds_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4561,6 +4713,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Condition redirect specifications. Only the first triggered redirect action
      * is applied, even if multiple apply. Maximum number of specifications is
      * 1000.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4575,6 +4728,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRedirectControlIds(java.lang.Iterable<java.lang.String> values) {
       ensureRedirectControlIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, redirectControlIds_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4585,6 +4739,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Condition redirect specifications. Only the first triggered redirect action
      * is applied, even if multiple apply. Maximum number of specifications is
      * 1000.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4596,8 +4751,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRedirectControlIds() {
-      redirectControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      redirectControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -4608,6 +4764,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Condition redirect specifications. Only the first triggered redirect action
      * is applied, even if multiple apply. Maximum number of specifications is
      * 1000.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4626,19 +4783,20 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRedirectControlIdsIsMutable();
       redirectControlIds_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList twowaySynonymsControlIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList twowaySynonymsControlIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTwowaySynonymsControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!twowaySynonymsControlIds_.isModifiable()) {
         twowaySynonymsControlIds_ =
             new com.google.protobuf.LazyStringArrayList(twowaySynonymsControlIds_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -4648,6 +4806,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * all matching synonyms control in the list will execute. Order of controls
      * in the list will not matter. Maximum number of specifications is
      * 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4659,7 +4818,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the twowaySynonymsControlIds.
      */
     public com.google.protobuf.ProtocolStringList getTwowaySynonymsControlIdsList() {
-      return twowaySynonymsControlIds_.getUnmodifiableView();
+      twowaySynonymsControlIds_.makeImmutable();
+      return twowaySynonymsControlIds_;
     }
     /**
      *
@@ -4669,6 +4829,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * all matching synonyms control in the list will execute. Order of controls
      * in the list will not matter. Maximum number of specifications is
      * 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4690,6 +4851,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * all matching synonyms control in the list will execute. Order of controls
      * in the list will not matter. Maximum number of specifications is
      * 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4712,6 +4874,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * all matching synonyms control in the list will execute. Order of controls
      * in the list will not matter. Maximum number of specifications is
      * 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4734,6 +4897,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * all matching synonyms control in the list will execute. Order of controls
      * in the list will not matter. Maximum number of specifications is
      * 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4752,6 +4916,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTwowaySynonymsControlIdsIsMutable();
       twowaySynonymsControlIds_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4763,6 +4928,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * all matching synonyms control in the list will execute. Order of controls
      * in the list will not matter. Maximum number of specifications is
      * 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4780,6 +4946,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTwowaySynonymsControlIdsIsMutable();
       twowaySynonymsControlIds_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4791,6 +4958,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * all matching synonyms control in the list will execute. Order of controls
      * in the list will not matter. Maximum number of specifications is
      * 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4805,6 +4973,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTwowaySynonymsControlIds(java.lang.Iterable<java.lang.String> values) {
       ensureTwowaySynonymsControlIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, twowaySynonymsControlIds_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4816,6 +4985,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * all matching synonyms control in the list will execute. Order of controls
      * in the list will not matter. Maximum number of specifications is
      * 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4827,8 +4997,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTwowaySynonymsControlIds() {
-      twowaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      twowaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -4840,6 +5011,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * all matching synonyms control in the list will execute. Order of controls
      * in the list will not matter. Maximum number of specifications is
      * 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4858,19 +5030,20 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTwowaySynonymsControlIdsIsMutable();
       twowaySynonymsControlIds_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList onewaySynonymsControlIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList onewaySynonymsControlIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureOnewaySynonymsControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!onewaySynonymsControlIds_.isModifiable()) {
         onewaySynonymsControlIds_ =
             new com.google.protobuf.LazyStringArrayList(onewaySynonymsControlIds_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -4880,6 +5053,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * conditions match, all matching oneway synonyms controls in the list will
      * execute. Order of controls in the list will not matter. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4891,7 +5065,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the onewaySynonymsControlIds.
      */
     public com.google.protobuf.ProtocolStringList getOnewaySynonymsControlIdsList() {
-      return onewaySynonymsControlIds_.getUnmodifiableView();
+      onewaySynonymsControlIds_.makeImmutable();
+      return onewaySynonymsControlIds_;
     }
     /**
      *
@@ -4901,6 +5076,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * conditions match, all matching oneway synonyms controls in the list will
      * execute. Order of controls in the list will not matter. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4922,6 +5098,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * conditions match, all matching oneway synonyms controls in the list will
      * execute. Order of controls in the list will not matter. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4944,6 +5121,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * conditions match, all matching oneway synonyms controls in the list will
      * execute. Order of controls in the list will not matter. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4966,6 +5144,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * conditions match, all matching oneway synonyms controls in the list will
      * execute. Order of controls in the list will not matter. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -4984,6 +5163,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureOnewaySynonymsControlIdsIsMutable();
       onewaySynonymsControlIds_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4995,6 +5175,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * conditions match, all matching oneway synonyms controls in the list will
      * execute. Order of controls in the list will not matter. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5012,6 +5193,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureOnewaySynonymsControlIdsIsMutable();
       onewaySynonymsControlIds_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5023,6 +5205,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * conditions match, all matching oneway synonyms controls in the list will
      * execute. Order of controls in the list will not matter. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5037,6 +5220,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllOnewaySynonymsControlIds(java.lang.Iterable<java.lang.String> values) {
       ensureOnewaySynonymsControlIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, onewaySynonymsControlIds_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5048,6 +5232,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * conditions match, all matching oneway synonyms controls in the list will
      * execute. Order of controls in the list will not matter. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5059,8 +5244,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOnewaySynonymsControlIds() {
-      onewaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      onewaySynonymsControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -5072,6 +5258,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * conditions match, all matching oneway synonyms controls in the list will
      * execute. Order of controls in the list will not matter. Maximum number of
      * specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5090,19 +5277,20 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureOnewaySynonymsControlIdsIsMutable();
       onewaySynonymsControlIds_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList doNotAssociateControlIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList doNotAssociateControlIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDoNotAssociateControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!doNotAssociateControlIds_.isModifiable()) {
         doNotAssociateControlIds_ =
             new com.google.protobuf.LazyStringArrayList(doNotAssociateControlIds_);
-        bitField0_ |= 0x00000800;
       }
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -5113,6 +5301,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5124,7 +5313,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the doNotAssociateControlIds.
      */
     public com.google.protobuf.ProtocolStringList getDoNotAssociateControlIdsList() {
-      return doNotAssociateControlIds_.getUnmodifiableView();
+      doNotAssociateControlIds_.makeImmutable();
+      return doNotAssociateControlIds_;
     }
     /**
      *
@@ -5135,6 +5325,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5157,6 +5348,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5180,6 +5372,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5203,6 +5396,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5221,6 +5415,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDoNotAssociateControlIdsIsMutable();
       doNotAssociateControlIds_.set(index, value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5233,6 +5428,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5250,6 +5446,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDoNotAssociateControlIdsIsMutable();
       doNotAssociateControlIds_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5262,6 +5459,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5276,6 +5474,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDoNotAssociateControlIds(java.lang.Iterable<java.lang.String> values) {
       ensureDoNotAssociateControlIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, doNotAssociateControlIds_);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5288,6 +5487,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5299,8 +5499,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDoNotAssociateControlIds() {
-      doNotAssociateControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      doNotAssociateControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000800);
+      ;
       onChanged();
       return this;
     }
@@ -5313,6 +5514,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5331,19 +5533,20 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDoNotAssociateControlIdsIsMutable();
       doNotAssociateControlIds_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList replacementControlIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList replacementControlIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureReplacementControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!replacementControlIds_.isModifiable()) {
         replacementControlIds_ =
             new com.google.protobuf.LazyStringArrayList(replacementControlIds_);
-        bitField0_ |= 0x00001000;
       }
+      bitField0_ |= 0x00001000;
     }
     /**
      *
@@ -5353,6 +5556,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * - Applied according to the order in the list.
      * - A previously replaced term can not be re-replaced.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5364,7 +5568,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the replacementControlIds.
      */
     public com.google.protobuf.ProtocolStringList getReplacementControlIdsList() {
-      return replacementControlIds_.getUnmodifiableView();
+      replacementControlIds_.makeImmutable();
+      return replacementControlIds_;
     }
     /**
      *
@@ -5374,6 +5579,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * - Applied according to the order in the list.
      * - A previously replaced term can not be re-replaced.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5395,6 +5601,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * - Applied according to the order in the list.
      * - A previously replaced term can not be re-replaced.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5417,6 +5624,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * - Applied according to the order in the list.
      * - A previously replaced term can not be re-replaced.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5439,6 +5647,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * - Applied according to the order in the list.
      * - A previously replaced term can not be re-replaced.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5457,6 +5666,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReplacementControlIdsIsMutable();
       replacementControlIds_.set(index, value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5468,6 +5678,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * - Applied according to the order in the list.
      * - A previously replaced term can not be re-replaced.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5485,6 +5696,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReplacementControlIdsIsMutable();
       replacementControlIds_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5496,6 +5708,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * - Applied according to the order in the list.
      * - A previously replaced term can not be re-replaced.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5510,6 +5723,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllReplacementControlIds(java.lang.Iterable<java.lang.String> values) {
       ensureReplacementControlIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, replacementControlIds_);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5521,6 +5735,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * - Applied according to the order in the list.
      * - A previously replaced term can not be re-replaced.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5532,8 +5747,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReplacementControlIds() {
-      replacementControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      replacementControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00001000);
+      ;
       onChanged();
       return this;
     }
@@ -5545,6 +5761,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * - Applied according to the order in the list.
      * - A previously replaced term can not be re-replaced.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5563,18 +5780,19 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureReplacementControlIdsIsMutable();
       replacementControlIds_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ignoreControlIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ignoreControlIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIgnoreControlIdsIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!ignoreControlIds_.isModifiable()) {
         ignoreControlIds_ = new com.google.protobuf.LazyStringArrayList(ignoreControlIds_);
-        bitField0_ |= 0x00002000;
       }
+      bitField0_ |= 0x00002000;
     }
     /**
      *
@@ -5585,6 +5803,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5596,7 +5815,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ignoreControlIds.
      */
     public com.google.protobuf.ProtocolStringList getIgnoreControlIdsList() {
-      return ignoreControlIds_.getUnmodifiableView();
+      ignoreControlIds_.makeImmutable();
+      return ignoreControlIds_;
     }
     /**
      *
@@ -5607,6 +5827,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5629,6 +5850,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5652,6 +5874,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5675,6 +5898,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5693,6 +5917,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIgnoreControlIdsIsMutable();
       ignoreControlIds_.set(index, value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5705,6 +5930,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5722,6 +5948,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIgnoreControlIdsIsMutable();
       ignoreControlIds_.add(value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5734,6 +5961,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5748,6 +5976,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIgnoreControlIds(java.lang.Iterable<java.lang.String> values) {
       ensureIgnoreControlIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ignoreControlIds_);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5760,6 +5989,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5771,8 +6001,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIgnoreControlIds() {
-      ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00002000);
+      ;
       onChanged();
       return this;
     }
@@ -5785,6 +6016,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * execute.
      * - Order does not matter.
      * - Maximum number of specifications is 100.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5803,6 +6035,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIgnoreControlIdsIsMutable();
       ignoreControlIds_.add(value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5814,13 +6047,16 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How much diversity to use in recommendation model results e.g.
      * `medium-diversity` or `high-diversity`. Currently supported values:
+     *
      * * `no-diversity`
      * * `low-diversity`
      * * `medium-diversity`
      * * `high-diversity`
      * * `auto-diversity`
+     *
      * If not specified, we choose default based on recommendation model
      * type. Default value: `no-diversity`.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5848,13 +6084,16 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How much diversity to use in recommendation model results e.g.
      * `medium-diversity` or `high-diversity`. Currently supported values:
+     *
      * * `no-diversity`
      * * `low-diversity`
      * * `medium-diversity`
      * * `high-diversity`
      * * `auto-diversity`
+     *
      * If not specified, we choose default based on recommendation model
      * type. Default value: `no-diversity`.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5882,13 +6121,16 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How much diversity to use in recommendation model results e.g.
      * `medium-diversity` or `high-diversity`. Currently supported values:
+     *
      * * `no-diversity`
      * * `low-diversity`
      * * `medium-diversity`
      * * `high-diversity`
      * * `auto-diversity`
+     *
      * If not specified, we choose default based on recommendation model
      * type. Default value: `no-diversity`.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5915,13 +6157,16 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How much diversity to use in recommendation model results e.g.
      * `medium-diversity` or `high-diversity`. Currently supported values:
+     *
      * * `no-diversity`
      * * `low-diversity`
      * * `medium-diversity`
      * * `high-diversity`
      * * `auto-diversity`
+     *
      * If not specified, we choose default based on recommendation model
      * type. Default value: `no-diversity`.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -5944,13 +6189,16 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * How much diversity to use in recommendation model results e.g.
      * `medium-diversity` or `high-diversity`. Currently supported values:
+     *
      * * `no-diversity`
      * * `low-diversity`
      * * `medium-diversity`
      * * `high-diversity`
      * * `auto-diversity`
+     *
      * If not specified, we choose default based on recommendation model
      * type. Default value: `no-diversity`.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -6084,12 +6332,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Whether to add additional category filters on the `similar-items` model.
      * If not specified, we enable it by default.
      *  Allowed values are:
+     *
      * * `no-category-match`: No additional filtering of original results from
      *   the model and the customer's filters.
      * * `relaxed-category-match`: Only keep results with categories that match
      *   at least one item categories in the PredictRequests's context item.
      *   * If customer also sends filters in the PredictRequest, then the results
      *   will satisfy both conditions (user given and category match).
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -6118,12 +6368,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Whether to add additional category filters on the `similar-items` model.
      * If not specified, we enable it by default.
      *  Allowed values are:
+     *
      * * `no-category-match`: No additional filtering of original results from
      *   the model and the customer's filters.
      * * `relaxed-category-match`: Only keep results with categories that match
      *   at least one item categories in the PredictRequests's context item.
      *   * If customer also sends filters in the PredictRequest, then the results
      *   will satisfy both conditions (user given and category match).
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -6152,12 +6404,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Whether to add additional category filters on the `similar-items` model.
      * If not specified, we enable it by default.
      *  Allowed values are:
+     *
      * * `no-category-match`: No additional filtering of original results from
      *   the model and the customer's filters.
      * * `relaxed-category-match`: Only keep results with categories that match
      *   at least one item categories in the PredictRequests's context item.
      *   * If customer also sends filters in the PredictRequest, then the results
      *   will satisfy both conditions (user given and category match).
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -6185,12 +6439,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Whether to add additional category filters on the `similar-items` model.
      * If not specified, we enable it by default.
      *  Allowed values are:
+     *
      * * `no-category-match`: No additional filtering of original results from
      *   the model and the customer's filters.
      * * `relaxed-category-match`: Only keep results with categories that match
      *   at least one item categories in the PredictRequests's context item.
      *   * If customer also sends filters in the PredictRequest, then the results
      *   will satisfy both conditions (user given and category match).
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -6214,12 +6470,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * Whether to add additional category filters on the `similar-items` model.
      * If not specified, we enable it by default.
      *  Allowed values are:
+     *
      * * `no-category-match`: No additional filtering of original results from
      *   the model and the customer's filters.
      * * `relaxed-category-match`: Only keep results with categories that match
      *   at least one item categories in the PredictRequests's context item.
      *   * If customer also sends filters in the PredictRequest, then the results
      *   will satisfy both conditions (user given and category match).
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
@@ -6253,10 +6511,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization spec.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
      * and
@@ -6281,10 +6541,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization spec.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
      * and
@@ -6316,10 +6578,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization spec.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
      * and
@@ -6353,10 +6617,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization spec.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
      * and
@@ -6387,10 +6653,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization spec.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
      * and
@@ -6429,10 +6697,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization spec.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
      * and
@@ -6462,10 +6732,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization spec.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
      * and
@@ -6491,10 +6763,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization spec.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
      * and
@@ -6524,10 +6798,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization spec.
+     *
      * Can only be set if
      * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
      * is
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+     *
      * Notice that if both
      * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
      * and

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ public interface RunPivotReportRequestOrBuilder
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -51,6 +52,7 @@ public interface RunPivotReportRequestOrBuilder
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -469,6 +471,13 @@ public interface RunPivotReportRequestOrBuilder
    * If false or unspecified, each row with all metrics equal to 0 will not be
    * returned. If true, these rows will be returned if they are not separately
    * removed by a filter.
+   *
+   * Regardless of this `keep_empty_rows` setting, only data recorded by the
+   * Google Analytics (GA4) property can be displayed in a report.
+   *
+   * For example if a property never logs a `purchase` event, then a query for
+   * the `eventName` dimension and  `eventCount` metric will not have a row
+   * eventName: "purchase" and eventCount: 0.
    * </pre>
    *
    * <code>bool keep_empty_rows = 10;</code>

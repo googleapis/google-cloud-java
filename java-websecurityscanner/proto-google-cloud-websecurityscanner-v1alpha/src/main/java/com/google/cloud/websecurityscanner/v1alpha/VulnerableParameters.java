@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
   }
 
   private VulnerableParameters() {
-    parameterNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    parameterNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new VulnerableParameters();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
   public static final int PARAMETER_NAMES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList parameterNames_;
+  private com.google.protobuf.LazyStringArrayList parameterNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -336,8 +332,7 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      parameterNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      parameterNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -366,7 +361,6 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
     public com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters buildPartial() {
       com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters result =
           new com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -374,18 +368,13 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        parameterNames_ = parameterNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.parameterNames_ = parameterNames_;
-    }
-
     private void buildPartial0(
         com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        parameterNames_.makeImmutable();
+        result.parameterNames_ = parameterNames_;
+      }
     }
 
     @java.lang.Override
@@ -439,7 +428,7 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
       if (!other.parameterNames_.isEmpty()) {
         if (parameterNames_.isEmpty()) {
           parameterNames_ = other.parameterNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureParameterNamesIsMutable();
           parameterNames_.addAll(other.parameterNames_);
@@ -498,14 +487,14 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList parameterNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList parameterNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureParameterNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!parameterNames_.isModifiable()) {
         parameterNames_ = new com.google.protobuf.LazyStringArrayList(parameterNames_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -519,7 +508,8 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
      * @return A list containing the parameterNames.
      */
     public com.google.protobuf.ProtocolStringList getParameterNamesList() {
-      return parameterNames_.getUnmodifiableView();
+      parameterNames_.makeImmutable();
+      return parameterNames_;
     }
     /**
      *
@@ -584,6 +574,7 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
       }
       ensureParameterNamesIsMutable();
       parameterNames_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -605,6 +596,7 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
       }
       ensureParameterNamesIsMutable();
       parameterNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -623,6 +615,7 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
     public Builder addAllParameterNames(java.lang.Iterable<java.lang.String> values) {
       ensureParameterNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, parameterNames_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -638,8 +631,9 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParameterNames() {
-      parameterNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      parameterNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -662,6 +656,7 @@ public final class VulnerableParameters extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureParameterNamesIsMutable();
       parameterNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

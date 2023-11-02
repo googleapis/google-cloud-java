@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.analytics.data.v1alpha;
 
 import com.google.analytics.data.v1alpha.AlphaAnalyticsDataGrpc.AlphaAnalyticsDataImplBase;
 import com.google.api.core.BetaApi;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -75,6 +76,92 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
                   "Unrecognized response type %s for method RunFunnelReport, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RunFunnelReportResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAudienceList(
+      CreateAudienceListRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAudienceList, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void queryAudienceList(
+      QueryAudienceListRequest request,
+      StreamObserver<QueryAudienceListResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryAudienceListResponse) {
+      requests.add(request);
+      responseObserver.onNext(((QueryAudienceListResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryAudienceList, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryAudienceListResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAudienceList(
+      GetAudienceListRequest request, StreamObserver<AudienceList> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AudienceList) {
+      requests.add(request);
+      responseObserver.onNext(((AudienceList) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAudienceList, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AudienceList.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAudienceLists(
+      ListAudienceListsRequest request,
+      StreamObserver<ListAudienceListsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAudienceListsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAudienceListsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAudienceLists, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAudienceListsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

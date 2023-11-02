@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,14 @@
 package com.google.cloud.baremetalsolution.v2.stub;
 
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListInstancesPagedResponse;
+import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListLocationsPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListLunsPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNetworksPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNfsSharesPagedResponse;
+import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListOSImagesPagedResponse;
+import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListProvisioningQuotasPagedResponse;
+import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListSSHKeysPagedResponse;
+import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumeSnapshotsPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -28,13 +33,29 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.baremetalsolution.v2.CreateNfsShareRequest;
+import com.google.cloud.baremetalsolution.v2.CreateProvisioningConfigRequest;
+import com.google.cloud.baremetalsolution.v2.CreateSSHKeyRequest;
+import com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest;
+import com.google.cloud.baremetalsolution.v2.DeleteNfsShareRequest;
+import com.google.cloud.baremetalsolution.v2.DeleteSSHKeyRequest;
+import com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest;
 import com.google.cloud.baremetalsolution.v2.DetachLunRequest;
+import com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest;
+import com.google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleResponse;
+import com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleRequest;
+import com.google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleResponse;
+import com.google.cloud.baremetalsolution.v2.EvictLunRequest;
+import com.google.cloud.baremetalsolution.v2.EvictVolumeRequest;
 import com.google.cloud.baremetalsolution.v2.GetInstanceRequest;
 import com.google.cloud.baremetalsolution.v2.GetLunRequest;
 import com.google.cloud.baremetalsolution.v2.GetNetworkRequest;
 import com.google.cloud.baremetalsolution.v2.GetNfsShareRequest;
+import com.google.cloud.baremetalsolution.v2.GetProvisioningConfigRequest;
 import com.google.cloud.baremetalsolution.v2.GetVolumeRequest;
+import com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest;
 import com.google.cloud.baremetalsolution.v2.Instance;
 import com.google.cloud.baremetalsolution.v2.ListInstancesRequest;
 import com.google.cloud.baremetalsolution.v2.ListInstancesResponse;
@@ -46,27 +67,50 @@ import com.google.cloud.baremetalsolution.v2.ListNetworksRequest;
 import com.google.cloud.baremetalsolution.v2.ListNetworksResponse;
 import com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest;
 import com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse;
+import com.google.cloud.baremetalsolution.v2.ListOSImagesRequest;
+import com.google.cloud.baremetalsolution.v2.ListOSImagesResponse;
+import com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasRequest;
+import com.google.cloud.baremetalsolution.v2.ListProvisioningQuotasResponse;
+import com.google.cloud.baremetalsolution.v2.ListSSHKeysRequest;
+import com.google.cloud.baremetalsolution.v2.ListSSHKeysResponse;
+import com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest;
+import com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse;
 import com.google.cloud.baremetalsolution.v2.ListVolumesRequest;
 import com.google.cloud.baremetalsolution.v2.ListVolumesResponse;
 import com.google.cloud.baremetalsolution.v2.Lun;
 import com.google.cloud.baremetalsolution.v2.Network;
 import com.google.cloud.baremetalsolution.v2.NfsShare;
 import com.google.cloud.baremetalsolution.v2.OperationMetadata;
+import com.google.cloud.baremetalsolution.v2.ProvisioningConfig;
+import com.google.cloud.baremetalsolution.v2.RenameInstanceRequest;
+import com.google.cloud.baremetalsolution.v2.RenameNetworkRequest;
+import com.google.cloud.baremetalsolution.v2.RenameNfsShareRequest;
+import com.google.cloud.baremetalsolution.v2.RenameVolumeRequest;
 import com.google.cloud.baremetalsolution.v2.ResetInstanceRequest;
 import com.google.cloud.baremetalsolution.v2.ResetInstanceResponse;
 import com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest;
+import com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest;
+import com.google.cloud.baremetalsolution.v2.SSHKey;
 import com.google.cloud.baremetalsolution.v2.StartInstanceRequest;
 import com.google.cloud.baremetalsolution.v2.StartInstanceResponse;
 import com.google.cloud.baremetalsolution.v2.StopInstanceRequest;
 import com.google.cloud.baremetalsolution.v2.StopInstanceResponse;
+import com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigRequest;
+import com.google.cloud.baremetalsolution.v2.SubmitProvisioningConfigResponse;
 import com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest;
 import com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest;
 import com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest;
+import com.google.cloud.baremetalsolution.v2.UpdateProvisioningConfigRequest;
 import com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest;
 import com.google.cloud.baremetalsolution.v2.Volume;
-import com.google.common.collect.ImmutableMap;
+import com.google.cloud.baremetalsolution.v2.VolumeSnapshot;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -112,6 +156,17 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RenameInstanceRequest, Instance>
+      renameInstanceMethodDescriptor =
+          MethodDescriptor.<RenameInstanceRequest, Instance>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/RenameInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RenameInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ResetInstanceRequest, Operation>
       resetInstanceMethodDescriptor =
           MethodDescriptor.<ResetInstanceRequest, Operation>newBuilder()
@@ -143,12 +198,61 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<EnableInteractiveSerialConsoleRequest, Operation>
+      enableInteractiveSerialConsoleMethodDescriptor =
+          MethodDescriptor.<EnableInteractiveSerialConsoleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/EnableInteractiveSerialConsole")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EnableInteractiveSerialConsoleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DisableInteractiveSerialConsoleRequest, Operation>
+      disableInteractiveSerialConsoleMethodDescriptor =
+          MethodDescriptor.<DisableInteractiveSerialConsoleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/DisableInteractiveSerialConsole")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DisableInteractiveSerialConsoleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DetachLunRequest, Operation> detachLunMethodDescriptor =
       MethodDescriptor.<DetachLunRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/DetachLun")
           .setRequestMarshaller(ProtoUtils.marshaller(DetachLunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListSSHKeysRequest, ListSSHKeysResponse>
+      listSSHKeysMethodDescriptor =
+          MethodDescriptor.<ListSSHKeysRequest, ListSSHKeysResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/ListSSHKeys")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListSSHKeysRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSSHKeysResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateSSHKeyRequest, SSHKey> createSSHKeyMethodDescriptor =
+      MethodDescriptor.<CreateSSHKeyRequest, SSHKey>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/CreateSSHKey")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateSSHKeyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(SSHKey.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteSSHKeyRequest, Empty> deleteSSHKeyMethodDescriptor =
+      MethodDescriptor.<DeleteSSHKeyRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/DeleteSSHKey")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteSSHKeyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
   private static final MethodDescriptor<ListVolumesRequest, ListVolumesResponse>
@@ -177,6 +281,22 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
+  private static final MethodDescriptor<RenameVolumeRequest, Volume> renameVolumeMethodDescriptor =
+      MethodDescriptor.<RenameVolumeRequest, Volume>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/RenameVolume")
+          .setRequestMarshaller(ProtoUtils.marshaller(RenameVolumeRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Volume.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<EvictVolumeRequest, Operation> evictVolumeMethodDescriptor =
+      MethodDescriptor.<EvictVolumeRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/EvictVolume")
+          .setRequestMarshaller(ProtoUtils.marshaller(EvictVolumeRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
 
   private static final MethodDescriptor<ResizeVolumeRequest, Operation>
       resizeVolumeMethodDescriptor =
@@ -228,6 +348,62 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateVolumeSnapshotRequest, VolumeSnapshot>
+      createVolumeSnapshotMethodDescriptor =
+          MethodDescriptor.<CreateVolumeSnapshotRequest, VolumeSnapshot>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/CreateVolumeSnapshot")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateVolumeSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(VolumeSnapshot.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RestoreVolumeSnapshotRequest, Operation>
+      restoreVolumeSnapshotMethodDescriptor =
+          MethodDescriptor.<RestoreVolumeSnapshotRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/RestoreVolumeSnapshot")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RestoreVolumeSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteVolumeSnapshotRequest, Empty>
+      deleteVolumeSnapshotMethodDescriptor =
+          MethodDescriptor.<DeleteVolumeSnapshotRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/DeleteVolumeSnapshot")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteVolumeSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetVolumeSnapshotRequest, VolumeSnapshot>
+      getVolumeSnapshotMethodDescriptor =
+          MethodDescriptor.<GetVolumeSnapshotRequest, VolumeSnapshot>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/GetVolumeSnapshot")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetVolumeSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(VolumeSnapshot.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
+      listVolumeSnapshotsMethodDescriptor =
+          MethodDescriptor.<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/ListVolumeSnapshots")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListVolumeSnapshotsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListVolumeSnapshotsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetLunRequest, Lun> getLunMethodDescriptor =
       MethodDescriptor.<GetLunRequest, Lun>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -244,6 +420,14 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListLunsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListLunsResponse.getDefaultInstance()))
               .build();
+
+  private static final MethodDescriptor<EvictLunRequest, Operation> evictLunMethodDescriptor =
+      MethodDescriptor.<EvictLunRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/EvictLun")
+          .setRequestMarshaller(ProtoUtils.marshaller(EvictLunRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
 
   private static final MethodDescriptor<GetNfsShareRequest, NfsShare> getNfsShareMethodDescriptor =
       MethodDescriptor.<GetNfsShareRequest, NfsShare>newBuilder()
@@ -276,6 +460,140 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateNfsShareRequest, Operation>
+      createNfsShareMethodDescriptor =
+          MethodDescriptor.<CreateNfsShareRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/CreateNfsShare")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateNfsShareRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RenameNfsShareRequest, NfsShare>
+      renameNfsShareMethodDescriptor =
+          MethodDescriptor.<RenameNfsShareRequest, NfsShare>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/RenameNfsShare")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RenameNfsShareRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(NfsShare.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteNfsShareRequest, Operation>
+      deleteNfsShareMethodDescriptor =
+          MethodDescriptor.<DeleteNfsShareRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/DeleteNfsShare")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteNfsShareRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListProvisioningQuotasRequest, ListProvisioningQuotasResponse>
+      listProvisioningQuotasMethodDescriptor =
+          MethodDescriptor
+              .<ListProvisioningQuotasRequest, ListProvisioningQuotasResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/ListProvisioningQuotas")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListProvisioningQuotasRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListProvisioningQuotasResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          SubmitProvisioningConfigRequest, SubmitProvisioningConfigResponse>
+      submitProvisioningConfigMethodDescriptor =
+          MethodDescriptor
+              .<SubmitProvisioningConfigRequest, SubmitProvisioningConfigResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/SubmitProvisioningConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SubmitProvisioningConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SubmitProvisioningConfigResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetProvisioningConfigRequest, ProvisioningConfig>
+      getProvisioningConfigMethodDescriptor =
+          MethodDescriptor.<GetProvisioningConfigRequest, ProvisioningConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/GetProvisioningConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetProvisioningConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ProvisioningConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateProvisioningConfigRequest, ProvisioningConfig>
+      createProvisioningConfigMethodDescriptor =
+          MethodDescriptor.<CreateProvisioningConfigRequest, ProvisioningConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/CreateProvisioningConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateProvisioningConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ProvisioningConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateProvisioningConfigRequest, ProvisioningConfig>
+      updateProvisioningConfigMethodDescriptor =
+          MethodDescriptor.<UpdateProvisioningConfigRequest, ProvisioningConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/UpdateProvisioningConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateProvisioningConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ProvisioningConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RenameNetworkRequest, Network>
+      renameNetworkMethodDescriptor =
+          MethodDescriptor.<RenameNetworkRequest, Network>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/RenameNetwork")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RenameNetworkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Network.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListOSImagesRequest, ListOSImagesResponse>
+      listOSImagesMethodDescriptor =
+          MethodDescriptor.<ListOSImagesRequest, ListOSImagesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/ListOSImages")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListOSImagesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListOSImagesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable;
@@ -283,6 +601,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   private final UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable;
   private final OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationCallable;
+  private final UnaryCallable<RenameInstanceRequest, Instance> renameInstanceCallable;
   private final UnaryCallable<ResetInstanceRequest, Operation> resetInstanceCallable;
   private final OperationCallable<ResetInstanceRequest, ResetInstanceResponse, OperationMetadata>
       resetInstanceOperationCallable;
@@ -292,9 +611,28 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   private final UnaryCallable<StopInstanceRequest, Operation> stopInstanceCallable;
   private final OperationCallable<StopInstanceRequest, StopInstanceResponse, OperationMetadata>
       stopInstanceOperationCallable;
+  private final UnaryCallable<EnableInteractiveSerialConsoleRequest, Operation>
+      enableInteractiveSerialConsoleCallable;
+  private final OperationCallable<
+          EnableInteractiveSerialConsoleRequest,
+          EnableInteractiveSerialConsoleResponse,
+          OperationMetadata>
+      enableInteractiveSerialConsoleOperationCallable;
+  private final UnaryCallable<DisableInteractiveSerialConsoleRequest, Operation>
+      disableInteractiveSerialConsoleCallable;
+  private final OperationCallable<
+          DisableInteractiveSerialConsoleRequest,
+          DisableInteractiveSerialConsoleResponse,
+          OperationMetadata>
+      disableInteractiveSerialConsoleOperationCallable;
   private final UnaryCallable<DetachLunRequest, Operation> detachLunCallable;
   private final OperationCallable<DetachLunRequest, Instance, OperationMetadata>
       detachLunOperationCallable;
+  private final UnaryCallable<ListSSHKeysRequest, ListSSHKeysResponse> listSSHKeysCallable;
+  private final UnaryCallable<ListSSHKeysRequest, ListSSHKeysPagedResponse>
+      listSSHKeysPagedCallable;
+  private final UnaryCallable<CreateSSHKeyRequest, SSHKey> createSSHKeyCallable;
+  private final UnaryCallable<DeleteSSHKeyRequest, Empty> deleteSSHKeyCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesResponse> listVolumesCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesPagedResponse>
       listVolumesPagedCallable;
@@ -302,6 +640,10 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   private final UnaryCallable<UpdateVolumeRequest, Operation> updateVolumeCallable;
   private final OperationCallable<UpdateVolumeRequest, Volume, OperationMetadata>
       updateVolumeOperationCallable;
+  private final UnaryCallable<RenameVolumeRequest, Volume> renameVolumeCallable;
+  private final UnaryCallable<EvictVolumeRequest, Operation> evictVolumeCallable;
+  private final OperationCallable<EvictVolumeRequest, Empty, OperationMetadata>
+      evictVolumeOperationCallable;
   private final UnaryCallable<ResizeVolumeRequest, Operation> resizeVolumeCallable;
   private final OperationCallable<ResizeVolumeRequest, Volume, OperationMetadata>
       resizeVolumeOperationCallable;
@@ -314,9 +656,24 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   private final UnaryCallable<UpdateNetworkRequest, Operation> updateNetworkCallable;
   private final OperationCallable<UpdateNetworkRequest, Network, OperationMetadata>
       updateNetworkOperationCallable;
+  private final UnaryCallable<CreateVolumeSnapshotRequest, VolumeSnapshot>
+      createVolumeSnapshotCallable;
+  private final UnaryCallable<RestoreVolumeSnapshotRequest, Operation>
+      restoreVolumeSnapshotCallable;
+  private final OperationCallable<RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
+      restoreVolumeSnapshotOperationCallable;
+  private final UnaryCallable<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotCallable;
+  private final UnaryCallable<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotCallable;
+  private final UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
+      listVolumeSnapshotsCallable;
+  private final UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsPagedResponse>
+      listVolumeSnapshotsPagedCallable;
   private final UnaryCallable<GetLunRequest, Lun> getLunCallable;
   private final UnaryCallable<ListLunsRequest, ListLunsResponse> listLunsCallable;
   private final UnaryCallable<ListLunsRequest, ListLunsPagedResponse> listLunsPagedCallable;
+  private final UnaryCallable<EvictLunRequest, Operation> evictLunCallable;
+  private final OperationCallable<EvictLunRequest, Empty, OperationMetadata>
+      evictLunOperationCallable;
   private final UnaryCallable<GetNfsShareRequest, NfsShare> getNfsShareCallable;
   private final UnaryCallable<ListNfsSharesRequest, ListNfsSharesResponse> listNfsSharesCallable;
   private final UnaryCallable<ListNfsSharesRequest, ListNfsSharesPagedResponse>
@@ -324,6 +681,33 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   private final UnaryCallable<UpdateNfsShareRequest, Operation> updateNfsShareCallable;
   private final OperationCallable<UpdateNfsShareRequest, NfsShare, OperationMetadata>
       updateNfsShareOperationCallable;
+  private final UnaryCallable<CreateNfsShareRequest, Operation> createNfsShareCallable;
+  private final OperationCallable<CreateNfsShareRequest, NfsShare, OperationMetadata>
+      createNfsShareOperationCallable;
+  private final UnaryCallable<RenameNfsShareRequest, NfsShare> renameNfsShareCallable;
+  private final UnaryCallable<DeleteNfsShareRequest, Operation> deleteNfsShareCallable;
+  private final OperationCallable<DeleteNfsShareRequest, Empty, OperationMetadata>
+      deleteNfsShareOperationCallable;
+  private final UnaryCallable<ListProvisioningQuotasRequest, ListProvisioningQuotasResponse>
+      listProvisioningQuotasCallable;
+  private final UnaryCallable<ListProvisioningQuotasRequest, ListProvisioningQuotasPagedResponse>
+      listProvisioningQuotasPagedCallable;
+  private final UnaryCallable<SubmitProvisioningConfigRequest, SubmitProvisioningConfigResponse>
+      submitProvisioningConfigCallable;
+  private final UnaryCallable<GetProvisioningConfigRequest, ProvisioningConfig>
+      getProvisioningConfigCallable;
+  private final UnaryCallable<CreateProvisioningConfigRequest, ProvisioningConfig>
+      createProvisioningConfigCallable;
+  private final UnaryCallable<UpdateProvisioningConfigRequest, ProvisioningConfig>
+      updateProvisioningConfigCallable;
+  private final UnaryCallable<RenameNetworkRequest, Network> renameNetworkCallable;
+  private final UnaryCallable<ListOSImagesRequest, ListOSImagesResponse> listOSImagesCallable;
+  private final UnaryCallable<ListOSImagesRequest, ListOSImagesPagedResponse>
+      listOSImagesPagedCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -374,9 +758,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(listInstancesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
@@ -384,9 +768,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(getInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
@@ -394,9 +778,19 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(updateInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("instance.name", String.valueOf(request.getInstance().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance.name", String.valueOf(request.getInstance().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RenameInstanceRequest, Instance> renameInstanceTransportSettings =
+        GrpcCallSettings.<RenameInstanceRequest, Instance>newBuilder()
+            .setMethodDescriptor(renameInstanceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResetInstanceRequest, Operation> resetInstanceTransportSettings =
@@ -404,9 +798,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(resetInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StartInstanceRequest, Operation> startInstanceTransportSettings =
@@ -414,9 +808,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(startInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StopInstanceRequest, Operation> stopInstanceTransportSettings =
@@ -424,19 +818,71 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(stopInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
+    GrpcCallSettings<EnableInteractiveSerialConsoleRequest, Operation>
+        enableInteractiveSerialConsoleTransportSettings =
+            GrpcCallSettings.<EnableInteractiveSerialConsoleRequest, Operation>newBuilder()
+                .setMethodDescriptor(enableInteractiveSerialConsoleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DisableInteractiveSerialConsoleRequest, Operation>
+        disableInteractiveSerialConsoleTransportSettings =
+            GrpcCallSettings.<DisableInteractiveSerialConsoleRequest, Operation>newBuilder()
+                .setMethodDescriptor(disableInteractiveSerialConsoleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DetachLunRequest, Operation> detachLunTransportSettings =
         GrpcCallSettings.<DetachLunRequest, Operation>newBuilder()
             .setMethodDescriptor(detachLunMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("instance", String.valueOf(request.getInstance()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance", String.valueOf(request.getInstance()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListSSHKeysRequest, ListSSHKeysResponse> listSSHKeysTransportSettings =
+        GrpcCallSettings.<ListSSHKeysRequest, ListSSHKeysResponse>newBuilder()
+            .setMethodDescriptor(listSSHKeysMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateSSHKeyRequest, SSHKey> createSSHKeyTransportSettings =
+        GrpcCallSettings.<CreateSSHKeyRequest, SSHKey>newBuilder()
+            .setMethodDescriptor(createSSHKeyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteSSHKeyRequest, Empty> deleteSSHKeyTransportSettings =
+        GrpcCallSettings.<DeleteSSHKeyRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSSHKeyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListVolumesRequest, ListVolumesResponse> listVolumesTransportSettings =
@@ -444,9 +890,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(listVolumesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetVolumeRequest, Volume> getVolumeTransportSettings =
@@ -454,9 +900,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(getVolumeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateVolumeRequest, Operation> updateVolumeTransportSettings =
@@ -464,9 +910,29 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(updateVolumeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("volume.name", String.valueOf(request.getVolume().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("volume.name", String.valueOf(request.getVolume().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RenameVolumeRequest, Volume> renameVolumeTransportSettings =
+        GrpcCallSettings.<RenameVolumeRequest, Volume>newBuilder()
+            .setMethodDescriptor(renameVolumeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<EvictVolumeRequest, Operation> evictVolumeTransportSettings =
+        GrpcCallSettings.<EvictVolumeRequest, Operation>newBuilder()
+            .setMethodDescriptor(evictVolumeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResizeVolumeRequest, Operation> resizeVolumeTransportSettings =
@@ -474,9 +940,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(resizeVolumeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("volume", String.valueOf(request.getVolume()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("volume", String.valueOf(request.getVolume()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksTransportSettings =
@@ -484,9 +950,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(listNetworksMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNetworkUsageRequest, ListNetworkUsageResponse>
@@ -495,9 +961,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                 .setMethodDescriptor(listNetworkUsageMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("location", String.valueOf(request.getLocation()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetNetworkRequest, Network> getNetworkTransportSettings =
@@ -505,9 +971,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(getNetworkMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateNetworkRequest, Operation> updateNetworkTransportSettings =
@@ -515,19 +981,72 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(updateNetworkMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("network.name", String.valueOf(request.getNetwork().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("network.name", String.valueOf(request.getNetwork().getName()));
+                  return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateVolumeSnapshotRequest, VolumeSnapshot>
+        createVolumeSnapshotTransportSettings =
+            GrpcCallSettings.<CreateVolumeSnapshotRequest, VolumeSnapshot>newBuilder()
+                .setMethodDescriptor(createVolumeSnapshotMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<RestoreVolumeSnapshotRequest, Operation>
+        restoreVolumeSnapshotTransportSettings =
+            GrpcCallSettings.<RestoreVolumeSnapshotRequest, Operation>newBuilder()
+                .setMethodDescriptor(restoreVolumeSnapshotMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("volume_snapshot", String.valueOf(request.getVolumeSnapshot()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotTransportSettings =
+        GrpcCallSettings.<DeleteVolumeSnapshotRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteVolumeSnapshotMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotTransportSettings =
+        GrpcCallSettings.<GetVolumeSnapshotRequest, VolumeSnapshot>newBuilder()
+            .setMethodDescriptor(getVolumeSnapshotMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
+        listVolumeSnapshotsTransportSettings =
+            GrpcCallSettings.<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>newBuilder()
+                .setMethodDescriptor(listVolumeSnapshotsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GetLunRequest, Lun> getLunTransportSettings =
         GrpcCallSettings.<GetLunRequest, Lun>newBuilder()
             .setMethodDescriptor(getLunMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListLunsRequest, ListLunsResponse> listLunsTransportSettings =
@@ -535,9 +1054,19 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(listLunsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<EvictLunRequest, Operation> evictLunTransportSettings =
+        GrpcCallSettings.<EvictLunRequest, Operation>newBuilder()
+            .setMethodDescriptor(evictLunMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetNfsShareRequest, NfsShare> getNfsShareTransportSettings =
@@ -545,9 +1074,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(getNfsShareMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNfsSharesRequest, ListNfsSharesResponse> listNfsSharesTransportSettings =
@@ -555,9 +1084,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(listNfsSharesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateNfsShareRequest, Operation> updateNfsShareTransportSettings =
@@ -565,9 +1094,138 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             .setMethodDescriptor(updateNfsShareMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("nfs_share.name", String.valueOf(request.getNfsShare().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("nfs_share.name", String.valueOf(request.getNfsShare().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateNfsShareRequest, Operation> createNfsShareTransportSettings =
+        GrpcCallSettings.<CreateNfsShareRequest, Operation>newBuilder()
+            .setMethodDescriptor(createNfsShareMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RenameNfsShareRequest, NfsShare> renameNfsShareTransportSettings =
+        GrpcCallSettings.<RenameNfsShareRequest, NfsShare>newBuilder()
+            .setMethodDescriptor(renameNfsShareMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteNfsShareRequest, Operation> deleteNfsShareTransportSettings =
+        GrpcCallSettings.<DeleteNfsShareRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteNfsShareMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListProvisioningQuotasRequest, ListProvisioningQuotasResponse>
+        listProvisioningQuotasTransportSettings =
+            GrpcCallSettings
+                .<ListProvisioningQuotasRequest, ListProvisioningQuotasResponse>newBuilder()
+                .setMethodDescriptor(listProvisioningQuotasMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<SubmitProvisioningConfigRequest, SubmitProvisioningConfigResponse>
+        submitProvisioningConfigTransportSettings =
+            GrpcCallSettings
+                .<SubmitProvisioningConfigRequest, SubmitProvisioningConfigResponse>newBuilder()
+                .setMethodDescriptor(submitProvisioningConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetProvisioningConfigRequest, ProvisioningConfig>
+        getProvisioningConfigTransportSettings =
+            GrpcCallSettings.<GetProvisioningConfigRequest, ProvisioningConfig>newBuilder()
+                .setMethodDescriptor(getProvisioningConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateProvisioningConfigRequest, ProvisioningConfig>
+        createProvisioningConfigTransportSettings =
+            GrpcCallSettings.<CreateProvisioningConfigRequest, ProvisioningConfig>newBuilder()
+                .setMethodDescriptor(createProvisioningConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateProvisioningConfigRequest, ProvisioningConfig>
+        updateProvisioningConfigTransportSettings =
+            GrpcCallSettings.<UpdateProvisioningConfigRequest, ProvisioningConfig>newBuilder()
+                .setMethodDescriptor(updateProvisioningConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "provisioning_config.name",
+                          String.valueOf(request.getProvisioningConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<RenameNetworkRequest, Network> renameNetworkTransportSettings =
+        GrpcCallSettings.<RenameNetworkRequest, Network>newBuilder()
+            .setMethodDescriptor(renameNetworkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListOSImagesRequest, ListOSImagesResponse> listOSImagesTransportSettings =
+        GrpcCallSettings.<ListOSImagesRequest, ListOSImagesResponse>newBuilder()
+            .setMethodDescriptor(listOSImagesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 
@@ -589,6 +1247,9 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             settings.updateInstanceOperationSettings(),
             clientContext,
             operationsStub);
+    this.renameInstanceCallable =
+        callableFactory.createUnaryCallable(
+            renameInstanceTransportSettings, settings.renameInstanceSettings(), clientContext);
     this.resetInstanceCallable =
         callableFactory.createUnaryCallable(
             resetInstanceTransportSettings, settings.resetInstanceSettings(), clientContext);
@@ -616,6 +1277,28 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             settings.stopInstanceOperationSettings(),
             clientContext,
             operationsStub);
+    this.enableInteractiveSerialConsoleCallable =
+        callableFactory.createUnaryCallable(
+            enableInteractiveSerialConsoleTransportSettings,
+            settings.enableInteractiveSerialConsoleSettings(),
+            clientContext);
+    this.enableInteractiveSerialConsoleOperationCallable =
+        callableFactory.createOperationCallable(
+            enableInteractiveSerialConsoleTransportSettings,
+            settings.enableInteractiveSerialConsoleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.disableInteractiveSerialConsoleCallable =
+        callableFactory.createUnaryCallable(
+            disableInteractiveSerialConsoleTransportSettings,
+            settings.disableInteractiveSerialConsoleSettings(),
+            clientContext);
+    this.disableInteractiveSerialConsoleOperationCallable =
+        callableFactory.createOperationCallable(
+            disableInteractiveSerialConsoleTransportSettings,
+            settings.disableInteractiveSerialConsoleOperationSettings(),
+            clientContext,
+            operationsStub);
     this.detachLunCallable =
         callableFactory.createUnaryCallable(
             detachLunTransportSettings, settings.detachLunSettings(), clientContext);
@@ -625,6 +1308,18 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             settings.detachLunOperationSettings(),
             clientContext,
             operationsStub);
+    this.listSSHKeysCallable =
+        callableFactory.createUnaryCallable(
+            listSSHKeysTransportSettings, settings.listSSHKeysSettings(), clientContext);
+    this.listSSHKeysPagedCallable =
+        callableFactory.createPagedCallable(
+            listSSHKeysTransportSettings, settings.listSSHKeysSettings(), clientContext);
+    this.createSSHKeyCallable =
+        callableFactory.createUnaryCallable(
+            createSSHKeyTransportSettings, settings.createSSHKeySettings(), clientContext);
+    this.deleteSSHKeyCallable =
+        callableFactory.createUnaryCallable(
+            deleteSSHKeyTransportSettings, settings.deleteSSHKeySettings(), clientContext);
     this.listVolumesCallable =
         callableFactory.createUnaryCallable(
             listVolumesTransportSettings, settings.listVolumesSettings(), clientContext);
@@ -641,6 +1336,18 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
         callableFactory.createOperationCallable(
             updateVolumeTransportSettings,
             settings.updateVolumeOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.renameVolumeCallable =
+        callableFactory.createUnaryCallable(
+            renameVolumeTransportSettings, settings.renameVolumeSettings(), clientContext);
+    this.evictVolumeCallable =
+        callableFactory.createUnaryCallable(
+            evictVolumeTransportSettings, settings.evictVolumeSettings(), clientContext);
+    this.evictVolumeOperationCallable =
+        callableFactory.createOperationCallable(
+            evictVolumeTransportSettings,
+            settings.evictVolumeOperationSettings(),
             clientContext,
             operationsStub);
     this.resizeVolumeCallable =
@@ -673,6 +1380,42 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             settings.updateNetworkOperationSettings(),
             clientContext,
             operationsStub);
+    this.createVolumeSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            createVolumeSnapshotTransportSettings,
+            settings.createVolumeSnapshotSettings(),
+            clientContext);
+    this.restoreVolumeSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            restoreVolumeSnapshotTransportSettings,
+            settings.restoreVolumeSnapshotSettings(),
+            clientContext);
+    this.restoreVolumeSnapshotOperationCallable =
+        callableFactory.createOperationCallable(
+            restoreVolumeSnapshotTransportSettings,
+            settings.restoreVolumeSnapshotOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteVolumeSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            deleteVolumeSnapshotTransportSettings,
+            settings.deleteVolumeSnapshotSettings(),
+            clientContext);
+    this.getVolumeSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            getVolumeSnapshotTransportSettings,
+            settings.getVolumeSnapshotSettings(),
+            clientContext);
+    this.listVolumeSnapshotsCallable =
+        callableFactory.createUnaryCallable(
+            listVolumeSnapshotsTransportSettings,
+            settings.listVolumeSnapshotsSettings(),
+            clientContext);
+    this.listVolumeSnapshotsPagedCallable =
+        callableFactory.createPagedCallable(
+            listVolumeSnapshotsTransportSettings,
+            settings.listVolumeSnapshotsSettings(),
+            clientContext);
     this.getLunCallable =
         callableFactory.createUnaryCallable(
             getLunTransportSettings, settings.getLunSettings(), clientContext);
@@ -682,6 +1425,15 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
     this.listLunsPagedCallable =
         callableFactory.createPagedCallable(
             listLunsTransportSettings, settings.listLunsSettings(), clientContext);
+    this.evictLunCallable =
+        callableFactory.createUnaryCallable(
+            evictLunTransportSettings, settings.evictLunSettings(), clientContext);
+    this.evictLunOperationCallable =
+        callableFactory.createOperationCallable(
+            evictLunTransportSettings,
+            settings.evictLunOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getNfsShareCallable =
         callableFactory.createUnaryCallable(
             getNfsShareTransportSettings, settings.getNfsShareSettings(), clientContext);
@@ -700,6 +1452,75 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             settings.updateNfsShareOperationSettings(),
             clientContext,
             operationsStub);
+    this.createNfsShareCallable =
+        callableFactory.createUnaryCallable(
+            createNfsShareTransportSettings, settings.createNfsShareSettings(), clientContext);
+    this.createNfsShareOperationCallable =
+        callableFactory.createOperationCallable(
+            createNfsShareTransportSettings,
+            settings.createNfsShareOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.renameNfsShareCallable =
+        callableFactory.createUnaryCallable(
+            renameNfsShareTransportSettings, settings.renameNfsShareSettings(), clientContext);
+    this.deleteNfsShareCallable =
+        callableFactory.createUnaryCallable(
+            deleteNfsShareTransportSettings, settings.deleteNfsShareSettings(), clientContext);
+    this.deleteNfsShareOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteNfsShareTransportSettings,
+            settings.deleteNfsShareOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listProvisioningQuotasCallable =
+        callableFactory.createUnaryCallable(
+            listProvisioningQuotasTransportSettings,
+            settings.listProvisioningQuotasSettings(),
+            clientContext);
+    this.listProvisioningQuotasPagedCallable =
+        callableFactory.createPagedCallable(
+            listProvisioningQuotasTransportSettings,
+            settings.listProvisioningQuotasSettings(),
+            clientContext);
+    this.submitProvisioningConfigCallable =
+        callableFactory.createUnaryCallable(
+            submitProvisioningConfigTransportSettings,
+            settings.submitProvisioningConfigSettings(),
+            clientContext);
+    this.getProvisioningConfigCallable =
+        callableFactory.createUnaryCallable(
+            getProvisioningConfigTransportSettings,
+            settings.getProvisioningConfigSettings(),
+            clientContext);
+    this.createProvisioningConfigCallable =
+        callableFactory.createUnaryCallable(
+            createProvisioningConfigTransportSettings,
+            settings.createProvisioningConfigSettings(),
+            clientContext);
+    this.updateProvisioningConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateProvisioningConfigTransportSettings,
+            settings.updateProvisioningConfigSettings(),
+            clientContext);
+    this.renameNetworkCallable =
+        callableFactory.createUnaryCallable(
+            renameNetworkTransportSettings, settings.renameNetworkSettings(), clientContext);
+    this.listOSImagesCallable =
+        callableFactory.createUnaryCallable(
+            listOSImagesTransportSettings, settings.listOSImagesSettings(), clientContext);
+    this.listOSImagesPagedCallable =
+        callableFactory.createPagedCallable(
+            listOSImagesTransportSettings, settings.listOSImagesSettings(), clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -737,6 +1558,11 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   }
 
   @Override
+  public UnaryCallable<RenameInstanceRequest, Instance> renameInstanceCallable() {
+    return renameInstanceCallable;
+  }
+
+  @Override
   public UnaryCallable<ResetInstanceRequest, Operation> resetInstanceCallable() {
     return resetInstanceCallable;
   }
@@ -770,6 +1596,36 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   }
 
   @Override
+  public UnaryCallable<EnableInteractiveSerialConsoleRequest, Operation>
+      enableInteractiveSerialConsoleCallable() {
+    return enableInteractiveSerialConsoleCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          EnableInteractiveSerialConsoleRequest,
+          EnableInteractiveSerialConsoleResponse,
+          OperationMetadata>
+      enableInteractiveSerialConsoleOperationCallable() {
+    return enableInteractiveSerialConsoleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DisableInteractiveSerialConsoleRequest, Operation>
+      disableInteractiveSerialConsoleCallable() {
+    return disableInteractiveSerialConsoleCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DisableInteractiveSerialConsoleRequest,
+          DisableInteractiveSerialConsoleResponse,
+          OperationMetadata>
+      disableInteractiveSerialConsoleOperationCallable() {
+    return disableInteractiveSerialConsoleOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DetachLunRequest, Operation> detachLunCallable() {
     return detachLunCallable;
   }
@@ -778,6 +1634,26 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   public OperationCallable<DetachLunRequest, Instance, OperationMetadata>
       detachLunOperationCallable() {
     return detachLunOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSSHKeysRequest, ListSSHKeysResponse> listSSHKeysCallable() {
+    return listSSHKeysCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSSHKeysRequest, ListSSHKeysPagedResponse> listSSHKeysPagedCallable() {
+    return listSSHKeysPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSSHKeyRequest, SSHKey> createSSHKeyCallable() {
+    return createSSHKeyCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSSHKeyRequest, Empty> deleteSSHKeyCallable() {
+    return deleteSSHKeyCallable;
   }
 
   @Override
@@ -804,6 +1680,22 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   public OperationCallable<UpdateVolumeRequest, Volume, OperationMetadata>
       updateVolumeOperationCallable() {
     return updateVolumeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RenameVolumeRequest, Volume> renameVolumeCallable() {
+    return renameVolumeCallable;
+  }
+
+  @Override
+  public UnaryCallable<EvictVolumeRequest, Operation> evictVolumeCallable() {
+    return evictVolumeCallable;
+  }
+
+  @Override
+  public OperationCallable<EvictVolumeRequest, Empty, OperationMetadata>
+      evictVolumeOperationCallable() {
+    return evictVolumeOperationCallable;
   }
 
   @Override
@@ -850,6 +1742,44 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   }
 
   @Override
+  public UnaryCallable<CreateVolumeSnapshotRequest, VolumeSnapshot> createVolumeSnapshotCallable() {
+    return createVolumeSnapshotCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreVolumeSnapshotRequest, Operation> restoreVolumeSnapshotCallable() {
+    return restoreVolumeSnapshotCallable;
+  }
+
+  @Override
+  public OperationCallable<RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
+      restoreVolumeSnapshotOperationCallable() {
+    return restoreVolumeSnapshotOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotCallable() {
+    return deleteVolumeSnapshotCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotCallable() {
+    return getVolumeSnapshotCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
+      listVolumeSnapshotsCallable() {
+    return listVolumeSnapshotsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsPagedResponse>
+      listVolumeSnapshotsPagedCallable() {
+    return listVolumeSnapshotsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetLunRequest, Lun> getLunCallable() {
     return getLunCallable;
   }
@@ -862,6 +1792,16 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   @Override
   public UnaryCallable<ListLunsRequest, ListLunsPagedResponse> listLunsPagedCallable() {
     return listLunsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<EvictLunRequest, Operation> evictLunCallable() {
+    return evictLunCallable;
+  }
+
+  @Override
+  public OperationCallable<EvictLunRequest, Empty, OperationMetadata> evictLunOperationCallable() {
+    return evictLunOperationCallable;
   }
 
   @Override
@@ -889,6 +1829,100 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   public OperationCallable<UpdateNfsShareRequest, NfsShare, OperationMetadata>
       updateNfsShareOperationCallable() {
     return updateNfsShareOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateNfsShareRequest, Operation> createNfsShareCallable() {
+    return createNfsShareCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateNfsShareRequest, NfsShare, OperationMetadata>
+      createNfsShareOperationCallable() {
+    return createNfsShareOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RenameNfsShareRequest, NfsShare> renameNfsShareCallable() {
+    return renameNfsShareCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteNfsShareRequest, Operation> deleteNfsShareCallable() {
+    return deleteNfsShareCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteNfsShareRequest, Empty, OperationMetadata>
+      deleteNfsShareOperationCallable() {
+    return deleteNfsShareOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListProvisioningQuotasRequest, ListProvisioningQuotasResponse>
+      listProvisioningQuotasCallable() {
+    return listProvisioningQuotasCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListProvisioningQuotasRequest, ListProvisioningQuotasPagedResponse>
+      listProvisioningQuotasPagedCallable() {
+    return listProvisioningQuotasPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SubmitProvisioningConfigRequest, SubmitProvisioningConfigResponse>
+      submitProvisioningConfigCallable() {
+    return submitProvisioningConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetProvisioningConfigRequest, ProvisioningConfig>
+      getProvisioningConfigCallable() {
+    return getProvisioningConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateProvisioningConfigRequest, ProvisioningConfig>
+      createProvisioningConfigCallable() {
+    return createProvisioningConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateProvisioningConfigRequest, ProvisioningConfig>
+      updateProvisioningConfigCallable() {
+    return updateProvisioningConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<RenameNetworkRequest, Network> renameNetworkCallable() {
+    return renameNetworkCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOSImagesRequest, ListOSImagesResponse> listOSImagesCallable() {
+    return listOSImagesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOSImagesRequest, ListOSImagesPagedResponse> listOSImagesPagedCallable() {
+    return listOSImagesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

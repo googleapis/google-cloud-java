@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ListBackupsResponseOrBuilder
    *
    * <pre>
    * A list of backups in the project for the specified location.
+   *
    * If the `{location}` value in the request is "-", the response contains a
    * list of backups from all locations. If any location is unreachable, the
    * response will only return backups in reachable locations and the
@@ -43,6 +44,7 @@ public interface ListBackupsResponseOrBuilder
    *
    * <pre>
    * A list of backups in the project for the specified location.
+   *
    * If the `{location}` value in the request is "-", the response contains a
    * list of backups from all locations. If any location is unreachable, the
    * response will only return backups in reachable locations and the
@@ -58,6 +60,7 @@ public interface ListBackupsResponseOrBuilder
    *
    * <pre>
    * A list of backups in the project for the specified location.
+   *
    * If the `{location}` value in the request is "-", the response contains a
    * list of backups from all locations. If any location is unreachable, the
    * response will only return backups in reachable locations and the
@@ -73,6 +76,7 @@ public interface ListBackupsResponseOrBuilder
    *
    * <pre>
    * A list of backups in the project for the specified location.
+   *
    * If the `{location}` value in the request is "-", the response contains a
    * list of backups from all locations. If any location is unreachable, the
    * response will only return backups in reachable locations and the
@@ -88,6 +92,7 @@ public interface ListBackupsResponseOrBuilder
    *
    * <pre>
    * A list of backups in the project for the specified location.
+   *
    * If the `{location}` value in the request is "-", the response contains a
    * list of backups from all locations. If any location is unreachable, the
    * response will only return backups in reachable locations and the

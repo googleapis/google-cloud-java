@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,11 +53,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EventTrigger();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -243,8 +238,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Eventarc trigger. The format of this field is
-   * `projects/{project}/locations/{region}/triggers/{trigger}`.
+   * Output only. The resource name of the Eventarc trigger. The format of this
+   * field is `projects/{project}/locations/{region}/triggers/{trigger}`.
    * </pre>
    *
    * <code>
@@ -269,8 +264,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Eventarc trigger. The format of this field is
-   * `projects/{project}/locations/{region}/triggers/{trigger}`.
+   * Output only. The resource name of the Eventarc trigger. The format of this
+   * field is `projects/{project}/locations/{region}/triggers/{trigger}`.
    * </pre>
    *
    * <code>
@@ -487,6 +482,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    * Optional. The name of a Pub/Sub topic in the same project that will be used
    * as the transport topic for the event delivery. Format:
    * `projects/{project}/topics/{topic}`.
+   *
    * This is only valid for events of type
    * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
    * will not be deleted at function deletion.
@@ -517,6 +513,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    * Optional. The name of a Pub/Sub topic in the same project that will be used
    * as the transport topic for the event delivery. Format:
    * `projects/{project}/topics/{topic}`.
+   *
    * This is only valid for events of type
    * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
    * will not be deleted at function deletion.
@@ -549,8 +546,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The email of the trigger's service account. The service account must have
-   * permission to invoke Cloud Run services, the permission is
+   * Optional. The email of the trigger's service account. The service account
+   * must have permission to invoke Cloud Run services, the permission is
    * `run.routes.invoke`.
    * If empty, defaults to the Compute Engine default service account:
    * `{project_number}-compute&#64;developer.gserviceaccount.com`.
@@ -576,8 +573,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The email of the trigger's service account. The service account must have
-   * permission to invoke Cloud Run services, the permission is
+   * Optional. The email of the trigger's service account. The service account
+   * must have permission to invoke Cloud Run services, the permission is
    * `run.routes.invoke`.
    * If empty, defaults to the Compute Engine default service account:
    * `{project_number}-compute&#64;developer.gserviceaccount.com`.
@@ -606,7 +603,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If unset, then defaults to ignoring failures (i.e. not retrying them).
+   * Optional. If unset, then defaults to ignoring failures (i.e. not retrying
+   * them).
    * </pre>
    *
    * <code>
@@ -623,7 +621,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If unset, then defaults to ignoring failures (i.e. not retrying them).
+   * Optional. If unset, then defaults to ignoring failures (i.e. not retrying
+   * them).
    * </pre>
    *
    * <code>
@@ -1266,8 +1265,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Eventarc trigger. The format of this field is
-     * `projects/{project}/locations/{region}/triggers/{trigger}`.
+     * Output only. The resource name of the Eventarc trigger. The format of this
+     * field is `projects/{project}/locations/{region}/triggers/{trigger}`.
      * </pre>
      *
      * <code>
@@ -1291,8 +1290,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Eventarc trigger. The format of this field is
-     * `projects/{project}/locations/{region}/triggers/{trigger}`.
+     * Output only. The resource name of the Eventarc trigger. The format of this
+     * field is `projects/{project}/locations/{region}/triggers/{trigger}`.
      * </pre>
      *
      * <code>
@@ -1316,8 +1315,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Eventarc trigger. The format of this field is
-     * `projects/{project}/locations/{region}/triggers/{trigger}`.
+     * Output only. The resource name of the Eventarc trigger. The format of this
+     * field is `projects/{project}/locations/{region}/triggers/{trigger}`.
      * </pre>
      *
      * <code>
@@ -1340,8 +1339,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Eventarc trigger. The format of this field is
-     * `projects/{project}/locations/{region}/triggers/{trigger}`.
+     * Output only. The resource name of the Eventarc trigger. The format of this
+     * field is `projects/{project}/locations/{region}/triggers/{trigger}`.
      * </pre>
      *
      * <code>
@@ -1360,8 +1359,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Eventarc trigger. The format of this field is
-     * `projects/{project}/locations/{region}/triggers/{trigger}`.
+     * Output only. The resource name of the Eventarc trigger. The format of this
+     * field is `projects/{project}/locations/{region}/triggers/{trigger}`.
      * </pre>
      *
      * <code>
@@ -1983,6 +1982,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of a Pub/Sub topic in the same project that will be used
      * as the transport topic for the event delivery. Format:
      * `projects/{project}/topics/{topic}`.
+     *
      * This is only valid for events of type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
      * will not be deleted at function deletion.
@@ -2012,6 +2012,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of a Pub/Sub topic in the same project that will be used
      * as the transport topic for the event delivery. Format:
      * `projects/{project}/topics/{topic}`.
+     *
      * This is only valid for events of type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
      * will not be deleted at function deletion.
@@ -2041,6 +2042,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of a Pub/Sub topic in the same project that will be used
      * as the transport topic for the event delivery. Format:
      * `projects/{project}/topics/{topic}`.
+     *
      * This is only valid for events of type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
      * will not be deleted at function deletion.
@@ -2069,6 +2071,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of a Pub/Sub topic in the same project that will be used
      * as the transport topic for the event delivery. Format:
      * `projects/{project}/topics/{topic}`.
+     *
      * This is only valid for events of type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
      * will not be deleted at function deletion.
@@ -2093,6 +2096,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of a Pub/Sub topic in the same project that will be used
      * as the transport topic for the event delivery. Format:
      * `projects/{project}/topics/{topic}`.
+     *
      * This is only valid for events of type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
      * will not be deleted at function deletion.
@@ -2121,8 +2125,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The email of the trigger's service account. The service account must have
-     * permission to invoke Cloud Run services, the permission is
+     * Optional. The email of the trigger's service account. The service account
+     * must have permission to invoke Cloud Run services, the permission is
      * `run.routes.invoke`.
      * If empty, defaults to the Compute Engine default service account:
      * `{project_number}-compute&#64;developer.gserviceaccount.com`.
@@ -2147,8 +2151,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The email of the trigger's service account. The service account must have
-     * permission to invoke Cloud Run services, the permission is
+     * Optional. The email of the trigger's service account. The service account
+     * must have permission to invoke Cloud Run services, the permission is
      * `run.routes.invoke`.
      * If empty, defaults to the Compute Engine default service account:
      * `{project_number}-compute&#64;developer.gserviceaccount.com`.
@@ -2173,8 +2177,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The email of the trigger's service account. The service account must have
-     * permission to invoke Cloud Run services, the permission is
+     * Optional. The email of the trigger's service account. The service account
+     * must have permission to invoke Cloud Run services, the permission is
      * `run.routes.invoke`.
      * If empty, defaults to the Compute Engine default service account:
      * `{project_number}-compute&#64;developer.gserviceaccount.com`.
@@ -2198,8 +2202,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The email of the trigger's service account. The service account must have
-     * permission to invoke Cloud Run services, the permission is
+     * Optional. The email of the trigger's service account. The service account
+     * must have permission to invoke Cloud Run services, the permission is
      * `run.routes.invoke`.
      * If empty, defaults to the Compute Engine default service account:
      * `{project_number}-compute&#64;developer.gserviceaccount.com`.
@@ -2219,8 +2223,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The email of the trigger's service account. The service account must have
-     * permission to invoke Cloud Run services, the permission is
+     * Optional. The email of the trigger's service account. The service account
+     * must have permission to invoke Cloud Run services, the permission is
      * `run.routes.invoke`.
      * If empty, defaults to the Compute Engine default service account:
      * `{project_number}-compute&#64;developer.gserviceaccount.com`.
@@ -2247,7 +2251,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If unset, then defaults to ignoring failures (i.e. not retrying them).
+     * Optional. If unset, then defaults to ignoring failures (i.e. not retrying
+     * them).
      * </pre>
      *
      * <code>
@@ -2264,7 +2269,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If unset, then defaults to ignoring failures (i.e. not retrying them).
+     * Optional. If unset, then defaults to ignoring failures (i.e. not retrying
+     * them).
      * </pre>
      *
      * <code>
@@ -2284,7 +2290,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If unset, then defaults to ignoring failures (i.e. not retrying them).
+     * Optional. If unset, then defaults to ignoring failures (i.e. not retrying
+     * them).
      * </pre>
      *
      * <code>
@@ -2305,7 +2312,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If unset, then defaults to ignoring failures (i.e. not retrying them).
+     * Optional. If unset, then defaults to ignoring failures (i.e. not retrying
+     * them).
      * </pre>
      *
      * <code>
@@ -2329,7 +2337,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If unset, then defaults to ignoring failures (i.e. not retrying them).
+     * Optional. If unset, then defaults to ignoring failures (i.e. not retrying
+     * them).
      * </pre>
      *
      * <code>

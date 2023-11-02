@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,10 +69,12 @@ public interface UpdateTenantRequestOrBuilder
    *
    * <pre>
    * Strongly recommended for the best service experience.
+   *
    * If [update_mask][google.cloud.talent.v4.UpdateTenantRequest.update_mask] is
    * provided, only the specified fields in
    * [tenant][google.cloud.talent.v4.UpdateTenantRequest.tenant] are updated.
    * Otherwise all the fields are updated.
+   *
    * A field mask to specify the tenant fields to be updated. Only
    * top level fields of [Tenant][google.cloud.talent.v4.Tenant] are supported.
    * </pre>
@@ -87,10 +89,12 @@ public interface UpdateTenantRequestOrBuilder
    *
    * <pre>
    * Strongly recommended for the best service experience.
+   *
    * If [update_mask][google.cloud.talent.v4.UpdateTenantRequest.update_mask] is
    * provided, only the specified fields in
    * [tenant][google.cloud.talent.v4.UpdateTenantRequest.tenant] are updated.
    * Otherwise all the fields are updated.
+   *
    * A field mask to specify the tenant fields to be updated. Only
    * top level fields of [Tenant][google.cloud.talent.v4.Tenant] are supported.
    * </pre>
@@ -105,10 +109,12 @@ public interface UpdateTenantRequestOrBuilder
    *
    * <pre>
    * Strongly recommended for the best service experience.
+   *
    * If [update_mask][google.cloud.talent.v4.UpdateTenantRequest.update_mask] is
    * provided, only the specified fields in
    * [tenant][google.cloud.talent.v4.UpdateTenantRequest.tenant] are updated.
    * Otherwise all the fields are updated.
+   *
    * A field mask to specify the tenant fields to be updated. Only
    * top level fields of [Tenant][google.cloud.talent.v4.Tenant] are supported.
    * </pre>

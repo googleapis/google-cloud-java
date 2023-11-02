@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,4 +72,19 @@ public interface SchedulingOrBuilder
    * @return The restartJobOnWorkerRestart.
    */
   boolean getRestartJobOnWorkerRestart();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if the job should retry for internal errors after the
+   * job starts running. If true, overrides
+   * `Scheduling.restart_job_on_worker_restart` to false.
+   * </pre>
+   *
+   * <code>bool disable_retries = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableRetries.
+   */
+  boolean getDisableRetries();
 }

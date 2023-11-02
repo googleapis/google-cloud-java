@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,6 +81,7 @@ public interface MetricStructuredNameOrBuilder
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -95,6 +96,7 @@ public interface MetricStructuredNameOrBuilder
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -112,6 +114,7 @@ public interface MetricStructuredNameOrBuilder
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -126,6 +129,7 @@ public interface MetricStructuredNameOrBuilder
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -144,6 +148,7 @@ public interface MetricStructuredNameOrBuilder
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.

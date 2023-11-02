@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,7 +79,7 @@ public interface ListConnectionProfilesResponseOrBuilder
    *
    *
    * <pre>
-   * A token, which can be sent as `page_token` to retrieve the next page.
+   * A token which can be sent as `page_token` to retrieve the next page.
    * If this field is omitted, there are no subsequent pages.
    * </pre>
    *
@@ -92,7 +92,7 @@ public interface ListConnectionProfilesResponseOrBuilder
    *
    *
    * <pre>
-   * A token, which can be sent as `page_token` to retrieve the next page.
+   * A token which can be sent as `page_token` to retrieve the next page.
    * If this field is omitted, there are no subsequent pages.
    * </pre>
    *

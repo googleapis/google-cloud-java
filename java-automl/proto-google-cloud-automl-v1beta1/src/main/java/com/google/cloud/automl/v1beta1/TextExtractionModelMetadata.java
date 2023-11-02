@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     return new TextExtractionModelMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.TextProto
         .internal_static_google_cloud_automl_v1beta1_TextExtractionModelMetadata_descriptor;
@@ -76,7 +71,9 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
    *
    * <pre>
    * Indicates the scope of model use case.
+   *
    * * `default`: Use to train a general text extraction model. Default value.
+   *
    * * `health_care`: Use to train a text extraction model that is tuned for
    *   healthcare applications.
    * </pre>
@@ -102,7 +99,9 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
    *
    * <pre>
    * Indicates the scope of model use case.
+   *
    * * `default`: Use to train a general text extraction model. Default value.
+   *
    * * `health_care`: Use to train a text extraction model that is tuned for
    *   healthcare applications.
    * </pre>
@@ -473,7 +472,9 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
      *
      * <pre>
      * Indicates the scope of model use case.
+     *
      * * `default`: Use to train a general text extraction model. Default value.
+     *
      * * `health_care`: Use to train a text extraction model that is tuned for
      *   healthcare applications.
      * </pre>
@@ -498,7 +499,9 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
      *
      * <pre>
      * Indicates the scope of model use case.
+     *
      * * `default`: Use to train a general text extraction model. Default value.
+     *
      * * `health_care`: Use to train a text extraction model that is tuned for
      *   healthcare applications.
      * </pre>
@@ -523,7 +526,9 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
      *
      * <pre>
      * Indicates the scope of model use case.
+     *
      * * `default`: Use to train a general text extraction model. Default value.
+     *
      * * `health_care`: Use to train a text extraction model that is tuned for
      *   healthcare applications.
      * </pre>
@@ -547,7 +552,9 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
      *
      * <pre>
      * Indicates the scope of model use case.
+     *
      * * `default`: Use to train a general text extraction model. Default value.
+     *
      * * `health_care`: Use to train a text extraction model that is tuned for
      *   healthcare applications.
      * </pre>
@@ -567,7 +574,9 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
      *
      * <pre>
      * Indicates the scope of model use case.
+     *
      * * `default`: Use to train a general text extraction model. Default value.
+     *
      * * `health_care`: Use to train a text extraction model that is tuned for
      *   healthcare applications.
      * </pre>

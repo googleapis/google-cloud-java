@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ public interface GenerateAttachedClusterInstallManifestRequestOrBuilder
    * Required. The parent location where this
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
    * will be created.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -49,7 +51,9 @@ public interface GenerateAttachedClusterInstallManifestRequestOrBuilder
    * Required. The parent location where this
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
    * will be created.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -68,13 +72,17 @@ public interface GenerateAttachedClusterInstallManifestRequestOrBuilder
    * <pre>
    * Required. A client provided ID of the resource. Must be unique within the
    * parent resource.
+   *
    * The provided ID will be part of the
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
    * name formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+   *
    * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
+   *
    * When generating an install manifest for importing an existing Membership
    * resource, the attached_cluster_id field must be the Membership id.
+   *
    * Membership names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/memberships/&lt;membership-id&gt;`.
    * </pre>
@@ -90,13 +98,17 @@ public interface GenerateAttachedClusterInstallManifestRequestOrBuilder
    * <pre>
    * Required. A client provided ID of the resource. Must be unique within the
    * parent resource.
+   *
    * The provided ID will be part of the
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
    * name formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+   *
    * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
+   *
    * When generating an install manifest for importing an existing Membership
    * resource, the attached_cluster_id field must be the Membership id.
+   *
    * Membership names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/memberships/&lt;membership-id&gt;`.
    * </pre>
@@ -112,6 +124,7 @@ public interface GenerateAttachedClusterInstallManifestRequestOrBuilder
    *
    * <pre>
    * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -127,6 +140,7 @@ public interface GenerateAttachedClusterInstallManifestRequestOrBuilder
    *
    * <pre>
    * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].

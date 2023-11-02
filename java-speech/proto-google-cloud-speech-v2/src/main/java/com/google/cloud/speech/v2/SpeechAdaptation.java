@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SpeechAdaptation();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -150,7 +145,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.speech.v2.PhraseSetOrBuilder getInlinePhraseSetOrBuilder();
 
-    public com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet.ValueCase getValueCase();
+    com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet.ValueCase getValueCase();
   }
   /**
    *
@@ -180,11 +175,6 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       return new AdaptationPhraseSet();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.speech.v2.CloudSpeechProto
           .internal_static_google_cloud_speech_v2_SpeechAdaptation_AdaptationPhraseSet_descriptor;
@@ -201,6 +191,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     }
 
     private int valueCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object value_;
 
     public enum ValueCase

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DeleteEvaluationJobRequest extends com.google.protobuf.Genera
     return new DeleteEvaluationJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.DataLabelingServiceOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_DeleteEvaluationJobRequest_descriptor;
@@ -76,6 +71,7 @@ public final class DeleteEvaluationJobRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Name of the evaluation job that is going to be deleted. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
@@ -102,6 +98,7 @@ public final class DeleteEvaluationJobRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Name of the evaluation job that is going to be deleted. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
@@ -477,6 +474,7 @@ public final class DeleteEvaluationJobRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Name of the evaluation job that is going to be deleted. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -502,6 +500,7 @@ public final class DeleteEvaluationJobRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Name of the evaluation job that is going to be deleted. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -527,6 +526,7 @@ public final class DeleteEvaluationJobRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Name of the evaluation job that is going to be deleted. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -551,6 +551,7 @@ public final class DeleteEvaluationJobRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Name of the evaluation job that is going to be deleted. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -571,6 +572,7 @@ public final class DeleteEvaluationJobRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Name of the evaluation job that is going to be deleted. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *

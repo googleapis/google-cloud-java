@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateFeaturestoreRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -141,7 +136,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`
@@ -167,7 +164,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`
@@ -193,7 +192,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`
@@ -827,7 +828,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
@@ -852,7 +855,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
@@ -883,7 +888,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
@@ -916,7 +923,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
@@ -946,7 +955,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
@@ -982,7 +993,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
@@ -1012,7 +1025,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
@@ -1037,7 +1052,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
@@ -1066,7 +1083,9 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`

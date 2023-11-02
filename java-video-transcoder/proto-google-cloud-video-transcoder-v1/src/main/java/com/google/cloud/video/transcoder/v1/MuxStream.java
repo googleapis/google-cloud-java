@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     key_ = "";
     fileName_ = "";
     container_ = "";
-    elementaryStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    elementaryStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    encryptionId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MuxStream();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,6 +129,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of the generated file. The default is `MuxStream.key` with the
    * extension suffix corresponding to the `MuxStream.container`.
+   *
    * Individual segments also have an incremental 10-digit zero-padded suffix
    * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
    * </pre>
@@ -159,6 +156,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of the generated file. The default is `MuxStream.key` with the
    * extension suffix corresponding to the `MuxStream.container`.
+   *
    * Individual segments also have an incremental 10-digit zero-padded suffix
    * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
    * </pre>
@@ -189,11 +187,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The container format. The default is `mp4`
+   *
    * Supported container formats:
+   *
    * - `ts`
    * - `fmp4`- the corresponding file extension is `.m4s`
    * - `mp4`
    * - `vtt`
+   *
    * See also:
    * [Supported input and output
    * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -220,11 +221,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The container format. The default is `mp4`
+   *
    * Supported container formats:
+   *
    * - `ts`
    * - `fmp4`- the corresponding file extension is `.m4s`
    * - `mp4`
    * - `vtt`
+   *
    * See also:
    * [Supported input and output
    * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -250,7 +254,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
   public static final int ELEMENTARY_STREAMS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList elementaryStreams_;
+  private com.google.protobuf.LazyStringArrayList elementaryStreams_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -361,6 +366,59 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         : segmentSettings_;
   }
 
+  public static final int ENCRYPTION_ID_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object encryptionId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Identifier of the encryption configuration to use. If omitted, output will
+   * be unencrypted.
+   * </pre>
+   *
+   * <code>string encryption_id = 7;</code>
+   *
+   * @return The encryptionId.
+   */
+  @java.lang.Override
+  public java.lang.String getEncryptionId() {
+    java.lang.Object ref = encryptionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      encryptionId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Identifier of the encryption configuration to use. If omitted, output will
+   * be unencrypted.
+   * </pre>
+   *
+   * <code>string encryption_id = 7;</code>
+   *
+   * @return The bytes for encryptionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEncryptionIdBytes() {
+    java.lang.Object ref = encryptionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      encryptionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -389,6 +447,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     }
     if (segmentSettings_ != null) {
       output.writeMessage(5, getSegmentSettings());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, encryptionId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -419,6 +480,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     if (segmentSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getSegmentSettings());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, encryptionId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -443,6 +507,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     if (hasSegmentSettings()) {
       if (!getSegmentSettings().equals(other.getSegmentSettings())) return false;
     }
+    if (!getEncryptionId().equals(other.getEncryptionId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -468,6 +533,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SEGMENT_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getSegmentSettings().hashCode();
     }
+    hash = (37 * hash) + ENCRYPTION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getEncryptionId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -610,13 +677,13 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       key_ = "";
       fileName_ = "";
       container_ = "";
-      elementaryStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      elementaryStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
       segmentSettings_ = null;
       if (segmentSettingsBuilder_ != null) {
         segmentSettingsBuilder_.dispose();
         segmentSettingsBuilder_ = null;
       }
+      encryptionId_ = "";
       return this;
     }
 
@@ -644,20 +711,11 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.MuxStream buildPartial() {
       com.google.cloud.video.transcoder.v1.MuxStream result =
           new com.google.cloud.video.transcoder.v1.MuxStream(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.video.transcoder.v1.MuxStream result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        elementaryStreams_ = elementaryStreams_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.elementaryStreams_ = elementaryStreams_;
     }
 
     private void buildPartial0(com.google.cloud.video.transcoder.v1.MuxStream result) {
@@ -671,9 +729,16 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.container_ = container_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        elementaryStreams_.makeImmutable();
+        result.elementaryStreams_ = elementaryStreams_;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.segmentSettings_ =
             segmentSettingsBuilder_ == null ? segmentSettings_ : segmentSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.encryptionId_ = encryptionId_;
       }
     }
 
@@ -740,7 +805,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       if (!other.elementaryStreams_.isEmpty()) {
         if (elementaryStreams_.isEmpty()) {
           elementaryStreams_ = other.elementaryStreams_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureElementaryStreamsIsMutable();
           elementaryStreams_.addAll(other.elementaryStreams_);
@@ -749,6 +814,11 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSegmentSettings()) {
         mergeSegmentSettings(other.getSegmentSettings());
+      }
+      if (!other.getEncryptionId().isEmpty()) {
+        encryptionId_ = other.encryptionId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -807,6 +877,12 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 58:
+              {
+                encryptionId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -944,6 +1020,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
+     *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
@@ -969,6 +1046,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
+     *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
@@ -994,6 +1072,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
+     *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
@@ -1018,6 +1097,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
+     *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
@@ -1038,6 +1118,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
+     *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
@@ -1064,11 +1145,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The container format. The default is `mp4`
+     *
      * Supported container formats:
+     *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
      * - `mp4`
      * - `vtt`
+     *
      * See also:
      * [Supported input and output
      * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -1094,11 +1178,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The container format. The default is `mp4`
+     *
      * Supported container formats:
+     *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
      * - `mp4`
      * - `vtt`
+     *
      * See also:
      * [Supported input and output
      * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -1124,11 +1211,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The container format. The default is `mp4`
+     *
      * Supported container formats:
+     *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
      * - `mp4`
      * - `vtt`
+     *
      * See also:
      * [Supported input and output
      * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -1153,11 +1243,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The container format. The default is `mp4`
+     *
      * Supported container formats:
+     *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
      * - `mp4`
      * - `vtt`
+     *
      * See also:
      * [Supported input and output
      * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -1178,11 +1271,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The container format. The default is `mp4`
+     *
      * Supported container formats:
+     *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
      * - `mp4`
      * - `vtt`
+     *
      * See also:
      * [Supported input and output
      * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -1204,14 +1300,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList elementaryStreams_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList elementaryStreams_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureElementaryStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!elementaryStreams_.isModifiable()) {
         elementaryStreams_ = new com.google.protobuf.LazyStringArrayList(elementaryStreams_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1225,7 +1321,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the elementaryStreams.
      */
     public com.google.protobuf.ProtocolStringList getElementaryStreamsList() {
-      return elementaryStreams_.getUnmodifiableView();
+      elementaryStreams_.makeImmutable();
+      return elementaryStreams_;
     }
     /**
      *
@@ -1290,6 +1387,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       }
       ensureElementaryStreamsIsMutable();
       elementaryStreams_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1311,6 +1409,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       }
       ensureElementaryStreamsIsMutable();
       elementaryStreams_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1329,6 +1428,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllElementaryStreams(java.lang.Iterable<java.lang.String> values) {
       ensureElementaryStreamsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, elementaryStreams_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1344,8 +1444,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearElementaryStreams() {
-      elementaryStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      elementaryStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1368,6 +1469,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureElementaryStreamsIsMutable();
       elementaryStreams_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1558,6 +1660,117 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         segmentSettings_ = null;
       }
       return segmentSettingsBuilder_;
+    }
+
+    private java.lang.Object encryptionId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Identifier of the encryption configuration to use. If omitted, output will
+     * be unencrypted.
+     * </pre>
+     *
+     * <code>string encryption_id = 7;</code>
+     *
+     * @return The encryptionId.
+     */
+    public java.lang.String getEncryptionId() {
+      java.lang.Object ref = encryptionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        encryptionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifier of the encryption configuration to use. If omitted, output will
+     * be unencrypted.
+     * </pre>
+     *
+     * <code>string encryption_id = 7;</code>
+     *
+     * @return The bytes for encryptionId.
+     */
+    public com.google.protobuf.ByteString getEncryptionIdBytes() {
+      java.lang.Object ref = encryptionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        encryptionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifier of the encryption configuration to use. If omitted, output will
+     * be unencrypted.
+     * </pre>
+     *
+     * <code>string encryption_id = 7;</code>
+     *
+     * @param value The encryptionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEncryptionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      encryptionId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifier of the encryption configuration to use. If omitted, output will
+     * be unencrypted.
+     * </pre>
+     *
+     * <code>string encryption_id = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEncryptionId() {
+      encryptionId_ = getDefaultInstance().getEncryptionId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifier of the encryption configuration to use. If omitted, output will
+     * be unencrypted.
+     * </pre>
+     *
+     * <code>string encryption_id = 7;</code>
+     *
+     * @param value The bytes for encryptionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEncryptionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      encryptionId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

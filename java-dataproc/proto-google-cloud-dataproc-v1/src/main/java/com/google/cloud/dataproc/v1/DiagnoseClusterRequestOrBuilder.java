@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,4 +99,188 @@ public interface DiagnoseClusterRequestOrBuilder
    * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString getClusterNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The output Cloud Storage directory for the diagnostic
+   * tarball. If not specified, a task-specific directory in the cluster's
+   * staging bucket will be used.
+   * </pre>
+   *
+   * <code>string tarball_gcs_dir = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The tarballGcsDir.
+   */
+  java.lang.String getTarballGcsDir();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The output Cloud Storage directory for the diagnostic
+   * tarball. If not specified, a task-specific directory in the cluster's
+   * staging bucket will be used.
+   * </pre>
+   *
+   * <code>string tarball_gcs_dir = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for tarballGcsDir.
+   */
+  com.google.protobuf.ByteString getTarballGcsDirBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time interval in which diagnosis should be carried out on the
+   * cluster.
+   * </pre>
+   *
+   * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the diagnosisInterval field is set.
+   */
+  boolean hasDiagnosisInterval();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time interval in which diagnosis should be carried out on the
+   * cluster.
+   * </pre>
+   *
+   * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The diagnosisInterval.
+   */
+  com.google.type.Interval getDiagnosisInterval();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time interval in which diagnosis should be carried out on the
+   * cluster.
+   * </pre>
+   *
+   * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.type.IntervalOrBuilder getDiagnosisIntervalOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+   * Format: projects/{project}/regions/{region}/jobs/{job}
+   * </pre>
+   *
+   * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the jobs.
+   */
+  java.util.List<java.lang.String> getJobsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+   * Format: projects/{project}/regions/{region}/jobs/{job}
+   * </pre>
+   *
+   * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of jobs.
+   */
+  int getJobsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+   * Format: projects/{project}/regions/{region}/jobs/{job}
+   * </pre>
+   *
+   * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The jobs at the given index.
+   */
+  java.lang.String getJobs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+   * Format: projects/{project}/regions/{region}/jobs/{job}
+   * </pre>
+   *
+   * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the jobs at the given index.
+   */
+  com.google.protobuf.ByteString getJobsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of yarn applications on which diagnosis is to be
+   * performed.
+   * </pre>
+   *
+   * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the yarnApplicationIds.
+   */
+  java.util.List<java.lang.String> getYarnApplicationIdsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of yarn applications on which diagnosis is to be
+   * performed.
+   * </pre>
+   *
+   * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of yarnApplicationIds.
+   */
+  int getYarnApplicationIdsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of yarn applications on which diagnosis is to be
+   * performed.
+   * </pre>
+   *
+   * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The yarnApplicationIds at the given index.
+   */
+  java.lang.String getYarnApplicationIds(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of yarn applications on which diagnosis is to be
+   * performed.
+   * </pre>
+   *
+   * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the yarnApplicationIds at the given index.
+   */
+  com.google.protobuf.ByteString getYarnApplicationIdsBytes(int index);
 }

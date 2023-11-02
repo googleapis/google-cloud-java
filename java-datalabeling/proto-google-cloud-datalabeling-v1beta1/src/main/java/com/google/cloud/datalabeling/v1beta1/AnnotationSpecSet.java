@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,18 +44,13 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     displayName_ = "";
     description_ = "";
     annotationSpecs_ = java.util.Collections.emptyList();
-    blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    blockingResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnnotationSpecSet();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -82,6 +77,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Output only. The AnnotationSpecSet resource name in the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
@@ -106,6 +102,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Output only. The AnnotationSpecSet resource name in the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
@@ -313,7 +310,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
   public static final int BLOCKING_RESOURCES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList blockingResources_;
+  private com.google.protobuf.LazyStringArrayList blockingResources_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -633,8 +631,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
         annotationSpecsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
-      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -681,11 +678,6 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       } else {
         result.annotationSpecs_ = annotationSpecsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        blockingResources_ = blockingResources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.blockingResources_ = blockingResources_;
     }
 
     private void buildPartial0(com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet result) {
@@ -698,6 +690,10 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        blockingResources_.makeImmutable();
+        result.blockingResources_ = blockingResources_;
       }
     }
 
@@ -792,7 +788,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       if (!other.blockingResources_.isEmpty()) {
         if (blockingResources_.isEmpty()) {
           blockingResources_ = other.blockingResources_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureBlockingResourcesIsMutable();
           blockingResources_.addAll(other.blockingResources_);
@@ -889,6 +885,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. The AnnotationSpecSet resource name in the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
@@ -912,6 +909,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. The AnnotationSpecSet resource name in the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
@@ -935,6 +933,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. The AnnotationSpecSet resource name in the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
@@ -957,6 +956,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. The AnnotationSpecSet resource name in the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
@@ -975,6 +975,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. The AnnotationSpecSet resource name in the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
@@ -1597,14 +1598,14 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       return annotationSpecsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList blockingResources_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList blockingResources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureBlockingResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!blockingResources_.isModifiable()) {
         blockingResources_ = new com.google.protobuf.LazyStringArrayList(blockingResources_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1619,7 +1620,8 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      * @return A list containing the blockingResources.
      */
     public com.google.protobuf.ProtocolStringList getBlockingResourcesList() {
-      return blockingResources_.getUnmodifiableView();
+      blockingResources_.makeImmutable();
+      return blockingResources_;
     }
     /**
      *
@@ -1688,6 +1690,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       ensureBlockingResourcesIsMutable();
       blockingResources_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1710,6 +1713,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       }
       ensureBlockingResourcesIsMutable();
       blockingResources_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1729,6 +1733,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
     public Builder addAllBlockingResources(java.lang.Iterable<java.lang.String> values) {
       ensureBlockingResourcesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blockingResources_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1745,8 +1750,9 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearBlockingResources() {
-      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1770,6 +1776,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureBlockingResourcesIsMutable();
       blockingResources_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

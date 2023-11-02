@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
     return new Promotion();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.PromotionProto
         .internal_static_google_cloud_retail_v2_Promotion_descriptor;
@@ -76,10 +71,12 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * ID of the promotion. For example, "free gift".
+   *
    * The value must be a UTF-8 encoded string with a length limit of 128
    * characters, and match the pattern: `[a-zA-Z][a-zA-Z0-9_]*`. For example,
    * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
    * returned.
+   *
    * Google Merchant Center property
    * [promotion](https://support.google.com/merchants/answer/7050148).
    * </pre>
@@ -105,10 +102,12 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * ID of the promotion. For example, "free gift".
+   *
    * The value must be a UTF-8 encoded string with a length limit of 128
    * characters, and match the pattern: `[a-zA-Z][a-zA-Z0-9_]*`. For example,
    * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
    * returned.
+   *
    * Google Merchant Center property
    * [promotion](https://support.google.com/merchants/answer/7050148).
    * </pre>
@@ -474,10 +473,12 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ID of the promotion. For example, "free gift".
+     *
      * The value must be a UTF-8 encoded string with a length limit of 128
      * characters, and match the pattern: `[a-zA-Z][a-zA-Z0-9_]*`. For example,
      * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     *
      * Google Merchant Center property
      * [promotion](https://support.google.com/merchants/answer/7050148).
      * </pre>
@@ -502,10 +503,12 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ID of the promotion. For example, "free gift".
+     *
      * The value must be a UTF-8 encoded string with a length limit of 128
      * characters, and match the pattern: `[a-zA-Z][a-zA-Z0-9_]*`. For example,
      * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     *
      * Google Merchant Center property
      * [promotion](https://support.google.com/merchants/answer/7050148).
      * </pre>
@@ -530,10 +533,12 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ID of the promotion. For example, "free gift".
+     *
      * The value must be a UTF-8 encoded string with a length limit of 128
      * characters, and match the pattern: `[a-zA-Z][a-zA-Z0-9_]*`. For example,
      * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     *
      * Google Merchant Center property
      * [promotion](https://support.google.com/merchants/answer/7050148).
      * </pre>
@@ -557,10 +562,12 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ID of the promotion. For example, "free gift".
+     *
      * The value must be a UTF-8 encoded string with a length limit of 128
      * characters, and match the pattern: `[a-zA-Z][a-zA-Z0-9_]*`. For example,
      * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     *
      * Google Merchant Center property
      * [promotion](https://support.google.com/merchants/answer/7050148).
      * </pre>
@@ -580,10 +587,12 @@ public final class Promotion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * ID of the promotion. For example, "free gift".
+     *
      * The value must be a UTF-8 encoded string with a length limit of 128
      * characters, and match the pattern: `[a-zA-Z][a-zA-Z0-9_]*`. For example,
      * id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     *
      * Google Merchant Center property
      * [promotion](https://support.google.com/merchants/answer/7050148).
      * </pre>

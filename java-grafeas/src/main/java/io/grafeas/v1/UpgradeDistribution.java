@@ -44,18 +44,13 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     cpeUri_ = "";
     classification_ = "";
     severity_ = "";
-    cve_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    cve_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpgradeDistribution();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -235,7 +230,8 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
   public static final int CVE_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList cve_;
+  private com.google.protobuf.LazyStringArrayList cve_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -528,8 +524,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       cpeUri_ = "";
       classification_ = "";
       severity_ = "";
-      cve_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      cve_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -555,20 +550,11 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public io.grafeas.v1.UpgradeDistribution buildPartial() {
       io.grafeas.v1.UpgradeDistribution result = new io.grafeas.v1.UpgradeDistribution(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(io.grafeas.v1.UpgradeDistribution result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        cve_ = cve_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.cve_ = cve_;
     }
 
     private void buildPartial0(io.grafeas.v1.UpgradeDistribution result) {
@@ -581,6 +567,10 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.severity_ = severity_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        cve_.makeImmutable();
+        result.cve_ = cve_;
       }
     }
 
@@ -647,7 +637,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       if (!other.cve_.isEmpty()) {
         if (cve_.isEmpty()) {
           cve_ = other.cve_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureCveIsMutable();
           cve_.addAll(other.cve_);
@@ -1062,13 +1052,14 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.LazyStringList cve_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList cve_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCveIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!cve_.isModifiable()) {
         cve_ = new com.google.protobuf.LazyStringArrayList(cve_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1082,7 +1073,8 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
      * @return A list containing the cve.
      */
     public com.google.protobuf.ProtocolStringList getCveList() {
-      return cve_.getUnmodifiableView();
+      cve_.makeImmutable();
+      return cve_;
     }
     /**
      *
@@ -1147,6 +1139,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       }
       ensureCveIsMutable();
       cve_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1168,6 +1161,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       }
       ensureCveIsMutable();
       cve_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1186,6 +1180,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     public Builder addAllCve(java.lang.Iterable<java.lang.String> values) {
       ensureCveIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cve_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1201,8 +1196,9 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCve() {
-      cve_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      cve_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1225,6 +1221,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureCveIsMutable();
       cve_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -32,9 +32,13 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 
-/** Snippets for how to work with Sources in Cloud Security Command Center. */
+/**
+ * Snippets for how to work with Sources in Security Command Center.
+ */
 public class SourceSnippets {
-  private SourceSnippets() {}
+
+  private SourceSnippets() {
+  }
 
   /**
    * Create a source under an organization.
@@ -74,8 +78,11 @@ public class SourceSnippets {
   // [START securitycenter_list_sources]
   static ImmutableList<Source> listSources(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      // Start setting up a request to list sources in an organization.
-      // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
+      // Start setting up a request to list sources in an organization, project, or folder.
+      // Parent must be in one of the following formats:
+      //    OrganizationName organizationName = OrganizationName.of("organization-id");
+      //    ProjectName projectName = ProjectName.of("project-id");
+      //    FolderName folderName = FolderName.of("folder-id");
       ListSourcesRequest.Builder request =
           ListSourcesRequest.newBuilder().setParent(organizationName.toString());
 

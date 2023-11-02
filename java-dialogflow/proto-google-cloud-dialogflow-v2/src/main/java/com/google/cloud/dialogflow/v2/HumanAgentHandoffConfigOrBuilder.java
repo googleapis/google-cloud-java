@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,6 +108,5 @@ public interface HumanAgentHandoffConfigOrBuilder
   com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.SalesforceLiveAgentConfigOrBuilder
       getSalesforceLiveAgentConfigOrBuilder();
 
-  public com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.AgentServiceCase
-      getAgentServiceCase();
+  com.google.cloud.dialogflow.v2.HumanAgentHandoffConfig.AgentServiceCase getAgentServiceCase();
 }

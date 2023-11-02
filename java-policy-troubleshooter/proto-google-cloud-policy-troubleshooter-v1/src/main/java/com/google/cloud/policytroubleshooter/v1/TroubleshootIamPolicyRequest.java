@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.policytroubleshooter.v1;
  *
  *
  * <pre>
- * Request for [TroubleshootIamPolicy][google.cloud.policytroubleshooter.v1.IamChecker.TroubleshootIamPolicy].
+ * Request for
+ * [TroubleshootIamPolicy][google.cloud.policytroubleshooter.v1.IamChecker.TroubleshootIamPolicy].
  * </pre>
  *
  * Protobuf type {@code google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest}
@@ -43,11 +44,6 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TroubleshootIamPolicyRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,8 +67,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The information to use for checking whether a member has a permission for a
-   * resource.
+   * The information to use for checking whether a principal has a permission
+   * for a resource.
    * </pre>
    *
    * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -87,8 +83,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The information to use for checking whether a member has a permission for a
-   * resource.
+   * The information to use for checking whether a principal has a permission
+   * for a resource.
    * </pre>
    *
    * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -105,8 +101,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The information to use for checking whether a member has a permission for a
-   * resource.
+   * The information to use for checking whether a principal has a permission
+   * for a resource.
    * </pre>
    *
    * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -289,7 +285,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request for [TroubleshootIamPolicy][google.cloud.policytroubleshooter.v1.IamChecker.TroubleshootIamPolicy].
+   * Request for
+   * [TroubleshootIamPolicy][google.cloud.policytroubleshooter.v1.IamChecker.TroubleshootIamPolicy].
    * </pre>
    *
    * Protobuf type {@code google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest}
@@ -488,8 +485,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The information to use for checking whether a member has a permission for a
-     * resource.
+     * The information to use for checking whether a principal has a permission
+     * for a resource.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -503,8 +500,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The information to use for checking whether a member has a permission for a
-     * resource.
+     * The information to use for checking whether a principal has a permission
+     * for a resource.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -524,8 +521,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The information to use for checking whether a member has a permission for a
-     * resource.
+     * The information to use for checking whether a principal has a permission
+     * for a resource.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -548,8 +545,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The information to use for checking whether a member has a permission for a
-     * resource.
+     * The information to use for checking whether a principal has a permission
+     * for a resource.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -569,8 +566,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The information to use for checking whether a member has a permission for a
-     * resource.
+     * The information to use for checking whether a principal has a permission
+     * for a resource.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -598,8 +595,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The information to use for checking whether a member has a permission for a
-     * resource.
+     * The information to use for checking whether a principal has a permission
+     * for a resource.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -618,8 +615,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The information to use for checking whether a member has a permission for a
-     * resource.
+     * The information to use for checking whether a principal has a permission
+     * for a resource.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -634,8 +631,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The information to use for checking whether a member has a permission for a
-     * resource.
+     * The information to use for checking whether a principal has a permission
+     * for a resource.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -654,8 +651,8 @@ public final class TroubleshootIamPolicyRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The information to use for checking whether a member has a permission for a
-     * resource.
+     * The information to use for checking whether a principal has a permission
+     * for a resource.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>

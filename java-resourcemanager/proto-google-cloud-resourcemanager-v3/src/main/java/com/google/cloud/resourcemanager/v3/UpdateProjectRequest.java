@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ package com.google.cloud.resourcemanager.v3;
  * The request sent to the
  * [UpdateProject][google.cloud.resourcemanager.v3.Projects.UpdateProject]
  * method.
+ *
  * Only the `display_name` and `labels` fields can be change. Use the
  * [MoveProject][google.cloud.resourcemanager.v3.Projects.MoveProject] method to
  * change the `parent` field.
@@ -48,11 +49,6 @@ public final class UpdateProjectRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateProjectRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -361,6 +357,7 @@ public final class UpdateProjectRequest extends com.google.protobuf.GeneratedMes
    * The request sent to the
    * [UpdateProject][google.cloud.resourcemanager.v3.Projects.UpdateProject]
    * method.
+   *
    * Only the `display_name` and `labels` fields can be change. Use the
    * [MoveProject][google.cloud.resourcemanager.v3.Projects.MoveProject] method to
    * change the `parent` field.

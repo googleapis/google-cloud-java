@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateTaxonomyRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -127,6 +122,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Specifies fields to update. If not set, defaults to all fields you can
    * update.
+   *
    * For more information, see [FieldMask]
    * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>
@@ -145,6 +141,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Specifies fields to update. If not set, defaults to all fields you can
    * update.
+   *
    * For more information, see [FieldMask]
    * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>
@@ -163,6 +160,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Specifies fields to update. If not set, defaults to all fields you can
    * update.
+   *
    * For more information, see [FieldMask]
    * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>
@@ -760,6 +758,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Specifies fields to update. If not set, defaults to all fields you can
      * update.
+     *
      * For more information, see [FieldMask]
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
@@ -777,6 +776,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Specifies fields to update. If not set, defaults to all fields you can
      * update.
+     *
      * For more information, see [FieldMask]
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
@@ -800,6 +800,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Specifies fields to update. If not set, defaults to all fields you can
      * update.
+     *
      * For more information, see [FieldMask]
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
@@ -825,6 +826,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Specifies fields to update. If not set, defaults to all fields you can
      * update.
+     *
      * For more information, see [FieldMask]
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
@@ -847,6 +849,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Specifies fields to update. If not set, defaults to all fields you can
      * update.
+     *
      * For more information, see [FieldMask]
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
@@ -875,6 +878,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Specifies fields to update. If not set, defaults to all fields you can
      * update.
+     *
      * For more information, see [FieldMask]
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
@@ -897,6 +901,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Specifies fields to update. If not set, defaults to all fields you can
      * update.
+     *
      * For more information, see [FieldMask]
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
@@ -914,6 +919,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Specifies fields to update. If not set, defaults to all fields you can
      * update.
+     *
      * For more information, see [FieldMask]
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>
@@ -935,6 +941,7 @@ public final class UpdateTaxonomyRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Specifies fields to update. If not set, defaults to all fields you can
      * update.
+     *
      * For more information, see [FieldMask]
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * </pre>

@@ -20,6 +20,7 @@ import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
+import "google/cloud/dialogflow/cx/v3beta1/advanced_settings.proto";
 import "google/cloud/dialogflow/cx/v3beta1/audio_config.proto";
 import "google/cloud/dialogflow/cx/v3beta1/intent.proto";
 import "google/cloud/dialogflow/cx/v3beta1/page.proto";
@@ -324,8 +325,11 @@ message CloudConversationDebuggingInfo {
   // beginning of the stream.
   google.protobuf.Duration single_utterance_end_time_offset = 14;
 
-  // No speech timeout settings observed at runtime.
+  // No speech timeout settings for the stream.
   google.protobuf.Duration no_speech_timeout = 15;
+
+  // Speech endpointing timeout settings for the stream.
+  google.protobuf.Duration endpointing_timeout = 19;
 
   // Whether the streaming terminates with an injected text query.
   bool is_input_text = 16;
@@ -598,19 +602,26 @@ message QueryParameters {
   // [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
   // unspecified channel will be returned.
   string channel = 15;
+
+  // Optional. Sets Dialogflow session life time.
+  // By default, a Dialogflow session remains active and its data is stored for
+  // 30 minutes after the last request is sent for the session.
+  // This value should be no longer than 1 day.
+  google.protobuf.Duration session_ttl = 16
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Represents the query input. It can contain one of:
 //
-// 1.  A conversational query in the form of text.
+// 1. A conversational query in the form of text.
 //
-// 2.  An intent query that specifies which intent to trigger.
+// 2. An intent query that specifies which intent to trigger.
 //
-// 3.  Natural language speech audio to be processed.
+// 3. Natural language speech audio to be processed.
 //
-// 4.  An event to be triggered.
+// 4. An event to be triggered.
 //
-// 5.  DTMF digits to invoke an intent and fill in parameter value.
+// 5. DTMF digits to invoke an intent and fill in parameter value.
 message QueryInput {
   // Required. The input specification.
   oneof input {
@@ -756,6 +767,13 @@ message QueryResult {
   // [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment],
   // specified in the request.
   SentimentAnalysisResult sentiment_analysis_result = 17;
+
+  // Returns the current advanced settings including IVR settings. Even though
+  // the operations configured by these settings are performed by Dialogflow,
+  // the client may need to perform special logic at the moment. For example, if
+  // Dialogflow exports audio to Google Cloud Storage, then the client may need
+  // to wait for the resulting object to appear in the bucket before proceeding.
+  AdvancedSettings advanced_settings = 21;
 }
 
 // Represents the natural language text to be processed.

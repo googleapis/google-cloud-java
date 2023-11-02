@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -492,6 +492,47 @@ public interface InstanceOrBuilder
    * @return The id.
    */
   long getId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey instance_encryption_key = 64741517;
+   * </code>
+   *
+   * @return Whether the instanceEncryptionKey field is set.
+   */
+  boolean hasInstanceEncryptionKey();
+  /**
+   *
+   *
+   * <pre>
+   * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey instance_encryption_key = 64741517;
+   * </code>
+   *
+   * @return The instanceEncryptionKey.
+   */
+  com.google.cloud.compute.v1.CustomerEncryptionKey getInstanceEncryptionKey();
+  /**
+   *
+   *
+   * <pre>
+   * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey instance_encryption_key = 64741517;
+   * </code>
+   */
+  com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getInstanceEncryptionKeyOrBuilder();
 
   /**
    *

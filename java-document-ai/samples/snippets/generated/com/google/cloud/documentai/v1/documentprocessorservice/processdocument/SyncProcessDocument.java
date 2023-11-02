@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.documentai.v1.samples;
 
 // [START documentai_v1_generated_DocumentProcessorService_ProcessDocument_sync]
 import com.google.cloud.documentai.v1.DocumentProcessorServiceClient;
+import com.google.cloud.documentai.v1.ProcessOptions;
 import com.google.cloud.documentai.v1.ProcessRequest;
 import com.google.cloud.documentai.v1.ProcessResponse;
 import com.google.cloud.documentai.v1.ProcessorName;
@@ -42,6 +43,7 @@ public class SyncProcessDocument {
               .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
               .setSkipHumanReview(true)
               .setFieldMask(FieldMask.newBuilder().build())
+              .setProcessOptions(ProcessOptions.newBuilder().build())
               .build();
       ProcessResponse response = documentProcessorServiceClient.processDocument(request);
     }

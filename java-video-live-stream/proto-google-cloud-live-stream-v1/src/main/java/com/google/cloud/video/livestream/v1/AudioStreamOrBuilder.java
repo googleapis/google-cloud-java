@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,9 @@ public interface AudioStreamOrBuilder
    *
    * <pre>
    * The codec for this audio stream. The default is `aac`.
+   *
    * Supported audio codecs:
+   *
    * - `aac`
    * </pre>
    *
@@ -57,7 +59,9 @@ public interface AudioStreamOrBuilder
    *
    * <pre>
    * The codec for this audio stream. The default is `aac`.
+   *
    * Supported audio codecs:
+   *
    * - `aac`
    * </pre>
    *
@@ -101,7 +105,9 @@ public interface AudioStreamOrBuilder
    * A list of channel names specifying layout of the audio channels.
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `[fl, fr]`.
+   *
    * Supported channel names:
+   *
    * - `fl` - Front left channel
    * - `fr` - Front right channel
    * - `sl` - Side left channel
@@ -122,7 +128,9 @@ public interface AudioStreamOrBuilder
    * A list of channel names specifying layout of the audio channels.
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `[fl, fr]`.
+   *
    * Supported channel names:
+   *
    * - `fl` - Front left channel
    * - `fr` - Front right channel
    * - `sl` - Side left channel
@@ -143,7 +151,9 @@ public interface AudioStreamOrBuilder
    * A list of channel names specifying layout of the audio channels.
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `[fl, fr]`.
+   *
    * Supported channel names:
+   *
    * - `fl` - Front left channel
    * - `fr` - Front right channel
    * - `sl` - Side left channel
@@ -165,7 +175,9 @@ public interface AudioStreamOrBuilder
    * A list of channel names specifying layout of the audio channels.
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `[fl, fr]`.
+   *
    * Supported channel names:
+   *
    * - `fl` - Front left channel
    * - `fr` - Front right channel
    * - `sl` - Side left channel

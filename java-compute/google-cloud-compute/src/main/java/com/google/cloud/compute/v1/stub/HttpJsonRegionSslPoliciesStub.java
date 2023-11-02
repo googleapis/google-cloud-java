@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionSslPolicyRequest;
 import com.google.cloud.compute.v1.GetRegionSslPolicyRequest;
@@ -436,21 +437,51 @@ public class HttpJsonRegionSslPoliciesStub extends RegionSslPoliciesStub {
         HttpJsonCallSettings.<DeleteRegionSslPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("ssl_policy", String.valueOf(request.getSslPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRegionSslPolicyRequest, SslPolicy> getTransportSettings =
         HttpJsonCallSettings.<GetRegionSslPolicyRequest, SslPolicy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("ssl_policy", String.valueOf(request.getSslPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertRegionSslPolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionSslPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRegionSslPoliciesRequest, SslPoliciesList> listTransportSettings =
         HttpJsonCallSettings.<ListRegionSslPoliciesRequest, SslPoliciesList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<
             ListAvailableFeaturesRegionSslPoliciesRequest, SslPoliciesListAvailableFeaturesResponse>
@@ -461,11 +492,26 @@ public class HttpJsonRegionSslPoliciesStub extends RegionSslPoliciesStub {
                     newBuilder()
                 .setMethodDescriptor(listAvailableFeaturesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionSslPolicyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionSslPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("ssl_policy", String.valueOf(request.getSslPolicy()));
+                  return builder.build();
+                })
             .build();
 
     this.deleteCallable =

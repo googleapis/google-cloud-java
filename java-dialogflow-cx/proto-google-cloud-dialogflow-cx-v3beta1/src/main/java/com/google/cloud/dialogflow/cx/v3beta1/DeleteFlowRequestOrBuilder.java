@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public interface DeleteFlowRequestOrBuilder
    * <pre>
    * This field has no effect for flows with no incoming transitions.
    * For flows with incoming transitions:
+   *
    * *  If `force` is set to false, an error will be returned with message
    *    indicating the incoming transitions.
    * *  If `force` is set to true, Dialogflow will remove the flow, as well as

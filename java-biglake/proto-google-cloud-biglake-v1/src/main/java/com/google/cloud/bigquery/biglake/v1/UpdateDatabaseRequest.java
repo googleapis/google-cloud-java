@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
     return new UpdateDatabaseRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.biglake.v1.MetastoreProto
         .internal_static_google_cloud_bigquery_biglake_v1_UpdateDatabaseRequest_descriptor;
@@ -72,6 +67,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The database to update.
+   *
    * The database's `name` field is used to identify the database to update.
    * Format:
    * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -92,6 +88,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The database to update.
+   *
    * The database's `name` field is used to identify the database to update.
    * Format:
    * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -114,6 +111,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The database to update.
+   *
    * The database's `name` field is used to identify the database to update.
    * Format:
    * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -137,6 +135,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The list of fields to update.
+   *
    * For the `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If not set, defaults to all of the fields that are allowed to update.
@@ -155,6 +154,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The list of fields to update.
+   *
    * For the `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If not set, defaults to all of the fields that are allowed to update.
@@ -173,6 +173,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The list of fields to update.
+   *
    * For the `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If not set, defaults to all of the fields that are allowed to update.
@@ -577,6 +578,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The database to update.
+     *
      * The database's `name` field is used to identify the database to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -596,6 +598,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The database to update.
+     *
      * The database's `name` field is used to identify the database to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -621,6 +624,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The database to update.
+     *
      * The database's `name` field is used to identify the database to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -648,6 +652,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The database to update.
+     *
      * The database's `name` field is used to identify the database to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -673,6 +678,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The database to update.
+     *
      * The database's `name` field is used to identify the database to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -703,6 +709,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The database to update.
+     *
      * The database's `name` field is used to identify the database to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -727,6 +734,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The database to update.
+     *
      * The database's `name` field is used to identify the database to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -746,6 +754,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The database to update.
+     *
      * The database's `name` field is used to identify the database to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -769,6 +778,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The database to update.
+     *
      * The database's `name` field is used to identify the database to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
@@ -806,6 +816,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to update.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
@@ -823,6 +834,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to update.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
@@ -846,6 +858,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to update.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
@@ -871,6 +884,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to update.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
@@ -893,6 +907,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to update.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
@@ -921,6 +936,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to update.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
@@ -943,6 +959,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to update.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
@@ -960,6 +977,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to update.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
@@ -981,6 +999,7 @@ public final class UpdateDatabaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The list of fields to update.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.

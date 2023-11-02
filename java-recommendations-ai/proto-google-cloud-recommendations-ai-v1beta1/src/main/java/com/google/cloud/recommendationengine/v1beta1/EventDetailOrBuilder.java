@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -185,14 +185,17 @@ public interface EventDetailOrBuilder
    * <pre>
    * Optional. Recommendation token included in the recommendation prediction
    * response.
+   *
    * This field enables accurate attribution of recommendation model
    * performance.
+   *
    * This token enables us to accurately attribute page view or purchase back to
    * the event and the particular predict response containing this
    * clicked/purchased item. If user clicks on product K in the recommendation
    * results, pass the `PredictResponse.recommendationToken` property as a url
    * parameter to product K's page. When recording events on product K's page,
    * log the PredictResponse.recommendation_token to this field.
+   *
    * Optional, but highly encouraged for user events that are the result of a
    * recommendation prediction query.
    * </pre>
@@ -208,14 +211,17 @@ public interface EventDetailOrBuilder
    * <pre>
    * Optional. Recommendation token included in the recommendation prediction
    * response.
+   *
    * This field enables accurate attribution of recommendation model
    * performance.
+   *
    * This token enables us to accurately attribute page view or purchase back to
    * the event and the particular predict response containing this
    * clicked/purchased item. If user clicks on product K in the recommendation
    * results, pass the `PredictResponse.recommendationToken` property as a url
    * parameter to product K's page. When recording events on product K's page,
    * log the PredictResponse.recommendation_token to this field.
+   *
    * Optional, but highly encouraged for user events that are the result of a
    * recommendation prediction query.
    * </pre>
@@ -232,6 +238,7 @@ public interface EventDetailOrBuilder
    * <pre>
    * Optional. Extra user event features to include in the recommendation
    * model.
+   *
    * For product recommendation, an example of extra user information is
    * traffic_channel, i.e. how user arrives at the site. Users can arrive
    * at the site by coming to the site directly, or coming through Google
@@ -251,6 +258,7 @@ public interface EventDetailOrBuilder
    * <pre>
    * Optional. Extra user event features to include in the recommendation
    * model.
+   *
    * For product recommendation, an example of extra user information is
    * traffic_channel, i.e. how user arrives at the site. Users can arrive
    * at the site by coming to the site directly, or coming through Google
@@ -270,6 +278,7 @@ public interface EventDetailOrBuilder
    * <pre>
    * Optional. Extra user event features to include in the recommendation
    * model.
+   *
    * For product recommendation, an example of extra user information is
    * traffic_channel, i.e. how user arrives at the site. Users can arrive
    * at the site by coming to the site directly, or coming through Google

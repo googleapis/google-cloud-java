@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.automl.v1;
  *
  * <pre>
  * Input configuration for [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData] action.
+ *
  * The format of input depends on dataset_metadata the Dataset into which
  * the import is happening has. As input source the
  * [gcs_source][google.cloud.automl.v1.InputConfig.gcs_source]
@@ -33,15 +34,23 @@ package com.google.cloud.automl.v1;
  * its label, bounding boxes etc. are appended. The same file should be always
  * provided with the same `ML_USE` and `GCS_FILE_PATH`, if it is not, then
  * these values are nondeterministically selected from the given ones.
+ *
  * The formats are represented in EBNF with commas being literal and with
  * non-terminal symbols defined near the end of this comment. The formats are:
+ *
  * &lt;h4&gt;AutoML Vision&lt;/h4&gt;
+ *
+ *
  * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+ *
  * See [Preparing your training
  * data](https://cloud.google.com/vision/automl/docs/prepare) for more
  * information.
+ *
  * CSV file(s) with each line in format:
+ *
  *     ML_USE,GCS_FILE_PATH,LABEL,LABEL,...
+ *
  * *   `ML_USE` - Identifies the data set that the current row (file) applies
  * to.
  *     This value can be one of the following:
@@ -50,24 +59,34 @@ package com.google.cloud.automl.v1;
  *     * `UNASSIGNED` - Rows in this file are not categorized. They are
  *        Automatically divided into train and test data. 80% for training and
  *        20% for testing.
+ *
  * *   `GCS_FILE_PATH` - The Google Cloud Storage location of an image of up to
  *      30MB in size. Supported extensions: .JPEG, .GIF, .PNG, .WEBP, .BMP,
  *      .TIFF, .ICO.
+ *
  * *   `LABEL` - A label that identifies the object in the image.
+ *
  * For the `MULTICLASS` classification type, at most one `LABEL` is allowed
  * per image. If an image has not yet been labeled, then it should be
  * mentioned just once with no `LABEL`.
+ *
  * Some sample rows:
+ *
  *     TRAIN,gs://folder/image1.jpg,daisy
  *     TEST,gs://folder/image2.jpg,dandelion,tulip,rose
  *     UNASSIGNED,gs://folder/image3.jpg,daisy
  *     UNASSIGNED,gs://folder/image4.jpg
+ *
+ *
  * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Detection&lt;/h5&gt;
  * See [Preparing your training
  * data](https://cloud.google.com/vision/automl/object-detection/docs/prepare)
  * for more information.
+ *
  * A CSV file(s) with each line in format:
+ *
  *     ML_USE,GCS_FILE_PATH,[LABEL],(BOUNDING_BOX | ,,,,,,,)
+ *
  * *   `ML_USE` - Identifies the data set that the current row (file) applies
  * to.
  *     This value can be one of the following:
@@ -76,37 +95,54 @@ package com.google.cloud.automl.v1;
  *     * `UNASSIGNED` - Rows in this file are not categorized. They are
  *        Automatically divided into train and test data. 80% for training and
  *        20% for testing.
+ *
  * *  `GCS_FILE_PATH` - The Google Cloud Storage location of an image of up to
  *     30MB in size. Supported extensions: .JPEG, .GIF, .PNG. Each image
  *     is assumed to be exhaustively labeled.
+ *
  * *  `LABEL` - A label that identifies the object in the image specified by the
  *    `BOUNDING_BOX`.
+ *
  * *  `BOUNDING BOX` - The vertices of an object in the example image.
  *    The minimum allowed `BOUNDING_BOX` edge length is 0.01, and no more than
  *    500 `BOUNDING_BOX` instances per image are allowed (one `BOUNDING_BOX`
  *    per line). If an image has no looked for objects then it should be
  *    mentioned just once with no LABEL and the ",,,,,,," in place of the
  *   `BOUNDING_BOX`.
+ *
  * **Four sample rows:**
+ *
  *     TRAIN,gs://folder/image1.png,car,0.1,0.1,,,0.3,0.3,,
  *     TRAIN,gs://folder/image1.png,bike,.7,.6,,,.8,.9,,
  *     UNASSIGNED,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
  *     TEST,gs://folder/im3.png,,,,,,,,,
  *   &lt;/section&gt;
  * &lt;/div&gt;
+ *
+ *
  * &lt;h4&gt;AutoML Video Intelligence&lt;/h4&gt;
+ *
+ *
  * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+ *
  * See [Preparing your training
  * data](https://cloud.google.com/video-intelligence/automl/docs/prepare) for
  * more information.
+ *
  * CSV file(s) with each line in format:
+ *
  *     ML_USE,GCS_FILE_PATH
+ *
  * For `ML_USE`, do not use `VALIDATE`.
+ *
  * `GCS_FILE_PATH` is the path to another .csv file that describes training
  * example for a given `ML_USE`, using the following row format:
+ *
  *     GCS_FILE_PATH,(LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END | ,,)
+ *
  * Here `GCS_FILE_PATH` leads to a video of up to 50GB in size and up
  * to 3h duration. Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
+ *
  * `TIME_SEGMENT_START` and `TIME_SEGMENT_END` must be within the
  * length of the video, and the end time must be after the start time. Any
  * segment of a video which has one or more labels on it, is considered a
@@ -114,33 +150,50 @@ package com.google.cloud.automl.v1;
  * it is considered to be unknown. If a whole video is unknown, then
  * it should be mentioned just once with ",," in place of `LABEL,
  * TIME_SEGMENT_START,TIME_SEGMENT_END`.
+ *
  * Sample top level CSV file:
+ *
  *     TRAIN,gs://folder/train_videos.csv
  *     TEST,gs://folder/test_videos.csv
  *     UNASSIGNED,gs://folder/other_videos.csv
+ *
  * Sample rows of a CSV file for a particular ML_USE:
+ *
  *     gs://folder/video1.avi,car,120,180.000021
  *     gs://folder/video1.avi,bike,150,180.000021
  *     gs://folder/vid2.avi,car,0,60.5
  *     gs://folder/vid3.avi,,,
+ *
+ *
+ *
  * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Tracking&lt;/h5&gt;
+ *
  * See [Preparing your training
  * data](/video-intelligence/automl/object-tracking/docs/prepare) for more
  * information.
+ *
  * CSV file(s) with each line in format:
+ *
  *     ML_USE,GCS_FILE_PATH
+ *
  * For `ML_USE`, do not use `VALIDATE`.
+ *
  * `GCS_FILE_PATH` is the path to another .csv file that describes training
  * example for a given `ML_USE`, using the following row format:
+ *
  *     GCS_FILE_PATH,LABEL,[INSTANCE_ID],TIMESTAMP,BOUNDING_BOX
+ *
  * or
+ *
  *     GCS_FILE_PATH,,,,,,,,,,
+ *
  * Here `GCS_FILE_PATH` leads to a video of up to 50GB in size and up
  * to 3h duration. Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
  * Providing `INSTANCE_ID`s can help to obtain a better model. When
  * a specific labeled entity leaves the video frame, and shows up
  * afterwards it is not required, albeit preferable, that the same
  * `INSTANCE_ID` is given to it.
+ *
  * `TIMESTAMP` must be within the length of the video, the
  * `BOUNDING_BOX` is assumed to be drawn on the closest video's frame
  * to the `TIMESTAMP`. Any mentioned by the `TIMESTAMP` frame is expected
@@ -148,11 +201,15 @@ package com.google.cloud.automl.v1;
  * frame are allowed. If a whole video is unknown, then it should be
  * mentioned just once with ",,,,,,,,,," in place of `LABEL,
  * [INSTANCE_ID],TIMESTAMP,BOUNDING_BOX`.
+ *
  * Sample top level CSV file:
+ *
  *      TRAIN,gs://folder/train_videos.csv
  *      TEST,gs://folder/test_videos.csv
  *      UNASSIGNED,gs://folder/other_videos.csv
+ *
  * Seven sample rows of a CSV file for a particular ML_USE:
+ *
  *      gs://folder/video1.avi,car,1,12.10,0.8,0.8,0.9,0.8,0.9,0.9,0.8,0.9
  *      gs://folder/video1.avi,car,1,12.90,0.4,0.8,0.5,0.8,0.5,0.9,0.4,0.9
  *      gs://folder/video1.avi,car,2,12.10,.4,.2,.5,.2,.5,.3,.4,.3
@@ -162,13 +219,21 @@ package com.google.cloud.automl.v1;
  *      gs://folder/video2.avi,,,,,,,,,,,
  *   &lt;/section&gt;
  * &lt;/div&gt;
+ *
+ *
  * &lt;h4&gt;AutoML Natural Language&lt;/h4&gt;
+ *
+ *
  * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Entity Extraction&lt;/h5&gt;
+ *
  * See [Preparing your training
  * data](/natural-language/automl/entity-analysis/docs/prepare) for more
  * information.
+ *
  * One or more CSV file(s) with each line in the following format:
+ *
  *     ML_USE,GCS_FILE_PATH
+ *
  * *   `ML_USE` - Identifies the data set that the current row (file) applies
  * to.
  *     This value can be one of the following:
@@ -177,30 +242,40 @@ package com.google.cloud.automl.v1;
  *     * `UNASSIGNED` - Rows in this file are not categorized. They are
  *        Automatically divided into train and test data. 80% for training and
  *        20% for testing..
+ *
  * *   `GCS_FILE_PATH` - a Identifies JSON Lines (.JSONL) file stored in
  *      Google Cloud Storage that contains in-line text in-line as documents
  *      for model training.
+ *
  * After the training data set has been determined from the `TRAIN` and
  * `UNASSIGNED` CSV files, the training data is divided into train and
  * validation data sets. 70% for training and 30% for validation.
+ *
  * For example:
+ *
  *     TRAIN,gs://folder/file1.jsonl
  *     VALIDATE,gs://folder/file2.jsonl
  *     TEST,gs://folder/file3.jsonl
+ *
  * **In-line JSONL files**
+ *
  * In-line .JSONL files contain, per line, a JSON document that wraps a
  * [`text_snippet`][google.cloud.automl.v1.TextSnippet] field followed by
  * one or more [`annotations`][google.cloud.automl.v1.AnnotationPayload]
  * fields, which have `display_name` and `text_extraction` fields to describe
  * the entity from the text snippet. Multiple JSON documents can be separated
  * using line breaks (&#92;n).
+ *
  * The supplied text must be annotated exhaustively. For example, if you
  * include the text "horse", but do not label it as "animal",
  * then "horse" is assumed to not be an "animal".
+ *
  * Any given text snippet content must have 30,000 characters or
  * less, and also be UTF-8 NFC encoded. ASCII is accepted as it is
  * UTF-8 NFC encoded.
+ *
  * For example:
+ *
  *     {
  *       "text_snippet": {
  *         "content": "dog car cat"
@@ -239,12 +314,17 @@ package com.google.cloud.automl.v1;
  *           }
  *        ]
  *     }
+ *
  * **JSONL files that reference documents**
+ *
  * .JSONL files contain, per line, a JSON document that wraps a
  * `input_config` that contains the path to a source document.
  * Multiple JSON documents can be separated using line breaks (&#92;n).
+ *
  * Supported document extensions: .PDF, .TIF, .TIFF
+ *
  * For example:
+ *
  *     {
  *       "document": {
  *         "input_config": {
@@ -261,13 +341,18 @@ package com.google.cloud.automl.v1;
  *         }
  *       }
  *     }
+ *
  * **In-line JSONL files with document layout information**
+ *
  * **Note:** You can only annotate documents using the UI. The format described
  * below applies to annotated documents exported using the UI or `exportData`.
+ *
  * In-line .JSONL files for documents contain, per line, a JSON document
  * that wraps a `document` field that provides the textual content of the
  * document and the layout information.
+ *
  * For example:
+ *
  *     {
  *       "document": {
  *               "document_text": {
@@ -318,12 +403,20 @@ package com.google.cloud.automl.v1;
  *                 }
  *               },
  *             ],
+ *
+ *
+ *
+ *
  * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+ *
  * See [Preparing your training
  * data](https://cloud.google.com/natural-language/automl/docs/prepare) for more
  * information.
+ *
  * One or more CSV file(s) with each line in the following format:
+ *
  *     ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),LABEL,LABEL,...
+ *
  * *   `ML_USE` - Identifies the data set that the current row (file) applies
  * to.
  *     This value can be one of the following:
@@ -332,6 +425,7 @@ package com.google.cloud.automl.v1;
  *     * `UNASSIGNED` - Rows in this file are not categorized. They are
  *        Automatically divided into train and test data. 80% for training and
  *        20% for testing.
+ *
  * *   `TEXT_SNIPPET` and `GCS_FILE_PATH` are distinguished by a pattern. If
  *     the column content is a valid Google Cloud Storage file path, that is,
  *     prefixed by "gs://", it is treated as a `GCS_FILE_PATH`. Otherwise, if
@@ -343,21 +437,33 @@ package com.google.cloud.automl.v1;
  *     excluding quotes. In both cases, size of the content must be 10MB or
  *     less in size. For zip files, the size of each file inside the zip must be
  *     10MB or less in size.
+ *
  *     For the `MULTICLASS` classification type, at most one `LABEL` is allowed.
+ *
  *     The `ML_USE` and `LABEL` columns are optional.
  *     Supported file extensions: .TXT, .PDF, .TIF, .TIFF, .ZIP
+ *
  * A maximum of 100 unique labels are allowed per CSV row.
+ *
  * Sample rows:
+ *
  *     TRAIN,"They have bad food and very rude",RudeService,BadFood
  *     gs://folder/content.txt,SlowService
  *     TEST,gs://folder/document.pdf
  *     VALIDATE,gs://folder/text_files.zip,BadFood
+ *
+ *
+ *
  * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Sentiment Analysis&lt;/h5&gt;
+ *
  * See [Preparing your training
  * data](https://cloud.google.com/natural-language/automl/docs/prepare) for more
  * information.
+ *
  * CSV file(s) with each line in format:
+ *
  *     ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),SENTIMENT
+ *
  * *   `ML_USE` - Identifies the data set that the current row (file) applies
  * to.
  *     This value can be one of the following:
@@ -366,6 +472,7 @@ package com.google.cloud.automl.v1;
  *     * `UNASSIGNED` - Rows in this file are not categorized. They are
  *        Automatically divided into train and test data. 80% for training and
  *        20% for testing.
+ *
  * *   `TEXT_SNIPPET` and `GCS_FILE_PATH` are distinguished by a pattern. If
  *     the column content is a valid  Google Cloud Storage file path, that is,
  *     prefixed by "gs://", it is treated as a `GCS_FILE_PATH`. Otherwise, if
@@ -377,8 +484,10 @@ package com.google.cloud.automl.v1;
  *     excluding quotes. In both cases, size of the content must be 128kB or
  *     less in size. For zip files, the size of each file inside the zip must be
  *     128kB or less in size.
+ *
  *     The `ML_USE` and `SENTIMENT` columns are optional.
  *     Supported file extensions: .TXT, .PDF, .TIF, .TIFF, .ZIP
+ *
  * *  `SENTIMENT` - An integer between 0 and
  *     Dataset.text_sentiment_dataset_metadata.sentiment_max
  *     (inclusive). Describes the ordinal of the sentiment - higher
@@ -395,32 +504,43 @@ package com.google.cloud.automl.v1;
  *     neighboring sentiment values needs not to be uniform, e.g. 1 and
  *     2 may be similar whereas the difference between 2 and 3 may be
  *     large.
+ *
  * Sample rows:
+ *
  *     TRAIN,"&#64;freewrytin this is way too good for your product",2
  *     gs://folder/content.txt,3
  *     TEST,gs://folder/document.pdf
  *     VALIDATE,gs://folder/text_files.zip,2
  *   &lt;/section&gt;
  * &lt;/div&gt;
+ *
+ *
+ *
  * &lt;h4&gt;AutoML Tables&lt;/h4&gt;&lt;div class="ui-datasection-main"&gt;&lt;section
  * class="selected"&gt;
+ *
  * See [Preparing your training
  * data](https://cloud.google.com/automl-tables/docs/prepare) for more
  * information.
+ *
  * You can use either
  * [gcs_source][google.cloud.automl.v1.InputConfig.gcs_source] or
  * [bigquery_source][google.cloud.automl.v1.InputConfig.bigquery_source].
  * All input is concatenated into a
  * single
  * [primary_table_spec_id][google.cloud.automl.v1.TablesDatasetMetadata.primary_table_spec_id]
+ *
  * **For gcs_source:**
+ *
  * CSV file(s), where the first row of the first file is the header,
  * containing unique column names. If the first row of a subsequent
  * file is the same as the header, then it is also treated as a
  * header. All other rows contain values for the corresponding
  * columns.
+ *
  * Each .CSV file by itself must be 10GB or smaller, and their total
  * size must be 100GB or smaller.
+ *
  * First three sample rows of a CSV file:
  * &lt;pre&gt;
  * "Id","First Name","Last Name","Dob","Addresses"
@@ -428,66 +548,86 @@ package com.google.cloud.automl.v1;
  * "2","Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
  * &lt;/pre&gt;
  * **For bigquery_source:**
+ *
  * An URI of a BigQuery table. The user data size of the BigQuery
  * table must be 100GB or smaller.
+ *
  * An imported table must have between 2 and 1,000 columns, inclusive,
  * and between 1000 and 100,000,000 rows, inclusive. There are at most 5
  * import data running in parallel.
+ *
  *   &lt;/section&gt;
  * &lt;/div&gt;
+ *
+ *
  * **Input field definitions:**
+ *
  * `ML_USE`
  * : ("TRAIN" | "VALIDATE" | "TEST" | "UNASSIGNED")
  *   Describes how the given example (file) should be used for model
  *   training. "UNASSIGNED" can be used when user has no preference.
+ *
  * `GCS_FILE_PATH`
  * : The path to a file on Google Cloud Storage. For example,
  *   "gs://folder/image1.png".
+ *
  * `LABEL`
  * : A display name of an object on an image, video etc., e.g. "dog".
  *   Must be up to 32 characters long and can consist only of ASCII
  *   Latin letters A-Z and a-z, underscores(_), and ASCII digits 0-9.
  *   For each label an AnnotationSpec is created which display_name
  *   becomes the label; AnnotationSpecs are given back in predictions.
+ *
  * `INSTANCE_ID`
  * : A positive integer that identifies a specific instance of a
  *   labeled entity on an example. Used e.g. to track two cars on
  *   a video while being able to tell apart which one is which.
+ *
  * `BOUNDING_BOX`
  * : (`VERTEX,VERTEX,VERTEX,VERTEX` | `VERTEX,,,VERTEX,,`)
  *   A rectangle parallel to the frame of the example (image,
  *   video). If 4 vertices are given they are connected by edges
  *   in the order provided, if 2 are given they are recognized
  *   as diagonally opposite vertices of the rectangle.
+ *
  * `VERTEX`
  * : (`COORDINATE,COORDINATE`)
  *   First coordinate is horizontal (x), the second is vertical (y).
+ *
  * `COORDINATE`
  * : A float in 0 to 1 range, relative to total length of
  *   image or video in given dimension. For fractions the
  *   leading non-decimal 0 can be omitted (i.e. 0.3 = .3).
  *   Point 0,0 is in top left.
+ *
  * `TIME_SEGMENT_START`
  * : (`TIME_OFFSET`)
  *   Expresses a beginning, inclusive, of a time segment
  *   within an example that has a time dimension
  *   (e.g. video).
+ *
  * `TIME_SEGMENT_END`
  * : (`TIME_OFFSET`)
  *   Expresses an end, exclusive, of a time segment within
  *   n example that has a time dimension (e.g. video).
+ *
  * `TIME_OFFSET`
  * : A number of seconds as measured from the start of an
  *   example (e.g. video). Fractions are allowed, up to a
  *   microsecond precision. "inf" is allowed, and it means the end
  *   of the example.
+ *
  * `TEXT_SNIPPET`
  * : The content of a text snippet, UTF-8 encoded, enclosed within
  *   double quotes ("").
+ *
  * `DOCUMENT`
  * : A field that provides the textual content with document and the layout
  *   information.
+ *
+ *
  *  **Errors:**
+ *
  *  If any of the provided CSV files can't be parsed or if more than certain
  *  percent of CSV rows cannot be processed then the operation fails and
  *  nothing is imported. Regardless of overall success or failure the per-row
@@ -513,11 +653,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InputConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -547,6 +682,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -680,7 +817,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
    *   The version of the
@@ -710,7 +849,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
    *   The version of the
@@ -731,7 +872,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
    *   The version of the
@@ -759,7 +902,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+   *
    * `schema_inference_version`
    * : (integer) This value must be supplied.
    *   The version of the
@@ -976,6 +1121,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input configuration for [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData] action.
+   *
    * The format of input depends on dataset_metadata the Dataset into which
    * the import is happening has. As input source the
    * [gcs_source][google.cloud.automl.v1.InputConfig.gcs_source]
@@ -986,15 +1132,23 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * its label, bounding boxes etc. are appended. The same file should be always
    * provided with the same `ML_USE` and `GCS_FILE_PATH`, if it is not, then
    * these values are nondeterministically selected from the given ones.
+   *
    * The formats are represented in EBNF with commas being literal and with
    * non-terminal symbols defined near the end of this comment. The formats are:
+   *
    * &lt;h4&gt;AutoML Vision&lt;/h4&gt;
+   *
+   *
    * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+   *
    * See [Preparing your training
    * data](https://cloud.google.com/vision/automl/docs/prepare) for more
    * information.
+   *
    * CSV file(s) with each line in format:
+   *
    *     ML_USE,GCS_FILE_PATH,LABEL,LABEL,...
+   *
    * *   `ML_USE` - Identifies the data set that the current row (file) applies
    * to.
    *     This value can be one of the following:
@@ -1003,24 +1157,34 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *     * `UNASSIGNED` - Rows in this file are not categorized. They are
    *        Automatically divided into train and test data. 80% for training and
    *        20% for testing.
+   *
    * *   `GCS_FILE_PATH` - The Google Cloud Storage location of an image of up to
    *      30MB in size. Supported extensions: .JPEG, .GIF, .PNG, .WEBP, .BMP,
    *      .TIFF, .ICO.
+   *
    * *   `LABEL` - A label that identifies the object in the image.
+   *
    * For the `MULTICLASS` classification type, at most one `LABEL` is allowed
    * per image. If an image has not yet been labeled, then it should be
    * mentioned just once with no `LABEL`.
+   *
    * Some sample rows:
+   *
    *     TRAIN,gs://folder/image1.jpg,daisy
    *     TEST,gs://folder/image2.jpg,dandelion,tulip,rose
    *     UNASSIGNED,gs://folder/image3.jpg,daisy
    *     UNASSIGNED,gs://folder/image4.jpg
+   *
+   *
    * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Detection&lt;/h5&gt;
    * See [Preparing your training
    * data](https://cloud.google.com/vision/automl/object-detection/docs/prepare)
    * for more information.
+   *
    * A CSV file(s) with each line in format:
+   *
    *     ML_USE,GCS_FILE_PATH,[LABEL],(BOUNDING_BOX | ,,,,,,,)
+   *
    * *   `ML_USE` - Identifies the data set that the current row (file) applies
    * to.
    *     This value can be one of the following:
@@ -1029,37 +1193,54 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *     * `UNASSIGNED` - Rows in this file are not categorized. They are
    *        Automatically divided into train and test data. 80% for training and
    *        20% for testing.
+   *
    * *  `GCS_FILE_PATH` - The Google Cloud Storage location of an image of up to
    *     30MB in size. Supported extensions: .JPEG, .GIF, .PNG. Each image
    *     is assumed to be exhaustively labeled.
+   *
    * *  `LABEL` - A label that identifies the object in the image specified by the
    *    `BOUNDING_BOX`.
+   *
    * *  `BOUNDING BOX` - The vertices of an object in the example image.
    *    The minimum allowed `BOUNDING_BOX` edge length is 0.01, and no more than
    *    500 `BOUNDING_BOX` instances per image are allowed (one `BOUNDING_BOX`
    *    per line). If an image has no looked for objects then it should be
    *    mentioned just once with no LABEL and the ",,,,,,," in place of the
    *   `BOUNDING_BOX`.
+   *
    * **Four sample rows:**
+   *
    *     TRAIN,gs://folder/image1.png,car,0.1,0.1,,,0.3,0.3,,
    *     TRAIN,gs://folder/image1.png,bike,.7,.6,,,.8,.9,,
    *     UNASSIGNED,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
    *     TEST,gs://folder/im3.png,,,,,,,,,
    *   &lt;/section&gt;
    * &lt;/div&gt;
+   *
+   *
    * &lt;h4&gt;AutoML Video Intelligence&lt;/h4&gt;
+   *
+   *
    * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+   *
    * See [Preparing your training
    * data](https://cloud.google.com/video-intelligence/automl/docs/prepare) for
    * more information.
+   *
    * CSV file(s) with each line in format:
+   *
    *     ML_USE,GCS_FILE_PATH
+   *
    * For `ML_USE`, do not use `VALIDATE`.
+   *
    * `GCS_FILE_PATH` is the path to another .csv file that describes training
    * example for a given `ML_USE`, using the following row format:
+   *
    *     GCS_FILE_PATH,(LABEL,TIME_SEGMENT_START,TIME_SEGMENT_END | ,,)
+   *
    * Here `GCS_FILE_PATH` leads to a video of up to 50GB in size and up
    * to 3h duration. Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
+   *
    * `TIME_SEGMENT_START` and `TIME_SEGMENT_END` must be within the
    * length of the video, and the end time must be after the start time. Any
    * segment of a video which has one or more labels on it, is considered a
@@ -1067,33 +1248,50 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * it is considered to be unknown. If a whole video is unknown, then
    * it should be mentioned just once with ",," in place of `LABEL,
    * TIME_SEGMENT_START,TIME_SEGMENT_END`.
+   *
    * Sample top level CSV file:
+   *
    *     TRAIN,gs://folder/train_videos.csv
    *     TEST,gs://folder/test_videos.csv
    *     UNASSIGNED,gs://folder/other_videos.csv
+   *
    * Sample rows of a CSV file for a particular ML_USE:
+   *
    *     gs://folder/video1.avi,car,120,180.000021
    *     gs://folder/video1.avi,bike,150,180.000021
    *     gs://folder/vid2.avi,car,0,60.5
    *     gs://folder/vid3.avi,,,
+   *
+   *
+   *
    * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Tracking&lt;/h5&gt;
+   *
    * See [Preparing your training
    * data](/video-intelligence/automl/object-tracking/docs/prepare) for more
    * information.
+   *
    * CSV file(s) with each line in format:
+   *
    *     ML_USE,GCS_FILE_PATH
+   *
    * For `ML_USE`, do not use `VALIDATE`.
+   *
    * `GCS_FILE_PATH` is the path to another .csv file that describes training
    * example for a given `ML_USE`, using the following row format:
+   *
    *     GCS_FILE_PATH,LABEL,[INSTANCE_ID],TIMESTAMP,BOUNDING_BOX
+   *
    * or
+   *
    *     GCS_FILE_PATH,,,,,,,,,,
+   *
    * Here `GCS_FILE_PATH` leads to a video of up to 50GB in size and up
    * to 3h duration. Supported extensions: .MOV, .MPEG4, .MP4, .AVI.
    * Providing `INSTANCE_ID`s can help to obtain a better model. When
    * a specific labeled entity leaves the video frame, and shows up
    * afterwards it is not required, albeit preferable, that the same
    * `INSTANCE_ID` is given to it.
+   *
    * `TIMESTAMP` must be within the length of the video, the
    * `BOUNDING_BOX` is assumed to be drawn on the closest video's frame
    * to the `TIMESTAMP`. Any mentioned by the `TIMESTAMP` frame is expected
@@ -1101,11 +1299,15 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * frame are allowed. If a whole video is unknown, then it should be
    * mentioned just once with ",,,,,,,,,," in place of `LABEL,
    * [INSTANCE_ID],TIMESTAMP,BOUNDING_BOX`.
+   *
    * Sample top level CSV file:
+   *
    *      TRAIN,gs://folder/train_videos.csv
    *      TEST,gs://folder/test_videos.csv
    *      UNASSIGNED,gs://folder/other_videos.csv
+   *
    * Seven sample rows of a CSV file for a particular ML_USE:
+   *
    *      gs://folder/video1.avi,car,1,12.10,0.8,0.8,0.9,0.8,0.9,0.9,0.8,0.9
    *      gs://folder/video1.avi,car,1,12.90,0.4,0.8,0.5,0.8,0.5,0.9,0.4,0.9
    *      gs://folder/video1.avi,car,2,12.10,.4,.2,.5,.2,.5,.3,.4,.3
@@ -1115,13 +1317,21 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *      gs://folder/video2.avi,,,,,,,,,,,
    *   &lt;/section&gt;
    * &lt;/div&gt;
+   *
+   *
    * &lt;h4&gt;AutoML Natural Language&lt;/h4&gt;
+   *
+   *
    * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Entity Extraction&lt;/h5&gt;
+   *
    * See [Preparing your training
    * data](/natural-language/automl/entity-analysis/docs/prepare) for more
    * information.
+   *
    * One or more CSV file(s) with each line in the following format:
+   *
    *     ML_USE,GCS_FILE_PATH
+   *
    * *   `ML_USE` - Identifies the data set that the current row (file) applies
    * to.
    *     This value can be one of the following:
@@ -1130,30 +1340,40 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *     * `UNASSIGNED` - Rows in this file are not categorized. They are
    *        Automatically divided into train and test data. 80% for training and
    *        20% for testing..
+   *
    * *   `GCS_FILE_PATH` - a Identifies JSON Lines (.JSONL) file stored in
    *      Google Cloud Storage that contains in-line text in-line as documents
    *      for model training.
+   *
    * After the training data set has been determined from the `TRAIN` and
    * `UNASSIGNED` CSV files, the training data is divided into train and
    * validation data sets. 70% for training and 30% for validation.
+   *
    * For example:
+   *
    *     TRAIN,gs://folder/file1.jsonl
    *     VALIDATE,gs://folder/file2.jsonl
    *     TEST,gs://folder/file3.jsonl
+   *
    * **In-line JSONL files**
+   *
    * In-line .JSONL files contain, per line, a JSON document that wraps a
    * [`text_snippet`][google.cloud.automl.v1.TextSnippet] field followed by
    * one or more [`annotations`][google.cloud.automl.v1.AnnotationPayload]
    * fields, which have `display_name` and `text_extraction` fields to describe
    * the entity from the text snippet. Multiple JSON documents can be separated
    * using line breaks (&#92;n).
+   *
    * The supplied text must be annotated exhaustively. For example, if you
    * include the text "horse", but do not label it as "animal",
    * then "horse" is assumed to not be an "animal".
+   *
    * Any given text snippet content must have 30,000 characters or
    * less, and also be UTF-8 NFC encoded. ASCII is accepted as it is
    * UTF-8 NFC encoded.
+   *
    * For example:
+   *
    *     {
    *       "text_snippet": {
    *         "content": "dog car cat"
@@ -1192,12 +1412,17 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *           }
    *        ]
    *     }
+   *
    * **JSONL files that reference documents**
+   *
    * .JSONL files contain, per line, a JSON document that wraps a
    * `input_config` that contains the path to a source document.
    * Multiple JSON documents can be separated using line breaks (&#92;n).
+   *
    * Supported document extensions: .PDF, .TIF, .TIFF
+   *
    * For example:
+   *
    *     {
    *       "document": {
    *         "input_config": {
@@ -1214,13 +1439,18 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *         }
    *       }
    *     }
+   *
    * **In-line JSONL files with document layout information**
+   *
    * **Note:** You can only annotate documents using the UI. The format described
    * below applies to annotated documents exported using the UI or `exportData`.
+   *
    * In-line .JSONL files for documents contain, per line, a JSON document
    * that wraps a `document` field that provides the textual content of the
    * document and the layout information.
+   *
    * For example:
+   *
    *     {
    *       "document": {
    *               "document_text": {
@@ -1271,12 +1501,20 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *                 }
    *               },
    *             ],
+   *
+   *
+   *
+   *
    * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+   *
    * See [Preparing your training
    * data](https://cloud.google.com/natural-language/automl/docs/prepare) for more
    * information.
+   *
    * One or more CSV file(s) with each line in the following format:
+   *
    *     ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),LABEL,LABEL,...
+   *
    * *   `ML_USE` - Identifies the data set that the current row (file) applies
    * to.
    *     This value can be one of the following:
@@ -1285,6 +1523,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *     * `UNASSIGNED` - Rows in this file are not categorized. They are
    *        Automatically divided into train and test data. 80% for training and
    *        20% for testing.
+   *
    * *   `TEXT_SNIPPET` and `GCS_FILE_PATH` are distinguished by a pattern. If
    *     the column content is a valid Google Cloud Storage file path, that is,
    *     prefixed by "gs://", it is treated as a `GCS_FILE_PATH`. Otherwise, if
@@ -1296,21 +1535,33 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *     excluding quotes. In both cases, size of the content must be 10MB or
    *     less in size. For zip files, the size of each file inside the zip must be
    *     10MB or less in size.
+   *
    *     For the `MULTICLASS` classification type, at most one `LABEL` is allowed.
+   *
    *     The `ML_USE` and `LABEL` columns are optional.
    *     Supported file extensions: .TXT, .PDF, .TIF, .TIFF, .ZIP
+   *
    * A maximum of 100 unique labels are allowed per CSV row.
+   *
    * Sample rows:
+   *
    *     TRAIN,"They have bad food and very rude",RudeService,BadFood
    *     gs://folder/content.txt,SlowService
    *     TEST,gs://folder/document.pdf
    *     VALIDATE,gs://folder/text_files.zip,BadFood
+   *
+   *
+   *
    * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Sentiment Analysis&lt;/h5&gt;
+   *
    * See [Preparing your training
    * data](https://cloud.google.com/natural-language/automl/docs/prepare) for more
    * information.
+   *
    * CSV file(s) with each line in format:
+   *
    *     ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),SENTIMENT
+   *
    * *   `ML_USE` - Identifies the data set that the current row (file) applies
    * to.
    *     This value can be one of the following:
@@ -1319,6 +1570,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *     * `UNASSIGNED` - Rows in this file are not categorized. They are
    *        Automatically divided into train and test data. 80% for training and
    *        20% for testing.
+   *
    * *   `TEXT_SNIPPET` and `GCS_FILE_PATH` are distinguished by a pattern. If
    *     the column content is a valid  Google Cloud Storage file path, that is,
    *     prefixed by "gs://", it is treated as a `GCS_FILE_PATH`. Otherwise, if
@@ -1330,8 +1582,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *     excluding quotes. In both cases, size of the content must be 128kB or
    *     less in size. For zip files, the size of each file inside the zip must be
    *     128kB or less in size.
+   *
    *     The `ML_USE` and `SENTIMENT` columns are optional.
    *     Supported file extensions: .TXT, .PDF, .TIF, .TIFF, .ZIP
+   *
    * *  `SENTIMENT` - An integer between 0 and
    *     Dataset.text_sentiment_dataset_metadata.sentiment_max
    *     (inclusive). Describes the ordinal of the sentiment - higher
@@ -1348,32 +1602,43 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *     neighboring sentiment values needs not to be uniform, e.g. 1 and
    *     2 may be similar whereas the difference between 2 and 3 may be
    *     large.
+   *
    * Sample rows:
+   *
    *     TRAIN,"&#64;freewrytin this is way too good for your product",2
    *     gs://folder/content.txt,3
    *     TEST,gs://folder/document.pdf
    *     VALIDATE,gs://folder/text_files.zip,2
    *   &lt;/section&gt;
    * &lt;/div&gt;
+   *
+   *
+   *
    * &lt;h4&gt;AutoML Tables&lt;/h4&gt;&lt;div class="ui-datasection-main"&gt;&lt;section
    * class="selected"&gt;
+   *
    * See [Preparing your training
    * data](https://cloud.google.com/automl-tables/docs/prepare) for more
    * information.
+   *
    * You can use either
    * [gcs_source][google.cloud.automl.v1.InputConfig.gcs_source] or
    * [bigquery_source][google.cloud.automl.v1.InputConfig.bigquery_source].
    * All input is concatenated into a
    * single
    * [primary_table_spec_id][google.cloud.automl.v1.TablesDatasetMetadata.primary_table_spec_id]
+   *
    * **For gcs_source:**
+   *
    * CSV file(s), where the first row of the first file is the header,
    * containing unique column names. If the first row of a subsequent
    * file is the same as the header, then it is also treated as a
    * header. All other rows contain values for the corresponding
    * columns.
+   *
    * Each .CSV file by itself must be 10GB or smaller, and their total
    * size must be 100GB or smaller.
+   *
    * First three sample rows of a CSV file:
    * &lt;pre&gt;
    * "Id","First Name","Last Name","Dob","Addresses"
@@ -1381,66 +1646,86 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * "2","Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
    * &lt;/pre&gt;
    * **For bigquery_source:**
+   *
    * An URI of a BigQuery table. The user data size of the BigQuery
    * table must be 100GB or smaller.
+   *
    * An imported table must have between 2 and 1,000 columns, inclusive,
    * and between 1000 and 100,000,000 rows, inclusive. There are at most 5
    * import data running in parallel.
+   *
    *   &lt;/section&gt;
    * &lt;/div&gt;
+   *
+   *
    * **Input field definitions:**
+   *
    * `ML_USE`
    * : ("TRAIN" | "VALIDATE" | "TEST" | "UNASSIGNED")
    *   Describes how the given example (file) should be used for model
    *   training. "UNASSIGNED" can be used when user has no preference.
+   *
    * `GCS_FILE_PATH`
    * : The path to a file on Google Cloud Storage. For example,
    *   "gs://folder/image1.png".
+   *
    * `LABEL`
    * : A display name of an object on an image, video etc., e.g. "dog".
    *   Must be up to 32 characters long and can consist only of ASCII
    *   Latin letters A-Z and a-z, underscores(_), and ASCII digits 0-9.
    *   For each label an AnnotationSpec is created which display_name
    *   becomes the label; AnnotationSpecs are given back in predictions.
+   *
    * `INSTANCE_ID`
    * : A positive integer that identifies a specific instance of a
    *   labeled entity on an example. Used e.g. to track two cars on
    *   a video while being able to tell apart which one is which.
+   *
    * `BOUNDING_BOX`
    * : (`VERTEX,VERTEX,VERTEX,VERTEX` | `VERTEX,,,VERTEX,,`)
    *   A rectangle parallel to the frame of the example (image,
    *   video). If 4 vertices are given they are connected by edges
    *   in the order provided, if 2 are given they are recognized
    *   as diagonally opposite vertices of the rectangle.
+   *
    * `VERTEX`
    * : (`COORDINATE,COORDINATE`)
    *   First coordinate is horizontal (x), the second is vertical (y).
+   *
    * `COORDINATE`
    * : A float in 0 to 1 range, relative to total length of
    *   image or video in given dimension. For fractions the
    *   leading non-decimal 0 can be omitted (i.e. 0.3 = .3).
    *   Point 0,0 is in top left.
+   *
    * `TIME_SEGMENT_START`
    * : (`TIME_OFFSET`)
    *   Expresses a beginning, inclusive, of a time segment
    *   within an example that has a time dimension
    *   (e.g. video).
+   *
    * `TIME_SEGMENT_END`
    * : (`TIME_OFFSET`)
    *   Expresses an end, exclusive, of a time segment within
    *   n example that has a time dimension (e.g. video).
+   *
    * `TIME_OFFSET`
    * : A number of seconds as measured from the start of an
    *   example (e.g. video). Fractions are allowed, up to a
    *   microsecond precision. "inf" is allowed, and it means the end
    *   of the example.
+   *
    * `TEXT_SNIPPET`
    * : The content of a text snippet, UTF-8 encoded, enclosed within
    *   double quotes ("").
+   *
    * `DOCUMENT`
    * : A field that provides the textual content with document and the layout
    *   information.
+   *
+   *
    *  **Errors:**
+   *
    *  If any of the provided CSV files can't be parsed or if more than certain
    *  percent of CSV rows cannot be processed then the operation fails and
    *  nothing is imported. Regardless of overall success or failure the per-row
@@ -1948,7 +2233,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
      *   The version of the
@@ -1978,7 +2265,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
      *   The version of the
@@ -1999,7 +2288,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
      *   The version of the
@@ -2027,7 +2318,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
      *   The version of the
@@ -2061,7 +2354,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
      *   The version of the
@@ -2091,7 +2386,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
      *   The version of the
@@ -2119,7 +2416,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * &lt;h4&gt;AutoML Tables&lt;/h4&gt;
+     *
      * `schema_inference_version`
      * : (integer) This value must be supplied.
      *   The version of the

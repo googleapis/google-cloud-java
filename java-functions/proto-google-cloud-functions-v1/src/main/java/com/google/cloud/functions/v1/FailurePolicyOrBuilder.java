@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface FailurePolicyOrBuilder
    *
    *
    * <pre>
-   * If specified, then the function will be retried in case of a failure.
+   * If specified, the function is retried in case of a failure.
    * </pre>
    *
    * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -39,7 +39,7 @@ public interface FailurePolicyOrBuilder
    *
    *
    * <pre>
-   * If specified, then the function will be retried in case of a failure.
+   * If specified, the function is retried in case of a failure.
    * </pre>
    *
    * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -51,12 +51,12 @@ public interface FailurePolicyOrBuilder
    *
    *
    * <pre>
-   * If specified, then the function will be retried in case of a failure.
+   * If specified, the function is retried in case of a failure.
    * </pre>
    *
    * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
    */
   com.google.cloud.functions.v1.FailurePolicy.RetryOrBuilder getRetryOrBuilder();
 
-  public com.google.cloud.functions.v1.FailurePolicy.ActionCase getActionCase();
+  com.google.cloud.functions.v1.FailurePolicy.ActionCase getActionCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,4 +95,47 @@ public interface MonitoringConfigOrBuilder
    * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
    */
   com.google.container.v1.ManagedPrometheusConfigOrBuilder getManagedPrometheusConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Advanced Datapath Observability features.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+   * </code>
+   *
+   * @return Whether the advancedDatapathObservabilityConfig field is set.
+   */
+  boolean hasAdvancedDatapathObservabilityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Advanced Datapath Observability features.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+   * </code>
+   *
+   * @return The advancedDatapathObservabilityConfig.
+   */
+  com.google.container.v1.AdvancedDatapathObservabilityConfig
+      getAdvancedDatapathObservabilityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Advanced Datapath Observability features.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+   * </code>
+   */
+  com.google.container.v1.AdvancedDatapathObservabilityConfigOrBuilder
+      getAdvancedDatapathObservabilityConfigOrBuilder();
 }

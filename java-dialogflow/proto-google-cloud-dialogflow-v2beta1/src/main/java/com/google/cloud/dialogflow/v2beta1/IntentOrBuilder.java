@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ public interface IntentOrBuilder
    * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
@@ -54,6 +55,7 @@ public interface IntentOrBuilder
    * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
@@ -124,6 +126,7 @@ public interface IntentOrBuilder
    * <pre>
    * Optional. The priority of this intent. Higher numbers represent higher
    * priorities.
+   *
    * - If the supplied value is unspecified or 0, the service
    *   translates the value to 500,000, which corresponds to the
    *   `Normal` priority in the console.
@@ -161,6 +164,7 @@ public interface IntentOrBuilder
    * DEPRECATED! Please use `ml_disabled` field instead.
    * NOTE: If both `ml_enabled` and `ml_disabled` are either not set or false,
    * then the default value is determined as follows:
+   *
    * - Before April 15th, 2018 the default is:
    *   ml_enabled = false / ml_disabled = true.
    * - After April 15th, 2018 the default is:
@@ -230,6 +234,7 @@ public interface IntentOrBuilder
    * Optional. The list of context names required for this intent to be
    * triggered.
    * Formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -247,6 +252,7 @@ public interface IntentOrBuilder
    * Optional. The list of context names required for this intent to be
    * triggered.
    * Formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -264,6 +270,7 @@ public interface IntentOrBuilder
    * Optional. The list of context names required for this intent to be
    * triggered.
    * Formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -282,6 +289,7 @@ public interface IntentOrBuilder
    * Optional. The list of context names required for this intent to be
    * triggered.
    * Formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -755,6 +763,7 @@ public interface IntentOrBuilder
    * Output only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent.
+   *
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -771,6 +780,7 @@ public interface IntentOrBuilder
    * Output only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent.
+   *
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -791,6 +801,7 @@ public interface IntentOrBuilder
    * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
    * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
    * in order to make this intent a followup intent.
+   *
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -810,6 +821,7 @@ public interface IntentOrBuilder
    * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
    * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
    * in order to make this intent a followup intent.
+   *
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>

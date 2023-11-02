@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -339,6 +339,7 @@ public interface ClusterConfigOrBuilder
    * You can test a node's `role` metadata to run an executable on
    * a master or worker node, as shown below using `curl` (you can also use
    * `wget`):
+   *
    *     ROLE=$(curl -H Metadata-Flavor:Google
    *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
@@ -363,6 +364,7 @@ public interface ClusterConfigOrBuilder
    * You can test a node's `role` metadata to run an executable on
    * a master or worker node, as shown below using `curl` (you can also use
    * `wget`):
+   *
    *     ROLE=$(curl -H Metadata-Flavor:Google
    *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
@@ -386,6 +388,7 @@ public interface ClusterConfigOrBuilder
    * You can test a node's `role` metadata to run an executable on
    * a master or worker node, as shown below using `curl` (you can also use
    * `wget`):
+   *
    *     ROLE=$(curl -H Metadata-Flavor:Google
    *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
@@ -409,6 +412,7 @@ public interface ClusterConfigOrBuilder
    * You can test a node's `role` metadata to run an executable on
    * a master or worker node, as shown below using `curl` (you can also use
    * `wget`):
+   *
    *     ROLE=$(curl -H Metadata-Flavor:Google
    *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
@@ -433,6 +437,7 @@ public interface ClusterConfigOrBuilder
    * You can test a node's `role` metadata to run an executable on
    * a master or worker node, as shown below using `curl` (you can also use
    * `wget`):
+   *
    *     ROLE=$(curl -H Metadata-Flavor:Google
    *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then

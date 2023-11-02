@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation configuration.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -39,7 +39,7 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation configuration.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,10 +52,10 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation configuration.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -64,10 +64,10 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation configuration.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -77,7 +77,8 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation
+   * configuration.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -89,7 +90,8 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation
+   * configuration.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -102,8 +104,8 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Indicates whether this resource is currently being updated to
-   * match its intended state.
+   * Output only. Indicates whether this workstation configuration is currently
+   * being updated to match its intended state.
    * </pre>
    *
    * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -116,20 +118,22 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAnnotations(java.lang.String key);
   /** Use {@link #getAnnotationsMap()} instead. */
@@ -139,20 +143,22 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
   /**
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
@@ -163,10 +169,11 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
@@ -174,22 +181,26 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation configuration and that are also propagated
+   * to the underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation configuration and that are also propagated
+   * to the underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -199,22 +210,26 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation configuration and that are also propagated
+   * to the underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation configuration and that are also propagated
+   * to the underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -225,11 +240,13 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation configuration and that are also propagated
+   * to the underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -237,7 +254,7 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation configuration was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -250,7 +267,7 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation configuration was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -263,7 +280,7 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation configuration was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -275,7 +292,8 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation configuration was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -288,7 +306,8 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation configuration was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -301,7 +320,8 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation configuration was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -313,7 +333,7 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation configuration was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -326,7 +346,7 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation configuration was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -339,7 +359,7 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation configuration was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -351,11 +371,12 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -364,11 +385,12 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -378,12 +400,19 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * How long to wait before automatically stopping an instance that hasn't
-   * received any user traffic. A value of 0 indicates that this instance
-   * should never time out due to idleness. Defaults to 20 minutes.
+   * Optional. Number of seconds to wait before automatically stopping a
+   * workstation after it last received user traffic.
+   *
+   * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+   * configuration should never time out due to idleness.
+   * Provide
+   * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+   * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+   * The default is `"1200s"` (20 minutes).
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+   * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the idleTimeout field is set.
    */
@@ -392,12 +421,19 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * How long to wait before automatically stopping an instance that hasn't
-   * received any user traffic. A value of 0 indicates that this instance
-   * should never time out due to idleness. Defaults to 20 minutes.
+   * Optional. Number of seconds to wait before automatically stopping a
+   * workstation after it last received user traffic.
+   *
+   * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+   * configuration should never time out due to idleness.
+   * Provide
+   * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+   * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+   * The default is `"1200s"` (20 minutes).
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+   * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The idleTimeout.
    */
@@ -406,12 +442,19 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * How long to wait before automatically stopping an instance that hasn't
-   * received any user traffic. A value of 0 indicates that this instance
-   * should never time out due to idleness. Defaults to 20 minutes.
+   * Optional. Number of seconds to wait before automatically stopping a
+   * workstation after it last received user traffic.
+   *
+   * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+   * configuration should never time out due to idleness.
+   * Provide
+   * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+   * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+   * The default is `"1200s"` (20 minutes).
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+   * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getIdleTimeoutOrBuilder();
 
@@ -419,13 +462,32 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * How long to wait before automatically stopping a workstation after it
-   * started. A value of 0 indicates that workstations using this configuration
-   * should never time out. Must be greater than 0 and less than 24 hours if
-   * encryption_key is set. Defaults to 12 hours.
+   * Optional. Number of seconds that a workstation can run until it is
+   * automatically shut down. We recommend that workstations be shut down daily
+   * to reduce costs and so that security updates can be applied upon restart.
+   * The
+   * [idle_timeout][google.cloud.workstations.v1beta.WorkstationConfig.idle_timeout]
+   * and
+   * [running_timeout][google.cloud.workstations.v1beta.WorkstationConfig.running_timeout]
+   * fields are independent of each other. Note that the
+   * [running_timeout][google.cloud.workstations.v1beta.WorkstationConfig.running_timeout]
+   * field shuts down VMs after the specified time, regardless of whether or not
+   * the VMs are idle.
+   *
+   * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+   * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+   * that workstations using this configuration should never time out. If
+   * [encryption_key][google.cloud.workstations.v1beta.WorkstationConfig.encryption_key]
+   * is set, it must be greater than `"0s"` and less than
+   * `"86400s"` (24 hours).
+   *
+   * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+   * with this configuration have no maximum running time. This is strongly
+   * discouraged because you incur costs and will not pick up security updates.
    * </pre>
    *
-   * <code>.google.protobuf.Duration running_timeout = 11;</code>
+   * <code>.google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the runningTimeout field is set.
    */
@@ -434,13 +496,32 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * How long to wait before automatically stopping a workstation after it
-   * started. A value of 0 indicates that workstations using this configuration
-   * should never time out. Must be greater than 0 and less than 24 hours if
-   * encryption_key is set. Defaults to 12 hours.
+   * Optional. Number of seconds that a workstation can run until it is
+   * automatically shut down. We recommend that workstations be shut down daily
+   * to reduce costs and so that security updates can be applied upon restart.
+   * The
+   * [idle_timeout][google.cloud.workstations.v1beta.WorkstationConfig.idle_timeout]
+   * and
+   * [running_timeout][google.cloud.workstations.v1beta.WorkstationConfig.running_timeout]
+   * fields are independent of each other. Note that the
+   * [running_timeout][google.cloud.workstations.v1beta.WorkstationConfig.running_timeout]
+   * field shuts down VMs after the specified time, regardless of whether or not
+   * the VMs are idle.
+   *
+   * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+   * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+   * that workstations using this configuration should never time out. If
+   * [encryption_key][google.cloud.workstations.v1beta.WorkstationConfig.encryption_key]
+   * is set, it must be greater than `"0s"` and less than
+   * `"86400s"` (24 hours).
+   *
+   * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+   * with this configuration have no maximum running time. This is strongly
+   * discouraged because you incur costs and will not pick up security updates.
    * </pre>
    *
-   * <code>.google.protobuf.Duration running_timeout = 11;</code>
+   * <code>.google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The runningTimeout.
    */
@@ -449,13 +530,32 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * How long to wait before automatically stopping a workstation after it
-   * started. A value of 0 indicates that workstations using this configuration
-   * should never time out. Must be greater than 0 and less than 24 hours if
-   * encryption_key is set. Defaults to 12 hours.
+   * Optional. Number of seconds that a workstation can run until it is
+   * automatically shut down. We recommend that workstations be shut down daily
+   * to reduce costs and so that security updates can be applied upon restart.
+   * The
+   * [idle_timeout][google.cloud.workstations.v1beta.WorkstationConfig.idle_timeout]
+   * and
+   * [running_timeout][google.cloud.workstations.v1beta.WorkstationConfig.running_timeout]
+   * fields are independent of each other. Note that the
+   * [running_timeout][google.cloud.workstations.v1beta.WorkstationConfig.running_timeout]
+   * field shuts down VMs after the specified time, regardless of whether or not
+   * the VMs are idle.
+   *
+   * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+   * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+   * that workstations using this configuration should never time out. If
+   * [encryption_key][google.cloud.workstations.v1beta.WorkstationConfig.encryption_key]
+   * is set, it must be greater than `"0s"` and less than
+   * `"86400s"` (24 hours).
+   *
+   * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+   * with this configuration have no maximum running time. This is strongly
+   * discouraged because you incur costs and will not pick up security updates.
    * </pre>
    *
-   * <code>.google.protobuf.Duration running_timeout = 11;</code>
+   * <code>.google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getRunningTimeoutOrBuilder();
 
@@ -463,10 +563,12 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Runtime host for the workstation.
+   * Optional. Runtime host for the workstation.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1beta.WorkstationConfig.Host host = 12;</code>
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the host field is set.
    */
@@ -475,10 +577,12 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Runtime host for the workstation.
+   * Optional. Runtime host for the workstation.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1beta.WorkstationConfig.Host host = 12;</code>
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The host.
    */
@@ -487,10 +591,12 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Runtime host for the workstation.
+   * Optional. Runtime host for the workstation.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1beta.WorkstationConfig.Host host = 12;</code>
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.workstations.v1beta.WorkstationConfig.HostOrBuilder getHostOrBuilder();
 
@@ -498,11 +604,11 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Directories to persist across workstation sessions.
+   * Optional. Directories to persist across workstation sessions.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory>
@@ -511,11 +617,11 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Directories to persist across workstation sessions.
+   * Optional. Directories to persist across workstation sessions.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory
@@ -524,11 +630,11 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Directories to persist across workstation sessions.
+   * Optional. Directories to persist across workstation sessions.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getPersistentDirectoriesCount();
@@ -536,11 +642,11 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Directories to persist across workstation sessions.
+   * Optional. Directories to persist across workstation sessions.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<
@@ -551,11 +657,11 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Directories to persist across workstation sessions.
+   * Optional. Directories to persist across workstation sessions.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.workstations.v1beta.WorkstationConfig.PersistentDirectoryOrBuilder
@@ -565,11 +671,85 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Container that will be run for each workstation using this configuration
-   * when that workstation is started.
+   * Optional. Ephemeral directories which won't persist across workstation
+   * sessions.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1beta.WorkstationConfig.Container container = 14;</code>
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.EphemeralDirectory ephemeral_directories = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.workstations.v1beta.WorkstationConfig.EphemeralDirectory>
+      getEphemeralDirectoriesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ephemeral directories which won't persist across workstation
+   * sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.EphemeralDirectory ephemeral_directories = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1beta.WorkstationConfig.EphemeralDirectory getEphemeralDirectories(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ephemeral directories which won't persist across workstation
+   * sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.EphemeralDirectory ephemeral_directories = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getEphemeralDirectoriesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ephemeral directories which won't persist across workstation
+   * sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.EphemeralDirectory ephemeral_directories = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.workstations.v1beta.WorkstationConfig.EphemeralDirectoryOrBuilder>
+      getEphemeralDirectoriesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ephemeral directories which won't persist across workstation
+   * sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.EphemeralDirectory ephemeral_directories = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1beta.WorkstationConfig.EphemeralDirectoryOrBuilder
+      getEphemeralDirectoriesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Container that runs upon startup for each workstation using this
+   * workstation configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the container field is set.
    */
@@ -578,11 +758,13 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Container that will be run for each workstation using this configuration
-   * when that workstation is started.
+   * Optional. Container that runs upon startup for each workstation using this
+   * workstation configuration.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1beta.WorkstationConfig.Container container = 14;</code>
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The container.
    */
@@ -591,11 +773,13 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Container that will be run for each workstation using this configuration
-   * when that workstation is started.
+   * Optional. Container that runs upon startup for each workstation using this
+   * workstation configuration.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1beta.WorkstationConfig.Container container = 14;</code>
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.workstations.v1beta.WorkstationConfig.ContainerOrBuilder getContainerOrBuilder();
 
@@ -603,23 +787,28 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Encrypts resources of this workstation configuration using a
-   * customer-managed encryption key.
+   * Immutable. Encrypts resources of this workstation configuration using a
+   * customer-managed encryption key (CMEK).
+   *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
    * this field is not set, the disks are encrypted using a generated
    * key. Customer-managed encryption keys do not protect disk metadata.
+   *
    * If the customer-managed encryption key is rotated, when the workstation
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
-   * Otherwise, data on the persistent disk will be lost.
-   * If the encryption key is revoked, the workstation session will
-   * automatically be stopped within 7 hours.
+   * Otherwise, data on the persistent disk might be lost.
+   *
+   * If the encryption key is revoked, the workstation session automatically
+   * stops within 7 hours.
+   *
+   * Immutable after the workstation configuration is created.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the encryptionKey field is set.
@@ -629,23 +818,28 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Encrypts resources of this workstation configuration using a
-   * customer-managed encryption key.
+   * Immutable. Encrypts resources of this workstation configuration using a
+   * customer-managed encryption key (CMEK).
+   *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
    * this field is not set, the disks are encrypted using a generated
    * key. Customer-managed encryption keys do not protect disk metadata.
+   *
    * If the customer-managed encryption key is rotated, when the workstation
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
-   * Otherwise, data on the persistent disk will be lost.
-   * If the encryption key is revoked, the workstation session will
-   * automatically be stopped within 7 hours.
+   * Otherwise, data on the persistent disk might be lost.
+   *
+   * If the encryption key is revoked, the workstation session automatically
+   * stops within 7 hours.
+   *
+   * Immutable after the workstation configuration is created.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The encryptionKey.
@@ -655,23 +849,28 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Encrypts resources of this workstation configuration using a
-   * customer-managed encryption key.
+   * Immutable. Encrypts resources of this workstation configuration using a
+   * customer-managed encryption key (CMEK).
+   *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
    * this field is not set, the disks are encrypted using a generated
    * key. Customer-managed encryption keys do not protect disk metadata.
+   *
    * If the customer-managed encryption key is rotated, when the workstation
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
-   * Otherwise, data on the persistent disk will be lost.
-   * If the encryption key is revoked, the workstation session will
-   * automatically be stopped within 7 hours.
+   * Otherwise, data on the persistent disk might be lost.
+   *
+   * If the encryption key is revoked, the workstation session automatically
+   * stops within 7 hours.
+   *
+   * Immutable after the workstation configuration is created.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   com.google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKeyOrBuilder
@@ -681,9 +880,169 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Whether this resource is in degraded mode, in which case it
-   * may require user action to restore full functionality. Details can be found
-   * in the `conditions` field.
+   * Optional. Readiness checks to perform when starting a workstation using
+   * this workstation configuration. Mark a workstation as running only after
+   * all specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck>
+      getReadinessChecksList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Readiness checks to perform when starting a workstation using
+   * this workstation configuration. Mark a workstation as running only after
+   * all specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck getReadinessChecks(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Readiness checks to perform when starting a workstation using
+   * this workstation configuration. Mark a workstation as running only after
+   * all specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getReadinessChecksCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Readiness checks to perform when starting a workstation using
+   * this workstation configuration. Mark a workstation as running only after
+   * all specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheckOrBuilder>
+      getReadinessChecksOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Readiness checks to perform when starting a workstation using
+   * this workstation configuration. Mark a workstation as running only after
+   * all specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheckOrBuilder
+      getReadinessChecksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+   * resources within the region. If set, exactly two zones within the
+   * workstation cluster's region must be specified—for example,
+   * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+   * zones within the region are used.
+   *
+   * Immutable after the workstation configuration is created.
+   * </pre>
+   *
+   * <code>
+   * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return A list containing the replicaZones.
+   */
+  java.util.List<java.lang.String> getReplicaZonesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+   * resources within the region. If set, exactly two zones within the
+   * workstation cluster's region must be specified—for example,
+   * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+   * zones within the region are used.
+   *
+   * Immutable after the workstation configuration is created.
+   * </pre>
+   *
+   * <code>
+   * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The count of replicaZones.
+   */
+  int getReplicaZonesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+   * resources within the region. If set, exactly two zones within the
+   * workstation cluster's region must be specified—for example,
+   * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+   * zones within the region are used.
+   *
+   * Immutable after the workstation configuration is created.
+   * </pre>
+   *
+   * <code>
+   * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The replicaZones at the given index.
+   */
+  java.lang.String getReplicaZones(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+   * resources within the region. If set, exactly two zones within the
+   * workstation cluster's region must be specified—for example,
+   * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+   * zones within the region are used.
+   *
+   * Immutable after the workstation configuration is created.
+   * </pre>
+   *
+   * <code>
+   * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the replicaZones at the given index.
+   */
+  com.google.protobuf.ByteString getReplicaZonesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether this resource is degraded, in which case it may
+   * require user action to restore full functionality. See also the
+   * [conditions][google.cloud.workstations.v1beta.WorkstationConfig.conditions]
+   * field.
    * </pre>
    *
    * <code>bool degraded = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -747,4 +1106,21 @@ public interface WorkstationConfigOrBuilder
    * </code>
    */
   com.google.rpc.StatusOrBuilder getConditionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to enable Linux `auditd` logging on the workstation. When
+   * enabled, a service account must also be specified that has
+   * `logging.buckets.write` permission on the project. Operating system audit
+   * logging is distinct from [Cloud Audit
+   * Logs](https://cloud.google.com/workstations/docs/audit-logging).
+   * </pre>
+   *
+   * <code>bool enable_audit_agent = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableAuditAgent.
+   */
+  boolean getEnableAuditAgent();
 }

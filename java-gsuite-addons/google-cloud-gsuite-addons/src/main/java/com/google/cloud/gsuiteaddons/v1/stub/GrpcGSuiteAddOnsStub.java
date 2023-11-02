@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gsuiteaddons.v1.Authorization;
 import com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest;
@@ -37,7 +38,6 @@ import com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest;
 import com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse;
 import com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -205,9 +205,9 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
             .setMethodDescriptor(getAuthorizationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateDeploymentRequest, Deployment> createDeploymentTransportSettings =
@@ -215,9 +215,9 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
             .setMethodDescriptor(createDeploymentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ReplaceDeploymentRequest, Deployment> replaceDeploymentTransportSettings =
@@ -225,9 +225,9 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
             .setMethodDescriptor(replaceDeploymentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("deployment.name", String.valueOf(request.getDeployment().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("deployment.name", String.valueOf(request.getDeployment().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetDeploymentRequest, Deployment> getDeploymentTransportSettings =
@@ -235,9 +235,9 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
             .setMethodDescriptor(getDeploymentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListDeploymentsRequest, ListDeploymentsResponse>
@@ -246,9 +246,9 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                 .setMethodDescriptor(listDeploymentsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteDeploymentRequest, Empty> deleteDeploymentTransportSettings =
@@ -256,9 +256,9 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
             .setMethodDescriptor(deleteDeploymentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<InstallDeploymentRequest, Empty> installDeploymentTransportSettings =
@@ -266,9 +266,9 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
             .setMethodDescriptor(installDeploymentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UninstallDeploymentRequest, Empty> uninstallDeploymentTransportSettings =
@@ -276,9 +276,9 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
             .setMethodDescriptor(uninstallDeploymentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetInstallStatusRequest, InstallStatus> getInstallStatusTransportSettings =
@@ -286,9 +286,9 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
             .setMethodDescriptor(getInstallStatusMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

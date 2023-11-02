@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,10 @@ public final class InsightOuterClass {
       internal_static_google_cloud_recommender_v1beta1_InsightStateInfo_StateMetadataEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recommender_v1beta1_InsightStateInfo_StateMetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1beta1_InsightType_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1beta1_InsightType_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -95,20 +99,21 @@ public final class InsightOuterClass {
           + "nfo.StateMetadataEntry\0324\n\022StateMetadataE"
           + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"G\n\005"
           + "State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001"
-          + "\022\014\n\010ACCEPTED\020\002\022\r\n\tDISMISSED\020\003B\361\003\n$com.go"
-          + "ogle.cloud.recommender.v1beta1P\001ZFcloud."
-          + "google.com/go/recommender/apiv1beta1/rec"
-          + "ommenderpb;recommenderpb\242\002\004CREC\252\002 Google"
-          + ".Cloud.Recommender.V1Beta1\352A\323\002\n&recommen"
-          + "der.googleapis.com/InsightType\022Cprojects"
-          + "/{project}/locations/{location}/insightT"
-          + "ypes/{insight_type}\022RbillingAccounts/{bi"
-          + "lling_account}/locations/{location}/insi"
-          + "ghtTypes/{insight_type}\022Afolders/{folder"
-          + "}/locations/{location}/insightTypes/{ins"
-          + "ight_type}\022Morganizations/{organization}"
-          + "/locations/{location}/insightTypes/{insi"
-          + "ght_type}b\006proto3"
+          + "\022\014\n\010ACCEPTED\020\002\022\r\n\tDISMISSED\020\003\"\222\003\n\013Insigh"
+          + "tType\022\014\n\004name\030\001 \001(\t:\364\002\352A\360\002\n&recommender."
+          + "googleapis.com/InsightType\022Cprojects/{pr"
+          + "oject}/locations/{location}/insightTypes"
+          + "/{insight_type}\022RbillingAccounts/{billin"
+          + "g_account}/locations/{location}/insightT"
+          + "ypes/{insight_type}\022Afolders/{folder}/lo"
+          + "cations/{location}/insightTypes/{insight"
+          + "_type}\022Morganizations/{organization}/loc"
+          + "ations/{location}/insightTypes/{insight_"
+          + "type}\022\033insightTypes/{insight_type}B\232\001\n$c"
+          + "om.google.cloud.recommender.v1beta1P\001ZFc"
+          + "loud.google.com/go/recommender/apiv1beta"
+          + "1/recommenderpb;recommenderpb\242\002\004CREC\252\002 G"
+          + "oogle.Cloud.Recommender.V1Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -164,10 +169,17 @@ public final class InsightOuterClass {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_recommender_v1beta1_InsightType_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_recommender_v1beta1_InsightType_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1beta1_InsightType_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ResourceProto.resource);
-    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();

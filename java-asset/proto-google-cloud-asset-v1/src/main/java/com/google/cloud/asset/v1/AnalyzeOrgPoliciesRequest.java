@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
     return new AnalyzeOrgPoliciesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_AnalyzeOrgPoliciesRequest_descriptor;
@@ -82,6 +77,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The organization to scope the request. Only organization
    * policies within the scope will be analyzed.
+   *
    * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
    * </pre>
    *
@@ -107,6 +103,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The organization to scope the request. Only organization
    * policies within the scope will be analyzed.
+   *
    * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
    * </pre>
    *
@@ -194,6 +191,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
    * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
    * The only supported field is `consolidated_policy.attached_resource`, and
    * the only supported operator is `=`.
+   *
    * Example:
    * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
    * will return the org policy results of"folders/001".
@@ -223,6 +221,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
    * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
    * The only supported field is `consolidated_policy.attached_resource`, and
    * the only supported operator is `=`.
+   *
    * Example:
    * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
    * will return the org policy results of"folders/001".
@@ -785,6 +784,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The organization to scope the request. Only organization
      * policies within the scope will be analyzed.
+     *
      * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
@@ -809,6 +809,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The organization to scope the request. Only organization
      * policies within the scope will be analyzed.
+     *
      * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
@@ -833,6 +834,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The organization to scope the request. Only organization
      * policies within the scope will be analyzed.
+     *
      * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
@@ -856,6 +858,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The organization to scope the request. Only organization
      * policies within the scope will be analyzed.
+     *
      * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
@@ -875,6 +878,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The organization to scope the request. Only organization
      * policies within the scope will be analyzed.
+     *
      * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
@@ -1019,6 +1023,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
      * The only supported field is `consolidated_policy.attached_resource`, and
      * the only supported operator is `=`.
+     *
      * Example:
      * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
      * will return the org policy results of"folders/001".
@@ -1047,6 +1052,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
      * The only supported field is `consolidated_policy.attached_resource`, and
      * the only supported operator is `=`.
+     *
      * Example:
      * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
      * will return the org policy results of"folders/001".
@@ -1075,6 +1081,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
      * The only supported field is `consolidated_policy.attached_resource`, and
      * the only supported operator is `=`.
+     *
      * Example:
      * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
      * will return the org policy results of"folders/001".
@@ -1102,6 +1109,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
      * The only supported field is `consolidated_policy.attached_resource`, and
      * the only supported operator is `=`.
+     *
      * Example:
      * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
      * will return the org policy results of"folders/001".
@@ -1125,6 +1133,7 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
      * The only supported field is `consolidated_policy.attached_resource`, and
      * the only supported operator is `=`.
+     *
      * Example:
      * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
      * will return the org policy results of"folders/001".

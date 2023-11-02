@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AutomatedAgentReply();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -237,6 +232,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   }
 
   private int responseCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object response_;
 
   public enum ResponseCase
@@ -281,6 +278,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   }
 
   private int matchCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object match_;
 
   public enum MatchCase
@@ -693,7 +692,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=524
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=525
    * @return Whether the cxSessionParameters field is set.
    */
   @java.lang.Override
@@ -713,7 +712,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=524
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=525
    * @return The cxSessionParameters.
    */
   @java.lang.Override
@@ -2735,7 +2734,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=524
+     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=525
      * @return Whether the cxSessionParameters field is set.
      */
     @java.lang.Deprecated
@@ -2754,7 +2753,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=524
+     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=525
      * @return The cxSessionParameters.
      */
     @java.lang.Deprecated

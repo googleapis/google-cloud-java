@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public interface LocalDiskOrBuilder
    * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
    * the instance. This name can be used to reference the device for mounting,
    * resizing, and so on, from within the instance.
+   *
    * If not specified, the server chooses a default device name to apply to this
    * disk, in the form persistent-disk-x, where x is a number assigned by Google
    * Compute Engine. This field is only applicable for persistent disks.
@@ -79,6 +80,7 @@ public interface LocalDiskOrBuilder
    * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
    * the instance. This name can be used to reference the device for mounting,
    * resizing, and so on, from within the instance.
+   *
    * If not specified, the server chooses a default device name to apply to this
    * disk, in the form persistent-disk-x, where x is a number assigned by Google
    * Compute Engine. This field is only applicable for persistent disks.
@@ -186,6 +188,7 @@ public interface LocalDiskOrBuilder
    * Input only. Specifies the parameters for a new disk that will be created
    * alongside the new instance. Use initialization parameters to create boot
    * disks or local SSDs attached to the new instance.
+   *
    * This property is mutually exclusive with the source property; you can only
    * define one or the other, but not both.
    * </pre>
@@ -204,6 +207,7 @@ public interface LocalDiskOrBuilder
    * Input only. Specifies the parameters for a new disk that will be created
    * alongside the new instance. Use initialization parameters to create boot
    * disks or local SSDs attached to the new instance.
+   *
    * This property is mutually exclusive with the source property; you can only
    * define one or the other, but not both.
    * </pre>
@@ -222,6 +226,7 @@ public interface LocalDiskOrBuilder
    * Input only. Specifies the parameters for a new disk that will be created
    * alongside the new instance. Use initialization parameters to create boot
    * disks or local SSDs attached to the new instance.
+   *
    * This property is mutually exclusive with the source property; you can only
    * define one or the other, but not both.
    * </pre>
@@ -242,6 +247,7 @@ public interface LocalDiskOrBuilder
    * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
    * performance characteristics of SCSI over NVMe, see Local SSD performance.
    * Valid values:
+   *
    * * `NVME`
    * * `SCSI`
    * </pre>
@@ -261,6 +267,7 @@ public interface LocalDiskOrBuilder
    * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
    * performance characteristics of SCSI over NVMe, see Local SSD performance.
    * Valid values:
+   *
    * * `NVME`
    * * `SCSI`
    * </pre>
@@ -354,6 +361,7 @@ public interface LocalDiskOrBuilder
    * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
    * If not specified, the default is to attach the disk in `READ_WRITE` mode.
    * Valid values:
+   *
    * * `READ_ONLY`
    * * `READ_WRITE`
    * </pre>
@@ -370,6 +378,7 @@ public interface LocalDiskOrBuilder
    * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
    * If not specified, the default is to attach the disk in `READ_WRITE` mode.
    * Valid values:
+   *
    * * `READ_ONLY`
    * * `READ_WRITE`
    * </pre>
@@ -414,6 +423,7 @@ public interface LocalDiskOrBuilder
    * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
    * specified, the default is `PERSISTENT`.
    * Valid values:
+   *
    * * `PERSISTENT`
    * * `SCRATCH`
    * </pre>
@@ -430,6 +440,7 @@ public interface LocalDiskOrBuilder
    * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
    * specified, the default is `PERSISTENT`.
    * Valid values:
+   *
    * * `PERSISTENT`
    * * `SCRATCH`
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -753,36 +754,78 @@ public class HttpJsonTpuStub extends TpuStub {
         HttpJsonCallSettings.<ListNodesRequest, ListNodesResponse>newBuilder()
             .setMethodDescriptor(listNodesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetNodeRequest, Node> getNodeTransportSettings =
         HttpJsonCallSettings.<GetNodeRequest, Node>newBuilder()
             .setMethodDescriptor(getNodeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateNodeRequest, Operation> createNodeTransportSettings =
         HttpJsonCallSettings.<CreateNodeRequest, Operation>newBuilder()
             .setMethodDescriptor(createNodeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteNodeRequest, Operation> deleteNodeTransportSettings =
         HttpJsonCallSettings.<DeleteNodeRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteNodeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StopNodeRequest, Operation> stopNodeTransportSettings =
         HttpJsonCallSettings.<StopNodeRequest, Operation>newBuilder()
             .setMethodDescriptor(stopNodeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StartNodeRequest, Operation> startNodeTransportSettings =
         HttpJsonCallSettings.<StartNodeRequest, Operation>newBuilder()
             .setMethodDescriptor(startNodeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateNodeRequest, Operation> updateNodeTransportSettings =
         HttpJsonCallSettings.<UpdateNodeRequest, Operation>newBuilder()
             .setMethodDescriptor(updateNodeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("node.name", String.valueOf(request.getNode().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
         generateServiceIdentityTransportSettings =
@@ -790,6 +833,12 @@ public class HttpJsonTpuStub extends TpuStub {
                 .<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>newBuilder()
                 .setMethodDescriptor(generateServiceIdentityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>
         listAcceleratorTypesTransportSettings =
@@ -797,12 +846,24 @@ public class HttpJsonTpuStub extends TpuStub {
                 .<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>newBuilder()
                 .setMethodDescriptor(listAcceleratorTypesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAcceleratorTypeRequest, AcceleratorType>
         getAcceleratorTypeTransportSettings =
             HttpJsonCallSettings.<GetAcceleratorTypeRequest, AcceleratorType>newBuilder()
                 .setMethodDescriptor(getAcceleratorTypeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListRuntimeVersionsRequest, ListRuntimeVersionsResponse>
         listRuntimeVersionsTransportSettings =
@@ -810,29 +871,59 @@ public class HttpJsonTpuStub extends TpuStub {
                 .<ListRuntimeVersionsRequest, ListRuntimeVersionsResponse>newBuilder()
                 .setMethodDescriptor(listRuntimeVersionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRuntimeVersionRequest, RuntimeVersion>
         getRuntimeVersionTransportSettings =
             HttpJsonCallSettings.<GetRuntimeVersionRequest, RuntimeVersion>newBuilder()
                 .setMethodDescriptor(getRuntimeVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetGuestAttributesRequest, GetGuestAttributesResponse>
         getGuestAttributesTransportSettings =
             HttpJsonCallSettings.<GetGuestAttributesRequest, GetGuestAttributesResponse>newBuilder()
                 .setMethodDescriptor(getGuestAttributesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listNodesCallable =

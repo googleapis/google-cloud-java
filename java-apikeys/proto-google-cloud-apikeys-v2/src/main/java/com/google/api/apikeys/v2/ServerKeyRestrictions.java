@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
   }
 
   private ServerKeyRestrictions() {
-    allowedIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ServerKeyRestrictions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
   public static final int ALLOWED_IPS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowedIps_;
+  private com.google.protobuf.LazyStringArrayList allowedIps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -339,8 +335,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      allowedIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      allowedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -368,7 +363,6 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
     public com.google.api.apikeys.v2.ServerKeyRestrictions buildPartial() {
       com.google.api.apikeys.v2.ServerKeyRestrictions result =
           new com.google.api.apikeys.v2.ServerKeyRestrictions(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -376,17 +370,12 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.api.apikeys.v2.ServerKeyRestrictions result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        allowedIps_ = allowedIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.allowedIps_ = allowedIps_;
-    }
-
     private void buildPartial0(com.google.api.apikeys.v2.ServerKeyRestrictions result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        allowedIps_.makeImmutable();
+        result.allowedIps_ = allowedIps_;
+      }
     }
 
     @java.lang.Override
@@ -438,7 +427,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
       if (!other.allowedIps_.isEmpty()) {
         if (allowedIps_.isEmpty()) {
           allowedIps_ = other.allowedIps_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureAllowedIpsIsMutable();
           allowedIps_.addAll(other.allowedIps_);
@@ -497,14 +486,14 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList allowedIps_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowedIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowedIpsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!allowedIps_.isModifiable()) {
         allowedIps_ = new com.google.protobuf.LazyStringArrayList(allowedIps_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -519,7 +508,8 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
      * @return A list containing the allowedIps.
      */
     public com.google.protobuf.ProtocolStringList getAllowedIpsList() {
-      return allowedIps_.getUnmodifiableView();
+      allowedIps_.makeImmutable();
+      return allowedIps_;
     }
     /**
      *
@@ -588,6 +578,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
       }
       ensureAllowedIpsIsMutable();
       allowedIps_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -610,6 +601,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
       }
       ensureAllowedIpsIsMutable();
       allowedIps_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -629,6 +621,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
     public Builder addAllAllowedIps(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedIps_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -645,8 +638,9 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAllowedIps() {
-      allowedIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -670,6 +664,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureAllowedIpsIsMutable();
       allowedIps_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

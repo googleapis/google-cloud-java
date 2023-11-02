@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,19 +39,14 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   }
 
   private RouterStatusNatStatusNatRuleStatus() {
-    activeNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    drainNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    activeNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    drainNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RouterStatusNatStatusNatRuleStatus();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -73,7 +68,8 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   public static final int ACTIVE_NAT_IPS_FIELD_NUMBER = 208517077;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList activeNatIps_;
+  private com.google.protobuf.LazyStringArrayList activeNatIps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -136,7 +132,8 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
   public static final int DRAIN_NAT_IPS_FIELD_NUMBER = 504078535;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList drainNatIps_;
+  private com.google.protobuf.LazyStringArrayList drainNatIps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -564,10 +561,8 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      activeNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      drainNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      activeNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      drainNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       minExtraIpsNeeded_ = 0;
       numVmEndpointsWithNatMappings_ = 0;
       ruleNumber_ = 0;
@@ -599,7 +594,6 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus buildPartial() {
       com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus result =
           new com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -607,23 +601,17 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        activeNatIps_ = activeNatIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.activeNatIps_ = activeNatIps_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        drainNatIps_ = drainNatIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.drainNatIps_ = drainNatIps_;
-    }
-
     private void buildPartial0(
         com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        activeNatIps_.makeImmutable();
+        result.activeNatIps_ = activeNatIps_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        drainNatIps_.makeImmutable();
+        result.drainNatIps_ = drainNatIps_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.minExtraIpsNeeded_ = minExtraIpsNeeded_;
@@ -690,7 +678,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       if (!other.activeNatIps_.isEmpty()) {
         if (activeNatIps_.isEmpty()) {
           activeNatIps_ = other.activeNatIps_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureActiveNatIpsIsMutable();
           activeNatIps_.addAll(other.activeNatIps_);
@@ -700,7 +688,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       if (!other.drainNatIps_.isEmpty()) {
         if (drainNatIps_.isEmpty()) {
           drainNatIps_ = other.drainNatIps_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureDrainNatIpsIsMutable();
           drainNatIps_.addAll(other.drainNatIps_);
@@ -793,14 +781,14 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList activeNatIps_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList activeNatIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureActiveNatIpsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!activeNatIps_.isModifiable()) {
         activeNatIps_ = new com.google.protobuf.LazyStringArrayList(activeNatIps_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -814,7 +802,8 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
      * @return A list containing the activeNatIps.
      */
     public com.google.protobuf.ProtocolStringList getActiveNatIpsList() {
-      return activeNatIps_.getUnmodifiableView();
+      activeNatIps_.makeImmutable();
+      return activeNatIps_;
     }
     /**
      *
@@ -879,6 +868,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       }
       ensureActiveNatIpsIsMutable();
       activeNatIps_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -900,6 +890,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       }
       ensureActiveNatIpsIsMutable();
       activeNatIps_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -918,6 +909,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public Builder addAllActiveNatIps(java.lang.Iterable<java.lang.String> values) {
       ensureActiveNatIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, activeNatIps_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -933,8 +925,9 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearActiveNatIps() {
-      activeNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      activeNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -957,18 +950,19 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       checkByteStringIsUtf8(value);
       ensureActiveNatIpsIsMutable();
       activeNatIps_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList drainNatIps_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList drainNatIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDrainNatIpsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!drainNatIps_.isModifiable()) {
         drainNatIps_ = new com.google.protobuf.LazyStringArrayList(drainNatIps_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -982,7 +976,8 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
      * @return A list containing the drainNatIps.
      */
     public com.google.protobuf.ProtocolStringList getDrainNatIpsList() {
-      return drainNatIps_.getUnmodifiableView();
+      drainNatIps_.makeImmutable();
+      return drainNatIps_;
     }
     /**
      *
@@ -1047,6 +1042,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       }
       ensureDrainNatIpsIsMutable();
       drainNatIps_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1068,6 +1064,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       }
       ensureDrainNatIpsIsMutable();
       drainNatIps_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1086,6 +1083,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
     public Builder addAllDrainNatIps(java.lang.Iterable<java.lang.String> values) {
       ensureDrainNatIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, drainNatIps_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1101,8 +1099,9 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearDrainNatIps() {
-      drainNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      drainNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1125,6 +1124,7 @@ public final class RouterStatusNatStatusNatRuleStatus extends com.google.protobu
       checkByteStringIsUtf8(value);
       ensureDrainNatIpsIsMutable();
       drainNatIps_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

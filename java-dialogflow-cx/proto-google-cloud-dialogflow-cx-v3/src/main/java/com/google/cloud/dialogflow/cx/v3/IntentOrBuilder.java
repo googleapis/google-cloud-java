@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -208,6 +208,7 @@ public interface IntentOrBuilder
    * <pre>
    * The priority of this intent. Higher numbers represent higher
    * priorities.
+   *
    * - If the supplied value is unspecified or 0, the service
    *   translates the value to 500,000, which corresponds to the
    *   `Normal` priority in the console.
@@ -248,6 +249,7 @@ public interface IntentOrBuilder
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
    * and no more than 128 bytes.
+   *
    * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
    * Dialogflow defined labels include:
    * * sys-head
@@ -268,6 +270,7 @@ public interface IntentOrBuilder
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
    * and no more than 128 bytes.
+   *
    * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
    * Dialogflow defined labels include:
    * * sys-head
@@ -291,6 +294,7 @@ public interface IntentOrBuilder
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
    * and no more than 128 bytes.
+   *
    * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
    * Dialogflow defined labels include:
    * * sys-head
@@ -311,6 +315,7 @@ public interface IntentOrBuilder
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
    * and no more than 128 bytes.
+   *
    * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
    * Dialogflow defined labels include:
    * * sys-head
@@ -335,6 +340,7 @@ public interface IntentOrBuilder
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
    * and no more than 128 bytes.
+   *
    * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
    * Dialogflow defined labels include:
    * * sys-head

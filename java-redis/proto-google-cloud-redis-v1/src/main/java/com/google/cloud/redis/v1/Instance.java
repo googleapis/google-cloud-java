@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,17 +58,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     nodes_ = java.util.Collections.emptyList();
     readEndpoint_ = "";
     readReplicasMode_ = 0;
+    customerManagedKey_ = "";
+    suspensionReasons_ = java.util.Collections.emptyList();
+    maintenanceVersion_ = "";
+    availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Instance();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1035,6 +1034,143 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.redis.v1.Instance.ReadReplicasMode)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Possible reasons for the instance to be in a "SUSPENDED" state.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.redis.v1.Instance.SuspensionReason}
+   */
+  public enum SuspensionReason implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>SUSPENSION_REASON_UNSPECIFIED = 0;</code>
+     */
+    SUSPENSION_REASON_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Something wrong with the CMEK key provided by customer.
+     * </pre>
+     *
+     * <code>CUSTOMER_MANAGED_KEY_ISSUE = 1;</code>
+     */
+    CUSTOMER_MANAGED_KEY_ISSUE(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>SUSPENSION_REASON_UNSPECIFIED = 0;</code>
+     */
+    public static final int SUSPENSION_REASON_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Something wrong with the CMEK key provided by customer.
+     * </pre>
+     *
+     * <code>CUSTOMER_MANAGED_KEY_ISSUE = 1;</code>
+     */
+    public static final int CUSTOMER_MANAGED_KEY_ISSUE_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SuspensionReason valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SuspensionReason forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SUSPENSION_REASON_UNSPECIFIED;
+        case 1:
+          return CUSTOMER_MANAGED_KEY_ISSUE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SuspensionReason> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SuspensionReason>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<SuspensionReason>() {
+              public SuspensionReason findValueByNumber(int number) {
+                return SuspensionReason.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.redis.v1.Instance.getDescriptor().getEnumTypes().get(5);
+    }
+
+    private static final SuspensionReason[] VALUES = values();
+
+    public static SuspensionReason valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SuspensionReason(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.redis.v1.Instance.SuspensionReason)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1046,11 +1182,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   *
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
-   * should be provisioned in. Refer to [location_id][google.cloud.redis.v1.Instance.location_id] and
-   * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] fields for more details.
+   * should be provisioned in. Refer to
+   * [location_id][google.cloud.redis.v1.Instance.location_id] and
+   * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id]
+   * fields for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1076,11 +1215,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   *
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
-   * should be provisioned in. Refer to [location_id][google.cloud.redis.v1.Instance.location_id] and
-   * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] fields for more details.
+   * should be provisioned in. Refer to
+   * [location_id][google.cloud.redis.v1.Instance.location_id] and
+   * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id]
+   * fields for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1382,6 +1524,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used. Currently, the
    * supported values are:
+   *
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -1411,6 +1554,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used. Currently, the
    * supported values are:
+   *
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -1507,11 +1651,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Additional IP range for node placement. Required when enabling read
-   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
-   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
-   * must be the name of an allocated address range associated with the private
-   * service access connection, or "auto".
+   * Optional. Additional IP range for node placement. Required when enabling
+   * read replicas on an existing instance. For DIRECT_PEERING mode value must
+   * be a CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode
+   * value must be the name of an allocated address range associated with the
+   * private service access connection, or "auto".
    * </pre>
    *
    * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1534,11 +1678,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Additional IP range for node placement. Required when enabling read
-   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
-   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
-   * must be the name of an allocated address range associated with the private
-   * service access connection, or "auto".
+   * Optional. Additional IP range for node placement. Required when enabling
+   * read replicas on an existing instance. For DIRECT_PEERING mode value must
+   * be a CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode
+   * value must be the name of an allocated address range associated with the
+   * private service access connection, or "auto".
    * </pre>
    *
    * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1860,15 +2004,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -1896,15 +2046,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -1923,15 +2079,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -1957,15 +2119,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -2203,9 +2371,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to
-   * "true" AUTH is enabled on the instance. Default value is "false" meaning
-   * AUTH is disabled.
+   * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If
+   * set to "true" AUTH is enabled on the instance. Default value is "false"
+   * meaning AUTH is disabled.
    * </pre>
    *
    * <code>bool auth_enabled = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2465,11 +2633,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The number of replica nodes. The valid range for the Standard Tier with
-   * read replicas enabled is [1-5] and defaults to 2. If read replicas are not
-   * enabled for a Standard Tier instance, the only valid value is 1 and the
-   * default is 1. The valid value for basic tier is 0 and the default is also
-   * 0.
+   * Optional. The number of replica nodes. The valid range for the Standard
+   * Tier with read replicas enabled is [1-5] and defaults to 2. If read
+   * replicas are not enabled for a Standard Tier instance, the only valid value
+   * is 1 and the default is 1. The valid value for basic tier is 0 and the
+   * default is also 0.
    * </pre>
    *
    * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2644,7 +2812,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
+   * Optional. Read replicas mode for the instance. Defaults to
+   * READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>
@@ -2661,7 +2830,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
+   * Optional. Read replicas mode for the instance. Defaults to
+   * READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>
@@ -2679,6 +2849,356 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int CUSTOMER_MANAGED_KEY_FIELD_NUMBER = 36;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customerManagedKey_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key reference that the customer provides when trying to
+   * create the instance.
+   * </pre>
+   *
+   * <code>string customer_managed_key = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customerManagedKey.
+   */
+  @java.lang.Override
+  public java.lang.String getCustomerManagedKey() {
+    java.lang.Object ref = customerManagedKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      customerManagedKey_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key reference that the customer provides when trying to
+   * create the instance.
+   * </pre>
+   *
+   * <code>string customer_managed_key = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customerManagedKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCustomerManagedKeyBytes() {
+    java.lang.Object ref = customerManagedKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      customerManagedKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PERSISTENCE_CONFIG_FIELD_NUMBER = 37;
+  private com.google.cloud.redis.v1.PersistenceConfig persistenceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the persistenceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPersistenceConfig() {
+    return persistenceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The persistenceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1.PersistenceConfig getPersistenceConfig() {
+    return persistenceConfig_ == null
+        ? com.google.cloud.redis.v1.PersistenceConfig.getDefaultInstance()
+        : persistenceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1.PersistenceConfigOrBuilder getPersistenceConfigOrBuilder() {
+    return persistenceConfig_ == null
+        ? com.google.cloud.redis.v1.PersistenceConfig.getDefaultInstance()
+        : persistenceConfig_;
+  }
+
+  public static final int SUSPENSION_REASONS_FIELD_NUMBER = 38;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> suspensionReasons_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.redis.v1.Instance.SuspensionReason>
+      suspensionReasons_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.cloud.redis.v1.Instance.SuspensionReason>() {
+            public com.google.cloud.redis.v1.Instance.SuspensionReason convert(
+                java.lang.Integer from) {
+              com.google.cloud.redis.v1.Instance.SuspensionReason result =
+                  com.google.cloud.redis.v1.Instance.SuspensionReason.forNumber(from);
+              return result == null
+                  ? com.google.cloud.redis.v1.Instance.SuspensionReason.UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * Optional. reasons that causes instance in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the suspensionReasons.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.redis.v1.Instance.SuspensionReason>
+      getSuspensionReasonsList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.redis.v1.Instance.SuspensionReason>(
+        suspensionReasons_, suspensionReasons_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. reasons that causes instance in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of suspensionReasons.
+   */
+  @java.lang.Override
+  public int getSuspensionReasonsCount() {
+    return suspensionReasons_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. reasons that causes instance in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The suspensionReasons at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.v1.Instance.SuspensionReason getSuspensionReasons(int index) {
+    return suspensionReasons_converter_.convert(suspensionReasons_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. reasons that causes instance in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for suspensionReasons.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getSuspensionReasonsValueList() {
+    return suspensionReasons_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. reasons that causes instance in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of suspensionReasons at the given index.
+   */
+  @java.lang.Override
+  public int getSuspensionReasonsValue(int index) {
+    return suspensionReasons_.get(index);
+  }
+
+  private int suspensionReasonsMemoizedSerializedSize;
+
+  public static final int MAINTENANCE_VERSION_FIELD_NUMBER = 39;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object maintenanceVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The self service update maintenance version.
+   * The version is date based such as "20210712_00_00".
+   * </pre>
+   *
+   * <code>string maintenance_version = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maintenanceVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getMaintenanceVersion() {
+    java.lang.Object ref = maintenanceVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      maintenanceVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The self service update maintenance version.
+   * The version is date based such as "20210712_00_00".
+   * </pre>
+   *
+   * <code>string maintenance_version = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for maintenanceVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMaintenanceVersionBytes() {
+    java.lang.Object ref = maintenanceVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      maintenanceVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AVAILABLE_MAINTENANCE_VERSIONS_FIELD_NUMBER = 40;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList availableMaintenanceVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The available maintenance versions that an instance could update
+   * to.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the availableMaintenanceVersions.
+   */
+  public com.google.protobuf.ProtocolStringList getAvailableMaintenanceVersionsList() {
+    return availableMaintenanceVersions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The available maintenance versions that an instance could update
+   * to.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of availableMaintenanceVersions.
+   */
+  public int getAvailableMaintenanceVersionsCount() {
+    return availableMaintenanceVersions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The available maintenance versions that an instance could update
+   * to.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The availableMaintenanceVersions at the given index.
+   */
+  public java.lang.String getAvailableMaintenanceVersions(int index) {
+    return availableMaintenanceVersions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The available maintenance versions that an instance could update
+   * to.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the availableMaintenanceVersions at the given index.
+   */
+  public com.google.protobuf.ByteString getAvailableMaintenanceVersionsBytes(int index) {
+    return availableMaintenanceVersions_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2693,6 +3213,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -2786,6 +3307,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.redis.v1.Instance.ReadReplicasMode.READ_REPLICAS_MODE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(35, readReplicasMode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerManagedKey_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 36, customerManagedKey_);
+    }
+    if (persistenceConfig_ != null) {
+      output.writeMessage(37, getPersistenceConfig());
+    }
+    if (getSuspensionReasonsList().size() > 0) {
+      output.writeUInt32NoTag(306);
+      output.writeUInt32NoTag(suspensionReasonsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < suspensionReasons_.size(); i++) {
+      output.writeEnumNoTag(suspensionReasons_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maintenanceVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39, maintenanceVersion_);
+    }
+    for (int i = 0; i < availableMaintenanceVersions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 40, availableMaintenanceVersions_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2907,6 +3448,36 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(35, readReplicasMode_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerManagedKey_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, customerManagedKey_);
+    }
+    if (persistenceConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, getPersistenceConfig());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < suspensionReasons_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(suspensionReasons_.get(i));
+      }
+      size += dataSize;
+      if (!getSuspensionReasonsList().isEmpty()) {
+        size += 2;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      suspensionReasonsMemoizedSerializedSize = dataSize;
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maintenanceVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39, maintenanceVersion_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < availableMaintenanceVersions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(availableMaintenanceVersions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAvailableMaintenanceVersionsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2961,6 +3532,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getReadEndpoint().equals(other.getReadEndpoint())) return false;
     if (getReadEndpointPort() != other.getReadEndpointPort()) return false;
     if (readReplicasMode_ != other.readReplicasMode_) return false;
+    if (!getCustomerManagedKey().equals(other.getCustomerManagedKey())) return false;
+    if (hasPersistenceConfig() != other.hasPersistenceConfig()) return false;
+    if (hasPersistenceConfig()) {
+      if (!getPersistenceConfig().equals(other.getPersistenceConfig())) return false;
+    }
+    if (!suspensionReasons_.equals(other.suspensionReasons_)) return false;
+    if (!getMaintenanceVersion().equals(other.getMaintenanceVersion())) return false;
+    if (!getAvailableMaintenanceVersionsList().equals(other.getAvailableMaintenanceVersionsList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3046,6 +3626,22 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getReadEndpointPort();
     hash = (37 * hash) + READ_REPLICAS_MODE_FIELD_NUMBER;
     hash = (53 * hash) + readReplicasMode_;
+    hash = (37 * hash) + CUSTOMER_MANAGED_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getCustomerManagedKey().hashCode();
+    if (hasPersistenceConfig()) {
+      hash = (37 * hash) + PERSISTENCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPersistenceConfig().hashCode();
+    }
+    if (getSuspensionReasonsCount() > 0) {
+      hash = (37 * hash) + SUSPENSION_REASONS_FIELD_NUMBER;
+      hash = (53 * hash) + suspensionReasons_.hashCode();
+    }
+    hash = (37 * hash) + MAINTENANCE_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getMaintenanceVersion().hashCode();
+    if (getAvailableMaintenanceVersionsCount() > 0) {
+      hash = (37 * hash) + AVAILABLE_MAINTENANCE_VERSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailableMaintenanceVersionsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3208,6 +3804,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       name_ = "";
       displayName_ = "";
       internalGetMutableLabels().clear();
@@ -3262,6 +3859,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       readEndpoint_ = "";
       readEndpointPort_ = 0;
       readReplicasMode_ = 0;
+      customerManagedKey_ = "";
+      persistenceConfig_ = null;
+      if (persistenceConfigBuilder_ != null) {
+        persistenceConfigBuilder_.dispose();
+        persistenceConfigBuilder_ = null;
+      }
+      suspensionReasons_ = java.util.Collections.emptyList();
+      bitField1_ = (bitField1_ & ~0x00000001);
+      maintenanceVersion_ = "";
+      availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -3292,6 +3899,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
+      }
       onBuilt();
       return result;
     }
@@ -3315,6 +3925,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.nodes_ = nodesBuilder_.build();
       }
+      if (((bitField1_ & 0x00000001) != 0)) {
+        suspensionReasons_ = java.util.Collections.unmodifiableList(suspensionReasons_);
+        bitField1_ = (bitField1_ & ~0x00000001);
+      }
+      result.suspensionReasons_ = suspensionReasons_;
     }
 
     private void buildPartial0(com.google.cloud.redis.v1.Instance result) {
@@ -3410,6 +4025,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x20000000) != 0)) {
         result.readReplicasMode_ = readReplicasMode_;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.customerManagedKey_ = customerManagedKey_;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.persistenceConfig_ =
+            persistenceConfigBuilder_ == null
+                ? persistenceConfig_
+                : persistenceConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartial1(com.google.cloud.redis.v1.Instance result) {
+      int from_bitField1_ = bitField1_;
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.maintenanceVersion_ = maintenanceVersion_;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        availableMaintenanceVersions_.makeImmutable();
+        result.availableMaintenanceVersions_ = availableMaintenanceVersions_;
       }
     }
 
@@ -3619,6 +4254,39 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.readReplicasMode_ != 0) {
         setReadReplicasModeValue(other.getReadReplicasModeValue());
+      }
+      if (!other.getCustomerManagedKey().isEmpty()) {
+        customerManagedKey_ = other.customerManagedKey_;
+        bitField0_ |= 0x40000000;
+        onChanged();
+      }
+      if (other.hasPersistenceConfig()) {
+        mergePersistenceConfig(other.getPersistenceConfig());
+      }
+      if (!other.suspensionReasons_.isEmpty()) {
+        if (suspensionReasons_.isEmpty()) {
+          suspensionReasons_ = other.suspensionReasons_;
+          bitField1_ = (bitField1_ & ~0x00000001);
+        } else {
+          ensureSuspensionReasonsIsMutable();
+          suspensionReasons_.addAll(other.suspensionReasons_);
+        }
+        onChanged();
+      }
+      if (!other.getMaintenanceVersion().isEmpty()) {
+        maintenanceVersion_ = other.maintenanceVersion_;
+        bitField1_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.availableMaintenanceVersions_.isEmpty()) {
+        if (availableMaintenanceVersions_.isEmpty()) {
+          availableMaintenanceVersions_ = other.availableMaintenanceVersions_;
+          bitField1_ |= 0x00000004;
+        } else {
+          ensureAvailableMaintenanceVersionsIsMutable();
+          availableMaintenanceVersions_.addAll(other.availableMaintenanceVersions_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3854,6 +4522,51 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x20000000;
                 break;
               } // case 280
+            case 290:
+              {
+                customerManagedKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 290
+            case 298:
+              {
+                input.readMessage(
+                    getPersistenceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 298
+            case 304:
+              {
+                int tmpRaw = input.readEnum();
+                ensureSuspensionReasonsIsMutable();
+                suspensionReasons_.add(tmpRaw);
+                break;
+              } // case 304
+            case 306:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureSuspensionReasonsIsMutable();
+                  suspensionReasons_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 306
+            case 314:
+              {
+                maintenanceVersion_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000002;
+                break;
+              } // case 314
+            case 322:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAvailableMaintenanceVersionsIsMutable();
+                availableMaintenanceVersions_.add(s);
+                break;
+              } // case 322
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3872,6 +4585,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private java.lang.Object name_ = "";
     /**
@@ -3881,11 +4595,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1.Instance.location_id] and
-     * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to
+     * [location_id][google.cloud.redis.v1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id]
+     * fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3910,11 +4627,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1.Instance.location_id] and
-     * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to
+     * [location_id][google.cloud.redis.v1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id]
+     * fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3939,11 +4659,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1.Instance.location_id] and
-     * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to
+     * [location_id][google.cloud.redis.v1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id]
+     * fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3967,11 +4690,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1.Instance.location_id] and
-     * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to
+     * [location_id][google.cloud.redis.v1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id]
+     * fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3991,11 +4717,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+     *
      * Note: Redis instances are managed and addressed at regional level so
      * location_id here refers to a GCP region; however, users may choose which
      * specific zone (or collection of zones for cross-zone instances) an instance
-     * should be provisioned in. Refer to [location_id][google.cloud.redis.v1.Instance.location_id] and
-     * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] fields for more details.
+     * should be provisioned in. Refer to
+     * [location_id][google.cloud.redis.v1.Instance.location_id] and
+     * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id]
+     * fields for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4543,6 +5272,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
+     *
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -4571,6 +5301,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
+     *
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -4599,6 +5330,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
+     *
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -4626,6 +5358,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
+     *
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -4649,6 +5382,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Currently, the
      * supported values are:
+     *
      *  *   `REDIS_3_2` for Redis 3.2 compatibility
      *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
      *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -4817,11 +5551,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Additional IP range for node placement. Required when enabling read
-     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
-     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
-     * must be the name of an allocated address range associated with the private
-     * service access connection, or "auto".
+     * Optional. Additional IP range for node placement. Required when enabling
+     * read replicas on an existing instance. For DIRECT_PEERING mode value must
+     * be a CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode
+     * value must be the name of an allocated address range associated with the
+     * private service access connection, or "auto".
      * </pre>
      *
      * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4843,11 +5577,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Additional IP range for node placement. Required when enabling read
-     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
-     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
-     * must be the name of an allocated address range associated with the private
-     * service access connection, or "auto".
+     * Optional. Additional IP range for node placement. Required when enabling
+     * read replicas on an existing instance. For DIRECT_PEERING mode value must
+     * be a CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode
+     * value must be the name of an allocated address range associated with the
+     * private service access connection, or "auto".
      * </pre>
      *
      * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4869,11 +5603,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Additional IP range for node placement. Required when enabling read
-     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
-     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
-     * must be the name of an allocated address range associated with the private
-     * service access connection, or "auto".
+     * Optional. Additional IP range for node placement. Required when enabling
+     * read replicas on an existing instance. For DIRECT_PEERING mode value must
+     * be a CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode
+     * value must be the name of an allocated address range associated with the
+     * private service access connection, or "auto".
      * </pre>
      *
      * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4894,11 +5628,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Additional IP range for node placement. Required when enabling read
-     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
-     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
-     * must be the name of an allocated address range associated with the private
-     * service access connection, or "auto".
+     * Optional. Additional IP range for node placement. Required when enabling
+     * read replicas on an existing instance. For DIRECT_PEERING mode value must
+     * be a CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode
+     * value must be the name of an allocated address range associated with the
+     * private service access connection, or "auto".
      * </pre>
      *
      * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4915,11 +5649,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Additional IP range for node placement. Required when enabling read
-     * replicas on an existing instance. For DIRECT_PEERING mode value must be a
-     * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
-     * must be the name of an allocated address range associated with the private
-     * service access connection, or "auto".
+     * Optional. Additional IP range for node placement. Required when enabling
+     * read replicas on an existing instance. For DIRECT_PEERING mode value must
+     * be a CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode
+     * value must be the name of an allocated address range associated with the
+     * private service access connection, or "auto".
      * </pre>
      *
      * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5665,15 +6399,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -5701,15 +6441,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -5728,15 +6474,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -5762,15 +6514,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -5802,15 +6560,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -5838,15 +6602,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -5872,15 +6642,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
+     *
      *  Redis version 3.2 and newer:
+     *
      *  *   maxmemory-policy
      *  *   notify-keyspace-events
+     *
      *  Redis version 4.0 and newer:
+     *
      *  *   activedefrag
      *  *   lfu-decay-time
      *  *   lfu-log-factor
      *  *   maxmemory-gb
+     *
      *  Redis version 5.0 and newer:
+     *
      *  *   stream-node-max-bytes
      *  *   stream-node-max-entries
      * </pre>
@@ -6409,9 +7185,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to
-     * "true" AUTH is enabled on the instance. Default value is "false" meaning
-     * AUTH is disabled.
+     * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If
+     * set to "true" AUTH is enabled on the instance. Default value is "false"
+     * meaning AUTH is disabled.
      * </pre>
      *
      * <code>bool auth_enabled = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6426,9 +7202,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to
-     * "true" AUTH is enabled on the instance. Default value is "false" meaning
-     * AUTH is disabled.
+     * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If
+     * set to "true" AUTH is enabled on the instance. Default value is "false"
+     * meaning AUTH is disabled.
      * </pre>
      *
      * <code>bool auth_enabled = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6447,9 +7223,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to
-     * "true" AUTH is enabled on the instance. Default value is "false" meaning
-     * AUTH is disabled.
+     * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If
+     * set to "true" AUTH is enabled on the instance. Default value is "false"
+     * meaning AUTH is disabled.
      * </pre>
      *
      * <code>bool auth_enabled = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7392,11 +8168,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The number of replica nodes. The valid range for the Standard Tier with
-     * read replicas enabled is [1-5] and defaults to 2. If read replicas are not
-     * enabled for a Standard Tier instance, the only valid value is 1 and the
-     * default is 1. The valid value for basic tier is 0 and the default is also
-     * 0.
+     * Optional. The number of replica nodes. The valid range for the Standard
+     * Tier with read replicas enabled is [1-5] and defaults to 2. If read
+     * replicas are not enabled for a Standard Tier instance, the only valid value
+     * is 1 and the default is 1. The valid value for basic tier is 0 and the
+     * default is also 0.
      * </pre>
      *
      * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7411,11 +8187,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The number of replica nodes. The valid range for the Standard Tier with
-     * read replicas enabled is [1-5] and defaults to 2. If read replicas are not
-     * enabled for a Standard Tier instance, the only valid value is 1 and the
-     * default is 1. The valid value for basic tier is 0 and the default is also
-     * 0.
+     * Optional. The number of replica nodes. The valid range for the Standard
+     * Tier with read replicas enabled is [1-5] and defaults to 2. If read
+     * replicas are not enabled for a Standard Tier instance, the only valid value
+     * is 1 and the default is 1. The valid value for basic tier is 0 and the
+     * default is also 0.
      * </pre>
      *
      * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7434,11 +8210,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The number of replica nodes. The valid range for the Standard Tier with
-     * read replicas enabled is [1-5] and defaults to 2. If read replicas are not
-     * enabled for a Standard Tier instance, the only valid value is 1 and the
-     * default is 1. The valid value for basic tier is 0 and the default is also
-     * 0.
+     * Optional. The number of replica nodes. The valid range for the Standard
+     * Tier with read replicas enabled is [1-5] and defaults to 2. If read
+     * replicas are not enabled for a Standard Tier instance, the only valid value
+     * is 1 and the default is 1. The valid value for basic tier is 0 and the
+     * default is also 0.
      * </pre>
      *
      * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8016,7 +8792,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
+     * Optional. Read replicas mode for the instance. Defaults to
+     * READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -8033,7 +8810,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
+     * Optional. Read replicas mode for the instance. Defaults to
+     * READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -8053,7 +8831,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
+     * Optional. Read replicas mode for the instance. Defaults to
+     * READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -8074,7 +8853,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
+     * Optional. Read replicas mode for the instance. Defaults to
+     * READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -8097,7 +8877,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
+     * Optional. Read replicas mode for the instance. Defaults to
+     * READ_REPLICAS_DISABLED.
      * </pre>
      *
      * <code>
@@ -8109,6 +8890,881 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder clearReadReplicasMode() {
       bitField0_ = (bitField0_ & ~0x20000000);
       readReplicasMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object customerManagedKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key reference that the customer provides when trying to
+     * create the instance.
+     * </pre>
+     *
+     * <code>string customer_managed_key = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The customerManagedKey.
+     */
+    public java.lang.String getCustomerManagedKey() {
+      java.lang.Object ref = customerManagedKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customerManagedKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key reference that the customer provides when trying to
+     * create the instance.
+     * </pre>
+     *
+     * <code>string customer_managed_key = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for customerManagedKey.
+     */
+    public com.google.protobuf.ByteString getCustomerManagedKeyBytes() {
+      java.lang.Object ref = customerManagedKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        customerManagedKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key reference that the customer provides when trying to
+     * create the instance.
+     * </pre>
+     *
+     * <code>string customer_managed_key = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The customerManagedKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomerManagedKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      customerManagedKey_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key reference that the customer provides when trying to
+     * create the instance.
+     * </pre>
+     *
+     * <code>string customer_managed_key = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomerManagedKey() {
+      customerManagedKey_ = getDefaultInstance().getCustomerManagedKey();
+      bitField0_ = (bitField0_ & ~0x40000000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key reference that the customer provides when trying to
+     * create the instance.
+     * </pre>
+     *
+     * <code>string customer_managed_key = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for customerManagedKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomerManagedKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      customerManagedKey_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.redis.v1.PersistenceConfig persistenceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.v1.PersistenceConfig,
+            com.google.cloud.redis.v1.PersistenceConfig.Builder,
+            com.google.cloud.redis.v1.PersistenceConfigOrBuilder>
+        persistenceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the persistenceConfig field is set.
+     */
+    public boolean hasPersistenceConfig() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The persistenceConfig.
+     */
+    public com.google.cloud.redis.v1.PersistenceConfig getPersistenceConfig() {
+      if (persistenceConfigBuilder_ == null) {
+        return persistenceConfig_ == null
+            ? com.google.cloud.redis.v1.PersistenceConfig.getDefaultInstance()
+            : persistenceConfig_;
+      } else {
+        return persistenceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPersistenceConfig(com.google.cloud.redis.v1.PersistenceConfig value) {
+      if (persistenceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        persistenceConfig_ = value;
+      } else {
+        persistenceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPersistenceConfig(
+        com.google.cloud.redis.v1.PersistenceConfig.Builder builderForValue) {
+      if (persistenceConfigBuilder_ == null) {
+        persistenceConfig_ = builderForValue.build();
+      } else {
+        persistenceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePersistenceConfig(com.google.cloud.redis.v1.PersistenceConfig value) {
+      if (persistenceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x80000000) != 0)
+            && persistenceConfig_ != null
+            && persistenceConfig_
+                != com.google.cloud.redis.v1.PersistenceConfig.getDefaultInstance()) {
+          getPersistenceConfigBuilder().mergeFrom(value);
+        } else {
+          persistenceConfig_ = value;
+        }
+      } else {
+        persistenceConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPersistenceConfig() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      persistenceConfig_ = null;
+      if (persistenceConfigBuilder_ != null) {
+        persistenceConfigBuilder_.dispose();
+        persistenceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.v1.PersistenceConfig.Builder getPersistenceConfigBuilder() {
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return getPersistenceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.redis.v1.PersistenceConfigOrBuilder getPersistenceConfigOrBuilder() {
+      if (persistenceConfigBuilder_ != null) {
+        return persistenceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return persistenceConfig_ == null
+            ? com.google.cloud.redis.v1.PersistenceConfig.getDefaultInstance()
+            : persistenceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Persistence configuration parameters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.redis.v1.PersistenceConfig,
+            com.google.cloud.redis.v1.PersistenceConfig.Builder,
+            com.google.cloud.redis.v1.PersistenceConfigOrBuilder>
+        getPersistenceConfigFieldBuilder() {
+      if (persistenceConfigBuilder_ == null) {
+        persistenceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.redis.v1.PersistenceConfig,
+                com.google.cloud.redis.v1.PersistenceConfig.Builder,
+                com.google.cloud.redis.v1.PersistenceConfigOrBuilder>(
+                getPersistenceConfig(), getParentForChildren(), isClean());
+        persistenceConfig_ = null;
+      }
+      return persistenceConfigBuilder_;
+    }
+
+    private java.util.List<java.lang.Integer> suspensionReasons_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSuspensionReasonsIsMutable() {
+      if (!((bitField1_ & 0x00000001) != 0)) {
+        suspensionReasons_ = new java.util.ArrayList<java.lang.Integer>(suspensionReasons_);
+        bitField1_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the suspensionReasons.
+     */
+    public java.util.List<com.google.cloud.redis.v1.Instance.SuspensionReason>
+        getSuspensionReasonsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.redis.v1.Instance.SuspensionReason>(
+          suspensionReasons_, suspensionReasons_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of suspensionReasons.
+     */
+    public int getSuspensionReasonsCount() {
+      return suspensionReasons_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The suspensionReasons at the given index.
+     */
+    public com.google.cloud.redis.v1.Instance.SuspensionReason getSuspensionReasons(int index) {
+      return suspensionReasons_converter_.convert(suspensionReasons_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The suspensionReasons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuspensionReasons(
+        int index, com.google.cloud.redis.v1.Instance.SuspensionReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSuspensionReasonsIsMutable();
+      suspensionReasons_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The suspensionReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSuspensionReasons(com.google.cloud.redis.v1.Instance.SuspensionReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSuspensionReasonsIsMutable();
+      suspensionReasons_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The suspensionReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSuspensionReasons(
+        java.lang.Iterable<? extends com.google.cloud.redis.v1.Instance.SuspensionReason> values) {
+      ensureSuspensionReasonsIsMutable();
+      for (com.google.cloud.redis.v1.Instance.SuspensionReason value : values) {
+        suspensionReasons_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSuspensionReasons() {
+      suspensionReasons_ = java.util.Collections.emptyList();
+      bitField1_ = (bitField1_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for suspensionReasons.
+     */
+    public java.util.List<java.lang.Integer> getSuspensionReasonsValueList() {
+      return java.util.Collections.unmodifiableList(suspensionReasons_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of suspensionReasons at the given index.
+     */
+    public int getSuspensionReasonsValue(int index) {
+      return suspensionReasons_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for suspensionReasons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuspensionReasonsValue(int index, int value) {
+      ensureSuspensionReasonsIsMutable();
+      suspensionReasons_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for suspensionReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSuspensionReasonsValue(int value) {
+      ensureSuspensionReasonsIsMutable();
+      suspensionReasons_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. reasons that causes instance in "SUSPENDED" state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for suspensionReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSuspensionReasonsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureSuspensionReasonsIsMutable();
+      for (int value : values) {
+        suspensionReasons_.add(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object maintenanceVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The self service update maintenance version.
+     * The version is date based such as "20210712_00_00".
+     * </pre>
+     *
+     * <code>string maintenance_version = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maintenanceVersion.
+     */
+    public java.lang.String getMaintenanceVersion() {
+      java.lang.Object ref = maintenanceVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        maintenanceVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The self service update maintenance version.
+     * The version is date based such as "20210712_00_00".
+     * </pre>
+     *
+     * <code>string maintenance_version = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for maintenanceVersion.
+     */
+    public com.google.protobuf.ByteString getMaintenanceVersionBytes() {
+      java.lang.Object ref = maintenanceVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        maintenanceVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The self service update maintenance version.
+     * The version is date based such as "20210712_00_00".
+     * </pre>
+     *
+     * <code>string maintenance_version = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The maintenanceVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaintenanceVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      maintenanceVersion_ = value;
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The self service update maintenance version.
+     * The version is date based such as "20210712_00_00".
+     * </pre>
+     *
+     * <code>string maintenance_version = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaintenanceVersion() {
+      maintenanceVersion_ = getDefaultInstance().getMaintenanceVersion();
+      bitField1_ = (bitField1_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The self service update maintenance version.
+     * The version is date based such as "20210712_00_00".
+     * </pre>
+     *
+     * <code>string maintenance_version = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for maintenanceVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaintenanceVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      maintenanceVersion_ = value;
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList availableMaintenanceVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAvailableMaintenanceVersionsIsMutable() {
+      if (!availableMaintenanceVersions_.isModifiable()) {
+        availableMaintenanceVersions_ =
+            new com.google.protobuf.LazyStringArrayList(availableMaintenanceVersions_);
+      }
+      bitField1_ |= 0x00000004;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The available maintenance versions that an instance could update
+     * to.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the availableMaintenanceVersions.
+     */
+    public com.google.protobuf.ProtocolStringList getAvailableMaintenanceVersionsList() {
+      availableMaintenanceVersions_.makeImmutable();
+      return availableMaintenanceVersions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The available maintenance versions that an instance could update
+     * to.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of availableMaintenanceVersions.
+     */
+    public int getAvailableMaintenanceVersionsCount() {
+      return availableMaintenanceVersions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The available maintenance versions that an instance could update
+     * to.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The availableMaintenanceVersions at the given index.
+     */
+    public java.lang.String getAvailableMaintenanceVersions(int index) {
+      return availableMaintenanceVersions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The available maintenance versions that an instance could update
+     * to.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the availableMaintenanceVersions at the given index.
+     */
+    public com.google.protobuf.ByteString getAvailableMaintenanceVersionsBytes(int index) {
+      return availableMaintenanceVersions_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The available maintenance versions that an instance could update
+     * to.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The availableMaintenanceVersions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailableMaintenanceVersions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAvailableMaintenanceVersionsIsMutable();
+      availableMaintenanceVersions_.set(index, value);
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The available maintenance versions that an instance could update
+     * to.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The availableMaintenanceVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAvailableMaintenanceVersions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAvailableMaintenanceVersionsIsMutable();
+      availableMaintenanceVersions_.add(value);
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The available maintenance versions that an instance could update
+     * to.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The availableMaintenanceVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAvailableMaintenanceVersions(java.lang.Iterable<java.lang.String> values) {
+      ensureAvailableMaintenanceVersionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, availableMaintenanceVersions_);
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The available maintenance versions that an instance could update
+     * to.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAvailableMaintenanceVersions() {
+      availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField1_ = (bitField1_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The available maintenance versions that an instance could update
+     * to.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the availableMaintenanceVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAvailableMaintenanceVersionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAvailableMaintenanceVersionsIsMutable();
+      availableMaintenanceVersions_.add(value);
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }

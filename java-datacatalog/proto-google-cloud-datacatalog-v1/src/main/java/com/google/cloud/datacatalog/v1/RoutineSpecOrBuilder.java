@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ public interface RoutineSpecOrBuilder
    * <pre>
    * The language the routine is written in. The exact value depends on the
    * source system. For BigQuery routines, possible values are:
+   *
    * * `SQL`
    * * `JAVASCRIPT`
    * </pre>
@@ -69,6 +70,7 @@ public interface RoutineSpecOrBuilder
    * <pre>
    * The language the routine is written in. The exact value depends on the
    * source system. For BigQuery routines, possible values are:
+   *
    * * `SQL`
    * * `JAVASCRIPT`
    * </pre>
@@ -219,5 +221,5 @@ public interface RoutineSpecOrBuilder
    */
   com.google.cloud.datacatalog.v1.BigQueryRoutineSpecOrBuilder getBigqueryRoutineSpecOrBuilder();
 
-  public com.google.cloud.datacatalog.v1.RoutineSpec.SystemSpecCase getSystemSpecCase();
+  com.google.cloud.datacatalog.v1.RoutineSpec.SystemSpecCase getSystemSpecCase();
 }

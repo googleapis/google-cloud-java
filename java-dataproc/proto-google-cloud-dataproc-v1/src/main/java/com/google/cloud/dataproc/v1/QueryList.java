@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
   }
 
   private QueryList() {
-    queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    queries_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new QueryList();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
   public static final int QUERIES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList queries_;
+  private com.google.protobuf.LazyStringArrayList queries_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -79,6 +75,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    * with a semicolon. Multiple queries can be specified in one
    * string by separating each with a semicolon. Here is an example of a
    * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+   *
    *     "hiveJob": {
    *       "queryList": {
    *         "queries": [
@@ -105,6 +102,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    * with a semicolon. Multiple queries can be specified in one
    * string by separating each with a semicolon. Here is an example of a
    * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+   *
    *     "hiveJob": {
    *       "queryList": {
    *         "queries": [
@@ -131,6 +129,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    * with a semicolon. Multiple queries can be specified in one
    * string by separating each with a semicolon. Here is an example of a
    * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+   *
    *     "hiveJob": {
    *       "queryList": {
    *         "queries": [
@@ -158,6 +157,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    * with a semicolon. Multiple queries can be specified in one
    * string by separating each with a semicolon. Here is an example of a
    * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+   *
    *     "hiveJob": {
    *       "queryList": {
    *         "queries": [
@@ -382,8 +382,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      queries_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -411,7 +410,6 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.QueryList buildPartial() {
       com.google.cloud.dataproc.v1.QueryList result =
           new com.google.cloud.dataproc.v1.QueryList(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -419,16 +417,12 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.QueryList result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        queries_ = queries_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.queries_ = queries_;
-    }
-
     private void buildPartial0(com.google.cloud.dataproc.v1.QueryList result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        queries_.makeImmutable();
+        result.queries_ = queries_;
+      }
     }
 
     @java.lang.Override
@@ -479,7 +473,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
       if (!other.queries_.isEmpty()) {
         if (queries_.isEmpty()) {
           queries_ = other.queries_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureQueriesIsMutable();
           queries_.addAll(other.queries_);
@@ -538,14 +532,14 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList queries_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList queries_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureQueriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!queries_.isModifiable()) {
         queries_ = new com.google.protobuf.LazyStringArrayList(queries_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -555,6 +549,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * with a semicolon. Multiple queries can be specified in one
      * string by separating each with a semicolon. Here is an example of a
      * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+     *
      *     "hiveJob": {
      *       "queryList": {
      *         "queries": [
@@ -571,7 +566,8 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the queries.
      */
     public com.google.protobuf.ProtocolStringList getQueriesList() {
-      return queries_.getUnmodifiableView();
+      queries_.makeImmutable();
+      return queries_;
     }
     /**
      *
@@ -581,6 +577,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * with a semicolon. Multiple queries can be specified in one
      * string by separating each with a semicolon. Here is an example of a
      * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+     *
      *     "hiveJob": {
      *       "queryList": {
      *         "queries": [
@@ -607,6 +604,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * with a semicolon. Multiple queries can be specified in one
      * string by separating each with a semicolon. Here is an example of a
      * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+     *
      *     "hiveJob": {
      *       "queryList": {
      *         "queries": [
@@ -634,6 +632,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * with a semicolon. Multiple queries can be specified in one
      * string by separating each with a semicolon. Here is an example of a
      * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+     *
      *     "hiveJob": {
      *       "queryList": {
      *         "queries": [
@@ -661,6 +660,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * with a semicolon. Multiple queries can be specified in one
      * string by separating each with a semicolon. Here is an example of a
      * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+     *
      *     "hiveJob": {
      *       "queryList": {
      *         "queries": [
@@ -684,6 +684,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
       }
       ensureQueriesIsMutable();
       queries_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,6 +696,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * with a semicolon. Multiple queries can be specified in one
      * string by separating each with a semicolon. Here is an example of a
      * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+     *
      *     "hiveJob": {
      *       "queryList": {
      *         "queries": [
@@ -717,6 +719,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
       }
       ensureQueriesIsMutable();
       queries_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -728,6 +731,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * with a semicolon. Multiple queries can be specified in one
      * string by separating each with a semicolon. Here is an example of a
      * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+     *
      *     "hiveJob": {
      *       "queryList": {
      *         "queries": [
@@ -747,6 +751,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllQueries(java.lang.Iterable<java.lang.String> values) {
       ensureQueriesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queries_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -758,6 +763,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * with a semicolon. Multiple queries can be specified in one
      * string by separating each with a semicolon. Here is an example of a
      * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+     *
      *     "hiveJob": {
      *       "queryList": {
      *         "queries": [
@@ -774,8 +780,9 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQueries() {
-      queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      queries_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -787,6 +794,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      * with a semicolon. Multiple queries can be specified in one
      * string by separating each with a semicolon. Here is an example of a
      * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+     *
      *     "hiveJob": {
      *       "queryList": {
      *         "queries": [
@@ -810,6 +818,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureQueriesIsMutable();
       queries_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

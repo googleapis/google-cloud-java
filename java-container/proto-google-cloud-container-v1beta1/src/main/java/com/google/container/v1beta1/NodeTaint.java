@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.container.v1beta1;
  * <pre>
  * Kubernetes taint is composed of three fields: key, value, and effect. Effect
  * can only be one of three types:  NoSchedule, PreferNoSchedule or NoExecute.
+ *
  * See
  * [here](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration)
  * for more information, including usage and the valid values.
@@ -51,11 +52,6 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NodeTaint();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -571,6 +567,7 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Kubernetes taint is composed of three fields: key, value, and effect. Effect
    * can only be one of three types:  NoSchedule, PreferNoSchedule or NoExecute.
+   *
    * See
    * [here](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration)
    * for more information, including usage and the valid values.

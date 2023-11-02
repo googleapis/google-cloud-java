@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant to search within.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    * is created. For example, "projects/foo".
@@ -45,6 +46,7 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant to search within.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    * is created. For example, "projects/foo".
@@ -63,6 +65,7 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * Mode of a search.
+   *
    * Defaults to
    * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
    * </pre>
@@ -77,6 +80,7 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * Mode of a search.
+   *
    * Defaults to
    * [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
    * </pre>
@@ -176,6 +180,7 @@ public interface SearchJobsRequestOrBuilder
    * Controls whether to broaden the search when it produces sparse results.
    * Broadened queries append results to the end of the matching results
    * list.
+   *
    * Defaults to false.
    * </pre>
    *
@@ -206,28 +211,39 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * An expression specifies a histogram request against matching jobs.
+   *
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
+   *
    * Available aggregation function calls are:
    * * `count(string_histogram_facet)`: Count the number of matching entities,
    * for each distinct attribute value.
    * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
    * matching entities within each bucket.
+   *
    * A maximum of 200 histogram buckets are supported.
+   *
    * Data types:
+   *
    * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
    * * String: string like "any string with backslash escape for quote(&#92;")."
    * * Number: whole number and floating point number like 10, -1 and -0.01.
    * * List: list of elements with comma(,) separator surrounded by square
    * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+   *
    * Built-in constants:
+   *
    * * MIN (minimum number similar to java Double.MIN_VALUE)
    * * MAX (maximum number similar to java Double.MAX_VALUE)
+   *
    * Built-in functions:
+   *
    * * bucket(start, end[, label]): bucket built-in function creates a bucket
    * with range of [start, end). Note that the end is exclusive, for example,
    * bucket(1, MAX, "positive number") or bucket(1, 10).
+   *
    * Job histogram facets:
+   *
    * * company_display_name: histogram by
    * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
    * * employment_type: histogram by
@@ -298,7 +314,9 @@ public interface SearchJobsRequestOrBuilder
    *   Values can be accessed via square bracket notations like
    *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *   group results by.
+   *
    * Example expressions:
+   *
    * * `count(admin1)`
    * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
    * bucket(100000, MAX)])`
@@ -315,28 +333,39 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * An expression specifies a histogram request against matching jobs.
+   *
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
+   *
    * Available aggregation function calls are:
    * * `count(string_histogram_facet)`: Count the number of matching entities,
    * for each distinct attribute value.
    * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
    * matching entities within each bucket.
+   *
    * A maximum of 200 histogram buckets are supported.
+   *
    * Data types:
+   *
    * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
    * * String: string like "any string with backslash escape for quote(&#92;")."
    * * Number: whole number and floating point number like 10, -1 and -0.01.
    * * List: list of elements with comma(,) separator surrounded by square
    * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+   *
    * Built-in constants:
+   *
    * * MIN (minimum number similar to java Double.MIN_VALUE)
    * * MAX (maximum number similar to java Double.MAX_VALUE)
+   *
    * Built-in functions:
+   *
    * * bucket(start, end[, label]): bucket built-in function creates a bucket
    * with range of [start, end). Note that the end is exclusive, for example,
    * bucket(1, MAX, "positive number") or bucket(1, 10).
+   *
    * Job histogram facets:
+   *
    * * company_display_name: histogram by
    * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
    * * employment_type: histogram by
@@ -407,7 +436,9 @@ public interface SearchJobsRequestOrBuilder
    *   Values can be accessed via square bracket notations like
    *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *   group results by.
+   *
    * Example expressions:
+   *
    * * `count(admin1)`
    * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
    * bucket(100000, MAX)])`
@@ -424,28 +455,39 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * An expression specifies a histogram request against matching jobs.
+   *
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
+   *
    * Available aggregation function calls are:
    * * `count(string_histogram_facet)`: Count the number of matching entities,
    * for each distinct attribute value.
    * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
    * matching entities within each bucket.
+   *
    * A maximum of 200 histogram buckets are supported.
+   *
    * Data types:
+   *
    * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
    * * String: string like "any string with backslash escape for quote(&#92;")."
    * * Number: whole number and floating point number like 10, -1 and -0.01.
    * * List: list of elements with comma(,) separator surrounded by square
    * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+   *
    * Built-in constants:
+   *
    * * MIN (minimum number similar to java Double.MIN_VALUE)
    * * MAX (maximum number similar to java Double.MAX_VALUE)
+   *
    * Built-in functions:
+   *
    * * bucket(start, end[, label]): bucket built-in function creates a bucket
    * with range of [start, end). Note that the end is exclusive, for example,
    * bucket(1, MAX, "positive number") or bucket(1, 10).
+   *
    * Job histogram facets:
+   *
    * * company_display_name: histogram by
    * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
    * * employment_type: histogram by
@@ -516,7 +558,9 @@ public interface SearchJobsRequestOrBuilder
    *   Values can be accessed via square bracket notations like
    *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *   group results by.
+   *
    * Example expressions:
+   *
    * * `count(admin1)`
    * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
    * bucket(100000, MAX)])`
@@ -533,28 +577,39 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * An expression specifies a histogram request against matching jobs.
+   *
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
+   *
    * Available aggregation function calls are:
    * * `count(string_histogram_facet)`: Count the number of matching entities,
    * for each distinct attribute value.
    * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
    * matching entities within each bucket.
+   *
    * A maximum of 200 histogram buckets are supported.
+   *
    * Data types:
+   *
    * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
    * * String: string like "any string with backslash escape for quote(&#92;")."
    * * Number: whole number and floating point number like 10, -1 and -0.01.
    * * List: list of elements with comma(,) separator surrounded by square
    * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+   *
    * Built-in constants:
+   *
    * * MIN (minimum number similar to java Double.MIN_VALUE)
    * * MAX (maximum number similar to java Double.MAX_VALUE)
+   *
    * Built-in functions:
+   *
    * * bucket(start, end[, label]): bucket built-in function creates a bucket
    * with range of [start, end). Note that the end is exclusive, for example,
    * bucket(1, MAX, "positive number") or bucket(1, 10).
+   *
    * Job histogram facets:
+   *
    * * company_display_name: histogram by
    * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
    * * employment_type: histogram by
@@ -625,7 +680,9 @@ public interface SearchJobsRequestOrBuilder
    *   Values can be accessed via square bracket notations like
    *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *   group results by.
+   *
    * Example expressions:
+   *
    * * `count(admin1)`
    * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
    * bucket(100000, MAX)])`
@@ -643,28 +700,39 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * An expression specifies a histogram request against matching jobs.
+   *
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
+   *
    * Available aggregation function calls are:
    * * `count(string_histogram_facet)`: Count the number of matching entities,
    * for each distinct attribute value.
    * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
    * matching entities within each bucket.
+   *
    * A maximum of 200 histogram buckets are supported.
+   *
    * Data types:
+   *
    * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
    * * String: string like "any string with backslash escape for quote(&#92;")."
    * * Number: whole number and floating point number like 10, -1 and -0.01.
    * * List: list of elements with comma(,) separator surrounded by square
    * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+   *
    * Built-in constants:
+   *
    * * MIN (minimum number similar to java Double.MIN_VALUE)
    * * MAX (maximum number similar to java Double.MAX_VALUE)
+   *
    * Built-in functions:
+   *
    * * bucket(start, end[, label]): bucket built-in function creates a bucket
    * with range of [start, end). Note that the end is exclusive, for example,
    * bucket(1, MAX, "positive number") or bucket(1, 10).
+   *
    * Job histogram facets:
+   *
    * * company_display_name: histogram by
    * [Job.company_display_name][google.cloud.talent.v4beta1.Job.company_display_name].
    * * employment_type: histogram by
@@ -735,7 +803,9 @@ public interface SearchJobsRequestOrBuilder
    *   Values can be accessed via square bracket notations like
    *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *   group results by.
+   *
    * Example expressions:
+   *
    * * `count(admin1)`
    * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
    * bucket(100000, MAX)])`
@@ -788,7 +858,9 @@ public interface SearchJobsRequestOrBuilder
    * results. This field is only considered if
    * [page_token][google.cloud.talent.v4beta1.SearchJobsRequest.page_token] is
    * unset.
+   *
    * The maximum allowed value is 5000. Otherwise an error is thrown.
+   *
    * For example, 0 means to  return results starting from the first matching
    * job, and 10 means to return from the 11th job. This can be used for
    * pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -853,7 +925,9 @@ public interface SearchJobsRequestOrBuilder
    * <pre>
    * The criteria determining how search results are sorted. Default is
    * `"relevance desc"`.
+   *
    * Supported options are:
+   *
    * * `"relevance desc"`: By relevance descending, as determined by the API
    *   algorithms. Relevance thresholding of query results is only available
    *   with this ordering.
@@ -916,7 +990,9 @@ public interface SearchJobsRequestOrBuilder
    * <pre>
    * The criteria determining how search results are sorted. Default is
    * `"relevance desc"`.
+   *
    * Supported options are:
+   *
    * * `"relevance desc"`: By relevance descending, as determined by the API
    *   algorithms. Relevance thresholding of query results is only available
    *   with this ordering.
@@ -984,6 +1060,7 @@ public interface SearchJobsRequestOrBuilder
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
    * being displayed lower down in the results.
+   *
    * Defaults to
    * [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE]
    * if no value is specified.
@@ -1006,6 +1083,7 @@ public interface SearchJobsRequestOrBuilder
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
    * being displayed lower down in the results.
+   *
    * Defaults to
    * [DiversificationLevel.SIMPLE][google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel.SIMPLE]
    * if no value is specified.
@@ -1071,6 +1149,7 @@ public interface SearchJobsRequestOrBuilder
    * This field is deprecated. Please use
    * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4beta1.SearchJobsRequest.keyword_match_mode]
    * going forward.
+   *
    * To migrate, disable_keyword_match set to false maps to
    * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4beta1.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL],
    * and disable_keyword_match set to true maps to
@@ -1078,6 +1157,7 @@ public interface SearchJobsRequestOrBuilder
    * If
    * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4beta1.SearchJobsRequest.keyword_match_mode]
    * is set, this field is ignored.
+   *
    * Controls whether to disable exact keyword match on
    * [Job.title][google.cloud.talent.v4beta1.Job.title],
    * [Job.description][google.cloud.talent.v4beta1.Job.description],
@@ -1090,14 +1170,17 @@ public interface SearchJobsRequestOrBuilder
    * job posting has the title "software developer," which doesn't fall into
    * "program manager" ontology, but does have "program manager" appearing in
    * its description.
+   *
    * For queries like "cloud" that don't contain title or
    * location specific ontology, jobs with "cloud" keyword matches are returned
    * regardless of this flag's value.
+   *
    * Use
    * [Company.keyword_searchable_job_custom_attributes][google.cloud.talent.v4beta1.Company.keyword_searchable_job_custom_attributes]
    * if company-specific globally matched custom field/attribute string values
    * are needed. Enabling keyword match improves recall of subsequent search
    * requests.
+   *
    * Defaults to false.
    * </pre>
    *
@@ -1112,6 +1195,7 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * Controls what keyword match options to use.
+   *
    * Defaults to
    * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4beta1.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL]
    * if no value is specified.
@@ -1128,6 +1212,7 @@ public interface SearchJobsRequestOrBuilder
    *
    * <pre>
    * Controls what keyword match options to use.
+   *
    * Defaults to
    * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4beta1.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL]
    * if no value is specified.

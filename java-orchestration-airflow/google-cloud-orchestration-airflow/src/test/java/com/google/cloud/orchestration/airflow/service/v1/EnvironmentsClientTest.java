@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -90,7 +91,7 @@ public class EnvironmentsClientTest {
   public void createEnvironmentTest() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName("name3373707")
+            .setName(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
             .setConfig(EnvironmentConfig.newBuilder().build())
             .setUuid("uuid3601339")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -144,7 +145,7 @@ public class EnvironmentsClientTest {
   public void getEnvironmentTest() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName("name3373707")
+            .setName(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
             .setConfig(EnvironmentConfig.newBuilder().build())
             .setUuid("uuid3601339")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -231,7 +232,7 @@ public class EnvironmentsClientTest {
   public void updateEnvironmentTest() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName("name3373707")
+            .setName(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
             .setConfig(EnvironmentConfig.newBuilder().build())
             .setUuid("uuid3601339")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -323,6 +324,178 @@ public class EnvironmentsClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void executeAirflowCommandTest() throws Exception {
+    ExecuteAirflowCommandResponse expectedResponse =
+        ExecuteAirflowCommandResponse.newBuilder()
+            .setExecutionId("executionId-454906285")
+            .setPod("pod111173")
+            .setPodNamespace("podNamespace463962262")
+            .setError("error96784904")
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    ExecuteAirflowCommandRequest request =
+        ExecuteAirflowCommandRequest.newBuilder()
+            .setEnvironment("environment-85904877")
+            .setCommand("command950394699")
+            .setSubcommand("subcommand2099091723")
+            .addAllParameters(new ArrayList<String>())
+            .build();
+
+    ExecuteAirflowCommandResponse actualResponse = client.executeAirflowCommand(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExecuteAirflowCommandRequest actualRequest =
+        ((ExecuteAirflowCommandRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
+    Assert.assertEquals(request.getCommand(), actualRequest.getCommand());
+    Assert.assertEquals(request.getSubcommand(), actualRequest.getSubcommand());
+    Assert.assertEquals(request.getParametersList(), actualRequest.getParametersList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void executeAirflowCommandExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      ExecuteAirflowCommandRequest request =
+          ExecuteAirflowCommandRequest.newBuilder()
+              .setEnvironment("environment-85904877")
+              .setCommand("command950394699")
+              .setSubcommand("subcommand2099091723")
+              .addAllParameters(new ArrayList<String>())
+              .build();
+      client.executeAirflowCommand(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void stopAirflowCommandTest() throws Exception {
+    StopAirflowCommandResponse expectedResponse =
+        StopAirflowCommandResponse.newBuilder()
+            .setIsDone(true)
+            .addAllOutput(new ArrayList<String>())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    StopAirflowCommandRequest request =
+        StopAirflowCommandRequest.newBuilder()
+            .setEnvironment("environment-85904877")
+            .setExecutionId("executionId-454906285")
+            .setPod("pod111173")
+            .setPodNamespace("podNamespace463962262")
+            .setForce(true)
+            .build();
+
+    StopAirflowCommandResponse actualResponse = client.stopAirflowCommand(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopAirflowCommandRequest actualRequest = ((StopAirflowCommandRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
+    Assert.assertEquals(request.getExecutionId(), actualRequest.getExecutionId());
+    Assert.assertEquals(request.getPod(), actualRequest.getPod());
+    Assert.assertEquals(request.getPodNamespace(), actualRequest.getPodNamespace());
+    Assert.assertEquals(request.getForce(), actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopAirflowCommandExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      StopAirflowCommandRequest request =
+          StopAirflowCommandRequest.newBuilder()
+              .setEnvironment("environment-85904877")
+              .setExecutionId("executionId-454906285")
+              .setPod("pod111173")
+              .setPodNamespace("podNamespace463962262")
+              .setForce(true)
+              .build();
+      client.stopAirflowCommand(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void pollAirflowCommandTest() throws Exception {
+    PollAirflowCommandResponse expectedResponse =
+        PollAirflowCommandResponse.newBuilder()
+            .addAllOutput(new ArrayList<PollAirflowCommandResponse.Line>())
+            .setOutputEnd(true)
+            .setExitInfo(PollAirflowCommandResponse.ExitInfo.newBuilder().build())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    PollAirflowCommandRequest request =
+        PollAirflowCommandRequest.newBuilder()
+            .setEnvironment("environment-85904877")
+            .setExecutionId("executionId-454906285")
+            .setPod("pod111173")
+            .setPodNamespace("podNamespace463962262")
+            .setNextLineNumber(1176642216)
+            .build();
+
+    PollAirflowCommandResponse actualResponse = client.pollAirflowCommand(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PollAirflowCommandRequest actualRequest = ((PollAirflowCommandRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
+    Assert.assertEquals(request.getExecutionId(), actualRequest.getExecutionId());
+    Assert.assertEquals(request.getPod(), actualRequest.getPod());
+    Assert.assertEquals(request.getPodNamespace(), actualRequest.getPodNamespace());
+    Assert.assertEquals(request.getNextLineNumber(), actualRequest.getNextLineNumber());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void pollAirflowCommandExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      PollAirflowCommandRequest request =
+          PollAirflowCommandRequest.newBuilder()
+              .setEnvironment("environment-85904877")
+              .setExecutionId("executionId-454906285")
+              .setPod("pod111173")
+              .setPodNamespace("podNamespace463962262")
+              .setNextLineNumber(1176642216)
+              .build();
+      client.pollAirflowCommand(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -444,6 +617,100 @@ public class EnvironmentsClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void databaseFailoverTest() throws Exception {
+    DatabaseFailoverResponse expectedResponse = DatabaseFailoverResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("databaseFailoverTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEnvironments.addResponse(resultOperation);
+
+    DatabaseFailoverRequest request =
+        DatabaseFailoverRequest.newBuilder().setEnvironment("environment-85904877").build();
+
+    DatabaseFailoverResponse actualResponse = client.databaseFailoverAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DatabaseFailoverRequest actualRequest = ((DatabaseFailoverRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void databaseFailoverExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      DatabaseFailoverRequest request =
+          DatabaseFailoverRequest.newBuilder().setEnvironment("environment-85904877").build();
+      client.databaseFailoverAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void fetchDatabasePropertiesTest() throws Exception {
+    FetchDatabasePropertiesResponse expectedResponse =
+        FetchDatabasePropertiesResponse.newBuilder()
+            .setPrimaryGceZone("primaryGceZone-1629643277")
+            .setSecondaryGceZone("secondaryGceZone227989057")
+            .setIsFailoverReplicaAvailable(true)
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    FetchDatabasePropertiesRequest request =
+        FetchDatabasePropertiesRequest.newBuilder()
+            .setEnvironment(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+            .build();
+
+    FetchDatabasePropertiesResponse actualResponse = client.fetchDatabaseProperties(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchDatabasePropertiesRequest actualRequest =
+        ((FetchDatabasePropertiesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchDatabasePropertiesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      FetchDatabasePropertiesRequest request =
+          FetchDatabasePropertiesRequest.newBuilder()
+              .setEnvironment(
+                  EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+              .build();
+      client.fetchDatabaseProperties(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

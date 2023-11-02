@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.maps.mapsplatformdatasets.v1alpha.CreateDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1alpha.Dataset;
@@ -383,17 +384,35 @@ public class HttpJsonMapsPlatformDatasetsV1AlphaStub extends MapsPlatformDataset
         HttpJsonCallSettings.<CreateDatasetRequest, Dataset>newBuilder()
             .setMethodDescriptor(createDatasetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateDatasetMetadataRequest, Dataset>
         updateDatasetMetadataTransportSettings =
             HttpJsonCallSettings.<UpdateDatasetMetadataRequest, Dataset>newBuilder()
                 .setMethodDescriptor(updateDatasetMetadataMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("dataset.name", String.valueOf(request.getDataset().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         HttpJsonCallSettings.<GetDatasetRequest, Dataset>newBuilder()
             .setMethodDescriptor(getDatasetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListDatasetVersionsRequest, ListDatasetVersionsResponse>
         listDatasetVersionsTransportSettings =
@@ -401,21 +420,45 @@ public class HttpJsonMapsPlatformDatasetsV1AlphaStub extends MapsPlatformDataset
                 .<ListDatasetVersionsRequest, ListDatasetVersionsResponse>newBuilder()
                 .setMethodDescriptor(listDatasetVersionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         HttpJsonCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
             .setMethodDescriptor(listDatasetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteDatasetRequest, Empty> deleteDatasetTransportSettings =
         HttpJsonCallSettings.<DeleteDatasetRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDatasetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteDatasetVersionRequest, Empty> deleteDatasetVersionTransportSettings =
         HttpJsonCallSettings.<DeleteDatasetVersionRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDatasetVersionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createDatasetCallable =

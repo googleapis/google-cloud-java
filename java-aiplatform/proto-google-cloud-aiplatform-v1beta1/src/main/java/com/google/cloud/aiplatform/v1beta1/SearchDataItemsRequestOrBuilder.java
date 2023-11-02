@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,7 +153,7 @@ public interface SearchDataItemsRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=437
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=626
    * @return The savedQuery.
    */
   @java.lang.Deprecated
@@ -172,7 +172,7 @@ public interface SearchDataItemsRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=437
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=626
    * @return The bytes for savedQuery.
    */
   @java.lang.Deprecated
@@ -216,12 +216,15 @@ public interface SearchDataItemsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the DataItem that will be returned.
+   *
    *   * `data_item_id` - for = or !=.
    *   * `labeled` - for = or !=.
    *   * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that
    *     have at least one annotation with annotation_spec_id =
    *     `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob.
+   *
    * For example:
+   *
    * * `data_item=1`
    * * `has_annotation(5)`
    * </pre>
@@ -236,12 +239,15 @@ public interface SearchDataItemsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the DataItem that will be returned.
+   *
    *   * `data_item_id` - for = or !=.
    *   * `labeled` - for = or !=.
    *   * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that
    *     have at least one annotation with annotation_spec_id =
    *     `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob.
+   *
    * For example:
+   *
    * * `data_item=1`
    * * `has_annotation(5)`
    * </pre>
@@ -264,7 +270,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string annotations_filter = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=468
+   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=657
    * @return The annotationsFilter.
    */
   @java.lang.Deprecated
@@ -281,7 +287,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string annotations_filter = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=468
+   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=657
    * @return The bytes for annotationsFilter.
    */
   @java.lang.Deprecated
@@ -432,7 +438,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string order_by = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=492
+   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=681
    * @return The orderBy.
    */
   @java.lang.Deprecated
@@ -448,7 +454,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string order_by = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=492
+   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=681
    * @return The bytes for orderBy.
    */
   @java.lang.Deprecated
@@ -489,5 +495,5 @@ public interface SearchDataItemsRequestOrBuilder
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
-  public com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.OrderCase getOrderCase();
+  com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.OrderCase getOrderCase();
 }

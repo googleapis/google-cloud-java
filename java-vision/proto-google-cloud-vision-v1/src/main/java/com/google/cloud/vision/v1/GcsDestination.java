@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     return new GcsDestination();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1_GcsDestination_descriptor;
@@ -81,14 +76,18 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * either case, the uri should be unique because in order to get all of the
    * output files, you will need to do a wildcard gcs search on the uri prefix
    * you provide.
+   *
    * Examples:
+   *
    * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
    * will be created in gs://bucket-name/here/ and the names of the
    * output files will begin with "filenameprefix".
+   *
    * *    Directory Prefix: gs://bucket-name/some/location/   The output files
    * will be created in gs://bucket-name/some/location/ and the names of the
    * output files could be anything because there was no filename prefix
    * specified.
+   *
    * If multiple outputs, each response is still AnnotateFileResponse, each of
    * which contains some subset of the full list of AnnotateImageResponse.
    * Multiple outputs can happen if, for example, the output JSON is too large
@@ -121,14 +120,18 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * either case, the uri should be unique because in order to get all of the
    * output files, you will need to do a wildcard gcs search on the uri prefix
    * you provide.
+   *
    * Examples:
+   *
    * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
    * will be created in gs://bucket-name/here/ and the names of the
    * output files will begin with "filenameprefix".
+   *
    * *    Directory Prefix: gs://bucket-name/some/location/   The output files
    * will be created in gs://bucket-name/some/location/ and the names of the
    * output files could be anything because there was no filename prefix
    * specified.
+   *
    * If multiple outputs, each response is still AnnotateFileResponse, each of
    * which contains some subset of the full list of AnnotateImageResponse.
    * Multiple outputs can happen if, for example, the output JSON is too large
@@ -504,14 +507,18 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * either case, the uri should be unique because in order to get all of the
      * output files, you will need to do a wildcard gcs search on the uri prefix
      * you provide.
+     *
      * Examples:
+     *
      * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
      * will be created in gs://bucket-name/here/ and the names of the
      * output files will begin with "filenameprefix".
+     *
      * *    Directory Prefix: gs://bucket-name/some/location/   The output files
      * will be created in gs://bucket-name/some/location/ and the names of the
      * output files could be anything because there was no filename prefix
      * specified.
+     *
      * If multiple outputs, each response is still AnnotateFileResponse, each of
      * which contains some subset of the full list of AnnotateImageResponse.
      * Multiple outputs can happen if, for example, the output JSON is too large
@@ -543,14 +550,18 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * either case, the uri should be unique because in order to get all of the
      * output files, you will need to do a wildcard gcs search on the uri prefix
      * you provide.
+     *
      * Examples:
+     *
      * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
      * will be created in gs://bucket-name/here/ and the names of the
      * output files will begin with "filenameprefix".
+     *
      * *    Directory Prefix: gs://bucket-name/some/location/   The output files
      * will be created in gs://bucket-name/some/location/ and the names of the
      * output files could be anything because there was no filename prefix
      * specified.
+     *
      * If multiple outputs, each response is still AnnotateFileResponse, each of
      * which contains some subset of the full list of AnnotateImageResponse.
      * Multiple outputs can happen if, for example, the output JSON is too large
@@ -582,14 +593,18 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * either case, the uri should be unique because in order to get all of the
      * output files, you will need to do a wildcard gcs search on the uri prefix
      * you provide.
+     *
      * Examples:
+     *
      * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
      * will be created in gs://bucket-name/here/ and the names of the
      * output files will begin with "filenameprefix".
+     *
      * *    Directory Prefix: gs://bucket-name/some/location/   The output files
      * will be created in gs://bucket-name/some/location/ and the names of the
      * output files could be anything because there was no filename prefix
      * specified.
+     *
      * If multiple outputs, each response is still AnnotateFileResponse, each of
      * which contains some subset of the full list of AnnotateImageResponse.
      * Multiple outputs can happen if, for example, the output JSON is too large
@@ -620,14 +635,18 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * either case, the uri should be unique because in order to get all of the
      * output files, you will need to do a wildcard gcs search on the uri prefix
      * you provide.
+     *
      * Examples:
+     *
      * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
      * will be created in gs://bucket-name/here/ and the names of the
      * output files will begin with "filenameprefix".
+     *
      * *    Directory Prefix: gs://bucket-name/some/location/   The output files
      * will be created in gs://bucket-name/some/location/ and the names of the
      * output files could be anything because there was no filename prefix
      * specified.
+     *
      * If multiple outputs, each response is still AnnotateFileResponse, each of
      * which contains some subset of the full list of AnnotateImageResponse.
      * Multiple outputs can happen if, for example, the output JSON is too large
@@ -654,14 +673,18 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * either case, the uri should be unique because in order to get all of the
      * output files, you will need to do a wildcard gcs search on the uri prefix
      * you provide.
+     *
      * Examples:
+     *
      * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
      * will be created in gs://bucket-name/here/ and the names of the
      * output files will begin with "filenameprefix".
+     *
      * *    Directory Prefix: gs://bucket-name/some/location/   The output files
      * will be created in gs://bucket-name/some/location/ and the names of the
      * output files could be anything because there was no filename prefix
      * specified.
+     *
      * If multiple outputs, each response is still AnnotateFileResponse, each of
      * which contains some subset of the full list of AnnotateImageResponse.
      * Multiple outputs can happen if, for example, the output JSON is too large

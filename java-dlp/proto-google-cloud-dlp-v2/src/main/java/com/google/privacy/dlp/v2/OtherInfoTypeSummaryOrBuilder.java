@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,4 +71,18 @@ public interface OtherInfoTypeSummaryOrBuilder
    * @return The estimatedPrevalence.
    */
   int getEstimatedPrevalence();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether this infoType was excluded from sensitivity and risk analysis due
+   * to factors such as low prevalence (subject to change).
+   * </pre>
+   *
+   * <code>bool excluded_from_analysis = 3;</code>
+   *
+   * @return The excludedFromAnalysis.
+   */
+  boolean getExcludedFromAnalysis();
 }

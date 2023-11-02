@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchCatalogRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -197,10 +192,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If `true`, include Google Cloud Platform (GCP) public datasets in the
-     * search results. Info on GCP public datasets is available at
-     * https://cloud.google.com/public-datasets/. By default, GCP public
-     * datasets are excluded.
+     * If `true`, include Google Cloud public datasets in the
+     * search results. Info on Google Cloud public datasets is available at
+     * https://cloud.google.com/public-datasets/. By default, Google Cloud
+     * public datasets are excluded.
      * </pre>
      *
      * <code>bool include_gcp_public_datasets = 7;</code>
@@ -208,6 +203,197 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return The includeGcpPublicDatasets.
      */
     boolean getIncludeGcpPublicDatasets();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of locations to search within.
+     * 1. If empty, search will be performed in all locations;
+     * 2. If any of the locations are NOT in the valid locations list, error
+     * will be returned;
+     * 3. Otherwise, search only the given locations for matching results.
+     * Typical usage is to leave this field empty. When a location is
+     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+     * users can repeat the search request with this parameter set to get
+     * additional information on the error.
+     *
+     * Valid locations:
+     *  * asia-east1
+     *  * asia-east2
+     *  * asia-northeast1
+     *  * asia-northeast2
+     *  * asia-northeast3
+     *  * asia-south1
+     *  * asia-southeast1
+     *  * australia-southeast1
+     *  * eu
+     *  * europe-north1
+     *  * europe-west1
+     *  * europe-west2
+     *  * europe-west3
+     *  * europe-west4
+     *  * europe-west6
+     *  * global
+     *  * northamerica-northeast1
+     *  * southamerica-east1
+     *  * us
+     *  * us-central1
+     *  * us-east1
+     *  * us-east4
+     *  * us-west1
+     *  * us-west2
+     * </pre>
+     *
+     * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the restrictedLocations.
+     */
+    java.util.List<java.lang.String> getRestrictedLocationsList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of locations to search within.
+     * 1. If empty, search will be performed in all locations;
+     * 2. If any of the locations are NOT in the valid locations list, error
+     * will be returned;
+     * 3. Otherwise, search only the given locations for matching results.
+     * Typical usage is to leave this field empty. When a location is
+     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+     * users can repeat the search request with this parameter set to get
+     * additional information on the error.
+     *
+     * Valid locations:
+     *  * asia-east1
+     *  * asia-east2
+     *  * asia-northeast1
+     *  * asia-northeast2
+     *  * asia-northeast3
+     *  * asia-south1
+     *  * asia-southeast1
+     *  * australia-southeast1
+     *  * eu
+     *  * europe-north1
+     *  * europe-west1
+     *  * europe-west2
+     *  * europe-west3
+     *  * europe-west4
+     *  * europe-west6
+     *  * global
+     *  * northamerica-northeast1
+     *  * southamerica-east1
+     *  * us
+     *  * us-central1
+     *  * us-east1
+     *  * us-east4
+     *  * us-west1
+     *  * us-west2
+     * </pre>
+     *
+     * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of restrictedLocations.
+     */
+    int getRestrictedLocationsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of locations to search within.
+     * 1. If empty, search will be performed in all locations;
+     * 2. If any of the locations are NOT in the valid locations list, error
+     * will be returned;
+     * 3. Otherwise, search only the given locations for matching results.
+     * Typical usage is to leave this field empty. When a location is
+     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+     * users can repeat the search request with this parameter set to get
+     * additional information on the error.
+     *
+     * Valid locations:
+     *  * asia-east1
+     *  * asia-east2
+     *  * asia-northeast1
+     *  * asia-northeast2
+     *  * asia-northeast3
+     *  * asia-south1
+     *  * asia-southeast1
+     *  * australia-southeast1
+     *  * eu
+     *  * europe-north1
+     *  * europe-west1
+     *  * europe-west2
+     *  * europe-west3
+     *  * europe-west4
+     *  * europe-west6
+     *  * global
+     *  * northamerica-northeast1
+     *  * southamerica-east1
+     *  * us
+     *  * us-central1
+     *  * us-east1
+     *  * us-east4
+     *  * us-west1
+     *  * us-west2
+     * </pre>
+     *
+     * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The restrictedLocations at the given index.
+     */
+    java.lang.String getRestrictedLocations(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of locations to search within.
+     * 1. If empty, search will be performed in all locations;
+     * 2. If any of the locations are NOT in the valid locations list, error
+     * will be returned;
+     * 3. Otherwise, search only the given locations for matching results.
+     * Typical usage is to leave this field empty. When a location is
+     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+     * users can repeat the search request with this parameter set to get
+     * additional information on the error.
+     *
+     * Valid locations:
+     *  * asia-east1
+     *  * asia-east2
+     *  * asia-northeast1
+     *  * asia-northeast2
+     *  * asia-northeast3
+     *  * asia-south1
+     *  * asia-southeast1
+     *  * australia-southeast1
+     *  * eu
+     *  * europe-north1
+     *  * europe-west1
+     *  * europe-west2
+     *  * europe-west3
+     *  * europe-west4
+     *  * europe-west6
+     *  * global
+     *  * northamerica-northeast1
+     *  * southamerica-east1
+     *  * us
+     *  * us-central1
+     *  * us-east1
+     *  * us-east4
+     *  * us-west1
+     *  * us-west2
+     * </pre>
+     *
+     * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the restrictedLocations at the given index.
+     */
+    com.google.protobuf.ByteString getRestrictedLocationsBytes(int index);
   }
   /**
    *
@@ -229,19 +415,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
 
     private Scope() {
-      includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includeOrgIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      includeProjectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      restrictedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Scope();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -262,7 +444,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public static final int INCLUDE_ORG_IDS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList includeOrgIds_;
+    private com.google.protobuf.LazyStringArrayList includeOrgIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -333,7 +516,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public static final int INCLUDE_PROJECT_IDS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList includeProjectIds_;
+    private com.google.protobuf.LazyStringArrayList includeProjectIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -407,10 +591,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If `true`, include Google Cloud Platform (GCP) public datasets in the
-     * search results. Info on GCP public datasets is available at
-     * https://cloud.google.com/public-datasets/. By default, GCP public
-     * datasets are excluded.
+     * If `true`, include Google Cloud public datasets in the
+     * search results. Info on Google Cloud public datasets is available at
+     * https://cloud.google.com/public-datasets/. By default, Google Cloud
+     * public datasets are excluded.
      * </pre>
      *
      * <code>bool include_gcp_public_datasets = 7;</code>
@@ -420,6 +604,210 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public boolean getIncludeGcpPublicDatasets() {
       return includeGcpPublicDatasets_;
+    }
+
+    public static final int RESTRICTED_LOCATIONS_FIELD_NUMBER = 16;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList restrictedLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of locations to search within.
+     * 1. If empty, search will be performed in all locations;
+     * 2. If any of the locations are NOT in the valid locations list, error
+     * will be returned;
+     * 3. Otherwise, search only the given locations for matching results.
+     * Typical usage is to leave this field empty. When a location is
+     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+     * users can repeat the search request with this parameter set to get
+     * additional information on the error.
+     *
+     * Valid locations:
+     *  * asia-east1
+     *  * asia-east2
+     *  * asia-northeast1
+     *  * asia-northeast2
+     *  * asia-northeast3
+     *  * asia-south1
+     *  * asia-southeast1
+     *  * australia-southeast1
+     *  * eu
+     *  * europe-north1
+     *  * europe-west1
+     *  * europe-west2
+     *  * europe-west3
+     *  * europe-west4
+     *  * europe-west6
+     *  * global
+     *  * northamerica-northeast1
+     *  * southamerica-east1
+     *  * us
+     *  * us-central1
+     *  * us-east1
+     *  * us-east4
+     *  * us-west1
+     *  * us-west2
+     * </pre>
+     *
+     * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the restrictedLocations.
+     */
+    public com.google.protobuf.ProtocolStringList getRestrictedLocationsList() {
+      return restrictedLocations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of locations to search within.
+     * 1. If empty, search will be performed in all locations;
+     * 2. If any of the locations are NOT in the valid locations list, error
+     * will be returned;
+     * 3. Otherwise, search only the given locations for matching results.
+     * Typical usage is to leave this field empty. When a location is
+     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+     * users can repeat the search request with this parameter set to get
+     * additional information on the error.
+     *
+     * Valid locations:
+     *  * asia-east1
+     *  * asia-east2
+     *  * asia-northeast1
+     *  * asia-northeast2
+     *  * asia-northeast3
+     *  * asia-south1
+     *  * asia-southeast1
+     *  * australia-southeast1
+     *  * eu
+     *  * europe-north1
+     *  * europe-west1
+     *  * europe-west2
+     *  * europe-west3
+     *  * europe-west4
+     *  * europe-west6
+     *  * global
+     *  * northamerica-northeast1
+     *  * southamerica-east1
+     *  * us
+     *  * us-central1
+     *  * us-east1
+     *  * us-east4
+     *  * us-west1
+     *  * us-west2
+     * </pre>
+     *
+     * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of restrictedLocations.
+     */
+    public int getRestrictedLocationsCount() {
+      return restrictedLocations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of locations to search within.
+     * 1. If empty, search will be performed in all locations;
+     * 2. If any of the locations are NOT in the valid locations list, error
+     * will be returned;
+     * 3. Otherwise, search only the given locations for matching results.
+     * Typical usage is to leave this field empty. When a location is
+     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+     * users can repeat the search request with this parameter set to get
+     * additional information on the error.
+     *
+     * Valid locations:
+     *  * asia-east1
+     *  * asia-east2
+     *  * asia-northeast1
+     *  * asia-northeast2
+     *  * asia-northeast3
+     *  * asia-south1
+     *  * asia-southeast1
+     *  * australia-southeast1
+     *  * eu
+     *  * europe-north1
+     *  * europe-west1
+     *  * europe-west2
+     *  * europe-west3
+     *  * europe-west4
+     *  * europe-west6
+     *  * global
+     *  * northamerica-northeast1
+     *  * southamerica-east1
+     *  * us
+     *  * us-central1
+     *  * us-east1
+     *  * us-east4
+     *  * us-west1
+     *  * us-west2
+     * </pre>
+     *
+     * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The restrictedLocations at the given index.
+     */
+    public java.lang.String getRestrictedLocations(int index) {
+      return restrictedLocations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of locations to search within.
+     * 1. If empty, search will be performed in all locations;
+     * 2. If any of the locations are NOT in the valid locations list, error
+     * will be returned;
+     * 3. Otherwise, search only the given locations for matching results.
+     * Typical usage is to leave this field empty. When a location is
+     * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+     * users can repeat the search request with this parameter set to get
+     * additional information on the error.
+     *
+     * Valid locations:
+     *  * asia-east1
+     *  * asia-east2
+     *  * asia-northeast1
+     *  * asia-northeast2
+     *  * asia-northeast3
+     *  * asia-south1
+     *  * asia-southeast1
+     *  * australia-southeast1
+     *  * eu
+     *  * europe-north1
+     *  * europe-west1
+     *  * europe-west2
+     *  * europe-west3
+     *  * europe-west4
+     *  * europe-west6
+     *  * global
+     *  * northamerica-northeast1
+     *  * southamerica-east1
+     *  * us
+     *  * us-central1
+     *  * us-east1
+     *  * us-east4
+     *  * us-west1
+     *  * us-west2
+     * </pre>
+     *
+     * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the restrictedLocations at the given index.
+     */
+    public com.google.protobuf.ByteString getRestrictedLocationsBytes(int index) {
+      return restrictedLocations_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -444,6 +832,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       }
       if (includeGcpPublicDatasets_ != false) {
         output.writeBool(7, includeGcpPublicDatasets_);
+      }
+      for (int i = 0; i < restrictedLocations_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 16, restrictedLocations_.getRaw(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -473,6 +865,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       if (includeGcpPublicDatasets_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, includeGcpPublicDatasets_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < restrictedLocations_.size(); i++) {
+          dataSize += computeStringSizeNoTag(restrictedLocations_.getRaw(i));
+        }
+        size += dataSize;
+        size += 2 * getRestrictedLocationsList().size();
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -492,6 +892,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       if (!getIncludeOrgIdsList().equals(other.getIncludeOrgIdsList())) return false;
       if (!getIncludeProjectIdsList().equals(other.getIncludeProjectIdsList())) return false;
       if (getIncludeGcpPublicDatasets() != other.getIncludeGcpPublicDatasets()) return false;
+      if (!getRestrictedLocationsList().equals(other.getRestrictedLocationsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -513,6 +914,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       }
       hash = (37 * hash) + INCLUDE_GCP_PUBLIC_DATASETS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeGcpPublicDatasets());
+      if (getRestrictedLocationsCount() > 0) {
+        hash = (37 * hash) + RESTRICTED_LOCATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getRestrictedLocationsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -657,11 +1062,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         includeGcpPublicDatasets_ = false;
+        restrictedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -690,7 +1094,6 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope buildPartial() {
         com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope result =
             new com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -698,25 +1101,23 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          includeOrgIds_ = includeOrgIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.includeOrgIds_ = includeOrgIds_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          includeProjectIds_ = includeProjectIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.includeProjectIds_ = includeProjectIds_;
-      }
-
       private void buildPartial0(
           com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          includeOrgIds_.makeImmutable();
+          result.includeOrgIds_ = includeOrgIds_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          includeProjectIds_.makeImmutable();
+          result.includeProjectIds_ = includeProjectIds_;
+        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.includeGcpPublicDatasets_ = includeGcpPublicDatasets_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          restrictedLocations_.makeImmutable();
+          result.restrictedLocations_ = restrictedLocations_;
         }
       }
 
@@ -773,7 +1174,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         if (!other.includeOrgIds_.isEmpty()) {
           if (includeOrgIds_.isEmpty()) {
             includeOrgIds_ = other.includeOrgIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureIncludeOrgIdsIsMutable();
             includeOrgIds_.addAll(other.includeOrgIds_);
@@ -783,7 +1184,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         if (!other.includeProjectIds_.isEmpty()) {
           if (includeProjectIds_.isEmpty()) {
             includeProjectIds_ = other.includeProjectIds_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureIncludeProjectIdsIsMutable();
             includeProjectIds_.addAll(other.includeProjectIds_);
@@ -792,6 +1193,16 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         if (other.getIncludeGcpPublicDatasets() != false) {
           setIncludeGcpPublicDatasets(other.getIncludeGcpPublicDatasets());
+        }
+        if (!other.restrictedLocations_.isEmpty()) {
+          if (restrictedLocations_.isEmpty()) {
+            restrictedLocations_ = other.restrictedLocations_;
+            bitField0_ |= 0x00000008;
+          } else {
+            ensureRestrictedLocationsIsMutable();
+            restrictedLocations_.addAll(other.restrictedLocations_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -839,6 +1250,13 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 56
+              case 130:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureRestrictedLocationsIsMutable();
+                  restrictedLocations_.add(s);
+                  break;
+                } // case 130
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -858,14 +1276,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList includeOrgIds_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList includeOrgIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIncludeOrgIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!includeOrgIds_.isModifiable()) {
           includeOrgIds_ = new com.google.protobuf.LazyStringArrayList(includeOrgIds_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -881,7 +1299,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return A list containing the includeOrgIds.
        */
       public com.google.protobuf.ProtocolStringList getIncludeOrgIdsList() {
-        return includeOrgIds_.getUnmodifiableView();
+        includeOrgIds_.makeImmutable();
+        return includeOrgIds_;
       }
       /**
        *
@@ -954,6 +1373,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeOrgIdsIsMutable();
         includeOrgIds_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -977,6 +1397,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeOrgIdsIsMutable();
         includeOrgIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -997,6 +1418,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder addAllIncludeOrgIds(java.lang.Iterable<java.lang.String> values) {
         ensureIncludeOrgIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeOrgIds_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1014,8 +1436,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearIncludeOrgIds() {
-        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1040,18 +1463,19 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureIncludeOrgIdsIsMutable();
         includeOrgIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList includeProjectIds_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList includeProjectIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIncludeProjectIdsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!includeProjectIds_.isModifiable()) {
           includeProjectIds_ = new com.google.protobuf.LazyStringArrayList(includeProjectIds_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1067,7 +1491,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return A list containing the includeProjectIds.
        */
       public com.google.protobuf.ProtocolStringList getIncludeProjectIdsList() {
-        return includeProjectIds_.getUnmodifiableView();
+        includeProjectIds_.makeImmutable();
+        return includeProjectIds_;
       }
       /**
        *
@@ -1140,6 +1565,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeProjectIdsIsMutable();
         includeProjectIds_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1163,6 +1589,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeProjectIdsIsMutable();
         includeProjectIds_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1183,6 +1610,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder addAllIncludeProjectIds(java.lang.Iterable<java.lang.String> values) {
         ensureIncludeProjectIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeProjectIds_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1200,8 +1628,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearIncludeProjectIds() {
-        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1226,6 +1655,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureIncludeProjectIdsIsMutable();
         includeProjectIds_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1235,10 +1665,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If `true`, include Google Cloud Platform (GCP) public datasets in the
-       * search results. Info on GCP public datasets is available at
-       * https://cloud.google.com/public-datasets/. By default, GCP public
-       * datasets are excluded.
+       * If `true`, include Google Cloud public datasets in the
+       * search results. Info on Google Cloud public datasets is available at
+       * https://cloud.google.com/public-datasets/. By default, Google Cloud
+       * public datasets are excluded.
        * </pre>
        *
        * <code>bool include_gcp_public_datasets = 7;</code>
@@ -1253,10 +1683,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If `true`, include Google Cloud Platform (GCP) public datasets in the
-       * search results. Info on GCP public datasets is available at
-       * https://cloud.google.com/public-datasets/. By default, GCP public
-       * datasets are excluded.
+       * If `true`, include Google Cloud public datasets in the
+       * search results. Info on Google Cloud public datasets is available at
+       * https://cloud.google.com/public-datasets/. By default, Google Cloud
+       * public datasets are excluded.
        * </pre>
        *
        * <code>bool include_gcp_public_datasets = 7;</code>
@@ -1275,10 +1705,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If `true`, include Google Cloud Platform (GCP) public datasets in the
-       * search results. Info on GCP public datasets is available at
-       * https://cloud.google.com/public-datasets/. By default, GCP public
-       * datasets are excluded.
+       * If `true`, include Google Cloud public datasets in the
+       * search results. Info on Google Cloud public datasets is available at
+       * https://cloud.google.com/public-datasets/. By default, Google Cloud
+       * public datasets are excluded.
        * </pre>
        *
        * <code>bool include_gcp_public_datasets = 7;</code>
@@ -1288,6 +1718,495 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder clearIncludeGcpPublicDatasets() {
         bitField0_ = (bitField0_ & ~0x00000004);
         includeGcpPublicDatasets_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList restrictedLocations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureRestrictedLocationsIsMutable() {
+        if (!restrictedLocations_.isModifiable()) {
+          restrictedLocations_ = new com.google.protobuf.LazyStringArrayList(restrictedLocations_);
+        }
+        bitField0_ |= 0x00000008;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of locations to search within.
+       * 1. If empty, search will be performed in all locations;
+       * 2. If any of the locations are NOT in the valid locations list, error
+       * will be returned;
+       * 3. Otherwise, search only the given locations for matching results.
+       * Typical usage is to leave this field empty. When a location is
+       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+       * users can repeat the search request with this parameter set to get
+       * additional information on the error.
+       *
+       * Valid locations:
+       *  * asia-east1
+       *  * asia-east2
+       *  * asia-northeast1
+       *  * asia-northeast2
+       *  * asia-northeast3
+       *  * asia-south1
+       *  * asia-southeast1
+       *  * australia-southeast1
+       *  * eu
+       *  * europe-north1
+       *  * europe-west1
+       *  * europe-west2
+       *  * europe-west3
+       *  * europe-west4
+       *  * europe-west6
+       *  * global
+       *  * northamerica-northeast1
+       *  * southamerica-east1
+       *  * us
+       *  * us-central1
+       *  * us-east1
+       *  * us-east4
+       *  * us-west1
+       *  * us-west2
+       * </pre>
+       *
+       * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the restrictedLocations.
+       */
+      public com.google.protobuf.ProtocolStringList getRestrictedLocationsList() {
+        restrictedLocations_.makeImmutable();
+        return restrictedLocations_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of locations to search within.
+       * 1. If empty, search will be performed in all locations;
+       * 2. If any of the locations are NOT in the valid locations list, error
+       * will be returned;
+       * 3. Otherwise, search only the given locations for matching results.
+       * Typical usage is to leave this field empty. When a location is
+       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+       * users can repeat the search request with this parameter set to get
+       * additional information on the error.
+       *
+       * Valid locations:
+       *  * asia-east1
+       *  * asia-east2
+       *  * asia-northeast1
+       *  * asia-northeast2
+       *  * asia-northeast3
+       *  * asia-south1
+       *  * asia-southeast1
+       *  * australia-southeast1
+       *  * eu
+       *  * europe-north1
+       *  * europe-west1
+       *  * europe-west2
+       *  * europe-west3
+       *  * europe-west4
+       *  * europe-west6
+       *  * global
+       *  * northamerica-northeast1
+       *  * southamerica-east1
+       *  * us
+       *  * us-central1
+       *  * us-east1
+       *  * us-east4
+       *  * us-west1
+       *  * us-west2
+       * </pre>
+       *
+       * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of restrictedLocations.
+       */
+      public int getRestrictedLocationsCount() {
+        return restrictedLocations_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of locations to search within.
+       * 1. If empty, search will be performed in all locations;
+       * 2. If any of the locations are NOT in the valid locations list, error
+       * will be returned;
+       * 3. Otherwise, search only the given locations for matching results.
+       * Typical usage is to leave this field empty. When a location is
+       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+       * users can repeat the search request with this parameter set to get
+       * additional information on the error.
+       *
+       * Valid locations:
+       *  * asia-east1
+       *  * asia-east2
+       *  * asia-northeast1
+       *  * asia-northeast2
+       *  * asia-northeast3
+       *  * asia-south1
+       *  * asia-southeast1
+       *  * australia-southeast1
+       *  * eu
+       *  * europe-north1
+       *  * europe-west1
+       *  * europe-west2
+       *  * europe-west3
+       *  * europe-west4
+       *  * europe-west6
+       *  * global
+       *  * northamerica-northeast1
+       *  * southamerica-east1
+       *  * us
+       *  * us-central1
+       *  * us-east1
+       *  * us-east4
+       *  * us-west1
+       *  * us-west2
+       * </pre>
+       *
+       * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The restrictedLocations at the given index.
+       */
+      public java.lang.String getRestrictedLocations(int index) {
+        return restrictedLocations_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of locations to search within.
+       * 1. If empty, search will be performed in all locations;
+       * 2. If any of the locations are NOT in the valid locations list, error
+       * will be returned;
+       * 3. Otherwise, search only the given locations for matching results.
+       * Typical usage is to leave this field empty. When a location is
+       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+       * users can repeat the search request with this parameter set to get
+       * additional information on the error.
+       *
+       * Valid locations:
+       *  * asia-east1
+       *  * asia-east2
+       *  * asia-northeast1
+       *  * asia-northeast2
+       *  * asia-northeast3
+       *  * asia-south1
+       *  * asia-southeast1
+       *  * australia-southeast1
+       *  * eu
+       *  * europe-north1
+       *  * europe-west1
+       *  * europe-west2
+       *  * europe-west3
+       *  * europe-west4
+       *  * europe-west6
+       *  * global
+       *  * northamerica-northeast1
+       *  * southamerica-east1
+       *  * us
+       *  * us-central1
+       *  * us-east1
+       *  * us-east4
+       *  * us-west1
+       *  * us-west2
+       * </pre>
+       *
+       * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the restrictedLocations at the given index.
+       */
+      public com.google.protobuf.ByteString getRestrictedLocationsBytes(int index) {
+        return restrictedLocations_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of locations to search within.
+       * 1. If empty, search will be performed in all locations;
+       * 2. If any of the locations are NOT in the valid locations list, error
+       * will be returned;
+       * 3. Otherwise, search only the given locations for matching results.
+       * Typical usage is to leave this field empty. When a location is
+       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+       * users can repeat the search request with this parameter set to get
+       * additional information on the error.
+       *
+       * Valid locations:
+       *  * asia-east1
+       *  * asia-east2
+       *  * asia-northeast1
+       *  * asia-northeast2
+       *  * asia-northeast3
+       *  * asia-south1
+       *  * asia-southeast1
+       *  * australia-southeast1
+       *  * eu
+       *  * europe-north1
+       *  * europe-west1
+       *  * europe-west2
+       *  * europe-west3
+       *  * europe-west4
+       *  * europe-west6
+       *  * global
+       *  * northamerica-northeast1
+       *  * southamerica-east1
+       *  * us
+       *  * us-central1
+       *  * us-east1
+       *  * us-east4
+       *  * us-west1
+       *  * us-west2
+       * </pre>
+       *
+       * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The restrictedLocations to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRestrictedLocations(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRestrictedLocationsIsMutable();
+        restrictedLocations_.set(index, value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of locations to search within.
+       * 1. If empty, search will be performed in all locations;
+       * 2. If any of the locations are NOT in the valid locations list, error
+       * will be returned;
+       * 3. Otherwise, search only the given locations for matching results.
+       * Typical usage is to leave this field empty. When a location is
+       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+       * users can repeat the search request with this parameter set to get
+       * additional information on the error.
+       *
+       * Valid locations:
+       *  * asia-east1
+       *  * asia-east2
+       *  * asia-northeast1
+       *  * asia-northeast2
+       *  * asia-northeast3
+       *  * asia-south1
+       *  * asia-southeast1
+       *  * australia-southeast1
+       *  * eu
+       *  * europe-north1
+       *  * europe-west1
+       *  * europe-west2
+       *  * europe-west3
+       *  * europe-west4
+       *  * europe-west6
+       *  * global
+       *  * northamerica-northeast1
+       *  * southamerica-east1
+       *  * us
+       *  * us-central1
+       *  * us-east1
+       *  * us-east4
+       *  * us-west1
+       *  * us-west2
+       * </pre>
+       *
+       * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The restrictedLocations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRestrictedLocations(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRestrictedLocationsIsMutable();
+        restrictedLocations_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of locations to search within.
+       * 1. If empty, search will be performed in all locations;
+       * 2. If any of the locations are NOT in the valid locations list, error
+       * will be returned;
+       * 3. Otherwise, search only the given locations for matching results.
+       * Typical usage is to leave this field empty. When a location is
+       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+       * users can repeat the search request with this parameter set to get
+       * additional information on the error.
+       *
+       * Valid locations:
+       *  * asia-east1
+       *  * asia-east2
+       *  * asia-northeast1
+       *  * asia-northeast2
+       *  * asia-northeast3
+       *  * asia-south1
+       *  * asia-southeast1
+       *  * australia-southeast1
+       *  * eu
+       *  * europe-north1
+       *  * europe-west1
+       *  * europe-west2
+       *  * europe-west3
+       *  * europe-west4
+       *  * europe-west6
+       *  * global
+       *  * northamerica-northeast1
+       *  * southamerica-east1
+       *  * us
+       *  * us-central1
+       *  * us-east1
+       *  * us-east4
+       *  * us-west1
+       *  * us-west2
+       * </pre>
+       *
+       * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The restrictedLocations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllRestrictedLocations(java.lang.Iterable<java.lang.String> values) {
+        ensureRestrictedLocationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, restrictedLocations_);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of locations to search within.
+       * 1. If empty, search will be performed in all locations;
+       * 2. If any of the locations are NOT in the valid locations list, error
+       * will be returned;
+       * 3. Otherwise, search only the given locations for matching results.
+       * Typical usage is to leave this field empty. When a location is
+       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+       * users can repeat the search request with this parameter set to get
+       * additional information on the error.
+       *
+       * Valid locations:
+       *  * asia-east1
+       *  * asia-east2
+       *  * asia-northeast1
+       *  * asia-northeast2
+       *  * asia-northeast3
+       *  * asia-south1
+       *  * asia-southeast1
+       *  * australia-southeast1
+       *  * eu
+       *  * europe-north1
+       *  * europe-west1
+       *  * europe-west2
+       *  * europe-west3
+       *  * europe-west4
+       *  * europe-west6
+       *  * global
+       *  * northamerica-northeast1
+       *  * southamerica-east1
+       *  * us
+       *  * us-central1
+       *  * us-east1
+       *  * us-east4
+       *  * us-west1
+       *  * us-west2
+       * </pre>
+       *
+       * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRestrictedLocations() {
+        restrictedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of locations to search within.
+       * 1. If empty, search will be performed in all locations;
+       * 2. If any of the locations are NOT in the valid locations list, error
+       * will be returned;
+       * 3. Otherwise, search only the given locations for matching results.
+       * Typical usage is to leave this field empty. When a location is
+       * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
+       * users can repeat the search request with this parameter set to get
+       * additional information on the error.
+       *
+       * Valid locations:
+       *  * asia-east1
+       *  * asia-east2
+       *  * asia-northeast1
+       *  * asia-northeast2
+       *  * asia-northeast3
+       *  * asia-south1
+       *  * asia-southeast1
+       *  * australia-southeast1
+       *  * eu
+       *  * europe-north1
+       *  * europe-west1
+       *  * europe-west2
+       *  * europe-west3
+       *  * europe-west4
+       *  * europe-west6
+       *  * global
+       *  * northamerica-northeast1
+       *  * southamerica-east1
+       *  * us
+       *  * us-central1
+       *  * us-east1
+       *  * us-east4
+       *  * us-west1
+       *  * us-west2
+       * </pre>
+       *
+       * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the restrictedLocations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRestrictedLocationsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureRestrictedLocationsIsMutable();
+        restrictedLocations_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1433,18 +2352,21 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be non-empty.
-   * Query strings can be simple as "x" or more qualified as:
+   * Optional. The query string in search query syntax. An empty query string
+   * will result in all data assets (in the specified scope) that the user has
+   * access to. Query strings can be simple as "x" or more qualified as:
+   *
    * * name:x
    * * column:x
    * * description:y
+   *
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
    * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
    * for more information.
    * </pre>
    *
-   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The query.
    */
@@ -1464,18 +2386,21 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be non-empty.
-   * Query strings can be simple as "x" or more qualified as:
+   * Optional. The query string in search query syntax. An empty query string
+   * will result in all data assets (in the specified scope) that the user has
+   * access to. Query strings can be simple as "x" or more qualified as:
+   *
    * * name:x
    * * column:x
    * * description:y
+   *
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
    * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
    * for more information.
    * </pre>
    *
-   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for query.
    */
@@ -1520,8 +2445,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+   * which indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -1548,8 +2473,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+   * which indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -1582,9 +2507,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
+   *
    *   * `relevance`, only supports descending
    *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
    *     specified
+   *   * `default` that can only be descending
+   *
    * If not specified, defaults to `relevance` descending.
    * </pre>
    *
@@ -1610,9 +2538,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
+   *
    *   * `relevance`, only supports descending
    *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
    *     specified
+   *   * `default` that can only be descending
+   *
    * If not specified, defaults to `relevance` descending.
    * </pre>
    *
@@ -2317,18 +3248,21 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
-     * Query strings can be simple as "x" or more qualified as:
+     * Optional. The query string in search query syntax. An empty query string
+     * will result in all data assets (in the specified scope) that the user has
+     * access to. Query strings can be simple as "x" or more qualified as:
+     *
      * * name:x
      * * column:x
      * * description:y
+     *
      * Note: Query tokens need to have a minimum of 3 characters for substring
      * matching to work correctly. See [Data Catalog Search
      * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
      * for more information.
      * </pre>
      *
-     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The query.
      */
@@ -2347,18 +3281,21 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
-     * Query strings can be simple as "x" or more qualified as:
+     * Optional. The query string in search query syntax. An empty query string
+     * will result in all data assets (in the specified scope) that the user has
+     * access to. Query strings can be simple as "x" or more qualified as:
+     *
      * * name:x
      * * column:x
      * * description:y
+     *
      * Note: Query tokens need to have a minimum of 3 characters for substring
      * matching to work correctly. See [Data Catalog Search
      * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
      * for more information.
      * </pre>
      *
-     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for query.
      */
@@ -2377,18 +3314,21 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
-     * Query strings can be simple as "x" or more qualified as:
+     * Optional. The query string in search query syntax. An empty query string
+     * will result in all data assets (in the specified scope) that the user has
+     * access to. Query strings can be simple as "x" or more qualified as:
+     *
      * * name:x
      * * column:x
      * * description:y
+     *
      * Note: Query tokens need to have a minimum of 3 characters for substring
      * matching to work correctly. See [Data Catalog Search
      * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
      * for more information.
      * </pre>
      *
-     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The query to set.
      * @return This builder for chaining.
@@ -2406,18 +3346,21 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
-     * Query strings can be simple as "x" or more qualified as:
+     * Optional. The query string in search query syntax. An empty query string
+     * will result in all data assets (in the specified scope) that the user has
+     * access to. Query strings can be simple as "x" or more qualified as:
+     *
      * * name:x
      * * column:x
      * * description:y
+     *
      * Note: Query tokens need to have a minimum of 3 characters for substring
      * matching to work correctly. See [Data Catalog Search
      * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
      * for more information.
      * </pre>
      *
-     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2431,18 +3374,21 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
-     * Query strings can be simple as "x" or more qualified as:
+     * Optional. The query string in search query syntax. An empty query string
+     * will result in all data assets (in the specified scope) that the user has
+     * access to. Query strings can be simple as "x" or more qualified as:
+     *
      * * name:x
      * * column:x
      * * description:y
+     *
      * Note: Query tokens need to have a minimum of 3 characters for substring
      * matching to work correctly. See [Data Catalog Search
      * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
      * for more information.
      * </pre>
      *
-     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for query to set.
      * @return This builder for chaining.
@@ -2520,8 +3466,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -2547,8 +3493,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -2574,8 +3520,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -2600,8 +3546,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -2622,8 +3568,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -2652,9 +3598,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
+     *
      *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
+     *   * `default` that can only be descending
+     *
      * If not specified, defaults to `relevance` descending.
      * </pre>
      *
@@ -2679,9 +3628,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
+     *
      *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
+     *   * `default` that can only be descending
+     *
      * If not specified, defaults to `relevance` descending.
      * </pre>
      *
@@ -2706,9 +3658,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
+     *
      *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
+     *   * `default` that can only be descending
+     *
      * If not specified, defaults to `relevance` descending.
      * </pre>
      *
@@ -2732,9 +3687,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
+     *
      *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
+     *   * `default` that can only be descending
+     *
      * If not specified, defaults to `relevance` descending.
      * </pre>
      *
@@ -2754,9 +3712,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
+     *
      *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
+     *   * `default` that can only be descending
+     *
      * If not specified, defaults to `relevance` descending.
      * </pre>
      *

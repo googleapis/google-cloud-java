@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class GetNotificationChannelVerificationCodeRequest
     return new GetNotificationChannelVerificationCodeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.NotificationServiceProto
         .internal_static_google_monitoring_v3_GetNotificationChannelVerificationCodeRequest_descriptor;
@@ -77,9 +72,9 @@ public final class GetNotificationChannelVerificationCodeRequest
    *
    *
    * <pre>
-   * Required. The notification channel for which a verification code is to be generated
-   * and retrieved. This must name a channel that is already verified; if
-   * the specified channel is not verified, the request will fail.
+   * Required. The notification channel for which a verification code is to be
+   * generated and retrieved. This must name a channel that is already verified;
+   * if the specified channel is not verified, the request will fail.
    * </pre>
    *
    * <code>
@@ -104,9 +99,9 @@ public final class GetNotificationChannelVerificationCodeRequest
    *
    *
    * <pre>
-   * Required. The notification channel for which a verification code is to be generated
-   * and retrieved. This must name a channel that is already verified; if
-   * the specified channel is not verified, the request will fail.
+   * Required. The notification channel for which a verification code is to be
+   * generated and retrieved. This must name a channel that is already verified;
+   * if the specified channel is not verified, the request will fail.
    * </pre>
    *
    * <code>
@@ -586,9 +581,9 @@ public final class GetNotificationChannelVerificationCodeRequest
      *
      *
      * <pre>
-     * Required. The notification channel for which a verification code is to be generated
-     * and retrieved. This must name a channel that is already verified; if
-     * the specified channel is not verified, the request will fail.
+     * Required. The notification channel for which a verification code is to be
+     * generated and retrieved. This must name a channel that is already verified;
+     * if the specified channel is not verified, the request will fail.
      * </pre>
      *
      * <code>
@@ -612,9 +607,9 @@ public final class GetNotificationChannelVerificationCodeRequest
      *
      *
      * <pre>
-     * Required. The notification channel for which a verification code is to be generated
-     * and retrieved. This must name a channel that is already verified; if
-     * the specified channel is not verified, the request will fail.
+     * Required. The notification channel for which a verification code is to be
+     * generated and retrieved. This must name a channel that is already verified;
+     * if the specified channel is not verified, the request will fail.
      * </pre>
      *
      * <code>
@@ -638,9 +633,9 @@ public final class GetNotificationChannelVerificationCodeRequest
      *
      *
      * <pre>
-     * Required. The notification channel for which a verification code is to be generated
-     * and retrieved. This must name a channel that is already verified; if
-     * the specified channel is not verified, the request will fail.
+     * Required. The notification channel for which a verification code is to be
+     * generated and retrieved. This must name a channel that is already verified;
+     * if the specified channel is not verified, the request will fail.
      * </pre>
      *
      * <code>
@@ -663,9 +658,9 @@ public final class GetNotificationChannelVerificationCodeRequest
      *
      *
      * <pre>
-     * Required. The notification channel for which a verification code is to be generated
-     * and retrieved. This must name a channel that is already verified; if
-     * the specified channel is not verified, the request will fail.
+     * Required. The notification channel for which a verification code is to be
+     * generated and retrieved. This must name a channel that is already verified;
+     * if the specified channel is not verified, the request will fail.
      * </pre>
      *
      * <code>
@@ -684,9 +679,9 @@ public final class GetNotificationChannelVerificationCodeRequest
      *
      *
      * <pre>
-     * Required. The notification channel for which a verification code is to be generated
-     * and retrieved. This must name a channel that is already verified; if
-     * the specified channel is not verified, the request will fail.
+     * Required. The notification channel for which a verification code is to be
+     * generated and retrieved. This must name a channel that is already verified;
+     * if the specified channel is not verified, the request will fail.
      * </pre>
      *
      * <code>

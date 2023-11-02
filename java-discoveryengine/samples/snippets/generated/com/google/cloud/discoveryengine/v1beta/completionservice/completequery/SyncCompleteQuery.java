@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public class SyncCompleteQuery {
               .setQuery("query107944136")
               .setQueryModel("queryModel-184930495")
               .setUserPseudoId("userPseudoId-1155274652")
+              .setIncludeTailSuggestions(true)
               .build();
       CompleteQueryResponse response = completionServiceClient.completeQuery(request);
     }

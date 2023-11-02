@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ public final class SecurityCenterGrpc {
 
   private SecurityCenterGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.securitycenter.v1.SecurityCenter";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.securitycenter.v1.SecurityCenter";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1620,6 +1621,68 @@ public final class SecurityCenterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      getSimulateSecurityHealthAnalyticsCustomModuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SimulateSecurityHealthAnalyticsCustomModule",
+      requestType =
+          com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest
+              .class,
+      responseType =
+          com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse
+              .class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      getSimulateSecurityHealthAnalyticsCustomModuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest,
+            com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse>
+        getSimulateSecurityHealthAnalyticsCustomModuleMethod;
+    if ((getSimulateSecurityHealthAnalyticsCustomModuleMethod =
+            SecurityCenterGrpc.getSimulateSecurityHealthAnalyticsCustomModuleMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getSimulateSecurityHealthAnalyticsCustomModuleMethod =
+                SecurityCenterGrpc.getSimulateSecurityHealthAnalyticsCustomModuleMethod)
+            == null) {
+          SecurityCenterGrpc.getSimulateSecurityHealthAnalyticsCustomModuleMethod =
+              getSimulateSecurityHealthAnalyticsCustomModuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1
+                              .SimulateSecurityHealthAnalyticsCustomModuleRequest,
+                          com.google.cloud.securitycenter.v1
+                              .SimulateSecurityHealthAnalyticsCustomModuleResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "SimulateSecurityHealthAnalyticsCustomModule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .SimulateSecurityHealthAnalyticsCustomModuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .SimulateSecurityHealthAnalyticsCustomModuleResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier(
+                              "SimulateSecurityHealthAnalyticsCustomModule"))
+                      .build();
+        }
+      }
+    }
+    return getSimulateSecurityHealthAnalyticsCustomModuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest,
           com.google.cloud.securitycenter.v1.ExternalSystem>
       getUpdateExternalSystemMethod;
@@ -2528,6 +2591,7 @@ public final class SecurityCenterGrpc {
      * properties.
      * </pre>
      */
+    @java.lang.Deprecated
     default void groupAssets(
         com.google.cloud.securitycenter.v1.GroupAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.GroupAssetsResponse>
@@ -2563,6 +2627,7 @@ public final class SecurityCenterGrpc {
      * Lists an organization's assets.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAssets(
         com.google.cloud.securitycenter.v1.ListAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ListAssetsResponse>
@@ -2701,6 +2766,7 @@ public final class SecurityCenterGrpc {
      * error.
      * </pre>
      */
+    @java.lang.Deprecated
     default void runAssetDiscovery(
         com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -2762,6 +2828,24 @@ public final class SecurityCenterGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * </pre>
+     */
+    default void simulateSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1
+                    .SimulateSecurityHealthAnalyticsCustomModuleResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSimulateSecurityHealthAnalyticsCustomModuleMethod(), responseObserver);
     }
 
     /**
@@ -3290,6 +3374,7 @@ public final class SecurityCenterGrpc {
      * properties.
      * </pre>
      */
+    @java.lang.Deprecated
     public void groupAssets(
         com.google.cloud.securitycenter.v1.GroupAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.GroupAssetsResponse>
@@ -3329,6 +3414,7 @@ public final class SecurityCenterGrpc {
      * Lists an organization's assets.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAssets(
         com.google.cloud.securitycenter.v1.ListAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ListAssetsResponse>
@@ -3487,6 +3573,7 @@ public final class SecurityCenterGrpc {
      * error.
      * </pre>
      */
+    @java.lang.Deprecated
     public void runAssetDiscovery(
         com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -3555,6 +3642,27 @@ public final class SecurityCenterGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * </pre>
+     */
+    public void simulateSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1
+                    .SimulateSecurityHealthAnalyticsCustomModuleResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getSimulateSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -4048,6 +4156,7 @@ public final class SecurityCenterGrpc {
      * properties.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.securitycenter.v1.GroupAssetsResponse groupAssets(
         com.google.cloud.securitycenter.v1.GroupAssetsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -4079,6 +4188,7 @@ public final class SecurityCenterGrpc {
      * Lists an organization's assets.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.securitycenter.v1.ListAssetsResponse listAssets(
         com.google.cloud.securitycenter.v1.ListAssetsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -4214,6 +4324,7 @@ public final class SecurityCenterGrpc {
      * error.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation runAssetDiscovery(
         com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -4269,6 +4380,24 @@ public final class SecurityCenterGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse
+        simulateSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getSimulateSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -4732,6 +4861,7 @@ public final class SecurityCenterGrpc {
      * properties.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1.GroupAssetsResponse>
         groupAssets(com.google.cloud.securitycenter.v1.GroupAssetsRequest request) {
@@ -4765,6 +4895,7 @@ public final class SecurityCenterGrpc {
      * Lists an organization's assets.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1.ListAssetsResponse>
         listAssets(com.google.cloud.securitycenter.v1.ListAssetsRequest request) {
@@ -4907,6 +5038,7 @@ public final class SecurityCenterGrpc {
      * error.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         runAssetDiscovery(com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4966,6 +5098,24 @@ public final class SecurityCenterGrpc {
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse>
+        simulateSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getSimulateSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
+          request);
     }
 
     /**
@@ -5188,18 +5338,19 @@ public final class SecurityCenterGrpc {
   private static final int METHODID_SET_MUTE = 29;
   private static final int METHODID_SET_IAM_POLICY = 30;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 31;
-  private static final int METHODID_UPDATE_EXTERNAL_SYSTEM = 32;
-  private static final int METHODID_UPDATE_FINDING = 33;
-  private static final int METHODID_UPDATE_MUTE_CONFIG = 34;
-  private static final int METHODID_UPDATE_NOTIFICATION_CONFIG = 35;
-  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 36;
-  private static final int METHODID_UPDATE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE = 37;
-  private static final int METHODID_UPDATE_SOURCE = 38;
-  private static final int METHODID_UPDATE_SECURITY_MARKS = 39;
-  private static final int METHODID_CREATE_BIG_QUERY_EXPORT = 40;
-  private static final int METHODID_DELETE_BIG_QUERY_EXPORT = 41;
-  private static final int METHODID_UPDATE_BIG_QUERY_EXPORT = 42;
-  private static final int METHODID_LIST_BIG_QUERY_EXPORTS = 43;
+  private static final int METHODID_SIMULATE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE = 32;
+  private static final int METHODID_UPDATE_EXTERNAL_SYSTEM = 33;
+  private static final int METHODID_UPDATE_FINDING = 34;
+  private static final int METHODID_UPDATE_MUTE_CONFIG = 35;
+  private static final int METHODID_UPDATE_NOTIFICATION_CONFIG = 36;
+  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 37;
+  private static final int METHODID_UPDATE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE = 38;
+  private static final int METHODID_UPDATE_SOURCE = 39;
+  private static final int METHODID_UPDATE_SECURITY_MARKS = 40;
+  private static final int METHODID_CREATE_BIG_QUERY_EXPORT = 41;
+  private static final int METHODID_DELETE_BIG_QUERY_EXPORT = 42;
+  private static final int METHODID_UPDATE_BIG_QUERY_EXPORT = 43;
+  private static final int METHODID_LIST_BIG_QUERY_EXPORTS = 44;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5424,6 +5575,16 @@ public final class SecurityCenterGrpc {
           serviceImpl.testIamPermissions(
               (com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SIMULATE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE:
+          serviceImpl.simulateSecurityHealthAnalyticsCustomModule(
+              (com.google.cloud.securitycenter.v1
+                      .SimulateSecurityHealthAnalyticsCustomModuleRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycenter.v1
+                          .SimulateSecurityHealthAnalyticsCustomModuleResponse>)
                   responseObserver);
           break;
         case METHODID_UPDATE_EXTERNAL_SYSTEM:
@@ -5742,6 +5903,15 @@ public final class SecurityCenterGrpc {
                     com.google.iam.v1.TestIamPermissionsResponse>(
                     service, METHODID_TEST_IAM_PERMISSIONS)))
         .addMethod(
+            getSimulateSecurityHealthAnalyticsCustomModuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1
+                        .SimulateSecurityHealthAnalyticsCustomModuleRequest,
+                    com.google.cloud.securitycenter.v1
+                        .SimulateSecurityHealthAnalyticsCustomModuleResponse>(
+                    service, METHODID_SIMULATE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE)))
+        .addMethod(
             getUpdateExternalSystemMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -5850,9 +6020,9 @@ public final class SecurityCenterGrpc {
   private static final class SecurityCenterMethodDescriptorSupplier
       extends SecurityCenterBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SecurityCenterMethodDescriptorSupplier(String methodName) {
+    SecurityCenterMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -5906,6 +6076,7 @@ public final class SecurityCenterGrpc {
                       .addMethod(getSetMuteMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getSimulateSecurityHealthAnalyticsCustomModuleMethod())
                       .addMethod(getUpdateExternalSystemMethod())
                       .addMethod(getUpdateFindingMethod())
                       .addMethod(getUpdateMuteConfigMethod())

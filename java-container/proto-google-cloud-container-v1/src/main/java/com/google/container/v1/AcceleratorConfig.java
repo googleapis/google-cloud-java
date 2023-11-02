@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AcceleratorConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -245,6 +240,63 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         : gpuSharingConfig_;
   }
 
+  public static final int GPU_DRIVER_INSTALLATION_CONFIG_FIELD_NUMBER = 6;
+  private com.google.container.v1.GPUDriverInstallationConfig gpuDriverInstallationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto installation of GPU driver.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+   * </code>
+   *
+   * @return Whether the gpuDriverInstallationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGpuDriverInstallationConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto installation of GPU driver.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+   * </code>
+   *
+   * @return The gpuDriverInstallationConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.GPUDriverInstallationConfig getGpuDriverInstallationConfig() {
+    return gpuDriverInstallationConfig_ == null
+        ? com.google.container.v1.GPUDriverInstallationConfig.getDefaultInstance()
+        : gpuDriverInstallationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto installation of GPU driver.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.GPUDriverInstallationConfigOrBuilder
+      getGpuDriverInstallationConfigOrBuilder() {
+    return gpuDriverInstallationConfig_ == null
+        ? com.google.container.v1.GPUDriverInstallationConfig.getDefaultInstance()
+        : gpuDriverInstallationConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -271,6 +323,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getGpuSharingConfig());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getGpuDriverInstallationConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -291,6 +346,11 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getGpuSharingConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, getGpuDriverInstallationConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -315,6 +375,11 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (hasGpuSharingConfig()) {
       if (!getGpuSharingConfig().equals(other.getGpuSharingConfig())) return false;
     }
+    if (hasGpuDriverInstallationConfig() != other.hasGpuDriverInstallationConfig()) return false;
+    if (hasGpuDriverInstallationConfig()) {
+      if (!getGpuDriverInstallationConfig().equals(other.getGpuDriverInstallationConfig()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -335,6 +400,10 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (hasGpuSharingConfig()) {
       hash = (37 * hash) + GPU_SHARING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getGpuSharingConfig().hashCode();
+    }
+    if (hasGpuDriverInstallationConfig()) {
+      hash = (37 * hash) + GPU_DRIVER_INSTALLATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGpuDriverInstallationConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -477,6 +546,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getGpuSharingConfigFieldBuilder();
+        getGpuDriverInstallationConfigFieldBuilder();
       }
     }
 
@@ -491,6 +561,11 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       if (gpuSharingConfigBuilder_ != null) {
         gpuSharingConfigBuilder_.dispose();
         gpuSharingConfigBuilder_ = null;
+      }
+      gpuDriverInstallationConfig_ = null;
+      if (gpuDriverInstallationConfigBuilder_ != null) {
+        gpuDriverInstallationConfigBuilder_.dispose();
+        gpuDriverInstallationConfigBuilder_ = null;
       }
       return this;
     }
@@ -542,6 +617,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         result.gpuSharingConfig_ =
             gpuSharingConfigBuilder_ == null ? gpuSharingConfig_ : gpuSharingConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.gpuDriverInstallationConfig_ =
+            gpuDriverInstallationConfigBuilder_ == null
+                ? gpuDriverInstallationConfig_
+                : gpuDriverInstallationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -607,6 +689,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       if (other.hasGpuSharingConfig()) {
         mergeGpuSharingConfig(other.getGpuSharingConfig());
       }
+      if (other.hasGpuDriverInstallationConfig()) {
+        mergeGpuDriverInstallationConfig(other.getGpuDriverInstallationConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -658,6 +743,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getGpuDriverInstallationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1139,6 +1231,213 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         gpuSharingConfig_ = null;
       }
       return gpuSharingConfigBuilder_;
+    }
+
+    private com.google.container.v1.GPUDriverInstallationConfig gpuDriverInstallationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GPUDriverInstallationConfig,
+            com.google.container.v1.GPUDriverInstallationConfig.Builder,
+            com.google.container.v1.GPUDriverInstallationConfigOrBuilder>
+        gpuDriverInstallationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto installation of GPU driver.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+     * </code>
+     *
+     * @return Whether the gpuDriverInstallationConfig field is set.
+     */
+    public boolean hasGpuDriverInstallationConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto installation of GPU driver.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+     * </code>
+     *
+     * @return The gpuDriverInstallationConfig.
+     */
+    public com.google.container.v1.GPUDriverInstallationConfig getGpuDriverInstallationConfig() {
+      if (gpuDriverInstallationConfigBuilder_ == null) {
+        return gpuDriverInstallationConfig_ == null
+            ? com.google.container.v1.GPUDriverInstallationConfig.getDefaultInstance()
+            : gpuDriverInstallationConfig_;
+      } else {
+        return gpuDriverInstallationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto installation of GPU driver.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+     * </code>
+     */
+    public Builder setGpuDriverInstallationConfig(
+        com.google.container.v1.GPUDriverInstallationConfig value) {
+      if (gpuDriverInstallationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gpuDriverInstallationConfig_ = value;
+      } else {
+        gpuDriverInstallationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto installation of GPU driver.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+     * </code>
+     */
+    public Builder setGpuDriverInstallationConfig(
+        com.google.container.v1.GPUDriverInstallationConfig.Builder builderForValue) {
+      if (gpuDriverInstallationConfigBuilder_ == null) {
+        gpuDriverInstallationConfig_ = builderForValue.build();
+      } else {
+        gpuDriverInstallationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto installation of GPU driver.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+     * </code>
+     */
+    public Builder mergeGpuDriverInstallationConfig(
+        com.google.container.v1.GPUDriverInstallationConfig value) {
+      if (gpuDriverInstallationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && gpuDriverInstallationConfig_ != null
+            && gpuDriverInstallationConfig_
+                != com.google.container.v1.GPUDriverInstallationConfig.getDefaultInstance()) {
+          getGpuDriverInstallationConfigBuilder().mergeFrom(value);
+        } else {
+          gpuDriverInstallationConfig_ = value;
+        }
+      } else {
+        gpuDriverInstallationConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto installation of GPU driver.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+     * </code>
+     */
+    public Builder clearGpuDriverInstallationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      gpuDriverInstallationConfig_ = null;
+      if (gpuDriverInstallationConfigBuilder_ != null) {
+        gpuDriverInstallationConfigBuilder_.dispose();
+        gpuDriverInstallationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto installation of GPU driver.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+     * </code>
+     */
+    public com.google.container.v1.GPUDriverInstallationConfig.Builder
+        getGpuDriverInstallationConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getGpuDriverInstallationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto installation of GPU driver.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+     * </code>
+     */
+    public com.google.container.v1.GPUDriverInstallationConfigOrBuilder
+        getGpuDriverInstallationConfigOrBuilder() {
+      if (gpuDriverInstallationConfigBuilder_ != null) {
+        return gpuDriverInstallationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gpuDriverInstallationConfig_ == null
+            ? com.google.container.v1.GPUDriverInstallationConfig.getDefaultInstance()
+            : gpuDriverInstallationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for auto installation of GPU driver.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GPUDriverInstallationConfig,
+            com.google.container.v1.GPUDriverInstallationConfig.Builder,
+            com.google.container.v1.GPUDriverInstallationConfigOrBuilder>
+        getGpuDriverInstallationConfigFieldBuilder() {
+      if (gpuDriverInstallationConfigBuilder_ == null) {
+        gpuDriverInstallationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.GPUDriverInstallationConfig,
+                com.google.container.v1.GPUDriverInstallationConfig.Builder,
+                com.google.container.v1.GPUDriverInstallationConfigOrBuilder>(
+                getGpuDriverInstallationConfig(), getParentForChildren(), isClean());
+        gpuDriverInstallationConfig_ = null;
+      }
+      return gpuDriverInstallationConfigBuilder_;
     }
 
     @java.lang.Override

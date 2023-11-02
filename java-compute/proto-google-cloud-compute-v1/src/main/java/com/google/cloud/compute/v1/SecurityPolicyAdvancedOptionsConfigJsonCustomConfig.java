@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
   }
 
   private SecurityPolicyAdvancedOptionsConfigJsonCustomConfig() {
-    contentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    contentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SecurityPolicyAdvancedOptionsConfigJsonCustomConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,7 +67,8 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
   public static final int CONTENT_TYPES_FIELD_NUMBER = 17428787;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList contentTypes_;
+  private com.google.protobuf.LazyStringArrayList contentTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -348,8 +344,7 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      contentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      contentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -381,7 +376,6 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
         buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig result =
           new com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -389,18 +383,13 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        contentTypes_ = contentTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.contentTypes_ = contentTypes_;
-    }
-
     private void buildPartial0(
         com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        contentTypes_.makeImmutable();
+        result.contentTypes_ = contentTypes_;
+      }
     }
 
     @java.lang.Override
@@ -458,7 +447,7 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
       if (!other.contentTypes_.isEmpty()) {
         if (contentTypes_.isEmpty()) {
           contentTypes_ = other.contentTypes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureContentTypesIsMutable();
           contentTypes_.addAll(other.contentTypes_);
@@ -517,14 +506,14 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList contentTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList contentTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureContentTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!contentTypes_.isModifiable()) {
         contentTypes_ = new com.google.protobuf.LazyStringArrayList(contentTypes_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -538,7 +527,8 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
      * @return A list containing the contentTypes.
      */
     public com.google.protobuf.ProtocolStringList getContentTypesList() {
-      return contentTypes_.getUnmodifiableView();
+      contentTypes_.makeImmutable();
+      return contentTypes_;
     }
     /**
      *
@@ -603,6 +593,7 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
       }
       ensureContentTypesIsMutable();
       contentTypes_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -624,6 +615,7 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
       }
       ensureContentTypesIsMutable();
       contentTypes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,6 +634,7 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
     public Builder addAllContentTypes(java.lang.Iterable<java.lang.String> values) {
       ensureContentTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contentTypes_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -657,8 +650,9 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
      * @return This builder for chaining.
      */
     public Builder clearContentTypes() {
-      contentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      contentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -681,6 +675,7 @@ public final class SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
       checkByteStringIsUtf8(value);
       ensureContentTypesIsMutable();
       contentTypes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

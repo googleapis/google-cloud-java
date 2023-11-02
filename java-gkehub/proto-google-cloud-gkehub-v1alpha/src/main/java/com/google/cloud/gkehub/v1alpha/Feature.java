@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Feature();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -393,11 +388,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Membership-specific configuration for this Feature. If this Feature does
    * not support any per-Membership configuration, this field may be unused.
+   *
    * The keys indicate which Membership the configuration is for, in the form:
+   *
    *     projects/{p}/locations/{l}/memberships/{m}
+   *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
    * project.
+   *
    * {p} will always be returned as the project number, but the project ID is
    * also accepted during input. If the same Membership is specified in the map
    * twice (using the project ID form, and the project number form), exactly
@@ -430,11 +429,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Membership-specific configuration for this Feature. If this Feature does
    * not support any per-Membership configuration, this field may be unused.
+   *
    * The keys indicate which Membership the configuration is for, in the form:
+   *
    *     projects/{p}/locations/{l}/memberships/{m}
+   *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
    * project.
+   *
    * {p} will always be returned as the project number, but the project ID is
    * also accepted during input. If the same Membership is specified in the map
    * twice (using the project ID form, and the project number form), exactly
@@ -458,11 +461,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Membership-specific configuration for this Feature. If this Feature does
    * not support any per-Membership configuration, this field may be unused.
+   *
    * The keys indicate which Membership the configuration is for, in the form:
+   *
    *     projects/{p}/locations/{l}/memberships/{m}
+   *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
    * project.
+   *
    * {p} will always be returned as the project number, but the project ID is
    * also accepted during input. If the same Membership is specified in the map
    * twice (using the project ID form, and the project number form), exactly
@@ -494,11 +501,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Membership-specific configuration for this Feature. If this Feature does
    * not support any per-Membership configuration, this field may be unused.
+   *
    * The keys indicate which Membership the configuration is for, in the form:
+   *
    *     projects/{p}/locations/{l}/memberships/{m}
+   *
    * Where {p} is the project, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} WILL match the Feature's
    * project.
+   *
    * {p} will always be returned as the project number, but the project ID is
    * also accepted during input. If the same Membership is specified in the map
    * twice (using the project ID form, and the project number form), exactly
@@ -623,8 +634,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Membership-specific Feature status. If this Feature does
    * report any per-Membership status, this field may be unused.
+   *
    * The keys indicate which Membership the state is for, in the form:
+   *
    *     projects/{p}/locations/{l}/memberships/{m}
+   *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
    * project number.
@@ -654,8 +668,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Membership-specific Feature status. If this Feature does
    * report any per-Membership status, this field may be unused.
+   *
    * The keys indicate which Membership the state is for, in the form:
+   *
    *     projects/{p}/locations/{l}/memberships/{m}
+   *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
    * project number.
@@ -676,8 +693,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Membership-specific Feature status. If this Feature does
    * report any per-Membership status, this field may be unused.
+   *
    * The keys indicate which Membership the state is for, in the form:
+   *
    *     projects/{p}/locations/{l}/memberships/{m}
+   *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
    * project number.
@@ -706,8 +726,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Membership-specific Feature status. If this Feature does
    * report any per-Membership status, this field may be unused.
+   *
    * The keys indicate which Membership the state is for, in the form:
+   *
    *     projects/{p}/locations/{l}/memberships/{m}
+   *
    * Where {p} is the project number, {l} is a valid location and {m} is a valid
    * Membership in this project at that location. {p} MUST match the Feature's
    * project number.
@@ -2279,11 +2302,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Membership-specific configuration for this Feature. If this Feature does
      * not support any per-Membership configuration, this field may be unused.
+     *
      * The keys indicate which Membership the configuration is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
      * project.
+     *
      * {p} will always be returned as the project number, but the project ID is
      * also accepted during input. If the same Membership is specified in the map
      * twice (using the project ID form, and the project number form), exactly
@@ -2316,11 +2343,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Membership-specific configuration for this Feature. If this Feature does
      * not support any per-Membership configuration, this field may be unused.
+     *
      * The keys indicate which Membership the configuration is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
      * project.
+     *
      * {p} will always be returned as the project number, but the project ID is
      * also accepted during input. If the same Membership is specified in the map
      * twice (using the project ID form, and the project number form), exactly
@@ -2344,11 +2375,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Membership-specific configuration for this Feature. If this Feature does
      * not support any per-Membership configuration, this field may be unused.
+     *
      * The keys indicate which Membership the configuration is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
      * project.
+     *
      * {p} will always be returned as the project number, but the project ID is
      * also accepted during input. If the same Membership is specified in the map
      * twice (using the project ID form, and the project number form), exactly
@@ -2380,11 +2415,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Membership-specific configuration for this Feature. If this Feature does
      * not support any per-Membership configuration, this field may be unused.
+     *
      * The keys indicate which Membership the configuration is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
      * project.
+     *
      * {p} will always be returned as the project number, but the project ID is
      * also accepted during input. If the same Membership is specified in the map
      * twice (using the project ID form, and the project number form), exactly
@@ -2422,11 +2461,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Membership-specific configuration for this Feature. If this Feature does
      * not support any per-Membership configuration, this field may be unused.
+     *
      * The keys indicate which Membership the configuration is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
      * project.
+     *
      * {p} will always be returned as the project number, but the project ID is
      * also accepted during input. If the same Membership is specified in the map
      * twice (using the project ID form, and the project number form), exactly
@@ -2459,11 +2502,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Membership-specific configuration for this Feature. If this Feature does
      * not support any per-Membership configuration, this field may be unused.
+     *
      * The keys indicate which Membership the configuration is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
      * project.
+     *
      * {p} will always be returned as the project number, but the project ID is
      * also accepted during input. If the same Membership is specified in the map
      * twice (using the project ID form, and the project number form), exactly
@@ -2494,11 +2541,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Membership-specific configuration for this Feature. If this Feature does
      * not support any per-Membership configuration, this field may be unused.
+     *
      * The keys indicate which Membership the configuration is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} WILL match the Feature's
      * project.
+     *
      * {p} will always be returned as the project number, but the project ID is
      * also accepted during input. If the same Membership is specified in the map
      * twice (using the project ID form, and the project number form), exactly
@@ -2760,8 +2811,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Membership-specific Feature status. If this Feature does
      * report any per-Membership status, this field may be unused.
+     *
      * The keys indicate which Membership the state is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
      * project number.
@@ -2791,8 +2845,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Membership-specific Feature status. If this Feature does
      * report any per-Membership status, this field may be unused.
+     *
      * The keys indicate which Membership the state is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
      * project number.
@@ -2813,8 +2870,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Membership-specific Feature status. If this Feature does
      * report any per-Membership status, this field may be unused.
+     *
      * The keys indicate which Membership the state is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
      * project number.
@@ -2843,8 +2903,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Membership-specific Feature status. If this Feature does
      * report any per-Membership status, this field may be unused.
+     *
      * The keys indicate which Membership the state is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
      * project number.
@@ -2879,8 +2942,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Membership-specific Feature status. If this Feature does
      * report any per-Membership status, this field may be unused.
+     *
      * The keys indicate which Membership the state is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
      * project number.
@@ -2910,8 +2976,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Membership-specific Feature status. If this Feature does
      * report any per-Membership status, this field may be unused.
+     *
      * The keys indicate which Membership the state is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
      * project number.
@@ -2939,8 +3008,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Membership-specific Feature status. If this Feature does
      * report any per-Membership status, this field may be unused.
+     *
      * The keys indicate which Membership the state is for, in the form:
+     *
      *     projects/{p}/locations/{l}/memberships/{m}
+     *
      * Where {p} is the project number, {l} is a valid location and {m} is a valid
      * Membership in this project at that location. {p} MUST match the Feature's
      * project number.

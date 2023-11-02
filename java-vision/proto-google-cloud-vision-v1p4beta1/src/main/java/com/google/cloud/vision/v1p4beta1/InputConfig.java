@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InputConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -127,6 +122,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * File content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
+   *
    * Currently, this field only works for BatchAnnotateFiles requests. It does
    * not work for AsyncBatchAnnotateFiles requests.
    * </pre>
@@ -779,6 +775,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * File content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * Currently, this field only works for BatchAnnotateFiles requests. It does
      * not work for AsyncBatchAnnotateFiles requests.
      * </pre>
@@ -798,6 +795,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * File content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * Currently, this field only works for BatchAnnotateFiles requests. It does
      * not work for AsyncBatchAnnotateFiles requests.
      * </pre>
@@ -823,6 +821,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * File content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * Currently, this field only works for BatchAnnotateFiles requests. It does
      * not work for AsyncBatchAnnotateFiles requests.
      * </pre>

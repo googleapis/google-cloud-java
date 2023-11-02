@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPa
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupBillableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
@@ -402,6 +404,21 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
         .deleteChannelPartnerRepricingConfigSettings();
   }
 
+  /** Returns the object with the settings used for calls to listSkuGroups. */
+  public PagedCallSettings<ListSkuGroupsRequest, ListSkuGroupsResponse, ListSkuGroupsPagedResponse>
+      listSkuGroupsSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings()).listSkuGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSkuGroupBillableSkus. */
+  public PagedCallSettings<
+          ListSkuGroupBillableSkusRequest,
+          ListSkuGroupBillableSkusResponse,
+          ListSkuGroupBillableSkusPagedResponse>
+      listSkuGroupBillableSkusSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings()).listSkuGroupBillableSkusSettings();
+  }
+
   /** Returns the object with the settings used for calls to lookupOffer. */
   public UnaryCallSettings<LookupOfferRequest, Offer> lookupOfferSettings() {
     return ((CloudChannelServiceStubSettings) getStubSettings()).lookupOfferSettings();
@@ -439,6 +456,14 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
           ListPurchasableOffersPagedResponse>
       listPurchasableOffersSettings() {
     return ((CloudChannelServiceStubSettings) getStubSettings()).listPurchasableOffersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryEligibleBillingAccounts. */
+  public UnaryCallSettings<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .queryEligibleBillingAccountsSettings();
   }
 
   /** Returns the object with the settings used for calls to registerSubscriber. */
@@ -891,6 +916,22 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
       return getStubSettingsBuilder().deleteChannelPartnerRepricingConfigSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listSkuGroups. */
+    public PagedCallSettings.Builder<
+            ListSkuGroupsRequest, ListSkuGroupsResponse, ListSkuGroupsPagedResponse>
+        listSkuGroupsSettings() {
+      return getStubSettingsBuilder().listSkuGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSkuGroupBillableSkus. */
+    public PagedCallSettings.Builder<
+            ListSkuGroupBillableSkusRequest,
+            ListSkuGroupBillableSkusResponse,
+            ListSkuGroupBillableSkusPagedResponse>
+        listSkuGroupBillableSkusSettings() {
+      return getStubSettingsBuilder().listSkuGroupBillableSkusSettings();
+    }
+
     /** Returns the builder for the settings used for calls to lookupOffer. */
     public UnaryCallSettings.Builder<LookupOfferRequest, Offer> lookupOfferSettings() {
       return getStubSettingsBuilder().lookupOfferSettings();
@@ -931,6 +972,13 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
             ListPurchasableOffersPagedResponse>
         listPurchasableOffersSettings() {
       return getStubSettingsBuilder().listPurchasableOffersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryEligibleBillingAccounts. */
+    public UnaryCallSettings.Builder<
+            QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+        queryEligibleBillingAccountsSettings() {
+      return getStubSettingsBuilder().queryEligibleBillingAccountsSettings();
     }
 
     /** Returns the builder for the settings used for calls to registerSubscriber. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface UpdateNfsShareRequestOrBuilder
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateNfsShareRequestOrBuilder
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateNfsShareRequestOrBuilder
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>
@@ -77,6 +80,7 @@ public interface UpdateNfsShareRequestOrBuilder
    * The list of fields to update.
    * The only currently supported fields are:
    *   `labels`
+   *   `allowed_clients`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -91,6 +95,7 @@ public interface UpdateNfsShareRequestOrBuilder
    * The list of fields to update.
    * The only currently supported fields are:
    *   `labels`
+   *   `allowed_clients`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -105,6 +110,7 @@ public interface UpdateNfsShareRequestOrBuilder
    * The list of fields to update.
    * The only currently supported fields are:
    *   `labels`
+   *   `allowed_clients`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
 
   private GenerateIdTokenRequest() {
     name_ = "";
-    delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    delegates_ = com.google.protobuf.LazyStringArrayList.emptyList();
     audience_ = "";
   }
 
@@ -39,11 +39,6 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GenerateIdTokenRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -125,7 +120,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
   public static final int DELEGATES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList delegates_;
+  private com.google.protobuf.LazyStringArrayList delegates_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -136,6 +132,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.
@@ -158,6 +155,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.
@@ -180,6 +178,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.
@@ -203,6 +202,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.
@@ -515,8 +515,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      delegates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       audience_ = "";
       includeEmail_ = false;
       return this;
@@ -546,7 +545,6 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest buildPartial() {
       com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest result =
           new com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -554,19 +552,14 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        delegates_ = delegates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.delegates_ = delegates_;
-    }
-
     private void buildPartial0(com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        delegates_.makeImmutable();
+        result.delegates_ = delegates_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.audience_ = audience_;
@@ -630,7 +623,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
       if (!other.delegates_.isEmpty()) {
         if (delegates_.isEmpty()) {
           delegates_ = other.delegates_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureDelegatesIsMutable();
           delegates_.addAll(other.delegates_);
@@ -846,14 +839,14 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.protobuf.LazyStringList delegates_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList delegates_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDelegatesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!delegates_.isModifiable()) {
         delegates_ = new com.google.protobuf.LazyStringArrayList(delegates_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -865,6 +858,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -875,7 +869,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * @return A list containing the delegates.
      */
     public com.google.protobuf.ProtocolStringList getDelegatesList() {
-      return delegates_.getUnmodifiableView();
+      delegates_.makeImmutable();
+      return delegates_;
     }
     /**
      *
@@ -887,6 +882,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -909,6 +905,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -932,6 +929,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -955,6 +953,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -972,6 +971,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
       }
       ensureDelegatesIsMutable();
       delegates_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -985,6 +985,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -1001,6 +1002,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
       }
       ensureDelegatesIsMutable();
       delegates_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1014,6 +1016,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -1027,6 +1030,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
     public Builder addAllDelegates(java.lang.Iterable<java.lang.String> values) {
       ensureDelegatesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, delegates_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1040,6 +1044,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -1050,8 +1055,9 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDelegates() {
-      delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      delegates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1065,6 +1071,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -1082,6 +1089,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureDelegatesIsMutable();
       delegates_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

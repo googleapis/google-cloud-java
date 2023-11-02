@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface GetAuthorizationRequestOrBuilder
    * <pre>
    * Required. Name of the project for which to get the Google Workspace Add-ons
    * authorization information.
+   *
    * Example: `projects/my_project/authorization`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface GetAuthorizationRequestOrBuilder
    * <pre>
    * Required. Name of the project for which to get the Google Workspace Add-ons
    * authorization information.
+   *
    * Example: `projects/my_project/authorization`.
    * </pre>
    *

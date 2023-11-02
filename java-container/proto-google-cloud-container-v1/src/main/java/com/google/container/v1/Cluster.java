@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     clusterIpv4Cidr_ = "";
     subnetwork_ = "";
     nodePools_ = java.util.Collections.emptyList();
-    locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     labelFingerprint_ = "";
     selfLink_ = "";
     zone_ = "";
@@ -58,7 +58,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     status_ = 0;
     statusMessage_ = "";
     servicesIpv4Cidr_ = "";
-    instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
     expireTime_ = "";
     location_ = "";
     tpuIpv4CidrBlock_ = "";
@@ -71,11 +71,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Cluster();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -370,6 +365,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * The name of this cluster. The name must be unique within this project
    * and location (e.g. zone or region), and can be up to 40 characters with
    * the following restrictions:
+   *
    * * Lowercase letters, numbers, and hyphens only.
    * * Must start with a letter.
    * * Must end with a number or a letter.
@@ -398,6 +394,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * The name of this cluster. The name must be unique within this project
    * and location (e.g. zone or region), and can be up to 40 characters with
    * the following restrictions:
+   *
    * * Lowercase letters, numbers, and hyphens only.
    * * Must start with a letter.
    * * Must end with a number or a letter.
@@ -485,13 +482,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * "node_pool" object, since this configuration (along with the
    * "node_config") will be used to create a "NodePool" object with an
    * auto-generated name. Do not use this and a node_pool at the same time.
+   *
    * This field is deprecated, use node_pool.initial_node_count instead.
    * </pre>
    *
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1566
+   *     google/container/v1/cluster_service.proto;l=1671
    * @return The initialNodeCount.
    */
   @java.lang.Override
@@ -514,6 +512,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * For responses, this field will be populated with the node configuration of
    * the first node pool. (For configuration of each node pool, see
    * `node_pool.config`)
+   *
    * If unspecified, the defaults are used.
    * This field is deprecated, use node_pool.config instead.
    * </pre>
@@ -521,7 +520,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1579
+   *     google/container/v1/cluster_service.proto;l=1684
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Override
@@ -541,6 +540,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * For responses, this field will be populated with the node configuration of
    * the first node pool. (For configuration of each node pool, see
    * `node_pool.config`)
+   *
    * If unspecified, the defaults are used.
    * This field is deprecated, use node_pool.config instead.
    * </pre>
@@ -548,7 +548,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1579
+   *     google/container/v1/cluster_service.proto;l=1684
    * @return The nodeConfig.
    */
   @java.lang.Override
@@ -570,6 +570,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * For responses, this field will be populated with the node configuration of
    * the first node pool. (For configuration of each node pool, see
    * `node_pool.config`)
+   *
    * If unspecified, the defaults are used.
    * This field is deprecated, use node_pool.config instead.
    * </pre>
@@ -656,11 +657,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
+   *
    * * `logging.googleapis.com/kubernetes` - The Cloud Logging
    * service with a Kubernetes-native resource model
    * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
    *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
+   *
    * If left as an empty string,`logging.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
@@ -687,11 +690,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
+   *
    * * `logging.googleapis.com/kubernetes` - The Cloud Logging
    * service with a Kubernetes-native resource model
    * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
    *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
+   *
    * If left as an empty string,`logging.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
@@ -723,11 +728,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
+   *
    * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
    * * `none` - No metrics will be exported from the cluster.
+   *
    * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
@@ -754,11 +761,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
+   *
    * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
    * * `none` - No metrics will be exported from the cluster.
+   *
    * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
@@ -1083,7 +1092,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   public static final int LOCATIONS_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList locations_;
+  private com.google.protobuf.LazyStringArrayList locations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1091,9 +1101,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * are not specified during node pool creation.
+   *
    * Warning: changing cluster locations will update the
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * of all node pools and will result in nodes being added and/or removed.
@@ -1113,9 +1125,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * are not specified during node pool creation.
+   *
    * Warning: changing cluster locations will update the
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * of all node pools and will result in nodes being added and/or removed.
@@ -1135,9 +1149,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * are not specified during node pool creation.
+   *
    * Warning: changing cluster locations will update the
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * of all node pools and will result in nodes being added and/or removed.
@@ -1158,9 +1174,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * are not specified during node pool creation.
+   *
    * Warning: changing cluster locations will update the
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * of all node pools and will result in nodes being added and/or removed.
@@ -2133,7 +2151,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Release channel configuration.
+   * Release channel configuration. If left unspecified on cluster creation and
+   * a version is specified, the cluster is enrolled in the most mature release
+   * channel where the version is available (first checking STABLE, then
+   * REGULAR, and finally RAPID). Otherwise, if no release channel
+   * configuration and no version is specified, the cluster is enrolled in the
+   * REGULAR channel with its default version.
    * </pre>
    *
    * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -2148,7 +2171,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Release channel configuration.
+   * Release channel configuration. If left unspecified on cluster creation and
+   * a version is specified, the cluster is enrolled in the most mature release
+   * channel where the version is available (first checking STABLE, then
+   * REGULAR, and finally RAPID). Otherwise, if no release channel
+   * configuration and no version is specified, the cluster is enrolled in the
+   * REGULAR channel with its default version.
    * </pre>
    *
    * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -2165,7 +2193,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Release channel configuration.
+   * Release channel configuration. If left unspecified on cluster creation and
+   * a version is specified, the cluster is enrolled in the most mature release
+   * channel where the version is available (first checking STABLE, then
+   * REGULAR, and finally RAPID). Otherwise, if no release channel
+   * configuration and no version is specified, the cluster is enrolled in the
+   * REGULAR channel with its default version.
    * </pre>
    *
    * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -2555,7 +2588,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 101 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1745
+   *     google/container/v1/cluster_service.proto;l=1855
    * @return The zone.
    */
   @java.lang.Override
@@ -2583,7 +2616,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 101 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1745
+   *     google/container/v1/cluster_service.proto;l=1855
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -2611,6 +2644,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * [Output only] The IP address of this cluster's master endpoint.
    * The endpoint can be accessed from the internet at
    * `https://username:password&#64;endpoint/`.
+   *
    * See the `masterAuth` property of this resource for username and
    * password information.
    * </pre>
@@ -2638,6 +2672,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * [Output only] The IP address of this cluster's master endpoint.
    * The endpoint can be accessed from the internet at
    * `https://username:password&#64;endpoint/`.
+   *
    * See the `masterAuth` property of this resource for username and
    * password information.
    * </pre>
@@ -2671,8 +2706,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -2704,8 +2741,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -2799,7 +2838,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string current_node_version = 105 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1778
+   *     google/container/v1/cluster_service.proto;l=1888
    * @return The currentNodeVersion.
    */
   @java.lang.Override
@@ -2829,7 +2868,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string current_node_version = 105 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1778
+   *     google/container/v1/cluster_service.proto;l=1888
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Override
@@ -2950,7 +2989,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1790
+   *     google/container/v1/cluster_service.proto;l=1900
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -2978,7 +3017,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1790
+   *     google/container/v1/cluster_service.proto;l=1900
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -3078,7 +3117,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   public static final int INSTANCE_GROUP_URLS_FIELD_NUMBER = 111;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList instanceGroupUrls_;
+  private com.google.protobuf.LazyStringArrayList instanceGroupUrls_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -3089,7 +3129,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1806
+   *     google/container/v1/cluster_service.proto;l=1916
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -3106,7 +3146,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1806
+   *     google/container/v1/cluster_service.proto;l=1916
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -3123,7 +3163,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1806
+   *     google/container/v1/cluster_service.proto;l=1916
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -3141,7 +3181,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1806
+   *     google/container/v1/cluster_service.proto;l=1916
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -3163,7 +3203,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>int32 current_node_count = 112 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1810
+   *     google/container/v1/cluster_service.proto;l=1920
    * @return The currentNodeCount.
    */
   @java.lang.Override
@@ -3832,6 +3872,157 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return fleet_ == null ? com.google.container.v1.Fleet.getDefaultInstance() : fleet_;
   }
 
+  public static final int SECURITY_POSTURE_CONFIG_FIELD_NUMBER = 145;
+  private com.google.container.v1.SecurityPostureConfig securityPostureConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+   *
+   * @return Whether the securityPostureConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecurityPostureConfig() {
+    return securityPostureConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+   *
+   * @return The securityPostureConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.SecurityPostureConfig getSecurityPostureConfig() {
+    return securityPostureConfig_ == null
+        ? com.google.container.v1.SecurityPostureConfig.getDefaultInstance()
+        : securityPostureConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.SecurityPostureConfigOrBuilder
+      getSecurityPostureConfigOrBuilder() {
+    return securityPostureConfig_ == null
+        ? com.google.container.v1.SecurityPostureConfig.getDefaultInstance()
+        : securityPostureConfig_;
+  }
+
+  public static final int ENABLE_K8S_BETA_APIS_FIELD_NUMBER = 143;
+  private com.google.container.v1.K8sBetaAPIConfig enableK8SBetaApis_;
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs Config
+   * </pre>
+   *
+   * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+   *
+   * @return Whether the enableK8sBetaApis field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableK8SBetaApis() {
+    return enableK8SBetaApis_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs Config
+   * </pre>
+   *
+   * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+   *
+   * @return The enableK8sBetaApis.
+   */
+  @java.lang.Override
+  public com.google.container.v1.K8sBetaAPIConfig getEnableK8SBetaApis() {
+    return enableK8SBetaApis_ == null
+        ? com.google.container.v1.K8sBetaAPIConfig.getDefaultInstance()
+        : enableK8SBetaApis_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs Config
+   * </pre>
+   *
+   * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.K8sBetaAPIConfigOrBuilder getEnableK8SBetaApisOrBuilder() {
+    return enableK8SBetaApis_ == null
+        ? com.google.container.v1.K8sBetaAPIConfig.getDefaultInstance()
+        : enableK8SBetaApis_;
+  }
+
+  public static final int ENTERPRISE_CONFIG_FIELD_NUMBER = 149;
+  private com.google.container.v1.EnterpriseConfig enterpriseConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+   *
+   * @return Whether the enterpriseConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnterpriseConfig() {
+    return enterpriseConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+   *
+   * @return The enterpriseConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.EnterpriseConfig getEnterpriseConfig() {
+    return enterpriseConfig_ == null
+        ? com.google.container.v1.EnterpriseConfig.getDefaultInstance()
+        : enterpriseConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.EnterpriseConfigOrBuilder getEnterpriseConfigOrBuilder() {
+    return enterpriseConfig_ == null
+        ? com.google.container.v1.EnterpriseConfig.getDefaultInstance()
+        : enterpriseConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4036,6 +4227,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (fleet_ != null) {
       output.writeMessage(140, getFleet());
+    }
+    if (enableK8SBetaApis_ != null) {
+      output.writeMessage(143, getEnableK8SBetaApis());
+    }
+    if (securityPostureConfig_ != null) {
+      output.writeMessage(145, getSecurityPostureConfig());
+    }
+    if (enterpriseConfig_ != null) {
+      output.writeMessage(149, getEnterpriseConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4270,6 +4470,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (fleet_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(140, getFleet());
     }
+    if (enableK8SBetaApis_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(143, getEnableK8SBetaApis());
+    }
+    if (securityPostureConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(145, getSecurityPostureConfig());
+    }
+    if (enterpriseConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(149, getEnterpriseConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4445,6 +4655,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasFleet() != other.hasFleet()) return false;
     if (hasFleet()) {
       if (!getFleet().equals(other.getFleet())) return false;
+    }
+    if (hasSecurityPostureConfig() != other.hasSecurityPostureConfig()) return false;
+    if (hasSecurityPostureConfig()) {
+      if (!getSecurityPostureConfig().equals(other.getSecurityPostureConfig())) return false;
+    }
+    if (hasEnableK8SBetaApis() != other.hasEnableK8SBetaApis()) return false;
+    if (hasEnableK8SBetaApis()) {
+      if (!getEnableK8SBetaApis().equals(other.getEnableK8SBetaApis())) return false;
+    }
+    if (hasEnterpriseConfig() != other.hasEnterpriseConfig()) return false;
+    if (hasEnterpriseConfig()) {
+      if (!getEnterpriseConfig().equals(other.getEnterpriseConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -4657,6 +4879,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FLEET_FIELD_NUMBER;
       hash = (53 * hash) + getFleet().hashCode();
     }
+    if (hasSecurityPostureConfig()) {
+      hash = (37 * hash) + SECURITY_POSTURE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSecurityPostureConfig().hashCode();
+    }
+    if (hasEnableK8SBetaApis()) {
+      hash = (37 * hash) + ENABLE_K8S_BETA_APIS_FIELD_NUMBER;
+      hash = (53 * hash) + getEnableK8SBetaApis().hashCode();
+    }
+    if (hasEnterpriseConfig()) {
+      hash = (37 * hash) + ENTERPRISE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEnterpriseConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4848,6 +5082,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         getMonitoringConfigFieldBuilder();
         getNodePoolAutoConfigFieldBuilder();
         getFleetFieldBuilder();
+        getSecurityPostureConfigFieldBuilder();
+        getEnableK8SBetaApisFieldBuilder();
+        getEnterpriseConfigFieldBuilder();
       }
     }
 
@@ -4856,6 +5093,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       bitField1_ = 0;
+      bitField2_ = 0;
       name_ = "";
       description_ = "";
       initialNodeCount_ = 0;
@@ -4886,8 +5124,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         nodePoolsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000800);
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       enableKubernetesAlpha_ = false;
       internalGetMutableResourceLabels().clear();
       labelFingerprint_ = "";
@@ -5012,8 +5249,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       statusMessage_ = "";
       nodeIpv4CidrSize_ = 0;
       servicesIpv4Cidr_ = "";
-      instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField1_ = (bitField1_ & ~0x00020000);
+      instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       currentNodeCount_ = 0;
       expireTime_ = "";
       location_ = "";
@@ -5058,6 +5294,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         fleetBuilder_.dispose();
         fleetBuilder_ = null;
       }
+      securityPostureConfig_ = null;
+      if (securityPostureConfigBuilder_ != null) {
+        securityPostureConfigBuilder_.dispose();
+        securityPostureConfigBuilder_ = null;
+      }
+      enableK8SBetaApis_ = null;
+      if (enableK8SBetaApisBuilder_ != null) {
+        enableK8SBetaApisBuilder_.dispose();
+        enableK8SBetaApisBuilder_ = null;
+      }
+      enterpriseConfig_ = null;
+      if (enterpriseConfigBuilder_ != null) {
+        enterpriseConfigBuilder_.dispose();
+        enterpriseConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -5091,6 +5342,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (bitField1_ != 0) {
         buildPartial1(result);
       }
+      if (bitField2_ != 0) {
+        buildPartial2(result);
+      }
       onBuilt();
       return result;
     }
@@ -5105,16 +5359,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.nodePools_ = nodePoolsBuilder_.build();
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00001000);
-      }
-      result.locations_ = locations_;
-      if (((bitField1_ & 0x00020000) != 0)) {
-        instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
-        bitField1_ = (bitField1_ & ~0x00020000);
-      }
-      result.instanceGroupUrls_ = instanceGroupUrls_;
       if (conditionsBuilder_ == null) {
         if (((bitField1_ & 0x00800000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
@@ -5161,6 +5405,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.subnetwork_ = subnetwork_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        locations_.makeImmutable();
+        result.locations_ = locations_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.enableKubernetesAlpha_ = enableKubernetesAlpha_;
@@ -5326,6 +5574,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField1_ & 0x00010000) != 0)) {
         result.servicesIpv4Cidr_ = servicesIpv4Cidr_;
       }
+      if (((from_bitField1_ & 0x00020000) != 0)) {
+        instanceGroupUrls_.makeImmutable();
+        result.instanceGroupUrls_ = instanceGroupUrls_;
+      }
       if (((from_bitField1_ & 0x00040000) != 0)) {
         result.currentNodeCount_ = currentNodeCount_;
       }
@@ -5374,6 +5626,26 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         result.fleet_ = fleetBuilder_ == null ? fleet_ : fleetBuilder_.build();
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial2(com.google.container.v1.Cluster result) {
+      int from_bitField2_ = bitField2_;
+      if (((from_bitField2_ & 0x00000001) != 0)) {
+        result.securityPostureConfig_ =
+            securityPostureConfigBuilder_ == null
+                ? securityPostureConfig_
+                : securityPostureConfigBuilder_.build();
+      }
+      if (((from_bitField2_ & 0x00000002) != 0)) {
+        result.enableK8SBetaApis_ =
+            enableK8SBetaApisBuilder_ == null
+                ? enableK8SBetaApis_
+                : enableK8SBetaApisBuilder_.build();
+      }
+      if (((from_bitField2_ & 0x00000004) != 0)) {
+        result.enterpriseConfig_ =
+            enterpriseConfigBuilder_ == null ? enterpriseConfig_ : enterpriseConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5498,7 +5770,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ |= 0x00001000;
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -5635,7 +5907,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!other.instanceGroupUrls_.isEmpty()) {
         if (instanceGroupUrls_.isEmpty()) {
           instanceGroupUrls_ = other.instanceGroupUrls_;
-          bitField1_ = (bitField1_ & ~0x00020000);
+          bitField1_ |= 0x00020000;
         } else {
           ensureInstanceGroupUrlsIsMutable();
           instanceGroupUrls_.addAll(other.instanceGroupUrls_);
@@ -5717,6 +5989,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasFleet()) {
         mergeFleet(other.getFleet());
+      }
+      if (other.hasSecurityPostureConfig()) {
+        mergeSecurityPostureConfig(other.getSecurityPostureConfig());
+      }
+      if (other.hasEnableK8SBetaApis()) {
+        mergeEnableK8SBetaApis(other.getEnableK8SBetaApis());
+      }
+      if (other.hasEnterpriseConfig()) {
+        mergeEnterpriseConfig(other.getEnterpriseConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -6169,6 +6450,27 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x80000000;
                 break;
               } // case 1122
+            case 1146:
+              {
+                input.readMessage(
+                    getEnableK8SBetaApisFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000002;
+                break;
+              } // case 1146
+            case 1162:
+              {
+                input.readMessage(
+                    getSecurityPostureConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000001;
+                break;
+              } // case 1162
+            case 1194:
+              {
+                input.readMessage(
+                    getEnterpriseConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000004;
+                break;
+              } // case 1194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6188,6 +6490,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
     private int bitField1_;
+    private int bitField2_;
 
     private java.lang.Object name_ = "";
     /**
@@ -6197,6 +6500,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The name of this cluster. The name must be unique within this project
      * and location (e.g. zone or region), and can be up to 40 characters with
      * the following restrictions:
+     *
      * * Lowercase letters, numbers, and hyphens only.
      * * Must start with a letter.
      * * Must end with a number or a letter.
@@ -6224,6 +6528,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The name of this cluster. The name must be unique within this project
      * and location (e.g. zone or region), and can be up to 40 characters with
      * the following restrictions:
+     *
      * * Lowercase letters, numbers, and hyphens only.
      * * Must start with a letter.
      * * Must end with a number or a letter.
@@ -6251,6 +6556,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The name of this cluster. The name must be unique within this project
      * and location (e.g. zone or region), and can be up to 40 characters with
      * the following restrictions:
+     *
      * * Lowercase letters, numbers, and hyphens only.
      * * Must start with a letter.
      * * Must end with a number or a letter.
@@ -6277,6 +6583,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The name of this cluster. The name must be unique within this project
      * and location (e.g. zone or region), and can be up to 40 characters with
      * the following restrictions:
+     *
      * * Lowercase letters, numbers, and hyphens only.
      * * Must start with a letter.
      * * Must end with a number or a letter.
@@ -6299,6 +6606,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The name of this cluster. The name must be unique within this project
      * and location (e.g. zone or region), and can be up to 40 characters with
      * the following restrictions:
+     *
      * * Lowercase letters, numbers, and hyphens only.
      * * Must start with a letter.
      * * Must end with a number or a letter.
@@ -6439,13 +6747,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * "node_pool" object, since this configuration (along with the
      * "node_config") will be used to create a "NodePool" object with an
      * auto-generated name. Do not use this and a node_pool at the same time.
+     *
      * This field is deprecated, use node_pool.initial_node_count instead.
      * </pre>
      *
      * <code>int32 initial_node_count = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1566
+     *     google/container/v1/cluster_service.proto;l=1671
      * @return The initialNodeCount.
      */
     @java.lang.Override
@@ -6465,13 +6774,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * "node_pool" object, since this configuration (along with the
      * "node_config") will be used to create a "NodePool" object with an
      * auto-generated name. Do not use this and a node_pool at the same time.
+     *
      * This field is deprecated, use node_pool.initial_node_count instead.
      * </pre>
      *
      * <code>int32 initial_node_count = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1566
+     *     google/container/v1/cluster_service.proto;l=1671
      * @param value The initialNodeCount to set.
      * @return This builder for chaining.
      */
@@ -6495,13 +6805,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * "node_pool" object, since this configuration (along with the
      * "node_config") will be used to create a "NodePool" object with an
      * auto-generated name. Do not use this and a node_pool at the same time.
+     *
      * This field is deprecated, use node_pool.initial_node_count instead.
      * </pre>
      *
      * <code>int32 initial_node_count = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1566
+     *     google/container/v1/cluster_service.proto;l=1671
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -6530,6 +6841,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * For responses, this field will be populated with the node configuration of
      * the first node pool. (For configuration of each node pool, see
      * `node_pool.config`)
+     *
      * If unspecified, the defaults are used.
      * This field is deprecated, use node_pool.config instead.
      * </pre>
@@ -6537,7 +6849,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1579
+     *     google/container/v1/cluster_service.proto;l=1684
      * @return Whether the nodeConfig field is set.
      */
     @java.lang.Deprecated
@@ -6556,6 +6868,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * For responses, this field will be populated with the node configuration of
      * the first node pool. (For configuration of each node pool, see
      * `node_pool.config`)
+     *
      * If unspecified, the defaults are used.
      * This field is deprecated, use node_pool.config instead.
      * </pre>
@@ -6563,7 +6876,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1579
+     *     google/container/v1/cluster_service.proto;l=1684
      * @return The nodeConfig.
      */
     @java.lang.Deprecated
@@ -6588,6 +6901,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * For responses, this field will be populated with the node configuration of
      * the first node pool. (For configuration of each node pool, see
      * `node_pool.config`)
+     *
      * If unspecified, the defaults are used.
      * This field is deprecated, use node_pool.config instead.
      * </pre>
@@ -6620,6 +6934,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * For responses, this field will be populated with the node configuration of
      * the first node pool. (For configuration of each node pool, see
      * `node_pool.config`)
+     *
      * If unspecified, the defaults are used.
      * This field is deprecated, use node_pool.config instead.
      * </pre>
@@ -6649,6 +6964,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * For responses, this field will be populated with the node configuration of
      * the first node pool. (For configuration of each node pool, see
      * `node_pool.config`)
+     *
      * If unspecified, the defaults are used.
      * This field is deprecated, use node_pool.config instead.
      * </pre>
@@ -6684,6 +7000,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * For responses, this field will be populated with the node configuration of
      * the first node pool. (For configuration of each node pool, see
      * `node_pool.config`)
+     *
      * If unspecified, the defaults are used.
      * This field is deprecated, use node_pool.config instead.
      * </pre>
@@ -6713,6 +7030,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * For responses, this field will be populated with the node configuration of
      * the first node pool. (For configuration of each node pool, see
      * `node_pool.config`)
+     *
      * If unspecified, the defaults are used.
      * This field is deprecated, use node_pool.config instead.
      * </pre>
@@ -6737,6 +7055,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * For responses, this field will be populated with the node configuration of
      * the first node pool. (For configuration of each node pool, see
      * `node_pool.config`)
+     *
      * If unspecified, the defaults are used.
      * This field is deprecated, use node_pool.config instead.
      * </pre>
@@ -6765,6 +7084,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * For responses, this field will be populated with the node configuration of
      * the first node pool. (For configuration of each node pool, see
      * `node_pool.config`)
+     *
      * If unspecified, the defaults are used.
      * This field is deprecated, use node_pool.config instead.
      * </pre>
@@ -7014,11 +7334,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
+     *
      * * `logging.googleapis.com/kubernetes` - The Cloud Logging
      * service with a Kubernetes-native resource model
      * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
      *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
+     *
      * If left as an empty string,`logging.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
@@ -7044,11 +7366,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
+     *
      * * `logging.googleapis.com/kubernetes` - The Cloud Logging
      * service with a Kubernetes-native resource model
      * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
      *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
+     *
      * If left as an empty string,`logging.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
@@ -7074,11 +7398,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
+     *
      * * `logging.googleapis.com/kubernetes` - The Cloud Logging
      * service with a Kubernetes-native resource model
      * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
      *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
+     *
      * If left as an empty string,`logging.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
@@ -7103,11 +7429,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
+     *
      * * `logging.googleapis.com/kubernetes` - The Cloud Logging
      * service with a Kubernetes-native resource model
      * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
      *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
+     *
      * If left as an empty string,`logging.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
@@ -7128,11 +7456,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
+     *
      * * `logging.googleapis.com/kubernetes` - The Cloud Logging
      * service with a Kubernetes-native resource model
      * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
      *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
+     *
      * If left as an empty string,`logging.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
@@ -7160,11 +7490,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
+     *
      * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
      * service with a Kubernetes-native resource model
      * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
      *   longer available as of GKE 1.15).
      * * `none` - No metrics will be exported from the cluster.
+     *
      * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
@@ -7190,11 +7522,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
+     *
      * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
      * service with a Kubernetes-native resource model
      * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
      *   longer available as of GKE 1.15).
      * * `none` - No metrics will be exported from the cluster.
+     *
      * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
@@ -7220,11 +7554,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
+     *
      * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
      * service with a Kubernetes-native resource model
      * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
      *   longer available as of GKE 1.15).
      * * `none` - No metrics will be exported from the cluster.
+     *
      * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
@@ -7249,11 +7585,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
+     *
      * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
      * service with a Kubernetes-native resource model
      * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
      *   longer available as of GKE 1.15).
      * * `none` - No metrics will be exported from the cluster.
+     *
      * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
@@ -7274,11 +7612,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
+     *
      * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
      * service with a Kubernetes-native resource model
      * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
      *   longer available as of GKE 1.15).
      * * `none` - No metrics will be exported from the cluster.
+     *
      * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
@@ -8224,14 +8564,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return nodePoolsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList locations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList locations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!locations_.isModifiable()) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00001000;
       }
+      bitField0_ |= 0x00001000;
     }
     /**
      *
@@ -8240,9 +8580,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This field provides a default value if
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * are not specified during node pool creation.
+     *
      * Warning: changing cluster locations will update the
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * of all node pools and will result in nodes being added and/or removed.
@@ -8253,7 +8595,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the locations.
      */
     public com.google.protobuf.ProtocolStringList getLocationsList() {
-      return locations_.getUnmodifiableView();
+      locations_.makeImmutable();
+      return locations_;
     }
     /**
      *
@@ -8262,9 +8605,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This field provides a default value if
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * are not specified during node pool creation.
+     *
      * Warning: changing cluster locations will update the
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * of all node pools and will result in nodes being added and/or removed.
@@ -8284,9 +8629,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This field provides a default value if
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * are not specified during node pool creation.
+     *
      * Warning: changing cluster locations will update the
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * of all node pools and will result in nodes being added and/or removed.
@@ -8307,9 +8654,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This field provides a default value if
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * are not specified during node pool creation.
+     *
      * Warning: changing cluster locations will update the
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * of all node pools and will result in nodes being added and/or removed.
@@ -8330,9 +8679,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This field provides a default value if
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * are not specified during node pool creation.
+     *
      * Warning: changing cluster locations will update the
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * of all node pools and will result in nodes being added and/or removed.
@@ -8350,6 +8701,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLocationsIsMutable();
       locations_.set(index, value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8360,9 +8712,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This field provides a default value if
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * are not specified during node pool creation.
+     *
      * Warning: changing cluster locations will update the
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * of all node pools and will result in nodes being added and/or removed.
@@ -8379,6 +8733,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8389,9 +8744,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This field provides a default value if
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * are not specified during node pool creation.
+     *
      * Warning: changing cluster locations will update the
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * of all node pools and will result in nodes being added and/or removed.
@@ -8405,6 +8762,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
       ensureLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, locations_);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8415,9 +8773,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This field provides a default value if
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * are not specified during node pool creation.
+     *
      * Warning: changing cluster locations will update the
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * of all node pools and will result in nodes being added and/or removed.
@@ -8428,8 +8788,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocations() {
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00001000);
+      ;
       onChanged();
       return this;
     }
@@ -8440,9 +8801,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This field provides a default value if
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * are not specified during node pool creation.
+     *
      * Warning: changing cluster locations will update the
      * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
      * of all node pools and will result in nodes being added and/or removed.
@@ -8460,6 +8823,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -11659,7 +12023,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -11673,7 +12042,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -11693,7 +12067,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -11715,7 +12094,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -11735,7 +12119,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -11760,7 +12149,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -11779,7 +12173,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -11793,7 +12192,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -11811,7 +12215,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -13093,7 +13502,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 101 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1745
+     *     google/container/v1/cluster_service.proto;l=1855
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -13120,7 +13529,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 101 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1745
+     *     google/container/v1/cluster_service.proto;l=1855
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -13147,7 +13556,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 101 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1745
+     *     google/container/v1/cluster_service.proto;l=1855
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -13173,7 +13582,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 101 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1745
+     *     google/container/v1/cluster_service.proto;l=1855
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -13195,7 +13604,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 101 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1745
+     *     google/container/v1/cluster_service.proto;l=1855
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -13219,6 +13628,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The IP address of this cluster's master endpoint.
      * The endpoint can be accessed from the internet at
      * `https://username:password&#64;endpoint/`.
+     *
      * See the `masterAuth` property of this resource for username and
      * password information.
      * </pre>
@@ -13245,6 +13655,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The IP address of this cluster's master endpoint.
      * The endpoint can be accessed from the internet at
      * `https://username:password&#64;endpoint/`.
+     *
      * See the `masterAuth` property of this resource for username and
      * password information.
      * </pre>
@@ -13271,6 +13682,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The IP address of this cluster's master endpoint.
      * The endpoint can be accessed from the internet at
      * `https://username:password&#64;endpoint/`.
+     *
      * See the `masterAuth` property of this resource for username and
      * password information.
      * </pre>
@@ -13296,6 +13708,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The IP address of this cluster's master endpoint.
      * The endpoint can be accessed from the internet at
      * `https://username:password&#64;endpoint/`.
+     *
      * See the `masterAuth` property of this resource for username and
      * password information.
      * </pre>
@@ -13317,6 +13730,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The IP address of this cluster's master endpoint.
      * The endpoint can be accessed from the internet at
      * `https://username:password&#64;endpoint/`.
+     *
      * See the `masterAuth` property of this resource for username and
      * password information.
      * </pre>
@@ -13346,8 +13760,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -13378,8 +13794,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -13410,8 +13828,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -13441,8 +13861,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -13468,8 +13890,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -13614,7 +14038,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string current_node_version = 105 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1778
+     *     google/container/v1/cluster_service.proto;l=1888
      * @return The currentNodeVersion.
      */
     @java.lang.Deprecated
@@ -13643,7 +14067,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string current_node_version = 105 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1778
+     *     google/container/v1/cluster_service.proto;l=1888
      * @return The bytes for currentNodeVersion.
      */
     @java.lang.Deprecated
@@ -13672,7 +14096,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string current_node_version = 105 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1778
+     *     google/container/v1/cluster_service.proto;l=1888
      * @param value The currentNodeVersion to set.
      * @return This builder for chaining.
      */
@@ -13700,7 +14124,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string current_node_version = 105 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1778
+     *     google/container/v1/cluster_service.proto;l=1888
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -13724,7 +14148,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string current_node_version = 105 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1778
+     *     google/container/v1/cluster_service.proto;l=1888
      * @param value The bytes for currentNodeVersion to set.
      * @return This builder for chaining.
      */
@@ -13954,7 +14378,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1790
+     *     google/container/v1/cluster_service.proto;l=1900
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -13981,7 +14405,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1790
+     *     google/container/v1/cluster_service.proto;l=1900
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -14008,7 +14432,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1790
+     *     google/container/v1/cluster_service.proto;l=1900
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -14034,7 +14458,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1790
+     *     google/container/v1/cluster_service.proto;l=1900
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -14056,7 +14480,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1790
+     *     google/container/v1/cluster_service.proto;l=1900
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -14260,14 +14684,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList instanceGroupUrls_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList instanceGroupUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInstanceGroupUrlsIsMutable() {
-      if (!((bitField1_ & 0x00020000) != 0)) {
+      if (!instanceGroupUrls_.isModifiable()) {
         instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList(instanceGroupUrls_);
-        bitField1_ |= 0x00020000;
       }
+      bitField1_ |= 0x00020000;
     }
     /**
      *
@@ -14279,12 +14703,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1806
+     *     google/container/v1/cluster_service.proto;l=1916
      * @return A list containing the instanceGroupUrls.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getInstanceGroupUrlsList() {
-      return instanceGroupUrls_.getUnmodifiableView();
+      instanceGroupUrls_.makeImmutable();
+      return instanceGroupUrls_;
     }
     /**
      *
@@ -14296,7 +14721,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1806
+     *     google/container/v1/cluster_service.proto;l=1916
      * @return The count of instanceGroupUrls.
      */
     @java.lang.Deprecated
@@ -14313,7 +14738,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1806
+     *     google/container/v1/cluster_service.proto;l=1916
      * @param index The index of the element to return.
      * @return The instanceGroupUrls at the given index.
      */
@@ -14331,7 +14756,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1806
+     *     google/container/v1/cluster_service.proto;l=1916
      * @param index The index of the value to return.
      * @return The bytes of the instanceGroupUrls at the given index.
      */
@@ -14349,7 +14774,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1806
+     *     google/container/v1/cluster_service.proto;l=1916
      * @param index The index to set the value at.
      * @param value The instanceGroupUrls to set.
      * @return This builder for chaining.
@@ -14361,6 +14786,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.set(index, value);
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -14374,7 +14800,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1806
+     *     google/container/v1/cluster_service.proto;l=1916
      * @param value The instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -14385,6 +14811,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.add(value);
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -14398,7 +14825,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1806
+     *     google/container/v1/cluster_service.proto;l=1916
      * @param values The instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -14406,6 +14833,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInstanceGroupUrls(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceGroupUrlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceGroupUrls_);
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -14419,13 +14847,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1806
+     *     google/container/v1/cluster_service.proto;l=1916
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearInstanceGroupUrls() {
-      instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField1_ = (bitField1_ & ~0x00020000);
+      ;
       onChanged();
       return this;
     }
@@ -14439,7 +14868,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1806
+     *     google/container/v1/cluster_service.proto;l=1916
      * @param value The bytes of the instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -14451,6 +14880,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.add(value);
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -14467,7 +14897,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 current_node_count = 112 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1810
+     *     google/container/v1/cluster_service.proto;l=1920
      * @return The currentNodeCount.
      */
     @java.lang.Override
@@ -14486,7 +14916,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 current_node_count = 112 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1810
+     *     google/container/v1/cluster_service.proto;l=1920
      * @param value The currentNodeCount to set.
      * @return This builder for chaining.
      */
@@ -14509,7 +14939,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 current_node_count = 112 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1810
+     *     google/container/v1/cluster_service.proto;l=1920
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16611,6 +17041,561 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         fleet_ = null;
       }
       return fleetBuilder_;
+    }
+
+    private com.google.container.v1.SecurityPostureConfig securityPostureConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.SecurityPostureConfig,
+            com.google.container.v1.SecurityPostureConfig.Builder,
+            com.google.container.v1.SecurityPostureConfigOrBuilder>
+        securityPostureConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+     *
+     * @return Whether the securityPostureConfig field is set.
+     */
+    public boolean hasSecurityPostureConfig() {
+      return ((bitField2_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+     *
+     * @return The securityPostureConfig.
+     */
+    public com.google.container.v1.SecurityPostureConfig getSecurityPostureConfig() {
+      if (securityPostureConfigBuilder_ == null) {
+        return securityPostureConfig_ == null
+            ? com.google.container.v1.SecurityPostureConfig.getDefaultInstance()
+            : securityPostureConfig_;
+      } else {
+        return securityPostureConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public Builder setSecurityPostureConfig(com.google.container.v1.SecurityPostureConfig value) {
+      if (securityPostureConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        securityPostureConfig_ = value;
+      } else {
+        securityPostureConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public Builder setSecurityPostureConfig(
+        com.google.container.v1.SecurityPostureConfig.Builder builderForValue) {
+      if (securityPostureConfigBuilder_ == null) {
+        securityPostureConfig_ = builderForValue.build();
+      } else {
+        securityPostureConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public Builder mergeSecurityPostureConfig(com.google.container.v1.SecurityPostureConfig value) {
+      if (securityPostureConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00000001) != 0)
+            && securityPostureConfig_ != null
+            && securityPostureConfig_
+                != com.google.container.v1.SecurityPostureConfig.getDefaultInstance()) {
+          getSecurityPostureConfigBuilder().mergeFrom(value);
+        } else {
+          securityPostureConfig_ = value;
+        }
+      } else {
+        securityPostureConfigBuilder_.mergeFrom(value);
+      }
+      bitField2_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public Builder clearSecurityPostureConfig() {
+      bitField2_ = (bitField2_ & ~0x00000001);
+      securityPostureConfig_ = null;
+      if (securityPostureConfigBuilder_ != null) {
+        securityPostureConfigBuilder_.dispose();
+        securityPostureConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public com.google.container.v1.SecurityPostureConfig.Builder getSecurityPostureConfigBuilder() {
+      bitField2_ |= 0x00000001;
+      onChanged();
+      return getSecurityPostureConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    public com.google.container.v1.SecurityPostureConfigOrBuilder
+        getSecurityPostureConfigOrBuilder() {
+      if (securityPostureConfigBuilder_ != null) {
+        return securityPostureConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return securityPostureConfig_ == null
+            ? com.google.container.v1.SecurityPostureConfig.getDefaultInstance()
+            : securityPostureConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Security Posture API features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.SecurityPostureConfig,
+            com.google.container.v1.SecurityPostureConfig.Builder,
+            com.google.container.v1.SecurityPostureConfigOrBuilder>
+        getSecurityPostureConfigFieldBuilder() {
+      if (securityPostureConfigBuilder_ == null) {
+        securityPostureConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.SecurityPostureConfig,
+                com.google.container.v1.SecurityPostureConfig.Builder,
+                com.google.container.v1.SecurityPostureConfigOrBuilder>(
+                getSecurityPostureConfig(), getParentForChildren(), isClean());
+        securityPostureConfig_ = null;
+      }
+      return securityPostureConfigBuilder_;
+    }
+
+    private com.google.container.v1.K8sBetaAPIConfig enableK8SBetaApis_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.K8sBetaAPIConfig,
+            com.google.container.v1.K8sBetaAPIConfig.Builder,
+            com.google.container.v1.K8sBetaAPIConfigOrBuilder>
+        enableK8SBetaApisBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs Config
+     * </pre>
+     *
+     * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+     *
+     * @return Whether the enableK8sBetaApis field is set.
+     */
+    public boolean hasEnableK8SBetaApis() {
+      return ((bitField2_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs Config
+     * </pre>
+     *
+     * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+     *
+     * @return The enableK8sBetaApis.
+     */
+    public com.google.container.v1.K8sBetaAPIConfig getEnableK8SBetaApis() {
+      if (enableK8SBetaApisBuilder_ == null) {
+        return enableK8SBetaApis_ == null
+            ? com.google.container.v1.K8sBetaAPIConfig.getDefaultInstance()
+            : enableK8SBetaApis_;
+      } else {
+        return enableK8SBetaApisBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs Config
+     * </pre>
+     *
+     * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+     */
+    public Builder setEnableK8SBetaApis(com.google.container.v1.K8sBetaAPIConfig value) {
+      if (enableK8SBetaApisBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enableK8SBetaApis_ = value;
+      } else {
+        enableK8SBetaApisBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs Config
+     * </pre>
+     *
+     * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+     */
+    public Builder setEnableK8SBetaApis(
+        com.google.container.v1.K8sBetaAPIConfig.Builder builderForValue) {
+      if (enableK8SBetaApisBuilder_ == null) {
+        enableK8SBetaApis_ = builderForValue.build();
+      } else {
+        enableK8SBetaApisBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs Config
+     * </pre>
+     *
+     * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+     */
+    public Builder mergeEnableK8SBetaApis(com.google.container.v1.K8sBetaAPIConfig value) {
+      if (enableK8SBetaApisBuilder_ == null) {
+        if (((bitField2_ & 0x00000002) != 0)
+            && enableK8SBetaApis_ != null
+            && enableK8SBetaApis_
+                != com.google.container.v1.K8sBetaAPIConfig.getDefaultInstance()) {
+          getEnableK8SBetaApisBuilder().mergeFrom(value);
+        } else {
+          enableK8SBetaApis_ = value;
+        }
+      } else {
+        enableK8SBetaApisBuilder_.mergeFrom(value);
+      }
+      bitField2_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs Config
+     * </pre>
+     *
+     * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+     */
+    public Builder clearEnableK8SBetaApis() {
+      bitField2_ = (bitField2_ & ~0x00000002);
+      enableK8SBetaApis_ = null;
+      if (enableK8SBetaApisBuilder_ != null) {
+        enableK8SBetaApisBuilder_.dispose();
+        enableK8SBetaApisBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs Config
+     * </pre>
+     *
+     * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+     */
+    public com.google.container.v1.K8sBetaAPIConfig.Builder getEnableK8SBetaApisBuilder() {
+      bitField2_ |= 0x00000002;
+      onChanged();
+      return getEnableK8SBetaApisFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs Config
+     * </pre>
+     *
+     * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+     */
+    public com.google.container.v1.K8sBetaAPIConfigOrBuilder getEnableK8SBetaApisOrBuilder() {
+      if (enableK8SBetaApisBuilder_ != null) {
+        return enableK8SBetaApisBuilder_.getMessageOrBuilder();
+      } else {
+        return enableK8SBetaApis_ == null
+            ? com.google.container.v1.K8sBetaAPIConfig.getDefaultInstance()
+            : enableK8SBetaApis_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs Config
+     * </pre>
+     *
+     * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.K8sBetaAPIConfig,
+            com.google.container.v1.K8sBetaAPIConfig.Builder,
+            com.google.container.v1.K8sBetaAPIConfigOrBuilder>
+        getEnableK8SBetaApisFieldBuilder() {
+      if (enableK8SBetaApisBuilder_ == null) {
+        enableK8SBetaApisBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.K8sBetaAPIConfig,
+                com.google.container.v1.K8sBetaAPIConfig.Builder,
+                com.google.container.v1.K8sBetaAPIConfigOrBuilder>(
+                getEnableK8SBetaApis(), getParentForChildren(), isClean());
+        enableK8SBetaApis_ = null;
+      }
+      return enableK8SBetaApisBuilder_;
+    }
+
+    private com.google.container.v1.EnterpriseConfig enterpriseConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.EnterpriseConfig,
+            com.google.container.v1.EnterpriseConfig.Builder,
+            com.google.container.v1.EnterpriseConfigOrBuilder>
+        enterpriseConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * GKE Enterprise Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+     *
+     * @return Whether the enterpriseConfig field is set.
+     */
+    public boolean hasEnterpriseConfig() {
+      return ((bitField2_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GKE Enterprise Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+     *
+     * @return The enterpriseConfig.
+     */
+    public com.google.container.v1.EnterpriseConfig getEnterpriseConfig() {
+      if (enterpriseConfigBuilder_ == null) {
+        return enterpriseConfig_ == null
+            ? com.google.container.v1.EnterpriseConfig.getDefaultInstance()
+            : enterpriseConfig_;
+      } else {
+        return enterpriseConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GKE Enterprise Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+     */
+    public Builder setEnterpriseConfig(com.google.container.v1.EnterpriseConfig value) {
+      if (enterpriseConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enterpriseConfig_ = value;
+      } else {
+        enterpriseConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GKE Enterprise Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+     */
+    public Builder setEnterpriseConfig(
+        com.google.container.v1.EnterpriseConfig.Builder builderForValue) {
+      if (enterpriseConfigBuilder_ == null) {
+        enterpriseConfig_ = builderForValue.build();
+      } else {
+        enterpriseConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GKE Enterprise Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+     */
+    public Builder mergeEnterpriseConfig(com.google.container.v1.EnterpriseConfig value) {
+      if (enterpriseConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00000004) != 0)
+            && enterpriseConfig_ != null
+            && enterpriseConfig_ != com.google.container.v1.EnterpriseConfig.getDefaultInstance()) {
+          getEnterpriseConfigBuilder().mergeFrom(value);
+        } else {
+          enterpriseConfig_ = value;
+        }
+      } else {
+        enterpriseConfigBuilder_.mergeFrom(value);
+      }
+      bitField2_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GKE Enterprise Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+     */
+    public Builder clearEnterpriseConfig() {
+      bitField2_ = (bitField2_ & ~0x00000004);
+      enterpriseConfig_ = null;
+      if (enterpriseConfigBuilder_ != null) {
+        enterpriseConfigBuilder_.dispose();
+        enterpriseConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GKE Enterprise Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+     */
+    public com.google.container.v1.EnterpriseConfig.Builder getEnterpriseConfigBuilder() {
+      bitField2_ |= 0x00000004;
+      onChanged();
+      return getEnterpriseConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GKE Enterprise Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+     */
+    public com.google.container.v1.EnterpriseConfigOrBuilder getEnterpriseConfigOrBuilder() {
+      if (enterpriseConfigBuilder_ != null) {
+        return enterpriseConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return enterpriseConfig_ == null
+            ? com.google.container.v1.EnterpriseConfig.getDefaultInstance()
+            : enterpriseConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GKE Enterprise Configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.EnterpriseConfig,
+            com.google.container.v1.EnterpriseConfig.Builder,
+            com.google.container.v1.EnterpriseConfigOrBuilder>
+        getEnterpriseConfigFieldBuilder() {
+      if (enterpriseConfigBuilder_ == null) {
+        enterpriseConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.EnterpriseConfig,
+                com.google.container.v1.EnterpriseConfig.Builder,
+                com.google.container.v1.EnterpriseConfigOrBuilder>(
+                getEnterpriseConfig(), getParentForChildren(), isClean());
+        enterpriseConfig_ = null;
+      }
+      return enterpriseConfigBuilder_;
     }
 
     @java.lang.Override

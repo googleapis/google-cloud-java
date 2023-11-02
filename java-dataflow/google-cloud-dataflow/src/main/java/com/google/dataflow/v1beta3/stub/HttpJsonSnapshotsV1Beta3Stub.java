@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.dataflow.v1beta3.DeleteSnapshotRequest;
 import com.google.dataflow.v1beta3.DeleteSnapshotResponse;
@@ -217,18 +218,42 @@ public class HttpJsonSnapshotsV1Beta3Stub extends SnapshotsV1Beta3Stub {
         HttpJsonCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
             .setMethodDescriptor(getSnapshotMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("snapshot_id", String.valueOf(request.getSnapshotId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteSnapshotRequest, DeleteSnapshotResponse>
         deleteSnapshotTransportSettings =
             HttpJsonCallSettings.<DeleteSnapshotRequest, DeleteSnapshotResponse>newBuilder()
                 .setMethodDescriptor(deleteSnapshotMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      builder.add("snapshot_id", String.valueOf(request.getSnapshotId()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListSnapshotsRequest, ListSnapshotsResponse>
         listSnapshotsTransportSettings =
             HttpJsonCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
                 .setMethodDescriptor(listSnapshotsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_id", String.valueOf(request.getJobId()));
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      return builder.build();
+                    })
                 .build();
 
     this.getSnapshotCallable =

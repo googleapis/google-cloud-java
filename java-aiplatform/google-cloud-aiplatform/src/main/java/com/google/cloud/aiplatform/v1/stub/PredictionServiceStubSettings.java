@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -46,6 +47,8 @@ import com.google.cloud.aiplatform.v1.ExplainResponse;
 import com.google.cloud.aiplatform.v1.PredictRequest;
 import com.google.cloud.aiplatform.v1.PredictResponse;
 import com.google.cloud.aiplatform.v1.RawPredictRequest;
+import com.google.cloud.aiplatform.v1.StreamingPredictRequest;
+import com.google.cloud.aiplatform.v1.StreamingPredictResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -109,6 +112,8 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
   private final UnaryCallSettings<PredictRequest, PredictResponse> predictSettings;
   private final UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings;
+  private final ServerStreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictSettings;
   private final UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -180,6 +185,12 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   /** Returns the object with the settings used for calls to rawPredict. */
   public UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings() {
     return rawPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to serverStreamingPredict. */
+  public ServerStreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictSettings() {
+    return serverStreamingPredictSettings;
   }
 
   /** Returns the object with the settings used for calls to explain. */
@@ -291,6 +302,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
     predictSettings = settingsBuilder.predictSettings().build();
     rawPredictSettings = settingsBuilder.rawPredictSettings().build();
+    serverStreamingPredictSettings = settingsBuilder.serverStreamingPredictSettings().build();
     explainSettings = settingsBuilder.explainSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
@@ -304,6 +316,9 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<PredictRequest, PredictResponse> predictSettings;
     private final UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings;
+    private final ServerStreamingCallSettings.Builder<
+            StreamingPredictRequest, StreamingPredictResponse>
+        serverStreamingPredictSettings;
     private final UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -342,6 +357,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       predictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       rawPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      serverStreamingPredictSettings = ServerStreamingCallSettings.newBuilder();
       explainSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -367,6 +383,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       predictSettings = settings.predictSettings.toBuilder();
       rawPredictSettings = settings.rawPredictSettings.toBuilder();
+      serverStreamingPredictSettings = settings.serverStreamingPredictSettings.toBuilder();
       explainSettings = settings.explainSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
@@ -407,6 +424,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       builder
           .rawPredictSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .serverStreamingPredictSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -466,6 +488,12 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     /** Returns the builder for the settings used for calls to rawPredict. */
     public UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings() {
       return rawPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to serverStreamingPredict. */
+    public ServerStreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
+        serverStreamingPredictSettings() {
+      return serverStreamingPredictSettings;
     }
 
     /** Returns the builder for the settings used for calls to explain. */

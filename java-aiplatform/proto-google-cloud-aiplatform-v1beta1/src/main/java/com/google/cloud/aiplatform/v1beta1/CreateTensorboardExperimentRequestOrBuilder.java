@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,8 +98,9 @@ public interface CreateTensorboardExperimentRequestOrBuilder
    * <pre>
    * Required. The ID to use for the Tensorboard experiment, which becomes the
    * final component of the Tensorboard experiment's resource name.
+   *
    * This value should be 1-128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string tensorboard_experiment_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -113,8 +114,9 @@ public interface CreateTensorboardExperimentRequestOrBuilder
    * <pre>
    * Required. The ID to use for the Tensorboard experiment, which becomes the
    * final component of the Tensorboard experiment's resource name.
+   *
    * This value should be 1-128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string tensorboard_experiment_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

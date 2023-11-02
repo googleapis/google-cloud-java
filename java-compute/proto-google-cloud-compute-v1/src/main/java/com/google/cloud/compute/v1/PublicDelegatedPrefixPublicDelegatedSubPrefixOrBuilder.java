@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,7 +101,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -113,7 +113,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -125,7 +125,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateIngressRuleRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -127,10 +122,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * A FirewallRule containing the new resource.
+   *
    * The user may optionally provide a position at which the new rule will be
    * placed. The positions define a sequential list starting at 1. If a rule
    * already exists at the given position, rules greater than the provided
    * position will be moved forward by one.
+   *
    * If no position is provided, the server will place the rule as the second to
    * last rule in the sequence before the required default allow-all or deny-all
    * rule.
@@ -149,10 +146,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * A FirewallRule containing the new resource.
+   *
    * The user may optionally provide a position at which the new rule will be
    * placed. The positions define a sequential list starting at 1. If a rule
    * already exists at the given position, rules greater than the provided
    * position will be moved forward by one.
+   *
    * If no position is provided, the server will place the rule as the second to
    * last rule in the sequence before the required default allow-all or deny-all
    * rule.
@@ -173,10 +172,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * A FirewallRule containing the new resource.
+   *
    * The user may optionally provide a position at which the new rule will be
    * placed. The positions define a sequential list starting at 1. If a rule
    * already exists at the given position, rules greater than the provided
    * position will be moved forward by one.
+   *
    * If no position is provided, the server will place the rule as the second to
    * last rule in the sequence before the required default allow-all or deny-all
    * rule.
@@ -686,10 +687,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A FirewallRule containing the new resource.
+     *
      * The user may optionally provide a position at which the new rule will be
      * placed. The positions define a sequential list starting at 1. If a rule
      * already exists at the given position, rules greater than the provided
      * position will be moved forward by one.
+     *
      * If no position is provided, the server will place the rule as the second to
      * last rule in the sequence before the required default allow-all or deny-all
      * rule.
@@ -707,10 +710,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A FirewallRule containing the new resource.
+     *
      * The user may optionally provide a position at which the new rule will be
      * placed. The positions define a sequential list starting at 1. If a rule
      * already exists at the given position, rules greater than the provided
      * position will be moved forward by one.
+     *
      * If no position is provided, the server will place the rule as the second to
      * last rule in the sequence before the required default allow-all or deny-all
      * rule.
@@ -734,10 +739,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A FirewallRule containing the new resource.
+     *
      * The user may optionally provide a position at which the new rule will be
      * placed. The positions define a sequential list starting at 1. If a rule
      * already exists at the given position, rules greater than the provided
      * position will be moved forward by one.
+     *
      * If no position is provided, the server will place the rule as the second to
      * last rule in the sequence before the required default allow-all or deny-all
      * rule.
@@ -763,10 +770,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A FirewallRule containing the new resource.
+     *
      * The user may optionally provide a position at which the new rule will be
      * placed. The positions define a sequential list starting at 1. If a rule
      * already exists at the given position, rules greater than the provided
      * position will be moved forward by one.
+     *
      * If no position is provided, the server will place the rule as the second to
      * last rule in the sequence before the required default allow-all or deny-all
      * rule.
@@ -789,10 +798,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A FirewallRule containing the new resource.
+     *
      * The user may optionally provide a position at which the new rule will be
      * placed. The positions define a sequential list starting at 1. If a rule
      * already exists at the given position, rules greater than the provided
      * position will be moved forward by one.
+     *
      * If no position is provided, the server will place the rule as the second to
      * last rule in the sequence before the required default allow-all or deny-all
      * rule.
@@ -821,10 +832,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A FirewallRule containing the new resource.
+     *
      * The user may optionally provide a position at which the new rule will be
      * placed. The positions define a sequential list starting at 1. If a rule
      * already exists at the given position, rules greater than the provided
      * position will be moved forward by one.
+     *
      * If no position is provided, the server will place the rule as the second to
      * last rule in the sequence before the required default allow-all or deny-all
      * rule.
@@ -847,10 +860,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A FirewallRule containing the new resource.
+     *
      * The user may optionally provide a position at which the new rule will be
      * placed. The positions define a sequential list starting at 1. If a rule
      * already exists at the given position, rules greater than the provided
      * position will be moved forward by one.
+     *
      * If no position is provided, the server will place the rule as the second to
      * last rule in the sequence before the required default allow-all or deny-all
      * rule.
@@ -868,10 +883,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A FirewallRule containing the new resource.
+     *
      * The user may optionally provide a position at which the new rule will be
      * placed. The positions define a sequential list starting at 1. If a rule
      * already exists at the given position, rules greater than the provided
      * position will be moved forward by one.
+     *
      * If no position is provided, the server will place the rule as the second to
      * last rule in the sequence before the required default allow-all or deny-all
      * rule.
@@ -893,10 +910,12 @@ public final class CreateIngressRuleRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A FirewallRule containing the new resource.
+     *
      * The user may optionally provide a position at which the new rule will be
      * placed. The positions define a sequential list starting at 1. If a rule
      * already exists at the given position, rules greater than the provided
      * position will be moved forward by one.
+     *
      * If no position is provided, the server will place the rule as the second to
      * last rule in the sequence before the required default allow-all or deny-all
      * rule.

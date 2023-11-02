@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,7 +184,7 @@ public interface PigJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
    *
@@ -198,7 +198,7 @@ public interface PigJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
    *
@@ -215,7 +215,7 @@ public interface PigJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
    *
@@ -229,7 +229,7 @@ public interface PigJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
    *
@@ -247,7 +247,7 @@ public interface PigJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
    *
@@ -352,5 +352,5 @@ public interface PigJobOrBuilder
    */
   com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
 
-  public com.google.cloud.dataproc.v1.PigJob.QueriesCase getQueriesCase();
+  com.google.cloud.dataproc.v1.PigJob.QueriesCase getQueriesCase();
 }

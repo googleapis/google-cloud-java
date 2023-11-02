@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The resource name of the consumer and service.
+   *
    * A valid name would be:
    * - `projects/123/services/serviceusage.googleapis.com`
    * </pre>
@@ -42,6 +43,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The resource name of the consumer and service.
+   *
    * A valid name would be:
    * - `projects/123/services/serviceusage.googleapis.com`
    * </pre>
@@ -57,6 +59,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The resource name of the consumer.
+   *
    * A valid name would be:
    * - `projects/123`
    * </pre>
@@ -71,6 +74,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The resource name of the consumer.
+   *
    * A valid name would be:
    * - `projects/123`
    * </pre>

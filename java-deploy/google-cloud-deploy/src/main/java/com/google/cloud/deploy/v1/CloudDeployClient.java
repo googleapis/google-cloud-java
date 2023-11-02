@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -234,7 +234,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of pipelines. Format must be
-   *     projects/{project_id}/locations/{location_name}.
+   *     `projects/{project_id}/locations/{location_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeliveryPipelinesPagedResponse listDeliveryPipelines(LocationName parent) {
@@ -267,7 +267,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of pipelines. Format must be
-   *     projects/{project_id}/locations/{location_name}.
+   *     `projects/{project_id}/locations/{location_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeliveryPipelinesPagedResponse listDeliveryPipelines(String parent) {
@@ -409,7 +409,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `DeliveryPipeline`. Format must be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeliveryPipeline getDeliveryPipeline(DeliveryPipelineName name) {
@@ -440,7 +440,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `DeliveryPipeline`. Format must be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeliveryPipeline getDeliveryPipeline(String name) {
@@ -534,7 +534,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent collection in which the `DeliveryPipeline` should be
-   *     created. Format should be projects/{project_id}/locations/{location_name}.
+   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
    * @param deliveryPipeline Required. The `DeliveryPipeline` to create.
    * @param deliveryPipelineId Required. ID of the `DeliveryPipeline`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -574,7 +574,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent collection in which the `DeliveryPipeline` should be
-   *     created. Format should be projects/{project_id}/locations/{location_name}.
+   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
    * @param deliveryPipeline Required. The `DeliveryPipeline` to create.
    * @param deliveryPipelineId Required. ID of the `DeliveryPipeline`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -845,7 +845,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the `DeliveryPipeline` to delete. Format should be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDeliveryPipelineAsync(
@@ -877,7 +877,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the `DeliveryPipeline` to delete. Format should be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDeliveryPipelineAsync(String name) {
@@ -1015,7 +1015,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of targets. Format must be
-   *     projects/{project_id}/locations/{location_name}.
+   *     `projects/{project_id}/locations/{location_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTargetsPagedResponse listTargets(LocationName parent) {
@@ -1047,7 +1047,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of targets. Format must be
-   *     projects/{project_id}/locations/{location_name}.
+   *     `projects/{project_id}/locations/{location_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTargetsPagedResponse listTargets(String parent) {
@@ -1165,6 +1165,157 @@ public class CloudDeployClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a `Rollout` to roll back the specified target.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeliveryPipelineName name =
+   *       DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+   *   String targetId = "targetId-441951604";
+   *   String rolloutId = "rolloutId551248556";
+   *   RollbackTargetResponse response = cloudDeployClient.rollbackTarget(name, targetId, rolloutId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
+   *     created. Format should be
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
+   * @param targetId Required. ID of the `Target` that is being rolled back.
+   * @param rolloutId Required. ID of the rollback `Rollout` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RollbackTargetResponse rollbackTarget(
+      DeliveryPipelineName name, String targetId, String rolloutId) {
+    RollbackTargetRequest request =
+        RollbackTargetRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setTargetId(targetId)
+            .setRolloutId(rolloutId)
+            .build();
+    return rollbackTarget(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `Rollout` to roll back the specified target.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]").toString();
+   *   String targetId = "targetId-441951604";
+   *   String rolloutId = "rolloutId551248556";
+   *   RollbackTargetResponse response = cloudDeployClient.rollbackTarget(name, targetId, rolloutId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The `DeliveryPipeline` for which the rollback `Rollout` should be
+   *     created. Format should be
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
+   * @param targetId Required. ID of the `Target` that is being rolled back.
+   * @param rolloutId Required. ID of the rollback `Rollout` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RollbackTargetResponse rollbackTarget(
+      String name, String targetId, String rolloutId) {
+    RollbackTargetRequest request =
+        RollbackTargetRequest.newBuilder()
+            .setName(name)
+            .setTargetId(targetId)
+            .setRolloutId(rolloutId)
+            .build();
+    return rollbackTarget(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `Rollout` to roll back the specified target.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   RollbackTargetRequest request =
+   *       RollbackTargetRequest.newBuilder()
+   *           .setName(
+   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *                   .toString())
+   *           .setTargetId("targetId-441951604")
+   *           .setRolloutId("rolloutId551248556")
+   *           .setReleaseId("releaseId89607042")
+   *           .setRolloutToRollBack("rolloutToRollBack-1195544784")
+   *           .setRollbackConfig(RollbackTargetConfig.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   RollbackTargetResponse response = cloudDeployClient.rollbackTarget(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RollbackTargetResponse rollbackTarget(RollbackTargetRequest request) {
+    return rollbackTargetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `Rollout` to roll back the specified target.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   RollbackTargetRequest request =
+   *       RollbackTargetRequest.newBuilder()
+   *           .setName(
+   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *                   .toString())
+   *           .setTargetId("targetId-441951604")
+   *           .setRolloutId("rolloutId551248556")
+   *           .setReleaseId("releaseId89607042")
+   *           .setRolloutToRollBack("rolloutToRollBack-1195544784")
+   *           .setRollbackConfig(RollbackTargetConfig.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<RollbackTargetResponse> future =
+   *       cloudDeployClient.rollbackTargetCallable().futureCall(request);
+   *   // Do something.
+   *   RollbackTargetResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RollbackTargetRequest, RollbackTargetResponse>
+      rollbackTargetCallable() {
+    return stub.rollbackTargetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets details of a single Target.
    *
    * <p>Sample code:
@@ -1182,7 +1333,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `Target`. Format must be
-   *     projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   *     `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Target getTarget(TargetName name) {
@@ -1210,7 +1361,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `Target`. Format must be
-   *     projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   *     `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Target getTarget(String name) {
@@ -1294,7 +1445,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent collection in which the `Target` should be created. Format
-   *     should be projects/{project_id}/locations/{location_name}.
+   *     should be `projects/{project_id}/locations/{location_name}`.
    * @param target Required. The `Target` to create.
    * @param targetId Required. ID of the `Target`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1331,7 +1482,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent collection in which the `Target` should be created. Format
-   *     should be projects/{project_id}/locations/{location_name}.
+   *     should be `projects/{project_id}/locations/{location_name}`.
    * @param target Required. The `Target` to create.
    * @param targetId Required. ID of the `Target`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1593,7 +1744,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the `Target` to delete. Format should be
-   *     projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   *     `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteTargetAsync(TargetName name) {
@@ -1621,7 +1772,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the `Target` to delete. Format should be
-   *     projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   *     `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteTargetAsync(String name) {
@@ -1921,7 +2072,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `Release`. Format must be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Release getRelease(ReleaseName name) {
@@ -1950,7 +2101,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `Release`. Format must be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Release getRelease(String name) {
@@ -2040,7 +2191,7 @@ public class CloudDeployClient implements BackgroundResource {
    *
    * @param parent Required. The parent collection in which the `Release` should be created. Format
    *     should be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param release Required. The `Release` to create.
    * @param releaseId Required. ID of the `Release`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2079,7 +2230,7 @@ public class CloudDeployClient implements BackgroundResource {
    *
    * @param parent Required. The parent collection in which the `Release` should be created. Format
    *     should be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @param release Required. The `Release` to create.
    * @param releaseId Required. ID of the `Release`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2218,8 +2369,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the Release. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AbandonReleaseResponse abandonRelease(ReleaseName name) {
@@ -2248,8 +2398,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the Release. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AbandonReleaseResponse abandonRelease(String name) {
@@ -2339,8 +2488,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the Rollout. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApproveRolloutResponse approveRollout(RolloutName name) {
@@ -2370,8 +2518,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the Rollout. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApproveRolloutResponse approveRollout(String name) {
@@ -2474,8 +2621,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the Rollout. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * @param phaseId Required. The phase ID to advance the `Rollout` to.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2510,8 +2656,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the Rollout. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * @param phaseId Required. The phase ID to advance the `Rollout` to.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2615,8 +2760,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the Rollout. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CancelRolloutResponse cancelRollout(RolloutName name) {
@@ -2646,8 +2790,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the Rollout. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CancelRolloutResponse cancelRollout(String name) {
@@ -2921,7 +3064,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `Rollout`. Format must be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Rollout getRollout(RolloutName name) {
@@ -2951,7 +3094,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `Rollout`. Format must be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Rollout getRollout(String name) {
@@ -3051,7 +3194,7 @@ public class CloudDeployClient implements BackgroundResource {
    *
    * @param parent Required. The parent collection in which the `Rollout` should be created. Format
    *     should be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * @param rollout Required. The `Rollout` to create.
    * @param rolloutId Required. ID of the `Rollout`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3090,7 +3233,7 @@ public class CloudDeployClient implements BackgroundResource {
    *
    * @param parent Required. The parent collection in which the `Rollout` should be created. Format
    *     should be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * @param rollout Required. The `Rollout` to create.
    * @param rolloutId Required. ID of the `Rollout`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3235,8 +3378,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param rollout Required. Name of the Rollout. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * @param phaseId Required. The phase ID the Job to ignore belongs to.
    * @param jobId Required. The job ID for the Job to ignore.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3274,8 +3416,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param rollout Required. Name of the Rollout. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * @param phaseId Required. The phase ID the Job to ignore belongs to.
    * @param jobId Required. The job ID for the Job to ignore.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3387,8 +3528,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param rollout Required. Name of the Rollout. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * @param phaseId Required. The phase ID the Job to retry belongs to.
    * @param jobId Required. The job ID for the Job to retry.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3426,8 +3566,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param rollout Required. Name of the Rollout. Format is
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * @param phaseId Required. The phase ID the Job to retry belongs to.
    * @param jobId Required. The job ID for the Job to retry.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3733,7 +3872,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `JobRun`. Format must be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final JobRun getJobRun(JobRunName name) {
@@ -3769,7 +3908,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `JobRun`. Format must be
-   *     projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}.
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final JobRun getJobRun(String name) {
@@ -3874,8 +4013,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `JobRun`. Format must be
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TerminateJobRunResponse terminateJobRun(JobRunName name) {
@@ -3911,8 +4049,7 @@ public class CloudDeployClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the `JobRun`. Format must be
-   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   *     releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TerminateJobRunResponse terminateJobRun(String name) {
@@ -4099,6 +4236,1225 @@ public class CloudDeployClient implements BackgroundResource {
    */
   public final UnaryCallable<GetConfigRequest, Config> getConfigCallable() {
     return stub.getConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Automation in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeliveryPipelineName parent =
+   *       DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+   *   Automation automation = Automation.newBuilder().build();
+   *   String automationId = "automationId64173202";
+   *   Automation response =
+   *       cloudDeployClient.createAutomationAsync(parent, automation, automationId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which the `Automation` should be created.
+   *     Format should be
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
+   * @param automation Required. The `Automation` to create.
+   * @param automationId Required. ID of the `Automation`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Automation, OperationMetadata> createAutomationAsync(
+      DeliveryPipelineName parent, Automation automation, String automationId) {
+    CreateAutomationRequest request =
+        CreateAutomationRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAutomation(automation)
+            .setAutomationId(automationId)
+            .build();
+    return createAutomationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Automation in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String parent =
+   *       DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]").toString();
+   *   Automation automation = Automation.newBuilder().build();
+   *   String automationId = "automationId64173202";
+   *   Automation response =
+   *       cloudDeployClient.createAutomationAsync(parent, automation, automationId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which the `Automation` should be created.
+   *     Format should be
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
+   * @param automation Required. The `Automation` to create.
+   * @param automationId Required. ID of the `Automation`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Automation, OperationMetadata> createAutomationAsync(
+      String parent, Automation automation, String automationId) {
+    CreateAutomationRequest request =
+        CreateAutomationRequest.newBuilder()
+            .setParent(parent)
+            .setAutomation(automation)
+            .setAutomationId(automationId)
+            .build();
+    return createAutomationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Automation in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateAutomationRequest request =
+   *       CreateAutomationRequest.newBuilder()
+   *           .setParent(
+   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *                   .toString())
+   *           .setAutomationId("automationId64173202")
+   *           .setAutomation(Automation.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Automation response = cloudDeployClient.createAutomationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Automation, OperationMetadata> createAutomationAsync(
+      CreateAutomationRequest request) {
+    return createAutomationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Automation in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateAutomationRequest request =
+   *       CreateAutomationRequest.newBuilder()
+   *           .setParent(
+   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *                   .toString())
+   *           .setAutomationId("automationId64173202")
+   *           .setAutomation(Automation.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Automation, OperationMetadata> future =
+   *       cloudDeployClient.createAutomationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Automation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateAutomationRequest, Automation, OperationMetadata>
+      createAutomationOperationCallable() {
+    return stub.createAutomationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Automation in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateAutomationRequest request =
+   *       CreateAutomationRequest.newBuilder()
+   *           .setParent(
+   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *                   .toString())
+   *           .setAutomationId("automationId64173202")
+   *           .setAutomation(Automation.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.createAutomationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAutomationRequest, Operation> createAutomationCallable() {
+    return stub.createAutomationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Automation resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   Automation automation = Automation.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Automation response = cloudDeployClient.updateAutomationAsync(automation, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param automation Required. The `Automation` to update.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `Automation` resource by the update. The fields specified in the update_mask are relative
+   *     to the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Automation, OperationMetadata> updateAutomationAsync(
+      Automation automation, FieldMask updateMask) {
+    UpdateAutomationRequest request =
+        UpdateAutomationRequest.newBuilder()
+            .setAutomation(automation)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAutomationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Automation resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateAutomationRequest request =
+   *       UpdateAutomationRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAutomation(Automation.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Automation response = cloudDeployClient.updateAutomationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Automation, OperationMetadata> updateAutomationAsync(
+      UpdateAutomationRequest request) {
+    return updateAutomationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Automation resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateAutomationRequest request =
+   *       UpdateAutomationRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAutomation(Automation.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Automation, OperationMetadata> future =
+   *       cloudDeployClient.updateAutomationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Automation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateAutomationRequest, Automation, OperationMetadata>
+      updateAutomationOperationCallable() {
+    return stub.updateAutomationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Automation resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateAutomationRequest request =
+   *       UpdateAutomationRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAutomation(Automation.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.updateAutomationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAutomationRequest, Operation> updateAutomationCallable() {
+    return stub.updateAutomationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Automation resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   AutomationName name =
+   *       AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]");
+   *   cloudDeployClient.deleteAutomationAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `Automation` to delete. Format should be
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAutomationAsync(
+      AutomationName name) {
+    DeleteAutomationRequest request =
+        DeleteAutomationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteAutomationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Automation resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+   *           .toString();
+   *   cloudDeployClient.deleteAutomationAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `Automation` to delete. Format should be
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAutomationAsync(String name) {
+    DeleteAutomationRequest request = DeleteAutomationRequest.newBuilder().setName(name).build();
+    return deleteAutomationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Automation resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteAutomationRequest request =
+   *       DeleteAutomationRequest.newBuilder()
+   *           .setName(
+   *               AutomationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   cloudDeployClient.deleteAutomationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAutomationAsync(
+      DeleteAutomationRequest request) {
+    return deleteAutomationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Automation resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteAutomationRequest request =
+   *       DeleteAutomationRequest.newBuilder()
+   *           .setName(
+   *               AutomationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       cloudDeployClient.deleteAutomationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteAutomationRequest, Empty, OperationMetadata>
+      deleteAutomationOperationCallable() {
+    return stub.deleteAutomationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Automation resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteAutomationRequest request =
+   *       DeleteAutomationRequest.newBuilder()
+   *           .setName(
+   *               AutomationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.deleteAutomationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAutomationRequest, Operation> deleteAutomationCallable() {
+    return stub.deleteAutomationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Automation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   AutomationName name =
+   *       AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]");
+   *   Automation response = cloudDeployClient.getAutomation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `Automation`. Format must be
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Automation getAutomation(AutomationName name) {
+    GetAutomationRequest request =
+        GetAutomationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAutomation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Automation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+   *           .toString();
+   *   Automation response = cloudDeployClient.getAutomation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `Automation`. Format must be
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Automation getAutomation(String name) {
+    GetAutomationRequest request = GetAutomationRequest.newBuilder().setName(name).build();
+    return getAutomation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Automation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   GetAutomationRequest request =
+   *       GetAutomationRequest.newBuilder()
+   *           .setName(
+   *               AutomationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+   *                   .toString())
+   *           .build();
+   *   Automation response = cloudDeployClient.getAutomation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Automation getAutomation(GetAutomationRequest request) {
+    return getAutomationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Automation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   GetAutomationRequest request =
+   *       GetAutomationRequest.newBuilder()
+   *           .setName(
+   *               AutomationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Automation> future = cloudDeployClient.getAutomationCallable().futureCall(request);
+   *   // Do something.
+   *   Automation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAutomationRequest, Automation> getAutomationCallable() {
+    return stub.getAutomationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Automations in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeliveryPipelineName parent =
+   *       DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+   *   for (Automation element : cloudDeployClient.listAutomations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of automations. Format must be
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutomationsPagedResponse listAutomations(DeliveryPipelineName parent) {
+    ListAutomationsRequest request =
+        ListAutomationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAutomations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Automations in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String parent =
+   *       DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]").toString();
+   *   for (Automation element : cloudDeployClient.listAutomations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of automations. Format must be
+   *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutomationsPagedResponse listAutomations(String parent) {
+    ListAutomationsRequest request = ListAutomationsRequest.newBuilder().setParent(parent).build();
+    return listAutomations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Automations in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListAutomationsRequest request =
+   *       ListAutomationsRequest.newBuilder()
+   *           .setParent(
+   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Automation element : cloudDeployClient.listAutomations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutomationsPagedResponse listAutomations(ListAutomationsRequest request) {
+    return listAutomationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Automations in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListAutomationsRequest request =
+   *       ListAutomationsRequest.newBuilder()
+   *           .setParent(
+   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Automation> future =
+   *       cloudDeployClient.listAutomationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Automation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAutomationsRequest, ListAutomationsPagedResponse>
+      listAutomationsPagedCallable() {
+    return stub.listAutomationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Automations in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListAutomationsRequest request =
+   *       ListAutomationsRequest.newBuilder()
+   *           .setParent(
+   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAutomationsResponse response =
+   *         cloudDeployClient.listAutomationsCallable().call(request);
+   *     for (Automation element : response.getAutomationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAutomationsRequest, ListAutomationsResponse>
+      listAutomationsCallable() {
+    return stub.listAutomationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutomationRun.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   AutomationRunName name =
+   *       AutomationRunName.of(
+   *           "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]");
+   *   AutomationRun response = cloudDeployClient.getAutomationRun(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `AutomationRun`. Format must be
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}/automationRuns/{automation_run}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutomationRun getAutomationRun(AutomationRunName name) {
+    GetAutomationRunRequest request =
+        GetAutomationRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAutomationRun(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutomationRun.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       AutomationRunName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]")
+   *           .toString();
+   *   AutomationRun response = cloudDeployClient.getAutomationRun(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `AutomationRun`. Format must be
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}/automationRuns/{automation_run}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutomationRun getAutomationRun(String name) {
+    GetAutomationRunRequest request = GetAutomationRunRequest.newBuilder().setName(name).build();
+    return getAutomationRun(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutomationRun.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   GetAutomationRunRequest request =
+   *       GetAutomationRunRequest.newBuilder()
+   *           .setName(
+   *               AutomationRunName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]")
+   *                   .toString())
+   *           .build();
+   *   AutomationRun response = cloudDeployClient.getAutomationRun(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutomationRun getAutomationRun(GetAutomationRunRequest request) {
+    return getAutomationRunCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutomationRun.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   GetAutomationRunRequest request =
+   *       GetAutomationRunRequest.newBuilder()
+   *           .setName(
+   *               AutomationRunName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AutomationRun> future =
+   *       cloudDeployClient.getAutomationRunCallable().futureCall(request);
+   *   // Do something.
+   *   AutomationRun response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAutomationRunRequest, AutomationRun> getAutomationRunCallable() {
+    return stub.getAutomationRunCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutomationRuns in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeliveryPipelineName parent =
+   *       DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+   *   for (AutomationRun element : cloudDeployClient.listAutomationRuns(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of automationRuns. Format must
+   *     be `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutomationRunsPagedResponse listAutomationRuns(DeliveryPipelineName parent) {
+    ListAutomationRunsRequest request =
+        ListAutomationRunsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAutomationRuns(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutomationRuns in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String parent =
+   *       DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]").toString();
+   *   for (AutomationRun element : cloudDeployClient.listAutomationRuns(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of automationRuns. Format must
+   *     be `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutomationRunsPagedResponse listAutomationRuns(String parent) {
+    ListAutomationRunsRequest request =
+        ListAutomationRunsRequest.newBuilder().setParent(parent).build();
+    return listAutomationRuns(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutomationRuns in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListAutomationRunsRequest request =
+   *       ListAutomationRunsRequest.newBuilder()
+   *           .setParent(
+   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (AutomationRun element : cloudDeployClient.listAutomationRuns(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutomationRunsPagedResponse listAutomationRuns(
+      ListAutomationRunsRequest request) {
+    return listAutomationRunsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutomationRuns in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListAutomationRunsRequest request =
+   *       ListAutomationRunsRequest.newBuilder()
+   *           .setParent(
+   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<AutomationRun> future =
+   *       cloudDeployClient.listAutomationRunsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AutomationRun element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsPagedResponse>
+      listAutomationRunsPagedCallable() {
+    return stub.listAutomationRunsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutomationRuns in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListAutomationRunsRequest request =
+   *       ListAutomationRunsRequest.newBuilder()
+   *           .setParent(
+   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAutomationRunsResponse response =
+   *         cloudDeployClient.listAutomationRunsCallable().call(request);
+   *     for (AutomationRun element : response.getAutomationRunsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsResponse>
+      listAutomationRunsCallable() {
+    return stub.listAutomationRunsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an AutomationRun. The `state` of the `AutomationRun` after cancelling is `CANCELLED`.
+   * `CancelAutomationRun` can be called on AutomationRun in the state `IN_PROGRESS` and `PENDING`;
+   * AutomationRun in a different state returns an `FAILED_PRECONDITION` error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   AutomationRunName name =
+   *       AutomationRunName.of(
+   *           "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]");
+   *   CancelAutomationRunResponse response = cloudDeployClient.cancelAutomationRun(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `AutomationRun`. Format is
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}/automationRuns/{automation_run}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelAutomationRunResponse cancelAutomationRun(AutomationRunName name) {
+    CancelAutomationRunRequest request =
+        CancelAutomationRunRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return cancelAutomationRun(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an AutomationRun. The `state` of the `AutomationRun` after cancelling is `CANCELLED`.
+   * `CancelAutomationRun` can be called on AutomationRun in the state `IN_PROGRESS` and `PENDING`;
+   * AutomationRun in a different state returns an `FAILED_PRECONDITION` error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       AutomationRunName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]")
+   *           .toString();
+   *   CancelAutomationRunResponse response = cloudDeployClient.cancelAutomationRun(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `AutomationRun`. Format is
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}/automationRuns/{automation_run}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelAutomationRunResponse cancelAutomationRun(String name) {
+    CancelAutomationRunRequest request =
+        CancelAutomationRunRequest.newBuilder().setName(name).build();
+    return cancelAutomationRun(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an AutomationRun. The `state` of the `AutomationRun` after cancelling is `CANCELLED`.
+   * `CancelAutomationRun` can be called on AutomationRun in the state `IN_PROGRESS` and `PENDING`;
+   * AutomationRun in a different state returns an `FAILED_PRECONDITION` error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CancelAutomationRunRequest request =
+   *       CancelAutomationRunRequest.newBuilder()
+   *           .setName(
+   *               AutomationRunName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]")
+   *                   .toString())
+   *           .build();
+   *   CancelAutomationRunResponse response = cloudDeployClient.cancelAutomationRun(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelAutomationRunResponse cancelAutomationRun(CancelAutomationRunRequest request) {
+    return cancelAutomationRunCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an AutomationRun. The `state` of the `AutomationRun` after cancelling is `CANCELLED`.
+   * `CancelAutomationRun` can be called on AutomationRun in the state `IN_PROGRESS` and `PENDING`;
+   * AutomationRun in a different state returns an `FAILED_PRECONDITION` error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CancelAutomationRunRequest request =
+   *       CancelAutomationRunRequest.newBuilder()
+   *           .setName(
+   *               AutomationRunName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CancelAutomationRunResponse> future =
+   *       cloudDeployClient.cancelAutomationRunCallable().futureCall(request);
+   *   // Do something.
+   *   CancelAutomationRunResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunCallable() {
+    return stub.cancelAutomationRunCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4866,6 +6222,163 @@ public class CloudDeployClient implements BackgroundResource {
     protected ListJobRunsFixedSizeCollection createCollection(
         List<ListJobRunsPage> pages, int collectionSize) {
       return new ListJobRunsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAutomationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAutomationsRequest,
+          ListAutomationsResponse,
+          Automation,
+          ListAutomationsPage,
+          ListAutomationsFixedSizeCollection> {
+
+    public static ApiFuture<ListAutomationsPagedResponse> createAsync(
+        PageContext<ListAutomationsRequest, ListAutomationsResponse, Automation> context,
+        ApiFuture<ListAutomationsResponse> futureResponse) {
+      ApiFuture<ListAutomationsPage> futurePage =
+          ListAutomationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAutomationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAutomationsPagedResponse(ListAutomationsPage page) {
+      super(page, ListAutomationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAutomationsPage
+      extends AbstractPage<
+          ListAutomationsRequest, ListAutomationsResponse, Automation, ListAutomationsPage> {
+
+    private ListAutomationsPage(
+        PageContext<ListAutomationsRequest, ListAutomationsResponse, Automation> context,
+        ListAutomationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAutomationsPage createEmptyPage() {
+      return new ListAutomationsPage(null, null);
+    }
+
+    @Override
+    protected ListAutomationsPage createPage(
+        PageContext<ListAutomationsRequest, ListAutomationsResponse, Automation> context,
+        ListAutomationsResponse response) {
+      return new ListAutomationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAutomationsPage> createPageAsync(
+        PageContext<ListAutomationsRequest, ListAutomationsResponse, Automation> context,
+        ApiFuture<ListAutomationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAutomationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAutomationsRequest,
+          ListAutomationsResponse,
+          Automation,
+          ListAutomationsPage,
+          ListAutomationsFixedSizeCollection> {
+
+    private ListAutomationsFixedSizeCollection(
+        List<ListAutomationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAutomationsFixedSizeCollection createEmptyCollection() {
+      return new ListAutomationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAutomationsFixedSizeCollection createCollection(
+        List<ListAutomationsPage> pages, int collectionSize) {
+      return new ListAutomationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAutomationRunsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAutomationRunsRequest,
+          ListAutomationRunsResponse,
+          AutomationRun,
+          ListAutomationRunsPage,
+          ListAutomationRunsFixedSizeCollection> {
+
+    public static ApiFuture<ListAutomationRunsPagedResponse> createAsync(
+        PageContext<ListAutomationRunsRequest, ListAutomationRunsResponse, AutomationRun> context,
+        ApiFuture<ListAutomationRunsResponse> futureResponse) {
+      ApiFuture<ListAutomationRunsPage> futurePage =
+          ListAutomationRunsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAutomationRunsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAutomationRunsPagedResponse(ListAutomationRunsPage page) {
+      super(page, ListAutomationRunsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAutomationRunsPage
+      extends AbstractPage<
+          ListAutomationRunsRequest,
+          ListAutomationRunsResponse,
+          AutomationRun,
+          ListAutomationRunsPage> {
+
+    private ListAutomationRunsPage(
+        PageContext<ListAutomationRunsRequest, ListAutomationRunsResponse, AutomationRun> context,
+        ListAutomationRunsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAutomationRunsPage createEmptyPage() {
+      return new ListAutomationRunsPage(null, null);
+    }
+
+    @Override
+    protected ListAutomationRunsPage createPage(
+        PageContext<ListAutomationRunsRequest, ListAutomationRunsResponse, AutomationRun> context,
+        ListAutomationRunsResponse response) {
+      return new ListAutomationRunsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAutomationRunsPage> createPageAsync(
+        PageContext<ListAutomationRunsRequest, ListAutomationRunsResponse, AutomationRun> context,
+        ApiFuture<ListAutomationRunsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAutomationRunsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAutomationRunsRequest,
+          ListAutomationRunsResponse,
+          AutomationRun,
+          ListAutomationRunsPage,
+          ListAutomationRunsFixedSizeCollection> {
+
+    private ListAutomationRunsFixedSizeCollection(
+        List<ListAutomationRunsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAutomationRunsFixedSizeCollection createEmptyCollection() {
+      return new ListAutomationRunsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAutomationRunsFixedSizeCollection createCollection(
+        List<ListAutomationRunsPage> pages, int collectionSize) {
+      return new ListAutomationRunsFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     return new UpdateInstanceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.InstanceProto
         .internal_static_google_cloud_baremetalsolution_v2_UpdateInstanceRequest_descriptor;
@@ -72,6 +67,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The server to update.
+   *
    * The `name` field is used to identify the instance to update.
    * Format: projects/{project}/locations/{location}/instances/{instance}
    * </pre>
@@ -91,6 +87,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The server to update.
+   *
    * The `name` field is used to identify the instance to update.
    * Format: projects/{project}/locations/{location}/instances/{instance}
    * </pre>
@@ -112,6 +109,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The server to update.
+   *
    * The `name` field is used to identify the instance to update.
    * Format: projects/{project}/locations/{location}/instances/{instance}
    * </pre>
@@ -577,6 +575,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The server to update.
+     *
      * The `name` field is used to identify the instance to update.
      * Format: projects/{project}/locations/{location}/instances/{instance}
      * </pre>
@@ -595,6 +594,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The server to update.
+     *
      * The `name` field is used to identify the instance to update.
      * Format: projects/{project}/locations/{location}/instances/{instance}
      * </pre>
@@ -619,6 +619,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The server to update.
+     *
      * The `name` field is used to identify the instance to update.
      * Format: projects/{project}/locations/{location}/instances/{instance}
      * </pre>
@@ -645,6 +646,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The server to update.
+     *
      * The `name` field is used to identify the instance to update.
      * Format: projects/{project}/locations/{location}/instances/{instance}
      * </pre>
@@ -669,6 +671,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The server to update.
+     *
      * The `name` field is used to identify the instance to update.
      * Format: projects/{project}/locations/{location}/instances/{instance}
      * </pre>
@@ -698,6 +701,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The server to update.
+     *
      * The `name` field is used to identify the instance to update.
      * Format: projects/{project}/locations/{location}/instances/{instance}
      * </pre>
@@ -721,6 +725,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The server to update.
+     *
      * The `name` field is used to identify the instance to update.
      * Format: projects/{project}/locations/{location}/instances/{instance}
      * </pre>
@@ -739,6 +744,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The server to update.
+     *
      * The `name` field is used to identify the instance to update.
      * Format: projects/{project}/locations/{location}/instances/{instance}
      * </pre>
@@ -761,6 +767,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The server to update.
+     *
      * The `name` field is used to identify the instance to update.
      * Format: projects/{project}/locations/{location}/instances/{instance}
      * </pre>

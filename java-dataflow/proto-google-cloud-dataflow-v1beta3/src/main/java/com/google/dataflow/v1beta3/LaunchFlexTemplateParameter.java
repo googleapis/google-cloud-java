@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     return new LaunchFlexTemplateParameter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.TemplatesProto
         .internal_static_google_dataflow_v1beta3_LaunchFlexTemplateParameter_descriptor;
@@ -83,6 +78,8 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   }
 
   private int templateCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object template_;
 
   public enum TemplateCase

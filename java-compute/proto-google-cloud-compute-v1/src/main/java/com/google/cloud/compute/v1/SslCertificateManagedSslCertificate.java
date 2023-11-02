@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class SslCertificateManagedSslCertificate
   }
 
   private SslCertificateManagedSslCertificate() {
-    domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    domains_ = com.google.protobuf.LazyStringArrayList.emptyList();
     status_ = "";
   }
 
@@ -48,11 +48,6 @@ public final class SslCertificateManagedSslCertificate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SslCertificateManagedSslCertificate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -420,7 +415,8 @@ public final class SslCertificateManagedSslCertificate
   public static final int DOMAINS_FIELD_NUMBER = 226935855;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList domains_;
+  private com.google.protobuf.LazyStringArrayList domains_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -807,8 +803,7 @@ public final class SslCertificateManagedSslCertificate
       super.clear();
       bitField0_ = 0;
       internalGetMutableDomainStatus().clear();
-      domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      domains_ = com.google.protobuf.LazyStringArrayList.emptyList();
       status_ = "";
       return this;
     }
@@ -838,21 +833,11 @@ public final class SslCertificateManagedSslCertificate
     public com.google.cloud.compute.v1.SslCertificateManagedSslCertificate buildPartial() {
       com.google.cloud.compute.v1.SslCertificateManagedSslCertificate result =
           new com.google.cloud.compute.v1.SslCertificateManagedSslCertificate(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.SslCertificateManagedSslCertificate result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        domains_ = domains_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.domains_ = domains_;
     }
 
     private void buildPartial0(
@@ -861,6 +846,10 @@ public final class SslCertificateManagedSslCertificate
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.domainStatus_ = internalGetDomainStatus();
         result.domainStatus_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        domains_.makeImmutable();
+        result.domains_ = domains_;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
@@ -923,7 +912,7 @@ public final class SslCertificateManagedSslCertificate
       if (!other.domains_.isEmpty()) {
         if (domains_.isEmpty()) {
           domains_ = other.domains_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureDomainsIsMutable();
           domains_.addAll(other.domains_);
@@ -1171,14 +1160,14 @@ public final class SslCertificateManagedSslCertificate
       return this;
     }
 
-    private com.google.protobuf.LazyStringList domains_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList domains_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDomainsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!domains_.isModifiable()) {
         domains_ = new com.google.protobuf.LazyStringArrayList(domains_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1192,7 +1181,8 @@ public final class SslCertificateManagedSslCertificate
      * @return A list containing the domains.
      */
     public com.google.protobuf.ProtocolStringList getDomainsList() {
-      return domains_.getUnmodifiableView();
+      domains_.makeImmutable();
+      return domains_;
     }
     /**
      *
@@ -1257,6 +1247,7 @@ public final class SslCertificateManagedSslCertificate
       }
       ensureDomainsIsMutable();
       domains_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1278,6 +1269,7 @@ public final class SslCertificateManagedSslCertificate
       }
       ensureDomainsIsMutable();
       domains_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1296,6 +1288,7 @@ public final class SslCertificateManagedSslCertificate
     public Builder addAllDomains(java.lang.Iterable<java.lang.String> values) {
       ensureDomainsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, domains_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1311,8 +1304,9 @@ public final class SslCertificateManagedSslCertificate
      * @return This builder for chaining.
      */
     public Builder clearDomains() {
-      domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      domains_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1335,6 +1329,7 @@ public final class SslCertificateManagedSslCertificate
       checkByteStringIsUtf8(value);
       ensureDomainsIsMutable();
       domains_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

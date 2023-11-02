@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
   private ListNetworkPoliciesResponse() {
     networkPolicies_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
-    unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListNetworkPoliciesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -198,7 +193,8 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
   public static final int UNREACHABLE_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unreachable_;
+  private com.google.protobuf.LazyStringArrayList unreachable_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -497,8 +493,7 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -546,11 +541,6 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
       } else {
         result.networkPolicies_ = networkPoliciesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        unreachable_ = unreachable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.unreachable_ = unreachable_;
     }
 
     private void buildPartial0(
@@ -558,6 +548,10 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        unreachable_.makeImmutable();
+        result.unreachable_ = unreachable_;
       }
     }
 
@@ -643,7 +637,7 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
       if (!other.unreachable_.isEmpty()) {
         if (unreachable_.isEmpty()) {
           unreachable_ = other.unreachable_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureUnreachableIsMutable();
           unreachable_.addAll(other.unreachable_);
@@ -1192,14 +1186,14 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
       return this;
     }
 
-    private com.google.protobuf.LazyStringList unreachable_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUnreachableIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!unreachable_.isModifiable()) {
         unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1214,7 +1208,8 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
      * @return A list containing the unreachable.
      */
     public com.google.protobuf.ProtocolStringList getUnreachableList() {
-      return unreachable_.getUnmodifiableView();
+      unreachable_.makeImmutable();
+      return unreachable_;
     }
     /**
      *
@@ -1283,6 +1278,7 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
       }
       ensureUnreachableIsMutable();
       unreachable_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1305,6 +1301,7 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
       }
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1324,6 +1321,7 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
     public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
       ensureUnreachableIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1340,8 +1338,9 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearUnreachable() {
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1365,6 +1364,7 @@ public final class ListNetworkPoliciesResponse extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

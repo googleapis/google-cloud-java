@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.functions.v1;
  *
  * <pre>
  * Describes a Cloud Function that contains user computation executed in
- * response to an event. It encapsulate function and triggers configurations.
+ * response to an event. It encapsulates function and triggers configurations.
  * </pre>
  *
  * Protobuf type {@code google.cloud.functions.v1.CloudFunction}
@@ -66,11 +66,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     return new CloudFunction();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v1.FunctionsProto
         .internal_static_google_cloud_functions_v1_CloudFunction_descriptor;
@@ -106,8 +101,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Available egress settings.
-   * This controls what traffic is diverted through the VPC Access Connector
-   * resource. By default PRIVATE_RANGES_ONLY will be used.
+   *
+   * This controls what traffic is diverted through the Serverless VPC Access
+   * connector resource. By default, PRIVATE_RANGES_ONLY is used.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.functions.v1.CloudFunction.VpcConnectorEgressSettings}
@@ -127,7 +123,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use the VPC Access Connector only for private IP space from RFC1918.
+     * Use the Serverless VPC Access connector only for private IP space from
+     * RFC1918.
      * </pre>
      *
      * <code>PRIVATE_RANGES_ONLY = 1;</code>
@@ -137,8 +134,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Force the use of VPC Access Connector for all egress traffic from the
-     * function.
+     * Force the use of Serverless VPC Access connector for all egress traffic
+     * from the function.
      * </pre>
      *
      * <code>ALL_TRAFFIC = 2;</code>
@@ -161,7 +158,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use the VPC Access Connector only for private IP space from RFC1918.
+     * Use the Serverless VPC Access connector only for private IP space from
+     * RFC1918.
      * </pre>
      *
      * <code>PRIVATE_RANGES_ONLY = 1;</code>
@@ -171,8 +169,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Force the use of VPC Access Connector for all egress traffic from the
-     * function.
+     * Force the use of Serverless VPC Access connector for all egress traffic
+     * from the function.
      * </pre>
      *
      * <code>ALL_TRAFFIC = 2;</code>
@@ -270,8 +268,10 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Available ingress settings.
+   *
    * This controls what traffic can reach the function.
-   * If unspecified, ALLOW_ALL will be used.
+   *
+   * If unspecified, ALLOW_ALL is used.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.functions.v1.CloudFunction.IngressSettings}
@@ -472,7 +472,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Docker images will be stored in multi-regional Container Registry
+     * Docker images are stored in multi-regional Container Registry
      * repositories named `gcf`.
      * </pre>
      *
@@ -483,11 +483,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Docker images will be stored in regional Artifact Registry repositories.
-     * By default, GCF will create and use repositories named `gcf-artifacts`
-     * in every region in which a function is deployed. But the repository to
-     * use can also be specified by the user using the `docker_repository`
-     * field.
+     * Docker images are stored in regional Artifact Registry repositories.
+     * By default, Cloud Functions creates and uses repositories named
+     * `gcf-artifacts` in every region in which a function is deployed. But the
+     * repository to use can also be specified by the user by using the
+     * `docker_repository` field.
      * </pre>
      *
      * <code>ARTIFACT_REGISTRY = 2;</code>
@@ -510,7 +510,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Docker images will be stored in multi-regional Container Registry
+     * Docker images are stored in multi-regional Container Registry
      * repositories named `gcf`.
      * </pre>
      *
@@ -521,11 +521,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Docker images will be stored in regional Artifact Registry repositories.
-     * By default, GCF will create and use repositories named `gcf-artifacts`
-     * in every region in which a function is deployed. But the repository to
-     * use can also be specified by the user using the `docker_repository`
-     * field.
+     * Docker images are stored in regional Artifact Registry repositories.
+     * By default, Cloud Functions creates and uses repositories named
+     * `gcf-artifacts` in every region in which a function is deployed. But the
+     * repository to use can also be specified by the user by using the
+     * `docker_repository` field.
      * </pre>
      *
      * <code>ARTIFACT_REGISTRY = 2;</code>
@@ -616,6 +616,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCodeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object sourceCode_;
 
   public enum SourceCodeCase
@@ -666,6 +668,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int triggerCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object trigger_;
 
   public enum TriggerCase
@@ -895,6 +899,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * **Beta Feature**
+   *
    * The source repository where a function is hosted.
    * </pre>
    *
@@ -911,6 +916,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * **Beta Feature**
+   *
    * The source repository where a function is hosted.
    * </pre>
    *
@@ -930,6 +936,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * **Beta Feature**
+   *
    * The source repository where a function is hosted.
    * </pre>
    *
@@ -948,8 +955,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Cloud Storage signed URL used for source uploading, generated
+   * The Google Cloud Storage-signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+   *
    * The signature is validated on write methods (Create, Update)
    * The signature is stripped from the Function object on read methods (Get,
    * List)
@@ -966,8 +974,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Cloud Storage signed URL used for source uploading, generated
+   * The Google Cloud Storage-signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+   *
    * The signature is validated on write methods (Create, Update)
    * The signature is stripped from the Function object on read methods (Get,
    * List)
@@ -997,8 +1006,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Cloud Storage signed URL used for source uploading, generated
+   * The Google Cloud Storage-signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+   *
    * The signature is validated on write methods (Create, Update)
    * The signature is stripped from the Function object on read methods (Get,
    * List)
@@ -1174,12 +1184,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the function (as defined in source code) that will be
-   * executed. Defaults to the resource name suffix, if not specified. For
-   * backward compatibility, if function with given name is not found, then the
-   * system will try to use function named "function".
-   * For Node.js this is name of a function exported by the module specified
-   * in `source_location`.
+   * The name of the function (as defined in source code) that is executed.
+   * Defaults to the resource name suffix, if not specified. For
+   * backward compatibility, if function with given name is not found, the
+   * system tries to use the function named "function".
+   * For Node.js, this is the name of a function exported by the module
+   * as specified in `source_location`.
    * </pre>
    *
    * <code>string entry_point = 8;</code>
@@ -1202,12 +1212,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the function (as defined in source code) that will be
-   * executed. Defaults to the resource name suffix, if not specified. For
-   * backward compatibility, if function with given name is not found, then the
-   * system will try to use function named "function".
-   * For Node.js this is name of a function exported by the module specified
-   * in `source_location`.
+   * The name of the function (as defined in source code) that is executed.
+   * Defaults to the resource name suffix, if not specified. For
+   * backward compatibility, if function with given name is not found, the
+   * system tries to use the function named "function".
+   * For Node.js, this is the name of a function exported by the module
+   * as specified in `source_location`.
    * </pre>
    *
    * <code>string entry_point = 8;</code>
@@ -1465,8 +1475,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The version identifier of the Cloud Function. Each deployment attempt
-   * results in a new version of a function being created.
+   * Output only. The version identifier of the Cloud Function. Each deployment
+   * attempt results in a new version of a function being created.
    * </pre>
    *
    * <code>int64 version_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1801,16 +1811,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The VPC Network that this cloud function can connect to. It can be
-   * either the fully-qualified URI, or the short name of the network resource.
-   * If the short network name is used, the network must belong to the same
-   * project. Otherwise, it must belong to a project within the same
-   * organization. The format of this field is either
+   * The Serverless VPC Access connector that this cloud function can connect
+   * to. It can be either the fully qualified URI, or the short name of the
+   * connector resource. If the connector name is used, the connector must
+   * belong to the same project as the function. Otherwise, it must belong to a
+   * project within the same organization. The format of this field is either
    * `projects/{project}/global/networks/{network}` or `{network}`, where
    * `{project}` is a project id where the network is defined, and `{network}`
    * is the short name of the network.
+   *
    * This field is mutually exclusive with `vpc_connector` and will be replaced
    * by it.
+   *
    * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
    * more information on connecting Cloud projects.
    * </pre>
@@ -1835,16 +1847,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The VPC Network that this cloud function can connect to. It can be
-   * either the fully-qualified URI, or the short name of the network resource.
-   * If the short network name is used, the network must belong to the same
-   * project. Otherwise, it must belong to a project within the same
-   * organization. The format of this field is either
+   * The Serverless VPC Access connector that this cloud function can connect
+   * to. It can be either the fully qualified URI, or the short name of the
+   * connector resource. If the connector name is used, the connector must
+   * belong to the same project as the function. Otherwise, it must belong to a
+   * project within the same organization. The format of this field is either
    * `projects/{project}/global/networks/{network}` or `{network}`, where
    * `{project}` is a project id where the network is defined, and `{network}`
    * is the short name of the network.
+   *
    * This field is mutually exclusive with `vpc_connector` and will be replaced
    * by it.
+   *
    * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
    * more information on connecting Cloud projects.
    * </pre>
@@ -1872,13 +1886,15 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The limit on the maximum number of function instances that may coexist at a
+   * The limit on the maximum number of function instances that can coexist at a
    * given time.
-   * In some cases, such as rapid traffic surges, Cloud Functions may, for a
-   * short period of time, create more instances than the specified max
+   *
+   * In some cases, such as rapid traffic surges, Cloud Functions can for a
+   * short period of time create more instances than the specified max
    * instances limit. If your function cannot tolerate this temporary behavior,
-   * you may want to factor in a safety margin and set a lower max instances
+   * you might want to factor in a safety margin and set a lower max instances
    * value than your function can tolerate.
+   *
    * See the [Max
    * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
    * more details.
@@ -1899,7 +1915,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A lower bound for the number function instances that may coexist at a
+   * A lower bound for the number function instances that can coexist at a
    * given time.
    * </pre>
    *
@@ -1921,11 +1937,13 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC Network Connector that this cloud function can connect to. It can
-   * be either the fully-qualified URI, or the short name of the network
+   * be either the fully qualified URI, or the short name of the network
    * connector resource. The format of this field is
    * `projects/&#42;&#47;locations/&#42;&#47;connectors/&#42;`
+   *
    * This field is mutually exclusive with `network` field and will eventually
    * replace it.
+   *
    * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
    * more information on connecting Cloud projects.
    * </pre>
@@ -1951,11 +1969,13 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC Network Connector that this cloud function can connect to. It can
-   * be either the fully-qualified URI, or the short name of the network
+   * be either the fully qualified URI, or the short name of the network
    * connector resource. The format of this field is
    * `projects/&#42;&#47;locations/&#42;&#47;connectors/&#42;`
+   *
    * This field is mutually exclusive with `network` field and will eventually
    * replace it.
+   *
    * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
    * more information on connecting Cloud projects.
    * </pre>
@@ -2071,14 +2091,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function resources.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
    * If specified, you must also provide an artifact registry repository using
    * the `docker_repository` field that was created with the same KMS crypto
    * key.
+   *
    * The following service accounts need to be granted the role 'Cloud KMS
    * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
    * on the Key/KeyRing/Project/Organization (least access preferred).
+   *
    * 1. Google Cloud Functions service account
    *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
    *    Required to protect the function's image.
@@ -2090,6 +2114,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *    information, see
    *    https://cloud.google.com/storage/docs/projects#service-agents and
    *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+   *
    * Google Cloud Functions delegates access to service agents to protect
    * function resources in internal projects that are not accessible by the
    * end user.
@@ -2117,14 +2142,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function resources.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
    * If specified, you must also provide an artifact registry repository using
    * the `docker_repository` field that was created with the same KMS crypto
    * key.
+   *
    * The following service accounts need to be granted the role 'Cloud KMS
    * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
    * on the Key/KeyRing/Project/Organization (least access preferred).
+   *
    * 1. Google Cloud Functions service account
    *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
    *    Required to protect the function's image.
@@ -2136,6 +2165,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *    information, see
    *    https://cloud.google.com/storage/docs/projects#service-agents and
    *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+   *
    * Google Cloud Functions delegates access to service agents to protect
    * function resources in internal projects that are not accessible by the
    * end user.
@@ -2172,6 +2202,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    * `{project}` and `{region}` are the project id and region respectively where
    * the worker pool is defined and `{workerPool}` is the short name of the
    * worker pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
@@ -2205,6 +2236,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    * `{project}` and `{region}` are the project id and region respectively where
    * the worker pool is defined and `{workerPool}` is the short name of the
    * worker pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
@@ -2492,8 +2524,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
-   * supported for Firebase function deployments.
+   * Input only. An identifier for Firebase function sources. Disclaimer: This
+   * field is only supported for Firebase function deployments.
    * </pre>
    *
    * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2516,8 +2548,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
-   * supported for Firebase function deployments.
+   * Input only. An identifier for Firebase function sources. Disclaimer: This
+   * field is only supported for Firebase function deployments.
    * </pre>
    *
    * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2550,9 +2582,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    * Artifact Registry. If unspecified and the deployment is eligible to use
    * Artifact Registry, GCF will create and use a repository named
    * 'gcf-artifacts' for every deployed region. This is the repository to which
-   * the function docker image will be pushed after it is built by Cloud Build.
+   * the function docker image is pushed after it is built by Cloud Build.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
@@ -2583,9 +2617,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    * Artifact Registry. If unspecified and the deployment is eligible to use
    * Artifact Registry, GCF will create and use a repository named
    * 'gcf-artifacts' for every deployed region. This is the repository to which
-   * the function docker image will be pushed after it is built by Cloud Build.
+   * the function docker image is pushed after it is built by Cloud Build.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
@@ -2615,7 +2651,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Docker Registry to use for this deployment.
-   * If `docker_repository` field is specified, this field will be automatically
+   *
+   * If `docker_repository` field is specified, this field is automatically
    * set as `ARTIFACT_REGISTRY`.
    * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
    * This field may be overridden by the backend for eligible deployments.
@@ -2634,7 +2671,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Docker Registry to use for this deployment.
-   * If `docker_repository` field is specified, this field will be automatically
+   *
+   * If `docker_repository` field is specified, this field is automatically
    * set as `ARTIFACT_REGISTRY`.
    * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
    * This field may be overridden by the backend for eligible deployments.
@@ -3218,7 +3256,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Describes a Cloud Function that contains user computation executed in
-   * response to an event. It encapsulate function and triggers configurations.
+   * response to an event. It encapsulates function and triggers configurations.
    * </pre>
    *
    * Protobuf type {@code google.cloud.functions.v1.CloudFunction}
@@ -4430,6 +4468,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The source repository where a function is hosted.
      * </pre>
      *
@@ -4446,6 +4485,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The source repository where a function is hosted.
      * </pre>
      *
@@ -4472,6 +4512,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The source repository where a function is hosted.
      * </pre>
      *
@@ -4495,6 +4536,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The source repository where a function is hosted.
      * </pre>
      *
@@ -4516,6 +4558,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The source repository where a function is hosted.
      * </pre>
      *
@@ -4549,6 +4592,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The source repository where a function is hosted.
      * </pre>
      *
@@ -4575,6 +4619,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The source repository where a function is hosted.
      * </pre>
      *
@@ -4588,6 +4633,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The source repository where a function is hosted.
      * </pre>
      *
@@ -4609,6 +4655,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The source repository where a function is hosted.
      * </pre>
      *
@@ -4642,8 +4689,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Storage signed URL used for source uploading, generated
+     * The Google Cloud Storage-signed URL used for source uploading, generated
      * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+     *
      * The signature is validated on write methods (Create, Update)
      * The signature is stripped from the Function object on read methods (Get,
      * List)
@@ -4661,8 +4709,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Storage signed URL used for source uploading, generated
+     * The Google Cloud Storage-signed URL used for source uploading, generated
      * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+     *
      * The signature is validated on write methods (Create, Update)
      * The signature is stripped from the Function object on read methods (Get,
      * List)
@@ -4693,8 +4742,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Storage signed URL used for source uploading, generated
+     * The Google Cloud Storage-signed URL used for source uploading, generated
      * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+     *
      * The signature is validated on write methods (Create, Update)
      * The signature is stripped from the Function object on read methods (Get,
      * List)
@@ -4725,8 +4775,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Storage signed URL used for source uploading, generated
+     * The Google Cloud Storage-signed URL used for source uploading, generated
      * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+     *
      * The signature is validated on write methods (Create, Update)
      * The signature is stripped from the Function object on read methods (Get,
      * List)
@@ -4750,8 +4801,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Storage signed URL used for source uploading, generated
+     * The Google Cloud Storage-signed URL used for source uploading, generated
      * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+     *
      * The signature is validated on write methods (Create, Update)
      * The signature is stripped from the Function object on read methods (Get,
      * List)
@@ -4773,8 +4825,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Storage signed URL used for source uploading, generated
+     * The Google Cloud Storage-signed URL used for source uploading, generated
      * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+     *
      * The signature is validated on write methods (Create, Update)
      * The signature is stripped from the Function object on read methods (Get,
      * List)
@@ -5321,12 +5374,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the function (as defined in source code) that will be
-     * executed. Defaults to the resource name suffix, if not specified. For
-     * backward compatibility, if function with given name is not found, then the
-     * system will try to use function named "function".
-     * For Node.js this is name of a function exported by the module specified
-     * in `source_location`.
+     * The name of the function (as defined in source code) that is executed.
+     * Defaults to the resource name suffix, if not specified. For
+     * backward compatibility, if function with given name is not found, the
+     * system tries to use the function named "function".
+     * For Node.js, this is the name of a function exported by the module
+     * as specified in `source_location`.
      * </pre>
      *
      * <code>string entry_point = 8;</code>
@@ -5348,12 +5401,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the function (as defined in source code) that will be
-     * executed. Defaults to the resource name suffix, if not specified. For
-     * backward compatibility, if function with given name is not found, then the
-     * system will try to use function named "function".
-     * For Node.js this is name of a function exported by the module specified
-     * in `source_location`.
+     * The name of the function (as defined in source code) that is executed.
+     * Defaults to the resource name suffix, if not specified. For
+     * backward compatibility, if function with given name is not found, the
+     * system tries to use the function named "function".
+     * For Node.js, this is the name of a function exported by the module
+     * as specified in `source_location`.
      * </pre>
      *
      * <code>string entry_point = 8;</code>
@@ -5375,12 +5428,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the function (as defined in source code) that will be
-     * executed. Defaults to the resource name suffix, if not specified. For
-     * backward compatibility, if function with given name is not found, then the
-     * system will try to use function named "function".
-     * For Node.js this is name of a function exported by the module specified
-     * in `source_location`.
+     * The name of the function (as defined in source code) that is executed.
+     * Defaults to the resource name suffix, if not specified. For
+     * backward compatibility, if function with given name is not found, the
+     * system tries to use the function named "function".
+     * For Node.js, this is the name of a function exported by the module
+     * as specified in `source_location`.
      * </pre>
      *
      * <code>string entry_point = 8;</code>
@@ -5401,12 +5454,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the function (as defined in source code) that will be
-     * executed. Defaults to the resource name suffix, if not specified. For
-     * backward compatibility, if function with given name is not found, then the
-     * system will try to use function named "function".
-     * For Node.js this is name of a function exported by the module specified
-     * in `source_location`.
+     * The name of the function (as defined in source code) that is executed.
+     * Defaults to the resource name suffix, if not specified. For
+     * backward compatibility, if function with given name is not found, the
+     * system tries to use the function named "function".
+     * For Node.js, this is the name of a function exported by the module
+     * as specified in `source_location`.
      * </pre>
      *
      * <code>string entry_point = 8;</code>
@@ -5423,12 +5476,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the function (as defined in source code) that will be
-     * executed. Defaults to the resource name suffix, if not specified. For
-     * backward compatibility, if function with given name is not found, then the
-     * system will try to use function named "function".
-     * For Node.js this is name of a function exported by the module specified
-     * in `source_location`.
+     * The name of the function (as defined in source code) that is executed.
+     * Defaults to the resource name suffix, if not specified. For
+     * backward compatibility, if function with given name is not found, the
+     * system tries to use the function named "function".
+     * For Node.js, this is the name of a function exported by the module
+     * as specified in `source_location`.
      * </pre>
      *
      * <code>string entry_point = 8;</code>
@@ -6143,8 +6196,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The version identifier of the Cloud Function. Each deployment attempt
-     * results in a new version of a function being created.
+     * Output only. The version identifier of the Cloud Function. Each deployment
+     * attempt results in a new version of a function being created.
      * </pre>
      *
      * <code>int64 version_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6159,8 +6212,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The version identifier of the Cloud Function. Each deployment attempt
-     * results in a new version of a function being created.
+     * Output only. The version identifier of the Cloud Function. Each deployment
+     * attempt results in a new version of a function being created.
      * </pre>
      *
      * <code>int64 version_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6179,8 +6232,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The version identifier of the Cloud Function. Each deployment attempt
-     * results in a new version of a function being created.
+     * Output only. The version identifier of the Cloud Function. Each deployment
+     * attempt results in a new version of a function being created.
      * </pre>
      *
      * <code>int64 version_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6703,16 +6756,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC Network that this cloud function can connect to. It can be
-     * either the fully-qualified URI, or the short name of the network resource.
-     * If the short network name is used, the network must belong to the same
-     * project. Otherwise, it must belong to a project within the same
-     * organization. The format of this field is either
+     * The Serverless VPC Access connector that this cloud function can connect
+     * to. It can be either the fully qualified URI, or the short name of the
+     * connector resource. If the connector name is used, the connector must
+     * belong to the same project as the function. Otherwise, it must belong to a
+     * project within the same organization. The format of this field is either
      * `projects/{project}/global/networks/{network}` or `{network}`, where
      * `{project}` is a project id where the network is defined, and `{network}`
      * is the short name of the network.
+     *
      * This field is mutually exclusive with `vpc_connector` and will be replaced
      * by it.
+     *
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
      * more information on connecting Cloud projects.
      * </pre>
@@ -6736,16 +6791,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC Network that this cloud function can connect to. It can be
-     * either the fully-qualified URI, or the short name of the network resource.
-     * If the short network name is used, the network must belong to the same
-     * project. Otherwise, it must belong to a project within the same
-     * organization. The format of this field is either
+     * The Serverless VPC Access connector that this cloud function can connect
+     * to. It can be either the fully qualified URI, or the short name of the
+     * connector resource. If the connector name is used, the connector must
+     * belong to the same project as the function. Otherwise, it must belong to a
+     * project within the same organization. The format of this field is either
      * `projects/{project}/global/networks/{network}` or `{network}`, where
      * `{project}` is a project id where the network is defined, and `{network}`
      * is the short name of the network.
+     *
      * This field is mutually exclusive with `vpc_connector` and will be replaced
      * by it.
+     *
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
      * more information on connecting Cloud projects.
      * </pre>
@@ -6769,16 +6826,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC Network that this cloud function can connect to. It can be
-     * either the fully-qualified URI, or the short name of the network resource.
-     * If the short network name is used, the network must belong to the same
-     * project. Otherwise, it must belong to a project within the same
-     * organization. The format of this field is either
+     * The Serverless VPC Access connector that this cloud function can connect
+     * to. It can be either the fully qualified URI, or the short name of the
+     * connector resource. If the connector name is used, the connector must
+     * belong to the same project as the function. Otherwise, it must belong to a
+     * project within the same organization. The format of this field is either
      * `projects/{project}/global/networks/{network}` or `{network}`, where
      * `{project}` is a project id where the network is defined, and `{network}`
      * is the short name of the network.
+     *
      * This field is mutually exclusive with `vpc_connector` and will be replaced
      * by it.
+     *
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
      * more information on connecting Cloud projects.
      * </pre>
@@ -6801,16 +6860,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC Network that this cloud function can connect to. It can be
-     * either the fully-qualified URI, or the short name of the network resource.
-     * If the short network name is used, the network must belong to the same
-     * project. Otherwise, it must belong to a project within the same
-     * organization. The format of this field is either
+     * The Serverless VPC Access connector that this cloud function can connect
+     * to. It can be either the fully qualified URI, or the short name of the
+     * connector resource. If the connector name is used, the connector must
+     * belong to the same project as the function. Otherwise, it must belong to a
+     * project within the same organization. The format of this field is either
      * `projects/{project}/global/networks/{network}` or `{network}`, where
      * `{project}` is a project id where the network is defined, and `{network}`
      * is the short name of the network.
+     *
      * This field is mutually exclusive with `vpc_connector` and will be replaced
      * by it.
+     *
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
      * more information on connecting Cloud projects.
      * </pre>
@@ -6829,16 +6890,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The VPC Network that this cloud function can connect to. It can be
-     * either the fully-qualified URI, or the short name of the network resource.
-     * If the short network name is used, the network must belong to the same
-     * project. Otherwise, it must belong to a project within the same
-     * organization. The format of this field is either
+     * The Serverless VPC Access connector that this cloud function can connect
+     * to. It can be either the fully qualified URI, or the short name of the
+     * connector resource. If the connector name is used, the connector must
+     * belong to the same project as the function. Otherwise, it must belong to a
+     * project within the same organization. The format of this field is either
      * `projects/{project}/global/networks/{network}` or `{network}`, where
      * `{project}` is a project id where the network is defined, and `{network}`
      * is the short name of the network.
+     *
      * This field is mutually exclusive with `vpc_connector` and will be replaced
      * by it.
+     *
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
      * more information on connecting Cloud projects.
      * </pre>
@@ -6864,13 +6927,15 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The limit on the maximum number of function instances that may coexist at a
+     * The limit on the maximum number of function instances that can coexist at a
      * given time.
-     * In some cases, such as rapid traffic surges, Cloud Functions may, for a
-     * short period of time, create more instances than the specified max
+     *
+     * In some cases, such as rapid traffic surges, Cloud Functions can for a
+     * short period of time create more instances than the specified max
      * instances limit. If your function cannot tolerate this temporary behavior,
-     * you may want to factor in a safety margin and set a lower max instances
+     * you might want to factor in a safety margin and set a lower max instances
      * value than your function can tolerate.
+     *
      * See the [Max
      * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
      * more details.
@@ -6888,13 +6953,15 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The limit on the maximum number of function instances that may coexist at a
+     * The limit on the maximum number of function instances that can coexist at a
      * given time.
-     * In some cases, such as rapid traffic surges, Cloud Functions may, for a
-     * short period of time, create more instances than the specified max
+     *
+     * In some cases, such as rapid traffic surges, Cloud Functions can for a
+     * short period of time create more instances than the specified max
      * instances limit. If your function cannot tolerate this temporary behavior,
-     * you may want to factor in a safety margin and set a lower max instances
+     * you might want to factor in a safety margin and set a lower max instances
      * value than your function can tolerate.
+     *
      * See the [Max
      * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
      * more details.
@@ -6916,13 +6983,15 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The limit on the maximum number of function instances that may coexist at a
+     * The limit on the maximum number of function instances that can coexist at a
      * given time.
-     * In some cases, such as rapid traffic surges, Cloud Functions may, for a
-     * short period of time, create more instances than the specified max
+     *
+     * In some cases, such as rapid traffic surges, Cloud Functions can for a
+     * short period of time create more instances than the specified max
      * instances limit. If your function cannot tolerate this temporary behavior,
-     * you may want to factor in a safety margin and set a lower max instances
+     * you might want to factor in a safety margin and set a lower max instances
      * value than your function can tolerate.
+     *
      * See the [Max
      * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
      * more details.
@@ -6944,7 +7013,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A lower bound for the number function instances that may coexist at a
+     * A lower bound for the number function instances that can coexist at a
      * given time.
      * </pre>
      *
@@ -6960,7 +7029,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A lower bound for the number function instances that may coexist at a
+     * A lower bound for the number function instances that can coexist at a
      * given time.
      * </pre>
      *
@@ -6980,7 +7049,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A lower bound for the number function instances that may coexist at a
+     * A lower bound for the number function instances that can coexist at a
      * given time.
      * </pre>
      *
@@ -7001,11 +7070,13 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC Network Connector that this cloud function can connect to. It can
-     * be either the fully-qualified URI, or the short name of the network
+     * be either the fully qualified URI, or the short name of the network
      * connector resource. The format of this field is
      * `projects/&#42;&#47;locations/&#42;&#47;connectors/&#42;`
+     *
      * This field is mutually exclusive with `network` field and will eventually
      * replace it.
+     *
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
      * more information on connecting Cloud projects.
      * </pre>
@@ -7030,11 +7101,13 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC Network Connector that this cloud function can connect to. It can
-     * be either the fully-qualified URI, or the short name of the network
+     * be either the fully qualified URI, or the short name of the network
      * connector resource. The format of this field is
      * `projects/&#42;&#47;locations/&#42;&#47;connectors/&#42;`
+     *
      * This field is mutually exclusive with `network` field and will eventually
      * replace it.
+     *
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
      * more information on connecting Cloud projects.
      * </pre>
@@ -7059,11 +7132,13 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC Network Connector that this cloud function can connect to. It can
-     * be either the fully-qualified URI, or the short name of the network
+     * be either the fully qualified URI, or the short name of the network
      * connector resource. The format of this field is
      * `projects/&#42;&#47;locations/&#42;&#47;connectors/&#42;`
+     *
      * This field is mutually exclusive with `network` field and will eventually
      * replace it.
+     *
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
      * more information on connecting Cloud projects.
      * </pre>
@@ -7087,11 +7162,13 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC Network Connector that this cloud function can connect to. It can
-     * be either the fully-qualified URI, or the short name of the network
+     * be either the fully qualified URI, or the short name of the network
      * connector resource. The format of this field is
      * `projects/&#42;&#47;locations/&#42;&#47;connectors/&#42;`
+     *
      * This field is mutually exclusive with `network` field and will eventually
      * replace it.
+     *
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
      * more information on connecting Cloud projects.
      * </pre>
@@ -7111,11 +7188,13 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC Network Connector that this cloud function can connect to. It can
-     * be either the fully-qualified URI, or the short name of the network
+     * be either the fully qualified URI, or the short name of the network
      * connector resource. The format of this field is
      * `projects/&#42;&#47;locations/&#42;&#47;connectors/&#42;`
+     *
      * This field is mutually exclusive with `network` field and will eventually
      * replace it.
+     *
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
      * more information on connecting Cloud projects.
      * </pre>
@@ -7351,14 +7430,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function resources.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * If specified, you must also provide an artifact registry repository using
      * the `docker_repository` field that was created with the same KMS crypto
      * key.
+     *
      * The following service accounts need to be granted the role 'Cloud KMS
      * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
      * on the Key/KeyRing/Project/Organization (least access preferred).
+     *
      * 1. Google Cloud Functions service account
      *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
      *    Required to protect the function's image.
@@ -7370,6 +7453,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *    information, see
      *    https://cloud.google.com/storage/docs/projects#service-agents and
      *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+     *
      * Google Cloud Functions delegates access to service agents to protect
      * function resources in internal projects that are not accessible by the
      * end user.
@@ -7396,14 +7480,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function resources.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * If specified, you must also provide an artifact registry repository using
      * the `docker_repository` field that was created with the same KMS crypto
      * key.
+     *
      * The following service accounts need to be granted the role 'Cloud KMS
      * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
      * on the Key/KeyRing/Project/Organization (least access preferred).
+     *
      * 1. Google Cloud Functions service account
      *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
      *    Required to protect the function's image.
@@ -7415,6 +7503,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *    information, see
      *    https://cloud.google.com/storage/docs/projects#service-agents and
      *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+     *
      * Google Cloud Functions delegates access to service agents to protect
      * function resources in internal projects that are not accessible by the
      * end user.
@@ -7441,14 +7530,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function resources.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * If specified, you must also provide an artifact registry repository using
      * the `docker_repository` field that was created with the same KMS crypto
      * key.
+     *
      * The following service accounts need to be granted the role 'Cloud KMS
      * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
      * on the Key/KeyRing/Project/Organization (least access preferred).
+     *
      * 1. Google Cloud Functions service account
      *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
      *    Required to protect the function's image.
@@ -7460,6 +7553,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *    information, see
      *    https://cloud.google.com/storage/docs/projects#service-agents and
      *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+     *
      * Google Cloud Functions delegates access to service agents to protect
      * function resources in internal projects that are not accessible by the
      * end user.
@@ -7485,14 +7579,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function resources.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * If specified, you must also provide an artifact registry repository using
      * the `docker_repository` field that was created with the same KMS crypto
      * key.
+     *
      * The following service accounts need to be granted the role 'Cloud KMS
      * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
      * on the Key/KeyRing/Project/Organization (least access preferred).
+     *
      * 1. Google Cloud Functions service account
      *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
      *    Required to protect the function's image.
@@ -7504,6 +7602,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *    information, see
      *    https://cloud.google.com/storage/docs/projects#service-agents and
      *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+     *
      * Google Cloud Functions delegates access to service agents to protect
      * function resources in internal projects that are not accessible by the
      * end user.
@@ -7525,14 +7624,18 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function resources.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * If specified, you must also provide an artifact registry repository using
      * the `docker_repository` field that was created with the same KMS crypto
      * key.
+     *
      * The following service accounts need to be granted the role 'Cloud KMS
      * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
      * on the Key/KeyRing/Project/Organization (least access preferred).
+     *
      * 1. Google Cloud Functions service account
      *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
      *    Required to protect the function's image.
@@ -7544,6 +7647,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *    information, see
      *    https://cloud.google.com/storage/docs/projects#service-agents and
      *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+     *
      * Google Cloud Functions delegates access to service agents to protect
      * function resources in internal projects that are not accessible by the
      * end user.
@@ -7576,6 +7680,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * `{project}` and `{region}` are the project id and region respectively where
      * the worker pool is defined and `{workerPool}` is the short name of the
      * worker pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
@@ -7608,6 +7713,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * `{project}` and `{region}` are the project id and region respectively where
      * the worker pool is defined and `{workerPool}` is the short name of the
      * worker pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
@@ -7640,6 +7746,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * `{project}` and `{region}` are the project id and region respectively where
      * the worker pool is defined and `{workerPool}` is the short name of the
      * worker pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
@@ -7671,6 +7778,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * `{project}` and `{region}` are the project id and region respectively where
      * the worker pool is defined and `{workerPool}` is the short name of the
      * worker pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
@@ -7698,6 +7806,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * `{project}` and `{region}` are the project id and region respectively where
      * the worker pool is defined and `{workerPool}` is the short name of the
      * worker pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
@@ -8683,8 +8792,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
-     * supported for Firebase function deployments.
+     * Input only. An identifier for Firebase function sources. Disclaimer: This
+     * field is only supported for Firebase function deployments.
      * </pre>
      *
      * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -8706,8 +8815,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
-     * supported for Firebase function deployments.
+     * Input only. An identifier for Firebase function sources. Disclaimer: This
+     * field is only supported for Firebase function deployments.
      * </pre>
      *
      * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -8729,8 +8838,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
-     * supported for Firebase function deployments.
+     * Input only. An identifier for Firebase function sources. Disclaimer: This
+     * field is only supported for Firebase function deployments.
      * </pre>
      *
      * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -8751,8 +8860,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
-     * supported for Firebase function deployments.
+     * Input only. An identifier for Firebase function sources. Disclaimer: This
+     * field is only supported for Firebase function deployments.
      * </pre>
      *
      * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -8769,8 +8878,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
-     * supported for Firebase function deployments.
+     * Input only. An identifier for Firebase function sources. Disclaimer: This
+     * field is only supported for Firebase function deployments.
      * </pre>
      *
      * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -8799,9 +8908,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * Artifact Registry. If unspecified and the deployment is eligible to use
      * Artifact Registry, GCF will create and use a repository named
      * 'gcf-artifacts' for every deployed region. This is the repository to which
-     * the function docker image will be pushed after it is built by Cloud Build.
+     * the function docker image is pushed after it is built by Cloud Build.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -8831,9 +8942,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * Artifact Registry. If unspecified and the deployment is eligible to use
      * Artifact Registry, GCF will create and use a repository named
      * 'gcf-artifacts' for every deployed region. This is the repository to which
-     * the function docker image will be pushed after it is built by Cloud Build.
+     * the function docker image is pushed after it is built by Cloud Build.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -8863,9 +8976,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * Artifact Registry. If unspecified and the deployment is eligible to use
      * Artifact Registry, GCF will create and use a repository named
      * 'gcf-artifacts' for every deployed region. This is the repository to which
-     * the function docker image will be pushed after it is built by Cloud Build.
+     * the function docker image is pushed after it is built by Cloud Build.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -8894,9 +9009,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * Artifact Registry. If unspecified and the deployment is eligible to use
      * Artifact Registry, GCF will create and use a repository named
      * 'gcf-artifacts' for every deployed region. This is the repository to which
-     * the function docker image will be pushed after it is built by Cloud Build.
+     * the function docker image is pushed after it is built by Cloud Build.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -8921,9 +9038,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * Artifact Registry. If unspecified and the deployment is eligible to use
      * Artifact Registry, GCF will create and use a repository named
      * 'gcf-artifacts' for every deployed region. This is the repository to which
-     * the function docker image will be pushed after it is built by Cloud Build.
+     * the function docker image is pushed after it is built by Cloud Build.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -8951,7 +9070,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Docker Registry to use for this deployment.
-     * If `docker_repository` field is specified, this field will be automatically
+     *
+     * If `docker_repository` field is specified, this field is automatically
      * set as `ARTIFACT_REGISTRY`.
      * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
      * This field may be overridden by the backend for eligible deployments.
@@ -8970,7 +9090,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Docker Registry to use for this deployment.
-     * If `docker_repository` field is specified, this field will be automatically
+     *
+     * If `docker_repository` field is specified, this field is automatically
      * set as `ARTIFACT_REGISTRY`.
      * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
      * This field may be overridden by the backend for eligible deployments.
@@ -8992,7 +9113,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Docker Registry to use for this deployment.
-     * If `docker_repository` field is specified, this field will be automatically
+     *
+     * If `docker_repository` field is specified, this field is automatically
      * set as `ARTIFACT_REGISTRY`.
      * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
      * This field may be overridden by the backend for eligible deployments.
@@ -9015,7 +9137,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Docker Registry to use for this deployment.
-     * If `docker_repository` field is specified, this field will be automatically
+     *
+     * If `docker_repository` field is specified, this field is automatically
      * set as `ARTIFACT_REGISTRY`.
      * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
      * This field may be overridden by the backend for eligible deployments.
@@ -9041,7 +9164,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Docker Registry to use for this deployment.
-     * If `docker_repository` field is specified, this field will be automatically
+     *
+     * If `docker_repository` field is specified, this field is automatically
      * set as `ARTIFACT_REGISTRY`.
      * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
      * This field may be overridden by the backend for eligible deployments.

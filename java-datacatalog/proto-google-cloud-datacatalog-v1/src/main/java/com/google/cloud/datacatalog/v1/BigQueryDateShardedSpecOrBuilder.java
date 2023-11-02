@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface BigQueryDateShardedSpecOrBuilder
    * <pre>
    * Output only. The Data Catalog resource name of the dataset entry the
    * current table belongs to. For example:
+   *
    * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface BigQueryDateShardedSpecOrBuilder
    * <pre>
    * Output only. The Data Catalog resource name of the dataset entry the
    * current table belongs to. For example:
+   *
    * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
    * </pre>
    *
@@ -61,6 +63,7 @@ public interface BigQueryDateShardedSpecOrBuilder
    *
    * <pre>
    * Output only. The table name prefix of the shards.
+   *
    * The name of any given shard is `[table_prefix]YYYYMMDD`.
    * For example, for the `MyTable20180101` shard, the
    * `table_prefix` is `MyTable`.
@@ -76,6 +79,7 @@ public interface BigQueryDateShardedSpecOrBuilder
    *
    * <pre>
    * Output only. The table name prefix of the shards.
+   *
    * The name of any given shard is `[table_prefix]YYYYMMDD`.
    * For example, for the `MyTable20180101` shard, the
    * `table_prefix` is `MyTable`.

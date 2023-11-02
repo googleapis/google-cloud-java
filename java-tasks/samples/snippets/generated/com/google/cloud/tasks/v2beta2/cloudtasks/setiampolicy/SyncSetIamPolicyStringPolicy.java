@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package com.google.cloud.tasks.v2beta2.samples;
 
 // [START cloudtasks_v2beta2_generated_CloudTasks_SetIamPolicy_StringPolicy_sync]
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
-import com.google.cloud.tasks.v2beta2.QueueName;
+import com.google.cloud.tasks.v2beta2.LocationName;
 import com.google.iam.v1.Policy;
 
 public class SyncSetIamPolicyStringPolicy {
@@ -34,7 +34,7 @@ public class SyncSetIamPolicyStringPolicy {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-      String resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+      String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       Policy policy = Policy.newBuilder().build();
       Policy response = cloudTasksClient.setIamPolicy(resource, policy);
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,11 +56,6 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchPredictionJob();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -205,7 +200,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getInstancesFormatBytes();
 
-    public com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.SourceCase getSourceCase();
+    com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.SourceCase getSourceCase();
   }
   /**
    *
@@ -240,11 +235,6 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return new InputConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.BatchPredictionJobProto
           .internal_static_google_cloud_aiplatform_v1_BatchPredictionJob_InputConfig_descriptor;
@@ -261,6 +251,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private int sourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object source_;
 
     public enum SourceCase
@@ -1585,12 +1577,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [batch prediction input instance
      * formats][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.instances_format]
      * to the specified format.
+     *
      * Supported values are:
+     *
      * * `object`: Each input is converted to JSON object format.
      *     * For `bigquery`, each row is converted to an object.
      *     * For `jsonl`, each line of the JSONL input must be an object.
      *     * Does not apply to `csv`, `file-list`, `tf-record`, or
      *       `tf-record-gzip`.
+     *
      * * `array`: Each input is converted to JSON array format.
      *     * For `bigquery`, each row is converted to an array. The order
      *       of columns is determined by the BigQuery column order, unless
@@ -1603,8 +1598,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *       must be populated for specifying field orders.
      *     * Does not apply to `csv`, `file-list`, `tf-record`, or
      *       `tf-record-gzip`.
+     *
      * If not specified, Vertex AI converts the batch prediction input as
      * follows:
+     *
      *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
      *    order of columns is the same as defined in the file or table, unless
      *    [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
@@ -1633,12 +1630,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [batch prediction input instance
      * formats][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.instances_format]
      * to the specified format.
+     *
      * Supported values are:
+     *
      * * `object`: Each input is converted to JSON object format.
      *     * For `bigquery`, each row is converted to an object.
      *     * For `jsonl`, each line of the JSONL input must be an object.
      *     * Does not apply to `csv`, `file-list`, `tf-record`, or
      *       `tf-record-gzip`.
+     *
      * * `array`: Each input is converted to JSON array format.
      *     * For `bigquery`, each row is converted to an array. The order
      *       of columns is determined by the BigQuery column order, unless
@@ -1651,8 +1651,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *       must be populated for specifying field orders.
      *     * Does not apply to `csv`, `file-list`, `tf-record`, or
      *       `tf-record-gzip`.
+     *
      * If not specified, Vertex AI converts the batch prediction input as
      * follows:
+     *
      *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
      *    order of columns is the same as defined in the file or table, unless
      *    [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
@@ -1678,6 +1680,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The name of the field that is considered as a key.
+     *
      * The values identified by the key field is not included in the transformed
      * instances that is sent to the Model. This is similar to
      * specifying this name of the field in
@@ -1685,10 +1688,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * In addition, the batch prediction output will not include the instances.
      * Instead the output will only include the value of the key field, in a
      * field named `key` in the output:
+     *
      *  * For `jsonl` output format, the output will have a `key` field
      *    instead of the `instance` field.
      *  * For `csv`/`bigquery` output format, the output will have have a `key`
      *    column instead of the instance feature columns.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -1703,6 +1708,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The name of the field that is considered as a key.
+     *
      * The values identified by the key field is not included in the transformed
      * instances that is sent to the Model. This is similar to
      * specifying this name of the field in
@@ -1710,10 +1716,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * In addition, the batch prediction output will not include the instances.
      * Instead the output will only include the value of the key field, in a
      * field named `key` in the output:
+     *
      *  * For `jsonl` output format, the output will have a `key` field
      *    instead of the `instance` field.
      *  * For `csv`/`bigquery` output format, the output will have have a `key`
      *    column instead of the instance feature columns.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -1730,13 +1738,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be included in the prediction instance that is
      * sent to the Model.
+     *
      * If
      * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
      * is `array`, the order of field names in included_fields also determines
      * the order of the values in the array.
+     *
      * When included_fields is populated,
      * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -1752,13 +1763,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be included in the prediction instance that is
      * sent to the Model.
+     *
      * If
      * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
      * is `array`, the order of field names in included_fields also determines
      * the order of the values in the array.
+     *
      * When included_fields is populated,
      * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -1774,13 +1788,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be included in the prediction instance that is
      * sent to the Model.
+     *
      * If
      * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
      * is `array`, the order of field names in included_fields also determines
      * the order of the values in the array.
+     *
      * When included_fields is populated,
      * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -1797,13 +1814,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be included in the prediction instance that is
      * sent to the Model.
+     *
      * If
      * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
      * is `array`, the order of field names in included_fields also determines
      * the order of the values in the array.
+     *
      * When included_fields is populated,
      * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -1821,12 +1841,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be excluded in the prediction instance that is
      * sent to the Model.
+     *
      * Excluded will be attached to the batch prediction output if
      * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
      * is not specified.
+     *
      * When excluded_fields is populated,
      * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -1842,12 +1865,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be excluded in the prediction instance that is
      * sent to the Model.
+     *
      * Excluded will be attached to the batch prediction output if
      * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
      * is not specified.
+     *
      * When excluded_fields is populated,
      * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -1863,12 +1889,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be excluded in the prediction instance that is
      * sent to the Model.
+     *
      * Excluded will be attached to the batch prediction output if
      * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
      * is not specified.
+     *
      * When excluded_fields is populated,
      * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -1885,12 +1914,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be excluded in the prediction instance that is
      * sent to the Model.
+     *
      * Excluded will be attached to the batch prediction output if
      * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
      * is not specified.
+     *
      * When excluded_fields is populated,
      * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -1925,19 +1957,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     private InstanceConfig() {
       instanceType_ = "";
       keyField_ = "";
-      includedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      excludedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InstanceConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1968,12 +1995,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [batch prediction input instance
      * formats][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.instances_format]
      * to the specified format.
+     *
      * Supported values are:
+     *
      * * `object`: Each input is converted to JSON object format.
      *     * For `bigquery`, each row is converted to an object.
      *     * For `jsonl`, each line of the JSONL input must be an object.
      *     * Does not apply to `csv`, `file-list`, `tf-record`, or
      *       `tf-record-gzip`.
+     *
      * * `array`: Each input is converted to JSON array format.
      *     * For `bigquery`, each row is converted to an array. The order
      *       of columns is determined by the BigQuery column order, unless
@@ -1986,8 +2016,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *       must be populated for specifying field orders.
      *     * Does not apply to `csv`, `file-list`, `tf-record`, or
      *       `tf-record-gzip`.
+     *
      * If not specified, Vertex AI converts the batch prediction input as
      * follows:
+     *
      *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
      *    order of columns is the same as defined in the file or table, unless
      *    [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
@@ -2027,12 +2059,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [batch prediction input instance
      * formats][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.instances_format]
      * to the specified format.
+     *
      * Supported values are:
+     *
      * * `object`: Each input is converted to JSON object format.
      *     * For `bigquery`, each row is converted to an object.
      *     * For `jsonl`, each line of the JSONL input must be an object.
      *     * Does not apply to `csv`, `file-list`, `tf-record`, or
      *       `tf-record-gzip`.
+     *
      * * `array`: Each input is converted to JSON array format.
      *     * For `bigquery`, each row is converted to an array. The order
      *       of columns is determined by the BigQuery column order, unless
@@ -2045,8 +2080,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *       must be populated for specifying field orders.
      *     * Does not apply to `csv`, `file-list`, `tf-record`, or
      *       `tf-record-gzip`.
+     *
      * If not specified, Vertex AI converts the batch prediction input as
      * follows:
+     *
      *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
      *    order of columns is the same as defined in the file or table, unless
      *    [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
@@ -2087,6 +2124,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The name of the field that is considered as a key.
+     *
      * The values identified by the key field is not included in the transformed
      * instances that is sent to the Model. This is similar to
      * specifying this name of the field in
@@ -2094,10 +2132,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * In addition, the batch prediction output will not include the instances.
      * Instead the output will only include the value of the key field, in a
      * field named `key` in the output:
+     *
      *  * For `jsonl` output format, the output will have a `key` field
      *    instead of the `instance` field.
      *  * For `csv`/`bigquery` output format, the output will have have a `key`
      *    column instead of the instance feature columns.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -2123,6 +2163,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The name of the field that is considered as a key.
+     *
      * The values identified by the key field is not included in the transformed
      * instances that is sent to the Model. This is similar to
      * specifying this name of the field in
@@ -2130,10 +2171,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * In addition, the batch prediction output will not include the instances.
      * Instead the output will only include the value of the key field, in a
      * field named `key` in the output:
+     *
      *  * For `jsonl` output format, the output will have a `key` field
      *    instead of the `instance` field.
      *  * For `csv`/`bigquery` output format, the output will have have a `key`
      *    column instead of the instance feature columns.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -2158,20 +2201,24 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public static final int INCLUDED_FIELDS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList includedFields_;
+    private com.google.protobuf.LazyStringArrayList includedFields_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
      * <pre>
      * Fields that will be included in the prediction instance that is
      * sent to the Model.
+     *
      * If
      * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
      * is `array`, the order of field names in included_fields also determines
      * the order of the values in the array.
+     *
      * When included_fields is populated,
      * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -2189,13 +2236,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be included in the prediction instance that is
      * sent to the Model.
+     *
      * If
      * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
      * is `array`, the order of field names in included_fields also determines
      * the order of the values in the array.
+     *
      * When included_fields is populated,
      * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -2213,13 +2263,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be included in the prediction instance that is
      * sent to the Model.
+     *
      * If
      * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
      * is `array`, the order of field names in included_fields also determines
      * the order of the values in the array.
+     *
      * When included_fields is populated,
      * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -2238,13 +2291,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be included in the prediction instance that is
      * sent to the Model.
+     *
      * If
      * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
      * is `array`, the order of field names in included_fields also determines
      * the order of the values in the array.
+     *
      * When included_fields is populated,
      * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -2261,19 +2317,23 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public static final int EXCLUDED_FIELDS_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList excludedFields_;
+    private com.google.protobuf.LazyStringArrayList excludedFields_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
      * <pre>
      * Fields that will be excluded in the prediction instance that is
      * sent to the Model.
+     *
      * Excluded will be attached to the batch prediction output if
      * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
      * is not specified.
+     *
      * When excluded_fields is populated,
      * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -2291,12 +2351,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be excluded in the prediction instance that is
      * sent to the Model.
+     *
      * Excluded will be attached to the batch prediction output if
      * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
      * is not specified.
+     *
      * When excluded_fields is populated,
      * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -2314,12 +2377,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be excluded in the prediction instance that is
      * sent to the Model.
+     *
      * Excluded will be attached to the batch prediction output if
      * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
      * is not specified.
+     *
      * When excluded_fields is populated,
      * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -2338,12 +2404,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Fields that will be excluded in the prediction instance that is
      * sent to the Model.
+     *
      * Excluded will be attached to the batch prediction output if
      * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
      * is not specified.
+     *
      * When excluded_fields is populated,
      * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
+     *
      * The input must be JSONL with objects at each line, CSV, BigQuery
      * or TfRecord.
      * </pre>
@@ -2604,10 +2673,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         bitField0_ = 0;
         instanceType_ = "";
         keyField_ = "";
-        includedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        excludedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        includedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -2637,26 +2704,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig buildPartial() {
         com.google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig result =
             new com.google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
-          includedFields_ = includedFields_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.includedFields_ = includedFields_;
-        if (((bitField0_ & 0x00000008) != 0)) {
-          excludedFields_ = excludedFields_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.excludedFields_ = excludedFields_;
       }
 
       private void buildPartial0(
@@ -2667,6 +2719,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.keyField_ = keyField_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          includedFields_.makeImmutable();
+          result.includedFields_ = includedFields_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          excludedFields_.makeImmutable();
+          result.excludedFields_ = excludedFields_;
         }
       }
 
@@ -2734,7 +2794,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         if (!other.includedFields_.isEmpty()) {
           if (includedFields_.isEmpty()) {
             includedFields_ = other.includedFields_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureIncludedFieldsIsMutable();
             includedFields_.addAll(other.includedFields_);
@@ -2744,7 +2804,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         if (!other.excludedFields_.isEmpty()) {
           if (excludedFields_.isEmpty()) {
             excludedFields_ = other.excludedFields_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureExcludedFieldsIsMutable();
             excludedFields_.addAll(other.excludedFields_);
@@ -2832,12 +2892,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [batch prediction input instance
        * formats][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.instances_format]
        * to the specified format.
+       *
        * Supported values are:
+       *
        * * `object`: Each input is converted to JSON object format.
        *     * For `bigquery`, each row is converted to an object.
        *     * For `jsonl`, each line of the JSONL input must be an object.
        *     * Does not apply to `csv`, `file-list`, `tf-record`, or
        *       `tf-record-gzip`.
+       *
        * * `array`: Each input is converted to JSON array format.
        *     * For `bigquery`, each row is converted to an array. The order
        *       of columns is determined by the BigQuery column order, unless
@@ -2850,8 +2913,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *       must be populated for specifying field orders.
        *     * Does not apply to `csv`, `file-list`, `tf-record`, or
        *       `tf-record-gzip`.
+       *
        * If not specified, Vertex AI converts the batch prediction input as
        * follows:
+       *
        *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
        *    order of columns is the same as defined in the file or table, unless
        *    [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
@@ -2890,12 +2955,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [batch prediction input instance
        * formats][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.instances_format]
        * to the specified format.
+       *
        * Supported values are:
+       *
        * * `object`: Each input is converted to JSON object format.
        *     * For `bigquery`, each row is converted to an object.
        *     * For `jsonl`, each line of the JSONL input must be an object.
        *     * Does not apply to `csv`, `file-list`, `tf-record`, or
        *       `tf-record-gzip`.
+       *
        * * `array`: Each input is converted to JSON array format.
        *     * For `bigquery`, each row is converted to an array. The order
        *       of columns is determined by the BigQuery column order, unless
@@ -2908,8 +2976,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *       must be populated for specifying field orders.
        *     * Does not apply to `csv`, `file-list`, `tf-record`, or
        *       `tf-record-gzip`.
+       *
        * If not specified, Vertex AI converts the batch prediction input as
        * follows:
+       *
        *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
        *    order of columns is the same as defined in the file or table, unless
        *    [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
@@ -2948,12 +3018,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [batch prediction input instance
        * formats][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.instances_format]
        * to the specified format.
+       *
        * Supported values are:
+       *
        * * `object`: Each input is converted to JSON object format.
        *     * For `bigquery`, each row is converted to an object.
        *     * For `jsonl`, each line of the JSONL input must be an object.
        *     * Does not apply to `csv`, `file-list`, `tf-record`, or
        *       `tf-record-gzip`.
+       *
        * * `array`: Each input is converted to JSON array format.
        *     * For `bigquery`, each row is converted to an array. The order
        *       of columns is determined by the BigQuery column order, unless
@@ -2966,8 +3039,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *       must be populated for specifying field orders.
        *     * Does not apply to `csv`, `file-list`, `tf-record`, or
        *       `tf-record-gzip`.
+       *
        * If not specified, Vertex AI converts the batch prediction input as
        * follows:
+       *
        *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
        *    order of columns is the same as defined in the file or table, unless
        *    [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
@@ -3005,12 +3080,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [batch prediction input instance
        * formats][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.instances_format]
        * to the specified format.
+       *
        * Supported values are:
+       *
        * * `object`: Each input is converted to JSON object format.
        *     * For `bigquery`, each row is converted to an object.
        *     * For `jsonl`, each line of the JSONL input must be an object.
        *     * Does not apply to `csv`, `file-list`, `tf-record`, or
        *       `tf-record-gzip`.
+       *
        * * `array`: Each input is converted to JSON array format.
        *     * For `bigquery`, each row is converted to an array. The order
        *       of columns is determined by the BigQuery column order, unless
@@ -3023,8 +3101,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *       must be populated for specifying field orders.
        *     * Does not apply to `csv`, `file-list`, `tf-record`, or
        *       `tf-record-gzip`.
+       *
        * If not specified, Vertex AI converts the batch prediction input as
        * follows:
+       *
        *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
        *    order of columns is the same as defined in the file or table, unless
        *    [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
@@ -3058,12 +3138,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [batch prediction input instance
        * formats][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.instances_format]
        * to the specified format.
+       *
        * Supported values are:
+       *
        * * `object`: Each input is converted to JSON object format.
        *     * For `bigquery`, each row is converted to an object.
        *     * For `jsonl`, each line of the JSONL input must be an object.
        *     * Does not apply to `csv`, `file-list`, `tf-record`, or
        *       `tf-record-gzip`.
+       *
        * * `array`: Each input is converted to JSON array format.
        *     * For `bigquery`, each row is converted to an array. The order
        *       of columns is determined by the BigQuery column order, unless
@@ -3076,8 +3159,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *       must be populated for specifying field orders.
        *     * Does not apply to `csv`, `file-list`, `tf-record`, or
        *       `tf-record-gzip`.
+       *
        * If not specified, Vertex AI converts the batch prediction input as
        * follows:
+       *
        *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
        *    order of columns is the same as defined in the file or table, unless
        *    [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
@@ -3114,6 +3199,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The name of the field that is considered as a key.
+       *
        * The values identified by the key field is not included in the transformed
        * instances that is sent to the Model. This is similar to
        * specifying this name of the field in
@@ -3121,10 +3207,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * In addition, the batch prediction output will not include the instances.
        * Instead the output will only include the value of the key field, in a
        * field named `key` in the output:
+       *
        *  * For `jsonl` output format, the output will have a `key` field
        *    instead of the `instance` field.
        *  * For `csv`/`bigquery` output format, the output will have have a `key`
        *    column instead of the instance feature columns.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3149,6 +3237,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The name of the field that is considered as a key.
+       *
        * The values identified by the key field is not included in the transformed
        * instances that is sent to the Model. This is similar to
        * specifying this name of the field in
@@ -3156,10 +3245,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * In addition, the batch prediction output will not include the instances.
        * Instead the output will only include the value of the key field, in a
        * field named `key` in the output:
+       *
        *  * For `jsonl` output format, the output will have a `key` field
        *    instead of the `instance` field.
        *  * For `csv`/`bigquery` output format, the output will have have a `key`
        *    column instead of the instance feature columns.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3184,6 +3275,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The name of the field that is considered as a key.
+       *
        * The values identified by the key field is not included in the transformed
        * instances that is sent to the Model. This is similar to
        * specifying this name of the field in
@@ -3191,10 +3283,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * In addition, the batch prediction output will not include the instances.
        * Instead the output will only include the value of the key field, in a
        * field named `key` in the output:
+       *
        *  * For `jsonl` output format, the output will have a `key` field
        *    instead of the `instance` field.
        *  * For `csv`/`bigquery` output format, the output will have have a `key`
        *    column instead of the instance feature columns.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3218,6 +3312,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The name of the field that is considered as a key.
+       *
        * The values identified by the key field is not included in the transformed
        * instances that is sent to the Model. This is similar to
        * specifying this name of the field in
@@ -3225,10 +3320,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * In addition, the batch prediction output will not include the instances.
        * Instead the output will only include the value of the key field, in a
        * field named `key` in the output:
+       *
        *  * For `jsonl` output format, the output will have a `key` field
        *    instead of the `instance` field.
        *  * For `csv`/`bigquery` output format, the output will have have a `key`
        *    column instead of the instance feature columns.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3248,6 +3345,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The name of the field that is considered as a key.
+       *
        * The values identified by the key field is not included in the transformed
        * instances that is sent to the Model. This is similar to
        * specifying this name of the field in
@@ -3255,10 +3353,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * In addition, the batch prediction output will not include the instances.
        * Instead the output will only include the value of the key field, in a
        * field named `key` in the output:
+       *
        *  * For `jsonl` output format, the output will have a `key` field
        *    instead of the `instance` field.
        *  * For `csv`/`bigquery` output format, the output will have have a `key`
        *    column instead of the instance feature columns.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3279,14 +3379,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
-      private com.google.protobuf.LazyStringList includedFields_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList includedFields_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIncludedFieldsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!includedFields_.isModifiable()) {
           includedFields_ = new com.google.protobuf.LazyStringArrayList(includedFields_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -3294,13 +3394,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be included in the prediction instance that is
        * sent to the Model.
+       *
        * If
        * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
        * is `array`, the order of field names in included_fields also determines
        * the order of the values in the array.
+       *
        * When included_fields is populated,
        * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3310,7 +3413,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * @return A list containing the includedFields.
        */
       public com.google.protobuf.ProtocolStringList getIncludedFieldsList() {
-        return includedFields_.getUnmodifiableView();
+        includedFields_.makeImmutable();
+        return includedFields_;
       }
       /**
        *
@@ -3318,13 +3422,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be included in the prediction instance that is
        * sent to the Model.
+       *
        * If
        * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
        * is `array`, the order of field names in included_fields also determines
        * the order of the values in the array.
+       *
        * When included_fields is populated,
        * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3342,13 +3449,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be included in the prediction instance that is
        * sent to the Model.
+       *
        * If
        * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
        * is `array`, the order of field names in included_fields also determines
        * the order of the values in the array.
+       *
        * When included_fields is populated,
        * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3367,13 +3477,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be included in the prediction instance that is
        * sent to the Model.
+       *
        * If
        * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
        * is `array`, the order of field names in included_fields also determines
        * the order of the values in the array.
+       *
        * When included_fields is populated,
        * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3392,13 +3505,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be included in the prediction instance that is
        * sent to the Model.
+       *
        * If
        * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
        * is `array`, the order of field names in included_fields also determines
        * the order of the values in the array.
+       *
        * When included_fields is populated,
        * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3415,6 +3531,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         ensureIncludedFieldsIsMutable();
         includedFields_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3424,13 +3541,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be included in the prediction instance that is
        * sent to the Model.
+       *
        * If
        * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
        * is `array`, the order of field names in included_fields also determines
        * the order of the values in the array.
+       *
        * When included_fields is populated,
        * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3446,6 +3566,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         ensureIncludedFieldsIsMutable();
         includedFields_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3455,13 +3576,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be included in the prediction instance that is
        * sent to the Model.
+       *
        * If
        * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
        * is `array`, the order of field names in included_fields also determines
        * the order of the values in the array.
+       *
        * When included_fields is populated,
        * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3474,6 +3598,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public Builder addAllIncludedFields(java.lang.Iterable<java.lang.String> values) {
         ensureIncludedFieldsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includedFields_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3483,13 +3608,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be included in the prediction instance that is
        * sent to the Model.
+       *
        * If
        * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
        * is `array`, the order of field names in included_fields also determines
        * the order of the values in the array.
+       *
        * When included_fields is populated,
        * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3499,8 +3627,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearIncludedFields() {
-        includedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        includedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -3510,13 +3639,16 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be included in the prediction instance that is
        * sent to the Model.
+       *
        * If
        * [instance_type][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.instance_type]
        * is `array`, the order of field names in included_fields also determines
        * the order of the values in the array.
+       *
        * When included_fields is populated,
        * [excluded_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3533,18 +3665,19 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         checkByteStringIsUtf8(value);
         ensureIncludedFieldsIsMutable();
         includedFields_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList excludedFields_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList excludedFields_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureExcludedFieldsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!excludedFields_.isModifiable()) {
           excludedFields_ = new com.google.protobuf.LazyStringArrayList(excludedFields_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -3552,12 +3685,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be excluded in the prediction instance that is
        * sent to the Model.
+       *
        * Excluded will be attached to the batch prediction output if
        * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
        * is not specified.
+       *
        * When excluded_fields is populated,
        * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3567,7 +3703,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * @return A list containing the excludedFields.
        */
       public com.google.protobuf.ProtocolStringList getExcludedFieldsList() {
-        return excludedFields_.getUnmodifiableView();
+        excludedFields_.makeImmutable();
+        return excludedFields_;
       }
       /**
        *
@@ -3575,12 +3712,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be excluded in the prediction instance that is
        * sent to the Model.
+       *
        * Excluded will be attached to the batch prediction output if
        * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
        * is not specified.
+       *
        * When excluded_fields is populated,
        * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3598,12 +3738,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be excluded in the prediction instance that is
        * sent to the Model.
+       *
        * Excluded will be attached to the batch prediction output if
        * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
        * is not specified.
+       *
        * When excluded_fields is populated,
        * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3622,12 +3765,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be excluded in the prediction instance that is
        * sent to the Model.
+       *
        * Excluded will be attached to the batch prediction output if
        * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
        * is not specified.
+       *
        * When excluded_fields is populated,
        * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3646,12 +3792,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be excluded in the prediction instance that is
        * sent to the Model.
+       *
        * Excluded will be attached to the batch prediction output if
        * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
        * is not specified.
+       *
        * When excluded_fields is populated,
        * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3668,6 +3817,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         ensureExcludedFieldsIsMutable();
         excludedFields_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3677,12 +3827,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be excluded in the prediction instance that is
        * sent to the Model.
+       *
        * Excluded will be attached to the batch prediction output if
        * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
        * is not specified.
+       *
        * When excluded_fields is populated,
        * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3698,6 +3851,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
         ensureExcludedFieldsIsMutable();
         excludedFields_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3707,12 +3861,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be excluded in the prediction instance that is
        * sent to the Model.
+       *
        * Excluded will be attached to the batch prediction output if
        * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
        * is not specified.
+       *
        * When excluded_fields is populated,
        * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3725,6 +3882,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       public Builder addAllExcludedFields(java.lang.Iterable<java.lang.String> values) {
         ensureExcludedFieldsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedFields_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3734,12 +3892,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be excluded in the prediction instance that is
        * sent to the Model.
+       *
        * Excluded will be attached to the batch prediction output if
        * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
        * is not specified.
+       *
        * When excluded_fields is populated,
        * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3749,8 +3910,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearExcludedFields() {
-        excludedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        excludedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -3760,12 +3922,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Fields that will be excluded in the prediction instance that is
        * sent to the Model.
+       *
        * Excluded will be attached to the batch prediction output if
        * [key_field][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.key_field]
        * is not specified.
+       *
        * When excluded_fields is populated,
        * [included_fields][google.cloud.aiplatform.v1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
+       *
        * The input must be JSONL with objects at each line, CSV, BigQuery
        * or TfRecord.
        * </pre>
@@ -3782,6 +3947,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         checkByteStringIsUtf8(value);
         ensureExcludedFieldsIsMutable();
         excludedFields_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4077,7 +4243,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getPredictionsFormatBytes();
 
-    public com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.DestinationCase
+    com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.DestinationCase
         getDestinationCase();
   }
   /**
@@ -4113,11 +4279,6 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return new OutputConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.BatchPredictionJobProto
           .internal_static_google_cloud_aiplatform_v1_BatchPredictionJob_OutputConfig_descriptor;
@@ -4134,6 +4295,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private int destinationCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object destination_;
 
     public enum DestinationCase
@@ -6003,7 +6166,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getBigqueryOutputTableBytes();
 
-    public com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo.OutputLocationCase
+    com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo.OutputLocationCase
         getOutputLocationCase();
   }
   /**
@@ -6037,11 +6200,6 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       return new OutputInfo();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.BatchPredictionJobProto
           .internal_static_google_cloud_aiplatform_v1_BatchPredictionJob_OutputInfo_descriptor;
@@ -6058,6 +6216,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     private int outputLocationCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object outputLocation_;
 
     public enum OutputLocationCase
@@ -7349,12 +7509,18 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
+   *
    * The model resource name may contain version id or version alias to specify
    * the version.
    *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
    *              or
    *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
    * if no version is specified, the default version will be deployed.
+   *
+   * The model resource could also be a publisher model.
+   *  Example: `publishers/{publisher}/models/{model}`
+   *              or
+   *           `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -7382,12 +7548,18 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
+   *
    * The model resource name may contain version id or version alias to specify
    * the version.
    *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
    *              or
    *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
    * if no version is specified, the default version will be deployed.
+   *
+   * The model resource could also be a publisher model.
+   *  Example: `publishers/{publisher}/models/{model}`
+   *              or
+   *           `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -7864,6 +8036,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * specified, a system generated one will be used, which
    * has minimal permissions and the custom container, if used, may not have
    * enough permission to access other Google Cloud resources.
+   *
    * Users deploying the Model must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -7892,6 +8065,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * specified, a system generated one will be used, which
    * has minimal permissions and the custom container, if used, may not have
    * enough permission to access other Google Cloud resources.
+   *
    * Users deploying the Model must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -7987,10 +8161,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Generate explanation with the batch prediction results.
+   *
    * When set to `true`, the batch prediction output changes based on the
    * `predictions_format` field of the
    * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1.BatchPredictionJob.output_config]
    * object:
+   *
    *  * `bigquery`: output includes a column named `explanation`. The value
    *    is a struct that conforms to the
    *    [Explanation][google.cloud.aiplatform.v1.Explanation] object.
@@ -7999,6 +8175,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *    conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation]
    *    object.
    *  * `csv`: Generating explanations for CSV format is not supported.
+   *
    * If this field is set to true, either the
    * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
    * or
@@ -8025,6 +8202,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * specified only if
    * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
    * is set to `true`.
+   *
    * This value overrides the value of
    * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
    * All fields of
@@ -8052,6 +8230,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * specified only if
    * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
    * is set to `true`.
+   *
    * This value overrides the value of
    * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
    * All fields of
@@ -8081,6 +8260,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * specified only if
    * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
    * is set to `true`.
+   *
    * This value overrides the value of
    * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
    * All fields of
@@ -8351,6 +8531,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * Output only. Information about resources that had been consumed by this
    * job. Provided in real time at best effort basis, as well as a final value
    * once the job completes.
+   *
    * Note: This field currently may be not populated for batch predictions that
    * use AutoML Models.
    * </pre>
@@ -8372,6 +8553,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * Output only. Information about resources that had been consumed by this
    * job. Provided in real time at best effort basis, as well as a final value
    * once the job completes.
+   *
    * Note: This field currently may be not populated for batch predictions that
    * use AutoML Models.
    * </pre>
@@ -8395,6 +8577,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * Output only. Information about resources that had been consumed by this
    * job. Provided in real time at best effort basis, as well as a final value
    * once the job completes.
+   *
    * Note: This field currently may be not populated for batch predictions that
    * use AutoML Models.
    * </pre>
@@ -8699,9 +8882,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The labels with user-defined metadata to organize BatchPredictionJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -8725,9 +8910,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The labels with user-defined metadata to organize BatchPredictionJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -8742,9 +8929,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The labels with user-defined metadata to organize BatchPredictionJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -8766,9 +8955,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The labels with user-defined metadata to organize BatchPredictionJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -8853,6 +9044,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * Cloud Logging by default. Please note that the logs incur cost,
    * which are subject to [Cloud Logging
    * pricing](https://cloud.google.com/logging/pricing).
+   *
    * User can disable container logging by setting this flag to true.
    * </pre>
    *
@@ -10278,12 +10470,18 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
+     *
      * The model resource name may contain version id or version alias to specify
      * the version.
      *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
      *              or
      *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
      * if no version is specified, the default version will be deployed.
+     *
+     * The model resource could also be a publisher model.
+     *  Example: `publishers/{publisher}/models/{model}`
+     *              or
+     *           `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -10310,12 +10508,18 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
+     *
      * The model resource name may contain version id or version alias to specify
      * the version.
      *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
      *              or
      *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
      * if no version is specified, the default version will be deployed.
+     *
+     * The model resource could also be a publisher model.
+     *  Example: `publishers/{publisher}/models/{model}`
+     *              or
+     *           `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -10342,12 +10546,18 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
+     *
      * The model resource name may contain version id or version alias to specify
      * the version.
      *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
      *              or
      *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
      * if no version is specified, the default version will be deployed.
+     *
+     * The model resource could also be a publisher model.
+     *  Example: `publishers/{publisher}/models/{model}`
+     *              or
+     *           `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -10373,12 +10583,18 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
+     *
      * The model resource name may contain version id or version alias to specify
      * the version.
      *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
      *              or
      *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
      * if no version is specified, the default version will be deployed.
+     *
+     * The model resource could also be a publisher model.
+     *  Example: `publishers/{publisher}/models/{model}`
+     *              or
+     *           `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -10400,12 +10616,18 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
+     *
      * The model resource name may contain version id or version alias to specify
      * the version.
      *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
      *              or
      *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
      * if no version is specified, the default version will be deployed.
+     *
+     * The model resource could also be a publisher model.
+     *  Example: `publishers/{publisher}/models/{model}`
+     *              or
+     *           `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -11936,6 +12158,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified, a system generated one will be used, which
      * has minimal permissions and the custom container, if used, may not have
      * enough permission to access other Google Cloud resources.
+     *
      * Users deploying the Model must have the `iam.serviceAccounts.actAs`
      * permission on this service account.
      * </pre>
@@ -11963,6 +12186,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified, a system generated one will be used, which
      * has minimal permissions and the custom container, if used, may not have
      * enough permission to access other Google Cloud resources.
+     *
      * Users deploying the Model must have the `iam.serviceAccounts.actAs`
      * permission on this service account.
      * </pre>
@@ -11990,6 +12214,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified, a system generated one will be used, which
      * has minimal permissions and the custom container, if used, may not have
      * enough permission to access other Google Cloud resources.
+     *
      * Users deploying the Model must have the `iam.serviceAccounts.actAs`
      * permission on this service account.
      * </pre>
@@ -12016,6 +12241,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified, a system generated one will be used, which
      * has minimal permissions and the custom container, if used, may not have
      * enough permission to access other Google Cloud resources.
+     *
      * Users deploying the Model must have the `iam.serviceAccounts.actAs`
      * permission on this service account.
      * </pre>
@@ -12038,6 +12264,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified, a system generated one will be used, which
      * has minimal permissions and the custom container, if used, may not have
      * enough permission to access other Google Cloud resources.
+     *
      * Users deploying the Model must have the `iam.serviceAccounts.actAs`
      * permission on this service account.
      * </pre>
@@ -12300,10 +12527,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Generate explanation with the batch prediction results.
+     *
      * When set to `true`, the batch prediction output changes based on the
      * `predictions_format` field of the
      * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1.BatchPredictionJob.output_config]
      * object:
+     *
      *  * `bigquery`: output includes a column named `explanation`. The value
      *    is a struct that conforms to the
      *    [Explanation][google.cloud.aiplatform.v1.Explanation] object.
@@ -12312,6 +12541,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *    conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation]
      *    object.
      *  * `csv`: Generating explanations for CSV format is not supported.
+     *
      * If this field is set to true, either the
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
      * or
@@ -12332,10 +12562,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Generate explanation with the batch prediction results.
+     *
      * When set to `true`, the batch prediction output changes based on the
      * `predictions_format` field of the
      * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1.BatchPredictionJob.output_config]
      * object:
+     *
      *  * `bigquery`: output includes a column named `explanation`. The value
      *    is a struct that conforms to the
      *    [Explanation][google.cloud.aiplatform.v1.Explanation] object.
@@ -12344,6 +12576,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *    conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation]
      *    object.
      *  * `csv`: Generating explanations for CSV format is not supported.
+     *
      * If this field is set to true, either the
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
      * or
@@ -12368,10 +12601,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Generate explanation with the batch prediction results.
+     *
      * When set to `true`, the batch prediction output changes based on the
      * `predictions_format` field of the
      * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1.BatchPredictionJob.output_config]
      * object:
+     *
      *  * `bigquery`: output includes a column named `explanation`. The value
      *    is a struct that conforms to the
      *    [Explanation][google.cloud.aiplatform.v1.Explanation] object.
@@ -12380,6 +12615,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *    conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation]
      *    object.
      *  * `csv`: Generating explanations for CSV format is not supported.
+     *
      * If this field is set to true, either the
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
      * or
@@ -12412,6 +12648,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified only if
      * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * is set to `true`.
+     *
      * This value overrides the value of
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
      * All fields of
@@ -12438,6 +12675,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified only if
      * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * is set to `true`.
+     *
      * This value overrides the value of
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
      * All fields of
@@ -12470,6 +12708,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified only if
      * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * is set to `true`.
+     *
      * This value overrides the value of
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
      * All fields of
@@ -12504,6 +12743,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified only if
      * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * is set to `true`.
+     *
      * This value overrides the value of
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
      * All fields of
@@ -12536,6 +12776,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified only if
      * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * is set to `true`.
+     *
      * This value overrides the value of
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
      * All fields of
@@ -12574,6 +12815,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified only if
      * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * is set to `true`.
+     *
      * This value overrides the value of
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
      * All fields of
@@ -12605,6 +12847,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified only if
      * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * is set to `true`.
+     *
      * This value overrides the value of
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
      * All fields of
@@ -12631,6 +12874,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified only if
      * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * is set to `true`.
+     *
      * This value overrides the value of
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
      * All fields of
@@ -12661,6 +12905,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * specified only if
      * [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * is set to `true`.
+     *
      * This value overrides the value of
      * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
      * All fields of
@@ -13630,6 +13875,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Output only. Information about resources that had been consumed by this
      * job. Provided in real time at best effort basis, as well as a final value
      * once the job completes.
+     *
      * Note: This field currently may be not populated for batch predictions that
      * use AutoML Models.
      * </pre>
@@ -13650,6 +13896,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Output only. Information about resources that had been consumed by this
      * job. Provided in real time at best effort basis, as well as a final value
      * once the job completes.
+     *
      * Note: This field currently may be not populated for batch predictions that
      * use AutoML Models.
      * </pre>
@@ -13676,6 +13923,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Output only. Information about resources that had been consumed by this
      * job. Provided in real time at best effort basis, as well as a final value
      * once the job completes.
+     *
      * Note: This field currently may be not populated for batch predictions that
      * use AutoML Models.
      * </pre>
@@ -13704,6 +13952,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Output only. Information about resources that had been consumed by this
      * job. Provided in real time at best effort basis, as well as a final value
      * once the job completes.
+     *
      * Note: This field currently may be not populated for batch predictions that
      * use AutoML Models.
      * </pre>
@@ -13730,6 +13979,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Output only. Information about resources that had been consumed by this
      * job. Provided in real time at best effort basis, as well as a final value
      * once the job completes.
+     *
      * Note: This field currently may be not populated for batch predictions that
      * use AutoML Models.
      * </pre>
@@ -13762,6 +14012,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Output only. Information about resources that had been consumed by this
      * job. Provided in real time at best effort basis, as well as a final value
      * once the job completes.
+     *
      * Note: This field currently may be not populated for batch predictions that
      * use AutoML Models.
      * </pre>
@@ -13787,6 +14038,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Output only. Information about resources that had been consumed by this
      * job. Provided in real time at best effort basis, as well as a final value
      * once the job completes.
+     *
      * Note: This field currently may be not populated for batch predictions that
      * use AutoML Models.
      * </pre>
@@ -13807,6 +14059,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Output only. Information about resources that had been consumed by this
      * job. Provided in real time at best effort basis, as well as a final value
      * once the job completes.
+     *
      * Note: This field currently may be not populated for batch predictions that
      * use AutoML Models.
      * </pre>
@@ -13832,6 +14085,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Output only. Information about resources that had been consumed by this
      * job. Provided in real time at best effort basis, as well as a final value
      * once the job completes.
+     *
      * Note: This field currently may be not populated for batch predictions that
      * use AutoML Models.
      * </pre>
@@ -14895,9 +15149,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The labels with user-defined metadata to organize BatchPredictionJobs.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -14921,9 +15177,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The labels with user-defined metadata to organize BatchPredictionJobs.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -14938,9 +15196,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The labels with user-defined metadata to organize BatchPredictionJobs.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -14962,9 +15222,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The labels with user-defined metadata to organize BatchPredictionJobs.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -14992,9 +15254,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The labels with user-defined metadata to organize BatchPredictionJobs.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -15018,9 +15282,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The labels with user-defined metadata to organize BatchPredictionJobs.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -15042,9 +15308,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The labels with user-defined metadata to organize BatchPredictionJobs.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -15269,6 +15537,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Cloud Logging by default. Please note that the logs incur cost,
      * which are subject to [Cloud Logging
      * pricing](https://cloud.google.com/logging/pricing).
+     *
      * User can disable container logging by setting this flag to true.
      * </pre>
      *
@@ -15289,6 +15558,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Cloud Logging by default. Please note that the logs incur cost,
      * which are subject to [Cloud Logging
      * pricing](https://cloud.google.com/logging/pricing).
+     *
      * User can disable container logging by setting this flag to true.
      * </pre>
      *
@@ -15313,6 +15583,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Cloud Logging by default. Please note that the logs incur cost,
      * which are subject to [Cloud Logging
      * pricing](https://cloud.google.com/logging/pricing).
+     *
      * User can disable container logging by setting this flag to true.
      * </pre>
      *

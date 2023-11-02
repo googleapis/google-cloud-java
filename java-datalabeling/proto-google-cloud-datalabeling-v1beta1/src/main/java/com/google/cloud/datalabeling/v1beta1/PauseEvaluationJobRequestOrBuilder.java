@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface PauseEvaluationJobRequestOrBuilder
    *
    * <pre>
    * Required. Name of the evaluation job that is going to be paused. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface PauseEvaluationJobRequestOrBuilder
    *
    * <pre>
    * Required. Name of the evaluation job that is going to be paused. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *

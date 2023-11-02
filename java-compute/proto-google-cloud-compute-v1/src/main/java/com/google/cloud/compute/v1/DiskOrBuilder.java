@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,115 @@ public interface DiskOrBuilder
    * @return The bytes for architecture.
    */
   com.google.protobuf.ByteString getArchitectureBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk asynchronously replicated into this disk.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.DiskAsyncReplication async_primary_disk = 180517533;
+   * </code>
+   *
+   * @return Whether the asyncPrimaryDisk field is set.
+   */
+  boolean hasAsyncPrimaryDisk();
+  /**
+   *
+   *
+   * <pre>
+   * Disk asynchronously replicated into this disk.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.DiskAsyncReplication async_primary_disk = 180517533;
+   * </code>
+   *
+   * @return The asyncPrimaryDisk.
+   */
+  com.google.cloud.compute.v1.DiskAsyncReplication getAsyncPrimaryDisk();
+  /**
+   *
+   *
+   * <pre>
+   * Disk asynchronously replicated into this disk.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.DiskAsyncReplication async_primary_disk = 180517533;
+   * </code>
+   */
+  com.google.cloud.compute.v1.DiskAsyncReplicationOrBuilder getAsyncPrimaryDiskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.DiskAsyncReplicationList&gt; async_secondary_disks = 322925608;
+   * </code>
+   */
+  int getAsyncSecondaryDisksCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.DiskAsyncReplicationList&gt; async_secondary_disks = 322925608;
+   * </code>
+   */
+  boolean containsAsyncSecondaryDisks(java.lang.String key);
+  /** Use {@link #getAsyncSecondaryDisksMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.DiskAsyncReplicationList>
+      getAsyncSecondaryDisks();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.DiskAsyncReplicationList&gt; async_secondary_disks = 322925608;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.DiskAsyncReplicationList>
+      getAsyncSecondaryDisksMap();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.DiskAsyncReplicationList&gt; async_secondary_disks = 322925608;
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.compute.v1.DiskAsyncReplicationList getAsyncSecondaryDisksOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.DiskAsyncReplicationList defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.DiskAsyncReplicationList&gt; async_secondary_disks = 322925608;
+   * </code>
+   */
+  com.google.cloud.compute.v1.DiskAsyncReplicationList getAsyncSecondaryDisksOrThrow(
+      java.lang.String key);
 
   /**
    *
@@ -747,6 +856,31 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * </pre>
+   *
+   * <code>optional int64 provisioned_throughput = 526524181;</code>
+   *
+   * @return Whether the provisionedThroughput field is set.
+   */
+  boolean hasProvisionedThroughput();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * </pre>
+   *
+   * <code>optional int64 provisioned_throughput = 526524181;</code>
+   *
+   * @return The provisionedThroughput.
+   */
+  long getProvisionedThroughput();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *
@@ -886,6 +1020,41 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Status information for the disk resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.DiskResourceStatus resource_status = 249429315;</code>
+   *
+   * @return Whether the resourceStatus field is set.
+   */
+  boolean hasResourceStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information for the disk resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.DiskResourceStatus resource_status = 249429315;</code>
+   *
+   * @return The resourceStatus.
+   */
+  com.google.cloud.compute.v1.DiskResourceStatus getResourceStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information for the disk resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.DiskResourceStatus resource_status = 249429315;</code>
+   */
+  com.google.cloud.compute.v1.DiskResourceStatusOrBuilder getResourceStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Reserved for future use.
    * </pre>
    *
@@ -968,6 +1137,80 @@ public interface DiskOrBuilder
    * @return The sizeGb.
    */
   long getSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * </pre>
+   *
+   * <code>optional string source_consistency_group_policy = 19616093;</code>
+   *
+   * @return Whether the sourceConsistencyGroupPolicy field is set.
+   */
+  boolean hasSourceConsistencyGroupPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * </pre>
+   *
+   * <code>optional string source_consistency_group_policy = 19616093;</code>
+   *
+   * @return The sourceConsistencyGroupPolicy.
+   */
+  java.lang.String getSourceConsistencyGroupPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * </pre>
+   *
+   * <code>optional string source_consistency_group_policy = 19616093;</code>
+   *
+   * @return The bytes for sourceConsistencyGroupPolicy.
+   */
+  com.google.protobuf.ByteString getSourceConsistencyGroupPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * </pre>
+   *
+   * <code>optional string source_consistency_group_policy_id = 267568957;</code>
+   *
+   * @return Whether the sourceConsistencyGroupPolicyId field is set.
+   */
+  boolean hasSourceConsistencyGroupPolicyId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * </pre>
+   *
+   * <code>optional string source_consistency_group_policy_id = 267568957;</code>
+   *
+   * @return The sourceConsistencyGroupPolicyId.
+   */
+  java.lang.String getSourceConsistencyGroupPolicyId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * </pre>
+   *
+   * <code>optional string source_consistency_group_policy_id = 267568957;</code>
+   *
+   * @return The bytes for sourceConsistencyGroupPolicyId.
+   */
+  com.google.protobuf.ByteString getSourceConsistencyGroupPolicyIdBytes();
 
   /**
    *

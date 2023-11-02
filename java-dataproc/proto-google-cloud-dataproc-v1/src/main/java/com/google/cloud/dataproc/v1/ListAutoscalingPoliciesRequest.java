@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
     return new ListAutoscalingPoliciesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.AutoscalingPoliciesProto
         .internal_static_google_cloud_dataproc_v1_ListAutoscalingPoliciesRequest_descriptor;
@@ -79,9 +74,11 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The "resource name" of the region or location, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.autoscalingPolicies.list`, the resource name
    *   of the region has the following format:
    *   `projects/{project_id}/regions/{region}`
+   *
    * * For `projects.locations.autoscalingPolicies.list`, the resource name
    *   of the location has the following format:
    *   `projects/{project_id}/locations/{location}`
@@ -111,9 +108,11 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The "resource name" of the region or location, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.autoscalingPolicies.list`, the resource name
    *   of the region has the following format:
    *   `projects/{project_id}/regions/{region}`
+   *
    * * For `projects.locations.autoscalingPolicies.list`, the resource name
    *   of the location has the following format:
    *   `projects/{project_id}/locations/{location}`
@@ -606,9 +605,11 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The "resource name" of the region or location, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies.list`, the resource name
      *   of the region has the following format:
      *   `projects/{project_id}/regions/{region}`
+     *
      * * For `projects.locations.autoscalingPolicies.list`, the resource name
      *   of the location has the following format:
      *   `projects/{project_id}/locations/{location}`
@@ -637,9 +638,11 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The "resource name" of the region or location, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies.list`, the resource name
      *   of the region has the following format:
      *   `projects/{project_id}/regions/{region}`
+     *
      * * For `projects.locations.autoscalingPolicies.list`, the resource name
      *   of the location has the following format:
      *   `projects/{project_id}/locations/{location}`
@@ -668,9 +671,11 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The "resource name" of the region or location, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies.list`, the resource name
      *   of the region has the following format:
      *   `projects/{project_id}/regions/{region}`
+     *
      * * For `projects.locations.autoscalingPolicies.list`, the resource name
      *   of the location has the following format:
      *   `projects/{project_id}/locations/{location}`
@@ -698,9 +703,11 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The "resource name" of the region or location, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies.list`, the resource name
      *   of the region has the following format:
      *   `projects/{project_id}/regions/{region}`
+     *
      * * For `projects.locations.autoscalingPolicies.list`, the resource name
      *   of the location has the following format:
      *   `projects/{project_id}/locations/{location}`
@@ -724,9 +731,11 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The "resource name" of the region or location, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies.list`, the resource name
      *   of the region has the following format:
      *   `projects/{project_id}/regions/{region}`
+     *
      * * For `projects.locations.autoscalingPolicies.list`, the resource name
      *   of the location has the following format:
      *   `projects/{project_id}/locations/{location}`

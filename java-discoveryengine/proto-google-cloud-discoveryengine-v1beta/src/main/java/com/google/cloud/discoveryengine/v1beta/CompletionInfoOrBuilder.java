@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ public interface CompletionInfoOrBuilder
    *
    *
    * <pre>
-   * End user selected [CompleteQueryResponse.CompletionResult.suggestion][].
+   * End user selected
+   * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion].
    * </pre>
    *
    * <code>string selected_suggestion = 1;</code>
@@ -39,7 +40,8 @@ public interface CompletionInfoOrBuilder
    *
    *
    * <pre>
-   * End user selected [CompleteQueryResponse.CompletionResult.suggestion][].
+   * End user selected
+   * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion].
    * </pre>
    *
    * <code>string selected_suggestion = 1;</code>
@@ -52,7 +54,8 @@ public interface CompletionInfoOrBuilder
    *
    *
    * <pre>
-   * End user selected [CompleteQueryResponse.CompletionResult.suggestion][]
+   * End user selected
+   * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion.suggestion]
    * position, starting from 0.
    * </pre>
    *

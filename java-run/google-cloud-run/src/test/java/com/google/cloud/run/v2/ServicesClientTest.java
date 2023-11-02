@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,6 +131,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
@@ -213,6 +214,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
@@ -295,6 +297,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
@@ -363,6 +366,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
@@ -519,6 +523,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
@@ -595,6 +600,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
@@ -671,6 +677,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")

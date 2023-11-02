@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -181,6 +181,92 @@ public interface SuggestionResultOrBuilder
   com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponseOrBuilder
       getSuggestSmartRepliesResponseOrBuilder();
 
-  public com.google.cloud.dialogflow.v2beta1.SuggestionResult.SuggestionResponseCase
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+   * </code>
+   *
+   * @return Whether the suggestDialogflowAssistsResponse field is set.
+   */
+  boolean hasSuggestDialogflowAssistsResponse();
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+   * </code>
+   *
+   * @return The suggestDialogflowAssistsResponse.
+   */
+  com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+      getSuggestDialogflowAssistsResponse();
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder
+      getSuggestDialogflowAssistsResponseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+   * </code>
+   *
+   * @return Whether the suggestEntityExtractionResponse field is set.
+   */
+  boolean hasSuggestEntityExtractionResponse();
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+   * </code>
+   *
+   * @return The suggestEntityExtractionResponse.
+   */
+  com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+      getSuggestEntityExtractionResponse();
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder
+      getSuggestEntityExtractionResponseOrBuilder();
+
+  com.google.cloud.dialogflow.v2beta1.SuggestionResult.SuggestionResponseCase
       getSuggestionResponseCase();
 }

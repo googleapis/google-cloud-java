@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,12 @@ package com.google.cloud.dialogflow.cx.v3;
  * The top-level message returned from the
  * [StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent]
  * method.
+ *
  * Multiple response messages (N) can be returned in order.
+ *
  * The first (N-1) responses set either the `recognition_result` or
  * `detect_intent_response` field, depending on the request:
+ *
  * *   If the `StreamingDetectIntentRequest.query_input.audio` field was
  *     set, and the `StreamingDetectIntentRequest.enable_partial_response`
  *     field was false, the `recognition_result` field is populated for each
@@ -35,12 +38,14 @@ package com.google.cloud.dialogflow.cx.v3;
  *     See the
  *     [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult]
  *     message for details about the result message sequence.
+ *
  * *   If the `StreamingDetectIntentRequest.enable_partial_response` field was
  *     true, the `detect_intent_response` field is populated for each
  *     of the (N-1) responses, where 1 &lt;= N &lt;= 4.
  *     These responses set the
  *     [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type]
  *     field to `PARTIAL`.
+ *
  * For the final Nth response message, the `detect_intent_response` is fully
  * populated, and
  * [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type]
@@ -67,11 +72,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     return new StreamingDetectIntentResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.SessionProto
         .internal_static_google_cloud_dialogflow_cx_v3_StreamingDetectIntentResponse_descriptor;
@@ -88,6 +88,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   }
 
   private int responseCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object response_;
 
   public enum ResponseCase
@@ -504,9 +506,12 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * The top-level message returned from the
    * [StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent]
    * method.
+   *
    * Multiple response messages (N) can be returned in order.
+   *
    * The first (N-1) responses set either the `recognition_result` or
    * `detect_intent_response` field, depending on the request:
+   *
    * *   If the `StreamingDetectIntentRequest.query_input.audio` field was
    *     set, and the `StreamingDetectIntentRequest.enable_partial_response`
    *     field was false, the `recognition_result` field is populated for each
@@ -514,12 +519,14 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *     See the
    *     [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3.StreamingRecognitionResult]
    *     message for details about the result message sequence.
+   *
    * *   If the `StreamingDetectIntentRequest.enable_partial_response` field was
    *     true, the `detect_intent_response` field is populated for each
    *     of the (N-1) responses, where 1 &lt;= N &lt;= 4.
    *     These responses set the
    *     [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type]
    *     field to `PARTIAL`.
+   *
    * For the final Nth response message, the `detect_intent_response` is fully
    * populated, and
    * [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3.DetectIntentResponse.response_type]

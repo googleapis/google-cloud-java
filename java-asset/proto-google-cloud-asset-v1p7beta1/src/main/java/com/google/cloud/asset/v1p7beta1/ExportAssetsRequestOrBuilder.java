@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,14 +111,18 @@ public interface ExportAssetsRequestOrBuilder
    * <pre>
    * A list of asset types to take a snapshot for. For example:
    * "compute.googleapis.com/Disk".
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
+   *
    * If specified, only matching assets will be returned, otherwise, it will
    * snapshot all asset types. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -136,14 +140,18 @@ public interface ExportAssetsRequestOrBuilder
    * <pre>
    * A list of asset types to take a snapshot for. For example:
    * "compute.googleapis.com/Disk".
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
+   *
    * If specified, only matching assets will be returned, otherwise, it will
    * snapshot all asset types. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -161,14 +169,18 @@ public interface ExportAssetsRequestOrBuilder
    * <pre>
    * A list of asset types to take a snapshot for. For example:
    * "compute.googleapis.com/Disk".
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
+   *
    * If specified, only matching assets will be returned, otherwise, it will
    * snapshot all asset types. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -187,14 +199,18 @@ public interface ExportAssetsRequestOrBuilder
    * <pre>
    * A list of asset types to take a snapshot for. For example:
    * "compute.googleapis.com/Disk".
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
+   *
    * If specified, only matching assets will be returned, otherwise, it will
    * snapshot all asset types. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)

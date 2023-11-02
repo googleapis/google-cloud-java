@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,18 +37,13 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
   }
 
   private UrlMapsValidateRequest() {
-    loadBalancingSchemes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    loadBalancingSchemes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UrlMapsValidateRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -253,7 +248,8 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
   public static final int LOAD_BALANCING_SCHEMES_FIELD_NUMBER = 6308527;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList loadBalancingSchemes_;
+  private com.google.protobuf.LazyStringArrayList loadBalancingSchemes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -591,8 +587,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      loadBalancingSchemes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      loadBalancingSchemes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       resource_ = null;
       if (resourceBuilder_ != null) {
         resourceBuilder_.dispose();
@@ -625,7 +620,6 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.UrlMapsValidateRequest buildPartial() {
       com.google.cloud.compute.v1.UrlMapsValidateRequest result =
           new com.google.cloud.compute.v1.UrlMapsValidateRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -633,17 +627,12 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.UrlMapsValidateRequest result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        loadBalancingSchemes_ = loadBalancingSchemes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.loadBalancingSchemes_ = loadBalancingSchemes_;
-    }
-
     private void buildPartial0(com.google.cloud.compute.v1.UrlMapsValidateRequest result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        loadBalancingSchemes_.makeImmutable();
+        result.loadBalancingSchemes_ = loadBalancingSchemes_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
@@ -701,7 +690,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       if (!other.loadBalancingSchemes_.isEmpty()) {
         if (loadBalancingSchemes_.isEmpty()) {
           loadBalancingSchemes_ = other.loadBalancingSchemes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureLoadBalancingSchemesIsMutable();
           loadBalancingSchemes_.addAll(other.loadBalancingSchemes_);
@@ -769,14 +758,14 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList loadBalancingSchemes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList loadBalancingSchemes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLoadBalancingSchemesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!loadBalancingSchemes_.isModifiable()) {
         loadBalancingSchemes_ = new com.google.protobuf.LazyStringArrayList(loadBalancingSchemes_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -791,7 +780,8 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      * @return A list containing the loadBalancingSchemes.
      */
     public com.google.protobuf.ProtocolStringList getLoadBalancingSchemesList() {
-      return loadBalancingSchemes_.getUnmodifiableView();
+      loadBalancingSchemes_.makeImmutable();
+      return loadBalancingSchemes_;
     }
     /**
      *
@@ -860,6 +850,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       }
       ensureLoadBalancingSchemesIsMutable();
       loadBalancingSchemes_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -882,6 +873,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       }
       ensureLoadBalancingSchemesIsMutable();
       loadBalancingSchemes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -901,6 +893,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     public Builder addAllLoadBalancingSchemes(java.lang.Iterable<java.lang.String> values) {
       ensureLoadBalancingSchemesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, loadBalancingSchemes_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -917,8 +910,9 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLoadBalancingSchemes() {
-      loadBalancingSchemes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      loadBalancingSchemes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -942,6 +936,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureLoadBalancingSchemesIsMutable();
       loadBalancingSchemes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

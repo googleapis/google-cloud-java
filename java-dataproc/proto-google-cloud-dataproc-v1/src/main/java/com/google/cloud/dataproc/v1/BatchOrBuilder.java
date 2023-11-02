@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -694,5 +694,5 @@ public interface BatchOrBuilder
    */
   com.google.cloud.dataproc.v1.Batch.StateHistoryOrBuilder getStateHistoryOrBuilder(int index);
 
-  public com.google.cloud.dataproc.v1.Batch.BatchConfigCase getBatchConfigCase();
+  com.google.cloud.dataproc.v1.Batch.BatchConfigCase getBatchConfigCase();
 }

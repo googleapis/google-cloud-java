@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,21 +44,21 @@ public final class CommonProto {
           + "ha1/common.proto\022)google.cloud.networkco"
           + "nnectivity.v1alpha1\032\037google/api/field_be"
           + "havior.proto\032\037google/protobuf/timestamp."
-          + "proto\"\200\002\n\021OperationMetadata\0224\n\013create_ti"
-          + "me\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\0221\n\010end_time\030\002 \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004ver"
-          + "b\030\004 \001(\tB\003\340A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A"
-          + "\003\022#\n\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030"
-          + "\n\013api_version\030\007 \001(\tB\003\340A\003B\246\002\n-com.google."
-          + "cloud.networkconnectivity.v1alpha1B\013Comm"
-          + "onProtoP\001Z_cloud.google.com/go/networkco"
-          + "nnectivity/apiv1alpha1/networkconnectivi"
-          + "typb;networkconnectivitypb\252\002)Google.Clou"
-          + "d.NetworkConnectivity.V1Alpha1\312\002)Google\\"
-          + "Cloud\\NetworkConnectivity\\V1alpha1\352\002,Goo"
-          + "gle::Cloud::NetworkConnectivity::V1alpha"
-          + "1b\006proto3"
+          + "proto\"\207\002\n\021OperationMetadata\0225\n\013create_ti"
+          + "me\030\001 \001(\0132\032.google.protobuf.TimestampB\004\342A"
+          + "\001\003\0222\n\010end_time\030\002 \001(\0132\032.google.protobuf.T"
+          + "imestampB\004\342A\001\003\022\024\n\006target\030\003 \001(\tB\004\342A\001\003\022\022\n\004"
+          + "verb\030\004 \001(\tB\004\342A\001\003\022\034\n\016status_message\030\005 \001(\t"
+          + "B\004\342A\001\003\022$\n\026requested_cancellation\030\006 \001(\010B\004"
+          + "\342A\001\003\022\031\n\013api_version\030\007 \001(\tB\004\342A\001\003B\246\002\n-com."
+          + "google.cloud.networkconnectivity.v1alpha"
+          + "1B\013CommonProtoP\001Z_cloud.google.com/go/ne"
+          + "tworkconnectivity/apiv1alpha1/networkcon"
+          + "nectivitypb;networkconnectivitypb\252\002)Goog"
+          + "le.Cloud.NetworkConnectivity.V1Alpha1\312\002)"
+          + "Google\\Cloud\\NetworkConnectivity\\V1alpha"
+          + "1\352\002,Google::Cloud::NetworkConnectivity::"
+          + "V1alpha1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

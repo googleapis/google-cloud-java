@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -209,7 +209,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
    * 256 bytes for virtual agent interactions. The `input_text` field can be
-   * only sent once.
+   * only sent once, and would cancel the speech recognition if any ongoing.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -224,7 +224,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
    * 256 bytes for virtual agent interactions. The `input_text` field can be
-   * only sent once.
+   * only sent once, and would cancel the speech recognition if any ongoing.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -239,7 +239,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
    * 256 bytes for virtual agent interactions. The `input_text` field can be
-   * only sent once.
+   * only sent once, and would cancel the speech recognition if any ongoing.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -253,6 +253,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    *
    * <pre>
    * The DTMF digits used to invoke intent and fill in parameter value.
+   *
    * This input is ignored if the previous response indicated that DTMF input
    * is not accepted.
    * </pre>
@@ -267,6 +268,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    *
    * <pre>
    * The DTMF digits used to invoke intent and fill in parameter value.
+   *
    * This input is ignored if the previous response indicated that DTMF input
    * is not accepted.
    * </pre>
@@ -281,6 +283,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    *
    * <pre>
    * The DTMF digits used to invoke intent and fill in parameter value.
+   *
    * This input is ignored if the previous response indicated that DTMF input
    * is not accepted.
    * </pre>
@@ -367,6 +370,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -383,6 +387,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -399,6 +404,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -415,12 +421,14 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * If `cx_current_page` is specified, the previous state of the session will
    * be ignored by Dialogflow CX, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
    * `cx_parameters` should be configured together to direct a session to a
    * specific state.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -438,12 +446,14 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * If `cx_current_page` is specified, the previous state of the session will
    * be ignored by Dialogflow CX, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
    * `cx_parameters` should be configured together to direct a session to a
    * specific state.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -453,6 +463,37 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return The bytes for cxCurrentPage.
    */
   com.google.protobuf.ByteString getCxCurrentPageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enable full bidirectional streaming. You can keep streaming the
+   * audio until timeout, and there's no need to half close the stream to get
+   * the response.
+   *
+   * Restrictions:
+   *
+   * - Timeout: 3 mins.
+   * - Audio Encoding: only supports
+   * [AudioEncoding.AUDIO_ENCODING_LINEAR_16][google.cloud.dialogflow.v2beta1.AudioEncoding.AUDIO_ENCODING_LINEAR_16]
+   * and
+   * [AudioEncoding.AUDIO_ENCODING_MULAW][google.cloud.dialogflow.v2beta1.AudioEncoding.AUDIO_ENCODING_MULAW]
+   * - Lifecycle: conversation should be in `Assist Stage`, go to
+   *   [Conversation.CreateConversation][] for more information.
+   *
+   * InvalidArgument Error will be returned if the one of restriction checks
+   * failed.
+   *
+   * You can find more details in
+   * https://cloud.google.com/agent-assist/docs/extended-streaming
+   * </pre>
+   *
+   * <code>bool enable_extended_streaming = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableExtendedStreaming.
+   */
+  boolean getEnableExtendedStreaming();
 
   /**
    *
@@ -484,9 +525,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    */
   boolean getEnableDebuggingInfo();
 
-  public com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.ConfigCase
-      getConfigCase();
+  com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.ConfigCase getConfigCase();
 
-  public com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.InputCase
-      getInputCase();
+  com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.InputCase getInputCase();
 }

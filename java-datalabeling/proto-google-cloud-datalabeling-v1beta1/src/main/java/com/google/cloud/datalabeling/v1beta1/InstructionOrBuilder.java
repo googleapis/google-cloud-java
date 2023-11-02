@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -204,6 +204,7 @@ public interface InstructionOrBuilder
    * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
+   *
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
@@ -225,6 +226,7 @@ public interface InstructionOrBuilder
    * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
+   *
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
@@ -246,6 +248,7 @@ public interface InstructionOrBuilder
    * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
+   *
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>

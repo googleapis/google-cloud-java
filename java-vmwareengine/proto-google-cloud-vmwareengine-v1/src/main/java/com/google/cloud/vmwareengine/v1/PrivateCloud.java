@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,17 +42,13 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     description_ = "";
     uid_ = "";
+    type_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PrivateCloud();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -319,6 +315,147 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.vmwareengine.v1.PrivateCloud.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Enum Type defines private cloud type.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.vmwareengine.v1.PrivateCloud.Type}
+   */
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Standard private is a zonal resource, with 3+ nodes. Default type.
+     * </pre>
+     *
+     * <code>STANDARD = 0;</code>
+     */
+    STANDARD(0),
+    /**
+     *
+     *
+     * <pre>
+     * Time limited private cloud is a zonal resource, can have only 1 node and
+     * has limited life span. Will be deleted after defined period of time,
+     * can be converted into standard private cloud by expanding it up to 3
+     * or more nodes.
+     * </pre>
+     *
+     * <code>TIME_LIMITED = 1;</code>
+     */
+    TIME_LIMITED(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Standard private is a zonal resource, with 3+ nodes. Default type.
+     * </pre>
+     *
+     * <code>STANDARD = 0;</code>
+     */
+    public static final int STANDARD_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Time limited private cloud is a zonal resource, can have only 1 node and
+     * has limited life span. Will be deleted after defined period of time,
+     * can be converted into standard private cloud by expanding it up to 3
+     * or more nodes.
+     * </pre>
+     *
+     * <code>TIME_LIMITED = 1;</code>
+     */
+    public static final int TIME_LIMITED_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STANDARD;
+        case 1:
+          return TIME_LIMITED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.vmwareengine.v1.PrivateCloud.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.vmwareengine.v1.PrivateCloud.Type)
+  }
+
   public interface ManagementClusterOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.vmwareengine.v1.PrivateCloud.ManagementCluster)
@@ -330,6 +467,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The user-provided identifier of the new `Cluster`.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -349,6 +487,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The user-provided identifier of the new `Cluster`.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -467,11 +606,6 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       return new ManagementCluster();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.vmwareengine.v1.VmwareengineResourcesProto
           .internal_static_google_cloud_vmwareengine_v1_PrivateCloud_ManagementCluster_descriptor;
@@ -508,6 +642,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The user-provided identifier of the new `Cluster`.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -538,6 +673,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The user-provided identifier of the new `Cluster`.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -1112,6 +1248,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The user-provided identifier of the new `Cluster`.
        * The identifier must meet the following requirements:
+       *
        * * Only contains 1-63 alphanumeric characters and hyphens
        * * Begins with an alphabetical character
        * * Ends with a non-hyphen character
@@ -1141,6 +1278,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The user-provided identifier of the new `Cluster`.
        * The identifier must meet the following requirements:
+       *
        * * Only contains 1-63 alphanumeric characters and hyphens
        * * Begins with an alphabetical character
        * * Ends with a non-hyphen character
@@ -1170,6 +1308,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The user-provided identifier of the new `Cluster`.
        * The identifier must meet the following requirements:
+       *
        * * Only contains 1-63 alphanumeric characters and hyphens
        * * Begins with an alphabetical character
        * * Ends with a non-hyphen character
@@ -1198,6 +1337,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The user-provided identifier of the new `Cluster`.
        * The identifier must meet the following requirements:
+       *
        * * Only contains 1-63 alphanumeric characters and hyphens
        * * Begins with an alphabetical character
        * * Ends with a non-hyphen character
@@ -1222,6 +1362,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The user-provided identifier of the new `Cluster`.
        * The identifier must meet the following requirements:
+       *
        * * Only contains 1-63 alphanumeric characters and hyphens
        * * Begins with an alphabetical character
        * * Ends with a non-hyphen character
@@ -1877,6 +2018,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>
@@ -1898,6 +2040,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>
@@ -1921,6 +2064,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>
@@ -2193,6 +2337,47 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int TYPE_FIELD_NUMBER = 22;
+  private int type_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the private cloud. Defaults to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.PrivateCloud.Type type = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override
+  public int getTypeValue() {
+    return type_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the private cloud. Defaults to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.PrivateCloud.Type type = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmwareengine.v1.PrivateCloud.Type getType() {
+    com.google.cloud.vmwareengine.v1.PrivateCloud.Type result =
+        com.google.cloud.vmwareengine.v1.PrivateCloud.Type.forNumber(type_);
+    return result == null
+        ? com.google.cloud.vmwareengine.v1.PrivateCloud.Type.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2247,6 +2432,9 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, uid_);
     }
+    if (type_ != com.google.cloud.vmwareengine.v1.PrivateCloud.Type.STANDARD.getNumber()) {
+      output.writeEnum(22, type_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2295,6 +2483,9 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, uid_);
+    }
+    if (type_ != com.google.cloud.vmwareengine.v1.PrivateCloud.Type.STANDARD.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2352,6 +2543,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       if (!getVcenter().equals(other.getVcenter())) return false;
     }
     if (!getUid().equals(other.getUid())) return false;
+    if (type_ != other.type_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2407,6 +2599,8 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + UID_FIELD_NUMBER;
     hash = (53 * hash) + getUid().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2595,6 +2789,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         vcenterBuilder_ = null;
       }
       uid_ = "";
+      type_ = 0;
       return this;
     }
 
@@ -2673,6 +2868,9 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.type_ = type_;
       }
     }
 
@@ -2765,6 +2963,9 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
         uid_ = other.uid_;
         bitField0_ |= 0x00001000;
         onChanged();
+      }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2871,6 +3072,12 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 162
+            case 176:
+              {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4143,6 +4350,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4163,6 +4371,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4189,6 +4398,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4218,6 +4428,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4244,6 +4455,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4278,6 +4490,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4303,6 +4516,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4324,6 +4538,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4349,6 +4564,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -5177,6 +5393,108 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       uid_ = value;
       bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the private cloud. Defaults to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.PrivateCloud.Type type = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the private cloud. Defaults to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.PrivateCloud.Type type = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      type_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the private cloud. Defaults to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.PrivateCloud.Type type = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmwareengine.v1.PrivateCloud.Type getType() {
+      com.google.cloud.vmwareengine.v1.PrivateCloud.Type result =
+          com.google.cloud.vmwareengine.v1.PrivateCloud.Type.forNumber(type_);
+      return result == null
+          ? com.google.cloud.vmwareengine.v1.PrivateCloud.Type.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the private cloud. Defaults to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.PrivateCloud.Type type = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.google.cloud.vmwareengine.v1.PrivateCloud.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the private cloud. Defaults to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmwareengine.v1.PrivateCloud.Type type = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      type_ = 0;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,8 +26,10 @@ package com.google.cloud.bigquery.reservation.v1;
  * (in the form of slots) with some committed period of usage. Annual
  * commitments renew by default. Commitments can be removed after their
  * commitment end time passes.
+ *
  * In order to remove annual commitment, its plan needs to be changed
  * to monthly or flex first.
+ *
  * A capacity commitment resource exists as a child resource of the admin
  * project.
  * </pre>
@@ -56,11 +58,6 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CapacityCommitment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -996,9 +993,11 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Applicable only for commitments located within one of the BigQuery
    * multi-regions (US or EU).
+   *
    * If set to true, this commitment is placed in the organization's
    * secondary region which is designated for disaster recovery purposes.
    * If false, this commitment is placed in the organization's default region.
+   *
    * NOTE: this is a preview feature. Project must be allow-listed in order to
    * set this field.
    * </pre>
@@ -1329,8 +1328,10 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * (in the form of slots) with some committed period of usage. Annual
    * commitments renew by default. Commitments can be removed after their
    * commitment end time passes.
+   *
    * In order to remove annual commitment, its plan needs to be changed
    * to monthly or flex first.
+   *
    * A capacity commitment resource exists as a child resource of the admin
    * project.
    * </pre>
@@ -2756,9 +2757,11 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Applicable only for commitments located within one of the BigQuery
      * multi-regions (US or EU).
+     *
      * If set to true, this commitment is placed in the organization's
      * secondary region which is designated for disaster recovery purposes.
      * If false, this commitment is placed in the organization's default region.
+     *
      * NOTE: this is a preview feature. Project must be allow-listed in order to
      * set this field.
      * </pre>
@@ -2777,9 +2780,11 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Applicable only for commitments located within one of the BigQuery
      * multi-regions (US or EU).
+     *
      * If set to true, this commitment is placed in the organization's
      * secondary region which is designated for disaster recovery purposes.
      * If false, this commitment is placed in the organization's default region.
+     *
      * NOTE: this is a preview feature. Project must be allow-listed in order to
      * set this field.
      * </pre>
@@ -2802,9 +2807,11 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Applicable only for commitments located within one of the BigQuery
      * multi-regions (US or EU).
+     *
      * If set to true, this commitment is placed in the organization's
      * secondary region which is designated for disaster recovery purposes.
      * If false, this commitment is placed in the organization's default region.
+     *
      * NOTE: this is a preview feature. Project must be allow-listed in order to
      * set this field.
      * </pre>

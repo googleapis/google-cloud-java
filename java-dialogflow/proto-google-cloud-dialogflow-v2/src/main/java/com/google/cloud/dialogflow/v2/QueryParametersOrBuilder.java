@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -412,4 +412,37 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
    */
   java.lang.String getWebhookHeadersOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * The platform of the virtual agent response messages.
+   *
+   * If not empty, only emits messages from this platform in the response.
+   * Valid values are the enum names of
+   * [platform][google.cloud.dialogflow.v2.Intent.Message.platform].
+   * </pre>
+   *
+   * <code>string platform = 18;</code>
+   *
+   * @return The platform.
+   */
+  java.lang.String getPlatform();
+  /**
+   *
+   *
+   * <pre>
+   * The platform of the virtual agent response messages.
+   *
+   * If not empty, only emits messages from this platform in the response.
+   * Valid values are the enum names of
+   * [platform][google.cloud.dialogflow.v2.Intent.Message.platform].
+   * </pre>
+   *
+   * <code>string platform = 18;</code>
+   *
+   * @return The bytes for platform.
+   */
+  com.google.protobuf.ByteString getPlatformBytes();
 }

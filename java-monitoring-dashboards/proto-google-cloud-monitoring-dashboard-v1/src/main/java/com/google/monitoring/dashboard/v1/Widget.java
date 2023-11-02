@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     return new Widget();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.WidgetProto
         .internal_static_google_monitoring_dashboard_v1_Widget_descriptor;
@@ -69,6 +64,8 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int contentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object content_;
 
   public enum ContentCase

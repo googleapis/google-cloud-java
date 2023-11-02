@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface UpdateRestoreRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the Restore resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the Restore resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>.google.cloud.gkebackup.v1.Restore restore = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -41,8 +41,8 @@ public interface UpdateRestoreRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the Restore resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the Restore resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>.google.cloud.gkebackup.v1.Restore restore = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -55,8 +55,8 @@ public interface UpdateRestoreRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the Restore resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the Restore resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>.google.cloud.gkebackup.v1.Restore restore = 1 [(.google.api.field_behavior) = REQUIRED];

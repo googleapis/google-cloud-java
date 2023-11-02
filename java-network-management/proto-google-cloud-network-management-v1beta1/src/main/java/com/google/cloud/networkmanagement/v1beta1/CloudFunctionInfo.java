@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.cloud.networkmanagement.v1beta1;
  *
  *
  * <pre>
- * For display only. Metadata associated with a Cloud function.
+ * For display only. Metadata associated with a Cloud Function.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkmanagement.v1beta1.CloudFunctionInfo}
@@ -49,11 +49,6 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
     return new CloudFunctionInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkmanagement.v1beta1.TraceProto
         .internal_static_google_cloud_networkmanagement_v1beta1_CloudFunctionInfo_descriptor;
@@ -77,7 +72,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Name of a Cloud function.
+   * Name of a Cloud Function.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -100,7 +95,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Name of a Cloud function.
+   * Name of a Cloud Function.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -128,7 +123,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * URI of a Cloud function.
+   * URI of a Cloud Function.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -151,7 +146,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * URI of a Cloud function.
+   * URI of a Cloud Function.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -179,7 +174,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Location in which the Cloud function is deployed.
+   * Location in which the Cloud Function is deployed.
    * </pre>
    *
    * <code>string location = 3;</code>
@@ -202,7 +197,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Location in which the Cloud function is deployed.
+   * Location in which the Cloud Function is deployed.
    * </pre>
    *
    * <code>string location = 3;</code>
@@ -228,7 +223,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Latest successfully deployed version id of the Cloud function.
+   * Latest successfully deployed version id of the Cloud Function.
    * </pre>
    *
    * <code>int64 version_id = 4;</code>
@@ -431,7 +426,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * For display only. Metadata associated with a Cloud function.
+   * For display only. Metadata associated with a Cloud Function.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkmanagement.v1beta1.CloudFunctionInfo}
@@ -661,7 +656,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of a Cloud function.
+     * Name of a Cloud Function.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -683,7 +678,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of a Cloud function.
+     * Name of a Cloud Function.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -705,7 +700,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of a Cloud function.
+     * Name of a Cloud Function.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -726,7 +721,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of a Cloud function.
+     * Name of a Cloud Function.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -743,7 +738,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of a Cloud function.
+     * Name of a Cloud Function.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -767,7 +762,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud function.
+     * URI of a Cloud Function.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -789,7 +784,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud function.
+     * URI of a Cloud Function.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -811,7 +806,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud function.
+     * URI of a Cloud Function.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -832,7 +827,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud function.
+     * URI of a Cloud Function.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -849,7 +844,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud function.
+     * URI of a Cloud Function.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -873,7 +868,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Location in which the Cloud function is deployed.
+     * Location in which the Cloud Function is deployed.
      * </pre>
      *
      * <code>string location = 3;</code>
@@ -895,7 +890,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Location in which the Cloud function is deployed.
+     * Location in which the Cloud Function is deployed.
      * </pre>
      *
      * <code>string location = 3;</code>
@@ -917,7 +912,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Location in which the Cloud function is deployed.
+     * Location in which the Cloud Function is deployed.
      * </pre>
      *
      * <code>string location = 3;</code>
@@ -938,7 +933,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Location in which the Cloud function is deployed.
+     * Location in which the Cloud Function is deployed.
      * </pre>
      *
      * <code>string location = 3;</code>
@@ -955,7 +950,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Location in which the Cloud function is deployed.
+     * Location in which the Cloud Function is deployed.
      * </pre>
      *
      * <code>string location = 3;</code>
@@ -979,7 +974,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Latest successfully deployed version id of the Cloud function.
+     * Latest successfully deployed version id of the Cloud Function.
      * </pre>
      *
      * <code>int64 version_id = 4;</code>
@@ -994,7 +989,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Latest successfully deployed version id of the Cloud function.
+     * Latest successfully deployed version id of the Cloud Function.
      * </pre>
      *
      * <code>int64 version_id = 4;</code>
@@ -1013,7 +1008,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Latest successfully deployed version id of the Cloud function.
+     * Latest successfully deployed version id of the Cloud Function.
      * </pre>
      *
      * <code>int64 version_id = 4;</code>

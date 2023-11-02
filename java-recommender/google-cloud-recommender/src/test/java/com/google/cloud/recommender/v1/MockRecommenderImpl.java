@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -157,6 +157,27 @@ public class MockRecommenderImpl extends RecommenderImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetRecommendation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Recommendation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void markRecommendationDismissed(
+      MarkRecommendationDismissedRequest request, StreamObserver<Recommendation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Recommendation) {
+      requests.add(request);
+      responseObserver.onNext(((Recommendation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MarkRecommendationDismissed, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Recommendation.class.getName(),
                   Exception.class.getName())));

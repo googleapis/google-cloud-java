@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ public interface TransitionRouteGroupOrBuilder
    * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
    * populates the name automatically. Format: `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+   * .
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -47,7 +48,8 @@ public interface TransitionRouteGroupOrBuilder
    * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
    * populates the name automatically. Format: `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+   * .
    * </pre>
    *
    * <code>string name = 1;</code>

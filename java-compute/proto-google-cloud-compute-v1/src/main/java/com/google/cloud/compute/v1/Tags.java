@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
 
   private Tags() {
     fingerprint_ = "";
-    items_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    items_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Tags();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,7 +132,8 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
   public static final int ITEMS_FIELD_NUMBER = 100526016;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList items_;
+  private com.google.protobuf.LazyStringArrayList items_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -415,8 +411,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       fingerprint_ = "";
-      items_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      items_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -443,20 +438,11 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Tags buildPartial() {
       com.google.cloud.compute.v1.Tags result = new com.google.cloud.compute.v1.Tags(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Tags result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        items_ = items_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.items_ = items_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Tags result) {
@@ -465,6 +451,10 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.fingerprint_ = fingerprint_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        items_.makeImmutable();
+        result.items_ = items_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -522,7 +512,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       if (!other.items_.isEmpty()) {
         if (items_.isEmpty()) {
           items_ = other.items_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureItemsIsMutable();
           items_.addAll(other.items_);
@@ -707,14 +697,14 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList items_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList items_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureItemsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!items_.isModifiable()) {
         items_ = new com.google.protobuf.LazyStringArrayList(items_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -728,7 +718,8 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the items.
      */
     public com.google.protobuf.ProtocolStringList getItemsList() {
-      return items_.getUnmodifiableView();
+      items_.makeImmutable();
+      return items_;
     }
     /**
      *
@@ -793,6 +784,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       }
       ensureItemsIsMutable();
       items_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -814,6 +806,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       }
       ensureItemsIsMutable();
       items_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -832,6 +825,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllItems(java.lang.Iterable<java.lang.String> values) {
       ensureItemsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, items_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -847,8 +841,9 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearItems() {
-      items_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      items_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -871,6 +866,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureItemsIsMutable();
       items_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

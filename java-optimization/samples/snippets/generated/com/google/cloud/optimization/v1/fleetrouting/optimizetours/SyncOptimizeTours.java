@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,6 @@ public class SyncOptimizeTours {
               .setParent("parent-995424086")
               .setTimeout(Duration.newBuilder().build())
               .setModel(ShipmentModel.newBuilder().build())
-              .setMaxValidationErrors(-1367418922)
               .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
               .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
               .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
@@ -55,6 +54,7 @@ public class SyncOptimizeTours {
               .setAllowLargeDeadlineDespiteInterruptionRisk(true)
               .setUseGeodesicDistances(true)
               .setGeodesicMetersPerSecond(-2129658905)
+              .setMaxValidationErrors(-1367418922)
               .setLabel("label102727412")
               .setPopulateTravelStepPolylines(true)
               .build();

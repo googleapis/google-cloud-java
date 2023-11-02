@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
   }
 
   private NetworkUsage() {
-    usedIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    usedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NetworkUsage();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -120,7 +115,8 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
   public static final int USED_IPS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList usedIps_;
+  private com.google.protobuf.LazyStringArrayList usedIps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -404,8 +400,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
         networkBuilder_.dispose();
         networkBuilder_ = null;
       }
-      usedIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      usedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -433,7 +428,6 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.baremetalsolution.v2.NetworkUsage buildPartial() {
       com.google.cloud.baremetalsolution.v2.NetworkUsage result =
           new com.google.cloud.baremetalsolution.v2.NetworkUsage(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -441,19 +435,14 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.baremetalsolution.v2.NetworkUsage result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        usedIps_ = usedIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.usedIps_ = usedIps_;
-    }
-
     private void buildPartial0(com.google.cloud.baremetalsolution.v2.NetworkUsage result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.network_ = networkBuilder_ == null ? network_ : networkBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        usedIps_.makeImmutable();
+        result.usedIps_ = usedIps_;
       }
     }
 
@@ -509,7 +498,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       if (!other.usedIps_.isEmpty()) {
         if (usedIps_.isEmpty()) {
           usedIps_ = other.usedIps_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureUsedIpsIsMutable();
           usedIps_.addAll(other.usedIps_);
@@ -758,14 +747,14 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       return networkBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList usedIps_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList usedIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUsedIpsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!usedIps_.isModifiable()) {
         usedIps_ = new com.google.protobuf.LazyStringArrayList(usedIps_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -779,7 +768,8 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the usedIps.
      */
     public com.google.protobuf.ProtocolStringList getUsedIpsList() {
-      return usedIps_.getUnmodifiableView();
+      usedIps_.makeImmutable();
+      return usedIps_;
     }
     /**
      *
@@ -844,6 +834,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsedIpsIsMutable();
       usedIps_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,6 +856,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsedIpsIsMutable();
       usedIps_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -883,6 +875,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllUsedIps(java.lang.Iterable<java.lang.String> values) {
       ensureUsedIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, usedIps_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -898,8 +891,9 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUsedIps() {
-      usedIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      usedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -922,6 +916,7 @@ public final class NetworkUsage extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureUsedIpsIsMutable();
       usedIps_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

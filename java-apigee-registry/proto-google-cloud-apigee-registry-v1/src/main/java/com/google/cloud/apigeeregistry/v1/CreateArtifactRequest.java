@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateArtifactRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -191,8 +186,10 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The ID to use for the artifact, which will become the final component of
    * the artifact's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
+   *
    * Following AIP-162, IDs must not have the form of a UUID.
    * </pre>
    *
@@ -218,8 +215,10 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The ID to use for the artifact, which will become the final component of
    * the artifact's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
+   *
    * Following AIP-162, IDs must not have the form of a UUID.
    * </pre>
    *
@@ -968,8 +967,10 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID to use for the artifact, which will become the final component of
      * the artifact's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -994,8 +995,10 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID to use for the artifact, which will become the final component of
      * the artifact's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -1020,8 +1023,10 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID to use for the artifact, which will become the final component of
      * the artifact's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -1045,8 +1050,10 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID to use for the artifact, which will become the final component of
      * the artifact's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -1066,8 +1073,10 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID to use for the artifact, which will become the final component of
      * the artifact's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *

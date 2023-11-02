@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListRuntimesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -494,7 +489,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       name_ = "";
       displayName_ = "";
       stage_ = 0;
-      warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
       environment_ = 0;
     }
 
@@ -502,11 +497,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Runtime();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -666,7 +656,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public static final int WARNINGS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList warnings_;
+    private com.google.protobuf.LazyStringArrayList warnings_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1017,8 +1008,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         name_ = "";
         displayName_ = "";
         stage_ = 0;
-        warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
         environment_ = 0;
         return this;
       }
@@ -1048,21 +1038,11 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       public com.google.cloud.functions.v2beta.ListRuntimesResponse.Runtime buildPartial() {
         com.google.cloud.functions.v2beta.ListRuntimesResponse.Runtime result =
             new com.google.cloud.functions.v2beta.ListRuntimesResponse.Runtime(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.functions.v2beta.ListRuntimesResponse.Runtime result) {
-        if (((bitField0_ & 0x00000008) != 0)) {
-          warnings_ = warnings_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.warnings_ = warnings_;
       }
 
       private void buildPartial0(
@@ -1076,6 +1056,10 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.stage_ = stage_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          warnings_.makeImmutable();
+          result.warnings_ = warnings_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.environment_ = environment_;
@@ -1148,7 +1132,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         if (!other.warnings_.isEmpty()) {
           if (warnings_.isEmpty()) {
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureWarningsIsMutable();
             warnings_.addAll(other.warnings_);
@@ -1539,14 +1523,14 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return this;
       }
 
-      private com.google.protobuf.LazyStringList warnings_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList warnings_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureWarningsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!warnings_.isModifiable()) {
           warnings_ = new com.google.protobuf.LazyStringArrayList(warnings_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -1560,7 +1544,8 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
        * @return A list containing the warnings.
        */
       public com.google.protobuf.ProtocolStringList getWarningsList() {
-        return warnings_.getUnmodifiableView();
+        warnings_.makeImmutable();
+        return warnings_;
       }
       /**
        *
@@ -1625,6 +1610,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         }
         ensureWarningsIsMutable();
         warnings_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1646,6 +1632,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         }
         ensureWarningsIsMutable();
         warnings_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1664,6 +1651,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       public Builder addAllWarnings(java.lang.Iterable<java.lang.String> values) {
         ensureWarningsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, warnings_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1679,8 +1667,9 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearWarnings() {
-        warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -1703,6 +1692,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureWarningsIsMutable();
         warnings_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }

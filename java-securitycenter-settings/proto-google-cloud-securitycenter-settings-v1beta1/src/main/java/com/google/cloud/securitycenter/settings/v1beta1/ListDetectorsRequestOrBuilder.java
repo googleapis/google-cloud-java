@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,10 +64,12 @@ public interface ListDetectorsRequestOrBuilder
    *  * components
    *  * labels
    *  * billing tiers
+   *
    * Component filters will retrieve only detectors for the components
    * specified. Label filters will retrieve only detectors that match one of the
    * labels specified. Billing tier filters will retrieve only detectors for
    * that billing tier.
+   *
    * The filters
    * </pre>
    *
@@ -84,10 +86,12 @@ public interface ListDetectorsRequestOrBuilder
    *  * components
    *  * labels
    *  * billing tiers
+   *
    * Component filters will retrieve only detectors for the components
    * specified. Label filters will retrieve only detectors that match one of the
    * labels specified. Billing tier filters will retrieve only detectors for
    * that billing tier.
+   *
    * The filters
    * </pre>
    *
@@ -118,6 +122,7 @@ public interface ListDetectorsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListDetectors` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListDetectors` must
    * match the call that provided the page token.
    * </pre>
@@ -133,6 +138,7 @@ public interface ListDetectorsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListDetectors` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListDetectors` must
    * match the call that provided the page token.
    * </pre>

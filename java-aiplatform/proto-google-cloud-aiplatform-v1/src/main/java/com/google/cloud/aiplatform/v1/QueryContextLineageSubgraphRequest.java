@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
     return new QueryContextLineageSubgraphRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.MetadataServiceProto
         .internal_static_google_cloud_aiplatform_v1_QueryContextLineageSubgraphRequest_descriptor;
@@ -81,6 +76,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
    * should be retrieved as a LineageSubgraph.
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+   *
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
    * for the Context exceeds 1000.
@@ -112,6 +108,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
    * should be retrieved as a LineageSubgraph.
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+   *
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
    * for the Context exceeds 1000.
@@ -495,6 +492,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
      * should be retrieved as a LineageSubgraph.
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+     *
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -525,6 +523,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
      * should be retrieved as a LineageSubgraph.
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+     *
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -555,6 +554,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
      * should be retrieved as a LineageSubgraph.
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+     *
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -584,6 +584,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
      * should be retrieved as a LineageSubgraph.
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+     *
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -609,6 +610,7 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
      * should be retrieved as a LineageSubgraph.
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+     *
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.

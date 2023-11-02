@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ public interface EntityReferenceOrBuilder
    * Required. Fully Qualified Name of the entity. Useful for referencing
    * entities that aren't represented as GCP resources, for example, tables in
    * Dataproc Metastore API.
+   *
    * Examples:
+   *
    *   * `bigquery:dataset.project_id.dataset_id`
    *   * `bigquery:table.project_id.dataset_id.table_id`
    *   * `pubsub:project_id.topic_id`
@@ -49,7 +51,9 @@ public interface EntityReferenceOrBuilder
    * Required. Fully Qualified Name of the entity. Useful for referencing
    * entities that aren't represented as GCP resources, for example, tables in
    * Dataproc Metastore API.
+   *
    * Examples:
+   *
    *   * `bigquery:dataset.project_id.dataset_id`
    *   * `bigquery:table.project_id.dataset_id.table_id`
    *   * `pubsub:project_id.topic_id`

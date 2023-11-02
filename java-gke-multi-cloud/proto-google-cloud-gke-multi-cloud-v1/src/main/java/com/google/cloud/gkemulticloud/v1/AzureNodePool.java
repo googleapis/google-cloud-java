@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AzureNodePool();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -345,8 +340,10 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of this resource.
+   *
    * Node pool names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+   *
    * For more details on Google Cloud resource names,
    * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * </pre>
@@ -372,8 +369,10 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of this resource.
+   *
    * Node pool names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+   *
    * For more details on Google Cloud resource names,
    * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * </pre>
@@ -833,6 +832,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Allows clients to perform consistent read-modify-writes
    * through optimistic concurrency control.
+   *
    * Can be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
@@ -859,6 +859,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Allows clients to perform consistent read-modify-writes
    * through optimistic concurrency control.
+   *
    * Can be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
@@ -912,6 +913,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the node pool.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -942,6 +944,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the node pool.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -963,6 +966,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the node pool.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -991,6 +995,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the node pool.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -1084,6 +1089,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The Azure availability zone of the nodes in this nodepool.
+   *
    * When unspecified, it defaults to `1`.
    * </pre>
    *
@@ -1108,6 +1114,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The Azure availability zone of the nodes in this nodepool.
+   *
    * When unspecified, it defaults to `1`.
    * </pre>
    *
@@ -2013,8 +2020,10 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Node pool names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * For more details on Google Cloud resource names,
      * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * </pre>
@@ -2039,8 +2048,10 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Node pool names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * For more details on Google Cloud resource names,
      * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * </pre>
@@ -2065,8 +2076,10 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Node pool names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * For more details on Google Cloud resource names,
      * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * </pre>
@@ -2090,8 +2103,10 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Node pool names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * For more details on Google Cloud resource names,
      * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * </pre>
@@ -2111,8 +2126,10 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Node pool names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * For more details on Google Cloud resource names,
      * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * </pre>
@@ -3438,6 +3455,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -3463,6 +3481,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -3488,6 +3507,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -3512,6 +3532,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -3532,6 +3553,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -3585,6 +3607,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -3615,6 +3638,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -3636,6 +3660,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -3664,6 +3689,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -3698,6 +3724,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -3728,6 +3755,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -3756,6 +3784,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -3995,6 +4024,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Azure availability zone of the nodes in this nodepool.
+     *
      * When unspecified, it defaults to `1`.
      * </pre>
      *
@@ -4018,6 +4048,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Azure availability zone of the nodes in this nodepool.
+     *
      * When unspecified, it defaults to `1`.
      * </pre>
      *
@@ -4041,6 +4072,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Azure availability zone of the nodes in this nodepool.
+     *
      * When unspecified, it defaults to `1`.
      * </pre>
      *
@@ -4063,6 +4095,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Azure availability zone of the nodes in this nodepool.
+     *
      * When unspecified, it defaults to `1`.
      * </pre>
      *
@@ -4081,6 +4114,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The Azure availability zone of the nodes in this nodepool.
+     *
      * When unspecified, it defaults to `1`.
      * </pre>
      *

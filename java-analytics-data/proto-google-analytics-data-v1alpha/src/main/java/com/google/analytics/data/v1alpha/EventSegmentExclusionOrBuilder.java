@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface EventSegmentExclusionOrBuilder
    *
    * <pre>
    * `eventExclusionDuration` should always be `PERMANENTLY_EXCLUDE`.
+   *
    * Optional. If unspecified, an `eventExclusionDuration` of
    * `EVENT_EXCLUSION_PERMANENT` is used.
    * </pre>
@@ -43,6 +44,7 @@ public interface EventSegmentExclusionOrBuilder
    *
    * <pre>
    * `eventExclusionDuration` should always be `PERMANENTLY_EXCLUDE`.
+   *
    * Optional. If unspecified, an `eventExclusionDuration` of
    * `EVENT_EXCLUSION_PERMANENT` is used.
    * </pre>

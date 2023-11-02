@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,16 @@ public enum DatabaseVersion implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POSTGRES_14 = 2;</code>
    */
   POSTGRES_14(2),
+  /**
+   *
+   *
+   * <pre>
+   * The database version is Postgres 15.
+   * </pre>
+   *
+   * <code>POSTGRES_15 = 3;</code>
+   */
+  POSTGRES_15(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -92,6 +102,16 @@ public enum DatabaseVersion implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POSTGRES_14 = 2;</code>
    */
   public static final int POSTGRES_14_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The database version is Postgres 15.
+   * </pre>
+   *
+   * <code>POSTGRES_15 = 3;</code>
+   */
+  public static final int POSTGRES_15_VALUE = 3;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -123,6 +143,8 @@ public enum DatabaseVersion implements com.google.protobuf.ProtocolMessageEnum {
         return POSTGRES_13;
       case 2:
         return POSTGRES_14;
+      case 3:
+        return POSTGRES_15;
       default:
         return null;
     }
@@ -152,7 +174,7 @@ public enum DatabaseVersion implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.alloydb.v1beta.ResourcesProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.cloud.alloydb.v1beta.ResourcesProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final DatabaseVersion[] VALUES = values();

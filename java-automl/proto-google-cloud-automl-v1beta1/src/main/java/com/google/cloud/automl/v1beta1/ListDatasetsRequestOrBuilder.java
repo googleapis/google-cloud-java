@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,9 +57,11 @@ public interface ListDatasetsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the results of the request.
+   *
    *   * `dataset_metadata` - for existence of the case (e.g.
    *             `image_classification_dataset_metadata:*`). Some examples of
    *             using the filter are:
+   *
    *   * `translation_dataset_metadata:*` --&gt; The dataset has
    *                                          `translation_dataset_metadata`.
    * </pre>
@@ -74,9 +76,11 @@ public interface ListDatasetsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the results of the request.
+   *
    *   * `dataset_metadata` - for existence of the case (e.g.
    *             `image_classification_dataset_metadata:*`). Some examples of
    *             using the filter are:
+   *
    *   * `translation_dataset_metadata:*` --&gt; The dataset has
    *                                          `translation_dataset_metadata`.
    * </pre>

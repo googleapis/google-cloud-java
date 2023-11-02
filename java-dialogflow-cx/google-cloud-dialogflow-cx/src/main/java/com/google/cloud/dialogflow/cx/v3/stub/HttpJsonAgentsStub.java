@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.Agent;
 import com.google.cloud.dialogflow.cx.v3.AgentValidationResult;
@@ -41,12 +42,15 @@ import com.google.cloud.dialogflow.cx.v3.CreateAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.ExportAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.ExportAgentResponse;
+import com.google.cloud.dialogflow.cx.v3.GenerativeSettings;
 import com.google.cloud.dialogflow.cx.v3.GetAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.GetAgentValidationResultRequest;
+import com.google.cloud.dialogflow.cx.v3.GetGenerativeSettingsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListAgentsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListAgentsResponse;
 import com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest;
+import com.google.cloud.dialogflow.cx.v3.UpdateGenerativeSettingsRequest;
 import com.google.cloud.dialogflow.cx.v3.ValidateAgentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -407,6 +411,84 @@ public class HttpJsonAgentsStub extends AgentsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsMethodDescriptor =
+          ApiMethodDescriptor.<GetGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.Agents/GetGenerativeSettings")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetGenerativeSettingsRequest>newBuilder()
+                      .setPath(
+                          "/v3/{name=projects/*/locations/*/agents/*/generativeSettings}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGenerativeSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGenerativeSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "languageCode", request.getLanguageCode());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerativeSettings>newBuilder()
+                      .setDefaultInstance(GenerativeSettings.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsMethodDescriptor =
+          ApiMethodDescriptor.<UpdateGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.Agents/UpdateGenerativeSettings")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateGenerativeSettingsRequest>newBuilder()
+                      .setPath(
+                          "/v3/{generativeSettings.name=projects/*/locations/*/agents/*/generativeSettings}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateGenerativeSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "generativeSettings.name",
+                                request.getGenerativeSettings().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateGenerativeSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "generativeSettings", request.getGenerativeSettings(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerativeSettings>newBuilder()
+                      .setDefaultInstance(GenerativeSettings.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -489,6 +571,10 @@ public class HttpJsonAgentsStub extends AgentsStub {
   private final UnaryCallable<ValidateAgentRequest, AgentValidationResult> validateAgentCallable;
   private final UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
       getAgentValidationResultCallable;
+  private final UnaryCallable<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsCallable;
+  private final UnaryCallable<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -572,42 +658,90 @@ public class HttpJsonAgentsStub extends AgentsStub {
         HttpJsonCallSettings.<ListAgentsRequest, ListAgentsResponse>newBuilder()
             .setMethodDescriptor(listAgentsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetAgentRequest, Agent> getAgentTransportSettings =
         HttpJsonCallSettings.<GetAgentRequest, Agent>newBuilder()
             .setMethodDescriptor(getAgentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateAgentRequest, Agent> createAgentTransportSettings =
         HttpJsonCallSettings.<CreateAgentRequest, Agent>newBuilder()
             .setMethodDescriptor(createAgentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateAgentRequest, Agent> updateAgentTransportSettings =
         HttpJsonCallSettings.<UpdateAgentRequest, Agent>newBuilder()
             .setMethodDescriptor(updateAgentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("agent.name", String.valueOf(request.getAgent().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteAgentRequest, Empty> deleteAgentTransportSettings =
         HttpJsonCallSettings.<DeleteAgentRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAgentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ExportAgentRequest, Operation> exportAgentTransportSettings =
         HttpJsonCallSettings.<ExportAgentRequest, Operation>newBuilder()
             .setMethodDescriptor(exportAgentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RestoreAgentRequest, Operation> restoreAgentTransportSettings =
         HttpJsonCallSettings.<RestoreAgentRequest, Operation>newBuilder()
             .setMethodDescriptor(restoreAgentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ValidateAgentRequest, AgentValidationResult>
         validateAgentTransportSettings =
             HttpJsonCallSettings.<ValidateAgentRequest, AgentValidationResult>newBuilder()
                 .setMethodDescriptor(validateAgentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAgentValidationResultRequest, AgentValidationResult>
         getAgentValidationResultTransportSettings =
@@ -615,17 +749,61 @@ public class HttpJsonAgentsStub extends AgentsStub {
                 .<GetAgentValidationResultRequest, AgentValidationResult>newBuilder()
                 .setMethodDescriptor(getAgentValidationResultMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetGenerativeSettingsRequest, GenerativeSettings>
+        getGenerativeSettingsTransportSettings =
+            HttpJsonCallSettings.<GetGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+                .setMethodDescriptor(getGenerativeSettingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateGenerativeSettingsRequest, GenerativeSettings>
+        updateGenerativeSettingsTransportSettings =
+            HttpJsonCallSettings.<UpdateGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+                .setMethodDescriptor(updateGenerativeSettingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "generative_settings.name",
+                          String.valueOf(request.getGenerativeSettings().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listAgentsCallable =
@@ -672,6 +850,16 @@ public class HttpJsonAgentsStub extends AgentsStub {
             getAgentValidationResultTransportSettings,
             settings.getAgentValidationResultSettings(),
             clientContext);
+    this.getGenerativeSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getGenerativeSettingsTransportSettings,
+            settings.getGenerativeSettingsSettings(),
+            clientContext);
+    this.updateGenerativeSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateGenerativeSettingsTransportSettings,
+            settings.updateGenerativeSettingsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -698,6 +886,8 @@ public class HttpJsonAgentsStub extends AgentsStub {
     methodDescriptors.add(restoreAgentMethodDescriptor);
     methodDescriptors.add(validateAgentMethodDescriptor);
     methodDescriptors.add(getAgentValidationResultMethodDescriptor);
+    methodDescriptors.add(getGenerativeSettingsMethodDescriptor);
+    methodDescriptors.add(updateGenerativeSettingsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -767,6 +957,18 @@ public class HttpJsonAgentsStub extends AgentsStub {
   public UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
       getAgentValidationResultCallable() {
     return getAgentValidationResultCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsCallable() {
+    return getGenerativeSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsCallable() {
+    return updateGenerativeSettingsCallable;
   }
 
   @Override

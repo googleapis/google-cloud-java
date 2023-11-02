@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,22 +63,22 @@ public final class ProcessingProto {
       "\n)google/cloud/dataplex/v1/processing.pr"
           + "oto\022\030google.cloud.dataplex.v1\032\037google/ap"
           + "i/field_behavior.proto\032\031google/api/resou"
-          + "rce.proto\"\275\001\n\007Trigger\022?\n\ton_demand\030d \001(\013"
+          + "rce.proto\"\276\001\n\007Trigger\022?\n\ton_demand\030d \001(\013"
           + "2*.google.cloud.dataplex.v1.Trigger.OnDe"
           + "mandH\000\022>\n\010schedule\030e \001(\0132*.google.cloud."
           + "dataplex.v1.Trigger.ScheduleH\000\032\n\n\010OnDema"
-          + "nd\032\035\n\010Schedule\022\021\n\004cron\030\001 \001(\tB\003\340A\002B\006\n\004mod"
-          + "e\"i\n\nDataSource\0228\n\006entity\030d \001(\tB&\340A\005\372A \n"
-          + "\036dataplex.googleapis.com/EntityH\000\022\027\n\010res"
-          + "ource\030e \001(\tB\003\340A\005H\000B\010\n\006source\"\257\001\n\013Scanned"
-          + "Data\022S\n\021incremental_field\030\001 \001(\01326.google"
-          + ".cloud.dataplex.v1.ScannedData.Increment"
-          + "alFieldH\000\032=\n\020IncrementalField\022\r\n\005field\030\001"
-          + " \001(\t\022\r\n\005start\030\002 \001(\t\022\013\n\003end\030\003 \001(\tB\014\n\ndata"
-          + "_rangeBk\n\034com.google.cloud.dataplex.v1B\017"
-          + "ProcessingProtoP\001Z8cloud.google.com/go/d"
-          + "ataplex/apiv1/dataplexpb;dataplexpbb\006pro"
-          + "to3"
+          + "nd\032\036\n\010Schedule\022\022\n\004cron\030\001 \001(\tB\004\342A\001\002B\006\n\004mo"
+          + "de\"k\n\nDataSource\0229\n\006entity\030d \001(\tB\'\342A\001\005\372A"
+          + " \n\036dataplex.googleapis.com/EntityH\000\022\030\n\010r"
+          + "esource\030e \001(\tB\004\342A\001\005H\000B\010\n\006source\"\257\001\n\013Scan"
+          + "nedData\022S\n\021incremental_field\030\001 \001(\01326.goo"
+          + "gle.cloud.dataplex.v1.ScannedData.Increm"
+          + "entalFieldH\000\032=\n\020IncrementalField\022\r\n\005fiel"
+          + "d\030\001 \001(\t\022\r\n\005start\030\002 \001(\t\022\013\n\003end\030\003 \001(\tB\014\n\nd"
+          + "ata_rangeBk\n\034com.google.cloud.dataplex.v"
+          + "1B\017ProcessingProtoP\001Z8cloud.google.com/g"
+          + "o/dataplex/apiv1/dataplexpb;dataplexpbb\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

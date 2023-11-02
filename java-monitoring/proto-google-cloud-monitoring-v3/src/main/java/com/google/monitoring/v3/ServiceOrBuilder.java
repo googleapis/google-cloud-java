@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Resource name for this Service. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Resource name for this Service. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
@@ -410,5 +412,5 @@ public interface ServiceOrBuilder
    */
   java.lang.String getUserLabelsOrThrow(java.lang.String key);
 
-  public com.google.monitoring.v3.Service.IdentifierCase getIdentifierCase();
+  com.google.monitoring.v3.Service.IdentifierCase getIdentifierCase();
 }

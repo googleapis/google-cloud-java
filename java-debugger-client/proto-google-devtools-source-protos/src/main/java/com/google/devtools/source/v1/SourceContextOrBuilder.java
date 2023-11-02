@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -163,5 +163,5 @@ public interface SourceContextOrBuilder
    */
   com.google.devtools.source.v1.GitSourceContextOrBuilder getGitOrBuilder();
 
-  public com.google.devtools.source.v1.SourceContext.ContextCase getContextCase();
+  com.google.devtools.source.v1.SourceContext.ContextCase getContextCase();
 }

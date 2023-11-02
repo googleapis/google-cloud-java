@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,17 +101,23 @@ public interface ListDocumentsRequestOrBuilder
    * <pre>
    * The filter expression used to filter documents returned by the list method.
    * The expression has the following syntax:
+   *
    *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+   *
    * The following fields and operators are supported:
+   *
    * * knowledge_types with has(:) operator
    * * display_name with has(:) operator
    * * state with equals(=) operator
+   *
    * Examples:
+   *
    * * "knowledge_types:FAQ" matches documents with FAQ knowledge type.
    * * "display_name:customer" matches documents whose display name contains
    *   "customer".
    * * "state=ACTIVE" matches documents with ACTIVE state.
    * * "knowledge_types:FAQ AND state=ACTIVE" matches all active FAQ documents.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -127,17 +133,23 @@ public interface ListDocumentsRequestOrBuilder
    * <pre>
    * The filter expression used to filter documents returned by the list method.
    * The expression has the following syntax:
+   *
    *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+   *
    * The following fields and operators are supported:
+   *
    * * knowledge_types with has(:) operator
    * * display_name with has(:) operator
    * * state with equals(=) operator
+   *
    * Examples:
+   *
    * * "knowledge_types:FAQ" matches documents with FAQ knowledge type.
    * * "display_name:customer" matches documents whose display name contains
    *   "customer".
    * * "state=ACTIVE" matches documents with ACTIVE state.
    * * "knowledge_types:FAQ AND state=ACTIVE" matches all active FAQ documents.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>

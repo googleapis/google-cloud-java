@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,12 +41,12 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   private SecurityBulletinEvent() {
     resourceTypeAffected_ = "";
     bulletinId_ = "";
-    cveIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    cveIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     severity_ = "";
     bulletinUri_ = "";
     briefDescription_ = "";
-    affectedSupportedMinors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    patchedVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    affectedSupportedMinors_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    patchedVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     suggestedUpgradeTarget_ = "";
   }
 
@@ -54,11 +54,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SecurityBulletinEvent();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -185,7 +180,8 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public static final int CVE_IDS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList cveIds_;
+  private com.google.protobuf.LazyStringArrayList cveIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -403,7 +399,8 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public static final int AFFECTED_SUPPORTED_MINORS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList affectedSupportedMinors_;
+  private com.google.protobuf.LazyStringArrayList affectedSupportedMinors_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -466,7 +463,8 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public static final int PATCHED_VERSIONS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList patchedVersions_;
+  private com.google.protobuf.LazyStringArrayList patchedVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -909,15 +907,12 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       bitField0_ = 0;
       resourceTypeAffected_ = "";
       bulletinId_ = "";
-      cveIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      cveIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       severity_ = "";
       bulletinUri_ = "";
       briefDescription_ = "";
-      affectedSupportedMinors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
-      patchedVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      affectedSupportedMinors_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      patchedVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       suggestedUpgradeTarget_ = "";
       manualStepsRequired_ = false;
       return this;
@@ -947,31 +942,11 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public com.google.container.v1beta1.SecurityBulletinEvent buildPartial() {
       com.google.container.v1beta1.SecurityBulletinEvent result =
           new com.google.container.v1beta1.SecurityBulletinEvent(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.container.v1beta1.SecurityBulletinEvent result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        cveIds_ = cveIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.cveIds_ = cveIds_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        affectedSupportedMinors_ = affectedSupportedMinors_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.affectedSupportedMinors_ = affectedSupportedMinors_;
-      if (((bitField0_ & 0x00000080) != 0)) {
-        patchedVersions_ = patchedVersions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.patchedVersions_ = patchedVersions_;
     }
 
     private void buildPartial0(com.google.container.v1beta1.SecurityBulletinEvent result) {
@@ -982,6 +957,10 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.bulletinId_ = bulletinId_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        cveIds_.makeImmutable();
+        result.cveIds_ = cveIds_;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.severity_ = severity_;
       }
@@ -990,6 +969,14 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.briefDescription_ = briefDescription_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        affectedSupportedMinors_.makeImmutable();
+        result.affectedSupportedMinors_ = affectedSupportedMinors_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        patchedVersions_.makeImmutable();
+        result.patchedVersions_ = patchedVersions_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.suggestedUpgradeTarget_ = suggestedUpgradeTarget_;
@@ -1058,7 +1045,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       if (!other.cveIds_.isEmpty()) {
         if (cveIds_.isEmpty()) {
           cveIds_ = other.cveIds_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureCveIdsIsMutable();
           cveIds_.addAll(other.cveIds_);
@@ -1083,7 +1070,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       if (!other.affectedSupportedMinors_.isEmpty()) {
         if (affectedSupportedMinors_.isEmpty()) {
           affectedSupportedMinors_ = other.affectedSupportedMinors_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureAffectedSupportedMinorsIsMutable();
           affectedSupportedMinors_.addAll(other.affectedSupportedMinors_);
@@ -1093,7 +1080,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       if (!other.patchedVersions_.isEmpty()) {
         if (patchedVersions_.isEmpty()) {
           patchedVersions_ = other.patchedVersions_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensurePatchedVersionsIsMutable();
           patchedVersions_.addAll(other.patchedVersions_);
@@ -1438,14 +1425,14 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.protobuf.LazyStringList cveIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList cveIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCveIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!cveIds_.isModifiable()) {
         cveIds_ = new com.google.protobuf.LazyStringArrayList(cveIds_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1459,7 +1446,8 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
      * @return A list containing the cveIds.
      */
     public com.google.protobuf.ProtocolStringList getCveIdsList() {
-      return cveIds_.getUnmodifiableView();
+      cveIds_.makeImmutable();
+      return cveIds_;
     }
     /**
      *
@@ -1524,6 +1512,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       }
       ensureCveIdsIsMutable();
       cveIds_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1545,6 +1534,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       }
       ensureCveIdsIsMutable();
       cveIds_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1563,6 +1553,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public Builder addAllCveIds(java.lang.Iterable<java.lang.String> values) {
       ensureCveIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cveIds_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1578,8 +1569,9 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearCveIds() {
-      cveIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      cveIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1602,6 +1594,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureCveIdsIsMutable();
       cveIds_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1929,15 +1922,15 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.protobuf.LazyStringList affectedSupportedMinors_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList affectedSupportedMinors_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAffectedSupportedMinorsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!affectedSupportedMinors_.isModifiable()) {
         affectedSupportedMinors_ =
             new com.google.protobuf.LazyStringArrayList(affectedSupportedMinors_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -1951,7 +1944,8 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
      * @return A list containing the affectedSupportedMinors.
      */
     public com.google.protobuf.ProtocolStringList getAffectedSupportedMinorsList() {
-      return affectedSupportedMinors_.getUnmodifiableView();
+      affectedSupportedMinors_.makeImmutable();
+      return affectedSupportedMinors_;
     }
     /**
      *
@@ -2016,6 +2010,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       }
       ensureAffectedSupportedMinorsIsMutable();
       affectedSupportedMinors_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2037,6 +2032,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       }
       ensureAffectedSupportedMinorsIsMutable();
       affectedSupportedMinors_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2055,6 +2051,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public Builder addAllAffectedSupportedMinors(java.lang.Iterable<java.lang.String> values) {
       ensureAffectedSupportedMinorsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, affectedSupportedMinors_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2070,8 +2067,9 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAffectedSupportedMinors() {
-      affectedSupportedMinors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      affectedSupportedMinors_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2094,18 +2092,19 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureAffectedSupportedMinorsIsMutable();
       affectedSupportedMinors_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList patchedVersions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList patchedVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePatchedVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!patchedVersions_.isModifiable()) {
         patchedVersions_ = new com.google.protobuf.LazyStringArrayList(patchedVersions_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -2119,7 +2118,8 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
      * @return A list containing the patchedVersions.
      */
     public com.google.protobuf.ProtocolStringList getPatchedVersionsList() {
-      return patchedVersions_.getUnmodifiableView();
+      patchedVersions_.makeImmutable();
+      return patchedVersions_;
     }
     /**
      *
@@ -2184,6 +2184,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       }
       ensurePatchedVersionsIsMutable();
       patchedVersions_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2205,6 +2206,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       }
       ensurePatchedVersionsIsMutable();
       patchedVersions_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2223,6 +2225,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public Builder addAllPatchedVersions(java.lang.Iterable<java.lang.String> values) {
       ensurePatchedVersionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, patchedVersions_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2238,8 +2241,9 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPatchedVersions() {
-      patchedVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      patchedVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -2262,6 +2266,7 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensurePatchedVersionsIsMutable();
       patchedVersions_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,10 @@ public final class ServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_confidentialcomputing_v1_GcpCredentials_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_fieldAccessorTable;
@@ -59,6 +63,18 @@ public final class ServiceProto {
       internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_Quote_PcrValuesEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_Quote_PcrValuesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_ConfidentialSpaceInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_ConfidentialSpaceInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_SignedEntity_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_SignedEntity_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_confidentialcomputing_v1_ContainerImageSignature_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_confidentialcomputing_v1_ContainerImageSignature_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -74,59 +90,81 @@ public final class ServiceProto {
           + "to\032\027google/api/client.proto\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resourc"
           + "e.proto\032\037google/protobuf/timestamp.proto"
-          + "\"\245\002\n\tChallenge\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013cre"
-          + "ate_time\030\002 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\003\0224\n\013expire_time\030\003 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\022\021\n\004used\030\004 \001(\010B\003\340A\003"
-          + "\022\026\n\ttpm_nonce\030\006 \001(\tB\003\340A\003:n\352Ak\n.confident"
-          + "ialcomputing.googleapis.com/Challenge\0229p"
-          + "rojects/{project}/locations/{location}/c"
-          + "hallenges/{uuid}\"\235\001\n\026CreateChallengeRequ"
-          + "est\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.g"
-          + "oogleapis.com/Location\022H\n\tchallenge\030\002 \001("
-          + "\01320.google.cloud.confidentialcomputing.v"
-          + "1.ChallengeB\003\340A\002\"\217\002\n\030VerifyAttestationRe"
-          + "quest\022I\n\tchallenge\030\001 \001(\tB6\340A\002\372A0\n.confid"
-          + "entialcomputing.googleapis.com/Challenge"
-          + "\022S\n\017gcp_credentials\030\002 \001(\01325.google.cloud"
-          + ".confidentialcomputing.v1.GcpCredentials"
-          + "B\003\340A\001\022S\n\017tpm_attestation\030\003 \001(\01325.google."
-          + "cloud.confidentialcomputing.v1.TpmAttest"
-          + "ationB\003\340A\002\";\n\031VerifyAttestationResponse\022"
-          + "\036\n\021oidc_claims_token\030\002 \001(\tB\003\340A\003\"3\n\016GcpCr"
-          + "edentials\022!\n\031service_account_id_tokens\030\002"
-          + " \003(\t\"\217\003\n\016TpmAttestation\022K\n\006quotes\030\001 \003(\0132"
-          + ";.google.cloud.confidentialcomputing.v1."
-          + "TpmAttestation.Quote\022\025\n\rtcg_event_log\030\002 "
-          + "\001(\014\022\033\n\023canonical_event_log\030\003 \001(\014\022\017\n\007ak_c"
-          + "ert\030\004 \001(\014\022\022\n\ncert_chain\030\005 \003(\014\032\326\001\n\005Quote\022"
-          + "\021\n\thash_algo\030\001 \001(\005\022^\n\npcr_values\030\002 \003(\0132J"
-          + ".google.cloud.confidentialcomputing.v1.T"
-          + "pmAttestation.Quote.PcrValuesEntry\022\021\n\tra"
-          + "w_quote\030\003 \001(\014\022\025\n\rraw_signature\030\004 \001(\014\0320\n\016"
-          + "PcrValuesEntry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001"
-          + "(\014:\0028\0012\267\004\n\025ConfidentialComputing\022\330\001\n\017Cre"
-          + "ateChallenge\022=.google.cloud.confidential"
-          + "computing.v1.CreateChallengeRequest\0320.go"
-          + "ogle.cloud.confidentialcomputing.v1.Chal"
-          + "lenge\"T\202\323\344\223\002;\"./v1/{parent=projects/*/lo"
-          + "cations/*}/challenges:\tchallenge\332A\020paren"
-          + "t,challenge\022\350\001\n\021VerifyAttestation\022?.goog"
-          + "le.cloud.confidentialcomputing.v1.Verify"
-          + "AttestationRequest\032@.google.cloud.confid"
-          + "entialcomputing.v1.VerifyAttestationResp"
-          + "onse\"P\202\323\344\223\002J\"E/v1/{challenge=projects/*/"
-          + "locations/*/challenges/*}:verifyAttestat"
-          + "ion:\001*\032X\312A$confidentialcomputing.googlea"
-          + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB\227\002\n)com.google.cloud.co"
-          + "nfidentialcomputing.v1B\014ServiceProtoP\001Z_"
-          + "cloud.google.com/go/confidentialcomputin"
-          + "g/apiv1/confidentialcomputingpb;confiden"
-          + "tialcomputingpb\252\002%Google.Cloud.Confident"
-          + "ialComputing.V1\312\002%Google\\Cloud\\Confident"
-          + "ialComputing\\V1\352\002(Google::Cloud::Confide"
-          + "ntialComputing::V1b\006proto3"
+          + "\032\027google/rpc/status.proto\"\252\002\n\tChallenge\022"
+          + "\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225\n\013create_time\030\002 \001(\013"
+          + "2\032.google.protobuf.TimestampB\004\342A\001\003\0225\n\013ex"
+          + "pire_time\030\003 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\004\342A\001\003\022\022\n\004used\030\004 \001(\010B\004\342A\001\003\022\027\n\ttpm_non"
+          + "ce\030\006 \001(\tB\004\342A\001\003:n\352Ak\n.confidentialcomputi"
+          + "ng.googleapis.com/Challenge\0229projects/{p"
+          + "roject}/locations/{location}/challenges/"
+          + "{uuid}\"\237\001\n\026CreateChallengeRequest\022:\n\006par"
+          + "ent\030\001 \001(\tB*\342A\001\002\372A#\n!locations.googleapis"
+          + ".com/Location\022I\n\tchallenge\030\002 \001(\01320.googl"
+          + "e.cloud.confidentialcomputing.v1.Challen"
+          + "geB\004\342A\001\002\"\311\003\n\030VerifyAttestationRequest\022J\n"
+          + "\tchallenge\030\001 \001(\tB7\342A\001\002\372A0\n.confidentialc"
+          + "omputing.googleapis.com/Challenge\022T\n\017gcp"
+          + "_credentials\030\002 \001(\01325.google.cloud.confid"
+          + "entialcomputing.v1.GcpCredentialsB\004\342A\001\001\022"
+          + "T\n\017tpm_attestation\030\003 \001(\01325.google.cloud."
+          + "confidentialcomputing.v1.TpmAttestationB"
+          + "\004\342A\001\002\022c\n\027confidential_space_info\030\004 \001(\0132<"
+          + ".google.cloud.confidentialcomputing.v1.C"
+          + "onfidentialSpaceInfoB\004\342A\001\001\022P\n\rtoken_opti"
+          + "ons\030\005 \001(\01323.google.cloud.confidentialcom"
+          + "puting.v1.TokenOptionsB\004\342A\001\001\"n\n\031VerifyAt"
+          + "testationResponse\022\037\n\021oidc_claims_token\030\002"
+          + " \001(\tB\004\342A\001\003\0220\n\016partial_errors\030\003 \003(\0132\022.goo"
+          + "gle.rpc.StatusB\004\342A\001\003\"3\n\016GcpCredentials\022!"
+          + "\n\031service_account_id_tokens\030\002 \003(\t\";\n\014Tok"
+          + "enOptions\022\026\n\010audience\030\001 \001(\tB\004\342A\001\001\022\023\n\005non"
+          + "ce\030\002 \003(\tB\004\342A\001\001\"\217\003\n\016TpmAttestation\022K\n\006quo"
+          + "tes\030\001 \003(\0132;.google.cloud.confidentialcom"
+          + "puting.v1.TpmAttestation.Quote\022\025\n\rtcg_ev"
+          + "ent_log\030\002 \001(\014\022\033\n\023canonical_event_log\030\003 \001"
+          + "(\014\022\017\n\007ak_cert\030\004 \001(\014\022\022\n\ncert_chain\030\005 \003(\014\032"
+          + "\326\001\n\005Quote\022\021\n\thash_algo\030\001 \001(\005\022^\n\npcr_valu"
+          + "es\030\002 \003(\0132J.google.cloud.confidentialcomp"
+          + "uting.v1.TpmAttestation.Quote.PcrValuesE"
+          + "ntry\022\021\n\traw_quote\030\003 \001(\014\022\025\n\rraw_signature"
+          + "\030\004 \001(\014\0320\n\016PcrValuesEntry\022\013\n\003key\030\001 \001(\005\022\r\n"
+          + "\005value\030\002 \001(\014:\0028\001\"k\n\025ConfidentialSpaceInf"
+          + "o\022R\n\017signed_entities\030\001 \003(\01323.google.clou"
+          + "d.confidentialcomputing.v1.SignedEntityB"
+          + "\004\342A\001\001\"x\n\014SignedEntity\022h\n\032container_image"
+          + "_signatures\030\001 \003(\0132>.google.cloud.confide"
+          + "ntialcomputing.v1.ContainerImageSignatur"
+          + "eB\004\342A\001\001\"\263\001\n\027ContainerImageSignature\022\025\n\007p"
+          + "ayload\030\001 \001(\014B\004\342A\001\001\022\027\n\tsignature\030\002 \001(\014B\004\342"
+          + "A\001\001\022\030\n\npublic_key\030\003 \001(\014B\004\342A\001\001\022N\n\007sig_alg"
+          + "\030\004 \001(\01627.google.cloud.confidentialcomput"
+          + "ing.v1.SigningAlgorithmB\004\342A\001\001*\177\n\020Signing"
+          + "Algorithm\022!\n\035SIGNING_ALGORITHM_UNSPECIFI"
+          + "ED\020\000\022\025\n\021RSASSA_PSS_SHA256\020\001\022\032\n\026RSASSA_PK"
+          + "CS1V15_SHA256\020\002\022\025\n\021ECDSA_P256_SHA256\020\0032\267"
+          + "\004\n\025ConfidentialComputing\022\330\001\n\017CreateChall"
+          + "enge\022=.google.cloud.confidentialcomputin"
+          + "g.v1.CreateChallengeRequest\0320.google.clo"
+          + "ud.confidentialcomputing.v1.Challenge\"T\332"
+          + "A\020parent,challenge\202\323\344\223\002;\"./v1/{parent=pr"
+          + "ojects/*/locations/*}/challenges:\tchalle"
+          + "nge\022\350\001\n\021VerifyAttestation\022?.google.cloud"
+          + ".confidentialcomputing.v1.VerifyAttestat"
+          + "ionRequest\032@.google.cloud.confidentialco"
+          + "mputing.v1.VerifyAttestationResponse\"P\202\323"
+          + "\344\223\002J\"E/v1/{challenge=projects/*/location"
+          + "s/*/challenges/*}:verifyAttestation:\001*\032X"
+          + "\312A$confidentialcomputing.googleapis.com\322"
+          + "A.https://www.googleapis.com/auth/cloud-"
+          + "platformB\227\002\n)com.google.cloud.confidenti"
+          + "alcomputing.v1B\014ServiceProtoP\001Z_cloud.go"
+          + "ogle.com/go/confidentialcomputing/apiv1/"
+          + "confidentialcomputingpb;confidentialcomp"
+          + "utingpb\252\002%Google.Cloud.ConfidentialCompu"
+          + "ting.V1\312\002%Google\\Cloud\\ConfidentialCompu"
+          + "ting\\V1\352\002(Google::Cloud::ConfidentialCom"
+          + "puting::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -137,6 +175,7 @@ public final class ServiceProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_confidentialcomputing_v1_Challenge_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -160,7 +199,11 @@ public final class ServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationRequest_descriptor,
             new java.lang.String[] {
-              "Challenge", "GcpCredentials", "TpmAttestation",
+              "Challenge",
+              "GcpCredentials",
+              "TpmAttestation",
+              "ConfidentialSpaceInfo",
+              "TokenOptions",
             });
     internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationResponse_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -168,7 +211,7 @@ public final class ServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationResponse_descriptor,
             new java.lang.String[] {
-              "OidcClaimsToken",
+              "OidcClaimsToken", "PartialErrors",
             });
     internal_static_google_cloud_confidentialcomputing_v1_GcpCredentials_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -178,8 +221,16 @@ public final class ServiceProto {
             new java.lang.String[] {
               "ServiceAccountIdTokens",
             });
-    internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_descriptor =
+    internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_descriptor =
         getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_descriptor,
+            new java.lang.String[] {
+              "Audience", "Nonce",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_descriptor =
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_confidentialcomputing_v1_TpmAttestation_descriptor,
@@ -206,6 +257,30 @@ public final class ServiceProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_confidentialcomputing_v1_ConfidentialSpaceInfo_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_confidentialcomputing_v1_ConfidentialSpaceInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_ConfidentialSpaceInfo_descriptor,
+            new java.lang.String[] {
+              "SignedEntities",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_SignedEntity_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_confidentialcomputing_v1_SignedEntity_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_SignedEntity_descriptor,
+            new java.lang.String[] {
+              "ContainerImageSignatures",
+            });
+    internal_static_google_cloud_confidentialcomputing_v1_ContainerImageSignature_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_confidentialcomputing_v1_ContainerImageSignature_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_confidentialcomputing_v1_ContainerImageSignature_descriptor,
+            new java.lang.String[] {
+              "Payload", "Signature", "PublicKey", "SigAlg",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -222,6 +297,7 @@ public final class ServiceProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

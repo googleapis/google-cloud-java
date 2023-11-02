@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -230,6 +230,7 @@ public interface ShipmentOrBuilder
    * and delivery alternatives is visited. The cost may be expressed in the
    * same unit used for all other cost-related fields in the model and must be
    * positive.
+   *
    * *IMPORTANT*: If this penalty is not specified, it is considered infinite,
    * i.e. the shipment must be completed.
    * </pre>
@@ -248,6 +249,7 @@ public interface ShipmentOrBuilder
    * and delivery alternatives is visited. The cost may be expressed in the
    * same unit used for all other cost-related fields in the model and must be
    * positive.
+   *
    * *IMPORTANT*: If this penalty is not specified, it is considered infinite,
    * i.e. the shipment must be completed.
    * </pre>
@@ -308,11 +310,13 @@ public interface ShipmentOrBuilder
    * <pre>
    * Specifies the cost that is incurred when this shipment is delivered by each
    * vehicle. If specified, it must have EITHER:
+   *
    *   * the same number of elements as `costs_per_vehicle_indices`.
    *     `costs_per_vehicle[i]` corresponds to vehicle
    *     `costs_per_vehicle_indices[i]` of the model.
    *   * the same number of elements as there are vehicles in the model. The
    *     i-th element corresponds to vehicle #i of the model.
+   *
    * These costs must be in the same unit as `penalty_cost` and must not be
    * negative. Leave this field empty, if there are no such costs.
    * </pre>
@@ -328,11 +332,13 @@ public interface ShipmentOrBuilder
    * <pre>
    * Specifies the cost that is incurred when this shipment is delivered by each
    * vehicle. If specified, it must have EITHER:
+   *
    *   * the same number of elements as `costs_per_vehicle_indices`.
    *     `costs_per_vehicle[i]` corresponds to vehicle
    *     `costs_per_vehicle_indices[i]` of the model.
    *   * the same number of elements as there are vehicles in the model. The
    *     i-th element corresponds to vehicle #i of the model.
+   *
    * These costs must be in the same unit as `penalty_cost` and must not be
    * negative. Leave this field empty, if there are no such costs.
    * </pre>
@@ -348,11 +354,13 @@ public interface ShipmentOrBuilder
    * <pre>
    * Specifies the cost that is incurred when this shipment is delivered by each
    * vehicle. If specified, it must have EITHER:
+   *
    *   * the same number of elements as `costs_per_vehicle_indices`.
    *     `costs_per_vehicle[i]` corresponds to vehicle
    *     `costs_per_vehicle_indices[i]` of the model.
    *   * the same number of elements as there are vehicles in the model. The
    *     i-th element corresponds to vehicle #i of the model.
+   *
    * These costs must be in the same unit as `penalty_cost` and must not be
    * negative. Leave this field empty, if there are no such costs.
    * </pre>
@@ -418,13 +426,16 @@ public interface ShipmentOrBuilder
    * Specifies the maximum relative detour time compared to the shortest path
    * from pickup to delivery. If specified, it must be nonnegative, and the
    * shipment must contain at least a pickup and a delivery.
+   *
    * For example, let t be the shortest time taken to go from the selected
    * pickup alternative directly to the selected delivery alternative. Then
    * setting `pickup_to_delivery_relative_detour_limit` enforces:
+   *
    * ```
    * start_time(delivery) - start_time(pickup) &lt;=
    * std::ceil(t * (1.0 + pickup_to_delivery_relative_detour_limit))
    * ```
+   *
    * If both relative and absolute limits are specified on the same shipment,
    * the more constraining limit is used for each possible pickup/delivery pair.
    * As of 2017/10, detours are only supported when travel durations do not
@@ -443,13 +454,16 @@ public interface ShipmentOrBuilder
    * Specifies the maximum relative detour time compared to the shortest path
    * from pickup to delivery. If specified, it must be nonnegative, and the
    * shipment must contain at least a pickup and a delivery.
+   *
    * For example, let t be the shortest time taken to go from the selected
    * pickup alternative directly to the selected delivery alternative. Then
    * setting `pickup_to_delivery_relative_detour_limit` enforces:
+   *
    * ```
    * start_time(delivery) - start_time(pickup) &lt;=
    * std::ceil(t * (1.0 + pickup_to_delivery_relative_detour_limit))
    * ```
+   *
    * If both relative and absolute limits are specified on the same shipment,
    * the more constraining limit is used for each possible pickup/delivery pair.
    * As of 2017/10, detours are only supported when travel durations do not
@@ -469,13 +483,16 @@ public interface ShipmentOrBuilder
    * Specifies the maximum absolute detour time compared to the shortest path
    * from pickup to delivery. If specified, it must be nonnegative, and the
    * shipment must contain at least a pickup and a delivery.
+   *
    * For example, let t be the shortest time taken to go from the selected
    * pickup alternative directly to the selected delivery alternative. Then
    * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+   *
    * ```
    * start_time(delivery) - start_time(pickup) &lt;=
    * t + pickup_to_delivery_absolute_detour_limit
    * ```
+   *
    * If both relative and absolute limits are specified on the same shipment,
    * the more constraining limit is used for each possible pickup/delivery pair.
    * As of 2017/10, detours are only supported when travel durations do not
@@ -494,13 +511,16 @@ public interface ShipmentOrBuilder
    * Specifies the maximum absolute detour time compared to the shortest path
    * from pickup to delivery. If specified, it must be nonnegative, and the
    * shipment must contain at least a pickup and a delivery.
+   *
    * For example, let t be the shortest time taken to go from the selected
    * pickup alternative directly to the selected delivery alternative. Then
    * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+   *
    * ```
    * start_time(delivery) - start_time(pickup) &lt;=
    * t + pickup_to_delivery_absolute_detour_limit
    * ```
+   *
    * If both relative and absolute limits are specified on the same shipment,
    * the more constraining limit is used for each possible pickup/delivery pair.
    * As of 2017/10, detours are only supported when travel durations do not
@@ -519,13 +539,16 @@ public interface ShipmentOrBuilder
    * Specifies the maximum absolute detour time compared to the shortest path
    * from pickup to delivery. If specified, it must be nonnegative, and the
    * shipment must contain at least a pickup and a delivery.
+   *
    * For example, let t be the shortest time taken to go from the selected
    * pickup alternative directly to the selected delivery alternative. Then
    * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+   *
    * ```
    * start_time(delivery) - start_time(pickup) &lt;=
    * t + pickup_to_delivery_absolute_detour_limit
    * ```
+   *
    * If both relative and absolute limits are specified on the same shipment,
    * the more constraining limit is used for each possible pickup/delivery pair.
    * As of 2017/10, detours are only supported when travel durations do not
@@ -594,6 +617,7 @@ public interface ShipmentOrBuilder
    * This feature can be used to define incompatibilities or requirements
    * between `shipment_types` (see `shipment_type_incompatibilities` and
    * `shipment_type_requirements` in `ShipmentModel`).
+   *
    * Differs from `visit_types` which is specified for a single visit: All
    * pickup/deliveries belonging to the same shipment share the same
    * `shipment_type`.
@@ -612,6 +636,7 @@ public interface ShipmentOrBuilder
    * This feature can be used to define incompatibilities or requirements
    * between `shipment_types` (see `shipment_type_incompatibilities` and
    * `shipment_type_requirements` in `ShipmentModel`).
+   *
    * Differs from `visit_types` which is specified for a single visit: All
    * pickup/deliveries belonging to the same shipment share the same
    * `shipment_type`.
@@ -657,8 +682,10 @@ public interface ShipmentOrBuilder
    *
    * <pre>
    * If true, skip this shipment, but don't apply a `penalty_cost`.
+   *
    * Ignoring a shipment results in a validation error when there are any
    * `shipment_type_requirements` in the model.
+   *
    * Ignoring a shipment that is performed in `injected_first_solution_routes`
    * or `injected_solution_constraint` is permitted; the solver removes the
    * related pickup/delivery visits from the performing route.

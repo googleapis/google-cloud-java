@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ package com.google.api.servicemanagement.v1;
  *
  *
  * <pre>
+ *
  * Request message for 'CreateServiceRollout'
  * </pre>
  *
@@ -45,11 +46,6 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateServiceRolloutRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -76,8 +72,8 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The name of the service.  See the
-   * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-   * example: `example.googleapis.com`.
+   * [overview](https://cloud.google.com/service-management/overview) for naming
+   * requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
    * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -101,8 +97,8 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The name of the service.  See the
-   * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-   * example: `example.googleapis.com`.
+   * [overview](https://cloud.google.com/service-management/overview) for naming
+   * requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
    * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -356,6 +352,7 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
+   *
    * Request message for 'CreateServiceRollout'
    * </pre>
    *
@@ -562,8 +559,8 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the service.  See the
-     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-     * example: `example.googleapis.com`.
+     * [overview](https://cloud.google.com/service-management/overview) for naming
+     * requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -586,8 +583,8 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the service.  See the
-     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-     * example: `example.googleapis.com`.
+     * [overview](https://cloud.google.com/service-management/overview) for naming
+     * requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -610,8 +607,8 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the service.  See the
-     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-     * example: `example.googleapis.com`.
+     * [overview](https://cloud.google.com/service-management/overview) for naming
+     * requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -633,8 +630,8 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the service.  See the
-     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-     * example: `example.googleapis.com`.
+     * [overview](https://cloud.google.com/service-management/overview) for naming
+     * requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -652,8 +649,8 @@ public final class CreateServiceRolloutRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the service.  See the
-     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements.  For
-     * example: `example.googleapis.com`.
+     * [overview](https://cloud.google.com/service-management/overview) for naming
+     * requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

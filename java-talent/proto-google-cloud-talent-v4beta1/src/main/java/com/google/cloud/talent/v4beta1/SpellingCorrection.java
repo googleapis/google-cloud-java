@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SpellingCorrection();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -147,6 +142,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Corrected output with html tags to highlight the corrected words.
    * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+   *
    * For example, the user input query is "software enginear", where the second
    * word, "enginear," is incorrect. It should be "engineer". When spelling
    * correction is enabled, this value is
@@ -175,6 +171,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Corrected output with html tags to highlight the corrected words.
    * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+   *
    * For example, the user input query is "software enginear", where the second
    * word, "enginear," is incorrect. It should be "engineer". When spelling
    * correction is enabled, this value is
@@ -752,6 +749,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Corrected output with html tags to highlight the corrected words.
      * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+     *
      * For example, the user input query is "software enginear", where the second
      * word, "enginear," is incorrect. It should be "engineer". When spelling
      * correction is enabled, this value is
@@ -779,6 +777,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Corrected output with html tags to highlight the corrected words.
      * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+     *
      * For example, the user input query is "software enginear", where the second
      * word, "enginear," is incorrect. It should be "engineer". When spelling
      * correction is enabled, this value is
@@ -806,6 +805,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Corrected output with html tags to highlight the corrected words.
      * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+     *
      * For example, the user input query is "software enginear", where the second
      * word, "enginear," is incorrect. It should be "engineer". When spelling
      * correction is enabled, this value is
@@ -832,6 +832,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Corrected output with html tags to highlight the corrected words.
      * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+     *
      * For example, the user input query is "software enginear", where the second
      * word, "enginear," is incorrect. It should be "engineer". When spelling
      * correction is enabled, this value is
@@ -854,6 +855,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Corrected output with html tags to highlight the corrected words.
      * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+     *
      * For example, the user input query is "software enginear", where the second
      * word, "enginear," is incorrect. It should be "engineer". When spelling
      * correction is enabled, this value is

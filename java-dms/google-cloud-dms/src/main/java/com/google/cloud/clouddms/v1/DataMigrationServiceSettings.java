@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,13 @@
 
 package com.google.cloud.clouddms.v1;
 
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.DescribeDatabaseEntitiesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.FetchStaticIpsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConnectionProfilesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConversionWorkspacesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMappingRulesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMigrationJobsPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListPrivateConnectionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -204,6 +209,12 @@ public class DataMigrationServiceSettings extends ClientSettings<DataMigrationSe
     return ((DataMigrationServiceStubSettings) getStubSettings()).generateSshScriptSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateTcpProxyScript. */
+  public UnaryCallSettings<GenerateTcpProxyScriptRequest, TcpProxyScript>
+      generateTcpProxyScriptSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).generateTcpProxyScriptSettings();
+  }
+
   /** Returns the object with the settings used for calls to listConnectionProfiles. */
   public PagedCallSettings<
           ListConnectionProfilesRequest,
@@ -256,6 +267,248 @@ public class DataMigrationServiceSettings extends ClientSettings<DataMigrationSe
       deleteConnectionProfileOperationSettings() {
     return ((DataMigrationServiceStubSettings) getStubSettings())
         .deleteConnectionProfileOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPrivateConnection. */
+  public UnaryCallSettings<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).createPrivateConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPrivateConnection. */
+  public OperationCallSettings<CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .createPrivateConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPrivateConnection. */
+  public UnaryCallSettings<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).getPrivateConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPrivateConnections. */
+  public PagedCallSettings<
+          ListPrivateConnectionsRequest,
+          ListPrivateConnectionsResponse,
+          ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).listPrivateConnectionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePrivateConnection. */
+  public UnaryCallSettings<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).deletePrivateConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePrivateConnection. */
+  public OperationCallSettings<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .deletePrivateConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getConversionWorkspace. */
+  public UnaryCallSettings<GetConversionWorkspaceRequest, ConversionWorkspace>
+      getConversionWorkspaceSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).getConversionWorkspaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listConversionWorkspaces. */
+  public PagedCallSettings<
+          ListConversionWorkspacesRequest,
+          ListConversionWorkspacesResponse,
+          ListConversionWorkspacesPagedResponse>
+      listConversionWorkspacesSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .listConversionWorkspacesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createConversionWorkspace. */
+  public UnaryCallSettings<CreateConversionWorkspaceRequest, Operation>
+      createConversionWorkspaceSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .createConversionWorkspaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createConversionWorkspace. */
+  public OperationCallSettings<
+          CreateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      createConversionWorkspaceOperationSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .createConversionWorkspaceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateConversionWorkspace. */
+  public UnaryCallSettings<UpdateConversionWorkspaceRequest, Operation>
+      updateConversionWorkspaceSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .updateConversionWorkspaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateConversionWorkspace. */
+  public OperationCallSettings<
+          UpdateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      updateConversionWorkspaceOperationSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .updateConversionWorkspaceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteConversionWorkspace. */
+  public UnaryCallSettings<DeleteConversionWorkspaceRequest, Operation>
+      deleteConversionWorkspaceSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .deleteConversionWorkspaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteConversionWorkspace. */
+  public OperationCallSettings<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
+      deleteConversionWorkspaceOperationSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .deleteConversionWorkspaceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMappingRule. */
+  public UnaryCallSettings<CreateMappingRuleRequest, MappingRule> createMappingRuleSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).createMappingRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMappingRule. */
+  public UnaryCallSettings<DeleteMappingRuleRequest, Empty> deleteMappingRuleSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).deleteMappingRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMappingRules. */
+  public PagedCallSettings<
+          ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+      listMappingRulesSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).listMappingRulesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMappingRule. */
+  public UnaryCallSettings<GetMappingRuleRequest, MappingRule> getMappingRuleSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).getMappingRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to seedConversionWorkspace. */
+  public UnaryCallSettings<SeedConversionWorkspaceRequest, Operation>
+      seedConversionWorkspaceSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).seedConversionWorkspaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to seedConversionWorkspace. */
+  public OperationCallSettings<
+          SeedConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      seedConversionWorkspaceOperationSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .seedConversionWorkspaceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importMappingRules. */
+  public UnaryCallSettings<ImportMappingRulesRequest, Operation> importMappingRulesSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).importMappingRulesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importMappingRules. */
+  public OperationCallSettings<ImportMappingRulesRequest, ConversionWorkspace, OperationMetadata>
+      importMappingRulesOperationSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .importMappingRulesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to convertConversionWorkspace. */
+  public UnaryCallSettings<ConvertConversionWorkspaceRequest, Operation>
+      convertConversionWorkspaceSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .convertConversionWorkspaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to convertConversionWorkspace. */
+  public OperationCallSettings<
+          ConvertConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      convertConversionWorkspaceOperationSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .convertConversionWorkspaceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to commitConversionWorkspace. */
+  public UnaryCallSettings<CommitConversionWorkspaceRequest, Operation>
+      commitConversionWorkspaceSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .commitConversionWorkspaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to commitConversionWorkspace. */
+  public OperationCallSettings<
+          CommitConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      commitConversionWorkspaceOperationSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .commitConversionWorkspaceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rollbackConversionWorkspace. */
+  public UnaryCallSettings<RollbackConversionWorkspaceRequest, Operation>
+      rollbackConversionWorkspaceSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .rollbackConversionWorkspaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rollbackConversionWorkspace. */
+  public OperationCallSettings<
+          RollbackConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      rollbackConversionWorkspaceOperationSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .rollbackConversionWorkspaceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to applyConversionWorkspace. */
+  public UnaryCallSettings<ApplyConversionWorkspaceRequest, Operation>
+      applyConversionWorkspaceSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .applyConversionWorkspaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to applyConversionWorkspace. */
+  public OperationCallSettings<
+          ApplyConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      applyConversionWorkspaceOperationSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .applyConversionWorkspaceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to describeDatabaseEntities. */
+  public PagedCallSettings<
+          DescribeDatabaseEntitiesRequest,
+          DescribeDatabaseEntitiesResponse,
+          DescribeDatabaseEntitiesPagedResponse>
+      describeDatabaseEntitiesSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .describeDatabaseEntitiesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchBackgroundJobs. */
+  public UnaryCallSettings<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>
+      searchBackgroundJobsSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).searchBackgroundJobsSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to describeConversionWorkspaceRevisions.
+   */
+  public UnaryCallSettings<
+          DescribeConversionWorkspaceRevisionsRequest, DescribeConversionWorkspaceRevisionsResponse>
+      describeConversionWorkspaceRevisionsSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings())
+        .describeConversionWorkspaceRevisionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchStaticIps. */
+  public PagedCallSettings<
+          FetchStaticIpsRequest, FetchStaticIpsResponse, FetchStaticIpsPagedResponse>
+      fetchStaticIpsSettings() {
+    return ((DataMigrationServiceStubSettings) getStubSettings()).fetchStaticIpsSettings();
   }
 
   public static final DataMigrationServiceSettings create(DataMigrationServiceStubSettings stub)
@@ -485,6 +738,12 @@ public class DataMigrationServiceSettings extends ClientSettings<DataMigrationSe
       return getStubSettingsBuilder().generateSshScriptSettings();
     }
 
+    /** Returns the builder for the settings used for calls to generateTcpProxyScript. */
+    public UnaryCallSettings.Builder<GenerateTcpProxyScriptRequest, TcpProxyScript>
+        generateTcpProxyScriptSettings() {
+      return getStubSettingsBuilder().generateTcpProxyScriptSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listConnectionProfiles. */
     public PagedCallSettings.Builder<
             ListConnectionProfilesRequest,
@@ -536,6 +795,232 @@ public class DataMigrationServiceSettings extends ClientSettings<DataMigrationSe
     public OperationCallSettings.Builder<DeleteConnectionProfileRequest, Empty, OperationMetadata>
         deleteConnectionProfileOperationSettings() {
       return getStubSettingsBuilder().deleteConnectionProfileOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPrivateConnection. */
+    public UnaryCallSettings.Builder<CreatePrivateConnectionRequest, Operation>
+        createPrivateConnectionSettings() {
+      return getStubSettingsBuilder().createPrivateConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPrivateConnection. */
+    public OperationCallSettings.Builder<
+            CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+        createPrivateConnectionOperationSettings() {
+      return getStubSettingsBuilder().createPrivateConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPrivateConnection. */
+    public UnaryCallSettings.Builder<GetPrivateConnectionRequest, PrivateConnection>
+        getPrivateConnectionSettings() {
+      return getStubSettingsBuilder().getPrivateConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPrivateConnections. */
+    public PagedCallSettings.Builder<
+            ListPrivateConnectionsRequest,
+            ListPrivateConnectionsResponse,
+            ListPrivateConnectionsPagedResponse>
+        listPrivateConnectionsSettings() {
+      return getStubSettingsBuilder().listPrivateConnectionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePrivateConnection. */
+    public UnaryCallSettings.Builder<DeletePrivateConnectionRequest, Operation>
+        deletePrivateConnectionSettings() {
+      return getStubSettingsBuilder().deletePrivateConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePrivateConnection. */
+    public OperationCallSettings.Builder<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+        deletePrivateConnectionOperationSettings() {
+      return getStubSettingsBuilder().deletePrivateConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getConversionWorkspace. */
+    public UnaryCallSettings.Builder<GetConversionWorkspaceRequest, ConversionWorkspace>
+        getConversionWorkspaceSettings() {
+      return getStubSettingsBuilder().getConversionWorkspaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listConversionWorkspaces. */
+    public PagedCallSettings.Builder<
+            ListConversionWorkspacesRequest,
+            ListConversionWorkspacesResponse,
+            ListConversionWorkspacesPagedResponse>
+        listConversionWorkspacesSettings() {
+      return getStubSettingsBuilder().listConversionWorkspacesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createConversionWorkspace. */
+    public UnaryCallSettings.Builder<CreateConversionWorkspaceRequest, Operation>
+        createConversionWorkspaceSettings() {
+      return getStubSettingsBuilder().createConversionWorkspaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createConversionWorkspace. */
+    public OperationCallSettings.Builder<
+            CreateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        createConversionWorkspaceOperationSettings() {
+      return getStubSettingsBuilder().createConversionWorkspaceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateConversionWorkspace. */
+    public UnaryCallSettings.Builder<UpdateConversionWorkspaceRequest, Operation>
+        updateConversionWorkspaceSettings() {
+      return getStubSettingsBuilder().updateConversionWorkspaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateConversionWorkspace. */
+    public OperationCallSettings.Builder<
+            UpdateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        updateConversionWorkspaceOperationSettings() {
+      return getStubSettingsBuilder().updateConversionWorkspaceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConversionWorkspace. */
+    public UnaryCallSettings.Builder<DeleteConversionWorkspaceRequest, Operation>
+        deleteConversionWorkspaceSettings() {
+      return getStubSettingsBuilder().deleteConversionWorkspaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConversionWorkspace. */
+    public OperationCallSettings.Builder<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
+        deleteConversionWorkspaceOperationSettings() {
+      return getStubSettingsBuilder().deleteConversionWorkspaceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMappingRule. */
+    public UnaryCallSettings.Builder<CreateMappingRuleRequest, MappingRule>
+        createMappingRuleSettings() {
+      return getStubSettingsBuilder().createMappingRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMappingRule. */
+    public UnaryCallSettings.Builder<DeleteMappingRuleRequest, Empty> deleteMappingRuleSettings() {
+      return getStubSettingsBuilder().deleteMappingRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMappingRules. */
+    public PagedCallSettings.Builder<
+            ListMappingRulesRequest, ListMappingRulesResponse, ListMappingRulesPagedResponse>
+        listMappingRulesSettings() {
+      return getStubSettingsBuilder().listMappingRulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMappingRule. */
+    public UnaryCallSettings.Builder<GetMappingRuleRequest, MappingRule> getMappingRuleSettings() {
+      return getStubSettingsBuilder().getMappingRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to seedConversionWorkspace. */
+    public UnaryCallSettings.Builder<SeedConversionWorkspaceRequest, Operation>
+        seedConversionWorkspaceSettings() {
+      return getStubSettingsBuilder().seedConversionWorkspaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to seedConversionWorkspace. */
+    public OperationCallSettings.Builder<
+            SeedConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        seedConversionWorkspaceOperationSettings() {
+      return getStubSettingsBuilder().seedConversionWorkspaceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importMappingRules. */
+    public UnaryCallSettings.Builder<ImportMappingRulesRequest, Operation>
+        importMappingRulesSettings() {
+      return getStubSettingsBuilder().importMappingRulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importMappingRules. */
+    public OperationCallSettings.Builder<
+            ImportMappingRulesRequest, ConversionWorkspace, OperationMetadata>
+        importMappingRulesOperationSettings() {
+      return getStubSettingsBuilder().importMappingRulesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to convertConversionWorkspace. */
+    public UnaryCallSettings.Builder<ConvertConversionWorkspaceRequest, Operation>
+        convertConversionWorkspaceSettings() {
+      return getStubSettingsBuilder().convertConversionWorkspaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to convertConversionWorkspace. */
+    public OperationCallSettings.Builder<
+            ConvertConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        convertConversionWorkspaceOperationSettings() {
+      return getStubSettingsBuilder().convertConversionWorkspaceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to commitConversionWorkspace. */
+    public UnaryCallSettings.Builder<CommitConversionWorkspaceRequest, Operation>
+        commitConversionWorkspaceSettings() {
+      return getStubSettingsBuilder().commitConversionWorkspaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to commitConversionWorkspace. */
+    public OperationCallSettings.Builder<
+            CommitConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        commitConversionWorkspaceOperationSettings() {
+      return getStubSettingsBuilder().commitConversionWorkspaceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rollbackConversionWorkspace. */
+    public UnaryCallSettings.Builder<RollbackConversionWorkspaceRequest, Operation>
+        rollbackConversionWorkspaceSettings() {
+      return getStubSettingsBuilder().rollbackConversionWorkspaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rollbackConversionWorkspace. */
+    public OperationCallSettings.Builder<
+            RollbackConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        rollbackConversionWorkspaceOperationSettings() {
+      return getStubSettingsBuilder().rollbackConversionWorkspaceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to applyConversionWorkspace. */
+    public UnaryCallSettings.Builder<ApplyConversionWorkspaceRequest, Operation>
+        applyConversionWorkspaceSettings() {
+      return getStubSettingsBuilder().applyConversionWorkspaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to applyConversionWorkspace. */
+    public OperationCallSettings.Builder<
+            ApplyConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+        applyConversionWorkspaceOperationSettings() {
+      return getStubSettingsBuilder().applyConversionWorkspaceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to describeDatabaseEntities. */
+    public PagedCallSettings.Builder<
+            DescribeDatabaseEntitiesRequest,
+            DescribeDatabaseEntitiesResponse,
+            DescribeDatabaseEntitiesPagedResponse>
+        describeDatabaseEntitiesSettings() {
+      return getStubSettingsBuilder().describeDatabaseEntitiesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchBackgroundJobs. */
+    public UnaryCallSettings.Builder<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>
+        searchBackgroundJobsSettings() {
+      return getStubSettingsBuilder().searchBackgroundJobsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to describeConversionWorkspaceRevisions.
+     */
+    public UnaryCallSettings.Builder<
+            DescribeConversionWorkspaceRevisionsRequest,
+            DescribeConversionWorkspaceRevisionsResponse>
+        describeConversionWorkspaceRevisionsSettings() {
+      return getStubSettingsBuilder().describeConversionWorkspaceRevisionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchStaticIps. */
+    public PagedCallSettings.Builder<
+            FetchStaticIpsRequest, FetchStaticIpsResponse, FetchStaticIpsPagedResponse>
+        fetchStaticIpsSettings() {
+      return getStubSettingsBuilder().fetchStaticIpsSettings();
     }
 
     @Override

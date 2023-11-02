@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,6 +75,7 @@ public interface KeyOrBuilder
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -92,6 +93,7 @@ public interface KeyOrBuilder
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -109,6 +111,7 @@ public interface KeyOrBuilder
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -126,6 +129,7 @@ public interface KeyOrBuilder
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -144,6 +148,7 @@ public interface KeyOrBuilder
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *

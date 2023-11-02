@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,8 +55,10 @@ public interface JobReferenceOrBuilder
    *
    * <pre>
    * Optional. The job ID, which must be unique within the project.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), or hyphens (-). The maximum length is 100 characters.
+   *
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *
@@ -70,8 +72,10 @@ public interface JobReferenceOrBuilder
    *
    * <pre>
    * Optional. The job ID, which must be unique within the project.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), or hyphens (-). The maximum length is 100 characters.
+   *
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *

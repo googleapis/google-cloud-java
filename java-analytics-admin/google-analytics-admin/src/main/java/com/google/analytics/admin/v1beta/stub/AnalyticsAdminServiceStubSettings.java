@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,6 +96,7 @@ import com.google.analytics.admin.v1beta.RunAccessReportResponse;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1beta.UpdateAccountRequest;
+import com.google.analytics.admin.v1beta.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1beta.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1beta.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.UpdateDataRetentionSettingsRequest;
@@ -247,6 +248,8 @@ public class AnalyticsAdminServiceStubSettings
       searchChangeHistoryEventsSettings;
   private final UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
       createConversionEventSettings;
+  private final UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventSettings;
   private final UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
       getConversionEventSettings;
   private final UnaryCallSettings<DeleteConversionEventRequest, Empty>
@@ -1153,6 +1156,12 @@ public class AnalyticsAdminServiceStubSettings
     return createConversionEventSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateConversionEvent. */
+  public UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventSettings() {
+    return updateConversionEventSettings;
+  }
+
   /** Returns the object with the settings used for calls to getConversionEvent. */
   public UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
       getConversionEventSettings() {
@@ -1416,6 +1425,7 @@ public class AnalyticsAdminServiceStubSettings
         settingsBuilder.acknowledgeUserDataCollectionSettings().build();
     searchChangeHistoryEventsSettings = settingsBuilder.searchChangeHistoryEventsSettings().build();
     createConversionEventSettings = settingsBuilder.createConversionEventSettings().build();
+    updateConversionEventSettings = settingsBuilder.updateConversionEventSettings().build();
     getConversionEventSettings = settingsBuilder.getConversionEventSettings().build();
     deleteConversionEventSettings = settingsBuilder.deleteConversionEventSettings().build();
     listConversionEventsSettings = settingsBuilder.listConversionEventsSettings().build();
@@ -1509,6 +1519,8 @@ public class AnalyticsAdminServiceStubSettings
         searchChangeHistoryEventsSettings;
     private final UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings;
+    private final UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventSettings;
     private final UnaryCallSettings.Builder<GetConversionEventRequest, ConversionEvent>
         getConversionEventSettings;
     private final UnaryCallSettings.Builder<DeleteConversionEventRequest, Empty>
@@ -1630,6 +1642,7 @@ public class AnalyticsAdminServiceStubSettings
       searchChangeHistoryEventsSettings =
           PagedCallSettings.newBuilder(SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_FACT);
       createConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversionEventsSettings =
@@ -1683,6 +1696,7 @@ public class AnalyticsAdminServiceStubSettings
               acknowledgeUserDataCollectionSettings,
               searchChangeHistoryEventsSettings,
               createConversionEventSettings,
+              updateConversionEventSettings,
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
@@ -1743,6 +1757,7 @@ public class AnalyticsAdminServiceStubSettings
           settings.acknowledgeUserDataCollectionSettings.toBuilder();
       searchChangeHistoryEventsSettings = settings.searchChangeHistoryEventsSettings.toBuilder();
       createConversionEventSettings = settings.createConversionEventSettings.toBuilder();
+      updateConversionEventSettings = settings.updateConversionEventSettings.toBuilder();
       getConversionEventSettings = settings.getConversionEventSettings.toBuilder();
       deleteConversionEventSettings = settings.deleteConversionEventSettings.toBuilder();
       listConversionEventsSettings = settings.listConversionEventsSettings.toBuilder();
@@ -1795,6 +1810,7 @@ public class AnalyticsAdminServiceStubSettings
               acknowledgeUserDataCollectionSettings,
               searchChangeHistoryEventsSettings,
               createConversionEventSettings,
+              updateConversionEventSettings,
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
@@ -1977,6 +1993,11 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .createConversionEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateConversionEventSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2272,6 +2293,12 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings() {
       return createConversionEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateConversionEvent. */
+    public UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventSettings() {
+      return updateConversionEventSettings;
     }
 
     /** Returns the builder for the settings used for calls to getConversionEvent. */

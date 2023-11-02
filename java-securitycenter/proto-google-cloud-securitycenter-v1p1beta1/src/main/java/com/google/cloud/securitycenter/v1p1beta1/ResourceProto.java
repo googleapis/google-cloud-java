@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,19 +44,19 @@ public final class ResourceProto {
           + "resource.proto\022%google.cloud.securitycen"
           + "ter.v1p1beta1\032\037google/api/field_behavior"
           + ".proto\0322google/cloud/securitycenter/v1p1"
-          + "beta1/folder.proto\"\271\001\n\010Resource\022\014\n\004name\030"
+          + "beta1/folder.proto\"\272\001\n\010Resource\022\014\n\004name\030"
           + "\001 \001(\t\022\017\n\007project\030\002 \001(\t\022\034\n\024project_displa"
           + "y_name\030\003 \001(\t\022\016\n\006parent\030\004 \001(\t\022\033\n\023parent_d"
-          + "isplay_name\030\005 \001(\t\022C\n\007folders\030\007 \003(\0132-.goo"
+          + "isplay_name\030\005 \001(\t\022D\n\007folders\030\007 \003(\0132-.goo"
           + "gle.cloud.securitycenter.v1p1beta1.Folde"
-          + "rB\003\340A\003B\212\002\n)com.google.cloud.securitycent"
-          + "er.v1p1beta1B\rResourceProtoP\001ZQcloud.goo"
-          + "gle.com/go/securitycenter/apiv1p1beta1/s"
-          + "ecuritycenterpb;securitycenterpb\252\002%Googl"
-          + "e.Cloud.SecurityCenter.V1P1Beta1\312\002%Googl"
-          + "e\\Cloud\\SecurityCenter\\V1p1beta1\352\002(Googl"
-          + "e::Cloud::SecurityCenter::V1p1beta1b\006pro"
-          + "to3"
+          + "rB\004\342A\001\003B\212\002\n)com.google.cloud.securitycen"
+          + "ter.v1p1beta1B\rResourceProtoP\001ZQcloud.go"
+          + "ogle.com/go/securitycenter/apiv1p1beta1/"
+          + "securitycenterpb;securitycenterpb\252\002%Goog"
+          + "le.Cloud.SecurityCenter.V1P1Beta1\312\002%Goog"
+          + "le\\Cloud\\SecurityCenter\\V1p1beta1\352\002(Goog"
+          + "le::Cloud::SecurityCenter::V1p1beta1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,6 +71,8 @@ public interface SearchOrganizationsRequestOrBuilder
    * <pre>
    * Optional. An optional query string used to filter the Organizations to
    * return in the response. Query rules are case-insensitive.
+   *
+   *
    * ```
    * | Field            | Description                                |
    * |------------------|--------------------------------------------|
@@ -78,8 +80,10 @@ public interface SearchOrganizationsRequestOrBuilder
    * customer id. |
    * | domain           | Filters by domain.                         |
    * ```
+   *
    * Organizations may be queried by `directoryCustomerId` or by
    * `domain`, where the domain is a G Suite domain, for example:
+   *
    * * Query `directorycustomerid:123456789` returns Organization
    * resources with `owner.directory_customer_id` equal to `123456789`.
    * * Query `domain:google.com` returns Organization resources corresponding
@@ -97,6 +101,8 @@ public interface SearchOrganizationsRequestOrBuilder
    * <pre>
    * Optional. An optional query string used to filter the Organizations to
    * return in the response. Query rules are case-insensitive.
+   *
+   *
    * ```
    * | Field            | Description                                |
    * |------------------|--------------------------------------------|
@@ -104,8 +110,10 @@ public interface SearchOrganizationsRequestOrBuilder
    * customer id. |
    * | domain           | Filters by domain.                         |
    * ```
+   *
    * Organizations may be queried by `directoryCustomerId` or by
    * `domain`, where the domain is a G Suite domain, for example:
+   *
    * * Query `directorycustomerid:123456789` returns Organization
    * resources with `owner.directory_customer_id` equal to `123456789`.
    * * Query `domain:google.com` returns Organization resources corresponding

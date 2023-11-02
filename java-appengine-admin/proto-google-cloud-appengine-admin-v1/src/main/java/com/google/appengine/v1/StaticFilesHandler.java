@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StaticFilesHandler();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -303,6 +298,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * MIME type used to serve all files served by this handler.
+   *
    * Defaults to file-specific MIME types, which are derived from each file's
    * filename extension.
    * </pre>
@@ -328,6 +324,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * MIME type used to serve all files served by this handler.
+   *
    * Defaults to file-specific MIME types, which are derived from each file's
    * filename extension.
    * </pre>
@@ -1361,6 +1358,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * MIME type used to serve all files served by this handler.
+     *
      * Defaults to file-specific MIME types, which are derived from each file's
      * filename extension.
      * </pre>
@@ -1385,6 +1383,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * MIME type used to serve all files served by this handler.
+     *
      * Defaults to file-specific MIME types, which are derived from each file's
      * filename extension.
      * </pre>
@@ -1409,6 +1408,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * MIME type used to serve all files served by this handler.
+     *
      * Defaults to file-specific MIME types, which are derived from each file's
      * filename extension.
      * </pre>
@@ -1432,6 +1432,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * MIME type used to serve all files served by this handler.
+     *
      * Defaults to file-specific MIME types, which are derived from each file's
      * filename extension.
      * </pre>
@@ -1451,6 +1452,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * MIME type used to serve all files served by this handler.
+     *
      * Defaults to file-specific MIME types, which are derived from each file's
      * filename extension.
      * </pre>

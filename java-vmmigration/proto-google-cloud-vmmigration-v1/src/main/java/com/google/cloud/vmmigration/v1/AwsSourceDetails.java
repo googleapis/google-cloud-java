@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     awsRegion_ = "";
     state_ = 0;
     inventoryTagList_ = java.util.Collections.emptyList();
-    inventorySecurityGroupNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    inventorySecurityGroupNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     publicIp_ = "";
   }
 
@@ -50,11 +50,6 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AwsSourceDetails();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -351,11 +346,6 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AccessKeyCredentials();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1222,11 +1212,6 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       return new Tag();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.vmmigration.v1.VmMigrationProto
           .internal_static_google_cloud_vmmigration_v1_AwsSourceDetails_Tag_descriptor;
@@ -1992,6 +1977,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
   }
 
   private int credentialsTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object credentialsType_;
 
   public enum CredentialsTypeCase
@@ -2316,7 +2303,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
   public static final int INVENTORY_SECURITY_GROUP_NAMES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList inventorySecurityGroupNames_;
+  private com.google.protobuf.LazyStringArrayList inventorySecurityGroupNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2903,8 +2891,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         inventoryTagListBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
-      inventorySecurityGroupNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      inventorySecurityGroupNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableMigrationResourcesUserTags().clear();
       publicIp_ = "";
       credentialsTypeCase_ = 0;
@@ -2956,11 +2943,6 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       } else {
         result.inventoryTagList_ = inventoryTagListBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        inventorySecurityGroupNames_ = inventorySecurityGroupNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.inventorySecurityGroupNames_ = inventorySecurityGroupNames_;
     }
 
     private void buildPartial0(com.google.cloud.vmmigration.v1.AwsSourceDetails result) {
@@ -2973,6 +2955,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        inventorySecurityGroupNames_.makeImmutable();
+        result.inventorySecurityGroupNames_ = inventorySecurityGroupNames_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.migrationResourcesUserTags_ = internalGetMigrationResourcesUserTags();
@@ -3078,7 +3064,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       if (!other.inventorySecurityGroupNames_.isEmpty()) {
         if (inventorySecurityGroupNames_.isEmpty()) {
           inventorySecurityGroupNames_ = other.inventorySecurityGroupNames_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureInventorySecurityGroupNamesIsMutable();
           inventorySecurityGroupNames_.addAll(other.inventorySecurityGroupNames_);
@@ -4246,15 +4232,15 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       return inventoryTagListBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList inventorySecurityGroupNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList inventorySecurityGroupNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInventorySecurityGroupNamesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!inventorySecurityGroupNames_.isModifiable()) {
         inventorySecurityGroupNames_ =
             new com.google.protobuf.LazyStringArrayList(inventorySecurityGroupNames_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -4269,7 +4255,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      * @return A list containing the inventorySecurityGroupNames.
      */
     public com.google.protobuf.ProtocolStringList getInventorySecurityGroupNamesList() {
-      return inventorySecurityGroupNames_.getUnmodifiableView();
+      inventorySecurityGroupNames_.makeImmutable();
+      return inventorySecurityGroupNames_;
     }
     /**
      *
@@ -4338,6 +4325,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       }
       ensureInventorySecurityGroupNamesIsMutable();
       inventorySecurityGroupNames_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4360,6 +4348,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       }
       ensureInventorySecurityGroupNamesIsMutable();
       inventorySecurityGroupNames_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4379,6 +4368,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     public Builder addAllInventorySecurityGroupNames(java.lang.Iterable<java.lang.String> values) {
       ensureInventorySecurityGroupNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inventorySecurityGroupNames_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4395,8 +4385,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInventorySecurityGroupNames() {
-      inventorySecurityGroupNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      inventorySecurityGroupNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -4420,6 +4411,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureInventorySecurityGroupNamesIsMutable();
       inventorySecurityGroupNames_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

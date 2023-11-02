@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,10 @@ public final class PublisherModelProto {
       internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_ResourceReference_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_ResourceReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_Parent_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_Parent_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_Documentation_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -74,81 +78,98 @@ public final class PublisherModelProto {
           + "o\032\031google/api/resource.proto\0327google/clo"
           + "ud/aiplatform/v1beta1/machine_resources."
           + "proto\032+google/cloud/aiplatform/v1beta1/m"
-          + "odel.proto\"\227\025\n\016PublisherModel\022\021\n\004name\030\001 "
-          + "\001(\tB\003\340A\003\022\032\n\nversion_id\030\002 \001(\tB\006\340A\005\340A\003\022e\n\024"
+          + "odel.proto\"\301\032\n\016PublisherModel\022\022\n\004name\030\001 "
+          + "\001(\tB\004\342A\001\003\022\031\n\nversion_id\030\002 \001(\tB\005\342A\002\005\003\022f\n\024"
           + "open_source_category\030\007 \001(\0162B.google.clou"
           + "d.aiplatform.v1beta1.PublisherModel.Open"
-          + "SourceCategoryB\003\340A\002\022\\\n\021supported_actions"
-          + "\030\023 \001(\0132<.google.cloud.aiplatform.v1beta1"
-          + ".PublisherModel.CallToActionB\003\340A\001\022\027\n\nfra"
-          + "meworks\030\027 \003(\tB\003\340A\001\022(\n\030publisher_model_te"
-          + "mplate\030\036 \001(\tB\006\340A\005\340A\003\022O\n\020predict_schemata"
-          + "\030\037 \001(\01320.google.cloud.aiplatform.v1beta1"
-          + ".PredictSchemataB\003\340A\001\032H\n\021ResourceReferen"
-          + "ce\022\r\n\003uri\030\001 \001(\tH\000\022\027\n\rresource_name\030\002 \001(\t"
-          + "H\000B\013\n\treference\0329\n\rDocumentation\022\022\n\005titl"
-          + "e\030\001 \001(\tB\003\340A\002\022\024\n\007content\030\002 \001(\tB\003\340A\002\032\303\016\n\014C"
-          + "allToAction\022d\n\rview_rest_api\030\001 \001(\0132H.goo"
-          + "gle.cloud.aiplatform.v1beta1.PublisherMo"
-          + "del.CallToAction.ViewRestApiB\003\340A\001\022s\n\rope"
-          + "n_notebook\030\002 \001(\0132W.google.cloud.aiplatfo"
-          + "rm.v1beta1.PublisherModel.CallToAction.R"
-          + "egionalResourceReferencesB\003\340A\001\022x\n\022create"
-          + "_application\030\003 \001(\0132W.google.cloud.aiplat"
-          + "form.v1beta1.PublisherModel.CallToAction"
-          + ".RegionalResourceReferencesB\003\340A\001\022\177\n\031open"
-          + "_fine_tuning_pipeline\030\004 \001(\0132W.google.clo"
+          + "SourceCategoryB\004\342A\001\002\022L\n\006parent\030\016 \001(\01326.g"
+          + "oogle.cloud.aiplatform.v1beta1.Publisher"
+          + "Model.ParentB\004\342A\001\001\022]\n\021supported_actions\030"
+          + "\023 \001(\0132<.google.cloud.aiplatform.v1beta1."
+          + "PublisherModel.CallToActionB\004\342A\001\001\022\030\n\nfra"
+          + "meworks\030\027 \003(\tB\004\342A\001\001\022W\n\014launch_stage\030\035 \001("
+          + "\0162;.google.cloud.aiplatform.v1beta1.Publ"
+          + "isherModel.LaunchStageB\004\342A\001\001\022\'\n\030publishe"
+          + "r_model_template\030\036 \001(\tB\005\342A\002\005\003\022P\n\020predict"
+          + "_schemata\030\037 \001(\01320.google.cloud.aiplatfor"
+          + "m.v1beta1.PredictSchemataB\004\342A\001\001\032H\n\021Resou"
+          + "rceReference\022\r\n\003uri\030\001 \001(\tH\000\022\027\n\rresource_"
+          + "name\030\002 \001(\tH\000B\013\n\treference\032\200\001\n\006Parent\022\032\n\014"
+          + "display_name\030\001 \001(\tB\004\342A\001\002\022Z\n\treference\030\002 "
+          + "\001(\0132A.google.cloud.aiplatform.v1beta1.Pu"
+          + "blisherModel.ResourceReferenceB\004\342A\001\001\032;\n\r"
+          + "Documentation\022\023\n\005title\030\001 \001(\tB\004\342A\001\002\022\025\n\007co"
+          + "ntent\030\002 \001(\tB\004\342A\001\002\032\316\020\n\014CallToAction\022e\n\rvi"
+          + "ew_rest_api\030\001 \001(\0132H.google.cloud.aiplatf"
+          + "orm.v1beta1.PublisherModel.CallToAction."
+          + "ViewRestApiB\004\342A\001\001\022t\n\ropen_notebook\030\002 \001(\013"
+          + "2W.google.cloud.aiplatform.v1beta1.Publi"
+          + "sherModel.CallToAction.RegionalResourceR"
+          + "eferencesB\004\342A\001\001\022y\n\022create_application\030\003 "
+          + "\001(\0132W.google.cloud.aiplatform.v1beta1.Pu"
+          + "blisherModel.CallToAction.RegionalResour"
+          + "ceReferencesB\004\342A\001\001\022\200\001\n\031open_fine_tuning_"
+          + "pipeline\030\004 \001(\0132W.google.cloud.aiplatform"
+          + ".v1beta1.PublisherModel.CallToAction.Reg"
+          + "ionalResourceReferencesB\004\342A\001\001\022\202\001\n\033open_p"
+          + "rompt_tuning_pipeline\030\005 \001(\0132W.google.clo"
           + "ud.aiplatform.v1beta1.PublisherModel.Cal"
-          + "lToAction.RegionalResourceReferencesB\003\340A"
-          + "\001\022\201\001\n\033open_prompt_tuning_pipeline\030\005 \001(\0132"
-          + "W.google.cloud.aiplatform.v1beta1.Publis"
-          + "herModel.CallToAction.RegionalResourceRe"
-          + "ferencesB\003\340A\001\022p\n\nopen_genie\030\006 \001(\0132W.goog"
-          + "le.cloud.aiplatform.v1beta1.PublisherMod"
-          + "el.CallToAction.RegionalResourceReferenc"
-          + "esB\003\340A\001\022X\n\006deploy\030\007 \001(\0132C.google.cloud.a"
-          + "iplatform.v1beta1.PublisherModel.CallToA"
-          + "ction.DeployB\003\340A\001\022\177\n\031open_generation_ai_"
-          + "studio\030\010 \001(\0132W.google.cloud.aiplatform.v"
+          + "lToAction.RegionalResourceReferencesB\004\342A"
+          + "\001\001\022q\n\nopen_genie\030\006 \001(\0132W.google.cloud.ai"
+          + "platform.v1beta1.PublisherModel.CallToAc"
+          + "tion.RegionalResourceReferencesB\004\342A\001\001\022Y\n"
+          + "\006deploy\030\007 \001(\0132C.google.cloud.aiplatform."
+          + "v1beta1.PublisherModel.CallToAction.Depl"
+          + "oyB\004\342A\001\001\022\200\001\n\031open_generation_ai_studio\030\010"
+          + " \001(\0132W.google.cloud.aiplatform.v1beta1.P"
+          + "ublisherModel.CallToAction.RegionalResou"
+          + "rceReferencesB\004\342A\001\001\022u\n\016request_access\030\t "
+          + "\001(\0132W.google.cloud.aiplatform.v1beta1.Pu"
+          + "blisherModel.CallToAction.RegionalResour"
+          + "ceReferencesB\004\342A\001\001\022\177\n\030open_evaluation_pi"
+          + "peline\030\013 \001(\0132W.google.cloud.aiplatform.v"
           + "1beta1.PublisherModel.CallToAction.Regio"
-          + "nalResourceReferencesB\003\340A\001\032\251\002\n\032RegionalR"
-          + "esourceReferences\022\200\001\n\nreferences\030\001 \003(\0132g"
-          + ".google.cloud.aiplatform.v1beta1.Publish"
-          + "erModel.CallToAction.RegionalResourceRef"
-          + "erences.ReferencesEntryB\003\340A\002\022\022\n\005title\030\002 "
-          + "\001(\tB\003\340A\002\032t\n\017ReferencesEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022P\n\005value\030\002 \001(\0132A.google.cloud.aiplatfor"
-          + "m.v1beta1.PublisherModel.ResourceReferen"
-          + "ce:\0028\001\032}\n\013ViewRestApi\022Z\n\016documentations\030"
-          + "\001 \003(\0132=.google.cloud.aiplatform.v1beta1."
-          + "PublisherModel.DocumentationB\003\340A\002\022\022\n\005tit"
-          + "le\030\002 \001(\tB\003\340A\002\032\340\003\n\006Deploy\022R\n\023dedicated_re"
-          + "sources\030\005 \001(\01323.google.cloud.aiplatform."
-          + "v1beta1.DedicatedResourcesH\000\022R\n\023automati"
-          + "c_resources\030\006 \001(\01323.google.cloud.aiplatf"
-          + "orm.v1beta1.AutomaticResourcesH\000\022\032\n\020shar"
-          + "ed_resources\030\007 \001(\tH\000\022\037\n\022model_display_na"
-          + "me\030\001 \001(\tB\003\340A\001\022X\n\025large_model_reference\030\002"
-          + " \001(\01324.google.cloud.aiplatform.v1beta1.L"
-          + "argeModelReferenceB\003\340A\001\022P\n\016container_spe"
-          + "c\030\003 \001(\01323.google.cloud.aiplatform.v1beta"
-          + "1.ModelContainerSpecB\003\340A\001\022\031\n\014artifact_ur"
-          + "i\030\004 \001(\tB\003\340A\001\022\022\n\005title\030\010 \001(\tB\003\340A\002B\026\n\024pred"
-          + "iction_resources\"\333\001\n\022OpenSourceCategory\022"
-          + "$\n OPEN_SOURCE_CATEGORY_UNSPECIFIED\020\000\022\017\n"
-          + "\013PROPRIETARY\020\001\022+\n\'GOOGLE_OWNED_OSS_WITH_"
-          + "GOOGLE_CHECKPOINT\020\002\0220\n,THIRD_PARTY_OWNED"
-          + "_OSS_WITH_GOOGLE_CHECKPOINT\020\003\022\024\n\020GOOGLE_"
-          + "OWNED_OSS\020\004\022\031\n\025THIRD_PARTY_OWNED_OSS\020\005:T"
-          + "\352AQ\n(aiplatform.googleapis.com/Publisher"
-          + "Model\022%publishers/{publisher}/models/{mo"
-          + "del}B\352\001\n#com.google.cloud.aiplatform.v1b"
-          + "eta1B\023PublisherModelProtoP\001ZCcloud.googl"
-          + "e.com/go/aiplatform/apiv1beta1/aiplatfor"
-          + "mpb;aiplatformpb\252\002\037Google.Cloud.AIPlatfo"
-          + "rm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1b"
-          + "eta1\352\002\"Google::Cloud::AIPlatform::V1beta"
-          + "1b\006proto3"
+          + "nalResourceReferencesB\004\342A\001\001\032\253\002\n\032Regional"
+          + "ResourceReferences\022\201\001\n\nreferences\030\001 \003(\0132"
+          + "g.google.cloud.aiplatform.v1beta1.Publis"
+          + "herModel.CallToAction.RegionalResourceRe"
+          + "ferences.ReferencesEntryB\004\342A\001\002\022\023\n\005title\030"
+          + "\002 \001(\tB\004\342A\001\002\032t\n\017ReferencesEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022P\n\005value\030\002 \001(\0132A.google.cloud.aiplat"
+          + "form.v1beta1.PublisherModel.ResourceRefe"
+          + "rence:\0028\001\032\177\n\013ViewRestApi\022[\n\016documentatio"
+          + "ns\030\001 \003(\0132=.google.cloud.aiplatform.v1bet"
+          + "a1.PublisherModel.DocumentationB\004\342A\001\002\022\023\n"
+          + "\005title\030\002 \001(\tB\004\342A\001\002\032\345\003\n\006Deploy\022R\n\023dedicat"
+          + "ed_resources\030\005 \001(\01323.google.cloud.aiplat"
+          + "form.v1beta1.DedicatedResourcesH\000\022R\n\023aut"
+          + "omatic_resources\030\006 \001(\01323.google.cloud.ai"
+          + "platform.v1beta1.AutomaticResourcesH\000\022\032\n"
+          + "\020shared_resources\030\007 \001(\tH\000\022 \n\022model_displ"
+          + "ay_name\030\001 \001(\tB\004\342A\001\001\022Y\n\025large_model_refer"
+          + "ence\030\002 \001(\01324.google.cloud.aiplatform.v1b"
+          + "eta1.LargeModelReferenceB\004\342A\001\001\022Q\n\016contai"
+          + "ner_spec\030\003 \001(\01323.google.cloud.aiplatform"
+          + ".v1beta1.ModelContainerSpecB\004\342A\001\001\022\032\n\014art"
+          + "ifact_uri\030\004 \001(\tB\004\342A\001\001\022\023\n\005title\030\010 \001(\tB\004\342A"
+          + "\001\002B\026\n\024prediction_resources\"\333\001\n\022OpenSourc"
+          + "eCategory\022$\n OPEN_SOURCE_CATEGORY_UNSPEC"
+          + "IFIED\020\000\022\017\n\013PROPRIETARY\020\001\022+\n\'GOOGLE_OWNED"
+          + "_OSS_WITH_GOOGLE_CHECKPOINT\020\002\0220\n,THIRD_P"
+          + "ARTY_OWNED_OSS_WITH_GOOGLE_CHECKPOINT\020\003\022"
+          + "\024\n\020GOOGLE_OWNED_OSS\020\004\022\031\n\025THIRD_PARTY_OWN"
+          + "ED_OSS\020\005\"n\n\013LaunchStage\022\034\n\030LAUNCH_STAGE_"
+          + "UNSPECIFIED\020\000\022\020\n\014EXPERIMENTAL\020\001\022\023\n\017PRIVA"
+          + "TE_PREVIEW\020\002\022\022\n\016PUBLIC_PREVIEW\020\003\022\006\n\002GA\020\004"
+          + ":T\352AQ\n(aiplatform.googleapis.com/Publish"
+          + "erModel\022%publishers/{publisher}/models/{"
+          + "model}B\352\001\n#com.google.cloud.aiplatform.v"
+          + "1beta1B\023PublisherModelProtoP\001ZCcloud.goo"
+          + "gle.com/go/aiplatform/apiv1beta1/aiplatf"
+          + "ormpb;aiplatformpb\252\002\037Google.Cloud.AIPlat"
+          + "form.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V"
+          + "1beta1\352\002\"Google::Cloud::AIPlatform::V1be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -168,8 +189,10 @@ public final class PublisherModelProto {
               "Name",
               "VersionId",
               "OpenSourceCategory",
+              "Parent",
               "SupportedActions",
               "Frameworks",
+              "LaunchStage",
               "PublisherModelTemplate",
               "PredictSchemata",
             });
@@ -183,10 +206,20 @@ public final class PublisherModelProto {
             new java.lang.String[] {
               "Uri", "ResourceName", "Reference",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_Documentation_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_Parent_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_descriptor
             .getNestedTypes()
             .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_Parent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_Parent_descriptor,
+            new java.lang.String[] {
+              "DisplayName", "Reference",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_Documentation_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_descriptor
+            .getNestedTypes()
+            .get(2);
     internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_Documentation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_Documentation_descriptor,
@@ -196,7 +229,7 @@ public final class PublisherModelProto {
     internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_descriptor
             .getNestedTypes()
-            .get(2);
+            .get(3);
     internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_descriptor,
@@ -209,6 +242,8 @@ public final class PublisherModelProto {
               "OpenGenie",
               "Deploy",
               "OpenGenerationAiStudio",
+              "RequestAccess",
+              "OpenEvaluationPipeline",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_RegionalResourceReferences_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_PublisherModel_CallToAction_descriptor

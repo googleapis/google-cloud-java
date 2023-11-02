@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Schema();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1044,11 +1039,6 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SchemaField();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2796,11 +2786,6 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return new PartitionField();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.MetadataProto
           .internal_static_google_cloud_dataplex_v1_Schema_PartitionField_descriptor;
@@ -3569,12 +3554,14 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Set to `true` if user-managed or `false` if managed by Dataplex.
    * The default is `false` (managed by Dataplex).
+   *
    * - Set to `false`to enable Dataplex discovery to update the schema.
    *   including new data discovery, schema inference, and schema evolution.
    *   Users retain the ability to input and edit the schema. Dataplex
    *   treats schema input by the user as though produced
    *   by a previous Dataplex discovery operation, and it will
    *   evolve the schema and take action based on that treatment.
+   *
    * - Set to `true` to fully manage the entity
    *   schema. This setting guarantees that Dataplex will not
    *   change schema fields.
@@ -4315,12 +4302,14 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Set to `true` if user-managed or `false` if managed by Dataplex.
      * The default is `false` (managed by Dataplex).
+     *
      * - Set to `false`to enable Dataplex discovery to update the schema.
      *   including new data discovery, schema inference, and schema evolution.
      *   Users retain the ability to input and edit the schema. Dataplex
      *   treats schema input by the user as though produced
      *   by a previous Dataplex discovery operation, and it will
      *   evolve the schema and take action based on that treatment.
+     *
      * - Set to `true` to fully manage the entity
      *   schema. This setting guarantees that Dataplex will not
      *   change schema fields.
@@ -4340,12 +4329,14 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Set to `true` if user-managed or `false` if managed by Dataplex.
      * The default is `false` (managed by Dataplex).
+     *
      * - Set to `false`to enable Dataplex discovery to update the schema.
      *   including new data discovery, schema inference, and schema evolution.
      *   Users retain the ability to input and edit the schema. Dataplex
      *   treats schema input by the user as though produced
      *   by a previous Dataplex discovery operation, and it will
      *   evolve the schema and take action based on that treatment.
+     *
      * - Set to `true` to fully manage the entity
      *   schema. This setting guarantees that Dataplex will not
      *   change schema fields.
@@ -4369,12 +4360,14 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Set to `true` if user-managed or `false` if managed by Dataplex.
      * The default is `false` (managed by Dataplex).
+     *
      * - Set to `false`to enable Dataplex discovery to update the schema.
      *   including new data discovery, schema inference, and schema evolution.
      *   Users retain the ability to input and edit the schema. Dataplex
      *   treats schema input by the user as though produced
      *   by a previous Dataplex discovery operation, and it will
      *   evolve the schema and take action based on that treatment.
+     *
      * - Set to `true` to fully manage the entity
      *   schema. This setting guarantees that Dataplex will not
      *   change schema fields.

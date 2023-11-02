@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
     return new CreateEnvironmentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.EnvironmentProto
         .internal_static_google_cloud_dialogflow_v2beta1_CreateEnvironmentRequest_descriptor;
@@ -79,8 +74,8 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The agent to create an environment for.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -107,8 +102,8 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The agent to create an environment for.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -647,8 +642,8 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The agent to create an environment for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -674,8 +669,8 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The agent to create an environment for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -701,8 +696,8 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The agent to create an environment for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -727,8 +722,8 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The agent to create an environment for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -749,8 +744,8 @@ public final class CreateEnvironmentRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The agent to create an environment for.
      * Supported formats:
-     * - `projects/&lt;Project Number / ID&gt;/agent`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>

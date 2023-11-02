@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ public interface UserSequenceStepOrBuilder
    * session for the user to match the sequence. `stepScoping =
    * ACROSS_ALL_SESSIONS` is only allowed if the `sequenceScoping =
    * ACROSS_ALL_SESSIONS`.
+   *
    * Optional. If unspecified, `stepScoping` uses the same
    * `UserCriteriaScoping` as the `sequenceScoping`.
    * </pre>
@@ -69,6 +70,7 @@ public interface UserSequenceStepOrBuilder
    * session for the user to match the sequence. `stepScoping =
    * ACROSS_ALL_SESSIONS` is only allowed if the `sequenceScoping =
    * ACROSS_ALL_SESSIONS`.
+   *
    * Optional. If unspecified, `stepScoping` uses the same
    * `UserCriteriaScoping` as the `sequenceScoping`.
    * </pre>

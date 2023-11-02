@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Encapsulates a segment of a [RouteLeg][google.maps.routing.v2.RouteLeg]. A
+ * Contains a segment of a [RouteLeg][google.maps.routing.v2.RouteLeg]. A
  * step corresponds to a single navigation instruction. Route legs are made up
  * of steps.
  * </pre>
@@ -39,17 +39,14 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private RouteLegStep() {}
+  private RouteLegStep() {
+    travelMode_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RouteLegStep();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -65,6 +62,1059 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.maps.routing.v2.RouteLegStep.class,
             com.google.maps.routing.v2.RouteLegStep.Builder.class);
+  }
+
+  public interface RouteLegStepLocalizedValuesOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return Whether the distance field is set.
+     */
+    boolean hasDistance();
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return The distance.
+     */
+    com.google.type.LocalizedText getDistance();
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return Whether the staticDuration field is set.
+     */
+    boolean hasStaticDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return The staticDuration.
+     */
+    com.google.type.LocalizedText getStaticDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of certain properties.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues}
+   */
+  public static final class RouteLegStepLocalizedValues
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues)
+      RouteLegStepLocalizedValuesOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use RouteLegStepLocalizedValues.newBuilder() to construct.
+    private RouteLegStepLocalizedValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RouteLegStepLocalizedValues() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RouteLegStepLocalizedValues();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.routing.v2.RouteProto
+          .internal_static_google_maps_routing_v2_RouteLegStep_RouteLegStepLocalizedValues_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.routing.v2.RouteProto
+          .internal_static_google_maps_routing_v2_RouteLegStep_RouteLegStepLocalizedValues_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.class,
+              com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.Builder.class);
+    }
+
+    public static final int DISTANCE_FIELD_NUMBER = 1;
+    private com.google.type.LocalizedText distance_;
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return Whether the distance field is set.
+     */
+    @java.lang.Override
+    public boolean hasDistance() {
+      return distance_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return The distance.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getDistance() {
+      return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder() {
+      return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+    }
+
+    public static final int STATIC_DURATION_FIELD_NUMBER = 3;
+    private com.google.type.LocalizedText staticDuration_;
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return Whether the staticDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasStaticDuration() {
+      return staticDuration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return The staticDuration.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getStaticDuration() {
+      return staticDuration_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : staticDuration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder() {
+      return staticDuration_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : staticDuration_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (distance_ != null) {
+        output.writeMessage(1, getDistance());
+      }
+      if (staticDuration_ != null) {
+        output.writeMessage(3, getStaticDuration());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (distance_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDistance());
+      }
+      if (staticDuration_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStaticDuration());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues)) {
+        return super.equals(obj);
+      }
+      com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues other =
+          (com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues) obj;
+
+      if (hasDistance() != other.hasDistance()) return false;
+      if (hasDistance()) {
+        if (!getDistance().equals(other.getDistance())) return false;
+      }
+      if (hasStaticDuration() != other.hasStaticDuration()) return false;
+      if (hasStaticDuration()) {
+        if (!getStaticDuration().equals(other.getStaticDuration())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDistance()) {
+        hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getDistance().hashCode();
+      }
+      if (hasStaticDuration()) {
+        hash = (37 * hash) + STATIC_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getStaticDuration().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of certain properties.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues)
+        com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValuesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_RouteLegStep_RouteLegStepLocalizedValues_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_RouteLegStep_RouteLegStepLocalizedValues_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.class,
+                com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.Builder.class);
+      }
+
+      // Construct using
+      // com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        distance_ = null;
+        if (distanceBuilder_ != null) {
+          distanceBuilder_.dispose();
+          distanceBuilder_ = null;
+        }
+        staticDuration_ = null;
+        if (staticDurationBuilder_ != null) {
+          staticDurationBuilder_.dispose();
+          staticDurationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_RouteLegStep_RouteLegStepLocalizedValues_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+          getDefaultInstanceForType() {
+        return com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues build() {
+        com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues buildPartial() {
+        com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues result =
+            new com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.distance_ = distanceBuilder_ == null ? distance_ : distanceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.staticDuration_ =
+              staticDurationBuilder_ == null ? staticDuration_ : staticDurationBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues) {
+          return mergeFrom(
+              (com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues other) {
+        if (other
+            == com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+                .getDefaultInstance()) return this;
+        if (other.hasDistance()) {
+          mergeDistance(other.getDistance());
+        }
+        if (other.hasStaticDuration()) {
+          mergeStaticDuration(other.getStaticDuration());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getDistanceFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 26:
+                {
+                  input.readMessage(
+                      getStaticDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.type.LocalizedText distance_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          distanceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       *
+       * @return Whether the distance field is set.
+       */
+      public boolean hasDistance() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       *
+       * @return The distance.
+       */
+      public com.google.type.LocalizedText getDistance() {
+        if (distanceBuilder_ == null) {
+          return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+        } else {
+          return distanceBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder setDistance(com.google.type.LocalizedText value) {
+        if (distanceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          distance_ = value;
+        } else {
+          distanceBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder setDistance(com.google.type.LocalizedText.Builder builderForValue) {
+        if (distanceBuilder_ == null) {
+          distance_ = builderForValue.build();
+        } else {
+          distanceBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder mergeDistance(com.google.type.LocalizedText value) {
+        if (distanceBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && distance_ != null
+              && distance_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getDistanceBuilder().mergeFrom(value);
+          } else {
+            distance_ = value;
+          }
+        } else {
+          distanceBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder clearDistance() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        distance_ = null;
+        if (distanceBuilder_ != null) {
+          distanceBuilder_.dispose();
+          distanceBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public com.google.type.LocalizedText.Builder getDistanceBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getDistanceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder() {
+        if (distanceBuilder_ != null) {
+          return distanceBuilder_.getMessageOrBuilder();
+        } else {
+          return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getDistanceFieldBuilder() {
+        if (distanceBuilder_ == null) {
+          distanceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getDistance(), getParentForChildren(), isClean());
+          distance_ = null;
+        }
+        return distanceBuilder_;
+      }
+
+      private com.google.type.LocalizedText staticDuration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          staticDurationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       *
+       * @return Whether the staticDuration field is set.
+       */
+      public boolean hasStaticDuration() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       *
+       * @return The staticDuration.
+       */
+      public com.google.type.LocalizedText getStaticDuration() {
+        if (staticDurationBuilder_ == null) {
+          return staticDuration_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : staticDuration_;
+        } else {
+          return staticDurationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder setStaticDuration(com.google.type.LocalizedText value) {
+        if (staticDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          staticDuration_ = value;
+        } else {
+          staticDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder setStaticDuration(com.google.type.LocalizedText.Builder builderForValue) {
+        if (staticDurationBuilder_ == null) {
+          staticDuration_ = builderForValue.build();
+        } else {
+          staticDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder mergeStaticDuration(com.google.type.LocalizedText value) {
+        if (staticDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && staticDuration_ != null
+              && staticDuration_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getStaticDurationBuilder().mergeFrom(value);
+          } else {
+            staticDuration_ = value;
+          }
+        } else {
+          staticDurationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder clearStaticDuration() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        staticDuration_ = null;
+        if (staticDurationBuilder_ != null) {
+          staticDurationBuilder_.dispose();
+          staticDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public com.google.type.LocalizedText.Builder getStaticDurationBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getStaticDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder() {
+        if (staticDurationBuilder_ != null) {
+          return staticDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return staticDuration_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : staticDuration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getStaticDurationFieldBuilder() {
+        if (staticDurationBuilder_ == null) {
+          staticDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getStaticDuration(), getParentForChildren(), isClean());
+          staticDuration_ = null;
+        }
+        return staticDurationBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues)
+    private static final com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues();
+    }
+
+    public static com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RouteLegStepLocalizedValues> PARSER =
+        new com.google.protobuf.AbstractParser<RouteLegStepLocalizedValues>() {
+          @java.lang.Override
+          public RouteLegStepLocalizedValues parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RouteLegStepLocalizedValues> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RouteLegStepLocalizedValues> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int DISTANCE_METERS_FIELD_NUMBER = 1;
@@ -345,8 +1395,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction on a leg step.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a leg step.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -361,8 +1411,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction on a leg step.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a leg step.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -379,8 +1429,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction on a leg step.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a leg step.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -391,6 +1441,146 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     return travelAdvisory_ == null
         ? com.google.maps.routing.v2.RouteLegStepTravelAdvisory.getDefaultInstance()
         : travelAdvisory_;
+  }
+
+  public static final int LOCALIZED_VALUES_FIELD_NUMBER = 8;
+  private com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localizedValues_;
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLegStep`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+   * </code>
+   *
+   * @return Whether the localizedValues field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalizedValues() {
+    return localizedValues_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLegStep`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+   * </code>
+   *
+   * @return The localizedValues.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues getLocalizedValues() {
+    return localizedValues_ == null
+        ? com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.getDefaultInstance()
+        : localizedValues_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLegStep`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValuesOrBuilder
+      getLocalizedValuesOrBuilder() {
+    return localizedValues_ == null
+        ? com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.getDefaultInstance()
+        : localizedValues_;
+  }
+
+  public static final int TRANSIT_DETAILS_FIELD_NUMBER = 9;
+  private com.google.maps.routing.v2.RouteLegStepTransitDetails transitDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * Details pertaining to this step if the travel mode is `TRANSIT`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+   *
+   * @return Whether the transitDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransitDetails() {
+    return transitDetails_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details pertaining to this step if the travel mode is `TRANSIT`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+   *
+   * @return The transitDetails.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.RouteLegStepTransitDetails getTransitDetails() {
+    return transitDetails_ == null
+        ? com.google.maps.routing.v2.RouteLegStepTransitDetails.getDefaultInstance()
+        : transitDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details pertaining to this step if the travel mode is `TRANSIT`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.RouteLegStepTransitDetailsOrBuilder
+      getTransitDetailsOrBuilder() {
+    return transitDetails_ == null
+        ? com.google.maps.routing.v2.RouteLegStepTransitDetails.getDefaultInstance()
+        : transitDetails_;
+  }
+
+  public static final int TRAVEL_MODE_FIELD_NUMBER = 10;
+  private int travelMode_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The travel mode used for this step.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 10;</code>
+   *
+   * @return The enum numeric value on the wire for travelMode.
+   */
+  @java.lang.Override
+  public int getTravelModeValue() {
+    return travelMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The travel mode used for this step.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 10;</code>
+   *
+   * @return The travelMode.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.RouteTravelMode getTravelMode() {
+    com.google.maps.routing.v2.RouteTravelMode result =
+        com.google.maps.routing.v2.RouteTravelMode.forNumber(travelMode_);
+    return result == null ? com.google.maps.routing.v2.RouteTravelMode.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -428,6 +1618,16 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     if (travelAdvisory_ != null) {
       output.writeMessage(7, getTravelAdvisory());
     }
+    if (localizedValues_ != null) {
+      output.writeMessage(8, getLocalizedValues());
+    }
+    if (transitDetails_ != null) {
+      output.writeMessage(9, getTransitDetails());
+    }
+    if (travelMode_
+        != com.google.maps.routing.v2.RouteTravelMode.TRAVEL_MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(10, travelMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -458,6 +1658,16 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     }
     if (travelAdvisory_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTravelAdvisory());
+    }
+    if (localizedValues_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getLocalizedValues());
+    }
+    if (transitDetails_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getTransitDetails());
+    }
+    if (travelMode_
+        != com.google.maps.routing.v2.RouteTravelMode.TRAVEL_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, travelMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -499,6 +1709,15 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     if (hasTravelAdvisory()) {
       if (!getTravelAdvisory().equals(other.getTravelAdvisory())) return false;
     }
+    if (hasLocalizedValues() != other.hasLocalizedValues()) return false;
+    if (hasLocalizedValues()) {
+      if (!getLocalizedValues().equals(other.getLocalizedValues())) return false;
+    }
+    if (hasTransitDetails() != other.hasTransitDetails()) return false;
+    if (hasTransitDetails()) {
+      if (!getTransitDetails().equals(other.getTransitDetails())) return false;
+    }
+    if (travelMode_ != other.travelMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -536,6 +1755,16 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TRAVEL_ADVISORY_FIELD_NUMBER;
       hash = (53 * hash) + getTravelAdvisory().hashCode();
     }
+    if (hasLocalizedValues()) {
+      hash = (37 * hash) + LOCALIZED_VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalizedValues().hashCode();
+    }
+    if (hasTransitDetails()) {
+      hash = (37 * hash) + TRANSIT_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getTransitDetails().hashCode();
+    }
+    hash = (37 * hash) + TRAVEL_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + travelMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -640,7 +1869,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates a segment of a [RouteLeg][google.maps.routing.v2.RouteLeg]. A
+   * Contains a segment of a [RouteLeg][google.maps.routing.v2.RouteLeg]. A
    * step corresponds to a single navigation instruction. Route legs are made up
    * of steps.
    * </pre>
@@ -708,6 +1937,17 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         travelAdvisoryBuilder_.dispose();
         travelAdvisoryBuilder_ = null;
       }
+      localizedValues_ = null;
+      if (localizedValuesBuilder_ != null) {
+        localizedValuesBuilder_.dispose();
+        localizedValuesBuilder_ = null;
+      }
+      transitDetails_ = null;
+      if (transitDetailsBuilder_ != null) {
+        transitDetailsBuilder_.dispose();
+        transitDetailsBuilder_ = null;
+      }
+      travelMode_ = 0;
       return this;
     }
 
@@ -771,6 +2011,17 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.travelAdvisory_ =
             travelAdvisoryBuilder_ == null ? travelAdvisory_ : travelAdvisoryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.localizedValues_ =
+            localizedValuesBuilder_ == null ? localizedValues_ : localizedValuesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.transitDetails_ =
+            transitDetailsBuilder_ == null ? transitDetails_ : transitDetailsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.travelMode_ = travelMode_;
       }
     }
 
@@ -839,6 +2090,15 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasTravelAdvisory()) {
         mergeTravelAdvisory(other.getTravelAdvisory());
+      }
+      if (other.hasLocalizedValues()) {
+        mergeLocalizedValues(other.getLocalizedValues());
+      }
+      if (other.hasTransitDetails()) {
+        mergeTransitDetails(other.getTransitDetails());
+      }
+      if (other.travelMode_ != 0) {
+        setTravelModeValue(other.getTravelModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -909,6 +2169,24 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getLocalizedValuesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getTransitDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 80:
+              {
+                travelMode_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1933,8 +3211,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction on a leg step.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a leg step.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1948,8 +3226,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction on a leg step.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a leg step.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1969,8 +3247,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction on a leg step.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a leg step.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -1992,8 +3270,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction on a leg step.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a leg step.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -2013,8 +3291,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction on a leg step.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a leg step.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -2041,8 +3319,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction on a leg step.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a leg step.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -2061,8 +3339,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction on a leg step.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a leg step.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -2077,8 +3355,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction on a leg step.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a leg step.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -2097,8 +3375,8 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction on a leg step.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a leg step.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -2118,6 +3396,487 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
         travelAdvisory_ = null;
       }
       return travelAdvisoryBuilder_;
+    }
+
+    private com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localizedValues_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues,
+            com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.Builder,
+            com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValuesOrBuilder>
+        localizedValuesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLegStep`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+     * </code>
+     *
+     * @return Whether the localizedValues field is set.
+     */
+    public boolean hasLocalizedValues() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLegStep`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+     * </code>
+     *
+     * @return The localizedValues.
+     */
+    public com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+        getLocalizedValues() {
+      if (localizedValuesBuilder_ == null) {
+        return localizedValues_ == null
+            ? com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+                .getDefaultInstance()
+            : localizedValues_;
+      } else {
+        return localizedValuesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLegStep`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+     * </code>
+     */
+    public Builder setLocalizedValues(
+        com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues value) {
+      if (localizedValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        localizedValues_ = value;
+      } else {
+        localizedValuesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLegStep`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+     * </code>
+     */
+    public Builder setLocalizedValues(
+        com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.Builder
+            builderForValue) {
+      if (localizedValuesBuilder_ == null) {
+        localizedValues_ = builderForValue.build();
+      } else {
+        localizedValuesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLegStep`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+     * </code>
+     */
+    public Builder mergeLocalizedValues(
+        com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues value) {
+      if (localizedValuesBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && localizedValues_ != null
+            && localizedValues_
+                != com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+                    .getDefaultInstance()) {
+          getLocalizedValuesBuilder().mergeFrom(value);
+        } else {
+          localizedValues_ = value;
+        }
+      } else {
+        localizedValuesBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLegStep`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+     * </code>
+     */
+    public Builder clearLocalizedValues() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      localizedValues_ = null;
+      if (localizedValuesBuilder_ != null) {
+        localizedValuesBuilder_.dispose();
+        localizedValuesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLegStep`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+     * </code>
+     */
+    public com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.Builder
+        getLocalizedValuesBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getLocalizedValuesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLegStep`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+     * </code>
+     */
+    public com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValuesOrBuilder
+        getLocalizedValuesOrBuilder() {
+      if (localizedValuesBuilder_ != null) {
+        return localizedValuesBuilder_.getMessageOrBuilder();
+      } else {
+        return localizedValues_ == null
+            ? com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues
+                .getDefaultInstance()
+            : localizedValues_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLegStep`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues,
+            com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.Builder,
+            com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValuesOrBuilder>
+        getLocalizedValuesFieldBuilder() {
+      if (localizedValuesBuilder_ == null) {
+        localizedValuesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues,
+                com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues.Builder,
+                com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValuesOrBuilder>(
+                getLocalizedValues(), getParentForChildren(), isClean());
+        localizedValues_ = null;
+      }
+      return localizedValuesBuilder_;
+    }
+
+    private com.google.maps.routing.v2.RouteLegStepTransitDetails transitDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.RouteLegStepTransitDetails,
+            com.google.maps.routing.v2.RouteLegStepTransitDetails.Builder,
+            com.google.maps.routing.v2.RouteLegStepTransitDetailsOrBuilder>
+        transitDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details pertaining to this step if the travel mode is `TRANSIT`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+     *
+     * @return Whether the transitDetails field is set.
+     */
+    public boolean hasTransitDetails() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details pertaining to this step if the travel mode is `TRANSIT`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+     *
+     * @return The transitDetails.
+     */
+    public com.google.maps.routing.v2.RouteLegStepTransitDetails getTransitDetails() {
+      if (transitDetailsBuilder_ == null) {
+        return transitDetails_ == null
+            ? com.google.maps.routing.v2.RouteLegStepTransitDetails.getDefaultInstance()
+            : transitDetails_;
+      } else {
+        return transitDetailsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details pertaining to this step if the travel mode is `TRANSIT`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+     */
+    public Builder setTransitDetails(com.google.maps.routing.v2.RouteLegStepTransitDetails value) {
+      if (transitDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transitDetails_ = value;
+      } else {
+        transitDetailsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details pertaining to this step if the travel mode is `TRANSIT`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+     */
+    public Builder setTransitDetails(
+        com.google.maps.routing.v2.RouteLegStepTransitDetails.Builder builderForValue) {
+      if (transitDetailsBuilder_ == null) {
+        transitDetails_ = builderForValue.build();
+      } else {
+        transitDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details pertaining to this step if the travel mode is `TRANSIT`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+     */
+    public Builder mergeTransitDetails(
+        com.google.maps.routing.v2.RouteLegStepTransitDetails value) {
+      if (transitDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && transitDetails_ != null
+            && transitDetails_
+                != com.google.maps.routing.v2.RouteLegStepTransitDetails.getDefaultInstance()) {
+          getTransitDetailsBuilder().mergeFrom(value);
+        } else {
+          transitDetails_ = value;
+        }
+      } else {
+        transitDetailsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details pertaining to this step if the travel mode is `TRANSIT`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+     */
+    public Builder clearTransitDetails() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      transitDetails_ = null;
+      if (transitDetailsBuilder_ != null) {
+        transitDetailsBuilder_.dispose();
+        transitDetailsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details pertaining to this step if the travel mode is `TRANSIT`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+     */
+    public com.google.maps.routing.v2.RouteLegStepTransitDetails.Builder
+        getTransitDetailsBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getTransitDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details pertaining to this step if the travel mode is `TRANSIT`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+     */
+    public com.google.maps.routing.v2.RouteLegStepTransitDetailsOrBuilder
+        getTransitDetailsOrBuilder() {
+      if (transitDetailsBuilder_ != null) {
+        return transitDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return transitDetails_ == null
+            ? com.google.maps.routing.v2.RouteLegStepTransitDetails.getDefaultInstance()
+            : transitDetails_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details pertaining to this step if the travel mode is `TRANSIT`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.RouteLegStepTransitDetails,
+            com.google.maps.routing.v2.RouteLegStepTransitDetails.Builder,
+            com.google.maps.routing.v2.RouteLegStepTransitDetailsOrBuilder>
+        getTransitDetailsFieldBuilder() {
+      if (transitDetailsBuilder_ == null) {
+        transitDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routing.v2.RouteLegStepTransitDetails,
+                com.google.maps.routing.v2.RouteLegStepTransitDetails.Builder,
+                com.google.maps.routing.v2.RouteLegStepTransitDetailsOrBuilder>(
+                getTransitDetails(), getParentForChildren(), isClean());
+        transitDetails_ = null;
+      }
+      return transitDetailsBuilder_;
+    }
+
+    private int travelMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The travel mode used for this step.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 10;</code>
+     *
+     * @return The enum numeric value on the wire for travelMode.
+     */
+    @java.lang.Override
+    public int getTravelModeValue() {
+      return travelMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The travel mode used for this step.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 10;</code>
+     *
+     * @param value The enum numeric value on the wire for travelMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTravelModeValue(int value) {
+      travelMode_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The travel mode used for this step.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 10;</code>
+     *
+     * @return The travelMode.
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.RouteTravelMode getTravelMode() {
+      com.google.maps.routing.v2.RouteTravelMode result =
+          com.google.maps.routing.v2.RouteTravelMode.forNumber(travelMode_);
+      return result == null ? com.google.maps.routing.v2.RouteTravelMode.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The travel mode used for this step.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 10;</code>
+     *
+     * @param value The travelMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTravelMode(com.google.maps.routing.v2.RouteTravelMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      travelMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The travel mode used for this step.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTravelMode() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      travelMode_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

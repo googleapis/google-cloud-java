@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     id_ = "";
     action_ = 0;
     condition_ = "";
-    expressions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    expressions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     logMessageFormat_ = "";
     logLevel_ = 0;
     userEmail_ = "";
@@ -54,11 +54,6 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Breakpoint();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -584,7 +579,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   public static final int EXPRESSIONS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList expressions_;
+  private com.google.protobuf.LazyStringArrayList expressions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -669,6 +665,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    * `$1`, etc. These placeholders are replaced with the evaluated value
    * of the appropriate expression. Expressions not referenced in
    * `log_message_format` are not logged.
+   *
    * Example: `Message received, id = $0, count = $1` with
    * `expressions` = `[ message.id, message.count ]`.
    * </pre>
@@ -698,6 +695,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    * `$1`, etc. These placeholders are replaced with the evaluated value
    * of the appropriate expression. Expressions not referenced in
    * `log_message_format` are not logged.
+   *
    * Example: `Message received, id = $0, count = $1` with
    * `expressions` = `[ message.id, message.count ]`.
    * </pre>
@@ -928,13 +926,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Breakpoint status.
+   *
    * The status includes an error flag and a human readable message.
    * This field is usually unset. The message can be either
    * informational or an error message. Regardless, clients should always
    * display the text message back to the user.
+   *
    * Error status indicates complete failure of the breakpoint.
+   *
    * Example (non-final state): `Still loading symbols...`
+   *
    * Examples (final state):
+   *
    * *   `Invalid line number` referring to location
    * *   `Field f not found in class C` referring to condition
    * </pre>
@@ -952,13 +955,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Breakpoint status.
+   *
    * The status includes an error flag and a human readable message.
    * This field is usually unset. The message can be either
    * informational or an error message. Regardless, clients should always
    * display the text message back to the user.
+   *
    * Error status indicates complete failure of the breakpoint.
+   *
    * Example (non-final state): `Still loading symbols...`
+   *
    * Examples (final state):
+   *
    * *   `Invalid line number` referring to location
    * *   `Field f not found in class C` referring to condition
    * </pre>
@@ -978,13 +986,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Breakpoint status.
+   *
    * The status includes an error flag and a human readable message.
    * This field is usually unset. The message can be either
    * informational or an error message. Regardless, clients should always
    * display the text message back to the user.
+   *
    * Error status indicates complete failure of the breakpoint.
+   *
    * Example (non-final state): `Still loading symbols...`
+   *
    * Examples (final state):
+   *
    * *   `Invalid line number` referring to location
    * *   `Field f not found in class C` referring to condition
    * </pre>
@@ -1193,6 +1206,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    * For example, the same `this` object, which may appear at many levels of
    * the stack, can have all of its data stored once in this table.  The
    * stack frame variables then would hold only a reference to it.
+   *
    * The variable `var_table_index` field is an index into this repeated field.
    * The stored objects are nameless and get their name from the referencing
    * variable. The effective variable is a merge of the referencing variable
@@ -1216,6 +1230,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    * For example, the same `this` object, which may appear at many levels of
    * the stack, can have all of its data stored once in this table.  The
    * stack frame variables then would hold only a reference to it.
+   *
    * The variable `var_table_index` field is an index into this repeated field.
    * The stored objects are nameless and get their name from the referencing
    * variable. The effective variable is a merge of the referencing variable
@@ -1240,6 +1255,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    * For example, the same `this` object, which may appear at many levels of
    * the stack, can have all of its data stored once in this table.  The
    * stack frame variables then would hold only a reference to it.
+   *
    * The variable `var_table_index` field is an index into this repeated field.
    * The stored objects are nameless and get their name from the referencing
    * variable. The effective variable is a merge of the referencing variable
@@ -1263,6 +1279,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    * For example, the same `this` object, which may appear at many levels of
    * the stack, can have all of its data stored once in this table.  The
    * stack frame variables then would hold only a reference to it.
+   *
    * The variable `var_table_index` field is an index into this repeated field.
    * The stored objects are nameless and get their name from the referencing
    * variable. The effective variable is a merge of the referencing variable
@@ -1286,6 +1303,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    * For example, the same `this` object, which may appear at many levels of
    * the stack, can have all of its data stored once in this table.  The
    * stack frame variables then would hold only a reference to it.
+   *
    * The variable `var_table_index` field is an index into this repeated field.
    * The stored objects are nameless and get their name from the referencing
    * variable. The effective variable is a merge of the referencing variable
@@ -1809,8 +1827,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         locationBuilder_ = null;
       }
       condition_ = "";
-      expressions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      expressions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       logMessageFormat_ = "";
       logLevel_ = 0;
       isFinalState_ = false;
@@ -1889,11 +1906,6 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(
         com.google.devtools.clouddebugger.v2.Breakpoint result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        expressions_ = expressions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.expressions_ = expressions_;
       if (stackFramesBuilder_ == null) {
         if (((bitField0_ & 0x00001000) != 0)) {
           stackFrames_ = java.util.Collections.unmodifiableList(stackFrames_);
@@ -1936,6 +1948,10 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.condition_ = condition_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        expressions_.makeImmutable();
+        result.expressions_ = expressions_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.logMessageFormat_ = logMessageFormat_;
@@ -2029,7 +2045,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       if (!other.expressions_.isEmpty()) {
         if (expressions_.isEmpty()) {
           expressions_ = other.expressions_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureExpressionsIsMutable();
           expressions_.addAll(other.expressions_);
@@ -2818,14 +2834,14 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList expressions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList expressions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureExpressionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!expressions_.isModifiable()) {
         expressions_ = new com.google.protobuf.LazyStringArrayList(expressions_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2842,7 +2858,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the expressions.
      */
     public com.google.protobuf.ProtocolStringList getExpressionsList() {
-      return expressions_.getUnmodifiableView();
+      expressions_.makeImmutable();
+      return expressions_;
     }
     /**
      *
@@ -2919,6 +2936,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExpressionsIsMutable();
       expressions_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2943,6 +2961,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExpressionsIsMutable();
       expressions_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2964,6 +2983,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllExpressions(java.lang.Iterable<java.lang.String> values) {
       ensureExpressionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, expressions_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2982,8 +3002,9 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExpressions() {
-      expressions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      expressions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -3009,6 +3030,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureExpressionsIsMutable();
       expressions_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3023,6 +3045,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * `$1`, etc. These placeholders are replaced with the evaluated value
      * of the appropriate expression. Expressions not referenced in
      * `log_message_format` are not logged.
+     *
      * Example: `Message received, id = $0, count = $1` with
      * `expressions` = `[ message.id, message.count ]`.
      * </pre>
@@ -3051,6 +3074,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * `$1`, etc. These placeholders are replaced with the evaluated value
      * of the appropriate expression. Expressions not referenced in
      * `log_message_format` are not logged.
+     *
      * Example: `Message received, id = $0, count = $1` with
      * `expressions` = `[ message.id, message.count ]`.
      * </pre>
@@ -3079,6 +3103,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * `$1`, etc. These placeholders are replaced with the evaluated value
      * of the appropriate expression. Expressions not referenced in
      * `log_message_format` are not logged.
+     *
      * Example: `Message received, id = $0, count = $1` with
      * `expressions` = `[ message.id, message.count ]`.
      * </pre>
@@ -3106,6 +3131,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * `$1`, etc. These placeholders are replaced with the evaluated value
      * of the appropriate expression. Expressions not referenced in
      * `log_message_format` are not logged.
+     *
      * Example: `Message received, id = $0, count = $1` with
      * `expressions` = `[ message.id, message.count ]`.
      * </pre>
@@ -3129,6 +3155,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * `$1`, etc. These placeholders are replaced with the evaluated value
      * of the appropriate expression. Expressions not referenced in
      * `log_message_format` are not logged.
+     *
      * Example: `Message received, id = $0, count = $1` with
      * `expressions` = `[ message.id, message.count ]`.
      * </pre>
@@ -3785,13 +3812,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Breakpoint status.
+     *
      * The status includes an error flag and a human readable message.
      * This field is usually unset. The message can be either
      * informational or an error message. Regardless, clients should always
      * display the text message back to the user.
+     *
      * Error status indicates complete failure of the breakpoint.
+     *
      * Example (non-final state): `Still loading symbols...`
+     *
      * Examples (final state):
+     *
      * *   `Invalid line number` referring to location
      * *   `Field f not found in class C` referring to condition
      * </pre>
@@ -3808,13 +3840,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Breakpoint status.
+     *
      * The status includes an error flag and a human readable message.
      * This field is usually unset. The message can be either
      * informational or an error message. Regardless, clients should always
      * display the text message back to the user.
+     *
      * Error status indicates complete failure of the breakpoint.
+     *
      * Example (non-final state): `Still loading symbols...`
+     *
      * Examples (final state):
+     *
      * *   `Invalid line number` referring to location
      * *   `Field f not found in class C` referring to condition
      * </pre>
@@ -3837,13 +3874,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Breakpoint status.
+     *
      * The status includes an error flag and a human readable message.
      * This field is usually unset. The message can be either
      * informational or an error message. Regardless, clients should always
      * display the text message back to the user.
+     *
      * Error status indicates complete failure of the breakpoint.
+     *
      * Example (non-final state): `Still loading symbols...`
+     *
      * Examples (final state):
+     *
      * *   `Invalid line number` referring to location
      * *   `Field f not found in class C` referring to condition
      * </pre>
@@ -3868,13 +3910,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Breakpoint status.
+     *
      * The status includes an error flag and a human readable message.
      * This field is usually unset. The message can be either
      * informational or an error message. Regardless, clients should always
      * display the text message back to the user.
+     *
      * Error status indicates complete failure of the breakpoint.
+     *
      * Example (non-final state): `Still loading symbols...`
+     *
      * Examples (final state):
+     *
      * *   `Invalid line number` referring to location
      * *   `Field f not found in class C` referring to condition
      * </pre>
@@ -3897,13 +3944,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Breakpoint status.
+     *
      * The status includes an error flag and a human readable message.
      * This field is usually unset. The message can be either
      * informational or an error message. Regardless, clients should always
      * display the text message back to the user.
+     *
      * Error status indicates complete failure of the breakpoint.
+     *
      * Example (non-final state): `Still loading symbols...`
+     *
      * Examples (final state):
+     *
      * *   `Invalid line number` referring to location
      * *   `Field f not found in class C` referring to condition
      * </pre>
@@ -3931,13 +3983,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Breakpoint status.
+     *
      * The status includes an error flag and a human readable message.
      * This field is usually unset. The message can be either
      * informational or an error message. Regardless, clients should always
      * display the text message back to the user.
+     *
      * Error status indicates complete failure of the breakpoint.
+     *
      * Example (non-final state): `Still loading symbols...`
+     *
      * Examples (final state):
+     *
      * *   `Invalid line number` referring to location
      * *   `Field f not found in class C` referring to condition
      * </pre>
@@ -3959,13 +4016,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Breakpoint status.
+     *
      * The status includes an error flag and a human readable message.
      * This field is usually unset. The message can be either
      * informational or an error message. Regardless, clients should always
      * display the text message back to the user.
+     *
      * Error status indicates complete failure of the breakpoint.
+     *
      * Example (non-final state): `Still loading symbols...`
+     *
      * Examples (final state):
+     *
      * *   `Invalid line number` referring to location
      * *   `Field f not found in class C` referring to condition
      * </pre>
@@ -3982,13 +4044,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Breakpoint status.
+     *
      * The status includes an error flag and a human readable message.
      * This field is usually unset. The message can be either
      * informational or an error message. Regardless, clients should always
      * display the text message back to the user.
+     *
      * Error status indicates complete failure of the breakpoint.
+     *
      * Example (non-final state): `Still loading symbols...`
+     *
      * Examples (final state):
+     *
      * *   `Invalid line number` referring to location
      * *   `Field f not found in class C` referring to condition
      * </pre>
@@ -4009,13 +4076,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Breakpoint status.
+     *
      * The status includes an error flag and a human readable message.
      * This field is usually unset. The message can be either
      * informational or an error message. Regardless, clients should always
      * display the text message back to the user.
+     *
      * Error status indicates complete failure of the breakpoint.
+     *
      * Example (non-final state): `Still loading symbols...`
+     *
      * Examples (final state):
+     *
      * *   `Invalid line number` referring to location
      * *   `Field f not found in class C` referring to condition
      * </pre>
@@ -4910,6 +4982,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -4936,6 +5009,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -4962,6 +5036,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -4988,6 +5063,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5021,6 +5097,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5051,6 +5128,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5083,6 +5161,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5116,6 +5195,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5146,6 +5226,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5176,6 +5257,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5206,6 +5288,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5235,6 +5318,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5264,6 +5348,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5287,6 +5372,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5314,6 +5400,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5341,6 +5428,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5364,6 +5452,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable
@@ -5388,6 +5477,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * For example, the same `this` object, which may appear at many levels of
      * the stack, can have all of its data stored once in this table.  The
      * stack frame variables then would hold only a reference to it.
+     *
      * The variable `var_table_index` field is an index into this repeated field.
      * The stored objects are nameless and get their name from the referencing
      * variable. The effective variable is a merge of the referencing variable

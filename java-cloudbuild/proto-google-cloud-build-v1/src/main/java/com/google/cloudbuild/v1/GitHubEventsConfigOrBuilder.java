@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public interface GitHubEventsConfigOrBuilder
    * <code>int64 installation_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.GitHubEventsConfig.installation_id is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1585
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1876
    * @return The installationId.
    */
   @java.lang.Deprecated
@@ -165,5 +165,5 @@ public interface GitHubEventsConfigOrBuilder
    */
   com.google.cloudbuild.v1.PushFilterOrBuilder getPushOrBuilder();
 
-  public com.google.cloudbuild.v1.GitHubEventsConfig.EventCase getEventCase();
+  com.google.cloudbuild.v1.GitHubEventsConfig.EventCase getEventCase();
 }

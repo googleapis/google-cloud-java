@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class ListOSPolicyAssignmentReportsRequest
     return new ListOSPolicyAssignmentReportsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReportsProto
         .internal_static_google_cloud_osconfig_v1alpha_ListOSPolicyAssignmentReportsRequest_descriptor;
@@ -80,8 +75,10 @@ public final class ListOSPolicyAssignmentReportsRequest
    *
    * <pre>
    * Required. The parent resource name.
+   *
    * Format:
    * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * For `{instance}`, either `instance-name`, `instance-id`, or `-` can be
    * provided. If '-' is provided, the response will include
@@ -90,6 +87,7 @@ public final class ListOSPolicyAssignmentReportsRequest
    * is provided, the response will include OSPolicyAssignmentReports for all
    * OSPolicyAssignments in the project/location.
    * Either {instance} or {assignment} must be `-`.
+   *
    * For example:
    * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
    *  returns all reports for the instance
@@ -122,8 +120,10 @@ public final class ListOSPolicyAssignmentReportsRequest
    *
    * <pre>
    * Required. The parent resource name.
+   *
    * Format:
    * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * For `{instance}`, either `instance-name`, `instance-id`, or `-` can be
    * provided. If '-' is provided, the response will include
@@ -132,6 +132,7 @@ public final class ListOSPolicyAssignmentReportsRequest
    * is provided, the response will include OSPolicyAssignmentReports for all
    * OSPolicyAssignments in the project/location.
    * Either {instance} or {assignment} must be `-`.
+   *
    * For example:
    * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
    *  returns all reports for the instance
@@ -714,8 +715,10 @@ public final class ListOSPolicyAssignmentReportsRequest
      *
      * <pre>
      * Required. The parent resource name.
+     *
      * Format:
      * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * For `{instance}`, either `instance-name`, `instance-id`, or `-` can be
      * provided. If '-' is provided, the response will include
@@ -724,6 +727,7 @@ public final class ListOSPolicyAssignmentReportsRequest
      * is provided, the response will include OSPolicyAssignmentReports for all
      * OSPolicyAssignments in the project/location.
      * Either {instance} or {assignment} must be `-`.
+     *
      * For example:
      * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
      *  returns all reports for the instance
@@ -755,8 +759,10 @@ public final class ListOSPolicyAssignmentReportsRequest
      *
      * <pre>
      * Required. The parent resource name.
+     *
      * Format:
      * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * For `{instance}`, either `instance-name`, `instance-id`, or `-` can be
      * provided. If '-' is provided, the response will include
@@ -765,6 +771,7 @@ public final class ListOSPolicyAssignmentReportsRequest
      * is provided, the response will include OSPolicyAssignmentReports for all
      * OSPolicyAssignments in the project/location.
      * Either {instance} or {assignment} must be `-`.
+     *
      * For example:
      * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
      *  returns all reports for the instance
@@ -796,8 +803,10 @@ public final class ListOSPolicyAssignmentReportsRequest
      *
      * <pre>
      * Required. The parent resource name.
+     *
      * Format:
      * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * For `{instance}`, either `instance-name`, `instance-id`, or `-` can be
      * provided. If '-' is provided, the response will include
@@ -806,6 +815,7 @@ public final class ListOSPolicyAssignmentReportsRequest
      * is provided, the response will include OSPolicyAssignmentReports for all
      * OSPolicyAssignments in the project/location.
      * Either {instance} or {assignment} must be `-`.
+     *
      * For example:
      * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
      *  returns all reports for the instance
@@ -836,8 +846,10 @@ public final class ListOSPolicyAssignmentReportsRequest
      *
      * <pre>
      * Required. The parent resource name.
+     *
      * Format:
      * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * For `{instance}`, either `instance-name`, `instance-id`, or `-` can be
      * provided. If '-' is provided, the response will include
@@ -846,6 +858,7 @@ public final class ListOSPolicyAssignmentReportsRequest
      * is provided, the response will include OSPolicyAssignmentReports for all
      * OSPolicyAssignments in the project/location.
      * Either {instance} or {assignment} must be `-`.
+     *
      * For example:
      * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
      *  returns all reports for the instance
@@ -872,8 +885,10 @@ public final class ListOSPolicyAssignmentReportsRequest
      *
      * <pre>
      * Required. The parent resource name.
+     *
      * Format:
      * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * For `{instance}`, either `instance-name`, `instance-id`, or `-` can be
      * provided. If '-' is provided, the response will include
@@ -882,6 +897,7 @@ public final class ListOSPolicyAssignmentReportsRequest
      * is provided, the response will include OSPolicyAssignmentReports for all
      * OSPolicyAssignments in the project/location.
      * Either {instance} or {assignment} must be `-`.
+     *
      * For example:
      * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
      *  returns all reports for the instance

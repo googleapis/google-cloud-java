@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateAttachedClusterRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -155,6 +150,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
    * this field. The elements of the repeated paths field can only include these
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `platform_version`.
@@ -180,6 +176,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
    * this field. The elements of the repeated paths field can only include these
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `platform_version`.
@@ -205,6 +202,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
    * this field. The elements of the repeated paths field can only include these
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `platform_version`.
@@ -917,6 +915,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * this field. The elements of the repeated paths field can only include these
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+     *
      *  *   `description`.
      *  *   `annotations`.
      *  *   `platform_version`.
@@ -941,6 +940,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * this field. The elements of the repeated paths field can only include these
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+     *
      *  *   `description`.
      *  *   `annotations`.
      *  *   `platform_version`.
@@ -971,6 +971,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * this field. The elements of the repeated paths field can only include these
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+     *
      *  *   `description`.
      *  *   `annotations`.
      *  *   `platform_version`.
@@ -1003,6 +1004,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * this field. The elements of the repeated paths field can only include these
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+     *
      *  *   `description`.
      *  *   `annotations`.
      *  *   `platform_version`.
@@ -1032,6 +1034,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * this field. The elements of the repeated paths field can only include these
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+     *
      *  *   `description`.
      *  *   `annotations`.
      *  *   `platform_version`.
@@ -1067,6 +1070,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * this field. The elements of the repeated paths field can only include these
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+     *
      *  *   `description`.
      *  *   `annotations`.
      *  *   `platform_version`.
@@ -1096,6 +1100,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * this field. The elements of the repeated paths field can only include these
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+     *
      *  *   `description`.
      *  *   `annotations`.
      *  *   `platform_version`.
@@ -1120,6 +1125,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * this field. The elements of the repeated paths field can only include these
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+     *
      *  *   `description`.
      *  *   `annotations`.
      *  *   `platform_version`.
@@ -1148,6 +1154,7 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * this field. The elements of the repeated paths field can only include these
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+     *
      *  *   `description`.
      *  *   `annotations`.
      *  *   `platform_version`.

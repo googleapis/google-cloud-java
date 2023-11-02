@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,6 +97,7 @@ public interface ConfigureDnsSettingsRequestOrBuilder
    * For example, if only the name servers are being updated for an existing
    * Custom DNS configuration, the `update_mask` is
    * `"custom_dns.name_servers"`.
+   *
    * When changing the DNS provider from one type to another, pass the new
    * provider's field name as part of the field mask. For example, when changing
    * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -117,6 +118,7 @@ public interface ConfigureDnsSettingsRequestOrBuilder
    * For example, if only the name servers are being updated for an existing
    * Custom DNS configuration, the `update_mask` is
    * `"custom_dns.name_servers"`.
+   *
    * When changing the DNS provider from one type to another, pass the new
    * provider's field name as part of the field mask. For example, when changing
    * from a Google Domains DNS configuration to a Custom DNS configuration, the
@@ -137,6 +139,7 @@ public interface ConfigureDnsSettingsRequestOrBuilder
    * For example, if only the name servers are being updated for an existing
    * Custom DNS configuration, the `update_mask` is
    * `"custom_dns.name_servers"`.
+   *
    * When changing the DNS provider from one type to another, pass the new
    * provider's field name as part of the field mask. For example, when changing
    * from a Google Domains DNS configuration to a Custom DNS configuration, the

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,20 +43,15 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     project_ = "";
     displayName_ = "";
     description_ = "";
-    additionalAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    additionalAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     location_ = "";
-    networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StandardResourceMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -357,7 +352,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   public static final int ADDITIONAL_ATTRIBUTES_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList additionalAttributes_;
+  private com.google.protobuf.LazyStringArrayList additionalAttributes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -595,7 +591,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   public static final int NETWORK_TAGS_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList networkTags_;
+  private com.google.protobuf.LazyStringArrayList networkTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -990,12 +987,10 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       project_ = "";
       displayName_ = "";
       description_ = "";
-      additionalAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      additionalAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       location_ = "";
       internalGetMutableLabels().clear();
-      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1023,26 +1018,11 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public com.google.cloud.asset.v1p1beta1.StandardResourceMetadata buildPartial() {
       com.google.cloud.asset.v1p1beta1.StandardResourceMetadata result =
           new com.google.cloud.asset.v1p1beta1.StandardResourceMetadata(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.asset.v1p1beta1.StandardResourceMetadata result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        additionalAttributes_ = additionalAttributes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.additionalAttributes_ = additionalAttributes_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        networkTags_ = networkTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.networkTags_ = networkTags_;
     }
 
     private void buildPartial0(com.google.cloud.asset.v1p1beta1.StandardResourceMetadata result) {
@@ -1062,12 +1042,20 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.description_ = description_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        additionalAttributes_.makeImmutable();
+        result.additionalAttributes_ = additionalAttributes_;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.location_ = location_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        networkTags_.makeImmutable();
+        result.networkTags_ = networkTags_;
       }
     }
 
@@ -1145,7 +1133,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       if (!other.additionalAttributes_.isEmpty()) {
         if (additionalAttributes_.isEmpty()) {
           additionalAttributes_ = other.additionalAttributes_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureAdditionalAttributesIsMutable();
           additionalAttributes_.addAll(other.additionalAttributes_);
@@ -1162,7 +1150,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
@@ -1841,14 +1829,14 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.protobuf.LazyStringList additionalAttributes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList additionalAttributes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAdditionalAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!additionalAttributes_.isModifiable()) {
         additionalAttributes_ = new com.google.protobuf.LazyStringArrayList(additionalAttributes_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -1864,7 +1852,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      * @return A list containing the additionalAttributes.
      */
     public com.google.protobuf.ProtocolStringList getAdditionalAttributesList() {
-      return additionalAttributes_.getUnmodifiableView();
+      additionalAttributes_.makeImmutable();
+      return additionalAttributes_;
     }
     /**
      *
@@ -1937,6 +1926,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       }
       ensureAdditionalAttributesIsMutable();
       additionalAttributes_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1960,6 +1950,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       }
       ensureAdditionalAttributesIsMutable();
       additionalAttributes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1980,6 +1971,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public Builder addAllAdditionalAttributes(java.lang.Iterable<java.lang.String> values) {
       ensureAdditionalAttributesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalAttributes_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1997,8 +1989,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearAdditionalAttributes() {
-      additionalAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      additionalAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2023,6 +2016,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureAdditionalAttributesIsMutable();
       additionalAttributes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2322,14 +2316,14 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.protobuf.LazyStringList networkTags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList networkTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNetworkTagsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!networkTags_.isModifiable()) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -2347,7 +2341,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      * @return A list containing the networkTags.
      */
     public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
-      return networkTags_.getUnmodifiableView();
+      networkTags_.makeImmutable();
+      return networkTags_;
     }
     /**
      *
@@ -2428,6 +2423,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       }
       ensureNetworkTagsIsMutable();
       networkTags_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2453,6 +2449,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       }
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2475,6 +2472,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
       ensureNetworkTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2494,8 +2492,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearNetworkTags() {
-      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -2522,6 +2521,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

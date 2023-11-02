@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface ServiceContextOrBuilder
    * executable, job, or Google App Engine service name. This field is expected
    * to have a low number of values that are relatively stable over time, as
    * opposed to `version`, which can be changed whenever new code is deployed.
+   *
    * Contains the service name for error reports extracted from Google
    * App Engine logs or `default` if the App Engine default service is used.
    * </pre>
@@ -48,6 +49,7 @@ public interface ServiceContextOrBuilder
    * executable, job, or Google App Engine service name. This field is expected
    * to have a low number of values that are relatively stable over time, as
    * opposed to `version`, which can be changed whenever new code is deployed.
+   *
    * Contains the service name for error reports extracted from Google
    * App Engine logs or `default` if the App Engine default service is used.
    * </pre>
@@ -95,6 +97,7 @@ public interface ServiceContextOrBuilder
    * <pre>
    * Type of the MonitoredResource. List of possible values:
    * https://cloud.google.com/monitoring/api/resources
+   *
    * Value is set automatically for incoming errors and must not be set when
    * reporting errors.
    * </pre>
@@ -110,6 +113,7 @@ public interface ServiceContextOrBuilder
    * <pre>
    * Type of the MonitoredResource. List of possible values:
    * https://cloud.google.com/monitoring/api/resources
+   *
    * Value is set automatically for incoming errors and must not be set when
    * reporting errors.
    * </pre>

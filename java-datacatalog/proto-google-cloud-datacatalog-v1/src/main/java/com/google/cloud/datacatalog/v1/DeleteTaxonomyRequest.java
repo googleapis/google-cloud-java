@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
     return new DeleteTaxonomyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.PolicyTagManagerProto
         .internal_static_google_cloud_datacatalog_v1_DeleteTaxonomyRequest_descriptor;
@@ -77,6 +72,7 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Resource name of the taxonomy to delete.
+   *
    * Note: All policy tags in this taxonomy are also deleted.
    * </pre>
    *
@@ -103,6 +99,7 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Resource name of the taxonomy to delete.
+   *
    * Note: All policy tags in this taxonomy are also deleted.
    * </pre>
    *
@@ -475,6 +472,7 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Resource name of the taxonomy to delete.
+     *
      * Note: All policy tags in this taxonomy are also deleted.
      * </pre>
      *
@@ -500,6 +498,7 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Resource name of the taxonomy to delete.
+     *
      * Note: All policy tags in this taxonomy are also deleted.
      * </pre>
      *
@@ -525,6 +524,7 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Resource name of the taxonomy to delete.
+     *
      * Note: All policy tags in this taxonomy are also deleted.
      * </pre>
      *
@@ -549,6 +549,7 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Resource name of the taxonomy to delete.
+     *
      * Note: All policy tags in this taxonomy are also deleted.
      * </pre>
      *
@@ -569,6 +570,7 @@ public final class DeleteTaxonomyRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Resource name of the taxonomy to delete.
+     *
      * Note: All policy tags in this taxonomy are also deleted.
      * </pre>
      *

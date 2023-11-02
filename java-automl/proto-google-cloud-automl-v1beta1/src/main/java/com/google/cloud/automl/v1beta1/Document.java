@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Document();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,6 +125,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
      * Contains exactly 4
+     *
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -149,6 +145,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
      * Contains exactly 4
+     *
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -168,6 +165,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
      * Contains exactly 4
+     *
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -234,11 +232,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Layout();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -672,6 +665,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
      * Contains exactly 4
+     *
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -694,6 +688,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
      * Contains exactly 4
+     *
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -718,6 +713,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
      * Contains exactly 4
+     *
      * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
      * and they are connected by edges in the order provided, which will
      * represent a rectangle parallel to the frame. The
@@ -1472,6 +1468,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
        * Contains exactly 4
+       *
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1493,6 +1490,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
        * Contains exactly 4
+       *
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1520,6 +1518,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
        * Contains exactly 4
+       *
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1549,6 +1548,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
        * Contains exactly 4
+       *
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1576,6 +1576,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
        * Contains exactly 4
+       *
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1609,6 +1610,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
        * Contains exactly 4
+       *
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1635,6 +1637,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
        * Contains exactly 4
+       *
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1656,6 +1659,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
        * Contains exactly 4
+       *
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The
@@ -1681,6 +1685,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The position of the [text_segment][google.cloud.automl.v1beta1.Document.Layout.text_segment] in the page.
        * Contains exactly 4
+       *
        * [normalized_vertices][google.cloud.automl.v1beta1.BoundingPoly.normalized_vertices]
        * and they are connected by edges in the order provided, which will
        * represent a rectangle parallel to the frame. The

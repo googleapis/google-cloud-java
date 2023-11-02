@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ public interface FulfillmentInfoOrBuilder
    * The fulfillment type, including commonly used types (such as pickup in
    * store and same day delivery), and custom types. Customers have to map
    * custom types to their display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -40,6 +42,7 @@ public interface FulfillmentInfoOrBuilder
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
    * </pre>
@@ -56,7 +59,9 @@ public interface FulfillmentInfoOrBuilder
    * The fulfillment type, including commonly used types (such as pickup in
    * store and same day delivery), and custom types. Customers have to map
    * custom types to their display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -66,6 +71,7 @@ public interface FulfillmentInfoOrBuilder
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
    * </pre>
@@ -85,6 +91,7 @@ public interface FulfillmentInfoOrBuilder
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+   *
    * A maximum of 3000 values are allowed. Each value must be a string with a
    * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
    * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -105,6 +112,7 @@ public interface FulfillmentInfoOrBuilder
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+   *
    * A maximum of 3000 values are allowed. Each value must be a string with a
    * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
    * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -125,6 +133,7 @@ public interface FulfillmentInfoOrBuilder
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+   *
    * A maximum of 3000 values are allowed. Each value must be a string with a
    * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
    * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is
@@ -146,6 +155,7 @@ public interface FulfillmentInfoOrBuilder
    * [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2alpha.FulfillmentInfo.type]
    * or the region IDs for
    * [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2alpha.FulfillmentInfo.type].
+   *
    * A maximum of 3000 values are allowed. Each value must be a string with a
    * length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such
    * as "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is

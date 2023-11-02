@@ -25,38 +25,26 @@
             "ArchiveCustomMetric": {
               "methods": ["archiveCustomMetric", "archiveCustomMetric", "archiveCustomMetric", "archiveCustomMetricCallable"]
             },
-            "AuditUserLinks": {
-              "methods": ["auditUserLinks", "auditUserLinksPagedCallable", "auditUserLinksCallable"]
-            },
             "BatchCreateAccessBindings": {
               "methods": ["batchCreateAccessBindings", "batchCreateAccessBindingsCallable"]
-            },
-            "BatchCreateUserLinks": {
-              "methods": ["batchCreateUserLinks", "batchCreateUserLinksCallable"]
             },
             "BatchDeleteAccessBindings": {
               "methods": ["batchDeleteAccessBindings", "batchDeleteAccessBindingsCallable"]
             },
-            "BatchDeleteUserLinks": {
-              "methods": ["batchDeleteUserLinks", "batchDeleteUserLinksCallable"]
-            },
             "BatchGetAccessBindings": {
               "methods": ["batchGetAccessBindings", "batchGetAccessBindingsCallable"]
             },
-            "BatchGetUserLinks": {
-              "methods": ["batchGetUserLinks", "batchGetUserLinksCallable"]
-            },
             "BatchUpdateAccessBindings": {
               "methods": ["batchUpdateAccessBindings", "batchUpdateAccessBindingsCallable"]
-            },
-            "BatchUpdateUserLinks": {
-              "methods": ["batchUpdateUserLinks", "batchUpdateUserLinksCallable"]
             },
             "CancelDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["cancelDisplayVideo360AdvertiserLinkProposal", "cancelDisplayVideo360AdvertiserLinkProposalCallable"]
             },
             "CreateAccessBinding": {
               "methods": ["createAccessBinding", "createAccessBinding", "createAccessBinding", "createAccessBinding", "createAccessBindingCallable"]
+            },
+            "CreateAdSenseLink": {
+              "methods": ["createAdSenseLink", "createAdSenseLink", "createAdSenseLink", "createAdSenseLinkCallable"]
             },
             "CreateAudience": {
               "methods": ["createAudience", "createAudience", "createAudience", "createAudienceCallable"]
@@ -85,6 +73,9 @@
             "CreateDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposalCallable"]
             },
+            "CreateEventCreateRule": {
+              "methods": ["createEventCreateRule", "createEventCreateRule", "createEventCreateRule", "createEventCreateRuleCallable"]
+            },
             "CreateExpandedDataSet": {
               "methods": ["createExpandedDataSet", "createExpandedDataSet", "createExpandedDataSet", "createExpandedDataSetCallable"]
             },
@@ -100,17 +91,32 @@
             "CreateProperty": {
               "methods": ["createProperty", "createProperty", "createPropertyCallable"]
             },
+            "CreateRollupProperty": {
+              "methods": ["createRollupProperty", "createRollupPropertyCallable"]
+            },
+            "CreateRollupPropertySourceLink": {
+              "methods": ["createRollupPropertySourceLink", "createRollupPropertySourceLink", "createRollupPropertySourceLink", "createRollupPropertySourceLinkCallable"]
+            },
+            "CreateSKAdNetworkConversionValueSchema": {
+              "methods": ["createSKAdNetworkConversionValueSchema", "createSKAdNetworkConversionValueSchema", "createSKAdNetworkConversionValueSchema", "createSKAdNetworkConversionValueSchemaCallable"]
+            },
             "CreateSearchAds360Link": {
               "methods": ["createSearchAds360Link", "createSearchAds360Link", "createSearchAds360Link", "createSearchAds360LinkCallable"]
             },
-            "CreateUserLink": {
-              "methods": ["createUserLink", "createUserLink", "createUserLink", "createUserLink", "createUserLinkCallable"]
+            "CreateSubproperty": {
+              "methods": ["createSubproperty", "createSubpropertyCallable"]
+            },
+            "CreateSubpropertyEventFilter": {
+              "methods": ["createSubpropertyEventFilter", "createSubpropertyEventFilter", "createSubpropertyEventFilter", "createSubpropertyEventFilterCallable"]
             },
             "DeleteAccessBinding": {
               "methods": ["deleteAccessBinding", "deleteAccessBinding", "deleteAccessBinding", "deleteAccessBindingCallable"]
             },
             "DeleteAccount": {
               "methods": ["deleteAccount", "deleteAccount", "deleteAccount", "deleteAccountCallable"]
+            },
+            "DeleteAdSenseLink": {
+              "methods": ["deleteAdSenseLink", "deleteAdSenseLink", "deleteAdSenseLink", "deleteAdSenseLinkCallable"]
             },
             "DeleteChannelGroup": {
               "methods": ["deleteChannelGroup", "deleteChannelGroup", "deleteChannelGroup", "deleteChannelGroupCallable"]
@@ -130,6 +136,9 @@
             "DeleteDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposalCallable"]
             },
+            "DeleteEventCreateRule": {
+              "methods": ["deleteEventCreateRule", "deleteEventCreateRule", "deleteEventCreateRule", "deleteEventCreateRuleCallable"]
+            },
             "DeleteExpandedDataSet": {
               "methods": ["deleteExpandedDataSet", "deleteExpandedDataSet", "deleteExpandedDataSet", "deleteExpandedDataSetCallable"]
             },
@@ -145,11 +154,17 @@
             "DeleteProperty": {
               "methods": ["deleteProperty", "deleteProperty", "deleteProperty", "deletePropertyCallable"]
             },
+            "DeleteRollupPropertySourceLink": {
+              "methods": ["deleteRollupPropertySourceLink", "deleteRollupPropertySourceLink", "deleteRollupPropertySourceLink", "deleteRollupPropertySourceLinkCallable"]
+            },
+            "DeleteSKAdNetworkConversionValueSchema": {
+              "methods": ["deleteSKAdNetworkConversionValueSchema", "deleteSKAdNetworkConversionValueSchema", "deleteSKAdNetworkConversionValueSchema", "deleteSKAdNetworkConversionValueSchemaCallable"]
+            },
             "DeleteSearchAds360Link": {
               "methods": ["deleteSearchAds360Link", "deleteSearchAds360Link", "deleteSearchAds360Link", "deleteSearchAds360LinkCallable"]
             },
-            "DeleteUserLink": {
-              "methods": ["deleteUserLink", "deleteUserLink", "deleteUserLink", "deleteUserLinkCallable"]
+            "DeleteSubpropertyEventFilter": {
+              "methods": ["deleteSubpropertyEventFilter", "deleteSubpropertyEventFilter", "deleteSubpropertyEventFilter", "deleteSubpropertyEventFilterCallable"]
             },
             "FetchAutomatedGa4ConfigurationOptOut": {
               "methods": ["fetchAutomatedGa4ConfigurationOptOut", "fetchAutomatedGa4ConfigurationOptOutCallable"]
@@ -162,6 +177,9 @@
             },
             "GetAccount": {
               "methods": ["getAccount", "getAccount", "getAccount", "getAccountCallable"]
+            },
+            "GetAdSenseLink": {
+              "methods": ["getAdSenseLink", "getAdSenseLink", "getAdSenseLink", "getAdSenseLinkCallable"]
             },
             "GetAttributionSettings": {
               "methods": ["getAttributionSettings", "getAttributionSettings", "getAttributionSettings", "getAttributionSettingsCallable"]
@@ -184,6 +202,9 @@
             "GetCustomMetric": {
               "methods": ["getCustomMetric", "getCustomMetric", "getCustomMetric", "getCustomMetricCallable"]
             },
+            "GetDataRedactionSettings": {
+              "methods": ["getDataRedactionSettings", "getDataRedactionSettings", "getDataRedactionSettings", "getDataRedactionSettingsCallable"]
+            },
             "GetDataRetentionSettings": {
               "methods": ["getDataRetentionSettings", "getDataRetentionSettings", "getDataRetentionSettings", "getDataRetentionSettingsCallable"]
             },
@@ -202,6 +223,9 @@
             "GetEnhancedMeasurementSettings": {
               "methods": ["getEnhancedMeasurementSettings", "getEnhancedMeasurementSettings", "getEnhancedMeasurementSettings", "getEnhancedMeasurementSettingsCallable"]
             },
+            "GetEventCreateRule": {
+              "methods": ["getEventCreateRule", "getEventCreateRule", "getEventCreateRule", "getEventCreateRuleCallable"]
+            },
             "GetExpandedDataSet": {
               "methods": ["getExpandedDataSet", "getExpandedDataSet", "getExpandedDataSet", "getExpandedDataSetCallable"]
             },
@@ -217,11 +241,14 @@
             "GetProperty": {
               "methods": ["getProperty", "getProperty", "getProperty", "getPropertyCallable"]
             },
+            "GetRollupPropertySourceLink": {
+              "methods": ["getRollupPropertySourceLink", "getRollupPropertySourceLink", "getRollupPropertySourceLink", "getRollupPropertySourceLinkCallable"]
+            },
+            "GetSKAdNetworkConversionValueSchema": {
+              "methods": ["getSKAdNetworkConversionValueSchema", "getSKAdNetworkConversionValueSchema", "getSKAdNetworkConversionValueSchema", "getSKAdNetworkConversionValueSchemaCallable"]
+            },
             "GetSearchAds360Link": {
               "methods": ["getSearchAds360Link", "getSearchAds360Link", "getSearchAds360Link", "getSearchAds360LinkCallable"]
-            },
-            "GetUserLink": {
-              "methods": ["getUserLink", "getUserLink", "getUserLink", "getUserLinkCallable"]
             },
             "ListAccessBindings": {
               "methods": ["listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindingsPagedCallable", "listAccessBindingsCallable"]
@@ -231,6 +258,9 @@
             },
             "ListAccounts": {
               "methods": ["listAccounts", "listAccountsPagedCallable", "listAccountsCallable"]
+            },
+            "ListAdSenseLinks": {
+              "methods": ["listAdSenseLinks", "listAdSenseLinks", "listAdSenseLinks", "listAdSenseLinksPagedCallable", "listAdSenseLinksCallable"]
             },
             "ListAudiences": {
               "methods": ["listAudiences", "listAudiences", "listAudiences", "listAudiencesPagedCallable", "listAudiencesCallable"]
@@ -262,6 +292,9 @@
             "ListDisplayVideo360AdvertiserLinks": {
               "methods": ["listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinksPagedCallable", "listDisplayVideo360AdvertiserLinksCallable"]
             },
+            "ListEventCreateRules": {
+              "methods": ["listEventCreateRules", "listEventCreateRules", "listEventCreateRules", "listEventCreateRulesPagedCallable", "listEventCreateRulesCallable"]
+            },
             "ListExpandedDataSets": {
               "methods": ["listExpandedDataSets", "listExpandedDataSets", "listExpandedDataSets", "listExpandedDataSetsPagedCallable", "listExpandedDataSetsCallable"]
             },
@@ -277,11 +310,14 @@
             "ListProperties": {
               "methods": ["listProperties", "listPropertiesPagedCallable", "listPropertiesCallable"]
             },
+            "ListRollupPropertySourceLinks": {
+              "methods": ["listRollupPropertySourceLinks", "listRollupPropertySourceLinks", "listRollupPropertySourceLinks", "listRollupPropertySourceLinksPagedCallable", "listRollupPropertySourceLinksCallable"]
+            },
+            "ListSKAdNetworkConversionValueSchemas": {
+              "methods": ["listSKAdNetworkConversionValueSchemas", "listSKAdNetworkConversionValueSchemas", "listSKAdNetworkConversionValueSchemas", "listSKAdNetworkConversionValueSchemasPagedCallable", "listSKAdNetworkConversionValueSchemasCallable"]
+            },
             "ListSearchAds360Links": {
               "methods": ["listSearchAds360Links", "listSearchAds360Links", "listSearchAds360Links", "listSearchAds360LinksPagedCallable", "listSearchAds360LinksCallable"]
-            },
-            "ListUserLinks": {
-              "methods": ["listUserLinks", "listUserLinks", "listUserLinks", "listUserLinks", "listUserLinksPagedCallable", "listUserLinksCallable"]
             },
             "ProvisionAccountTicket": {
               "methods": ["provisionAccountTicket", "provisionAccountTicketCallable"]
@@ -310,11 +346,17 @@
             "UpdateChannelGroup": {
               "methods": ["updateChannelGroup", "updateChannelGroup", "updateChannelGroupCallable"]
             },
+            "UpdateConversionEvent": {
+              "methods": ["updateConversionEvent", "updateConversionEvent", "updateConversionEventCallable"]
+            },
             "UpdateCustomDimension": {
               "methods": ["updateCustomDimension", "updateCustomDimension", "updateCustomDimensionCallable"]
             },
             "UpdateCustomMetric": {
               "methods": ["updateCustomMetric", "updateCustomMetric", "updateCustomMetricCallable"]
+            },
+            "UpdateDataRedactionSettings": {
+              "methods": ["updateDataRedactionSettings", "updateDataRedactionSettings", "updateDataRedactionSettingsCallable"]
             },
             "UpdateDataRetentionSettings": {
               "methods": ["updateDataRetentionSettings", "updateDataRetentionSettings", "updateDataRetentionSettingsCallable"]
@@ -327,6 +369,9 @@
             },
             "UpdateEnhancedMeasurementSettings": {
               "methods": ["updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettingsCallable"]
+            },
+            "UpdateEventCreateRule": {
+              "methods": ["updateEventCreateRule", "updateEventCreateRule", "updateEventCreateRuleCallable"]
             },
             "UpdateExpandedDataSet": {
               "methods": ["updateExpandedDataSet", "updateExpandedDataSet", "updateExpandedDataSetCallable"]
@@ -343,11 +388,11 @@
             "UpdateProperty": {
               "methods": ["updateProperty", "updateProperty", "updatePropertyCallable"]
             },
+            "UpdateSKAdNetworkConversionValueSchema": {
+              "methods": ["updateSKAdNetworkConversionValueSchema", "updateSKAdNetworkConversionValueSchema", "updateSKAdNetworkConversionValueSchemaCallable"]
+            },
             "UpdateSearchAds360Link": {
               "methods": ["updateSearchAds360Link", "updateSearchAds360Link", "updateSearchAds360LinkCallable"]
-            },
-            "UpdateUserLink": {
-              "methods": ["updateUserLink", "updateUserLink", "updateUserLinkCallable"]
             }
           }
         }

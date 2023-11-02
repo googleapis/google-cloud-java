@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ package com.google.cloud.datacatalog.v1beta1;
  * outside of Google Cloud Platform. Clients can use the `linked_resource` field
  * in the Entry resource to refer to the original resource ID of the source
  * system.
+ *
  * An Entry resource contains resource details, such as its schema. An Entry can
  * also be used to attach flexible metadata, such as a
  * [Tag][google.cloud.datacatalog.v1beta1.Tag].
@@ -58,11 +59,6 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     return new Entry();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_Entry_descriptor;
@@ -79,6 +75,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int entryTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object entryType_;
 
   public enum EntryTypeCase
@@ -126,6 +124,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int systemCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object system_;
 
   public enum SystemCase
@@ -173,6 +173,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int typeSpecCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object typeSpec_;
 
   public enum TypeSpecCase
@@ -230,13 +232,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Data Catalog resource name of the entry in URL format. Example:
+   * Output only. The Data Catalog resource name of the entry in URL format.
+   * Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *
    * Note that this Entry and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -256,13 +263,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Data Catalog resource name of the entry in URL format. Example:
+   * Output only. The Data Catalog resource name of the entry in URL format.
+   * Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *
    * Note that this Entry and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -288,11 +300,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource this metadata entry refers to.
+   *
    * For Google Cloud Platform resources, `linked_resource` is the [full name of
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
+   *
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   *
    * Output only when Entry is of type in the EntryType enum. For entries with
    * user_specified_type, this field is optional and defaults to an empty
    * string.
@@ -319,11 +334,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource this metadata entry refers to.
+   *
    * For Google Cloud Platform resources, `linked_resource` is the [full name of
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
+   *
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   *
    * Output only when Entry is of type in the EntryType enum. For entries with
    * user_specified_type, this field is optional and defaults to an empty
    * string.
@@ -413,6 +431,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * `user_specified_type` strings must begin with a letter or underscore and
    * can only contain letters, numbers, and underscores; are case insensitive;
    * must be at least 1 character and at most 64 characters long.
+   *
    * Currently, only FILESET enum value is allowed. All other entries created
    * through Data Catalog must use `user_specified_type`.
    * </pre>
@@ -435,6 +454,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * `user_specified_type` strings must begin with a letter or underscore and
    * can only contain letters, numbers, and underscores; are case insensitive;
    * must be at least 1 character and at most 64 characters long.
+   *
    * Currently, only FILESET enum value is allowed. All other entries created
    * through Data Catalog must use `user_specified_type`.
    * </pre>
@@ -470,6 +490,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * `user_specified_type` strings must begin with a letter or underscore and
    * can only contain letters, numbers, and underscores; are case insensitive;
    * must be at least 1 character and at most 64 characters long.
+   *
    * Currently, only FILESET enum value is allowed. All other entries created
    * through Data Catalog must use `user_specified_type`.
    * </pre>
@@ -500,8 +521,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data
+   * Catalog integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>
@@ -517,8 +538,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data
+   * Catalog integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>
@@ -537,8 +558,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. This field indicates the entry's source system that Data
+   * Catalog integrates with, such as BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>
@@ -978,10 +999,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -998,10 +1019,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -1020,10 +1041,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Output only. Timestamps about the underlying resource, not about this Data
+   * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+   * entries with user_specified_type, this field is optional and defaults to an
+   * empty timestamp.
    * </pre>
    *
    * <code>
@@ -1036,6 +1057,62 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     return sourceSystemTimestamps_ == null
         ? com.google.cloud.datacatalog.v1beta1.SystemTimestamps.getDefaultInstance()
         : sourceSystemTimestamps_;
+  }
+
+  public static final int USAGE_SIGNAL_FIELD_NUMBER = 13;
+  private com.google.cloud.datacatalog.v1beta1.UsageSignal usageSignal_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics on the usage level of the resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the usageSignal field is set.
+   */
+  @java.lang.Override
+  public boolean hasUsageSignal() {
+    return usageSignal_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics on the usage level of the resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The usageSignal.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1beta1.UsageSignal getUsageSignal() {
+    return usageSignal_ == null
+        ? com.google.cloud.datacatalog.v1beta1.UsageSignal.getDefaultInstance()
+        : usageSignal_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics on the usage level of the resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1beta1.UsageSignalOrBuilder getUsageSignalOrBuilder() {
+    return usageSignal_ == null
+        ? com.google.cloud.datacatalog.v1beta1.UsageSignal.getDefaultInstance()
+        : usageSignal_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1078,6 +1155,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
     if (typeSpecCase_ == 12) {
       output.writeMessage(12, (com.google.cloud.datacatalog.v1beta1.BigQueryTableSpec) typeSpec_);
+    }
+    if (usageSignal_ != null) {
+      output.writeMessage(13, getUsageSignal());
     }
     if (typeSpecCase_ == 15) {
       output.writeMessage(
@@ -1135,6 +1215,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, (com.google.cloud.datacatalog.v1beta1.BigQueryTableSpec) typeSpec_);
     }
+    if (usageSignal_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getUsageSignal());
+    }
     if (typeSpecCase_ == 15) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1177,6 +1260,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (hasSourceSystemTimestamps() != other.hasSourceSystemTimestamps()) return false;
     if (hasSourceSystemTimestamps()) {
       if (!getSourceSystemTimestamps().equals(other.getSourceSystemTimestamps())) return false;
+    }
+    if (hasUsageSignal() != other.hasUsageSignal()) return false;
+    if (hasUsageSignal()) {
+      if (!getUsageSignal().equals(other.getUsageSignal())) return false;
     }
     if (!getEntryTypeCase().equals(other.getEntryTypeCase())) return false;
     switch (entryTypeCase_) {
@@ -1240,6 +1327,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (hasSourceSystemTimestamps()) {
       hash = (37 * hash) + SOURCE_SYSTEM_TIMESTAMPS_FIELD_NUMBER;
       hash = (53 * hash) + getSourceSystemTimestamps().hashCode();
+    }
+    if (hasUsageSignal()) {
+      hash = (37 * hash) + USAGE_SIGNAL_FIELD_NUMBER;
+      hash = (53 * hash) + getUsageSignal().hashCode();
     }
     switch (entryTypeCase_) {
       case 2:
@@ -1391,6 +1482,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * outside of Google Cloud Platform. Clients can use the `linked_resource` field
    * in the Entry resource to refer to the original resource ID of the source
    * system.
+   *
    * An Entry resource contains resource details, such as its schema. An Entry can
    * also be used to attach flexible metadata, such as a
    * [Tag][google.cloud.datacatalog.v1beta1.Tag].
@@ -1450,6 +1542,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       if (sourceSystemTimestampsBuilder_ != null) {
         sourceSystemTimestampsBuilder_.dispose();
         sourceSystemTimestampsBuilder_ = null;
+      }
+      usageSignal_ = null;
+      if (usageSignalBuilder_ != null) {
+        usageSignalBuilder_.dispose();
+        usageSignalBuilder_ = null;
       }
       entryTypeCase_ = 0;
       entryType_ = null;
@@ -1514,6 +1611,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             sourceSystemTimestampsBuilder_ == null
                 ? sourceSystemTimestamps_
                 : sourceSystemTimestampsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.usageSignal_ =
+            usageSignalBuilder_ == null ? usageSignal_ : usageSignalBuilder_.build();
       }
     }
 
@@ -1605,6 +1706,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSourceSystemTimestamps()) {
         mergeSourceSystemTimestamps(other.getSourceSystemTimestamps());
+      }
+      if (other.hasUsageSignal()) {
+        mergeUsageSignal(other.getUsageSignal());
       }
       switch (other.getEntryTypeCase()) {
         case TYPE:
@@ -1746,6 +1850,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
                 typeSpecCase_ = 12;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getUsageSignalFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 106
             case 122:
               {
                 input.readMessage(
@@ -1840,13 +1950,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Data Catalog resource name of the entry in URL format. Example:
+     * Output only. The Data Catalog resource name of the entry in URL format.
+     * Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     *
      * Note that this Entry and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -1865,13 +1980,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Data Catalog resource name of the entry in URL format. Example:
+     * Output only. The Data Catalog resource name of the entry in URL format.
+     * Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     *
      * Note that this Entry and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -1890,13 +2010,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Data Catalog resource name of the entry in URL format. Example:
+     * Output only. The Data Catalog resource name of the entry in URL format.
+     * Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     *
      * Note that this Entry and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1914,13 +2039,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Data Catalog resource name of the entry in URL format. Example:
+     * Output only. The Data Catalog resource name of the entry in URL format.
+     * Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     *
      * Note that this Entry and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1934,13 +2064,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Data Catalog resource name of the entry in URL format. Example:
+     * Output only. The Data Catalog resource name of the entry in URL format.
+     * Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     *
      * Note that this Entry and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1962,11 +2097,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource this metadata entry refers to.
+     *
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
+     *
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     *
      * Output only when Entry is of type in the EntryType enum. For entries with
      * user_specified_type, this field is optional and defaults to an empty
      * string.
@@ -1992,11 +2130,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource this metadata entry refers to.
+     *
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
+     *
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     *
      * Output only when Entry is of type in the EntryType enum. For entries with
      * user_specified_type, this field is optional and defaults to an empty
      * string.
@@ -2022,11 +2163,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource this metadata entry refers to.
+     *
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
+     *
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     *
      * Output only when Entry is of type in the EntryType enum. For entries with
      * user_specified_type, this field is optional and defaults to an empty
      * string.
@@ -2051,11 +2195,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource this metadata entry refers to.
+     *
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
+     *
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     *
      * Output only when Entry is of type in the EntryType enum. For entries with
      * user_specified_type, this field is optional and defaults to an empty
      * string.
@@ -2076,11 +2223,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource this metadata entry refers to.
+     *
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
+     *
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     *
      * Output only when Entry is of type in the EntryType enum. For entries with
      * user_specified_type, this field is optional and defaults to an empty
      * string.
@@ -2234,6 +2384,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>
@@ -2257,6 +2408,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>
@@ -2293,6 +2445,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>
@@ -2329,6 +2482,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>
@@ -2358,6 +2512,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>
@@ -2385,6 +2540,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>
@@ -2409,8 +2565,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data
+     * Catalog integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>
@@ -2427,8 +2583,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data
+     * Catalog integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>
@@ -2448,8 +2604,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data
+     * Catalog integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>
@@ -2469,8 +2625,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data
+     * Catalog integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>
@@ -2495,8 +2651,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data
+     * Catalog integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>
@@ -2520,8 +2676,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. This field indicates the entry's source system that Data
+     * Catalog integrates with, such as BigQuery or Pub/Sub.
      * </pre>
      *
      * <code>
@@ -3813,10 +3969,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -3832,10 +3988,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -3857,10 +4013,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -3885,10 +4041,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -3910,10 +4066,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -3942,10 +4098,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -3966,10 +4122,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -3986,10 +4142,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -4010,10 +4166,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Output only. Timestamps about the underlying resource, not about this Data
+     * Catalog entry. Output only when Entry is of type in the EntryType enum. For
+     * entries with user_specified_type, this field is optional and defaults to an
+     * empty timestamp.
      * </pre>
      *
      * <code>
@@ -4035,6 +4191,209 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         sourceSystemTimestamps_ = null;
       }
       return sourceSystemTimestampsBuilder_;
+    }
+
+    private com.google.cloud.datacatalog.v1beta1.UsageSignal usageSignal_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1beta1.UsageSignal,
+            com.google.cloud.datacatalog.v1beta1.UsageSignal.Builder,
+            com.google.cloud.datacatalog.v1beta1.UsageSignalOrBuilder>
+        usageSignalBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics on the usage level of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the usageSignal field is set.
+     */
+    public boolean hasUsageSignal() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics on the usage level of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The usageSignal.
+     */
+    public com.google.cloud.datacatalog.v1beta1.UsageSignal getUsageSignal() {
+      if (usageSignalBuilder_ == null) {
+        return usageSignal_ == null
+            ? com.google.cloud.datacatalog.v1beta1.UsageSignal.getDefaultInstance()
+            : usageSignal_;
+      } else {
+        return usageSignalBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics on the usage level of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUsageSignal(com.google.cloud.datacatalog.v1beta1.UsageSignal value) {
+      if (usageSignalBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        usageSignal_ = value;
+      } else {
+        usageSignalBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics on the usage level of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUsageSignal(
+        com.google.cloud.datacatalog.v1beta1.UsageSignal.Builder builderForValue) {
+      if (usageSignalBuilder_ == null) {
+        usageSignal_ = builderForValue.build();
+      } else {
+        usageSignalBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics on the usage level of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUsageSignal(com.google.cloud.datacatalog.v1beta1.UsageSignal value) {
+      if (usageSignalBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && usageSignal_ != null
+            && usageSignal_
+                != com.google.cloud.datacatalog.v1beta1.UsageSignal.getDefaultInstance()) {
+          getUsageSignalBuilder().mergeFrom(value);
+        } else {
+          usageSignal_ = value;
+        }
+      } else {
+        usageSignalBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics on the usage level of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUsageSignal() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      usageSignal_ = null;
+      if (usageSignalBuilder_ != null) {
+        usageSignalBuilder_.dispose();
+        usageSignalBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics on the usage level of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1beta1.UsageSignal.Builder getUsageSignalBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getUsageSignalFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics on the usage level of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1beta1.UsageSignalOrBuilder getUsageSignalOrBuilder() {
+      if (usageSignalBuilder_ != null) {
+        return usageSignalBuilder_.getMessageOrBuilder();
+      } else {
+        return usageSignal_ == null
+            ? com.google.cloud.datacatalog.v1beta1.UsageSignal.getDefaultInstance()
+            : usageSignal_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics on the usage level of the resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1beta1.UsageSignal,
+            com.google.cloud.datacatalog.v1beta1.UsageSignal.Builder,
+            com.google.cloud.datacatalog.v1beta1.UsageSignalOrBuilder>
+        getUsageSignalFieldBuilder() {
+      if (usageSignalBuilder_ == null) {
+        usageSignalBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1beta1.UsageSignal,
+                com.google.cloud.datacatalog.v1beta1.UsageSignal.Builder,
+                com.google.cloud.datacatalog.v1beta1.UsageSignalOrBuilder>(
+                getUsageSignal(), getParentForChildren(), isClean());
+        usageSignal_ = null;
+      }
+      return usageSignalBuilder_;
     }
 
     @java.lang.Override

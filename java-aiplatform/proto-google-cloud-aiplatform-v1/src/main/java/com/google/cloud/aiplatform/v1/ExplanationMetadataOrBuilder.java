@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,14 +29,17 @@ public interface ExplanationMetadataOrBuilder
    * <pre>
    * Required. Map from feature names to feature input metadata. Keys are the
    * name of the features. Values are the specification of the feature.
+   *
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in
    * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
    * The baseline of the empty feature is chosen by Vertex AI.
+   *
    * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
    * are keyed by this key (if not grouped with another feature).
+   *
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
    * </pre>
@@ -52,14 +55,17 @@ public interface ExplanationMetadataOrBuilder
    * <pre>
    * Required. Map from feature names to feature input metadata. Keys are the
    * name of the features. Values are the specification of the feature.
+   *
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in
    * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
    * The baseline of the empty feature is chosen by Vertex AI.
+   *
    * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
    * are keyed by this key (if not grouped with another feature).
+   *
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
    * </pre>
@@ -79,14 +85,17 @@ public interface ExplanationMetadataOrBuilder
    * <pre>
    * Required. Map from feature names to feature input metadata. Keys are the
    * name of the features. Values are the specification of the feature.
+   *
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in
    * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
    * The baseline of the empty feature is chosen by Vertex AI.
+   *
    * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
    * are keyed by this key (if not grouped with another feature).
+   *
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
    * </pre>
@@ -103,14 +112,17 @@ public interface ExplanationMetadataOrBuilder
    * <pre>
    * Required. Map from feature names to feature input metadata. Keys are the
    * name of the features. Values are the specification of the feature.
+   *
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in
    * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
    * The baseline of the empty feature is chosen by Vertex AI.
+   *
    * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
    * are keyed by this key (if not grouped with another feature).
+   *
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
    * </pre>
@@ -130,14 +142,17 @@ public interface ExplanationMetadataOrBuilder
    * <pre>
    * Required. Map from feature names to feature input metadata. Keys are the
    * name of the features. Values are the specification of the feature.
+   *
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in
    * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
    * The baseline of the empty feature is chosen by Vertex AI.
+   *
    * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
    * are keyed by this key (if not grouped with another feature).
+   *
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
    * </pre>
@@ -154,10 +169,13 @@ public interface ExplanationMetadataOrBuilder
    *
    * <pre>
    * Required. Map from output names to output metadata.
+   *
    * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
+   *
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
+   *
    * Currently only one key is allowed.
    * </pre>
    *
@@ -171,10 +189,13 @@ public interface ExplanationMetadataOrBuilder
    *
    * <pre>
    * Required. Map from output names to output metadata.
+   *
    * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
+   *
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
+   *
    * Currently only one key is allowed.
    * </pre>
    *
@@ -192,10 +213,13 @@ public interface ExplanationMetadataOrBuilder
    *
    * <pre>
    * Required. Map from output names to output metadata.
+   *
    * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
+   *
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
+   *
    * Currently only one key is allowed.
    * </pre>
    *
@@ -210,10 +234,13 @@ public interface ExplanationMetadataOrBuilder
    *
    * <pre>
    * Required. Map from output names to output metadata.
+   *
    * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
+   *
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
+   *
    * Currently only one key is allowed.
    * </pre>
    *
@@ -231,10 +258,13 @@ public interface ExplanationMetadataOrBuilder
    *
    * <pre>
    * Required. Map from output names to output metadata.
+   *
    * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
+   *
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
+   *
    * Currently only one key is allowed.
    * </pre>
    *

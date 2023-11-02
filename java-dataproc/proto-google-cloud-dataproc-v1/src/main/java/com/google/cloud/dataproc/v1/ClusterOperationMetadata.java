@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,19 +43,14 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     statusHistory_ = java.util.Collections.emptyList();
     operationType_ = "";
     description_ = "";
-    warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    childOperationIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    childOperationIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ClusterOperationMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -536,7 +531,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public static final int WARNINGS_FIELD_NUMBER = 14;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList warnings_;
+  private com.google.protobuf.LazyStringArrayList warnings_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -599,7 +595,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   public static final int CHILD_OPERATION_IDS_FIELD_NUMBER = 15;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList childOperationIds_;
+  private com.google.protobuf.LazyStringArrayList childOperationIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1000,10 +997,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       operationType_ = "";
       description_ = "";
       internalGetMutableLabels().clear();
-      warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
-      childOperationIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      childOperationIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1050,16 +1045,6 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       } else {
         result.statusHistory_ = statusHistoryBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        warnings_ = warnings_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.warnings_ = warnings_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        childOperationIds_ = childOperationIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.childOperationIds_ = childOperationIds_;
     }
 
     private void buildPartial0(com.google.cloud.dataproc.v1.ClusterOperationMetadata result) {
@@ -1082,6 +1067,14 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        warnings_.makeImmutable();
+        result.warnings_ = warnings_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        childOperationIds_.makeImmutable();
+        result.childOperationIds_ = childOperationIds_;
       }
     }
 
@@ -1186,7 +1179,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       if (!other.warnings_.isEmpty()) {
         if (warnings_.isEmpty()) {
           warnings_ = other.warnings_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureWarningsIsMutable();
           warnings_.addAll(other.warnings_);
@@ -1196,7 +1189,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       if (!other.childOperationIds_.isEmpty()) {
         if (childOperationIds_.isEmpty()) {
           childOperationIds_ = other.childOperationIds_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureChildOperationIdsIsMutable();
           childOperationIds_.addAll(other.childOperationIds_);
@@ -2513,14 +2506,14 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.protobuf.LazyStringList warnings_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList warnings_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!warnings_.isModifiable()) {
         warnings_ = new com.google.protobuf.LazyStringArrayList(warnings_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -2534,7 +2527,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * @return A list containing the warnings.
      */
     public com.google.protobuf.ProtocolStringList getWarningsList() {
-      return warnings_.getUnmodifiableView();
+      warnings_.makeImmutable();
+      return warnings_;
     }
     /**
      *
@@ -2599,6 +2593,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       ensureWarningsIsMutable();
       warnings_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2620,6 +2615,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       ensureWarningsIsMutable();
       warnings_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2638,6 +2634,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public Builder addAllWarnings(java.lang.Iterable<java.lang.String> values) {
       ensureWarningsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, warnings_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2653,8 +2650,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearWarnings() {
-      warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -2677,18 +2675,19 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureWarningsIsMutable();
       warnings_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList childOperationIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList childOperationIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureChildOperationIdsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!childOperationIds_.isModifiable()) {
         childOperationIds_ = new com.google.protobuf.LazyStringArrayList(childOperationIds_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -2703,7 +2702,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * @return A list containing the childOperationIds.
      */
     public com.google.protobuf.ProtocolStringList getChildOperationIdsList() {
-      return childOperationIds_.getUnmodifiableView();
+      childOperationIds_.makeImmutable();
+      return childOperationIds_;
     }
     /**
      *
@@ -2772,6 +2772,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       ensureChildOperationIdsIsMutable();
       childOperationIds_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2794,6 +2795,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       ensureChildOperationIdsIsMutable();
       childOperationIds_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2813,6 +2815,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public Builder addAllChildOperationIds(java.lang.Iterable<java.lang.String> values) {
       ensureChildOperationIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, childOperationIds_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2829,8 +2832,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearChildOperationIds() {
-      childOperationIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      childOperationIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -2854,6 +2858,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureChildOperationIdsIsMutable();
       childOperationIds_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

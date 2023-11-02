@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private OcrConfig() {
-    advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OcrConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -163,18 +158,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private Hints() {
-      languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Hints();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -195,7 +185,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public static final int LANGUAGE_HINTS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList languageHints_;
+    private com.google.protobuf.LazyStringArrayList languageHints_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -483,8 +474,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -512,7 +502,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.documentai.v1beta3.OcrConfig.Hints buildPartial() {
         com.google.cloud.documentai.v1beta3.OcrConfig.Hints result =
             new com.google.cloud.documentai.v1beta3.OcrConfig.Hints(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -520,17 +509,12 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.documentai.v1beta3.OcrConfig.Hints result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          languageHints_ = languageHints_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.languageHints_ = languageHints_;
-      }
-
       private void buildPartial0(com.google.cloud.documentai.v1beta3.OcrConfig.Hints result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          languageHints_.makeImmutable();
+          result.languageHints_ = languageHints_;
+        }
       }
 
       @java.lang.Override
@@ -584,7 +568,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.languageHints_.isEmpty()) {
           if (languageHints_.isEmpty()) {
             languageHints_ = other.languageHints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureLanguageHintsIsMutable();
             languageHints_.addAll(other.languageHints_);
@@ -643,14 +627,14 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList languageHints_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList languageHints_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureLanguageHintsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!languageHints_.isModifiable()) {
           languageHints_ = new com.google.protobuf.LazyStringArrayList(languageHints_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -669,7 +653,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the languageHints.
        */
       public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
-        return languageHints_.getUnmodifiableView();
+        languageHints_.makeImmutable();
+        return languageHints_;
       }
       /**
        *
@@ -754,6 +739,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         }
         ensureLanguageHintsIsMutable();
         languageHints_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -780,6 +766,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         }
         ensureLanguageHintsIsMutable();
         languageHints_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -803,6 +790,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllLanguageHints(java.lang.Iterable<java.lang.String> values) {
         ensureLanguageHintsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, languageHints_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -823,8 +811,9 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLanguageHints() {
-        languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -852,6 +841,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureLanguageHintsIsMutable();
         languageHints_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -916,6 +906,773 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.documentai.v1beta3.OcrConfig.Hints getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface PremiumFeaturesOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+     * (and later) processors.
+     * </pre>
+     *
+     * <code>bool enable_selection_mark_detection = 3;</code>
+     *
+     * @return The enableSelectionMarkDetection.
+     */
+    boolean getEnableSelectionMarkDetection();
+
+    /**
+     *
+     *
+     * <pre>
+     * Turn on font identification model and return font style information.
+     * </pre>
+     *
+     * <code>bool compute_style_info = 4;</code>
+     *
+     * @return The computeStyleInfo.
+     */
+    boolean getComputeStyleInfo();
+
+    /**
+     *
+     *
+     * <pre>
+     * Turn on the model that can extract LaTeX math formulas.
+     * </pre>
+     *
+     * <code>bool enable_math_ocr = 5;</code>
+     *
+     * @return The enableMathOcr.
+     */
+    boolean getEnableMathOcr();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for premium OCR features.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures}
+   */
+  public static final class PremiumFeatures extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures)
+      PremiumFeaturesOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PremiumFeatures.newBuilder() to construct.
+    private PremiumFeatures(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PremiumFeatures() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PremiumFeatures();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.documentai.v1beta3.DocumentIoProto
+          .internal_static_google_cloud_documentai_v1beta3_OcrConfig_PremiumFeatures_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.documentai.v1beta3.DocumentIoProto
+          .internal_static_google_cloud_documentai_v1beta3_OcrConfig_PremiumFeatures_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.class,
+              com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.Builder.class);
+    }
+
+    public static final int ENABLE_SELECTION_MARK_DETECTION_FIELD_NUMBER = 3;
+    private boolean enableSelectionMarkDetection_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+     * (and later) processors.
+     * </pre>
+     *
+     * <code>bool enable_selection_mark_detection = 3;</code>
+     *
+     * @return The enableSelectionMarkDetection.
+     */
+    @java.lang.Override
+    public boolean getEnableSelectionMarkDetection() {
+      return enableSelectionMarkDetection_;
+    }
+
+    public static final int COMPUTE_STYLE_INFO_FIELD_NUMBER = 4;
+    private boolean computeStyleInfo_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Turn on font identification model and return font style information.
+     * </pre>
+     *
+     * <code>bool compute_style_info = 4;</code>
+     *
+     * @return The computeStyleInfo.
+     */
+    @java.lang.Override
+    public boolean getComputeStyleInfo() {
+      return computeStyleInfo_;
+    }
+
+    public static final int ENABLE_MATH_OCR_FIELD_NUMBER = 5;
+    private boolean enableMathOcr_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Turn on the model that can extract LaTeX math formulas.
+     * </pre>
+     *
+     * <code>bool enable_math_ocr = 5;</code>
+     *
+     * @return The enableMathOcr.
+     */
+    @java.lang.Override
+    public boolean getEnableMathOcr() {
+      return enableMathOcr_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enableSelectionMarkDetection_ != false) {
+        output.writeBool(3, enableSelectionMarkDetection_);
+      }
+      if (computeStyleInfo_ != false) {
+        output.writeBool(4, computeStyleInfo_);
+      }
+      if (enableMathOcr_ != false) {
+        output.writeBool(5, enableMathOcr_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enableSelectionMarkDetection_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableSelectionMarkDetection_);
+      }
+      if (computeStyleInfo_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, computeStyleInfo_);
+      }
+      if (enableMathOcr_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableMathOcr_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures other =
+          (com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures) obj;
+
+      if (getEnableSelectionMarkDetection() != other.getEnableSelectionMarkDetection())
+        return false;
+      if (getComputeStyleInfo() != other.getComputeStyleInfo()) return false;
+      if (getEnableMathOcr() != other.getEnableMathOcr()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLE_SELECTION_MARK_DETECTION_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSelectionMarkDetection());
+      hash = (37 * hash) + COMPUTE_STYLE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getComputeStyleInfo());
+      hash = (37 * hash) + ENABLE_MATH_OCR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableMathOcr());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for premium OCR features.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures)
+        com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeaturesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1beta3.DocumentIoProto
+            .internal_static_google_cloud_documentai_v1beta3_OcrConfig_PremiumFeatures_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1beta3.DocumentIoProto
+            .internal_static_google_cloud_documentai_v1beta3_OcrConfig_PremiumFeatures_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.class,
+                com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.Builder.class);
+      }
+
+      // Construct using com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enableSelectionMarkDetection_ = false;
+        computeStyleInfo_ = false;
+        enableMathOcr_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.documentai.v1beta3.DocumentIoProto
+            .internal_static_google_cloud_documentai_v1beta3_OcrConfig_PremiumFeatures_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures
+          getDefaultInstanceForType() {
+        return com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures build() {
+        com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures buildPartial() {
+        com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures result =
+            new com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enableSelectionMarkDetection_ = enableSelectionMarkDetection_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.computeStyleInfo_ = computeStyleInfo_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enableMathOcr_ = enableMathOcr_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures) {
+          return mergeFrom((com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures other) {
+        if (other
+            == com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.getDefaultInstance())
+          return this;
+        if (other.getEnableSelectionMarkDetection() != false) {
+          setEnableSelectionMarkDetection(other.getEnableSelectionMarkDetection());
+        }
+        if (other.getComputeStyleInfo() != false) {
+          setComputeStyleInfo(other.getComputeStyleInfo());
+        }
+        if (other.getEnableMathOcr() != false) {
+          setEnableMathOcr(other.getEnableMathOcr());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24:
+                {
+                  enableSelectionMarkDetection_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  computeStyleInfo_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  enableMathOcr_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enableSelectionMarkDetection_;
+      /**
+       *
+       *
+       * <pre>
+       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+       * (and later) processors.
+       * </pre>
+       *
+       * <code>bool enable_selection_mark_detection = 3;</code>
+       *
+       * @return The enableSelectionMarkDetection.
+       */
+      @java.lang.Override
+      public boolean getEnableSelectionMarkDetection() {
+        return enableSelectionMarkDetection_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+       * (and later) processors.
+       * </pre>
+       *
+       * <code>bool enable_selection_mark_detection = 3;</code>
+       *
+       * @param value The enableSelectionMarkDetection to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableSelectionMarkDetection(boolean value) {
+
+        enableSelectionMarkDetection_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+       * (and later) processors.
+       * </pre>
+       *
+       * <code>bool enable_selection_mark_detection = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableSelectionMarkDetection() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enableSelectionMarkDetection_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean computeStyleInfo_;
+      /**
+       *
+       *
+       * <pre>
+       * Turn on font identification model and return font style information.
+       * </pre>
+       *
+       * <code>bool compute_style_info = 4;</code>
+       *
+       * @return The computeStyleInfo.
+       */
+      @java.lang.Override
+      public boolean getComputeStyleInfo() {
+        return computeStyleInfo_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Turn on font identification model and return font style information.
+       * </pre>
+       *
+       * <code>bool compute_style_info = 4;</code>
+       *
+       * @param value The computeStyleInfo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setComputeStyleInfo(boolean value) {
+
+        computeStyleInfo_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Turn on font identification model and return font style information.
+       * </pre>
+       *
+       * <code>bool compute_style_info = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearComputeStyleInfo() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        computeStyleInfo_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableMathOcr_;
+      /**
+       *
+       *
+       * <pre>
+       * Turn on the model that can extract LaTeX math formulas.
+       * </pre>
+       *
+       * <code>bool enable_math_ocr = 5;</code>
+       *
+       * @return The enableMathOcr.
+       */
+      @java.lang.Override
+      public boolean getEnableMathOcr() {
+        return enableMathOcr_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Turn on the model that can extract LaTeX math formulas.
+       * </pre>
+       *
+       * <code>bool enable_math_ocr = 5;</code>
+       *
+       * @param value The enableMathOcr to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableMathOcr(boolean value) {
+
+        enableMathOcr_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Turn on the model that can extract LaTeX math formulas.
+       * </pre>
+       *
+       * <code>bool enable_math_ocr = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableMathOcr() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        enableMathOcr_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures)
+    private static final com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures();
+    }
+
+    public static com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PremiumFeatures> PARSER =
+        new com.google.protobuf.AbstractParser<PremiumFeatures>() {
+          @java.lang.Override
+          public PremiumFeatures parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PremiumFeatures> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PremiumFeatures> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -1012,12 +1769,19 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int ADVANCED_OCR_OPTIONS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList advancedOcrOptions_;
+  private com.google.protobuf.LazyStringArrayList advancedOcrOptions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1031,7 +1795,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1045,7 +1815,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1060,7 +1836,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1088,6 +1870,100 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getEnableSymbol() {
     return enableSymbol_;
+  }
+
+  public static final int COMPUTE_STYLE_INFO_FIELD_NUMBER = 8;
+  private boolean computeStyleInfo_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Turn on font identification model and return font style information.
+   * Deprecated, use
+   * [PremiumFeatures.compute_style_info][google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.compute_style_info]
+   * instead.
+   * </pre>
+   *
+   * <code>bool compute_style_info = 8 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
+   *     google/cloud/documentai/v1beta3/document_io.proto;l=165
+   * @return The computeStyleInfo.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public boolean getComputeStyleInfo() {
+    return computeStyleInfo_;
+  }
+
+  public static final int DISABLE_CHARACTER_BOXES_DETECTION_FIELD_NUMBER = 10;
+  private boolean disableCharacterBoxesDetection_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Turn off character box detector in OCR engine. Character box detection is
+   * enabled by default in OCR 2.0 (and later) processors.
+   * </pre>
+   *
+   * <code>bool disable_character_boxes_detection = 10;</code>
+   *
+   * @return The disableCharacterBoxesDetection.
+   */
+  @java.lang.Override
+  public boolean getDisableCharacterBoxesDetection() {
+    return disableCharacterBoxesDetection_;
+  }
+
+  public static final int PREMIUM_FEATURES_FIELD_NUMBER = 11;
+  private com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premiumFeatures_;
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for premium OCR features.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;</code>
+   *
+   * @return Whether the premiumFeatures field is set.
+   */
+  @java.lang.Override
+  public boolean hasPremiumFeatures() {
+    return premiumFeatures_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for premium OCR features.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;</code>
+   *
+   * @return The premiumFeatures.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures getPremiumFeatures() {
+    return premiumFeatures_ == null
+        ? com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.getDefaultInstance()
+        : premiumFeatures_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for premium OCR features.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeaturesOrBuilder
+      getPremiumFeaturesOrBuilder() {
+    return premiumFeatures_ == null
+        ? com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.getDefaultInstance()
+        : premiumFeatures_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1119,6 +1995,15 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     if (enableSymbol_ != false) {
       output.writeBool(6, enableSymbol_);
     }
+    if (computeStyleInfo_ != false) {
+      output.writeBool(8, computeStyleInfo_);
+    }
+    if (disableCharacterBoxesDetection_ != false) {
+      output.writeBool(10, disableCharacterBoxesDetection_);
+    }
+    if (premiumFeatures_ != null) {
+      output.writeMessage(11, getPremiumFeatures());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1148,6 +2033,17 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     if (enableSymbol_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, enableSymbol_);
     }
+    if (computeStyleInfo_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, computeStyleInfo_);
+    }
+    if (disableCharacterBoxesDetection_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              10, disableCharacterBoxesDetection_);
+    }
+    if (premiumFeatures_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getPremiumFeatures());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1172,6 +2068,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     if (getEnableImageQualityScores() != other.getEnableImageQualityScores()) return false;
     if (!getAdvancedOcrOptionsList().equals(other.getAdvancedOcrOptionsList())) return false;
     if (getEnableSymbol() != other.getEnableSymbol()) return false;
+    if (getComputeStyleInfo() != other.getComputeStyleInfo()) return false;
+    if (getDisableCharacterBoxesDetection() != other.getDisableCharacterBoxesDetection())
+      return false;
+    if (hasPremiumFeatures() != other.hasPremiumFeatures()) return false;
+    if (hasPremiumFeatures()) {
+      if (!getPremiumFeatures().equals(other.getPremiumFeatures())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1197,6 +2100,15 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ENABLE_SYMBOL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSymbol());
+    hash = (37 * hash) + COMPUTE_STYLE_INFO_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getComputeStyleInfo());
+    hash = (37 * hash) + DISABLE_CHARACTER_BOXES_DETECTION_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableCharacterBoxesDetection());
+    if (hasPremiumFeatures()) {
+      hash = (37 * hash) + PREMIUM_FEATURES_FIELD_NUMBER;
+      hash = (53 * hash) + getPremiumFeatures().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1343,9 +2255,15 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       enableNativePdfParsing_ = false;
       enableImageQualityScores_ = false;
-      advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       enableSymbol_ = false;
+      computeStyleInfo_ = false;
+      disableCharacterBoxesDetection_ = false;
+      premiumFeatures_ = null;
+      if (premiumFeaturesBuilder_ != null) {
+        premiumFeaturesBuilder_.dispose();
+        premiumFeaturesBuilder_ = null;
+      }
       return this;
     }
 
@@ -1373,20 +2291,11 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta3.OcrConfig buildPartial() {
       com.google.cloud.documentai.v1beta3.OcrConfig result =
           new com.google.cloud.documentai.v1beta3.OcrConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.documentai.v1beta3.OcrConfig result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        advancedOcrOptions_ = advancedOcrOptions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.advancedOcrOptions_ = advancedOcrOptions_;
     }
 
     private void buildPartial0(com.google.cloud.documentai.v1beta3.OcrConfig result) {
@@ -1400,8 +2309,22 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.enableImageQualityScores_ = enableImageQualityScores_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        advancedOcrOptions_.makeImmutable();
+        result.advancedOcrOptions_ = advancedOcrOptions_;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.enableSymbol_ = enableSymbol_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.computeStyleInfo_ = computeStyleInfo_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.disableCharacterBoxesDetection_ = disableCharacterBoxesDetection_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.premiumFeatures_ =
+            premiumFeaturesBuilder_ == null ? premiumFeatures_ : premiumFeaturesBuilder_.build();
       }
     }
 
@@ -1462,7 +2385,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.advancedOcrOptions_.isEmpty()) {
         if (advancedOcrOptions_.isEmpty()) {
           advancedOcrOptions_ = other.advancedOcrOptions_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureAdvancedOcrOptionsIsMutable();
           advancedOcrOptions_.addAll(other.advancedOcrOptions_);
@@ -1471,6 +2394,15 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getEnableSymbol() != false) {
         setEnableSymbol(other.getEnableSymbol());
+      }
+      if (other.getComputeStyleInfo() != false) {
+        setComputeStyleInfo(other.getComputeStyleInfo());
+      }
+      if (other.getDisableCharacterBoxesDetection() != false) {
+        setDisableCharacterBoxesDetection(other.getDisableCharacterBoxesDetection());
+      }
+      if (other.hasPremiumFeatures()) {
+        mergePremiumFeatures(other.getPremiumFeatures());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1529,6 +2461,24 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 48
+            case 64:
+              {
+                computeStyleInfo_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
+            case 80:
+              {
+                disableCharacterBoxesDetection_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 80
+            case 90:
+              {
+                input.readMessage(getPremiumFeaturesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1847,20 +2797,26 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList advancedOcrOptions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList advancedOcrOptions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAdvancedOcrOptionsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!advancedOcrOptions_.isModifiable()) {
         advancedOcrOptions_ = new com.google.protobuf.LazyStringArrayList(advancedOcrOptions_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1868,13 +2824,20 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the advancedOcrOptions.
      */
     public com.google.protobuf.ProtocolStringList getAdvancedOcrOptionsList() {
-      return advancedOcrOptions_.getUnmodifiableView();
+      advancedOcrOptions_.makeImmutable();
+      return advancedOcrOptions_;
     }
     /**
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1888,7 +2851,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1903,7 +2872,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1918,7 +2893,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1933,6 +2914,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAdvancedOcrOptionsIsMutable();
       advancedOcrOptions_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1940,7 +2922,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1954,6 +2942,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAdvancedOcrOptionsIsMutable();
       advancedOcrOptions_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1961,7 +2950,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1972,6 +2967,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAdvancedOcrOptions(java.lang.Iterable<java.lang.String> values) {
       ensureAdvancedOcrOptionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, advancedOcrOptions_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1979,7 +2975,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -1987,8 +2989,9 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdvancedOcrOptions() {
-      advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1996,7 +2999,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * A list of advanced OCR options to further fine-tune OCR behavior. Current
+     * valid values are:
+     *
+     * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+     * an alternative to the current ML-based layout detection algorithm.
+     * Customers can choose the best suitable layout algorithm based on their
+     * situation.
      * </pre>
      *
      * <code>repeated string advanced_ocr_options = 5;</code>
@@ -2011,6 +3020,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAdvancedOcrOptionsIsMutable();
       advancedOcrOptions_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2066,6 +3076,332 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       enableSymbol_ = false;
       onChanged();
       return this;
+    }
+
+    private boolean computeStyleInfo_;
+    /**
+     *
+     *
+     * <pre>
+     * Turn on font identification model and return font style information.
+     * Deprecated, use
+     * [PremiumFeatures.compute_style_info][google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.compute_style_info]
+     * instead.
+     * </pre>
+     *
+     * <code>bool compute_style_info = 8 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
+     *     google/cloud/documentai/v1beta3/document_io.proto;l=165
+     * @return The computeStyleInfo.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public boolean getComputeStyleInfo() {
+      return computeStyleInfo_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Turn on font identification model and return font style information.
+     * Deprecated, use
+     * [PremiumFeatures.compute_style_info][google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.compute_style_info]
+     * instead.
+     * </pre>
+     *
+     * <code>bool compute_style_info = 8 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
+     *     google/cloud/documentai/v1beta3/document_io.proto;l=165
+     * @param value The computeStyleInfo to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setComputeStyleInfo(boolean value) {
+
+      computeStyleInfo_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Turn on font identification model and return font style information.
+     * Deprecated, use
+     * [PremiumFeatures.compute_style_info][google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.compute_style_info]
+     * instead.
+     * </pre>
+     *
+     * <code>bool compute_style_info = 8 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
+     *     google/cloud/documentai/v1beta3/document_io.proto;l=165
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearComputeStyleInfo() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      computeStyleInfo_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableCharacterBoxesDetection_;
+    /**
+     *
+     *
+     * <pre>
+     * Turn off character box detector in OCR engine. Character box detection is
+     * enabled by default in OCR 2.0 (and later) processors.
+     * </pre>
+     *
+     * <code>bool disable_character_boxes_detection = 10;</code>
+     *
+     * @return The disableCharacterBoxesDetection.
+     */
+    @java.lang.Override
+    public boolean getDisableCharacterBoxesDetection() {
+      return disableCharacterBoxesDetection_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Turn off character box detector in OCR engine. Character box detection is
+     * enabled by default in OCR 2.0 (and later) processors.
+     * </pre>
+     *
+     * <code>bool disable_character_boxes_detection = 10;</code>
+     *
+     * @param value The disableCharacterBoxesDetection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableCharacterBoxesDetection(boolean value) {
+
+      disableCharacterBoxesDetection_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Turn off character box detector in OCR engine. Character box detection is
+     * enabled by default in OCR 2.0 (and later) processors.
+     * </pre>
+     *
+     * <code>bool disable_character_boxes_detection = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableCharacterBoxesDetection() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      disableCharacterBoxesDetection_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premiumFeatures_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures,
+            com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.Builder,
+            com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeaturesOrBuilder>
+        premiumFeaturesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for premium OCR features.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;
+     * </code>
+     *
+     * @return Whether the premiumFeatures field is set.
+     */
+    public boolean hasPremiumFeatures() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for premium OCR features.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;
+     * </code>
+     *
+     * @return The premiumFeatures.
+     */
+    public com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures getPremiumFeatures() {
+      if (premiumFeaturesBuilder_ == null) {
+        return premiumFeatures_ == null
+            ? com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.getDefaultInstance()
+            : premiumFeatures_;
+      } else {
+        return premiumFeaturesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for premium OCR features.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;
+     * </code>
+     */
+    public Builder setPremiumFeatures(
+        com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures value) {
+      if (premiumFeaturesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        premiumFeatures_ = value;
+      } else {
+        premiumFeaturesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for premium OCR features.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;
+     * </code>
+     */
+    public Builder setPremiumFeatures(
+        com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.Builder builderForValue) {
+      if (premiumFeaturesBuilder_ == null) {
+        premiumFeatures_ = builderForValue.build();
+      } else {
+        premiumFeaturesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for premium OCR features.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;
+     * </code>
+     */
+    public Builder mergePremiumFeatures(
+        com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures value) {
+      if (premiumFeaturesBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && premiumFeatures_ != null
+            && premiumFeatures_
+                != com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures
+                    .getDefaultInstance()) {
+          getPremiumFeaturesBuilder().mergeFrom(value);
+        } else {
+          premiumFeatures_ = value;
+        }
+      } else {
+        premiumFeaturesBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for premium OCR features.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;
+     * </code>
+     */
+    public Builder clearPremiumFeatures() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      premiumFeatures_ = null;
+      if (premiumFeaturesBuilder_ != null) {
+        premiumFeaturesBuilder_.dispose();
+        premiumFeaturesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for premium OCR features.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.Builder
+        getPremiumFeaturesBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getPremiumFeaturesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for premium OCR features.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeaturesOrBuilder
+        getPremiumFeaturesOrBuilder() {
+      if (premiumFeaturesBuilder_ != null) {
+        return premiumFeaturesBuilder_.getMessageOrBuilder();
+      } else {
+        return premiumFeatures_ == null
+            ? com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.getDefaultInstance()
+            : premiumFeatures_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for premium OCR features.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures,
+            com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.Builder,
+            com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeaturesOrBuilder>
+        getPremiumFeaturesFieldBuilder() {
+      if (premiumFeaturesBuilder_ == null) {
+        premiumFeaturesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures,
+                com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.Builder,
+                com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeaturesOrBuilder>(
+                getPremiumFeatures(), getParentForChildren(), isClean());
+        premiumFeatures_ = null;
+      }
+      return premiumFeaturesBuilder_;
     }
 
     @java.lang.Override

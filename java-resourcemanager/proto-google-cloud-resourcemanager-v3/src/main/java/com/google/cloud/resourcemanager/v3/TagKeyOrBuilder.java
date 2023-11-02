@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,6 +91,7 @@ public interface TagKeyOrBuilder
    * <pre>
    * Required. Immutable. The user friendly name for a TagKey. The short name
    * should be unique for TagKeys within the same tag namespace.
+   *
    * The short name must be 1-63 characters, beginning and ending with
    * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
    * dots (.), and alphanumerics between.
@@ -109,6 +110,7 @@ public interface TagKeyOrBuilder
    * <pre>
    * Required. Immutable. The user friendly name for a TagKey. The short name
    * should be unique for TagKeys within the same tag namespace.
+   *
    * The short name must be 1-63 characters, beginning and ending with
    * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
    * dots (.), and alphanumerics between.
@@ -157,6 +159,7 @@ public interface TagKeyOrBuilder
    * <pre>
    * Optional. User-assigned description of the TagKey. Must not exceed 256
    * characters.
+   *
    * Read-write.
    * </pre>
    *
@@ -171,6 +174,7 @@ public interface TagKeyOrBuilder
    * <pre>
    * Optional. User-assigned description of the TagKey. Must not exceed 256
    * characters.
+   *
    * Read-write.
    * </pre>
    *
@@ -294,6 +298,7 @@ public interface TagKeyOrBuilder
    * management operations involving this Tag. A purpose does not grant a
    * policy engine exclusive rights to the Tag, and it may be referenced by
    * other policy engines.
+   *
    * A purpose cannot be changed once set.
    * </pre>
    *
@@ -313,6 +318,7 @@ public interface TagKeyOrBuilder
    * management operations involving this Tag. A purpose does not grant a
    * policy engine exclusive rights to the Tag, and it may be referenced by
    * other policy engines.
+   *
    * A purpose cannot be changed once set.
    * </pre>
    *
@@ -330,6 +336,7 @@ public interface TagKeyOrBuilder
    * <pre>
    * Optional. Purpose data corresponds to the policy system that the tag is
    * intended for. See documentation for `Purpose` for formatting of this field.
+   *
    * Purpose data cannot be changed once set.
    * </pre>
    *
@@ -343,6 +350,7 @@ public interface TagKeyOrBuilder
    * <pre>
    * Optional. Purpose data corresponds to the policy system that the tag is
    * intended for. See documentation for `Purpose` for formatting of this field.
+   *
    * Purpose data cannot be changed once set.
    * </pre>
    *
@@ -359,6 +367,7 @@ public interface TagKeyOrBuilder
    * <pre>
    * Optional. Purpose data corresponds to the policy system that the tag is
    * intended for. See documentation for `Purpose` for formatting of this field.
+   *
    * Purpose data cannot be changed once set.
    * </pre>
    *
@@ -372,6 +381,7 @@ public interface TagKeyOrBuilder
    * <pre>
    * Optional. Purpose data corresponds to the policy system that the tag is
    * intended for. See documentation for `Purpose` for formatting of this field.
+   *
    * Purpose data cannot be changed once set.
    * </pre>
    *
@@ -389,6 +399,7 @@ public interface TagKeyOrBuilder
    * <pre>
    * Optional. Purpose data corresponds to the policy system that the tag is
    * intended for. See documentation for `Purpose` for formatting of this field.
+   *
    * Purpose data cannot be changed once set.
    * </pre>
    *

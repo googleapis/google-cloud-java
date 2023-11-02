@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface GetModelRequestOrBuilder
    * <pre>
    * Required. The name of the Model resource.
    * Format: `projects/{project}/locations/{location}/models/{model}`
+   *
    * In order to retrieve a specific version of the model, also provide
    * the version ID or version alias.
    *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
@@ -53,6 +54,7 @@ public interface GetModelRequestOrBuilder
    * <pre>
    * Required. The name of the Model resource.
    * Format: `projects/{project}/locations/{location}/models/{model}`
+   *
    * In order to retrieve a specific version of the model, also provide
    * the version ID or version alias.
    *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     return new RunPivotReportResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1beta_RunPivotReportResponse_descriptor;
@@ -83,6 +78,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    * Summarizes the columns and rows created by a pivot. Each pivot in the
    * request produces one header in the response. If we have a request like
    * this:
+   *
    *     "pivots": [{
    *       "fieldNames": ["country",
    *         "city"]
@@ -90,7 +86,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    *     {
    *       "fieldNames": "eventName"
    *     }]
+   *
    * We will have the following `pivotHeaders` in the response:
+   *
    *     "pivotHeaders" : [{
    *       "dimensionHeaders": [{
    *         "dimensionValues": [
@@ -128,6 +126,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    * Summarizes the columns and rows created by a pivot. Each pivot in the
    * request produces one header in the response. If we have a request like
    * this:
+   *
    *     "pivots": [{
    *       "fieldNames": ["country",
    *         "city"]
@@ -135,7 +134,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    *     {
    *       "fieldNames": "eventName"
    *     }]
+   *
    * We will have the following `pivotHeaders` in the response:
+   *
    *     "pivotHeaders" : [{
    *       "dimensionHeaders": [{
    *         "dimensionValues": [
@@ -174,6 +175,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    * Summarizes the columns and rows created by a pivot. Each pivot in the
    * request produces one header in the response. If we have a request like
    * this:
+   *
    *     "pivots": [{
    *       "fieldNames": ["country",
    *         "city"]
@@ -181,7 +183,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    *     {
    *       "fieldNames": "eventName"
    *     }]
+   *
    * We will have the following `pivotHeaders` in the response:
+   *
    *     "pivotHeaders" : [{
    *       "dimensionHeaders": [{
    *         "dimensionValues": [
@@ -219,6 +223,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    * Summarizes the columns and rows created by a pivot. Each pivot in the
    * request produces one header in the response. If we have a request like
    * this:
+   *
    *     "pivots": [{
    *       "fieldNames": ["country",
    *         "city"]
@@ -226,7 +231,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    *     {
    *       "fieldNames": "eventName"
    *     }]
+   *
    * We will have the following `pivotHeaders` in the response:
+   *
    *     "pivotHeaders" : [{
    *       "dimensionHeaders": [{
    *         "dimensionValues": [
@@ -264,6 +271,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    * Summarizes the columns and rows created by a pivot. Each pivot in the
    * request produces one header in the response. If we have a request like
    * this:
+   *
    *     "pivots": [{
    *       "fieldNames": ["country",
    *         "city"]
@@ -271,7 +279,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    *     {
    *       "fieldNames": "eventName"
    *     }]
+   *
    * We will have the following `pivotHeaders` in the response:
+   *
    *     "pivotHeaders" : [{
    *       "dimensionHeaders": [{
    *         "dimensionValues": [
@@ -1541,6 +1551,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -1548,7 +1559,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -1589,6 +1602,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -1596,7 +1610,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -1637,6 +1653,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -1644,7 +1661,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -1685,6 +1704,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -1692,7 +1712,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -1739,6 +1761,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -1746,7 +1769,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -1791,6 +1816,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -1798,7 +1824,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -1845,6 +1873,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -1852,7 +1881,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -1899,6 +1930,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -1906,7 +1938,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -1951,6 +1985,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -1958,7 +1993,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -2003,6 +2040,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -2010,7 +2048,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -2055,6 +2095,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -2062,7 +2103,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -2106,6 +2149,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -2113,7 +2157,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -2157,6 +2203,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -2164,7 +2211,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -2201,6 +2250,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -2208,7 +2258,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -2250,6 +2302,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -2257,7 +2310,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -2299,6 +2354,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -2306,7 +2362,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -2344,6 +2402,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -2351,7 +2410,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [
@@ -2389,6 +2450,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * Summarizes the columns and rows created by a pivot. Each pivot in the
      * request produces one header in the response. If we have a request like
      * this:
+     *
      *     "pivots": [{
      *       "fieldNames": ["country",
      *         "city"]
@@ -2396,7 +2458,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *     {
      *       "fieldNames": "eventName"
      *     }]
+     *
      * We will have the following `pivotHeaders` in the response:
+     *
      *     "pivotHeaders" : [{
      *       "dimensionHeaders": [{
      *         "dimensionValues": [

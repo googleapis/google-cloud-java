@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface EncryptionConfigOrBuilder
    * <pre>
    * The fully qualified customer provided Cloud KMS key name to use for
    * customer data encryption, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface EncryptionConfigOrBuilder
    * <pre>
    * The fully qualified customer provided Cloud KMS key name to use for
    * customer data encryption, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
    * </pre>
    *

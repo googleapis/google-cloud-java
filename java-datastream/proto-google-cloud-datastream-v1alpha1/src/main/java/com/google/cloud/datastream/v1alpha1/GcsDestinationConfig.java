@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     return new GcsDestinationConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1alpha1.CloudDatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1alpha1_GcsDestinationConfig_descriptor;
@@ -69,6 +64,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
   }
 
   private int fileFormatCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object fileFormat_;
 
   public enum FileFormatCase

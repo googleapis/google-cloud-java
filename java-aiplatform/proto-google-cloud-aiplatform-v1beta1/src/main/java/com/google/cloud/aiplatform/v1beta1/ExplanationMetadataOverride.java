@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
     return new ExplanationMetadataOverride();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ExplanationProto
         .internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_descriptor;
@@ -89,6 +84,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * This overrides the `input_baseline` field of the
      * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
      * object of the corresponding feature's input metadata. If it's not
@@ -103,6 +99,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * This overrides the `input_baseline` field of the
      * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
      * object of the corresponding feature's input metadata. If it's not
@@ -117,6 +114,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * This overrides the `input_baseline` field of the
      * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
      * object of the corresponding feature's input metadata. If it's not
@@ -131,6 +129,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * This overrides the `input_baseline` field of the
      * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
      * object of the corresponding feature's input metadata. If it's not
@@ -145,6 +144,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * This overrides the `input_baseline` field of the
      * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
      * object of the corresponding feature's input metadata. If it's not
@@ -187,11 +187,6 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
       return new InputMetadataOverride();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.ExplanationProto
           .internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputMetadataOverride_descriptor;
@@ -218,6 +213,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * This overrides the `input_baseline` field of the
      * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
      * object of the corresponding feature's input metadata. If it's not
@@ -235,6 +231,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * This overrides the `input_baseline` field of the
      * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
      * object of the corresponding feature's input metadata. If it's not
@@ -253,6 +250,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * This overrides the `input_baseline` field of the
      * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
      * object of the corresponding feature's input metadata. If it's not
@@ -270,6 +268,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * This overrides the `input_baseline` field of the
      * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
      * object of the corresponding feature's input metadata. If it's not
@@ -287,6 +286,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * This overrides the `input_baseline` field of the
      * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
      * object of the corresponding feature's input metadata. If it's not
@@ -762,6 +762,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -782,6 +783,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -802,6 +804,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -822,6 +825,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -848,6 +852,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -872,6 +877,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -898,6 +904,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -924,6 +931,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -947,6 +955,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -971,6 +980,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -995,6 +1005,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -1018,6 +1029,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -1041,6 +1053,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -1057,6 +1070,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -1077,6 +1091,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -1098,6 +1113,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -1115,6 +1131,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not
@@ -1132,6 +1149,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * This overrides the `input_baseline` field of the
        * [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata]
        * object of the corresponding feature's input metadata. If it's not

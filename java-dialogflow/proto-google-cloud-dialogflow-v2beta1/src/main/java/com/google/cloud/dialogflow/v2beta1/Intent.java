@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ package com.google.cloud.dialogflow.v2beta1;
  * as an end-user expression or end-user input, Dialogflow matches the end-user
  * input to the best intent in your agent. Matching an intent is also known as
  * intent classification.
+ *
  * For more information, see the [intent
  * guide](https://cloud.google.com/dialogflow/docs/intents-overview).
  * </pre>
@@ -48,8 +49,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     displayName_ = "";
     webhookState_ = 0;
-    inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    inputContextNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    events_ = com.google.protobuf.LazyStringArrayList.emptyList();
     trainingPhrases_ = java.util.Collections.emptyList();
     action_ = "";
     outputContexts_ = java.util.Collections.emptyList();
@@ -65,11 +66,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Intent();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -311,16 +307,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -338,16 +339,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -365,16 +371,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -392,16 +403,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -421,16 +437,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -488,11 +509,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TrainingPhrase();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -813,11 +829,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Part();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2005,16 +2016,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -2036,16 +2052,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -2068,16 +2089,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -2098,16 +2124,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -2128,16 +2159,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -2874,16 +2910,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -2908,16 +2949,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -2941,16 +2987,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -2974,16 +3025,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3014,16 +3070,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3052,16 +3113,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3092,16 +3158,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3132,16 +3203,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3169,16 +3245,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3207,16 +3288,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3246,16 +3332,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3282,16 +3373,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3318,16 +3414,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3348,16 +3449,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3382,16 +3488,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3417,16 +3528,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3450,16 +3566,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3484,16 +3605,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `entity_type`, `alias`, and `user_defined` fields are all
@@ -3709,6 +3835,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The definition of the parameter value. It can be:
+     *
      * - a constant string,
      * - a parameter value defined as `$parameter_name`,
      * - an original parameter value defined as `$parameter_name.original`,
@@ -3726,6 +3853,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The definition of the parameter value. It can be:
+     *
      * - a constant string,
      * - a parameter value defined as `$parameter_name`,
      * - an original parameter value defined as `$parameter_name.original`,
@@ -3907,18 +4035,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       value_ = "";
       defaultValue_ = "";
       entityTypeDisplayName_ = "";
-      prompts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      prompts_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Parameter();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4047,6 +4170,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The definition of the parameter value. It can be:
+     *
      * - a constant string,
      * - a parameter value defined as `$parameter_name`,
      * - an original parameter value defined as `$parameter_name.original`,
@@ -4075,6 +4199,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The definition of the parameter value. It can be:
+     *
      * - a constant string,
      * - a parameter value defined as `$parameter_name`,
      * - an original parameter value defined as `$parameter_name.original`,
@@ -4234,7 +4359,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public static final int PROMPTS_FIELD_NUMBER = 7;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList prompts_;
+    private com.google.protobuf.LazyStringArrayList prompts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -4593,8 +4719,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         defaultValue_ = "";
         entityTypeDisplayName_ = "";
         mandatory_ = false;
-        prompts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
+        prompts_ = com.google.protobuf.LazyStringArrayList.emptyList();
         isList_ = false;
         return this;
       }
@@ -4623,21 +4748,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2beta1.Intent.Parameter buildPartial() {
         com.google.cloud.dialogflow.v2beta1.Intent.Parameter result =
             new com.google.cloud.dialogflow.v2beta1.Intent.Parameter(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dialogflow.v2beta1.Intent.Parameter result) {
-        if (((bitField0_ & 0x00000040) != 0)) {
-          prompts_ = prompts_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000040);
-        }
-        result.prompts_ = prompts_;
       }
 
       private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Intent.Parameter result) {
@@ -4659,6 +4774,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.mandatory_ = mandatory_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          prompts_.makeImmutable();
+          result.prompts_ = prompts_;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.isList_ = isList_;
@@ -4744,7 +4863,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         if (!other.prompts_.isEmpty()) {
           if (prompts_.isEmpty()) {
             prompts_ = other.prompts_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ |= 0x00000040;
           } else {
             ensurePromptsIsMutable();
             prompts_.addAll(other.prompts_);
@@ -5066,6 +5185,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The definition of the parameter value. It can be:
+       *
        * - a constant string,
        * - a parameter value defined as `$parameter_name`,
        * - an original parameter value defined as `$parameter_name.original`,
@@ -5093,6 +5213,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The definition of the parameter value. It can be:
+       *
        * - a constant string,
        * - a parameter value defined as `$parameter_name`,
        * - an original parameter value defined as `$parameter_name.original`,
@@ -5120,6 +5241,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The definition of the parameter value. It can be:
+       *
        * - a constant string,
        * - a parameter value defined as `$parameter_name`,
        * - an original parameter value defined as `$parameter_name.original`,
@@ -5146,6 +5268,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The definition of the parameter value. It can be:
+       *
        * - a constant string,
        * - a parameter value defined as `$parameter_name`,
        * - an original parameter value defined as `$parameter_name.original`,
@@ -5168,6 +5291,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The definition of the parameter value. It can be:
+       *
        * - a constant string,
        * - a parameter value defined as `$parameter_name`,
        * - an original parameter value defined as `$parameter_name.original`,
@@ -5487,14 +5611,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList prompts_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList prompts_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensurePromptsIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!prompts_.isModifiable()) {
           prompts_ = new com.google.protobuf.LazyStringArrayList(prompts_);
-          bitField0_ |= 0x00000040;
         }
+        bitField0_ |= 0x00000040;
       }
       /**
        *
@@ -5509,7 +5633,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the prompts.
        */
       public com.google.protobuf.ProtocolStringList getPromptsList() {
-        return prompts_.getUnmodifiableView();
+        prompts_.makeImmutable();
+        return prompts_;
       }
       /**
        *
@@ -5578,6 +5703,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePromptsIsMutable();
         prompts_.set(index, value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -5600,6 +5726,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePromptsIsMutable();
         prompts_.add(value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -5619,6 +5746,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllPrompts(java.lang.Iterable<java.lang.String> values) {
         ensurePromptsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, prompts_);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -5635,8 +5763,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPrompts() {
-        prompts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        prompts_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000040);
+        ;
         onChanged();
         return this;
       }
@@ -5660,6 +5789,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensurePromptsIsMutable();
         prompts_.add(value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -6321,6 +6451,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rich Business Messaging (RBM) text response.
+     *
      * RBM allows businesses to send enriched and branded versions of SMS. See
      * https://jibe.google.com/business-messaging.
      * </pre>
@@ -6335,6 +6466,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rich Business Messaging (RBM) text response.
+     *
      * RBM allows businesses to send enriched and branded versions of SMS. See
      * https://jibe.google.com/business-messaging.
      * </pre>
@@ -6349,6 +6481,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rich Business Messaging (RBM) text response.
+     *
      * RBM allows businesses to send enriched and branded versions of SMS. See
      * https://jibe.google.com/business-messaging.
      * </pre>
@@ -6583,7 +6716,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dialogflow.v2beta1.Intent.Message.Platform getPlatform();
 
-    public com.google.cloud.dialogflow.v2beta1.Intent.Message.MessageCase getMessageCase();
+    com.google.cloud.dialogflow.v2beta1.Intent.Message.MessageCase getMessageCase();
   }
   /**
    *
@@ -6612,11 +6745,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Message();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7049,18 +7177,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private Text() {
-        text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        text_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Text();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7081,7 +7204,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public static final int TEXT_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList text_;
+      private com.google.protobuf.LazyStringArrayList text_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -7349,8 +7473,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          text_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -7378,7 +7501,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.Text buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.Text result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.Text(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -7386,17 +7508,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.dialogflow.v2beta1.Intent.Message.Text result) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            text_ = text_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.text_ = text_;
-        }
-
         private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Intent.Message.Text result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            text_.makeImmutable();
+            result.text_ = text_;
+          }
         }
 
         @java.lang.Override
@@ -7450,7 +7567,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (!other.text_.isEmpty()) {
             if (text_.isEmpty()) {
               text_ = other.text_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ |= 0x00000001;
             } else {
               ensureTextIsMutable();
               text_.addAll(other.text_);
@@ -7509,14 +7626,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList text_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList text_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureTextIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!text_.isModifiable()) {
             text_ = new com.google.protobuf.LazyStringArrayList(text_);
-            bitField0_ |= 0x00000001;
           }
+          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -7530,7 +7647,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the text.
          */
         public com.google.protobuf.ProtocolStringList getTextList() {
-          return text_.getUnmodifiableView();
+          text_.makeImmutable();
+          return text_;
         }
         /**
          *
@@ -7595,6 +7713,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           ensureTextIsMutable();
           text_.set(index, value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -7616,6 +7735,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           ensureTextIsMutable();
           text_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -7634,6 +7754,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllText(java.lang.Iterable<java.lang.String> values) {
           ensureTextIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, text_);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -7649,8 +7770,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearText() {
-          text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          text_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          ;
           onChanged();
           return this;
         }
@@ -7673,6 +7795,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureTextIsMutable();
           text_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -7826,11 +7949,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Image();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8710,18 +8828,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       private QuickReplies() {
         title_ = "";
-        quickReplies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        quickReplies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new QuickReplies();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8793,7 +8906,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public static final int QUICK_REPLIES_FIELD_NUMBER = 2;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList quickReplies_;
+      private com.google.protobuf.LazyStringArrayList quickReplies_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -9074,8 +9188,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           bitField0_ = 0;
           title_ = "";
-          quickReplies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          quickReplies_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -9105,7 +9218,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -9113,20 +9225,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies result) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            quickReplies_ = quickReplies_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.quickReplies_ = quickReplies_;
-        }
-
         private void buildPartial0(
             com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies result) {
           int from_bitField0_ = bitField0_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.title_ = title_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            quickReplies_.makeImmutable();
+            result.quickReplies_ = quickReplies_;
           }
         }
 
@@ -9189,7 +9296,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (!other.quickReplies_.isEmpty()) {
             if (quickReplies_.isEmpty()) {
               quickReplies_ = other.quickReplies_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ |= 0x00000002;
             } else {
               ensureQuickRepliesIsMutable();
               quickReplies_.addAll(other.quickReplies_);
@@ -9360,14 +9467,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.protobuf.LazyStringList quickReplies_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList quickReplies_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureQuickRepliesIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!quickReplies_.isModifiable()) {
             quickReplies_ = new com.google.protobuf.LazyStringArrayList(quickReplies_);
-            bitField0_ |= 0x00000002;
           }
+          bitField0_ |= 0x00000002;
         }
         /**
          *
@@ -9381,7 +9488,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the quickReplies.
          */
         public com.google.protobuf.ProtocolStringList getQuickRepliesList() {
-          return quickReplies_.getUnmodifiableView();
+          quickReplies_.makeImmutable();
+          return quickReplies_;
         }
         /**
          *
@@ -9446,6 +9554,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           ensureQuickRepliesIsMutable();
           quickReplies_.set(index, value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -9467,6 +9576,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           ensureQuickRepliesIsMutable();
           quickReplies_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -9485,6 +9595,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllQuickReplies(java.lang.Iterable<java.lang.String> values) {
           ensureQuickRepliesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, quickReplies_);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -9500,8 +9611,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearQuickReplies() {
-          quickReplies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          quickReplies_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
+          ;
           onChanged();
           return this;
         }
@@ -9524,6 +9636,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureQuickRepliesIsMutable();
           quickReplies_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -9767,11 +9880,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new Card();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_Card_descriptor;
@@ -9872,11 +9980,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new Button();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -12257,11 +12360,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new SimpleResponse();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_SimpleResponse_descriptor;
@@ -13341,11 +13439,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new SimpleResponses();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -14556,11 +14649,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new BasicCard();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_BasicCard_descriptor;
@@ -14678,11 +14766,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return new Button();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.dialogflow.v2beta1.IntentProto
               .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_BasicCard_Button_descriptor;
@@ -14757,11 +14840,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @SuppressWarnings({"unused"})
           protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
             return new OpenUriAction();
-          }
-
-          @java.lang.Override
-          public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
           }
 
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -18155,11 +18233,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new Suggestion();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_Suggestion_descriptor;
@@ -18846,11 +18919,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Suggestions();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -19919,11 +19987,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new LinkOutSuggestion();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_LinkOutSuggestion_descriptor;
@@ -20859,11 +20922,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new ListSelect();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_ListSelect_descriptor;
@@ -21033,11 +21091,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new Item();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -23779,11 +23832,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new CarouselSelect();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_CarouselSelect_descriptor;
@@ -23953,11 +24001,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new Item();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -26387,18 +26430,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       private SelectItemInfo() {
         key_ = "";
-        synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new SelectItemInfo();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -26472,7 +26510,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public static final int SYNONYMS_FIELD_NUMBER = 2;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList synonyms_;
+      private com.google.protobuf.LazyStringArrayList synonyms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -26758,8 +26797,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           bitField0_ = 0;
           key_ = "";
-          synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -26789,7 +26827,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo buildPartial() {
           com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -26797,20 +26834,15 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo result) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            synonyms_ = synonyms_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.synonyms_ = synonyms_;
-        }
-
         private void buildPartial0(
             com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo result) {
           int from_bitField0_ = bitField0_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.key_ = key_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            synonyms_.makeImmutable();
+            result.synonyms_ = synonyms_;
           }
         }
 
@@ -26873,7 +26905,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           if (!other.synonyms_.isEmpty()) {
             if (synonyms_.isEmpty()) {
               synonyms_ = other.synonyms_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ |= 0x00000002;
             } else {
               ensureSynonymsIsMutable();
               synonyms_.addAll(other.synonyms_);
@@ -27049,14 +27081,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.protobuf.LazyStringList synonyms_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList synonyms_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureSynonymsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!synonyms_.isModifiable()) {
             synonyms_ = new com.google.protobuf.LazyStringArrayList(synonyms_);
-            bitField0_ |= 0x00000002;
           }
+          bitField0_ |= 0x00000002;
         }
         /**
          *
@@ -27071,7 +27103,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the synonyms.
          */
         public com.google.protobuf.ProtocolStringList getSynonymsList() {
-          return synonyms_.getUnmodifiableView();
+          synonyms_.makeImmutable();
+          return synonyms_;
         }
         /**
          *
@@ -27140,6 +27173,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           ensureSynonymsIsMutable();
           synonyms_.set(index, value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -27162,6 +27196,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
           ensureSynonymsIsMutable();
           synonyms_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -27181,6 +27216,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllSynonyms(java.lang.Iterable<java.lang.String> values) {
           ensureSynonymsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, synonyms_);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -27197,8 +27233,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearSynonyms() {
-          synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
+          ;
           onChanged();
           return this;
         }
@@ -27222,6 +27259,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureSynonymsIsMutable();
           synonyms_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -27305,12 +27343,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. URI to a Google Cloud Storage object containing the audio to
        * play, e.g., "gs://bucket/object". The object must contain a single
        * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+       *
        * This object must be readable by the `service-&lt;Project
        * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
        * where &lt;Project Number&gt; is the number of the Telephony Gateway project
        * (usually the same as the Dialogflow agent project). If the Google Cloud
        * Storage bucket is in the Telephony Gateway project, this permission is
        * added by default when enabling the Dialogflow V2 API.
+       *
        * For audio from other sources, consider using the
        * `TelephonySynthesizeSpeech` message with SSML.
        * </pre>
@@ -27327,12 +27367,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. URI to a Google Cloud Storage object containing the audio to
        * play, e.g., "gs://bucket/object". The object must contain a single
        * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+       *
        * This object must be readable by the `service-&lt;Project
        * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
        * where &lt;Project Number&gt; is the number of the Telephony Gateway project
        * (usually the same as the Dialogflow agent project). If the Google Cloud
        * Storage bucket is in the Telephony Gateway project, this permission is
        * added by default when enabling the Dialogflow V2 API.
+       *
        * For audio from other sources, consider using the
        * `TelephonySynthesizeSpeech` message with SSML.
        * </pre>
@@ -27372,11 +27414,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new TelephonyPlayAudio();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyPlayAudio_descriptor;
@@ -27404,12 +27441,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. URI to a Google Cloud Storage object containing the audio to
        * play, e.g., "gs://bucket/object". The object must contain a single
        * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+       *
        * This object must be readable by the `service-&lt;Project
        * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
        * where &lt;Project Number&gt; is the number of the Telephony Gateway project
        * (usually the same as the Dialogflow agent project). If the Google Cloud
        * Storage bucket is in the Telephony Gateway project, this permission is
        * added by default when enabling the Dialogflow V2 API.
+       *
        * For audio from other sources, consider using the
        * `TelephonySynthesizeSpeech` message with SSML.
        * </pre>
@@ -27437,12 +27476,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. URI to a Google Cloud Storage object containing the audio to
        * play, e.g., "gs://bucket/object". The object must contain a single
        * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+       *
        * This object must be readable by the `service-&lt;Project
        * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
        * where &lt;Project Number&gt; is the number of the Telephony Gateway project
        * (usually the same as the Dialogflow agent project). If the Google Cloud
        * Storage bucket is in the Telephony Gateway project, this permission is
        * added by default when enabling the Dialogflow V2 API.
+       *
        * For audio from other sources, consider using the
        * `TelephonySynthesizeSpeech` message with SSML.
        * </pre>
@@ -27833,12 +27874,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. URI to a Google Cloud Storage object containing the audio to
          * play, e.g., "gs://bucket/object". The object must contain a single
          * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+         *
          * This object must be readable by the `service-&lt;Project
          * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
          * where &lt;Project Number&gt; is the number of the Telephony Gateway project
          * (usually the same as the Dialogflow agent project). If the Google Cloud
          * Storage bucket is in the Telephony Gateway project, this permission is
          * added by default when enabling the Dialogflow V2 API.
+         *
          * For audio from other sources, consider using the
          * `TelephonySynthesizeSpeech` message with SSML.
          * </pre>
@@ -27865,12 +27908,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. URI to a Google Cloud Storage object containing the audio to
          * play, e.g., "gs://bucket/object". The object must contain a single
          * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+         *
          * This object must be readable by the `service-&lt;Project
          * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
          * where &lt;Project Number&gt; is the number of the Telephony Gateway project
          * (usually the same as the Dialogflow agent project). If the Google Cloud
          * Storage bucket is in the Telephony Gateway project, this permission is
          * added by default when enabling the Dialogflow V2 API.
+         *
          * For audio from other sources, consider using the
          * `TelephonySynthesizeSpeech` message with SSML.
          * </pre>
@@ -27897,12 +27942,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. URI to a Google Cloud Storage object containing the audio to
          * play, e.g., "gs://bucket/object". The object must contain a single
          * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+         *
          * This object must be readable by the `service-&lt;Project
          * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
          * where &lt;Project Number&gt; is the number of the Telephony Gateway project
          * (usually the same as the Dialogflow agent project). If the Google Cloud
          * Storage bucket is in the Telephony Gateway project, this permission is
          * added by default when enabling the Dialogflow V2 API.
+         *
          * For audio from other sources, consider using the
          * `TelephonySynthesizeSpeech` message with SSML.
          * </pre>
@@ -27928,12 +27975,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. URI to a Google Cloud Storage object containing the audio to
          * play, e.g., "gs://bucket/object". The object must contain a single
          * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+         *
          * This object must be readable by the `service-&lt;Project
          * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
          * where &lt;Project Number&gt; is the number of the Telephony Gateway project
          * (usually the same as the Dialogflow agent project). If the Google Cloud
          * Storage bucket is in the Telephony Gateway project, this permission is
          * added by default when enabling the Dialogflow V2 API.
+         *
          * For audio from other sources, consider using the
          * `TelephonySynthesizeSpeech` message with SSML.
          * </pre>
@@ -27955,12 +28004,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. URI to a Google Cloud Storage object containing the audio to
          * play, e.g., "gs://bucket/object". The object must contain a single
          * channel (mono) of linear PCM audio (2 bytes / sample) at 8kHz.
+         *
          * This object must be readable by the `service-&lt;Project
          * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` service account
          * where &lt;Project Number&gt; is the number of the Telephony Gateway project
          * (usually the same as the Dialogflow agent project). If the Google Cloud
          * Storage bucket is in the Telephony Gateway project, this permission is
          * added by default when enabling the Dialogflow V2 API.
+         *
          * For audio from other sources, consider using the
          * `TelephonySynthesizeSpeech` message with SSML.
          * </pre>
@@ -28131,7 +28182,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getSsmlBytes();
 
-      public com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.SourceCase
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech.SourceCase
           getSourceCase();
     }
     /**
@@ -28140,6 +28191,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Synthesizes speech and plays back the synthesized audio to the caller in
      * Telephony Gateway.
+     *
      * Telephony Gateway takes the synthesizer settings from
      * `DetectIntentResponse.output_audio_config` which can either be set
      * at request-level or can come from the agent-level synthesizer config.
@@ -28167,11 +28219,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new TelephonySynthesizeSpeech();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonySynthesizeSpeech_descriptor;
@@ -28189,6 +28236,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int sourceCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object source_;
 
       public enum SourceCase
@@ -28581,6 +28630,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Synthesizes speech and plays back the synthesized audio to the caller in
        * Telephony Gateway.
+       *
        * Telephony Gateway takes the synthesizer settings from
        * `DetectIntentResponse.output_audio_config` which can either be set
        * at request-level or can come from the agent-level synthesizer config.
@@ -29178,6 +29228,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The phone number to transfer the call to
        * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       *
        * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
        * </pre>
        *
@@ -29192,6 +29243,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The phone number to transfer the call to
        * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       *
        * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
        * </pre>
        *
@@ -29230,11 +29282,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new TelephonyTransferCall();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TelephonyTransferCall_descriptor;
@@ -29261,6 +29308,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The phone number to transfer the call to
        * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       *
        * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
        * </pre>
        *
@@ -29286,6 +29334,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The phone number to transfer the call to
        * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+       *
        * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
        * </pre>
        *
@@ -29680,6 +29729,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. The phone number to transfer the call to
          * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+         *
          * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
          * </pre>
          *
@@ -29704,6 +29754,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. The phone number to transfer the call to
          * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+         *
          * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
          * </pre>
          *
@@ -29728,6 +29779,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. The phone number to transfer the call to
          * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+         *
          * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
          * </pre>
          *
@@ -29751,6 +29803,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. The phone number to transfer the call to
          * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+         *
          * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
          * </pre>
          *
@@ -29770,6 +29823,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. The phone number to transfer the call to
          * in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+         *
          * We currently only allow transferring to US numbers (+1xxxyyyzzzz).
          * </pre>
          *
@@ -29980,11 +30034,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new RbmText();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -31261,8 +31310,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Carousel Rich Business Messaging (RBM) rich card.
+     *
      * Rich cards allow you to respond to users with more vivid content, e.g.
      * with media and suggestions.
+     *
      * If you want to show a single card with more control over the layout,
      * please use
      * [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard]
@@ -31290,11 +31341,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new RbmCarouselCard();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -31793,8 +31839,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Carousel Rich Business Messaging (RBM) rich card.
+       *
        * Rich cards allow you to respond to users with more vivid content, e.g.
        * with media and suggestions.
+       *
        * If you want to show a single card with more control over the layout,
        * please use
        * [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard]
@@ -32767,8 +32815,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Standalone Rich Business Messaging (RBM) rich card.
+     *
      * Rich cards allow you to respond to users with more vivid content, e.g.
      * with media and suggestions.
+     *
      * You can group multiple rich cards into one using
      * [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard]
      * but carousel cards will give you less control over the card layout.
@@ -32795,11 +32845,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new RbmStandaloneCard();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -33500,8 +33545,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Standalone Rich Business Messaging (RBM) rich card.
+       *
        * Rich cards allow you to respond to users with more vivid content, e.g.
        * with media and suggestions.
+       *
        * You can group multiple rich cards into one using
        * [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard]
        * but carousel cards will give you less control over the card layout.
@@ -34229,6 +34276,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Title of the card (at most 200 bytes).
+       *
        * At least one of the title, description or media must be set.
        * </pre>
        *
@@ -34242,6 +34290,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Title of the card (at most 200 bytes).
+       *
        * At least one of the title, description or media must be set.
        * </pre>
        *
@@ -34256,6 +34305,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Description of the card (at most 2000 bytes).
+       *
        * At least one of the title, description or media must be set.
        * </pre>
        *
@@ -34269,6 +34319,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Description of the card (at most 2000 bytes).
+       *
        * At least one of the title, description or media must be set.
        * </pre>
        *
@@ -34416,11 +34467,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new RbmCardContent();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmCardContent_descriptor;
@@ -34547,12 +34593,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Rich Business Messaging (RBM) Media displayed in Cards
        * The following media-types are currently supported:
+       *
        * Image Types
+       *
        * * image/jpeg
        * * image/jpg'
        * * image/gif
        * * image/png
+       *
        * Video Types
+       *
        * * video/h263
        * * video/m4v
        * * video/mp4
@@ -34584,11 +34634,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new RbmMedia();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -35163,12 +35208,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Rich Business Messaging (RBM) Media displayed in Cards
          * The following media-types are currently supported:
+         *
          * Image Types
+         *
          * * image/jpeg
          * * image/jpg'
          * * image/gif
          * * image/png
+         *
          * Video Types
+         *
          * * video/h263
          * * video/m4v
          * * video/mp4
@@ -35849,6 +35898,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Title of the card (at most 200 bytes).
+       *
        * At least one of the title, description or media must be set.
        * </pre>
        *
@@ -35873,6 +35923,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Title of the card (at most 200 bytes).
+       *
        * At least one of the title, description or media must be set.
        * </pre>
        *
@@ -35902,6 +35953,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Description of the card (at most 2000 bytes).
+       *
        * At least one of the title, description or media must be set.
        * </pre>
        *
@@ -35926,6 +35978,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Description of the card (at most 2000 bytes).
+       *
        * At least one of the title, description or media must be set.
        * </pre>
        *
@@ -36582,6 +36635,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Title of the card (at most 200 bytes).
+         *
          * At least one of the title, description or media must be set.
          * </pre>
          *
@@ -36605,6 +36659,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Title of the card (at most 200 bytes).
+         *
          * At least one of the title, description or media must be set.
          * </pre>
          *
@@ -36628,6 +36683,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Title of the card (at most 200 bytes).
+         *
          * At least one of the title, description or media must be set.
          * </pre>
          *
@@ -36650,6 +36706,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Title of the card (at most 200 bytes).
+         *
          * At least one of the title, description or media must be set.
          * </pre>
          *
@@ -36668,6 +36725,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Title of the card (at most 200 bytes).
+         *
          * At least one of the title, description or media must be set.
          * </pre>
          *
@@ -36693,6 +36751,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Description of the card (at most 2000 bytes).
+         *
          * At least one of the title, description or media must be set.
          * </pre>
          *
@@ -36716,6 +36775,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Description of the card (at most 2000 bytes).
+         *
          * At least one of the title, description or media must be set.
          * </pre>
          *
@@ -36739,6 +36799,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Description of the card (at most 2000 bytes).
+         *
          * At least one of the title, description or media must be set.
          * </pre>
          *
@@ -36761,6 +36822,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Description of the card (at most 2000 bytes).
+         *
          * At least one of the title, description or media must be set.
          * </pre>
          *
@@ -36779,6 +36841,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Description of the card (at most 2000 bytes).
+         *
          * At least one of the title, description or media must be set.
          * </pre>
          *
@@ -37569,7 +37632,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedActionOrBuilder
           getActionOrBuilder();
 
-      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.SuggestionCase
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestion.SuggestionCase
           getSuggestionCase();
     }
     /**
@@ -37601,11 +37664,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new RbmSuggestion();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestion_descriptor;
@@ -37622,6 +37680,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int suggestionCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object suggestion_;
 
       public enum SuggestionCase
@@ -38838,11 +38898,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new RbmSuggestedReply();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedReply_descriptor;
@@ -39832,7 +39887,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               .RbmSuggestedActionShareLocationOrBuilder
           getShareLocationOrBuilder();
 
-      public com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.ActionCase
+      com.google.cloud.dialogflow.v2beta1.Intent.Message.RbmSuggestedAction.ActionCase
           getActionCase();
     }
     /**
@@ -39864,11 +39919,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new RbmSuggestedAction();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -39953,11 +40003,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new RbmSuggestedActionDial();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -40702,11 +40747,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return new RbmSuggestedActionOpenUri();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.dialogflow.v2beta1.IntentProto
               .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionOpenUri_descriptor;
@@ -41400,11 +41440,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return new RbmSuggestedActionShareLocation();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.dialogflow.v2beta1.IntentProto
               .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_RbmSuggestedAction_RbmSuggestedActionShareLocation_descriptor;
@@ -41868,6 +41903,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int actionCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object action_;
 
       public enum ActionCase
@@ -43988,11 +44025,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new MediaContent();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_MediaContent_descriptor;
@@ -44300,7 +44332,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getContentUrlBytes();
 
-        public com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaObject
+        com.google.cloud.dialogflow.v2beta1.Intent.Message.MediaContent.ResponseMediaObject
                 .ImageCase
             getImageCase();
       }
@@ -44336,11 +44368,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return new ResponseMediaObject();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.dialogflow.v2beta1.IntentProto
               .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_MediaContent_ResponseMediaObject_descriptor;
@@ -44359,6 +44386,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int imageCase_ = 0;
+
+        @SuppressWarnings("serial")
         private java.lang.Object image_;
 
         public enum ImageCase
@@ -47364,11 +47393,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new BrowseCarouselCard();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_BrowseCarouselCard_descriptor;
@@ -47811,11 +47835,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return new BrowseCarouselCardItem();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.dialogflow.v2beta1.IntentProto
               .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_BrowseCarouselCard_BrowseCarouselCardItem_descriptor;
@@ -47925,11 +47944,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @SuppressWarnings({"unused"})
           protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
             return new OpenUrlAction();
-          }
-
-          @java.lang.Override
-          public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
           }
 
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -52111,11 +52125,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new TableCard();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TableCard_descriptor;
@@ -54932,11 +54941,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new ColumnProperties();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_ColumnProperties_descriptor;
@@ -56011,11 +56015,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new TableCardRow();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -57133,11 +57132,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return new TableCardCell();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.IntentProto
             .internal_static_google_cloud_dialogflow_v2beta1_Intent_Message_TableCardCell_descriptor;
@@ -57735,6 +57729,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int messageCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object message_;
 
     public enum MessageCase
@@ -58611,6 +58607,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rich Business Messaging (RBM) text response.
+     *
      * RBM allows businesses to send enriched and branded versions of SMS. See
      * https://jibe.google.com/business-messaging.
      * </pre>
@@ -58628,6 +58625,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rich Business Messaging (RBM) text response.
+     *
      * RBM allows businesses to send enriched and branded versions of SMS. See
      * https://jibe.google.com/business-messaging.
      * </pre>
@@ -58648,6 +58646,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rich Business Messaging (RBM) text response.
+     *
      * RBM allows businesses to send enriched and branded versions of SMS. See
      * https://jibe.google.com/business-messaging.
      * </pre>
@@ -63217,6 +63216,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Rich Business Messaging (RBM) text response.
+       *
        * RBM allows businesses to send enriched and branded versions of SMS. See
        * https://jibe.google.com/business-messaging.
        * </pre>
@@ -63234,6 +63234,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Rich Business Messaging (RBM) text response.
+       *
        * RBM allows businesses to send enriched and branded versions of SMS. See
        * https://jibe.google.com/business-messaging.
        * </pre>
@@ -63261,6 +63262,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Rich Business Messaging (RBM) text response.
+       *
        * RBM allows businesses to send enriched and branded versions of SMS. See
        * https://jibe.google.com/business-messaging.
        * </pre>
@@ -63285,6 +63287,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Rich Business Messaging (RBM) text response.
+       *
        * RBM allows businesses to send enriched and branded versions of SMS. See
        * https://jibe.google.com/business-messaging.
        * </pre>
@@ -63307,6 +63310,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Rich Business Messaging (RBM) text response.
+       *
        * RBM allows businesses to send enriched and branded versions of SMS. See
        * https://jibe.google.com/business-messaging.
        * </pre>
@@ -63344,6 +63348,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Rich Business Messaging (RBM) text response.
+       *
        * RBM allows businesses to send enriched and branded versions of SMS. See
        * https://jibe.google.com/business-messaging.
        * </pre>
@@ -63371,6 +63376,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Rich Business Messaging (RBM) text response.
+       *
        * RBM allows businesses to send enriched and branded versions of SMS. See
        * https://jibe.google.com/business-messaging.
        * </pre>
@@ -63386,6 +63392,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Rich Business Messaging (RBM) text response.
+       *
        * RBM allows businesses to send enriched and branded versions of SMS. See
        * https://jibe.google.com/business-messaging.
        * </pre>
@@ -63409,6 +63416,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Rich Business Messaging (RBM) text response.
+       *
        * RBM allows businesses to send enriched and branded versions of SMS. See
        * https://jibe.google.com/business-messaging.
        * </pre>
@@ -64864,11 +64872,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       return new FollowupIntentInfo();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.IntentProto
           .internal_static_google_cloud_dialogflow_v2beta1_Intent_FollowupIntentInfo_descriptor;
@@ -65670,6 +65673,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
@@ -65701,6 +65705,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
@@ -65822,6 +65827,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The priority of this intent. Higher numbers represent higher
    * priorities.
+   *
    * - If the supplied value is unspecified or 0, the service
    *   translates the value to 500,000, which corresponds to the
    *   `Normal` priority in the console.
@@ -65869,6 +65875,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * DEPRECATED! Please use `ml_disabled` field instead.
    * NOTE: If both `ml_enabled` and `ml_disabled` are either not set or false,
    * then the default value is determined as follows:
+   *
    * - Before April 15th, 2018 the default is:
    *   ml_enabled = false / ml_disabled = true.
    * - After April 15th, 2018 the default is:
@@ -65952,7 +65959,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   public static final int INPUT_CONTEXT_NAMES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList inputContextNames_;
+  private com.google.protobuf.LazyStringArrayList inputContextNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -65960,6 +65968,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The list of context names required for this intent to be
    * triggered.
    * Formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -65979,6 +65988,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The list of context names required for this intent to be
    * triggered.
    * Formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -65998,6 +66008,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The list of context names required for this intent to be
    * triggered.
    * Formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -66018,6 +66029,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The list of context names required for this intent to be
    * triggered.
    * Formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -66035,7 +66047,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   public static final int EVENTS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList events_;
+  private com.google.protobuf.LazyStringArrayList events_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -66659,6 +66672,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Output only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent.
+   *
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -66686,6 +66700,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Output only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent.
+   *
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -66721,6 +66736,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
    * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
    * in order to make this intent a followup intent.
+   *
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -66751,6 +66767,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
    * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
    * in order to make this intent a followup intent.
+   *
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -67260,6 +67277,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * as an end-user expression or end-user input, Dialogflow matches the end-user
    * input to the best intent in your agent. Matching an intent is also known as
    * intent classification.
+   *
    * For more information, see the [intent
    * guide](https://cloud.google.com/dialogflow/docs/intents-overview).
    * </pre>
@@ -67305,10 +67323,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       mlDisabled_ = false;
       liveAgentHandoff_ = false;
       endInteraction_ = false;
-      inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
-      events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      inputContextNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      events_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (trainingPhrasesBuilder_ == null) {
         trainingPhrases_ = java.util.Collections.emptyList();
       } else {
@@ -67386,16 +67402,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2beta1.Intent result) {
-      if (((bitField0_ & 0x00000200) != 0)) {
-        inputContextNames_ = inputContextNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.inputContextNames_ = inputContextNames_;
-      if (((bitField0_ & 0x00000400) != 0)) {
-        events_ = events_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.events_ = events_;
       if (trainingPhrasesBuilder_ == null) {
         if (((bitField0_ & 0x00000800) != 0)) {
           trainingPhrases_ = java.util.Collections.unmodifiableList(trainingPhrases_);
@@ -67477,6 +67483,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.endInteraction_ = endInteraction_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        inputContextNames_.makeImmutable();
+        result.inputContextNames_ = inputContextNames_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        events_.makeImmutable();
+        result.events_ = events_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.action_ = action_;
@@ -67571,7 +67585,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (!other.inputContextNames_.isEmpty()) {
         if (inputContextNames_.isEmpty()) {
           inputContextNames_ = other.inputContextNames_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureInputContextNamesIsMutable();
           inputContextNames_.addAll(other.inputContextNames_);
@@ -67581,7 +67595,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (!other.events_.isEmpty()) {
         if (events_.isEmpty()) {
           events_ = other.events_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensureEventsIsMutable();
           events_.addAll(other.events_);
@@ -67988,6 +68002,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
@@ -68018,6 +68033,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
@@ -68048,6 +68064,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
@@ -68077,6 +68094,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
@@ -68102,6 +68120,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
@@ -68337,6 +68356,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The priority of this intent. Higher numbers represent higher
      * priorities.
+     *
      * - If the supplied value is unspecified or 0, the service
      *   translates the value to 500,000, which corresponds to the
      *   `Normal` priority in the console.
@@ -68358,6 +68378,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The priority of this intent. Higher numbers represent higher
      * priorities.
+     *
      * - If the supplied value is unspecified or 0, the service
      *   translates the value to 500,000, which corresponds to the
      *   `Normal` priority in the console.
@@ -68383,6 +68404,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The priority of this intent. Higher numbers represent higher
      * priorities.
+     *
      * - If the supplied value is unspecified or 0, the service
      *   translates the value to 500,000, which corresponds to the
      *   `Normal` priority in the console.
@@ -68466,6 +68488,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * DEPRECATED! Please use `ml_disabled` field instead.
      * NOTE: If both `ml_enabled` and `ml_disabled` are either not set or false,
      * then the default value is determined as follows:
+     *
      * - Before April 15th, 2018 the default is:
      *   ml_enabled = false / ml_disabled = true.
      * - After April 15th, 2018 the default is:
@@ -68495,6 +68518,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * DEPRECATED! Please use `ml_disabled` field instead.
      * NOTE: If both `ml_enabled` and `ml_disabled` are either not set or false,
      * then the default value is determined as follows:
+     *
      * - Before April 15th, 2018 the default is:
      *   ml_enabled = false / ml_disabled = true.
      * - After April 15th, 2018 the default is:
@@ -68528,6 +68552,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * DEPRECATED! Please use `ml_disabled` field instead.
      * NOTE: If both `ml_enabled` and `ml_disabled` are either not set or false,
      * then the default value is determined as follows:
+     *
      * - Before April 15th, 2018 the default is:
      *   ml_enabled = false / ml_disabled = true.
      * - After April 15th, 2018 the default is:
@@ -68732,14 +68757,14 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList inputContextNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList inputContextNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInputContextNamesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!inputContextNames_.isModifiable()) {
         inputContextNames_ = new com.google.protobuf.LazyStringArrayList(inputContextNames_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -68748,6 +68773,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The list of context names required for this intent to be
      * triggered.
      * Formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -68759,7 +68785,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the inputContextNames.
      */
     public com.google.protobuf.ProtocolStringList getInputContextNamesList() {
-      return inputContextNames_.getUnmodifiableView();
+      inputContextNames_.makeImmutable();
+      return inputContextNames_;
     }
     /**
      *
@@ -68768,6 +68795,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The list of context names required for this intent to be
      * triggered.
      * Formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -68788,6 +68816,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The list of context names required for this intent to be
      * triggered.
      * Formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -68809,6 +68838,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The list of context names required for this intent to be
      * triggered.
      * Formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -68830,6 +68860,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The list of context names required for this intent to be
      * triggered.
      * Formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -68848,6 +68879,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInputContextNamesIsMutable();
       inputContextNames_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -68858,6 +68890,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The list of context names required for this intent to be
      * triggered.
      * Formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -68875,6 +68908,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInputContextNamesIsMutable();
       inputContextNames_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -68885,6 +68919,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The list of context names required for this intent to be
      * triggered.
      * Formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -68899,6 +68934,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInputContextNames(java.lang.Iterable<java.lang.String> values) {
       ensureInputContextNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inputContextNames_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -68909,6 +68945,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The list of context names required for this intent to be
      * triggered.
      * Formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -68920,8 +68957,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInputContextNames() {
-      inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      inputContextNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -68932,6 +68970,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The list of context names required for this intent to be
      * triggered.
      * Formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
@@ -68950,18 +68989,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInputContextNamesIsMutable();
       inputContextNames_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList events_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList events_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureEventsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!events_.isModifiable()) {
         events_ = new com.google.protobuf.LazyStringArrayList(events_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -68978,7 +69018,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the events.
      */
     public com.google.protobuf.ProtocolStringList getEventsList() {
-      return events_.getUnmodifiableView();
+      events_.makeImmutable();
+      return events_;
     }
     /**
      *
@@ -69055,6 +69096,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEventsIsMutable();
       events_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -69079,6 +69121,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEventsIsMutable();
       events_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -69100,6 +69143,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllEvents(java.lang.Iterable<java.lang.String> values) {
       ensureEventsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, events_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -69118,8 +69162,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEvents() {
-      events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      events_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -69145,6 +69190,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureEventsIsMutable();
       events_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -71246,6 +71292,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent.
+     *
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -71272,6 +71319,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent.
+     *
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -71298,6 +71346,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent.
+     *
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -71323,6 +71372,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent.
+     *
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -71344,6 +71394,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent.
+     *
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
@@ -71375,6 +71426,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
      * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
      * in order to make this intent a followup intent.
+     *
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -71405,6 +71457,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
      * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
      * in order to make this intent a followup intent.
+     *
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -71435,6 +71488,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
      * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
      * in order to make this intent a followup intent.
+     *
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -71464,6 +71518,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
      * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
      * in order to make this intent a followup intent.
+     *
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -71489,6 +71544,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
      * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
      * in order to make this intent a followup intent.
+     *
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>

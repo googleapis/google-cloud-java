@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ControlOrBuilder
    *
    * <pre>
    * A facet specification to perform faceted search.
+   *
    * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
    * used for creating a control.
    * </pre>
@@ -46,6 +47,7 @@ public interface ControlOrBuilder
    *
    * <pre>
    * A facet specification to perform faceted search.
+   *
    * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
    * used for creating a control.
    * </pre>
@@ -64,6 +66,7 @@ public interface ControlOrBuilder
    *
    * <pre>
    * A facet specification to perform faceted search.
+   *
    * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
    * used for creating a control.
    * </pre>
@@ -147,6 +150,7 @@ public interface ControlOrBuilder
    *
    * <pre>
    * Required. The human readable control display name. Used in Retail UI.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is thrown.
    * </pre>
@@ -161,6 +165,7 @@ public interface ControlOrBuilder
    *
    * <pre>
    * Required. The human readable control display name. Used in Retail UI.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is thrown.
    * </pre>
@@ -179,6 +184,7 @@ public interface ControlOrBuilder
    * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
    * with this control in the same
    * [Catalog][google.cloud.retail.v2beta.Catalog].
+   *
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
    * output only denormalized view.
@@ -199,6 +205,7 @@ public interface ControlOrBuilder
    * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
    * with this control in the same
    * [Catalog][google.cloud.retail.v2beta.Catalog].
+   *
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
    * output only denormalized view.
@@ -219,6 +226,7 @@ public interface ControlOrBuilder
    * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
    * with this control in the same
    * [Catalog][google.cloud.retail.v2beta.Catalog].
+   *
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
    * output only denormalized view.
@@ -240,6 +248,7 @@ public interface ControlOrBuilder
    * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
    * with this control in the same
    * [Catalog][google.cloud.retail.v2beta.Catalog].
+   *
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
    * output only denormalized view.
@@ -260,6 +269,7 @@ public interface ControlOrBuilder
    * <pre>
    * Required. Immutable. The solution types that the control is used for.
    * Currently we support setting only one type of solution at creation time.
+   *
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -278,6 +288,7 @@ public interface ControlOrBuilder
    * <pre>
    * Required. Immutable. The solution types that the control is used for.
    * Currently we support setting only one type of solution at creation time.
+   *
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -296,6 +307,7 @@ public interface ControlOrBuilder
    * <pre>
    * Required. Immutable. The solution types that the control is used for.
    * Currently we support setting only one type of solution at creation time.
+   *
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -315,6 +327,7 @@ public interface ControlOrBuilder
    * <pre>
    * Required. Immutable. The solution types that the control is used for.
    * Currently we support setting only one type of solution at creation time.
+   *
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -333,6 +346,7 @@ public interface ControlOrBuilder
    * <pre>
    * Required. Immutable. The solution types that the control is used for.
    * Currently we support setting only one type of solution at creation time.
+   *
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -446,5 +460,5 @@ public interface ControlOrBuilder
    */
   int getSearchSolutionUseCaseValue(int index);
 
-  public com.google.cloud.retail.v2beta.Control.ControlCase getControlCase();
+  com.google.cloud.retail.v2beta.Control.ControlCase getControlCase();
 }

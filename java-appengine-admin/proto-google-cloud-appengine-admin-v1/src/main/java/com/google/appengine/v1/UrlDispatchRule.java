@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
     return new UrlDispatchRule();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.ApplicationProto
         .internal_static_google_appengine_v1_UrlDispatchRule_descriptor;
@@ -79,6 +74,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Domain name to match against. The wildcard "`*`" is supported if
    * specified before a period: "`*.`".
+   *
    * Defaults to matching all domains: "`*`".
    * </pre>
    *
@@ -104,6 +100,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Domain name to match against. The wildcard "`*`" is supported if
    * specified before a period: "`*.`".
+   *
    * Defaults to matching all domains: "`*`".
    * </pre>
    *
@@ -134,6 +131,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Pathname within the host. Must start with a "`/`". A
    * single "`*`" can be included at the end of the path.
+   *
    * The sum of the lengths of the domain and path may not
    * exceed 100 characters.
    * </pre>
@@ -160,6 +158,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Pathname within the host. Must start with a "`/`". A
    * single "`*`" can be included at the end of the path.
+   *
    * The sum of the lengths of the domain and path may not
    * exceed 100 characters.
    * </pre>
@@ -631,6 +630,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Domain name to match against. The wildcard "`*`" is supported if
      * specified before a period: "`*.`".
+     *
      * Defaults to matching all domains: "`*`".
      * </pre>
      *
@@ -655,6 +655,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Domain name to match against. The wildcard "`*`" is supported if
      * specified before a period: "`*.`".
+     *
      * Defaults to matching all domains: "`*`".
      * </pre>
      *
@@ -679,6 +680,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Domain name to match against. The wildcard "`*`" is supported if
      * specified before a period: "`*.`".
+     *
      * Defaults to matching all domains: "`*`".
      * </pre>
      *
@@ -702,6 +704,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Domain name to match against. The wildcard "`*`" is supported if
      * specified before a period: "`*.`".
+     *
      * Defaults to matching all domains: "`*`".
      * </pre>
      *
@@ -721,6 +724,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Domain name to match against. The wildcard "`*`" is supported if
      * specified before a period: "`*.`".
+     *
      * Defaults to matching all domains: "`*`".
      * </pre>
      *
@@ -747,6 +751,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Pathname within the host. Must start with a "`/`". A
      * single "`*`" can be included at the end of the path.
+     *
      * The sum of the lengths of the domain and path may not
      * exceed 100 characters.
      * </pre>
@@ -772,6 +777,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Pathname within the host. Must start with a "`/`". A
      * single "`*`" can be included at the end of the path.
+     *
      * The sum of the lengths of the domain and path may not
      * exceed 100 characters.
      * </pre>
@@ -797,6 +803,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Pathname within the host. Must start with a "`/`". A
      * single "`*`" can be included at the end of the path.
+     *
      * The sum of the lengths of the domain and path may not
      * exceed 100 characters.
      * </pre>
@@ -821,6 +828,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Pathname within the host. Must start with a "`/`". A
      * single "`*`" can be included at the end of the path.
+     *
      * The sum of the lengths of the domain and path may not
      * exceed 100 characters.
      * </pre>
@@ -841,6 +849,7 @@ public final class UrlDispatchRule extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Pathname within the host. Must start with a "`/`". A
      * single "`*`" can be included at the end of the path.
+     *
      * The sum of the lengths of the domain and path may not
      * exceed 100 characters.
      * </pre>

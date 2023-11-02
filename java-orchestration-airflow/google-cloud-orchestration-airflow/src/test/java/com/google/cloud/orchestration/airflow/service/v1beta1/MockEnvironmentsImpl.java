@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -207,6 +207,72 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
   }
 
   @Override
+  public void executeAirflowCommand(
+      ExecuteAirflowCommandRequest request,
+      StreamObserver<ExecuteAirflowCommandResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExecuteAirflowCommandResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExecuteAirflowCommandResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExecuteAirflowCommand, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExecuteAirflowCommandResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void stopAirflowCommand(
+      StopAirflowCommandRequest request,
+      StreamObserver<StopAirflowCommandResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof StopAirflowCommandResponse) {
+      requests.add(request);
+      responseObserver.onNext(((StopAirflowCommandResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StopAirflowCommand, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  StopAirflowCommandResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void pollAirflowCommand(
+      PollAirflowCommandRequest request,
+      StreamObserver<PollAirflowCommandResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PollAirflowCommandResponse) {
+      requests.add(request);
+      responseObserver.onNext(((PollAirflowCommandResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PollAirflowCommand, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PollAirflowCommandResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void saveSnapshot(
       SaveSnapshotRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -244,6 +310,49 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
                   "Unrecognized response type %s for method LoadSnapshot, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void databaseFailover(
+      DatabaseFailoverRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DatabaseFailover, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchDatabaseProperties(
+      FetchDatabasePropertiesRequest request,
+      StreamObserver<FetchDatabasePropertiesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchDatabasePropertiesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchDatabasePropertiesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchDatabaseProperties, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchDatabasePropertiesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

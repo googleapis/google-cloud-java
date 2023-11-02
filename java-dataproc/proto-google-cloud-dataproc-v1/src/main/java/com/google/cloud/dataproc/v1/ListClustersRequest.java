@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListClustersRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -184,7 +179,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. A filter constraining the clusters to list. Filters are
    * case-sensitive and have the following syntax:
+   *
    * field = value [AND [field = value]] ...
+   *
    * where **field** is one of `status.state`, `clusterName`, or `labels.[KEY]`,
    * and `[KEY]` is a label key. **value** can be `*` to match all values.
    * `status.state` can be one of the following: `ACTIVE`, `INACTIVE`,
@@ -194,7 +191,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * `clusterName` is the name of the cluster provided at creation time.
    * Only the logical `AND` operator is supported; space-separated items are
    * treated as having an implicit `AND` operator.
+   *
    * Example filter:
+   *
    * status.state = ACTIVE AND clusterName = mycluster
    * AND labels.env = staging AND labels.starred = *
    * </pre>
@@ -221,7 +220,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. A filter constraining the clusters to list. Filters are
    * case-sensitive and have the following syntax:
+   *
    * field = value [AND [field = value]] ...
+   *
    * where **field** is one of `status.state`, `clusterName`, or `labels.[KEY]`,
    * and `[KEY]` is a label key. **value** can be `*` to match all values.
    * `status.state` can be one of the following: `ACTIVE`, `INACTIVE`,
@@ -231,7 +232,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * `clusterName` is the name of the cluster provided at creation time.
    * Only the logical `AND` operator is supported; space-separated items are
    * treated as having an implicit `AND` operator.
+   *
    * Example filter:
+   *
    * status.state = ACTIVE AND clusterName = mycluster
    * AND labels.env = staging AND labels.starred = *
    * </pre>
@@ -982,7 +985,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A filter constraining the clusters to list. Filters are
      * case-sensitive and have the following syntax:
+     *
      * field = value [AND [field = value]] ...
+     *
      * where **field** is one of `status.state`, `clusterName`, or `labels.[KEY]`,
      * and `[KEY]` is a label key. **value** can be `*` to match all values.
      * `status.state` can be one of the following: `ACTIVE`, `INACTIVE`,
@@ -992,7 +997,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * `clusterName` is the name of the cluster provided at creation time.
      * Only the logical `AND` operator is supported; space-separated items are
      * treated as having an implicit `AND` operator.
+     *
      * Example filter:
+     *
      * status.state = ACTIVE AND clusterName = mycluster
      * AND labels.env = staging AND labels.starred = *
      * </pre>
@@ -1018,7 +1025,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A filter constraining the clusters to list. Filters are
      * case-sensitive and have the following syntax:
+     *
      * field = value [AND [field = value]] ...
+     *
      * where **field** is one of `status.state`, `clusterName`, or `labels.[KEY]`,
      * and `[KEY]` is a label key. **value** can be `*` to match all values.
      * `status.state` can be one of the following: `ACTIVE`, `INACTIVE`,
@@ -1028,7 +1037,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * `clusterName` is the name of the cluster provided at creation time.
      * Only the logical `AND` operator is supported; space-separated items are
      * treated as having an implicit `AND` operator.
+     *
      * Example filter:
+     *
      * status.state = ACTIVE AND clusterName = mycluster
      * AND labels.env = staging AND labels.starred = *
      * </pre>
@@ -1054,7 +1065,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A filter constraining the clusters to list. Filters are
      * case-sensitive and have the following syntax:
+     *
      * field = value [AND [field = value]] ...
+     *
      * where **field** is one of `status.state`, `clusterName`, or `labels.[KEY]`,
      * and `[KEY]` is a label key. **value** can be `*` to match all values.
      * `status.state` can be one of the following: `ACTIVE`, `INACTIVE`,
@@ -1064,7 +1077,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * `clusterName` is the name of the cluster provided at creation time.
      * Only the logical `AND` operator is supported; space-separated items are
      * treated as having an implicit `AND` operator.
+     *
      * Example filter:
+     *
      * status.state = ACTIVE AND clusterName = mycluster
      * AND labels.env = staging AND labels.starred = *
      * </pre>
@@ -1089,7 +1104,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A filter constraining the clusters to list. Filters are
      * case-sensitive and have the following syntax:
+     *
      * field = value [AND [field = value]] ...
+     *
      * where **field** is one of `status.state`, `clusterName`, or `labels.[KEY]`,
      * and `[KEY]` is a label key. **value** can be `*` to match all values.
      * `status.state` can be one of the following: `ACTIVE`, `INACTIVE`,
@@ -1099,7 +1116,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * `clusterName` is the name of the cluster provided at creation time.
      * Only the logical `AND` operator is supported; space-separated items are
      * treated as having an implicit `AND` operator.
+     *
      * Example filter:
+     *
      * status.state = ACTIVE AND clusterName = mycluster
      * AND labels.env = staging AND labels.starred = *
      * </pre>
@@ -1120,7 +1139,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A filter constraining the clusters to list. Filters are
      * case-sensitive and have the following syntax:
+     *
      * field = value [AND [field = value]] ...
+     *
      * where **field** is one of `status.state`, `clusterName`, or `labels.[KEY]`,
      * and `[KEY]` is a label key. **value** can be `*` to match all values.
      * `status.state` can be one of the following: `ACTIVE`, `INACTIVE`,
@@ -1130,7 +1151,9 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * `clusterName` is the name of the cluster provided at creation time.
      * Only the logical `AND` operator is supported; space-separated items are
      * treated as having an implicit `AND` operator.
+     *
      * Example filter:
+     *
      * status.state = ACTIVE AND clusterName = mycluster
      * AND labels.env = staging AND labels.starred = *
      * </pre>

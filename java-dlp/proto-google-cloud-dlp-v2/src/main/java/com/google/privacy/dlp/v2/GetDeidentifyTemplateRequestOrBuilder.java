@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,9 @@ public interface GetDeidentifyTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the organization and deidentify template to be read, for
-   * example `organizations/433245324/deidentifyTemplates/432452342` or
-   * projects/project-id/deidentifyTemplates/432452342.
+   * Required. Resource name of the organization and deidentify template to be
+   * read, for example `organizations/433245324/deidentifyTemplates/432452342`
+   * or projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
    * <code>
@@ -43,9 +43,9 @@ public interface GetDeidentifyTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the organization and deidentify template to be read, for
-   * example `organizations/433245324/deidentifyTemplates/432452342` or
-   * projects/project-id/deidentifyTemplates/432452342.
+   * Required. Resource name of the organization and deidentify template to be
+   * read, for example `organizations/433245324/deidentifyTemplates/432452342`
+   * or projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
    * <code>

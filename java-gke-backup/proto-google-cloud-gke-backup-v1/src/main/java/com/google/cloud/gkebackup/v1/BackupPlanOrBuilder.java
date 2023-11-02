@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface BackupPlanOrBuilder
    *
    * <pre>
    * Output only. The full name of the BackupPlan resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,7 +41,7 @@ public interface BackupPlanOrBuilder
    *
    * <pre>
    * Output only. The full name of the BackupPlan resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -185,11 +185,11 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The source cluster from which Backups will be created via
-   * this BackupPlan.
-   * Valid formats:
-   * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   * Required. Immutable. The source cluster from which Backups will be created
+   * via this BackupPlan. Valid formats:
+   *
+   * - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   * - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
    * </pre>
    *
    * <code>
@@ -203,11 +203,11 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The source cluster from which Backups will be created via
-   * this BackupPlan.
-   * Valid formats:
-   * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   * Required. Immutable. The source cluster from which Backups will be created
+   * via this BackupPlan. Valid formats:
+   *
+   * - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   * - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
    * </pre>
    *
    * <code>
@@ -350,9 +350,9 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a backup plan from overwriting each other.
-   * It is strongly suggested that systems make use of the 'etag' in the
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a backup plan from overwriting each
+   * other. It is strongly suggested that systems make use of the 'etag' in the
    * read-modify-write cycle to perform BackupPlan updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetBackupPlan`,
    * and systems are expected to put that etag in the request to
@@ -369,9 +369,9 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a backup plan from overwriting each other.
-   * It is strongly suggested that systems make use of the 'etag' in the
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a backup plan from overwriting each
+   * other. It is strongly suggested that systems make use of the 'etag' in the
    * read-modify-write cycle to perform BackupPlan updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetBackupPlan`,
    * and systems are expected to put that etag in the request to
@@ -394,6 +394,7 @@ public interface BackupPlanOrBuilder
    * updates will be allowed (except deletes), including the deactivated field
    * itself. It also prevents any new Backups from being created via this
    * BackupPlan (including scheduled Backups).
+   *
    * Default: False
    * </pre>
    *
@@ -451,4 +452,66 @@ public interface BackupPlanOrBuilder
    * @return The protectedPodCount.
    */
   int getProtectedPodCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the BackupPlan. This State field reflects the
+   * various stages a BackupPlan can be in
+   * during the Create operation. It will be set to "DEACTIVATED"
+   * if the BackupPlan is deactivated on an Update
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the BackupPlan. This State field reflects the
+   * various stages a BackupPlan can be in
+   * during the Create operation. It will be set to "DEACTIVATED"
+   * if the BackupPlan is deactivated on an Update
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.gkebackup.v1.BackupPlan.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why BackupPlan is in the current
+   * `state`
+   * </pre>
+   *
+   * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The stateReason.
+   */
+  java.lang.String getStateReason();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why BackupPlan is in the current
+   * `state`
+   * </pre>
+   *
+   * <code>string state_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for stateReason.
+   */
+  com.google.protobuf.ByteString getStateReasonBytes();
 }

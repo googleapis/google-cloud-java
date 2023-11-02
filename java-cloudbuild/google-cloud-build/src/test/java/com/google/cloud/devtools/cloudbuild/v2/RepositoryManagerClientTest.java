@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,8 @@ import com.google.cloudbuild.v2.CreateConnectionRequest;
 import com.google.cloudbuild.v2.CreateRepositoryRequest;
 import com.google.cloudbuild.v2.DeleteConnectionRequest;
 import com.google.cloudbuild.v2.DeleteRepositoryRequest;
+import com.google.cloudbuild.v2.FetchGitRefsRequest;
+import com.google.cloudbuild.v2.FetchGitRefsResponse;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse;
 import com.google.cloudbuild.v2.FetchReadTokenRequest;
@@ -578,6 +580,7 @@ public class RepositoryManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setWebhookId("webhookId-544129550")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -638,6 +641,7 @@ public class RepositoryManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setWebhookId("webhookId-544129550")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -800,6 +804,7 @@ public class RepositoryManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setWebhookId("webhookId-544129550")
             .build();
     mockRepositoryManager.addResponse(expectedResponse);
 
@@ -847,6 +852,7 @@ public class RepositoryManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setWebhookId("webhookId-544129550")
             .build();
     mockRepositoryManager.addResponse(expectedResponse);
 
@@ -1267,6 +1273,80 @@ public class RepositoryManagerClientTest {
               .setPageToken("pageToken873572522")
               .build();
       client.fetchLinkableRepositories(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRefsTest() throws Exception {
+    FetchGitRefsResponse expectedResponse =
+        FetchGitRefsResponse.newBuilder().addAllRefNames(new ArrayList<String>()).build();
+    mockRepositoryManager.addResponse(expectedResponse);
+
+    RepositoryName repository =
+        RepositoryName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]", "[REPOSITORY]");
+
+    FetchGitRefsResponse actualResponse = client.fetchGitRefs(repository);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRepositoryManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRefsRequest actualRequest = ((FetchGitRefsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(repository.toString(), actualRequest.getRepository());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRefsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRepositoryManager.addException(exception);
+
+    try {
+      RepositoryName repository =
+          RepositoryName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]", "[REPOSITORY]");
+      client.fetchGitRefs(repository);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRefsTest2() throws Exception {
+    FetchGitRefsResponse expectedResponse =
+        FetchGitRefsResponse.newBuilder().addAllRefNames(new ArrayList<String>()).build();
+    mockRepositoryManager.addResponse(expectedResponse);
+
+    String repository = "repository1950800714";
+
+    FetchGitRefsResponse actualResponse = client.fetchGitRefs(repository);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRepositoryManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRefsRequest actualRequest = ((FetchGitRefsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(repository, actualRequest.getRepository());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRefsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRepositoryManager.addException(exception);
+
+    try {
+      String repository = "repository1950800714";
+      client.fetchGitRefs(repository);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MysqlColumn();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -296,6 +291,42 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     return ordinalPosition_;
   }
 
+  public static final int PRECISION_FIELD_NUMBER = 8;
+  private int precision_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Column precision.
+   * </pre>
+   *
+   * <code>int32 precision = 8;</code>
+   *
+   * @return The precision.
+   */
+  @java.lang.Override
+  public int getPrecision() {
+    return precision_;
+  }
+
+  public static final int SCALE_FIELD_NUMBER = 9;
+  private int scale_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Column scale.
+   * </pre>
+   *
+   * <code>int32 scale = 9;</code>
+   *
+   * @return The scale.
+   */
+  @java.lang.Override
+  public int getScale() {
+    return scale_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -331,6 +362,12 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     if (ordinalPosition_ != 0) {
       output.writeInt32(7, ordinalPosition_);
     }
+    if (precision_ != 0) {
+      output.writeInt32(8, precision_);
+    }
+    if (scale_ != 0) {
+      output.writeInt32(9, scale_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -361,6 +398,12 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     if (ordinalPosition_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, ordinalPosition_);
     }
+    if (precision_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, precision_);
+    }
+    if (scale_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, scale_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -384,6 +427,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     if (getPrimaryKey() != other.getPrimaryKey()) return false;
     if (getNullable() != other.getNullable()) return false;
     if (getOrdinalPosition() != other.getOrdinalPosition()) return false;
+    if (getPrecision() != other.getPrecision()) return false;
+    if (getScale() != other.getScale()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -409,6 +454,10 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNullable());
     hash = (37 * hash) + ORDINAL_POSITION_FIELD_NUMBER;
     hash = (53 * hash) + getOrdinalPosition();
+    hash = (37 * hash) + PRECISION_FIELD_NUMBER;
+    hash = (53 * hash) + getPrecision();
+    hash = (37 * hash) + SCALE_FIELD_NUMBER;
+    hash = (53 * hash) + getScale();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -555,6 +604,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
       primaryKey_ = false;
       nullable_ = false;
       ordinalPosition_ = 0;
+      precision_ = 0;
+      scale_ = 0;
       return this;
     }
 
@@ -611,6 +662,12 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.ordinalPosition_ = ordinalPosition_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.precision_ = precision_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.scale_ = scale_;
       }
     }
 
@@ -686,6 +743,12 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
       if (other.getOrdinalPosition() != 0) {
         setOrdinalPosition(other.getOrdinalPosition());
       }
+      if (other.getPrecision() != 0) {
+        setPrecision(other.getPrecision());
+      }
+      if (other.getScale() != 0) {
+        setScale(other.getScale());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -754,6 +817,18 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
+            case 64:
+              {
+                precision_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 72:
+              {
+                scale_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1304,6 +1379,112 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     public Builder clearOrdinalPosition() {
       bitField0_ = (bitField0_ & ~0x00000040);
       ordinalPosition_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int precision_;
+    /**
+     *
+     *
+     * <pre>
+     * Column precision.
+     * </pre>
+     *
+     * <code>int32 precision = 8;</code>
+     *
+     * @return The precision.
+     */
+    @java.lang.Override
+    public int getPrecision() {
+      return precision_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Column precision.
+     * </pre>
+     *
+     * <code>int32 precision = 8;</code>
+     *
+     * @param value The precision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrecision(int value) {
+
+      precision_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Column precision.
+     * </pre>
+     *
+     * <code>int32 precision = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrecision() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      precision_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int scale_;
+    /**
+     *
+     *
+     * <pre>
+     * Column scale.
+     * </pre>
+     *
+     * <code>int32 scale = 9;</code>
+     *
+     * @return The scale.
+     */
+    @java.lang.Override
+    public int getScale() {
+      return scale_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Column scale.
+     * </pre>
+     *
+     * <code>int32 scale = 9;</code>
+     *
+     * @param value The scale to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScale(int value) {
+
+      scale_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Column scale.
+     * </pre>
+     *
+     * <code>int32 scale = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScale() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      scale_ = 0;
       onChanged();
       return this;
     }

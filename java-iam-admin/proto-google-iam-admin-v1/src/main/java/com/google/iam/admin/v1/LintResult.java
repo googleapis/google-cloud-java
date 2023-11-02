@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LintResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -249,6 +244,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * necessarily fail `setPolicy`, but there is a high likelihood that they
      * won't behave as expected during policy evaluation in `checkPolicy`.
      * This includes the following common scenarios:
+     *
      * - Unsatisfiable condition: Expired timestamp in date/time condition.
      * - Ineffective condition: Condition on a &lt;principal, role&gt; pair which is
      *   granted unconditionally in another binding of the same policy.
@@ -326,6 +322,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * necessarily fail `setPolicy`, but there is a high likelihood that they
      * won't behave as expected during policy evaluation in `checkPolicy`.
      * This includes the following common scenarios:
+     *
      * - Unsatisfiable condition: Expired timestamp in date/time condition.
      * - Ineffective condition: Condition on a &lt;principal, role&gt; pair which is
      *   granted unconditionally in another binding of the same policy.
@@ -591,6 +588,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the field for which this lint result is about.
+   *
    * For nested messages `field_name` consists of names of the embedded fields
    * separated by period character. The top-level qualifier is the input object
    * to lint in the request. For example, the `field_name` value
@@ -619,6 +617,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the field for which this lint result is about.
+   *
    * For nested messages `field_name` consists of names of the embedded fields
    * separated by period character. The top-level qualifier is the input object
    * to lint in the request. For example, the `field_name` value
@@ -1461,6 +1460,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the field for which this lint result is about.
+     *
      * For nested messages `field_name` consists of names of the embedded fields
      * separated by period character. The top-level qualifier is the input object
      * to lint in the request. For example, the `field_name` value
@@ -1488,6 +1488,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the field for which this lint result is about.
+     *
      * For nested messages `field_name` consists of names of the embedded fields
      * separated by period character. The top-level qualifier is the input object
      * to lint in the request. For example, the `field_name` value
@@ -1515,6 +1516,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the field for which this lint result is about.
+     *
      * For nested messages `field_name` consists of names of the embedded fields
      * separated by period character. The top-level qualifier is the input object
      * to lint in the request. For example, the `field_name` value
@@ -1541,6 +1543,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the field for which this lint result is about.
+     *
      * For nested messages `field_name` consists of names of the embedded fields
      * separated by period character. The top-level qualifier is the input object
      * to lint in the request. For example, the `field_name` value
@@ -1563,6 +1566,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the field for which this lint result is about.
+     *
      * For nested messages `field_name` consists of names of the embedded fields
      * separated by period character. The top-level qualifier is the input object
      * to lint in the request. For example, the `field_name` value

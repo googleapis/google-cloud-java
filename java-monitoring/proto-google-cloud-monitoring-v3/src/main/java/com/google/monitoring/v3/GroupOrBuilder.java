@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface GroupOrBuilder
    *
    * <pre>
    * Output only. The name of this group. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * When creating a group, this field is ignored and a new name is created
    * consisting of the project specified in the call to `CreateGroup`
    * and a unique `[GROUP_ID]` that is generated automatically.
@@ -44,7 +46,9 @@ public interface GroupOrBuilder
    *
    * <pre>
    * Output only. The name of this group. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * When creating a group, this field is ignored and a new name is created
    * consisting of the project specified in the call to `CreateGroup`
    * and a unique `[GROUP_ID]` that is generated automatically.
@@ -86,7 +90,9 @@ public interface GroupOrBuilder
    *
    * <pre>
    * The name of the group's parent, if it has one. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * For groups with no parent, `parent_name` is the empty string, `""`.
    * </pre>
    *
@@ -100,7 +106,9 @@ public interface GroupOrBuilder
    *
    * <pre>
    * The name of the group's parent, if it has one. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * For groups with no parent, `parent_name` is the empty string, `""`.
    * </pre>
    *

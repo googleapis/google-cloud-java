@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   private WebKeySettings() {
-    allowedDomains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowedDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
     integrationType_ = 0;
     challengeSecurityPreference_ = 0;
   }
@@ -47,11 +47,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WebKeySettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -465,7 +460,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   public static final int ALLOWED_DOMAINS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowedDomains_;
+  private com.google.protobuf.LazyStringArrayList allowedDomains_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -900,8 +896,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       allowAllDomains_ = false;
-      allowedDomains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      allowedDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
       allowAmpTraffic_ = false;
       integrationType_ = 0;
       challengeSecurityPreference_ = 0;
@@ -932,7 +927,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.WebKeySettings buildPartial() {
       com.google.recaptchaenterprise.v1.WebKeySettings result =
           new com.google.recaptchaenterprise.v1.WebKeySettings(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -940,19 +934,14 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.recaptchaenterprise.v1.WebKeySettings result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        allowedDomains_ = allowedDomains_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.allowedDomains_ = allowedDomains_;
-    }
-
     private void buildPartial0(com.google.recaptchaenterprise.v1.WebKeySettings result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.allowAllDomains_ = allowAllDomains_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        allowedDomains_.makeImmutable();
+        result.allowedDomains_ = allowedDomains_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.allowAmpTraffic_ = allowAmpTraffic_;
@@ -1017,7 +1006,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowedDomains_.isEmpty()) {
         if (allowedDomains_.isEmpty()) {
           allowedDomains_ = other.allowedDomains_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAllowedDomainsIsMutable();
           allowedDomains_.addAll(other.allowedDomains_);
@@ -1162,14 +1151,14 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList allowedDomains_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowedDomains_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowedDomainsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!allowedDomains_.isModifiable()) {
         allowedDomains_ = new com.google.protobuf.LazyStringArrayList(allowedDomains_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1186,7 +1175,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allowedDomains.
      */
     public com.google.protobuf.ProtocolStringList getAllowedDomainsList() {
-      return allowedDomains_.getUnmodifiableView();
+      allowedDomains_.makeImmutable();
+      return allowedDomains_;
     }
     /**
      *
@@ -1263,6 +1253,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowedDomainsIsMutable();
       allowedDomains_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1287,6 +1278,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowedDomainsIsMutable();
       allowedDomains_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1308,6 +1300,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAllowedDomains(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedDomainsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedDomains_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1326,8 +1319,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowedDomains() {
-      allowedDomains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1353,6 +1347,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAllowedDomainsIsMutable();
       allowedDomains_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

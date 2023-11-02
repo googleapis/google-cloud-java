@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
     return new Barcode();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.BarcodeProto
         .internal_static_google_cloud_documentai_v1beta3_Barcode_descriptor;
@@ -79,6 +74,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Format of a barcode.
    * The supported formats are:
+   *
    * - `CODE_128`: Code 128 type.
    * - `CODE_39`: Code 39 type.
    * - `CODE_93`: Code 93 type.
@@ -117,6 +113,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Format of a barcode.
    * The supported formats are:
+   *
    * - `CODE_128`: Code 128 type.
    * - `CODE_39`: Code 39 type.
    * - `CODE_93`: Code 93 type.
@@ -161,6 +158,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
    * Value format describes the format of the value that a barcode
    * encodes.
    * The supported formats are:
+   *
    * - `CONTACT_INFO`: Contact information.
    * - `EMAIL`: Email address.
    * - `ISBN`: ISBN identifier.
@@ -198,6 +196,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
    * Value format describes the format of the value that a barcode
    * encodes.
    * The supported formats are:
+   *
    * - `CONTACT_INFO`: Contact information.
    * - `EMAIL`: Email address.
    * - `ISBN`: ISBN identifier.
@@ -678,6 +677,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Format of a barcode.
      * The supported formats are:
+     *
      * - `CODE_128`: Code 128 type.
      * - `CODE_39`: Code 39 type.
      * - `CODE_93`: Code 93 type.
@@ -715,6 +715,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Format of a barcode.
      * The supported formats are:
+     *
      * - `CODE_128`: Code 128 type.
      * - `CODE_39`: Code 39 type.
      * - `CODE_93`: Code 93 type.
@@ -752,6 +753,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Format of a barcode.
      * The supported formats are:
+     *
      * - `CODE_128`: Code 128 type.
      * - `CODE_39`: Code 39 type.
      * - `CODE_93`: Code 93 type.
@@ -788,6 +790,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Format of a barcode.
      * The supported formats are:
+     *
      * - `CODE_128`: Code 128 type.
      * - `CODE_39`: Code 39 type.
      * - `CODE_93`: Code 93 type.
@@ -820,6 +823,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Format of a barcode.
      * The supported formats are:
+     *
      * - `CODE_128`: Code 128 type.
      * - `CODE_39`: Code 39 type.
      * - `CODE_93`: Code 93 type.
@@ -860,6 +864,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * Value format describes the format of the value that a barcode
      * encodes.
      * The supported formats are:
+     *
      * - `CONTACT_INFO`: Contact information.
      * - `EMAIL`: Email address.
      * - `ISBN`: ISBN identifier.
@@ -896,6 +901,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * Value format describes the format of the value that a barcode
      * encodes.
      * The supported formats are:
+     *
      * - `CONTACT_INFO`: Contact information.
      * - `EMAIL`: Email address.
      * - `ISBN`: ISBN identifier.
@@ -932,6 +938,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * Value format describes the format of the value that a barcode
      * encodes.
      * The supported formats are:
+     *
      * - `CONTACT_INFO`: Contact information.
      * - `EMAIL`: Email address.
      * - `ISBN`: ISBN identifier.
@@ -967,6 +974,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * Value format describes the format of the value that a barcode
      * encodes.
      * The supported formats are:
+     *
      * - `CONTACT_INFO`: Contact information.
      * - `EMAIL`: Email address.
      * - `ISBN`: ISBN identifier.
@@ -998,6 +1006,7 @@ public final class Barcode extends com.google.protobuf.GeneratedMessageV3
      * Value format describes the format of the value that a barcode
      * encodes.
      * The supported formats are:
+     *
      * - `CONTACT_INFO`: Contact information.
      * - `EMAIL`: Email address.
      * - `ISBN`: ISBN identifier.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface AzureAuthorizationOrBuilder
    * Required. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
+   *
    * For more info on RBAC, see
    * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
    * </pre>
@@ -46,6 +47,7 @@ public interface AzureAuthorizationOrBuilder
    * Required. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
+   *
    * For more info on RBAC, see
    * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
    * </pre>
@@ -62,6 +64,7 @@ public interface AzureAuthorizationOrBuilder
    * Required. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
+   *
    * For more info on RBAC, see
    * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
    * </pre>
@@ -78,6 +81,7 @@ public interface AzureAuthorizationOrBuilder
    * Required. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
+   *
    * For more info on RBAC, see
    * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
    * </pre>
@@ -95,6 +99,7 @@ public interface AzureAuthorizationOrBuilder
    * Required. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
+   *
    * For more info on RBAC, see
    * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
    * </pre>

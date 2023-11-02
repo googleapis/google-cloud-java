@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SetDefaultBranchRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -131,8 +126,10 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The final component of the resource name of a branch.
+   *
    * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
    * error is returned.
+   *
    * If there are no sufficient active products in the targeted branch and
    * [force][google.cloud.retail.v2alpha.SetDefaultBranchRequest.force] is not
    * set, a FAILED_PRECONDITION error is returned.
@@ -159,8 +156,10 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The final component of the resource name of a branch.
+   *
    * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
    * error is returned.
+   *
    * If there are no sufficient active products in the targeted branch and
    * [force][google.cloud.retail.v2alpha.SetDefaultBranchRequest.force] is not
    * set, a FAILED_PRECONDITION error is returned.
@@ -194,6 +193,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
    * Some note on this request, this can be retrieved by
    * [CatalogService.GetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.GetDefaultBranch]
    * before next valid default branch set occurs.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -221,6 +221,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
    * Some note on this request, this can be retrieved by
    * [CatalogService.GetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.GetDefaultBranch]
    * before next valid default branch set occurs.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -792,8 +793,10 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The final component of the resource name of a branch.
+     *
      * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
      * error is returned.
+     *
      * If there are no sufficient active products in the targeted branch and
      * [force][google.cloud.retail.v2alpha.SetDefaultBranchRequest.force] is not
      * set, a FAILED_PRECONDITION error is returned.
@@ -819,8 +822,10 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The final component of the resource name of a branch.
+     *
      * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
      * error is returned.
+     *
      * If there are no sufficient active products in the targeted branch and
      * [force][google.cloud.retail.v2alpha.SetDefaultBranchRequest.force] is not
      * set, a FAILED_PRECONDITION error is returned.
@@ -846,8 +851,10 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The final component of the resource name of a branch.
+     *
      * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
      * error is returned.
+     *
      * If there are no sufficient active products in the targeted branch and
      * [force][google.cloud.retail.v2alpha.SetDefaultBranchRequest.force] is not
      * set, a FAILED_PRECONDITION error is returned.
@@ -872,8 +879,10 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The final component of the resource name of a branch.
+     *
      * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
      * error is returned.
+     *
      * If there are no sufficient active products in the targeted branch and
      * [force][google.cloud.retail.v2alpha.SetDefaultBranchRequest.force] is not
      * set, a FAILED_PRECONDITION error is returned.
@@ -894,8 +903,10 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The final component of the resource name of a branch.
+     *
      * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
      * error is returned.
+     *
      * If there are no sufficient active products in the targeted branch and
      * [force][google.cloud.retail.v2alpha.SetDefaultBranchRequest.force] is not
      * set, a FAILED_PRECONDITION error is returned.
@@ -925,6 +936,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * Some note on this request, this can be retrieved by
      * [CatalogService.GetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.GetDefaultBranch]
      * before next valid default branch set occurs.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -951,6 +963,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * Some note on this request, this can be retrieved by
      * [CatalogService.GetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.GetDefaultBranch]
      * before next valid default branch set occurs.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -977,6 +990,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * Some note on this request, this can be retrieved by
      * [CatalogService.GetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.GetDefaultBranch]
      * before next valid default branch set occurs.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1002,6 +1016,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * Some note on this request, this can be retrieved by
      * [CatalogService.GetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.GetDefaultBranch]
      * before next valid default branch set occurs.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1023,6 +1038,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * Some note on this request, this can be retrieved by
      * [CatalogService.GetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.GetDefaultBranch]
      * before next valid default branch set occurs.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>

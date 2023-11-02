@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PurchaseTransaction();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -167,6 +162,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    * All the costs associated with the products. These can be manufacturing
    * costs, shipping expenses not borne by the end user, or any other costs,
    * such that:
+   *
    * * Profit =
    * [revenue][google.cloud.retail.v2alpha.PurchaseTransaction.revenue] -
    * [tax][google.cloud.retail.v2alpha.PurchaseTransaction.tax] -
@@ -897,6 +893,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * All the costs associated with the products. These can be manufacturing
      * costs, shipping expenses not borne by the end user, or any other costs,
      * such that:
+     *
      * * Profit =
      * [revenue][google.cloud.retail.v2alpha.PurchaseTransaction.revenue] -
      * [tax][google.cloud.retail.v2alpha.PurchaseTransaction.tax] -
@@ -918,6 +915,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * All the costs associated with the products. These can be manufacturing
      * costs, shipping expenses not borne by the end user, or any other costs,
      * such that:
+     *
      * * Profit =
      * [revenue][google.cloud.retail.v2alpha.PurchaseTransaction.revenue] -
      * [tax][google.cloud.retail.v2alpha.PurchaseTransaction.tax] -
@@ -943,6 +941,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      * All the costs associated with the products. These can be manufacturing
      * costs, shipping expenses not borne by the end user, or any other costs,
      * such that:
+     *
      * * Profit =
      * [revenue][google.cloud.retail.v2alpha.PurchaseTransaction.revenue] -
      * [tax][google.cloud.retail.v2alpha.PurchaseTransaction.tax] -

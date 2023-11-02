@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.gkemulticloud.v1;
  *
  * <pre>
  * Configuration related to config data encryption.
+ *
  * Azure VM bootstrap secret is envelope encrypted with the provided key vault
  * key.
  * </pre>
@@ -50,11 +51,6 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
     return new AzureConfigEncryption();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AzureConfigEncryption_descriptor;
@@ -80,6 +76,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt config
    * data.
+   *
    * For example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
    * </pre>
@@ -106,6 +103,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt config
    * data.
+   *
    * For example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
    * </pre>
@@ -137,6 +135,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
    * <pre>
    * Optional. RSA key of the Azure Key Vault public key to use for encrypting
    * the data.
+   *
    * This key must be formatted as a PEM-encoded SubjectPublicKeyInfo (RFC 5280)
    * in ASN.1 DER form. The string must be comprised of a single PEM block of
    * type "PUBLIC KEY".
@@ -164,6 +163,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
    * <pre>
    * Optional. RSA key of the Azure Key Vault public key to use for encrypting
    * the data.
+   *
    * This key must be formatted as a PEM-encoded SubjectPublicKeyInfo (RFC 5280)
    * in ASN.1 DER form. The string must be comprised of a single PEM block of
    * type "PUBLIC KEY".
@@ -360,6 +360,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Configuration related to config data encryption.
+   *
    * Azure VM bootstrap secret is envelope encrypted with the provided key vault
    * key.
    * </pre>
@@ -562,6 +563,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt config
      * data.
+     *
      * For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
      * </pre>
@@ -587,6 +589,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt config
      * data.
+     *
      * For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
      * </pre>
@@ -612,6 +615,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt config
      * data.
+     *
      * For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
      * </pre>
@@ -636,6 +640,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt config
      * data.
+     *
      * For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
      * </pre>
@@ -656,6 +661,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt config
      * data.
+     *
      * For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
      * </pre>
@@ -683,6 +689,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * <pre>
      * Optional. RSA key of the Azure Key Vault public key to use for encrypting
      * the data.
+     *
      * This key must be formatted as a PEM-encoded SubjectPublicKeyInfo (RFC 5280)
      * in ASN.1 DER form. The string must be comprised of a single PEM block of
      * type "PUBLIC KEY".
@@ -709,6 +716,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * <pre>
      * Optional. RSA key of the Azure Key Vault public key to use for encrypting
      * the data.
+     *
      * This key must be formatted as a PEM-encoded SubjectPublicKeyInfo (RFC 5280)
      * in ASN.1 DER form. The string must be comprised of a single PEM block of
      * type "PUBLIC KEY".
@@ -735,6 +743,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * <pre>
      * Optional. RSA key of the Azure Key Vault public key to use for encrypting
      * the data.
+     *
      * This key must be formatted as a PEM-encoded SubjectPublicKeyInfo (RFC 5280)
      * in ASN.1 DER form. The string must be comprised of a single PEM block of
      * type "PUBLIC KEY".
@@ -760,6 +769,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * <pre>
      * Optional. RSA key of the Azure Key Vault public key to use for encrypting
      * the data.
+     *
      * This key must be formatted as a PEM-encoded SubjectPublicKeyInfo (RFC 5280)
      * in ASN.1 DER form. The string must be comprised of a single PEM block of
      * type "PUBLIC KEY".
@@ -781,6 +791,7 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * <pre>
      * Optional. RSA key of the Azure Key Vault public key to use for encrypting
      * the data.
+     *
      * This key must be formatted as a PEM-encoded SubjectPublicKeyInfo (RFC 5280)
      * in ASN.1 DER form. The string must be comprised of a single PEM block of
      * type "PUBLIC KEY".

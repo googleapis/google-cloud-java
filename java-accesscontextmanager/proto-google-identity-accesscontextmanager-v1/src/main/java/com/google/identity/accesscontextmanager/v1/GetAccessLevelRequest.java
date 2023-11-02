@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
     return new GetAccessLevelRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.identity.accesscontextmanager.v1.AccessContextManagerProto
         .internal_static_google_identity_accesscontextmanager_v1_GetAccessLevelRequest_descriptor;
@@ -78,6 +73,7 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Resource name for the [Access Level]
    * [google.identity.accesscontextmanager.v1.AccessLevel].
+   *
    * Format:
    * `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
    * </pre>
@@ -106,6 +102,7 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Resource name for the [Access Level]
    * [google.identity.accesscontextmanager.v1.AccessLevel].
+   *
    * Format:
    * `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
    * </pre>
@@ -562,6 +559,7 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Resource name for the [Access Level]
      * [google.identity.accesscontextmanager.v1.AccessLevel].
+     *
      * Format:
      * `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
      * </pre>
@@ -589,6 +587,7 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Resource name for the [Access Level]
      * [google.identity.accesscontextmanager.v1.AccessLevel].
+     *
      * Format:
      * `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
      * </pre>
@@ -616,6 +615,7 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Resource name for the [Access Level]
      * [google.identity.accesscontextmanager.v1.AccessLevel].
+     *
      * Format:
      * `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
      * </pre>
@@ -642,6 +642,7 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Resource name for the [Access Level]
      * [google.identity.accesscontextmanager.v1.AccessLevel].
+     *
      * Format:
      * `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
      * </pre>
@@ -664,6 +665,7 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Resource name for the [Access Level]
      * [google.identity.accesscontextmanager.v1.AccessLevel].
+     *
      * Format:
      * `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
      * </pre>

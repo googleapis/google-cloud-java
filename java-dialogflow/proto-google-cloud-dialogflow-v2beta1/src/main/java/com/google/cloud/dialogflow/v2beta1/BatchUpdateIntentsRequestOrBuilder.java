@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * <pre>
    * Required. The name of the agent to update or create intents in.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
@@ -46,6 +47,7 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * <pre>
    * Required. The name of the agent to update or create intents in.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
@@ -229,6 +231,6 @@ public interface BatchUpdateIntentsRequestOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.IntentView getIntentView();
 
-  public com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest.IntentBatchCase
+  com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest.IntentBatchCase
       getIntentBatchCase();
 }

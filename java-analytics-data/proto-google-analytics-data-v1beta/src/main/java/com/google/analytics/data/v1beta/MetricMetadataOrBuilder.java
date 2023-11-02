@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -241,6 +241,7 @@ public interface MetricMetadataOrBuilder
    * succeed; however, the report will contain only zeros for this metric. API
    * requests with metric filters on blocked metrics will fail. If reasons are
    * empty, you have access to this metric.
+   *
    * To learn more, see [Access and data-restriction
    * management](https://support.google.com/analytics/answer/10851388).
    * </pre>
@@ -261,6 +262,7 @@ public interface MetricMetadataOrBuilder
    * succeed; however, the report will contain only zeros for this metric. API
    * requests with metric filters on blocked metrics will fail. If reasons are
    * empty, you have access to this metric.
+   *
    * To learn more, see [Access and data-restriction
    * management](https://support.google.com/analytics/answer/10851388).
    * </pre>
@@ -280,6 +282,7 @@ public interface MetricMetadataOrBuilder
    * succeed; however, the report will contain only zeros for this metric. API
    * requests with metric filters on blocked metrics will fail. If reasons are
    * empty, you have access to this metric.
+   *
    * To learn more, see [Access and data-restriction
    * management](https://support.google.com/analytics/answer/10851388).
    * </pre>
@@ -300,6 +303,7 @@ public interface MetricMetadataOrBuilder
    * succeed; however, the report will contain only zeros for this metric. API
    * requests with metric filters on blocked metrics will fail. If reasons are
    * empty, you have access to this metric.
+   *
    * To learn more, see [Access and data-restriction
    * management](https://support.google.com/analytics/answer/10851388).
    * </pre>
@@ -319,6 +323,7 @@ public interface MetricMetadataOrBuilder
    * succeed; however, the report will contain only zeros for this metric. API
    * requests with metric filters on blocked metrics will fail. If reasons are
    * empty, you have access to this metric.
+   *
    * To learn more, see [Access and data-restriction
    * management](https://support.google.com/analytics/answer/10851388).
    * </pre>

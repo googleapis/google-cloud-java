@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolManagementRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3821
+   *     google/container/v1beta1/cluster_service.proto;l=4200
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolManagementRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3821
+   *     google/container/v1beta1/cluster_service.proto;l=4200
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolManagementRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3828
+   *     google/container/v1beta1/cluster_service.proto;l=4207
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolManagementRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3828
+   *     google/container/v1beta1/cluster_service.proto;l=4207
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolManagementRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3832
+   *     google/container/v1beta1/cluster_service.proto;l=4211
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolManagementRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3832
+   *     google/container/v1beta1/cluster_service.proto;l=4211
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -144,7 +144,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolManagementRequest.node_pool_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=3837
+   *     See google/container/v1beta1/cluster_service.proto;l=4216
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -161,7 +161,7 @@ public interface SetNodePoolManagementRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolManagementRequest.node_pool_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=3837
+   *     See google/container/v1beta1/cluster_service.proto;l=4216
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated

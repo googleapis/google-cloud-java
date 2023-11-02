@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkehub.v1alpha.CreateFeatureRequest;
 import com.google.cloud.gkehub.v1alpha.DeleteFeatureRequest;
@@ -34,7 +35,6 @@ import com.google.cloud.gkehub.v1alpha.ListFeaturesRequest;
 import com.google.cloud.gkehub.v1alpha.ListFeaturesResponse;
 import com.google.cloud.gkehub.v1alpha.OperationMetadata;
 import com.google.cloud.gkehub.v1alpha.UpdateFeatureRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -159,9 +159,9 @@ public class GrpcGkeHubStub extends GkeHubStub {
             .setMethodDescriptor(listFeaturesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetFeatureRequest, Feature> getFeatureTransportSettings =
@@ -169,9 +169,9 @@ public class GrpcGkeHubStub extends GkeHubStub {
             .setMethodDescriptor(getFeatureMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateFeatureRequest, Operation> createFeatureTransportSettings =
@@ -179,9 +179,9 @@ public class GrpcGkeHubStub extends GkeHubStub {
             .setMethodDescriptor(createFeatureMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteFeatureRequest, Operation> deleteFeatureTransportSettings =
@@ -189,9 +189,9 @@ public class GrpcGkeHubStub extends GkeHubStub {
             .setMethodDescriptor(deleteFeatureMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateFeatureRequest, Operation> updateFeatureTransportSettings =
@@ -199,9 +199,9 @@ public class GrpcGkeHubStub extends GkeHubStub {
             .setMethodDescriptor(updateFeatureMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

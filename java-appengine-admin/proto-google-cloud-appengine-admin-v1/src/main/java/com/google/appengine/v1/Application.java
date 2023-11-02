@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,11 +57,6 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Application();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -432,6 +427,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Whether the serving infrastructure will authenticate and
      * authorize all incoming requests.
+     *
      * If true, the `oauth2_client_id` and `oauth2_client_secret`
      * fields must be non-empty.
      * </pre>
@@ -472,9 +468,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * OAuth2 client secret to use for the authentication flow.
+     *
      * For security reasons, this value cannot be retrieved via the API.
      * Instead, the SHA-256 hash of the value is returned in the
      * `oauth2_client_secret_sha256` field.
+     *
      * &#64;InputOnly
      * </pre>
      *
@@ -488,9 +486,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * OAuth2 client secret to use for the authentication flow.
+     *
      * For security reasons, this value cannot be retrieved via the API.
      * Instead, the SHA-256 hash of the value is returned in the
      * `oauth2_client_secret_sha256` field.
+     *
      * &#64;InputOnly
      * </pre>
      *
@@ -505,6 +505,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Hex-encoded SHA-256 hash of the client secret.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -518,6 +519,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Hex-encoded SHA-256 hash of the client secret.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -558,11 +560,6 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       return new IdentityAwareProxy();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.appengine.v1.ApplicationProto
           .internal_static_google_appengine_v1_Application_IdentityAwareProxy_descriptor;
@@ -586,6 +583,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Whether the serving infrastructure will authenticate and
      * authorize all incoming requests.
+     *
      * If true, the `oauth2_client_id` and `oauth2_client_secret`
      * fields must be non-empty.
      * </pre>
@@ -659,9 +657,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * OAuth2 client secret to use for the authentication flow.
+     *
      * For security reasons, this value cannot be retrieved via the API.
      * Instead, the SHA-256 hash of the value is returned in the
      * `oauth2_client_secret_sha256` field.
+     *
      * &#64;InputOnly
      * </pre>
      *
@@ -686,9 +686,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * OAuth2 client secret to use for the authentication flow.
+     *
      * For security reasons, this value cannot be retrieved via the API.
      * Instead, the SHA-256 hash of the value is returned in the
      * `oauth2_client_secret_sha256` field.
+     *
      * &#64;InputOnly
      * </pre>
      *
@@ -718,6 +720,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Hex-encoded SHA-256 hash of the client secret.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -742,6 +745,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Hex-encoded SHA-256 hash of the client secret.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1187,6 +1191,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Whether the serving infrastructure will authenticate and
        * authorize all incoming requests.
+       *
        * If true, the `oauth2_client_id` and `oauth2_client_secret`
        * fields must be non-empty.
        * </pre>
@@ -1205,6 +1210,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Whether the serving infrastructure will authenticate and
        * authorize all incoming requests.
+       *
        * If true, the `oauth2_client_id` and `oauth2_client_secret`
        * fields must be non-empty.
        * </pre>
@@ -1227,6 +1233,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Whether the serving infrastructure will authenticate and
        * authorize all incoming requests.
+       *
        * If true, the `oauth2_client_id` and `oauth2_client_secret`
        * fields must be non-empty.
        * </pre>
@@ -1354,9 +1361,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * OAuth2 client secret to use for the authentication flow.
+       *
        * For security reasons, this value cannot be retrieved via the API.
        * Instead, the SHA-256 hash of the value is returned in the
        * `oauth2_client_secret_sha256` field.
+       *
        * &#64;InputOnly
        * </pre>
        *
@@ -1380,9 +1389,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * OAuth2 client secret to use for the authentication flow.
+       *
        * For security reasons, this value cannot be retrieved via the API.
        * Instead, the SHA-256 hash of the value is returned in the
        * `oauth2_client_secret_sha256` field.
+       *
        * &#64;InputOnly
        * </pre>
        *
@@ -1406,9 +1417,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * OAuth2 client secret to use for the authentication flow.
+       *
        * For security reasons, this value cannot be retrieved via the API.
        * Instead, the SHA-256 hash of the value is returned in the
        * `oauth2_client_secret_sha256` field.
+       *
        * &#64;InputOnly
        * </pre>
        *
@@ -1431,9 +1444,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * OAuth2 client secret to use for the authentication flow.
+       *
        * For security reasons, this value cannot be retrieved via the API.
        * Instead, the SHA-256 hash of the value is returned in the
        * `oauth2_client_secret_sha256` field.
+       *
        * &#64;InputOnly
        * </pre>
        *
@@ -1452,9 +1467,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * OAuth2 client secret to use for the authentication flow.
+       *
        * For security reasons, this value cannot be retrieved via the API.
        * Instead, the SHA-256 hash of the value is returned in the
        * `oauth2_client_secret_sha256` field.
+       *
        * &#64;InputOnly
        * </pre>
        *
@@ -1480,6 +1497,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Hex-encoded SHA-256 hash of the client secret.
+       *
        * &#64;OutputOnly
        * </pre>
        *
@@ -1503,6 +1521,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Hex-encoded SHA-256 hash of the client secret.
+       *
        * &#64;OutputOnly
        * </pre>
        *
@@ -1526,6 +1545,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Hex-encoded SHA-256 hash of the client secret.
+       *
        * &#64;OutputOnly
        * </pre>
        *
@@ -1548,6 +1568,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Hex-encoded SHA-256 hash of the client secret.
+       *
        * &#64;OutputOnly
        * </pre>
        *
@@ -1566,6 +1587,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Hex-encoded SHA-256 hash of the client secret.
+       *
        * &#64;OutputOnly
        * </pre>
        *
@@ -1712,11 +1734,6 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FeatureSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2342,6 +2359,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Full path to the Application resource in the API.
    * Example: `apps/myapp`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -2367,6 +2385,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Full path to the Application resource in the API.
    * Example: `apps/myapp`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -2535,6 +2554,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Google Apps authentication domain that controls which users can access
    * this application.
+   *
    * Defaults to open access for any Google Account.
    * </pre>
    *
@@ -2560,6 +2580,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Google Apps authentication domain that controls which users can access
    * this application.
+   *
    * Defaults to open access for any Google Account.
    * </pre>
    *
@@ -2591,7 +2612,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * Location from which this application runs. Application instances
    * run out of the data centers in the specified location, which is also where
    * all of the application's end user content is stored.
+   *
    * Defaults to `us-central`.
+   *
    * View the list of
    * [supported locations](https://cloud.google.com/appengine/docs/locations).
    * </pre>
@@ -2619,7 +2642,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * Location from which this application runs. Application instances
    * run out of the data centers in the specified location, which is also where
    * all of the application's end user content is stored.
+   *
    * Defaults to `us-central`.
+   *
    * View the list of
    * [supported locations](https://cloud.google.com/appengine/docs/locations).
    * </pre>
@@ -2652,6 +2677,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * Google Cloud Storage bucket that can be used for storing files
    * associated with this application. This bucket is associated with the
    * application and can be used by the gcloud deployment commands.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -2678,6 +2704,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * Google Cloud Storage bucket that can be used for storing files
    * associated with this application. This bucket is associated with the
    * application and can be used by the gcloud deployment commands.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -2792,6 +2819,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Hostname used to reach this application, as resolved by App Engine.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -2816,6 +2844,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Hostname used to reach this application, as resolved by App Engine.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -2846,6 +2875,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Google Cloud Storage bucket that can be used by this application to store
    * content.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -2871,6 +2901,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Google Cloud Storage bucket that can be used by this application to store
    * content.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -3873,6 +3904,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the Application resource in the API.
      * Example: `apps/myapp`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3897,6 +3929,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the Application resource in the API.
      * Example: `apps/myapp`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3921,6 +3954,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the Application resource in the API.
      * Example: `apps/myapp`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3944,6 +3978,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the Application resource in the API.
      * Example: `apps/myapp`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3963,6 +3998,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the Application resource in the API.
      * Example: `apps/myapp`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -4500,6 +4536,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Apps authentication domain that controls which users can access
      * this application.
+     *
      * Defaults to open access for any Google Account.
      * </pre>
      *
@@ -4524,6 +4561,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Apps authentication domain that controls which users can access
      * this application.
+     *
      * Defaults to open access for any Google Account.
      * </pre>
      *
@@ -4548,6 +4586,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Apps authentication domain that controls which users can access
      * this application.
+     *
      * Defaults to open access for any Google Account.
      * </pre>
      *
@@ -4571,6 +4610,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Apps authentication domain that controls which users can access
      * this application.
+     *
      * Defaults to open access for any Google Account.
      * </pre>
      *
@@ -4590,6 +4630,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Apps authentication domain that controls which users can access
      * this application.
+     *
      * Defaults to open access for any Google Account.
      * </pre>
      *
@@ -4617,7 +4658,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Location from which this application runs. Application instances
      * run out of the data centers in the specified location, which is also where
      * all of the application's end user content is stored.
+     *
      * Defaults to `us-central`.
+     *
      * View the list of
      * [supported locations](https://cloud.google.com/appengine/docs/locations).
      * </pre>
@@ -4644,7 +4687,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Location from which this application runs. Application instances
      * run out of the data centers in the specified location, which is also where
      * all of the application's end user content is stored.
+     *
      * Defaults to `us-central`.
+     *
      * View the list of
      * [supported locations](https://cloud.google.com/appengine/docs/locations).
      * </pre>
@@ -4671,7 +4716,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Location from which this application runs. Application instances
      * run out of the data centers in the specified location, which is also where
      * all of the application's end user content is stored.
+     *
      * Defaults to `us-central`.
+     *
      * View the list of
      * [supported locations](https://cloud.google.com/appengine/docs/locations).
      * </pre>
@@ -4697,7 +4744,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Location from which this application runs. Application instances
      * run out of the data centers in the specified location, which is also where
      * all of the application's end user content is stored.
+     *
      * Defaults to `us-central`.
+     *
      * View the list of
      * [supported locations](https://cloud.google.com/appengine/docs/locations).
      * </pre>
@@ -4719,7 +4768,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Location from which this application runs. Application instances
      * run out of the data centers in the specified location, which is also where
      * all of the application's end user content is stored.
+     *
      * Defaults to `us-central`.
+     *
      * View the list of
      * [supported locations](https://cloud.google.com/appengine/docs/locations).
      * </pre>
@@ -4748,6 +4799,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Google Cloud Storage bucket that can be used for storing files
      * associated with this application. This bucket is associated with the
      * application and can be used by the gcloud deployment commands.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -4773,6 +4825,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Google Cloud Storage bucket that can be used for storing files
      * associated with this application. This bucket is associated with the
      * application and can be used by the gcloud deployment commands.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -4798,6 +4851,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Google Cloud Storage bucket that can be used for storing files
      * associated with this application. This bucket is associated with the
      * application and can be used by the gcloud deployment commands.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -4822,6 +4876,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Google Cloud Storage bucket that can be used for storing files
      * associated with this application. This bucket is associated with the
      * application and can be used by the gcloud deployment commands.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -4842,6 +4897,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Google Cloud Storage bucket that can be used for storing files
      * associated with this application. This bucket is associated with the
      * application and can be used by the gcloud deployment commands.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -5143,6 +5199,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Hostname used to reach this application, as resolved by App Engine.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -5166,6 +5223,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Hostname used to reach this application, as resolved by App Engine.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -5189,6 +5247,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Hostname used to reach this application, as resolved by App Engine.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -5211,6 +5270,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Hostname used to reach this application, as resolved by App Engine.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -5229,6 +5289,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Hostname used to reach this application, as resolved by App Engine.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -5255,6 +5316,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Cloud Storage bucket that can be used by this application to store
      * content.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -5279,6 +5341,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Cloud Storage bucket that can be used by this application to store
      * content.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -5303,6 +5366,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Cloud Storage bucket that can be used by this application to store
      * content.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -5326,6 +5390,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Cloud Storage bucket that can be used by this application to store
      * content.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -5345,6 +5410,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Cloud Storage bucket that can be used by this application to store
      * content.
+     *
      * &#64;OutputOnly
      * </pre>
      *

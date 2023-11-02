@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,11 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. Location to make a call. Must refer to a caller's project.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * The `global` location is not supported for batch translation.
+   *
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
    * error is returned.
@@ -47,8 +50,11 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. Location to make a call. Must refer to a caller's project.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * The `global` location is not supported for batch translation.
+   *
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
    * error is returned.
@@ -149,11 +155,16 @@ public interface BatchTranslateTextRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -168,11 +179,16 @@ public interface BatchTranslateTextRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -190,11 +206,16 @@ public interface BatchTranslateTextRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -209,11 +230,16 @@ public interface BatchTranslateTextRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -232,11 +258,16 @@ public interface BatchTranslateTextRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -450,10 +481,12 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -466,10 +499,12 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -485,10 +520,12 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -501,10 +538,12 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -521,10 +560,12 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.google.cloudbuild.v1.BuildStep;
 import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.BuildTriggerName;
 import com.google.cloudbuild.v1.GitHubEventsConfig;
+import com.google.cloudbuild.v1.GitRepoSource;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
 import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
@@ -49,6 +50,7 @@ import com.google.cloudbuild.v1.PubsubConfig;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RepoSource;
+import com.google.cloudbuild.v1.RepositoryEventConfig;
 import com.google.cloudbuild.v1.Results;
 import com.google.cloudbuild.v1.Secret;
 import com.google.cloudbuild.v1.Secrets;
@@ -564,7 +566,9 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -625,7 +629,9 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -778,7 +784,9 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -801,7 +809,9 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
 
     BuildTrigger actualResponse = client.updateBuildTrigger(projectId, triggerId, trigger);
@@ -849,7 +859,9 @@ public class CloudBuildClientHttpJsonTest {
               .addAllIgnoredFiles(new ArrayList<String>())
               .addAllIncludedFiles(new ArrayList<String>())
               .setFilter("filter-1274492040")
+              .setSourceToBuild(GitRepoSource.newBuilder().build())
               .setServiceAccount("serviceAccount1079137720")
+              .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
               .build();
       client.updateBuildTrigger(projectId, triggerId, trigger);
       Assert.fail("No exception raised");

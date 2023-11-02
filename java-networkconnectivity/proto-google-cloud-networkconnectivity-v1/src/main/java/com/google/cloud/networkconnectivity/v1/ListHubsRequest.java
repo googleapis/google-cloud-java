@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListHubsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,7 +128,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The maximum number of results per page that should be returned.
+   * The maximum number of results per page to return.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -204,7 +199,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An expression that filters the results listed in the response.
+   * An expression that filters the list of results.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -227,7 +222,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An expression that filters the results listed in the response.
+   * An expression that filters the list of results.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -858,7 +853,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of results per page that should be returned.
+     * The maximum number of results per page to return.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -873,7 +868,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of results per page that should be returned.
+     * The maximum number of results per page to return.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -892,7 +887,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of results per page that should be returned.
+     * The maximum number of results per page to return.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -1017,7 +1012,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An expression that filters the results listed in the response.
+     * An expression that filters the list of results.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1039,7 +1034,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An expression that filters the results listed in the response.
+     * An expression that filters the list of results.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1061,7 +1056,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An expression that filters the results listed in the response.
+     * An expression that filters the list of results.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1082,7 +1077,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An expression that filters the results listed in the response.
+     * An expression that filters the list of results.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1099,7 +1094,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An expression that filters the results listed in the response.
+     * An expression that filters the list of results.
      * </pre>
      *
      * <code>string filter = 4;</code>

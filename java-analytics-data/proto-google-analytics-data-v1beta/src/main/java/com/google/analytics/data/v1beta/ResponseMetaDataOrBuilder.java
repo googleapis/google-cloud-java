@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,18 @@ public interface ResponseMetaDataOrBuilder
    * <pre>
    * If true, indicates some buckets of dimension combinations are rolled into
    * "(other)" row. This can happen for high cardinality reports.
+   *
+   * The metadata parameter dataLossFromOtherRow is populated based on the
+   * aggregated data table used in the report. The parameter will be accurately
+   * populated regardless of the filters and limits in the report.
+   *
+   * For example, the (other) row could be dropped from the report because the
+   * request contains a filter on sessionSource = google. This parameter will
+   * still be populated if data loss from other row was present in the input
+   * aggregate data used to generate this report.
+   *
+   * To learn more, see [About the (other) row and data
+   * sampling](https://support.google.com/analytics/answer/13208658#reports).
    * </pre>
    *
    * <code>bool data_loss_from_other_row = 3;</code>
@@ -95,6 +107,7 @@ public interface ResponseMetaDataOrBuilder
    * was specified in the request, this response parameter will echo the request
    * parameter; otherwise, this response parameter is the property's current
    * currency_code.
+   *
    * Currency codes are string encodings of currency types from the ISO 4217
    * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
    * "EUR", "JPY". To learn more, see
@@ -115,6 +128,7 @@ public interface ResponseMetaDataOrBuilder
    * was specified in the request, this response parameter will echo the request
    * parameter; otherwise, this response parameter is the property's current
    * currency_code.
+   *
    * Currency codes are string encodings of currency types from the ISO 4217
    * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
    * "EUR", "JPY". To learn more, see
@@ -135,6 +149,7 @@ public interface ResponseMetaDataOrBuilder
    * was specified in the request, this response parameter will echo the request
    * parameter; otherwise, this response parameter is the property's current
    * currency_code.
+   *
    * Currency codes are string encodings of currency types from the ISO 4217
    * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
    * "EUR", "JPY". To learn more, see

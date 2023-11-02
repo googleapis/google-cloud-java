@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -486,7 +486,7 @@ public class CloudBillingClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String name = "projects/project-3664";
+    ProjectName name = ProjectName.of("[PROJECT]");
 
     ProjectBillingInfo actualResponse = client.getProjectBillingInfo(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -508,6 +508,53 @@ public class CloudBillingClientHttpJsonTest {
 
   @Test
   public void getProjectBillingInfoExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName name = ProjectName.of("[PROJECT]");
+      client.getProjectBillingInfo(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProjectBillingInfoTest2() throws Exception {
+    ProjectBillingInfo expectedResponse =
+        ProjectBillingInfo.newBuilder()
+            .setName("name3373707")
+            .setProjectId("projectId-894832108")
+            .setBillingAccountName("billingAccountName929322205")
+            .setBillingEnabled(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3664";
+
+    ProjectBillingInfo actualResponse = client.getProjectBillingInfo(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProjectBillingInfoExceptionTest2() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);

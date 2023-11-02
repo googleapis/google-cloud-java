@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
     return new AutoscalingMetricSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.MachineResourcesProto
         .internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_descriptor;
@@ -79,6 +74,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The resource metric name.
    * Supported metrics:
+   *
    * * For Online Prediction:
    * * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
    * * `aiplatform.googleapis.com/prediction/online/cpu/utilization`
@@ -106,6 +102,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The resource metric name.
    * Supported metrics:
+   *
    * * For Online Prediction:
    * * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
    * * `aiplatform.googleapis.com/prediction/online/cpu/utilization`
@@ -522,6 +519,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource metric name.
      * Supported metrics:
+     *
      * * For Online Prediction:
      * * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
      * * `aiplatform.googleapis.com/prediction/online/cpu/utilization`
@@ -548,6 +546,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource metric name.
      * Supported metrics:
+     *
      * * For Online Prediction:
      * * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
      * * `aiplatform.googleapis.com/prediction/online/cpu/utilization`
@@ -574,6 +573,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource metric name.
      * Supported metrics:
+     *
      * * For Online Prediction:
      * * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
      * * `aiplatform.googleapis.com/prediction/online/cpu/utilization`
@@ -599,6 +599,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource metric name.
      * Supported metrics:
+     *
      * * For Online Prediction:
      * * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
      * * `aiplatform.googleapis.com/prediction/online/cpu/utilization`
@@ -620,6 +621,7 @@ public final class AutoscalingMetricSpec extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The resource metric name.
      * Supported metrics:
+     *
      * * For Online Prediction:
      * * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
      * * `aiplatform.googleapis.com/prediction/online/cpu/utilization`

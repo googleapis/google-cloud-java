@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataform.v1alpha2.CancelWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1alpha2.CommitWorkspaceChangesRequest;
@@ -1757,26 +1758,56 @@ public class HttpJsonDataformStub extends DataformStub {
             HttpJsonCallSettings.<ListRepositoriesRequest, ListRepositoriesResponse>newBuilder()
                 .setMethodDescriptor(listRepositoriesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         HttpJsonCallSettings.<GetRepositoryRequest, Repository>newBuilder()
             .setMethodDescriptor(getRepositoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateRepositoryRequest, Repository> createRepositoryTransportSettings =
         HttpJsonCallSettings.<CreateRepositoryRequest, Repository>newBuilder()
             .setMethodDescriptor(createRepositoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateRepositoryRequest, Repository> updateRepositoryTransportSettings =
         HttpJsonCallSettings.<UpdateRepositoryRequest, Repository>newBuilder()
             .setMethodDescriptor(updateRepositoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("repository.name", String.valueOf(request.getRepository().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteRepositoryRequest, Empty> deleteRepositoryTransportSettings =
         HttpJsonCallSettings.<DeleteRepositoryRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteRepositoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<FetchRemoteBranchesRequest, FetchRemoteBranchesResponse>
         fetchRemoteBranchesTransportSettings =
@@ -1784,43 +1815,91 @@ public class HttpJsonDataformStub extends DataformStub {
                 .<FetchRemoteBranchesRequest, FetchRemoteBranchesResponse>newBuilder()
                 .setMethodDescriptor(fetchRemoteBranchesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListWorkspacesRequest, ListWorkspacesResponse>
         listWorkspacesTransportSettings =
             HttpJsonCallSettings.<ListWorkspacesRequest, ListWorkspacesResponse>newBuilder()
                 .setMethodDescriptor(listWorkspacesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetWorkspaceRequest, Workspace> getWorkspaceTransportSettings =
         HttpJsonCallSettings.<GetWorkspaceRequest, Workspace>newBuilder()
             .setMethodDescriptor(getWorkspaceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateWorkspaceRequest, Workspace> createWorkspaceTransportSettings =
         HttpJsonCallSettings.<CreateWorkspaceRequest, Workspace>newBuilder()
             .setMethodDescriptor(createWorkspaceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteWorkspaceRequest, Empty> deleteWorkspaceTransportSettings =
         HttpJsonCallSettings.<DeleteWorkspaceRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteWorkspaceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
         installNpmPackagesTransportSettings =
             HttpJsonCallSettings.<InstallNpmPackagesRequest, InstallNpmPackagesResponse>newBuilder()
                 .setMethodDescriptor(installNpmPackagesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("workspace", String.valueOf(request.getWorkspace()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PullGitCommitsRequest, Empty> pullGitCommitsTransportSettings =
         HttpJsonCallSettings.<PullGitCommitsRequest, Empty>newBuilder()
             .setMethodDescriptor(pullGitCommitsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PushGitCommitsRequest, Empty> pushGitCommitsTransportSettings =
         HttpJsonCallSettings.<PushGitCommitsRequest, Empty>newBuilder()
             .setMethodDescriptor(pushGitCommitsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
         fetchFileGitStatusesTransportSettings =
@@ -1828,6 +1907,12 @@ public class HttpJsonDataformStub extends DataformStub {
                 .<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>newBuilder()
                 .setMethodDescriptor(fetchFileGitStatusesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
         fetchGitAheadBehindTransportSettings =
@@ -1835,24 +1920,48 @@ public class HttpJsonDataformStub extends DataformStub {
                 .<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>newBuilder()
                 .setMethodDescriptor(fetchGitAheadBehindMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CommitWorkspaceChangesRequest, Empty>
         commitWorkspaceChangesTransportSettings =
             HttpJsonCallSettings.<CommitWorkspaceChangesRequest, Empty>newBuilder()
                 .setMethodDescriptor(commitWorkspaceChangesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ResetWorkspaceChangesRequest, Empty>
         resetWorkspaceChangesTransportSettings =
             HttpJsonCallSettings.<ResetWorkspaceChangesRequest, Empty>newBuilder()
                 .setMethodDescriptor(resetWorkspaceChangesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<FetchFileDiffRequest, FetchFileDiffResponse>
         fetchFileDiffTransportSettings =
             HttpJsonCallSettings.<FetchFileDiffRequest, FetchFileDiffResponse>newBuilder()
                 .setMethodDescriptor(fetchFileDiffMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("workspace", String.valueOf(request.getWorkspace()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<QueryDirectoryContentsRequest, QueryDirectoryContentsResponse>
         queryDirectoryContentsTransportSettings =
@@ -1860,43 +1969,91 @@ public class HttpJsonDataformStub extends DataformStub {
                 .<QueryDirectoryContentsRequest, QueryDirectoryContentsResponse>newBuilder()
                 .setMethodDescriptor(queryDirectoryContentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("workspace", String.valueOf(request.getWorkspace()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<MakeDirectoryRequest, MakeDirectoryResponse>
         makeDirectoryTransportSettings =
             HttpJsonCallSettings.<MakeDirectoryRequest, MakeDirectoryResponse>newBuilder()
                 .setMethodDescriptor(makeDirectoryMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("workspace", String.valueOf(request.getWorkspace()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RemoveDirectoryRequest, Empty> removeDirectoryTransportSettings =
         HttpJsonCallSettings.<RemoveDirectoryRequest, Empty>newBuilder()
             .setMethodDescriptor(removeDirectoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<MoveDirectoryRequest, MoveDirectoryResponse>
         moveDirectoryTransportSettings =
             HttpJsonCallSettings.<MoveDirectoryRequest, MoveDirectoryResponse>newBuilder()
                 .setMethodDescriptor(moveDirectoryMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("workspace", String.valueOf(request.getWorkspace()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ReadFileRequest, ReadFileResponse> readFileTransportSettings =
         HttpJsonCallSettings.<ReadFileRequest, ReadFileResponse>newBuilder()
             .setMethodDescriptor(readFileMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RemoveFileRequest, Empty> removeFileTransportSettings =
         HttpJsonCallSettings.<RemoveFileRequest, Empty>newBuilder()
             .setMethodDescriptor(removeFileMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<MoveFileRequest, MoveFileResponse> moveFileTransportSettings =
         HttpJsonCallSettings.<MoveFileRequest, MoveFileResponse>newBuilder()
             .setMethodDescriptor(moveFileMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<WriteFileRequest, WriteFileResponse> writeFileTransportSettings =
         HttpJsonCallSettings.<WriteFileRequest, WriteFileResponse>newBuilder()
             .setMethodDescriptor(writeFileMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListCompilationResultsRequest, ListCompilationResultsResponse>
         listCompilationResultsTransportSettings =
@@ -1904,18 +2061,36 @@ public class HttpJsonDataformStub extends DataformStub {
                 .<ListCompilationResultsRequest, ListCompilationResultsResponse>newBuilder()
                 .setMethodDescriptor(listCompilationResultsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetCompilationResultRequest, CompilationResult>
         getCompilationResultTransportSettings =
             HttpJsonCallSettings.<GetCompilationResultRequest, CompilationResult>newBuilder()
                 .setMethodDescriptor(getCompilationResultMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateCompilationResultRequest, CompilationResult>
         createCompilationResultTransportSettings =
             HttpJsonCallSettings.<CreateCompilationResultRequest, CompilationResult>newBuilder()
                 .setMethodDescriptor(createCompilationResultMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
@@ -1925,6 +2100,12 @@ public class HttpJsonDataformStub extends DataformStub {
                     newBuilder()
                 .setMethodDescriptor(queryCompilationResultActionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListWorkflowInvocationsRequest, ListWorkflowInvocationsResponse>
         listWorkflowInvocationsTransportSettings =
@@ -1932,30 +2113,60 @@ public class HttpJsonDataformStub extends DataformStub {
                 .<ListWorkflowInvocationsRequest, ListWorkflowInvocationsResponse>newBuilder()
                 .setMethodDescriptor(listWorkflowInvocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetWorkflowInvocationRequest, WorkflowInvocation>
         getWorkflowInvocationTransportSettings =
             HttpJsonCallSettings.<GetWorkflowInvocationRequest, WorkflowInvocation>newBuilder()
                 .setMethodDescriptor(getWorkflowInvocationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateWorkflowInvocationRequest, WorkflowInvocation>
         createWorkflowInvocationTransportSettings =
             HttpJsonCallSettings.<CreateWorkflowInvocationRequest, WorkflowInvocation>newBuilder()
                 .setMethodDescriptor(createWorkflowInvocationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteWorkflowInvocationRequest, Empty>
         deleteWorkflowInvocationTransportSettings =
             HttpJsonCallSettings.<DeleteWorkflowInvocationRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteWorkflowInvocationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CancelWorkflowInvocationRequest, Empty>
         cancelWorkflowInvocationTransportSettings =
             HttpJsonCallSettings.<CancelWorkflowInvocationRequest, Empty>newBuilder()
                 .setMethodDescriptor(cancelWorkflowInvocationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             QueryWorkflowInvocationActionsRequest, QueryWorkflowInvocationActionsResponse>
@@ -1965,33 +2176,69 @@ public class HttpJsonDataformStub extends DataformStub {
                     newBuilder()
                 .setMethodDescriptor(queryWorkflowInvocationActionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listRepositoriesCallable =

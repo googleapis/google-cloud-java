@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,8 +102,9 @@ public interface CreatePipelineJobRequestOrBuilder
    * The ID to use for the PipelineJob, which will become the final component of
    * the PipelineJob name. If not provided, an ID will be automatically
    * generated.
+   *
    * This value should be less than 128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string pipeline_job_id = 3;</code>
@@ -118,8 +119,9 @@ public interface CreatePipelineJobRequestOrBuilder
    * The ID to use for the PipelineJob, which will become the final component of
    * the PipelineJob name. If not provided, an ID will be automatically
    * generated.
+   *
    * This value should be less than 128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string pipeline_job_id = 3;</code>

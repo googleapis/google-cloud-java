@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListAssignmentsRequest extends com.google.protobuf.GeneratedM
     return new ListAssignmentsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.reservation.v1.ReservationProto
         .internal_static_google_cloud_bigquery_reservation_v1_ListAssignmentsRequest_descriptor;
@@ -78,8 +73,11 @@ public final class ListAssignmentsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource name e.g.:
+   *
    * `projects/myproject/locations/US/reservations/team1-prod`
+   *
    * Or:
+   *
    * `projects/myproject/locations/US/reservations/-`
    * </pre>
    *
@@ -106,8 +104,11 @@ public final class ListAssignmentsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource name e.g.:
+   *
    * `projects/myproject/locations/US/reservations/team1-prod`
+   *
    * Or:
+   *
    * `projects/myproject/locations/US/reservations/-`
    * </pre>
    *
@@ -599,8 +600,11 @@ public final class ListAssignmentsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name e.g.:
+     *
      * `projects/myproject/locations/US/reservations/team1-prod`
+     *
      * Or:
+     *
      * `projects/myproject/locations/US/reservations/-`
      * </pre>
      *
@@ -626,8 +630,11 @@ public final class ListAssignmentsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name e.g.:
+     *
      * `projects/myproject/locations/US/reservations/team1-prod`
+     *
      * Or:
+     *
      * `projects/myproject/locations/US/reservations/-`
      * </pre>
      *
@@ -653,8 +660,11 @@ public final class ListAssignmentsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name e.g.:
+     *
      * `projects/myproject/locations/US/reservations/team1-prod`
+     *
      * Or:
+     *
      * `projects/myproject/locations/US/reservations/-`
      * </pre>
      *
@@ -679,8 +689,11 @@ public final class ListAssignmentsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name e.g.:
+     *
      * `projects/myproject/locations/US/reservations/team1-prod`
+     *
      * Or:
+     *
      * `projects/myproject/locations/US/reservations/-`
      * </pre>
      *
@@ -701,8 +714,11 @@ public final class ListAssignmentsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name e.g.:
+     *
      * `projects/myproject/locations/US/reservations/team1-prod`
+     *
      * Or:
+     *
      * `projects/myproject/locations/US/reservations/-`
      * </pre>
      *

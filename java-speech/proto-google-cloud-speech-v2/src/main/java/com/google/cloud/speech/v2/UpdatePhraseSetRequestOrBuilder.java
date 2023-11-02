@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface UpdatePhraseSetRequestOrBuilder
    *
    * <pre>
    * Required. The PhraseSet to update.
+   *
    * The PhraseSet's `name` field is used to identify the PhraseSet to update.
    * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdatePhraseSetRequestOrBuilder
    *
    * <pre>
    * Required. The PhraseSet to update.
+   *
    * The PhraseSet's `name` field is used to identify the PhraseSet to update.
    * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdatePhraseSetRequestOrBuilder
    *
    * <pre>
    * Required. The PhraseSet to update.
+   *
    * The PhraseSet's `name` field is used to identify the PhraseSet to update.
    * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * </pre>

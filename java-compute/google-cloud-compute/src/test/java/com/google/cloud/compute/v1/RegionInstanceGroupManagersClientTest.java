@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -609,6 +609,8 @@ public class RegionInstanceGroupManagersClientTest {
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
             .setInstanceGroup("instanceGroup-1404696854")
+            .setInstanceLifecyclePolicy(
+                InstanceGroupManagerInstanceLifecyclePolicy.newBuilder().build())
             .setInstanceTemplate("instanceTemplate1009541167")
             .setKind("kind3292052")
             .setListManagedInstancesResults("listManagedInstancesResults1836889817")

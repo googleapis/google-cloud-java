@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
     return new UpdateAlertPolicyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.AlertServiceProto
         .internal_static_google_monitoring_v3_UpdateAlertPolicyRequest_descriptor;
@@ -76,12 +71,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    * value of the corresponding field in the supplied policy (`alert_policy`),
    * or to the field's default value if the field is not in the supplied
    * alerting policy.  Fields not listed retain their previous value.
+   *
    * Examples of valid field masks include `display_name`, `documentation`,
    * `documentation.content`, `documentation.mime_type`, `user_labels`,
    * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+   *
    * If this field is empty, then the supplied alerting policy replaces the
    * existing policy. It is the same as deleting the existing policy and
    * adding the supplied policy, except for the following:
+   *
    * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
    *     policy. This gives you continuity with the former policy in your
    *     notifications and incidents.
@@ -108,12 +106,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    * value of the corresponding field in the supplied policy (`alert_policy`),
    * or to the field's default value if the field is not in the supplied
    * alerting policy.  Fields not listed retain their previous value.
+   *
    * Examples of valid field masks include `display_name`, `documentation`,
    * `documentation.content`, `documentation.mime_type`, `user_labels`,
    * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+   *
    * If this field is empty, then the supplied alerting policy replaces the
    * existing policy. It is the same as deleting the existing policy and
    * adding the supplied policy, except for the following:
+   *
    * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
    *     policy. This gives you continuity with the former policy in your
    *     notifications and incidents.
@@ -140,12 +141,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    * value of the corresponding field in the supplied policy (`alert_policy`),
    * or to the field's default value if the field is not in the supplied
    * alerting policy.  Fields not listed retain their previous value.
+   *
    * Examples of valid field masks include `display_name`, `documentation`,
    * `documentation.content`, `documentation.mime_type`, `user_labels`,
    * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+   *
    * If this field is empty, then the supplied alerting policy replaces the
    * existing policy. It is the same as deleting the existing policy and
    * adding the supplied policy, except for the following:
+   *
    * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
    *     policy. This gives you continuity with the former policy in your
    *     notifications and incidents.
@@ -623,12 +627,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * value of the corresponding field in the supplied policy (`alert_policy`),
      * or to the field's default value if the field is not in the supplied
      * alerting policy.  Fields not listed retain their previous value.
+     *
      * Examples of valid field masks include `display_name`, `documentation`,
      * `documentation.content`, `documentation.mime_type`, `user_labels`,
      * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+     *
      * If this field is empty, then the supplied alerting policy replaces the
      * existing policy. It is the same as deleting the existing policy and
      * adding the supplied policy, except for the following:
+     *
      * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
      *     policy. This gives you continuity with the former policy in your
      *     notifications and incidents.
@@ -654,12 +661,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * value of the corresponding field in the supplied policy (`alert_policy`),
      * or to the field's default value if the field is not in the supplied
      * alerting policy.  Fields not listed retain their previous value.
+     *
      * Examples of valid field masks include `display_name`, `documentation`,
      * `documentation.content`, `documentation.mime_type`, `user_labels`,
      * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+     *
      * If this field is empty, then the supplied alerting policy replaces the
      * existing policy. It is the same as deleting the existing policy and
      * adding the supplied policy, except for the following:
+     *
      * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
      *     policy. This gives you continuity with the former policy in your
      *     notifications and incidents.
@@ -691,12 +701,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * value of the corresponding field in the supplied policy (`alert_policy`),
      * or to the field's default value if the field is not in the supplied
      * alerting policy.  Fields not listed retain their previous value.
+     *
      * Examples of valid field masks include `display_name`, `documentation`,
      * `documentation.content`, `documentation.mime_type`, `user_labels`,
      * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+     *
      * If this field is empty, then the supplied alerting policy replaces the
      * existing policy. It is the same as deleting the existing policy and
      * adding the supplied policy, except for the following:
+     *
      * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
      *     policy. This gives you continuity with the former policy in your
      *     notifications and incidents.
@@ -730,12 +743,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * value of the corresponding field in the supplied policy (`alert_policy`),
      * or to the field's default value if the field is not in the supplied
      * alerting policy.  Fields not listed retain their previous value.
+     *
      * Examples of valid field masks include `display_name`, `documentation`,
      * `documentation.content`, `documentation.mime_type`, `user_labels`,
      * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+     *
      * If this field is empty, then the supplied alerting policy replaces the
      * existing policy. It is the same as deleting the existing policy and
      * adding the supplied policy, except for the following:
+     *
      * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
      *     policy. This gives you continuity with the former policy in your
      *     notifications and incidents.
@@ -766,12 +782,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * value of the corresponding field in the supplied policy (`alert_policy`),
      * or to the field's default value if the field is not in the supplied
      * alerting policy.  Fields not listed retain their previous value.
+     *
      * Examples of valid field masks include `display_name`, `documentation`,
      * `documentation.content`, `documentation.mime_type`, `user_labels`,
      * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+     *
      * If this field is empty, then the supplied alerting policy replaces the
      * existing policy. It is the same as deleting the existing policy and
      * adding the supplied policy, except for the following:
+     *
      * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
      *     policy. This gives you continuity with the former policy in your
      *     notifications and incidents.
@@ -808,12 +827,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * value of the corresponding field in the supplied policy (`alert_policy`),
      * or to the field's default value if the field is not in the supplied
      * alerting policy.  Fields not listed retain their previous value.
+     *
      * Examples of valid field masks include `display_name`, `documentation`,
      * `documentation.content`, `documentation.mime_type`, `user_labels`,
      * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+     *
      * If this field is empty, then the supplied alerting policy replaces the
      * existing policy. It is the same as deleting the existing policy and
      * adding the supplied policy, except for the following:
+     *
      * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
      *     policy. This gives you continuity with the former policy in your
      *     notifications and incidents.
@@ -844,12 +866,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * value of the corresponding field in the supplied policy (`alert_policy`),
      * or to the field's default value if the field is not in the supplied
      * alerting policy.  Fields not listed retain their previous value.
+     *
      * Examples of valid field masks include `display_name`, `documentation`,
      * `documentation.content`, `documentation.mime_type`, `user_labels`,
      * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+     *
      * If this field is empty, then the supplied alerting policy replaces the
      * existing policy. It is the same as deleting the existing policy and
      * adding the supplied policy, except for the following:
+     *
      * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
      *     policy. This gives you continuity with the former policy in your
      *     notifications and incidents.
@@ -875,12 +900,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * value of the corresponding field in the supplied policy (`alert_policy`),
      * or to the field's default value if the field is not in the supplied
      * alerting policy.  Fields not listed retain their previous value.
+     *
      * Examples of valid field masks include `display_name`, `documentation`,
      * `documentation.content`, `documentation.mime_type`, `user_labels`,
      * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+     *
      * If this field is empty, then the supplied alerting policy replaces the
      * existing policy. It is the same as deleting the existing policy and
      * adding the supplied policy, except for the following:
+     *
      * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
      *     policy. This gives you continuity with the former policy in your
      *     notifications and incidents.
@@ -910,12 +938,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * value of the corresponding field in the supplied policy (`alert_policy`),
      * or to the field's default value if the field is not in the supplied
      * alerting policy.  Fields not listed retain their previous value.
+     *
      * Examples of valid field masks include `display_name`, `documentation`,
      * `documentation.content`, `documentation.mime_type`, `user_labels`,
      * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+     *
      * If this field is empty, then the supplied alerting policy replaces the
      * existing policy. It is the same as deleting the existing policy and
      * adding the supplied policy, except for the following:
+     *
      * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
      *     policy. This gives you continuity with the former policy in your
      *     notifications and incidents.

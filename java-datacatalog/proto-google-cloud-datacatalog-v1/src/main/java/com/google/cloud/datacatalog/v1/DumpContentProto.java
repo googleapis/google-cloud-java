@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,27 +45,29 @@ public final class DumpContentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n.google/cloud/datacatalog/v1/dump_conte"
-          + "nt.proto\022\033google.cloud.datacatalog.v1\032-g"
-          + "oogle/cloud/datacatalog/v1/datacatalog.p"
-          + "roto\032&google/cloud/datacatalog/v1/tags.p"
-          + "roto\"\275\001\n\013TaggedEntry\0226\n\010v1_entry\030\001 \001(\0132\""
-          + ".google.cloud.datacatalog.v1.EntryH\000\0226\n\014"
-          + "present_tags\030\002 \003(\0132 .google.cloud.dataca"
-          + "talog.v1.Tag\0225\n\013absent_tags\030\003 \003(\0132 .goog"
-          + "le.cloud.datacatalog.v1.TagB\007\n\005entry\"T\n\010"
-          + "DumpItem\022@\n\014tagged_entry\030\001 \001(\0132(.google."
-          + "cloud.datacatalog.v1.TaggedEntryH\000B\006\n\004it"
-          + "emB\330\001\n\037com.google.cloud.datacatalog.v1B\020"
-          + "DumpContentProtoP\001ZAcloud.google.com/go/"
-          + "datacatalog/apiv1/datacatalogpb;datacata"
-          + "logpb\370\001\001\252\002\033Google.Cloud.DataCatalog.V1\312\002"
-          + "\033Google\\Cloud\\DataCatalog\\V1\352\002\036Google::C"
-          + "loud::DataCatalog::V1b\006proto3"
+          + "nt.proto\022\033google.cloud.datacatalog.v1\032\037g"
+          + "oogle/api/field_behavior.proto\032-google/c"
+          + "loud/datacatalog/v1/datacatalog.proto\032&g"
+          + "oogle/cloud/datacatalog/v1/tags.proto\"\311\001"
+          + "\n\013TaggedEntry\0226\n\010v1_entry\030\001 \001(\0132\".google"
+          + ".cloud.datacatalog.v1.EntryH\000\022<\n\014present"
+          + "_tags\030\002 \003(\0132 .google.cloud.datacatalog.v"
+          + "1.TagB\004\342A\001\001\022;\n\013absent_tags\030\003 \003(\0132 .googl"
+          + "e.cloud.datacatalog.v1.TagB\004\342A\001\001B\007\n\005entr"
+          + "y\"T\n\010DumpItem\022@\n\014tagged_entry\030\001 \001(\0132(.go"
+          + "ogle.cloud.datacatalog.v1.TaggedEntryH\000B"
+          + "\006\n\004itemB\330\001\n\037com.google.cloud.datacatalog"
+          + ".v1B\020DumpContentProtoP\001ZAcloud.google.co"
+          + "m/go/datacatalog/apiv1/datacatalogpb;dat"
+          + "acatalogpb\370\001\001\252\002\033Google.Cloud.DataCatalog"
+          + ".V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Goog"
+          + "le::Cloud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.datacatalog.v1.Datacatalog.getDescriptor(),
               com.google.cloud.datacatalog.v1.Tags.getDescriptor(),
             });
@@ -85,6 +87,12 @@ public final class DumpContentProto {
             new java.lang.String[] {
               "TaggedEntry", "Item",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.datacatalog.v1.Datacatalog.getDescriptor();
     com.google.cloud.datacatalog.v1.Tags.getDescriptor();
   }

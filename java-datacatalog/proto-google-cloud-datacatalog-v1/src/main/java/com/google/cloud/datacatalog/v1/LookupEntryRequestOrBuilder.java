@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ public interface LookupEntryRequestOrBuilder
    * The full name of the Google Cloud Platform resource the Data Catalog
    * entry represents. For more information, see [Full Resource Name]
    * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   *
    * Full names are case-sensitive. For example:
+   *
    *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
    *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
    * </pre>
@@ -47,7 +49,9 @@ public interface LookupEntryRequestOrBuilder
    * The full name of the Google Cloud Platform resource the Data Catalog
    * entry represents. For more information, see [Full Resource Name]
    * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   *
    * Full names are case-sensitive. For example:
+   *
    *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
    *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
    * </pre>
@@ -64,7 +68,9 @@ public interface LookupEntryRequestOrBuilder
    * The full name of the Google Cloud Platform resource the Data Catalog
    * entry represents. For more information, see [Full Resource Name]
    * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   *
    * Full names are case-sensitive. For example:
+   *
    *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
    *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
    * </pre>
@@ -80,12 +86,15 @@ public interface LookupEntryRequestOrBuilder
    *
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
+   *
    * Examples:
+   *
    * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
    * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
    * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
    * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+   *
    * Identifiers (`*_ID`) should comply with the
    * [Lexical structure in Standard SQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -101,12 +110,15 @@ public interface LookupEntryRequestOrBuilder
    *
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
+   *
    * Examples:
+   *
    * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
    * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
    * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
    * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+   *
    * Identifiers (`*_ID`) should comply with the
    * [Lexical structure in Standard SQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -122,12 +134,15 @@ public interface LookupEntryRequestOrBuilder
    *
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
+   *
    * Examples:
+   *
    * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
    * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
    * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
    * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+   *
    * Identifiers (`*_ID`) should comply with the
    * [Lexical structure in Standard SQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -143,13 +158,22 @@ public interface LookupEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified name (FQN) of the resource.
+   * [Fully Qualified Name
+   * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+   * of the resource.
+   *
    * FQNs take two forms:
+   *
    * * For non-regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * * For regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * Example for a DPMS table:
+   *
    * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
@@ -162,13 +186,22 @@ public interface LookupEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified name (FQN) of the resource.
+   * [Fully Qualified Name
+   * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+   * of the resource.
+   *
    * FQNs take two forms:
+   *
    * * For non-regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * * For regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * Example for a DPMS table:
+   *
    * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
@@ -181,13 +214,22 @@ public interface LookupEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified name (FQN) of the resource.
+   * [Fully Qualified Name
+   * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+   * of the resource.
+   *
    * FQNs take two forms:
+   *
    * * For non-regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * * For regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * Example for a DPMS table:
+   *
    * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
@@ -197,5 +239,63 @@ public interface LookupEntryRequestOrBuilder
    */
   com.google.protobuf.ByteString getFullyQualifiedNameBytes();
 
-  public com.google.cloud.datacatalog.v1.LookupEntryRequest.TargetNameCase getTargetNameCase();
+  /**
+   *
+   *
+   * <pre>
+   * Project where the lookup should be performed. Required to lookup
+   * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+   * using its `fully_qualified_name`. Ignored in other cases.
+   * </pre>
+   *
+   * <code>string project = 6;</code>
+   *
+   * @return The project.
+   */
+  java.lang.String getProject();
+  /**
+   *
+   *
+   * <pre>
+   * Project where the lookup should be performed. Required to lookup
+   * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+   * using its `fully_qualified_name`. Ignored in other cases.
+   * </pre>
+   *
+   * <code>string project = 6;</code>
+   *
+   * @return The bytes for project.
+   */
+  com.google.protobuf.ByteString getProjectBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Location where the lookup should be performed. Required to lookup
+   * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+   * using its `fully_qualified_name`. Ignored in other cases.
+   * </pre>
+   *
+   * <code>string location = 7;</code>
+   *
+   * @return The location.
+   */
+  java.lang.String getLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Location where the lookup should be performed. Required to lookup
+   * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+   * using its `fully_qualified_name`. Ignored in other cases.
+   * </pre>
+   *
+   * <code>string location = 7;</code>
+   *
+   * @return The bytes for location.
+   */
+  com.google.protobuf.ByteString getLocationBytes();
+
+  com.google.cloud.datacatalog.v1.LookupEntryRequest.TargetNameCase getTargetNameCase();
 }

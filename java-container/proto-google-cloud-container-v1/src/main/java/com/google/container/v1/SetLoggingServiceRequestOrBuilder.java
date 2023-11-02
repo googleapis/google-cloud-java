@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLoggingServiceRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2559
+   *     google/container/v1/cluster_service.proto;l=2787
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLoggingServiceRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2559
+   *     google/container/v1/cluster_service.proto;l=2787
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLoggingServiceRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2565
+   *     google/container/v1/cluster_service.proto;l=2793
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLoggingServiceRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2565
+   *     google/container/v1/cluster_service.proto;l=2793
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLoggingServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2569
+   *     google/container/v1/cluster_service.proto;l=2797
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,7 +122,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLoggingServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2569
+   *     google/container/v1/cluster_service.proto;l=2797
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -134,11 +134,13 @@ public interface SetLoggingServiceRequestOrBuilder
    * <pre>
    * Required. The logging service the cluster should use to write logs.
    * Currently available options:
+   *
    * * `logging.googleapis.com/kubernetes` - The Cloud Logging
    * service with a Kubernetes-native resource model
    * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
    *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
+   *
    * If left as an empty string,`logging.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
@@ -154,11 +156,13 @@ public interface SetLoggingServiceRequestOrBuilder
    * <pre>
    * Required. The logging service the cluster should use to write logs.
    * Currently available options:
+   *
    * * `logging.googleapis.com/kubernetes` - The Cloud Logging
    * service with a Kubernetes-native resource model
    * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
    *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
+   *
    * If left as an empty string,`logging.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>

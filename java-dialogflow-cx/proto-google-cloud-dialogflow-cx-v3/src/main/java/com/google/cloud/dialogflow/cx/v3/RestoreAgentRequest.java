@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RestoreAgentRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -234,7 +229,660 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3.RestoreAgentRequest.RestoreOption)
   }
 
+  public interface GitSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * tracking branch for the git pull
+     * </pre>
+     *
+     * <code>string tracking_branch = 1;</code>
+     *
+     * @return The trackingBranch.
+     */
+    java.lang.String getTrackingBranch();
+    /**
+     *
+     *
+     * <pre>
+     * tracking branch for the git pull
+     * </pre>
+     *
+     * <code>string tracking_branch = 1;</code>
+     *
+     * @return The bytes for trackingBranch.
+     */
+    com.google.protobuf.ByteString getTrackingBranchBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for restoring from a git branch
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource}
+   */
+  public static final class GitSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource)
+      GitSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GitSource.newBuilder() to construct.
+    private GitSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GitSource() {
+      trackingBranch_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GitSource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3_RestoreAgentRequest_GitSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3_RestoreAgentRequest_GitSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.class,
+              com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.Builder.class);
+    }
+
+    public static final int TRACKING_BRANCH_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object trackingBranch_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * tracking branch for the git pull
+     * </pre>
+     *
+     * <code>string tracking_branch = 1;</code>
+     *
+     * @return The trackingBranch.
+     */
+    @java.lang.Override
+    public java.lang.String getTrackingBranch() {
+      java.lang.Object ref = trackingBranch_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        trackingBranch_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * tracking branch for the git pull
+     * </pre>
+     *
+     * <code>string tracking_branch = 1;</code>
+     *
+     * @return The bytes for trackingBranch.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTrackingBranchBytes() {
+      java.lang.Object ref = trackingBranch_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        trackingBranch_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingBranch_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, trackingBranch_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingBranch_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, trackingBranch_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource other =
+          (com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource) obj;
+
+      if (!getTrackingBranch().equals(other.getTrackingBranch())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TRACKING_BRANCH_FIELD_NUMBER;
+      hash = (53 * hash) + getTrackingBranch().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for restoring from a git branch
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource)
+        com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_RestoreAgentRequest_GitSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_RestoreAgentRequest_GitSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.class,
+                com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        trackingBranch_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_RestoreAgentRequest_GitSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource build() {
+        com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource buildPartial() {
+        com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource result =
+            new com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.trackingBranch_ = trackingBranch_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource) {
+          return mergeFrom((com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.getDefaultInstance())
+          return this;
+        if (!other.getTrackingBranch().isEmpty()) {
+          trackingBranch_ = other.trackingBranch_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  trackingBranch_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object trackingBranch_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * tracking branch for the git pull
+       * </pre>
+       *
+       * <code>string tracking_branch = 1;</code>
+       *
+       * @return The trackingBranch.
+       */
+      public java.lang.String getTrackingBranch() {
+        java.lang.Object ref = trackingBranch_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          trackingBranch_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * tracking branch for the git pull
+       * </pre>
+       *
+       * <code>string tracking_branch = 1;</code>
+       *
+       * @return The bytes for trackingBranch.
+       */
+      public com.google.protobuf.ByteString getTrackingBranchBytes() {
+        java.lang.Object ref = trackingBranch_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          trackingBranch_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * tracking branch for the git pull
+       * </pre>
+       *
+       * <code>string tracking_branch = 1;</code>
+       *
+       * @param value The trackingBranch to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrackingBranch(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        trackingBranch_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * tracking branch for the git pull
+       * </pre>
+       *
+       * <code>string tracking_branch = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrackingBranch() {
+        trackingBranch_ = getDefaultInstance().getTrackingBranch();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * tracking branch for the git pull
+       * </pre>
+       *
+       * <code>string tracking_branch = 1;</code>
+       *
+       * @param value The bytes for trackingBranch to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrackingBranchBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        trackingBranch_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource)
+    private static final com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GitSource> PARSER =
+        new com.google.protobuf.AbstractParser<GitSource>() {
+          @java.lang.Override
+          public GitSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GitSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GitSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int agentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object agent_;
 
   public enum AgentCase
@@ -243,6 +891,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AGENT_URI(2),
     AGENT_CONTENT(3),
+    GIT_SOURCE(6),
     AGENT_NOT_SET(0);
     private final int value;
 
@@ -265,6 +914,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
           return AGENT_URI;
         case 3:
           return AGENT_CONTENT;
+        case 6:
+          return GIT_SOURCE;
         case 0:
           return AGENT_NOT_SET;
         default:
@@ -346,6 +997,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to restore agent from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -367,6 +1019,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to restore agent from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -401,6 +1054,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to restore agent from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -462,6 +1116,58 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       return (com.google.protobuf.ByteString) agent_;
     }
     return com.google.protobuf.ByteString.EMPTY;
+  }
+
+  public static final int GIT_SOURCE_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Setting for restoring from a git branch
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+   *
+   * @return Whether the gitSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasGitSource() {
+    return agentCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Setting for restoring from a git branch
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+   *
+   * @return The gitSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource getGitSource() {
+    if (agentCase_ == 6) {
+      return (com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource) agent_;
+    }
+    return com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Setting for restoring from a git branch
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSourceOrBuilder
+      getGitSourceOrBuilder() {
+    if (agentCase_ == 6) {
+      return (com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource) agent_;
+    }
+    return com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.getDefaultInstance();
   }
 
   public static final int RESTORE_OPTION_FIELD_NUMBER = 5;
@@ -533,6 +1239,10 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(5, restoreOption_);
     }
+    if (agentCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource) agent_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -558,6 +1268,11 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
             .RESTORE_OPTION_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, restoreOption_);
+    }
+    if (agentCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource) agent_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -585,6 +1300,9 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       case 3:
         if (!getAgentContent().equals(other.getAgentContent())) return false;
         break;
+      case 6:
+        if (!getGitSource().equals(other.getGitSource())) return false;
+        break;
       case 0:
       default:
     }
@@ -611,6 +1329,10 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       case 3:
         hash = (37 * hash) + AGENT_CONTENT_FIELD_NUMBER;
         hash = (53 * hash) + getAgentContent().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + GIT_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getGitSource().hashCode();
         break;
       case 0:
       default:
@@ -757,6 +1479,9 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      if (gitSourceBuilder_ != null) {
+        gitSourceBuilder_.clear();
+      }
       restoreOption_ = 0;
       agentCase_ = 0;
       agent_ = null;
@@ -800,7 +1525,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.restoreOption_ = restoreOption_;
       }
     }
@@ -808,6 +1533,9 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     private void buildPartialOneofs(com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest result) {
       result.agentCase_ = agentCase_;
       result.agent_ = this.agent_;
+      if (agentCase_ == 6 && gitSourceBuilder_ != null) {
+        result.agent_ = gitSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -877,6 +1605,11 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
             setAgentContent(other.getAgentContent());
             break;
           }
+        case GIT_SOURCE:
+          {
+            mergeGitSource(other.getGitSource());
+            break;
+          }
         case AGENT_NOT_SET:
           {
             break;
@@ -930,9 +1663,15 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
             case 40:
               {
                 restoreOption_ = input.readEnum();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 50:
+              {
+                input.readMessage(getGitSourceFieldBuilder().getBuilder(), extensionRegistry);
+                agentCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1094,6 +1833,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1116,6 +1856,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1151,6 +1892,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1186,6 +1928,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1214,6 +1957,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1240,6 +1984,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1335,6 +2080,222 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource,
+            com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.Builder,
+            com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSourceOrBuilder>
+        gitSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Setting for restoring from a git branch
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+     *
+     * @return Whether the gitSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasGitSource() {
+      return agentCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting for restoring from a git branch
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+     *
+     * @return The gitSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource getGitSource() {
+      if (gitSourceBuilder_ == null) {
+        if (agentCase_ == 6) {
+          return (com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource) agent_;
+        }
+        return com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.getDefaultInstance();
+      } else {
+        if (agentCase_ == 6) {
+          return gitSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting for restoring from a git branch
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+     */
+    public Builder setGitSource(
+        com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource value) {
+      if (gitSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        agent_ = value;
+        onChanged();
+      } else {
+        gitSourceBuilder_.setMessage(value);
+      }
+      agentCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting for restoring from a git branch
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+     */
+    public Builder setGitSource(
+        com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.Builder builderForValue) {
+      if (gitSourceBuilder_ == null) {
+        agent_ = builderForValue.build();
+        onChanged();
+      } else {
+        gitSourceBuilder_.setMessage(builderForValue.build());
+      }
+      agentCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting for restoring from a git branch
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+     */
+    public Builder mergeGitSource(
+        com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource value) {
+      if (gitSourceBuilder_ == null) {
+        if (agentCase_ == 6
+            && agent_
+                != com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource
+                    .getDefaultInstance()) {
+          agent_ =
+              com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.newBuilder(
+                      (com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource) agent_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          agent_ = value;
+        }
+        onChanged();
+      } else {
+        if (agentCase_ == 6) {
+          gitSourceBuilder_.mergeFrom(value);
+        } else {
+          gitSourceBuilder_.setMessage(value);
+        }
+      }
+      agentCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting for restoring from a git branch
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+     */
+    public Builder clearGitSource() {
+      if (gitSourceBuilder_ == null) {
+        if (agentCase_ == 6) {
+          agentCase_ = 0;
+          agent_ = null;
+          onChanged();
+        }
+      } else {
+        if (agentCase_ == 6) {
+          agentCase_ = 0;
+          agent_ = null;
+        }
+        gitSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting for restoring from a git branch
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.Builder
+        getGitSourceBuilder() {
+      return getGitSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting for restoring from a git branch
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSourceOrBuilder
+        getGitSourceOrBuilder() {
+      if ((agentCase_ == 6) && (gitSourceBuilder_ != null)) {
+        return gitSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (agentCase_ == 6) {
+          return (com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource) agent_;
+        }
+        return com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting for restoring from a git branch
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource,
+            com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.Builder,
+            com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSourceOrBuilder>
+        getGitSourceFieldBuilder() {
+      if (gitSourceBuilder_ == null) {
+        if (!(agentCase_ == 6)) {
+          agent_ =
+              com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.getDefaultInstance();
+        }
+        gitSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource,
+                com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource.Builder,
+                com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSourceOrBuilder>(
+                (com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource) agent_,
+                getParentForChildren(),
+                isClean());
+        agent_ = null;
+      }
+      agentCase_ = 6;
+      onChanged();
+      return gitSourceBuilder_;
+    }
+
     private int restoreOption_ = 0;
     /**
      *
@@ -1367,7 +2328,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder setRestoreOptionValue(int value) {
       restoreOption_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1410,7 +2371,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       restoreOption_ = value.getNumber();
       onChanged();
       return this;
@@ -1428,7 +2389,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRestoreOption() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       restoreOption_ = 0;
       onChanged();
       return this;

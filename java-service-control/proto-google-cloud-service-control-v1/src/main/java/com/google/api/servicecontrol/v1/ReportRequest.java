@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
     return new ReportRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicecontrol.v1.ServiceControllerProto
         .internal_static_google_api_servicecontrol_v1_ReportRequest_descriptor;
@@ -79,6 +74,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The service name as specified in its service configuration. For example,
    * `"pubsub.googleapis.com"`.
+   *
    * See
    * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
    * for the definition of a service name.
@@ -106,6 +102,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The service name as specified in its service configuration. For example,
    * `"pubsub.googleapis.com"`.
+   *
    * See
    * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
    * for the definition of a service name.
@@ -137,10 +134,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Operations to be reported.
+   *
    * Typically the service should report one operation per request.
    * Putting multiple operations into a single request is allowed, but should
    * be used only when multiple operations are natually available at the time
    * of the report.
+   *
    * There is no limit on the number of operations in the same ReportRequest,
    * however the ReportRequest size should be no larger than 1MB. See
    * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -158,10 +157,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Operations to be reported.
+   *
    * Typically the service should report one operation per request.
    * Putting multiple operations into a single request is allowed, but should
    * be used only when multiple operations are natually available at the time
    * of the report.
+   *
    * There is no limit on the number of operations in the same ReportRequest,
    * however the ReportRequest size should be no larger than 1MB. See
    * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -180,10 +181,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Operations to be reported.
+   *
    * Typically the service should report one operation per request.
    * Putting multiple operations into a single request is allowed, but should
    * be used only when multiple operations are natually available at the time
    * of the report.
+   *
    * There is no limit on the number of operations in the same ReportRequest,
    * however the ReportRequest size should be no larger than 1MB. See
    * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -201,10 +204,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Operations to be reported.
+   *
    * Typically the service should report one operation per request.
    * Putting multiple operations into a single request is allowed, but should
    * be used only when multiple operations are natually available at the time
    * of the report.
+   *
    * There is no limit on the number of operations in the same ReportRequest,
    * however the ReportRequest size should be no larger than 1MB. See
    * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -222,10 +227,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Operations to be reported.
+   *
    * Typically the service should report one operation per request.
    * Putting multiple operations into a single request is allowed, but should
    * be used only when multiple operations are natually available at the time
    * of the report.
+   *
    * There is no limit on the number of operations in the same ReportRequest,
    * however the ReportRequest size should be no larger than 1MB. See
    * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -249,6 +256,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Specifies which version of service config should be used to process the
    * request.
+   *
    * If unspecified or no matching version can be found, the
    * latest one will be used.
    * </pre>
@@ -275,6 +283,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Specifies which version of service config should be used to process the
    * request.
+   *
    * If unspecified or no matching version can be found, the
    * latest one will be used.
    * </pre>
@@ -739,6 +748,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service name as specified in its service configuration. For example,
      * `"pubsub.googleapis.com"`.
+     *
      * See
      * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
      * for the definition of a service name.
@@ -765,6 +775,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service name as specified in its service configuration. For example,
      * `"pubsub.googleapis.com"`.
+     *
      * See
      * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
      * for the definition of a service name.
@@ -791,6 +802,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service name as specified in its service configuration. For example,
      * `"pubsub.googleapis.com"`.
+     *
      * See
      * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
      * for the definition of a service name.
@@ -816,6 +828,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service name as specified in its service configuration. For example,
      * `"pubsub.googleapis.com"`.
+     *
      * See
      * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
      * for the definition of a service name.
@@ -837,6 +850,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service name as specified in its service configuration. For example,
      * `"pubsub.googleapis.com"`.
+     *
      * See
      * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
      * for the definition of a service name.
@@ -880,10 +894,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -904,10 +920,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -928,10 +946,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -952,10 +972,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -982,10 +1004,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1010,10 +1034,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1040,10 +1066,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1070,10 +1098,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1098,10 +1128,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1126,10 +1158,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1154,10 +1188,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1181,10 +1217,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1208,10 +1246,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1228,10 +1268,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1252,10 +1294,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1277,10 +1321,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1298,10 +1344,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1319,10 +1367,12 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Operations to be reported.
+     *
      * Typically the service should report one operation per request.
      * Putting multiple operations into a single request is allowed, but should
      * be used only when multiple operations are natually available at the time
      * of the report.
+     *
      * There is no limit on the number of operations in the same ReportRequest,
      * however the ReportRequest size should be no larger than 1MB. See
      * [ReportResponse.report_errors][google.api.servicecontrol.v1.ReportResponse.report_errors]
@@ -1360,6 +1410,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies which version of service config should be used to process the
      * request.
+     *
      * If unspecified or no matching version can be found, the
      * latest one will be used.
      * </pre>
@@ -1385,6 +1436,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies which version of service config should be used to process the
      * request.
+     *
      * If unspecified or no matching version can be found, the
      * latest one will be used.
      * </pre>
@@ -1410,6 +1462,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies which version of service config should be used to process the
      * request.
+     *
      * If unspecified or no matching version can be found, the
      * latest one will be used.
      * </pre>
@@ -1434,6 +1487,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies which version of service config should be used to process the
      * request.
+     *
      * If unspecified or no matching version can be found, the
      * latest one will be used.
      * </pre>
@@ -1454,6 +1508,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies which version of service config should be used to process the
      * request.
+     *
      * If unspecified or no matching version can be found, the
      * latest one will be used.
      * </pre>

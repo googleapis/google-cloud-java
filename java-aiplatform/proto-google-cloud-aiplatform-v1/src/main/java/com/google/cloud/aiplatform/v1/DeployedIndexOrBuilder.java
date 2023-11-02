@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -207,17 +207,16 @@ public interface DeployedIndexOrBuilder
    * Output only. The DeployedIndex may depend on various data on its original
    * Index. Additionally when certain changes to the original Index are being
    * done (e.g. when what the Index contains is being changed) the DeployedIndex
-   * may be asynchronously updated in the background to reflect this changes. If
-   * this timestamp's value is at least the
+   * may be asynchronously updated in the background to reflect these changes.
+   * If this timestamp's value is at least the
    * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
    * original Index, it means that this DeployedIndex and the original Index are
    * in sync. If this timestamp is older, then to see which updates this
-   * DeployedIndex already contains (and which not), one must
-   * [list][Operations.ListOperations] [Operations][Operation]
-   * [working][Operation.name] on the original Index. Only
-   * the successfully completed Operations with
-   * [Operations.metadata.generic_metadata.update_time]
-   * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+   * DeployedIndex already contains (and which it does not), one must
+   * [list][google.longrunning.Operations.ListOperations] the operations that
+   * are running on the original Index. Only the successfully completed
+   * Operations with
+   * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
    * equal or before this sync time are contained in this DeployedIndex.
    * </pre>
    *
@@ -235,17 +234,16 @@ public interface DeployedIndexOrBuilder
    * Output only. The DeployedIndex may depend on various data on its original
    * Index. Additionally when certain changes to the original Index are being
    * done (e.g. when what the Index contains is being changed) the DeployedIndex
-   * may be asynchronously updated in the background to reflect this changes. If
-   * this timestamp's value is at least the
+   * may be asynchronously updated in the background to reflect these changes.
+   * If this timestamp's value is at least the
    * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
    * original Index, it means that this DeployedIndex and the original Index are
    * in sync. If this timestamp is older, then to see which updates this
-   * DeployedIndex already contains (and which not), one must
-   * [list][Operations.ListOperations] [Operations][Operation]
-   * [working][Operation.name] on the original Index. Only
-   * the successfully completed Operations with
-   * [Operations.metadata.generic_metadata.update_time]
-   * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+   * DeployedIndex already contains (and which it does not), one must
+   * [list][google.longrunning.Operations.ListOperations] the operations that
+   * are running on the original Index. Only the successfully completed
+   * Operations with
+   * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
    * equal or before this sync time are contained in this DeployedIndex.
    * </pre>
    *
@@ -263,17 +261,16 @@ public interface DeployedIndexOrBuilder
    * Output only. The DeployedIndex may depend on various data on its original
    * Index. Additionally when certain changes to the original Index are being
    * done (e.g. when what the Index contains is being changed) the DeployedIndex
-   * may be asynchronously updated in the background to reflect this changes. If
-   * this timestamp's value is at least the
+   * may be asynchronously updated in the background to reflect these changes.
+   * If this timestamp's value is at least the
    * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
    * original Index, it means that this DeployedIndex and the original Index are
    * in sync. If this timestamp is older, then to see which updates this
-   * DeployedIndex already contains (and which not), one must
-   * [list][Operations.ListOperations] [Operations][Operation]
-   * [working][Operation.name] on the original Index. Only
-   * the successfully completed Operations with
-   * [Operations.metadata.generic_metadata.update_time]
-   * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+   * DeployedIndex already contains (and which it does not), one must
+   * [list][google.longrunning.Operations.ListOperations] the operations that
+   * are running on the original Index. Only the successfully completed
+   * Operations with
+   * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
    * equal or before this sync time are contained in this DeployedIndex.
    * </pre>
    *
@@ -351,12 +348,16 @@ public interface DeployedIndexOrBuilder
    * min_replica_count is not set, the default value is 2 (we don't provide SLA
    * when min_replica_count=1). If max_replica_count is not set, the default
    * value is min_replica_count. The max allowed replica count is 1000.
+   *
    * Available machine types for SMALL shard:
    * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+   *
    * Available machine types for MEDIUM shard:
    * e2-standard-16 and all machine types available for LARGE shard.
+   *
    * Available machine types for LARGE shard:
    * e2-highmem-16, n2d-standard-32.
+   *
    * n1-standard-16 and n1-standard-32 are still available, but we recommend
    * e2-standard-16 and e2-highmem-16 for cost efficiency.
    * </pre>
@@ -377,12 +378,16 @@ public interface DeployedIndexOrBuilder
    * min_replica_count is not set, the default value is 2 (we don't provide SLA
    * when min_replica_count=1). If max_replica_count is not set, the default
    * value is min_replica_count. The max allowed replica count is 1000.
+   *
    * Available machine types for SMALL shard:
    * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+   *
    * Available machine types for MEDIUM shard:
    * e2-standard-16 and all machine types available for LARGE shard.
+   *
    * Available machine types for LARGE shard:
    * e2-highmem-16, n2d-standard-32.
+   *
    * n1-standard-16 and n1-standard-32 are still available, but we recommend
    * e2-standard-16 and e2-highmem-16 for cost efficiency.
    * </pre>
@@ -403,12 +408,16 @@ public interface DeployedIndexOrBuilder
    * min_replica_count is not set, the default value is 2 (we don't provide SLA
    * when min_replica_count=1). If max_replica_count is not set, the default
    * value is min_replica_count. The max allowed replica count is 1000.
+   *
    * Available machine types for SMALL shard:
    * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+   *
    * Available machine types for MEDIUM shard:
    * e2-standard-16 and all machine types available for LARGE shard.
+   *
    * Available machine types for LARGE shard:
    * e2-highmem-16, n2d-standard-32.
+   *
    * n1-standard-16 and n1-standard-32 are still available, but we recommend
    * e2-standard-16 and e2-highmem-16 for cost efficiency.
    * </pre>
@@ -425,8 +434,10 @@ public interface DeployedIndexOrBuilder
    * <pre>
    * Optional. If true, private endpoint's access logs are sent to Cloud
    * Logging.
+   *
    * These logs are like standard server access logs, containing
    * information like timestamp and latency for each MatchRequest.
+   *
    * Note that logs may incur a cost, especially if the deployed
    * index receives a high queries per second rate (QPS).
    * Estimate your costs before enabling this option.
@@ -486,12 +497,17 @@ public interface DeployedIndexOrBuilder
    * <pre>
    * Optional. A list of reserved ip ranges under the VPC network that can be
    * used for this DeployedIndex.
+   *
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-   * Example: 'vertex-ai-ip-range'.
+   * Example: ['vertex-ai-ip-range'].
+   *
+   * For more information about subnets and network IP ranges, please see
+   * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
    * </pre>
    *
    * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -505,12 +521,17 @@ public interface DeployedIndexOrBuilder
    * <pre>
    * Optional. A list of reserved ip ranges under the VPC network that can be
    * used for this DeployedIndex.
+   *
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-   * Example: 'vertex-ai-ip-range'.
+   * Example: ['vertex-ai-ip-range'].
+   *
+   * For more information about subnets and network IP ranges, please see
+   * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
    * </pre>
    *
    * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -524,12 +545,17 @@ public interface DeployedIndexOrBuilder
    * <pre>
    * Optional. A list of reserved ip ranges under the VPC network that can be
    * used for this DeployedIndex.
+   *
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-   * Example: 'vertex-ai-ip-range'.
+   * Example: ['vertex-ai-ip-range'].
+   *
+   * For more information about subnets and network IP ranges, please see
+   * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
    * </pre>
    *
    * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -544,12 +570,17 @@ public interface DeployedIndexOrBuilder
    * <pre>
    * Optional. A list of reserved ip ranges under the VPC network that can be
    * used for this DeployedIndex.
+   *
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-   * Example: 'vertex-ai-ip-range'.
+   * Example: ['vertex-ai-ip-range'].
+   *
+   * For more information about subnets and network IP ranges, please see
+   * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
    * </pre>
    *
    * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -565,6 +596,7 @@ public interface DeployedIndexOrBuilder
    * <pre>
    * Optional. The deployment group can be no longer than 64 characters (eg:
    * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+   *
    * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
    * practice when the peered network has multiple peering ranges. This creates
    * your deployments from predictable IP spaces for easier traffic
@@ -572,6 +604,7 @@ public interface DeployedIndexOrBuilder
    * used with the same reserved_ip_ranges which means if the deployment_group
    * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
    * [d, e] is disallowed.
+   *
    * Note: we only support up to 5 deployment groups(not including 'default').
    * </pre>
    *
@@ -586,6 +619,7 @@ public interface DeployedIndexOrBuilder
    * <pre>
    * Optional. The deployment group can be no longer than 64 characters (eg:
    * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+   *
    * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
    * practice when the peered network has multiple peering ranges. This creates
    * your deployments from predictable IP spaces for easier traffic
@@ -593,6 +627,7 @@ public interface DeployedIndexOrBuilder
    * used with the same reserved_ip_ranges which means if the deployment_group
    * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
    * [d, e] is disallowed.
+   *
    * Note: we only support up to 5 deployment groups(not including 'default').
    * </pre>
    *

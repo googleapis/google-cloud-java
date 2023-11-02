@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,15 +30,19 @@ public interface RequestMetadataOrBuilder
    * Required if
    * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
    * is unset or `false`.
+   *
    * The client-defined scope or source of the service call, which typically
    * is the domain on
    * which the service has been implemented and is currently being run.
+   *
    * For example, if the service is being run by client &lt;em&gt;Foo, Inc.&lt;/em&gt;, on
    * job board www.foo.com and career site www.bar.com, then this field is
    * set to "foo.com" for use on the job board, and "bar.com" for use on the
    * career site.
+   *
    * Note that any improvements to the model for a particular tenant site rely
    * on this field being set correctly to a unique domain.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -54,15 +58,19 @@ public interface RequestMetadataOrBuilder
    * Required if
    * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
    * is unset or `false`.
+   *
    * The client-defined scope or source of the service call, which typically
    * is the domain on
    * which the service has been implemented and is currently being run.
+   *
    * For example, if the service is being run by client &lt;em&gt;Foo, Inc.&lt;/em&gt;, on
    * job board www.foo.com and career site www.bar.com, then this field is
    * set to "foo.com" for use on the job board, and "bar.com" for use on the
    * career site.
+   *
    * Note that any improvements to the model for a particular tenant site rely
    * on this field being set correctly to a unique domain.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -79,13 +87,16 @@ public interface RequestMetadataOrBuilder
    * Required if
    * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
    * is unset or `false`.
+   *
    * A unique session identification string. A session is defined as the
    * duration of an end user's interaction with the service over a certain
    * period.
    * Obfuscate this field for privacy concerns before
    * providing it to the service.
+   *
    * Note that any improvements to the model for a particular tenant site rely
    * on this field being set correctly to a unique session ID.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -101,13 +112,16 @@ public interface RequestMetadataOrBuilder
    * Required if
    * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
    * is unset or `false`.
+   *
    * A unique session identification string. A session is defined as the
    * duration of an end user's interaction with the service over a certain
    * period.
    * Obfuscate this field for privacy concerns before
    * providing it to the service.
+   *
    * Note that any improvements to the model for a particular tenant site rely
    * on this field being set correctly to a unique session ID.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -124,13 +138,16 @@ public interface RequestMetadataOrBuilder
    * Required if
    * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
    * is unset or `false`.
+   *
    * A unique user identification string, as determined by the client.
    * To have the strongest positive impact on search quality
    * make sure the client-level is unique.
    * Obfuscate this field for privacy concerns before
    * providing it to the service.
+   *
    * Note that any improvements to the model for a particular tenant site rely
    * on this field being set correctly to a unique user ID.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -146,13 +163,16 @@ public interface RequestMetadataOrBuilder
    * Required if
    * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
    * is unset or `false`.
+   *
    * A unique user identification string, as determined by the client.
    * To have the strongest positive impact on search quality
    * make sure the client-level is unique.
    * Obfuscate this field for privacy concerns before
    * providing it to the service.
+   *
    * Note that any improvements to the model for a particular tenant site rely
    * on this field being set correctly to a unique user ID.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *

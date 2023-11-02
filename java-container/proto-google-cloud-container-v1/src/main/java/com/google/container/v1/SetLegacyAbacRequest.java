@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
     return new SetLegacyAbacRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_SetLegacyAbacRequest_descriptor;
@@ -87,7 +82,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3787
+   *     google/container/v1/cluster_service.proto;l=4043
    * @return The projectId.
    */
   @java.lang.Override
@@ -115,7 +110,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3787
+   *     google/container/v1/cluster_service.proto;l=4043
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -149,7 +144,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3793
+   *     google/container/v1/cluster_service.proto;l=4049
    * @return The zone.
    */
   @java.lang.Override
@@ -178,7 +173,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3793
+   *     google/container/v1/cluster_service.proto;l=4049
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -210,7 +205,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3797
+   *     google/container/v1/cluster_service.proto;l=4053
    * @return The clusterId.
    */
   @java.lang.Override
@@ -237,7 +232,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3797
+   *     google/container/v1/cluster_service.proto;l=4053
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -774,7 +769,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3787
+     *     google/container/v1/cluster_service.proto;l=4043
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -801,7 +796,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3787
+     *     google/container/v1/cluster_service.proto;l=4043
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -828,7 +823,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3787
+     *     google/container/v1/cluster_service.proto;l=4043
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -854,7 +849,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3787
+     *     google/container/v1/cluster_service.proto;l=4043
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -876,7 +871,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3787
+     *     google/container/v1/cluster_service.proto;l=4043
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -906,7 +901,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3793
+     *     google/container/v1/cluster_service.proto;l=4049
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -934,7 +929,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3793
+     *     google/container/v1/cluster_service.proto;l=4049
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -962,7 +957,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3793
+     *     google/container/v1/cluster_service.proto;l=4049
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -989,7 +984,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3793
+     *     google/container/v1/cluster_service.proto;l=4049
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1012,7 +1007,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3793
+     *     google/container/v1/cluster_service.proto;l=4049
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1040,7 +1035,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3797
+     *     google/container/v1/cluster_service.proto;l=4053
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1066,7 +1061,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3797
+     *     google/container/v1/cluster_service.proto;l=4053
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1092,7 +1087,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3797
+     *     google/container/v1/cluster_service.proto;l=4053
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1117,7 +1112,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3797
+     *     google/container/v1/cluster_service.proto;l=4053
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1138,7 +1133,7 @@ public final class SetLegacyAbacRequest extends com.google.protobuf.GeneratedMes
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLegacyAbacRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3797
+     *     google/container/v1/cluster_service.proto;l=4053
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */

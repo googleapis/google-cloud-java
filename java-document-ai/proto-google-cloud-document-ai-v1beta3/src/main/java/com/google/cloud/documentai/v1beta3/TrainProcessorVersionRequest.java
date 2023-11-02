@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Request message for the create processor version method.
+ * Request message for the
+ * [TrainProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.TrainProcessorVersion]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.TrainProcessorVersionRequest}
@@ -46,11 +48,6 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TrainProcessorVersionRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -152,7 +149,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The input data used to train a new `ProcessorVersion`.
+   * The input data used to train a new
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData}
@@ -173,11 +171,6 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InputData();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -492,7 +485,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The input data used to train a new `ProcessorVersion`.
+     * The input data used to train a new
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData}
@@ -1166,6 +1160,960 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     }
   }
 
+  public interface CustomDocumentExtractionOptionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Training method to use for CDE training.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for trainingMethod.
+     */
+    int getTrainingMethodValue();
+    /**
+     *
+     *
+     * <pre>
+     * Training method to use for CDE training.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+     * </code>
+     *
+     * @return The trainingMethod.
+     */
+    com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions
+            .TrainingMethod
+        getTrainingMethod();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options to control the training of the Custom Document Extraction (CDE)
+   * Processor.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions}
+   */
+  public static final class CustomDocumentExtractionOptions
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions)
+      CustomDocumentExtractionOptionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use CustomDocumentExtractionOptions.newBuilder() to construct.
+    private CustomDocumentExtractionOptions(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CustomDocumentExtractionOptions() {
+      trainingMethod_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CustomDocumentExtractionOptions();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
+          .internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionRequest_CustomDocumentExtractionOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
+          .internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionRequest_CustomDocumentExtractionOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                  .CustomDocumentExtractionOptions.class,
+              com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                  .CustomDocumentExtractionOptions.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Training Method for CDE. `TRAINING_METHOD_UNSPECIFIED` will fall back to
+     * `MODEL_BASED`.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod}
+     */
+    public enum TrainingMethod implements com.google.protobuf.ProtocolMessageEnum {
+      /** <code>TRAINING_METHOD_UNSPECIFIED = 0;</code> */
+      TRAINING_METHOD_UNSPECIFIED(0),
+      /** <code>MODEL_BASED = 1;</code> */
+      MODEL_BASED(1),
+      /** <code>TEMPLATE_BASED = 2;</code> */
+      TEMPLATE_BASED(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /** <code>TRAINING_METHOD_UNSPECIFIED = 0;</code> */
+      public static final int TRAINING_METHOD_UNSPECIFIED_VALUE = 0;
+      /** <code>MODEL_BASED = 1;</code> */
+      public static final int MODEL_BASED_VALUE = 1;
+      /** <code>TEMPLATE_BASED = 2;</code> */
+      public static final int TEMPLATE_BASED_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TrainingMethod valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static TrainingMethod forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TRAINING_METHOD_UNSPECIFIED;
+          case 1:
+            return MODEL_BASED;
+          case 2:
+            return TEMPLATE_BASED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TrainingMethod> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<TrainingMethod>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<TrainingMethod>() {
+                public TrainingMethod findValueByNumber(int number) {
+                  return TrainingMethod.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final TrainingMethod[] VALUES = values();
+
+      public static TrainingMethod valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TrainingMethod(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod)
+    }
+
+    public static final int TRAINING_METHOD_FIELD_NUMBER = 3;
+    private int trainingMethod_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Training method to use for CDE training.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for trainingMethod.
+     */
+    @java.lang.Override
+    public int getTrainingMethodValue() {
+      return trainingMethod_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Training method to use for CDE training.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+     * </code>
+     *
+     * @return The trainingMethod.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions.TrainingMethod
+        getTrainingMethod() {
+      com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions.TrainingMethod
+          result =
+              com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                  .CustomDocumentExtractionOptions.TrainingMethod.forNumber(trainingMethod_);
+      return result == null
+          ? com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions.TrainingMethod.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (trainingMethod_
+          != com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions.TrainingMethod.TRAINING_METHOD_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(3, trainingMethod_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (trainingMethod_
+          != com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions.TrainingMethod.TRAINING_METHOD_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, trainingMethod_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions
+          other =
+              (com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                      .CustomDocumentExtractionOptions)
+                  obj;
+
+      if (trainingMethod_ != other.trainingMethod_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TRAINING_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + trainingMethod_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control the training of the Custom Document Extraction (CDE)
+     * Processor.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions)
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
+            .internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionRequest_CustomDocumentExtractionOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
+            .internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionRequest_CustomDocumentExtractionOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                    .CustomDocumentExtractionOptions.class,
+                com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                    .CustomDocumentExtractionOptions.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        trainingMethod_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
+            .internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionRequest_CustomDocumentExtractionOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions
+          getDefaultInstanceForType() {
+        return com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions
+          build() {
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions
+          buildPartial() {
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions
+            result =
+                new com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                    .CustomDocumentExtractionOptions(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                  .CustomDocumentExtractionOptions
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.trainingMethod_ = trainingMethod_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions) {
+          return mergeFrom(
+              (com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                      .CustomDocumentExtractionOptions)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                  .CustomDocumentExtractionOptions
+              other) {
+        if (other
+            == com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions.getDefaultInstance()) return this;
+        if (other.trainingMethod_ != 0) {
+          setTrainingMethodValue(other.getTrainingMethodValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24:
+                {
+                  trainingMethod_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int trainingMethod_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Training method to use for CDE training.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for trainingMethod.
+       */
+      @java.lang.Override
+      public int getTrainingMethodValue() {
+        return trainingMethod_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Training method to use for CDE training.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for trainingMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrainingMethodValue(int value) {
+        trainingMethod_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Training method to use for CDE training.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+       * </code>
+       *
+       * @return The trainingMethod.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions.TrainingMethod
+          getTrainingMethod() {
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions.TrainingMethod
+            result =
+                com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                    .CustomDocumentExtractionOptions.TrainingMethod.forNumber(trainingMethod_);
+        return result == null
+            ? com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions.TrainingMethod.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Training method to use for CDE training.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+       * </code>
+       *
+       * @param value The trainingMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrainingMethod(
+          com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                  .CustomDocumentExtractionOptions.TrainingMethod
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        trainingMethod_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Training method to use for CDE training.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrainingMethod() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        trainingMethod_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions)
+    private static final com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions();
+    }
+
+    public static com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CustomDocumentExtractionOptions> PARSER =
+        new com.google.protobuf.AbstractParser<CustomDocumentExtractionOptions>() {
+          @java.lang.Override
+          public CustomDocumentExtractionOptions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CustomDocumentExtractionOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CustomDocumentExtractionOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int processorFlagsCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object processorFlags_;
+
+  public enum ProcessorFlagsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    CUSTOM_DOCUMENT_EXTRACTION_OPTIONS(5),
+    PROCESSORFLAGS_NOT_SET(0);
+    private final int value;
+
+    private ProcessorFlagsCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ProcessorFlagsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ProcessorFlagsCase forNumber(int value) {
+      switch (value) {
+        case 5:
+          return CUSTOM_DOCUMENT_EXTRACTION_OPTIONS;
+        case 0:
+          return PROCESSORFLAGS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ProcessorFlagsCase getProcessorFlagsCase() {
+    return ProcessorFlagsCase.forNumber(processorFlagsCase_);
+  }
+
+  public static final int CUSTOM_DOCUMENT_EXTRACTION_OPTIONS_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Options to control Custom Document Extraction (CDE) Processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+   * </code>
+   *
+   * @return Whether the customDocumentExtractionOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomDocumentExtractionOptions() {
+    return processorFlagsCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options to control Custom Document Extraction (CDE) Processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+   * </code>
+   *
+   * @return The customDocumentExtractionOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+          .CustomDocumentExtractionOptions
+      getCustomDocumentExtractionOptions() {
+    if (processorFlagsCase_ == 5) {
+      return (com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions)
+          processorFlags_;
+    }
+    return com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+        .CustomDocumentExtractionOptions.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options to control Custom Document Extraction (CDE) Processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+          .CustomDocumentExtractionOptionsOrBuilder
+      getCustomDocumentExtractionOptionsOrBuilder() {
+    if (processorFlagsCase_ == 5) {
+      return (com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+              .CustomDocumentExtractionOptions)
+          processorFlags_;
+    }
+    return com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+        .CustomDocumentExtractionOptions.getDefaultInstance();
+  }
+
   public static final int PARENT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1344,7 +2292,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -1361,7 +2310,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -1381,7 +2331,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -1475,6 +2426,13 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     if (inputData_ != null) {
       output.writeMessage(4, getInputData());
     }
+    if (processorFlagsCase_ == 5) {
+      output.writeMessage(
+          5,
+          (com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                  .CustomDocumentExtractionOptions)
+              processorFlags_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseProcessorVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, baseProcessorVersion_);
     }
@@ -1498,6 +2456,14 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     }
     if (inputData_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getInputData());
+    }
+    if (processorFlagsCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5,
+              (com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                      .CustomDocumentExtractionOptions)
+                  processorFlags_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseProcessorVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, baseProcessorVersion_);
@@ -1535,6 +2501,15 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       if (!getInputData().equals(other.getInputData())) return false;
     }
     if (!getBaseProcessorVersion().equals(other.getBaseProcessorVersion())) return false;
+    if (!getProcessorFlagsCase().equals(other.getProcessorFlagsCase())) return false;
+    switch (processorFlagsCase_) {
+      case 5:
+        if (!getCustomDocumentExtractionOptions()
+            .equals(other.getCustomDocumentExtractionOptions())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1562,6 +2537,14 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     }
     hash = (37 * hash) + BASE_PROCESSOR_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getBaseProcessorVersion().hashCode();
+    switch (processorFlagsCase_) {
+      case 5:
+        hash = (37 * hash) + CUSTOM_DOCUMENT_EXTRACTION_OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomDocumentExtractionOptions().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1667,7 +2650,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request message for the create processor version method.
+   * Request message for the
+   * [TrainProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.TrainProcessorVersion]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.TrainProcessorVersionRequest}
@@ -1702,6 +2687,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (customDocumentExtractionOptionsBuilder_ != null) {
+        customDocumentExtractionOptionsBuilder_.clear();
+      }
       parent_ = "";
       processorVersion_ = null;
       if (processorVersionBuilder_ != null) {
@@ -1719,6 +2707,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         inputDataBuilder_ = null;
       }
       baseProcessorVersion_ = "";
+      processorFlagsCase_ = 0;
+      processorFlags_ = null;
       return this;
     }
 
@@ -1750,6 +2740,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -1757,22 +2748,31 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     private void buildPartial0(
         com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.parent_ = parent_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.processorVersion_ =
             processorVersionBuilder_ == null ? processorVersion_ : processorVersionBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.documentSchema_ =
             documentSchemaBuilder_ == null ? documentSchema_ : documentSchemaBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.inputData_ = inputDataBuilder_ == null ? inputData_ : inputDataBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.baseProcessorVersion_ = baseProcessorVersion_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest result) {
+      result.processorFlagsCase_ = processorFlagsCase_;
+      result.processorFlags_ = this.processorFlags_;
+      if (processorFlagsCase_ == 5 && customDocumentExtractionOptionsBuilder_ != null) {
+        result.processorFlags_ = customDocumentExtractionOptionsBuilder_.build();
       }
     }
 
@@ -1826,7 +2826,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasProcessorVersion()) {
@@ -1840,8 +2840,19 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       if (!other.getBaseProcessorVersion().isEmpty()) {
         baseProcessorVersion_ = other.baseProcessorVersion_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
+      }
+      switch (other.getProcessorFlagsCase()) {
+        case CUSTOM_DOCUMENT_EXTRACTION_OPTIONS:
+          {
+            mergeCustomDocumentExtractionOptions(other.getCustomDocumentExtractionOptions());
+            break;
+          }
+        case PROCESSORFLAGS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1872,32 +2883,40 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getProcessorVersionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getInputDataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getCustomDocumentExtractionOptionsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                processorFlagsCase_ = 5;
+                break;
+              } // case 42
             case 66:
               {
                 baseProcessorVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             case 82:
               {
                 input.readMessage(getDocumentSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 82
             default:
@@ -1917,7 +2936,287 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       return this;
     }
 
+    private int processorFlagsCase_ = 0;
+    private java.lang.Object processorFlags_;
+
+    public ProcessorFlagsCase getProcessorFlagsCase() {
+      return ProcessorFlagsCase.forNumber(processorFlagsCase_);
+    }
+
+    public Builder clearProcessorFlags() {
+      processorFlagsCase_ = 0;
+      processorFlags_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions,
+            com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions.Builder,
+            com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptionsOrBuilder>
+        customDocumentExtractionOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Options to control Custom Document Extraction (CDE) Processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+     * </code>
+     *
+     * @return Whether the customDocumentExtractionOptions field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomDocumentExtractionOptions() {
+      return processorFlagsCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control Custom Document Extraction (CDE) Processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+     * </code>
+     *
+     * @return The customDocumentExtractionOptions.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions
+        getCustomDocumentExtractionOptions() {
+      if (customDocumentExtractionOptionsBuilder_ == null) {
+        if (processorFlagsCase_ == 5) {
+          return (com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                  .CustomDocumentExtractionOptions)
+              processorFlags_;
+        }
+        return com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions.getDefaultInstance();
+      } else {
+        if (processorFlagsCase_ == 5) {
+          return customDocumentExtractionOptionsBuilder_.getMessage();
+        }
+        return com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control Custom Document Extraction (CDE) Processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+     * </code>
+     */
+    public Builder setCustomDocumentExtractionOptions(
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions
+            value) {
+      if (customDocumentExtractionOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        processorFlags_ = value;
+        onChanged();
+      } else {
+        customDocumentExtractionOptionsBuilder_.setMessage(value);
+      }
+      processorFlagsCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control Custom Document Extraction (CDE) Processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+     * </code>
+     */
+    public Builder setCustomDocumentExtractionOptions(
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions.Builder
+            builderForValue) {
+      if (customDocumentExtractionOptionsBuilder_ == null) {
+        processorFlags_ = builderForValue.build();
+        onChanged();
+      } else {
+        customDocumentExtractionOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      processorFlagsCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control Custom Document Extraction (CDE) Processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+     * </code>
+     */
+    public Builder mergeCustomDocumentExtractionOptions(
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions
+            value) {
+      if (customDocumentExtractionOptionsBuilder_ == null) {
+        if (processorFlagsCase_ == 5
+            && processorFlags_
+                != com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                    .CustomDocumentExtractionOptions.getDefaultInstance()) {
+          processorFlags_ =
+              com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                  .CustomDocumentExtractionOptions.newBuilder(
+                      (com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                              .CustomDocumentExtractionOptions)
+                          processorFlags_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          processorFlags_ = value;
+        }
+        onChanged();
+      } else {
+        if (processorFlagsCase_ == 5) {
+          customDocumentExtractionOptionsBuilder_.mergeFrom(value);
+        } else {
+          customDocumentExtractionOptionsBuilder_.setMessage(value);
+        }
+      }
+      processorFlagsCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control Custom Document Extraction (CDE) Processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+     * </code>
+     */
+    public Builder clearCustomDocumentExtractionOptions() {
+      if (customDocumentExtractionOptionsBuilder_ == null) {
+        if (processorFlagsCase_ == 5) {
+          processorFlagsCase_ = 0;
+          processorFlags_ = null;
+          onChanged();
+        }
+      } else {
+        if (processorFlagsCase_ == 5) {
+          processorFlagsCase_ = 0;
+          processorFlags_ = null;
+        }
+        customDocumentExtractionOptionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control Custom Document Extraction (CDE) Processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions.Builder
+        getCustomDocumentExtractionOptionsBuilder() {
+      return getCustomDocumentExtractionOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control Custom Document Extraction (CDE) Processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptionsOrBuilder
+        getCustomDocumentExtractionOptionsOrBuilder() {
+      if ((processorFlagsCase_ == 5) && (customDocumentExtractionOptionsBuilder_ != null)) {
+        return customDocumentExtractionOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        if (processorFlagsCase_ == 5) {
+          return (com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                  .CustomDocumentExtractionOptions)
+              processorFlags_;
+        }
+        return com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+            .CustomDocumentExtractionOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options to control Custom Document Extraction (CDE) Processor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions,
+            com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptions.Builder,
+            com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                .CustomDocumentExtractionOptionsOrBuilder>
+        getCustomDocumentExtractionOptionsFieldBuilder() {
+      if (customDocumentExtractionOptionsBuilder_ == null) {
+        if (!(processorFlagsCase_ == 5)) {
+          processorFlags_ =
+              com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                  .CustomDocumentExtractionOptions.getDefaultInstance();
+        }
+        customDocumentExtractionOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                    .CustomDocumentExtractionOptions,
+                com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                    .CustomDocumentExtractionOptions.Builder,
+                com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                    .CustomDocumentExtractionOptionsOrBuilder>(
+                (com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+                        .CustomDocumentExtractionOptions)
+                    processorFlags_,
+                getParentForChildren(),
+                isClean());
+        processorFlags_ = null;
+      }
+      processorFlagsCase_ = 5;
+      onChanged();
+      return customDocumentExtractionOptionsBuilder_;
+    }
 
     private java.lang.Object parent_ = "";
     /**
@@ -1993,7 +3292,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2014,7 +3313,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2040,7 +3339,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2065,7 +3364,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return Whether the processorVersion field is set.
      */
     public boolean hasProcessorVersion() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2109,7 +3408,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         processorVersionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2131,7 +3430,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         processorVersionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2149,7 +3448,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public Builder mergeProcessorVersion(
         com.google.cloud.documentai.v1beta3.ProcessorVersion value) {
       if (processorVersionBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && processorVersion_ != null
             && processorVersion_
                 != com.google.cloud.documentai.v1beta3.ProcessorVersion.getDefaultInstance()) {
@@ -2160,7 +3459,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         processorVersionBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2176,7 +3475,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearProcessorVersion() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       processorVersion_ = null;
       if (processorVersionBuilder_ != null) {
         processorVersionBuilder_.dispose();
@@ -2198,7 +3497,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public com.google.cloud.documentai.v1beta3.ProcessorVersion.Builder
         getProcessorVersionBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getProcessorVersionFieldBuilder().getBuilder();
     }
@@ -2271,7 +3570,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return Whether the documentSchema field is set.
      */
     public boolean hasDocumentSchema() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2315,7 +3614,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         documentSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2337,7 +3636,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         documentSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2354,7 +3653,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public Builder mergeDocumentSchema(com.google.cloud.documentai.v1beta3.DocumentSchema value) {
       if (documentSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && documentSchema_ != null
             && documentSchema_
                 != com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()) {
@@ -2365,7 +3664,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         documentSchemaBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2381,7 +3680,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearDocumentSchema() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       documentSchema_ = null;
       if (documentSchemaBuilder_ != null) {
         documentSchemaBuilder_.dispose();
@@ -2402,7 +3701,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.cloud.documentai.v1beta3.DocumentSchema.Builder getDocumentSchemaBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDocumentSchemaFieldBuilder().getBuilder();
     }
@@ -2465,7 +3764,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2475,13 +3775,14 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return Whether the inputData field is set.
      */
     public boolean hasInputData() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2505,7 +3806,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2522,7 +3824,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         inputDataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2530,7 +3832,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2545,7 +3848,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         inputDataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2553,7 +3856,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2563,7 +3867,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public Builder mergeInputData(
         com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData value) {
       if (inputDataBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && inputData_ != null
             && inputData_
                 != com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData
@@ -2575,7 +3879,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } else {
         inputDataBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2583,7 +3887,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2591,7 +3896,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearInputData() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       inputData_ = null;
       if (inputDataBuilder_ != null) {
         inputDataBuilder_.dispose();
@@ -2604,7 +3909,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2613,7 +3919,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData.Builder
         getInputDataBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getInputDataFieldBuilder().getBuilder();
     }
@@ -2621,7 +3927,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2643,7 +3950,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The input data used to train the `ProcessorVersion`.
+     * Optional. The input data used to train the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * </pre>
      *
      * <code>
@@ -2735,7 +4043,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       baseProcessorVersion_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2754,7 +4062,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public Builder clearBaseProcessorVersion() {
       baseProcessorVersion_ = getDefaultInstance().getBaseProcessorVersion();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2778,7 +4086,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       checkByteStringIsUtf8(value);
       baseProcessorVersion_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

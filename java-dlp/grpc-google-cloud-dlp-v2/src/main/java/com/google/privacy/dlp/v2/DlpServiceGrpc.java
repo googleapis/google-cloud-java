@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class DlpServiceGrpc {
 
   private DlpServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.privacy.dlp.v2.DlpService";
+  public static final java.lang.String SERVICE_NAME = "google.privacy.dlp.v2.DlpService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1057,6 +1057,242 @@ public final class DlpServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest,
+          com.google.privacy.dlp.v2.DiscoveryConfig>
+      getCreateDiscoveryConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDiscoveryConfig",
+      requestType = com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest.class,
+      responseType = com.google.privacy.dlp.v2.DiscoveryConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest,
+          com.google.privacy.dlp.v2.DiscoveryConfig>
+      getCreateDiscoveryConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest,
+            com.google.privacy.dlp.v2.DiscoveryConfig>
+        getCreateDiscoveryConfigMethod;
+    if ((getCreateDiscoveryConfigMethod = DlpServiceGrpc.getCreateDiscoveryConfigMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getCreateDiscoveryConfigMethod = DlpServiceGrpc.getCreateDiscoveryConfigMethod)
+            == null) {
+          DlpServiceGrpc.getCreateDiscoveryConfigMethod =
+              getCreateDiscoveryConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest,
+                          com.google.privacy.dlp.v2.DiscoveryConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateDiscoveryConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.DiscoveryConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("CreateDiscoveryConfig"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDiscoveryConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest,
+          com.google.privacy.dlp.v2.DiscoveryConfig>
+      getUpdateDiscoveryConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDiscoveryConfig",
+      requestType = com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest.class,
+      responseType = com.google.privacy.dlp.v2.DiscoveryConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest,
+          com.google.privacy.dlp.v2.DiscoveryConfig>
+      getUpdateDiscoveryConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest,
+            com.google.privacy.dlp.v2.DiscoveryConfig>
+        getUpdateDiscoveryConfigMethod;
+    if ((getUpdateDiscoveryConfigMethod = DlpServiceGrpc.getUpdateDiscoveryConfigMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getUpdateDiscoveryConfigMethod = DlpServiceGrpc.getUpdateDiscoveryConfigMethod)
+            == null) {
+          DlpServiceGrpc.getUpdateDiscoveryConfigMethod =
+              getUpdateDiscoveryConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest,
+                          com.google.privacy.dlp.v2.DiscoveryConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDiscoveryConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.DiscoveryConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("UpdateDiscoveryConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDiscoveryConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.GetDiscoveryConfigRequest,
+          com.google.privacy.dlp.v2.DiscoveryConfig>
+      getGetDiscoveryConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDiscoveryConfig",
+      requestType = com.google.privacy.dlp.v2.GetDiscoveryConfigRequest.class,
+      responseType = com.google.privacy.dlp.v2.DiscoveryConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.GetDiscoveryConfigRequest,
+          com.google.privacy.dlp.v2.DiscoveryConfig>
+      getGetDiscoveryConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.GetDiscoveryConfigRequest,
+            com.google.privacy.dlp.v2.DiscoveryConfig>
+        getGetDiscoveryConfigMethod;
+    if ((getGetDiscoveryConfigMethod = DlpServiceGrpc.getGetDiscoveryConfigMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getGetDiscoveryConfigMethod = DlpServiceGrpc.getGetDiscoveryConfigMethod) == null) {
+          DlpServiceGrpc.getGetDiscoveryConfigMethod =
+              getGetDiscoveryConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.GetDiscoveryConfigRequest,
+                          com.google.privacy.dlp.v2.DiscoveryConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDiscoveryConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.GetDiscoveryConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.DiscoveryConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("GetDiscoveryConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetDiscoveryConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest,
+          com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse>
+      getListDiscoveryConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDiscoveryConfigs",
+      requestType = com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest.class,
+      responseType = com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest,
+          com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse>
+      getListDiscoveryConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest,
+            com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse>
+        getListDiscoveryConfigsMethod;
+    if ((getListDiscoveryConfigsMethod = DlpServiceGrpc.getListDiscoveryConfigsMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getListDiscoveryConfigsMethod = DlpServiceGrpc.getListDiscoveryConfigsMethod)
+            == null) {
+          DlpServiceGrpc.getListDiscoveryConfigsMethod =
+              getListDiscoveryConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest,
+                          com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDiscoveryConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("ListDiscoveryConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListDiscoveryConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest, com.google.protobuf.Empty>
+      getDeleteDiscoveryConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDiscoveryConfig",
+      requestType = com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest, com.google.protobuf.Empty>
+      getDeleteDiscoveryConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest, com.google.protobuf.Empty>
+        getDeleteDiscoveryConfigMethod;
+    if ((getDeleteDiscoveryConfigMethod = DlpServiceGrpc.getDeleteDiscoveryConfigMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getDeleteDiscoveryConfigMethod = DlpServiceGrpc.getDeleteDiscoveryConfigMethod)
+            == null) {
+          DlpServiceGrpc.getDeleteDiscoveryConfigMethod =
+              getDeleteDiscoveryConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteDiscoveryConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("DeleteDiscoveryConfig"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDiscoveryConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.privacy.dlp.v2.CreateDlpJobRequest, com.google.privacy.dlp.v2.DlpJob>
       getCreateDlpJobMethod;
 
@@ -2013,6 +2249,77 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Creates a config for discovery to scan and profile storage.
+     * </pre>
+     */
+    default void createDiscoveryConfig(
+        com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DiscoveryConfig> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDiscoveryConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a discovery configuration.
+     * </pre>
+     */
+    default void updateDiscoveryConfig(
+        com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DiscoveryConfig> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDiscoveryConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a discovery configuration.
+     * </pre>
+     */
+    default void getDiscoveryConfig(
+        com.google.privacy.dlp.v2.GetDiscoveryConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DiscoveryConfig> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDiscoveryConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists discovery configurations.
+     * </pre>
+     */
+    default void listDiscoveryConfigs(
+        com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDiscoveryConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a discovery configuration.
+     * </pre>
+     */
+    default void deleteDiscoveryConfig(
+        com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDiscoveryConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new job to inspect storage or calculate risk metrics.
      * See https://cloud.google.com/dlp/docs/inspecting-storage and
      * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
@@ -2674,6 +2981,87 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Creates a config for discovery to scan and profile storage.
+     * </pre>
+     */
+    public void createDiscoveryConfig(
+        com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DiscoveryConfig> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDiscoveryConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a discovery configuration.
+     * </pre>
+     */
+    public void updateDiscoveryConfig(
+        com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DiscoveryConfig> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDiscoveryConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a discovery configuration.
+     * </pre>
+     */
+    public void getDiscoveryConfig(
+        com.google.privacy.dlp.v2.GetDiscoveryConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DiscoveryConfig> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDiscoveryConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists discovery configurations.
+     * </pre>
+     */
+    public void listDiscoveryConfigs(
+        com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDiscoveryConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a discovery configuration.
+     * </pre>
+     */
+    public void deleteDiscoveryConfig(
+        com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDiscoveryConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new job to inspect storage or calculate risk metrics.
      * See https://cloud.google.com/dlp/docs/inspecting-storage and
      * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
@@ -3260,6 +3648,71 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Creates a config for discovery to scan and profile storage.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DiscoveryConfig createDiscoveryConfig(
+        com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDiscoveryConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a discovery configuration.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DiscoveryConfig updateDiscoveryConfig(
+        com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDiscoveryConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a discovery configuration.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DiscoveryConfig getDiscoveryConfig(
+        com.google.privacy.dlp.v2.GetDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDiscoveryConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists discovery configurations.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse listDiscoveryConfigs(
+        com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDiscoveryConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a discovery configuration.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDiscoveryConfig(
+        com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDiscoveryConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new job to inspect storage or calculate risk metrics.
      * See https://cloud.google.com/dlp/docs/inspecting-storage and
      * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
@@ -3826,6 +4279,75 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Creates a config for discovery to scan and profile storage.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.privacy.dlp.v2.DiscoveryConfig>
+        createDiscoveryConfig(com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDiscoveryConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a discovery configuration.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.privacy.dlp.v2.DiscoveryConfig>
+        updateDiscoveryConfig(com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDiscoveryConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a discovery configuration.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.privacy.dlp.v2.DiscoveryConfig>
+        getDiscoveryConfig(com.google.privacy.dlp.v2.GetDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDiscoveryConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists discovery configurations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse>
+        listDiscoveryConfigs(com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDiscoveryConfigsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a discovery configuration.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteDiscoveryConfig(com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDiscoveryConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new job to inspect storage or calculate risk metrics.
      * See https://cloud.google.com/dlp/docs/inspecting-storage and
      * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
@@ -4038,18 +4560,23 @@ public final class DlpServiceGrpc {
   private static final int METHODID_LIST_JOB_TRIGGERS = 19;
   private static final int METHODID_DELETE_JOB_TRIGGER = 20;
   private static final int METHODID_ACTIVATE_JOB_TRIGGER = 21;
-  private static final int METHODID_CREATE_DLP_JOB = 22;
-  private static final int METHODID_LIST_DLP_JOBS = 23;
-  private static final int METHODID_GET_DLP_JOB = 24;
-  private static final int METHODID_DELETE_DLP_JOB = 25;
-  private static final int METHODID_CANCEL_DLP_JOB = 26;
-  private static final int METHODID_CREATE_STORED_INFO_TYPE = 27;
-  private static final int METHODID_UPDATE_STORED_INFO_TYPE = 28;
-  private static final int METHODID_GET_STORED_INFO_TYPE = 29;
-  private static final int METHODID_LIST_STORED_INFO_TYPES = 30;
-  private static final int METHODID_DELETE_STORED_INFO_TYPE = 31;
-  private static final int METHODID_HYBRID_INSPECT_DLP_JOB = 32;
-  private static final int METHODID_FINISH_DLP_JOB = 33;
+  private static final int METHODID_CREATE_DISCOVERY_CONFIG = 22;
+  private static final int METHODID_UPDATE_DISCOVERY_CONFIG = 23;
+  private static final int METHODID_GET_DISCOVERY_CONFIG = 24;
+  private static final int METHODID_LIST_DISCOVERY_CONFIGS = 25;
+  private static final int METHODID_DELETE_DISCOVERY_CONFIG = 26;
+  private static final int METHODID_CREATE_DLP_JOB = 27;
+  private static final int METHODID_LIST_DLP_JOBS = 28;
+  private static final int METHODID_GET_DLP_JOB = 29;
+  private static final int METHODID_DELETE_DLP_JOB = 30;
+  private static final int METHODID_CANCEL_DLP_JOB = 31;
+  private static final int METHODID_CREATE_STORED_INFO_TYPE = 32;
+  private static final int METHODID_UPDATE_STORED_INFO_TYPE = 33;
+  private static final int METHODID_GET_STORED_INFO_TYPE = 34;
+  private static final int METHODID_LIST_STORED_INFO_TYPES = 35;
+  private static final int METHODID_DELETE_STORED_INFO_TYPE = 36;
+  private static final int METHODID_HYBRID_INSPECT_DLP_JOB = 37;
+  private static final int METHODID_FINISH_DLP_JOB = 38;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4193,6 +4720,35 @@ public final class DlpServiceGrpc {
           serviceImpl.activateJobTrigger(
               (com.google.privacy.dlp.v2.ActivateJobTriggerRequest) request,
               (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DlpJob>) responseObserver);
+          break;
+        case METHODID_CREATE_DISCOVERY_CONFIG:
+          serviceImpl.createDiscoveryConfig(
+              (com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DiscoveryConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_DISCOVERY_CONFIG:
+          serviceImpl.updateDiscoveryConfig(
+              (com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DiscoveryConfig>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DISCOVERY_CONFIG:
+          serviceImpl.getDiscoveryConfig(
+              (com.google.privacy.dlp.v2.GetDiscoveryConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DiscoveryConfig>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DISCOVERY_CONFIGS:
+          serviceImpl.listDiscoveryConfigs(
+              (com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_DISCOVERY_CONFIG:
+          serviceImpl.deleteDiscoveryConfig(
+              (com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_CREATE_DLP_JOB:
           serviceImpl.createDlpJob(
@@ -4425,6 +4981,40 @@ public final class DlpServiceGrpc {
                     com.google.privacy.dlp.v2.ActivateJobTriggerRequest,
                     com.google.privacy.dlp.v2.DlpJob>(service, METHODID_ACTIVATE_JOB_TRIGGER)))
         .addMethod(
+            getCreateDiscoveryConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest,
+                    com.google.privacy.dlp.v2.DiscoveryConfig>(
+                    service, METHODID_CREATE_DISCOVERY_CONFIG)))
+        .addMethod(
+            getUpdateDiscoveryConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest,
+                    com.google.privacy.dlp.v2.DiscoveryConfig>(
+                    service, METHODID_UPDATE_DISCOVERY_CONFIG)))
+        .addMethod(
+            getGetDiscoveryConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.GetDiscoveryConfigRequest,
+                    com.google.privacy.dlp.v2.DiscoveryConfig>(
+                    service, METHODID_GET_DISCOVERY_CONFIG)))
+        .addMethod(
+            getListDiscoveryConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest,
+                    com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse>(
+                    service, METHODID_LIST_DISCOVERY_CONFIGS)))
+        .addMethod(
+            getDeleteDiscoveryConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DISCOVERY_CONFIG)))
+        .addMethod(
             getCreateDlpJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4529,9 +5119,9 @@ public final class DlpServiceGrpc {
   private static final class DlpServiceMethodDescriptorSupplier
       extends DlpServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DlpServiceMethodDescriptorSupplier(String methodName) {
+    DlpServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -4575,6 +5165,11 @@ public final class DlpServiceGrpc {
                       .addMethod(getListJobTriggersMethod())
                       .addMethod(getDeleteJobTriggerMethod())
                       .addMethod(getActivateJobTriggerMethod())
+                      .addMethod(getCreateDiscoveryConfigMethod())
+                      .addMethod(getUpdateDiscoveryConfigMethod())
+                      .addMethod(getGetDiscoveryConfigMethod())
+                      .addMethod(getListDiscoveryConfigsMethod())
+                      .addMethod(getDeleteDiscoveryConfigMethod())
                       .addMethod(getCreateDlpJobMethod())
                       .addMethod(getListDlpJobsMethod())
                       .addMethod(getGetDlpJobMethod())

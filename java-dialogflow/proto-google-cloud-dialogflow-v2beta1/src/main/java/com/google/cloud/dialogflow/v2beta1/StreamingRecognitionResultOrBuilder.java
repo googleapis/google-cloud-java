@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,6 +101,7 @@ public interface StreamingRecognitionResultOrBuilder
    * A higher number indicates an estimated greater likelihood that the
    * recognized words are correct. The default of 0.0 is a sentinel value
    * indicating that confidence was not set.
+   *
    * This field is typically only provided if `is_final` is true and you should
    * not rely on it being accurate or even set.
    * </pre>
@@ -117,6 +118,7 @@ public interface StreamingRecognitionResultOrBuilder
    * <pre>
    * An estimate of the likelihood that the speech recognizer will
    * not change its guess about this interim recognition result:
+   *
    * * If the value is unspecified or 0.0, Dialogflow didn't compute the
    *   stability. In particular, Dialogflow will only provide stability for
    *   `TRANSCRIPT` results with `is_final = false`.

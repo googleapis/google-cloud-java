@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -489,6 +489,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    *           .setCryptoKey(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .addAllResourceTypes(new ArrayList<String>())
    *           .build();
    *   for (ProtectedResource element :
    *       keyTrackingServiceClient.searchProtectedResources(request).iterateAll()) {
@@ -525,6 +526,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    *           .setCryptoKey(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .addAllResourceTypes(new ArrayList<String>())
    *           .build();
    *   ApiFuture<ProtectedResource> future =
    *       keyTrackingServiceClient.searchProtectedResourcesPagedCallable().futureCall(request);
@@ -560,6 +562,7 @@ public class KeyTrackingServiceClient implements BackgroundResource {
    *           .setCryptoKey(OrganizationName.of("[ORGANIZATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .addAllResourceTypes(new ArrayList<String>())
    *           .build();
    *   while (true) {
    *     SearchProtectedResourcesResponse response =

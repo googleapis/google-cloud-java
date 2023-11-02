@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
     return new UpdateVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.VersionProto
         .internal_static_google_cloud_dialogflow_v2_UpdateVersionRequest_descriptor;
@@ -74,6 +69,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The version to update.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
@@ -95,6 +91,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The version to update.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
@@ -118,6 +115,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The version to update.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
@@ -576,6 +574,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The version to update.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -596,6 +595,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The version to update.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -622,6 +622,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The version to update.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -650,6 +651,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The version to update.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -675,6 +677,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The version to update.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -706,6 +709,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The version to update.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -731,6 +735,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The version to update.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -751,6 +756,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The version to update.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -775,6 +781,7 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The version to update.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`

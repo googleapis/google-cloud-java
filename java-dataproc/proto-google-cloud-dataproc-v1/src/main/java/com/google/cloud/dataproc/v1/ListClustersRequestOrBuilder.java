@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,7 +81,9 @@ public interface ListClustersRequestOrBuilder
    * <pre>
    * Optional. A filter constraining the clusters to list. Filters are
    * case-sensitive and have the following syntax:
+   *
    * field = value [AND [field = value]] ...
+   *
    * where **field** is one of `status.state`, `clusterName`, or `labels.[KEY]`,
    * and `[KEY]` is a label key. **value** can be `*` to match all values.
    * `status.state` can be one of the following: `ACTIVE`, `INACTIVE`,
@@ -91,7 +93,9 @@ public interface ListClustersRequestOrBuilder
    * `clusterName` is the name of the cluster provided at creation time.
    * Only the logical `AND` operator is supported; space-separated items are
    * treated as having an implicit `AND` operator.
+   *
    * Example filter:
+   *
    * status.state = ACTIVE AND clusterName = mycluster
    * AND labels.env = staging AND labels.starred = *
    * </pre>
@@ -107,7 +111,9 @@ public interface ListClustersRequestOrBuilder
    * <pre>
    * Optional. A filter constraining the clusters to list. Filters are
    * case-sensitive and have the following syntax:
+   *
    * field = value [AND [field = value]] ...
+   *
    * where **field** is one of `status.state`, `clusterName`, or `labels.[KEY]`,
    * and `[KEY]` is a label key. **value** can be `*` to match all values.
    * `status.state` can be one of the following: `ACTIVE`, `INACTIVE`,
@@ -117,7 +123,9 @@ public interface ListClustersRequestOrBuilder
    * `clusterName` is the name of the cluster provided at creation time.
    * Only the logical `AND` operator is supported; space-separated items are
    * treated as having an implicit `AND` operator.
+   *
    * Example filter:
+   *
    * status.state = ACTIVE AND clusterName = mycluster
    * AND labels.env = staging AND labels.starred = *
    * </pre>

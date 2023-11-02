@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,13 @@ public interface OcrConfigOrBuilder
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -103,7 +109,13 @@ public interface OcrConfigOrBuilder
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -115,7 +127,13 @@ public interface OcrConfigOrBuilder
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -128,7 +146,13 @@ public interface OcrConfigOrBuilder
    *
    *
    * <pre>
-   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * A list of advanced OCR options to further fine-tune OCR behavior. Current
+   * valid values are:
+   *
+   * - `legacy_layout`: a heuristics layout detection algorithm, which serves as
+   * an alternative to the current ML-based layout detection algorithm.
+   * Customers can choose the best suitable layout algorithm based on their
+   * situation.
    * </pre>
    *
    * <code>repeated string advanced_ocr_options = 5;</code>
@@ -150,4 +174,73 @@ public interface OcrConfigOrBuilder
    * @return The enableSymbol.
    */
   boolean getEnableSymbol();
+
+  /**
+   *
+   *
+   * <pre>
+   * Turn on font identification model and return font style information.
+   * Deprecated, use
+   * [PremiumFeatures.compute_style_info][google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures.compute_style_info]
+   * instead.
+   * </pre>
+   *
+   * <code>bool compute_style_info = 8 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
+   *     google/cloud/documentai/v1beta3/document_io.proto;l=165
+   * @return The computeStyleInfo.
+   */
+  @java.lang.Deprecated
+  boolean getComputeStyleInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Turn off character box detector in OCR engine. Character box detection is
+   * enabled by default in OCR 2.0 (and later) processors.
+   * </pre>
+   *
+   * <code>bool disable_character_boxes_detection = 10;</code>
+   *
+   * @return The disableCharacterBoxesDetection.
+   */
+  boolean getDisableCharacterBoxesDetection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for premium OCR features.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;</code>
+   *
+   * @return Whether the premiumFeatures field is set.
+   */
+  boolean hasPremiumFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for premium OCR features.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;</code>
+   *
+   * @return The premiumFeatures.
+   */
+  com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures getPremiumFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for premium OCR features.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeatures premium_features = 11;</code>
+   */
+  com.google.cloud.documentai.v1beta3.OcrConfig.PremiumFeaturesOrBuilder
+      getPremiumFeaturesOrBuilder();
 }

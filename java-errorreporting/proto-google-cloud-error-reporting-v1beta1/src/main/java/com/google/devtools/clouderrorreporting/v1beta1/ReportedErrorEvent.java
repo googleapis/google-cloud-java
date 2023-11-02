@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ReportedErrorEvent();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -194,6 +189,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
    * languages and formats.
    * Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go.
    * Supported stack trace formats are:
+   *
    * * **Java**: Must be the return value of
    * [`Throwable.printStackTrace()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#printStackTrace%28%29).
    * * **Python**: Must be the return value of
@@ -239,6 +235,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
    * languages and formats.
    * Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go.
    * Supported stack trace formats are:
+   *
    * * **Java**: Must be the return value of
    * [`Throwable.printStackTrace()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#printStackTrace%28%29).
    * * **Python**: Must be the return value of
@@ -1202,6 +1199,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * languages and formats.
      * Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go.
      * Supported stack trace formats are:
+     *
      * * **Java**: Must be the return value of
      * [`Throwable.printStackTrace()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#printStackTrace%28%29).
      * * **Python**: Must be the return value of
@@ -1246,6 +1244,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * languages and formats.
      * Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go.
      * Supported stack trace formats are:
+     *
      * * **Java**: Must be the return value of
      * [`Throwable.printStackTrace()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#printStackTrace%28%29).
      * * **Python**: Must be the return value of
@@ -1290,6 +1289,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * languages and formats.
      * Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go.
      * Supported stack trace formats are:
+     *
      * * **Java**: Must be the return value of
      * [`Throwable.printStackTrace()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#printStackTrace%28%29).
      * * **Python**: Must be the return value of
@@ -1333,6 +1333,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * languages and formats.
      * Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go.
      * Supported stack trace formats are:
+     *
      * * **Java**: Must be the return value of
      * [`Throwable.printStackTrace()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#printStackTrace%28%29).
      * * **Python**: Must be the return value of
@@ -1372,6 +1373,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * languages and formats.
      * Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go.
      * Supported stack trace formats are:
+     *
      * * **Java**: Must be the return value of
      * [`Throwable.printStackTrace()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#printStackTrace%28%29).
      * * **Python**: Must be the return value of

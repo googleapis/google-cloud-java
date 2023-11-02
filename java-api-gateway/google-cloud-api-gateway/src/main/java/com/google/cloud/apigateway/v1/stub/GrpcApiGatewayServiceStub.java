@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apigateway.v1.Api;
 import com.google.cloud.apigateway.v1.ApiConfig;
@@ -49,7 +50,6 @@ import com.google.cloud.apigateway.v1.OperationMetadata;
 import com.google.cloud.apigateway.v1.UpdateApiConfigRequest;
 import com.google.cloud.apigateway.v1.UpdateApiRequest;
 import com.google.cloud.apigateway.v1.UpdateGatewayRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -294,9 +294,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(listGatewaysMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetGatewayRequest, Gateway> getGatewayTransportSettings =
@@ -304,9 +304,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(getGatewayMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateGatewayRequest, Operation> createGatewayTransportSettings =
@@ -314,9 +314,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(createGatewayMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateGatewayRequest, Operation> updateGatewayTransportSettings =
@@ -324,9 +324,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(updateGatewayMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("gateway.name", String.valueOf(request.getGateway().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("gateway.name", String.valueOf(request.getGateway().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteGatewayRequest, Operation> deleteGatewayTransportSettings =
@@ -334,9 +334,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(deleteGatewayMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListApisRequest, ListApisResponse> listApisTransportSettings =
@@ -344,9 +344,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(listApisMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetApiRequest, Api> getApiTransportSettings =
@@ -354,9 +354,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(getApiMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateApiRequest, Operation> createApiTransportSettings =
@@ -364,9 +364,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(createApiMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateApiRequest, Operation> updateApiTransportSettings =
@@ -374,9 +374,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(updateApiMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("api.name", String.valueOf(request.getApi().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("api.name", String.valueOf(request.getApi().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteApiRequest, Operation> deleteApiTransportSettings =
@@ -384,9 +384,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(deleteApiMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListApiConfigsRequest, ListApiConfigsResponse>
@@ -395,9 +395,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
                 .setMethodDescriptor(listApiConfigsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetApiConfigRequest, ApiConfig> getApiConfigTransportSettings =
@@ -405,9 +405,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(getApiConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateApiConfigRequest, Operation> createApiConfigTransportSettings =
@@ -415,9 +415,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(createApiConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateApiConfigRequest, Operation> updateApiConfigTransportSettings =
@@ -425,9 +425,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(updateApiConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("api_config.name", String.valueOf(request.getApiConfig().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("api_config.name", String.valueOf(request.getApiConfig().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteApiConfigRequest, Operation> deleteApiConfigTransportSettings =
@@ -435,9 +435,9 @@ public class GrpcApiGatewayServiceStub extends ApiGatewayServiceStub {
             .setMethodDescriptor(deleteApiConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

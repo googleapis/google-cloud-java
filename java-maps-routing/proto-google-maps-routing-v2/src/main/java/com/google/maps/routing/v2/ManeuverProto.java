@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public final class ManeuverProto {
   static {
     java.lang.String[] descriptorData = {
       "\n%google/maps/routing/v2/maneuver.proto\022"
-          + "\026google.maps.routing.v2*\332\002\n\010Maneuver\022\030\n\024"
+          + "\026google.maps.routing.v2*\367\002\n\010Maneuver\022\030\n\024"
           + "MANEUVER_UNSPECIFIED\020\000\022\024\n\020TURN_SLIGHT_LE"
           + "FT\020\001\022\023\n\017TURN_SHARP_LEFT\020\002\022\016\n\nUTURN_LEFT\020"
           + "\003\022\r\n\tTURN_LEFT\020\004\022\025\n\021TURN_SLIGHT_RIGHT\020\005\022"
@@ -45,12 +45,13 @@ public final class ManeuverProto {
           + "T\020\n\022\016\n\nRAMP_RIGHT\020\013\022\t\n\005MERGE\020\014\022\r\n\tFORK_L"
           + "EFT\020\r\022\016\n\nFORK_RIGHT\020\016\022\t\n\005FERRY\020\017\022\017\n\013FERR"
           + "Y_TRAIN\020\020\022\023\n\017ROUNDABOUT_LEFT\020\021\022\024\n\020ROUNDA"
-          + "BOUT_RIGHT\020\022B\302\001\n\032com.google.maps.routing"
-          + ".v2B\rManeuverProtoP\001Z:cloud.google.com/g"
-          + "o/maps/routing/apiv2/routingpb;routingpb"
-          + "\370\001\001\242\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026G"
-          + "oogle\\Maps\\Routing\\V2\352\002\031Google::Maps::Ro"
-          + "uting::V2b\006proto3"
+          + "BOUT_RIGHT\020\022\022\n\n\006DEPART\020\023\022\017\n\013NAME_CHANGE\020"
+          + "\024B\302\001\n\032com.google.maps.routing.v2B\rManeuv"
+          + "erProtoP\001Z:cloud.google.com/go/maps/rout"
+          + "ing/apiv2/routingpb;routingpb\370\001\001\242\002\005GMRV2"
+          + "\252\002\026Google.Maps.Routing.V2\312\002\026Google\\Maps\\"
+          + "Routing\\V2\352\002\031Google::Maps::Routing::V2b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

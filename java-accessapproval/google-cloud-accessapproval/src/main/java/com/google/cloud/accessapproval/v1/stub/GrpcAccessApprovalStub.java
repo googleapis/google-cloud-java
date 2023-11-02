@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount;
 import com.google.cloud.accessapproval.v1.AccessApprovalSettings;
@@ -37,7 +38,6 @@ import com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage;
 import com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage;
 import com.google.cloud.accessapproval.v1.ListApprovalRequestsResponse;
 import com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -230,9 +230,9 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                 .setMethodDescriptor(listApprovalRequestsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetApprovalRequestMessage, ApprovalRequest>
@@ -241,9 +241,9 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                 .setMethodDescriptor(getApprovalRequestMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ApproveApprovalRequestMessage, ApprovalRequest>
@@ -252,9 +252,9 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                 .setMethodDescriptor(approveApprovalRequestMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DismissApprovalRequestMessage, ApprovalRequest>
@@ -263,9 +263,9 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                 .setMethodDescriptor(dismissApprovalRequestMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<InvalidateApprovalRequestMessage, ApprovalRequest>
@@ -274,9 +274,9 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                 .setMethodDescriptor(invalidateApprovalRequestMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
@@ -285,9 +285,9 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                 .setMethodDescriptor(getAccessApprovalSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateAccessApprovalSettingsMessage, AccessApprovalSettings>
@@ -297,9 +297,9 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                 .setMethodDescriptor(updateAccessApprovalSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("settings.name", String.valueOf(request.getSettings().getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("settings.name", String.valueOf(request.getSettings().getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAccessApprovalSettingsMessage, Empty>
@@ -308,9 +308,9 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                 .setMethodDescriptor(deleteAccessApprovalSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
@@ -320,9 +320,9 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                 .setMethodDescriptor(getAccessApprovalServiceAccountMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
 

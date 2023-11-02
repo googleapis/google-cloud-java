@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface FunnelNextActionOrBuilder
    * The dimension column added to the funnel visualization sub report response.
    * The next action dimension returns the next dimension value of this
    * dimension after the user has attained the `i`th funnel step.
+   *
    * `nextActionDimension` currently only supports `eventName` and most Page /
    * Screen dimensions like `pageTitle` and `pagePath`. `nextActionDimension`
    * cannot be a dimension expression.
@@ -47,6 +48,7 @@ public interface FunnelNextActionOrBuilder
    * The dimension column added to the funnel visualization sub report response.
    * The next action dimension returns the next dimension value of this
    * dimension after the user has attained the `i`th funnel step.
+   *
    * `nextActionDimension` currently only supports `eventName` and most Page /
    * Screen dimensions like `pageTitle` and `pagePath`. `nextActionDimension`
    * cannot be a dimension expression.
@@ -64,6 +66,7 @@ public interface FunnelNextActionOrBuilder
    * The dimension column added to the funnel visualization sub report response.
    * The next action dimension returns the next dimension value of this
    * dimension after the user has attained the `i`th funnel step.
+   *
    * `nextActionDimension` currently only supports `eventName` and most Page /
    * Screen dimensions like `pageTitle` and `pagePath`. `nextActionDimension`
    * cannot be a dimension expression.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,11 +35,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FieldType();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -282,9 +277,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of allowed values for this enum.
+     *
      * This set must not be empty and can include up to 100 allowed values.
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
+     *
      * The order of items in this set is preserved. This field can be used to
      * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
@@ -300,9 +297,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of allowed values for this enum.
+     *
      * This set must not be empty and can include up to 100 allowed values.
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
+     *
      * The order of items in this set is preserved. This field can be used to
      * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
@@ -317,9 +316,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of allowed values for this enum.
+     *
      * This set must not be empty and can include up to 100 allowed values.
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
+     *
      * The order of items in this set is preserved. This field can be used to
      * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
@@ -334,9 +335,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of allowed values for this enum.
+     *
      * This set must not be empty and can include up to 100 allowed values.
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
+     *
      * The order of items in this set is preserved. This field can be used to
      * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
@@ -352,9 +355,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of allowed values for this enum.
+     *
      * This set must not be empty and can include up to 100 allowed values.
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
+     *
      * The order of items in this set is preserved. This field can be used to
      * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
@@ -387,11 +392,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       return new EnumType();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datacatalog.v1.Tags
           .internal_static_google_cloud_datacatalog_v1_FieldType_EnumType_descriptor;
@@ -418,6 +418,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The display name of the enum value. Must not be an empty
        * string.
+       *
        * The name must contain only Unicode letters, numbers (0-9), underscores
        * (_), dashes (-), spaces ( ), and can't start or end with spaces. The
        * maximum length is 200 characters.
@@ -434,6 +435,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The display name of the enum value. Must not be an empty
        * string.
+       *
        * The name must contain only Unicode letters, numbers (0-9), underscores
        * (_), dashes (-), spaces ( ), and can't start or end with spaces. The
        * maximum length is 200 characters.
@@ -466,11 +468,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return new EnumValue();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.datacatalog.v1.Tags
             .internal_static_google_cloud_datacatalog_v1_FieldType_EnumType_EnumValue_descriptor;
@@ -496,6 +493,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The display name of the enum value. Must not be an empty
        * string.
+       *
        * The name must contain only Unicode letters, numbers (0-9), underscores
        * (_), dashes (-), spaces ( ), and can't start or end with spaces. The
        * maximum length is 200 characters.
@@ -523,6 +521,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The display name of the enum value. Must not be an empty
        * string.
+       *
        * The name must contain only Unicode letters, numbers (0-9), underscores
        * (_), dashes (-), spaces ( ), and can't start or end with spaces. The
        * maximum length is 200 characters.
@@ -895,6 +894,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. The display name of the enum value. Must not be an empty
          * string.
+         *
          * The name must contain only Unicode letters, numbers (0-9), underscores
          * (_), dashes (-), spaces ( ), and can't start or end with spaces. The
          * maximum length is 200 characters.
@@ -921,6 +921,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. The display name of the enum value. Must not be an empty
          * string.
+         *
          * The name must contain only Unicode letters, numbers (0-9), underscores
          * (_), dashes (-), spaces ( ), and can't start or end with spaces. The
          * maximum length is 200 characters.
@@ -947,6 +948,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. The display name of the enum value. Must not be an empty
          * string.
+         *
          * The name must contain only Unicode letters, numbers (0-9), underscores
          * (_), dashes (-), spaces ( ), and can't start or end with spaces. The
          * maximum length is 200 characters.
@@ -972,6 +974,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. The display name of the enum value. Must not be an empty
          * string.
+         *
          * The name must contain only Unicode letters, numbers (0-9), underscores
          * (_), dashes (-), spaces ( ), and can't start or end with spaces. The
          * maximum length is 200 characters.
@@ -993,6 +996,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. The display name of the enum value. Must not be an empty
          * string.
+         *
          * The name must contain only Unicode letters, numbers (0-9), underscores
          * (_), dashes (-), spaces ( ), and can't start or end with spaces. The
          * maximum length is 200 characters.
@@ -1091,9 +1095,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of allowed values for this enum.
+     *
      * This set must not be empty and can include up to 100 allowed values.
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
+     *
      * The order of items in this set is preserved. This field can be used to
      * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
@@ -1112,9 +1118,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of allowed values for this enum.
+     *
      * This set must not be empty and can include up to 100 allowed values.
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
+     *
      * The order of items in this set is preserved. This field can be used to
      * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
@@ -1134,9 +1142,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of allowed values for this enum.
+     *
      * This set must not be empty and can include up to 100 allowed values.
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
+     *
      * The order of items in this set is preserved. This field can be used to
      * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
@@ -1154,9 +1164,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of allowed values for this enum.
+     *
      * This set must not be empty and can include up to 100 allowed values.
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
+     *
      * The order of items in this set is preserved. This field can be used to
      * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
@@ -1175,9 +1187,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of allowed values for this enum.
+     *
      * This set must not be empty and can include up to 100 allowed values.
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
+     *
      * The order of items in this set is preserved. This field can be used to
      * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
@@ -1602,9 +1616,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1627,9 +1643,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1651,9 +1669,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1676,9 +1696,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1707,9 +1729,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1736,9 +1760,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1767,9 +1793,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1798,9 +1826,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1826,9 +1856,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1855,9 +1887,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1884,9 +1918,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1911,9 +1947,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1938,9 +1976,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1959,9 +1999,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -1984,9 +2026,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -2010,9 +2054,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -2033,9 +2079,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -2057,9 +2105,11 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of allowed values for this enum.
+       *
        * This set must not be empty and can include up to 100 allowed values.
        * The display names of the values in this set must not be empty and must
        * be case-insensitively unique within this set.
+       *
        * The order of items in this set is preserved. This field can be used to
        * create, remove, and reorder enum values. To rename enum values, use the
        * `RenameTagTemplateFieldEnumValue` method.
@@ -2159,6 +2209,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int typeDeclCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object typeDecl_;
 
   public enum TypeDeclCase

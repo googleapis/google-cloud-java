@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface BatchDocumentInputConfigOrBuilder
    * This can be a single file (for example,
    * `gs://translation-test/input.docx`) or a wildcard (for example,
    * `gs://translation-test/&#42;`).
+   *
    * File mime type is determined based on extension. Supported mime type
    * includes:
    * - `pdf`, application/pdf
@@ -40,6 +41,7 @@ public interface BatchDocumentInputConfigOrBuilder
    * application/vnd.openxmlformats-officedocument.presentationml.presentation
    * - `xlsx`,
    * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+   *
    * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
    * The max file size to support for `.pdf` is 1GB and the max page limit is
    * 1000 pages.
@@ -59,6 +61,7 @@ public interface BatchDocumentInputConfigOrBuilder
    * This can be a single file (for example,
    * `gs://translation-test/input.docx`) or a wildcard (for example,
    * `gs://translation-test/&#42;`).
+   *
    * File mime type is determined based on extension. Supported mime type
    * includes:
    * - `pdf`, application/pdf
@@ -68,6 +71,7 @@ public interface BatchDocumentInputConfigOrBuilder
    * application/vnd.openxmlformats-officedocument.presentationml.presentation
    * - `xlsx`,
    * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+   *
    * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
    * The max file size to support for `.pdf` is 1GB and the max page limit is
    * 1000 pages.
@@ -87,6 +91,7 @@ public interface BatchDocumentInputConfigOrBuilder
    * This can be a single file (for example,
    * `gs://translation-test/input.docx`) or a wildcard (for example,
    * `gs://translation-test/&#42;`).
+   *
    * File mime type is determined based on extension. Supported mime type
    * includes:
    * - `pdf`, application/pdf
@@ -96,6 +101,7 @@ public interface BatchDocumentInputConfigOrBuilder
    * application/vnd.openxmlformats-officedocument.presentationml.presentation
    * - `xlsx`,
    * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+   *
    * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
    * The max file size to support for `.pdf` is 1GB and the max page limit is
    * 1000 pages.
@@ -106,5 +112,5 @@ public interface BatchDocumentInputConfigOrBuilder
    */
   com.google.cloud.translate.v3.GcsSourceOrBuilder getGcsSourceOrBuilder();
 
-  public com.google.cloud.translate.v3.BatchDocumentInputConfig.SourceCase getSourceCase();
+  com.google.cloud.translate.v3.BatchDocumentInputConfig.SourceCase getSourceCase();
 }

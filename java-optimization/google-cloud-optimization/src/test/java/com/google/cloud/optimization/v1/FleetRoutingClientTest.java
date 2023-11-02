@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,7 +99,6 @@ public class FleetRoutingClientTest {
             .setParent("parent-995424086")
             .setTimeout(Duration.newBuilder().build())
             .setModel(ShipmentModel.newBuilder().build())
-            .setMaxValidationErrors(-1367418922)
             .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
             .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
             .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
@@ -110,6 +109,7 @@ public class FleetRoutingClientTest {
             .setAllowLargeDeadlineDespiteInterruptionRisk(true)
             .setUseGeodesicDistances(true)
             .setGeodesicMetersPerSecond(-2129658905)
+            .setMaxValidationErrors(-1367418922)
             .setLabel("label102727412")
             .setPopulateTravelStepPolylines(true)
             .build();
@@ -125,7 +125,6 @@ public class FleetRoutingClientTest {
     Assert.assertEquals(request.getTimeout(), actualRequest.getTimeout());
     Assert.assertEquals(request.getModel(), actualRequest.getModel());
     Assert.assertEquals(request.getSolvingMode(), actualRequest.getSolvingMode());
-    Assert.assertEquals(request.getMaxValidationErrors(), actualRequest.getMaxValidationErrors());
     Assert.assertEquals(request.getSearchMode(), actualRequest.getSearchMode());
     Assert.assertEquals(
         request.getInjectedFirstSolutionRoutesList(),
@@ -147,6 +146,7 @@ public class FleetRoutingClientTest {
     Assert.assertEquals(request.getUseGeodesicDistances(), actualRequest.getUseGeodesicDistances());
     Assert.assertEquals(
         request.getGeodesicMetersPerSecond(), actualRequest.getGeodesicMetersPerSecond(), 0.0001);
+    Assert.assertEquals(request.getMaxValidationErrors(), actualRequest.getMaxValidationErrors());
     Assert.assertEquals(request.getLabel(), actualRequest.getLabel());
     Assert.assertEquals(
         request.getPopulateTravelStepPolylines(), actualRequest.getPopulateTravelStepPolylines());
@@ -167,7 +167,6 @@ public class FleetRoutingClientTest {
               .setParent("parent-995424086")
               .setTimeout(Duration.newBuilder().build())
               .setModel(ShipmentModel.newBuilder().build())
-              .setMaxValidationErrors(-1367418922)
               .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
               .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
               .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
@@ -178,6 +177,7 @@ public class FleetRoutingClientTest {
               .setAllowLargeDeadlineDespiteInterruptionRisk(true)
               .setUseGeodesicDistances(true)
               .setGeodesicMetersPerSecond(-2129658905)
+              .setMaxValidationErrors(-1367418922)
               .setLabel("label102727412")
               .setPopulateTravelStepPolylines(true)
               .build();

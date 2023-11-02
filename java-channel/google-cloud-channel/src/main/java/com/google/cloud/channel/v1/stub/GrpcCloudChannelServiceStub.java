@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPa
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupBillableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
@@ -37,6 +39,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.channel.v1.ActivateEntitlementRequest;
 import com.google.cloud.channel.v1.CancelEntitlementRequest;
@@ -84,6 +87,10 @@ import com.google.cloud.channel.v1.ListPurchasableOffersRequest;
 import com.google.cloud.channel.v1.ListPurchasableOffersResponse;
 import com.google.cloud.channel.v1.ListPurchasableSkusRequest;
 import com.google.cloud.channel.v1.ListPurchasableSkusResponse;
+import com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest;
+import com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse;
+import com.google.cloud.channel.v1.ListSkuGroupsRequest;
+import com.google.cloud.channel.v1.ListSkuGroupsResponse;
 import com.google.cloud.channel.v1.ListSkusRequest;
 import com.google.cloud.channel.v1.ListSkusResponse;
 import com.google.cloud.channel.v1.ListSubscribersRequest;
@@ -96,6 +103,8 @@ import com.google.cloud.channel.v1.LookupOfferRequest;
 import com.google.cloud.channel.v1.Offer;
 import com.google.cloud.channel.v1.OperationMetadata;
 import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsResponse;
 import com.google.cloud.channel.v1.RegisterSubscriberRequest;
 import com.google.cloud.channel.v1.RegisterSubscriberResponse;
 import com.google.cloud.channel.v1.StartPaidServiceRequest;
@@ -109,7 +118,6 @@ import com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest;
 import com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest;
 import com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.UpdateCustomerRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -550,6 +558,31 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListSkuGroupsRequest, ListSkuGroupsResponse>
+      listSkuGroupsMethodDescriptor =
+          MethodDescriptor.<ListSkuGroupsRequest, ListSkuGroupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.channel.v1.CloudChannelService/ListSkuGroups")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSkuGroupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSkuGroupsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+      listSkuGroupBillableSkusMethodDescriptor =
+          MethodDescriptor
+              .<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/ListSkuGroupBillableSkus")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSkuGroupBillableSkusRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSkuGroupBillableSkusResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<LookupOfferRequest, Offer> lookupOfferMethodDescriptor =
       MethodDescriptor.<LookupOfferRequest, Offer>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -607,6 +640,21 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListPurchasableOffersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPurchasableOffersResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsMethodDescriptor =
+          MethodDescriptor
+              .<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/QueryEligibleBillingAccounts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryEligibleBillingAccountsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryEligibleBillingAccountsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<RegisterSubscriberRequest, RegisterSubscriberResponse>
@@ -759,6 +807,14 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
       updateChannelPartnerRepricingConfigCallable;
   private final UnaryCallable<DeleteChannelPartnerRepricingConfigRequest, Empty>
       deleteChannelPartnerRepricingConfigCallable;
+  private final UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsResponse> listSkuGroupsCallable;
+  private final UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsPagedResponse>
+      listSkuGroupsPagedCallable;
+  private final UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+      listSkuGroupBillableSkusCallable;
+  private final UnaryCallable<
+          ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusPagedResponse>
+      listSkuGroupBillableSkusPagedCallable;
   private final UnaryCallable<LookupOfferRequest, Offer> lookupOfferCallable;
   private final UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable;
   private final UnaryCallable<ListProductsRequest, ListProductsPagedResponse>
@@ -775,6 +831,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
       listPurchasableOffersCallable;
   private final UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersPagedResponse>
       listPurchasableOffersPagedCallable;
+  private final UnaryCallable<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsCallable;
   private final UnaryCallable<RegisterSubscriberRequest, RegisterSubscriberResponse>
       registerSubscriberCallable;
   private final UnaryCallable<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
@@ -837,9 +896,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(listCustomersMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetCustomerRequest, Customer> getCustomerTransportSettings =
@@ -847,9 +906,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(getCustomerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<
@@ -861,9 +920,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(checkCloudIdentityAccountsExistMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateCustomerRequest, Customer> createCustomerTransportSettings =
@@ -871,9 +930,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(createCustomerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateCustomerRequest, Customer> updateCustomerTransportSettings =
@@ -881,9 +940,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(updateCustomerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("customer.name", String.valueOf(request.getCustomer().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("customer.name", String.valueOf(request.getCustomer().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteCustomerRequest, Empty> deleteCustomerTransportSettings =
@@ -891,9 +950,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(deleteCustomerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ImportCustomerRequest, Customer> importCustomerTransportSettings =
@@ -901,9 +960,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(importCustomerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ProvisionCloudIdentityRequest, Operation>
@@ -912,9 +971,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(provisionCloudIdentityMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("customer", String.valueOf(request.getCustomer()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("customer", String.valueOf(request.getCustomer()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListEntitlementsRequest, ListEntitlementsResponse>
@@ -923,9 +982,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(listEntitlementsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListTransferableSkusRequest, ListTransferableSkusResponse>
@@ -934,9 +993,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(listTransferableSkusMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListTransferableOffersRequest, ListTransferableOffersResponse>
@@ -946,9 +1005,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(listTransferableOffersMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetEntitlementRequest, Entitlement> getEntitlementTransportSettings =
@@ -956,9 +1015,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(getEntitlementMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateEntitlementRequest, Operation> createEntitlementTransportSettings =
@@ -966,9 +1025,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(createEntitlementMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ChangeParametersRequest, Operation> changeParametersTransportSettings =
@@ -976,9 +1035,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(changeParametersMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ChangeRenewalSettingsRequest, Operation>
@@ -987,9 +1046,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(changeRenewalSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ChangeOfferRequest, Operation> changeOfferTransportSettings =
@@ -997,9 +1056,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(changeOfferMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StartPaidServiceRequest, Operation> startPaidServiceTransportSettings =
@@ -1007,9 +1066,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(startPaidServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SuspendEntitlementRequest, Operation> suspendEntitlementTransportSettings =
@@ -1017,9 +1076,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(suspendEntitlementMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CancelEntitlementRequest, Operation> cancelEntitlementTransportSettings =
@@ -1027,9 +1086,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(cancelEntitlementMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ActivateEntitlementRequest, Operation> activateEntitlementTransportSettings =
@@ -1037,9 +1096,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(activateEntitlementMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TransferEntitlementsRequest, Operation> transferEntitlementsTransportSettings =
@@ -1047,9 +1106,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(transferEntitlementsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TransferEntitlementsToGoogleRequest, Operation>
@@ -1058,9 +1117,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(transferEntitlementsToGoogleMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse>
@@ -1070,9 +1129,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(listChannelPartnerLinksMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetChannelPartnerLinkRequest, ChannelPartnerLink>
@@ -1081,9 +1140,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(getChannelPartnerLinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateChannelPartnerLinkRequest, ChannelPartnerLink>
@@ -1092,9 +1151,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(createChannelPartnerLinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
@@ -1103,9 +1162,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(updateChannelPartnerLinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
@@ -1115,9 +1174,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(getCustomerRepricingConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
@@ -1128,9 +1187,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(listCustomerRepricingConfigsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
@@ -1140,9 +1199,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(createCustomerRepricingConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
@@ -1152,11 +1211,11 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(updateCustomerRepricingConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "customer_repricing_config.name",
                           String.valueOf(request.getCustomerRepricingConfig().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteCustomerRepricingConfigRequest, Empty>
@@ -1165,9 +1224,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(deleteCustomerRepricingConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
@@ -1178,9 +1237,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(getChannelPartnerRepricingConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -1193,9 +1252,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(listChannelPartnerRepricingConfigsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
@@ -1206,9 +1265,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(createChannelPartnerRepricingConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
@@ -1219,11 +1278,11 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(updateChannelPartnerRepricingConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "channel_partner_repricing_config.name",
                           String.valueOf(request.getChannelPartnerRepricingConfig().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteChannelPartnerRepricingConfigRequest, Empty>
@@ -1232,9 +1291,31 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(deleteChannelPartnerRepricingConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListSkuGroupsRequest, ListSkuGroupsResponse> listSkuGroupsTransportSettings =
+        GrpcCallSettings.<ListSkuGroupsRequest, ListSkuGroupsResponse>newBuilder()
+            .setMethodDescriptor(listSkuGroupsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+        listSkuGroupBillableSkusTransportSettings =
+            GrpcCallSettings
+                .<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>newBuilder()
+                .setMethodDescriptor(listSkuGroupBillableSkusMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<LookupOfferRequest, Offer> lookupOfferTransportSettings =
@@ -1242,9 +1323,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(lookupOfferMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("entitlement", String.valueOf(request.getEntitlement()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("entitlement", String.valueOf(request.getEntitlement()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
@@ -1256,9 +1337,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(listSkusMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListOffersRequest, ListOffersResponse> listOffersTransportSettings =
@@ -1266,9 +1347,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             .setMethodDescriptor(listOffersMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListPurchasableSkusRequest, ListPurchasableSkusResponse>
@@ -1277,9 +1358,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(listPurchasableSkusMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("customer", String.valueOf(request.getCustomer()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("customer", String.valueOf(request.getCustomer()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
@@ -1289,9 +1370,22 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(listPurchasableOffersMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("customer", String.valueOf(request.getCustomer()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("customer", String.valueOf(request.getCustomer()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+        queryEligibleBillingAccountsTransportSettings =
+            GrpcCallSettings
+                .<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+                    newBuilder()
+                .setMethodDescriptor(queryEligibleBillingAccountsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("customer", String.valueOf(request.getCustomer()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
@@ -1300,9 +1394,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(registerSubscriberMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("account", String.valueOf(request.getAccount()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("account", String.valueOf(request.getAccount()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
@@ -1311,9 +1405,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(unregisterSubscriberMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("account", String.valueOf(request.getAccount()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("account", String.valueOf(request.getAccount()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListSubscribersRequest, ListSubscribersResponse>
@@ -1322,9 +1416,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(listSubscribersMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("account", String.valueOf(request.getAccount()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("account", String.valueOf(request.getAccount()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
@@ -1334,9 +1428,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(listEntitlementChangesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
 
@@ -1595,6 +1689,22 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             deleteChannelPartnerRepricingConfigTransportSettings,
             settings.deleteChannelPartnerRepricingConfigSettings(),
             clientContext);
+    this.listSkuGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listSkuGroupsTransportSettings, settings.listSkuGroupsSettings(), clientContext);
+    this.listSkuGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSkuGroupsTransportSettings, settings.listSkuGroupsSettings(), clientContext);
+    this.listSkuGroupBillableSkusCallable =
+        callableFactory.createUnaryCallable(
+            listSkuGroupBillableSkusTransportSettings,
+            settings.listSkuGroupBillableSkusSettings(),
+            clientContext);
+    this.listSkuGroupBillableSkusPagedCallable =
+        callableFactory.createPagedCallable(
+            listSkuGroupBillableSkusTransportSettings,
+            settings.listSkuGroupBillableSkusSettings(),
+            clientContext);
     this.lookupOfferCallable =
         callableFactory.createUnaryCallable(
             lookupOfferTransportSettings, settings.lookupOfferSettings(), clientContext);
@@ -1635,6 +1745,11 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
         callableFactory.createPagedCallable(
             listPurchasableOffersTransportSettings,
             settings.listPurchasableOffersSettings(),
+            clientContext);
+    this.queryEligibleBillingAccountsCallable =
+        callableFactory.createUnaryCallable(
+            queryEligibleBillingAccountsTransportSettings,
+            settings.queryEligibleBillingAccountsSettings(),
             clientContext);
     this.registerSubscriberCallable =
         callableFactory.createUnaryCallable(
@@ -1985,6 +2100,29 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
   }
 
   @Override
+  public UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsResponse> listSkuGroupsCallable() {
+    return listSkuGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsPagedResponse>
+      listSkuGroupsPagedCallable() {
+    return listSkuGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+      listSkuGroupBillableSkusCallable() {
+    return listSkuGroupBillableSkusCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusPagedResponse>
+      listSkuGroupBillableSkusPagedCallable() {
+    return listSkuGroupBillableSkusPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<LookupOfferRequest, Offer> lookupOfferCallable() {
     return lookupOfferCallable;
   }
@@ -2041,6 +2179,12 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
   public UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersPagedResponse>
       listPurchasableOffersPagedCallable() {
     return listPurchasableOffersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsCallable() {
+    return queryEligibleBillingAccountsCallable;
   }
 
   @Override

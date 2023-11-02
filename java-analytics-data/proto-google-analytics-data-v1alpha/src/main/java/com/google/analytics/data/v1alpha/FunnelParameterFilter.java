@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
     return new FunnelParameterFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_FunnelParameterFilter_descriptor;
@@ -66,6 +61,8 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
   }
 
   private int oneParameterCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneParameter_;
 
   public enum OneParameterCase
@@ -113,6 +110,8 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
   }
 
   private int oneFilterCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneFilter_;
 
   public enum OneFilterCase
@@ -173,6 +172,7 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
    * This filter will be evaluated on the specified event parameter. Event
    * parameters are logged as parameters of the event. Event parameters
    * include fields like "firebase_screen" &amp; "currency".
+   *
    * Event parameters can only be used in segments &amp; funnels and can only be
    * used in a descendent filter from an EventFilter. In a descendent filter
    * from an EventFilter either event or item parameters should be used.
@@ -192,6 +192,7 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
    * This filter will be evaluated on the specified event parameter. Event
    * parameters are logged as parameters of the event. Event parameters
    * include fields like "firebase_screen" &amp; "currency".
+   *
    * Event parameters can only be used in segments &amp; funnels and can only be
    * used in a descendent filter from an EventFilter. In a descendent filter
    * from an EventFilter either event or item parameters should be used.
@@ -224,6 +225,7 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
    * This filter will be evaluated on the specified event parameter. Event
    * parameters are logged as parameters of the event. Event parameters
    * include fields like "firebase_screen" &amp; "currency".
+   *
    * Event parameters can only be used in segments &amp; funnels and can only be
    * used in a descendent filter from an EventFilter. In a descendent filter
    * from an EventFilter either event or item parameters should be used.
@@ -258,9 +260,11 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
    * This filter will be evaluated on the specified item parameter. Item
    * parameters are logged as parameters in the item array. Item parameters
    * include fields like "item_name" &amp; "item_category".
+   *
    * Item parameters can only be used in segments &amp; funnels and can only be
    * used in a descendent filter from an EventFilter. In a descendent filter
    * from an EventFilter either event or item parameters should be used.
+   *
    * Item parameters are only available in ecommerce events. To learn more
    * about ecommerce events, see the [Measure ecommerce]
    * (https://developers.google.com/analytics/devguides/collection/ga4/ecommerce)
@@ -281,9 +285,11 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
    * This filter will be evaluated on the specified item parameter. Item
    * parameters are logged as parameters in the item array. Item parameters
    * include fields like "item_name" &amp; "item_category".
+   *
    * Item parameters can only be used in segments &amp; funnels and can only be
    * used in a descendent filter from an EventFilter. In a descendent filter
    * from an EventFilter either event or item parameters should be used.
+   *
    * Item parameters are only available in ecommerce events. To learn more
    * about ecommerce events, see the [Measure ecommerce]
    * (https://developers.google.com/analytics/devguides/collection/ga4/ecommerce)
@@ -317,9 +323,11 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
    * This filter will be evaluated on the specified item parameter. Item
    * parameters are logged as parameters in the item array. Item parameters
    * include fields like "item_name" &amp; "item_category".
+   *
    * Item parameters can only be used in segments &amp; funnels and can only be
    * used in a descendent filter from an EventFilter. In a descendent filter
    * from an EventFilter either event or item parameters should be used.
+   *
    * Item parameters are only available in ecommerce events. To learn more
    * about ecommerce events, see the [Measure ecommerce]
    * (https://developers.google.com/analytics/devguides/collection/ga4/ecommerce)
@@ -1130,6 +1138,7 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified event parameter. Event
      * parameters are logged as parameters of the event. Event parameters
      * include fields like "firebase_screen" &amp; "currency".
+     *
      * Event parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
@@ -1150,6 +1159,7 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified event parameter. Event
      * parameters are logged as parameters of the event. Event parameters
      * include fields like "firebase_screen" &amp; "currency".
+     *
      * Event parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
@@ -1183,6 +1193,7 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified event parameter. Event
      * parameters are logged as parameters of the event. Event parameters
      * include fields like "firebase_screen" &amp; "currency".
+     *
      * Event parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
@@ -1216,6 +1227,7 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified event parameter. Event
      * parameters are logged as parameters of the event. Event parameters
      * include fields like "firebase_screen" &amp; "currency".
+     *
      * Event parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
@@ -1242,6 +1254,7 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified event parameter. Event
      * parameters are logged as parameters of the event. Event parameters
      * include fields like "firebase_screen" &amp; "currency".
+     *
      * Event parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
@@ -1266,6 +1279,7 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified event parameter. Event
      * parameters are logged as parameters of the event. Event parameters
      * include fields like "firebase_screen" &amp; "currency".
+     *
      * Event parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
@@ -1294,9 +1308,11 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified item parameter. Item
      * parameters are logged as parameters in the item array. Item parameters
      * include fields like "item_name" &amp; "item_category".
+     *
      * Item parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
+     *
      * Item parameters are only available in ecommerce events. To learn more
      * about ecommerce events, see the [Measure ecommerce]
      * (https://developers.google.com/analytics/devguides/collection/ga4/ecommerce)
@@ -1318,9 +1334,11 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified item parameter. Item
      * parameters are logged as parameters in the item array. Item parameters
      * include fields like "item_name" &amp; "item_category".
+     *
      * Item parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
+     *
      * Item parameters are only available in ecommerce events. To learn more
      * about ecommerce events, see the [Measure ecommerce]
      * (https://developers.google.com/analytics/devguides/collection/ga4/ecommerce)
@@ -1355,9 +1373,11 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified item parameter. Item
      * parameters are logged as parameters in the item array. Item parameters
      * include fields like "item_name" &amp; "item_category".
+     *
      * Item parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
+     *
      * Item parameters are only available in ecommerce events. To learn more
      * about ecommerce events, see the [Measure ecommerce]
      * (https://developers.google.com/analytics/devguides/collection/ga4/ecommerce)
@@ -1392,9 +1412,11 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified item parameter. Item
      * parameters are logged as parameters in the item array. Item parameters
      * include fields like "item_name" &amp; "item_category".
+     *
      * Item parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
+     *
      * Item parameters are only available in ecommerce events. To learn more
      * about ecommerce events, see the [Measure ecommerce]
      * (https://developers.google.com/analytics/devguides/collection/ga4/ecommerce)
@@ -1422,9 +1444,11 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified item parameter. Item
      * parameters are logged as parameters in the item array. Item parameters
      * include fields like "item_name" &amp; "item_category".
+     *
      * Item parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
+     *
      * Item parameters are only available in ecommerce events. To learn more
      * about ecommerce events, see the [Measure ecommerce]
      * (https://developers.google.com/analytics/devguides/collection/ga4/ecommerce)
@@ -1450,9 +1474,11 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
      * This filter will be evaluated on the specified item parameter. Item
      * parameters are logged as parameters in the item array. Item parameters
      * include fields like "item_name" &amp; "item_category".
+     *
      * Item parameters can only be used in segments &amp; funnels and can only be
      * used in a descendent filter from an EventFilter. In a descendent filter
      * from an EventFilter either event or item parameters should be used.
+     *
      * Item parameters are only available in ecommerce events. To learn more
      * about ecommerce events, see the [Measure ecommerce]
      * (https://developers.google.com/analytics/devguides/collection/ga4/ecommerce)

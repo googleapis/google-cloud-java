@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     return new ModelExportOutputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.Io
         .internal_static_google_cloud_automl_v1_ModelExportOutputConfig_descriptor;
@@ -79,6 +74,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase
@@ -130,6 +127,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * Required. The Google Cloud Storage location where the model is to be written to.
    * This location may only be set for the following model formats:
    *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+   *
    *  Under the directory given as the destination a new one with name
    *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
    *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -154,6 +152,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * Required. The Google Cloud Storage location where the model is to be written to.
    * This location may only be set for the following model formats:
    *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+   *
    *  Under the directory given as the destination a new one with name
    *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
    *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -181,6 +180,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * Required. The Google Cloud Storage location where the model is to be written to.
    * This location may only be set for the following model formats:
    *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+   *
    *  Under the directory given as the destination a new one with name
    *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
    *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -212,17 +212,21 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * formats depend on the problem and model type (if given problem and type
    * combination doesn't have a format listed, it means its models are not
    * exportable):
+   *
    * *  For Image Classification mobile-low-latency-1, mobile-versatile-1,
    *        mobile-high-accuracy-1:
    *      "tflite" (default), "edgetpu_tflite", "tf_saved_model", "tf_js",
    *      "docker".
+   *
    * *  For Image Classification mobile-core-ml-low-latency-1,
    *        mobile-core-ml-versatile-1, mobile-core-ml-high-accuracy-1:
    *      "core_ml" (default).
+   *
    * *  For Image Object Detection mobile-low-latency-1, mobile-versatile-1,
    *        mobile-high-accuracy-1:
    *      "tflite", "tf_saved_model", "tf_js".
    * Formats description:
+   *
    * * tflite - Used for Android mobile devices.
    * * edgetpu_tflite - Used for [Edge TPU](https://cloud.google.com/edge-tpu/)
    *                    devices.
@@ -261,17 +265,21 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * formats depend on the problem and model type (if given problem and type
    * combination doesn't have a format listed, it means its models are not
    * exportable):
+   *
    * *  For Image Classification mobile-low-latency-1, mobile-versatile-1,
    *        mobile-high-accuracy-1:
    *      "tflite" (default), "edgetpu_tflite", "tf_saved_model", "tf_js",
    *      "docker".
+   *
    * *  For Image Classification mobile-core-ml-low-latency-1,
    *        mobile-core-ml-versatile-1, mobile-core-ml-high-accuracy-1:
    *      "core_ml" (default).
+   *
    * *  For Image Object Detection mobile-low-latency-1, mobile-versatile-1,
    *        mobile-high-accuracy-1:
    *      "tflite", "tf_saved_model", "tf_js".
    * Formats description:
+   *
    * * tflite - Used for Android mobile devices.
    * * edgetpu_tflite - Used for [Edge TPU](https://cloud.google.com/edge-tpu/)
    *                    devices.
@@ -336,6 +344,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * Additional model-type and format specific parameters describing the
    * requirements for the to be exported model files, any string must be up to
    * 25000 characters long.
+   *
    *  * For `docker` format:
    *     `cpu_architecture` - (string) "x86_64" (default).
    *     `gpu_architecture` - (string) "none" (default), "nvidia".
@@ -363,6 +372,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * Additional model-type and format specific parameters describing the
    * requirements for the to be exported model files, any string must be up to
    * 25000 characters long.
+   *
    *  * For `docker` format:
    *     `cpu_architecture` - (string) "x86_64" (default).
    *     `gpu_architecture` - (string) "none" (default), "nvidia".
@@ -381,6 +391,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * Additional model-type and format specific parameters describing the
    * requirements for the to be exported model files, any string must be up to
    * 25000 characters long.
+   *
    *  * For `docker` format:
    *     `cpu_architecture` - (string) "x86_64" (default).
    *     `gpu_architecture` - (string) "none" (default), "nvidia".
@@ -406,6 +417,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * Additional model-type and format specific parameters describing the
    * requirements for the to be exported model files, any string must be up to
    * 25000 characters long.
+   *
    *  * For `docker` format:
    *     `cpu_architecture` - (string) "x86_64" (default).
    *     `gpu_architecture` - (string) "none" (default), "nvidia".
@@ -904,6 +916,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Required. The Google Cloud Storage location where the model is to be written to.
      * This location may only be set for the following model formats:
      *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+     *
      *  Under the directory given as the destination a new one with name
      *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
      *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -928,6 +941,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Required. The Google Cloud Storage location where the model is to be written to.
      * This location may only be set for the following model formats:
      *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+     *
      *  Under the directory given as the destination a new one with name
      *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
      *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -962,6 +976,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Required. The Google Cloud Storage location where the model is to be written to.
      * This location may only be set for the following model formats:
      *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+     *
      *  Under the directory given as the destination a new one with name
      *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
      *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -993,6 +1008,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Required. The Google Cloud Storage location where the model is to be written to.
      * This location may only be set for the following model formats:
      *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+     *
      *  Under the directory given as the destination a new one with name
      *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
      *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -1022,6 +1038,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Required. The Google Cloud Storage location where the model is to be written to.
      * This location may only be set for the following model formats:
      *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+     *
      *  Under the directory given as the destination a new one with name
      *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
      *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -1063,6 +1080,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Required. The Google Cloud Storage location where the model is to be written to.
      * This location may only be set for the following model formats:
      *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+     *
      *  Under the directory given as the destination a new one with name
      *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
      *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -1097,6 +1115,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Required. The Google Cloud Storage location where the model is to be written to.
      * This location may only be set for the following model formats:
      *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+     *
      *  Under the directory given as the destination a new one with name
      *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
      *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -1118,6 +1137,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Required. The Google Cloud Storage location where the model is to be written to.
      * This location may only be set for the following model formats:
      *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+     *
      *  Under the directory given as the destination a new one with name
      *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
      *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -1147,6 +1167,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Required. The Google Cloud Storage location where the model is to be written to.
      * This location may only be set for the following model formats:
      *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
+     *
      *  Under the directory given as the destination a new one with name
      *  "model-export-&lt;model-display-name&gt;-&lt;timestamp-of-export-call&gt;",
      *  where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format,
@@ -1191,17 +1212,21 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * formats depend on the problem and model type (if given problem and type
      * combination doesn't have a format listed, it means its models are not
      * exportable):
+     *
      * *  For Image Classification mobile-low-latency-1, mobile-versatile-1,
      *        mobile-high-accuracy-1:
      *      "tflite" (default), "edgetpu_tflite", "tf_saved_model", "tf_js",
      *      "docker".
+     *
      * *  For Image Classification mobile-core-ml-low-latency-1,
      *        mobile-core-ml-versatile-1, mobile-core-ml-high-accuracy-1:
      *      "core_ml" (default).
+     *
      * *  For Image Object Detection mobile-low-latency-1, mobile-versatile-1,
      *        mobile-high-accuracy-1:
      *      "tflite", "tf_saved_model", "tf_js".
      * Formats description:
+     *
      * * tflite - Used for Android mobile devices.
      * * edgetpu_tflite - Used for [Edge TPU](https://cloud.google.com/edge-tpu/)
      *                    devices.
@@ -1239,17 +1264,21 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * formats depend on the problem and model type (if given problem and type
      * combination doesn't have a format listed, it means its models are not
      * exportable):
+     *
      * *  For Image Classification mobile-low-latency-1, mobile-versatile-1,
      *        mobile-high-accuracy-1:
      *      "tflite" (default), "edgetpu_tflite", "tf_saved_model", "tf_js",
      *      "docker".
+     *
      * *  For Image Classification mobile-core-ml-low-latency-1,
      *        mobile-core-ml-versatile-1, mobile-core-ml-high-accuracy-1:
      *      "core_ml" (default).
+     *
      * *  For Image Object Detection mobile-low-latency-1, mobile-versatile-1,
      *        mobile-high-accuracy-1:
      *      "tflite", "tf_saved_model", "tf_js".
      * Formats description:
+     *
      * * tflite - Used for Android mobile devices.
      * * edgetpu_tflite - Used for [Edge TPU](https://cloud.google.com/edge-tpu/)
      *                    devices.
@@ -1287,17 +1316,21 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * formats depend on the problem and model type (if given problem and type
      * combination doesn't have a format listed, it means its models are not
      * exportable):
+     *
      * *  For Image Classification mobile-low-latency-1, mobile-versatile-1,
      *        mobile-high-accuracy-1:
      *      "tflite" (default), "edgetpu_tflite", "tf_saved_model", "tf_js",
      *      "docker".
+     *
      * *  For Image Classification mobile-core-ml-low-latency-1,
      *        mobile-core-ml-versatile-1, mobile-core-ml-high-accuracy-1:
      *      "core_ml" (default).
+     *
      * *  For Image Object Detection mobile-low-latency-1, mobile-versatile-1,
      *        mobile-high-accuracy-1:
      *      "tflite", "tf_saved_model", "tf_js".
      * Formats description:
+     *
      * * tflite - Used for Android mobile devices.
      * * edgetpu_tflite - Used for [Edge TPU](https://cloud.google.com/edge-tpu/)
      *                    devices.
@@ -1334,17 +1367,21 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * formats depend on the problem and model type (if given problem and type
      * combination doesn't have a format listed, it means its models are not
      * exportable):
+     *
      * *  For Image Classification mobile-low-latency-1, mobile-versatile-1,
      *        mobile-high-accuracy-1:
      *      "tflite" (default), "edgetpu_tflite", "tf_saved_model", "tf_js",
      *      "docker".
+     *
      * *  For Image Classification mobile-core-ml-low-latency-1,
      *        mobile-core-ml-versatile-1, mobile-core-ml-high-accuracy-1:
      *      "core_ml" (default).
+     *
      * *  For Image Object Detection mobile-low-latency-1, mobile-versatile-1,
      *        mobile-high-accuracy-1:
      *      "tflite", "tf_saved_model", "tf_js".
      * Formats description:
+     *
      * * tflite - Used for Android mobile devices.
      * * edgetpu_tflite - Used for [Edge TPU](https://cloud.google.com/edge-tpu/)
      *                    devices.
@@ -1377,17 +1414,21 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * formats depend on the problem and model type (if given problem and type
      * combination doesn't have a format listed, it means its models are not
      * exportable):
+     *
      * *  For Image Classification mobile-low-latency-1, mobile-versatile-1,
      *        mobile-high-accuracy-1:
      *      "tflite" (default), "edgetpu_tflite", "tf_saved_model", "tf_js",
      *      "docker".
+     *
      * *  For Image Classification mobile-core-ml-low-latency-1,
      *        mobile-core-ml-versatile-1, mobile-core-ml-high-accuracy-1:
      *      "core_ml" (default).
+     *
      * *  For Image Object Detection mobile-low-latency-1, mobile-versatile-1,
      *        mobile-high-accuracy-1:
      *      "tflite", "tf_saved_model", "tf_js".
      * Formats description:
+     *
      * * tflite - Used for Android mobile devices.
      * * edgetpu_tflite - Used for [Edge TPU](https://cloud.google.com/edge-tpu/)
      *                    devices.
@@ -1450,6 +1491,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Additional model-type and format specific parameters describing the
      * requirements for the to be exported model files, any string must be up to
      * 25000 characters long.
+     *
      *  * For `docker` format:
      *     `cpu_architecture` - (string) "x86_64" (default).
      *     `gpu_architecture` - (string) "none" (default), "nvidia".
@@ -1477,6 +1519,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Additional model-type and format specific parameters describing the
      * requirements for the to be exported model files, any string must be up to
      * 25000 characters long.
+     *
      *  * For `docker` format:
      *     `cpu_architecture` - (string) "x86_64" (default).
      *     `gpu_architecture` - (string) "none" (default), "nvidia".
@@ -1495,6 +1538,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Additional model-type and format specific parameters describing the
      * requirements for the to be exported model files, any string must be up to
      * 25000 characters long.
+     *
      *  * For `docker` format:
      *     `cpu_architecture` - (string) "x86_64" (default).
      *     `gpu_architecture` - (string) "none" (default), "nvidia".
@@ -1520,6 +1564,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Additional model-type and format specific parameters describing the
      * requirements for the to be exported model files, any string must be up to
      * 25000 characters long.
+     *
      *  * For `docker` format:
      *     `cpu_architecture` - (string) "x86_64" (default).
      *     `gpu_architecture` - (string) "none" (default), "nvidia".
@@ -1551,6 +1596,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Additional model-type and format specific parameters describing the
      * requirements for the to be exported model files, any string must be up to
      * 25000 characters long.
+     *
      *  * For `docker` format:
      *     `cpu_architecture` - (string) "x86_64" (default).
      *     `gpu_architecture` - (string) "none" (default), "nvidia".
@@ -1578,6 +1624,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Additional model-type and format specific parameters describing the
      * requirements for the to be exported model files, any string must be up to
      * 25000 characters long.
+     *
      *  * For `docker` format:
      *     `cpu_architecture` - (string) "x86_64" (default).
      *     `gpu_architecture` - (string) "none" (default), "nvidia".
@@ -1603,6 +1650,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * Additional model-type and format specific parameters describing the
      * requirements for the to be exported model files, any string must be up to
      * 25000 characters long.
+     *
      *  * For `docker` format:
      *     `cpu_architecture` - (string) "x86_64" (default).
      *     `gpu_architecture` - (string) "none" (default), "nvidia".

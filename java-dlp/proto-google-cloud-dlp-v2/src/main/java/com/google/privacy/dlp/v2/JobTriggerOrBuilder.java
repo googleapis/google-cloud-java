@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -203,8 +203,8 @@ public interface JobTriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -218,8 +218,8 @@ public interface JobTriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -233,8 +233,8 @@ public interface JobTriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -248,8 +248,8 @@ public interface JobTriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -263,8 +263,8 @@ public interface JobTriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -421,5 +421,5 @@ public interface JobTriggerOrBuilder
    */
   com.google.privacy.dlp.v2.JobTrigger.Status getStatus();
 
-  public com.google.privacy.dlp.v2.JobTrigger.JobCase getJobCase();
+  com.google.privacy.dlp.v2.JobTrigger.JobCase getJobCase();
 }

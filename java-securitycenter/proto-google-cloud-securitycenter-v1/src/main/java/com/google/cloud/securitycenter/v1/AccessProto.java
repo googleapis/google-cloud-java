@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,26 +49,26 @@ public final class AccessProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/securitycenter/v1/access."
-          + "proto\022\036google.cloud.securitycenter.v1\"\365\002"
+          + "proto\022\036google.cloud.securitycenter.v1\"\211\003"
           + "\n\006Access\022\027\n\017principal_email\030\001 \001(\t\022\021\n\tcal"
           + "ler_ip\030\002 \001(\t\022B\n\rcaller_ip_geo\030\003 \001(\0132+.go"
           + "ogle.cloud.securitycenter.v1.Geolocation"
-          + "\022\031\n\021user_agent_family\030\004 \001(\t\022\024\n\014service_n"
-          + "ame\030\005 \001(\t\022\023\n\013method_name\030\006 \001(\t\022\031\n\021princi"
-          + "pal_subject\030\007 \001(\t\022 \n\030service_account_key"
-          + "_name\030\010 \001(\t\022e\n\037service_account_delegatio"
-          + "n_info\030\t \003(\0132<.google.cloud.securitycent"
-          + "er.v1.ServiceAccountDelegationInfo\022\021\n\tus"
-          + "er_name\030\013 \001(\t\"R\n\034ServiceAccountDelegatio"
-          + "nInfo\022\027\n\017principal_email\030\001 \001(\t\022\031\n\021princi"
-          + "pal_subject\030\002 \001(\t\"\"\n\013Geolocation\022\023\n\013regi"
-          + "on_code\030\001 \001(\tB\345\001\n\"com.google.cloud.secur"
-          + "itycenter.v1B\013AccessProtoP\001ZJcloud.googl"
-          + "e.com/go/securitycenter/apiv1/securityce"
-          + "nterpb;securitycenterpb\252\002\036Google.Cloud.S"
-          + "ecurityCenter.V1\312\002\036Google\\Cloud\\Security"
-          + "Center\\V1\352\002!Google::Cloud::SecurityCente"
-          + "r::V1b\006proto3"
+          + "\022\031\n\021user_agent_family\030\004 \001(\t\022\022\n\nuser_agen"
+          + "t\030\014 \001(\t\022\024\n\014service_name\030\005 \001(\t\022\023\n\013method_"
+          + "name\030\006 \001(\t\022\031\n\021principal_subject\030\007 \001(\t\022 \n"
+          + "\030service_account_key_name\030\010 \001(\t\022e\n\037servi"
+          + "ce_account_delegation_info\030\t \003(\0132<.googl"
+          + "e.cloud.securitycenter.v1.ServiceAccount"
+          + "DelegationInfo\022\021\n\tuser_name\030\013 \001(\t\"R\n\034Ser"
+          + "viceAccountDelegationInfo\022\027\n\017principal_e"
+          + "mail\030\001 \001(\t\022\031\n\021principal_subject\030\002 \001(\t\"\"\n"
+          + "\013Geolocation\022\023\n\013region_code\030\001 \001(\tB\345\001\n\"co"
+          + "m.google.cloud.securitycenter.v1B\013Access"
+          + "ProtoP\001ZJcloud.google.com/go/securitycen"
+          + "ter/apiv1/securitycenterpb;securitycente"
+          + "rpb\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036G"
+          + "oogle\\Cloud\\SecurityCenter\\V1\352\002!Google::"
+          + "Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -83,6 +83,7 @@ public final class AccessProto {
               "CallerIp",
               "CallerIpGeo",
               "UserAgentFamily",
+              "UserAgent",
               "ServiceName",
               "MethodName",
               "PrincipalSubject",

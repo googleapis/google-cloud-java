@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ public interface FunnelResponseMetadataOrBuilder
    * `samplingMetadatas` is populated for each date range. Each
    * `samplingMetadatas` corresponds to a date range in order that date ranges
    * were specified in the request.
+   *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
    *
@@ -49,6 +50,7 @@ public interface FunnelResponseMetadataOrBuilder
    * `samplingMetadatas` is populated for each date range. Each
    * `samplingMetadatas` corresponds to a date range in order that date ranges
    * were specified in the request.
+   *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
    *
@@ -65,6 +67,7 @@ public interface FunnelResponseMetadataOrBuilder
    * `samplingMetadatas` is populated for each date range. Each
    * `samplingMetadatas` corresponds to a date range in order that date ranges
    * were specified in the request.
+   *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
    *
@@ -81,6 +84,7 @@ public interface FunnelResponseMetadataOrBuilder
    * `samplingMetadatas` is populated for each date range. Each
    * `samplingMetadatas` corresponds to a date range in order that date ranges
    * were specified in the request.
+   *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
    *
@@ -98,6 +102,7 @@ public interface FunnelResponseMetadataOrBuilder
    * `samplingMetadatas` is populated for each date range. Each
    * `samplingMetadatas` corresponds to a date range in order that date ranges
    * were specified in the request.
+   *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
    *

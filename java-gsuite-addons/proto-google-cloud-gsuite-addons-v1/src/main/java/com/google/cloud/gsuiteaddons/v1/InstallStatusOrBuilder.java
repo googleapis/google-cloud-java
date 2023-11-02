@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface InstallStatusOrBuilder
    *
    * <pre>
    * The canonical full resource name of the deployment install status.
+   *
    * Example:  `projects/123/deployments/my_deployment/installStatus`.
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface InstallStatusOrBuilder
    *
    * <pre>
    * The canonical full resource name of the deployment install status.
+   *
    * Example:  `projects/123/deployments/my_deployment/installStatus`.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.datacatalog.v1;
  *
  * <pre>
  * Entry group metadata.
+ *
  * An `EntryGroup` resource represents a logical grouping of zero or more
  * Data Catalog [Entry][google.cloud.datacatalog.v1.Entry] resources.
  * </pre>
@@ -51,11 +52,6 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     return new EntryGroup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_EntryGroup_descriptor;
@@ -80,6 +76,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the entry group in URL format.
+   *
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -105,6 +102,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the entry group in URL format.
+   *
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -488,6 +486,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Entry group metadata.
+   *
    * An `EntryGroup` resource represents a logical grouping of zero or more
    * Data Catalog [Entry][google.cloud.datacatalog.v1.Entry] resources.
    * </pre>
@@ -724,6 +723,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the entry group in URL format.
+     *
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -748,6 +748,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the entry group in URL format.
+     *
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -772,6 +773,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the entry group in URL format.
+     *
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -795,6 +797,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the entry group in URL format.
+     *
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -814,6 +817,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the entry group in URL format.
+     *
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>

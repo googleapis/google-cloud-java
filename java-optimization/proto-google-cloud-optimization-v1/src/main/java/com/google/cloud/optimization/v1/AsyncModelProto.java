@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,21 +67,21 @@ public final class AsyncModelProto {
           + "_destination\030\001 \001(\0132,.google.cloud.optimi"
           + "zation.v1.GcsDestinationH\000\022=\n\013data_forma"
           + "t\030\002 \001(\0162(.google.cloud.optimization.v1.D"
-          + "ataFormatB\r\n\013destination\"\035\n\tGcsSource\022\020\n"
-          + "\003uri\030\001 \001(\tB\003\340A\002\"\"\n\016GcsDestination\022\020\n\003uri"
-          + "\030\001 \001(\tB\003\340A\002\"\253\002\n\022AsyncModelMetadata\022E\n\005st"
-          + "ate\030\001 \001(\01626.google.cloud.optimization.v1"
-          + ".AsyncModelMetadata.State\022\025\n\rstate_messa"
-          + "ge\030\002 \001(\t\022/\n\013create_time\030\003 \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\022/\n\013update_time\030\004 \001(\0132\032"
-          + ".google.protobuf.Timestamp\"U\n\005State\022\025\n\021S"
-          + "TATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSUCCE"
-          + "EDED\020\002\022\r\n\tCANCELLED\020\003\022\n\n\006FAILED\020\004*?\n\nDat"
-          + "aFormat\022\033\n\027DATA_FORMAT_UNSPECIFIED\020\000\022\010\n\004"
-          + "JSON\020\001\022\n\n\006STRING\020\002B{\n com.google.cloud.o"
-          + "ptimization.v1B\017AsyncModelProtoP\001ZDcloud"
-          + ".google.com/go/optimization/apiv1/optimi"
-          + "zationpb;optimizationpbb\006proto3"
+          + "ataFormatB\r\n\013destination\"\036\n\tGcsSource\022\021\n"
+          + "\003uri\030\001 \001(\tB\004\342A\001\002\"#\n\016GcsDestination\022\021\n\003ur"
+          + "i\030\001 \001(\tB\004\342A\001\002\"\253\002\n\022AsyncModelMetadata\022E\n\005"
+          + "state\030\001 \001(\01626.google.cloud.optimization."
+          + "v1.AsyncModelMetadata.State\022\025\n\rstate_mes"
+          + "sage\030\002 \001(\t\022/\n\013create_time\030\003 \001(\0132\032.google"
+          + ".protobuf.Timestamp\022/\n\013update_time\030\004 \001(\013"
+          + "2\032.google.protobuf.Timestamp\"U\n\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSUC"
+          + "CEEDED\020\002\022\r\n\tCANCELLED\020\003\022\n\n\006FAILED\020\004*?\n\nD"
+          + "ataFormat\022\033\n\027DATA_FORMAT_UNSPECIFIED\020\000\022\010"
+          + "\n\004JSON\020\001\022\n\n\006STRING\020\002B{\n com.google.cloud"
+          + ".optimization.v1B\017AsyncModelProtoP\001ZDclo"
+          + "ud.google.com/go/optimization/apiv1/opti"
+          + "mizationpb;optimizationpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

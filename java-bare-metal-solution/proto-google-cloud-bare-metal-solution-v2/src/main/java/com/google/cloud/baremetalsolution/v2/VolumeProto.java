@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,14 @@ public final class VolumeProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_baremetalsolution_v2_UpdateVolumeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_baremetalsolution_v2_RenameVolumeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_baremetalsolution_v2_RenameVolumeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_baremetalsolution_v2_EvictVolumeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_baremetalsolution_v2_EvictVolumeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_baremetalsolution_v2_ResizeVolumeRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_baremetalsolution_v2_ResizeVolumeRequest_fieldAccessorTable;
@@ -71,60 +79,84 @@ public final class VolumeProto {
       "\n.google/cloud/baremetalsolution/v2/volu"
           + "me.proto\022!google.cloud.baremetalsolution"
           + ".v2\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\032 google/protobuf"
-          + "/field_mask.proto\"\313\t\n\006Volume\022\021\n\004name\030\001 \001"
-          + "(\tB\003\340A\003\022\n\n\002id\030\013 \001(\t\022K\n\014storage_type\030\002 \001("
-          + "\01625.google.cloud.baremetalsolution.v2.Vo"
-          + "lume.StorageType\022>\n\005state\030\003 \001(\0162/.google"
-          + ".cloud.baremetalsolution.v2.Volume.State"
-          + "\022\032\n\022requested_size_gib\030\004 \001(\003\022\030\n\020current_"
-          + "size_gib\030\005 \001(\003\022\032\n\022emergency_size_gib\030\016 \001"
-          + "(\003\022\033\n\023auto_grown_size_gib\030\006 \001(\003\022\033\n\023remai"
-          + "ning_space_gib\030\007 \001(\003\022h\n\033snapshot_reserva"
-          + "tion_detail\030\010 \001(\0132C.google.cloud.baremet"
-          + "alsolution.v2.Volume.SnapshotReservation"
-          + "Detail\022k\n\035snapshot_auto_delete_behavior\030"
-          + "\t \001(\0162D.google.cloud.baremetalsolution.v"
-          + "2.Volume.SnapshotAutoDeleteBehavior\022E\n\006l"
-          + "abels\030\014 \003(\01325.google.cloud.baremetalsolu"
-          + "tion.v2.Volume.LabelsEntry\022\030\n\020snapshot_e"
-          + "nabled\030\r \001(\010\022\020\n\003pod\030\017 \001(\tB\003\340A\005\032\242\001\n\031Snaps"
-          + "hotReservationDetail\022\032\n\022reserved_space_g"
-          + "ib\030\001 \001(\003\022#\n\033reserved_space_used_percent\030"
-          + "\002 \001(\005\022$\n\034reserved_space_remaining_gib\030\003 "
-          + "\001(\003\022\036\n\026reserved_space_percent\030\004 \001(\005\032-\n\013L"
-          + "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-          + "8\001\"=\n\013StorageType\022\034\n\030STORAGE_TYPE_UNSPEC"
-          + "IFIED\020\000\022\007\n\003SSD\020\001\022\007\n\003HDD\020\002\"E\n\005State\022\025\n\021ST"
-          + "ATE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY"
-          + "\020\002\022\014\n\010DELETING\020\003\"}\n\032SnapshotAutoDeleteBe"
-          + "havior\022-\n)SNAPSHOT_AUTO_DELETE_BEHAVIOR_"
-          + "UNSPECIFIED\020\000\022\014\n\010DISABLED\020\001\022\020\n\014OLDEST_FI"
-          + "RST\020\002\022\020\n\014NEWEST_FIRST\020\003:f\352Ac\n\'baremetals"
-          + "olution.googleapis.com/Volume\0228projects/"
-          + "{project}/locations/{location}/volumes/{"
-          + "volume}\"Q\n\020GetVolumeRequest\022=\n\004name\030\001 \001("
-          + "\tB/\340A\002\372A)\n\'baremetalsolution.googleapis."
-          + "com/Volume\"\206\001\n\022ListVolumesRequest\0229\n\006par"
-          + "ent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis."
-          + "com/Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_"
-          + "token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"\177\n\023ListVolum"
-          + "esResponse\022:\n\007volumes\030\001 \003(\0132).google.clo"
-          + "ud.baremetalsolution.v2.Volume\022\027\n\017next_p"
-          + "age_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\206\001\n"
-          + "\023UpdateVolumeRequest\022>\n\006volume\030\001 \001(\0132).g"
-          + "oogle.cloud.baremetalsolution.v2.VolumeB"
-          + "\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.proto"
-          + "buf.FieldMask\"h\n\023ResizeVolumeRequest\022?\n\006"
-          + "volume\030\001 \001(\tB/\340A\002\372A)\n\'baremetalsolution."
-          + "googleapis.com/Volume\022\020\n\010size_gib\030\002 \001(\003B"
-          + "\372\001\n%com.google.cloud.baremetalsolution.v"
-          + "2B\013VolumeProtoP\001ZScloud.google.com/go/ba"
-          + "remetalsolution/apiv2/baremetalsolutionp"
-          + "b;baremetalsolutionpb\252\002!Google.Cloud.Bar"
-          + "eMetalSolution.V2\312\002!Google\\Cloud\\BareMet"
-          + "alSolution\\V2\352\002$Google::Cloud::BareMetal"
-          + "Solution::V2b\006proto3"
+          + "ogle/api/resource.proto\032.google/cloud/ba"
+          + "remetalsolution/v2/common.proto\032 google/"
+          + "protobuf/field_mask.proto\032\037google/protob"
+          + "uf/timestamp.proto\"\365\016\n\006Volume\022\022\n\004name\030\001 "
+          + "\001(\tB\004\342A\001\003\022\n\n\002id\030\013 \001(\t\022K\n\014storage_type\030\002 "
+          + "\001(\01625.google.cloud.baremetalsolution.v2."
+          + "Volume.StorageType\022>\n\005state\030\003 \001(\0162/.goog"
+          + "le.cloud.baremetalsolution.v2.Volume.Sta"
+          + "te\022\032\n\022requested_size_gib\030\004 \001(\003\022%\n\035origin"
+          + "ally_requested_size_gib\030\020 \001(\003\022\030\n\020current"
+          + "_size_gib\030\005 \001(\003\022\032\n\022emergency_size_gib\030\016 "
+          + "\001(\003\022\024\n\014max_size_gib\030\021 \001(\003\022\033\n\023auto_grown_"
+          + "size_gib\030\006 \001(\003\022\033\n\023remaining_space_gib\030\007 "
+          + "\001(\003\022h\n\033snapshot_reservation_detail\030\010 \001(\013"
+          + "2C.google.cloud.baremetalsolution.v2.Vol"
+          + "ume.SnapshotReservationDetail\022k\n\035snapsho"
+          + "t_auto_delete_behavior\030\t \001(\0162D.google.cl"
+          + "oud.baremetalsolution.v2.Volume.Snapshot"
+          + "AutoDeleteBehavior\022E\n\006labels\030\014 \003(\01325.goo"
+          + "gle.cloud.baremetalsolution.v2.Volume.La"
+          + "belsEntry\022\030\n\020snapshot_enabled\030\r \001(\010\022\021\n\003p"
+          + "od\030\017 \001(\tB\004\342A\001\005\022J\n\010protocol\030\022 \001(\01622.googl"
+          + "e.cloud.baremetalsolution.v2.Volume.Prot"
+          + "ocolB\004\342A\001\003\022\031\n\013boot_volume\030\023 \001(\010B\004\342A\001\003\022X\n"
+          + "\020performance_tier\030\024 \001(\01628.google.cloud.b"
+          + "aremetalsolution.v2.VolumePerformanceTie"
+          + "rB\004\342A\001\005\022\023\n\005notes\030\025 \001(\tB\004\342A\001\004\022S\n\020workload"
+          + "_profile\030\026 \001(\01629.google.cloud.baremetals"
+          + "olution.v2.Volume.WorkloadProfile\0225\n\013exp"
+          + "ire_time\030\030 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\004\342A\001\003\022E\n\tinstances\030\031 \003(\tB2\342A\001\003\372A+\n)ba"
+          + "remetalsolution.googleapis.com/Instance\022"
+          + "\026\n\010attached\030\032 \001(\010B\004\342A\001\003\032\242\001\n\031SnapshotRese"
+          + "rvationDetail\022\032\n\022reserved_space_gib\030\001 \001("
+          + "\003\022#\n\033reserved_space_used_percent\030\002 \001(\005\022$"
+          + "\n\034reserved_space_remaining_gib\030\003 \001(\003\022\036\n\026"
+          + "reserved_space_percent\030\004 \001(\005\032-\n\013LabelsEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"=\n\013S"
+          + "torageType\022\034\n\030STORAGE_TYPE_UNSPECIFIED\020\000"
+          + "\022\007\n\003SSD\020\001\022\007\n\003HDD\020\002\"a\n\005State\022\025\n\021STATE_UNS"
+          + "PECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002\022\014\n\010D"
+          + "ELETING\020\003\022\014\n\010UPDATING\020\004\022\014\n\010COOL_OFF\020\005\"}\n"
+          + "\032SnapshotAutoDeleteBehavior\022-\n)SNAPSHOT_"
+          + "AUTO_DELETE_BEHAVIOR_UNSPECIFIED\020\000\022\014\n\010DI"
+          + "SABLED\020\001\022\020\n\014OLDEST_FIRST\020\002\022\020\n\014NEWEST_FIR"
+          + "ST\020\003\"@\n\010Protocol\022\030\n\024PROTOCOL_UNSPECIFIED"
+          + "\020\000\022\021\n\rFIBRE_CHANNEL\020\001\022\007\n\003NFS\020\002\"J\n\017Worklo"
+          + "adProfile\022 \n\034WORKLOAD_PROFILE_UNSPECIFIE"
+          + "D\020\000\022\013\n\007GENERIC\020\001\022\010\n\004HANA\020\002:f\352Ac\n\'baremet"
+          + "alsolution.googleapis.com/Volume\0228projec"
+          + "ts/{project}/locations/{location}/volume"
+          + "s/{volume}\"R\n\020GetVolumeRequest\022>\n\004name\030\001"
+          + " \001(\tB0\342A\001\002\372A)\n\'baremetalsolution.googlea"
+          + "pis.com/Volume\"\207\001\n\022ListVolumesRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations.google"
+          + "apis.com/Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n"
+          + "page_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"\177\n\023List"
+          + "VolumesResponse\022:\n\007volumes\030\001 \003(\0132).googl"
+          + "e.cloud.baremetalsolution.v2.Volume\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003("
+          + "\t\"\207\001\n\023UpdateVolumeRequest\022?\n\006volume\030\001 \001("
+          + "\0132).google.cloud.baremetalsolution.v2.Vo"
+          + "lumeB\004\342A\001\002\022/\n\013update_mask\030\002 \001(\0132\032.google"
+          + ".protobuf.FieldMask\"r\n\023RenameVolumeReque"
+          + "st\022>\n\004name\030\001 \001(\tB0\342A\001\002\372A)\n\'baremetalsolu"
+          + "tion.googleapis.com/Volume\022\033\n\rnew_volume"
+          + "_id\030\002 \001(\tB\004\342A\001\002\"T\n\022EvictVolumeRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\342A\001\002\372A)\n\'baremetalsolution."
+          + "googleapis.com/Volume\"i\n\023ResizeVolumeReq"
+          + "uest\022@\n\006volume\030\001 \001(\tB0\342A\001\002\372A)\n\'baremetal"
+          + "solution.googleapis.com/Volume\022\020\n\010size_g"
+          + "ib\030\002 \001(\003B\372\001\n%com.google.cloud.baremetals"
+          + "olution.v2B\013VolumeProtoP\001ZScloud.google."
+          + "com/go/baremetalsolution/apiv2/baremetal"
+          + "solutionpb;baremetalsolutionpb\252\002!Google."
+          + "Cloud.BareMetalSolution.V2\312\002!Google\\Clou"
+          + "d\\BareMetalSolution\\V2\352\002$Google::Cloud::"
+          + "BareMetalSolution::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -132,7 +164,9 @@ public final class VolumeProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.baremetalsolution.v2.CommonProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_baremetalsolution_v2_Volume_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -145,8 +179,10 @@ public final class VolumeProto {
               "StorageType",
               "State",
               "RequestedSizeGib",
+              "OriginallyRequestedSizeGib",
               "CurrentSizeGib",
               "EmergencySizeGib",
+              "MaxSizeGib",
               "AutoGrownSizeGib",
               "RemainingSpaceGib",
               "SnapshotReservationDetail",
@@ -154,6 +190,14 @@ public final class VolumeProto {
               "Labels",
               "SnapshotEnabled",
               "Pod",
+              "Protocol",
+              "BootVolume",
+              "PerformanceTier",
+              "Notes",
+              "WorkloadProfile",
+              "ExpireTime",
+              "Instances",
+              "Attached",
             });
     internal_static_google_cloud_baremetalsolution_v2_Volume_SnapshotReservationDetail_descriptor =
         internal_static_google_cloud_baremetalsolution_v2_Volume_descriptor.getNestedTypes().get(0);
@@ -206,8 +250,24 @@ public final class VolumeProto {
             new java.lang.String[] {
               "Volume", "UpdateMask",
             });
-    internal_static_google_cloud_baremetalsolution_v2_ResizeVolumeRequest_descriptor =
+    internal_static_google_cloud_baremetalsolution_v2_RenameVolumeRequest_descriptor =
         getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_baremetalsolution_v2_RenameVolumeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_baremetalsolution_v2_RenameVolumeRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "NewVolumeId",
+            });
+    internal_static_google_cloud_baremetalsolution_v2_EvictVolumeRequest_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_baremetalsolution_v2_EvictVolumeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_baremetalsolution_v2_EvictVolumeRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_baremetalsolution_v2_ResizeVolumeRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_baremetalsolution_v2_ResizeVolumeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_baremetalsolution_v2_ResizeVolumeRequest_descriptor,
@@ -223,7 +283,9 @@ public final class VolumeProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.baremetalsolution.v2.CommonProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

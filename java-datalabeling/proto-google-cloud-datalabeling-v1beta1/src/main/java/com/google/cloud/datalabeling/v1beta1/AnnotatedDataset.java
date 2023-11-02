@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,18 +45,13 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
     description_ = "";
     annotationSource_ = 0;
     annotationType_ = 0;
-    blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    blockingResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnnotatedDataset();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -502,7 +497,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
   public static final int BLOCKING_RESOURCES_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList blockingResources_;
+  private com.google.protobuf.LazyStringArrayList blockingResources_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -909,8 +905,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
         metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -938,21 +933,11 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datalabeling.v1beta1.AnnotatedDataset buildPartial() {
       com.google.cloud.datalabeling.v1beta1.AnnotatedDataset result =
           new com.google.cloud.datalabeling.v1beta1.AnnotatedDataset(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.datalabeling.v1beta1.AnnotatedDataset result) {
-      if (((bitField0_ & 0x00000400) != 0)) {
-        blockingResources_ = blockingResources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.blockingResources_ = blockingResources_;
     }
 
     private void buildPartial0(com.google.cloud.datalabeling.v1beta1.AnnotatedDataset result) {
@@ -986,6 +971,10 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        blockingResources_.makeImmutable();
+        result.blockingResources_ = blockingResources_;
       }
     }
 
@@ -1074,7 +1063,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       if (!other.blockingResources_.isEmpty()) {
         if (blockingResources_.isEmpty()) {
           blockingResources_ = other.blockingResources_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensureBlockingResourcesIsMutable();
           blockingResources_.addAll(other.blockingResources_);
@@ -2398,14 +2387,14 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       return metadataBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList blockingResources_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList blockingResources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureBlockingResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!blockingResources_.isModifiable()) {
         blockingResources_ = new com.google.protobuf.LazyStringArrayList(blockingResources_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -2420,7 +2409,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return A list containing the blockingResources.
      */
     public com.google.protobuf.ProtocolStringList getBlockingResourcesList() {
-      return blockingResources_.getUnmodifiableView();
+      blockingResources_.makeImmutable();
+      return blockingResources_;
     }
     /**
      *
@@ -2489,6 +2479,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       }
       ensureBlockingResourcesIsMutable();
       blockingResources_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2511,6 +2502,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       }
       ensureBlockingResourcesIsMutable();
       blockingResources_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2530,6 +2522,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
     public Builder addAllBlockingResources(java.lang.Iterable<java.lang.String> values) {
       ensureBlockingResourcesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blockingResources_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2546,8 +2539,9 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearBlockingResources() {
-      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -2571,6 +2565,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureBlockingResourcesIsMutable();
       blockingResources_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

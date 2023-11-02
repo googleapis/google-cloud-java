@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,9 @@ public interface GcsFilesetSpecOrBuilder
    * documentation](https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames)
    * for more information. Note that bucket wildcards are currently not
    * supported.
+   *
    * Examples of valid file_patterns:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
    *                              directory.
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -49,7 +51,9 @@ public interface GcsFilesetSpecOrBuilder
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to provide more powerful matches, for example:
+   *
    *  * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *
@@ -67,7 +71,9 @@ public interface GcsFilesetSpecOrBuilder
    * documentation](https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames)
    * for more information. Note that bucket wildcards are currently not
    * supported.
+   *
    * Examples of valid file_patterns:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
    *                              directory.
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -84,7 +90,9 @@ public interface GcsFilesetSpecOrBuilder
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to provide more powerful matches, for example:
+   *
    *  * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *
@@ -102,7 +110,9 @@ public interface GcsFilesetSpecOrBuilder
    * documentation](https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames)
    * for more information. Note that bucket wildcards are currently not
    * supported.
+   *
    * Examples of valid file_patterns:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
    *                              directory.
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -119,7 +129,9 @@ public interface GcsFilesetSpecOrBuilder
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to provide more powerful matches, for example:
+   *
    *  * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *
@@ -138,7 +150,9 @@ public interface GcsFilesetSpecOrBuilder
    * documentation](https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames)
    * for more information. Note that bucket wildcards are currently not
    * supported.
+   *
    * Examples of valid file_patterns:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
    *                              directory.
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -155,7 +169,9 @@ public interface GcsFilesetSpecOrBuilder
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to provide more powerful matches, for example:
+   *
    *  * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *
@@ -170,8 +186,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -183,8 +199,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -196,8 +212,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -209,8 +225,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -223,8 +239,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,6 +96,7 @@ public interface RunPipelineRequestOrBuilder
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
+   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -110,6 +111,7 @@ public interface RunPipelineRequestOrBuilder
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
+   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -127,6 +129,7 @@ public interface RunPipelineRequestOrBuilder
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
+   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -141,6 +144,7 @@ public interface RunPipelineRequestOrBuilder
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
+   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -159,6 +163,7 @@ public interface RunPipelineRequestOrBuilder
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
+   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>

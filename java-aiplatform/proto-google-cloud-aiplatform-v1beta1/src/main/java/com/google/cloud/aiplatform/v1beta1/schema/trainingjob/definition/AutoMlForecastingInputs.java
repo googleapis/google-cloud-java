@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,23 +40,18 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     transformations_ = java.util.Collections.emptyList();
     optimizationObjective_ = "";
     weightColumn_ = "";
-    timeSeriesAttributeColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    unavailableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    availableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    timeSeriesAttributeColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    unavailableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    availableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
     quantiles_ = emptyDoubleList();
     validationOptions_ = "";
-    additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    additionalExperiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AutoMlForecastingInputs();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -216,7 +211,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             .Transformation.TextTransformationOrBuilder
         getTextOrBuilder();
 
-    public com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
+    com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
             .Transformation.TransformationDetailCase
         getTransformationDetailCase();
   }
@@ -240,11 +235,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Transformation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -313,11 +303,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new AutoTransformation();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -960,14 +945,19 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      *
      * <pre>
      * Training pipeline will perform following transformation functions.
+     *
      * *  The value converted to float32.
+     *
      * *  The z_score of the value.
+     *
      * *  log(value+1) when the value is greater than or equal to 0. Otherwise,
      *    this transformation is not applied and the value is considered a
      *    missing value.
+     *
      * *  z_score of log(value+1) when the value is greater than or equal to 0.
      *    Otherwise, this transformation is not applied and the value is
      *    considered a missing value.
+     *
      * *  A boolean value that indicates whether the value is valid.
      * </pre>
      *
@@ -992,11 +982,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new NumericTransformation();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1252,14 +1237,19 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        *
        * <pre>
        * Training pipeline will perform following transformation functions.
+       *
        * *  The value converted to float32.
+       *
        * *  The z_score of the value.
+       *
        * *  log(value+1) when the value is greater than or equal to 0. Otherwise,
        *    this transformation is not applied and the value is considered a
        *    missing value.
+       *
        * *  z_score of log(value+1) when the value is greater than or equal to 0.
        *    Otherwise, this transformation is not applied and the value is
        *    considered a missing value.
+       *
        * *  A boolean value that indicates whether the value is valid.
        * </pre>
        *
@@ -1647,10 +1637,13 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      *
      * <pre>
      * Training pipeline will perform following transformation functions.
+     *
      * *  The categorical string as is--no change to case, punctuation,
      *    spelling, tense, and so on.
+     *
      * *  Convert the category name to a dictionary lookup index and generate an
      *    embedding for each index.
+     *
      * *  Categories that appear less than 5 times in the training dataset are
      *    treated as the "unknown" category. The "unknown" category gets its own
      *    special lookup index and resulting embedding.
@@ -1678,11 +1671,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new CategoricalTransformation();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1939,10 +1927,13 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        *
        * <pre>
        * Training pipeline will perform following transformation functions.
+       *
        * *  The categorical string as is--no change to case, punctuation,
        *    spelling, tense, and so on.
+       *
        * *  Convert the category name to a dictionary lookup index and generate an
        *    embedding for each index.
+       *
        * *  Categories that appear less than 5 times in the training dataset are
        *    treated as the "unknown" category. The "unknown" category gets its own
        *    special lookup index and resulting embedding.
@@ -2335,13 +2326,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * <pre>
        * The format in which that time field is expressed. The time_format must
        * either be one of:
+       *
        * * `unix-seconds`
+       *
        * * `unix-milliseconds`
+       *
        * * `unix-microseconds`
+       *
        * * `unix-nanoseconds`
+       *
        * (for respectively number of seconds, milliseconds, microseconds and
        * nanoseconds since start of the Unix epoch);
+       *
        * or be written in `strftime` syntax.
+       *
        * If time_format is not set, then the
        * default format is RFC 3339 `date-time` format, where
        * `time-offset` = `"Z"` (e.g. 1985-04-12T23:20:50.52Z)
@@ -2358,13 +2356,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * <pre>
        * The format in which that time field is expressed. The time_format must
        * either be one of:
+       *
        * * `unix-seconds`
+       *
        * * `unix-milliseconds`
+       *
        * * `unix-microseconds`
+       *
        * * `unix-nanoseconds`
+       *
        * (for respectively number of seconds, milliseconds, microseconds and
        * nanoseconds since start of the Unix epoch);
+       *
        * or be written in `strftime` syntax.
+       *
        * If time_format is not set, then the
        * default format is RFC 3339 `date-time` format, where
        * `time-offset` = `"Z"` (e.g. 1985-04-12T23:20:50.52Z)
@@ -2381,9 +2386,12 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      *
      * <pre>
      * Training pipeline will perform following transformation functions.
+     *
      * *  Apply the transformation functions for Numerical columns.
+     *
      * *  Determine the year, month, day,and weekday. Treat each value from the
      *    timestamp as a Categorical column.
+     *
      * *  Invalid numerical values (for example, values that fall outside of a
      *    typical timestamp range, or are extreme values) receive no special
      *    treatment and are not removed.
@@ -2411,11 +2419,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new TimestampTransformation();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2486,13 +2489,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * <pre>
        * The format in which that time field is expressed. The time_format must
        * either be one of:
+       *
        * * `unix-seconds`
+       *
        * * `unix-milliseconds`
+       *
        * * `unix-microseconds`
+       *
        * * `unix-nanoseconds`
+       *
        * (for respectively number of seconds, milliseconds, microseconds and
        * nanoseconds since start of the Unix epoch);
+       *
        * or be written in `strftime` syntax.
+       *
        * If time_format is not set, then the
        * default format is RFC 3339 `date-time` format, where
        * `time-offset` = `"Z"` (e.g. 1985-04-12T23:20:50.52Z)
@@ -2520,13 +2530,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * <pre>
        * The format in which that time field is expressed. The time_format must
        * either be one of:
+       *
        * * `unix-seconds`
+       *
        * * `unix-milliseconds`
+       *
        * * `unix-microseconds`
+       *
        * * `unix-nanoseconds`
+       *
        * (for respectively number of seconds, milliseconds, microseconds and
        * nanoseconds since start of the Unix epoch);
+       *
        * or be written in `strftime` syntax.
+       *
        * If time_format is not set, then the
        * default format is RFC 3339 `date-time` format, where
        * `time-offset` = `"Z"` (e.g. 1985-04-12T23:20:50.52Z)
@@ -2753,9 +2770,12 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        *
        * <pre>
        * Training pipeline will perform following transformation functions.
+       *
        * *  Apply the transformation functions for Numerical columns.
+       *
        * *  Determine the year, month, day,and weekday. Treat each value from the
        *    timestamp as a Categorical column.
+       *
        * *  Invalid numerical values (for example, values that fall outside of a
        *    typical timestamp range, or are extreme values) receive no special
        *    treatment and are not removed.
@@ -3073,13 +3093,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
          * <pre>
          * The format in which that time field is expressed. The time_format must
          * either be one of:
+         *
          * * `unix-seconds`
+         *
          * * `unix-milliseconds`
+         *
          * * `unix-microseconds`
+         *
          * * `unix-nanoseconds`
+         *
          * (for respectively number of seconds, milliseconds, microseconds and
          * nanoseconds since start of the Unix epoch);
+         *
          * or be written in `strftime` syntax.
+         *
          * If time_format is not set, then the
          * default format is RFC 3339 `date-time` format, where
          * `time-offset` = `"Z"` (e.g. 1985-04-12T23:20:50.52Z)
@@ -3106,13 +3133,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
          * <pre>
          * The format in which that time field is expressed. The time_format must
          * either be one of:
+         *
          * * `unix-seconds`
+         *
          * * `unix-milliseconds`
+         *
          * * `unix-microseconds`
+         *
          * * `unix-nanoseconds`
+         *
          * (for respectively number of seconds, milliseconds, microseconds and
          * nanoseconds since start of the Unix epoch);
+         *
          * or be written in `strftime` syntax.
+         *
          * If time_format is not set, then the
          * default format is RFC 3339 `date-time` format, where
          * `time-offset` = `"Z"` (e.g. 1985-04-12T23:20:50.52Z)
@@ -3139,13 +3173,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
          * <pre>
          * The format in which that time field is expressed. The time_format must
          * either be one of:
+         *
          * * `unix-seconds`
+         *
          * * `unix-milliseconds`
+         *
          * * `unix-microseconds`
+         *
          * * `unix-nanoseconds`
+         *
          * (for respectively number of seconds, milliseconds, microseconds and
          * nanoseconds since start of the Unix epoch);
+         *
          * or be written in `strftime` syntax.
+         *
          * If time_format is not set, then the
          * default format is RFC 3339 `date-time` format, where
          * `time-offset` = `"Z"` (e.g. 1985-04-12T23:20:50.52Z)
@@ -3171,13 +3212,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
          * <pre>
          * The format in which that time field is expressed. The time_format must
          * either be one of:
+         *
          * * `unix-seconds`
+         *
          * * `unix-milliseconds`
+         *
          * * `unix-microseconds`
+         *
          * * `unix-nanoseconds`
+         *
          * (for respectively number of seconds, milliseconds, microseconds and
          * nanoseconds since start of the Unix epoch);
+         *
          * or be written in `strftime` syntax.
+         *
          * If time_format is not set, then the
          * default format is RFC 3339 `date-time` format, where
          * `time-offset` = `"Z"` (e.g. 1985-04-12T23:20:50.52Z)
@@ -3199,13 +3247,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
          * <pre>
          * The format in which that time field is expressed. The time_format must
          * either be one of:
+         *
          * * `unix-seconds`
+         *
          * * `unix-milliseconds`
+         *
          * * `unix-microseconds`
+         *
          * * `unix-nanoseconds`
+         *
          * (for respectively number of seconds, milliseconds, microseconds and
          * nanoseconds since start of the Unix epoch);
+         *
          * or be written in `strftime` syntax.
+         *
          * If time_format is not set, then the
          * default format is RFC 3339 `date-time` format, where
          * `time-offset` = `"Z"` (e.g. 1985-04-12T23:20:50.52Z)
@@ -3322,8 +3377,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      *
      * <pre>
      * Training pipeline will perform following transformation functions.
+     *
      * *  The text as is--no change to case, punctuation, spelling, tense, and
      *    so on.
+     *
      * *  Convert the category name to a dictionary lookup index and generate an
      *    embedding for each index.
      * </pre>
@@ -3349,11 +3406,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new TextTransformation();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3609,8 +3661,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        *
        * <pre>
        * Training pipeline will perform following transformation functions.
+       *
        * *  The text as is--no change to case, punctuation, spelling, tense, and
        *    so on.
+       *
        * *  Convert the category name to a dictionary lookup index and generate an
        *    embedding for each index.
        * </pre>
@@ -3977,6 +4031,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     private int transformationDetailCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object transformationDetail_;
 
     public enum TransformationDetailCase
@@ -6043,11 +6099,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * The time granularity unit of this time period.
      * The supported units are:
+     *
      *  * "minute"
+     *
      *  * "hour"
+     *
      *  * "day"
+     *
      *  * "week"
+     *
      *  * "month"
+     *
      *  * "year"
      * </pre>
      *
@@ -6062,11 +6124,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * The time granularity unit of this time period.
      * The supported units are:
+     *
      *  * "minute"
+     *
      *  * "hour"
+     *
      *  * "day"
+     *
      *  * "week"
+     *
      *  * "month"
+     *
      *  * "year"
      * </pre>
      *
@@ -6122,11 +6190,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return new Granularity();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMLForecastingProto
@@ -6156,11 +6219,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * The time granularity unit of this time period.
      * The supported units are:
+     *
      *  * "minute"
+     *
      *  * "hour"
+     *
      *  * "day"
+     *
      *  * "week"
+     *
      *  * "month"
+     *
      *  * "year"
      * </pre>
      *
@@ -6186,11 +6255,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * The time granularity unit of this time period.
      * The supported units are:
+     *
      *  * "minute"
+     *
      *  * "hour"
+     *
      *  * "day"
+     *
      *  * "week"
+     *
      *  * "month"
+     *
      *  * "year"
      * </pre>
      *
@@ -6668,11 +6743,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * <pre>
        * The time granularity unit of this time period.
        * The supported units are:
+       *
        *  * "minute"
+       *
        *  * "hour"
+       *
        *  * "day"
+       *
        *  * "week"
+       *
        *  * "month"
+       *
        *  * "year"
        * </pre>
        *
@@ -6697,11 +6778,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * <pre>
        * The time granularity unit of this time period.
        * The supported units are:
+       *
        *  * "minute"
+       *
        *  * "hour"
+       *
        *  * "day"
+       *
        *  * "week"
+       *
        *  * "month"
+       *
        *  * "year"
        * </pre>
        *
@@ -6726,11 +6813,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * <pre>
        * The time granularity unit of this time period.
        * The supported units are:
+       *
        *  * "minute"
+       *
        *  * "hour"
+       *
        *  * "day"
+       *
        *  * "week"
+       *
        *  * "month"
+       *
        *  * "year"
        * </pre>
        *
@@ -6754,11 +6847,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * <pre>
        * The time granularity unit of this time period.
        * The supported units are:
+       *
        *  * "minute"
+       *
        *  * "hour"
+       *
        *  * "day"
+       *
        *  * "week"
+       *
        *  * "month"
+       *
        *  * "year"
        * </pre>
        *
@@ -6778,11 +6877,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * <pre>
        * The time granularity unit of this time period.
        * The supported units are:
+       *
        *  * "minute"
+       *
        *  * "hour"
+       *
        *  * "day"
+       *
        *  * "week"
+       *
        *  * "month"
+       *
        *  * "year"
        * </pre>
        *
@@ -7209,13 +7314,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    * Objective function the model is optimizing towards. The training process
    * creates a model that optimizes the value of the objective
    * function over the validation set.
+   *
    * The supported optimization objectives:
+   *
    *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+   *
    *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+   *
    *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+   *
    *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+   *
    *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
    *     percentage error (WAPE) and mean-absolute-error (MAE).
+   *
    *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
    *     defined in `quantiles`.
    * </pre>
@@ -7243,13 +7355,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    * Objective function the model is optimizing towards. The training process
    * creates a model that optimizes the value of the objective
    * function over the validation set.
+   *
    * The supported optimization objectives:
+   *
    *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+   *
    *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+   *
    *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+   *
    *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+   *
    *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
    *     percentage error (WAPE) and mean-absolute-error (MAE).
+   *
    *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
    *     defined in `quantiles`.
    * </pre>
@@ -7279,13 +7398,16 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    * <pre>
    * Required. The train budget of creating this model, expressed in milli node
    * hours i.e. 1,000 value in this field means 1 node hour.
+   *
    * The training cost of the model will not exceed this budget. The final cost
    * will be attempted to be close to the budget, though may end up being (even)
    * noticeably smaller - at the backend's discretion. This especially may
    * happen when further model training ceases to provide any improvements.
+   *
    * If the budget is set to a value known to be insufficient to train a
    * model for the given dataset, the training won't be attempted and
    * will error.
+   *
    * The train budget must be between 1,000 and 72,000 milli node hours,
    * inclusive.
    * </pre>
@@ -7363,7 +7485,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public static final int TIME_SERIES_ATTRIBUTE_COLUMNS_FIELD_NUMBER = 19;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList timeSeriesAttributeColumns_;
+  private com.google.protobuf.LazyStringArrayList timeSeriesAttributeColumns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -7434,7 +7557,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public static final int UNAVAILABLE_AT_FORECAST_COLUMNS_FIELD_NUMBER = 20;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unavailableAtForecastColumns_;
+  private com.google.protobuf.LazyStringArrayList unavailableAtForecastColumns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -7509,7 +7633,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public static final int AVAILABLE_AT_FORECAST_COLUMNS_FIELD_NUMBER = 21;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList availableAtForecastColumns_;
+  private com.google.protobuf.LazyStringArrayList availableAtForecastColumns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -7826,8 +7951,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    * <pre>
    * Validation options for the data validation component. The available options
    * are:
+   *
    *   * "fail-pipeline" - default, will validate against the validation and
    *      fail the pipeline if it fails.
+   *
    *   * "ignore-validation" - ignore the results of the validation and continue
    * </pre>
    *
@@ -7853,8 +7980,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    * <pre>
    * Validation options for the data validation component. The available options
    * are:
+   *
    *   * "fail-pipeline" - default, will validate against the validation and
    *      fail the pipeline if it fails.
+   *
    *   * "ignore-validation" - ignore the results of the validation and continue
    * </pre>
    *
@@ -7878,7 +8007,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public static final int ADDITIONAL_EXPERIMENTS_FIELD_NUMBER = 25;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList additionalExperiments_;
+  private com.google.protobuf.LazyStringArrayList additionalExperiments_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -8387,12 +8517,9 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       optimizationObjective_ = "";
       trainBudgetMilliNodeHours_ = 0L;
       weightColumn_ = "";
-      timeSeriesAttributeColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
-      unavailableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
-      availableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      timeSeriesAttributeColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      unavailableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      availableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       dataGranularity_ = null;
       if (dataGranularityBuilder_ != null) {
         dataGranularityBuilder_.dispose();
@@ -8407,8 +8534,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       quantiles_ = emptyDoubleList();
       validationOptions_ = "";
-      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00010000);
+      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -8464,31 +8590,11 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       } else {
         result.transformations_ = transformationsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        timeSeriesAttributeColumns_ = timeSeriesAttributeColumns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.timeSeriesAttributeColumns_ = timeSeriesAttributeColumns_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        unavailableAtForecastColumns_ = unavailableAtForecastColumns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.unavailableAtForecastColumns_ = unavailableAtForecastColumns_;
-      if (((bitField0_ & 0x00000200) != 0)) {
-        availableAtForecastColumns_ = availableAtForecastColumns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.availableAtForecastColumns_ = availableAtForecastColumns_;
       if (((bitField0_ & 0x00004000) != 0)) {
         quantiles_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00004000);
       }
       result.quantiles_ = quantiles_;
-      if (((bitField0_ & 0x00010000) != 0)) {
-        additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00010000);
-      }
-      result.additionalExperiments_ = additionalExperiments_;
     }
 
     private void buildPartial0(
@@ -8513,6 +8619,18 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.weightColumn_ = weightColumn_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        timeSeriesAttributeColumns_.makeImmutable();
+        result.timeSeriesAttributeColumns_ = timeSeriesAttributeColumns_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        unavailableAtForecastColumns_.makeImmutable();
+        result.unavailableAtForecastColumns_ = unavailableAtForecastColumns_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        availableAtForecastColumns_.makeImmutable();
+        result.availableAtForecastColumns_ = availableAtForecastColumns_;
+      }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.dataGranularity_ =
             dataGranularityBuilder_ == null ? dataGranularity_ : dataGranularityBuilder_.build();
@@ -8531,6 +8649,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.validationOptions_ = validationOptions_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        additionalExperiments_.makeImmutable();
+        result.additionalExperiments_ = additionalExperiments_;
       }
     }
 
@@ -8647,7 +8769,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       if (!other.timeSeriesAttributeColumns_.isEmpty()) {
         if (timeSeriesAttributeColumns_.isEmpty()) {
           timeSeriesAttributeColumns_ = other.timeSeriesAttributeColumns_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureTimeSeriesAttributeColumnsIsMutable();
           timeSeriesAttributeColumns_.addAll(other.timeSeriesAttributeColumns_);
@@ -8657,7 +8779,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       if (!other.unavailableAtForecastColumns_.isEmpty()) {
         if (unavailableAtForecastColumns_.isEmpty()) {
           unavailableAtForecastColumns_ = other.unavailableAtForecastColumns_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureUnavailableAtForecastColumnsIsMutable();
           unavailableAtForecastColumns_.addAll(other.unavailableAtForecastColumns_);
@@ -8667,7 +8789,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       if (!other.availableAtForecastColumns_.isEmpty()) {
         if (availableAtForecastColumns_.isEmpty()) {
           availableAtForecastColumns_ = other.availableAtForecastColumns_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureAvailableAtForecastColumnsIsMutable();
           availableAtForecastColumns_.addAll(other.availableAtForecastColumns_);
@@ -8704,7 +8826,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       if (!other.additionalExperiments_.isEmpty()) {
         if (additionalExperiments_.isEmpty()) {
           additionalExperiments_ = other.additionalExperiments_;
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ |= 0x00010000;
         } else {
           ensureAdditionalExperimentsIsMutable();
           additionalExperiments_.addAll(other.additionalExperiments_);
@@ -9716,13 +9838,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Objective function the model is optimizing towards. The training process
      * creates a model that optimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives:
+     *
      *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+     *
      *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+     *
      *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+     *
      *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+     *
      *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
      *     percentage error (WAPE) and mean-absolute-error (MAE).
+     *
      *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
      *     defined in `quantiles`.
      * </pre>
@@ -9749,13 +9878,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Objective function the model is optimizing towards. The training process
      * creates a model that optimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives:
+     *
      *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+     *
      *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+     *
      *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+     *
      *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+     *
      *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
      *     percentage error (WAPE) and mean-absolute-error (MAE).
+     *
      *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
      *     defined in `quantiles`.
      * </pre>
@@ -9782,13 +9918,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Objective function the model is optimizing towards. The training process
      * creates a model that optimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives:
+     *
      *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+     *
      *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+     *
      *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+     *
      *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+     *
      *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
      *     percentage error (WAPE) and mean-absolute-error (MAE).
+     *
      *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
      *     defined in `quantiles`.
      * </pre>
@@ -9814,13 +9957,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Objective function the model is optimizing towards. The training process
      * creates a model that optimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives:
+     *
      *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+     *
      *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+     *
      *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+     *
      *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+     *
      *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
      *     percentage error (WAPE) and mean-absolute-error (MAE).
+     *
      *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
      *     defined in `quantiles`.
      * </pre>
@@ -9842,13 +9992,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Objective function the model is optimizing towards. The training process
      * creates a model that optimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives:
+     *
      *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+     *
      *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+     *
      *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+     *
      *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+     *
      *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
      *     percentage error (WAPE) and mean-absolute-error (MAE).
+     *
      *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
      *     defined in `quantiles`.
      * </pre>
@@ -9876,13 +10033,16 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * Required. The train budget of creating this model, expressed in milli node
      * hours i.e. 1,000 value in this field means 1 node hour.
+     *
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
      * happen when further model training ceases to provide any improvements.
+     *
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     *
      * The train budget must be between 1,000 and 72,000 milli node hours,
      * inclusive.
      * </pre>
@@ -9901,13 +10061,16 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * Required. The train budget of creating this model, expressed in milli node
      * hours i.e. 1,000 value in this field means 1 node hour.
+     *
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
      * happen when further model training ceases to provide any improvements.
+     *
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     *
      * The train budget must be between 1,000 and 72,000 milli node hours,
      * inclusive.
      * </pre>
@@ -9930,13 +10093,16 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * Required. The train budget of creating this model, expressed in milli node
      * hours i.e. 1,000 value in this field means 1 node hour.
+     *
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
      * happen when further model training ceases to provide any improvements.
+     *
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     *
      * The train budget must be between 1,000 and 72,000 milli node hours,
      * inclusive.
      * </pre>
@@ -10083,15 +10249,15 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.protobuf.LazyStringList timeSeriesAttributeColumns_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList timeSeriesAttributeColumns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTimeSeriesAttributeColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!timeSeriesAttributeColumns_.isModifiable()) {
         timeSeriesAttributeColumns_ =
             new com.google.protobuf.LazyStringArrayList(timeSeriesAttributeColumns_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -10107,7 +10273,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return A list containing the timeSeriesAttributeColumns.
      */
     public com.google.protobuf.ProtocolStringList getTimeSeriesAttributeColumnsList() {
-      return timeSeriesAttributeColumns_.getUnmodifiableView();
+      timeSeriesAttributeColumns_.makeImmutable();
+      return timeSeriesAttributeColumns_;
     }
     /**
      *
@@ -10180,6 +10347,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       ensureTimeSeriesAttributeColumnsIsMutable();
       timeSeriesAttributeColumns_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -10203,6 +10371,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       ensureTimeSeriesAttributeColumnsIsMutable();
       timeSeriesAttributeColumns_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -10223,6 +10392,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public Builder addAllTimeSeriesAttributeColumns(java.lang.Iterable<java.lang.String> values) {
       ensureTimeSeriesAttributeColumnsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, timeSeriesAttributeColumns_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -10240,8 +10410,9 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearTimeSeriesAttributeColumns() {
-      timeSeriesAttributeColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      timeSeriesAttributeColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -10266,19 +10437,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureTimeSeriesAttributeColumnsIsMutable();
       timeSeriesAttributeColumns_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList unavailableAtForecastColumns_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unavailableAtForecastColumns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUnavailableAtForecastColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!unavailableAtForecastColumns_.isModifiable()) {
         unavailableAtForecastColumns_ =
             new com.google.protobuf.LazyStringArrayList(unavailableAtForecastColumns_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -10295,7 +10467,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return A list containing the unavailableAtForecastColumns.
      */
     public com.google.protobuf.ProtocolStringList getUnavailableAtForecastColumnsList() {
-      return unavailableAtForecastColumns_.getUnmodifiableView();
+      unavailableAtForecastColumns_.makeImmutable();
+      return unavailableAtForecastColumns_;
     }
     /**
      *
@@ -10372,6 +10545,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       ensureUnavailableAtForecastColumnsIsMutable();
       unavailableAtForecastColumns_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10396,6 +10570,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       ensureUnavailableAtForecastColumnsIsMutable();
       unavailableAtForecastColumns_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10417,6 +10592,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public Builder addAllUnavailableAtForecastColumns(java.lang.Iterable<java.lang.String> values) {
       ensureUnavailableAtForecastColumnsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unavailableAtForecastColumns_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10435,8 +10611,9 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearUnavailableAtForecastColumns() {
-      unavailableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unavailableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -10462,19 +10639,20 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureUnavailableAtForecastColumnsIsMutable();
       unavailableAtForecastColumns_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList availableAtForecastColumns_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList availableAtForecastColumns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAvailableAtForecastColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!availableAtForecastColumns_.isModifiable()) {
         availableAtForecastColumns_ =
             new com.google.protobuf.LazyStringArrayList(availableAtForecastColumns_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -10492,7 +10670,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return A list containing the availableAtForecastColumns.
      */
     public com.google.protobuf.ProtocolStringList getAvailableAtForecastColumnsList() {
-      return availableAtForecastColumns_.getUnmodifiableView();
+      availableAtForecastColumns_.makeImmutable();
+      return availableAtForecastColumns_;
     }
     /**
      *
@@ -10573,6 +10752,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       ensureAvailableAtForecastColumnsIsMutable();
       availableAtForecastColumns_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10598,6 +10778,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       ensureAvailableAtForecastColumnsIsMutable();
       availableAtForecastColumns_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10620,6 +10801,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public Builder addAllAvailableAtForecastColumns(java.lang.Iterable<java.lang.String> values) {
       ensureAvailableAtForecastColumnsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, availableAtForecastColumns_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10639,8 +10821,9 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearAvailableAtForecastColumns() {
-      availableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      availableAtForecastColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -10667,6 +10850,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureAvailableAtForecastColumnsIsMutable();
       availableAtForecastColumns_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -11416,8 +11600,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * Validation options for the data validation component. The available options
      * are:
+     *
      *   * "fail-pipeline" - default, will validate against the validation and
      *      fail the pipeline if it fails.
+     *
      *   * "ignore-validation" - ignore the results of the validation and continue
      * </pre>
      *
@@ -11442,8 +11628,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * Validation options for the data validation component. The available options
      * are:
+     *
      *   * "fail-pipeline" - default, will validate against the validation and
      *      fail the pipeline if it fails.
+     *
      *   * "ignore-validation" - ignore the results of the validation and continue
      * </pre>
      *
@@ -11468,8 +11656,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * Validation options for the data validation component. The available options
      * are:
+     *
      *   * "fail-pipeline" - default, will validate against the validation and
      *      fail the pipeline if it fails.
+     *
      *   * "ignore-validation" - ignore the results of the validation and continue
      * </pre>
      *
@@ -11493,8 +11683,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * Validation options for the data validation component. The available options
      * are:
+     *
      *   * "fail-pipeline" - default, will validate against the validation and
      *      fail the pipeline if it fails.
+     *
      *   * "ignore-validation" - ignore the results of the validation and continue
      * </pre>
      *
@@ -11514,8 +11706,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * <pre>
      * Validation options for the data validation component. The available options
      * are:
+     *
      *   * "fail-pipeline" - default, will validate against the validation and
      *      fail the pipeline if it fails.
+     *
      *   * "ignore-validation" - ignore the results of the validation and continue
      * </pre>
      *
@@ -11535,15 +11729,15 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.protobuf.LazyStringList additionalExperiments_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList additionalExperiments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAdditionalExperimentsIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!additionalExperiments_.isModifiable()) {
         additionalExperiments_ =
             new com.google.protobuf.LazyStringArrayList(additionalExperiments_);
-        bitField0_ |= 0x00010000;
       }
+      bitField0_ |= 0x00010000;
     }
     /**
      *
@@ -11557,7 +11751,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return A list containing the additionalExperiments.
      */
     public com.google.protobuf.ProtocolStringList getAdditionalExperimentsList() {
-      return additionalExperiments_.getUnmodifiableView();
+      additionalExperiments_.makeImmutable();
+      return additionalExperiments_;
     }
     /**
      *
@@ -11622,6 +11817,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       ensureAdditionalExperimentsIsMutable();
       additionalExperiments_.set(index, value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -11643,6 +11839,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       ensureAdditionalExperimentsIsMutable();
       additionalExperiments_.add(value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -11661,6 +11858,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public Builder addAllAdditionalExperiments(java.lang.Iterable<java.lang.String> values) {
       ensureAdditionalExperimentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalExperiments_);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -11676,8 +11874,9 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearAdditionalExperiments() {
-      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00010000);
+      ;
       onChanged();
       return this;
     }
@@ -11700,6 +11899,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureAdditionalExperimentsIsMutable();
       additionalExperiments_.add(value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLocationsP
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPoliciesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodeTypesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateCloudsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionPeeringRoutesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListSubnetsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListVmwareEngineNetworksPagedResponse;
 
@@ -37,17 +39,21 @@ import com.google.cloud.vmwareengine.v1.CreateClusterRequest;
 import com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest;
 import com.google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.Credentials;
 import com.google.cloud.vmwareengine.v1.DeleteClusterRequest;
 import com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.GetClusterRequest;
 import com.google.cloud.vmwareengine.v1.GetHcxActivationKeyRequest;
 import com.google.cloud.vmwareengine.v1.GetNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.GetNodeTypeRequest;
 import com.google.cloud.vmwareengine.v1.GetPrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest;
+import com.google.cloud.vmwareengine.v1.GetSubnetRequest;
 import com.google.cloud.vmwareengine.v1.GetVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.HcxActivationKey;
 import com.google.cloud.vmwareengine.v1.ListClustersRequest;
@@ -60,6 +66,10 @@ import com.google.cloud.vmwareengine.v1.ListNodeTypesRequest;
 import com.google.cloud.vmwareengine.v1.ListNodeTypesResponse;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsRequest;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsResponse;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse;
 import com.google.cloud.vmwareengine.v1.ListSubnetsRequest;
 import com.google.cloud.vmwareengine.v1.ListSubnetsResponse;
 import com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest;
@@ -68,14 +78,18 @@ import com.google.cloud.vmwareengine.v1.NetworkPolicy;
 import com.google.cloud.vmwareengine.v1.NodeType;
 import com.google.cloud.vmwareengine.v1.OperationMetadata;
 import com.google.cloud.vmwareengine.v1.PrivateCloud;
+import com.google.cloud.vmwareengine.v1.PrivateConnection;
 import com.google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ShowNsxCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest;
+import com.google.cloud.vmwareengine.v1.Subnet;
 import com.google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.UpdateClusterRequest;
 import com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest;
+import com.google.cloud.vmwareengine.v1.UpdateSubnetRequest;
 import com.google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.VmwareEngineNetwork;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -204,6 +218,19 @@ public abstract class VmwareEngineStub implements BackgroundResource {
 
   public UnaryCallable<ListSubnetsRequest, ListSubnetsResponse> listSubnetsCallable() {
     throw new UnsupportedOperationException("Not implemented: listSubnetsCallable()");
+  }
+
+  public UnaryCallable<GetSubnetRequest, Subnet> getSubnetCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSubnetCallable()");
+  }
+
+  public OperationCallable<UpdateSubnetRequest, Subnet, OperationMetadata>
+      updateSubnetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSubnetOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateSubnetRequest, Operation> updateSubnetCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSubnetCallable()");
   }
 
   public UnaryCallable<ListNodeTypesRequest, ListNodeTypesPagedResponse>
@@ -365,6 +392,70 @@ public abstract class VmwareEngineStub implements BackgroundResource {
   public UnaryCallable<ListVmwareEngineNetworksRequest, ListVmwareEngineNetworksResponse>
       listVmwareEngineNetworksCallable() {
     throw new UnsupportedOperationException("Not implemented: listVmwareEngineNetworksCallable()");
+  }
+
+  public OperationCallable<CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createPrivateConnectionOperationCallable()");
+  }
+
+  public UnaryCallable<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createPrivateConnectionCallable()");
+  }
+
+  public UnaryCallable<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPrivateConnectionCallable()");
+  }
+
+  public UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listPrivateConnectionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+      listPrivateConnectionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPrivateConnectionsCallable()");
+  }
+
+  public OperationCallable<UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      updatePrivateConnectionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updatePrivateConnectionOperationCallable()");
+  }
+
+  public UnaryCallable<UpdatePrivateConnectionRequest, Operation>
+      updatePrivateConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePrivateConnectionCallable()");
+  }
+
+  public OperationCallable<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deletePrivateConnectionOperationCallable()");
+  }
+
+  public UnaryCallable<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deletePrivateConnectionCallable()");
+  }
+
+  public UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesPagedResponse>
+      listPrivateConnectionPeeringRoutesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listPrivateConnectionPeeringRoutesPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
+      listPrivateConnectionPeeringRoutesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listPrivateConnectionPeeringRoutesCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

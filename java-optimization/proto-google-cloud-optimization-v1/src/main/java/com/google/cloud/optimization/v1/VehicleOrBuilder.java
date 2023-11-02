@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,50 @@ public interface VehicleOrBuilder
    * @return The travelMode.
    */
   com.google.cloud.optimization.v1.Vehicle.TravelMode getTravelMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of conditions to satisfy that affect the way routes are
+   * calculated for the given vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.optimization.v1.RouteModifiers route_modifiers = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the routeModifiers field is set.
+   */
+  boolean hasRouteModifiers();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of conditions to satisfy that affect the way routes are
+   * calculated for the given vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.optimization.v1.RouteModifiers route_modifiers = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The routeModifiers.
+   */
+  com.google.cloud.optimization.v1.RouteModifiers getRouteModifiers();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of conditions to satisfy that affect the way routes are
+   * calculated for the given vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.optimization.v1.RouteModifiers route_modifiers = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.optimization.v1.RouteModifiersOrBuilder getRouteModifiersOrBuilder();
 
   /**
    *
@@ -243,6 +287,7 @@ public interface VehicleOrBuilder
    *
    * <pre>
    * Specifies tags attached to the start of the vehicle's route.
+   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -256,6 +301,7 @@ public interface VehicleOrBuilder
    *
    * <pre>
    * Specifies tags attached to the start of the vehicle's route.
+   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -269,6 +315,7 @@ public interface VehicleOrBuilder
    *
    * <pre>
    * Specifies tags attached to the start of the vehicle's route.
+   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -283,6 +330,7 @@ public interface VehicleOrBuilder
    *
    * <pre>
    * Specifies tags attached to the start of the vehicle's route.
+   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -298,6 +346,7 @@ public interface VehicleOrBuilder
    *
    * <pre>
    * Specifies tags attached to the end of the vehicle's route.
+   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -311,6 +360,7 @@ public interface VehicleOrBuilder
    *
    * <pre>
    * Specifies tags attached to the end of the vehicle's route.
+   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -324,6 +374,7 @@ public interface VehicleOrBuilder
    *
    * <pre>
    * Specifies tags attached to the end of the vehicle's route.
+   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -338,6 +389,7 @@ public interface VehicleOrBuilder
    *
    * <pre>
    * Specifies tags attached to the end of the vehicle's route.
+   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -357,9 +409,11 @@ public interface VehicleOrBuilder
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
+   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
+   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -376,9 +430,11 @@ public interface VehicleOrBuilder
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
+   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
+   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -395,9 +451,11 @@ public interface VehicleOrBuilder
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
+   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
+   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -414,9 +472,11 @@ public interface VehicleOrBuilder
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
+   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
+   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -434,9 +494,11 @@ public interface VehicleOrBuilder
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
+   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
+   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -454,9 +516,11 @@ public interface VehicleOrBuilder
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
+   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
+   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -473,9 +537,11 @@ public interface VehicleOrBuilder
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
+   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
+   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -492,9 +558,11 @@ public interface VehicleOrBuilder
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
+   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
+   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -511,9 +579,11 @@ public interface VehicleOrBuilder
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
+   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
+   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -531,9 +601,11 @@ public interface VehicleOrBuilder
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
+   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
+   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -553,9 +625,11 @@ public interface VehicleOrBuilder
    * It does affect cost if `cost_per_hour` or `cost_per_traveled_hour` are
    * specified. This must be in the range [0.001, 1000.0]. If unset, the vehicle
    * is standard, and this multiple is considered 1.0.
+   *
    * WARNING: Travel times will be rounded to the nearest second after this
    * multiple is applied but before performing any numerical operations, thus,
    * a small multiple may result in a loss of precision.
+   *
    * See also `extra_visit_duration_for_visit_type` below.
    * </pre>
    *
@@ -575,9 +649,11 @@ public interface VehicleOrBuilder
    * It does affect cost if `cost_per_hour` or `cost_per_traveled_hour` are
    * specified. This must be in the range [0.001, 1000.0]. If unset, the vehicle
    * is standard, and this multiple is considered 1.0.
+   *
    * WARNING: Travel times will be rounded to the nearest second after this
    * multiple is applied but before performing any numerical operations, thus,
    * a small multiple may result in a loss of precision.
+   *
    * See also `extra_visit_duration_for_visit_type` below.
    * </pre>
    *
@@ -708,6 +784,7 @@ public interface VehicleOrBuilder
    * <pre>
    * Vehicle costs: all costs add up and must be in the same unit as
    * [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
+   *
    * Cost per hour of the vehicle route. This cost is applied to the total time
    * taken by the route, and includes travel time, waiting time, and visit time.
    * Using `cost_per_hour` instead of just `cost_per_traveled_hour` may result
@@ -773,9 +850,11 @@ public interface VehicleOrBuilder
    * This field only applies to vehicles when their route does not serve any
    * shipments. It indicates if the vehicle should be considered as used or not
    * in this case.
+   *
    * If true, the vehicle goes from its start to its end location even if it
    * doesn't serve any shipments, and time and distance costs resulting from its
    * start --&gt; end travel are taken into account.
+   *
    * Otherwise, it doesn't travel from its start to its end location, and no
    * `break_rule` or delay (from `TransitionAttributes`) are scheduled for this
    * vehicle. In this case, the vehicle's `ShipmentRoute` doesn't contain any
@@ -921,6 +1000,7 @@ public interface VehicleOrBuilder
    * to be taken at visits with the specified `visit_types`. This extra visit
    * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
    * `visit_types`) cannot be empty strings.
+   *
    * If a visit request has multiple types, a duration will be added for each
    * type in the map.
    * </pre>
@@ -939,6 +1019,7 @@ public interface VehicleOrBuilder
    * to be taken at visits with the specified `visit_types`. This extra visit
    * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
    * `visit_types`) cannot be empty strings.
+   *
    * If a visit request has multiple types, a duration will be added for each
    * type in the map.
    * </pre>
@@ -960,6 +1041,7 @@ public interface VehicleOrBuilder
    * to be taken at visits with the specified `visit_types`. This extra visit
    * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
    * `visit_types`) cannot be empty strings.
+   *
    * If a visit request has multiple types, a duration will be added for each
    * type in the map.
    * </pre>
@@ -979,6 +1061,7 @@ public interface VehicleOrBuilder
    * to be taken at visits with the specified `visit_types`. This extra visit
    * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
    * `visit_types`) cannot be empty strings.
+   *
    * If a visit request has multiple types, a duration will be added for each
    * type in the map.
    * </pre>
@@ -1001,6 +1084,7 @@ public interface VehicleOrBuilder
    * to be taken at visits with the specified `visit_types`. This extra visit
    * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
    * `visit_types`) cannot be empty strings.
+   *
    * If a visit request has multiple types, a duration will be added for each
    * type in the map.
    * </pre>
@@ -1083,9 +1167,11 @@ public interface VehicleOrBuilder
    * <pre>
    * If true, `used_if_route_is_empty` must be false, and this vehicle will
    * remain unused.
+   *
    * If a shipment is performed by an ignored vehicle in
    * `injected_first_solution_routes`, it is skipped in the first solution but
    * is free to be performed in the response.
+   *
    * If a shipment is performed by an ignored vehicle in
    * `injected_solution_constraint` and any related pickup/delivery is
    * constrained to remain on the vehicle (i.e., not relaxed to level
@@ -1108,13 +1194,14 @@ public interface VehicleOrBuilder
    * Indices in the `break_rule` field in the source
    * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
    * correspond to break rules enforced on the vehicle.
+   *
    * As of 2018/03, at most one rule index per vehicle can be specified.
    * </pre>
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1484
    * @return A list containing the breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1127,13 +1214,14 @@ public interface VehicleOrBuilder
    * Indices in the `break_rule` field in the source
    * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
    * correspond to break rules enforced on the vehicle.
+   *
    * As of 2018/03, at most one rule index per vehicle can be specified.
    * </pre>
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1484
    * @return The count of breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1146,13 +1234,14 @@ public interface VehicleOrBuilder
    * Indices in the `break_rule` field in the source
    * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
    * correspond to break rules enforced on the vehicle.
+   *
    * As of 2018/03, at most one rule index per vehicle can be specified.
    * </pre>
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1484
    * @param index The index of the element to return.
    * @return The breakRuleIndices at the given index.
    */

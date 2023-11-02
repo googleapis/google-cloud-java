@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   private SecurityPolicyRuleRateLimitOptions() {
     conformAction_ = "";
     enforceOnKey_ = "";
+    enforceOnKeyConfigs_ = java.util.Collections.emptyList();
     enforceOnKeyName_ = "";
     exceedAction_ = "";
   }
@@ -48,11 +49,6 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SecurityPolicyRuleRateLimitOptions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -461,6 +457,96 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     }
   }
 
+  public static final int ENFORCE_ON_KEY_CONFIGS_FIELD_NUMBER = 33906478;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig>
+      enforceOnKeyConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig>
+      getEnforceOnKeyConfigsList() {
+    return enforceOnKeyConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder>
+      getEnforceOnKeyConfigsOrBuilderList() {
+    return enforceOnKeyConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+   * </code>
+   */
+  @java.lang.Override
+  public int getEnforceOnKeyConfigsCount() {
+    return enforceOnKeyConfigs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
+      getEnforceOnKeyConfigs(int index) {
+    return enforceOnKeyConfigs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder
+      getEnforceOnKeyConfigsOrBuilder(int index) {
+    return enforceOnKeyConfigs_.get(index);
+  }
+
   public static final int ENFORCE_ON_KEY_NAME_FIELD_NUMBER = 132555246;
 
   @SuppressWarnings("serial")
@@ -535,7 +621,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
    *
    *
    * <pre>
-   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>optional string exceed_action = 167159073;</code>
@@ -550,7 +636,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
    *
    *
    * <pre>
-   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>optional string exceed_action = 167159073;</code>
@@ -573,7 +659,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
    *
    *
    * <pre>
-   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>optional string exceed_action = 167159073;</code>
@@ -599,7 +685,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
    *
    *
    * <pre>
-   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>
@@ -616,7 +702,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
    *
    *
    * <pre>
-   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>
@@ -635,7 +721,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
    *
    *
    * <pre>
-   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>
@@ -725,6 +811,9 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < enforceOnKeyConfigs_.size(); i++) {
+      output.writeMessage(33906478, enforceOnKeyConfigs_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(42896726, banDurationSec_);
     }
@@ -758,6 +847,11 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
+    for (int i = 0; i < enforceOnKeyConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              33906478, enforceOnKeyConfigs_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(42896726, banDurationSec_);
     }
@@ -820,6 +914,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     if (hasEnforceOnKey()) {
       if (!getEnforceOnKey().equals(other.getEnforceOnKey())) return false;
     }
+    if (!getEnforceOnKeyConfigsList().equals(other.getEnforceOnKeyConfigsList())) return false;
     if (hasEnforceOnKeyName() != other.hasEnforceOnKeyName()) return false;
     if (hasEnforceOnKeyName()) {
       if (!getEnforceOnKeyName().equals(other.getEnforceOnKeyName())) return false;
@@ -862,6 +957,10 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     if (hasEnforceOnKey()) {
       hash = (37 * hash) + ENFORCE_ON_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getEnforceOnKey().hashCode();
+    }
+    if (getEnforceOnKeyConfigsCount() > 0) {
+      hash = (37 * hash) + ENFORCE_ON_KEY_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getEnforceOnKeyConfigsList().hashCode();
     }
     if (hasEnforceOnKeyName()) {
       hash = (37 * hash) + ENFORCE_ON_KEY_NAME_FIELD_NUMBER;
@@ -1020,6 +1119,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBanThresholdFieldBuilder();
+        getEnforceOnKeyConfigsFieldBuilder();
         getExceedRedirectOptionsFieldBuilder();
         getRateLimitThresholdFieldBuilder();
       }
@@ -1037,6 +1137,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       conformAction_ = "";
       enforceOnKey_ = "";
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        enforceOnKeyConfigs_ = java.util.Collections.emptyList();
+      } else {
+        enforceOnKeyConfigs_ = null;
+        enforceOnKeyConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       enforceOnKeyName_ = "";
       exceedAction_ = "";
       exceedRedirectOptions_ = null;
@@ -1077,11 +1184,25 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions result =
           new com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions result) {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          enforceOnKeyConfigs_ = java.util.Collections.unmodifiableList(enforceOnKeyConfigs_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.enforceOnKeyConfigs_ = enforceOnKeyConfigs_;
+      } else {
+        result.enforceOnKeyConfigs_ = enforceOnKeyConfigsBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -1105,22 +1226,22 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         result.enforceOnKey_ = enforceOnKey_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.enforceOnKeyName_ = enforceOnKeyName_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.exceedAction_ = exceedAction_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.exceedRedirectOptions_ =
             exceedRedirectOptionsBuilder_ == null
                 ? exceedRedirectOptions_
                 : exceedRedirectOptionsBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.rateLimitThreshold_ =
             rateLimitThresholdBuilder_ == null
                 ? rateLimitThreshold_
@@ -1193,14 +1314,41 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        if (!other.enforceOnKeyConfigs_.isEmpty()) {
+          if (enforceOnKeyConfigs_.isEmpty()) {
+            enforceOnKeyConfigs_ = other.enforceOnKeyConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureEnforceOnKeyConfigsIsMutable();
+            enforceOnKeyConfigs_.addAll(other.enforceOnKeyConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.enforceOnKeyConfigs_.isEmpty()) {
+          if (enforceOnKeyConfigsBuilder_.isEmpty()) {
+            enforceOnKeyConfigsBuilder_.dispose();
+            enforceOnKeyConfigsBuilder_ = null;
+            enforceOnKeyConfigs_ = other.enforceOnKeyConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            enforceOnKeyConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEnforceOnKeyConfigsFieldBuilder()
+                    : null;
+          } else {
+            enforceOnKeyConfigsBuilder_.addAllMessages(other.enforceOnKeyConfigs_);
+          }
+        }
+      }
       if (other.hasEnforceOnKeyName()) {
         enforceOnKeyName_ = other.enforceOnKeyName_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasExceedAction()) {
         exceedAction_ = other.exceedAction_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasExceedRedirectOptions()) {
@@ -1235,6 +1383,21 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             case 0:
               done = true;
               break;
+            case 271251826:
+              {
+                com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1
+                            .SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig.parser(),
+                        extensionRegistry);
+                if (enforceOnKeyConfigsBuilder_ == null) {
+                  ensureEnforceOnKeyConfigsIsMutable();
+                  enforceOnKeyConfigs_.add(m);
+                } else {
+                  enforceOnKeyConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 271251826
             case 343173808:
               {
                 banDurationSec_ = input.readInt32();
@@ -1244,20 +1407,20 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
             case 1060441970:
               {
                 enforceOnKeyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1060441970
             case 1337272586:
               {
                 exceedAction_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1337272586
             case -1767965630:
               {
                 input.readMessage(
                     getRateLimitThresholdFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -1767965630
             case -961775646:
@@ -1270,7 +1433,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
               {
                 input.readMessage(
                     getExceedRedirectOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -505793742
             case -285302310:
@@ -1830,6 +1993,436 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       return this;
     }
 
+    private java.util.List<
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig>
+        enforceOnKeyConfigs_ = java.util.Collections.emptyList();
+
+    private void ensureEnforceOnKeyConfigsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        enforceOnKeyConfigs_ =
+            new java.util.ArrayList<
+                com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig>(
+                enforceOnKeyConfigs_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig,
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
+                .Builder,
+            com.google.cloud.compute.v1
+                .SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder>
+        enforceOnKeyConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig>
+        getEnforceOnKeyConfigsList() {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(enforceOnKeyConfigs_);
+      } else {
+        return enforceOnKeyConfigsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public int getEnforceOnKeyConfigsCount() {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        return enforceOnKeyConfigs_.size();
+      } else {
+        return enforceOnKeyConfigsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
+        getEnforceOnKeyConfigs(int index) {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        return enforceOnKeyConfigs_.get(index);
+      } else {
+        return enforceOnKeyConfigsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public Builder setEnforceOnKeyConfigs(
+        int index,
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig value) {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnforceOnKeyConfigsIsMutable();
+        enforceOnKeyConfigs_.set(index, value);
+        onChanged();
+      } else {
+        enforceOnKeyConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public Builder setEnforceOnKeyConfigs(
+        int index,
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig.Builder
+            builderForValue) {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        ensureEnforceOnKeyConfigsIsMutable();
+        enforceOnKeyConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        enforceOnKeyConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public Builder addEnforceOnKeyConfigs(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig value) {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnforceOnKeyConfigsIsMutable();
+        enforceOnKeyConfigs_.add(value);
+        onChanged();
+      } else {
+        enforceOnKeyConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public Builder addEnforceOnKeyConfigs(
+        int index,
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig value) {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnforceOnKeyConfigsIsMutable();
+        enforceOnKeyConfigs_.add(index, value);
+        onChanged();
+      } else {
+        enforceOnKeyConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public Builder addEnforceOnKeyConfigs(
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig.Builder
+            builderForValue) {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        ensureEnforceOnKeyConfigsIsMutable();
+        enforceOnKeyConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        enforceOnKeyConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public Builder addEnforceOnKeyConfigs(
+        int index,
+        com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig.Builder
+            builderForValue) {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        ensureEnforceOnKeyConfigsIsMutable();
+        enforceOnKeyConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        enforceOnKeyConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public Builder addAllEnforceOnKeyConfigs(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.compute.v1
+                        .SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig>
+            values) {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        ensureEnforceOnKeyConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, enforceOnKeyConfigs_);
+        onChanged();
+      } else {
+        enforceOnKeyConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public Builder clearEnforceOnKeyConfigs() {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        enforceOnKeyConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        enforceOnKeyConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public Builder removeEnforceOnKeyConfigs(int index) {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        ensureEnforceOnKeyConfigsIsMutable();
+        enforceOnKeyConfigs_.remove(index);
+        onChanged();
+      } else {
+        enforceOnKeyConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig.Builder
+        getEnforceOnKeyConfigsBuilder(int index) {
+      return getEnforceOnKeyConfigsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder
+        getEnforceOnKeyConfigsOrBuilder(int index) {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        return enforceOnKeyConfigs_.get(index);
+      } else {
+        return enforceOnKeyConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.compute.v1
+                    .SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder>
+        getEnforceOnKeyConfigsOrBuilderList() {
+      if (enforceOnKeyConfigsBuilder_ != null) {
+        return enforceOnKeyConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(enforceOnKeyConfigs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig.Builder
+        addEnforceOnKeyConfigsBuilder() {
+      return getEnforceOnKeyConfigsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig.Builder
+        addEnforceOnKeyConfigsBuilder(int index) {
+      return getEnforceOnKeyConfigsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
+                .Builder>
+        getEnforceOnKeyConfigsBuilderList() {
+      return getEnforceOnKeyConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig,
+            com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
+                .Builder,
+            com.google.cloud.compute.v1
+                .SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder>
+        getEnforceOnKeyConfigsFieldBuilder() {
+      if (enforceOnKeyConfigsBuilder_ == null) {
+        enforceOnKeyConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig,
+                com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
+                    .Builder,
+                com.google.cloud.compute.v1
+                    .SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder>(
+                enforceOnKeyConfigs_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        enforceOnKeyConfigs_ = null;
+      }
+      return enforceOnKeyConfigsBuilder_;
+    }
+
     private java.lang.Object enforceOnKeyName_ = "";
     /**
      *
@@ -1843,7 +2436,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * @return Whether the enforceOnKeyName field is set.
      */
     public boolean hasEnforceOnKeyName() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1906,7 +2499,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         throw new NullPointerException();
       }
       enforceOnKeyName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1923,7 +2516,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      */
     public Builder clearEnforceOnKeyName() {
       enforceOnKeyName_ = getDefaultInstance().getEnforceOnKeyName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1945,7 +2538,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       enforceOnKeyName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1955,7 +2548,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>optional string exceed_action = 167159073;</code>
@@ -1963,13 +2556,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * @return Whether the exceedAction field is set.
      */
     public boolean hasExceedAction() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>optional string exceed_action = 167159073;</code>
@@ -1991,7 +2584,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>optional string exceed_action = 167159073;</code>
@@ -2013,7 +2606,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>optional string exceed_action = 167159073;</code>
@@ -2026,7 +2619,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
         throw new NullPointerException();
       }
       exceedAction_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2034,7 +2627,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>optional string exceed_action = 167159073;</code>
@@ -2043,7 +2636,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      */
     public Builder clearExceedAction() {
       exceedAction_ = getDefaultInstance().getExceedAction();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2051,7 +2644,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+     * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>optional string exceed_action = 167159073;</code>
@@ -2065,7 +2658,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       exceedAction_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2080,7 +2673,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>
@@ -2090,13 +2683,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * @return Whether the exceedRedirectOptions field is set.
      */
     public boolean hasExceedRedirectOptions() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>
@@ -2119,7 +2712,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>
@@ -2136,7 +2729,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       } else {
         exceedRedirectOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2144,7 +2737,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>
@@ -2158,7 +2751,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       } else {
         exceedRedirectOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2166,7 +2759,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>
@@ -2176,7 +2769,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public Builder mergeExceedRedirectOptions(
         com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions value) {
       if (exceedRedirectOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && exceedRedirectOptions_ != null
             && exceedRedirectOptions_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions
@@ -2188,7 +2781,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       } else {
         exceedRedirectOptionsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2196,7 +2789,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>
@@ -2204,7 +2797,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * </code>
      */
     public Builder clearExceedRedirectOptions() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       exceedRedirectOptions_ = null;
       if (exceedRedirectOptionsBuilder_ != null) {
         exceedRedirectOptionsBuilder_.dispose();
@@ -2217,7 +2810,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>
@@ -2226,7 +2819,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      */
     public com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder
         getExceedRedirectOptionsBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getExceedRedirectOptionsFieldBuilder().getBuilder();
     }
@@ -2234,7 +2827,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>
@@ -2255,7 +2848,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      *
      *
      * <pre>
-     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+     * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
      * </pre>
      *
      * <code>
@@ -2300,7 +2893,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * @return Whether the rateLimitThreshold field is set.
      */
     public boolean hasRateLimitThreshold() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2347,7 +2940,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       } else {
         rateLimitThresholdBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2370,7 +2963,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       } else {
         rateLimitThresholdBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2388,7 +2981,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     public Builder mergeRateLimitThreshold(
         com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold value) {
       if (rateLimitThresholdBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && rateLimitThreshold_ != null
             && rateLimitThreshold_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold
@@ -2400,7 +2993,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
       } else {
         rateLimitThresholdBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2416,7 +3009,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * </code>
      */
     public Builder clearRateLimitThreshold() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       rateLimitThreshold_ = null;
       if (rateLimitThresholdBuilder_ != null) {
         rateLimitThresholdBuilder_.dispose();
@@ -2438,7 +3031,7 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      */
     public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsThreshold.Builder
         getRateLimitThresholdBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getRateLimitThresholdFieldBuilder().getBuilder();
     }

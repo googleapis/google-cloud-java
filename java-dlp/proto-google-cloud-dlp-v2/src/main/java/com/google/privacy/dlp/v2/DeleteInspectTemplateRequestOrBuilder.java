@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,9 @@ public interface DeleteInspectTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the organization and inspectTemplate to be deleted, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
-   * projects/project-id/inspectTemplates/432452342.
+   * Required. Resource name of the organization and inspectTemplate to be
+   * deleted, for example `organizations/433245324/inspectTemplates/432452342`
+   * or projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
    * <code>
@@ -43,9 +43,9 @@ public interface DeleteInspectTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the organization and inspectTemplate to be deleted, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
-   * projects/project-id/inspectTemplates/432452342.
+   * Required. Resource name of the organization and inspectTemplate to be
+   * deleted, for example `organizations/433245324/inspectTemplates/432452342`
+   * or projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
    * <code>

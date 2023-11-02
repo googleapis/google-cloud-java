@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,13 @@ public interface MachineSpecOrBuilder
    *
    * <pre>
    * Immutable. The type of the machine.
+   *
    * See the [list of machine types supported for
    * prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+   *
    * See the [list of machine types supported for custom
    * training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
+   *
    * For [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] this
    * field is optional, and the default value is `n1-standard-2`. For
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or
@@ -49,10 +52,13 @@ public interface MachineSpecOrBuilder
    *
    * <pre>
    * Immutable. The type of the machine.
+   *
    * See the [list of machine types supported for
    * prediction](https://cloud.google.com/vertex-ai/docs/predictions/configure-compute#machine-types)
+   *
    * See the [list of machine types supported for custom
    * training](https://cloud.google.com/vertex-ai/docs/training/configure-compute#machine-types).
+   *
    * For [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] this
    * field is optional, and the default value is `n1-standard-2`. For
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or

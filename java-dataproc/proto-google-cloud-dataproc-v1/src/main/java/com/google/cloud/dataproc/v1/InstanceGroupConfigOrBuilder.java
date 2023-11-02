@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,16 +100,84 @@ public interface InstanceGroupConfigOrBuilder
    *
    *
    * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dataproc.v1.InstanceReference> getInstanceReferencesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.InstanceReference getInstanceReferences(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getInstanceReferencesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder>
+      getInstanceReferencesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder getInstanceReferencesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The Compute Engine image resource used for cluster instances.
+   *
    * The URI can represent an image or image family.
+   *
    * Image examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/[image-id]`
    * * `projects/[project_id]/global/images/[image-id]`
    * * `image-id`
+   *
    * Image family examples. Dataproc will use the most recent
    * image from the family:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/family/[custom-image-family-name]`
    * * `projects/[project_id]/global/images/family/[custom-image-family-name]`
+   *
    * If the URI is unspecified, it will be inferred from
    * `SoftwareConfig.image_version` or the system default.
    * </pre>
@@ -124,15 +192,21 @@ public interface InstanceGroupConfigOrBuilder
    *
    * <pre>
    * Optional. The Compute Engine image resource used for cluster instances.
+   *
    * The URI can represent an image or image family.
+   *
    * Image examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/[image-id]`
    * * `projects/[project_id]/global/images/[image-id]`
    * * `image-id`
+   *
    * Image family examples. Dataproc will use the most recent
    * image from the family:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/family/[custom-image-family-name]`
    * * `projects/[project_id]/global/images/family/[custom-image-family-name]`
+   *
    * If the URI is unspecified, it will be inferred from
    * `SoftwareConfig.image_version` or the system default.
    * </pre>
@@ -148,10 +222,13 @@ public interface InstanceGroupConfigOrBuilder
    *
    * <pre>
    * Optional. The Compute Engine machine type used for cluster instances.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
    * * `projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
    * * `n1-standard-2`
+   *
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -169,10 +246,13 @@ public interface InstanceGroupConfigOrBuilder
    *
    * <pre>
    * Optional. The Compute Engine machine type used for cluster instances.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
    * * `projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
    * * `n1-standard-2`
+   *
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -246,8 +326,10 @@ public interface InstanceGroupConfigOrBuilder
    *
    * <pre>
    * Optional. Specifies the preemptibility of the instance group.
+   *
    * The default value for master and worker groups is
    * `NON_PREEMPTIBLE`. This default cannot be changed.
+   *
    * The default value for secondary instances is
    * `PREEMPTIBLE`.
    * </pre>
@@ -264,8 +346,10 @@ public interface InstanceGroupConfigOrBuilder
    *
    * <pre>
    * Optional. Specifies the preemptibility of the instance group.
+   *
    * The default value for master and worker groups is
    * `NON_PREEMPTIBLE`. This default cannot be changed.
+   *
    * The default value for secondary instances is
    * `PREEMPTIBLE`.
    * </pre>
@@ -420,4 +504,119 @@ public interface InstanceGroupConfigOrBuilder
    * @return The bytes for minCpuPlatform.
    */
   com.google.protobuf.ByteString getMinCpuPlatformBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The minimum number of primary worker instances to create.
+   * If `min_num_instances` is set, cluster creation will succeed if
+   * the number of primary workers created is at least equal to the
+   * `min_num_instances` number.
+   *
+   * Example: Cluster creation request with `num_instances` = `5` and
+   * `min_num_instances` = `3`:
+   *
+   * *  If 4 VMs are created and 1 instance fails,
+   *    the failed VM is deleted. The cluster is
+   *    resized to 4 instances and placed in a `RUNNING` state.
+   * *  If 2 instances are created and 3 instances fail,
+   *    the cluster in placed in an `ERROR` state. The failed VMs
+   *    are not deleted.
+   * </pre>
+   *
+   * <code>int32 min_num_instances = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minNumInstances.
+   */
+  int getMinNumInstances();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+   * provisioning models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the instanceFlexibilityPolicy field is set.
+   */
+  boolean hasInstanceFlexibilityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+   * provisioning models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The instanceFlexibilityPolicy.
+   */
+  com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy getInstanceFlexibilityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+   * provisioning models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.InstanceFlexibilityPolicyOrBuilder
+      getInstanceFlexibilityPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to handle the startup of instances during cluster
+   * create and update process.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the startupConfig field is set.
+   */
+  boolean hasStartupConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to handle the startup of instances during cluster
+   * create and update process.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The startupConfig.
+   */
+  com.google.cloud.dataproc.v1.StartupConfig getStartupConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to handle the startup of instances during cluster
+   * create and update process.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.StartupConfigOrBuilder getStartupConfigOrBuilder();
 }

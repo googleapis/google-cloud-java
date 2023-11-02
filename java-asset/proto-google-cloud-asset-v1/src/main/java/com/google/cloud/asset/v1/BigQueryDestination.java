@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BigQueryDestination();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -217,10 +212,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * <pre>
    * [partition_spec] determines whether to export to partitioned table(s) and
    * how to partition the data.
+   *
    * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
    * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
    * non-partitioned table(s). [force] will decide whether to overwrite existing
    * table(s).
+   *
    * If [partition_spec] is specified. First, the snapshot results will be
    * written to partitioned table(s) with two additional timestamp columns,
    * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -246,10 +243,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * <pre>
    * [partition_spec] determines whether to export to partitioned table(s) and
    * how to partition the data.
+   *
    * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
    * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
    * non-partitioned table(s). [force] will decide whether to overwrite existing
    * table(s).
+   *
    * If [partition_spec] is specified. First, the snapshot results will be
    * written to partitioned table(s) with two additional timestamp columns,
    * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -277,10 +276,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * <pre>
    * [partition_spec] determines whether to export to partitioned table(s) and
    * how to partition the data.
+   *
    * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
    * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
    * non-partitioned table(s). [force] will decide whether to overwrite existing
    * table(s).
+   *
    * If [partition_spec] is specified. First, the snapshot results will be
    * written to partitioned table(s) with two additional timestamp columns,
    * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -310,6 +311,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * If this flag is `TRUE`, the snapshot results will be written to one or
    * multiple tables, each of which contains results of one asset type. The
    * [force] and [partition_spec] fields will apply to each of them.
+   *
    * Field [table] will be concatenated with "_" and the asset type names (see
    * https://cloud.google.com/asset-inventory/docs/supported-asset-types for
    * supported asset types) to construct per-asset-type table names, in which
@@ -319,6 +321,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * name will be "mytable_storage_googleapis_com_Bucket". If any of these
    * tables does not exist, a new table with the concatenated name will be
    * created.
+   *
    * When [content_type] in the ExportAssetsRequest is `RESOURCE`, the schema of
    * each table will include RECORD-type columns mapped to the nested fields in
    * the Asset.resource.data field of that asset type (up to the 15 nested level
@@ -326,6 +329,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * (https://cloud.google.com/bigquery/docs/nested-repeated#limitations)). The
    * fields in &gt;15 nested levels will be stored in JSON format string as a child
    * column of its parent RECORD column.
+   *
    * If error occurs when exporting to any table, the whole export call will
    * return an error but the export results that already succeed will persist.
    * Example: if exporting to table_type_A succeeds when exporting to
@@ -1114,10 +1118,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
+     *
      * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
+     *
      * If [partition_spec] is specified. First, the snapshot results will be
      * written to partitioned table(s) with two additional timestamp columns,
      * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -1142,10 +1148,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
+     *
      * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
+     *
      * If [partition_spec] is specified. First, the snapshot results will be
      * written to partitioned table(s) with two additional timestamp columns,
      * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -1176,10 +1184,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
+     *
      * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
+     *
      * If [partition_spec] is specified. First, the snapshot results will be
      * written to partitioned table(s) with two additional timestamp columns,
      * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -1212,10 +1222,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
+     *
      * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
+     *
      * If [partition_spec] is specified. First, the snapshot results will be
      * written to partitioned table(s) with two additional timestamp columns,
      * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -1246,10 +1258,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
+     *
      * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
+     *
      * If [partition_spec] is specified. First, the snapshot results will be
      * written to partitioned table(s) with two additional timestamp columns,
      * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -1285,10 +1299,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
+     *
      * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
+     *
      * If [partition_spec] is specified. First, the snapshot results will be
      * written to partitioned table(s) with two additional timestamp columns,
      * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -1318,10 +1334,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
+     *
      * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
+     *
      * If [partition_spec] is specified. First, the snapshot results will be
      * written to partitioned table(s) with two additional timestamp columns,
      * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -1346,10 +1364,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
+     *
      * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
+     *
      * If [partition_spec] is specified. First, the snapshot results will be
      * written to partitioned table(s) with two additional timestamp columns,
      * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -1378,10 +1398,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
+     *
      * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
+     *
      * If [partition_spec] is specified. First, the snapshot results will be
      * written to partitioned table(s) with two additional timestamp columns,
      * readTime and requestTime, one of which will be the partition key. Secondly,
@@ -1420,6 +1442,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * If this flag is `TRUE`, the snapshot results will be written to one or
      * multiple tables, each of which contains results of one asset type. The
      * [force] and [partition_spec] fields will apply to each of them.
+     *
      * Field [table] will be concatenated with "_" and the asset type names (see
      * https://cloud.google.com/asset-inventory/docs/supported-asset-types for
      * supported asset types) to construct per-asset-type table names, in which
@@ -1429,6 +1452,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * name will be "mytable_storage_googleapis_com_Bucket". If any of these
      * tables does not exist, a new table with the concatenated name will be
      * created.
+     *
      * When [content_type] in the ExportAssetsRequest is `RESOURCE`, the schema of
      * each table will include RECORD-type columns mapped to the nested fields in
      * the Asset.resource.data field of that asset type (up to the 15 nested level
@@ -1436,6 +1460,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * (https://cloud.google.com/bigquery/docs/nested-repeated#limitations)). The
      * fields in &gt;15 nested levels will be stored in JSON format string as a child
      * column of its parent RECORD column.
+     *
      * If error occurs when exporting to any table, the whole export call will
      * return an error but the export results that already succeed will persist.
      * Example: if exporting to table_type_A succeeds when exporting to
@@ -1458,6 +1483,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * If this flag is `TRUE`, the snapshot results will be written to one or
      * multiple tables, each of which contains results of one asset type. The
      * [force] and [partition_spec] fields will apply to each of them.
+     *
      * Field [table] will be concatenated with "_" and the asset type names (see
      * https://cloud.google.com/asset-inventory/docs/supported-asset-types for
      * supported asset types) to construct per-asset-type table names, in which
@@ -1467,6 +1493,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * name will be "mytable_storage_googleapis_com_Bucket". If any of these
      * tables does not exist, a new table with the concatenated name will be
      * created.
+     *
      * When [content_type] in the ExportAssetsRequest is `RESOURCE`, the schema of
      * each table will include RECORD-type columns mapped to the nested fields in
      * the Asset.resource.data field of that asset type (up to the 15 nested level
@@ -1474,6 +1501,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * (https://cloud.google.com/bigquery/docs/nested-repeated#limitations)). The
      * fields in &gt;15 nested levels will be stored in JSON format string as a child
      * column of its parent RECORD column.
+     *
      * If error occurs when exporting to any table, the whole export call will
      * return an error but the export results that already succeed will persist.
      * Example: if exporting to table_type_A succeeds when exporting to
@@ -1500,6 +1528,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * If this flag is `TRUE`, the snapshot results will be written to one or
      * multiple tables, each of which contains results of one asset type. The
      * [force] and [partition_spec] fields will apply to each of them.
+     *
      * Field [table] will be concatenated with "_" and the asset type names (see
      * https://cloud.google.com/asset-inventory/docs/supported-asset-types for
      * supported asset types) to construct per-asset-type table names, in which
@@ -1509,6 +1538,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * name will be "mytable_storage_googleapis_com_Bucket". If any of these
      * tables does not exist, a new table with the concatenated name will be
      * created.
+     *
      * When [content_type] in the ExportAssetsRequest is `RESOURCE`, the schema of
      * each table will include RECORD-type columns mapped to the nested fields in
      * the Asset.resource.data field of that asset type (up to the 15 nested level
@@ -1516,6 +1546,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * (https://cloud.google.com/bigquery/docs/nested-repeated#limitations)). The
      * fields in &gt;15 nested levels will be stored in JSON format string as a child
      * column of its parent RECORD column.
+     *
      * If error occurs when exporting to any table, the whole export call will
      * return an error but the export results that already succeed will persist.
      * Example: if exporting to table_type_A succeeds when exporting to

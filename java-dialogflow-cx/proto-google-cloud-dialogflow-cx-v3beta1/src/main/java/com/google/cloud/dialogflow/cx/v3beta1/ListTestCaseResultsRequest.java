@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListTestCaseResultsRequest extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListTestCaseResultsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -211,16 +206,21 @@ public final class ListTestCaseResultsRequest extends com.google.protobuf.Genera
    * <pre>
    * The filter expression used to filter test case results. See
    * [API Filtering](https://aip.dev/160).
+   *
    * The expression is case insensitive. Only 'AND' is supported for logical
    * operators. The supported syntax is listed below in detail:
+   *
    *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
    *   [AND latest]
+   *
    * The supported fields and operators are:
    * field                 operator
    * `environment`         `=`, `IN`  (Use value `draft` for draft environment)
    * `test_time`           `&gt;`, `&lt;`
+   *
    * `latest` only returns the latest test result in all results for each test
    * case.
+   *
    * Examples:
    * *   "environment=draft AND latest" matches the latest test result for each
    *     test case in the draft environment.
@@ -252,16 +252,21 @@ public final class ListTestCaseResultsRequest extends com.google.protobuf.Genera
    * <pre>
    * The filter expression used to filter test case results. See
    * [API Filtering](https://aip.dev/160).
+   *
    * The expression is case insensitive. Only 'AND' is supported for logical
    * operators. The supported syntax is listed below in detail:
+   *
    *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
    *   [AND latest]
+   *
    * The supported fields and operators are:
    * field                 operator
    * `environment`         `=`, `IN`  (Use value `draft` for draft environment)
    * `test_time`           `&gt;`, `&lt;`
+   *
    * `latest` only returns the latest test result in all results for each test
    * case.
+   *
    * Examples:
    * *   "environment=draft AND latest" matches the latest test result for each
    *     test case in the draft environment.
@@ -1008,16 +1013,21 @@ public final class ListTestCaseResultsRequest extends com.google.protobuf.Genera
      * <pre>
      * The filter expression used to filter test case results. See
      * [API Filtering](https://aip.dev/160).
+     *
      * The expression is case insensitive. Only 'AND' is supported for logical
      * operators. The supported syntax is listed below in detail:
+     *
      *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
      *   [AND latest]
+     *
      * The supported fields and operators are:
      * field                 operator
      * `environment`         `=`, `IN`  (Use value `draft` for draft environment)
      * `test_time`           `&gt;`, `&lt;`
+     *
      * `latest` only returns the latest test result in all results for each test
      * case.
+     *
      * Examples:
      * *   "environment=draft AND latest" matches the latest test result for each
      *     test case in the draft environment.
@@ -1048,16 +1058,21 @@ public final class ListTestCaseResultsRequest extends com.google.protobuf.Genera
      * <pre>
      * The filter expression used to filter test case results. See
      * [API Filtering](https://aip.dev/160).
+     *
      * The expression is case insensitive. Only 'AND' is supported for logical
      * operators. The supported syntax is listed below in detail:
+     *
      *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
      *   [AND latest]
+     *
      * The supported fields and operators are:
      * field                 operator
      * `environment`         `=`, `IN`  (Use value `draft` for draft environment)
      * `test_time`           `&gt;`, `&lt;`
+     *
      * `latest` only returns the latest test result in all results for each test
      * case.
+     *
      * Examples:
      * *   "environment=draft AND latest" matches the latest test result for each
      *     test case in the draft environment.
@@ -1088,16 +1103,21 @@ public final class ListTestCaseResultsRequest extends com.google.protobuf.Genera
      * <pre>
      * The filter expression used to filter test case results. See
      * [API Filtering](https://aip.dev/160).
+     *
      * The expression is case insensitive. Only 'AND' is supported for logical
      * operators. The supported syntax is listed below in detail:
+     *
      *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
      *   [AND latest]
+     *
      * The supported fields and operators are:
      * field                 operator
      * `environment`         `=`, `IN`  (Use value `draft` for draft environment)
      * `test_time`           `&gt;`, `&lt;`
+     *
      * `latest` only returns the latest test result in all results for each test
      * case.
+     *
      * Examples:
      * *   "environment=draft AND latest" matches the latest test result for each
      *     test case in the draft environment.
@@ -1127,16 +1147,21 @@ public final class ListTestCaseResultsRequest extends com.google.protobuf.Genera
      * <pre>
      * The filter expression used to filter test case results. See
      * [API Filtering](https://aip.dev/160).
+     *
      * The expression is case insensitive. Only 'AND' is supported for logical
      * operators. The supported syntax is listed below in detail:
+     *
      *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
      *   [AND latest]
+     *
      * The supported fields and operators are:
      * field                 operator
      * `environment`         `=`, `IN`  (Use value `draft` for draft environment)
      * `test_time`           `&gt;`, `&lt;`
+     *
      * `latest` only returns the latest test result in all results for each test
      * case.
+     *
      * Examples:
      * *   "environment=draft AND latest" matches the latest test result for each
      *     test case in the draft environment.
@@ -1162,16 +1187,21 @@ public final class ListTestCaseResultsRequest extends com.google.protobuf.Genera
      * <pre>
      * The filter expression used to filter test case results. See
      * [API Filtering](https://aip.dev/160).
+     *
      * The expression is case insensitive. Only 'AND' is supported for logical
      * operators. The supported syntax is listed below in detail:
+     *
      *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
      *   [AND latest]
+     *
      * The supported fields and operators are:
      * field                 operator
      * `environment`         `=`, `IN`  (Use value `draft` for draft environment)
      * `test_time`           `&gt;`, `&lt;`
+     *
      * `latest` only returns the latest test result in all results for each test
      * case.
+     *
      * Examples:
      * *   "environment=draft AND latest" matches the latest test result for each
      *     test case in the draft environment.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,93 +106,72 @@ public interface RecognizerOrBuilder
    *
    *
    * <pre>
-   * Required. Which model to use for recognition requests. Select the model
-   * best suited to your domain to get best results.
-   * Supported models:
-   * - `latest_long`
-   *   Best for long form content like media or conversation.
-   * - `latest_short`
-   *   Best for short form content like commands or single shot directed speech.
-   *   When using this model, the service will stop transcribing audio after the
-   *   first utterance is detected and completed.
-   *   When using this model,
-   *   [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
-   *   is not supported; multi-channel audio is accepted, but only the first
-   *   channel will be processed and transcribed.
-   * - `telephony`
-   *   Best for audio that originated from a phone call (typically recorded at
-   *   an 8khz sampling rate).
-   * - `medical_conversation`
-   *   For conversations between a medical provider—for example, a doctor or
-   *   nurse—and a patient. Use this model when both a provider and a patient
-   *   are speaking. Words uttered by each speaker are automatically detected
-   *   and labeled in the returned transcript.
-   *   For supported features please see [medical models
-   *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
-   * - `medical_dictation`
-   *   For dictated notes spoken by a single medical provider—for example, a
-   *   doctor dictating notes about a patient's blood test results.
-   *   For supported features please see [medical models
-   *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
-   * - `usm`
-   *   The next generation of Speech-to-Text models from Google.
+   * Optional. This field is now deprecated. Prefer the
+   * [`model`][google.cloud.speech.v2.RecognitionConfig.model] field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * Which model to use for recognition requests. Select the model best suited
+   * to your domain to get best results.
+   *
+   * Guidance for choosing which model to use can be found in the [Transcription
+   * Models
+   * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
+   * and the models supported in each region can be found in the [Table Of
+   * Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
    * </pre>
    *
-   * <code>string model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=600
    * @return The model.
    */
+  @java.lang.Deprecated
   java.lang.String getModel();
   /**
    *
    *
    * <pre>
-   * Required. Which model to use for recognition requests. Select the model
-   * best suited to your domain to get best results.
-   * Supported models:
-   * - `latest_long`
-   *   Best for long form content like media or conversation.
-   * - `latest_short`
-   *   Best for short form content like commands or single shot directed speech.
-   *   When using this model, the service will stop transcribing audio after the
-   *   first utterance is detected and completed.
-   *   When using this model,
-   *   [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
-   *   is not supported; multi-channel audio is accepted, but only the first
-   *   channel will be processed and transcribed.
-   * - `telephony`
-   *   Best for audio that originated from a phone call (typically recorded at
-   *   an 8khz sampling rate).
-   * - `medical_conversation`
-   *   For conversations between a medical provider—for example, a doctor or
-   *   nurse—and a patient. Use this model when both a provider and a patient
-   *   are speaking. Words uttered by each speaker are automatically detected
-   *   and labeled in the returned transcript.
-   *   For supported features please see [medical models
-   *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
-   * - `medical_dictation`
-   *   For dictated notes spoken by a single medical provider—for example, a
-   *   doctor dictating notes about a patient's blood test results.
-   *   For supported features please see [medical models
-   *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
-   * - `usm`
-   *   The next generation of Speech-to-Text models from Google.
+   * Optional. This field is now deprecated. Prefer the
+   * [`model`][google.cloud.speech.v2.RecognitionConfig.model] field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * Which model to use for recognition requests. Select the model best suited
+   * to your domain to get best results.
+   *
+   * Guidance for choosing which model to use can be found in the [Transcription
+   * Models
+   * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
+   * and the models supported in each region can be found in the [Table Of
+   * Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
    * </pre>
    *
-   * <code>string model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=600
    * @return The bytes for model.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getModelBytes();
 
   /**
    *
    *
    * <pre>
-   * Required. The language of the supplied audio as a
+   * Optional. This field is now deprecated. Prefer the
+   * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+   * field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-   * Supported languages for each model are listed at:
-   * https://cloud.google.com/speech-to-text/docs/languages
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.
@@ -201,19 +180,31 @@ public interface RecognizerOrBuilder
    * "en-US".
    * </pre>
    *
-   * <code>repeated string language_codes = 17 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated string language_codes = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=619
    * @return A list containing the languageCodes.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getLanguageCodesList();
   /**
    *
    *
    * <pre>
-   * Required. The language of the supplied audio as a
+   * Optional. This field is now deprecated. Prefer the
+   * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+   * field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-   * Supported languages for each model are listed at:
-   * https://cloud.google.com/speech-to-text/docs/languages
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.
@@ -222,19 +213,31 @@ public interface RecognizerOrBuilder
    * "en-US".
    * </pre>
    *
-   * <code>repeated string language_codes = 17 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated string language_codes = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=619
    * @return The count of languageCodes.
    */
+  @java.lang.Deprecated
   int getLanguageCodesCount();
   /**
    *
    *
    * <pre>
-   * Required. The language of the supplied audio as a
+   * Optional. This field is now deprecated. Prefer the
+   * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+   * field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-   * Supported languages for each model are listed at:
-   * https://cloud.google.com/speech-to-text/docs/languages
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.
@@ -243,20 +246,32 @@ public interface RecognizerOrBuilder
    * "en-US".
    * </pre>
    *
-   * <code>repeated string language_codes = 17 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated string language_codes = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=619
    * @param index The index of the element to return.
    * @return The languageCodes at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getLanguageCodes(int index);
   /**
    *
    *
    * <pre>
-   * Required. The language of the supplied audio as a
+   * Optional. This field is now deprecated. Prefer the
+   * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+   * field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-   * Supported languages for each model are listed at:
-   * https://cloud.google.com/speech-to-text/docs/languages
+   *
+   * Supported languages for each model are listed in the [Table of Supported
+   * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.
@@ -265,11 +280,16 @@ public interface RecognizerOrBuilder
    * "en-US".
    * </pre>
    *
-   * <code>repeated string language_codes = 17 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated string language_codes = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=619
    * @param index The index of the value to return.
    * @return The bytes of the languageCodes at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getLanguageCodesBytes(int index);
 
   /**

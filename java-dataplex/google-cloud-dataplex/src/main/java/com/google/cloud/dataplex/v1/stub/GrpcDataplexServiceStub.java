@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataplex.v1.Asset;
 import com.google.cloud.dataplex.v1.CancelJobRequest;
@@ -88,7 +89,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -550,9 +550,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(createLakeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateLakeRequest, Operation> updateLakeTransportSettings =
@@ -560,9 +560,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(updateLakeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("lake.name", String.valueOf(request.getLake().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("lake.name", String.valueOf(request.getLake().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteLakeRequest, Operation> deleteLakeTransportSettings =
@@ -570,9 +570,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(deleteLakeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListLakesRequest, ListLakesResponse> listLakesTransportSettings =
@@ -580,9 +580,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(listLakesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLakeRequest, Lake> getLakeTransportSettings =
@@ -590,9 +590,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(getLakeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListLakeActionsRequest, ListActionsResponse> listLakeActionsTransportSettings =
@@ -600,9 +600,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(listLakeActionsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateZoneRequest, Operation> createZoneTransportSettings =
@@ -610,9 +610,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(createZoneMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateZoneRequest, Operation> updateZoneTransportSettings =
@@ -620,9 +620,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(updateZoneMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("zone.name", String.valueOf(request.getZone().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("zone.name", String.valueOf(request.getZone().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteZoneRequest, Operation> deleteZoneTransportSettings =
@@ -630,9 +630,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(deleteZoneMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListZonesRequest, ListZonesResponse> listZonesTransportSettings =
@@ -640,9 +640,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(listZonesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetZoneRequest, Zone> getZoneTransportSettings =
@@ -650,9 +650,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(getZoneMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListZoneActionsRequest, ListActionsResponse> listZoneActionsTransportSettings =
@@ -660,9 +660,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(listZoneActionsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateAssetRequest, Operation> createAssetTransportSettings =
@@ -670,9 +670,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(createAssetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateAssetRequest, Operation> updateAssetTransportSettings =
@@ -680,9 +680,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(updateAssetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("asset.name", String.valueOf(request.getAsset().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("asset.name", String.valueOf(request.getAsset().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteAssetRequest, Operation> deleteAssetTransportSettings =
@@ -690,9 +690,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(deleteAssetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
@@ -700,9 +700,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(listAssetsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAssetRequest, Asset> getAssetTransportSettings =
@@ -710,9 +710,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(getAssetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAssetActionsRequest, ListActionsResponse>
@@ -721,9 +721,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                 .setMethodDescriptor(listAssetActionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateTaskRequest, Operation> createTaskTransportSettings =
@@ -731,9 +731,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(createTaskMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateTaskRequest, Operation> updateTaskTransportSettings =
@@ -741,9 +741,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(updateTaskMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("task.name", String.valueOf(request.getTask().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("task.name", String.valueOf(request.getTask().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteTaskRequest, Operation> deleteTaskTransportSettings =
@@ -751,9 +751,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(deleteTaskMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
@@ -761,9 +761,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(listTasksMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetTaskRequest, Task> getTaskTransportSettings =
@@ -771,9 +771,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(getTaskMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
@@ -781,9 +781,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(listJobsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RunTaskRequest, RunTaskResponse> runTaskTransportSettings =
@@ -791,9 +791,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(runTaskMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
@@ -801,9 +801,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(getJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CancelJobRequest, Empty> cancelJobTransportSettings =
@@ -811,9 +811,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(cancelJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateEnvironmentRequest, Operation> createEnvironmentTransportSettings =
@@ -821,9 +821,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(createEnvironmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateEnvironmentRequest, Operation> updateEnvironmentTransportSettings =
@@ -831,10 +831,10 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(updateEnvironmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "environment.name", String.valueOf(request.getEnvironment().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteEnvironmentRequest, Operation> deleteEnvironmentTransportSettings =
@@ -842,9 +842,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(deleteEnvironmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListEnvironmentsRequest, ListEnvironmentsResponse>
@@ -853,9 +853,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                 .setMethodDescriptor(listEnvironmentsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
@@ -863,9 +863,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(getEnvironmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
@@ -873,9 +873,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(listSessionsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -883,9 +883,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -893,9 +893,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

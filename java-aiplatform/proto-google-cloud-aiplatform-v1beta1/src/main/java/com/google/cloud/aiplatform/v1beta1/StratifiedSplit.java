@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,15 +26,18 @@ package com.google.cloud.aiplatform.v1beta1;
  * distribution of values found in the categorical column (as specified by the
  * `key` field) is mirrored within each split. The fraction values determine
  * the relative sizes of the splits.
+ *
  * For example, if the specified column has three values, with 50% of the rows
  * having value "A", 25% value "B", and 25% value "C", and the split fractions
  * are specified as 80/10/10, then the training set will constitute 80% of the
  * training data, with about 50% of the training set rows having the value "A"
  * for the specified column, about 25% having the value "B", and about 25%
  * having the value "C".
+ *
  * Only the top 500 occurring values are used; any values not in the top
  * 500 values are randomly assigned to a split. If less than three rows contain
  * a specific value, those rows are randomly assigned.
+ *
  * Supported only for tabular Datasets.
  * </pre>
  *
@@ -58,11 +61,6 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StratifiedSplit();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -393,15 +391,18 @@ public final class StratifiedSplit extends com.google.protobuf.GeneratedMessageV
    * distribution of values found in the categorical column (as specified by the
    * `key` field) is mirrored within each split. The fraction values determine
    * the relative sizes of the splits.
+   *
    * For example, if the specified column has three values, with 50% of the rows
    * having value "A", 25% value "B", and 25% value "C", and the split fractions
    * are specified as 80/10/10, then the training set will constitute 80% of the
    * training data, with about 50% of the training set rows having the value "A"
    * for the specified column, about 25% having the value "B", and about 25%
    * having the value "C".
+   *
    * Only the top 500 occurring values are used; any values not in the top
    * 500 values are randomly assigned to a split. If less than three rows contain
    * a specific value, those rows are randomly assigned.
+   *
    * Supported only for tabular Datasets.
    * </pre>
    *

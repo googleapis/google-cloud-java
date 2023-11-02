@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
     return new TranslateSpeechConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.mediatranslation.v1beta1.MediaTranslationProto
         .internal_static_google_cloud_mediatranslation_v1beta1_TranslateSpeechConfig_descriptor;
@@ -81,23 +76,37 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Encoding of audio data.
    * Supported formats:
+   *
    * - `linear16`
+   *
    *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+   *
    * - `flac`
+   *
    *   `flac` (Free Lossless Audio Codec) is the recommended encoding
    *   because it is lossless--therefore recognition is not compromised--and
    *   requires only about half the bandwidth of `linear16`.
+   *
    * - `mulaw`
+   *
    *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   *
    * - `amr`
+   *
    *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+   *
    * - `amr-wb`
+   *
    *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+   *
    * - `ogg-opus`
+   *
    *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
    *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
    *   or 48000.
+   *
    * - `mp3`
+   *
    *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
    *   kbps). When using this encoding, `sample_rate_hertz` has to match the
    *   sample rate of the file being used.
@@ -125,23 +134,37 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Encoding of audio data.
    * Supported formats:
+   *
    * - `linear16`
+   *
    *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+   *
    * - `flac`
+   *
    *   `flac` (Free Lossless Audio Codec) is the recommended encoding
    *   because it is lossless--therefore recognition is not compromised--and
    *   requires only about half the bandwidth of `linear16`.
+   *
    * - `mulaw`
+   *
    *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   *
    * - `amr`
+   *
    *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+   *
    * - `amr-wb`
+   *
    *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+   *
    * - `ogg-opus`
+   *
    *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
    *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
    *   or 48000.
+   *
    * - `mp3`
+   *
    *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
    *   kbps). When using this encoding, `sample_rate_hertz` has to match the
    *   sample rate of the file being used.
@@ -791,23 +814,37 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Encoding of audio data.
      * Supported formats:
+     *
      * - `linear16`
+     *
      *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+     *
      * - `flac`
+     *
      *   `flac` (Free Lossless Audio Codec) is the recommended encoding
      *   because it is lossless--therefore recognition is not compromised--and
      *   requires only about half the bandwidth of `linear16`.
+     *
      * - `mulaw`
+     *
      *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+     *
      * - `amr`
+     *
      *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+     *
      * - `amr-wb`
+     *
      *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+     *
      * - `ogg-opus`
+     *
      *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
      *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
      *   or 48000.
+     *
      * - `mp3`
+     *
      *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
      *   kbps). When using this encoding, `sample_rate_hertz` has to match the
      *   sample rate of the file being used.
@@ -834,23 +871,37 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Encoding of audio data.
      * Supported formats:
+     *
      * - `linear16`
+     *
      *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+     *
      * - `flac`
+     *
      *   `flac` (Free Lossless Audio Codec) is the recommended encoding
      *   because it is lossless--therefore recognition is not compromised--and
      *   requires only about half the bandwidth of `linear16`.
+     *
      * - `mulaw`
+     *
      *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+     *
      * - `amr`
+     *
      *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+     *
      * - `amr-wb`
+     *
      *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+     *
      * - `ogg-opus`
+     *
      *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
      *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
      *   or 48000.
+     *
      * - `mp3`
+     *
      *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
      *   kbps). When using this encoding, `sample_rate_hertz` has to match the
      *   sample rate of the file being used.
@@ -877,23 +928,37 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Encoding of audio data.
      * Supported formats:
+     *
      * - `linear16`
+     *
      *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+     *
      * - `flac`
+     *
      *   `flac` (Free Lossless Audio Codec) is the recommended encoding
      *   because it is lossless--therefore recognition is not compromised--and
      *   requires only about half the bandwidth of `linear16`.
+     *
      * - `mulaw`
+     *
      *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+     *
      * - `amr`
+     *
      *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+     *
      * - `amr-wb`
+     *
      *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+     *
      * - `ogg-opus`
+     *
      *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
      *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
      *   or 48000.
+     *
      * - `mp3`
+     *
      *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
      *   kbps). When using this encoding, `sample_rate_hertz` has to match the
      *   sample rate of the file being used.
@@ -919,23 +984,37 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Encoding of audio data.
      * Supported formats:
+     *
      * - `linear16`
+     *
      *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+     *
      * - `flac`
+     *
      *   `flac` (Free Lossless Audio Codec) is the recommended encoding
      *   because it is lossless--therefore recognition is not compromised--and
      *   requires only about half the bandwidth of `linear16`.
+     *
      * - `mulaw`
+     *
      *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+     *
      * - `amr`
+     *
      *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+     *
      * - `amr-wb`
+     *
      *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+     *
      * - `ogg-opus`
+     *
      *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
      *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
      *   or 48000.
+     *
      * - `mp3`
+     *
      *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
      *   kbps). When using this encoding, `sample_rate_hertz` has to match the
      *   sample rate of the file being used.
@@ -957,23 +1036,37 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Encoding of audio data.
      * Supported formats:
+     *
      * - `linear16`
+     *
      *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+     *
      * - `flac`
+     *
      *   `flac` (Free Lossless Audio Codec) is the recommended encoding
      *   because it is lossless--therefore recognition is not compromised--and
      *   requires only about half the bandwidth of `linear16`.
+     *
      * - `mulaw`
+     *
      *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+     *
      * - `amr`
+     *
      *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+     *
      * - `amr-wb`
+     *
      *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+     *
      * - `ogg-opus`
+     *
      *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
      *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
      *   or 48000.
+     *
      * - `mp3`
+     *
      *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
      *   kbps). When using this encoding, `sample_rate_hertz` has to match the
      *   sample rate of the file being used.

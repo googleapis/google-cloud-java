@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface TextStreamOrBuilder
    *
    * <pre>
    * The codec for this text stream. The default is `webvtt`.
+   *
    * Supported text codecs:
+   *
    * - `srt`
    * - `ttml`
    * - `cea608`
@@ -46,7 +48,9 @@ public interface TextStreamOrBuilder
    *
    * <pre>
    * The codec for this text stream. The default is `webvtt`.
+   *
    * Supported text codecs:
+   *
    * - `srt`
    * - `ttml`
    * - `cea608`

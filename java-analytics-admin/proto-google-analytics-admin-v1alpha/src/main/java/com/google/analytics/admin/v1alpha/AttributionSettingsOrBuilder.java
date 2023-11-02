@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,6 +122,7 @@ public interface AttributionSettingsOrBuilder
    * <pre>
    * Required. The reporting attribution model used to calculate conversion
    * credit in this property's reports.
+   *
    * Changing the attribution model will apply to both historical and future
    * data. These changes will be reflected in reports with conversion and
    * revenue data. User and session data will be unaffected.
@@ -140,6 +141,7 @@ public interface AttributionSettingsOrBuilder
    * <pre>
    * Required. The reporting attribution model used to calculate conversion
    * credit in this property's reports.
+   *
    * Changing the attribution model will apply to both historical and future
    * data. These changes will be reflected in reports with conversion and
    * revenue data. User and session data will be unaffected.
@@ -153,4 +155,36 @@ public interface AttributionSettingsOrBuilder
    */
   com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel
       getReportingAttributionModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The Conversion Export Scope for data exported to linked Ads
+   * Accounts.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for adsWebConversionDataExportScope.
+   */
+  int getAdsWebConversionDataExportScopeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Required. The Conversion Export Scope for data exported to linked Ads
+   * Accounts.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The adsWebConversionDataExportScope.
+   */
+  com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+      getAdsWebConversionDataExportScope();
 }

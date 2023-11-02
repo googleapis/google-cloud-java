@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,13 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     acquisitionConversionEventLookbackWindow_ = 0;
     otherConversionEventLookbackWindow_ = 0;
     reportingAttributionModel_ = 0;
+    adsWebConversionDataExportScope_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AttributionSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -457,11 +453,12 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Data-driven attribution distributes credit for the conversion based on
      * data for each conversion event. Each Data-driven model is specific to
      * each advertiser and each conversion event.
+     * Previously CROSS_CHANNEL_DATA_DRIVEN
      * </pre>
      *
-     * <code>CROSS_CHANNEL_DATA_DRIVEN = 1;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN = 1;</code>
      */
-    CROSS_CHANNEL_DATA_DRIVEN(1),
+    PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN(1),
     /**
      *
      *
@@ -469,67 +466,101 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Ignores direct traffic and attributes 100% of the conversion value to the
      * last channel that the customer clicked through (or engaged view through
      * for YouTube) before converting.
+     * Previously CROSS_CHANNEL_LAST_CLICK
      * </pre>
      *
-     * <code>CROSS_CHANNEL_LAST_CLICK = 2;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_LAST_CLICK = 2;</code>
      */
-    CROSS_CHANNEL_LAST_CLICK(2),
+    PAID_AND_ORGANIC_CHANNELS_LAST_CLICK(2),
     /**
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Gives all credit for the conversion to the first channel that a customer
      * clicked (or engaged view through for YouTube) before converting.
+     * Previously CROSS_CHANNEL_FIRST_CLICK
      * </pre>
      *
-     * <code>CROSS_CHANNEL_FIRST_CLICK = 3;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK = 3;</code>
      */
-    CROSS_CHANNEL_FIRST_CLICK(3),
+    PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK(3),
     /**
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Distributes the credit for the conversion equally across all the channels
      * a customer clicked (or engaged view through for YouTube) before
      * converting.
+     * Previously CROSS_CHANNEL_LINEAR
      * </pre>
      *
-     * <code>CROSS_CHANNEL_LINEAR = 4;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_LINEAR = 4;</code>
      */
-    CROSS_CHANNEL_LINEAR(4),
+    PAID_AND_ORGANIC_CHANNELS_LINEAR(4),
     /**
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Attributes 40% credit to the first and last interaction, and the
      * remaining 20% credit is distributed evenly to the middle interactions.
+     * Previously CROSS_CHANNEL_POSITION_BASED
      * </pre>
      *
-     * <code>CROSS_CHANNEL_POSITION_BASED = 5;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_POSITION_BASED = 5;</code>
      */
-    CROSS_CHANNEL_POSITION_BASED(5),
+    PAID_AND_ORGANIC_CHANNELS_POSITION_BASED(5),
     /**
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Gives more credit to the touchpoints that happened closer in time to
      * the conversion.
+     * Previously CROSS_CHANNEL_TIME_DECAY
      * </pre>
      *
-     * <code>CROSS_CHANNEL_TIME_DECAY = 6;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_TIME_DECAY = 6;</code>
      */
-    CROSS_CHANNEL_TIME_DECAY(6),
+    PAID_AND_ORGANIC_CHANNELS_TIME_DECAY(6),
     /**
      *
      *
      * <pre>
-     * Attributes 100% of the conversion value to the last Google Ads channel
+     * Attributes 100% of the conversion value to the last Google Paid channel
      * that the customer clicked through before converting.
+     * Previously ADS_PREFERRED_LAST_CLICK
      * </pre>
      *
-     * <code>ADS_PREFERRED_LAST_CLICK = 7;</code>
+     * <code>GOOGLE_PAID_CHANNELS_LAST_CLICK = 7;</code>
      */
-    ADS_PREFERRED_LAST_CLICK(7),
+    GOOGLE_PAID_CHANNELS_LAST_CLICK(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -550,11 +581,12 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Data-driven attribution distributes credit for the conversion based on
      * data for each conversion event. Each Data-driven model is specific to
      * each advertiser and each conversion event.
+     * Previously CROSS_CHANNEL_DATA_DRIVEN
      * </pre>
      *
-     * <code>CROSS_CHANNEL_DATA_DRIVEN = 1;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN = 1;</code>
      */
-    public static final int CROSS_CHANNEL_DATA_DRIVEN_VALUE = 1;
+    public static final int PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN_VALUE = 1;
     /**
      *
      *
@@ -562,67 +594,101 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Ignores direct traffic and attributes 100% of the conversion value to the
      * last channel that the customer clicked through (or engaged view through
      * for YouTube) before converting.
+     * Previously CROSS_CHANNEL_LAST_CLICK
      * </pre>
      *
-     * <code>CROSS_CHANNEL_LAST_CLICK = 2;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_LAST_CLICK = 2;</code>
      */
-    public static final int CROSS_CHANNEL_LAST_CLICK_VALUE = 2;
+    public static final int PAID_AND_ORGANIC_CHANNELS_LAST_CLICK_VALUE = 2;
     /**
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Gives all credit for the conversion to the first channel that a customer
      * clicked (or engaged view through for YouTube) before converting.
+     * Previously CROSS_CHANNEL_FIRST_CLICK
      * </pre>
      *
-     * <code>CROSS_CHANNEL_FIRST_CLICK = 3;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK = 3;</code>
      */
-    public static final int CROSS_CHANNEL_FIRST_CLICK_VALUE = 3;
+    public static final int PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK_VALUE = 3;
     /**
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Distributes the credit for the conversion equally across all the channels
      * a customer clicked (or engaged view through for YouTube) before
      * converting.
+     * Previously CROSS_CHANNEL_LINEAR
      * </pre>
      *
-     * <code>CROSS_CHANNEL_LINEAR = 4;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_LINEAR = 4;</code>
      */
-    public static final int CROSS_CHANNEL_LINEAR_VALUE = 4;
+    public static final int PAID_AND_ORGANIC_CHANNELS_LINEAR_VALUE = 4;
     /**
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Attributes 40% credit to the first and last interaction, and the
      * remaining 20% credit is distributed evenly to the middle interactions.
+     * Previously CROSS_CHANNEL_POSITION_BASED
      * </pre>
      *
-     * <code>CROSS_CHANNEL_POSITION_BASED = 5;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_POSITION_BASED = 5;</code>
      */
-    public static final int CROSS_CHANNEL_POSITION_BASED_VALUE = 5;
+    public static final int PAID_AND_ORGANIC_CHANNELS_POSITION_BASED_VALUE = 5;
     /**
      *
      *
      * <pre>
+     * Starting in June 2023, new properties can no longer use this model.
+     * See
+     * [Analytics
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
+     * for more details.
+     * Starting in September 2023, we will sunset this model for all properties.
+     *
      * Gives more credit to the touchpoints that happened closer in time to
      * the conversion.
+     * Previously CROSS_CHANNEL_TIME_DECAY
      * </pre>
      *
-     * <code>CROSS_CHANNEL_TIME_DECAY = 6;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_TIME_DECAY = 6;</code>
      */
-    public static final int CROSS_CHANNEL_TIME_DECAY_VALUE = 6;
+    public static final int PAID_AND_ORGANIC_CHANNELS_TIME_DECAY_VALUE = 6;
     /**
      *
      *
      * <pre>
-     * Attributes 100% of the conversion value to the last Google Ads channel
+     * Attributes 100% of the conversion value to the last Google Paid channel
      * that the customer clicked through before converting.
+     * Previously ADS_PREFERRED_LAST_CLICK
      * </pre>
      *
-     * <code>ADS_PREFERRED_LAST_CLICK = 7;</code>
+     * <code>GOOGLE_PAID_CHANNELS_LAST_CLICK = 7;</code>
      */
-    public static final int ADS_PREFERRED_LAST_CLICK_VALUE = 7;
+    public static final int GOOGLE_PAID_CHANNELS_LAST_CLICK_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -651,19 +717,19 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         case 0:
           return REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED;
         case 1:
-          return CROSS_CHANNEL_DATA_DRIVEN;
+          return PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN;
         case 2:
-          return CROSS_CHANNEL_LAST_CLICK;
+          return PAID_AND_ORGANIC_CHANNELS_LAST_CLICK;
         case 3:
-          return CROSS_CHANNEL_FIRST_CLICK;
+          return PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK;
         case 4:
-          return CROSS_CHANNEL_LINEAR;
+          return PAID_AND_ORGANIC_CHANNELS_LINEAR;
         case 5:
-          return CROSS_CHANNEL_POSITION_BASED;
+          return PAID_AND_ORGANIC_CHANNELS_POSITION_BASED;
         case 6:
-          return CROSS_CHANNEL_TIME_DECAY;
+          return PAID_AND_ORGANIC_CHANNELS_TIME_DECAY;
         case 7:
-          return ADS_PREFERRED_LAST_CLICK;
+          return GOOGLE_PAID_CHANNELS_LAST_CLICK;
         default:
           return null;
       }
@@ -720,6 +786,203 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     }
 
     // @@protoc_insertion_point(enum_scope:google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The Conversion Export Scope for data exported to linked Ads Accounts.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope}
+   */
+  public enum AdsWebConversionDataExportScope implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED = 0;</code>
+     */
+    ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * No data export scope selected yet.
+     * Export scope can never be changed back to this value.
+     * </pre>
+     *
+     * <code>NOT_SELECTED_YET = 1;</code>
+     */
+    NOT_SELECTED_YET(1),
+    /**
+     *
+     *
+     * <pre>
+     * Paid and organic channels are eligible to receive conversion credit, but
+     * only credit assigned to Google Ads channels will appear in your Ads
+     * accounts. To learn more, see [Paid and Organic
+     * channels](https://support.google.com/analytics/answer/10632359).
+     * </pre>
+     *
+     * <code>PAID_AND_ORGANIC_CHANNELS = 2;</code>
+     */
+    PAID_AND_ORGANIC_CHANNELS(2),
+    /**
+     *
+     *
+     * <pre>
+     * Only Google Ads paid channels are eligible to receive conversion credit.
+     * To learn more, see [Google Paid
+     * channels](https://support.google.com/analytics/answer/10632359).
+     * </pre>
+     *
+     * <code>GOOGLE_PAID_CHANNELS = 3;</code>
+     */
+    GOOGLE_PAID_CHANNELS(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * No data export scope selected yet.
+     * Export scope can never be changed back to this value.
+     * </pre>
+     *
+     * <code>NOT_SELECTED_YET = 1;</code>
+     */
+    public static final int NOT_SELECTED_YET_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Paid and organic channels are eligible to receive conversion credit, but
+     * only credit assigned to Google Ads channels will appear in your Ads
+     * accounts. To learn more, see [Paid and Organic
+     * channels](https://support.google.com/analytics/answer/10632359).
+     * </pre>
+     *
+     * <code>PAID_AND_ORGANIC_CHANNELS = 2;</code>
+     */
+    public static final int PAID_AND_ORGANIC_CHANNELS_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Only Google Ads paid channels are eligible to receive conversion credit.
+     * To learn more, see [Google Paid
+     * channels](https://support.google.com/analytics/answer/10632359).
+     * </pre>
+     *
+     * <code>GOOGLE_PAID_CHANNELS = 3;</code>
+     */
+    public static final int GOOGLE_PAID_CHANNELS_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AdsWebConversionDataExportScope valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AdsWebConversionDataExportScope forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED;
+        case 1:
+          return NOT_SELECTED_YET;
+        case 2:
+          return PAID_AND_ORGANIC_CHANNELS;
+        case 3:
+          return GOOGLE_PAID_CHANNELS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AdsWebConversionDataExportScope>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AdsWebConversionDataExportScope>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AdsWebConversionDataExportScope>() {
+              public AdsWebConversionDataExportScope findValueByNumber(int number) {
+                return AdsWebConversionDataExportScope.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.analytics.admin.v1alpha.AttributionSettings.getDescriptor()
+          .getEnumTypes()
+          .get(3);
+    }
+
+    private static final AdsWebConversionDataExportScope[] VALUES = values();
+
+    public static AdsWebConversionDataExportScope valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AdsWebConversionDataExportScope(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -881,6 +1144,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The reporting attribution model used to calculate conversion
    * credit in this property's reports.
+   *
    * Changing the attribution model will apply to both historical and future
    * data. These changes will be reflected in reports with conversion and
    * revenue data. User and session data will be unaffected.
@@ -902,6 +1166,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The reporting attribution model used to calculate conversion
    * credit in this property's reports.
+   *
    * Changing the attribution model will apply to both historical and future
    * data. These changes will be reflected in reports with conversion and
    * revenue data. User and session data will be unaffected.
@@ -921,6 +1186,52 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
             reportingAttributionModel_);
     return result == null
         ? com.google.analytics.admin.v1alpha.AttributionSettings.ReportingAttributionModel
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_FIELD_NUMBER = 5;
+  private int adsWebConversionDataExportScope_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Required. The Conversion Export Scope for data exported to linked Ads
+   * Accounts.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for adsWebConversionDataExportScope.
+   */
+  @java.lang.Override
+  public int getAdsWebConversionDataExportScopeValue() {
+    return adsWebConversionDataExportScope_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. The Conversion Export Scope for data exported to linked Ads
+   * Accounts.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The adsWebConversionDataExportScope.
+   */
+  @java.lang.Override
+  public com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+      getAdsWebConversionDataExportScope() {
+    com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope result =
+        com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+            .forNumber(adsWebConversionDataExportScope_);
+    return result == null
+        ? com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
             .UNRECOGNIZED
         : result;
   }
@@ -961,6 +1272,12 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(4, reportingAttributionModel_);
     }
+    if (adsWebConversionDataExportScope_
+        != com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+            .ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, adsWebConversionDataExportScope_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -996,6 +1313,14 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, reportingAttributionModel_);
     }
+    if (adsWebConversionDataExportScope_
+        != com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+            .ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              5, adsWebConversionDataExportScope_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1018,6 +1343,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     if (otherConversionEventLookbackWindow_ != other.otherConversionEventLookbackWindow_)
       return false;
     if (reportingAttributionModel_ != other.reportingAttributionModel_) return false;
+    if (adsWebConversionDataExportScope_ != other.adsWebConversionDataExportScope_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1037,6 +1363,8 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + otherConversionEventLookbackWindow_;
     hash = (37 * hash) + REPORTING_ATTRIBUTION_MODEL_FIELD_NUMBER;
     hash = (53 * hash) + reportingAttributionModel_;
+    hash = (37 * hash) + ADS_WEB_CONVERSION_DATA_EXPORT_SCOPE_FIELD_NUMBER;
+    hash = (53 * hash) + adsWebConversionDataExportScope_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1182,6 +1510,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       acquisitionConversionEventLookbackWindow_ = 0;
       otherConversionEventLookbackWindow_ = 0;
       reportingAttributionModel_ = 0;
+      adsWebConversionDataExportScope_ = 0;
       return this;
     }
 
@@ -1230,6 +1559,9 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.reportingAttributionModel_ = reportingAttributionModel_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.adsWebConversionDataExportScope_ = adsWebConversionDataExportScope_;
       }
     }
 
@@ -1295,6 +1627,9 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
       if (other.reportingAttributionModel_ != 0) {
         setReportingAttributionModelValue(other.getReportingAttributionModelValue());
       }
+      if (other.adsWebConversionDataExportScope_ != 0) {
+        setAdsWebConversionDataExportScopeValue(other.getAdsWebConversionDataExportScopeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1345,6 +1680,12 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 40:
+              {
+                adsWebConversionDataExportScope_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1720,6 +2061,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The reporting attribution model used to calculate conversion
      * credit in this property's reports.
+     *
      * Changing the attribution model will apply to both historical and future
      * data. These changes will be reflected in reports with conversion and
      * revenue data. User and session data will be unaffected.
@@ -1741,6 +2083,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The reporting attribution model used to calculate conversion
      * credit in this property's reports.
+     *
      * Changing the attribution model will apply to both historical and future
      * data. These changes will be reflected in reports with conversion and
      * revenue data. User and session data will be unaffected.
@@ -1765,6 +2108,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The reporting attribution model used to calculate conversion
      * credit in this property's reports.
+     *
      * Changing the attribution model will apply to both historical and future
      * data. These changes will be reflected in reports with conversion and
      * revenue data. User and session data will be unaffected.
@@ -1793,6 +2137,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The reporting attribution model used to calculate conversion
      * credit in this property's reports.
+     *
      * Changing the attribution model will apply to both historical and future
      * data. These changes will be reflected in reports with conversion and
      * revenue data. User and session data will be unaffected.
@@ -1821,6 +2166,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The reporting attribution model used to calculate conversion
      * credit in this property's reports.
+     *
      * Changing the attribution model will apply to both historical and future
      * data. These changes will be reflected in reports with conversion and
      * revenue data. User and session data will be unaffected.
@@ -1835,6 +2181,119 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     public Builder clearReportingAttributionModel() {
       bitField0_ = (bitField0_ & ~0x00000008);
       reportingAttributionModel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int adsWebConversionDataExportScope_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Conversion Export Scope for data exported to linked Ads
+     * Accounts.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for adsWebConversionDataExportScope.
+     */
+    @java.lang.Override
+    public int getAdsWebConversionDataExportScopeValue() {
+      return adsWebConversionDataExportScope_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Conversion Export Scope for data exported to linked Ads
+     * Accounts.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for adsWebConversionDataExportScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdsWebConversionDataExportScopeValue(int value) {
+      adsWebConversionDataExportScope_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Conversion Export Scope for data exported to linked Ads
+     * Accounts.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The adsWebConversionDataExportScope.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+        getAdsWebConversionDataExportScope() {
+      com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+          result =
+              com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+                  .forNumber(adsWebConversionDataExportScope_);
+      return result == null
+          ? com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+              .UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Conversion Export Scope for data exported to linked Ads
+     * Accounts.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The adsWebConversionDataExportScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdsWebConversionDataExportScope(
+        com.google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      adsWebConversionDataExportScope_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Conversion Export Scope for data exported to linked Ads
+     * Accounts.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.AttributionSettings.AdsWebConversionDataExportScope ads_web_conversion_data_export_scope = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdsWebConversionDataExportScope() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      adsWebConversionDataExportScope_ = 0;
       onChanged();
       return this;
     }

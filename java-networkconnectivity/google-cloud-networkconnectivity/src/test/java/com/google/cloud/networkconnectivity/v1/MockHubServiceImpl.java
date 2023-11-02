@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,6 +160,27 @@ public class MockHubServiceImpl extends HubServiceImplBase {
   }
 
   @Override
+  public void listHubSpokes(
+      ListHubSpokesRequest request, StreamObserver<ListHubSpokesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListHubSpokesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListHubSpokesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListHubSpokes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListHubSpokesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listSpokes(
       ListSpokesRequest request, StreamObserver<ListSpokesResponse> responseObserver) {
     Object response = responses.poll();
@@ -241,6 +262,48 @@ public class MockHubServiceImpl extends HubServiceImplBase {
   }
 
   @Override
+  public void rejectHubSpoke(
+      RejectHubSpokeRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RejectHubSpoke, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void acceptHubSpoke(
+      AcceptHubSpokeRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AcceptHubSpoke, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteSpoke(DeleteSpokeRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Operation) {
@@ -256,6 +319,130 @@ public class MockHubServiceImpl extends HubServiceImplBase {
                   "Unrecognized response type %s for method DeleteSpoke, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRouteTable(
+      GetRouteTableRequest request, StreamObserver<RouteTable> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RouteTable) {
+      requests.add(request);
+      responseObserver.onNext(((RouteTable) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRouteTable, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RouteTable.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRoute(GetRouteRequest request, StreamObserver<Route> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Route) {
+      requests.add(request);
+      responseObserver.onNext(((Route) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRoute, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Route.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRoutes(
+      ListRoutesRequest request, StreamObserver<ListRoutesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRoutesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRoutesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRoutes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRoutesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRouteTables(
+      ListRouteTablesRequest request, StreamObserver<ListRouteTablesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRouteTablesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRouteTablesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRouteTables, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRouteTablesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGroup(GetGroupRequest request, StreamObserver<Group> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Group) {
+      requests.add(request);
+      responseObserver.onNext(((Group) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Group.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listGroups(
+      ListGroupsRequest request, StreamObserver<ListGroupsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGroupsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGroupsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGroups, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGroupsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

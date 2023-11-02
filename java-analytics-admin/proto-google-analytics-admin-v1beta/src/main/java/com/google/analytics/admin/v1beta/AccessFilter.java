@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
     return new AccessFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.AccessReportProto
         .internal_static_google_analytics_admin_v1beta_AccessFilter_descriptor;
@@ -68,6 +63,8 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int oneFilterCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneFilter_;
 
   public enum OneFilterCase

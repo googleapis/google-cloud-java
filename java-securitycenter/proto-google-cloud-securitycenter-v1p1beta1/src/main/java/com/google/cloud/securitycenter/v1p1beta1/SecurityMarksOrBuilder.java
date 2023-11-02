@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public interface SecurityMarksOrBuilder
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
+   *
    *   * Keys and values are treated as case insensitive
    *   * Keys must be between 1 - 256 characters (inclusive)
    *   * Keys must be letters, numbers, underscores, or dashes
@@ -78,6 +79,7 @@ public interface SecurityMarksOrBuilder
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
+   *
    *   * Keys and values are treated as case insensitive
    *   * Keys must be between 1 - 256 characters (inclusive)
    *   * Keys must be letters, numbers, underscores, or dashes
@@ -97,6 +99,7 @@ public interface SecurityMarksOrBuilder
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
+   *
    *   * Keys and values are treated as case insensitive
    *   * Keys must be between 1 - 256 characters (inclusive)
    *   * Keys must be letters, numbers, underscores, or dashes
@@ -113,6 +116,7 @@ public interface SecurityMarksOrBuilder
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
+   *
    *   * Keys and values are treated as case insensitive
    *   * Keys must be between 1 - 256 characters (inclusive)
    *   * Keys must be letters, numbers, underscores, or dashes
@@ -133,6 +137,7 @@ public interface SecurityMarksOrBuilder
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
+   *
    *   * Keys and values are treated as case insensitive
    *   * Keys must be between 1 - 256 characters (inclusive)
    *   * Keys must be letters, numbers, underscores, or dashes

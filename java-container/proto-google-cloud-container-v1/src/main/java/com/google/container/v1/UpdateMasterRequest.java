@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
     return new UpdateMasterRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_UpdateMasterRequest_descriptor;
@@ -87,7 +82,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateMasterRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2686
+   *     google/container/v1/cluster_service.proto;l=2914
    * @return The projectId.
    */
   @java.lang.Override
@@ -115,7 +110,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateMasterRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2686
+   *     google/container/v1/cluster_service.proto;l=2914
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -149,7 +144,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateMasterRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2692
+   *     google/container/v1/cluster_service.proto;l=2920
    * @return The zone.
    */
   @java.lang.Override
@@ -178,7 +173,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateMasterRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2692
+   *     google/container/v1/cluster_service.proto;l=2920
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -210,7 +205,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateMasterRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2696
+   *     google/container/v1/cluster_service.proto;l=2924
    * @return The clusterId.
    */
   @java.lang.Override
@@ -237,7 +232,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateMasterRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2696
+   *     google/container/v1/cluster_service.proto;l=2924
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -263,8 +258,10 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The Kubernetes version to change the master to.
+   *
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -293,8 +290,10 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The Kubernetes version to change the master to.
+   *
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -822,7 +821,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2686
+     *     google/container/v1/cluster_service.proto;l=2914
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -849,7 +848,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2686
+     *     google/container/v1/cluster_service.proto;l=2914
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -876,7 +875,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2686
+     *     google/container/v1/cluster_service.proto;l=2914
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -902,7 +901,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2686
+     *     google/container/v1/cluster_service.proto;l=2914
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -924,7 +923,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2686
+     *     google/container/v1/cluster_service.proto;l=2914
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -954,7 +953,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2692
+     *     google/container/v1/cluster_service.proto;l=2920
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -982,7 +981,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2692
+     *     google/container/v1/cluster_service.proto;l=2920
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1010,7 +1009,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2692
+     *     google/container/v1/cluster_service.proto;l=2920
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1037,7 +1036,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2692
+     *     google/container/v1/cluster_service.proto;l=2920
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1060,7 +1059,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2692
+     *     google/container/v1/cluster_service.proto;l=2920
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1088,7 +1087,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2696
+     *     google/container/v1/cluster_service.proto;l=2924
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1114,7 +1113,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2696
+     *     google/container/v1/cluster_service.proto;l=2924
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1140,7 +1139,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2696
+     *     google/container/v1/cluster_service.proto;l=2924
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1165,7 +1164,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2696
+     *     google/container/v1/cluster_service.proto;l=2924
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1186,7 +1185,7 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateMasterRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2696
+     *     google/container/v1/cluster_service.proto;l=2924
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1208,8 +1207,10 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The Kubernetes version to change the master to.
+     *
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -1237,8 +1238,10 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The Kubernetes version to change the master to.
+     *
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -1266,8 +1269,10 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The Kubernetes version to change the master to.
+     *
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -1294,8 +1299,10 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The Kubernetes version to change the master to.
+     *
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -1318,8 +1325,10 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The Kubernetes version to change the master to.
+     *
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version

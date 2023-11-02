@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,13 +39,13 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   private BuildStep() {
     name_ = "";
-    env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    env_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    args_ = com.google.protobuf.LazyStringArrayList.emptyList();
     dir_ = "";
     id_ = "";
-    waitFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    waitFor_ = com.google.protobuf.LazyStringArrayList.emptyList();
     entrypoint_ = "";
-    secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    secretEnv_ = com.google.protobuf.LazyStringArrayList.emptyList();
     volumes_ = java.util.Collections.emptyList();
     status_ = 0;
     allowExitCodes_ = emptyIntList();
@@ -56,11 +56,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BuildStep();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,6 +73,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.BuildStep.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -88,15 +84,18 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The name of the container image that will run this particular
    * build step.
+   *
    * If the image is available in the host's Docker daemon's cache, it
    * will be run directly. If not, the host will attempt to pull the image
    * first, using the builder service account's credentials if necessary.
+   *
    * The Docker daemon's cache will already have the latest versions of all of
    * the officially supported build steps
    * ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)).
    * The Docker daemon will also have cached many of the layers for some popular
    * images, like "ubuntu", "debian", but they will be refreshed at the time you
    * attempt to use them.
+   *
    * If you built an image in a previous build step, it will be stored in the
    * host's Docker daemon's cache and is available to use as the name for a
    * later build step.
@@ -124,15 +123,18 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The name of the container image that will run this particular
    * build step.
+   *
    * If the image is available in the host's Docker daemon's cache, it
    * will be run directly. If not, the host will attempt to pull the image
    * first, using the builder service account's credentials if necessary.
+   *
    * The Docker daemon's cache will already have the latest versions of all of
    * the officially supported build steps
    * ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)).
    * The Docker daemon will also have cached many of the layers for some popular
    * images, like "ubuntu", "debian", but they will be refreshed at the time you
    * attempt to use them.
+   *
    * If you built an image in a previous build step, it will be stored in the
    * host's Docker daemon's cache and is available to use as the name for a
    * later build step.
@@ -158,12 +160,14 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public static final int ENV_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList env_;
+  private com.google.protobuf.LazyStringArrayList env_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * A list of environment variable definitions to be used when running a step.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -180,6 +184,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of environment variable definitions to be used when running a step.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -196,6 +201,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of environment variable definitions to be used when running a step.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -213,6 +219,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of environment variable definitions to be used when running a step.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -229,12 +236,14 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public static final int ARGS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList args_;
+  private com.google.protobuf.LazyStringArrayList args_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * A list of arguments that will be presented to the step when it is started.
+   *
    * If the image used to run the step's container has an entrypoint, the `args`
    * are used as arguments to that entrypoint. If the image does not define
    * an entrypoint, the first element in args is used as the entrypoint,
@@ -253,6 +262,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of arguments that will be presented to the step when it is started.
+   *
    * If the image used to run the step's container has an entrypoint, the `args`
    * are used as arguments to that entrypoint. If the image does not define
    * an entrypoint, the first element in args is used as the entrypoint,
@@ -271,6 +281,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of arguments that will be presented to the step when it is started.
+   *
    * If the image used to run the step's container has an entrypoint, the `args`
    * are used as arguments to that entrypoint. If the image does not define
    * an entrypoint, the first element in args is used as the entrypoint,
@@ -290,6 +301,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of arguments that will be presented to the step when it is started.
+   *
    * If the image used to run the step's container has an entrypoint, the `args`
    * are used as arguments to that entrypoint. If the image does not define
    * an entrypoint, the first element in args is used as the entrypoint,
@@ -314,10 +326,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Working directory to use when running this step's container.
+   *
    * If this value is a relative path, it is relative to the build's working
    * directory. If this value is absolute, it may be outside the build's working
    * directory, in which case the contents of the path may not be persisted
    * across build step executions, unless a `volume` for that path is specified.
+   *
    * If the build specifies a `RepoSource` with `dir` and a step with a `dir`,
    * which specifies an absolute path, the `RepoSource` `dir` is ignored for
    * the step's execution.
@@ -344,10 +358,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Working directory to use when running this step's container.
+   *
    * If this value is a relative path, it is relative to the build's working
    * directory. If this value is absolute, it may be outside the build's working
    * directory, in which case the contents of the path may not be persisted
    * across build step executions, unless a `volume` for that path is specified.
+   *
    * If the build specifies a `RepoSource` with `dir` and a step with a `dir`,
    * which specifies an absolute path, the `RepoSource` `dir` is ignored for
    * the step's execution.
@@ -426,7 +442,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public static final int WAIT_FOR_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList waitFor_;
+  private com.google.protobuf.LazyStringArrayList waitFor_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -558,7 +575,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public static final int SECRET_ENV_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList secretEnv_;
+  private com.google.protobuf.LazyStringArrayList secretEnv_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -635,9 +653,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of volumes to mount into the build step.
+   *
    * Each volume is created as an empty volume prior to execution of the
    * build step. Upon completion of the build, volumes and their contents are
    * discarded.
+   *
    * Using a named volume in only one step is not valid as it is indicative
    * of a build request with an incorrect configuration.
    * </pre>
@@ -653,9 +673,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of volumes to mount into the build step.
+   *
    * Each volume is created as an empty volume prior to execution of the
    * build step. Upon completion of the build, volumes and their contents are
    * discarded.
+   *
    * Using a named volume in only one step is not valid as it is indicative
    * of a build request with an incorrect configuration.
    * </pre>
@@ -672,9 +694,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of volumes to mount into the build step.
+   *
    * Each volume is created as an empty volume prior to execution of the
    * build step. Upon completion of the build, volumes and their contents are
    * discarded.
+   *
    * Using a named volume in only one step is not valid as it is indicative
    * of a build request with an incorrect configuration.
    * </pre>
@@ -690,9 +714,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of volumes to mount into the build step.
+   *
    * Each volume is created as an empty volume prior to execution of the
    * build step. Upon completion of the build, volumes and their contents are
    * discarded.
+   *
    * Using a named volume in only one step is not valid as it is indicative
    * of a build request with an incorrect configuration.
    * </pre>
@@ -708,9 +734,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of volumes to mount into the build step.
+   *
    * Each volume is created as an empty volume prior to execution of the
    * build step. Upon completion of the build, volumes and their contents are
    * discarded.
+   *
    * Using a named volume in only one step is not valid as it is indicative
    * of a build request with an incorrect configuration.
    * </pre>
@@ -935,6 +963,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Allow this build step to fail without failing the entire build.
+   *
    * If false, the entire build will fail if this step fails. Otherwise, the
    * build will succeed, but this step will still have a failure status.
    * Error information will be reported in the failure_detail field.
@@ -1033,6 +1062,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A shell script to be executed in the step.
+   *
    * When script is provided, the user cannot specify the entrypoint or args.
    * </pre>
    *
@@ -1057,6 +1087,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A shell script to be executed in the step.
+   *
    * When script is provided, the user cannot specify the entrypoint or args.
    * </pre>
    *
@@ -1075,6 +1106,43 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int AUTOMAP_SUBSTITUTIONS_FIELD_NUMBER = 20;
+  private boolean automapSubstitutions_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Option to include built-in and custom substitutions as env variables
+   * for this build step. This option will override the global option
+   * in BuildOption.
+   * </pre>
+   *
+   * <code>optional bool automap_substitutions = 20;</code>
+   *
+   * @return Whether the automapSubstitutions field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutomapSubstitutions() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Option to include built-in and custom substitutions as env variables
+   * for this build step. This option will override the global option
+   * in BuildOption.
+   * </pre>
+   *
+   * <code>optional bool automap_substitutions = 20;</code>
+   *
+   * @return The automapSubstitutions.
+   */
+  @java.lang.Override
+  public boolean getAutomapSubstitutions() {
+    return automapSubstitutions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1146,6 +1214,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(script_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, script_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(20, automapSubstitutions_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1237,6 +1308,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(script_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, script_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, automapSubstitutions_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1278,6 +1352,10 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     if (getExitCode() != other.getExitCode()) return false;
     if (!getAllowExitCodesList().equals(other.getAllowExitCodesList())) return false;
     if (!getScript().equals(other.getScript())) return false;
+    if (hasAutomapSubstitutions() != other.hasAutomapSubstitutions()) return false;
+    if (hasAutomapSubstitutions()) {
+      if (getAutomapSubstitutions() != other.getAutomapSubstitutions()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1341,6 +1419,10 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SCRIPT_FIELD_NUMBER;
     hash = (53 * hash) + getScript().hashCode();
+    if (hasAutomapSubstitutions()) {
+      hash = (37 * hash) + AUTOMAP_SUBSTITUTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutomapSubstitutions());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1480,17 +1562,13 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      env_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       dir_ = "";
       id_ = "";
-      waitFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      waitFor_ = com.google.protobuf.LazyStringArrayList.emptyList();
       entrypoint_ = "";
-      secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      secretEnv_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
       } else {
@@ -1518,6 +1596,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       exitCode_ = 0;
       allowExitCodes_ = emptyIntList();
       script_ = "";
+      automapSubstitutions_ = false;
       return this;
     }
 
@@ -1553,26 +1632,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloudbuild.v1.BuildStep result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        env_ = env_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.env_ = env_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.args_ = args_;
-      if (((bitField0_ & 0x00000020) != 0)) {
-        waitFor_ = waitFor_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.waitFor_ = waitFor_;
-      if (((bitField0_ & 0x00000080) != 0)) {
-        secretEnv_ = secretEnv_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.secretEnv_ = secretEnv_;
       if (volumesBuilder_ == null) {
         if (((bitField0_ & 0x00000100) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
@@ -1594,14 +1653,30 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        env_.makeImmutable();
+        result.env_ = env_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        args_.makeImmutable();
+        result.args_ = args_;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.dir_ = dir_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.id_ = id_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        waitFor_.makeImmutable();
+        result.waitFor_ = waitFor_;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.entrypoint_ = entrypoint_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        secretEnv_.makeImmutable();
+        result.secretEnv_ = secretEnv_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.timing_ = timingBuilder_ == null ? timing_ : timingBuilder_.build();
@@ -1624,6 +1699,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.script_ = script_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.automapSubstitutions_ = automapSubstitutions_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1679,7 +1760,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (!other.env_.isEmpty()) {
         if (env_.isEmpty()) {
           env_ = other.env_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureEnvIsMutable();
           env_.addAll(other.env_);
@@ -1689,7 +1770,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -1709,7 +1790,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (!other.waitFor_.isEmpty()) {
         if (waitFor_.isEmpty()) {
           waitFor_ = other.waitFor_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureWaitForIsMutable();
           waitFor_.addAll(other.waitFor_);
@@ -1724,7 +1805,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (!other.secretEnv_.isEmpty()) {
         if (secretEnv_.isEmpty()) {
           secretEnv_ = other.secretEnv_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureSecretEnvIsMutable();
           secretEnv_.addAll(other.secretEnv_);
@@ -1790,6 +1871,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         script_ = other.script_;
         bitField0_ |= 0x00010000;
         onChanged();
+      }
+      if (other.hasAutomapSubstitutions()) {
+        setAutomapSubstitutions(other.getAutomapSubstitutions());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1941,6 +2025,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 154
+            case 160:
+              {
+                automapSubstitutions_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1967,15 +2057,18 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of the container image that will run this particular
      * build step.
+     *
      * If the image is available in the host's Docker daemon's cache, it
      * will be run directly. If not, the host will attempt to pull the image
      * first, using the builder service account's credentials if necessary.
+     *
      * The Docker daemon's cache will already have the latest versions of all of
      * the officially supported build steps
      * ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)).
      * The Docker daemon will also have cached many of the layers for some popular
      * images, like "ubuntu", "debian", but they will be refreshed at the time you
      * attempt to use them.
+     *
      * If you built an image in a previous build step, it will be stored in the
      * host's Docker daemon's cache and is available to use as the name for a
      * later build step.
@@ -2002,15 +2095,18 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of the container image that will run this particular
      * build step.
+     *
      * If the image is available in the host's Docker daemon's cache, it
      * will be run directly. If not, the host will attempt to pull the image
      * first, using the builder service account's credentials if necessary.
+     *
      * The Docker daemon's cache will already have the latest versions of all of
      * the officially supported build steps
      * ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)).
      * The Docker daemon will also have cached many of the layers for some popular
      * images, like "ubuntu", "debian", but they will be refreshed at the time you
      * attempt to use them.
+     *
      * If you built an image in a previous build step, it will be stored in the
      * host's Docker daemon's cache and is available to use as the name for a
      * later build step.
@@ -2037,15 +2133,18 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of the container image that will run this particular
      * build step.
+     *
      * If the image is available in the host's Docker daemon's cache, it
      * will be run directly. If not, the host will attempt to pull the image
      * first, using the builder service account's credentials if necessary.
+     *
      * The Docker daemon's cache will already have the latest versions of all of
      * the officially supported build steps
      * ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)).
      * The Docker daemon will also have cached many of the layers for some popular
      * images, like "ubuntu", "debian", but they will be refreshed at the time you
      * attempt to use them.
+     *
      * If you built an image in a previous build step, it will be stored in the
      * host's Docker daemon's cache and is available to use as the name for a
      * later build step.
@@ -2071,15 +2170,18 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of the container image that will run this particular
      * build step.
+     *
      * If the image is available in the host's Docker daemon's cache, it
      * will be run directly. If not, the host will attempt to pull the image
      * first, using the builder service account's credentials if necessary.
+     *
      * The Docker daemon's cache will already have the latest versions of all of
      * the officially supported build steps
      * ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)).
      * The Docker daemon will also have cached many of the layers for some popular
      * images, like "ubuntu", "debian", but they will be refreshed at the time you
      * attempt to use them.
+     *
      * If you built an image in a previous build step, it will be stored in the
      * host's Docker daemon's cache and is available to use as the name for a
      * later build step.
@@ -2101,15 +2203,18 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of the container image that will run this particular
      * build step.
+     *
      * If the image is available in the host's Docker daemon's cache, it
      * will be run directly. If not, the host will attempt to pull the image
      * first, using the builder service account's credentials if necessary.
+     *
      * The Docker daemon's cache will already have the latest versions of all of
      * the officially supported build steps
      * ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)).
      * The Docker daemon will also have cached many of the layers for some popular
      * images, like "ubuntu", "debian", but they will be refreshed at the time you
      * attempt to use them.
+     *
      * If you built an image in a previous build step, it will be stored in the
      * host's Docker daemon's cache and is available to use as the name for a
      * later build step.
@@ -2131,19 +2236,21 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList env_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureEnvIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!env_.isModifiable()) {
         env_ = new com.google.protobuf.LazyStringArrayList(env_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
      *
      * <pre>
      * A list of environment variable definitions to be used when running a step.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -2153,13 +2260,15 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the env.
      */
     public com.google.protobuf.ProtocolStringList getEnvList() {
-      return env_.getUnmodifiableView();
+      env_.makeImmutable();
+      return env_;
     }
     /**
      *
      *
      * <pre>
      * A list of environment variable definitions to be used when running a step.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -2176,6 +2285,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of environment variable definitions to be used when running a step.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -2193,6 +2303,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of environment variable definitions to be used when running a step.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -2210,6 +2321,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of environment variable definitions to be used when running a step.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -2226,6 +2338,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnvIsMutable();
       env_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2234,6 +2347,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of environment variable definitions to be used when running a step.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -2249,6 +2363,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnvIsMutable();
       env_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2257,6 +2372,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of environment variable definitions to be used when running a step.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -2269,6 +2385,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllEnv(java.lang.Iterable<java.lang.String> values) {
       ensureEnvIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, env_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2277,6 +2394,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of environment variable definitions to be used when running a step.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -2286,8 +2404,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnv() {
-      env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      env_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -2296,6 +2415,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of environment variable definitions to be used when running a step.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -2312,24 +2432,26 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureEnvIsMutable();
       env_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList args_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList args_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!args_.isModifiable()) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
      *
      * <pre>
      * A list of arguments that will be presented to the step when it is started.
+     *
      * If the image used to run the step's container has an entrypoint, the `args`
      * are used as arguments to that entrypoint. If the image does not define
      * an entrypoint, the first element in args is used as the entrypoint,
@@ -2341,13 +2463,15 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the args.
      */
     public com.google.protobuf.ProtocolStringList getArgsList() {
-      return args_.getUnmodifiableView();
+      args_.makeImmutable();
+      return args_;
     }
     /**
      *
      *
      * <pre>
      * A list of arguments that will be presented to the step when it is started.
+     *
      * If the image used to run the step's container has an entrypoint, the `args`
      * are used as arguments to that entrypoint. If the image does not define
      * an entrypoint, the first element in args is used as the entrypoint,
@@ -2366,6 +2490,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of arguments that will be presented to the step when it is started.
+     *
      * If the image used to run the step's container has an entrypoint, the `args`
      * are used as arguments to that entrypoint. If the image does not define
      * an entrypoint, the first element in args is used as the entrypoint,
@@ -2385,6 +2510,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of arguments that will be presented to the step when it is started.
+     *
      * If the image used to run the step's container has an entrypoint, the `args`
      * are used as arguments to that entrypoint. If the image does not define
      * an entrypoint, the first element in args is used as the entrypoint,
@@ -2404,6 +2530,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of arguments that will be presented to the step when it is started.
+     *
      * If the image used to run the step's container has an entrypoint, the `args`
      * are used as arguments to that entrypoint. If the image does not define
      * an entrypoint, the first element in args is used as the entrypoint,
@@ -2422,6 +2549,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       ensureArgsIsMutable();
       args_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2430,6 +2558,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of arguments that will be presented to the step when it is started.
+     *
      * If the image used to run the step's container has an entrypoint, the `args`
      * are used as arguments to that entrypoint. If the image does not define
      * an entrypoint, the first element in args is used as the entrypoint,
@@ -2447,6 +2576,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2455,6 +2585,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of arguments that will be presented to the step when it is started.
+     *
      * If the image used to run the step's container has an entrypoint, the `args`
      * are used as arguments to that entrypoint. If the image does not define
      * an entrypoint, the first element in args is used as the entrypoint,
@@ -2469,6 +2600,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
       ensureArgsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, args_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2477,6 +2609,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of arguments that will be presented to the step when it is started.
+     *
      * If the image used to run the step's container has an entrypoint, the `args`
      * are used as arguments to that entrypoint. If the image does not define
      * an entrypoint, the first element in args is used as the entrypoint,
@@ -2488,8 +2621,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArgs() {
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -2498,6 +2632,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of arguments that will be presented to the step when it is started.
+     *
      * If the image used to run the step's container has an entrypoint, the `args`
      * are used as arguments to that entrypoint. If the image does not define
      * an entrypoint, the first element in args is used as the entrypoint,
@@ -2516,6 +2651,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2526,10 +2662,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Working directory to use when running this step's container.
+     *
      * If this value is a relative path, it is relative to the build's working
      * directory. If this value is absolute, it may be outside the build's working
      * directory, in which case the contents of the path may not be persisted
      * across build step executions, unless a `volume` for that path is specified.
+     *
      * If the build specifies a `RepoSource` with `dir` and a step with a `dir`,
      * which specifies an absolute path, the `RepoSource` `dir` is ignored for
      * the step's execution.
@@ -2555,10 +2693,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Working directory to use when running this step's container.
+     *
      * If this value is a relative path, it is relative to the build's working
      * directory. If this value is absolute, it may be outside the build's working
      * directory, in which case the contents of the path may not be persisted
      * across build step executions, unless a `volume` for that path is specified.
+     *
      * If the build specifies a `RepoSource` with `dir` and a step with a `dir`,
      * which specifies an absolute path, the `RepoSource` `dir` is ignored for
      * the step's execution.
@@ -2584,10 +2724,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Working directory to use when running this step's container.
+     *
      * If this value is a relative path, it is relative to the build's working
      * directory. If this value is absolute, it may be outside the build's working
      * directory, in which case the contents of the path may not be persisted
      * across build step executions, unless a `volume` for that path is specified.
+     *
      * If the build specifies a `RepoSource` with `dir` and a step with a `dir`,
      * which specifies an absolute path, the `RepoSource` `dir` is ignored for
      * the step's execution.
@@ -2612,10 +2754,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Working directory to use when running this step's container.
+     *
      * If this value is a relative path, it is relative to the build's working
      * directory. If this value is absolute, it may be outside the build's working
      * directory, in which case the contents of the path may not be persisted
      * across build step executions, unless a `volume` for that path is specified.
+     *
      * If the build specifies a `RepoSource` with `dir` and a step with a `dir`,
      * which specifies an absolute path, the `RepoSource` `dir` is ignored for
      * the step's execution.
@@ -2636,10 +2780,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Working directory to use when running this step's container.
+     *
      * If this value is a relative path, it is relative to the build's working
      * directory. If this value is absolute, it may be outside the build's working
      * directory, in which case the contents of the path may not be persisted
      * across build step executions, unless a `volume` for that path is specified.
+     *
      * If the build specifies a `RepoSource` with `dir` and a step with a `dir`,
      * which specifies an absolute path, the `RepoSource` `dir` is ignored for
      * the step's execution.
@@ -2772,14 +2918,14 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList waitFor_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList waitFor_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureWaitForIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!waitFor_.isModifiable()) {
         waitFor_ = new com.google.protobuf.LazyStringArrayList(waitFor_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2797,7 +2943,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the waitFor.
      */
     public com.google.protobuf.ProtocolStringList getWaitForList() {
-      return waitFor_.getUnmodifiableView();
+      waitFor_.makeImmutable();
+      return waitFor_;
     }
     /**
      *
@@ -2878,6 +3025,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       ensureWaitForIsMutable();
       waitFor_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2903,6 +3051,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       ensureWaitForIsMutable();
       waitFor_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2925,6 +3074,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllWaitFor(java.lang.Iterable<java.lang.String> values) {
       ensureWaitForIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, waitFor_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2944,8 +3094,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWaitFor() {
-      waitFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      waitFor_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2972,6 +3123,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureWaitForIsMutable();
       waitFor_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3087,14 +3239,14 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList secretEnv_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList secretEnv_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSecretEnvIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!secretEnv_.isModifiable()) {
         secretEnv_ = new com.google.protobuf.LazyStringArrayList(secretEnv_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -3110,7 +3262,8 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the secretEnv.
      */
     public com.google.protobuf.ProtocolStringList getSecretEnvList() {
-      return secretEnv_.getUnmodifiableView();
+      secretEnv_.makeImmutable();
+      return secretEnv_;
     }
     /**
      *
@@ -3183,6 +3336,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSecretEnvIsMutable();
       secretEnv_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3206,6 +3360,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSecretEnvIsMutable();
       secretEnv_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3226,6 +3381,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSecretEnv(java.lang.Iterable<java.lang.String> values) {
       ensureSecretEnvIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secretEnv_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3243,8 +3399,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecretEnv() {
-      secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      secretEnv_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -3269,6 +3426,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSecretEnvIsMutable();
       secretEnv_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3294,9 +3452,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3315,9 +3475,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3336,9 +3498,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3357,9 +3521,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3384,9 +3550,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3408,9 +3576,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3435,9 +3605,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3462,9 +3634,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3486,9 +3660,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3510,9 +3686,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3535,9 +3713,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3559,9 +3739,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3583,9 +3765,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3600,9 +3784,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3621,9 +3807,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3643,9 +3831,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3661,9 +3851,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -3679,9 +3871,11 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of volumes to mount into the build step.
+     *
      * Each volume is created as an empty volume prior to execution of the
      * build step. Upon completion of the build, volumes and their contents are
      * discarded.
+     *
      * Using a named volume in only one step is not valid as it is indicative
      * of a build request with an incorrect configuration.
      * </pre>
@@ -4429,6 +4623,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Allow this build step to fail without failing the entire build.
+     *
      * If false, the entire build will fail if this step fails. Otherwise, the
      * build will succeed, but this step will still have a failure status.
      * Error information will be reported in the failure_detail field.
@@ -4447,6 +4642,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Allow this build step to fail without failing the entire build.
+     *
      * If false, the entire build will fail if this step fails. Otherwise, the
      * build will succeed, but this step will still have a failure status.
      * Error information will be reported in the failure_detail field.
@@ -4469,6 +4665,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Allow this build step to fail without failing the entire build.
+     *
      * If false, the entire build will fail if this step fails. Otherwise, the
      * build will succeed, but this step will still have a failure status.
      * Error information will be reported in the failure_detail field.
@@ -4686,6 +4883,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A shell script to be executed in the step.
+     *
      * When script is provided, the user cannot specify the entrypoint or args.
      * </pre>
      *
@@ -4709,6 +4907,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A shell script to be executed in the step.
+     *
      * When script is provided, the user cannot specify the entrypoint or args.
      * </pre>
      *
@@ -4732,6 +4931,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A shell script to be executed in the step.
+     *
      * When script is provided, the user cannot specify the entrypoint or args.
      * </pre>
      *
@@ -4754,6 +4954,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A shell script to be executed in the step.
+     *
      * When script is provided, the user cannot specify the entrypoint or args.
      * </pre>
      *
@@ -4772,6 +4973,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A shell script to be executed in the step.
+     *
      * When script is provided, the user cannot specify the entrypoint or args.
      * </pre>
      *
@@ -4787,6 +4989,82 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       script_ = value;
       bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private boolean automapSubstitutions_;
+    /**
+     *
+     *
+     * <pre>
+     * Option to include built-in and custom substitutions as env variables
+     * for this build step. This option will override the global option
+     * in BuildOption.
+     * </pre>
+     *
+     * <code>optional bool automap_substitutions = 20;</code>
+     *
+     * @return Whether the automapSubstitutions field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutomapSubstitutions() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to include built-in and custom substitutions as env variables
+     * for this build step. This option will override the global option
+     * in BuildOption.
+     * </pre>
+     *
+     * <code>optional bool automap_substitutions = 20;</code>
+     *
+     * @return The automapSubstitutions.
+     */
+    @java.lang.Override
+    public boolean getAutomapSubstitutions() {
+      return automapSubstitutions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to include built-in and custom substitutions as env variables
+     * for this build step. This option will override the global option
+     * in BuildOption.
+     * </pre>
+     *
+     * <code>optional bool automap_substitutions = 20;</code>
+     *
+     * @param value The automapSubstitutions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutomapSubstitutions(boolean value) {
+
+      automapSubstitutions_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to include built-in and custom substitutions as env variables
+     * for this build step. This option will override the global option
+     * in BuildOption.
+     * </pre>
+     *
+     * <code>optional bool automap_substitutions = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutomapSubstitutions() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      automapSubstitutions_ = false;
       onChanged();
       return this;
     }

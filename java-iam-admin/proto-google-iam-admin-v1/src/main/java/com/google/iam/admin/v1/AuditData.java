@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AuditData();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -195,19 +190,14 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     }
 
     private PermissionDelta() {
-      addedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      removedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      addedPermissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      removedPermissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PermissionDelta();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -228,7 +218,8 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public static final int ADDED_PERMISSIONS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList addedPermissions_;
+    private com.google.protobuf.LazyStringArrayList addedPermissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -291,7 +282,8 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public static final int REMOVED_PERMISSIONS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList removedPermissions_;
+    private com.google.protobuf.LazyStringArrayList removedPermissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -576,10 +568,8 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        addedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        removedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        addedPermissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        removedPermissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -607,7 +597,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       public com.google.iam.admin.v1.AuditData.PermissionDelta buildPartial() {
         com.google.iam.admin.v1.AuditData.PermissionDelta result =
             new com.google.iam.admin.v1.AuditData.PermissionDelta(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -615,22 +604,16 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.iam.admin.v1.AuditData.PermissionDelta result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          addedPermissions_ = addedPermissions_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.addedPermissions_ = addedPermissions_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          removedPermissions_ = removedPermissions_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.removedPermissions_ = removedPermissions_;
-      }
-
       private void buildPartial0(com.google.iam.admin.v1.AuditData.PermissionDelta result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          addedPermissions_.makeImmutable();
+          result.addedPermissions_ = addedPermissions_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          removedPermissions_.makeImmutable();
+          result.removedPermissions_ = removedPermissions_;
+        }
       }
 
       @java.lang.Override
@@ -684,7 +667,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         if (!other.addedPermissions_.isEmpty()) {
           if (addedPermissions_.isEmpty()) {
             addedPermissions_ = other.addedPermissions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureAddedPermissionsIsMutable();
             addedPermissions_.addAll(other.addedPermissions_);
@@ -694,7 +677,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         if (!other.removedPermissions_.isEmpty()) {
           if (removedPermissions_.isEmpty()) {
             removedPermissions_ = other.removedPermissions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureRemovedPermissionsIsMutable();
             removedPermissions_.addAll(other.removedPermissions_);
@@ -760,14 +743,14 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList addedPermissions_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList addedPermissions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAddedPermissionsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!addedPermissions_.isModifiable()) {
           addedPermissions_ = new com.google.protobuf.LazyStringArrayList(addedPermissions_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -781,7 +764,8 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the addedPermissions.
        */
       public com.google.protobuf.ProtocolStringList getAddedPermissionsList() {
-        return addedPermissions_.getUnmodifiableView();
+        addedPermissions_.makeImmutable();
+        return addedPermissions_;
       }
       /**
        *
@@ -846,6 +830,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         }
         ensureAddedPermissionsIsMutable();
         addedPermissions_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -867,6 +852,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         }
         ensureAddedPermissionsIsMutable();
         addedPermissions_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -885,6 +871,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllAddedPermissions(java.lang.Iterable<java.lang.String> values) {
         ensureAddedPermissionsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, addedPermissions_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -900,8 +887,9 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAddedPermissions() {
-        addedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        addedPermissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -924,18 +912,19 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureAddedPermissionsIsMutable();
         addedPermissions_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList removedPermissions_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList removedPermissions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureRemovedPermissionsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!removedPermissions_.isModifiable()) {
           removedPermissions_ = new com.google.protobuf.LazyStringArrayList(removedPermissions_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -949,7 +938,8 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the removedPermissions.
        */
       public com.google.protobuf.ProtocolStringList getRemovedPermissionsList() {
-        return removedPermissions_.getUnmodifiableView();
+        removedPermissions_.makeImmutable();
+        return removedPermissions_;
       }
       /**
        *
@@ -1014,6 +1004,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         }
         ensureRemovedPermissionsIsMutable();
         removedPermissions_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1035,6 +1026,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         }
         ensureRemovedPermissionsIsMutable();
         removedPermissions_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1053,6 +1045,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllRemovedPermissions(java.lang.Iterable<java.lang.String> values) {
         ensureRemovedPermissionsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, removedPermissions_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1068,8 +1061,9 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRemovedPermissions() {
-        removedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        removedPermissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1092,6 +1086,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureRemovedPermissionsIsMutable();
         removedPermissions_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

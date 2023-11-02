@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetVodAdTagDetailRequest extends com.google.protobuf.Generate
     return new GetVodAdTagDetailRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.stitcher.v1.VideoStitcherServiceProto
         .internal_static_google_cloud_video_stitcher_v1_GetVodAdTagDetailRequest_descriptor;
@@ -75,7 +70,8 @@ public final class GetVodAdTagDetailRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the ad tag detail for the specified VOD session, in the form of
+   * Required. The name of the ad tag detail for the specified VOD session, in
+   * the form of
    * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodAdTagDetails/{vod_ad_tag_detail}`.
    * </pre>
    *
@@ -101,7 +97,8 @@ public final class GetVodAdTagDetailRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the ad tag detail for the specified VOD session, in the form of
+   * Required. The name of the ad tag detail for the specified VOD session, in
+   * the form of
    * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodAdTagDetails/{vod_ad_tag_detail}`.
    * </pre>
    *
@@ -472,7 +469,8 @@ public final class GetVodAdTagDetailRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the ad tag detail for the specified VOD session, in the form of
+     * Required. The name of the ad tag detail for the specified VOD session, in
+     * the form of
      * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodAdTagDetails/{vod_ad_tag_detail}`.
      * </pre>
      *
@@ -497,7 +495,8 @@ public final class GetVodAdTagDetailRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the ad tag detail for the specified VOD session, in the form of
+     * Required. The name of the ad tag detail for the specified VOD session, in
+     * the form of
      * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodAdTagDetails/{vod_ad_tag_detail}`.
      * </pre>
      *
@@ -522,7 +521,8 @@ public final class GetVodAdTagDetailRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the ad tag detail for the specified VOD session, in the form of
+     * Required. The name of the ad tag detail for the specified VOD session, in
+     * the form of
      * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodAdTagDetails/{vod_ad_tag_detail}`.
      * </pre>
      *
@@ -546,7 +546,8 @@ public final class GetVodAdTagDetailRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the ad tag detail for the specified VOD session, in the form of
+     * Required. The name of the ad tag detail for the specified VOD session, in
+     * the form of
      * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodAdTagDetails/{vod_ad_tag_detail}`.
      * </pre>
      *
@@ -566,7 +567,8 @@ public final class GetVodAdTagDetailRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the ad tag detail for the specified VOD session, in the form of
+     * Required. The name of the ad tag detail for the specified VOD session, in
+     * the form of
      * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodAdTagDetails/{vod_ad_tag_detail}`.
      * </pre>
      *

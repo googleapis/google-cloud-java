@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface GetBackupRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the backup to retrieve, in the
    * following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface GetBackupRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the backup to retrieve, in the
    * following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * </pre>
    *

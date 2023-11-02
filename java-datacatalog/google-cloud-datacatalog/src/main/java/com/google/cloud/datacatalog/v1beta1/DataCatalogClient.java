@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -188,7 +188,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <p>This is a custom method (https://cloud.google.com/apis/design/custom_methods) and does not
    * return the complete resource, only the resource identifier and high level fields. Clients can
-   * subsequentally call `Get` methods.
+   * subsequently call `Get` methods.
    *
    * <p>Note that Data Catalog search queries do not guarantee full recall. Query results that match
    * your query may not be returned, even in subsequent result pages. Also note that results
@@ -219,8 +219,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param scope Required. The scope of this search request. A `scope` that has empty
    *     `include_org_ids`, `include_project_ids` AND false `include_gcp_public_datasets` is
    *     considered invalid. Data Catalog will return an error in such a case.
-   * @param query Required. The query string in search query syntax. The query must be non-empty.
-   *     <p>Query strings can be simple as "x" or more qualified as:
+   * @param query Optional. The query string in search query syntax. An empty query string will
+   *     result in all data assets (in the specified scope) that the user has access to. Query
+   *     strings can be simple as "x" or more qualified as:
    *     <ul>
    *       <li>name:x
    *       <li>column:x
@@ -245,7 +246,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <p>This is a custom method (https://cloud.google.com/apis/design/custom_methods) and does not
    * return the complete resource, only the resource identifier and high level fields. Clients can
-   * subsequentally call `Get` methods.
+   * subsequently call `Get` methods.
    *
    * <p>Note that Data Catalog search queries do not guarantee full recall. Query results that match
    * your query may not be returned, even in subsequent result pages. Also note that results
@@ -291,7 +292,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <p>This is a custom method (https://cloud.google.com/apis/design/custom_methods) and does not
    * return the complete resource, only the resource identifier and high level fields. Clients can
-   * subsequentally call `Get` methods.
+   * subsequently call `Get` methods.
    *
    * <p>Note that Data Catalog search queries do not guarantee full recall. Query results that match
    * your query may not be returned, even in subsequent result pages. Also note that results
@@ -338,7 +339,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <p>This is a custom method (https://cloud.google.com/apis/design/custom_methods) and does not
    * return the complete resource, only the resource identifier and high level fields. Clients can
-   * subsequentally call `Get` methods.
+   * subsequently call `Get` methods.
    *
    * <p>Note that Data Catalog search queries do not guarantee full recall. Query results that match
    * your query may not be returned, even in subsequent result pages. Also note that results
@@ -597,8 +598,9 @@ public class DataCatalogClient implements BackgroundResource {
    * }</pre>
    *
    * @param entryGroup Required. The updated entry group. "name" field must be set.
-   * @param updateMask The fields to update on the entry group. If absent or empty, all modifiable
-   *     fields are updated.
+   * @param updateMask Names of fields whose values to overwrite on an entry group.
+   *     <p>If this parameter is absent or empty, all modifiable fields are overwritten. If such
+   *     fields are non-required and omitted in the request body, their values are emptied.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntryGroup updateEntryGroup(EntryGroup entryGroup, FieldMask updateMask) {
@@ -1358,16 +1360,17 @@ public class DataCatalogClient implements BackgroundResource {
    * }</pre>
    *
    * @param entry Required. The updated entry. The "name" field must be set.
-   * @param updateMask The fields to update on the entry. If absent or empty, all modifiable fields
-   *     are updated.
+   * @param updateMask Names of fields whose values to overwrite on an entry.
+   *     <p>If this parameter is absent or empty, all modifiable fields are overwritten. If such
+   *     fields are non-required and omitted in the request body, their values are emptied.
    *     <p>The following fields are modifiable:
    *     <ul>
    *       <li>For entries with type `DATA_STREAM`: &#42; `schema`
-   *       <li>For entries with type `FILESET` &#42; `schema` &#42; `display_name` &#42;
+   *       <li>For entries with type `FILESET`: &#42; `schema` &#42; `display_name` &#42;
    *           `description` &#42; `gcs_fileset_spec` &#42; `gcs_fileset_spec.file_patterns`
-   *       <li>For entries with `user_specified_type` &#42; `schema` &#42; `display_name` &#42;
-   *           `description` &#42; user_specified_type &#42; user_specified_system &#42;
-   *           linked_resource &#42; source_system_timestamps
+   *       <li>For entries with `user_specified_type`: &#42; `schema` &#42; `display_name` &#42;
+   *           `description` &#42; `user_specified_type` &#42; `user_specified_system` &#42;
+   *           `linked_resource` &#42; `source_system_timestamps`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2246,10 +2249,10 @@ public class DataCatalogClient implements BackgroundResource {
    * }</pre>
    *
    * @param tagTemplate Required. The template to update. The "name" field must be set.
-   * @param updateMask The field mask specifies the parts of the template to overwrite.
-   *     <p>Allowed fields:
-   *     <p>&#42; `display_name`
-   *     <p>If absent or empty, all of the allowed fields above will be updated.
+   * @param updateMask Names of fields whose values to overwrite on a tag template. Currently, only
+   *     `display_name` can be overwritten.
+   *     <p>In general, if this parameter is absent or empty, all modifiable fields are overwritten.
+   *     If such fields are non-required and omitted in the request body, their values are emptied.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TagTemplate updateTagTemplate(TagTemplate tagTemplate, FieldMask updateMask) {
@@ -2744,13 +2747,19 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @param tagTemplateField Required. The template to update.
-   * @param updateMask Optional. The field mask specifies the parts of the template to be updated.
-   *     Allowed fields:
+   * @param updateMask Optional. Names of fields whose values to overwrite on an individual field of
+   *     a tag template. The following fields are modifiable:
    *     <p>&#42; `display_name` &#42; `type.enum_type` &#42; `is_required`
-   *     <p>If `update_mask` is not set or empty, all of the allowed fields above will be updated.
-   *     <p>When updating an enum type, the provided values will be merged with the existing values.
-   *     Therefore, enum values can only be added, existing enum values cannot be deleted nor
-   *     renamed. Updating a template field from optional to required is NOT allowed.
+   *     <p>If this parameter is absent or empty, all modifiable fields are overwritten. If such
+   *     fields are non-required and omitted in the request body, their values are emptied with one
+   *     exception: when updating an enum type, the provided values are merged with the existing
+   *     values. Therefore, enum values can only be added, existing enum values cannot be deleted or
+   *     renamed.
+   *     <p>Additionally, updating a template field from optional to required is
+   *     <ul>
+   *       <li>not&#42; allowed.
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TagTemplateField updateTagTemplateField(
@@ -2796,13 +2805,19 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @param tagTemplateField Required. The template to update.
-   * @param updateMask Optional. The field mask specifies the parts of the template to be updated.
-   *     Allowed fields:
+   * @param updateMask Optional. Names of fields whose values to overwrite on an individual field of
+   *     a tag template. The following fields are modifiable:
    *     <p>&#42; `display_name` &#42; `type.enum_type` &#42; `is_required`
-   *     <p>If `update_mask` is not set or empty, all of the allowed fields above will be updated.
-   *     <p>When updating an enum type, the provided values will be merged with the existing values.
-   *     Therefore, enum values can only be added, existing enum values cannot be deleted nor
-   *     renamed. Updating a template field from optional to required is NOT allowed.
+   *     <p>If this parameter is absent or empty, all modifiable fields are overwritten. If such
+   *     fields are non-required and omitted in the request body, their values are emptied with one
+   *     exception: when updating an enum type, the provided values are merged with the existing
+   *     values. Therefore, enum values can only be added, existing enum values cannot be deleted or
+   *     renamed.
+   *     <p>Additionally, updating a template field from optional to required is
+   *     <ul>
+   *       <li>not&#42; allowed.
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TagTemplateField updateTagTemplateField(
@@ -3040,6 +3055,179 @@ public class DataCatalogClient implements BackgroundResource {
   public final UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldCallable() {
     return stub.renameTagTemplateFieldCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames an enum value in a tag template. The enum values have to be unique within one enum
+   * field. Thus, an enum value cannot be renamed with a name used in any other enum value within
+   * the same enum field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   TagTemplateFieldEnumValueName name =
+   *       TagTemplateFieldEnumValueName.of(
+   *           "[PROJECT]",
+   *           "[LOCATION]",
+   *           "[TAG_TEMPLATE]",
+   *           "[TAG_TEMPLATE_FIELD_ID]",
+   *           "[ENUM_VALUE_DISPLAY_NAME]");
+   *   String newEnumValueDisplayName = "newEnumValueDisplayName-1119629027";
+   *   TagTemplateField response =
+   *       dataCatalogClient.renameTagTemplateFieldEnumValue(name, newEnumValueDisplayName);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the enum field value. Example:
+   *     <ul>
+   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+   *     </ul>
+   *
+   * @param newEnumValueDisplayName Required. The new display name of the enum value. For example,
+   *     `my_new_enum_value`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TagTemplateField renameTagTemplateFieldEnumValue(
+      TagTemplateFieldEnumValueName name, String newEnumValueDisplayName) {
+    RenameTagTemplateFieldEnumValueRequest request =
+        RenameTagTemplateFieldEnumValueRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setNewEnumValueDisplayName(newEnumValueDisplayName)
+            .build();
+    return renameTagTemplateFieldEnumValue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames an enum value in a tag template. The enum values have to be unique within one enum
+   * field. Thus, an enum value cannot be renamed with a name used in any other enum value within
+   * the same enum field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   String name =
+   *       TagTemplateFieldEnumValueName.of(
+   *               "[PROJECT]",
+   *               "[LOCATION]",
+   *               "[TAG_TEMPLATE]",
+   *               "[TAG_TEMPLATE_FIELD_ID]",
+   *               "[ENUM_VALUE_DISPLAY_NAME]")
+   *           .toString();
+   *   String newEnumValueDisplayName = "newEnumValueDisplayName-1119629027";
+   *   TagTemplateField response =
+   *       dataCatalogClient.renameTagTemplateFieldEnumValue(name, newEnumValueDisplayName);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the enum field value. Example:
+   *     <ul>
+   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+   *     </ul>
+   *
+   * @param newEnumValueDisplayName Required. The new display name of the enum value. For example,
+   *     `my_new_enum_value`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TagTemplateField renameTagTemplateFieldEnumValue(
+      String name, String newEnumValueDisplayName) {
+    RenameTagTemplateFieldEnumValueRequest request =
+        RenameTagTemplateFieldEnumValueRequest.newBuilder()
+            .setName(name)
+            .setNewEnumValueDisplayName(newEnumValueDisplayName)
+            .build();
+    return renameTagTemplateFieldEnumValue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames an enum value in a tag template. The enum values have to be unique within one enum
+   * field. Thus, an enum value cannot be renamed with a name used in any other enum value within
+   * the same enum field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   RenameTagTemplateFieldEnumValueRequest request =
+   *       RenameTagTemplateFieldEnumValueRequest.newBuilder()
+   *           .setName(
+   *               TagTemplateFieldEnumValueName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[TAG_TEMPLATE]",
+   *                       "[TAG_TEMPLATE_FIELD_ID]",
+   *                       "[ENUM_VALUE_DISPLAY_NAME]")
+   *                   .toString())
+   *           .setNewEnumValueDisplayName("newEnumValueDisplayName-1119629027")
+   *           .build();
+   *   TagTemplateField response = dataCatalogClient.renameTagTemplateFieldEnumValue(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TagTemplateField renameTagTemplateFieldEnumValue(
+      RenameTagTemplateFieldEnumValueRequest request) {
+    return renameTagTemplateFieldEnumValueCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames an enum value in a tag template. The enum values have to be unique within one enum
+   * field. Thus, an enum value cannot be renamed with a name used in any other enum value within
+   * the same enum field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   RenameTagTemplateFieldEnumValueRequest request =
+   *       RenameTagTemplateFieldEnumValueRequest.newBuilder()
+   *           .setName(
+   *               TagTemplateFieldEnumValueName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[TAG_TEMPLATE]",
+   *                       "[TAG_TEMPLATE_FIELD_ID]",
+   *                       "[ENUM_VALUE_DISPLAY_NAME]")
+   *                   .toString())
+   *           .setNewEnumValueDisplayName("newEnumValueDisplayName-1119629027")
+   *           .build();
+   *   ApiFuture<TagTemplateField> future =
+   *       dataCatalogClient.renameTagTemplateFieldEnumValueCallable().futureCall(request);
+   *   // Do something.
+   *   TagTemplateField response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueCallable() {
+    return stub.renameTagTemplateFieldEnumValueCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3391,8 +3579,11 @@ public class DataCatalogClient implements BackgroundResource {
    * }</pre>
    *
    * @param tag Required. The updated tag. The "name" field must be set.
-   * @param updateMask The fields to update on the Tag. If absent or empty, all modifiable fields
-   *     are updated. Currently the only modifiable field is the field `fields`.
+   * @param updateMask Note: Currently, this parameter can only take `"fields"` as value.
+   *     <p>Names of fields whose values to overwrite on a tag. Currently, a tag has the only
+   *     modifiable field with the name `fields`.
+   *     <p>In general, if this parameter is absent or empty, all modifiable fields are overwritten.
+   *     If such fields are non-required and omitted in the request body, their values are emptied.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Tag updateTag(Tag tag, FieldMask updateMask) {
@@ -3578,7 +3769,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the tags on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1beta1.Entry]. The
+   * [columns][google.cloud.datacatalog.v1beta1.Tag.column] in the response are lowercased.
    *
    * <p>Sample code:
    *
@@ -3615,7 +3807,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the tags on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1beta1.Entry]. The
+   * [columns][google.cloud.datacatalog.v1beta1.Tag.column] in the response are lowercased.
    *
    * <p>Sample code:
    *
@@ -3652,7 +3845,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the tags on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1beta1.Entry]. The
+   * [columns][google.cloud.datacatalog.v1beta1.Tag.column] in the response are lowercased.
    *
    * <p>Sample code:
    *
@@ -3685,7 +3879,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the tags on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1beta1.Entry]. The
+   * [columns][google.cloud.datacatalog.v1beta1.Tag.column] in the response are lowercased.
    *
    * <p>Sample code:
    *
@@ -3717,7 +3912,8 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the tags on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+   * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1beta1.Entry]. The
+   * [columns][google.cloud.datacatalog.v1beta1.Tag.column] in the response are lowercased.
    *
    * <p>Sample code:
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface StoragePropertiesOrBuilder
    *
    * <pre>
    * Patterns to identify a set of files for this fileset.
+   *
    * Examples of a valid `file_pattern`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -57,7 +59,9 @@ public interface StoragePropertiesOrBuilder
    *
    * <pre>
    * Patterns to identify a set of files for this fileset.
+   *
    * Examples of a valid `file_pattern`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -86,7 +90,9 @@ public interface StoragePropertiesOrBuilder
    *
    * <pre>
    * Patterns to identify a set of files for this fileset.
+   *
    * Examples of a valid `file_pattern`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -116,7 +122,9 @@ public interface StoragePropertiesOrBuilder
    *
    * <pre>
    * Patterns to identify a set of files for this fileset.
+   *
    * Examples of a valid `file_pattern`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`

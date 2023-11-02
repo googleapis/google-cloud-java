@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,11 +29,17 @@ public interface ListInsightsRequestOrBuilder
    * <pre>
    * Required. The container resource on which to execute the request.
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
    * INSIGHT_TYPE_ID refers to supported insight types:
@@ -53,11 +59,17 @@ public interface ListInsightsRequestOrBuilder
    * <pre>
    * Required. The container resource on which to execute the request.
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
    * INSIGHT_TYPE_ID refers to supported insight types:
@@ -76,9 +88,9 @@ public interface ListInsightsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of results to return from this request.  Non-positive
-   * values are ignored. If not specified, the server will determine the number
-   * of results to return.
+   * Optional. The maximum number of results to return from this request.
+   * Non-positive values are ignored. If not specified, the server will
+   * determine the number of results to return.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -91,10 +103,10 @@ public interface ListInsightsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If present, retrieves the next batch of results from the preceding call to
-   * this method. `page_token` must be the value of `next_page_token` from the
-   * previous response. The values of other method parameters must be identical
-   * to those in the previous call.
+   * Optional. If present, retrieves the next batch of results from the
+   * preceding call to this method. `page_token` must be the value of
+   * `next_page_token` from the previous response. The values of other method
+   * parameters must be identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -106,10 +118,10 @@ public interface ListInsightsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If present, retrieves the next batch of results from the preceding call to
-   * this method. `page_token` must be the value of `next_page_token` from the
-   * previous response. The values of other method parameters must be identical
-   * to those in the previous call.
+   * Optional. If present, retrieves the next batch of results from the
+   * preceding call to this method. `page_token` must be the value of
+   * `next_page_token` from the previous response. The values of other method
+   * parameters must be identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -124,14 +136,23 @@ public interface ListInsightsRequestOrBuilder
    * <pre>
    * Optional. Filter expression to restrict the insights returned. Supported
    * filter fields:
+   *
    * * `stateInfo.state`
+   *
    * * `insightSubtype`
+   *
    * * `severity`
+   *
    * Examples:
+   *
    * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   *
    * * `insightSubtype = PERMISSIONS_USAGE`
+   *
    * * `severity = CRITICAL OR severity = HIGH`
+   *
    * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+   *
    * (These expressions are based on the filter language described at
    * https://google.aip.dev/160)
    * </pre>
@@ -147,14 +168,23 @@ public interface ListInsightsRequestOrBuilder
    * <pre>
    * Optional. Filter expression to restrict the insights returned. Supported
    * filter fields:
+   *
    * * `stateInfo.state`
+   *
    * * `insightSubtype`
+   *
    * * `severity`
+   *
    * Examples:
+   *
    * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   *
    * * `insightSubtype = PERMISSIONS_USAGE`
+   *
    * * `severity = CRITICAL OR severity = HIGH`
+   *
    * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+   *
    * (These expressions are based on the filter language described at
    * https://google.aip.dev/160)
    * </pre>

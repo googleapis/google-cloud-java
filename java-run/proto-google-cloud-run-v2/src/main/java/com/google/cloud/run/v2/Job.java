@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,11 +56,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return new Job();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.JobProto.internal_static_google_cloud_run_v2_Job_descriptor;
   }
@@ -96,6 +91,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The fully qualified name of this Job.
+   *
    * Format:
    * projects/{project}/locations/{location}/jobs/{job}
    * </pre>
@@ -121,6 +117,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The fully qualified name of this Job.
+   *
    * Format:
    * projects/{project}/locations/{location}/jobs/{job}
    * </pre>
@@ -253,6 +250,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -285,6 +283,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -308,6 +307,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -338,6 +338,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -393,10 +394,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected on new resources. All system
    * annotations in v1 now have a corresponding field in v2 Job.
+   *
    * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
    * rules.
    * </pre>
@@ -424,10 +427,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected on new resources. All system
    * annotations in v1 now have a corresponding field in v2 Job.
+   *
    * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
    * rules.
    * </pre>
@@ -446,10 +451,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected on new resources. All system
    * annotations in v1 now have a corresponding field in v2 Job.
+   *
    * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
    * rules.
    * </pre>
@@ -475,10 +482,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * be set by external tools to store and arbitrary metadata.
    * They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected on new resources. All system
    * annotations in v1 now have a corresponding field in v2 Job.
+   *
    * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
    * rules.
    * </pre>
@@ -1314,6 +1323,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Returns true if the Job is currently being acted upon by the
    * system to bring it into the desired state.
+   *
    * When a new Job is created, or an existing one is updated, Cloud Run
    * will asynchronously perform all necessary steps to bring the Job to the
    * desired state. This process is called reconciliation.
@@ -1323,9 +1333,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * false), there are two possible outcomes: reconciliation succeeded and the
    * state matches the Job, or there was an error,  and reconciliation failed.
    * This state can be found in `terminal_condition.state`.
+   *
    * If reconciliation succeeded, the following fields will match:
    * `observed_generation` and `generation`, `latest_succeeded_execution` and
    * `latest_created_execution`.
+   *
    * If reconciliation failed, `observed_generation` and
    * `latest_succeeded_execution` will have the state of the last succeeded
    * execution or empty for newly created Job. Additional information on the
@@ -2459,6 +2471,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The fully qualified name of this Job.
+     *
      * Format:
      * projects/{project}/locations/{location}/jobs/{job}
      * </pre>
@@ -2483,6 +2496,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The fully qualified name of this Job.
+     *
      * Format:
      * projects/{project}/locations/{location}/jobs/{job}
      * </pre>
@@ -2507,6 +2521,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The fully qualified name of this Job.
+     *
      * Format:
      * projects/{project}/locations/{location}/jobs/{job}
      * </pre>
@@ -2530,6 +2545,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The fully qualified name of this Job.
+     *
      * Format:
      * projects/{project}/locations/{location}/jobs/{job}
      * </pre>
@@ -2549,6 +2565,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The fully qualified name of this Job.
+     *
      * Format:
      * projects/{project}/locations/{location}/jobs/{job}
      * </pre>
@@ -2777,6 +2794,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -2809,6 +2827,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -2832,6 +2851,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -2862,6 +2882,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -2898,6 +2919,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -2930,6 +2952,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -2960,6 +2983,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3010,10 +3034,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected on new resources. All system
      * annotations in v1 now have a corresponding field in v2 Job.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -3041,10 +3067,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected on new resources. All system
      * annotations in v1 now have a corresponding field in v2 Job.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -3063,10 +3091,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected on new resources. All system
      * annotations in v1 now have a corresponding field in v2 Job.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -3092,10 +3122,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected on new resources. All system
      * annotations in v1 now have a corresponding field in v2 Job.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -3127,10 +3159,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected on new resources. All system
      * annotations in v1 now have a corresponding field in v2 Job.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -3158,10 +3192,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected on new resources. All system
      * annotations in v1 now have a corresponding field in v2 Job.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -3187,10 +3223,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * be set by external tools to store and arbitrary metadata.
      * They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected on new resources. All system
      * annotations in v1 now have a corresponding field in v2 Job.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -5928,6 +5966,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Returns true if the Job is currently being acted upon by the
      * system to bring it into the desired state.
+     *
      * When a new Job is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Job to the
      * desired state. This process is called reconciliation.
@@ -5937,9 +5976,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * false), there are two possible outcomes: reconciliation succeeded and the
      * state matches the Job, or there was an error,  and reconciliation failed.
      * This state can be found in `terminal_condition.state`.
+     *
      * If reconciliation succeeded, the following fields will match:
      * `observed_generation` and `generation`, `latest_succeeded_execution` and
      * `latest_created_execution`.
+     *
      * If reconciliation failed, `observed_generation` and
      * `latest_succeeded_execution` will have the state of the last succeeded
      * execution or empty for newly created Job. Additional information on the
@@ -5960,6 +6001,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Returns true if the Job is currently being acted upon by the
      * system to bring it into the desired state.
+     *
      * When a new Job is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Job to the
      * desired state. This process is called reconciliation.
@@ -5969,9 +6011,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * false), there are two possible outcomes: reconciliation succeeded and the
      * state matches the Job, or there was an error,  and reconciliation failed.
      * This state can be found in `terminal_condition.state`.
+     *
      * If reconciliation succeeded, the following fields will match:
      * `observed_generation` and `generation`, `latest_succeeded_execution` and
      * `latest_created_execution`.
+     *
      * If reconciliation failed, `observed_generation` and
      * `latest_succeeded_execution` will have the state of the last succeeded
      * execution or empty for newly created Job. Additional information on the
@@ -5996,6 +6040,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Returns true if the Job is currently being acted upon by the
      * system to bring it into the desired state.
+     *
      * When a new Job is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Job to the
      * desired state. This process is called reconciliation.
@@ -6005,9 +6050,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * false), there are two possible outcomes: reconciliation succeeded and the
      * state matches the Job, or there was an error,  and reconciliation failed.
      * This state can be found in `terminal_condition.state`.
+     *
      * If reconciliation succeeded, the following fields will match:
      * `observed_generation` and `generation`, `latest_succeeded_execution` and
      * `latest_created_execution`.
+     *
      * If reconciliation failed, `observed_generation` and
      * `latest_succeeded_execution` will have the state of the last succeeded
      * execution or empty for newly created Job. Additional information on the

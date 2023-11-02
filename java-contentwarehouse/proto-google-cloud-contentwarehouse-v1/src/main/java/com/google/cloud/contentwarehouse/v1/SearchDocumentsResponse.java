@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,17 +41,13 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     matchingDocuments_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
     histogramQueryResults_ = java.util.Collections.emptyList();
+    questionAnswer_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchDocumentsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -123,6 +119,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * closely match a search query's keywords, if available. All HTML tags in
      * the original fields are stripped when returned in this field, and
      * matching query keywords are enclosed in HTML bold tags.
+     *
      * If the question-answering feature is enabled, this field will instead
      * contain a snippet that answers the user's natural-language query. No HTML
      * bold tags will be present, and highlights in the answer snippet can be
@@ -143,6 +140,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * closely match a search query's keywords, if available. All HTML tags in
      * the original fields are stripped when returned in this field, and
      * matching query keywords are enclosed in HTML bold tags.
+     *
      * If the question-answering feature is enabled, this field will instead
      * contain a snippet that answers the user's natural-language query. No HTML
      * bold tags will be present, and highlights in the answer snippet can be
@@ -193,6 +191,47 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * <code>.google.cloud.contentwarehouse.v1.QAResult qa_result = 3;</code>
      */
     com.google.cloud.contentwarehouse.v1.QAResultOrBuilder getQaResultOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Return the 1-based page indices where those pages have one or more
+     * matched tokens.
+     * </pre>
+     *
+     * <code>repeated int64 matched_token_page_indices = 4;</code>
+     *
+     * @return A list containing the matchedTokenPageIndices.
+     */
+    java.util.List<java.lang.Long> getMatchedTokenPageIndicesList();
+    /**
+     *
+     *
+     * <pre>
+     * Return the 1-based page indices where those pages have one or more
+     * matched tokens.
+     * </pre>
+     *
+     * <code>repeated int64 matched_token_page_indices = 4;</code>
+     *
+     * @return The count of matchedTokenPageIndices.
+     */
+    int getMatchedTokenPageIndicesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Return the 1-based page indices where those pages have one or more
+     * matched tokens.
+     * </pre>
+     *
+     * <code>repeated int64 matched_token_page_indices = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The matchedTokenPageIndices at the given index.
+     */
+    long getMatchedTokenPageIndices(int index);
   }
   /**
    *
@@ -216,17 +255,13 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
 
     private MatchingDocument() {
       searchTextSnippet_ = "";
+      matchedTokenPageIndices_ = emptyLongList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MatchingDocument();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -313,6 +348,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * closely match a search query's keywords, if available. All HTML tags in
      * the original fields are stripped when returned in this field, and
      * matching query keywords are enclosed in HTML bold tags.
+     *
      * If the question-answering feature is enabled, this field will instead
      * contain a snippet that answers the user's natural-language query. No HTML
      * bold tags will be present, and highlights in the answer snippet can be
@@ -344,6 +380,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * closely match a search query's keywords, if available. All HTML tags in
      * the original fields are stripped when returned in this field, and
      * matching query keywords are enclosed in HTML bold tags.
+     *
      * If the question-answering feature is enabled, this field will instead
      * contain a snippet that answers the user's natural-language query. No HTML
      * bold tags will be present, and highlights in the answer snippet can be
@@ -421,6 +458,60 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           : qaResult_;
     }
 
+    public static final int MATCHED_TOKEN_PAGE_INDICES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.LongList matchedTokenPageIndices_;
+    /**
+     *
+     *
+     * <pre>
+     * Return the 1-based page indices where those pages have one or more
+     * matched tokens.
+     * </pre>
+     *
+     * <code>repeated int64 matched_token_page_indices = 4;</code>
+     *
+     * @return A list containing the matchedTokenPageIndices.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Long> getMatchedTokenPageIndicesList() {
+      return matchedTokenPageIndices_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Return the 1-based page indices where those pages have one or more
+     * matched tokens.
+     * </pre>
+     *
+     * <code>repeated int64 matched_token_page_indices = 4;</code>
+     *
+     * @return The count of matchedTokenPageIndices.
+     */
+    public int getMatchedTokenPageIndicesCount() {
+      return matchedTokenPageIndices_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Return the 1-based page indices where those pages have one or more
+     * matched tokens.
+     * </pre>
+     *
+     * <code>repeated int64 matched_token_page_indices = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The matchedTokenPageIndices at the given index.
+     */
+    public long getMatchedTokenPageIndices(int index) {
+      return matchedTokenPageIndices_.getLong(index);
+    }
+
+    private int matchedTokenPageIndicesMemoizedSerializedSize = -1;
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -435,6 +526,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
       if (document_ != null) {
         output.writeMessage(1, getDocument());
       }
@@ -443,6 +535,13 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       if (qaResult_ != null) {
         output.writeMessage(3, getQaResult());
+      }
+      if (getMatchedTokenPageIndicesList().size() > 0) {
+        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(matchedTokenPageIndicesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < matchedTokenPageIndices_.size(); i++) {
+        output.writeInt64NoTag(matchedTokenPageIndices_.getLong(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -461,6 +560,20 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       if (qaResult_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getQaResult());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < matchedTokenPageIndices_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeInt64SizeNoTag(
+                  matchedTokenPageIndices_.getLong(i));
+        }
+        size += dataSize;
+        if (!getMatchedTokenPageIndicesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+        }
+        matchedTokenPageIndicesMemoizedSerializedSize = dataSize;
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -489,6 +602,8 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       if (hasQaResult()) {
         if (!getQaResult().equals(other.getQaResult())) return false;
       }
+      if (!getMatchedTokenPageIndicesList().equals(other.getMatchedTokenPageIndicesList()))
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -509,6 +624,10 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       if (hasQaResult()) {
         hash = (37 * hash) + QA_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getQaResult().hashCode();
+      }
+      if (getMatchedTokenPageIndicesCount() > 0) {
+        hash = (37 * hash) + MATCHED_TOKEN_PAGE_INDICES_FIELD_NUMBER;
+        hash = (53 * hash) + getMatchedTokenPageIndicesList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -673,6 +792,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           qaResultBuilder_.dispose();
           qaResultBuilder_ = null;
         }
+        matchedTokenPageIndices_ = emptyLongList();
         return this;
       }
 
@@ -704,11 +824,21 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           buildPartial() {
         com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse.MatchingDocument result =
             new com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse.MatchingDocument(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse.MatchingDocument result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          matchedTokenPageIndices_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.matchedTokenPageIndices_ = matchedTokenPageIndices_;
       }
 
       private void buildPartial0(
@@ -790,6 +920,16 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         if (other.hasQaResult()) {
           mergeQaResult(other.getQaResult());
         }
+        if (!other.matchedTokenPageIndices_.isEmpty()) {
+          if (matchedTokenPageIndices_.isEmpty()) {
+            matchedTokenPageIndices_ = other.matchedTokenPageIndices_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureMatchedTokenPageIndicesIsMutable();
+            matchedTokenPageIndices_.addAll(other.matchedTokenPageIndices_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -834,6 +974,24 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 32:
+                {
+                  long v = input.readInt64();
+                  ensureMatchedTokenPageIndicesIsMutable();
+                  matchedTokenPageIndices_.addLong(v);
+                  break;
+                } // case 32
+              case 34:
+                {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  ensureMatchedTokenPageIndicesIsMutable();
+                  while (input.getBytesUntilLimit() > 0) {
+                    matchedTokenPageIndices_.addLong(input.readInt64());
+                  }
+                  input.popLimit(limit);
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1064,6 +1222,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
        * closely match a search query's keywords, if available. All HTML tags in
        * the original fields are stripped when returned in this field, and
        * matching query keywords are enclosed in HTML bold tags.
+       *
        * If the question-answering feature is enabled, this field will instead
        * contain a snippet that answers the user's natural-language query. No HTML
        * bold tags will be present, and highlights in the answer snippet can be
@@ -1094,6 +1253,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
        * closely match a search query's keywords, if available. All HTML tags in
        * the original fields are stripped when returned in this field, and
        * matching query keywords are enclosed in HTML bold tags.
+       *
        * If the question-answering feature is enabled, this field will instead
        * contain a snippet that answers the user's natural-language query. No HTML
        * bold tags will be present, and highlights in the answer snippet can be
@@ -1124,6 +1284,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
        * closely match a search query's keywords, if available. All HTML tags in
        * the original fields are stripped when returned in this field, and
        * matching query keywords are enclosed in HTML bold tags.
+       *
        * If the question-answering feature is enabled, this field will instead
        * contain a snippet that answers the user's natural-language query. No HTML
        * bold tags will be present, and highlights in the answer snippet can be
@@ -1153,6 +1314,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
        * closely match a search query's keywords, if available. All HTML tags in
        * the original fields are stripped when returned in this field, and
        * matching query keywords are enclosed in HTML bold tags.
+       *
        * If the question-answering feature is enabled, this field will instead
        * contain a snippet that answers the user's natural-language query. No HTML
        * bold tags will be present, and highlights in the answer snippet can be
@@ -1178,6 +1340,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
        * closely match a search query's keywords, if available. All HTML tags in
        * the original fields are stripped when returned in this field, and
        * matching query keywords are enclosed in HTML bold tags.
+       *
        * If the question-answering feature is enabled, this field will instead
        * contain a snippet that answers the user's natural-language query. No HTML
        * bold tags will be present, and highlights in the answer snippet can be
@@ -1392,6 +1555,142 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           qaResult_ = null;
         }
         return qaResultBuilder_;
+      }
+
+      private com.google.protobuf.Internal.LongList matchedTokenPageIndices_ = emptyLongList();
+
+      private void ensureMatchedTokenPageIndicesIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          matchedTokenPageIndices_ = mutableCopy(matchedTokenPageIndices_);
+          bitField0_ |= 0x00000008;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Return the 1-based page indices where those pages have one or more
+       * matched tokens.
+       * </pre>
+       *
+       * <code>repeated int64 matched_token_page_indices = 4;</code>
+       *
+       * @return A list containing the matchedTokenPageIndices.
+       */
+      public java.util.List<java.lang.Long> getMatchedTokenPageIndicesList() {
+        return ((bitField0_ & 0x00000008) != 0)
+            ? java.util.Collections.unmodifiableList(matchedTokenPageIndices_)
+            : matchedTokenPageIndices_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Return the 1-based page indices where those pages have one or more
+       * matched tokens.
+       * </pre>
+       *
+       * <code>repeated int64 matched_token_page_indices = 4;</code>
+       *
+       * @return The count of matchedTokenPageIndices.
+       */
+      public int getMatchedTokenPageIndicesCount() {
+        return matchedTokenPageIndices_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Return the 1-based page indices where those pages have one or more
+       * matched tokens.
+       * </pre>
+       *
+       * <code>repeated int64 matched_token_page_indices = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The matchedTokenPageIndices at the given index.
+       */
+      public long getMatchedTokenPageIndices(int index) {
+        return matchedTokenPageIndices_.getLong(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Return the 1-based page indices where those pages have one or more
+       * matched tokens.
+       * </pre>
+       *
+       * <code>repeated int64 matched_token_page_indices = 4;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The matchedTokenPageIndices to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchedTokenPageIndices(int index, long value) {
+
+        ensureMatchedTokenPageIndicesIsMutable();
+        matchedTokenPageIndices_.setLong(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Return the 1-based page indices where those pages have one or more
+       * matched tokens.
+       * </pre>
+       *
+       * <code>repeated int64 matched_token_page_indices = 4;</code>
+       *
+       * @param value The matchedTokenPageIndices to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMatchedTokenPageIndices(long value) {
+
+        ensureMatchedTokenPageIndicesIsMutable();
+        matchedTokenPageIndices_.addLong(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Return the 1-based page indices where those pages have one or more
+       * matched tokens.
+       * </pre>
+       *
+       * <code>repeated int64 matched_token_page_indices = 4;</code>
+       *
+       * @param values The matchedTokenPageIndices to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllMatchedTokenPageIndices(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureMatchedTokenPageIndicesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, matchedTokenPageIndices_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Return the 1-based page indices where those pages have one or more
+       * matched tokens.
+       * </pre>
+       *
+       * <code>repeated int64 matched_token_page_indices = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMatchedTokenPageIndices() {
+        matchedTokenPageIndices_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -1780,6 +2079,59 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     return histogramQueryResults_.get(index);
   }
 
+  public static final int QUESTION_ANSWER_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object questionAnswer_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Experimental.
+   * Question answer from the query against the document.
+   * </pre>
+   *
+   * <code>string question_answer = 7;</code>
+   *
+   * @return The questionAnswer.
+   */
+  @java.lang.Override
+  public java.lang.String getQuestionAnswer() {
+    java.lang.Object ref = questionAnswer_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      questionAnswer_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Experimental.
+   * Question answer from the query against the document.
+   * </pre>
+   *
+   * <code>string question_answer = 7;</code>
+   *
+   * @return The bytes for questionAnswer.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getQuestionAnswerBytes() {
+    java.lang.Object ref = questionAnswer_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      questionAnswer_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1809,6 +2161,9 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     for (int i = 0; i < histogramQueryResults_.size(); i++) {
       output.writeMessage(6, histogramQueryResults_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(questionAnswer_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, questionAnswer_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1836,6 +2191,9 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, histogramQueryResults_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(questionAnswer_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, questionAnswer_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1860,6 +2218,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
     if (!getHistogramQueryResultsList().equals(other.getHistogramQueryResultsList())) return false;
+    if (!getQuestionAnswer().equals(other.getQuestionAnswer())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1887,6 +2246,8 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       hash = (37 * hash) + HISTOGRAM_QUERY_RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + getHistogramQueryResultsList().hashCode();
     }
+    hash = (37 * hash) + QUESTION_ANSWER_FIELD_NUMBER;
+    hash = (53 * hash) + getQuestionAnswer().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2048,6 +2409,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         histogramQueryResultsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
+      questionAnswer_ = "";
       return this;
     }
 
@@ -2117,6 +2479,9 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.questionAnswer_ = questionAnswer_;
       }
     }
 
@@ -2232,6 +2597,11 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           }
         }
       }
+      if (!other.getQuestionAnswer().isEmpty()) {
+        questionAnswer_ = other.questionAnswer_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2305,6 +2675,12 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
                 }
                 break;
               } // case 50
+            case 58:
+              {
+                questionAnswer_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3568,6 +3944,117 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         histogramQueryResults_ = null;
       }
       return histogramQueryResultsBuilder_;
+    }
+
+    private java.lang.Object questionAnswer_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Experimental.
+     * Question answer from the query against the document.
+     * </pre>
+     *
+     * <code>string question_answer = 7;</code>
+     *
+     * @return The questionAnswer.
+     */
+    public java.lang.String getQuestionAnswer() {
+      java.lang.Object ref = questionAnswer_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        questionAnswer_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental.
+     * Question answer from the query against the document.
+     * </pre>
+     *
+     * <code>string question_answer = 7;</code>
+     *
+     * @return The bytes for questionAnswer.
+     */
+    public com.google.protobuf.ByteString getQuestionAnswerBytes() {
+      java.lang.Object ref = questionAnswer_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        questionAnswer_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental.
+     * Question answer from the query against the document.
+     * </pre>
+     *
+     * <code>string question_answer = 7;</code>
+     *
+     * @param value The questionAnswer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuestionAnswer(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      questionAnswer_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental.
+     * Question answer from the query against the document.
+     * </pre>
+     *
+     * <code>string question_answer = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQuestionAnswer() {
+      questionAnswer_ = getDefaultInstance().getQuestionAnswer();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental.
+     * Question answer from the query against the document.
+     * </pre>
+     *
+     * <code>string question_answer = 7;</code>
+     *
+     * @param value The bytes for questionAnswer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuestionAnswerBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      questionAnswer_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OrganizationSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -229,20 +224,15 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     }
 
     private AssetDiscoveryConfig() {
-      projectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      projectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       inclusionMode_ = 0;
-      folderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      folderIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AssetDiscoveryConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -440,7 +430,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     public static final int PROJECT_IDS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList projectIds_;
+    private com.google.protobuf.LazyStringArrayList projectIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -549,7 +540,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
     public static final int FOLDER_IDS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList folderIds_;
+    private com.google.protobuf.LazyStringArrayList folderIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -863,11 +855,9 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        projectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        projectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         inclusionMode_ = 0;
-        folderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        folderIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -899,7 +889,6 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
           buildPartial() {
         com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig result =
             new com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -907,25 +896,19 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          projectIds_ = projectIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.projectIds_ = projectIds_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          folderIds_ = folderIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.folderIds_ = folderIds_;
-      }
-
       private void buildPartial0(
           com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          projectIds_.makeImmutable();
+          result.projectIds_ = projectIds_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.inclusionMode_ = inclusionMode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          folderIds_.makeImmutable();
+          result.folderIds_ = folderIds_;
         }
       }
 
@@ -985,7 +968,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         if (!other.projectIds_.isEmpty()) {
           if (projectIds_.isEmpty()) {
             projectIds_ = other.projectIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureProjectIdsIsMutable();
             projectIds_.addAll(other.projectIds_);
@@ -998,7 +981,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         if (!other.folderIds_.isEmpty()) {
           if (folderIds_.isEmpty()) {
             folderIds_ = other.folderIds_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureFolderIdsIsMutable();
             folderIds_.addAll(other.folderIds_);
@@ -1070,14 +1053,14 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList projectIds_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList projectIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureProjectIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!projectIds_.isModifiable()) {
           projectIds_ = new com.google.protobuf.LazyStringArrayList(projectIds_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -1091,7 +1074,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
        * @return A list containing the projectIds.
        */
       public com.google.protobuf.ProtocolStringList getProjectIdsList() {
-        return projectIds_.getUnmodifiableView();
+        projectIds_.makeImmutable();
+        return projectIds_;
       }
       /**
        *
@@ -1156,6 +1140,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         }
         ensureProjectIdsIsMutable();
         projectIds_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1177,6 +1162,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         }
         ensureProjectIdsIsMutable();
         projectIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1195,6 +1181,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       public Builder addAllProjectIds(java.lang.Iterable<java.lang.String> values) {
         ensureProjectIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, projectIds_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1210,8 +1197,9 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearProjectIds() {
-        projectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        projectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1234,6 +1222,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureProjectIdsIsMutable();
         projectIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1347,14 +1336,14 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         return this;
       }
 
-      private com.google.protobuf.LazyStringList folderIds_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList folderIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureFolderIdsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!folderIds_.isModifiable()) {
           folderIds_ = new com.google.protobuf.LazyStringArrayList(folderIds_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -1369,7 +1358,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
        * @return A list containing the folderIds.
        */
       public com.google.protobuf.ProtocolStringList getFolderIdsList() {
-        return folderIds_.getUnmodifiableView();
+        folderIds_.makeImmutable();
+        return folderIds_;
       }
       /**
        *
@@ -1438,6 +1428,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         }
         ensureFolderIdsIsMutable();
         folderIds_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1460,6 +1451,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         }
         ensureFolderIdsIsMutable();
         folderIds_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1479,6 +1471,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       public Builder addAllFolderIds(java.lang.Iterable<java.lang.String> values) {
         ensureFolderIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, folderIds_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1495,8 +1488,9 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearFolderIds() {
-        folderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        folderIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -1520,6 +1514,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureFolderIdsIsMutable();
         folderIds_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1657,9 +1652,9 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A flag that indicates if Asset Discovery should be enabled. If the flag is
-   * set to `true`, then discovery of assets will occur. If it is set to `false,
-   * all historical assets will remain, but discovery of future assets will not
-   * occur.
+   * set to `true`, then discovery of assets will occur. If it is set to
+   * `false`, all historical assets will remain, but discovery of future assets
+   * will not occur.
    * </pre>
    *
    * <code>bool enable_asset_discovery = 2;</code>
@@ -2261,9 +2256,9 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A flag that indicates if Asset Discovery should be enabled. If the flag is
-     * set to `true`, then discovery of assets will occur. If it is set to `false,
-     * all historical assets will remain, but discovery of future assets will not
-     * occur.
+     * set to `true`, then discovery of assets will occur. If it is set to
+     * `false`, all historical assets will remain, but discovery of future assets
+     * will not occur.
      * </pre>
      *
      * <code>bool enable_asset_discovery = 2;</code>
@@ -2279,9 +2274,9 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A flag that indicates if Asset Discovery should be enabled. If the flag is
-     * set to `true`, then discovery of assets will occur. If it is set to `false,
-     * all historical assets will remain, but discovery of future assets will not
-     * occur.
+     * set to `true`, then discovery of assets will occur. If it is set to
+     * `false`, all historical assets will remain, but discovery of future assets
+     * will not occur.
      * </pre>
      *
      * <code>bool enable_asset_discovery = 2;</code>
@@ -2301,9 +2296,9 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * A flag that indicates if Asset Discovery should be enabled. If the flag is
-     * set to `true`, then discovery of assets will occur. If it is set to `false,
-     * all historical assets will remain, but discovery of future assets will not
-     * occur.
+     * set to `true`, then discovery of assets will occur. If it is set to
+     * `false`, all historical assets will remain, but discovery of future assets
+     * will not occur.
      * </pre>
      *
      * <code>bool enable_asset_discovery = 2;</code>

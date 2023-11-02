@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ResetComponentSettingsRequest extends com.google.protobuf.Gen
     return new ResetComponentSettingsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.settings.v1beta1.SettingsServiceProto
         .internal_static_google_cloud_securitycenter_settings_v1beta1_ResetComponentSettingsRequest_descriptor;
@@ -78,6 +73,7 @@ public final class ResetComponentSettingsRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The component settings to reset.
+   *
    * Formats:
    *  * `organizations/{organization}/components/{component}/settings`
    *  * `folders/{folder}/components/{component}/settings`
@@ -110,6 +106,7 @@ public final class ResetComponentSettingsRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The component settings to reset.
+   *
    * Formats:
    *  * `organizations/{organization}/components/{component}/settings`
    *  * `folders/{folder}/components/{component}/settings`
@@ -585,6 +582,7 @@ public final class ResetComponentSettingsRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The component settings to reset.
+     *
      * Formats:
      *  * `organizations/{organization}/components/{component}/settings`
      *  * `folders/{folder}/components/{component}/settings`
@@ -616,6 +614,7 @@ public final class ResetComponentSettingsRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The component settings to reset.
+     *
      * Formats:
      *  * `organizations/{organization}/components/{component}/settings`
      *  * `folders/{folder}/components/{component}/settings`
@@ -647,6 +646,7 @@ public final class ResetComponentSettingsRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The component settings to reset.
+     *
      * Formats:
      *  * `organizations/{organization}/components/{component}/settings`
      *  * `folders/{folder}/components/{component}/settings`
@@ -677,6 +677,7 @@ public final class ResetComponentSettingsRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The component settings to reset.
+     *
      * Formats:
      *  * `organizations/{organization}/components/{component}/settings`
      *  * `folders/{folder}/components/{component}/settings`
@@ -703,6 +704,7 @@ public final class ResetComponentSettingsRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The component settings to reset.
+     *
      * Formats:
      *  * `organizations/{organization}/components/{component}/settings`
      *  * `folders/{folder}/components/{component}/settings`

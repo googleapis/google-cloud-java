@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,6 +250,7 @@ public class BudgetServiceClientTest {
     ListBudgetsRequest request =
         ListBudgetsRequest.newBuilder()
             .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+            .setScope("scope109264468")
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .build();
@@ -266,6 +267,7 @@ public class BudgetServiceClientTest {
     ListBudgetsRequest actualRequest = ((ListBudgetsRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getScope(), actualRequest.getScope());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertTrue(
@@ -283,6 +285,7 @@ public class BudgetServiceClientTest {
       ListBudgetsRequest request =
           ListBudgetsRequest.newBuilder()
               .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+              .setScope("scope109264468")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

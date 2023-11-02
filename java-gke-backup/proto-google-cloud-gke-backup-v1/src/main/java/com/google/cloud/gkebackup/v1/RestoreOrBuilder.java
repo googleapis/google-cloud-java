@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface RestoreOrBuilder
    *
    * <pre>
    * Output only. The full name of the Restore resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,7 +41,7 @@ public interface RestoreOrBuilder
    *
    * <pre>
    * Output only. The full name of the Restore resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -185,10 +185,12 @@ public interface RestoreOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. A reference to the [Backup][google.cloud.gkebackup.v1.Backup] used as the source from which this Restore
-   * will restore. Note that this Backup must be a sub-resource of the
-   * RestorePlan's [backup_plan][google.cloud.gkebackup.v1.RestorePlan.backup_plan].
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;.
+   * Required. Immutable. A reference to the
+   * [Backup][google.cloud.gkebackup.v1.Backup] used as the source from which
+   * this Restore will restore. Note that this Backup must be a sub-resource of
+   * the RestorePlan's
+   * [backup_plan][google.cloud.gkebackup.v1.RestorePlan.backup_plan]. Format:
+   * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`.
    * </pre>
    *
    * <code>
@@ -202,10 +204,12 @@ public interface RestoreOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. A reference to the [Backup][google.cloud.gkebackup.v1.Backup] used as the source from which this Restore
-   * will restore. Note that this Backup must be a sub-resource of the
-   * RestorePlan's [backup_plan][google.cloud.gkebackup.v1.RestorePlan.backup_plan].
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;.
+   * Required. Immutable. A reference to the
+   * [Backup][google.cloud.gkebackup.v1.Backup] used as the source from which
+   * this Restore will restore. Note that this Backup must be a sub-resource of
+   * the RestorePlan's
+   * [backup_plan][google.cloud.gkebackup.v1.RestorePlan.backup_plan]. Format:
+   * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`.
    * </pre>
    *
    * <code>
@@ -222,9 +226,12 @@ public interface RestoreOrBuilder
    * <pre>
    * Output only. The target cluster into which this Restore will restore data.
    * Valid formats:
-   *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
-   * Inherited from parent RestorePlan's [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
+   *
+   *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
+   *
+   * Inherited from parent RestorePlan's
+   * [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
    * </pre>
    *
    * <code>
@@ -240,9 +247,12 @@ public interface RestoreOrBuilder
    * <pre>
    * Output only. The target cluster into which this Restore will restore data.
    * Valid formats:
-   *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
-   * Inherited from parent RestorePlan's [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
+   *
+   *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
+   *
+   * Inherited from parent RestorePlan's
+   * [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
    * </pre>
    *
    * <code>
@@ -257,7 +267,8 @@ public interface RestoreOrBuilder
    *
    *
    * <pre>
-   * Output only. Configuration of the Restore.  Inherited from parent RestorePlan's
+   * Output only. Configuration of the Restore.  Inherited from parent
+   * RestorePlan's
    * [restore_config][google.cloud.gkebackup.v1.RestorePlan.restore_config].
    * </pre>
    *
@@ -272,7 +283,8 @@ public interface RestoreOrBuilder
    *
    *
    * <pre>
-   * Output only. Configuration of the Restore.  Inherited from parent RestorePlan's
+   * Output only. Configuration of the Restore.  Inherited from parent
+   * RestorePlan's
    * [restore_config][google.cloud.gkebackup.v1.RestorePlan.restore_config].
    * </pre>
    *
@@ -287,7 +299,8 @@ public interface RestoreOrBuilder
    *
    *
    * <pre>
-   * Output only. Configuration of the Restore.  Inherited from parent RestorePlan's
+   * Output only. Configuration of the Restore.  Inherited from parent
+   * RestorePlan's
    * [restore_config][google.cloud.gkebackup.v1.RestorePlan.restore_config].
    * </pre>
    *
@@ -388,7 +401,8 @@ public interface RestoreOrBuilder
    *
    *
    * <pre>
-   * Output only. Human-readable description of why the Restore is in its current state.
+   * Output only. Human-readable description of why the Restore is in its
+   * current state.
    * </pre>
    *
    * <code>string state_reason = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -400,7 +414,8 @@ public interface RestoreOrBuilder
    *
    *
    * <pre>
-   * Output only. Human-readable description of why the Restore is in its current state.
+   * Output only. Human-readable description of why the Restore is in its
+   * current state.
    * </pre>
    *
    * <code>string state_reason = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -480,8 +495,8 @@ public interface RestoreOrBuilder
    *
    *
    * <pre>
-   * Output only. Number of resources that failed to be restored during the restore
-   * execution.
+   * Output only. Number of resources that failed to be restored during the
+   * restore execution.
    * </pre>
    *
    * <code>int32 resources_failed_count = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -507,8 +522,8 @@ public interface RestoreOrBuilder
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a restore from overwriting each other.
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a restore from overwriting each other.
    * It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform restore updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetRestore`,
@@ -526,8 +541,8 @@ public interface RestoreOrBuilder
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a restore from overwriting each other.
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a restore from overwriting each other.
    * It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform restore updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetRestore`,

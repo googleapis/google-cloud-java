@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface ReplicationStatusOrBuilder
    * Describes the replication status of a
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * automatic replication.
+   *
    * Only populated if the parent
    * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
    * replication policy.
@@ -47,6 +48,7 @@ public interface ReplicationStatusOrBuilder
    * Describes the replication status of a
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * automatic replication.
+   *
    * Only populated if the parent
    * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
    * replication policy.
@@ -64,6 +66,7 @@ public interface ReplicationStatusOrBuilder
    * Describes the replication status of a
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * automatic replication.
+   *
    * Only populated if the parent
    * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
    * replication policy.
@@ -81,6 +84,7 @@ public interface ReplicationStatusOrBuilder
    * Describes the replication status of a
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * user-managed replication.
+   *
    * Only populated if the parent
    * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
    * replication policy.
@@ -99,6 +103,7 @@ public interface ReplicationStatusOrBuilder
    * Describes the replication status of a
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * user-managed replication.
+   *
    * Only populated if the parent
    * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
    * replication policy.
@@ -117,6 +122,7 @@ public interface ReplicationStatusOrBuilder
    * Describes the replication status of a
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * user-managed replication.
+   *
    * Only populated if the parent
    * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
    * replication policy.
@@ -128,6 +134,6 @@ public interface ReplicationStatusOrBuilder
   com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatusOrBuilder
       getUserManagedOrBuilder();
 
-  public com.google.cloud.secretmanager.v1.ReplicationStatus.ReplicationStatusCase
+  com.google.cloud.secretmanager.v1.ReplicationStatus.ReplicationStatusCase
       getReplicationStatusCase();
 }

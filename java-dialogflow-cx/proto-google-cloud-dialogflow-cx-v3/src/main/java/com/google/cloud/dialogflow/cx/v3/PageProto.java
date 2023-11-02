@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,6 +75,10 @@ public final class PageProto {
       internal_static_google_cloud_dialogflow_cx_v3_DeletePageRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3_DeletePageRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_KnowledgeConnectorSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_KnowledgeConnectorSettings_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -88,101 +92,120 @@ public final class PageProto {
           + "to\022\035google.cloud.dialogflow.cx.v3\032\034googl"
           + "e/api/annotations.proto\032\027google/api/clie"
           + "nt.proto\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\032/google/clo"
-          + "ud/dialogflow/cx/v3/fulfillment.proto\032\033g"
-          + "oogle/protobuf/empty.proto\032 google/proto"
-          + "buf/field_mask.proto\032\034google/protobuf/st"
-          + "ruct.proto\"\206\004\n\004Page\022\014\n\004name\030\001 \001(\t\022\031\n\014dis"
-          + "play_name\030\002 \001(\tB\003\340A\002\022E\n\021entry_fulfillmen"
-          + "t\030\007 \001(\0132*.google.cloud.dialogflow.cx.v3."
-          + "Fulfillment\0221\n\004form\030\004 \001(\0132#.google.cloud"
-          + ".dialogflow.cx.v3.Form\022T\n\027transition_rou"
-          + "te_groups\030\013 \003(\tB3\372A0\n.dialogflow.googlea"
-          + "pis.com/TransitionRouteGroup\022I\n\021transiti"
-          + "on_routes\030\t \003(\0132..google.cloud.dialogflo"
-          + "w.cx.v3.TransitionRoute\022C\n\016event_handler"
-          + "s\030\n \003(\0132+.google.cloud.dialogflow.cx.v3."
-          + "EventHandler:u\352Ar\n\036dialogflow.googleapis"
-          + ".com/Page\022Pprojects/{project}/locations/"
-          + "{location}/agents/{agent}/flows/{flow}/p"
-          + "ages/{page}\"\243\004\n\004Form\022A\n\nparameters\030\001 \003(\013"
-          + "2-.google.cloud.dialogflow.cx.v3.Form.Pa"
-          + "rameter\032\327\003\n\tParameter\022\031\n\014display_name\030\001 "
-          + "\001(\tB\003\340A\002\022\020\n\010required\030\002 \001(\010\022A\n\013entity_typ"
-          + "e\030\003 \001(\tB,\340A\002\372A&\n$dialogflow.googleapis.c"
-          + "om/EntityType\022\017\n\007is_list\030\004 \001(\010\022V\n\rfill_b"
-          + "ehavior\030\007 \001(\0132:.google.cloud.dialogflow."
-          + "cx.v3.Form.Parameter.FillBehaviorB\003\340A\002\022-"
-          + "\n\rdefault_value\030\t \001(\0132\026.google.protobuf."
-          + "Value\022\016\n\006redact\030\013 \001(\010\032\261\001\n\014FillBehavior\022S"
-          + "\n\032initial_prompt_fulfillment\030\003 \001(\0132*.goo"
-          + "gle.cloud.dialogflow.cx.v3.FulfillmentB\003"
-          + "\340A\002\022L\n\027reprompt_event_handlers\030\005 \003(\0132+.g"
-          + "oogle.cloud.dialogflow.cx.v3.EventHandle"
-          + "r\"\200\002\n\014EventHandler\022\021\n\004name\030\006 \001(\tB\003\340A\003\022\022\n"
-          + "\005event\030\004 \001(\tB\003\340A\002\022G\n\023trigger_fulfillment"
-          + "\030\005 \001(\0132*.google.cloud.dialogflow.cx.v3.F"
-          + "ulfillment\022:\n\013target_page\030\002 \001(\tB#\372A \n\036di"
-          + "alogflow.googleapis.com/PageH\000\022:\n\013target"
-          + "_flow\030\003 \001(\tB#\372A \n\036dialogflow.googleapis."
-          + "com/FlowH\000B\010\n\006target\"\271\002\n\017TransitionRoute"
-          + "\022\021\n\004name\030\006 \001(\tB\003\340A\003\0225\n\006intent\030\001 \001(\tB%\372A\""
-          + "\n dialogflow.googleapis.com/Intent\022\021\n\tco"
-          + "ndition\030\002 \001(\t\022G\n\023trigger_fulfillment\030\003 \001"
+          + "o\032\031google/api/resource.proto\0325google/clo"
+          + "ud/dialogflow/cx/v3/advanced_settings.pr"
+          + "oto\0329google/cloud/dialogflow/cx/v3/data_"
+          + "store_connection.proto\032/google/cloud/dia"
+          + "logflow/cx/v3/fulfillment.proto\032\033google/"
+          + "protobuf/empty.proto\032 google/protobuf/fi"
+          + "eld_mask.proto\032\034google/protobuf/struct.p"
+          + "roto\"\272\005\n\004Page\022\014\n\004name\030\001 \001(\t\022\032\n\014display_n"
+          + "ame\030\002 \001(\tB\004\342A\001\002\022E\n\021entry_fulfillment\030\007 \001"
           + "(\0132*.google.cloud.dialogflow.cx.v3.Fulfi"
-          + "llment\022:\n\013target_page\030\004 \001(\tB#\372A \n\036dialog"
-          + "flow.googleapis.com/PageH\000\022:\n\013target_flo"
-          + "w\030\005 \001(\tB#\372A \n\036dialogflow.googleapis.com/"
-          + "FlowH\000B\010\n\006target\"\210\001\n\020ListPagesRequest\0226\n"
-          + "\006parent\030\001 \001(\tB&\340A\002\372A \022\036dialogflow.google"
-          + "apis.com/Page\022\025\n\rlanguage_code\030\002 \001(\t\022\021\n\t"
-          + "page_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"`\n\021L"
-          + "istPagesResponse\0222\n\005pages\030\001 \003(\0132#.google"
-          + ".cloud.dialogflow.cx.v3.Page\022\027\n\017next_pag"
-          + "e_token\030\002 \001(\t\"]\n\016GetPageRequest\0224\n\004name\030"
-          + "\001 \001(\tB&\340A\002\372A \n\036dialogflow.googleapis.com"
-          + "/Page\022\025\n\rlanguage_code\030\002 \001(\t\"\232\001\n\021CreateP"
-          + "ageRequest\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \022\036dial"
-          + "ogflow.googleapis.com/Page\0226\n\004page\030\002 \001(\013"
-          + "2#.google.cloud.dialogflow.cx.v3.PageB\003\340"
-          + "A\002\022\025\n\rlanguage_code\030\003 \001(\t\"\223\001\n\021UpdatePage"
-          + "Request\0226\n\004page\030\001 \001(\0132#.google.cloud.dia"
-          + "logflow.cx.v3.PageB\003\340A\002\022\025\n\rlanguage_code"
-          + "\030\002 \001(\t\022/\n\013update_mask\030\003 \001(\0132\032.google.pro"
-          + "tobuf.FieldMask\"X\n\021DeletePageRequest\0224\n\004"
-          + "name\030\001 \001(\tB&\340A\002\372A \n\036dialogflow.googleapi"
-          + "s.com/Page\022\r\n\005force\030\002 \001(\0102\224\010\n\005Pages\022\273\001\n\t"
-          + "ListPages\022/.google.cloud.dialogflow.cx.v"
-          + "3.ListPagesRequest\0320.google.cloud.dialog"
-          + "flow.cx.v3.ListPagesResponse\"K\202\323\344\223\002<\022:/v"
+          + "llment\0221\n\004form\030\004 \001(\0132#.google.cloud.dial"
+          + "ogflow.cx.v3.Form\022T\n\027transition_route_gr"
+          + "oups\030\013 \003(\tB3\372A0\n.dialogflow.googleapis.c"
+          + "om/TransitionRouteGroup\022I\n\021transition_ro"
+          + "utes\030\t \003(\0132..google.cloud.dialogflow.cx."
+          + "v3.TransitionRoute\022C\n\016event_handlers\030\n \003"
+          + "(\0132+.google.cloud.dialogflow.cx.v3.Event"
+          + "Handler\022J\n\021advanced_settings\030\r \001(\0132/.goo"
+          + "gle.cloud.dialogflow.cx.v3.AdvancedSetti"
+          + "ngs\022e\n\034knowledge_connector_settings\030\022 \001("
+          + "\01329.google.cloud.dialogflow.cx.v3.Knowle"
+          + "dgeConnectorSettingsB\004\342A\001\001:u\352Ar\n\036dialogf"
+          + "low.googleapis.com/Page\022Pprojects/{proje"
+          + "ct}/locations/{location}/agents/{agent}/"
+          + "flows/{flow}/pages/{page}\"\363\004\n\004Form\022A\n\npa"
+          + "rameters\030\001 \003(\0132-.google.cloud.dialogflow"
+          + ".cx.v3.Form.Parameter\032\247\004\n\tParameter\022\032\n\014d"
+          + "isplay_name\030\001 \001(\tB\004\342A\001\002\022\020\n\010required\030\002 \001("
+          + "\010\022B\n\013entity_type\030\003 \001(\tB-\342A\001\002\372A&\n$dialogf"
+          + "low.googleapis.com/EntityType\022\017\n\007is_list"
+          + "\030\004 \001(\010\022W\n\rfill_behavior\030\007 \001(\0132:.google.c"
+          + "loud.dialogflow.cx.v3.Form.Parameter.Fil"
+          + "lBehaviorB\004\342A\001\002\022-\n\rdefault_value\030\t \001(\0132\026"
+          + ".google.protobuf.Value\022\016\n\006redact\030\013 \001(\010\022J"
+          + "\n\021advanced_settings\030\014 \001(\0132/.google.cloud"
+          + ".dialogflow.cx.v3.AdvancedSettings\032\262\001\n\014F"
+          + "illBehavior\022T\n\032initial_prompt_fulfillmen"
+          + "t\030\003 \001(\0132*.google.cloud.dialogflow.cx.v3."
+          + "FulfillmentB\004\342A\001\002\022L\n\027reprompt_event_hand"
+          + "lers\030\005 \003(\0132+.google.cloud.dialogflow.cx."
+          + "v3.EventHandler\"\202\002\n\014EventHandler\022\022\n\004name"
+          + "\030\006 \001(\tB\004\342A\001\003\022\023\n\005event\030\004 \001(\tB\004\342A\001\002\022G\n\023tri"
+          + "gger_fulfillment\030\005 \001(\0132*.google.cloud.di"
+          + "alogflow.cx.v3.Fulfillment\022:\n\013target_pag"
+          + "e\030\002 \001(\tB#\372A \n\036dialogflow.googleapis.com/"
+          + "PageH\000\022:\n\013target_flow\030\003 \001(\tB#\372A \n\036dialog"
+          + "flow.googleapis.com/FlowH\000B\010\n\006target\"\325\002\n"
+          + "\017TransitionRoute\022\022\n\004name\030\006 \001(\tB\004\342A\001\003\022\031\n\013"
+          + "description\030\010 \001(\tB\004\342A\001\001\0225\n\006intent\030\001 \001(\tB"
+          + "%\372A\"\n dialogflow.googleapis.com/Intent\022\021"
+          + "\n\tcondition\030\002 \001(\t\022G\n\023trigger_fulfillment"
+          + "\030\003 \001(\0132*.google.cloud.dialogflow.cx.v3.F"
+          + "ulfillment\022:\n\013target_page\030\004 \001(\tB#\372A \n\036di"
+          + "alogflow.googleapis.com/PageH\000\022:\n\013target"
+          + "_flow\030\005 \001(\tB#\372A \n\036dialogflow.googleapis."
+          + "com/FlowH\000B\010\n\006target\"\211\001\n\020ListPagesReques"
+          + "t\0227\n\006parent\030\001 \001(\tB\'\342A\001\002\372A \022\036dialogflow.g"
+          + "oogleapis.com/Page\022\025\n\rlanguage_code\030\002 \001("
+          + "\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t"
+          + "\"`\n\021ListPagesResponse\0222\n\005pages\030\001 \003(\0132#.g"
+          + "oogle.cloud.dialogflow.cx.v3.Page\022\027\n\017nex"
+          + "t_page_token\030\002 \001(\t\"^\n\016GetPageRequest\0225\n\004"
+          + "name\030\001 \001(\tB\'\342A\001\002\372A \n\036dialogflow.googleap"
+          + "is.com/Page\022\025\n\rlanguage_code\030\002 \001(\t\"\234\001\n\021C"
+          + "reatePageRequest\0227\n\006parent\030\001 \001(\tB\'\342A\001\002\372A"
+          + " \022\036dialogflow.googleapis.com/Page\0227\n\004pag"
+          + "e\030\002 \001(\0132#.google.cloud.dialogflow.cx.v3."
+          + "PageB\004\342A\001\002\022\025\n\rlanguage_code\030\003 \001(\t\"\224\001\n\021Up"
+          + "datePageRequest\0227\n\004page\030\001 \001(\0132#.google.c"
+          + "loud.dialogflow.cx.v3.PageB\004\342A\001\002\022\025\n\rlang"
+          + "uage_code\030\002 \001(\t\022/\n\013update_mask\030\003 \001(\0132\032.g"
+          + "oogle.protobuf.FieldMask\"Y\n\021DeletePageRe"
+          + "quest\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A \n\036dialogflow"
+          + ".googleapis.com/Page\022\r\n\005force\030\002 \001(\010\"\322\002\n\032"
+          + "KnowledgeConnectorSettings\022\017\n\007enabled\030\001 "
+          + "\001(\010\022G\n\023trigger_fulfillment\030\003 \001(\0132*.googl"
+          + "e.cloud.dialogflow.cx.v3.Fulfillment\022:\n\013"
+          + "target_page\030\004 \001(\tB#\372A \n\036dialogflow.googl"
+          + "eapis.com/PageH\000\022:\n\013target_flow\030\005 \001(\tB#\372"
+          + "A \n\036dialogflow.googleapis.com/FlowH\000\022X\n\026"
+          + "data_store_connections\030\006 \003(\01322.google.cl"
+          + "oud.dialogflow.cx.v3.DataStoreConnection"
+          + "B\004\342A\001\001B\010\n\006target2\224\010\n\005Pages\022\273\001\n\tListPages"
+          + "\022/.google.cloud.dialogflow.cx.v3.ListPag"
+          + "esRequest\0320.google.cloud.dialogflow.cx.v"
+          + "3.ListPagesResponse\"K\332A\006parent\202\323\344\223\002<\022:/v"
           + "3/{parent=projects/*/locations/*/agents/"
-          + "*/flows/*}/pages\332A\006parent\022\250\001\n\007GetPage\022-."
-          + "google.cloud.dialogflow.cx.v3.GetPageReq"
-          + "uest\032#.google.cloud.dialogflow.cx.v3.Pag"
-          + "e\"I\202\323\344\223\002<\022:/v3/{name=projects/*/location"
-          + "s/*/agents/*/flows/*/pages/*}\332A\004name\022\273\001\n"
-          + "\nCreatePage\0220.google.cloud.dialogflow.cx"
-          + ".v3.CreatePageRequest\032#.google.cloud.dia"
-          + "logflow.cx.v3.Page\"V\202\323\344\223\002B\":/v3/{parent="
-          + "projects/*/locations/*/agents/*/flows/*}"
-          + "/pages:\004page\332A\013parent,page\022\305\001\n\nUpdatePag"
-          + "e\0220.google.cloud.dialogflow.cx.v3.Update"
-          + "PageRequest\032#.google.cloud.dialogflow.cx"
-          + ".v3.Page\"`\202\323\344\223\002G2?/v3/{page.name=project"
-          + "s/*/locations/*/agents/*/flows/*/pages/*"
-          + "}:\004page\332A\020page,update_mask\022\241\001\n\nDeletePag"
-          + "e\0220.google.cloud.dialogflow.cx.v3.Delete"
-          + "PageRequest\032\026.google.protobuf.Empty\"I\202\323\344"
-          + "\223\002<*:/v3/{name=projects/*/locations/*/ag"
-          + "ents/*/flows/*/pages/*}\332A\004name\032x\312A\031dialo"
-          + "gflow.googleapis.com\322AYhttps://www.googl"
-          + "eapis.com/auth/cloud-platform,https://ww"
-          + "w.googleapis.com/auth/dialogflowB\257\001\n!com"
-          + ".google.cloud.dialogflow.cx.v3B\tPageProt"
-          + "oP\001Z1cloud.google.com/go/dialogflow/cx/a"
-          + "piv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud.Di"
-          + "alogflow.Cx.V3\352\002!Google::Cloud::Dialogfl"
-          + "ow::CX::V3b\006proto3"
+          + "*/flows/*}/pages\022\250\001\n\007GetPage\022-.google.cl"
+          + "oud.dialogflow.cx.v3.GetPageRequest\032#.go"
+          + "ogle.cloud.dialogflow.cx.v3.Page\"I\332A\004nam"
+          + "e\202\323\344\223\002<\022:/v3/{name=projects/*/locations/"
+          + "*/agents/*/flows/*/pages/*}\022\273\001\n\nCreatePa"
+          + "ge\0220.google.cloud.dialogflow.cx.v3.Creat"
+          + "ePageRequest\032#.google.cloud.dialogflow.c"
+          + "x.v3.Page\"V\332A\013parent,page\202\323\344\223\002B\":/v3/{pa"
+          + "rent=projects/*/locations/*/agents/*/flo"
+          + "ws/*}/pages:\004page\022\305\001\n\nUpdatePage\0220.googl"
+          + "e.cloud.dialogflow.cx.v3.UpdatePageReque"
+          + "st\032#.google.cloud.dialogflow.cx.v3.Page\""
+          + "`\332A\020page,update_mask\202\323\344\223\002G2?/v3/{page.na"
+          + "me=projects/*/locations/*/agents/*/flows"
+          + "/*/pages/*}:\004page\022\241\001\n\nDeletePage\0220.googl"
+          + "e.cloud.dialogflow.cx.v3.DeletePageReque"
+          + "st\032\026.google.protobuf.Empty\"I\332A\004name\202\323\344\223\002"
+          + "<*:/v3/{name=projects/*/locations/*/agen"
+          + "ts/*/flows/*/pages/*}\032x\312A\031dialogflow.goo"
+          + "gleapis.com\322AYhttps://www.googleapis.com"
+          + "/auth/cloud-platform,https://www.googlea"
+          + "pis.com/auth/dialogflowB\257\001\n!com.google.c"
+          + "loud.dialogflow.cx.v3B\tPageProtoP\001Z1clou"
+          + "d.google.com/go/dialogflow/cx/apiv3/cxpb"
+          + ";cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow."
+          + "Cx.V3\352\002!Google::Cloud::Dialogflow::CX::V"
+          + "3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -192,6 +215,8 @@ public final class PageProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto.getDescriptor(),
+              com.google.cloud.dialogflow.cx.v3.DataStoreConnectionProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3.FulfillmentProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -210,6 +235,8 @@ public final class PageProto {
               "TransitionRouteGroups",
               "TransitionRoutes",
               "EventHandlers",
+              "AdvancedSettings",
+              "KnowledgeConnectorSettings",
             });
     internal_static_google_cloud_dialogflow_cx_v3_Form_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -232,6 +259,7 @@ public final class PageProto {
               "FillBehavior",
               "DefaultValue",
               "Redact",
+              "AdvancedSettings",
             });
     internal_static_google_cloud_dialogflow_cx_v3_Form_Parameter_FillBehavior_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3_Form_Parameter_descriptor
@@ -258,6 +286,7 @@ public final class PageProto {
             internal_static_google_cloud_dialogflow_cx_v3_TransitionRoute_descriptor,
             new java.lang.String[] {
               "Name",
+              "Description",
               "Intent",
               "Condition",
               "TriggerFulfillment",
@@ -313,6 +342,19 @@ public final class PageProto {
             new java.lang.String[] {
               "Name", "Force",
             });
+    internal_static_google_cloud_dialogflow_cx_v3_KnowledgeConnectorSettings_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_dialogflow_cx_v3_KnowledgeConnectorSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_KnowledgeConnectorSettings_descriptor,
+            new java.lang.String[] {
+              "Enabled",
+              "TriggerFulfillment",
+              "TargetPage",
+              "TargetFlow",
+              "DataStoreConnections",
+              "Target",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -328,6 +370,8 @@ public final class PageProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto.getDescriptor();
+    com.google.cloud.dialogflow.cx.v3.DataStoreConnectionProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3.FulfillmentProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateServingConfigRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,7 +125,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
    * Indicates which fields in the provided
    * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
    * following are NOT supported:
+   *
    * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -149,7 +146,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
    * Indicates which fields in the provided
    * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
    * following are NOT supported:
+   *
    * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -168,7 +167,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
    * Indicates which fields in the provided
    * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
    * following are NOT supported:
+   *
    * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -776,7 +777,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
      * Indicates which fields in the provided
      * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
      * following are NOT supported:
+     *
      * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -794,7 +797,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
      * Indicates which fields in the provided
      * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
      * following are NOT supported:
+     *
      * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -818,7 +823,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
      * Indicates which fields in the provided
      * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
      * following are NOT supported:
+     *
      * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -844,7 +851,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
      * Indicates which fields in the provided
      * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
      * following are NOT supported:
+     *
      * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -867,7 +876,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
      * Indicates which fields in the provided
      * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
      * following are NOT supported:
+     *
      * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -896,7 +907,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
      * Indicates which fields in the provided
      * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
      * following are NOT supported:
+     *
      * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -919,7 +932,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
      * Indicates which fields in the provided
      * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
      * following are NOT supported:
+     *
      * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -937,7 +952,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
      * Indicates which fields in the provided
      * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
      * following are NOT supported:
+     *
      * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -959,7 +976,9 @@ public final class UpdateServingConfigRequest extends com.google.protobuf.Genera
      * Indicates which fields in the provided
      * [ServingConfig][google.cloud.retail.v2.ServingConfig] to update. The
      * following are NOT supported:
+     *
      * * [ServingConfig.name][google.cloud.retail.v2.ServingConfig.name]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *

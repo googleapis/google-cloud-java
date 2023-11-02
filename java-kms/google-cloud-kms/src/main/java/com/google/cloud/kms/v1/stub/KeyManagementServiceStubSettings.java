@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,6 +85,10 @@ import com.google.cloud.kms.v1.MacSignResponse;
 import com.google.cloud.kms.v1.MacVerifyRequest;
 import com.google.cloud.kms.v1.MacVerifyResponse;
 import com.google.cloud.kms.v1.PublicKey;
+import com.google.cloud.kms.v1.RawDecryptRequest;
+import com.google.cloud.kms.v1.RawDecryptResponse;
+import com.google.cloud.kms.v1.RawEncryptRequest;
+import com.google.cloud.kms.v1.RawEncryptResponse;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyRequest;
@@ -193,6 +197,8 @@ public class KeyManagementServiceStubSettings
       restoreCryptoKeyVersionSettings;
   private final UnaryCallSettings<EncryptRequest, EncryptResponse> encryptSettings;
   private final UnaryCallSettings<DecryptRequest, DecryptResponse> decryptSettings;
+  private final UnaryCallSettings<RawEncryptRequest, RawEncryptResponse> rawEncryptSettings;
+  private final UnaryCallSettings<RawDecryptRequest, RawDecryptResponse> rawDecryptSettings;
   private final UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
       asymmetricSignSettings;
   private final UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
@@ -610,6 +616,16 @@ public class KeyManagementServiceStubSettings
     return decryptSettings;
   }
 
+  /** Returns the object with the settings used for calls to rawEncrypt. */
+  public UnaryCallSettings<RawEncryptRequest, RawEncryptResponse> rawEncryptSettings() {
+    return rawEncryptSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rawDecrypt. */
+  public UnaryCallSettings<RawDecryptRequest, RawDecryptResponse> rawDecryptSettings() {
+    return rawDecryptSettings;
+  }
+
   /** Returns the object with the settings used for calls to asymmetricSign. */
   public UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignSettings() {
     return asymmetricSignSettings;
@@ -792,6 +808,8 @@ public class KeyManagementServiceStubSettings
     restoreCryptoKeyVersionSettings = settingsBuilder.restoreCryptoKeyVersionSettings().build();
     encryptSettings = settingsBuilder.encryptSettings().build();
     decryptSettings = settingsBuilder.decryptSettings().build();
+    rawEncryptSettings = settingsBuilder.rawEncryptSettings().build();
+    rawDecryptSettings = settingsBuilder.rawDecryptSettings().build();
     asymmetricSignSettings = settingsBuilder.asymmetricSignSettings().build();
     asymmetricDecryptSettings = settingsBuilder.asymmetricDecryptSettings().build();
     macSignSettings = settingsBuilder.macSignSettings().build();
@@ -849,6 +867,10 @@ public class KeyManagementServiceStubSettings
         restoreCryptoKeyVersionSettings;
     private final UnaryCallSettings.Builder<EncryptRequest, EncryptResponse> encryptSettings;
     private final UnaryCallSettings.Builder<DecryptRequest, DecryptResponse> decryptSettings;
+    private final UnaryCallSettings.Builder<RawEncryptRequest, RawEncryptResponse>
+        rawEncryptSettings;
+    private final UnaryCallSettings.Builder<RawDecryptRequest, RawDecryptResponse>
+        rawDecryptSettings;
     private final UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
         asymmetricSignSettings;
     private final UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
@@ -940,6 +962,8 @@ public class KeyManagementServiceStubSettings
       restoreCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       encryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       decryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rawEncryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rawDecryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       asymmetricSignSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       asymmetricDecryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       macSignSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -974,6 +998,8 @@ public class KeyManagementServiceStubSettings
               restoreCryptoKeyVersionSettings,
               encryptSettings,
               decryptSettings,
+              rawEncryptSettings,
+              rawDecryptSettings,
               asymmetricSignSettings,
               asymmetricDecryptSettings,
               macSignSettings,
@@ -1012,6 +1038,8 @@ public class KeyManagementServiceStubSettings
       restoreCryptoKeyVersionSettings = settings.restoreCryptoKeyVersionSettings.toBuilder();
       encryptSettings = settings.encryptSettings.toBuilder();
       decryptSettings = settings.decryptSettings.toBuilder();
+      rawEncryptSettings = settings.rawEncryptSettings.toBuilder();
+      rawDecryptSettings = settings.rawDecryptSettings.toBuilder();
       asymmetricSignSettings = settings.asymmetricSignSettings.toBuilder();
       asymmetricDecryptSettings = settings.asymmetricDecryptSettings.toBuilder();
       macSignSettings = settings.macSignSettings.toBuilder();
@@ -1046,6 +1074,8 @@ public class KeyManagementServiceStubSettings
               restoreCryptoKeyVersionSettings,
               encryptSettings,
               decryptSettings,
+              rawEncryptSettings,
+              rawDecryptSettings,
               asymmetricSignSettings,
               asymmetricDecryptSettings,
               macSignSettings,
@@ -1189,6 +1219,16 @@ public class KeyManagementServiceStubSettings
           .decryptSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .rawEncryptSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .rawDecryptSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .asymmetricSignSettings()
@@ -1378,6 +1418,16 @@ public class KeyManagementServiceStubSettings
     /** Returns the builder for the settings used for calls to decrypt. */
     public UnaryCallSettings.Builder<DecryptRequest, DecryptResponse> decryptSettings() {
       return decryptSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rawEncrypt. */
+    public UnaryCallSettings.Builder<RawEncryptRequest, RawEncryptResponse> rawEncryptSettings() {
+      return rawEncryptSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rawDecrypt. */
+    public UnaryCallSettings.Builder<RawDecryptRequest, RawDecryptResponse> rawDecryptSettings() {
+      return rawDecryptSettings;
     }
 
     /** Returns the builder for the settings used for calls to asymmetricSign. */

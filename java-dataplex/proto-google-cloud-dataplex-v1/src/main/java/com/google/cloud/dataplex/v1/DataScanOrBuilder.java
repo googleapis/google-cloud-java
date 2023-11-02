@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,6 +86,7 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Optional. Description of the scan.
+   *
    * * Must be between 1-1024 characters.
    * </pre>
    *
@@ -99,6 +100,7 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Optional. Description of the scan.
+   *
    * * Must be between 1-1024 characters.
    * </pre>
    *
@@ -113,6 +115,7 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Optional. User friendly display name.
+   *
    * * Must be between 1-256 characters.
    * </pre>
    *
@@ -126,6 +129,7 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Optional. User friendly display name.
+   *
    * * Must be between 1-256 characters.
    * </pre>
    *
@@ -339,6 +343,7 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Optional. DataScan execution settings.
+   *
    * If not specified, the fields in it will use their default values.
    * </pre>
    *
@@ -354,6 +359,7 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Optional. DataScan execution settings.
+   *
    * If not specified, the fields in it will use their default values.
    * </pre>
    *
@@ -369,6 +375,7 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Optional. DataScan execution settings.
+   *
    * If not specified, the fields in it will use their default values.
    * </pre>
    *
@@ -600,7 +607,7 @@ public interface DataScanOrBuilder
    */
   com.google.cloud.dataplex.v1.DataProfileResultOrBuilder getDataProfileResultOrBuilder();
 
-  public com.google.cloud.dataplex.v1.DataScan.SpecCase getSpecCase();
+  com.google.cloud.dataplex.v1.DataScan.SpecCase getSpecCase();
 
-  public com.google.cloud.dataplex.v1.DataScan.ResultCase getResultCase();
+  com.google.cloud.dataplex.v1.DataScan.ResultCase getResultCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,26 +168,28 @@ public final class ModelMonitoringProto {
           + "onfig.ExplanationBaseline.PredictionForm"
           + "at\"N\n\020PredictionFormat\022!\n\035PREDICTION_FOR"
           + "MAT_UNSPECIFIED\020\000\022\t\n\005JSONL\020\002\022\014\n\010BIGQUERY"
-          + "\020\003B\r\n\013destination\"\315\001\n\032ModelMonitoringAle"
+          + "\020\003B\r\n\013destination\"\240\002\n\032ModelMonitoringAle"
           + "rtConfig\022e\n\022email_alert_config\030\001 \001(\0132G.g"
           + "oogle.cloud.aiplatform.v1.ModelMonitorin"
           + "gAlertConfig.EmailAlertConfigH\000\022\026\n\016enabl"
-          + "e_logging\030\002 \001(\010\032\'\n\020EmailAlertConfig\022\023\n\013u"
-          + "ser_emails\030\001 \003(\tB\007\n\005alert\"/\n\017ThresholdCo"
-          + "nfig\022\017\n\005value\030\001 \001(\001H\000B\013\n\tthreshold\"\234\001\n\020S"
-          + "amplingStrategy\022]\n\024random_sample_config\030"
-          + "\001 \001(\0132?.google.cloud.aiplatform.v1.Sampl"
-          + "ingStrategy.RandomSampleConfig\032)\n\022Random"
-          + "SampleConfig\022\023\n\013sample_rate\030\001 \001(\001B\304\002\n\036co"
-          + "m.google.cloud.aiplatform.v1B\024ModelMonit"
-          + "oringProtoP\001Z>cloud.google.com/go/aiplat"
-          + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
-          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
-          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
-          + "rm::V1\352Ao\n-monitoring.googleapis.com/Not"
-          + "ificationChannel\022>projects/{project}/not"
-          + "ificationChannels/{notification_channel}"
-          + "b\006proto3"
+          + "e_logging\030\002 \001(\010\022Q\n\025notification_channels"
+          + "\030\003 \003(\tB2\372A/\n-monitoring.googleapis.com/N"
+          + "otificationChannel\032\'\n\020EmailAlertConfig\022\023"
+          + "\n\013user_emails\030\001 \003(\tB\007\n\005alert\"/\n\017Threshol"
+          + "dConfig\022\017\n\005value\030\001 \001(\001H\000B\013\n\tthreshold\"\234\001"
+          + "\n\020SamplingStrategy\022]\n\024random_sample_conf"
+          + "ig\030\001 \001(\0132?.google.cloud.aiplatform.v1.Sa"
+          + "mplingStrategy.RandomSampleConfig\032)\n\022Ran"
+          + "domSampleConfig\022\023\n\013sample_rate\030\001 \001(\001B\304\002\n"
+          + "\036com.google.cloud.aiplatform.v1B\024ModelMo"
+          + "nitoringProtoP\001Z>cloud.google.com/go/aip"
+          + "latform/apiv1/aiplatformpb;aiplatformpb\252"
+          + "\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\Cl"
+          + "oud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPla"
+          + "tform::V1\352Ao\n-monitoring.googleapis.com/"
+          + "NotificationChannel\022>projects/{project}/"
+          + "notificationChannels/{notification_chann"
+          + "el}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -309,7 +311,7 @@ public final class ModelMonitoringProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ModelMonitoringAlertConfig_descriptor,
             new java.lang.String[] {
-              "EmailAlertConfig", "EnableLogging", "Alert",
+              "EmailAlertConfig", "EnableLogging", "NotificationChannels", "Alert",
             });
     internal_static_google_cloud_aiplatform_v1_ModelMonitoringAlertConfig_EmailAlertConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1_ModelMonitoringAlertConfig_descriptor

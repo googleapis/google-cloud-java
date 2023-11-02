@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     resource_ = "";
     assetType_ = "";
     project_ = "";
-    folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
     organization_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new IamPolicySearchResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -209,11 +204,6 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       return new Explanation();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.asset.v1.AssetProto
           .internal_static_google_cloud_asset_v1_IamPolicySearchResult_Explanation_descriptor;
@@ -316,18 +306,13 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
 
       private Permissions() {
-        permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        permissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Permissions();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -349,7 +334,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       public static final int PERMISSIONS_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList permissions_;
+      private com.google.protobuf.LazyStringArrayList permissions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -628,8 +614,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          permissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -661,7 +646,6 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             buildPartial() {
           com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions result =
               new com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -669,18 +653,13 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions result) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            permissions_ = permissions_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.permissions_ = permissions_;
-        }
-
         private void buildPartial0(
             com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            permissions_.makeImmutable();
+            result.permissions_ = permissions_;
+          }
         }
 
         @java.lang.Override
@@ -738,7 +717,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           if (!other.permissions_.isEmpty()) {
             if (permissions_.isEmpty()) {
               permissions_ = other.permissions_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ |= 0x00000001;
             } else {
               ensurePermissionsIsMutable();
               permissions_.addAll(other.permissions_);
@@ -797,14 +776,14 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList permissions_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList permissions_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensurePermissionsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!permissions_.isModifiable()) {
             permissions_ = new com.google.protobuf.LazyStringArrayList(permissions_);
-            bitField0_ |= 0x00000001;
           }
+          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -818,7 +797,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
          * @return A list containing the permissions.
          */
         public com.google.protobuf.ProtocolStringList getPermissionsList() {
-          return permissions_.getUnmodifiableView();
+          permissions_.makeImmutable();
+          return permissions_;
         }
         /**
          *
@@ -883,6 +863,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           }
           ensurePermissionsIsMutable();
           permissions_.set(index, value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -904,6 +885,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           }
           ensurePermissionsIsMutable();
           permissions_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -922,6 +904,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         public Builder addAllPermissions(java.lang.Iterable<java.lang.String> values) {
           ensurePermissionsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, permissions_);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -937,8 +920,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
          * @return This builder for chaining.
          */
         public Builder clearPermissions() {
-          permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          permissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          ;
           onChanged();
           return this;
         }
@@ -961,6 +945,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           checkByteStringIsUtf8(value);
           ensurePermissionsIsMutable();
           permissions_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1922,7 +1907,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
+   *
    * To search against the `resource`:
+   *
    * * use a field query. Example: `resource:organizations/123`
    * </pre>
    *
@@ -1952,7 +1939,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
+   *
    * To search against the `resource`:
+   *
    * * use a field query. Example: `resource:organizations/123`
    * </pre>
    *
@@ -1983,7 +1972,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * <pre>
    * The type of the resource associated with this IAM policy. Example:
    * `compute.googleapis.com/Disk`.
+   *
    * To search against the `asset_type`:
+   *
    * * specify the `asset_types` field in your search request.
    * </pre>
    *
@@ -2009,7 +2000,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * <pre>
    * The type of the resource associated with this IAM policy. Example:
    * `compute.googleapis.com/Disk`.
+   *
    * To search against the `asset_type`:
+   *
    * * specify the `asset_types` field in your search request.
    * </pre>
    *
@@ -2043,7 +2036,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * (like VM instance, Cloud Storage bucket), the project field will indicate
    * the project that contains the resource. If an IAM policy is set on a folder
    * or orgnization, this field will be empty.
+   *
    * To search against the `project`:
+   *
    * * specify the `scope` field as this project in your search request.
    * </pre>
    *
@@ -2072,7 +2067,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * (like VM instance, Cloud Storage bucket), the project field will indicate
    * the project that contains the resource. If an IAM policy is set on a folder
    * or orgnization, this field will be empty.
+   *
    * To search against the `project`:
+   *
    * * specify the `scope` field as this project in your search request.
    * </pre>
    *
@@ -2096,7 +2093,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   public static final int FOLDERS_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList folders_;
+  private com.google.protobuf.LazyStringArrayList folders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2104,7 +2102,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * The folder(s) that the IAM policy belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * use a field query. Example: `folders:(123 OR 456)`
    * * use a free text query. Example: `123`
    * * specify the `scope` field as this folder in your search request.
@@ -2124,7 +2124,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * The folder(s) that the IAM policy belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * use a field query. Example: `folders:(123 OR 456)`
    * * use a free text query. Example: `123`
    * * specify the `scope` field as this folder in your search request.
@@ -2144,7 +2146,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * The folder(s) that the IAM policy belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * use a field query. Example: `folders:(123 OR 456)`
    * * use a free text query. Example: `123`
    * * specify the `scope` field as this folder in your search request.
@@ -2165,7 +2169,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * The folder(s) that the IAM policy belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * use a field query. Example: `folders:(123 OR 456)`
    * * use a free text query. Example: `123`
    * * specify the `scope` field as this folder in your search request.
@@ -2191,7 +2197,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * The organization that the IAM policy belongs to, in the form
    * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
    * IAM policy belongs to an organization.
+   *
    * To search against `organization`:
+   *
    * * use a field query. Example: `organization:123`
    * * use a free text query. Example: `123`
    * * specify the `scope` field as this organization in your search request.
@@ -2220,7 +2228,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * The organization that the IAM policy belongs to, in the form
    * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
    * IAM policy belongs to an organization.
+   *
    * To search against `organization`:
+   *
    * * use a field query. Example: `organization:123`
    * * use a free text query. Example: `123`
    * * specify the `scope` field as this organization in your search request.
@@ -2253,7 +2263,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * IAM policy can contain multiple bindings. This only contains the bindings
    * that match the given query. For queries that don't contain a constrain on
    * policies (e.g., an empty query), this contains all the bindings.
+   *
    * To search against the `policy` bindings:
+   *
    * * use a field query:
    *     - query by the policy contained members. Example:
    *       `policy:amy&#64;gmail.com`
@@ -2279,7 +2291,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * IAM policy can contain multiple bindings. This only contains the bindings
    * that match the given query. For queries that don't contain a constrain on
    * policies (e.g., an empty query), this contains all the bindings.
+   *
    * To search against the `policy` bindings:
+   *
    * * use a field query:
    *     - query by the policy contained members. Example:
    *       `policy:amy&#64;gmail.com`
@@ -2305,7 +2319,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * IAM policy can contain multiple bindings. This only contains the bindings
    * that match the given query. For queries that don't contain a constrain on
    * policies (e.g., an empty query), this contains all the bindings.
+   *
    * To search against the `policy` bindings:
+   *
    * * use a field query:
    *     - query by the policy contained members. Example:
    *       `policy:amy&#64;gmail.com`
@@ -2648,8 +2664,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       resource_ = "";
       assetType_ = "";
       project_ = "";
-      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       organization_ = "";
       policy_ = null;
       if (policyBuilder_ != null) {
@@ -2688,21 +2703,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public com.google.cloud.asset.v1.IamPolicySearchResult buildPartial() {
       com.google.cloud.asset.v1.IamPolicySearchResult result =
           new com.google.cloud.asset.v1.IamPolicySearchResult(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.asset.v1.IamPolicySearchResult result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        folders_ = folders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.folders_ = folders_;
     }
 
     private void buildPartial0(com.google.cloud.asset.v1.IamPolicySearchResult result) {
@@ -2715,6 +2720,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        folders_.makeImmutable();
+        result.folders_ = folders_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.organization_ = organization_;
@@ -2792,7 +2801,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       if (!other.folders_.isEmpty()) {
         if (folders_.isEmpty()) {
           folders_ = other.folders_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureFoldersIsMutable();
           folders_.addAll(other.folders_);
@@ -2909,7 +2918,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `resource`:
+     *
      * * use a field query. Example: `resource:organizations/123`
      * </pre>
      *
@@ -2938,7 +2949,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `resource`:
+     *
      * * use a field query. Example: `resource:organizations/123`
      * </pre>
      *
@@ -2967,7 +2980,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `resource`:
+     *
      * * use a field query. Example: `resource:organizations/123`
      * </pre>
      *
@@ -2995,7 +3010,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `resource`:
+     *
      * * use a field query. Example: `resource:organizations/123`
      * </pre>
      *
@@ -3019,7 +3036,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `resource`:
+     *
      * * use a field query. Example: `resource:organizations/123`
      * </pre>
      *
@@ -3046,7 +3065,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The type of the resource associated with this IAM policy. Example:
      * `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * specify the `asset_types` field in your search request.
      * </pre>
      *
@@ -3071,7 +3092,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The type of the resource associated with this IAM policy. Example:
      * `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * specify the `asset_types` field in your search request.
      * </pre>
      *
@@ -3096,7 +3119,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The type of the resource associated with this IAM policy. Example:
      * `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * specify the `asset_types` field in your search request.
      * </pre>
      *
@@ -3120,7 +3145,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The type of the resource associated with this IAM policy. Example:
      * `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * specify the `asset_types` field in your search request.
      * </pre>
      *
@@ -3140,7 +3167,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The type of the resource associated with this IAM policy. Example:
      * `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * specify the `asset_types` field in your search request.
      * </pre>
      *
@@ -3170,7 +3199,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * (like VM instance, Cloud Storage bucket), the project field will indicate
      * the project that contains the resource. If an IAM policy is set on a folder
      * or orgnization, this field will be empty.
+     *
      * To search against the `project`:
+     *
      * * specify the `scope` field as this project in your search request.
      * </pre>
      *
@@ -3198,7 +3229,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * (like VM instance, Cloud Storage bucket), the project field will indicate
      * the project that contains the resource. If an IAM policy is set on a folder
      * or orgnization, this field will be empty.
+     *
      * To search against the `project`:
+     *
      * * specify the `scope` field as this project in your search request.
      * </pre>
      *
@@ -3226,7 +3259,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * (like VM instance, Cloud Storage bucket), the project field will indicate
      * the project that contains the resource. If an IAM policy is set on a folder
      * or orgnization, this field will be empty.
+     *
      * To search against the `project`:
+     *
      * * specify the `scope` field as this project in your search request.
      * </pre>
      *
@@ -3253,7 +3288,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * (like VM instance, Cloud Storage bucket), the project field will indicate
      * the project that contains the resource. If an IAM policy is set on a folder
      * or orgnization, this field will be empty.
+     *
      * To search against the `project`:
+     *
      * * specify the `scope` field as this project in your search request.
      * </pre>
      *
@@ -3276,7 +3313,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * (like VM instance, Cloud Storage bucket), the project field will indicate
      * the project that contains the resource. If an IAM policy is set on a folder
      * or orgnization, this field will be empty.
+     *
      * To search against the `project`:
+     *
      * * specify the `scope` field as this project in your search request.
      * </pre>
      *
@@ -3296,14 +3335,14 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.protobuf.LazyStringList folders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList folders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFoldersIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!folders_.isModifiable()) {
         folders_ = new com.google.protobuf.LazyStringArrayList(folders_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -3312,7 +3351,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The folder(s) that the IAM policy belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * use a field query. Example: `folders:(123 OR 456)`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this folder in your search request.
@@ -3323,7 +3364,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return A list containing the folders.
      */
     public com.google.protobuf.ProtocolStringList getFoldersList() {
-      return folders_.getUnmodifiableView();
+      folders_.makeImmutable();
+      return folders_;
     }
     /**
      *
@@ -3332,7 +3374,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The folder(s) that the IAM policy belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * use a field query. Example: `folders:(123 OR 456)`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this folder in your search request.
@@ -3352,7 +3396,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The folder(s) that the IAM policy belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * use a field query. Example: `folders:(123 OR 456)`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this folder in your search request.
@@ -3373,7 +3419,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The folder(s) that the IAM policy belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * use a field query. Example: `folders:(123 OR 456)`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this folder in your search request.
@@ -3394,7 +3442,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The folder(s) that the IAM policy belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * use a field query. Example: `folders:(123 OR 456)`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this folder in your search request.
@@ -3412,6 +3462,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
       ensureFoldersIsMutable();
       folders_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3422,7 +3473,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The folder(s) that the IAM policy belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * use a field query. Example: `folders:(123 OR 456)`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this folder in your search request.
@@ -3439,6 +3492,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
       ensureFoldersIsMutable();
       folders_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3449,7 +3503,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The folder(s) that the IAM policy belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * use a field query. Example: `folders:(123 OR 456)`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this folder in your search request.
@@ -3463,6 +3519,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public Builder addAllFolders(java.lang.Iterable<java.lang.String> values) {
       ensureFoldersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, folders_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3473,7 +3530,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The folder(s) that the IAM policy belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * use a field query. Example: `folders:(123 OR 456)`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this folder in your search request.
@@ -3484,8 +3543,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearFolders() {
-      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -3496,7 +3556,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The folder(s) that the IAM policy belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * use a field query. Example: `folders:(123 OR 456)`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this folder in your search request.
@@ -3514,6 +3576,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureFoldersIsMutable();
       folders_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3526,7 +3589,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The organization that the IAM policy belongs to, in the form
      * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * IAM policy belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * use a field query. Example: `organization:123`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this organization in your search request.
@@ -3554,7 +3619,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The organization that the IAM policy belongs to, in the form
      * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * IAM policy belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * use a field query. Example: `organization:123`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this organization in your search request.
@@ -3582,7 +3649,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The organization that the IAM policy belongs to, in the form
      * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * IAM policy belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * use a field query. Example: `organization:123`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this organization in your search request.
@@ -3609,7 +3678,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The organization that the IAM policy belongs to, in the form
      * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * IAM policy belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * use a field query. Example: `organization:123`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this organization in your search request.
@@ -3632,7 +3703,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * The organization that the IAM policy belongs to, in the form
      * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * IAM policy belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * use a field query. Example: `organization:123`
      * * use a free text query. Example: `123`
      * * specify the `scope` field as this organization in your search request.
@@ -3668,7 +3741,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * IAM policy can contain multiple bindings. This only contains the bindings
      * that match the given query. For queries that don't contain a constrain on
      * policies (e.g., an empty query), this contains all the bindings.
+     *
      * To search against the `policy` bindings:
+     *
      * * use a field query:
      *     - query by the policy contained members. Example:
      *       `policy:amy&#64;gmail.com`
@@ -3693,7 +3768,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * IAM policy can contain multiple bindings. This only contains the bindings
      * that match the given query. For queries that don't contain a constrain on
      * policies (e.g., an empty query), this contains all the bindings.
+     *
      * To search against the `policy` bindings:
+     *
      * * use a field query:
      *     - query by the policy contained members. Example:
      *       `policy:amy&#64;gmail.com`
@@ -3722,7 +3799,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * IAM policy can contain multiple bindings. This only contains the bindings
      * that match the given query. For queries that don't contain a constrain on
      * policies (e.g., an empty query), this contains all the bindings.
+     *
      * To search against the `policy` bindings:
+     *
      * * use a field query:
      *     - query by the policy contained members. Example:
      *       `policy:amy&#64;gmail.com`
@@ -3755,7 +3834,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * IAM policy can contain multiple bindings. This only contains the bindings
      * that match the given query. For queries that don't contain a constrain on
      * policies (e.g., an empty query), this contains all the bindings.
+     *
      * To search against the `policy` bindings:
+     *
      * * use a field query:
      *     - query by the policy contained members. Example:
      *       `policy:amy&#64;gmail.com`
@@ -3785,7 +3866,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * IAM policy can contain multiple bindings. This only contains the bindings
      * that match the given query. For queries that don't contain a constrain on
      * policies (e.g., an empty query), this contains all the bindings.
+     *
      * To search against the `policy` bindings:
+     *
      * * use a field query:
      *     - query by the policy contained members. Example:
      *       `policy:amy&#64;gmail.com`
@@ -3821,7 +3904,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * IAM policy can contain multiple bindings. This only contains the bindings
      * that match the given query. For queries that don't contain a constrain on
      * policies (e.g., an empty query), this contains all the bindings.
+     *
      * To search against the `policy` bindings:
+     *
      * * use a field query:
      *     - query by the policy contained members. Example:
      *       `policy:amy&#64;gmail.com`
@@ -3851,7 +3936,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * IAM policy can contain multiple bindings. This only contains the bindings
      * that match the given query. For queries that don't contain a constrain on
      * policies (e.g., an empty query), this contains all the bindings.
+     *
      * To search against the `policy` bindings:
+     *
      * * use a field query:
      *     - query by the policy contained members. Example:
      *       `policy:amy&#64;gmail.com`
@@ -3876,7 +3963,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * IAM policy can contain multiple bindings. This only contains the bindings
      * that match the given query. For queries that don't contain a constrain on
      * policies (e.g., an empty query), this contains all the bindings.
+     *
      * To search against the `policy` bindings:
+     *
      * * use a field query:
      *     - query by the policy contained members. Example:
      *       `policy:amy&#64;gmail.com`
@@ -3903,7 +3992,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * IAM policy can contain multiple bindings. This only contains the bindings
      * that match the given query. For queries that don't contain a constrain on
      * policies (e.g., an empty query), this contains all the bindings.
+     *
      * To search against the `policy` bindings:
+     *
      * * use a field query:
      *     - query by the policy contained members. Example:
      *       `policy:amy&#64;gmail.com`

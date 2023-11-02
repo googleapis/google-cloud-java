@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ public interface SegmentOrBuilder
    * The name for this segment. If unspecified, segments are named "Segment".
    * This name defines string value returned by the `segment` dimension. The
    * `segment` dimension prefixes segment names by the 1-based index number of
-   * the segment in the request (i.e. "1. Segment", "2. Segment", etc.).
+   * the segment in the request (for example "1. Segment", "2. Segment", etc.).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -45,7 +45,7 @@ public interface SegmentOrBuilder
    * The name for this segment. If unspecified, segments are named "Segment".
    * This name defines string value returned by the `segment` dimension. The
    * `segment` dimension prefixes segment names by the 1-based index number of
-   * the segment in the request (i.e. "1. Segment", "2. Segment", etc.).
+   * the segment in the request (for example "1. Segment", "2. Segment", etc.).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -165,5 +165,5 @@ public interface SegmentOrBuilder
    */
   com.google.analytics.data.v1alpha.EventSegmentOrBuilder getEventSegmentOrBuilder();
 
-  public com.google.analytics.data.v1alpha.Segment.OneSegmentScopeCase getOneSegmentScopeCase();
+  com.google.analytics.data.v1alpha.Segment.OneSegmentScopeCase getOneSegmentScopeCase();
 }

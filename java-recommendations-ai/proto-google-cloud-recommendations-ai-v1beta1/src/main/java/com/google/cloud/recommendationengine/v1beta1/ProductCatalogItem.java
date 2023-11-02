@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ProductCatalogItem();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -348,11 +343,6 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExactPrice();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1032,11 +1022,6 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       return new PriceRange();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.recommendationengine.v1beta1.Catalog
           .internal_static_google_cloud_recommendationengine_v1beta1_ProductCatalogItem_PriceRange_descriptor;
@@ -1653,6 +1638,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   }
 
   private int priceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object price_;
 
   public enum PriceCase
@@ -1852,9 +1839,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. A map to pass the costs associated with the product.
+   *
    * For example:
    * {"manufacturing": 45.5} The profit of selling this item is computed like
    * so:
+   *
    * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
    * * If 'priceRange' is provided, profit = minPrice - sum(costs)
    * </pre>
@@ -1879,9 +1868,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. A map to pass the costs associated with the product.
+   *
    * For example:
    * {"manufacturing": 45.5} The profit of selling this item is computed like
    * so:
+   *
    * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
    * * If 'priceRange' is provided, profit = minPrice - sum(costs)
    * </pre>
@@ -1897,9 +1888,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. A map to pass the costs associated with the product.
+   *
    * For example:
    * {"manufacturing": 45.5} The profit of selling this item is computed like
    * so:
+   *
    * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
    * * If 'priceRange' is provided, profit = minPrice - sum(costs)
    * </pre>
@@ -1919,9 +1912,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. A map to pass the costs associated with the product.
+   *
    * For example:
    * {"manufacturing": 45.5} The profit of selling this item is computed like
    * so:
+   *
    * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
    * * If 'priceRange' is provided, profit = minPrice - sum(costs)
    * </pre>
@@ -3364,9 +3359,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A map to pass the costs associated with the product.
+     *
      * For example:
      * {"manufacturing": 45.5} The profit of selling this item is computed like
      * so:
+     *
      * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
      * * If 'priceRange' is provided, profit = minPrice - sum(costs)
      * </pre>
@@ -3391,9 +3388,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A map to pass the costs associated with the product.
+     *
      * For example:
      * {"manufacturing": 45.5} The profit of selling this item is computed like
      * so:
+     *
      * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
      * * If 'priceRange' is provided, profit = minPrice - sum(costs)
      * </pre>
@@ -3409,9 +3408,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A map to pass the costs associated with the product.
+     *
      * For example:
      * {"manufacturing": 45.5} The profit of selling this item is computed like
      * so:
+     *
      * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
      * * If 'priceRange' is provided, profit = minPrice - sum(costs)
      * </pre>
@@ -3431,9 +3432,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A map to pass the costs associated with the product.
+     *
      * For example:
      * {"manufacturing": 45.5} The profit of selling this item is computed like
      * so:
+     *
      * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
      * * If 'priceRange' is provided, profit = minPrice - sum(costs)
      * </pre>
@@ -3462,9 +3465,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A map to pass the costs associated with the product.
+     *
      * For example:
      * {"manufacturing": 45.5} The profit of selling this item is computed like
      * so:
+     *
      * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
      * * If 'priceRange' is provided, profit = minPrice - sum(costs)
      * </pre>
@@ -3489,9 +3494,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A map to pass the costs associated with the product.
+     *
      * For example:
      * {"manufacturing": 45.5} The profit of selling this item is computed like
      * so:
+     *
      * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
      * * If 'priceRange' is provided, profit = minPrice - sum(costs)
      * </pre>
@@ -3512,9 +3519,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A map to pass the costs associated with the product.
+     *
      * For example:
      * {"manufacturing": 45.5} The profit of selling this item is computed like
      * so:
+     *
      * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
      * * If 'priceRange' is provided, profit = minPrice - sum(costs)
      * </pre>

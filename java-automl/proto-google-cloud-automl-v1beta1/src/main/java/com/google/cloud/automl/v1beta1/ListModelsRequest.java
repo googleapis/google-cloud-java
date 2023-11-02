@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListModelsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,9 +128,11 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * An expression for filtering the results of the request.
+   *
    *   * `model_metadata` - for existence of the case (e.g.
    *             `video_classification_model_metadata:*`).
    *   * `dataset_id` - for = or !=. Some examples of using the filter are:
+   *
    *   * `image_classification_model_metadata:*` --&gt; The model has
    *                                      `image_classification_model_metadata`.
    *   * `dataset_id=5` --&gt; The model was created from a dataset with ID 5.
@@ -162,9 +159,11 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * An expression for filtering the results of the request.
+   *
    *   * `model_metadata` - for existence of the case (e.g.
    *             `video_classification_model_metadata:*`).
    *   * `dataset_id` - for = or !=. Some examples of using the filter are:
+   *
    *   * `image_classification_model_metadata:*` --&gt; The model has
    *                                      `image_classification_model_metadata`.
    *   * `dataset_id=5` --&gt; The model was created from a dataset with ID 5.
@@ -796,9 +795,11 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression for filtering the results of the request.
+     *
      *   * `model_metadata` - for existence of the case (e.g.
      *             `video_classification_model_metadata:*`).
      *   * `dataset_id` - for = or !=. Some examples of using the filter are:
+     *
      *   * `image_classification_model_metadata:*` --&gt; The model has
      *                                      `image_classification_model_metadata`.
      *   * `dataset_id=5` --&gt; The model was created from a dataset with ID 5.
@@ -824,9 +825,11 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression for filtering the results of the request.
+     *
      *   * `model_metadata` - for existence of the case (e.g.
      *             `video_classification_model_metadata:*`).
      *   * `dataset_id` - for = or !=. Some examples of using the filter are:
+     *
      *   * `image_classification_model_metadata:*` --&gt; The model has
      *                                      `image_classification_model_metadata`.
      *   * `dataset_id=5` --&gt; The model was created from a dataset with ID 5.
@@ -852,9 +855,11 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression for filtering the results of the request.
+     *
      *   * `model_metadata` - for existence of the case (e.g.
      *             `video_classification_model_metadata:*`).
      *   * `dataset_id` - for = or !=. Some examples of using the filter are:
+     *
      *   * `image_classification_model_metadata:*` --&gt; The model has
      *                                      `image_classification_model_metadata`.
      *   * `dataset_id=5` --&gt; The model was created from a dataset with ID 5.
@@ -879,9 +884,11 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression for filtering the results of the request.
+     *
      *   * `model_metadata` - for existence of the case (e.g.
      *             `video_classification_model_metadata:*`).
      *   * `dataset_id` - for = or !=. Some examples of using the filter are:
+     *
      *   * `image_classification_model_metadata:*` --&gt; The model has
      *                                      `image_classification_model_metadata`.
      *   * `dataset_id=5` --&gt; The model was created from a dataset with ID 5.
@@ -902,9 +909,11 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression for filtering the results of the request.
+     *
      *   * `model_metadata` - for existence of the case (e.g.
      *             `video_classification_model_metadata:*`).
      *   * `dataset_id` - for = or !=. Some examples of using the filter are:
+     *
      *   * `image_classification_model_metadata:*` --&gt; The model has
      *                                      `image_classification_model_metadata`.
      *   * `dataset_id=5` --&gt; The model was created from a dataset with ID 5.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -137,5 +137,5 @@ public interface LargeCustomDictionaryConfigOrBuilder
    */
   com.google.privacy.dlp.v2.BigQueryFieldOrBuilder getBigQueryFieldOrBuilder();
 
-  public com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.SourceCase getSourceCase();
+  com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.SourceCase getSourceCase();
 }

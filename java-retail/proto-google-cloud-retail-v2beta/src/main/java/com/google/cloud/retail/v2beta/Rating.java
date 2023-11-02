@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     return new Rating();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.CommonProto
         .internal_static_google_cloud_retail_v2beta_Rating_descriptor;
@@ -75,6 +70,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The total number of ratings. This value is independent of the value of
    * [rating_histogram][google.cloud.retail.v2beta.Rating.rating_histogram].
+   *
    * This value must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>
@@ -95,6 +91,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The average rating of the [Product][google.cloud.retail.v2beta.Product].
+   *
    * The rating is scaled at 1-5. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>
@@ -119,6 +116,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
    * List of rating counts per rating value (index = rating - 1). The list is
    * empty if there is no rating. If the list is non-empty, its size is
    * always 5. Otherwise, an INVALID_ARGUMENT error is returned.
+   *
    * For example, [41, 14, 13, 47, 303]. It means that the
    * [Product][google.cloud.retail.v2beta.Product] got 41 ratings with 1 star,
    * 14 ratings with 2 star, and so on.
@@ -139,6 +137,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
    * List of rating counts per rating value (index = rating - 1). The list is
    * empty if there is no rating. If the list is non-empty, its size is
    * always 5. Otherwise, an INVALID_ARGUMENT error is returned.
+   *
    * For example, [41, 14, 13, 47, 303]. It means that the
    * [Product][google.cloud.retail.v2beta.Product] got 41 ratings with 1 star,
    * 14 ratings with 2 star, and so on.
@@ -158,6 +157,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
    * List of rating counts per rating value (index = rating - 1). The list is
    * empty if there is no rating. If the list is non-empty, its size is
    * always 5. Otherwise, an INVALID_ARGUMENT error is returned.
+   *
    * For example, [41, 14, 13, 47, 303]. It means that the
    * [Product][google.cloud.retail.v2beta.Product] got 41 ratings with 1 star,
    * 14 ratings with 2 star, and so on.
@@ -605,6 +605,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The total number of ratings. This value is independent of the value of
      * [rating_histogram][google.cloud.retail.v2beta.Rating.rating_histogram].
+     *
      * This value must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -623,6 +624,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The total number of ratings. This value is independent of the value of
      * [rating_histogram][google.cloud.retail.v2beta.Rating.rating_histogram].
+     *
      * This value must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -645,6 +647,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The total number of ratings. This value is independent of the value of
      * [rating_histogram][google.cloud.retail.v2beta.Rating.rating_histogram].
+     *
      * This value must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -666,6 +669,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The average rating of the [Product][google.cloud.retail.v2beta.Product].
+     *
      * The rating is scaled at 1-5. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -683,6 +687,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The average rating of the [Product][google.cloud.retail.v2beta.Product].
+     *
      * The rating is scaled at 1-5. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -704,6 +709,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The average rating of the [Product][google.cloud.retail.v2beta.Product].
+     *
      * The rating is scaled at 1-5. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -734,6 +740,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * List of rating counts per rating value (index = rating - 1). The list is
      * empty if there is no rating. If the list is non-empty, its size is
      * always 5. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * For example, [41, 14, 13, 47, 303]. It means that the
      * [Product][google.cloud.retail.v2beta.Product] got 41 ratings with 1 star,
      * 14 ratings with 2 star, and so on.
@@ -755,6 +762,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * List of rating counts per rating value (index = rating - 1). The list is
      * empty if there is no rating. If the list is non-empty, its size is
      * always 5. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * For example, [41, 14, 13, 47, 303]. It means that the
      * [Product][google.cloud.retail.v2beta.Product] got 41 ratings with 1 star,
      * 14 ratings with 2 star, and so on.
@@ -774,6 +782,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * List of rating counts per rating value (index = rating - 1). The list is
      * empty if there is no rating. If the list is non-empty, its size is
      * always 5. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * For example, [41, 14, 13, 47, 303]. It means that the
      * [Product][google.cloud.retail.v2beta.Product] got 41 ratings with 1 star,
      * 14 ratings with 2 star, and so on.
@@ -794,6 +803,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * List of rating counts per rating value (index = rating - 1). The list is
      * empty if there is no rating. If the list is non-empty, its size is
      * always 5. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * For example, [41, 14, 13, 47, 303]. It means that the
      * [Product][google.cloud.retail.v2beta.Product] got 41 ratings with 1 star,
      * 14 ratings with 2 star, and so on.
@@ -819,6 +829,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * List of rating counts per rating value (index = rating - 1). The list is
      * empty if there is no rating. If the list is non-empty, its size is
      * always 5. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * For example, [41, 14, 13, 47, 303]. It means that the
      * [Product][google.cloud.retail.v2beta.Product] got 41 ratings with 1 star,
      * 14 ratings with 2 star, and so on.
@@ -843,6 +854,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * List of rating counts per rating value (index = rating - 1). The list is
      * empty if there is no rating. If the list is non-empty, its size is
      * always 5. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * For example, [41, 14, 13, 47, 303]. It means that the
      * [Product][google.cloud.retail.v2beta.Product] got 41 ratings with 1 star,
      * 14 ratings with 2 star, and so on.
@@ -866,6 +878,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      * List of rating counts per rating value (index = rating - 1). The list is
      * empty if there is no rating. If the list is non-empty, its size is
      * always 5. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * For example, [41, 14, 13, 47, 303]. It means that the
      * [Product][google.cloud.retail.v2beta.Product] got 41 ratings with 1 star,
      * 14 ratings with 2 star, and so on.

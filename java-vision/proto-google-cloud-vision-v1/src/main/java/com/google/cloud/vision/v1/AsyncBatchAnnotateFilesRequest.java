@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AsyncBatchAnnotateFilesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -161,12 +156,16 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Optional. Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no parent is specified, a region will be chosen automatically.
+   *
    * Supported location-ids:
    *     `us`: USA country only,
    *     `asia`: East asia areas, like Japan, Taiwan,
    *     `eu`: The European Union.
+   *
    * Example: `projects/project-A/locations/eu`.
    * </pre>
    *
@@ -191,12 +190,16 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Optional. Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no parent is specified, a region will be chosen automatically.
+   *
    * Supported location-ids:
    *     `us`: USA country only,
    *     `asia`: East asia areas, like Japan, Taiwan,
    *     `eu`: The European Union.
+   *
    * Example: `projects/project-A/locations/eu`.
    * </pre>
    *
@@ -1033,12 +1036,16 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no parent is specified, a region will be chosen automatically.
+     *
      * Supported location-ids:
      *     `us`: USA country only,
      *     `asia`: East asia areas, like Japan, Taiwan,
      *     `eu`: The European Union.
+     *
      * Example: `projects/project-A/locations/eu`.
      * </pre>
      *
@@ -1062,12 +1069,16 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no parent is specified, a region will be chosen automatically.
+     *
      * Supported location-ids:
      *     `us`: USA country only,
      *     `asia`: East asia areas, like Japan, Taiwan,
      *     `eu`: The European Union.
+     *
      * Example: `projects/project-A/locations/eu`.
      * </pre>
      *
@@ -1091,12 +1102,16 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no parent is specified, a region will be chosen automatically.
+     *
      * Supported location-ids:
      *     `us`: USA country only,
      *     `asia`: East asia areas, like Japan, Taiwan,
      *     `eu`: The European Union.
+     *
      * Example: `projects/project-A/locations/eu`.
      * </pre>
      *
@@ -1119,12 +1134,16 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no parent is specified, a region will be chosen automatically.
+     *
      * Supported location-ids:
      *     `us`: USA country only,
      *     `asia`: East asia areas, like Japan, Taiwan,
      *     `eu`: The European Union.
+     *
      * Example: `projects/project-A/locations/eu`.
      * </pre>
      *
@@ -1143,12 +1162,16 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no parent is specified, a region will be chosen automatically.
+     *
      * Supported location-ids:
      *     `us`: USA country only,
      *     `asia`: East asia areas, like Japan, Taiwan,
      *     `eu`: The European Union.
+     *
      * Example: `projects/project-A/locations/eu`.
      * </pre>
      *

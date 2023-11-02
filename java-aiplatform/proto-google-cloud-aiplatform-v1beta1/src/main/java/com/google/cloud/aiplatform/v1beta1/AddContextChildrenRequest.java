@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
 
   private AddContextChildrenRequest() {
     context_ = "";
-    childContexts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    childContexts_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AddContextChildrenRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,6 +73,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The resource name of the parent Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
@@ -105,6 +101,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The resource name of the parent Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
@@ -131,7 +128,8 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
   public static final int CHILD_CONTEXTS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList childContexts_;
+  private com.google.protobuf.LazyStringArrayList childContexts_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -408,8 +406,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
       super.clear();
       bitField0_ = 0;
       context_ = "";
-      childContexts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      childContexts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -438,7 +435,6 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1beta1.AddContextChildrenRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.AddContextChildrenRequest result =
           new com.google.cloud.aiplatform.v1beta1.AddContextChildrenRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -446,20 +442,15 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1beta1.AddContextChildrenRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        childContexts_ = childContexts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.childContexts_ = childContexts_;
-    }
-
     private void buildPartial0(
         com.google.cloud.aiplatform.v1beta1.AddContextChildrenRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.context_ = context_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        childContexts_.makeImmutable();
+        result.childContexts_ = childContexts_;
       }
     }
 
@@ -518,7 +509,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
       if (!other.childContexts_.isEmpty()) {
         if (childContexts_.isEmpty()) {
           childContexts_ = other.childContexts_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureChildContextsIsMutable();
           childContexts_.addAll(other.childContexts_);
@@ -589,6 +580,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the parent Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
@@ -615,6 +607,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the parent Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
@@ -641,6 +634,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the parent Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
@@ -666,6 +660,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the parent Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
@@ -687,6 +682,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the parent Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
@@ -709,14 +705,14 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
       return this;
     }
 
-    private com.google.protobuf.LazyStringList childContexts_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList childContexts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureChildContextsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!childContexts_.isModifiable()) {
         childContexts_ = new com.google.protobuf.LazyStringArrayList(childContexts_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -730,7 +726,8 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      * @return A list containing the childContexts.
      */
     public com.google.protobuf.ProtocolStringList getChildContextsList() {
-      return childContexts_.getUnmodifiableView();
+      childContexts_.makeImmutable();
+      return childContexts_;
     }
     /**
      *
@@ -795,6 +792,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
       }
       ensureChildContextsIsMutable();
       childContexts_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -816,6 +814,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
       }
       ensureChildContextsIsMutable();
       childContexts_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -834,6 +833,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
     public Builder addAllChildContexts(java.lang.Iterable<java.lang.String> values) {
       ensureChildContextsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, childContexts_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -849,8 +849,9 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearChildContexts() {
-      childContexts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      childContexts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -873,6 +874,7 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureChildContextsIsMutable();
       childContexts_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

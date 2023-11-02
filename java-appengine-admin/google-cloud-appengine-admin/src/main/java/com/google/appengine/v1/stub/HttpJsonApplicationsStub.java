@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.appengine.v1.Application;
 import com.google.appengine.v1.CreateApplicationRequest;
@@ -289,6 +290,12 @@ public class HttpJsonApplicationsStub extends ApplicationsStub {
         HttpJsonCallSettings.<GetApplicationRequest, Application>newBuilder()
             .setMethodDescriptor(getApplicationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateApplicationRequest, Operation> createApplicationTransportSettings =
         HttpJsonCallSettings.<CreateApplicationRequest, Operation>newBuilder()
@@ -299,11 +306,23 @@ public class HttpJsonApplicationsStub extends ApplicationsStub {
         HttpJsonCallSettings.<UpdateApplicationRequest, Operation>newBuilder()
             .setMethodDescriptor(updateApplicationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RepairApplicationRequest, Operation> repairApplicationTransportSettings =
         HttpJsonCallSettings.<RepairApplicationRequest, Operation>newBuilder()
             .setMethodDescriptor(repairApplicationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.getApplicationCallable =

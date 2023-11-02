@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetAzureClientRequest extends com.google.protobuf.GeneratedMe
     return new GetAzureClientRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_GetAzureClientRequest_descriptor;
@@ -78,9 +73,11 @@ public final class GetAzureClientRequest extends com.google.protobuf.GeneratedMe
    * Required. The name of the
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource to
    * describe.
+   *
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] names are
    * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -110,9 +107,11 @@ public final class GetAzureClientRequest extends com.google.protobuf.GeneratedMe
    * Required. The name of the
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource to
    * describe.
+   *
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] names are
    * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -487,9 +486,11 @@ public final class GetAzureClientRequest extends com.google.protobuf.GeneratedMe
      * Required. The name of the
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource to
      * describe.
+     *
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] names are
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -518,9 +519,11 @@ public final class GetAzureClientRequest extends com.google.protobuf.GeneratedMe
      * Required. The name of the
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource to
      * describe.
+     *
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] names are
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -549,9 +552,11 @@ public final class GetAzureClientRequest extends com.google.protobuf.GeneratedMe
      * Required. The name of the
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource to
      * describe.
+     *
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] names are
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -579,9 +584,11 @@ public final class GetAzureClientRequest extends com.google.protobuf.GeneratedMe
      * Required. The name of the
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource to
      * describe.
+     *
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] names are
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -605,9 +612,11 @@ public final class GetAzureClientRequest extends com.google.protobuf.GeneratedMe
      * Required. The name of the
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource to
      * describe.
+     *
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] names are
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>

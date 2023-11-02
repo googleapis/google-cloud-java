@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
 
   private ReadTensorboardBlobDataRequest() {
     timeSeries_ = "";
-    blobIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    blobIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ReadTensorboardBlobDataRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,7 +127,8 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
   public static final int BLOB_IDS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList blobIds_;
+  private com.google.protobuf.LazyStringArrayList blobIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -409,8 +405,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
       super.clear();
       bitField0_ = 0;
       timeSeries_ = "";
-      blobIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      blobIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -439,7 +434,6 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest buildPartial() {
       com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest result =
           new com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -447,20 +441,15 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        blobIds_ = blobIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.blobIds_ = blobIds_;
-    }
-
     private void buildPartial0(
         com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.timeSeries_ = timeSeries_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        blobIds_.makeImmutable();
+        result.blobIds_ = blobIds_;
       }
     }
 
@@ -519,7 +508,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
       if (!other.blobIds_.isEmpty()) {
         if (blobIds_.isEmpty()) {
           blobIds_ = other.blobIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureBlobIdsIsMutable();
           blobIds_.addAll(other.blobIds_);
@@ -710,14 +699,14 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
       return this;
     }
 
-    private com.google.protobuf.LazyStringList blobIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList blobIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureBlobIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!blobIds_.isModifiable()) {
         blobIds_ = new com.google.protobuf.LazyStringArrayList(blobIds_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -731,7 +720,8 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
      * @return A list containing the blobIds.
      */
     public com.google.protobuf.ProtocolStringList getBlobIdsList() {
-      return blobIds_.getUnmodifiableView();
+      blobIds_.makeImmutable();
+      return blobIds_;
     }
     /**
      *
@@ -796,6 +786,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
       }
       ensureBlobIdsIsMutable();
       blobIds_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -817,6 +808,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
       }
       ensureBlobIdsIsMutable();
       blobIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -835,6 +827,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
     public Builder addAllBlobIds(java.lang.Iterable<java.lang.String> values) {
       ensureBlobIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blobIds_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -850,8 +843,9 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearBlobIds() {
-      blobIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      blobIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -874,6 +868,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       ensureBlobIdsIsMutable();
       blobIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

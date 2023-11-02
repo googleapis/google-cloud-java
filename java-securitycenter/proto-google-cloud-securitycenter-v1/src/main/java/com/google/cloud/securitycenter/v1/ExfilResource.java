@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Resource that has been exfiltrated or exfiltrated_to.
+ * Resource where data was exfiltrated from or exfiltrated to.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.ExfilResource}
@@ -39,18 +39,13 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
 
   private ExfilResource() {
     name_ = "";
-    components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    components_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExfilResource();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -76,7 +71,8 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource's URI (https://google.aip.dev/122#full-resource-names)
+   * The resource's [full resource
+   * name](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -99,7 +95,8 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource's URI (https://google.aip.dev/122#full-resource-names)
+   * The resource's [full resource
+   * name](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -122,15 +119,17 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
   public static final int COMPONENTS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList components_;
+  private com.google.protobuf.LazyStringArrayList components_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * Subcomponents of the asset that is exfiltrated - these could be
-   * URIs used during exfiltration, table names, databases, filenames, etc.
-   * For example, multiple tables may be exfiltrated from the same CloudSQL
-   * instance, or multiple files from the same Cloud Storage bucket.
+   * Subcomponents of the asset that was exfiltrated, like URIs used during
+   * exfiltration, table names, databases, and filenames. For example, multiple
+   * tables might have been exfiltrated from the same Cloud SQL instance, or
+   * multiple files might have been exfiltrated from the same Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>repeated string components = 2;</code>
@@ -144,10 +143,11 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Subcomponents of the asset that is exfiltrated - these could be
-   * URIs used during exfiltration, table names, databases, filenames, etc.
-   * For example, multiple tables may be exfiltrated from the same CloudSQL
-   * instance, or multiple files from the same Cloud Storage bucket.
+   * Subcomponents of the asset that was exfiltrated, like URIs used during
+   * exfiltration, table names, databases, and filenames. For example, multiple
+   * tables might have been exfiltrated from the same Cloud SQL instance, or
+   * multiple files might have been exfiltrated from the same Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>repeated string components = 2;</code>
@@ -161,10 +161,11 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Subcomponents of the asset that is exfiltrated - these could be
-   * URIs used during exfiltration, table names, databases, filenames, etc.
-   * For example, multiple tables may be exfiltrated from the same CloudSQL
-   * instance, or multiple files from the same Cloud Storage bucket.
+   * Subcomponents of the asset that was exfiltrated, like URIs used during
+   * exfiltration, table names, databases, and filenames. For example, multiple
+   * tables might have been exfiltrated from the same Cloud SQL instance, or
+   * multiple files might have been exfiltrated from the same Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>repeated string components = 2;</code>
@@ -179,10 +180,11 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Subcomponents of the asset that is exfiltrated - these could be
-   * URIs used during exfiltration, table names, databases, filenames, etc.
-   * For example, multiple tables may be exfiltrated from the same CloudSQL
-   * instance, or multiple files from the same Cloud Storage bucket.
+   * Subcomponents of the asset that was exfiltrated, like URIs used during
+   * exfiltration, table names, databases, and filenames. For example, multiple
+   * tables might have been exfiltrated from the same Cloud SQL instance, or
+   * multiple files might have been exfiltrated from the same Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>repeated string components = 2;</code>
@@ -373,7 +375,7 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource that has been exfiltrated or exfiltrated_to.
+   * Resource where data was exfiltrated from or exfiltrated to.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.ExfilResource}
@@ -409,8 +411,7 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      components_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -438,7 +439,6 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.ExfilResource buildPartial() {
       com.google.cloud.securitycenter.v1.ExfilResource result =
           new com.google.cloud.securitycenter.v1.ExfilResource(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -446,19 +446,14 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.securitycenter.v1.ExfilResource result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        components_ = components_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.components_ = components_;
-    }
-
     private void buildPartial0(com.google.cloud.securitycenter.v1.ExfilResource result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        components_.makeImmutable();
+        result.components_ = components_;
       }
     }
 
@@ -516,7 +511,7 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
       if (!other.components_.isEmpty()) {
         if (components_.isEmpty()) {
           components_ = other.components_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureComponentsIsMutable();
           components_.addAll(other.components_);
@@ -586,7 +581,8 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource's URI (https://google.aip.dev/122#full-resource-names)
+     * The resource's [full resource
+     * name](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -608,7 +604,8 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource's URI (https://google.aip.dev/122#full-resource-names)
+     * The resource's [full resource
+     * name](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -630,7 +627,8 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource's URI (https://google.aip.dev/122#full-resource-names)
+     * The resource's [full resource
+     * name](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -651,7 +649,8 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource's URI (https://google.aip.dev/122#full-resource-names)
+     * The resource's [full resource
+     * name](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -668,7 +667,8 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource's URI (https://google.aip.dev/122#full-resource-names)
+     * The resource's [full resource
+     * name](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -687,23 +687,24 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList components_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList components_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureComponentsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!components_.isModifiable()) {
         components_ = new com.google.protobuf.LazyStringArrayList(components_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
      *
      * <pre>
-     * Subcomponents of the asset that is exfiltrated - these could be
-     * URIs used during exfiltration, table names, databases, filenames, etc.
-     * For example, multiple tables may be exfiltrated from the same CloudSQL
-     * instance, or multiple files from the same Cloud Storage bucket.
+     * Subcomponents of the asset that was exfiltrated, like URIs used during
+     * exfiltration, table names, databases, and filenames. For example, multiple
+     * tables might have been exfiltrated from the same Cloud SQL instance, or
+     * multiple files might have been exfiltrated from the same Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>repeated string components = 2;</code>
@@ -711,16 +712,18 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the components.
      */
     public com.google.protobuf.ProtocolStringList getComponentsList() {
-      return components_.getUnmodifiableView();
+      components_.makeImmutable();
+      return components_;
     }
     /**
      *
      *
      * <pre>
-     * Subcomponents of the asset that is exfiltrated - these could be
-     * URIs used during exfiltration, table names, databases, filenames, etc.
-     * For example, multiple tables may be exfiltrated from the same CloudSQL
-     * instance, or multiple files from the same Cloud Storage bucket.
+     * Subcomponents of the asset that was exfiltrated, like URIs used during
+     * exfiltration, table names, databases, and filenames. For example, multiple
+     * tables might have been exfiltrated from the same Cloud SQL instance, or
+     * multiple files might have been exfiltrated from the same Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>repeated string components = 2;</code>
@@ -734,10 +737,11 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subcomponents of the asset that is exfiltrated - these could be
-     * URIs used during exfiltration, table names, databases, filenames, etc.
-     * For example, multiple tables may be exfiltrated from the same CloudSQL
-     * instance, or multiple files from the same Cloud Storage bucket.
+     * Subcomponents of the asset that was exfiltrated, like URIs used during
+     * exfiltration, table names, databases, and filenames. For example, multiple
+     * tables might have been exfiltrated from the same Cloud SQL instance, or
+     * multiple files might have been exfiltrated from the same Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>repeated string components = 2;</code>
@@ -752,10 +756,11 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subcomponents of the asset that is exfiltrated - these could be
-     * URIs used during exfiltration, table names, databases, filenames, etc.
-     * For example, multiple tables may be exfiltrated from the same CloudSQL
-     * instance, or multiple files from the same Cloud Storage bucket.
+     * Subcomponents of the asset that was exfiltrated, like URIs used during
+     * exfiltration, table names, databases, and filenames. For example, multiple
+     * tables might have been exfiltrated from the same Cloud SQL instance, or
+     * multiple files might have been exfiltrated from the same Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>repeated string components = 2;</code>
@@ -770,10 +775,11 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subcomponents of the asset that is exfiltrated - these could be
-     * URIs used during exfiltration, table names, databases, filenames, etc.
-     * For example, multiple tables may be exfiltrated from the same CloudSQL
-     * instance, or multiple files from the same Cloud Storage bucket.
+     * Subcomponents of the asset that was exfiltrated, like URIs used during
+     * exfiltration, table names, databases, and filenames. For example, multiple
+     * tables might have been exfiltrated from the same Cloud SQL instance, or
+     * multiple files might have been exfiltrated from the same Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>repeated string components = 2;</code>
@@ -788,6 +794,7 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
       }
       ensureComponentsIsMutable();
       components_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -795,10 +802,11 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subcomponents of the asset that is exfiltrated - these could be
-     * URIs used during exfiltration, table names, databases, filenames, etc.
-     * For example, multiple tables may be exfiltrated from the same CloudSQL
-     * instance, or multiple files from the same Cloud Storage bucket.
+     * Subcomponents of the asset that was exfiltrated, like URIs used during
+     * exfiltration, table names, databases, and filenames. For example, multiple
+     * tables might have been exfiltrated from the same Cloud SQL instance, or
+     * multiple files might have been exfiltrated from the same Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>repeated string components = 2;</code>
@@ -812,6 +820,7 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
       }
       ensureComponentsIsMutable();
       components_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -819,10 +828,11 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subcomponents of the asset that is exfiltrated - these could be
-     * URIs used during exfiltration, table names, databases, filenames, etc.
-     * For example, multiple tables may be exfiltrated from the same CloudSQL
-     * instance, or multiple files from the same Cloud Storage bucket.
+     * Subcomponents of the asset that was exfiltrated, like URIs used during
+     * exfiltration, table names, databases, and filenames. For example, multiple
+     * tables might have been exfiltrated from the same Cloud SQL instance, or
+     * multiple files might have been exfiltrated from the same Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>repeated string components = 2;</code>
@@ -833,6 +843,7 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllComponents(java.lang.Iterable<java.lang.String> values) {
       ensureComponentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, components_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -840,10 +851,11 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subcomponents of the asset that is exfiltrated - these could be
-     * URIs used during exfiltration, table names, databases, filenames, etc.
-     * For example, multiple tables may be exfiltrated from the same CloudSQL
-     * instance, or multiple files from the same Cloud Storage bucket.
+     * Subcomponents of the asset that was exfiltrated, like URIs used during
+     * exfiltration, table names, databases, and filenames. For example, multiple
+     * tables might have been exfiltrated from the same Cloud SQL instance, or
+     * multiple files might have been exfiltrated from the same Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>repeated string components = 2;</code>
@@ -851,8 +863,9 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearComponents() {
-      components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      components_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -860,10 +873,11 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subcomponents of the asset that is exfiltrated - these could be
-     * URIs used during exfiltration, table names, databases, filenames, etc.
-     * For example, multiple tables may be exfiltrated from the same CloudSQL
-     * instance, or multiple files from the same Cloud Storage bucket.
+     * Subcomponents of the asset that was exfiltrated, like URIs used during
+     * exfiltration, table names, databases, and filenames. For example, multiple
+     * tables might have been exfiltrated from the same Cloud SQL instance, or
+     * multiple files might have been exfiltrated from the same Cloud Storage
+     * bucket.
      * </pre>
      *
      * <code>repeated string components = 2;</code>
@@ -878,6 +892,7 @@ public final class ExfilResource extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureComponentsIsMutable();
       components_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

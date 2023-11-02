@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -185,4 +185,48 @@ public interface ContinuousBackupInfoOrBuilder
    * @return The enum numeric value on the wire of schedule at the given index.
    */
   int getScheduleValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The earliest restorable time that can be restored to. Output
+   * only field.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the earliestRestorableTime field is set.
+   */
+  boolean hasEarliestRestorableTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The earliest restorable time that can be restored to. Output
+   * only field.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The earliestRestorableTime.
+   */
+  com.google.protobuf.Timestamp getEarliestRestorableTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The earliest restorable time that can be restored to. Output
+   * only field.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getEarliestRestorableTimeOrBuilder();
 }

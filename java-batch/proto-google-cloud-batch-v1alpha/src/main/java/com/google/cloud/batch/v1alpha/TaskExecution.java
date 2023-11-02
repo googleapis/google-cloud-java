@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,17 +38,14 @@ public final class TaskExecution extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private TaskExecution() {}
+  private TaskExecution() {
+    stderrSnippet_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TaskExecution();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -85,6 +82,59 @@ public final class TaskExecution extends com.google.protobuf.GeneratedMessageV3
     return exitCode_;
   }
 
+  public static final int STDERR_SNIPPET_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stderrSnippet_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The tail end of any content written to standard error by the task
+   * execution. This field will be populated only when the execution failed.
+   * </pre>
+   *
+   * <code>string stderr_snippet = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The stderrSnippet.
+   */
+  @java.lang.Override
+  public java.lang.String getStderrSnippet() {
+    java.lang.Object ref = stderrSnippet_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      stderrSnippet_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The tail end of any content written to standard error by the task
+   * execution. This field will be populated only when the execution failed.
+   * </pre>
+   *
+   * <code>string stderr_snippet = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for stderrSnippet.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStderrSnippetBytes() {
+    java.lang.Object ref = stderrSnippet_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      stderrSnippet_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -102,6 +152,9 @@ public final class TaskExecution extends com.google.protobuf.GeneratedMessageV3
     if (exitCode_ != 0) {
       output.writeInt32(1, exitCode_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stderrSnippet_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stderrSnippet_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -113,6 +166,9 @@ public final class TaskExecution extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (exitCode_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, exitCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stderrSnippet_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stderrSnippet_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -131,6 +187,7 @@ public final class TaskExecution extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.batch.v1alpha.TaskExecution) obj;
 
     if (getExitCode() != other.getExitCode()) return false;
+    if (!getStderrSnippet().equals(other.getStderrSnippet())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -144,6 +201,8 @@ public final class TaskExecution extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + EXIT_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getExitCode();
+    hash = (37 * hash) + STDERR_SNIPPET_FIELD_NUMBER;
+    hash = (53 * hash) + getStderrSnippet().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -285,6 +344,7 @@ public final class TaskExecution extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       exitCode_ = 0;
+      stderrSnippet_ = "";
       return this;
     }
 
@@ -323,6 +383,9 @@ public final class TaskExecution extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.exitCode_ = exitCode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stderrSnippet_ = stderrSnippet_;
       }
     }
 
@@ -374,6 +437,11 @@ public final class TaskExecution extends com.google.protobuf.GeneratedMessageV3
       if (other.getExitCode() != 0) {
         setExitCode(other.getExitCode());
       }
+      if (!other.getStderrSnippet().isEmpty()) {
+        stderrSnippet_ = other.stderrSnippet_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -406,6 +474,12 @@ public final class TaskExecution extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 18:
+              {
+                stderrSnippet_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -477,6 +551,117 @@ public final class TaskExecution extends com.google.protobuf.GeneratedMessageV3
     public Builder clearExitCode() {
       bitField0_ = (bitField0_ & ~0x00000001);
       exitCode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object stderrSnippet_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The tail end of any content written to standard error by the task
+     * execution. This field will be populated only when the execution failed.
+     * </pre>
+     *
+     * <code>string stderr_snippet = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The stderrSnippet.
+     */
+    public java.lang.String getStderrSnippet() {
+      java.lang.Object ref = stderrSnippet_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stderrSnippet_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The tail end of any content written to standard error by the task
+     * execution. This field will be populated only when the execution failed.
+     * </pre>
+     *
+     * <code>string stderr_snippet = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for stderrSnippet.
+     */
+    public com.google.protobuf.ByteString getStderrSnippetBytes() {
+      java.lang.Object ref = stderrSnippet_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        stderrSnippet_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The tail end of any content written to standard error by the task
+     * execution. This field will be populated only when the execution failed.
+     * </pre>
+     *
+     * <code>string stderr_snippet = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The stderrSnippet to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStderrSnippet(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      stderrSnippet_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The tail end of any content written to standard error by the task
+     * execution. This field will be populated only when the execution failed.
+     * </pre>
+     *
+     * <code>string stderr_snippet = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStderrSnippet() {
+      stderrSnippet_ = getDefaultInstance().getStderrSnippet();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The tail end of any content written to standard error by the task
+     * execution. This field will be populated only when the execution failed.
+     * </pre>
+     *
+     * <code>string stderr_snippet = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for stderrSnippet to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStderrSnippetBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      stderrSnippet_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

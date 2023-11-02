@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2023 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -40,7 +40,9 @@ message LiveAdTagDetail {
   repeated AdRequest ad_requests = 2;
 }
 
-// Information related to the details for one ad tag.
+// Information related to the details for one ad tag. This resource is only
+// available for VOD sessions that do not implement Google Ad Manager ad
+// insertion.
 message VodAdTagDetail {
   option (google.api.resource) = {
     type: "videostitcher.googleapis.com/VodAdTagDetail"

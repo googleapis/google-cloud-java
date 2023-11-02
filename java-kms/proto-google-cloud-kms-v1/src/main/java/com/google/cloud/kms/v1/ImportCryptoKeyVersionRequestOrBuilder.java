@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * <pre>
    * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] to be imported into.
+   *
    * The create permission is only required on this key when creating a new
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
@@ -46,6 +47,7 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * <pre>
    * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] to be imported into.
+   *
    * The create permission is only required on this key when creating a new
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
@@ -67,6 +69,7 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * target for an import operation. If this field is not present, a new
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] containing the
    * supplied key material is created.
+   *
    * If this field is present, the supplied key material is imported into
    * the existing [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. To
    * import into an existing
@@ -99,6 +102,7 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * target for an import operation. If this field is not present, a new
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] containing the
    * supplied key material is created.
+   *
    * If this field is present, the supplied key material is imported into
    * the existing [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. To
    * import into an existing
@@ -194,10 +198,12 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    * <pre>
    * Optional. The wrapped key material to import.
+   *
    * Before wrapping, key material must be formatted. If importing symmetric key
    * material, the expected key material format is plain bytes. If importing
    * asymmetric key material, the expected key material format is PKCS#8-encoded
    * DER (the PrivateKeyInfo structure from RFC 5208).
+   *
    * When wrapping with import methods
    * ([RSA_OAEP_3072_SHA1_AES_256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256]
    * or
@@ -206,6 +212,7 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    * [RSA_OAEP_3072_SHA256_AES_256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_3072_SHA256_AES_256]
    * or
    * [RSA_OAEP_4096_SHA256_AES_256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_4096_SHA256_AES_256]),
+   *
    * this field must contain the concatenation of:
    * &lt;ol&gt;
    *   &lt;li&gt;An ephemeral AES-256 wrapping key wrapped with the
@@ -217,12 +224,15 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *       key using AES-KWP (RFC 5649).
    *   &lt;/li&gt;
    * &lt;/ol&gt;
+   *
    * This format is the same as the format produced by PKCS#11 mechanism
    * CKM_RSA_AES_KEY_WRAP.
+   *
    * When wrapping with import methods
    * ([RSA_OAEP_3072_SHA256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_3072_SHA256]
    * or
    * [RSA_OAEP_4096_SHA256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_4096_SHA256]),
+   *
    * this field must contain the formatted key to be imported, wrapped with the
    * [public_key][google.cloud.kms.v1.ImportJob.public_key] using RSAES-OAEP
    * with SHA-256, MGF1 with SHA-256, and an empty label.
@@ -265,6 +275,6 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    */
   com.google.protobuf.ByteString getRsaAesWrappedKey();
 
-  public com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest.WrappedKeyMaterialCase
+  com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest.WrappedKeyMaterialCase
       getWrappedKeyMaterialCase();
 }

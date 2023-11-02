@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,10 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Request message for fetch processor types.
+ * Request message for the
+ * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes]
+ * method. Some processor types may require the project be added to an
+ * allowlist.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.FetchProcessorTypesRequest}
@@ -45,11 +48,6 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FetchProcessorTypesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -75,9 +73,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The project of processor type to list.
-   * The available processor types may depend on the allow-listing on projects.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The location of processor types to list.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -102,9 +99,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The project of processor type to list.
-   * The available processor types may depend on the allow-listing on projects.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The location of processor types to list.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -290,7 +286,10 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for fetch processor types.
+   * Request message for the
+   * [FetchProcessorTypes][google.cloud.documentai.v1.DocumentProcessorService.FetchProcessorTypes]
+   * method. Some processor types may require the project be added to an
+   * allowlist.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.FetchProcessorTypesRequest}
@@ -474,9 +473,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -500,9 +498,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -526,9 +523,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -551,9 +547,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -572,9 +567,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The project of processor type to list.
-     * The available processor types may depend on the allow-listing on projects.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The location of processor types to list.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>

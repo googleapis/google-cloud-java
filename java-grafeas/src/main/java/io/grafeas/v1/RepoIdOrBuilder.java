@@ -96,5 +96,5 @@ public interface RepoIdOrBuilder
    */
   com.google.protobuf.ByteString getUidBytes();
 
-  public io.grafeas.v1.RepoId.IdCase getIdCase();
+  io.grafeas.v1.RepoId.IdCase getIdCase();
 }

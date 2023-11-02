@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the config to delete.
+   * Required. Name of the workstation configuration to delete.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the config to delete.
+   * Required. Name of the workstation configuration to delete.
    * </pre>
    *
    * <code>
@@ -56,11 +56,11 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * If set, validate the request and preview the review, but do not actually
-   * apply it.
+   * Optional. If set, validate the request and preview the review, but do not
+   * actually apply it.
    * </pre>
    *
-   * <code>bool validate_only = 2;</code>
+   * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The validateOnly.
    */
@@ -70,11 +70,11 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the config on
-   * the server does not have this etag.
+   * Optional. If set, the request is rejected if the latest version of the
+   * workstation configuration on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -83,11 +83,11 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the config on
-   * the server does not have this etag.
+   * Optional. If set, the request is rejected if the latest version of the
+   * workstation configuration on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -97,11 +97,12 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * If set, any Workstations in the config will also be deleted. Otherwise,
-   * the request will work only if the config has no workstations.
+   * Optional. If set, any workstations in the workstation configuration are
+   * also deleted. Otherwise, the request works only if the workstation
+   * configuration has no workstations.
    * </pre>
    *
-   * <code>bool force = 4;</code>
+   * <code>bool force = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */

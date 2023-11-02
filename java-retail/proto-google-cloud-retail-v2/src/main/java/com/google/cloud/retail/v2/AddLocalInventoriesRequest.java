@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     return new AddLocalInventoriesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.ProductServiceProto
         .internal_static_google_cloud_retail_v2_AddLocalInventoriesRequest_descriptor;
@@ -81,6 +76,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
    * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
    * such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
@@ -111,6 +107,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
    * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
    * such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
@@ -236,12 +233,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
    * Indicates which inventory fields in the provided list of
    * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
    * field is updated to the provided value.
+   *
    * If a field is set while the place does not have a previous local inventory,
    * the local inventory at that store is created.
+   *
    * If a field is set while the value of that field is not provided, the
    * original field value, if it exists, is deleted.
+   *
    * If the mask is not set or set with empty paths, all inventory fields will
    * be updated.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned and the entire update will be ignored.
    * </pre>
@@ -261,12 +262,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
    * Indicates which inventory fields in the provided list of
    * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
    * field is updated to the provided value.
+   *
    * If a field is set while the place does not have a previous local inventory,
    * the local inventory at that store is created.
+   *
    * If a field is set while the value of that field is not provided, the
    * original field value, if it exists, is deleted.
+   *
    * If the mask is not set or set with empty paths, all inventory fields will
    * be updated.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned and the entire update will be ignored.
    * </pre>
@@ -286,12 +291,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
    * Indicates which inventory fields in the provided list of
    * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
    * field is updated to the provided value.
+   *
    * If a field is set while the place does not have a previous local inventory,
    * the local inventory at that store is created.
+   *
    * If a field is set while the value of that field is not provided, the
    * original field value, if it exists, is deleted.
+   *
    * If the mask is not set or set with empty paths, all inventory fields will
    * be updated.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned and the entire update will be ignored.
    * </pre>
@@ -886,6 +895,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -915,6 +925,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -944,6 +955,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -972,6 +984,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -996,6 +1009,7 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -1459,12 +1473,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Indicates which inventory fields in the provided list of
      * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
      * field is updated to the provided value.
+     *
      * If a field is set while the place does not have a previous local inventory,
      * the local inventory at that store is created.
+     *
      * If a field is set while the value of that field is not provided, the
      * original field value, if it exists, is deleted.
+     *
      * If the mask is not set or set with empty paths, all inventory fields will
      * be updated.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned and the entire update will be ignored.
      * </pre>
@@ -1483,12 +1501,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Indicates which inventory fields in the provided list of
      * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
      * field is updated to the provided value.
+     *
      * If a field is set while the place does not have a previous local inventory,
      * the local inventory at that store is created.
+     *
      * If a field is set while the value of that field is not provided, the
      * original field value, if it exists, is deleted.
+     *
      * If the mask is not set or set with empty paths, all inventory fields will
      * be updated.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned and the entire update will be ignored.
      * </pre>
@@ -1511,12 +1533,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Indicates which inventory fields in the provided list of
      * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
      * field is updated to the provided value.
+     *
      * If a field is set while the place does not have a previous local inventory,
      * the local inventory at that store is created.
+     *
      * If a field is set while the value of that field is not provided, the
      * original field value, if it exists, is deleted.
+     *
      * If the mask is not set or set with empty paths, all inventory fields will
      * be updated.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned and the entire update will be ignored.
      * </pre>
@@ -1543,12 +1569,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Indicates which inventory fields in the provided list of
      * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
      * field is updated to the provided value.
+     *
      * If a field is set while the place does not have a previous local inventory,
      * the local inventory at that store is created.
+     *
      * If a field is set while the value of that field is not provided, the
      * original field value, if it exists, is deleted.
+     *
      * If the mask is not set or set with empty paths, all inventory fields will
      * be updated.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned and the entire update will be ignored.
      * </pre>
@@ -1572,12 +1602,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Indicates which inventory fields in the provided list of
      * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
      * field is updated to the provided value.
+     *
      * If a field is set while the place does not have a previous local inventory,
      * the local inventory at that store is created.
+     *
      * If a field is set while the value of that field is not provided, the
      * original field value, if it exists, is deleted.
+     *
      * If the mask is not set or set with empty paths, all inventory fields will
      * be updated.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned and the entire update will be ignored.
      * </pre>
@@ -1607,12 +1641,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Indicates which inventory fields in the provided list of
      * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
      * field is updated to the provided value.
+     *
      * If a field is set while the place does not have a previous local inventory,
      * the local inventory at that store is created.
+     *
      * If a field is set while the value of that field is not provided, the
      * original field value, if it exists, is deleted.
+     *
      * If the mask is not set or set with empty paths, all inventory fields will
      * be updated.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned and the entire update will be ignored.
      * </pre>
@@ -1636,12 +1674,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Indicates which inventory fields in the provided list of
      * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
      * field is updated to the provided value.
+     *
      * If a field is set while the place does not have a previous local inventory,
      * the local inventory at that store is created.
+     *
      * If a field is set while the value of that field is not provided, the
      * original field value, if it exists, is deleted.
+     *
      * If the mask is not set or set with empty paths, all inventory fields will
      * be updated.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned and the entire update will be ignored.
      * </pre>
@@ -1660,12 +1702,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Indicates which inventory fields in the provided list of
      * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
      * field is updated to the provided value.
+     *
      * If a field is set while the place does not have a previous local inventory,
      * the local inventory at that store is created.
+     *
      * If a field is set while the value of that field is not provided, the
      * original field value, if it exists, is deleted.
+     *
      * If the mask is not set or set with empty paths, all inventory fields will
      * be updated.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned and the entire update will be ignored.
      * </pre>
@@ -1686,12 +1732,16 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
      * Indicates which inventory fields in the provided list of
      * [LocalInventory][google.cloud.retail.v2.LocalInventory] to update. The
      * field is updated to the provided value.
+     *
      * If a field is set while the place does not have a previous local inventory,
      * the local inventory at that store is created.
+     *
      * If a field is set while the value of that field is not provided, the
      * original field value, if it exists, is deleted.
+     *
      * If the mask is not set or set with empty paths, all inventory fields will
      * be updated.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned and the entire update will be ignored.
      * </pre>

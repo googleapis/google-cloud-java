@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +33,10 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -183,6 +185,7 @@ public class ConfidentialComputingClientTest {
     VerifyAttestationResponse expectedResponse =
         VerifyAttestationResponse.newBuilder()
             .setOidcClaimsToken("oidcClaimsToken-566980887")
+            .addAllPartialErrors(new ArrayList<Status>())
             .build();
     mockConfidentialComputing.addResponse(expectedResponse);
 
@@ -191,6 +194,8 @@ public class ConfidentialComputingClientTest {
             .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
             .setGcpCredentials(GcpCredentials.newBuilder().build())
             .setTpmAttestation(TpmAttestation.newBuilder().build())
+            .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
+            .setTokenOptions(TokenOptions.newBuilder().build())
             .build();
 
     VerifyAttestationResponse actualResponse = client.verifyAttestation(request);
@@ -203,6 +208,9 @@ public class ConfidentialComputingClientTest {
     Assert.assertEquals(request.getChallenge(), actualRequest.getChallenge());
     Assert.assertEquals(request.getGcpCredentials(), actualRequest.getGcpCredentials());
     Assert.assertEquals(request.getTpmAttestation(), actualRequest.getTpmAttestation());
+    Assert.assertEquals(
+        request.getConfidentialSpaceInfo(), actualRequest.getConfidentialSpaceInfo());
+    Assert.assertEquals(request.getTokenOptions(), actualRequest.getTokenOptions());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -220,6 +228,8 @@ public class ConfidentialComputingClientTest {
               .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
               .setGcpCredentials(GcpCredentials.newBuilder().build())
               .setTpmAttestation(TpmAttestation.newBuilder().build())
+              .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
+              .setTokenOptions(TokenOptions.newBuilder().build())
               .build();
       client.verifyAttestation(request);
       Assert.fail("No exception raised");

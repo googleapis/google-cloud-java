@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     return new TaskStatus();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1alpha.TaskProto
         .internal_static_google_cloud_batch_v1alpha_TaskStatus_descriptor;
@@ -82,7 +77,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * unknown state
+     * Unknown state.
      * </pre>
      *
      * <code>STATE_UNSPECIFIED = 0;</code>
@@ -138,6 +133,16 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 5;</code>
      */
     SUCCEEDED(5),
+    /**
+     *
+     *
+     * <pre>
+     * The Task has not been executed when the Job finishes.
+     * </pre>
+     *
+     * <code>UNEXECUTED = 6;</code>
+     */
+    UNEXECUTED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -145,7 +150,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * unknown state
+     * Unknown state.
      * </pre>
      *
      * <code>STATE_UNSPECIFIED = 0;</code>
@@ -201,6 +206,16 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 5;</code>
      */
     public static final int SUCCEEDED_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The Task has not been executed when the Job finishes.
+     * </pre>
+     *
+     * <code>UNEXECUTED = 6;</code>
+     */
+    public static final int UNEXECUTED_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -238,6 +253,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
           return FAILED;
         case 5:
           return SUCCEEDED;
+        case 6:
+          return UNEXECUTED;
         default:
           return null;
       }

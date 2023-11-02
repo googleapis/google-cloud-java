@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ public interface DocumentInputConfigOrBuilder
    * <pre>
    * The Google Cloud Storage location of the document file. Only a single path
    * should be given.
+   *
    * Max supported size: 512MB.
+   *
    * Supported extensions: .PDF.
    * </pre>
    *
@@ -44,7 +46,9 @@ public interface DocumentInputConfigOrBuilder
    * <pre>
    * The Google Cloud Storage location of the document file. Only a single path
    * should be given.
+   *
    * Max supported size: 512MB.
+   *
    * Supported extensions: .PDF.
    * </pre>
    *
@@ -59,7 +63,9 @@ public interface DocumentInputConfigOrBuilder
    * <pre>
    * The Google Cloud Storage location of the document file. Only a single path
    * should be given.
+   *
    * Max supported size: 512MB.
+   *
    * Supported extensions: .PDF.
    * </pre>
    *

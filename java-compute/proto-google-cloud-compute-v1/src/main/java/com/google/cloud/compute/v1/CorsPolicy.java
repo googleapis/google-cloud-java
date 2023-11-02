@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,22 +38,17 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private CorsPolicy() {
-    allowHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    allowMethods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    allowOriginRegexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    allowOrigins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    exposeHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    allowMethods_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    allowOriginRegexes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    allowOrigins_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    exposeHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CorsPolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -108,7 +103,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int ALLOW_HEADERS_FIELD_NUMBER = 45179024;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowHeaders_;
+  private com.google.protobuf.LazyStringArrayList allowHeaders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -171,7 +167,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int ALLOW_METHODS_FIELD_NUMBER = 205405372;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowMethods_;
+  private com.google.protobuf.LazyStringArrayList allowMethods_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -234,7 +231,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int ALLOW_ORIGIN_REGEXES_FIELD_NUMBER = 215385810;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowOriginRegexes_;
+  private com.google.protobuf.LazyStringArrayList allowOriginRegexes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -297,7 +295,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int ALLOW_ORIGINS_FIELD_NUMBER = 194914071;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowOrigins_;
+  private com.google.protobuf.LazyStringArrayList allowOrigins_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -393,7 +392,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int EXPOSE_HEADERS_FIELD_NUMBER = 247604747;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList exposeHeaders_;
+  private com.google.protobuf.LazyStringArrayList exposeHeaders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -801,17 +801,12 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       allowCredentials_ = false;
-      allowHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      allowMethods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      allowOriginRegexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      allowOrigins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      allowHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      allowMethods_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      allowOriginRegexes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      allowOrigins_ = com.google.protobuf.LazyStringArrayList.emptyList();
       disabled_ = false;
-      exposeHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      exposeHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       maxAge_ = 0;
       return this;
     }
@@ -840,40 +835,11 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.CorsPolicy buildPartial() {
       com.google.cloud.compute.v1.CorsPolicy result =
           new com.google.cloud.compute.v1.CorsPolicy(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.CorsPolicy result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        allowHeaders_ = allowHeaders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.allowHeaders_ = allowHeaders_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        allowMethods_ = allowMethods_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.allowMethods_ = allowMethods_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        allowOriginRegexes_ = allowOriginRegexes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.allowOriginRegexes_ = allowOriginRegexes_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        allowOrigins_ = allowOrigins_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.allowOrigins_ = allowOrigins_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        exposeHeaders_ = exposeHeaders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.exposeHeaders_ = exposeHeaders_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.CorsPolicy result) {
@@ -883,9 +849,29 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
         result.allowCredentials_ = allowCredentials_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        allowHeaders_.makeImmutable();
+        result.allowHeaders_ = allowHeaders_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        allowMethods_.makeImmutable();
+        result.allowMethods_ = allowMethods_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        allowOriginRegexes_.makeImmutable();
+        result.allowOriginRegexes_ = allowOriginRegexes_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        allowOrigins_.makeImmutable();
+        result.allowOrigins_ = allowOrigins_;
+      }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.disabled_ = disabled_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        exposeHeaders_.makeImmutable();
+        result.exposeHeaders_ = exposeHeaders_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.maxAge_ = maxAge_;
@@ -945,7 +931,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowHeaders_.isEmpty()) {
         if (allowHeaders_.isEmpty()) {
           allowHeaders_ = other.allowHeaders_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAllowHeadersIsMutable();
           allowHeaders_.addAll(other.allowHeaders_);
@@ -955,7 +941,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowMethods_.isEmpty()) {
         if (allowMethods_.isEmpty()) {
           allowMethods_ = other.allowMethods_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureAllowMethodsIsMutable();
           allowMethods_.addAll(other.allowMethods_);
@@ -965,7 +951,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowOriginRegexes_.isEmpty()) {
         if (allowOriginRegexes_.isEmpty()) {
           allowOriginRegexes_ = other.allowOriginRegexes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureAllowOriginRegexesIsMutable();
           allowOriginRegexes_.addAll(other.allowOriginRegexes_);
@@ -975,7 +961,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowOrigins_.isEmpty()) {
         if (allowOrigins_.isEmpty()) {
           allowOrigins_ = other.allowOrigins_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureAllowOriginsIsMutable();
           allowOrigins_.addAll(other.allowOrigins_);
@@ -988,7 +974,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.exposeHeaders_.isEmpty()) {
         if (exposeHeaders_.isEmpty()) {
           exposeHeaders_ = other.exposeHeaders_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureExposeHeadersIsMutable();
           exposeHeaders_.addAll(other.exposeHeaders_);
@@ -1164,14 +1150,14 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList allowHeaders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowHeaders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!allowHeaders_.isModifiable()) {
         allowHeaders_ = new com.google.protobuf.LazyStringArrayList(allowHeaders_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1185,7 +1171,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allowHeaders.
      */
     public com.google.protobuf.ProtocolStringList getAllowHeadersList() {
-      return allowHeaders_.getUnmodifiableView();
+      allowHeaders_.makeImmutable();
+      return allowHeaders_;
     }
     /**
      *
@@ -1250,6 +1237,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowHeadersIsMutable();
       allowHeaders_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1271,6 +1259,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowHeadersIsMutable();
       allowHeaders_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1289,6 +1278,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAllowHeaders(java.lang.Iterable<java.lang.String> values) {
       ensureAllowHeadersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowHeaders_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1304,8 +1294,9 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowHeaders() {
-      allowHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1328,18 +1319,19 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAllowHeadersIsMutable();
       allowHeaders_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList allowMethods_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowMethods_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowMethodsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!allowMethods_.isModifiable()) {
         allowMethods_ = new com.google.protobuf.LazyStringArrayList(allowMethods_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1353,7 +1345,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allowMethods.
      */
     public com.google.protobuf.ProtocolStringList getAllowMethodsList() {
-      return allowMethods_.getUnmodifiableView();
+      allowMethods_.makeImmutable();
+      return allowMethods_;
     }
     /**
      *
@@ -1418,6 +1411,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowMethodsIsMutable();
       allowMethods_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1439,6 +1433,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowMethodsIsMutable();
       allowMethods_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1457,6 +1452,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAllowMethods(java.lang.Iterable<java.lang.String> values) {
       ensureAllowMethodsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowMethods_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1472,8 +1468,9 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowMethods() {
-      allowMethods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowMethods_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1496,18 +1493,19 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAllowMethodsIsMutable();
       allowMethods_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList allowOriginRegexes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowOriginRegexes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowOriginRegexesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!allowOriginRegexes_.isModifiable()) {
         allowOriginRegexes_ = new com.google.protobuf.LazyStringArrayList(allowOriginRegexes_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1521,7 +1519,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allowOriginRegexes.
      */
     public com.google.protobuf.ProtocolStringList getAllowOriginRegexesList() {
-      return allowOriginRegexes_.getUnmodifiableView();
+      allowOriginRegexes_.makeImmutable();
+      return allowOriginRegexes_;
     }
     /**
      *
@@ -1586,6 +1585,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowOriginRegexesIsMutable();
       allowOriginRegexes_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1607,6 +1607,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowOriginRegexesIsMutable();
       allowOriginRegexes_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1625,6 +1626,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAllowOriginRegexes(java.lang.Iterable<java.lang.String> values) {
       ensureAllowOriginRegexesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowOriginRegexes_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1640,8 +1642,9 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowOriginRegexes() {
-      allowOriginRegexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowOriginRegexes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1664,18 +1667,19 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAllowOriginRegexesIsMutable();
       allowOriginRegexes_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList allowOrigins_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowOrigins_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowOriginsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!allowOrigins_.isModifiable()) {
         allowOrigins_ = new com.google.protobuf.LazyStringArrayList(allowOrigins_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1689,7 +1693,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allowOrigins.
      */
     public com.google.protobuf.ProtocolStringList getAllowOriginsList() {
-      return allowOrigins_.getUnmodifiableView();
+      allowOrigins_.makeImmutable();
+      return allowOrigins_;
     }
     /**
      *
@@ -1754,6 +1759,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowOriginsIsMutable();
       allowOrigins_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1775,6 +1781,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowOriginsIsMutable();
       allowOrigins_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1793,6 +1800,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAllowOrigins(java.lang.Iterable<java.lang.String> values) {
       ensureAllowOriginsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowOrigins_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1808,8 +1816,9 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowOrigins() {
-      allowOrigins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowOrigins_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1832,6 +1841,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAllowOriginsIsMutable();
       allowOrigins_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1904,14 +1914,14 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList exposeHeaders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList exposeHeaders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureExposeHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!exposeHeaders_.isModifiable()) {
         exposeHeaders_ = new com.google.protobuf.LazyStringArrayList(exposeHeaders_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -1925,7 +1935,8 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the exposeHeaders.
      */
     public com.google.protobuf.ProtocolStringList getExposeHeadersList() {
-      return exposeHeaders_.getUnmodifiableView();
+      exposeHeaders_.makeImmutable();
+      return exposeHeaders_;
     }
     /**
      *
@@ -1990,6 +2001,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExposeHeadersIsMutable();
       exposeHeaders_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2011,6 +2023,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExposeHeadersIsMutable();
       exposeHeaders_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2029,6 +2042,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllExposeHeaders(java.lang.Iterable<java.lang.String> values) {
       ensureExposeHeadersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exposeHeaders_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2044,8 +2058,9 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExposeHeaders() {
-      exposeHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      exposeHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2068,6 +2083,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureExposeHeadersIsMutable();
       exposeHeaders_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

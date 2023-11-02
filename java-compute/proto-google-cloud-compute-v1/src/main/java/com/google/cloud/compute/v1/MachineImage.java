@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,18 +47,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
     sourceDiskEncryptionKeys_ = java.util.Collections.emptyList();
     sourceInstance_ = "";
     status_ = "";
-    storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MachineImage();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1110,7 +1105,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
   public static final int STORAGE_LOCATIONS_FIELD_NUMBER = 328005274;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList storageLocations_;
+  private com.google.protobuf.LazyStringArrayList storageLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1690,8 +1686,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
         sourceInstancePropertiesBuilder_ = null;
       }
       status_ = "";
-      storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00008000);
+      storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       totalStorageBytes_ = 0L;
       return this;
     }
@@ -1748,11 +1743,6 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.sourceDiskEncryptionKeys_ = sourceDiskEncryptionKeysBuilder_.build();
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
-        storageLocations_ = storageLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00008000);
-      }
-      result.storageLocations_ = storageLocations_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.MachineImage result) {
@@ -1818,6 +1808,10 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.status_ = status_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        storageLocations_.makeImmutable();
+        result.storageLocations_ = storageLocations_;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.totalStorageBytes_ = totalStorageBytes_;
@@ -1981,7 +1975,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
       if (!other.storageLocations_.isEmpty()) {
         if (storageLocations_.isEmpty()) {
           storageLocations_ = other.storageLocations_;
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ |= 0x00008000;
         } else {
           ensureStorageLocationsIsMutable();
           storageLocations_.addAll(other.storageLocations_);
@@ -4566,14 +4560,14 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList storageLocations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList storageLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureStorageLocationsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!storageLocations_.isModifiable()) {
         storageLocations_ = new com.google.protobuf.LazyStringArrayList(storageLocations_);
-        bitField0_ |= 0x00008000;
       }
+      bitField0_ |= 0x00008000;
     }
     /**
      *
@@ -4587,7 +4581,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the storageLocations.
      */
     public com.google.protobuf.ProtocolStringList getStorageLocationsList() {
-      return storageLocations_.getUnmodifiableView();
+      storageLocations_.makeImmutable();
+      return storageLocations_;
     }
     /**
      *
@@ -4652,6 +4647,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.set(index, value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4673,6 +4669,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4691,6 +4688,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllStorageLocations(java.lang.Iterable<java.lang.String> values) {
       ensureStorageLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storageLocations_);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4706,8 +4704,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStorageLocations() {
-      storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00008000);
+      ;
       onChanged();
       return this;
     }
@@ -4730,6 +4729,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

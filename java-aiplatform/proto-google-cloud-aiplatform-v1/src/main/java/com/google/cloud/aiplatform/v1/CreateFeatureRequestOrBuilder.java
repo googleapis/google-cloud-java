@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,8 +103,10 @@ public interface CreateFeatureRequestOrBuilder
    * <pre>
    * Required. The ID to use for the Feature, which will become the final
    * component of the Feature's resource name.
+   *
    * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
+   *
    * The value must be unique within an EntityType.
    * </pre>
    *
@@ -119,8 +121,10 @@ public interface CreateFeatureRequestOrBuilder
    * <pre>
    * Required. The ID to use for the Feature, which will become the final
    * component of the Feature's resource name.
+   *
    * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
+   *
    * The value must be unique within an EntityType.
    * </pre>
    *

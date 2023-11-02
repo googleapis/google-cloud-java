@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public interface ListIndexEndpointsRequestOrBuilder
    * <pre>
    * Optional. An expression for filtering the results of the request. For field
    * names both snake_case and camelCase are supported.
+   *
    *   * `index_endpoint` supports = and !=. `index_endpoint` represents the
    *      IndexEndpoint ID, ie. the last segment of the IndexEndpoint's
    *      [resourcename][google.cloud.aiplatform.v1beta1.IndexEndpoint.name].
@@ -69,6 +70,7 @@ public interface ListIndexEndpointsRequestOrBuilder
    *             `labels.key=value` - key:value equality
    *             `labels.key:* or labels:key - key existence
    *              A key including a space must be quoted. `labels."a key"`.
+   *
    * Some examples:
    *   * `index_endpoint="1"`
    *   * `display_name="myDisplayName"`
@@ -87,6 +89,7 @@ public interface ListIndexEndpointsRequestOrBuilder
    * <pre>
    * Optional. An expression for filtering the results of the request. For field
    * names both snake_case and camelCase are supported.
+   *
    *   * `index_endpoint` supports = and !=. `index_endpoint` represents the
    *      IndexEndpoint ID, ie. the last segment of the IndexEndpoint's
    *      [resourcename][google.cloud.aiplatform.v1beta1.IndexEndpoint.name].
@@ -96,6 +99,7 @@ public interface ListIndexEndpointsRequestOrBuilder
    *             `labels.key=value` - key:value equality
    *             `labels.key:* or labels:key - key existence
    *              A key including a space must be quoted. `labels."a key"`.
+   *
    * Some examples:
    *   * `index_endpoint="1"`
    *   * `display_name="myDisplayName"`

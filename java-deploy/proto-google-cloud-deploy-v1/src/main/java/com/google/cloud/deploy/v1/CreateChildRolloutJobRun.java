@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class CreateChildRolloutJobRun extends com.google.protobuf.Generate
     return new CreateChildRolloutJobRun();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_CreateChildRolloutJobRun_descriptor;
@@ -77,9 +72,8 @@ public final class CreateChildRolloutJobRun extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. Name of the `ChildRollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Output only. Name of the `ChildRollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string rollout = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -102,9 +96,8 @@ public final class CreateChildRolloutJobRun extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. Name of the `ChildRollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Output only. Name of the `ChildRollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string rollout = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -547,9 +540,8 @@ public final class CreateChildRolloutJobRun extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. Name of the `ChildRollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Output only. Name of the `ChildRollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string rollout = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -571,9 +563,8 @@ public final class CreateChildRolloutJobRun extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. Name of the `ChildRollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Output only. Name of the `ChildRollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string rollout = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -595,9 +586,8 @@ public final class CreateChildRolloutJobRun extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. Name of the `ChildRollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Output only. Name of the `ChildRollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string rollout = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -618,9 +608,8 @@ public final class CreateChildRolloutJobRun extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. Name of the `ChildRollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Output only. Name of the `ChildRollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string rollout = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -637,9 +626,8 @@ public final class CreateChildRolloutJobRun extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. Name of the `ChildRollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Output only. Name of the `ChildRollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string rollout = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,9 +62,9 @@ public interface CustomPeriodOrBuilder
    *
    *
    * <pre>
-   * Optional. The end date of the time period. Budgets with elapsed end date won't be
-   * processed. If unset, specifies to track all usage
-   * incurred since the start_date.
+   * Optional. The end date of the time period. Budgets with elapsed end date
+   * won't be processed. If unset, specifies to track all usage incurred since
+   * the start_date.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -76,9 +76,9 @@ public interface CustomPeriodOrBuilder
    *
    *
    * <pre>
-   * Optional. The end date of the time period. Budgets with elapsed end date won't be
-   * processed. If unset, specifies to track all usage
-   * incurred since the start_date.
+   * Optional. The end date of the time period. Budgets with elapsed end date
+   * won't be processed. If unset, specifies to track all usage incurred since
+   * the start_date.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90,9 +90,9 @@ public interface CustomPeriodOrBuilder
    *
    *
    * <pre>
-   * Optional. The end date of the time period. Budgets with elapsed end date won't be
-   * processed. If unset, specifies to track all usage
-   * incurred since the start_date.
+   * Optional. The end date of the time period. Budgets with elapsed end date
+   * won't be processed. If unset, specifies to track all usage incurred since
+   * the start_date.
    * </pre>
    *
    * <code>.google.type.Date end_date = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

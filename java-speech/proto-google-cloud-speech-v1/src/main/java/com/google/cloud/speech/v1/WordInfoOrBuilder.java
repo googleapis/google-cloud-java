@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,13 +174,53 @@ public interface WordInfoOrBuilder
    * Output only. A distinct integer value is assigned for every speaker within
    * the audio. This field specifies which one of those speakers was detected to
    * have spoken this word. Value ranges from '1' to diarization_speaker_count.
-   * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+   * speaker_tag is set if enable_speaker_diarization = 'true' and only for the
    * top alternative.
+   * Note: Use speaker_label instead.
    * </pre>
    *
-   * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v1.WordInfo.speaker_tag is deprecated. See
+   *     google/cloud/speech/v1/cloud_speech.proto;l=974
    * @return The speakerTag.
    */
+  @java.lang.Deprecated
   int getSpeakerTag();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A label value assigned for every unique speaker within the
+   * audio. This field specifies which speaker was detected to have spoken this
+   * word. For some models, like medical_conversation this can be actual speaker
+   * role, for example "patient" or "provider", but generally this would be a
+   * number identifying a speaker. This field is only set if
+   * enable_speaker_diarization = 'true' and only for the top alternative.
+   * </pre>
+   *
+   * <code>string speaker_label = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The speakerLabel.
+   */
+  java.lang.String getSpeakerLabel();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A label value assigned for every unique speaker within the
+   * audio. This field specifies which speaker was detected to have spoken this
+   * word. For some models, like medical_conversation this can be actual speaker
+   * role, for example "patient" or "provider", but generally this would be a
+   * number identifying a speaker. This field is only set if
+   * enable_speaker_diarization = 'true' and only for the top alternative.
+   * </pre>
+   *
+   * <code>string speaker_label = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for speakerLabel.
+   */
+  com.google.protobuf.ByteString getSpeakerLabelBytes();
 }

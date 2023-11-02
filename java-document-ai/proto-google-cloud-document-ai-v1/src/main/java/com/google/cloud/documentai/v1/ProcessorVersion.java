@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,9 @@ package com.google.cloud.documentai.v1;
  *
  * <pre>
  * A processor version is an implementation of a processor. Each processor
- * can have multiple versions, pre-trained by Google internally or up-trained
- * by the customer. At a time, a processor can only have one default version
- * version. So the processor's behavior (when processing documents) is defined
- * by a default version
+ * can have multiple versions, pretrained by Google internally or uptrained
+ * by the customer. A processor can only have one default version at a time.
+ * Its document-processing behavior is defined by that version.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.ProcessorVersion}
@@ -53,11 +52,6 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ProcessorVersion();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -165,6 +159,16 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * <code>FAILED = 7;</code>
      */
     FAILED(7),
+    /**
+     *
+     *
+     * <pre>
+     * The processor version is being imported.
+     * </pre>
+     *
+     * <code>IMPORTING = 8;</code>
+     */
+    IMPORTING(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -248,6 +252,16 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * <code>FAILED = 7;</code>
      */
     public static final int FAILED_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * The processor version is being imported.
+     * </pre>
+     *
+     * <code>IMPORTING = 8;</code>
+     */
+    public static final int IMPORTING_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -289,6 +303,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
           return DELETING;
         case 7:
           return FAILED;
+        case 8:
+          return IMPORTING;
         default:
           return null;
       }
@@ -436,11 +452,6 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DeprecationInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1709,10 +1720,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Denotes that this ProcessorVersion is managed by google.
+   * Output only. Denotes that this `ProcessorVersion` is managed by Google.
    * </pre>
    *
-   * <code>bool google_managed = 11;</code>
+   * <code>bool google_managed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The googleManaged.
    */
@@ -2042,10 +2053,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A processor version is an implementation of a processor. Each processor
-   * can have multiple versions, pre-trained by Google internally or up-trained
-   * by the customer. At a time, a processor can only have one default version
-   * version. So the processor's behavior (when processing documents) is defined
-   * by a default version
+   * can have multiple versions, pretrained by Google internally or uptrained
+   * by the customer. A processor can only have one default version at a time.
+   * Its document-processing behavior is defined by that version.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.ProcessorVersion}
@@ -3452,10 +3462,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Denotes that this ProcessorVersion is managed by google.
+     * Output only. Denotes that this `ProcessorVersion` is managed by Google.
      * </pre>
      *
-     * <code>bool google_managed = 11;</code>
+     * <code>bool google_managed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The googleManaged.
      */
@@ -3467,10 +3477,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Denotes that this ProcessorVersion is managed by google.
+     * Output only. Denotes that this `ProcessorVersion` is managed by Google.
      * </pre>
      *
-     * <code>bool google_managed = 11;</code>
+     * <code>bool google_managed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The googleManaged to set.
      * @return This builder for chaining.
@@ -3486,10 +3496,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Denotes that this ProcessorVersion is managed by google.
+     * Output only. Denotes that this `ProcessorVersion` is managed by Google.
      * </pre>
      *
-     * <code>bool google_managed = 11;</code>
+     * <code>bool google_managed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */

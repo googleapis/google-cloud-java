@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,19 +38,14 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   private ColorInfo() {
-    colorFamilies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    colors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    colorFamilies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    colors_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ColorInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public static final int COLOR_FAMILIES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList colorFamilies_;
+  private com.google.protobuf.LazyStringArrayList colorFamilies_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -81,9 +77,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
    * "Mixed". Normally it is expected to have only 1 color family. May consider
    * using single "Mixed" instead of multiple values.
+   *
    * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
@@ -105,9 +103,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
    * "Mixed". Normally it is expected to have only 1 color family. May consider
    * using single "Mixed" instead of multiple values.
+   *
    * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
@@ -129,9 +129,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
    * "Mixed". Normally it is expected to have only 1 color family. May consider
    * using single "Mixed" instead of multiple values.
+   *
    * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
@@ -154,9 +156,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
    * "Mixed". Normally it is expected to have only 1 color family. May consider
    * using single "Mixed" instead of multiple values.
+   *
    * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
@@ -174,7 +178,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public static final int COLORS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList colors_;
+  private com.google.protobuf.LazyStringArrayList colors_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -183,9 +188,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
+   *
    * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
@@ -206,9 +213,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
+   *
    * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
@@ -229,9 +238,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
+   *
    * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
@@ -253,9 +264,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
+   *
    * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
@@ -490,10 +503,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      colorFamilies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      colors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      colorFamilies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      colors_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -521,7 +532,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2beta.ColorInfo buildPartial() {
       com.google.cloud.retail.v2beta.ColorInfo result =
           new com.google.cloud.retail.v2beta.ColorInfo(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -529,21 +539,16 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.retail.v2beta.ColorInfo result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        colorFamilies_ = colorFamilies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.colorFamilies_ = colorFamilies_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        colors_ = colors_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.colors_ = colors_;
-    }
-
     private void buildPartial0(com.google.cloud.retail.v2beta.ColorInfo result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        colorFamilies_.makeImmutable();
+        result.colorFamilies_ = colorFamilies_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        colors_.makeImmutable();
+        result.colors_ = colors_;
+      }
     }
 
     @java.lang.Override
@@ -594,7 +599,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.colorFamilies_.isEmpty()) {
         if (colorFamilies_.isEmpty()) {
           colorFamilies_ = other.colorFamilies_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureColorFamiliesIsMutable();
           colorFamilies_.addAll(other.colorFamilies_);
@@ -604,7 +609,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.colors_.isEmpty()) {
         if (colors_.isEmpty()) {
           colors_ = other.colors_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureColorsIsMutable();
           colors_.addAll(other.colors_);
@@ -670,14 +675,14 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList colorFamilies_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList colorFamilies_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureColorFamiliesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!colorFamilies_.isModifiable()) {
         colorFamilies_ = new com.google.protobuf.LazyStringArrayList(colorFamilies_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -688,9 +693,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
      * "Mixed". Normally it is expected to have only 1 color family. May consider
      * using single "Mixed" instead of multiple values.
+     *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -701,7 +708,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the colorFamilies.
      */
     public com.google.protobuf.ProtocolStringList getColorFamiliesList() {
-      return colorFamilies_.getUnmodifiableView();
+      colorFamilies_.makeImmutable();
+      return colorFamilies_;
     }
     /**
      *
@@ -712,9 +720,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
      * "Mixed". Normally it is expected to have only 1 color family. May consider
      * using single "Mixed" instead of multiple values.
+     *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -736,9 +746,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
      * "Mixed". Normally it is expected to have only 1 color family. May consider
      * using single "Mixed" instead of multiple values.
+     *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -761,9 +773,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
      * "Mixed". Normally it is expected to have only 1 color family. May consider
      * using single "Mixed" instead of multiple values.
+     *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -786,9 +800,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
      * "Mixed". Normally it is expected to have only 1 color family. May consider
      * using single "Mixed" instead of multiple values.
+     *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -806,6 +822,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureColorFamiliesIsMutable();
       colorFamilies_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -818,9 +835,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
      * "Mixed". Normally it is expected to have only 1 color family. May consider
      * using single "Mixed" instead of multiple values.
+     *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -837,6 +856,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureColorFamiliesIsMutable();
       colorFamilies_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -849,9 +869,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
      * "Mixed". Normally it is expected to have only 1 color family. May consider
      * using single "Mixed" instead of multiple values.
+     *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -865,6 +887,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllColorFamilies(java.lang.Iterable<java.lang.String> values) {
       ensureColorFamiliesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, colorFamilies_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -877,9 +900,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
      * "Mixed". Normally it is expected to have only 1 color family. May consider
      * using single "Mixed" instead of multiple values.
+     *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -890,8 +915,9 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearColorFamilies() {
-      colorFamilies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      colorFamilies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -904,9 +930,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
      * "Mixed". Normally it is expected to have only 1 color family. May consider
      * using single "Mixed" instead of multiple values.
+     *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -924,18 +952,19 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureColorFamiliesIsMutable();
       colorFamilies_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList colors_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList colors_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureColorsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!colors_.isModifiable()) {
         colors_ = new com.google.protobuf.LazyStringArrayList(colors_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -945,9 +974,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
+     *
      * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -958,7 +989,8 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the colors.
      */
     public com.google.protobuf.ProtocolStringList getColorsList() {
-      return colors_.getUnmodifiableView();
+      colors_.makeImmutable();
+      return colors_;
     }
     /**
      *
@@ -968,9 +1000,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
+     *
      * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -991,9 +1025,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
+     *
      * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -1015,9 +1051,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
+     *
      * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -1039,9 +1077,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
+     *
      * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -1059,6 +1099,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureColorsIsMutable();
       colors_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1070,9 +1111,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
+     *
      * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -1089,6 +1132,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureColorsIsMutable();
       colors_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1100,9 +1144,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
+     *
      * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -1116,6 +1162,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllColors(java.lang.Iterable<java.lang.String> values) {
       ensureColorsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, colors_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1127,9 +1174,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
+     *
      * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -1140,8 +1189,9 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearColors() {
-      colors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      colors_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1153,9 +1203,11 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
+     *
      * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
@@ -1173,6 +1225,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureColorsIsMutable();
       colors_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

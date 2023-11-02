@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface ImportTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of project that the newly created taxonomies will
-   * belong to.
+   * Required. Resource name of project that the imported taxonomies will belong
+   * to.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ImportTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of project that the newly created taxonomies will
-   * belong to.
+   * Required. Resource name of project that the imported taxonomies will belong
+   * to.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface ImportTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * Inline source used for taxonomies import
+   * Inline source used for taxonomies to be imported.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -70,7 +70,7 @@ public interface ImportTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * Inline source used for taxonomies import
+   * Inline source used for taxonomies to be imported.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
@@ -82,12 +82,12 @@ public interface ImportTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * Inline source used for taxonomies import
+   * Inline source used for taxonomies to be imported.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
    */
   com.google.cloud.datacatalog.v1beta1.InlineSourceOrBuilder getInlineSourceOrBuilder();
 
-  public com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest.SourceCase getSourceCase();
+  com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest.SourceCase getSourceCase();
 }

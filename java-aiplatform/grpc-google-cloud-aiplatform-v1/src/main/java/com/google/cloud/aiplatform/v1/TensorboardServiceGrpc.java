@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ public final class TensorboardServiceGrpc {
 
   private TensorboardServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.aiplatform.v1.TensorboardService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.aiplatform.v1.TensorboardService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -124,56 +125,6 @@ public final class TensorboardServiceGrpc {
       }
     }
     return getGetTensorboardMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
-          com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
-      getReadTensorboardUsageMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ReadTensorboardUsage",
-      requestType = com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest.class,
-      responseType = com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
-          com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
-      getReadTensorboardUsageMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
-            com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
-        getReadTensorboardUsageMethod;
-    if ((getReadTensorboardUsageMethod = TensorboardServiceGrpc.getReadTensorboardUsageMethod)
-        == null) {
-      synchronized (TensorboardServiceGrpc.class) {
-        if ((getReadTensorboardUsageMethod = TensorboardServiceGrpc.getReadTensorboardUsageMethod)
-            == null) {
-          TensorboardServiceGrpc.getReadTensorboardUsageMethod =
-              getReadTensorboardUsageMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
-                          com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "ReadTensorboardUsage"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new TensorboardServiceMethodDescriptorSupplier("ReadTensorboardUsage"))
-                      .build();
-        }
-      }
-    }
-    return getReadTensorboardUsageMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -312,6 +263,106 @@ public final class TensorboardServiceGrpc {
       }
     }
     return getDeleteTensorboardMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
+          com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+      getReadTensorboardUsageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReadTensorboardUsage",
+      requestType = com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
+          com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+      getReadTensorboardUsageMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
+            com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+        getReadTensorboardUsageMethod;
+    if ((getReadTensorboardUsageMethod = TensorboardServiceGrpc.getReadTensorboardUsageMethod)
+        == null) {
+      synchronized (TensorboardServiceGrpc.class) {
+        if ((getReadTensorboardUsageMethod = TensorboardServiceGrpc.getReadTensorboardUsageMethod)
+            == null) {
+          TensorboardServiceGrpc.getReadTensorboardUsageMethod =
+              getReadTensorboardUsageMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
+                          com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ReadTensorboardUsage"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TensorboardServiceMethodDescriptorSupplier("ReadTensorboardUsage"))
+                      .build();
+        }
+      }
+    }
+    return getReadTensorboardUsageMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest,
+          com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse>
+      getReadTensorboardSizeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReadTensorboardSize",
+      requestType = com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest,
+          com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse>
+      getReadTensorboardSizeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest,
+            com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse>
+        getReadTensorboardSizeMethod;
+    if ((getReadTensorboardSizeMethod = TensorboardServiceGrpc.getReadTensorboardSizeMethod)
+        == null) {
+      synchronized (TensorboardServiceGrpc.class) {
+        if ((getReadTensorboardSizeMethod = TensorboardServiceGrpc.getReadTensorboardSizeMethod)
+            == null) {
+          TensorboardServiceGrpc.getReadTensorboardSizeMethod =
+              getReadTensorboardSizeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest,
+                          com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ReadTensorboardSize"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TensorboardServiceMethodDescriptorSupplier("ReadTensorboardSize"))
+                      .build();
+        }
+      }
+    }
+    return getReadTensorboardSizeMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1590,21 +1641,6 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of monthly active users for a given TensorBoard instance.
-     * </pre>
-     */
-    default void readTensorboardUsage(
-        com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getReadTensorboardUsageMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Updates a Tensorboard.
      * </pre>
      */
@@ -1642,6 +1678,36 @@ public final class TensorboardServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteTensorboardMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of monthly active users for a given TensorBoard instance.
+     * </pre>
+     */
+    default void readTensorboardUsage(
+        com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReadTensorboardUsageMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the storage size for a given TensorBoard instance.
+     * </pre>
+     */
+    default void readTensorboardSize(
+        com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReadTensorboardSizeMethod(), responseObserver);
     }
 
     /**
@@ -2080,23 +2146,6 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of monthly active users for a given TensorBoard instance.
-     * </pre>
-     */
-    public void readTensorboardUsage(
-        com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getReadTensorboardUsageMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Updates a Tensorboard.
      * </pre>
      */
@@ -2138,6 +2187,40 @@ public final class TensorboardServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTensorboardMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of monthly active users for a given TensorBoard instance.
+     * </pre>
+     */
+    public void readTensorboardUsage(
+        com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReadTensorboardUsageMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the storage size for a given TensorBoard instance.
+     * </pre>
+     */
+    public void readTensorboardSize(
+        com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReadTensorboardSizeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2603,19 +2686,6 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of monthly active users for a given TensorBoard instance.
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse readTensorboardUsage(
-        com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getReadTensorboardUsageMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Updates a Tensorboard.
      * </pre>
      */
@@ -2649,6 +2719,32 @@ public final class TensorboardServiceGrpc {
         com.google.cloud.aiplatform.v1.DeleteTensorboardRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTensorboardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of monthly active users for a given TensorBoard instance.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse readTensorboardUsage(
+        com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReadTensorboardUsageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the storage size for a given TensorBoard instance.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse readTensorboardSize(
+        com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReadTensorboardSizeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3024,20 +3120,6 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of monthly active users for a given TensorBoard instance.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
-        readTensorboardUsage(com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getReadTensorboardUsageMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Updates a Tensorboard.
      * </pre>
      */
@@ -3072,6 +3154,34 @@ public final class TensorboardServiceGrpc {
         deleteTensorboard(com.google.cloud.aiplatform.v1.DeleteTensorboardRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTensorboardMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of monthly active users for a given TensorBoard instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+        readTensorboardUsage(com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReadTensorboardUsageMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the storage size for a given TensorBoard instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse>
+        readTensorboardSize(com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReadTensorboardSizeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3415,33 +3525,34 @@ public final class TensorboardServiceGrpc {
 
   private static final int METHODID_CREATE_TENSORBOARD = 0;
   private static final int METHODID_GET_TENSORBOARD = 1;
-  private static final int METHODID_READ_TENSORBOARD_USAGE = 2;
-  private static final int METHODID_UPDATE_TENSORBOARD = 3;
-  private static final int METHODID_LIST_TENSORBOARDS = 4;
-  private static final int METHODID_DELETE_TENSORBOARD = 5;
-  private static final int METHODID_CREATE_TENSORBOARD_EXPERIMENT = 6;
-  private static final int METHODID_GET_TENSORBOARD_EXPERIMENT = 7;
-  private static final int METHODID_UPDATE_TENSORBOARD_EXPERIMENT = 8;
-  private static final int METHODID_LIST_TENSORBOARD_EXPERIMENTS = 9;
-  private static final int METHODID_DELETE_TENSORBOARD_EXPERIMENT = 10;
-  private static final int METHODID_CREATE_TENSORBOARD_RUN = 11;
-  private static final int METHODID_BATCH_CREATE_TENSORBOARD_RUNS = 12;
-  private static final int METHODID_GET_TENSORBOARD_RUN = 13;
-  private static final int METHODID_UPDATE_TENSORBOARD_RUN = 14;
-  private static final int METHODID_LIST_TENSORBOARD_RUNS = 15;
-  private static final int METHODID_DELETE_TENSORBOARD_RUN = 16;
-  private static final int METHODID_BATCH_CREATE_TENSORBOARD_TIME_SERIES = 17;
-  private static final int METHODID_CREATE_TENSORBOARD_TIME_SERIES = 18;
-  private static final int METHODID_GET_TENSORBOARD_TIME_SERIES = 19;
-  private static final int METHODID_UPDATE_TENSORBOARD_TIME_SERIES = 20;
-  private static final int METHODID_LIST_TENSORBOARD_TIME_SERIES = 21;
-  private static final int METHODID_DELETE_TENSORBOARD_TIME_SERIES = 22;
-  private static final int METHODID_BATCH_READ_TENSORBOARD_TIME_SERIES_DATA = 23;
-  private static final int METHODID_READ_TENSORBOARD_TIME_SERIES_DATA = 24;
-  private static final int METHODID_READ_TENSORBOARD_BLOB_DATA = 25;
-  private static final int METHODID_WRITE_TENSORBOARD_EXPERIMENT_DATA = 26;
-  private static final int METHODID_WRITE_TENSORBOARD_RUN_DATA = 27;
-  private static final int METHODID_EXPORT_TENSORBOARD_TIME_SERIES_DATA = 28;
+  private static final int METHODID_UPDATE_TENSORBOARD = 2;
+  private static final int METHODID_LIST_TENSORBOARDS = 3;
+  private static final int METHODID_DELETE_TENSORBOARD = 4;
+  private static final int METHODID_READ_TENSORBOARD_USAGE = 5;
+  private static final int METHODID_READ_TENSORBOARD_SIZE = 6;
+  private static final int METHODID_CREATE_TENSORBOARD_EXPERIMENT = 7;
+  private static final int METHODID_GET_TENSORBOARD_EXPERIMENT = 8;
+  private static final int METHODID_UPDATE_TENSORBOARD_EXPERIMENT = 9;
+  private static final int METHODID_LIST_TENSORBOARD_EXPERIMENTS = 10;
+  private static final int METHODID_DELETE_TENSORBOARD_EXPERIMENT = 11;
+  private static final int METHODID_CREATE_TENSORBOARD_RUN = 12;
+  private static final int METHODID_BATCH_CREATE_TENSORBOARD_RUNS = 13;
+  private static final int METHODID_GET_TENSORBOARD_RUN = 14;
+  private static final int METHODID_UPDATE_TENSORBOARD_RUN = 15;
+  private static final int METHODID_LIST_TENSORBOARD_RUNS = 16;
+  private static final int METHODID_DELETE_TENSORBOARD_RUN = 17;
+  private static final int METHODID_BATCH_CREATE_TENSORBOARD_TIME_SERIES = 18;
+  private static final int METHODID_CREATE_TENSORBOARD_TIME_SERIES = 19;
+  private static final int METHODID_GET_TENSORBOARD_TIME_SERIES = 20;
+  private static final int METHODID_UPDATE_TENSORBOARD_TIME_SERIES = 21;
+  private static final int METHODID_LIST_TENSORBOARD_TIME_SERIES = 22;
+  private static final int METHODID_DELETE_TENSORBOARD_TIME_SERIES = 23;
+  private static final int METHODID_BATCH_READ_TENSORBOARD_TIME_SERIES_DATA = 24;
+  private static final int METHODID_READ_TENSORBOARD_TIME_SERIES_DATA = 25;
+  private static final int METHODID_READ_TENSORBOARD_BLOB_DATA = 26;
+  private static final int METHODID_WRITE_TENSORBOARD_EXPERIMENT_DATA = 27;
+  private static final int METHODID_WRITE_TENSORBOARD_RUN_DATA = 28;
+  private static final int METHODID_EXPORT_TENSORBOARD_TIME_SERIES_DATA = 29;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3471,13 +3582,6 @@ public final class TensorboardServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Tensorboard>)
                   responseObserver);
           break;
-        case METHODID_READ_TENSORBOARD_USAGE:
-          serviceImpl.readTensorboardUsage(
-              (com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>)
-                  responseObserver);
-          break;
         case METHODID_UPDATE_TENSORBOARD:
           serviceImpl.updateTensorboard(
               (com.google.cloud.aiplatform.v1.UpdateTensorboardRequest) request,
@@ -3493,6 +3597,20 @@ public final class TensorboardServiceGrpc {
           serviceImpl.deleteTensorboard(
               (com.google.cloud.aiplatform.v1.DeleteTensorboardRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_READ_TENSORBOARD_USAGE:
+          serviceImpl.readTensorboardUsage(
+              (com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>)
+                  responseObserver);
+          break;
+        case METHODID_READ_TENSORBOARD_SIZE:
+          serviceImpl.readTensorboardSize(
+              (com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse>)
+                  responseObserver);
           break;
         case METHODID_CREATE_TENSORBOARD_EXPERIMENT:
           serviceImpl.createTensorboardExperiment(
@@ -3671,13 +3789,6 @@ public final class TensorboardServiceGrpc {
                     com.google.cloud.aiplatform.v1.GetTensorboardRequest,
                     com.google.cloud.aiplatform.v1.Tensorboard>(service, METHODID_GET_TENSORBOARD)))
         .addMethod(
-            getReadTensorboardUsageMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
-                    com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>(
-                    service, METHODID_READ_TENSORBOARD_USAGE)))
-        .addMethod(
             getUpdateTensorboardMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3696,6 +3807,20 @@ public final class TensorboardServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1.DeleteTensorboardRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_TENSORBOARD)))
+        .addMethod(
+            getReadTensorboardUsageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
+                    com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>(
+                    service, METHODID_READ_TENSORBOARD_USAGE)))
+        .addMethod(
+            getReadTensorboardSizeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest,
+                    com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse>(
+                    service, METHODID_READ_TENSORBOARD_SIZE)))
         .addMethod(
             getCreateTensorboardExperimentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3883,9 +4008,9 @@ public final class TensorboardServiceGrpc {
   private static final class TensorboardServiceMethodDescriptorSupplier
       extends TensorboardServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    TensorboardServiceMethodDescriptorSupplier(String methodName) {
+    TensorboardServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -3909,10 +4034,11 @@ public final class TensorboardServiceGrpc {
                       .setSchemaDescriptor(new TensorboardServiceFileDescriptorSupplier())
                       .addMethod(getCreateTensorboardMethod())
                       .addMethod(getGetTensorboardMethod())
-                      .addMethod(getReadTensorboardUsageMethod())
                       .addMethod(getUpdateTensorboardMethod())
                       .addMethod(getListTensorboardsMethod())
                       .addMethod(getDeleteTensorboardMethod())
+                      .addMethod(getReadTensorboardUsageMethod())
+                      .addMethod(getReadTensorboardSizeMethod())
                       .addMethod(getCreateTensorboardExperimentMethod())
                       .addMethod(getGetTensorboardExperimentMethod())
                       .addMethod(getUpdateTensorboardExperimentMethod())

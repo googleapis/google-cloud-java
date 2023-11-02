@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
     return new ListTagsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_ListTagsRequest_descriptor;
@@ -77,10 +72,12 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The resource
-   * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+   * Required. The name of the Data Catalog resource to list the tags of. The
+   * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
    * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
+   *
    * Examples:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>
@@ -107,10 +104,12 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The resource
-   * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+   * Required. The name of the Data Catalog resource to list the tags of. The
+   * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
    * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
+   *
    * Examples:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>
@@ -599,10 +598,12 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+     * Required. The name of the Data Catalog resource to list the tags of. The
+     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
      * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
+     *
      * Examples:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
@@ -628,10 +629,12 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+     * Required. The name of the Data Catalog resource to list the tags of. The
+     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
      * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
+     *
      * Examples:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
@@ -657,10 +660,12 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+     * Required. The name of the Data Catalog resource to list the tags of. The
+     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
      * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
+     *
      * Examples:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
@@ -685,10 +690,12 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+     * Required. The name of the Data Catalog resource to list the tags of. The
+     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
      * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
+     *
      * Examples:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
@@ -709,10 +716,12 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
+     * Required. The name of the Data Catalog resource to list the tags of. The
+     * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
      * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
+     *
      * Examples:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>

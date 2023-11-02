@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,26 +45,26 @@ public final class ScheduleProto {
           + "i/field_behavior.proto\032\031google/api/resou"
           + "rce.proto\032)google/cloud/notebooks/v1/exe"
           + "cution.proto\032\037google/protobuf/timestamp."
-          + "proto\"\214\005\n\010Schedule\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n"
-          + "\014display_name\030\002 \001(\tB\003\340A\003\022\023\n\013description\030"
-          + "\003 \001(\t\0228\n\005state\030\004 \001(\0162).google.cloud.note"
-          + "books.v1.Schedule.State\022\025\n\rcron_schedule"
-          + "\030\005 \001(\t\022\021\n\ttime_zone\030\006 \001(\t\0224\n\013create_time"
-          + "\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + "4\n\013update_time\030\010 \001(\0132\032.google.protobuf.T"
-          + "imestampB\003\340A\003\022H\n\022execution_template\030\t \001("
-          + "\0132,.google.cloud.notebooks.v1.ExecutionT"
-          + "emplate\022D\n\021recent_executions\030\n \003(\0132$.goo"
-          + "gle.cloud.notebooks.v1.ExecutionB\003\340A\003\"x\n"
-          + "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007ENABLED"
-          + "\020\001\022\n\n\006PAUSED\020\002\022\014\n\010DISABLED\020\003\022\021\n\rUPDATE_F"
-          + "AILED\020\004\022\020\n\014INITIALIZING\020\005\022\014\n\010DELETING\020\006:"
-          + "c\352A`\n!notebooks.googleapis.com/Schedule\022"
-          + ";projects/{project}/location/{location}/"
-          + "schedules/{schedule}Bm\n\035com.google.cloud"
-          + ".notebooks.v1B\rScheduleProtoP\001Z;cloud.go"
-          + "ogle.com/go/notebooks/apiv1/notebookspb;"
-          + "notebookspbb\006proto3"
+          + "proto\"\221\005\n\010Schedule\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\032"
+          + "\n\014display_name\030\002 \001(\tB\004\342A\001\003\022\023\n\013descriptio"
+          + "n\030\003 \001(\t\0228\n\005state\030\004 \001(\0162).google.cloud.no"
+          + "tebooks.v1.Schedule.State\022\025\n\rcron_schedu"
+          + "le\030\005 \001(\t\022\021\n\ttime_zone\030\006 \001(\t\0225\n\013create_ti"
+          + "me\030\007 \001(\0132\032.google.protobuf.TimestampB\004\342A"
+          + "\001\003\0225\n\013update_time\030\010 \001(\0132\032.google.protobu"
+          + "f.TimestampB\004\342A\001\003\022H\n\022execution_template\030"
+          + "\t \001(\0132,.google.cloud.notebooks.v1.Execut"
+          + "ionTemplate\022E\n\021recent_executions\030\n \003(\0132$"
+          + ".google.cloud.notebooks.v1.ExecutionB\004\342A"
+          + "\001\003\"x\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007EN"
+          + "ABLED\020\001\022\n\n\006PAUSED\020\002\022\014\n\010DISABLED\020\003\022\021\n\rUPD"
+          + "ATE_FAILED\020\004\022\020\n\014INITIALIZING\020\005\022\014\n\010DELETI"
+          + "NG\020\006:c\352A`\n!notebooks.googleapis.com/Sche"
+          + "dule\022;projects/{project}/location/{locat"
+          + "ion}/schedules/{schedule}Bm\n\035com.google."
+          + "cloud.notebooks.v1B\rScheduleProtoP\001Z;clo"
+          + "ud.google.com/go/notebooks/apiv1/noteboo"
+          + "kspb;notebookspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

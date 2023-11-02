@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,18 +33,21 @@ public interface DeleteRoleRequestOrBuilder
    * or
    * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
    * Each resource type's `name` value format is described below:
+   *
    * * [`projects.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/delete):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * * [`organizations.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/delete):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
    *   deletes only [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * Note: Wildcard (*) values are invalid; you must specify a complete project
    * ID or organization ID.
    * </pre>
@@ -64,18 +67,21 @@ public interface DeleteRoleRequestOrBuilder
    * or
    * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
    * Each resource type's `name` value format is described below:
+   *
    * * [`projects.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/delete):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * * [`organizations.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/delete):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
    *   deletes only [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * Note: Wildcard (*) values are invalid; you must specify a complete project
    * ID or organization ID.
    * </pre>

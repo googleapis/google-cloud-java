@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,11 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.webrisk.v1.stub.WebRiskServiceStubSettings;
+import com.google.longrunning.Operation;
 import com.google.webrisk.v1.ComputeThreatListDiffRequest;
 import com.google.webrisk.v1.ComputeThreatListDiffResponse;
 import com.google.webrisk.v1.CreateSubmissionRequest;
@@ -36,6 +38,8 @@ import com.google.webrisk.v1.SearchHashesResponse;
 import com.google.webrisk.v1.SearchUrisRequest;
 import com.google.webrisk.v1.SearchUrisResponse;
 import com.google.webrisk.v1.Submission;
+import com.google.webrisk.v1.SubmitUriMetadata;
+import com.google.webrisk.v1.SubmitUriRequest;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -99,6 +103,17 @@ public class WebRiskServiceSettings extends ClientSettings<WebRiskServiceSetting
   /** Returns the object with the settings used for calls to createSubmission. */
   public UnaryCallSettings<CreateSubmissionRequest, Submission> createSubmissionSettings() {
     return ((WebRiskServiceStubSettings) getStubSettings()).createSubmissionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to submitUri. */
+  public UnaryCallSettings<SubmitUriRequest, Operation> submitUriSettings() {
+    return ((WebRiskServiceStubSettings) getStubSettings()).submitUriSettings();
+  }
+
+  /** Returns the object with the settings used for calls to submitUri. */
+  public OperationCallSettings<SubmitUriRequest, Submission, SubmitUriMetadata>
+      submitUriOperationSettings() {
+    return ((WebRiskServiceStubSettings) getStubSettings()).submitUriOperationSettings();
   }
 
   public static final WebRiskServiceSettings create(WebRiskServiceStubSettings stub)
@@ -237,6 +252,17 @@ public class WebRiskServiceSettings extends ClientSettings<WebRiskServiceSetting
     public UnaryCallSettings.Builder<CreateSubmissionRequest, Submission>
         createSubmissionSettings() {
       return getStubSettingsBuilder().createSubmissionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to submitUri. */
+    public UnaryCallSettings.Builder<SubmitUriRequest, Operation> submitUriSettings() {
+      return getStubSettingsBuilder().submitUriSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to submitUri. */
+    public OperationCallSettings.Builder<SubmitUriRequest, Submission, SubmitUriMetadata>
+        submitUriOperationSettings() {
+      return getStubSettingsBuilder().submitUriOperationSettings();
     }
 
     @Override

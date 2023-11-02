@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
 
   private ListClustersResponse() {
     clusters_ = java.util.Collections.emptyList();
-    missingZones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    missingZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListClustersResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -147,7 +142,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
   public static final int MISSING_ZONES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList missingZones_;
+  private com.google.protobuf.LazyStringArrayList missingZones_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -434,8 +430,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
         clustersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      missingZones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      missingZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -482,15 +477,14 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       } else {
         result.clusters_ = clustersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        missingZones_ = missingZones_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.missingZones_ = missingZones_;
     }
 
     private void buildPartial0(com.google.container.v1beta1.ListClustersResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        missingZones_.makeImmutable();
+        result.missingZones_ = missingZones_;
+      }
     }
 
     @java.lang.Override
@@ -569,7 +563,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       if (!other.missingZones_.isEmpty()) {
         if (missingZones_.isEmpty()) {
           missingZones_ = other.missingZones_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureMissingZonesIsMutable();
           missingZones_.addAll(other.missingZones_);
@@ -1007,14 +1001,14 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       return clustersBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList missingZones_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList missingZones_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMissingZonesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!missingZones_.isModifiable()) {
         missingZones_ = new com.google.protobuf.LazyStringArrayList(missingZones_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1029,7 +1023,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * @return A list containing the missingZones.
      */
     public com.google.protobuf.ProtocolStringList getMissingZonesList() {
-      return missingZones_.getUnmodifiableView();
+      missingZones_.makeImmutable();
+      return missingZones_;
     }
     /**
      *
@@ -1098,6 +1093,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       }
       ensureMissingZonesIsMutable();
       missingZones_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1120,6 +1116,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       }
       ensureMissingZonesIsMutable();
       missingZones_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1139,6 +1136,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
     public Builder addAllMissingZones(java.lang.Iterable<java.lang.String> values) {
       ensureMissingZonesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, missingZones_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1155,8 +1153,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMissingZones() {
-      missingZones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      missingZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1180,6 +1179,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureMissingZonesIsMutable();
       missingZones_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,11 @@ public interface UpdateProductRequestOrBuilder
    *
    * <pre>
    * Required. The product to update/create.
+   *
    * If the caller does not have permission to update the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
+   *
    * If the [Product][google.cloud.retail.v2.Product] to update does not exist
    * and
    * [allow_missing][google.cloud.retail.v2.UpdateProductRequest.allow_missing]
@@ -48,9 +50,11 @@ public interface UpdateProductRequestOrBuilder
    *
    * <pre>
    * Required. The product to update/create.
+   *
    * If the caller does not have permission to update the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
+   *
    * If the [Product][google.cloud.retail.v2.Product] to update does not exist
    * and
    * [allow_missing][google.cloud.retail.v2.UpdateProductRequest.allow_missing]
@@ -68,9 +72,11 @@ public interface UpdateProductRequestOrBuilder
    *
    * <pre>
    * Required. The product to update/create.
+   *
    * If the caller does not have permission to update the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
+   *
    * If the [Product][google.cloud.retail.v2.Product] to update does not exist
    * and
    * [allow_missing][google.cloud.retail.v2.UpdateProductRequest.allow_missing]
@@ -90,8 +96,10 @@ public interface UpdateProductRequestOrBuilder
    * [Product][google.cloud.retail.v2.Product] to update. The immutable and
    * output only fields are NOT supported. If not set, all supported fields (the
    * fields that are neither immutable nor output only) are updated.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
+   *
    * The attribute key can be updated by setting the mask path as
    * "attributes.${key_name}". If a key name is present in the mask but not in
    * the patching product from the request, this key will be deleted after the
@@ -111,8 +119,10 @@ public interface UpdateProductRequestOrBuilder
    * [Product][google.cloud.retail.v2.Product] to update. The immutable and
    * output only fields are NOT supported. If not set, all supported fields (the
    * fields that are neither immutable nor output only) are updated.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
+   *
    * The attribute key can be updated by setting the mask path as
    * "attributes.${key_name}". If a key name is present in the mask but not in
    * the patching product from the request, this key will be deleted after the
@@ -132,8 +142,10 @@ public interface UpdateProductRequestOrBuilder
    * [Product][google.cloud.retail.v2.Product] to update. The immutable and
    * output only fields are NOT supported. If not set, all supported fields (the
    * fields that are neither immutable nor output only) are updated.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
+   *
    * The attribute key can be updated by setting the mask path as
    * "attributes.${key_name}". If a key name is present in the mask but not in
    * the patching product from the request, this key will be deleted after the

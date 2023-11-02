@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -1701,51 +1702,106 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
         HttpJsonCallSettings.<CreateCertificateRequest, Certificate>newBuilder()
             .setMethodDescriptor(createCertificateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetCertificateRequest, Certificate> getCertificateTransportSettings =
         HttpJsonCallSettings.<GetCertificateRequest, Certificate>newBuilder()
             .setMethodDescriptor(getCertificateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListCertificatesRequest, ListCertificatesResponse>
         listCertificatesTransportSettings =
             HttpJsonCallSettings.<ListCertificatesRequest, ListCertificatesResponse>newBuilder()
                 .setMethodDescriptor(listCertificatesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RevokeCertificateRequest, Certificate> revokeCertificateTransportSettings =
         HttpJsonCallSettings.<RevokeCertificateRequest, Certificate>newBuilder()
             .setMethodDescriptor(revokeCertificateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateCertificateRequest, Certificate> updateCertificateTransportSettings =
         HttpJsonCallSettings.<UpdateCertificateRequest, Certificate>newBuilder()
             .setMethodDescriptor(updateCertificateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "certificate.name", String.valueOf(request.getCertificate().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ActivateCertificateAuthorityRequest, Operation>
         activateCertificateAuthorityTransportSettings =
             HttpJsonCallSettings.<ActivateCertificateAuthorityRequest, Operation>newBuilder()
                 .setMethodDescriptor(activateCertificateAuthorityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateCertificateAuthorityRequest, Operation>
         createCertificateAuthorityTransportSettings =
             HttpJsonCallSettings.<CreateCertificateAuthorityRequest, Operation>newBuilder()
                 .setMethodDescriptor(createCertificateAuthorityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DisableCertificateAuthorityRequest, Operation>
         disableCertificateAuthorityTransportSettings =
             HttpJsonCallSettings.<DisableCertificateAuthorityRequest, Operation>newBuilder()
                 .setMethodDescriptor(disableCertificateAuthorityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<EnableCertificateAuthorityRequest, Operation>
         enableCertificateAuthorityTransportSettings =
             HttpJsonCallSettings.<EnableCertificateAuthorityRequest, Operation>newBuilder()
                 .setMethodDescriptor(enableCertificateAuthorityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<FetchCertificateAuthorityCsrRequest, FetchCertificateAuthorityCsrResponse>
         fetchCertificateAuthorityCsrTransportSettings =
@@ -1754,12 +1810,24 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                     newBuilder()
                 .setMethodDescriptor(fetchCertificateAuthorityCsrMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthorityTransportSettings =
             HttpJsonCallSettings.<GetCertificateAuthorityRequest, CertificateAuthority>newBuilder()
                 .setMethodDescriptor(getCertificateAuthorityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>
         listCertificateAuthoritiesTransportSettings =
@@ -1767,54 +1835,116 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                 .<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>newBuilder()
                 .setMethodDescriptor(listCertificateAuthoritiesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UndeleteCertificateAuthorityRequest, Operation>
         undeleteCertificateAuthorityTransportSettings =
             HttpJsonCallSettings.<UndeleteCertificateAuthorityRequest, Operation>newBuilder()
                 .setMethodDescriptor(undeleteCertificateAuthorityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteCertificateAuthorityRequest, Operation>
         deleteCertificateAuthorityTransportSettings =
             HttpJsonCallSettings.<DeleteCertificateAuthorityRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteCertificateAuthorityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateCertificateAuthorityRequest, Operation>
         updateCertificateAuthorityTransportSettings =
             HttpJsonCallSettings.<UpdateCertificateAuthorityRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateCertificateAuthorityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "certificate_authority.name",
+                          String.valueOf(request.getCertificateAuthority().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateCaPoolRequest, Operation> createCaPoolTransportSettings =
         HttpJsonCallSettings.<CreateCaPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(createCaPoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateCaPoolRequest, Operation> updateCaPoolTransportSettings =
         HttpJsonCallSettings.<UpdateCaPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(updateCaPoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("ca_pool.name", String.valueOf(request.getCaPool().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetCaPoolRequest, CaPool> getCaPoolTransportSettings =
         HttpJsonCallSettings.<GetCaPoolRequest, CaPool>newBuilder()
             .setMethodDescriptor(getCaPoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListCaPoolsRequest, ListCaPoolsResponse> listCaPoolsTransportSettings =
         HttpJsonCallSettings.<ListCaPoolsRequest, ListCaPoolsResponse>newBuilder()
             .setMethodDescriptor(listCaPoolsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteCaPoolRequest, Operation> deleteCaPoolTransportSettings =
         HttpJsonCallSettings.<DeleteCaPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteCaPoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<FetchCaCertsRequest, FetchCaCertsResponse> fetchCaCertsTransportSettings =
         HttpJsonCallSettings.<FetchCaCertsRequest, FetchCaCertsResponse>newBuilder()
             .setMethodDescriptor(fetchCaCertsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("ca_pool", String.valueOf(request.getCaPool()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetCertificateRevocationListRequest, CertificateRevocationList>
         getCertificateRevocationListTransportSettings =
@@ -1822,6 +1952,12 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                 .<GetCertificateRevocationListRequest, CertificateRevocationList>newBuilder()
                 .setMethodDescriptor(getCertificateRevocationListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse>
@@ -1831,30 +1967,62 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                     newBuilder()
                 .setMethodDescriptor(listCertificateRevocationListsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateCertificateRevocationListRequest, Operation>
         updateCertificateRevocationListTransportSettings =
             HttpJsonCallSettings.<UpdateCertificateRevocationListRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateCertificateRevocationListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "certificate_revocation_list.name",
+                          String.valueOf(request.getCertificateRevocationList().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateCertificateTemplateRequest, Operation>
         createCertificateTemplateTransportSettings =
             HttpJsonCallSettings.<CreateCertificateTemplateRequest, Operation>newBuilder()
                 .setMethodDescriptor(createCertificateTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteCertificateTemplateRequest, Operation>
         deleteCertificateTemplateTransportSettings =
             HttpJsonCallSettings.<DeleteCertificateTemplateRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteCertificateTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetCertificateTemplateRequest, CertificateTemplate>
         getCertificateTemplateTransportSettings =
             HttpJsonCallSettings.<GetCertificateTemplateRequest, CertificateTemplate>newBuilder()
                 .setMethodDescriptor(getCertificateTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListCertificateTemplatesRequest, ListCertificateTemplatesResponse>
         listCertificateTemplatesTransportSettings =
@@ -1862,39 +2030,83 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                 .<ListCertificateTemplatesRequest, ListCertificateTemplatesResponse>newBuilder()
                 .setMethodDescriptor(listCertificateTemplatesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateCertificateTemplateRequest, Operation>
         updateCertificateTemplateTransportSettings =
             HttpJsonCallSettings.<UpdateCertificateTemplateRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateCertificateTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "certificate_template.name",
+                          String.valueOf(request.getCertificateTemplate().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createCertificateCallable =

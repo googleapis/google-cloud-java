@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,10 +69,12 @@ public interface UpdateMeasurementProtocolSecretRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to be updated. Omitted fields will not be updated.
+   * Required. The list of fields to be updated. Omitted fields will not be
+   * updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -81,10 +83,12 @@ public interface UpdateMeasurementProtocolSecretRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to be updated. Omitted fields will not be updated.
+   * Required. The list of fields to be updated. Omitted fields will not be
+   * updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -93,10 +97,12 @@ public interface UpdateMeasurementProtocolSecretRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to be updated. Omitted fields will not be updated.
+   * Required. The list of fields to be updated. Omitted fields will not be
+   * updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

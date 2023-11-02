@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,17 +40,13 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
 
   private CloudDlpDataProfile() {
     dataProfile_ = "";
+    parentType_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CloudDlpDataProfile();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -66,6 +62,165 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
         .ensureFieldAccessorsInitialized(
             com.google.cloud.securitycenter.v1.CloudDlpDataProfile.class,
             com.google.cloud.securitycenter.v1.CloudDlpDataProfile.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Parents for configurations that produce data profile findings.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType}
+   */
+  public enum ParentType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified parent type.
+     * </pre>
+     *
+     * <code>PARENT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    PARENT_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Organization-level configurations.
+     * </pre>
+     *
+     * <code>ORGANIZATION = 1;</code>
+     */
+    ORGANIZATION(1),
+    /**
+     *
+     *
+     * <pre>
+     * Project-level configurations.
+     * </pre>
+     *
+     * <code>PROJECT = 2;</code>
+     */
+    PROJECT(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified parent type.
+     * </pre>
+     *
+     * <code>PARENT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int PARENT_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Organization-level configurations.
+     * </pre>
+     *
+     * <code>ORGANIZATION = 1;</code>
+     */
+    public static final int ORGANIZATION_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Project-level configurations.
+     * </pre>
+     *
+     * <code>PROJECT = 2;</code>
+     */
+    public static final int PROJECT_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ParentType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ParentType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PARENT_TYPE_UNSPECIFIED;
+        case 1:
+          return ORGANIZATION;
+        case 2:
+          return PROJECT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ParentType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ParentType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ParentType>() {
+          public ParentType findValueByNumber(int number) {
+            return ParentType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1.CloudDlpDataProfile.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final ParentType[] VALUES = values();
+
+    public static ParentType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ParentType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType)
   }
 
   public static final int DATA_PROFILE_FIELD_NUMBER = 1;
@@ -121,6 +276,43 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int PARENT_TYPE_FIELD_NUMBER = 2;
+  private int parentType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The resource hierarchy level at which the data profile was generated.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType parent_type = 2;</code>
+   *
+   * @return The enum numeric value on the wire for parentType.
+   */
+  @java.lang.Override
+  public int getParentTypeValue() {
+    return parentType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource hierarchy level at which the data profile was generated.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType parent_type = 2;</code>
+   *
+   * @return The parentType.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType getParentType() {
+    com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType result =
+        com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType.forNumber(parentType_);
+    return result == null
+        ? com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -138,6 +330,11 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataProfile_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dataProfile_);
     }
+    if (parentType_
+        != com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType.PARENT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, parentType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -149,6 +346,11 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataProfile_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dataProfile_);
+    }
+    if (parentType_
+        != com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType.PARENT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, parentType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -167,6 +369,7 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
         (com.google.cloud.securitycenter.v1.CloudDlpDataProfile) obj;
 
     if (!getDataProfile().equals(other.getDataProfile())) return false;
+    if (parentType_ != other.parentType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -180,6 +383,8 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DATA_PROFILE_FIELD_NUMBER;
     hash = (53 * hash) + getDataProfile().hashCode();
+    hash = (37 * hash) + PARENT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + parentType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -322,6 +527,7 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
       super.clear();
       bitField0_ = 0;
       dataProfile_ = "";
+      parentType_ = 0;
       return this;
     }
 
@@ -360,6 +566,9 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.dataProfile_ = dataProfile_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parentType_ = parentType_;
       }
     }
 
@@ -414,6 +623,9 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.parentType_ != 0) {
+        setParentTypeValue(other.getParentTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -446,6 +658,12 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                parentType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -572,6 +790,99 @@ public final class CloudDlpDataProfile extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       dataProfile_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private int parentType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The resource hierarchy level at which the data profile was generated.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType parent_type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for parentType.
+     */
+    @java.lang.Override
+    public int getParentTypeValue() {
+      return parentType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource hierarchy level at which the data profile was generated.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType parent_type = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for parentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentTypeValue(int value) {
+      parentType_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource hierarchy level at which the data profile was generated.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType parent_type = 2;</code>
+     *
+     * @return The parentType.
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType getParentType() {
+      com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType result =
+          com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType.forNumber(parentType_);
+      return result == null
+          ? com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource hierarchy level at which the data profile was generated.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType parent_type = 2;</code>
+     *
+     * @param value The parentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentType(
+        com.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      parentType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource hierarchy level at which the data profile was generated.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile.ParentType parent_type = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParentType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      parentType_ = 0;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,6 +128,6 @@ public interface DiscoverConnectionProfileResponseOrBuilder
    */
   com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getPostgresqlRdbmsOrBuilder();
 
-  public com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse.DataObjectCase
+  com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse.DataObjectCase
       getDataObjectCase();
 }

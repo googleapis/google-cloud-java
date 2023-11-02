@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
     return new ListEventsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
         .internal_static_google_devtools_clouderrorreporting_v1beta1_ListEventsRequest_descriptor;
@@ -81,6 +76,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    * as `projects/{projectID}`, where `{projectID}` is the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
+   *
    * Example: `projects/my-project-123`.
    * </pre>
    *
@@ -110,6 +106,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    * as `projects/{projectID}`, where `{projectID}` is the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
+   *
    * Example: `projects/my-project-123`.
    * </pre>
    *
@@ -869,6 +866,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * as `projects/{projectID}`, where `{projectID}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
+     *
      * Example: `projects/my-project-123`.
      * </pre>
      *
@@ -897,6 +895,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * as `projects/{projectID}`, where `{projectID}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
+     *
      * Example: `projects/my-project-123`.
      * </pre>
      *
@@ -925,6 +924,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * as `projects/{projectID}`, where `{projectID}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
+     *
      * Example: `projects/my-project-123`.
      * </pre>
      *
@@ -952,6 +952,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * as `projects/{projectID}`, where `{projectID}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
+     *
      * Example: `projects/my-project-123`.
      * </pre>
      *
@@ -975,6 +976,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * as `projects/{projectID}`, where `{projectID}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
+     *
      * Example: `projects/my-project-123`.
      * </pre>
      *

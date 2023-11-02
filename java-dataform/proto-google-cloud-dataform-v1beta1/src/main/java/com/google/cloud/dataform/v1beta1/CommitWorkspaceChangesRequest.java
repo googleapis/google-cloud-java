@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
   private CommitWorkspaceChangesRequest() {
     name_ = "";
     commitMessage_ = "";
-    paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CommitWorkspaceChangesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -234,13 +229,14 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
   public static final int PATHS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList paths_;
+  private com.google.protobuf.LazyStringArrayList paths_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * Optional. Full file paths to commit including filename, rooted at workspace root. If
-   * left empty, all files will be committed.
+   * Optional. Full file paths to commit including filename, rooted at workspace
+   * root. If left empty, all files will be committed.
    * </pre>
    *
    * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -254,8 +250,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. Full file paths to commit including filename, rooted at workspace root. If
-   * left empty, all files will be committed.
+   * Optional. Full file paths to commit including filename, rooted at workspace
+   * root. If left empty, all files will be committed.
    * </pre>
    *
    * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -269,8 +265,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. Full file paths to commit including filename, rooted at workspace root. If
-   * left empty, all files will be committed.
+   * Optional. Full file paths to commit including filename, rooted at workspace
+   * root. If left empty, all files will be committed.
    * </pre>
    *
    * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -285,8 +281,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. Full file paths to commit including filename, rooted at workspace root. If
-   * left empty, all files will be committed.
+   * Optional. Full file paths to commit including filename, rooted at workspace
+   * root. If left empty, all files will be committed.
    * </pre>
    *
    * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -543,8 +539,7 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         authorBuilder_ = null;
       }
       commitMessage_ = "";
-      paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -573,21 +568,11 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     public com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest buildPartial() {
       com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest result =
           new com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        paths_ = paths_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.paths_ = paths_;
     }
 
     private void buildPartial0(
@@ -601,6 +586,10 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.commitMessage_ = commitMessage_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        paths_.makeImmutable();
+        result.paths_ = paths_;
       }
     }
 
@@ -668,7 +657,7 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       if (!other.paths_.isEmpty()) {
         if (paths_.isEmpty()) {
           paths_ = other.paths_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensurePathsIsMutable();
           paths_.addAll(other.paths_);
@@ -1169,21 +1158,21 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       return this;
     }
 
-    private com.google.protobuf.LazyStringList paths_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList paths_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePathsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!paths_.isModifiable()) {
         paths_ = new com.google.protobuf.LazyStringArrayList(paths_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Full file paths to commit including filename, rooted at workspace root. If
-     * left empty, all files will be committed.
+     * Optional. Full file paths to commit including filename, rooted at workspace
+     * root. If left empty, all files will be committed.
      * </pre>
      *
      * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1191,14 +1180,15 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      * @return A list containing the paths.
      */
     public com.google.protobuf.ProtocolStringList getPathsList() {
-      return paths_.getUnmodifiableView();
+      paths_.makeImmutable();
+      return paths_;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Full file paths to commit including filename, rooted at workspace root. If
-     * left empty, all files will be committed.
+     * Optional. Full file paths to commit including filename, rooted at workspace
+     * root. If left empty, all files will be committed.
      * </pre>
      *
      * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1212,8 +1202,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Full file paths to commit including filename, rooted at workspace root. If
-     * left empty, all files will be committed.
+     * Optional. Full file paths to commit including filename, rooted at workspace
+     * root. If left empty, all files will be committed.
      * </pre>
      *
      * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1228,8 +1218,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Full file paths to commit including filename, rooted at workspace root. If
-     * left empty, all files will be committed.
+     * Optional. Full file paths to commit including filename, rooted at workspace
+     * root. If left empty, all files will be committed.
      * </pre>
      *
      * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1244,8 +1234,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Full file paths to commit including filename, rooted at workspace root. If
-     * left empty, all files will be committed.
+     * Optional. Full file paths to commit including filename, rooted at workspace
+     * root. If left empty, all files will be committed.
      * </pre>
      *
      * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1260,6 +1250,7 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       }
       ensurePathsIsMutable();
       paths_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1267,8 +1258,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Full file paths to commit including filename, rooted at workspace root. If
-     * left empty, all files will be committed.
+     * Optional. Full file paths to commit including filename, rooted at workspace
+     * root. If left empty, all files will be committed.
      * </pre>
      *
      * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1282,6 +1273,7 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       }
       ensurePathsIsMutable();
       paths_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1289,8 +1281,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Full file paths to commit including filename, rooted at workspace root. If
-     * left empty, all files will be committed.
+     * Optional. Full file paths to commit including filename, rooted at workspace
+     * root. If left empty, all files will be committed.
      * </pre>
      *
      * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1301,6 +1293,7 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     public Builder addAllPaths(java.lang.Iterable<java.lang.String> values) {
       ensurePathsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, paths_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1308,8 +1301,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Full file paths to commit including filename, rooted at workspace root. If
-     * left empty, all files will be committed.
+     * Optional. Full file paths to commit including filename, rooted at workspace
+     * root. If left empty, all files will be committed.
      * </pre>
      *
      * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1317,8 +1310,9 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPaths() {
-      paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1326,8 +1320,8 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Full file paths to commit including filename, rooted at workspace root. If
-     * left empty, all files will be committed.
+     * Optional. Full file paths to commit including filename, rooted at workspace
+     * root. If left empty, all files will be committed.
      * </pre>
      *
      * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1342,6 +1336,7 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensurePathsIsMutable();
       paths_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface LabelOrBuilder
    *
    *
    * <pre>
-   * Label name.
+   * Name of the label.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -39,7 +39,7 @@ public interface LabelOrBuilder
    *
    *
    * <pre>
-   * Label name.
+   * Name of the label.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,7 +52,7 @@ public interface LabelOrBuilder
    *
    *
    * <pre>
-   * Label value.
+   * Value that corresponds to the label's name.
    * </pre>
    *
    * <code>string value = 2;</code>
@@ -64,7 +64,7 @@ public interface LabelOrBuilder
    *
    *
    * <pre>
-   * Label value.
+   * Value that corresponds to the label's name.
    * </pre>
    *
    * <code>string value = 2;</code>

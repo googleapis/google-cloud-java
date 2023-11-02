@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ public interface AsymmetricSignRequestOrBuilder
    * Optional. The digest of the data to sign. The digest must be produced with
    * the same digest algorithm as specified by the key version's
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   *
    * This field may not be supplied if
    * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
    * is supplied.
@@ -80,6 +81,7 @@ public interface AsymmetricSignRequestOrBuilder
    * Optional. The digest of the data to sign. The digest must be produced with
    * the same digest algorithm as specified by the key version's
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   *
    * This field may not be supplied if
    * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
    * is supplied.
@@ -97,6 +99,7 @@ public interface AsymmetricSignRequestOrBuilder
    * Optional. The digest of the data to sign. The digest must be produced with
    * the same digest algorithm as specified by the key version's
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   *
    * This field may not be supplied if
    * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
    * is supplied.

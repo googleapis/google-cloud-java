@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@ public interface FetchReportResultsRequestOrBuilder
    * Optional. Requested page size of the report. The server may return fewer
    * results than requested. If you don't specify a page size, the server uses a
    * sensible default (may change over time).
+   *
    * The maximum value is 30,000; the server will change larger values to
    * 30,000.
    * </pre>
@@ -109,4 +110,59 @@ public interface FetchReportResultsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the partitionKeys.
+   */
+  java.util.List<java.lang.String> getPartitionKeysList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of partitionKeys.
+   */
+  int getPartitionKeysCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The partitionKeys at the given index.
+   */
+  java.lang.String getPartitionKeys(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the partitionKeys at the given index.
+   */
+  com.google.protobuf.ByteString getPartitionKeysBytes(int index);
 }

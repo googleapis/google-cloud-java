@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
     return new ExportAgentResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AgentProto
         .internal_static_google_cloud_dialogflow_v2beta1_ExportAgentResponse_descriptor;
@@ -67,6 +62,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
   }
 
   private int agentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object agent_;
 
   public enum AgentCase

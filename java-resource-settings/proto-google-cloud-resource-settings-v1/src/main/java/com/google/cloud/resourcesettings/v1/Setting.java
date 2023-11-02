@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
     return new Setting();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcesettings.v1.ResourceSettingsProto
         .internal_static_google_cloud_resourcesettings_v1_Setting_descriptor;
@@ -77,9 +72,11 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the setting. Must be in one of the following forms:
+   *
    * * `projects/{project_number}/settings/{setting_name}`
    * * `folders/{folder_id}/settings/{setting_name}`
    * * `organizations/{organization_id}/settings/{setting_name}`
+   *
    * For example, "/projects/123/settings/gcp-enableMyFeature"
    * </pre>
    *
@@ -104,9 +101,11 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the setting. Must be in one of the following forms:
+   *
    * * `projects/{project_number}/settings/{setting_name}`
    * * `folders/{folder_id}/settings/{setting_name}`
    * * `organizations/{organization_id}/settings/{setting_name}`
+   *
    * For example, "/projects/123/settings/gcp-enableMyFeature"
    * </pre>
    *
@@ -247,13 +246,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The computed effective value of the setting at the given parent resource
    * (based on the resource hierarchy).
+   *
    * The effective value evaluates to one of the following options in the given
    * order (the next option is used if the previous one does not exist):
+   *
    * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
    * 2. if one of the given resource's ancestors have a local setting value,
    *    the local value at the nearest such ancestor
    * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
    * 4. an empty value (defined as a `Value` with all fields unset)
+   *
    * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
    * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
    * </pre>
@@ -274,13 +276,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The computed effective value of the setting at the given parent resource
    * (based on the resource hierarchy).
+   *
    * The effective value evaluates to one of the following options in the given
    * order (the next option is used if the previous one does not exist):
+   *
    * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
    * 2. if one of the given resource's ancestors have a local setting value,
    *    the local value at the nearest such ancestor
    * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
    * 4. an empty value (defined as a `Value` with all fields unset)
+   *
    * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
    * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
    * </pre>
@@ -303,13 +308,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The computed effective value of the setting at the given parent resource
    * (based on the resource hierarchy).
+   *
    * The effective value evaluates to one of the following options in the given
    * order (the next option is used if the previous one does not exist):
+   *
    * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
    * 2. if one of the given resource's ancestors have a local setting value,
    *    the local value at the nearest such ancestor
    * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
    * 4. an empty value (defined as a `Value` with all fields unset)
+   *
    * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
    * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
    * </pre>
@@ -845,9 +853,11 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the setting. Must be in one of the following forms:
+     *
      * * `projects/{project_number}/settings/{setting_name}`
      * * `folders/{folder_id}/settings/{setting_name}`
      * * `organizations/{organization_id}/settings/{setting_name}`
+     *
      * For example, "/projects/123/settings/gcp-enableMyFeature"
      * </pre>
      *
@@ -871,9 +881,11 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the setting. Must be in one of the following forms:
+     *
      * * `projects/{project_number}/settings/{setting_name}`
      * * `folders/{folder_id}/settings/{setting_name}`
      * * `organizations/{organization_id}/settings/{setting_name}`
+     *
      * For example, "/projects/123/settings/gcp-enableMyFeature"
      * </pre>
      *
@@ -897,9 +909,11 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the setting. Must be in one of the following forms:
+     *
      * * `projects/{project_number}/settings/{setting_name}`
      * * `folders/{folder_id}/settings/{setting_name}`
      * * `organizations/{organization_id}/settings/{setting_name}`
+     *
      * For example, "/projects/123/settings/gcp-enableMyFeature"
      * </pre>
      *
@@ -922,9 +936,11 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the setting. Must be in one of the following forms:
+     *
      * * `projects/{project_number}/settings/{setting_name}`
      * * `folders/{folder_id}/settings/{setting_name}`
      * * `organizations/{organization_id}/settings/{setting_name}`
+     *
      * For example, "/projects/123/settings/gcp-enableMyFeature"
      * </pre>
      *
@@ -943,9 +959,11 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the setting. Must be in one of the following forms:
+     *
      * * `projects/{project_number}/settings/{setting_name}`
      * * `folders/{folder_id}/settings/{setting_name}`
      * * `organizations/{organization_id}/settings/{setting_name}`
+     *
      * For example, "/projects/123/settings/gcp-enableMyFeature"
      * </pre>
      *
@@ -1382,13 +1400,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The computed effective value of the setting at the given parent resource
      * (based on the resource hierarchy).
+     *
      * The effective value evaluates to one of the following options in the given
      * order (the next option is used if the previous one does not exist):
+     *
      * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
      * 2. if one of the given resource's ancestors have a local setting value,
      *    the local value at the nearest such ancestor
      * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
      * 4. an empty value (defined as a `Value` with all fields unset)
+     *
      * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
      * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
      * </pre>
@@ -1408,13 +1429,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The computed effective value of the setting at the given parent resource
      * (based on the resource hierarchy).
+     *
      * The effective value evaluates to one of the following options in the given
      * order (the next option is used if the previous one does not exist):
+     *
      * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
      * 2. if one of the given resource's ancestors have a local setting value,
      *    the local value at the nearest such ancestor
      * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
      * 4. an empty value (defined as a `Value` with all fields unset)
+     *
      * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
      * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
      * </pre>
@@ -1440,13 +1464,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The computed effective value of the setting at the given parent resource
      * (based on the resource hierarchy).
+     *
      * The effective value evaluates to one of the following options in the given
      * order (the next option is used if the previous one does not exist):
+     *
      * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
      * 2. if one of the given resource's ancestors have a local setting value,
      *    the local value at the nearest such ancestor
      * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
      * 4. an empty value (defined as a `Value` with all fields unset)
+     *
      * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
      * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
      * </pre>
@@ -1474,13 +1501,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The computed effective value of the setting at the given parent resource
      * (based on the resource hierarchy).
+     *
      * The effective value evaluates to one of the following options in the given
      * order (the next option is used if the previous one does not exist):
+     *
      * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
      * 2. if one of the given resource's ancestors have a local setting value,
      *    the local value at the nearest such ancestor
      * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
      * 4. an empty value (defined as a `Value` with all fields unset)
+     *
      * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
      * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
      * </pre>
@@ -1506,13 +1536,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The computed effective value of the setting at the given parent resource
      * (based on the resource hierarchy).
+     *
      * The effective value evaluates to one of the following options in the given
      * order (the next option is used if the previous one does not exist):
+     *
      * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
      * 2. if one of the given resource's ancestors have a local setting value,
      *    the local value at the nearest such ancestor
      * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
      * 4. an empty value (defined as a `Value` with all fields unset)
+     *
      * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
      * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
      * </pre>
@@ -1543,13 +1576,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The computed effective value of the setting at the given parent resource
      * (based on the resource hierarchy).
+     *
      * The effective value evaluates to one of the following options in the given
      * order (the next option is used if the previous one does not exist):
+     *
      * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
      * 2. if one of the given resource's ancestors have a local setting value,
      *    the local value at the nearest such ancestor
      * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
      * 4. an empty value (defined as a `Value` with all fields unset)
+     *
      * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
      * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
      * </pre>
@@ -1574,13 +1610,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The computed effective value of the setting at the given parent resource
      * (based on the resource hierarchy).
+     *
      * The effective value evaluates to one of the following options in the given
      * order (the next option is used if the previous one does not exist):
+     *
      * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
      * 2. if one of the given resource's ancestors have a local setting value,
      *    the local value at the nearest such ancestor
      * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
      * 4. an empty value (defined as a `Value` with all fields unset)
+     *
      * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
      * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
      * </pre>
@@ -1600,13 +1639,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The computed effective value of the setting at the given parent resource
      * (based on the resource hierarchy).
+     *
      * The effective value evaluates to one of the following options in the given
      * order (the next option is used if the previous one does not exist):
+     *
      * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
      * 2. if one of the given resource's ancestors have a local setting value,
      *    the local value at the nearest such ancestor
      * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
      * 4. an empty value (defined as a `Value` with all fields unset)
+     *
      * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
      * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
      * </pre>
@@ -1630,13 +1672,16 @@ public final class Setting extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The computed effective value of the setting at the given parent resource
      * (based on the resource hierarchy).
+     *
      * The effective value evaluates to one of the following options in the given
      * order (the next option is used if the previous one does not exist):
+     *
      * 1. the local setting value on the given resource: [Setting.local_value][google.cloud.resourcesettings.v1.Setting.local_value]
      * 2. if one of the given resource's ancestors have a local setting value,
      *    the local value at the nearest such ancestor
      * 3. the setting's default value: [SettingMetadata.default_value][google.cloud.resourcesettings.v1.SettingMetadata.default_value]
      * 4. an empty value (defined as a `Value` with all fields unset)
+     *
      * The data type of [Value][google.cloud.resourcesettings.v1.Value] must always be
      * consistent with the data type defined in [Setting.metadata][google.cloud.resourcesettings.v1.Setting.metadata].
      * </pre>

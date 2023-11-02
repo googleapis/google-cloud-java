@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public interface WorkloadIdentityConfigOrBuilder
    * <code>string identity_namespace = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4715
+   *     See google/container/v1beta1/cluster_service.proto;l=5152
    * @return The identityNamespace.
    */
   @java.lang.Deprecated
@@ -48,7 +48,7 @@ public interface WorkloadIdentityConfigOrBuilder
    * <code>string identity_namespace = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4715
+   *     See google/container/v1beta1/cluster_service.proto;l=5152
    * @return The bytes for identityNamespace.
    */
   @java.lang.Deprecated

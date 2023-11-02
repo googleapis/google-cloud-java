@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface GetWorkflowRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the workflow which information should be retrieved.
+   * Required. Name of the workflow for which information should be retrieved.
    * Format: projects/{project}/locations/{location}/workflows/{workflow}
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface GetWorkflowRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the workflow which information should be retrieved.
+   * Required. Name of the workflow for which information should be retrieved.
    * Format: projects/{project}/locations/{location}/workflows/{workflow}
    * </pre>
    *
@@ -53,4 +53,37 @@ public interface GetWorkflowRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The revision of the workflow to retrieve. If the revision_id is
+   * empty, the latest revision is retrieved.
+   * The format is "000001-a4d", where the first six characters define
+   * the zero-padded decimal revision number. They are followed by a hyphen and
+   * three hexadecimal characters.
+   * </pre>
+   *
+   * <code>string revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The revisionId.
+   */
+  java.lang.String getRevisionId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The revision of the workflow to retrieve. If the revision_id is
+   * empty, the latest revision is retrieved.
+   * The format is "000001-a4d", where the first six characters define
+   * the zero-padded decimal revision number. They are followed by a hyphen and
+   * three hexadecimal characters.
+   * </pre>
+   *
+   * <code>string revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for revisionId.
+   */
+  com.google.protobuf.ByteString getRevisionIdBytes();
 }

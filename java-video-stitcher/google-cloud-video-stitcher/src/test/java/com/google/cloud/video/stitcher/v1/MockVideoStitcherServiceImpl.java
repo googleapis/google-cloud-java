@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ package com.google.cloud.video.stitcher.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.video.stitcher.v1.VideoStitcherServiceGrpc.VideoStitcherServiceImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
-import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -60,11 +60,12 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
   }
 
   @Override
-  public void createCdnKey(CreateCdnKeyRequest request, StreamObserver<CdnKey> responseObserver) {
+  public void createCdnKey(
+      CreateCdnKeyRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof CdnKey) {
+    if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext(((CdnKey) response));
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -74,7 +75,7 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
               String.format(
                   "Unrecognized response type %s for method CreateCdnKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  CdnKey.class.getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -121,11 +122,12 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
   }
 
   @Override
-  public void deleteCdnKey(DeleteCdnKeyRequest request, StreamObserver<Empty> responseObserver) {
+  public void deleteCdnKey(
+      DeleteCdnKeyRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -135,17 +137,18 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
               String.format(
                   "Unrecognized response type %s for method DeleteCdnKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
 
   @Override
-  public void updateCdnKey(UpdateCdnKeyRequest request, StreamObserver<CdnKey> responseObserver) {
+  public void updateCdnKey(
+      UpdateCdnKeyRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof CdnKey) {
+    if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext(((CdnKey) response));
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -155,7 +158,7 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
               String.format(
                   "Unrecognized response type %s for method UpdateCdnKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  CdnKey.class.getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -332,11 +335,11 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
   }
 
   @Override
-  public void createSlate(CreateSlateRequest request, StreamObserver<Slate> responseObserver) {
+  public void createSlate(CreateSlateRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Slate) {
+    if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext(((Slate) response));
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -346,7 +349,7 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
               String.format(
                   "Unrecognized response type %s for method CreateSlate, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Slate.class.getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -393,11 +396,11 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
   }
 
   @Override
-  public void updateSlate(UpdateSlateRequest request, StreamObserver<Slate> responseObserver) {
+  public void updateSlate(UpdateSlateRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Slate) {
+    if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext(((Slate) response));
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -407,17 +410,17 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
               String.format(
                   "Unrecognized response type %s for method UpdateSlate, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Slate.class.getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
 
   @Override
-  public void deleteSlate(DeleteSlateRequest request, StreamObserver<Empty> responseObserver) {
+  public void deleteSlate(DeleteSlateRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -427,7 +430,7 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
               String.format(
                   "Unrecognized response type %s for method DeleteSlate, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -470,6 +473,90 @@ public class MockVideoStitcherServiceImpl extends VideoStitcherServiceImplBase {
                   "Unrecognized response type %s for method GetLiveSession, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   LiveSession.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createLiveConfig(
+      CreateLiveConfigRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateLiveConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listLiveConfigs(
+      ListLiveConfigsRequest request, StreamObserver<ListLiveConfigsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListLiveConfigsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListLiveConfigsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListLiveConfigs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListLiveConfigsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getLiveConfig(
+      GetLiveConfigRequest request, StreamObserver<LiveConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof LiveConfig) {
+      requests.add(request);
+      responseObserver.onNext(((LiveConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetLiveConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  LiveConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteLiveConfig(
+      DeleteLiveConfigRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteLiveConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

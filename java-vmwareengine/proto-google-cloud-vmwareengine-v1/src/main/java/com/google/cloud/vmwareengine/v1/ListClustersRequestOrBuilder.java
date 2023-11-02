@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,7 @@ public interface ListClustersRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListClusters` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListClusters`
    * must match the call that provided the page token.
    * </pre>
@@ -97,6 +98,7 @@ public interface ListClustersRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListClusters` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListClusters`
    * must match the call that provided the page token.
    * </pre>
@@ -111,12 +113,14 @@ public interface ListClustersRequestOrBuilder
    *
    *
    * <pre>
+   *
    * To filter on multiple expressions, provide each separate expression within
    * parentheses. For example:
    * ```
    * (name = "example-cluster")
    * (nodeCount = "3")
    * ```
+   *
    * By default, each expression is an `AND` expression. However, you can
    * include `AND` and `OR` expressions explicitly. For example:
    * ```
@@ -135,12 +139,14 @@ public interface ListClustersRequestOrBuilder
    *
    *
    * <pre>
+   *
    * To filter on multiple expressions, provide each separate expression within
    * parentheses. For example:
    * ```
    * (name = "example-cluster")
    * (nodeCount = "3")
    * ```
+   *
    * By default, each expression is an `AND` expression. However, you can
    * include `AND` and `OR` expressions explicitly. For example:
    * ```

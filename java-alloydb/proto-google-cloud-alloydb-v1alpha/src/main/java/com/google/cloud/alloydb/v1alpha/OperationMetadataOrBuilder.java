@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -258,6 +258,5 @@ public interface OperationMetadataOrBuilder
    */
   com.google.protobuf.ByteString getApiVersionBytes();
 
-  public com.google.cloud.alloydb.v1alpha.OperationMetadata.RequestSpecificCase
-      getRequestSpecificCase();
+  com.google.cloud.alloydb.v1alpha.OperationMetadata.RequestSpecificCase getRequestSpecificCase();
 }

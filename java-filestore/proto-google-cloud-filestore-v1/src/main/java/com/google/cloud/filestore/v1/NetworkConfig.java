@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     network_ = "";
     modes_ = java.util.Collections.emptyList();
     reservedIpRange_ = "";
-    ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ipAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     connectMode_ = 0;
   }
 
@@ -49,11 +49,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NetworkConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -538,10 +533,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional, reserved_ip_range can have one of the following two types of
    * values.
+   *
    * * CIDR range value when using DIRECT_PEERING connect mode.
    * * [Allocated IP address
    * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
    * when using PRIVATE_SERVICE_ACCESS connect mode.
+   *
    * When the name of an allocated IP address range is specified, it must be one
    * of the ranges associated with the private service access connection.
    * When specified as a direct CIDR value, it must be a /29 CIDR block for
@@ -577,10 +574,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional, reserved_ip_range can have one of the following two types of
    * values.
+   *
    * * CIDR range value when using DIRECT_PEERING connect mode.
    * * [Allocated IP address
    * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
    * when using PRIVATE_SERVICE_ACCESS connect mode.
+   *
    * When the name of an allocated IP address range is specified, it must be one
    * of the ranges associated with the private service access connection.
    * When specified as a direct CIDR value, it must be a /29 CIDR block for
@@ -614,7 +613,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int IP_ADDRESSES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ipAddresses_;
+  private com.google.protobuf.LazyStringArrayList ipAddresses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -986,8 +986,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       modes_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
       reservedIpRange_ = "";
-      ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      ipAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       connectMode_ = 0;
       return this;
     }
@@ -1030,11 +1029,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.modes_ = modes_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        ipAddresses_ = ipAddresses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.ipAddresses_ = ipAddresses_;
     }
 
     private void buildPartial0(com.google.cloud.filestore.v1.NetworkConfig result) {
@@ -1044,6 +1038,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.reservedIpRange_ = reservedIpRange_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        ipAddresses_.makeImmutable();
+        result.ipAddresses_ = ipAddresses_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.connectMode_ = connectMode_;
@@ -1118,7 +1116,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.ipAddresses_.isEmpty()) {
         if (ipAddresses_.isEmpty()) {
           ipAddresses_ = other.ipAddresses_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureIpAddressesIsMutable();
           ipAddresses_.addAll(other.ipAddresses_);
@@ -1575,10 +1573,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional, reserved_ip_range can have one of the following two types of
      * values.
+     *
      * * CIDR range value when using DIRECT_PEERING connect mode.
      * * [Allocated IP address
      * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
      * when using PRIVATE_SERVICE_ACCESS connect mode.
+     *
      * When the name of an allocated IP address range is specified, it must be one
      * of the ranges associated with the private service access connection.
      * When specified as a direct CIDR value, it must be a /29 CIDR block for
@@ -1613,10 +1613,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional, reserved_ip_range can have one of the following two types of
      * values.
+     *
      * * CIDR range value when using DIRECT_PEERING connect mode.
      * * [Allocated IP address
      * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
      * when using PRIVATE_SERVICE_ACCESS connect mode.
+     *
      * When the name of an allocated IP address range is specified, it must be one
      * of the ranges associated with the private service access connection.
      * When specified as a direct CIDR value, it must be a /29 CIDR block for
@@ -1651,10 +1653,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional, reserved_ip_range can have one of the following two types of
      * values.
+     *
      * * CIDR range value when using DIRECT_PEERING connect mode.
      * * [Allocated IP address
      * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
      * when using PRIVATE_SERVICE_ACCESS connect mode.
+     *
      * When the name of an allocated IP address range is specified, it must be one
      * of the ranges associated with the private service access connection.
      * When specified as a direct CIDR value, it must be a /29 CIDR block for
@@ -1688,10 +1692,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional, reserved_ip_range can have one of the following two types of
      * values.
+     *
      * * CIDR range value when using DIRECT_PEERING connect mode.
      * * [Allocated IP address
      * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
      * when using PRIVATE_SERVICE_ACCESS connect mode.
+     *
      * When the name of an allocated IP address range is specified, it must be one
      * of the ranges associated with the private service access connection.
      * When specified as a direct CIDR value, it must be a /29 CIDR block for
@@ -1721,10 +1727,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional, reserved_ip_range can have one of the following two types of
      * values.
+     *
      * * CIDR range value when using DIRECT_PEERING connect mode.
      * * [Allocated IP address
      * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
      * when using PRIVATE_SERVICE_ACCESS connect mode.
+     *
      * When the name of an allocated IP address range is specified, it must be one
      * of the ranges associated with the private service access connection.
      * When specified as a direct CIDR value, it must be a /29 CIDR block for
@@ -1754,14 +1762,14 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ipAddresses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ipAddresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIpAddressesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!ipAddresses_.isModifiable()) {
         ipAddresses_ = new com.google.protobuf.LazyStringArrayList(ipAddresses_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1777,7 +1785,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ipAddresses.
      */
     public com.google.protobuf.ProtocolStringList getIpAddressesList() {
-      return ipAddresses_.getUnmodifiableView();
+      ipAddresses_.makeImmutable();
+      return ipAddresses_;
     }
     /**
      *
@@ -1850,6 +1859,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIpAddressesIsMutable();
       ipAddresses_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1873,6 +1883,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIpAddressesIsMutable();
       ipAddresses_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1893,6 +1904,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIpAddresses(java.lang.Iterable<java.lang.String> values) {
       ensureIpAddressesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ipAddresses_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1910,8 +1922,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpAddresses() {
-      ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ipAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1936,6 +1949,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIpAddressesIsMutable();
       ipAddresses_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListVpnGatewaysRequest;
 import com.google.cloud.compute.v1.DeleteVpnGatewayRequest;
@@ -525,16 +526,38 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                 .<AggregatedListVpnGatewaysRequest, VpnGatewayAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteVpnGatewayRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteVpnGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("vpn_gateway", String.valueOf(request.getVpnGateway()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetVpnGatewayRequest, VpnGateway> getTransportSettings =
         HttpJsonCallSettings.<GetVpnGatewayRequest, VpnGateway>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("vpn_gateway", String.valueOf(request.getVpnGateway()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetStatusVpnGatewayRequest, VpnGatewaysGetStatusResponse>
         getStatusTransportSettings =
@@ -542,21 +565,51 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                 .<GetStatusVpnGatewayRequest, VpnGatewaysGetStatusResponse>newBuilder()
                 .setMethodDescriptor(getStatusMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("vpn_gateway", String.valueOf(request.getVpnGateway()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertVpnGatewayRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertVpnGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListVpnGatewaysRequest, VpnGatewayList> listTransportSettings =
         HttpJsonCallSettings.<ListVpnGatewaysRequest, VpnGatewayList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetLabelsVpnGatewayRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsVpnGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsVpnGatewayRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -564,6 +617,14 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                 .<TestIamPermissionsVpnGatewayRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.aggregatedListCallable =

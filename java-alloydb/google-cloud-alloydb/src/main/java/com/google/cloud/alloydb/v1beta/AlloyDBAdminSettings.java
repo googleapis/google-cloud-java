@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListClustersPag
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListInstancesPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListLocationsPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListSupportedDatabaseFlagsPagedResponse;
+import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListUsersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -244,6 +245,17 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     return ((AlloyDBAdminStubSettings) getStubSettings()).failoverInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to injectFault. */
+  public UnaryCallSettings<InjectFaultRequest, Operation> injectFaultSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).injectFaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to injectFault. */
+  public OperationCallSettings<InjectFaultRequest, Instance, OperationMetadata>
+      injectFaultOperationSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).injectFaultOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to restartInstance. */
   public UnaryCallSettings<RestartInstanceRequest, Operation> restartInstanceSettings() {
     return ((AlloyDBAdminStubSettings) getStubSettings()).restartInstanceSettings();
@@ -317,6 +329,32 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
   /** Returns the object with the settings used for calls to getConnectionInfo. */
   public UnaryCallSettings<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoSettings() {
     return ((AlloyDBAdminStubSettings) getStubSettings()).getConnectionInfoSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUsers. */
+  public PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      listUsersSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).listUsersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getUser. */
+  public UnaryCallSettings<GetUserRequest, User> getUserSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).getUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createUser. */
+  public UnaryCallSettings<CreateUserRequest, User> createUserSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).createUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateUser. */
+  public UnaryCallSettings<UpdateUserRequest, User> updateUserSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).updateUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteUser. */
+  public UnaryCallSettings<DeleteUserRequest, Empty> deleteUserSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).deleteUserSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -607,6 +645,17 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
       return getStubSettingsBuilder().failoverInstanceOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to injectFault. */
+    public UnaryCallSettings.Builder<InjectFaultRequest, Operation> injectFaultSettings() {
+      return getStubSettingsBuilder().injectFaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to injectFault. */
+    public OperationCallSettings.Builder<InjectFaultRequest, Instance, OperationMetadata>
+        injectFaultOperationSettings() {
+      return getStubSettingsBuilder().injectFaultOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to restartInstance. */
     public UnaryCallSettings.Builder<RestartInstanceRequest, Operation> restartInstanceSettings() {
       return getStubSettingsBuilder().restartInstanceSettings();
@@ -683,6 +732,32 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     public UnaryCallSettings.Builder<GetConnectionInfoRequest, ConnectionInfo>
         getConnectionInfoSettings() {
       return getStubSettingsBuilder().getConnectionInfoSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUsers. */
+    public PagedCallSettings.Builder<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+        listUsersSettings() {
+      return getStubSettingsBuilder().listUsersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getUser. */
+    public UnaryCallSettings.Builder<GetUserRequest, User> getUserSettings() {
+      return getStubSettingsBuilder().getUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createUser. */
+    public UnaryCallSettings.Builder<CreateUserRequest, User> createUserSettings() {
+      return getStubSettingsBuilder().createUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateUser. */
+    public UnaryCallSettings.Builder<UpdateUserRequest, User> updateUserSettings() {
+      return getStubSettingsBuilder().updateUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUser. */
+    public UnaryCallSettings.Builder<DeleteUserRequest, Empty> deleteUserSettings() {
+      return getStubSettingsBuilder().deleteUserSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

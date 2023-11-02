@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -954,8 +954,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
-   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
-   *     letter, the last a letter or a number, and a 63 character maximum.
+   *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
+   *     must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
@@ -993,8 +993,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
-   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
-   *     letter, the last a letter or a number, and a 63 character maximum.
+   *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
+   *     must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
@@ -1032,8 +1032,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
-   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
-   *     letter, the last a letter or a number, and a 63 character maximum.
+   *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
+   *     must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
@@ -1071,8 +1071,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param muteConfig Required. The mute config being created.
    * @param muteConfigId Required. Unique identifier provided by the client within the parent scope.
-   *     It must consist of lower case letters, numbers, and hyphen, with the first character a
-   *     letter, the last a letter or a number, and a 63 character maximum.
+   *     It must consist of only lowercase letters, numbers, and hyphens, must start with a letter,
+   *     must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MuteConfig createMuteConfig(
@@ -2930,7 +2930,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final GroupAssetsPagedResponse groupAssets(GroupAssetsRequest request) {
     return groupAssetsPagedCallable().call(request);
   }
@@ -2966,7 +2968,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse>
       groupAssetsPagedCallable() {
     return stub.groupAssetsPagedCallable();
@@ -3009,7 +3014,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
     return stub.groupAssetsCallable();
   }
@@ -3290,7 +3298,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAssetsPagedResponse listAssets(ListAssetsRequest request) {
     return listAssetsPagedCallable().call(request);
   }
@@ -3327,7 +3337,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
     return stub.listAssetsPagedCallable();
   }
@@ -3370,7 +3383,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
     return stub.listAssetsCallable();
   }
@@ -4858,7 +4874,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param parent Required. Name of the organization to run asset discovery for. Its format is
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
       OrganizationName parent) {
     RunAssetDiscoveryRequest request =
@@ -4893,7 +4911,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param parent Required. Name of the organization to run asset discovery for. Its format is
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
       String parent) {
     RunAssetDiscoveryRequest request =
@@ -4928,7 +4948,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
       RunAssetDiscoveryRequest request) {
     return runAssetDiscoveryOperationCallable().futureCall(request);
@@ -4960,7 +4982,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   RunAssetDiscoveryResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationCallable() {
     return stub.runAssetDiscoveryOperationCallable();
@@ -4992,7 +5017,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryCallable() {
     return stub.runAssetDiscoveryCallable();
   }
@@ -5539,6 +5567,122 @@ public class SecurityCenterClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent = "parent-995424086";
+   *   CustomConfig customConfig = CustomConfig.newBuilder().build();
+   *   SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource =
+   *       SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder().build();
+   *   SimulateSecurityHealthAnalyticsCustomModuleResponse response =
+   *       securityCenterClient.simulateSecurityHealthAnalyticsCustomModule(
+   *           parent, customConfig, resource);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The relative resource name of the organization, project, or folder.
+   *     See: https://cloud.google.com/apis/design/resource_names#relative_resource_name An example
+   *     is: "organizations/{organization_id}".
+   * @param customConfig Required. The user specified custom configuration to test.
+   * @param resource Required. Resource data to simulate custom module against.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SimulateSecurityHealthAnalyticsCustomModuleResponse
+      simulateSecurityHealthAnalyticsCustomModule(
+          String parent,
+          CustomConfig customConfig,
+          SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource) {
+    SimulateSecurityHealthAnalyticsCustomModuleRequest request =
+        SimulateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+            .setParent(parent)
+            .setCustomConfig(customConfig)
+            .setResource(resource)
+            .build();
+    return simulateSecurityHealthAnalyticsCustomModule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SimulateSecurityHealthAnalyticsCustomModuleRequest request =
+   *       SimulateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCustomConfig(CustomConfig.newBuilder().build())
+   *           .setResource(
+   *               SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder()
+   *                   .build())
+   *           .build();
+   *   SimulateSecurityHealthAnalyticsCustomModuleResponse response =
+   *       securityCenterClient.simulateSecurityHealthAnalyticsCustomModule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SimulateSecurityHealthAnalyticsCustomModuleResponse
+      simulateSecurityHealthAnalyticsCustomModule(
+          SimulateSecurityHealthAnalyticsCustomModuleRequest request) {
+    return simulateSecurityHealthAnalyticsCustomModuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SimulateSecurityHealthAnalyticsCustomModuleRequest request =
+   *       SimulateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCustomConfig(CustomConfig.newBuilder().build())
+   *           .setResource(
+   *               SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder()
+   *                   .build())
+   *           .build();
+   *   ApiFuture<SimulateSecurityHealthAnalyticsCustomModuleResponse> future =
+   *       securityCenterClient
+   *           .simulateSecurityHealthAnalyticsCustomModuleCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   SimulateSecurityHealthAnalyticsCustomModuleResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleCallable() {
+    return stub.simulateSecurityHealthAnalyticsCustomModuleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -6344,8 +6488,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
-   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
-   *     a letter, the last a letter or a number, and a 63 character maximum.
+   *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
+   *     letter, must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BigQueryExport createBigQueryExport(
@@ -6384,8 +6528,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
-   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
-   *     a letter, the last a letter or a number, and a 63 character maximum.
+   *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
+   *     letter, must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BigQueryExport createBigQueryExport(
@@ -6424,8 +6568,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
-   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
-   *     a letter, the last a letter or a number, and a 63 character maximum.
+   *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
+   *     letter, must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BigQueryExport createBigQueryExport(
@@ -6464,8 +6608,8 @@ public class SecurityCenterClient implements BackgroundResource {
    *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
-   *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
-   *     a letter, the last a letter or a number, and a 63 character maximum.
+   *     scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a
+   *     letter, must end with either a letter or a number, and must be 63 characters or less.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BigQueryExport createBigQueryExport(

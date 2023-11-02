@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListAnswerRecordsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -134,6 +129,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. Filters to restrict results to specific answer records.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -141,7 +137,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
    * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/answer_record.proto;l=299
+   *     google/cloud/dialogflow/v2beta1/answer_record.proto;l=323
    * @return The filter.
    */
   @java.lang.Override
@@ -162,6 +158,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. Filters to restrict results to specific answer records.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -169,7 +166,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
    * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/answer_record.proto;l=299
+   *     google/cloud/dialogflow/v2beta1/answer_record.proto;l=323
    * @return The bytes for filter.
    */
   @java.lang.Override
@@ -802,6 +799,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. Filters to restrict results to specific answer records.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -809,7 +807,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated.
-     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=299
+     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=323
      * @return The filter.
      */
     @java.lang.Deprecated
@@ -829,6 +827,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. Filters to restrict results to specific answer records.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -836,7 +835,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated.
-     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=299
+     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=323
      * @return The bytes for filter.
      */
     @java.lang.Deprecated
@@ -856,6 +855,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. Filters to restrict results to specific answer records.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -863,7 +863,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated.
-     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=299
+     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=323
      * @param value The filter to set.
      * @return This builder for chaining.
      */
@@ -882,6 +882,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. Filters to restrict results to specific answer records.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -889,7 +890,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated.
-     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=299
+     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=323
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -904,6 +905,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. Filters to restrict results to specific answer records.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -911,7 +913,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated.
-     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=299
+     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=323
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
      */

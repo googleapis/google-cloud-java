@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,9 +56,12 @@ public interface ListFilesRequestOrBuilder
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
+   *
    *   * `name`
    *   * `owner`
+   *
    *  An example of using a filter:
+   *
    *   * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/&#42;"` --&gt; Files with an
    *   ID starting with "a/b/".
    *   * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --&gt;
@@ -76,9 +79,12 @@ public interface ListFilesRequestOrBuilder
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
+   *
    *   * `name`
    *   * `owner`
+   *
    *  An example of using a filter:
+   *
    *   * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/&#42;"` --&gt; Files with an
    *   ID starting with "a/b/".
    *   * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --&gt;

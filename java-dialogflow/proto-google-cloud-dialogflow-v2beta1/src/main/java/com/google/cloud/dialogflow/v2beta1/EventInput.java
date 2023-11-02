@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EventInput();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,19 +125,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The collection of parameters associated with the event.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
-   * -   MapKey type: string
-   * -   MapKey value: parameter name
-   * -   MapValue type:
-   *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: depending on parameter value type, could be one of string,
-   *         number, boolean, null, list or map
-   * -   MapValue value:
-   *     -   If parameter's entity type is a composite entity:
-   *         map from composite entity property names to property values
-   *     -   Else: parameter value
+   *
+   * * MapKey type: string
+   * * MapKey value: parameter name
+   * * MapValue type: If parameter's entity type is a composite entity then use
+   * map, otherwise, depending on the parameter value type, it could be one of
+   * string, number, boolean, null, list or map.
+   * * MapValue value: If parameter's entity type is a composite entity then use
+   * map from composite entity property names to property values, otherwise,
+   * use parameter value.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -158,19 +153,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The collection of parameters associated with the event.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
-   * -   MapKey type: string
-   * -   MapKey value: parameter name
-   * -   MapValue type:
-   *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: depending on parameter value type, could be one of string,
-   *         number, boolean, null, list or map
-   * -   MapValue value:
-   *     -   If parameter's entity type is a composite entity:
-   *         map from composite entity property names to property values
-   *     -   Else: parameter value
+   *
+   * * MapKey type: string
+   * * MapKey value: parameter name
+   * * MapValue type: If parameter's entity type is a composite entity then use
+   * map, otherwise, depending on the parameter value type, it could be one of
+   * string, number, boolean, null, list or map.
+   * * MapValue value: If parameter's entity type is a composite entity then use
+   * map from composite entity property names to property values, otherwise,
+   * use parameter value.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -186,19 +181,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The collection of parameters associated with the event.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
-   * -   MapKey type: string
-   * -   MapKey value: parameter name
-   * -   MapValue type:
-   *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: depending on parameter value type, could be one of string,
-   *         number, boolean, null, list or map
-   * -   MapValue value:
-   *     -   If parameter's entity type is a composite entity:
-   *         map from composite entity property names to property values
-   *     -   Else: parameter value
+   *
+   * * MapKey type: string
+   * * MapKey value: parameter name
+   * * MapValue type: If parameter's entity type is a composite entity then use
+   * map, otherwise, depending on the parameter value type, it could be one of
+   * string, number, boolean, null, list or map.
+   * * MapValue value: If parameter's entity type is a composite entity then use
+   * map from composite entity property names to property values, otherwise,
+   * use parameter value.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -220,6 +215,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
+   *
    * This field is ignored when used in the context of a
    * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2beta1.WebhookResponse.followup_event_input]
    * field, because the language was already defined in the originating detect
@@ -250,6 +246,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
+   *
    * This field is ignored when used in the context of a
    * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2beta1.WebhookResponse.followup_event_input]
    * field, because the language was already defined in the originating detect
@@ -790,19 +787,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -817,19 +814,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -848,19 +845,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -883,19 +880,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -915,19 +912,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -953,19 +950,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -985,19 +982,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -1012,19 +1009,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -1041,19 +1038,19 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 2;</code>
@@ -1084,6 +1081,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
+     *
      * This field is ignored when used in the context of a
      * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2beta1.WebhookResponse.followup_event_input]
      * field, because the language was already defined in the originating detect
@@ -1113,6 +1111,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
+     *
      * This field is ignored when used in the context of a
      * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2beta1.WebhookResponse.followup_event_input]
      * field, because the language was already defined in the originating detect
@@ -1142,6 +1141,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
+     *
      * This field is ignored when used in the context of a
      * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2beta1.WebhookResponse.followup_event_input]
      * field, because the language was already defined in the originating detect
@@ -1170,6 +1170,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
+     *
      * This field is ignored when used in the context of a
      * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2beta1.WebhookResponse.followup_event_input]
      * field, because the language was already defined in the originating detect
@@ -1194,6 +1195,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
+     *
      * This field is ignored when used in the context of a
      * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2beta1.WebhookResponse.followup_event_input]
      * field, because the language was already defined in the originating detect

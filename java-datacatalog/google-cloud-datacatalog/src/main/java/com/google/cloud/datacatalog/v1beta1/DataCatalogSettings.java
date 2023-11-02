@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,6 +184,12 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
   public UnaryCallSettings<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldSettings() {
     return ((DataCatalogStubSettings) getStubSettings()).renameTagTemplateFieldSettings();
+  }
+
+  /** Returns the object with the settings used for calls to renameTagTemplateFieldEnumValue. */
+  public UnaryCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).renameTagTemplateFieldEnumValueSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteTagTemplateField. */
@@ -448,6 +454,12 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
     public UnaryCallSettings.Builder<RenameTagTemplateFieldRequest, TagTemplateField>
         renameTagTemplateFieldSettings() {
       return getStubSettingsBuilder().renameTagTemplateFieldSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to renameTagTemplateFieldEnumValue. */
+    public UnaryCallSettings.Builder<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+        renameTagTemplateFieldEnumValueSettings() {
+      return getStubSettingsBuilder().renameTagTemplateFieldEnumValueSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteTagTemplateField. */

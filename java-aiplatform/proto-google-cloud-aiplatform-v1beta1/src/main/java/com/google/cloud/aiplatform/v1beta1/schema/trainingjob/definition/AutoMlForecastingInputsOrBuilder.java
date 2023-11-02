@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -193,13 +193,20 @@ public interface AutoMlForecastingInputsOrBuilder
    * Objective function the model is optimizing towards. The training process
    * creates a model that optimizes the value of the objective
    * function over the validation set.
+   *
    * The supported optimization objectives:
+   *
    *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+   *
    *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+   *
    *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+   *
    *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+   *
    *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
    *     percentage error (WAPE) and mean-absolute-error (MAE).
+   *
    *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
    *     defined in `quantiles`.
    * </pre>
@@ -216,13 +223,20 @@ public interface AutoMlForecastingInputsOrBuilder
    * Objective function the model is optimizing towards. The training process
    * creates a model that optimizes the value of the objective
    * function over the validation set.
+   *
    * The supported optimization objectives:
+   *
    *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+   *
    *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+   *
    *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+   *
    *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+   *
    *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
    *     percentage error (WAPE) and mean-absolute-error (MAE).
+   *
    *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
    *     defined in `quantiles`.
    * </pre>
@@ -239,13 +253,16 @@ public interface AutoMlForecastingInputsOrBuilder
    * <pre>
    * Required. The train budget of creating this model, expressed in milli node
    * hours i.e. 1,000 value in this field means 1 node hour.
+   *
    * The training cost of the model will not exceed this budget. The final cost
    * will be attempted to be close to the budget, though may end up being (even)
    * noticeably smaller - at the backend's discretion. This especially may
    * happen when further model training ceases to provide any improvements.
+   *
    * If the budget is set to a value known to be insufficient to train a
    * model for the given dataset, the training won't be attempted and
    * will error.
+   *
    * The train budget must be between 1,000 and 72,000 milli node hours,
    * inclusive.
    * </pre>
@@ -655,8 +672,10 @@ public interface AutoMlForecastingInputsOrBuilder
    * <pre>
    * Validation options for the data validation component. The available options
    * are:
+   *
    *   * "fail-pipeline" - default, will validate against the validation and
    *      fail the pipeline if it fails.
+   *
    *   * "ignore-validation" - ignore the results of the validation and continue
    * </pre>
    *
@@ -671,8 +690,10 @@ public interface AutoMlForecastingInputsOrBuilder
    * <pre>
    * Validation options for the data validation component. The available options
    * are:
+   *
    *   * "fail-pipeline" - default, will validate against the validation and
    *      fail the pipeline if it fails.
+   *
    *   * "ignore-validation" - ignore the results of the validation and continue
    * </pre>
    *

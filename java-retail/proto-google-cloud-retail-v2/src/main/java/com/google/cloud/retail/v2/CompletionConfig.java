@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CompletionConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -141,8 +136,10 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    * consisting of 'sh' with 'out-of-order' specified would suggest "women's
    * shoes", whereas a query of 'red s' with 'exact-prefix' specified would
    * suggest "red shoes". Currently supported values:
+   *
    * * 'out-of-order'
    * * 'exact-prefix'
+   *
    * Default value: 'exact-prefix'.
    * </pre>
    *
@@ -170,8 +167,10 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    * consisting of 'sh' with 'out-of-order' specified would suggest "women's
    * shoes", whereas a query of 'red s' with 'exact-prefix' specified would
    * suggest "red shoes". Currently supported values:
+   *
    * * 'out-of-order'
    * * 'exact-prefix'
+   *
    * Default value: 'exact-prefix'.
    * </pre>
    *
@@ -201,6 +200,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    * The maximum number of autocomplete suggestions returned per term. Default
    * value is 20. If left unset or set to 0, then will fallback to default
    * value.
+   *
    * Value range is 1 to 20.
    * </pre>
    *
@@ -222,6 +222,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    * The minimum number of characters needed to be typed in order to get
    * suggestions. Default value is 2. If left unset or set to 0, then will
    * fallback to default value.
+   *
    * Value range is 1 to 20.
    * </pre>
    *
@@ -326,6 +327,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. Name of the LRO corresponding to the latest suggestion terms
    * list import.
+   *
    * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
    * retrieve the latest state of the Long Running Operation.
    * </pre>
@@ -354,6 +356,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. Name of the LRO corresponding to the latest suggestion terms
    * list import.
+   *
    * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
    * retrieve the latest state of the Long Running Operation.
    * </pre>
@@ -446,6 +449,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Name of the LRO corresponding to the latest denylist import.
+   *
    * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
    * retrieve the latest state of the Long Running Operation.
    * </pre>
@@ -472,6 +476,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Name of the LRO corresponding to the latest denylist import.
+   *
    * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
    * retrieve the latest state of the Long Running Operation.
    * </pre>
@@ -563,6 +568,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Name of the LRO corresponding to the latest allowlist import.
+   *
    * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
    * retrieve the latest state of the Long Running Operation.
    * </pre>
@@ -589,6 +595,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Name of the LRO corresponding to the latest allowlist import.
+   *
    * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
    * retrieve the latest state of the Long Running Operation.
    * </pre>
@@ -1361,8 +1368,10 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * consisting of 'sh' with 'out-of-order' specified would suggest "women's
      * shoes", whereas a query of 'red s' with 'exact-prefix' specified would
      * suggest "red shoes". Currently supported values:
+     *
      * * 'out-of-order'
      * * 'exact-prefix'
+     *
      * Default value: 'exact-prefix'.
      * </pre>
      *
@@ -1389,8 +1398,10 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * consisting of 'sh' with 'out-of-order' specified would suggest "women's
      * shoes", whereas a query of 'red s' with 'exact-prefix' specified would
      * suggest "red shoes". Currently supported values:
+     *
      * * 'out-of-order'
      * * 'exact-prefix'
+     *
      * Default value: 'exact-prefix'.
      * </pre>
      *
@@ -1417,8 +1428,10 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * consisting of 'sh' with 'out-of-order' specified would suggest "women's
      * shoes", whereas a query of 'red s' with 'exact-prefix' specified would
      * suggest "red shoes". Currently supported values:
+     *
      * * 'out-of-order'
      * * 'exact-prefix'
+     *
      * Default value: 'exact-prefix'.
      * </pre>
      *
@@ -1444,8 +1457,10 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * consisting of 'sh' with 'out-of-order' specified would suggest "women's
      * shoes", whereas a query of 'red s' with 'exact-prefix' specified would
      * suggest "red shoes". Currently supported values:
+     *
      * * 'out-of-order'
      * * 'exact-prefix'
+     *
      * Default value: 'exact-prefix'.
      * </pre>
      *
@@ -1467,8 +1482,10 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * consisting of 'sh' with 'out-of-order' specified would suggest "women's
      * shoes", whereas a query of 'red s' with 'exact-prefix' specified would
      * suggest "red shoes". Currently supported values:
+     *
      * * 'out-of-order'
      * * 'exact-prefix'
+     *
      * Default value: 'exact-prefix'.
      * </pre>
      *
@@ -1496,6 +1513,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * The maximum number of autocomplete suggestions returned per term. Default
      * value is 20. If left unset or set to 0, then will fallback to default
      * value.
+     *
      * Value range is 1 to 20.
      * </pre>
      *
@@ -1514,6 +1532,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * The maximum number of autocomplete suggestions returned per term. Default
      * value is 20. If left unset or set to 0, then will fallback to default
      * value.
+     *
      * Value range is 1 to 20.
      * </pre>
      *
@@ -1536,6 +1555,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * The maximum number of autocomplete suggestions returned per term. Default
      * value is 20. If left unset or set to 0, then will fallback to default
      * value.
+     *
      * Value range is 1 to 20.
      * </pre>
      *
@@ -1558,6 +1578,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * The minimum number of characters needed to be typed in order to get
      * suggestions. Default value is 2. If left unset or set to 0, then will
      * fallback to default value.
+     *
      * Value range is 1 to 20.
      * </pre>
      *
@@ -1576,6 +1597,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * The minimum number of characters needed to be typed in order to get
      * suggestions. Default value is 2. If left unset or set to 0, then will
      * fallback to default value.
+     *
      * Value range is 1 to 20.
      * </pre>
      *
@@ -1598,6 +1620,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * The minimum number of characters needed to be typed in order to get
      * suggestions. Default value is 2. If left unset or set to 0, then will
      * fallback to default value.
+     *
      * Value range is 1 to 20.
      * </pre>
      *
@@ -1900,6 +1923,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Name of the LRO corresponding to the latest suggestion terms
      * list import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -1927,6 +1951,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Name of the LRO corresponding to the latest suggestion terms
      * list import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -1954,6 +1979,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Name of the LRO corresponding to the latest suggestion terms
      * list import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -1980,6 +2006,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Name of the LRO corresponding to the latest suggestion terms
      * list import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2002,6 +2029,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Name of the LRO corresponding to the latest suggestion terms
      * list import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2246,6 +2274,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Name of the LRO corresponding to the latest denylist import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2271,6 +2300,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Name of the LRO corresponding to the latest denylist import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2296,6 +2326,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Name of the LRO corresponding to the latest denylist import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2320,6 +2351,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Name of the LRO corresponding to the latest denylist import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2340,6 +2372,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Name of the LRO corresponding to the latest denylist import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2583,6 +2616,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Name of the LRO corresponding to the latest allowlist import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2609,6 +2643,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Name of the LRO corresponding to the latest allowlist import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2635,6 +2670,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Name of the LRO corresponding to the latest allowlist import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2660,6 +2696,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Name of the LRO corresponding to the latest allowlist import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2681,6 +2718,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Name of the LRO corresponding to the latest allowlist import.
+     *
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>

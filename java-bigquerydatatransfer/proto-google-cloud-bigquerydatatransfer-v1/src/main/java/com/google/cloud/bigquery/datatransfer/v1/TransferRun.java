@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     return new TransferRun();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.datatransfer.v1.TransferProto
         .internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor;
@@ -72,6 +67,8 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase
@@ -773,6 +770,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
    * transfer run finishes.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -800,6 +798,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
    * transfer run finishes.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -3660,6 +3659,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
      * transfer run finishes.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3686,6 +3686,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
      * transfer run finishes.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3712,6 +3713,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
      * transfer run finishes.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3737,6 +3739,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
      * transfer run finishes.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3758,6 +3761,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
      * transfer run finishes.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListTracesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -535,9 +530,11 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. A filter against labels for the request.
+   *
    * By default, searches use prefix matching. To specify exact match, prepend
    * a plus symbol (`+`) to the search term.
    * Multiple terms are ANDed. Syntax:
+   *
    * *   `root:NAME_PREFIX` or `NAME_PREFIX`: Return traces where any root
    *     span starts with `NAME_PREFIX`.
    * *   `+root:NAME` or `+NAME`: Return traces where any root span's name is
@@ -585,9 +582,11 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. A filter against labels for the request.
+   *
    * By default, searches use prefix matching. To specify exact match, prepend
    * a plus symbol (`+`) to the search term.
    * Multiple terms are ANDed. Syntax:
+   *
    * *   `root:NAME_PREFIX` or `NAME_PREFIX`: Return traces where any root
    *     span starts with `NAME_PREFIX`.
    * *   `+root:NAME` or `+NAME`: Return traces where any root span's name is
@@ -641,13 +640,16 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. Field used to sort the returned traces.
    * Can be one of the following:
+   *
    * *   `trace_id`
    * *   `name` (`name` field of root span in the trace)
    * *   `duration` (difference between `end_time` and `start_time` fields of
    *      the root span)
    * *   `start` (`start_time` field of the root span)
+   *
    * Descending order can be specified by appending `desc` to the sort field
    * (for example, `name desc`).
+   *
    * Only one sort field is permitted.
    * </pre>
    *
@@ -673,13 +675,16 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. Field used to sort the returned traces.
    * Can be one of the following:
+   *
    * *   `trace_id`
    * *   `name` (`name` field of root span in the trace)
    * *   `duration` (difference between `end_time` and `start_time` fields of
    *      the root span)
    * *   `start` (`start_time` field of the root span)
+   *
    * Descending order can be specified by appending `desc` to the sort field
    * (for example, `name desc`).
+   *
    * Only one sort field is permitted.
    * </pre>
    *
@@ -1990,9 +1995,11 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. A filter against labels for the request.
+     *
      * By default, searches use prefix matching. To specify exact match, prepend
      * a plus symbol (`+`) to the search term.
      * Multiple terms are ANDed. Syntax:
+     *
      * *   `root:NAME_PREFIX` or `NAME_PREFIX`: Return traces where any root
      *     span starts with `NAME_PREFIX`.
      * *   `+root:NAME` or `+NAME`: Return traces where any root span's name is
@@ -2039,9 +2046,11 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. A filter against labels for the request.
+     *
      * By default, searches use prefix matching. To specify exact match, prepend
      * a plus symbol (`+`) to the search term.
      * Multiple terms are ANDed. Syntax:
+     *
      * *   `root:NAME_PREFIX` or `NAME_PREFIX`: Return traces where any root
      *     span starts with `NAME_PREFIX`.
      * *   `+root:NAME` or `+NAME`: Return traces where any root span's name is
@@ -2088,9 +2097,11 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. A filter against labels for the request.
+     *
      * By default, searches use prefix matching. To specify exact match, prepend
      * a plus symbol (`+`) to the search term.
      * Multiple terms are ANDed. Syntax:
+     *
      * *   `root:NAME_PREFIX` or `NAME_PREFIX`: Return traces where any root
      *     span starts with `NAME_PREFIX`.
      * *   `+root:NAME` or `+NAME`: Return traces where any root span's name is
@@ -2136,9 +2147,11 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. A filter against labels for the request.
+     *
      * By default, searches use prefix matching. To specify exact match, prepend
      * a plus symbol (`+`) to the search term.
      * Multiple terms are ANDed. Syntax:
+     *
      * *   `root:NAME_PREFIX` or `NAME_PREFIX`: Return traces where any root
      *     span starts with `NAME_PREFIX`.
      * *   `+root:NAME` or `+NAME`: Return traces where any root span's name is
@@ -2180,9 +2193,11 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. A filter against labels for the request.
+     *
      * By default, searches use prefix matching. To specify exact match, prepend
      * a plus symbol (`+`) to the search term.
      * Multiple terms are ANDed. Syntax:
+     *
      * *   `root:NAME_PREFIX` or `NAME_PREFIX`: Return traces where any root
      *     span starts with `NAME_PREFIX`.
      * *   `+root:NAME` or `+NAME`: Return traces where any root span's name is
@@ -2232,13 +2247,16 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Field used to sort the returned traces.
      * Can be one of the following:
+     *
      * *   `trace_id`
      * *   `name` (`name` field of root span in the trace)
      * *   `duration` (difference between `end_time` and `start_time` fields of
      *      the root span)
      * *   `start` (`start_time` field of the root span)
+     *
      * Descending order can be specified by appending `desc` to the sort field
      * (for example, `name desc`).
+     *
      * Only one sort field is permitted.
      * </pre>
      *
@@ -2263,13 +2281,16 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Field used to sort the returned traces.
      * Can be one of the following:
+     *
      * *   `trace_id`
      * *   `name` (`name` field of root span in the trace)
      * *   `duration` (difference between `end_time` and `start_time` fields of
      *      the root span)
      * *   `start` (`start_time` field of the root span)
+     *
      * Descending order can be specified by appending `desc` to the sort field
      * (for example, `name desc`).
+     *
      * Only one sort field is permitted.
      * </pre>
      *
@@ -2294,13 +2315,16 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Field used to sort the returned traces.
      * Can be one of the following:
+     *
      * *   `trace_id`
      * *   `name` (`name` field of root span in the trace)
      * *   `duration` (difference between `end_time` and `start_time` fields of
      *      the root span)
      * *   `start` (`start_time` field of the root span)
+     *
      * Descending order can be specified by appending `desc` to the sort field
      * (for example, `name desc`).
+     *
      * Only one sort field is permitted.
      * </pre>
      *
@@ -2324,13 +2348,16 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Field used to sort the returned traces.
      * Can be one of the following:
+     *
      * *   `trace_id`
      * *   `name` (`name` field of root span in the trace)
      * *   `duration` (difference between `end_time` and `start_time` fields of
      *      the root span)
      * *   `start` (`start_time` field of the root span)
+     *
      * Descending order can be specified by appending `desc` to the sort field
      * (for example, `name desc`).
+     *
      * Only one sort field is permitted.
      * </pre>
      *
@@ -2350,13 +2377,16 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Field used to sort the returned traces.
      * Can be one of the following:
+     *
      * *   `trace_id`
      * *   `name` (`name` field of root span in the trace)
      * *   `duration` (difference between `end_time` and `start_time` fields of
      *      the root span)
      * *   `start` (`start_time` field of the root span)
+     *
      * Descending order can be specified by appending `desc` to the sort field
      * (for example, `name desc`).
+     *
      * Only one sort field is permitted.
      * </pre>
      *

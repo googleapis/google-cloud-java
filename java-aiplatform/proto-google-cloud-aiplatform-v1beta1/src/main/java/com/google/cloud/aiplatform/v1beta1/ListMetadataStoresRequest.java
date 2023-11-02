@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListMetadataStoresRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -159,6 +154,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
    * A page token, received from a previous
    * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
@@ -187,6 +183,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
    * A page token, received from a previous
    * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
@@ -795,6 +792,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * A page token, received from a previous
      * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -822,6 +820,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * A page token, received from a previous
      * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -849,6 +848,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * A page token, received from a previous
      * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -875,6 +875,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * A page token, received from a previous
      * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -897,6 +898,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * A page token, received from a previous
      * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)

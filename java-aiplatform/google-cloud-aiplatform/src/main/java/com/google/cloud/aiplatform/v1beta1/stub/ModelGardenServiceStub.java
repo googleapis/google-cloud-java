@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,14 @@
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListPublisherModelsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
+import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
 import com.google.cloud.aiplatform.v1beta1.PublisherModel;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -46,6 +49,16 @@ public abstract class ModelGardenServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetPublisherModelRequest, PublisherModel> getPublisherModelCallable() {
     throw new UnsupportedOperationException("Not implemented: getPublisherModelCallable()");
+  }
+
+  public UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsPagedResponse>
+      listPublisherModelsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPublisherModelsPagedCallable()");
+  }
+
+  public UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsResponse>
+      listPublisherModelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPublisherModelsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

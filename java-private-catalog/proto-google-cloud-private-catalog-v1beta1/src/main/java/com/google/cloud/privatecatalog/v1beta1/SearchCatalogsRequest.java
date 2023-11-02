@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
     return new SearchCatalogsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.privatecatalog.v1beta1.PrivateCatalogProto
         .internal_static_google_cloud_privatecatalog_v1beta1_SearchCatalogsRequest_descriptor;
@@ -78,6 +73,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The name of the resource context. It can be in following formats:
+   *
    * * `projects/{project}`
    * * `folders/{folder}`
    * * `organizations/{organization}`
@@ -104,6 +100,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The name of the resource context. It can be in following formats:
+   *
    * * `projects/{project}`
    * * `folders/{folder}`
    * * `organizations/{organization}`
@@ -135,6 +132,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The query to filter the catalogs. The supported queries are:
+   *
    * * Get a single catalog: `name=catalogs/{catalog}`
    * </pre>
    *
@@ -159,6 +157,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The query to filter the catalogs. The supported queries are:
+   *
    * * Get a single catalog: `name=catalogs/{catalog}`
    * </pre>
    *
@@ -672,6 +671,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the resource context. It can be in following formats:
+     *
      * * `projects/{project}`
      * * `folders/{folder}`
      * * `organizations/{organization}`
@@ -697,6 +697,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the resource context. It can be in following formats:
+     *
      * * `projects/{project}`
      * * `folders/{folder}`
      * * `organizations/{organization}`
@@ -722,6 +723,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the resource context. It can be in following formats:
+     *
      * * `projects/{project}`
      * * `folders/{folder}`
      * * `organizations/{organization}`
@@ -746,6 +748,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the resource context. It can be in following formats:
+     *
      * * `projects/{project}`
      * * `folders/{folder}`
      * * `organizations/{organization}`
@@ -766,6 +769,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the resource context. It can be in following formats:
+     *
      * * `projects/{project}`
      * * `folders/{folder}`
      * * `organizations/{organization}`
@@ -793,6 +797,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to filter the catalogs. The supported queries are:
+     *
      * * Get a single catalog: `name=catalogs/{catalog}`
      * </pre>
      *
@@ -816,6 +821,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to filter the catalogs. The supported queries are:
+     *
      * * Get a single catalog: `name=catalogs/{catalog}`
      * </pre>
      *
@@ -839,6 +845,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to filter the catalogs. The supported queries are:
+     *
      * * Get a single catalog: `name=catalogs/{catalog}`
      * </pre>
      *
@@ -861,6 +868,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to filter the catalogs. The supported queries are:
+     *
      * * Get a single catalog: `name=catalogs/{catalog}`
      * </pre>
      *
@@ -879,6 +887,7 @@ public final class SearchCatalogsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to filter the catalogs. The supported queries are:
+     *
      * * Get a single catalog: `name=catalogs/{catalog}`
      * </pre>
      *

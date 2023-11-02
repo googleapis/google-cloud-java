@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,11 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * The identifier for the contact.
+   * Output only. The identifier for the contact.
    * Format: {resource_type}/{resource_id}/contacts/{contact_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -40,11 +40,11 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * The identifier for the contact.
+   * Output only. The identifier for the contact.
    * Format: {resource_type}/{resource_id}/contacts/{contact_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -54,11 +54,11 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * Required. The email address to send notifications to. This does not need to
-   * be a Google account.
+   * Required. The email address to send notifications to. The email address
+   * does not need to be a Google Account.
    * </pre>
    *
-   * <code>string email = 2;</code>
+   * <code>string email = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The email.
    */
@@ -67,11 +67,11 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * Required. The email address to send notifications to. This does not need to
-   * be a Google account.
+   * Required. The email address to send notifications to. The email address
+   * does not need to be a Google Account.
    * </pre>
    *
-   * <code>string email = 2;</code>
+   * <code>string email = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for email.
    */
@@ -81,12 +81,12 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * The categories of notifications that the contact will receive
+   * Required. The categories of notifications that the contact will receive
    * communications for.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.essentialcontacts.v1.NotificationCategory notification_category_subscriptions = 3;
+   * repeated .google.cloud.essentialcontacts.v1.NotificationCategory notification_category_subscriptions = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return A list containing the notificationCategorySubscriptions.
@@ -97,12 +97,12 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * The categories of notifications that the contact will receive
+   * Required. The categories of notifications that the contact will receive
    * communications for.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.essentialcontacts.v1.NotificationCategory notification_category_subscriptions = 3;
+   * repeated .google.cloud.essentialcontacts.v1.NotificationCategory notification_category_subscriptions = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The count of notificationCategorySubscriptions.
@@ -112,12 +112,12 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * The categories of notifications that the contact will receive
+   * Required. The categories of notifications that the contact will receive
    * communications for.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.essentialcontacts.v1.NotificationCategory notification_category_subscriptions = 3;
+   * repeated .google.cloud.essentialcontacts.v1.NotificationCategory notification_category_subscriptions = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @param index The index of the element to return.
@@ -129,12 +129,12 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * The categories of notifications that the contact will receive
+   * Required. The categories of notifications that the contact will receive
    * communications for.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.essentialcontacts.v1.NotificationCategory notification_category_subscriptions = 3;
+   * repeated .google.cloud.essentialcontacts.v1.NotificationCategory notification_category_subscriptions = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for
@@ -145,12 +145,12 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * The categories of notifications that the contact will receive
+   * Required. The categories of notifications that the contact will receive
    * communications for.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.essentialcontacts.v1.NotificationCategory notification_category_subscriptions = 3;
+   * repeated .google.cloud.essentialcontacts.v1.NotificationCategory notification_category_subscriptions = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @param index The index of the value to return.
@@ -163,13 +163,13 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * The preferred language for notifications, as a ISO 639-1 language code. See
-   * [Supported
+   * Required. The preferred language for notifications, as a ISO 639-1 language
+   * code. See [Supported
    * languages](https://cloud.google.com/resource-manager/docs/managing-notification-contacts#supported-languages)
    * for a list of supported languages.
    * </pre>
    *
-   * <code>string language_tag = 4;</code>
+   * <code>string language_tag = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The languageTag.
    */
@@ -178,13 +178,13 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * The preferred language for notifications, as a ISO 639-1 language code. See
-   * [Supported
+   * Required. The preferred language for notifications, as a ISO 639-1 language
+   * code. See [Supported
    * languages](https://cloud.google.com/resource-manager/docs/managing-notification-contacts#supported-languages)
    * for a list of supported languages.
    * </pre>
    *
-   * <code>string language_tag = 4;</code>
+   * <code>string language_tag = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for languageTag.
    */

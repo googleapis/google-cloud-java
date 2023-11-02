@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface FilterOrBuilder
    *
    * <pre>
    * The dimension name or metric name.
+   *
    * In most methods, dimensions &amp; metrics can be used for the first time in
    * this field. However in a RunPivotReportRequest, this field must be
    * additionally specified by name in the RunPivotReportRequest's dimensions or
@@ -44,6 +45,7 @@ public interface FilterOrBuilder
    *
    * <pre>
    * The dimension name or metric name.
+   *
    * In most methods, dimensions &amp; metrics can be used for the first time in
    * this field. However in a RunPivotReportRequest, this field must be
    * additionally specified by name in the RunPivotReportRequest's dimensions or
@@ -196,5 +198,5 @@ public interface FilterOrBuilder
    */
   com.google.analytics.data.v1beta.Filter.BetweenFilterOrBuilder getBetweenFilterOrBuilder();
 
-  public com.google.analytics.data.v1beta.Filter.OneFilterCase getOneFilterCase();
+  com.google.analytics.data.v1beta.Filter.OneFilterCase getOneFilterCase();
 }

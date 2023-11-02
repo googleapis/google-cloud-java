@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnalyzeOrgPoliciesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -128,6 +123,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * The ordered list of all organization policies from the
      * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
      * to the scope specified in the request.
+     *
      * If the constraint is defined with default policy, it will also appear in
      * the list.
      * </pre>
@@ -142,6 +138,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * The ordered list of all organization policies from the
      * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
      * to the scope specified in the request.
+     *
      * If the constraint is defined with default policy, it will also appear in
      * the list.
      * </pre>
@@ -156,6 +153,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * The ordered list of all organization policies from the
      * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
      * to the scope specified in the request.
+     *
      * If the constraint is defined with default policy, it will also appear in
      * the list.
      * </pre>
@@ -170,6 +168,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * The ordered list of all organization policies from the
      * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
      * to the scope specified in the request.
+     *
      * If the constraint is defined with default policy, it will also appear in
      * the list.
      * </pre>
@@ -185,6 +184,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * The ordered list of all organization policies from the
      * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
      * to the scope specified in the request.
+     *
      * If the constraint is defined with default policy, it will also appear in
      * the list.
      * </pre>
@@ -220,11 +220,6 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new OrgPolicyResult();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -315,6 +310,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * The ordered list of all organization policies from the
      * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
      * to the scope specified in the request.
+     *
      * If the constraint is defined with default policy, it will also appear in
      * the list.
      * </pre>
@@ -332,6 +328,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * The ordered list of all organization policies from the
      * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
      * to the scope specified in the request.
+     *
      * If the constraint is defined with default policy, it will also appear in
      * the list.
      * </pre>
@@ -350,6 +347,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * The ordered list of all organization policies from the
      * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
      * to the scope specified in the request.
+     *
      * If the constraint is defined with default policy, it will also appear in
      * the list.
      * </pre>
@@ -367,6 +365,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * The ordered list of all organization policies from the
      * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
      * to the scope specified in the request.
+     *
      * If the constraint is defined with default policy, it will also appear in
      * the list.
      * </pre>
@@ -384,6 +383,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * The ordered list of all organization policies from the
      * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
      * to the scope specified in the request.
+     *
      * If the constraint is defined with default policy, it will also appear in
      * the list.
      * </pre>
@@ -1081,6 +1081,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1101,6 +1102,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1121,6 +1123,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1141,6 +1144,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1167,6 +1171,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1191,6 +1196,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1217,6 +1223,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1243,6 +1250,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1267,6 +1275,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1291,6 +1300,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1315,6 +1325,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1338,6 +1349,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1361,6 +1373,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1377,6 +1390,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1398,6 +1412,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1419,6 +1434,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1436,6 +1452,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>
@@ -1453,6 +1470,7 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
        * The ordered list of all organization policies from the
        * [AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource][].
        * to the scope specified in the request.
+       *
        * If the constraint is defined with default policy, it will also appear in
        * the list.
        * </pre>

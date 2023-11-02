@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -466,6 +466,7 @@ public interface ApiConfigOrBuilder
    * service definitions. See
    * https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview
    * for the expected file contents.
+   *
    * If multiple files are specified, the files are merged with the following
    * rules:
    * * All singular scalar fields are merged using "last one wins" semantics in
@@ -488,6 +489,7 @@ public interface ApiConfigOrBuilder
    * service definitions. See
    * https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview
    * for the expected file contents.
+   *
    * If multiple files are specified, the files are merged with the following
    * rules:
    * * All singular scalar fields are merged using "last one wins" semantics in
@@ -510,6 +512,7 @@ public interface ApiConfigOrBuilder
    * service definitions. See
    * https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview
    * for the expected file contents.
+   *
    * If multiple files are specified, the files are merged with the following
    * rules:
    * * All singular scalar fields are merged using "last one wins" semantics in
@@ -532,6 +535,7 @@ public interface ApiConfigOrBuilder
    * service definitions. See
    * https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview
    * for the expected file contents.
+   *
    * If multiple files are specified, the files are merged with the following
    * rules:
    * * All singular scalar fields are merged using "last one wins" semantics in
@@ -555,6 +559,7 @@ public interface ApiConfigOrBuilder
    * service definitions. See
    * https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview
    * for the expected file contents.
+   *
    * If multiple files are specified, the files are merged with the following
    * rules:
    * * All singular scalar fields are merged using "last one wins" semantics in

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,15 +28,19 @@ package com.google.cloud.billing.budgets.v1beta1;
  * budget), budget alert emails are sent to the email recipients you specify
  * in the
  * [NotificationsRule](#notificationsrule).
+ *
  * Threshold rules also affect the fields included in the
  * [JSON data
  * object](https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format)
  * sent to a Pub/Sub topic.
+ *
  * Threshold rules are _required_ if using email notifications.
+ *
  * Threshold rules are _optional_ if only setting a
  * [`pubsubTopic` NotificationsRule](#NotificationsRule),
  * unless you want your JSON data object to include data about the thresholds
  * you set.
+ *
  * For more information, see
  * [set budget threshold rules and
  * actions](https://cloud.google.com/billing/docs/how-to/budgets#budget-actions).
@@ -62,11 +66,6 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ThresholdRule();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -121,7 +120,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * Use forecasted spend for the period as the basis for comparison against
      * the threshold.
      * FORECASTED_SPEND can only be set when the budget's time period is a
-     * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].  It cannot be set in combination with
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
+     * It cannot be set in combination with
      * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
      * </pre>
      *
@@ -158,7 +158,8 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * Use forecasted spend for the period as the basis for comparison against
      * the threshold.
      * FORECASTED_SPEND can only be set when the budget's time period is a
-     * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].  It cannot be set in combination with
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
+     * It cannot be set in combination with
      * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
      * </pre>
      *
@@ -501,15 +502,19 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
    * budget), budget alert emails are sent to the email recipients you specify
    * in the
    * [NotificationsRule](#notificationsrule).
+   *
    * Threshold rules also affect the fields included in the
    * [JSON data
    * object](https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format)
    * sent to a Pub/Sub topic.
+   *
    * Threshold rules are _required_ if using email notifications.
+   *
    * Threshold rules are _optional_ if only setting a
    * [`pubsubTopic` NotificationsRule](#NotificationsRule),
    * unless you want your JSON data object to include data about the thresholds
    * you set.
+   *
    * For more information, see
    * [set budget threshold rules and
    * actions](https://cloud.google.com/billing/docs/how-to/budgets#budget-actions).

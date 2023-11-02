@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public interface ContainerStoppedEventOrBuilder
    * If the content emits large amounts of debugging noise or contains
    * sensitive information, you can prevent the content from being printed by
    * setting the `DISABLE_STANDARD_ERROR_CAPTURE` flag.
+   *
    * Note that only a small amount of the end of the stream is captured here.
    * The entire stream is stored in the `/google/logs` directory mounted into
    * each action, and can be copied off the machine as described elsewhere.
@@ -75,6 +76,7 @@ public interface ContainerStoppedEventOrBuilder
    * If the content emits large amounts of debugging noise or contains
    * sensitive information, you can prevent the content from being printed by
    * setting the `DISABLE_STANDARD_ERROR_CAPTURE` flag.
+   *
    * Note that only a small amount of the end of the stream is captured here.
    * The entire stream is stored in the `/google/logs` directory mounted into
    * each action, and can be copied off the machine as described elsewhere.

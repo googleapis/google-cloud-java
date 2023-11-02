@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,6 +69,7 @@ public interface UpdateEntryGroupRequestOrBuilder
    *
    * <pre>
    * Names of fields whose values to overwrite on an entry group.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
@@ -84,6 +85,7 @@ public interface UpdateEntryGroupRequestOrBuilder
    *
    * <pre>
    * Names of fields whose values to overwrite on an entry group.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
@@ -99,6 +101,7 @@ public interface UpdateEntryGroupRequestOrBuilder
    *
    * <pre>
    * Names of fields whose values to overwrite on an entry group.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.

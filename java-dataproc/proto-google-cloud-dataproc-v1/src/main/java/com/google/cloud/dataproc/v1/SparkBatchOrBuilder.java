@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -328,5 +328,5 @@ public interface SparkBatchOrBuilder
    */
   com.google.protobuf.ByteString getArchiveUrisBytes(int index);
 
-  public com.google.cloud.dataproc.v1.SparkBatch.DriverCase getDriverCase();
+  com.google.cloud.dataproc.v1.SparkBatch.DriverCase getDriverCase();
 }

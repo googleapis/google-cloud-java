@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ public interface DeleteSessionEntityTypeRequestOrBuilder
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
    *   &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+   *
    * If `Location ID` is not specified we assume default 'us' location. If
    * `Environment ID` is not specified, we assume default 'draft' environment.
    * If `User ID` is not specified, we assume default '-' user.
@@ -65,6 +66,7 @@ public interface DeleteSessionEntityTypeRequestOrBuilder
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
    *   &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+   *
    * If `Location ID` is not specified we assume default 'us' location. If
    * `Environment ID` is not specified, we assume default 'draft' environment.
    * If `User ID` is not specified, we assume default '-' user.

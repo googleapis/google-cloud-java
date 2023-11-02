@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     outputUri_ = "";
     state_ = 0;
     mode_ = 0;
+    optimization_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Job();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -450,7 +446,169 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.video.transcoder.v1.Job.ProcessingMode)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The optimization strategy of the job. The default is `AUTODETECT`.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.video.transcoder.v1.Job.OptimizationStrategy}
+   */
+  public enum OptimizationStrategy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The optimization strategy is not specified.
+     * </pre>
+     *
+     * <code>OPTIMIZATION_STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    OPTIMIZATION_STRATEGY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Prioritize job processing speed.
+     * </pre>
+     *
+     * <code>AUTODETECT = 1;</code>
+     */
+    AUTODETECT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Disable all optimizations.
+     * </pre>
+     *
+     * <code>DISABLED = 2;</code>
+     */
+    DISABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The optimization strategy is not specified.
+     * </pre>
+     *
+     * <code>OPTIMIZATION_STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    public static final int OPTIMIZATION_STRATEGY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Prioritize job processing speed.
+     * </pre>
+     *
+     * <code>AUTODETECT = 1;</code>
+     */
+    public static final int AUTODETECT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Disable all optimizations.
+     * </pre>
+     *
+     * <code>DISABLED = 2;</code>
+     */
+    public static final int DISABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OptimizationStrategy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static OptimizationStrategy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return OPTIMIZATION_STRATEGY_UNSPECIFIED;
+        case 1:
+          return AUTODETECT;
+        case 2:
+          return DISABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OptimizationStrategy>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<OptimizationStrategy>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<OptimizationStrategy>() {
+              public OptimizationStrategy findValueByNumber(int number) {
+                return OptimizationStrategy.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.Job.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final OptimizationStrategy[] VALUES = values();
+
+    public static OptimizationStrategy valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OptimizationStrategy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.video.transcoder.v1.Job.OptimizationStrategy)
+  }
+
   private int jobConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object jobConfig_;
 
   public enum JobConfigCase
@@ -677,6 +835,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -693,6 +852,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -722,6 +882,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -1199,6 +1360,70 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int BATCH_MODE_PRIORITY_FIELD_NUMBER = 21;
+  private int batchModePriority_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The processing priority of a batch job.
+   * This field can only be set for batch mode jobs. The default value is 0.
+   * This value cannot be negative. Higher values correspond to higher
+   * priorities for the job.
+   * </pre>
+   *
+   * <code>int32 batch_mode_priority = 21;</code>
+   *
+   * @return The batchModePriority.
+   */
+  @java.lang.Override
+  public int getBatchModePriority() {
+    return batchModePriority_;
+  }
+
+  public static final int OPTIMIZATION_FIELD_NUMBER = 22;
+  private int optimization_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optimization strategy of the job. The default is
+   * `AUTODETECT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.Job.OptimizationStrategy optimization = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for optimization.
+   */
+  @java.lang.Override
+  public int getOptimizationValue() {
+    return optimization_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optimization strategy of the job. The default is
+   * `AUTODETECT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.Job.OptimizationStrategy optimization = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The optimization.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy getOptimization() {
+    com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy result =
+        com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy.forNumber(optimization_);
+    return result == null
+        ? com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1254,6 +1479,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.video.transcoder.v1.Job.ProcessingMode.PROCESSING_MODE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(20, mode_);
+    }
+    if (batchModePriority_ != 0) {
+      output.writeInt32(21, batchModePriority_);
+    }
+    if (optimization_
+        != com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy
+            .OPTIMIZATION_STRATEGY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(22, optimization_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1316,6 +1550,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, mode_);
     }
+    if (batchModePriority_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(21, batchModePriority_);
+    }
+    if (optimization_
+        != com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy
+            .OPTIMIZATION_STRATEGY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, optimization_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1354,6 +1597,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (!getError().equals(other.getError())) return false;
     }
     if (mode_ != other.mode_) return false;
+    if (getBatchModePriority() != other.getBatchModePriority()) return false;
+    if (optimization_ != other.optimization_) return false;
     if (!getJobConfigCase().equals(other.getJobConfigCase())) return false;
     switch (jobConfigCase_) {
       case 4:
@@ -1408,6 +1653,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + MODE_FIELD_NUMBER;
     hash = (53 * hash) + mode_;
+    hash = (37 * hash) + BATCH_MODE_PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + getBatchModePriority();
+    hash = (37 * hash) + OPTIMIZATION_FIELD_NUMBER;
+    hash = (53 * hash) + optimization_;
     switch (jobConfigCase_) {
       case 4:
         hash = (37 * hash) + TEMPLATE_ID_FIELD_NUMBER;
@@ -1609,6 +1858,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         errorBuilder_ = null;
       }
       mode_ = 0;
+      batchModePriority_ = 0;
+      optimization_ = 0;
       jobConfigCase_ = 0;
       jobConfig_ = null;
       return this;
@@ -1681,6 +1932,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.mode_ = mode_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.batchModePriority_ = batchModePriority_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.optimization_ = optimization_;
       }
     }
 
@@ -1774,6 +2031,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.mode_ != 0) {
         setModeValue(other.getModeValue());
+      }
+      if (other.getBatchModePriority() != 0) {
+        setBatchModePriority(other.getBatchModePriority());
+      }
+      if (other.optimization_ != 0) {
+        setOptimizationValue(other.getOptimizationValue());
       }
       switch (other.getJobConfigCase()) {
         case TEMPLATE_ID:
@@ -1904,6 +2167,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 160
+            case 168:
+              {
+                batchModePriority_ = input.readInt32();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 168
+            case 176:
+              {
+                optimization_ = input.readEnum();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2311,6 +2586,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
@@ -2328,6 +2604,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
@@ -2358,6 +2635,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
@@ -2388,6 +2666,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
@@ -2411,6 +2690,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
@@ -2432,6 +2712,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
@@ -3853,6 +4134,176 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMode() {
       bitField0_ = (bitField0_ & ~0x00001000);
       mode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int batchModePriority_;
+    /**
+     *
+     *
+     * <pre>
+     * The processing priority of a batch job.
+     * This field can only be set for batch mode jobs. The default value is 0.
+     * This value cannot be negative. Higher values correspond to higher
+     * priorities for the job.
+     * </pre>
+     *
+     * <code>int32 batch_mode_priority = 21;</code>
+     *
+     * @return The batchModePriority.
+     */
+    @java.lang.Override
+    public int getBatchModePriority() {
+      return batchModePriority_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The processing priority of a batch job.
+     * This field can only be set for batch mode jobs. The default value is 0.
+     * This value cannot be negative. Higher values correspond to higher
+     * priorities for the job.
+     * </pre>
+     *
+     * <code>int32 batch_mode_priority = 21;</code>
+     *
+     * @param value The batchModePriority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBatchModePriority(int value) {
+
+      batchModePriority_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The processing priority of a batch job.
+     * This field can only be set for batch mode jobs. The default value is 0.
+     * This value cannot be negative. Higher values correspond to higher
+     * priorities for the job.
+     * </pre>
+     *
+     * <code>int32 batch_mode_priority = 21;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBatchModePriority() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      batchModePriority_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int optimization_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optimization strategy of the job. The default is
+     * `AUTODETECT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.Job.OptimizationStrategy optimization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for optimization.
+     */
+    @java.lang.Override
+    public int getOptimizationValue() {
+      return optimization_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optimization strategy of the job. The default is
+     * `AUTODETECT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.Job.OptimizationStrategy optimization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for optimization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOptimizationValue(int value) {
+      optimization_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optimization strategy of the job. The default is
+     * `AUTODETECT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.Job.OptimizationStrategy optimization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The optimization.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy getOptimization() {
+      com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy result =
+          com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy.forNumber(optimization_);
+      return result == null
+          ? com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optimization strategy of the job. The default is
+     * `AUTODETECT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.Job.OptimizationStrategy optimization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The optimization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOptimization(
+        com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00004000;
+      optimization_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optimization strategy of the job. The default is
+     * `AUTODETECT`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.Job.OptimizationStrategy optimization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOptimization() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      optimization_ = 0;
       onChanged();
       return this;
     }

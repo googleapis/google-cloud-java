@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Budget();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -310,6 +305,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
+   * Optional for `pubsubTopic` notifications.
+   *
+   * Required if using email notifications.
    * </pre>
    *
    * <code>
@@ -326,6 +325,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
+   * Optional for `pubsubTopic` notifications.
+   *
+   * Required if using email notifications.
    * </pre>
    *
    * <code>
@@ -343,6 +346,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
+   * Optional for `pubsubTopic` notifications.
+   *
+   * Required if using email notifications.
    * </pre>
    *
    * <code>
@@ -359,6 +366,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
+   * Optional for `pubsubTopic` notifications.
+   *
+   * Required if using email notifications.
    * </pre>
    *
    * <code>
@@ -375,6 +386,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
+   * Optional for `pubsubTopic` notifications.
+   *
+   * Required if using email notifications.
    * </pre>
    *
    * <code>
@@ -457,7 +472,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Etag to validate that the object is unchanged for a
    * read-modify-write operation.
-   * An empty etag will cause an update to overwrite other changes.
+   * An empty etag causes an update to overwrite other changes.
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -482,7 +497,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Etag to validate that the object is unchanged for a
    * read-modify-write operation.
-   * An empty etag will cause an update to overwrite other changes.
+   * An empty etag causes an update to overwrite other changes.
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1738,6 +1753,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -1758,6 +1777,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -1777,6 +1800,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -1796,6 +1823,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -1822,6 +1853,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -1845,6 +1880,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -1870,6 +1909,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -1896,6 +1939,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -1919,6 +1966,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -1942,6 +1993,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -1965,6 +2020,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -1987,6 +2046,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -2009,6 +2072,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -2025,6 +2092,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -2045,6 +2116,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -2065,6 +2140,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -2081,6 +2160,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -2099,6 +2182,10 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Rules that trigger alerts (notifications of thresholds
      * being crossed) when spend exceeds the specified percentages of the budget.
+     *
+     * Optional for `pubsubTopic` notifications.
+     *
+     * Required if using email notifications.
      * </pre>
      *
      * <code>
@@ -2353,7 +2440,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Etag to validate that the object is unchanged for a
      * read-modify-write operation.
-     * An empty etag will cause an update to overwrite other changes.
+     * An empty etag causes an update to overwrite other changes.
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2377,7 +2464,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Etag to validate that the object is unchanged for a
      * read-modify-write operation.
-     * An empty etag will cause an update to overwrite other changes.
+     * An empty etag causes an update to overwrite other changes.
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2401,7 +2488,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Etag to validate that the object is unchanged for a
      * read-modify-write operation.
-     * An empty etag will cause an update to overwrite other changes.
+     * An empty etag causes an update to overwrite other changes.
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2424,7 +2511,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Etag to validate that the object is unchanged for a
      * read-modify-write operation.
-     * An empty etag will cause an update to overwrite other changes.
+     * An empty etag causes an update to overwrite other changes.
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2443,7 +2530,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Etag to validate that the object is unchanged for a
      * read-modify-write operation.
-     * An empty etag will cause an update to overwrite other changes.
+     * An empty etag causes an update to overwrite other changes.
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,8 +62,9 @@ public interface ReviewDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the HumanReviewConfig that the document will
-   * be reviewed with.
+   * Required. The resource name of the
+   * [HumanReviewConfig][google.cloud.documentai.v1beta3.HumanReviewConfig] that
+   * the document will be reviewed with.
    * </pre>
    *
    * <code>
@@ -77,8 +78,9 @@ public interface ReviewDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the HumanReviewConfig that the document will
-   * be reviewed with.
+   * Required. The resource name of the
+   * [HumanReviewConfig][google.cloud.documentai.v1beta3.HumanReviewConfig] that
+   * the document will be reviewed with.
    * </pre>
    *
    * <code>
@@ -99,7 +101,7 @@ public interface ReviewDocumentRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=981
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1131
    * @return Whether the document field is set.
    */
   @java.lang.Deprecated
@@ -114,7 +116,7 @@ public interface ReviewDocumentRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=981
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1131
    * @return The document.
    */
   @java.lang.Deprecated
@@ -204,5 +206,5 @@ public interface ReviewDocumentRequestOrBuilder
    */
   com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder();
 
-  public com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.SourceCase getSourceCase();
+  com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.SourceCase getSourceCase();
 }

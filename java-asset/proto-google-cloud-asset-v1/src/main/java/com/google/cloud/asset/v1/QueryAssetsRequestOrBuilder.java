@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface QueryAssetsRequestOrBuilder
    * organization number (such as "organizations/123"), a project ID (such as
    * "projects/my-project-id"), or a project number (such as "projects/12345"),
    * or a folder number (such as "folders/123").
+   *
    * Only assets belonging to the `parent` will be returned.
    * </pre>
    *
@@ -49,6 +50,7 @@ public interface QueryAssetsRequestOrBuilder
    * organization number (such as "organizations/123"), a project ID (such as
    * "projects/my-project-id"), or a project number (such as "projects/12345"),
    * or a folder number (such as "folders/123").
+   *
    * Only assets belonging to the `parent` will be returned.
    * </pre>
    *
@@ -64,8 +66,8 @@ public interface QueryAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A SQL statement that's compatible with [BigQuery Standard
-   * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+   * Optional. A SQL statement that's compatible with [BigQuery
+   * SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
    * </pre>
    *
    * <code>string statement = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77,8 +79,8 @@ public interface QueryAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A SQL statement that's compatible with [BigQuery Standard
-   * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+   * Optional. A SQL statement that's compatible with [BigQuery
+   * SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
    * </pre>
    *
    * <code>string statement = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90,8 +92,8 @@ public interface QueryAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A SQL statement that's compatible with [BigQuery Standard
-   * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+   * Optional. A SQL statement that's compatible with [BigQuery
+   * SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
    * </pre>
    *
    * <code>string statement = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -146,8 +148,10 @@ public interface QueryAssetsRequestOrBuilder
    * <pre>
    * Optional. The maximum number of rows to return in the results. Responses
    * are limited to 10 MB and 1000 rows.
+   *
    * By default, the maximum row count is 1000. When the byte or row count limit
    * is reached, the rest of the query results will be paginated.
+   *
    * The field will be ignored when [output_config] is specified.
    * </pre>
    *
@@ -162,6 +166,7 @@ public interface QueryAssetsRequestOrBuilder
    *
    * <pre>
    * Optional. A page token received from previous `QueryAssets`.
+   *
    * The field will be ignored when [output_config] is specified.
    * </pre>
    *
@@ -175,6 +180,7 @@ public interface QueryAssetsRequestOrBuilder
    *
    * <pre>
    * Optional. A page token received from previous `QueryAssets`.
+   *
    * The field will be ignored when [output_config] is specified.
    * </pre>
    *
@@ -193,11 +199,13 @@ public interface QueryAssetsRequestOrBuilder
    * first query, and 1 minute for the following queries. If the query is
    * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
    * false.
+   *
    * Like BigQuery [jobs.query
    * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
    * The call is not guaranteed to wait for the specified timeout; it typically
    * returns after around 200 seconds (200,000 milliseconds), even if the query
    * is not complete.
+   *
    * The field will be ignored when [output_config] is specified.
    * </pre>
    *
@@ -215,11 +223,13 @@ public interface QueryAssetsRequestOrBuilder
    * first query, and 1 minute for the following queries. If the query is
    * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
    * false.
+   *
    * Like BigQuery [jobs.query
    * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
    * The call is not guaranteed to wait for the specified timeout; it typically
    * returns after around 200 seconds (200,000 milliseconds), even if the query
    * is not complete.
+   *
    * The field will be ignored when [output_config] is specified.
    * </pre>
    *
@@ -237,11 +247,13 @@ public interface QueryAssetsRequestOrBuilder
    * first query, and 1 minute for the following queries. If the query is
    * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
    * false.
+   *
    * Like BigQuery [jobs.query
    * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
    * The call is not guaranteed to wait for the specified timeout; it typically
    * returns after around 200 seconds (200,000 milliseconds), even if the query
    * is not complete.
+   *
    * The field will be ignored when [output_config] is specified.
    * </pre>
    *
@@ -342,9 +354,11 @@ public interface QueryAssetsRequestOrBuilder
    *
    * <pre>
    * Optional. Destination where the query results will be saved.
+   *
    * When this field is specified, the query results won't be saved in the
    * [QueryAssetsResponse.query_result]. Instead
    * [QueryAssetsResponse.output_config] will be set.
+   *
    * Meanwhile, [QueryAssetsResponse.job_reference] will be set and can be used
    * to check the status of the query job when passed to a following
    * [QueryAssets] API call.
@@ -362,9 +376,11 @@ public interface QueryAssetsRequestOrBuilder
    *
    * <pre>
    * Optional. Destination where the query results will be saved.
+   *
    * When this field is specified, the query results won't be saved in the
    * [QueryAssetsResponse.query_result]. Instead
    * [QueryAssetsResponse.output_config] will be set.
+   *
    * Meanwhile, [QueryAssetsResponse.job_reference] will be set and can be used
    * to check the status of the query job when passed to a following
    * [QueryAssets] API call.
@@ -382,9 +398,11 @@ public interface QueryAssetsRequestOrBuilder
    *
    * <pre>
    * Optional. Destination where the query results will be saved.
+   *
    * When this field is specified, the query results won't be saved in the
    * [QueryAssetsResponse.query_result]. Instead
    * [QueryAssetsResponse.output_config] will be set.
+   *
    * Meanwhile, [QueryAssetsResponse.job_reference] will be set and can be used
    * to check the status of the query job when passed to a following
    * [QueryAssets] API call.
@@ -396,7 +414,7 @@ public interface QueryAssetsRequestOrBuilder
    */
   com.google.cloud.asset.v1.QueryAssetsOutputConfigOrBuilder getOutputConfigOrBuilder();
 
-  public com.google.cloud.asset.v1.QueryAssetsRequest.QueryCase getQueryCase();
+  com.google.cloud.asset.v1.QueryAssetsRequest.QueryCase getQueryCase();
 
-  public com.google.cloud.asset.v1.QueryAssetsRequest.TimeCase getTimeCase();
+  com.google.cloud.asset.v1.QueryAssetsRequest.TimeCase getTimeCase();
 }

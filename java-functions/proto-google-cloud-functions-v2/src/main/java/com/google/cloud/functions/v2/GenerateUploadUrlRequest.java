@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GenerateUploadUrlRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,14 +128,16 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Resource name of a KMS crypto key (managed by the user) used to
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function source code objects in intermediate Cloud Storage
    * buckets. When you generate an upload url and upload your source code, it
    * gets copied to an intermediate Cloud Storage bucket. The source code is
    * then copied to a versioned directory in the sources bucket in the consumer
    * project during the function deployment.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
    * The Google Cloud Functions service account
    * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
    * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -168,14 +165,16 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Resource name of a KMS crypto key (managed by the user) used to
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function source code objects in intermediate Cloud Storage
    * buckets. When you generate an upload url and upload your source code, it
    * gets copied to an intermediate Cloud Storage bucket. The source code is
    * then copied to a versioned directory in the sources bucket in the consumer
    * project during the function deployment.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
    * The Google Cloud Functions service account
    * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
    * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -693,14 +692,16 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Resource name of a KMS crypto key (managed by the user) used to
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function source code objects in intermediate Cloud Storage
      * buckets. When you generate an upload url and upload your source code, it
      * gets copied to an intermediate Cloud Storage bucket. The source code is
      * then copied to a versioned directory in the sources bucket in the consumer
      * project during the function deployment.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * The Google Cloud Functions service account
      * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
      * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -727,14 +728,16 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Resource name of a KMS crypto key (managed by the user) used to
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function source code objects in intermediate Cloud Storage
      * buckets. When you generate an upload url and upload your source code, it
      * gets copied to an intermediate Cloud Storage bucket. The source code is
      * then copied to a versioned directory in the sources bucket in the consumer
      * project during the function deployment.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * The Google Cloud Functions service account
      * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
      * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -761,14 +764,16 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Resource name of a KMS crypto key (managed by the user) used to
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function source code objects in intermediate Cloud Storage
      * buckets. When you generate an upload url and upload your source code, it
      * gets copied to an intermediate Cloud Storage bucket. The source code is
      * then copied to a versioned directory in the sources bucket in the consumer
      * project during the function deployment.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * The Google Cloud Functions service account
      * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
      * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -794,14 +799,16 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Resource name of a KMS crypto key (managed by the user) used to
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function source code objects in intermediate Cloud Storage
      * buckets. When you generate an upload url and upload your source code, it
      * gets copied to an intermediate Cloud Storage bucket. The source code is
      * then copied to a versioned directory in the sources bucket in the consumer
      * project during the function deployment.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * The Google Cloud Functions service account
      * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
      * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -823,14 +830,16 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Resource name of a KMS crypto key (managed by the user) used to
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function source code objects in intermediate Cloud Storage
      * buckets. When you generate an upload url and upload your source code, it
      * gets copied to an intermediate Cloud Storage bucket. The source code is
      * then copied to a versioned directory in the sources bucket in the consumer
      * project during the function deployment.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * The Google Cloud Functions service account
      * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
      * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
 
   private AzureClusterNetworking() {
     virtualNetworkId_ = "";
-    podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serviceLoadBalancerSubnetId_ = "";
   }
 
@@ -48,11 +48,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AzureClusterNetworking();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -80,10 +75,13 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
    * your cluster.
+   *
    * All components in the cluster (i.e. control plane and node pools) run on a
    * single VNet.
+   *
    * Example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;`
+   *
    * This field cannot be changed after creation.
    * </pre>
    *
@@ -109,10 +107,13 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
    * your cluster.
+   *
    * All components in the cluster (i.e. control plane and node pools) run on a
    * single VNet.
+   *
    * Example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;`
+   *
    * This field cannot be changed after creation.
    * </pre>
    *
@@ -136,15 +137,18 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   public static final int POD_ADDRESS_CIDR_BLOCKS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList podAddressCidrBlocks_;
+  private com.google.protobuf.LazyStringArrayList podAddressCidrBlocks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Required. The IP address range of the pods in this cluster, in CIDR
    * notation (e.g. `10.96.0.0/14`).
+   *
    * All pods in the cluster get assigned a unique IPv4 address from these
    * ranges. Only a single range is supported.
+   *
    * This field cannot be changed after creation.
    * </pre>
    *
@@ -162,8 +166,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The IP address range of the pods in this cluster, in CIDR
    * notation (e.g. `10.96.0.0/14`).
+   *
    * All pods in the cluster get assigned a unique IPv4 address from these
    * ranges. Only a single range is supported.
+   *
    * This field cannot be changed after creation.
    * </pre>
    *
@@ -181,8 +187,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The IP address range of the pods in this cluster, in CIDR
    * notation (e.g. `10.96.0.0/14`).
+   *
    * All pods in the cluster get assigned a unique IPv4 address from these
    * ranges. Only a single range is supported.
+   *
    * This field cannot be changed after creation.
    * </pre>
    *
@@ -201,8 +209,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The IP address range of the pods in this cluster, in CIDR
    * notation (e.g. `10.96.0.0/14`).
+   *
    * All pods in the cluster get assigned a unique IPv4 address from these
    * ranges. Only a single range is supported.
+   *
    * This field cannot be changed after creation.
    * </pre>
    *
@@ -219,15 +229,18 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   public static final int SERVICE_ADDRESS_CIDR_BLOCKS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList serviceAddressCidrBlocks_;
+  private com.google.protobuf.LazyStringArrayList serviceAddressCidrBlocks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Required. The IP address range for services in this cluster, in CIDR
    * notation (e.g. `10.96.0.0/14`).
+   *
    * All services in the cluster get assigned a unique IPv4 address from these
    * ranges. Only a single range is supported.
+   *
    * This field cannot be changed after creating a cluster.
    * </pre>
    *
@@ -246,8 +259,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The IP address range for services in this cluster, in CIDR
    * notation (e.g. `10.96.0.0/14`).
+   *
    * All services in the cluster get assigned a unique IPv4 address from these
    * ranges. Only a single range is supported.
+   *
    * This field cannot be changed after creating a cluster.
    * </pre>
    *
@@ -266,8 +281,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The IP address range for services in this cluster, in CIDR
    * notation (e.g. `10.96.0.0/14`).
+   *
    * All services in the cluster get assigned a unique IPv4 address from these
    * ranges. Only a single range is supported.
+   *
    * This field cannot be changed after creating a cluster.
    * </pre>
    *
@@ -287,8 +304,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The IP address range for services in this cluster, in CIDR
    * notation (e.g. `10.96.0.0/14`).
+   *
    * All services in the cluster get assigned a unique IPv4 address from these
    * ranges. Only a single range is supported.
+   *
    * This field cannot be changed after creating a cluster.
    * </pre>
    *
@@ -314,6 +333,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    * Optional. The ARM ID of the subnet where Kubernetes private service type
    * load balancers are deployed. When unspecified, it defaults to
    * AzureControlPlane.subnet_id.
+   *
    * Example:
    * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
    * </pre>
@@ -342,6 +362,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    * Optional. The ARM ID of the subnet where Kubernetes private service type
    * load balancers are deployed. When unspecified, it defaults to
    * AzureControlPlane.subnet_id.
+   *
    * Example:
    * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
    * </pre>
@@ -610,10 +631,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       virtualNetworkId_ = "";
-      podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       serviceLoadBalancerSubnetId_ = "";
       return this;
     }
@@ -642,7 +661,6 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     public com.google.cloud.gkemulticloud.v1.AzureClusterNetworking buildPartial() {
       com.google.cloud.gkemulticloud.v1.AzureClusterNetworking result =
           new com.google.cloud.gkemulticloud.v1.AzureClusterNetworking(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -650,24 +668,18 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.gkemulticloud.v1.AzureClusterNetworking result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        podAddressCidrBlocks_ = podAddressCidrBlocks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.podAddressCidrBlocks_ = podAddressCidrBlocks_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        serviceAddressCidrBlocks_ = serviceAddressCidrBlocks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.serviceAddressCidrBlocks_ = serviceAddressCidrBlocks_;
-    }
-
     private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureClusterNetworking result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.virtualNetworkId_ = virtualNetworkId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        podAddressCidrBlocks_.makeImmutable();
+        result.podAddressCidrBlocks_ = podAddressCidrBlocks_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        serviceAddressCidrBlocks_.makeImmutable();
+        result.serviceAddressCidrBlocks_ = serviceAddressCidrBlocks_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.serviceLoadBalancerSubnetId_ = serviceLoadBalancerSubnetId_;
@@ -728,7 +740,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       if (!other.podAddressCidrBlocks_.isEmpty()) {
         if (podAddressCidrBlocks_.isEmpty()) {
           podAddressCidrBlocks_ = other.podAddressCidrBlocks_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePodAddressCidrBlocksIsMutable();
           podAddressCidrBlocks_.addAll(other.podAddressCidrBlocks_);
@@ -738,7 +750,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       if (!other.serviceAddressCidrBlocks_.isEmpty()) {
         if (serviceAddressCidrBlocks_.isEmpty()) {
           serviceAddressCidrBlocks_ = other.serviceAddressCidrBlocks_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureServiceAddressCidrBlocksIsMutable();
           serviceAddressCidrBlocks_.addAll(other.serviceAddressCidrBlocks_);
@@ -828,10 +840,13 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
      * your cluster.
+     *
      * All components in the cluster (i.e. control plane and node pools) run on a
      * single VNet.
+     *
      * Example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;`
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -856,10 +871,13 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
      * your cluster.
+     *
      * All components in the cluster (i.e. control plane and node pools) run on a
      * single VNet.
+     *
      * Example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;`
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -884,10 +902,13 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
      * your cluster.
+     *
      * All components in the cluster (i.e. control plane and node pools) run on a
      * single VNet.
+     *
      * Example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;`
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -911,10 +932,13 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
      * your cluster.
+     *
      * All components in the cluster (i.e. control plane and node pools) run on a
      * single VNet.
+     *
      * Example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;`
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -934,10 +958,13 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
      * your cluster.
+     *
      * All components in the cluster (i.e. control plane and node pools) run on a
      * single VNet.
+     *
      * Example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;`
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -957,14 +984,14 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.protobuf.LazyStringList podAddressCidrBlocks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList podAddressCidrBlocks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePodAddressCidrBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!podAddressCidrBlocks_.isModifiable()) {
         podAddressCidrBlocks_ = new com.google.protobuf.LazyStringArrayList(podAddressCidrBlocks_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -972,8 +999,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range of the pods in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All pods in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -983,7 +1012,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * @return A list containing the podAddressCidrBlocks.
      */
     public com.google.protobuf.ProtocolStringList getPodAddressCidrBlocksList() {
-      return podAddressCidrBlocks_.getUnmodifiableView();
+      podAddressCidrBlocks_.makeImmutable();
+      return podAddressCidrBlocks_;
     }
     /**
      *
@@ -991,8 +1021,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range of the pods in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All pods in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -1010,8 +1042,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range of the pods in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All pods in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -1030,8 +1064,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range of the pods in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All pods in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -1050,8 +1086,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range of the pods in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All pods in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -1068,6 +1106,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       }
       ensurePodAddressCidrBlocksIsMutable();
       podAddressCidrBlocks_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1077,8 +1116,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range of the pods in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All pods in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -1094,6 +1135,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       }
       ensurePodAddressCidrBlocksIsMutable();
       podAddressCidrBlocks_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1103,8 +1145,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range of the pods in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All pods in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -1117,6 +1161,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     public Builder addAllPodAddressCidrBlocks(java.lang.Iterable<java.lang.String> values) {
       ensurePodAddressCidrBlocksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, podAddressCidrBlocks_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1126,8 +1171,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range of the pods in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All pods in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -1137,8 +1184,9 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPodAddressCidrBlocks() {
-      podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1148,8 +1196,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range of the pods in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All pods in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -1166,19 +1216,20 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensurePodAddressCidrBlocksIsMutable();
       podAddressCidrBlocks_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList serviceAddressCidrBlocks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList serviceAddressCidrBlocks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureServiceAddressCidrBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!serviceAddressCidrBlocks_.isModifiable()) {
         serviceAddressCidrBlocks_ =
             new com.google.protobuf.LazyStringArrayList(serviceAddressCidrBlocks_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1186,8 +1237,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range for services in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All services in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creating a cluster.
      * </pre>
      *
@@ -1198,7 +1251,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * @return A list containing the serviceAddressCidrBlocks.
      */
     public com.google.protobuf.ProtocolStringList getServiceAddressCidrBlocksList() {
-      return serviceAddressCidrBlocks_.getUnmodifiableView();
+      serviceAddressCidrBlocks_.makeImmutable();
+      return serviceAddressCidrBlocks_;
     }
     /**
      *
@@ -1206,8 +1260,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range for services in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All services in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creating a cluster.
      * </pre>
      *
@@ -1226,8 +1282,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range for services in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All services in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creating a cluster.
      * </pre>
      *
@@ -1247,8 +1305,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range for services in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All services in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creating a cluster.
      * </pre>
      *
@@ -1268,8 +1328,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range for services in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All services in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creating a cluster.
      * </pre>
      *
@@ -1287,6 +1349,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       }
       ensureServiceAddressCidrBlocksIsMutable();
       serviceAddressCidrBlocks_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1296,8 +1359,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range for services in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All services in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creating a cluster.
      * </pre>
      *
@@ -1314,6 +1379,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       }
       ensureServiceAddressCidrBlocksIsMutable();
       serviceAddressCidrBlocks_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1323,8 +1389,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range for services in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All services in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creating a cluster.
      * </pre>
      *
@@ -1338,6 +1406,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     public Builder addAllServiceAddressCidrBlocks(java.lang.Iterable<java.lang.String> values) {
       ensureServiceAddressCidrBlocksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceAddressCidrBlocks_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1347,8 +1416,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range for services in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All services in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creating a cluster.
      * </pre>
      *
@@ -1359,8 +1430,9 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearServiceAddressCidrBlocks() {
-      serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1370,8 +1442,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The IP address range for services in this cluster, in CIDR
      * notation (e.g. `10.96.0.0/14`).
+     *
      * All services in the cluster get assigned a unique IPv4 address from these
      * ranges. Only a single range is supported.
+     *
      * This field cannot be changed after creating a cluster.
      * </pre>
      *
@@ -1389,6 +1463,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureServiceAddressCidrBlocksIsMutable();
       serviceAddressCidrBlocks_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1401,6 +1476,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * Optional. The ARM ID of the subnet where Kubernetes private service type
      * load balancers are deployed. When unspecified, it defaults to
      * AzureControlPlane.subnet_id.
+     *
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
      * </pre>
@@ -1428,6 +1504,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * Optional. The ARM ID of the subnet where Kubernetes private service type
      * load balancers are deployed. When unspecified, it defaults to
      * AzureControlPlane.subnet_id.
+     *
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
      * </pre>
@@ -1455,6 +1532,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * Optional. The ARM ID of the subnet where Kubernetes private service type
      * load balancers are deployed. When unspecified, it defaults to
      * AzureControlPlane.subnet_id.
+     *
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
      * </pre>
@@ -1481,6 +1559,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * Optional. The ARM ID of the subnet where Kubernetes private service type
      * load balancers are deployed. When unspecified, it defaults to
      * AzureControlPlane.subnet_id.
+     *
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
      * </pre>
@@ -1503,6 +1582,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * Optional. The ARM ID of the subnet where Kubernetes private service type
      * load balancers are deployed. When unspecified, it defaults to
      * AzureControlPlane.subnet_id.
+     *
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
      * </pre>

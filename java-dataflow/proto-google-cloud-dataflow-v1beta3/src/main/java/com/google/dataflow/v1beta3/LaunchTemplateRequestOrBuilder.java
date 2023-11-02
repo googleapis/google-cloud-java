@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -207,5 +207,5 @@ public interface LaunchTemplateRequestOrBuilder
    */
   com.google.protobuf.ByteString getLocationBytes();
 
-  public com.google.dataflow.v1beta3.LaunchTemplateRequest.TemplateCase getTemplateCase();
+  com.google.dataflow.v1beta3.LaunchTemplateRequest.TemplateCase getTemplateCase();
 }

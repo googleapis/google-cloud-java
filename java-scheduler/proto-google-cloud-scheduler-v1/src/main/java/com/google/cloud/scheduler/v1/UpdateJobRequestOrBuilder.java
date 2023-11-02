@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface UpdateJobRequestOrBuilder
    * <pre>
    * Required. The new job properties.
    * [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateJobRequestOrBuilder
    * <pre>
    * Required. The new job properties.
    * [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
@@ -59,6 +61,7 @@ public interface UpdateJobRequestOrBuilder
    * <pre>
    * Required. The new job properties.
    * [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>

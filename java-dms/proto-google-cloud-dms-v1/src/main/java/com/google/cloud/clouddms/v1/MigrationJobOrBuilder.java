@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface MigrationJobOrBuilder
    *
    * <pre>
    * The name (URI) of this migration job resource, in the form of:
-   * projects/{project}/locations/{location}/instances/{instance}.
+   * projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,7 +41,7 @@ public interface MigrationJobOrBuilder
    *
    * <pre>
    * The name (URI) of this migration job resource, in the form of:
-   * projects/{project}/locations/{location}/instances/{instance}.
+   * projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -98,8 +98,8 @@ public interface MigrationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the migration job resource was last updated.
-   * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+   * Output only. The timestamp when the migration job resource was last
+   * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
    * Example: "2014-10-02T15:01:23.045123456Z".
    * </pre>
    *
@@ -113,8 +113,8 @@ public interface MigrationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the migration job resource was last updated.
-   * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+   * Output only. The timestamp when the migration job resource was last
+   * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
    * Example: "2014-10-02T15:01:23.045123456Z".
    * </pre>
    *
@@ -128,8 +128,8 @@ public interface MigrationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the migration job resource was last updated.
-   * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+   * Output only. The timestamp when the migration job resource was last
+   * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
    * Example: "2014-10-02T15:01:23.045123456Z".
    * </pre>
    *
@@ -145,6 +145,7 @@ public interface MigrationJobOrBuilder
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -158,6 +159,7 @@ public interface MigrationJobOrBuilder
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -174,6 +176,7 @@ public interface MigrationJobOrBuilder
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -187,6 +190,7 @@ public interface MigrationJobOrBuilder
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -204,6 +208,7 @@ public interface MigrationJobOrBuilder
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -325,6 +330,7 @@ public interface MigrationJobOrBuilder
    * <pre>
    * The path to the dump file in Google Cloud Storage,
    * in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
+   * This field and the "dump_flags" field are mutually exclusive.
    * </pre>
    *
    * <code>string dump_path = 9;</code>
@@ -338,6 +344,7 @@ public interface MigrationJobOrBuilder
    * <pre>
    * The path to the dump file in Google Cloud Storage,
    * in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
+   * This field and the "dump_flags" field are mutually exclusive.
    * </pre>
    *
    * <code>string dump_path = 9;</code>
@@ -345,6 +352,44 @@ public interface MigrationJobOrBuilder
    * @return The bytes for dumpPath.
    */
   com.google.protobuf.ByteString getDumpPathBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The initial dump flags.
+   * This field and the "dump_path" field are mutually exclusive.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+   *
+   * @return Whether the dumpFlags field is set.
+   */
+  boolean hasDumpFlags();
+  /**
+   *
+   *
+   * <pre>
+   * The initial dump flags.
+   * This field and the "dump_path" field are mutually exclusive.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+   *
+   * @return The dumpFlags.
+   */
+  com.google.cloud.clouddms.v1.MigrationJob.DumpFlags getDumpFlags();
+  /**
+   *
+   *
+   * <pre>
+   * The initial dump flags.
+   * This field and the "dump_path" field are mutually exclusive.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+   */
+  com.google.cloud.clouddms.v1.MigrationJob.DumpFlagsOrBuilder getDumpFlagsOrBuilder();
 
   /**
    *
@@ -508,8 +553,9 @@ public interface MigrationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The duration of the migration job (in seconds). A duration in seconds
-   * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+   * Output only. The duration of the migration job (in seconds). A duration in
+   * seconds with up to nine fractional digits, terminated by 's'. Example:
+   * "3.5s".
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -522,8 +568,9 @@ public interface MigrationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The duration of the migration job (in seconds). A duration in seconds
-   * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+   * Output only. The duration of the migration job (in seconds). A duration in
+   * seconds with up to nine fractional digits, terminated by 's'. Example:
+   * "3.5s".
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -536,8 +583,9 @@ public interface MigrationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The duration of the migration job (in seconds). A duration in seconds
-   * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+   * Output only. The duration of the migration job (in seconds). A duration in
+   * seconds with up to nine fractional digits, terminated by 's'. Example:
+   * "3.5s".
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -654,7 +702,8 @@ public interface MigrationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. If the migration job is completed, the time when it was completed.
+   * Output only. If the migration job is completed, the time when it was
+   * completed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -667,7 +716,8 @@ public interface MigrationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. If the migration job is completed, the time when it was completed.
+   * Output only. If the migration job is completed, the time when it was
+   * completed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -680,7 +730,8 @@ public interface MigrationJobOrBuilder
    *
    *
    * <pre>
-   * Output only. If the migration job is completed, the time when it was completed.
+   * Output only. If the migration job is completed, the time when it was
+   * completed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -688,5 +739,163 @@ public interface MigrationJobOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
-  public com.google.cloud.clouddms.v1.MigrationJob.ConnectivityCase getConnectivityCase();
+  /**
+   *
+   *
+   * <pre>
+   * The conversion workspace used by the migration.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+   *
+   * @return Whether the conversionWorkspace field is set.
+   */
+  boolean hasConversionWorkspace();
+  /**
+   *
+   *
+   * <pre>
+   * The conversion workspace used by the migration.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+   *
+   * @return The conversionWorkspace.
+   */
+  com.google.cloud.clouddms.v1.ConversionWorkspaceInfo getConversionWorkspace();
+  /**
+   *
+   *
+   * <pre>
+   * The conversion workspace used by the migration.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+   */
+  com.google.cloud.clouddms.v1.ConversionWorkspaceInfoOrBuilder getConversionWorkspaceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to select the entities to migrate as part of
+   * the migration job. It uses AIP-160 notation to select a subset of the
+   * entities configured on the associated conversion-workspace. This field
+   * should not be set on migration-jobs that are not associated with a
+   * conversion workspace.
+   * </pre>
+   *
+   * <code>string filter = 20;</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to select the entities to migrate as part of
+   * the migration job. It uses AIP-160 notation to select a subset of the
+   * entities configured on the associated conversion-workspace. This field
+   * should not be set on migration-jobs that are not associated with a
+   * conversion workspace.
+   * </pre>
+   *
+   * <code>string filter = 20;</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The CMEK (customer-managed encryption key) fully qualified key name used
+   * for the migration job.
+   * This field supports all migration jobs types except for:
+   * * Mysql to Mysql (use the cmek field in the cloudsql connection profile
+   * instead).
+   * * PostrgeSQL to PostgreSQL (use the cmek field in the cloudsql
+   * connection profile instead).
+   * * PostgreSQL to AlloyDB (use the kms_key_name field in the alloydb
+   * connection profile instead).
+   * Each Cloud CMEK key has the following format:
+   * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
+   * </pre>
+   *
+   * <code>string cmek_key_name = 21;</code>
+   *
+   * @return The cmekKeyName.
+   */
+  java.lang.String getCmekKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * The CMEK (customer-managed encryption key) fully qualified key name used
+   * for the migration job.
+   * This field supports all migration jobs types except for:
+   * * Mysql to Mysql (use the cmek field in the cloudsql connection profile
+   * instead).
+   * * PostrgeSQL to PostgreSQL (use the cmek field in the cloudsql
+   * connection profile instead).
+   * * PostgreSQL to AlloyDB (use the kms_key_name field in the alloydb
+   * connection profile instead).
+   * Each Cloud CMEK key has the following format:
+   * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
+   * </pre>
+   *
+   * <code>string cmek_key_name = 21;</code>
+   *
+   * @return The bytes for cmekKeyName.
+   */
+  com.google.protobuf.ByteString getCmekKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the performanceConfig field is set.
+   */
+  boolean hasPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The performanceConfig.
+   */
+  com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig getPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder
+      getPerformanceConfigOrBuilder();
+
+  com.google.cloud.clouddms.v1.MigrationJob.ConnectivityCase getConnectivityCase();
 }

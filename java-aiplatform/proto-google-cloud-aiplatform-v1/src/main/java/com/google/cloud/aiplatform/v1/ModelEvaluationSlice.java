@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ModelEvaluationSlice();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -212,11 +207,6 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
       return new Slice();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.ModelEvaluationSliceProto
           .internal_static_google_cloud_aiplatform_v1_ModelEvaluationSlice_Slice_descriptor;
@@ -354,11 +344,6 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new SliceSpec();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -520,8 +505,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
          */
         com.google.protobuf.BoolValueOrBuilder getAllValuesOrBuilder();
 
-        public com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.SliceSpec.SliceConfig
-                .KindCase
+        com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.SliceSpec.SliceConfig.KindCase
             getKindCase();
       }
       /**
@@ -535,34 +519,49 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
        * each possible label/value for the corresponding key in `config`.
        * Examples, with feature zip_code with values 12345, 23334, 88888 and
        * feature country with values "US", "Canada", "Mexico" in the dataset:
+       *
        * Example 1:
+       *
        *     {
        *       "zip_code": { "value": { "float_value": 12345.0 } }
        *     }
+       *
        * A single slice for any data with zip_code 12345 in the dataset.
+       *
        * Example 2:
+       *
        *     {
        *       "zip_code": { "range": { "low": 12345, "high": 20000 } }
        *     }
+       *
        * A single slice containing data where the zip_codes between 12345 and
        * 20000 For this example, data with the zip_code of 12345 will be in this
        * slice.
+       *
        * Example 3:
+       *
        *     {
        *       "zip_code": { "range": { "low": 10000, "high": 20000 } },
        *       "country": { "value": { "string_value": "US" } }
        *     }
+       *
        * A single slice containing data where the zip_codes between 10000 and
        * 20000 has the country "US". For this example, data with the zip_code of
        * 12345 and country "US" will be in this slice.
+       *
        * Example 4:
+       *
        *     { "country": {"all_values": { "value": true } } }
+       *
        * Three slices are computed, one for each unique country in the dataset.
+       *
        * Example 5:
+       *
        *     {
        *       "country": { "all_values": { "value": true } },
        *       "zip_code": { "value": { "float_value": 12345.0 } }
        *     }
+       *
        * Three slices are computed, one for each unique country in the dataset
        * where the zip_code is also 12345. For this example, data with zip_code
        * 12345 and country "US" will be in one slice, zip_code 12345 and country
@@ -591,11 +590,6 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
           return new SliceConfig();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.aiplatform.v1.ModelEvaluationSliceProto
               .internal_static_google_cloud_aiplatform_v1_ModelEvaluationSlice_Slice_SliceSpec_SliceConfig_descriptor;
@@ -614,6 +608,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
         }
 
         private int kindCase_ = 0;
+
+        @SuppressWarnings("serial")
         private java.lang.Object kind_;
 
         public enum KindCase
@@ -1100,34 +1096,49 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
          * each possible label/value for the corresponding key in `config`.
          * Examples, with feature zip_code with values 12345, 23334, 88888 and
          * feature country with values "US", "Canada", "Mexico" in the dataset:
+         *
          * Example 1:
+         *
          *     {
          *       "zip_code": { "value": { "float_value": 12345.0 } }
          *     }
+         *
          * A single slice for any data with zip_code 12345 in the dataset.
+         *
          * Example 2:
+         *
          *     {
          *       "zip_code": { "range": { "low": 12345, "high": 20000 } }
          *     }
+         *
          * A single slice containing data where the zip_codes between 12345 and
          * 20000 For this example, data with the zip_code of 12345 will be in this
          * slice.
+         *
          * Example 3:
+         *
          *     {
          *       "zip_code": { "range": { "low": 10000, "high": 20000 } },
          *       "country": { "value": { "string_value": "US" } }
          *     }
+         *
          * A single slice containing data where the zip_codes between 10000 and
          * 20000 has the country "US". For this example, data with the zip_code of
          * 12345 and country "US" will be in this slice.
+         *
          * Example 4:
+         *
          *     { "country": {"all_values": { "value": true } } }
+         *
          * Three slices are computed, one for each unique country in the dataset.
+         *
          * Example 5:
+         *
          *     {
          *       "country": { "all_values": { "value": true } },
          *       "zip_code": { "value": { "float_value": 12345.0 } }
          *     }
+         *
          * Three slices are computed, one for each unique country in the dataset
          * where the zip_code is also 12345. For this example, data with zip_code
          * 12345 and country "US" will be in one slice, zip_code 12345 and country
@@ -2260,11 +2271,6 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
           return new Range();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.aiplatform.v1.ModelEvaluationSliceProto
               .internal_static_google_cloud_aiplatform_v1_ModelEvaluationSlice_Slice_SliceSpec_Range_descriptor;
@@ -2956,7 +2962,7 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
          */
         float getFloatValue();
 
-        public com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.SliceSpec.Value.KindCase
+        com.google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.SliceSpec.Value.KindCase
             getKindCase();
       }
       /**
@@ -2986,11 +2992,6 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
           return new Value();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.aiplatform.v1.ModelEvaluationSliceProto
               .internal_static_google_cloud_aiplatform_v1_ModelEvaluationSlice_Slice_SliceSpec_Value_descriptor;
@@ -3008,6 +3009,8 @@ public final class ModelEvaluationSlice extends com.google.protobuf.GeneratedMes
         }
 
         private int kindCase_ = 0;
+
+        @SuppressWarnings("serial")
         private java.lang.Object kind_;
 
         public enum KindCase

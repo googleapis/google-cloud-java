@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ package com.google.cloud.bigquery.analyticshub.v1.stub;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -26,28 +28,46 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.analyticshub.v1.CreateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.CreateListingRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DataExchange;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListListingsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListListingsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesResponse;
+import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest;
+import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse;
+import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest;
+import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.Listing;
+import com.google.cloud.bigquery.analyticshub.v1.OperationMetadata;
+import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest;
+import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionResponse;
+import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest;
+import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse;
+import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest;
+import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeResponse;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse;
+import com.google.cloud.bigquery.analyticshub.v1.Subscription;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateListingRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -55,6 +75,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -74,7 +95,13 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi
 public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
-  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder()
+          .add(Empty.getDescriptor())
+          .add(RefreshSubscriptionResponse.getDescriptor())
+          .add(SubscribeDataExchangeResponse.getDescriptor())
+          .add(OperationMetadata.getDescriptor())
+          .build();
 
   private static final ApiMethodDescriptor<ListDataExchangesRequest, ListDataExchangesResponse>
       listDataExchangesMethodDescriptor =
@@ -513,6 +540,277 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SubscribeDataExchangeRequest, Operation>
+      subscribeDataExchangeMethodDescriptor =
+          ApiMethodDescriptor.<SubscribeDataExchangeRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/SubscribeDataExchange")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SubscribeDataExchangeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataExchanges/*}:subscribe",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SubscribeDataExchangeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SubscribeDataExchangeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SubscribeDataExchangeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<RefreshSubscriptionRequest, Operation>
+      refreshSubscriptionMethodDescriptor =
+          ApiMethodDescriptor.<RefreshSubscriptionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/RefreshSubscription")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RefreshSubscriptionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/subscriptions/*}:refresh",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RefreshSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RefreshSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RefreshSubscriptionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetSubscriptionRequest, Subscription>
+      getSubscriptionMethodDescriptor =
+          ApiMethodDescriptor.<GetSubscriptionRequest, Subscription>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/GetSubscription")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSubscriptionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/subscriptions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Subscription>newBuilder()
+                      .setDefaultInstance(Subscription.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsMethodDescriptor =
+          ApiMethodDescriptor.<ListSubscriptionsRequest, ListSubscriptionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/ListSubscriptions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSubscriptionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/subscriptions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSubscriptionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSubscriptionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSubscriptionsResponse>newBuilder()
+                      .setDefaultInstance(ListSubscriptionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+      listSharedResourceSubscriptionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/ListSharedResourceSubscriptions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSharedResourceSubscriptionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/dataExchanges/*}:listSubscriptions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSharedResourceSubscriptionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/dataExchanges/*/listings/*}:listSubscriptions")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSharedResourceSubscriptionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "includeDeletedSubscriptions",
+                                request.getIncludeDeletedSubscriptions());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSharedResourceSubscriptionsResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListSharedResourceSubscriptionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+      revokeSubscriptionMethodDescriptor =
+          ApiMethodDescriptor.<RevokeSubscriptionRequest, RevokeSubscriptionResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/RevokeSubscription")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RevokeSubscriptionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/subscriptions/*}:revoke",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RevokeSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RevokeSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RevokeSubscriptionResponse>newBuilder()
+                      .setDefaultInstance(RevokeSubscriptionResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteSubscriptionRequest, Operation>
+      deleteSubscriptionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSubscriptionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/DeleteSubscription")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteSubscriptionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/subscriptions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSubscriptionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
@@ -651,12 +949,38 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
   private final UnaryCallable<DeleteListingRequest, Empty> deleteListingCallable;
   private final UnaryCallable<SubscribeListingRequest, SubscribeListingResponse>
       subscribeListingCallable;
+  private final UnaryCallable<SubscribeDataExchangeRequest, Operation>
+      subscribeDataExchangeCallable;
+  private final OperationCallable<
+          SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeOperationCallable;
+  private final UnaryCallable<RefreshSubscriptionRequest, Operation> refreshSubscriptionCallable;
+  private final OperationCallable<
+          RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionOperationCallable;
+  private final UnaryCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable;
+  private final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable;
+  private final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable;
+  private final UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+      listSharedResourceSubscriptionsCallable;
+  private final UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsPagedResponse>
+      listSharedResourceSubscriptionsPagedCallable;
+  private final UnaryCallable<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+      revokeSubscriptionCallable;
+  private final UnaryCallable<DeleteSubscriptionRequest, Operation> deleteSubscriptionCallable;
+  private final OperationCallable<DeleteSubscriptionRequest, Empty, OperationMetadata>
+      deleteSubscriptionOperationCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonAnalyticsHubServiceStub create(
@@ -699,12 +1023,20 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
 
     HttpJsonCallSettings<ListDataExchangesRequest, ListDataExchangesResponse>
         listDataExchangesTransportSettings =
             HttpJsonCallSettings.<ListDataExchangesRequest, ListDataExchangesResponse>newBuilder()
                 .setMethodDescriptor(listDataExchangesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse>
         listOrgDataExchangesTransportSettings =
@@ -712,75 +1044,246 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                 .<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse>newBuilder()
                 .setMethodDescriptor(listOrgDataExchangesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("organization", String.valueOf(request.getOrganization()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetDataExchangeRequest, DataExchange> getDataExchangeTransportSettings =
         HttpJsonCallSettings.<GetDataExchangeRequest, DataExchange>newBuilder()
             .setMethodDescriptor(getDataExchangeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateDataExchangeRequest, DataExchange>
         createDataExchangeTransportSettings =
             HttpJsonCallSettings.<CreateDataExchangeRequest, DataExchange>newBuilder()
                 .setMethodDescriptor(createDataExchangeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateDataExchangeRequest, DataExchange>
         updateDataExchangeTransportSettings =
             HttpJsonCallSettings.<UpdateDataExchangeRequest, DataExchange>newBuilder()
                 .setMethodDescriptor(updateDataExchangeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "data_exchange.name",
+                          String.valueOf(request.getDataExchange().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteDataExchangeRequest, Empty> deleteDataExchangeTransportSettings =
         HttpJsonCallSettings.<DeleteDataExchangeRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDataExchangeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListListingsRequest, ListListingsResponse> listListingsTransportSettings =
         HttpJsonCallSettings.<ListListingsRequest, ListListingsResponse>newBuilder()
             .setMethodDescriptor(listListingsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetListingRequest, Listing> getListingTransportSettings =
         HttpJsonCallSettings.<GetListingRequest, Listing>newBuilder()
             .setMethodDescriptor(getListingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateListingRequest, Listing> createListingTransportSettings =
         HttpJsonCallSettings.<CreateListingRequest, Listing>newBuilder()
             .setMethodDescriptor(createListingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateListingRequest, Listing> updateListingTransportSettings =
         HttpJsonCallSettings.<UpdateListingRequest, Listing>newBuilder()
             .setMethodDescriptor(updateListingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("listing.name", String.valueOf(request.getListing().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteListingRequest, Empty> deleteListingTransportSettings =
         HttpJsonCallSettings.<DeleteListingRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteListingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SubscribeListingRequest, SubscribeListingResponse>
         subscribeListingTransportSettings =
             HttpJsonCallSettings.<SubscribeListingRequest, SubscribeListingResponse>newBuilder()
                 .setMethodDescriptor(subscribeListingMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
+    HttpJsonCallSettings<SubscribeDataExchangeRequest, Operation>
+        subscribeDataExchangeTransportSettings =
+            HttpJsonCallSettings.<SubscribeDataExchangeRequest, Operation>newBuilder()
+                .setMethodDescriptor(subscribeDataExchangeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<RefreshSubscriptionRequest, Operation>
+        refreshSubscriptionTransportSettings =
+            HttpJsonCallSettings.<RefreshSubscriptionRequest, Operation>newBuilder()
+                .setMethodDescriptor(refreshSubscriptionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionTransportSettings =
+        HttpJsonCallSettings.<GetSubscriptionRequest, Subscription>newBuilder()
+            .setMethodDescriptor(getSubscriptionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListSubscriptionsRequest, ListSubscriptionsResponse>
+        listSubscriptionsTransportSettings =
+            HttpJsonCallSettings.<ListSubscriptionsRequest, ListSubscriptionsResponse>newBuilder()
+                .setMethodDescriptor(listSubscriptionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+        listSharedResourceSubscriptionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listSharedResourceSubscriptionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+        revokeSubscriptionTransportSettings =
+            HttpJsonCallSettings.<RevokeSubscriptionRequest, RevokeSubscriptionResponse>newBuilder()
+                .setMethodDescriptor(revokeSubscriptionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteSubscriptionRequest, Operation> deleteSubscriptionTransportSettings =
+        HttpJsonCallSettings.<DeleteSubscriptionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSubscriptionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listDataExchangesCallable =
@@ -842,6 +1345,67 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
     this.subscribeListingCallable =
         callableFactory.createUnaryCallable(
             subscribeListingTransportSettings, settings.subscribeListingSettings(), clientContext);
+    this.subscribeDataExchangeCallable =
+        callableFactory.createUnaryCallable(
+            subscribeDataExchangeTransportSettings,
+            settings.subscribeDataExchangeSettings(),
+            clientContext);
+    this.subscribeDataExchangeOperationCallable =
+        callableFactory.createOperationCallable(
+            subscribeDataExchangeTransportSettings,
+            settings.subscribeDataExchangeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.refreshSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            refreshSubscriptionTransportSettings,
+            settings.refreshSubscriptionSettings(),
+            clientContext);
+    this.refreshSubscriptionOperationCallable =
+        callableFactory.createOperationCallable(
+            refreshSubscriptionTransportSettings,
+            settings.refreshSubscriptionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            getSubscriptionTransportSettings, settings.getSubscriptionSettings(), clientContext);
+    this.listSubscriptionsCallable =
+        callableFactory.createUnaryCallable(
+            listSubscriptionsTransportSettings,
+            settings.listSubscriptionsSettings(),
+            clientContext);
+    this.listSubscriptionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSubscriptionsTransportSettings,
+            settings.listSubscriptionsSettings(),
+            clientContext);
+    this.listSharedResourceSubscriptionsCallable =
+        callableFactory.createUnaryCallable(
+            listSharedResourceSubscriptionsTransportSettings,
+            settings.listSharedResourceSubscriptionsSettings(),
+            clientContext);
+    this.listSharedResourceSubscriptionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSharedResourceSubscriptionsTransportSettings,
+            settings.listSharedResourceSubscriptionsSettings(),
+            clientContext);
+    this.revokeSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            revokeSubscriptionTransportSettings,
+            settings.revokeSubscriptionSettings(),
+            clientContext);
+    this.deleteSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            deleteSubscriptionTransportSettings,
+            settings.deleteSubscriptionSettings(),
+            clientContext);
+    this.deleteSubscriptionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSubscriptionTransportSettings,
+            settings.deleteSubscriptionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
@@ -873,10 +1437,21 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
     methodDescriptors.add(updateListingMethodDescriptor);
     methodDescriptors.add(deleteListingMethodDescriptor);
     methodDescriptors.add(subscribeListingMethodDescriptor);
+    methodDescriptors.add(subscribeDataExchangeMethodDescriptor);
+    methodDescriptors.add(refreshSubscriptionMethodDescriptor);
+    methodDescriptors.add(getSubscriptionMethodDescriptor);
+    methodDescriptors.add(listSubscriptionsMethodDescriptor);
+    methodDescriptors.add(listSharedResourceSubscriptionsMethodDescriptor);
+    methodDescriptors.add(revokeSubscriptionMethodDescriptor);
+    methodDescriptors.add(deleteSubscriptionMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
+  }
+
+  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+    return httpJsonOperationsStub;
   }
 
   @Override
@@ -957,6 +1532,78 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
   public UnaryCallable<SubscribeListingRequest, SubscribeListingResponse>
       subscribeListingCallable() {
     return subscribeListingCallable;
+  }
+
+  @Override
+  public UnaryCallable<SubscribeDataExchangeRequest, Operation> subscribeDataExchangeCallable() {
+    return subscribeDataExchangeCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeOperationCallable() {
+    return subscribeDataExchangeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RefreshSubscriptionRequest, Operation> refreshSubscriptionCallable() {
+    return refreshSubscriptionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionOperationCallable() {
+    return refreshSubscriptionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
+    return getSubscriptionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable() {
+    return listSubscriptionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable() {
+    return listSubscriptionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+      listSharedResourceSubscriptionsCallable() {
+    return listSharedResourceSubscriptionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsPagedResponse>
+      listSharedResourceSubscriptionsPagedCallable() {
+    return listSharedResourceSubscriptionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+      revokeSubscriptionCallable() {
+    return revokeSubscriptionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSubscriptionRequest, Operation> deleteSubscriptionCallable() {
+    return deleteSubscriptionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSubscriptionRequest, Empty, OperationMetadata>
+      deleteSubscriptionOperationCallable() {
+    return deleteSubscriptionOperationCallable;
   }
 
   @Override

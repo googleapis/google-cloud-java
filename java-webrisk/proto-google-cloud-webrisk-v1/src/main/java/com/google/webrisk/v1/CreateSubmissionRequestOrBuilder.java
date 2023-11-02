@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface CreateSubmissionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project that is making the submission. This string is in
-   * the format "projects/{project_number}".
+   * Required. The name of the project that is making the submission. This
+   * string is in the format "projects/{project_number}".
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateSubmissionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project that is making the submission. This string is in
-   * the format "projects/{project_number}".
+   * Required. The name of the project that is making the submission. This
+   * string is in the format "projects/{project_number}".
    * </pre>
    *
    * <code>

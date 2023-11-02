@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SecretVersion();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -275,6 +270,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    * Output only. The resource name of the
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   *
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
    * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
    * incremented for each subsequent version of the secret.
@@ -303,6 +299,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    * Output only. The resource name of the
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   *
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
    * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
    * incremented for each subsequent version of the secret.
@@ -1133,6 +1130,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The resource name of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     *
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
      * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
      * incremented for each subsequent version of the secret.
@@ -1160,6 +1158,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The resource name of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     *
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
      * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
      * incremented for each subsequent version of the secret.
@@ -1187,6 +1186,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The resource name of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     *
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
      * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
      * incremented for each subsequent version of the secret.
@@ -1213,6 +1213,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The resource name of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     *
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
      * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
      * incremented for each subsequent version of the secret.
@@ -1235,6 +1236,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * Output only. The resource name of the
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     *
      * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
      * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
      * incremented for each subsequent version of the secret.

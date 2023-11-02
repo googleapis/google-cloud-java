@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
     return new GetJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.JobServiceProto
         .internal_static_google_cloud_talent_v4beta1_GetJobRequest_descriptor;
@@ -76,9 +71,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the job to retrieve.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
    * example, "projects/foo/tenants/bar/jobs/baz".
+   *
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/jobs/bar".
    * </pre>
@@ -106,9 +103,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the job to retrieve.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
    * example, "projects/foo/tenants/bar/jobs/baz".
+   *
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/jobs/bar".
    * </pre>
@@ -479,9 +478,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the job to retrieve.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
      * example, "projects/foo/tenants/bar/jobs/baz".
+     *
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * </pre>
@@ -508,9 +509,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the job to retrieve.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
      * example, "projects/foo/tenants/bar/jobs/baz".
+     *
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * </pre>
@@ -537,9 +540,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the job to retrieve.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
      * example, "projects/foo/tenants/bar/jobs/baz".
+     *
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * </pre>
@@ -565,9 +570,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the job to retrieve.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
      * example, "projects/foo/tenants/bar/jobs/baz".
+     *
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * </pre>
@@ -589,9 +596,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the job to retrieve.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
      * example, "projects/foo/tenants/bar/jobs/baz".
+     *
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * </pre>

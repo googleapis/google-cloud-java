@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TextStream();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -168,11 +163,6 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TextMapping();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1052,7 +1042,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The codec for this text stream. The default is `webvtt`.
+   *
    * Supported text codecs:
+   *
    * - `srt`
    * - `ttml`
    * - `cea608`
@@ -1081,7 +1073,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The codec for this text stream. The default is `webvtt`.
+   *
    * Supported text codecs:
+   *
    * - `srt`
    * - `ttml`
    * - `cea608`
@@ -1759,7 +1753,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The codec for this text stream. The default is `webvtt`.
+     *
      * Supported text codecs:
+     *
      * - `srt`
      * - `ttml`
      * - `cea608`
@@ -1787,7 +1783,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The codec for this text stream. The default is `webvtt`.
+     *
      * Supported text codecs:
+     *
      * - `srt`
      * - `ttml`
      * - `cea608`
@@ -1815,7 +1813,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The codec for this text stream. The default is `webvtt`.
+     *
      * Supported text codecs:
+     *
      * - `srt`
      * - `ttml`
      * - `cea608`
@@ -1842,7 +1842,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The codec for this text stream. The default is `webvtt`.
+     *
      * Supported text codecs:
+     *
      * - `srt`
      * - `ttml`
      * - `cea608`
@@ -1865,7 +1867,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The codec for this text stream. The default is `webvtt`.
+     *
      * Supported text codecs:
+     *
      * - `srt`
      * - `ttml`
      * - `cea608`

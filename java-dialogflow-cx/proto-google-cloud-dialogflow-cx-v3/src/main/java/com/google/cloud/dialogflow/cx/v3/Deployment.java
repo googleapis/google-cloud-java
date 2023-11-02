@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Deployment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -368,7 +363,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private Result() {
-      deploymentTestResults_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      deploymentTestResults_ = com.google.protobuf.LazyStringArrayList.emptyList();
       experiment_ = "";
     }
 
@@ -376,11 +371,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Result();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -401,7 +391,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public static final int DEPLOYMENT_TEST_RESULTS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList deploymentTestResults_;
+    private com.google.protobuf.LazyStringArrayList deploymentTestResults_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -747,8 +738,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        deploymentTestResults_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        deploymentTestResults_ = com.google.protobuf.LazyStringArrayList.emptyList();
         experiment_ = "";
         return this;
       }
@@ -777,7 +767,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.Deployment.Result buildPartial() {
         com.google.cloud.dialogflow.cx.v3.Deployment.Result result =
             new com.google.cloud.dialogflow.cx.v3.Deployment.Result(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -785,17 +774,12 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dialogflow.cx.v3.Deployment.Result result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          deploymentTestResults_ = deploymentTestResults_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.deploymentTestResults_ = deploymentTestResults_;
-      }
-
       private void buildPartial0(com.google.cloud.dialogflow.cx.v3.Deployment.Result result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          deploymentTestResults_.makeImmutable();
+          result.deploymentTestResults_ = deploymentTestResults_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.experiment_ = experiment_;
         }
@@ -852,7 +836,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         if (!other.deploymentTestResults_.isEmpty()) {
           if (deploymentTestResults_.isEmpty()) {
             deploymentTestResults_ = other.deploymentTestResults_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureDeploymentTestResultsIsMutable();
             deploymentTestResults_.addAll(other.deploymentTestResults_);
@@ -922,15 +906,15 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList deploymentTestResults_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList deploymentTestResults_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureDeploymentTestResultsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!deploymentTestResults_.isModifiable()) {
           deploymentTestResults_ =
               new com.google.protobuf.LazyStringArrayList(deploymentTestResults_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -948,7 +932,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the deploymentTestResults.
        */
       public com.google.protobuf.ProtocolStringList getDeploymentTestResultsList() {
-        return deploymentTestResults_.getUnmodifiableView();
+        deploymentTestResults_.makeImmutable();
+        return deploymentTestResults_;
       }
       /**
        *
@@ -1029,6 +1014,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDeploymentTestResultsIsMutable();
         deploymentTestResults_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1054,6 +1040,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDeploymentTestResultsIsMutable();
         deploymentTestResults_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1076,6 +1063,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllDeploymentTestResults(java.lang.Iterable<java.lang.String> values) {
         ensureDeploymentTestResultsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deploymentTestResults_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1095,8 +1083,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDeploymentTestResults() {
-        deploymentTestResults_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        deploymentTestResults_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1123,6 +1112,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureDeploymentTestResultsIsMutable();
         deploymentTestResults_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -238,6 +238,7 @@ public interface SearchJobsResponseOrBuilder
    *
    * <pre>
    * Number of jobs that match the specified query.
+   *
    * Note: This size is precise only if the total is less than 100,000.
    * </pre>
    *

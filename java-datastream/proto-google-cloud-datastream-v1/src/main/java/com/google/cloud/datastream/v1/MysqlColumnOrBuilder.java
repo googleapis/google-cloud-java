@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,4 +151,30 @@ public interface MysqlColumnOrBuilder
    * @return The ordinalPosition.
    */
   int getOrdinalPosition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Column precision.
+   * </pre>
+   *
+   * <code>int32 precision = 8;</code>
+   *
+   * @return The precision.
+   */
+  int getPrecision();
+
+  /**
+   *
+   *
+   * <pre>
+   * Column scale.
+   * </pre>
+   *
+   * <code>int32 scale = 9;</code>
+   *
+   * @return The scale.
+   */
+  int getScale();
 }

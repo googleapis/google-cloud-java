@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
     return new ListIntentsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.IntentProto
         .internal_static_google_cloud_dialogflow_v2_ListIntentsRequest_descriptor;
@@ -82,6 +77,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    * Required. The agent to list all intents from.
    * Format: `projects/&lt;Project ID&gt;/agent` or `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;/agent`.
+   *
    * Alternatively, you can specify the environment to list intents for.
    * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -115,6 +111,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    * Required. The agent to list all intents from.
    * Format: `projects/&lt;Project ID&gt;/agent` or `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;/agent`.
+   *
    * Alternatively, you can specify the environment to list intents for.
    * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -755,6 +752,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * Required. The agent to list all intents from.
      * Format: `projects/&lt;Project ID&gt;/agent` or `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;/agent`.
+     *
      * Alternatively, you can specify the environment to list intents for.
      * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -787,6 +785,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * Required. The agent to list all intents from.
      * Format: `projects/&lt;Project ID&gt;/agent` or `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;/agent`.
+     *
      * Alternatively, you can specify the environment to list intents for.
      * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -819,6 +818,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * Required. The agent to list all intents from.
      * Format: `projects/&lt;Project ID&gt;/agent` or `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;/agent`.
+     *
      * Alternatively, you can specify the environment to list intents for.
      * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -850,6 +850,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * Required. The agent to list all intents from.
      * Format: `projects/&lt;Project ID&gt;/agent` or `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;/agent`.
+     *
      * Alternatively, you can specify the environment to list intents for.
      * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -877,6 +878,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * Required. The agent to list all intents from.
      * Format: `projects/&lt;Project ID&gt;/agent` or `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;/agent`.
+     *
      * Alternatively, you can specify the environment to list intents for.
      * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * or `projects/&lt;Project ID&gt;/locations/&lt;Location

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
     return new GetGroupRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupServiceProto
         .internal_static_google_devtools_clouderrorreporting_v1beta1_GetGroupRequest_descriptor;
@@ -79,6 +74,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    * `projects/{projectID}/groups/{group_name}`. Call
    * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    * to return a list of groups belonging to this project.
+   *
    * Example: `projects/my-project-123/groups/my-group`
    * </pre>
    *
@@ -108,6 +104,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    * `projects/{projectID}/groups/{group_name}`. Call
    * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    * to return a list of groups belonging to this project.
+   *
    * Example: `projects/my-project-123/groups/my-group`
    * </pre>
    *
@@ -486,6 +483,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      * `projects/{projectID}/groups/{group_name}`. Call
      * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
      * to return a list of groups belonging to this project.
+     *
      * Example: `projects/my-project-123/groups/my-group`
      * </pre>
      *
@@ -514,6 +512,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      * `projects/{projectID}/groups/{group_name}`. Call
      * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
      * to return a list of groups belonging to this project.
+     *
      * Example: `projects/my-project-123/groups/my-group`
      * </pre>
      *
@@ -542,6 +541,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      * `projects/{projectID}/groups/{group_name}`. Call
      * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
      * to return a list of groups belonging to this project.
+     *
      * Example: `projects/my-project-123/groups/my-group`
      * </pre>
      *
@@ -569,6 +569,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      * `projects/{projectID}/groups/{group_name}`. Call
      * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
      * to return a list of groups belonging to this project.
+     *
      * Example: `projects/my-project-123/groups/my-group`
      * </pre>
      *
@@ -592,6 +593,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
      * `projects/{projectID}/groups/{group_name}`. Call
      * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
      * to return a list of groups belonging to this project.
+     *
      * Example: `projects/my-project-123/groups/my-group`
      * </pre>
      *

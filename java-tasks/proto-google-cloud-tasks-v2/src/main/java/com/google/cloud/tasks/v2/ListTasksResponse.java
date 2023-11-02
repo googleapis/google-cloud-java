@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.tasks.v2;
  *
  *
  * <pre>
- * Response message for listing tasks using [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks].
+ * Response message for listing tasks using
+ * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2.ListTasksResponse}
@@ -46,11 +47,6 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListTasksResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -147,9 +143,11 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A token to retrieve next page of results.
+   *
    * To return the next page of results, call
-   * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as the
-   * [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+   * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as
+   * the [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+   *
    * If the next_page_token is empty, there are no more results.
    * </pre>
    *
@@ -174,9 +172,11 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A token to retrieve next page of results.
+   *
    * To return the next page of results, call
-   * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as the
-   * [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+   * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as
+   * the [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+   *
    * If the next_page_token is empty, there are no more results.
    * </pre>
    *
@@ -371,7 +371,8 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Response message for listing tasks using [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks].
+   * Response message for listing tasks using
+   * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2.ListTasksResponse}
@@ -959,9 +960,11 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A token to retrieve next page of results.
+     *
      * To return the next page of results, call
-     * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as the
-     * [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+     * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as
+     * the [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+     *
      * If the next_page_token is empty, there are no more results.
      * </pre>
      *
@@ -985,9 +988,11 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A token to retrieve next page of results.
+     *
      * To return the next page of results, call
-     * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as the
-     * [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+     * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as
+     * the [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+     *
      * If the next_page_token is empty, there are no more results.
      * </pre>
      *
@@ -1011,9 +1016,11 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A token to retrieve next page of results.
+     *
      * To return the next page of results, call
-     * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as the
-     * [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+     * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as
+     * the [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+     *
      * If the next_page_token is empty, there are no more results.
      * </pre>
      *
@@ -1036,9 +1043,11 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A token to retrieve next page of results.
+     *
      * To return the next page of results, call
-     * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as the
-     * [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+     * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as
+     * the [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+     *
      * If the next_page_token is empty, there are no more results.
      * </pre>
      *
@@ -1057,9 +1066,11 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A token to retrieve next page of results.
+     *
      * To return the next page of results, call
-     * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as the
-     * [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+     * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as
+     * the [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+     *
      * If the next_page_token is empty, there are no more results.
      * </pre>
      *

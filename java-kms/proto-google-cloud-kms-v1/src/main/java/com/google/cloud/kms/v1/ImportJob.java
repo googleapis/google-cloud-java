@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ package com.google.cloud.kms.v1;
  * [CryptoKeys][google.cloud.kms.v1.CryptoKey] and
  * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] using pre-existing
  * key material, generated outside of Cloud KMS.
+ *
  * When an [ImportJob][google.cloud.kms.v1.ImportJob] is created, Cloud KMS will
  * generate a "wrapping key", which is a public/private key pair. You use the
  * wrapping key to encrypt (also known as wrap) the pre-existing key material to
@@ -37,6 +38,7 @@ package com.google.cloud.kms.v1;
  * [ACTIVE][google.cloud.kms.v1.ImportJob.ImportJobState.ACTIVE] and the
  * [public_key][google.cloud.kms.v1.ImportJob.public_key] can be fetched. The
  * fetched public key can then be used to wrap your pre-existing key material.
+ *
  * Once the key material is wrapped, it can be imported into a new
  * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in an existing
  * [CryptoKey][google.cloud.kms.v1.CryptoKey] by calling
@@ -45,10 +47,12 @@ package com.google.cloud.kms.v1;
  * imported with a single [ImportJob][google.cloud.kms.v1.ImportJob]. Cloud KMS
  * uses the private key portion of the wrapping key to unwrap the key material.
  * Only Cloud KMS has access to the private key.
+ *
  * An [ImportJob][google.cloud.kms.v1.ImportJob] expires 3 days after it is
  * created. Once expired, Cloud KMS will no longer be able to import or unwrap
  * any key material that was wrapped with the
  * [ImportJob][google.cloud.kms.v1.ImportJob]'s public key.
+ *
  * For more information, see
  * [Importing a key](https://cloud.google.com/kms/docs/importing-a-key).
  * </pre>
@@ -76,11 +80,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImportJob();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -658,11 +657,6 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new WrappingPublicKey();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2109,6 +2103,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey] and
    * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] using pre-existing
    * key material, generated outside of Cloud KMS.
+   *
    * When an [ImportJob][google.cloud.kms.v1.ImportJob] is created, Cloud KMS will
    * generate a "wrapping key", which is a public/private key pair. You use the
    * wrapping key to encrypt (also known as wrap) the pre-existing key material to
@@ -2120,6 +2115,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * [ACTIVE][google.cloud.kms.v1.ImportJob.ImportJobState.ACTIVE] and the
    * [public_key][google.cloud.kms.v1.ImportJob.public_key] can be fetched. The
    * fetched public key can then be used to wrap your pre-existing key material.
+   *
    * Once the key material is wrapped, it can be imported into a new
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in an existing
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] by calling
@@ -2128,10 +2124,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    * imported with a single [ImportJob][google.cloud.kms.v1.ImportJob]. Cloud KMS
    * uses the private key portion of the wrapping key to unwrap the key material.
    * Only Cloud KMS has access to the private key.
+   *
    * An [ImportJob][google.cloud.kms.v1.ImportJob] expires 3 days after it is
    * created. Once expired, Cloud KMS will no longer be able to import or unwrap
    * any key material that was wrapped with the
    * [ImportJob][google.cloud.kms.v1.ImportJob]'s public key.
+   *
    * For more information, see
    * [Importing a key](https://cloud.google.com/kms/docs/importing-a-key).
    * </pre>

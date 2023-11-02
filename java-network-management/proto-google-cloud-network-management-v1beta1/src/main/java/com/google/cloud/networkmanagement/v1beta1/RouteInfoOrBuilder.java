@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,7 +77,32 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * Name of a Compute Engine route.
+   * Indicates where route is applicable.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14;</code>
+   *
+   * @return The enum numeric value on the wire for routeScope.
+   */
+  int getRouteScopeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates where route is applicable.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14;</code>
+   *
+   * @return The routeScope.
+   */
+  com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope getRouteScope();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of a route.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -89,7 +114,7 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * Name of a Compute Engine route.
+   * Name of a route.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -102,10 +127,10 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine route.
-   * Dynamic route from cloud router does not have a URI.
+   * URI of a route.
+   * Dynamic, peering static and peering dynamic routes do not have an URI.
    * Advertised route from Google Cloud VPC to on-premises network also does
-   * not have a URI.
+   * not have an URI.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -117,10 +142,10 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine route.
-   * Dynamic route from cloud router does not have a URI.
+   * URI of a route.
+   * Dynamic, peering static and peering dynamic routes do not have an URI.
    * Advertised route from Google Cloud VPC to on-premises network also does
-   * not have a URI.
+   * not have an URI.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -183,7 +208,7 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine network.
+   * URI of a Compute Engine network. NETWORK routes only.
    * </pre>
    *
    * <code>string network_uri = 5;</code>
@@ -195,7 +220,7 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine network.
+   * URI of a Compute Engine network. NETWORK routes only.
    * </pre>
    *
    * <code>string network_uri = 5;</code>
@@ -267,4 +292,256 @@ public interface RouteInfoOrBuilder
    * @return The bytes of the instanceTags at the given index.
    */
   com.google.protobuf.ByteString getInstanceTagsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Source IP address range of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>string src_ip_range = 10;</code>
+   *
+   * @return The srcIpRange.
+   */
+  java.lang.String getSrcIpRange();
+  /**
+   *
+   *
+   * <pre>
+   * Source IP address range of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>string src_ip_range = 10;</code>
+   *
+   * @return The bytes for srcIpRange.
+   */
+  com.google.protobuf.ByteString getSrcIpRangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Destination port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string dest_port_ranges = 11;</code>
+   *
+   * @return A list containing the destPortRanges.
+   */
+  java.util.List<java.lang.String> getDestPortRangesList();
+  /**
+   *
+   *
+   * <pre>
+   * Destination port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string dest_port_ranges = 11;</code>
+   *
+   * @return The count of destPortRanges.
+   */
+  int getDestPortRangesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Destination port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string dest_port_ranges = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The destPortRanges at the given index.
+   */
+  java.lang.String getDestPortRanges(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Destination port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string dest_port_ranges = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destPortRanges at the given index.
+   */
+  com.google.protobuf.ByteString getDestPortRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Source port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string src_port_ranges = 12;</code>
+   *
+   * @return A list containing the srcPortRanges.
+   */
+  java.util.List<java.lang.String> getSrcPortRangesList();
+  /**
+   *
+   *
+   * <pre>
+   * Source port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string src_port_ranges = 12;</code>
+   *
+   * @return The count of srcPortRanges.
+   */
+  int getSrcPortRangesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Source port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string src_port_ranges = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The srcPortRanges at the given index.
+   */
+  java.lang.String getSrcPortRanges(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Source port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string src_port_ranges = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the srcPortRanges at the given index.
+   */
+  com.google.protobuf.ByteString getSrcPortRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Protocols of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string protocols = 13;</code>
+   *
+   * @return A list containing the protocols.
+   */
+  java.util.List<java.lang.String> getProtocolsList();
+  /**
+   *
+   *
+   * <pre>
+   * Protocols of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string protocols = 13;</code>
+   *
+   * @return The count of protocols.
+   */
+  int getProtocolsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Protocols of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string protocols = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The protocols at the given index.
+   */
+  java.lang.String getProtocols(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Protocols of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string protocols = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the protocols at the given index.
+   */
+  com.google.protobuf.ByteString getProtocolsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Hub. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_hub_uri = 15;</code>
+   *
+   * @return Whether the nccHubUri field is set.
+   */
+  boolean hasNccHubUri();
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Hub. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_hub_uri = 15;</code>
+   *
+   * @return The nccHubUri.
+   */
+  java.lang.String getNccHubUri();
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Hub. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_hub_uri = 15;</code>
+   *
+   * @return The bytes for nccHubUri.
+   */
+  com.google.protobuf.ByteString getNccHubUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Spoke. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_spoke_uri = 16;</code>
+   *
+   * @return Whether the nccSpokeUri field is set.
+   */
+  boolean hasNccSpokeUri();
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Spoke. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_spoke_uri = 16;</code>
+   *
+   * @return The nccSpokeUri.
+   */
+  java.lang.String getNccSpokeUri();
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Spoke. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_spoke_uri = 16;</code>
+   *
+   * @return The bytes for nccSpokeUri.
+   */
+  com.google.protobuf.ByteString getNccSpokeUriBytes();
 }

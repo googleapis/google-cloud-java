@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,14 +94,18 @@ public interface ListOrdersRequestOrBuilder
    *
    * <pre>
    * Filter that you can use to limit the list request.
+   *
    * A query string that can match a selected set of attributes
    * with string values. For example, `display_name=abc`.
    * Supported query attributes are
+   *
    * * `display_name`
+   *
    * If the query contains special characters other than letters,
    * underscore, or digits, the phrase must be quoted with double quotes. For
    * example, `display_name="foo:bar"`, where the display name needs to be
    * quoted because it contains special character colon.
+   *
    * Queries can be combined with `OR`, and `NOT` to form more complex queries.
    * You can also group them to force a desired evaluation order.
    * For example, `display_name=abc OR display_name=def`.
@@ -117,14 +121,18 @@ public interface ListOrdersRequestOrBuilder
    *
    * <pre>
    * Filter that you can use to limit the list request.
+   *
    * A query string that can match a selected set of attributes
    * with string values. For example, `display_name=abc`.
    * Supported query attributes are
+   *
    * * `display_name`
+   *
    * If the query contains special characters other than letters,
    * underscore, or digits, the phrase must be quoted with double quotes. For
    * example, `display_name="foo:bar"`, where the display name needs to be
    * quoted because it contains special character colon.
+   *
    * Queries can be combined with `OR`, and `NOT` to form more complex queries.
    * You can also group them to force a desired evaluation order.
    * For example, `display_name=abc OR display_name=def`.

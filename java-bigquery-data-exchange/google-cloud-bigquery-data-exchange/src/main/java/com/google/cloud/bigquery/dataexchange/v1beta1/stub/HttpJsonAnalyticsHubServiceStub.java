@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.dataexchange.v1beta1.CreateDataExchangeRequest;
 import com.google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest;
@@ -781,6 +782,12 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
             HttpJsonCallSettings.<ListDataExchangesRequest, ListDataExchangesResponse>newBuilder()
                 .setMethodDescriptor(listDataExchangesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse>
         listOrgDataExchangesTransportSettings =
@@ -788,86 +795,184 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                 .<ListOrgDataExchangesRequest, ListOrgDataExchangesResponse>newBuilder()
                 .setMethodDescriptor(listOrgDataExchangesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("organization", String.valueOf(request.getOrganization()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetDataExchangeRequest, DataExchange> getDataExchangeTransportSettings =
         HttpJsonCallSettings.<GetDataExchangeRequest, DataExchange>newBuilder()
             .setMethodDescriptor(getDataExchangeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateDataExchangeRequest, DataExchange>
         createDataExchangeTransportSettings =
             HttpJsonCallSettings.<CreateDataExchangeRequest, DataExchange>newBuilder()
                 .setMethodDescriptor(createDataExchangeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateDataExchangeRequest, DataExchange>
         updateDataExchangeTransportSettings =
             HttpJsonCallSettings.<UpdateDataExchangeRequest, DataExchange>newBuilder()
                 .setMethodDescriptor(updateDataExchangeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "data_exchange.name",
+                          String.valueOf(request.getDataExchange().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteDataExchangeRequest, Empty> deleteDataExchangeTransportSettings =
         HttpJsonCallSettings.<DeleteDataExchangeRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDataExchangeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListListingsRequest, ListListingsResponse> listListingsTransportSettings =
         HttpJsonCallSettings.<ListListingsRequest, ListListingsResponse>newBuilder()
             .setMethodDescriptor(listListingsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetListingRequest, Listing> getListingTransportSettings =
         HttpJsonCallSettings.<GetListingRequest, Listing>newBuilder()
             .setMethodDescriptor(getListingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateListingRequest, Listing> createListingTransportSettings =
         HttpJsonCallSettings.<CreateListingRequest, Listing>newBuilder()
             .setMethodDescriptor(createListingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateListingRequest, Listing> updateListingTransportSettings =
         HttpJsonCallSettings.<UpdateListingRequest, Listing>newBuilder()
             .setMethodDescriptor(updateListingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("listing.name", String.valueOf(request.getListing().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteListingRequest, Empty> deleteListingTransportSettings =
         HttpJsonCallSettings.<DeleteListingRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteListingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SubscribeListingRequest, SubscribeListingResponse>
         subscribeListingTransportSettings =
             HttpJsonCallSettings.<SubscribeListingRequest, SubscribeListingResponse>newBuilder()
                 .setMethodDescriptor(subscribeListingMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listDataExchangesCallable =

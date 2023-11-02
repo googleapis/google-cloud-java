@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface ManagedCertificateOrBuilder
    * Time at which the certificate was last renewed. The renewal process is
    * fully managed. Certificate renewal will automatically occur before the
    * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface ManagedCertificateOrBuilder
    * Time at which the certificate was last renewed. The renewal process is
    * fully managed. Certificate renewal will automatically occur before the
    * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -60,6 +62,7 @@ public interface ManagedCertificateOrBuilder
    * Time at which the certificate was last renewed. The renewal process is
    * fully managed. Certificate renewal will automatically occur before the
    * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -73,6 +76,7 @@ public interface ManagedCertificateOrBuilder
    * <pre>
    * Status of certificate management. Refers to the most recent certificate
    * acquisition or renewal attempt.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -87,6 +91,7 @@ public interface ManagedCertificateOrBuilder
    * <pre>
    * Status of certificate management. Refers to the most recent certificate
    * acquisition or renewal attempt.
+   *
    * &#64;OutputOnly
    * </pre>
    *

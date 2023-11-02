@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
     return new UpdateListingRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
         .internal_static_google_cloud_bigquery_analyticshub_v1_UpdateListingRequest_descriptor;
@@ -71,9 +66,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Field mask specifies the fields to update in the listing resource. The
-   * fields specified in the `updateMask` are relative to the resource and are
-   * not a full request.
+   * Required. Field mask specifies the fields to update in the listing
+   * resource. The fields specified in the `updateMask` are relative to the
+   * resource and are not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -89,9 +84,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Field mask specifies the fields to update in the listing resource. The
-   * fields specified in the `updateMask` are relative to the resource and are
-   * not a full request.
+   * Required. Field mask specifies the fields to update in the listing
+   * resource. The fields specified in the `updateMask` are relative to the
+   * resource and are not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -107,9 +102,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Field mask specifies the fields to update in the listing resource. The
-   * fields specified in the `updateMask` are relative to the resource and are
-   * not a full request.
+   * Required. Field mask specifies the fields to update in the listing
+   * resource. The fields specified in the `updateMask` are relative to the
+   * resource and are not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -570,9 +565,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Field mask specifies the fields to update in the listing resource. The
-     * fields specified in the `updateMask` are relative to the resource and are
-     * not a full request.
+     * Required. Field mask specifies the fields to update in the listing
+     * resource. The fields specified in the `updateMask` are relative to the
+     * resource and are not a full request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -587,9 +582,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Field mask specifies the fields to update in the listing resource. The
-     * fields specified in the `updateMask` are relative to the resource and are
-     * not a full request.
+     * Required. Field mask specifies the fields to update in the listing
+     * resource. The fields specified in the `updateMask` are relative to the
+     * resource and are not a full request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -610,9 +605,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Field mask specifies the fields to update in the listing resource. The
-     * fields specified in the `updateMask` are relative to the resource and are
-     * not a full request.
+     * Required. Field mask specifies the fields to update in the listing
+     * resource. The fields specified in the `updateMask` are relative to the
+     * resource and are not a full request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -635,9 +630,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Field mask specifies the fields to update in the listing resource. The
-     * fields specified in the `updateMask` are relative to the resource and are
-     * not a full request.
+     * Required. Field mask specifies the fields to update in the listing
+     * resource. The fields specified in the `updateMask` are relative to the
+     * resource and are not a full request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -657,9 +652,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Field mask specifies the fields to update in the listing resource. The
-     * fields specified in the `updateMask` are relative to the resource and are
-     * not a full request.
+     * Required. Field mask specifies the fields to update in the listing
+     * resource. The fields specified in the `updateMask` are relative to the
+     * resource and are not a full request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -685,9 +680,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Field mask specifies the fields to update in the listing resource. The
-     * fields specified in the `updateMask` are relative to the resource and are
-     * not a full request.
+     * Required. Field mask specifies the fields to update in the listing
+     * resource. The fields specified in the `updateMask` are relative to the
+     * resource and are not a full request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -707,9 +702,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Field mask specifies the fields to update in the listing resource. The
-     * fields specified in the `updateMask` are relative to the resource and are
-     * not a full request.
+     * Required. Field mask specifies the fields to update in the listing
+     * resource. The fields specified in the `updateMask` are relative to the
+     * resource and are not a full request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -724,9 +719,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Field mask specifies the fields to update in the listing resource. The
-     * fields specified in the `updateMask` are relative to the resource and are
-     * not a full request.
+     * Required. Field mask specifies the fields to update in the listing
+     * resource. The fields specified in the `updateMask` are relative to the
+     * resource and are not a full request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -745,9 +740,9 @@ public final class UpdateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Field mask specifies the fields to update in the listing resource. The
-     * fields specified in the `updateMask` are relative to the resource and are
-     * not a full request.
+     * Required. Field mask specifies the fields to update in the listing
+     * resource. The fields specified in the `updateMask` are relative to the
+     * resource and are not a full request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];

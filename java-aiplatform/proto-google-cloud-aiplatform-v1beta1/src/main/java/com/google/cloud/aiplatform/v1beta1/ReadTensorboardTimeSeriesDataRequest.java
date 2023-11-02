@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ReadTensorboardTimeSeriesDataRequest
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ReadTensorboardTimeSeriesDataRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,6 +132,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
    *
    * <pre>
    * The maximum number of TensorboardTimeSeries' data to return.
+   *
    * This value should be a positive integer.
    * This value can be set to -1 to return all data.
    * </pre>
@@ -735,6 +731,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * The maximum number of TensorboardTimeSeries' data to return.
+     *
      * This value should be a positive integer.
      * This value can be set to -1 to return all data.
      * </pre>
@@ -752,6 +749,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * The maximum number of TensorboardTimeSeries' data to return.
+     *
      * This value should be a positive integer.
      * This value can be set to -1 to return all data.
      * </pre>
@@ -773,6 +771,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * The maximum number of TensorboardTimeSeries' data to return.
+     *
      * This value should be a positive integer.
      * This value can be set to -1 to return all data.
      * </pre>

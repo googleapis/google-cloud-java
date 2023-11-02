@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,20 +72,28 @@ public interface ListFindingsRequestOrBuilder
    * The expression is a list of one or more restrictions combined via logical
    * operators `AND` and `OR`.
    * Parentheses are supported, and `OR` has higher precedence than `AND`.
+   *
    * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
    * character in front of them to indicate negation. Examples include:
+   *
    *  * name
    *  * source_properties.a_property
    *  * security_marks.marks.marka
+   *
    * The supported operators are:
+   *
    * * `=` for all value types.
    * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
    * * `:`, meaning substring matching, for strings.
+   *
    * The supported value types are:
+   *
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   *
    * The following field and operator combinations are supported:
+   *
    * * name: `=`
    * * parent: `=`, `:`
    * * resource_name: `=`, `:`
@@ -93,19 +101,25 @@ public interface ListFindingsRequestOrBuilder
    * * category: `=`, `:`
    * * external_uri: `=`, `:`
    * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `event_time = "2019-06-10T16:07:18-07:00"`
    *     `event_time = 1560208038000`
+   *
    * * severity: `=`, `:`
    * * workflow_state: `=`, `:`
    * * security_marks.marks: `=`, `:`
    * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *
    *   For example, `source_properties.size = 100` is a valid filter string.
+   *
    *   Use a partial match on the empty string to filter based on a property
    *   existing: `source_properties.my_property : ""`
+   *
    *   Use a negated partial match on the empty string to filter based on a
    *   property not existing: `-source_properties.my_property : ""`
+   *
    * * resource:
    *   * resource.name: `=`, `:`
    *   * resource.parent_name: `=`, `:`
@@ -130,20 +144,28 @@ public interface ListFindingsRequestOrBuilder
    * The expression is a list of one or more restrictions combined via logical
    * operators `AND` and `OR`.
    * Parentheses are supported, and `OR` has higher precedence than `AND`.
+   *
    * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
    * character in front of them to indicate negation. Examples include:
+   *
    *  * name
    *  * source_properties.a_property
    *  * security_marks.marks.marka
+   *
    * The supported operators are:
+   *
    * * `=` for all value types.
    * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
    * * `:`, meaning substring matching, for strings.
+   *
    * The supported value types are:
+   *
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   *
    * The following field and operator combinations are supported:
+   *
    * * name: `=`
    * * parent: `=`, `:`
    * * resource_name: `=`, `:`
@@ -151,19 +173,25 @@ public interface ListFindingsRequestOrBuilder
    * * category: `=`, `:`
    * * external_uri: `=`, `:`
    * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `event_time = "2019-06-10T16:07:18-07:00"`
    *     `event_time = 1560208038000`
+   *
    * * severity: `=`, `:`
    * * workflow_state: `=`, `:`
    * * security_marks.marks: `=`, `:`
    * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *
    *   For example, `source_properties.size = 100` is a valid filter string.
+   *
    *   Use a partial match on the empty string to filter based on a property
    *   existing: `source_properties.my_property : ""`
+   *
    *   Use a negated partial match on the empty string to filter based on a
    *   property not existing: `-source_properties.my_property : ""`
+   *
    * * resource:
    *   * resource.name: `=`, `:`
    *   * resource.parent_name: `=`, `:`
@@ -193,6 +221,7 @@ public interface ListFindingsRequestOrBuilder
    * desc,source_properties.a_property". Redundant space characters in the
    * syntax are insignificant. "name desc,source_properties.a_property" and "
    * name     desc  ,   source_properties.a_property  " are equivalent.
+   *
    * The following fields are supported:
    * name
    * parent
@@ -221,6 +250,7 @@ public interface ListFindingsRequestOrBuilder
    * desc,source_properties.a_property". Redundant space characters in the
    * syntax are insignificant. "name desc,source_properties.a_property" and "
    * name     desc  ,   source_properties.a_property  " are equivalent.
+   *
    * The following fields are supported:
    * name
    * parent
@@ -292,11 +322,14 @@ public interface ListFindingsRequestOrBuilder
    * state during the compare_duration period of time that precedes the
    * read_time. This is the time between (read_time - compare_duration) and
    * read_time.
+   *
    * The state_change value is derived based on the presence and state of the
    * finding at the two points in time. Intermediate state changes between the
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
+   *
    * Possible "state_change" values when compare_duration is specified:
+   *
    * * "CHANGED":   indicates that the finding was present and matched the given
    *                  filter at the start of compare_duration, but changed its
    *                  state at read_time.
@@ -309,6 +342,7 @@ public interface ListFindingsRequestOrBuilder
    * * "REMOVED":   indicates that the finding was present and matched the
    *                  filter at the start of compare_duration, but did not match
    *                  the filter at read_time.
+   *
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED", which will be the state_change set for all findings present at
    * read_time.
@@ -329,11 +363,14 @@ public interface ListFindingsRequestOrBuilder
    * state during the compare_duration period of time that precedes the
    * read_time. This is the time between (read_time - compare_duration) and
    * read_time.
+   *
    * The state_change value is derived based on the presence and state of the
    * finding at the two points in time. Intermediate state changes between the
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
+   *
    * Possible "state_change" values when compare_duration is specified:
+   *
    * * "CHANGED":   indicates that the finding was present and matched the given
    *                  filter at the start of compare_duration, but changed its
    *                  state at read_time.
@@ -346,6 +383,7 @@ public interface ListFindingsRequestOrBuilder
    * * "REMOVED":   indicates that the finding was present and matched the
    *                  filter at the start of compare_duration, but did not match
    *                  the filter at read_time.
+   *
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED", which will be the state_change set for all findings present at
    * read_time.
@@ -366,11 +404,14 @@ public interface ListFindingsRequestOrBuilder
    * state during the compare_duration period of time that precedes the
    * read_time. This is the time between (read_time - compare_duration) and
    * read_time.
+   *
    * The state_change value is derived based on the presence and state of the
    * finding at the two points in time. Intermediate state changes between the
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
+   *
    * Possible "state_change" values when compare_duration is specified:
+   *
    * * "CHANGED":   indicates that the finding was present and matched the given
    *                  filter at the start of compare_duration, but changed its
    *                  state at read_time.
@@ -383,6 +424,7 @@ public interface ListFindingsRequestOrBuilder
    * * "REMOVED":   indicates that the finding was present and matched the
    *                  filter at the start of compare_duration, but did not match
    *                  the filter at read_time.
+   *
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED", which will be the state_change set for all findings present at
    * read_time.

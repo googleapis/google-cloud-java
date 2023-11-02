@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public interface ListAnswerRecordsRequestOrBuilder
    *
    * <pre>
    * Optional. Filters to restrict results to specific answer records.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -64,7 +65,7 @@ public interface ListAnswerRecordsRequestOrBuilder
    * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/answer_record.proto;l=299
+   *     google/cloud/dialogflow/v2beta1/answer_record.proto;l=323
    * @return The filter.
    */
   @java.lang.Deprecated
@@ -74,6 +75,7 @@ public interface ListAnswerRecordsRequestOrBuilder
    *
    * <pre>
    * Optional. Filters to restrict results to specific answer records.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -81,7 +83,7 @@ public interface ListAnswerRecordsRequestOrBuilder
    * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/answer_record.proto;l=299
+   *     google/cloud/dialogflow/v2beta1/answer_record.proto;l=323
    * @return The bytes for filter.
    */
   @java.lang.Deprecated

@@ -124,43 +124,64 @@ $ sudo apt-get install gh
 $ gh auth login
 ```
 
+## Double check that the library does not already exist within `google-cloud-java`!
+
+Some languages require a new request when a new version of a service is created, but Java manages all versions of the service as a single package, so the client library will automatically be updated to include new versions.
+
 ## Run client generation script
 
 You will run new-client.py script with the following parameters.
-Collect them from the ticket before running the command.
+These parameters will be available in the Cloud Drop link (a YAML file) included in the buganizer request.
+The example in this README uses AlloyDB's [Cloud Drop](https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/alloydb_v1.yaml) file as an example.
 
 ### API short name
 
 For convenience of the subsequent commands, define a variable for API short name.
-Get the value from the DevRel Services page (Example: `apikeys`):
+The corresponding value in the Cloud Drop page is `api_short_name`.
+
+Example: `alloydb`
 
 ### Proto path
 
-The script takes "proto path" parameter. This is path from google3's root to the
-directory that contains versions (e.g., "v1" or "v2"). For example, if we
-have 
+The script takes "proto path" parameter. This is the path from the internal `google3/third_party/googleapis/stable` root to the
+directory that contains versions (e.g., "v1" or "v2").
+Note that the internal `google3/third_party/googleapis/stable` directory is mirrored externally in https://github.com/googleapis/googleapis/blob/master/.
 
-> Link to protos: http://google3/google/api/apikeys/v2/apikeys.proto
+For example, if the buganizer ticket includes:
 
-then the "proto path" value we supply to the command is "google/api/apikeys".
+> Link to protos: `http://...(omit).../google/cloud/alloydb/v1alpha/alloydb_v1alpha.yaml`.
+
+then the corresponding external mirrored proto is here: https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1alpha/alloydb_v1alpha.yaml.
+
+Therefore, the "proto path" value we supply to the command is `google/cloud/alloydb`.
+
+We will publish a single module for a service that includes all versions in this path. Once the service has been published once, any future additional versions will automatically be generated via OwlBot.
 
 ### Name pretty
 
-Pick name from the display name in the DevRel Services site.
-For example, "API Keys API" in
-https://devrel.corp.google.com/admin/products/479.
+The corresponding value in the Cloud Drop page is `title`.
+
+Example: `AlloyDB API`
 
 ### Product Docs
 
-Find product document URL in the DevRel Services site.
-For example, "https://cloud.google.com/api-keys/" in
-https://devrel.corp.google.com/admin/products/479.
+The corresponding value in the Cloud Drop page is `documentation_uri`.
 The value must starts with "https://".
+
+Example: `https://cloud.google.com/alloydb/docs`
 
 ### API description
 
-Find the short description of the API. Usually the first sentence in the product
-document above.
+The corresponding value in the Cloud Drop page is `documentation.summary` or `documentation.overview`.
+If both of those fields are missing, take the description from the product page above. Use the first sentence to keep it concise.
+
+Example:
+``` 
+    AlloyDB for PostgreSQL is an open source-compatible database service that
+    provides a powerful option for migrating, modernizing, or building
+    commercial-grade applications.
+ ```
+
 
 ### Example arguments
 
@@ -168,11 +189,13 @@ Run `new-client.py` with the arguments above:
 
 ```
 $ python3.9 generation/new_client/new-client.py generate \
-  --api_shortname=apikeys \
-  --proto-path=google/api/apikeys \
-  --name-pretty="API Keys API" \
-  --product-docs="https://cloud.google.com/api-keys/" \
-  --api-description="API Keys lets you create and manage your API keys for your projects."
+  --api_shortname=alloydb \
+  --proto-path=google/cloud/alloydb \
+  --name-pretty="AlloyDB API" \
+  --product-docs="https://cloud.google.com/alloydb/docs" \
+  --api-description="AlloyDB for PostgreSQL is an open source-compatible database service that
+    provides a powerful option for migrating, modernizing, or building
+    commercial-grade applications."
 ```
 
 The command creates changes for
@@ -182,10 +205,10 @@ create a pull request in the monorepo:
 ```
 ...
 Please create a pull request:
-  $ git checkout -b new_module_java-discoveryengine
+  $ git checkout -b new_module_java-alloydb
   $ git add .
-  $ git commit -m 'feat: [apikeys] new module for apikeys'
-  $ gh pr create --title 'feat: [apikeys] new module for apikeys'
+  $ git commit -m 'feat: [alloydb] new module for alloydb'
+  $ gh pr create --title 'feat: [alloydb] new module for alloydb'
 ```
 
 Create a pull request from the change.
@@ -260,6 +283,8 @@ Sometimes, a library generation requires special handling for
 Maven coordinates or API ID, especially when the library is not
 specific to Google Cloud. Refer to the following command example when we
 generated Google Maps Routes API Java client library.
+
+**Note that for `maps` clients, include `maps` as a prefix to the `api_shortname`.**
 
 ```
 ~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate \

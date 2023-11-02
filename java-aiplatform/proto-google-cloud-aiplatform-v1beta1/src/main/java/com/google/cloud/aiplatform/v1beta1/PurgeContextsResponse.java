@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
   }
 
   private PurgeContextsResponse() {
-    purgeSample_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    purgeSample_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PurgeContextsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -90,7 +85,8 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
   public static final int PURGE_SAMPLE_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList purgeSample_;
+  private com.google.protobuf.LazyStringArrayList purgeSample_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -375,8 +371,7 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
       super.clear();
       bitField0_ = 0;
       purgeCount_ = 0L;
-      purgeSample_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      purgeSample_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -404,7 +399,6 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.PurgeContextsResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.PurgeContextsResponse result =
           new com.google.cloud.aiplatform.v1beta1.PurgeContextsResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -412,19 +406,14 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1beta1.PurgeContextsResponse result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        purgeSample_ = purgeSample_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.purgeSample_ = purgeSample_;
-    }
-
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.PurgeContextsResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.purgeCount_ = purgeCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        purgeSample_.makeImmutable();
+        result.purgeSample_ = purgeSample_;
       }
     }
 
@@ -480,7 +469,7 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
       if (!other.purgeSample_.isEmpty()) {
         if (purgeSample_.isEmpty()) {
           purgeSample_ = other.purgeSample_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePurgeSampleIsMutable();
           purgeSample_.addAll(other.purgeSample_);
@@ -601,14 +590,14 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.protobuf.LazyStringList purgeSample_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList purgeSample_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePurgeSampleIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!purgeSample_.isModifiable()) {
         purgeSample_ = new com.google.protobuf.LazyStringArrayList(purgeSample_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -624,7 +613,8 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
      * @return A list containing the purgeSample.
      */
     public com.google.protobuf.ProtocolStringList getPurgeSampleList() {
-      return purgeSample_.getUnmodifiableView();
+      purgeSample_.makeImmutable();
+      return purgeSample_;
     }
     /**
      *
@@ -697,6 +687,7 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
       }
       ensurePurgeSampleIsMutable();
       purgeSample_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -720,6 +711,7 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
       }
       ensurePurgeSampleIsMutable();
       purgeSample_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -740,6 +732,7 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
     public Builder addAllPurgeSample(java.lang.Iterable<java.lang.String> values) {
       ensurePurgeSampleIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, purgeSample_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -757,8 +750,9 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPurgeSample() {
-      purgeSample_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      purgeSample_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -783,6 +777,7 @@ public final class PurgeContextsResponse extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensurePurgeSampleIsMutable();
       purgeSample_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

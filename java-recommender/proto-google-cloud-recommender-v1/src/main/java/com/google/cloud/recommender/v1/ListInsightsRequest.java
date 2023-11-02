@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
     return new ListInsightsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommender.v1.RecommenderProto
         .internal_static_google_cloud_recommender_v1_ListInsightsRequest_descriptor;
@@ -79,11 +74,17 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The container resource on which to execute the request.
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
    * INSIGHT_TYPE_ID refers to supported insight types:
@@ -114,11 +115,17 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The container resource on which to execute the request.
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+   *
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
    * INSIGHT_TYPE_ID refers to supported insight types:
@@ -231,14 +238,23 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. Filter expression to restrict the insights returned. Supported
    * filter fields:
+   *
    * * `stateInfo.state`
+   *
    * * `insightSubtype`
+   *
    * * `severity`
+   *
    * Examples:
+   *
    * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   *
    * * `insightSubtype = PERMISSIONS_USAGE`
+   *
    * * `severity = CRITICAL OR severity = HIGH`
+   *
    * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+   *
    * (These expressions are based on the filter language described at
    * https://google.aip.dev/160)
    * </pre>
@@ -265,14 +281,23 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. Filter expression to restrict the insights returned. Supported
    * filter fields:
+   *
    * * `stateInfo.state`
+   *
    * * `insightSubtype`
+   *
    * * `severity`
+   *
    * Examples:
+   *
    * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   *
    * * `insightSubtype = PERMISSIONS_USAGE`
+   *
    * * `severity = CRITICAL OR severity = HIGH`
+   *
    * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+   *
    * (These expressions are based on the filter language described at
    * https://google.aip.dev/160)
    * </pre>
@@ -713,11 +738,17 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The container resource on which to execute the request.
      * Acceptable formats:
+     *
      * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
      * INSIGHT_TYPE_ID refers to supported insight types:
@@ -747,11 +778,17 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The container resource on which to execute the request.
      * Acceptable formats:
+     *
      * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
      * INSIGHT_TYPE_ID refers to supported insight types:
@@ -781,11 +818,17 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The container resource on which to execute the request.
      * Acceptable formats:
+     *
      * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
      * INSIGHT_TYPE_ID refers to supported insight types:
@@ -814,11 +857,17 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The container resource on which to execute the request.
      * Acceptable formats:
+     *
      * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
      * INSIGHT_TYPE_ID refers to supported insight types:
@@ -843,11 +892,17 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The container resource on which to execute the request.
      * Acceptable formats:
+     *
      * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `folders/[FOLDER_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]`
+     *
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
      * INSIGHT_TYPE_ID refers to supported insight types:
@@ -1059,14 +1114,23 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. Filter expression to restrict the insights returned. Supported
      * filter fields:
+     *
      * * `stateInfo.state`
+     *
      * * `insightSubtype`
+     *
      * * `severity`
+     *
      * Examples:
+     *
      * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+     *
      * * `insightSubtype = PERMISSIONS_USAGE`
+     *
      * * `severity = CRITICAL OR severity = HIGH`
+     *
      * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+     *
      * (These expressions are based on the filter language described at
      * https://google.aip.dev/160)
      * </pre>
@@ -1092,14 +1156,23 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. Filter expression to restrict the insights returned. Supported
      * filter fields:
+     *
      * * `stateInfo.state`
+     *
      * * `insightSubtype`
+     *
      * * `severity`
+     *
      * Examples:
+     *
      * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+     *
      * * `insightSubtype = PERMISSIONS_USAGE`
+     *
      * * `severity = CRITICAL OR severity = HIGH`
+     *
      * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+     *
      * (These expressions are based on the filter language described at
      * https://google.aip.dev/160)
      * </pre>
@@ -1125,14 +1198,23 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. Filter expression to restrict the insights returned. Supported
      * filter fields:
+     *
      * * `stateInfo.state`
+     *
      * * `insightSubtype`
+     *
      * * `severity`
+     *
      * Examples:
+     *
      * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+     *
      * * `insightSubtype = PERMISSIONS_USAGE`
+     *
      * * `severity = CRITICAL OR severity = HIGH`
+     *
      * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+     *
      * (These expressions are based on the filter language described at
      * https://google.aip.dev/160)
      * </pre>
@@ -1157,14 +1239,23 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. Filter expression to restrict the insights returned. Supported
      * filter fields:
+     *
      * * `stateInfo.state`
+     *
      * * `insightSubtype`
+     *
      * * `severity`
+     *
      * Examples:
+     *
      * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+     *
      * * `insightSubtype = PERMISSIONS_USAGE`
+     *
      * * `severity = CRITICAL OR severity = HIGH`
+     *
      * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+     *
      * (These expressions are based on the filter language described at
      * https://google.aip.dev/160)
      * </pre>
@@ -1185,14 +1276,23 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. Filter expression to restrict the insights returned. Supported
      * filter fields:
+     *
      * * `stateInfo.state`
+     *
      * * `insightSubtype`
+     *
      * * `severity`
+     *
      * Examples:
+     *
      * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+     *
      * * `insightSubtype = PERMISSIONS_USAGE`
+     *
      * * `severity = CRITICAL OR severity = HIGH`
+     *
      * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+     *
      * (These expressions are based on the filter language described at
      * https://google.aip.dev/160)
      * </pre>

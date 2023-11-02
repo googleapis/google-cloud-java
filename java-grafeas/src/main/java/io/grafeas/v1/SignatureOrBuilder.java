@@ -51,11 +51,14 @@ public interface SignatureOrBuilder
    *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
    *   * When possible, the `public_key_id` SHOULD be an immutable reference,
    *     such as a cryptographic digest.
+   *
    * Examples of valid `public_key_id`s:
+   *
    * OpenPGP V4 public key fingerprint:
    *   * "openpgp4fpr:74FAF3B861BDA0870C7B6DEF607E48D2A663AEEA"
    * See https://www.iana.org/assignments/uri-schemes/prov/openpgp4fpr for more
    * details on this scheme.
+   *
    * RFC6920 digest-named SubjectPublicKeyInfo (digest of the DER
    * serialization):
    *   * "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"
@@ -76,11 +79,14 @@ public interface SignatureOrBuilder
    *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
    *   * When possible, the `public_key_id` SHOULD be an immutable reference,
    *     such as a cryptographic digest.
+   *
    * Examples of valid `public_key_id`s:
+   *
    * OpenPGP V4 public key fingerprint:
    *   * "openpgp4fpr:74FAF3B861BDA0870C7B6DEF607E48D2A663AEEA"
    * See https://www.iana.org/assignments/uri-schemes/prov/openpgp4fpr for more
    * details on this scheme.
+   *
    * RFC6920 digest-named SubjectPublicKeyInfo (digest of the DER
    * serialization):
    *   * "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"

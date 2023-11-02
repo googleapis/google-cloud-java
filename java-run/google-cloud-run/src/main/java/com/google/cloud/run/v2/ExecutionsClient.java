@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -217,8 +217,8 @@ public class ExecutionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Execution. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project}
-   *     can be project id or number.
+   *     `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where
+   *     `{project}` can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Execution getExecution(ExecutionName name) {
@@ -246,8 +246,8 @@ public class ExecutionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Execution. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project}
-   *     can be project id or number.
+   *     `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where
+   *     `{project}` can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Execution getExecution(String name) {
@@ -334,8 +334,8 @@ public class ExecutionsClient implements BackgroundResource {
    *
    * @param parent Required. The Execution from which the Executions should be listed. To list all
    *     Executions across Jobs, use "-" instead of Job name. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or
-   *     number.
+   *     `projects/{project}/locations/{location}/jobs/{job}`, where `{project}` can be project id
+   *     or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListExecutionsPagedResponse listExecutions(JobName parent) {
@@ -368,8 +368,8 @@ public class ExecutionsClient implements BackgroundResource {
    *
    * @param parent Required. The Execution from which the Executions should be listed. To list all
    *     Executions across Jobs, use "-" instead of Job name. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or
-   *     number.
+   *     `projects/{project}/locations/{location}/jobs/{job}`, where `{project}` can be project id
+   *     or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListExecutionsPagedResponse listExecutions(String parent) {
@@ -503,8 +503,8 @@ public class ExecutionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the Execution to delete. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project}
-   *     can be project id or number.
+   *     `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where
+   *     `{project}` can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Execution, Execution> deleteExecutionAsync(ExecutionName name) {
@@ -532,8 +532,8 @@ public class ExecutionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the Execution to delete. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project}
-   *     can be project id or number.
+   *     `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where
+   *     `{project}` can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Execution, Execution> deleteExecutionAsync(String name) {
@@ -633,6 +633,157 @@ public class ExecutionsClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteExecutionRequest, Operation> deleteExecutionCallable() {
     return stub.deleteExecutionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an Execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]");
+   *   Execution response = executionsClient.cancelExecutionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Execution to cancel. Format:
+   *     `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where
+   *     `{project}` can be project id or number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Execution, Execution> cancelExecutionAsync(ExecutionName name) {
+    CancelExecutionRequest request =
+        CancelExecutionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return cancelExecutionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an Execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   String name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString();
+   *   Execution response = executionsClient.cancelExecutionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Execution to cancel. Format:
+   *     `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where
+   *     `{project}` can be project id or number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Execution, Execution> cancelExecutionAsync(String name) {
+    CancelExecutionRequest request = CancelExecutionRequest.newBuilder().setName(name).build();
+    return cancelExecutionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an Execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   CancelExecutionRequest request =
+   *       CancelExecutionRequest.newBuilder()
+   *           .setName(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   Execution response = executionsClient.cancelExecutionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Execution, Execution> cancelExecutionAsync(
+      CancelExecutionRequest request) {
+    return cancelExecutionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an Execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   CancelExecutionRequest request =
+   *       CancelExecutionRequest.newBuilder()
+   *           .setName(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Execution, Execution> future =
+   *       executionsClient.cancelExecutionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Execution response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CancelExecutionRequest, Execution, Execution>
+      cancelExecutionOperationCallable() {
+    return stub.cancelExecutionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an Execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   CancelExecutionRequest request =
+   *       CancelExecutionRequest.newBuilder()
+   *           .setName(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future = executionsClient.cancelExecutionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelExecutionRequest, Operation> cancelExecutionCallable() {
+    return stub.cancelExecutionCallable();
   }
 
   @Override

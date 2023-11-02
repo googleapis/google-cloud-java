@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,22 +43,22 @@ public final class DashboardFilterProto {
       "\n5google/monitoring/dashboard/v1/dashboa"
           + "rd_filter.proto\022\036google.monitoring.dashb"
           + "oard.v1\032\037google/api/field_behavior.proto"
-          + "\"\317\002\n\017DashboardFilter\022\026\n\tlabel_key\030\001 \001(\tB"
-          + "\003\340A\002\022\031\n\021template_variable\030\003 \001(\t\022\026\n\014strin"
-          + "g_value\030\004 \001(\tH\000\022O\n\013filter_type\030\005 \001(\0162:.g"
-          + "oogle.monitoring.dashboard.v1.DashboardF"
-          + "ilter.FilterType\"\216\001\n\nFilterType\022\033\n\027FILTE"
-          + "R_TYPE_UNSPECIFIED\020\000\022\022\n\016RESOURCE_LABEL\020\001"
-          + "\022\020\n\014METRIC_LABEL\020\002\022\027\n\023USER_METADATA_LABE"
-          + "L\020\003\022\031\n\025SYSTEM_METADATA_LABEL\020\004\022\t\n\005GROUP\020"
-          + "\005B\017\n\rdefault_valueB\375\001\n\"com.google.monito"
-          + "ring.dashboard.v1B\024DashboardFilterProtoP"
-          + "\001ZFcloud.google.com/go/monitoring/dashbo"
-          + "ard/apiv1/dashboardpb;dashboardpb\252\002$Goog"
-          + "le.Cloud.Monitoring.Dashboard.V1\312\002$Googl"
-          + "e\\Cloud\\Monitoring\\Dashboard\\V1\352\002(Google"
-          + "::Cloud::Monitoring::Dashboard::V1b\006prot"
-          + "o3"
+          + "\"\320\002\n\017DashboardFilter\022\027\n\tlabel_key\030\001 \001(\tB"
+          + "\004\342A\001\002\022\031\n\021template_variable\030\003 \001(\t\022\026\n\014stri"
+          + "ng_value\030\004 \001(\tH\000\022O\n\013filter_type\030\005 \001(\0162:."
+          + "google.monitoring.dashboard.v1.Dashboard"
+          + "Filter.FilterType\"\216\001\n\nFilterType\022\033\n\027FILT"
+          + "ER_TYPE_UNSPECIFIED\020\000\022\022\n\016RESOURCE_LABEL\020"
+          + "\001\022\020\n\014METRIC_LABEL\020\002\022\027\n\023USER_METADATA_LAB"
+          + "EL\020\003\022\031\n\025SYSTEM_METADATA_LABEL\020\004\022\t\n\005GROUP"
+          + "\020\005B\017\n\rdefault_valueB\375\001\n\"com.google.monit"
+          + "oring.dashboard.v1B\024DashboardFilterProto"
+          + "P\001ZFcloud.google.com/go/monitoring/dashb"
+          + "oard/apiv1/dashboardpb;dashboardpb\252\002$Goo"
+          + "gle.Cloud.Monitoring.Dashboard.V1\312\002$Goog"
+          + "le\\Cloud\\Monitoring\\Dashboard\\V1\352\002(Googl"
+          + "e::Cloud::Monitoring::Dashboard::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

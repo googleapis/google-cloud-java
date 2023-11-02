@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   private Control() {
     name_ = "";
     displayName_ = "";
-    associatedServingConfigIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    associatedServingConfigIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     solutionTypes_ = java.util.Collections.emptyList();
     searchSolutionUseCase_ = java.util.Collections.emptyList();
   }
@@ -51,11 +51,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Control();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -74,6 +69,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int controlCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object control_;
 
   public enum ControlCase
@@ -236,6 +233,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The human readable control display name. Used in Retail UI.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is thrown.
    * </pre>
@@ -261,6 +259,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The human readable control display name. Used in Retail UI.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is thrown.
    * </pre>
@@ -285,7 +284,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public static final int ASSOCIATED_SERVING_CONFIG_IDS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList associatedServingConfigIds_;
+  private com.google.protobuf.LazyStringArrayList associatedServingConfigIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -293,6 +293,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
    * ids that are associated with this control in the same
    * [Catalog][google.cloud.retail.v2.Catalog].
+   *
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
    * only denormalized view.
@@ -314,6 +315,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
    * ids that are associated with this control in the same
    * [Catalog][google.cloud.retail.v2.Catalog].
+   *
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
    * only denormalized view.
@@ -335,6 +337,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
    * ids that are associated with this control in the same
    * [Catalog][google.cloud.retail.v2.Catalog].
+   *
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
    * only denormalized view.
@@ -357,6 +360,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
    * ids that are associated with this control in the same
    * [Catalog][google.cloud.retail.v2.Catalog].
+   *
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
    * only denormalized view.
@@ -395,6 +399,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Immutable. The solution types that the control is used for.
    * Currently we support setting only one type of solution at creation time.
+   *
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -418,6 +423,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Immutable. The solution types that the control is used for.
    * Currently we support setting only one type of solution at creation time.
+   *
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -439,6 +445,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Immutable. The solution types that the control is used for.
    * Currently we support setting only one type of solution at creation time.
+   *
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -461,6 +468,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Immutable. The solution types that the control is used for.
    * Currently we support setting only one type of solution at creation time.
+   *
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -482,6 +490,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Immutable. The solution types that the control is used for.
    * Currently we support setting only one type of solution at creation time.
+   *
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
    * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -944,8 +953,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       name_ = "";
       displayName_ = "";
-      associatedServingConfigIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      associatedServingConfigIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       solutionTypes_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
       searchSolutionUseCase_ = java.util.Collections.emptyList();
@@ -988,11 +996,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.retail.v2.Control result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        associatedServingConfigIds_ = associatedServingConfigIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.associatedServingConfigIds_ = associatedServingConfigIds_;
       if (((bitField0_ & 0x00000010) != 0)) {
         solutionTypes_ = java.util.Collections.unmodifiableList(solutionTypes_);
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -1012,6 +1015,10 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        associatedServingConfigIds_.makeImmutable();
+        result.associatedServingConfigIds_ = associatedServingConfigIds_;
       }
     }
 
@@ -1081,7 +1088,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       if (!other.associatedServingConfigIds_.isEmpty()) {
         if (associatedServingConfigIds_.isEmpty()) {
           associatedServingConfigIds_ = other.associatedServingConfigIds_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureAssociatedServingConfigIdsIsMutable();
           associatedServingConfigIds_.addAll(other.associatedServingConfigIds_);
@@ -1580,6 +1587,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The human readable control display name. Used in Retail UI.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is thrown.
      * </pre>
@@ -1604,6 +1612,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The human readable control display name. Used in Retail UI.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is thrown.
      * </pre>
@@ -1628,6 +1637,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The human readable control display name. Used in Retail UI.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is thrown.
      * </pre>
@@ -1651,6 +1661,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The human readable control display name. Used in Retail UI.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is thrown.
      * </pre>
@@ -1670,6 +1681,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The human readable control display name. Used in Retail UI.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is thrown.
      * </pre>
@@ -1690,15 +1702,15 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList associatedServingConfigIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList associatedServingConfigIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAssociatedServingConfigIdsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!associatedServingConfigIds_.isModifiable()) {
         associatedServingConfigIds_ =
             new com.google.protobuf.LazyStringArrayList(associatedServingConfigIds_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1707,6 +1719,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
      * ids that are associated with this control in the same
      * [Catalog][google.cloud.retail.v2.Catalog].
+     *
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
      * only denormalized view.
@@ -1719,7 +1732,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the associatedServingConfigIds.
      */
     public com.google.protobuf.ProtocolStringList getAssociatedServingConfigIdsList() {
-      return associatedServingConfigIds_.getUnmodifiableView();
+      associatedServingConfigIds_.makeImmutable();
+      return associatedServingConfigIds_;
     }
     /**
      *
@@ -1728,6 +1742,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
      * ids that are associated with this control in the same
      * [Catalog][google.cloud.retail.v2.Catalog].
+     *
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
      * only denormalized view.
@@ -1749,6 +1764,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
      * ids that are associated with this control in the same
      * [Catalog][google.cloud.retail.v2.Catalog].
+     *
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
      * only denormalized view.
@@ -1771,6 +1787,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
      * ids that are associated with this control in the same
      * [Catalog][google.cloud.retail.v2.Catalog].
+     *
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
      * only denormalized view.
@@ -1793,6 +1810,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
      * ids that are associated with this control in the same
      * [Catalog][google.cloud.retail.v2.Catalog].
+     *
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
      * only denormalized view.
@@ -1812,6 +1830,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssociatedServingConfigIdsIsMutable();
       associatedServingConfigIds_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1822,6 +1841,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
      * ids that are associated with this control in the same
      * [Catalog][google.cloud.retail.v2.Catalog].
+     *
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
      * only denormalized view.
@@ -1840,6 +1860,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssociatedServingConfigIdsIsMutable();
       associatedServingConfigIds_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1850,6 +1871,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
      * ids that are associated with this control in the same
      * [Catalog][google.cloud.retail.v2.Catalog].
+     *
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
      * only denormalized view.
@@ -1865,6 +1887,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAssociatedServingConfigIds(java.lang.Iterable<java.lang.String> values) {
       ensureAssociatedServingConfigIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, associatedServingConfigIds_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1875,6 +1898,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
      * ids that are associated with this control in the same
      * [Catalog][google.cloud.retail.v2.Catalog].
+     *
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
      * only denormalized view.
@@ -1887,8 +1911,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssociatedServingConfigIds() {
-      associatedServingConfigIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      associatedServingConfigIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1899,6 +1924,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * Output only. List of [serving config][google.cloud.retail.v2.ServingConfig]
      * ids that are associated with this control in the same
      * [Catalog][google.cloud.retail.v2.Catalog].
+     *
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2.ServingConfig], this is an output
      * only denormalized view.
@@ -1918,6 +1944,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAssociatedServingConfigIdsIsMutable();
       associatedServingConfigIds_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1936,6 +1963,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -1958,6 +1986,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -1978,6 +2007,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -1999,6 +2029,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -2027,6 +2058,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -2054,6 +2086,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -2081,6 +2114,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -2104,6 +2138,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -2124,6 +2159,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -2145,6 +2181,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -2170,6 +2207,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].
@@ -2194,6 +2232,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The solution types that the control is used for.
      * Currently we support setting only one type of solution at creation time.
+     *
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
      * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2.SolutionType.SOLUTION_TYPE_SEARCH].

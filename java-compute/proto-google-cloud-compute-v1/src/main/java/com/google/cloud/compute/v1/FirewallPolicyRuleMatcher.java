@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,21 +38,24 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   }
 
   private FirewallPolicyRuleMatcher() {
-    destIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    destAddressGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    destFqdns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    destIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    destRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    destThreatIntelligences_ = com.google.protobuf.LazyStringArrayList.emptyList();
     layer4Configs_ = java.util.Collections.emptyList();
-    srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    srcAddressGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    srcFqdns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    srcRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     srcSecureTags_ = java.util.Collections.emptyList();
+    srcThreatIntelligences_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FirewallPolicyRuleMatcher();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,10 +73,139 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.Builder.class);
   }
 
+  public static final int DEST_ADDRESS_GROUPS_FIELD_NUMBER = 468760508;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList destAddressGroups_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string dest_address_groups = 468760508;</code>
+   *
+   * @return A list containing the destAddressGroups.
+   */
+  public com.google.protobuf.ProtocolStringList getDestAddressGroupsList() {
+    return destAddressGroups_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string dest_address_groups = 468760508;</code>
+   *
+   * @return The count of destAddressGroups.
+   */
+  public int getDestAddressGroupsCount() {
+    return destAddressGroups_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string dest_address_groups = 468760508;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The destAddressGroups at the given index.
+   */
+  public java.lang.String getDestAddressGroups(int index) {
+    return destAddressGroups_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string dest_address_groups = 468760508;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destAddressGroups at the given index.
+   */
+  public com.google.protobuf.ByteString getDestAddressGroupsBytes(int index) {
+    return destAddressGroups_.getByteString(index);
+  }
+
+  public static final int DEST_FQDNS_FIELD_NUMBER = 370712737;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList destFqdns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string dest_fqdns = 370712737;</code>
+   *
+   * @return A list containing the destFqdns.
+   */
+  public com.google.protobuf.ProtocolStringList getDestFqdnsList() {
+    return destFqdns_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string dest_fqdns = 370712737;</code>
+   *
+   * @return The count of destFqdns.
+   */
+  public int getDestFqdnsCount() {
+    return destFqdns_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string dest_fqdns = 370712737;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The destFqdns at the given index.
+   */
+  public java.lang.String getDestFqdns(int index) {
+    return destFqdns_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string dest_fqdns = 370712737;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destFqdns at the given index.
+   */
+  public com.google.protobuf.ByteString getDestFqdnsBytes(int index) {
+    return destFqdns_.getByteString(index);
+  }
+
   public static final int DEST_IP_RANGES_FIELD_NUMBER = 337357713;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList destIpRanges_;
+  private com.google.protobuf.LazyStringArrayList destIpRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -131,6 +263,134 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    */
   public com.google.protobuf.ByteString getDestIpRangesBytes(int index) {
     return destIpRanges_.getByteString(index);
+  }
+
+  public static final int DEST_REGION_CODES_FIELD_NUMBER = 199120280;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList destRegionCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string dest_region_codes = 199120280;</code>
+   *
+   * @return A list containing the destRegionCodes.
+   */
+  public com.google.protobuf.ProtocolStringList getDestRegionCodesList() {
+    return destRegionCodes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string dest_region_codes = 199120280;</code>
+   *
+   * @return The count of destRegionCodes.
+   */
+  public int getDestRegionCodesCount() {
+    return destRegionCodes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string dest_region_codes = 199120280;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The destRegionCodes at the given index.
+   */
+  public java.lang.String getDestRegionCodes(int index) {
+    return destRegionCodes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string dest_region_codes = 199120280;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destRegionCodes at the given index.
+   */
+  public com.google.protobuf.ByteString getDestRegionCodesBytes(int index) {
+    return destRegionCodes_.getByteString(index);
+  }
+
+  public static final int DEST_THREAT_INTELLIGENCES_FIELD_NUMBER = 119896492;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList destThreatIntelligences_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * </pre>
+   *
+   * <code>repeated string dest_threat_intelligences = 119896492;</code>
+   *
+   * @return A list containing the destThreatIntelligences.
+   */
+  public com.google.protobuf.ProtocolStringList getDestThreatIntelligencesList() {
+    return destThreatIntelligences_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * </pre>
+   *
+   * <code>repeated string dest_threat_intelligences = 119896492;</code>
+   *
+   * @return The count of destThreatIntelligences.
+   */
+  public int getDestThreatIntelligencesCount() {
+    return destThreatIntelligences_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * </pre>
+   *
+   * <code>repeated string dest_threat_intelligences = 119896492;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The destThreatIntelligences at the given index.
+   */
+  public java.lang.String getDestThreatIntelligences(int index) {
+    return destThreatIntelligences_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * </pre>
+   *
+   * <code>repeated string dest_threat_intelligences = 119896492;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destThreatIntelligences at the given index.
+   */
+  public com.google.protobuf.ByteString getDestThreatIntelligencesBytes(int index) {
+    return destThreatIntelligences_.getByteString(index);
   }
 
   public static final int LAYER4_CONFIGS_FIELD_NUMBER = 373534261;
@@ -219,10 +479,139 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     return layer4Configs_.get(index);
   }
 
+  public static final int SRC_ADDRESS_GROUPS_FIELD_NUMBER = 436423738;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList srcAddressGroups_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string src_address_groups = 436423738;</code>
+   *
+   * @return A list containing the srcAddressGroups.
+   */
+  public com.google.protobuf.ProtocolStringList getSrcAddressGroupsList() {
+    return srcAddressGroups_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string src_address_groups = 436423738;</code>
+   *
+   * @return The count of srcAddressGroups.
+   */
+  public int getSrcAddressGroupsCount() {
+    return srcAddressGroups_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string src_address_groups = 436423738;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The srcAddressGroups at the given index.
+   */
+  public java.lang.String getSrcAddressGroups(int index) {
+    return srcAddressGroups_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string src_address_groups = 436423738;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the srcAddressGroups at the given index.
+   */
+  public com.google.protobuf.ByteString getSrcAddressGroupsBytes(int index) {
+    return srcAddressGroups_.getByteString(index);
+  }
+
+  public static final int SRC_FQDNS_FIELD_NUMBER = 435906147;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList srcFqdns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string src_fqdns = 435906147;</code>
+   *
+   * @return A list containing the srcFqdns.
+   */
+  public com.google.protobuf.ProtocolStringList getSrcFqdnsList() {
+    return srcFqdns_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string src_fqdns = 435906147;</code>
+   *
+   * @return The count of srcFqdns.
+   */
+  public int getSrcFqdnsCount() {
+    return srcFqdns_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string src_fqdns = 435906147;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The srcFqdns at the given index.
+   */
+  public java.lang.String getSrcFqdns(int index) {
+    return srcFqdns_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string src_fqdns = 435906147;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the srcFqdns at the given index.
+   */
+  public com.google.protobuf.ByteString getSrcFqdnsBytes(int index) {
+    return srcFqdns_.getByteString(index);
+  }
+
   public static final int SRC_IP_RANGES_FIELD_NUMBER = 432128083;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList srcIpRanges_;
+  private com.google.protobuf.LazyStringArrayList srcIpRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -280,6 +669,70 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    */
   public com.google.protobuf.ByteString getSrcIpRangesBytes(int index) {
     return srcIpRanges_.getByteString(index);
+  }
+
+  public static final int SRC_REGION_CODES_FIELD_NUMBER = 99086742;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList srcRegionCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string src_region_codes = 99086742;</code>
+   *
+   * @return A list containing the srcRegionCodes.
+   */
+  public com.google.protobuf.ProtocolStringList getSrcRegionCodesList() {
+    return srcRegionCodes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string src_region_codes = 99086742;</code>
+   *
+   * @return The count of srcRegionCodes.
+   */
+  public int getSrcRegionCodesCount() {
+    return srcRegionCodes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string src_region_codes = 99086742;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The srcRegionCodes at the given index.
+   */
+  public java.lang.String getSrcRegionCodes(int index) {
+    return srcRegionCodes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string src_region_codes = 99086742;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the srcRegionCodes at the given index.
+   */
+  public com.google.protobuf.ByteString getSrcRegionCodesBytes(int index) {
+    return srcRegionCodes_.getByteString(index);
   }
 
   public static final int SRC_SECURE_TAGS_FIELD_NUMBER = 508791302;
@@ -365,6 +818,70 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     return srcSecureTags_.get(index);
   }
 
+  public static final int SRC_THREAT_INTELLIGENCES_FIELD_NUMBER = 323631018;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList srcThreatIntelligences_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * </pre>
+   *
+   * <code>repeated string src_threat_intelligences = 323631018;</code>
+   *
+   * @return A list containing the srcThreatIntelligences.
+   */
+  public com.google.protobuf.ProtocolStringList getSrcThreatIntelligencesList() {
+    return srcThreatIntelligences_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * </pre>
+   *
+   * <code>repeated string src_threat_intelligences = 323631018;</code>
+   *
+   * @return The count of srcThreatIntelligences.
+   */
+  public int getSrcThreatIntelligencesCount() {
+    return srcThreatIntelligences_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * </pre>
+   *
+   * <code>repeated string src_threat_intelligences = 323631018;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The srcThreatIntelligences at the given index.
+   */
+  public java.lang.String getSrcThreatIntelligences(int index) {
+    return srcThreatIntelligences_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * </pre>
+   *
+   * <code>repeated string src_threat_intelligences = 323631018;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the srcThreatIntelligences at the given index.
+   */
+  public com.google.protobuf.ByteString getSrcThreatIntelligencesBytes(int index) {
+    return srcThreatIntelligences_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -379,15 +896,45 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < srcRegionCodes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 99086742, srcRegionCodes_.getRaw(i));
+    }
+    for (int i = 0; i < destThreatIntelligences_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 119896492, destThreatIntelligences_.getRaw(i));
+    }
+    for (int i = 0; i < destRegionCodes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 199120280, destRegionCodes_.getRaw(i));
+    }
+    for (int i = 0; i < srcThreatIntelligences_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 323631018, srcThreatIntelligences_.getRaw(i));
+    }
     for (int i = 0; i < destIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 337357713, destIpRanges_.getRaw(i));
+    }
+    for (int i = 0; i < destFqdns_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 370712737, destFqdns_.getRaw(i));
     }
     for (int i = 0; i < layer4Configs_.size(); i++) {
       output.writeMessage(373534261, layer4Configs_.get(i));
     }
     for (int i = 0; i < srcIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 432128083, srcIpRanges_.getRaw(i));
+    }
+    for (int i = 0; i < srcFqdns_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 435906147, srcFqdns_.getRaw(i));
+    }
+    for (int i = 0; i < srcAddressGroups_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 436423738, srcAddressGroups_.getRaw(i));
+    }
+    for (int i = 0; i < destAddressGroups_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 468760508, destAddressGroups_.getRaw(i));
     }
     for (int i = 0; i < srcSecureTags_.size(); i++) {
       output.writeMessage(508791302, srcSecureTags_.get(i));
@@ -403,11 +950,51 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     size = 0;
     {
       int dataSize = 0;
+      for (int i = 0; i < srcRegionCodes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(srcRegionCodes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getSrcRegionCodesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < destThreatIntelligences_.size(); i++) {
+        dataSize += computeStringSizeNoTag(destThreatIntelligences_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getDestThreatIntelligencesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < destRegionCodes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(destRegionCodes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getDestRegionCodesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < srcThreatIntelligences_.size(); i++) {
+        dataSize += computeStringSizeNoTag(srcThreatIntelligences_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getSrcThreatIntelligencesList().size();
+    }
+    {
+      int dataSize = 0;
       for (int i = 0; i < destIpRanges_.size(); i++) {
         dataSize += computeStringSizeNoTag(destIpRanges_.getRaw(i));
       }
       size += dataSize;
       size += 5 * getDestIpRangesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < destFqdns_.size(); i++) {
+        dataSize += computeStringSizeNoTag(destFqdns_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getDestFqdnsList().size();
     }
     for (int i = 0; i < layer4Configs_.size(); i++) {
       size +=
@@ -421,6 +1008,30 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       size += dataSize;
       size += 5 * getSrcIpRangesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < srcFqdns_.size(); i++) {
+        dataSize += computeStringSizeNoTag(srcFqdns_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getSrcFqdnsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < srcAddressGroups_.size(); i++) {
+        dataSize += computeStringSizeNoTag(srcAddressGroups_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getSrcAddressGroupsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < destAddressGroups_.size(); i++) {
+        dataSize += computeStringSizeNoTag(destAddressGroups_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getDestAddressGroupsList().size();
     }
     for (int i = 0; i < srcSecureTags_.size(); i++) {
       size +=
@@ -443,10 +1054,20 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     com.google.cloud.compute.v1.FirewallPolicyRuleMatcher other =
         (com.google.cloud.compute.v1.FirewallPolicyRuleMatcher) obj;
 
+    if (!getDestAddressGroupsList().equals(other.getDestAddressGroupsList())) return false;
+    if (!getDestFqdnsList().equals(other.getDestFqdnsList())) return false;
     if (!getDestIpRangesList().equals(other.getDestIpRangesList())) return false;
+    if (!getDestRegionCodesList().equals(other.getDestRegionCodesList())) return false;
+    if (!getDestThreatIntelligencesList().equals(other.getDestThreatIntelligencesList()))
+      return false;
     if (!getLayer4ConfigsList().equals(other.getLayer4ConfigsList())) return false;
+    if (!getSrcAddressGroupsList().equals(other.getSrcAddressGroupsList())) return false;
+    if (!getSrcFqdnsList().equals(other.getSrcFqdnsList())) return false;
     if (!getSrcIpRangesList().equals(other.getSrcIpRangesList())) return false;
+    if (!getSrcRegionCodesList().equals(other.getSrcRegionCodesList())) return false;
     if (!getSrcSecureTagsList().equals(other.getSrcSecureTagsList())) return false;
+    if (!getSrcThreatIntelligencesList().equals(other.getSrcThreatIntelligencesList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -458,21 +1079,53 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getDestAddressGroupsCount() > 0) {
+      hash = (37 * hash) + DEST_ADDRESS_GROUPS_FIELD_NUMBER;
+      hash = (53 * hash) + getDestAddressGroupsList().hashCode();
+    }
+    if (getDestFqdnsCount() > 0) {
+      hash = (37 * hash) + DEST_FQDNS_FIELD_NUMBER;
+      hash = (53 * hash) + getDestFqdnsList().hashCode();
+    }
     if (getDestIpRangesCount() > 0) {
       hash = (37 * hash) + DEST_IP_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getDestIpRangesList().hashCode();
+    }
+    if (getDestRegionCodesCount() > 0) {
+      hash = (37 * hash) + DEST_REGION_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getDestRegionCodesList().hashCode();
+    }
+    if (getDestThreatIntelligencesCount() > 0) {
+      hash = (37 * hash) + DEST_THREAT_INTELLIGENCES_FIELD_NUMBER;
+      hash = (53 * hash) + getDestThreatIntelligencesList().hashCode();
     }
     if (getLayer4ConfigsCount() > 0) {
       hash = (37 * hash) + LAYER4_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getLayer4ConfigsList().hashCode();
     }
+    if (getSrcAddressGroupsCount() > 0) {
+      hash = (37 * hash) + SRC_ADDRESS_GROUPS_FIELD_NUMBER;
+      hash = (53 * hash) + getSrcAddressGroupsList().hashCode();
+    }
+    if (getSrcFqdnsCount() > 0) {
+      hash = (37 * hash) + SRC_FQDNS_FIELD_NUMBER;
+      hash = (53 * hash) + getSrcFqdnsList().hashCode();
+    }
     if (getSrcIpRangesCount() > 0) {
       hash = (37 * hash) + SRC_IP_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getSrcIpRangesList().hashCode();
     }
+    if (getSrcRegionCodesCount() > 0) {
+      hash = (37 * hash) + SRC_REGION_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getSrcRegionCodesList().hashCode();
+    }
     if (getSrcSecureTagsCount() > 0) {
       hash = (37 * hash) + SRC_SECURE_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getSrcSecureTagsList().hashCode();
+    }
+    if (getSrcThreatIntelligencesCount() > 0) {
+      hash = (37 * hash) + SRC_THREAT_INTELLIGENCES_FIELD_NUMBER;
+      hash = (53 * hash) + getSrcThreatIntelligencesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -614,24 +1267,30 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      destIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      destAddressGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      destFqdns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      destIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      destRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      destThreatIntelligences_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (layer4ConfigsBuilder_ == null) {
         layer4Configs_ = java.util.Collections.emptyList();
       } else {
         layer4Configs_ = null;
         layer4ConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
+      srcAddressGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      srcFqdns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      srcRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (srcSecureTagsBuilder_ == null) {
         srcSecureTags_ = java.util.Collections.emptyList();
       } else {
         srcSecureTags_ = null;
         srcSecureTagsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000400);
+      srcThreatIntelligences_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -669,29 +1328,19 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
 
     private void buildPartialRepeatedFields(
         com.google.cloud.compute.v1.FirewallPolicyRuleMatcher result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        destIpRanges_ = destIpRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.destIpRanges_ = destIpRanges_;
       if (layer4ConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           layer4Configs_ = java.util.Collections.unmodifiableList(layer4Configs_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.layer4Configs_ = layer4Configs_;
       } else {
         result.layer4Configs_ = layer4ConfigsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        srcIpRanges_ = srcIpRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.srcIpRanges_ = srcIpRanges_;
       if (srcSecureTagsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           srcSecureTags_ = java.util.Collections.unmodifiableList(srcSecureTags_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.srcSecureTags_ = srcSecureTags_;
       } else {
@@ -701,6 +1350,46 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
 
     private void buildPartial0(com.google.cloud.compute.v1.FirewallPolicyRuleMatcher result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        destAddressGroups_.makeImmutable();
+        result.destAddressGroups_ = destAddressGroups_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        destFqdns_.makeImmutable();
+        result.destFqdns_ = destFqdns_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        destIpRanges_.makeImmutable();
+        result.destIpRanges_ = destIpRanges_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        destRegionCodes_.makeImmutable();
+        result.destRegionCodes_ = destRegionCodes_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        destThreatIntelligences_.makeImmutable();
+        result.destThreatIntelligences_ = destThreatIntelligences_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        srcAddressGroups_.makeImmutable();
+        result.srcAddressGroups_ = srcAddressGroups_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        srcFqdns_.makeImmutable();
+        result.srcFqdns_ = srcFqdns_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        srcIpRanges_.makeImmutable();
+        result.srcIpRanges_ = srcIpRanges_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        srcRegionCodes_.makeImmutable();
+        result.srcRegionCodes_ = srcRegionCodes_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        srcThreatIntelligences_.makeImmutable();
+        result.srcThreatIntelligences_ = srcThreatIntelligences_;
+      }
     }
 
     @java.lang.Override
@@ -749,13 +1438,53 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder mergeFrom(com.google.cloud.compute.v1.FirewallPolicyRuleMatcher other) {
       if (other == com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.getDefaultInstance())
         return this;
+      if (!other.destAddressGroups_.isEmpty()) {
+        if (destAddressGroups_.isEmpty()) {
+          destAddressGroups_ = other.destAddressGroups_;
+          bitField0_ |= 0x00000001;
+        } else {
+          ensureDestAddressGroupsIsMutable();
+          destAddressGroups_.addAll(other.destAddressGroups_);
+        }
+        onChanged();
+      }
+      if (!other.destFqdns_.isEmpty()) {
+        if (destFqdns_.isEmpty()) {
+          destFqdns_ = other.destFqdns_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureDestFqdnsIsMutable();
+          destFqdns_.addAll(other.destFqdns_);
+        }
+        onChanged();
+      }
       if (!other.destIpRanges_.isEmpty()) {
         if (destIpRanges_.isEmpty()) {
           destIpRanges_ = other.destIpRanges_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000004;
         } else {
           ensureDestIpRangesIsMutable();
           destIpRanges_.addAll(other.destIpRanges_);
+        }
+        onChanged();
+      }
+      if (!other.destRegionCodes_.isEmpty()) {
+        if (destRegionCodes_.isEmpty()) {
+          destRegionCodes_ = other.destRegionCodes_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureDestRegionCodesIsMutable();
+          destRegionCodes_.addAll(other.destRegionCodes_);
+        }
+        onChanged();
+      }
+      if (!other.destThreatIntelligences_.isEmpty()) {
+        if (destThreatIntelligences_.isEmpty()) {
+          destThreatIntelligences_ = other.destThreatIntelligences_;
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureDestThreatIntelligencesIsMutable();
+          destThreatIntelligences_.addAll(other.destThreatIntelligences_);
         }
         onChanged();
       }
@@ -763,7 +1492,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         if (!other.layer4Configs_.isEmpty()) {
           if (layer4Configs_.isEmpty()) {
             layer4Configs_ = other.layer4Configs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureLayer4ConfigsIsMutable();
             layer4Configs_.addAll(other.layer4Configs_);
@@ -776,7 +1505,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
             layer4ConfigsBuilder_.dispose();
             layer4ConfigsBuilder_ = null;
             layer4Configs_ = other.layer4Configs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
             layer4ConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLayer4ConfigsFieldBuilder()
@@ -786,13 +1515,43 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
           }
         }
       }
+      if (!other.srcAddressGroups_.isEmpty()) {
+        if (srcAddressGroups_.isEmpty()) {
+          srcAddressGroups_ = other.srcAddressGroups_;
+          bitField0_ |= 0x00000040;
+        } else {
+          ensureSrcAddressGroupsIsMutable();
+          srcAddressGroups_.addAll(other.srcAddressGroups_);
+        }
+        onChanged();
+      }
+      if (!other.srcFqdns_.isEmpty()) {
+        if (srcFqdns_.isEmpty()) {
+          srcFqdns_ = other.srcFqdns_;
+          bitField0_ |= 0x00000080;
+        } else {
+          ensureSrcFqdnsIsMutable();
+          srcFqdns_.addAll(other.srcFqdns_);
+        }
+        onChanged();
+      }
       if (!other.srcIpRanges_.isEmpty()) {
         if (srcIpRanges_.isEmpty()) {
           srcIpRanges_ = other.srcIpRanges_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000100;
         } else {
           ensureSrcIpRangesIsMutable();
           srcIpRanges_.addAll(other.srcIpRanges_);
+        }
+        onChanged();
+      }
+      if (!other.srcRegionCodes_.isEmpty()) {
+        if (srcRegionCodes_.isEmpty()) {
+          srcRegionCodes_ = other.srcRegionCodes_;
+          bitField0_ |= 0x00000200;
+        } else {
+          ensureSrcRegionCodesIsMutable();
+          srcRegionCodes_.addAll(other.srcRegionCodes_);
         }
         onChanged();
       }
@@ -800,7 +1559,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         if (!other.srcSecureTags_.isEmpty()) {
           if (srcSecureTags_.isEmpty()) {
             srcSecureTags_ = other.srcSecureTags_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureSrcSecureTagsIsMutable();
             srcSecureTags_.addAll(other.srcSecureTags_);
@@ -813,7 +1572,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
             srcSecureTagsBuilder_.dispose();
             srcSecureTagsBuilder_ = null;
             srcSecureTags_ = other.srcSecureTags_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000400);
             srcSecureTagsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSrcSecureTagsFieldBuilder()
@@ -822,6 +1581,16 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
             srcSecureTagsBuilder_.addAllMessages(other.srcSecureTags_);
           }
         }
+      }
+      if (!other.srcThreatIntelligences_.isEmpty()) {
+        if (srcThreatIntelligences_.isEmpty()) {
+          srcThreatIntelligences_ = other.srcThreatIntelligences_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureSrcThreatIntelligencesIsMutable();
+          srcThreatIntelligences_.addAll(other.srcThreatIntelligences_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -849,6 +1618,34 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
             case 0:
               done = true;
               break;
+            case 792693938:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSrcRegionCodesIsMutable();
+                srcRegionCodes_.add(s);
+                break;
+              } // case 792693938
+            case 959171938:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDestThreatIntelligencesIsMutable();
+                destThreatIntelligences_.add(s);
+                break;
+              } // case 959171938
+            case 1592962242:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDestRegionCodesIsMutable();
+                destRegionCodes_.add(s);
+                break;
+              } // case 1592962242
+            case -1705919150:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSrcThreatIntelligencesIsMutable();
+                srcThreatIntelligences_.add(s);
+                break;
+              } // case -1705919150
             case -1596105590:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -856,6 +1653,13 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
                 destIpRanges_.add(s);
                 break;
               } // case -1596105590
+            case -1329265398:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDestFqdnsIsMutable();
+                destFqdns_.add(s);
+                break;
+              } // case -1329265398
             case -1306693206:
               {
                 com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config m =
@@ -877,6 +1681,27 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
                 srcIpRanges_.add(s);
                 break;
               } // case -837942630
+            case -807718118:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSrcFqdnsIsMutable();
+                srcFqdns_.add(s);
+                break;
+              } // case -807718118
+            case -803577390:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSrcAddressGroupsIsMutable();
+                srcAddressGroups_.add(s);
+                break;
+              } // case -803577390
+            case -544883230:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDestAddressGroupsIsMutable();
+                destAddressGroups_.add(s);
+                break;
+              } // case -544883230
             case -224636878:
               {
                 com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag m =
@@ -910,14 +1735,362 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList destIpRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList destAddressGroups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDestAddressGroupsIsMutable() {
+      if (!destAddressGroups_.isModifiable()) {
+        destAddressGroups_ = new com.google.protobuf.LazyStringArrayList(destAddressGroups_);
+      }
+      bitField0_ |= 0x00000001;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string dest_address_groups = 468760508;</code>
+     *
+     * @return A list containing the destAddressGroups.
+     */
+    public com.google.protobuf.ProtocolStringList getDestAddressGroupsList() {
+      destAddressGroups_.makeImmutable();
+      return destAddressGroups_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string dest_address_groups = 468760508;</code>
+     *
+     * @return The count of destAddressGroups.
+     */
+    public int getDestAddressGroupsCount() {
+      return destAddressGroups_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string dest_address_groups = 468760508;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The destAddressGroups at the given index.
+     */
+    public java.lang.String getDestAddressGroups(int index) {
+      return destAddressGroups_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string dest_address_groups = 468760508;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the destAddressGroups at the given index.
+     */
+    public com.google.protobuf.ByteString getDestAddressGroupsBytes(int index) {
+      return destAddressGroups_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string dest_address_groups = 468760508;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The destAddressGroups to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestAddressGroups(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestAddressGroupsIsMutable();
+      destAddressGroups_.set(index, value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string dest_address_groups = 468760508;</code>
+     *
+     * @param value The destAddressGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestAddressGroups(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestAddressGroupsIsMutable();
+      destAddressGroups_.add(value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string dest_address_groups = 468760508;</code>
+     *
+     * @param values The destAddressGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDestAddressGroups(java.lang.Iterable<java.lang.String> values) {
+      ensureDestAddressGroupsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destAddressGroups_);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string dest_address_groups = 468760508;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDestAddressGroups() {
+      destAddressGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string dest_address_groups = 468760508;</code>
+     *
+     * @param value The bytes of the destAddressGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestAddressGroupsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDestAddressGroupsIsMutable();
+      destAddressGroups_.add(value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList destFqdns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDestFqdnsIsMutable() {
+      if (!destFqdns_.isModifiable()) {
+        destFqdns_ = new com.google.protobuf.LazyStringArrayList(destFqdns_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string dest_fqdns = 370712737;</code>
+     *
+     * @return A list containing the destFqdns.
+     */
+    public com.google.protobuf.ProtocolStringList getDestFqdnsList() {
+      destFqdns_.makeImmutable();
+      return destFqdns_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string dest_fqdns = 370712737;</code>
+     *
+     * @return The count of destFqdns.
+     */
+    public int getDestFqdnsCount() {
+      return destFqdns_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string dest_fqdns = 370712737;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The destFqdns at the given index.
+     */
+    public java.lang.String getDestFqdns(int index) {
+      return destFqdns_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string dest_fqdns = 370712737;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the destFqdns at the given index.
+     */
+    public com.google.protobuf.ByteString getDestFqdnsBytes(int index) {
+      return destFqdns_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string dest_fqdns = 370712737;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The destFqdns to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestFqdns(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestFqdnsIsMutable();
+      destFqdns_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string dest_fqdns = 370712737;</code>
+     *
+     * @param value The destFqdns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestFqdns(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestFqdnsIsMutable();
+      destFqdns_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string dest_fqdns = 370712737;</code>
+     *
+     * @param values The destFqdns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDestFqdns(java.lang.Iterable<java.lang.String> values) {
+      ensureDestFqdnsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destFqdns_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string dest_fqdns = 370712737;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDestFqdns() {
+      destFqdns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string dest_fqdns = 370712737;</code>
+     *
+     * @param value The bytes of the destFqdns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestFqdnsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDestFqdnsIsMutable();
+      destFqdns_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList destIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDestIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!destIpRanges_.isModifiable()) {
         destIpRanges_ = new com.google.protobuf.LazyStringArrayList(destIpRanges_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -931,7 +2104,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return A list containing the destIpRanges.
      */
     public com.google.protobuf.ProtocolStringList getDestIpRangesList() {
-      return destIpRanges_.getUnmodifiableView();
+      destIpRanges_.makeImmutable();
+      return destIpRanges_;
     }
     /**
      *
@@ -996,6 +2170,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureDestIpRangesIsMutable();
       destIpRanges_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1017,6 +2192,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureDestIpRangesIsMutable();
       destIpRanges_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1035,6 +2211,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllDestIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureDestIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destIpRanges_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1050,8 +2227,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearDestIpRanges() {
-      destIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      destIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1074,6 +2252,356 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureDestIpRangesIsMutable();
       destIpRanges_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList destRegionCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDestRegionCodesIsMutable() {
+      if (!destRegionCodes_.isModifiable()) {
+        destRegionCodes_ = new com.google.protobuf.LazyStringArrayList(destRegionCodes_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string dest_region_codes = 199120280;</code>
+     *
+     * @return A list containing the destRegionCodes.
+     */
+    public com.google.protobuf.ProtocolStringList getDestRegionCodesList() {
+      destRegionCodes_.makeImmutable();
+      return destRegionCodes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string dest_region_codes = 199120280;</code>
+     *
+     * @return The count of destRegionCodes.
+     */
+    public int getDestRegionCodesCount() {
+      return destRegionCodes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string dest_region_codes = 199120280;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The destRegionCodes at the given index.
+     */
+    public java.lang.String getDestRegionCodes(int index) {
+      return destRegionCodes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string dest_region_codes = 199120280;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the destRegionCodes at the given index.
+     */
+    public com.google.protobuf.ByteString getDestRegionCodesBytes(int index) {
+      return destRegionCodes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string dest_region_codes = 199120280;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The destRegionCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestRegionCodes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestRegionCodesIsMutable();
+      destRegionCodes_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string dest_region_codes = 199120280;</code>
+     *
+     * @param value The destRegionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestRegionCodes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestRegionCodesIsMutable();
+      destRegionCodes_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string dest_region_codes = 199120280;</code>
+     *
+     * @param values The destRegionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDestRegionCodes(java.lang.Iterable<java.lang.String> values) {
+      ensureDestRegionCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destRegionCodes_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string dest_region_codes = 199120280;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDestRegionCodes() {
+      destRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string dest_region_codes = 199120280;</code>
+     *
+     * @param value The bytes of the destRegionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestRegionCodesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDestRegionCodesIsMutable();
+      destRegionCodes_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList destThreatIntelligences_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDestThreatIntelligencesIsMutable() {
+      if (!destThreatIntelligences_.isModifiable()) {
+        destThreatIntelligences_ =
+            new com.google.protobuf.LazyStringArrayList(destThreatIntelligences_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * </pre>
+     *
+     * <code>repeated string dest_threat_intelligences = 119896492;</code>
+     *
+     * @return A list containing the destThreatIntelligences.
+     */
+    public com.google.protobuf.ProtocolStringList getDestThreatIntelligencesList() {
+      destThreatIntelligences_.makeImmutable();
+      return destThreatIntelligences_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * </pre>
+     *
+     * <code>repeated string dest_threat_intelligences = 119896492;</code>
+     *
+     * @return The count of destThreatIntelligences.
+     */
+    public int getDestThreatIntelligencesCount() {
+      return destThreatIntelligences_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * </pre>
+     *
+     * <code>repeated string dest_threat_intelligences = 119896492;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The destThreatIntelligences at the given index.
+     */
+    public java.lang.String getDestThreatIntelligences(int index) {
+      return destThreatIntelligences_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * </pre>
+     *
+     * <code>repeated string dest_threat_intelligences = 119896492;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the destThreatIntelligences at the given index.
+     */
+    public com.google.protobuf.ByteString getDestThreatIntelligencesBytes(int index) {
+      return destThreatIntelligences_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * </pre>
+     *
+     * <code>repeated string dest_threat_intelligences = 119896492;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The destThreatIntelligences to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestThreatIntelligences(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestThreatIntelligencesIsMutable();
+      destThreatIntelligences_.set(index, value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * </pre>
+     *
+     * <code>repeated string dest_threat_intelligences = 119896492;</code>
+     *
+     * @param value The destThreatIntelligences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestThreatIntelligences(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestThreatIntelligencesIsMutable();
+      destThreatIntelligences_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * </pre>
+     *
+     * <code>repeated string dest_threat_intelligences = 119896492;</code>
+     *
+     * @param values The destThreatIntelligences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDestThreatIntelligences(java.lang.Iterable<java.lang.String> values) {
+      ensureDestThreatIntelligencesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destThreatIntelligences_);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * </pre>
+     *
+     * <code>repeated string dest_threat_intelligences = 119896492;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDestThreatIntelligences() {
+      destThreatIntelligences_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * </pre>
+     *
+     * <code>repeated string dest_threat_intelligences = 119896492;</code>
+     *
+     * @param value The bytes of the destThreatIntelligences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestThreatIntelligencesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDestThreatIntelligencesIsMutable();
+      destThreatIntelligences_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1082,11 +2610,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         layer4Configs_ = java.util.Collections.emptyList();
 
     private void ensureLayer4ConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         layer4Configs_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config>(layer4Configs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -1333,7 +2861,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder clearLayer4Configs() {
       if (layer4ConfigsBuilder_ == null) {
         layer4Configs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         layer4ConfigsBuilder_.clear();
@@ -1480,7 +3008,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
                 com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config.Builder,
                 com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4ConfigOrBuilder>(
                 layer4Configs_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         layer4Configs_ = null;
@@ -1488,14 +3016,362 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       return layer4ConfigsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList srcIpRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList srcAddressGroups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSrcAddressGroupsIsMutable() {
+      if (!srcAddressGroups_.isModifiable()) {
+        srcAddressGroups_ = new com.google.protobuf.LazyStringArrayList(srcAddressGroups_);
+      }
+      bitField0_ |= 0x00000040;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string src_address_groups = 436423738;</code>
+     *
+     * @return A list containing the srcAddressGroups.
+     */
+    public com.google.protobuf.ProtocolStringList getSrcAddressGroupsList() {
+      srcAddressGroups_.makeImmutable();
+      return srcAddressGroups_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string src_address_groups = 436423738;</code>
+     *
+     * @return The count of srcAddressGroups.
+     */
+    public int getSrcAddressGroupsCount() {
+      return srcAddressGroups_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string src_address_groups = 436423738;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The srcAddressGroups at the given index.
+     */
+    public java.lang.String getSrcAddressGroups(int index) {
+      return srcAddressGroups_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string src_address_groups = 436423738;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the srcAddressGroups at the given index.
+     */
+    public com.google.protobuf.ByteString getSrcAddressGroupsBytes(int index) {
+      return srcAddressGroups_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string src_address_groups = 436423738;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The srcAddressGroups to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSrcAddressGroups(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSrcAddressGroupsIsMutable();
+      srcAddressGroups_.set(index, value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string src_address_groups = 436423738;</code>
+     *
+     * @param value The srcAddressGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSrcAddressGroups(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSrcAddressGroupsIsMutable();
+      srcAddressGroups_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string src_address_groups = 436423738;</code>
+     *
+     * @param values The srcAddressGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSrcAddressGroups(java.lang.Iterable<java.lang.String> values) {
+      ensureSrcAddressGroupsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcAddressGroups_);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string src_address_groups = 436423738;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSrcAddressGroups() {
+      srcAddressGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * </pre>
+     *
+     * <code>repeated string src_address_groups = 436423738;</code>
+     *
+     * @param value The bytes of the srcAddressGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSrcAddressGroupsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSrcAddressGroupsIsMutable();
+      srcAddressGroups_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList srcFqdns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSrcFqdnsIsMutable() {
+      if (!srcFqdns_.isModifiable()) {
+        srcFqdns_ = new com.google.protobuf.LazyStringArrayList(srcFqdns_);
+      }
+      bitField0_ |= 0x00000080;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string src_fqdns = 435906147;</code>
+     *
+     * @return A list containing the srcFqdns.
+     */
+    public com.google.protobuf.ProtocolStringList getSrcFqdnsList() {
+      srcFqdns_.makeImmutable();
+      return srcFqdns_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string src_fqdns = 435906147;</code>
+     *
+     * @return The count of srcFqdns.
+     */
+    public int getSrcFqdnsCount() {
+      return srcFqdns_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string src_fqdns = 435906147;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The srcFqdns at the given index.
+     */
+    public java.lang.String getSrcFqdns(int index) {
+      return srcFqdns_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string src_fqdns = 435906147;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the srcFqdns at the given index.
+     */
+    public com.google.protobuf.ByteString getSrcFqdnsBytes(int index) {
+      return srcFqdns_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string src_fqdns = 435906147;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The srcFqdns to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSrcFqdns(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSrcFqdnsIsMutable();
+      srcFqdns_.set(index, value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string src_fqdns = 435906147;</code>
+     *
+     * @param value The srcFqdns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSrcFqdns(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSrcFqdnsIsMutable();
+      srcFqdns_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string src_fqdns = 435906147;</code>
+     *
+     * @param values The srcFqdns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSrcFqdns(java.lang.Iterable<java.lang.String> values) {
+      ensureSrcFqdnsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcFqdns_);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string src_fqdns = 435906147;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSrcFqdns() {
+      srcFqdns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string src_fqdns = 435906147;</code>
+     *
+     * @param value The bytes of the srcFqdns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSrcFqdnsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSrcFqdnsIsMutable();
+      srcFqdns_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList srcIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSrcIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!srcIpRanges_.isModifiable()) {
         srcIpRanges_ = new com.google.protobuf.LazyStringArrayList(srcIpRanges_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -1509,7 +3385,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return A list containing the srcIpRanges.
      */
     public com.google.protobuf.ProtocolStringList getSrcIpRangesList() {
-      return srcIpRanges_.getUnmodifiableView();
+      srcIpRanges_.makeImmutable();
+      return srcIpRanges_;
     }
     /**
      *
@@ -1574,6 +3451,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1595,6 +3473,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1613,6 +3492,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllSrcIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureSrcIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcIpRanges_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1628,8 +3508,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearSrcIpRanges() {
-      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -1652,6 +3533,181 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList srcRegionCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSrcRegionCodesIsMutable() {
+      if (!srcRegionCodes_.isModifiable()) {
+        srcRegionCodes_ = new com.google.protobuf.LazyStringArrayList(srcRegionCodes_);
+      }
+      bitField0_ |= 0x00000200;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string src_region_codes = 99086742;</code>
+     *
+     * @return A list containing the srcRegionCodes.
+     */
+    public com.google.protobuf.ProtocolStringList getSrcRegionCodesList() {
+      srcRegionCodes_.makeImmutable();
+      return srcRegionCodes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string src_region_codes = 99086742;</code>
+     *
+     * @return The count of srcRegionCodes.
+     */
+    public int getSrcRegionCodesCount() {
+      return srcRegionCodes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string src_region_codes = 99086742;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The srcRegionCodes at the given index.
+     */
+    public java.lang.String getSrcRegionCodes(int index) {
+      return srcRegionCodes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string src_region_codes = 99086742;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the srcRegionCodes at the given index.
+     */
+    public com.google.protobuf.ByteString getSrcRegionCodesBytes(int index) {
+      return srcRegionCodes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string src_region_codes = 99086742;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The srcRegionCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSrcRegionCodes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSrcRegionCodesIsMutable();
+      srcRegionCodes_.set(index, value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string src_region_codes = 99086742;</code>
+     *
+     * @param value The srcRegionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSrcRegionCodes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSrcRegionCodesIsMutable();
+      srcRegionCodes_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string src_region_codes = 99086742;</code>
+     *
+     * @param values The srcRegionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSrcRegionCodes(java.lang.Iterable<java.lang.String> values) {
+      ensureSrcRegionCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcRegionCodes_);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string src_region_codes = 99086742;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSrcRegionCodes() {
+      srcRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * </pre>
+     *
+     * <code>repeated string src_region_codes = 99086742;</code>
+     *
+     * @param value The bytes of the srcRegionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSrcRegionCodesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSrcRegionCodesIsMutable();
+      srcRegionCodes_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -1660,11 +3716,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureSrcSecureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         srcSecureTags_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>(
                 srcSecureTags_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -1908,7 +3964,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder clearSrcSecureTags() {
       if (srcSecureTagsBuilder_ == null) {
         srcSecureTags_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         srcSecureTagsBuilder_.clear();
@@ -2051,12 +4107,187 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
                 com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder,
                 com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>(
                 srcSecureTags_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         srcSecureTags_ = null;
       }
       return srcSecureTagsBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList srcThreatIntelligences_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSrcThreatIntelligencesIsMutable() {
+      if (!srcThreatIntelligences_.isModifiable()) {
+        srcThreatIntelligences_ =
+            new com.google.protobuf.LazyStringArrayList(srcThreatIntelligences_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * </pre>
+     *
+     * <code>repeated string src_threat_intelligences = 323631018;</code>
+     *
+     * @return A list containing the srcThreatIntelligences.
+     */
+    public com.google.protobuf.ProtocolStringList getSrcThreatIntelligencesList() {
+      srcThreatIntelligences_.makeImmutable();
+      return srcThreatIntelligences_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * </pre>
+     *
+     * <code>repeated string src_threat_intelligences = 323631018;</code>
+     *
+     * @return The count of srcThreatIntelligences.
+     */
+    public int getSrcThreatIntelligencesCount() {
+      return srcThreatIntelligences_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * </pre>
+     *
+     * <code>repeated string src_threat_intelligences = 323631018;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The srcThreatIntelligences at the given index.
+     */
+    public java.lang.String getSrcThreatIntelligences(int index) {
+      return srcThreatIntelligences_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * </pre>
+     *
+     * <code>repeated string src_threat_intelligences = 323631018;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the srcThreatIntelligences at the given index.
+     */
+    public com.google.protobuf.ByteString getSrcThreatIntelligencesBytes(int index) {
+      return srcThreatIntelligences_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * </pre>
+     *
+     * <code>repeated string src_threat_intelligences = 323631018;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The srcThreatIntelligences to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSrcThreatIntelligences(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSrcThreatIntelligencesIsMutable();
+      srcThreatIntelligences_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * </pre>
+     *
+     * <code>repeated string src_threat_intelligences = 323631018;</code>
+     *
+     * @param value The srcThreatIntelligences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSrcThreatIntelligences(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSrcThreatIntelligencesIsMutable();
+      srcThreatIntelligences_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * </pre>
+     *
+     * <code>repeated string src_threat_intelligences = 323631018;</code>
+     *
+     * @param values The srcThreatIntelligences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSrcThreatIntelligences(java.lang.Iterable<java.lang.String> values) {
+      ensureSrcThreatIntelligencesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcThreatIntelligences_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * </pre>
+     *
+     * <code>repeated string src_threat_intelligences = 323631018;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSrcThreatIntelligences() {
+      srcThreatIntelligences_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * </pre>
+     *
+     * <code>repeated string src_threat_intelligences = 323631018;</code>
+     *
+     * @param value The bytes of the srcThreatIntelligences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSrcThreatIntelligencesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSrcThreatIntelligencesIsMutable();
+      srcThreatIntelligences_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

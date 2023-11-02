@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -125,10 +125,12 @@ public interface PurchaseTransactionOrBuilder
    * Optional. All the costs associated with the product. These can be
    * manufacturing costs, shipping expenses not borne by the end user, or any
    * other costs.
+   *
    * Total product cost such that
    *   profit = revenue - (sum(taxes) + sum(costs))
    * If product_cost is not set, then
    *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+   *
    * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
    * based profit *cannot* be calculated for this Transaction.
    * </pre>
@@ -143,10 +145,12 @@ public interface PurchaseTransactionOrBuilder
    * Optional. All the costs associated with the product. These can be
    * manufacturing costs, shipping expenses not borne by the end user, or any
    * other costs.
+   *
    * Total product cost such that
    *   profit = revenue - (sum(taxes) + sum(costs))
    * If product_cost is not set, then
    *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+   *
    * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
    * based profit *cannot* be calculated for this Transaction.
    * </pre>
@@ -164,10 +168,12 @@ public interface PurchaseTransactionOrBuilder
    * Optional. All the costs associated with the product. These can be
    * manufacturing costs, shipping expenses not borne by the end user, or any
    * other costs.
+   *
    * Total product cost such that
    *   profit = revenue - (sum(taxes) + sum(costs))
    * If product_cost is not set, then
    *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+   *
    * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
    * based profit *cannot* be calculated for this Transaction.
    * </pre>
@@ -182,10 +188,12 @@ public interface PurchaseTransactionOrBuilder
    * Optional. All the costs associated with the product. These can be
    * manufacturing costs, shipping expenses not borne by the end user, or any
    * other costs.
+   *
    * Total product cost such that
    *   profit = revenue - (sum(taxes) + sum(costs))
    * If product_cost is not set, then
    *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+   *
    * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
    * based profit *cannot* be calculated for this Transaction.
    * </pre>
@@ -200,10 +208,12 @@ public interface PurchaseTransactionOrBuilder
    * Optional. All the costs associated with the product. These can be
    * manufacturing costs, shipping expenses not borne by the end user, or any
    * other costs.
+   *
    * Total product cost such that
    *   profit = revenue - (sum(taxes) + sum(costs))
    * If product_cost is not set, then
    *   profit = revenue - tax - shipping - sum(CatalogItem.costs).
+   *
    * If CatalogItem.cost is not specified for one of the items, CatalogItem.cost
    * based profit *cannot* be calculated for this Transaction.
    * </pre>

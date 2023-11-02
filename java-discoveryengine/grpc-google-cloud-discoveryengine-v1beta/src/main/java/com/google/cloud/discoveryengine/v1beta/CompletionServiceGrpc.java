@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ public final class CompletionServiceGrpc {
 
   private CompletionServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.discoveryengine.v1beta.CompletionService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.discoveryengine.v1beta.CompletionService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -347,9 +348,9 @@ public final class CompletionServiceGrpc {
   private static final class CompletionServiceMethodDescriptorSupplier
       extends CompletionServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CompletionServiceMethodDescriptorSupplier(String methodName) {
+    CompletionServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

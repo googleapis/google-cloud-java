@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface AccessOrBuilder
    *
    * <pre>
    * Associated email, such as "foo&#64;google.com".
+   *
    * The email address of the authenticated user or a service account acting on
    * behalf of a third party principal making the request. For third party
    * identity callers, the `principal_subject` field is populated instead of
@@ -46,6 +47,7 @@ public interface AccessOrBuilder
    *
    * <pre>
    * Associated email, such as "foo&#64;google.com".
+   *
    * The email address of the authenticated user or a service account acting on
    * behalf of a third party principal making the request. For third party
    * identity callers, the `principal_subject` field is populated instead of
@@ -151,6 +153,31 @@ public interface AccessOrBuilder
    *
    *
    * <pre>
+   * The caller's user agent string associated with the finding.
+   * </pre>
+   *
+   * <code>string user_agent = 12;</code>
+   *
+   * @return The userAgent.
+   */
+  java.lang.String getUserAgent();
+  /**
+   *
+   *
+   * <pre>
+   * The caller's user agent string associated with the finding.
+   * </pre>
+   *
+   * <code>string user_agent = 12;</code>
+   *
+   * @return The bytes for userAgent.
+   */
+  com.google.protobuf.ByteString getUserAgentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * This is the API service that the service account made a call to, e.g.
    * "iam.googleapis.com"
    * </pre>
@@ -245,6 +272,7 @@ public interface AccessOrBuilder
    * The name of the service account key that was used to create or exchange
    * credentials when authenticating the service account that made the request.
    * This is a scheme-less URI full resource name. For example:
+   *
    * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}".
    * </pre>
    *
@@ -260,6 +288,7 @@ public interface AccessOrBuilder
    * The name of the service account key that was used to create or exchange
    * credentials when authenticating the service account that made the request.
    * This is a scheme-less URI full resource name. For example:
+   *
    * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}".
    * </pre>
    *

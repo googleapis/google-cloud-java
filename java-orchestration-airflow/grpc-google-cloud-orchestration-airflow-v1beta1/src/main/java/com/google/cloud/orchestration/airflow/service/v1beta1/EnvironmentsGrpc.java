@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class EnvironmentsGrpc {
 
   private EnvironmentsGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.orchestration.airflow.service.v1beta1.Environments";
 
   // Static method descriptors that strictly reflect the proto.
@@ -375,6 +375,163 @@ public final class EnvironmentsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest,
+          com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse>
+      getExecuteAirflowCommandMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExecuteAirflowCommand",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest.class,
+      responseType =
+          com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse
+              .class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest,
+          com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse>
+      getExecuteAirflowCommandMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest,
+            com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse>
+        getExecuteAirflowCommandMethod;
+    if ((getExecuteAirflowCommandMethod = EnvironmentsGrpc.getExecuteAirflowCommandMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getExecuteAirflowCommandMethod = EnvironmentsGrpc.getExecuteAirflowCommandMethod)
+            == null) {
+          EnvironmentsGrpc.getExecuteAirflowCommandMethod =
+              getExecuteAirflowCommandMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1beta1
+                              .ExecuteAirflowCommandRequest,
+                          com.google.cloud.orchestration.airflow.service.v1beta1
+                              .ExecuteAirflowCommandResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ExecuteAirflowCommand"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1beta1
+                                  .ExecuteAirflowCommandRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1beta1
+                                  .ExecuteAirflowCommandResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("ExecuteAirflowCommand"))
+                      .build();
+        }
+      }
+    }
+    return getExecuteAirflowCommandMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest,
+          com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse>
+      getStopAirflowCommandMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StopAirflowCommand",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest.class,
+      responseType =
+          com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest,
+          com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse>
+      getStopAirflowCommandMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest,
+            com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse>
+        getStopAirflowCommandMethod;
+    if ((getStopAirflowCommandMethod = EnvironmentsGrpc.getStopAirflowCommandMethod) == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getStopAirflowCommandMethod = EnvironmentsGrpc.getStopAirflowCommandMethod) == null) {
+          EnvironmentsGrpc.getStopAirflowCommandMethod =
+              getStopAirflowCommandMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1beta1
+                              .StopAirflowCommandRequest,
+                          com.google.cloud.orchestration.airflow.service.v1beta1
+                              .StopAirflowCommandResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StopAirflowCommand"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1beta1
+                                  .StopAirflowCommandRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1beta1
+                                  .StopAirflowCommandResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("StopAirflowCommand"))
+                      .build();
+        }
+      }
+    }
+    return getStopAirflowCommandMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest,
+          com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse>
+      getPollAirflowCommandMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PollAirflowCommand",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest.class,
+      responseType =
+          com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest,
+          com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse>
+      getPollAirflowCommandMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest,
+            com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse>
+        getPollAirflowCommandMethod;
+    if ((getPollAirflowCommandMethod = EnvironmentsGrpc.getPollAirflowCommandMethod) == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getPollAirflowCommandMethod = EnvironmentsGrpc.getPollAirflowCommandMethod) == null) {
+          EnvironmentsGrpc.getPollAirflowCommandMethod =
+              getPollAirflowCommandMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1beta1
+                              .PollAirflowCommandRequest,
+                          com.google.cloud.orchestration.airflow.service.v1beta1
+                              .PollAirflowCommandResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PollAirflowCommand"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1beta1
+                                  .PollAirflowCommandRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1beta1
+                                  .PollAirflowCommandResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("PollAirflowCommand"))
+                      .build();
+        }
+      }
+    }
+    return getPollAirflowCommandMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest,
           com.google.longrunning.Operation>
       getSaveSnapshotMethod;
@@ -464,6 +621,110 @@ public final class EnvironmentsGrpc {
       }
     }
     return getLoadSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest,
+          com.google.longrunning.Operation>
+      getDatabaseFailoverMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DatabaseFailover",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest,
+          com.google.longrunning.Operation>
+      getDatabaseFailoverMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest,
+            com.google.longrunning.Operation>
+        getDatabaseFailoverMethod;
+    if ((getDatabaseFailoverMethod = EnvironmentsGrpc.getDatabaseFailoverMethod) == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getDatabaseFailoverMethod = EnvironmentsGrpc.getDatabaseFailoverMethod) == null) {
+          EnvironmentsGrpc.getDatabaseFailoverMethod =
+              getDatabaseFailoverMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1beta1
+                              .DatabaseFailoverRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DatabaseFailover"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1beta1
+                                  .DatabaseFailoverRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("DatabaseFailover"))
+                      .build();
+        }
+      }
+    }
+    return getDatabaseFailoverMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest,
+          com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse>
+      getFetchDatabasePropertiesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchDatabaseProperties",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest
+              .class,
+      responseType =
+          com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse
+              .class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest,
+          com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse>
+      getFetchDatabasePropertiesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest,
+            com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse>
+        getFetchDatabasePropertiesMethod;
+    if ((getFetchDatabasePropertiesMethod = EnvironmentsGrpc.getFetchDatabasePropertiesMethod)
+        == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getFetchDatabasePropertiesMethod = EnvironmentsGrpc.getFetchDatabasePropertiesMethod)
+            == null) {
+          EnvironmentsGrpc.getFetchDatabasePropertiesMethod =
+              getFetchDatabasePropertiesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1beta1
+                              .FetchDatabasePropertiesRequest,
+                          com.google.cloud.orchestration.airflow.service.v1beta1
+                              .FetchDatabasePropertiesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchDatabaseProperties"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1beta1
+                                  .FetchDatabasePropertiesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1beta1
+                                  .FetchDatabasePropertiesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnvironmentsMethodDescriptorSupplier("FetchDatabaseProperties"))
+                      .build();
+        }
+      }
+    }
+    return getFetchDatabasePropertiesMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -623,6 +884,55 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
+     * Executes Airflow CLI command.
+     * </pre>
+     */
+    default void executeAirflowCommand(
+        com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1beta1
+                    .ExecuteAirflowCommandResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExecuteAirflowCommandMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops Airflow CLI command execution.
+     * </pre>
+     */
+    default void stopAirflowCommand(
+        com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStopAirflowCommandMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Polls Airflow CLI command execution and fetches logs.
+     * </pre>
+     */
+    default void pollAirflowCommand(
+        com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPollAirflowCommandMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a snapshots of a Cloud Composer environment.
      * As a result of this operation, snapshot of environment's state is stored
      * in a location specified in the SaveSnapshotRequest.
@@ -649,6 +959,38 @@ public final class EnvironmentsGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getLoadSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers database failover (only for highly resilient environments).
+     * </pre>
+     */
+    default void databaseFailover(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDatabaseFailoverMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches database properties.
+     * </pre>
+     */
+    default void fetchDatabaseProperties(
+        com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1beta1
+                    .FetchDatabasePropertiesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchDatabasePropertiesMethod(), responseObserver);
     }
   }
 
@@ -807,6 +1149,61 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
+     * Executes Airflow CLI command.
+     * </pre>
+     */
+    public void executeAirflowCommand(
+        com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1beta1
+                    .ExecuteAirflowCommandResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExecuteAirflowCommandMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops Airflow CLI command execution.
+     * </pre>
+     */
+    public void stopAirflowCommand(
+        com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStopAirflowCommandMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Polls Airflow CLI command execution and fetches logs.
+     * </pre>
+     */
+    public void pollAirflowCommand(
+        com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPollAirflowCommandMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a snapshots of a Cloud Composer environment.
      * As a result of this operation, snapshot of environment's state is stored
      * in a location specified in the SaveSnapshotRequest.
@@ -835,6 +1232,42 @@ public final class EnvironmentsGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLoadSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers database failover (only for highly resilient environments).
+     * </pre>
+     */
+    public void databaseFailover(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDatabaseFailoverMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches database properties.
+     * </pre>
+     */
+    public void fetchDatabaseProperties(
+        com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.orchestration.airflow.service.v1beta1
+                    .FetchDatabasePropertiesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchDatabasePropertiesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -957,6 +1390,51 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
+     * Executes Airflow CLI command.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse
+        executeAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExecuteAirflowCommandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops Airflow CLI command execution.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse
+        stopAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopAirflowCommandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Polls Airflow CLI command execution and fetches logs.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse
+        pollAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPollAirflowCommandMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a snapshots of a Cloud Composer environment.
      * As a result of this operation, snapshot of environment's state is stored
      * in a location specified in the SaveSnapshotRequest.
@@ -981,6 +1459,34 @@ public final class EnvironmentsGrpc {
         com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLoadSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers database failover (only for highly resilient environments).
+     * </pre>
+     */
+    public com.google.longrunning.Operation databaseFailover(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDatabaseFailoverMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches database properties.
+     * </pre>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse
+        fetchDatabaseProperties(
+            com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchDatabasePropertiesMethod(), getCallOptions(), request);
     }
   }
 
@@ -1113,6 +1619,54 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
+     * Executes Airflow CLI command.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse>
+        executeAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExecuteAirflowCommandMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops Airflow CLI command execution.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse>
+        stopAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStopAirflowCommandMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Polls Airflow CLI command execution and fetches logs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse>
+        pollAirflowCommand(
+            com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPollAirflowCommandMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a snapshots of a Cloud Composer environment.
      * As a result of this operation, snapshot of environment's state is stored
      * in a location specified in the SaveSnapshotRequest.
@@ -1140,6 +1694,37 @@ public final class EnvironmentsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLoadSnapshotMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers database failover (only for highly resilient environments).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        databaseFailover(
+            com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDatabaseFailoverMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches database properties.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse>
+        fetchDatabaseProperties(
+            com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchDatabasePropertiesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ENVIRONMENT = 0;
@@ -1149,8 +1734,13 @@ public final class EnvironmentsGrpc {
   private static final int METHODID_DELETE_ENVIRONMENT = 4;
   private static final int METHODID_RESTART_WEB_SERVER = 5;
   private static final int METHODID_CHECK_UPGRADE = 6;
-  private static final int METHODID_SAVE_SNAPSHOT = 7;
-  private static final int METHODID_LOAD_SNAPSHOT = 8;
+  private static final int METHODID_EXECUTE_AIRFLOW_COMMAND = 7;
+  private static final int METHODID_STOP_AIRFLOW_COMMAND = 8;
+  private static final int METHODID_POLL_AIRFLOW_COMMAND = 9;
+  private static final int METHODID_SAVE_SNAPSHOT = 10;
+  private static final int METHODID_LOAD_SNAPSHOT = 11;
+  private static final int METHODID_DATABASE_FAILOVER = 12;
+  private static final int METHODID_FETCH_DATABASE_PROPERTIES = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1215,6 +1805,33 @@ public final class EnvironmentsGrpc {
               (com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_EXECUTE_AIRFLOW_COMMAND:
+          serviceImpl.executeAirflowCommand(
+              (com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1beta1
+                          .ExecuteAirflowCommandResponse>)
+                  responseObserver);
+          break;
+        case METHODID_STOP_AIRFLOW_COMMAND:
+          serviceImpl.stopAirflowCommand(
+              (com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1beta1
+                          .StopAirflowCommandResponse>)
+                  responseObserver);
+          break;
+        case METHODID_POLL_AIRFLOW_COMMAND:
+          serviceImpl.pollAirflowCommand(
+              (com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1beta1
+                          .PollAirflowCommandResponse>)
+                  responseObserver);
+          break;
         case METHODID_SAVE_SNAPSHOT:
           serviceImpl.saveSnapshot(
               (com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest) request,
@@ -1224,6 +1841,22 @@ public final class EnvironmentsGrpc {
           serviceImpl.loadSnapshot(
               (com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DATABASE_FAILOVER:
+          serviceImpl.databaseFailover(
+              (com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_FETCH_DATABASE_PROPERTIES:
+          serviceImpl.fetchDatabaseProperties(
+              (com.google.cloud.orchestration.airflow.service.v1beta1
+                      .FetchDatabasePropertiesRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.orchestration.airflow.service.v1beta1
+                          .FetchDatabasePropertiesResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1288,6 +1921,30 @@ public final class EnvironmentsGrpc {
                     com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest,
                     com.google.longrunning.Operation>(service, METHODID_CHECK_UPGRADE)))
         .addMethod(
+            getExecuteAirflowCommandMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1beta1
+                        .ExecuteAirflowCommandRequest,
+                    com.google.cloud.orchestration.airflow.service.v1beta1
+                        .ExecuteAirflowCommandResponse>(service, METHODID_EXECUTE_AIRFLOW_COMMAND)))
+        .addMethod(
+            getStopAirflowCommandMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1beta1
+                        .StopAirflowCommandRequest,
+                    com.google.cloud.orchestration.airflow.service.v1beta1
+                        .StopAirflowCommandResponse>(service, METHODID_STOP_AIRFLOW_COMMAND)))
+        .addMethod(
+            getPollAirflowCommandMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1beta1
+                        .PollAirflowCommandRequest,
+                    com.google.cloud.orchestration.airflow.service.v1beta1
+                        .PollAirflowCommandResponse>(service, METHODID_POLL_AIRFLOW_COMMAND)))
+        .addMethod(
             getSaveSnapshotMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1299,6 +1956,21 @@ public final class EnvironmentsGrpc {
                 new MethodHandlers<
                     com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest,
                     com.google.longrunning.Operation>(service, METHODID_LOAD_SNAPSHOT)))
+        .addMethod(
+            getDatabaseFailoverMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DATABASE_FAILOVER)))
+        .addMethod(
+            getFetchDatabasePropertiesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1beta1
+                        .FetchDatabasePropertiesRequest,
+                    com.google.cloud.orchestration.airflow.service.v1beta1
+                        .FetchDatabasePropertiesResponse>(
+                    service, METHODID_FETCH_DATABASE_PROPERTIES)))
         .build();
   }
 
@@ -1327,9 +1999,9 @@ public final class EnvironmentsGrpc {
   private static final class EnvironmentsMethodDescriptorSupplier
       extends EnvironmentsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    EnvironmentsMethodDescriptorSupplier(String methodName) {
+    EnvironmentsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -1358,8 +2030,13 @@ public final class EnvironmentsGrpc {
                       .addMethod(getDeleteEnvironmentMethod())
                       .addMethod(getRestartWebServerMethod())
                       .addMethod(getCheckUpgradeMethod())
+                      .addMethod(getExecuteAirflowCommandMethod())
+                      .addMethod(getStopAirflowCommandMethod())
+                      .addMethod(getPollAirflowCommandMethod())
                       .addMethod(getSaveSnapshotMethod())
                       .addMethod(getLoadSnapshotMethod())
+                      .addMethod(getDatabaseFailoverMethod())
+                      .addMethod(getFetchDatabasePropertiesMethod())
                       .build();
         }
       }

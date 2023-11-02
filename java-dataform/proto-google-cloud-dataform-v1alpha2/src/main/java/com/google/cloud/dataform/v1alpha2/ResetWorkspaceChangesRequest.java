@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
 
   private ResetWorkspaceChangesRequest() {
     name_ = "";
-    paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ResetWorkspaceChangesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -126,7 +121,8 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
   public static final int PATHS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList paths_;
+  private com.google.protobuf.LazyStringArrayList paths_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -433,8 +429,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
       clean_ = false;
       return this;
     }
@@ -464,7 +459,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     public com.google.cloud.dataform.v1alpha2.ResetWorkspaceChangesRequest buildPartial() {
       com.google.cloud.dataform.v1alpha2.ResetWorkspaceChangesRequest result =
           new com.google.cloud.dataform.v1alpha2.ResetWorkspaceChangesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -472,20 +466,15 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.dataform.v1alpha2.ResetWorkspaceChangesRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        paths_ = paths_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.paths_ = paths_;
-    }
-
     private void buildPartial0(
         com.google.cloud.dataform.v1alpha2.ResetWorkspaceChangesRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        paths_.makeImmutable();
+        result.paths_ = paths_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.clean_ = clean_;
@@ -548,7 +537,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       if (!other.paths_.isEmpty()) {
         if (paths_.isEmpty()) {
           paths_ = other.paths_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePathsIsMutable();
           paths_.addAll(other.paths_);
@@ -738,14 +727,14 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       return this;
     }
 
-    private com.google.protobuf.LazyStringList paths_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList paths_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePathsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!paths_.isModifiable()) {
         paths_ = new com.google.protobuf.LazyStringArrayList(paths_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -760,7 +749,8 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
      * @return A list containing the paths.
      */
     public com.google.protobuf.ProtocolStringList getPathsList() {
-      return paths_.getUnmodifiableView();
+      paths_.makeImmutable();
+      return paths_;
     }
     /**
      *
@@ -829,6 +819,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       }
       ensurePathsIsMutable();
       paths_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -851,6 +842,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       }
       ensurePathsIsMutable();
       paths_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -870,6 +862,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     public Builder addAllPaths(java.lang.Iterable<java.lang.String> values) {
       ensurePathsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, paths_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -886,8 +879,9 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearPaths() {
-      paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -911,6 +905,7 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
       ensurePathsIsMutable();
       paths_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

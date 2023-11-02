@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.cloud.alloydb.v1beta;
  *
  *
  * <pre>
- * SSL configuration for an AlloyDB Cluster.
+ * SSL configuration.
  * </pre>
  *
  * Protobuf type {@code google.cloud.alloydb.v1beta.SslConfig}
@@ -46,11 +46,6 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SslConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -82,7 +77,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL mode not specified. Defaults to SSL_MODE_ALLOW.
+     * SSL mode not specified. Defaults to ENCRYPTED_ONLY.
      * </pre>
      *
      * <code>SSL_MODE_UNSPECIFIED = 0;</code>
@@ -95,8 +90,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * SSL connections are optional. CA verification not enforced.
      * </pre>
      *
-     * <code>SSL_MODE_ALLOW = 1;</code>
+     * <code>SSL_MODE_ALLOW = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     SSL_MODE_ALLOW(1),
     /**
      *
@@ -107,8 +103,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * behavior).
      * </pre>
      *
-     * <code>SSL_MODE_REQUIRE = 2;</code>
+     * <code>SSL_MODE_REQUIRE = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     SSL_MODE_REQUIRE(2),
     /**
      *
@@ -119,9 +116,30 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * GenerateClientCertificate.
      * </pre>
      *
-     * <code>SSL_MODE_VERIFY_CA = 3;</code>
+     * <code>SSL_MODE_VERIFY_CA = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     SSL_MODE_VERIFY_CA(3),
+    /**
+     *
+     *
+     * <pre>
+     * SSL connections are optional. CA verification not enforced.
+     * </pre>
+     *
+     * <code>ALLOW_UNENCRYPTED_AND_ENCRYPTED = 4;</code>
+     */
+    ALLOW_UNENCRYPTED_AND_ENCRYPTED(4),
+    /**
+     *
+     *
+     * <pre>
+     * SSL connections are required. CA verification not enforced.
+     * </pre>
+     *
+     * <code>ENCRYPTED_ONLY = 5;</code>
+     */
+    ENCRYPTED_ONLY(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -129,7 +147,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL mode not specified. Defaults to SSL_MODE_ALLOW.
+     * SSL mode not specified. Defaults to ENCRYPTED_ONLY.
      * </pre>
      *
      * <code>SSL_MODE_UNSPECIFIED = 0;</code>
@@ -142,9 +160,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * SSL connections are optional. CA verification not enforced.
      * </pre>
      *
-     * <code>SSL_MODE_ALLOW = 1;</code>
+     * <code>SSL_MODE_ALLOW = 1 [deprecated = true];</code>
      */
-    public static final int SSL_MODE_ALLOW_VALUE = 1;
+    @java.lang.Deprecated public static final int SSL_MODE_ALLOW_VALUE = 1;
     /**
      *
      *
@@ -154,9 +172,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * behavior).
      * </pre>
      *
-     * <code>SSL_MODE_REQUIRE = 2;</code>
+     * <code>SSL_MODE_REQUIRE = 2 [deprecated = true];</code>
      */
-    public static final int SSL_MODE_REQUIRE_VALUE = 2;
+    @java.lang.Deprecated public static final int SSL_MODE_REQUIRE_VALUE = 2;
     /**
      *
      *
@@ -166,9 +184,29 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * GenerateClientCertificate.
      * </pre>
      *
-     * <code>SSL_MODE_VERIFY_CA = 3;</code>
+     * <code>SSL_MODE_VERIFY_CA = 3 [deprecated = true];</code>
      */
-    public static final int SSL_MODE_VERIFY_CA_VALUE = 3;
+    @java.lang.Deprecated public static final int SSL_MODE_VERIFY_CA_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * SSL connections are optional. CA verification not enforced.
+     * </pre>
+     *
+     * <code>ALLOW_UNENCRYPTED_AND_ENCRYPTED = 4;</code>
+     */
+    public static final int ALLOW_UNENCRYPTED_AND_ENCRYPTED_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * SSL connections are required. CA verification not enforced.
+     * </pre>
+     *
+     * <code>ENCRYPTED_ONLY = 5;</code>
+     */
+    public static final int ENCRYPTED_ONLY_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -202,6 +240,10 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
           return SSL_MODE_REQUIRE;
         case 3:
           return SSL_MODE_VERIFY_CA;
+        case 4:
+          return ALLOW_UNENCRYPTED_AND_ENCRYPTED;
+        case 5:
+          return ENCRYPTED_ONLY;
         default:
           return null;
       }
@@ -650,7 +692,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * SSL configuration for an AlloyDB Cluster.
+   * SSL configuration.
    * </pre>
    *
    * Protobuf type {@code google.cloud.alloydb.v1beta.SslConfig}

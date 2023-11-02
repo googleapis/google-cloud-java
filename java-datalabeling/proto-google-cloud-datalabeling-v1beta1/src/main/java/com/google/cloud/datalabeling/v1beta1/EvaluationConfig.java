@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     return new EvaluationConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_EvaluationConfig_descriptor;
@@ -67,6 +62,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
   }
 
   private int verticalOptionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object verticalOption_;
 
   public enum VerticalOptionCase

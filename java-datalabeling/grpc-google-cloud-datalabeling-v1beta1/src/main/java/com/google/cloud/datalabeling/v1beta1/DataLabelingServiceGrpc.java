@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ public final class DataLabelingServiceGrpc {
 
   private DataLabelingServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.datalabeling.v1beta1.DataLabelingService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.datalabeling.v1beta1.DataLabelingService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -4354,9 +4355,9 @@ public final class DataLabelingServiceGrpc {
   private static final class DataLabelingServiceMethodDescriptorSupplier
       extends DataLabelingServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataLabelingServiceMethodDescriptorSupplier(String methodName) {
+    DataLabelingServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

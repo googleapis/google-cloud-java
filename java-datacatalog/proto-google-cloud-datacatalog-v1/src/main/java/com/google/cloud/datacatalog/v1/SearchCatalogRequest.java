@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     return new SearchCatalogRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_SearchCatalogRequest_descriptor;
@@ -80,6 +75,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of organization IDs to search within.
+     *
      * To find your organization ID, follow the steps from
      * [Creating and managing organizations]
      * (/resource-manager/docs/creating-managing-organization).
@@ -95,6 +91,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of organization IDs to search within.
+     *
      * To find your organization ID, follow the steps from
      * [Creating and managing organizations]
      * (/resource-manager/docs/creating-managing-organization).
@@ -110,6 +107,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of organization IDs to search within.
+     *
      * To find your organization ID, follow the steps from
      * [Creating and managing organizations]
      * (/resource-manager/docs/creating-managing-organization).
@@ -126,6 +124,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of organization IDs to search within.
+     *
      * To find your organization ID, follow the steps from
      * [Creating and managing organizations]
      * (/resource-manager/docs/creating-managing-organization).
@@ -143,6 +142,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of project IDs to search within.
+     *
      * For more information on the distinction between project names, IDs, and
      * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
@@ -157,6 +157,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of project IDs to search within.
+     *
      * For more information on the distinction between project names, IDs, and
      * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
@@ -171,6 +172,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of project IDs to search within.
+     *
      * For more information on the distinction between project names, IDs, and
      * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
@@ -186,6 +188,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of project IDs to search within.
+     *
      * For more information on the distinction between project names, IDs, and
      * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
@@ -203,6 +206,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * If `true`, include Google Cloud public datasets in
      * search results. By default, they are excluded.
+     *
      * See [Google Cloud Public Datasets](/public-datasets) for more
      * information.
      * </pre>
@@ -219,8 +223,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within. If empty, all locations
      * are searched.
+     *
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     *
      * If a location is unreachable, its name is returned in the
      * `SearchCatalogResponse.unreachable` field. To get additional information
      * on the error, repeat the search request and set the location name as the
@@ -239,8 +245,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within. If empty, all locations
      * are searched.
+     *
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     *
      * If a location is unreachable, its name is returned in the
      * `SearchCatalogResponse.unreachable` field. To get additional information
      * on the error, repeat the search request and set the location name as the
@@ -259,8 +267,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within. If empty, all locations
      * are searched.
+     *
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     *
      * If a location is unreachable, its name is returned in the
      * `SearchCatalogResponse.unreachable` field. To get additional information
      * on the error, repeat the search request and set the location name as the
@@ -280,8 +290,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within. If empty, all locations
      * are searched.
+     *
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     *
      * If a location is unreachable, its name is returned in the
      * `SearchCatalogResponse.unreachable` field. To get additional information
      * on the error, repeat the search request and set the location name as the
@@ -301,6 +313,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. If `true`, search only among starred entries.
+     *
      * By default, all results are returned, starred or not.
      * </pre>
      *
@@ -350,20 +363,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
 
     private Scope() {
-      includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      restrictedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includeOrgIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      includeProjectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      restrictedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Scope();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -384,12 +392,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public static final int INCLUDE_ORG_IDS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList includeOrgIds_;
+    private com.google.protobuf.LazyStringArrayList includeOrgIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
      * <pre>
      * The list of organization IDs to search within.
+     *
      * To find your organization ID, follow the steps from
      * [Creating and managing organizations]
      * (/resource-manager/docs/creating-managing-organization).
@@ -407,6 +417,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of organization IDs to search within.
+     *
      * To find your organization ID, follow the steps from
      * [Creating and managing organizations]
      * (/resource-manager/docs/creating-managing-organization).
@@ -424,6 +435,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of organization IDs to search within.
+     *
      * To find your organization ID, follow the steps from
      * [Creating and managing organizations]
      * (/resource-manager/docs/creating-managing-organization).
@@ -442,6 +454,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of organization IDs to search within.
+     *
      * To find your organization ID, follow the steps from
      * [Creating and managing organizations]
      * (/resource-manager/docs/creating-managing-organization).
@@ -459,12 +472,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public static final int INCLUDE_PROJECT_IDS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList includeProjectIds_;
+    private com.google.protobuf.LazyStringArrayList includeProjectIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
      * <pre>
      * The list of project IDs to search within.
+     *
      * For more information on the distinction between project names, IDs, and
      * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
@@ -481,6 +496,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of project IDs to search within.
+     *
      * For more information on the distinction between project names, IDs, and
      * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
@@ -497,6 +513,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of project IDs to search within.
+     *
      * For more information on the distinction between project names, IDs, and
      * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
@@ -514,6 +531,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The list of project IDs to search within.
+     *
      * For more information on the distinction between project names, IDs, and
      * numbers, see [Projects](/docs/overview/#projects).
      * </pre>
@@ -535,6 +553,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * If `true`, include Google Cloud public datasets in
      * search results. By default, they are excluded.
+     *
      * See [Google Cloud Public Datasets](/public-datasets) for more
      * information.
      * </pre>
@@ -551,15 +570,18 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public static final int RESTRICTED_LOCATIONS_FIELD_NUMBER = 16;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList restrictedLocations_;
+    private com.google.protobuf.LazyStringArrayList restrictedLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
      * <pre>
      * Optional. The list of locations to search within. If empty, all locations
      * are searched.
+     *
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     *
      * If a location is unreachable, its name is returned in the
      * `SearchCatalogResponse.unreachable` field. To get additional information
      * on the error, repeat the search request and set the location name as the
@@ -580,8 +602,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within. If empty, all locations
      * are searched.
+     *
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     *
      * If a location is unreachable, its name is returned in the
      * `SearchCatalogResponse.unreachable` field. To get additional information
      * on the error, repeat the search request and set the location name as the
@@ -602,8 +626,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within. If empty, all locations
      * are searched.
+     *
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     *
      * If a location is unreachable, its name is returned in the
      * `SearchCatalogResponse.unreachable` field. To get additional information
      * on the error, repeat the search request and set the location name as the
@@ -625,8 +651,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within. If empty, all locations
      * are searched.
+     *
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+     *
      * If a location is unreachable, its name is returned in the
      * `SearchCatalogResponse.unreachable` field. To get additional information
      * on the error, repeat the search request and set the location name as the
@@ -650,6 +678,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. If `true`, search only among starred entries.
+     *
      * By default, all results are returned, starred or not.
      * </pre>
      *
@@ -956,13 +985,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         includeGcpPublicDatasets_ = false;
-        restrictedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        restrictedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         starredOnly_ = false;
         includePublicTagTemplates_ = false;
         return this;
@@ -993,7 +1019,6 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public com.google.cloud.datacatalog.v1.SearchCatalogRequest.Scope buildPartial() {
         com.google.cloud.datacatalog.v1.SearchCatalogRequest.Scope result =
             new com.google.cloud.datacatalog.v1.SearchCatalogRequest.Scope(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1001,30 +1026,23 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.datacatalog.v1.SearchCatalogRequest.Scope result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          includeOrgIds_ = includeOrgIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.includeOrgIds_ = includeOrgIds_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          includeProjectIds_ = includeProjectIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.includeProjectIds_ = includeProjectIds_;
-        if (((bitField0_ & 0x00000008) != 0)) {
-          restrictedLocations_ = restrictedLocations_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.restrictedLocations_ = restrictedLocations_;
-      }
-
       private void buildPartial0(
           com.google.cloud.datacatalog.v1.SearchCatalogRequest.Scope result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          includeOrgIds_.makeImmutable();
+          result.includeOrgIds_ = includeOrgIds_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          includeProjectIds_.makeImmutable();
+          result.includeProjectIds_ = includeProjectIds_;
+        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.includeGcpPublicDatasets_ = includeGcpPublicDatasets_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          restrictedLocations_.makeImmutable();
+          result.restrictedLocations_ = restrictedLocations_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.starredOnly_ = starredOnly_;
@@ -1086,7 +1104,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         if (!other.includeOrgIds_.isEmpty()) {
           if (includeOrgIds_.isEmpty()) {
             includeOrgIds_ = other.includeOrgIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureIncludeOrgIdsIsMutable();
             includeOrgIds_.addAll(other.includeOrgIds_);
@@ -1096,7 +1114,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         if (!other.includeProjectIds_.isEmpty()) {
           if (includeProjectIds_.isEmpty()) {
             includeProjectIds_ = other.includeProjectIds_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureIncludeProjectIdsIsMutable();
             includeProjectIds_.addAll(other.includeProjectIds_);
@@ -1109,7 +1127,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         if (!other.restrictedLocations_.isEmpty()) {
           if (restrictedLocations_.isEmpty()) {
             restrictedLocations_ = other.restrictedLocations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureRestrictedLocationsIsMutable();
             restrictedLocations_.addAll(other.restrictedLocations_);
@@ -1206,20 +1224,21 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList includeOrgIds_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList includeOrgIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIncludeOrgIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!includeOrgIds_.isModifiable()) {
           includeOrgIds_ = new com.google.protobuf.LazyStringArrayList(includeOrgIds_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
        *
        * <pre>
        * The list of organization IDs to search within.
+       *
        * To find your organization ID, follow the steps from
        * [Creating and managing organizations]
        * (/resource-manager/docs/creating-managing-organization).
@@ -1230,13 +1249,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return A list containing the includeOrgIds.
        */
       public com.google.protobuf.ProtocolStringList getIncludeOrgIdsList() {
-        return includeOrgIds_.getUnmodifiableView();
+        includeOrgIds_.makeImmutable();
+        return includeOrgIds_;
       }
       /**
        *
        *
        * <pre>
        * The list of organization IDs to search within.
+       *
        * To find your organization ID, follow the steps from
        * [Creating and managing organizations]
        * (/resource-manager/docs/creating-managing-organization).
@@ -1254,6 +1275,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of organization IDs to search within.
+       *
        * To find your organization ID, follow the steps from
        * [Creating and managing organizations]
        * (/resource-manager/docs/creating-managing-organization).
@@ -1272,6 +1294,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of organization IDs to search within.
+       *
        * To find your organization ID, follow the steps from
        * [Creating and managing organizations]
        * (/resource-manager/docs/creating-managing-organization).
@@ -1290,6 +1313,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of organization IDs to search within.
+       *
        * To find your organization ID, follow the steps from
        * [Creating and managing organizations]
        * (/resource-manager/docs/creating-managing-organization).
@@ -1307,6 +1331,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeOrgIdsIsMutable();
         includeOrgIds_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1315,6 +1340,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of organization IDs to search within.
+       *
        * To find your organization ID, follow the steps from
        * [Creating and managing organizations]
        * (/resource-manager/docs/creating-managing-organization).
@@ -1331,6 +1357,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeOrgIdsIsMutable();
         includeOrgIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1339,6 +1366,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of organization IDs to search within.
+       *
        * To find your organization ID, follow the steps from
        * [Creating and managing organizations]
        * (/resource-manager/docs/creating-managing-organization).
@@ -1352,6 +1380,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder addAllIncludeOrgIds(java.lang.Iterable<java.lang.String> values) {
         ensureIncludeOrgIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeOrgIds_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1360,6 +1389,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of organization IDs to search within.
+       *
        * To find your organization ID, follow the steps from
        * [Creating and managing organizations]
        * (/resource-manager/docs/creating-managing-organization).
@@ -1370,8 +1400,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearIncludeOrgIds() {
-        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1380,6 +1411,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of organization IDs to search within.
+       *
        * To find your organization ID, follow the steps from
        * [Creating and managing organizations]
        * (/resource-manager/docs/creating-managing-organization).
@@ -1397,24 +1429,26 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureIncludeOrgIdsIsMutable();
         includeOrgIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList includeProjectIds_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList includeProjectIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIncludeProjectIdsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!includeProjectIds_.isModifiable()) {
           includeProjectIds_ = new com.google.protobuf.LazyStringArrayList(includeProjectIds_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
        *
        * <pre>
        * The list of project IDs to search within.
+       *
        * For more information on the distinction between project names, IDs, and
        * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
@@ -1424,13 +1458,15 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return A list containing the includeProjectIds.
        */
       public com.google.protobuf.ProtocolStringList getIncludeProjectIdsList() {
-        return includeProjectIds_.getUnmodifiableView();
+        includeProjectIds_.makeImmutable();
+        return includeProjectIds_;
       }
       /**
        *
        *
        * <pre>
        * The list of project IDs to search within.
+       *
        * For more information on the distinction between project names, IDs, and
        * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
@@ -1447,6 +1483,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of project IDs to search within.
+       *
        * For more information on the distinction between project names, IDs, and
        * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
@@ -1464,6 +1501,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of project IDs to search within.
+       *
        * For more information on the distinction between project names, IDs, and
        * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
@@ -1481,6 +1519,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of project IDs to search within.
+       *
        * For more information on the distinction between project names, IDs, and
        * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
@@ -1497,6 +1536,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeProjectIdsIsMutable();
         includeProjectIds_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1505,6 +1545,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of project IDs to search within.
+       *
        * For more information on the distinction between project names, IDs, and
        * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
@@ -1520,6 +1561,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeProjectIdsIsMutable();
         includeProjectIds_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1528,6 +1570,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of project IDs to search within.
+       *
        * For more information on the distinction between project names, IDs, and
        * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
@@ -1540,6 +1583,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder addAllIncludeProjectIds(java.lang.Iterable<java.lang.String> values) {
         ensureIncludeProjectIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeProjectIds_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1548,6 +1592,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of project IDs to search within.
+       *
        * For more information on the distinction between project names, IDs, and
        * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
@@ -1557,8 +1602,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearIncludeProjectIds() {
-        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1567,6 +1613,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The list of project IDs to search within.
+       *
        * For more information on the distinction between project names, IDs, and
        * numbers, see [Projects](/docs/overview/#projects).
        * </pre>
@@ -1583,6 +1630,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureIncludeProjectIdsIsMutable();
         includeProjectIds_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1594,6 +1642,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * If `true`, include Google Cloud public datasets in
        * search results. By default, they are excluded.
+       *
        * See [Google Cloud Public Datasets](/public-datasets) for more
        * information.
        * </pre>
@@ -1612,6 +1661,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * If `true`, include Google Cloud public datasets in
        * search results. By default, they are excluded.
+       *
        * See [Google Cloud Public Datasets](/public-datasets) for more
        * information.
        * </pre>
@@ -1634,6 +1684,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * If `true`, include Google Cloud public datasets in
        * search results. By default, they are excluded.
+       *
        * See [Google Cloud Public Datasets](/public-datasets) for more
        * information.
        * </pre>
@@ -1649,14 +1700,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return this;
       }
 
-      private com.google.protobuf.LazyStringList restrictedLocations_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList restrictedLocations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureRestrictedLocationsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!restrictedLocations_.isModifiable()) {
           restrictedLocations_ = new com.google.protobuf.LazyStringArrayList(restrictedLocations_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -1664,8 +1715,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within. If empty, all locations
        * are searched.
+       *
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       *
        * If a location is unreachable, its name is returned in the
        * `SearchCatalogResponse.unreachable` field. To get additional information
        * on the error, repeat the search request and set the location name as the
@@ -1678,7 +1731,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return A list containing the restrictedLocations.
        */
       public com.google.protobuf.ProtocolStringList getRestrictedLocationsList() {
-        return restrictedLocations_.getUnmodifiableView();
+        restrictedLocations_.makeImmutable();
+        return restrictedLocations_;
       }
       /**
        *
@@ -1686,8 +1740,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within. If empty, all locations
        * are searched.
+       *
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       *
        * If a location is unreachable, its name is returned in the
        * `SearchCatalogResponse.unreachable` field. To get additional information
        * on the error, repeat the search request and set the location name as the
@@ -1708,8 +1764,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within. If empty, all locations
        * are searched.
+       *
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       *
        * If a location is unreachable, its name is returned in the
        * `SearchCatalogResponse.unreachable` field. To get additional information
        * on the error, repeat the search request and set the location name as the
@@ -1731,8 +1789,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within. If empty, all locations
        * are searched.
+       *
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       *
        * If a location is unreachable, its name is returned in the
        * `SearchCatalogResponse.unreachable` field. To get additional information
        * on the error, repeat the search request and set the location name as the
@@ -1754,8 +1814,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within. If empty, all locations
        * are searched.
+       *
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       *
        * If a location is unreachable, its name is returned in the
        * `SearchCatalogResponse.unreachable` field. To get additional information
        * on the error, repeat the search request and set the location name as the
@@ -1775,6 +1837,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureRestrictedLocationsIsMutable();
         restrictedLocations_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1784,8 +1847,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within. If empty, all locations
        * are searched.
+       *
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       *
        * If a location is unreachable, its name is returned in the
        * `SearchCatalogResponse.unreachable` field. To get additional information
        * on the error, repeat the search request and set the location name as the
@@ -1804,6 +1869,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureRestrictedLocationsIsMutable();
         restrictedLocations_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1813,8 +1879,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within. If empty, all locations
        * are searched.
+       *
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       *
        * If a location is unreachable, its name is returned in the
        * `SearchCatalogResponse.unreachable` field. To get additional information
        * on the error, repeat the search request and set the location name as the
@@ -1830,6 +1898,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder addAllRestrictedLocations(java.lang.Iterable<java.lang.String> values) {
         ensureRestrictedLocationsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, restrictedLocations_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1839,8 +1908,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within. If empty, all locations
        * are searched.
+       *
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       *
        * If a location is unreachable, its name is returned in the
        * `SearchCatalogResponse.unreachable` field. To get additional information
        * on the error, repeat the search request and set the location name as the
@@ -1853,8 +1924,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearRestrictedLocations() {
-        restrictedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        restrictedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -1864,8 +1936,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within. If empty, all locations
        * are searched.
+       *
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
+       *
        * If a location is unreachable, its name is returned in the
        * `SearchCatalogResponse.unreachable` field. To get additional information
        * on the error, repeat the search request and set the location name as the
@@ -1885,6 +1959,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureRestrictedLocationsIsMutable();
         restrictedLocations_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1895,6 +1970,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * Optional. If `true`, search only among starred entries.
+       *
        * By default, all results are returned, starred or not.
        * </pre>
        *
@@ -1911,6 +1987,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * Optional. If `true`, search only among starred entries.
+       *
        * By default, all results are returned, starred or not.
        * </pre>
        *
@@ -1931,6 +2008,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * Optional. If `true`, search only among starred entries.
+       *
        * By default, all results are returned, starred or not.
        * </pre>
        *
@@ -2091,6 +2169,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The scope of this search request.
+   *
    * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
    * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
    * the request returns an error.
@@ -2111,6 +2190,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The scope of this search request.
+   *
    * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
    * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
    * the request returns an error.
@@ -2133,6 +2213,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The scope of this search request.
+   *
    * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
    * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
    * the request returns an error.
@@ -2160,9 +2241,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * Optional. The query string with a minimum of 3 characters and specific
    * syntax. For more information, see [Data Catalog search
    * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+   *
    * An empty query string returns all data assets (in the specified scope)
    * that you have access to.
+   *
    * A query string can be a simple `xyz` or qualified by predicates:
+   *
    * * `name:x`
    * * `column:y`
    * * `description:z`
@@ -2191,9 +2275,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * Optional. The query string with a minimum of 3 characters and specific
    * syntax. For more information, see [Data Catalog search
    * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+   *
    * An empty query string returns all data assets (in the specified scope)
    * that you have access to.
+   *
    * A query string can be a simple `xyz` or qualified by predicates:
+   *
    * * `name:x`
    * * `column:y`
    * * `description:z`
@@ -2222,7 +2309,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Number of results to return in a single search page.
+   * Upper bound on the number of results you can get in a single response.
+   *
    * Can't be negative or 0, defaults to 10 in this case.
    * The maximum number is 1000. If exceeded, throws an "invalid argument"
    * exception.
@@ -2247,6 +2335,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Pagination token that, if specified, returns the next page of
    * search results. If empty, returns the first page.
+   *
    * This token is returned in the
    * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
    * field of the response to a previous
@@ -2276,6 +2365,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Pagination token that, if specified, returns the next page of
    * search results. If empty, returns the first page.
+   *
    * This token is returned in the
    * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
    * field of the response to a previous
@@ -2309,10 +2399,20 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Specifies the order of results.
+   *
    * Currently supported case-sensitive values are:
+   *
    * * `relevance` that can only be descending
    * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
    * * `default` that can only be descending
+   *
+   * Search queries don't guarantee full recall. Results that match your query
+   * might not be returned, even in subsequent result pages. Additionally,
+   * returned (and not returned) results can vary if you repeat search queries.
+   * If you are experiencing recall issues and you don't have to fetch the
+   * results in any specific order, consider setting this parameter to
+   * `default`.
+   *
    * If this parameter is omitted, it defaults to the descending `relevance`.
    * </pre>
    *
@@ -2337,10 +2437,20 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Specifies the order of results.
+   *
    * Currently supported case-sensitive values are:
+   *
    * * `relevance` that can only be descending
    * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
    * * `default` that can only be descending
+   *
+   * Search queries don't guarantee full recall. Results that match your query
+   * might not be returned, even in subsequent result pages. Additionally,
+   * returned (and not returned) results can vary if you repeat search queries.
+   * If you are experiencing recall issues and you don't have to fetch the
+   * results in any specific order, consider setting this parameter to
+   * `default`.
+   *
    * If this parameter is omitted, it defaults to the descending `relevance`.
    * </pre>
    *
@@ -2359,6 +2469,28 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ADMIN_SEARCH_FIELD_NUMBER = 17;
+  private boolean adminSearch_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, use searchAll permission granted on organizations from
+   * `include_org_ids` and projects from `include_project_ids` instead of the
+   * fine grained per resource permissions when filtering the search results.
+   * The only allowed `order_by` criteria for admin_search mode is `default`.
+   * Using this flags guarantees a full recall of the search results.
+   * </pre>
+   *
+   * <code>bool admin_search = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The adminSearch.
+   */
+  @java.lang.Override
+  public boolean getAdminSearch() {
+    return adminSearch_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2390,6 +2522,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     if (scope_ != null) {
       output.writeMessage(6, getScope());
     }
+    if (adminSearch_ != false) {
+      output.writeBool(17, adminSearch_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2413,6 +2548,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
     if (scope_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getScope());
+    }
+    if (adminSearch_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, adminSearch_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2438,6 +2576,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (getAdminSearch() != other.getAdminSearch()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2461,6 +2600,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + ADMIN_SEARCH_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAdminSearch());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2610,6 +2751,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       pageSize_ = 0;
       pageToken_ = "";
       orderBy_ = "";
+      adminSearch_ = false;
       return this;
     }
 
@@ -2660,6 +2802,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.adminSearch_ = adminSearch_;
       }
     }
 
@@ -2730,6 +2875,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.getAdminSearch() != false) {
+        setAdminSearch(other.getAdminSearch());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2786,6 +2934,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000001;
                 break;
               } // case 50
+            case 136:
+              {
+                adminSearch_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 136
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2816,6 +2970,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The scope of this search request.
+     *
      * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
      * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
      * the request returns an error.
@@ -2835,6 +2990,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The scope of this search request.
+     *
      * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
      * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
      * the request returns an error.
@@ -2860,6 +3016,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The scope of this search request.
+     *
      * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
      * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
      * the request returns an error.
@@ -2887,6 +3044,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The scope of this search request.
+     *
      * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
      * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
      * the request returns an error.
@@ -2912,6 +3070,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The scope of this search request.
+     *
      * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
      * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
      * the request returns an error.
@@ -2944,6 +3103,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The scope of this search request.
+     *
      * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
      * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
      * the request returns an error.
@@ -2968,6 +3128,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The scope of this search request.
+     *
      * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
      * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
      * the request returns an error.
@@ -2987,6 +3148,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The scope of this search request.
+     *
      * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
      * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
      * the request returns an error.
@@ -3010,6 +3172,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The scope of this search request.
+     *
      * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
      * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
      * the request returns an error.
@@ -3044,9 +3207,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Optional. The query string with a minimum of 3 characters and specific
      * syntax. For more information, see [Data Catalog search
      * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+     *
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
+     *
      * A query string can be a simple `xyz` or qualified by predicates:
+     *
      * * `name:x`
      * * `column:y`
      * * `description:z`
@@ -3074,9 +3240,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Optional. The query string with a minimum of 3 characters and specific
      * syntax. For more information, see [Data Catalog search
      * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+     *
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
+     *
      * A query string can be a simple `xyz` or qualified by predicates:
+     *
      * * `name:x`
      * * `column:y`
      * * `description:z`
@@ -3104,9 +3273,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Optional. The query string with a minimum of 3 characters and specific
      * syntax. For more information, see [Data Catalog search
      * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+     *
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
+     *
      * A query string can be a simple `xyz` or qualified by predicates:
+     *
      * * `name:x`
      * * `column:y`
      * * `description:z`
@@ -3133,9 +3305,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Optional. The query string with a minimum of 3 characters and specific
      * syntax. For more information, see [Data Catalog search
      * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+     *
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
+     *
      * A query string can be a simple `xyz` or qualified by predicates:
+     *
      * * `name:x`
      * * `column:y`
      * * `description:z`
@@ -3158,9 +3333,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Optional. The query string with a minimum of 3 characters and specific
      * syntax. For more information, see [Data Catalog search
      * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
+     *
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
+     *
      * A query string can be a simple `xyz` or qualified by predicates:
+     *
      * * `name:x`
      * * `column:y`
      * * `description:z`
@@ -3187,7 +3365,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Number of results to return in a single search page.
+     * Upper bound on the number of results you can get in a single response.
+     *
      * Can't be negative or 0, defaults to 10 in this case.
      * The maximum number is 1000. If exceeded, throws an "invalid argument"
      * exception.
@@ -3205,7 +3384,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Number of results to return in a single search page.
+     * Upper bound on the number of results you can get in a single response.
+     *
      * Can't be negative or 0, defaults to 10 in this case.
      * The maximum number is 1000. If exceeded, throws an "invalid argument"
      * exception.
@@ -3227,7 +3407,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Number of results to return in a single search page.
+     * Upper bound on the number of results you can get in a single response.
+     *
      * Can't be negative or 0, defaults to 10 in this case.
      * The maximum number is 1000. If exceeded, throws an "invalid argument"
      * exception.
@@ -3251,6 +3432,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Pagination token that, if specified, returns the next page of
      * search results. If empty, returns the first page.
+     *
      * This token is returned in the
      * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
      * field of the response to a previous
@@ -3279,6 +3461,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Pagination token that, if specified, returns the next page of
      * search results. If empty, returns the first page.
+     *
      * This token is returned in the
      * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
      * field of the response to a previous
@@ -3307,6 +3490,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Pagination token that, if specified, returns the next page of
      * search results. If empty, returns the first page.
+     *
      * This token is returned in the
      * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
      * field of the response to a previous
@@ -3334,6 +3518,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Pagination token that, if specified, returns the next page of
      * search results. If empty, returns the first page.
+     *
      * This token is returned in the
      * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
      * field of the response to a previous
@@ -3357,6 +3542,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Pagination token that, if specified, returns the next page of
      * search results. If empty, returns the first page.
+     *
      * This token is returned in the
      * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
      * field of the response to a previous
@@ -3386,10 +3572,20 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Specifies the order of results.
+     *
      * Currently supported case-sensitive values are:
+     *
      * * `relevance` that can only be descending
      * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
      * * `default` that can only be descending
+     *
+     * Search queries don't guarantee full recall. Results that match your query
+     * might not be returned, even in subsequent result pages. Additionally,
+     * returned (and not returned) results can vary if you repeat search queries.
+     * If you are experiencing recall issues and you don't have to fetch the
+     * results in any specific order, consider setting this parameter to
+     * `default`.
+     *
      * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
@@ -3413,10 +3609,20 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Specifies the order of results.
+     *
      * Currently supported case-sensitive values are:
+     *
      * * `relevance` that can only be descending
      * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
      * * `default` that can only be descending
+     *
+     * Search queries don't guarantee full recall. Results that match your query
+     * might not be returned, even in subsequent result pages. Additionally,
+     * returned (and not returned) results can vary if you repeat search queries.
+     * If you are experiencing recall issues and you don't have to fetch the
+     * results in any specific order, consider setting this parameter to
+     * `default`.
+     *
      * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
@@ -3440,10 +3646,20 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Specifies the order of results.
+     *
      * Currently supported case-sensitive values are:
+     *
      * * `relevance` that can only be descending
      * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
      * * `default` that can only be descending
+     *
+     * Search queries don't guarantee full recall. Results that match your query
+     * might not be returned, even in subsequent result pages. Additionally,
+     * returned (and not returned) results can vary if you repeat search queries.
+     * If you are experiencing recall issues and you don't have to fetch the
+     * results in any specific order, consider setting this parameter to
+     * `default`.
+     *
      * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
@@ -3466,10 +3682,20 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Specifies the order of results.
+     *
      * Currently supported case-sensitive values are:
+     *
      * * `relevance` that can only be descending
      * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
      * * `default` that can only be descending
+     *
+     * Search queries don't guarantee full recall. Results that match your query
+     * might not be returned, even in subsequent result pages. Additionally,
+     * returned (and not returned) results can vary if you repeat search queries.
+     * If you are experiencing recall issues and you don't have to fetch the
+     * results in any specific order, consider setting this parameter to
+     * `default`.
+     *
      * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
@@ -3488,10 +3714,20 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Specifies the order of results.
+     *
      * Currently supported case-sensitive values are:
+     *
      * * `relevance` that can only be descending
      * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
      * * `default` that can only be descending
+     *
+     * Search queries don't guarantee full recall. Results that match your query
+     * might not be returned, even in subsequent result pages. Additionally,
+     * returned (and not returned) results can vary if you repeat search queries.
+     * If you are experiencing recall issues and you don't have to fetch the
+     * results in any specific order, consider setting this parameter to
+     * `default`.
+     *
      * If this parameter is omitted, it defaults to the descending `relevance`.
      * </pre>
      *
@@ -3507,6 +3743,71 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       orderBy_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private boolean adminSearch_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, use searchAll permission granted on organizations from
+     * `include_org_ids` and projects from `include_project_ids` instead of the
+     * fine grained per resource permissions when filtering the search results.
+     * The only allowed `order_by` criteria for admin_search mode is `default`.
+     * Using this flags guarantees a full recall of the search results.
+     * </pre>
+     *
+     * <code>bool admin_search = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The adminSearch.
+     */
+    @java.lang.Override
+    public boolean getAdminSearch() {
+      return adminSearch_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, use searchAll permission granted on organizations from
+     * `include_org_ids` and projects from `include_project_ids` instead of the
+     * fine grained per resource permissions when filtering the search results.
+     * The only allowed `order_by` criteria for admin_search mode is `default`.
+     * Using this flags guarantees a full recall of the search results.
+     * </pre>
+     *
+     * <code>bool admin_search = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The adminSearch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdminSearch(boolean value) {
+
+      adminSearch_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, use searchAll permission granted on organizations from
+     * `include_org_ids` and projects from `include_project_ids` instead of the
+     * fine grained per resource permissions when filtering the search results.
+     * The only allowed `order_by` criteria for admin_search mode is `default`.
+     * Using this flags guarantees a full recall of the search results.
+     * </pre>
+     *
+     * <code>bool admin_search = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdminSearch() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      adminSearch_ = false;
       onChanged();
       return this;
     }

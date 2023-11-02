@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.AddControlRequest;
 import com.google.cloud.retail.v2beta.CreateServingConfigRequest;
@@ -386,38 +387,82 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
             HttpJsonCallSettings.<CreateServingConfigRequest, ServingConfig>newBuilder()
                 .setMethodDescriptor(createServingConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigTransportSettings =
         HttpJsonCallSettings.<DeleteServingConfigRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteServingConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateServingConfigRequest, ServingConfig>
         updateServingConfigTransportSettings =
             HttpJsonCallSettings.<UpdateServingConfigRequest, ServingConfig>newBuilder()
                 .setMethodDescriptor(updateServingConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "serving_config.name",
+                          String.valueOf(request.getServingConfig().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetServingConfigRequest, ServingConfig> getServingConfigTransportSettings =
         HttpJsonCallSettings.<GetServingConfigRequest, ServingConfig>newBuilder()
             .setMethodDescriptor(getServingConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListServingConfigsRequest, ListServingConfigsResponse>
         listServingConfigsTransportSettings =
             HttpJsonCallSettings.<ListServingConfigsRequest, ListServingConfigsResponse>newBuilder()
                 .setMethodDescriptor(listServingConfigsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AddControlRequest, ServingConfig> addControlTransportSettings =
         HttpJsonCallSettings.<AddControlRequest, ServingConfig>newBuilder()
             .setMethodDescriptor(addControlMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("serving_config", String.valueOf(request.getServingConfig()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RemoveControlRequest, ServingConfig> removeControlTransportSettings =
         HttpJsonCallSettings.<RemoveControlRequest, ServingConfig>newBuilder()
             .setMethodDescriptor(removeControlMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("serving_config", String.valueOf(request.getServingConfig()));
+                  return builder.build();
+                })
             .build();
 
     this.createServingConfigCallable =

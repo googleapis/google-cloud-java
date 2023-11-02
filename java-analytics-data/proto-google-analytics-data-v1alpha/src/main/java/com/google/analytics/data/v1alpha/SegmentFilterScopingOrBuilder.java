@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,12 +30,15 @@ public interface SegmentFilterScopingOrBuilder
    * If `atAnyPointInTime` is true, this filter evaluates to true for all
    * events if it evaluates to true for any event in the date range of the
    * request.
+   *
    * This `atAnyPointInTime` parameter does not extend the date range of
    * events in the report. If `atAnyPointInTime` is true, only events within
    * the report's date range are considered when evaluating this filter.
+   *
    * This `atAnyPointInTime` is only able to be specified if the criteria
    * scoping is `ACROSS_ALL_SESSIONS` and is not able to be specified in
    * sequences.
+   *
    * If the criteria scoping is `ACROSS_ALL_SESSIONS`, `atAnyPointInTime` =
    * false is used if unspecified.
    * </pre>
@@ -52,12 +55,15 @@ public interface SegmentFilterScopingOrBuilder
    * If `atAnyPointInTime` is true, this filter evaluates to true for all
    * events if it evaluates to true for any event in the date range of the
    * request.
+   *
    * This `atAnyPointInTime` parameter does not extend the date range of
    * events in the report. If `atAnyPointInTime` is true, only events within
    * the report's date range are considered when evaluating this filter.
+   *
    * This `atAnyPointInTime` is only able to be specified if the criteria
    * scoping is `ACROSS_ALL_SESSIONS` and is not able to be specified in
    * sequences.
+   *
    * If the criteria scoping is `ACROSS_ALL_SESSIONS`, `atAnyPointInTime` =
    * false is used if unspecified.
    * </pre>

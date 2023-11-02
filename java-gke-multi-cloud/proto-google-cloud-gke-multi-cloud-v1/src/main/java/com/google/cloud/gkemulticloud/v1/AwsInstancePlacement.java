@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.gkemulticloud.v1;
  * <pre>
  * Details of placement information for an instance.
  * Limitations for using the `host` tenancy:
+ *
  *  * T3 instances that use the unlimited CPU credit option don't support host
  *  tenancy.
  * </pre>
@@ -48,11 +49,6 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AwsInstancePlacement();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -462,6 +458,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
    * <pre>
    * Details of placement information for an instance.
    * Limitations for using the `host` tenancy:
+   *
    *  * T3 instances that use the unlimited CPU credit option don't support host
    *  tenancy.
    * </pre>

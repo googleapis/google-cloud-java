@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,8 @@ public interface WeeklyMaintenanceWindowOrBuilder
    *
    *
    * <pre>
-   * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+   * Output only. Duration of the maintenance window. The current window is
+   * fixed at 1 hour.
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -100,7 +101,8 @@ public interface WeeklyMaintenanceWindowOrBuilder
    *
    *
    * <pre>
-   * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+   * Output only. Duration of the maintenance window. The current window is
+   * fixed at 1 hour.
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -113,7 +115,8 @@ public interface WeeklyMaintenanceWindowOrBuilder
    *
    *
    * <pre>
-   * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+   * Output only. Duration of the maintenance window. The current window is
+   * fixed at 1 hour.
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];

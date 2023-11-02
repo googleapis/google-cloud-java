@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,7 @@ public enum PostingRegion implements com.google.protobuf.ProtocolMessageEnum {
    * example, if a `ADMINISTRATIVE_AREA` job is posted in "CA, USA", it's
    * returned if [LocationFilter][google.cloud.talent.v4.LocationFilter] has
    * "Mountain View".
+   *
    * Administrative area refers to top-level administrative subdivision of this
    * country. For example, US state, IT region, UK constituent nation and
    * JP prefecture.
@@ -110,6 +111,7 @@ public enum PostingRegion implements com.google.protobuf.ProtocolMessageEnum {
    * example, if a `ADMINISTRATIVE_AREA` job is posted in "CA, USA", it's
    * returned if [LocationFilter][google.cloud.talent.v4.LocationFilter] has
    * "Mountain View".
+   *
    * Administrative area refers to top-level administrative subdivision of this
    * country. For example, US state, IT region, UK constituent nation and
    * JP prefecture.

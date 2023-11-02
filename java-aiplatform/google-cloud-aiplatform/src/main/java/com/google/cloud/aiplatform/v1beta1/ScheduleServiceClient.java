@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1068,6 +1069,112 @@ public class ScheduleServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ResumeScheduleRequest, Empty> resumeScheduleCallable() {
     return stub.resumeScheduleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an active or paused Schedule.
+   *
+   * <p>When the Schedule is updated, new runs will be scheduled starting from the updated next
+   * execution time after the update time based on the time_specification in the updated Schedule.
+   * All unstarted runs before the update time will be skipped while already created runs will NOT
+   * be paused or canceled.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ScheduleServiceClient scheduleServiceClient = ScheduleServiceClient.create()) {
+   *   Schedule schedule = Schedule.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Schedule response = scheduleServiceClient.updateSchedule(schedule, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param schedule Required. The Schedule which replaces the resource on the server. The following
+   *     restrictions will be applied:
+   *     <p>&#42; The scheduled request type cannot be changed. &#42; The non-empty fields cannot be
+   *     unset. &#42; The output_only fields will be ignored if specified.
+   * @param updateMask Required. The update mask applies to the resource. See
+   *     [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Schedule updateSchedule(Schedule schedule, FieldMask updateMask) {
+    UpdateScheduleRequest request =
+        UpdateScheduleRequest.newBuilder().setSchedule(schedule).setUpdateMask(updateMask).build();
+    return updateSchedule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an active or paused Schedule.
+   *
+   * <p>When the Schedule is updated, new runs will be scheduled starting from the updated next
+   * execution time after the update time based on the time_specification in the updated Schedule.
+   * All unstarted runs before the update time will be skipped while already created runs will NOT
+   * be paused or canceled.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ScheduleServiceClient scheduleServiceClient = ScheduleServiceClient.create()) {
+   *   UpdateScheduleRequest request =
+   *       UpdateScheduleRequest.newBuilder()
+   *           .setSchedule(Schedule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Schedule response = scheduleServiceClient.updateSchedule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Schedule updateSchedule(UpdateScheduleRequest request) {
+    return updateScheduleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an active or paused Schedule.
+   *
+   * <p>When the Schedule is updated, new runs will be scheduled starting from the updated next
+   * execution time after the update time based on the time_specification in the updated Schedule.
+   * All unstarted runs before the update time will be skipped while already created runs will NOT
+   * be paused or canceled.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ScheduleServiceClient scheduleServiceClient = ScheduleServiceClient.create()) {
+   *   UpdateScheduleRequest request =
+   *       UpdateScheduleRequest.newBuilder()
+   *           .setSchedule(Schedule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Schedule> future =
+   *       scheduleServiceClient.updateScheduleCallable().futureCall(request);
+   *   // Do something.
+   *   Schedule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateScheduleRequest, Schedule> updateScheduleCallable() {
+    return stub.updateScheduleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

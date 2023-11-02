@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public final class OperationsProto {
       "\nCgoogle/cloud/orchestration/airflow/ser"
           + "vice/v1beta1/operations.proto\0222google.cl"
           + "oud.orchestration.airflow.service.v1beta"
-          + "1\032\037google/protobuf/timestamp.proto\"\244\004\n\021O"
+          + "1\032\037google/protobuf/timestamp.proto\"\274\004\n\021O"
           + "perationMetadata\022Z\n\005state\030\001 \001(\0162K.google"
           + ".cloud.orchestration.airflow.service.v1b"
           + "eta1.OperationMetadata.State\022b\n\016operatio"
@@ -54,14 +54,15 @@ public final class OperationsProto {
           + "protobuf.Timestamp\022,\n\010end_time\030\006 \001(\0132\032.g"
           + "oogle.protobuf.Timestamp\"T\n\005State\022\025\n\021STA"
           + "TE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\013\n\007RUNNING"
-          + "\020\002\022\016\n\nSUCCESSFUL\020\003\022\n\n\006FAILED\020\004\"q\n\004Type\022\024"
-          + "\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006CREATE\020\001\022\n\n\006DELE"
-          + "TE\020\002\022\n\n\006UPDATE\020\003\022\t\n\005CHECK\020\004\022\021\n\rSAVE_SNAP"
-          + "SHOT\020\005\022\021\n\rLOAD_SNAPSHOT\020\006B\235\001\n6com.google"
-          + ".cloud.orchestration.airflow.service.v1b"
-          + "eta1B\017OperationsProtoP\001ZPcloud.google.co"
-          + "m/go/orchestration/airflow/service/apiv1"
-          + "beta1/servicepb;servicepbb\006proto3"
+          + "\020\002\022\016\n\nSUCCESSFUL\020\003\022\n\n\006FAILED\020\004\"\210\001\n\004Type\022"
+          + "\024\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006CREATE\020\001\022\n\n\006DEL"
+          + "ETE\020\002\022\n\n\006UPDATE\020\003\022\t\n\005CHECK\020\004\022\021\n\rSAVE_SNA"
+          + "PSHOT\020\005\022\021\n\rLOAD_SNAPSHOT\020\006\022\025\n\021DATABASE_F"
+          + "AILOVER\020\007B\235\001\n6com.google.cloud.orchestra"
+          + "tion.airflow.service.v1beta1B\017Operations"
+          + "ProtoP\001ZPcloud.google.com/go/orchestrati"
+          + "on/airflow/service/apiv1beta1/servicepb;"
+          + "servicepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

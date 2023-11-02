@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
     return new ValidateExclusivityResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1beta1.MembershipOuterClass
         .internal_static_google_cloud_gkehub_v1beta1_ValidateExclusivityResponse_descriptor;
@@ -72,6 +67,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
    *
    * <pre>
    * The validation result.
+   *
    * * `OK` means that exclusivity is validated, assuming the manifest produced
    *    by GenerateExclusivityManifest is successfully applied.
    * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -91,6 +87,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
    *
    * <pre>
    * The validation result.
+   *
    * * `OK` means that exclusivity is validated, assuming the manifest produced
    *    by GenerateExclusivityManifest is successfully applied.
    * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -110,6 +107,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
    *
    * <pre>
    * The validation result.
+   *
    * * `OK` means that exclusivity is validated, assuming the manifest produced
    *    by GenerateExclusivityManifest is successfully applied.
    * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -482,6 +480,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * The validation result.
+     *
      * * `OK` means that exclusivity is validated, assuming the manifest produced
      *    by GenerateExclusivityManifest is successfully applied.
      * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -500,6 +499,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * The validation result.
+     *
      * * `OK` means that exclusivity is validated, assuming the manifest produced
      *    by GenerateExclusivityManifest is successfully applied.
      * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -522,6 +522,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * The validation result.
+     *
      * * `OK` means that exclusivity is validated, assuming the manifest produced
      *    by GenerateExclusivityManifest is successfully applied.
      * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -548,6 +549,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * The validation result.
+     *
      * * `OK` means that exclusivity is validated, assuming the manifest produced
      *    by GenerateExclusivityManifest is successfully applied.
      * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -571,6 +573,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * The validation result.
+     *
      * * `OK` means that exclusivity is validated, assuming the manifest produced
      *    by GenerateExclusivityManifest is successfully applied.
      * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -600,6 +603,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * The validation result.
+     *
      * * `OK` means that exclusivity is validated, assuming the manifest produced
      *    by GenerateExclusivityManifest is successfully applied.
      * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -623,6 +627,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * The validation result.
+     *
      * * `OK` means that exclusivity is validated, assuming the manifest produced
      *    by GenerateExclusivityManifest is successfully applied.
      * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -641,6 +646,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * The validation result.
+     *
      * * `OK` means that exclusivity is validated, assuming the manifest produced
      *    by GenerateExclusivityManifest is successfully applied.
      * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -661,6 +667,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * The validation result.
+     *
      * * `OK` means that exclusivity is validated, assuming the manifest produced
      *    by GenerateExclusivityManifest is successfully applied.
      * * `ALREADY_EXISTS` means that the Membership CRD is already owned by

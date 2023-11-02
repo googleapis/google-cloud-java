@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,10 +29,12 @@ public interface OrderedJobOrBuilder
    * <pre>
    * Required. The step id. The id must be unique among all jobs
    * within the template.
+   *
    * The step id is used as prefix for job id, as job
    * `goog-dataproc-workflow-step-id` label, and in
    * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
    * field from other steps.
+   *
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
@@ -49,10 +51,12 @@ public interface OrderedJobOrBuilder
    * <pre>
    * Required. The step id. The id must be unique among all jobs
    * within the template.
+   *
    * The step id is used as prefix for job id, as job
    * `goog-dataproc-workflow-step-id` label, and in
    * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
    * field from other steps.
+   *
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
@@ -391,11 +395,14 @@ public interface OrderedJobOrBuilder
    *
    * <pre>
    * Optional. The labels to associate with this job.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
@@ -407,11 +414,14 @@ public interface OrderedJobOrBuilder
    *
    * <pre>
    * Optional. The labels to associate with this job.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
@@ -426,11 +436,14 @@ public interface OrderedJobOrBuilder
    *
    * <pre>
    * Optional. The labels to associate with this job.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
@@ -442,11 +455,14 @@ public interface OrderedJobOrBuilder
    *
    * <pre>
    * Optional. The labels to associate with this job.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
@@ -462,11 +478,14 @@ public interface OrderedJobOrBuilder
    *
    * <pre>
    * Optional. The labels to associate with this job.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
@@ -574,5 +593,5 @@ public interface OrderedJobOrBuilder
    */
   com.google.protobuf.ByteString getPrerequisiteStepIdsBytes(int index);
 
-  public com.google.cloud.dataproc.v1.OrderedJob.JobTypeCase getJobTypeCase();
+  com.google.cloud.dataproc.v1.OrderedJob.JobTypeCase getJobTypeCase();
 }

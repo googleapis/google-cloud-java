@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,17 @@ import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
 import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
+import com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
+import com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
+import com.google.recaptchaenterprise.v1.FirewallPolicy;
+import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -41,6 +47,7 @@ import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
+import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -282,6 +289,112 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
                   "Unrecognized response type %s for method GetMetrics, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Metrics.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createFirewallPolicy(
+      CreateFirewallPolicyRequest request, StreamObserver<FirewallPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FirewallPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((FirewallPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateFirewallPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FirewallPolicy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listFirewallPolicies(
+      ListFirewallPoliciesRequest request,
+      StreamObserver<ListFirewallPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListFirewallPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListFirewallPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFirewallPolicies, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListFirewallPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getFirewallPolicy(
+      GetFirewallPolicyRequest request, StreamObserver<FirewallPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FirewallPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((FirewallPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFirewallPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FirewallPolicy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateFirewallPolicy(
+      UpdateFirewallPolicyRequest request, StreamObserver<FirewallPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FirewallPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((FirewallPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateFirewallPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FirewallPolicy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteFirewallPolicy(
+      DeleteFirewallPolicyRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteFirewallPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

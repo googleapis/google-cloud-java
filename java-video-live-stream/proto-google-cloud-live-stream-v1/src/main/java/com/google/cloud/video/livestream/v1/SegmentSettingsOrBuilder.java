@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ public interface SegmentSettingsOrBuilder
    * and `segmentDuration` must be divisible by
    * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
    * Valid range is [2s, 20s].
+   *
    * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
    * the same manifest must have the same segment duration.
    * </pre>
@@ -52,6 +53,7 @@ public interface SegmentSettingsOrBuilder
    * and `segmentDuration` must be divisible by
    * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
    * Valid range is [2s, 20s].
+   *
    * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
    * the same manifest must have the same segment duration.
    * </pre>
@@ -71,6 +73,7 @@ public interface SegmentSettingsOrBuilder
    * and `segmentDuration` must be divisible by
    * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
    * Valid range is [2s, 20s].
+   *
    * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
    * the same manifest must have the same segment duration.
    * </pre>

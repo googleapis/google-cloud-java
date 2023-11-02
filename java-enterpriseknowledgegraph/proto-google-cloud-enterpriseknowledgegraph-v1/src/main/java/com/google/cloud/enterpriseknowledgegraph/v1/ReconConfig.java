@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     return new ReconConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.enterpriseknowledgegraph.v1.ServiceProto
         .internal_static_google_cloud_enterpriseknowledgegraph_v1_ReconConfig_descriptor;
@@ -76,6 +71,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, separate clusters by their geographic region (from geocoding).
      * Uses the following entity features:
+     *
      * - schema.org/addressLocality
      * - schema.org/addressRegion
      * - schema.org/addressCountry
@@ -115,11 +111,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       return new Options();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.enterpriseknowledgegraph.v1.ServiceProto
           .internal_static_google_cloud_enterpriseknowledgegraph_v1_ReconConfig_Options_descriptor;
@@ -143,6 +134,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, separate clusters by their geographic region (from geocoding).
      * Uses the following entity features:
+     *
      * - schema.org/addressLocality
      * - schema.org/addressRegion
      * - schema.org/addressCountry
@@ -519,6 +511,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If true, separate clusters by their geographic region (from geocoding).
        * Uses the following entity features:
+       *
        * - schema.org/addressLocality
        * - schema.org/addressRegion
        * - schema.org/addressCountry
@@ -539,6 +532,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If true, separate clusters by their geographic region (from geocoding).
        * Uses the following entity features:
+       *
        * - schema.org/addressLocality
        * - schema.org/addressRegion
        * - schema.org/addressCountry
@@ -563,6 +557,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If true, separate clusters by their geographic region (from geocoding).
        * Uses the following entity features:
+       *
        * - schema.org/addressLocality
        * - schema.org/addressRegion
        * - schema.org/addressCountry
@@ -734,11 +729,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ModelConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1532,6 +1522,8 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int clusteringConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object clusteringConfig_;
 
   public enum ClusteringConfigCase

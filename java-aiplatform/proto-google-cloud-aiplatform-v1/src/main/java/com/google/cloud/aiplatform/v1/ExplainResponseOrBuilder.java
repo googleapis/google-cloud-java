@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ExplainResponseOrBuilder
    * <pre>
    * The explanations of the Model's
    * [PredictResponse.predictions][google.cloud.aiplatform.v1.PredictResponse.predictions].
+   *
    * It has the same number of elements as
    * [instances][google.cloud.aiplatform.v1.ExplainRequest.instances] to be
    * explained.
@@ -43,6 +44,7 @@ public interface ExplainResponseOrBuilder
    * <pre>
    * The explanations of the Model's
    * [PredictResponse.predictions][google.cloud.aiplatform.v1.PredictResponse.predictions].
+   *
    * It has the same number of elements as
    * [instances][google.cloud.aiplatform.v1.ExplainRequest.instances] to be
    * explained.
@@ -57,6 +59,7 @@ public interface ExplainResponseOrBuilder
    * <pre>
    * The explanations of the Model's
    * [PredictResponse.predictions][google.cloud.aiplatform.v1.PredictResponse.predictions].
+   *
    * It has the same number of elements as
    * [instances][google.cloud.aiplatform.v1.ExplainRequest.instances] to be
    * explained.
@@ -71,6 +74,7 @@ public interface ExplainResponseOrBuilder
    * <pre>
    * The explanations of the Model's
    * [PredictResponse.predictions][google.cloud.aiplatform.v1.PredictResponse.predictions].
+   *
    * It has the same number of elements as
    * [instances][google.cloud.aiplatform.v1.ExplainRequest.instances] to be
    * explained.
@@ -86,6 +90,7 @@ public interface ExplainResponseOrBuilder
    * <pre>
    * The explanations of the Model's
    * [PredictResponse.predictions][google.cloud.aiplatform.v1.PredictResponse.predictions].
+   *
    * It has the same number of elements as
    * [instances][google.cloud.aiplatform.v1.ExplainRequest.instances] to be
    * explained.

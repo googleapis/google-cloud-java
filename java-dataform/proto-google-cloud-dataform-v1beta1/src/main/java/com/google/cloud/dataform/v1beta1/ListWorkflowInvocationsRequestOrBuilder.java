@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface ListWorkflowInvocationsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource of the WorkflowInvocation type. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The parent resource of the WorkflowInvocation type. Must be in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListWorkflowInvocationsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource of the WorkflowInvocation type. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The parent resource of the WorkflowInvocation type. Must be in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>
@@ -58,8 +58,8 @@ public interface ListWorkflowInvocationsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Maximum number of workflow invocations to return. The server may return
-   * fewer items than requested. If unspecified, the server will pick an
+   * Optional. Maximum number of workflow invocations to return. The server may
+   * return fewer items than requested. If unspecified, the server will pick an
    * appropriate default.
    * </pre>
    *
@@ -73,8 +73,9 @@ public interface ListWorkflowInvocationsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `ListWorkflowInvocations` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `ListWorkflowInvocations`
+   * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListWorkflowInvocations`
    * must match the call that provided the page token.
    * </pre>
@@ -88,8 +89,9 @@ public interface ListWorkflowInvocationsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `ListWorkflowInvocations` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `ListWorkflowInvocations`
+   * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListWorkflowInvocations`
    * must match the call that provided the page token.
    * </pre>
@@ -99,4 +101,58 @@ public interface ListWorkflowInvocationsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field only supports ordering by `name`. If unspecified, the
+   * server will choose the ordering. If specified, the default order is
+   * ascending for the `name` field.
+   * </pre>
+   *
+   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field only supports ordering by `name`. If unspecified, the
+   * server will choose the ordering. If specified, the default order is
+   * ascending for the `name` field.
+   * </pre>
+   *
+   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for the returned list.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for the returned list.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

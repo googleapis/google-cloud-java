@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
   private ListLakesResponse() {
     lakes_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
-    unreachableLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unreachableLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListLakesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -196,7 +191,8 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
   public static final int UNREACHABLE_LOCATIONS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unreachableLocations_;
+  private com.google.protobuf.LazyStringArrayList unreachableLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -490,8 +486,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-      unreachableLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      unreachableLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -537,17 +532,16 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       } else {
         result.lakes_ = lakesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        unreachableLocations_ = unreachableLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.unreachableLocations_ = unreachableLocations_;
     }
 
     private void buildPartial0(com.google.cloud.dataplex.v1.ListLakesResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        unreachableLocations_.makeImmutable();
+        result.unreachableLocations_ = unreachableLocations_;
       }
     }
 
@@ -631,7 +625,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       if (!other.unreachableLocations_.isEmpty()) {
         if (unreachableLocations_.isEmpty()) {
           unreachableLocations_ = other.unreachableLocations_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureUnreachableLocationsIsMutable();
           unreachableLocations_.addAll(other.unreachableLocations_);
@@ -1166,14 +1160,14 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList unreachableLocations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unreachableLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUnreachableLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!unreachableLocations_.isModifiable()) {
         unreachableLocations_ = new com.google.protobuf.LazyStringArrayList(unreachableLocations_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1187,7 +1181,8 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
      * @return A list containing the unreachableLocations.
      */
     public com.google.protobuf.ProtocolStringList getUnreachableLocationsList() {
-      return unreachableLocations_.getUnmodifiableView();
+      unreachableLocations_.makeImmutable();
+      return unreachableLocations_;
     }
     /**
      *
@@ -1252,6 +1247,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       ensureUnreachableLocationsIsMutable();
       unreachableLocations_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1273,6 +1269,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       }
       ensureUnreachableLocationsIsMutable();
       unreachableLocations_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1291,6 +1288,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
     public Builder addAllUnreachableLocations(java.lang.Iterable<java.lang.String> values) {
       ensureUnreachableLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachableLocations_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1306,8 +1304,9 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearUnreachableLocations() {
-      unreachableLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unreachableLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1330,6 +1329,7 @@ public final class ListLakesResponse extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureUnreachableLocationsIsMutable();
       unreachableLocations_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

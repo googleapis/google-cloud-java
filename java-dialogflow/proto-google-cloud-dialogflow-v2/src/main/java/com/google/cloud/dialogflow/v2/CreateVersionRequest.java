@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
     return new CreateVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.VersionProto
         .internal_static_google_cloud_dialogflow_v2_CreateVersionRequest_descriptor;
@@ -78,6 +73,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The agent to create a version for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
@@ -106,6 +102,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The agent to create a version for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
@@ -566,6 +563,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The agent to create a version for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
@@ -593,6 +591,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The agent to create a version for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
@@ -620,6 +619,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The agent to create a version for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
@@ -646,6 +646,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The agent to create a version for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
@@ -668,6 +669,7 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The agent to create a version for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>

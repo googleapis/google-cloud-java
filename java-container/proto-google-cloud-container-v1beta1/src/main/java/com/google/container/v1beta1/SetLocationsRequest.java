@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     projectId_ = "";
     zone_ = "";
     clusterId_ = "";
-    locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     name_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SetLocationsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -88,7 +83,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLocationsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2933
+   *     google/container/v1beta1/cluster_service.proto;l=3284
    * @return The projectId.
    */
   @java.lang.Override
@@ -117,7 +112,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLocationsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2933
+   *     google/container/v1beta1/cluster_service.proto;l=3284
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -151,7 +146,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetLocationsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2940
+   *     google/container/v1beta1/cluster_service.proto;l=3291
    * @return The zone.
    */
   @java.lang.Override
@@ -180,7 +175,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetLocationsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2940
+   *     google/container/v1beta1/cluster_service.proto;l=3291
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -213,7 +208,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLocationsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2944
+   *     google/container/v1beta1/cluster_service.proto;l=3295
    * @return The clusterId.
    */
   @java.lang.Override
@@ -241,7 +236,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLocationsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2944
+   *     google/container/v1beta1/cluster_service.proto;l=3295
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -261,7 +256,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
   public static final int LOCATIONS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList locations_;
+  private com.google.protobuf.LazyStringArrayList locations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -271,6 +267,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * cluster's nodes should be located. Changing the locations a cluster is in
    * will result in nodes being either created or removed from the cluster,
    * depending on whether locations are being added or removed.
+   *
    * This list must always include the cluster's primary zone.
    * </pre>
    *
@@ -290,6 +287,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * cluster's nodes should be located. Changing the locations a cluster is in
    * will result in nodes being either created or removed from the cluster,
    * depending on whether locations are being added or removed.
+   *
    * This list must always include the cluster's primary zone.
    * </pre>
    *
@@ -309,6 +307,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * cluster's nodes should be located. Changing the locations a cluster is in
    * will result in nodes being either created or removed from the cluster,
    * depending on whether locations are being added or removed.
+   *
    * This list must always include the cluster's primary zone.
    * </pre>
    *
@@ -329,6 +328,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * cluster's nodes should be located. Changing the locations a cluster is in
    * will result in nodes being either created or removed from the cluster,
    * depending on whether locations are being added or removed.
+   *
    * This list must always include the cluster's primary zone.
    * </pre>
    *
@@ -638,8 +638,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       projectId_ = "";
       zone_ = "";
       clusterId_ = "";
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       name_ = "";
       return this;
     }
@@ -668,21 +667,11 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     public com.google.container.v1beta1.SetLocationsRequest buildPartial() {
       com.google.container.v1beta1.SetLocationsRequest result =
           new com.google.container.v1beta1.SetLocationsRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.container.v1beta1.SetLocationsRequest result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.locations_ = locations_;
     }
 
     private void buildPartial0(com.google.container.v1beta1.SetLocationsRequest result) {
@@ -695,6 +684,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.clusterId_ = clusterId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        locations_.makeImmutable();
+        result.locations_ = locations_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.name_ = name_;
@@ -765,7 +758,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -867,7 +860,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2933
+     *     google/container/v1beta1/cluster_service.proto;l=3284
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -895,7 +888,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2933
+     *     google/container/v1beta1/cluster_service.proto;l=3284
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -923,7 +916,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2933
+     *     google/container/v1beta1/cluster_service.proto;l=3284
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -950,7 +943,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2933
+     *     google/container/v1beta1/cluster_service.proto;l=3284
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -973,7 +966,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2933
+     *     google/container/v1beta1/cluster_service.proto;l=3284
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -1003,7 +996,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2940
+     *     google/container/v1beta1/cluster_service.proto;l=3291
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -1031,7 +1024,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2940
+     *     google/container/v1beta1/cluster_service.proto;l=3291
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1059,7 +1052,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2940
+     *     google/container/v1beta1/cluster_service.proto;l=3291
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1086,7 +1079,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2940
+     *     google/container/v1beta1/cluster_service.proto;l=3291
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1109,7 +1102,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2940
+     *     google/container/v1beta1/cluster_service.proto;l=3291
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1138,7 +1131,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2944
+     *     google/container/v1beta1/cluster_service.proto;l=3295
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1165,7 +1158,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2944
+     *     google/container/v1beta1/cluster_service.proto;l=3295
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1192,7 +1185,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2944
+     *     google/container/v1beta1/cluster_service.proto;l=3295
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1218,7 +1211,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2944
+     *     google/container/v1beta1/cluster_service.proto;l=3295
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1240,7 +1233,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2944
+     *     google/container/v1beta1/cluster_service.proto;l=3295
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1256,14 +1249,14 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.LazyStringList locations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList locations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!locations_.isModifiable()) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1274,6 +1267,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * cluster's nodes should be located. Changing the locations a cluster is in
      * will result in nodes being either created or removed from the cluster,
      * depending on whether locations are being added or removed.
+     *
      * This list must always include the cluster's primary zone.
      * </pre>
      *
@@ -1282,7 +1276,8 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * @return A list containing the locations.
      */
     public com.google.protobuf.ProtocolStringList getLocationsList() {
-      return locations_.getUnmodifiableView();
+      locations_.makeImmutable();
+      return locations_;
     }
     /**
      *
@@ -1293,6 +1288,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * cluster's nodes should be located. Changing the locations a cluster is in
      * will result in nodes being either created or removed from the cluster,
      * depending on whether locations are being added or removed.
+     *
      * This list must always include the cluster's primary zone.
      * </pre>
      *
@@ -1312,6 +1308,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * cluster's nodes should be located. Changing the locations a cluster is in
      * will result in nodes being either created or removed from the cluster,
      * depending on whether locations are being added or removed.
+     *
      * This list must always include the cluster's primary zone.
      * </pre>
      *
@@ -1332,6 +1329,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * cluster's nodes should be located. Changing the locations a cluster is in
      * will result in nodes being either created or removed from the cluster,
      * depending on whether locations are being added or removed.
+     *
      * This list must always include the cluster's primary zone.
      * </pre>
      *
@@ -1352,6 +1350,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * cluster's nodes should be located. Changing the locations a cluster is in
      * will result in nodes being either created or removed from the cluster,
      * depending on whether locations are being added or removed.
+     *
      * This list must always include the cluster's primary zone.
      * </pre>
      *
@@ -1367,6 +1366,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       }
       ensureLocationsIsMutable();
       locations_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1379,6 +1379,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * cluster's nodes should be located. Changing the locations a cluster is in
      * will result in nodes being either created or removed from the cluster,
      * depending on whether locations are being added or removed.
+     *
      * This list must always include the cluster's primary zone.
      * </pre>
      *
@@ -1393,6 +1394,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       }
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1405,6 +1407,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * cluster's nodes should be located. Changing the locations a cluster is in
      * will result in nodes being either created or removed from the cluster,
      * depending on whether locations are being added or removed.
+     *
      * This list must always include the cluster's primary zone.
      * </pre>
      *
@@ -1416,6 +1419,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
     public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
       ensureLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, locations_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1428,6 +1432,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * cluster's nodes should be located. Changing the locations a cluster is in
      * will result in nodes being either created or removed from the cluster,
      * depending on whether locations are being added or removed.
+     *
      * This list must always include the cluster's primary zone.
      * </pre>
      *
@@ -1436,8 +1441,9 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLocations() {
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1450,6 +1456,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * cluster's nodes should be located. Changing the locations a cluster is in
      * will result in nodes being either created or removed from the cluster,
      * depending on whether locations are being added or removed.
+     *
      * This list must always include the cluster's primary zone.
      * </pre>
      *
@@ -1465,6 +1472,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

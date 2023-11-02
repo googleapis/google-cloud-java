@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,9 +58,9 @@ public interface ListRepositoriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Maximum number of repositories to return. The server may return fewer
-   * items than requested. If unspecified, the server will pick an appropriate
-   * default.
+   * Optional. Maximum number of repositories to return. The server may return
+   * fewer items than requested. If unspecified, the server will pick an
+   * appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -75,6 +75,7 @@ public interface ListRepositoriesRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `ListRepositories` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListRepositories`
    * must match the call that provided the page token.
    * </pre>
@@ -90,6 +91,7 @@ public interface ListRepositoriesRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `ListRepositories` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListRepositories`
    * must match the call that provided the page token.
    * </pre>
@@ -104,9 +106,9 @@ public interface ListRepositoriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. This field only supports ordering by `name`. If unspecified, the server
-   * will choose the ordering. If specified, the default order is ascending for
-   * the `name` field.
+   * Optional. This field only supports ordering by `name`. If unspecified, the
+   * server will choose the ordering. If specified, the default order is
+   * ascending for the `name` field.
    * </pre>
    *
    * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -118,9 +120,9 @@ public interface ListRepositoriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. This field only supports ordering by `name`. If unspecified, the server
-   * will choose the ordering. If specified, the default order is ascending for
-   * the `name` field.
+   * Optional. This field only supports ordering by `name`. If unspecified, the
+   * server will choose the ordering. If specified, the default order is
+   * ascending for the `name` field.
    * </pre>
    *
    * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

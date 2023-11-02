@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface GitSourceOrBuilder
    *
    * <pre>
    * Location of the Git repo to build.
+   *
    * This will be used as a `git remote`, see
    * https://git-scm.com/docs/git-remote.
    * </pre>
@@ -42,6 +43,7 @@ public interface GitSourceOrBuilder
    *
    * <pre>
    * Location of the Git repo to build.
+   *
    * This will be used as a `git remote`, see
    * https://git-scm.com/docs/git-remote.
    * </pre>
@@ -57,6 +59,7 @@ public interface GitSourceOrBuilder
    *
    * <pre>
    * Directory, relative to the source root, in which to run the build.
+   *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
@@ -71,6 +74,7 @@ public interface GitSourceOrBuilder
    *
    * <pre>
    * Directory, relative to the source root, in which to run the build.
+   *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
@@ -87,6 +91,7 @@ public interface GitSourceOrBuilder
    * <pre>
    * The revision to fetch from the Git repository such as a branch, a tag, a
    * commit SHA, or any Git ref.
+   *
    * Cloud Build uses `git fetch` to fetch the revision from the Git
    * repository; therefore make sure that the string you provide for `revision`
    * is parsable  by the command. For information on string values accepted by
@@ -106,6 +111,7 @@ public interface GitSourceOrBuilder
    * <pre>
    * The revision to fetch from the Git repository such as a branch, a tag, a
    * commit SHA, or any Git ref.
+   *
    * Cloud Build uses `git fetch` to fetch the revision from the Git
    * repository; therefore make sure that the string you provide for `revision`
    * is parsable  by the command. For information on string values accepted by

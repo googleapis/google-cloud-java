@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Encapsulates a segment between non-`via` waypoints.
+ * Contains a segment between non-`via` waypoints.
  * </pre>
  *
  * Protobuf type {@code google.maps.routing.v2.RouteLeg}
@@ -47,11 +47,6 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
     return new RouteLeg();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.RouteProto
         .internal_static_google_maps_routing_v2_RouteLeg_descriptor;
@@ -65,6 +60,3779 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.maps.routing.v2.RouteLeg.class,
             com.google.maps.routing.v2.RouteLeg.Builder.class);
+  }
+
+  public interface RouteLegLocalizedValuesOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return Whether the distance field is set.
+     */
+    boolean hasDistance();
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return The distance.
+     */
+    com.google.type.LocalizedText getDistance();
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration represented in text
+     * form. Note: If you did not request traffic information, this value will
+     * be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    boolean hasDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration represented in text
+     * form. Note: If you did not request traffic information, this value will
+     * be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return The duration.
+     */
+    com.google.type.LocalizedText getDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration represented in text
+     * form. Note: If you did not request traffic information, this value will
+     * be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return Whether the staticDuration field is set.
+     */
+    boolean hasStaticDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return The staticDuration.
+     */
+    com.google.type.LocalizedText getStaticDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of certain properties.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues}
+   */
+  public static final class RouteLegLocalizedValues extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues)
+      RouteLegLocalizedValuesOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use RouteLegLocalizedValues.newBuilder() to construct.
+    private RouteLegLocalizedValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RouteLegLocalizedValues() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RouteLegLocalizedValues();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.routing.v2.RouteProto
+          .internal_static_google_maps_routing_v2_RouteLeg_RouteLegLocalizedValues_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.routing.v2.RouteProto
+          .internal_static_google_maps_routing_v2_RouteLeg_RouteLegLocalizedValues_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.class,
+              com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.Builder.class);
+    }
+
+    public static final int DISTANCE_FIELD_NUMBER = 1;
+    private com.google.type.LocalizedText distance_;
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return Whether the distance field is set.
+     */
+    @java.lang.Override
+    public boolean hasDistance() {
+      return distance_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return The distance.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getDistance() {
+      return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder() {
+      return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+    }
+
+    public static final int DURATION_FIELD_NUMBER = 2;
+    private com.google.type.LocalizedText duration_;
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration represented in text
+     * form. Note: If you did not request traffic information, this value will
+     * be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    @java.lang.Override
+    public boolean hasDuration() {
+      return duration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration represented in text
+     * form. Note: If you did not request traffic information, this value will
+     * be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return The duration.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getDuration() {
+      return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration represented in text
+     * form. Note: If you did not request traffic information, this value will
+     * be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getDurationOrBuilder() {
+      return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+    }
+
+    public static final int STATIC_DURATION_FIELD_NUMBER = 3;
+    private com.google.type.LocalizedText staticDuration_;
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return Whether the staticDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasStaticDuration() {
+      return staticDuration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return The staticDuration.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getStaticDuration() {
+      return staticDuration_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : staticDuration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder() {
+      return staticDuration_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : staticDuration_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (distance_ != null) {
+        output.writeMessage(1, getDistance());
+      }
+      if (duration_ != null) {
+        output.writeMessage(2, getDuration());
+      }
+      if (staticDuration_ != null) {
+        output.writeMessage(3, getStaticDuration());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (distance_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDistance());
+      }
+      if (duration_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDuration());
+      }
+      if (staticDuration_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStaticDuration());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues)) {
+        return super.equals(obj);
+      }
+      com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues other =
+          (com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues) obj;
+
+      if (hasDistance() != other.hasDistance()) return false;
+      if (hasDistance()) {
+        if (!getDistance().equals(other.getDistance())) return false;
+      }
+      if (hasDuration() != other.hasDuration()) return false;
+      if (hasDuration()) {
+        if (!getDuration().equals(other.getDuration())) return false;
+      }
+      if (hasStaticDuration() != other.hasStaticDuration()) return false;
+      if (hasStaticDuration()) {
+        if (!getStaticDuration().equals(other.getStaticDuration())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDistance()) {
+        hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getDistance().hashCode();
+      }
+      if (hasDuration()) {
+        hash = (37 * hash) + DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getDuration().hashCode();
+      }
+      if (hasStaticDuration()) {
+        hash = (37 * hash) + STATIC_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getStaticDuration().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of certain properties.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues)
+        com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValuesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_RouteLeg_RouteLegLocalizedValues_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_RouteLeg_RouteLegLocalizedValues_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.class,
+                com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.Builder.class);
+      }
+
+      // Construct using com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        distance_ = null;
+        if (distanceBuilder_ != null) {
+          distanceBuilder_.dispose();
+          distanceBuilder_ = null;
+        }
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
+          durationBuilder_ = null;
+        }
+        staticDuration_ = null;
+        if (staticDurationBuilder_ != null) {
+          staticDurationBuilder_.dispose();
+          staticDurationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_RouteLeg_RouteLegLocalizedValues_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues
+          getDefaultInstanceForType() {
+        return com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues build() {
+        com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues buildPartial() {
+        com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues result =
+            new com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.distance_ = distanceBuilder_ == null ? distance_ : distanceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.staticDuration_ =
+              staticDurationBuilder_ == null ? staticDuration_ : staticDurationBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues) {
+          return mergeFrom((com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues other) {
+        if (other
+            == com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.getDefaultInstance())
+          return this;
+        if (other.hasDistance()) {
+          mergeDistance(other.getDistance());
+        }
+        if (other.hasDuration()) {
+          mergeDuration(other.getDuration());
+        }
+        if (other.hasStaticDuration()) {
+          mergeStaticDuration(other.getStaticDuration());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getDistanceFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getStaticDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.type.LocalizedText distance_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          distanceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       *
+       * @return Whether the distance field is set.
+       */
+      public boolean hasDistance() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       *
+       * @return The distance.
+       */
+      public com.google.type.LocalizedText getDistance() {
+        if (distanceBuilder_ == null) {
+          return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+        } else {
+          return distanceBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder setDistance(com.google.type.LocalizedText value) {
+        if (distanceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          distance_ = value;
+        } else {
+          distanceBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder setDistance(com.google.type.LocalizedText.Builder builderForValue) {
+        if (distanceBuilder_ == null) {
+          distance_ = builderForValue.build();
+        } else {
+          distanceBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder mergeDistance(com.google.type.LocalizedText value) {
+        if (distanceBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && distance_ != null
+              && distance_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getDistanceBuilder().mergeFrom(value);
+          } else {
+            distance_ = value;
+          }
+        } else {
+          distanceBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder clearDistance() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        distance_ = null;
+        if (distanceBuilder_ != null) {
+          distanceBuilder_.dispose();
+          distanceBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public com.google.type.LocalizedText.Builder getDistanceBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getDistanceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder() {
+        if (distanceBuilder_ != null) {
+          return distanceBuilder_.getMessageOrBuilder();
+        } else {
+          return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getDistanceFieldBuilder() {
+        if (distanceBuilder_ == null) {
+          distanceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getDistance(), getParentForChildren(), isClean());
+          distance_ = null;
+        }
+        return distanceBuilder_;
+      }
+
+      private com.google.type.LocalizedText duration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          durationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration represented in text
+       * form. Note: If you did not request traffic information, this value will
+       * be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       *
+       * @return Whether the duration field is set.
+       */
+      public boolean hasDuration() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration represented in text
+       * form. Note: If you did not request traffic information, this value will
+       * be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       *
+       * @return The duration.
+       */
+      public com.google.type.LocalizedText getDuration() {
+        if (durationBuilder_ == null) {
+          return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+        } else {
+          return durationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration represented in text
+       * form. Note: If you did not request traffic information, this value will
+       * be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder setDuration(com.google.type.LocalizedText value) {
+        if (durationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          duration_ = value;
+        } else {
+          durationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration represented in text
+       * form. Note: If you did not request traffic information, this value will
+       * be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder setDuration(com.google.type.LocalizedText.Builder builderForValue) {
+        if (durationBuilder_ == null) {
+          duration_ = builderForValue.build();
+        } else {
+          durationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration represented in text
+       * form. Note: If you did not request traffic information, this value will
+       * be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder mergeDuration(com.google.type.LocalizedText value) {
+        if (durationBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && duration_ != null
+              && duration_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getDurationBuilder().mergeFrom(value);
+          } else {
+            duration_ = value;
+          }
+        } else {
+          durationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration represented in text
+       * form. Note: If you did not request traffic information, this value will
+       * be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder clearDuration() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
+          durationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration represented in text
+       * form. Note: If you did not request traffic information, this value will
+       * be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public com.google.type.LocalizedText.Builder getDurationBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration represented in text
+       * form. Note: If you did not request traffic information, this value will
+       * be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getDurationOrBuilder() {
+        if (durationBuilder_ != null) {
+          return durationBuilder_.getMessageOrBuilder();
+        } else {
+          return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration represented in text
+       * form. Note: If you did not request traffic information, this value will
+       * be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getDurationFieldBuilder() {
+        if (durationBuilder_ == null) {
+          durationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getDuration(), getParentForChildren(), isClean());
+          duration_ = null;
+        }
+        return durationBuilder_;
+      }
+
+      private com.google.type.LocalizedText staticDuration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          staticDurationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       *
+       * @return Whether the staticDuration field is set.
+       */
+      public boolean hasStaticDuration() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       *
+       * @return The staticDuration.
+       */
+      public com.google.type.LocalizedText getStaticDuration() {
+        if (staticDurationBuilder_ == null) {
+          return staticDuration_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : staticDuration_;
+        } else {
+          return staticDurationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder setStaticDuration(com.google.type.LocalizedText value) {
+        if (staticDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          staticDuration_ = value;
+        } else {
+          staticDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder setStaticDuration(com.google.type.LocalizedText.Builder builderForValue) {
+        if (staticDurationBuilder_ == null) {
+          staticDuration_ = builderForValue.build();
+        } else {
+          staticDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder mergeStaticDuration(com.google.type.LocalizedText value) {
+        if (staticDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && staticDuration_ != null
+              && staticDuration_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getStaticDurationBuilder().mergeFrom(value);
+          } else {
+            staticDuration_ = value;
+          }
+        } else {
+          staticDurationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder clearStaticDuration() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        staticDuration_ = null;
+        if (staticDurationBuilder_ != null) {
+          staticDurationBuilder_.dispose();
+          staticDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public com.google.type.LocalizedText.Builder getStaticDurationBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getStaticDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder() {
+        if (staticDurationBuilder_ != null) {
+          return staticDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return staticDuration_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : staticDuration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getStaticDurationFieldBuilder() {
+        if (staticDurationBuilder_ == null) {
+          staticDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getStaticDuration(), getParentForChildren(), isClean());
+          staticDuration_ = null;
+        }
+        return staticDurationBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues)
+    private static final com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues();
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RouteLegLocalizedValues> PARSER =
+        new com.google.protobuf.AbstractParser<RouteLegLocalizedValues>() {
+          @java.lang.Override
+          public RouteLegLocalizedValues parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RouteLegLocalizedValues> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RouteLegLocalizedValues> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface StepsOverviewOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.routing.v2.RouteLeg.StepsOverview)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarized information about different multi-modal segments of
+     * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+     * not contain any multi-modal segments in the steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+     * </code>
+     */
+    java.util.List<com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment>
+        getMultiModalSegmentsList();
+    /**
+     *
+     *
+     * <pre>
+     * Summarized information about different multi-modal segments of
+     * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+     * not contain any multi-modal segments in the steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+     * </code>
+     */
+    com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment getMultiModalSegments(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * Summarized information about different multi-modal segments of
+     * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+     * not contain any multi-modal segments in the steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+     * </code>
+     */
+    int getMultiModalSegmentsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Summarized information about different multi-modal segments of
+     * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+     * not contain any multi-modal segments in the steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+     * </code>
+     */
+    java.util.List<
+            ? extends com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegmentOrBuilder>
+        getMultiModalSegmentsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Summarized information about different multi-modal segments of
+     * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+     * not contain any multi-modal segments in the steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+     * </code>
+     */
+    com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegmentOrBuilder
+        getMultiModalSegmentsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Provides overview information about a list of `RouteLegStep`s.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.routing.v2.RouteLeg.StepsOverview}
+   */
+  public static final class StepsOverview extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteLeg.StepsOverview)
+      StepsOverviewOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use StepsOverview.newBuilder() to construct.
+    private StepsOverview(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private StepsOverview() {
+      multiModalSegments_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StepsOverview();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.routing.v2.RouteProto
+          .internal_static_google_maps_routing_v2_RouteLeg_StepsOverview_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.routing.v2.RouteProto
+          .internal_static_google_maps_routing_v2_RouteLeg_StepsOverview_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.routing.v2.RouteLeg.StepsOverview.class,
+              com.google.maps.routing.v2.RouteLeg.StepsOverview.Builder.class);
+    }
+
+    public interface MultiModalSegmentOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The corresponding `RouteLegStep` index that is the start of a
+       * multi-modal segment.
+       * </pre>
+       *
+       * <code>optional int32 step_start_index = 1;</code>
+       *
+       * @return Whether the stepStartIndex field is set.
+       */
+      boolean hasStepStartIndex();
+      /**
+       *
+       *
+       * <pre>
+       * The corresponding `RouteLegStep` index that is the start of a
+       * multi-modal segment.
+       * </pre>
+       *
+       * <code>optional int32 step_start_index = 1;</code>
+       *
+       * @return The stepStartIndex.
+       */
+      int getStepStartIndex();
+
+      /**
+       *
+       *
+       * <pre>
+       * The corresponding `RouteLegStep` index that is the end of a
+       * multi-modal segment.
+       * </pre>
+       *
+       * <code>optional int32 step_end_index = 2;</code>
+       *
+       * @return Whether the stepEndIndex field is set.
+       */
+      boolean hasStepEndIndex();
+      /**
+       *
+       *
+       * <pre>
+       * The corresponding `RouteLegStep` index that is the end of a
+       * multi-modal segment.
+       * </pre>
+       *
+       * <code>optional int32 step_end_index = 2;</code>
+       *
+       * @return The stepEndIndex.
+       */
+      int getStepEndIndex();
+
+      /**
+       *
+       *
+       * <pre>
+       * NavigationInstruction for the multi-modal segment.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+       *
+       * @return Whether the navigationInstruction field is set.
+       */
+      boolean hasNavigationInstruction();
+      /**
+       *
+       *
+       * <pre>
+       * NavigationInstruction for the multi-modal segment.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+       *
+       * @return The navigationInstruction.
+       */
+      com.google.maps.routing.v2.NavigationInstruction getNavigationInstruction();
+      /**
+       *
+       *
+       * <pre>
+       * NavigationInstruction for the multi-modal segment.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+       */
+      com.google.maps.routing.v2.NavigationInstructionOrBuilder getNavigationInstructionOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * The travel mode of the multi-modal segment.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 4;</code>
+       *
+       * @return The enum numeric value on the wire for travelMode.
+       */
+      int getTravelModeValue();
+      /**
+       *
+       *
+       * <pre>
+       * The travel mode of the multi-modal segment.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 4;</code>
+       *
+       * @return The travelMode.
+       */
+      com.google.maps.routing.v2.RouteTravelMode getTravelMode();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides summarized information about different multi-modal segments of
+     * the `RouteLeg.steps`. A multi-modal segment is defined as one or more
+     * contiguous `RouteLegStep` that have the same `RouteTravelMode`.
+     * This field is not populated if the `RouteLeg` does not contain any
+     * multi-modal segments in the steps.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment}
+     */
+    public static final class MultiModalSegment extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment)
+        MultiModalSegmentOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use MultiModalSegment.newBuilder() to construct.
+      private MultiModalSegment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private MultiModalSegment() {
+        travelMode_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MultiModalSegment();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_RouteLeg_StepsOverview_MultiModalSegment_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_RouteLeg_StepsOverview_MultiModalSegment_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.class,
+                com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int STEP_START_INDEX_FIELD_NUMBER = 1;
+      private int stepStartIndex_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The corresponding `RouteLegStep` index that is the start of a
+       * multi-modal segment.
+       * </pre>
+       *
+       * <code>optional int32 step_start_index = 1;</code>
+       *
+       * @return Whether the stepStartIndex field is set.
+       */
+      @java.lang.Override
+      public boolean hasStepStartIndex() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The corresponding `RouteLegStep` index that is the start of a
+       * multi-modal segment.
+       * </pre>
+       *
+       * <code>optional int32 step_start_index = 1;</code>
+       *
+       * @return The stepStartIndex.
+       */
+      @java.lang.Override
+      public int getStepStartIndex() {
+        return stepStartIndex_;
+      }
+
+      public static final int STEP_END_INDEX_FIELD_NUMBER = 2;
+      private int stepEndIndex_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The corresponding `RouteLegStep` index that is the end of a
+       * multi-modal segment.
+       * </pre>
+       *
+       * <code>optional int32 step_end_index = 2;</code>
+       *
+       * @return Whether the stepEndIndex field is set.
+       */
+      @java.lang.Override
+      public boolean hasStepEndIndex() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The corresponding `RouteLegStep` index that is the end of a
+       * multi-modal segment.
+       * </pre>
+       *
+       * <code>optional int32 step_end_index = 2;</code>
+       *
+       * @return The stepEndIndex.
+       */
+      @java.lang.Override
+      public int getStepEndIndex() {
+        return stepEndIndex_;
+      }
+
+      public static final int NAVIGATION_INSTRUCTION_FIELD_NUMBER = 3;
+      private com.google.maps.routing.v2.NavigationInstruction navigationInstruction_;
+      /**
+       *
+       *
+       * <pre>
+       * NavigationInstruction for the multi-modal segment.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+       *
+       * @return Whether the navigationInstruction field is set.
+       */
+      @java.lang.Override
+      public boolean hasNavigationInstruction() {
+        return navigationInstruction_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * NavigationInstruction for the multi-modal segment.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+       *
+       * @return The navigationInstruction.
+       */
+      @java.lang.Override
+      public com.google.maps.routing.v2.NavigationInstruction getNavigationInstruction() {
+        return navigationInstruction_ == null
+            ? com.google.maps.routing.v2.NavigationInstruction.getDefaultInstance()
+            : navigationInstruction_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * NavigationInstruction for the multi-modal segment.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.maps.routing.v2.NavigationInstructionOrBuilder
+          getNavigationInstructionOrBuilder() {
+        return navigationInstruction_ == null
+            ? com.google.maps.routing.v2.NavigationInstruction.getDefaultInstance()
+            : navigationInstruction_;
+      }
+
+      public static final int TRAVEL_MODE_FIELD_NUMBER = 4;
+      private int travelMode_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The travel mode of the multi-modal segment.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 4;</code>
+       *
+       * @return The enum numeric value on the wire for travelMode.
+       */
+      @java.lang.Override
+      public int getTravelModeValue() {
+        return travelMode_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The travel mode of the multi-modal segment.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 4;</code>
+       *
+       * @return The travelMode.
+       */
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteTravelMode getTravelMode() {
+        com.google.maps.routing.v2.RouteTravelMode result =
+            com.google.maps.routing.v2.RouteTravelMode.forNumber(travelMode_);
+        return result == null ? com.google.maps.routing.v2.RouteTravelMode.UNRECOGNIZED : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeInt32(1, stepStartIndex_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeInt32(2, stepEndIndex_);
+        }
+        if (navigationInstruction_ != null) {
+          output.writeMessage(3, getNavigationInstruction());
+        }
+        if (travelMode_
+            != com.google.maps.routing.v2.RouteTravelMode.TRAVEL_MODE_UNSPECIFIED.getNumber()) {
+          output.writeEnum(4, travelMode_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, stepStartIndex_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, stepEndIndex_);
+        }
+        if (navigationInstruction_ != null) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  3, getNavigationInstruction());
+        }
+        if (travelMode_
+            != com.google.maps.routing.v2.RouteTravelMode.TRAVEL_MODE_UNSPECIFIED.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, travelMode_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment)) {
+          return super.equals(obj);
+        }
+        com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment other =
+            (com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment) obj;
+
+        if (hasStepStartIndex() != other.hasStepStartIndex()) return false;
+        if (hasStepStartIndex()) {
+          if (getStepStartIndex() != other.getStepStartIndex()) return false;
+        }
+        if (hasStepEndIndex() != other.hasStepEndIndex()) return false;
+        if (hasStepEndIndex()) {
+          if (getStepEndIndex() != other.getStepEndIndex()) return false;
+        }
+        if (hasNavigationInstruction() != other.hasNavigationInstruction()) return false;
+        if (hasNavigationInstruction()) {
+          if (!getNavigationInstruction().equals(other.getNavigationInstruction())) return false;
+        }
+        if (travelMode_ != other.travelMode_) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasStepStartIndex()) {
+          hash = (37 * hash) + STEP_START_INDEX_FIELD_NUMBER;
+          hash = (53 * hash) + getStepStartIndex();
+        }
+        if (hasStepEndIndex()) {
+          hash = (37 * hash) + STEP_END_INDEX_FIELD_NUMBER;
+          hash = (53 * hash) + getStepEndIndex();
+        }
+        if (hasNavigationInstruction()) {
+          hash = (37 * hash) + NAVIGATION_INSTRUCTION_FIELD_NUMBER;
+          hash = (53 * hash) + getNavigationInstruction().hashCode();
+        }
+        hash = (37 * hash) + TRAVEL_MODE_FIELD_NUMBER;
+        hash = (53 * hash) + travelMode_;
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provides summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. A multi-modal segment is defined as one or more
+       * contiguous `RouteLegStep` that have the same `RouteTravelMode`.
+       * This field is not populated if the `RouteLeg` does not contain any
+       * multi-modal segments in the steps.
+       * </pre>
+       *
+       * Protobuf type {@code google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment)
+          com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegmentOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.maps.routing.v2.RouteProto
+              .internal_static_google_maps_routing_v2_RouteLeg_StepsOverview_MultiModalSegment_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.maps.routing.v2.RouteProto
+              .internal_static_google_maps_routing_v2_RouteLeg_StepsOverview_MultiModalSegment_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.class,
+                  com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          stepStartIndex_ = 0;
+          stepEndIndex_ = 0;
+          navigationInstruction_ = null;
+          if (navigationInstructionBuilder_ != null) {
+            navigationInstructionBuilder_.dispose();
+            navigationInstructionBuilder_ = null;
+          }
+          travelMode_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.maps.routing.v2.RouteProto
+              .internal_static_google_maps_routing_v2_RouteLeg_StepsOverview_MultiModalSegment_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+            getDefaultInstanceForType() {
+          return com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment build() {
+          com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment buildPartial() {
+          com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment result =
+              new com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.stepStartIndex_ = stepStartIndex_;
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.stepEndIndex_ = stepEndIndex_;
+            to_bitField0_ |= 0x00000002;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.navigationInstruction_ =
+                navigationInstructionBuilder_ == null
+                    ? navigationInstruction_
+                    : navigationInstructionBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.travelMode_ = travelMode_;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment) {
+            return mergeFrom(
+                (com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment other) {
+          if (other
+              == com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+                  .getDefaultInstance()) return this;
+          if (other.hasStepStartIndex()) {
+            setStepStartIndex(other.getStepStartIndex());
+          }
+          if (other.hasStepEndIndex()) {
+            setStepEndIndex(other.getStepEndIndex());
+          }
+          if (other.hasNavigationInstruction()) {
+            mergeNavigationInstruction(other.getNavigationInstruction());
+          }
+          if (other.travelMode_ != 0) {
+            setTravelModeValue(other.getTravelModeValue());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    stepStartIndex_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    stepEndIndex_ = input.readInt32();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                case 26:
+                  {
+                    input.readMessage(
+                        getNavigationInstructionFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                case 32:
+                  {
+                    travelMode_ = input.readEnum();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 32
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int stepStartIndex_;
+        /**
+         *
+         *
+         * <pre>
+         * The corresponding `RouteLegStep` index that is the start of a
+         * multi-modal segment.
+         * </pre>
+         *
+         * <code>optional int32 step_start_index = 1;</code>
+         *
+         * @return Whether the stepStartIndex field is set.
+         */
+        @java.lang.Override
+        public boolean hasStepStartIndex() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The corresponding `RouteLegStep` index that is the start of a
+         * multi-modal segment.
+         * </pre>
+         *
+         * <code>optional int32 step_start_index = 1;</code>
+         *
+         * @return The stepStartIndex.
+         */
+        @java.lang.Override
+        public int getStepStartIndex() {
+          return stepStartIndex_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The corresponding `RouteLegStep` index that is the start of a
+         * multi-modal segment.
+         * </pre>
+         *
+         * <code>optional int32 step_start_index = 1;</code>
+         *
+         * @param value The stepStartIndex to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStepStartIndex(int value) {
+
+          stepStartIndex_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The corresponding `RouteLegStep` index that is the start of a
+         * multi-modal segment.
+         * </pre>
+         *
+         * <code>optional int32 step_start_index = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearStepStartIndex() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          stepStartIndex_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int stepEndIndex_;
+        /**
+         *
+         *
+         * <pre>
+         * The corresponding `RouteLegStep` index that is the end of a
+         * multi-modal segment.
+         * </pre>
+         *
+         * <code>optional int32 step_end_index = 2;</code>
+         *
+         * @return Whether the stepEndIndex field is set.
+         */
+        @java.lang.Override
+        public boolean hasStepEndIndex() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The corresponding `RouteLegStep` index that is the end of a
+         * multi-modal segment.
+         * </pre>
+         *
+         * <code>optional int32 step_end_index = 2;</code>
+         *
+         * @return The stepEndIndex.
+         */
+        @java.lang.Override
+        public int getStepEndIndex() {
+          return stepEndIndex_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The corresponding `RouteLegStep` index that is the end of a
+         * multi-modal segment.
+         * </pre>
+         *
+         * <code>optional int32 step_end_index = 2;</code>
+         *
+         * @param value The stepEndIndex to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStepEndIndex(int value) {
+
+          stepEndIndex_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The corresponding `RouteLegStep` index that is the end of a
+         * multi-modal segment.
+         * </pre>
+         *
+         * <code>optional int32 step_end_index = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearStepEndIndex() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          stepEndIndex_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private com.google.maps.routing.v2.NavigationInstruction navigationInstruction_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routing.v2.NavigationInstruction,
+                com.google.maps.routing.v2.NavigationInstruction.Builder,
+                com.google.maps.routing.v2.NavigationInstructionOrBuilder>
+            navigationInstructionBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * NavigationInstruction for the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+         *
+         * @return Whether the navigationInstruction field is set.
+         */
+        public boolean hasNavigationInstruction() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * NavigationInstruction for the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+         *
+         * @return The navigationInstruction.
+         */
+        public com.google.maps.routing.v2.NavigationInstruction getNavigationInstruction() {
+          if (navigationInstructionBuilder_ == null) {
+            return navigationInstruction_ == null
+                ? com.google.maps.routing.v2.NavigationInstruction.getDefaultInstance()
+                : navigationInstruction_;
+          } else {
+            return navigationInstructionBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * NavigationInstruction for the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+         */
+        public Builder setNavigationInstruction(
+            com.google.maps.routing.v2.NavigationInstruction value) {
+          if (navigationInstructionBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            navigationInstruction_ = value;
+          } else {
+            navigationInstructionBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * NavigationInstruction for the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+         */
+        public Builder setNavigationInstruction(
+            com.google.maps.routing.v2.NavigationInstruction.Builder builderForValue) {
+          if (navigationInstructionBuilder_ == null) {
+            navigationInstruction_ = builderForValue.build();
+          } else {
+            navigationInstructionBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * NavigationInstruction for the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+         */
+        public Builder mergeNavigationInstruction(
+            com.google.maps.routing.v2.NavigationInstruction value) {
+          if (navigationInstructionBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) != 0)
+                && navigationInstruction_ != null
+                && navigationInstruction_
+                    != com.google.maps.routing.v2.NavigationInstruction.getDefaultInstance()) {
+              getNavigationInstructionBuilder().mergeFrom(value);
+            } else {
+              navigationInstruction_ = value;
+            }
+          } else {
+            navigationInstructionBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * NavigationInstruction for the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+         */
+        public Builder clearNavigationInstruction() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          navigationInstruction_ = null;
+          if (navigationInstructionBuilder_ != null) {
+            navigationInstructionBuilder_.dispose();
+            navigationInstructionBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * NavigationInstruction for the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+         */
+        public com.google.maps.routing.v2.NavigationInstruction.Builder
+            getNavigationInstructionBuilder() {
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return getNavigationInstructionFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * NavigationInstruction for the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+         */
+        public com.google.maps.routing.v2.NavigationInstructionOrBuilder
+            getNavigationInstructionOrBuilder() {
+          if (navigationInstructionBuilder_ != null) {
+            return navigationInstructionBuilder_.getMessageOrBuilder();
+          } else {
+            return navigationInstruction_ == null
+                ? com.google.maps.routing.v2.NavigationInstruction.getDefaultInstance()
+                : navigationInstruction_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * NavigationInstruction for the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.NavigationInstruction navigation_instruction = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routing.v2.NavigationInstruction,
+                com.google.maps.routing.v2.NavigationInstruction.Builder,
+                com.google.maps.routing.v2.NavigationInstructionOrBuilder>
+            getNavigationInstructionFieldBuilder() {
+          if (navigationInstructionBuilder_ == null) {
+            navigationInstructionBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.maps.routing.v2.NavigationInstruction,
+                    com.google.maps.routing.v2.NavigationInstruction.Builder,
+                    com.google.maps.routing.v2.NavigationInstructionOrBuilder>(
+                    getNavigationInstruction(), getParentForChildren(), isClean());
+            navigationInstruction_ = null;
+          }
+          return navigationInstructionBuilder_;
+        }
+
+        private int travelMode_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * The travel mode of the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 4;</code>
+         *
+         * @return The enum numeric value on the wire for travelMode.
+         */
+        @java.lang.Override
+        public int getTravelModeValue() {
+          return travelMode_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The travel mode of the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 4;</code>
+         *
+         * @param value The enum numeric value on the wire for travelMode to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTravelModeValue(int value) {
+          travelMode_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The travel mode of the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 4;</code>
+         *
+         * @return The travelMode.
+         */
+        @java.lang.Override
+        public com.google.maps.routing.v2.RouteTravelMode getTravelMode() {
+          com.google.maps.routing.v2.RouteTravelMode result =
+              com.google.maps.routing.v2.RouteTravelMode.forNumber(travelMode_);
+          return result == null ? com.google.maps.routing.v2.RouteTravelMode.UNRECOGNIZED : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The travel mode of the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 4;</code>
+         *
+         * @param value The travelMode to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTravelMode(com.google.maps.routing.v2.RouteTravelMode value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000008;
+          travelMode_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The travel mode of the multi-modal segment.
+         * </pre>
+         *
+         * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTravelMode() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          travelMode_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment)
+      private static final com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment();
+      }
+
+      public static com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MultiModalSegment> PARSER =
+          new com.google.protobuf.AbstractParser<MultiModalSegment>() {
+            @java.lang.Override
+            public MultiModalSegment parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<MultiModalSegment> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MultiModalSegment> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int MULTI_MODAL_SEGMENTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment>
+        multiModalSegments_;
+    /**
+     *
+     *
+     * <pre>
+     * Summarized information about different multi-modal segments of
+     * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+     * not contain any multi-modal segments in the steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment>
+        getMultiModalSegmentsList() {
+      return multiModalSegments_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summarized information about different multi-modal segments of
+     * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+     * not contain any multi-modal segments in the steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegmentOrBuilder>
+        getMultiModalSegmentsOrBuilderList() {
+      return multiModalSegments_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summarized information about different multi-modal segments of
+     * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+     * not contain any multi-modal segments in the steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public int getMultiModalSegmentsCount() {
+      return multiModalSegments_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summarized information about different multi-modal segments of
+     * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+     * not contain any multi-modal segments in the steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+        getMultiModalSegments(int index) {
+      return multiModalSegments_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summarized information about different multi-modal segments of
+     * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+     * not contain any multi-modal segments in the steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegmentOrBuilder
+        getMultiModalSegmentsOrBuilder(int index) {
+      return multiModalSegments_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < multiModalSegments_.size(); i++) {
+        output.writeMessage(1, multiModalSegments_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < multiModalSegments_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, multiModalSegments_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.routing.v2.RouteLeg.StepsOverview)) {
+        return super.equals(obj);
+      }
+      com.google.maps.routing.v2.RouteLeg.StepsOverview other =
+          (com.google.maps.routing.v2.RouteLeg.StepsOverview) obj;
+
+      if (!getMultiModalSegmentsList().equals(other.getMultiModalSegmentsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getMultiModalSegmentsCount() > 0) {
+        hash = (37 * hash) + MULTI_MODAL_SEGMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getMultiModalSegmentsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.maps.routing.v2.RouteLeg.StepsOverview prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides overview information about a list of `RouteLegStep`s.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.routing.v2.RouteLeg.StepsOverview}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.routing.v2.RouteLeg.StepsOverview)
+        com.google.maps.routing.v2.RouteLeg.StepsOverviewOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_RouteLeg_StepsOverview_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_RouteLeg_StepsOverview_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.routing.v2.RouteLeg.StepsOverview.class,
+                com.google.maps.routing.v2.RouteLeg.StepsOverview.Builder.class);
+      }
+
+      // Construct using com.google.maps.routing.v2.RouteLeg.StepsOverview.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (multiModalSegmentsBuilder_ == null) {
+          multiModalSegments_ = java.util.Collections.emptyList();
+        } else {
+          multiModalSegments_ = null;
+          multiModalSegmentsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_RouteLeg_StepsOverview_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteLeg.StepsOverview getDefaultInstanceForType() {
+        return com.google.maps.routing.v2.RouteLeg.StepsOverview.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteLeg.StepsOverview build() {
+        com.google.maps.routing.v2.RouteLeg.StepsOverview result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteLeg.StepsOverview buildPartial() {
+        com.google.maps.routing.v2.RouteLeg.StepsOverview result =
+            new com.google.maps.routing.v2.RouteLeg.StepsOverview(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.maps.routing.v2.RouteLeg.StepsOverview result) {
+        if (multiModalSegmentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            multiModalSegments_ = java.util.Collections.unmodifiableList(multiModalSegments_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.multiModalSegments_ = multiModalSegments_;
+        } else {
+          result.multiModalSegments_ = multiModalSegmentsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.maps.routing.v2.RouteLeg.StepsOverview result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.routing.v2.RouteLeg.StepsOverview) {
+          return mergeFrom((com.google.maps.routing.v2.RouteLeg.StepsOverview) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.routing.v2.RouteLeg.StepsOverview other) {
+        if (other == com.google.maps.routing.v2.RouteLeg.StepsOverview.getDefaultInstance())
+          return this;
+        if (multiModalSegmentsBuilder_ == null) {
+          if (!other.multiModalSegments_.isEmpty()) {
+            if (multiModalSegments_.isEmpty()) {
+              multiModalSegments_ = other.multiModalSegments_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMultiModalSegmentsIsMutable();
+              multiModalSegments_.addAll(other.multiModalSegments_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.multiModalSegments_.isEmpty()) {
+            if (multiModalSegmentsBuilder_.isEmpty()) {
+              multiModalSegmentsBuilder_.dispose();
+              multiModalSegmentsBuilder_ = null;
+              multiModalSegments_ = other.multiModalSegments_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              multiModalSegmentsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getMultiModalSegmentsFieldBuilder()
+                      : null;
+            } else {
+              multiModalSegmentsBuilder_.addAllMessages(other.multiModalSegments_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment m =
+                      input.readMessage(
+                          com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+                              .parser(),
+                          extensionRegistry);
+                  if (multiModalSegmentsBuilder_ == null) {
+                    ensureMultiModalSegmentsIsMutable();
+                    multiModalSegments_.add(m);
+                  } else {
+                    multiModalSegmentsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment>
+          multiModalSegments_ = java.util.Collections.emptyList();
+
+      private void ensureMultiModalSegmentsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          multiModalSegments_ =
+              new java.util.ArrayList<
+                  com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment>(
+                  multiModalSegments_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment,
+              com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder,
+              com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegmentOrBuilder>
+          multiModalSegmentsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public java.util.List<com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment>
+          getMultiModalSegmentsList() {
+        if (multiModalSegmentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(multiModalSegments_);
+        } else {
+          return multiModalSegmentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public int getMultiModalSegmentsCount() {
+        if (multiModalSegmentsBuilder_ == null) {
+          return multiModalSegments_.size();
+        } else {
+          return multiModalSegmentsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+          getMultiModalSegments(int index) {
+        if (multiModalSegmentsBuilder_ == null) {
+          return multiModalSegments_.get(index);
+        } else {
+          return multiModalSegmentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public Builder setMultiModalSegments(
+          int index, com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment value) {
+        if (multiModalSegmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMultiModalSegmentsIsMutable();
+          multiModalSegments_.set(index, value);
+          onChanged();
+        } else {
+          multiModalSegmentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public Builder setMultiModalSegments(
+          int index,
+          com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder
+              builderForValue) {
+        if (multiModalSegmentsBuilder_ == null) {
+          ensureMultiModalSegmentsIsMutable();
+          multiModalSegments_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          multiModalSegmentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public Builder addMultiModalSegments(
+          com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment value) {
+        if (multiModalSegmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMultiModalSegmentsIsMutable();
+          multiModalSegments_.add(value);
+          onChanged();
+        } else {
+          multiModalSegmentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public Builder addMultiModalSegments(
+          int index, com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment value) {
+        if (multiModalSegmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMultiModalSegmentsIsMutable();
+          multiModalSegments_.add(index, value);
+          onChanged();
+        } else {
+          multiModalSegmentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public Builder addMultiModalSegments(
+          com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder
+              builderForValue) {
+        if (multiModalSegmentsBuilder_ == null) {
+          ensureMultiModalSegmentsIsMutable();
+          multiModalSegments_.add(builderForValue.build());
+          onChanged();
+        } else {
+          multiModalSegmentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public Builder addMultiModalSegments(
+          int index,
+          com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder
+              builderForValue) {
+        if (multiModalSegmentsBuilder_ == null) {
+          ensureMultiModalSegmentsIsMutable();
+          multiModalSegments_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          multiModalSegmentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public Builder addAllMultiModalSegments(
+          java.lang.Iterable<
+                  ? extends com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment>
+              values) {
+        if (multiModalSegmentsBuilder_ == null) {
+          ensureMultiModalSegmentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, multiModalSegments_);
+          onChanged();
+        } else {
+          multiModalSegmentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public Builder clearMultiModalSegments() {
+        if (multiModalSegmentsBuilder_ == null) {
+          multiModalSegments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          multiModalSegmentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public Builder removeMultiModalSegments(int index) {
+        if (multiModalSegmentsBuilder_ == null) {
+          ensureMultiModalSegmentsIsMutable();
+          multiModalSegments_.remove(index);
+          onChanged();
+        } else {
+          multiModalSegmentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder
+          getMultiModalSegmentsBuilder(int index) {
+        return getMultiModalSegmentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegmentOrBuilder
+          getMultiModalSegmentsOrBuilder(int index) {
+        if (multiModalSegmentsBuilder_ == null) {
+          return multiModalSegments_.get(index);
+        } else {
+          return multiModalSegmentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegmentOrBuilder>
+          getMultiModalSegmentsOrBuilderList() {
+        if (multiModalSegmentsBuilder_ != null) {
+          return multiModalSegmentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(multiModalSegments_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder
+          addMultiModalSegmentsBuilder() {
+        return getMultiModalSegmentsFieldBuilder()
+            .addBuilder(
+                com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder
+          addMultiModalSegmentsBuilder(int index) {
+        return getMultiModalSegmentsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Summarized information about different multi-modal segments of
+       * the `RouteLeg.steps`. This field is not populated if the `RouteLeg` does
+       * not contain any multi-modal segments in the steps.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment multi_modal_segments = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder>
+          getMultiModalSegmentsBuilderList() {
+        return getMultiModalSegmentsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment,
+              com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder,
+              com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegmentOrBuilder>
+          getMultiModalSegmentsFieldBuilder() {
+        if (multiModalSegmentsBuilder_ == null) {
+          multiModalSegmentsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment,
+                  com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegment.Builder,
+                  com.google.maps.routing.v2.RouteLeg.StepsOverview.MultiModalSegmentOrBuilder>(
+                  multiModalSegments_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          multiModalSegments_ = null;
+        }
+        return multiModalSegmentsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.routing.v2.RouteLeg.StepsOverview)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.routing.v2.RouteLeg.StepsOverview)
+    private static final com.google.maps.routing.v2.RouteLeg.StepsOverview DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.routing.v2.RouteLeg.StepsOverview();
+    }
+
+    public static com.google.maps.routing.v2.RouteLeg.StepsOverview getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StepsOverview> PARSER =
+        new com.google.protobuf.AbstractParser<StepsOverview>() {
+          @java.lang.Override
+          public StepsOverview parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<StepsOverview> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StepsOverview> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.routing.v2.RouteLeg.StepsOverview getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int DISTANCE_METERS_FIELD_NUMBER = 1;
@@ -149,7 +3917,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The duration of traveling through the leg, calculated without taking
+   * The duration of travel through the leg, calculated without taking
    * traffic conditions into consideration.
    * </pre>
    *
@@ -165,7 +3933,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The duration of traveling through the leg, calculated without taking
+   * The duration of travel through the leg, calculated without taking
    * traffic conditions into consideration.
    * </pre>
    *
@@ -183,7 +3951,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The duration of traveling through the leg, calculated without taking
+   * The duration of travel through the leg, calculated without taking
    * traffic conditions into consideration.
    * </pre>
    *
@@ -202,7 +3970,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The overall polyline for this leg. This includes that each `step`'s
+   * The overall polyline for this leg that includes each `step`'s
    * polyline.
    * </pre>
    *
@@ -218,7 +3986,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The overall polyline for this leg. This includes that each `step`'s
+   * The overall polyline for this leg that includes each `step`'s
    * polyline.
    * </pre>
    *
@@ -234,7 +4002,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The overall polyline for this leg. This includes that each `step`'s
+   * The overall polyline for this leg that includes each `step`'s
    * polyline.
    * </pre>
    *
@@ -251,9 +4019,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The start location of this leg. This might be different from the provided
-   * `origin`. For example, when the provided `origin` is not near a road, this
-   * is a point on the road.
+   * The start location of this leg. This location might be different from the
+   * provided `origin`. For example, when the provided `origin` is not near a
+   * road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -268,9 +4036,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The start location of this leg. This might be different from the provided
-   * `origin`. For example, when the provided `origin` is not near a road, this
-   * is a point on the road.
+   * The start location of this leg. This location might be different from the
+   * provided `origin`. For example, when the provided `origin` is not near a
+   * road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -287,9 +4055,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The start location of this leg. This might be different from the provided
-   * `origin`. For example, when the provided `origin` is not near a road, this
-   * is a point on the road.
+   * The start location of this leg. This location might be different from the
+   * provided `origin`. For example, when the provided `origin` is not near a
+   * road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -307,9 +4075,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The end location of this leg. This might be different from the provided
-   * `destination`. For example, when the provided `destination` is not near a
-   * road, this is a point on the road.
+   * The end location of this leg. This location might be different from the
+   * provided `destination`. For example, when the provided `destination` is not
+   * near a road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -324,9 +4092,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The end location of this leg. This might be different from the provided
-   * `destination`. For example, when the provided `destination` is not near a
-   * road, this is a point on the road.
+   * The end location of this leg. This location might be different from the
+   * provided `destination`. For example, when the provided `destination` is not
+   * near a road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -343,9 +4111,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The end location of this leg. This might be different from the provided
-   * `destination`. For example, when the provided `destination` is not near a
-   * road, this is a point on the road.
+   * The end location of this leg. This location might be different from the
+   * provided `destination`. For example, when the provided `destination` is not
+   * near a road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -439,8 +4207,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction etc. on a route leg.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a route leg.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -455,8 +4223,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction etc. on a route leg.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a route leg.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -473,8 +4241,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction etc. on a route leg.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a route leg.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -484,6 +4252,110 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
     return travelAdvisory_ == null
         ? com.google.maps.routing.v2.RouteLegTravelAdvisory.getDefaultInstance()
         : travelAdvisory_;
+  }
+
+  public static final int LOCALIZED_VALUES_FIELD_NUMBER = 9;
+  private com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localizedValues_;
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLeg`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+   *
+   * @return Whether the localizedValues field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalizedValues() {
+    return localizedValues_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLeg`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+   *
+   * @return The localizedValues.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues getLocalizedValues() {
+    return localizedValues_ == null
+        ? com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.getDefaultInstance()
+        : localizedValues_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLeg`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValuesOrBuilder
+      getLocalizedValuesOrBuilder() {
+    return localizedValues_ == null
+        ? com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.getDefaultInstance()
+        : localizedValues_;
+  }
+
+  public static final int STEPS_OVERVIEW_FIELD_NUMBER = 10;
+  private com.google.maps.routing.v2.RouteLeg.StepsOverview stepsOverview_;
+  /**
+   *
+   *
+   * <pre>
+   * Overview information about the steps in this `RouteLeg`. This field is only
+   * populated for TRANSIT routes.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+   *
+   * @return Whether the stepsOverview field is set.
+   */
+  @java.lang.Override
+  public boolean hasStepsOverview() {
+    return stepsOverview_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Overview information about the steps in this `RouteLeg`. This field is only
+   * populated for TRANSIT routes.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+   *
+   * @return The stepsOverview.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.RouteLeg.StepsOverview getStepsOverview() {
+    return stepsOverview_ == null
+        ? com.google.maps.routing.v2.RouteLeg.StepsOverview.getDefaultInstance()
+        : stepsOverview_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Overview information about the steps in this `RouteLeg`. This field is only
+   * populated for TRANSIT routes.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.RouteLeg.StepsOverviewOrBuilder getStepsOverviewOrBuilder() {
+    return stepsOverview_ == null
+        ? com.google.maps.routing.v2.RouteLeg.StepsOverview.getDefaultInstance()
+        : stepsOverview_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -524,6 +4396,12 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
     if (travelAdvisory_ != null) {
       output.writeMessage(8, getTravelAdvisory());
     }
+    if (localizedValues_ != null) {
+      output.writeMessage(9, getLocalizedValues());
+    }
+    if (stepsOverview_ != null) {
+      output.writeMessage(10, getStepsOverview());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -556,6 +4434,12 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
     }
     if (travelAdvisory_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getTravelAdvisory());
+    }
+    if (localizedValues_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getLocalizedValues());
+    }
+    if (stepsOverview_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getStepsOverview());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -598,6 +4482,14 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
     if (hasTravelAdvisory()) {
       if (!getTravelAdvisory().equals(other.getTravelAdvisory())) return false;
     }
+    if (hasLocalizedValues() != other.hasLocalizedValues()) return false;
+    if (hasLocalizedValues()) {
+      if (!getLocalizedValues().equals(other.getLocalizedValues())) return false;
+    }
+    if (hasStepsOverview() != other.hasStepsOverview()) return false;
+    if (hasStepsOverview()) {
+      if (!getStepsOverview().equals(other.getStepsOverview())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -638,6 +4530,14 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
     if (hasTravelAdvisory()) {
       hash = (37 * hash) + TRAVEL_ADVISORY_FIELD_NUMBER;
       hash = (53 * hash) + getTravelAdvisory().hashCode();
+    }
+    if (hasLocalizedValues()) {
+      hash = (37 * hash) + LOCALIZED_VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalizedValues().hashCode();
+    }
+    if (hasStepsOverview()) {
+      hash = (37 * hash) + STEPS_OVERVIEW_FIELD_NUMBER;
+      hash = (53 * hash) + getStepsOverview().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -742,7 +4642,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates a segment between non-`via` waypoints.
+   * Contains a segment between non-`via` waypoints.
    * </pre>
    *
    * Protobuf type {@code google.maps.routing.v2.RouteLeg}
@@ -814,6 +4714,16 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
       if (travelAdvisoryBuilder_ != null) {
         travelAdvisoryBuilder_.dispose();
         travelAdvisoryBuilder_ = null;
+      }
+      localizedValues_ = null;
+      if (localizedValuesBuilder_ != null) {
+        localizedValuesBuilder_.dispose();
+        localizedValuesBuilder_ = null;
+      }
+      stepsOverview_ = null;
+      if (stepsOverviewBuilder_ != null) {
+        stepsOverviewBuilder_.dispose();
+        stepsOverviewBuilder_ = null;
       }
       return this;
     }
@@ -887,6 +4797,14 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.travelAdvisory_ =
             travelAdvisoryBuilder_ == null ? travelAdvisory_ : travelAdvisoryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.localizedValues_ =
+            localizedValuesBuilder_ == null ? localizedValues_ : localizedValuesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.stepsOverview_ =
+            stepsOverviewBuilder_ == null ? stepsOverview_ : stepsOverviewBuilder_.build();
       }
     }
 
@@ -983,6 +4901,12 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTravelAdvisory()) {
         mergeTravelAdvisory(other.getTravelAdvisory());
       }
+      if (other.hasLocalizedValues()) {
+        mergeLocalizedValues(other.getLocalizedValues());
+      }
+      if (other.hasStepsOverview()) {
+        mergeStepsOverview(other.getStepsOverview());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1064,6 +4988,18 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(getLocalizedValuesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getStepsOverviewFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1361,7 +5297,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the leg, calculated without taking
+     * The duration of travel through the leg, calculated without taking
      * traffic conditions into consideration.
      * </pre>
      *
@@ -1376,7 +5312,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the leg, calculated without taking
+     * The duration of travel through the leg, calculated without taking
      * traffic conditions into consideration.
      * </pre>
      *
@@ -1397,7 +5333,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the leg, calculated without taking
+     * The duration of travel through the leg, calculated without taking
      * traffic conditions into consideration.
      * </pre>
      *
@@ -1420,7 +5356,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the leg, calculated without taking
+     * The duration of travel through the leg, calculated without taking
      * traffic conditions into consideration.
      * </pre>
      *
@@ -1440,7 +5376,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the leg, calculated without taking
+     * The duration of travel through the leg, calculated without taking
      * traffic conditions into consideration.
      * </pre>
      *
@@ -1466,7 +5402,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the leg, calculated without taking
+     * The duration of travel through the leg, calculated without taking
      * traffic conditions into consideration.
      * </pre>
      *
@@ -1486,7 +5422,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the leg, calculated without taking
+     * The duration of travel through the leg, calculated without taking
      * traffic conditions into consideration.
      * </pre>
      *
@@ -1501,7 +5437,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the leg, calculated without taking
+     * The duration of travel through the leg, calculated without taking
      * traffic conditions into consideration.
      * </pre>
      *
@@ -1520,7 +5456,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the leg, calculated without taking
+     * The duration of travel through the leg, calculated without taking
      * traffic conditions into consideration.
      * </pre>
      *
@@ -1553,7 +5489,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall polyline for this leg. This includes that each `step`'s
+     * The overall polyline for this leg that includes each `step`'s
      * polyline.
      * </pre>
      *
@@ -1568,7 +5504,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall polyline for this leg. This includes that each `step`'s
+     * The overall polyline for this leg that includes each `step`'s
      * polyline.
      * </pre>
      *
@@ -1589,7 +5525,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall polyline for this leg. This includes that each `step`'s
+     * The overall polyline for this leg that includes each `step`'s
      * polyline.
      * </pre>
      *
@@ -1612,7 +5548,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall polyline for this leg. This includes that each `step`'s
+     * The overall polyline for this leg that includes each `step`'s
      * polyline.
      * </pre>
      *
@@ -1632,7 +5568,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall polyline for this leg. This includes that each `step`'s
+     * The overall polyline for this leg that includes each `step`'s
      * polyline.
      * </pre>
      *
@@ -1658,7 +5594,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall polyline for this leg. This includes that each `step`'s
+     * The overall polyline for this leg that includes each `step`'s
      * polyline.
      * </pre>
      *
@@ -1678,7 +5614,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall polyline for this leg. This includes that each `step`'s
+     * The overall polyline for this leg that includes each `step`'s
      * polyline.
      * </pre>
      *
@@ -1693,7 +5629,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall polyline for this leg. This includes that each `step`'s
+     * The overall polyline for this leg that includes each `step`'s
      * polyline.
      * </pre>
      *
@@ -1712,7 +5648,7 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall polyline for this leg. This includes that each `step`'s
+     * The overall polyline for this leg that includes each `step`'s
      * polyline.
      * </pre>
      *
@@ -1745,9 +5681,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The start location of this leg. This might be different from the provided
-     * `origin`. For example, when the provided `origin` is not near a road, this
-     * is a point on the road.
+     * The start location of this leg. This location might be different from the
+     * provided `origin`. For example, when the provided `origin` is not near a
+     * road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -1761,9 +5697,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The start location of this leg. This might be different from the provided
-     * `origin`. For example, when the provided `origin` is not near a road, this
-     * is a point on the road.
+     * The start location of this leg. This location might be different from the
+     * provided `origin`. For example, when the provided `origin` is not near a
+     * road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -1783,9 +5719,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The start location of this leg. This might be different from the provided
-     * `origin`. For example, when the provided `origin` is not near a road, this
-     * is a point on the road.
+     * The start location of this leg. This location might be different from the
+     * provided `origin`. For example, when the provided `origin` is not near a
+     * road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -1807,9 +5743,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The start location of this leg. This might be different from the provided
-     * `origin`. For example, when the provided `origin` is not near a road, this
-     * is a point on the road.
+     * The start location of this leg. This location might be different from the
+     * provided `origin`. For example, when the provided `origin` is not near a
+     * road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -1828,9 +5764,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The start location of this leg. This might be different from the provided
-     * `origin`. For example, when the provided `origin` is not near a road, this
-     * is a point on the road.
+     * The start location of this leg. This location might be different from the
+     * provided `origin`. For example, when the provided `origin` is not near a
+     * road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -1855,9 +5791,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The start location of this leg. This might be different from the provided
-     * `origin`. For example, when the provided `origin` is not near a road, this
-     * is a point on the road.
+     * The start location of this leg. This location might be different from the
+     * provided `origin`. For example, when the provided `origin` is not near a
+     * road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -1876,9 +5812,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The start location of this leg. This might be different from the provided
-     * `origin`. For example, when the provided `origin` is not near a road, this
-     * is a point on the road.
+     * The start location of this leg. This location might be different from the
+     * provided `origin`. For example, when the provided `origin` is not near a
+     * road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -1892,9 +5828,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The start location of this leg. This might be different from the provided
-     * `origin`. For example, when the provided `origin` is not near a road, this
-     * is a point on the road.
+     * The start location of this leg. This location might be different from the
+     * provided `origin`. For example, when the provided `origin` is not near a
+     * road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -1912,9 +5848,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The start location of this leg. This might be different from the provided
-     * `origin`. For example, when the provided `origin` is not near a road, this
-     * is a point on the road.
+     * The start location of this leg. This location might be different from the
+     * provided `origin`. For example, when the provided `origin` is not near a
+     * road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -1946,9 +5882,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The end location of this leg. This might be different from the provided
-     * `destination`. For example, when the provided `destination` is not near a
-     * road, this is a point on the road.
+     * The end location of this leg. This location might be different from the
+     * provided `destination`. For example, when the provided `destination` is not
+     * near a road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -1962,9 +5898,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The end location of this leg. This might be different from the provided
-     * `destination`. For example, when the provided `destination` is not near a
-     * road, this is a point on the road.
+     * The end location of this leg. This location might be different from the
+     * provided `destination`. For example, when the provided `destination` is not
+     * near a road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -1984,9 +5920,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The end location of this leg. This might be different from the provided
-     * `destination`. For example, when the provided `destination` is not near a
-     * road, this is a point on the road.
+     * The end location of this leg. This location might be different from the
+     * provided `destination`. For example, when the provided `destination` is not
+     * near a road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -2008,9 +5944,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The end location of this leg. This might be different from the provided
-     * `destination`. For example, when the provided `destination` is not near a
-     * road, this is a point on the road.
+     * The end location of this leg. This location might be different from the
+     * provided `destination`. For example, when the provided `destination` is not
+     * near a road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -2029,9 +5965,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The end location of this leg. This might be different from the provided
-     * `destination`. For example, when the provided `destination` is not near a
-     * road, this is a point on the road.
+     * The end location of this leg. This location might be different from the
+     * provided `destination`. For example, when the provided `destination` is not
+     * near a road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -2056,9 +5992,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The end location of this leg. This might be different from the provided
-     * `destination`. For example, when the provided `destination` is not near a
-     * road, this is a point on the road.
+     * The end location of this leg. This location might be different from the
+     * provided `destination`. For example, when the provided `destination` is not
+     * near a road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -2077,9 +6013,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The end location of this leg. This might be different from the provided
-     * `destination`. For example, when the provided `destination` is not near a
-     * road, this is a point on the road.
+     * The end location of this leg. This location might be different from the
+     * provided `destination`. For example, when the provided `destination` is not
+     * near a road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -2093,9 +6029,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The end location of this leg. This might be different from the provided
-     * `destination`. For example, when the provided `destination` is not near a
-     * road, this is a point on the road.
+     * The end location of this leg. This location might be different from the
+     * provided `destination`. For example, when the provided `destination` is not
+     * near a road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -2113,9 +6049,9 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The end location of this leg. This might be different from the provided
-     * `destination`. For example, when the provided `destination` is not near a
-     * road, this is a point on the road.
+     * The end location of this leg. This location might be different from the
+     * provided `destination`. For example, when the provided `destination` is not
+     * near a road, this is a point on the road.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -2513,8 +6449,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a route leg.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a route leg.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -2528,8 +6464,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a route leg.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a route leg.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -2549,8 +6485,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a route leg.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a route leg.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -2572,8 +6508,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a route leg.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a route leg.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -2593,8 +6529,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a route leg.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a route leg.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -2620,8 +6556,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a route leg.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a route leg.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -2640,8 +6576,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a route leg.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a route leg.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -2655,8 +6591,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a route leg.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a route leg.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -2674,8 +6610,8 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encapsulates the additional information that the user should be informed
-     * about, such as possible traffic zone restriction etc. on a route leg.
+     * Contains the additional information that the user should be informed
+     * about, such as possible traffic zone restrictions, on a route leg.
      * </pre>
      *
      * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -2695,6 +6631,390 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
         travelAdvisory_ = null;
       }
       return travelAdvisoryBuilder_;
+    }
+
+    private com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localizedValues_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues,
+            com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.Builder,
+            com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValuesOrBuilder>
+        localizedValuesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLeg`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+     *
+     * @return Whether the localizedValues field is set.
+     */
+    public boolean hasLocalizedValues() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLeg`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+     *
+     * @return The localizedValues.
+     */
+    public com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues getLocalizedValues() {
+      if (localizedValuesBuilder_ == null) {
+        return localizedValues_ == null
+            ? com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.getDefaultInstance()
+            : localizedValues_;
+      } else {
+        return localizedValuesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLeg`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+     */
+    public Builder setLocalizedValues(
+        com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues value) {
+      if (localizedValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        localizedValues_ = value;
+      } else {
+        localizedValuesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLeg`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+     */
+    public Builder setLocalizedValues(
+        com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.Builder builderForValue) {
+      if (localizedValuesBuilder_ == null) {
+        localizedValues_ = builderForValue.build();
+      } else {
+        localizedValuesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLeg`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+     */
+    public Builder mergeLocalizedValues(
+        com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues value) {
+      if (localizedValuesBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && localizedValues_ != null
+            && localizedValues_
+                != com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues
+                    .getDefaultInstance()) {
+          getLocalizedValuesBuilder().mergeFrom(value);
+        } else {
+          localizedValues_ = value;
+        }
+      } else {
+        localizedValuesBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLeg`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+     */
+    public Builder clearLocalizedValues() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      localizedValues_ = null;
+      if (localizedValuesBuilder_ != null) {
+        localizedValuesBuilder_.dispose();
+        localizedValuesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLeg`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+     */
+    public com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.Builder
+        getLocalizedValuesBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getLocalizedValuesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLeg`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+     */
+    public com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValuesOrBuilder
+        getLocalizedValuesOrBuilder() {
+      if (localizedValuesBuilder_ != null) {
+        return localizedValuesBuilder_.getMessageOrBuilder();
+      } else {
+        return localizedValues_ == null
+            ? com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.getDefaultInstance()
+            : localizedValues_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteLeg`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues,
+            com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.Builder,
+            com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValuesOrBuilder>
+        getLocalizedValuesFieldBuilder() {
+      if (localizedValuesBuilder_ == null) {
+        localizedValuesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues,
+                com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues.Builder,
+                com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValuesOrBuilder>(
+                getLocalizedValues(), getParentForChildren(), isClean());
+        localizedValues_ = null;
+      }
+      return localizedValuesBuilder_;
+    }
+
+    private com.google.maps.routing.v2.RouteLeg.StepsOverview stepsOverview_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.RouteLeg.StepsOverview,
+            com.google.maps.routing.v2.RouteLeg.StepsOverview.Builder,
+            com.google.maps.routing.v2.RouteLeg.StepsOverviewOrBuilder>
+        stepsOverviewBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Overview information about the steps in this `RouteLeg`. This field is only
+     * populated for TRANSIT routes.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+     *
+     * @return Whether the stepsOverview field is set.
+     */
+    public boolean hasStepsOverview() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Overview information about the steps in this `RouteLeg`. This field is only
+     * populated for TRANSIT routes.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+     *
+     * @return The stepsOverview.
+     */
+    public com.google.maps.routing.v2.RouteLeg.StepsOverview getStepsOverview() {
+      if (stepsOverviewBuilder_ == null) {
+        return stepsOverview_ == null
+            ? com.google.maps.routing.v2.RouteLeg.StepsOverview.getDefaultInstance()
+            : stepsOverview_;
+      } else {
+        return stepsOverviewBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Overview information about the steps in this `RouteLeg`. This field is only
+     * populated for TRANSIT routes.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+     */
+    public Builder setStepsOverview(com.google.maps.routing.v2.RouteLeg.StepsOverview value) {
+      if (stepsOverviewBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepsOverview_ = value;
+      } else {
+        stepsOverviewBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Overview information about the steps in this `RouteLeg`. This field is only
+     * populated for TRANSIT routes.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+     */
+    public Builder setStepsOverview(
+        com.google.maps.routing.v2.RouteLeg.StepsOverview.Builder builderForValue) {
+      if (stepsOverviewBuilder_ == null) {
+        stepsOverview_ = builderForValue.build();
+      } else {
+        stepsOverviewBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Overview information about the steps in this `RouteLeg`. This field is only
+     * populated for TRANSIT routes.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+     */
+    public Builder mergeStepsOverview(com.google.maps.routing.v2.RouteLeg.StepsOverview value) {
+      if (stepsOverviewBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && stepsOverview_ != null
+            && stepsOverview_
+                != com.google.maps.routing.v2.RouteLeg.StepsOverview.getDefaultInstance()) {
+          getStepsOverviewBuilder().mergeFrom(value);
+        } else {
+          stepsOverview_ = value;
+        }
+      } else {
+        stepsOverviewBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Overview information about the steps in this `RouteLeg`. This field is only
+     * populated for TRANSIT routes.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+     */
+    public Builder clearStepsOverview() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      stepsOverview_ = null;
+      if (stepsOverviewBuilder_ != null) {
+        stepsOverviewBuilder_.dispose();
+        stepsOverviewBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Overview information about the steps in this `RouteLeg`. This field is only
+     * populated for TRANSIT routes.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+     */
+    public com.google.maps.routing.v2.RouteLeg.StepsOverview.Builder getStepsOverviewBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getStepsOverviewFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Overview information about the steps in this `RouteLeg`. This field is only
+     * populated for TRANSIT routes.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+     */
+    public com.google.maps.routing.v2.RouteLeg.StepsOverviewOrBuilder getStepsOverviewOrBuilder() {
+      if (stepsOverviewBuilder_ != null) {
+        return stepsOverviewBuilder_.getMessageOrBuilder();
+      } else {
+        return stepsOverview_ == null
+            ? com.google.maps.routing.v2.RouteLeg.StepsOverview.getDefaultInstance()
+            : stepsOverview_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Overview information about the steps in this `RouteLeg`. This field is only
+     * populated for TRANSIT routes.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.RouteLeg.StepsOverview,
+            com.google.maps.routing.v2.RouteLeg.StepsOverview.Builder,
+            com.google.maps.routing.v2.RouteLeg.StepsOverviewOrBuilder>
+        getStepsOverviewFieldBuilder() {
+      if (stepsOverviewBuilder_ == null) {
+        stepsOverviewBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routing.v2.RouteLeg.StepsOverview,
+                com.google.maps.routing.v2.RouteLeg.StepsOverview.Builder,
+                com.google.maps.routing.v2.RouteLeg.StepsOverviewOrBuilder>(
+                getStepsOverview(), getParentForChildren(), isClean());
+        stepsOverview_ = null;
+      }
+      return stepsOverviewBuilder_;
     }
 
     @java.lang.Override

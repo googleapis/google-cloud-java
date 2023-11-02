@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new JobTrigger();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -330,7 +325,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.privacy.dlp.v2.ManualOrBuilder getManualOrBuilder();
 
-    public com.google.privacy.dlp.v2.JobTrigger.Trigger.TriggerCase getTriggerCase();
+    com.google.privacy.dlp.v2.JobTrigger.Trigger.TriggerCase getTriggerCase();
   }
   /**
    *
@@ -359,11 +354,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       return new Trigger();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_descriptor;
@@ -380,6 +370,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int triggerCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object trigger_;
 
     public enum TriggerCase
@@ -1427,6 +1419,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int jobCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object job_;
 
   public enum JobCase
@@ -1767,8 +1761,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -1785,8 +1779,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -1804,8 +1798,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -1822,8 +1816,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -1840,8 +1834,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -3697,8 +3691,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3718,8 +3712,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3739,8 +3733,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3760,8 +3754,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3787,8 +3781,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3811,8 +3805,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3838,8 +3832,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3865,8 +3859,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3889,8 +3883,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3913,8 +3907,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3938,8 +3932,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3962,8 +3956,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -3986,8 +3980,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -4003,8 +3997,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -4024,8 +4018,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -4046,8 +4040,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -4064,8 +4058,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>
@@ -4082,8 +4076,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A stream of errors encountered when the trigger was activated. Repeated
-     * errors may result in the JobTrigger automatically being paused.
+     * Output only. A stream of errors encountered when the trigger was activated.
+     * Repeated errors may result in the JobTrigger automatically being paused.
      * Will return the last 100 errors. Whenever the JobTrigger is modified
      * this list will be cleared.
      * </pre>

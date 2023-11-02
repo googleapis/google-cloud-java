@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     return new Secret();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1alpha.MetastoreProto
         .internal_static_google_cloud_metastore_v1alpha_Secret_descriptor;
@@ -66,6 +61,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int valueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object value_;
 
   public enum ValueCase
@@ -116,6 +113,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The relative resource name of a Secret Manager secret version, in the
    * following form:
+   *
    * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
    * </pre>
    *
@@ -132,6 +130,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The relative resource name of a Secret Manager secret version, in the
    * following form:
+   *
    * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
    * </pre>
    *
@@ -161,6 +160,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The relative resource name of a Secret Manager secret version, in the
    * following form:
+   *
    * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
    * </pre>
    *
@@ -572,6 +572,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
+     *
      * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *
@@ -589,6 +590,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
+     *
      * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *
@@ -619,6 +621,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
+     *
      * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *
@@ -649,6 +652,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
+     *
      * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *
@@ -672,6 +676,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
+     *
      * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *
@@ -693,6 +698,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The relative resource name of a Secret Manager secret version, in the
      * following form:
+     *
      * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
      * </pre>
      *

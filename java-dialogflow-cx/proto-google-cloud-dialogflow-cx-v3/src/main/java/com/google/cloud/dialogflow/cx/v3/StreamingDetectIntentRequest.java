@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ package com.google.cloud.dialogflow.cx.v3;
  * The top-level message sent by the client to the
  * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent]
  * method.
+ *
  * Multiple request messages should be sent in order:
+ *
  * 1.  The first message must contain
  *     [session][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.session],
  *     [query_input][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.query_input]
@@ -33,6 +35,7 @@ package com.google.cloud.dialogflow.cx.v3;
  *     [query_params][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.query_params].
  *     If the client wants to receive an audio response, it should also contain
  *     [output_audio_config][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.output_audio_config].
+ *
  * 2.  If
  * [query_input][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.query_input]
  * was set to
@@ -43,11 +46,14 @@ package com.google.cloud.dialogflow.cx.v3;
  *     intent from text input after you already started Speech recognition,
  *     please send a message with
  *     [query_input.text][google.cloud.dialogflow.cx.v3.QueryInput.text].
+ *
  *     However, note that:
+ *
  *     * Dialogflow will bill you for the audio duration so far.
  *     * Dialogflow discards all Speech recognition results in favor of the
  *       input text.
  *     * Dialogflow will use the language code from the first message.
+ *
  * After you sent all input, you must half-close or abort the request stream.
  * </pre>
  *
@@ -71,11 +77,6 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StreamingDetectIntentRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -111,8 +112,10 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * a random number or some type of session identifiers (preferably hashed).
    * The length of the `Session ID` must not exceed 36 characters.
    * Note: session must be set in the first request.
+   *
    * For more information, see the [sessions
    * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+   *
    * Note: Always use agent versions for production traffic.
    * See [Versions and
    * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
@@ -148,8 +151,10 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * a random number or some type of session identifiers (preferably hashed).
    * The length of the `Session ID` must not exceed 36 characters.
    * Note: session must be set in the first request.
+   *
    * For more information, see the [sessions
    * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+   *
    * Note: Always use agent versions for production traffic.
    * See [Versions and
    * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
@@ -595,7 +600,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * The top-level message sent by the client to the
    * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent]
    * method.
+   *
    * Multiple request messages should be sent in order:
+   *
    * 1.  The first message must contain
    *     [session][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.session],
    *     [query_input][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.query_input]
@@ -603,6 +610,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *     [query_params][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.query_params].
    *     If the client wants to receive an audio response, it should also contain
    *     [output_audio_config][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.output_audio_config].
+   *
    * 2.  If
    * [query_input][google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.query_input]
    * was set to
@@ -613,11 +621,14 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *     intent from text input after you already started Speech recognition,
    *     please send a message with
    *     [query_input.text][google.cloud.dialogflow.cx.v3.QueryInput.text].
+   *
    *     However, note that:
+   *
    *     * Dialogflow will bill you for the audio duration so far.
    *     * Dialogflow discards all Speech recognition results in favor of the
    *       input text.
    *     * Dialogflow will use the language code from the first message.
+   *
    * After you sent all input, you must half-close or abort the request stream.
    * </pre>
    *
@@ -897,8 +908,10 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
      * Note: session must be set in the first request.
+     *
      * For more information, see the [sessions
      * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     *
      * Note: Always use agent versions for production traffic.
      * See [Versions and
      * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
@@ -933,8 +946,10 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
      * Note: session must be set in the first request.
+     *
      * For more information, see the [sessions
      * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     *
      * Note: Always use agent versions for production traffic.
      * See [Versions and
      * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
@@ -969,8 +984,10 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
      * Note: session must be set in the first request.
+     *
      * For more information, see the [sessions
      * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     *
      * Note: Always use agent versions for production traffic.
      * See [Versions and
      * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
@@ -1004,8 +1021,10 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
      * Note: session must be set in the first request.
+     *
      * For more information, see the [sessions
      * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     *
      * Note: Always use agent versions for production traffic.
      * See [Versions and
      * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
@@ -1035,8 +1054,10 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
      * Note: session must be set in the first request.
+     *
      * For more information, see the [sessions
      * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     *
      * Note: Always use agent versions for production traffic.
      * See [Versions and
      * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).

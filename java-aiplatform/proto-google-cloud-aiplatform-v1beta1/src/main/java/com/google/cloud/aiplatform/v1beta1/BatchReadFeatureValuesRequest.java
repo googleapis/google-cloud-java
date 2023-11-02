@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchReadFeatureValuesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,11 +127,6 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PassThroughField();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -940,11 +930,6 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new EntityTypeSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2432,6 +2417,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
   }
 
   private int readOptionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object readOption_;
 
   public enum ReadOptionCase
@@ -2486,18 +2473,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * Each read instance consists of exactly one read timestamp and one or more
    * entity IDs identifying entities of the corresponding EntityTypes whose
    * Features are requested.
+   *
    * Each output instance contains Feature values of requested entities
    * concatenated together as of the read time.
+   *
    * An example read instance may be `foo_entity_id, bar_entity_id,
    * 2020-01-01T10:00:00.123Z`.
+   *
    * An example output instance may be `foo_entity_id, bar_entity_id,
    * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
    * bar_entity_feature2_value`.
+   *
    * Timestamp in each read instance must be millisecond-aligned.
+   *
    * `csv_read_instances` are read instances stored in a plain-text CSV file.
    * The header should be:
    *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+   *
    * The columns can be in any order.
+   *
    * Values in the timestamp column must use the RFC 3339 format, e.g.
    * `2012-07-30T10:43:17.123Z`.
    * </pre>
@@ -2517,18 +2511,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * Each read instance consists of exactly one read timestamp and one or more
    * entity IDs identifying entities of the corresponding EntityTypes whose
    * Features are requested.
+   *
    * Each output instance contains Feature values of requested entities
    * concatenated together as of the read time.
+   *
    * An example read instance may be `foo_entity_id, bar_entity_id,
    * 2020-01-01T10:00:00.123Z`.
+   *
    * An example output instance may be `foo_entity_id, bar_entity_id,
    * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
    * bar_entity_feature2_value`.
+   *
    * Timestamp in each read instance must be millisecond-aligned.
+   *
    * `csv_read_instances` are read instances stored in a plain-text CSV file.
    * The header should be:
    *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+   *
    * The columns can be in any order.
+   *
    * Values in the timestamp column must use the RFC 3339 format, e.g.
    * `2012-07-30T10:43:17.123Z`.
    * </pre>
@@ -2551,18 +2552,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * Each read instance consists of exactly one read timestamp and one or more
    * entity IDs identifying entities of the corresponding EntityTypes whose
    * Features are requested.
+   *
    * Each output instance contains Feature values of requested entities
    * concatenated together as of the read time.
+   *
    * An example read instance may be `foo_entity_id, bar_entity_id,
    * 2020-01-01T10:00:00.123Z`.
+   *
    * An example output instance may be `foo_entity_id, bar_entity_id,
    * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
    * bar_entity_feature2_value`.
+   *
    * Timestamp in each read instance must be millisecond-aligned.
+   *
    * `csv_read_instances` are read instances stored in a plain-text CSV file.
    * The header should be:
    *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+   *
    * The columns can be in any order.
+   *
    * Values in the timestamp column must use the RFC 3339 format, e.g.
    * `2012-07-30T10:43:17.123Z`.
    * </pre>
@@ -2758,6 +2766,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * When not empty, the specified fields in the *_read_instances source will be
    * joined as-is in the output, in addition to those fields from the
    * Featurestore Entity.
+   *
    * For BigQuery source, the type of the pass-through values will be
    * automatically inferred. For CSV source, the pass-through values will be
    * passed as opaque bytes.
@@ -2780,6 +2789,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * When not empty, the specified fields in the *_read_instances source will be
    * joined as-is in the output, in addition to those fields from the
    * Featurestore Entity.
+   *
    * For BigQuery source, the type of the pass-through values will be
    * automatically inferred. For CSV source, the pass-through values will be
    * passed as opaque bytes.
@@ -2804,6 +2814,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * When not empty, the specified fields in the *_read_instances source will be
    * joined as-is in the output, in addition to those fields from the
    * Featurestore Entity.
+   *
    * For BigQuery source, the type of the pass-through values will be
    * automatically inferred. For CSV source, the pass-through values will be
    * passed as opaque bytes.
@@ -2824,6 +2835,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * When not empty, the specified fields in the *_read_instances source will be
    * joined as-is in the output, in addition to those fields from the
    * Featurestore Entity.
+   *
    * For BigQuery source, the type of the pass-through values will be
    * automatically inferred. For CSV source, the pass-through values will be
    * passed as opaque bytes.
@@ -2845,6 +2857,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    * When not empty, the specified fields in the *_read_instances source will be
    * joined as-is in the output, in addition to those fields from the
    * Featurestore Entity.
+   *
    * For BigQuery source, the type of the pass-through values will be
    * automatically inferred. For CSV source, the pass-through values will be
    * passed as opaque bytes.
@@ -3684,18 +3697,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Each read instance consists of exactly one read timestamp and one or more
      * entity IDs identifying entities of the corresponding EntityTypes whose
      * Features are requested.
+     *
      * Each output instance contains Feature values of requested entities
      * concatenated together as of the read time.
+     *
      * An example read instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z`.
+     *
      * An example output instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
      * bar_entity_feature2_value`.
+     *
      * Timestamp in each read instance must be millisecond-aligned.
+     *
      * `csv_read_instances` are read instances stored in a plain-text CSV file.
      * The header should be:
      *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+     *
      * The columns can be in any order.
+     *
      * Values in the timestamp column must use the RFC 3339 format, e.g.
      * `2012-07-30T10:43:17.123Z`.
      * </pre>
@@ -3715,18 +3735,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Each read instance consists of exactly one read timestamp and one or more
      * entity IDs identifying entities of the corresponding EntityTypes whose
      * Features are requested.
+     *
      * Each output instance contains Feature values of requested entities
      * concatenated together as of the read time.
+     *
      * An example read instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z`.
+     *
      * An example output instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
      * bar_entity_feature2_value`.
+     *
      * Timestamp in each read instance must be millisecond-aligned.
+     *
      * `csv_read_instances` are read instances stored in a plain-text CSV file.
      * The header should be:
      *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+     *
      * The columns can be in any order.
+     *
      * Values in the timestamp column must use the RFC 3339 format, e.g.
      * `2012-07-30T10:43:17.123Z`.
      * </pre>
@@ -3756,18 +3783,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Each read instance consists of exactly one read timestamp and one or more
      * entity IDs identifying entities of the corresponding EntityTypes whose
      * Features are requested.
+     *
      * Each output instance contains Feature values of requested entities
      * concatenated together as of the read time.
+     *
      * An example read instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z`.
+     *
      * An example output instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
      * bar_entity_feature2_value`.
+     *
      * Timestamp in each read instance must be millisecond-aligned.
+     *
      * `csv_read_instances` are read instances stored in a plain-text CSV file.
      * The header should be:
      *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+     *
      * The columns can be in any order.
+     *
      * Values in the timestamp column must use the RFC 3339 format, e.g.
      * `2012-07-30T10:43:17.123Z`.
      * </pre>
@@ -3794,18 +3828,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Each read instance consists of exactly one read timestamp and one or more
      * entity IDs identifying entities of the corresponding EntityTypes whose
      * Features are requested.
+     *
      * Each output instance contains Feature values of requested entities
      * concatenated together as of the read time.
+     *
      * An example read instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z`.
+     *
      * An example output instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
      * bar_entity_feature2_value`.
+     *
      * Timestamp in each read instance must be millisecond-aligned.
+     *
      * `csv_read_instances` are read instances stored in a plain-text CSV file.
      * The header should be:
      *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+     *
      * The columns can be in any order.
+     *
      * Values in the timestamp column must use the RFC 3339 format, e.g.
      * `2012-07-30T10:43:17.123Z`.
      * </pre>
@@ -3830,18 +3871,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Each read instance consists of exactly one read timestamp and one or more
      * entity IDs identifying entities of the corresponding EntityTypes whose
      * Features are requested.
+     *
      * Each output instance contains Feature values of requested entities
      * concatenated together as of the read time.
+     *
      * An example read instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z`.
+     *
      * An example output instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
      * bar_entity_feature2_value`.
+     *
      * Timestamp in each read instance must be millisecond-aligned.
+     *
      * `csv_read_instances` are read instances stored in a plain-text CSV file.
      * The header should be:
      *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+     *
      * The columns can be in any order.
+     *
      * Values in the timestamp column must use the RFC 3339 format, e.g.
      * `2012-07-30T10:43:17.123Z`.
      * </pre>
@@ -3878,18 +3926,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Each read instance consists of exactly one read timestamp and one or more
      * entity IDs identifying entities of the corresponding EntityTypes whose
      * Features are requested.
+     *
      * Each output instance contains Feature values of requested entities
      * concatenated together as of the read time.
+     *
      * An example read instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z`.
+     *
      * An example output instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
      * bar_entity_feature2_value`.
+     *
      * Timestamp in each read instance must be millisecond-aligned.
+     *
      * `csv_read_instances` are read instances stored in a plain-text CSV file.
      * The header should be:
      *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+     *
      * The columns can be in any order.
+     *
      * Values in the timestamp column must use the RFC 3339 format, e.g.
      * `2012-07-30T10:43:17.123Z`.
      * </pre>
@@ -3919,18 +3974,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Each read instance consists of exactly one read timestamp and one or more
      * entity IDs identifying entities of the corresponding EntityTypes whose
      * Features are requested.
+     *
      * Each output instance contains Feature values of requested entities
      * concatenated together as of the read time.
+     *
      * An example read instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z`.
+     *
      * An example output instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
      * bar_entity_feature2_value`.
+     *
      * Timestamp in each read instance must be millisecond-aligned.
+     *
      * `csv_read_instances` are read instances stored in a plain-text CSV file.
      * The header should be:
      *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+     *
      * The columns can be in any order.
+     *
      * Values in the timestamp column must use the RFC 3339 format, e.g.
      * `2012-07-30T10:43:17.123Z`.
      * </pre>
@@ -3947,18 +4009,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Each read instance consists of exactly one read timestamp and one or more
      * entity IDs identifying entities of the corresponding EntityTypes whose
      * Features are requested.
+     *
      * Each output instance contains Feature values of requested entities
      * concatenated together as of the read time.
+     *
      * An example read instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z`.
+     *
      * An example output instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
      * bar_entity_feature2_value`.
+     *
      * Timestamp in each read instance must be millisecond-aligned.
+     *
      * `csv_read_instances` are read instances stored in a plain-text CSV file.
      * The header should be:
      *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+     *
      * The columns can be in any order.
+     *
      * Values in the timestamp column must use the RFC 3339 format, e.g.
      * `2012-07-30T10:43:17.123Z`.
      * </pre>
@@ -3983,18 +4052,25 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * Each read instance consists of exactly one read timestamp and one or more
      * entity IDs identifying entities of the corresponding EntityTypes whose
      * Features are requested.
+     *
      * Each output instance contains Feature values of requested entities
      * concatenated together as of the read time.
+     *
      * An example read instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z`.
+     *
      * An example output instance may be `foo_entity_id, bar_entity_id,
      * 2020-01-01T10:00:00.123Z, foo_entity_feature1_value,
      * bar_entity_feature2_value`.
+     *
      * Timestamp in each read instance must be millisecond-aligned.
+     *
      * `csv_read_instances` are read instances stored in a plain-text CSV file.
      * The header should be:
      *     [ENTITY_TYPE_ID1], [ENTITY_TYPE_ID2], ..., timestamp
+     *
      * The columns can be in any order.
+     *
      * Values in the timestamp column must use the RFC 3339 format, e.g.
      * `2012-07-30T10:43:17.123Z`.
      * </pre>
@@ -4602,6 +4678,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4627,6 +4704,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4650,6 +4728,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4674,6 +4753,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4705,6 +4785,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4734,6 +4815,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4764,6 +4846,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4795,6 +4878,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4823,6 +4907,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4852,6 +4937,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4883,6 +4969,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4909,6 +4996,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4935,6 +5023,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4956,6 +5045,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -4981,6 +5071,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -5008,6 +5099,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -5032,6 +5124,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.
@@ -5057,6 +5150,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      * When not empty, the specified fields in the *_read_instances source will be
      * joined as-is in the output, in addition to those fields from the
      * Featurestore Entity.
+     *
      * For BigQuery source, the type of the pass-through values will be
      * automatically inferred. For CSV source, the pass-through values will be
      * passed as opaque bytes.

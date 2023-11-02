@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
     return new SessionSegmentExclusion();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_SessionSegmentExclusion_descriptor;
@@ -75,6 +70,7 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
    * <pre>
    * Specifies how long an exclusion will last if a session matches the
    * `sessionExclusionCriteria`.
+   *
    * Optional. If unspecified, a `sessionExclusionDuration` of
    * `SESSION_EXCLUSION_TEMPORARY` is used.
    * </pre>
@@ -94,6 +90,7 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
    * <pre>
    * Specifies how long an exclusion will last if a session matches the
    * `sessionExclusionCriteria`.
+   *
    * Optional. If unspecified, a `sessionExclusionDuration` of
    * `SESSION_EXCLUSION_TEMPORARY` is used.
    * </pre>
@@ -561,6 +558,7 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
      * <pre>
      * Specifies how long an exclusion will last if a session matches the
      * `sessionExclusionCriteria`.
+     *
      * Optional. If unspecified, a `sessionExclusionDuration` of
      * `SESSION_EXCLUSION_TEMPORARY` is used.
      * </pre>
@@ -580,6 +578,7 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
      * <pre>
      * Specifies how long an exclusion will last if a session matches the
      * `sessionExclusionCriteria`.
+     *
      * Optional. If unspecified, a `sessionExclusionDuration` of
      * `SESSION_EXCLUSION_TEMPORARY` is used.
      * </pre>
@@ -602,6 +601,7 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
      * <pre>
      * Specifies how long an exclusion will last if a session matches the
      * `sessionExclusionCriteria`.
+     *
      * Optional. If unspecified, a `sessionExclusionDuration` of
      * `SESSION_EXCLUSION_TEMPORARY` is used.
      * </pre>
@@ -627,6 +627,7 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
      * <pre>
      * Specifies how long an exclusion will last if a session matches the
      * `sessionExclusionCriteria`.
+     *
      * Optional. If unspecified, a `sessionExclusionDuration` of
      * `SESSION_EXCLUSION_TEMPORARY` is used.
      * </pre>
@@ -653,6 +654,7 @@ public final class SessionSegmentExclusion extends com.google.protobuf.Generated
      * <pre>
      * Specifies how long an exclusion will last if a session matches the
      * `sessionExclusionCriteria`.
+     *
      * Optional. If unspecified, a `sessionExclusionDuration` of
      * `SESSION_EXCLUSION_TEMPORARY` is used.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ListTimeSeriesRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
    * organization or folder on which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    *     organizations/[ORGANIZATION_ID]
    *     folders/[FOLDER_ID]
@@ -47,6 +48,7 @@ public interface ListTimeSeriesRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
    * organization or folder on which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    *     organizations/[ORGANIZATION_ID]
    *     folders/[FOLDER_ID]
@@ -68,6 +70,7 @@ public interface ListTimeSeriesRequestOrBuilder
    * that specifies which time series should be returned.  The filter must
    * specify a single metric type, and can additionally specify metric labels
    * and other information. For example:
+   *
    *     metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
    *         metric.labels.instance_name = "my-instance-name"
    * </pre>
@@ -85,6 +88,7 @@ public interface ListTimeSeriesRequestOrBuilder
    * that specifies which time series should be returned.  The filter must
    * specify a single metric type, and can additionally specify metric labels
    * and other information. For example:
+   *
    *     metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
    *         metric.labels.instance_name = "my-instance-name"
    * </pre>
@@ -148,6 +152,7 @@ public interface ListTimeSeriesRequestOrBuilder
    * <pre>
    * Specifies the alignment of data points in individual time series as
    * well as how to combine the retrieved time series across specified labels.
+   *
    * By default (if no `aggregation` is explicitly specified), the raw time
    * series data is returned.
    * </pre>
@@ -163,6 +168,7 @@ public interface ListTimeSeriesRequestOrBuilder
    * <pre>
    * Specifies the alignment of data points in individual time series as
    * well as how to combine the retrieved time series across specified labels.
+   *
    * By default (if no `aggregation` is explicitly specified), the raw time
    * series data is returned.
    * </pre>
@@ -178,6 +184,7 @@ public interface ListTimeSeriesRequestOrBuilder
    * <pre>
    * Specifies the alignment of data points in individual time series as
    * well as how to combine the retrieved time series across specified labels.
+   *
    * By default (if no `aggregation` is explicitly specified), the raw time
    * series data is returned.
    * </pre>

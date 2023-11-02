@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetBackupPlanRequest extends com.google.protobuf.GeneratedMes
     return new GetBackupPlanRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.GKEBackupProto
         .internal_static_google_cloud_gkebackup_v1_GetBackupPlanRequest_descriptor;
@@ -76,7 +71,7 @@ public final class GetBackupPlanRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Fully qualified BackupPlan name.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>
@@ -102,7 +97,7 @@ public final class GetBackupPlanRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Fully qualified BackupPlan name.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>
@@ -472,7 +467,7 @@ public final class GetBackupPlanRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Fully qualified BackupPlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -497,7 +492,7 @@ public final class GetBackupPlanRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Fully qualified BackupPlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -522,7 +517,7 @@ public final class GetBackupPlanRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Fully qualified BackupPlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -546,7 +541,7 @@ public final class GetBackupPlanRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Fully qualified BackupPlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>
@@ -566,7 +561,7 @@ public final class GetBackupPlanRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Fully qualified BackupPlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
      * </pre>
      *
      * <code>

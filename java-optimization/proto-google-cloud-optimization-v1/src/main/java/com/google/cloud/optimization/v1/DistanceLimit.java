@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.optimization.v1;
  * <pre>
  * A limit defining a maximum distance which can be traveled. It can be either
  * hard or soft.
+ *
  * If a soft limit is defined, both `soft_max_meters` and
  * `cost_per_kilometer_above_soft_max` must be defined and be nonnegative.
  * </pre>
@@ -46,11 +47,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DistanceLimit();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -113,6 +109,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
    * A soft limit not enforcing a maximum distance limit, but when violated
    * results in a cost which adds up to other costs defined in the model,
    * with the same unit.
+   *
    * If defined soft_max_meters must be less than max_meters and must be
    * nonnegative.
    * </pre>
@@ -132,6 +129,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
    * A soft limit not enforcing a maximum distance limit, but when violated
    * results in a cost which adds up to other costs defined in the model,
    * with the same unit.
+   *
    * If defined soft_max_meters must be less than max_meters and must be
    * nonnegative.
    * </pre>
@@ -143,6 +141,51 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getSoftMaxMeters() {
     return softMaxMeters_;
+  }
+
+  public static final int COST_PER_KILOMETER_BELOW_SOFT_MAX_FIELD_NUMBER = 4;
+  private double costPerKilometerBelowSoftMax_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * Cost per kilometer incurred, increasing up to `soft_max_meters`, with
+   * formula:
+   * ```
+   *   min(distance_meters, soft_max_meters) / 1000.0 *
+   *   cost_per_kilometer_below_soft_max.
+   * ```
+   * This cost is not supported in `route_distance_limit`.
+   * </pre>
+   *
+   * <code>optional double cost_per_kilometer_below_soft_max = 4;</code>
+   *
+   * @return Whether the costPerKilometerBelowSoftMax field is set.
+   */
+  @java.lang.Override
+  public boolean hasCostPerKilometerBelowSoftMax() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cost per kilometer incurred, increasing up to `soft_max_meters`, with
+   * formula:
+   * ```
+   *   min(distance_meters, soft_max_meters) / 1000.0 *
+   *   cost_per_kilometer_below_soft_max.
+   * ```
+   * This cost is not supported in `route_distance_limit`.
+   * </pre>
+   *
+   * <code>optional double cost_per_kilometer_below_soft_max = 4;</code>
+   *
+   * @return The costPerKilometerBelowSoftMax.
+   */
+  @java.lang.Override
+  public double getCostPerKilometerBelowSoftMax() {
+    return costPerKilometerBelowSoftMax_;
   }
 
   public static final int COST_PER_KILOMETER_ABOVE_SOFT_MAX_FIELD_NUMBER = 3;
@@ -167,7 +210,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCostPerKilometerAboveSoftMax() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -212,8 +255,11 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(2, softMaxMeters_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeDouble(3, costPerKilometerAboveSoftMax_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeDouble(4, costPerKilometerBelowSoftMax_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -230,9 +276,13 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, softMaxMeters_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(3, costPerKilometerAboveSoftMax_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeDoubleSize(4, costPerKilometerBelowSoftMax_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -258,6 +308,12 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     if (hasSoftMaxMeters()) {
       if (getSoftMaxMeters() != other.getSoftMaxMeters()) return false;
     }
+    if (hasCostPerKilometerBelowSoftMax() != other.hasCostPerKilometerBelowSoftMax()) return false;
+    if (hasCostPerKilometerBelowSoftMax()) {
+      if (java.lang.Double.doubleToLongBits(getCostPerKilometerBelowSoftMax())
+          != java.lang.Double.doubleToLongBits(other.getCostPerKilometerBelowSoftMax()))
+        return false;
+    }
     if (hasCostPerKilometerAboveSoftMax() != other.hasCostPerKilometerAboveSoftMax()) return false;
     if (hasCostPerKilometerAboveSoftMax()) {
       if (java.lang.Double.doubleToLongBits(getCostPerKilometerAboveSoftMax())
@@ -282,6 +338,13 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     if (hasSoftMaxMeters()) {
       hash = (37 * hash) + SOFT_MAX_METERS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSoftMaxMeters());
+    }
+    if (hasCostPerKilometerBelowSoftMax()) {
+      hash = (37 * hash) + COST_PER_KILOMETER_BELOW_SOFT_MAX_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getCostPerKilometerBelowSoftMax()));
     }
     if (hasCostPerKilometerAboveSoftMax()) {
       hash = (37 * hash) + COST_PER_KILOMETER_ABOVE_SOFT_MAX_FIELD_NUMBER;
@@ -396,6 +459,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A limit defining a maximum distance which can be traveled. It can be either
    * hard or soft.
+   *
    * If a soft limit is defined, both `soft_max_meters` and
    * `cost_per_kilometer_above_soft_max` must be defined and be nonnegative.
    * </pre>
@@ -434,6 +498,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       maxMeters_ = 0L;
       softMaxMeters_ = 0L;
+      costPerKilometerBelowSoftMax_ = 0D;
       costPerKilometerAboveSoftMax_ = 0D;
       return this;
     }
@@ -481,8 +546,12 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.costPerKilometerAboveSoftMax_ = costPerKilometerAboveSoftMax_;
+        result.costPerKilometerBelowSoftMax_ = costPerKilometerBelowSoftMax_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.costPerKilometerAboveSoftMax_ = costPerKilometerAboveSoftMax_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -538,6 +607,9 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSoftMaxMeters()) {
         setSoftMaxMeters(other.getSoftMaxMeters());
       }
+      if (other.hasCostPerKilometerBelowSoftMax()) {
+        setCostPerKilometerBelowSoftMax(other.getCostPerKilometerBelowSoftMax());
+      }
       if (other.hasCostPerKilometerAboveSoftMax()) {
         setCostPerKilometerAboveSoftMax(other.getCostPerKilometerAboveSoftMax());
       }
@@ -582,9 +654,15 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
             case 25:
               {
                 costPerKilometerAboveSoftMax_ = input.readDouble();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 25
+            case 33:
+              {
+                costPerKilometerBelowSoftMax_ = input.readDouble();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 33
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -684,6 +762,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum distance limit, but when violated
      * results in a cost which adds up to other costs defined in the model,
      * with the same unit.
+     *
      * If defined soft_max_meters must be less than max_meters and must be
      * nonnegative.
      * </pre>
@@ -703,6 +782,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum distance limit, but when violated
      * results in a cost which adds up to other costs defined in the model,
      * with the same unit.
+     *
      * If defined soft_max_meters must be less than max_meters and must be
      * nonnegative.
      * </pre>
@@ -722,6 +802,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum distance limit, but when violated
      * results in a cost which adds up to other costs defined in the model,
      * with the same unit.
+     *
      * If defined soft_max_meters must be less than max_meters and must be
      * nonnegative.
      * </pre>
@@ -745,6 +826,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum distance limit, but when violated
      * results in a cost which adds up to other costs defined in the model,
      * with the same unit.
+     *
      * If defined soft_max_meters must be less than max_meters and must be
      * nonnegative.
      * </pre>
@@ -756,6 +838,98 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSoftMaxMeters() {
       bitField0_ = (bitField0_ & ~0x00000002);
       softMaxMeters_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private double costPerKilometerBelowSoftMax_;
+    /**
+     *
+     *
+     * <pre>
+     * Cost per kilometer incurred, increasing up to `soft_max_meters`, with
+     * formula:
+     * ```
+     *   min(distance_meters, soft_max_meters) / 1000.0 *
+     *   cost_per_kilometer_below_soft_max.
+     * ```
+     * This cost is not supported in `route_distance_limit`.
+     * </pre>
+     *
+     * <code>optional double cost_per_kilometer_below_soft_max = 4;</code>
+     *
+     * @return Whether the costPerKilometerBelowSoftMax field is set.
+     */
+    @java.lang.Override
+    public boolean hasCostPerKilometerBelowSoftMax() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cost per kilometer incurred, increasing up to `soft_max_meters`, with
+     * formula:
+     * ```
+     *   min(distance_meters, soft_max_meters) / 1000.0 *
+     *   cost_per_kilometer_below_soft_max.
+     * ```
+     * This cost is not supported in `route_distance_limit`.
+     * </pre>
+     *
+     * <code>optional double cost_per_kilometer_below_soft_max = 4;</code>
+     *
+     * @return The costPerKilometerBelowSoftMax.
+     */
+    @java.lang.Override
+    public double getCostPerKilometerBelowSoftMax() {
+      return costPerKilometerBelowSoftMax_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cost per kilometer incurred, increasing up to `soft_max_meters`, with
+     * formula:
+     * ```
+     *   min(distance_meters, soft_max_meters) / 1000.0 *
+     *   cost_per_kilometer_below_soft_max.
+     * ```
+     * This cost is not supported in `route_distance_limit`.
+     * </pre>
+     *
+     * <code>optional double cost_per_kilometer_below_soft_max = 4;</code>
+     *
+     * @param value The costPerKilometerBelowSoftMax to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCostPerKilometerBelowSoftMax(double value) {
+
+      costPerKilometerBelowSoftMax_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cost per kilometer incurred, increasing up to `soft_max_meters`, with
+     * formula:
+     * ```
+     *   min(distance_meters, soft_max_meters) / 1000.0 *
+     *   cost_per_kilometer_below_soft_max.
+     * ```
+     * This cost is not supported in `route_distance_limit`.
+     * </pre>
+     *
+     * <code>optional double cost_per_kilometer_below_soft_max = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCostPerKilometerBelowSoftMax() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      costPerKilometerBelowSoftMax_ = 0D;
       onChanged();
       return this;
     }
@@ -781,7 +955,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasCostPerKilometerAboveSoftMax() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -827,7 +1001,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
     public Builder setCostPerKilometerAboveSoftMax(double value) {
 
       costPerKilometerAboveSoftMax_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -850,7 +1024,7 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCostPerKilometerAboveSoftMax() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       costPerKilometerAboveSoftMax_ = 0D;
       onChanged();
       return this;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListClustersPag
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListInstancesPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListLocationsPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListSupportedDatabaseFlagsPagedResponse;
+import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListUsersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -61,9 +62,11 @@ import com.google.cloud.alloydb.v1beta.CreateClusterRequest;
 import com.google.cloud.alloydb.v1beta.CreateInstanceRequest;
 import com.google.cloud.alloydb.v1beta.CreateSecondaryClusterRequest;
 import com.google.cloud.alloydb.v1beta.CreateSecondaryInstanceRequest;
+import com.google.cloud.alloydb.v1beta.CreateUserRequest;
 import com.google.cloud.alloydb.v1beta.DeleteBackupRequest;
 import com.google.cloud.alloydb.v1beta.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1beta.DeleteInstanceRequest;
+import com.google.cloud.alloydb.v1beta.DeleteUserRequest;
 import com.google.cloud.alloydb.v1beta.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1beta.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1beta.GenerateClientCertificateResponse;
@@ -71,6 +74,8 @@ import com.google.cloud.alloydb.v1beta.GetBackupRequest;
 import com.google.cloud.alloydb.v1beta.GetClusterRequest;
 import com.google.cloud.alloydb.v1beta.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1beta.GetInstanceRequest;
+import com.google.cloud.alloydb.v1beta.GetUserRequest;
+import com.google.cloud.alloydb.v1beta.InjectFaultRequest;
 import com.google.cloud.alloydb.v1beta.Instance;
 import com.google.cloud.alloydb.v1beta.ListBackupsRequest;
 import com.google.cloud.alloydb.v1beta.ListBackupsResponse;
@@ -80,6 +85,8 @@ import com.google.cloud.alloydb.v1beta.ListInstancesRequest;
 import com.google.cloud.alloydb.v1beta.ListInstancesResponse;
 import com.google.cloud.alloydb.v1beta.ListSupportedDatabaseFlagsRequest;
 import com.google.cloud.alloydb.v1beta.ListSupportedDatabaseFlagsResponse;
+import com.google.cloud.alloydb.v1beta.ListUsersRequest;
+import com.google.cloud.alloydb.v1beta.ListUsersResponse;
 import com.google.cloud.alloydb.v1beta.OperationMetadata;
 import com.google.cloud.alloydb.v1beta.PromoteClusterRequest;
 import com.google.cloud.alloydb.v1beta.RestartInstanceRequest;
@@ -88,6 +95,8 @@ import com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag;
 import com.google.cloud.alloydb.v1beta.UpdateBackupRequest;
 import com.google.cloud.alloydb.v1beta.UpdateClusterRequest;
 import com.google.cloud.alloydb.v1beta.UpdateInstanceRequest;
+import com.google.cloud.alloydb.v1beta.UpdateUserRequest;
+import com.google.cloud.alloydb.v1beta.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -195,6 +204,9 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
   private final UnaryCallSettings<FailoverInstanceRequest, Operation> failoverInstanceSettings;
   private final OperationCallSettings<FailoverInstanceRequest, Instance, OperationMetadata>
       failoverInstanceOperationSettings;
+  private final UnaryCallSettings<InjectFaultRequest, Operation> injectFaultSettings;
+  private final OperationCallSettings<InjectFaultRequest, Instance, OperationMetadata>
+      injectFaultOperationSettings;
   private final UnaryCallSettings<RestartInstanceRequest, Operation> restartInstanceSettings;
   private final OperationCallSettings<RestartInstanceRequest, Instance, OperationMetadata>
       restartInstanceOperationSettings;
@@ -220,6 +232,12 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       generateClientCertificateSettings;
   private final UnaryCallSettings<GetConnectionInfoRequest, ConnectionInfo>
       getConnectionInfoSettings;
+  private final PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      listUsersSettings;
+  private final UnaryCallSettings<GetUserRequest, User> getUserSettings;
+  private final UnaryCallSettings<CreateUserRequest, User> createUserSettings;
+  private final UnaryCallSettings<UpdateUserRequest, User> updateUserSettings;
+  private final UnaryCallSettings<DeleteUserRequest, Empty> deleteUserSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -382,6 +400,42 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
             }
           };
 
+  private static final PagedListDescriptor<ListUsersRequest, ListUsersResponse, User>
+      LIST_USERS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListUsersRequest, ListUsersResponse, User>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUsersRequest injectToken(ListUsersRequest payload, String token) {
+              return ListUsersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUsersRequest injectPageSize(ListUsersRequest payload, int pageSize) {
+              return ListUsersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUsersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUsersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<User> extractResources(ListUsersResponse payload) {
+              return payload.getUsersList() == null
+                  ? ImmutableList.<User>of()
+                  : payload.getUsersList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -494,6 +548,23 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
                           callable, LIST_SUPPORTED_DATABASE_FLAGS_PAGE_STR_DESC, request, context);
               return ListSupportedDatabaseFlagsPagedResponse.createAsync(
                   pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      LIST_USERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>() {
+            @Override
+            public ApiFuture<ListUsersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUsersRequest, ListUsersResponse> callable,
+                ListUsersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUsersResponse> futureResponse) {
+              PageContext<ListUsersRequest, ListUsersResponse, User> pageContext =
+                  PageContext.create(callable, LIST_USERS_PAGE_STR_DESC, request, context);
+              return ListUsersPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -671,6 +742,17 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     return failoverInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to injectFault. */
+  public UnaryCallSettings<InjectFaultRequest, Operation> injectFaultSettings() {
+    return injectFaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to injectFault. */
+  public OperationCallSettings<InjectFaultRequest, Instance, OperationMetadata>
+      injectFaultOperationSettings() {
+    return injectFaultOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to restartInstance. */
   public UnaryCallSettings<RestartInstanceRequest, Operation> restartInstanceSettings() {
     return restartInstanceSettings;
@@ -744,6 +826,32 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
   /** Returns the object with the settings used for calls to getConnectionInfo. */
   public UnaryCallSettings<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoSettings() {
     return getConnectionInfoSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUsers. */
+  public PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      listUsersSettings() {
+    return listUsersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getUser. */
+  public UnaryCallSettings<GetUserRequest, User> getUserSettings() {
+    return getUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createUser. */
+  public UnaryCallSettings<CreateUserRequest, User> createUserSettings() {
+    return createUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateUser. */
+  public UnaryCallSettings<UpdateUserRequest, User> updateUserSettings() {
+    return updateUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteUser. */
+  public UnaryCallSettings<DeleteUserRequest, Empty> deleteUserSettings() {
+    return deleteUserSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -894,6 +1002,8 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     failoverInstanceSettings = settingsBuilder.failoverInstanceSettings().build();
     failoverInstanceOperationSettings = settingsBuilder.failoverInstanceOperationSettings().build();
+    injectFaultSettings = settingsBuilder.injectFaultSettings().build();
+    injectFaultOperationSettings = settingsBuilder.injectFaultOperationSettings().build();
     restartInstanceSettings = settingsBuilder.restartInstanceSettings().build();
     restartInstanceOperationSettings = settingsBuilder.restartInstanceOperationSettings().build();
     listBackupsSettings = settingsBuilder.listBackupsSettings().build();
@@ -908,6 +1018,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
         settingsBuilder.listSupportedDatabaseFlagsSettings().build();
     generateClientCertificateSettings = settingsBuilder.generateClientCertificateSettings().build();
     getConnectionInfoSettings = settingsBuilder.getConnectionInfoSettings().build();
+    listUsersSettings = settingsBuilder.listUsersSettings().build();
+    getUserSettings = settingsBuilder.getUserSettings().build();
+    createUserSettings = settingsBuilder.createUserSettings().build();
+    updateUserSettings = settingsBuilder.updateUserSettings().build();
+    deleteUserSettings = settingsBuilder.deleteUserSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -972,6 +1087,9 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     private final OperationCallSettings.Builder<
             FailoverInstanceRequest, Instance, OperationMetadata>
         failoverInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<InjectFaultRequest, Operation> injectFaultSettings;
+    private final OperationCallSettings.Builder<InjectFaultRequest, Instance, OperationMetadata>
+        injectFaultOperationSettings;
     private final UnaryCallSettings.Builder<RestartInstanceRequest, Operation>
         restartInstanceSettings;
     private final OperationCallSettings.Builder<RestartInstanceRequest, Instance, OperationMetadata>
@@ -999,6 +1117,13 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
         generateClientCertificateSettings;
     private final UnaryCallSettings.Builder<GetConnectionInfoRequest, ConnectionInfo>
         getConnectionInfoSettings;
+    private final PagedCallSettings.Builder<
+            ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+        listUsersSettings;
+    private final UnaryCallSettings.Builder<GetUserRequest, User> getUserSettings;
+    private final UnaryCallSettings.Builder<CreateUserRequest, User> createUserSettings;
+    private final UnaryCallSettings.Builder<UpdateUserRequest, User> updateUserSettings;
+    private final UnaryCallSettings.Builder<DeleteUserRequest, Empty> deleteUserSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1079,6 +1204,8 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
       failoverInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       failoverInstanceOperationSettings = OperationCallSettings.newBuilder();
+      injectFaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      injectFaultOperationSettings = OperationCallSettings.newBuilder();
       restartInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restartInstanceOperationSettings = OperationCallSettings.newBuilder();
       listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
@@ -1093,6 +1220,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
           PagedCallSettings.newBuilder(LIST_SUPPORTED_DATABASE_FLAGS_PAGE_STR_FACT);
       generateClientCertificateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getConnectionInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listUsersSettings = PagedCallSettings.newBuilder(LIST_USERS_PAGE_STR_FACT);
+      getUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1114,6 +1246,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               updateInstanceSettings,
               deleteInstanceSettings,
               failoverInstanceSettings,
+              injectFaultSettings,
               restartInstanceSettings,
               listBackupsSettings,
               getBackupSettings,
@@ -1123,6 +1256,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               listSupportedDatabaseFlagsSettings,
               generateClientCertificateSettings,
               getConnectionInfoSettings,
+              listUsersSettings,
+              getUserSettings,
+              createUserSettings,
+              updateUserSettings,
+              deleteUserSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1162,6 +1300,8 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       failoverInstanceSettings = settings.failoverInstanceSettings.toBuilder();
       failoverInstanceOperationSettings = settings.failoverInstanceOperationSettings.toBuilder();
+      injectFaultSettings = settings.injectFaultSettings.toBuilder();
+      injectFaultOperationSettings = settings.injectFaultOperationSettings.toBuilder();
       restartInstanceSettings = settings.restartInstanceSettings.toBuilder();
       restartInstanceOperationSettings = settings.restartInstanceOperationSettings.toBuilder();
       listBackupsSettings = settings.listBackupsSettings.toBuilder();
@@ -1175,6 +1315,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       listSupportedDatabaseFlagsSettings = settings.listSupportedDatabaseFlagsSettings.toBuilder();
       generateClientCertificateSettings = settings.generateClientCertificateSettings.toBuilder();
       getConnectionInfoSettings = settings.getConnectionInfoSettings.toBuilder();
+      listUsersSettings = settings.listUsersSettings.toBuilder();
+      getUserSettings = settings.getUserSettings.toBuilder();
+      createUserSettings = settings.createUserSettings.toBuilder();
+      updateUserSettings = settings.updateUserSettings.toBuilder();
+      deleteUserSettings = settings.deleteUserSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1196,6 +1341,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               updateInstanceSettings,
               deleteInstanceSettings,
               failoverInstanceSettings,
+              injectFaultSettings,
               restartInstanceSettings,
               listBackupsSettings,
               getBackupSettings,
@@ -1205,6 +1351,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               listSupportedDatabaseFlagsSettings,
               generateClientCertificateSettings,
               getConnectionInfoSettings,
+              listUsersSettings,
+              getUserSettings,
+              createUserSettings,
+              updateUserSettings,
+              deleteUserSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1317,6 +1468,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .injectFaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .restartInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1360,6 +1516,31 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
           .getConnectionInfoSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listUsersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listLocationsSettings()
@@ -1641,6 +1822,29 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<FailoverInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .injectFaultOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<InjectFaultRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -1960,6 +2164,19 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       return failoverInstanceOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to injectFault. */
+    public UnaryCallSettings.Builder<InjectFaultRequest, Operation> injectFaultSettings() {
+      return injectFaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to injectFault. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<InjectFaultRequest, Instance, OperationMetadata>
+        injectFaultOperationSettings() {
+      return injectFaultOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to restartInstance. */
     public UnaryCallSettings.Builder<RestartInstanceRequest, Operation> restartInstanceSettings() {
       return restartInstanceSettings;
@@ -2044,6 +2261,32 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     public UnaryCallSettings.Builder<GetConnectionInfoRequest, ConnectionInfo>
         getConnectionInfoSettings() {
       return getConnectionInfoSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUsers. */
+    public PagedCallSettings.Builder<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+        listUsersSettings() {
+      return listUsersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getUser. */
+    public UnaryCallSettings.Builder<GetUserRequest, User> getUserSettings() {
+      return getUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createUser. */
+    public UnaryCallSettings.Builder<CreateUserRequest, User> createUserSettings() {
+      return createUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateUser. */
+    public UnaryCallSettings.Builder<UpdateUserRequest, User> updateUserSettings() {
+      return updateUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUser. */
+    public UnaryCallSettings.Builder<DeleteUserRequest, Empty> deleteUserSettings() {
+      return deleteUserSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

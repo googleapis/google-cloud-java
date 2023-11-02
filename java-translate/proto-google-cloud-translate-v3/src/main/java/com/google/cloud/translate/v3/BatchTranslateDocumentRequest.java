@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   private BatchTranslateDocumentRequest() {
     parent_ = "";
     sourceLanguageCode_ = "";
-    targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     inputConfigs_ = java.util.Collections.emptyList();
     customizedAttribution_ = "";
   }
@@ -49,11 +49,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchTranslateDocumentRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -95,8 +90,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. Location to make a regional call.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * The `global` location is not supported for batch translation.
+   *
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
    * error is returned.
@@ -125,8 +123,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. Location to make a regional call.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * The `global` location is not supported for batch translation.
+   *
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
    * error is returned.
@@ -209,7 +210,8 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
   public static final int TARGET_LANGUAGE_CODES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList targetLanguageCodes_;
+  private com.google.protobuf.LazyStringArrayList targetLanguageCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -471,11 +473,16 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -502,11 +509,16 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -524,11 +536,16 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -553,11 +570,16 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -736,9 +758,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -767,9 +791,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -789,9 +815,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -818,9 +846,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -898,6 +928,46 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
   }
 
+  public static final int ENABLE_SHADOW_REMOVAL_NATIVE_PDF_FIELD_NUMBER = 11;
+  private boolean enableShadowRemovalNativePdf_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, use the text removal server to remove the shadow text on
+   * background image for native pdf translation.
+   * Shadow removal feature can only be enabled when
+   * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
+   * </pre>
+   *
+   * <code>bool enable_shadow_removal_native_pdf = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableShadowRemovalNativePdf.
+   */
+  @java.lang.Override
+  public boolean getEnableShadowRemovalNativePdf() {
+    return enableShadowRemovalNativePdf_;
+  }
+
+  public static final int ENABLE_ROTATION_CORRECTION_FIELD_NUMBER = 12;
+  private boolean enableRotationCorrection_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, enable auto rotation correction in DVS.
+   * </pre>
+   *
+   * <code>bool enable_rotation_correction = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableRotationCorrection.
+   */
+  @java.lang.Override
+  public boolean getEnableRotationCorrection() {
+    return enableRotationCorrection_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -938,6 +1008,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         8);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customizedAttribution_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, customizedAttribution_);
+    }
+    if (enableShadowRemovalNativePdf_ != false) {
+      output.writeBool(11, enableShadowRemovalNativePdf_);
+    }
+    if (enableRotationCorrection_ != false) {
+      output.writeBool(12, enableRotationCorrection_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1004,6 +1080,13 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customizedAttribution_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, customizedAttribution_);
     }
+    if (enableShadowRemovalNativePdf_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(11, enableShadowRemovalNativePdf_);
+    }
+    if (enableRotationCorrection_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, enableRotationCorrection_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1032,6 +1115,8 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     if (!internalGetGlossaries().equals(other.internalGetGlossaries())) return false;
     if (!internalGetFormatConversions().equals(other.internalGetFormatConversions())) return false;
     if (!getCustomizedAttribution().equals(other.getCustomizedAttribution())) return false;
+    if (getEnableShadowRemovalNativePdf() != other.getEnableShadowRemovalNativePdf()) return false;
+    if (getEnableRotationCorrection() != other.getEnableRotationCorrection()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1073,6 +1158,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
     hash = (37 * hash) + CUSTOMIZED_ATTRIBUTION_FIELD_NUMBER;
     hash = (53 * hash) + getCustomizedAttribution().hashCode();
+    hash = (37 * hash) + ENABLE_SHADOW_REMOVAL_NATIVE_PDF_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableShadowRemovalNativePdf());
+    hash = (37 * hash) + ENABLE_ROTATION_CORRECTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableRotationCorrection());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1243,8 +1333,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       bitField0_ = 0;
       parent_ = "";
       sourceLanguageCode_ = "";
-      targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
       } else {
@@ -1261,6 +1350,8 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       internalGetMutableGlossaries().clear();
       internalGetMutableFormatConversions().clear();
       customizedAttribution_ = "";
+      enableShadowRemovalNativePdf_ = false;
+      enableRotationCorrection_ = false;
       return this;
     }
 
@@ -1298,11 +1389,6 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
 
     private void buildPartialRepeatedFields(
         com.google.cloud.translate.v3.BatchTranslateDocumentRequest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        targetLanguageCodes_ = targetLanguageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.targetLanguageCodes_ = targetLanguageCodes_;
       if (inputConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
           inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
@@ -1322,6 +1408,10 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.sourceLanguageCode_ = sourceLanguageCode_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        targetLanguageCodes_.makeImmutable();
+        result.targetLanguageCodes_ = targetLanguageCodes_;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.outputConfig_ =
             outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
@@ -1340,6 +1430,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.customizedAttribution_ = customizedAttribution_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.enableShadowRemovalNativePdf_ = enableShadowRemovalNativePdf_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.enableRotationCorrection_ = enableRotationCorrection_;
       }
     }
 
@@ -1402,7 +1498,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       if (!other.targetLanguageCodes_.isEmpty()) {
         if (targetLanguageCodes_.isEmpty()) {
           targetLanguageCodes_ = other.targetLanguageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureTargetLanguageCodesIsMutable();
           targetLanguageCodes_.addAll(other.targetLanguageCodes_);
@@ -1449,6 +1545,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         customizedAttribution_ = other.customizedAttribution_;
         bitField0_ |= 0x00000100;
         onChanged();
+      }
+      if (other.getEnableShadowRemovalNativePdf() != false) {
+        setEnableShadowRemovalNativePdf(other.getEnableShadowRemovalNativePdf());
+      }
+      if (other.getEnableRotationCorrection() != false) {
+        setEnableRotationCorrection(other.getEnableRotationCorrection());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1560,6 +1662,18 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 88:
+              {
+                enableShadowRemovalNativePdf_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
+            case 96:
+              {
+                enableRotationCorrection_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1585,8 +1699,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Location to make a regional call.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * The `global` location is not supported for batch translation.
+     *
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
@@ -1614,8 +1731,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Location to make a regional call.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * The `global` location is not supported for batch translation.
+     *
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
@@ -1643,8 +1763,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Location to make a regional call.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * The `global` location is not supported for batch translation.
+     *
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
@@ -1671,8 +1794,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Location to make a regional call.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * The `global` location is not supported for batch translation.
+     *
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
@@ -1695,8 +1821,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Location to make a regional call.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * The `global` location is not supported for batch translation.
+     *
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
@@ -1836,14 +1965,14 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       return this;
     }
 
-    private com.google.protobuf.LazyStringList targetLanguageCodes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList targetLanguageCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTargetLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!targetLanguageCodes_.isModifiable()) {
         targetLanguageCodes_ = new com.google.protobuf.LazyStringArrayList(targetLanguageCodes_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1859,7 +1988,8 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * @return A list containing the targetLanguageCodes.
      */
     public com.google.protobuf.ProtocolStringList getTargetLanguageCodesList() {
-      return targetLanguageCodes_.getUnmodifiableView();
+      targetLanguageCodes_.makeImmutable();
+      return targetLanguageCodes_;
     }
     /**
      *
@@ -1932,6 +2062,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       ensureTargetLanguageCodesIsMutable();
       targetLanguageCodes_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1955,6 +2086,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       ensureTargetLanguageCodesIsMutable();
       targetLanguageCodes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1975,6 +2107,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public Builder addAllTargetLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureTargetLanguageCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetLanguageCodes_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1992,8 +2125,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearTargetLanguageCodes() {
-      targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -2018,6 +2152,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensureTargetLanguageCodesIsMutable();
       targetLanguageCodes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2728,11 +2863,16 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is the model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -2759,11 +2899,16 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is the model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -2781,11 +2926,16 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is the model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -2810,11 +2960,16 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is the model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -2845,11 +3000,16 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is the model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -2876,11 +3036,16 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is the model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -2905,11 +3070,16 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is the model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -3155,9 +3325,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. File format conversion map to be applied to all input files.
      * Map's key is the original mime_type. Map's value is the target mime_type of
      * translated documents.
+     *
      * Supported file format conversion includes:
      * - `application/pdf` to
      *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     *
      * If nothing specified, output files will be in the same format as the
      * original file.
      * </pre>
@@ -3186,9 +3358,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. File format conversion map to be applied to all input files.
      * Map's key is the original mime_type. Map's value is the target mime_type of
      * translated documents.
+     *
      * Supported file format conversion includes:
      * - `application/pdf` to
      *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     *
      * If nothing specified, output files will be in the same format as the
      * original file.
      * </pre>
@@ -3208,9 +3382,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. File format conversion map to be applied to all input files.
      * Map's key is the original mime_type. Map's value is the target mime_type of
      * translated documents.
+     *
      * Supported file format conversion includes:
      * - `application/pdf` to
      *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     *
      * If nothing specified, output files will be in the same format as the
      * original file.
      * </pre>
@@ -3238,9 +3414,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. File format conversion map to be applied to all input files.
      * Map's key is the original mime_type. Map's value is the target mime_type of
      * translated documents.
+     *
      * Supported file format conversion includes:
      * - `application/pdf` to
      *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     *
      * If nothing specified, output files will be in the same format as the
      * original file.
      * </pre>
@@ -3274,9 +3452,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. File format conversion map to be applied to all input files.
      * Map's key is the original mime_type. Map's value is the target mime_type of
      * translated documents.
+     *
      * Supported file format conversion includes:
      * - `application/pdf` to
      *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     *
      * If nothing specified, output files will be in the same format as the
      * original file.
      * </pre>
@@ -3305,9 +3485,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. File format conversion map to be applied to all input files.
      * Map's key is the original mime_type. Map's value is the target mime_type of
      * translated documents.
+     *
      * Supported file format conversion includes:
      * - `application/pdf` to
      *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     *
      * If nothing specified, output files will be in the same format as the
      * original file.
      * </pre>
@@ -3334,9 +3516,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      * Optional. File format conversion map to be applied to all input files.
      * Map's key is the original mime_type. Map's value is the target mime_type of
      * translated documents.
+     *
      * Supported file format conversion includes:
      * - `application/pdf` to
      *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     *
      * If nothing specified, output files will be in the same format as the
      * original file.
      * </pre>
@@ -3469,6 +3653,124 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       customizedAttribution_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableShadowRemovalNativePdf_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, use the text removal server to remove the shadow text on
+     * background image for native pdf translation.
+     * Shadow removal feature can only be enabled when
+     * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
+     * </pre>
+     *
+     * <code>bool enable_shadow_removal_native_pdf = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableShadowRemovalNativePdf.
+     */
+    @java.lang.Override
+    public boolean getEnableShadowRemovalNativePdf() {
+      return enableShadowRemovalNativePdf_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, use the text removal server to remove the shadow text on
+     * background image for native pdf translation.
+     * Shadow removal feature can only be enabled when
+     * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
+     * </pre>
+     *
+     * <code>bool enable_shadow_removal_native_pdf = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enableShadowRemovalNativePdf to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableShadowRemovalNativePdf(boolean value) {
+
+      enableShadowRemovalNativePdf_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, use the text removal server to remove the shadow text on
+     * background image for native pdf translation.
+     * Shadow removal feature can only be enabled when
+     * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
+     * </pre>
+     *
+     * <code>bool enable_shadow_removal_native_pdf = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableShadowRemovalNativePdf() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      enableShadowRemovalNativePdf_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableRotationCorrection_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, enable auto rotation correction in DVS.
+     * </pre>
+     *
+     * <code>bool enable_rotation_correction = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableRotationCorrection.
+     */
+    @java.lang.Override
+    public boolean getEnableRotationCorrection() {
+      return enableRotationCorrection_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, enable auto rotation correction in DVS.
+     * </pre>
+     *
+     * <code>bool enable_rotation_correction = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableRotationCorrection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableRotationCorrection(boolean value) {
+
+      enableRotationCorrection_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, enable auto rotation correction in DVS.
+     * </pre>
+     *
+     * <code>bool enable_rotation_correction = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableRotationCorrection() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      enableRotationCorrection_ = false;
       onChanged();
       return this;
     }

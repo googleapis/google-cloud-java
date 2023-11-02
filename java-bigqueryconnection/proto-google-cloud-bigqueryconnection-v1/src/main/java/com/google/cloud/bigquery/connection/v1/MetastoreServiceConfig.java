@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
     return new MetastoreServiceConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_MetastoreServiceConfig_descriptor;
@@ -76,7 +71,9 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Resource name of an existing Dataproc Metastore service.
+   *
    * Example:
+   *
    * * `projects/[project_id]/locations/[region]/services/[service_id]`
    * </pre>
    *
@@ -103,7 +100,9 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Resource name of an existing Dataproc Metastore service.
+   *
    * Example:
+   *
    * * `projects/[project_id]/locations/[region]/services/[service_id]`
    * </pre>
    *
@@ -478,7 +477,9 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Resource name of an existing Dataproc Metastore service.
+     *
      * Example:
+     *
      * * `projects/[project_id]/locations/[region]/services/[service_id]`
      * </pre>
      *
@@ -504,7 +505,9 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Resource name of an existing Dataproc Metastore service.
+     *
      * Example:
+     *
      * * `projects/[project_id]/locations/[region]/services/[service_id]`
      * </pre>
      *
@@ -530,7 +533,9 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Resource name of an existing Dataproc Metastore service.
+     *
      * Example:
+     *
      * * `projects/[project_id]/locations/[region]/services/[service_id]`
      * </pre>
      *
@@ -555,7 +560,9 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Resource name of an existing Dataproc Metastore service.
+     *
      * Example:
+     *
      * * `projects/[project_id]/locations/[region]/services/[service_id]`
      * </pre>
      *
@@ -576,7 +583,9 @@ public final class MetastoreServiceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Resource name of an existing Dataproc Metastore service.
+     *
      * Example:
+     *
      * * `projects/[project_id]/locations/[region]/services/[service_id]`
      * </pre>
      *

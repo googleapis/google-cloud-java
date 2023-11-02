@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ package com.google.dataflow.v1beta3;
  * The packages that must be installed in order for a worker to run the
  * steps of the Cloud Dataflow job that will be assigned to its worker
  * pool.
+ *
  * This is the mechanism by which the Cloud Dataflow SDK causes code to
  * be loaded onto the workers. For example, the Cloud Dataflow Java SDK
  * might use this to install jars containing the user's code and all of the
@@ -53,11 +54,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Package();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -135,7 +131,9 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource to read the package from. The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}
    *   bucket.storage.googleapis.com/
    * </pre>
@@ -161,7 +159,9 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource to read the package from. The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}
    *   bucket.storage.googleapis.com/
    * </pre>
@@ -356,6 +356,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    * The packages that must be installed in order for a worker to run the
    * steps of the Cloud Dataflow job that will be assigned to its worker
    * pool.
+   *
    * This is the mechanism by which the Cloud Dataflow SDK causes code to
    * be loaded onto the workers. For example, the Cloud Dataflow Java SDK
    * might use this to install jars containing the user's code and all of the
@@ -664,7 +665,9 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource to read the package from. The supported resource type is:
+     *
      * Google Cloud Storage:
+     *
      *   storage.googleapis.com/{bucket}
      *   bucket.storage.googleapis.com/
      * </pre>
@@ -689,7 +692,9 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource to read the package from. The supported resource type is:
+     *
      * Google Cloud Storage:
+     *
      *   storage.googleapis.com/{bucket}
      *   bucket.storage.googleapis.com/
      * </pre>
@@ -714,7 +719,9 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource to read the package from. The supported resource type is:
+     *
      * Google Cloud Storage:
+     *
      *   storage.googleapis.com/{bucket}
      *   bucket.storage.googleapis.com/
      * </pre>
@@ -738,7 +745,9 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource to read the package from. The supported resource type is:
+     *
      * Google Cloud Storage:
+     *
      *   storage.googleapis.com/{bucket}
      *   bucket.storage.googleapis.com/
      * </pre>
@@ -758,7 +767,9 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource to read the package from. The supported resource type is:
+     *
      * Google Cloud Storage:
+     *
      *   storage.googleapis.com/{bucket}
      *   bucket.storage.googleapis.com/
      * </pre>

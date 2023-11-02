@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,8 @@ public final class RegistrationServiceGrpc {
 
   private RegistrationServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.servicedirectory.v1.RegistrationService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.servicedirectory.v1.RegistrationService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -918,7 +919,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a namespace, and returns the new Namespace.
+     * Creates a namespace, and returns the new namespace.
      * </pre>
      */
     default void createNamespace(
@@ -993,7 +994,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a service, and returns the new Service.
+     * Creates a service, and returns the new service.
      * </pre>
      */
     default void createService(
@@ -1067,7 +1068,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a endpoint, and returns the new Endpoint.
+     * Creates an endpoint, and returns the new endpoint.
      * </pre>
      */
     default void createEndpoint(
@@ -1097,7 +1098,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Gets a endpoint.
+     * Gets an endpoint.
      * </pre>
      */
     default void getEndpoint(
@@ -1112,7 +1113,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Updates a endpoint.
+     * Updates an endpoint.
      * </pre>
      */
     default void updateEndpoint(
@@ -1127,7 +1128,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a endpoint.
+     * Deletes an endpoint.
      * </pre>
      */
     default void deleteEndpoint(
@@ -1242,7 +1243,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a namespace, and returns the new Namespace.
+     * Creates a namespace, and returns the new namespace.
      * </pre>
      */
     public void createNamespace(
@@ -1327,7 +1328,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a service, and returns the new Service.
+     * Creates a service, and returns the new service.
      * </pre>
      */
     public void createService(
@@ -1410,7 +1411,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a endpoint, and returns the new Endpoint.
+     * Creates an endpoint, and returns the new endpoint.
      * </pre>
      */
     public void createEndpoint(
@@ -1444,7 +1445,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Gets a endpoint.
+     * Gets an endpoint.
      * </pre>
      */
     public void getEndpoint(
@@ -1461,7 +1462,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Updates a endpoint.
+     * Updates an endpoint.
      * </pre>
      */
     public void updateEndpoint(
@@ -1478,7 +1479,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a endpoint.
+     * Deletes an endpoint.
      * </pre>
      */
     public void deleteEndpoint(
@@ -1575,7 +1576,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a namespace, and returns the new Namespace.
+     * Creates a namespace, and returns the new namespace.
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Namespace createNamespace(
@@ -1641,7 +1642,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a service, and returns the new Service.
+     * Creates a service, and returns the new service.
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Service createService(
@@ -1707,7 +1708,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a endpoint, and returns the new Endpoint.
+     * Creates an endpoint, and returns the new endpoint.
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Endpoint createEndpoint(
@@ -1733,7 +1734,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Gets a endpoint.
+     * Gets an endpoint.
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Endpoint getEndpoint(
@@ -1746,7 +1747,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Updates a endpoint.
+     * Updates an endpoint.
      * </pre>
      */
     public com.google.cloud.servicedirectory.v1.Endpoint updateEndpoint(
@@ -1759,7 +1760,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a endpoint.
+     * Deletes an endpoint.
      * </pre>
      */
     public com.google.protobuf.Empty deleteEndpoint(
@@ -1841,7 +1842,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a namespace, and returns the new Namespace.
+     * Creates a namespace, and returns the new namespace.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1911,7 +1912,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a service, and returns the new Service.
+     * Creates a service, and returns the new service.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1981,7 +1982,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Creates a endpoint, and returns the new Endpoint.
+     * Creates an endpoint, and returns the new endpoint.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2009,7 +2010,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Gets a endpoint.
+     * Gets an endpoint.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2023,7 +2024,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Updates a endpoint.
+     * Updates an endpoint.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2037,7 +2038,7 @@ public final class RegistrationServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a endpoint.
+     * Deletes an endpoint.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2391,9 +2392,9 @@ public final class RegistrationServiceGrpc {
   private static final class RegistrationServiceMethodDescriptorSupplier
       extends RegistrationServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    RegistrationServiceMethodDescriptorSupplier(String methodName) {
+    RegistrationServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

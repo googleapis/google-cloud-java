@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface RunAccessReportRequestOrBuilder
    * The Data Access Report supports requesting at the property level or account
    * level. If requested at the account level, Data Access Reports include all
    * access for all properties under that account.
+   *
    * To request at the property level, entity should be for example
    * 'properties/123' if "123" is your GA4 property ID. To request at the
    * account level, entity should be for example 'accounts/1234' if "1234" is
@@ -48,6 +49,7 @@ public interface RunAccessReportRequestOrBuilder
    * The Data Access Report supports requesting at the property level or account
    * level. If requested at the account level, Data Access Reports include all
    * access for all properties under that account.
+   *
    * To request at the property level, entity should be for example
    * 'properties/123' if "123" is your GA4 property ID. To request at the
    * account level, entity should be for example 'accounts/1234' if "1234" is
@@ -344,6 +346,7 @@ public interface RunAccessReportRequestOrBuilder
    * The row count of the start row. The first row is counted as row 0. If
    * offset is unspecified, it is treated as 0. If offset is zero, then this
    * method will return the first page of results with `limit` entries.
+   *
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
@@ -361,11 +364,13 @@ public interface RunAccessReportRequestOrBuilder
    * The number of rows to return. If unspecified, 10,000 rows are returned. The
    * API returns a maximum of 100,000 rows per request, no matter how many you
    * ask for. `limit` must be positive.
+   *
    * The API may return fewer rows than the requested `limit`, if there aren't
    * as many remaining rows as the `limit`. For instance, there are fewer than
    * 300 possible values for the dimension `country`, so when reporting on only
    * `country`, you can't get more than 300 rows, even if you set `limit` to a
    * higher value.
+   *
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
@@ -383,6 +388,7 @@ public interface RunAccessReportRequestOrBuilder
    * This request's time zone if specified. If unspecified, the property's time
    * zone is used. The request's time zone is used to interpret the start &amp; end
    * dates of the report.
+   *
    * Formatted as strings from the IANA Time Zone database
    * (https://www.iana.org/time-zones); for example "America/New_York" or
    * "Asia/Tokyo".
@@ -400,6 +406,7 @@ public interface RunAccessReportRequestOrBuilder
    * This request's time zone if specified. If unspecified, the property's time
    * zone is used. The request's time zone is used to interpret the start &amp; end
    * dates of the report.
+   *
    * Formatted as strings from the IANA Time Zone database
    * (https://www.iana.org/time-zones); for example "America/New_York" or
    * "Asia/Tokyo".
@@ -477,4 +484,37 @@ public interface RunAccessReportRequestOrBuilder
    * @return The returnEntityQuota.
    */
   boolean getReturnEntityQuota();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines whether to include users who have never made an API
+   * call in the response. If true, all users with access to the specified
+   * property or account are included in the response, regardless of whether
+   * they have made an API call or not. If false, only the users who have made
+   * an API call will be included.
+   * </pre>
+   *
+   * <code>bool include_all_users = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The includeAllUsers.
+   */
+  boolean getIncludeAllUsers();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Decides whether to return the users within user groups. This
+   * field works only when include_all_users is set to true. If true, it will
+   * return all users with access to the specified property or account.
+   * If false, only the users with direct access will be returned.
+   * </pre>
+   *
+   * <code>bool expand_groups = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The expandGroups.
+   */
+  boolean getExpandGroups();
 }

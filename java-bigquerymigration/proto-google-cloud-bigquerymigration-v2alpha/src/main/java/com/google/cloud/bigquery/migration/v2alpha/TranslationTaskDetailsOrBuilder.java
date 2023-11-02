@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -521,6 +521,6 @@ public interface TranslationTaskDetailsOrBuilder
    */
   com.google.protobuf.ByteString getTranslationExceptionTableBytes();
 
-  public com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.LanguageOptionsCase
+  com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.LanguageOptionsCase
       getLanguageOptionsCase();
 }

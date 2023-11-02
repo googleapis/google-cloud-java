@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,7 +101,6 @@ public class FunctionServiceClientHttpJsonTest {
     Function expectedResponse =
         Function.newBuilder()
             .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
-            .setEnvironment(Environment.forNumber(0))
             .setDescription("description-1724546052")
             .setBuildConfig(BuildConfig.newBuilder().build())
             .setServiceConfig(ServiceConfig.newBuilder().build())
@@ -109,6 +108,11 @@ public class FunctionServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllStateMessages(new ArrayList<StateMessage>())
+            .setEnvironment(Environment.forNumber(0))
+            .setUrl("url116079")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -153,7 +157,6 @@ public class FunctionServiceClientHttpJsonTest {
     Function expectedResponse =
         Function.newBuilder()
             .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
-            .setEnvironment(Environment.forNumber(0))
             .setDescription("description-1724546052")
             .setBuildConfig(BuildConfig.newBuilder().build())
             .setServiceConfig(ServiceConfig.newBuilder().build())
@@ -161,6 +164,11 @@ public class FunctionServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllStateMessages(new ArrayList<StateMessage>())
+            .setEnvironment(Environment.forNumber(0))
+            .setUrl("url116079")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -305,7 +313,6 @@ public class FunctionServiceClientHttpJsonTest {
     Function expectedResponse =
         Function.newBuilder()
             .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
-            .setEnvironment(Environment.forNumber(0))
             .setDescription("description-1724546052")
             .setBuildConfig(BuildConfig.newBuilder().build())
             .setServiceConfig(ServiceConfig.newBuilder().build())
@@ -313,6 +320,11 @@ public class FunctionServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllStateMessages(new ArrayList<StateMessage>())
+            .setEnvironment(Environment.forNumber(0))
+            .setUrl("url116079")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -366,7 +378,6 @@ public class FunctionServiceClientHttpJsonTest {
     Function expectedResponse =
         Function.newBuilder()
             .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
-            .setEnvironment(Environment.forNumber(0))
             .setDescription("description-1724546052")
             .setBuildConfig(BuildConfig.newBuilder().build())
             .setServiceConfig(ServiceConfig.newBuilder().build())
@@ -374,6 +385,11 @@ public class FunctionServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllStateMessages(new ArrayList<StateMessage>())
+            .setEnvironment(Environment.forNumber(0))
+            .setUrl("url116079")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -427,7 +443,6 @@ public class FunctionServiceClientHttpJsonTest {
     Function expectedResponse =
         Function.newBuilder()
             .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
-            .setEnvironment(Environment.forNumber(0))
             .setDescription("description-1724546052")
             .setBuildConfig(BuildConfig.newBuilder().build())
             .setServiceConfig(ServiceConfig.newBuilder().build())
@@ -435,6 +450,11 @@ public class FunctionServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllStateMessages(new ArrayList<StateMessage>())
+            .setEnvironment(Environment.forNumber(0))
+            .setUrl("url116079")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -447,7 +467,6 @@ public class FunctionServiceClientHttpJsonTest {
     Function function =
         Function.newBuilder()
             .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
-            .setEnvironment(Environment.forNumber(0))
             .setDescription("description-1724546052")
             .setBuildConfig(BuildConfig.newBuilder().build())
             .setServiceConfig(ServiceConfig.newBuilder().build())
@@ -455,6 +474,11 @@ public class FunctionServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllStateMessages(new ArrayList<StateMessage>())
+            .setEnvironment(Environment.forNumber(0))
+            .setUrl("url116079")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -487,7 +511,6 @@ public class FunctionServiceClientHttpJsonTest {
       Function function =
           Function.newBuilder()
               .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
-              .setEnvironment(Environment.forNumber(0))
               .setDescription("description-1724546052")
               .setBuildConfig(BuildConfig.newBuilder().build())
               .setServiceConfig(ServiceConfig.newBuilder().build())
@@ -495,6 +518,11 @@ public class FunctionServiceClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .addAllStateMessages(new ArrayList<StateMessage>())
+              .setEnvironment(Environment.forNumber(0))
+              .setUrl("url116079")
+              .setKmsKeyName(
+                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                      .toString())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateFunctionAsync(function, updateMask).get();
@@ -605,6 +633,9 @@ public class FunctionServiceClientHttpJsonTest {
     GenerateUploadUrlRequest request =
         GenerateUploadUrlRequest.newBuilder()
             .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .build();
 
     GenerateUploadUrlResponse actualResponse = client.generateUploadUrl(request);
@@ -636,6 +667,9 @@ public class FunctionServiceClientHttpJsonTest {
       GenerateUploadUrlRequest request =
           GenerateUploadUrlRequest.newBuilder()
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setKmsKeyName(
+                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                      .toString())
               .build();
       client.generateUploadUrl(request);
       Assert.fail("No exception raised");

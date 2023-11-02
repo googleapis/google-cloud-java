@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     id_ = "";
     inboundServices_ = java.util.Collections.emptyList();
     instanceClass_ = "";
-    zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
     runtime_ = "";
     runtimeChannel_ = "";
     env_ = "";
@@ -63,11 +63,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Version();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -100,6 +95,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int scalingCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object scaling_;
 
   public enum ScalingCase
@@ -159,6 +156,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Full path to the Version resource in the API.  Example:
    * `apps/myapp/services/default/versions/v1`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -184,6 +182,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Full path to the Version resource in the API.  Example:
    * `apps/myapp/services/default/versions/v1`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -547,8 +546,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Instance class that is used to run this version. Valid values are:
+   *
    * * AutomaticScaling: `F1`, `F2`, `F4`, `F4_1G`
    * * ManualScaling or BasicScaling: `B1`, `B2`, `B4`, `B8`, `B4_1G`
+   *
    * Defaults to `F1` for AutomaticScaling and `B1` for ManualScaling or
    * BasicScaling.
    * </pre>
@@ -574,8 +575,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Instance class that is used to run this version. Valid values are:
+   *
    * * AutomaticScaling: `F1`, `F2`, `F4`, `F4_1G`
    * * ManualScaling or BasicScaling: `B1`, `B2`, `B4`, `B8`, `B4_1G`
+   *
    * Defaults to `F1` for AutomaticScaling and `B1` for ManualScaling or
    * BasicScaling.
    * </pre>
@@ -649,7 +652,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public static final int ZONES_FIELD_NUMBER = 118;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList zones_;
+  private com.google.protobuf.LazyStringArrayList zones_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1038,6 +1042,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * App Engine execution environment for this version.
+   *
    * Defaults to `standard`.
    * </pre>
    *
@@ -1062,6 +1067,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * App Engine execution environment for this version.
+   *
    * Defaults to `standard`.
    * </pre>
    *
@@ -1090,6 +1096,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Current serving status of this version. Only the versions with a
    * `SERVING` status create instances and can be billed.
+   *
    * `SERVING_STATUS_UNSPECIFIED` is an invalid value. Defaults to `SERVING`.
    * </pre>
    *
@@ -1107,6 +1114,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Current serving status of this version. Only the versions with a
    * `SERVING` status create instances and can be billed.
+   *
    * `SERVING_STATUS_UNSPECIFIED` is an invalid value. Defaults to `SERVING`.
    * </pre>
    *
@@ -1130,6 +1138,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Email address of the user who created this version.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -1154,6 +1163,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Email address of the user who created this version.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -1181,6 +1191,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Time that this version was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -1197,6 +1208,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Time that this version was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -1213,6 +1225,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Time that this version was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -1231,6 +1244,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Total size in bytes of all the files that are included in this version
    * and currently hosted on the App Engine disk.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -1415,6 +1429,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * An ordered list of URL-matching patterns that should be applied to incoming
    * requests. The first matching URL handles the request and other request
    * handlers are not attempted.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1431,6 +1446,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * An ordered list of URL-matching patterns that should be applied to incoming
    * requests. The first matching URL handles the request and other request
    * handlers are not attempted.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1448,6 +1464,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * An ordered list of URL-matching patterns that should be applied to incoming
    * requests. The first matching URL handles the request and other request
    * handlers are not attempted.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1464,6 +1481,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * An ordered list of URL-matching patterns that should be applied to incoming
    * requests. The first matching URL handles the request and other request
    * handlers are not attempted.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1480,6 +1498,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * An ordered list of URL-matching patterns that should be applied to incoming
    * requests. The first matching URL handles the request and other request
    * handlers are not attempted.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1499,6 +1518,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Custom static error pages. Limited to 10KB per page.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1513,6 +1533,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Custom static error pages. Limited to 10KB per page.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1528,6 +1549,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Custom static error pages. Limited to 10KB per page.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1542,6 +1564,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Custom static error pages. Limited to 10KB per page.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1556,6 +1579,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Custom static error pages. Limited to 10KB per page.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1576,6 +1600,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration for third-party Python runtime libraries that are required
    * by the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1591,6 +1616,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration for third-party Python runtime libraries that are required
    * by the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1607,6 +1633,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration for third-party Python runtime libraries that are required
    * by the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1622,6 +1649,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration for third-party Python runtime libraries that are required
    * by the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1637,6 +1665,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration for third-party Python runtime libraries that are required
    * by the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1655,6 +1684,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Serving configuration for
    * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1672,6 +1702,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Serving configuration for
    * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1691,6 +1722,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Serving configuration for
    * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1736,6 +1768,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables available to the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1759,6 +1792,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables available to the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1773,6 +1807,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables available to the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1794,6 +1829,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables available to the application.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1844,6 +1880,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables available to the build environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1867,6 +1904,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables available to the build environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1881,6 +1919,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables available to the build environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1902,6 +1941,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Environment variables available to the build environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1929,6 +1969,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * Only applicable if the corresponding
    * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
    * does not specify its own expiration time.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1948,6 +1989,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * Only applicable if the corresponding
    * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
    * does not specify its own expiration time.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1969,6 +2011,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * Only applicable if the corresponding
    * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
    * does not specify its own expiration time.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -1990,6 +2033,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * Configures health checking for instances. Unhealthy instances are
    * stopped and replaced with new instances.
    * Only applicable in the App Engine flexible environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2008,6 +2052,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * Configures health checking for instances. Unhealthy instances are
    * stopped and replaced with new instances.
    * Only applicable in the App Engine flexible environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2028,6 +2073,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * Configures health checking for instances. Unhealthy instances are
    * stopped and replaced with new instances.
    * Only applicable in the App Engine flexible environment.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2048,6 +2094,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configures readiness health checking for instances.
    * Unhealthy instances are not put into the backend traffic rotation.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2065,6 +2112,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configures readiness health checking for instances.
    * Unhealthy instances are not put into the backend traffic rotation.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2084,6 +2132,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configures readiness health checking for instances.
    * Unhealthy instances are not put into the backend traffic rotation.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2104,6 +2153,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configures liveness health checking for instances.
    * Unhealthy instances are stopped and replaced with new instances
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2121,6 +2171,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configures liveness health checking for instances.
    * Unhealthy instances are stopped and replaced with new instances
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2140,6 +2191,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configures liveness health checking for instances.
    * Unhealthy instances are stopped and replaced with new instances
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2162,6 +2214,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Files that match this pattern will not be built into this version.
    * Only applicable for Go runtimes.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2187,6 +2240,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Files that match this pattern will not be built into this version.
    * Only applicable for Go runtimes.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2214,6 +2268,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Code and application artifacts that make up this version.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2230,6 +2285,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Code and application artifacts that make up this version.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2248,6 +2304,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Code and application artifacts that make up this version.
+   *
    * Only returned in `GET` requests if `view=FULL` is set.
    * </pre>
    *
@@ -2270,6 +2327,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Serving URL for this version. Example:
    * "https://myversion-dot-myservice-dot-myapp.appspot.com"
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -2295,6 +2353,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Serving URL for this version. Example:
    * "https://myversion-dot-myservice-dot-myapp.appspot.com"
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -2322,6 +2381,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Cloud Endpoints configuration.
+   *
    * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
    * Proxy will be provided to serve the API implemented by the app.
    * </pre>
@@ -2339,6 +2399,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Cloud Endpoints configuration.
+   *
    * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
    * Proxy will be provided to serve the API implemented by the app.
    * </pre>
@@ -2358,6 +2419,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Cloud Endpoints configuration.
+   *
    * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
    * Proxy will be provided to serve the API implemented by the app.
    * </pre>
@@ -3215,8 +3277,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         networkBuilder_.dispose();
         networkBuilder_ = null;
       }
-      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       resources_ = null;
       if (resourcesBuilder_ != null) {
         resourcesBuilder_.dispose();
@@ -3356,11 +3417,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.inboundServices_ = inboundServices_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        zones_ = zones_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.zones_ = zones_;
       if (handlersBuilder_ == null) {
         if (((bitField0_ & 0x01000000) != 0)) {
           handlers_ = java.util.Collections.unmodifiableList(handlers_);
@@ -3403,6 +3459,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.network_ = networkBuilder_ == null ? network_ : networkBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        zones_.makeImmutable();
+        result.zones_ = zones_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.resources_ = resourcesBuilder_ == null ? resources_ : resourcesBuilder_.build();
@@ -3599,7 +3659,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (!other.zones_.isEmpty()) {
         if (zones_.isEmpty()) {
           zones_ = other.zones_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureZonesIsMutable();
           zones_.addAll(other.zones_);
@@ -4170,6 +4230,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the Version resource in the API.  Example:
      * `apps/myapp/services/default/versions/v1`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -4194,6 +4255,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the Version resource in the API.  Example:
      * `apps/myapp/services/default/versions/v1`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -4218,6 +4280,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the Version resource in the API.  Example:
      * `apps/myapp/services/default/versions/v1`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -4241,6 +4304,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the Version resource in the API.  Example:
      * `apps/myapp/services/default/versions/v1`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -4260,6 +4324,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the Version resource in the API.  Example:
      * `apps/myapp/services/default/versions/v1`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -5320,8 +5385,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Instance class that is used to run this version. Valid values are:
+     *
      * * AutomaticScaling: `F1`, `F2`, `F4`, `F4_1G`
      * * ManualScaling or BasicScaling: `B1`, `B2`, `B4`, `B8`, `B4_1G`
+     *
      * Defaults to `F1` for AutomaticScaling and `B1` for ManualScaling or
      * BasicScaling.
      * </pre>
@@ -5346,8 +5413,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Instance class that is used to run this version. Valid values are:
+     *
      * * AutomaticScaling: `F1`, `F2`, `F4`, `F4_1G`
      * * ManualScaling or BasicScaling: `B1`, `B2`, `B4`, `B8`, `B4_1G`
+     *
      * Defaults to `F1` for AutomaticScaling and `B1` for ManualScaling or
      * BasicScaling.
      * </pre>
@@ -5372,8 +5441,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Instance class that is used to run this version. Valid values are:
+     *
      * * AutomaticScaling: `F1`, `F2`, `F4`, `F4_1G`
      * * ManualScaling or BasicScaling: `B1`, `B2`, `B4`, `B8`, `B4_1G`
+     *
      * Defaults to `F1` for AutomaticScaling and `B1` for ManualScaling or
      * BasicScaling.
      * </pre>
@@ -5397,8 +5468,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Instance class that is used to run this version. Valid values are:
+     *
      * * AutomaticScaling: `F1`, `F2`, `F4`, `F4_1G`
      * * ManualScaling or BasicScaling: `B1`, `B2`, `B4`, `B8`, `B4_1G`
+     *
      * Defaults to `F1` for AutomaticScaling and `B1` for ManualScaling or
      * BasicScaling.
      * </pre>
@@ -5418,8 +5491,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Instance class that is used to run this version. Valid values are:
+     *
      * * AutomaticScaling: `F1`, `F2`, `F4`, `F4_1G`
      * * ManualScaling or BasicScaling: `B1`, `B2`, `B4`, `B8`, `B4_1G`
+     *
      * Defaults to `F1` for AutomaticScaling and `B1` for ManualScaling or
      * BasicScaling.
      * </pre>
@@ -5628,14 +5703,14 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return networkBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList zones_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList zones_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureZonesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!zones_.isModifiable()) {
         zones_ = new com.google.protobuf.LazyStringArrayList(zones_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -5650,7 +5725,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the zones.
      */
     public com.google.protobuf.ProtocolStringList getZonesList() {
-      return zones_.getUnmodifiableView();
+      zones_.makeImmutable();
+      return zones_;
     }
     /**
      *
@@ -5719,6 +5795,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       ensureZonesIsMutable();
       zones_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5741,6 +5818,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       ensureZonesIsMutable();
       zones_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5760,6 +5838,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllZones(java.lang.Iterable<java.lang.String> values) {
       ensureZonesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, zones_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5776,8 +5855,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZones() {
-      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -5801,6 +5881,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureZonesIsMutable();
       zones_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6555,6 +6636,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * App Engine execution environment for this version.
+     *
      * Defaults to `standard`.
      * </pre>
      *
@@ -6578,6 +6660,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * App Engine execution environment for this version.
+     *
      * Defaults to `standard`.
      * </pre>
      *
@@ -6601,6 +6684,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * App Engine execution environment for this version.
+     *
      * Defaults to `standard`.
      * </pre>
      *
@@ -6623,6 +6707,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * App Engine execution environment for this version.
+     *
      * Defaults to `standard`.
      * </pre>
      *
@@ -6641,6 +6726,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * App Engine execution environment for this version.
+     *
      * Defaults to `standard`.
      * </pre>
      *
@@ -6667,6 +6753,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Current serving status of this version. Only the versions with a
      * `SERVING` status create instances and can be billed.
+     *
      * `SERVING_STATUS_UNSPECIFIED` is an invalid value. Defaults to `SERVING`.
      * </pre>
      *
@@ -6684,6 +6771,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Current serving status of this version. Only the versions with a
      * `SERVING` status create instances and can be billed.
+     *
      * `SERVING_STATUS_UNSPECIFIED` is an invalid value. Defaults to `SERVING`.
      * </pre>
      *
@@ -6704,6 +6792,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Current serving status of this version. Only the versions with a
      * `SERVING` status create instances and can be billed.
+     *
      * `SERVING_STATUS_UNSPECIFIED` is an invalid value. Defaults to `SERVING`.
      * </pre>
      *
@@ -6723,6 +6812,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Current serving status of this version. Only the versions with a
      * `SERVING` status create instances and can be billed.
+     *
      * `SERVING_STATUS_UNSPECIFIED` is an invalid value. Defaults to `SERVING`.
      * </pre>
      *
@@ -6746,6 +6836,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Current serving status of this version. Only the versions with a
      * `SERVING` status create instances and can be billed.
+     *
      * `SERVING_STATUS_UNSPECIFIED` is an invalid value. Defaults to `SERVING`.
      * </pre>
      *
@@ -6766,6 +6857,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Email address of the user who created this version.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -6789,6 +6881,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Email address of the user who created this version.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -6812,6 +6905,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Email address of the user who created this version.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -6834,6 +6928,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Email address of the user who created this version.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -6852,6 +6947,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Email address of the user who created this version.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -6882,6 +6978,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Time that this version was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -6897,6 +6994,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Time that this version was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -6918,6 +7016,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Time that this version was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -6941,6 +7040,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Time that this version was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -6961,6 +7061,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Time that this version was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -6987,6 +7088,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Time that this version was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -7007,6 +7109,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Time that this version was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -7022,6 +7125,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Time that this version was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -7041,6 +7145,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Time that this version was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -7070,6 +7175,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Total size in bytes of all the files that are included in this version
      * and currently hosted on the App Engine disk.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -7087,6 +7193,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Total size in bytes of all the files that are included in this version
      * and currently hosted on the App Engine disk.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -7108,6 +7215,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Total size in bytes of all the files that are included in this version
      * and currently hosted on the App Engine disk.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -7483,6 +7591,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7502,6 +7611,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7521,6 +7631,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7540,6 +7651,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7565,6 +7677,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7587,6 +7700,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7612,6 +7726,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7637,6 +7752,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7659,6 +7775,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7681,6 +7798,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7704,6 +7822,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7726,6 +7845,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7748,6 +7868,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7763,6 +7884,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7782,6 +7904,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7802,6 +7925,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7818,6 +7942,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7834,6 +7959,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * An ordered list of URL-matching patterns that should be applied to incoming
      * requests. The first matching URL handles the request and other request
      * handlers are not attempted.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7882,6 +8008,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7899,6 +8026,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7916,6 +8044,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7933,6 +8062,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7956,6 +8086,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -7977,6 +8108,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8000,6 +8132,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8023,6 +8156,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8043,6 +8177,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8064,6 +8199,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8085,6 +8221,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8105,6 +8242,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8125,6 +8263,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8138,6 +8277,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8155,6 +8295,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8173,6 +8314,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8187,6 +8329,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8201,6 +8344,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Custom static error pages. Limited to 10KB per page.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8253,6 +8397,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8271,6 +8416,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8289,6 +8435,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8307,6 +8454,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8331,6 +8479,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8353,6 +8502,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8377,6 +8527,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8401,6 +8552,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8422,6 +8574,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8444,6 +8597,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8466,6 +8620,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8487,6 +8642,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8508,6 +8664,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8522,6 +8679,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8540,6 +8698,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8559,6 +8718,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8574,6 +8734,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8589,6 +8750,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration for third-party Python runtime libraries that are required
      * by the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8627,6 +8789,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving configuration for
      * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8643,6 +8806,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving configuration for
      * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8665,6 +8829,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving configuration for
      * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8689,6 +8854,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving configuration for
      * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8710,6 +8876,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving configuration for
      * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8737,6 +8904,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving configuration for
      * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8758,6 +8926,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving configuration for
      * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8774,6 +8943,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving configuration for
      * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8794,6 +8964,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving configuration for
      * [Google Cloud Endpoints](https://cloud.google.com/appengine/docs/python/endpoints/).
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8849,6 +9020,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8872,6 +9044,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8886,6 +9059,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8907,6 +9081,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8934,6 +9109,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8957,6 +9133,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -8978,6 +9155,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the application.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9023,6 +9201,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the build environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9046,6 +9225,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the build environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9060,6 +9240,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the build environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9082,6 +9263,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the build environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9110,6 +9292,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the build environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9133,6 +9316,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the build environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9154,6 +9338,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Environment variables available to the build environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9180,6 +9365,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Only applicable if the corresponding
      * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
      * does not specify its own expiration time.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9198,6 +9384,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Only applicable if the corresponding
      * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
      * does not specify its own expiration time.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9222,6 +9409,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Only applicable if the corresponding
      * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
      * does not specify its own expiration time.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9248,6 +9436,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Only applicable if the corresponding
      * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
      * does not specify its own expiration time.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9271,6 +9460,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Only applicable if the corresponding
      * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
      * does not specify its own expiration time.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9300,6 +9490,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Only applicable if the corresponding
      * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
      * does not specify its own expiration time.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9323,6 +9514,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Only applicable if the corresponding
      * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
      * does not specify its own expiration time.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9341,6 +9533,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Only applicable if the corresponding
      * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
      * does not specify its own expiration time.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9363,6 +9556,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Only applicable if the corresponding
      * [StaticFilesHandler](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler)
      * does not specify its own expiration time.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9398,6 +9592,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Configures health checking for instances. Unhealthy instances are
      * stopped and replaced with new instances.
      * Only applicable in the App Engine flexible environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9415,6 +9610,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Configures health checking for instances. Unhealthy instances are
      * stopped and replaced with new instances.
      * Only applicable in the App Engine flexible environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9438,6 +9634,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Configures health checking for instances. Unhealthy instances are
      * stopped and replaced with new instances.
      * Only applicable in the App Engine flexible environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9463,6 +9660,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Configures health checking for instances. Unhealthy instances are
      * stopped and replaced with new instances.
      * Only applicable in the App Engine flexible environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9485,6 +9683,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Configures health checking for instances. Unhealthy instances are
      * stopped and replaced with new instances.
      * Only applicable in the App Engine flexible environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9513,6 +9712,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Configures health checking for instances. Unhealthy instances are
      * stopped and replaced with new instances.
      * Only applicable in the App Engine flexible environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9535,6 +9735,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Configures health checking for instances. Unhealthy instances are
      * stopped and replaced with new instances.
      * Only applicable in the App Engine flexible environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9552,6 +9753,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Configures health checking for instances. Unhealthy instances are
      * stopped and replaced with new instances.
      * Only applicable in the App Engine flexible environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9573,6 +9775,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * Configures health checking for instances. Unhealthy instances are
      * stopped and replaced with new instances.
      * Only applicable in the App Engine flexible environment.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9607,6 +9810,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures readiness health checking for instances.
      * Unhealthy instances are not put into the backend traffic rotation.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9623,6 +9827,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures readiness health checking for instances.
      * Unhealthy instances are not put into the backend traffic rotation.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9645,6 +9850,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures readiness health checking for instances.
      * Unhealthy instances are not put into the backend traffic rotation.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9669,6 +9875,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures readiness health checking for instances.
      * Unhealthy instances are not put into the backend traffic rotation.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9691,6 +9898,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures readiness health checking for instances.
      * Unhealthy instances are not put into the backend traffic rotation.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9718,6 +9926,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures readiness health checking for instances.
      * Unhealthy instances are not put into the backend traffic rotation.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9739,6 +9948,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures readiness health checking for instances.
      * Unhealthy instances are not put into the backend traffic rotation.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9755,6 +9965,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures readiness health checking for instances.
      * Unhealthy instances are not put into the backend traffic rotation.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9775,6 +9986,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures readiness health checking for instances.
      * Unhealthy instances are not put into the backend traffic rotation.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9809,6 +10021,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures liveness health checking for instances.
      * Unhealthy instances are stopped and replaced with new instances
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9825,6 +10038,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures liveness health checking for instances.
      * Unhealthy instances are stopped and replaced with new instances
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9847,6 +10061,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures liveness health checking for instances.
      * Unhealthy instances are stopped and replaced with new instances
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9871,6 +10086,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures liveness health checking for instances.
      * Unhealthy instances are stopped and replaced with new instances
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9892,6 +10108,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures liveness health checking for instances.
      * Unhealthy instances are stopped and replaced with new instances
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9919,6 +10136,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures liveness health checking for instances.
      * Unhealthy instances are stopped and replaced with new instances
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9940,6 +10158,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures liveness health checking for instances.
      * Unhealthy instances are stopped and replaced with new instances
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9956,6 +10175,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures liveness health checking for instances.
      * Unhealthy instances are stopped and replaced with new instances
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -9976,6 +10196,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configures liveness health checking for instances.
      * Unhealthy instances are stopped and replaced with new instances
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10005,6 +10226,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Files that match this pattern will not be built into this version.
      * Only applicable for Go runtimes.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10029,6 +10251,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Files that match this pattern will not be built into this version.
      * Only applicable for Go runtimes.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10053,6 +10276,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Files that match this pattern will not be built into this version.
      * Only applicable for Go runtimes.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10076,6 +10300,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Files that match this pattern will not be built into this version.
      * Only applicable for Go runtimes.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10095,6 +10320,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Files that match this pattern will not be built into this version.
      * Only applicable for Go runtimes.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10125,6 +10351,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Code and application artifacts that make up this version.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10140,6 +10367,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Code and application artifacts that make up this version.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10161,6 +10389,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Code and application artifacts that make up this version.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10184,6 +10413,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Code and application artifacts that make up this version.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10204,6 +10434,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Code and application artifacts that make up this version.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10230,6 +10461,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Code and application artifacts that make up this version.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10250,6 +10482,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Code and application artifacts that make up this version.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10265,6 +10498,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Code and application artifacts that make up this version.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10284,6 +10518,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Code and application artifacts that make up this version.
+     *
      * Only returned in `GET` requests if `view=FULL` is set.
      * </pre>
      *
@@ -10313,6 +10548,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving URL for this version. Example:
      * "https://myversion-dot-myservice-dot-myapp.appspot.com"
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -10337,6 +10573,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving URL for this version. Example:
      * "https://myversion-dot-myservice-dot-myapp.appspot.com"
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -10361,6 +10598,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving URL for this version. Example:
      * "https://myversion-dot-myservice-dot-myapp.appspot.com"
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -10384,6 +10622,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving URL for this version. Example:
      * "https://myversion-dot-myservice-dot-myapp.appspot.com"
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -10403,6 +10642,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Serving URL for this version. Example:
      * "https://myversion-dot-myservice-dot-myapp.appspot.com"
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -10433,6 +10673,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Endpoints configuration.
+     *
      * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
      * Proxy will be provided to serve the API implemented by the app.
      * </pre>
@@ -10449,6 +10690,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Endpoints configuration.
+     *
      * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
      * Proxy will be provided to serve the API implemented by the app.
      * </pre>
@@ -10471,6 +10713,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Endpoints configuration.
+     *
      * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
      * Proxy will be provided to serve the API implemented by the app.
      * </pre>
@@ -10495,6 +10738,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Endpoints configuration.
+     *
      * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
      * Proxy will be provided to serve the API implemented by the app.
      * </pre>
@@ -10517,6 +10761,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Endpoints configuration.
+     *
      * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
      * Proxy will be provided to serve the API implemented by the app.
      * </pre>
@@ -10545,6 +10790,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Endpoints configuration.
+     *
      * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
      * Proxy will be provided to serve the API implemented by the app.
      * </pre>
@@ -10566,6 +10812,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Endpoints configuration.
+     *
      * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
      * Proxy will be provided to serve the API implemented by the app.
      * </pre>
@@ -10582,6 +10829,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Endpoints configuration.
+     *
      * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
      * Proxy will be provided to serve the API implemented by the app.
      * </pre>
@@ -10602,6 +10850,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Endpoints configuration.
+     *
      * If endpoints_api_service is set, the Cloud Endpoints Extensible Service
      * Proxy will be provided to serve the API implemented by the app.
      * </pre>

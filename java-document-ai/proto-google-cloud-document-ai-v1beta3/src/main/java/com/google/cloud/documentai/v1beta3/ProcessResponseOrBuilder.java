@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,15 +66,15 @@ public interface ProcessResponseOrBuilder
    *
    * <pre>
    * The name of the operation triggered by the processed document. If the human
-   * review process is not triggered, this field will be empty. It has the same
-   * response type and metadata as the long running operation returned by
-   * ReviewDocument method.
+   * review process isn't triggered, this field is empty. It has the same
+   * response type and metadata as the long-running operation returned by
+   * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument].
    * </pre>
    *
    * <code>string human_review_operation = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=434
+   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=483
    * @return The humanReviewOperation.
    */
   @java.lang.Deprecated
@@ -84,15 +84,15 @@ public interface ProcessResponseOrBuilder
    *
    * <pre>
    * The name of the operation triggered by the processed document. If the human
-   * review process is not triggered, this field will be empty. It has the same
-   * response type and metadata as the long running operation returned by
-   * ReviewDocument method.
+   * review process isn't triggered, this field is empty. It has the same
+   * response type and metadata as the long-running operation returned by
+   * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument].
    * </pre>
    *
    * <code>string human_review_operation = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=434
+   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=483
    * @return The bytes for humanReviewOperation.
    */
   @java.lang.Deprecated

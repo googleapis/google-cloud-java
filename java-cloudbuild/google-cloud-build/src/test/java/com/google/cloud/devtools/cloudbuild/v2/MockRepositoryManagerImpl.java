@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,8 @@ import com.google.cloudbuild.v2.CreateConnectionRequest;
 import com.google.cloudbuild.v2.CreateRepositoryRequest;
 import com.google.cloudbuild.v2.DeleteConnectionRequest;
 import com.google.cloudbuild.v2.DeleteRepositoryRequest;
+import com.google.cloudbuild.v2.FetchGitRefsRequest;
+import com.google.cloudbuild.v2.FetchGitRefsResponse;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse;
 import com.google.cloudbuild.v2.FetchReadTokenRequest;
@@ -350,6 +352,27 @@ public class MockRepositoryManagerImpl extends RepositoryManagerImplBase {
                   "Unrecognized response type %s for method FetchLinkableRepositories, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchLinkableRepositoriesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchGitRefs(
+      FetchGitRefsRequest request, StreamObserver<FetchGitRefsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchGitRefsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchGitRefsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchGitRefs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchGitRefsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

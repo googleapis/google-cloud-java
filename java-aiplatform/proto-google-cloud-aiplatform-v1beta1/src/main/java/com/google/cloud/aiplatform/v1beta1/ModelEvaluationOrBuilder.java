@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,8 +184,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -199,8 +200,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -214,8 +216,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -230,8 +233,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -405,4 +409,39 @@ public interface ModelEvaluationOrBuilder
    * <code>.google.protobuf.Value metadata = 11;</code>
    */
   com.google.protobuf.ValueOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the configuration for bias detection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+   *
+   * @return Whether the biasConfigs field is set.
+   */
+  boolean hasBiasConfigs();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the configuration for bias detection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+   *
+   * @return The biasConfigs.
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig getBiasConfigs();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the configuration for bias detection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig bias_configs = 12;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfigOrBuilder getBiasConfigsOrBuilder();
 }

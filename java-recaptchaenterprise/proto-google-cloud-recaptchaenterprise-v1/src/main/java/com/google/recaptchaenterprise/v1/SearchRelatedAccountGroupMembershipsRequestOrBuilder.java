@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public interface SearchRelatedAccountGroupMembershipsRequestOrBuilder
    * <pre>
    * Required. The name of the project to search related account group
    * memberships from. Specify the project name in the following format:
-   * "projects/{project}".
+   * `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface SearchRelatedAccountGroupMembershipsRequestOrBuilder
    * <pre>
    * Required. The name of the project to search related account group
    * memberships from. Specify the project name in the following format:
-   * "projects/{project}".
+   * `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -60,8 +60,8 @@ public interface SearchRelatedAccountGroupMembershipsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The unique stable hashed user identifier we should search
-   * connections to. The identifier should correspond to a `hashed_account_id`
+   * Optional. The unique stable hashed user identifier used to search
+   * connections. The identifier should correspond to a `hashed_account_id`
    * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
    * </pre>
    *
@@ -93,6 +93,7 @@ public interface SearchRelatedAccountGroupMembershipsRequestOrBuilder
    * Optional. A page token, received from a previous
    * `SearchRelatedAccountGroupMemberships` call. Provide this to retrieve the
    * subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `SearchRelatedAccountGroupMemberships` must match the call that provided
    * the page token.
@@ -110,6 +111,7 @@ public interface SearchRelatedAccountGroupMembershipsRequestOrBuilder
    * Optional. A page token, received from a previous
    * `SearchRelatedAccountGroupMemberships` call. Provide this to retrieve the
    * subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `SearchRelatedAccountGroupMemberships` must match the call that provided
    * the page token.

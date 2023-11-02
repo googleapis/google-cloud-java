@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface HttpsTriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. The deployed url for the function.
+   * Output only. The deployed URL for the function.
    * </pre>
    *
    * <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -39,7 +39,7 @@ public interface HttpsTriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. The deployed url for the function.
+   * Output only. The deployed URL for the function.
    * </pre>
    *
    * <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

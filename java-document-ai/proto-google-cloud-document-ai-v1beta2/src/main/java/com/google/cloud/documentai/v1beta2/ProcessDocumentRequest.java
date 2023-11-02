@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
     return new ProcessDocumentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta2.DocumentAiProto
         .internal_static_google_cloud_documentai_v1beta2_ProcessDocumentRequest_descriptor;
@@ -77,7 +72,9 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no location is specified, a region will be chosen automatically.
    * This field is only populated when used in ProcessDocument method.
    * </pre>
@@ -103,7 +100,9 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no location is specified, a region will be chosen automatically.
    * This field is only populated when used in ProcessDocument method.
    * </pre>
@@ -187,13 +186,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The desired output location. This field is only needed in
+   * The desired output location. This field is only needed in
    * BatchProcessDocumentsRequest.
    * </pre>
    *
-   * <code>
-   * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -205,13 +202,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The desired output location. This field is only needed in
+   * The desired output location. This field is only needed in
    * BatchProcessDocumentsRequest.
    * </pre>
    *
-   * <code>
-   * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
    *
    * @return The outputConfig.
    */
@@ -225,13 +220,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The desired output location. This field is only needed in
+   * The desired output location. This field is only needed in
    * BatchProcessDocumentsRequest.
    * </pre>
    *
-   * <code>
-   * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta2.OutputConfigOrBuilder getOutputConfigOrBuilder() {
@@ -1177,7 +1170,9 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no location is specified, a region will be chosen automatically.
      * This field is only populated when used in ProcessDocument method.
      * </pre>
@@ -1202,7 +1197,9 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no location is specified, a region will be chosen automatically.
      * This field is only populated when used in ProcessDocument method.
      * </pre>
@@ -1227,7 +1224,9 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no location is specified, a region will be chosen automatically.
      * This field is only populated when used in ProcessDocument method.
      * </pre>
@@ -1251,7 +1250,9 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no location is specified, a region will be chosen automatically.
      * This field is only populated when used in ProcessDocument method.
      * </pre>
@@ -1271,7 +1272,9 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no location is specified, a region will be chosen automatically.
      * This field is only populated when used in ProcessDocument method.
      * </pre>
@@ -1505,13 +1508,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The desired output location. This field is only needed in
+     * The desired output location. This field is only needed in
      * BatchProcessDocumentsRequest.
      * </pre>
      *
-     * <code>
-     * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
      *
      * @return Whether the outputConfig field is set.
      */
@@ -1522,13 +1523,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The desired output location. This field is only needed in
+     * The desired output location. This field is only needed in
      * BatchProcessDocumentsRequest.
      * </pre>
      *
-     * <code>
-     * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
      *
      * @return The outputConfig.
      */
@@ -1545,13 +1544,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The desired output location. This field is only needed in
+     * The desired output location. This field is only needed in
      * BatchProcessDocumentsRequest.
      * </pre>
      *
-     * <code>
-     * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
      */
     public Builder setOutputConfig(com.google.cloud.documentai.v1beta2.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -1570,13 +1567,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The desired output location. This field is only needed in
+     * The desired output location. This field is only needed in
      * BatchProcessDocumentsRequest.
      * </pre>
      *
-     * <code>
-     * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
      */
     public Builder setOutputConfig(
         com.google.cloud.documentai.v1beta2.OutputConfig.Builder builderForValue) {
@@ -1593,13 +1588,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The desired output location. This field is only needed in
+     * The desired output location. This field is only needed in
      * BatchProcessDocumentsRequest.
      * </pre>
      *
-     * <code>
-     * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
      */
     public Builder mergeOutputConfig(com.google.cloud.documentai.v1beta2.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -1622,13 +1615,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The desired output location. This field is only needed in
+     * The desired output location. This field is only needed in
      * BatchProcessDocumentsRequest.
      * </pre>
      *
-     * <code>
-     * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
      */
     public Builder clearOutputConfig() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1644,13 +1635,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The desired output location. This field is only needed in
+     * The desired output location. This field is only needed in
      * BatchProcessDocumentsRequest.
      * </pre>
      *
-     * <code>
-     * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
      */
     public com.google.cloud.documentai.v1beta2.OutputConfig.Builder getOutputConfigBuilder() {
       bitField0_ |= 0x00000004;
@@ -1661,13 +1650,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The desired output location. This field is only needed in
+     * The desired output location. This field is only needed in
      * BatchProcessDocumentsRequest.
      * </pre>
      *
-     * <code>
-     * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
      */
     public com.google.cloud.documentai.v1beta2.OutputConfigOrBuilder getOutputConfigOrBuilder() {
       if (outputConfigBuilder_ != null) {
@@ -1682,13 +1669,11 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The desired output location. This field is only needed in
+     * The desired output location. This field is only needed in
      * BatchProcessDocumentsRequest.
      * </pre>
      *
-     * <code>
-     * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1beta2.OutputConfig,

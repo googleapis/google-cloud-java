@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
 
   private PhishingProtectionServiceV1Beta1Grpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.phishingprotection.v1beta1.PhishingProtectionServiceV1Beta1";
 
   // Static method descriptors that strictly reflect the proto.
@@ -381,9 +381,9 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
   private static final class PhishingProtectionServiceV1Beta1MethodDescriptorSupplier
       extends PhishingProtectionServiceV1Beta1BaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    PhishingProtectionServiceV1Beta1MethodDescriptorSupplier(String methodName) {
+    PhishingProtectionServiceV1Beta1MethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

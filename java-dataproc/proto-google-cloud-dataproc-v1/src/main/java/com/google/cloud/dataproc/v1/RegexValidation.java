@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
   }
 
   private RegexValidation() {
-    regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    regexes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RegexValidation();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
   public static final int REGEXES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList regexes_;
+  private com.google.protobuf.LazyStringArrayList regexes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -343,8 +339,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      regexes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -372,7 +367,6 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dataproc.v1.RegexValidation buildPartial() {
       com.google.cloud.dataproc.v1.RegexValidation result =
           new com.google.cloud.dataproc.v1.RegexValidation(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -380,16 +374,12 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.RegexValidation result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        regexes_ = regexes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.regexes_ = regexes_;
-    }
-
     private void buildPartial0(com.google.cloud.dataproc.v1.RegexValidation result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        regexes_.makeImmutable();
+        result.regexes_ = regexes_;
+      }
     }
 
     @java.lang.Override
@@ -440,7 +430,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
       if (!other.regexes_.isEmpty()) {
         if (regexes_.isEmpty()) {
           regexes_ = other.regexes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureRegexesIsMutable();
           regexes_.addAll(other.regexes_);
@@ -499,14 +489,14 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList regexes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList regexes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRegexesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!regexes_.isModifiable()) {
         regexes_ = new com.google.protobuf.LazyStringArrayList(regexes_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -522,7 +512,8 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the regexes.
      */
     public com.google.protobuf.ProtocolStringList getRegexesList() {
-      return regexes_.getUnmodifiableView();
+      regexes_.makeImmutable();
+      return regexes_;
     }
     /**
      *
@@ -595,6 +586,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
       }
       ensureRegexesIsMutable();
       regexes_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -618,6 +610,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
       }
       ensureRegexesIsMutable();
       regexes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -638,6 +631,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
     public Builder addAllRegexes(java.lang.Iterable<java.lang.String> values) {
       ensureRegexesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, regexes_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -655,8 +649,9 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRegexes() {
-      regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      regexes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -681,6 +676,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureRegexesIsMutable();
       regexes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

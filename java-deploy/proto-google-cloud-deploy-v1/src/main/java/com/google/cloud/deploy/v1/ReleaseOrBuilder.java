@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Release`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,9 +40,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Release`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -107,9 +105,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -120,9 +117,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -136,9 +132,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -149,9 +144,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -166,9 +160,8 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -180,14 +173,15 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -199,14 +193,15 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -221,14 +216,15 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -240,14 +236,15 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -263,14 +260,15 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -682,8 +680,9 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * The Skaffold version to use when operating on this release, such as
-   * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-   * specific set of versions.
+   * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+   * of versions.
+   *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>
    *
@@ -697,8 +696,9 @@ public interface ReleaseOrBuilder
    *
    * <pre>
    * The Skaffold version to use when operating on this release, such as
-   * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-   * specific set of versions.
+   * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+   * of versions.
+   *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>
    *
@@ -897,4 +897,72 @@ public interface ReleaseOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.Release.ReleaseConditionOrBuilder getConditionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for all targets in this release.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDeployParametersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for all targets in this release.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsDeployParameters(java.lang.String key);
+  /** Use {@link #getDeployParametersMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getDeployParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for all targets in this release.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getDeployParametersMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for all targets in this release.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getDeployParametersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for all targets in this release.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getDeployParametersOrThrow(java.lang.String key);
 }

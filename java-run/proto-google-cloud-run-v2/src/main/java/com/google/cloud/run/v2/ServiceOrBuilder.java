@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface ServiceOrBuilder
    * The fully qualified name of this Service. In CreateServiceRequest, this
    * field is ignored, and instead composed from CreateServiceRequest.parent and
    * CreateServiceRequest.service_id.
+   *
    * Format:
    * projects/{project}/locations/{location}/services/{service_id}
    * </pre>
@@ -46,6 +47,7 @@ public interface ServiceOrBuilder
    * The fully qualified name of this Service. In CreateServiceRequest, this
    * field is ignored, and instead composed from CreateServiceRequest.parent and
    * CreateServiceRequest.service_id.
+   *
    * Format:
    * projects/{project}/locations/{location}/services/{service_id}
    * </pre>
@@ -139,6 +141,7 @@ public interface ServiceOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -159,6 +162,7 @@ public interface ServiceOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -182,6 +186,7 @@ public interface ServiceOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -202,6 +207,7 @@ public interface ServiceOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -226,6 +232,7 @@ public interface ServiceOrBuilder
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -243,10 +250,12 @@ public interface ServiceOrBuilder
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected in new resources. All system
    * annotations in v1 now have a corresponding field in v2 Service.
+   *
    * &lt;p&gt;This field follows Kubernetes
    * annotations' namespacing, limits, and rules.
    * </pre>
@@ -261,10 +270,12 @@ public interface ServiceOrBuilder
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected in new resources. All system
    * annotations in v1 now have a corresponding field in v2 Service.
+   *
    * &lt;p&gt;This field follows Kubernetes
    * annotations' namespacing, limits, and rules.
    * </pre>
@@ -282,10 +293,12 @@ public interface ServiceOrBuilder
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected in new resources. All system
    * annotations in v1 now have a corresponding field in v2 Service.
+   *
    * &lt;p&gt;This field follows Kubernetes
    * annotations' namespacing, limits, and rules.
    * </pre>
@@ -300,10 +313,12 @@ public interface ServiceOrBuilder
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected in new resources. All system
    * annotations in v1 now have a corresponding field in v2 Service.
+   *
    * &lt;p&gt;This field follows Kubernetes
    * annotations' namespacing, limits, and rules.
    * </pre>
@@ -322,10 +337,12 @@ public interface ServiceOrBuilder
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected in new resources. All system
    * annotations in v1 now have a corresponding field in v2 Service.
+   *
    * &lt;p&gt;This field follows Kubernetes
    * annotations' namespacing, limits, and rules.
    * </pre>
@@ -1109,6 +1126,73 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @return A list containing the customAudiences.
+   */
+  java.util.List<java.lang.String> getCustomAudiencesList();
+  /**
+   *
+   *
+   * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @return The count of customAudiences.
+   */
+  int getCustomAudiencesCount();
+  /**
+   *
+   *
+   * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The customAudiences at the given index.
+   */
+  java.lang.String getCustomAudiences(int index);
+  /**
+   *
+   *
+   * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the customAudiences at the given index.
+   */
+  com.google.protobuf.ByteString getCustomAudiencesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Reserved for future use.
    * </pre>
    *
@@ -1124,6 +1208,7 @@ public interface ServiceOrBuilder
    * <pre>
    * Output only. Returns true if the Service is currently being acted upon by
    * the system to bring it into the desired state.
+   *
    * When a new Service is created, or an existing one is updated, Cloud Run
    * will asynchronously perform all necessary steps to bring the Service to the
    * desired serving state. This process is called reconciliation.
@@ -1134,9 +1219,11 @@ public interface ServiceOrBuilder
    * succeeded and the serving state matches the Service, or there was an error,
    * and reconciliation failed. This state can be found in
    * `terminal_condition.state`.
+   *
    * If reconciliation succeeded, the following fields will match: `traffic` and
    * `traffic_statuses`, `observed_generation` and `generation`,
    * `latest_ready_revision` and `latest_created_revision`.
+   *
    * If reconciliation failed, `traffic_statuses`, `observed_generation`, and
    * `latest_ready_revision` will have the state of the last serving revision,
    * or empty for newly created Services. Additional information on the failure

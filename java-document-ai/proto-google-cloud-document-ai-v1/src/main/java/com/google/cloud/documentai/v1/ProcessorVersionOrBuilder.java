@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -261,10 +261,10 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
-   * Denotes that this ProcessorVersion is managed by google.
+   * Output only. Denotes that this `ProcessorVersion` is managed by Google.
    * </pre>
    *
-   * <code>bool google_managed = 11;</code>
+   * <code>bool google_managed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The googleManaged.
    */

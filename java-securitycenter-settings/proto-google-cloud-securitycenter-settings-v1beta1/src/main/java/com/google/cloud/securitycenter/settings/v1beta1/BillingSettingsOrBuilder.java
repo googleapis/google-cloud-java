@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,6 +127,7 @@ public interface BillingSettingsOrBuilder
    *
    * <pre>
    * Output only. The absolute point in time when the subscription expires.
+   *
    * If this field is populated and billing_tier is STANDARD, this is
    * indication of a point in the _past_ when a PREMIUM access ended.
    * </pre>
@@ -142,6 +143,7 @@ public interface BillingSettingsOrBuilder
    *
    * <pre>
    * Output only. The absolute point in time when the subscription expires.
+   *
    * If this field is populated and billing_tier is STANDARD, this is
    * indication of a point in the _past_ when a PREMIUM access ended.
    * </pre>
@@ -157,6 +159,7 @@ public interface BillingSettingsOrBuilder
    *
    * <pre>
    * Output only. The absolute point in time when the subscription expires.
+   *
    * If this field is populated and billing_tier is STANDARD, this is
    * indication of a point in the _past_ when a PREMIUM access ended.
    * </pre>

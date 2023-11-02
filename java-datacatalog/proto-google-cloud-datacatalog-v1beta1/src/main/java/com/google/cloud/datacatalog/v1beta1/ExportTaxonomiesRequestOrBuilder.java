@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -138,6 +138,5 @@ public interface ExportTaxonomiesRequestOrBuilder
    */
   boolean getSerializedTaxonomies();
 
-  public com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest.DestinationCase
-      getDestinationCase();
+  com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest.DestinationCase getDestinationCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,10 +86,10 @@ public final class ServiceUsageProto {
     java.lang.String[] descriptorData = {
       "\n-google/api/serviceusage/v1/serviceusag"
           + "e.proto\022\032google.api.serviceusage.v1\032\034goo"
-          + "gle/api/annotations.proto\032*google/api/se"
-          + "rviceusage/v1/resources.proto\032#google/lo"
-          + "ngrunning/operations.proto\032\027google/api/c"
-          + "lient.proto\"$\n\024EnableServiceRequest\022\014\n\004n"
+          + "gle/api/annotations.proto\032\027google/api/cl"
+          + "ient.proto\032*google/api/serviceusage/v1/r"
+          + "esources.proto\032#google/longrunning/opera"
+          + "tions.proto\"$\n\024EnableServiceRequest\022\014\n\004n"
           + "ame\030\001 \001(\t\"M\n\025EnableServiceResponse\0224\n\007se"
           + "rvice\030\001 \001(\0132#.google.api.serviceusage.v1"
           + ".Service\"\222\002\n\025DisableServiceRequest\022\014\n\004na"
@@ -121,14 +121,14 @@ public final class ServiceUsageProto {
           + "ce2\350\t\n\014ServiceUsage\022\272\001\n\rEnableService\0220."
           + "google.api.serviceusage.v1.EnableService"
           + "Request\032\035.google.longrunning.Operation\"X"
-          + "\202\323\344\223\002%\" /v1/{name=*/*/services/*}:enable"
-          + ":\001*\312A*\n\025EnableServiceResponse\022\021Operation"
-          + "Metadata\022\276\001\n\016DisableService\0221.google.api"
+          + "\312A*\n\025EnableServiceResponse\022\021OperationMet"
+          + "adata\202\323\344\223\002%\" /v1/{name=*/*/services/*}:e"
+          + "nable:\001*\022\276\001\n\016DisableService\0221.google.api"
           + ".serviceusage.v1.DisableServiceRequest\032\035"
-          + ".google.longrunning.Operation\"Z\202\323\344\223\002&\"!/"
-          + "v1/{name=*/*/services/*}:disable:\001*\312A+\n\026"
-          + "DisableServiceResponse\022\021OperationMetadat"
-          + "a\022\203\001\n\nGetService\022-.google.api.serviceusa"
+          + ".google.longrunning.Operation\"Z\312A+\n\026Disa"
+          + "bleServiceResponse\022\021OperationMetadata\202\323\344"
+          + "\223\002&\"!/v1/{name=*/*/services/*}:disable:\001"
+          + "*\022\203\001\n\nGetService\022-.google.api.serviceusa"
           + "ge.v1.GetServiceRequest\032#.google.api.ser"
           + "viceusage.v1.Service\"!\202\323\344\223\002\033\022\031/v1/{name="
           + "*/*/services/*}\022\224\001\n\014ListServices\022/.googl"
@@ -137,10 +137,10 @@ public final class ServiceUsageProto {
           + "cesResponse\"!\202\323\344\223\002\033\022\031/v1/{parent=*/*}/se"
           + "rvices\022\321\001\n\023BatchEnableServices\0226.google."
           + "api.serviceusage.v1.BatchEnableServicesR"
-          + "equest\032\035.google.longrunning.Operation\"c\202"
-          + "\323\344\223\002*\"%/v1/{parent=*/*}/services:batchEn"
-          + "able:\001*\312A0\n\033BatchEnableServicesResponse\022"
-          + "\021OperationMetadata\022\251\001\n\020BatchGetServices\022"
+          + "equest\032\035.google.longrunning.Operation\"c\312"
+          + "A0\n\033BatchEnableServicesResponse\022\021Operati"
+          + "onMetadata\202\323\344\223\002*\"%/v1/{parent=*/*}/servi"
+          + "ces:batchEnable:\001*\022\251\001\n\020BatchGetServices\022"
           + "3.google.api.serviceusage.v1.BatchGetSer"
           + "vicesRequest\0324.google.api.serviceusage.v"
           + "1.BatchGetServicesResponse\"*\202\323\344\223\002$\022\"/v1/"
@@ -162,9 +162,9 @@ public final class ServiceUsageProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.serviceusage.v1.ResourcesProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_api_serviceusage_v1_EnableServiceRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -273,9 +273,9 @@ public final class ServiceUsageProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.serviceusage.v1.ResourcesProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

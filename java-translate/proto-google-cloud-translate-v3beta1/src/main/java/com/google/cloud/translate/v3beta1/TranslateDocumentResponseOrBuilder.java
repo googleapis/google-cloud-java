@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,6 +109,7 @@ public interface TranslateDocumentResponseOrBuilder
    * <pre>
    * Only present when 'model' is present in the request.
    * 'model' is normalized to have a project number.
+   *
    * For example:
    * If the 'model' field in TranslateDocumentRequest is:
    * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -127,6 +128,7 @@ public interface TranslateDocumentResponseOrBuilder
    * <pre>
    * Only present when 'model' is present in the request.
    * 'model' is normalized to have a project number.
+   *
    * For example:
    * If the 'model' field in TranslateDocumentRequest is:
    * `projects/{project-id}/locations/{location-id}/models/general/nmt` then

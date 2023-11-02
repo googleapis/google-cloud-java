@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
     return new UpdatePhraseSetRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_UpdatePhraseSetRequest_descriptor;
@@ -73,6 +68,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The PhraseSet to update.
+   *
    * The PhraseSet's `name` field is used to identify the PhraseSet to update.
    * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * </pre>
@@ -92,6 +88,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The PhraseSet to update.
+   *
    * The PhraseSet's `name` field is used to identify the PhraseSet to update.
    * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * </pre>
@@ -113,6 +110,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The PhraseSet to update.
+   *
    * The PhraseSet's `name` field is used to identify the PhraseSet to update.
    * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * </pre>
@@ -610,6 +608,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The PhraseSet to update.
+     *
      * The PhraseSet's `name` field is used to identify the PhraseSet to update.
      * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
      * </pre>
@@ -628,6 +627,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The PhraseSet to update.
+     *
      * The PhraseSet's `name` field is used to identify the PhraseSet to update.
      * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
      * </pre>
@@ -652,6 +652,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The PhraseSet to update.
+     *
      * The PhraseSet's `name` field is used to identify the PhraseSet to update.
      * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
      * </pre>
@@ -678,6 +679,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The PhraseSet to update.
+     *
      * The PhraseSet's `name` field is used to identify the PhraseSet to update.
      * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
      * </pre>
@@ -701,6 +703,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The PhraseSet to update.
+     *
      * The PhraseSet's `name` field is used to identify the PhraseSet to update.
      * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
      * </pre>
@@ -730,6 +733,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The PhraseSet to update.
+     *
      * The PhraseSet's `name` field is used to identify the PhraseSet to update.
      * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
      * </pre>
@@ -753,6 +757,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The PhraseSet to update.
+     *
      * The PhraseSet's `name` field is used to identify the PhraseSet to update.
      * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
      * </pre>
@@ -771,6 +776,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The PhraseSet to update.
+     *
      * The PhraseSet's `name` field is used to identify the PhraseSet to update.
      * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
      * </pre>
@@ -793,6 +799,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The PhraseSet to update.
+     *
      * The PhraseSet's `name` field is used to identify the PhraseSet to update.
      * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
      * </pre>

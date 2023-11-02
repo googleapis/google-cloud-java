@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,6 +112,16 @@ public class AddressesSettings extends ClientSettings<AddressesSettings> {
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListAddressesRequest, AddressList, ListPagedResponse> listSettings() {
     return ((AddressesStubSettings) getStubSettings()).listSettings();
+  }
+
+  /** Returns the object with the settings used for calls to move. */
+  public UnaryCallSettings<MoveAddressRequest, Operation> moveSettings() {
+    return ((AddressesStubSettings) getStubSettings()).moveSettings();
+  }
+
+  /** Returns the object with the settings used for calls to move. */
+  public OperationCallSettings<MoveAddressRequest, Operation, Operation> moveOperationSettings() {
+    return ((AddressesStubSettings) getStubSettings()).moveOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setLabels. */
@@ -260,6 +270,17 @@ public class AddressesSettings extends ClientSettings<AddressesSettings> {
     public PagedCallSettings.Builder<ListAddressesRequest, AddressList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to move. */
+    public UnaryCallSettings.Builder<MoveAddressRequest, Operation> moveSettings() {
+      return getStubSettingsBuilder().moveSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to move. */
+    public OperationCallSettings.Builder<MoveAddressRequest, Operation, Operation>
+        moveOperationSettings() {
+      return getStubSettingsBuilder().moveOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setLabels. */

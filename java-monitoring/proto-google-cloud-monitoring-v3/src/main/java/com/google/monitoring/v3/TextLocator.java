@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,13 @@ package com.google.monitoring.v3;
  * <pre>
  * A locator for text. Indicates a particular part of the text of a request or
  * of an object referenced in the request.
+ *
  * For example, suppose the request field `text` contains:
+ *
  *   text: "The quick brown fox jumps over the lazy dog."
+ *
  * Then the locator:
+ *
  *   source: "text"
  *   start_position {
  *     line: 1
@@ -36,6 +40,7 @@ package com.google.monitoring.v3;
  *     line: 1
  *     column: 19
  *   }
+ *
  * refers to the part of the text: "fox".
  * </pre>
  *
@@ -60,11 +65,6 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TextLocator();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -139,11 +139,6 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Position();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1234,9 +1229,13 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A locator for text. Indicates a particular part of the text of a request or
    * of an object referenced in the request.
+   *
    * For example, suppose the request field `text` contains:
+   *
    *   text: "The quick brown fox jumps over the lazy dog."
+   *
    * Then the locator:
+   *
    *   source: "text"
    *   start_position {
    *     line: 1
@@ -1246,6 +1245,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *     line: 1
    *     column: 19
    *   }
+   *
    * refers to the part of the text: "fox".
    * </pre>
    *

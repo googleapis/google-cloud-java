@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,12 @@ package com.google.cloud.gkemulticloud.v1;
  *
  * <pre>
  * OIDC discovery information of the target cluster.
+ *
  * Kubernetes Service Account (KSA) tokens are JWT tokens signed by the cluster
  * API server. This fields indicates how Google Cloud Platform services
  * validate KSA tokens in order to allow system workloads (such as GKE Connect
  * and telemetry agents) to authenticate back to Google Cloud Platform.
+ *
  * Both clusters with public and private issuer URLs are supported.
  * Clusters with public issuers only need to specify the `issuer_url` field
  * while clusters with private issuers need to provide both
@@ -54,11 +56,6 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AttachedOidcConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -136,6 +133,7 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
    * Optional. OIDC verification keys in JWKS format (RFC 7517).
    * It contains a list of OIDC verification keys that can be used to verify
    * OIDC JWTs.
+   *
    * This field is required for cluster that doesn't have a publicly available
    * discovery endpoint. When provided, it will be directly used
    * to verify the OIDC JWT asserted by the IDP.
@@ -323,10 +321,12 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * OIDC discovery information of the target cluster.
+   *
    * Kubernetes Service Account (KSA) tokens are JWT tokens signed by the cluster
    * API server. This fields indicates how Google Cloud Platform services
    * validate KSA tokens in order to allow system workloads (such as GKE Connect
    * and telemetry agents) to authenticate back to Google Cloud Platform.
+   *
    * Both clusters with public and private issuer URLs are supported.
    * Clusters with public issuers only need to specify the `issuer_url` field
    * while clusters with private issuers need to provide both
@@ -636,6 +636,7 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
      * Optional. OIDC verification keys in JWKS format (RFC 7517).
      * It contains a list of OIDC verification keys that can be used to verify
      * OIDC JWTs.
+     *
      * This field is required for cluster that doesn't have a publicly available
      * discovery endpoint. When provided, it will be directly used
      * to verify the OIDC JWT asserted by the IDP.
@@ -656,6 +657,7 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
      * Optional. OIDC verification keys in JWKS format (RFC 7517).
      * It contains a list of OIDC verification keys that can be used to verify
      * OIDC JWTs.
+     *
      * This field is required for cluster that doesn't have a publicly available
      * discovery endpoint. When provided, it will be directly used
      * to verify the OIDC JWT asserted by the IDP.
@@ -682,6 +684,7 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
      * Optional. OIDC verification keys in JWKS format (RFC 7517).
      * It contains a list of OIDC verification keys that can be used to verify
      * OIDC JWTs.
+     *
      * This field is required for cluster that doesn't have a publicly available
      * discovery endpoint. When provided, it will be directly used
      * to verify the OIDC JWT asserted by the IDP.

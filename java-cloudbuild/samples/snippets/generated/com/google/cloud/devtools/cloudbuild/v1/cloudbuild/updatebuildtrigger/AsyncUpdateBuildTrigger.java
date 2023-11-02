@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient;
 import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
+import com.google.protobuf.FieldMask;
 
 public class AsyncUpdateBuildTrigger {
 
@@ -40,6 +41,7 @@ public class AsyncUpdateBuildTrigger {
               .setProjectId("projectId-894832108")
               .setTriggerId("triggerId-648752909")
               .setTrigger(BuildTrigger.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       ApiFuture<BuildTrigger> future =
           cloudBuildClient.updateBuildTriggerCallable().futureCall(request);

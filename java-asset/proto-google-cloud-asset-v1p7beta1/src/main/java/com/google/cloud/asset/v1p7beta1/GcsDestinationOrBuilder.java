@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,5 +133,5 @@ public interface GcsDestinationOrBuilder
    */
   com.google.protobuf.ByteString getUriPrefixBytes();
 
-  public com.google.cloud.asset.v1p7beta1.GcsDestination.ObjectUriCase getObjectUriCase();
+  com.google.cloud.asset.v1p7beta1.GcsDestination.ObjectUriCase getObjectUriCase();
 }

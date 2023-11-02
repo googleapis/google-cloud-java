@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StartManualTransferRunsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -188,11 +183,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TimeRange();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1223,6 +1213,8 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
   }
 
   private int timeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object time_;
 
   public enum TimeCase
@@ -1329,7 +1321,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Time range for the transfer runs that should be started.
+   * A time_range start and end timestamp for historical data files or reports
+   * that are scheduled to be transferred by the scheduled transfer run.
+   * requested_time_range must be a past time and cannot include future time
+   * values.
    * </pre>
    *
    * <code>
@@ -1346,7 +1341,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Time range for the transfer runs that should be started.
+   * A time_range start and end timestamp for historical data files or reports
+   * that are scheduled to be transferred by the scheduled transfer run.
+   * requested_time_range must be a past time and cannot include future time
+   * values.
    * </pre>
    *
    * <code>
@@ -1369,7 +1367,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Time range for the transfer runs that should be started.
+   * A time_range start and end timestamp for historical data files or reports
+   * that are scheduled to be transferred by the scheduled transfer run.
+   * requested_time_range must be a past time and cannot include future time
+   * values.
    * </pre>
    *
    * <code>
@@ -1392,8 +1393,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Specific run_time for a transfer run to be started. The
-   * requested_run_time must not be in the future.
+   * A run_time timestamp for historical data files or reports
+   * that are scheduled to be transferred by the scheduled transfer run.
+   * requested_run_time must be a past time and cannot include future time
+   * values.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -1408,8 +1411,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Specific run_time for a transfer run to be started. The
-   * requested_run_time must not be in the future.
+   * A run_time timestamp for historical data files or reports
+   * that are scheduled to be transferred by the scheduled transfer run.
+   * requested_run_time must be a past time and cannot include future time
+   * values.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -1427,8 +1432,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Specific run_time for a transfer run to be started. The
-   * requested_run_time must not be in the future.
+   * A run_time timestamp for historical data files or reports
+   * that are scheduled to be transferred by the scheduled transfer run.
+   * requested_run_time must be a past time and cannot include future time
+   * values.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2032,7 +2039,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Time range for the transfer runs that should be started.
+     * A time_range start and end timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_time_range must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>
@@ -2049,7 +2059,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Time range for the transfer runs that should be started.
+     * A time_range start and end timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_time_range must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>
@@ -2081,7 +2094,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Time range for the transfer runs that should be started.
+     * A time_range start and end timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_time_range must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>
@@ -2106,7 +2122,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Time range for the transfer runs that should be started.
+     * A time_range start and end timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_time_range must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>
@@ -2129,7 +2148,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Time range for the transfer runs that should be started.
+     * A time_range start and end timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_time_range must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>
@@ -2169,7 +2191,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Time range for the transfer runs that should be started.
+     * A time_range start and end timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_time_range must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>
@@ -2196,7 +2221,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Time range for the transfer runs that should be started.
+     * A time_range start and end timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_time_range must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>
@@ -2212,7 +2240,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Time range for the transfer runs that should be started.
+     * A time_range start and end timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_time_range must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>
@@ -2239,7 +2270,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Time range for the transfer runs that should be started.
+     * A time_range start and end timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_time_range must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>
@@ -2286,8 +2320,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Specific run_time for a transfer run to be started. The
-     * requested_run_time must not be in the future.
+     * A run_time timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_run_time must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2302,8 +2338,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Specific run_time for a transfer run to be started. The
-     * requested_run_time must not be in the future.
+     * A run_time timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_run_time must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2328,8 +2366,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Specific run_time for a transfer run to be started. The
-     * requested_run_time must not be in the future.
+     * A run_time timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_run_time must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2351,8 +2391,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Specific run_time for a transfer run to be started. The
-     * requested_run_time must not be in the future.
+     * A run_time timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_run_time must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2371,8 +2413,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Specific run_time for a transfer run to be started. The
-     * requested_run_time must not be in the future.
+     * A run_time timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_run_time must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2402,8 +2446,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Specific run_time for a transfer run to be started. The
-     * requested_run_time must not be in the future.
+     * A run_time timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_run_time must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2428,8 +2474,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Specific run_time for a transfer run to be started. The
-     * requested_run_time must not be in the future.
+     * A run_time timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_run_time must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2441,8 +2489,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Specific run_time for a transfer run to be started. The
-     * requested_run_time must not be in the future.
+     * A run_time timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_run_time must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2462,8 +2512,10 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Specific run_time for a transfer run to be started. The
-     * requested_run_time must not be in the future.
+     * A run_time timestamp for historical data files or reports
+     * that are scheduled to be transferred by the scheduled transfer run.
+     * requested_run_time must be a past time and cannot include future time
+     * values.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>

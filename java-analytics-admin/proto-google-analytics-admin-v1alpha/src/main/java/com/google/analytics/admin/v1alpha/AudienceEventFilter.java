@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AudienceEventFilter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,7 +128,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. If specified, this filter matches events that match both the
    * single event name and the parameter filter expressions. AudienceEventFilter
-   * inside the parameter filter expression cannot be set (i.e., nested
+   * inside the parameter filter expression cannot be set (For example, nested
    * event filters are not supported). This should be a single and_group of
    * dimension_or_metric_filter or not_expression; ANDs of ORs are not
    * supported. Also, if it includes a filter for "eventCount", only that one
@@ -156,7 +151,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. If specified, this filter matches events that match both the
    * single event name and the parameter filter expressions. AudienceEventFilter
-   * inside the parameter filter expression cannot be set (i.e., nested
+   * inside the parameter filter expression cannot be set (For example, nested
    * event filters are not supported). This should be a single and_group of
    * dimension_or_metric_filter or not_expression; ANDs of ORs are not
    * supported. Also, if it includes a filter for "eventCount", only that one
@@ -182,7 +177,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. If specified, this filter matches events that match both the
    * single event name and the parameter filter expressions. AudienceEventFilter
-   * inside the parameter filter expression cannot be set (i.e., nested
+   * inside the parameter filter expression cannot be set (For example, nested
    * event filters are not supported). This should be a single and_group of
    * dimension_or_metric_filter or not_expression; ANDs of ORs are not
    * supported. Also, if it includes a filter for "eventCount", only that one
@@ -715,7 +710,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. If specified, this filter matches events that match both the
      * single event name and the parameter filter expressions. AudienceEventFilter
-     * inside the parameter filter expression cannot be set (i.e., nested
+     * inside the parameter filter expression cannot be set (For example, nested
      * event filters are not supported). This should be a single and_group of
      * dimension_or_metric_filter or not_expression; ANDs of ORs are not
      * supported. Also, if it includes a filter for "eventCount", only that one
@@ -737,7 +732,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. If specified, this filter matches events that match both the
      * single event name and the parameter filter expressions. AudienceEventFilter
-     * inside the parameter filter expression cannot be set (i.e., nested
+     * inside the parameter filter expression cannot be set (For example, nested
      * event filters are not supported). This should be a single and_group of
      * dimension_or_metric_filter or not_expression; ANDs of ORs are not
      * supported. Also, if it includes a filter for "eventCount", only that one
@@ -766,7 +761,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. If specified, this filter matches events that match both the
      * single event name and the parameter filter expressions. AudienceEventFilter
-     * inside the parameter filter expression cannot be set (i.e., nested
+     * inside the parameter filter expression cannot be set (For example, nested
      * event filters are not supported). This should be a single and_group of
      * dimension_or_metric_filter or not_expression; ANDs of ORs are not
      * supported. Also, if it includes a filter for "eventCount", only that one
@@ -797,7 +792,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. If specified, this filter matches events that match both the
      * single event name and the parameter filter expressions. AudienceEventFilter
-     * inside the parameter filter expression cannot be set (i.e., nested
+     * inside the parameter filter expression cannot be set (For example, nested
      * event filters are not supported). This should be a single and_group of
      * dimension_or_metric_filter or not_expression; ANDs of ORs are not
      * supported. Also, if it includes a filter for "eventCount", only that one
@@ -825,7 +820,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. If specified, this filter matches events that match both the
      * single event name and the parameter filter expressions. AudienceEventFilter
-     * inside the parameter filter expression cannot be set (i.e., nested
+     * inside the parameter filter expression cannot be set (For example, nested
      * event filters are not supported). This should be a single and_group of
      * dimension_or_metric_filter or not_expression; ANDs of ORs are not
      * supported. Also, if it includes a filter for "eventCount", only that one
@@ -861,7 +856,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. If specified, this filter matches events that match both the
      * single event name and the parameter filter expressions. AudienceEventFilter
-     * inside the parameter filter expression cannot be set (i.e., nested
+     * inside the parameter filter expression cannot be set (For example, nested
      * event filters are not supported). This should be a single and_group of
      * dimension_or_metric_filter or not_expression; ANDs of ORs are not
      * supported. Also, if it includes a filter for "eventCount", only that one
@@ -888,7 +883,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. If specified, this filter matches events that match both the
      * single event name and the parameter filter expressions. AudienceEventFilter
-     * inside the parameter filter expression cannot be set (i.e., nested
+     * inside the parameter filter expression cannot be set (For example, nested
      * event filters are not supported). This should be a single and_group of
      * dimension_or_metric_filter or not_expression; ANDs of ORs are not
      * supported. Also, if it includes a filter for "eventCount", only that one
@@ -911,7 +906,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. If specified, this filter matches events that match both the
      * single event name and the parameter filter expressions. AudienceEventFilter
-     * inside the parameter filter expression cannot be set (i.e., nested
+     * inside the parameter filter expression cannot be set (For example, nested
      * event filters are not supported). This should be a single and_group of
      * dimension_or_metric_filter or not_expression; ANDs of ORs are not
      * supported. Also, if it includes a filter for "eventCount", only that one
@@ -938,7 +933,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. If specified, this filter matches events that match both the
      * single event name and the parameter filter expressions. AudienceEventFilter
-     * inside the parameter filter expression cannot be set (i.e., nested
+     * inside the parameter filter expression cannot be set (For example, nested
      * event filters are not supported). This should be a single and_group of
      * dimension_or_metric_filter or not_expression; ANDs of ORs are not
      * supported. Also, if it includes a filter for "eventCount", only that one

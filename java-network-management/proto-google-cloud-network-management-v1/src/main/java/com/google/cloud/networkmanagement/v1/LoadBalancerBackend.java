@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,19 +41,14 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     displayName_ = "";
     uri_ = "";
     healthCheckFirewallState_ = 0;
-    healthCheckAllowingFirewallRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    healthCheckBlockingFirewallRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    healthCheckAllowingFirewallRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    healthCheckBlockingFirewallRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LoadBalancerBackend();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -393,7 +388,8 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
   public static final int HEALTH_CHECK_ALLOWING_FIREWALL_RULES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList healthCheckAllowingFirewallRules_;
+  private com.google.protobuf.LazyStringArrayList healthCheckAllowingFirewallRules_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -456,7 +452,8 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
   public static final int HEALTH_CHECK_BLOCKING_FIREWALL_RULES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList healthCheckBlockingFirewallRules_;
+  private com.google.protobuf.LazyStringArrayList healthCheckBlockingFirewallRules_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -778,10 +775,8 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       displayName_ = "";
       uri_ = "";
       healthCheckFirewallState_ = 0;
-      healthCheckAllowingFirewallRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      healthCheckBlockingFirewallRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      healthCheckAllowingFirewallRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      healthCheckBlockingFirewallRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -809,26 +804,11 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
     public com.google.cloud.networkmanagement.v1.LoadBalancerBackend buildPartial() {
       com.google.cloud.networkmanagement.v1.LoadBalancerBackend result =
           new com.google.cloud.networkmanagement.v1.LoadBalancerBackend(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.networkmanagement.v1.LoadBalancerBackend result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        healthCheckAllowingFirewallRules_ = healthCheckAllowingFirewallRules_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.healthCheckAllowingFirewallRules_ = healthCheckAllowingFirewallRules_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        healthCheckBlockingFirewallRules_ = healthCheckBlockingFirewallRules_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.healthCheckBlockingFirewallRules_ = healthCheckBlockingFirewallRules_;
     }
 
     private void buildPartial0(com.google.cloud.networkmanagement.v1.LoadBalancerBackend result) {
@@ -841,6 +821,14 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.healthCheckFirewallState_ = healthCheckFirewallState_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        healthCheckAllowingFirewallRules_.makeImmutable();
+        result.healthCheckAllowingFirewallRules_ = healthCheckAllowingFirewallRules_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        healthCheckBlockingFirewallRules_.makeImmutable();
+        result.healthCheckBlockingFirewallRules_ = healthCheckBlockingFirewallRules_;
       }
     }
 
@@ -906,7 +894,7 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       if (!other.healthCheckAllowingFirewallRules_.isEmpty()) {
         if (healthCheckAllowingFirewallRules_.isEmpty()) {
           healthCheckAllowingFirewallRules_ = other.healthCheckAllowingFirewallRules_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureHealthCheckAllowingFirewallRulesIsMutable();
           healthCheckAllowingFirewallRules_.addAll(other.healthCheckAllowingFirewallRules_);
@@ -916,7 +904,7 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       if (!other.healthCheckBlockingFirewallRules_.isEmpty()) {
         if (healthCheckBlockingFirewallRules_.isEmpty()) {
           healthCheckBlockingFirewallRules_ = other.healthCheckBlockingFirewallRules_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureHealthCheckBlockingFirewallRulesIsMutable();
           healthCheckBlockingFirewallRules_.addAll(other.healthCheckBlockingFirewallRules_);
@@ -1318,15 +1306,15 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.LazyStringList healthCheckAllowingFirewallRules_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList healthCheckAllowingFirewallRules_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureHealthCheckAllowingFirewallRulesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!healthCheckAllowingFirewallRules_.isModifiable()) {
         healthCheckAllowingFirewallRules_ =
             new com.google.protobuf.LazyStringArrayList(healthCheckAllowingFirewallRules_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1340,7 +1328,8 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
      * @return A list containing the healthCheckAllowingFirewallRules.
      */
     public com.google.protobuf.ProtocolStringList getHealthCheckAllowingFirewallRulesList() {
-      return healthCheckAllowingFirewallRules_.getUnmodifiableView();
+      healthCheckAllowingFirewallRules_.makeImmutable();
+      return healthCheckAllowingFirewallRules_;
     }
     /**
      *
@@ -1405,6 +1394,7 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       }
       ensureHealthCheckAllowingFirewallRulesIsMutable();
       healthCheckAllowingFirewallRules_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1426,6 +1416,7 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       }
       ensureHealthCheckAllowingFirewallRulesIsMutable();
       healthCheckAllowingFirewallRules_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1446,6 +1437,7 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       ensureHealthCheckAllowingFirewallRulesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, healthCheckAllowingFirewallRules_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1461,8 +1453,9 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearHealthCheckAllowingFirewallRules() {
-      healthCheckAllowingFirewallRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      healthCheckAllowingFirewallRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1485,19 +1478,20 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureHealthCheckAllowingFirewallRulesIsMutable();
       healthCheckAllowingFirewallRules_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList healthCheckBlockingFirewallRules_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList healthCheckBlockingFirewallRules_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureHealthCheckBlockingFirewallRulesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!healthCheckBlockingFirewallRules_.isModifiable()) {
         healthCheckBlockingFirewallRules_ =
             new com.google.protobuf.LazyStringArrayList(healthCheckBlockingFirewallRules_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1511,7 +1505,8 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
      * @return A list containing the healthCheckBlockingFirewallRules.
      */
     public com.google.protobuf.ProtocolStringList getHealthCheckBlockingFirewallRulesList() {
-      return healthCheckBlockingFirewallRules_.getUnmodifiableView();
+      healthCheckBlockingFirewallRules_.makeImmutable();
+      return healthCheckBlockingFirewallRules_;
     }
     /**
      *
@@ -1576,6 +1571,7 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       }
       ensureHealthCheckBlockingFirewallRulesIsMutable();
       healthCheckBlockingFirewallRules_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1597,6 +1593,7 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       }
       ensureHealthCheckBlockingFirewallRulesIsMutable();
       healthCheckBlockingFirewallRules_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1617,6 +1614,7 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       ensureHealthCheckBlockingFirewallRulesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, healthCheckBlockingFirewallRules_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1632,8 +1630,9 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearHealthCheckBlockingFirewallRules() {
-      healthCheckBlockingFirewallRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      healthCheckBlockingFirewallRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1656,6 +1655,7 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureHealthCheckBlockingFirewallRulesIsMutable();
       healthCheckBlockingFirewallRules_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

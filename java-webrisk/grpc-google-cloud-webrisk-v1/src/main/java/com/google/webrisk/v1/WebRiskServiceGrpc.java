@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public final class WebRiskServiceGrpc {
 
   private WebRiskServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.webrisk.v1.WebRiskService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.webrisk.v1.WebRiskService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -211,6 +211,46 @@ public final class WebRiskServiceGrpc {
     return getCreateSubmissionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.webrisk.v1.SubmitUriRequest, com.google.longrunning.Operation>
+      getSubmitUriMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubmitUri",
+      requestType = com.google.webrisk.v1.SubmitUriRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.webrisk.v1.SubmitUriRequest, com.google.longrunning.Operation>
+      getSubmitUriMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.webrisk.v1.SubmitUriRequest, com.google.longrunning.Operation>
+        getSubmitUriMethod;
+    if ((getSubmitUriMethod = WebRiskServiceGrpc.getSubmitUriMethod) == null) {
+      synchronized (WebRiskServiceGrpc.class) {
+        if ((getSubmitUriMethod = WebRiskServiceGrpc.getSubmitUriMethod) == null) {
+          WebRiskServiceGrpc.getSubmitUriMethod =
+              getSubmitUriMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.webrisk.v1.SubmitUriRequest, com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SubmitUri"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.webrisk.v1.SubmitUriRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new WebRiskServiceMethodDescriptorSupplier("SubmitUri"))
+                      .build();
+        }
+      }
+    }
+    return getSubmitUriMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static WebRiskServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<WebRiskServiceStub> factory =
@@ -336,6 +376,28 @@ public final class WebRiskServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateSubmissionMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a URI suspected of containing malicious content to be reviewed.
+     * Returns a google.longrunning.Operation which, once the review is complete,
+     * is updated with its result. You can use the [Pub/Sub API]
+     * (https://cloud.google.com/pubsub) to receive notifications for the returned
+     * Operation. If the result verifies the existence of malicious content, the
+     * site will be added to the [Google's Social Engineering lists]
+     * (https://support.google.com/webmasters/answer/6350487/) in order to
+     * protect users that could get exposed to this threat in the future. Only
+     * allowlisted projects can use this method during Early Access. Please reach
+     * out to Sales or your customer engineer to obtain access.
+     * </pre>
+     */
+    default void submitUri(
+        com.google.webrisk.v1.SubmitUriRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSubmitUriMethod(), responseObserver);
+    }
   }
 
   /**
@@ -455,6 +517,29 @@ public final class WebRiskServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a URI suspected of containing malicious content to be reviewed.
+     * Returns a google.longrunning.Operation which, once the review is complete,
+     * is updated with its result. You can use the [Pub/Sub API]
+     * (https://cloud.google.com/pubsub) to receive notifications for the returned
+     * Operation. If the result verifies the existence of malicious content, the
+     * site will be added to the [Google's Social Engineering lists]
+     * (https://support.google.com/webmasters/answer/6350487/) in order to
+     * protect users that could get exposed to this threat in the future. Only
+     * allowlisted projects can use this method during Early Access. Please reach
+     * out to Sales or your customer engineer to obtain access.
+     * </pre>
+     */
+    public void submitUri(
+        com.google.webrisk.v1.SubmitUriRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSubmitUriMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -546,6 +631,28 @@ public final class WebRiskServiceGrpc {
         com.google.webrisk.v1.CreateSubmissionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateSubmissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a URI suspected of containing malicious content to be reviewed.
+     * Returns a google.longrunning.Operation which, once the review is complete,
+     * is updated with its result. You can use the [Pub/Sub API]
+     * (https://cloud.google.com/pubsub) to receive notifications for the returned
+     * Operation. If the result verifies the existence of malicious content, the
+     * site will be added to the [Google's Social Engineering lists]
+     * (https://support.google.com/webmasters/answer/6350487/) in order to
+     * protect users that could get exposed to this threat in the future. Only
+     * allowlisted projects can use this method during Early Access. Please reach
+     * out to Sales or your customer engineer to obtain access.
+     * </pre>
+     */
+    public com.google.longrunning.Operation submitUri(
+        com.google.webrisk.v1.SubmitUriRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitUriMethod(), getCallOptions(), request);
     }
   }
 
@@ -642,12 +749,35 @@ public final class WebRiskServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSubmissionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a URI suspected of containing malicious content to be reviewed.
+     * Returns a google.longrunning.Operation which, once the review is complete,
+     * is updated with its result. You can use the [Pub/Sub API]
+     * (https://cloud.google.com/pubsub) to receive notifications for the returned
+     * Operation. If the result verifies the existence of malicious content, the
+     * site will be added to the [Google's Social Engineering lists]
+     * (https://support.google.com/webmasters/answer/6350487/) in order to
+     * protect users that could get exposed to this threat in the future. Only
+     * allowlisted projects can use this method during Early Access. Please reach
+     * out to Sales or your customer engineer to obtain access.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        submitUri(com.google.webrisk.v1.SubmitUriRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubmitUriMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_COMPUTE_THREAT_LIST_DIFF = 0;
   private static final int METHODID_SEARCH_URIS = 1;
   private static final int METHODID_SEARCH_HASHES = 2;
   private static final int METHODID_CREATE_SUBMISSION = 3;
+  private static final int METHODID_SUBMIT_URI = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -688,6 +818,11 @@ public final class WebRiskServiceGrpc {
           serviceImpl.createSubmission(
               (com.google.webrisk.v1.CreateSubmissionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.webrisk.v1.Submission>) responseObserver);
+          break;
+        case METHODID_SUBMIT_URI:
+          serviceImpl.submitUri(
+              (com.google.webrisk.v1.SubmitUriRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -732,6 +867,12 @@ public final class WebRiskServiceGrpc {
                 new MethodHandlers<
                     com.google.webrisk.v1.CreateSubmissionRequest,
                     com.google.webrisk.v1.Submission>(service, METHODID_CREATE_SUBMISSION)))
+        .addMethod(
+            getSubmitUriMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.webrisk.v1.SubmitUriRequest, com.google.longrunning.Operation>(
+                    service, METHODID_SUBMIT_URI)))
         .build();
   }
 
@@ -759,9 +900,9 @@ public final class WebRiskServiceGrpc {
   private static final class WebRiskServiceMethodDescriptorSupplier
       extends WebRiskServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    WebRiskServiceMethodDescriptorSupplier(String methodName) {
+    WebRiskServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -787,6 +928,7 @@ public final class WebRiskServiceGrpc {
                       .addMethod(getSearchUrisMethod())
                       .addMethod(getSearchHashesMethod())
                       .addMethod(getCreateSubmissionMethod())
+                      .addMethod(getSubmitUriMethod())
                       .build();
         }
       }

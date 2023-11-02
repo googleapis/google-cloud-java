@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
     return new ListAwsNodePoolsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AwsServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_ListAwsNodePoolsRequest_descriptor;
@@ -78,8 +73,10 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The parent `AwsCluster` which owns this collection of
    * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
+   *
    * `AwsCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -108,8 +105,10 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The parent `AwsCluster` which owns this collection of
    * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
+   *
    * `AwsCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -140,6 +139,7 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The maximum number of items to return.
+   *
    * If not specified, a default value of 50 will be used by the service.
    * Regardless of the pageSize value, the response can include a partial list
    * and a caller should only rely on response's
@@ -607,8 +607,10 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The parent `AwsCluster` which owns this collection of
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
+     *
      * `AwsCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -636,8 +638,10 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The parent `AwsCluster` which owns this collection of
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
+     *
      * `AwsCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -665,8 +669,10 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The parent `AwsCluster` which owns this collection of
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
+     *
      * `AwsCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -693,8 +699,10 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The parent `AwsCluster` which owns this collection of
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
+     *
      * `AwsCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -717,8 +725,10 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The parent `AwsCluster` which owns this collection of
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
+     *
      * `AwsCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -747,6 +757,7 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the pageSize value, the response can include a partial list
      * and a caller should only rely on response's
@@ -767,6 +778,7 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the pageSize value, the response can include a partial list
      * and a caller should only rely on response's
@@ -791,6 +803,7 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the pageSize value, the response can include a partial list
      * and a caller should only rely on response's

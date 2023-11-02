@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
     return new AccessLocations();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.accessapproval.v1.AccessApprovalProto
         .internal_static_google_cloud_accessapproval_v1_AccessLocations_descriptor;
@@ -81,6 +76,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
    * limited situations Google systems may refer refer to a region code instead
    * of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania
@@ -116,6 +112,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
    * limited situations Google systems may refer refer to a region code instead
    * of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania
@@ -156,6 +153,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
    * a region code. In some limited situations Google systems may refer refer to
    * a region code instead of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania
@@ -191,6 +189,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
    * a region code. In some limited situations Google systems may refer refer to
    * a region code instead of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania
@@ -598,6 +597,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * limited situations Google systems may refer refer to a region code instead
      * of a country code.
      * Possible Region Codes:
+     *
      *   * ASI: Asia
      *   * EUR: Europe
      *   * OCE: Oceania
@@ -632,6 +632,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * limited situations Google systems may refer refer to a region code instead
      * of a country code.
      * Possible Region Codes:
+     *
      *   * ASI: Asia
      *   * EUR: Europe
      *   * OCE: Oceania
@@ -666,6 +667,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * limited situations Google systems may refer refer to a region code instead
      * of a country code.
      * Possible Region Codes:
+     *
      *   * ASI: Asia
      *   * EUR: Europe
      *   * OCE: Oceania
@@ -699,6 +701,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * limited situations Google systems may refer refer to a region code instead
      * of a country code.
      * Possible Region Codes:
+     *
      *   * ASI: Asia
      *   * EUR: Europe
      *   * OCE: Oceania
@@ -728,6 +731,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * limited situations Google systems may refer refer to a region code instead
      * of a country code.
      * Possible Region Codes:
+     *
      *   * ASI: Asia
      *   * EUR: Europe
      *   * OCE: Oceania
@@ -764,6 +768,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * a region code. In some limited situations Google systems may refer refer to
      * a region code instead of a country code.
      * Possible Region Codes:
+     *
      *   * ASI: Asia
      *   * EUR: Europe
      *   * OCE: Oceania
@@ -798,6 +803,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * a region code. In some limited situations Google systems may refer refer to
      * a region code instead of a country code.
      * Possible Region Codes:
+     *
      *   * ASI: Asia
      *   * EUR: Europe
      *   * OCE: Oceania
@@ -832,6 +838,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * a region code. In some limited situations Google systems may refer refer to
      * a region code instead of a country code.
      * Possible Region Codes:
+     *
      *   * ASI: Asia
      *   * EUR: Europe
      *   * OCE: Oceania
@@ -865,6 +872,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * a region code. In some limited situations Google systems may refer refer to
      * a region code instead of a country code.
      * Possible Region Codes:
+     *
      *   * ASI: Asia
      *   * EUR: Europe
      *   * OCE: Oceania
@@ -895,6 +903,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * a region code. In some limited situations Google systems may refer refer to
      * a region code instead of a country code.
      * Possible Region Codes:
+     *
      *   * ASI: Asia
      *   * EUR: Europe
      *   * OCE: Oceania

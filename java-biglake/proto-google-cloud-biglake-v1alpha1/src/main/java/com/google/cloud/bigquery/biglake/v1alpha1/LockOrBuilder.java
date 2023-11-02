@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -188,5 +188,5 @@ public interface LockOrBuilder
    */
   com.google.cloud.bigquery.biglake.v1alpha1.Lock.State getState();
 
-  public com.google.cloud.bigquery.biglake.v1alpha1.Lock.ResourcesCase getResourcesCase();
+  com.google.cloud.bigquery.biglake.v1alpha1.Lock.ResourcesCase getResourcesCase();
 }

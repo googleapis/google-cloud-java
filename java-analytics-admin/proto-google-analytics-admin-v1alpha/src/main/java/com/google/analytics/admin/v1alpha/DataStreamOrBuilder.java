@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -211,7 +211,9 @@ public interface DataStreamOrBuilder
    *
    * <pre>
    * Human-readable display name for the Data Stream.
+   *
    * Required for web data streams.
+   *
    * The max allowed display name length is 255 UTF-16 code units.
    * </pre>
    *
@@ -225,7 +227,9 @@ public interface DataStreamOrBuilder
    *
    * <pre>
    * Human-readable display name for the Data Stream.
+   *
    * Required for web data streams.
+   *
    * The max allowed display name length is 255 UTF-16 code units.
    * </pre>
    *
@@ -311,5 +315,5 @@ public interface DataStreamOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
-  public com.google.analytics.admin.v1alpha.DataStream.StreamDataCase getStreamDataCase();
+  com.google.analytics.admin.v1alpha.DataStream.StreamDataCase getStreamDataCase();
 }

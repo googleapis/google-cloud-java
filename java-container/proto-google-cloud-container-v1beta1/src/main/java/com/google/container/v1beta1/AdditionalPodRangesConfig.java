@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,14 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
   }
 
   private AdditionalPodRangesConfig() {
-    podRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    podRangeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    podRangeInfo_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AdditionalPodRangesConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +67,8 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
   public static final int POD_RANGE_NAMES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList podRangeNames_;
+  private com.google.protobuf.LazyStringArrayList podRangeNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -131,6 +128,87 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     return podRangeNames_.getByteString(index);
   }
 
+  public static final int POD_RANGE_INFO_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.container.v1beta1.RangeInfo> podRangeInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.container.v1beta1.RangeInfo> getPodRangeInfoList() {
+    return podRangeInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.container.v1beta1.RangeInfoOrBuilder>
+      getPodRangeInfoOrBuilderList() {
+    return podRangeInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPodRangeInfoCount() {
+    return podRangeInfo_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.RangeInfo getPodRangeInfo(int index) {
+    return podRangeInfo_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Information for additional pod range.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.RangeInfoOrBuilder getPodRangeInfoOrBuilder(int index) {
+    return podRangeInfo_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -147,6 +225,9 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < podRangeNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, podRangeNames_.getRaw(i));
+    }
+    for (int i = 0; i < podRangeInfo_.size(); i++) {
+      output.writeMessage(2, podRangeInfo_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -165,6 +246,9 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
       size += dataSize;
       size += 1 * getPodRangeNamesList().size();
     }
+    for (int i = 0; i < podRangeInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, podRangeInfo_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -182,6 +266,7 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
         (com.google.container.v1beta1.AdditionalPodRangesConfig) obj;
 
     if (!getPodRangeNamesList().equals(other.getPodRangeNamesList())) return false;
+    if (!getPodRangeInfoList().equals(other.getPodRangeInfoList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -196,6 +281,10 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     if (getPodRangeNamesCount() > 0) {
       hash = (37 * hash) + POD_RANGE_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getPodRangeNamesList().hashCode();
+    }
+    if (getPodRangeInfoCount() > 0) {
+      hash = (37 * hash) + POD_RANGE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getPodRangeInfoList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -338,8 +427,14 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      podRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      podRangeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (podRangeInfoBuilder_ == null) {
+        podRangeInfo_ = java.util.Collections.emptyList();
+      } else {
+        podRangeInfo_ = null;
+        podRangeInfoBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -377,15 +472,23 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
 
     private void buildPartialRepeatedFields(
         com.google.container.v1beta1.AdditionalPodRangesConfig result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        podRangeNames_ = podRangeNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (podRangeInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          podRangeInfo_ = java.util.Collections.unmodifiableList(podRangeInfo_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.podRangeInfo_ = podRangeInfo_;
+      } else {
+        result.podRangeInfo_ = podRangeInfoBuilder_.build();
       }
-      result.podRangeNames_ = podRangeNames_;
     }
 
     private void buildPartial0(com.google.container.v1beta1.AdditionalPodRangesConfig result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        podRangeNames_.makeImmutable();
+        result.podRangeNames_ = podRangeNames_;
+      }
     }
 
     @java.lang.Override
@@ -437,12 +540,39 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
       if (!other.podRangeNames_.isEmpty()) {
         if (podRangeNames_.isEmpty()) {
           podRangeNames_ = other.podRangeNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensurePodRangeNamesIsMutable();
           podRangeNames_.addAll(other.podRangeNames_);
         }
         onChanged();
+      }
+      if (podRangeInfoBuilder_ == null) {
+        if (!other.podRangeInfo_.isEmpty()) {
+          if (podRangeInfo_.isEmpty()) {
+            podRangeInfo_ = other.podRangeInfo_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensurePodRangeInfoIsMutable();
+            podRangeInfo_.addAll(other.podRangeInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.podRangeInfo_.isEmpty()) {
+          if (podRangeInfoBuilder_.isEmpty()) {
+            podRangeInfoBuilder_.dispose();
+            podRangeInfoBuilder_ = null;
+            podRangeInfo_ = other.podRangeInfo_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            podRangeInfoBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPodRangeInfoFieldBuilder()
+                    : null;
+          } else {
+            podRangeInfoBuilder_.addAllMessages(other.podRangeInfo_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -477,6 +607,19 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
                 podRangeNames_.add(s);
                 break;
               } // case 10
+            case 18:
+              {
+                com.google.container.v1beta1.RangeInfo m =
+                    input.readMessage(
+                        com.google.container.v1beta1.RangeInfo.parser(), extensionRegistry);
+                if (podRangeInfoBuilder_ == null) {
+                  ensurePodRangeInfoIsMutable();
+                  podRangeInfo_.add(m);
+                } else {
+                  podRangeInfoBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -496,14 +639,14 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList podRangeNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList podRangeNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePodRangeNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!podRangeNames_.isModifiable()) {
         podRangeNames_ = new com.google.protobuf.LazyStringArrayList(podRangeNames_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -517,7 +660,8 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
      * @return A list containing the podRangeNames.
      */
     public com.google.protobuf.ProtocolStringList getPodRangeNamesList() {
-      return podRangeNames_.getUnmodifiableView();
+      podRangeNames_.makeImmutable();
+      return podRangeNames_;
     }
     /**
      *
@@ -582,6 +726,7 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
       }
       ensurePodRangeNamesIsMutable();
       podRangeNames_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -603,6 +748,7 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
       }
       ensurePodRangeNamesIsMutable();
       podRangeNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -621,6 +767,7 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     public Builder addAllPodRangeNames(java.lang.Iterable<java.lang.String> values) {
       ensurePodRangeNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, podRangeNames_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,8 +783,9 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPodRangeNames() {
-      podRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      podRangeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -660,8 +808,395 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensurePodRangeNamesIsMutable();
       podRangeNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.container.v1beta1.RangeInfo> podRangeInfo_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePodRangeInfoIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        podRangeInfo_ =
+            new java.util.ArrayList<com.google.container.v1beta1.RangeInfo>(podRangeInfo_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1beta1.RangeInfo,
+            com.google.container.v1beta1.RangeInfo.Builder,
+            com.google.container.v1beta1.RangeInfoOrBuilder>
+        podRangeInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.container.v1beta1.RangeInfo> getPodRangeInfoList() {
+      if (podRangeInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(podRangeInfo_);
+      } else {
+        return podRangeInfoBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getPodRangeInfoCount() {
+      if (podRangeInfoBuilder_ == null) {
+        return podRangeInfo_.size();
+      } else {
+        return podRangeInfoBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.RangeInfo getPodRangeInfo(int index) {
+      if (podRangeInfoBuilder_ == null) {
+        return podRangeInfo_.get(index);
+      } else {
+        return podRangeInfoBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPodRangeInfo(int index, com.google.container.v1beta1.RangeInfo value) {
+      if (podRangeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePodRangeInfoIsMutable();
+        podRangeInfo_.set(index, value);
+        onChanged();
+      } else {
+        podRangeInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPodRangeInfo(
+        int index, com.google.container.v1beta1.RangeInfo.Builder builderForValue) {
+      if (podRangeInfoBuilder_ == null) {
+        ensurePodRangeInfoIsMutable();
+        podRangeInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        podRangeInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPodRangeInfo(com.google.container.v1beta1.RangeInfo value) {
+      if (podRangeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePodRangeInfoIsMutable();
+        podRangeInfo_.add(value);
+        onChanged();
+      } else {
+        podRangeInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPodRangeInfo(int index, com.google.container.v1beta1.RangeInfo value) {
+      if (podRangeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePodRangeInfoIsMutable();
+        podRangeInfo_.add(index, value);
+        onChanged();
+      } else {
+        podRangeInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPodRangeInfo(com.google.container.v1beta1.RangeInfo.Builder builderForValue) {
+      if (podRangeInfoBuilder_ == null) {
+        ensurePodRangeInfoIsMutable();
+        podRangeInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        podRangeInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPodRangeInfo(
+        int index, com.google.container.v1beta1.RangeInfo.Builder builderForValue) {
+      if (podRangeInfoBuilder_ == null) {
+        ensurePodRangeInfoIsMutable();
+        podRangeInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        podRangeInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPodRangeInfo(
+        java.lang.Iterable<? extends com.google.container.v1beta1.RangeInfo> values) {
+      if (podRangeInfoBuilder_ == null) {
+        ensurePodRangeInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, podRangeInfo_);
+        onChanged();
+      } else {
+        podRangeInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPodRangeInfo() {
+      if (podRangeInfoBuilder_ == null) {
+        podRangeInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        podRangeInfoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removePodRangeInfo(int index) {
+      if (podRangeInfoBuilder_ == null) {
+        ensurePodRangeInfoIsMutable();
+        podRangeInfo_.remove(index);
+        onChanged();
+      } else {
+        podRangeInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.RangeInfo.Builder getPodRangeInfoBuilder(int index) {
+      return getPodRangeInfoFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.RangeInfoOrBuilder getPodRangeInfoOrBuilder(int index) {
+      if (podRangeInfoBuilder_ == null) {
+        return podRangeInfo_.get(index);
+      } else {
+        return podRangeInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.container.v1beta1.RangeInfoOrBuilder>
+        getPodRangeInfoOrBuilderList() {
+      if (podRangeInfoBuilder_ != null) {
+        return podRangeInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(podRangeInfo_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.RangeInfo.Builder addPodRangeInfoBuilder() {
+      return getPodRangeInfoFieldBuilder()
+          .addBuilder(com.google.container.v1beta1.RangeInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.RangeInfo.Builder addPodRangeInfoBuilder(int index) {
+      return getPodRangeInfoFieldBuilder()
+          .addBuilder(index, com.google.container.v1beta1.RangeInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Information for additional pod range.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.RangeInfo pod_range_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.container.v1beta1.RangeInfo.Builder>
+        getPodRangeInfoBuilderList() {
+      return getPodRangeInfoFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1beta1.RangeInfo,
+            com.google.container.v1beta1.RangeInfo.Builder,
+            com.google.container.v1beta1.RangeInfoOrBuilder>
+        getPodRangeInfoFieldBuilder() {
+      if (podRangeInfoBuilder_ == null) {
+        podRangeInfoBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1beta1.RangeInfo,
+                com.google.container.v1beta1.RangeInfo.Builder,
+                com.google.container.v1beta1.RangeInfoOrBuilder>(
+                podRangeInfo_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        podRangeInfo_ = null;
+      }
+      return podRangeInfoBuilder_;
     }
 
     @java.lang.Override

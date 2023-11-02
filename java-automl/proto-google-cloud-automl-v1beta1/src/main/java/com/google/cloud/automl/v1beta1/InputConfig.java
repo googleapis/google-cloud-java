@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.automl.v1beta1;
  *
  * <pre>
  * Input configuration for ImportData Action.
+ *
  * The format of input depends on dataset_metadata the Dataset into which
  * the import is happening has. As input source the
  * [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source]
@@ -33,8 +34,10 @@ package com.google.cloud.automl.v1beta1;
  * its label, bounding boxes etc. are appended. The same file should be always
  * provided with the same ML_USE and GCS_FILE_PATH, if it is not, then
  * these values are nondeterministically selected from the given ones.
+ *
  * The formats are represented in EBNF with commas being literal and with
  * non-terminal symbols defined near the end of this comment. The formats are:
+ *
  *  *  For Image Classification:
  *         CSV file(s) with each line in format:
  *           ML_USE,GCS_FILE_PATH,LABEL,LABEL,...
@@ -48,6 +51,7 @@ package com.google.cloud.automl.v1beta1;
  *           TEST,gs://folder/image2.jpg,dandelion,tulip,rose
  *           UNASSIGNED,gs://folder/image3.jpg,daisy
  *           UNASSIGNED,gs://folder/image4.jpg
+ *
  *  *  For Image Object Detection:
  *         CSV file(s) with each line in format:
  *           ML_USE,GCS_FILE_PATH,(LABEL,BOUNDING_BOX | ,,,,,,,)
@@ -68,6 +72,7 @@ package com.google.cloud.automl.v1beta1;
  *           UNASSIGNED,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
  *           TEST,gs://folder/im3.png,,,,,,,,,
  *           TRAIN,gs://folder/im4.png,NEGATIVE_IMAGE,,,,,,,,,
+ *
  *  *  For Video Classification:
  *         CSV file(s) with each line in format:
  *           ML_USE,GCS_FILE_PATH
@@ -93,6 +98,7 @@ package com.google.cloud.automl.v1beta1;
  *           gs://folder/video1.avi,bike,150,180.000021
  *           gs://folder/vid2.avi,car,0,60.5
  *           gs://folder/vid3.avi,,,
+ *
  *  *  For Video Object Tracking:
  *         CSV file(s) with each line in format:
  *           ML_USE,GCS_FILE_PATH
@@ -193,6 +199,7 @@ package com.google.cloud.automl.v1beta1;
  *                   },
  *                   "text_segment_type": TOKEN,
  *                 }
+ *
  *               ],
  *               "document_dimensions": {
  *                 "width": 8.27,
@@ -245,6 +252,7 @@ package com.google.cloud.automl.v1beta1;
  *               }
  *             }
  *           }
+ *
  *  *  For Text Classification:
  *         CSV file(s) with each line in format:
  *           ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),LABEL,LABEL,...
@@ -264,6 +272,7 @@ package com.google.cloud.automl.v1beta1;
  *           TRAIN,gs://folder/content.txt,SlowService
  *           TEST,"Typically always bad service there.",RudeService
  *           VALIDATE,"Stomach ache to go.",BadFood
+ *
  *  *  For Text Sentiment:
  *         CSV file(s) with each line in format:
  *           ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),SENTIMENT
@@ -281,11 +290,14 @@ package com.google.cloud.automl.v1beta1;
  *           TRAIN,"I need this product so bad",3
  *           TEST,"Thank you for this product.",4
  *           VALIDATE,gs://folder/content.txt,2
+ *
  *   *  For Tables:
  *         Either
  *         [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source] or
+ *
  * [bigquery_source][google.cloud.automl.v1beta1.InputConfig.bigquery_source]
  *         can be used. All inputs is concatenated into a single
+ *
  * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_name]
  *         For gcs_source:
  *           CSV file(s), where the first row of the first file is the header,
@@ -297,7 +309,9 @@ package com.google.cloud.automl.v1beta1;
  *           size must be 100GB or smaller.
  *           First three sample rows of a CSV file:
  *           "Id","First Name","Last Name","Dob","Addresses"
+ *
  * "1","John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
+ *
  * "2","Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
  *         For bigquery_source:
  *           An URI of a BigQuery table. The user data size of the BigQuery
@@ -358,6 +372,7 @@ package com.google.cloud.automl.v1beta1;
  *              neighboring sentiment values needs not to be uniform, e.g. 1 and
  *              2 may be similar whereas the difference between 2 and 3 may be
  *              huge.
+ *
  *  Errors:
  *  If any of the provided CSV files can't be parsed or if more than certain
  *  percent of CSV rows cannot be processed then the operation fails and
@@ -384,11 +399,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InputConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -418,6 +428,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -605,6 +617,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * *  For Tables:
    *    `schema_inference_version` - (integer) Required. The version of the
    *        algorithm that should be used for the initial inference of the
@@ -634,6 +647,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * *  For Tables:
    *    `schema_inference_version` - (integer) Required. The version of the
    *        algorithm that should be used for the initial inference of the
@@ -654,6 +668,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * *  For Tables:
    *    `schema_inference_version` - (integer) Required. The version of the
    *        algorithm that should be used for the initial inference of the
@@ -681,6 +696,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * *  For Tables:
    *    `schema_inference_version` - (integer) Required. The version of the
    *        algorithm that should be used for the initial inference of the
@@ -913,6 +929,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input configuration for ImportData Action.
+   *
    * The format of input depends on dataset_metadata the Dataset into which
    * the import is happening has. As input source the
    * [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source]
@@ -923,8 +940,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * its label, bounding boxes etc. are appended. The same file should be always
    * provided with the same ML_USE and GCS_FILE_PATH, if it is not, then
    * these values are nondeterministically selected from the given ones.
+   *
    * The formats are represented in EBNF with commas being literal and with
    * non-terminal symbols defined near the end of this comment. The formats are:
+   *
    *  *  For Image Classification:
    *         CSV file(s) with each line in format:
    *           ML_USE,GCS_FILE_PATH,LABEL,LABEL,...
@@ -938,6 +957,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *           TEST,gs://folder/image2.jpg,dandelion,tulip,rose
    *           UNASSIGNED,gs://folder/image3.jpg,daisy
    *           UNASSIGNED,gs://folder/image4.jpg
+   *
    *  *  For Image Object Detection:
    *         CSV file(s) with each line in format:
    *           ML_USE,GCS_FILE_PATH,(LABEL,BOUNDING_BOX | ,,,,,,,)
@@ -958,6 +978,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *           UNASSIGNED,gs://folder/im2.png,car,0.1,0.1,0.2,0.1,0.2,0.3,0.1,0.3
    *           TEST,gs://folder/im3.png,,,,,,,,,
    *           TRAIN,gs://folder/im4.png,NEGATIVE_IMAGE,,,,,,,,,
+   *
    *  *  For Video Classification:
    *         CSV file(s) with each line in format:
    *           ML_USE,GCS_FILE_PATH
@@ -983,6 +1004,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *           gs://folder/video1.avi,bike,150,180.000021
    *           gs://folder/vid2.avi,car,0,60.5
    *           gs://folder/vid3.avi,,,
+   *
    *  *  For Video Object Tracking:
    *         CSV file(s) with each line in format:
    *           ML_USE,GCS_FILE_PATH
@@ -1083,6 +1105,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *                   },
    *                   "text_segment_type": TOKEN,
    *                 }
+   *
    *               ],
    *               "document_dimensions": {
    *                 "width": 8.27,
@@ -1135,6 +1158,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *               }
    *             }
    *           }
+   *
    *  *  For Text Classification:
    *         CSV file(s) with each line in format:
    *           ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),LABEL,LABEL,...
@@ -1154,6 +1178,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *           TRAIN,gs://folder/content.txt,SlowService
    *           TEST,"Typically always bad service there.",RudeService
    *           VALIDATE,"Stomach ache to go.",BadFood
+   *
    *  *  For Text Sentiment:
    *         CSV file(s) with each line in format:
    *           ML_USE,(TEXT_SNIPPET | GCS_FILE_PATH),SENTIMENT
@@ -1171,11 +1196,14 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *           TRAIN,"I need this product so bad",3
    *           TEST,"Thank you for this product.",4
    *           VALIDATE,gs://folder/content.txt,2
+   *
    *   *  For Tables:
    *         Either
    *         [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source] or
+   *
    * [bigquery_source][google.cloud.automl.v1beta1.InputConfig.bigquery_source]
    *         can be used. All inputs is concatenated into a single
+   *
    * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_name]
    *         For gcs_source:
    *           CSV file(s), where the first row of the first file is the header,
@@ -1187,7 +1215,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *           size must be 100GB or smaller.
    *           First three sample rows of a CSV file:
    *           "Id","First Name","Last Name","Dob","Addresses"
+   *
    * "1","John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
+   *
    * "2","Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
    *         For bigquery_source:
    *           An URI of a BigQuery table. The user data size of the BigQuery
@@ -1248,6 +1278,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *              neighboring sentiment values needs not to be uniform, e.g. 1 and
    *              2 may be similar whereas the difference between 2 and 3 may be
    *              huge.
+   *
    *  Errors:
    *  If any of the provided CSV files can't be parsed or if more than certain
    *  percent of CSV rows cannot be processed then the operation fails and
@@ -1984,6 +2015,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * *  For Tables:
      *    `schema_inference_version` - (integer) Required. The version of the
      *        algorithm that should be used for the initial inference of the
@@ -2013,6 +2045,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * *  For Tables:
      *    `schema_inference_version` - (integer) Required. The version of the
      *        algorithm that should be used for the initial inference of the
@@ -2033,6 +2066,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * *  For Tables:
      *    `schema_inference_version` - (integer) Required. The version of the
      *        algorithm that should be used for the initial inference of the
@@ -2060,6 +2094,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * *  For Tables:
      *    `schema_inference_version` - (integer) Required. The version of the
      *        algorithm that should be used for the initial inference of the
@@ -2093,6 +2128,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * *  For Tables:
      *    `schema_inference_version` - (integer) Required. The version of the
      *        algorithm that should be used for the initial inference of the
@@ -2122,6 +2158,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * *  For Tables:
      *    `schema_inference_version` - (integer) Required. The version of the
      *        algorithm that should be used for the initial inference of the
@@ -2149,6 +2186,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Additional domain-specific parameters describing the semantic of the
      * imported data, any string must be up to 25000
      * characters long.
+     *
      * *  For Tables:
      *    `schema_inference_version` - (integer) Required. The version of the
      *        algorithm that should be used for the initial inference of the

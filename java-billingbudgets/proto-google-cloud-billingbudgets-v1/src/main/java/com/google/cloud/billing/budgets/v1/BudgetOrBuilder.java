@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,6 +173,10 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
+   * Optional for `pubsubTopic` notifications.
+   *
+   * Required if using email notifications.
    * </pre>
    *
    * <code>
@@ -186,6 +190,10 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
+   * Optional for `pubsubTopic` notifications.
+   *
+   * Required if using email notifications.
    * </pre>
    *
    * <code>
@@ -199,6 +207,10 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
+   * Optional for `pubsubTopic` notifications.
+   *
+   * Required if using email notifications.
    * </pre>
    *
    * <code>
@@ -212,6 +224,10 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
+   * Optional for `pubsubTopic` notifications.
+   *
+   * Required if using email notifications.
    * </pre>
    *
    * <code>
@@ -226,6 +242,10 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Rules that trigger alerts (notifications of thresholds
    * being crossed) when spend exceeds the specified percentages of the budget.
+   *
+   * Optional for `pubsubTopic` notifications.
+   *
+   * Required if using email notifications.
    * </pre>
    *
    * <code>
@@ -284,7 +304,7 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Etag to validate that the object is unchanged for a
    * read-modify-write operation.
-   * An empty etag will cause an update to overwrite other changes.
+   * An empty etag causes an update to overwrite other changes.
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -298,7 +318,7 @@ public interface BudgetOrBuilder
    * <pre>
    * Optional. Etag to validate that the object is unchanged for a
    * read-modify-write operation.
-   * An empty etag will cause an update to overwrite other changes.
+   * An empty etag causes an update to overwrite other changes.
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

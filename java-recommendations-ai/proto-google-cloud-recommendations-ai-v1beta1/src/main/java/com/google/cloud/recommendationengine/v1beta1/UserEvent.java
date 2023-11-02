@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UserEvent();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -263,6 +258,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. User event type. Allowed values are:
+   *
    * * `add-to-cart` Products being added to cart.
    * * `add-to-list` Items being added to a list (shopping list, favorites
    *   etc).
@@ -302,6 +298,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. User event type. Allowed values are:
+   *
    * * `add-to-cart` Products being added to cart.
    * * `add-to-list` Items being added to a list (shopping list, favorites
    *   etc).
@@ -460,7 +457,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Retail product specific user event metadata.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `category-page-view`
@@ -471,11 +470,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `remove-from-cart`
    * * `remove-from-list`
    * * `search`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_event_detail' should be
    *   set for this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `home-page-view`
    * </pre>
    *
@@ -494,7 +497,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Retail product specific user event metadata.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `category-page-view`
@@ -505,11 +510,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `remove-from-cart`
    * * `remove-from-list`
    * * `search`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_event_detail' should be
    *   set for this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `home-page-view`
    * </pre>
    *
@@ -530,7 +539,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Retail product specific user event metadata.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `category-page-view`
@@ -541,11 +552,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * `remove-from-cart`
    * * `remove-from-list`
    * * `search`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_event_detail' should be
    *   set for this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `home-page-view`
    * </pre>
    *
@@ -1163,6 +1178,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. User event type. Allowed values are:
+     *
      * * `add-to-cart` Products being added to cart.
      * * `add-to-list` Items being added to a list (shopping list, favorites
      *   etc).
@@ -1201,6 +1217,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. User event type. Allowed values are:
+     *
      * * `add-to-cart` Products being added to cart.
      * * `add-to-list` Items being added to a list (shopping list, favorites
      *   etc).
@@ -1239,6 +1256,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. User event type. Allowed values are:
+     *
      * * `add-to-cart` Products being added to cart.
      * * `add-to-list` Items being added to a list (shopping list, favorites
      *   etc).
@@ -1276,6 +1294,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. User event type. Allowed values are:
+     *
      * * `add-to-cart` Products being added to cart.
      * * `add-to-list` Items being added to a list (shopping list, favorites
      *   etc).
@@ -1309,6 +1328,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. User event type. Allowed values are:
+     *
      * * `add-to-cart` Products being added to cart.
      * * `add-to-list` Items being added to a list (shopping list, favorites
      *   etc).
@@ -1772,7 +1792,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Retail product specific user event metadata.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `category-page-view`
@@ -1783,11 +1805,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `remove-from-cart`
      * * `remove-from-list`
      * * `search`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_event_detail' should be
      *   set for this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `home-page-view`
      * </pre>
      *
@@ -1805,7 +1831,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Retail product specific user event metadata.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `category-page-view`
@@ -1816,11 +1844,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `remove-from-cart`
      * * `remove-from-list`
      * * `search`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_event_detail' should be
      *   set for this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `home-page-view`
      * </pre>
      *
@@ -1845,7 +1877,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Retail product specific user event metadata.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `category-page-view`
@@ -1856,11 +1890,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `remove-from-cart`
      * * `remove-from-list`
      * * `search`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_event_detail' should be
      *   set for this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `home-page-view`
      * </pre>
      *
@@ -1887,7 +1925,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Retail product specific user event metadata.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `category-page-view`
@@ -1898,11 +1938,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `remove-from-cart`
      * * `remove-from-list`
      * * `search`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_event_detail' should be
      *   set for this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `home-page-view`
      * </pre>
      *
@@ -1926,7 +1970,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Retail product specific user event metadata.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `category-page-view`
@@ -1937,11 +1983,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `remove-from-cart`
      * * `remove-from-list`
      * * `search`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_event_detail' should be
      *   set for this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `home-page-view`
      * </pre>
      *
@@ -1973,7 +2023,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Retail product specific user event metadata.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `category-page-view`
@@ -1984,11 +2036,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `remove-from-cart`
      * * `remove-from-list`
      * * `search`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_event_detail' should be
      *   set for this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `home-page-view`
      * </pre>
      *
@@ -2011,7 +2067,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Retail product specific user event metadata.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `category-page-view`
@@ -2022,11 +2080,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `remove-from-cart`
      * * `remove-from-list`
      * * `search`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_event_detail' should be
      *   set for this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `home-page-view`
      * </pre>
      *
@@ -2045,7 +2107,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Retail product specific user event metadata.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `category-page-view`
@@ -2056,11 +2120,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `remove-from-cart`
      * * `remove-from-list`
      * * `search`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_event_detail' should be
      *   set for this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `home-page-view`
      * </pre>
      *
@@ -2083,7 +2151,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Retail product specific user event metadata.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `category-page-view`
@@ -2094,11 +2164,15 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * `remove-from-cart`
      * * `remove-from-list`
      * * `search`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_event_detail' should be
      *   set for this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `home-page-view`
      * </pre>
      *

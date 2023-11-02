@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,11 +54,6 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
     return new ReverseSshConnectivity();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
         .internal_static_google_cloud_clouddms_v1_ReverseSshConnectivity_descriptor;
@@ -82,8 +77,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The IP of the virtual machine (Compute Engine) used as the bastion server
-   * for the SSH tunnel.
+   * Required. The IP of the virtual machine (Compute Engine) used as the
+   * bastion server for the SSH tunnel.
    * </pre>
    *
    * <code>string vm_ip = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -106,8 +101,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The IP of the virtual machine (Compute Engine) used as the bastion server
-   * for the SSH tunnel.
+   * Required. The IP of the virtual machine (Compute Engine) used as the
+   * bastion server for the SSH tunnel.
    * </pre>
    *
    * <code>string vm_ip = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -133,8 +128,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The forwarding port of the virtual machine (Compute Engine) used as the
-   * bastion server for the SSH tunnel.
+   * Required. The forwarding port of the virtual machine (Compute Engine) used
+   * as the bastion server for the SSH tunnel.
    * </pre>
    *
    * <code>int32 vm_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -672,8 +667,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The IP of the virtual machine (Compute Engine) used as the bastion server
-     * for the SSH tunnel.
+     * Required. The IP of the virtual machine (Compute Engine) used as the
+     * bastion server for the SSH tunnel.
      * </pre>
      *
      * <code>string vm_ip = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -695,8 +690,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The IP of the virtual machine (Compute Engine) used as the bastion server
-     * for the SSH tunnel.
+     * Required. The IP of the virtual machine (Compute Engine) used as the
+     * bastion server for the SSH tunnel.
      * </pre>
      *
      * <code>string vm_ip = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -718,8 +713,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The IP of the virtual machine (Compute Engine) used as the bastion server
-     * for the SSH tunnel.
+     * Required. The IP of the virtual machine (Compute Engine) used as the
+     * bastion server for the SSH tunnel.
      * </pre>
      *
      * <code>string vm_ip = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -740,8 +735,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The IP of the virtual machine (Compute Engine) used as the bastion server
-     * for the SSH tunnel.
+     * Required. The IP of the virtual machine (Compute Engine) used as the
+     * bastion server for the SSH tunnel.
      * </pre>
      *
      * <code>string vm_ip = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -758,8 +753,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The IP of the virtual machine (Compute Engine) used as the bastion server
-     * for the SSH tunnel.
+     * Required. The IP of the virtual machine (Compute Engine) used as the
+     * bastion server for the SSH tunnel.
      * </pre>
      *
      * <code>string vm_ip = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -783,8 +778,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The forwarding port of the virtual machine (Compute Engine) used as the
-     * bastion server for the SSH tunnel.
+     * Required. The forwarding port of the virtual machine (Compute Engine) used
+     * as the bastion server for the SSH tunnel.
      * </pre>
      *
      * <code>int32 vm_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -799,8 +794,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The forwarding port of the virtual machine (Compute Engine) used as the
-     * bastion server for the SSH tunnel.
+     * Required. The forwarding port of the virtual machine (Compute Engine) used
+     * as the bastion server for the SSH tunnel.
      * </pre>
      *
      * <code>int32 vm_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -819,8 +814,8 @@ public final class ReverseSshConnectivity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The forwarding port of the virtual machine (Compute Engine) used as the
-     * bastion server for the SSH tunnel.
+     * Required. The forwarding port of the virtual machine (Compute Engine) used
+     * as the bastion server for the SSH tunnel.
      * </pre>
      *
      * <code>int32 vm_port = 2 [(.google.api.field_behavior) = REQUIRED];</code>

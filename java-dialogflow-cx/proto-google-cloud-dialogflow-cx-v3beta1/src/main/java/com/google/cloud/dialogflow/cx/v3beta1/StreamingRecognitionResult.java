@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,20 +25,25 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * Contains a speech recognition result corresponding to a portion of the audio
  * that is currently being processed or an indication that this is the end
  * of the single requested utterance.
+ *
  * While end-user audio is being processed, Dialogflow sends a series of
  * results. Each result may contain a `transcript` value. A transcript
  * represents a portion of the utterance. While the recognizer is processing
  * audio, transcript values may be interim values or finalized values.
  * Once a transcript is finalized, the `is_final` value is set to true and
  * processing continues for the next transcript.
+ *
  * If `StreamingDetectIntentRequest.query_input.audio.config.single_utterance`
  * was true, and the recognizer has completed processing audio,
  * the `message_type` value is set to `END_OF_SINGLE_UTTERANCE and the
  * following (last) result contains the last finalized transcript.
+ *
  * The complete end-user utterance is determined by concatenating the
  * finalized transcript values received for the series of results.
+ *
  * In the following example, single utterance is enabled. In the case where
  * single utterance is not enabled, result 7 would not occur.
+ *
  * ```
  * Num | transcript              | message_type            | is_final
  * --- | ----------------------- | ----------------------- | --------
@@ -51,6 +56,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * 7   | unset                   | END_OF_SINGLE_UTTERANCE | unset
  * 8   | " that is the question" | TRANSCRIPT              | true
  * ```
+ *
  * Concatenating the finalized transcripts with `is_final` set to true,
  * the complete utterance becomes "to be or not to be that is the question".
  * </pre>
@@ -78,11 +84,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StreamingRecognitionResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -400,6 +401,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * A higher number indicates an estimated greater likelihood that the
    * recognized words are correct. The default of 0.0 is a sentinel value
    * indicating that confidence was not set.
+   *
    * This field is typically only provided if `is_final` is true and you should
    * not rely on it being accurate or even set.
    * </pre>
@@ -878,20 +880,25 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * Contains a speech recognition result corresponding to a portion of the audio
    * that is currently being processed or an indication that this is the end
    * of the single requested utterance.
+   *
    * While end-user audio is being processed, Dialogflow sends a series of
    * results. Each result may contain a `transcript` value. A transcript
    * represents a portion of the utterance. While the recognizer is processing
    * audio, transcript values may be interim values or finalized values.
    * Once a transcript is finalized, the `is_final` value is set to true and
    * processing continues for the next transcript.
+   *
    * If `StreamingDetectIntentRequest.query_input.audio.config.single_utterance`
    * was true, and the recognizer has completed processing audio,
    * the `message_type` value is set to `END_OF_SINGLE_UTTERANCE and the
    * following (last) result contains the last finalized transcript.
+   *
    * The complete end-user utterance is determined by concatenating the
    * finalized transcript values received for the series of results.
+   *
    * In the following example, single utterance is enabled. In the case where
    * single utterance is not enabled, result 7 would not occur.
+   *
    * ```
    * Num | transcript              | message_type            | is_final
    * --- | ----------------------- | ----------------------- | --------
@@ -904,6 +911,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    * 7   | unset                   | END_OF_SINGLE_UTTERANCE | unset
    * 8   | " that is the question" | TRANSCRIPT              | true
    * ```
+   *
    * Concatenating the finalized transcripts with `is_final` set to true,
    * the complete utterance becomes "to be or not to be that is the question".
    * </pre>
@@ -1524,6 +1532,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * A higher number indicates an estimated greater likelihood that the
      * recognized words are correct. The default of 0.0 is a sentinel value
      * indicating that confidence was not set.
+     *
      * This field is typically only provided if `is_final` is true and you should
      * not rely on it being accurate or even set.
      * </pre>
@@ -1544,6 +1553,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * A higher number indicates an estimated greater likelihood that the
      * recognized words are correct. The default of 0.0 is a sentinel value
      * indicating that confidence was not set.
+     *
      * This field is typically only provided if `is_final` is true and you should
      * not rely on it being accurate or even set.
      * </pre>
@@ -1568,6 +1578,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * A higher number indicates an estimated greater likelihood that the
      * recognized words are correct. The default of 0.0 is a sentinel value
      * indicating that confidence was not set.
+     *
      * This field is typically only provided if `is_final` is true and you should
      * not rely on it being accurate or even set.
      * </pre>

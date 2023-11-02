@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface SecretOrBuilder
    * <pre>
    * The relative resource name of a Secret Manager secret version, in the
    * following form:
+   *
    * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface SecretOrBuilder
    * <pre>
    * The relative resource name of a Secret Manager secret version, in the
    * following form:
+   *
    * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
    * </pre>
    *
@@ -57,6 +59,7 @@ public interface SecretOrBuilder
    * <pre>
    * The relative resource name of a Secret Manager secret version, in the
    * following form:
+   *
    * `projects/{project_number}/secrets/{secret_id}/versions/{version_id}`.
    * </pre>
    *
@@ -66,5 +69,5 @@ public interface SecretOrBuilder
    */
   com.google.protobuf.ByteString getCloudSecretBytes();
 
-  public com.google.cloud.metastore.v1alpha.Secret.ValueCase getValueCase();
+  com.google.cloud.metastore.v1alpha.Secret.ValueCase getValueCase();
 }

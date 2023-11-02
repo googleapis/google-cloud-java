@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * Type of the search result.
+   *
    * You can use this field to determine which get method to call to fetch the
    * full resource.
    * </pre>
@@ -42,6 +43,7 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * Type of the search result.
+   *
    * You can use this field to determine which get method to call to fetch the
    * full resource.
    * </pre>
@@ -57,8 +59,10 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * Sub-type of the search result.
+   *
    * A dot-delimited full type of the resource. The same type you
    * specify in the `type` search predicate.
+   *
    * Examples: `entry.table`, `entry.dataStream`, `tagTemplate`.
    * </pre>
    *
@@ -72,8 +76,10 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * Sub-type of the search result.
+   *
    * A dot-delimited full type of the resource. The same type you
    * specify in the `type` search predicate.
+   *
    * Examples: `entry.table`, `entry.dataStream`, `tagTemplate`.
    * </pre>
    *
@@ -88,7 +94,9 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * The relative name of the resource in URL format.
+   *
    * Examples:
+   *
    *  * `projects/{PROJECT_ID}/locations/{LOCATION_ID}/entryGroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`
    *  * `projects/{PROJECT_ID}/tagTemplates/{TAG_TEMPLATE_ID}`
    * </pre>
@@ -103,7 +111,9 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * The relative name of the resource in URL format.
+   *
    * Examples:
+   *
    *  * `projects/{PROJECT_ID}/locations/{LOCATION_ID}/entryGroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`
    *  * `projects/{PROJECT_ID}/tagTemplates/{TAG_TEMPLATE_ID}`
    * </pre>
@@ -119,9 +129,12 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * The full name of the Google Cloud resource the entry belongs to.
+   *
    * For more information, see [Full Resource Name]
    * (/apis/design/resource_names#full_resource_name).
+   *
    * Example:
+   *
    * `//bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID`
    * </pre>
    *
@@ -135,9 +148,12 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * The full name of the Google Cloud resource the entry belongs to.
+   *
    * For more information, see [Full Resource Name]
    * (/apis/design/resource_names#full_resource_name).
+   *
    * Example:
+   *
    * `//bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID`
    * </pre>
    *
@@ -270,12 +286,19 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * Fully qualified name (FQN) of the resource.
+   *
    * FQNs take two forms:
+   *
    * * For non-regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * * For regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * Example for a DPMS table:
+   *
    * `dataproc_metastore:PROJECT_ID.LOCATION_ID.INSTANCE_ID.DATABASE_ID.TABLE_ID`
    * </pre>
    *
@@ -289,12 +312,19 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * Fully qualified name (FQN) of the resource.
+   *
    * FQNs take two forms:
+   *
    * * For non-regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * * For regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * Example for a DPMS table:
+   *
    * `dataproc_metastore:PROJECT_ID.LOCATION_ID.INSTANCE_ID.DATABASE_ID.TABLE_ID`
    * </pre>
    *
@@ -356,5 +386,5 @@ public interface SearchCatalogResultOrBuilder
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
-  public com.google.cloud.datacatalog.v1.SearchCatalogResult.SystemCase getSystemCase();
+  com.google.cloud.datacatalog.v1.SearchCatalogResult.SystemCase getSystemCase();
 }

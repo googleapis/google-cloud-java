@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ package com.google.cloud.dialogflow.cx.v3;
  * [event][google.cloud.dialogflow.cx.v3.EventHandler.event] that can be handled
  * during a session. When the specified event happens, the following actions are
  * taken in order:
+ *
  * *   If there is a
  * [`trigger_fulfillment`][google.cloud.dialogflow.cx.v3.EventHandler.trigger_fulfillment]
  * associated with the event, it will be called.
@@ -62,11 +63,6 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
     return new EventHandler();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.PageProto
         .internal_static_google_cloud_dialogflow_cx_v3_EventHandler_descriptor;
@@ -83,6 +79,8 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int targetCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object target_;
 
   public enum TargetCase
@@ -667,6 +665,7 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
    * [event][google.cloud.dialogflow.cx.v3.EventHandler.event] that can be handled
    * during a session. When the specified event happens, the following actions are
    * taken in order:
+   *
    * *   If there is a
    * [`trigger_fulfillment`][google.cloud.dialogflow.cx.v3.EventHandler.trigger_fulfillment]
    * associated with the event, it will be called.

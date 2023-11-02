@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface VehicleInfoOrBuilder
    *
    * <pre>
    * Describes the vehicle's emission type.
-   * Applies only to the `DRIVE` travel mode.
+   * Applies only to the `DRIVE`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.maps.routing.v2.VehicleEmissionType emission_type = 2;</code>
@@ -41,7 +42,8 @@ public interface VehicleInfoOrBuilder
    *
    * <pre>
    * Describes the vehicle's emission type.
-   * Applies only to the `DRIVE` travel mode.
+   * Applies only to the `DRIVE`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.maps.routing.v2.VehicleEmissionType emission_type = 2;</code>

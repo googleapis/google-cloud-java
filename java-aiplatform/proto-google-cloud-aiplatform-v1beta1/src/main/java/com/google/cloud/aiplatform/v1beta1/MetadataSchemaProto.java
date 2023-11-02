@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,26 +44,26 @@ public final class MetadataSchemaProto {
           + "ta_schema.proto\022\037google.cloud.aiplatform"
           + ".v1beta1\032\037google/api/field_behavior.prot"
           + "o\032\031google/api/resource.proto\032\037google/pro"
-          + "tobuf/timestamp.proto\"\205\004\n\016MetadataSchema"
-          + "\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\026\n\016schema_version\030\002 "
-          + "\001(\t\022\023\n\006schema\030\003 \001(\tB\003\340A\002\022W\n\013schema_type\030"
-          + "\004 \001(\0162B.google.cloud.aiplatform.v1beta1."
-          + "MetadataSchema.MetadataSchemaType\0224\n\013cre"
-          + "ate_time\030\005 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\003\022\023\n\013description\030\006 \001(\t\"s\n\022Metadata"
-          + "SchemaType\022$\n METADATA_SCHEMA_TYPE_UNSPE"
-          + "CIFIED\020\000\022\021\n\rARTIFACT_TYPE\020\001\022\022\n\016EXECUTION"
-          + "_TYPE\020\002\022\020\n\014CONTEXT_TYPE\020\003:\231\001\352A\225\001\n(aiplat"
-          + "form.googleapis.com/MetadataSchema\022iproj"
-          + "ects/{project}/locations/{location}/meta"
-          + "dataStores/{metadata_store}/metadataSche"
-          + "mas/{metadata_schema}B\352\001\n#com.google.clo"
-          + "ud.aiplatform.v1beta1B\023MetadataSchemaPro"
-          + "toP\001ZCcloud.google.com/go/aiplatform/api"
-          + "v1beta1/aiplatformpb;aiplatformpb\252\002\037Goog"
-          + "le.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clo"
-          + "ud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::A"
-          + "IPlatform::V1beta1b\006proto3"
+          + "tobuf/timestamp.proto\"\210\004\n\016MetadataSchema"
+          + "\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\026\n\016schema_version\030\002"
+          + " \001(\t\022\024\n\006schema\030\003 \001(\tB\004\342A\001\002\022W\n\013schema_typ"
+          + "e\030\004 \001(\0162B.google.cloud.aiplatform.v1beta"
+          + "1.MetadataSchema.MetadataSchemaType\0225\n\013c"
+          + "reate_time\030\005 \001(\0132\032.google.protobuf.Times"
+          + "tampB\004\342A\001\003\022\023\n\013description\030\006 \001(\t\"s\n\022Metad"
+          + "ataSchemaType\022$\n METADATA_SCHEMA_TYPE_UN"
+          + "SPECIFIED\020\000\022\021\n\rARTIFACT_TYPE\020\001\022\022\n\016EXECUT"
+          + "ION_TYPE\020\002\022\020\n\014CONTEXT_TYPE\020\003:\231\001\352A\225\001\n(aip"
+          + "latform.googleapis.com/MetadataSchema\022ip"
+          + "rojects/{project}/locations/{location}/m"
+          + "etadataStores/{metadata_store}/metadataS"
+          + "chemas/{metadata_schema}B\352\001\n#com.google."
+          + "cloud.aiplatform.v1beta1B\023MetadataSchema"
+          + "ProtoP\001ZCcloud.google.com/go/aiplatform/"
+          + "apiv1beta1/aiplatformpb;aiplatformpb\252\002\037G"
+          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
+          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud"
+          + "::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

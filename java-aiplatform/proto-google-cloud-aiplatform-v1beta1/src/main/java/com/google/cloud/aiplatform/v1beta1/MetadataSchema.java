@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MetadataSchema();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -372,6 +367,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
    * Required. The raw YAML string representation of the MetadataSchema. The
    * combination of [MetadataSchema.version] and the schema name given by
    * `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
+   *
    * The schema is defined as an OpenAPI 3.0.2
    * [MetadataSchema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
@@ -400,6 +396,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
    * Required. The raw YAML string representation of the MetadataSchema. The
    * combination of [MetadataSchema.version] and the schema name given by
    * `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
+   *
    * The schema is defined as an OpenAPI 3.0.2
    * [MetadataSchema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
@@ -1267,6 +1264,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
      * Required. The raw YAML string representation of the MetadataSchema. The
      * combination of [MetadataSchema.version] and the schema name given by
      * `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
+     *
      * The schema is defined as an OpenAPI 3.0.2
      * [MetadataSchema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
@@ -1294,6 +1292,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
      * Required. The raw YAML string representation of the MetadataSchema. The
      * combination of [MetadataSchema.version] and the schema name given by
      * `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
+     *
      * The schema is defined as an OpenAPI 3.0.2
      * [MetadataSchema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
@@ -1321,6 +1320,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
      * Required. The raw YAML string representation of the MetadataSchema. The
      * combination of [MetadataSchema.version] and the schema name given by
      * `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
+     *
      * The schema is defined as an OpenAPI 3.0.2
      * [MetadataSchema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
@@ -1347,6 +1347,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
      * Required. The raw YAML string representation of the MetadataSchema. The
      * combination of [MetadataSchema.version] and the schema name given by
      * `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
+     *
      * The schema is defined as an OpenAPI 3.0.2
      * [MetadataSchema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
@@ -1369,6 +1370,7 @@ public final class MetadataSchema extends com.google.protobuf.GeneratedMessageV3
      * Required. The raw YAML string representation of the MetadataSchema. The
      * combination of [MetadataSchema.version] and the schema name given by
      * `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
+     *
      * The schema is defined as an OpenAPI 3.0.2
      * [MetadataSchema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)

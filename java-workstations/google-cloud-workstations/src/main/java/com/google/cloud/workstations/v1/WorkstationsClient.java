@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1096,7 +1096,7 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all WorkstationConfigs in the specified cluster.
+   * Returns all workstation configurations in the specified cluster.
    *
    * <p>Sample code:
    *
@@ -1130,7 +1130,7 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all WorkstationConfigs in the specified cluster.
+   * Returns all workstation configurations in the specified cluster.
    *
    * <p>Sample code:
    *
@@ -1161,7 +1161,7 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all WorkstationConfigs in the specified cluster.
+   * Returns all workstation configurations in the specified cluster.
    *
    * <p>Sample code:
    *
@@ -1197,7 +1197,7 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all WorkstationConfigs in the specified cluster.
+   * Returns all workstation configurations in the specified cluster.
    *
    * <p>Sample code:
    *
@@ -1232,7 +1232,7 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all WorkstationConfigs in the specified cluster.
+   * Returns all workstation configurations in the specified cluster.
    *
    * <p>Sample code:
    *
@@ -1484,7 +1484,7 @@ public class WorkstationsClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    * @param workstationConfig Required. Config to create.
-   * @param workstationConfigId Required. ID to use for the config.
+   * @param workstationConfigId Required. ID to use for the workstation configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkstationConfig, OperationMetadata> createWorkstationConfigAsync(
@@ -1526,7 +1526,7 @@ public class WorkstationsClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    * @param workstationConfig Required. Config to create.
-   * @param workstationConfigId Required. ID to use for the config.
+   * @param workstationConfigId Required. ID to use for the workstation configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkstationConfig, OperationMetadata> createWorkstationConfigAsync(
@@ -1664,7 +1664,8 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param workstationConfig Required. Config to update.
-   * @param updateMask Required. Mask specifying which fields in the config should be updated.
+   * @param updateMask Required. Mask specifying which fields in the workstation configuration
+   *     should be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkstationConfig, OperationMetadata> updateWorkstationConfigAsync(
@@ -1794,7 +1795,7 @@ public class WorkstationsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the config to delete.
+   * @param name Required. Name of the workstation configuration to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkstationConfig, OperationMetadata> deleteWorkstationConfigAsync(
@@ -1827,7 +1828,7 @@ public class WorkstationsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the config to delete.
+   * @param name Required. Name of the workstation configuration to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkstationConfig, OperationMetadata> deleteWorkstationConfigAsync(
@@ -2090,7 +2091,7 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all Workstations using the specified config.
+   * Returns all Workstations using the specified workstation configuration.
    *
    * <p>Sample code:
    *
@@ -2123,7 +2124,7 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all Workstations using the specified config.
+   * Returns all Workstations using the specified workstation configuration.
    *
    * <p>Sample code:
    *
@@ -2155,7 +2156,7 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all Workstations using the specified config.
+   * Returns all Workstations using the specified workstation configuration.
    *
    * <p>Sample code:
    *
@@ -2193,7 +2194,7 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all Workstations using the specified config.
+   * Returns all Workstations using the specified workstation configuration.
    *
    * <p>Sample code:
    *
@@ -2232,7 +2233,7 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all Workstations using the specified config.
+   * Returns all Workstations using the specified workstation configuration.
    *
    * <p>Sample code:
    *
@@ -2278,8 +2279,8 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all Workstations using the specified config on which the caller has the
-   * "workstations.workstations.use" permission.
+   * Returns all workstations using the specified workstation configuration on which the caller has
+   * the "workstations.workstations.use" permission.
    *
    * <p>Sample code:
    *
@@ -2313,8 +2314,8 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all Workstations using the specified config on which the caller has the
-   * "workstations.workstations.use" permission.
+   * Returns all workstations using the specified workstation configuration on which the caller has
+   * the "workstations.workstations.use" permission.
    *
    * <p>Sample code:
    *
@@ -2346,8 +2347,8 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all Workstations using the specified config on which the caller has the
-   * "workstations.workstations.use" permission.
+   * Returns all workstations using the specified workstation configuration on which the caller has
+   * the "workstations.workstations.use" permission.
    *
    * <p>Sample code:
    *
@@ -2386,8 +2387,8 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all Workstations using the specified config on which the caller has the
-   * "workstations.workstations.use" permission.
+   * Returns all workstations using the specified workstation configuration on which the caller has
+   * the "workstations.workstations.use" permission.
    *
    * <p>Sample code:
    *
@@ -2426,8 +2427,8 @@ public class WorkstationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all Workstations using the specified config on which the caller has the
-   * "workstations.workstations.use" permission.
+   * Returns all workstations using the specified workstation configuration on which the caller has
+   * the "workstations.workstations.use" permission.
    *
    * <p>Sample code:
    *
@@ -2684,7 +2685,8 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param workstation Required. Workstation to update.
-   * @param updateMask Required. Mask specifying which fields in the config should be updated.
+   * @param updateMask Required. Mask specifying which fields in the workstation configuration
+   *     should be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Workstation, OperationMetadata> updateWorkstationAsync(

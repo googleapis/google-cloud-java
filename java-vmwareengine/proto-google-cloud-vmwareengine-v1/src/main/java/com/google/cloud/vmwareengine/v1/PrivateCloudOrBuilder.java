@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -287,6 +287,7 @@ public interface PrivateCloudOrBuilder
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>
@@ -305,6 +306,7 @@ public interface PrivateCloudOrBuilder
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>
@@ -323,6 +325,7 @@ public interface PrivateCloudOrBuilder
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>
@@ -500,4 +503,33 @@ public interface PrivateCloudOrBuilder
    * @return The bytes for uid.
    */
   com.google.protobuf.ByteString getUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the private cloud. Defaults to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.PrivateCloud.Type type = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the private cloud. Defaults to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmwareengine.v1.PrivateCloud.Type type = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.vmwareengine.v1.PrivateCloud.Type getType();
 }

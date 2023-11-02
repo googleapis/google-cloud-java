@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,9 +55,14 @@ public interface CustomDimensionOrBuilder
    *
    * <pre>
    * Required. Immutable. Tagging parameter name for this custom dimension.
+   *
    * If this is a user-scoped dimension, then this is the user property name.
    * If this is an event-scoped dimension, then this is the event parameter
    * name.
+   *
+   * If this is an item-scoped dimension, then this is the parameter
+   * name found in the eCommerce items array.
+   *
    * May only contain alphanumeric and underscore characters, starting with a
    * letter. Max length of 24 characters for user-scoped dimensions, 40
    * characters for event-scoped dimensions.
@@ -75,9 +80,14 @@ public interface CustomDimensionOrBuilder
    *
    * <pre>
    * Required. Immutable. Tagging parameter name for this custom dimension.
+   *
    * If this is a user-scoped dimension, then this is the user property name.
    * If this is an event-scoped dimension, then this is the event parameter
    * name.
+   *
+   * If this is an item-scoped dimension, then this is the parameter
+   * name found in the eCommerce items array.
+   *
    * May only contain alphanumeric and underscore characters, starting with a
    * letter. Max length of 24 characters for user-scoped dimensions, 40
    * characters for event-scoped dimensions.
@@ -186,6 +196,7 @@ public interface CustomDimensionOrBuilder
    * <pre>
    * Optional. If set to true, sets this dimension as NPA and excludes it from
    * ads personalization.
+   *
    * This is currently only supported by user-scoped custom dimensions.
    * </pre>
    *

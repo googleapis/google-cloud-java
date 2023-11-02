@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
   private Issue() {
     name_ = "";
     displayName_ = "";
-    sampleUtterances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    sampleUtterances_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Issue();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -276,7 +271,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
   public static final int SAMPLE_UTTERANCES_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList sampleUtterances_;
+  private com.google.protobuf.LazyStringArrayList sampleUtterances_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -607,8 +603,7 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      sampleUtterances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      sampleUtterances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -636,21 +631,11 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.Issue buildPartial() {
       com.google.cloud.contactcenterinsights.v1.Issue result =
           new com.google.cloud.contactcenterinsights.v1.Issue(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.contactcenterinsights.v1.Issue result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        sampleUtterances_ = sampleUtterances_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.sampleUtterances_ = sampleUtterances_;
     }
 
     private void buildPartial0(com.google.cloud.contactcenterinsights.v1.Issue result) {
@@ -666,6 +651,10 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        sampleUtterances_.makeImmutable();
+        result.sampleUtterances_ = sampleUtterances_;
       }
     }
 
@@ -734,7 +723,7 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
       if (!other.sampleUtterances_.isEmpty()) {
         if (sampleUtterances_.isEmpty()) {
           sampleUtterances_ = other.sampleUtterances_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureSampleUtterancesIsMutable();
           sampleUtterances_.addAll(other.sampleUtterances_);
@@ -1441,14 +1430,14 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
       return updateTimeBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList sampleUtterances_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList sampleUtterances_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSampleUtterancesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!sampleUtterances_.isModifiable()) {
         sampleUtterances_ = new com.google.protobuf.LazyStringArrayList(sampleUtterances_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1464,7 +1453,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the sampleUtterances.
      */
     public com.google.protobuf.ProtocolStringList getSampleUtterancesList() {
-      return sampleUtterances_.getUnmodifiableView();
+      sampleUtterances_.makeImmutable();
+      return sampleUtterances_;
     }
     /**
      *
@@ -1537,6 +1527,7 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSampleUtterancesIsMutable();
       sampleUtterances_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1560,6 +1551,7 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSampleUtterancesIsMutable();
       sampleUtterances_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1580,6 +1572,7 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSampleUtterances(java.lang.Iterable<java.lang.String> values) {
       ensureSampleUtterancesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sampleUtterances_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1597,8 +1590,9 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSampleUtterances() {
-      sampleUtterances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sampleUtterances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1623,6 +1617,7 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSampleUtterancesIsMutable();
       sampleUtterances_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

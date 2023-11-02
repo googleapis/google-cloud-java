@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,6 +100,7 @@ public interface ListControlsRequestOrBuilder
    *
    * <pre>
    * Optional. A filter to apply on the list results. Supported features:
+   *
    * * List all the products under the parent branch if
    * [filter][google.cloud.retail.v2.ListControlsRequest.filter] is unset.
    * * List controls that are used in a single ServingConfig:
@@ -116,6 +117,7 @@ public interface ListControlsRequestOrBuilder
    *
    * <pre>
    * Optional. A filter to apply on the list results. Supported features:
+   *
    * * List all the products under the parent branch if
    * [filter][google.cloud.retail.v2.ListControlsRequest.filter] is unset.
    * * List controls that are used in a single ServingConfig:

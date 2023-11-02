@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,6 +80,31 @@ public interface QuotaExceededInfoOrBuilder
    * <code>map&lt;string, string&gt; dimensions = 414334925;</code>
    */
   java.lang.String getDimensionsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+   * </pre>
+   *
+   * <code>optional double future_limit = 456564287;</code>
+   *
+   * @return Whether the futureLimit field is set.
+   */
+  boolean hasFutureLimit();
+  /**
+   *
+   *
+   * <pre>
+   * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+   * </pre>
+   *
+   * <code>optional double future_limit = 456564287;</code>
+   *
+   * @return The futureLimit.
+   */
+  double getFutureLimit();
 
   /**
    *
@@ -179,4 +204,44 @@ public interface QuotaExceededInfoOrBuilder
    * @return The bytes for metricName.
    */
   com.google.protobuf.ByteString getMetricNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rollout status of the future quota limit.
+   * Check the RolloutStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string rollout_status = 476426816;</code>
+   *
+   * @return Whether the rolloutStatus field is set.
+   */
+  boolean hasRolloutStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Rollout status of the future quota limit.
+   * Check the RolloutStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string rollout_status = 476426816;</code>
+   *
+   * @return The rolloutStatus.
+   */
+  java.lang.String getRolloutStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Rollout status of the future quota limit.
+   * Check the RolloutStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string rollout_status = 476426816;</code>
+   *
+   * @return The bytes for rolloutStatus.
+   */
+  com.google.protobuf.ByteString getRolloutStatusBytes();
 }

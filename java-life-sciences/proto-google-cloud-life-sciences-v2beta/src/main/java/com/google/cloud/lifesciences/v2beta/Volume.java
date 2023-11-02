@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.lifesciences.v2beta;
  *
  * <pre>
  * Carries information about storage that can be attached to a VM.
+ *
  * Specify either [`Volume`][google.cloud.lifesciences.v2beta.Volume] or
  * [`Disk`][google.cloud.lifesciences.v2beta.Disk], but not both.
  * </pre>
@@ -49,11 +50,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return new Volume();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.lifesciences.v2beta.WorkflowsProto
         .internal_static_google_cloud_lifesciences_v2beta_Volume_descriptor;
@@ -70,6 +66,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int storageCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object storage_;
 
   public enum StorageCase
@@ -547,6 +545,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Carries information about storage that can be attached to a VM.
+   *
    * Specify either [`Volume`][google.cloud.lifesciences.v2beta.Volume] or
    * [`Disk`][google.cloud.lifesciences.v2beta.Disk], but not both.
    * </pre>

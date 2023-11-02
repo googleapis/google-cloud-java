@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public final class ConditionProto {
     java.lang.String[] descriptorData = {
       "\n#google/cloud/run/v2/condition.proto\022\023g"
           + "oogle.cloud.run.v2\032\037google/protobuf/time"
-          + "stamp.proto\"\220\014\n\tCondition\022\014\n\004type\030\001 \001(\t\022"
+          + "stamp.proto\"\235\014\n\tCondition\022\014\n\004type\030\001 \001(\t\022"
           + "3\n\005state\030\002 \001(\0162$.google.cloud.run.v2.Con"
           + "dition.State\022\017\n\007message\030\003 \001(\t\0228\n\024last_tr"
           + "ansition_time\030\004 \001(\0132\032.google.protobuf.Ti"
@@ -77,13 +77,13 @@ public final class ConditionProto {
           + "ANCES_NOT_PROVISIONED\020\010\022!\n\035ACTIVE_REVISI"
           + "ON_LIMIT_REACHED\020\t\022\021\n\rNO_DEPLOYMENT\020\n\022\030\n"
           + "\024HEALTH_CHECK_SKIPPED\020\013\022\031\n\025MIN_INSTANCES"
-          + "_WARMING\020\014\"\216\001\n\017ExecutionReason\022\036\n\032EXECUT"
+          + "_WARMING\020\014\"\233\001\n\017ExecutionReason\022\036\n\032EXECUT"
           + "ION_REASON_UNDEFINED\020\000\022$\n JOB_STATUS_SER"
           + "VICE_POLLING_ERROR\020\001\022\026\n\022NON_ZERO_EXIT_CO"
-          + "DE\020\002\022\r\n\tCANCELLED\020\003\022\016\n\nCANCELLING\020\004B\t\n\007r"
-          + "easonsBV\n\027com.google.cloud.run.v2B\016Condi"
-          + "tionProtoP\001Z)cloud.google.com/go/run/api"
-          + "v2/runpb;runpbb\006proto3"
+          + "DE\020\002\022\r\n\tCANCELLED\020\003\022\016\n\nCANCELLING\020\004\022\013\n\007D"
+          + "ELETED\020\005B\t\n\007reasonsBV\n\027com.google.cloud."
+          + "run.v2B\016ConditionProtoP\001Z)cloud.google.c"
+          + "om/go/run/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

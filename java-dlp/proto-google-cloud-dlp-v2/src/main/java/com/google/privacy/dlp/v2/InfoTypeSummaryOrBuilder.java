@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ public interface InfoTypeSummaryOrBuilder
    * <code>int32 estimated_prevalence = 2 [deprecated = true];</code>
    *
    * @deprecated google.privacy.dlp.v2.InfoTypeSummary.estimated_prevalence is deprecated. See
-   *     google/privacy/dlp/v2/dlp.proto;l=5324
+   *     google/privacy/dlp/v2/dlp.proto;l=5965
    * @return The estimatedPrevalence.
    */
   @java.lang.Deprecated

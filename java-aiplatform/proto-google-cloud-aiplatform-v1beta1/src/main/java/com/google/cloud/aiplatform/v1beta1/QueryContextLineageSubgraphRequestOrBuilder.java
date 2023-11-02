@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface QueryContextLineageSubgraphRequestOrBuilder
    * should be retrieved as a LineageSubgraph.
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+   *
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
    * for the Context exceeds 1000.
@@ -51,6 +52,7 @@ public interface QueryContextLineageSubgraphRequestOrBuilder
    * should be retrieved as a LineageSubgraph.
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+   *
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
    * for the Context exceeds 1000.

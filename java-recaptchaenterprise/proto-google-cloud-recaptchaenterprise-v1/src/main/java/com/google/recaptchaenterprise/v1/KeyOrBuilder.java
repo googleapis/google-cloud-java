@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface KeyOrBuilder
    *
    * <pre>
    * The resource name for the Key in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,7 +41,7 @@ public interface KeyOrBuilder
    *
    * <pre>
    * The resource name for the Key in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -184,8 +184,8 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-   * Creating and managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -195,8 +195,8 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-   * Creating and managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -209,8 +209,8 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-   * Creating and managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -220,8 +220,8 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-   * Creating and managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -235,8 +235,8 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-   * Creating and managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -247,7 +247,7 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this key.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -260,7 +260,7 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this key.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -273,7 +273,7 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this key.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -351,5 +351,5 @@ public interface KeyOrBuilder
    */
   com.google.recaptchaenterprise.v1.WafSettingsOrBuilder getWafSettingsOrBuilder();
 
-  public com.google.recaptchaenterprise.v1.Key.PlatformSettingsCase getPlatformSettingsCase();
+  com.google.recaptchaenterprise.v1.Key.PlatformSettingsCase getPlatformSettingsCase();
 }

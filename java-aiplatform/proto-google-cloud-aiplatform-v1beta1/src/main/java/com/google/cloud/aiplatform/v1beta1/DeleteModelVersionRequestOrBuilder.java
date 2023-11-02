@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface DeleteModelVersionRequestOrBuilder
    * <pre>
    * Required. The name of the model version to be deleted, with a version ID
    * explicitly included.
+   *
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface DeleteModelVersionRequestOrBuilder
    * <pre>
    * Required. The name of the model version to be deleted, with a version ID
    * explicitly included.
+   *
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *

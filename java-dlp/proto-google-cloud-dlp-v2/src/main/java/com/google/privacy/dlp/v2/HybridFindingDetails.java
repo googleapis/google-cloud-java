@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new HybridFindingDetails();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -263,11 +258,15 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    * If configured by the job, some key values may be required.
    * The labels associated with `Finding`'s produced by hybrid
    * inspection.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * Label values must be between 0 and 63 characters long and must conform
    * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+   *
    * No more than 10 labels can be associated with a given finding.
+   *
    * Examples:
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
@@ -296,11 +295,15 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    * If configured by the job, some key values may be required.
    * The labels associated with `Finding`'s produced by hybrid
    * inspection.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * Label values must be between 0 and 63 characters long and must conform
    * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+   *
    * No more than 10 labels can be associated with a given finding.
+   *
    * Examples:
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
@@ -320,11 +323,15 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    * If configured by the job, some key values may be required.
    * The labels associated with `Finding`'s produced by hybrid
    * inspection.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * Label values must be between 0 and 63 characters long and must conform
    * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+   *
    * No more than 10 labels can be associated with a given finding.
+   *
    * Examples:
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
@@ -351,11 +358,15 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    * If configured by the job, some key values may be required.
    * The labels associated with `Finding`'s produced by hybrid
    * inspection.
+   *
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+   *
    * Label values must be between 0 and 63 characters long and must conform
    * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+   *
    * No more than 10 labels can be associated with a given finding.
+   *
    * Examples:
    * * `"environment" : "production"`
    * * `"pipeline" : "etl"`
@@ -1414,11 +1425,15 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * If configured by the job, some key values may be required.
      * The labels associated with `Finding`'s produced by hybrid
      * inspection.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1447,11 +1462,15 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * If configured by the job, some key values may be required.
      * The labels associated with `Finding`'s produced by hybrid
      * inspection.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1471,11 +1490,15 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * If configured by the job, some key values may be required.
      * The labels associated with `Finding`'s produced by hybrid
      * inspection.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1502,11 +1525,15 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * If configured by the job, some key values may be required.
      * The labels associated with `Finding`'s produced by hybrid
      * inspection.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1539,11 +1566,15 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * If configured by the job, some key values may be required.
      * The labels associated with `Finding`'s produced by hybrid
      * inspection.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1572,11 +1603,15 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * If configured by the job, some key values may be required.
      * The labels associated with `Finding`'s produced by hybrid
      * inspection.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`
@@ -1603,11 +1638,15 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      * If configured by the job, some key values may be required.
      * The labels associated with `Finding`'s produced by hybrid
      * inspection.
+     *
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     *
      * Label values must be between 0 and 63 characters long and must conform
      * to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
+     *
      * No more than 10 labels can be associated with a given finding.
+     *
      * Examples:
      * * `"environment" : "production"`
      * * `"pipeline" : "etl"`

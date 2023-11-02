@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,13 +27,13 @@ public interface ProjectBillingInfoOrBuilder
    *
    *
    * <pre>
-   * The resource name for the `ProjectBillingInfo`; has the form
+   * Output only. The resource name for the `ProjectBillingInfo`; has the form
    * `projects/{project_id}/billingInfo`. For example, the resource name for the
    * billing information for project `tokyo-rain-123` would be
-   * `projects/tokyo-rain-123/billingInfo`. This field is read-only.
+   * `projects/tokyo-rain-123/billingInfo`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -42,13 +42,13 @@ public interface ProjectBillingInfoOrBuilder
    *
    *
    * <pre>
-   * The resource name for the `ProjectBillingInfo`; has the form
+   * Output only. The resource name for the `ProjectBillingInfo`; has the form
    * `projects/{project_id}/billingInfo`. For example, the resource name for the
    * billing information for project `tokyo-rain-123` would be
-   * `projects/tokyo-rain-123/billingInfo`. This field is read-only.
+   * `projects/tokyo-rain-123/billingInfo`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -58,12 +58,12 @@ public interface ProjectBillingInfoOrBuilder
    *
    *
    * <pre>
-   * The ID of the project that this `ProjectBillingInfo` represents, such as
-   * `tokyo-rain-123`. This is a convenience field so that you don't need to
-   * parse the `name` field to obtain a project ID. This field is read-only.
+   * Output only. The ID of the project that this `ProjectBillingInfo`
+   * represents, such as `tokyo-rain-123`. This is a convenience field so that
+   * you don't need to parse the `name` field to obtain a project ID.
    * </pre>
    *
-   * <code>string project_id = 2;</code>
+   * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The projectId.
    */
@@ -72,12 +72,12 @@ public interface ProjectBillingInfoOrBuilder
    *
    *
    * <pre>
-   * The ID of the project that this `ProjectBillingInfo` represents, such as
-   * `tokyo-rain-123`. This is a convenience field so that you don't need to
-   * parse the `name` field to obtain a project ID. This field is read-only.
+   * Output only. The ID of the project that this `ProjectBillingInfo`
+   * represents, such as `tokyo-rain-123`. This is a convenience field so that
+   * you don't need to parse the `name` field to obtain a project ID.
    * </pre>
    *
-   * <code>string project_id = 2;</code>
+   * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for projectId.
    */
@@ -114,13 +114,13 @@ public interface ProjectBillingInfoOrBuilder
    *
    *
    * <pre>
-   * True if the project is associated with an open billing account, to which
-   * usage on the project is charged. False if the project is associated with a
-   * closed billing account, or no billing account at all, and therefore cannot
-   * use paid services. This field is read-only.
+   * Output only. True if the project is associated with an open billing
+   * account, to which usage on the project is charged. False if the project is
+   * associated with a closed billing account, or no billing account at all, and
+   * therefore cannot use paid services.
    * </pre>
    *
-   * <code>bool billing_enabled = 4;</code>
+   * <code>bool billing_enabled = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The billingEnabled.
    */

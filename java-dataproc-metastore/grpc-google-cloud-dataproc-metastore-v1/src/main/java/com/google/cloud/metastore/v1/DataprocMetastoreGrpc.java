@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ public final class DataprocMetastoreGrpc {
 
   private DataprocMetastoreGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.metastore.v1.DataprocMetastore";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.metastore.v1.DataprocMetastore";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -722,6 +722,150 @@ public final class DataprocMetastoreGrpc {
     return getDeleteBackupMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.metastore.v1.QueryMetadataRequest, com.google.longrunning.Operation>
+      getQueryMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryMetadata",
+      requestType = com.google.cloud.metastore.v1.QueryMetadataRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.metastore.v1.QueryMetadataRequest, com.google.longrunning.Operation>
+      getQueryMetadataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.metastore.v1.QueryMetadataRequest, com.google.longrunning.Operation>
+        getQueryMetadataMethod;
+    if ((getQueryMetadataMethod = DataprocMetastoreGrpc.getQueryMetadataMethod) == null) {
+      synchronized (DataprocMetastoreGrpc.class) {
+        if ((getQueryMetadataMethod = DataprocMetastoreGrpc.getQueryMetadataMethod) == null) {
+          DataprocMetastoreGrpc.getQueryMetadataMethod =
+              getQueryMetadataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.metastore.v1.QueryMetadataRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "QueryMetadata"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.metastore.v1.QueryMetadataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataprocMetastoreMethodDescriptorSupplier("QueryMetadata"))
+                      .build();
+        }
+      }
+    }
+    return getQueryMetadataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.metastore.v1.MoveTableToDatabaseRequest,
+          com.google.longrunning.Operation>
+      getMoveTableToDatabaseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MoveTableToDatabase",
+      requestType = com.google.cloud.metastore.v1.MoveTableToDatabaseRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.metastore.v1.MoveTableToDatabaseRequest,
+          com.google.longrunning.Operation>
+      getMoveTableToDatabaseMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.metastore.v1.MoveTableToDatabaseRequest,
+            com.google.longrunning.Operation>
+        getMoveTableToDatabaseMethod;
+    if ((getMoveTableToDatabaseMethod = DataprocMetastoreGrpc.getMoveTableToDatabaseMethod)
+        == null) {
+      synchronized (DataprocMetastoreGrpc.class) {
+        if ((getMoveTableToDatabaseMethod = DataprocMetastoreGrpc.getMoveTableToDatabaseMethod)
+            == null) {
+          DataprocMetastoreGrpc.getMoveTableToDatabaseMethod =
+              getMoveTableToDatabaseMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.metastore.v1.MoveTableToDatabaseRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "MoveTableToDatabase"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.metastore.v1.MoveTableToDatabaseRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataprocMetastoreMethodDescriptorSupplier("MoveTableToDatabase"))
+                      .build();
+        }
+      }
+    }
+    return getMoveTableToDatabaseMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest,
+          com.google.longrunning.Operation>
+      getAlterMetadataResourceLocationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AlterMetadataResourceLocation",
+      requestType = com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest,
+          com.google.longrunning.Operation>
+      getAlterMetadataResourceLocationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest,
+            com.google.longrunning.Operation>
+        getAlterMetadataResourceLocationMethod;
+    if ((getAlterMetadataResourceLocationMethod =
+            DataprocMetastoreGrpc.getAlterMetadataResourceLocationMethod)
+        == null) {
+      synchronized (DataprocMetastoreGrpc.class) {
+        if ((getAlterMetadataResourceLocationMethod =
+                DataprocMetastoreGrpc.getAlterMetadataResourceLocationMethod)
+            == null) {
+          DataprocMetastoreGrpc.getAlterMetadataResourceLocationMethod =
+              getAlterMetadataResourceLocationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AlterMetadataResourceLocation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataprocMetastoreMethodDescriptorSupplier(
+                              "AlterMetadataResourceLocation"))
+                      .build();
+        }
+      }
+    }
+    return getAlterMetadataResourceLocationMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DataprocMetastoreStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DataprocMetastoreStub> factory =
@@ -996,6 +1140,51 @@ public final class DataprocMetastoreGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Query DPMS metadata.
+     * </pre>
+     */
+    default void queryMetadata(
+        com.google.cloud.metastore.v1.QueryMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getQueryMetadataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Move a table to another database.
+     * </pre>
+     */
+    default void moveTableToDatabase(
+        com.google.cloud.metastore.v1.MoveTableToDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMoveTableToDatabaseMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alter metadata resource location. The metadata resource can be a database,
+     * table, or partition. This functionality only updates the parent directory
+     * for the respective metadata resource and does not transfer any existing
+     * data to the new location.
+     * </pre>
+     */
+    default void alterMetadataResourceLocation(
+        com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAlterMetadataResourceLocationMethod(), responseObserver);
     }
   }
 
@@ -1300,6 +1489,57 @@ public final class DataprocMetastoreGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Query DPMS metadata.
+     * </pre>
+     */
+    public void queryMetadata(
+        com.google.cloud.metastore.v1.QueryMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryMetadataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Move a table to another database.
+     * </pre>
+     */
+    public void moveTableToDatabase(
+        com.google.cloud.metastore.v1.MoveTableToDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMoveTableToDatabaseMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alter metadata resource location. The metadata resource can be a database,
+     * table, or partition. This functionality only updates the parent directory
+     * for the respective metadata resource and does not transfer any existing
+     * data to the new location.
+     * </pre>
+     */
+    public void alterMetadataResourceLocation(
+        com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAlterMetadataResourceLocationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1529,6 +1769,48 @@ public final class DataprocMetastoreGrpc {
         com.google.cloud.metastore.v1.DeleteBackupRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Query DPMS metadata.
+     * </pre>
+     */
+    public com.google.longrunning.Operation queryMetadata(
+        com.google.cloud.metastore.v1.QueryMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Move a table to another database.
+     * </pre>
+     */
+    public com.google.longrunning.Operation moveTableToDatabase(
+        com.google.cloud.metastore.v1.MoveTableToDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMoveTableToDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alter metadata resource location. The metadata resource can be a database,
+     * table, or partition. This functionality only updates the parent directory
+     * for the respective metadata resource and does not transfer any existing
+     * data to the new location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation alterMetadataResourceLocation(
+        com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAlterMetadataResourceLocationMethod(), getCallOptions(), request);
     }
   }
 
@@ -1763,6 +2045,50 @@ public final class DataprocMetastoreGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBackupMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Query DPMS metadata.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        queryMetadata(com.google.cloud.metastore.v1.QueryMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryMetadataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Move a table to another database.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        moveTableToDatabase(com.google.cloud.metastore.v1.MoveTableToDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMoveTableToDatabaseMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alter metadata resource location. The metadata resource can be a database,
+     * table, or partition. This functionality only updates the parent directory
+     * for the respective metadata resource and does not transfer any existing
+     * data to the new location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        alterMetadataResourceLocation(
+            com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAlterMetadataResourceLocationMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_LIST_SERVICES = 0;
@@ -1780,6 +2106,9 @@ public final class DataprocMetastoreGrpc {
   private static final int METHODID_GET_BACKUP = 12;
   private static final int METHODID_CREATE_BACKUP = 13;
   private static final int METHODID_DELETE_BACKUP = 14;
+  private static final int METHODID_QUERY_METADATA = 15;
+  private static final int METHODID_MOVE_TABLE_TO_DATABASE = 16;
+  private static final int METHODID_ALTER_METADATA_RESOURCE_LOCATION = 17;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1877,6 +2206,21 @@ public final class DataprocMetastoreGrpc {
         case METHODID_DELETE_BACKUP:
           serviceImpl.deleteBackup(
               (com.google.cloud.metastore.v1.DeleteBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_QUERY_METADATA:
+          serviceImpl.queryMetadata(
+              (com.google.cloud.metastore.v1.QueryMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_MOVE_TABLE_TO_DATABASE:
+          serviceImpl.moveTableToDatabase(
+              (com.google.cloud.metastore.v1.MoveTableToDatabaseRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ALTER_METADATA_RESOURCE_LOCATION:
+          serviceImpl.alterMetadataResourceLocation(
+              (com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1991,6 +2335,25 @@ public final class DataprocMetastoreGrpc {
                 new MethodHandlers<
                     com.google.cloud.metastore.v1.DeleteBackupRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP)))
+        .addMethod(
+            getQueryMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.metastore.v1.QueryMetadataRequest,
+                    com.google.longrunning.Operation>(service, METHODID_QUERY_METADATA)))
+        .addMethod(
+            getMoveTableToDatabaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.metastore.v1.MoveTableToDatabaseRequest,
+                    com.google.longrunning.Operation>(service, METHODID_MOVE_TABLE_TO_DATABASE)))
+        .addMethod(
+            getAlterMetadataResourceLocationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_ALTER_METADATA_RESOURCE_LOCATION)))
         .build();
   }
 
@@ -2018,9 +2381,9 @@ public final class DataprocMetastoreGrpc {
   private static final class DataprocMetastoreMethodDescriptorSupplier
       extends DataprocMetastoreBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataprocMetastoreMethodDescriptorSupplier(String methodName) {
+    DataprocMetastoreMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -2057,6 +2420,9 @@ public final class DataprocMetastoreGrpc {
                       .addMethod(getGetBackupMethod())
                       .addMethod(getCreateBackupMethod())
                       .addMethod(getDeleteBackupMethod())
+                      .addMethod(getQueryMetadataMethod())
+                      .addMethod(getMoveTableToDatabaseMethod())
+                      .addMethod(getAlterMetadataResourceLocationMethod())
                       .build();
         }
       }

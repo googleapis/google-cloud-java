@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,11 +94,10 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * For IaaS SKUs like Google Cloud Platform, monetization is based on usage
-   * accrued on your billing account irrespective of the type of monetizable
-   * resource. This enum represents an aggregated resource/container for all
-   * usage SKUs on a billing account. Currently, only applicable to Google Cloud
-   * Platform.
+   * For IaaS SKUs like Google Cloud, monetization is based on usage accrued on
+   * your billing account irrespective of the type of monetizable resource. This
+   * enum represents an aggregated resource/container for all usage SKUs on a
+   * billing account. Currently, only applicable to Google Cloud.
    * </pre>
    *
    * <code>IAAS_USAGE = 6;</code>
@@ -108,7 +107,7 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * For Google Cloud Platform subscriptions like Anthos or SAP.
+   * For Google Cloud subscriptions like Anthos or SAP.
    * </pre>
    *
    * <code>SUBSCRIPTION = 7;</code>
@@ -181,11 +180,10 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * For IaaS SKUs like Google Cloud Platform, monetization is based on usage
-   * accrued on your billing account irrespective of the type of monetizable
-   * resource. This enum represents an aggregated resource/container for all
-   * usage SKUs on a billing account. Currently, only applicable to Google Cloud
-   * Platform.
+   * For IaaS SKUs like Google Cloud, monetization is based on usage accrued on
+   * your billing account irrespective of the type of monetizable resource. This
+   * enum represents an aggregated resource/container for all usage SKUs on a
+   * billing account. Currently, only applicable to Google Cloud.
    * </pre>
    *
    * <code>IAAS_USAGE = 6;</code>
@@ -195,7 +193,7 @@ public enum ResourceType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * For Google Cloud Platform subscriptions like Anthos or SAP.
+   * For Google Cloud subscriptions like Anthos or SAP.
    * </pre>
    *
    * <code>SUBSCRIPTION = 7;</code>

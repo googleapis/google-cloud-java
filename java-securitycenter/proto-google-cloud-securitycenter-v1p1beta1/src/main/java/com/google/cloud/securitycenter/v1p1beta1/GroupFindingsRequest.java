@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GroupFindingsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -149,20 +144,28 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * The expression is a list of one or more restrictions combined via logical
    * operators `AND` and `OR`.
    * Parentheses are supported, and `OR` has higher precedence than `AND`.
+   *
    * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
    * character in front of them to indicate negation. Examples include:
+   *
    *  * name
    *  * source_properties.a_property
    *  * security_marks.marks.marka
+   *
    * The supported operators are:
+   *
    * * `=` for all value types.
    * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
    * * `:`, meaning substring matching, for strings.
+   *
    * The supported value types are:
+   *
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   *
    * The following field and operator combinations are supported:
+   *
    * * name: `=`
    * * parent: `=`, `:`
    * * resource_name: `=`, `:`
@@ -171,15 +174,20 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * * external_uri: `=`, `:`
    * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * severity: `=`, `:`
+   *
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `event_time = "2019-06-10T16:07:18-07:00"`
    *     `event_time = 1560208038000`
+   *
    * * security_marks.marks: `=`, `:`
    * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *
    * For example, `source_properties.size = 100` is a valid filter string.
+   *
    * Use a partial match on the empty string to filter based on a property
    * existing: `source_properties.my_property : ""`
+   *
    * Use a negated partial match on the empty string to filter based on a
    * property not existing: `-source_properties.my_property : ""`
    * </pre>
@@ -208,20 +216,28 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * The expression is a list of one or more restrictions combined via logical
    * operators `AND` and `OR`.
    * Parentheses are supported, and `OR` has higher precedence than `AND`.
+   *
    * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
    * character in front of them to indicate negation. Examples include:
+   *
    *  * name
    *  * source_properties.a_property
    *  * security_marks.marks.marka
+   *
    * The supported operators are:
+   *
    * * `=` for all value types.
    * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
    * * `:`, meaning substring matching, for strings.
+   *
    * The supported value types are:
+   *
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   *
    * The following field and operator combinations are supported:
+   *
    * * name: `=`
    * * parent: `=`, `:`
    * * resource_name: `=`, `:`
@@ -230,15 +246,20 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * * external_uri: `=`, `:`
    * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * severity: `=`, `:`
+   *
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `event_time = "2019-06-10T16:07:18-07:00"`
    *     `event_time = 1560208038000`
+   *
    * * security_marks.marks: `=`, `:`
    * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *
    * For example, `source_properties.size = 100` is a valid filter string.
+   *
    * Use a partial match on the empty string to filter based on a property
    * existing: `source_properties.my_property : ""`
+   *
    * Use a negated partial match on the empty string to filter based on a
    * property not existing: `-source_properties.my_property : ""`
    * </pre>
@@ -271,13 +292,17 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * Required. Expression that defines what assets fields to use for grouping (including
    * `state_change`). The string value should follow SQL syntax: comma separated
    * list of fields. For example: "parent,resource_name".
+   *
    * The following fields are supported:
+   *
    * * resource_name
    * * category
    * * state
    * * parent
    * * severity
+   *
    * The following fields are supported when compare_duration is set:
+   *
    * * state_change
    * </pre>
    *
@@ -304,13 +329,17 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * Required. Expression that defines what assets fields to use for grouping (including
    * `state_change`). The string value should follow SQL syntax: comma separated
    * list of fields. For example: "parent,resource_name".
+   *
    * The following fields are supported:
+   *
    * * resource_name
    * * category
    * * state
    * * parent
    * * severity
+   *
    * The following fields are supported when compare_duration is set:
+   *
    * * state_change
    * </pre>
    *
@@ -397,11 +426,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * finding's state remained unchanged, or if the finding was added during the
    * compare_duration period of time that precedes the read_time. This is the
    * time between (read_time - compare_duration) and read_time.
+   *
    * The state_change value is derived based on the presence and state of the
    * finding at the two points in time. Intermediate state changes between the
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
+   *
    * Possible "state_change" values when compare_duration is specified:
+   *
    * * "CHANGED":   indicates that the finding was present and matched the given
    *                  filter at the start of compare_duration, but changed its
    *                  state at read_time.
@@ -414,9 +446,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * * "REMOVED":   indicates that the finding was present and matched the
    *                  filter at the start of compare_duration, but did not match
    *                  the filter at read_time.
+   *
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED",  which will be the state_change set for all findings present
    * at read_time.
+   *
    * If this field is set then `state_change` must be a specified field in
    * `group_by`.
    * </pre>
@@ -438,11 +472,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * finding's state remained unchanged, or if the finding was added during the
    * compare_duration period of time that precedes the read_time. This is the
    * time between (read_time - compare_duration) and read_time.
+   *
    * The state_change value is derived based on the presence and state of the
    * finding at the two points in time. Intermediate state changes between the
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
+   *
    * Possible "state_change" values when compare_duration is specified:
+   *
    * * "CHANGED":   indicates that the finding was present and matched the given
    *                  filter at the start of compare_duration, but changed its
    *                  state at read_time.
@@ -455,9 +492,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * * "REMOVED":   indicates that the finding was present and matched the
    *                  filter at the start of compare_duration, but did not match
    *                  the filter at read_time.
+   *
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED",  which will be the state_change set for all findings present
    * at read_time.
+   *
    * If this field is set then `state_change` must be a specified field in
    * `group_by`.
    * </pre>
@@ -481,11 +520,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * finding's state remained unchanged, or if the finding was added during the
    * compare_duration period of time that precedes the read_time. This is the
    * time between (read_time - compare_duration) and read_time.
+   *
    * The state_change value is derived based on the presence and state of the
    * finding at the two points in time. Intermediate state changes between the
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
+   *
    * Possible "state_change" values when compare_duration is specified:
+   *
    * * "CHANGED":   indicates that the finding was present and matched the given
    *                  filter at the start of compare_duration, but changed its
    *                  state at read_time.
@@ -498,9 +540,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    * * "REMOVED":   indicates that the finding was present and matched the
    *                  filter at the start of compare_duration, but did not match
    *                  the filter at read_time.
+   *
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED",  which will be the state_change set for all findings present
    * at read_time.
+   *
    * If this field is set then `state_change` must be a specified field in
    * `group_by`.
    * </pre>
@@ -1246,20 +1290,28 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * The expression is a list of one or more restrictions combined via logical
      * operators `AND` and `OR`.
      * Parentheses are supported, and `OR` has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
      * character in front of them to indicate negation. Examples include:
+     *
      *  * name
      *  * source_properties.a_property
      *  * security_marks.marks.marka
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     *
      * The following field and operator combinations are supported:
+     *
      * * name: `=`
      * * parent: `=`, `:`
      * * resource_name: `=`, `:`
@@ -1268,15 +1320,20 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * external_uri: `=`, `:`
      * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * severity: `=`, `:`
+     *
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     `event_time = "2019-06-10T16:07:18-07:00"`
      *     `event_time = 1560208038000`
+     *
      * * security_marks.marks: `=`, `:`
      * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *
      * For example, `source_properties.size = 100` is a valid filter string.
+     *
      * Use a partial match on the empty string to filter based on a property
      * existing: `source_properties.my_property : ""`
+     *
      * Use a negated partial match on the empty string to filter based on a
      * property not existing: `-source_properties.my_property : ""`
      * </pre>
@@ -1304,20 +1361,28 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * The expression is a list of one or more restrictions combined via logical
      * operators `AND` and `OR`.
      * Parentheses are supported, and `OR` has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
      * character in front of them to indicate negation. Examples include:
+     *
      *  * name
      *  * source_properties.a_property
      *  * security_marks.marks.marka
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     *
      * The following field and operator combinations are supported:
+     *
      * * name: `=`
      * * parent: `=`, `:`
      * * resource_name: `=`, `:`
@@ -1326,15 +1391,20 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * external_uri: `=`, `:`
      * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * severity: `=`, `:`
+     *
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     `event_time = "2019-06-10T16:07:18-07:00"`
      *     `event_time = 1560208038000`
+     *
      * * security_marks.marks: `=`, `:`
      * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *
      * For example, `source_properties.size = 100` is a valid filter string.
+     *
      * Use a partial match on the empty string to filter based on a property
      * existing: `source_properties.my_property : ""`
+     *
      * Use a negated partial match on the empty string to filter based on a
      * property not existing: `-source_properties.my_property : ""`
      * </pre>
@@ -1362,20 +1432,28 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * The expression is a list of one or more restrictions combined via logical
      * operators `AND` and `OR`.
      * Parentheses are supported, and `OR` has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
      * character in front of them to indicate negation. Examples include:
+     *
      *  * name
      *  * source_properties.a_property
      *  * security_marks.marks.marka
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     *
      * The following field and operator combinations are supported:
+     *
      * * name: `=`
      * * parent: `=`, `:`
      * * resource_name: `=`, `:`
@@ -1384,15 +1462,20 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * external_uri: `=`, `:`
      * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * severity: `=`, `:`
+     *
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     `event_time = "2019-06-10T16:07:18-07:00"`
      *     `event_time = 1560208038000`
+     *
      * * security_marks.marks: `=`, `:`
      * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *
      * For example, `source_properties.size = 100` is a valid filter string.
+     *
      * Use a partial match on the empty string to filter based on a property
      * existing: `source_properties.my_property : ""`
+     *
      * Use a negated partial match on the empty string to filter based on a
      * property not existing: `-source_properties.my_property : ""`
      * </pre>
@@ -1419,20 +1502,28 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * The expression is a list of one or more restrictions combined via logical
      * operators `AND` and `OR`.
      * Parentheses are supported, and `OR` has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
      * character in front of them to indicate negation. Examples include:
+     *
      *  * name
      *  * source_properties.a_property
      *  * security_marks.marks.marka
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     *
      * The following field and operator combinations are supported:
+     *
      * * name: `=`
      * * parent: `=`, `:`
      * * resource_name: `=`, `:`
@@ -1441,15 +1532,20 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * external_uri: `=`, `:`
      * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * severity: `=`, `:`
+     *
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     `event_time = "2019-06-10T16:07:18-07:00"`
      *     `event_time = 1560208038000`
+     *
      * * security_marks.marks: `=`, `:`
      * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *
      * For example, `source_properties.size = 100` is a valid filter string.
+     *
      * Use a partial match on the empty string to filter based on a property
      * existing: `source_properties.my_property : ""`
+     *
      * Use a negated partial match on the empty string to filter based on a
      * property not existing: `-source_properties.my_property : ""`
      * </pre>
@@ -1472,20 +1568,28 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * The expression is a list of one or more restrictions combined via logical
      * operators `AND` and `OR`.
      * Parentheses are supported, and `OR` has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
      * character in front of them to indicate negation. Examples include:
+     *
      *  * name
      *  * source_properties.a_property
      *  * security_marks.marks.marka
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     *
      * The following field and operator combinations are supported:
+     *
      * * name: `=`
      * * parent: `=`, `:`
      * * resource_name: `=`, `:`
@@ -1494,15 +1598,20 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * external_uri: `=`, `:`
      * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * * severity: `=`, `:`
+     *
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     `event_time = "2019-06-10T16:07:18-07:00"`
      *     `event_time = 1560208038000`
+     *
      * * security_marks.marks: `=`, `:`
      * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     *
      * For example, `source_properties.size = 100` is a valid filter string.
+     *
      * Use a partial match on the empty string to filter based on a property
      * existing: `source_properties.my_property : ""`
+     *
      * Use a negated partial match on the empty string to filter based on a
      * property not existing: `-source_properties.my_property : ""`
      * </pre>
@@ -1531,13 +1640,17 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping (including
      * `state_change`). The string value should follow SQL syntax: comma separated
      * list of fields. For example: "parent,resource_name".
+     *
      * The following fields are supported:
+     *
      * * resource_name
      * * category
      * * state
      * * parent
      * * severity
+     *
      * The following fields are supported when compare_duration is set:
+     *
      * * state_change
      * </pre>
      *
@@ -1563,13 +1676,17 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping (including
      * `state_change`). The string value should follow SQL syntax: comma separated
      * list of fields. For example: "parent,resource_name".
+     *
      * The following fields are supported:
+     *
      * * resource_name
      * * category
      * * state
      * * parent
      * * severity
+     *
      * The following fields are supported when compare_duration is set:
+     *
      * * state_change
      * </pre>
      *
@@ -1595,13 +1712,17 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping (including
      * `state_change`). The string value should follow SQL syntax: comma separated
      * list of fields. For example: "parent,resource_name".
+     *
      * The following fields are supported:
+     *
      * * resource_name
      * * category
      * * state
      * * parent
      * * severity
+     *
      * The following fields are supported when compare_duration is set:
+     *
      * * state_change
      * </pre>
      *
@@ -1626,13 +1747,17 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping (including
      * `state_change`). The string value should follow SQL syntax: comma separated
      * list of fields. For example: "parent,resource_name".
+     *
      * The following fields are supported:
+     *
      * * resource_name
      * * category
      * * state
      * * parent
      * * severity
+     *
      * The following fields are supported when compare_duration is set:
+     *
      * * state_change
      * </pre>
      *
@@ -1653,13 +1778,17 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * Required. Expression that defines what assets fields to use for grouping (including
      * `state_change`). The string value should follow SQL syntax: comma separated
      * list of fields. For example: "parent,resource_name".
+     *
      * The following fields are supported:
+     *
      * * resource_name
      * * category
      * * state
      * * parent
      * * severity
+     *
      * The following fields are supported when compare_duration is set:
+     *
      * * state_change
      * </pre>
      *
@@ -1900,11 +2029,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * finding's state remained unchanged, or if the finding was added during the
      * compare_duration period of time that precedes the read_time. This is the
      * time between (read_time - compare_duration) and read_time.
+     *
      * The state_change value is derived based on the presence and state of the
      * finding at the two points in time. Intermediate state changes between the
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
+     *
      * Possible "state_change" values when compare_duration is specified:
+     *
      * * "CHANGED":   indicates that the finding was present and matched the given
      *                  filter at the start of compare_duration, but changed its
      *                  state at read_time.
@@ -1917,9 +2049,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * "REMOVED":   indicates that the finding was present and matched the
      *                  filter at the start of compare_duration, but did not match
      *                  the filter at read_time.
+     *
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED",  which will be the state_change set for all findings present
      * at read_time.
+     *
      * If this field is set then `state_change` must be a specified field in
      * `group_by`.
      * </pre>
@@ -1940,11 +2074,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * finding's state remained unchanged, or if the finding was added during the
      * compare_duration period of time that precedes the read_time. This is the
      * time between (read_time - compare_duration) and read_time.
+     *
      * The state_change value is derived based on the presence and state of the
      * finding at the two points in time. Intermediate state changes between the
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
+     *
      * Possible "state_change" values when compare_duration is specified:
+     *
      * * "CHANGED":   indicates that the finding was present and matched the given
      *                  filter at the start of compare_duration, but changed its
      *                  state at read_time.
@@ -1957,9 +2094,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * "REMOVED":   indicates that the finding was present and matched the
      *                  filter at the start of compare_duration, but did not match
      *                  the filter at read_time.
+     *
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED",  which will be the state_change set for all findings present
      * at read_time.
+     *
      * If this field is set then `state_change` must be a specified field in
      * `group_by`.
      * </pre>
@@ -1986,11 +2125,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * finding's state remained unchanged, or if the finding was added during the
      * compare_duration period of time that precedes the read_time. This is the
      * time between (read_time - compare_duration) and read_time.
+     *
      * The state_change value is derived based on the presence and state of the
      * finding at the two points in time. Intermediate state changes between the
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
+     *
      * Possible "state_change" values when compare_duration is specified:
+     *
      * * "CHANGED":   indicates that the finding was present and matched the given
      *                  filter at the start of compare_duration, but changed its
      *                  state at read_time.
@@ -2003,9 +2145,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * "REMOVED":   indicates that the finding was present and matched the
      *                  filter at the start of compare_duration, but did not match
      *                  the filter at read_time.
+     *
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED",  which will be the state_change set for all findings present
      * at read_time.
+     *
      * If this field is set then `state_change` must be a specified field in
      * `group_by`.
      * </pre>
@@ -2034,11 +2178,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * finding's state remained unchanged, or if the finding was added during the
      * compare_duration period of time that precedes the read_time. This is the
      * time between (read_time - compare_duration) and read_time.
+     *
      * The state_change value is derived based on the presence and state of the
      * finding at the two points in time. Intermediate state changes between the
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
+     *
      * Possible "state_change" values when compare_duration is specified:
+     *
      * * "CHANGED":   indicates that the finding was present and matched the given
      *                  filter at the start of compare_duration, but changed its
      *                  state at read_time.
@@ -2051,9 +2198,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * "REMOVED":   indicates that the finding was present and matched the
      *                  filter at the start of compare_duration, but did not match
      *                  the filter at read_time.
+     *
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED",  which will be the state_change set for all findings present
      * at read_time.
+     *
      * If this field is set then `state_change` must be a specified field in
      * `group_by`.
      * </pre>
@@ -2079,11 +2228,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * finding's state remained unchanged, or if the finding was added during the
      * compare_duration period of time that precedes the read_time. This is the
      * time between (read_time - compare_duration) and read_time.
+     *
      * The state_change value is derived based on the presence and state of the
      * finding at the two points in time. Intermediate state changes between the
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
+     *
      * Possible "state_change" values when compare_duration is specified:
+     *
      * * "CHANGED":   indicates that the finding was present and matched the given
      *                  filter at the start of compare_duration, but changed its
      *                  state at read_time.
@@ -2096,9 +2248,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * "REMOVED":   indicates that the finding was present and matched the
      *                  filter at the start of compare_duration, but did not match
      *                  the filter at read_time.
+     *
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED",  which will be the state_change set for all findings present
      * at read_time.
+     *
      * If this field is set then `state_change` must be a specified field in
      * `group_by`.
      * </pre>
@@ -2130,11 +2284,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * finding's state remained unchanged, or if the finding was added during the
      * compare_duration period of time that precedes the read_time. This is the
      * time between (read_time - compare_duration) and read_time.
+     *
      * The state_change value is derived based on the presence and state of the
      * finding at the two points in time. Intermediate state changes between the
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
+     *
      * Possible "state_change" values when compare_duration is specified:
+     *
      * * "CHANGED":   indicates that the finding was present and matched the given
      *                  filter at the start of compare_duration, but changed its
      *                  state at read_time.
@@ -2147,9 +2304,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * "REMOVED":   indicates that the finding was present and matched the
      *                  filter at the start of compare_duration, but did not match
      *                  the filter at read_time.
+     *
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED",  which will be the state_change set for all findings present
      * at read_time.
+     *
      * If this field is set then `state_change` must be a specified field in
      * `group_by`.
      * </pre>
@@ -2175,11 +2334,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * finding's state remained unchanged, or if the finding was added during the
      * compare_duration period of time that precedes the read_time. This is the
      * time between (read_time - compare_duration) and read_time.
+     *
      * The state_change value is derived based on the presence and state of the
      * finding at the two points in time. Intermediate state changes between the
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
+     *
      * Possible "state_change" values when compare_duration is specified:
+     *
      * * "CHANGED":   indicates that the finding was present and matched the given
      *                  filter at the start of compare_duration, but changed its
      *                  state at read_time.
@@ -2192,9 +2354,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * "REMOVED":   indicates that the finding was present and matched the
      *                  filter at the start of compare_duration, but did not match
      *                  the filter at read_time.
+     *
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED",  which will be the state_change set for all findings present
      * at read_time.
+     *
      * If this field is set then `state_change` must be a specified field in
      * `group_by`.
      * </pre>
@@ -2215,11 +2379,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * finding's state remained unchanged, or if the finding was added during the
      * compare_duration period of time that precedes the read_time. This is the
      * time between (read_time - compare_duration) and read_time.
+     *
      * The state_change value is derived based on the presence and state of the
      * finding at the two points in time. Intermediate state changes between the
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
+     *
      * Possible "state_change" values when compare_duration is specified:
+     *
      * * "CHANGED":   indicates that the finding was present and matched the given
      *                  filter at the start of compare_duration, but changed its
      *                  state at read_time.
@@ -2232,9 +2399,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * "REMOVED":   indicates that the finding was present and matched the
      *                  filter at the start of compare_duration, but did not match
      *                  the filter at read_time.
+     *
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED",  which will be the state_change set for all findings present
      * at read_time.
+     *
      * If this field is set then `state_change` must be a specified field in
      * `group_by`.
      * </pre>
@@ -2259,11 +2428,14 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * finding's state remained unchanged, or if the finding was added during the
      * compare_duration period of time that precedes the read_time. This is the
      * time between (read_time - compare_duration) and read_time.
+     *
      * The state_change value is derived based on the presence and state of the
      * finding at the two points in time. Intermediate state changes between the
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
+     *
      * Possible "state_change" values when compare_duration is specified:
+     *
      * * "CHANGED":   indicates that the finding was present and matched the given
      *                  filter at the start of compare_duration, but changed its
      *                  state at read_time.
@@ -2276,9 +2448,11 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      * * "REMOVED":   indicates that the finding was present and matched the
      *                  filter at the start of compare_duration, but did not match
      *                  the filter at read_time.
+     *
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED",  which will be the state_change set for all findings present
      * at read_time.
+     *
      * If this field is set then `state_change` must be a specified field in
      * `group_by`.
      * </pre>

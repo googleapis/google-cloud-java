@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
     return new UpdateRoleRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_UpdateRoleRequest_descriptor;
@@ -81,18 +76,21 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
    * or
    * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
    * Each resource type's `name` value format is described below:
+   *
    * * [`projects.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/patch):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * * [`organizations.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/patch):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
    *   updates only [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * Note: Wildcard (*) values are invalid; you must specify a complete project
    * ID or organization ID.
    * </pre>
@@ -123,18 +121,21 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
    * or
    * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
    * Each resource type's `name` value format is described below:
+   *
    * * [`projects.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/patch):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * * [`organizations.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/patch):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
    *   updates only [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * Note: Wildcard (*) values are invalid; you must specify a complete project
    * ID or organization ID.
    * </pre>
@@ -662,18 +663,21 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `name` value format is described below:
+     *
      * * [`projects.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/patch):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * * [`organizations.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/patch):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
      *   updates only [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -703,18 +707,21 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `name` value format is described below:
+     *
      * * [`projects.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/patch):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * * [`organizations.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/patch):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
      *   updates only [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -744,18 +751,21 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `name` value format is described below:
+     *
      * * [`projects.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/patch):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * * [`organizations.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/patch):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
      *   updates only [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -784,18 +794,21 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `name` value format is described below:
+     *
      * * [`projects.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/patch):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * * [`organizations.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/patch):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
      *   updates only [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -820,18 +833,21 @@ public final class UpdateRoleRequest extends com.google.protobuf.GeneratedMessag
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `name` value format is described below:
+     *
      * * [`projects.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/patch):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * * [`organizations.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/patch):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
      *   updates only [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>

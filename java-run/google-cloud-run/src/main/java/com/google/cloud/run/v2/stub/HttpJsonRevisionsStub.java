@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,9 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.run.v2.DeleteRevisionRequest;
 import com.google.cloud.run.v2.GetRevisionRequest;
 import com.google.cloud.run.v2.ListRevisionsRequest;
@@ -186,6 +188,13 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
   private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_REVISION_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+  private static final PathTemplate LIST_REVISIONS_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+  private static final PathTemplate DELETE_REVISION_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+
   public static final HttpJsonRevisionsStub create(RevisionsStubSettings settings)
       throws IOException {
     return new HttpJsonRevisionsStub(settings, ClientContext.create(settings));
@@ -255,17 +264,35 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
         HttpJsonCallSettings.<GetRevisionRequest, Revision>newBuilder()
             .setMethodDescriptor(getRevisionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", GET_REVISION_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRevisionsRequest, ListRevisionsResponse>
         listRevisionsTransportSettings =
             HttpJsonCallSettings.<ListRevisionsRequest, ListRevisionsResponse>newBuilder()
                 .setMethodDescriptor(listRevisionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(request.getParent(), "location", LIST_REVISIONS_0_PATH_TEMPLATE);
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRevisionRequest, Operation> deleteRevisionTransportSettings =
         HttpJsonCallSettings.<DeleteRevisionRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRevisionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", DELETE_REVISION_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
             .build();
 
     this.getRevisionCallable =

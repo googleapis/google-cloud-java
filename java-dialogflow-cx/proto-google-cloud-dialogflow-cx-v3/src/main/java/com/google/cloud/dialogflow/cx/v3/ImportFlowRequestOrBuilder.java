@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ public interface ImportFlowRequestOrBuilder
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -80,6 +81,7 @@ public interface ImportFlowRequestOrBuilder
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -99,6 +101,7 @@ public interface ImportFlowRequestOrBuilder
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -162,5 +165,49 @@ public interface ImportFlowRequestOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption getImportOption();
 
-  public com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.FlowCase getFlowCase();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the import strategy used when resolving resource
+   * conflicts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the flowImportStrategy field is set.
+   */
+  boolean hasFlowImportStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the import strategy used when resolving resource
+   * conflicts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The flowImportStrategy.
+   */
+  com.google.cloud.dialogflow.cx.v3.FlowImportStrategy getFlowImportStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the import strategy used when resolving resource
+   * conflicts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.FlowImportStrategyOrBuilder getFlowImportStrategyOrBuilder();
+
+  com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.FlowCase getFlowCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,6 +90,7 @@ public interface ManifestOrBuilder
    * Required. List of `MuxStream`
    * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
    * in this manifest.
+   *
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -107,6 +108,7 @@ public interface ManifestOrBuilder
    * Required. List of `MuxStream`
    * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
    * in this manifest.
+   *
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -124,6 +126,7 @@ public interface ManifestOrBuilder
    * Required. List of `MuxStream`
    * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
    * in this manifest.
+   *
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -142,6 +145,7 @@ public interface ManifestOrBuilder
    * Required. List of `MuxStream`
    * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
    * in this manifest.
+   *
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -225,8 +229,10 @@ public interface ManifestOrBuilder
    *
    * <pre>
    * Whether to use the timecode, as specified in timecode config, when setting:
+   *
    * - `availabilityStartTime` attribute in DASH manifests.
    * - `#EXT-X-PROGRAM-DATE-TIME` tag in HLS manifests.
+   *
    * If false, ignore the input timecode and use the time from system clock
    * when the manifest is first generated. This is the default behavior.
    * </pre>

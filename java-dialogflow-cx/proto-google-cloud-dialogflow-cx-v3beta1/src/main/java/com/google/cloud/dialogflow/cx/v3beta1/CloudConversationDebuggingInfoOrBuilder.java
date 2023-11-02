@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -446,7 +446,7 @@ public interface CloudConversationDebuggingInfoOrBuilder
    *
    *
    * <pre>
-   * No speech timeout settings observed at runtime.
+   * No speech timeout settings for the stream.
    * </pre>
    *
    * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -458,7 +458,7 @@ public interface CloudConversationDebuggingInfoOrBuilder
    *
    *
    * <pre>
-   * No speech timeout settings observed at runtime.
+   * No speech timeout settings for the stream.
    * </pre>
    *
    * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -470,12 +470,47 @@ public interface CloudConversationDebuggingInfoOrBuilder
    *
    *
    * <pre>
-   * No speech timeout settings observed at runtime.
+   * No speech timeout settings for the stream.
    * </pre>
    *
    * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
    */
   com.google.protobuf.DurationOrBuilder getNoSpeechTimeoutOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Speech endpointing timeout settings for the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+   *
+   * @return Whether the endpointingTimeout field is set.
+   */
+  boolean hasEndpointingTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Speech endpointing timeout settings for the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+   *
+   * @return The endpointingTimeout.
+   */
+  com.google.protobuf.Duration getEndpointingTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Speech endpointing timeout settings for the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getEndpointingTimeoutOrBuilder();
 
   /**
    *

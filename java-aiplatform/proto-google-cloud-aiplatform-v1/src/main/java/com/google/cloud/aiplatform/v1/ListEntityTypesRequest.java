@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListEntityTypesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -140,12 +135,15 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Lists the EntityTypes that match the filter expression. The following
    * filters are supported:
+   *
    * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
    * Values must be in RFC 3339 format.
    * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
    * Values must be in RFC 3339 format.
    * * `labels`: Supports key-value equality as well as key presence.
+   *
    * Examples:
+   *
    * * `create_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;" OR
    *      update_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;"` --&gt; EntityTypes created
    *      or updated after 2020-01-31T15:30:00.000000Z.
@@ -177,12 +175,15 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Lists the EntityTypes that match the filter expression. The following
    * filters are supported:
+   *
    * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
    * Values must be in RFC 3339 format.
    * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
    * Values must be in RFC 3339 format.
    * * `labels`: Supports key-value equality as well as key presence.
+   *
    * Examples:
+   *
    * * `create_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;" OR
    *      update_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;"` --&gt; EntityTypes created
    *      or updated after 2020-01-31T15:30:00.000000Z.
@@ -241,6 +242,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    * A page token, received from a previous
    * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
    * must match the call that provided the page token.
@@ -269,6 +271,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    * A page token, received from a previous
    * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
    * must match the call that provided the page token.
@@ -301,7 +304,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
+   *
    * Supported fields:
+   *
    *   * `entity_type_id`
    *   * `create_time`
    *   * `update_time`
@@ -329,7 +334,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
+   *
    * Supported fields:
+   *
    *   * `entity_type_id`
    *   * `create_time`
    *   * `update_time`
@@ -1000,12 +1007,15 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Lists the EntityTypes that match the filter expression. The following
      * filters are supported:
+     *
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
      * Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
      * Values must be in RFC 3339 format.
      * * `labels`: Supports key-value equality as well as key presence.
+     *
      * Examples:
+     *
      * * `create_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;" OR
      *      update_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;"` --&gt; EntityTypes created
      *      or updated after 2020-01-31T15:30:00.000000Z.
@@ -1036,12 +1046,15 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Lists the EntityTypes that match the filter expression. The following
      * filters are supported:
+     *
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
      * Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
      * Values must be in RFC 3339 format.
      * * `labels`: Supports key-value equality as well as key presence.
+     *
      * Examples:
+     *
      * * `create_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;" OR
      *      update_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;"` --&gt; EntityTypes created
      *      or updated after 2020-01-31T15:30:00.000000Z.
@@ -1072,12 +1085,15 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Lists the EntityTypes that match the filter expression. The following
      * filters are supported:
+     *
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
      * Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
      * Values must be in RFC 3339 format.
      * * `labels`: Supports key-value equality as well as key presence.
+     *
      * Examples:
+     *
      * * `create_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;" OR
      *      update_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;"` --&gt; EntityTypes created
      *      or updated after 2020-01-31T15:30:00.000000Z.
@@ -1107,12 +1123,15 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Lists the EntityTypes that match the filter expression. The following
      * filters are supported:
+     *
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
      * Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
      * Values must be in RFC 3339 format.
      * * `labels`: Supports key-value equality as well as key presence.
+     *
      * Examples:
+     *
      * * `create_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;" OR
      *      update_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;"` --&gt; EntityTypes created
      *      or updated after 2020-01-31T15:30:00.000000Z.
@@ -1138,12 +1157,15 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Lists the EntityTypes that match the filter expression. The following
      * filters are supported:
+     *
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
      * Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&gt;=`, and `&lt;=` comparisons.
      * Values must be in RFC 3339 format.
      * * `labels`: Supports key-value equality as well as key presence.
+     *
      * Examples:
+     *
      * * `create_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;" OR
      *      update_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;"` --&gt; EntityTypes created
      *      or updated after 2020-01-31T15:30:00.000000Z.
@@ -1239,6 +1261,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * A page token, received from a previous
      * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
      * must match the call that provided the page token.
@@ -1266,6 +1289,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * A page token, received from a previous
      * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
      * must match the call that provided the page token.
@@ -1293,6 +1317,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * A page token, received from a previous
      * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
      * must match the call that provided the page token.
@@ -1319,6 +1344,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * A page token, received from a previous
      * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
      * must match the call that provided the page token.
@@ -1341,6 +1367,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * A page token, received from a previous
      * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
      * must match the call that provided the page token.
@@ -1369,7 +1396,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A comma-separated list of fields to order by, sorted in ascending order.
      * Use "desc" after a field name for descending.
+     *
      * Supported fields:
+     *
      *   * `entity_type_id`
      *   * `create_time`
      *   * `update_time`
@@ -1396,7 +1425,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A comma-separated list of fields to order by, sorted in ascending order.
      * Use "desc" after a field name for descending.
+     *
      * Supported fields:
+     *
      *   * `entity_type_id`
      *   * `create_time`
      *   * `update_time`
@@ -1423,7 +1454,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A comma-separated list of fields to order by, sorted in ascending order.
      * Use "desc" after a field name for descending.
+     *
      * Supported fields:
+     *
      *   * `entity_type_id`
      *   * `create_time`
      *   * `update_time`
@@ -1449,7 +1482,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A comma-separated list of fields to order by, sorted in ascending order.
      * Use "desc" after a field name for descending.
+     *
      * Supported fields:
+     *
      *   * `entity_type_id`
      *   * `create_time`
      *   * `update_time`
@@ -1471,7 +1506,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A comma-separated list of fields to order by, sorted in ascending order.
      * Use "desc" after a field name for descending.
+     *
      * Supported fields:
+     *
      *   * `entity_type_id`
      *   * `create_time`
      *   * `update_time`

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,44 +62,52 @@ public interface TaggedEntryOrBuilder
    *
    *
    * <pre>
-   * Tags that should be ingested into the Data Catalog.
+   * Optional. Tags that should be ingested into the Data Catalog.
    * Caller should populate template name, column and fields.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.Tag> getPresentTagsList();
   /**
    *
    *
    * <pre>
-   * Tags that should be ingested into the Data Catalog.
+   * Optional. Tags that should be ingested into the Data Catalog.
    * Caller should populate template name, column and fields.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datacatalog.v1.Tag getPresentTags(int index);
   /**
    *
    *
    * <pre>
-   * Tags that should be ingested into the Data Catalog.
+   * Optional. Tags that should be ingested into the Data Catalog.
    * Caller should populate template name, column and fields.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getPresentTagsCount();
   /**
    *
    *
    * <pre>
-   * Tags that should be ingested into the Data Catalog.
+   * Optional. Tags that should be ingested into the Data Catalog.
    * Caller should populate template name, column and fields.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.TagOrBuilder>
       getPresentTagsOrBuilderList();
@@ -107,11 +115,13 @@ public interface TaggedEntryOrBuilder
    *
    *
    * <pre>
-   * Tags that should be ingested into the Data Catalog.
+   * Optional. Tags that should be ingested into the Data Catalog.
    * Caller should populate template name, column and fields.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datacatalog.v1.TagOrBuilder getPresentTagsOrBuilder(int index);
 
@@ -119,44 +129,52 @@ public interface TaggedEntryOrBuilder
    *
    *
    * <pre>
-   * Tags that should be deleted from the Data Catalog.
+   * Optional. Tags that should be deleted from the Data Catalog.
    * Caller should populate template name and column only.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.Tag> getAbsentTagsList();
   /**
    *
    *
    * <pre>
-   * Tags that should be deleted from the Data Catalog.
+   * Optional. Tags that should be deleted from the Data Catalog.
    * Caller should populate template name and column only.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datacatalog.v1.Tag getAbsentTags(int index);
   /**
    *
    *
    * <pre>
-   * Tags that should be deleted from the Data Catalog.
+   * Optional. Tags that should be deleted from the Data Catalog.
    * Caller should populate template name and column only.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAbsentTagsCount();
   /**
    *
    *
    * <pre>
-   * Tags that should be deleted from the Data Catalog.
+   * Optional. Tags that should be deleted from the Data Catalog.
    * Caller should populate template name and column only.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.TagOrBuilder>
       getAbsentTagsOrBuilderList();
@@ -164,13 +182,15 @@ public interface TaggedEntryOrBuilder
    *
    *
    * <pre>
-   * Tags that should be deleted from the Data Catalog.
+   * Optional. Tags that should be deleted from the Data Catalog.
    * Caller should populate template name and column only.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datacatalog.v1.TagOrBuilder getAbsentTagsOrBuilder(int index);
 
-  public com.google.cloud.datacatalog.v1.TaggedEntry.EntryCase getEntryCase();
+  com.google.cloud.datacatalog.v1.TaggedEntry.EntryCase getEntryCase();
 }

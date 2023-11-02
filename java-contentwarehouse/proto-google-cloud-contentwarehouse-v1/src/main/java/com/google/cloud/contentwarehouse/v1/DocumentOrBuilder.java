@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface DocumentOrBuilder
    * The resource name of the document.
    * Format:
    * projects/{project_number}/locations/{location}/documents/{document_id}.
+   *
    * The name is ignored when creating a document.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface DocumentOrBuilder
    * The resource name of the document.
    * Format:
    * projects/{project_number}/locations/{location}/documents/{document_id}.
+   *
    * The name is ignored when creating a document.
    * </pre>
    *
@@ -635,8 +637,64 @@ public interface DocumentOrBuilder
    */
   com.google.protobuf.ByteString getUpdaterBytes();
 
-  public com.google.cloud.contentwarehouse.v1.Document.StructuredContentCase
-      getStructuredContentCase();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If linked to a Collection with RetentionPolicy, the date when
+   * the document becomes mutable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dispositionTime field is set.
+   */
+  boolean hasDispositionTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If linked to a Collection with RetentionPolicy, the date when
+   * the document becomes mutable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dispositionTime.
+   */
+  com.google.protobuf.Timestamp getDispositionTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If linked to a Collection with RetentionPolicy, the date when
+   * the document becomes mutable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDispositionTimeOrBuilder();
 
-  public com.google.cloud.contentwarehouse.v1.Document.RawDocumentCase getRawDocumentCase();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if the document has a legal hold on it.
+   * </pre>
+   *
+   * <code>bool legal_hold = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The legalHold.
+   */
+  boolean getLegalHold();
+
+  com.google.cloud.contentwarehouse.v1.Document.StructuredContentCase getStructuredContentCase();
+
+  com.google.cloud.contentwarehouse.v1.Document.RawDocumentCase getRawDocumentCase();
 }

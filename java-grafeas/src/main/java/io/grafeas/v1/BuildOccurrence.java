@@ -48,11 +48,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
     return new BuildOccurrence();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Build.internal_static_grafeas_v1_BuildOccurrence_descriptor;
   }
@@ -126,6 +121,7 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
    * representation of the provenance bytes is used for the signature in order
    * to interoperate with openssl which expects this format for signature
    * verification.
+   *
    * The serialized form is captured both to avoid ambiguity in how the
    * provenance is marshalled to json as well to prevent incompatibilities with
    * future changes.
@@ -158,6 +154,7 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
    * representation of the provenance bytes is used for the signature in order
    * to interoperate with openssl which expects this format for signature
    * verification.
+   *
    * The serialized form is captured both to avoid ambiguity in how the
    * provenance is marshalled to json as well to prevent incompatibilities with
    * future changes.
@@ -917,6 +914,7 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * representation of the provenance bytes is used for the signature in order
      * to interoperate with openssl which expects this format for signature
      * verification.
+     *
      * The serialized form is captured both to avoid ambiguity in how the
      * provenance is marshalled to json as well to prevent incompatibilities with
      * future changes.
@@ -948,6 +946,7 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * representation of the provenance bytes is used for the signature in order
      * to interoperate with openssl which expects this format for signature
      * verification.
+     *
      * The serialized form is captured both to avoid ambiguity in how the
      * provenance is marshalled to json as well to prevent incompatibilities with
      * future changes.
@@ -979,6 +978,7 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * representation of the provenance bytes is used for the signature in order
      * to interoperate with openssl which expects this format for signature
      * verification.
+     *
      * The serialized form is captured both to avoid ambiguity in how the
      * provenance is marshalled to json as well to prevent incompatibilities with
      * future changes.
@@ -1009,6 +1009,7 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * representation of the provenance bytes is used for the signature in order
      * to interoperate with openssl which expects this format for signature
      * verification.
+     *
      * The serialized form is captured both to avoid ambiguity in how the
      * provenance is marshalled to json as well to prevent incompatibilities with
      * future changes.
@@ -1035,6 +1036,7 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * representation of the provenance bytes is used for the signature in order
      * to interoperate with openssl which expects this format for signature
      * verification.
+     *
      * The serialized form is captured both to avoid ambiguity in how the
      * provenance is marshalled to json as well to prevent incompatibilities with
      * future changes.

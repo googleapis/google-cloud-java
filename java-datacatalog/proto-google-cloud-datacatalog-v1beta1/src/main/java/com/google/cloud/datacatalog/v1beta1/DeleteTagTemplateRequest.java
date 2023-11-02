@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
     return new DeleteTagTemplateRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_DeleteTagTemplateRequest_descriptor;
@@ -77,6 +72,7 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The name of the tag template to delete. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * </pre>
    *
@@ -103,6 +99,7 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The name of the tag template to delete. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * </pre>
    *
@@ -520,6 +517,7 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the tag template to delete. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
@@ -545,6 +543,7 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the tag template to delete. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
@@ -570,6 +569,7 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the tag template to delete. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
@@ -594,6 +594,7 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the tag template to delete. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
@@ -614,6 +615,7 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the tag template to delete. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *

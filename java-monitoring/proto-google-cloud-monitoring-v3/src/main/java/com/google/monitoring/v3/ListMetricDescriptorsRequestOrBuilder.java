@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ListMetricDescriptorsRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface ListMetricDescriptorsRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -66,6 +68,7 @@ public interface ListMetricDescriptorsRequestOrBuilder
    * specifies which metric descriptors are to be
    * returned. For example, the following filter matches all
    * [custom metrics](https://cloud.google.com/monitoring/custom-metrics):
+   *
    *     metric.type = starts_with("custom.googleapis.com/")
    * </pre>
    *
@@ -84,6 +87,7 @@ public interface ListMetricDescriptorsRequestOrBuilder
    * specifies which metric descriptors are to be
    * returned. For example, the following filter matches all
    * [custom metrics](https://cloud.google.com/monitoring/custom-metrics):
+   *
    *     metric.type = starts_with("custom.googleapis.com/")
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,8 @@ public final class RecommenderGrpc {
 
   private RecommenderGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.recommender.v1beta1.Recommender";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.recommender.v1beta1.Recommender";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -622,6 +623,100 @@ public final class RecommenderGrpc {
     return getUpdateInsightTypeConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.ListRecommendersRequest,
+          com.google.cloud.recommender.v1beta1.ListRecommendersResponse>
+      getListRecommendersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRecommenders",
+      requestType = com.google.cloud.recommender.v1beta1.ListRecommendersRequest.class,
+      responseType = com.google.cloud.recommender.v1beta1.ListRecommendersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.ListRecommendersRequest,
+          com.google.cloud.recommender.v1beta1.ListRecommendersResponse>
+      getListRecommendersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1beta1.ListRecommendersRequest,
+            com.google.cloud.recommender.v1beta1.ListRecommendersResponse>
+        getListRecommendersMethod;
+    if ((getListRecommendersMethod = RecommenderGrpc.getListRecommendersMethod) == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getListRecommendersMethod = RecommenderGrpc.getListRecommendersMethod) == null) {
+          RecommenderGrpc.getListRecommendersMethod =
+              getListRecommendersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1beta1.ListRecommendersRequest,
+                          com.google.cloud.recommender.v1beta1.ListRecommendersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListRecommenders"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1beta1.ListRecommendersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1beta1.ListRecommendersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecommenderMethodDescriptorSupplier("ListRecommenders"))
+                      .build();
+        }
+      }
+    }
+    return getListRecommendersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.ListInsightTypesRequest,
+          com.google.cloud.recommender.v1beta1.ListInsightTypesResponse>
+      getListInsightTypesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListInsightTypes",
+      requestType = com.google.cloud.recommender.v1beta1.ListInsightTypesRequest.class,
+      responseType = com.google.cloud.recommender.v1beta1.ListInsightTypesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1beta1.ListInsightTypesRequest,
+          com.google.cloud.recommender.v1beta1.ListInsightTypesResponse>
+      getListInsightTypesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1beta1.ListInsightTypesRequest,
+            com.google.cloud.recommender.v1beta1.ListInsightTypesResponse>
+        getListInsightTypesMethod;
+    if ((getListInsightTypesMethod = RecommenderGrpc.getListInsightTypesMethod) == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getListInsightTypesMethod = RecommenderGrpc.getListInsightTypesMethod) == null) {
+          RecommenderGrpc.getListInsightTypesMethod =
+              getListInsightTypesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1beta1.ListInsightTypesRequest,
+                          com.google.cloud.recommender.v1beta1.ListInsightTypesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListInsightTypes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1beta1.ListInsightTypesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1beta1.ListInsightTypesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecommenderMethodDescriptorSupplier("ListInsightTypes"))
+                      .build();
+        }
+      }
+    }
+    return getListInsightTypesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static RecommenderStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<RecommenderStub> factory =
@@ -887,6 +982,38 @@ public final class RecommenderGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateInsightTypeConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all available Recommenders.
+     * No IAM permissions are required.
+     * </pre>
+     */
+    default void listRecommenders(
+        com.google.cloud.recommender.v1beta1.ListRecommendersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListRecommendersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRecommendersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists available InsightTypes.
+     * No IAM permissions are required.
+     * </pre>
+     */
+    default void listInsightTypes(
+        com.google.cloud.recommender.v1beta1.ListInsightTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListInsightTypesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListInsightTypesMethod(), responseObserver);
     }
   }
 
@@ -1167,6 +1294,42 @@ public final class RecommenderGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all available Recommenders.
+     * No IAM permissions are required.
+     * </pre>
+     */
+    public void listRecommenders(
+        com.google.cloud.recommender.v1beta1.ListRecommendersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListRecommendersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRecommendersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists available InsightTypes.
+     * No IAM permissions are required.
+     * </pre>
+     */
+    public void listInsightTypes(
+        com.google.cloud.recommender.v1beta1.ListInsightTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.ListInsightTypesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListInsightTypesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1380,6 +1543,34 @@ public final class RecommenderGrpc {
         com.google.cloud.recommender.v1beta1.UpdateInsightTypeConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateInsightTypeConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all available Recommenders.
+     * No IAM permissions are required.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1beta1.ListRecommendersResponse listRecommenders(
+        com.google.cloud.recommender.v1beta1.ListRecommendersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRecommendersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists available InsightTypes.
+     * No IAM permissions are required.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1beta1.ListInsightTypesResponse listInsightTypes(
+        com.google.cloud.recommender.v1beta1.ListInsightTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInsightTypesMethod(), getCallOptions(), request);
     }
   }
 
@@ -1616,6 +1807,36 @@ public final class RecommenderGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateInsightTypeConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all available Recommenders.
+     * No IAM permissions are required.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1beta1.ListRecommendersResponse>
+        listRecommenders(com.google.cloud.recommender.v1beta1.ListRecommendersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRecommendersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists available InsightTypes.
+     * No IAM permissions are required.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1beta1.ListInsightTypesResponse>
+        listInsightTypes(com.google.cloud.recommender.v1beta1.ListInsightTypesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListInsightTypesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSIGHTS = 0;
@@ -1630,6 +1851,8 @@ public final class RecommenderGrpc {
   private static final int METHODID_UPDATE_RECOMMENDER_CONFIG = 9;
   private static final int METHODID_GET_INSIGHT_TYPE_CONFIG = 10;
   private static final int METHODID_UPDATE_INSIGHT_TYPE_CONFIG = 11;
+  private static final int METHODID_LIST_RECOMMENDERS = 12;
+  private static final int METHODID_LIST_INSIGHT_TYPES = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1720,6 +1943,20 @@ public final class RecommenderGrpc {
           serviceImpl.updateInsightTypeConfig(
               (com.google.cloud.recommender.v1beta1.UpdateInsightTypeConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1beta1.InsightTypeConfig>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RECOMMENDERS:
+          serviceImpl.listRecommenders(
+              (com.google.cloud.recommender.v1beta1.ListRecommendersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.recommender.v1beta1.ListRecommendersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_INSIGHT_TYPES:
+          serviceImpl.listInsightTypes(
+              (com.google.cloud.recommender.v1beta1.ListInsightTypesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.recommender.v1beta1.ListInsightTypesResponse>)
                   responseObserver);
           break;
         default:
@@ -1823,6 +2060,20 @@ public final class RecommenderGrpc {
                     com.google.cloud.recommender.v1beta1.UpdateInsightTypeConfigRequest,
                     com.google.cloud.recommender.v1beta1.InsightTypeConfig>(
                     service, METHODID_UPDATE_INSIGHT_TYPE_CONFIG)))
+        .addMethod(
+            getListRecommendersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommender.v1beta1.ListRecommendersRequest,
+                    com.google.cloud.recommender.v1beta1.ListRecommendersResponse>(
+                    service, METHODID_LIST_RECOMMENDERS)))
+        .addMethod(
+            getListInsightTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommender.v1beta1.ListInsightTypesRequest,
+                    com.google.cloud.recommender.v1beta1.ListInsightTypesResponse>(
+                    service, METHODID_LIST_INSIGHT_TYPES)))
         .build();
   }
 
@@ -1850,9 +2101,9 @@ public final class RecommenderGrpc {
   private static final class RecommenderMethodDescriptorSupplier
       extends RecommenderBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    RecommenderMethodDescriptorSupplier(String methodName) {
+    RecommenderMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -1886,6 +2137,8 @@ public final class RecommenderGrpc {
                       .addMethod(getUpdateRecommenderConfigMethod())
                       .addMethod(getGetInsightTypeConfigMethod())
                       .addMethod(getUpdateInsightTypeConfigMethod())
+                      .addMethod(getListRecommendersMethod())
+                      .addMethod(getListInsightTypesMethod())
                       .build();
         }
       }

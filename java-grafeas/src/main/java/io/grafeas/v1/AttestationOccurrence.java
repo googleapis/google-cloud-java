@@ -57,11 +57,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     return new AttestationOccurrence();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationOccurrence_descriptor;
   }

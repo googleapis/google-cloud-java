@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,17 +46,13 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     adBreaks_ = java.util.Collections.emptyList();
     spriteSheets_ = java.util.Collections.emptyList();
     overlays_ = java.util.Collections.emptyList();
+    encryptions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new JobConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -766,6 +762,93 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     return overlays_.get(index);
   }
 
+  public static final int ENCRYPTIONS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.video.transcoder.v1.Encryption> encryptions_;
+  /**
+   *
+   *
+   * <pre>
+   * List of encryption configurations for the content.
+   * Each configuration has an ID. Specify this ID in the
+   * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+   * field to indicate the configuration to use for that `MuxStream` output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.video.transcoder.v1.Encryption> getEncryptionsList() {
+    return encryptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of encryption configurations for the content.
+   * Each configuration has an ID. Specify this ID in the
+   * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+   * field to indicate the configuration to use for that `MuxStream` output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.video.transcoder.v1.EncryptionOrBuilder>
+      getEncryptionsOrBuilderList() {
+    return encryptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of encryption configurations for the content.
+   * Each configuration has an ID. Specify this ID in the
+   * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+   * field to indicate the configuration to use for that `MuxStream` output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+   */
+  @java.lang.Override
+  public int getEncryptionsCount() {
+    return encryptions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of encryption configurations for the content.
+   * Each configuration has an ID. Specify this ID in the
+   * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+   * field to indicate the configuration to use for that `MuxStream` output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.transcoder.v1.Encryption getEncryptions(int index) {
+    return encryptions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of encryption configurations for the content.
+   * Each configuration has an ID. Specify this ID in the
+   * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+   * field to indicate the configuration to use for that `MuxStream` output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.transcoder.v1.EncryptionOrBuilder getEncryptionsOrBuilder(
+      int index) {
+    return encryptions_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -810,6 +893,9 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < overlays_.size(); i++) {
       output.writeMessage(10, overlays_.get(i));
     }
+    for (int i = 0; i < encryptions_.size(); i++) {
+      output.writeMessage(11, encryptions_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -850,6 +936,9 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < overlays_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, overlays_.get(i));
     }
+    for (int i = 0; i < encryptions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, encryptions_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -882,6 +971,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getSpriteSheetsList().equals(other.getSpriteSheetsList())) return false;
     if (!getOverlaysList().equals(other.getOverlaysList())) return false;
+    if (!getEncryptionsList().equals(other.getEncryptionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -932,6 +1022,10 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     if (getOverlaysCount() > 0) {
       hash = (37 * hash) + OVERLAYS_FIELD_NUMBER;
       hash = (53 * hash) + getOverlaysList().hashCode();
+    }
+    if (getEncryptionsCount() > 0) {
+      hash = (37 * hash) + ENCRYPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1138,6 +1232,13 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         overlaysBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000200);
+      if (encryptionsBuilder_ == null) {
+        encryptions_ = java.util.Collections.emptyList();
+      } else {
+        encryptions_ = null;
+        encryptionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1245,6 +1346,15 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         result.overlays_ = overlays_;
       } else {
         result.overlays_ = overlaysBuilder_.build();
+      }
+      if (encryptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          encryptions_ = java.util.Collections.unmodifiableList(encryptions_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.encryptions_ = encryptions_;
+      } else {
+        result.encryptions_ = encryptionsBuilder_.build();
       }
     }
 
@@ -1528,6 +1638,33 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (encryptionsBuilder_ == null) {
+        if (!other.encryptions_.isEmpty()) {
+          if (encryptions_.isEmpty()) {
+            encryptions_ = other.encryptions_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureEncryptionsIsMutable();
+            encryptions_.addAll(other.encryptions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.encryptions_.isEmpty()) {
+          if (encryptionsBuilder_.isEmpty()) {
+            encryptionsBuilder_.dispose();
+            encryptionsBuilder_ = null;
+            encryptions_ = other.encryptions_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            encryptionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEncryptionsFieldBuilder()
+                    : null;
+          } else {
+            encryptionsBuilder_.addAllMessages(other.encryptions_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1673,6 +1810,20 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 82
+            case 90:
+              {
+                com.google.cloud.video.transcoder.v1.Encryption m =
+                    input.readMessage(
+                        com.google.cloud.video.transcoder.v1.Encryption.parser(),
+                        extensionRegistry);
+                if (encryptionsBuilder_ == null) {
+                  ensureEncryptionsIsMutable();
+                  encryptions_.add(m);
+                } else {
+                  encryptionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4961,6 +5112,416 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         overlays_ = null;
       }
       return overlaysBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.video.transcoder.v1.Encryption> encryptions_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEncryptionsIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        encryptions_ =
+            new java.util.ArrayList<com.google.cloud.video.transcoder.v1.Encryption>(encryptions_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.transcoder.v1.Encryption,
+            com.google.cloud.video.transcoder.v1.Encryption.Builder,
+            com.google.cloud.video.transcoder.v1.EncryptionOrBuilder>
+        encryptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public java.util.List<com.google.cloud.video.transcoder.v1.Encryption> getEncryptionsList() {
+      if (encryptionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(encryptions_);
+      } else {
+        return encryptionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public int getEncryptionsCount() {
+      if (encryptionsBuilder_ == null) {
+        return encryptions_.size();
+      } else {
+        return encryptionsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public com.google.cloud.video.transcoder.v1.Encryption getEncryptions(int index) {
+      if (encryptionsBuilder_ == null) {
+        return encryptions_.get(index);
+      } else {
+        return encryptionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public Builder setEncryptions(
+        int index, com.google.cloud.video.transcoder.v1.Encryption value) {
+      if (encryptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptionsIsMutable();
+        encryptions_.set(index, value);
+        onChanged();
+      } else {
+        encryptionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public Builder setEncryptions(
+        int index, com.google.cloud.video.transcoder.v1.Encryption.Builder builderForValue) {
+      if (encryptionsBuilder_ == null) {
+        ensureEncryptionsIsMutable();
+        encryptions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        encryptionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public Builder addEncryptions(com.google.cloud.video.transcoder.v1.Encryption value) {
+      if (encryptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptionsIsMutable();
+        encryptions_.add(value);
+        onChanged();
+      } else {
+        encryptionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public Builder addEncryptions(
+        int index, com.google.cloud.video.transcoder.v1.Encryption value) {
+      if (encryptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptionsIsMutable();
+        encryptions_.add(index, value);
+        onChanged();
+      } else {
+        encryptionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public Builder addEncryptions(
+        com.google.cloud.video.transcoder.v1.Encryption.Builder builderForValue) {
+      if (encryptionsBuilder_ == null) {
+        ensureEncryptionsIsMutable();
+        encryptions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        encryptionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public Builder addEncryptions(
+        int index, com.google.cloud.video.transcoder.v1.Encryption.Builder builderForValue) {
+      if (encryptionsBuilder_ == null) {
+        ensureEncryptionsIsMutable();
+        encryptions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        encryptionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public Builder addAllEncryptions(
+        java.lang.Iterable<? extends com.google.cloud.video.transcoder.v1.Encryption> values) {
+      if (encryptionsBuilder_ == null) {
+        ensureEncryptionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, encryptions_);
+        onChanged();
+      } else {
+        encryptionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public Builder clearEncryptions() {
+      if (encryptionsBuilder_ == null) {
+        encryptions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        encryptionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public Builder removeEncryptions(int index) {
+      if (encryptionsBuilder_ == null) {
+        ensureEncryptionsIsMutable();
+        encryptions_.remove(index);
+        onChanged();
+      } else {
+        encryptionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public com.google.cloud.video.transcoder.v1.Encryption.Builder getEncryptionsBuilder(
+        int index) {
+      return getEncryptionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public com.google.cloud.video.transcoder.v1.EncryptionOrBuilder getEncryptionsOrBuilder(
+        int index) {
+      if (encryptionsBuilder_ == null) {
+        return encryptions_.get(index);
+      } else {
+        return encryptionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public java.util.List<? extends com.google.cloud.video.transcoder.v1.EncryptionOrBuilder>
+        getEncryptionsOrBuilderList() {
+      if (encryptionsBuilder_ != null) {
+        return encryptionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(encryptions_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public com.google.cloud.video.transcoder.v1.Encryption.Builder addEncryptionsBuilder() {
+      return getEncryptionsFieldBuilder()
+          .addBuilder(com.google.cloud.video.transcoder.v1.Encryption.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public com.google.cloud.video.transcoder.v1.Encryption.Builder addEncryptionsBuilder(
+        int index) {
+      return getEncryptionsFieldBuilder()
+          .addBuilder(index, com.google.cloud.video.transcoder.v1.Encryption.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of encryption configurations for the content.
+     * Each configuration has an ID. Specify this ID in the
+     * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+     * field to indicate the configuration to use for that `MuxStream` output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+     */
+    public java.util.List<com.google.cloud.video.transcoder.v1.Encryption.Builder>
+        getEncryptionsBuilderList() {
+      return getEncryptionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.transcoder.v1.Encryption,
+            com.google.cloud.video.transcoder.v1.Encryption.Builder,
+            com.google.cloud.video.transcoder.v1.EncryptionOrBuilder>
+        getEncryptionsFieldBuilder() {
+      if (encryptionsBuilder_ == null) {
+        encryptionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.video.transcoder.v1.Encryption,
+                com.google.cloud.video.transcoder.v1.Encryption.Builder,
+                com.google.cloud.video.transcoder.v1.EncryptionOrBuilder>(
+                encryptions_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+        encryptions_ = null;
+      }
+      return encryptionsBuilder_;
     }
 
     @java.lang.Override

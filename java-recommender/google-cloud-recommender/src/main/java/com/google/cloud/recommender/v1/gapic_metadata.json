@@ -34,6 +34,9 @@
             "MarkRecommendationClaimed": {
               "methods": ["markRecommendationClaimed", "markRecommendationClaimed", "markRecommendationClaimed", "markRecommendationClaimedCallable"]
             },
+            "MarkRecommendationDismissed": {
+              "methods": ["markRecommendationDismissed", "markRecommendationDismissedCallable"]
+            },
             "MarkRecommendationFailed": {
               "methods": ["markRecommendationFailed", "markRecommendationFailed", "markRecommendationFailed", "markRecommendationFailedCallable"]
             },

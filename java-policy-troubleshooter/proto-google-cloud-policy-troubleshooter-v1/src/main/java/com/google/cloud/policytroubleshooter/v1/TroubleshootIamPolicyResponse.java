@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.policytroubleshooter.v1;
  *
  *
  * <pre>
- * Response for [TroubleshootIamPolicy][google.cloud.policytroubleshooter.v1.IamChecker.TroubleshootIamPolicy].
+ * Response for
+ * [TroubleshootIamPolicy][google.cloud.policytroubleshooter.v1.IamChecker.TroubleshootIamPolicy].
  * </pre>
  *
  * Protobuf type {@code google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse}
@@ -40,17 +41,13 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
   private TroubleshootIamPolicyResponse() {
     access_ = 0;
     explainedPolicies_ = java.util.Collections.emptyList();
+    errors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TroubleshootIamPolicyResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -74,8 +71,8 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Indicates whether the member has the specified permission for the specified
-   * resource, based on evaluating all of the applicable IAM policies.
+   * Indicates whether the principal has the specified permission for the
+   * specified resource, based on evaluating all of the applicable IAM policies.
    * </pre>
    *
    * <code>.google.cloud.policytroubleshooter.v1.AccessState access = 1;</code>
@@ -90,8 +87,8 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Indicates whether the member has the specified permission for the specified
-   * resource, based on evaluating all of the applicable IAM policies.
+   * Indicates whether the principal has the specified permission for the
+   * specified resource, based on evaluating all of the applicable IAM policies.
    * </pre>
    *
    * <code>.google.cloud.policytroubleshooter.v1.AccessState access = 1;</code>
@@ -116,12 +113,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * List of IAM policies that were evaluated to check the member's permissions,
-   * with annotations to indicate how each policy contributed to the final
-   * result.
+   * List of IAM policies that were evaluated to check the principal's
+   * permissions, with annotations to indicate how each policy contributed to
+   * the final result.
+   *
    * The list of policies can include the policy for the resource itself. It can
    * also include policies that are inherited from higher levels of the resource
    * hierarchy, including the organization, the folder, and the project.
+   *
    * To learn more about the resource hierarchy, see
    * https://cloud.google.com/iam/help/resource-hierarchy.
    * </pre>
@@ -138,12 +137,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * List of IAM policies that were evaluated to check the member's permissions,
-   * with annotations to indicate how each policy contributed to the final
-   * result.
+   * List of IAM policies that were evaluated to check the principal's
+   * permissions, with annotations to indicate how each policy contributed to
+   * the final result.
+   *
    * The list of policies can include the policy for the resource itself. It can
    * also include policies that are inherited from higher levels of the resource
    * hierarchy, including the organization, the folder, and the project.
+   *
    * To learn more about the resource hierarchy, see
    * https://cloud.google.com/iam/help/resource-hierarchy.
    * </pre>
@@ -161,12 +162,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * List of IAM policies that were evaluated to check the member's permissions,
-   * with annotations to indicate how each policy contributed to the final
-   * result.
+   * List of IAM policies that were evaluated to check the principal's
+   * permissions, with annotations to indicate how each policy contributed to
+   * the final result.
+   *
    * The list of policies can include the policy for the resource itself. It can
    * also include policies that are inherited from higher levels of the resource
    * hierarchy, including the organization, the folder, and the project.
+   *
    * To learn more about the resource hierarchy, see
    * https://cloud.google.com/iam/help/resource-hierarchy.
    * </pre>
@@ -182,12 +185,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * List of IAM policies that were evaluated to check the member's permissions,
-   * with annotations to indicate how each policy contributed to the final
-   * result.
+   * List of IAM policies that were evaluated to check the principal's
+   * permissions, with annotations to indicate how each policy contributed to
+   * the final result.
+   *
    * The list of policies can include the policy for the resource itself. It can
    * also include policies that are inherited from higher levels of the resource
    * hierarchy, including the organization, the folder, and the project.
+   *
    * To learn more about the resource hierarchy, see
    * https://cloud.google.com/iam/help/resource-hierarchy.
    * </pre>
@@ -204,12 +209,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * List of IAM policies that were evaluated to check the member's permissions,
-   * with annotations to indicate how each policy contributed to the final
-   * result.
+   * List of IAM policies that were evaluated to check the principal's
+   * permissions, with annotations to indicate how each policy contributed to
+   * the final result.
+   *
    * The list of policies can include the policy for the resource itself. It can
    * also include policies that are inherited from higher levels of the resource
    * hierarchy, including the organization, the folder, and the project.
+   *
    * To learn more about the resource hierarchy, see
    * https://cloud.google.com/iam/help/resource-hierarchy.
    * </pre>
@@ -221,6 +228,76 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
   public google.cloud.policytroubleshooter.v1.Explanations.ExplainedPolicyOrBuilder
       getExplainedPoliciesOrBuilder(int index) {
     return explainedPolicies_.get(index);
+  }
+
+  public static final int ERRORS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.rpc.Status> errors_;
+  /**
+   *
+   *
+   * <pre>
+   * The general errors contained in the troubleshooting response.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status errors = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.rpc.Status> getErrorsList() {
+    return errors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The general errors contained in the troubleshooting response.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status errors = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorsOrBuilderList() {
+    return errors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The general errors contained in the troubleshooting response.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status errors = 3;</code>
+   */
+  @java.lang.Override
+  public int getErrorsCount() {
+    return errors_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The general errors contained in the troubleshooting response.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status errors = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getErrors(int index) {
+    return errors_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The general errors contained in the troubleshooting response.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status errors = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getErrorsOrBuilder(int index) {
+    return errors_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -245,6 +322,9 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
     for (int i = 0; i < explainedPolicies_.size(); i++) {
       output.writeMessage(2, explainedPolicies_.get(i));
     }
+    for (int i = 0; i < errors_.size(); i++) {
+      output.writeMessage(3, errors_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -262,6 +342,9 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
     for (int i = 0; i < explainedPolicies_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, explainedPolicies_.get(i));
+    }
+    for (int i = 0; i < errors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, errors_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -281,6 +364,7 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
 
     if (access_ != other.access_) return false;
     if (!getExplainedPoliciesList().equals(other.getExplainedPoliciesList())) return false;
+    if (!getErrorsList().equals(other.getErrorsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -297,6 +381,10 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
     if (getExplainedPoliciesCount() > 0) {
       hash = (37 * hash) + EXPLAINED_POLICIES_FIELD_NUMBER;
       hash = (53 * hash) + getExplainedPoliciesList().hashCode();
+    }
+    if (getErrorsCount() > 0) {
+      hash = (37 * hash) + ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -404,7 +492,8 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Response for [TroubleshootIamPolicy][google.cloud.policytroubleshooter.v1.IamChecker.TroubleshootIamPolicy].
+   * Response for
+   * [TroubleshootIamPolicy][google.cloud.policytroubleshooter.v1.IamChecker.TroubleshootIamPolicy].
    * </pre>
    *
    * Protobuf type {@code google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse}
@@ -448,6 +537,13 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
         explainedPoliciesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      if (errorsBuilder_ == null) {
+        errors_ = java.util.Collections.emptyList();
+      } else {
+        errors_ = null;
+        errorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -496,6 +592,15 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
         result.explainedPolicies_ = explainedPolicies_;
       } else {
         result.explainedPolicies_ = explainedPoliciesBuilder_.build();
+      }
+      if (errorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          errors_ = java.util.Collections.unmodifiableList(errors_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.errors_ = errors_;
+      } else {
+        result.errors_ = errorsBuilder_.build();
       }
     }
 
@@ -586,6 +691,33 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
           }
         }
       }
+      if (errorsBuilder_ == null) {
+        if (!other.errors_.isEmpty()) {
+          if (errors_.isEmpty()) {
+            errors_ = other.errors_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureErrorsIsMutable();
+            errors_.addAll(other.errors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.errors_.isEmpty()) {
+          if (errorsBuilder_.isEmpty()) {
+            errorsBuilder_.dispose();
+            errorsBuilder_ = null;
+            errors_ = other.errors_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            errorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getErrorsFieldBuilder()
+                    : null;
+          } else {
+            errorsBuilder_.addAllMessages(other.errors_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -632,6 +764,18 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
                 }
                 break;
               } // case 18
+            case 26:
+              {
+                com.google.rpc.Status m =
+                    input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+                if (errorsBuilder_ == null) {
+                  ensureErrorsIsMutable();
+                  errors_.add(m);
+                } else {
+                  errorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -656,8 +800,8 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Indicates whether the member has the specified permission for the specified
-     * resource, based on evaluating all of the applicable IAM policies.
+     * Indicates whether the principal has the specified permission for the
+     * specified resource, based on evaluating all of the applicable IAM policies.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessState access = 1;</code>
@@ -672,8 +816,8 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Indicates whether the member has the specified permission for the specified
-     * resource, based on evaluating all of the applicable IAM policies.
+     * Indicates whether the principal has the specified permission for the
+     * specified resource, based on evaluating all of the applicable IAM policies.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessState access = 1;</code>
@@ -691,8 +835,8 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Indicates whether the member has the specified permission for the specified
-     * resource, based on evaluating all of the applicable IAM policies.
+     * Indicates whether the principal has the specified permission for the
+     * specified resource, based on evaluating all of the applicable IAM policies.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessState access = 1;</code>
@@ -711,8 +855,8 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Indicates whether the member has the specified permission for the specified
-     * resource, based on evaluating all of the applicable IAM policies.
+     * Indicates whether the principal has the specified permission for the
+     * specified resource, based on evaluating all of the applicable IAM policies.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessState access = 1;</code>
@@ -733,8 +877,8 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Indicates whether the member has the specified permission for the specified
-     * resource, based on evaluating all of the applicable IAM policies.
+     * Indicates whether the principal has the specified permission for the
+     * specified resource, based on evaluating all of the applicable IAM policies.
      * </pre>
      *
      * <code>.google.cloud.policytroubleshooter.v1.AccessState access = 1;</code>
@@ -771,12 +915,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -796,12 +942,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -820,12 +968,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -845,12 +995,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -876,12 +1028,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -905,12 +1059,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -936,12 +1092,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -967,12 +1125,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -995,12 +1155,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1024,12 +1186,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1054,12 +1218,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1081,12 +1247,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1108,12 +1276,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1129,12 +1299,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1154,12 +1326,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1180,12 +1354,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1204,12 +1380,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1229,12 +1407,14 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * List of IAM policies that were evaluated to check the member's permissions,
-     * with annotations to indicate how each policy contributed to the final
-     * result.
+     * List of IAM policies that were evaluated to check the principal's
+     * permissions, with annotations to indicate how each policy contributed to
+     * the final result.
+     *
      * The list of policies can include the policy for the resource itself. It can
      * also include policies that are inherited from higher levels of the resource
      * hierarchy, including the organization, the folder, and the project.
+     *
      * To learn more about the resource hierarchy, see
      * https://cloud.google.com/iam/help/resource-hierarchy.
      * </pre>
@@ -1265,6 +1445,343 @@ public final class TroubleshootIamPolicyResponse extends com.google.protobuf.Gen
         explainedPolicies_ = null;
       }
       return explainedPoliciesBuilder_;
+    }
+
+    private java.util.List<com.google.rpc.Status> errors_ = java.util.Collections.emptyList();
+
+    private void ensureErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        errors_ = new java.util.ArrayList<com.google.rpc.Status>(errors_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        errorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public java.util.List<com.google.rpc.Status> getErrorsList() {
+      if (errorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(errors_);
+      } else {
+        return errorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public int getErrorsCount() {
+      if (errorsBuilder_ == null) {
+        return errors_.size();
+      } else {
+        return errorsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public com.google.rpc.Status getErrors(int index) {
+      if (errorsBuilder_ == null) {
+        return errors_.get(index);
+      } else {
+        return errorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public Builder setErrors(int index, com.google.rpc.Status value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.set(index, value);
+        onChanged();
+      } else {
+        errorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public Builder setErrors(int index, com.google.rpc.Status.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public Builder addErrors(com.google.rpc.Status value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.add(value);
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public Builder addErrors(int index, com.google.rpc.Status value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.add(index, value);
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public Builder addErrors(com.google.rpc.Status.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public Builder addErrors(int index, com.google.rpc.Status.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public Builder addAllErrors(java.lang.Iterable<? extends com.google.rpc.Status> values) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errors_);
+        onChanged();
+      } else {
+        errorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public Builder clearErrors() {
+      if (errorsBuilder_ == null) {
+        errors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        errorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public Builder removeErrors(int index) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.remove(index);
+        onChanged();
+      } else {
+        errorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public com.google.rpc.Status.Builder getErrorsBuilder(int index) {
+      return getErrorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public com.google.rpc.StatusOrBuilder getErrorsOrBuilder(int index) {
+      if (errorsBuilder_ == null) {
+        return errors_.get(index);
+      } else {
+        return errorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorsOrBuilderList() {
+      if (errorsBuilder_ != null) {
+        return errorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(errors_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public com.google.rpc.Status.Builder addErrorsBuilder() {
+      return getErrorsFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public com.google.rpc.Status.Builder addErrorsBuilder(int index) {
+      return getErrorsFieldBuilder().addBuilder(index, com.google.rpc.Status.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The general errors contained in the troubleshooting response.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status errors = 3;</code>
+     */
+    public java.util.List<com.google.rpc.Status.Builder> getErrorsBuilderList() {
+      return getErrorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        getErrorsFieldBuilder() {
+      if (errorsBuilder_ == null) {
+        errorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                errors_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        errors_ = null;
+      }
+      return errorsBuilder_;
     }
 
     @java.lang.Override

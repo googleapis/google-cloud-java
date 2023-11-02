@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -208,6 +208,7 @@ public interface BuildConfigOrBuilder
    * {project} and {region} are the project id and region respectively where the
    * worker pool is defined and {workerPool} is the short name of the worker
    * pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -230,6 +231,7 @@ public interface BuildConfigOrBuilder
    * {project} and {region} are the project id and region respectively where the
    * worker pool is defined and {workerPool} is the short name of the worker
    * pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -305,18 +307,17 @@ public interface BuildConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Docker Registry to use for this deployment. This configuration is
-   * only applicable to 1st Gen functions, 2nd Gen functions can only use
-   * Artifact Registry.
+   * Docker Registry to use for this deployment. This configuration is only
+   * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
+   * Registry.
+   *
    * If `docker_repository` field is specified, this field will be automatically
    * set as `ARTIFACT_REGISTRY`.
    * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
    * This field may be overridden by the backend for eligible deployments.
    * </pre>
    *
-   * <code>
-   * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
    *
    * @return The enum numeric value on the wire for dockerRegistry.
    */
@@ -325,18 +326,17 @@ public interface BuildConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Docker Registry to use for this deployment. This configuration is
-   * only applicable to 1st Gen functions, 2nd Gen functions can only use
-   * Artifact Registry.
+   * Docker Registry to use for this deployment. This configuration is only
+   * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
+   * Registry.
+   *
    * If `docker_repository` field is specified, this field will be automatically
    * set as `ARTIFACT_REGISTRY`.
    * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
    * This field may be overridden by the backend for eligible deployments.
    * </pre>
    *
-   * <code>
-   * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
    *
    * @return The dockerRegistry.
    */
@@ -346,13 +346,15 @@ public interface BuildConfigOrBuilder
    *
    *
    * <pre>
-   * User managed repository created in Artifact Registry optionally with a
-   * customer managed encryption key. This is the repository to which the
+   * User managed repository created in Artifact Registry optionally
+   * with a customer managed encryption key. This is the repository to which the
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
@@ -367,13 +369,15 @@ public interface BuildConfigOrBuilder
    *
    *
    * <pre>
-   * User managed repository created in Artifact Registry optionally with a
-   * customer managed encryption key. This is the repository to which the
+   * User managed repository created in Artifact Registry optionally
+   * with a customer managed encryption key. This is the repository to which the
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.

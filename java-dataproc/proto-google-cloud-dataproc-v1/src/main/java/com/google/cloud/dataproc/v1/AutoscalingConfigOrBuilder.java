@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,13 @@ public interface AutoscalingConfigOrBuilder
    *
    * <pre>
    * Optional. The autoscaling policy used by the cluster.
+   *
    * Only resource names including projectid and location (region) are valid.
    * Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
    * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
+   *
    * Note that the policy must be in the same project and Dataproc region.
    * </pre>
    *
@@ -45,10 +48,13 @@ public interface AutoscalingConfigOrBuilder
    *
    * <pre>
    * Optional. The autoscaling policy used by the cluster.
+   *
    * Only resource names including projectid and location (region) are valid.
    * Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
    * * `projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]`
+   *
    * Note that the policy must be in the same project and Dataproc region.
    * </pre>
    *

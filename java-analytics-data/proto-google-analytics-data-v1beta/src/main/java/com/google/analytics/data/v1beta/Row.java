@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.analytics.data.v1beta;
  * <pre>
  * Report data for each row.
  * For example if RunReportRequest contains:
+ *
  * ```none
  * "dimensions": [
  *   {
@@ -39,8 +40,10 @@ package com.google.analytics.data.v1beta;
  *   }
  * ]
  * ```
+ *
  * One row with 'in_app_purchase' as the eventName, 'JP' as the countryId, and
  * 15 as the eventCount, would be:
+ *
  * ```none
  * "dimensionValues": [
  *   {
@@ -79,11 +82,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Row();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -425,6 +423,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Report data for each row.
    * For example if RunReportRequest contains:
+   *
    * ```none
    * "dimensions": [
    *   {
@@ -440,8 +439,10 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *   }
    * ]
    * ```
+   *
    * One row with 'in_app_purchase' as the eventName, 'JP' as the countryId, and
    * 15 as the eventCount, would be:
+   *
    * ```none
    * "dimensionValues": [
    *   {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,6 +133,31 @@ public interface TargetHttpProxyOrBuilder
    * @return The bytes for fingerprint.
    */
   com.google.protobuf.ByteString getFingerprintBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how long to keep a connection open, after completing a response, while there is no matching traffic (in seconds). If an HTTP keep-alive is not specified, a default value (610 seconds) will be used. For Global external HTTP(S) load balancer, the minimum allowed value is 5 seconds and the maximum allowed value is 1200 seconds. For Global external HTTP(S) load balancer (classic), this option is not available publicly.
+   * </pre>
+   *
+   * <code>optional int32 http_keep_alive_timeout_sec = 447326046;</code>
+   *
+   * @return Whether the httpKeepAliveTimeoutSec field is set.
+   */
+  boolean hasHttpKeepAliveTimeoutSec();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how long to keep a connection open, after completing a response, while there is no matching traffic (in seconds). If an HTTP keep-alive is not specified, a default value (610 seconds) will be used. For Global external HTTP(S) load balancer, the minimum allowed value is 5 seconds and the maximum allowed value is 1200 seconds. For Global external HTTP(S) load balancer (classic), this option is not available publicly.
+   * </pre>
+   *
+   * <code>optional int32 http_keep_alive_timeout_sec = 447326046;</code>
+   *
+   * @return The httpKeepAliveTimeoutSec.
+   */
+  int getHttpKeepAliveTimeoutSec();
 
   /**
    *

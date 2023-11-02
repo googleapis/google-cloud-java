@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,21 +44,21 @@ public final class AnnotationSpecProto {
           + "spec.proto\022\032google.cloud.aiplatform.v1\032\037"
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\032\037google/protobuf/time"
-          + "stamp.proto\"\314\002\n\016AnnotationSpec\022\021\n\004name\030\001"
-          + " \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\0224\n\013"
-          + "create_time\030\003 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\022\021\n\004etag\030\005 \001(\tB\003"
-          + "\340A\001:\214\001\352A\210\001\n(aiplatform.googleapis.com/An"
-          + "notationSpec\022\\projects/{project}/locatio"
-          + "ns/{location}/datasets/{dataset}/annotat"
-          + "ionSpecs/{annotation_spec}B\321\001\n\036com.googl"
-          + "e.cloud.aiplatform.v1B\023AnnotationSpecPro"
-          + "toP\001Z>cloud.google.com/go/aiplatform/api"
-          + "v1/aiplatformpb;aiplatformpb\252\002\032Google.Cl"
-          + "oud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatf"
-          + "orm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006"
-          + "proto3"
+          + "stamp.proto\"\321\002\n\016AnnotationSpec\022\022\n\004name\030\001"
+          + " \001(\tB\004\342A\001\003\022\032\n\014display_name\030\002 \001(\tB\004\342A\001\002\0225"
+          + "\n\013create_time\030\003 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\004\342A\001\003\0225\n\013update_time\030\004 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\004\342A\001\003\022\022\n\004etag\030\005 \001"
+          + "(\tB\004\342A\001\001:\214\001\352A\210\001\n(aiplatform.googleapis.c"
+          + "om/AnnotationSpec\022\\projects/{project}/lo"
+          + "cations/{location}/datasets/{dataset}/an"
+          + "notationSpecs/{annotation_spec}B\321\001\n\036com."
+          + "google.cloud.aiplatform.v1B\023AnnotationSp"
+          + "ecProtoP\001Z>cloud.google.com/go/aiplatfor"
+          + "m/apiv1/aiplatformpb;aiplatformpb\252\002\032Goog"
+          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
+          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

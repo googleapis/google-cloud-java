@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,9 @@ import com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1.Model;
 import com.google.cloud.aiplatform.v1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1.ModelEvaluationSlice;
+import com.google.cloud.aiplatform.v1.UpdateExplanationDatasetOperationMetadata;
+import com.google.cloud.aiplatform.v1.UpdateExplanationDatasetRequest;
+import com.google.cloud.aiplatform.v1.UpdateExplanationDatasetResponse;
 import com.google.cloud.aiplatform.v1.UpdateModelRequest;
 import com.google.cloud.aiplatform.v1.UploadModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.UploadModelRequest;
@@ -118,6 +121,20 @@ public abstract class ModelServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
     throw new UnsupportedOperationException("Not implemented: updateModelCallable()");
+  }
+
+  public OperationCallable<
+          UpdateExplanationDatasetRequest,
+          UpdateExplanationDatasetResponse,
+          UpdateExplanationDatasetOperationMetadata>
+      updateExplanationDatasetOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateExplanationDatasetOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateExplanationDatasetRequest, Operation>
+      updateExplanationDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateExplanationDatasetCallable()");
   }
 
   public OperationCallable<DeleteModelRequest, Empty, DeleteOperationMetadata>

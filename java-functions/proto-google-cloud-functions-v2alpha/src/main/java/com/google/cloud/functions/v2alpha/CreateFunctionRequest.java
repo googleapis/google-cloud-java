@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
     return new CreateFunctionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v2alpha.FunctionsProto
         .internal_static_google_cloud_functions_v2alpha_CreateFunctionRequest_descriptor;
@@ -76,8 +71,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The project and location in which the function should be created, specified
-   * in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location in which the function should be created,
+   * specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -102,8 +97,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The project and location in which the function should be created, specified
-   * in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location in which the function should be created,
+   * specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -191,6 +186,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The ID to use for the function, which will become the final component of
    * the function's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -217,6 +213,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The ID to use for the function, which will become the final component of
    * the function's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -641,8 +638,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project and location in which the function should be created, specified
-     * in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location in which the function should be created,
+     * specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -666,8 +663,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project and location in which the function should be created, specified
-     * in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location in which the function should be created,
+     * specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -691,8 +688,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project and location in which the function should be created, specified
-     * in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location in which the function should be created,
+     * specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -715,8 +712,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project and location in which the function should be created, specified
-     * in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location in which the function should be created,
+     * specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -735,8 +732,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project and location in which the function should be created, specified
-     * in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location in which the function should be created,
+     * specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -966,6 +963,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The ID to use for the function, which will become the final component of
      * the function's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -991,6 +989,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The ID to use for the function, which will become the final component of
      * the function's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1016,6 +1015,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The ID to use for the function, which will become the final component of
      * the function's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1040,6 +1040,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The ID to use for the function, which will become the final component of
      * the function's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1060,6 +1061,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The ID to use for the function, which will become the final component of
      * the function's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>

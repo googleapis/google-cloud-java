@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     return new SearchAllIamPoliciesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1p1beta1.AssetServiceProto
         .internal_static_google_cloud_asset_v1p1beta1_SearchAllIamPoliciesRequest_descriptor;
@@ -79,6 +74,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    * <pre>
    * Required. The relative name of an asset. The search is limited to the
    * resources within the `scope`. The allowed value must be:
+   *
    * * Organization number (such as "organizations/123")
    * * Folder number (such as "folders/1234")
    * * Project number (such as "projects/12345")
@@ -107,6 +103,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    * <pre>
    * Required. The relative name of an asset. The search is limited to the
    * resources within the `scope`. The allowed value must be:
+   *
    * * Organization number (such as "organizations/123")
    * * Folder number (such as "folders/1234")
    * * Project number (such as "projects/12345")
@@ -139,6 +136,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Optional. The query statement. Examples:
+   *
    * * "policy:myuser&#64;mydomain.com"
    * * "policy:(myuser&#64;mydomain.com viewer)"
    * </pre>
@@ -164,6 +162,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Optional. The query statement. Examples:
+   *
    * * "policy:myuser&#64;mydomain.com"
    * * "policy:(myuser&#64;mydomain.com viewer)"
    * </pre>
@@ -687,6 +686,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The relative name of an asset. The search is limited to the
      * resources within the `scope`. The allowed value must be:
+     *
      * * Organization number (such as "organizations/123")
      * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -714,6 +714,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The relative name of an asset. The search is limited to the
      * resources within the `scope`. The allowed value must be:
+     *
      * * Organization number (such as "organizations/123")
      * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -741,6 +742,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The relative name of an asset. The search is limited to the
      * resources within the `scope`. The allowed value must be:
+     *
      * * Organization number (such as "organizations/123")
      * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -767,6 +769,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The relative name of an asset. The search is limited to the
      * resources within the `scope`. The allowed value must be:
+     *
      * * Organization number (such as "organizations/123")
      * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -789,6 +792,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The relative name of an asset. The search is limited to the
      * resources within the `scope`. The allowed value must be:
+     *
      * * Organization number (such as "organizations/123")
      * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -817,6 +821,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The query statement. Examples:
+     *
      * * "policy:myuser&#64;mydomain.com"
      * * "policy:(myuser&#64;mydomain.com viewer)"
      * </pre>
@@ -841,6 +846,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The query statement. Examples:
+     *
      * * "policy:myuser&#64;mydomain.com"
      * * "policy:(myuser&#64;mydomain.com viewer)"
      * </pre>
@@ -865,6 +871,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The query statement. Examples:
+     *
      * * "policy:myuser&#64;mydomain.com"
      * * "policy:(myuser&#64;mydomain.com viewer)"
      * </pre>
@@ -888,6 +895,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The query statement. Examples:
+     *
      * * "policy:myuser&#64;mydomain.com"
      * * "policy:(myuser&#64;mydomain.com viewer)"
      * </pre>
@@ -907,6 +915,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The query statement. Examples:
+     *
      * * "policy:myuser&#64;mydomain.com"
      * * "policy:(myuser&#64;mydomain.com viewer)"
      * </pre>

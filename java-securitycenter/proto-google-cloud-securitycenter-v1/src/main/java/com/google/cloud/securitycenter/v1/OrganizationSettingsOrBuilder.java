@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,9 @@ public interface OrganizationSettingsOrBuilder
    *
    * <pre>
    * A flag that indicates if Asset Discovery should be enabled. If the flag is
-   * set to `true`, then discovery of assets will occur. If it is set to `false,
-   * all historical assets will remain, but discovery of future assets will not
-   * occur.
+   * set to `true`, then discovery of assets will occur. If it is set to
+   * `false`, all historical assets will remain, but discovery of future assets
+   * will not occur.
    * </pre>
    *
    * <code>bool enable_asset_discovery = 2;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -232,8 +232,10 @@ public interface AutoMlTablesInputsOrBuilder
    * Objective function the model is optimizing towards. The training process
    * creates a model that maximizes/minimizes the value of the objective
    * function over the validation set.
+   *
    * The supported optimization objectives depend on the prediction type.
    * If the field is not set, a default objective function is used.
+   *
    * classification (binary):
    *   "maximize-au-roc" (default) - Maximize the area under the receiver
    *                                 operating characteristic (ROC) curve.
@@ -243,8 +245,10 @@ public interface AutoMlTablesInputsOrBuilder
    *                                   recall value.
    *   "maximize-recall-at-precision" - Maximize recall for a specified
    *                                    precision value.
+   *
    * classification (multi-class):
    *   "minimize-log-loss" (default) - Minimize log loss.
+   *
    * regression:
    *   "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
    *   "minimize-mae" - Minimize mean-absolute error (MAE).
@@ -263,8 +267,10 @@ public interface AutoMlTablesInputsOrBuilder
    * Objective function the model is optimizing towards. The training process
    * creates a model that maximizes/minimizes the value of the objective
    * function over the validation set.
+   *
    * The supported optimization objectives depend on the prediction type.
    * If the field is not set, a default objective function is used.
+   *
    * classification (binary):
    *   "maximize-au-roc" (default) - Maximize the area under the receiver
    *                                 operating characteristic (ROC) curve.
@@ -274,8 +280,10 @@ public interface AutoMlTablesInputsOrBuilder
    *                                   recall value.
    *   "maximize-recall-at-precision" - Maximize recall for a specified
    *                                    precision value.
+   *
    * classification (multi-class):
    *   "minimize-log-loss" (default) - Minimize log loss.
+   *
    * regression:
    *   "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
    *   "minimize-mae" - Minimize mean-absolute error (MAE).
@@ -294,13 +302,16 @@ public interface AutoMlTablesInputsOrBuilder
    * <pre>
    * Required. The train budget of creating this model, expressed in milli node
    * hours i.e. 1,000 value in this field means 1 node hour.
+   *
    * The training cost of the model will not exceed this budget. The final cost
    * will be attempted to be close to the budget, though may end up being (even)
    * noticeably smaller - at the backend's discretion. This especially may
    * happen when further model training ceases to provide any improvements.
+   *
    * If the budget is set to a value known to be insufficient to train a
    * model for the given dataset, the training won't be attempted and
    * will error.
+   *
    * The train budget must be between 1,000 and 72,000 milli node hours,
    * inclusive.
    * </pre>
@@ -459,7 +470,7 @@ public interface AutoMlTablesInputsOrBuilder
    */
   com.google.protobuf.ByteString getAdditionalExperimentsBytes(int index);
 
-  public com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+  com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
           .AdditionalOptimizationObjectiveConfigCase
       getAdditionalOptimizationObjectiveConfigCase();
 }

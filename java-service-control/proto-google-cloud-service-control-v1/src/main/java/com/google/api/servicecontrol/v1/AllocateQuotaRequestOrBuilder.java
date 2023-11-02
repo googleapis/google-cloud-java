@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface AllocateQuotaRequestOrBuilder
    * <pre>
    * Name of the service as specified in the service configuration. For example,
    * `"pubsub.googleapis.com"`.
+   *
    * See [google.api.Service][google.api.Service] for the definition of a service name.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface AllocateQuotaRequestOrBuilder
    * <pre>
    * Name of the service as specified in the service configuration. For example,
    * `"pubsub.googleapis.com"`.
+   *
    * See [google.api.Service][google.api.Service] for the definition of a service name.
    * </pre>
    *

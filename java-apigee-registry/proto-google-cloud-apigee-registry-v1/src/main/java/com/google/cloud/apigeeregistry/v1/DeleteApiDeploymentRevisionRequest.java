@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteApiDeploymentRevisionRequest extends com.google.protobu
     return new DeleteApiDeploymentRevisionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryServiceProto
         .internal_static_google_cloud_apigeeregistry_v1_DeleteApiDeploymentRevisionRequest_descriptor;
@@ -78,6 +73,7 @@ public final class DeleteApiDeploymentRevisionRequest extends com.google.protobu
    * <pre>
    * Required. The name of the deployment revision to be deleted,
    * with a revision ID explicitly included.
+   *
    * Example:
    * `projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8`
    * </pre>
@@ -106,6 +102,7 @@ public final class DeleteApiDeploymentRevisionRequest extends com.google.protobu
    * <pre>
    * Required. The name of the deployment revision to be deleted,
    * with a revision ID explicitly included.
+   *
    * Example:
    * `projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8`
    * </pre>
@@ -487,6 +484,7 @@ public final class DeleteApiDeploymentRevisionRequest extends com.google.protobu
      * <pre>
      * Required. The name of the deployment revision to be deleted,
      * with a revision ID explicitly included.
+     *
      * Example:
      * `projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8`
      * </pre>
@@ -514,6 +512,7 @@ public final class DeleteApiDeploymentRevisionRequest extends com.google.protobu
      * <pre>
      * Required. The name of the deployment revision to be deleted,
      * with a revision ID explicitly included.
+     *
      * Example:
      * `projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8`
      * </pre>
@@ -541,6 +540,7 @@ public final class DeleteApiDeploymentRevisionRequest extends com.google.protobu
      * <pre>
      * Required. The name of the deployment revision to be deleted,
      * with a revision ID explicitly included.
+     *
      * Example:
      * `projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8`
      * </pre>
@@ -567,6 +567,7 @@ public final class DeleteApiDeploymentRevisionRequest extends com.google.protobu
      * <pre>
      * Required. The name of the deployment revision to be deleted,
      * with a revision ID explicitly included.
+     *
      * Example:
      * `projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8`
      * </pre>
@@ -589,6 +590,7 @@ public final class DeleteApiDeploymentRevisionRequest extends com.google.protobu
      * <pre>
      * Required. The name of the deployment revision to be deleted,
      * with a revision ID explicitly included.
+     *
      * Example:
      * `projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8`
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.ConversationModel;
 import com.google.cloud.dialogflow.v2.ConversationModelEvaluation;
@@ -659,12 +660,24 @@ public class HttpJsonConversationModelsStub extends ConversationModelsStub {
             HttpJsonCallSettings.<CreateConversationModelRequest, Operation>newBuilder()
                 .setMethodDescriptor(createConversationModelMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetConversationModelRequest, ConversationModel>
         getConversationModelTransportSettings =
             HttpJsonCallSettings.<GetConversationModelRequest, ConversationModel>newBuilder()
                 .setMethodDescriptor(getConversationModelMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListConversationModelsRequest, ListConversationModelsResponse>
         listConversationModelsTransportSettings =
@@ -672,24 +685,48 @@ public class HttpJsonConversationModelsStub extends ConversationModelsStub {
                 .<ListConversationModelsRequest, ListConversationModelsResponse>newBuilder()
                 .setMethodDescriptor(listConversationModelsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteConversationModelRequest, Operation>
         deleteConversationModelTransportSettings =
             HttpJsonCallSettings.<DeleteConversationModelRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteConversationModelMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeployConversationModelRequest, Operation>
         deployConversationModelTransportSettings =
             HttpJsonCallSettings.<DeployConversationModelRequest, Operation>newBuilder()
                 .setMethodDescriptor(deployConversationModelMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UndeployConversationModelRequest, Operation>
         undeployConversationModelTransportSettings =
             HttpJsonCallSettings.<UndeployConversationModelRequest, Operation>newBuilder()
                 .setMethodDescriptor(undeployConversationModelMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetConversationModelEvaluationRequest, ConversationModelEvaluation>
         getConversationModelEvaluationTransportSettings =
@@ -697,6 +734,12 @@ public class HttpJsonConversationModelsStub extends ConversationModelsStub {
                 .<GetConversationModelEvaluationRequest, ConversationModelEvaluation>newBuilder()
                 .setMethodDescriptor(getConversationModelEvaluationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListConversationModelEvaluationsRequest, ListConversationModelEvaluationsResponse>
@@ -706,23 +749,47 @@ public class HttpJsonConversationModelsStub extends ConversationModelsStub {
                     newBuilder()
                 .setMethodDescriptor(listConversationModelEvaluationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateConversationModelEvaluationRequest, Operation>
         createConversationModelEvaluationTransportSettings =
             HttpJsonCallSettings.<CreateConversationModelEvaluationRequest, Operation>newBuilder()
                 .setMethodDescriptor(createConversationModelEvaluationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createConversationModelCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class GetFulfillmentRequest extends com.google.protobuf.GeneratedMe
     return new GetFulfillmentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.FulfillmentProto
         .internal_static_google_cloud_dialogflow_v2beta1_GetFulfillmentRequest_descriptor;
@@ -78,6 +73,7 @@ public final class GetFulfillmentRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The name of the fulfillment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/fulfillment`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
    * </pre>
@@ -106,6 +102,7 @@ public final class GetFulfillmentRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The name of the fulfillment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/fulfillment`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
    * </pre>
@@ -480,6 +477,7 @@ public final class GetFulfillmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The name of the fulfillment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/fulfillment`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
      * </pre>
@@ -507,6 +505,7 @@ public final class GetFulfillmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The name of the fulfillment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/fulfillment`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
      * </pre>
@@ -534,6 +533,7 @@ public final class GetFulfillmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The name of the fulfillment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/fulfillment`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
      * </pre>
@@ -560,6 +560,7 @@ public final class GetFulfillmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The name of the fulfillment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/fulfillment`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
      * </pre>
@@ -582,6 +583,7 @@ public final class GetFulfillmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The name of the fulfillment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/fulfillment`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
      * </pre>

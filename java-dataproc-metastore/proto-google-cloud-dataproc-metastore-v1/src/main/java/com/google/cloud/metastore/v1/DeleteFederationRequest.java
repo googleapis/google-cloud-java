@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
     return new DeleteFederationRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1.MetastoreFederationProto
         .internal_static_google_cloud_metastore_v1_DeleteFederationRequest_descriptor;
@@ -78,6 +73,7 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The relative resource name of the metastore federation to delete,
    * in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
    * </pre>
    *
@@ -105,6 +101,7 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The relative resource name of the metastore federation to delete,
    * in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
    * </pre>
    *
@@ -139,9 +136,11 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
    * ignore the request if it has completed. The server will ignore subsequent
    * requests that provide a duplicate request ID for at least 60 minutes after
    * the first request.
+   *
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
+   *
    * The request ID must be a valid
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
    * A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
@@ -171,9 +170,11 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
    * ignore the request if it has completed. The server will ignore subsequent
    * requests that provide a duplicate request ID for at least 60 minutes after
    * the first request.
+   *
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
+   *
    * The request ID must be a valid
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
    * A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
@@ -570,6 +571,7 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The relative resource name of the metastore federation to delete,
      * in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
      * </pre>
      *
@@ -596,6 +598,7 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The relative resource name of the metastore federation to delete,
      * in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
      * </pre>
      *
@@ -622,6 +625,7 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The relative resource name of the metastore federation to delete,
      * in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
      * </pre>
      *
@@ -647,6 +651,7 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The relative resource name of the metastore federation to delete,
      * in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
      * </pre>
      *
@@ -668,6 +673,7 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The relative resource name of the metastore federation to delete,
      * in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
      * </pre>
      *
@@ -698,9 +704,11 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
      * ignore the request if it has completed. The server will ignore subsequent
      * requests that provide a duplicate request ID for at least 60 minutes after
      * the first request.
+     *
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
      * A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
@@ -729,9 +737,11 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
      * ignore the request if it has completed. The server will ignore subsequent
      * requests that provide a duplicate request ID for at least 60 minutes after
      * the first request.
+     *
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
      * A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
@@ -760,9 +770,11 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
      * ignore the request if it has completed. The server will ignore subsequent
      * requests that provide a duplicate request ID for at least 60 minutes after
      * the first request.
+     *
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
      * A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
@@ -790,9 +802,11 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
      * ignore the request if it has completed. The server will ignore subsequent
      * requests that provide a duplicate request ID for at least 60 minutes after
      * the first request.
+     *
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
      * A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
@@ -816,9 +830,11 @@ public final class DeleteFederationRequest extends com.google.protobuf.Generated
      * ignore the request if it has completed. The server will ignore subsequent
      * requests that provide a duplicate request ID for at least 60 minutes after
      * the first request.
+     *
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
      * A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.

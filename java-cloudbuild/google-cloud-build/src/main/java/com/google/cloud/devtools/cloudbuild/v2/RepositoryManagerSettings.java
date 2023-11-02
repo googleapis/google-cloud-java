@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,8 @@ import com.google.cloudbuild.v2.CreateConnectionRequest;
 import com.google.cloudbuild.v2.CreateRepositoryRequest;
 import com.google.cloudbuild.v2.DeleteConnectionRequest;
 import com.google.cloudbuild.v2.DeleteRepositoryRequest;
+import com.google.cloudbuild.v2.FetchGitRefsRequest;
+import com.google.cloudbuild.v2.FetchGitRefsResponse;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse;
 import com.google.cloudbuild.v2.FetchReadTokenRequest;
@@ -218,6 +220,11 @@ public class RepositoryManagerSettings extends ClientSettings<RepositoryManagerS
           FetchLinkableRepositoriesPagedResponse>
       fetchLinkableRepositoriesSettings() {
     return ((RepositoryManagerStubSettings) getStubSettings()).fetchLinkableRepositoriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchGitRefs. */
+  public UnaryCallSettings<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsSettings() {
+    return ((RepositoryManagerStubSettings) getStubSettings()).fetchGitRefsSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -467,6 +474,12 @@ public class RepositoryManagerSettings extends ClientSettings<RepositoryManagerS
             FetchLinkableRepositoriesPagedResponse>
         fetchLinkableRepositoriesSettings() {
       return getStubSettingsBuilder().fetchLinkableRepositoriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchGitRefs. */
+    public UnaryCallSettings.Builder<FetchGitRefsRequest, FetchGitRefsResponse>
+        fetchGitRefsSettings() {
+      return getStubSettingsBuilder().fetchGitRefsSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

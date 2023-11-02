@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class KeyManagementServiceGrpc {
 
   private KeyManagementServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.kms.v1.KeyManagementService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.kms.v1.KeyManagementService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1008,6 +1008,90 @@ public final class KeyManagementServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.RawEncryptRequest, com.google.cloud.kms.v1.RawEncryptResponse>
+      getRawEncryptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RawEncrypt",
+      requestType = com.google.cloud.kms.v1.RawEncryptRequest.class,
+      responseType = com.google.cloud.kms.v1.RawEncryptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.RawEncryptRequest, com.google.cloud.kms.v1.RawEncryptResponse>
+      getRawEncryptMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.RawEncryptRequest, com.google.cloud.kms.v1.RawEncryptResponse>
+        getRawEncryptMethod;
+    if ((getRawEncryptMethod = KeyManagementServiceGrpc.getRawEncryptMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getRawEncryptMethod = KeyManagementServiceGrpc.getRawEncryptMethod) == null) {
+          KeyManagementServiceGrpc.getRawEncryptMethod =
+              getRawEncryptMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.RawEncryptRequest,
+                          com.google.cloud.kms.v1.RawEncryptResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RawEncrypt"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.RawEncryptRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.RawEncryptResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier("RawEncrypt"))
+                      .build();
+        }
+      }
+    }
+    return getRawEncryptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.RawDecryptRequest, com.google.cloud.kms.v1.RawDecryptResponse>
+      getRawDecryptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RawDecrypt",
+      requestType = com.google.cloud.kms.v1.RawDecryptRequest.class,
+      responseType = com.google.cloud.kms.v1.RawDecryptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.RawDecryptRequest, com.google.cloud.kms.v1.RawDecryptResponse>
+      getRawDecryptMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.RawDecryptRequest, com.google.cloud.kms.v1.RawDecryptResponse>
+        getRawDecryptMethod;
+    if ((getRawDecryptMethod = KeyManagementServiceGrpc.getRawDecryptMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getRawDecryptMethod = KeyManagementServiceGrpc.getRawDecryptMethod) == null) {
+          KeyManagementServiceGrpc.getRawDecryptMethod =
+              getRawDecryptMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.RawDecryptRequest,
+                          com.google.cloud.kms.v1.RawDecryptResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RawDecrypt"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.RawDecryptRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.RawDecryptResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier("RawDecrypt"))
+                      .build();
+        }
+      }
+    }
+    return getRawDecryptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.AsymmetricSignRequest,
           com.google.cloud.kms.v1.AsymmetricSignResponse>
       getAsymmetricSignMethod;
@@ -1663,6 +1747,40 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Encrypts data using portable cryptographic primitives. Most users should
+     * choose [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] and
+     * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt] rather than
+     * their raw counterparts. The
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    default void rawEncrypt(
+        com.google.cloud.kms.v1.RawEncryptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.RawEncryptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRawEncryptMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Decrypts data that was originally encrypted using a raw cryptographic
+     * mechanism. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be
+     * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    default void rawDecrypt(
+        com.google.cloud.kms.v1.RawDecryptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.RawDecryptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRawDecryptMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
      * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * ASYMMETRIC_SIGN, producing a signature that can be verified with the public
@@ -2205,6 +2323,42 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Encrypts data using portable cryptographic primitives. Most users should
+     * choose [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] and
+     * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt] rather than
+     * their raw counterparts. The
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    public void rawEncrypt(
+        com.google.cloud.kms.v1.RawEncryptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.RawEncryptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRawEncryptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Decrypts data that was originally encrypted using a raw cryptographic
+     * mechanism. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be
+     * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    public void rawDecrypt(
+        com.google.cloud.kms.v1.RawDecryptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.RawDecryptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRawDecryptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
      * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * ASYMMETRIC_SIGN, producing a signature that can be verified with the public
@@ -2665,6 +2819,40 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.DecryptRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDecryptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Encrypts data using portable cryptographic primitives. Most users should
+     * choose [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] and
+     * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt] rather than
+     * their raw counterparts. The
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.RawEncryptResponse rawEncrypt(
+        com.google.cloud.kms.v1.RawEncryptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRawEncryptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Decrypts data that was originally encrypted using a raw cryptographic
+     * mechanism. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be
+     * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.RawDecryptResponse rawDecrypt(
+        com.google.cloud.kms.v1.RawDecryptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRawDecryptMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3137,6 +3325,42 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Encrypts data using portable cryptographic primitives. Most users should
+     * choose [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] and
+     * [Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt] rather than
+     * their raw counterparts. The
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+     * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.kms.v1.RawEncryptResponse>
+        rawEncrypt(com.google.cloud.kms.v1.RawEncryptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRawEncryptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Decrypts data that was originally encrypted using a raw cryptographic
+     * mechanism. The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * must be
+     * [RAW_ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.RAW_ENCRYPT_DECRYPT].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.kms.v1.RawDecryptResponse>
+        rawDecrypt(com.google.cloud.kms.v1.RawDecryptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRawDecryptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
      * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * ASYMMETRIC_SIGN, producing a signature that can be verified with the public
@@ -3239,11 +3463,13 @@ public final class KeyManagementServiceGrpc {
   private static final int METHODID_RESTORE_CRYPTO_KEY_VERSION = 18;
   private static final int METHODID_ENCRYPT = 19;
   private static final int METHODID_DECRYPT = 20;
-  private static final int METHODID_ASYMMETRIC_SIGN = 21;
-  private static final int METHODID_ASYMMETRIC_DECRYPT = 22;
-  private static final int METHODID_MAC_SIGN = 23;
-  private static final int METHODID_MAC_VERIFY = 24;
-  private static final int METHODID_GENERATE_RANDOM_BYTES = 25;
+  private static final int METHODID_RAW_ENCRYPT = 21;
+  private static final int METHODID_RAW_DECRYPT = 22;
+  private static final int METHODID_ASYMMETRIC_SIGN = 23;
+  private static final int METHODID_ASYMMETRIC_DECRYPT = 24;
+  private static final int METHODID_MAC_SIGN = 25;
+  private static final int METHODID_MAC_VERIFY = 26;
+  private static final int METHODID_GENERATE_RANDOM_BYTES = 27;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3377,6 +3603,18 @@ public final class KeyManagementServiceGrpc {
           serviceImpl.decrypt(
               (com.google.cloud.kms.v1.DecryptRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.DecryptResponse>)
+                  responseObserver);
+          break;
+        case METHODID_RAW_ENCRYPT:
+          serviceImpl.rawEncrypt(
+              (com.google.cloud.kms.v1.RawEncryptRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.RawEncryptResponse>)
+                  responseObserver);
+          break;
+        case METHODID_RAW_DECRYPT:
+          serviceImpl.rawDecrypt(
+              (com.google.cloud.kms.v1.RawDecryptRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.RawDecryptResponse>)
                   responseObserver);
           break;
         case METHODID_ASYMMETRIC_SIGN:
@@ -3565,6 +3803,18 @@ public final class KeyManagementServiceGrpc {
                     com.google.cloud.kms.v1.DecryptRequest,
                     com.google.cloud.kms.v1.DecryptResponse>(service, METHODID_DECRYPT)))
         .addMethod(
+            getRawEncryptMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.RawEncryptRequest,
+                    com.google.cloud.kms.v1.RawEncryptResponse>(service, METHODID_RAW_ENCRYPT)))
+        .addMethod(
+            getRawDecryptMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.RawDecryptRequest,
+                    com.google.cloud.kms.v1.RawDecryptResponse>(service, METHODID_RAW_DECRYPT)))
+        .addMethod(
             getAsymmetricSignMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3624,9 +3874,9 @@ public final class KeyManagementServiceGrpc {
   private static final class KeyManagementServiceMethodDescriptorSupplier
       extends KeyManagementServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    KeyManagementServiceMethodDescriptorSupplier(String methodName) {
+    KeyManagementServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -3669,6 +3919,8 @@ public final class KeyManagementServiceGrpc {
                       .addMethod(getRestoreCryptoKeyVersionMethod())
                       .addMethod(getEncryptMethod())
                       .addMethod(getDecryptMethod())
+                      .addMethod(getRawEncryptMethod())
+                      .addMethod(getRawDecryptMethod())
                       .addMethod(getAsymmetricSignMethod())
                       .addMethod(getAsymmetricDecryptMethod())
                       .addMethod(getMacSignMethod())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,19 +42,14 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     id_ = "";
     name_ = "";
     displayData_ = java.util.Collections.emptyList();
-    outputCollectionName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    inputCollectionName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    outputCollectionName_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    inputCollectionName_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TransformSummary();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -283,7 +278,8 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public static final int OUTPUT_COLLECTION_NAME_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList outputCollectionName_;
+  private com.google.protobuf.LazyStringArrayList outputCollectionName_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -346,7 +342,8 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
   public static final int INPUT_COLLECTION_NAME_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList inputCollectionName_;
+  private com.google.protobuf.LazyStringArrayList inputCollectionName_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -676,10 +673,8 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
         displayDataBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
-      outputCollectionName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
-      inputCollectionName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      outputCollectionName_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      inputCollectionName_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -725,16 +720,6 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       } else {
         result.displayData_ = displayDataBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        outputCollectionName_ = outputCollectionName_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.outputCollectionName_ = outputCollectionName_;
-      if (((bitField0_ & 0x00000020) != 0)) {
-        inputCollectionName_ = inputCollectionName_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.inputCollectionName_ = inputCollectionName_;
     }
 
     private void buildPartial0(com.google.dataflow.v1beta3.TransformSummary result) {
@@ -747,6 +732,14 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        outputCollectionName_.makeImmutable();
+        result.outputCollectionName_ = outputCollectionName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        inputCollectionName_.makeImmutable();
+        result.inputCollectionName_ = inputCollectionName_;
       }
     }
 
@@ -838,7 +831,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       if (!other.outputCollectionName_.isEmpty()) {
         if (outputCollectionName_.isEmpty()) {
           outputCollectionName_ = other.outputCollectionName_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureOutputCollectionNameIsMutable();
           outputCollectionName_.addAll(other.outputCollectionName_);
@@ -848,7 +841,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       if (!other.inputCollectionName_.isEmpty()) {
         if (inputCollectionName_.isEmpty()) {
           inputCollectionName_ = other.inputCollectionName_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureInputCollectionNameIsMutable();
           inputCollectionName_.addAll(other.inputCollectionName_);
@@ -1597,14 +1590,14 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       return displayDataBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList outputCollectionName_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList outputCollectionName_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureOutputCollectionNameIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!outputCollectionName_.isModifiable()) {
         outputCollectionName_ = new com.google.protobuf.LazyStringArrayList(outputCollectionName_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1618,7 +1611,8 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
      * @return A list containing the outputCollectionName.
      */
     public com.google.protobuf.ProtocolStringList getOutputCollectionNameList() {
-      return outputCollectionName_.getUnmodifiableView();
+      outputCollectionName_.makeImmutable();
+      return outputCollectionName_;
     }
     /**
      *
@@ -1683,6 +1677,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       ensureOutputCollectionNameIsMutable();
       outputCollectionName_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1704,6 +1699,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       ensureOutputCollectionNameIsMutable();
       outputCollectionName_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1722,6 +1718,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     public Builder addAllOutputCollectionName(java.lang.Iterable<java.lang.String> values) {
       ensureOutputCollectionNameIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, outputCollectionName_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1737,8 +1734,9 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearOutputCollectionName() {
-      outputCollectionName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      outputCollectionName_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1761,18 +1759,19 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureOutputCollectionNameIsMutable();
       outputCollectionName_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList inputCollectionName_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList inputCollectionName_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInputCollectionNameIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!inputCollectionName_.isModifiable()) {
         inputCollectionName_ = new com.google.protobuf.LazyStringArrayList(inputCollectionName_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -1786,7 +1785,8 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
      * @return A list containing the inputCollectionName.
      */
     public com.google.protobuf.ProtocolStringList getInputCollectionNameList() {
-      return inputCollectionName_.getUnmodifiableView();
+      inputCollectionName_.makeImmutable();
+      return inputCollectionName_;
     }
     /**
      *
@@ -1851,6 +1851,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       ensureInputCollectionNameIsMutable();
       inputCollectionName_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1872,6 +1873,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       }
       ensureInputCollectionNameIsMutable();
       inputCollectionName_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1890,6 +1892,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
     public Builder addAllInputCollectionName(java.lang.Iterable<java.lang.String> values) {
       ensureInputCollectionNameIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inputCollectionName_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1905,8 +1908,9 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInputCollectionName() {
-      inputCollectionName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      inputCollectionName_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -1929,6 +1933,7 @@ public final class TransformSummary extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureInputCollectionNameIsMutable();
       inputCollectionName_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

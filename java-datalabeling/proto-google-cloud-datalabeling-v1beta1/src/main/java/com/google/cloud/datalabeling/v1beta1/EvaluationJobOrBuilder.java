@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface EvaluationJobOrBuilder
    * <pre>
    * Output only. After you create a job, Data Labeling Service assigns a name
    * to the job with the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface EvaluationJobOrBuilder
    * <pre>
    * Output only. After you create a job, Data Labeling Service assigns a name
    * to the job with the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
@@ -111,10 +113,12 @@ public interface EvaluationJobOrBuilder
    * Required. Describes the interval at which the job runs. This interval must
    * be at least 1 day, and it is rounded to the nearest day. For example, if
    * you specify a 50-hour interval, the job runs every 2 days.
+   *
    * You can provide the schedule in
    * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
    * [English-like
    * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+   *
    * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
    * interval from this schedule is used, not the specific time of day.
    * </pre>
@@ -131,10 +135,12 @@ public interface EvaluationJobOrBuilder
    * Required. Describes the interval at which the job runs. This interval must
    * be at least 1 day, and it is rounded to the nearest day. For example, if
    * you specify a 50-hour interval, the job runs every 2 days.
+   *
    * You can provide the schedule in
    * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
    * [English-like
    * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+   *
    * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
    * interval from this schedule is used, not the specific time of day.
    * </pre>
@@ -153,7 +159,9 @@ public interface EvaluationJobOrBuilder
    * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
    * input and output is sampled from this model version. When creating an
    * evaluation job, specify the model version in the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+   *
    * There can only be one evaluation job per model version.
    * </pre>
    *
@@ -170,7 +178,9 @@ public interface EvaluationJobOrBuilder
    * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
    * input and output is sampled from this model version. When creating an
    * evaluation job, specify the model version in the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+   *
    * There can only be one evaluation job per model version.
    * </pre>
    *
@@ -224,6 +234,7 @@ public interface EvaluationJobOrBuilder
    * labels that your machine learning model outputs. You must create this
    * resource before you create an evaluation job and provide its name in the
    * following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
@@ -240,6 +251,7 @@ public interface EvaluationJobOrBuilder
    * labels that your machine learning model outputs. You must create this
    * resource before you create an evaluation job and provide its name in the
    * following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *

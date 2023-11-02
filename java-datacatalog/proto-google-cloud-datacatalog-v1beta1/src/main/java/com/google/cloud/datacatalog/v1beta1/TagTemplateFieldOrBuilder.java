@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,11 @@ public interface TagTemplateFieldOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the tag template field in URL format. Example:
+   * Output only. The resource name of the tag template field in URL format.
+   * Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+   *
    * Note that this TagTemplateField may not actually be stored in the location
    * in this name.
    * </pre>
@@ -42,8 +45,11 @@ public interface TagTemplateFieldOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the tag template field in URL format. Example:
+   * Output only. The resource name of the tag template field in URL format.
+   * Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+   *
    * Note that this TagTemplateField may not actually be stored in the location
    * in this name.
    * </pre>
@@ -132,6 +138,31 @@ public interface TagTemplateFieldOrBuilder
    * @return The isRequired.
    */
   boolean getIsRequired();
+
+  /**
+   *
+   *
+   * <pre>
+   * The description for this field. Defaults to an empty string.
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * The description for this field. Defaults to an empty string.
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
    *

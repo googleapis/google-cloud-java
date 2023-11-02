@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,4 +126,46 @@ public interface AcceleratorConfigOrBuilder
    * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
    */
   com.google.container.v1.GPUSharingConfigOrBuilder getGpuSharingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto installation of GPU driver.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+   * </code>
+   *
+   * @return Whether the gpuDriverInstallationConfig field is set.
+   */
+  boolean hasGpuDriverInstallationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto installation of GPU driver.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+   * </code>
+   *
+   * @return The gpuDriverInstallationConfig.
+   */
+  com.google.container.v1.GPUDriverInstallationConfig getGpuDriverInstallationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto installation of GPU driver.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+   * </code>
+   */
+  com.google.container.v1.GPUDriverInstallationConfigOrBuilder
+      getGpuDriverInstallationConfigOrBuilder();
 }

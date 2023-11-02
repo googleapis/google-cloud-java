@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,10 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
    * upgrade).
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -49,8 +51,10 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
    * upgrade).
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -70,11 +74,13 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
+   *
    * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
    * * `none` - No metrics will be exported from the cluster.
+   *
    * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
@@ -90,11 +96,13 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
+   *
    * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
    * * `none` - No metrics will be exported from the cluster.
+   *
    * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
@@ -250,7 +258,9 @@ public interface ClusterUpdateOrBuilder
    * The desired list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This list must always include the cluster's primary zone.
+   *
    * Warning: changing cluster locations will update the locations of all node
    * pools and will result in nodes being added and/or removed.
    * </pre>
@@ -267,7 +277,9 @@ public interface ClusterUpdateOrBuilder
    * The desired list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This list must always include the cluster's primary zone.
+   *
    * Warning: changing cluster locations will update the locations of all node
    * pools and will result in nodes being added and/or removed.
    * </pre>
@@ -284,7 +296,9 @@ public interface ClusterUpdateOrBuilder
    * The desired list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This list must always include the cluster's primary zone.
+   *
    * Warning: changing cluster locations will update the locations of all node
    * pools and will result in nodes being added and/or removed.
    * </pre>
@@ -302,7 +316,9 @@ public interface ClusterUpdateOrBuilder
    * The desired list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This list must always include the cluster's primary zone.
+   *
    * Warning: changing cluster locations will update the locations of all node
    * pools and will result in nodes being added and/or removed.
    * </pre>
@@ -476,11 +492,13 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
+   *
    * * `logging.googleapis.com/kubernetes` - The Cloud Logging
    * service with a Kubernetes-native resource model
    * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
    *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
+   *
    * If left as an empty string,`logging.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
@@ -496,11 +514,13 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
+   *
    * * `logging.googleapis.com/kubernetes` - The Cloud Logging
    * service with a Kubernetes-native resource model
    * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
    *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
+   *
    * If left as an empty string,`logging.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
@@ -947,8 +967,10 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The Kubernetes version to change the master to. The only valid value is the
    * latest supported version.
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -967,8 +989,10 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The Kubernetes version to change the master to. The only valid value is the
    * latest supported version.
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -1617,35 +1641,51 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2596
    * @return Whether the desiredProtectConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasDesiredProtectConfig();
   /**
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2596
    * @return The desiredProtectConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.ProtectConfig getDesiredProtectConfig();
   /**
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder();
 
   /**
@@ -1904,4 +1944,354 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder
       getRemovedAdditionalPodRangesConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+   *
+   * @return Whether the enableK8sBetaApis field is set.
+   */
+  boolean hasEnableK8SBetaApis();
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+   *
+   * @return The enableK8sBetaApis.
+   */
+  com.google.container.v1beta1.K8sBetaAPIConfig getEnableK8SBetaApis();
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+   */
+  com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder getEnableK8SBetaApisOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecurityPostureConfig desired_security_posture_config = 124;
+   * </code>
+   *
+   * @return Whether the desiredSecurityPostureConfig field is set.
+   */
+  boolean hasDesiredSecurityPostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecurityPostureConfig desired_security_posture_config = 124;
+   * </code>
+   *
+   * @return The desiredSecurityPostureConfig.
+   */
+  com.google.container.v1beta1.SecurityPostureConfig getDesiredSecurityPostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecurityPostureConfig desired_security_posture_config = 124;
+   * </code>
+   */
+  com.google.container.v1beta1.SecurityPostureConfigOrBuilder
+      getDesiredSecurityPostureConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired network performance config.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig desired_network_performance_config = 125;
+   * </code>
+   *
+   * @return Whether the desiredNetworkPerformanceConfig field is set.
+   */
+  boolean hasDesiredNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired network performance config.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig desired_network_performance_config = 125;
+   * </code>
+   *
+   * @return The desiredNetworkPerformanceConfig.
+   */
+  com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+      getDesiredNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired network performance config.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig desired_network_performance_config = 125;
+   * </code>
+   */
+  com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfigOrBuilder
+      getDesiredNetworkPerformanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable FQDN Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_fqdn_network_policy = 126;</code>
+   *
+   * @return Whether the desiredEnableFqdnNetworkPolicy field is set.
+   */
+  boolean hasDesiredEnableFqdnNetworkPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable FQDN Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_fqdn_network_policy = 126;</code>
+   *
+   * @return The desiredEnableFqdnNetworkPolicy.
+   */
+  boolean getDesiredEnableFqdnNetworkPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload policy configuration for the autopilot cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.WorkloadPolicyConfig desired_autopilot_workload_policy_config = 128;
+   * </code>
+   *
+   * @return Whether the desiredAutopilotWorkloadPolicyConfig field is set.
+   */
+  boolean hasDesiredAutopilotWorkloadPolicyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload policy configuration for the autopilot cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.WorkloadPolicyConfig desired_autopilot_workload_policy_config = 128;
+   * </code>
+   *
+   * @return The desiredAutopilotWorkloadPolicyConfig.
+   */
+  com.google.container.v1beta1.WorkloadPolicyConfig getDesiredAutopilotWorkloadPolicyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload policy configuration for the autopilot cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.WorkloadPolicyConfig desired_autopilot_workload_policy_config = 128;
+   * </code>
+   */
+  com.google.container.v1beta1.WorkloadPolicyConfigOrBuilder
+      getDesiredAutopilotWorkloadPolicyConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs enabled for cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+   *
+   * @return Whether the desiredK8sBetaApis field is set.
+   */
+  boolean hasDesiredK8SBetaApis();
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs enabled for cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+   *
+   * @return The desiredK8sBetaApis.
+   */
+  com.google.container.v1beta1.K8sBetaAPIConfig getDesiredK8SBetaApis();
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs enabled for cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+   */
+  com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder getDesiredK8SBetaApisOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   *
+   * @return Whether the desiredHostMaintenancePolicy field is set.
+   */
+  boolean hasDesiredHostMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   *
+   * @return The desiredHostMaintenancePolicy.
+   */
+  com.google.container.v1beta1.HostMaintenancePolicy getDesiredHostMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   */
+  com.google.container.v1beta1.HostMaintenancePolicyOrBuilder
+      getDesiredHostMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigResourceManagerTags field is set.
+   */
+  boolean hasDesiredNodePoolAutoConfigResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   *
+   * @return The desiredNodePoolAutoConfigResourceManagerTags.
+   */
+  com.google.container.v1beta1.ResourceManagerTags
+      getDesiredNodePoolAutoConfigResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   */
+  com.google.container.v1beta1.ResourceManagerTagsOrBuilder
+      getDesiredNodePoolAutoConfigResourceManagerTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return Whether the desiredInTransitEncryptionConfig field is set.
+   */
+  boolean hasDesiredInTransitEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for desiredInTransitEncryptionConfig.
+   */
+  int getDesiredInTransitEncryptionConfigValue();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return The desiredInTransitEncryptionConfig.
+   */
+  com.google.container.v1beta1.InTransitEncryptionConfig getDesiredInTransitEncryptionConfig();
 }

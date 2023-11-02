@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     scope_ = "";
     query_ = "";
     pageToken_ = "";
-    assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     orderBy_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchAllIamPoliciesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -84,7 +79,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    * be granted the
    * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
+   *
    * The allowed values are:
+   *
    * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
    * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
    * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -116,7 +113,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    * be granted the
    * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
+   *
    * The allowed values are:
+   *
    * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
    * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
    * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -157,7 +156,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    * contain the bindings that match your query. To learn more about the IAM
    * policy structure, see the [IAM policy
    * documentation](https://cloud.google.com/iam/help/allow-policies/structure).
+   *
    * Examples:
+   *
    * * `policy:amy&#64;gmail.com` to find IAM policy bindings that specify user
    *   "amy&#64;gmail.com".
    * * `policy:roles/compute.admin` to find IAM policy bindings that specify
@@ -219,7 +220,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    * contain the bindings that match your query. To learn more about the IAM
    * policy structure, see the [IAM policy
    * documentation](https://cloud.google.com/iam/help/allow-policies/structure).
+   *
    * Examples:
+   *
    * * `policy:amy&#64;gmail.com` to find IAM policy bindings that specify user
    *   "amy&#64;gmail.com".
    * * `policy:roles/compute.admin` to find IAM policy bindings that specify
@@ -276,10 +279,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Optional. The page size for search result pagination. Page size is capped
-   * at 500 even if a larger value is given. If set to zero, server will pick an
-   * appropriate default. Returned results may be fewer than requested. When
-   * this happens, there could be more results as long as `next_page_token` is
-   * returned.
+   * at 500 even if a larger value is given. If set to zero or a negative value,
+   * server will pick an appropriate default. Returned results may be fewer than
+   * requested. When this happens, there could be more results as long as
+   * `next_page_token` is returned.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -351,7 +354,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
   public static final int ASSET_TYPES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList assetTypes_;
+  private com.google.protobuf.LazyStringArrayList assetTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -360,13 +364,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    * empty, it will search the IAM policies that are attached to all the
    * [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
    * starts with "compute.googleapis.com".
    * * ".*Instance" snapshots IAM policies attached to asset type ends with
    * "Instance".
    * * ".*Instance.*" snapshots IAM policies attached to asset type contains
    * "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -387,13 +394,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    * empty, it will search the IAM policies that are attached to all the
    * [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
    * starts with "compute.googleapis.com".
    * * ".*Instance" snapshots IAM policies attached to asset type ends with
    * "Instance".
    * * ".*Instance.*" snapshots IAM policies attached to asset type contains
    * "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -414,13 +424,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    * empty, it will search the IAM policies that are attached to all the
    * [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
    * starts with "compute.googleapis.com".
    * * ".*Instance" snapshots IAM policies attached to asset type ends with
    * "Instance".
    * * ".*Instance.*" snapshots IAM policies attached to asset type contains
    * "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -442,13 +455,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    * empty, it will search the IAM policies that are attached to all the
    * [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
    * starts with "compute.googleapis.com".
    * * ".*Instance" snapshots IAM policies attached to asset type ends with
    * "Instance".
    * * ".*Instance.*" snapshots IAM policies attached to asset type contains
    * "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -787,8 +803,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       query_ = "";
       pageSize_ = 0;
       pageToken_ = "";
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       orderBy_ = "";
       return this;
     }
@@ -817,21 +832,11 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     public com.google.cloud.asset.v1.SearchAllIamPoliciesRequest buildPartial() {
       com.google.cloud.asset.v1.SearchAllIamPoliciesRequest result =
           new com.google.cloud.asset.v1.SearchAllIamPoliciesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.asset.v1.SearchAllIamPoliciesRequest result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        assetTypes_ = assetTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.assetTypes_ = assetTypes_;
     }
 
     private void buildPartial0(com.google.cloud.asset.v1.SearchAllIamPoliciesRequest result) {
@@ -847,6 +852,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        assetTypes_.makeImmutable();
+        result.assetTypes_ = assetTypes_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.orderBy_ = orderBy_;
@@ -920,7 +929,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       if (!other.assetTypes_.isEmpty()) {
         if (assetTypes_.isEmpty()) {
           assetTypes_ = other.assetTypes_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureAssetTypesIsMutable();
           assetTypes_.addAll(other.assetTypes_);
@@ -1024,7 +1033,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * be granted the
      * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
+     *
      * The allowed values are:
+     *
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
      * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -1055,7 +1066,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * be granted the
      * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
+     *
      * The allowed values are:
+     *
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
      * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -1086,7 +1099,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * be granted the
      * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
+     *
      * The allowed values are:
+     *
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
      * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -1116,7 +1131,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * be granted the
      * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
+     *
      * The allowed values are:
+     *
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
      * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -1142,7 +1159,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * be granted the
      * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
+     *
      * The allowed values are:
+     *
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
      * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -1179,7 +1198,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * contain the bindings that match your query. To learn more about the IAM
      * policy structure, see the [IAM policy
      * documentation](https://cloud.google.com/iam/help/allow-policies/structure).
+     *
      * Examples:
+     *
      * * `policy:amy&#64;gmail.com` to find IAM policy bindings that specify user
      *   "amy&#64;gmail.com".
      * * `policy:roles/compute.admin` to find IAM policy bindings that specify
@@ -1240,7 +1261,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * contain the bindings that match your query. To learn more about the IAM
      * policy structure, see the [IAM policy
      * documentation](https://cloud.google.com/iam/help/allow-policies/structure).
+     *
      * Examples:
+     *
      * * `policy:amy&#64;gmail.com` to find IAM policy bindings that specify user
      *   "amy&#64;gmail.com".
      * * `policy:roles/compute.admin` to find IAM policy bindings that specify
@@ -1301,7 +1324,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * contain the bindings that match your query. To learn more about the IAM
      * policy structure, see the [IAM policy
      * documentation](https://cloud.google.com/iam/help/allow-policies/structure).
+     *
      * Examples:
+     *
      * * `policy:amy&#64;gmail.com` to find IAM policy bindings that specify user
      *   "amy&#64;gmail.com".
      * * `policy:roles/compute.admin` to find IAM policy bindings that specify
@@ -1361,7 +1386,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * contain the bindings that match your query. To learn more about the IAM
      * policy structure, see the [IAM policy
      * documentation](https://cloud.google.com/iam/help/allow-policies/structure).
+     *
      * Examples:
+     *
      * * `policy:amy&#64;gmail.com` to find IAM policy bindings that specify user
      *   "amy&#64;gmail.com".
      * * `policy:roles/compute.admin` to find IAM policy bindings that specify
@@ -1417,7 +1444,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * contain the bindings that match your query. To learn more about the IAM
      * policy structure, see the [IAM policy
      * documentation](https://cloud.google.com/iam/help/allow-policies/structure).
+     *
      * Examples:
+     *
      * * `policy:amy&#64;gmail.com` to find IAM policy bindings that specify user
      *   "amy&#64;gmail.com".
      * * `policy:roles/compute.admin` to find IAM policy bindings that specify
@@ -1472,10 +1501,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * at 500 even if a larger value is given. If set to zero or a negative value,
+     * server will pick an appropriate default. Returned results may be fewer than
+     * requested. When this happens, there could be more results as long as
+     * `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1491,10 +1520,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * at 500 even if a larger value is given. If set to zero or a negative value,
+     * server will pick an appropriate default. Returned results may be fewer than
+     * requested. When this happens, there could be more results as long as
+     * `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1514,10 +1543,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * at 500 even if a larger value is given. If set to zero or a negative value,
+     * server will pick an appropriate default. Returned results may be fewer than
+     * requested. When this happens, there could be more results as long as
+     * `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1652,14 +1681,14 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       return this;
     }
 
-    private com.google.protobuf.LazyStringList assetTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList assetTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!assetTypes_.isModifiable()) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1669,13 +1698,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * empty, it will search the IAM policies that are attached to all the
      * [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
      * starts with "compute.googleapis.com".
      * * ".*Instance" snapshots IAM policies attached to asset type ends with
      * "Instance".
      * * ".*Instance.*" snapshots IAM policies attached to asset type contains
      * "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1686,7 +1718,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * @return A list containing the assetTypes.
      */
     public com.google.protobuf.ProtocolStringList getAssetTypesList() {
-      return assetTypes_.getUnmodifiableView();
+      assetTypes_.makeImmutable();
+      return assetTypes_;
     }
     /**
      *
@@ -1696,13 +1729,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * empty, it will search the IAM policies that are attached to all the
      * [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
      * starts with "compute.googleapis.com".
      * * ".*Instance" snapshots IAM policies attached to asset type ends with
      * "Instance".
      * * ".*Instance.*" snapshots IAM policies attached to asset type contains
      * "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1723,13 +1759,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * empty, it will search the IAM policies that are attached to all the
      * [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
      * starts with "compute.googleapis.com".
      * * ".*Instance" snapshots IAM policies attached to asset type ends with
      * "Instance".
      * * ".*Instance.*" snapshots IAM policies attached to asset type contains
      * "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1751,13 +1790,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * empty, it will search the IAM policies that are attached to all the
      * [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
      * starts with "compute.googleapis.com".
      * * ".*Instance" snapshots IAM policies attached to asset type ends with
      * "Instance".
      * * ".*Instance.*" snapshots IAM policies attached to asset type contains
      * "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1779,13 +1821,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * empty, it will search the IAM policies that are attached to all the
      * [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
      * starts with "compute.googleapis.com".
      * * ".*Instance" snapshots IAM policies attached to asset type ends with
      * "Instance".
      * * ".*Instance.*" snapshots IAM policies attached to asset type contains
      * "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1803,6 +1848,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       }
       ensureAssetTypesIsMutable();
       assetTypes_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1814,13 +1860,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * empty, it will search the IAM policies that are attached to all the
      * [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
      * starts with "compute.googleapis.com".
      * * ".*Instance" snapshots IAM policies attached to asset type ends with
      * "Instance".
      * * ".*Instance.*" snapshots IAM policies attached to asset type contains
      * "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1837,6 +1886,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       }
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1848,13 +1898,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * empty, it will search the IAM policies that are attached to all the
      * [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
      * starts with "compute.googleapis.com".
      * * ".*Instance" snapshots IAM policies attached to asset type ends with
      * "Instance".
      * * ".*Instance.*" snapshots IAM policies attached to asset type contains
      * "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1868,6 +1921,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     public Builder addAllAssetTypes(java.lang.Iterable<java.lang.String> values) {
       ensureAssetTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetTypes_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1879,13 +1933,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * empty, it will search the IAM policies that are attached to all the
      * [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
      * starts with "compute.googleapis.com".
      * * ".*Instance" snapshots IAM policies attached to asset type ends with
      * "Instance".
      * * ".*Instance.*" snapshots IAM policies attached to asset type contains
      * "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1896,8 +1953,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearAssetTypes() {
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1909,13 +1967,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * empty, it will search the IAM policies that are attached to all the
      * [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
      * starts with "compute.googleapis.com".
      * * ".*Instance" snapshots IAM policies attached to asset type ends with
      * "Instance".
      * * ".*Instance.*" snapshots IAM policies attached to asset type contains
      * "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1933,6 +1994,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

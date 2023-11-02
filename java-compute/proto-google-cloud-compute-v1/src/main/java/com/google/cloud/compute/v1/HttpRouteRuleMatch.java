@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     fullPathMatch_ = "";
     headerMatches_ = java.util.Collections.emptyList();
     metadataFilters_ = java.util.Collections.emptyList();
+    pathTemplateMatch_ = "";
     prefixMatch_ = "";
     queryParameterMatches_ = java.util.Collections.emptyList();
     regexMatch_ = "";
@@ -50,11 +51,6 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new HttpRouteRuleMatch();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -315,6 +311,72 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     return metadataFilters_.get(index);
   }
 
+  public static final int PATH_TEMPLATE_MATCH_FIELD_NUMBER = 292348186;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pathTemplateMatch_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+   * </pre>
+   *
+   * <code>optional string path_template_match = 292348186;</code>
+   *
+   * @return Whether the pathTemplateMatch field is set.
+   */
+  @java.lang.Override
+  public boolean hasPathTemplateMatch() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+   * </pre>
+   *
+   * <code>optional string path_template_match = 292348186;</code>
+   *
+   * @return The pathTemplateMatch.
+   */
+  @java.lang.Override
+  public java.lang.String getPathTemplateMatch() {
+    java.lang.Object ref = pathTemplateMatch_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pathTemplateMatch_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+   * </pre>
+   *
+   * <code>optional string path_template_match = 292348186;</code>
+   *
+   * @return The bytes for pathTemplateMatch.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPathTemplateMatchBytes() {
+    java.lang.Object ref = pathTemplateMatch_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pathTemplateMatch_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PREFIX_MATCH_FIELD_NUMBER = 257898968;
 
   @SuppressWarnings("serial")
@@ -332,7 +394,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasPrefixMatch() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -482,7 +544,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasRegexMatch() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -545,17 +607,20 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 107387853, regexMatch_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 214598875, fullPathMatch_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 257898968, prefixMatch_);
     }
     for (int i = 0; i < queryParameterMatches_.size(); i++) {
       output.writeMessage(286231270, queryParameterMatches_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 292348186, pathTemplateMatch_);
     }
     for (int i = 0; i < headerMatches_.size(); i++) {
       output.writeMessage(361903489, headerMatches_.get(i));
@@ -575,19 +640,23 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(107387853, regexMatch_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(214598875, fullPathMatch_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(257898968, prefixMatch_);
     }
     for (int i = 0; i < queryParameterMatches_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               286231270, queryParameterMatches_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(292348186, pathTemplateMatch_);
     }
     for (int i = 0; i < headerMatches_.size(); i++) {
       size +=
@@ -628,6 +697,10 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       if (getIgnoreCase() != other.getIgnoreCase()) return false;
     }
     if (!getMetadataFiltersList().equals(other.getMetadataFiltersList())) return false;
+    if (hasPathTemplateMatch() != other.hasPathTemplateMatch()) return false;
+    if (hasPathTemplateMatch()) {
+      if (!getPathTemplateMatch().equals(other.getPathTemplateMatch())) return false;
+    }
     if (hasPrefixMatch() != other.hasPrefixMatch()) return false;
     if (hasPrefixMatch()) {
       if (!getPrefixMatch().equals(other.getPrefixMatch())) return false;
@@ -663,6 +736,10 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     if (getMetadataFiltersCount() > 0) {
       hash = (37 * hash) + METADATA_FILTERS_FIELD_NUMBER;
       hash = (53 * hash) + getMetadataFiltersList().hashCode();
+    }
+    if (hasPathTemplateMatch()) {
+      hash = (37 * hash) + PATH_TEMPLATE_MATCH_FIELD_NUMBER;
+      hash = (53 * hash) + getPathTemplateMatch().hashCode();
     }
     if (hasPrefixMatch()) {
       hash = (37 * hash) + PREFIX_MATCH_FIELD_NUMBER;
@@ -831,6 +908,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         metadataFiltersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      pathTemplateMatch_ = "";
       prefixMatch_ = "";
       if (queryParameterMatchesBuilder_ == null) {
         queryParameterMatches_ = java.util.Collections.emptyList();
@@ -838,7 +916,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         queryParameterMatches_ = null;
         queryParameterMatchesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       regexMatch_ = "";
       return this;
     }
@@ -895,9 +973,9 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         result.metadataFilters_ = metadataFiltersBuilder_.build();
       }
       if (queryParameterMatchesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           queryParameterMatches_ = java.util.Collections.unmodifiableList(queryParameterMatches_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.queryParameterMatches_ = queryParameterMatches_;
       } else {
@@ -917,12 +995,16 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.prefixMatch_ = prefixMatch_;
+        result.pathTemplateMatch_ = pathTemplateMatch_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.regexMatch_ = regexMatch_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.prefixMatch_ = prefixMatch_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.regexMatch_ = regexMatch_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1034,16 +1116,21 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
           }
         }
       }
+      if (other.hasPathTemplateMatch()) {
+        pathTemplateMatch_ = other.pathTemplateMatch_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.hasPrefixMatch()) {
         prefixMatch_ = other.prefixMatch_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (queryParameterMatchesBuilder_ == null) {
         if (!other.queryParameterMatches_.isEmpty()) {
           if (queryParameterMatches_.isEmpty()) {
             queryParameterMatches_ = other.queryParameterMatches_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureQueryParameterMatchesIsMutable();
             queryParameterMatches_.addAll(other.queryParameterMatches_);
@@ -1056,7 +1143,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
             queryParameterMatchesBuilder_.dispose();
             queryParameterMatchesBuilder_ = null;
             queryParameterMatches_ = other.queryParameterMatches_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             queryParameterMatchesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getQueryParameterMatchesFieldBuilder()
@@ -1068,7 +1155,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasRegexMatch()) {
         regexMatch_ = other.regexMatch_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1100,7 +1187,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
             case 859102826:
               {
                 regexMatch_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 859102826
             case 1716791002:
@@ -1112,7 +1199,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
             case 2063191746:
               {
                 prefixMatch_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 2063191746
             case -2005117134:
@@ -1129,6 +1216,12 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case -2005117134
+            case -1956181806:
+              {
+                pathTemplateMatch_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -1956181806
             case -1399739382:
               {
                 com.google.cloud.compute.v1.HttpHeaderMatch m =
@@ -2078,6 +2171,126 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       return metadataFiltersBuilder_;
     }
 
+    private java.lang.Object pathTemplateMatch_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+     * </pre>
+     *
+     * <code>optional string path_template_match = 292348186;</code>
+     *
+     * @return Whether the pathTemplateMatch field is set.
+     */
+    public boolean hasPathTemplateMatch() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+     * </pre>
+     *
+     * <code>optional string path_template_match = 292348186;</code>
+     *
+     * @return The pathTemplateMatch.
+     */
+    public java.lang.String getPathTemplateMatch() {
+      java.lang.Object ref = pathTemplateMatch_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pathTemplateMatch_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+     * </pre>
+     *
+     * <code>optional string path_template_match = 292348186;</code>
+     *
+     * @return The bytes for pathTemplateMatch.
+     */
+    public com.google.protobuf.ByteString getPathTemplateMatchBytes() {
+      java.lang.Object ref = pathTemplateMatch_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pathTemplateMatch_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+     * </pre>
+     *
+     * <code>optional string path_template_match = 292348186;</code>
+     *
+     * @param value The pathTemplateMatch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPathTemplateMatch(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pathTemplateMatch_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+     * </pre>
+     *
+     * <code>optional string path_template_match = 292348186;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPathTemplateMatch() {
+      pathTemplateMatch_ = getDefaultInstance().getPathTemplateMatch();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+     * </pre>
+     *
+     * <code>optional string path_template_match = 292348186;</code>
+     *
+     * @param value The bytes for pathTemplateMatch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPathTemplateMatchBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pathTemplateMatch_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object prefixMatch_ = "";
     /**
      *
@@ -2091,7 +2304,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * @return Whether the prefixMatch field is set.
      */
     public boolean hasPrefixMatch() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2154,7 +2367,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       prefixMatch_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2171,7 +2384,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearPrefixMatch() {
       prefixMatch_ = getDefaultInstance().getPrefixMatch();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2193,7 +2406,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       prefixMatch_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2202,11 +2415,11 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         queryParameterMatches_ = java.util.Collections.emptyList();
 
     private void ensureQueryParameterMatchesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         queryParameterMatches_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.HttpQueryParameterMatch>(
                 queryParameterMatches_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2448,7 +2661,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
     public Builder clearQueryParameterMatches() {
       if (queryParameterMatchesBuilder_ == null) {
         queryParameterMatches_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         queryParameterMatchesBuilder_.clear();
@@ -2590,7 +2803,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.HttpQueryParameterMatch.Builder,
                 com.google.cloud.compute.v1.HttpQueryParameterMatchOrBuilder>(
                 queryParameterMatches_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         queryParameterMatches_ = null;
@@ -2611,7 +2824,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      * @return Whether the regexMatch field is set.
      */
     public boolean hasRegexMatch() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2674,7 +2887,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       regexMatch_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2691,7 +2904,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearRegexMatch() {
       regexMatch_ = getDefaultInstance().getRegexMatch();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2713,7 +2926,7 @@ public final class HttpRouteRuleMatch extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       regexMatch_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

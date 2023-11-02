@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -635,6 +635,146 @@ public class GlobalAddressesClient implements BackgroundResource {
    */
   public final UnaryCallable<ListGlobalAddressesRequest, AddressList> listCallable() {
     return stub.listCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves the specified address resource from one project to another project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   String project = "project-309310695";
+   *   String address = "address-1147692044";
+   *   GlobalAddressesMoveRequest globalAddressesMoveRequestResource =
+   *       GlobalAddressesMoveRequest.newBuilder().build();
+   *   Operation response =
+   *       globalAddressesClient
+   *           .moveAsync(project, address, globalAddressesMoveRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Source project ID which the Address is moved from.
+   * @param address Name of the address resource to move.
+   * @param globalAddressesMoveRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> moveAsync(
+      String project,
+      String address,
+      GlobalAddressesMoveRequest globalAddressesMoveRequestResource) {
+    MoveGlobalAddressRequest request =
+        MoveGlobalAddressRequest.newBuilder()
+            .setProject(project)
+            .setAddress(address)
+            .setGlobalAddressesMoveRequestResource(globalAddressesMoveRequestResource)
+            .build();
+    return moveAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves the specified address resource from one project to another project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   MoveGlobalAddressRequest request =
+   *       MoveGlobalAddressRequest.newBuilder()
+   *           .setAddress("address-1147692044")
+   *           .setGlobalAddressesMoveRequestResource(
+   *               GlobalAddressesMoveRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = globalAddressesClient.moveAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> moveAsync(MoveGlobalAddressRequest request) {
+    return moveOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves the specified address resource from one project to another project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   MoveGlobalAddressRequest request =
+   *       MoveGlobalAddressRequest.newBuilder()
+   *           .setAddress("address-1147692044")
+   *           .setGlobalAddressesMoveRequestResource(
+   *               GlobalAddressesMoveRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       globalAddressesClient.moveOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<MoveGlobalAddressRequest, Operation, Operation>
+      moveOperationCallable() {
+    return stub.moveOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves the specified address resource from one project to another project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   MoveGlobalAddressRequest request =
+   *       MoveGlobalAddressRequest.newBuilder()
+   *           .setAddress("address-1147692044")
+   *           .setGlobalAddressesMoveRequestResource(
+   *               GlobalAddressesMoveRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = globalAddressesClient.moveCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MoveGlobalAddressRequest, Operation> moveCallable() {
+    return stub.moveCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface EnvVarOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
-   * mnay not exceed 32768 characters.
+   * Required. Name of the environment variable. Must not exceed 32768
+   * characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,8 +40,8 @@ public interface EnvVarOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
-   * mnay not exceed 32768 characters.
+   * Required. Name of the environment variable. Must not exceed 32768
+   * characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -143,5 +143,5 @@ public interface EnvVarOrBuilder
    */
   com.google.cloud.run.v2.EnvVarSourceOrBuilder getValueSourceOrBuilder();
 
-  public com.google.cloud.run.v2.EnvVar.ValuesCase getValuesCase();
+  com.google.cloud.run.v2.EnvVar.ValuesCase getValuesCase();
 }

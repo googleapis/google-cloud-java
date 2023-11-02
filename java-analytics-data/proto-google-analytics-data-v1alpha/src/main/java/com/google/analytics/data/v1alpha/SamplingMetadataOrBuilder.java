@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ public interface SamplingMetadataOrBuilder
    * have been analyzed in this funnel report for a date range. Sampling
    * uncovers the meaningful information about the larger data set, and this
    * is the size of the larger data set.
+   *
    * To calculate the percentage of available data that was used in this
    * funnel report, compute `samplesReadCount/samplingSpaceSize`.
    * </pre>

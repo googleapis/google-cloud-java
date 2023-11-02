@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -745,6 +745,84 @@ public class LanguageServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable() {
     return stub.classifyTextCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moderates a document for harmful and sensitive categories.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   ModerateTextResponse response = languageServiceClient.moderateText(document);
+   * }
+   * }</pre>
+   *
+   * @param document Required. Input document.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ModerateTextResponse moderateText(Document document) {
+    ModerateTextRequest request = ModerateTextRequest.newBuilder().setDocument(document).build();
+    return moderateText(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moderates a document for harmful and sensitive categories.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   ModerateTextRequest request =
+   *       ModerateTextRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *   ModerateTextResponse response = languageServiceClient.moderateText(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ModerateTextResponse moderateText(ModerateTextRequest request) {
+    return moderateTextCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moderates a document for harmful and sensitive categories.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   ModerateTextRequest request =
+   *       ModerateTextRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *   ApiFuture<ModerateTextResponse> future =
+   *       languageServiceClient.moderateTextCallable().futureCall(request);
+   *   // Do something.
+   *   ModerateTextResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ModerateTextRequest, ModerateTextResponse> moderateTextCallable() {
+    return stub.moderateTextCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

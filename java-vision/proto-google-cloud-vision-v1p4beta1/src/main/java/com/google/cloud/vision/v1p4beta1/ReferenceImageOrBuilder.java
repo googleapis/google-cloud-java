@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,11 @@ public interface ReferenceImageOrBuilder
    *
    * <pre>
    * The resource name of the reference image.
+   *
    * Format is:
+   *
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
+   *
    * This field is ignored when creating a reference image.
    * </pre>
    *
@@ -43,8 +46,11 @@ public interface ReferenceImageOrBuilder
    *
    * <pre>
    * The resource name of the reference image.
+   *
    * Format is:
+   *
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
+   *
    * This field is ignored when creating a reference image.
    * </pre>
    *
@@ -59,6 +65,7 @@ public interface ReferenceImageOrBuilder
    *
    * <pre>
    * Required. The Google Cloud Storage URI of the reference image.
+   *
    * The URI must start with `gs://`.
    * </pre>
    *
@@ -72,6 +79,7 @@ public interface ReferenceImageOrBuilder
    *
    * <pre>
    * Required. The Google Cloud Storage URI of the reference image.
+   *
    * The URI must start with `gs://`.
    * </pre>
    *
@@ -88,6 +96,7 @@ public interface ReferenceImageOrBuilder
    * Optional. Bounding polygons around the areas of interest in the reference
    * image. If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
+   *
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
    * to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5
@@ -106,6 +115,7 @@ public interface ReferenceImageOrBuilder
    * Optional. Bounding polygons around the areas of interest in the reference
    * image. If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
+   *
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
    * to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5
@@ -124,6 +134,7 @@ public interface ReferenceImageOrBuilder
    * Optional. Bounding polygons around the areas of interest in the reference
    * image. If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
+   *
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
    * to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5
@@ -142,6 +153,7 @@ public interface ReferenceImageOrBuilder
    * Optional. Bounding polygons around the areas of interest in the reference
    * image. If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
+   *
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
    * to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5
@@ -161,6 +173,7 @@ public interface ReferenceImageOrBuilder
    * Optional. Bounding polygons around the areas of interest in the reference
    * image. If this field is empty, the system will try to detect regions of
    * interest. At most 10 bounding polygons will be used.
+   *
    * The provided shape is converted into a non-rotated rectangle. Once
    * converted, the small edge of the rectangle must be greater than or equal
    * to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5

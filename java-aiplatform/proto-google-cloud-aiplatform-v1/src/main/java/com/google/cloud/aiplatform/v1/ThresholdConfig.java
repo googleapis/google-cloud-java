@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
     return new ThresholdConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ModelMonitoringProto
         .internal_static_google_cloud_aiplatform_v1_ThresholdConfig_descriptor;
@@ -66,6 +61,8 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   private int thresholdCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object threshold_;
 
   public enum ThresholdCase

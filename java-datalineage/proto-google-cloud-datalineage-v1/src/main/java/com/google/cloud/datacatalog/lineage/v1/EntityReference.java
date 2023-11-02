@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class EntityReference extends com.google.protobuf.GeneratedMessageV
     return new EntityReference();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.lineage.v1.LineageProto
         .internal_static_google_cloud_datacatalog_lineage_v1_EntityReference_descriptor;
@@ -78,7 +73,9 @@ public final class EntityReference extends com.google.protobuf.GeneratedMessageV
    * Required. Fully Qualified Name of the entity. Useful for referencing
    * entities that aren't represented as GCP resources, for example, tables in
    * Dataproc Metastore API.
+   *
    * Examples:
+   *
    *   * `bigquery:dataset.project_id.dataset_id`
    *   * `bigquery:table.project_id.dataset_id.table_id`
    *   * `pubsub:project_id.topic_id`
@@ -108,7 +105,9 @@ public final class EntityReference extends com.google.protobuf.GeneratedMessageV
    * Required. Fully Qualified Name of the entity. Useful for referencing
    * entities that aren't represented as GCP resources, for example, tables in
    * Dataproc Metastore API.
+   *
    * Examples:
+   *
    *   * `bigquery:dataset.project_id.dataset_id`
    *   * `bigquery:table.project_id.dataset_id.table_id`
    *   * `pubsub:project_id.topic_id`
@@ -483,7 +482,9 @@ public final class EntityReference extends com.google.protobuf.GeneratedMessageV
      * Required. Fully Qualified Name of the entity. Useful for referencing
      * entities that aren't represented as GCP resources, for example, tables in
      * Dataproc Metastore API.
+     *
      * Examples:
+     *
      *   * `bigquery:dataset.project_id.dataset_id`
      *   * `bigquery:table.project_id.dataset_id.table_id`
      *   * `pubsub:project_id.topic_id`
@@ -512,7 +513,9 @@ public final class EntityReference extends com.google.protobuf.GeneratedMessageV
      * Required. Fully Qualified Name of the entity. Useful for referencing
      * entities that aren't represented as GCP resources, for example, tables in
      * Dataproc Metastore API.
+     *
      * Examples:
+     *
      *   * `bigquery:dataset.project_id.dataset_id`
      *   * `bigquery:table.project_id.dataset_id.table_id`
      *   * `pubsub:project_id.topic_id`
@@ -541,7 +544,9 @@ public final class EntityReference extends com.google.protobuf.GeneratedMessageV
      * Required. Fully Qualified Name of the entity. Useful for referencing
      * entities that aren't represented as GCP resources, for example, tables in
      * Dataproc Metastore API.
+     *
      * Examples:
+     *
      *   * `bigquery:dataset.project_id.dataset_id`
      *   * `bigquery:table.project_id.dataset_id.table_id`
      *   * `pubsub:project_id.topic_id`
@@ -569,7 +574,9 @@ public final class EntityReference extends com.google.protobuf.GeneratedMessageV
      * Required. Fully Qualified Name of the entity. Useful for referencing
      * entities that aren't represented as GCP resources, for example, tables in
      * Dataproc Metastore API.
+     *
      * Examples:
+     *
      *   * `bigquery:dataset.project_id.dataset_id`
      *   * `bigquery:table.project_id.dataset_id.table_id`
      *   * `pubsub:project_id.topic_id`
@@ -593,7 +600,9 @@ public final class EntityReference extends com.google.protobuf.GeneratedMessageV
      * Required. Fully Qualified Name of the entity. Useful for referencing
      * entities that aren't represented as GCP resources, for example, tables in
      * Dataproc Metastore API.
+     *
      * Examples:
+     *
      *   * `bigquery:dataset.project_id.dataset_id`
      *   * `bigquery:table.project_id.dataset_id.table_id`
      *   * `pubsub:project_id.topic_id`

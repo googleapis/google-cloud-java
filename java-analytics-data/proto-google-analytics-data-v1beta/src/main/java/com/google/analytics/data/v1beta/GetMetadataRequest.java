@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetMetadataRequest extends com.google.protobuf.GeneratedMessa
     return new GetMetadataRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1beta_GetMetadataRequest_descriptor;
@@ -80,7 +75,9 @@ public final class GetMetadataRequest extends com.google.protobuf.GeneratedMessa
    * Google Analytics GA4 Property identifier. To learn more, see [where to find
    * your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+   *
    * Example: properties/1234/metadata
+   *
    * Set the Property ID to 0 for dimensions and metrics common to all
    * properties. In this special mode, this method will not return custom
    * dimensions and metrics.
@@ -113,7 +110,9 @@ public final class GetMetadataRequest extends com.google.protobuf.GeneratedMessa
    * Google Analytics GA4 Property identifier. To learn more, see [where to find
    * your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+   *
    * Example: properties/1234/metadata
+   *
    * Set the Property ID to 0 for dimensions and metrics common to all
    * properties. In this special mode, this method will not return custom
    * dimensions and metrics.
@@ -490,7 +489,9 @@ public final class GetMetadataRequest extends com.google.protobuf.GeneratedMessa
      * Google Analytics GA4 Property identifier. To learn more, see [where to find
      * your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+     *
      * Example: properties/1234/metadata
+     *
      * Set the Property ID to 0 for dimensions and metrics common to all
      * properties. In this special mode, this method will not return custom
      * dimensions and metrics.
@@ -522,7 +523,9 @@ public final class GetMetadataRequest extends com.google.protobuf.GeneratedMessa
      * Google Analytics GA4 Property identifier. To learn more, see [where to find
      * your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+     *
      * Example: properties/1234/metadata
+     *
      * Set the Property ID to 0 for dimensions and metrics common to all
      * properties. In this special mode, this method will not return custom
      * dimensions and metrics.
@@ -554,7 +557,9 @@ public final class GetMetadataRequest extends com.google.protobuf.GeneratedMessa
      * Google Analytics GA4 Property identifier. To learn more, see [where to find
      * your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+     *
      * Example: properties/1234/metadata
+     *
      * Set the Property ID to 0 for dimensions and metrics common to all
      * properties. In this special mode, this method will not return custom
      * dimensions and metrics.
@@ -585,7 +590,9 @@ public final class GetMetadataRequest extends com.google.protobuf.GeneratedMessa
      * Google Analytics GA4 Property identifier. To learn more, see [where to find
      * your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+     *
      * Example: properties/1234/metadata
+     *
      * Set the Property ID to 0 for dimensions and metrics common to all
      * properties. In this special mode, this method will not return custom
      * dimensions and metrics.
@@ -612,7 +619,9 @@ public final class GetMetadataRequest extends com.google.protobuf.GeneratedMessa
      * Google Analytics GA4 Property identifier. To learn more, see [where to find
      * your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+     *
      * Example: properties/1234/metadata
+     *
      * Set the Property ID to 0 for dimensions and metrics common to all
      * properties. In this special mode, this method will not return custom
      * dimensions and metrics.

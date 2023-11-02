@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DatabaseTableSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -333,7 +328,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getSqlQueryBytes();
 
-    public com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec.SourceDefinitionCase
+    com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec.SourceDefinitionCase
         getSourceDefinitionCase();
   }
   /**
@@ -363,11 +358,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DatabaseViewSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -545,6 +535,8 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     }
 
     private int sourceDefinitionCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object sourceDefinition_;
 
     public enum SourceDefinitionCase

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface PersistentDiskOrBuilder
    * <pre>
    * The size, in GB, of the disk to attach. If the size is not
    * specified, a default is chosen to ensure reasonable I/O performance.
+   *
    * If the disk type is specified as `local-ssd`, multiple local drives are
    * automatically combined to provide the requested size. Note, however, that
    * each physical SSD is 375GB in size, and no more than 8 drives can be

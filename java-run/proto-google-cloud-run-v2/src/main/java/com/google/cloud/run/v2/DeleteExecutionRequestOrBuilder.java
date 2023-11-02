@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ public interface DeleteExecutionRequestOrBuilder
    * <pre>
    * Required. The name of the Execution to delete.
    * Format:
-   * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-   * where {project} can be project id or number.
+   * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -46,8 +46,8 @@ public interface DeleteExecutionRequestOrBuilder
    * <pre>
    * Required. The name of the Execution to delete.
    * Format:
-   * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-   * where {project} can be project id or number.
+   * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>

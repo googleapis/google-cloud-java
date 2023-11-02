@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateTransitionRouteGroupRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteTransitionRouteGroupRequest;
@@ -83,6 +84,8 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v3/{parent=projects/*/locations/*/agents/*}/transitionRouteGroups")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -122,6 +125,8 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v3/{name=projects/*/locations/*/agents/*/transitionRouteGroups/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -159,6 +164,8 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v3/{parent=projects/*/locations/*/agents/*}/transitionRouteGroups")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -205,6 +212,8 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                                 request.getTransitionRouteGroup().getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v3/{transitionRouteGroup.name=projects/*/locations/*/agents/*/transitionRouteGroups/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -249,6 +258,8 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v3/{name=projects/*/locations/*/agents/*/transitionRouteGroups/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -403,12 +414,24 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                 .<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse>newBuilder()
                 .setMethodDescriptor(listTransitionRouteGroupsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetTransitionRouteGroupRequest, TransitionRouteGroup>
         getTransitionRouteGroupTransportSettings =
             HttpJsonCallSettings.<GetTransitionRouteGroupRequest, TransitionRouteGroup>newBuilder()
                 .setMethodDescriptor(getTransitionRouteGroupMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateTransitionRouteGroupRequest, TransitionRouteGroup>
         createTransitionRouteGroupTransportSettings =
@@ -416,6 +439,12 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                 .<CreateTransitionRouteGroupRequest, TransitionRouteGroup>newBuilder()
                 .setMethodDescriptor(createTransitionRouteGroupMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateTransitionRouteGroupRequest, TransitionRouteGroup>
         updateTransitionRouteGroupTransportSettings =
@@ -423,23 +452,49 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                 .<UpdateTransitionRouteGroupRequest, TransitionRouteGroup>newBuilder()
                 .setMethodDescriptor(updateTransitionRouteGroupMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "transition_route_group.name",
+                          String.valueOf(request.getTransitionRouteGroup().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteTransitionRouteGroupRequest, Empty>
         deleteTransitionRouteGroupTransportSettings =
             HttpJsonCallSettings.<DeleteTransitionRouteGroupRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteTransitionRouteGroupMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listTransitionRouteGroupsCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -218,6 +218,5 @@ public interface TimeSeriesFilterRatioOrBuilder
   com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
       getStatisticalTimeSeriesFilterOrBuilder();
 
-  public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.OutputFilterCase
-      getOutputFilterCase();
+  com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.OutputFilterCase getOutputFilterCase();
 }

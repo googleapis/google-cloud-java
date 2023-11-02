@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,8 +56,8 @@ public interface MarkInsightAcceptedRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. State properties user wish to include with this state.  Full replace of the
-   * current state_metadata.
+   * Optional. State properties user wish to include with this state.  Full
+   * replace of the current state_metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -68,8 +68,8 @@ public interface MarkInsightAcceptedRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. State properties user wish to include with this state.  Full replace of the
-   * current state_metadata.
+   * Optional. State properties user wish to include with this state.  Full
+   * replace of the current state_metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -83,8 +83,8 @@ public interface MarkInsightAcceptedRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. State properties user wish to include with this state.  Full replace of the
-   * current state_metadata.
+   * Optional. State properties user wish to include with this state.  Full
+   * replace of the current state_metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -95,8 +95,8 @@ public interface MarkInsightAcceptedRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. State properties user wish to include with this state.  Full replace of the
-   * current state_metadata.
+   * Optional. State properties user wish to include with this state.  Full
+   * replace of the current state_metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -111,8 +111,8 @@ public interface MarkInsightAcceptedRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. State properties user wish to include with this state.  Full replace of the
-   * current state_metadata.
+   * Optional. State properties user wish to include with this state.  Full
+   * replace of the current state_metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; state_metadata = 2 [(.google.api.field_behavior) = OPTIONAL];

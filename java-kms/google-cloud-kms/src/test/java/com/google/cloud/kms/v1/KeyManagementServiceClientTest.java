@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2111,6 +2111,155 @@ public class KeyManagementServiceClientTest {
       String name = "name3373707";
       ByteString ciphertext = ByteString.EMPTY;
       client.decrypt(name, ciphertext);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void rawEncryptTest() throws Exception {
+    RawEncryptResponse expectedResponse =
+        RawEncryptResponse.newBuilder()
+            .setCiphertext(ByteString.EMPTY)
+            .setInitializationVector(ByteString.EMPTY)
+            .setTagLength(172791595)
+            .setCiphertextCrc32C(Int64Value.newBuilder().build())
+            .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+            .setVerifiedPlaintextCrc32C(true)
+            .setVerifiedAdditionalAuthenticatedDataCrc32C(true)
+            .setVerifiedInitializationVectorCrc32C(true)
+            .setName("name3373707")
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    RawEncryptRequest request =
+        RawEncryptRequest.newBuilder()
+            .setName("name3373707")
+            .setPlaintext(ByteString.EMPTY)
+            .setAdditionalAuthenticatedData(ByteString.EMPTY)
+            .setPlaintextCrc32C(Int64Value.newBuilder().build())
+            .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+            .setInitializationVector(ByteString.EMPTY)
+            .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+            .build();
+
+    RawEncryptResponse actualResponse = client.rawEncrypt(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RawEncryptRequest actualRequest = ((RawEncryptRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getPlaintext(), actualRequest.getPlaintext());
+    Assert.assertEquals(
+        request.getAdditionalAuthenticatedData(), actualRequest.getAdditionalAuthenticatedData());
+    Assert.assertEquals(request.getPlaintextCrc32C(), actualRequest.getPlaintextCrc32C());
+    Assert.assertEquals(
+        request.getAdditionalAuthenticatedDataCrc32C(),
+        actualRequest.getAdditionalAuthenticatedDataCrc32C());
+    Assert.assertEquals(request.getInitializationVector(), actualRequest.getInitializationVector());
+    Assert.assertEquals(
+        request.getInitializationVectorCrc32C(), actualRequest.getInitializationVectorCrc32C());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rawEncryptExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      RawEncryptRequest request =
+          RawEncryptRequest.newBuilder()
+              .setName("name3373707")
+              .setPlaintext(ByteString.EMPTY)
+              .setAdditionalAuthenticatedData(ByteString.EMPTY)
+              .setPlaintextCrc32C(Int64Value.newBuilder().build())
+              .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+              .setInitializationVector(ByteString.EMPTY)
+              .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+              .build();
+      client.rawEncrypt(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void rawDecryptTest() throws Exception {
+    RawDecryptResponse expectedResponse =
+        RawDecryptResponse.newBuilder()
+            .setPlaintext(ByteString.EMPTY)
+            .setPlaintextCrc32C(Int64Value.newBuilder().build())
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setVerifiedCiphertextCrc32C(true)
+            .setVerifiedAdditionalAuthenticatedDataCrc32C(true)
+            .setVerifiedInitializationVectorCrc32C(true)
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    RawDecryptRequest request =
+        RawDecryptRequest.newBuilder()
+            .setName("name3373707")
+            .setCiphertext(ByteString.EMPTY)
+            .setAdditionalAuthenticatedData(ByteString.EMPTY)
+            .setInitializationVector(ByteString.EMPTY)
+            .setTagLength(172791595)
+            .setCiphertextCrc32C(Int64Value.newBuilder().build())
+            .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+            .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+            .build();
+
+    RawDecryptResponse actualResponse = client.rawDecrypt(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RawDecryptRequest actualRequest = ((RawDecryptRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getCiphertext(), actualRequest.getCiphertext());
+    Assert.assertEquals(
+        request.getAdditionalAuthenticatedData(), actualRequest.getAdditionalAuthenticatedData());
+    Assert.assertEquals(request.getInitializationVector(), actualRequest.getInitializationVector());
+    Assert.assertEquals(request.getTagLength(), actualRequest.getTagLength());
+    Assert.assertEquals(request.getCiphertextCrc32C(), actualRequest.getCiphertextCrc32C());
+    Assert.assertEquals(
+        request.getAdditionalAuthenticatedDataCrc32C(),
+        actualRequest.getAdditionalAuthenticatedDataCrc32C());
+    Assert.assertEquals(
+        request.getInitializationVectorCrc32C(), actualRequest.getInitializationVectorCrc32C());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rawDecryptExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      RawDecryptRequest request =
+          RawDecryptRequest.newBuilder()
+              .setName("name3373707")
+              .setCiphertext(ByteString.EMPTY)
+              .setAdditionalAuthenticatedData(ByteString.EMPTY)
+              .setInitializationVector(ByteString.EMPTY)
+              .setTagLength(172791595)
+              .setCiphertextCrc32C(Int64Value.newBuilder().build())
+              .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+              .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+              .build();
+      client.rawDecrypt(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

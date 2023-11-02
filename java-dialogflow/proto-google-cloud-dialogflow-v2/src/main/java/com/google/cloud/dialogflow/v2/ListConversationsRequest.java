@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListConversationsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -217,7 +212,9 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
    * &lt;/ul&gt;
    * Only `lifecycle_state` can be filtered on in this way. For example,
    * the following expression only returns `COMPLETED` conversations:
+   *
    * `lifecycle_state = "COMPLETED"`
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -254,7 +251,9 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
    * &lt;/ul&gt;
    * Only `lifecycle_state` can be filtered on in this way. For example,
    * the following expression only returns `COMPLETED` conversations:
+   *
    * `lifecycle_state = "COMPLETED"`
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -990,7 +989,9 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      * &lt;/ul&gt;
      * Only `lifecycle_state` can be filtered on in this way. For example,
      * the following expression only returns `COMPLETED` conversations:
+     *
      * `lifecycle_state = "COMPLETED"`
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1026,7 +1027,9 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      * &lt;/ul&gt;
      * Only `lifecycle_state` can be filtered on in this way. For example,
      * the following expression only returns `COMPLETED` conversations:
+     *
      * `lifecycle_state = "COMPLETED"`
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1062,7 +1065,9 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      * &lt;/ul&gt;
      * Only `lifecycle_state` can be filtered on in this way. For example,
      * the following expression only returns `COMPLETED` conversations:
+     *
      * `lifecycle_state = "COMPLETED"`
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1097,7 +1102,9 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      * &lt;/ul&gt;
      * Only `lifecycle_state` can be filtered on in this way. For example,
      * the following expression only returns `COMPLETED` conversations:
+     *
      * `lifecycle_state = "COMPLETED"`
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1128,7 +1135,9 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      * &lt;/ul&gt;
      * Only `lifecycle_state` can be filtered on in this way. For example,
      * the following expression only returns `COMPLETED` conversations:
+     *
      * `lifecycle_state = "COMPLETED"`
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,33 @@ public interface TransitionRouteOrBuilder
    *
    *
    * <pre>
+   * Optional. The description of the transition route. The maximum length is
+   * 500 characters.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the transition route. The maximum length is
+   * 500 characters.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The unique identifier of an [Intent][google.cloud.dialogflow.cx.v3.Intent].
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
@@ -94,6 +121,7 @@ public interface TransitionRouteOrBuilder
    * The condition to evaluate against [form
    * parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or [session
    * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   *
    * See the [conditions
    * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
    * At least one of `intent` or `condition` must be specified. When both
@@ -113,6 +141,7 @@ public interface TransitionRouteOrBuilder
    * The condition to evaluate against [form
    * parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or [session
    * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   *
    * See the [conditions
    * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
    * At least one of `intent` or `condition` must be specified. When both
@@ -253,5 +282,5 @@ public interface TransitionRouteOrBuilder
    */
   com.google.protobuf.ByteString getTargetFlowBytes();
 
-  public com.google.cloud.dialogflow.cx.v3.TransitionRoute.TargetCase getTargetCase();
+  com.google.cloud.dialogflow.cx.v3.TransitionRoute.TargetCase getTargetCase();
 }

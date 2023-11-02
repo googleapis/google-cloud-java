@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchJobsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -272,11 +267,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MatchingJob();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1945,11 +1935,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       return new CommuteInfo();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.talent.v4.JobServiceProto
           .internal_static_google_cloud_talent_v4_SearchJobsResponse_CommuteInfo_descriptor;
@@ -3222,6 +3207,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Number of jobs that match the specified query.
+   *
    * Note: This size is precise only if the total is less than 100,000.
    * </pre>
    *
@@ -5343,6 +5329,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Number of jobs that match the specified query.
+     *
      * Note: This size is precise only if the total is less than 100,000.
      * </pre>
      *
@@ -5359,6 +5346,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Number of jobs that match the specified query.
+     *
      * Note: This size is precise only if the total is less than 100,000.
      * </pre>
      *
@@ -5379,6 +5367,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Number of jobs that match the specified query.
+     *
      * Note: This size is precise only if the total is less than 100,000.
      * </pre>
      *

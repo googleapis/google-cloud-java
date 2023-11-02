@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,6 +113,7 @@ public interface WorkItemDetailsOrBuilder
    *
    * <pre>
    * End time of this work item attempt.
+   *
    * If the work item is completed, this is the actual end time of the work
    * item.  Otherwise, it is the predicted end time.
    * </pre>
@@ -127,6 +128,7 @@ public interface WorkItemDetailsOrBuilder
    *
    * <pre>
    * End time of this work item attempt.
+   *
    * If the work item is completed, this is the actual end time of the work
    * item.  Otherwise, it is the predicted end time.
    * </pre>
@@ -141,6 +143,7 @@ public interface WorkItemDetailsOrBuilder
    *
    * <pre>
    * End time of this work item attempt.
+   *
    * If the work item is completed, this is the actual end time of the work
    * item.  Otherwise, it is the predicted end time.
    * </pre>

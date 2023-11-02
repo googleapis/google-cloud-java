@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListWorkflowTemplatesRequest extends com.google.protobuf.Gene
     return new ListWorkflowTemplatesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
         .internal_static_google_cloud_dataproc_v1_ListWorkflowTemplatesRequest_descriptor;
@@ -78,9 +73,11 @@ public final class ListWorkflowTemplatesRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The resource name of the region or location, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.workflowTemplates,list`, the resource
    *   name of the region has the following format:
    *   `projects/{project_id}/regions/{region}`
+   *
    * * For `projects.locations.workflowTemplates.list`, the
    *   resource name of the location has the following format:
    *   `projects/{project_id}/locations/{location}`
@@ -110,9 +107,11 @@ public final class ListWorkflowTemplatesRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The resource name of the region or location, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.workflowTemplates,list`, the resource
    *   name of the region has the following format:
    *   `projects/{project_id}/regions/{region}`
+   *
    * * For `projects.locations.workflowTemplates.list`, the
    *   resource name of the location has the following format:
    *   `projects/{project_id}/locations/{location}`
@@ -604,9 +603,11 @@ public final class ListWorkflowTemplatesRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The resource name of the region or location, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates,list`, the resource
      *   name of the region has the following format:
      *   `projects/{project_id}/regions/{region}`
+     *
      * * For `projects.locations.workflowTemplates.list`, the
      *   resource name of the location has the following format:
      *   `projects/{project_id}/locations/{location}`
@@ -635,9 +636,11 @@ public final class ListWorkflowTemplatesRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The resource name of the region or location, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates,list`, the resource
      *   name of the region has the following format:
      *   `projects/{project_id}/regions/{region}`
+     *
      * * For `projects.locations.workflowTemplates.list`, the
      *   resource name of the location has the following format:
      *   `projects/{project_id}/locations/{location}`
@@ -666,9 +669,11 @@ public final class ListWorkflowTemplatesRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The resource name of the region or location, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates,list`, the resource
      *   name of the region has the following format:
      *   `projects/{project_id}/regions/{region}`
+     *
      * * For `projects.locations.workflowTemplates.list`, the
      *   resource name of the location has the following format:
      *   `projects/{project_id}/locations/{location}`
@@ -696,9 +701,11 @@ public final class ListWorkflowTemplatesRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The resource name of the region or location, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates,list`, the resource
      *   name of the region has the following format:
      *   `projects/{project_id}/regions/{region}`
+     *
      * * For `projects.locations.workflowTemplates.list`, the
      *   resource name of the location has the following format:
      *   `projects/{project_id}/locations/{location}`
@@ -722,9 +729,11 @@ public final class ListWorkflowTemplatesRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The resource name of the region or location, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates,list`, the resource
      *   name of the region has the following format:
      *   `projects/{project_id}/regions/{region}`
+     *
      * * For `projects.locations.workflowTemplates.list`, the
      *   resource name of the location has the following format:
      *   `projects/{project_id}/locations/{location}`

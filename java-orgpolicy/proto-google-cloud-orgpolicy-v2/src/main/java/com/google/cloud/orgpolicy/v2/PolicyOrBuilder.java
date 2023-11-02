@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,9 @@ public interface PolicyOrBuilder
    * * `projects/{project_number}/policies/{constraint_name}`
    * * `folders/{folder_id}/policies/{constraint_name}`
    * * `organizations/{organization_id}/policies/{constraint_name}`
+   *
    * For example, "projects/123/policies/compute.disableSerialPortAccess".
+   *
    * Note: `projects/{project_id}/policies/{constraint_name}` is also an
    * acceptable name for API requests, but responses will return the name using
    * the equivalent project number.
@@ -54,7 +56,9 @@ public interface PolicyOrBuilder
    * * `projects/{project_number}/policies/{constraint_name}`
    * * `folders/{folder_id}/policies/{constraint_name}`
    * * `organizations/{organization_id}/policies/{constraint_name}`
+   *
    * For example, "projects/123/policies/compute.disableSerialPortAccess".
+   *
    * Note: `projects/{project_id}/policies/{constraint_name}` is also an
    * acceptable name for API requests, but responses will return the name using
    * the equivalent project number.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,11 @@ package com.google.cloud.channel.v1;
  * <pre>
  * Defines price at resource tier level.
  * For example, an offer with following definition :
+ *
  * * Tier 1: Provide 25% discount for all seats between 1 and 25.
  * * Tier 2: Provide 10% discount for all seats between 26 and 100.
  * * Tier 3: Provide flat 15% discount for all seats above 100.
+ *
  * Each of these tiers is represented as a PriceTier.
  * </pre>
  *
@@ -48,11 +50,6 @@ public final class PriceTier extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PriceTier();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -338,9 +335,11 @@ public final class PriceTier extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Defines price at resource tier level.
    * For example, an offer with following definition :
+   *
    * * Tier 1: Provide 25% discount for all seats between 1 and 25.
    * * Tier 2: Provide 10% discount for all seats between 26 and 100.
    * * Tier 3: Provide flat 15% discount for all seats above 100.
+   *
    * Each of these tiers is represented as a PriceTier.
    * </pre>
    *

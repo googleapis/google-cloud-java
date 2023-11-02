@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WorkflowTemplate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,9 +125,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The resource name of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.workflowTemplates`, the resource name of the
    *   template has the following format:
    *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *
    * * For `projects.locations.workflowTemplates`, the resource name of the
    *   template has the following format:
    *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -160,9 +157,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The resource name of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.workflowTemplates`, the resource name of the
    *   template has the following format:
    *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *
    * * For `projects.locations.workflowTemplates`, the resource name of the
    *   template has the following format:
    *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -192,6 +191,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Used to perform a consistent read-modify-write.
+   *
    * This field should be left blank for a `CreateWorkflowTemplate` request. It
    * is required for an `UpdateWorkflowTemplate` request, and must match the
    * current server version. A typical update template flow would fetch the
@@ -341,11 +341,14 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
    * instance.
+   *
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   *
    * Label **values** may be empty, but, if present, must contain 1 to 63
    * characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   *
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
@@ -371,11 +374,14 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
    * instance.
+   *
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   *
    * Label **values** may be empty, but, if present, must contain 1 to 63
    * characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   *
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
@@ -392,11 +398,14 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
    * instance.
+   *
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   *
    * Label **values** may be empty, but, if present, must contain 1 to 63
    * characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   *
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
@@ -420,11 +429,14 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
    * instance.
+   *
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   *
    * Label **values** may be empty, but, if present, must contain 1 to 63
    * characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   *
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
@@ -1534,9 +1546,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -1563,9 +1577,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -1592,9 +1608,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -1620,9 +1638,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -1644,9 +1664,11 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates`, the resource name of the
      *   template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -1674,6 +1696,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Used to perform a consistent read-modify-write.
+     *
      * This field should be left blank for a `CreateWorkflowTemplate` request. It
      * is required for an `UpdateWorkflowTemplate` request, and must match the
      * current server version. A typical update template flow would fetch the
@@ -1696,6 +1719,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Used to perform a consistent read-modify-write.
+     *
      * This field should be left blank for a `CreateWorkflowTemplate` request. It
      * is required for an `UpdateWorkflowTemplate` request, and must match the
      * current server version. A typical update template flow would fetch the
@@ -1722,6 +1746,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Used to perform a consistent read-modify-write.
+     *
      * This field should be left blank for a `CreateWorkflowTemplate` request. It
      * is required for an `UpdateWorkflowTemplate` request, and must match the
      * current server version. A typical update template flow would fetch the
@@ -2176,11 +2201,14 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
      * instance.
+     *
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * Label **values** may be empty, but, if present, must contain 1 to 63
      * characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * No more than 32 labels can be associated with a template.
      * </pre>
      *
@@ -2206,11 +2234,14 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
      * instance.
+     *
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * Label **values** may be empty, but, if present, must contain 1 to 63
      * characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * No more than 32 labels can be associated with a template.
      * </pre>
      *
@@ -2227,11 +2258,14 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
      * instance.
+     *
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * Label **values** may be empty, but, if present, must contain 1 to 63
      * characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * No more than 32 labels can be associated with a template.
      * </pre>
      *
@@ -2255,11 +2289,14 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
      * instance.
+     *
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * Label **values** may be empty, but, if present, must contain 1 to 63
      * characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * No more than 32 labels can be associated with a template.
      * </pre>
      *
@@ -2289,11 +2326,14 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
      * instance.
+     *
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * Label **values** may be empty, but, if present, must contain 1 to 63
      * characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * No more than 32 labels can be associated with a template.
      * </pre>
      *
@@ -2319,11 +2359,14 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
      * instance.
+     *
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * Label **values** may be empty, but, if present, must contain 1 to 63
      * characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * No more than 32 labels can be associated with a template.
      * </pre>
      *
@@ -2347,11 +2390,14 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
      * instance.
+     *
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * Label **values** may be empty, but, if present, must contain 1 to 63
      * characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     *
      * No more than 32 labels can be associated with a template.
      * </pre>
      *

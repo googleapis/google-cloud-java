@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
     return new ListCatalogsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.CatalogServiceProto
         .internal_static_google_cloud_retail_v2alpha_ListCatalogsRequest_descriptor;
@@ -79,6 +74,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The account resource name with an associated location.
+   *
    * If the caller does not have permission to list
    * [Catalog][google.cloud.retail.v2alpha.Catalog]s under this location,
    * regardless of whether or not this location exists, a PERMISSION_DENIED
@@ -108,6 +104,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The account resource name with an associated location.
+   *
    * If the caller does not have permission to list
    * [Catalog][google.cloud.retail.v2alpha.Catalog]s under this location,
    * regardless of whether or not this location exists, a PERMISSION_DENIED
@@ -142,6 +139,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
    * Maximum number of [Catalog][google.cloud.retail.v2alpha.Catalog]s to
    * return. If unspecified, defaults to 50. The maximum allowed value is 1000.
    * Values above 1000 will be coerced to 1000.
+   *
    * If this field is negative, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -167,6 +165,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
    * received from a previous
    * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
    * must match the call that provided the page token. Otherwise, an
@@ -198,6 +197,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
    * received from a previous
    * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
    * must match the call that provided the page token. Otherwise, an
@@ -617,6 +617,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The account resource name with an associated location.
+     *
      * If the caller does not have permission to list
      * [Catalog][google.cloud.retail.v2alpha.Catalog]s under this location,
      * regardless of whether or not this location exists, a PERMISSION_DENIED
@@ -645,6 +646,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The account resource name with an associated location.
+     *
      * If the caller does not have permission to list
      * [Catalog][google.cloud.retail.v2alpha.Catalog]s under this location,
      * regardless of whether or not this location exists, a PERMISSION_DENIED
@@ -673,6 +675,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The account resource name with an associated location.
+     *
      * If the caller does not have permission to list
      * [Catalog][google.cloud.retail.v2alpha.Catalog]s under this location,
      * regardless of whether or not this location exists, a PERMISSION_DENIED
@@ -700,6 +703,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The account resource name with an associated location.
+     *
      * If the caller does not have permission to list
      * [Catalog][google.cloud.retail.v2alpha.Catalog]s under this location,
      * regardless of whether or not this location exists, a PERMISSION_DENIED
@@ -723,6 +727,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The account resource name with an associated location.
+     *
      * If the caller does not have permission to list
      * [Catalog][google.cloud.retail.v2alpha.Catalog]s under this location,
      * regardless of whether or not this location exists, a PERMISSION_DENIED
@@ -755,6 +760,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      * Maximum number of [Catalog][google.cloud.retail.v2alpha.Catalog]s to
      * return. If unspecified, defaults to 50. The maximum allowed value is 1000.
      * Values above 1000 will be coerced to 1000.
+     *
      * If this field is negative, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -773,6 +779,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      * Maximum number of [Catalog][google.cloud.retail.v2alpha.Catalog]s to
      * return. If unspecified, defaults to 50. The maximum allowed value is 1000.
      * Values above 1000 will be coerced to 1000.
+     *
      * If this field is negative, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -795,6 +802,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      * Maximum number of [Catalog][google.cloud.retail.v2alpha.Catalog]s to
      * return. If unspecified, defaults to 50. The maximum allowed value is 1000.
      * Values above 1000 will be coerced to 1000.
+     *
      * If this field is negative, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -819,6 +827,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      * received from a previous
      * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
      * must match the call that provided the page token. Otherwise, an
@@ -849,6 +858,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      * received from a previous
      * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
      * must match the call that provided the page token. Otherwise, an
@@ -879,6 +889,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      * received from a previous
      * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
      * must match the call that provided the page token. Otherwise, an
@@ -908,6 +919,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      * received from a previous
      * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
      * must match the call that provided the page token. Otherwise, an
@@ -933,6 +945,7 @@ public final class ListCatalogsRequest extends com.google.protobuf.GeneratedMess
      * received from a previous
      * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
      * must match the call that provided the page token. Otherwise, an

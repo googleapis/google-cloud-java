@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,13 +102,16 @@ public interface CreateProductRequestOrBuilder
    * Required. The ID to use for the
    * [Product][google.cloud.retail.v2alpha.Product], which will become the final
    * component of the [Product.name][google.cloud.retail.v2alpha.Product.name].
+   *
    * If the caller does not have permission to create the
    * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
    * not it exists, a PERMISSION_DENIED error is returned.
+   *
    * This field must be unique among all
    * [Product][google.cloud.retail.v2alpha.Product]s with the same
    * [parent][google.cloud.retail.v2alpha.CreateProductRequest.parent].
    * Otherwise, an ALREADY_EXISTS error is returned.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -125,13 +128,16 @@ public interface CreateProductRequestOrBuilder
    * Required. The ID to use for the
    * [Product][google.cloud.retail.v2alpha.Product], which will become the final
    * component of the [Product.name][google.cloud.retail.v2alpha.Product.name].
+   *
    * If the caller does not have permission to create the
    * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
    * not it exists, a PERMISSION_DENIED error is returned.
+   *
    * This field must be unique among all
    * [Product][google.cloud.retail.v2alpha.Product]s with the same
    * [parent][google.cloud.retail.v2alpha.CreateProductRequest.parent].
    * Otherwise, an ALREADY_EXISTS error is returned.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>

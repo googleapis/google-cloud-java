@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
     return new GetMetricsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_GetMetricsRequest_descriptor;
@@ -76,7 +71,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the requested metrics, in the format
-   * "projects/{project}/keys/{key}/metrics".
+   * `projects/{project}/keys/{key}/metrics`.
    * </pre>
    *
    * <code>
@@ -102,7 +97,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the requested metrics, in the format
-   * "projects/{project}/keys/{key}/metrics".
+   * `projects/{project}/keys/{key}/metrics`.
    * </pre>
    *
    * <code>
@@ -472,7 +467,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the requested metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>
@@ -497,7 +492,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the requested metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>
@@ -522,7 +517,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the requested metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>
@@ -546,7 +541,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the requested metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>
@@ -566,7 +561,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the requested metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>

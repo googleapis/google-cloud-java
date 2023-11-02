@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ package com.google.cloud.osconfig.v1alpha;
  * <pre>
  * This API resource represents the available inventory data for a
  * Compute Engine virtual machine (VM) instance at a given point in time.
+ *
  * You can use this API resource to determine the inventory data of your VM.
+ *
  * For more information, see [Information provided by OS inventory
  * management](https://cloud.google.com/compute/docs/instances/os-inventory-management#data-collected).
  * </pre>
@@ -49,11 +51,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Inventory();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -327,11 +324,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new OsInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2426,7 +2418,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.osconfig.v1alpha.Inventory.SoftwarePackageOrBuilder
         getAvailablePackageOrBuilder();
 
-    public com.google.cloud.osconfig.v1alpha.Inventory.Item.DetailsCase getDetailsCase();
+    com.google.cloud.osconfig.v1alpha.Inventory.Item.DetailsCase getDetailsCase();
   }
   /**
    *
@@ -2457,11 +2449,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Item();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2778,6 +2765,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int detailsCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object details_;
 
     public enum DetailsCase
@@ -5260,7 +5249,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.osconfig.v1alpha.Inventory.WindowsApplicationOrBuilder
         getWindowsApplicationOrBuilder();
 
-    public com.google.cloud.osconfig.v1alpha.Inventory.SoftwarePackage.DetailsCase getDetailsCase();
+    com.google.cloud.osconfig.v1alpha.Inventory.SoftwarePackage.DetailsCase getDetailsCase();
   }
   /**
    *
@@ -5289,11 +5278,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       return new SoftwarePackage();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1alpha.Inventories
           .internal_static_google_cloud_osconfig_v1alpha_Inventory_SoftwarePackage_descriptor;
@@ -5310,6 +5294,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int detailsCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object details_;
 
     public enum DetailsCase
@@ -8874,11 +8860,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       return new VersionedPackage();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1alpha.Inventories
           .internal_static_google_cloud_osconfig_v1alpha_Inventory_VersionedPackage_descriptor;
@@ -9966,11 +9947,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ZypperPatch();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11460,9 +11436,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       title_ = "";
       description_ = "";
       categories_ = java.util.Collections.emptyList();
-      kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      kbArticleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       supportUrl_ = "";
-      moreInfoUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      moreInfoUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       updateId_ = "";
     }
 
@@ -11470,11 +11446,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new WindowsUpdatePackage();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11576,11 +11547,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new WindowsUpdateCategory();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -12605,7 +12571,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public static final int KB_ARTICLE_IDS_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList kbArticleIds_;
+    private com.google.protobuf.LazyStringArrayList kbArticleIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -12723,7 +12690,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public static final int MORE_INFO_URLS_FIELD_NUMBER = 5;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList moreInfoUrls_;
+    private com.google.protobuf.LazyStringArrayList moreInfoUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -13220,11 +13188,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           categoriesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
-        kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        kbArticleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         supportUrl_ = "";
-        moreInfoUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        moreInfoUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
         updateId_ = "";
         revisionNumber_ = 0;
         lastDeploymentChangeTime_ = null;
@@ -13280,16 +13246,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.categories_ = categoriesBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
-          kbArticleIds_ = kbArticleIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.kbArticleIds_ = kbArticleIds_;
-        if (((bitField0_ & 0x00000020) != 0)) {
-          moreInfoUrls_ = moreInfoUrls_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.moreInfoUrls_ = moreInfoUrls_;
       }
 
       private void buildPartial0(
@@ -13301,8 +13257,16 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.description_ = description_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          kbArticleIds_.makeImmutable();
+          result.kbArticleIds_ = kbArticleIds_;
+        }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.supportUrl_ = supportUrl_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          moreInfoUrls_.makeImmutable();
+          result.moreInfoUrls_ = moreInfoUrls_;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.updateId_ = updateId_;
@@ -13409,7 +13373,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (!other.kbArticleIds_.isEmpty()) {
           if (kbArticleIds_.isEmpty()) {
             kbArticleIds_ = other.kbArticleIds_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureKbArticleIdsIsMutable();
             kbArticleIds_.addAll(other.kbArticleIds_);
@@ -13424,7 +13388,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         if (!other.moreInfoUrls_.isEmpty()) {
           if (moreInfoUrls_.isEmpty()) {
             moreInfoUrls_ = other.moreInfoUrls_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ |= 0x00000020;
           } else {
             ensureMoreInfoUrlsIsMutable();
             moreInfoUrls_.addAll(other.moreInfoUrls_);
@@ -14209,14 +14173,14 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return categoriesBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList kbArticleIds_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList kbArticleIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureKbArticleIdsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!kbArticleIds_.isModifiable()) {
           kbArticleIds_ = new com.google.protobuf.LazyStringArrayList(kbArticleIds_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -14231,7 +14195,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the kbArticleIds.
        */
       public com.google.protobuf.ProtocolStringList getKbArticleIdsList() {
-        return kbArticleIds_.getUnmodifiableView();
+        kbArticleIds_.makeImmutable();
+        return kbArticleIds_;
       }
       /**
        *
@@ -14300,6 +14265,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         ensureKbArticleIdsIsMutable();
         kbArticleIds_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -14322,6 +14288,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         ensureKbArticleIdsIsMutable();
         kbArticleIds_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -14341,6 +14308,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllKbArticleIds(java.lang.Iterable<java.lang.String> values) {
         ensureKbArticleIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, kbArticleIds_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -14357,8 +14325,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKbArticleIds() {
-        kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        kbArticleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -14382,6 +14351,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureKbArticleIdsIsMutable();
         kbArticleIds_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -14492,14 +14462,14 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList moreInfoUrls_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList moreInfoUrls_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureMoreInfoUrlsIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!moreInfoUrls_.isModifiable()) {
           moreInfoUrls_ = new com.google.protobuf.LazyStringArrayList(moreInfoUrls_);
-          bitField0_ |= 0x00000020;
         }
+        bitField0_ |= 0x00000020;
       }
       /**
        *
@@ -14514,7 +14484,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the moreInfoUrls.
        */
       public com.google.protobuf.ProtocolStringList getMoreInfoUrlsList() {
-        return moreInfoUrls_.getUnmodifiableView();
+        moreInfoUrls_.makeImmutable();
+        return moreInfoUrls_;
       }
       /**
        *
@@ -14583,6 +14554,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         ensureMoreInfoUrlsIsMutable();
         moreInfoUrls_.set(index, value);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -14605,6 +14577,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
         ensureMoreInfoUrlsIsMutable();
         moreInfoUrls_.add(value);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -14624,6 +14597,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllMoreInfoUrls(java.lang.Iterable<java.lang.String> values) {
         ensureMoreInfoUrlsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, moreInfoUrls_);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -14640,8 +14614,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMoreInfoUrls() {
-        moreInfoUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        moreInfoUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000020);
+        ;
         onChanged();
         return this;
       }
@@ -14665,6 +14640,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureMoreInfoUrlsIsMutable();
         moreInfoUrls_.add(value);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -15233,11 +15209,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new WindowsQuickFixEngineeringPackage();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -16661,11 +16632,6 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       return new WindowsApplication();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1alpha.Inventories
           .internal_static_google_cloud_osconfig_v1alpha_Inventory_WindowsApplication_descriptor;
@@ -18087,6 +18053,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The `Inventory` API resource name.
+   *
    * Format:
    * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
    * </pre>
@@ -18112,6 +18079,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The `Inventory` API resource name.
+   *
    * Format:
    * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
    * </pre>
@@ -18584,7 +18552,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * This API resource represents the available inventory data for a
    * Compute Engine virtual machine (VM) instance at a given point in time.
+   *
    * You can use this API resource to determine the inventory data of your VM.
+   *
    * For more information, see [Information provided by OS inventory
    * management](https://cloud.google.com/compute/docs/instances/os-inventory-management#data-collected).
    * </pre>
@@ -18843,6 +18813,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The `Inventory` API resource name.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
      * </pre>
@@ -18867,6 +18838,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The `Inventory` API resource name.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
      * </pre>
@@ -18891,6 +18863,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The `Inventory` API resource name.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
      * </pre>
@@ -18914,6 +18887,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The `Inventory` API resource name.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
      * </pre>
@@ -18933,6 +18907,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The `Inventory` API resource name.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
      * </pre>

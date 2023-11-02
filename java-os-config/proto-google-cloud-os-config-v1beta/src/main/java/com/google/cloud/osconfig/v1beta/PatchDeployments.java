@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -500,7 +500,7 @@ public final class PatchDeployments {
      */
     com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.State getState();
 
-    public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.ScheduleCase
+    com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment.ScheduleCase
         getScheduleCase();
   }
   /**
@@ -536,11 +536,6 @@ public final class PatchDeployments {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PatchDeployment();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -720,6 +715,8 @@ public final class PatchDeployments {
     }
 
     private int scheduleCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object schedule_;
 
     public enum ScheduleCase
@@ -4569,11 +4566,6 @@ public final class PatchDeployments {
       return new OneTimeSchedule();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchDeployments
           .internal_static_google_cloud_osconfig_v1beta_OneTimeSchedule_descriptor;
@@ -5631,7 +5623,7 @@ public final class PatchDeployments {
      */
     com.google.protobuf.TimestampOrBuilder getNextExecuteTimeOrBuilder();
 
-    public com.google.cloud.osconfig.v1beta.PatchDeployments.RecurringSchedule.ScheduleConfigCase
+    com.google.cloud.osconfig.v1beta.PatchDeployments.RecurringSchedule.ScheduleConfigCase
         getScheduleConfigCase();
   }
   /**
@@ -5661,11 +5653,6 @@ public final class PatchDeployments {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new RecurringSchedule();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5871,6 +5858,8 @@ public final class PatchDeployments {
     }
 
     private int scheduleConfigCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object scheduleConfig_;
 
     public enum ScheduleConfigCase
@@ -8943,11 +8932,6 @@ public final class PatchDeployments {
       return new WeeklySchedule();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchDeployments
           .internal_static_google_cloud_osconfig_v1beta_WeeklySchedule_descriptor;
@@ -9591,7 +9575,7 @@ public final class PatchDeployments {
      */
     int getMonthDay();
 
-    public com.google.cloud.osconfig.v1beta.PatchDeployments.MonthlySchedule.DayOfMonthCase
+    com.google.cloud.osconfig.v1beta.PatchDeployments.MonthlySchedule.DayOfMonthCase
         getDayOfMonthCase();
   }
   /**
@@ -9622,11 +9606,6 @@ public final class PatchDeployments {
       return new MonthlySchedule();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchDeployments
           .internal_static_google_cloud_osconfig_v1beta_MonthlySchedule_descriptor;
@@ -9643,6 +9622,8 @@ public final class PatchDeployments {
     }
 
     private int dayOfMonthCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object dayOfMonth_;
 
     public enum DayOfMonthCase
@@ -10701,11 +10682,6 @@ public final class PatchDeployments {
       return new WeekDayOfMonth();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchDeployments
           .internal_static_google_cloud_osconfig_v1beta_WeekDayOfMonth_descriptor;
@@ -11624,11 +11600,6 @@ public final class PatchDeployments {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CreatePatchDeploymentRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -12830,11 +12801,6 @@ public final class PatchDeployments {
       return new GetPatchDeploymentRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchDeployments
           .internal_static_google_cloud_osconfig_v1beta_GetPatchDeploymentRequest_descriptor;
@@ -13548,11 +13514,6 @@ public final class PatchDeployments {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ListPatchDeploymentsRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -14564,11 +14525,6 @@ public final class PatchDeployments {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ListPatchDeploymentsResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -15784,11 +15740,6 @@ public final class PatchDeployments {
       return new DeletePatchDeploymentRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchDeployments
           .internal_static_google_cloud_osconfig_v1beta_DeletePatchDeploymentRequest_descriptor;
@@ -16524,11 +16475,6 @@ public final class PatchDeployments {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new UpdatePatchDeploymentRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -17616,11 +17562,6 @@ public final class PatchDeployments {
       return new PausePatchDeploymentRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchDeployments
           .internal_static_google_cloud_osconfig_v1beta_PausePatchDeploymentRequest_descriptor;
@@ -18317,11 +18258,6 @@ public final class PatchDeployments {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ResumePatchDeploymentRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -19032,80 +18968,81 @@ public final class PatchDeployments {
           + "/field_mask.proto\032\037google/protobuf/times"
           + "tamp.proto\032\032google/type/datetime.proto\032\033"
           + "google/type/dayofweek.proto\032\033google/type"
-          + "/timeofday.proto\"\204\007\n\017PatchDeployment\022\014\n\004"
-          + "name\030\001 \001(\t\022\030\n\013description\030\002 \001(\tB\003\340A\001\022O\n\017"
-          + "instance_filter\030\003 \001(\01321.google.cloud.osc"
-          + "onfig.v1beta.PatchInstanceFilterB\003\340A\002\022D\n"
-          + "\014patch_config\030\004 \001(\0132).google.cloud.oscon"
-          + "fig.v1beta.PatchConfigB\003\340A\001\0220\n\010duration\030"
-          + "\005 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022O\n"
-          + "\021one_time_schedule\030\006 \001(\0132-.google.cloud."
-          + "osconfig.v1beta.OneTimeScheduleB\003\340A\002H\000\022R"
-          + "\n\022recurring_schedule\030\007 \001(\0132/.google.clou"
-          + "d.osconfig.v1beta.RecurringScheduleB\003\340A\002"
-          + "H\000\0224\n\013create_time\030\010 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\0224\n\013update_time\030\t \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\022:\n\021last_e"
-          + "xecute_time\030\n \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\022@\n\007rollout\030\013 \001(\0132*.google.clo"
-          + "ud.osconfig.v1beta.PatchRolloutB\003\340A\001\022G\n\005"
-          + "state\030\014 \001(\01623.google.cloud.osconfig.v1be"
-          + "ta.PatchDeployment.StateB\003\340A\003\"6\n\005State\022\025"
-          + "\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\n\n\006PAU"
-          + "SED\020\002:d\352Aa\n\'osconfig.googleapis.com/Patc"
-          + "hDeployment\0226projects/{project}/patchDep"
-          + "loyments/{patch_deployment}B\n\n\010schedule\""
-          + "H\n\017OneTimeSchedule\0225\n\014execute_time\030\001 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\002\"\222\005\n\021Re"
-          + "curringSchedule\022-\n\ttime_zone\030\001 \001(\0132\025.goo"
-          + "gle.type.TimeZoneB\003\340A\002\0223\n\nstart_time\030\002 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\001\0221\n\010e"
-          + "nd_time\030\003 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\001\0220\n\013time_of_day\030\004 \001(\0132\026.google.typ"
-          + "e.TimeOfDayB\003\340A\002\022Q\n\tfrequency\030\005 \001(\01629.go"
-          + "ogle.cloud.osconfig.v1beta.RecurringSche"
-          + "dule.FrequencyB\003\340A\002\022C\n\006weekly\030\006 \001(\0132,.go"
-          + "ogle.cloud.osconfig.v1beta.WeeklySchedul"
-          + "eB\003\340A\002H\000\022E\n\007monthly\030\007 \001(\0132-.google.cloud"
-          + ".osconfig.v1beta.MonthlyScheduleB\003\340A\002H\000\022"
-          + ":\n\021last_execute_time\030\t \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\022:\n\021next_execute_time"
-          + "\030\n \001(\0132\032.google.protobuf.TimestampB\003\340A\003\""
-          + "J\n\tFrequency\022\031\n\025FREQUENCY_UNSPECIFIED\020\000\022"
-          + "\n\n\006WEEKLY\020\001\022\013\n\007MONTHLY\020\002\022\t\n\005DAILY\020\003B\021\n\017s"
-          + "chedule_config\"B\n\016WeeklySchedule\0220\n\013day_"
-          + "of_week\030\001 \001(\0162\026.google.type.DayOfWeekB\003\340"
-          + "A\002\"\213\001\n\017MonthlySchedule\022N\n\021week_day_of_mo"
-          + "nth\030\001 \001(\0132,.google.cloud.osconfig.v1beta"
-          + ".WeekDayOfMonthB\003\340A\002H\000\022\030\n\tmonth_day\030\002 \001("
-          + "\005B\003\340A\002H\000B\016\n\014day_of_month\"v\n\016WeekDayOfMon"
-          + "th\022\031\n\014week_ordinal\030\001 \001(\005B\003\340A\002\0220\n\013day_of_"
-          + "week\030\002 \001(\0162\026.google.type.DayOfWeekB\003\340A\002\022"
-          + "\027\n\nday_offset\030\003 \001(\005B\003\340A\001\"\243\001\n\034CreatePatch"
-          + "DeploymentRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022 "
-          + "\n\023patch_deployment_id\030\002 \001(\tB\003\340A\002\022L\n\020patc"
-          + "h_deployment\030\003 \001(\0132-.google.cloud.osconf"
-          + "ig.v1beta.PatchDeploymentB\003\340A\002\".\n\031GetPat"
-          + "chDeploymentRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"c"
-          + "\n\033ListPatchDeploymentsRequest\022\023\n\006parent\030"
-          + "\001 \001(\tB\003\340A\002\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npa"
-          + "ge_token\030\003 \001(\tB\003\340A\001\"\201\001\n\034ListPatchDeploym"
-          + "entsResponse\022H\n\021patch_deployments\030\001 \003(\0132"
-          + "-.google.cloud.osconfig.v1beta.PatchDepl"
-          + "oyment\022\027\n\017next_page_token\030\002 \001(\t\"1\n\034Delet"
-          + "ePatchDeploymentRequest\022\021\n\004name\030\001 \001(\tB\003\340"
-          + "A\002\"\242\001\n\034UpdatePatchDeploymentRequest\022L\n\020p"
-          + "atch_deployment\030\001 \001(\0132-.google.cloud.osc"
-          + "onfig.v1beta.PatchDeploymentB\003\340A\002\0224\n\013upd"
-          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
-          + "skB\003\340A\001\"\\\n\033PausePatchDeploymentRequest\022="
-          + "\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'osconfig.googleapi"
-          + "s.com/PatchDeployment\"]\n\034ResumePatchDepl"
-          + "oymentRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'osc"
-          + "onfig.googleapis.com/PatchDeploymentBr\n "
-          + "com.google.cloud.osconfig.v1betaB\020PatchD"
-          + "eploymentsZ<cloud.google.com/go/osconfig"
-          + "/apiv1beta/osconfigpb;osconfigpbb\006proto3"
+          + "/timeofday.proto\"\217\007\n\017PatchDeployment\022\014\n\004"
+          + "name\030\001 \001(\t\022\031\n\013description\030\002 \001(\tB\004\342A\001\001\022P\n"
+          + "\017instance_filter\030\003 \001(\01321.google.cloud.os"
+          + "config.v1beta.PatchInstanceFilterB\004\342A\001\002\022"
+          + "E\n\014patch_config\030\004 \001(\0132).google.cloud.osc"
+          + "onfig.v1beta.PatchConfigB\004\342A\001\001\0221\n\010durati"
+          + "on\030\005 \001(\0132\031.google.protobuf.DurationB\004\342A\001"
+          + "\001\022P\n\021one_time_schedule\030\006 \001(\0132-.google.cl"
+          + "oud.osconfig.v1beta.OneTimeScheduleB\004\342A\001"
+          + "\002H\000\022S\n\022recurring_schedule\030\007 \001(\0132/.google"
+          + ".cloud.osconfig.v1beta.RecurringSchedule"
+          + "B\004\342A\001\002H\000\0225\n\013create_time\030\010 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\004\342A\001\003\0225\n\013update_time\030\t"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022;"
+          + "\n\021last_execute_time\030\n \001(\0132\032.google.proto"
+          + "buf.TimestampB\004\342A\001\003\022A\n\007rollout\030\013 \001(\0132*.g"
+          + "oogle.cloud.osconfig.v1beta.PatchRollout"
+          + "B\004\342A\001\001\022H\n\005state\030\014 \001(\01623.google.cloud.osc"
+          + "onfig.v1beta.PatchDeployment.StateB\004\342A\001\003"
+          + "\"6\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTI"
+          + "VE\020\001\022\n\n\006PAUSED\020\002:d\352Aa\n\'osconfig.googleap"
+          + "is.com/PatchDeployment\0226projects/{projec"
+          + "t}/patchDeployments/{patch_deployment}B\n"
+          + "\n\010schedule\"I\n\017OneTimeSchedule\0226\n\014execute"
+          + "_time\030\001 \001(\0132\032.google.protobuf.TimestampB"
+          + "\004\342A\001\002\"\233\005\n\021RecurringSchedule\022.\n\ttime_zone"
+          + "\030\001 \001(\0132\025.google.type.TimeZoneB\004\342A\001\002\0224\n\ns"
+          + "tart_time\030\002 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\004\342A\001\001\0222\n\010end_time\030\003 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\004\342A\001\001\0221\n\013time_of_day\030\004 \001"
+          + "(\0132\026.google.type.TimeOfDayB\004\342A\001\002\022R\n\tfreq"
+          + "uency\030\005 \001(\01629.google.cloud.osconfig.v1be"
+          + "ta.RecurringSchedule.FrequencyB\004\342A\001\002\022D\n\006"
+          + "weekly\030\006 \001(\0132,.google.cloud.osconfig.v1b"
+          + "eta.WeeklyScheduleB\004\342A\001\002H\000\022F\n\007monthly\030\007 "
+          + "\001(\0132-.google.cloud.osconfig.v1beta.Month"
+          + "lyScheduleB\004\342A\001\002H\000\022;\n\021last_execute_time\030"
+          + "\t \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022"
+          + ";\n\021next_execute_time\030\n \001(\0132\032.google.prot"
+          + "obuf.TimestampB\004\342A\001\003\"J\n\tFrequency\022\031\n\025FRE"
+          + "QUENCY_UNSPECIFIED\020\000\022\n\n\006WEEKLY\020\001\022\013\n\007MONT"
+          + "HLY\020\002\022\t\n\005DAILY\020\003B\021\n\017schedule_config\"C\n\016W"
+          + "eeklySchedule\0221\n\013day_of_week\030\001 \001(\0162\026.goo"
+          + "gle.type.DayOfWeekB\004\342A\001\002\"\215\001\n\017MonthlySche"
+          + "dule\022O\n\021week_day_of_month\030\001 \001(\0132,.google"
+          + ".cloud.osconfig.v1beta.WeekDayOfMonthB\004\342"
+          + "A\001\002H\000\022\031\n\tmonth_day\030\002 \001(\005B\004\342A\001\002H\000B\016\n\014day_"
+          + "of_month\"y\n\016WeekDayOfMonth\022\032\n\014week_ordin"
+          + "al\030\001 \001(\005B\004\342A\001\002\0221\n\013day_of_week\030\002 \001(\0162\026.go"
+          + "ogle.type.DayOfWeekB\004\342A\001\002\022\030\n\nday_offset\030"
+          + "\003 \001(\005B\004\342A\001\001\"\246\001\n\034CreatePatchDeploymentReq"
+          + "uest\022\024\n\006parent\030\001 \001(\tB\004\342A\001\002\022!\n\023patch_depl"
+          + "oyment_id\030\002 \001(\tB\004\342A\001\002\022M\n\020patch_deploymen"
+          + "t\030\003 \001(\0132-.google.cloud.osconfig.v1beta.P"
+          + "atchDeploymentB\004\342A\001\002\"/\n\031GetPatchDeployme"
+          + "ntRequest\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\"f\n\033ListPat"
+          + "chDeploymentsRequest\022\024\n\006parent\030\001 \001(\tB\004\342A"
+          + "\001\002\022\027\n\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\npage_toke"
+          + "n\030\003 \001(\tB\004\342A\001\001\"\201\001\n\034ListPatchDeploymentsRe"
+          + "sponse\022H\n\021patch_deployments\030\001 \003(\0132-.goog"
+          + "le.cloud.osconfig.v1beta.PatchDeployment"
+          + "\022\027\n\017next_page_token\030\002 \001(\t\"2\n\034DeletePatch"
+          + "DeploymentRequest\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\"\244\001"
+          + "\n\034UpdatePatchDeploymentRequest\022M\n\020patch_"
+          + "deployment\030\001 \001(\0132-.google.cloud.osconfig"
+          + ".v1beta.PatchDeploymentB\004\342A\001\002\0225\n\013update_"
+          + "mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\004"
+          + "\342A\001\001\"]\n\033PausePatchDeploymentRequest\022>\n\004n"
+          + "ame\030\001 \001(\tB0\342A\001\002\372A)\n\'osconfig.googleapis."
+          + "com/PatchDeployment\"^\n\034ResumePatchDeploy"
+          + "mentRequest\022>\n\004name\030\001 \001(\tB0\342A\001\002\372A)\n\'osco"
+          + "nfig.googleapis.com/PatchDeploymentBr\n c"
+          + "om.google.cloud.osconfig.v1betaB\020PatchDe"
+          + "ploymentsZ<cloud.google.com/go/osconfig/"
+          + "apiv1beta/osconfigpb;osconfigpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

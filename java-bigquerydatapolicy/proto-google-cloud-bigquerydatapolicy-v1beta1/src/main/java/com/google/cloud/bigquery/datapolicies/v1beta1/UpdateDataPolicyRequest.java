@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
     return new UpdateDataPolicyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.datapolicies.v1beta1.DataPolicyProto
         .internal_static_google_cloud_bigquery_datapolicies_v1beta1_UpdateDataPolicyRequest_descriptor;
@@ -72,6 +67,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Update the data policy's metadata.
+   *
    * The target data policy is determined by the `name` field.
    * Other fields are updated to the specified values based on the field masks.
    * </pre>
@@ -91,6 +87,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Update the data policy's metadata.
+   *
    * The target data policy is determined by the `name` field.
    * Other fields are updated to the specified values based on the field masks.
    * </pre>
@@ -112,6 +109,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Update the data policy's metadata.
+   *
    * The target data policy is determined by the `name` field.
    * Other fields are updated to the specified values based on the field masks.
    * </pre>
@@ -138,6 +136,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If not set, defaults to all of the fields that are allowed to update.
+   *
    * Updates to the `name` and `dataPolicyId` fields are not allowed.
    * </pre>
    *
@@ -157,6 +156,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If not set, defaults to all of the fields that are allowed to update.
+   *
    * Updates to the `name` and `dataPolicyId` fields are not allowed.
    * </pre>
    *
@@ -176,6 +176,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If not set, defaults to all of the fields that are allowed to update.
+   *
    * Updates to the `name` and `dataPolicyId` fields are not allowed.
    * </pre>
    *
@@ -587,6 +588,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Update the data policy's metadata.
+     *
      * The target data policy is determined by the `name` field.
      * Other fields are updated to the specified values based on the field masks.
      * </pre>
@@ -605,6 +607,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Update the data policy's metadata.
+     *
      * The target data policy is determined by the `name` field.
      * Other fields are updated to the specified values based on the field masks.
      * </pre>
@@ -629,6 +632,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Update the data policy's metadata.
+     *
      * The target data policy is determined by the `name` field.
      * Other fields are updated to the specified values based on the field masks.
      * </pre>
@@ -655,6 +659,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Update the data policy's metadata.
+     *
      * The target data policy is determined by the `name` field.
      * Other fields are updated to the specified values based on the field masks.
      * </pre>
@@ -679,6 +684,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Update the data policy's metadata.
+     *
      * The target data policy is determined by the `name` field.
      * Other fields are updated to the specified values based on the field masks.
      * </pre>
@@ -710,6 +716,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Update the data policy's metadata.
+     *
      * The target data policy is determined by the `name` field.
      * Other fields are updated to the specified values based on the field masks.
      * </pre>
@@ -733,6 +740,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Update the data policy's metadata.
+     *
      * The target data policy is determined by the `name` field.
      * Other fields are updated to the specified values based on the field masks.
      * </pre>
@@ -752,6 +760,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Update the data policy's metadata.
+     *
      * The target data policy is determined by the `name` field.
      * Other fields are updated to the specified values based on the field masks.
      * </pre>
@@ -775,6 +784,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Update the data policy's metadata.
+     *
      * The target data policy is determined by the `name` field.
      * Other fields are updated to the specified values based on the field masks.
      * </pre>
@@ -814,6 +824,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
+     *
      * Updates to the `name` and `dataPolicyId` fields are not allowed.
      * </pre>
      *
@@ -832,6 +843,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
+     *
      * Updates to the `name` and `dataPolicyId` fields are not allowed.
      * </pre>
      *
@@ -856,6 +868,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
+     *
      * Updates to the `name` and `dataPolicyId` fields are not allowed.
      * </pre>
      *
@@ -882,6 +895,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
+     *
      * Updates to the `name` and `dataPolicyId` fields are not allowed.
      * </pre>
      *
@@ -905,6 +919,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
+     *
      * Updates to the `name` and `dataPolicyId` fields are not allowed.
      * </pre>
      *
@@ -934,6 +949,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
+     *
      * Updates to the `name` and `dataPolicyId` fields are not allowed.
      * </pre>
      *
@@ -957,6 +973,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
+     *
      * Updates to the `name` and `dataPolicyId` fields are not allowed.
      * </pre>
      *
@@ -975,6 +992,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
+     *
      * Updates to the `name` and `dataPolicyId` fields are not allowed.
      * </pre>
      *
@@ -997,6 +1015,7 @@ public final class UpdateDataPolicyRequest extends com.google.protobuf.Generated
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If not set, defaults to all of the fields that are allowed to update.
+     *
      * Updates to the `name` and `dataPolicyId` fields are not allowed.
      * </pre>
      *

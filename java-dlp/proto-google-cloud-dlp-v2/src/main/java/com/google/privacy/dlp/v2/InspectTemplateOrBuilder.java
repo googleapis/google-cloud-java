@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface InspectTemplateOrBuilder
    *
    * <pre>
    * Output only. The template name.
+   *
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
    * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
@@ -43,6 +44,7 @@ public interface InspectTemplateOrBuilder
    *
    * <pre>
    * Output only. The template name.
+   *
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
    * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;

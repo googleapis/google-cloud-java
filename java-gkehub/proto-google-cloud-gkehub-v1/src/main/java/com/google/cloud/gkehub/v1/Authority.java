@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     return new Authority();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1.MembershipProto
         .internal_static_google_cloud_gkehub_v1_Authority_descriptor;
@@ -82,9 +77,11 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A JSON Web Token (JWT) issuer URI. `issuer` must start with
    * `https://` and be a valid URL with length &lt;2000 characters.
+   *
    * If set, then Google will allow valid OIDC tokens from this issuer to
    * authenticate within the workload_identity_pool. OIDC discovery will be
    * performed on this URI to validate tokens from the issuer.
+   *
    * Clearing `issuer` disables Workload Identity. `issuer` cannot be directly
    * modified; it must be cleared (and Workload Identity disabled) before using
    * a new issuer (and re-enabling Workload Identity).
@@ -112,9 +109,11 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A JSON Web Token (JWT) issuer URI. `issuer` must start with
    * `https://` and be a valid URL with length &lt;2000 characters.
+   *
    * If set, then Google will allow valid OIDC tokens from this issuer to
    * authenticate within the workload_identity_pool. OIDC discovery will be
    * performed on this URI to validate tokens from the issuer.
+   *
    * Clearing `issuer` disables Workload Identity. `issuer` cannot be directly
    * modified; it must be cleared (and Workload Identity disabled) before using
    * a new issuer (and re-enabling Workload Identity).
@@ -147,6 +146,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The name of the workload identity pool in which `issuer` will
    * be recognized.
+   *
    * There is a single Workload Identity Pool per Hub that is shared
    * between all Memberships that belong to that Hub. For a Hub hosted in
    * {PROJECT_ID}, the workload pool format is `{PROJECT_ID}.hub.id.goog`,
@@ -175,6 +175,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The name of the workload identity pool in which `issuer` will
    * be recognized.
+   *
    * There is a single Workload Identity Pool per Hub that is shared
    * between all Memberships that belong to that Hub. For a Hub hosted in
    * {PROJECT_ID}, the workload pool format is `{PROJECT_ID}.hub.id.goog`,
@@ -259,6 +260,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. OIDC verification keys for this Membership in JWKS format (RFC
    * 7517).
+   *
    * When this field is set, OIDC discovery will NOT be performed on `issuer`,
    * and instead OIDC tokens will be validated using this field.
    * </pre>
@@ -689,9 +691,11 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A JSON Web Token (JWT) issuer URI. `issuer` must start with
      * `https://` and be a valid URL with length &lt;2000 characters.
+     *
      * If set, then Google will allow valid OIDC tokens from this issuer to
      * authenticate within the workload_identity_pool. OIDC discovery will be
      * performed on this URI to validate tokens from the issuer.
+     *
      * Clearing `issuer` disables Workload Identity. `issuer` cannot be directly
      * modified; it must be cleared (and Workload Identity disabled) before using
      * a new issuer (and re-enabling Workload Identity).
@@ -718,9 +722,11 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A JSON Web Token (JWT) issuer URI. `issuer` must start with
      * `https://` and be a valid URL with length &lt;2000 characters.
+     *
      * If set, then Google will allow valid OIDC tokens from this issuer to
      * authenticate within the workload_identity_pool. OIDC discovery will be
      * performed on this URI to validate tokens from the issuer.
+     *
      * Clearing `issuer` disables Workload Identity. `issuer` cannot be directly
      * modified; it must be cleared (and Workload Identity disabled) before using
      * a new issuer (and re-enabling Workload Identity).
@@ -747,9 +753,11 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A JSON Web Token (JWT) issuer URI. `issuer` must start with
      * `https://` and be a valid URL with length &lt;2000 characters.
+     *
      * If set, then Google will allow valid OIDC tokens from this issuer to
      * authenticate within the workload_identity_pool. OIDC discovery will be
      * performed on this URI to validate tokens from the issuer.
+     *
      * Clearing `issuer` disables Workload Identity. `issuer` cannot be directly
      * modified; it must be cleared (and Workload Identity disabled) before using
      * a new issuer (and re-enabling Workload Identity).
@@ -775,9 +783,11 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A JSON Web Token (JWT) issuer URI. `issuer` must start with
      * `https://` and be a valid URL with length &lt;2000 characters.
+     *
      * If set, then Google will allow valid OIDC tokens from this issuer to
      * authenticate within the workload_identity_pool. OIDC discovery will be
      * performed on this URI to validate tokens from the issuer.
+     *
      * Clearing `issuer` disables Workload Identity. `issuer` cannot be directly
      * modified; it must be cleared (and Workload Identity disabled) before using
      * a new issuer (and re-enabling Workload Identity).
@@ -799,9 +809,11 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A JSON Web Token (JWT) issuer URI. `issuer` must start with
      * `https://` and be a valid URL with length &lt;2000 characters.
+     *
      * If set, then Google will allow valid OIDC tokens from this issuer to
      * authenticate within the workload_identity_pool. OIDC discovery will be
      * performed on this URI to validate tokens from the issuer.
+     *
      * Clearing `issuer` disables Workload Identity. `issuer` cannot be directly
      * modified; it must be cleared (and Workload Identity disabled) before using
      * a new issuer (and re-enabling Workload Identity).
@@ -830,6 +842,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The name of the workload identity pool in which `issuer` will
      * be recognized.
+     *
      * There is a single Workload Identity Pool per Hub that is shared
      * between all Memberships that belong to that Hub. For a Hub hosted in
      * {PROJECT_ID}, the workload pool format is `{PROJECT_ID}.hub.id.goog`,
@@ -857,6 +870,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The name of the workload identity pool in which `issuer` will
      * be recognized.
+     *
      * There is a single Workload Identity Pool per Hub that is shared
      * between all Memberships that belong to that Hub. For a Hub hosted in
      * {PROJECT_ID}, the workload pool format is `{PROJECT_ID}.hub.id.goog`,
@@ -884,6 +898,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The name of the workload identity pool in which `issuer` will
      * be recognized.
+     *
      * There is a single Workload Identity Pool per Hub that is shared
      * between all Memberships that belong to that Hub. For a Hub hosted in
      * {PROJECT_ID}, the workload pool format is `{PROJECT_ID}.hub.id.goog`,
@@ -910,6 +925,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The name of the workload identity pool in which `issuer` will
      * be recognized.
+     *
      * There is a single Workload Identity Pool per Hub that is shared
      * between all Memberships that belong to that Hub. For a Hub hosted in
      * {PROJECT_ID}, the workload pool format is `{PROJECT_ID}.hub.id.goog`,
@@ -932,6 +948,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The name of the workload identity pool in which `issuer` will
      * be recognized.
+     *
      * There is a single Workload Identity Pool per Hub that is shared
      * between all Memberships that belong to that Hub. For a Hub hosted in
      * {PROJECT_ID}, the workload pool format is `{PROJECT_ID}.hub.id.goog`,
@@ -1072,6 +1089,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. OIDC verification keys for this Membership in JWKS format (RFC
      * 7517).
+     *
      * When this field is set, OIDC discovery will NOT be performed on `issuer`,
      * and instead OIDC tokens will be validated using this field.
      * </pre>
@@ -1090,6 +1108,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. OIDC verification keys for this Membership in JWKS format (RFC
      * 7517).
+     *
      * When this field is set, OIDC discovery will NOT be performed on `issuer`,
      * and instead OIDC tokens will be validated using this field.
      * </pre>
@@ -1114,6 +1133,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. OIDC verification keys for this Membership in JWKS format (RFC
      * 7517).
+     *
      * When this field is set, OIDC discovery will NOT be performed on `issuer`,
      * and instead OIDC tokens will be validated using this field.
      * </pre>

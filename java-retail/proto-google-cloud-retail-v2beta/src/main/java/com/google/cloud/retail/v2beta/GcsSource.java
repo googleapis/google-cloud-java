@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   private GcsSource() {
-    inputUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    inputUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
     dataSchema_ = "";
   }
 
@@ -46,11 +46,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GcsSource();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   public static final int INPUT_URIS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList inputUris_;
+  private com.google.protobuf.LazyStringArrayList inputUris_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -168,21 +164,29 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for product imports:
+   *
    * * `product` (default): One JSON
    * [Product][google.cloud.retail.v2beta.Product] per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2beta.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
    *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+   *
    * Supported values for user events imports:
+   *
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2beta.UserEvent] per line.
    * * `user_event_ga360`: Using
    *   https://support.google.com/analytics/answer/3437719.
+   *
    * Supported values for control imports:
+   *
    * * `control` (default): One JSON
    * [Control][google.cloud.retail.v2beta.Control] per line.
+   *
    * Supported values for catalog attribute imports:
+   *
    * * `catalog_attribute` (default): One CSV
    * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
    * </pre>
@@ -208,21 +212,29 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for product imports:
+   *
    * * `product` (default): One JSON
    * [Product][google.cloud.retail.v2beta.Product] per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2beta.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
    *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+   *
    * Supported values for user events imports:
+   *
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2beta.UserEvent] per line.
    * * `user_event_ga360`: Using
    *   https://support.google.com/analytics/answer/3437719.
+   *
    * Supported values for control imports:
+   *
    * * `control` (default): One JSON
    * [Control][google.cloud.retail.v2beta.Control] per line.
+   *
    * Supported values for catalog attribute imports:
+   *
    * * `catalog_attribute` (default): One CSV
    * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
    * </pre>
@@ -457,8 +469,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      inputUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      inputUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       dataSchema_ = "";
       return this;
     }
@@ -487,7 +498,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2beta.GcsSource buildPartial() {
       com.google.cloud.retail.v2beta.GcsSource result =
           new com.google.cloud.retail.v2beta.GcsSource(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -495,16 +505,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.retail.v2beta.GcsSource result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        inputUris_ = inputUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.inputUris_ = inputUris_;
-    }
-
     private void buildPartial0(com.google.cloud.retail.v2beta.GcsSource result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        inputUris_.makeImmutable();
+        result.inputUris_ = inputUris_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.dataSchema_ = dataSchema_;
       }
@@ -558,7 +564,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       if (!other.inputUris_.isEmpty()) {
         if (inputUris_.isEmpty()) {
           inputUris_ = other.inputUris_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureInputUrisIsMutable();
           inputUris_.addAll(other.inputUris_);
@@ -628,14 +634,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList inputUris_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList inputUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInputUrisIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!inputUris_.isModifiable()) {
         inputUris_ = new com.google.protobuf.LazyStringArrayList(inputUris_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -656,7 +662,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the inputUris.
      */
     public com.google.protobuf.ProtocolStringList getInputUrisList() {
-      return inputUris_.getUnmodifiableView();
+      inputUris_.makeImmutable();
+      return inputUris_;
     }
     /**
      *
@@ -749,6 +756,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInputUrisIsMutable();
       inputUris_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,6 +785,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInputUrisIsMutable();
       inputUris_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -802,6 +811,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInputUris(java.lang.Iterable<java.lang.String> values) {
       ensureInputUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inputUris_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -824,8 +834,9 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInputUris() {
-      inputUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      inputUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -855,6 +866,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInputUrisIsMutable();
       inputUris_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -865,21 +877,29 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for product imports:
+     *
      * * `product` (default): One JSON
      * [Product][google.cloud.retail.v2beta.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2beta.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
      *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+     *
      * Supported values for user events imports:
+     *
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2beta.UserEvent] per line.
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
+     *
      * Supported values for control imports:
+     *
      * * `control` (default): One JSON
      * [Control][google.cloud.retail.v2beta.Control] per line.
+     *
      * Supported values for catalog attribute imports:
+     *
      * * `catalog_attribute` (default): One CSV
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
      * </pre>
@@ -904,21 +924,29 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for product imports:
+     *
      * * `product` (default): One JSON
      * [Product][google.cloud.retail.v2beta.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2beta.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
      *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+     *
      * Supported values for user events imports:
+     *
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2beta.UserEvent] per line.
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
+     *
      * Supported values for control imports:
+     *
      * * `control` (default): One JSON
      * [Control][google.cloud.retail.v2beta.Control] per line.
+     *
      * Supported values for catalog attribute imports:
+     *
      * * `catalog_attribute` (default): One CSV
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
      * </pre>
@@ -943,21 +971,29 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for product imports:
+     *
      * * `product` (default): One JSON
      * [Product][google.cloud.retail.v2beta.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2beta.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
      *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+     *
      * Supported values for user events imports:
+     *
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2beta.UserEvent] per line.
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
+     *
      * Supported values for control imports:
+     *
      * * `control` (default): One JSON
      * [Control][google.cloud.retail.v2beta.Control] per line.
+     *
      * Supported values for catalog attribute imports:
+     *
      * * `catalog_attribute` (default): One CSV
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
      * </pre>
@@ -981,21 +1017,29 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for product imports:
+     *
      * * `product` (default): One JSON
      * [Product][google.cloud.retail.v2beta.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2beta.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
      *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+     *
      * Supported values for user events imports:
+     *
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2beta.UserEvent] per line.
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
+     *
      * Supported values for control imports:
+     *
      * * `control` (default): One JSON
      * [Control][google.cloud.retail.v2beta.Control] per line.
+     *
      * Supported values for catalog attribute imports:
+     *
      * * `catalog_attribute` (default): One CSV
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
      * </pre>
@@ -1015,21 +1059,29 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for product imports:
+     *
      * * `product` (default): One JSON
      * [Product][google.cloud.retail.v2beta.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2beta.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
      *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+     *
      * Supported values for user events imports:
+     *
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2beta.UserEvent] per line.
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
+     *
      * Supported values for control imports:
+     *
      * * `control` (default): One JSON
      * [Control][google.cloud.retail.v2beta.Control] per line.
+     *
      * Supported values for catalog attribute imports:
+     *
      * * `catalog_attribute` (default): One CSV
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
     return new GetEnvironmentHistoryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.EnvironmentProto
         .internal_static_google_cloud_dialogflow_v2_GetEnvironmentHistoryRequest_descriptor;
@@ -79,9 +74,11 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The name of the environment to retrieve history for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *
    * The environment ID for the default environment is `-`.
    * </pre>
    *
@@ -109,9 +106,11 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The name of the environment to retrieve history for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *
    * The environment ID for the default environment is `-`.
    * </pre>
    *
@@ -601,9 +600,11 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the environment to retrieve history for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -630,9 +631,11 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the environment to retrieve history for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -659,9 +662,11 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the environment to retrieve history for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -687,9 +692,11 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the environment to retrieve history for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -711,9 +718,11 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The name of the environment to retrieve history for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *

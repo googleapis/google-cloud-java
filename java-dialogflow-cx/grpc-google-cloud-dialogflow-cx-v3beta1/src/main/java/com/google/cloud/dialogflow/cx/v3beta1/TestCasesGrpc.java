@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ public final class TestCasesGrpc {
 
   private TestCasesGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.cx.v3beta1.TestCases";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.dialogflow.cx.v3beta1.TestCases";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -820,7 +821,8 @@ public final class TestCasesGrpc {
      *
      *
      * <pre>
-     * Fetches a list of results for a given test case.
+     * Fetches the list of run results for the given test case. A maximum of 100
+     * results are kept for each test case.
      * </pre>
      */
     default void listTestCaseResults(
@@ -1085,7 +1087,8 @@ public final class TestCasesGrpc {
      *
      *
      * <pre>
-     * Fetches a list of results for a given test case.
+     * Fetches the list of run results for the given test case. A maximum of 100
+     * results are kept for each test case.
      * </pre>
      */
     public void listTestCaseResults(
@@ -1303,7 +1306,8 @@ public final class TestCasesGrpc {
      *
      *
      * <pre>
-     * Fetches a list of results for a given test case.
+     * Fetches the list of run results for the given test case. A maximum of 100
+     * results are kept for each test case.
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListTestCaseResultsResponse listTestCaseResults(
@@ -1517,7 +1521,8 @@ public final class TestCasesGrpc {
      *
      *
      * <pre>
-     * Fetches a list of results for a given test case.
+     * Fetches the list of run results for the given test case. A maximum of 100
+     * results are kept for each test case.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1767,9 +1772,9 @@ public final class TestCasesGrpc {
   private static final class TestCasesMethodDescriptorSupplier
       extends TestCasesBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    TestCasesMethodDescriptorSupplier(String methodName) {
+    TestCasesMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

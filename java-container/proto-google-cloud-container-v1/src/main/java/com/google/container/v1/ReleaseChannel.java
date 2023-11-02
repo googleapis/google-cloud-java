@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.container.v1;
  * <pre>
  * ReleaseChannel indicates which release channel a cluster is
  * subscribed to. Release channels are arranged in order of risk.
+ *
  * When a cluster is subscribed to a release channel, Google maintains
  * both the master version and the node version. Node auto-upgrade
  * defaults to true and cannot be disabled.
@@ -49,11 +50,6 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ReleaseChannel();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -97,6 +93,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * RAPID channel is offered on an early access basis for customers who want
      * to test new releases.
+     *
      * WARNING: Versions available in the RAPID Channel may be subject to
      * unresolved issues with no known workaround and are not subject to any
      * SLAs.
@@ -147,6 +144,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * RAPID channel is offered on an early access basis for customers who want
      * to test new releases.
+     *
      * WARNING: Versions available in the RAPID Channel may be subject to
      * unresolved issues with no known workaround and are not subject to any
      * SLAs.
@@ -463,6 +461,7 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * ReleaseChannel indicates which release channel a cluster is
    * subscribed to. Release channels are arranged in order of risk.
+   *
    * When a cluster is subscribed to a release channel, Google maintains
    * both the master version and the node version. Node auto-upgrade
    * defaults to true and cannot be disabled.

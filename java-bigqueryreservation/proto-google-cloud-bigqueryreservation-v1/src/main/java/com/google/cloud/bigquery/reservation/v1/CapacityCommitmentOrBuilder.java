@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -286,9 +286,11 @@ public interface CapacityCommitmentOrBuilder
    * <pre>
    * Applicable only for commitments located within one of the BigQuery
    * multi-regions (US or EU).
+   *
    * If set to true, this commitment is placed in the organization's
    * secondary region which is designated for disaster recovery purposes.
    * If false, this commitment is placed in the organization's default region.
+   *
    * NOTE: this is a preview feature. Project must be allow-listed in order to
    * set this field.
    * </pre>

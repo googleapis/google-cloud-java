@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -852,6 +852,7 @@ public interface RecognitionConfigOrBuilder
    * If `use_enhanced` is set to true and the `model` field is not set, then
    * an appropriate enhanced model is chosen if an enhanced model exists for
    * the audio.
+   *
    * If `use_enhanced` is true and an enhanced version of the specified model
    * does not exist, then the speech is recognized using the standard version
    * of the specified model.

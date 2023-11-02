@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface GkeClusterOrBuilder
    *
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
+   *
    *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
+   *
    * Zonal clusters are also supported.
    * </pre>
    *
@@ -42,7 +44,9 @@ public interface GkeClusterOrBuilder
    *
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
+   *
    *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
+   *
    * Zonal clusters are also supported.
    * </pre>
    *

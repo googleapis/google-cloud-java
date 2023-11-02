@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,7 +100,9 @@ public interface CreateIntentRequestOrBuilder
    *
    * <pre>
    * The language of the following fields in `intent`:
+   *
    * *   `Intent.training_phrases.parts.text`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -118,7 +120,9 @@ public interface CreateIntentRequestOrBuilder
    *
    * <pre>
    * The language of the following fields in `intent`:
+   *
    * *   `Intent.training_phrases.parts.text`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

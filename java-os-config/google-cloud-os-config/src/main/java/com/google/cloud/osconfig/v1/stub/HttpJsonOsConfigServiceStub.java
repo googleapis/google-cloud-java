@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.osconfig.v1.PatchDeployments;
 import com.google.cloud.osconfig.v1.PatchJobs;
@@ -623,18 +624,36 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
             HttpJsonCallSettings.<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>newBuilder()
                 .setMethodDescriptor(executePatchJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
         getPatchJobTransportSettings =
             HttpJsonCallSettings.<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>newBuilder()
                 .setMethodDescriptor(getPatchJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
         cancelPatchJobTransportSettings =
             HttpJsonCallSettings.<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>newBuilder()
                 .setMethodDescriptor(cancelPatchJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
         listPatchJobsTransportSettings =
@@ -642,6 +661,12 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                 .<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>newBuilder()
                 .setMethodDescriptor(listPatchJobsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             PatchJobs.ListPatchJobInstanceDetailsRequest,
@@ -653,6 +678,12 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listPatchJobInstanceDetailsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -662,6 +693,12 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                     newBuilder()
                 .setMethodDescriptor(createPatchDeploymentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -671,6 +708,12 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                     newBuilder()
                 .setMethodDescriptor(getPatchDeploymentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             PatchDeployments.ListPatchDeploymentsRequest,
@@ -682,12 +725,24 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listPatchDeploymentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentTransportSettings =
             HttpJsonCallSettings.<PatchDeployments.DeletePatchDeploymentRequest, Empty>newBuilder()
                 .setMethodDescriptor(deletePatchDeploymentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -697,6 +752,14 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                     newBuilder()
                 .setMethodDescriptor(updatePatchDeploymentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "patch_deployment.name",
+                          String.valueOf(request.getPatchDeployment().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             PatchDeployments.PausePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -706,6 +769,12 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                     newBuilder()
                 .setMethodDescriptor(pausePatchDeploymentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -715,6 +784,12 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                     newBuilder()
                 .setMethodDescriptor(resumePatchDeploymentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.executePatchJobCallable =

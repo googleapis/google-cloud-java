@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     serviceAccountEmail_ = "";
     tempLocation_ = "";
     machineType_ = "";
-    additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    additionalExperiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
     network_ = "";
     subnetwork_ = "";
     kmsKeyName_ = "";
@@ -62,11 +62,6 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FlexTemplateRuntimeEnvironment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -349,7 +344,8 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public static final int ADDITIONAL_EXPERIMENTS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList additionalExperiments_;
+  private com.google.protobuf.LazyStringArrayList additionalExperiments_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1661,8 +1657,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       serviceAccountEmail_ = "";
       tempLocation_ = "";
       machineType_ = "";
-      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       network_ = "";
       subnetwork_ = "";
       internalGetMutableAdditionalUserLabels().clear();
@@ -1706,21 +1701,11 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment buildPartial() {
       com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment result =
           new com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
-        additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.additionalExperiments_ = additionalExperiments_;
     }
 
     private void buildPartial0(com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment result) {
@@ -1742,6 +1727,10 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        additionalExperiments_.makeImmutable();
+        result.additionalExperiments_ = additionalExperiments_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.network_ = network_;
@@ -1869,7 +1858,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       if (!other.additionalExperiments_.isEmpty()) {
         if (additionalExperiments_.isEmpty()) {
           additionalExperiments_ = other.additionalExperiments_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureAdditionalExperimentsIsMutable();
           additionalExperiments_.addAll(other.additionalExperiments_);
@@ -2690,15 +2679,15 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return this;
     }
 
-    private com.google.protobuf.LazyStringList additionalExperiments_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList additionalExperiments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAdditionalExperimentsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!additionalExperiments_.isModifiable()) {
         additionalExperiments_ =
             new com.google.protobuf.LazyStringArrayList(additionalExperiments_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2712,7 +2701,8 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
      * @return A list containing the additionalExperiments.
      */
     public com.google.protobuf.ProtocolStringList getAdditionalExperimentsList() {
-      return additionalExperiments_.getUnmodifiableView();
+      additionalExperiments_.makeImmutable();
+      return additionalExperiments_;
     }
     /**
      *
@@ -2777,6 +2767,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       }
       ensureAdditionalExperimentsIsMutable();
       additionalExperiments_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2798,6 +2789,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       }
       ensureAdditionalExperimentsIsMutable();
       additionalExperiments_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2816,6 +2808,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public Builder addAllAdditionalExperiments(java.lang.Iterable<java.lang.String> values) {
       ensureAdditionalExperimentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalExperiments_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2831,8 +2824,9 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearAdditionalExperiments() {
-      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      additionalExperiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2855,6 +2849,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       ensureAdditionalExperimentsIsMutable();
       additionalExperiments_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

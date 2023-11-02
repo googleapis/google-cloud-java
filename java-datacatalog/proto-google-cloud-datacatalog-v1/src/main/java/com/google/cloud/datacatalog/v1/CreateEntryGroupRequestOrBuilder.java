@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface CreateEntryGroupRequestOrBuilder
    * <pre>
    * Required. The names of the project and location that the new entry group
    * belongs to.
+   *
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -46,6 +47,7 @@ public interface CreateEntryGroupRequestOrBuilder
    * <pre>
    * Required. The names of the project and location that the new entry group
    * belongs to.
+   *
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -63,6 +65,7 @@ public interface CreateEntryGroupRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the entry group to create.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and must start with a letter or underscore.
    * The maximum size is 64 bytes when encoded in UTF-8.
@@ -78,6 +81,7 @@ public interface CreateEntryGroupRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the entry group to create.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and must start with a letter or underscore.
    * The maximum size is 64 bytes when encoded in UTF-8.

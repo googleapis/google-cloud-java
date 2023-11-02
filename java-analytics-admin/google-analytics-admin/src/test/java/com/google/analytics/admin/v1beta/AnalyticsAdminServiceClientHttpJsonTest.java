@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2351,6 +2351,70 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
       String parent = "properties/propertie-2024";
       ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
       client.createConversionEvent(parent, conversionEvent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateConversionEventTest() throws Exception {
+    ConversionEvent expectedResponse =
+        ConversionEvent.newBuilder()
+            .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ConversionEvent conversionEvent =
+        ConversionEvent.newBuilder()
+            .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ConversionEvent actualResponse = client.updateConversionEvent(conversionEvent, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateConversionEventExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ConversionEvent conversionEvent =
+          ConversionEvent.newBuilder()
+              .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+              .setEventName("eventName31228997")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setDeletable(true)
+              .setCustom(true)
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateConversionEvent(conversionEvent, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

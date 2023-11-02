@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.dataflow.v1beta3.CheckActiveJobsRequest;
 import com.google.dataflow.v1beta3.CheckActiveJobsResponse;
@@ -356,31 +357,75 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
         HttpJsonCallSettings.<CreateJobRequest, Job>newBuilder()
             .setMethodDescriptor(createJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetJobRequest, Job> getJobTransportSettings =
         HttpJsonCallSettings.<GetJobRequest, Job>newBuilder()
             .setMethodDescriptor(getJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job_id", String.valueOf(request.getJobId()));
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
         HttpJsonCallSettings.<UpdateJobRequest, Job>newBuilder()
             .setMethodDescriptor(updateJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job_id", String.valueOf(request.getJobId()));
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         HttpJsonCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
             .setMethodDescriptor(listJobsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListJobsRequest, ListJobsResponse> aggregatedListJobsTransportSettings =
         HttpJsonCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
             .setMethodDescriptor(aggregatedListJobsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SnapshotJobRequest, Snapshot> snapshotJobTransportSettings =
         HttpJsonCallSettings.<SnapshotJobRequest, Snapshot>newBuilder()
             .setMethodDescriptor(snapshotJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job_id", String.valueOf(request.getJobId()));
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
 
     this.createJobCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
 
   private ExternalSystem() {
     name_ = "";
-    assignees_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    assignees_ = com.google.protobuf.LazyStringArrayList.emptyList();
     externalUid_ = "";
     status_ = "";
   }
@@ -48,11 +48,6 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExternalSystem();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,7 +125,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
   public static final int ASSIGNEES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList assignees_;
+  private com.google.protobuf.LazyStringArrayList assignees_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -596,8 +592,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      assignees_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      assignees_ = com.google.protobuf.LazyStringArrayList.emptyList();
       externalUid_ = "";
       status_ = "";
       externalSystemUpdateTime_ = null;
@@ -632,7 +627,6 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.ExternalSystem buildPartial() {
       com.google.cloud.securitycenter.v1.ExternalSystem result =
           new com.google.cloud.securitycenter.v1.ExternalSystem(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -640,19 +634,14 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.securitycenter.v1.ExternalSystem result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        assignees_ = assignees_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.assignees_ = assignees_;
-    }
-
     private void buildPartial0(com.google.cloud.securitycenter.v1.ExternalSystem result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        assignees_.makeImmutable();
+        result.assignees_ = assignees_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.externalUid_ = externalUid_;
@@ -722,7 +711,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       if (!other.assignees_.isEmpty()) {
         if (assignees_.isEmpty()) {
           assignees_ = other.assignees_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAssigneesIsMutable();
           assignees_.addAll(other.assignees_);
@@ -940,14 +929,14 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList assignees_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList assignees_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAssigneesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!assignees_.isModifiable()) {
         assignees_ = new com.google.protobuf.LazyStringArrayList(assignees_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -961,7 +950,8 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the assignees.
      */
     public com.google.protobuf.ProtocolStringList getAssigneesList() {
-      return assignees_.getUnmodifiableView();
+      assignees_.makeImmutable();
+      return assignees_;
     }
     /**
      *
@@ -1026,6 +1016,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssigneesIsMutable();
       assignees_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1047,6 +1038,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssigneesIsMutable();
       assignees_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1065,6 +1057,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAssignees(java.lang.Iterable<java.lang.String> values) {
       ensureAssigneesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assignees_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1080,8 +1073,9 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssignees() {
-      assignees_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      assignees_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1104,6 +1098,7 @@ public final class ExternalSystem extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAssigneesIsMutable();
       assignees_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

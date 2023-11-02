@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface ConsumerQuotaMetricOrBuilder
    *
    * <pre>
    * The resource name of the quota settings on this metric for this consumer.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus`
+   *
    * The resource name is intended to be opaque and should not be parsed for
    * its component strings, since its representation could change in the future.
    * </pre>
@@ -44,8 +46,10 @@ public interface ConsumerQuotaMetricOrBuilder
    *
    * <pre>
    * The resource name of the quota settings on this metric for this consumer.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus`
+   *
    * The resource name is intended to be opaque and should not be parsed for
    * its component strings, since its representation could change in the future.
    * </pre>
@@ -61,6 +65,7 @@ public interface ConsumerQuotaMetricOrBuilder
    *
    * <pre>
    * The name of the metric.
+   *
    * An example name would be:
    * `compute.googleapis.com/cpus`
    * </pre>
@@ -75,6 +80,7 @@ public interface ConsumerQuotaMetricOrBuilder
    *
    * <pre>
    * The name of the metric.
+   *
    * An example name would be:
    * `compute.googleapis.com/cpus`
    * </pre>
@@ -90,6 +96,7 @@ public interface ConsumerQuotaMetricOrBuilder
    *
    * <pre>
    * The display name of the metric.
+   *
    * An example name would be:
    * `CPUs`
    * </pre>
@@ -104,6 +111,7 @@ public interface ConsumerQuotaMetricOrBuilder
    *
    * <pre>
    * The display name of the metric.
+   *
    * An example name would be:
    * `CPUs`
    * </pre>
@@ -179,9 +187,11 @@ public interface ConsumerQuotaMetricOrBuilder
    * <pre>
    * The quota limits targeting the descendant containers of the
    * consumer in request.
+   *
    * If the consumer in request is of type `organizations`
    * or `folders`, the field will list per-project limits in the metric; if the
    * consumer in request is of type `project`, the field will be empty.
+   *
    * The `quota_buckets` field of each descendant consumer quota limit will not
    * be populated.
    * </pre>
@@ -198,9 +208,11 @@ public interface ConsumerQuotaMetricOrBuilder
    * <pre>
    * The quota limits targeting the descendant containers of the
    * consumer in request.
+   *
    * If the consumer in request is of type `organizations`
    * or `folders`, the field will list per-project limits in the metric; if the
    * consumer in request is of type `project`, the field will be empty.
+   *
    * The `quota_buckets` field of each descendant consumer quota limit will not
    * be populated.
    * </pre>
@@ -217,9 +229,11 @@ public interface ConsumerQuotaMetricOrBuilder
    * <pre>
    * The quota limits targeting the descendant containers of the
    * consumer in request.
+   *
    * If the consumer in request is of type `organizations`
    * or `folders`, the field will list per-project limits in the metric; if the
    * consumer in request is of type `project`, the field will be empty.
+   *
    * The `quota_buckets` field of each descendant consumer quota limit will not
    * be populated.
    * </pre>
@@ -235,9 +249,11 @@ public interface ConsumerQuotaMetricOrBuilder
    * <pre>
    * The quota limits targeting the descendant containers of the
    * consumer in request.
+   *
    * If the consumer in request is of type `organizations`
    * or `folders`, the field will list per-project limits in the metric; if the
    * consumer in request is of type `project`, the field will be empty.
+   *
    * The `quota_buckets` field of each descendant consumer quota limit will not
    * be populated.
    * </pre>
@@ -254,9 +270,11 @@ public interface ConsumerQuotaMetricOrBuilder
    * <pre>
    * The quota limits targeting the descendant containers of the
    * consumer in request.
+   *
    * If the consumer in request is of type `organizations`
    * or `folders`, the field will list per-project limits in the metric; if the
    * consumer in request is of type `project`, the field will be empty.
+   *
    * The `quota_buckets` field of each descendant consumer quota limit will not
    * be populated.
    * </pre>

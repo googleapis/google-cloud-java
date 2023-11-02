@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.container.v1.NodePoolLoggingConfig;
 import com.google.container.v1.NodeTaints;
 import com.google.container.v1.Operation;
 import com.google.container.v1.ResourceLabels;
+import com.google.container.v1.ResourceManagerTags;
 import com.google.container.v1.UpdateNodePoolRequest;
 import com.google.container.v1.VirtualNIC;
 import com.google.container.v1.WindowsNodeConfig;
@@ -76,6 +77,10 @@ public class SyncUpdateNodePool {
               .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
               .setResourceLabels(ResourceLabels.newBuilder().build())
               .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
+              .setMachineType("machineType-218117087")
+              .setDiskType("diskType279771767")
+              .setDiskSizeGb(-757478089)
+              .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
               .build();
       Operation response = clusterManagerClient.updateNodePool(request);
     }

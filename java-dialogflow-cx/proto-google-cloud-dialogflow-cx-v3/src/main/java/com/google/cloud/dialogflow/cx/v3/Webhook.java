@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Webhook();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -113,7 +108,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.username is deprecated.
-     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=108
+     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=147
      * @return The username.
      */
     @java.lang.Deprecated
@@ -128,7 +123,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.username is deprecated.
-     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=108
+     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=147
      * @return The bytes for username.
      */
     @java.lang.Deprecated
@@ -144,7 +139,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.password is deprecated.
-     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=111
+     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=150
      * @return The password.
      */
     @java.lang.Deprecated
@@ -159,7 +154,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.password is deprecated.
-     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=111
+     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=150
      * @return The bytes for password.
      */
     @java.lang.Deprecated
@@ -298,6 +293,176 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * @return The allowedCaCerts at the given index.
      */
     com.google.protobuf.ByteString getAllowedCaCerts(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the webhook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType webhook_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for webhookType.
+     */
+    int getWebhookTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the webhook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType webhook_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The webhookType.
+     */
+    com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType getWebhookType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP method for the flexible webhook calls. Standard webhook
+     * always uses POST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod http_method = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for httpMethod.
+     */
+    int getHttpMethodValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP method for the flexible webhook calls. Standard webhook
+     * always uses POST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod http_method = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The httpMethod.
+     */
+    com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod getHttpMethod();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a custom JSON object as request body to send to
+     * flexible webhook.
+     * </pre>
+     *
+     * <code>string request_body = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requestBody.
+     */
+    java.lang.String getRequestBody();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a custom JSON object as request body to send to
+     * flexible webhook.
+     * </pre>
+     *
+     * <code>string request_body = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for requestBody.
+     */
+    com.google.protobuf.ByteString getRequestBodyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps the values extracted from specific fields of the flexible
+     * webhook response into session parameters.
+     * - Key: session parameter name
+     * - Value: field path in the webhook response
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getParameterMappingCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps the values extracted from specific fields of the flexible
+     * webhook response into session parameters.
+     * - Key: session parameter name
+     * - Value: field path in the webhook response
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    boolean containsParameterMapping(java.lang.String key);
+    /** Use {@link #getParameterMappingMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getParameterMapping();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps the values extracted from specific fields of the flexible
+     * webhook response into session parameters.
+     * - Key: session parameter name
+     * - Value: field path in the webhook response
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getParameterMappingMap();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps the values extracted from specific fields of the flexible
+     * webhook response into session parameters.
+     * - Key: session parameter name
+     * - Value: field path in the webhook response
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    /* nullable */
+    java.lang.String getParameterMappingOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps the values extracted from specific fields of the flexible
+     * webhook response into session parameters.
+     * - Key: session parameter name
+     * - Value: field path in the webhook response
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.lang.String getParameterMappingOrThrow(java.lang.String key);
   }
   /**
    *
@@ -323,17 +488,15 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       username_ = "";
       password_ = "";
       allowedCaCerts_ = java.util.Collections.emptyList();
+      webhookType_ = 0;
+      httpMethod_ = 0;
+      requestBody_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GenericWebService();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -347,6 +510,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 4:
           return internalGetRequestHeaders();
+        case 9:
+          return internalGetParameterMapping();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -360,6 +525,434 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.class,
               com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the type of webhook configuration.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType}
+     */
+    public enum WebhookType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value. This value is unused.
+       * </pre>
+       *
+       * <code>WEBHOOK_TYPE_UNSPECIFIED = 0;</code>
+       */
+      WEBHOOK_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Represents a standard webhook.
+       * </pre>
+       *
+       * <code>STANDARD = 1;</code>
+       */
+      STANDARD(1),
+      /**
+       *
+       *
+       * <pre>
+       * Represents a flexible webhook.
+       * </pre>
+       *
+       * <code>FLEXIBLE = 2;</code>
+       */
+      FLEXIBLE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value. This value is unused.
+       * </pre>
+       *
+       * <code>WEBHOOK_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int WEBHOOK_TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Represents a standard webhook.
+       * </pre>
+       *
+       * <code>STANDARD = 1;</code>
+       */
+      public static final int STANDARD_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Represents a flexible webhook.
+       * </pre>
+       *
+       * <code>FLEXIBLE = 2;</code>
+       */
+      public static final int FLEXIBLE_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static WebhookType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static WebhookType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return WEBHOOK_TYPE_UNSPECIFIED;
+          case 1:
+            return STANDARD;
+          case 2:
+            return FLEXIBLE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<WebhookType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<WebhookType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WebhookType>() {
+            public WebhookType findValueByNumber(int number) {
+              return WebhookType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final WebhookType[] VALUES = values();
+
+      public static WebhookType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private WebhookType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * HTTP method to use when calling webhooks.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod}
+     */
+    public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * HTTP method not specified.
+       * </pre>
+       *
+       * <code>HTTP_METHOD_UNSPECIFIED = 0;</code>
+       */
+      HTTP_METHOD_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * HTTP POST Method.
+       * </pre>
+       *
+       * <code>POST = 1;</code>
+       */
+      POST(1),
+      /**
+       *
+       *
+       * <pre>
+       * HTTP GET Method.
+       * </pre>
+       *
+       * <code>GET = 2;</code>
+       */
+      GET(2),
+      /**
+       *
+       *
+       * <pre>
+       * HTTP HEAD Method.
+       * </pre>
+       *
+       * <code>HEAD = 3;</code>
+       */
+      HEAD(3),
+      /**
+       *
+       *
+       * <pre>
+       * HTTP PUT Method.
+       * </pre>
+       *
+       * <code>PUT = 4;</code>
+       */
+      PUT(4),
+      /**
+       *
+       *
+       * <pre>
+       * HTTP DELETE Method.
+       * </pre>
+       *
+       * <code>DELETE = 5;</code>
+       */
+      DELETE(5),
+      /**
+       *
+       *
+       * <pre>
+       * HTTP PATCH Method.
+       * </pre>
+       *
+       * <code>PATCH = 6;</code>
+       */
+      PATCH(6),
+      /**
+       *
+       *
+       * <pre>
+       * HTTP OPTIONS Method.
+       * </pre>
+       *
+       * <code>OPTIONS = 7;</code>
+       */
+      OPTIONS(7),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * HTTP method not specified.
+       * </pre>
+       *
+       * <code>HTTP_METHOD_UNSPECIFIED = 0;</code>
+       */
+      public static final int HTTP_METHOD_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * HTTP POST Method.
+       * </pre>
+       *
+       * <code>POST = 1;</code>
+       */
+      public static final int POST_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * HTTP GET Method.
+       * </pre>
+       *
+       * <code>GET = 2;</code>
+       */
+      public static final int GET_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * HTTP HEAD Method.
+       * </pre>
+       *
+       * <code>HEAD = 3;</code>
+       */
+      public static final int HEAD_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * HTTP PUT Method.
+       * </pre>
+       *
+       * <code>PUT = 4;</code>
+       */
+      public static final int PUT_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
+       * HTTP DELETE Method.
+       * </pre>
+       *
+       * <code>DELETE = 5;</code>
+       */
+      public static final int DELETE_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * HTTP PATCH Method.
+       * </pre>
+       *
+       * <code>PATCH = 6;</code>
+       */
+      public static final int PATCH_VALUE = 6;
+      /**
+       *
+       *
+       * <pre>
+       * HTTP OPTIONS Method.
+       * </pre>
+       *
+       * <code>OPTIONS = 7;</code>
+       */
+      public static final int OPTIONS_VALUE = 7;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static HttpMethod valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static HttpMethod forNumber(int value) {
+        switch (value) {
+          case 0:
+            return HTTP_METHOD_UNSPECIFIED;
+          case 1:
+            return POST;
+          case 2:
+            return GET;
+          case 3:
+            return HEAD;
+          case 4:
+            return PUT;
+          case 5:
+            return DELETE;
+          case 6:
+            return PATCH;
+          case 7:
+            return OPTIONS;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<HttpMethod> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<HttpMethod> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<HttpMethod>() {
+            public HttpMethod findValueByNumber(int number) {
+              return HttpMethod.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final HttpMethod[] VALUES = values();
+
+      public static HttpMethod valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private HttpMethod(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod)
     }
 
     public static final int URI_FIELD_NUMBER = 1;
@@ -429,7 +1022,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.username is deprecated.
-     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=108
+     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=147
      * @return The username.
      */
     @java.lang.Override
@@ -455,7 +1048,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.username is deprecated.
-     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=108
+     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=147
      * @return The bytes for username.
      */
     @java.lang.Override
@@ -486,7 +1079,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.password is deprecated.
-     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=111
+     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=150
      * @return The password.
      */
     @java.lang.Override
@@ -512,7 +1105,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.password is deprecated.
-     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=111
+     *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=150
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -719,6 +1312,272 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       return allowedCaCerts_.get(index);
     }
 
+    public static final int WEBHOOK_TYPE_FIELD_NUMBER = 6;
+    private int webhookType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the webhook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType webhook_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for webhookType.
+     */
+    @java.lang.Override
+    public int getWebhookTypeValue() {
+      return webhookType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the webhook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType webhook_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The webhookType.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType
+        getWebhookType() {
+      com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType result =
+          com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType.forNumber(
+              webhookType_);
+      return result == null
+          ? com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int HTTP_METHOD_FIELD_NUMBER = 7;
+    private int httpMethod_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP method for the flexible webhook calls. Standard webhook
+     * always uses POST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod http_method = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for httpMethod.
+     */
+    @java.lang.Override
+    public int getHttpMethodValue() {
+      return httpMethod_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP method for the flexible webhook calls. Standard webhook
+     * always uses POST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod http_method = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The httpMethod.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod getHttpMethod() {
+      com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod result =
+          com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod.forNumber(
+              httpMethod_);
+      return result == null
+          ? com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int REQUEST_BODY_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object requestBody_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a custom JSON object as request body to send to
+     * flexible webhook.
+     * </pre>
+     *
+     * <code>string request_body = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requestBody.
+     */
+    @java.lang.Override
+    public java.lang.String getRequestBody() {
+      java.lang.Object ref = requestBody_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestBody_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a custom JSON object as request body to send to
+     * flexible webhook.
+     * </pre>
+     *
+     * <code>string request_body = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for requestBody.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRequestBodyBytes() {
+      java.lang.Object ref = requestBody_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestBody_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARAMETER_MAPPING_FIELD_NUMBER = 9;
+
+    private static final class ParameterMappingDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.dialogflow.cx.v3.WebhookProto
+                  .internal_static_google_cloud_dialogflow_cx_v3_Webhook_GenericWebService_ParameterMappingEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> parameterMapping_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetParameterMapping() {
+      if (parameterMapping_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ParameterMappingDefaultEntryHolder.defaultEntry);
+      }
+      return parameterMapping_;
+    }
+
+    public int getParameterMappingCount() {
+      return internalGetParameterMapping().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps the values extracted from specific fields of the flexible
+     * webhook response into session parameters.
+     * - Key: session parameter name
+     * - Value: field path in the webhook response
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsParameterMapping(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetParameterMapping().getMap().containsKey(key);
+    }
+    /** Use {@link #getParameterMappingMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getParameterMapping() {
+      return getParameterMappingMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps the values extracted from specific fields of the flexible
+     * webhook response into session parameters.
+     * - Key: session parameter name
+     * - Value: field path in the webhook response
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getParameterMappingMap() {
+      return internalGetParameterMapping().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps the values extracted from specific fields of the flexible
+     * webhook response into session parameters.
+     * - Key: session parameter name
+     * - Value: field path in the webhook response
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getParameterMappingOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetParameterMapping().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps the values extracted from specific fields of the flexible
+     * webhook response into session parameters.
+     * - Key: session parameter name
+     * - Value: field path in the webhook response
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getParameterMappingOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetParameterMapping().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -747,6 +1606,26 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < allowedCaCerts_.size(); i++) {
         output.writeBytes(5, allowedCaCerts_.get(i));
       }
+      if (webhookType_
+          != com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType
+              .WEBHOOK_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(6, webhookType_);
+      }
+      if (httpMethod_
+          != com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod
+              .HTTP_METHOD_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(7, httpMethod_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestBody_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, requestBody_);
+      }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output,
+          internalGetParameterMapping(),
+          ParameterMappingDefaultEntryHolder.defaultEntry,
+          9);
       getUnknownFields().writeTo(output);
     }
 
@@ -784,6 +1663,31 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getAllowedCaCertsList().size();
       }
+      if (webhookType_
+          != com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType
+              .WEBHOOK_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, webhookType_);
+      }
+      if (httpMethod_
+          != com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod
+              .HTTP_METHOD_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, httpMethod_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestBody_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, requestBody_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetParameterMapping().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameterMapping__ =
+            ParameterMappingDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, parameterMapping__);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -805,6 +1709,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       if (!getPassword().equals(other.getPassword())) return false;
       if (!internalGetRequestHeaders().equals(other.internalGetRequestHeaders())) return false;
       if (!getAllowedCaCertsList().equals(other.getAllowedCaCertsList())) return false;
+      if (webhookType_ != other.webhookType_) return false;
+      if (httpMethod_ != other.httpMethod_) return false;
+      if (!getRequestBody().equals(other.getRequestBody())) return false;
+      if (!internalGetParameterMapping().equals(other.internalGetParameterMapping())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -829,6 +1737,16 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       if (getAllowedCaCertsCount() > 0) {
         hash = (37 * hash) + ALLOWED_CA_CERTS_FIELD_NUMBER;
         hash = (53 * hash) + getAllowedCaCertsList().hashCode();
+      }
+      hash = (37 * hash) + WEBHOOK_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + webhookType_;
+      hash = (37 * hash) + HTTP_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + httpMethod_;
+      hash = (37 * hash) + REQUEST_BODY_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestBody().hashCode();
+      if (!internalGetParameterMapping().getMap().isEmpty()) {
+        hash = (37 * hash) + PARAMETER_MAPPING_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetParameterMapping().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -956,6 +1874,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         switch (number) {
           case 4:
             return internalGetRequestHeaders();
+          case 9:
+            return internalGetParameterMapping();
           default:
             throw new RuntimeException("Invalid map field number: " + number);
         }
@@ -966,6 +1886,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         switch (number) {
           case 4:
             return internalGetMutableRequestHeaders();
+          case 9:
+            return internalGetMutableParameterMapping();
           default:
             throw new RuntimeException("Invalid map field number: " + number);
         }
@@ -997,6 +1919,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         password_ = "";
         internalGetMutableRequestHeaders().clear();
         allowedCaCerts_ = java.util.Collections.emptyList();
+        webhookType_ = 0;
+        httpMethod_ = 0;
+        requestBody_ = "";
+        internalGetMutableParameterMapping().clear();
         return this;
       }
 
@@ -1057,6 +1983,19 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.requestHeaders_ = internalGetRequestHeaders();
           result.requestHeaders_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.webhookType_ = webhookType_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.httpMethod_ = httpMethod_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.requestBody_ = requestBody_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.parameterMapping_ = internalGetParameterMapping();
+          result.parameterMapping_.makeImmutable();
         }
       }
 
@@ -1136,6 +2075,19 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
+        if (other.webhookType_ != 0) {
+          setWebhookTypeValue(other.getWebhookTypeValue());
+        }
+        if (other.httpMethod_ != 0) {
+          setHttpMethodValue(other.getHttpMethodValue());
+        }
+        if (!other.getRequestBody().isEmpty()) {
+          requestBody_ = other.requestBody_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        internalGetMutableParameterMapping().mergeFrom(other.internalGetParameterMapping());
+        bitField0_ |= 0x00000100;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1200,6 +2152,37 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
                   allowedCaCerts_.add(v);
                   break;
                 } // case 42
+              case 48:
+                {
+                  webhookType_ = input.readEnum();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
+              case 56:
+                {
+                  httpMethod_ = input.readEnum();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 56
+              case 66:
+                {
+                  requestBody_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 66
+              case 74:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                      parameterMapping__ =
+                          input.readMessage(
+                              ParameterMappingDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableParameterMapping()
+                      .getMutableMap()
+                      .put(parameterMapping__.getKey(), parameterMapping__.getValue());
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 74
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1341,7 +2324,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string username = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.username is deprecated.
-       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=108
+       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=147
        * @return The username.
        */
       @java.lang.Deprecated
@@ -1366,7 +2349,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string username = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.username is deprecated.
-       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=108
+       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=147
        * @return The bytes for username.
        */
       @java.lang.Deprecated
@@ -1391,7 +2374,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string username = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.username is deprecated.
-       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=108
+       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=147
        * @param value The username to set.
        * @return This builder for chaining.
        */
@@ -1415,7 +2398,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string username = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.username is deprecated.
-       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=108
+       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=147
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1435,7 +2418,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string username = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.username is deprecated.
-       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=108
+       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=147
        * @param value The bytes for username to set.
        * @return This builder for chaining.
        */
@@ -1462,7 +2445,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string password = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.password is deprecated.
-       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=111
+       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=150
        * @return The password.
        */
       @java.lang.Deprecated
@@ -1487,7 +2470,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string password = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.password is deprecated.
-       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=111
+       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=150
        * @return The bytes for password.
        */
       @java.lang.Deprecated
@@ -1512,7 +2495,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string password = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.password is deprecated.
-       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=111
+       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=150
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -1536,7 +2519,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string password = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.password is deprecated.
-       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=111
+       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=150
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1556,7 +2539,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string password = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.password is deprecated.
-       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=111
+       *     See google/cloud/dialogflow/cx/v3/webhook.proto;l=150
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -1961,6 +2944,537 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int webhookType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Type of the webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType webhook_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for webhookType.
+       */
+      @java.lang.Override
+      public int getWebhookTypeValue() {
+        return webhookType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Type of the webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType webhook_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for webhookType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWebhookTypeValue(int value) {
+        webhookType_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Type of the webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType webhook_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The webhookType.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType
+          getWebhookType() {
+        com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType result =
+            com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType.forNumber(
+                webhookType_);
+        return result == null
+            ? com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Type of the webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType webhook_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The webhookType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWebhookType(
+          com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000020;
+        webhookType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Type of the webhook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.WebhookType webhook_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWebhookType() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        webhookType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int httpMethod_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HTTP method for the flexible webhook calls. Standard webhook
+       * always uses POST.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod http_method = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for httpMethod.
+       */
+      @java.lang.Override
+      public int getHttpMethodValue() {
+        return httpMethod_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HTTP method for the flexible webhook calls. Standard webhook
+       * always uses POST.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod http_method = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for httpMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHttpMethodValue(int value) {
+        httpMethod_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HTTP method for the flexible webhook calls. Standard webhook
+       * always uses POST.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod http_method = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The httpMethod.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod
+          getHttpMethod() {
+        com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod result =
+            com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod.forNumber(
+                httpMethod_);
+        return result == null
+            ? com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HTTP method for the flexible webhook calls. Standard webhook
+       * always uses POST.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod http_method = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The httpMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHttpMethod(
+          com.google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000040;
+        httpMethod_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. HTTP method for the flexible webhook calls. Standard webhook
+       * always uses POST.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3.Webhook.GenericWebService.HttpMethod http_method = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearHttpMethod() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        httpMethod_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object requestBody_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines a custom JSON object as request body to send to
+       * flexible webhook.
+       * </pre>
+       *
+       * <code>string request_body = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The requestBody.
+       */
+      public java.lang.String getRequestBody() {
+        java.lang.Object ref = requestBody_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestBody_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines a custom JSON object as request body to send to
+       * flexible webhook.
+       * </pre>
+       *
+       * <code>string request_body = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for requestBody.
+       */
+      public com.google.protobuf.ByteString getRequestBodyBytes() {
+        java.lang.Object ref = requestBody_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          requestBody_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines a custom JSON object as request body to send to
+       * flexible webhook.
+       * </pre>
+       *
+       * <code>string request_body = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The requestBody to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestBody(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestBody_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines a custom JSON object as request body to send to
+       * flexible webhook.
+       * </pre>
+       *
+       * <code>string request_body = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestBody() {
+        requestBody_ = getDefaultInstance().getRequestBody();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines a custom JSON object as request body to send to
+       * flexible webhook.
+       * </pre>
+       *
+       * <code>string request_body = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for requestBody to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestBodyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        requestBody_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> parameterMapping_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetParameterMapping() {
+        if (parameterMapping_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ParameterMappingDefaultEntryHolder.defaultEntry);
+        }
+        return parameterMapping_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableParameterMapping() {
+        if (parameterMapping_ == null) {
+          parameterMapping_ =
+              com.google.protobuf.MapField.newMapField(
+                  ParameterMappingDefaultEntryHolder.defaultEntry);
+        }
+        if (!parameterMapping_.isMutable()) {
+          parameterMapping_ = parameterMapping_.copy();
+        }
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return parameterMapping_;
+      }
+
+      public int getParameterMappingCount() {
+        return internalGetParameterMapping().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Maps the values extracted from specific fields of the flexible
+       * webhook response into session parameters.
+       * - Key: session parameter name
+       * - Value: field path in the webhook response
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsParameterMapping(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetParameterMapping().getMap().containsKey(key);
+      }
+      /** Use {@link #getParameterMappingMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getParameterMapping() {
+        return getParameterMappingMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Maps the values extracted from specific fields of the flexible
+       * webhook response into session parameters.
+       * - Key: session parameter name
+       * - Value: field path in the webhook response
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getParameterMappingMap() {
+        return internalGetParameterMapping().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Maps the values extracted from specific fields of the flexible
+       * webhook response into session parameters.
+       * - Key: session parameter name
+       * - Value: field path in the webhook response
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getParameterMappingOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetParameterMapping().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Maps the values extracted from specific fields of the flexible
+       * webhook response into session parameters.
+       * - Key: session parameter name
+       * - Value: field path in the webhook response
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.lang.String getParameterMappingOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetParameterMapping().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearParameterMapping() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        internalGetMutableParameterMapping().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Maps the values extracted from specific fields of the flexible
+       * webhook response into session parameters.
+       * - Key: session parameter name
+       * - Value: field path in the webhook response
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeParameterMapping(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableParameterMapping().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableParameterMapping() {
+        bitField0_ |= 0x00000100;
+        return internalGetMutableParameterMapping().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Maps the values extracted from specific fields of the flexible
+       * webhook response into session parameters.
+       * - Key: session parameter name
+       * - Value: field path in the webhook response
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putParameterMapping(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableParameterMapping().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Maps the values extracted from specific fields of the flexible
+       * webhook response into session parameters.
+       * - Key: session parameter name
+       * - Value: field path in the webhook response
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; parameter_mapping = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putAllParameterMapping(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableParameterMapping().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2137,11 +3651,6 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ServiceDirectoryConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3077,6 +4586,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int webhookCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object webhook_;
 
   public enum WebhookCase

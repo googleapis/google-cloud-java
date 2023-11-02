@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ public interface ReleaseRenderEventOrBuilder
    *
    *
    * <pre>
-   * The name of the `Release`.
+   * The name of the release.
    * </pre>
    *
    * <code>string release = 2;</code>
@@ -66,7 +66,7 @@ public interface ReleaseRenderEventOrBuilder
    *
    *
    * <pre>
-   * The name of the `Release`.
+   * The name of the release.
    * </pre>
    *
    * <code>string release = 2;</code>
@@ -74,4 +74,29 @@ public interface ReleaseRenderEventOrBuilder
    * @return The bytes for release.
    */
   com.google.protobuf.ByteString getReleaseBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The state of the release render.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Release.RenderState release_render_state = 3;</code>
+   *
+   * @return The enum numeric value on the wire for releaseRenderState.
+   */
+  int getReleaseRenderStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * The state of the release render.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Release.RenderState release_render_state = 3;</code>
+   *
+   * @return The releaseRenderState.
+   */
+  com.google.cloud.deploy.v1.Release.RenderState getReleaseRenderState();
 }

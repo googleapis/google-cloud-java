@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
   private SearchAllResourcesRequest() {
     scope_ = "";
     query_ = "";
-    assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pageToken_ = "";
     orderBy_ = "";
   }
@@ -49,11 +49,6 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchAllResourcesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -81,6 +76,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The relative name of an asset. The search is limited to the
    * resources within the `scope`. The allowed value must be:
+   *
    * * Organization number (such as "organizations/123")
    * * Folder number (such as "folders/1234")
    * * Project number (such as "projects/12345")
@@ -109,6 +105,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The relative name of an asset. The search is limited to the
    * resources within the `scope`. The allowed value must be:
+   *
    * * Organization number (such as "organizations/123")
    * * Folder number (such as "folders/1234")
    * * Project number (such as "projects/12345")
@@ -186,7 +183,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
   public static final int ASSET_TYPES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList assetTypes_;
+  private com.google.protobuf.LazyStringArrayList assetTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -639,8 +637,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       bitField0_ = 0;
       scope_ = "";
       query_ = "";
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       pageSize_ = 0;
       pageToken_ = "";
       orderBy_ = "";
@@ -671,21 +668,11 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     public com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest buildPartial() {
       com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest result =
           new com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        assetTypes_ = assetTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.assetTypes_ = assetTypes_;
     }
 
     private void buildPartial0(com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest result) {
@@ -695,6 +682,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        assetTypes_.makeImmutable();
+        result.assetTypes_ = assetTypes_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageSize_ = pageSize_;
@@ -766,7 +757,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       if (!other.assetTypes_.isEmpty()) {
         if (assetTypes_.isEmpty()) {
           assetTypes_ = other.assetTypes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureAssetTypesIsMutable();
           assetTypes_.addAll(other.assetTypes_);
@@ -875,6 +866,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The relative name of an asset. The search is limited to the
      * resources within the `scope`. The allowed value must be:
+     *
      * * Organization number (such as "organizations/123")
      * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -902,6 +894,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The relative name of an asset. The search is limited to the
      * resources within the `scope`. The allowed value must be:
+     *
      * * Organization number (such as "organizations/123")
      * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -929,6 +922,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The relative name of an asset. The search is limited to the
      * resources within the `scope`. The allowed value must be:
+     *
      * * Organization number (such as "organizations/123")
      * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -955,6 +949,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The relative name of an asset. The search is limited to the
      * resources within the `scope`. The allowed value must be:
+     *
      * * Organization number (such as "organizations/123")
      * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -977,6 +972,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The relative name of an asset. The search is limited to the
      * resources within the `scope`. The allowed value must be:
+     *
      * * Organization number (such as "organizations/123")
      * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -1105,14 +1101,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       return this;
     }
 
-    private com.google.protobuf.LazyStringList assetTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList assetTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!assetTypes_.isModifiable()) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1127,7 +1123,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * @return A list containing the assetTypes.
      */
     public com.google.protobuf.ProtocolStringList getAssetTypesList() {
-      return assetTypes_.getUnmodifiableView();
+      assetTypes_.makeImmutable();
+      return assetTypes_;
     }
     /**
      *
@@ -1196,6 +1193,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       }
       ensureAssetTypesIsMutable();
       assetTypes_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1218,6 +1216,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       }
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1237,6 +1236,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     public Builder addAllAssetTypes(java.lang.Iterable<java.lang.String> values) {
       ensureAssetTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetTypes_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1253,8 +1253,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAssetTypes() {
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1278,6 +1279,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

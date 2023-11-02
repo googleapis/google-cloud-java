@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface NodeConfigOrBuilder
    * <pre>
    * The name of a Google Compute Engine [machine
    * type](https://cloud.google.com/compute/docs/machine-types)
+   *
    * If unspecified, the default machine type is `e2-medium`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface NodeConfigOrBuilder
    * <pre>
    * The name of a Google Compute Engine [machine
    * type](https://cloud.google.com/compute/docs/machine-types)
+   *
    * If unspecified, the default machine type is `e2-medium`.
    * </pre>
    *
@@ -58,6 +60,7 @@ public interface NodeConfigOrBuilder
    * <pre>
    * Size of the disk attached to each node, specified in GB.
    * The smallest allowed disk size is 10GB.
+   *
    * If unspecified, the default disk size is 100GB.
    * </pre>
    *
@@ -73,14 +76,17 @@ public interface NodeConfigOrBuilder
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -96,14 +102,17 @@ public interface NodeConfigOrBuilder
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -119,14 +128,17 @@ public interface NodeConfigOrBuilder
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -143,14 +155,17 @@ public interface NodeConfigOrBuilder
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -196,10 +211,12 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
+   *
    * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
+   *
    *  - "cluster-location"
    *  - "cluster-name"
    *  - "cluster-uid"
@@ -219,9 +236,11 @@ public interface NodeConfigOrBuilder
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
+   *
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
+   *
    * The total size of all keys and values must be less than 512 KB.
    * </pre>
    *
@@ -233,10 +252,12 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
+   *
    * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
+   *
    *  - "cluster-location"
    *  - "cluster-name"
    *  - "cluster-uid"
@@ -256,9 +277,11 @@ public interface NodeConfigOrBuilder
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
+   *
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
+   *
    * The total size of all keys and values must be less than 512 KB.
    * </pre>
    *
@@ -273,10 +296,12 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
+   *
    * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
+   *
    *  - "cluster-location"
    *  - "cluster-name"
    *  - "cluster-uid"
@@ -296,9 +321,11 @@ public interface NodeConfigOrBuilder
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
+   *
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
+   *
    * The total size of all keys and values must be less than 512 KB.
    * </pre>
    *
@@ -310,10 +337,12 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
+   *
    * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
+   *
    *  - "cluster-location"
    *  - "cluster-name"
    *  - "cluster-uid"
@@ -333,9 +362,11 @@ public interface NodeConfigOrBuilder
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
+   *
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
+   *
    * The total size of all keys and values must be less than 512 KB.
    * </pre>
    *
@@ -351,10 +382,12 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
+   *
    * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
+   *
    *  - "cluster-location"
    *  - "cluster-name"
    *  - "cluster-uid"
@@ -374,9 +407,11 @@ public interface NodeConfigOrBuilder
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
+   *
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
+   *
    * The total size of all keys and values must be less than 512 KB.
    * </pre>
    *
@@ -513,6 +548,7 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * The number of local SSD disks to be attached to the node.
+   *
    * The limit for this value is dependent upon the maximum number of
    * disks available on a machine per zone. See:
    * https://cloud.google.com/compute/docs/disks/local-ssd
@@ -671,6 +707,7 @@ public interface NodeConfigOrBuilder
    * <pre>
    * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
    * 'pd-balanced')
+   *
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *
@@ -685,6 +722,7 @@ public interface NodeConfigOrBuilder
    * <pre>
    * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
    * 'pd-balanced')
+   *
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *
@@ -771,6 +809,7 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * List of kubernetes taints to be applied to each node.
+   *
    * For more information, including usage and the valid values, see:
    * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
    * </pre>
@@ -783,6 +822,7 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * List of kubernetes taints to be applied to each node.
+   *
    * For more information, including usage and the valid values, see:
    * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
    * </pre>
@@ -795,6 +835,7 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * List of kubernetes taints to be applied to each node.
+   *
    * For more information, including usage and the valid values, see:
    * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
    * </pre>
@@ -807,6 +848,7 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * List of kubernetes taints to be applied to each node.
+   *
    * For more information, including usage and the valid values, see:
    * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
    * </pre>
@@ -819,6 +861,7 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * List of kubernetes taints to be applied to each node.
+   *
    * For more information, including usage and the valid values, see:
    * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
    * </pre>
@@ -1046,6 +1089,7 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   *
    * The Customer Managed Encryption Key used to encrypt the boot disk attached
    * to each node in the node pool. This should be of the form
    * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -1063,6 +1107,7 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   *
    * The Customer Managed Encryption Key used to encrypt the boot disk attached
    * to each node in the node pool. This should be of the form
    * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -1481,4 +1526,74 @@ public interface NodeConfigOrBuilder
    */
   com.google.container.v1.EphemeralStorageLocalSsdConfigOrBuilder
       getEphemeralStorageLocalSsdConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for node pools to be backed by shared sole tenant node groups.
+   * </pre>
+   *
+   * <code>.google.container.v1.SoleTenantConfig sole_tenant_config = 42;</code>
+   *
+   * @return Whether the soleTenantConfig field is set.
+   */
+  boolean hasSoleTenantConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for node pools to be backed by shared sole tenant node groups.
+   * </pre>
+   *
+   * <code>.google.container.v1.SoleTenantConfig sole_tenant_config = 42;</code>
+   *
+   * @return The soleTenantConfig.
+   */
+  com.google.container.v1.SoleTenantConfig getSoleTenantConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for node pools to be backed by shared sole tenant node groups.
+   * </pre>
+   *
+   * <code>.google.container.v1.SoleTenantConfig sole_tenant_config = 42;</code>
+   */
+  com.google.container.v1.SoleTenantConfigOrBuilder getSoleTenantConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+   *
+   * @return Whether the resourceManagerTags field is set.
+   */
+  boolean hasResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+   *
+   * @return The resourceManagerTags.
+   */
+  com.google.container.v1.ResourceManagerTags getResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+   */
+  com.google.container.v1.ResourceManagerTagsOrBuilder getResourceManagerTagsOrBuilder();
 }

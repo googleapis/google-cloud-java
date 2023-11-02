@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,16 +24,20 @@ package com.google.cloud.dialogflow.v2beta1;
  * <pre>
  * The top-level message returned from the
  * `StreamingDetectIntent` method.
+ *
  * Multiple response messages can be returned in order:
+ *
  * 1.  If the `StreamingDetectIntentRequest.input_audio` field was
  *     set, the `recognition_result` field is populated for one
  *     or more messages.
  *     See the
  *     [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult]
  *     message for details about the result message sequence.
+ *
  * 2.  The next message contains `response_id`, `query_result`,
  *     `alternative_query_results` and optionally `webhook_status` if a WebHook
  *     was called.
+ *
  * 3.  If `output_audio_config` was specified in the request or agent-level
  *     speech synthesizer is configured, all subsequent messages contain
  *     `output_audio` and `output_audio_config`.
@@ -61,11 +65,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StreamingDetectIntentResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -414,6 +413,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * multiple default text responses exist, they will be concatenated when
    * generating audio. If no default platform text responses exist, the
    * generated audio content will be empty.
+   *
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
    * has content.
@@ -796,16 +796,20 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * <pre>
    * The top-level message returned from the
    * `StreamingDetectIntent` method.
+   *
    * Multiple response messages can be returned in order:
+   *
    * 1.  If the `StreamingDetectIntentRequest.input_audio` field was
    *     set, the `recognition_result` field is populated for one
    *     or more messages.
    *     See the
    *     [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult]
    *     message for details about the result message sequence.
+   *
    * 2.  The next message contains `response_id`, `query_result`,
    *     `alternative_query_results` and optionally `webhook_status` if a WebHook
    *     was called.
+   *
    * 3.  If `output_audio_config` was specified in the request or agent-level
    *     speech synthesizer is configured, all subsequent messages contain
    *     `output_audio` and `output_audio_config`.
@@ -2361,6 +2365,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * multiple default text responses exist, they will be concatenated when
      * generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -2384,6 +2389,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * multiple default text responses exist, they will be concatenated when
      * generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -2413,6 +2419,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * multiple default text responses exist, they will be concatenated when
      * generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.

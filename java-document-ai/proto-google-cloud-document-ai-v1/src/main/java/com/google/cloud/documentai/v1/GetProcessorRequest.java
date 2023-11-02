@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Request message for get processor.
+ * Request message for the
+ * [GetProcessor][google.cloud.documentai.v1.DocumentProcessorService.GetProcessor]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.GetProcessorRequest}
@@ -45,11 +47,6 @@ public final class GetProcessorRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GetProcessorRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -285,7 +282,9 @@ public final class GetProcessorRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for get processor.
+   * Request message for the
+   * [GetProcessor][google.cloud.documentai.v1.DocumentProcessorService.GetProcessor]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.GetProcessorRequest}

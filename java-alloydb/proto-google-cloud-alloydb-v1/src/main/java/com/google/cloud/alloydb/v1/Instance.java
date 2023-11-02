@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,11 +55,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Instance();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -587,10 +582,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Availability type of an instance. Potential values:
+   *
    * - ZONAL: The instance serves data from only one zone. Outages in that
-   * zone affect instance availability.
+   *     zone affect instance availability.
    * - REGIONAL: The instance can serve data from more than one zone in a
-   * region (it is highly available).
+   *     region (it is highly available).
    * </pre>
    *
    * Protobuf enum {@code google.cloud.alloydb.v1.Instance.AvailabilityType}
@@ -788,11 +784,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MachineConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1432,11 +1423,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Node();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2716,11 +2702,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return new QueryInsightsInstanceConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.alloydb.v1.ResourcesProto
           .internal_static_google_cloud_alloydb_v1_Instance_QueryInsightsInstanceConfig_descriptor;
@@ -3690,11 +3671,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return new ReadPoolConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.alloydb.v1.ResourcesProto
           .internal_static_google_cloud_alloydb_v1_Instance_ReadPoolConfig_descriptor;
@@ -4186,6 +4162,884 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.alloydb.v1.Instance.ReadPoolConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ClientConnectionConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1.Instance.ClientConnectionConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enforce connectors only (ex: AuthProxy)
+     * connections to the database.
+     * </pre>
+     *
+     * <code>bool require_connectors = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requireConnectors.
+     */
+    boolean getRequireConnectors();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sslConfig field is set.
+     */
+    boolean hasSslConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sslConfig.
+     */
+    com.google.cloud.alloydb.v1.SslConfig getSslConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.alloydb.v1.SslConfigOrBuilder getSslConfigOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Client connection configuration
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1.Instance.ClientConnectionConfig}
+   */
+  public static final class ClientConnectionConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1.Instance.ClientConnectionConfig)
+      ClientConnectionConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ClientConnectionConfig.newBuilder() to construct.
+    private ClientConnectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ClientConnectionConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClientConnectionConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1_Instance_ClientConnectionConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1_Instance_ClientConnectionConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.class,
+              com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.Builder.class);
+    }
+
+    public static final int REQUIRE_CONNECTORS_FIELD_NUMBER = 1;
+    private boolean requireConnectors_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enforce connectors only (ex: AuthProxy)
+     * connections to the database.
+     * </pre>
+     *
+     * <code>bool require_connectors = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requireConnectors.
+     */
+    @java.lang.Override
+    public boolean getRequireConnectors() {
+      return requireConnectors_;
+    }
+
+    public static final int SSL_CONFIG_FIELD_NUMBER = 2;
+    private com.google.cloud.alloydb.v1.SslConfig sslConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sslConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSslConfig() {
+      return sslConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sslConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.SslConfig getSslConfig() {
+      return sslConfig_ == null
+          ? com.google.cloud.alloydb.v1.SslConfig.getDefaultInstance()
+          : sslConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.SslConfigOrBuilder getSslConfigOrBuilder() {
+      return sslConfig_ == null
+          ? com.google.cloud.alloydb.v1.SslConfig.getDefaultInstance()
+          : sslConfig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (requireConnectors_ != false) {
+        output.writeBool(1, requireConnectors_);
+      }
+      if (sslConfig_ != null) {
+        output.writeMessage(2, getSslConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (requireConnectors_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, requireConnectors_);
+      }
+      if (sslConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSslConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig other =
+          (com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig) obj;
+
+      if (getRequireConnectors() != other.getRequireConnectors()) return false;
+      if (hasSslConfig() != other.hasSslConfig()) return false;
+      if (hasSslConfig()) {
+        if (!getSslConfig().equals(other.getSslConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUIRE_CONNECTORS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequireConnectors());
+      if (hasSslConfig()) {
+        hash = (37 * hash) + SSL_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSslConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Client connection configuration
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1.Instance.ClientConnectionConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1.Instance.ClientConnectionConfig)
+        com.google.cloud.alloydb.v1.Instance.ClientConnectionConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1_Instance_ClientConnectionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1_Instance_ClientConnectionConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.class,
+                com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        requireConnectors_ = false;
+        sslConfig_ = null;
+        if (sslConfigBuilder_ != null) {
+          sslConfigBuilder_.dispose();
+          sslConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1_Instance_ClientConnectionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig build() {
+        com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig buildPartial() {
+        com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig result =
+            new com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.requireConnectors_ = requireConnectors_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sslConfig_ = sslConfigBuilder_ == null ? sslConfig_ : sslConfigBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig) {
+          return mergeFrom((com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig other) {
+        if (other
+            == com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.getDefaultInstance())
+          return this;
+        if (other.getRequireConnectors() != false) {
+          setRequireConnectors(other.getRequireConnectors());
+        }
+        if (other.hasSslConfig()) {
+          mergeSslConfig(other.getSslConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  requireConnectors_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(getSslConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean requireConnectors_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration to enforce connectors only (ex: AuthProxy)
+       * connections to the database.
+       * </pre>
+       *
+       * <code>bool require_connectors = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The requireConnectors.
+       */
+      @java.lang.Override
+      public boolean getRequireConnectors() {
+        return requireConnectors_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration to enforce connectors only (ex: AuthProxy)
+       * connections to the database.
+       * </pre>
+       *
+       * <code>bool require_connectors = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The requireConnectors to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequireConnectors(boolean value) {
+
+        requireConnectors_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration to enforce connectors only (ex: AuthProxy)
+       * connections to the database.
+       * </pre>
+       *
+       * <code>bool require_connectors = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRequireConnectors() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        requireConnectors_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.alloydb.v1.SslConfig sslConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.alloydb.v1.SslConfig,
+              com.google.cloud.alloydb.v1.SslConfig.Builder,
+              com.google.cloud.alloydb.v1.SslConfigOrBuilder>
+          sslConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the sslConfig field is set.
+       */
+      public boolean hasSslConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The sslConfig.
+       */
+      public com.google.cloud.alloydb.v1.SslConfig getSslConfig() {
+        if (sslConfigBuilder_ == null) {
+          return sslConfig_ == null
+              ? com.google.cloud.alloydb.v1.SslConfig.getDefaultInstance()
+              : sslConfig_;
+        } else {
+          return sslConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSslConfig(com.google.cloud.alloydb.v1.SslConfig value) {
+        if (sslConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sslConfig_ = value;
+        } else {
+          sslConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSslConfig(com.google.cloud.alloydb.v1.SslConfig.Builder builderForValue) {
+        if (sslConfigBuilder_ == null) {
+          sslConfig_ = builderForValue.build();
+        } else {
+          sslConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSslConfig(com.google.cloud.alloydb.v1.SslConfig value) {
+        if (sslConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && sslConfig_ != null
+              && sslConfig_ != com.google.cloud.alloydb.v1.SslConfig.getDefaultInstance()) {
+            getSslConfigBuilder().mergeFrom(value);
+          } else {
+            sslConfig_ = value;
+          }
+        } else {
+          sslConfigBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSslConfig() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        sslConfig_ = null;
+        if (sslConfigBuilder_ != null) {
+          sslConfigBuilder_.dispose();
+          sslConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1.SslConfig.Builder getSslConfigBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getSslConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1.SslConfigOrBuilder getSslConfigOrBuilder() {
+        if (sslConfigBuilder_ != null) {
+          return sslConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return sslConfig_ == null
+              ? com.google.cloud.alloydb.v1.SslConfig.getDefaultInstance()
+              : sslConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.alloydb.v1.SslConfig,
+              com.google.cloud.alloydb.v1.SslConfig.Builder,
+              com.google.cloud.alloydb.v1.SslConfigOrBuilder>
+          getSslConfigFieldBuilder() {
+        if (sslConfigBuilder_ == null) {
+          sslConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.alloydb.v1.SslConfig,
+                  com.google.cloud.alloydb.v1.SslConfig.Builder,
+                  com.google.cloud.alloydb.v1.SslConfigOrBuilder>(
+                  getSslConfig(), getParentForChildren(), isClean());
+          sslConfig_ = null;
+        }
+        return sslConfigBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1.Instance.ClientConnectionConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1.Instance.ClientConnectionConfig)
+    private static final com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig();
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ClientConnectionConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ClientConnectionConfig>() {
+          @java.lang.Override
+          public ClientConnectionConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ClientConnectionConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientConnectionConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -4748,8 +5602,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Availability type of an Instance.
-   * Defaults to REGIONAL for both primary and read instances.
-   * Note that primary and read instances can have different availability types.
+   * If empty, defaults to REGIONAL for primary instances.
+   * For read pools, availability_type is always UNSPECIFIED. Instances in the
+   * read pools are evenly distributed across available zones within the region
+   * (i.e. read pools with more than one node will have a node in at
+   * least two zones).
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1.Instance.AvailabilityType availability_type = 11;</code>
@@ -4765,8 +5622,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Availability type of an Instance.
-   * Defaults to REGIONAL for both primary and read instances.
-   * Note that primary and read instances can have different availability types.
+   * If empty, defaults to REGIONAL for primary instances.
+   * For read pools, availability_type is always UNSPECIFIED. Instances in the
+   * read pools are evenly distributed across available zones within the region
+   * (i.e. read pools with more than one node will have a node in at
+   * least two zones).
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1.Instance.AvailabilityType availability_type = 11;</code>
@@ -4880,6 +5740,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -4913,6 +5775,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -4937,6 +5801,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -4968,6 +5834,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -5196,7 +6064,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -5211,7 +6080,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -5228,7 +6098,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -5477,6 +6348,63 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int CLIENT_CONNECTION_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig clientConnectionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientConnectionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientConnectionConfig() {
+    return clientConnectionConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientConnectionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig getClientConnectionConfig() {
+    return clientConnectionConfig_ == null
+        ? com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.getDefaultInstance()
+        : clientConnectionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.Instance.ClientConnectionConfigOrBuilder
+      getClientConnectionConfigOrBuilder() {
+    return clientConnectionConfig_ == null
+        ? com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.getDefaultInstance()
+        : clientConnectionConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5554,6 +6482,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (queryInsightsConfig_ != null) {
       output.writeMessage(21, getQueryInsightsConfig());
+    }
+    if (clientConnectionConfig_ != null) {
+      output.writeMessage(23, getClientConnectionConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -5653,6 +6584,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(21, getQueryInsightsConfig());
     }
+    if (clientConnectionConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getClientConnectionConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5710,6 +6645,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (getReconciling() != other.getReconciling()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
+    if (hasClientConnectionConfig() != other.hasClientConnectionConfig()) return false;
+    if (hasClientConnectionConfig()) {
+      if (!getClientConnectionConfig().equals(other.getClientConnectionConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5784,6 +6723,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetAnnotations().getMap().isEmpty()) {
       hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAnnotations().hashCode();
+    }
+    if (hasClientConnectionConfig()) {
+      hash = (37 * hash) + CLIENT_CONNECTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getClientConnectionConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -6007,6 +6950,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       reconciling_ = false;
       etag_ = "";
       internalGetMutableAnnotations().clear();
+      clientConnectionConfig_ = null;
+      if (clientConnectionConfigBuilder_ != null) {
+        clientConnectionConfigBuilder_.dispose();
+        clientConnectionConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -6123,6 +7071,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.clientConnectionConfig_ =
+            clientConnectionConfigBuilder_ == null
+                ? clientConnectionConfig_
+                : clientConnectionConfigBuilder_.build();
       }
     }
 
@@ -6267,6 +7221,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       bitField0_ |= 0x00100000;
+      if (other.hasClientConnectionConfig()) {
+        mergeClientConnectionConfig(other.getClientConnectionConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -6445,6 +7402,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00008000;
                 break;
               } // case 170
+            case 186:
+              {
+                input.readMessage(
+                    getClientConnectionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7995,8 +8959,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Availability type of an Instance.
-     * Defaults to REGIONAL for both primary and read instances.
-     * Note that primary and read instances can have different availability types.
+     * If empty, defaults to REGIONAL for primary instances.
+     * For read pools, availability_type is always UNSPECIFIED. Instances in the
+     * read pools are evenly distributed across available zones within the region
+     * (i.e. read pools with more than one node will have a node in at
+     * least two zones).
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.AvailabilityType availability_type = 11;</code>
@@ -8012,8 +8979,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Availability type of an Instance.
-     * Defaults to REGIONAL for both primary and read instances.
-     * Note that primary and read instances can have different availability types.
+     * If empty, defaults to REGIONAL for primary instances.
+     * For read pools, availability_type is always UNSPECIFIED. Instances in the
+     * read pools are evenly distributed across available zones within the region
+     * (i.e. read pools with more than one node will have a node in at
+     * least two zones).
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.AvailabilityType availability_type = 11;</code>
@@ -8032,8 +9002,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Availability type of an Instance.
-     * Defaults to REGIONAL for both primary and read instances.
-     * Note that primary and read instances can have different availability types.
+     * If empty, defaults to REGIONAL for primary instances.
+     * For read pools, availability_type is always UNSPECIFIED. Instances in the
+     * read pools are evenly distributed across available zones within the region
+     * (i.e. read pools with more than one node will have a node in at
+     * least two zones).
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.AvailabilityType availability_type = 11;</code>
@@ -8053,8 +9026,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Availability type of an Instance.
-     * Defaults to REGIONAL for both primary and read instances.
-     * Note that primary and read instances can have different availability types.
+     * If empty, defaults to REGIONAL for primary instances.
+     * For read pools, availability_type is always UNSPECIFIED. Instances in the
+     * read pools are evenly distributed across available zones within the region
+     * (i.e. read pools with more than one node will have a node in at
+     * least two zones).
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.AvailabilityType availability_type = 11;</code>
@@ -8077,8 +9053,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Availability type of an Instance.
-     * Defaults to REGIONAL for both primary and read instances.
-     * Note that primary and read instances can have different availability types.
+     * If empty, defaults to REGIONAL for primary instances.
+     * For read pools, availability_type is always UNSPECIFIED. Instances in the
+     * read pools are evenly distributed across available zones within the region
+     * (i.e. read pools with more than one node will have a node in at
+     * least two zones).
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.AvailabilityType availability_type = 11;</code>
@@ -8260,6 +9239,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8293,6 +9274,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8317,6 +9300,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8348,6 +9333,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8385,6 +9372,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8418,6 +9407,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8449,6 +9440,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -9298,7 +10291,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -9312,7 +10306,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -9332,7 +10327,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -9354,7 +10350,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -9374,7 +10371,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -9400,7 +10398,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -9419,7 +10418,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -9433,7 +10433,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -9452,7 +10453,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -9934,6 +10936,214 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().putAll(values);
       bitField0_ |= 0x00100000;
       return this;
+    }
+
+    private com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig clientConnectionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig,
+            com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.Builder,
+            com.google.cloud.alloydb.v1.Instance.ClientConnectionConfigOrBuilder>
+        clientConnectionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the clientConnectionConfig field is set.
+     */
+    public boolean hasClientConnectionConfig() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The clientConnectionConfig.
+     */
+    public com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig getClientConnectionConfig() {
+      if (clientConnectionConfigBuilder_ == null) {
+        return clientConnectionConfig_ == null
+            ? com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.getDefaultInstance()
+            : clientConnectionConfig_;
+      } else {
+        return clientConnectionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientConnectionConfig(
+        com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig value) {
+      if (clientConnectionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clientConnectionConfig_ = value;
+      } else {
+        clientConnectionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientConnectionConfig(
+        com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.Builder builderForValue) {
+      if (clientConnectionConfigBuilder_ == null) {
+        clientConnectionConfig_ = builderForValue.build();
+      } else {
+        clientConnectionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeClientConnectionConfig(
+        com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig value) {
+      if (clientConnectionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && clientConnectionConfig_ != null
+            && clientConnectionConfig_
+                != com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig
+                    .getDefaultInstance()) {
+          getClientConnectionConfigBuilder().mergeFrom(value);
+        } else {
+          clientConnectionConfig_ = value;
+        }
+      } else {
+        clientConnectionConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearClientConnectionConfig() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      clientConnectionConfig_ = null;
+      if (clientConnectionConfigBuilder_ != null) {
+        clientConnectionConfigBuilder_.dispose();
+        clientConnectionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.Builder
+        getClientConnectionConfigBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getClientConnectionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.Instance.ClientConnectionConfigOrBuilder
+        getClientConnectionConfigOrBuilder() {
+      if (clientConnectionConfigBuilder_ != null) {
+        return clientConnectionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return clientConnectionConfig_ == null
+            ? com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.getDefaultInstance()
+            : clientConnectionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig,
+            com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.Builder,
+            com.google.cloud.alloydb.v1.Instance.ClientConnectionConfigOrBuilder>
+        getClientConnectionConfigFieldBuilder() {
+      if (clientConnectionConfigBuilder_ == null) {
+        clientConnectionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig,
+                com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig.Builder,
+                com.google.cloud.alloydb.v1.Instance.ClientConnectionConfigOrBuilder>(
+                getClientConnectionConfig(), getParentForChildren(), isClean());
+        clientConnectionConfig_ = null;
+      }
+      return clientConnectionConfigBuilder_;
     }
 
     @java.lang.Override

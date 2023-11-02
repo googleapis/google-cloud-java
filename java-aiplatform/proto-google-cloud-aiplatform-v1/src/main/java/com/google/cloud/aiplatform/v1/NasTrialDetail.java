@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Represents a NasTrial details along with it's parameters. If there is a
+ * Represents a NasTrial details along with its parameters. If there is a
  * corresponding train NasTrial, the train NasTrial is also returned.
  * </pre>
  *
@@ -47,11 +47,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NasTrialDetail();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -483,7 +478,7 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a NasTrial details along with it's parameters. If there is a
+   * Represents a NasTrial details along with its parameters. If there is a
    * corresponding train NasTrial, the train NasTrial is also returned.
    * </pre>
    *

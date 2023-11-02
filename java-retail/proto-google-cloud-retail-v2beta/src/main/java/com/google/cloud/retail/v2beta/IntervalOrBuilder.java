@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,7 +123,7 @@ public interface IntervalOrBuilder
    */
   double getExclusiveMaximum();
 
-  public com.google.cloud.retail.v2beta.Interval.MinCase getMinCase();
+  com.google.cloud.retail.v2beta.Interval.MinCase getMinCase();
 
-  public com.google.cloud.retail.v2beta.Interval.MaxCase getMaxCase();
+  com.google.cloud.retail.v2beta.Interval.MaxCase getMaxCase();
 }

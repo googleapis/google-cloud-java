@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new IamPolicyAnalysisResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -163,11 +158,6 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Resource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1145,8 +1135,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      */
     com.google.cloud.asset.v1.IamPolicyAnalysisStateOrBuilder getAnalysisStateOrBuilder();
 
-    public com.google.cloud.asset.v1.IamPolicyAnalysisResult.Access.OneofAccessCase
-        getOneofAccessCase();
+    com.google.cloud.asset.v1.IamPolicyAnalysisResult.Access.OneofAccessCase getOneofAccessCase();
   }
   /**
    *
@@ -1175,11 +1164,6 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
       return new Access();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.asset.v1.AssetProto
           .internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Access_descriptor;
@@ -1196,6 +1180,8 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
     }
 
     private int oneofAccessCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object oneofAccess_;
 
     public enum OneofAccessCase
@@ -2405,17 +2391,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The identity name in any form of members appear in
+     * The identity of members, formatted as appear in an
      * [IAM policy
-     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-     * as:
+     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+     * example, they might be formatted like the following:
+     *
      * - user:foo&#64;google.com
      * - group:group1&#64;google.com
      * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
      * - projectOwner:some_project_id
      * - domain:google.com
      * - allUsers
-     * - etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2427,17 +2413,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The identity name in any form of members appear in
+     * The identity of members, formatted as appear in an
      * [IAM policy
-     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-     * as:
+     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+     * example, they might be formatted like the following:
+     *
      * - user:foo&#64;google.com
      * - group:group1&#64;google.com
      * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
      * - projectOwner:some_project_id
      * - domain:google.com
      * - allUsers
-     * - etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2510,11 +2496,6 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
       return new Identity();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.asset.v1.AssetProto
           .internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Identity_descriptor;
@@ -2538,17 +2519,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The identity name in any form of members appear in
+     * The identity of members, formatted as appear in an
      * [IAM policy
-     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-     * as:
+     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+     * example, they might be formatted like the following:
+     *
      * - user:foo&#64;google.com
      * - group:group1&#64;google.com
      * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
      * - projectOwner:some_project_id
      * - domain:google.com
      * - allUsers
-     * - etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2571,17 +2552,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The identity name in any form of members appear in
+     * The identity of members, formatted as appear in an
      * [IAM policy
-     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-     * as:
+     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+     * example, they might be formatted like the following:
+     *
      * - user:foo&#64;google.com
      * - group:group1&#64;google.com
      * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
      * - projectOwner:some_project_id
      * - domain:google.com
      * - allUsers
-     * - etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3038,17 +3019,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The identity name in any form of members appear in
+       * The identity of members, formatted as appear in an
        * [IAM policy
-       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-       * as:
+       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+       * example, they might be formatted like the following:
+       *
        * - user:foo&#64;google.com
        * - group:group1&#64;google.com
        * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
        * - projectOwner:some_project_id
        * - domain:google.com
        * - allUsers
-       * - etc.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3070,17 +3051,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The identity name in any form of members appear in
+       * The identity of members, formatted as appear in an
        * [IAM policy
-       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-       * as:
+       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+       * example, they might be formatted like the following:
+       *
        * - user:foo&#64;google.com
        * - group:group1&#64;google.com
        * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
        * - projectOwner:some_project_id
        * - domain:google.com
        * - allUsers
-       * - etc.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3102,17 +3083,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The identity name in any form of members appear in
+       * The identity of members, formatted as appear in an
        * [IAM policy
-       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-       * as:
+       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+       * example, they might be formatted like the following:
+       *
        * - user:foo&#64;google.com
        * - group:group1&#64;google.com
        * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
        * - projectOwner:some_project_id
        * - domain:google.com
        * - allUsers
-       * - etc.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3133,17 +3114,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The identity name in any form of members appear in
+       * The identity of members, formatted as appear in an
        * [IAM policy
-       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-       * as:
+       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+       * example, they might be formatted like the following:
+       *
        * - user:foo&#64;google.com
        * - group:group1&#64;google.com
        * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
        * - projectOwner:some_project_id
        * - domain:google.com
        * - allUsers
-       * - etc.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3160,17 +3141,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The identity name in any form of members appear in
+       * The identity of members, formatted as appear in an
        * [IAM policy
-       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-       * as:
+       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+       * example, they might be formatted like the following:
+       *
        * - user:foo&#64;google.com
        * - group:group1&#64;google.com
        * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
        * - projectOwner:some_project_id
        * - domain:google.com
        * - allUsers
-       * - etc.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3526,11 +3507,6 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Edge();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4570,12 +4546,15 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    * An access control list, derived from the above IAM policy binding, which
    * contains a set of resources and accesses. May include one
    * item from each set to compose an access control entry.
+   *
    * NOTICE that there could be multiple access control lists for one IAM policy
    * binding. The access control lists are created based on resource and access
    * combinations.
+   *
    * For example, assume we have the following cases in one IAM policy binding:
    * - Permission P1 and P2 apply to resource R1 and R2;
    * - Permission P3 applies to resource R2 and R3;
+   *
    * This will result in the following access control lists:
    * - AccessControlList 1: [R1, R2], [P1, P2]
    * - AccessControlList 2: [R2, R3], [P3]
@@ -4603,11 +4582,6 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AccessControlList();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5158,12 +5132,15 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * An access control list, derived from the above IAM policy binding, which
      * contains a set of resources and accesses. May include one
      * item from each set to compose an access control entry.
+     *
      * NOTICE that there could be multiple access control lists for one IAM policy
      * binding. The access control lists are created based on resource and access
      * combinations.
+     *
      * For example, assume we have the following cases in one IAM policy binding:
      * - Permission P1 and P2 apply to resource R1 and R2;
      * - Permission P3 applies to resource R2 and R3;
+     *
      * This will result in the following access control lists:
      * - AccessControlList 1: [R1, R2], [P1, P2]
      * - AccessControlList 2: [R2, R3], [P3]
@@ -7315,11 +7292,6 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IdentityList();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

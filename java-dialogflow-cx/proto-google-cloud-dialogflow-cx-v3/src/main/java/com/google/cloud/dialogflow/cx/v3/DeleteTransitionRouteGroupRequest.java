@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
     return new DeleteTransitionRouteGroupRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupProto
         .internal_static_google_cloud_dialogflow_cx_v3_DeleteTransitionRouteGroupRequest_descriptor;
@@ -81,7 +76,8 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
    * to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition
-   * Route Group ID&gt;`.
+   * Route Group ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
    * </pre>
    *
    * <code>
@@ -110,7 +106,8 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
    * to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition
-   * Route Group ID&gt;`.
+   * Route Group ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
    * </pre>
    *
    * <code>
@@ -140,6 +137,7 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
    * <pre>
    * This field has no effect for transition route group that no page is using.
    * If the transition route group is referenced by any page:
+   *
    * *  If `force` is set to false, an error will be returned with message
    *    indicating pages that reference the transition route group.
    * *  If `force` is set to true, Dialogflow will remove the transition route
@@ -538,7 +536,8 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
      * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
      * to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition
-     * Route Group ID&gt;`.
+     * Route Group ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
      * </pre>
      *
      * <code>
@@ -566,7 +565,8 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
      * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
      * to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition
-     * Route Group ID&gt;`.
+     * Route Group ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
      * </pre>
      *
      * <code>
@@ -594,7 +594,8 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
      * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
      * to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition
-     * Route Group ID&gt;`.
+     * Route Group ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
      * </pre>
      *
      * <code>
@@ -621,7 +622,8 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
      * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
      * to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition
-     * Route Group ID&gt;`.
+     * Route Group ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
      * </pre>
      *
      * <code>
@@ -644,7 +646,8 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
      * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
      * to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition
-     * Route Group ID&gt;`.
+     * Route Group ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
      * </pre>
      *
      * <code>
@@ -672,6 +675,7 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
      * <pre>
      * This field has no effect for transition route group that no page is using.
      * If the transition route group is referenced by any page:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating pages that reference the transition route group.
      * *  If `force` is set to true, Dialogflow will remove the transition route
@@ -692,6 +696,7 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
      * <pre>
      * This field has no effect for transition route group that no page is using.
      * If the transition route group is referenced by any page:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating pages that reference the transition route group.
      * *  If `force` is set to true, Dialogflow will remove the transition route
@@ -716,6 +721,7 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
      * <pre>
      * This field has no effect for transition route group that no page is using.
      * If the transition route group is referenced by any page:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating pages that reference the transition route group.
      * *  If `force` is set to true, Dialogflow will remove the transition route

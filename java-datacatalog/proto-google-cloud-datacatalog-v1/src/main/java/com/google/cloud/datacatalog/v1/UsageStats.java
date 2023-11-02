@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.datacatalog.v1;
  *
  * <pre>
  * Detailed statistics on the entry's usage.
+ *
  * Usage statistics have the following limitations:
+ *
  * - Only BigQuery tables have them.
  * - They only include BigQuery query jobs.
  * - They might be underestimated because wildcard table references
@@ -50,11 +52,6 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UsageStats();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -343,7 +340,9 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Detailed statistics on the entry's usage.
+   *
    * Usage statistics have the following limitations:
+   *
    * - Only BigQuery tables have them.
    * - They only include BigQuery query jobs.
    * - They might be underestimated because wildcard table references

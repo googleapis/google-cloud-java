@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,17 +45,13 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
     storageVolume_ = "";
     storageType_ = 0;
     wwid_ = "";
+    instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Lun();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,6 +129,16 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 4;</code>
      */
     DELETING(4),
+    /**
+     *
+     *
+     * <pre>
+     * The LUN is in cool off state. It will be deleted after `expire_time`.
+     * </pre>
+     *
+     * <code>COOL_OFF = 5;</code>
+     */
+    COOL_OFF(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -186,6 +192,16 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 4;</code>
      */
     public static final int DELETING_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The LUN is in cool off state. It will be deleted after `expire_time`.
+     * </pre>
+     *
+     * <code>COOL_OFF = 5;</code>
+     */
+    public static final int COOL_OFF_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -221,6 +237,8 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
           return READY;
         case 4:
           return DELETING;
+        case 5:
+          return COOL_OFF;
         default:
           return null;
       }
@@ -938,6 +956,130 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int EXPIRE_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp expireTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which LUN will be fully deleted.
+   * It is filled only for LUNs in COOL_OFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpireTime() {
+    return expireTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which LUN will be fully deleted.
+   * It is filled only for LUNs in COOL_OFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The expireTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getExpireTime() {
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which LUN will be fully deleted.
+   * It is filled only for LUNs in COOL_OFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+  }
+
+  public static final int INSTANCES_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList instances_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Lun is attached to.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the instances.
+   */
+  public com.google.protobuf.ProtocolStringList getInstancesList() {
+    return instances_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Lun is attached to.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of instances.
+   */
+  public int getInstancesCount() {
+    return instances_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Lun is attached to.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The instances at the given index.
+   */
+  public java.lang.String getInstances(int index) {
+    return instances_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Lun is attached to.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the instances at the given index.
+   */
+  public com.google.protobuf.ByteString getInstancesBytes(int index) {
+    return instances_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -987,6 +1129,12 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, id_);
     }
+    if (expireTime_ != null) {
+      output.writeMessage(11, getExpireTime());
+    }
+    for (int i = 0; i < instances_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, instances_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1031,6 +1179,17 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, id_);
     }
+    if (expireTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getExpireTime());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < instances_.size(); i++) {
+        dataSize += computeStringSizeNoTag(instances_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getInstancesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1057,6 +1216,11 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
     if (getBootLun() != other.getBootLun()) return false;
     if (storageType_ != other.storageType_) return false;
     if (!getWwid().equals(other.getWwid())) return false;
+    if (hasExpireTime() != other.hasExpireTime()) return false;
+    if (hasExpireTime()) {
+      if (!getExpireTime().equals(other.getExpireTime())) return false;
+    }
+    if (!getInstancesList().equals(other.getInstancesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1088,6 +1252,14 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + storageType_;
     hash = (37 * hash) + WWID_FIELD_NUMBER;
     hash = (53 * hash) + getWwid().hashCode();
+    if (hasExpireTime()) {
+      hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getExpireTime().hashCode();
+    }
+    if (getInstancesCount() > 0) {
+      hash = (37 * hash) + INSTANCES_FIELD_NUMBER;
+      hash = (53 * hash) + getInstancesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1237,6 +1409,12 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       bootLun_ = false;
       storageType_ = 0;
       wwid_ = "";
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
+        expireTimeBuilder_ = null;
+      }
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1302,6 +1480,13 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.wwid_ = wwid_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        instances_.makeImmutable();
+        result.instances_ = instances_;
       }
     }
 
@@ -1386,6 +1571,19 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       if (!other.getWwid().isEmpty()) {
         wwid_ = other.wwid_;
         bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (other.hasExpireTime()) {
+        mergeExpireTime(other.getExpireTime());
+      }
+      if (!other.instances_.isEmpty()) {
+        if (instances_.isEmpty()) {
+          instances_ = other.instances_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureInstancesIsMutable();
+          instances_.addAll(other.instances_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1474,6 +1672,19 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureInstancesIsMutable();
+                instances_.add(s);
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2352,6 +2563,408 @@ public final class Lun extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       wwid_ = value;
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp expireTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        expireTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which LUN will be fully deleted.
+     * It is filled only for LUNs in COOL_OFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the expireTime field is set.
+     */
+    public boolean hasExpireTime() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which LUN will be fully deleted.
+     * It is filled only for LUNs in COOL_OFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The expireTime.
+     */
+    public com.google.protobuf.Timestamp getExpireTime() {
+      if (expireTimeBuilder_ == null) {
+        return expireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expireTime_;
+      } else {
+        return expireTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which LUN will be fully deleted.
+     * It is filled only for LUNs in COOL_OFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expireTime_ = value;
+      } else {
+        expireTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which LUN will be fully deleted.
+     * It is filled only for LUNs in COOL_OFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (expireTimeBuilder_ == null) {
+        expireTime_ = builderForValue.build();
+      } else {
+        expireTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which LUN will be fully deleted.
+     * It is filled only for LUNs in COOL_OFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
+        } else {
+          expireTime_ = value;
+        }
+      } else {
+        expireTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which LUN will be fully deleted.
+     * It is filled only for LUNs in COOL_OFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearExpireTime() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
+        expireTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which LUN will be fully deleted.
+     * It is filled only for LUNs in COOL_OFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getExpireTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which LUN will be fully deleted.
+     * It is filled only for LUNs in COOL_OFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+      if (expireTimeBuilder_ != null) {
+        return expireTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return expireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expireTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which LUN will be fully deleted.
+     * It is filled only for LUNs in COOL_OFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getExpireTimeFieldBuilder() {
+      if (expireTimeBuilder_ == null) {
+        expireTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getExpireTime(), getParentForChildren(), isClean());
+        expireTime_ = null;
+      }
+      return expireTimeBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList instances_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureInstancesIsMutable() {
+      if (!instances_.isModifiable()) {
+        instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Lun is attached to.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the instances.
+     */
+    public com.google.protobuf.ProtocolStringList getInstancesList() {
+      instances_.makeImmutable();
+      return instances_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Lun is attached to.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of instances.
+     */
+    public int getInstancesCount() {
+      return instances_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Lun is attached to.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The instances at the given index.
+     */
+    public java.lang.String getInstances(int index) {
+      return instances_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Lun is attached to.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the instances at the given index.
+     */
+    public com.google.protobuf.ByteString getInstancesBytes(int index) {
+      return instances_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Lun is attached to.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The instances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstances(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureInstancesIsMutable();
+      instances_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Lun is attached to.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The instances to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInstances(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureInstancesIsMutable();
+      instances_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Lun is attached to.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The instances to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllInstances(java.lang.Iterable<java.lang.String> values) {
+      ensureInstancesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Lun is attached to.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInstances() {
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Lun is attached to.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the instances to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInstancesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureInstancesIsMutable();
+      instances_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

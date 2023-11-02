@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   }
 
   private BackendServiceLogConfig() {
-    optionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    optionalFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
     optionalMode_ = "";
   }
 
@@ -46,11 +46,6 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BackendServiceLogConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -286,7 +281,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   public static final int OPTIONAL_FIELDS_FIELD_NUMBER = 528589944;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList optionalFields_;
+  private com.google.protobuf.LazyStringArrayList optionalFields_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -698,8 +694,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       super.clear();
       bitField0_ = 0;
       enable_ = false;
-      optionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      optionalFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       optionalMode_ = "";
       sampleRate_ = 0F;
       return this;
@@ -729,21 +724,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.BackendServiceLogConfig buildPartial() {
       com.google.cloud.compute.v1.BackendServiceLogConfig result =
           new com.google.cloud.compute.v1.BackendServiceLogConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.BackendServiceLogConfig result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        optionalFields_ = optionalFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.optionalFields_ = optionalFields_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.BackendServiceLogConfig result) {
@@ -752,6 +737,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enable_ = enable_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        optionalFields_.makeImmutable();
+        result.optionalFields_ = optionalFields_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.optionalMode_ = optionalMode_;
@@ -816,7 +805,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       if (!other.optionalFields_.isEmpty()) {
         if (optionalFields_.isEmpty()) {
           optionalFields_ = other.optionalFields_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureOptionalFieldsIsMutable();
           optionalFields_.addAll(other.optionalFields_);
@@ -969,14 +958,14 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.protobuf.LazyStringList optionalFields_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList optionalFields_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureOptionalFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!optionalFields_.isModifiable()) {
         optionalFields_ = new com.google.protobuf.LazyStringArrayList(optionalFields_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -990,7 +979,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * @return A list containing the optionalFields.
      */
     public com.google.protobuf.ProtocolStringList getOptionalFieldsList() {
-      return optionalFields_.getUnmodifiableView();
+      optionalFields_.makeImmutable();
+      return optionalFields_;
     }
     /**
      *
@@ -1055,6 +1045,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       }
       ensureOptionalFieldsIsMutable();
       optionalFields_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1076,6 +1067,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       }
       ensureOptionalFieldsIsMutable();
       optionalFields_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1094,6 +1086,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public Builder addAllOptionalFields(java.lang.Iterable<java.lang.String> values) {
       ensureOptionalFieldsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, optionalFields_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1109,8 +1102,9 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearOptionalFields() {
-      optionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      optionalFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1133,6 +1127,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureOptionalFieldsIsMutable();
       optionalFields_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

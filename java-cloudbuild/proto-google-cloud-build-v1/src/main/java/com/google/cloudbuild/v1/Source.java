@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     return new Source();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_Source_descriptor;
@@ -65,6 +60,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -122,7 +119,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If provided, get the source from this location in Google Cloud Storage.
+   * If provided, get the source from this location in Cloud Storage.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -137,7 +134,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If provided, get the source from this location in Google Cloud Storage.
+   * If provided, get the source from this location in Cloud Storage.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -155,7 +152,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If provided, get the source from this location in Google Cloud Storage.
+   * If provided, get the source from this location in Cloud Storage.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -278,7 +275,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If provided, get the source from this manifest in Google Cloud Storage.
+   * If provided, get the source from this manifest in Cloud Storage.
    * This feature is in Preview; see description
    * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
    * </pre>
@@ -295,7 +292,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If provided, get the source from this manifest in Google Cloud Storage.
+   * If provided, get the source from this manifest in Cloud Storage.
    * This feature is in Preview; see description
    * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
    * </pre>
@@ -315,7 +312,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If provided, get the source from this manifest in Google Cloud Storage.
+   * If provided, get the source from this manifest in Cloud Storage.
    * This feature is in Preview; see description
    * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
    * </pre>
@@ -819,7 +816,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this location in Google Cloud Storage.
+     * If provided, get the source from this location in Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -834,7 +831,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this location in Google Cloud Storage.
+     * If provided, get the source from this location in Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -859,7 +856,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this location in Google Cloud Storage.
+     * If provided, get the source from this location in Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -881,7 +878,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this location in Google Cloud Storage.
+     * If provided, get the source from this location in Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -901,7 +898,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this location in Google Cloud Storage.
+     * If provided, get the source from this location in Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -933,7 +930,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this location in Google Cloud Storage.
+     * If provided, get the source from this location in Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -958,7 +955,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this location in Google Cloud Storage.
+     * If provided, get the source from this location in Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -970,7 +967,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this location in Google Cloud Storage.
+     * If provided, get the source from this location in Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -990,7 +987,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this location in Google Cloud Storage.
+     * If provided, get the source from this location in Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
@@ -1449,7 +1446,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this manifest in Google Cloud Storage.
+     * If provided, get the source from this manifest in Cloud Storage.
      * This feature is in Preview; see description
      * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
      * </pre>
@@ -1467,7 +1464,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this manifest in Google Cloud Storage.
+     * If provided, get the source from this manifest in Cloud Storage.
      * This feature is in Preview; see description
      * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
      * </pre>
@@ -1495,7 +1492,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this manifest in Google Cloud Storage.
+     * If provided, get the source from this manifest in Cloud Storage.
      * This feature is in Preview; see description
      * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
      * </pre>
@@ -1520,7 +1517,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this manifest in Google Cloud Storage.
+     * If provided, get the source from this manifest in Cloud Storage.
      * This feature is in Preview; see description
      * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
      * </pre>
@@ -1543,7 +1540,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this manifest in Google Cloud Storage.
+     * If provided, get the source from this manifest in Cloud Storage.
      * This feature is in Preview; see description
      * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
      * </pre>
@@ -1579,7 +1576,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this manifest in Google Cloud Storage.
+     * If provided, get the source from this manifest in Cloud Storage.
      * This feature is in Preview; see description
      * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
      * </pre>
@@ -1607,7 +1604,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this manifest in Google Cloud Storage.
+     * If provided, get the source from this manifest in Cloud Storage.
      * This feature is in Preview; see description
      * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
      * </pre>
@@ -1623,7 +1620,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this manifest in Google Cloud Storage.
+     * If provided, get the source from this manifest in Cloud Storage.
      * This feature is in Preview; see description
      * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
      * </pre>
@@ -1647,7 +1644,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If provided, get the source from this manifest in Google Cloud Storage.
+     * If provided, get the source from this manifest in Cloud Storage.
      * This feature is in Preview; see description
      * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
      * </pre>

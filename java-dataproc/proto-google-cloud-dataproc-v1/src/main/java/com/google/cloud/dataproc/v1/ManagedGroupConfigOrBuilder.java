@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,4 +76,33 @@ public interface ManagedGroupConfigOrBuilder
    * @return The bytes for instanceGroupManagerName.
    */
   com.google.protobuf.ByteString getInstanceGroupManagerNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The partial URI to the instance group manager for this group.
+   * E.g. projects/my-project/regions/us-central1/instanceGroupManagers/my-igm.
+   * </pre>
+   *
+   * <code>string instance_group_manager_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The instanceGroupManagerUri.
+   */
+  java.lang.String getInstanceGroupManagerUri();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The partial URI to the instance group manager for this group.
+   * E.g. projects/my-project/regions/us-central1/instanceGroupManagers/my-igm.
+   * </pre>
+   *
+   * <code>string instance_group_manager_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for instanceGroupManagerUri.
+   */
+  com.google.protobuf.ByteString getInstanceGroupManagerUriBytes();
 }

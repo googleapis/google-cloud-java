@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
     return new CreateAssessmentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_CreateAssessmentRequest_descriptor;
@@ -76,7 +71,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The name of the project in which the assessment will be created,
-   * in the format "projects/{project}".
+   * in the format `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -102,7 +97,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The name of the project in which the assessment will be created,
-   * in the format "projects/{project}".
+   * in the format `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -560,7 +555,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the project in which the assessment will be created,
-     * in the format "projects/{project}".
+     * in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -585,7 +580,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the project in which the assessment will be created,
-     * in the format "projects/{project}".
+     * in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -610,7 +605,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the project in which the assessment will be created,
-     * in the format "projects/{project}".
+     * in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -634,7 +629,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the project in which the assessment will be created,
-     * in the format "projects/{project}".
+     * in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -654,7 +649,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the project in which the assessment will be created,
-     * in the format "projects/{project}".
+     * in the format `projects/{project}`.
      * </pre>
      *
      * <code>

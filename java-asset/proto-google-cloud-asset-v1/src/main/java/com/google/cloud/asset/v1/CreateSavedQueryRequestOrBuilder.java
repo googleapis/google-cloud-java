@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,8 +111,10 @@ public interface CreateSavedQueryRequestOrBuilder
    * Required. The ID to use for the saved query, which must be unique in the
    * specified parent. It will become the final component of the saved query's
    * resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are `[a-z][0-9]-`.
+   *
    * Notice that this field is required in the saved query creation, and the
    * `name` field of the `saved_query` will be ignored.
    * </pre>
@@ -129,8 +131,10 @@ public interface CreateSavedQueryRequestOrBuilder
    * Required. The ID to use for the saved query, which must be unique in the
    * specified parent. It will become the final component of the saved query's
    * resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are `[a-z][0-9]-`.
+   *
    * Notice that this field is required in the saved query creation, and the
    * `name` field of the `saved_query` will be ignored.
    * </pre>

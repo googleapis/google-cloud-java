@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,9 @@ public interface UpdateControlRequestOrBuilder
    * Indicates which fields in the provided
    * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
    * supported:
+   *
    * * [Control.name][google.cloud.retail.v2.Control.name]
+   *
    * If not set or empty, all supported fields are updated.
    * </pre>
    *
@@ -84,7 +86,9 @@ public interface UpdateControlRequestOrBuilder
    * Indicates which fields in the provided
    * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
    * supported:
+   *
    * * [Control.name][google.cloud.retail.v2.Control.name]
+   *
    * If not set or empty, all supported fields are updated.
    * </pre>
    *
@@ -100,7 +104,9 @@ public interface UpdateControlRequestOrBuilder
    * Indicates which fields in the provided
    * [Control][google.cloud.retail.v2.Control] to update. The following are NOT
    * supported:
+   *
    * * [Control.name][google.cloud.retail.v2.Control.name]
+   *
    * If not set or empty, all supported fields are updated.
    * </pre>
    *

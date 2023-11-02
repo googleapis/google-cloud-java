@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     return new GkeCluster();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_GkeCluster_descriptor;
@@ -76,7 +71,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Information specifying a GKE Cluster. Format is
-   * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+   * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
    * </pre>
    *
    * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -100,7 +95,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Information specifying a GKE Cluster. Format is
-   * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+   * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
    * </pre>
    *
    * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -131,6 +126,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
    * control plane endpoint is used. The default IP address is the private IP
    * address for clusters with private control-plane endpoints and the public IP
    * address otherwise.
+   *
    * Only specify this option when `cluster` is a [private GKE
    * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
    * </pre>
@@ -511,7 +507,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information specifying a GKE Cluster. Format is
-     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -534,7 +530,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information specifying a GKE Cluster. Format is
-     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -557,7 +553,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information specifying a GKE Cluster. Format is
-     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -579,7 +575,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information specifying a GKE Cluster. Format is
-     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -597,7 +593,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information specifying a GKE Cluster. Format is
-     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -626,6 +622,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      * control plane endpoint is used. The default IP address is the private IP
      * address for clusters with private control-plane endpoints and the public IP
      * address otherwise.
+     *
      * Only specify this option when `cluster` is a [private GKE
      * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
      * </pre>
@@ -647,6 +644,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      * control plane endpoint is used. The default IP address is the private IP
      * address for clusters with private control-plane endpoints and the public IP
      * address otherwise.
+     *
      * Only specify this option when `cluster` is a [private GKE
      * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
      * </pre>
@@ -672,6 +670,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      * control plane endpoint is used. The default IP address is the private IP
      * address for clusters with private control-plane endpoints and the public IP
      * address otherwise.
+     *
      * Only specify this option when `cluster` is a [private GKE
      * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
      * </pre>

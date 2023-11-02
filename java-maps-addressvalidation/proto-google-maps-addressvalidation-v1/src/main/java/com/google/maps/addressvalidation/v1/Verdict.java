@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Verdict();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -338,6 +333,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    * The granularity of the **input** address. This is the result of parsing the
    * input address and does not give any validation signals. For validation
    * signals, refer to `validation_granularity` below.
+   *
    * For example, if the input address includes a specific apartment number,
    * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
    * the apartment number in the databases or the apartment number is invalid,
@@ -359,6 +355,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    * The granularity of the **input** address. This is the result of parsing the
    * input address and does not give any validation signals. For validation
    * signals, refer to `validation_granularity` below.
+   *
    * For example, if the input address includes a specific apartment number,
    * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
    * the apartment number in the databases or the apartment number is invalid,
@@ -387,6 +384,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    * The granularity level that the API can fully **validate** the address to.
    * For example, an `validation_granularity` of `PREMISE` indicates all address
    * components at the level of `PREMISE` or more coarse can be validated.
+   *
    * Per address component validation result can be found in
    * [google.maps.addressvalidation.v1.Address.address_components].
    * </pre>
@@ -406,6 +404,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    * The granularity level that the API can fully **validate** the address to.
    * For example, an `validation_granularity` of `PREMISE` indicates all address
    * components at the level of `PREMISE` or more coarse can be validated.
+   *
    * Per address component validation result can be found in
    * [google.maps.addressvalidation.v1.Address.address_components].
    * </pre>
@@ -433,6 +432,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    * [`geocode`][google.maps.addressvalidation.v1.ValidationResult.geocode].
    * This can be understood as the semantic meaning of how coarse or fine the
    * geocoded location is.
+   *
    * This can differ from the `validation_granularity` above occasionally. For
    * example, our database might record the existence of an apartment number but
    * do not have a precise location for the apartment within a big apartment
@@ -456,6 +456,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    * [`geocode`][google.maps.addressvalidation.v1.ValidationResult.geocode].
    * This can be understood as the semantic meaning of how coarse or fine the
    * geocoded location is.
+   *
    * This can differ from the `validation_granularity` above occasionally. For
    * example, our database might record the existence of an apartment number but
    * do not have a precise location for the apartment within a big apartment
@@ -1052,6 +1053,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * The granularity of the **input** address. This is the result of parsing the
      * input address and does not give any validation signals. For validation
      * signals, refer to `validation_granularity` below.
+     *
      * For example, if the input address includes a specific apartment number,
      * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
      * the apartment number in the databases or the apartment number is invalid,
@@ -1073,6 +1075,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * The granularity of the **input** address. This is the result of parsing the
      * input address and does not give any validation signals. For validation
      * signals, refer to `validation_granularity` below.
+     *
      * For example, if the input address includes a specific apartment number,
      * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
      * the apartment number in the databases or the apartment number is invalid,
@@ -1097,6 +1100,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * The granularity of the **input** address. This is the result of parsing the
      * input address and does not give any validation signals. For validation
      * signals, refer to `validation_granularity` below.
+     *
      * For example, if the input address includes a specific apartment number,
      * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
      * the apartment number in the databases or the apartment number is invalid,
@@ -1122,6 +1126,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * The granularity of the **input** address. This is the result of parsing the
      * input address and does not give any validation signals. For validation
      * signals, refer to `validation_granularity` below.
+     *
      * For example, if the input address includes a specific apartment number,
      * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
      * the apartment number in the databases or the apartment number is invalid,
@@ -1150,6 +1155,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * The granularity of the **input** address. This is the result of parsing the
      * input address and does not give any validation signals. For validation
      * signals, refer to `validation_granularity` below.
+     *
      * For example, if the input address includes a specific apartment number,
      * then the `input_granularity` here will be `SUB_PREMISE`. If we cannot match
      * the apartment number in the databases or the apartment number is invalid,
@@ -1175,6 +1181,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * The granularity level that the API can fully **validate** the address to.
      * For example, an `validation_granularity` of `PREMISE` indicates all address
      * components at the level of `PREMISE` or more coarse can be validated.
+     *
      * Per address component validation result can be found in
      * [google.maps.addressvalidation.v1.Address.address_components].
      * </pre>
@@ -1195,6 +1202,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * The granularity level that the API can fully **validate** the address to.
      * For example, an `validation_granularity` of `PREMISE` indicates all address
      * components at the level of `PREMISE` or more coarse can be validated.
+     *
      * Per address component validation result can be found in
      * [google.maps.addressvalidation.v1.Address.address_components].
      * </pre>
@@ -1218,6 +1226,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * The granularity level that the API can fully **validate** the address to.
      * For example, an `validation_granularity` of `PREMISE` indicates all address
      * components at the level of `PREMISE` or more coarse can be validated.
+     *
      * Per address component validation result can be found in
      * [google.maps.addressvalidation.v1.Address.address_components].
      * </pre>
@@ -1243,6 +1252,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * The granularity level that the API can fully **validate** the address to.
      * For example, an `validation_granularity` of `PREMISE` indicates all address
      * components at the level of `PREMISE` or more coarse can be validated.
+     *
      * Per address component validation result can be found in
      * [google.maps.addressvalidation.v1.Address.address_components].
      * </pre>
@@ -1270,6 +1280,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * The granularity level that the API can fully **validate** the address to.
      * For example, an `validation_granularity` of `PREMISE` indicates all address
      * components at the level of `PREMISE` or more coarse can be validated.
+     *
      * Per address component validation result can be found in
      * [google.maps.addressvalidation.v1.Address.address_components].
      * </pre>
@@ -1295,6 +1306,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * [`geocode`][google.maps.addressvalidation.v1.ValidationResult.geocode].
      * This can be understood as the semantic meaning of how coarse or fine the
      * geocoded location is.
+     *
      * This can differ from the `validation_granularity` above occasionally. For
      * example, our database might record the existence of an apartment number but
      * do not have a precise location for the apartment within a big apartment
@@ -1318,6 +1330,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * [`geocode`][google.maps.addressvalidation.v1.ValidationResult.geocode].
      * This can be understood as the semantic meaning of how coarse or fine the
      * geocoded location is.
+     *
      * This can differ from the `validation_granularity` above occasionally. For
      * example, our database might record the existence of an apartment number but
      * do not have a precise location for the apartment within a big apartment
@@ -1344,6 +1357,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * [`geocode`][google.maps.addressvalidation.v1.ValidationResult.geocode].
      * This can be understood as the semantic meaning of how coarse or fine the
      * geocoded location is.
+     *
      * This can differ from the `validation_granularity` above occasionally. For
      * example, our database might record the existence of an apartment number but
      * do not have a precise location for the apartment within a big apartment
@@ -1371,6 +1385,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * [`geocode`][google.maps.addressvalidation.v1.ValidationResult.geocode].
      * This can be understood as the semantic meaning of how coarse or fine the
      * geocoded location is.
+     *
      * This can differ from the `validation_granularity` above occasionally. For
      * example, our database might record the existence of an apartment number but
      * do not have a precise location for the apartment within a big apartment
@@ -1401,6 +1416,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * [`geocode`][google.maps.addressvalidation.v1.ValidationResult.geocode].
      * This can be understood as the semantic meaning of how coarse or fine the
      * geocoded location is.
+     *
      * This can differ from the `validation_granularity` above occasionally. For
      * example, our database might record the existence of an apartment number but
      * do not have a precise location for the apartment within a big apartment

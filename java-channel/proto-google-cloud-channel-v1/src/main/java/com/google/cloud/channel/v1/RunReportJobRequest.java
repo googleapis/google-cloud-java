@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class RunReportJobRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RunReportJobRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -199,8 +194,10 @@ public final class RunReportJobRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. A structured string that defines conditions on dimension columns
    * to restrict the report output.
+   *
    * Filters support logical operators (AND, OR, NOT) and conditional operators
    * (=, !=, &lt;, &gt;, &lt;=, and &gt;=) using `column_id` as keys.
+   *
    * For example:
    * `(customer:"accounts/C123abc/customers/S456def" OR
    * customer:"accounts/C123abc/customers/S789ghi") AND
@@ -229,8 +226,10 @@ public final class RunReportJobRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. A structured string that defines conditions on dimension columns
    * to restrict the report output.
+   *
    * Filters support logical operators (AND, OR, NOT) and conditional operators
    * (=, !=, &lt;, &gt;, &lt;=, and &gt;=) using `column_id` as keys.
+   *
    * For example:
    * `(customer:"accounts/C123abc/customers/S456def" OR
    * customer:"accounts/C123abc/customers/S789ghi") AND
@@ -1077,8 +1076,10 @@ public final class RunReportJobRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A structured string that defines conditions on dimension columns
      * to restrict the report output.
+     *
      * Filters support logical operators (AND, OR, NOT) and conditional operators
      * (=, !=, &lt;, &gt;, &lt;=, and &gt;=) using `column_id` as keys.
+     *
      * For example:
      * `(customer:"accounts/C123abc/customers/S456def" OR
      * customer:"accounts/C123abc/customers/S789ghi") AND
@@ -1106,8 +1107,10 @@ public final class RunReportJobRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A structured string that defines conditions on dimension columns
      * to restrict the report output.
+     *
      * Filters support logical operators (AND, OR, NOT) and conditional operators
      * (=, !=, &lt;, &gt;, &lt;=, and &gt;=) using `column_id` as keys.
+     *
      * For example:
      * `(customer:"accounts/C123abc/customers/S456def" OR
      * customer:"accounts/C123abc/customers/S789ghi") AND
@@ -1135,8 +1138,10 @@ public final class RunReportJobRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A structured string that defines conditions on dimension columns
      * to restrict the report output.
+     *
      * Filters support logical operators (AND, OR, NOT) and conditional operators
      * (=, !=, &lt;, &gt;, &lt;=, and &gt;=) using `column_id` as keys.
+     *
      * For example:
      * `(customer:"accounts/C123abc/customers/S456def" OR
      * customer:"accounts/C123abc/customers/S789ghi") AND
@@ -1163,8 +1168,10 @@ public final class RunReportJobRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A structured string that defines conditions on dimension columns
      * to restrict the report output.
+     *
      * Filters support logical operators (AND, OR, NOT) and conditional operators
      * (=, !=, &lt;, &gt;, &lt;=, and &gt;=) using `column_id` as keys.
+     *
      * For example:
      * `(customer:"accounts/C123abc/customers/S456def" OR
      * customer:"accounts/C123abc/customers/S789ghi") AND
@@ -1187,8 +1194,10 @@ public final class RunReportJobRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. A structured string that defines conditions on dimension columns
      * to restrict the report output.
+     *
      * Filters support logical operators (AND, OR, NOT) and conditional operators
      * (=, !=, &lt;, &gt;, &lt;=, and &gt;=) using `column_id` as keys.
+     *
      * For example:
      * `(customer:"accounts/C123abc/customers/S456def" OR
      * customer:"accounts/C123abc/customers/S789ghi") AND

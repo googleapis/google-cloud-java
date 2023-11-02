@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface GetStoredInfoTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the organization and storedInfoType to be read, for
-   * example `organizations/433245324/storedInfoTypes/432452342` or
+   * Required. Resource name of the organization and storedInfoType to be read,
+   * for example `organizations/433245324/storedInfoTypes/432452342` or
    * projects/project-id/storedInfoTypes/432452342.
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface GetStoredInfoTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the organization and storedInfoType to be read, for
-   * example `organizations/433245324/storedInfoTypes/432452342` or
+   * Required. Resource name of the organization and storedInfoType to be read,
+   * for example `organizations/433245324/storedInfoTypes/432452342` or
    * projects/project-id/storedInfoTypes/432452342.
    * </pre>
    *

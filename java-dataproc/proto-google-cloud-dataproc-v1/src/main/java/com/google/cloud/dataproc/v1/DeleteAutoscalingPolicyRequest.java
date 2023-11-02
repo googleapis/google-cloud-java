@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.dataproc.v1;
  *
  * <pre>
  * A request to delete an autoscaling policy.
+ *
  * Autoscaling policies in use by one or more clusters will not be deleted.
  * </pre>
  *
@@ -47,11 +48,6 @@ public final class DeleteAutoscalingPolicyRequest extends com.google.protobuf.Ge
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeleteAutoscalingPolicyRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -79,9 +75,11 @@ public final class DeleteAutoscalingPolicyRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The "resource name" of the autoscaling policy, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.autoscalingPolicies.delete`, the resource name
    *   of the policy has the following format:
    *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *
    * * For `projects.locations.autoscalingPolicies.delete`, the resource name
    *   of the policy has the following format:
    *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -111,9 +109,11 @@ public final class DeleteAutoscalingPolicyRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The "resource name" of the autoscaling policy, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.autoscalingPolicies.delete`, the resource name
    *   of the policy has the following format:
    *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *
    * * For `projects.locations.autoscalingPolicies.delete`, the resource name
    *   of the policy has the following format:
    *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -303,6 +303,7 @@ public final class DeleteAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * A request to delete an autoscaling policy.
+   *
    * Autoscaling policies in use by one or more clusters will not be deleted.
    * </pre>
    *
@@ -489,9 +490,11 @@ public final class DeleteAutoscalingPolicyRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The "resource name" of the autoscaling policy, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies.delete`, the resource name
      *   of the policy has the following format:
      *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     *
      * * For `projects.locations.autoscalingPolicies.delete`, the resource name
      *   of the policy has the following format:
      *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -520,9 +523,11 @@ public final class DeleteAutoscalingPolicyRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The "resource name" of the autoscaling policy, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies.delete`, the resource name
      *   of the policy has the following format:
      *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     *
      * * For `projects.locations.autoscalingPolicies.delete`, the resource name
      *   of the policy has the following format:
      *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -551,9 +556,11 @@ public final class DeleteAutoscalingPolicyRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The "resource name" of the autoscaling policy, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies.delete`, the resource name
      *   of the policy has the following format:
      *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     *
      * * For `projects.locations.autoscalingPolicies.delete`, the resource name
      *   of the policy has the following format:
      *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -581,9 +588,11 @@ public final class DeleteAutoscalingPolicyRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The "resource name" of the autoscaling policy, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies.delete`, the resource name
      *   of the policy has the following format:
      *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     *
      * * For `projects.locations.autoscalingPolicies.delete`, the resource name
      *   of the policy has the following format:
      *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -607,9 +616,11 @@ public final class DeleteAutoscalingPolicyRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The "resource name" of the autoscaling policy, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies.delete`, the resource name
      *   of the policy has the following format:
      *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     *
      * * For `projects.locations.autoscalingPolicies.delete`, the resource name
      *   of the policy has the following format:
      *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`

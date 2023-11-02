@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RenewLeaseRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -198,6 +193,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The desired new lease duration, starting from now.
+   *
+   *
    * The maximum lease duration is 1 week.
    * `lease_duration` will be truncated to the nearest second.
    * </pre>
@@ -216,6 +213,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The desired new lease duration, starting from now.
+   *
+   *
    * The maximum lease duration is 1 week.
    * `lease_duration` will be truncated to the nearest second.
    * </pre>
@@ -236,6 +235,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The desired new lease duration, starting from now.
+   *
+   *
    * The maximum lease duration is 1 week.
    * `lease_duration` will be truncated to the nearest second.
    * </pre>
@@ -258,11 +259,13 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The response_view specifies which subset of the
    * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+   *
    * By default response_view is
    * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
    * retrieved by default because some data, such as payloads, might be
    * desirable to return only when needed because of its large size or because
    * of the sensitivity of data that it contains.
+   *
    * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
    * requires `cloudtasks.tasks.fullView` [Google
    * IAM](https://cloud.google.com/iam/) permission on the
@@ -283,11 +286,13 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The response_view specifies which subset of the
    * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+   *
    * By default response_view is
    * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
    * retrieved by default because some data, such as payloads, might be
    * desirable to return only when needed because of its large size or because
    * of the sensitivity of data that it contains.
+   *
    * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
    * requires `cloudtasks.tasks.fullView` [Google
    * IAM](https://cloud.google.com/iam/) permission on the
@@ -1094,6 +1099,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The desired new lease duration, starting from now.
+     *
+     *
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1111,6 +1118,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The desired new lease duration, starting from now.
+     *
+     *
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1134,6 +1143,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The desired new lease duration, starting from now.
+     *
+     *
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1159,6 +1170,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The desired new lease duration, starting from now.
+     *
+     *
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1181,6 +1194,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The desired new lease duration, starting from now.
+     *
+     *
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1209,6 +1224,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The desired new lease duration, starting from now.
+     *
+     *
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1231,6 +1248,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The desired new lease duration, starting from now.
+     *
+     *
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1248,6 +1267,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The desired new lease duration, starting from now.
+     *
+     *
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1269,6 +1290,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The desired new lease duration, starting from now.
+     *
+     *
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1300,11 +1323,13 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The response_view specifies which subset of the
      * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     *
      * By default response_view is
      * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
      * retrieved by default because some data, such as payloads, might be
      * desirable to return only when needed because of its large size or because
      * of the sensitivity of data that it contains.
+     *
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
      * requires `cloudtasks.tasks.fullView` [Google
      * IAM](https://cloud.google.com/iam/) permission on the
@@ -1325,11 +1350,13 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The response_view specifies which subset of the
      * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     *
      * By default response_view is
      * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
      * retrieved by default because some data, such as payloads, might be
      * desirable to return only when needed because of its large size or because
      * of the sensitivity of data that it contains.
+     *
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
      * requires `cloudtasks.tasks.fullView` [Google
      * IAM](https://cloud.google.com/iam/) permission on the
@@ -1353,11 +1380,13 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The response_view specifies which subset of the
      * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     *
      * By default response_view is
      * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
      * retrieved by default because some data, such as payloads, might be
      * desirable to return only when needed because of its large size or because
      * of the sensitivity of data that it contains.
+     *
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
      * requires `cloudtasks.tasks.fullView` [Google
      * IAM](https://cloud.google.com/iam/) permission on the
@@ -1380,11 +1409,13 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The response_view specifies which subset of the
      * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     *
      * By default response_view is
      * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
      * retrieved by default because some data, such as payloads, might be
      * desirable to return only when needed because of its large size or because
      * of the sensitivity of data that it contains.
+     *
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
      * requires `cloudtasks.tasks.fullView` [Google
      * IAM](https://cloud.google.com/iam/) permission on the
@@ -1411,11 +1442,13 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The response_view specifies which subset of the
      * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     *
      * By default response_view is
      * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
      * retrieved by default because some data, such as payloads, might be
      * desirable to return only when needed because of its large size or because
      * of the sensitivity of data that it contains.
+     *
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
      * requires `cloudtasks.tasks.fullView` [Google
      * IAM](https://cloud.google.com/iam/) permission on the

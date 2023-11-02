@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -807,30 +807,39 @@ public interface ModelOrBuilder
    * If
    * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
    * exists, the instances should be given as per that schema.
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
    * syntax. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+   *
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
    * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig]
    * object.
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -858,30 +867,39 @@ public interface ModelOrBuilder
    * If
    * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
    * exists, the instances should be given as per that schema.
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
    * syntax. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+   *
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
    * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig]
    * object.
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -909,30 +927,39 @@ public interface ModelOrBuilder
    * If
    * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
    * exists, the instances should be given as per that schema.
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
    * syntax. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+   *
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
    * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig]
    * object.
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -961,30 +988,39 @@ public interface ModelOrBuilder
    * If
    * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
    * exists, the instances should be given as per that schema.
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
    * syntax. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.bigquery_source].
+   *
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
    * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig]
    * object.
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -1018,19 +1054,25 @@ public interface ModelOrBuilder
    * exist, the predictions are returned together with their instances. In other
    * words, the prediction has the original instance data first, followed by the
    * actual prediction content (as per the schema).
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
    * [GcsDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `csv`
    * The CSV format, where each prediction is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `bigquery`
    * Each prediction is a single row in a BigQuery table, uses
    * [BigQueryDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -1062,19 +1104,25 @@ public interface ModelOrBuilder
    * exist, the predictions are returned together with their instances. In other
    * words, the prediction has the original instance data first, followed by the
    * actual prediction content (as per the schema).
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
    * [GcsDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `csv`
    * The CSV format, where each prediction is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `bigquery`
    * Each prediction is a single row in a BigQuery table, uses
    * [BigQueryDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -1106,19 +1154,25 @@ public interface ModelOrBuilder
    * exist, the predictions are returned together with their instances. In other
    * words, the prediction has the original instance data first, followed by the
    * actual prediction content (as per the schema).
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
    * [GcsDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `csv`
    * The CSV format, where each prediction is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `bigquery`
    * Each prediction is a single row in a BigQuery table, uses
    * [BigQueryDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -1151,19 +1205,25 @@ public interface ModelOrBuilder
    * exist, the predictions are returned together with their instances. In other
    * words, the prediction has the original instance data first, followed by the
    * actual prediction content (as per the schema).
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
    * [GcsDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `csv`
    * The CSV format, where each prediction is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `bigquery`
    * Each prediction is a single row in a BigQuery table, uses
    * [BigQueryDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -1333,6 +1393,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * The default explanation specification for this Model.
+   *
    * The Model can be used for
    * [requesting
    * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
@@ -1341,6 +1402,7 @@ public interface ModelOrBuilder
    * it is populated. The Model can be used for [batch
    * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
    * if it is populated.
+   *
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
    * of
@@ -1349,6 +1411,7 @@ public interface ModelOrBuilder
    * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
    * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
+   *
    * If the default explanation specification is not set for this Model, this
    * Model can still be used for
    * [requesting
@@ -1375,6 +1438,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * The default explanation specification for this Model.
+   *
    * The Model can be used for
    * [requesting
    * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
@@ -1383,6 +1447,7 @@ public interface ModelOrBuilder
    * it is populated. The Model can be used for [batch
    * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
    * if it is populated.
+   *
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
    * of
@@ -1391,6 +1456,7 @@ public interface ModelOrBuilder
    * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
    * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
+   *
    * If the default explanation specification is not set for this Model, this
    * Model can still be used for
    * [requesting
@@ -1417,6 +1483,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * The default explanation specification for this Model.
+   *
    * The Model can be used for
    * [requesting
    * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
@@ -1425,6 +1492,7 @@ public interface ModelOrBuilder
    * it is populated. The Model can be used for [batch
    * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
    * if it is populated.
+   *
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
    * of
@@ -1433,6 +1501,7 @@ public interface ModelOrBuilder
    * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
    * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
+   *
    * If the default explanation specification is not set for this Model, this
    * Model can still be used for
    * [requesting
@@ -1485,9 +1554,11 @@ public interface ModelOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Models.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1499,9 +1570,11 @@ public interface ModelOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Models.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1516,9 +1589,11 @@ public interface ModelOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Models.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1530,9 +1605,11 @@ public interface ModelOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Models.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1548,9 +1625,11 @@ public interface ModelOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Models.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *

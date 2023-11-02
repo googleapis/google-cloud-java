@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,6 +93,7 @@ public class TranscoderServiceClientHttpJsonTest {
             .setTtlAfterCompletionDays(107576420)
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
+            .setBatchModePriority(2137003131)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -147,6 +148,7 @@ public class TranscoderServiceClientHttpJsonTest {
             .setTtlAfterCompletionDays(107576420)
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
+            .setBatchModePriority(2137003131)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -301,6 +303,7 @@ public class TranscoderServiceClientHttpJsonTest {
             .setTtlAfterCompletionDays(107576420)
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
+            .setBatchModePriority(2137003131)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -353,6 +356,7 @@ public class TranscoderServiceClientHttpJsonTest {
             .setTtlAfterCompletionDays(107576420)
             .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
+            .setBatchModePriority(2137003131)
             .build();
     mockService.addResponse(expectedResponse);
 

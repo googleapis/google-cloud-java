@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     return new EntityType();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.EntityTypeProto
         .internal_static_google_cloud_aiplatform_v1_EntityType_descriptor;
@@ -93,6 +88,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Immutable. Name of the EntityType.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *
    * The last part entity_type is assigned by the client. The entity_type can be
    * up to 64 characters long and can consist only of ASCII Latin letters A-Z
    * and a-z and underscore(_), and ASCII digits 0-9 starting with a letter. The
@@ -122,6 +118,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Immutable. Name of the EntityType.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *
    * The last part entity_type is assigned by the client. The entity_type can be
    * up to 64 characters long and can consist only of ASCII Latin letters A-Z
    * and a-z and underscore(_), and ASCII digits 0-9 starting with a letter. The
@@ -326,9 +323,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * EntityTypes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one EntityType (System
    * labels are excluded)."
@@ -357,9 +356,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * EntityTypes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one EntityType (System
    * labels are excluded)."
@@ -379,9 +380,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * EntityTypes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one EntityType (System
    * labels are excluded)."
@@ -408,9 +411,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * EntityTypes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one EntityType (System
    * labels are excluded)."
@@ -495,6 +500,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * type
    * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
    * STRING, DOUBLE or INT64 under this EntityType.
+   *
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -519,6 +525,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * type
    * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
    * STRING, DOUBLE or INT64 under this EntityType.
+   *
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -545,6 +552,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * type
    * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
    * STRING, DOUBLE or INT64 under this EntityType.
+   *
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -1157,6 +1165,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the EntityType.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     *
      * The last part entity_type is assigned by the client. The entity_type can be
      * up to 64 characters long and can consist only of ASCII Latin letters A-Z
      * and a-z and underscore(_), and ASCII digits 0-9 starting with a letter. The
@@ -1185,6 +1194,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the EntityType.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     *
      * The last part entity_type is assigned by the client. The entity_type can be
      * up to 64 characters long and can consist only of ASCII Latin letters A-Z
      * and a-z and underscore(_), and ASCII digits 0-9 starting with a letter. The
@@ -1213,6 +1223,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the EntityType.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     *
      * The last part entity_type is assigned by the client. The entity_type can be
      * up to 64 characters long and can consist only of ASCII Latin letters A-Z
      * and a-z and underscore(_), and ASCII digits 0-9 starting with a letter. The
@@ -1240,6 +1251,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the EntityType.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     *
      * The last part entity_type is assigned by the client. The entity_type can be
      * up to 64 characters long and can consist only of ASCII Latin letters A-Z
      * and a-z and underscore(_), and ASCII digits 0-9 starting with a letter. The
@@ -1263,6 +1275,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the EntityType.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     *
      * The last part entity_type is assigned by the client. The entity_type can be
      * up to 64 characters long and can consist only of ASCII Latin letters A-Z
      * and a-z and underscore(_), and ASCII digits 0-9 starting with a letter. The
@@ -1824,9 +1837,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * EntityTypes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one EntityType (System
      * labels are excluded)."
@@ -1855,9 +1870,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * EntityTypes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one EntityType (System
      * labels are excluded)."
@@ -1877,9 +1894,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * EntityTypes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one EntityType (System
      * labels are excluded)."
@@ -1906,9 +1925,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * EntityTypes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one EntityType (System
      * labels are excluded)."
@@ -1941,9 +1962,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * EntityTypes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one EntityType (System
      * labels are excluded)."
@@ -1972,9 +1995,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * EntityTypes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one EntityType (System
      * labels are excluded)."
@@ -2001,9 +2026,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * EntityTypes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one EntityType (System
      * labels are excluded)."
@@ -2144,6 +2171,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * type
      * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
      * STRING, DOUBLE or INT64 under this EntityType.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2167,6 +2195,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * type
      * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
      * STRING, DOUBLE or INT64 under this EntityType.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2196,6 +2225,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * type
      * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
      * STRING, DOUBLE or INT64 under this EntityType.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2228,6 +2258,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * type
      * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
      * STRING, DOUBLE or INT64 under this EntityType.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2257,6 +2288,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * type
      * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
      * STRING, DOUBLE or INT64 under this EntityType.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2294,6 +2326,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * type
      * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
      * STRING, DOUBLE or INT64 under this EntityType.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2322,6 +2355,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * type
      * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
      * STRING, DOUBLE or INT64 under this EntityType.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2346,6 +2380,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * type
      * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
      * STRING, DOUBLE or INT64 under this EntityType.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2374,6 +2409,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * type
      * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
      * STRING, DOUBLE or INT64 under this EntityType.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is

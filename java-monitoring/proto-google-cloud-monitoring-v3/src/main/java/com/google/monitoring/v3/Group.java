@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ package com.google.monitoring.v3;
  * that resource is a member of that group.  Groups can contain any number of
  * monitored resources, and each monitored resource can be a member of any
  * number of groups.
+ *
  * Groups can be nested in parent-child hierarchies. The `parentName` field
  * identifies an optional parent for each group.  If a group has a parent, then
  * the only monitored resources available to be matched by the group's filter
@@ -35,6 +36,7 @@ package com.google.monitoring.v3;
  * contains the monitored resources that match its filter and the filters of all
  * the group's ancestors.  A group without a parent can contain any monitored
  * resource.
+ *
  * For example, consider an infrastructure running a set of instances with two
  * user-defined tags: `"environment"` and `"role"`. A parent group has a filter,
  * `environment="production"`.  A child of that parent group has a filter,
@@ -42,6 +44,7 @@ package com.google.monitoring.v3;
  * production environment, regardless of their roles.  The child group contains
  * instances that have the transcoder role *and* are in the production
  * environment.
+ *
  * The monitored resources contained in a group can change at any moment,
  * depending on what resources exist and what filters are associated with the
  * group and its ancestors.
@@ -72,11 +75,6 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     return new Group();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.GroupProto
         .internal_static_google_monitoring_v3_Group_descriptor;
@@ -100,7 +98,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The name of this group. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * When creating a group, this field is ignored and a new name is created
    * consisting of the project specified in the call to `CreateGroup`
    * and a unique `[GROUP_ID]` that is generated automatically.
@@ -127,7 +127,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The name of this group. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * When creating a group, this field is ignored and a new name is created
    * consisting of the project specified in the call to `CreateGroup`
    * and a unique `[GROUP_ID]` that is generated automatically.
@@ -210,7 +212,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the group's parent, if it has one. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * For groups with no parent, `parent_name` is the empty string, `""`.
    * </pre>
    *
@@ -235,7 +239,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the group's parent, if it has one. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * For groups with no parent, `parent_name` is the empty string, `""`.
    * </pre>
    *
@@ -531,6 +537,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * that resource is a member of that group.  Groups can contain any number of
    * monitored resources, and each monitored resource can be a member of any
    * number of groups.
+   *
    * Groups can be nested in parent-child hierarchies. The `parentName` field
    * identifies an optional parent for each group.  If a group has a parent, then
    * the only monitored resources available to be matched by the group's filter
@@ -538,6 +545,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * contains the monitored resources that match its filter and the filters of all
    * the group's ancestors.  A group without a parent can contain any monitored
    * resource.
+   *
    * For example, consider an infrastructure running a set of instances with two
    * user-defined tags: `"environment"` and `"role"`. A parent group has a filter,
    * `environment="production"`.  A child of that parent group has a filter,
@@ -545,6 +553,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    * production environment, regardless of their roles.  The child group contains
    * instances that have the transcoder role *and* are in the production
    * environment.
+   *
    * The monitored resources contained in a group can change at any moment,
    * depending on what resources exist and what filters are associated with the
    * group and its ancestors.
@@ -787,7 +796,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of this group. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * When creating a group, this field is ignored and a new name is created
      * consisting of the project specified in the call to `CreateGroup`
      * and a unique `[GROUP_ID]` that is generated automatically.
@@ -813,7 +824,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of this group. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * When creating a group, this field is ignored and a new name is created
      * consisting of the project specified in the call to `CreateGroup`
      * and a unique `[GROUP_ID]` that is generated automatically.
@@ -839,7 +852,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of this group. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * When creating a group, this field is ignored and a new name is created
      * consisting of the project specified in the call to `CreateGroup`
      * and a unique `[GROUP_ID]` that is generated automatically.
@@ -864,7 +879,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of this group. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * When creating a group, this field is ignored and a new name is created
      * consisting of the project specified in the call to `CreateGroup`
      * and a unique `[GROUP_ID]` that is generated automatically.
@@ -885,7 +902,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of this group. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * When creating a group, this field is ignored and a new name is created
      * consisting of the project specified in the call to `CreateGroup`
      * and a unique `[GROUP_ID]` that is generated automatically.
@@ -1019,7 +1038,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the group's parent, if it has one. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * For groups with no parent, `parent_name` is the empty string, `""`.
      * </pre>
      *
@@ -1043,7 +1064,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the group's parent, if it has one. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * For groups with no parent, `parent_name` is the empty string, `""`.
      * </pre>
      *
@@ -1067,7 +1090,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the group's parent, if it has one. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * For groups with no parent, `parent_name` is the empty string, `""`.
      * </pre>
      *
@@ -1090,7 +1115,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the group's parent, if it has one. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * For groups with no parent, `parent_name` is the empty string, `""`.
      * </pre>
      *
@@ -1109,7 +1136,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the group's parent, if it has one. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * For groups with no parent, `parent_name` is the empty string, `""`.
      * </pre>
      *

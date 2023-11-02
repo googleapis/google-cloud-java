@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.protobuf.AbstractMessage;
+import com.google.rpc.Status;
 import google.cloud.policytroubleshooter.v1.Explanations;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -83,6 +84,7 @@ public class IamCheckerClientTest {
         TroubleshootIamPolicyResponse.newBuilder()
             .setAccess(Explanations.AccessState.forNumber(0))
             .addAllExplainedPolicies(new ArrayList<Explanations.ExplainedPolicy>())
+            .addAllErrors(new ArrayList<Status>())
             .build();
     mockIamChecker.addResponse(expectedResponse);
 

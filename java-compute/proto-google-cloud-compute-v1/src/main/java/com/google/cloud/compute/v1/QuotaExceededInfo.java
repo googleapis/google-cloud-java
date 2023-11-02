@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,17 +40,13 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
   private QuotaExceededInfo() {
     limitName_ = "";
     metricName_ = "";
+    rolloutStatus_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new QuotaExceededInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,6 +73,163 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.QuotaExceededInfo.class,
             com.google.cloud.compute.v1.QuotaExceededInfo.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Rollout status of the future quota limit.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.QuotaExceededInfo.RolloutStatus}
+   */
+  public enum RolloutStatus implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ROLLOUT_STATUS = 0;</code>
+     */
+    UNDEFINED_ROLLOUT_STATUS(0),
+    /**
+     *
+     *
+     * <pre>
+     * IN_PROGRESS - A rollout is in process which will change the limit value to future limit.
+     * </pre>
+     *
+     * <code>IN_PROGRESS = 469193735;</code>
+     */
+    IN_PROGRESS(469193735),
+    /**
+     *
+     *
+     * <pre>
+     * ROLLOUT_STATUS_UNSPECIFIED - Rollout status is not specified. The default value.
+     * </pre>
+     *
+     * <code>ROLLOUT_STATUS_UNSPECIFIED = 26864568;</code>
+     */
+    ROLLOUT_STATUS_UNSPECIFIED(26864568),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ROLLOUT_STATUS = 0;</code>
+     */
+    public static final int UNDEFINED_ROLLOUT_STATUS_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * IN_PROGRESS - A rollout is in process which will change the limit value to future limit.
+     * </pre>
+     *
+     * <code>IN_PROGRESS = 469193735;</code>
+     */
+    public static final int IN_PROGRESS_VALUE = 469193735;
+    /**
+     *
+     *
+     * <pre>
+     * ROLLOUT_STATUS_UNSPECIFIED - Rollout status is not specified. The default value.
+     * </pre>
+     *
+     * <code>ROLLOUT_STATUS_UNSPECIFIED = 26864568;</code>
+     */
+    public static final int ROLLOUT_STATUS_UNSPECIFIED_VALUE = 26864568;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RolloutStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RolloutStatus forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_ROLLOUT_STATUS;
+        case 469193735:
+          return IN_PROGRESS;
+        case 26864568:
+          return ROLLOUT_STATUS_UNSPECIFIED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RolloutStatus> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RolloutStatus> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<RolloutStatus>() {
+          public RolloutStatus findValueByNumber(int number) {
+            return RolloutStatus.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.QuotaExceededInfo.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final RolloutStatus[] VALUES = values();
+
+    public static RolloutStatus valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RolloutStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.QuotaExceededInfo.RolloutStatus)
   }
 
   private int bitField0_;
@@ -182,6 +335,39 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     return map.get(key);
   }
 
+  public static final int FUTURE_LIMIT_FIELD_NUMBER = 456564287;
+  private double futureLimit_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+   * </pre>
+   *
+   * <code>optional double future_limit = 456564287;</code>
+   *
+   * @return Whether the futureLimit field is set.
+   */
+  @java.lang.Override
+  public boolean hasFutureLimit() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+   * </pre>
+   *
+   * <code>optional double future_limit = 456564287;</code>
+   *
+   * @return The futureLimit.
+   */
+  @java.lang.Override
+  public double getFutureLimit() {
+    return futureLimit_;
+  }
+
   public static final int LIMIT_FIELD_NUMBER = 102976443;
   private double limit_ = 0D;
   /**
@@ -197,7 +383,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasLimit() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -232,7 +418,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasLimitName() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -298,7 +484,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasMetricName() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -347,6 +533,75 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int ROLLOUT_STATUS_FIELD_NUMBER = 476426816;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rolloutStatus_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Rollout status of the future quota limit.
+   * Check the RolloutStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string rollout_status = 476426816;</code>
+   *
+   * @return Whether the rolloutStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasRolloutStatus() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Rollout status of the future quota limit.
+   * Check the RolloutStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string rollout_status = 476426816;</code>
+   *
+   * @return The rolloutStatus.
+   */
+  @java.lang.Override
+  public java.lang.String getRolloutStatus() {
+    java.lang.Object ref = rolloutStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rolloutStatus_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Rollout status of the future quota limit.
+   * Check the RolloutStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string rollout_status = 476426816;</code>
+   *
+   * @return The bytes for rolloutStatus.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRolloutStatusBytes() {
+    java.lang.Object ref = rolloutStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      rolloutStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -361,17 +616,23 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(102976443, limit_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 398197903, limitName_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 409881530, metricName_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetDimensions(), DimensionsDefaultEntryHolder.defaultEntry, 414334925);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeDouble(456564287, futureLimit_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 476426816, rolloutStatus_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -381,13 +642,13 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(102976443, limit_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(398197903, limitName_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(409881530, metricName_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -399,6 +660,12 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(414334925, dimensions__);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(456564287, futureLimit_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(476426816, rolloutStatus_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -417,6 +684,11 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         (com.google.cloud.compute.v1.QuotaExceededInfo) obj;
 
     if (!internalGetDimensions().equals(other.internalGetDimensions())) return false;
+    if (hasFutureLimit() != other.hasFutureLimit()) return false;
+    if (hasFutureLimit()) {
+      if (java.lang.Double.doubleToLongBits(getFutureLimit())
+          != java.lang.Double.doubleToLongBits(other.getFutureLimit())) return false;
+    }
     if (hasLimit() != other.hasLimit()) return false;
     if (hasLimit()) {
       if (java.lang.Double.doubleToLongBits(getLimit())
@@ -429,6 +701,10 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     if (hasMetricName() != other.hasMetricName()) return false;
     if (hasMetricName()) {
       if (!getMetricName().equals(other.getMetricName())) return false;
+    }
+    if (hasRolloutStatus() != other.hasRolloutStatus()) return false;
+    if (hasRolloutStatus()) {
+      if (!getRolloutStatus().equals(other.getRolloutStatus())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -445,6 +721,13 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + DIMENSIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetDimensions().hashCode();
     }
+    if (hasFutureLimit()) {
+      hash = (37 * hash) + FUTURE_LIMIT_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getFutureLimit()));
+    }
     if (hasLimit()) {
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash =
@@ -459,6 +742,10 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     if (hasMetricName()) {
       hash = (37 * hash) + METRIC_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getMetricName().hashCode();
+    }
+    if (hasRolloutStatus()) {
+      hash = (37 * hash) + ROLLOUT_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getRolloutStatus().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -620,9 +907,11 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       internalGetMutableDimensions().clear();
+      futureLimit_ = 0D;
       limit_ = 0D;
       limitName_ = "";
       metricName_ = "";
+      rolloutStatus_ = "";
       return this;
     }
 
@@ -665,16 +954,24 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.limit_ = limit_;
+        result.futureLimit_ = futureLimit_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.limitName_ = limitName_;
+        result.limit_ = limit_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.metricName_ = metricName_;
+        result.limitName_ = limitName_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.metricName_ = metricName_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.rolloutStatus_ = rolloutStatus_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -726,17 +1023,25 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.compute.v1.QuotaExceededInfo.getDefaultInstance()) return this;
       internalGetMutableDimensions().mergeFrom(other.internalGetDimensions());
       bitField0_ |= 0x00000001;
+      if (other.hasFutureLimit()) {
+        setFutureLimit(other.getFutureLimit());
+      }
       if (other.hasLimit()) {
         setLimit(other.getLimit());
       }
       if (other.hasLimitName()) {
         limitName_ = other.limitName_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasMetricName()) {
         metricName_ = other.metricName_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (other.hasRolloutStatus()) {
+        rolloutStatus_ = other.rolloutStatus_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -768,19 +1073,19 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
             case 823811545:
               {
                 limit_ = input.readDouble();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 823811545
             case -1109384070:
               {
                 limitName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1109384070
             case -1015915054:
               {
                 metricName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1015915054
             case -980287894:
@@ -795,6 +1100,18 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000001;
                 break;
               } // case -980287894
+            case -642452999:
+              {
+                futureLimit_ = input.readDouble();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -642452999
+            case -483552766:
+              {
+                rolloutStatus_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -483552766
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -980,6 +1297,74 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private double futureLimit_;
+    /**
+     *
+     *
+     * <pre>
+     * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+     * </pre>
+     *
+     * <code>optional double future_limit = 456564287;</code>
+     *
+     * @return Whether the futureLimit field is set.
+     */
+    @java.lang.Override
+    public boolean hasFutureLimit() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+     * </pre>
+     *
+     * <code>optional double future_limit = 456564287;</code>
+     *
+     * @return The futureLimit.
+     */
+    @java.lang.Override
+    public double getFutureLimit() {
+      return futureLimit_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+     * </pre>
+     *
+     * <code>optional double future_limit = 456564287;</code>
+     *
+     * @param value The futureLimit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFutureLimit(double value) {
+
+      futureLimit_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+     * </pre>
+     *
+     * <code>optional double future_limit = 456564287;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFutureLimit() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      futureLimit_ = 0D;
+      onChanged();
+      return this;
+    }
+
     private double limit_;
     /**
      *
@@ -994,7 +1379,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasLimit() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1026,7 +1411,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
     public Builder setLimit(double value) {
 
       limit_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1042,7 +1427,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLimit() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       limit_ = 0D;
       onChanged();
       return this;
@@ -1061,7 +1446,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      * @return Whether the limitName field is set.
      */
     public boolean hasLimitName() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1124,7 +1509,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       limitName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1141,7 +1526,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearLimitName() {
       limitName_ = getDefaultInstance().getLimitName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1163,7 +1548,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       limitName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1181,7 +1566,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      * @return Whether the metricName field is set.
      */
     public boolean hasMetricName() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1244,7 +1629,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       metricName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1261,7 +1646,7 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearMetricName() {
       metricName_ = getDefaultInstance().getMetricName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1283,7 +1668,133 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       metricName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object rolloutStatus_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Rollout status of the future quota limit.
+     * Check the RolloutStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string rollout_status = 476426816;</code>
+     *
+     * @return Whether the rolloutStatus field is set.
+     */
+    public boolean hasRolloutStatus() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout status of the future quota limit.
+     * Check the RolloutStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string rollout_status = 476426816;</code>
+     *
+     * @return The rolloutStatus.
+     */
+    public java.lang.String getRolloutStatus() {
+      java.lang.Object ref = rolloutStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rolloutStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout status of the future quota limit.
+     * Check the RolloutStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string rollout_status = 476426816;</code>
+     *
+     * @return The bytes for rolloutStatus.
+     */
+    public com.google.protobuf.ByteString getRolloutStatusBytes() {
+      java.lang.Object ref = rolloutStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rolloutStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout status of the future quota limit.
+     * Check the RolloutStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string rollout_status = 476426816;</code>
+     *
+     * @param value The rolloutStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRolloutStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      rolloutStatus_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout status of the future quota limit.
+     * Check the RolloutStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string rollout_status = 476426816;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRolloutStatus() {
+      rolloutStatus_ = getDefaultInstance().getRolloutStatus();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout status of the future quota limit.
+     * Check the RolloutStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string rollout_status = 476426816;</code>
+     *
+     * @param value The bytes for rolloutStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRolloutStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      rolloutStatus_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

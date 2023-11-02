@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ package com.google.cloud.translate.v3;
  *
  *
  * <pre>
- * Configures which glossary should be used for a specific target language,
- * and defines options for applying that glossary.
+ * Configures which glossary is used for a specific target language and defines
+ * options for applying that glossary.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3.TranslateTextGlossaryConfig}
@@ -46,11 +46,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TranslateTextGlossaryConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,7 +72,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The `glossary` to be applied for this translation.
+   *
    * The format depends on the glossary:
+   *
    * - User-provided custom glossary:
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
@@ -103,7 +100,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The `glossary` to be applied for this translation.
+   *
    * The format depends on the glossary:
+   *
    * - User-provided custom glossary:
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
@@ -317,8 +316,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Configures which glossary should be used for a specific target language,
-   * and defines options for applying that glossary.
+   * Configures which glossary is used for a specific target language and defines
+   * options for applying that glossary.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3.TranslateTextGlossaryConfig}
@@ -516,7 +515,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
+     *
      * The format depends on the glossary:
+     *
      * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
@@ -541,7 +542,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
+     *
      * The format depends on the glossary:
+     *
      * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
@@ -566,7 +569,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
+     *
      * The format depends on the glossary:
+     *
      * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
@@ -590,7 +595,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
+     *
      * The format depends on the glossary:
+     *
      * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
@@ -610,7 +617,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
+     *
      * The format depends on the glossary:
+     *
      * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>

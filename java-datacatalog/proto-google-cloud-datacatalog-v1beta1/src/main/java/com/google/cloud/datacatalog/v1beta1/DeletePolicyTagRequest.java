@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeletePolicyTagRequest extends com.google.protobuf.GeneratedM
     return new DeletePolicyTagRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.PolicyTagManagerProto
         .internal_static_google_cloud_datacatalog_v1beta1_DeletePolicyTagRequest_descriptor;
@@ -76,8 +71,8 @@ public final class DeletePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Resource name of the policy tag to be deleted. All of its descendant
-   * policy tags will also be deleted.
+   * Required. Resource name of the policy tag to be deleted. All of its
+   * descendant policy tags will also be deleted.
    * </pre>
    *
    * <code>
@@ -102,8 +97,8 @@ public final class DeletePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Resource name of the policy tag to be deleted. All of its descendant
-   * policy tags will also be deleted.
+   * Required. Resource name of the policy tag to be deleted. All of its
+   * descendant policy tags will also be deleted.
    * </pre>
    *
    * <code>
@@ -474,8 +469,8 @@ public final class DeletePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Resource name of the policy tag to be deleted. All of its descendant
-     * policy tags will also be deleted.
+     * Required. Resource name of the policy tag to be deleted. All of its
+     * descendant policy tags will also be deleted.
      * </pre>
      *
      * <code>
@@ -499,8 +494,8 @@ public final class DeletePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Resource name of the policy tag to be deleted. All of its descendant
-     * policy tags will also be deleted.
+     * Required. Resource name of the policy tag to be deleted. All of its
+     * descendant policy tags will also be deleted.
      * </pre>
      *
      * <code>
@@ -524,8 +519,8 @@ public final class DeletePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Resource name of the policy tag to be deleted. All of its descendant
-     * policy tags will also be deleted.
+     * Required. Resource name of the policy tag to be deleted. All of its
+     * descendant policy tags will also be deleted.
      * </pre>
      *
      * <code>
@@ -548,8 +543,8 @@ public final class DeletePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Resource name of the policy tag to be deleted. All of its descendant
-     * policy tags will also be deleted.
+     * Required. Resource name of the policy tag to be deleted. All of its
+     * descendant policy tags will also be deleted.
      * </pre>
      *
      * <code>
@@ -568,8 +563,8 @@ public final class DeletePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Resource name of the policy tag to be deleted. All of its descendant
-     * policy tags will also be deleted.
+     * Required. Resource name of the policy tag to be deleted. All of its
+     * descendant policy tags will also be deleted.
      * </pre>
      *
      * <code>

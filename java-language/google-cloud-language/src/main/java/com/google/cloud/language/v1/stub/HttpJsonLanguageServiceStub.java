@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@ import com.google.cloud.language.v1.AnnotateTextRequest;
 import com.google.cloud.language.v1.AnnotateTextResponse;
 import com.google.cloud.language.v1.ClassifyTextRequest;
 import com.google.cloud.language.v1.ClassifyTextResponse;
+import com.google.cloud.language.v1.ModerateTextRequest;
+import com.google.cloud.language.v1.ModerateTextResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -242,6 +244,42 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ModerateTextRequest, ModerateTextResponse>
+      moderateTextMethodDescriptor =
+          ApiMethodDescriptor.<ModerateTextRequest, ModerateTextResponse>newBuilder()
+              .setFullMethodName("google.cloud.language.v1.LanguageService/ModerateText")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ModerateTextRequest>newBuilder()
+                      .setPath(
+                          "/v1/documents:moderateText",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ModerateTextRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ModerateTextRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ModerateTextResponse>newBuilder()
+                      .setDefaultInstance(ModerateTextResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<AnnotateTextRequest, AnnotateTextResponse>
       annotateTextMethodDescriptor =
           ApiMethodDescriptor.<AnnotateTextRequest, AnnotateTextResponse>newBuilder()
@@ -286,6 +324,7 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
       analyzeEntitySentimentCallable;
   private final UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable;
   private final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable;
+  private final UnaryCallable<ModerateTextRequest, ModerateTextResponse> moderateTextCallable;
   private final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
   private final BackgroundResource backgroundResources;
@@ -360,6 +399,11 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
             .setMethodDescriptor(classifyTextMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<ModerateTextRequest, ModerateTextResponse> moderateTextTransportSettings =
+        HttpJsonCallSettings.<ModerateTextRequest, ModerateTextResponse>newBuilder()
+            .setMethodDescriptor(moderateTextMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextTransportSettings =
         HttpJsonCallSettings.<AnnotateTextRequest, AnnotateTextResponse>newBuilder()
             .setMethodDescriptor(annotateTextMethodDescriptor)
@@ -383,6 +427,9 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
     this.classifyTextCallable =
         callableFactory.createUnaryCallable(
             classifyTextTransportSettings, settings.classifyTextSettings(), clientContext);
+    this.moderateTextCallable =
+        callableFactory.createUnaryCallable(
+            moderateTextTransportSettings, settings.moderateTextSettings(), clientContext);
     this.annotateTextCallable =
         callableFactory.createUnaryCallable(
             annotateTextTransportSettings, settings.annotateTextSettings(), clientContext);
@@ -399,6 +446,7 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
     methodDescriptors.add(analyzeEntitySentimentMethodDescriptor);
     methodDescriptors.add(analyzeSyntaxMethodDescriptor);
     methodDescriptors.add(classifyTextMethodDescriptor);
+    methodDescriptors.add(moderateTextMethodDescriptor);
     methodDescriptors.add(annotateTextMethodDescriptor);
     return methodDescriptors;
   }
@@ -428,6 +476,11 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
   @Override
   public UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable() {
     return classifyTextCallable;
+  }
+
+  @Override
+  public UnaryCallable<ModerateTextRequest, ModerateTextResponse> moderateTextCallable() {
+    return moderateTextCallable;
   }
 
   @Override

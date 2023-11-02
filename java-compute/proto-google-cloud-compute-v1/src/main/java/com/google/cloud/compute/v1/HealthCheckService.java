@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,12 +41,12 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     creationTimestamp_ = "";
     description_ = "";
     fingerprint_ = "";
-    healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    healthChecks_ = com.google.protobuf.LazyStringArrayList.emptyList();
     healthStatusAggregationPolicy_ = "";
     kind_ = "";
     name_ = "";
-    networkEndpointGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    notificationEndpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    networkEndpointGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    notificationEndpoints_ = com.google.protobuf.LazyStringArrayList.emptyList();
     region_ = "";
     selfLink_ = "";
   }
@@ -55,11 +55,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new HealthCheckService();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -439,7 +434,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public static final int HEALTH_CHECKS_FIELD_NUMBER = 448370606;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList healthChecks_;
+  private com.google.protobuf.LazyStringArrayList healthChecks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -736,7 +732,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public static final int NETWORK_ENDPOINT_GROUPS_FIELD_NUMBER = 29346733;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList networkEndpointGroups_;
+  private com.google.protobuf.LazyStringArrayList networkEndpointGroups_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -799,7 +796,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public static final int NOTIFICATION_ENDPOINTS_FIELD_NUMBER = 406728490;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList notificationEndpoints_;
+  private com.google.protobuf.LazyStringArrayList notificationEndpoints_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1366,16 +1364,13 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       creationTimestamp_ = "";
       description_ = "";
       fingerprint_ = "";
-      healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      healthChecks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       healthStatusAggregationPolicy_ = "";
       id_ = 0L;
       kind_ = "";
       name_ = "";
-      networkEndpointGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
-      notificationEndpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      networkEndpointGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      notificationEndpoints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       region_ = "";
       selfLink_ = "";
       return this;
@@ -1405,30 +1400,11 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.compute.v1.HealthCheckService buildPartial() {
       com.google.cloud.compute.v1.HealthCheckService result =
           new com.google.cloud.compute.v1.HealthCheckService(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.HealthCheckService result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        healthChecks_ = healthChecks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.healthChecks_ = healthChecks_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        networkEndpointGroups_ = networkEndpointGroups_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.networkEndpointGroups_ = networkEndpointGroups_;
-      if (((bitField0_ & 0x00000200) != 0)) {
-        notificationEndpoints_ = notificationEndpoints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.notificationEndpoints_ = notificationEndpoints_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.HealthCheckService result) {
@@ -1446,6 +1422,10 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         result.fingerprint_ = fingerprint_;
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        healthChecks_.makeImmutable();
+        result.healthChecks_ = healthChecks_;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.healthStatusAggregationPolicy_ = healthStatusAggregationPolicy_;
         to_bitField0_ |= 0x00000008;
@@ -1461,6 +1441,14 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.name_ = name_;
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        networkEndpointGroups_.makeImmutable();
+        result.networkEndpointGroups_ = networkEndpointGroups_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        notificationEndpoints_.makeImmutable();
+        result.notificationEndpoints_ = notificationEndpoints_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.region_ = region_;
@@ -1536,7 +1524,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (!other.healthChecks_.isEmpty()) {
         if (healthChecks_.isEmpty()) {
           healthChecks_ = other.healthChecks_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureHealthChecksIsMutable();
           healthChecks_.addAll(other.healthChecks_);
@@ -1564,7 +1552,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (!other.networkEndpointGroups_.isEmpty()) {
         if (networkEndpointGroups_.isEmpty()) {
           networkEndpointGroups_ = other.networkEndpointGroups_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureNetworkEndpointGroupsIsMutable();
           networkEndpointGroups_.addAll(other.networkEndpointGroups_);
@@ -1574,7 +1562,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       if (!other.notificationEndpoints_.isEmpty()) {
         if (notificationEndpoints_.isEmpty()) {
           notificationEndpoints_ = other.notificationEndpoints_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureNotificationEndpointsIsMutable();
           notificationEndpoints_.addAll(other.notificationEndpoints_);
@@ -2071,14 +2059,14 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.LazyStringList healthChecks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList healthChecks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureHealthChecksIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!healthChecks_.isModifiable()) {
         healthChecks_ = new com.google.protobuf.LazyStringArrayList(healthChecks_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -2092,7 +2080,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return A list containing the healthChecks.
      */
     public com.google.protobuf.ProtocolStringList getHealthChecksList() {
-      return healthChecks_.getUnmodifiableView();
+      healthChecks_.makeImmutable();
+      return healthChecks_;
     }
     /**
      *
@@ -2157,6 +2146,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       }
       ensureHealthChecksIsMutable();
       healthChecks_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2178,6 +2168,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       }
       ensureHealthChecksIsMutable();
       healthChecks_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2196,6 +2187,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public Builder addAllHealthChecks(java.lang.Iterable<java.lang.String> values) {
       ensureHealthChecksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, healthChecks_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2211,8 +2203,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearHealthChecks() {
-      healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      healthChecks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -2235,6 +2228,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureHealthChecksIsMutable();
       healthChecks_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2673,15 +2667,15 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.LazyStringList networkEndpointGroups_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList networkEndpointGroups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNetworkEndpointGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!networkEndpointGroups_.isModifiable()) {
         networkEndpointGroups_ =
             new com.google.protobuf.LazyStringArrayList(networkEndpointGroups_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -2695,7 +2689,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return A list containing the networkEndpointGroups.
      */
     public com.google.protobuf.ProtocolStringList getNetworkEndpointGroupsList() {
-      return networkEndpointGroups_.getUnmodifiableView();
+      networkEndpointGroups_.makeImmutable();
+      return networkEndpointGroups_;
     }
     /**
      *
@@ -2760,6 +2755,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       }
       ensureNetworkEndpointGroupsIsMutable();
       networkEndpointGroups_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2781,6 +2777,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       }
       ensureNetworkEndpointGroupsIsMutable();
       networkEndpointGroups_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2799,6 +2796,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public Builder addAllNetworkEndpointGroups(java.lang.Iterable<java.lang.String> values) {
       ensureNetworkEndpointGroupsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkEndpointGroups_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2814,8 +2812,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNetworkEndpointGroups() {
-      networkEndpointGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      networkEndpointGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -2838,19 +2837,20 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureNetworkEndpointGroupsIsMutable();
       networkEndpointGroups_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList notificationEndpoints_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList notificationEndpoints_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNotificationEndpointsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!notificationEndpoints_.isModifiable()) {
         notificationEndpoints_ =
             new com.google.protobuf.LazyStringArrayList(notificationEndpoints_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -2864,7 +2864,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return A list containing the notificationEndpoints.
      */
     public com.google.protobuf.ProtocolStringList getNotificationEndpointsList() {
-      return notificationEndpoints_.getUnmodifiableView();
+      notificationEndpoints_.makeImmutable();
+      return notificationEndpoints_;
     }
     /**
      *
@@ -2929,6 +2930,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       }
       ensureNotificationEndpointsIsMutable();
       notificationEndpoints_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2950,6 +2952,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       }
       ensureNotificationEndpointsIsMutable();
       notificationEndpoints_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2968,6 +2971,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public Builder addAllNotificationEndpoints(java.lang.Iterable<java.lang.String> values) {
       ensureNotificationEndpointsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, notificationEndpoints_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2983,8 +2987,9 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNotificationEndpoints() {
-      notificationEndpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      notificationEndpoints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -3007,6 +3012,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureNotificationEndpointsIsMutable();
       notificationEndpoints_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

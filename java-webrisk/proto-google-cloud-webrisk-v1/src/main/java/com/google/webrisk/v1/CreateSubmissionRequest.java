@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     return new CreateSubmissionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.webrisk.v1.WebRiskProto
         .internal_static_google_cloud_webrisk_v1_CreateSubmissionRequest_descriptor;
@@ -75,8 +70,8 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the project that is making the submission. This string is in
-   * the format "projects/{project_number}".
+   * Required. The name of the project that is making the submission. This
+   * string is in the format "projects/{project_number}".
    * </pre>
    *
    * <code>
@@ -101,8 +96,8 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the project that is making the submission. This string is in
-   * the format "projects/{project_number}".
+   * Required. The name of the project that is making the submission. This
+   * string is in the format "projects/{project_number}".
    * </pre>
    *
    * <code>
@@ -557,8 +552,8 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project that is making the submission. This string is in
-     * the format "projects/{project_number}".
+     * Required. The name of the project that is making the submission. This
+     * string is in the format "projects/{project_number}".
      * </pre>
      *
      * <code>
@@ -582,8 +577,8 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project that is making the submission. This string is in
-     * the format "projects/{project_number}".
+     * Required. The name of the project that is making the submission. This
+     * string is in the format "projects/{project_number}".
      * </pre>
      *
      * <code>
@@ -607,8 +602,8 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project that is making the submission. This string is in
-     * the format "projects/{project_number}".
+     * Required. The name of the project that is making the submission. This
+     * string is in the format "projects/{project_number}".
      * </pre>
      *
      * <code>
@@ -631,8 +626,8 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project that is making the submission. This string is in
-     * the format "projects/{project_number}".
+     * Required. The name of the project that is making the submission. This
+     * string is in the format "projects/{project_number}".
      * </pre>
      *
      * <code>
@@ -651,8 +646,8 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project that is making the submission. This string is in
-     * the format "projects/{project_number}".
+     * Required. The name of the project that is making the submission. This
+     * string is in the format "projects/{project_number}".
      * </pre>
      *
      * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ public interface CreateCustomClassRequestOrBuilder
    * <pre>
    * Required. The parent resource where this custom class will be created.
    * Format:
+   *
    * `projects/{project}/locations/{location}/customClasses`
+   *
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
@@ -50,7 +52,9 @@ public interface CreateCustomClassRequestOrBuilder
    * <pre>
    * Required. The parent resource where this custom class will be created.
    * Format:
+   *
    * `projects/{project}/locations/{location}/customClasses`
+   *
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
@@ -72,6 +76,7 @@ public interface CreateCustomClassRequestOrBuilder
    * <pre>
    * Required. The ID to use for the custom class, which will become the final
    * component of the custom class' resource name.
+   *
    * This value should restrict to letters, numbers, and hyphens, with the first
    * character a letter, the last a letter or a number, and be 4-63 characters.
    * </pre>
@@ -87,6 +92,7 @@ public interface CreateCustomClassRequestOrBuilder
    * <pre>
    * Required. The ID to use for the custom class, which will become the final
    * component of the custom class' resource name.
+   *
    * This value should restrict to letters, numbers, and hyphens, with the first
    * character a letter, the last a letter or a number, and be 4-63 characters.
    * </pre>

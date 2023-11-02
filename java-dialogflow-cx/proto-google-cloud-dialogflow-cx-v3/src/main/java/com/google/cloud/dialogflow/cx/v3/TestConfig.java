@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private TestConfig() {
-    trackingParameters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    trackingParameters_ = com.google.protobuf.LazyStringArrayList.emptyList();
     flow_ = "";
     page_ = "";
   }
@@ -47,11 +47,6 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TestConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,7 +67,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int TRACKING_PARAMETERS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList trackingParameters_;
+  private com.google.protobuf.LazyStringArrayList trackingParameters_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -143,6 +139,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
    * Flow name to start the test case with.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;`.
+   *
    * Only one of `flow` and `page` should be set to indicate the starting point
    * of the test case. If both are set, `page` takes precedence over `flow`. If
    * neither is set, the test case will start with start page on the default
@@ -172,6 +169,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
    * Flow name to start the test case with.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;`.
+   *
    * Only one of `flow` and `page` should be set to indicate the starting point
    * of the test case. If both are set, `page` takes precedence over `flow`. If
    * neither is set, the test case will start with start page on the default
@@ -206,6 +204,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
    * The [page][google.cloud.dialogflow.cx.v3.Page] to start the test case with.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * Only one of `flow` and `page` should be set to indicate the starting point
    * of the test case. If both are set, `page` takes precedence over `flow`. If
    * neither is set, the test case will start with start page on the default
@@ -235,6 +234,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
    * The [page][google.cloud.dialogflow.cx.v3.Page] to start the test case with.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * Only one of `flow` and `page` should be set to indicate the starting point
    * of the test case. If both are set, `page` takes precedence over `flow`. If
    * neither is set, the test case will start with start page on the default
@@ -481,8 +481,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      trackingParameters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      trackingParameters_ = com.google.protobuf.LazyStringArrayList.emptyList();
       flow_ = "";
       page_ = "";
       return this;
@@ -512,7 +511,6 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.TestConfig buildPartial() {
       com.google.cloud.dialogflow.cx.v3.TestConfig result =
           new com.google.cloud.dialogflow.cx.v3.TestConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -520,16 +518,12 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.cx.v3.TestConfig result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        trackingParameters_ = trackingParameters_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.trackingParameters_ = trackingParameters_;
-    }
-
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3.TestConfig result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        trackingParameters_.makeImmutable();
+        result.trackingParameters_ = trackingParameters_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.flow_ = flow_;
       }
@@ -586,7 +580,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.trackingParameters_.isEmpty()) {
         if (trackingParameters_.isEmpty()) {
           trackingParameters_ = other.trackingParameters_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureTrackingParametersIsMutable();
           trackingParameters_.addAll(other.trackingParameters_);
@@ -667,14 +661,14 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList trackingParameters_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList trackingParameters_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTrackingParametersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!trackingParameters_.isModifiable()) {
         trackingParameters_ = new com.google.protobuf.LazyStringArrayList(trackingParameters_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -688,7 +682,8 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the trackingParameters.
      */
     public com.google.protobuf.ProtocolStringList getTrackingParametersList() {
-      return trackingParameters_.getUnmodifiableView();
+      trackingParameters_.makeImmutable();
+      return trackingParameters_;
     }
     /**
      *
@@ -753,6 +748,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTrackingParametersIsMutable();
       trackingParameters_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -774,6 +770,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTrackingParametersIsMutable();
       trackingParameters_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -792,6 +789,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTrackingParameters(java.lang.Iterable<java.lang.String> values) {
       ensureTrackingParametersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, trackingParameters_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -807,8 +805,9 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrackingParameters() {
-      trackingParameters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      trackingParameters_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -831,6 +830,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTrackingParametersIsMutable();
       trackingParameters_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -843,6 +843,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * Flow name to start the test case with.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;`.
+     *
      * Only one of `flow` and `page` should be set to indicate the starting point
      * of the test case. If both are set, `page` takes precedence over `flow`. If
      * neither is set, the test case will start with start page on the default
@@ -871,6 +872,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * Flow name to start the test case with.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;`.
+     *
      * Only one of `flow` and `page` should be set to indicate the starting point
      * of the test case. If both are set, `page` takes precedence over `flow`. If
      * neither is set, the test case will start with start page on the default
@@ -899,6 +901,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * Flow name to start the test case with.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;`.
+     *
      * Only one of `flow` and `page` should be set to indicate the starting point
      * of the test case. If both are set, `page` takes precedence over `flow`. If
      * neither is set, the test case will start with start page on the default
@@ -926,6 +929,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * Flow name to start the test case with.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;`.
+     *
      * Only one of `flow` and `page` should be set to indicate the starting point
      * of the test case. If both are set, `page` takes precedence over `flow`. If
      * neither is set, the test case will start with start page on the default
@@ -949,6 +953,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * Flow name to start the test case with.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;`.
+     *
      * Only one of `flow` and `page` should be set to indicate the starting point
      * of the test case. If both are set, `page` takes precedence over `flow`. If
      * neither is set, the test case will start with start page on the default
@@ -979,6 +984,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * The [page][google.cloud.dialogflow.cx.v3.Page] to start the test case with.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * Only one of `flow` and `page` should be set to indicate the starting point
      * of the test case. If both are set, `page` takes precedence over `flow`. If
      * neither is set, the test case will start with start page on the default
@@ -1007,6 +1013,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * The [page][google.cloud.dialogflow.cx.v3.Page] to start the test case with.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * Only one of `flow` and `page` should be set to indicate the starting point
      * of the test case. If both are set, `page` takes precedence over `flow`. If
      * neither is set, the test case will start with start page on the default
@@ -1035,6 +1042,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * The [page][google.cloud.dialogflow.cx.v3.Page] to start the test case with.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * Only one of `flow` and `page` should be set to indicate the starting point
      * of the test case. If both are set, `page` takes precedence over `flow`. If
      * neither is set, the test case will start with start page on the default
@@ -1062,6 +1070,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * The [page][google.cloud.dialogflow.cx.v3.Page] to start the test case with.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * Only one of `flow` and `page` should be set to indicate the starting point
      * of the test case. If both are set, `page` takes precedence over `flow`. If
      * neither is set, the test case will start with start page on the default
@@ -1085,6 +1094,7 @@ public final class TestConfig extends com.google.protobuf.GeneratedMessageV3
      * The [page][google.cloud.dialogflow.cx.v3.Page] to start the test case with.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * Only one of `flow` and `page` should be set to indicate the starting point
      * of the test case. If both are set, `page` takes precedence over `flow`. If
      * neither is set, the test case will start with start page on the default

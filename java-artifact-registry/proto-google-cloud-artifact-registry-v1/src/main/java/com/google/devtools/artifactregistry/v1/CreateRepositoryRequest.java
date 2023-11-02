@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
     return new CreateRepositoryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.RepositoryProto
         .internal_static_google_devtools_artifactregistry_v1_CreateRepositoryRequest_descriptor;
@@ -76,7 +71,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the parent resource where the repository will be created.
+   * Required. The name of the parent resource where the repository will be
+   * created.
    * </pre>
    *
    * <code>
@@ -101,7 +97,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the parent resource where the repository will be created.
+   * Required. The name of the parent resource where the repository will be
+   * created.
    * </pre>
    *
    * <code>
@@ -131,10 +128,10 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The repository id to use for this repository.
+   * Required. The repository id to use for this repository.
    * </pre>
    *
-   * <code>string repository_id = 2;</code>
+   * <code>string repository_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The repositoryId.
    */
@@ -154,10 +151,10 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The repository id to use for this repository.
+   * Required. The repository id to use for this repository.
    * </pre>
    *
-   * <code>string repository_id = 2;</code>
+   * <code>string repository_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for repositoryId.
    */
@@ -180,10 +177,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The repository to be created.
+   * Required. The repository to be created.
    * </pre>
    *
-   * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the repository field is set.
    */
@@ -195,10 +194,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The repository to be created.
+   * Required. The repository to be created.
    * </pre>
    *
-   * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The repository.
    */
@@ -212,10 +213,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The repository to be created.
+   * Required. The repository to be created.
    * </pre>
    *
-   * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.devtools.artifactregistry.v1.RepositoryOrBuilder getRepositoryOrBuilder() {
@@ -631,7 +634,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the parent resource where the repository will be created.
+     * Required. The name of the parent resource where the repository will be
+     * created.
      * </pre>
      *
      * <code>
@@ -655,7 +659,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the parent resource where the repository will be created.
+     * Required. The name of the parent resource where the repository will be
+     * created.
      * </pre>
      *
      * <code>
@@ -679,7 +684,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the parent resource where the repository will be created.
+     * Required. The name of the parent resource where the repository will be
+     * created.
      * </pre>
      *
      * <code>
@@ -702,7 +708,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the parent resource where the repository will be created.
+     * Required. The name of the parent resource where the repository will be
+     * created.
      * </pre>
      *
      * <code>
@@ -721,7 +728,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the parent resource where the repository will be created.
+     * Required. The name of the parent resource where the repository will be
+     * created.
      * </pre>
      *
      * <code>
@@ -747,10 +755,10 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository id to use for this repository.
+     * Required. The repository id to use for this repository.
      * </pre>
      *
-     * <code>string repository_id = 2;</code>
+     * <code>string repository_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The repositoryId.
      */
@@ -769,10 +777,10 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository id to use for this repository.
+     * Required. The repository id to use for this repository.
      * </pre>
      *
-     * <code>string repository_id = 2;</code>
+     * <code>string repository_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for repositoryId.
      */
@@ -791,10 +799,10 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository id to use for this repository.
+     * Required. The repository id to use for this repository.
      * </pre>
      *
-     * <code>string repository_id = 2;</code>
+     * <code>string repository_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The repositoryId to set.
      * @return This builder for chaining.
@@ -812,10 +820,10 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository id to use for this repository.
+     * Required. The repository id to use for this repository.
      * </pre>
      *
-     * <code>string repository_id = 2;</code>
+     * <code>string repository_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -829,10 +837,10 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository id to use for this repository.
+     * Required. The repository id to use for this repository.
      * </pre>
      *
-     * <code>string repository_id = 2;</code>
+     * <code>string repository_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for repositoryId to set.
      * @return This builder for chaining.
@@ -858,10 +866,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository to be created.
+     * Required. The repository to be created.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the repository field is set.
      */
@@ -872,10 +882,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository to be created.
+     * Required. The repository to be created.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The repository.
      */
@@ -892,10 +904,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository to be created.
+     * Required. The repository to be created.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRepository(com.google.devtools.artifactregistry.v1.Repository value) {
       if (repositoryBuilder_ == null) {
@@ -914,10 +928,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository to be created.
+     * Required. The repository to be created.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRepository(
         com.google.devtools.artifactregistry.v1.Repository.Builder builderForValue) {
@@ -934,10 +950,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository to be created.
+     * Required. The repository to be created.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeRepository(com.google.devtools.artifactregistry.v1.Repository value) {
       if (repositoryBuilder_ == null) {
@@ -960,10 +978,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository to be created.
+     * Required. The repository to be created.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearRepository() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -979,10 +999,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository to be created.
+     * Required. The repository to be created.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.artifactregistry.v1.Repository.Builder getRepositoryBuilder() {
       bitField0_ |= 0x00000004;
@@ -993,10 +1015,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository to be created.
+     * Required. The repository to be created.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.artifactregistry.v1.RepositoryOrBuilder getRepositoryOrBuilder() {
       if (repositoryBuilder_ != null) {
@@ -1011,10 +1035,12 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The repository to be created.
+     * Required. The repository to be created.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.artifactregistry.v1.Repository,

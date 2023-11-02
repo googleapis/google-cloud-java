@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -277,6 +277,41 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
+   * Time when the job was last modified by the system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+   *
+   * @return Whether the lastModified field is set.
+   */
+  boolean hasLastModified();
+  /**
+   *
+   *
+   * <pre>
+   * Time when the job was last modified by the system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+   *
+   * @return The lastModified.
+   */
+  com.google.protobuf.Timestamp getLastModified();
+  /**
+   *
+   *
+   * <pre>
+   * Time when the job was last modified by the system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getLastModifiedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * If created by a job trigger, the resource name of the trigger that
    * instantiated the job.
    * </pre>
@@ -351,5 +386,57 @@ public interface DlpJobOrBuilder
    */
   com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index);
 
-  public com.google.privacy.dlp.v2.DlpJob.DetailsCase getDetailsCase();
+  /**
+   *
+   *
+   * <pre>
+   * Events that should occur after the job has completed.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.ActionDetails> getActionDetailsList();
+  /**
+   *
+   *
+   * <pre>
+   * Events that should occur after the job has completed.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   */
+  com.google.privacy.dlp.v2.ActionDetails getActionDetails(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Events that should occur after the job has completed.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   */
+  int getActionDetailsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Events that should occur after the job has completed.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.ActionDetailsOrBuilder>
+      getActionDetailsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Events that should occur after the job has completed.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   */
+  com.google.privacy.dlp.v2.ActionDetailsOrBuilder getActionDetailsOrBuilder(int index);
+
+  com.google.privacy.dlp.v2.DlpJob.DetailsCase getDetailsCase();
 }

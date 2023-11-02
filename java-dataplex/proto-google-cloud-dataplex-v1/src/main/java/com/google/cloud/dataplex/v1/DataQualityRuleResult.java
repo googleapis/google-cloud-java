@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DataQualityRuleResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -141,9 +136,12 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The number of rows a rule was evaluated against. This field is only valid
-   * for ColumnMap type rules.
+   * The number of rows a rule was evaluated against.
+   *
+   * This field is only valid for row-level type rules.
+   *
    * Evaluated count can be configured to either
+   *
    * * include all rows (default) - with `null` rows automatically failing rule
    * evaluation, or
    * * exclude `null` rows from the `evaluated_count`, by setting
@@ -166,7 +164,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The number of rows which passed a rule evaluation.
-   * This field is only valid for ColumnMap type rules.
+   *
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>int64 passed_count = 8;</code>
@@ -203,7 +202,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The ratio of **passed_count / evaluated_count**.
-   * This field is only valid for ColumnMap type rules.
+   *
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>double pass_ratio = 6;</code>
@@ -224,7 +224,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The query to find rows that did not pass this rule.
-   * Only applies to ColumnMap and RowCondition rules.
+   *
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>string failing_rows_query = 10;</code>
@@ -248,7 +249,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The query to find rows that did not pass this rule.
-   * Only applies to ColumnMap and RowCondition rules.
+   *
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>string failing_rows_query = 10;</code>
@@ -996,9 +998,12 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The number of rows a rule was evaluated against. This field is only valid
-     * for ColumnMap type rules.
+     * The number of rows a rule was evaluated against.
+     *
+     * This field is only valid for row-level type rules.
+     *
      * Evaluated count can be configured to either
+     *
      * * include all rows (default) - with `null` rows automatically failing rule
      * evaluation, or
      * * exclude `null` rows from the `evaluated_count`, by setting
@@ -1017,9 +1022,12 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The number of rows a rule was evaluated against. This field is only valid
-     * for ColumnMap type rules.
+     * The number of rows a rule was evaluated against.
+     *
+     * This field is only valid for row-level type rules.
+     *
      * Evaluated count can be configured to either
+     *
      * * include all rows (default) - with `null` rows automatically failing rule
      * evaluation, or
      * * exclude `null` rows from the `evaluated_count`, by setting
@@ -1042,9 +1050,12 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The number of rows a rule was evaluated against. This field is only valid
-     * for ColumnMap type rules.
+     * The number of rows a rule was evaluated against.
+     *
+     * This field is only valid for row-level type rules.
+     *
      * Evaluated count can be configured to either
+     *
      * * include all rows (default) - with `null` rows automatically failing rule
      * evaluation, or
      * * exclude `null` rows from the `evaluated_count`, by setting
@@ -1068,7 +1079,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The number of rows which passed a rule evaluation.
-     * This field is only valid for ColumnMap type rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>int64 passed_count = 8;</code>
@@ -1084,7 +1096,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The number of rows which passed a rule evaluation.
-     * This field is only valid for ColumnMap type rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>int64 passed_count = 8;</code>
@@ -1104,7 +1117,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The number of rows which passed a rule evaluation.
-     * This field is only valid for ColumnMap type rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>int64 passed_count = 8;</code>
@@ -1177,7 +1191,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The ratio of **passed_count / evaluated_count**.
-     * This field is only valid for ColumnMap type rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>double pass_ratio = 6;</code>
@@ -1193,7 +1208,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The ratio of **passed_count / evaluated_count**.
-     * This field is only valid for ColumnMap type rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>double pass_ratio = 6;</code>
@@ -1213,7 +1229,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The ratio of **passed_count / evaluated_count**.
-     * This field is only valid for ColumnMap type rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>double pass_ratio = 6;</code>
@@ -1233,7 +1250,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to find rows that did not pass this rule.
-     * Only applies to ColumnMap and RowCondition rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>string failing_rows_query = 10;</code>
@@ -1256,7 +1274,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to find rows that did not pass this rule.
-     * Only applies to ColumnMap and RowCondition rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>string failing_rows_query = 10;</code>
@@ -1279,7 +1298,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to find rows that did not pass this rule.
-     * Only applies to ColumnMap and RowCondition rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>string failing_rows_query = 10;</code>
@@ -1301,7 +1321,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to find rows that did not pass this rule.
-     * Only applies to ColumnMap and RowCondition rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>string failing_rows_query = 10;</code>
@@ -1319,7 +1340,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The query to find rows that did not pass this rule.
-     * Only applies to ColumnMap and RowCondition rules.
+     *
+     * This field is only valid for row-level type rules.
      * </pre>
      *
      * <code>string failing_rows_query = 10;</code>

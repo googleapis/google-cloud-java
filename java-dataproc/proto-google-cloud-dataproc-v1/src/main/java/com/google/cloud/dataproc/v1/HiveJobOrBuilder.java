@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,7 +184,7 @@ public interface HiveJobOrBuilder
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -198,7 +198,7 @@ public interface HiveJobOrBuilder
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -215,7 +215,7 @@ public interface HiveJobOrBuilder
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -229,7 +229,7 @@ public interface HiveJobOrBuilder
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -247,7 +247,7 @@ public interface HiveJobOrBuilder
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -315,5 +315,5 @@ public interface HiveJobOrBuilder
    */
   com.google.protobuf.ByteString getJarFileUrisBytes(int index);
 
-  public com.google.cloud.dataproc.v1.HiveJob.QueriesCase getQueriesCase();
+  com.google.cloud.dataproc.v1.HiveJob.QueriesCase getQueriesCase();
 }

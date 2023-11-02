@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,18 +42,13 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     user_ = "";
     target_ = "";
     ephemeralMessage_ = "";
-    warning_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    warning_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OperationMetadataV1();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,6 +67,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
   }
 
   private int methodMetadataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object methodMetadata_;
 
   public enum MethodMetadataCase
@@ -125,6 +122,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    * <pre>
    * API method that initiated this operation. Example:
    * `google.appengine.v1.Versions.CreateVersion`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -150,6 +148,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    * <pre>
    * API method that initiated this operation. Example:
    * `google.appengine.v1.Versions.CreateVersion`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -177,6 +176,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Time that this operation was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -193,6 +193,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Time that this operation was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -209,6 +210,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Time that this operation was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -226,6 +228,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Time that this operation completed.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -242,6 +245,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Time that this operation completed.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -258,6 +262,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Time that this operation completed.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -277,6 +282,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * User who requested this operation.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -301,6 +307,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * User who requested this operation.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -331,6 +338,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    * <pre>
    * Name of the resource that this operation is acting on. Example:
    * `apps/myapp/services/default`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -356,6 +364,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    * <pre>
    * Name of the resource that this operation is acting on. Example:
    * `apps/myapp/services/default`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -432,7 +441,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
   public static final int WARNING_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList warning_;
+  private com.google.protobuf.LazyStringArrayList warning_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -835,8 +845,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       user_ = "";
       target_ = "";
       ephemeralMessage_ = "";
-      warning_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      warning_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (createVersionMetadataBuilder_ != null) {
         createVersionMetadataBuilder_.clear();
       }
@@ -869,21 +878,12 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     public com.google.appengine.v1.OperationMetadataV1 buildPartial() {
       com.google.appengine.v1.OperationMetadataV1 result =
           new com.google.appengine.v1.OperationMetadataV1(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.appengine.v1.OperationMetadataV1 result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
-        warning_ = warning_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.warning_ = warning_;
     }
 
     private void buildPartial0(com.google.appengine.v1.OperationMetadataV1 result) {
@@ -905,6 +905,10 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.ephemeralMessage_ = ephemeralMessage_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        warning_.makeImmutable();
+        result.warning_ = warning_;
       }
     }
 
@@ -990,7 +994,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       if (!other.warning_.isEmpty()) {
         if (warning_.isEmpty()) {
           warning_ = other.warning_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureWarningIsMutable();
           warning_.addAll(other.warning_);
@@ -1124,6 +1128,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <pre>
      * API method that initiated this operation. Example:
      * `google.appengine.v1.Versions.CreateVersion`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1148,6 +1153,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <pre>
      * API method that initiated this operation. Example:
      * `google.appengine.v1.Versions.CreateVersion`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1172,6 +1178,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <pre>
      * API method that initiated this operation. Example:
      * `google.appengine.v1.Versions.CreateVersion`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1195,6 +1202,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <pre>
      * API method that initiated this operation. Example:
      * `google.appengine.v1.Versions.CreateVersion`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1214,6 +1222,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <pre>
      * API method that initiated this operation. Example:
      * `google.appengine.v1.Versions.CreateVersion`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1244,6 +1253,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1259,6 +1269,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1280,6 +1291,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1303,6 +1315,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1323,6 +1336,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1349,6 +1363,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1369,6 +1384,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1384,6 +1400,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1403,6 +1420,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation was created.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1436,6 +1454,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation completed.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1451,6 +1470,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation completed.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1470,6 +1490,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation completed.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1493,6 +1514,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation completed.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1513,6 +1535,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation completed.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1539,6 +1562,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation completed.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1559,6 +1583,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation completed.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1574,6 +1599,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation completed.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1591,6 +1617,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Time that this operation completed.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1619,6 +1646,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * User who requested this operation.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1642,6 +1670,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * User who requested this operation.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1665,6 +1694,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * User who requested this operation.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1687,6 +1717,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * User who requested this operation.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1705,6 +1736,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * User who requested this operation.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1731,6 +1763,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <pre>
      * Name of the resource that this operation is acting on. Example:
      * `apps/myapp/services/default`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1755,6 +1788,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <pre>
      * Name of the resource that this operation is acting on. Example:
      * `apps/myapp/services/default`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1779,6 +1813,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <pre>
      * Name of the resource that this operation is acting on. Example:
      * `apps/myapp/services/default`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1802,6 +1837,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <pre>
      * Name of the resource that this operation is acting on. Example:
      * `apps/myapp/services/default`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1821,6 +1857,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <pre>
      * Name of the resource that this operation is acting on. Example:
      * `apps/myapp/services/default`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1951,14 +1988,14 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.LazyStringList warning_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList warning_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureWarningIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!warning_.isModifiable()) {
         warning_ = new com.google.protobuf.LazyStringArrayList(warning_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -1973,7 +2010,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return A list containing the warning.
      */
     public com.google.protobuf.ProtocolStringList getWarningList() {
-      return warning_.getUnmodifiableView();
+      warning_.makeImmutable();
+      return warning_;
     }
     /**
      *
@@ -2042,6 +2080,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       }
       ensureWarningIsMutable();
       warning_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2064,6 +2103,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       }
       ensureWarningIsMutable();
       warning_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2083,6 +2123,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     public Builder addAllWarning(java.lang.Iterable<java.lang.String> values) {
       ensureWarningIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, warning_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2099,8 +2140,9 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearWarning() {
-      warning_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      warning_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2124,6 +2166,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureWarningIsMutable();
       warning_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

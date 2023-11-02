@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
     return new DeleteProductRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.ProductServiceProto
         .internal_static_google_cloud_retail_v2alpha_DeleteProductRequest_descriptor;
@@ -80,11 +75,14 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2alpha.Product], such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to delete the
    * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
    * not it exists, a PERMISSION_DENIED error is returned.
+   *
    * If the [Product][google.cloud.retail.v2alpha.Product] to delete does not
    * exist, a NOT_FOUND error is returned.
+   *
    * The [Product][google.cloud.retail.v2alpha.Product] to delete can neither be
    * a
    * [Product.Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]
@@ -93,6 +91,7 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
    * [Product][google.cloud.retail.v2alpha.Product] with more than one
    * [variants][google.cloud.retail.v2alpha.Product.Type.VARIANT]. Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * All inventory information for the named
    * [Product][google.cloud.retail.v2alpha.Product] will be deleted.
    * </pre>
@@ -122,11 +121,14 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2alpha.Product], such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to delete the
    * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
    * not it exists, a PERMISSION_DENIED error is returned.
+   *
    * If the [Product][google.cloud.retail.v2alpha.Product] to delete does not
    * exist, a NOT_FOUND error is returned.
+   *
    * The [Product][google.cloud.retail.v2alpha.Product] to delete can neither be
    * a
    * [Product.Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]
@@ -135,6 +137,7 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
    * [Product][google.cloud.retail.v2alpha.Product] with more than one
    * [variants][google.cloud.retail.v2alpha.Product.Type.VARIANT]. Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * All inventory information for the named
    * [Product][google.cloud.retail.v2alpha.Product] will be deleted.
    * </pre>
@@ -557,11 +560,14 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * Required. Full resource name of
      * [Product][google.cloud.retail.v2alpha.Product], such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to delete the
      * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
      * not it exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Product][google.cloud.retail.v2alpha.Product] to delete does not
      * exist, a NOT_FOUND error is returned.
+     *
      * The [Product][google.cloud.retail.v2alpha.Product] to delete can neither be
      * a
      * [Product.Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]
@@ -570,6 +576,7 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * [Product][google.cloud.retail.v2alpha.Product] with more than one
      * [variants][google.cloud.retail.v2alpha.Product.Type.VARIANT]. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All inventory information for the named
      * [Product][google.cloud.retail.v2alpha.Product] will be deleted.
      * </pre>
@@ -598,11 +605,14 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * Required. Full resource name of
      * [Product][google.cloud.retail.v2alpha.Product], such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to delete the
      * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
      * not it exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Product][google.cloud.retail.v2alpha.Product] to delete does not
      * exist, a NOT_FOUND error is returned.
+     *
      * The [Product][google.cloud.retail.v2alpha.Product] to delete can neither be
      * a
      * [Product.Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]
@@ -611,6 +621,7 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * [Product][google.cloud.retail.v2alpha.Product] with more than one
      * [variants][google.cloud.retail.v2alpha.Product.Type.VARIANT]. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All inventory information for the named
      * [Product][google.cloud.retail.v2alpha.Product] will be deleted.
      * </pre>
@@ -639,11 +650,14 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * Required. Full resource name of
      * [Product][google.cloud.retail.v2alpha.Product], such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to delete the
      * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
      * not it exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Product][google.cloud.retail.v2alpha.Product] to delete does not
      * exist, a NOT_FOUND error is returned.
+     *
      * The [Product][google.cloud.retail.v2alpha.Product] to delete can neither be
      * a
      * [Product.Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]
@@ -652,6 +666,7 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * [Product][google.cloud.retail.v2alpha.Product] with more than one
      * [variants][google.cloud.retail.v2alpha.Product.Type.VARIANT]. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All inventory information for the named
      * [Product][google.cloud.retail.v2alpha.Product] will be deleted.
      * </pre>
@@ -679,11 +694,14 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * Required. Full resource name of
      * [Product][google.cloud.retail.v2alpha.Product], such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to delete the
      * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
      * not it exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Product][google.cloud.retail.v2alpha.Product] to delete does not
      * exist, a NOT_FOUND error is returned.
+     *
      * The [Product][google.cloud.retail.v2alpha.Product] to delete can neither be
      * a
      * [Product.Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]
@@ -692,6 +710,7 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * [Product][google.cloud.retail.v2alpha.Product] with more than one
      * [variants][google.cloud.retail.v2alpha.Product.Type.VARIANT]. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All inventory information for the named
      * [Product][google.cloud.retail.v2alpha.Product] will be deleted.
      * </pre>
@@ -715,11 +734,14 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * Required. Full resource name of
      * [Product][google.cloud.retail.v2alpha.Product], such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to delete the
      * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
      * not it exists, a PERMISSION_DENIED error is returned.
+     *
      * If the [Product][google.cloud.retail.v2alpha.Product] to delete does not
      * exist, a NOT_FOUND error is returned.
+     *
      * The [Product][google.cloud.retail.v2alpha.Product] to delete can neither be
      * a
      * [Product.Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]
@@ -728,6 +750,7 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
      * [Product][google.cloud.retail.v2alpha.Product] with more than one
      * [variants][google.cloud.retail.v2alpha.Product.Type.VARIANT]. Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All inventory information for the named
      * [Product][google.cloud.retail.v2alpha.Product] will be deleted.
      * </pre>

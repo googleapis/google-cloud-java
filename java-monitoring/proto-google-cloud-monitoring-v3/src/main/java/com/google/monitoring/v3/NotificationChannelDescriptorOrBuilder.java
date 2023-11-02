@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface NotificationChannelDescriptorOrBuilder
    *
    * <pre>
    * The full REST resource name for this descriptor. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
+   *
    * In the above, `[TYPE]` is the value of the `type` field.
    * </pre>
    *
@@ -42,7 +44,9 @@ public interface NotificationChannelDescriptorOrBuilder
    *
    * <pre>
    * The full REST resource name for this descriptor. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[TYPE]
+   *
    * In the above, `[TYPE]` is the value of the `type` field.
    * </pre>
    *

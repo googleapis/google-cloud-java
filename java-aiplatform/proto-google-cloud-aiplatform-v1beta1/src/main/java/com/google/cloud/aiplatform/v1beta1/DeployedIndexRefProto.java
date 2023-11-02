@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,17 @@ public final class DeployedIndexRefProto {
       "\n8google/cloud/aiplatform/v1beta1/deploy"
           + "ed_index_ref.proto\022\037google.cloud.aiplatf"
           + "orm.v1beta1\032\037google/api/field_behavior.p"
-          + "roto\032\031google/api/resource.proto\"{\n\020Deplo"
-          + "yedIndexRef\022G\n\016index_endpoint\030\001 \001(\tB/\340A\005"
-          + "\372A)\n\'aiplatform.googleapis.com/IndexEndp"
-          + "oint\022\036\n\021deployed_index_id\030\002 \001(\tB\003\340A\005B\354\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\025De"
-          + "ployedIndexRefProtoP\001ZCcloud.google.com/"
-          + "go/aiplatform/apiv1beta1/aiplatformpb;ai"
-          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
-          + "to3"
+          + "roto\032\031google/api/resource.proto\"}\n\020Deplo"
+          + "yedIndexRef\022H\n\016index_endpoint\030\001 \001(\tB0\342A\001"
+          + "\005\372A)\n\'aiplatform.googleapis.com/IndexEnd"
+          + "point\022\037\n\021deployed_index_id\030\002 \001(\tB\004\342A\001\005B\354"
+          + "\001\n#com.google.cloud.aiplatform.v1beta1B\025"
+          + "DeployedIndexRefProtoP\001ZCcloud.google.co"
+          + "m/go/aiplatform/apiv1beta1/aiplatformpb;"
+          + "aiplatformpb\252\002\037Google.Cloud.AIPlatform.V"
+          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
+          + "\352\002\"Google::Cloud::AIPlatform::V1beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

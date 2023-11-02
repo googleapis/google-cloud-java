@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ package com.google.analytics.admin.v1alpha;
  *
  * <pre>
  * A clause for defining either a simple or sequence filter. A filter can be
- * inclusive (i.e., users satisfying the filter clause are included in the
- * Audience) or exclusive (i.e., users satisfying the filter clause are
- * excluded from the Audience).
+ * inclusive (For example, users satisfying the filter clause are included in
+ * the Audience) or exclusive (For example, users satisfying the filter clause
+ * are excluded from the Audience).
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.AudienceFilterClause}
@@ -48,11 +48,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AudienceFilterClause();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -233,6 +228,8 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
   }
 
   private int filterCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object filter_;
 
   public enum FilterCase
@@ -639,9 +636,9 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A clause for defining either a simple or sequence filter. A filter can be
-   * inclusive (i.e., users satisfying the filter clause are included in the
-   * Audience) or exclusive (i.e., users satisfying the filter clause are
-   * excluded from the Audience).
+   * inclusive (For example, users satisfying the filter clause are included in
+   * the Audience) or exclusive (For example, users satisfying the filter clause
+   * are excluded from the Audience).
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.AudienceFilterClause}

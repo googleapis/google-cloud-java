@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     return new OperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.Operations
         .internal_static_google_cloud_automl_v1_OperationMetadata_descriptor;
@@ -68,6 +63,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   private int detailsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object details_;
 
   public enum DetailsCase

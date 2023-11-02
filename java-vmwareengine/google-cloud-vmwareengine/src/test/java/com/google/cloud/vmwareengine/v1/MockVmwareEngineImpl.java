@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -307,6 +307,47 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
                   "Unrecognized response type %s for method ListSubnets, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListSubnetsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSubnet(GetSubnetRequest request, StreamObserver<Subnet> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Subnet) {
+      requests.add(request);
+      responseObserver.onNext(((Subnet) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSubnet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Subnet.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSubnet(
+      UpdateSubnetRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSubnet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -708,6 +749,134 @@ public class MockVmwareEngineImpl extends VmwareEngineImplBase {
                   "Unrecognized response type %s for method ListVmwareEngineNetworks, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListVmwareEngineNetworksResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createPrivateConnection(
+      CreatePrivateConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreatePrivateConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getPrivateConnection(
+      GetPrivateConnectionRequest request, StreamObserver<PrivateConnection> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PrivateConnection) {
+      requests.add(request);
+      responseObserver.onNext(((PrivateConnection) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPrivateConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PrivateConnection.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPrivateConnections(
+      ListPrivateConnectionsRequest request,
+      StreamObserver<ListPrivateConnectionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPrivateConnectionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPrivateConnectionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPrivateConnections, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPrivateConnectionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updatePrivateConnection(
+      UpdatePrivateConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdatePrivateConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deletePrivateConnection(
+      DeletePrivateConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeletePrivateConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPrivateConnectionPeeringRoutes(
+      ListPrivateConnectionPeeringRoutesRequest request,
+      StreamObserver<ListPrivateConnectionPeeringRoutesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPrivateConnectionPeeringRoutesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPrivateConnectionPeeringRoutesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPrivateConnectionPeeringRoutes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPrivateConnectionPeeringRoutesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

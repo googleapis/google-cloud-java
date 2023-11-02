@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -443,4 +443,130 @@ public interface NetworkOrBuilder
    */
   com.google.cloud.baremetalsolution.v2.NetworkAddressReservationOrBuilder getReservationsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pod name.
+   * </pre>
+   *
+   * <code>string pod = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The pod.
+   */
+  java.lang.String getPod();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pod name.
+   * </pre>
+   *
+   * <code>string pod = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for pod.
+   */
+  com.google.protobuf.ByteString getPodBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. List of mount points to attach the network to.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.baremetalsolution.v2.NetworkMountPoint> getMountPointsList();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. List of mount points to attach the network to.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.baremetalsolution.v2.NetworkMountPoint getMountPoints(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Input only. List of mount points to attach the network to.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  int getMountPointsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. List of mount points to attach the network to.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.baremetalsolution.v2.NetworkMountPointOrBuilder>
+      getMountPointsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. List of mount points to attach the network to.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.baremetalsolution.v2.NetworkMountPointOrBuilder getMountPointsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether network uses standard frames or jumbo ones.
+   * </pre>
+   *
+   * <code>bool jumbo_frames_enabled = 16;</code>
+   *
+   * @return The jumboFramesEnabled.
+   */
+  boolean getJumboFramesEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Gateway ip address.
+   * </pre>
+   *
+   * <code>string gateway_ip = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The gatewayIp.
+   */
+  java.lang.String getGatewayIp();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Gateway ip address.
+   * </pre>
+   *
+   * <code>string gateway_ip = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for gatewayIp.
+   */
+  com.google.protobuf.ByteString getGatewayIpBytes();
 }

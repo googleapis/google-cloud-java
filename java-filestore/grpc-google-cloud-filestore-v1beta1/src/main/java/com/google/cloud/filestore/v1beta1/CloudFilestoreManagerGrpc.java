@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,10 +33,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
  *   backups are resources of the form:
  *   `/projects/{project_id}/locations/{location_id}/backup/{backup_id}`
- * Note that location_id can represent a GCP `zone` or `region` depending on the
- * resource.
- * for example:
- * A zonal Filestore instance:
+ * Note that location_id can represent a Google Cloud `zone` or `region`
+ * depending on the resource. for example: A zonal Filestore instance:
  * * `projects/my-project/locations/us-central1-c/instances/my-basic-tier-filer`
  * A regional Filestore instance:
  * * `projects/my-project/locations/us-central1/instances/my-enterprise-filer`
@@ -50,7 +48,8 @@ public final class CloudFilestoreManagerGrpc {
 
   private CloudFilestoreManagerGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.filestore.v1beta1.CloudFilestoreManager";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.filestore.v1beta1.CloudFilestoreManager";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1112,10 +1111,8 @@ public final class CloudFilestoreManagerGrpc {
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
    *   backups are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/backup/{backup_id}`
-   * Note that location_id can represent a GCP `zone` or `region` depending on the
-   * resource.
-   * for example:
-   * A zonal Filestore instance:
+   * Note that location_id can represent a Google Cloud `zone` or `region`
+   * depending on the resource. for example: A zonal Filestore instance:
    * * `projects/my-project/locations/us-central1-c/instances/my-basic-tier-filer`
    * A regional Filestore instance:
    * * `projects/my-project/locations/us-central1/instances/my-enterprise-filer`
@@ -1458,10 +1455,8 @@ public final class CloudFilestoreManagerGrpc {
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
    *   backups are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/backup/{backup_id}`
-   * Note that location_id can represent a GCP `zone` or `region` depending on the
-   * resource.
-   * for example:
-   * A zonal Filestore instance:
+   * Note that location_id can represent a Google Cloud `zone` or `region`
+   * depending on the resource. for example: A zonal Filestore instance:
    * * `projects/my-project/locations/us-central1-c/instances/my-basic-tier-filer`
    * A regional Filestore instance:
    * * `projects/my-project/locations/us-central1/instances/my-enterprise-filer`
@@ -1492,10 +1487,8 @@ public final class CloudFilestoreManagerGrpc {
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
    *   backups are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/backup/{backup_id}`
-   * Note that location_id can represent a GCP `zone` or `region` depending on the
-   * resource.
-   * for example:
-   * A zonal Filestore instance:
+   * Note that location_id can represent a Google Cloud `zone` or `region`
+   * depending on the resource. for example: A zonal Filestore instance:
    * * `projects/my-project/locations/us-central1-c/instances/my-basic-tier-filer`
    * A regional Filestore instance:
    * * `projects/my-project/locations/us-central1/instances/my-enterprise-filer`
@@ -1889,10 +1882,8 @@ public final class CloudFilestoreManagerGrpc {
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
    *   backups are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/backup/{backup_id}`
-   * Note that location_id can represent a GCP `zone` or `region` depending on the
-   * resource.
-   * for example:
-   * A zonal Filestore instance:
+   * Note that location_id can represent a Google Cloud `zone` or `region`
+   * depending on the resource. for example: A zonal Filestore instance:
    * * `projects/my-project/locations/us-central1-c/instances/my-basic-tier-filer`
    * A regional Filestore instance:
    * * `projects/my-project/locations/us-central1/instances/my-enterprise-filer`
@@ -2224,10 +2215,8 @@ public final class CloudFilestoreManagerGrpc {
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
    *   backups are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/backup/{backup_id}`
-   * Note that location_id can represent a GCP `zone` or `region` depending on the
-   * resource.
-   * for example:
-   * A zonal Filestore instance:
+   * Note that location_id can represent a Google Cloud `zone` or `region`
+   * depending on the resource. for example: A zonal Filestore instance:
    * * `projects/my-project/locations/us-central1-c/instances/my-basic-tier-filer`
    * A regional Filestore instance:
    * * `projects/my-project/locations/us-central1/instances/my-enterprise-filer`
@@ -2891,9 +2880,9 @@ public final class CloudFilestoreManagerGrpc {
   private static final class CloudFilestoreManagerMethodDescriptorSupplier
       extends CloudFilestoreManagerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudFilestoreManagerMethodDescriptorSupplier(String methodName) {
+    CloudFilestoreManagerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

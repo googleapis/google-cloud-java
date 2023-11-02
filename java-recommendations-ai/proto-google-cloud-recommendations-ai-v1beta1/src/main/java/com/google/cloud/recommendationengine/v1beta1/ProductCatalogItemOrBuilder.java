@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,9 +112,11 @@ public interface ProductCatalogItemOrBuilder
    *
    * <pre>
    * Optional. A map to pass the costs associated with the product.
+   *
    * For example:
    * {"manufacturing": 45.5} The profit of selling this item is computed like
    * so:
+   *
    * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
    * * If 'priceRange' is provided, profit = minPrice - sum(costs)
    * </pre>
@@ -127,9 +129,11 @@ public interface ProductCatalogItemOrBuilder
    *
    * <pre>
    * Optional. A map to pass the costs associated with the product.
+   *
    * For example:
    * {"manufacturing": 45.5} The profit of selling this item is computed like
    * so:
+   *
    * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
    * * If 'priceRange' is provided, profit = minPrice - sum(costs)
    * </pre>
@@ -145,9 +149,11 @@ public interface ProductCatalogItemOrBuilder
    *
    * <pre>
    * Optional. A map to pass the costs associated with the product.
+   *
    * For example:
    * {"manufacturing": 45.5} The profit of selling this item is computed like
    * so:
+   *
    * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
    * * If 'priceRange' is provided, profit = minPrice - sum(costs)
    * </pre>
@@ -160,9 +166,11 @@ public interface ProductCatalogItemOrBuilder
    *
    * <pre>
    * Optional. A map to pass the costs associated with the product.
+   *
    * For example:
    * {"manufacturing": 45.5} The profit of selling this item is computed like
    * so:
+   *
    * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
    * * If 'priceRange' is provided, profit = minPrice - sum(costs)
    * </pre>
@@ -175,9 +183,11 @@ public interface ProductCatalogItemOrBuilder
    *
    * <pre>
    * Optional. A map to pass the costs associated with the product.
+   *
    * For example:
    * {"manufacturing": 45.5} The profit of selling this item is computed like
    * so:
+   *
    * * If 'exactPrice' is provided, profit = displayPrice - sum(costs)
    * * If 'priceRange' is provided, profit = minPrice - sum(costs)
    * </pre>
@@ -344,5 +354,5 @@ public interface ProductCatalogItemOrBuilder
    */
   com.google.cloud.recommendationengine.v1beta1.ImageOrBuilder getImagesOrBuilder(int index);
 
-  public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceCase getPriceCase();
+  com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceCase getPriceCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,6 +118,7 @@ public interface SettingMetadataOrBuilder
    * <pre>
    * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
    * explicitly set.
+   *
    * Note: not all settings have a default value.
    * </pre>
    *
@@ -132,6 +133,7 @@ public interface SettingMetadataOrBuilder
    * <pre>
    * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
    * explicitly set.
+   *
    * Note: not all settings have a default value.
    * </pre>
    *
@@ -146,6 +148,7 @@ public interface SettingMetadataOrBuilder
    * <pre>
    * The value provided by [Setting.effective_value][google.cloud.resourcesettings.v1.Setting.effective_value] if no setting value is
    * explicitly set.
+   *
    * Note: not all settings have a default value.
    * </pre>
    *

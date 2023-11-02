@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
     return new AnnotationSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.AnnotationSpecOuterClass
         .internal_static_google_cloud_automl_v1beta1_AnnotationSpec_descriptor;
@@ -78,6 +73,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Resource name of the annotation spec.
    * Form:
+   *
    * 'projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationSpecs/{annotation_spec_id}'
    * </pre>
    *
@@ -103,6 +99,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Resource name of the annotation spec.
    * Form:
+   *
    * 'projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationSpecs/{annotation_spec_id}'
    * </pre>
    *
@@ -589,6 +586,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of the annotation spec.
      * Form:
+     *
      * 'projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationSpecs/{annotation_spec_id}'
      * </pre>
      *
@@ -613,6 +611,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of the annotation spec.
      * Form:
+     *
      * 'projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationSpecs/{annotation_spec_id}'
      * </pre>
      *
@@ -637,6 +636,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of the annotation spec.
      * Form:
+     *
      * 'projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationSpecs/{annotation_spec_id}'
      * </pre>
      *
@@ -660,6 +660,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of the annotation spec.
      * Form:
+     *
      * 'projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationSpecs/{annotation_spec_id}'
      * </pre>
      *
@@ -679,6 +680,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of the annotation spec.
      * Form:
+     *
      * 'projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationSpecs/{annotation_spec_id}'
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,11 +53,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
     return new AnalyzeOrgPolicyGovernedAssetsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_AnalyzeOrgPolicyGovernedAssetsRequest_descriptor;
@@ -86,6 +81,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
    * policies within the scope will be analyzed. The output assets will
    * also be limited to the ones governed by those in-scope organization
    * policies.
+   *
    * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
    * </pre>
    *
@@ -113,6 +109,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
    * policies within the scope will be analyzed. The output assets will
    * also be limited to the ones governed by those in-scope organization
    * policies.
+   *
    * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
    * </pre>
    *
@@ -201,9 +198,11 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
    * `governed_resource.folders`. The only supported fields for governed iam
    * policies are `governed_iam_policy.project` and
    * `governed_iam_policy.folders`. The only supported operator is `=`.
+   *
    * Example 1: governed_resource.project="projects/12345678" filter will return
    * all governed resources under projects/12345678 including the project
    * ifself, if applicable.
+   *
    * Example 2: governed_iam_policy.folders="folders/12345678" filter will
    * return all governed iam policies under folders/12345678, if applicable.
    * </pre>
@@ -233,9 +232,11 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
    * `governed_resource.folders`. The only supported fields for governed iam
    * policies are `governed_iam_policy.project` and
    * `governed_iam_policy.folders`. The only supported operator is `=`.
+   *
    * Example 1: governed_resource.project="projects/12345678" filter will return
    * all governed resources under projects/12345678 including the project
    * ifself, if applicable.
+   *
    * Example 2: governed_iam_policy.folders="folders/12345678" filter will
    * return all governed iam policies under folders/12345678, if applicable.
    * </pre>
@@ -804,6 +805,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
      * policies within the scope will be analyzed. The output assets will
      * also be limited to the ones governed by those in-scope organization
      * policies.
+     *
      * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
@@ -830,6 +832,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
      * policies within the scope will be analyzed. The output assets will
      * also be limited to the ones governed by those in-scope organization
      * policies.
+     *
      * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
@@ -856,6 +859,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
      * policies within the scope will be analyzed. The output assets will
      * also be limited to the ones governed by those in-scope organization
      * policies.
+     *
      * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
@@ -881,6 +885,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
      * policies within the scope will be analyzed. The output assets will
      * also be limited to the ones governed by those in-scope organization
      * policies.
+     *
      * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
@@ -902,6 +907,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
      * policies within the scope will be analyzed. The output assets will
      * also be limited to the ones governed by those in-scope organization
      * policies.
+     *
      * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
@@ -1047,9 +1053,11 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
      * `governed_resource.folders`. The only supported fields for governed iam
      * policies are `governed_iam_policy.project` and
      * `governed_iam_policy.folders`. The only supported operator is `=`.
+     *
      * Example 1: governed_resource.project="projects/12345678" filter will return
      * all governed resources under projects/12345678 including the project
      * ifself, if applicable.
+     *
      * Example 2: governed_iam_policy.folders="folders/12345678" filter will
      * return all governed iam policies under folders/12345678, if applicable.
      * </pre>
@@ -1078,9 +1086,11 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
      * `governed_resource.folders`. The only supported fields for governed iam
      * policies are `governed_iam_policy.project` and
      * `governed_iam_policy.folders`. The only supported operator is `=`.
+     *
      * Example 1: governed_resource.project="projects/12345678" filter will return
      * all governed resources under projects/12345678 including the project
      * ifself, if applicable.
+     *
      * Example 2: governed_iam_policy.folders="folders/12345678" filter will
      * return all governed iam policies under folders/12345678, if applicable.
      * </pre>
@@ -1109,9 +1119,11 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
      * `governed_resource.folders`. The only supported fields for governed iam
      * policies are `governed_iam_policy.project` and
      * `governed_iam_policy.folders`. The only supported operator is `=`.
+     *
      * Example 1: governed_resource.project="projects/12345678" filter will return
      * all governed resources under projects/12345678 including the project
      * ifself, if applicable.
+     *
      * Example 2: governed_iam_policy.folders="folders/12345678" filter will
      * return all governed iam policies under folders/12345678, if applicable.
      * </pre>
@@ -1139,9 +1151,11 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
      * `governed_resource.folders`. The only supported fields for governed iam
      * policies are `governed_iam_policy.project` and
      * `governed_iam_policy.folders`. The only supported operator is `=`.
+     *
      * Example 1: governed_resource.project="projects/12345678" filter will return
      * all governed resources under projects/12345678 including the project
      * ifself, if applicable.
+     *
      * Example 2: governed_iam_policy.folders="folders/12345678" filter will
      * return all governed iam policies under folders/12345678, if applicable.
      * </pre>
@@ -1165,9 +1179,11 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
      * `governed_resource.folders`. The only supported fields for governed iam
      * policies are `governed_iam_policy.project` and
      * `governed_iam_policy.folders`. The only supported operator is `=`.
+     *
      * Example 1: governed_resource.project="projects/12345678" filter will return
      * all governed resources under projects/12345678 including the project
      * ifself, if applicable.
+     *
      * Example 2: governed_iam_policy.folders="folders/12345678" filter will
      * return all governed iam policies under folders/12345678, if applicable.
      * </pre>

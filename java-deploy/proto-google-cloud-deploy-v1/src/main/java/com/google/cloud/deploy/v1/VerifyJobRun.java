@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
     return new VerifyJobRun();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_VerifyJobRun_descriptor;
@@ -96,8 +91,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Build is not available, either because it is not enabled or because
-     * Google Cloud Deploy has insufficient permissions. See [required
-     * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+     * Cloud Deploy has insufficient permissions. See [required
+     * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
      * </pre>
      *
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -118,7 +113,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The verify build did not complete within the alloted time.
+     * The verify job run did not complete within the alloted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -138,8 +133,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
-     * failure_message for additional details.
+     * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
+     * for additional details.
      * </pre>
      *
      * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>
@@ -163,8 +158,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cloud Build is not available, either because it is not enabled or because
-     * Google Cloud Deploy has insufficient permissions. See [required
-     * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+     * Cloud Deploy has insufficient permissions. See [required
+     * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
      * </pre>
      *
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -185,7 +180,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The verify build did not complete within the alloted time.
+     * The verify job run did not complete within the alloted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -205,8 +200,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
-     * failure_message for additional details.
+     * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
+     * for additional details.
      * </pre>
      *
      * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>
@@ -312,7 +307,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
    * used to verify. Format is
-   * projects/{project}/locations/{location}/builds/{build}.
+   * `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
    * <code>
@@ -339,7 +334,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
    * used to verify. Format is
-   * projects/{project}/locations/{location}/builds/{build}.
+   * `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
    * <code>
@@ -1006,7 +1001,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1032,7 +1027,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1058,7 +1053,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1083,7 +1078,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1104,7 +1099,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>

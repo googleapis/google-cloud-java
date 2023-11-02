@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
 
   private ServiceAccount() {
     email_ = "";
-    scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    scope_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ServiceAccount();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -124,7 +119,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   public static final int SCOPE_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList scope_;
+  private com.google.protobuf.LazyStringArrayList scope_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -403,8 +399,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       email_ = "";
-      scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      scope_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -432,7 +427,6 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tpu.v2alpha1.ServiceAccount buildPartial() {
       com.google.cloud.tpu.v2alpha1.ServiceAccount result =
           new com.google.cloud.tpu.v2alpha1.ServiceAccount(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -440,18 +434,14 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.tpu.v2alpha1.ServiceAccount result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        scope_ = scope_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.scope_ = scope_;
-    }
-
     private void buildPartial0(com.google.cloud.tpu.v2alpha1.ServiceAccount result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.email_ = email_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        scope_.makeImmutable();
+        result.scope_ = scope_;
       }
     }
 
@@ -508,7 +498,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       if (!other.scope_.isEmpty()) {
         if (scope_.isEmpty()) {
           scope_ = other.scope_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureScopeIsMutable();
           scope_.addAll(other.scope_);
@@ -684,14 +674,14 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList scope_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList scope_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureScopeIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!scope_.isModifiable()) {
         scope_ = new com.google.protobuf.LazyStringArrayList(scope_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -706,7 +696,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the scope.
      */
     public com.google.protobuf.ProtocolStringList getScopeList() {
-      return scope_.getUnmodifiableView();
+      scope_.makeImmutable();
+      return scope_;
     }
     /**
      *
@@ -775,6 +766,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       }
       ensureScopeIsMutable();
       scope_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -797,6 +789,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       }
       ensureScopeIsMutable();
       scope_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -816,6 +809,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllScope(java.lang.Iterable<java.lang.String> values) {
       ensureScopeIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, scope_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -832,8 +826,9 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-      scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      scope_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -857,6 +852,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureScopeIsMutable();
       scope_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

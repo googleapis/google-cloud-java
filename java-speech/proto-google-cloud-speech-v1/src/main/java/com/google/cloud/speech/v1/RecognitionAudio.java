@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
     return new RecognitionAudio();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1.SpeechProto
         .internal_static_google_cloud_speech_v1_RecognitionAudio_descriptor;
@@ -69,6 +64,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
   }
 
   private int audioSourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object audioSource_;
 
   public enum AudioSourceCase

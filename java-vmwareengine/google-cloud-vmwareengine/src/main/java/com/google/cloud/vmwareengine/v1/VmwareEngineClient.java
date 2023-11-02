@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2237,6 +2237,262 @@ public class VmwareEngineClient implements BackgroundResource {
    */
   public final UnaryCallable<ListSubnetsRequest, ListSubnetsResponse> listSubnetsCallable() {
     return stub.listSubnetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single subnet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   SubnetName name = SubnetName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[SUBNET]");
+   *   Subnet response = vmwareEngineClient.getSubnet(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the subnet to retrieve. Resource names are
+   *     schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/subnets/my-subnet`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Subnet getSubnet(SubnetName name) {
+    GetSubnetRequest request =
+        GetSubnetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSubnet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single subnet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       SubnetName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[SUBNET]").toString();
+   *   Subnet response = vmwareEngineClient.getSubnet(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the subnet to retrieve. Resource names are
+   *     schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/subnets/my-subnet`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Subnet getSubnet(String name) {
+    GetSubnetRequest request = GetSubnetRequest.newBuilder().setName(name).build();
+    return getSubnet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single subnet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetSubnetRequest request =
+   *       GetSubnetRequest.newBuilder()
+   *           .setName(
+   *               SubnetName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[SUBNET]")
+   *                   .toString())
+   *           .build();
+   *   Subnet response = vmwareEngineClient.getSubnet(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Subnet getSubnet(GetSubnetRequest request) {
+    return getSubnetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single subnet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetSubnetRequest request =
+   *       GetSubnetRequest.newBuilder()
+   *           .setName(
+   *               SubnetName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[SUBNET]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Subnet> future = vmwareEngineClient.getSubnetCallable().futureCall(request);
+   *   // Do something.
+   *   Subnet response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSubnetRequest, Subnet> getSubnetCallable() {
+    return stub.getSubnetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single subnet. Only fields specified in `update_mask` are applied.
+   *
+   * <p>&#42;Note&#42;: This API is synchronous and always returns a successful
+   * `google.longrunning.Operation` (LRO). The returned LRO will only have `done` and `response`
+   * fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   Subnet subnet = Subnet.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Subnet response = vmwareEngineClient.updateSubnetAsync(subnet, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param subnet Required. Subnet description.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `Subnet` resource by the update. The fields specified in the `update_mask` are relative to
+   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Subnet, OperationMetadata> updateSubnetAsync(
+      Subnet subnet, FieldMask updateMask) {
+    UpdateSubnetRequest request =
+        UpdateSubnetRequest.newBuilder().setSubnet(subnet).setUpdateMask(updateMask).build();
+    return updateSubnetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single subnet. Only fields specified in `update_mask` are applied.
+   *
+   * <p>&#42;Note&#42;: This API is synchronous and always returns a successful
+   * `google.longrunning.Operation` (LRO). The returned LRO will only have `done` and `response`
+   * fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateSubnetRequest request =
+   *       UpdateSubnetRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setSubnet(Subnet.newBuilder().build())
+   *           .build();
+   *   Subnet response = vmwareEngineClient.updateSubnetAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Subnet, OperationMetadata> updateSubnetAsync(
+      UpdateSubnetRequest request) {
+    return updateSubnetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single subnet. Only fields specified in `update_mask` are applied.
+   *
+   * <p>&#42;Note&#42;: This API is synchronous and always returns a successful
+   * `google.longrunning.Operation` (LRO). The returned LRO will only have `done` and `response`
+   * fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateSubnetRequest request =
+   *       UpdateSubnetRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setSubnet(Subnet.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Subnet, OperationMetadata> future =
+   *       vmwareEngineClient.updateSubnetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Subnet response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateSubnetRequest, Subnet, OperationMetadata>
+      updateSubnetOperationCallable() {
+    return stub.updateSubnetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single subnet. Only fields specified in `update_mask` are applied.
+   *
+   * <p>&#42;Note&#42;: This API is synchronous and always returns a successful
+   * `google.longrunning.Operation` (LRO). The returned LRO will only have `done` and `response`
+   * fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdateSubnetRequest request =
+   *       UpdateSubnetRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setSubnet(Subnet.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = vmwareEngineClient.updateSubnetCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSubnetRequest, Operation> updateSubnetCallable() {
+    return stub.updateSubnetCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -5276,6 +5532,1008 @@ public class VmwareEngineClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a new private connection that can be used for accessing private Clouds.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+   *   String privateConnectionId = "privateConnectionId-1926654532";
+   *   PrivateConnection response =
+   *       vmwareEngineClient
+   *           .createPrivateConnectionAsync(parent, privateConnection, privateConnectionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the location to create the new private connection
+   *     in. Private connection is a regional resource. Resource names are schemeless URIs that
+   *     follow the conventions in https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1`
+   * @param privateConnection Required. The initial description of the new private connection.
+   * @param privateConnectionId Required. The user-provided identifier of the new private
+   *     connection. This identifier must be unique among private connection resources within the
+   *     parent and becomes the final token in the name URI. The identifier must meet the following
+   *     requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PrivateConnection, OperationMetadata> createPrivateConnectionAsync(
+      LocationName parent, PrivateConnection privateConnection, String privateConnectionId) {
+    CreatePrivateConnectionRequest request =
+        CreatePrivateConnectionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPrivateConnection(privateConnection)
+            .setPrivateConnectionId(privateConnectionId)
+            .build();
+    return createPrivateConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new private connection that can be used for accessing private Clouds.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+   *   String privateConnectionId = "privateConnectionId-1926654532";
+   *   PrivateConnection response =
+   *       vmwareEngineClient
+   *           .createPrivateConnectionAsync(parent, privateConnection, privateConnectionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the location to create the new private connection
+   *     in. Private connection is a regional resource. Resource names are schemeless URIs that
+   *     follow the conventions in https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1`
+   * @param privateConnection Required. The initial description of the new private connection.
+   * @param privateConnectionId Required. The user-provided identifier of the new private
+   *     connection. This identifier must be unique among private connection resources within the
+   *     parent and becomes the final token in the name URI. The identifier must meet the following
+   *     requirements:
+   *     <ul>
+   *       <li>Only contains 1-63 alphanumeric characters and hyphens
+   *       <li>Begins with an alphabetical character
+   *       <li>Ends with a non-hyphen character
+   *       <li>Not formatted as a UUID
+   *       <li>Complies with [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PrivateConnection, OperationMetadata> createPrivateConnectionAsync(
+      String parent, PrivateConnection privateConnection, String privateConnectionId) {
+    CreatePrivateConnectionRequest request =
+        CreatePrivateConnectionRequest.newBuilder()
+            .setParent(parent)
+            .setPrivateConnection(privateConnection)
+            .setPrivateConnectionId(privateConnectionId)
+            .build();
+    return createPrivateConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new private connection that can be used for accessing private Clouds.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreatePrivateConnectionRequest request =
+   *       CreatePrivateConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPrivateConnectionId("privateConnectionId-1926654532")
+   *           .setPrivateConnection(PrivateConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   PrivateConnection response = vmwareEngineClient.createPrivateConnectionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PrivateConnection, OperationMetadata> createPrivateConnectionAsync(
+      CreatePrivateConnectionRequest request) {
+    return createPrivateConnectionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new private connection that can be used for accessing private Clouds.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreatePrivateConnectionRequest request =
+   *       CreatePrivateConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPrivateConnectionId("privateConnectionId-1926654532")
+   *           .setPrivateConnection(PrivateConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<PrivateConnection, OperationMetadata> future =
+   *       vmwareEngineClient.createPrivateConnectionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PrivateConnection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationCallable() {
+    return stub.createPrivateConnectionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new private connection that can be used for accessing private Clouds.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   CreatePrivateConnectionRequest request =
+   *       CreatePrivateConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPrivateConnectionId("privateConnectionId-1926654532")
+   *           .setPrivateConnection(PrivateConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.createPrivateConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionCallable() {
+    return stub.createPrivateConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a `PrivateConnection` resource by its resource name. The resource contains details of
+   * the private connection, such as connected network, routing mode and state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   PrivateConnectionName name =
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+   *   PrivateConnection response = vmwareEngineClient.getPrivateConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the private connection to retrieve. Resource names
+   *     are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/privateConnections/my-connection`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PrivateConnection getPrivateConnection(PrivateConnectionName name) {
+    GetPrivateConnectionRequest request =
+        GetPrivateConnectionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getPrivateConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a `PrivateConnection` resource by its resource name. The resource contains details of
+   * the private connection, such as connected network, routing mode and state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]").toString();
+   *   PrivateConnection response = vmwareEngineClient.getPrivateConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the private connection to retrieve. Resource names
+   *     are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/privateConnections/my-connection`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PrivateConnection getPrivateConnection(String name) {
+    GetPrivateConnectionRequest request =
+        GetPrivateConnectionRequest.newBuilder().setName(name).build();
+    return getPrivateConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a `PrivateConnection` resource by its resource name. The resource contains details of
+   * the private connection, such as connected network, routing mode and state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetPrivateConnectionRequest request =
+   *       GetPrivateConnectionRequest.newBuilder()
+   *           .setName(
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   PrivateConnection response = vmwareEngineClient.getPrivateConnection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PrivateConnection getPrivateConnection(GetPrivateConnectionRequest request) {
+    return getPrivateConnectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a `PrivateConnection` resource by its resource name. The resource contains details of
+   * the private connection, such as connected network, routing mode and state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   GetPrivateConnectionRequest request =
+   *       GetPrivateConnectionRequest.newBuilder()
+   *           .setName(
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<PrivateConnection> future =
+   *       vmwareEngineClient.getPrivateConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   PrivateConnection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionCallable() {
+    return stub.getPrivateConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `PrivateConnection` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (PrivateConnection element :
+   *       vmwareEngineClient.listPrivateConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the location to query for private connections.
+   *     Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPrivateConnectionsPagedResponse listPrivateConnections(LocationName parent) {
+    ListPrivateConnectionsRequest request =
+        ListPrivateConnectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPrivateConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `PrivateConnection` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (PrivateConnection element :
+   *       vmwareEngineClient.listPrivateConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the location to query for private connections.
+   *     Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPrivateConnectionsPagedResponse listPrivateConnections(String parent) {
+    ListPrivateConnectionsRequest request =
+        ListPrivateConnectionsRequest.newBuilder().setParent(parent).build();
+    return listPrivateConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `PrivateConnection` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListPrivateConnectionsRequest request =
+   *       ListPrivateConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (PrivateConnection element :
+   *       vmwareEngineClient.listPrivateConnections(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPrivateConnectionsPagedResponse listPrivateConnections(
+      ListPrivateConnectionsRequest request) {
+    return listPrivateConnectionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `PrivateConnection` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListPrivateConnectionsRequest request =
+   *       ListPrivateConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<PrivateConnection> future =
+   *       vmwareEngineClient.listPrivateConnectionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PrivateConnection element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsPagedCallable() {
+    return stub.listPrivateConnectionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `PrivateConnection` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListPrivateConnectionsRequest request =
+   *       ListPrivateConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListPrivateConnectionsResponse response =
+   *         vmwareEngineClient.listPrivateConnectionsCallable().call(request);
+   *     for (PrivateConnection element : response.getPrivateConnectionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+      listPrivateConnectionsCallable() {
+    return stub.listPrivateConnectionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a `PrivateConnection` resource. Only `description` and `routing_mode` fields can be
+   * updated. Only fields specified in `updateMask` are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   PrivateConnection response =
+   *       vmwareEngineClient.updatePrivateConnectionAsync(privateConnection, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param privateConnection Required. Private connection description.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `PrivateConnection` resource by the update. The fields specified in the `update_mask` are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PrivateConnection, OperationMetadata> updatePrivateConnectionAsync(
+      PrivateConnection privateConnection, FieldMask updateMask) {
+    UpdatePrivateConnectionRequest request =
+        UpdatePrivateConnectionRequest.newBuilder()
+            .setPrivateConnection(privateConnection)
+            .setUpdateMask(updateMask)
+            .build();
+    return updatePrivateConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a `PrivateConnection` resource. Only `description` and `routing_mode` fields can be
+   * updated. Only fields specified in `updateMask` are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdatePrivateConnectionRequest request =
+   *       UpdatePrivateConnectionRequest.newBuilder()
+   *           .setPrivateConnection(PrivateConnection.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   PrivateConnection response = vmwareEngineClient.updatePrivateConnectionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PrivateConnection, OperationMetadata> updatePrivateConnectionAsync(
+      UpdatePrivateConnectionRequest request) {
+    return updatePrivateConnectionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a `PrivateConnection` resource. Only `description` and `routing_mode` fields can be
+   * updated. Only fields specified in `updateMask` are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdatePrivateConnectionRequest request =
+   *       UpdatePrivateConnectionRequest.newBuilder()
+   *           .setPrivateConnection(PrivateConnection.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<PrivateConnection, OperationMetadata> future =
+   *       vmwareEngineClient.updatePrivateConnectionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PrivateConnection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      updatePrivateConnectionOperationCallable() {
+    return stub.updatePrivateConnectionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a `PrivateConnection` resource. Only `description` and `routing_mode` fields can be
+   * updated. Only fields specified in `updateMask` are applied.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   UpdatePrivateConnectionRequest request =
+   *       UpdatePrivateConnectionRequest.newBuilder()
+   *           .setPrivateConnection(PrivateConnection.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.updatePrivateConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdatePrivateConnectionRequest, Operation>
+      updatePrivateConnectionCallable() {
+    return stub.updatePrivateConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `PrivateConnection` resource. When a private connection is deleted for a VMware
+   * Engine network, the connected network becomes inaccessible to that VMware Engine network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   PrivateConnectionName name =
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+   *   vmwareEngineClient.deletePrivateConnectionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the private connection to be deleted. Resource names
+   *     are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/privateConnections/my-connection`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deletePrivateConnectionAsync(
+      PrivateConnectionName name) {
+    DeletePrivateConnectionRequest request =
+        DeletePrivateConnectionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deletePrivateConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `PrivateConnection` resource. When a private connection is deleted for a VMware
+   * Engine network, the connected network becomes inaccessible to that VMware Engine network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String name =
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]").toString();
+   *   vmwareEngineClient.deletePrivateConnectionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the private connection to be deleted. Resource names
+   *     are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-central1/privateConnections/my-connection`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deletePrivateConnectionAsync(String name) {
+    DeletePrivateConnectionRequest request =
+        DeletePrivateConnectionRequest.newBuilder().setName(name).build();
+    return deletePrivateConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `PrivateConnection` resource. When a private connection is deleted for a VMware
+   * Engine network, the connected network becomes inaccessible to that VMware Engine network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeletePrivateConnectionRequest request =
+   *       DeletePrivateConnectionRequest.newBuilder()
+   *           .setName(
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   vmwareEngineClient.deletePrivateConnectionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deletePrivateConnectionAsync(
+      DeletePrivateConnectionRequest request) {
+    return deletePrivateConnectionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `PrivateConnection` resource. When a private connection is deleted for a VMware
+   * Engine network, the connected network becomes inaccessible to that VMware Engine network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeletePrivateConnectionRequest request =
+   *       DeletePrivateConnectionRequest.newBuilder()
+   *           .setName(
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       vmwareEngineClient.deletePrivateConnectionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationCallable() {
+    return stub.deletePrivateConnectionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `PrivateConnection` resource. When a private connection is deleted for a VMware
+   * Engine network, the connected network becomes inaccessible to that VMware Engine network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   DeletePrivateConnectionRequest request =
+   *       DeletePrivateConnectionRequest.newBuilder()
+   *           .setName(
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmwareEngineClient.deletePrivateConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionCallable() {
+    return stub.deletePrivateConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the private connection routes exchanged over a peering connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   PrivateConnectionName parent =
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+   *   for (PeeringRoute element :
+   *       vmwareEngineClient.listPrivateConnectionPeeringRoutes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private connection to retrieve peering routes
+   *     from. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-west1/privateConnections/my-connection`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPrivateConnectionPeeringRoutesPagedResponse listPrivateConnectionPeeringRoutes(
+      PrivateConnectionName parent) {
+    ListPrivateConnectionPeeringRoutesRequest request =
+        ListPrivateConnectionPeeringRoutesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPrivateConnectionPeeringRoutes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the private connection routes exchanged over a peering connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   String parent =
+   *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]").toString();
+   *   for (PeeringRoute element :
+   *       vmwareEngineClient.listPrivateConnectionPeeringRoutes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the private connection to retrieve peering routes
+   *     from. Resource names are schemeless URIs that follow the conventions in
+   *     https://cloud.google.com/apis/design/resource_names. For example:
+   *     `projects/my-project/locations/us-west1/privateConnections/my-connection`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPrivateConnectionPeeringRoutesPagedResponse listPrivateConnectionPeeringRoutes(
+      String parent) {
+    ListPrivateConnectionPeeringRoutesRequest request =
+        ListPrivateConnectionPeeringRoutesRequest.newBuilder().setParent(parent).build();
+    return listPrivateConnectionPeeringRoutes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the private connection routes exchanged over a peering connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListPrivateConnectionPeeringRoutesRequest request =
+   *       ListPrivateConnectionPeeringRoutesRequest.newBuilder()
+   *           .setParent(
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (PeeringRoute element :
+   *       vmwareEngineClient.listPrivateConnectionPeeringRoutes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPrivateConnectionPeeringRoutesPagedResponse listPrivateConnectionPeeringRoutes(
+      ListPrivateConnectionPeeringRoutesRequest request) {
+    return listPrivateConnectionPeeringRoutesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the private connection routes exchanged over a peering connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListPrivateConnectionPeeringRoutesRequest request =
+   *       ListPrivateConnectionPeeringRoutesRequest.newBuilder()
+   *           .setParent(
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<PeeringRoute> future =
+   *       vmwareEngineClient.listPrivateConnectionPeeringRoutesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PeeringRoute element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesPagedResponse>
+      listPrivateConnectionPeeringRoutesPagedCallable() {
+    return stub.listPrivateConnectionPeeringRoutesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the private connection routes exchanged over a peering connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmwareEngineClient vmwareEngineClient = VmwareEngineClient.create()) {
+   *   ListPrivateConnectionPeeringRoutesRequest request =
+   *       ListPrivateConnectionPeeringRoutesRequest.newBuilder()
+   *           .setParent(
+   *               PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListPrivateConnectionPeeringRoutesResponse response =
+   *         vmwareEngineClient.listPrivateConnectionPeeringRoutesCallable().call(request);
+   *     for (PeeringRoute element : response.getPeeringRoutesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
+      listPrivateConnectionPeeringRoutesCallable() {
+    return stub.listPrivateConnectionPeeringRoutesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -6223,6 +7481,192 @@ public class VmwareEngineClient implements BackgroundResource {
     protected ListVmwareEngineNetworksFixedSizeCollection createCollection(
         List<ListVmwareEngineNetworksPage> pages, int collectionSize) {
       return new ListVmwareEngineNetworksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPrivateConnectionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListPrivateConnectionsRequest,
+          ListPrivateConnectionsResponse,
+          PrivateConnection,
+          ListPrivateConnectionsPage,
+          ListPrivateConnectionsFixedSizeCollection> {
+
+    public static ApiFuture<ListPrivateConnectionsPagedResponse> createAsync(
+        PageContext<
+                ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
+            context,
+        ApiFuture<ListPrivateConnectionsResponse> futureResponse) {
+      ApiFuture<ListPrivateConnectionsPage> futurePage =
+          ListPrivateConnectionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListPrivateConnectionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPrivateConnectionsPagedResponse(ListPrivateConnectionsPage page) {
+      super(page, ListPrivateConnectionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPrivateConnectionsPage
+      extends AbstractPage<
+          ListPrivateConnectionsRequest,
+          ListPrivateConnectionsResponse,
+          PrivateConnection,
+          ListPrivateConnectionsPage> {
+
+    private ListPrivateConnectionsPage(
+        PageContext<
+                ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
+            context,
+        ListPrivateConnectionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListPrivateConnectionsPage createEmptyPage() {
+      return new ListPrivateConnectionsPage(null, null);
+    }
+
+    @Override
+    protected ListPrivateConnectionsPage createPage(
+        PageContext<
+                ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
+            context,
+        ListPrivateConnectionsResponse response) {
+      return new ListPrivateConnectionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPrivateConnectionsPage> createPageAsync(
+        PageContext<
+                ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
+            context,
+        ApiFuture<ListPrivateConnectionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPrivateConnectionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPrivateConnectionsRequest,
+          ListPrivateConnectionsResponse,
+          PrivateConnection,
+          ListPrivateConnectionsPage,
+          ListPrivateConnectionsFixedSizeCollection> {
+
+    private ListPrivateConnectionsFixedSizeCollection(
+        List<ListPrivateConnectionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPrivateConnectionsFixedSizeCollection createEmptyCollection() {
+      return new ListPrivateConnectionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPrivateConnectionsFixedSizeCollection createCollection(
+        List<ListPrivateConnectionsPage> pages, int collectionSize) {
+      return new ListPrivateConnectionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPrivateConnectionPeeringRoutesPagedResponse
+      extends AbstractPagedListResponse<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesResponse,
+          PeeringRoute,
+          ListPrivateConnectionPeeringRoutesPage,
+          ListPrivateConnectionPeeringRoutesFixedSizeCollection> {
+
+    public static ApiFuture<ListPrivateConnectionPeeringRoutesPagedResponse> createAsync(
+        PageContext<
+                ListPrivateConnectionPeeringRoutesRequest,
+                ListPrivateConnectionPeeringRoutesResponse,
+                PeeringRoute>
+            context,
+        ApiFuture<ListPrivateConnectionPeeringRoutesResponse> futureResponse) {
+      ApiFuture<ListPrivateConnectionPeeringRoutesPage> futurePage =
+          ListPrivateConnectionPeeringRoutesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListPrivateConnectionPeeringRoutesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPrivateConnectionPeeringRoutesPagedResponse(
+        ListPrivateConnectionPeeringRoutesPage page) {
+      super(page, ListPrivateConnectionPeeringRoutesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPrivateConnectionPeeringRoutesPage
+      extends AbstractPage<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesResponse,
+          PeeringRoute,
+          ListPrivateConnectionPeeringRoutesPage> {
+
+    private ListPrivateConnectionPeeringRoutesPage(
+        PageContext<
+                ListPrivateConnectionPeeringRoutesRequest,
+                ListPrivateConnectionPeeringRoutesResponse,
+                PeeringRoute>
+            context,
+        ListPrivateConnectionPeeringRoutesResponse response) {
+      super(context, response);
+    }
+
+    private static ListPrivateConnectionPeeringRoutesPage createEmptyPage() {
+      return new ListPrivateConnectionPeeringRoutesPage(null, null);
+    }
+
+    @Override
+    protected ListPrivateConnectionPeeringRoutesPage createPage(
+        PageContext<
+                ListPrivateConnectionPeeringRoutesRequest,
+                ListPrivateConnectionPeeringRoutesResponse,
+                PeeringRoute>
+            context,
+        ListPrivateConnectionPeeringRoutesResponse response) {
+      return new ListPrivateConnectionPeeringRoutesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPrivateConnectionPeeringRoutesPage> createPageAsync(
+        PageContext<
+                ListPrivateConnectionPeeringRoutesRequest,
+                ListPrivateConnectionPeeringRoutesResponse,
+                PeeringRoute>
+            context,
+        ApiFuture<ListPrivateConnectionPeeringRoutesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPrivateConnectionPeeringRoutesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesResponse,
+          PeeringRoute,
+          ListPrivateConnectionPeeringRoutesPage,
+          ListPrivateConnectionPeeringRoutesFixedSizeCollection> {
+
+    private ListPrivateConnectionPeeringRoutesFixedSizeCollection(
+        List<ListPrivateConnectionPeeringRoutesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPrivateConnectionPeeringRoutesFixedSizeCollection createEmptyCollection() {
+      return new ListPrivateConnectionPeeringRoutesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPrivateConnectionPeeringRoutesFixedSizeCollection createCollection(
+        List<ListPrivateConnectionPeeringRoutesPage> pages, int collectionSize) {
+      return new ListPrivateConnectionPeeringRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
 

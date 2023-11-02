@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TextSpan();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -125,7 +120,9 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The API calculates the beginning offset of the content in the original
-   * document according to the [EncodingType][google.cloud.language.v1beta2.EncodingType] specified in the API request.
+   * document according to the
+   * [EncodingType][google.cloud.language.v1beta2.EncodingType] specified in the
+   * API request.
    * </pre>
    *
    * <code>int32 begin_offset = 2;</code>
@@ -612,7 +609,9 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The API calculates the beginning offset of the content in the original
-     * document according to the [EncodingType][google.cloud.language.v1beta2.EncodingType] specified in the API request.
+     * document according to the
+     * [EncodingType][google.cloud.language.v1beta2.EncodingType] specified in the
+     * API request.
      * </pre>
      *
      * <code>int32 begin_offset = 2;</code>
@@ -628,7 +627,9 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The API calculates the beginning offset of the content in the original
-     * document according to the [EncodingType][google.cloud.language.v1beta2.EncodingType] specified in the API request.
+     * document according to the
+     * [EncodingType][google.cloud.language.v1beta2.EncodingType] specified in the
+     * API request.
      * </pre>
      *
      * <code>int32 begin_offset = 2;</code>
@@ -648,7 +649,9 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The API calculates the beginning offset of the content in the original
-     * document according to the [EncodingType][google.cloud.language.v1beta2.EncodingType] specified in the API request.
+     * document according to the
+     * [EncodingType][google.cloud.language.v1beta2.EncodingType] specified in the
+     * API request.
      * </pre>
      *
      * <code>int32 begin_offset = 2;</code>

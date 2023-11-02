@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,17 +41,14 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     displayName_ = "";
     state_ = 0;
+    modelType_ = 0;
+    languageCode_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new IssueModel();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -296,6 +293,165 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.contactcenterinsights.v1.IssueModel.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Type of the model.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.contactcenterinsights.v1.IssueModel.ModelType}
+   */
+  public enum ModelType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified model type.
+     * </pre>
+     *
+     * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
+     */
+    MODEL_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Type V1.
+     * </pre>
+     *
+     * <code>TYPE_V1 = 1;</code>
+     */
+    TYPE_V1(1),
+    /**
+     *
+     *
+     * <pre>
+     * Type V2.
+     * </pre>
+     *
+     * <code>TYPE_V2 = 2;</code>
+     */
+    TYPE_V2(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified model type.
+     * </pre>
+     *
+     * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODEL_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Type V1.
+     * </pre>
+     *
+     * <code>TYPE_V1 = 1;</code>
+     */
+    public static final int TYPE_V1_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Type V2.
+     * </pre>
+     *
+     * <code>TYPE_V2 = 2;</code>
+     */
+    public static final int TYPE_V2_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ModelType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ModelType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODEL_TYPE_UNSPECIFIED;
+        case 1:
+          return TYPE_V1;
+        case 2:
+          return TYPE_V2;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ModelType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ModelType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ModelType>() {
+          public ModelType findValueByNumber(int number) {
+            return ModelType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.contactcenterinsights.v1.IssueModel.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final ModelType[] VALUES = values();
+
+    public static ModelType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ModelType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.contactcenterinsights.v1.IssueModel.ModelType)
+  }
+
   public interface InputDataConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig)
@@ -315,7 +471,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
      * @return The enum numeric value on the wire for medium.
      */
     @java.lang.Deprecated
@@ -334,7 +490,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
      * @return The medium.
      */
     @java.lang.Deprecated
@@ -411,11 +567,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       return new InputDataConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.contactcenterinsights.v1.ResourcesProto
           .internal_static_google_cloud_contactcenterinsights_v1_IssueModel_InputDataConfig_descriptor;
@@ -447,7 +598,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
      * @return The enum numeric value on the wire for medium.
      */
     @java.lang.Override
@@ -469,7 +620,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
      * @return The medium.
      */
     @java.lang.Override
@@ -974,7 +1125,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
        * @return The enum numeric value on the wire for medium.
        */
       @java.lang.Override
@@ -996,7 +1147,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
        * @param value The enum numeric value on the wire for medium to set.
        * @return This builder for chaining.
        */
@@ -1021,7 +1172,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
        * @return The medium.
        */
       @java.lang.Override
@@ -1047,7 +1198,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
        * @param value The medium to set.
        * @return This builder for chaining.
        */
@@ -1076,7 +1227,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1698,6 +1849,94 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         : trainingStats_;
   }
 
+  public static final int MODEL_TYPE_FIELD_NUMBER = 9;
+  private int modelType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Type of the model.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueModel.ModelType model_type = 9;</code>
+   *
+   * @return The enum numeric value on the wire for modelType.
+   */
+  @java.lang.Override
+  public int getModelTypeValue() {
+    return modelType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type of the model.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueModel.ModelType model_type = 9;</code>
+   *
+   * @return The modelType.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType getModelType() {
+    com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType result =
+        com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType.forNumber(modelType_);
+    return result == null
+        ? com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Language of the model.
+   * </pre>
+   *
+   * <code>string language_code = 10;</code>
+   *
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Language of the model.
+   * </pre>
+   *
+   * <code>string language_code = 10;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1738,6 +1977,14 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     if (issueCount_ != 0L) {
       output.writeInt64(8, issueCount_);
     }
+    if (modelType_
+        != com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType.MODEL_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(9, modelType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, languageCode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1772,6 +2019,14 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     }
     if (issueCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, issueCount_);
+    }
+    if (modelType_
+        != com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType.MODEL_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, modelType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, languageCode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1809,6 +2064,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     if (hasTrainingStats()) {
       if (!getTrainingStats().equals(other.getTrainingStats())) return false;
     }
+    if (modelType_ != other.modelType_) return false;
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1844,6 +2101,10 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TRAINING_STATS_FIELD_NUMBER;
       hash = (53 * hash) + getTrainingStats().hashCode();
     }
+    hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + modelType_;
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2007,6 +2268,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         trainingStatsBuilder_.dispose();
         trainingStatsBuilder_ = null;
       }
+      modelType_ = 0;
+      languageCode_ = "";
       return this;
     }
 
@@ -2068,6 +2331,12 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.trainingStats_ =
             trainingStatsBuilder_ == null ? trainingStats_ : trainingStatsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.modelType_ = modelType_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.languageCode_ = languageCode_;
       }
     }
 
@@ -2145,6 +2414,14 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTrainingStats()) {
         mergeTrainingStats(other.getTrainingStats());
       }
+      if (other.modelType_ != 0) {
+        setModelTypeValue(other.getModelTypeValue());
+      }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2219,6 +2496,18 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 64
+            case 72:
+              {
+                modelType_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+            case 82:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3444,6 +3733,205 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         trainingStats_ = null;
       }
       return trainingStatsBuilder_;
+    }
+
+    private int modelType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Type of the model.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueModel.ModelType model_type = 9;</code>
+     *
+     * @return The enum numeric value on the wire for modelType.
+     */
+    @java.lang.Override
+    public int getModelTypeValue() {
+      return modelType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of the model.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueModel.ModelType model_type = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for modelType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelTypeValue(int value) {
+      modelType_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of the model.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueModel.ModelType model_type = 9;</code>
+     *
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType getModelType() {
+      com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType result =
+          com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType.forNumber(modelType_);
+      return result == null
+          ? com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of the model.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueModel.ModelType model_type = 9;</code>
+     *
+     * @param value The modelType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelType(
+        com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      modelType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of the model.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueModel.ModelType model_type = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelType() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      modelType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object languageCode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Language of the model.
+     * </pre>
+     *
+     * <code>string language_code = 10;</code>
+     *
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language of the model.
+     * </pre>
+     *
+     * <code>string language_code = 10;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language of the model.
+     * </pre>
+     *
+     * <code>string language_code = 10;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      languageCode_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language of the model.
+     * </pre>
+     *
+     * <code>string language_code = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Language of the model.
+     * </pre>
+     *
+     * <code>string language_code = 10;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      languageCode_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

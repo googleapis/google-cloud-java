@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
 
   private Allowed() {
     iPProtocol_ = "";
-    ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ports_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Allowed();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,7 +132,8 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
   public static final int PORTS_FIELD_NUMBER = 106854418;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ports_;
+  private com.google.protobuf.LazyStringArrayList ports_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -414,8 +410,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       iPProtocol_ = "";
-      ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      ports_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -442,20 +437,11 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Allowed buildPartial() {
       com.google.cloud.compute.v1.Allowed result = new com.google.cloud.compute.v1.Allowed(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Allowed result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        ports_ = ports_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.ports_ = ports_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Allowed result) {
@@ -464,6 +450,10 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.iPProtocol_ = iPProtocol_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        ports_.makeImmutable();
+        result.ports_ = ports_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -521,7 +511,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
       if (!other.ports_.isEmpty()) {
         if (ports_.isEmpty()) {
           ports_ = other.ports_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePortsIsMutable();
           ports_.addAll(other.ports_);
@@ -706,14 +696,14 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ports_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ports_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePortsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!ports_.isModifiable()) {
         ports_ = new com.google.protobuf.LazyStringArrayList(ports_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -727,7 +717,8 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ports.
      */
     public com.google.protobuf.ProtocolStringList getPortsList() {
-      return ports_.getUnmodifiableView();
+      ports_.makeImmutable();
+      return ports_;
     }
     /**
      *
@@ -792,6 +783,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePortsIsMutable();
       ports_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -813,6 +805,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePortsIsMutable();
       ports_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -831,6 +824,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPorts(java.lang.Iterable<java.lang.String> values) {
       ensurePortsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ports_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -846,8 +840,9 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPorts() {
-      ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ports_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -870,6 +865,7 @@ public final class Allowed extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePortsIsMutable();
       ports_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

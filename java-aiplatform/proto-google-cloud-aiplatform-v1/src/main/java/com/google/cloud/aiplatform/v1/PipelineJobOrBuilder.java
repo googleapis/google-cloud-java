@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -377,10 +377,15 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
+   *
+   * Note there is some reserved label key for Vertex AI Pipelines.
+   * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -391,10 +396,15 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
+   *
+   * Note there is some reserved label key for Vertex AI Pipelines.
+   * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -408,10 +418,15 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
+   *
+   * Note there is some reserved label key for Vertex AI Pipelines.
+   * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -422,10 +437,15 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
+   *
+   * Note there is some reserved label key for Vertex AI Pipelines.
+   * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -440,10 +460,15 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
+   *
+   * Note there is some reserved label key for Vertex AI Pipelines.
+   * - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -532,6 +557,7 @@ public interface PipelineJobOrBuilder
    * will be used.
    * See
    * https://cloud.google.com/compute/docs/access/service-accounts#default_service_account
+   *
    * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -550,6 +576,7 @@ public interface PipelineJobOrBuilder
    * will be used.
    * See
    * https://cloud.google.com/compute/docs/access/service-accounts#default_service_account
+   *
    * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -572,6 +599,7 @@ public interface PipelineJobOrBuilder
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * Private services access must already be configured for the network.
    * Pipeline job will apply the network configuration to the Google Cloud
    * resources being launched, if applied, such as Vertex AI
@@ -596,6 +624,7 @@ public interface PipelineJobOrBuilder
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * Private services access must already be configured for the network.
    * Pipeline job will apply the network configuration to the Google Cloud
    * resources being launched, if applied, such as Vertex AI
@@ -613,9 +642,90 @@ public interface PipelineJobOrBuilder
    *
    *
    * <pre>
+   * A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this Pipeline Job's workload.
+   *
+   * If set, we will deploy the Pipeline Job's workload within the provided ip
+   * ranges. Otherwise, the job will be deployed to any ip ranges under the
+   * provided VPC network.
+   *
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 25;</code>
+   *
+   * @return A list containing the reservedIpRanges.
+   */
+  java.util.List<java.lang.String> getReservedIpRangesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this Pipeline Job's workload.
+   *
+   * If set, we will deploy the Pipeline Job's workload within the provided ip
+   * ranges. Otherwise, the job will be deployed to any ip ranges under the
+   * provided VPC network.
+   *
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 25;</code>
+   *
+   * @return The count of reservedIpRanges.
+   */
+  int getReservedIpRangesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this Pipeline Job's workload.
+   *
+   * If set, we will deploy the Pipeline Job's workload within the provided ip
+   * ranges. Otherwise, the job will be deployed to any ip ranges under the
+   * provided VPC network.
+   *
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 25;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The reservedIpRanges at the given index.
+   */
+  java.lang.String getReservedIpRanges(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this Pipeline Job's workload.
+   *
+   * If set, we will deploy the Pipeline Job's workload within the provided ip
+   * ranges. Otherwise, the job will be deployed to any ip ranges under the
+   * provided VPC network.
+   *
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 25;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the reservedIpRanges at the given index.
+   */
+  com.google.protobuf.ByteString getReservedIpRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * A template uri from where the
    * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
-   * if empty, will be downloaded.
+   * if empty, will be downloaded. Currently, only uri from Vertex Template
+   * Registry &amp; Gallery is supported. Reference to
+   * https://cloud.google.com/vertex-ai/docs/pipelines/create-pipeline-template.
    * </pre>
    *
    * <code>string template_uri = 19;</code>
@@ -629,7 +739,9 @@ public interface PipelineJobOrBuilder
    * <pre>
    * A template uri from where the
    * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
-   * if empty, will be downloaded.
+   * if empty, will be downloaded. Currently, only uri from Vertex Template
+   * Registry &amp; Gallery is supported. Reference to
+   * https://cloud.google.com/vertex-ai/docs/pipelines/create-pipeline-template.
    * </pre>
    *
    * <code>string template_uri = 19;</code>
@@ -684,4 +796,31 @@ public interface PipelineJobOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.PipelineTemplateMetadataOrBuilder getTemplateMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schedule resource name.
+   * Only returned if the Pipeline is created by Schedule API.
+   * </pre>
+   *
+   * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The scheduleName.
+   */
+  java.lang.String getScheduleName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schedule resource name.
+   * Only returned if the Pipeline is created by Schedule API.
+   * </pre>
+   *
+   * <code>string schedule_name = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for scheduleName.
+   */
+  com.google.protobuf.ByteString getScheduleNameBytes();
 }

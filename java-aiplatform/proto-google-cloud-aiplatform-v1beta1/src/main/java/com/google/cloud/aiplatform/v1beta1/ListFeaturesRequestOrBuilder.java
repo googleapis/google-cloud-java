@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface ListFeaturesRequestOrBuilder
    * Required. The resource name of the Location to list Features.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -46,6 +47,7 @@ public interface ListFeaturesRequestOrBuilder
    * Required. The resource name of the Location to list Features.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -62,13 +64,16 @@ public interface ListFeaturesRequestOrBuilder
    * <pre>
    * Lists the Features that match the filter expression. The following
    * filters are supported:
+   *
    * * `value_type`: Supports = and != comparisons.
    * * `create_time`: Supports =, !=, &lt;, &gt;, &gt;=, and &lt;= comparisons. Values must
    * be in RFC 3339 format.
    * * `update_time`: Supports =, !=, &lt;, &gt;, &gt;=, and &lt;= comparisons. Values must
    * be in RFC 3339 format.
    * * `labels`: Supports key-value equality as well as key presence.
+   *
    * Examples:
+   *
    * * `value_type = DOUBLE` --&gt; Features whose type is DOUBLE.
    * * `create_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;" OR
    *      update_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;"` --&gt; EntityTypes created
@@ -90,13 +95,16 @@ public interface ListFeaturesRequestOrBuilder
    * <pre>
    * Lists the Features that match the filter expression. The following
    * filters are supported:
+   *
    * * `value_type`: Supports = and != comparisons.
    * * `create_time`: Supports =, !=, &lt;, &gt;, &gt;=, and &lt;= comparisons. Values must
    * be in RFC 3339 format.
    * * `update_time`: Supports =, !=, &lt;, &gt;, &gt;=, and &lt;= comparisons. Values must
    * be in RFC 3339 format.
    * * `labels`: Supports key-value equality as well as key presence.
+   *
    * Examples:
+   *
    * * `value_type = DOUBLE` --&gt; Features whose type is DOUBLE.
    * * `create_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;" OR
    *      update_time &gt; &#92;"2020-01-31T15:30:00.000000Z&#92;"` --&gt; EntityTypes created
@@ -136,6 +144,7 @@ public interface ListFeaturesRequestOrBuilder
    * A page token, received from a previous
    * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
    * must match the call that provided the page token.
@@ -153,6 +162,7 @@ public interface ListFeaturesRequestOrBuilder
    * A page token, received from a previous
    * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
    * must match the call that provided the page token.
@@ -171,8 +181,9 @@ public interface ListFeaturesRequestOrBuilder
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
    * Supported fields:
+   *
    *   * `feature_id`
-   *   * `value_type`
+   *   * `value_type` (Not supported for FeatureRegistry Feature)
    *   * `create_time`
    *   * `update_time`
    * </pre>
@@ -189,8 +200,9 @@ public interface ListFeaturesRequestOrBuilder
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
    * Supported fields:
+   *
    *   * `feature_id`
-   *   * `value_type`
+   *   * `value_type` (Not supported for FeatureRegistry Feature)
    *   * `create_time`
    *   * `update_time`
    * </pre>

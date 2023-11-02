@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnalyzerOrgPolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -233,13 +228,16 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      */
     com.google.type.ExprOrBuilder getConditionOrBuilder();
 
-    public com.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.KindCase getKindCase();
+    com.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.KindCase getKindCase();
   }
   /**
    *
    *
    * <pre>
-   * Represents a rule defined in an organization policy
+   * This rule message is a customized version of the one defined in the
+   * Organization Policy system. In addition to the fields defined in the
+   * original organization policy, it contains additional field(s) under
+   * specific circumstances to support analysis results.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.AnalyzerOrgPolicy.Rule}
@@ -260,11 +258,6 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Rule();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -409,19 +402,14 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
       }
 
       private StringValues() {
-        allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        deniedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        deniedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new StringValues();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -442,7 +430,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
       public static final int ALLOWED_VALUES_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList allowedValues_;
+      private com.google.protobuf.LazyStringArrayList allowedValues_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -505,7 +494,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
       public static final int DENIED_VALUES_FIELD_NUMBER = 2;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList deniedValues_;
+      private com.google.protobuf.LazyStringArrayList deniedValues_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -792,10 +782,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          deniedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          deniedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -824,7 +812,6 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
         public com.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues buildPartial() {
           com.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues result =
               new com.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -832,23 +819,17 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues result) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            allowedValues_ = allowedValues_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.allowedValues_ = allowedValues_;
-          if (((bitField0_ & 0x00000002) != 0)) {
-            deniedValues_ = deniedValues_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.deniedValues_ = deniedValues_;
-        }
-
         private void buildPartial0(
             com.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            allowedValues_.makeImmutable();
+            result.allowedValues_ = allowedValues_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            deniedValues_.makeImmutable();
+            result.deniedValues_ = deniedValues_;
+          }
         }
 
         @java.lang.Override
@@ -904,7 +885,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
           if (!other.allowedValues_.isEmpty()) {
             if (allowedValues_.isEmpty()) {
               allowedValues_ = other.allowedValues_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ |= 0x00000001;
             } else {
               ensureAllowedValuesIsMutable();
               allowedValues_.addAll(other.allowedValues_);
@@ -914,7 +895,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
           if (!other.deniedValues_.isEmpty()) {
             if (deniedValues_.isEmpty()) {
               deniedValues_ = other.deniedValues_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ |= 0x00000002;
             } else {
               ensureDeniedValuesIsMutable();
               deniedValues_.addAll(other.deniedValues_);
@@ -980,14 +961,14 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList allowedValues_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList allowedValues_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureAllowedValuesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!allowedValues_.isModifiable()) {
             allowedValues_ = new com.google.protobuf.LazyStringArrayList(allowedValues_);
-            bitField0_ |= 0x00000001;
           }
+          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -1001,7 +982,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
          * @return A list containing the allowedValues.
          */
         public com.google.protobuf.ProtocolStringList getAllowedValuesList() {
-          return allowedValues_.getUnmodifiableView();
+          allowedValues_.makeImmutable();
+          return allowedValues_;
         }
         /**
          *
@@ -1066,6 +1048,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
           }
           ensureAllowedValuesIsMutable();
           allowedValues_.set(index, value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1087,6 +1070,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
           }
           ensureAllowedValuesIsMutable();
           allowedValues_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1105,6 +1089,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
         public Builder addAllAllowedValues(java.lang.Iterable<java.lang.String> values) {
           ensureAllowedValuesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedValues_);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1120,8 +1105,9 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
          * @return This builder for chaining.
          */
         public Builder clearAllowedValues() {
-          allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          ;
           onChanged();
           return this;
         }
@@ -1144,18 +1130,19 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
           checkByteStringIsUtf8(value);
           ensureAllowedValuesIsMutable();
           allowedValues_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringList deniedValues_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList deniedValues_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureDeniedValuesIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!deniedValues_.isModifiable()) {
             deniedValues_ = new com.google.protobuf.LazyStringArrayList(deniedValues_);
-            bitField0_ |= 0x00000002;
           }
+          bitField0_ |= 0x00000002;
         }
         /**
          *
@@ -1169,7 +1156,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
          * @return A list containing the deniedValues.
          */
         public com.google.protobuf.ProtocolStringList getDeniedValuesList() {
-          return deniedValues_.getUnmodifiableView();
+          deniedValues_.makeImmutable();
+          return deniedValues_;
         }
         /**
          *
@@ -1234,6 +1222,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
           }
           ensureDeniedValuesIsMutable();
           deniedValues_.set(index, value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1255,6 +1244,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
           }
           ensureDeniedValuesIsMutable();
           deniedValues_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1273,6 +1263,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
         public Builder addAllDeniedValues(java.lang.Iterable<java.lang.String> values) {
           ensureDeniedValuesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deniedValues_);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1288,8 +1279,9 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
          * @return This builder for chaining.
          */
         public Builder clearDeniedValues() {
-          deniedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          deniedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
+          ;
           onChanged();
           return this;
         }
@@ -1312,6 +1304,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
           checkByteStringIsUtf8(value);
           ensureDeniedValuesIsMutable();
           deniedValues_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1384,6 +1377,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
     }
 
     private int kindCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object kind_;
 
     public enum KindCase
@@ -1889,7 +1884,10 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Represents a rule defined in an organization policy
+     * This rule message is a customized version of the one defined in the
+     * Organization Policy system. In addition to the fields defined in the
+     * original organization policy, it contains additional field(s) under
+     * specific circumstances to support analysis results.
      * </pre>
      *
      * Protobuf type {@code google.cloud.asset.v1.AnalyzerOrgPolicy.Rule}
@@ -2852,6 +2850,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
    * an organization/folder/project resource where this organization policy is
    * set.
+   *
    * Notice that some type of constraints are defined with default policy. This
    * field will be empty for them.
    * </pre>
@@ -2880,6 +2879,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
    * an organization/folder/project resource where this organization policy is
    * set.
+   *
    * Notice that some type of constraints are defined with default policy. This
    * field will be empty for them.
    * </pre>
@@ -2913,6 +2913,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
    * an organization/folder/project resource where this organization policy
    * applies to.
+   *
    * For any user defined org policies, this field has the same value as
    * the [attached_resource] field. Only for default policy, this field has
    * the different value.
@@ -2942,6 +2943,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
    * an organization/folder/project resource where this organization policy
    * applies to.
+   *
    * For any user defined org policies, this field has the same value as
    * the [attached_resource] field. Only for default policy, this field has
    * the different value.
@@ -3571,6 +3573,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
      * an organization/folder/project resource where this organization policy is
      * set.
+     *
      * Notice that some type of constraints are defined with default policy. This
      * field will be empty for them.
      * </pre>
@@ -3598,6 +3601,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
      * an organization/folder/project resource where this organization policy is
      * set.
+     *
      * Notice that some type of constraints are defined with default policy. This
      * field will be empty for them.
      * </pre>
@@ -3625,6 +3629,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
      * an organization/folder/project resource where this organization policy is
      * set.
+     *
      * Notice that some type of constraints are defined with default policy. This
      * field will be empty for them.
      * </pre>
@@ -3651,6 +3656,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
      * an organization/folder/project resource where this organization policy is
      * set.
+     *
      * Notice that some type of constraints are defined with default policy. This
      * field will be empty for them.
      * </pre>
@@ -3673,6 +3679,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
      * an organization/folder/project resource where this organization policy is
      * set.
+     *
      * Notice that some type of constraints are defined with default policy. This
      * field will be empty for them.
      * </pre>
@@ -3702,6 +3709,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
      * an organization/folder/project resource where this organization policy
      * applies to.
+     *
      * For any user defined org policies, this field has the same value as
      * the [attached_resource] field. Only for default policy, this field has
      * the different value.
@@ -3730,6 +3738,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
      * an organization/folder/project resource where this organization policy
      * applies to.
+     *
      * For any user defined org policies, this field has the same value as
      * the [attached_resource] field. Only for default policy, this field has
      * the different value.
@@ -3758,6 +3767,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
      * an organization/folder/project resource where this organization policy
      * applies to.
+     *
      * For any user defined org policies, this field has the same value as
      * the [attached_resource] field. Only for default policy, this field has
      * the different value.
@@ -3785,6 +3795,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
      * an organization/folder/project resource where this organization policy
      * applies to.
+     *
      * For any user defined org policies, this field has the same value as
      * the [attached_resource] field. Only for default policy, this field has
      * the different value.
@@ -3808,6 +3819,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
      * an organization/folder/project resource where this organization policy
      * applies to.
+     *
      * For any user defined org policies, this field has the same value as
      * the [attached_resource] field. Only for default policy, this field has
      * the different value.

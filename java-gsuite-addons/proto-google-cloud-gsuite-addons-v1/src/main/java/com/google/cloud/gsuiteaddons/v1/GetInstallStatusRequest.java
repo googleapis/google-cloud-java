@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetInstallStatusRequest extends com.google.protobuf.Generated
     return new GetInstallStatusRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gsuiteaddons.v1.GSuiteAddOnsProto
         .internal_static_google_cloud_gsuiteaddons_v1_GetInstallStatusRequest_descriptor;
@@ -76,6 +71,7 @@ public final class GetInstallStatusRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The full resource name of the deployment.
+   *
    * Example:  `projects/my_project/deployments/my_deployment/installStatus`.
    * </pre>
    *
@@ -102,6 +98,7 @@ public final class GetInstallStatusRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The full resource name of the deployment.
+   *
    * Example:  `projects/my_project/deployments/my_deployment/installStatus`.
    * </pre>
    *
@@ -473,6 +470,7 @@ public final class GetInstallStatusRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The full resource name of the deployment.
+     *
      * Example:  `projects/my_project/deployments/my_deployment/installStatus`.
      * </pre>
      *
@@ -498,6 +496,7 @@ public final class GetInstallStatusRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The full resource name of the deployment.
+     *
      * Example:  `projects/my_project/deployments/my_deployment/installStatus`.
      * </pre>
      *
@@ -523,6 +522,7 @@ public final class GetInstallStatusRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The full resource name of the deployment.
+     *
      * Example:  `projects/my_project/deployments/my_deployment/installStatus`.
      * </pre>
      *
@@ -547,6 +547,7 @@ public final class GetInstallStatusRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The full resource name of the deployment.
+     *
      * Example:  `projects/my_project/deployments/my_deployment/installStatus`.
      * </pre>
      *
@@ -567,6 +568,7 @@ public final class GetInstallStatusRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The full resource name of the deployment.
+     *
      * Example:  `projects/my_project/deployments/my_deployment/installStatus`.
      * </pre>
      *

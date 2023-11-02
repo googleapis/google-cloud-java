@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -319,9 +319,9 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                 .setMethodDescriptor(getGoogleServiceAccountMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("project_id", String.valueOf(request.getProjectId()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TransferProto.CreateTransferJobRequest, TransferTypes.TransferJob>
@@ -337,9 +337,9 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                 .setMethodDescriptor(updateTransferJobMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("job_name", String.valueOf(request.getJobName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_name", String.valueOf(request.getJobName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TransferProto.GetTransferJobRequest, TransferTypes.TransferJob>
@@ -349,9 +349,9 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                 .setMethodDescriptor(getTransferJobMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("job_name", String.valueOf(request.getJobName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_name", String.valueOf(request.getJobName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TransferProto.ListTransferJobsRequest, TransferProto.ListTransferJobsResponse>
@@ -367,9 +367,9 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                 .setMethodDescriptor(pauseTransferOperationMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TransferProto.ResumeTransferOperationRequest, Empty>
@@ -378,9 +378,9 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                 .setMethodDescriptor(resumeTransferOperationMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TransferProto.RunTransferJobRequest, Operation>
@@ -389,9 +389,9 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                 .setMethodDescriptor(runTransferJobMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("job_name", String.valueOf(request.getJobName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_name", String.valueOf(request.getJobName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TransferProto.DeleteTransferJobRequest, Empty>
@@ -400,9 +400,9 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                 .setMethodDescriptor(deleteTransferJobMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("job_name", String.valueOf(request.getJobName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_name", String.valueOf(request.getJobName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
@@ -412,9 +412,9 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                 .setMethodDescriptor(createAgentPoolMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("project_id", String.valueOf(request.getProjectId()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
@@ -424,10 +424,10 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                 .setMethodDescriptor(updateAgentPoolMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "agent_pool.name", String.valueOf(request.getAgentPool().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
@@ -437,9 +437,9 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                 .setMethodDescriptor(getAgentPoolMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TransferProto.ListAgentPoolsRequest, TransferProto.ListAgentPoolsResponse>
@@ -450,9 +450,9 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                 .setMethodDescriptor(listAgentPoolsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("project_id", String.valueOf(request.getProjectId()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<TransferProto.DeleteAgentPoolRequest, Empty> deleteAgentPoolTransportSettings =
@@ -460,9 +460,9 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
             .setMethodDescriptor(deleteAgentPoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

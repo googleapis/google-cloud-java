@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,8 +54,8 @@ public interface NamespaceOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -66,8 +66,8 @@ public interface NamespaceOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -81,8 +81,8 @@ public interface NamespaceOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -93,8 +93,8 @@ public interface NamespaceOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -109,12 +109,39 @@ public interface NamespaceOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier of the namespace in the UUID4
+   * format.
+   * </pre>
+   *
+   * <code>string uid = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The uid.
+   */
+  java.lang.String getUid();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier of the namespace in the UUID4
+   * format.
+   * </pre>
+   *
+   * <code>string uid = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for uid.
+   */
+  com.google.protobuf.ByteString getUidBytes();
 }

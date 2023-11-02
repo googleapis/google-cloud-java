@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateJobTemplateRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -191,6 +186,7 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The ID to use for the job template, which will become the final
    * component of the job template's resource name.
+   *
    * This value should be 4-63 characters, and valid characters must match the
    * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
    * </pre>
@@ -217,6 +213,7 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The ID to use for the job template, which will become the final
    * component of the job template's resource name.
+   *
    * This value should be 4-63 characters, and valid characters must match the
    * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
    * </pre>
@@ -971,6 +968,7 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The ID to use for the job template, which will become the final
      * component of the job template's resource name.
+     *
      * This value should be 4-63 characters, and valid characters must match the
      * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
      * </pre>
@@ -996,6 +994,7 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The ID to use for the job template, which will become the final
      * component of the job template's resource name.
+     *
      * This value should be 4-63 characters, and valid characters must match the
      * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
      * </pre>
@@ -1021,6 +1020,7 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The ID to use for the job template, which will become the final
      * component of the job template's resource name.
+     *
      * This value should be 4-63 characters, and valid characters must match the
      * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
      * </pre>
@@ -1045,6 +1045,7 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The ID to use for the job template, which will become the final
      * component of the job template's resource name.
+     *
      * This value should be 4-63 characters, and valid characters must match the
      * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
      * </pre>
@@ -1065,6 +1066,7 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The ID to use for the job template, which will become the final
      * component of the job template's resource name.
+     *
      * This value should be 4-63 characters, and valid characters must match the
      * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
      * </pre>

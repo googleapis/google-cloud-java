@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,18 +42,13 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
   private AddFulfillmentPlacesRequest() {
     product_ = "";
     type_ = "";
-    placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AddFulfillmentPlacesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -82,6 +77,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2beta.Product], such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
@@ -112,6 +108,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2beta.Product], such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
@@ -146,7 +143,9 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * <pre>
    * Required. The fulfillment type, including commonly used types (such as
    * pickup in store and same day delivery), and custom types.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -156,8 +155,10 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * This field directly corresponds to
    * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
    * </pre>
@@ -184,7 +185,9 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * <pre>
    * Required. The fulfillment type, including commonly used types (such as
    * pickup in store and same day delivery), and custom types.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -194,8 +197,10 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * This field directly corresponds to
    * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
    * </pre>
@@ -220,7 +225,8 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
   public static final int PLACE_IDS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList placeIds_;
+  private com.google.protobuf.LazyStringArrayList placeIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -231,10 +237,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * "same-day-delivery" to be added for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
    * Duplicate IDs will be automatically ignored.
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
    * adding, then the update will be rejected.
@@ -257,10 +265,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * "same-day-delivery" to be added for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
    * Duplicate IDs will be automatically ignored.
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
    * adding, then the update will be rejected.
@@ -283,10 +293,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * "same-day-delivery" to be added for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
    * Duplicate IDs will be automatically ignored.
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
    * adding, then the update will be rejected.
@@ -310,10 +322,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * "same-day-delivery" to be added for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
    * Duplicate IDs will be automatically ignored.
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If the total number of place IDs exceeds 2000 for this
    * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
    * adding, then the update will be rejected.
@@ -654,8 +668,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
       bitField0_ = 0;
       product_ = "";
       type_ = "";
-      placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       addTime_ = null;
       if (addTimeBuilder_ != null) {
         addTimeBuilder_.dispose();
@@ -689,21 +702,11 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
     public com.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest buildPartial() {
       com.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest result =
           new com.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        placeIds_ = placeIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.placeIds_ = placeIds_;
     }
 
     private void buildPartial0(com.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest result) {
@@ -713,6 +716,10 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        placeIds_.makeImmutable();
+        result.placeIds_ = placeIds_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.addTime_ = addTimeBuilder_ == null ? addTime_ : addTimeBuilder_.build();
@@ -781,7 +788,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
       if (!other.placeIds_.isEmpty()) {
         if (placeIds_.isEmpty()) {
           placeIds_ = other.placeIds_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensurePlaceIdsIsMutable();
           placeIds_.addAll(other.placeIds_);
@@ -878,6 +885,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * Required. Full resource name of
      * [Product][google.cloud.retail.v2beta.Product], such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
@@ -907,6 +915,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * Required. Full resource name of
      * [Product][google.cloud.retail.v2beta.Product], such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
@@ -936,6 +945,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * Required. Full resource name of
      * [Product][google.cloud.retail.v2beta.Product], such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
@@ -964,6 +974,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * Required. Full resource name of
      * [Product][google.cloud.retail.v2beta.Product], such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
@@ -988,6 +999,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * Required. Full resource name of
      * [Product][google.cloud.retail.v2beta.Product], such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
@@ -1018,7 +1030,9 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The fulfillment type, including commonly used types (such as
      * pickup in store and same day delivery), and custom types.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1028,8 +1042,10 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * This field directly corresponds to
      * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
      * </pre>
@@ -1055,7 +1071,9 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The fulfillment type, including commonly used types (such as
      * pickup in store and same day delivery), and custom types.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1065,8 +1083,10 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * This field directly corresponds to
      * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
      * </pre>
@@ -1092,7 +1112,9 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The fulfillment type, including commonly used types (such as
      * pickup in store and same day delivery), and custom types.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1102,8 +1124,10 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * This field directly corresponds to
      * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
      * </pre>
@@ -1128,7 +1152,9 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The fulfillment type, including commonly used types (such as
      * pickup in store and same day delivery), and custom types.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1138,8 +1164,10 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * This field directly corresponds to
      * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
      * </pre>
@@ -1160,7 +1188,9 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The fulfillment type, including commonly used types (such as
      * pickup in store and same day delivery), and custom types.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1170,8 +1200,10 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * This field directly corresponds to
      * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
      * </pre>
@@ -1192,14 +1224,14 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
       return this;
     }
 
-    private com.google.protobuf.LazyStringList placeIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList placeIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePlaceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!placeIds_.isModifiable()) {
         placeIds_ = new com.google.protobuf.LazyStringArrayList(placeIds_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1211,10 +1243,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * "same-day-delivery" to be added for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
      * Duplicate IDs will be automatically ignored.
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
      * adding, then the update will be rejected.
@@ -1225,7 +1259,8 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * @return A list containing the placeIds.
      */
     public com.google.protobuf.ProtocolStringList getPlaceIdsList() {
-      return placeIds_.getUnmodifiableView();
+      placeIds_.makeImmutable();
+      return placeIds_;
     }
     /**
      *
@@ -1237,10 +1272,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * "same-day-delivery" to be added for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
      * Duplicate IDs will be automatically ignored.
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
      * adding, then the update will be rejected.
@@ -1263,10 +1300,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * "same-day-delivery" to be added for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
      * Duplicate IDs will be automatically ignored.
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
      * adding, then the update will be rejected.
@@ -1290,10 +1329,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * "same-day-delivery" to be added for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
      * Duplicate IDs will be automatically ignored.
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
      * adding, then the update will be rejected.
@@ -1317,10 +1358,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * "same-day-delivery" to be added for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
      * Duplicate IDs will be automatically ignored.
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
      * adding, then the update will be rejected.
@@ -1338,6 +1381,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
       }
       ensurePlaceIdsIsMutable();
       placeIds_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1351,10 +1395,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * "same-day-delivery" to be added for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
      * Duplicate IDs will be automatically ignored.
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
      * adding, then the update will be rejected.
@@ -1371,6 +1417,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
       }
       ensurePlaceIdsIsMutable();
       placeIds_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1384,10 +1431,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * "same-day-delivery" to be added for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
      * Duplicate IDs will be automatically ignored.
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
      * adding, then the update will be rejected.
@@ -1401,6 +1450,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
     public Builder addAllPlaceIds(java.lang.Iterable<java.lang.String> values) {
       ensurePlaceIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, placeIds_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1414,10 +1464,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * "same-day-delivery" to be added for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
      * Duplicate IDs will be automatically ignored.
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
      * adding, then the update will be rejected.
@@ -1428,8 +1480,9 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearPlaceIds() {
-      placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1443,10 +1496,12 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * "same-day-delivery" to be added for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type].
      * Duplicate IDs will be automatically ignored.
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If the total number of place IDs exceeds 2000 for this
      * [type][google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.type] after
      * adding, then the update will be rejected.
@@ -1464,6 +1519,7 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensurePlaceIdsIsMutable();
       placeIds_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

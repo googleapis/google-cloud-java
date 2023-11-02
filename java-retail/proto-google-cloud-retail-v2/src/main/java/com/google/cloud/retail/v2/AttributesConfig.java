@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AttributesConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -177,9 +172,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
    * Enable attribute(s) config at catalog level.
    * For example, indexable, dynamic_facetable, or searchable for each
    * attribute.
+   *
    * The key is catalog attribute's name.
    * For example: `color`, `brands`, `attributes.custom_attribute`, such as
    * `attributes.xyz`.
+   *
    * The maximum number of catalog attributes allowed in a request is 1000.
    * </pre>
    *
@@ -207,9 +204,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
    * Enable attribute(s) config at catalog level.
    * For example, indexable, dynamic_facetable, or searchable for each
    * attribute.
+   *
    * The key is catalog attribute's name.
    * For example: `color`, `brands`, `attributes.custom_attribute`, such as
    * `attributes.xyz`.
+   *
    * The maximum number of catalog attributes allowed in a request is 1000.
    * </pre>
    *
@@ -228,9 +227,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
    * Enable attribute(s) config at catalog level.
    * For example, indexable, dynamic_facetable, or searchable for each
    * attribute.
+   *
    * The key is catalog attribute's name.
    * For example: `color`, `brands`, `attributes.custom_attribute`, such as
    * `attributes.xyz`.
+   *
    * The maximum number of catalog attributes allowed in a request is 1000.
    * </pre>
    *
@@ -256,9 +257,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
    * Enable attribute(s) config at catalog level.
    * For example, indexable, dynamic_facetable, or searchable for each
    * attribute.
+   *
    * The key is catalog attribute's name.
    * For example: `color`, `brands`, `attributes.custom_attribute`, such as
    * `attributes.xyz`.
+   *
    * The maximum number of catalog attributes allowed in a request is 1000.
    * </pre>
    *
@@ -912,9 +915,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      * Enable attribute(s) config at catalog level.
      * For example, indexable, dynamic_facetable, or searchable for each
      * attribute.
+     *
      * The key is catalog attribute's name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     *
      * The maximum number of catalog attributes allowed in a request is 1000.
      * </pre>
      *
@@ -942,9 +947,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      * Enable attribute(s) config at catalog level.
      * For example, indexable, dynamic_facetable, or searchable for each
      * attribute.
+     *
      * The key is catalog attribute's name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     *
      * The maximum number of catalog attributes allowed in a request is 1000.
      * </pre>
      *
@@ -963,9 +970,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      * Enable attribute(s) config at catalog level.
      * For example, indexable, dynamic_facetable, or searchable for each
      * attribute.
+     *
      * The key is catalog attribute's name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     *
      * The maximum number of catalog attributes allowed in a request is 1000.
      * </pre>
      *
@@ -991,9 +1000,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      * Enable attribute(s) config at catalog level.
      * For example, indexable, dynamic_facetable, or searchable for each
      * attribute.
+     *
      * The key is catalog attribute's name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     *
      * The maximum number of catalog attributes allowed in a request is 1000.
      * </pre>
      *
@@ -1026,9 +1037,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      * Enable attribute(s) config at catalog level.
      * For example, indexable, dynamic_facetable, or searchable for each
      * attribute.
+     *
      * The key is catalog attribute's name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     *
      * The maximum number of catalog attributes allowed in a request is 1000.
      * </pre>
      *
@@ -1056,9 +1069,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      * Enable attribute(s) config at catalog level.
      * For example, indexable, dynamic_facetable, or searchable for each
      * attribute.
+     *
      * The key is catalog attribute's name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     *
      * The maximum number of catalog attributes allowed in a request is 1000.
      * </pre>
      *
@@ -1084,9 +1099,11 @@ public final class AttributesConfig extends com.google.protobuf.GeneratedMessage
      * Enable attribute(s) config at catalog level.
      * For example, indexable, dynamic_facetable, or searchable for each
      * attribute.
+     *
      * The key is catalog attribute's name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     *
      * The maximum number of catalog attributes allowed in a request is 1000.
      * </pre>
      *

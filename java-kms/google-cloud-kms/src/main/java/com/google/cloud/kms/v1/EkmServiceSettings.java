@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,6 +116,12 @@ public class EkmServiceSettings extends ClientSettings<EkmServiceSettings> {
   /** Returns the object with the settings used for calls to updateEkmConfig. */
   public UnaryCallSettings<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigSettings() {
     return ((EkmServiceStubSettings) getStubSettings()).updateEkmConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to verifyConnectivity. */
+  public UnaryCallSettings<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivitySettings() {
+    return ((EkmServiceStubSettings) getStubSettings()).verifyConnectivitySettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -292,6 +298,12 @@ public class EkmServiceSettings extends ClientSettings<EkmServiceSettings> {
     /** Returns the builder for the settings used for calls to updateEkmConfig. */
     public UnaryCallSettings.Builder<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigSettings() {
       return getStubSettingsBuilder().updateEkmConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifyConnectivity. */
+    public UnaryCallSettings.Builder<VerifyConnectivityRequest, VerifyConnectivityResponse>
+        verifyConnectivitySettings() {
+      return getStubSettingsBuilder().verifyConnectivitySettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

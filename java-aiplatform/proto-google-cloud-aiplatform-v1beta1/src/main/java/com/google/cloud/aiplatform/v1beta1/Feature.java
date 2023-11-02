@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Feature();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -505,11 +500,6 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MonitoringStatsAnomaly();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1583,6 +1573,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * Immutable. Name of the Feature.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   *
    * The last part feature is assigned by the client. The feature can be up to
    * 64 characters long and can consist only of ASCII Latin letters A-Z and a-z,
    * underscore(_), and ASCII digits 0-9 starting with a letter. The value will
@@ -1612,6 +1603,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * Immutable. Name of the Feature.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   *
    * The last part feature is assigned by the client. The feature can be up to
    * 64 characters long and can consist only of ASCII Latin letters A-Z and a-z,
    * underscore(_), and ASCII digits 0-9 starting with a letter. The value will
@@ -1692,11 +1684,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. Type of Feature value.
+   * Immutable. Type of Feature value.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for valueType.
@@ -1709,11 +1701,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. Type of Feature value.
+   * Immutable. Type of Feature value.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The valueType.
@@ -1856,9 +1848,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels with user-defined metadata to organize your Features.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Feature (System
    * labels are excluded)."
@@ -1886,9 +1880,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels with user-defined metadata to organize your Features.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Feature (System
    * labels are excluded)."
@@ -1907,9 +1903,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels with user-defined metadata to organize your Features.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Feature (System
    * labels are excluded)."
@@ -1935,9 +1933,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels with user-defined metadata to organize your Features.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Feature (System
    * labels are excluded)."
@@ -2023,6 +2023,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * Feature belongs to. Only Features with type
    * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
    * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+   *
    * If this is populated with
    * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
    * monitoring is disabled; if
@@ -2053,6 +2054,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * Feature belongs to. Only Features with type
    * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
    * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+   *
    * If this is populated with
    * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
    * monitoring is disabled; if
@@ -2085,6 +2087,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * Feature belongs to. Only Features with type
    * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
    * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+   *
    * If this is populated with
    * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
    * monitoring is disabled; if
@@ -2116,6 +2119,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * this Feature belongs to. Only Features with type
    * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
    * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+   *
    * If set to true, all types of data monitoring are disabled despite the
    * config on EntityType.
    * </pre>
@@ -3065,6 +3069,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the Feature.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     *
      * The last part feature is assigned by the client. The feature can be up to
      * 64 characters long and can consist only of ASCII Latin letters A-Z and a-z,
      * underscore(_), and ASCII digits 0-9 starting with a letter. The value will
@@ -3093,6 +3098,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the Feature.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     *
      * The last part feature is assigned by the client. The feature can be up to
      * 64 characters long and can consist only of ASCII Latin letters A-Z and a-z,
      * underscore(_), and ASCII digits 0-9 starting with a letter. The value will
@@ -3121,6 +3127,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the Feature.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     *
      * The last part feature is assigned by the client. The feature can be up to
      * 64 characters long and can consist only of ASCII Latin letters A-Z and a-z,
      * underscore(_), and ASCII digits 0-9 starting with a letter. The value will
@@ -3148,6 +3155,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the Feature.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     *
      * The last part feature is assigned by the client. The feature can be up to
      * 64 characters long and can consist only of ASCII Latin letters A-Z and a-z,
      * underscore(_), and ASCII digits 0-9 starting with a letter. The value will
@@ -3171,6 +3179,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Immutable. Name of the Feature.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     *
      * The last part feature is assigned by the client. The feature can be up to
      * 64 characters long and can consist only of ASCII Latin letters A-Z and a-z,
      * underscore(_), and ASCII digits 0-9 starting with a letter. The value will
@@ -3304,11 +3313,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. Type of Feature value.
+     * Immutable. Type of Feature value.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for valueType.
@@ -3321,11 +3330,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. Type of Feature value.
+     * Immutable. Type of Feature value.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The enum numeric value on the wire for valueType to set.
@@ -3341,11 +3350,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. Type of Feature value.
+     * Immutable. Type of Feature value.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The valueType.
@@ -3362,11 +3371,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. Type of Feature value.
+     * Immutable. Type of Feature value.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The valueType to set.
@@ -3385,11 +3394,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. Type of Feature value.
+     * Immutable. Type of Feature value.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.
@@ -3833,9 +3842,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your Features.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Feature (System
      * labels are excluded)."
@@ -3863,9 +3874,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your Features.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Feature (System
      * labels are excluded)."
@@ -3884,9 +3897,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your Features.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Feature (System
      * labels are excluded)."
@@ -3912,9 +3927,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your Features.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Feature (System
      * labels are excluded)."
@@ -3946,9 +3963,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your Features.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Feature (System
      * labels are excluded)."
@@ -3976,9 +3995,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your Features.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Feature (System
      * labels are excluded)."
@@ -4004,9 +4025,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your Features.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Feature (System
      * labels are excluded)."
@@ -4148,6 +4171,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
      * monitoring is disabled; if
@@ -4177,6 +4201,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
      * monitoring is disabled; if
@@ -4212,6 +4237,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
      * monitoring is disabled; if
@@ -4248,6 +4274,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
      * monitoring is disabled; if
@@ -4281,6 +4308,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
      * monitoring is disabled; if
@@ -4322,6 +4350,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
      * monitoring is disabled; if
@@ -4354,6 +4383,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
      * monitoring is disabled; if
@@ -4382,6 +4412,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
      * monitoring is disabled; if
@@ -4414,6 +4445,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If this is populated with
      * [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis
      * monitoring is disabled; if
@@ -4452,6 +4484,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * this Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -4472,6 +4505,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * this Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -4496,6 +4530,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * this Feature belongs to. Only Features with type
      * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
      * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     *
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -954,6 +954,7 @@ public interface FindingOrBuilder
    * The key represents the type of contact, while the value contains a list of
    * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *
    *     {
    *       "security": {
    *         "contacts": [
@@ -981,6 +982,7 @@ public interface FindingOrBuilder
    * The key represents the type of contact, while the value contains a list of
    * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *
    *     {
    *       "security": {
    *         "contacts": [
@@ -1011,6 +1013,7 @@ public interface FindingOrBuilder
    * The key represents the type of contact, while the value contains a list of
    * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *
    *     {
    *       "security": {
    *         "contacts": [
@@ -1039,6 +1042,7 @@ public interface FindingOrBuilder
    * The key represents the type of contact, while the value contains a list of
    * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *
    *     {
    *       "security": {
    *         "contacts": [
@@ -1070,6 +1074,7 @@ public interface FindingOrBuilder
    * The key represents the type of contact, while the value contains a list of
    * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *
    *     {
    *       "security": {
    *         "contacts": [

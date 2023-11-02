@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ public interface PubsubTargetOrBuilder
    * same format as required by Pub/Sub's
    * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
    * for example `projects/PROJECT_ID/topics/TOPIC_ID`.
+   *
    * The topic must be in the same project as the Cloud Scheduler job.
    * </pre>
    *
@@ -49,6 +50,7 @@ public interface PubsubTargetOrBuilder
    * same format as required by Pub/Sub's
    * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
    * for example `projects/PROJECT_ID/topics/TOPIC_ID`.
+   *
    * The topic must be in the same project as the Cloud Scheduler job.
    * </pre>
    *
@@ -63,6 +65,7 @@ public interface PubsubTargetOrBuilder
    *
    * <pre>
    * The message payload for PubsubMessage.
+   *
    * Pubsub message must contain either non-empty data, or at least one
    * attribute.
    * </pre>
@@ -78,6 +81,7 @@ public interface PubsubTargetOrBuilder
    *
    * <pre>
    * Attributes for PubsubMessage.
+   *
    * Pubsub message must contain either non-empty data, or at least one
    * attribute.
    * </pre>
@@ -90,6 +94,7 @@ public interface PubsubTargetOrBuilder
    *
    * <pre>
    * Attributes for PubsubMessage.
+   *
    * Pubsub message must contain either non-empty data, or at least one
    * attribute.
    * </pre>
@@ -105,6 +110,7 @@ public interface PubsubTargetOrBuilder
    *
    * <pre>
    * Attributes for PubsubMessage.
+   *
    * Pubsub message must contain either non-empty data, or at least one
    * attribute.
    * </pre>
@@ -117,6 +123,7 @@ public interface PubsubTargetOrBuilder
    *
    * <pre>
    * Attributes for PubsubMessage.
+   *
    * Pubsub message must contain either non-empty data, or at least one
    * attribute.
    * </pre>
@@ -133,6 +140,7 @@ public interface PubsubTargetOrBuilder
    *
    * <pre>
    * Attributes for PubsubMessage.
+   *
    * Pubsub message must contain either non-empty data, or at least one
    * attribute.
    * </pre>

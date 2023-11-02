@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateStreamRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -189,11 +184,13 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
    * so that if you must retry your request, the server will know to ignore
    * the request if it has already been completed. The server will guarantee
    * that for at least 60 minutes since the first request.
+   *
    * For example, consider a situation where you make an initial request and the
    * request times out. If you make the request again with the same request ID,
    * the server can check if original operation with the same request ID was
    * received, and if so, will ignore the second request. This prevents clients
    * from accidentally creating duplicate commitments.
+   *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
@@ -222,11 +219,13 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
    * so that if you must retry your request, the server will know to ignore
    * the request if it has already been completed. The server will guarantee
    * that for at least 60 minutes since the first request.
+   *
    * For example, consider a situation where you make an initial request and the
    * request times out. If you make the request again with the same request ID,
    * the server can check if original operation with the same request ID was
    * received, and if so, will ignore the second request. This prevents clients
    * from accidentally creating duplicate commitments.
+   *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
@@ -1171,11 +1170,13 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
      * so that if you must retry your request, the server will know to ignore
      * the request if it has already been completed. The server will guarantee
      * that for at least 60 minutes since the first request.
+     *
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request ID,
      * the server can check if original operation with the same request ID was
      * received, and if so, will ignore the second request. This prevents clients
      * from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1203,11 +1204,13 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
      * so that if you must retry your request, the server will know to ignore
      * the request if it has already been completed. The server will guarantee
      * that for at least 60 minutes since the first request.
+     *
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request ID,
      * the server can check if original operation with the same request ID was
      * received, and if so, will ignore the second request. This prevents clients
      * from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1235,11 +1238,13 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
      * so that if you must retry your request, the server will know to ignore
      * the request if it has already been completed. The server will guarantee
      * that for at least 60 minutes since the first request.
+     *
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request ID,
      * the server can check if original operation with the same request ID was
      * received, and if so, will ignore the second request. This prevents clients
      * from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1266,11 +1271,13 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
      * so that if you must retry your request, the server will know to ignore
      * the request if it has already been completed. The server will guarantee
      * that for at least 60 minutes since the first request.
+     *
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request ID,
      * the server can check if original operation with the same request ID was
      * received, and if so, will ignore the second request. This prevents clients
      * from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1293,11 +1300,13 @@ public final class UpdateStreamRequest extends com.google.protobuf.GeneratedMess
      * so that if you must retry your request, the server will know to ignore
      * the request if it has already been completed. The server will guarantee
      * that for at least 60 minutes since the first request.
+     *
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request ID,
      * the server can check if original operation with the same request ID was
      * received, and if so, will ignore the second request. This prevents clients
      * from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>

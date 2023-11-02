@@ -40,11 +40,6 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     return new Subject();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_descriptor;
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -159,7 +159,6 @@ public interface AnalyzeWorkloadMoveRequestOrBuilder
    */
   com.google.protobuf.ByteString getTargetBytes();
 
-  public com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest
-          .ProjectOrWorkloadResourceCase
+  com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest.ProjectOrWorkloadResourceCase
       getProjectOrWorkloadResourceCase();
 }

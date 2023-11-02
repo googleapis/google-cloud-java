@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ public final class IndexEndpointServiceGrpc {
 
   private IndexEndpointServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.aiplatform.v1beta1.IndexEndpointService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.aiplatform.v1beta1.IndexEndpointService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1187,9 +1188,9 @@ public final class IndexEndpointServiceGrpc {
   private static final class IndexEndpointServiceMethodDescriptorSupplier
       extends IndexEndpointServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    IndexEndpointServiceMethodDescriptorSupplier(String methodName) {
+    IndexEndpointServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

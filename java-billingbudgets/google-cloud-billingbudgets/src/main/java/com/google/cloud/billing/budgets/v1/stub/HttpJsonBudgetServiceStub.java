@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.billing.budgets.v1.Budget;
 import com.google.cloud.billing.budgets.v1.CreateBudgetRequest;
@@ -191,6 +192,7 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "scope", request.getScope());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -291,26 +293,56 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
         HttpJsonCallSettings.<CreateBudgetRequest, Budget>newBuilder()
             .setMethodDescriptor(createBudgetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateBudgetRequest, Budget> updateBudgetTransportSettings =
         HttpJsonCallSettings.<UpdateBudgetRequest, Budget>newBuilder()
             .setMethodDescriptor(updateBudgetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("budget.name", String.valueOf(request.getBudget().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetBudgetRequest, Budget> getBudgetTransportSettings =
         HttpJsonCallSettings.<GetBudgetRequest, Budget>newBuilder()
             .setMethodDescriptor(getBudgetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListBudgetsRequest, ListBudgetsResponse> listBudgetsTransportSettings =
         HttpJsonCallSettings.<ListBudgetsRequest, ListBudgetsResponse>newBuilder()
             .setMethodDescriptor(listBudgetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteBudgetRequest, Empty> deleteBudgetTransportSettings =
         HttpJsonCallSettings.<DeleteBudgetRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteBudgetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createBudgetCallable =

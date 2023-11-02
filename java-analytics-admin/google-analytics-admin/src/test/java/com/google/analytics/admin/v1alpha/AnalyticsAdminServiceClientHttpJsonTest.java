@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 
 package com.google.analytics.admin.v1alpha;
 
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
@@ -29,13 +29,15 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventCreateRulesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.stub.HttpJsonAnalyticsAdminServiceStub;
@@ -939,792 +941,6 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateProperty(property, updateMask);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getUserLinkTest() throws Exception {
-    UserLink expectedResponse =
-        UserLink.newBuilder()
-            .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-            .setEmailAddress("emailAddress-1070931784")
-            .addAllDirectRoles(new ArrayList<String>())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
-
-    UserLink actualResponse = client.getUserLink(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getUserLinkExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
-      client.getUserLink(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getUserLinkTest2() throws Exception {
-    UserLink expectedResponse =
-        UserLink.newBuilder()
-            .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-            .setEmailAddress("emailAddress-1070931784")
-            .addAllDirectRoles(new ArrayList<String>())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String name = "accounts/account-2326/userLinks/userLink-2326";
-
-    UserLink actualResponse = client.getUserLink(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void getUserLinkExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name = "accounts/account-2326/userLinks/userLink-2326";
-      client.getUserLink(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void batchGetUserLinksTest() throws Exception {
-    BatchGetUserLinksResponse expectedResponse =
-        BatchGetUserLinksResponse.newBuilder().addAllUserLinks(new ArrayList<UserLink>()).build();
-    mockService.addResponse(expectedResponse);
-
-    BatchGetUserLinksRequest request =
-        BatchGetUserLinksRequest.newBuilder()
-            .setParent(AccountName.of("[ACCOUNT]").toString())
-            .addAllNames(new ArrayList<String>())
-            .build();
-
-    BatchGetUserLinksResponse actualResponse = client.batchGetUserLinks(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void batchGetUserLinksExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      BatchGetUserLinksRequest request =
-          BatchGetUserLinksRequest.newBuilder()
-              .setParent(AccountName.of("[ACCOUNT]").toString())
-              .addAllNames(new ArrayList<String>())
-              .build();
-      client.batchGetUserLinks(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listUserLinksTest() throws Exception {
-    UserLink responsesElement = UserLink.newBuilder().build();
-    ListUserLinksResponse expectedResponse =
-        ListUserLinksResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllUserLinks(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    AccountName parent = AccountName.of("[ACCOUNT]");
-
-    ListUserLinksPagedResponse pagedListResponse = client.listUserLinks(parent);
-
-    List<UserLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getUserLinksList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listUserLinksExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      AccountName parent = AccountName.of("[ACCOUNT]");
-      client.listUserLinks(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listUserLinksTest2() throws Exception {
-    UserLink responsesElement = UserLink.newBuilder().build();
-    ListUserLinksResponse expectedResponse =
-        ListUserLinksResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllUserLinks(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    PropertyName parent = PropertyName.of("[PROPERTY]");
-
-    ListUserLinksPagedResponse pagedListResponse = client.listUserLinks(parent);
-
-    List<UserLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getUserLinksList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listUserLinksExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      PropertyName parent = PropertyName.of("[PROPERTY]");
-      client.listUserLinks(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listUserLinksTest3() throws Exception {
-    UserLink responsesElement = UserLink.newBuilder().build();
-    ListUserLinksResponse expectedResponse =
-        ListUserLinksResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllUserLinks(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String parent = "accounts/account-4811";
-
-    ListUserLinksPagedResponse pagedListResponse = client.listUserLinks(parent);
-
-    List<UserLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getUserLinksList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listUserLinksExceptionTest3() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String parent = "accounts/account-4811";
-      client.listUserLinks(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void auditUserLinksTest() throws Exception {
-    AuditUserLink responsesElement = AuditUserLink.newBuilder().build();
-    AuditUserLinksResponse expectedResponse =
-        AuditUserLinksResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllUserLinks(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    AuditUserLinksRequest request =
-        AuditUserLinksRequest.newBuilder()
-            .setParent(AccountName.of("[ACCOUNT]").toString())
-            .setPageSize(883849137)
-            .setPageToken("pageToken873572522")
-            .build();
-
-    AuditUserLinksPagedResponse pagedListResponse = client.auditUserLinks(request);
-
-    List<AuditUserLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getUserLinksList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void auditUserLinksExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      AuditUserLinksRequest request =
-          AuditUserLinksRequest.newBuilder()
-              .setParent(AccountName.of("[ACCOUNT]").toString())
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .build();
-      client.auditUserLinks(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createUserLinkTest() throws Exception {
-    UserLink expectedResponse =
-        UserLink.newBuilder()
-            .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-            .setEmailAddress("emailAddress-1070931784")
-            .addAllDirectRoles(new ArrayList<String>())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    AccountName parent = AccountName.of("[ACCOUNT]");
-    UserLink userLink = UserLink.newBuilder().build();
-
-    UserLink actualResponse = client.createUserLink(parent, userLink);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void createUserLinkExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      AccountName parent = AccountName.of("[ACCOUNT]");
-      UserLink userLink = UserLink.newBuilder().build();
-      client.createUserLink(parent, userLink);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createUserLinkTest2() throws Exception {
-    UserLink expectedResponse =
-        UserLink.newBuilder()
-            .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-            .setEmailAddress("emailAddress-1070931784")
-            .addAllDirectRoles(new ArrayList<String>())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    PropertyName parent = PropertyName.of("[PROPERTY]");
-    UserLink userLink = UserLink.newBuilder().build();
-
-    UserLink actualResponse = client.createUserLink(parent, userLink);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void createUserLinkExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      PropertyName parent = PropertyName.of("[PROPERTY]");
-      UserLink userLink = UserLink.newBuilder().build();
-      client.createUserLink(parent, userLink);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createUserLinkTest3() throws Exception {
-    UserLink expectedResponse =
-        UserLink.newBuilder()
-            .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-            .setEmailAddress("emailAddress-1070931784")
-            .addAllDirectRoles(new ArrayList<String>())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String parent = "accounts/account-4811";
-    UserLink userLink = UserLink.newBuilder().build();
-
-    UserLink actualResponse = client.createUserLink(parent, userLink);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void createUserLinkExceptionTest3() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String parent = "accounts/account-4811";
-      UserLink userLink = UserLink.newBuilder().build();
-      client.createUserLink(parent, userLink);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void batchCreateUserLinksTest() throws Exception {
-    BatchCreateUserLinksResponse expectedResponse =
-        BatchCreateUserLinksResponse.newBuilder()
-            .addAllUserLinks(new ArrayList<UserLink>())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    BatchCreateUserLinksRequest request =
-        BatchCreateUserLinksRequest.newBuilder()
-            .setParent(AccountName.of("[ACCOUNT]").toString())
-            .setNotifyNewUsers(true)
-            .addAllRequests(new ArrayList<CreateUserLinkRequest>())
-            .build();
-
-    BatchCreateUserLinksResponse actualResponse = client.batchCreateUserLinks(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void batchCreateUserLinksExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      BatchCreateUserLinksRequest request =
-          BatchCreateUserLinksRequest.newBuilder()
-              .setParent(AccountName.of("[ACCOUNT]").toString())
-              .setNotifyNewUsers(true)
-              .addAllRequests(new ArrayList<CreateUserLinkRequest>())
-              .build();
-      client.batchCreateUserLinks(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void updateUserLinkTest() throws Exception {
-    UserLink expectedResponse =
-        UserLink.newBuilder()
-            .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-            .setEmailAddress("emailAddress-1070931784")
-            .addAllDirectRoles(new ArrayList<String>())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    UserLink userLink =
-        UserLink.newBuilder()
-            .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-            .setEmailAddress("emailAddress-1070931784")
-            .addAllDirectRoles(new ArrayList<String>())
-            .build();
-
-    UserLink actualResponse = client.updateUserLink(userLink);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void updateUserLinkExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      UserLink userLink =
-          UserLink.newBuilder()
-              .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-              .setEmailAddress("emailAddress-1070931784")
-              .addAllDirectRoles(new ArrayList<String>())
-              .build();
-      client.updateUserLink(userLink);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void batchUpdateUserLinksTest() throws Exception {
-    BatchUpdateUserLinksResponse expectedResponse =
-        BatchUpdateUserLinksResponse.newBuilder()
-            .addAllUserLinks(new ArrayList<UserLink>())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    BatchUpdateUserLinksRequest request =
-        BatchUpdateUserLinksRequest.newBuilder()
-            .setParent(AccountName.of("[ACCOUNT]").toString())
-            .addAllRequests(new ArrayList<UpdateUserLinkRequest>())
-            .build();
-
-    BatchUpdateUserLinksResponse actualResponse = client.batchUpdateUserLinks(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void batchUpdateUserLinksExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      BatchUpdateUserLinksRequest request =
-          BatchUpdateUserLinksRequest.newBuilder()
-              .setParent(AccountName.of("[ACCOUNT]").toString())
-              .addAllRequests(new ArrayList<UpdateUserLinkRequest>())
-              .build();
-      client.batchUpdateUserLinks(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteUserLinkTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockService.addResponse(expectedResponse);
-
-    UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
-
-    client.deleteUserLink(name);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void deleteUserLinkExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
-      client.deleteUserLink(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteUserLinkTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockService.addResponse(expectedResponse);
-
-    String name = "accounts/account-2326/userLinks/userLink-2326";
-
-    client.deleteUserLink(name);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void deleteUserLinkExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name = "accounts/account-2326/userLinks/userLink-2326";
-      client.deleteUserLink(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void batchDeleteUserLinksTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockService.addResponse(expectedResponse);
-
-    BatchDeleteUserLinksRequest request =
-        BatchDeleteUserLinksRequest.newBuilder()
-            .setParent(AccountName.of("[ACCOUNT]").toString())
-            .addAllRequests(new ArrayList<DeleteUserLinkRequest>())
-            .build();
-
-    client.batchDeleteUserLinks(request);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void batchDeleteUserLinksExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      BatchDeleteUserLinksRequest request =
-          BatchDeleteUserLinksRequest.newBuilder()
-              .setParent(AccountName.of("[ACCOUNT]").toString())
-              .addAllRequests(new ArrayList<DeleteUserLinkRequest>())
-              .build();
-      client.batchDeleteUserLinks(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -3071,6 +2287,496 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
   }
 
   @Test
+  public void getSKAdNetworkConversionValueSchemaTest() throws Exception {
+    SKAdNetworkConversionValueSchema expectedResponse =
+        SKAdNetworkConversionValueSchema.newBuilder()
+            .setName(
+                SKAdNetworkConversionValueSchemaName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                    .toString())
+            .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+            .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+            .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+            .setApplyConversionValues(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SKAdNetworkConversionValueSchemaName name =
+        SKAdNetworkConversionValueSchemaName.of(
+            "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]");
+
+    SKAdNetworkConversionValueSchema actualResponse =
+        client.getSKAdNetworkConversionValueSchema(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSKAdNetworkConversionValueSchemaExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SKAdNetworkConversionValueSchemaName name =
+          SKAdNetworkConversionValueSchemaName.of(
+              "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]");
+      client.getSKAdNetworkConversionValueSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSKAdNetworkConversionValueSchemaTest2() throws Exception {
+    SKAdNetworkConversionValueSchema expectedResponse =
+        SKAdNetworkConversionValueSchema.newBuilder()
+            .setName(
+                SKAdNetworkConversionValueSchemaName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                    .toString())
+            .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+            .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+            .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+            .setApplyConversionValues(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "properties/propertie-7099/dataStreams/dataStream-7099/sKAdNetworkConversionValueSchema/sKAdNetworkConversionValueSchem-7099";
+
+    SKAdNetworkConversionValueSchema actualResponse =
+        client.getSKAdNetworkConversionValueSchema(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSKAdNetworkConversionValueSchemaExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "properties/propertie-7099/dataStreams/dataStream-7099/sKAdNetworkConversionValueSchema/sKAdNetworkConversionValueSchem-7099";
+      client.getSKAdNetworkConversionValueSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSKAdNetworkConversionValueSchemaTest() throws Exception {
+    SKAdNetworkConversionValueSchema expectedResponse =
+        SKAdNetworkConversionValueSchema.newBuilder()
+            .setName(
+                SKAdNetworkConversionValueSchemaName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                    .toString())
+            .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+            .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+            .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+            .setApplyConversionValues(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+    SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+        SKAdNetworkConversionValueSchema.newBuilder().build();
+
+    SKAdNetworkConversionValueSchema actualResponse =
+        client.createSKAdNetworkConversionValueSchema(parent, skadnetworkConversionValueSchema);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSKAdNetworkConversionValueSchemaExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+      SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+          SKAdNetworkConversionValueSchema.newBuilder().build();
+      client.createSKAdNetworkConversionValueSchema(parent, skadnetworkConversionValueSchema);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSKAdNetworkConversionValueSchemaTest2() throws Exception {
+    SKAdNetworkConversionValueSchema expectedResponse =
+        SKAdNetworkConversionValueSchema.newBuilder()
+            .setName(
+                SKAdNetworkConversionValueSchemaName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                    .toString())
+            .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+            .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+            .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+            .setApplyConversionValues(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
+    SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+        SKAdNetworkConversionValueSchema.newBuilder().build();
+
+    SKAdNetworkConversionValueSchema actualResponse =
+        client.createSKAdNetworkConversionValueSchema(parent, skadnetworkConversionValueSchema);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSKAdNetworkConversionValueSchemaExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
+      SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+          SKAdNetworkConversionValueSchema.newBuilder().build();
+      client.createSKAdNetworkConversionValueSchema(parent, skadnetworkConversionValueSchema);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSKAdNetworkConversionValueSchemaTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SKAdNetworkConversionValueSchemaName name =
+        SKAdNetworkConversionValueSchemaName.of(
+            "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]");
+
+    client.deleteSKAdNetworkConversionValueSchema(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSKAdNetworkConversionValueSchemaExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SKAdNetworkConversionValueSchemaName name =
+          SKAdNetworkConversionValueSchemaName.of(
+              "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]");
+      client.deleteSKAdNetworkConversionValueSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSKAdNetworkConversionValueSchemaTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "properties/propertie-7099/dataStreams/dataStream-7099/sKAdNetworkConversionValueSchema/sKAdNetworkConversionValueSchem-7099";
+
+    client.deleteSKAdNetworkConversionValueSchema(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSKAdNetworkConversionValueSchemaExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "properties/propertie-7099/dataStreams/dataStream-7099/sKAdNetworkConversionValueSchema/sKAdNetworkConversionValueSchem-7099";
+      client.deleteSKAdNetworkConversionValueSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSKAdNetworkConversionValueSchemaTest() throws Exception {
+    SKAdNetworkConversionValueSchema expectedResponse =
+        SKAdNetworkConversionValueSchema.newBuilder()
+            .setName(
+                SKAdNetworkConversionValueSchemaName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                    .toString())
+            .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+            .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+            .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+            .setApplyConversionValues(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+        SKAdNetworkConversionValueSchema.newBuilder()
+            .setName(
+                SKAdNetworkConversionValueSchemaName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                    .toString())
+            .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+            .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+            .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+            .setApplyConversionValues(true)
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SKAdNetworkConversionValueSchema actualResponse =
+        client.updateSKAdNetworkConversionValueSchema(skadnetworkConversionValueSchema, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSKAdNetworkConversionValueSchemaExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+          SKAdNetworkConversionValueSchema.newBuilder()
+              .setName(
+                  SKAdNetworkConversionValueSchemaName.of(
+                          "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                      .toString())
+              .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+              .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+              .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+              .setApplyConversionValues(true)
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSKAdNetworkConversionValueSchema(skadnetworkConversionValueSchema, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSKAdNetworkConversionValueSchemasTest() throws Exception {
+    SKAdNetworkConversionValueSchema responsesElement =
+        SKAdNetworkConversionValueSchema.newBuilder().build();
+    ListSKAdNetworkConversionValueSchemasResponse expectedResponse =
+        ListSKAdNetworkConversionValueSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSkadnetworkConversionValueSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+
+    ListSKAdNetworkConversionValueSchemasPagedResponse pagedListResponse =
+        client.listSKAdNetworkConversionValueSchemas(parent);
+
+    List<SKAdNetworkConversionValueSchema> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSkadnetworkConversionValueSchemasList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSKAdNetworkConversionValueSchemasExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+      client.listSKAdNetworkConversionValueSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSKAdNetworkConversionValueSchemasTest2() throws Exception {
+    SKAdNetworkConversionValueSchema responsesElement =
+        SKAdNetworkConversionValueSchema.newBuilder().build();
+    ListSKAdNetworkConversionValueSchemasResponse expectedResponse =
+        ListSKAdNetworkConversionValueSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSkadnetworkConversionValueSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
+
+    ListSKAdNetworkConversionValueSchemasPagedResponse pagedListResponse =
+        client.listSKAdNetworkConversionValueSchemas(parent);
+
+    List<SKAdNetworkConversionValueSchema> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSkadnetworkConversionValueSchemasList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSKAdNetworkConversionValueSchemasExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
+      client.listSKAdNetworkConversionValueSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void searchChangeHistoryEventsTest() throws Exception {
     ChangeHistoryEvent responsesElement = ChangeHistoryEvent.newBuilder().build();
     SearchChangeHistoryEventsResponse expectedResponse =
@@ -3388,6 +3094,70 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
       String parent = "properties/propertie-2024";
       ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
       client.createConversionEvent(parent, conversionEvent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateConversionEventTest() throws Exception {
+    ConversionEvent expectedResponse =
+        ConversionEvent.newBuilder()
+            .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ConversionEvent conversionEvent =
+        ConversionEvent.newBuilder()
+            .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ConversionEvent actualResponse = client.updateConversionEvent(conversionEvent, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateConversionEventExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ConversionEvent conversionEvent =
+          ConversionEvent.newBuilder()
+              .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+              .setEventName("eventName31228997")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setDeletable(true)
+              .setCustom(true)
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateConversionEvent(conversionEvent, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -7216,6 +6986,8 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllOrderBys(new ArrayList<AccessOrderBy>())
             .setReturnEntityQuota(true)
+            .setIncludeAllUsers(true)
+            .setExpandGroups(true)
             .build();
 
     RunAccessReportResponse actualResponse = client.runAccessReport(request);
@@ -7257,6 +7029,8 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
               .setTimeZone("timeZone-2077180903")
               .addAllOrderBys(new ArrayList<AccessOrderBy>())
               .setReturnEntityQuota(true)
+              .setIncludeAllUsers(true)
+              .setExpandGroups(true)
               .build();
       client.runAccessReport(request);
       Assert.fail("No exception raised");
@@ -9006,7 +8780,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDailyExportEnabled(true)
             .setStreamingExportEnabled(true)
-            .setIntradayExportEnabled(true)
+            .setFreshDailyExportEnabled(true)
             .setIncludeAdvertisingId(true)
             .addAllExportStreams(new ArrayList<String>())
             .addAllExcludedEvents(new ArrayList<String>())
@@ -9058,7 +8832,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDailyExportEnabled(true)
             .setStreamingExportEnabled(true)
-            .setIntradayExportEnabled(true)
+            .setFreshDailyExportEnabled(true)
             .setIncludeAdvertisingId(true)
             .addAllExportStreams(new ArrayList<String>())
             .addAllExcludedEvents(new ArrayList<String>())
@@ -9584,6 +9358,1670 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
               .setProperty(PropertyName.of("[PROPERTY]").toString())
               .build();
       client.fetchConnectedGa4Property(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAdSenseLinkTest() throws Exception {
+    AdSenseLink expectedResponse =
+        AdSenseLink.newBuilder()
+            .setName(AdSenseLinkName.of("[PROPERTY]", "[ADSENSE_LINK]").toString())
+            .setAdClientCode("adClientCode-869953317")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AdSenseLinkName name = AdSenseLinkName.of("[PROPERTY]", "[ADSENSE_LINK]");
+
+    AdSenseLink actualResponse = client.getAdSenseLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAdSenseLinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdSenseLinkName name = AdSenseLinkName.of("[PROPERTY]", "[ADSENSE_LINK]");
+      client.getAdSenseLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAdSenseLinkTest2() throws Exception {
+    AdSenseLink expectedResponse =
+        AdSenseLink.newBuilder()
+            .setName(AdSenseLinkName.of("[PROPERTY]", "[ADSENSE_LINK]").toString())
+            .setAdClientCode("adClientCode-869953317")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-9633/adSenseLinks/adSenseLink-9633";
+
+    AdSenseLink actualResponse = client.getAdSenseLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAdSenseLinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-9633/adSenseLinks/adSenseLink-9633";
+      client.getAdSenseLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAdSenseLinkTest() throws Exception {
+    AdSenseLink expectedResponse =
+        AdSenseLink.newBuilder()
+            .setName(AdSenseLinkName.of("[PROPERTY]", "[ADSENSE_LINK]").toString())
+            .setAdClientCode("adClientCode-869953317")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    AdSenseLink adsenseLink = AdSenseLink.newBuilder().build();
+
+    AdSenseLink actualResponse = client.createAdSenseLink(parent, adsenseLink);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAdSenseLinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      AdSenseLink adsenseLink = AdSenseLink.newBuilder().build();
+      client.createAdSenseLink(parent, adsenseLink);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAdSenseLinkTest2() throws Exception {
+    AdSenseLink expectedResponse =
+        AdSenseLink.newBuilder()
+            .setName(AdSenseLinkName.of("[PROPERTY]", "[ADSENSE_LINK]").toString())
+            .setAdClientCode("adClientCode-869953317")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+    AdSenseLink adsenseLink = AdSenseLink.newBuilder().build();
+
+    AdSenseLink actualResponse = client.createAdSenseLink(parent, adsenseLink);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAdSenseLinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      AdSenseLink adsenseLink = AdSenseLink.newBuilder().build();
+      client.createAdSenseLink(parent, adsenseLink);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAdSenseLinkTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    AdSenseLinkName name = AdSenseLinkName.of("[PROPERTY]", "[ADSENSE_LINK]");
+
+    client.deleteAdSenseLink(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAdSenseLinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdSenseLinkName name = AdSenseLinkName.of("[PROPERTY]", "[ADSENSE_LINK]");
+      client.deleteAdSenseLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAdSenseLinkTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-9633/adSenseLinks/adSenseLink-9633";
+
+    client.deleteAdSenseLink(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAdSenseLinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-9633/adSenseLinks/adSenseLink-9633";
+      client.deleteAdSenseLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdSenseLinksTest() throws Exception {
+    AdSenseLink responsesElement = AdSenseLink.newBuilder().build();
+    ListAdSenseLinksResponse expectedResponse =
+        ListAdSenseLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdsenseLinks(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListAdSenseLinksPagedResponse pagedListResponse = client.listAdSenseLinks(parent);
+
+    List<AdSenseLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdsenseLinksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAdSenseLinksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listAdSenseLinks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdSenseLinksTest2() throws Exception {
+    AdSenseLink responsesElement = AdSenseLink.newBuilder().build();
+    ListAdSenseLinksResponse expectedResponse =
+        ListAdSenseLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdsenseLinks(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+
+    ListAdSenseLinksPagedResponse pagedListResponse = client.listAdSenseLinks(parent);
+
+    List<AdSenseLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdsenseLinksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAdSenseLinksExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      client.listAdSenseLinks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEventCreateRuleTest() throws Exception {
+    EventCreateRule expectedResponse =
+        EventCreateRule.newBuilder()
+            .setName(
+                EventCreateRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_CREATE_RULE]")
+                    .toString())
+            .setDestinationEvent("destinationEvent1181456172")
+            .addAllEventConditions(new ArrayList<MatchingCondition>())
+            .setSourceCopyParameters(true)
+            .addAllParameterMutations(new ArrayList<ParameterMutation>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EventCreateRuleName name =
+        EventCreateRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_CREATE_RULE]");
+
+    EventCreateRule actualResponse = client.getEventCreateRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEventCreateRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EventCreateRuleName name =
+          EventCreateRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_CREATE_RULE]");
+      client.getEventCreateRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEventCreateRuleTest2() throws Exception {
+    EventCreateRule expectedResponse =
+        EventCreateRule.newBuilder()
+            .setName(
+                EventCreateRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_CREATE_RULE]")
+                    .toString())
+            .setDestinationEvent("destinationEvent1181456172")
+            .addAllEventConditions(new ArrayList<MatchingCondition>())
+            .setSourceCopyParameters(true)
+            .addAllParameterMutations(new ArrayList<ParameterMutation>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "properties/propertie-8819/dataStreams/dataStream-8819/eventCreateRules/eventCreateRule-8819";
+
+    EventCreateRule actualResponse = client.getEventCreateRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEventCreateRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "properties/propertie-8819/dataStreams/dataStream-8819/eventCreateRules/eventCreateRule-8819";
+      client.getEventCreateRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEventCreateRulesTest() throws Exception {
+    EventCreateRule responsesElement = EventCreateRule.newBuilder().build();
+    ListEventCreateRulesResponse expectedResponse =
+        ListEventCreateRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEventCreateRules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+
+    ListEventCreateRulesPagedResponse pagedListResponse = client.listEventCreateRules(parent);
+
+    List<EventCreateRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEventCreateRulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEventCreateRulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+      client.listEventCreateRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEventCreateRulesTest2() throws Exception {
+    EventCreateRule responsesElement = EventCreateRule.newBuilder().build();
+    ListEventCreateRulesResponse expectedResponse =
+        ListEventCreateRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEventCreateRules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
+
+    ListEventCreateRulesPagedResponse pagedListResponse = client.listEventCreateRules(parent);
+
+    List<EventCreateRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEventCreateRulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEventCreateRulesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
+      client.listEventCreateRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEventCreateRuleTest() throws Exception {
+    EventCreateRule expectedResponse =
+        EventCreateRule.newBuilder()
+            .setName(
+                EventCreateRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_CREATE_RULE]")
+                    .toString())
+            .setDestinationEvent("destinationEvent1181456172")
+            .addAllEventConditions(new ArrayList<MatchingCondition>())
+            .setSourceCopyParameters(true)
+            .addAllParameterMutations(new ArrayList<ParameterMutation>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+    EventCreateRule eventCreateRule = EventCreateRule.newBuilder().build();
+
+    EventCreateRule actualResponse = client.createEventCreateRule(parent, eventCreateRule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createEventCreateRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+      EventCreateRule eventCreateRule = EventCreateRule.newBuilder().build();
+      client.createEventCreateRule(parent, eventCreateRule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEventCreateRuleTest2() throws Exception {
+    EventCreateRule expectedResponse =
+        EventCreateRule.newBuilder()
+            .setName(
+                EventCreateRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_CREATE_RULE]")
+                    .toString())
+            .setDestinationEvent("destinationEvent1181456172")
+            .addAllEventConditions(new ArrayList<MatchingCondition>())
+            .setSourceCopyParameters(true)
+            .addAllParameterMutations(new ArrayList<ParameterMutation>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
+    EventCreateRule eventCreateRule = EventCreateRule.newBuilder().build();
+
+    EventCreateRule actualResponse = client.createEventCreateRule(parent, eventCreateRule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createEventCreateRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
+      EventCreateRule eventCreateRule = EventCreateRule.newBuilder().build();
+      client.createEventCreateRule(parent, eventCreateRule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEventCreateRuleTest() throws Exception {
+    EventCreateRule expectedResponse =
+        EventCreateRule.newBuilder()
+            .setName(
+                EventCreateRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_CREATE_RULE]")
+                    .toString())
+            .setDestinationEvent("destinationEvent1181456172")
+            .addAllEventConditions(new ArrayList<MatchingCondition>())
+            .setSourceCopyParameters(true)
+            .addAllParameterMutations(new ArrayList<ParameterMutation>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EventCreateRule eventCreateRule =
+        EventCreateRule.newBuilder()
+            .setName(
+                EventCreateRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_CREATE_RULE]")
+                    .toString())
+            .setDestinationEvent("destinationEvent1181456172")
+            .addAllEventConditions(new ArrayList<MatchingCondition>())
+            .setSourceCopyParameters(true)
+            .addAllParameterMutations(new ArrayList<ParameterMutation>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    EventCreateRule actualResponse = client.updateEventCreateRule(eventCreateRule, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateEventCreateRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EventCreateRule eventCreateRule =
+          EventCreateRule.newBuilder()
+              .setName(
+                  EventCreateRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_CREATE_RULE]")
+                      .toString())
+              .setDestinationEvent("destinationEvent1181456172")
+              .addAllEventConditions(new ArrayList<MatchingCondition>())
+              .setSourceCopyParameters(true)
+              .addAllParameterMutations(new ArrayList<ParameterMutation>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateEventCreateRule(eventCreateRule, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEventCreateRuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    EventCreateRuleName name =
+        EventCreateRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_CREATE_RULE]");
+
+    client.deleteEventCreateRule(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteEventCreateRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EventCreateRuleName name =
+          EventCreateRuleName.of("[PROPERTY]", "[DATA_STREAM]", "[EVENT_CREATE_RULE]");
+      client.deleteEventCreateRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEventCreateRuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "properties/propertie-8819/dataStreams/dataStream-8819/eventCreateRules/eventCreateRule-8819";
+
+    client.deleteEventCreateRule(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteEventCreateRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "properties/propertie-8819/dataStreams/dataStream-8819/eventCreateRules/eventCreateRule-8819";
+      client.deleteEventCreateRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDataRedactionSettingsTest() throws Exception {
+    DataRedactionSettings expectedResponse =
+        DataRedactionSettings.newBuilder()
+            .setName(DataRedactionSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setEmailRedactionEnabled(true)
+            .setQueryParameterRedactionEnabled(true)
+            .addAllQueryParameterKeys(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataRedactionSettings dataRedactionSettings =
+        DataRedactionSettings.newBuilder()
+            .setName(DataRedactionSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setEmailRedactionEnabled(true)
+            .setQueryParameterRedactionEnabled(true)
+            .addAllQueryParameterKeys(new ArrayList<String>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DataRedactionSettings actualResponse =
+        client.updateDataRedactionSettings(dataRedactionSettings, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateDataRedactionSettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataRedactionSettings dataRedactionSettings =
+          DataRedactionSettings.newBuilder()
+              .setName(DataRedactionSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+              .setEmailRedactionEnabled(true)
+              .setQueryParameterRedactionEnabled(true)
+              .addAllQueryParameterKeys(new ArrayList<String>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDataRedactionSettings(dataRedactionSettings, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDataRedactionSettingsTest() throws Exception {
+    DataRedactionSettings expectedResponse =
+        DataRedactionSettings.newBuilder()
+            .setName(DataRedactionSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setEmailRedactionEnabled(true)
+            .setQueryParameterRedactionEnabled(true)
+            .addAllQueryParameterKeys(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataRedactionSettingsName name = DataRedactionSettingsName.of("[PROPERTY]", "[DATA_STREAM]");
+
+    DataRedactionSettings actualResponse = client.getDataRedactionSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDataRedactionSettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataRedactionSettingsName name = DataRedactionSettingsName.of("[PROPERTY]", "[DATA_STREAM]");
+      client.getDataRedactionSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDataRedactionSettingsTest2() throws Exception {
+    DataRedactionSettings expectedResponse =
+        DataRedactionSettings.newBuilder()
+            .setName(DataRedactionSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setEmailRedactionEnabled(true)
+            .setQueryParameterRedactionEnabled(true)
+            .addAllQueryParameterKeys(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-6817/dataStreams/dataStream-6817/dataRedactionSettings";
+
+    DataRedactionSettings actualResponse = client.getDataRedactionSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDataRedactionSettingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-6817/dataStreams/dataStream-6817/dataRedactionSettings";
+      client.getDataRedactionSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRollupPropertyTest() throws Exception {
+    CreateRollupPropertyResponse expectedResponse =
+        CreateRollupPropertyResponse.newBuilder()
+            .setRollupProperty(Property.newBuilder().build())
+            .addAllRollupPropertySourceLinks(new ArrayList<RollupPropertySourceLink>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CreateRollupPropertyRequest request =
+        CreateRollupPropertyRequest.newBuilder()
+            .setRollupProperty(Property.newBuilder().build())
+            .addAllSourceProperties(new ArrayList<String>())
+            .build();
+
+    CreateRollupPropertyResponse actualResponse = client.createRollupProperty(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRollupPropertyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CreateRollupPropertyRequest request =
+          CreateRollupPropertyRequest.newBuilder()
+              .setRollupProperty(Property.newBuilder().build())
+              .addAllSourceProperties(new ArrayList<String>())
+              .build();
+      client.createRollupProperty(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRollupPropertySourceLinkTest() throws Exception {
+    RollupPropertySourceLink expectedResponse =
+        RollupPropertySourceLink.newBuilder()
+            .setName(
+                RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]")
+                    .toString())
+            .setSourceProperty("sourceProperty1938317072")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RollupPropertySourceLinkName name =
+        RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]");
+
+    RollupPropertySourceLink actualResponse = client.getRollupPropertySourceLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRollupPropertySourceLinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RollupPropertySourceLinkName name =
+          RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]");
+      client.getRollupPropertySourceLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRollupPropertySourceLinkTest2() throws Exception {
+    RollupPropertySourceLink expectedResponse =
+        RollupPropertySourceLink.newBuilder()
+            .setName(
+                RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]")
+                    .toString())
+            .setSourceProperty("sourceProperty1938317072")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "properties/propertie-3766/rollupPropertySourceLinks/rollupPropertySourceLink-3766";
+
+    RollupPropertySourceLink actualResponse = client.getRollupPropertySourceLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRollupPropertySourceLinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "properties/propertie-3766/rollupPropertySourceLinks/rollupPropertySourceLink-3766";
+      client.getRollupPropertySourceLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRollupPropertySourceLinksTest() throws Exception {
+    RollupPropertySourceLink responsesElement = RollupPropertySourceLink.newBuilder().build();
+    ListRollupPropertySourceLinksResponse expectedResponse =
+        ListRollupPropertySourceLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRollupPropertySourceLinks(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListRollupPropertySourceLinksPagedResponse pagedListResponse =
+        client.listRollupPropertySourceLinks(parent);
+
+    List<RollupPropertySourceLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRollupPropertySourceLinksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRollupPropertySourceLinksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listRollupPropertySourceLinks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRollupPropertySourceLinksTest2() throws Exception {
+    RollupPropertySourceLink responsesElement = RollupPropertySourceLink.newBuilder().build();
+    ListRollupPropertySourceLinksResponse expectedResponse =
+        ListRollupPropertySourceLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRollupPropertySourceLinks(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+
+    ListRollupPropertySourceLinksPagedResponse pagedListResponse =
+        client.listRollupPropertySourceLinks(parent);
+
+    List<RollupPropertySourceLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRollupPropertySourceLinksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRollupPropertySourceLinksExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      client.listRollupPropertySourceLinks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRollupPropertySourceLinkTest() throws Exception {
+    RollupPropertySourceLink expectedResponse =
+        RollupPropertySourceLink.newBuilder()
+            .setName(
+                RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]")
+                    .toString())
+            .setSourceProperty("sourceProperty1938317072")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    RollupPropertySourceLink rollupPropertySourceLink =
+        RollupPropertySourceLink.newBuilder().build();
+
+    RollupPropertySourceLink actualResponse =
+        client.createRollupPropertySourceLink(parent, rollupPropertySourceLink);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRollupPropertySourceLinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      RollupPropertySourceLink rollupPropertySourceLink =
+          RollupPropertySourceLink.newBuilder().build();
+      client.createRollupPropertySourceLink(parent, rollupPropertySourceLink);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRollupPropertySourceLinkTest2() throws Exception {
+    RollupPropertySourceLink expectedResponse =
+        RollupPropertySourceLink.newBuilder()
+            .setName(
+                RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]")
+                    .toString())
+            .setSourceProperty("sourceProperty1938317072")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+    RollupPropertySourceLink rollupPropertySourceLink =
+        RollupPropertySourceLink.newBuilder().build();
+
+    RollupPropertySourceLink actualResponse =
+        client.createRollupPropertySourceLink(parent, rollupPropertySourceLink);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRollupPropertySourceLinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      RollupPropertySourceLink rollupPropertySourceLink =
+          RollupPropertySourceLink.newBuilder().build();
+      client.createRollupPropertySourceLink(parent, rollupPropertySourceLink);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRollupPropertySourceLinkTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    RollupPropertySourceLinkName name =
+        RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]");
+
+    client.deleteRollupPropertySourceLink(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRollupPropertySourceLinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RollupPropertySourceLinkName name =
+          RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]");
+      client.deleteRollupPropertySourceLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRollupPropertySourceLinkTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "properties/propertie-3766/rollupPropertySourceLinks/rollupPropertySourceLink-3766";
+
+    client.deleteRollupPropertySourceLink(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRollupPropertySourceLinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "properties/propertie-3766/rollupPropertySourceLinks/rollupPropertySourceLink-3766";
+      client.deleteRollupPropertySourceLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSubpropertyTest() throws Exception {
+    CreateSubpropertyResponse expectedResponse =
+        CreateSubpropertyResponse.newBuilder()
+            .setSubproperty(Property.newBuilder().build())
+            .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CreateSubpropertyRequest request =
+        CreateSubpropertyRequest.newBuilder()
+            .setParent(PropertyName.of("[PROPERTY]").toString())
+            .setSubproperty(Property.newBuilder().build())
+            .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
+            .build();
+
+    CreateSubpropertyResponse actualResponse = client.createSubproperty(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSubpropertyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CreateSubpropertyRequest request =
+          CreateSubpropertyRequest.newBuilder()
+              .setParent(PropertyName.of("[PROPERTY]").toString())
+              .setSubproperty(Property.newBuilder().build())
+              .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
+              .build();
+      client.createSubproperty(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSubpropertyEventFilterTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SubpropertyEventFilterName name =
+        SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
+
+    client.deleteSubpropertyEventFilter(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSubpropertyEventFilterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubpropertyEventFilterName name =
+          SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
+      client.deleteSubpropertyEventFilter(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSubpropertyEventFilterTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-6725/subpropertyEventFilters/subpropertyEventFilter-6725";
+
+    client.deleteSubpropertyEventFilter(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSubpropertyEventFilterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-6725/subpropertyEventFilters/subpropertyEventFilter-6725";
+      client.deleteSubpropertyEventFilter(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSubpropertyEventFilterTest() throws Exception {
+    SubpropertyEventFilter expectedResponse =
+        SubpropertyEventFilter.newBuilder()
+            .setName(
+                SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+                    .toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .addAllFilterClauses(new ArrayList<SubpropertyEventFilterClause>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    SubpropertyEventFilter subpropertyEventFilter = SubpropertyEventFilter.newBuilder().build();
+
+    SubpropertyEventFilter actualResponse =
+        client.createSubpropertyEventFilter(parent, subpropertyEventFilter);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSubpropertyEventFilterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      SubpropertyEventFilter subpropertyEventFilter = SubpropertyEventFilter.newBuilder().build();
+      client.createSubpropertyEventFilter(parent, subpropertyEventFilter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSubpropertyEventFilterTest2() throws Exception {
+    SubpropertyEventFilter expectedResponse =
+        SubpropertyEventFilter.newBuilder()
+            .setName(
+                SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+                    .toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .addAllFilterClauses(new ArrayList<SubpropertyEventFilterClause>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+    SubpropertyEventFilter subpropertyEventFilter = SubpropertyEventFilter.newBuilder().build();
+
+    SubpropertyEventFilter actualResponse =
+        client.createSubpropertyEventFilter(parent, subpropertyEventFilter);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSubpropertyEventFilterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      SubpropertyEventFilter subpropertyEventFilter = SubpropertyEventFilter.newBuilder().build();
+      client.createSubpropertyEventFilter(parent, subpropertyEventFilter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

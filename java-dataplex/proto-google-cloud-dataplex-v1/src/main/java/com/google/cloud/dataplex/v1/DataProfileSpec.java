@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,17 +37,14 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     super(builder);
   }
 
-  private DataProfileSpec() {}
+  private DataProfileSpec() {
+    rowFilter_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DataProfileSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -65,6 +62,2641 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.DataProfileSpec.Builder.class);
   }
 
+  public interface PostScanActionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be exported to the provided BigQuery
+     * table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bigqueryExport field is set.
+     */
+    boolean hasBigqueryExport();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be exported to the provided BigQuery
+     * table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bigqueryExport.
+     */
+    com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport getBigqueryExport();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be exported to the provided BigQuery
+     * table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExportOrBuilder
+        getBigqueryExportOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration of post scan actions of DataProfileScan job.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataProfileSpec.PostScanActions}
+   */
+  public static final class PostScanActions extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions)
+      PostScanActionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PostScanActions.newBuilder() to construct.
+    private PostScanActions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PostScanActions() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PostScanActions();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataProfileProto
+          .internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.DataProfileProto
+          .internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.class,
+              com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.Builder.class);
+    }
+
+    public interface BigQueryExportOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The BigQuery table to export DataProfileScan results to.
+       * Format:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The resultsTable.
+       */
+      java.lang.String getResultsTable();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The BigQuery table to export DataProfileScan results to.
+       * Format:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for resultsTable.
+       */
+      com.google.protobuf.ByteString getResultsTableBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of BigQuery export post scan action.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport}
+     */
+    public static final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport)
+        BigQueryExportOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use BigQueryExport.newBuilder() to construct.
+      private BigQueryExport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private BigQueryExport() {
+        resultsTable_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BigQueryExport();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataProfileProto
+            .internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_BigQueryExport_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataProfileProto
+            .internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_BigQueryExport_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport.class,
+                com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport.Builder
+                    .class);
+      }
+
+      public static final int RESULTS_TABLE_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object resultsTable_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The BigQuery table to export DataProfileScan results to.
+       * Format:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The resultsTable.
+       */
+      @java.lang.Override
+      public java.lang.String getResultsTable() {
+        java.lang.Object ref = resultsTable_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resultsTable_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The BigQuery table to export DataProfileScan results to.
+       * Format:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for resultsTable.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getResultsTableBytes() {
+        java.lang.Object ref = resultsTable_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          resultsTable_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resultsTable_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resultsTable_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resultsTable_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resultsTable_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport other =
+            (com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport) obj;
+
+        if (!getResultsTable().equals(other.getResultsTable())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + RESULTS_TABLE_FIELD_NUMBER;
+        hash = (53 * hash) + getResultsTable().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The configuration of BigQuery export post scan action.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport)
+          com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExportOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataProfileProto
+              .internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_BigQueryExport_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataProfileProto
+              .internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_BigQueryExport_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport.class,
+                  com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          resultsTable_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.DataProfileProto
+              .internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_BigQueryExport_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport build() {
+          com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport result =
+              new com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.resultsTable_ = resultsTable_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+                  .getDefaultInstance()) return this;
+          if (!other.getResultsTable().isEmpty()) {
+            resultsTable_ = other.resultsTable_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    resultsTable_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object resultsTable_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The BigQuery table to export DataProfileScan results to.
+         * Format:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The resultsTable.
+         */
+        public java.lang.String getResultsTable() {
+          java.lang.Object ref = resultsTable_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            resultsTable_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The BigQuery table to export DataProfileScan results to.
+         * Format:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for resultsTable.
+         */
+        public com.google.protobuf.ByteString getResultsTableBytes() {
+          java.lang.Object ref = resultsTable_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            resultsTable_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The BigQuery table to export DataProfileScan results to.
+         * Format:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The resultsTable to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResultsTable(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resultsTable_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The BigQuery table to export DataProfileScan results to.
+         * Format:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearResultsTable() {
+          resultsTable_ = getDefaultInstance().getResultsTable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The BigQuery table to export DataProfileScan results to.
+         * Format:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for resultsTable to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResultsTableBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          resultsTable_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport)
+      private static final com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions
+              .BigQueryExport
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BigQueryExport> PARSER =
+          new com.google.protobuf.AbstractParser<BigQueryExport>() {
+            @java.lang.Override
+            public BigQueryExport parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<BigQueryExport> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BigQueryExport> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int BIGQUERY_EXPORT_FIELD_NUMBER = 1;
+    private com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+        bigqueryExport_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be exported to the provided BigQuery
+     * table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bigqueryExport field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigqueryExport() {
+      return bigqueryExport_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be exported to the provided BigQuery
+     * table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bigqueryExport.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+        getBigqueryExport() {
+      return bigqueryExport_ == null
+          ? com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+              .getDefaultInstance()
+          : bigqueryExport_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be exported to the provided BigQuery
+     * table.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExportOrBuilder
+        getBigqueryExportOrBuilder() {
+      return bigqueryExport_ == null
+          ? com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+              .getDefaultInstance()
+          : bigqueryExport_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (bigqueryExport_ != null) {
+        output.writeMessage(1, getBigqueryExport());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (bigqueryExport_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBigqueryExport());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions other =
+          (com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions) obj;
+
+      if (hasBigqueryExport() != other.hasBigqueryExport()) return false;
+      if (hasBigqueryExport()) {
+        if (!getBigqueryExport().equals(other.getBigqueryExport())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBigqueryExport()) {
+        hash = (37 * hash) + BIGQUERY_EXPORT_FIELD_NUMBER;
+        hash = (53 * hash) + getBigqueryExport().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of post scan actions of DataProfileScan job.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataProfileSpec.PostScanActions}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions)
+        com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataProfileProto
+            .internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataProfileProto
+            .internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.class,
+                com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        bigqueryExport_ = null;
+        if (bigqueryExportBuilder_ != null) {
+          bigqueryExportBuilder_.dispose();
+          bigqueryExportBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.DataProfileProto
+            .internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions build() {
+        com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions buildPartial() {
+        com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions result =
+            new com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bigqueryExport_ =
+              bigqueryExportBuilder_ == null ? bigqueryExport_ : bigqueryExportBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions) {
+          return mergeFrom((com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions other) {
+        if (other
+            == com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.getDefaultInstance())
+          return this;
+        if (other.hasBigqueryExport()) {
+          mergeBigqueryExport(other.getBigqueryExport());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getBigqueryExportFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          bigqueryExport_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport,
+              com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport.Builder,
+              com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExportOrBuilder>
+          bigqueryExportBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be exported to the provided BigQuery
+       * table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the bigqueryExport field is set.
+       */
+      public boolean hasBigqueryExport() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be exported to the provided BigQuery
+       * table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bigqueryExport.
+       */
+      public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+          getBigqueryExport() {
+        if (bigqueryExportBuilder_ == null) {
+          return bigqueryExport_ == null
+              ? com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+                  .getDefaultInstance()
+              : bigqueryExport_;
+        } else {
+          return bigqueryExportBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be exported to the provided BigQuery
+       * table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBigqueryExport(
+          com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport value) {
+        if (bigqueryExportBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bigqueryExport_ = value;
+        } else {
+          bigqueryExportBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be exported to the provided BigQuery
+       * table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBigqueryExport(
+          com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport.Builder
+              builderForValue) {
+        if (bigqueryExportBuilder_ == null) {
+          bigqueryExport_ = builderForValue.build();
+        } else {
+          bigqueryExportBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be exported to the provided BigQuery
+       * table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeBigqueryExport(
+          com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport value) {
+        if (bigqueryExportBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && bigqueryExport_ != null
+              && bigqueryExport_
+                  != com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+                      .getDefaultInstance()) {
+            getBigqueryExportBuilder().mergeFrom(value);
+          } else {
+            bigqueryExport_ = value;
+          }
+        } else {
+          bigqueryExportBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be exported to the provided BigQuery
+       * table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearBigqueryExport() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        bigqueryExport_ = null;
+        if (bigqueryExportBuilder_ != null) {
+          bigqueryExportBuilder_.dispose();
+          bigqueryExportBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be exported to the provided BigQuery
+       * table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport.Builder
+          getBigqueryExportBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getBigqueryExportFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be exported to the provided BigQuery
+       * table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExportOrBuilder
+          getBigqueryExportOrBuilder() {
+        if (bigqueryExportBuilder_ != null) {
+          return bigqueryExportBuilder_.getMessageOrBuilder();
+        } else {
+          return bigqueryExport_ == null
+              ? com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+                  .getDefaultInstance()
+              : bigqueryExport_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be exported to the provided BigQuery
+       * table.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport bigquery_export = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport,
+              com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport.Builder,
+              com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExportOrBuilder>
+          getBigqueryExportFieldBuilder() {
+        if (bigqueryExportBuilder_ == null) {
+          bigqueryExportBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport,
+                  com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.BigQueryExport
+                      .Builder,
+                  com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions
+                      .BigQueryExportOrBuilder>(
+                  getBigqueryExport(), getParentForChildren(), isClean());
+          bigqueryExport_ = null;
+        }
+        return bigqueryExportBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataProfileSpec.PostScanActions)
+    private static final com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PostScanActions> PARSER =
+        new com.google.protobuf.AbstractParser<PostScanActions>() {
+          @java.lang.Override
+          public PostScanActions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PostScanActions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostScanActions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SelectedFieldsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataProfileSpec.SelectedFields)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expected input is a list of fully qualified names of fields as
+     * in the schema.
+     *
+     * Only top-level field names for nested fields are supported.
+     * For instance, if 'x' is of nested field type, listing 'x' is supported
+     * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+     * 'x'.
+     * </pre>
+     *
+     * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the fieldNames.
+     */
+    java.util.List<java.lang.String> getFieldNamesList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expected input is a list of fully qualified names of fields as
+     * in the schema.
+     *
+     * Only top-level field names for nested fields are supported.
+     * For instance, if 'x' is of nested field type, listing 'x' is supported
+     * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+     * 'x'.
+     * </pre>
+     *
+     * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of fieldNames.
+     */
+    int getFieldNamesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expected input is a list of fully qualified names of fields as
+     * in the schema.
+     *
+     * Only top-level field names for nested fields are supported.
+     * For instance, if 'x' is of nested field type, listing 'x' is supported
+     * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+     * 'x'.
+     * </pre>
+     *
+     * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The fieldNames at the given index.
+     */
+    java.lang.String getFieldNames(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expected input is a list of fully qualified names of fields as
+     * in the schema.
+     *
+     * Only top-level field names for nested fields are supported.
+     * For instance, if 'x' is of nested field type, listing 'x' is supported
+     * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+     * 'x'.
+     * </pre>
+     *
+     * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the fieldNames at the given index.
+     */
+    com.google.protobuf.ByteString getFieldNamesBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The specification for fields to include or exclude in data profile scan.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataProfileSpec.SelectedFields}
+   */
+  public static final class SelectedFields extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataProfileSpec.SelectedFields)
+      SelectedFieldsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SelectedFields.newBuilder() to construct.
+    private SelectedFields(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SelectedFields() {
+      fieldNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SelectedFields();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataProfileProto
+          .internal_static_google_cloud_dataplex_v1_DataProfileSpec_SelectedFields_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.DataProfileProto
+          .internal_static_google_cloud_dataplex_v1_DataProfileSpec_SelectedFields_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.class,
+              com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder.class);
+    }
+
+    public static final int FIELD_NAMES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList fieldNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expected input is a list of fully qualified names of fields as
+     * in the schema.
+     *
+     * Only top-level field names for nested fields are supported.
+     * For instance, if 'x' is of nested field type, listing 'x' is supported
+     * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+     * 'x'.
+     * </pre>
+     *
+     * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the fieldNames.
+     */
+    public com.google.protobuf.ProtocolStringList getFieldNamesList() {
+      return fieldNames_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expected input is a list of fully qualified names of fields as
+     * in the schema.
+     *
+     * Only top-level field names for nested fields are supported.
+     * For instance, if 'x' is of nested field type, listing 'x' is supported
+     * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+     * 'x'.
+     * </pre>
+     *
+     * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of fieldNames.
+     */
+    public int getFieldNamesCount() {
+      return fieldNames_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expected input is a list of fully qualified names of fields as
+     * in the schema.
+     *
+     * Only top-level field names for nested fields are supported.
+     * For instance, if 'x' is of nested field type, listing 'x' is supported
+     * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+     * 'x'.
+     * </pre>
+     *
+     * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The fieldNames at the given index.
+     */
+    public java.lang.String getFieldNames(int index) {
+      return fieldNames_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Expected input is a list of fully qualified names of fields as
+     * in the schema.
+     *
+     * Only top-level field names for nested fields are supported.
+     * For instance, if 'x' is of nested field type, listing 'x' is supported
+     * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+     * 'x'.
+     * </pre>
+     *
+     * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the fieldNames at the given index.
+     */
+    public com.google.protobuf.ByteString getFieldNamesBytes(int index) {
+      return fieldNames_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < fieldNames_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldNames_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < fieldNames_.size(); i++) {
+          dataSize += computeStringSizeNoTag(fieldNames_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFieldNamesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields other =
+          (com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields) obj;
+
+      if (!getFieldNamesList().equals(other.getFieldNamesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getFieldNamesCount() > 0) {
+        hash = (37 * hash) + FIELD_NAMES_FIELD_NUMBER;
+        hash = (53 * hash) + getFieldNamesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for fields to include or exclude in data profile scan.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataProfileSpec.SelectedFields}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataProfileSpec.SelectedFields)
+        com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataProfileProto
+            .internal_static_google_cloud_dataplex_v1_DataProfileSpec_SelectedFields_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataProfileProto
+            .internal_static_google_cloud_dataplex_v1_DataProfileSpec_SelectedFields_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.class,
+                com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        fieldNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.DataProfileProto
+            .internal_static_google_cloud_dataplex_v1_DataProfileSpec_SelectedFields_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields build() {
+        com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields buildPartial() {
+        com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields result =
+            new com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          fieldNames_.makeImmutable();
+          result.fieldNames_ = fieldNames_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields) {
+          return mergeFrom((com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields other) {
+        if (other
+            == com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance())
+          return this;
+        if (!other.fieldNames_.isEmpty()) {
+          if (fieldNames_.isEmpty()) {
+            fieldNames_ = other.fieldNames_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureFieldNamesIsMutable();
+            fieldNames_.addAll(other.fieldNames_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFieldNamesIsMutable();
+                  fieldNames_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList fieldNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureFieldNamesIsMutable() {
+        if (!fieldNames_.isModifiable()) {
+          fieldNames_ = new com.google.protobuf.LazyStringArrayList(fieldNames_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Expected input is a list of fully qualified names of fields as
+       * in the schema.
+       *
+       * Only top-level field names for nested fields are supported.
+       * For instance, if 'x' is of nested field type, listing 'x' is supported
+       * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+       * 'x'.
+       * </pre>
+       *
+       * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the fieldNames.
+       */
+      public com.google.protobuf.ProtocolStringList getFieldNamesList() {
+        fieldNames_.makeImmutable();
+        return fieldNames_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Expected input is a list of fully qualified names of fields as
+       * in the schema.
+       *
+       * Only top-level field names for nested fields are supported.
+       * For instance, if 'x' is of nested field type, listing 'x' is supported
+       * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+       * 'x'.
+       * </pre>
+       *
+       * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of fieldNames.
+       */
+      public int getFieldNamesCount() {
+        return fieldNames_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Expected input is a list of fully qualified names of fields as
+       * in the schema.
+       *
+       * Only top-level field names for nested fields are supported.
+       * For instance, if 'x' is of nested field type, listing 'x' is supported
+       * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+       * 'x'.
+       * </pre>
+       *
+       * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The fieldNames at the given index.
+       */
+      public java.lang.String getFieldNames(int index) {
+        return fieldNames_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Expected input is a list of fully qualified names of fields as
+       * in the schema.
+       *
+       * Only top-level field names for nested fields are supported.
+       * For instance, if 'x' is of nested field type, listing 'x' is supported
+       * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+       * 'x'.
+       * </pre>
+       *
+       * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the fieldNames at the given index.
+       */
+      public com.google.protobuf.ByteString getFieldNamesBytes(int index) {
+        return fieldNames_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Expected input is a list of fully qualified names of fields as
+       * in the schema.
+       *
+       * Only top-level field names for nested fields are supported.
+       * For instance, if 'x' is of nested field type, listing 'x' is supported
+       * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+       * 'x'.
+       * </pre>
+       *
+       * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The fieldNames to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldNames(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFieldNamesIsMutable();
+        fieldNames_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Expected input is a list of fully qualified names of fields as
+       * in the schema.
+       *
+       * Only top-level field names for nested fields are supported.
+       * For instance, if 'x' is of nested field type, listing 'x' is supported
+       * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+       * 'x'.
+       * </pre>
+       *
+       * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The fieldNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFieldNames(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFieldNamesIsMutable();
+        fieldNames_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Expected input is a list of fully qualified names of fields as
+       * in the schema.
+       *
+       * Only top-level field names for nested fields are supported.
+       * For instance, if 'x' is of nested field type, listing 'x' is supported
+       * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+       * 'x'.
+       * </pre>
+       *
+       * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The fieldNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFieldNames(java.lang.Iterable<java.lang.String> values) {
+        ensureFieldNamesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fieldNames_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Expected input is a list of fully qualified names of fields as
+       * in the schema.
+       *
+       * Only top-level field names for nested fields are supported.
+       * For instance, if 'x' is of nested field type, listing 'x' is supported
+       * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+       * 'x'.
+       * </pre>
+       *
+       * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFieldNames() {
+        fieldNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Expected input is a list of fully qualified names of fields as
+       * in the schema.
+       *
+       * Only top-level field names for nested fields are supported.
+       * For instance, if 'x' is of nested field type, listing 'x' is supported
+       * but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of
+       * 'x'.
+       * </pre>
+       *
+       * <code>repeated string field_names = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the fieldNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFieldNamesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureFieldNamesIsMutable();
+        fieldNames_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataProfileSpec.SelectedFields)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataProfileSpec.SelectedFields)
+    private static final com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SelectedFields> PARSER =
+        new com.google.protobuf.AbstractParser<SelectedFields>() {
+          @java.lang.Override
+          public SelectedFields parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SelectedFields> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SelectedFields> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public static final int SAMPLING_PERCENT_FIELD_NUMBER = 2;
+  private float samplingPercent_ = 0F;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The percentage of the records to be selected from the dataset for
+   * DataScan.
+   *
+   * * Value can range between 0.0 and 100.0 with up to 3 significant decimal
+   * digits.
+   * * Sampling is not applied if `sampling_percent` is not specified, 0 or
+   * 100.
+   * </pre>
+   *
+   * <code>float sampling_percent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The samplingPercent.
+   */
+  @java.lang.Override
+  public float getSamplingPercent() {
+    return samplingPercent_;
+  }
+
+  public static final int ROW_FILTER_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rowFilter_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A filter applied to all rows in a single DataScan job.
+   * The filter needs to be a valid SQL expression for a WHERE clause in
+   * BigQuery standard SQL syntax.
+   * Example: col1 &gt;= 0 AND col2 &lt; 10
+   * </pre>
+   *
+   * <code>string row_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The rowFilter.
+   */
+  @java.lang.Override
+  public java.lang.String getRowFilter() {
+    java.lang.Object ref = rowFilter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rowFilter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A filter applied to all rows in a single DataScan job.
+   * The filter needs to be a valid SQL expression for a WHERE clause in
+   * BigQuery standard SQL syntax.
+   * Example: col1 &gt;= 0 AND col2 &lt; 10
+   * </pre>
+   *
+   * <code>string row_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for rowFilter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRowFilterBytes() {
+    java.lang.Object ref = rowFilter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      rowFilter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int POST_SCAN_ACTIONS_FIELD_NUMBER = 4;
+  private com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions postScanActions_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Actions to take upon job completion..
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the postScanActions field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostScanActions() {
+    return postScanActions_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Actions to take upon job completion..
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The postScanActions.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions getPostScanActions() {
+    return postScanActions_ == null
+        ? com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.getDefaultInstance()
+        : postScanActions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Actions to take upon job completion..
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActionsOrBuilder
+      getPostScanActionsOrBuilder() {
+    return postScanActions_ == null
+        ? com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.getDefaultInstance()
+        : postScanActions_;
+  }
+
+  public static final int INCLUDE_FIELDS_FIELD_NUMBER = 5;
+  private com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields includeFields_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The fields to include in data profile.
+   *
+   * If not specified, all fields at the time of profile scan job execution are
+   * included, except for ones listed in `exclude_fields`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the includeFields field is set.
+   */
+  @java.lang.Override
+  public boolean hasIncludeFields() {
+    return includeFields_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The fields to include in data profile.
+   *
+   * If not specified, all fields at the time of profile scan job execution are
+   * included, except for ones listed in `exclude_fields`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includeFields.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields getIncludeFields() {
+    return includeFields_ == null
+        ? com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance()
+        : includeFields_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The fields to include in data profile.
+   *
+   * If not specified, all fields at the time of profile scan job execution are
+   * included, except for ones listed in `exclude_fields`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder
+      getIncludeFieldsOrBuilder() {
+    return includeFields_ == null
+        ? com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance()
+        : includeFields_;
+  }
+
+  public static final int EXCLUDE_FIELDS_FIELD_NUMBER = 6;
+  private com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields excludeFields_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The fields to exclude from data profile.
+   *
+   * If specified, the fields will be excluded from data profile, regardless of
+   * `include_fields` value.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the excludeFields field is set.
+   */
+  @java.lang.Override
+  public boolean hasExcludeFields() {
+    return excludeFields_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The fields to exclude from data profile.
+   *
+   * If specified, the fields will be excluded from data profile, regardless of
+   * `include_fields` value.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The excludeFields.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields getExcludeFields() {
+    return excludeFields_ == null
+        ? com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance()
+        : excludeFields_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The fields to exclude from data profile.
+   *
+   * If specified, the fields will be excluded from data profile, regardless of
+   * `include_fields` value.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder
+      getExcludeFieldsOrBuilder() {
+    return excludeFields_ == null
+        ? com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance()
+        : excludeFields_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -79,6 +2711,21 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (java.lang.Float.floatToRawIntBits(samplingPercent_) != 0) {
+      output.writeFloat(2, samplingPercent_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rowFilter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, rowFilter_);
+    }
+    if (postScanActions_ != null) {
+      output.writeMessage(4, getPostScanActions());
+    }
+    if (includeFields_ != null) {
+      output.writeMessage(5, getIncludeFields());
+    }
+    if (excludeFields_ != null) {
+      output.writeMessage(6, getExcludeFields());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -88,6 +2735,21 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
+    if (java.lang.Float.floatToRawIntBits(samplingPercent_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, samplingPercent_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rowFilter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, rowFilter_);
+    }
+    if (postScanActions_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPostScanActions());
+    }
+    if (includeFields_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getIncludeFields());
+    }
+    if (excludeFields_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getExcludeFields());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -104,6 +2766,21 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.dataplex.v1.DataProfileSpec other =
         (com.google.cloud.dataplex.v1.DataProfileSpec) obj;
 
+    if (java.lang.Float.floatToIntBits(getSamplingPercent())
+        != java.lang.Float.floatToIntBits(other.getSamplingPercent())) return false;
+    if (!getRowFilter().equals(other.getRowFilter())) return false;
+    if (hasPostScanActions() != other.hasPostScanActions()) return false;
+    if (hasPostScanActions()) {
+      if (!getPostScanActions().equals(other.getPostScanActions())) return false;
+    }
+    if (hasIncludeFields() != other.hasIncludeFields()) return false;
+    if (hasIncludeFields()) {
+      if (!getIncludeFields().equals(other.getIncludeFields())) return false;
+    }
+    if (hasExcludeFields() != other.hasExcludeFields()) return false;
+    if (hasExcludeFields()) {
+      if (!getExcludeFields().equals(other.getExcludeFields())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -115,6 +2792,22 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + SAMPLING_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getSamplingPercent());
+    hash = (37 * hash) + ROW_FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getRowFilter().hashCode();
+    if (hasPostScanActions()) {
+      hash = (37 * hash) + POST_SCAN_ACTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getPostScanActions().hashCode();
+    }
+    if (hasIncludeFields()) {
+      hash = (37 * hash) + INCLUDE_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getIncludeFields().hashCode();
+    }
+    if (hasExcludeFields()) {
+      hash = (37 * hash) + EXCLUDE_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getExcludeFields().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -253,6 +2946,24 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      samplingPercent_ = 0F;
+      rowFilter_ = "";
+      postScanActions_ = null;
+      if (postScanActionsBuilder_ != null) {
+        postScanActionsBuilder_.dispose();
+        postScanActionsBuilder_ = null;
+      }
+      includeFields_ = null;
+      if (includeFieldsBuilder_ != null) {
+        includeFieldsBuilder_.dispose();
+        includeFieldsBuilder_ = null;
+      }
+      excludeFields_ = null;
+      if (excludeFieldsBuilder_ != null) {
+        excludeFieldsBuilder_.dispose();
+        excludeFieldsBuilder_ = null;
+      }
       return this;
     }
 
@@ -280,8 +2991,33 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dataplex.v1.DataProfileSpec buildPartial() {
       com.google.cloud.dataplex.v1.DataProfileSpec result =
           new com.google.cloud.dataplex.v1.DataProfileSpec(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.DataProfileSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.samplingPercent_ = samplingPercent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rowFilter_ = rowFilter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.postScanActions_ =
+            postScanActionsBuilder_ == null ? postScanActions_ : postScanActionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.includeFields_ =
+            includeFieldsBuilder_ == null ? includeFields_ : includeFieldsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.excludeFields_ =
+            excludeFieldsBuilder_ == null ? excludeFields_ : excludeFieldsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -329,6 +3065,23 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
 
     public Builder mergeFrom(com.google.cloud.dataplex.v1.DataProfileSpec other) {
       if (other == com.google.cloud.dataplex.v1.DataProfileSpec.getDefaultInstance()) return this;
+      if (other.getSamplingPercent() != 0F) {
+        setSamplingPercent(other.getSamplingPercent());
+      }
+      if (!other.getRowFilter().isEmpty()) {
+        rowFilter_ = other.rowFilter_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasPostScanActions()) {
+        mergePostScanActions(other.getPostScanActions());
+      }
+      if (other.hasIncludeFields()) {
+        mergeIncludeFields(other.getIncludeFields());
+      }
+      if (other.hasExcludeFields()) {
+        mergeExcludeFields(other.getExcludeFields());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -355,6 +3108,36 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
             case 0:
               done = true;
               break;
+            case 21:
+              {
+                samplingPercent_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 21
+            case 26:
+              {
+                rowFilter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getPostScanActionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getIncludeFieldsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getExcludeFieldsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -370,6 +3153,878 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         onChanged();
       } // finally
       return this;
+    }
+
+    private int bitField0_;
+
+    private float samplingPercent_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The percentage of the records to be selected from the dataset for
+     * DataScan.
+     *
+     * * Value can range between 0.0 and 100.0 with up to 3 significant decimal
+     * digits.
+     * * Sampling is not applied if `sampling_percent` is not specified, 0 or
+     * 100.
+     * </pre>
+     *
+     * <code>float sampling_percent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The samplingPercent.
+     */
+    @java.lang.Override
+    public float getSamplingPercent() {
+      return samplingPercent_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The percentage of the records to be selected from the dataset for
+     * DataScan.
+     *
+     * * Value can range between 0.0 and 100.0 with up to 3 significant decimal
+     * digits.
+     * * Sampling is not applied if `sampling_percent` is not specified, 0 or
+     * 100.
+     * </pre>
+     *
+     * <code>float sampling_percent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The samplingPercent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSamplingPercent(float value) {
+
+      samplingPercent_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The percentage of the records to be selected from the dataset for
+     * DataScan.
+     *
+     * * Value can range between 0.0 and 100.0 with up to 3 significant decimal
+     * digits.
+     * * Sampling is not applied if `sampling_percent` is not specified, 0 or
+     * 100.
+     * </pre>
+     *
+     * <code>float sampling_percent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSamplingPercent() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      samplingPercent_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object rowFilter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A filter applied to all rows in a single DataScan job.
+     * The filter needs to be a valid SQL expression for a WHERE clause in
+     * BigQuery standard SQL syntax.
+     * Example: col1 &gt;= 0 AND col2 &lt; 10
+     * </pre>
+     *
+     * <code>string row_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The rowFilter.
+     */
+    public java.lang.String getRowFilter() {
+      java.lang.Object ref = rowFilter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rowFilter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A filter applied to all rows in a single DataScan job.
+     * The filter needs to be a valid SQL expression for a WHERE clause in
+     * BigQuery standard SQL syntax.
+     * Example: col1 &gt;= 0 AND col2 &lt; 10
+     * </pre>
+     *
+     * <code>string row_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for rowFilter.
+     */
+    public com.google.protobuf.ByteString getRowFilterBytes() {
+      java.lang.Object ref = rowFilter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rowFilter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A filter applied to all rows in a single DataScan job.
+     * The filter needs to be a valid SQL expression for a WHERE clause in
+     * BigQuery standard SQL syntax.
+     * Example: col1 &gt;= 0 AND col2 &lt; 10
+     * </pre>
+     *
+     * <code>string row_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The rowFilter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRowFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      rowFilter_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A filter applied to all rows in a single DataScan job.
+     * The filter needs to be a valid SQL expression for a WHERE clause in
+     * BigQuery standard SQL syntax.
+     * Example: col1 &gt;= 0 AND col2 &lt; 10
+     * </pre>
+     *
+     * <code>string row_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRowFilter() {
+      rowFilter_ = getDefaultInstance().getRowFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A filter applied to all rows in a single DataScan job.
+     * The filter needs to be a valid SQL expression for a WHERE clause in
+     * BigQuery standard SQL syntax.
+     * Example: col1 &gt;= 0 AND col2 &lt; 10
+     * </pre>
+     *
+     * <code>string row_filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for rowFilter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRowFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      rowFilter_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions postScanActions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions,
+            com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.Builder,
+            com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActionsOrBuilder>
+        postScanActionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actions to take upon job completion..
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the postScanActions field is set.
+     */
+    public boolean hasPostScanActions() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actions to take upon job completion..
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The postScanActions.
+     */
+    public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions getPostScanActions() {
+      if (postScanActionsBuilder_ == null) {
+        return postScanActions_ == null
+            ? com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.getDefaultInstance()
+            : postScanActions_;
+      } else {
+        return postScanActionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actions to take upon job completion..
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPostScanActions(
+        com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions value) {
+      if (postScanActionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        postScanActions_ = value;
+      } else {
+        postScanActionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actions to take upon job completion..
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPostScanActions(
+        com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.Builder builderForValue) {
+      if (postScanActionsBuilder_ == null) {
+        postScanActions_ = builderForValue.build();
+      } else {
+        postScanActionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actions to take upon job completion..
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePostScanActions(
+        com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions value) {
+      if (postScanActionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && postScanActions_ != null
+            && postScanActions_
+                != com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions
+                    .getDefaultInstance()) {
+          getPostScanActionsBuilder().mergeFrom(value);
+        } else {
+          postScanActions_ = value;
+        }
+      } else {
+        postScanActionsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actions to take upon job completion..
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPostScanActions() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      postScanActions_ = null;
+      if (postScanActionsBuilder_ != null) {
+        postScanActionsBuilder_.dispose();
+        postScanActionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actions to take upon job completion..
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.Builder
+        getPostScanActionsBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getPostScanActionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actions to take upon job completion..
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActionsOrBuilder
+        getPostScanActionsOrBuilder() {
+      if (postScanActionsBuilder_ != null) {
+        return postScanActionsBuilder_.getMessageOrBuilder();
+      } else {
+        return postScanActions_ == null
+            ? com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.getDefaultInstance()
+            : postScanActions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Actions to take upon job completion..
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.PostScanActions post_scan_actions = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions,
+            com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.Builder,
+            com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActionsOrBuilder>
+        getPostScanActionsFieldBuilder() {
+      if (postScanActionsBuilder_ == null) {
+        postScanActionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions,
+                com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActions.Builder,
+                com.google.cloud.dataplex.v1.DataProfileSpec.PostScanActionsOrBuilder>(
+                getPostScanActions(), getParentForChildren(), isClean());
+        postScanActions_ = null;
+      }
+      return postScanActionsBuilder_;
+    }
+
+    private com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields includeFields_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields,
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder,
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder>
+        includeFieldsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to include in data profile.
+     *
+     * If not specified, all fields at the time of profile scan job execution are
+     * included, except for ones listed in `exclude_fields`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the includeFields field is set.
+     */
+    public boolean hasIncludeFields() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to include in data profile.
+     *
+     * If not specified, all fields at the time of profile scan job execution are
+     * included, except for ones listed in `exclude_fields`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The includeFields.
+     */
+    public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields getIncludeFields() {
+      if (includeFieldsBuilder_ == null) {
+        return includeFields_ == null
+            ? com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance()
+            : includeFields_;
+      } else {
+        return includeFieldsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to include in data profile.
+     *
+     * If not specified, all fields at the time of profile scan job execution are
+     * included, except for ones listed in `exclude_fields`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIncludeFields(
+        com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields value) {
+      if (includeFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        includeFields_ = value;
+      } else {
+        includeFieldsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to include in data profile.
+     *
+     * If not specified, all fields at the time of profile scan job execution are
+     * included, except for ones listed in `exclude_fields`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIncludeFields(
+        com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder builderForValue) {
+      if (includeFieldsBuilder_ == null) {
+        includeFields_ = builderForValue.build();
+      } else {
+        includeFieldsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to include in data profile.
+     *
+     * If not specified, all fields at the time of profile scan job execution are
+     * included, except for ones listed in `exclude_fields`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeIncludeFields(
+        com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields value) {
+      if (includeFieldsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && includeFields_ != null
+            && includeFields_
+                != com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields
+                    .getDefaultInstance()) {
+          getIncludeFieldsBuilder().mergeFrom(value);
+        } else {
+          includeFields_ = value;
+        }
+      } else {
+        includeFieldsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to include in data profile.
+     *
+     * If not specified, all fields at the time of profile scan job execution are
+     * included, except for ones listed in `exclude_fields`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearIncludeFields() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      includeFields_ = null;
+      if (includeFieldsBuilder_ != null) {
+        includeFieldsBuilder_.dispose();
+        includeFieldsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to include in data profile.
+     *
+     * If not specified, all fields at the time of profile scan job execution are
+     * included, except for ones listed in `exclude_fields`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder
+        getIncludeFieldsBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getIncludeFieldsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to include in data profile.
+     *
+     * If not specified, all fields at the time of profile scan job execution are
+     * included, except for ones listed in `exclude_fields`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder
+        getIncludeFieldsOrBuilder() {
+      if (includeFieldsBuilder_ != null) {
+        return includeFieldsBuilder_.getMessageOrBuilder();
+      } else {
+        return includeFields_ == null
+            ? com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance()
+            : includeFields_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to include in data profile.
+     *
+     * If not specified, all fields at the time of profile scan job execution are
+     * included, except for ones listed in `exclude_fields`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields include_fields = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields,
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder,
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder>
+        getIncludeFieldsFieldBuilder() {
+      if (includeFieldsBuilder_ == null) {
+        includeFieldsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields,
+                com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder,
+                com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder>(
+                getIncludeFields(), getParentForChildren(), isClean());
+        includeFields_ = null;
+      }
+      return includeFieldsBuilder_;
+    }
+
+    private com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields excludeFields_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields,
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder,
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder>
+        excludeFieldsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to exclude from data profile.
+     *
+     * If specified, the fields will be excluded from data profile, regardless of
+     * `include_fields` value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the excludeFields field is set.
+     */
+    public boolean hasExcludeFields() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to exclude from data profile.
+     *
+     * If specified, the fields will be excluded from data profile, regardless of
+     * `include_fields` value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The excludeFields.
+     */
+    public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields getExcludeFields() {
+      if (excludeFieldsBuilder_ == null) {
+        return excludeFields_ == null
+            ? com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance()
+            : excludeFields_;
+      } else {
+        return excludeFieldsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to exclude from data profile.
+     *
+     * If specified, the fields will be excluded from data profile, regardless of
+     * `include_fields` value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExcludeFields(
+        com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields value) {
+      if (excludeFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        excludeFields_ = value;
+      } else {
+        excludeFieldsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to exclude from data profile.
+     *
+     * If specified, the fields will be excluded from data profile, regardless of
+     * `include_fields` value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExcludeFields(
+        com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder builderForValue) {
+      if (excludeFieldsBuilder_ == null) {
+        excludeFields_ = builderForValue.build();
+      } else {
+        excludeFieldsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to exclude from data profile.
+     *
+     * If specified, the fields will be excluded from data profile, regardless of
+     * `include_fields` value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeExcludeFields(
+        com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields value) {
+      if (excludeFieldsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && excludeFields_ != null
+            && excludeFields_
+                != com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields
+                    .getDefaultInstance()) {
+          getExcludeFieldsBuilder().mergeFrom(value);
+        } else {
+          excludeFields_ = value;
+        }
+      } else {
+        excludeFieldsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to exclude from data profile.
+     *
+     * If specified, the fields will be excluded from data profile, regardless of
+     * `include_fields` value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExcludeFields() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      excludeFields_ = null;
+      if (excludeFieldsBuilder_ != null) {
+        excludeFieldsBuilder_.dispose();
+        excludeFieldsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to exclude from data profile.
+     *
+     * If specified, the fields will be excluded from data profile, regardless of
+     * `include_fields` value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder
+        getExcludeFieldsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getExcludeFieldsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to exclude from data profile.
+     *
+     * If specified, the fields will be excluded from data profile, regardless of
+     * `include_fields` value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder
+        getExcludeFieldsOrBuilder() {
+      if (excludeFieldsBuilder_ != null) {
+        return excludeFieldsBuilder_.getMessageOrBuilder();
+      } else {
+        return excludeFields_ == null
+            ? com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.getDefaultInstance()
+            : excludeFields_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fields to exclude from data profile.
+     *
+     * If specified, the fields will be excluded from data profile, regardless of
+     * `include_fields` value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.SelectedFields exclude_fields = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields,
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder,
+            com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder>
+        getExcludeFieldsFieldBuilder() {
+      if (excludeFieldsBuilder_ == null) {
+        excludeFieldsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields,
+                com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFields.Builder,
+                com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder>(
+                getExcludeFields(), getParentForChildren(), isClean());
+        excludeFields_ = null;
+      }
+      return excludeFieldsBuilder_;
     }
 
     @java.lang.Override

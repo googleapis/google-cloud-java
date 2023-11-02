@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OrderBy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -124,11 +119,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MetricOrderBy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -797,11 +787,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DimensionOrderBy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1885,11 +1870,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       return new PivotOrderBy();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.data.v1beta.ReportingApiProto
           .internal_static_google_analytics_data_v1beta_OrderBy_PivotOrderBy_descriptor;
@@ -1966,9 +1946,11 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A pair of dimension names and values. Rows with this dimension pivot pair
      * are ordered by the metric's value.
+     *
      * For example if pivots = {{"browser", "Chrome"}} and
      * metric_name = "Sessions",
      * then the rows will be sorted based on Sessions in Chrome.
+     *
      *     ---------|----------|----------------|----------|----------------
      *              |  Chrome  |    Chrome      |  Safari  |     Safari
      *     ---------|----------|----------------|----------|----------------
@@ -2001,11 +1983,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new PivotSelection();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2304,9 +2281,11 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A pair of dimension names and values. Rows with this dimension pivot pair
        * are ordered by the metric's value.
+       *
        * For example if pivots = {{"browser", "Chrome"}} and
        * metric_name = "Sessions",
        * then the rows will be sorted based on Sessions in Chrome.
+       *
        *     ---------|----------|----------------|----------|----------------
        *              |  Chrome  |    Chrome      |  Safari  |     Safari
        *     ---------|----------|----------------|----------|----------------
@@ -4024,6 +4003,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int oneOrderByCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneOrderBy_;
 
   public enum OneOrderByCase

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,6 +92,7 @@ public interface AddressOrBuilder
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
+   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -108,6 +109,7 @@ public interface AddressOrBuilder
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
+   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -124,6 +126,7 @@ public interface AddressOrBuilder
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
+   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -140,6 +143,7 @@ public interface AddressOrBuilder
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
+   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -157,6 +161,7 @@ public interface AddressOrBuilder
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
+   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>

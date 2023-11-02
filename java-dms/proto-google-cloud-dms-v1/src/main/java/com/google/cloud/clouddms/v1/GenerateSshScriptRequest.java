@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     return new GenerateSshScriptRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsProto
         .internal_static_google_cloud_clouddms_v1_GenerateSshScriptRequest_descriptor;
@@ -69,6 +64,8 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
   }
 
   private int vmConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object vmConfig_;
 
   public enum VmConfigCase
@@ -325,7 +322,7 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The port that will be open on the bastion host
+   * The port that will be open on the bastion host.
    * </pre>
    *
    * <code>int32 vm_port = 3;</code>
@@ -1464,7 +1461,7 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The port that will be open on the bastion host
+     * The port that will be open on the bastion host.
      * </pre>
      *
      * <code>int32 vm_port = 3;</code>
@@ -1479,7 +1476,7 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The port that will be open on the bastion host
+     * The port that will be open on the bastion host.
      * </pre>
      *
      * <code>int32 vm_port = 3;</code>
@@ -1498,7 +1495,7 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The port that will be open on the bastion host
+     * The port that will be open on the bastion host.
      * </pre>
      *
      * <code>int32 vm_port = 3;</code>

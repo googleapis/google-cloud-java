@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,11 +53,6 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new VolumeRestore();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -444,7 +439,7 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Full name of the VolumeRestore resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -468,7 +463,7 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Full name of the VolumeRestore resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -653,8 +648,9 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The full name of the VolumeBackup from which the volume will be restored.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+   * Output only. The full name of the VolumeBackup from which the volume will
+   * be restored. Format:
+   * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
    * </pre>
    *
    * <code>string volume_backup = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -677,8 +673,9 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The full name of the VolumeBackup from which the volume will be restored.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+   * Output only. The full name of the VolumeBackup from which the volume will
+   * be restored. Format:
+   * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
    * </pre>
    *
    * <code>string volume_backup = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -762,8 +759,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A storage system-specific opaque handler to the underlying volume created
-   * for the target PVC from the volume backup.
+   * Output only. A storage system-specific opaque handler to the underlying
+   * volume created for the target PVC from the volume backup.
    * </pre>
    *
    * <code>string volume_handle = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -786,8 +783,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A storage system-specific opaque handler to the underlying volume created
-   * for the target PVC from the volume backup.
+   * Output only. A storage system-specific opaque handler to the underlying
+   * volume created for the target PVC from the volume backup.
    * </pre>
    *
    * <code>string volume_handle = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -954,8 +951,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A human readable message explaining why the VolumeRestore is in its
-   * current state.
+   * Output only. A human readable message explaining why the VolumeRestore is
+   * in its current state.
    * </pre>
    *
    * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -978,8 +975,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A human readable message explaining why the VolumeRestore is in its
-   * current state.
+   * Output only. A human readable message explaining why the VolumeRestore is
+   * in its current state.
    * </pre>
    *
    * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1007,8 +1004,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a volume restore from overwriting each
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a volume restore from overwriting each
    * other. It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform volume restore updates in order to avoid
    * race conditions.
@@ -1034,8 +1031,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a volume restore from overwriting each
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a volume restore from overwriting each
    * other. It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform volume restore updates in order to avoid
    * race conditions.
@@ -1699,7 +1696,7 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Full name of the VolumeRestore resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1722,7 +1719,7 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Full name of the VolumeRestore resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1745,7 +1742,7 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Full name of the VolumeRestore resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1767,7 +1764,7 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Full name of the VolumeRestore resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1785,7 +1782,7 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Full name of the VolumeRestore resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;&#47;volumeRestores/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2340,8 +2337,9 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full name of the VolumeBackup from which the volume will be restored.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+     * Output only. The full name of the VolumeBackup from which the volume will
+     * be restored. Format:
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
      * </pre>
      *
      * <code>string volume_backup = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2363,8 +2361,9 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full name of the VolumeBackup from which the volume will be restored.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+     * Output only. The full name of the VolumeBackup from which the volume will
+     * be restored. Format:
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
      * </pre>
      *
      * <code>string volume_backup = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2386,8 +2385,9 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full name of the VolumeBackup from which the volume will be restored.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+     * Output only. The full name of the VolumeBackup from which the volume will
+     * be restored. Format:
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
      * </pre>
      *
      * <code>string volume_backup = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2408,8 +2408,9 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full name of the VolumeBackup from which the volume will be restored.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+     * Output only. The full name of the VolumeBackup from which the volume will
+     * be restored. Format:
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
      * </pre>
      *
      * <code>string volume_backup = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2426,8 +2427,9 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full name of the VolumeBackup from which the volume will be restored.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+     * Output only. The full name of the VolumeBackup from which the volume will
+     * be restored. Format:
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
      * </pre>
      *
      * <code>string volume_backup = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2653,8 +2655,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A storage system-specific opaque handler to the underlying volume created
-     * for the target PVC from the volume backup.
+     * Output only. A storage system-specific opaque handler to the underlying
+     * volume created for the target PVC from the volume backup.
      * </pre>
      *
      * <code>string volume_handle = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2676,8 +2678,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A storage system-specific opaque handler to the underlying volume created
-     * for the target PVC from the volume backup.
+     * Output only. A storage system-specific opaque handler to the underlying
+     * volume created for the target PVC from the volume backup.
      * </pre>
      *
      * <code>string volume_handle = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2699,8 +2701,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A storage system-specific opaque handler to the underlying volume created
-     * for the target PVC from the volume backup.
+     * Output only. A storage system-specific opaque handler to the underlying
+     * volume created for the target PVC from the volume backup.
      * </pre>
      *
      * <code>string volume_handle = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2721,8 +2723,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A storage system-specific opaque handler to the underlying volume created
-     * for the target PVC from the volume backup.
+     * Output only. A storage system-specific opaque handler to the underlying
+     * volume created for the target PVC from the volume backup.
      * </pre>
      *
      * <code>string volume_handle = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2739,8 +2741,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A storage system-specific opaque handler to the underlying volume created
-     * for the target PVC from the volume backup.
+     * Output only. A storage system-specific opaque handler to the underlying
+     * volume created for the target PVC from the volume backup.
      * </pre>
      *
      * <code>string volume_handle = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3178,8 +3180,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human readable message explaining why the VolumeRestore is in its
-     * current state.
+     * Output only. A human readable message explaining why the VolumeRestore is
+     * in its current state.
      * </pre>
      *
      * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3201,8 +3203,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human readable message explaining why the VolumeRestore is in its
-     * current state.
+     * Output only. A human readable message explaining why the VolumeRestore is
+     * in its current state.
      * </pre>
      *
      * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3224,8 +3226,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human readable message explaining why the VolumeRestore is in its
-     * current state.
+     * Output only. A human readable message explaining why the VolumeRestore is
+     * in its current state.
      * </pre>
      *
      * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3246,8 +3248,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human readable message explaining why the VolumeRestore is in its
-     * current state.
+     * Output only. A human readable message explaining why the VolumeRestore is
+     * in its current state.
      * </pre>
      *
      * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3264,8 +3266,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human readable message explaining why the VolumeRestore is in its
-     * current state.
+     * Output only. A human readable message explaining why the VolumeRestore is
+     * in its current state.
      * </pre>
      *
      * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3289,8 +3291,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a volume restore from overwriting each
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a volume restore from overwriting each
      * other. It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform volume restore updates in order to avoid
      * race conditions.
@@ -3315,8 +3317,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a volume restore from overwriting each
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a volume restore from overwriting each
      * other. It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform volume restore updates in order to avoid
      * race conditions.
@@ -3341,8 +3343,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a volume restore from overwriting each
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a volume restore from overwriting each
      * other. It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform volume restore updates in order to avoid
      * race conditions.
@@ -3366,8 +3368,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a volume restore from overwriting each
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a volume restore from overwriting each
      * other. It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform volume restore updates in order to avoid
      * race conditions.
@@ -3387,8 +3389,8 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a volume restore from overwriting each
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a volume restore from overwriting each
      * other. It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform volume restore updates in order to avoid
      * race conditions.

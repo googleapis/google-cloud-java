@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -451,6 +451,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *   GetClusterRequest request =
    *       GetClusterRequest.newBuilder()
    *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setView(ClusterView.forNumber(0))
    *           .build();
    *   Cluster response = alloyDBAdminClient.getCluster(request);
    * }
@@ -479,6 +480,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *   GetClusterRequest request =
    *       GetClusterRequest.newBuilder()
    *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setView(ClusterView.forNumber(0))
    *           .build();
    *   ApiFuture<Cluster> future = alloyDBAdminClient.getClusterCallable().futureCall(request);
    *   // Do something.
@@ -510,7 +512,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the parent resource. For the required format, see the
+   * @param parent Required. The location of the new cluster. For the required format, see the
    *     comment on the Cluster.name field.
    * @param cluster Required. The resource being created
    * @param clusterId Required. ID of the requesting object.
@@ -547,7 +549,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the parent resource. For the required format, see the
+   * @param parent Required. The location of the new cluster. For the required format, see the
    *     comment on the Cluster.name field.
    * @param cluster Required. The resource being created
    * @param clusterId Required. ID of the requesting object.
@@ -1219,8 +1221,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the parent resource (the primary cluster). For the required
-   *     format, see the comment on the Cluster.name field.
+   * @param parent Required. The location of the new cluster. For the required format, see the
+   *     comment on the Cluster.name field.
    * @param cluster Required. Configuration of the requesting object (the secondary cluster).
    * @param clusterId Required. ID of the requesting object (the secondary cluster).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1258,8 +1260,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the parent resource (the primary cluster). For the required
-   *     format, see the comment on the Cluster.name field.
+   * @param parent Required. The location of the new cluster. For the required format, see the
+   *     comment on the Cluster.name field.
    * @param cluster Required. Configuration of the requesting object (the secondary cluster).
    * @param clusterId Required. ID of the requesting object (the secondary cluster).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2571,6 +2573,166 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Injects fault in an instance. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   InjectFaultRequest.FaultType faultType = InjectFaultRequest.FaultType.forNumber(0);
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+   *   Instance response = alloyDBAdminClient.injectFaultAsync(faultType, name).get();
+   * }
+   * }</pre>
+   *
+   * @param faultType Required. The type of fault to be injected in an instance.
+   * @param name Required. The name of the resource. For the required format, see the comment on the
+   *     Instance.name field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> injectFaultAsync(
+      InjectFaultRequest.FaultType faultType, InstanceName name) {
+    InjectFaultRequest request =
+        InjectFaultRequest.newBuilder()
+            .setFaultType(faultType)
+            .setName(name == null ? null : name.toString())
+            .build();
+    return injectFaultAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Injects fault in an instance. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   InjectFaultRequest.FaultType faultType = InjectFaultRequest.FaultType.forNumber(0);
+   *   String name =
+   *       InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString();
+   *   Instance response = alloyDBAdminClient.injectFaultAsync(faultType, name).get();
+   * }
+   * }</pre>
+   *
+   * @param faultType Required. The type of fault to be injected in an instance.
+   * @param name Required. The name of the resource. For the required format, see the comment on the
+   *     Instance.name field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> injectFaultAsync(
+      InjectFaultRequest.FaultType faultType, String name) {
+    InjectFaultRequest request =
+        InjectFaultRequest.newBuilder().setFaultType(faultType).setName(name).build();
+    return injectFaultAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Injects fault in an instance. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   InjectFaultRequest request =
+   *       InjectFaultRequest.newBuilder()
+   *           .setName(
+   *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Instance response = alloyDBAdminClient.injectFaultAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> injectFaultAsync(
+      InjectFaultRequest request) {
+    return injectFaultOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Injects fault in an instance. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   InjectFaultRequest request =
+   *       InjectFaultRequest.newBuilder()
+   *           .setName(
+   *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       alloyDBAdminClient.injectFaultOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<InjectFaultRequest, Instance, OperationMetadata>
+      injectFaultOperationCallable() {
+    return stub.injectFaultOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Injects fault in an instance. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   InjectFaultRequest request =
+   *       InjectFaultRequest.newBuilder()
+   *           .setName(
+   *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future = alloyDBAdminClient.injectFaultCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<InjectFaultRequest, Operation> injectFaultCallable() {
+    return stub.injectFaultCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Restart an Instance in a cluster. Imperative only.
    *
    * <p>Sample code:
@@ -3626,9 +3788,9 @@ public class AlloyDBAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
-   * support the Auth Proxy client and the endpoint's behavior is subject to change without notice,
-   * so do not rely on its behavior remaining constant. Future changes will not break the Auth Proxy
-   * client.
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
    *
    * <p>Sample code:
    *
@@ -3660,9 +3822,9 @@ public class AlloyDBAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
-   * support the Auth Proxy client and the endpoint's behavior is subject to change without notice,
-   * so do not rely on its behavior remaining constant. Future changes will not break the Auth Proxy
-   * client.
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
    *
    * <p>Sample code:
    *
@@ -3692,9 +3854,9 @@ public class AlloyDBAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
-   * support the Auth Proxy client and the endpoint's behavior is subject to change without notice,
-   * so do not rely on its behavior remaining constant. Future changes will not break the Auth Proxy
-   * client.
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
    *
    * <p>Sample code:
    *
@@ -3711,6 +3873,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setPemCsr("pemCsr-991911478")
    *           .setCertDuration(Duration.newBuilder().build())
+   *           .setPublicKey("publicKey1446899510")
+   *           .setUseMetadataExchange(true)
    *           .build();
    *   GenerateClientCertificateResponse response =
    *       alloyDBAdminClient.generateClientCertificate(request);
@@ -3728,9 +3892,9 @@ public class AlloyDBAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
-   * support the Auth Proxy client and the endpoint's behavior is subject to change without notice,
-   * so do not rely on its behavior remaining constant. Future changes will not break the Auth Proxy
-   * client.
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
    *
    * <p>Sample code:
    *
@@ -3747,6 +3911,8 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setPemCsr("pemCsr-991911478")
    *           .setCertDuration(Duration.newBuilder().build())
+   *           .setPublicKey("publicKey1446899510")
+   *           .setUseMetadataExchange(true)
    *           .build();
    *   ApiFuture<GenerateClientCertificateResponse> future =
    *       alloyDBAdminClient.generateClientCertificateCallable().futureCall(request);
@@ -3877,6 +4043,618 @@ public class AlloyDBAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoCallable() {
     return stub.getConnectionInfoCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Users in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   for (User element : alloyDBAdminClient.listUsers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListUsersRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUsersPagedResponse listUsers(ClusterName parent) {
+    ListUsersRequest request =
+        ListUsersRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listUsers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Users in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   for (User element : alloyDBAdminClient.listUsers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListUsersRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUsersPagedResponse listUsers(String parent) {
+    ListUsersRequest request = ListUsersRequest.newBuilder().setParent(parent).build();
+    return listUsers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Users in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ListUsersRequest request =
+   *       ListUsersRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (User element : alloyDBAdminClient.listUsers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUsersPagedResponse listUsers(ListUsersRequest request) {
+    return listUsersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Users in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ListUsersRequest request =
+   *       ListUsersRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<User> future = alloyDBAdminClient.listUsersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (User element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
+    return stub.listUsersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Users in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ListUsersRequest request =
+   *       ListUsersRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListUsersResponse response = alloyDBAdminClient.listUsersCallable().call(request);
+   *     for (User element : response.getUsersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
+    return stub.listUsersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UserName name = UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]");
+   *   User response = alloyDBAdminClient.getUser(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource. For the required format, see the comment on the
+   *     User.name field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User getUser(UserName name) {
+    GetUserRequest request =
+        GetUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getUser(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String name = UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString();
+   *   User response = alloyDBAdminClient.getUser(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource. For the required format, see the comment on the
+   *     User.name field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User getUser(String name) {
+    GetUserRequest request = GetUserRequest.newBuilder().setName(name).build();
+    return getUser(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   GetUserRequest request =
+   *       GetUserRequest.newBuilder()
+   *           .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
+   *           .build();
+   *   User response = alloyDBAdminClient.getUser(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User getUser(GetUserRequest request) {
+    return getUserCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   GetUserRequest request =
+   *       GetUserRequest.newBuilder()
+   *           .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
+   *           .build();
+   *   ApiFuture<User> future = alloyDBAdminClient.getUserCallable().futureCall(request);
+   *   // Do something.
+   *   User response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetUserRequest, User> getUserCallable() {
+    return stub.getUserCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new User in a given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   User user = User.newBuilder().build();
+   *   String userId = "userId-836030906";
+   *   User response = alloyDBAdminClient.createUser(parent, user, userId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent.
+   * @param user Required. The resource being created
+   * @param userId Required. ID of the requesting object.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User createUser(ClusterName parent, User user, String userId) {
+    CreateUserRequest request =
+        CreateUserRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setUser(user)
+            .setUserId(userId)
+            .build();
+    return createUser(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new User in a given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   User user = User.newBuilder().build();
+   *   String userId = "userId-836030906";
+   *   User response = alloyDBAdminClient.createUser(parent, user, userId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent.
+   * @param user Required. The resource being created
+   * @param userId Required. ID of the requesting object.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User createUser(String parent, User user, String userId) {
+    CreateUserRequest request =
+        CreateUserRequest.newBuilder().setParent(parent).setUser(user).setUserId(userId).build();
+    return createUser(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new User in a given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   CreateUserRequest request =
+   *       CreateUserRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setUserId("userId-836030906")
+   *           .setUser(User.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   User response = alloyDBAdminClient.createUser(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User createUser(CreateUserRequest request) {
+    return createUserCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new User in a given project, location, and cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   CreateUserRequest request =
+   *       CreateUserRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setUserId("userId-836030906")
+   *           .setUser(User.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<User> future = alloyDBAdminClient.createUserCallable().futureCall(request);
+   *   // Do something.
+   *   User response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateUserRequest, User> createUserCallable() {
+    return stub.createUserCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   User user = User.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   User response = alloyDBAdminClient.updateUser(user, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param user Required. The resource being updated
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     User resource by the update. The fields specified in the update_mask are relative to the
+   *     resource, not the full request. A field will be overwritten if it is in the mask. If the
+   *     user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User updateUser(User user, FieldMask updateMask) {
+    UpdateUserRequest request =
+        UpdateUserRequest.newBuilder().setUser(user).setUpdateMask(updateMask).build();
+    return updateUser(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UpdateUserRequest request =
+   *       UpdateUserRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setUser(User.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setAllowMissing(true)
+   *           .build();
+   *   User response = alloyDBAdminClient.updateUser(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User updateUser(UpdateUserRequest request) {
+    return updateUserCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UpdateUserRequest request =
+   *       UpdateUserRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setUser(User.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setAllowMissing(true)
+   *           .build();
+   *   ApiFuture<User> future = alloyDBAdminClient.updateUserCallable().futureCall(request);
+   *   // Do something.
+   *   User response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateUserRequest, User> updateUserCallable() {
+    return stub.updateUserCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UserName name = UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]");
+   *   alloyDBAdminClient.deleteUser(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource. For the required format, see the comment on the
+   *     User.name field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUser(UserName name) {
+    DeleteUserRequest request =
+        DeleteUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteUser(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String name = UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString();
+   *   alloyDBAdminClient.deleteUser(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource. For the required format, see the comment on the
+   *     User.name field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUser(String name) {
+    DeleteUserRequest request = DeleteUserRequest.newBuilder().setName(name).build();
+    deleteUser(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   DeleteUserRequest request =
+   *       DeleteUserRequest.newBuilder()
+   *           .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   alloyDBAdminClient.deleteUser(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUser(DeleteUserRequest request) {
+    deleteUserCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   DeleteUserRequest request =
+   *       DeleteUserRequest.newBuilder()
+   *           .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Empty> future = alloyDBAdminClient.deleteUserCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteUserRequest, Empty> deleteUserCallable() {
+    return stub.deleteUserCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4381,6 +5159,71 @@ public class AlloyDBAdminClient implements BackgroundResource {
     protected ListSupportedDatabaseFlagsFixedSizeCollection createCollection(
         List<ListSupportedDatabaseFlagsPage> pages, int collectionSize) {
       return new ListSupportedDatabaseFlagsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListUsersPagedResponse
+      extends AbstractPagedListResponse<
+          ListUsersRequest, ListUsersResponse, User, ListUsersPage, ListUsersFixedSizeCollection> {
+
+    public static ApiFuture<ListUsersPagedResponse> createAsync(
+        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        ApiFuture<ListUsersResponse> futureResponse) {
+      ApiFuture<ListUsersPage> futurePage =
+          ListUsersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListUsersPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListUsersPagedResponse(ListUsersPage page) {
+      super(page, ListUsersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListUsersPage
+      extends AbstractPage<ListUsersRequest, ListUsersResponse, User, ListUsersPage> {
+
+    private ListUsersPage(
+        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        ListUsersResponse response) {
+      super(context, response);
+    }
+
+    private static ListUsersPage createEmptyPage() {
+      return new ListUsersPage(null, null);
+    }
+
+    @Override
+    protected ListUsersPage createPage(
+        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        ListUsersResponse response) {
+      return new ListUsersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListUsersPage> createPageAsync(
+        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        ApiFuture<ListUsersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListUsersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListUsersRequest, ListUsersResponse, User, ListUsersPage, ListUsersFixedSizeCollection> {
+
+    private ListUsersFixedSizeCollection(List<ListUsersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListUsersFixedSizeCollection createEmptyCollection() {
+      return new ListUsersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListUsersFixedSizeCollection createCollection(
+        List<ListUsersPage> pages, int collectionSize) {
+      return new ListUsersFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     return new RepoSource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v2alpha.FunctionsProto
         .internal_static_google_cloud_functions_v2alpha_RepoSource_descriptor;
@@ -70,6 +65,8 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int revisionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object revision_;
 
   public enum RevisionCase
@@ -125,6 +122,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regex matching branches to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -141,6 +139,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regex matching branches to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -170,6 +169,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regex matching branches to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -201,6 +201,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regex matching tags to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -217,6 +218,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regex matching tags to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -246,6 +248,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regex matching tags to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -454,6 +457,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Directory, relative to the source root, in which to run the build.
+   *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * eg. helloworld (no leading slash allowed)
@@ -480,6 +484,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Directory, relative to the source root, in which to run the build.
+   *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * eg. helloworld (no leading slash allowed)
@@ -1055,6 +1060,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1072,6 +1078,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1102,6 +1109,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1132,6 +1140,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1155,6 +1164,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1176,6 +1186,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1201,6 +1212,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1218,6 +1230,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1248,6 +1261,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1278,6 +1292,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1301,6 +1316,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1322,6 +1338,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regex matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -1699,6 +1716,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Directory, relative to the source root, in which to run the build.
+     *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * eg. helloworld (no leading slash allowed)
@@ -1724,6 +1742,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Directory, relative to the source root, in which to run the build.
+     *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * eg. helloworld (no leading slash allowed)
@@ -1749,6 +1768,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Directory, relative to the source root, in which to run the build.
+     *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * eg. helloworld (no leading slash allowed)
@@ -1773,6 +1793,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Directory, relative to the source root, in which to run the build.
+     *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * eg. helloworld (no leading slash allowed)
@@ -1793,6 +1814,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Directory, relative to the source root, in which to run the build.
+     *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * eg. helloworld (no leading slash allowed)

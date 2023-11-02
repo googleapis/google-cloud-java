@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -4386,6 +4386,59 @@ public class SecurityCenterClientHttpJsonTest {
       String resource = "organizations/organization-3393/sources/source-3393";
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void simulateSecurityHealthAnalyticsCustomModuleTest() throws Exception {
+    SimulateSecurityHealthAnalyticsCustomModuleResponse expectedResponse =
+        SimulateSecurityHealthAnalyticsCustomModuleResponse.newBuilder()
+            .setResult(
+                SimulateSecurityHealthAnalyticsCustomModuleResponse.SimulatedResult.newBuilder()
+                    .build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+    CustomConfig customConfig = CustomConfig.newBuilder().build();
+    SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource =
+        SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder().build();
+
+    SimulateSecurityHealthAnalyticsCustomModuleResponse actualResponse =
+        client.simulateSecurityHealthAnalyticsCustomModule(parent, customConfig, resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void simulateSecurityHealthAnalyticsCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+      CustomConfig customConfig = CustomConfig.newBuilder().build();
+      SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource =
+          SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder().build();
+      client.simulateSecurityHealthAnalyticsCustomModule(parent, customConfig, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

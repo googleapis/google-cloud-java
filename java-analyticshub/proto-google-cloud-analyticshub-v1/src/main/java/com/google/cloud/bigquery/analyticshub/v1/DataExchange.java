@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DataExchange();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -135,11 +130,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Human-readable display name of the data exchange. The display name must
-   * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-   * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
-   * Default value is an empty string.
-   * Max length: 63 bytes.
+   * Required. Human-readable display name of the data exchange. The display
+   * name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), ampersands (&amp;) and must not start or end with
+   * spaces. Default value is an empty string. Max length: 63 bytes.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -162,11 +156,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Human-readable display name of the data exchange. The display name must
-   * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-   * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
-   * Default value is an empty string.
-   * Max length: 63 bytes.
+   * Required. Human-readable display name of the data exchange. The display
+   * name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), ampersands (&amp;) and must not start or end with
+   * spaces. Default value is an empty string. Max length: 63 bytes.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -194,9 +187,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Description of the data exchange. The description must not contain Unicode
-   * non-characters as well as C0 and C1 control codes except tabs (HT),
-   * new lines (LF), carriage returns (CR), and page breaks (FF).
+   * Optional. Description of the data exchange. The description must not
+   * contain Unicode non-characters as well as C0 and C1 control codes except
+   * tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
    * Default value is an empty string.
    * Max length: 2000 bytes.
    * </pre>
@@ -221,9 +214,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Description of the data exchange. The description must not contain Unicode
-   * non-characters as well as C0 and C1 control codes except tabs (HT),
-   * new lines (LF), carriage returns (CR), and page breaks (FF).
+   * Optional. Description of the data exchange. The description must not
+   * contain Unicode non-characters as well as C0 and C1 control codes except
+   * tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
    * Default value is an empty string.
    * Max length: 2000 bytes.
    * </pre>
@@ -253,8 +246,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Email or URL of the primary point of contact of the data exchange.
-   * Max Length: 1000 bytes.
+   * Optional. Email or URL of the primary point of contact of the data
+   * exchange. Max Length: 1000 bytes.
    * </pre>
    *
    * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -277,8 +270,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Email or URL of the primary point of contact of the data exchange.
-   * Max Length: 1000 bytes.
+   * Optional. Email or URL of the primary point of contact of the data
+   * exchange. Max Length: 1000 bytes.
    * </pre>
    *
    * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -373,11 +366,11 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB
-   * Expected image dimensions are 512x512 pixels, however the API only
-   * performs validation on size of the encoded data.
-   * Note: For byte fields, the content of the fields are base64-encoded (which
-   * increases the size of the data by 33-36%) when using JSON on the wire.
+   * Optional. Base64 encoded image representing the data exchange. Max
+   * Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API
+   * only performs validation on size of the encoded data. Note: For byte
+   * fields, the content of the fields are base64-encoded (which increases the
+   * size of the data by 33-36%) when using JSON on the wire.
    * </pre>
    *
    * <code>bytes icon = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -387,6 +380,65 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.ByteString getIcon() {
     return icon_;
+  }
+
+  public static final int SHARING_ENVIRONMENT_CONFIG_FIELD_NUMBER = 8;
+  private com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig
+      sharingEnvironmentConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurable data sharing environment option for a data exchange.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sharingEnvironmentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSharingEnvironmentConfig() {
+    return sharingEnvironmentConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurable data sharing environment option for a data exchange.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sharingEnvironmentConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig
+      getSharingEnvironmentConfig() {
+    return sharingEnvironmentConfig_ == null
+        ? com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.getDefaultInstance()
+        : sharingEnvironmentConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurable data sharing environment option for a data exchange.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfigOrBuilder
+      getSharingEnvironmentConfigOrBuilder() {
+    return sharingEnvironmentConfig_ == null
+        ? com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.getDefaultInstance()
+        : sharingEnvironmentConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -424,6 +476,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (!icon_.isEmpty()) {
       output.writeBytes(7, icon_);
     }
+    if (sharingEnvironmentConfig_ != null) {
+      output.writeMessage(8, getSharingEnvironmentConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -454,6 +509,11 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (!icon_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(7, icon_);
     }
+    if (sharingEnvironmentConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, getSharingEnvironmentConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -477,6 +537,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (!getDocumentation().equals(other.getDocumentation())) return false;
     if (getListingCount() != other.getListingCount()) return false;
     if (!getIcon().equals(other.getIcon())) return false;
+    if (hasSharingEnvironmentConfig() != other.hasSharingEnvironmentConfig()) return false;
+    if (hasSharingEnvironmentConfig()) {
+      if (!getSharingEnvironmentConfig().equals(other.getSharingEnvironmentConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -502,6 +566,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getListingCount();
     hash = (37 * hash) + ICON_FIELD_NUMBER;
     hash = (53 * hash) + getIcon().hashCode();
+    if (hasSharingEnvironmentConfig()) {
+      hash = (37 * hash) + SHARING_ENVIRONMENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSharingEnvironmentConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -651,6 +719,11 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       documentation_ = "";
       listingCount_ = 0;
       icon_ = com.google.protobuf.ByteString.EMPTY;
+      sharingEnvironmentConfig_ = null;
+      if (sharingEnvironmentConfigBuilder_ != null) {
+        sharingEnvironmentConfigBuilder_.dispose();
+        sharingEnvironmentConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -707,6 +780,12 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.icon_ = icon_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.sharingEnvironmentConfig_ =
+            sharingEnvironmentConfigBuilder_ == null
+                ? sharingEnvironmentConfig_
+                : sharingEnvironmentConfigBuilder_.build();
       }
     }
 
@@ -787,6 +866,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (other.getIcon() != com.google.protobuf.ByteString.EMPTY) {
         setIcon(other.getIcon());
       }
+      if (other.hasSharingEnvironmentConfig()) {
+        mergeSharingEnvironmentConfig(other.getSharingEnvironmentConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -855,6 +937,13 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getSharingEnvironmentConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -990,11 +1079,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Human-readable display name of the data exchange. The display name must
-     * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-     * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
-     * Default value is an empty string.
-     * Max length: 63 bytes.
+     * Required. Human-readable display name of the data exchange. The display
+     * name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), ampersands (&amp;) and must not start or end with
+     * spaces. Default value is an empty string. Max length: 63 bytes.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1016,11 +1104,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Human-readable display name of the data exchange. The display name must
-     * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-     * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
-     * Default value is an empty string.
-     * Max length: 63 bytes.
+     * Required. Human-readable display name of the data exchange. The display
+     * name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), ampersands (&amp;) and must not start or end with
+     * spaces. Default value is an empty string. Max length: 63 bytes.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1042,11 +1129,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Human-readable display name of the data exchange. The display name must
-     * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-     * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
-     * Default value is an empty string.
-     * Max length: 63 bytes.
+     * Required. Human-readable display name of the data exchange. The display
+     * name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), ampersands (&amp;) and must not start or end with
+     * spaces. Default value is an empty string. Max length: 63 bytes.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1067,11 +1153,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Human-readable display name of the data exchange. The display name must
-     * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-     * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
-     * Default value is an empty string.
-     * Max length: 63 bytes.
+     * Required. Human-readable display name of the data exchange. The display
+     * name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), ampersands (&amp;) and must not start or end with
+     * spaces. Default value is an empty string. Max length: 63 bytes.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1088,11 +1173,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Human-readable display name of the data exchange. The display name must
-     * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-     * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
-     * Default value is an empty string.
-     * Max length: 63 bytes.
+     * Required. Human-readable display name of the data exchange. The display
+     * name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), ampersands (&amp;) and must not start or end with
+     * spaces. Default value is an empty string. Max length: 63 bytes.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1116,9 +1200,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of the data exchange. The description must not contain Unicode
-     * non-characters as well as C0 and C1 control codes except tabs (HT),
-     * new lines (LF), carriage returns (CR), and page breaks (FF).
+     * Optional. Description of the data exchange. The description must not
+     * contain Unicode non-characters as well as C0 and C1 control codes except
+     * tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
      * Default value is an empty string.
      * Max length: 2000 bytes.
      * </pre>
@@ -1142,9 +1226,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of the data exchange. The description must not contain Unicode
-     * non-characters as well as C0 and C1 control codes except tabs (HT),
-     * new lines (LF), carriage returns (CR), and page breaks (FF).
+     * Optional. Description of the data exchange. The description must not
+     * contain Unicode non-characters as well as C0 and C1 control codes except
+     * tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
      * Default value is an empty string.
      * Max length: 2000 bytes.
      * </pre>
@@ -1168,9 +1252,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of the data exchange. The description must not contain Unicode
-     * non-characters as well as C0 and C1 control codes except tabs (HT),
-     * new lines (LF), carriage returns (CR), and page breaks (FF).
+     * Optional. Description of the data exchange. The description must not
+     * contain Unicode non-characters as well as C0 and C1 control codes except
+     * tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
      * Default value is an empty string.
      * Max length: 2000 bytes.
      * </pre>
@@ -1193,9 +1277,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of the data exchange. The description must not contain Unicode
-     * non-characters as well as C0 and C1 control codes except tabs (HT),
-     * new lines (LF), carriage returns (CR), and page breaks (FF).
+     * Optional. Description of the data exchange. The description must not
+     * contain Unicode non-characters as well as C0 and C1 control codes except
+     * tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
      * Default value is an empty string.
      * Max length: 2000 bytes.
      * </pre>
@@ -1214,9 +1298,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of the data exchange. The description must not contain Unicode
-     * non-characters as well as C0 and C1 control codes except tabs (HT),
-     * new lines (LF), carriage returns (CR), and page breaks (FF).
+     * Optional. Description of the data exchange. The description must not
+     * contain Unicode non-characters as well as C0 and C1 control codes except
+     * tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
      * Default value is an empty string.
      * Max length: 2000 bytes.
      * </pre>
@@ -1242,8 +1326,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the primary point of contact of the data exchange.
-     * Max Length: 1000 bytes.
+     * Optional. Email or URL of the primary point of contact of the data
+     * exchange. Max Length: 1000 bytes.
      * </pre>
      *
      * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1265,8 +1349,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the primary point of contact of the data exchange.
-     * Max Length: 1000 bytes.
+     * Optional. Email or URL of the primary point of contact of the data
+     * exchange. Max Length: 1000 bytes.
      * </pre>
      *
      * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1288,8 +1372,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the primary point of contact of the data exchange.
-     * Max Length: 1000 bytes.
+     * Optional. Email or URL of the primary point of contact of the data
+     * exchange. Max Length: 1000 bytes.
      * </pre>
      *
      * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1310,8 +1394,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the primary point of contact of the data exchange.
-     * Max Length: 1000 bytes.
+     * Optional. Email or URL of the primary point of contact of the data
+     * exchange. Max Length: 1000 bytes.
      * </pre>
      *
      * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1328,8 +1412,8 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the primary point of contact of the data exchange.
-     * Max Length: 1000 bytes.
+     * Optional. Email or URL of the primary point of contact of the data
+     * exchange. Max Length: 1000 bytes.
      * </pre>
      *
      * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1512,11 +1596,11 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB
-     * Expected image dimensions are 512x512 pixels, however the API only
-     * performs validation on size of the encoded data.
-     * Note: For byte fields, the content of the fields are base64-encoded (which
-     * increases the size of the data by 33-36%) when using JSON on the wire.
+     * Optional. Base64 encoded image representing the data exchange. Max
+     * Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API
+     * only performs validation on size of the encoded data. Note: For byte
+     * fields, the content of the fields are base64-encoded (which increases the
+     * size of the data by 33-36%) when using JSON on the wire.
      * </pre>
      *
      * <code>bytes icon = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1531,11 +1615,11 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB
-     * Expected image dimensions are 512x512 pixels, however the API only
-     * performs validation on size of the encoded data.
-     * Note: For byte fields, the content of the fields are base64-encoded (which
-     * increases the size of the data by 33-36%) when using JSON on the wire.
+     * Optional. Base64 encoded image representing the data exchange. Max
+     * Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API
+     * only performs validation on size of the encoded data. Note: For byte
+     * fields, the content of the fields are base64-encoded (which increases the
+     * size of the data by 33-36%) when using JSON on the wire.
      * </pre>
      *
      * <code>bytes icon = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1556,11 +1640,11 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB
-     * Expected image dimensions are 512x512 pixels, however the API only
-     * performs validation on size of the encoded data.
-     * Note: For byte fields, the content of the fields are base64-encoded (which
-     * increases the size of the data by 33-36%) when using JSON on the wire.
+     * Optional. Base64 encoded image representing the data exchange. Max
+     * Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API
+     * only performs validation on size of the encoded data. Note: For byte
+     * fields, the content of the fields are base64-encoded (which increases the
+     * size of the data by 33-36%) when using JSON on the wire.
      * </pre>
      *
      * <code>bytes icon = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1572,6 +1656,219 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       icon_ = getDefaultInstance().getIcon();
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig
+        sharingEnvironmentConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig,
+            com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfigOrBuilder>
+        sharingEnvironmentConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurable data sharing environment option for a data exchange.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sharingEnvironmentConfig field is set.
+     */
+    public boolean hasSharingEnvironmentConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurable data sharing environment option for a data exchange.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sharingEnvironmentConfig.
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig
+        getSharingEnvironmentConfig() {
+      if (sharingEnvironmentConfigBuilder_ == null) {
+        return sharingEnvironmentConfig_ == null
+            ? com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig
+                .getDefaultInstance()
+            : sharingEnvironmentConfig_;
+      } else {
+        return sharingEnvironmentConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurable data sharing environment option for a data exchange.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSharingEnvironmentConfig(
+        com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig value) {
+      if (sharingEnvironmentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sharingEnvironmentConfig_ = value;
+      } else {
+        sharingEnvironmentConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurable data sharing environment option for a data exchange.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSharingEnvironmentConfig(
+        com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.Builder
+            builderForValue) {
+      if (sharingEnvironmentConfigBuilder_ == null) {
+        sharingEnvironmentConfig_ = builderForValue.build();
+      } else {
+        sharingEnvironmentConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurable data sharing environment option for a data exchange.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSharingEnvironmentConfig(
+        com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig value) {
+      if (sharingEnvironmentConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && sharingEnvironmentConfig_ != null
+            && sharingEnvironmentConfig_
+                != com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig
+                    .getDefaultInstance()) {
+          getSharingEnvironmentConfigBuilder().mergeFrom(value);
+        } else {
+          sharingEnvironmentConfig_ = value;
+        }
+      } else {
+        sharingEnvironmentConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurable data sharing environment option for a data exchange.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSharingEnvironmentConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      sharingEnvironmentConfig_ = null;
+      if (sharingEnvironmentConfigBuilder_ != null) {
+        sharingEnvironmentConfigBuilder_.dispose();
+        sharingEnvironmentConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurable data sharing environment option for a data exchange.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.Builder
+        getSharingEnvironmentConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getSharingEnvironmentConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurable data sharing environment option for a data exchange.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfigOrBuilder
+        getSharingEnvironmentConfigOrBuilder() {
+      if (sharingEnvironmentConfigBuilder_ != null) {
+        return sharingEnvironmentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return sharingEnvironmentConfig_ == null
+            ? com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig
+                .getDefaultInstance()
+            : sharingEnvironmentConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurable data sharing environment option for a data exchange.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig sharing_environment_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig,
+            com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfigOrBuilder>
+        getSharingEnvironmentConfigFieldBuilder() {
+      if (sharingEnvironmentConfigBuilder_ == null) {
+        sharingEnvironmentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig,
+                com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.Builder,
+                com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfigOrBuilder>(
+                getSharingEnvironmentConfig(), getParentForChildren(), isClean());
+        sharingEnvironmentConfig_ = null;
+      }
+      return sharingEnvironmentConfigBuilder_;
     }
 
     @java.lang.Override

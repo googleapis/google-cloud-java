@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -86,7 +87,7 @@ public class EnvironmentsClientHttpJsonTest {
   public void createEnvironmentTest() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName("name3373707")
+            .setName(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
             .setConfig(EnvironmentConfig.newBuilder().build())
             .setUuid("uuid3601339")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -142,7 +143,7 @@ public class EnvironmentsClientHttpJsonTest {
   public void getEnvironmentTest() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName("name3373707")
+            .setName(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
             .setConfig(EnvironmentConfig.newBuilder().build())
             .setUuid("uuid3601339")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -241,7 +242,7 @@ public class EnvironmentsClientHttpJsonTest {
   public void updateEnvironmentTest() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName("name3373707")
+            .setName(EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
             .setConfig(EnvironmentConfig.newBuilder().build())
             .setUuid("uuid3601339")
             .setCreateTime(Timestamp.newBuilder().build())
@@ -337,6 +338,190 @@ public class EnvironmentsClientHttpJsonTest {
       client.deleteEnvironmentAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void executeAirflowCommandTest() throws Exception {
+    ExecuteAirflowCommandResponse expectedResponse =
+        ExecuteAirflowCommandResponse.newBuilder()
+            .setExecutionId("executionId-454906285")
+            .setPod("pod111173")
+            .setPodNamespace("podNamespace463962262")
+            .setError("error96784904")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ExecuteAirflowCommandRequest request =
+        ExecuteAirflowCommandRequest.newBuilder()
+            .setEnvironment(
+                "projects/project-4088/locations/location-4088/environments/environment-4088")
+            .setCommand("command950394699")
+            .setSubcommand("subcommand2099091723")
+            .addAllParameters(new ArrayList<String>())
+            .build();
+
+    ExecuteAirflowCommandResponse actualResponse = client.executeAirflowCommand(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void executeAirflowCommandExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExecuteAirflowCommandRequest request =
+          ExecuteAirflowCommandRequest.newBuilder()
+              .setEnvironment(
+                  "projects/project-4088/locations/location-4088/environments/environment-4088")
+              .setCommand("command950394699")
+              .setSubcommand("subcommand2099091723")
+              .addAllParameters(new ArrayList<String>())
+              .build();
+      client.executeAirflowCommand(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void stopAirflowCommandTest() throws Exception {
+    StopAirflowCommandResponse expectedResponse =
+        StopAirflowCommandResponse.newBuilder()
+            .setIsDone(true)
+            .addAllOutput(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    StopAirflowCommandRequest request =
+        StopAirflowCommandRequest.newBuilder()
+            .setEnvironment(
+                "projects/project-4088/locations/location-4088/environments/environment-4088")
+            .setExecutionId("executionId-454906285")
+            .setPod("pod111173")
+            .setPodNamespace("podNamespace463962262")
+            .setForce(true)
+            .build();
+
+    StopAirflowCommandResponse actualResponse = client.stopAirflowCommand(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void stopAirflowCommandExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      StopAirflowCommandRequest request =
+          StopAirflowCommandRequest.newBuilder()
+              .setEnvironment(
+                  "projects/project-4088/locations/location-4088/environments/environment-4088")
+              .setExecutionId("executionId-454906285")
+              .setPod("pod111173")
+              .setPodNamespace("podNamespace463962262")
+              .setForce(true)
+              .build();
+      client.stopAirflowCommand(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void pollAirflowCommandTest() throws Exception {
+    PollAirflowCommandResponse expectedResponse =
+        PollAirflowCommandResponse.newBuilder()
+            .addAllOutput(new ArrayList<PollAirflowCommandResponse.Line>())
+            .setOutputEnd(true)
+            .setExitInfo(PollAirflowCommandResponse.ExitInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PollAirflowCommandRequest request =
+        PollAirflowCommandRequest.newBuilder()
+            .setEnvironment(
+                "projects/project-4088/locations/location-4088/environments/environment-4088")
+            .setExecutionId("executionId-454906285")
+            .setPod("pod111173")
+            .setPodNamespace("podNamespace463962262")
+            .setNextLineNumber(1176642216)
+            .build();
+
+    PollAirflowCommandResponse actualResponse = client.pollAirflowCommand(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void pollAirflowCommandExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PollAirflowCommandRequest request =
+          PollAirflowCommandRequest.newBuilder()
+              .setEnvironment(
+                  "projects/project-4088/locations/location-4088/environments/environment-4088")
+              .setExecutionId("executionId-454906285")
+              .setPod("pod111173")
+              .setPodNamespace("podNamespace463962262")
+              .setNextLineNumber(1176642216)
+              .build();
+      client.pollAirflowCommand(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -458,6 +643,114 @@ public class EnvironmentsClientHttpJsonTest {
       client.loadSnapshotAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void databaseFailoverTest() throws Exception {
+    DatabaseFailoverResponse expectedResponse = DatabaseFailoverResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("databaseFailoverTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DatabaseFailoverRequest request =
+        DatabaseFailoverRequest.newBuilder()
+            .setEnvironment(
+                "projects/project-4088/locations/location-4088/environments/environment-4088")
+            .build();
+
+    DatabaseFailoverResponse actualResponse = client.databaseFailoverAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void databaseFailoverExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatabaseFailoverRequest request =
+          DatabaseFailoverRequest.newBuilder()
+              .setEnvironment(
+                  "projects/project-4088/locations/location-4088/environments/environment-4088")
+              .build();
+      client.databaseFailoverAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void fetchDatabasePropertiesTest() throws Exception {
+    FetchDatabasePropertiesResponse expectedResponse =
+        FetchDatabasePropertiesResponse.newBuilder()
+            .setPrimaryGceZone("primaryGceZone-1629643277")
+            .setSecondaryGceZone("secondaryGceZone227989057")
+            .setIsFailoverReplicaAvailable(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FetchDatabasePropertiesRequest request =
+        FetchDatabasePropertiesRequest.newBuilder()
+            .setEnvironment(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+            .build();
+
+    FetchDatabasePropertiesResponse actualResponse = client.fetchDatabaseProperties(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchDatabasePropertiesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FetchDatabasePropertiesRequest request =
+          FetchDatabasePropertiesRequest.newBuilder()
+              .setEnvironment(
+                  EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+              .build();
+      client.fetchDatabaseProperties(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

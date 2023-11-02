@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   private RecognitionConfig() {
     encoding_ = 0;
     languageCode_ = "";
-    alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     speechContexts_ = java.util.Collections.emptyList();
     model_ = "";
   }
@@ -50,11 +50,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RecognitionConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,15 +72,18 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The encoding of the audio data sent in the request.
+   *
    * All encodings support only 1 channel (mono) audio, unless the
    * `audio_channel_count` and `enable_separate_recognition_per_channel` fields
    * are set.
+   *
    * For best results, the audio source should be captured and transmitted using
    * a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech
    * recognition can be reduced if lossy codecs are used to capture or transmit
    * audio, particularly if background noise is present. Lossy codecs include
    * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, `MP3`,
    * and `WEBM_OPUS`.
+   *
    * The `FLAC` and `WAV` audio file formats include a header that describes the
    * included audio content. You can request recognition for `WAV` files that
    * contain either `LINEAR16` or `MULAW` encoded audio.
@@ -633,7 +631,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   public static final int ALTERNATIVE_LANGUAGE_CODES_FIELD_NUMBER = 18;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList alternativeLanguageCodes_;
+  private com.google.protobuf.LazyStringArrayList alternativeLanguageCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1520,6 +1519,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * If `use_enhanced` is set to true and the `model` field is not set, then
    * an appropriate enhanced model is chosen if an enhanced model exists for
    * the audio.
+   *
    * If `use_enhanced` is true and an enhanced version of the specified model
    * does not exist, then the speech is recognized using the standard version
    * of the specified model.
@@ -1982,8 +1982,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       audioChannelCount_ = 0;
       enableSeparateRecognitionPerChannel_ = false;
       languageCode_ = "";
-      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       maxAlternatives_ = 0;
       profanityFilter_ = false;
       adaptation_ = null;
@@ -2067,11 +2066,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
     private void buildPartialRepeatedFields(
         com.google.cloud.speech.v1p1beta1.RecognitionConfig result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        alternativeLanguageCodes_ = alternativeLanguageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.alternativeLanguageCodes_ = alternativeLanguageCodes_;
       if (speechContextsBuilder_ == null) {
         if (((bitField0_ & 0x00000400) != 0)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
@@ -2099,6 +2093,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        alternativeLanguageCodes_.makeImmutable();
+        result.alternativeLanguageCodes_ = alternativeLanguageCodes_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.maxAlternatives_ = maxAlternatives_;
@@ -2225,7 +2223,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (!other.alternativeLanguageCodes_.isEmpty()) {
         if (alternativeLanguageCodes_.isEmpty()) {
           alternativeLanguageCodes_ = other.alternativeLanguageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureAlternativeLanguageCodesIsMutable();
           alternativeLanguageCodes_.addAll(other.alternativeLanguageCodes_);
@@ -2951,15 +2949,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList alternativeLanguageCodes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList alternativeLanguageCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAlternativeLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!alternativeLanguageCodes_.isModifiable()) {
         alternativeLanguageCodes_ =
             new com.google.protobuf.LazyStringArrayList(alternativeLanguageCodes_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2984,7 +2982,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return A list containing the alternativeLanguageCodes.
      */
     public com.google.protobuf.ProtocolStringList getAlternativeLanguageCodesList() {
-      return alternativeLanguageCodes_.getUnmodifiableView();
+      alternativeLanguageCodes_.makeImmutable();
+      return alternativeLanguageCodes_;
     }
     /**
      *
@@ -3093,6 +3092,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       ensureAlternativeLanguageCodesIsMutable();
       alternativeLanguageCodes_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3125,6 +3125,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       ensureAlternativeLanguageCodesIsMutable();
       alternativeLanguageCodes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3154,6 +3155,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder addAllAlternativeLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureAlternativeLanguageCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, alternativeLanguageCodes_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3180,8 +3182,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAlternativeLanguageCodes() {
-      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -3215,6 +3218,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureAlternativeLanguageCodesIsMutable();
       alternativeLanguageCodes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5809,6 +5813,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * If `use_enhanced` is set to true and the `model` field is not set, then
      * an appropriate enhanced model is chosen if an enhanced model exists for
      * the audio.
+     *
      * If `use_enhanced` is true and an enhanced version of the specified model
      * does not exist, then the speech is recognized using the standard version
      * of the specified model.
@@ -5830,6 +5835,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * If `use_enhanced` is set to true and the `model` field is not set, then
      * an appropriate enhanced model is chosen if an enhanced model exists for
      * the audio.
+     *
      * If `use_enhanced` is true and an enhanced version of the specified model
      * does not exist, then the speech is recognized using the standard version
      * of the specified model.
@@ -5855,6 +5861,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * If `use_enhanced` is set to true and the `model` field is not set, then
      * an appropriate enhanced model is chosen if an enhanced model exists for
      * the audio.
+     *
      * If `use_enhanced` is true and an enhanced version of the specified model
      * does not exist, then the speech is recognized using the standard version
      * of the specified model.

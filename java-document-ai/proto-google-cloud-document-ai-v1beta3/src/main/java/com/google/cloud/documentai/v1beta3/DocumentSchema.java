@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DocumentSchema();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -155,15 +150,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the type. It must be unique within the schema file and
-     * cannot be a 'Common Type'.  Besides that we use the following naming
-     * conventions:
-     * - *use `snake_casing`*
-     * - name matching is case-sensitive
+     * cannot be a "Common Type".  The following naming conventions are used:
+     *
+     * - Use `snake_casing`.
+     * - Name matching is case-sensitive.
      * - Maximum 64 characters.
      * - Must start with a letter.
      * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
      *   compatibility internal infrastructure and tooling can handle any ascii
-     *   character)
+     *   character.)
      * - The `/` is sometimes used to denote a property of a type.  For example
      *   `line_item/amount`.  This convention is deprecated, but will still be
      *   honored for backward compatibility.
@@ -179,15 +174,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the type. It must be unique within the schema file and
-     * cannot be a 'Common Type'.  Besides that we use the following naming
-     * conventions:
-     * - *use `snake_casing`*
-     * - name matching is case-sensitive
+     * cannot be a "Common Type".  The following naming conventions are used:
+     *
+     * - Use `snake_casing`.
+     * - Name matching is case-sensitive.
      * - Maximum 64 characters.
      * - Must start with a letter.
      * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
      *   compatibility internal infrastructure and tooling can handle any ascii
-     *   character)
+     *   character.)
      * - The `/` is sometimes used to denote a property of a type.  For example
      *   `line_item/amount`.  This convention is deprecated, but will still be
      *   honored for backward compatibility.
@@ -258,7 +253,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>
@@ -271,7 +266,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>
@@ -283,7 +278,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>
@@ -295,7 +290,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>
@@ -310,7 +305,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>
@@ -320,7 +315,43 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.PropertyOrBuilder
         getPropertiesOrBuilder(int index);
 
-    public com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.ValueSourceCase
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the entity type.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+     *
+     * @return Whether the entityTypeMetadata field is set.
+     */
+    boolean hasEntityTypeMetadata();
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the entity type.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+     *
+     * @return The entityTypeMetadata.
+     */
+    com.google.cloud.documentai.v1beta3.EntityTypeMetadata getEntityTypeMetadata();
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the entity type.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+     */
+    com.google.cloud.documentai.v1beta3.EntityTypeMetadataOrBuilder
+        getEntityTypeMetadataOrBuilder();
+
+    com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.ValueSourceCase
         getValueSourceCase();
   }
   /**
@@ -347,7 +378,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     private EntityType() {
       displayName_ = "";
       name_ = "";
-      baseTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      baseTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       properties_ = java.util.Collections.emptyList();
     }
 
@@ -355,11 +386,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new EntityType();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -453,18 +479,13 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
 
       private EnumValues() {
-        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        values_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new EnumValues();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -486,7 +507,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public static final int VALUES_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList values_;
+      private com.google.protobuf.LazyStringArrayList values_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -765,8 +787,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          values_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -798,7 +819,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.EnumValues result =
               new com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.EnumValues(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -806,18 +826,13 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.EnumValues result) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            values_ = values_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.values_ = values_;
-        }
-
         private void buildPartial0(
             com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.EnumValues result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            values_.makeImmutable();
+            result.values_ = values_;
+          }
         }
 
         @java.lang.Override
@@ -875,7 +890,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           if (!other.values_.isEmpty()) {
             if (values_.isEmpty()) {
               values_ = other.values_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ |= 0x00000001;
             } else {
               ensureValuesIsMutable();
               values_.addAll(other.values_);
@@ -934,14 +949,14 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList values_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList values_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureValuesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!values_.isModifiable()) {
             values_ = new com.google.protobuf.LazyStringArrayList(values_);
-            bitField0_ |= 0x00000001;
           }
+          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -955,7 +970,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the values.
          */
         public com.google.protobuf.ProtocolStringList getValuesList() {
-          return values_.getUnmodifiableView();
+          values_.makeImmutable();
+          return values_;
         }
         /**
          *
@@ -1020,6 +1036,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           }
           ensureValuesIsMutable();
           values_.set(index, value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1041,6 +1058,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           }
           ensureValuesIsMutable();
           values_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1059,6 +1077,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
           ensureValuesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1074,8 +1093,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearValues() {
-          values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          values_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          ;
           onChanged();
           return this;
         }
@@ -1098,6 +1118,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureValuesIsMutable();
           values_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1260,6 +1281,41 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.Property.OccurrenceType
           getOccurrenceType();
+
+      /**
+       *
+       *
+       * <pre>
+       * Any additional metadata about the property can be added here.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+       *
+       * @return Whether the propertyMetadata field is set.
+       */
+      boolean hasPropertyMetadata();
+      /**
+       *
+       *
+       * <pre>
+       * Any additional metadata about the property can be added here.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+       *
+       * @return The propertyMetadata.
+       */
+      com.google.cloud.documentai.v1beta3.PropertyMetadata getPropertyMetadata();
+      /**
+       *
+       *
+       * <pre>
+       * Any additional metadata about the property can be added here.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+       */
+      com.google.cloud.documentai.v1beta3.PropertyMetadataOrBuilder getPropertyMetadataOrBuilder();
     }
     /**
      *
@@ -1292,11 +1348,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return new Property();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta3.DocumentAiDocumentSchema
             .internal_static_google_cloud_documentai_v1beta3_DocumentSchema_EntityType_Property_descriptor;
@@ -1317,9 +1368,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Types of occurrences of the entity type in the document.  Note: this
-       * represents the number of instances of an entity types, not number of
-       * mentions of a given entity instance.
+       * Types of occurrences of the entity type in the document.  This
+       * represents the number of instances of instances of an entity, not
+       * number of mentions of an entity.  For example, a bank statement may
+       * only have one `account_number`, but this account number may be
+       * mentioned in several places on the document.  In this case the
+       * 'account_number' would be considered a `REQUIRED_ONCE` entity type. If,
+       * on the other hand, we expect a bank statement to contain the status of
+       * multiple different accounts for the customers, the occurrence type will
+       * be set to `REQUIRED_MULTIPLE`.
        * </pre>
        *
        * Protobuf enum {@code
@@ -1340,7 +1397,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * There will be zero or one instance of this entity type.
+         * There will be zero or one instance of this entity type.  The same
+         * entity instance may be mentioned multiple times.
          * </pre>
          *
          * <code>OPTIONAL_ONCE = 1;</code>
@@ -1360,7 +1418,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entity type will only appear exactly once.
+         * The entity type will only appear exactly once.  The same
+         * entity instance may be mentioned multiple times.
          * </pre>
          *
          * <code>REQUIRED_ONCE = 3;</code>
@@ -1393,7 +1452,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * There will be zero or one instance of this entity type.
+         * There will be zero or one instance of this entity type.  The same
+         * entity instance may be mentioned multiple times.
          * </pre>
          *
          * <code>OPTIONAL_ONCE = 1;</code>
@@ -1413,7 +1473,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entity type will only appear exactly once.
+         * The entity type will only appear exactly once.  The same
+         * entity instance may be mentioned multiple times.
          * </pre>
          *
          * <code>REQUIRED_ONCE = 3;</code>
@@ -1677,6 +1738,57 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             : result;
       }
 
+      public static final int PROPERTY_METADATA_FIELD_NUMBER = 5;
+      private com.google.cloud.documentai.v1beta3.PropertyMetadata propertyMetadata_;
+      /**
+       *
+       *
+       * <pre>
+       * Any additional metadata about the property can be added here.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+       *
+       * @return Whether the propertyMetadata field is set.
+       */
+      @java.lang.Override
+      public boolean hasPropertyMetadata() {
+        return propertyMetadata_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Any additional metadata about the property can be added here.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+       *
+       * @return The propertyMetadata.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.PropertyMetadata getPropertyMetadata() {
+        return propertyMetadata_ == null
+            ? com.google.cloud.documentai.v1beta3.PropertyMetadata.getDefaultInstance()
+            : propertyMetadata_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Any additional metadata about the property can be added here.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.PropertyMetadataOrBuilder
+          getPropertyMetadataOrBuilder() {
+        return propertyMetadata_ == null
+            ? com.google.cloud.documentai.v1beta3.PropertyMetadata.getDefaultInstance()
+            : propertyMetadata_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -1703,6 +1815,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                 .getNumber()) {
           output.writeEnum(3, occurrenceType_);
         }
+        if (propertyMetadata_ != null) {
+          output.writeMessage(5, getPropertyMetadata());
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1724,6 +1839,10 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                 .getNumber()) {
           size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, occurrenceType_);
         }
+        if (propertyMetadata_ != null) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPropertyMetadata());
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -1744,6 +1863,10 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         if (!getName().equals(other.getName())) return false;
         if (!getValueType().equals(other.getValueType())) return false;
         if (occurrenceType_ != other.occurrenceType_) return false;
+        if (hasPropertyMetadata() != other.hasPropertyMetadata()) return false;
+        if (hasPropertyMetadata()) {
+          if (!getPropertyMetadata().equals(other.getPropertyMetadata())) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -1761,6 +1884,10 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getValueType().hashCode();
         hash = (37 * hash) + OCCURRENCE_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + occurrenceType_;
+        if (hasPropertyMetadata()) {
+          hash = (37 * hash) + PROPERTY_METADATA_FIELD_NUMBER;
+          hash = (53 * hash) + getPropertyMetadata().hashCode();
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1916,6 +2043,11 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           name_ = "";
           valueType_ = "";
           occurrenceType_ = 0;
+          propertyMetadata_ = null;
+          if (propertyMetadataBuilder_ != null) {
+            propertyMetadataBuilder_.dispose();
+            propertyMetadataBuilder_ = null;
+          }
           return this;
         }
 
@@ -1965,6 +2097,12 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
             result.occurrenceType_ = occurrenceType_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.propertyMetadata_ =
+                propertyMetadataBuilder_ == null
+                    ? propertyMetadata_
+                    : propertyMetadataBuilder_.build();
           }
         }
 
@@ -2033,6 +2171,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           if (other.occurrenceType_ != 0) {
             setOccurrenceTypeValue(other.getOccurrenceTypeValue());
           }
+          if (other.hasPropertyMetadata()) {
+            mergePropertyMetadata(other.getPropertyMetadata());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -2077,6 +2218,13 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000004;
                     break;
                   } // case 24
+                case 42:
+                  {
+                    input.readMessage(
+                        getPropertyMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 42
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2431,6 +2579,195 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private com.google.cloud.documentai.v1beta3.PropertyMetadata propertyMetadata_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.PropertyMetadata,
+                com.google.cloud.documentai.v1beta3.PropertyMetadata.Builder,
+                com.google.cloud.documentai.v1beta3.PropertyMetadataOrBuilder>
+            propertyMetadataBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Any additional metadata about the property can be added here.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+         *
+         * @return Whether the propertyMetadata field is set.
+         */
+        public boolean hasPropertyMetadata() {
+          return ((bitField0_ & 0x00000008) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Any additional metadata about the property can be added here.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+         *
+         * @return The propertyMetadata.
+         */
+        public com.google.cloud.documentai.v1beta3.PropertyMetadata getPropertyMetadata() {
+          if (propertyMetadataBuilder_ == null) {
+            return propertyMetadata_ == null
+                ? com.google.cloud.documentai.v1beta3.PropertyMetadata.getDefaultInstance()
+                : propertyMetadata_;
+          } else {
+            return propertyMetadataBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Any additional metadata about the property can be added here.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+         */
+        public Builder setPropertyMetadata(
+            com.google.cloud.documentai.v1beta3.PropertyMetadata value) {
+          if (propertyMetadataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            propertyMetadata_ = value;
+          } else {
+            propertyMetadataBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Any additional metadata about the property can be added here.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+         */
+        public Builder setPropertyMetadata(
+            com.google.cloud.documentai.v1beta3.PropertyMetadata.Builder builderForValue) {
+          if (propertyMetadataBuilder_ == null) {
+            propertyMetadata_ = builderForValue.build();
+          } else {
+            propertyMetadataBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Any additional metadata about the property can be added here.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+         */
+        public Builder mergePropertyMetadata(
+            com.google.cloud.documentai.v1beta3.PropertyMetadata value) {
+          if (propertyMetadataBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) != 0)
+                && propertyMetadata_ != null
+                && propertyMetadata_
+                    != com.google.cloud.documentai.v1beta3.PropertyMetadata.getDefaultInstance()) {
+              getPropertyMetadataBuilder().mergeFrom(value);
+            } else {
+              propertyMetadata_ = value;
+            }
+          } else {
+            propertyMetadataBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Any additional metadata about the property can be added here.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+         */
+        public Builder clearPropertyMetadata() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          propertyMetadata_ = null;
+          if (propertyMetadataBuilder_ != null) {
+            propertyMetadataBuilder_.dispose();
+            propertyMetadataBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Any additional metadata about the property can be added here.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+         */
+        public com.google.cloud.documentai.v1beta3.PropertyMetadata.Builder
+            getPropertyMetadataBuilder() {
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return getPropertyMetadataFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Any additional metadata about the property can be added here.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+         */
+        public com.google.cloud.documentai.v1beta3.PropertyMetadataOrBuilder
+            getPropertyMetadataOrBuilder() {
+          if (propertyMetadataBuilder_ != null) {
+            return propertyMetadataBuilder_.getMessageOrBuilder();
+          } else {
+            return propertyMetadata_ == null
+                ? com.google.cloud.documentai.v1beta3.PropertyMetadata.getDefaultInstance()
+                : propertyMetadata_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Any additional metadata about the property can be added here.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.PropertyMetadata property_metadata = 5;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.PropertyMetadata,
+                com.google.cloud.documentai.v1beta3.PropertyMetadata.Builder,
+                com.google.cloud.documentai.v1beta3.PropertyMetadataOrBuilder>
+            getPropertyMetadataFieldBuilder() {
+          if (propertyMetadataBuilder_ == null) {
+            propertyMetadataBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.documentai.v1beta3.PropertyMetadata,
+                    com.google.cloud.documentai.v1beta3.PropertyMetadata.Builder,
+                    com.google.cloud.documentai.v1beta3.PropertyMetadataOrBuilder>(
+                    getPropertyMetadata(), getParentForChildren(), isClean());
+            propertyMetadata_ = null;
+          }
+          return propertyMetadataBuilder_;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2500,6 +2837,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int valueSourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object valueSource_;
 
     public enum ValueSourceCase
@@ -2675,15 +3014,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the type. It must be unique within the schema file and
-     * cannot be a 'Common Type'.  Besides that we use the following naming
-     * conventions:
-     * - *use `snake_casing`*
-     * - name matching is case-sensitive
+     * cannot be a "Common Type".  The following naming conventions are used:
+     *
+     * - Use `snake_casing`.
+     * - Name matching is case-sensitive.
      * - Maximum 64 characters.
      * - Must start with a letter.
      * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
      *   compatibility internal infrastructure and tooling can handle any ascii
-     *   character)
+     *   character.)
      * - The `/` is sometimes used to denote a property of a type.  For example
      *   `line_item/amount`.  This convention is deprecated, but will still be
      *   honored for backward compatibility.
@@ -2710,15 +3049,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the type. It must be unique within the schema file and
-     * cannot be a 'Common Type'.  Besides that we use the following naming
-     * conventions:
-     * - *use `snake_casing`*
-     * - name matching is case-sensitive
+     * cannot be a "Common Type".  The following naming conventions are used:
+     *
+     * - Use `snake_casing`.
+     * - Name matching is case-sensitive.
      * - Maximum 64 characters.
      * - Must start with a letter.
      * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
      *   compatibility internal infrastructure and tooling can handle any ascii
-     *   character)
+     *   character.)
      * - The `/` is sometimes used to denote a property of a type.  For example
      *   `line_item/amount`.  This convention is deprecated, but will still be
      *   honored for backward compatibility.
@@ -2744,7 +3083,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     public static final int BASE_TYPES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList baseTypes_;
+    private com.google.protobuf.LazyStringArrayList baseTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -2817,7 +3157,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>
@@ -2833,7 +3173,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>
@@ -2851,7 +3191,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>
@@ -2866,7 +3206,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>
@@ -2882,7 +3222,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>
@@ -2893,6 +3233,57 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType.PropertyOrBuilder
         getPropertiesOrBuilder(int index) {
       return properties_.get(index);
+    }
+
+    public static final int ENTITY_TYPE_METADATA_FIELD_NUMBER = 11;
+    private com.google.cloud.documentai.v1beta3.EntityTypeMetadata entityTypeMetadata_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the entity type.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+     *
+     * @return Whether the entityTypeMetadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasEntityTypeMetadata() {
+      return entityTypeMetadata_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the entity type.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+     *
+     * @return The entityTypeMetadata.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.EntityTypeMetadata getEntityTypeMetadata() {
+      return entityTypeMetadata_ == null
+          ? com.google.cloud.documentai.v1beta3.EntityTypeMetadata.getDefaultInstance()
+          : entityTypeMetadata_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the entity type.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.EntityTypeMetadataOrBuilder
+        getEntityTypeMetadataOrBuilder() {
+      return entityTypeMetadata_ == null
+          ? com.google.cloud.documentai.v1beta3.EntityTypeMetadata.getDefaultInstance()
+          : entityTypeMetadata_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2917,6 +3308,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
       for (int i = 0; i < properties_.size(); i++) {
         output.writeMessage(6, properties_.get(i));
+      }
+      if (entityTypeMetadata_ != null) {
+        output.writeMessage(11, getEntityTypeMetadata());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, displayName_);
@@ -2950,6 +3344,10 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < properties_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, properties_.get(i));
       }
+      if (entityTypeMetadata_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEntityTypeMetadata());
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, displayName_);
       }
@@ -2980,6 +3378,10 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       if (!getName().equals(other.getName())) return false;
       if (!getBaseTypesList().equals(other.getBaseTypesList())) return false;
       if (!getPropertiesList().equals(other.getPropertiesList())) return false;
+      if (hasEntityTypeMetadata() != other.hasEntityTypeMetadata()) return false;
+      if (hasEntityTypeMetadata()) {
+        if (!getEntityTypeMetadata().equals(other.getEntityTypeMetadata())) return false;
+      }
       if (!getValueSourceCase().equals(other.getValueSourceCase())) return false;
       switch (valueSourceCase_) {
         case 14:
@@ -3010,6 +3412,10 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       if (getPropertiesCount() > 0) {
         hash = (37 * hash) + PROPERTIES_FIELD_NUMBER;
         hash = (53 * hash) + getPropertiesList().hashCode();
+      }
+      if (hasEntityTypeMetadata()) {
+        hash = (37 * hash) + ENTITY_TYPE_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getEntityTypeMetadata().hashCode();
       }
       switch (valueSourceCase_) {
         case 14:
@@ -3168,8 +3574,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         displayName_ = "";
         name_ = "";
-        baseTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        baseTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         if (propertiesBuilder_ == null) {
           properties_ = java.util.Collections.emptyList();
         } else {
@@ -3177,6 +3582,11 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           propertiesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000010);
+        entityTypeMetadata_ = null;
+        if (entityTypeMetadataBuilder_ != null) {
+          entityTypeMetadataBuilder_.dispose();
+          entityTypeMetadataBuilder_ = null;
+        }
         valueSourceCase_ = 0;
         valueSource_ = null;
         return this;
@@ -3218,11 +3628,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartialRepeatedFields(
           com.google.cloud.documentai.v1beta3.DocumentSchema.EntityType result) {
-        if (((bitField0_ & 0x00000008) != 0)) {
-          baseTypes_ = baseTypes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.baseTypes_ = baseTypes_;
         if (propertiesBuilder_ == null) {
           if (((bitField0_ & 0x00000010) != 0)) {
             properties_ = java.util.Collections.unmodifiableList(properties_);
@@ -3242,6 +3647,16 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          baseTypes_.makeImmutable();
+          result.baseTypes_ = baseTypes_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.entityTypeMetadata_ =
+              entityTypeMetadataBuilder_ == null
+                  ? entityTypeMetadata_
+                  : entityTypeMetadataBuilder_.build();
         }
       }
 
@@ -3317,7 +3732,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         if (!other.baseTypes_.isEmpty()) {
           if (baseTypes_.isEmpty()) {
             baseTypes_ = other.baseTypes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureBaseTypesIsMutable();
             baseTypes_.addAll(other.baseTypes_);
@@ -3350,6 +3765,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
               propertiesBuilder_.addAllMessages(other.properties_);
             }
           }
+        }
+        if (other.hasEntityTypeMetadata()) {
+          mergeEntityTypeMetadata(other.getEntityTypeMetadata());
         }
         switch (other.getValueSourceCase()) {
           case ENUM_VALUES:
@@ -3416,6 +3834,13 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                   }
                   break;
                 } // case 50
+              case 90:
+                {
+                  input.readMessage(
+                      getEntityTypeMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 90
               case 106:
                 {
                   displayName_ = input.readStringRequireUtf8();
@@ -3854,15 +4279,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the type. It must be unique within the schema file and
-       * cannot be a 'Common Type'.  Besides that we use the following naming
-       * conventions:
-       * - *use `snake_casing`*
-       * - name matching is case-sensitive
+       * cannot be a "Common Type".  The following naming conventions are used:
+       *
+       * - Use `snake_casing`.
+       * - Name matching is case-sensitive.
        * - Maximum 64 characters.
        * - Must start with a letter.
        * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
        *   compatibility internal infrastructure and tooling can handle any ascii
-       *   character)
+       *   character.)
        * - The `/` is sometimes used to denote a property of a type.  For example
        *   `line_item/amount`.  This convention is deprecated, but will still be
        *   honored for backward compatibility.
@@ -3888,15 +4313,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the type. It must be unique within the schema file and
-       * cannot be a 'Common Type'.  Besides that we use the following naming
-       * conventions:
-       * - *use `snake_casing`*
-       * - name matching is case-sensitive
+       * cannot be a "Common Type".  The following naming conventions are used:
+       *
+       * - Use `snake_casing`.
+       * - Name matching is case-sensitive.
        * - Maximum 64 characters.
        * - Must start with a letter.
        * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
        *   compatibility internal infrastructure and tooling can handle any ascii
-       *   character)
+       *   character.)
        * - The `/` is sometimes used to denote a property of a type.  For example
        *   `line_item/amount`.  This convention is deprecated, but will still be
        *   honored for backward compatibility.
@@ -3922,15 +4347,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the type. It must be unique within the schema file and
-       * cannot be a 'Common Type'.  Besides that we use the following naming
-       * conventions:
-       * - *use `snake_casing`*
-       * - name matching is case-sensitive
+       * cannot be a "Common Type".  The following naming conventions are used:
+       *
+       * - Use `snake_casing`.
+       * - Name matching is case-sensitive.
        * - Maximum 64 characters.
        * - Must start with a letter.
        * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
        *   compatibility internal infrastructure and tooling can handle any ascii
-       *   character)
+       *   character.)
        * - The `/` is sometimes used to denote a property of a type.  For example
        *   `line_item/amount`.  This convention is deprecated, but will still be
        *   honored for backward compatibility.
@@ -3955,15 +4380,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the type. It must be unique within the schema file and
-       * cannot be a 'Common Type'.  Besides that we use the following naming
-       * conventions:
-       * - *use `snake_casing`*
-       * - name matching is case-sensitive
+       * cannot be a "Common Type".  The following naming conventions are used:
+       *
+       * - Use `snake_casing`.
+       * - Name matching is case-sensitive.
        * - Maximum 64 characters.
        * - Must start with a letter.
        * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
        *   compatibility internal infrastructure and tooling can handle any ascii
-       *   character)
+       *   character.)
        * - The `/` is sometimes used to denote a property of a type.  For example
        *   `line_item/amount`.  This convention is deprecated, but will still be
        *   honored for backward compatibility.
@@ -3984,15 +4409,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the type. It must be unique within the schema file and
-       * cannot be a 'Common Type'.  Besides that we use the following naming
-       * conventions:
-       * - *use `snake_casing`*
-       * - name matching is case-sensitive
+       * cannot be a "Common Type".  The following naming conventions are used:
+       *
+       * - Use `snake_casing`.
+       * - Name matching is case-sensitive.
        * - Maximum 64 characters.
        * - Must start with a letter.
        * - Allowed characters: ASCII letters `[a-z0-9_-]`.  (For backward
        *   compatibility internal infrastructure and tooling can handle any ascii
-       *   character)
+       *   character.)
        * - The `/` is sometimes used to denote a property of a type.  For example
        *   `line_item/amount`.  This convention is deprecated, but will still be
        *   honored for backward compatibility.
@@ -4014,14 +4439,14 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList baseTypes_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList baseTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureBaseTypesIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!baseTypes_.isModifiable()) {
           baseTypes_ = new com.google.protobuf.LazyStringArrayList(baseTypes_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -4036,7 +4461,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the baseTypes.
        */
       public com.google.protobuf.ProtocolStringList getBaseTypesList() {
-        return baseTypes_.getUnmodifiableView();
+        baseTypes_.makeImmutable();
+        return baseTypes_;
       }
       /**
        *
@@ -4105,6 +4531,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         ensureBaseTypesIsMutable();
         baseTypes_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4127,6 +4554,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         ensureBaseTypesIsMutable();
         baseTypes_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4146,6 +4574,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllBaseTypes(java.lang.Iterable<java.lang.String> values) {
         ensureBaseTypesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, baseTypes_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4162,8 +4591,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBaseTypes() {
-        baseTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        baseTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -4187,6 +4617,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureBaseTypesIsMutable();
         baseTypes_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4214,7 +4645,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4233,7 +4664,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4251,7 +4682,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4270,7 +4701,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4295,7 +4726,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4319,7 +4750,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4344,7 +4775,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4369,7 +4800,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4392,7 +4823,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4416,7 +4847,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4440,7 +4871,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4461,7 +4892,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4482,7 +4913,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4497,7 +4928,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4516,7 +4947,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4537,7 +4968,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4555,7 +4986,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4574,7 +5005,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4602,6 +5033,195 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           properties_ = null;
         }
         return propertiesBuilder_;
+      }
+
+      private com.google.cloud.documentai.v1beta3.EntityTypeMetadata entityTypeMetadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.EntityTypeMetadata,
+              com.google.cloud.documentai.v1beta3.EntityTypeMetadata.Builder,
+              com.google.cloud.documentai.v1beta3.EntityTypeMetadataOrBuilder>
+          entityTypeMetadataBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Metadata for the entity type.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+       *
+       * @return Whether the entityTypeMetadata field is set.
+       */
+      public boolean hasEntityTypeMetadata() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metadata for the entity type.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+       *
+       * @return The entityTypeMetadata.
+       */
+      public com.google.cloud.documentai.v1beta3.EntityTypeMetadata getEntityTypeMetadata() {
+        if (entityTypeMetadataBuilder_ == null) {
+          return entityTypeMetadata_ == null
+              ? com.google.cloud.documentai.v1beta3.EntityTypeMetadata.getDefaultInstance()
+              : entityTypeMetadata_;
+        } else {
+          return entityTypeMetadataBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metadata for the entity type.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+       */
+      public Builder setEntityTypeMetadata(
+          com.google.cloud.documentai.v1beta3.EntityTypeMetadata value) {
+        if (entityTypeMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          entityTypeMetadata_ = value;
+        } else {
+          entityTypeMetadataBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metadata for the entity type.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+       */
+      public Builder setEntityTypeMetadata(
+          com.google.cloud.documentai.v1beta3.EntityTypeMetadata.Builder builderForValue) {
+        if (entityTypeMetadataBuilder_ == null) {
+          entityTypeMetadata_ = builderForValue.build();
+        } else {
+          entityTypeMetadataBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metadata for the entity type.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+       */
+      public Builder mergeEntityTypeMetadata(
+          com.google.cloud.documentai.v1beta3.EntityTypeMetadata value) {
+        if (entityTypeMetadataBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && entityTypeMetadata_ != null
+              && entityTypeMetadata_
+                  != com.google.cloud.documentai.v1beta3.EntityTypeMetadata.getDefaultInstance()) {
+            getEntityTypeMetadataBuilder().mergeFrom(value);
+          } else {
+            entityTypeMetadata_ = value;
+          }
+        } else {
+          entityTypeMetadataBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metadata for the entity type.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+       */
+      public Builder clearEntityTypeMetadata() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        entityTypeMetadata_ = null;
+        if (entityTypeMetadataBuilder_ != null) {
+          entityTypeMetadataBuilder_.dispose();
+          entityTypeMetadataBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metadata for the entity type.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+       */
+      public com.google.cloud.documentai.v1beta3.EntityTypeMetadata.Builder
+          getEntityTypeMetadataBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getEntityTypeMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metadata for the entity type.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+       */
+      public com.google.cloud.documentai.v1beta3.EntityTypeMetadataOrBuilder
+          getEntityTypeMetadataOrBuilder() {
+        if (entityTypeMetadataBuilder_ != null) {
+          return entityTypeMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          return entityTypeMetadata_ == null
+              ? com.google.cloud.documentai.v1beta3.EntityTypeMetadata.getDefaultInstance()
+              : entityTypeMetadata_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metadata for the entity type.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.EntityTypeMetadata entity_type_metadata = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.EntityTypeMetadata,
+              com.google.cloud.documentai.v1beta3.EntityTypeMetadata.Builder,
+              com.google.cloud.documentai.v1beta3.EntityTypeMetadataOrBuilder>
+          getEntityTypeMetadataFieldBuilder() {
+        if (entityTypeMetadataBuilder_ == null) {
+          entityTypeMetadataBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.EntityTypeMetadata,
+                  com.google.cloud.documentai.v1beta3.EntityTypeMetadata.Builder,
+                  com.google.cloud.documentai.v1beta3.EntityTypeMetadataOrBuilder>(
+                  getEntityTypeMetadata(), getParentForChildren(), isClean());
+          entityTypeMetadata_ = null;
+        }
+        return entityTypeMetadataBuilder_;
       }
 
       @java.lang.Override
@@ -4680,8 +5300,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, a `document` entity type can be applied to subdocument (
-     * splitting). Otherwise, it can only be applied to the entire document
+     * If true, a `document` entity type can be applied to subdocument
+     * (splitting). Otherwise, it can only be applied to the entire document
      * (classification).
      * </pre>
      *
@@ -4760,11 +5380,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       return new Metadata();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentAiDocumentSchema
           .internal_static_google_cloud_documentai_v1beta3_DocumentSchema_Metadata_descriptor;
@@ -4786,8 +5401,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, a `document` entity type can be applied to subdocument (
-     * splitting). Otherwise, it can only be applied to the entire document
+     * If true, a `document` entity type can be applied to subdocument
+     * (splitting). Otherwise, it can only be applied to the entire document
      * (classification).
      * </pre>
      *
@@ -5280,8 +5895,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If true, a `document` entity type can be applied to subdocument (
-       * splitting). Otherwise, it can only be applied to the entire document
+       * If true, a `document` entity type can be applied to subdocument
+       * (splitting). Otherwise, it can only be applied to the entire document
        * (classification).
        * </pre>
        *
@@ -5297,8 +5912,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If true, a `document` entity type can be applied to subdocument (
-       * splitting). Otherwise, it can only be applied to the entire document
+       * If true, a `document` entity type can be applied to subdocument
+       * (splitting). Otherwise, it can only be applied to the entire document
        * (classification).
        * </pre>
        *
@@ -5318,8 +5933,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If true, a `document` entity type can be applied to subdocument (
-       * splitting). Otherwise, it can only be applied to the entire document
+       * If true, a `document` entity type can be applied to subdocument
+       * (splitting). Otherwise, it can only be applied to the entire document
        * (classification).
        * </pre>
        *

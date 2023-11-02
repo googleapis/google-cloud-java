@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ package com.google.cloud.binaryauthorization.v1beta1;
  * used in a pod creation request must be attested to by one or more
  * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], that all pod creations will be allowed, or that all
  * pod creations will be denied.
+ *
  * Images matching an [admission allowlist pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
  * are exempted from admission rules and will never block a pod creation.
  * </pre>
@@ -44,7 +45,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
 
   private AdmissionRule() {
     evaluationMode_ = 0;
-    requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.emptyList();
     enforcementMode_ = 0;
   }
 
@@ -52,11 +53,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AdmissionRule();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -461,7 +457,8 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
   public static final int REQUIRE_ATTESTATIONS_BY_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList requireAttestationsBy_;
+  private com.google.protobuf.LazyStringArrayList requireAttestationsBy_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -471,6 +468,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
    * attestor must exist before a policy can reference it.  To add an attestor
    * to a policy the principal issuing the policy change request must be able
    * to read the attestor resource.
+   *
    * Note: this field must be non-empty when the evaluation_mode field specifies
    * REQUIRE_ATTESTATION, otherwise it must be empty.
    * </pre>
@@ -492,6 +490,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
    * attestor must exist before a policy can reference it.  To add an attestor
    * to a policy the principal issuing the policy change request must be able
    * to read the attestor resource.
+   *
    * Note: this field must be non-empty when the evaluation_mode field specifies
    * REQUIRE_ATTESTATION, otherwise it must be empty.
    * </pre>
@@ -513,6 +512,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
    * attestor must exist before a policy can reference it.  To add an attestor
    * to a policy the principal issuing the policy change request must be able
    * to read the attestor resource.
+   *
    * Note: this field must be non-empty when the evaluation_mode field specifies
    * REQUIRE_ATTESTATION, otherwise it must be empty.
    * </pre>
@@ -535,6 +535,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
    * attestor must exist before a policy can reference it.  To add an attestor
    * to a policy the principal issuing the policy change request must be able
    * to read the attestor resource.
+   *
    * Note: this field must be non-empty when the evaluation_mode field specifies
    * REQUIRE_ATTESTATION, otherwise it must be empty.
    * </pre>
@@ -798,6 +799,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
    * used in a pod creation request must be attested to by one or more
    * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor], that all pod creations will be allowed, or that all
    * pod creations will be denied.
+   *
    * Images matching an [admission allowlist pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
    * are exempted from admission rules and will never block a pod creation.
    * </pre>
@@ -835,8 +837,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       evaluationMode_ = 0;
-      requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.emptyList();
       enforcementMode_ = 0;
       return this;
     }
@@ -865,7 +866,6 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule buildPartial() {
       com.google.cloud.binaryauthorization.v1beta1.AdmissionRule result =
           new com.google.cloud.binaryauthorization.v1beta1.AdmissionRule(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -873,19 +873,14 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.binaryauthorization.v1beta1.AdmissionRule result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        requireAttestationsBy_ = requireAttestationsBy_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.requireAttestationsBy_ = requireAttestationsBy_;
-    }
-
     private void buildPartial0(com.google.cloud.binaryauthorization.v1beta1.AdmissionRule result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.evaluationMode_ = evaluationMode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        requireAttestationsBy_.makeImmutable();
+        result.requireAttestationsBy_ = requireAttestationsBy_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.enforcementMode_ = enforcementMode_;
@@ -944,7 +939,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       if (!other.requireAttestationsBy_.isEmpty()) {
         if (requireAttestationsBy_.isEmpty()) {
           requireAttestationsBy_ = other.requireAttestationsBy_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureRequireAttestationsByIsMutable();
           requireAttestationsBy_.addAll(other.requireAttestationsBy_);
@@ -1123,15 +1118,15 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList requireAttestationsBy_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList requireAttestationsBy_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRequireAttestationsByIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!requireAttestationsBy_.isModifiable()) {
         requireAttestationsBy_ =
             new com.google.protobuf.LazyStringArrayList(requireAttestationsBy_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1142,6 +1137,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -1152,7 +1148,8 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the requireAttestationsBy.
      */
     public com.google.protobuf.ProtocolStringList getRequireAttestationsByList() {
-      return requireAttestationsBy_.getUnmodifiableView();
+      requireAttestationsBy_.makeImmutable();
+      return requireAttestationsBy_;
     }
     /**
      *
@@ -1163,6 +1160,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -1184,6 +1182,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -1206,6 +1205,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -1228,6 +1228,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -1245,6 +1246,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequireAttestationsByIsMutable();
       requireAttestationsBy_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1257,6 +1259,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -1273,6 +1276,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequireAttestationsByIsMutable();
       requireAttestationsBy_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1285,6 +1289,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -1298,6 +1303,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRequireAttestationsBy(java.lang.Iterable<java.lang.String> values) {
       ensureRequireAttestationsByIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, requireAttestationsBy_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1310,6 +1316,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -1320,8 +1327,9 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequireAttestationsBy() {
-      requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1334,6 +1342,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -1351,6 +1360,7 @@ public final class AdmissionRule extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRequireAttestationsByIsMutable();
       requireAttestationsBy_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

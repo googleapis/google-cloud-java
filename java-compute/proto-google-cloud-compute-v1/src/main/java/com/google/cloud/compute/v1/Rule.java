@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,21 +41,16 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     action_ = "";
     conditions_ = java.util.Collections.emptyList();
     description_ = "";
-    ins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ins_ = com.google.protobuf.LazyStringArrayList.emptyList();
     logConfigs_ = java.util.Collections.emptyList();
-    notIns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    notIns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    permissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Rule();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -527,7 +522,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public static final int INS_FIELD_NUMBER = 104430;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ins_;
+  private com.google.protobuf.LazyStringArrayList ins_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -661,7 +657,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public static final int NOT_INS_FIELD_NUMBER = 518443138;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList notIns_;
+  private com.google.protobuf.LazyStringArrayList notIns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -724,7 +721,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   public static final int PERMISSIONS_FIELD_NUMBER = 59962500;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList permissions_;
+  private com.google.protobuf.LazyStringArrayList permissions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1080,8 +1078,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
-      ins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      ins_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (logConfigsBuilder_ == null) {
         logConfigs_ = java.util.Collections.emptyList();
       } else {
@@ -1089,10 +1086,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         logConfigsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
-      notIns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
-      permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      notIns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      permissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1137,11 +1132,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        ins_ = ins_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.ins_ = ins_;
       if (logConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
           logConfigs_ = java.util.Collections.unmodifiableList(logConfigs_);
@@ -1151,16 +1141,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.logConfigs_ = logConfigsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        notIns_ = notIns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.notIns_ = notIns_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        permissions_ = permissions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.permissions_ = permissions_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Rule result) {
@@ -1173,6 +1153,18 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        ins_.makeImmutable();
+        result.ins_ = ins_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        notIns_.makeImmutable();
+        result.notIns_ = notIns_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        permissions_.makeImmutable();
+        result.permissions_ = permissions_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1262,7 +1254,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (!other.ins_.isEmpty()) {
         if (ins_.isEmpty()) {
           ins_ = other.ins_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureInsIsMutable();
           ins_.addAll(other.ins_);
@@ -1299,7 +1291,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (!other.notIns_.isEmpty()) {
         if (notIns_.isEmpty()) {
           notIns_ = other.notIns_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureNotInsIsMutable();
           notIns_.addAll(other.notIns_);
@@ -1309,7 +1301,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       if (!other.permissions_.isEmpty()) {
         if (permissions_.isEmpty()) {
           permissions_ = other.permissions_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensurePermissionsIsMutable();
           permissions_.addAll(other.permissions_);
@@ -2015,13 +2007,14 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ins_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!ins_.isModifiable()) {
         ins_ = new com.google.protobuf.LazyStringArrayList(ins_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -2035,7 +2028,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ins.
      */
     public com.google.protobuf.ProtocolStringList getInsList() {
-      return ins_.getUnmodifiableView();
+      ins_.makeImmutable();
+      return ins_;
     }
     /**
      *
@@ -2100,6 +2094,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInsIsMutable();
       ins_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2121,6 +2116,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInsIsMutable();
       ins_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2139,6 +2135,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIns(java.lang.Iterable<java.lang.String> values) {
       ensureInsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ins_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2154,8 +2151,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIns() {
-      ins_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ins_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -2178,6 +2176,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInsIsMutable();
       ins_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2531,14 +2530,14 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       return logConfigsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList notIns_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList notIns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNotInsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!notIns_.isModifiable()) {
         notIns_ = new com.google.protobuf.LazyStringArrayList(notIns_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2552,7 +2551,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the notIns.
      */
     public com.google.protobuf.ProtocolStringList getNotInsList() {
-      return notIns_.getUnmodifiableView();
+      notIns_.makeImmutable();
+      return notIns_;
     }
     /**
      *
@@ -2617,6 +2617,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNotInsIsMutable();
       notIns_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2638,6 +2639,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNotInsIsMutable();
       notIns_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2656,6 +2658,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllNotIns(java.lang.Iterable<java.lang.String> values) {
       ensureNotInsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, notIns_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2671,8 +2674,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNotIns() {
-      notIns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      notIns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2695,18 +2699,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureNotInsIsMutable();
       notIns_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList permissions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList permissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePermissionsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!permissions_.isModifiable()) {
         permissions_ = new com.google.protobuf.LazyStringArrayList(permissions_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2720,7 +2725,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the permissions.
      */
     public com.google.protobuf.ProtocolStringList getPermissionsList() {
-      return permissions_.getUnmodifiableView();
+      permissions_.makeImmutable();
+      return permissions_;
     }
     /**
      *
@@ -2785,6 +2791,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePermissionsIsMutable();
       permissions_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2806,6 +2813,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePermissionsIsMutable();
       permissions_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2824,6 +2832,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPermissions(java.lang.Iterable<java.lang.String> values) {
       ensurePermissionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, permissions_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2839,8 +2848,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPermissions() {
-      permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      permissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2863,6 +2873,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePermissionsIsMutable();
       permissions_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

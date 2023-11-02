@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListNetworkEdgeSecurityServicesRequest;
 import com.google.cloud.compute.v1.DeleteNetworkEdgeSecurityServiceRequest;
@@ -424,12 +425,28 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
                     newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteNetworkEdgeSecurityServiceRequest, Operation>
         deleteTransportSettings =
             HttpJsonCallSettings.<DeleteNetworkEdgeSecurityServiceRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "network_edge_security_service",
+                          String.valueOf(request.getNetworkEdgeSecurityService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetNetworkEdgeSecurityServiceRequest, NetworkEdgeSecurityService>
         getTransportSettings =
@@ -437,17 +454,44 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
                 .<GetNetworkEdgeSecurityServiceRequest, NetworkEdgeSecurityService>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "network_edge_security_service",
+                          String.valueOf(request.getNetworkEdgeSecurityService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertNetworkEdgeSecurityServiceRequest, Operation>
         insertTransportSettings =
             HttpJsonCallSettings.<InsertNetworkEdgeSecurityServiceRequest, Operation>newBuilder()
                 .setMethodDescriptor(insertMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchNetworkEdgeSecurityServiceRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchNetworkEdgeSecurityServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "network_edge_security_service",
+                      String.valueOf(request.getNetworkEdgeSecurityService()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
 
     this.aggregatedListCallable =

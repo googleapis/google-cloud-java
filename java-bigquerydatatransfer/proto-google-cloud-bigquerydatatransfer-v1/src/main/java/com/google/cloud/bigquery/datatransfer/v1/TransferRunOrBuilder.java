@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -468,6 +468,7 @@ public interface TransferRunOrBuilder
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
    * transfer run finishes.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -484,6 +485,7 @@ public interface TransferRunOrBuilder
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
    * transfer run finishes.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -543,5 +545,5 @@ public interface TransferRunOrBuilder
   com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder
       getEmailPreferencesOrBuilder();
 
-  public com.google.cloud.bigquery.datatransfer.v1.TransferRun.DestinationCase getDestinationCase();
+  com.google.cloud.bigquery.datatransfer.v1.TransferRun.DestinationCase getDestinationCase();
 }

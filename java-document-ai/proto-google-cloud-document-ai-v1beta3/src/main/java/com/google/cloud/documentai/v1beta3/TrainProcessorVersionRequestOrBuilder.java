@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,50 @@ public interface TrainProcessorVersionRequestOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.TrainProcessorVersionRequest)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Options to control Custom Document Extraction (CDE) Processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+   * </code>
+   *
+   * @return Whether the customDocumentExtractionOptions field is set.
+   */
+  boolean hasCustomDocumentExtractionOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Options to control Custom Document Extraction (CDE) Processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+   * </code>
+   *
+   * @return The customDocumentExtractionOptions.
+   */
+  com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions
+      getCustomDocumentExtractionOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Options to control Custom Document Extraction (CDE) Processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.CustomDocumentExtractionOptions custom_document_extraction_options = 5;
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest
+          .CustomDocumentExtractionOptionsOrBuilder
+      getCustomDocumentExtractionOptionsOrBuilder();
 
   /**
    *
@@ -142,7 +186,8 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -156,7 +201,8 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -170,7 +216,8 @@ public interface TrainProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The input data used to train the `ProcessorVersion`.
+   * Optional. The input data used to train the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
    * </pre>
    *
    * <code>
@@ -208,4 +255,7 @@ public interface TrainProcessorVersionRequestOrBuilder
    * @return The bytes for baseProcessorVersion.
    */
   com.google.protobuf.ByteString getBaseProcessorVersionBytes();
+
+  com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.ProcessorFlagsCase
+      getProcessorFlagsCase();
 }

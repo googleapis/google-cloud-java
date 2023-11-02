@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
     return new DeleteEnvironmentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.EnvironmentProto
         .internal_static_google_cloud_dialogflow_v2beta1_DeleteEnvironmentRequest_descriptor;
@@ -78,8 +73,8 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The name of the environment to delete.
    * / Format:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
@@ -107,8 +102,8 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The name of the environment to delete.
    * / Format:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
@@ -485,8 +480,8 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The name of the environment to delete.
      * / Format:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -513,8 +508,8 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The name of the environment to delete.
      * / Format:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -541,8 +536,8 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The name of the environment to delete.
      * / Format:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -568,8 +563,8 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The name of the environment to delete.
      * / Format:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
@@ -591,8 +586,8 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The name of the environment to delete.
      * / Format:
-     * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *

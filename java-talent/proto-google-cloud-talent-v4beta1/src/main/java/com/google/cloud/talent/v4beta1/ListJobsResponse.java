@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
     return new ListJobsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.JobServiceProto
         .internal_static_google_cloud_talent_v4beta1_ListJobsResponse_descriptor;
@@ -77,6 +72,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The Jobs for a given company.
+   *
    * The maximum number of items returned is based on the limit field
    * provided in the request.
    * </pre>
@@ -92,6 +88,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The Jobs for a given company.
+   *
    * The maximum number of items returned is based on the limit field
    * provided in the request.
    * </pre>
@@ -108,6 +105,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The Jobs for a given company.
+   *
    * The maximum number of items returned is based on the limit field
    * provided in the request.
    * </pre>
@@ -123,6 +121,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The Jobs for a given company.
+   *
    * The maximum number of items returned is based on the limit field
    * provided in the request.
    * </pre>
@@ -138,6 +137,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The Jobs for a given company.
+   *
    * The maximum number of items returned is based on the limit field
    * provided in the request.
    * </pre>
@@ -719,6 +719,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -737,6 +738,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -755,6 +757,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -773,6 +776,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -797,6 +801,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -818,6 +823,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -842,6 +848,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -866,6 +873,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -887,6 +895,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -908,6 +917,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -930,6 +940,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -951,6 +962,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -972,6 +984,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -986,6 +999,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -1004,6 +1018,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -1023,6 +1038,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -1038,6 +1054,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>
@@ -1053,6 +1070,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The Jobs for a given company.
+     *
      * The maximum number of items returned is based on the limit field
      * provided in the request.
      * </pre>

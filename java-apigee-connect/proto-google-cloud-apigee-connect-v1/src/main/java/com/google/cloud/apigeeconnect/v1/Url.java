@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.apigeeconnect.v1;
  * <pre>
  * The proto definition of url.
  * A url represents a URL and the general form represented is:
+ *
  *  `[scheme://][google.cloud.apigeeconnect.v1.Url.host][path]`
  * </pre>
  *
@@ -49,11 +50,6 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Url();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -389,6 +385,7 @@ public final class Url extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The proto definition of url.
    * A url represents a URL and the general form represented is:
+   *
    *  `[scheme://][google.cloud.apigeeconnect.v1.Url.host][path]`
    * </pre>
    *

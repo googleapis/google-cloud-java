@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,20 +36,20 @@ public final class JobStateProto {
   static {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/aiplatform/v1/job_state.p"
-          + "roto\022\032google.cloud.aiplatform.v1*\220\002\n\010Job"
+          + "roto\022\032google.cloud.aiplatform.v1*\263\002\n\010Job"
           + "State\022\031\n\025JOB_STATE_UNSPECIFIED\020\000\022\024\n\020JOB_"
           + "STATE_QUEUED\020\001\022\025\n\021JOB_STATE_PENDING\020\002\022\025\n"
           + "\021JOB_STATE_RUNNING\020\003\022\027\n\023JOB_STATE_SUCCEE"
           + "DED\020\004\022\024\n\020JOB_STATE_FAILED\020\005\022\030\n\024JOB_STATE"
           + "_CANCELLING\020\006\022\027\n\023JOB_STATE_CANCELLED\020\007\022\024"
           + "\n\020JOB_STATE_PAUSED\020\010\022\025\n\021JOB_STATE_EXPIRE"
-          + "D\020\t\022\026\n\022JOB_STATE_UPDATING\020\nB\313\001\n\036com.goog"
-          + "le.cloud.aiplatform.v1B\rJobStateProtoP\001Z"
-          + ">cloud.google.com/go/aiplatform/apiv1/ai"
-          + "platformpb;aiplatformpb\252\002\032Google.Cloud.A"
-          + "IPlatform.V1\312\002\032Google\\Cloud\\AIPlatform\\V"
-          + "1\352\002\035Google::Cloud::AIPlatform::V1b\006proto"
-          + "3"
+          + "D\020\t\022\026\n\022JOB_STATE_UPDATING\020\n\022!\n\035JOB_STATE"
+          + "_PARTIALLY_SUCCEEDED\020\013B\313\001\n\036com.google.cl"
+          + "oud.aiplatform.v1B\rJobStateProtoP\001Z>clou"
+          + "d.google.com/go/aiplatform/apiv1/aiplatf"
+          + "ormpb;aiplatformpb\252\002\032Google.Cloud.AIPlat"
+          + "form.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035G"
+          + "oogle::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

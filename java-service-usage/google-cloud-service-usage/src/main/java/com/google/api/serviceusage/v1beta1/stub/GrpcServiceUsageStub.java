@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.serviceusage.v1beta1.BatchEnableServicesRequest;
 import com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit;
@@ -62,7 +63,6 @@ import com.google.api.serviceusage.v1beta1.Service;
 import com.google.api.serviceusage.v1beta1.ServiceIdentity;
 import com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest;
 import com.google.api.serviceusage.v1beta1.UpdateConsumerOverrideRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -399,9 +399,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
             .setMethodDescriptor(enableServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DisableServiceRequest, Operation> disableServiceTransportSettings =
@@ -409,9 +409,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
             .setMethodDescriptor(disableServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
@@ -419,9 +419,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
             .setMethodDescriptor(getServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
@@ -429,9 +429,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
             .setMethodDescriptor(listServicesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<BatchEnableServicesRequest, Operation> batchEnableServicesTransportSettings =
@@ -439,9 +439,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
             .setMethodDescriptor(batchEnableServicesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse>
@@ -451,9 +451,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                 .setMethodDescriptor(listConsumerQuotaMetricsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetConsumerQuotaMetricRequest, ConsumerQuotaMetric>
@@ -462,9 +462,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                 .setMethodDescriptor(getConsumerQuotaMetricMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetConsumerQuotaLimitRequest, ConsumerQuotaLimit>
@@ -473,9 +473,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                 .setMethodDescriptor(getConsumerQuotaLimitMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateAdminOverrideRequest, Operation> createAdminOverrideTransportSettings =
@@ -483,9 +483,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
             .setMethodDescriptor(createAdminOverrideMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateAdminOverrideRequest, Operation> updateAdminOverrideTransportSettings =
@@ -493,9 +493,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
             .setMethodDescriptor(updateAdminOverrideMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteAdminOverrideRequest, Operation> deleteAdminOverrideTransportSettings =
@@ -503,9 +503,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
             .setMethodDescriptor(deleteAdminOverrideMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAdminOverridesRequest, ListAdminOverridesResponse>
@@ -514,9 +514,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                 .setMethodDescriptor(listAdminOverridesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ImportAdminOverridesRequest, Operation> importAdminOverridesTransportSettings =
@@ -524,9 +524,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
             .setMethodDescriptor(importAdminOverridesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateConsumerOverrideRequest, Operation>
@@ -535,9 +535,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                 .setMethodDescriptor(createConsumerOverrideMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateConsumerOverrideRequest, Operation>
@@ -546,9 +546,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                 .setMethodDescriptor(updateConsumerOverrideMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteConsumerOverrideRequest, Operation>
@@ -557,9 +557,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                 .setMethodDescriptor(deleteConsumerOverrideMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListConsumerOverridesRequest, ListConsumerOverridesResponse>
@@ -569,9 +569,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                 .setMethodDescriptor(listConsumerOverridesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ImportConsumerOverridesRequest, Operation>
@@ -580,9 +580,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                 .setMethodDescriptor(importConsumerOverridesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GenerateServiceIdentityRequest, Operation>
@@ -591,9 +591,9 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                 .setMethodDescriptor(generateServiceIdentityMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
 

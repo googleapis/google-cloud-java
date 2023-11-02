@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
     return new RemoveProductFromProductSetRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p4beta1.ProductSearchServiceProto
         .internal_static_google_cloud_vision_v1p4beta1_RemoveProductFromProductSetRequest_descriptor;
@@ -78,6 +73,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
    *
    * <pre>
    * Required. The resource name for the ProductSet to modify.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
@@ -105,6 +101,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
    *
    * <pre>
    * Required. The resource name for the ProductSet to modify.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
@@ -138,6 +135,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
    * <pre>
    * Required. The resource name for the Product to be removed from this
    * ProductSet.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>
@@ -166,6 +164,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
    * <pre>
    * Required. The resource name for the Product to be removed from this
    * ProductSet.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>
@@ -570,6 +569,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      * <pre>
      * Required. The resource name for the ProductSet to modify.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -596,6 +596,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      * <pre>
      * Required. The resource name for the ProductSet to modify.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -622,6 +623,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      * <pre>
      * Required. The resource name for the ProductSet to modify.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -647,6 +649,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      * <pre>
      * Required. The resource name for the ProductSet to modify.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -668,6 +671,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      *
      * <pre>
      * Required. The resource name for the ProductSet to modify.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -697,6 +701,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      * <pre>
      * Required. The resource name for the Product to be removed from this
      * ProductSet.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
@@ -724,6 +729,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      * <pre>
      * Required. The resource name for the Product to be removed from this
      * ProductSet.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
@@ -751,6 +757,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      * <pre>
      * Required. The resource name for the Product to be removed from this
      * ProductSet.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
@@ -777,6 +784,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      * <pre>
      * Required. The resource name for the Product to be removed from this
      * ProductSet.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>
@@ -799,6 +807,7 @@ public final class RemoveProductFromProductSetRequest extends com.google.protobu
      * <pre>
      * Required. The resource name for the Product to be removed from this
      * ProductSet.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
      * </pre>

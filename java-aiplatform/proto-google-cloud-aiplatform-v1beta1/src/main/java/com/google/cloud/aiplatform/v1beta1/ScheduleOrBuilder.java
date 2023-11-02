@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,10 +130,10 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Schedule.
+   * Immutable. The resource name of the Schedule.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The name.
    */
@@ -142,10 +142,10 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Schedule.
+   * Immutable. The resource name of the Schedule.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for name.
    */
@@ -638,8 +638,7 @@ public interface ScheduleOrBuilder
   com.google.cloud.aiplatform.v1beta1.Schedule.RunResponseOrBuilder
       getLastScheduledRunResponseOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.Schedule.TimeSpecificationCase
-      getTimeSpecificationCase();
+  com.google.cloud.aiplatform.v1beta1.Schedule.TimeSpecificationCase getTimeSpecificationCase();
 
-  public com.google.cloud.aiplatform.v1beta1.Schedule.RequestCase getRequestCase();
+  com.google.cloud.aiplatform.v1beta1.Schedule.RequestCase getRequestCase();
 }

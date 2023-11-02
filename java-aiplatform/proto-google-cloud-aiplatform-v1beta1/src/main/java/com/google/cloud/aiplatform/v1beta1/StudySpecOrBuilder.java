@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,7 +122,7 @@ public interface StudySpecOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=607
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=625
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Deprecated
@@ -140,7 +140,7 @@ public interface StudySpecOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=607
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=625
    * @return The convexStopConfig.
    */
   @java.lang.Deprecated
@@ -458,6 +458,6 @@ public interface StudySpecOrBuilder
   com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder
       getTransferLearningConfigOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.StudySpec.AutomatedStoppingSpecCase
+  com.google.cloud.aiplatform.v1beta1.StudySpec.AutomatedStoppingSpecCase
       getAutomatedStoppingSpecCase();
 }

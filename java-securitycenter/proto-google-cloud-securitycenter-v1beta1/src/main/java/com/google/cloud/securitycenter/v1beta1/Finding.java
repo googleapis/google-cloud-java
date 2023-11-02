@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.securitycenter.v1beta1;
  *
  * <pre>
  * Security Command Center finding.
+ *
  * A finding is a record of assessment data (security, risk, health or privacy)
  * ingested into Security Command Center for presentation, notification,
  * analysis, policy testing, and enforcement. For example, an XSS vulnerability
@@ -54,11 +55,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Finding();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1130,6 +1126,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Security Command Center finding.
+   *
    * A finding is a record of assessment data (security, risk, health or privacy)
    * ingested into Security Command Center for presentation, notification,
    * analysis, policy testing, and enforcement. For example, an XSS vulnerability

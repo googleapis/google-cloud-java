@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return new Volume();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.K8sMinProto
         .internal_static_google_cloud_run_v2_Volume_descriptor;
@@ -67,6 +62,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int volumeTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object volumeType_;
 
   public enum VolumeTypeCase
@@ -75,6 +72,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SECRET(2),
     CLOUD_SQL_INSTANCE(3),
+    EMPTY_DIR(4),
     VOLUMETYPE_NOT_SET(0);
     private final int value;
 
@@ -97,6 +95,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           return SECRET;
         case 3:
           return CLOUD_SQL_INSTANCE;
+        case 4:
+          return EMPTY_DIR;
         case 0:
           return VOLUMETYPE_NOT_SET;
         default:
@@ -272,6 +272,57 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.run.v2.CloudSqlInstance.getDefaultInstance();
   }
 
+  public static final int EMPTY_DIR_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Ephemeral storage used as a shared volume.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+   *
+   * @return Whether the emptyDir field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmptyDir() {
+    return volumeTypeCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Ephemeral storage used as a shared volume.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+   *
+   * @return The emptyDir.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.EmptyDirVolumeSource getEmptyDir() {
+    if (volumeTypeCase_ == 4) {
+      return (com.google.cloud.run.v2.EmptyDirVolumeSource) volumeType_;
+    }
+    return com.google.cloud.run.v2.EmptyDirVolumeSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Ephemeral storage used as a shared volume.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.EmptyDirVolumeSourceOrBuilder getEmptyDirOrBuilder() {
+    if (volumeTypeCase_ == 4) {
+      return (com.google.cloud.run.v2.EmptyDirVolumeSource) volumeType_;
+    }
+    return com.google.cloud.run.v2.EmptyDirVolumeSource.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -295,6 +346,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (volumeTypeCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.run.v2.CloudSqlInstance) volumeType_);
     }
+    if (volumeTypeCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.run.v2.EmptyDirVolumeSource) volumeType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -316,6 +370,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.run.v2.CloudSqlInstance) volumeType_);
+    }
+    if (volumeTypeCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.run.v2.EmptyDirVolumeSource) volumeType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -341,6 +400,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       case 3:
         if (!getCloudSqlInstance().equals(other.getCloudSqlInstance())) return false;
         break;
+      case 4:
+        if (!getEmptyDir().equals(other.getEmptyDir())) return false;
+        break;
       case 0:
       default:
     }
@@ -365,6 +427,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       case 3:
         hash = (37 * hash) + CLOUD_SQL_INSTANCE_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSqlInstance().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + EMPTY_DIR_FIELD_NUMBER;
+        hash = (53 * hash) + getEmptyDir().hashCode();
         break;
       case 0:
       default:
@@ -513,6 +579,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (cloudSqlInstanceBuilder_ != null) {
         cloudSqlInstanceBuilder_.clear();
       }
+      if (emptyDirBuilder_ != null) {
+        emptyDirBuilder_.clear();
+      }
       volumeTypeCase_ = 0;
       volumeType_ = null;
       return this;
@@ -564,6 +633,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       if (volumeTypeCase_ == 3 && cloudSqlInstanceBuilder_ != null) {
         result.volumeType_ = cloudSqlInstanceBuilder_.build();
+      }
+      if (volumeTypeCase_ == 4 && emptyDirBuilder_ != null) {
+        result.volumeType_ = emptyDirBuilder_.build();
       }
     }
 
@@ -628,6 +700,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             mergeCloudSqlInstance(other.getCloudSqlInstance());
             break;
           }
+        case EMPTY_DIR:
+          {
+            mergeEmptyDir(other.getEmptyDir());
+            break;
+          }
         case VOLUMETYPE_NOT_SET:
           {
             break;
@@ -678,6 +755,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 volumeTypeCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getEmptyDirFieldBuilder().getBuilder(), extensionRegistry);
+                volumeTypeCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1250,6 +1333,215 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       volumeTypeCase_ = 3;
       onChanged();
       return cloudSqlInstanceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.EmptyDirVolumeSource,
+            com.google.cloud.run.v2.EmptyDirVolumeSource.Builder,
+            com.google.cloud.run.v2.EmptyDirVolumeSourceOrBuilder>
+        emptyDirBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Ephemeral storage used as a shared volume.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+     *
+     * @return Whether the emptyDir field is set.
+     */
+    @java.lang.Override
+    public boolean hasEmptyDir() {
+      return volumeTypeCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ephemeral storage used as a shared volume.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+     *
+     * @return The emptyDir.
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.EmptyDirVolumeSource getEmptyDir() {
+      if (emptyDirBuilder_ == null) {
+        if (volumeTypeCase_ == 4) {
+          return (com.google.cloud.run.v2.EmptyDirVolumeSource) volumeType_;
+        }
+        return com.google.cloud.run.v2.EmptyDirVolumeSource.getDefaultInstance();
+      } else {
+        if (volumeTypeCase_ == 4) {
+          return emptyDirBuilder_.getMessage();
+        }
+        return com.google.cloud.run.v2.EmptyDirVolumeSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ephemeral storage used as a shared volume.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+     */
+    public Builder setEmptyDir(com.google.cloud.run.v2.EmptyDirVolumeSource value) {
+      if (emptyDirBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        volumeType_ = value;
+        onChanged();
+      } else {
+        emptyDirBuilder_.setMessage(value);
+      }
+      volumeTypeCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ephemeral storage used as a shared volume.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+     */
+    public Builder setEmptyDir(
+        com.google.cloud.run.v2.EmptyDirVolumeSource.Builder builderForValue) {
+      if (emptyDirBuilder_ == null) {
+        volumeType_ = builderForValue.build();
+        onChanged();
+      } else {
+        emptyDirBuilder_.setMessage(builderForValue.build());
+      }
+      volumeTypeCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ephemeral storage used as a shared volume.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+     */
+    public Builder mergeEmptyDir(com.google.cloud.run.v2.EmptyDirVolumeSource value) {
+      if (emptyDirBuilder_ == null) {
+        if (volumeTypeCase_ == 4
+            && volumeType_ != com.google.cloud.run.v2.EmptyDirVolumeSource.getDefaultInstance()) {
+          volumeType_ =
+              com.google.cloud.run.v2.EmptyDirVolumeSource.newBuilder(
+                      (com.google.cloud.run.v2.EmptyDirVolumeSource) volumeType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          volumeType_ = value;
+        }
+        onChanged();
+      } else {
+        if (volumeTypeCase_ == 4) {
+          emptyDirBuilder_.mergeFrom(value);
+        } else {
+          emptyDirBuilder_.setMessage(value);
+        }
+      }
+      volumeTypeCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ephemeral storage used as a shared volume.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+     */
+    public Builder clearEmptyDir() {
+      if (emptyDirBuilder_ == null) {
+        if (volumeTypeCase_ == 4) {
+          volumeTypeCase_ = 0;
+          volumeType_ = null;
+          onChanged();
+        }
+      } else {
+        if (volumeTypeCase_ == 4) {
+          volumeTypeCase_ = 0;
+          volumeType_ = null;
+        }
+        emptyDirBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ephemeral storage used as a shared volume.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+     */
+    public com.google.cloud.run.v2.EmptyDirVolumeSource.Builder getEmptyDirBuilder() {
+      return getEmptyDirFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ephemeral storage used as a shared volume.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.EmptyDirVolumeSourceOrBuilder getEmptyDirOrBuilder() {
+      if ((volumeTypeCase_ == 4) && (emptyDirBuilder_ != null)) {
+        return emptyDirBuilder_.getMessageOrBuilder();
+      } else {
+        if (volumeTypeCase_ == 4) {
+          return (com.google.cloud.run.v2.EmptyDirVolumeSource) volumeType_;
+        }
+        return com.google.cloud.run.v2.EmptyDirVolumeSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Ephemeral storage used as a shared volume.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.EmptyDirVolumeSource,
+            com.google.cloud.run.v2.EmptyDirVolumeSource.Builder,
+            com.google.cloud.run.v2.EmptyDirVolumeSourceOrBuilder>
+        getEmptyDirFieldBuilder() {
+      if (emptyDirBuilder_ == null) {
+        if (!(volumeTypeCase_ == 4)) {
+          volumeType_ = com.google.cloud.run.v2.EmptyDirVolumeSource.getDefaultInstance();
+        }
+        emptyDirBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.EmptyDirVolumeSource,
+                com.google.cloud.run.v2.EmptyDirVolumeSource.Builder,
+                com.google.cloud.run.v2.EmptyDirVolumeSourceOrBuilder>(
+                (com.google.cloud.run.v2.EmptyDirVolumeSource) volumeType_,
+                getParentForChildren(),
+                isClean());
+        volumeType_ = null;
+      }
+      volumeTypeCase_ = 4;
+      onChanged();
+      return emptyDirBuilder_;
     }
 
     @java.lang.Override

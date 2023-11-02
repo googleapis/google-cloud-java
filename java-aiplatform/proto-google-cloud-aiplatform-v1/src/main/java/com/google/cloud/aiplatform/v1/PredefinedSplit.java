@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.aiplatform.v1;
  * <pre>
  * Assigns input data to training, validation, and test sets based on the
  * value of a provided key.
+ *
  * Supported only for tabular Datasets.
  * </pre>
  *
@@ -47,11 +48,6 @@ public final class PredefinedSplit extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PredefinedSplit();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -295,6 +291,7 @@ public final class PredefinedSplit extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Assigns input data to training, validation, and test sets based on the
    * value of a provided key.
+   *
    * Supported only for tabular Datasets.
    * </pre>
    *

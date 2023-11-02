@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.documentai.v1.BatchProcessMetadata;
 import com.google.cloud.documentai.v1.BatchProcessRequest;
@@ -85,7 +86,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -502,9 +502,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(processDocumentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<BatchProcessRequest, Operation> batchProcessDocumentsTransportSettings =
@@ -512,9 +512,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(batchProcessDocumentsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
@@ -523,9 +523,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(fetchProcessorTypesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListProcessorTypesRequest, ListProcessorTypesResponse>
@@ -534,9 +534,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(listProcessorTypesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetProcessorTypeRequest, ProcessorType> getProcessorTypeTransportSettings =
@@ -544,9 +544,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(getProcessorTypeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListProcessorsRequest, ListProcessorsResponse>
@@ -555,9 +555,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(listProcessorsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetProcessorRequest, Processor> getProcessorTransportSettings =
@@ -565,9 +565,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(getProcessorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TrainProcessorVersionRequest, Operation>
@@ -576,9 +576,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(trainProcessorVersionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetProcessorVersionRequest, ProcessorVersion>
@@ -587,9 +587,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(getProcessorVersionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListProcessorVersionsRequest, ListProcessorVersionsResponse>
@@ -599,9 +599,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(listProcessorVersionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteProcessorVersionRequest, Operation>
@@ -610,9 +610,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(deleteProcessorVersionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeployProcessorVersionRequest, Operation>
@@ -621,9 +621,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(deployProcessorVersionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UndeployProcessorVersionRequest, Operation>
@@ -632,9 +632,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(undeployProcessorVersionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateProcessorRequest, Processor> createProcessorTransportSettings =
@@ -642,9 +642,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(createProcessorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteProcessorRequest, Operation> deleteProcessorTransportSettings =
@@ -652,9 +652,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(deleteProcessorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<EnableProcessorRequest, Operation> enableProcessorTransportSettings =
@@ -662,9 +662,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(enableProcessorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DisableProcessorRequest, Operation> disableProcessorTransportSettings =
@@ -672,9 +672,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(disableProcessorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetDefaultProcessorVersionRequest, Operation>
@@ -683,9 +683,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(setDefaultProcessorVersionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("processor", String.valueOf(request.getProcessor()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("processor", String.valueOf(request.getProcessor()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ReviewDocumentRequest, Operation> reviewDocumentTransportSettings =
@@ -693,9 +693,10 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(reviewDocumentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("human_review_config", String.valueOf(request.getHumanReviewConfig()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "human_review_config", String.valueOf(request.getHumanReviewConfig()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<EvaluateProcessorVersionRequest, Operation>
@@ -704,10 +705,10 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(evaluateProcessorVersionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "processor_version", String.valueOf(request.getProcessorVersion()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
@@ -715,9 +716,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(getEvaluationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListEvaluationsRequest, ListEvaluationsResponse>
@@ -726,9 +727,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                 .setMethodDescriptor(listEvaluationsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -736,9 +737,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -746,9 +747,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

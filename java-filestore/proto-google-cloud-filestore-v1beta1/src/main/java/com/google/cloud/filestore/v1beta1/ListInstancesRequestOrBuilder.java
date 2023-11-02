@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,10 +27,11 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location for which to retrieve instance information,
-   * in the format `projects/{project_id}/locations/{location}`. In Cloud
-   * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-   * retrieve instance information for all locations, use "-" for the
+   * Required. The project and location for which to retrieve instance
+   * information, in the format `projects/{project_id}/locations/{location}`. In
+   * Cloud Filestore, locations map to Google Cloud zones, for example
+   * **us-west1-b**. To retrieve instance information for all locations, use "-"
+   * for the
    * `{location}` value.
    * </pre>
    *
@@ -45,10 +46,11 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location for which to retrieve instance information,
-   * in the format `projects/{project_id}/locations/{location}`. In Cloud
-   * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-   * retrieve instance information for all locations, use "-" for the
+   * Required. The project and location for which to retrieve instance
+   * information, in the format `projects/{project_id}/locations/{location}`. In
+   * Cloud Filestore, locations map to Google Cloud zones, for example
+   * **us-west1-b**. To retrieve instance information for all locations, use "-"
+   * for the
    * `{location}` value.
    * </pre>
    *

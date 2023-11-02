@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SkippedShipment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -209,11 +204,6 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       return new Reason();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.optimization.v1.FleetRoutingProto
           .internal_static_google_cloud_optimization_v1_SkippedShipment_Reason_descriptor;
@@ -281,6 +271,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * the vehicle's `start_location` to the shipment's pickup and/or delivery
        * locations and to the vehicle's end location exceeds the vehicle's
        * `route_distance_limit`.
+       *
        * Note that for this computation we use the geodesic distances.
        * </pre>
        *
@@ -294,6 +285,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * The minimum time necessary to perform this shipment, including travel
        * time, wait time and service time exceeds the vehicle's
        * `route_duration_limit`.
+       *
        * Note: travel time is computed in the best-case scenario, namely as
        * geodesic distance x 36 m/s (roughly 130 km/hour).
        * </pre>
@@ -379,6 +371,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * the vehicle's `start_location` to the shipment's pickup and/or delivery
        * locations and to the vehicle's end location exceeds the vehicle's
        * `route_distance_limit`.
+       *
        * Note that for this computation we use the geodesic distances.
        * </pre>
        *
@@ -392,6 +385,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * The minimum time necessary to perform this shipment, including travel
        * time, wait time and service time exceeds the vehicle's
        * `route_duration_limit`.
+       *
        * Note: travel time is computed in the best-case scenario, namely as
        * geodesic distance x 36 m/s (roughly 130 km/hour).
        * </pre>

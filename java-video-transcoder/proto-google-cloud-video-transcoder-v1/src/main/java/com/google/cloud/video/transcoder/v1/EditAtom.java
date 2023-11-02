@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
 
   private EditAtom() {
     key_ = "";
-    inputs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    inputs_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EditAtom();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -124,7 +119,8 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
   public static final int INPUTS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList inputs_;
+  private com.google.protobuf.LazyStringArrayList inputs_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -540,8 +536,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       key_ = "";
-      inputs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      inputs_ = com.google.protobuf.LazyStringArrayList.emptyList();
       endTimeOffset_ = null;
       if (endTimeOffsetBuilder_ != null) {
         endTimeOffsetBuilder_.dispose();
@@ -579,7 +574,6 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.EditAtom buildPartial() {
       com.google.cloud.video.transcoder.v1.EditAtom result =
           new com.google.cloud.video.transcoder.v1.EditAtom(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -587,18 +581,14 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.video.transcoder.v1.EditAtom result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        inputs_ = inputs_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.inputs_ = inputs_;
-    }
-
     private void buildPartial0(com.google.cloud.video.transcoder.v1.EditAtom result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.key_ = key_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        inputs_.makeImmutable();
+        result.inputs_ = inputs_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.endTimeOffset_ =
@@ -663,7 +653,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       if (!other.inputs_.isEmpty()) {
         if (inputs_.isEmpty()) {
           inputs_ = other.inputs_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureInputsIsMutable();
           inputs_.addAll(other.inputs_);
@@ -857,14 +847,14 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList inputs_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList inputs_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInputsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!inputs_.isModifiable()) {
         inputs_ = new com.google.protobuf.LazyStringArrayList(inputs_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -879,7 +869,8 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the inputs.
      */
     public com.google.protobuf.ProtocolStringList getInputsList() {
-      return inputs_.getUnmodifiableView();
+      inputs_.makeImmutable();
+      return inputs_;
     }
     /**
      *
@@ -948,6 +939,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInputsIsMutable();
       inputs_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -970,6 +962,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInputsIsMutable();
       inputs_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -989,6 +982,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInputs(java.lang.Iterable<java.lang.String> values) {
       ensureInputsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inputs_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1005,8 +999,9 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInputs() {
-      inputs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      inputs_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1030,6 +1025,7 @@ public final class EditAtom extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInputsIsMutable();
       inputs_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

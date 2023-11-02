@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ConversationParticipant();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -273,6 +268,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
   }
 
   private int participantCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object participant_;
 
   public enum ParticipantCase
@@ -479,7 +476,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
    *
    * @deprecated
    *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
-   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1186
+   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1222
    * @return The dialogflowParticipant.
    */
   @java.lang.Override
@@ -508,7 +505,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
    *
    * @deprecated
    *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
-   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1186
+   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1222
    * @return The bytes for dialogflowParticipant.
    */
   @java.lang.Override
@@ -1400,7 +1397,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1186
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1222
      * @return The dialogflowParticipant.
      */
     @java.lang.Deprecated
@@ -1428,7 +1425,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1186
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1222
      * @return The bytes for dialogflowParticipant.
      */
     @java.lang.Deprecated
@@ -1456,7 +1453,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1186
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1222
      * @param value The dialogflowParticipant to set.
      * @return This builder for chaining.
      */
@@ -1483,7 +1480,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1186
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1222
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1506,7 +1503,7 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      *
      * @deprecated
      *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1186
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1222
      * @param value The bytes for dialogflowParticipant to set.
      * @return This builder for chaining.
      */

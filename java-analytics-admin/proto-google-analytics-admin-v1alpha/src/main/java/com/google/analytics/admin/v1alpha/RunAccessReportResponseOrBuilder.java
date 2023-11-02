@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,6 +216,7 @@ public interface RunAccessReportResponseOrBuilder
    * parameter, and the `offset` request parameter. For example if a query
    * returns 175 rows and includes `limit` of 50 in the API request, the
    * response will contain `rowCount` of 175 but only 50 rows.
+   *
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>

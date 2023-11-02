@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.lifesciences.v2beta;
  *
  * <pre>
  * Configuration for a persistent disk to be attached to the VM.
+ *
  * See https://cloud.google.com/compute/docs/disks/performance for more
  * information about disk type, size, and performance considerations.
  * </pre>
@@ -50,11 +51,6 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
     return new PersistentDisk();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.lifesciences.v2beta.WorkflowsProto
         .internal_static_google_cloud_lifesciences_v2beta_PersistentDisk_descriptor;
@@ -78,6 +74,7 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The size, in GB, of the disk to attach. If the size is not
    * specified, a default is chosen to ensure reasonable I/O performance.
+   *
    * If the disk type is specified as `local-ssd`, multiple local drives are
    * automatically combined to provide the requested size. Note, however, that
    * each physical SSD is 375GB in size, and no more than 8 drives can be
@@ -377,6 +374,7 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration for a persistent disk to be attached to the VM.
+   *
    * See https://cloud.google.com/compute/docs/disks/performance for more
    * information about disk type, size, and performance considerations.
    * </pre>
@@ -592,6 +590,7 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The size, in GB, of the disk to attach. If the size is not
      * specified, a default is chosen to ensure reasonable I/O performance.
+     *
      * If the disk type is specified as `local-ssd`, multiple local drives are
      * automatically combined to provide the requested size. Note, however, that
      * each physical SSD is 375GB in size, and no more than 8 drives can be
@@ -612,6 +611,7 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The size, in GB, of the disk to attach. If the size is not
      * specified, a default is chosen to ensure reasonable I/O performance.
+     *
      * If the disk type is specified as `local-ssd`, multiple local drives are
      * automatically combined to provide the requested size. Note, however, that
      * each physical SSD is 375GB in size, and no more than 8 drives can be
@@ -636,6 +636,7 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The size, in GB, of the disk to attach. If the size is not
      * specified, a default is chosen to ensure reasonable I/O performance.
+     *
      * If the disk type is specified as `local-ssd`, multiple local drives are
      * automatically combined to provide the requested size. Note, however, that
      * each physical SSD is 375GB in size, and no more than 8 drives can be

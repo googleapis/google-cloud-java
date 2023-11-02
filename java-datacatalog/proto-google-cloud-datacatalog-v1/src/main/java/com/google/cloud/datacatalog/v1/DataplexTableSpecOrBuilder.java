@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface DataplexTableSpecOrBuilder
    * <pre>
    * List of external tables registered by Dataplex in other systems based on
    * the same underlying data.
+   *
    * External tables allow to query this data in those systems.
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface DataplexTableSpecOrBuilder
    * <pre>
    * List of external tables registered by Dataplex in other systems based on
    * the same underlying data.
+   *
    * External tables allow to query this data in those systems.
    * </pre>
    *
@@ -53,6 +55,7 @@ public interface DataplexTableSpecOrBuilder
    * <pre>
    * List of external tables registered by Dataplex in other systems based on
    * the same underlying data.
+   *
    * External tables allow to query this data in those systems.
    * </pre>
    *
@@ -65,6 +68,7 @@ public interface DataplexTableSpecOrBuilder
    * <pre>
    * List of external tables registered by Dataplex in other systems based on
    * the same underlying data.
+   *
    * External tables allow to query this data in those systems.
    * </pre>
    *
@@ -78,6 +82,7 @@ public interface DataplexTableSpecOrBuilder
    * <pre>
    * List of external tables registered by Dataplex in other systems based on
    * the same underlying data.
+   *
    * External tables allow to query this data in those systems.
    * </pre>
    *

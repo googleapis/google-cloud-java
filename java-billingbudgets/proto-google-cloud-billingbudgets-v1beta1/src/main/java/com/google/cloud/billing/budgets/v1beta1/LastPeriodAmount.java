@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,13 +22,15 @@ package com.google.cloud.billing.budgets.v1beta1;
  *
  *
  * <pre>
- * Describes a budget amount targeted to the last [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period]
+ * Describes a budget amount targeted to the last
+ * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period]
  * spend. At this time, the amount is automatically 100% of the last calendar
  * period's spend; that is, there are no other options yet.
  * Future configuration options will be described here (for example, configuring
  * a percentage of last period's spend).
  * LastPeriodAmount cannot be set for a budget configured with
- * a [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
+ * a
+ * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
  * </pre>
  *
  * Protobuf type {@code google.cloud.billing.budgets.v1beta1.LastPeriodAmount}
@@ -49,11 +51,6 @@ public final class LastPeriodAmount extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LastPeriodAmount();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -226,13 +223,15 @@ public final class LastPeriodAmount extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Describes a budget amount targeted to the last [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period]
+   * Describes a budget amount targeted to the last
+   * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period]
    * spend. At this time, the amount is automatically 100% of the last calendar
    * period's spend; that is, there are no other options yet.
    * Future configuration options will be described here (for example, configuring
    * a percentage of last period's spend).
    * LastPeriodAmount cannot be set for a budget configured with
-   * a [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
+   * a
+   * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
    * </pre>
    *
    * Protobuf type {@code google.cloud.billing.budgets.v1beta1.LastPeriodAmount}

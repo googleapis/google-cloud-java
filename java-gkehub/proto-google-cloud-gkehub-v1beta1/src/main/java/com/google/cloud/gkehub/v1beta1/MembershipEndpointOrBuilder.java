@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -281,6 +281,7 @@ public interface MembershipEndpointOrBuilder
    * <pre>
    * Optional. The in-cluster Kubernetes Resources that should be applied for a
    * correctly registered cluster, in the steady state. These resources:
+   *
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -301,6 +302,7 @@ public interface MembershipEndpointOrBuilder
    * <pre>
    * Optional. The in-cluster Kubernetes Resources that should be applied for a
    * correctly registered cluster, in the steady state. These resources:
+   *
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -321,6 +323,7 @@ public interface MembershipEndpointOrBuilder
    * <pre>
    * Optional. The in-cluster Kubernetes Resources that should be applied for a
    * correctly registered cluster, in the steady state. These resources:
+   *
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -334,5 +337,5 @@ public interface MembershipEndpointOrBuilder
    */
   com.google.cloud.gkehub.v1beta1.KubernetesResourceOrBuilder getKubernetesResourceOrBuilder();
 
-  public com.google.cloud.gkehub.v1beta1.MembershipEndpoint.TypeCase getTypeCase();
+  com.google.cloud.gkehub.v1beta1.MembershipEndpoint.TypeCase getTypeCase();
 }

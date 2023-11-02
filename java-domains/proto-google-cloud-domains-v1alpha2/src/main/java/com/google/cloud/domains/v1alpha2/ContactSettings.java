@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.domains.v1alpha2;
  *
  * <pre>
  * Defines the contact information associated with a `Registration`.
+ *
  * [ICANN](https://icann.org/) requires all domain names to have associated
  * contact information. The `registrant_contact` is considered the
  * domain's legal owner, and often the other contacts are identical.
@@ -48,11 +49,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ContactSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -224,11 +220,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Contact();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1525,8 +1516,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The registrant contact for the `Registration`.
+   *
    * *Caution: Anyone with access to this email address, phone number,
    * and/or postal address can take control of the domain.*
+   *
    * *Warning: For new `Registration`s, the registrant receives an email
    * confirmation that they must complete within 15 days to avoid domain
    * suspension.*
@@ -1547,8 +1540,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The registrant contact for the `Registration`.
+   *
    * *Caution: Anyone with access to this email address, phone number,
    * and/or postal address can take control of the domain.*
+   *
    * *Warning: For new `Registration`s, the registrant receives an email
    * confirmation that they must complete within 15 days to avoid domain
    * suspension.*
@@ -1571,8 +1566,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The registrant contact for the `Registration`.
+   *
    * *Caution: Anyone with access to this email address, phone number,
    * and/or postal address can take control of the domain.*
+   *
    * *Warning: For new `Registration`s, the registrant receives an email
    * confirmation that they must complete within 15 days to avoid domain
    * suspension.*
@@ -1914,6 +1911,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Defines the contact information associated with a `Registration`.
+   *
    * [ICANN](https://icann.org/) requires all domain names to have associated
    * contact information. The `registrant_contact` is considered the
    * domain's legal owner, and often the other contacts are identical.
@@ -2264,8 +2262,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The registrant contact for the `Registration`.
+     *
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
+     *
      * *Warning: For new `Registration`s, the registrant receives an email
      * confirmation that they must complete within 15 days to avoid domain
      * suspension.*
@@ -2285,8 +2285,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The registrant contact for the `Registration`.
+     *
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
+     *
      * *Warning: For new `Registration`s, the registrant receives an email
      * confirmation that they must complete within 15 days to avoid domain
      * suspension.*
@@ -2312,8 +2314,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The registrant contact for the `Registration`.
+     *
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
+     *
      * *Warning: For new `Registration`s, the registrant receives an email
      * confirmation that they must complete within 15 days to avoid domain
      * suspension.*
@@ -2342,8 +2346,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The registrant contact for the `Registration`.
+     *
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
+     *
      * *Warning: For new `Registration`s, the registrant receives an email
      * confirmation that they must complete within 15 days to avoid domain
      * suspension.*
@@ -2369,8 +2375,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The registrant contact for the `Registration`.
+     *
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
+     *
      * *Warning: For new `Registration`s, the registrant receives an email
      * confirmation that they must complete within 15 days to avoid domain
      * suspension.*
@@ -2403,8 +2411,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The registrant contact for the `Registration`.
+     *
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
+     *
      * *Warning: For new `Registration`s, the registrant receives an email
      * confirmation that they must complete within 15 days to avoid domain
      * suspension.*
@@ -2429,8 +2439,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The registrant contact for the `Registration`.
+     *
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
+     *
      * *Warning: For new `Registration`s, the registrant receives an email
      * confirmation that they must complete within 15 days to avoid domain
      * suspension.*
@@ -2451,8 +2463,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The registrant contact for the `Registration`.
+     *
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
+     *
      * *Warning: For new `Registration`s, the registrant receives an email
      * confirmation that they must complete within 15 days to avoid domain
      * suspension.*
@@ -2477,8 +2491,10 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The registrant contact for the `Registration`.
+     *
      * *Caution: Anyone with access to this email address, phone number,
      * and/or postal address can take control of the domain.*
+     *
      * *Warning: For new `Registration`s, the registrant receives an email
      * confirmation that they must complete within 15 days to avoid domain
      * suspension.*

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface EventSegmentConditionGroupOrBuilder
    *
    * <pre>
    * `conditionScoping` should always be `EVENT_CRITERIA_WITHIN_SAME_EVENT`.
+   *
    * Optional. If unspecified, a `conditionScoping` of
    * `EVENT_CRITERIA_WITHIN_SAME_EVENT` is used.
    * </pre>
@@ -42,6 +43,7 @@ public interface EventSegmentConditionGroupOrBuilder
    *
    * <pre>
    * `conditionScoping` should always be `EVENT_CRITERIA_WITHIN_SAME_EVENT`.
+   *
    * Optional. If unspecified, a `conditionScoping` of
    * `EVENT_CRITERIA_WITHIN_SAME_EVENT` is used.
    * </pre>

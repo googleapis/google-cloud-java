@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ public interface CreateTagTemplateFieldRequestOrBuilder
    * <pre>
    * Required. The name of the project and the template location
    * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
+   *
    * Example:
+   *
    * * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
    * </pre>
    *
@@ -46,7 +48,9 @@ public interface CreateTagTemplateFieldRequestOrBuilder
    * <pre>
    * Required. The name of the project and the template location
    * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
+   *
    * Example:
+   *
    * * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
    * </pre>
    *

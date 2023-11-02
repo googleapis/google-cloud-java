@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,8 +91,10 @@ public interface CohortOrBuilder
    * cohort report, this `dateRange` is extended by the granularity and offset
    * present in the `cohortsRange`; event data for the extended reporting date
    * range is present in a cohort report.
+   *
    * In a cohort request, this `dateRange` is required and the `dateRanges` in
    * the `RunReportRequest` or `RunPivotReportRequest` must be unspecified.
+   *
    * This `dateRange` should generally be aligned with the cohort's granularity.
    * If `CohortsRange` uses daily granularity, this `dateRange` can be a single
    * day. If `CohortsRange` uses weekly granularity, this `dateRange` can be
@@ -116,8 +118,10 @@ public interface CohortOrBuilder
    * cohort report, this `dateRange` is extended by the granularity and offset
    * present in the `cohortsRange`; event data for the extended reporting date
    * range is present in a cohort report.
+   *
    * In a cohort request, this `dateRange` is required and the `dateRanges` in
    * the `RunReportRequest` or `RunPivotReportRequest` must be unspecified.
+   *
    * This `dateRange` should generally be aligned with the cohort's granularity.
    * If `CohortsRange` uses daily granularity, this `dateRange` can be a single
    * day. If `CohortsRange` uses weekly granularity, this `dateRange` can be
@@ -141,8 +145,10 @@ public interface CohortOrBuilder
    * cohort report, this `dateRange` is extended by the granularity and offset
    * present in the `cohortsRange`; event data for the extended reporting date
    * range is present in a cohort report.
+   *
    * In a cohort request, this `dateRange` is required and the `dateRanges` in
    * the `RunReportRequest` or `RunPivotReportRequest` must be unspecified.
+   *
    * This `dateRange` should generally be aligned with the cohort's granularity.
    * If `CohortsRange` uses daily granularity, this `dateRange` can be a single
    * day. If `CohortsRange` uses weekly granularity, this `dateRange` can be

@@ -52,11 +52,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     return new Occurrence();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_Occurrence_descriptor;
   }
@@ -70,6 +65,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int detailsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object details_;
 
   public enum DetailsCase

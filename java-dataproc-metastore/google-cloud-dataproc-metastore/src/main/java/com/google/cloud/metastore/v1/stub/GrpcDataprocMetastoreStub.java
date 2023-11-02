@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,14 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest;
+import com.google.cloud.metastore.v1.AlterMetadataResourceLocationResponse;
 import com.google.cloud.metastore.v1.Backup;
 import com.google.cloud.metastore.v1.CreateBackupRequest;
 import com.google.cloud.metastore.v1.CreateMetadataImportRequest;
@@ -50,13 +53,16 @@ import com.google.cloud.metastore.v1.ListServicesRequest;
 import com.google.cloud.metastore.v1.ListServicesResponse;
 import com.google.cloud.metastore.v1.MetadataExport;
 import com.google.cloud.metastore.v1.MetadataImport;
+import com.google.cloud.metastore.v1.MoveTableToDatabaseRequest;
+import com.google.cloud.metastore.v1.MoveTableToDatabaseResponse;
 import com.google.cloud.metastore.v1.OperationMetadata;
+import com.google.cloud.metastore.v1.QueryMetadataRequest;
+import com.google.cloud.metastore.v1.QueryMetadataResponse;
 import com.google.cloud.metastore.v1.Restore;
 import com.google.cloud.metastore.v1.RestoreServiceRequest;
 import com.google.cloud.metastore.v1.Service;
 import com.google.cloud.metastore.v1.UpdateMetadataImportRequest;
 import com.google.cloud.metastore.v1.UpdateServiceRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -224,6 +230,37 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<QueryMetadataRequest, Operation>
+      queryMetadataMethodDescriptor =
+          MethodDescriptor.<QueryMetadataRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.metastore.v1.DataprocMetastore/QueryMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<MoveTableToDatabaseRequest, Operation>
+      moveTableToDatabaseMethodDescriptor =
+          MethodDescriptor.<MoveTableToDatabaseRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.metastore.v1.DataprocMetastore/MoveTableToDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MoveTableToDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationMethodDescriptor =
+          MethodDescriptor.<AlterMetadataResourceLocationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.metastore.v1.DataprocMetastore/AlterMetadataResourceLocation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AlterMetadataResourceLocationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -310,6 +347,20 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
   private final UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable;
   private final OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
       deleteBackupOperationCallable;
+  private final UnaryCallable<QueryMetadataRequest, Operation> queryMetadataCallable;
+  private final OperationCallable<QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+      queryMetadataOperationCallable;
+  private final UnaryCallable<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseCallable;
+  private final OperationCallable<
+          MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseOperationCallable;
+  private final UnaryCallable<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationCallable;
+  private final OperationCallable<
+          AlterMetadataResourceLocationRequest,
+          AlterMetadataResourceLocationResponse,
+          OperationMetadata>
+      alterMetadataResourceLocationOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -368,9 +419,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(listServicesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
@@ -378,9 +429,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(getServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateServiceRequest, Operation> createServiceTransportSettings =
@@ -388,9 +439,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(createServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateServiceRequest, Operation> updateServiceTransportSettings =
@@ -398,9 +449,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(updateServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service.name", String.valueOf(request.getService().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service.name", String.valueOf(request.getService().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteServiceRequest, Operation> deleteServiceTransportSettings =
@@ -408,9 +459,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(deleteServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListMetadataImportsRequest, ListMetadataImportsResponse>
@@ -419,9 +470,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                 .setMethodDescriptor(listMetadataImportsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetMetadataImportRequest, MetadataImport> getMetadataImportTransportSettings =
@@ -429,9 +480,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(getMetadataImportMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateMetadataImportRequest, Operation> createMetadataImportTransportSettings =
@@ -439,9 +490,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(createMetadataImportMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateMetadataImportRequest, Operation> updateMetadataImportTransportSettings =
@@ -449,11 +500,11 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(updateMetadataImportMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "metadata_import.name",
                       String.valueOf(request.getMetadataImport().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ExportMetadataRequest, Operation> exportMetadataTransportSettings =
@@ -461,9 +512,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(exportMetadataMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service", String.valueOf(request.getService()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service", String.valueOf(request.getService()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RestoreServiceRequest, Operation> restoreServiceTransportSettings =
@@ -471,9 +522,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(restoreServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service", String.valueOf(request.getService()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service", String.valueOf(request.getService()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
@@ -481,9 +532,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(listBackupsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
@@ -491,9 +542,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(getBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
@@ -501,9 +552,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(createBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
@@ -511,19 +562,50 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(deleteBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
+    GrpcCallSettings<QueryMetadataRequest, Operation> queryMetadataTransportSettings =
+        GrpcCallSettings.<QueryMetadataRequest, Operation>newBuilder()
+            .setMethodDescriptor(queryMetadataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service", String.valueOf(request.getService()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseTransportSettings =
+        GrpcCallSettings.<MoveTableToDatabaseRequest, Operation>newBuilder()
+            .setMethodDescriptor(moveTableToDatabaseMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("service", String.valueOf(request.getService()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<AlterMetadataResourceLocationRequest, Operation>
+        alterMetadataResourceLocationTransportSettings =
+            GrpcCallSettings.<AlterMetadataResourceLocationRequest, Operation>newBuilder()
+                .setMethodDescriptor(alterMetadataResourceLocationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("service", String.valueOf(request.getService()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -531,9 +613,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -541,9 +623,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -551,9 +633,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -562,9 +644,9 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 
@@ -684,6 +766,37 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
         callableFactory.createOperationCallable(
             deleteBackupTransportSettings,
             settings.deleteBackupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.queryMetadataCallable =
+        callableFactory.createUnaryCallable(
+            queryMetadataTransportSettings, settings.queryMetadataSettings(), clientContext);
+    this.queryMetadataOperationCallable =
+        callableFactory.createOperationCallable(
+            queryMetadataTransportSettings,
+            settings.queryMetadataOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.moveTableToDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            moveTableToDatabaseTransportSettings,
+            settings.moveTableToDatabaseSettings(),
+            clientContext);
+    this.moveTableToDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            moveTableToDatabaseTransportSettings,
+            settings.moveTableToDatabaseOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.alterMetadataResourceLocationCallable =
+        callableFactory.createUnaryCallable(
+            alterMetadataResourceLocationTransportSettings,
+            settings.alterMetadataResourceLocationSettings(),
+            clientContext);
+    this.alterMetadataResourceLocationOperationCallable =
+        callableFactory.createOperationCallable(
+            alterMetadataResourceLocationTransportSettings,
+            settings.alterMetadataResourceLocationOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -859,6 +972,44 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
   public OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
       deleteBackupOperationCallable() {
     return deleteBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryMetadataRequest, Operation> queryMetadataCallable() {
+    return queryMetadataCallable;
+  }
+
+  @Override
+  public OperationCallable<QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+      queryMetadataOperationCallable() {
+    return queryMetadataOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseCallable() {
+    return moveTableToDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseOperationCallable() {
+    return moveTableToDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationCallable() {
+    return alterMetadataResourceLocationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          AlterMetadataResourceLocationRequest,
+          AlterMetadataResourceLocationResponse,
+          OperationMetadata>
+      alterMetadataResourceLocationOperationCallable() {
+    return alterMetadataResourceLocationOperationCallable;
   }
 
   @Override

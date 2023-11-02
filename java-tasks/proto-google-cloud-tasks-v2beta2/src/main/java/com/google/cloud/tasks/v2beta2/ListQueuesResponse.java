@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListQueuesResponse extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListQueuesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -149,11 +144,14 @@ public final class ListQueuesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * A token to retrieve next page of results.
+   *
    * To return the next page of results, call
    * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] with this
    * value as the
    * [page_token][google.cloud.tasks.v2beta2.ListQueuesRequest.page_token].
+   *
    * If the next_page_token is empty, there are no more results.
+   *
    * The page token is valid for only 2 hours.
    * </pre>
    *
@@ -178,11 +176,14 @@ public final class ListQueuesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * A token to retrieve next page of results.
+   *
    * To return the next page of results, call
    * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] with this
    * value as the
    * [page_token][google.cloud.tasks.v2beta2.ListQueuesRequest.page_token].
+   *
    * If the next_page_token is empty, there are no more results.
+   *
    * The page token is valid for only 2 hours.
    * </pre>
    *
@@ -972,11 +973,14 @@ public final class ListQueuesResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A token to retrieve next page of results.
+     *
      * To return the next page of results, call
      * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] with this
      * value as the
      * [page_token][google.cloud.tasks.v2beta2.ListQueuesRequest.page_token].
+     *
      * If the next_page_token is empty, there are no more results.
+     *
      * The page token is valid for only 2 hours.
      * </pre>
      *
@@ -1000,11 +1004,14 @@ public final class ListQueuesResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A token to retrieve next page of results.
+     *
      * To return the next page of results, call
      * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] with this
      * value as the
      * [page_token][google.cloud.tasks.v2beta2.ListQueuesRequest.page_token].
+     *
      * If the next_page_token is empty, there are no more results.
+     *
      * The page token is valid for only 2 hours.
      * </pre>
      *
@@ -1028,11 +1035,14 @@ public final class ListQueuesResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A token to retrieve next page of results.
+     *
      * To return the next page of results, call
      * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] with this
      * value as the
      * [page_token][google.cloud.tasks.v2beta2.ListQueuesRequest.page_token].
+     *
      * If the next_page_token is empty, there are no more results.
+     *
      * The page token is valid for only 2 hours.
      * </pre>
      *
@@ -1055,11 +1065,14 @@ public final class ListQueuesResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A token to retrieve next page of results.
+     *
      * To return the next page of results, call
      * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] with this
      * value as the
      * [page_token][google.cloud.tasks.v2beta2.ListQueuesRequest.page_token].
+     *
      * If the next_page_token is empty, there are no more results.
+     *
      * The page token is valid for only 2 hours.
      * </pre>
      *
@@ -1078,11 +1091,14 @@ public final class ListQueuesResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A token to retrieve next page of results.
+     *
      * To return the next page of results, call
      * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] with this
      * value as the
      * [page_token][google.cloud.tasks.v2beta2.ListQueuesRequest.page_token].
+     *
      * If the next_page_token is empty, there are no more results.
+     *
      * The page token is valid for only 2 hours.
      * </pre>
      *

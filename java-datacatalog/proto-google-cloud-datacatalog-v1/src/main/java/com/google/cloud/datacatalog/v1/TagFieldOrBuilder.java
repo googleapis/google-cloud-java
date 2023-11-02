@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,6 +78,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * The value of a tag field with a string type.
+   *
    * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
@@ -91,6 +92,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * The value of a tag field with a string type.
+   *
    * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
@@ -104,6 +106,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * The value of a tag field with a string type.
+   *
    * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
@@ -178,6 +181,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * The value of a tag field with an enum type.
+   *
    * This value must be one of the allowed values listed in this enum.
    * </pre>
    *
@@ -191,6 +195,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * The value of a tag field with an enum type.
+   *
    * This value must be one of the allowed values listed in this enum.
    * </pre>
    *
@@ -204,6 +209,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * The value of a tag field with an enum type.
+   *
    * This value must be one of the allowed values listed in this enum.
    * </pre>
    *
@@ -216,6 +222,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * The value of a tag field with a rich text type.
+   *
    * The maximum length is 10 MiB as this value holds HTML descriptions
    * including encoded images. The maximum length of the text without images
    * is 100 KiB.
@@ -231,6 +238,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * The value of a tag field with a rich text type.
+   *
    * The maximum length is 10 MiB as this value holds HTML descriptions
    * including encoded images. The maximum length of the text without images
    * is 100 KiB.
@@ -246,6 +254,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * The value of a tag field with a rich text type.
+   *
    * The maximum length is 10 MiB as this value holds HTML descriptions
    * including encoded images. The maximum length of the text without images
    * is 100 KiB.
@@ -264,6 +273,7 @@ public interface TagFieldOrBuilder
    * Output only. The order of this field with respect to other fields in this
    * tag. Can be set by
    * [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
+   *
    * For example, a higher value can indicate a more important field.
    * The value can be negative. Multiple fields can have the same order, and
    * field orders within a tag don't have to be sequential.
@@ -275,5 +285,5 @@ public interface TagFieldOrBuilder
    */
   int getOrder();
 
-  public com.google.cloud.datacatalog.v1.TagField.KindCase getKindCase();
+  com.google.cloud.datacatalog.v1.TagField.KindCase getKindCase();
 }

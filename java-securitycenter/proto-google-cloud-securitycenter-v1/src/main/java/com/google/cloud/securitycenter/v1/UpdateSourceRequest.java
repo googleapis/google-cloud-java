@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateSourceRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -128,6 +123,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The FieldMask to use when updating the source resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -144,6 +140,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The FieldMask to use when updating the source resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -160,6 +157,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The FieldMask to use when updating the source resource.
+   *
    * If empty all mutable fields will be updated.
    * </pre>
    *
@@ -763,6 +761,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The FieldMask to use when updating the source resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -778,6 +777,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The FieldMask to use when updating the source resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -799,6 +799,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The FieldMask to use when updating the source resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -822,6 +823,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The FieldMask to use when updating the source resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -842,6 +844,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The FieldMask to use when updating the source resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -868,6 +871,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The FieldMask to use when updating the source resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -888,6 +892,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The FieldMask to use when updating the source resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -903,6 +908,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The FieldMask to use when updating the source resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *
@@ -922,6 +928,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The FieldMask to use when updating the source resource.
+     *
      * If empty all mutable fields will be updated.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -194,6 +194,5 @@ public interface CollectUserEventRequestOrBuilder
    */
   com.google.protobuf.ByteString getRawJsonBytes();
 
-  public com.google.cloud.retail.v2beta.CollectUserEventRequest.ConversionRuleCase
-      getConversionRuleCase();
+  com.google.cloud.retail.v2beta.CollectUserEventRequest.ConversionRuleCase getConversionRuleCase();
 }

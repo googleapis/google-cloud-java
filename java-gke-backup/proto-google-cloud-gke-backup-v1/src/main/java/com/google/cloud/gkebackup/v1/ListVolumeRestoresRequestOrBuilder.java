@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface ListVolumeRestoresRequestOrBuilder
    *
    * <pre>
    * Required. The Restore that contains the VolumeRestores to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ListVolumeRestoresRequestOrBuilder
    *
    * <pre>
    * Required. The Restore that contains the VolumeRestores to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
    * </pre>
    *
    * <code>

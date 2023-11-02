@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,6 +101,12 @@ public class RecommenderSettings extends ClientSettings<RecommenderSettings> {
   /** Returns the object with the settings used for calls to getRecommendation. */
   public UnaryCallSettings<GetRecommendationRequest, Recommendation> getRecommendationSettings() {
     return ((RecommenderStubSettings) getStubSettings()).getRecommendationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to markRecommendationDismissed. */
+  public UnaryCallSettings<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedSettings() {
+    return ((RecommenderStubSettings) getStubSettings()).markRecommendationDismissedSettings();
   }
 
   /** Returns the object with the settings used for calls to markRecommendationClaimed. */
@@ -290,6 +296,12 @@ public class RecommenderSettings extends ClientSettings<RecommenderSettings> {
     public UnaryCallSettings.Builder<GetRecommendationRequest, Recommendation>
         getRecommendationSettings() {
       return getStubSettingsBuilder().getRecommendationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to markRecommendationDismissed. */
+    public UnaryCallSettings.Builder<MarkRecommendationDismissedRequest, Recommendation>
+        markRecommendationDismissedSettings() {
+      return getStubSettingsBuilder().markRecommendationDismissedSettings();
     }
 
     /** Returns the builder for the settings used for calls to markRecommendationClaimed. */

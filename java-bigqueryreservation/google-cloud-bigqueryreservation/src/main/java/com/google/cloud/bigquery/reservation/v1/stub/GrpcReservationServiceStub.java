@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.reservation.v1.Assignment;
 import com.google.cloud.bigquery.reservation.v1.BiReservation;
@@ -59,7 +60,6 @@ import com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -410,9 +410,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             .setMethodDescriptor(createReservationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListReservationsRequest, ListReservationsResponse>
@@ -421,9 +421,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(listReservationsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetReservationRequest, Reservation> getReservationTransportSettings =
@@ -431,9 +431,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             .setMethodDescriptor(getReservationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteReservationRequest, Empty> deleteReservationTransportSettings =
@@ -441,9 +441,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             .setMethodDescriptor(deleteReservationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateReservationRequest, Reservation> updateReservationTransportSettings =
@@ -451,10 +451,10 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             .setMethodDescriptor(updateReservationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "reservation.name", String.valueOf(request.getReservation().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateCapacityCommitmentRequest, CapacityCommitment>
@@ -463,9 +463,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(createCapacityCommitmentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
@@ -475,9 +475,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(listCapacityCommitmentsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetCapacityCommitmentRequest, CapacityCommitment>
@@ -486,9 +486,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(getCapacityCommitmentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteCapacityCommitmentRequest, Empty>
@@ -497,9 +497,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(deleteCapacityCommitmentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateCapacityCommitmentRequest, CapacityCommitment>
@@ -508,11 +508,11 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(updateCapacityCommitmentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "capacity_commitment.name",
                           String.valueOf(request.getCapacityCommitment().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<SplitCapacityCommitmentRequest, SplitCapacityCommitmentResponse>
@@ -522,9 +522,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(splitCapacityCommitmentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<MergeCapacityCommitmentsRequest, CapacityCommitment>
@@ -533,9 +533,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(mergeCapacityCommitmentsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateAssignmentRequest, Assignment> createAssignmentTransportSettings =
@@ -543,9 +543,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             .setMethodDescriptor(createAssignmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAssignmentsRequest, ListAssignmentsResponse>
@@ -554,9 +554,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(listAssignmentsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentTransportSettings =
@@ -564,9 +564,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             .setMethodDescriptor(deleteAssignmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SearchAssignmentsRequest, SearchAssignmentsResponse>
@@ -575,9 +575,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(searchAssignmentsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
@@ -586,9 +586,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(searchAllAssignmentsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<MoveAssignmentRequest, Assignment> moveAssignmentTransportSettings =
@@ -596,9 +596,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             .setMethodDescriptor(moveAssignmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateAssignmentRequest, Assignment> updateAssignmentTransportSettings =
@@ -606,9 +606,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             .setMethodDescriptor(updateAssignmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("assignment.name", String.valueOf(request.getAssignment().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("assignment.name", String.valueOf(request.getAssignment().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetBiReservationRequest, BiReservation> getBiReservationTransportSettings =
@@ -616,9 +616,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             .setMethodDescriptor(getBiReservationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateBiReservationRequest, BiReservation>
@@ -627,11 +627,11 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 .setMethodDescriptor(updateBiReservationMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "bi_reservation.name",
                           String.valueOf(request.getBiReservation().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
 

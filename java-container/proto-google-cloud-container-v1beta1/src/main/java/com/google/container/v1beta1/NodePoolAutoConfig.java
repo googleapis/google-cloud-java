@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NodePoolAutoConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -125,6 +120,60 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         : networkTags_;
   }
 
+  public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 2;
+  private com.google.container.v1beta1.ResourceManagerTags resourceManagerTags_;
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+   *
+   * @return Whether the resourceManagerTags field is set.
+   */
+  @java.lang.Override
+  public boolean hasResourceManagerTags() {
+    return resourceManagerTags_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+   *
+   * @return The resourceManagerTags.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ResourceManagerTags getResourceManagerTags() {
+    return resourceManagerTags_ == null
+        ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+        : resourceManagerTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ResourceManagerTagsOrBuilder
+      getResourceManagerTagsOrBuilder() {
+    return resourceManagerTags_ == null
+        ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+        : resourceManagerTags_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -142,6 +191,9 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     if (networkTags_ != null) {
       output.writeMessage(1, getNetworkTags());
     }
+    if (resourceManagerTags_ != null) {
+      output.writeMessage(2, getResourceManagerTags());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -153,6 +205,9 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (networkTags_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getNetworkTags());
+    }
+    if (resourceManagerTags_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getResourceManagerTags());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -174,6 +229,10 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     if (hasNetworkTags()) {
       if (!getNetworkTags().equals(other.getNetworkTags())) return false;
     }
+    if (hasResourceManagerTags() != other.hasResourceManagerTags()) return false;
+    if (hasResourceManagerTags()) {
+      if (!getResourceManagerTags().equals(other.getResourceManagerTags())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -188,6 +247,10 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
     if (hasNetworkTags()) {
       hash = (37 * hash) + NETWORK_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkTags().hashCode();
+    }
+    if (hasResourceManagerTags()) {
+      hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceManagerTags().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -334,6 +397,11 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         networkTagsBuilder_.dispose();
         networkTagsBuilder_ = null;
       }
+      resourceManagerTags_ = null;
+      if (resourceManagerTagsBuilder_ != null) {
+        resourceManagerTagsBuilder_.dispose();
+        resourceManagerTagsBuilder_ = null;
+      }
       return this;
     }
 
@@ -373,6 +441,12 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.networkTags_ =
             networkTagsBuilder_ == null ? networkTags_ : networkTagsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceManagerTags_ =
+            resourceManagerTagsBuilder_ == null
+                ? resourceManagerTags_
+                : resourceManagerTagsBuilder_.build();
       }
     }
 
@@ -425,6 +499,9 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
       if (other.hasNetworkTags()) {
         mergeNetworkTags(other.getNetworkTags());
       }
+      if (other.hasResourceManagerTags()) {
+        mergeResourceManagerTags(other.getResourceManagerTags());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -457,6 +534,13 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getResourceManagerTagsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -685,6 +769,203 @@ public final class NodePoolAutoConfig extends com.google.protobuf.GeneratedMessa
         networkTags_ = null;
       }
       return networkTagsBuilder_;
+    }
+
+    private com.google.container.v1beta1.ResourceManagerTags resourceManagerTags_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ResourceManagerTags,
+            com.google.container.v1beta1.ResourceManagerTags.Builder,
+            com.google.container.v1beta1.ResourceManagerTagsOrBuilder>
+        resourceManagerTagsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+     *
+     * @return Whether the resourceManagerTags field is set.
+     */
+    public boolean hasResourceManagerTags() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+     *
+     * @return The resourceManagerTags.
+     */
+    public com.google.container.v1beta1.ResourceManagerTags getResourceManagerTags() {
+      if (resourceManagerTagsBuilder_ == null) {
+        return resourceManagerTags_ == null
+            ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+            : resourceManagerTags_;
+      } else {
+        return resourceManagerTagsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+     */
+    public Builder setResourceManagerTags(com.google.container.v1beta1.ResourceManagerTags value) {
+      if (resourceManagerTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceManagerTags_ = value;
+      } else {
+        resourceManagerTagsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+     */
+    public Builder setResourceManagerTags(
+        com.google.container.v1beta1.ResourceManagerTags.Builder builderForValue) {
+      if (resourceManagerTagsBuilder_ == null) {
+        resourceManagerTags_ = builderForValue.build();
+      } else {
+        resourceManagerTagsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+     */
+    public Builder mergeResourceManagerTags(
+        com.google.container.v1beta1.ResourceManagerTags value) {
+      if (resourceManagerTagsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && resourceManagerTags_ != null
+            && resourceManagerTags_
+                != com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()) {
+          getResourceManagerTagsBuilder().mergeFrom(value);
+        } else {
+          resourceManagerTags_ = value;
+        }
+      } else {
+        resourceManagerTagsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+     */
+    public Builder clearResourceManagerTags() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      resourceManagerTags_ = null;
+      if (resourceManagerTagsBuilder_ != null) {
+        resourceManagerTagsBuilder_.dispose();
+        resourceManagerTagsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+     */
+    public com.google.container.v1beta1.ResourceManagerTags.Builder
+        getResourceManagerTagsBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getResourceManagerTagsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+     */
+    public com.google.container.v1beta1.ResourceManagerTagsOrBuilder
+        getResourceManagerTagsOrBuilder() {
+      if (resourceManagerTagsBuilder_ != null) {
+        return resourceManagerTagsBuilder_.getMessageOrBuilder();
+      } else {
+        return resourceManagerTags_ == null
+            ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+            : resourceManagerTags_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ResourceManagerTags,
+            com.google.container.v1beta1.ResourceManagerTags.Builder,
+            com.google.container.v1beta1.ResourceManagerTagsOrBuilder>
+        getResourceManagerTagsFieldBuilder() {
+      if (resourceManagerTagsBuilder_ == null) {
+        resourceManagerTagsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.ResourceManagerTags,
+                com.google.container.v1beta1.ResourceManagerTags.Builder,
+                com.google.container.v1beta1.ResourceManagerTagsOrBuilder>(
+                getResourceManagerTags(), getParentForChildren(), isClean());
+        resourceManagerTags_ = null;
+      }
+      return resourceManagerTagsBuilder_;
     }
 
     @java.lang.Override

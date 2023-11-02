@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   }
 
   private TranslateTextRequest() {
-    contents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    contents_ = com.google.protobuf.LazyStringArrayList.emptyList();
     mimeType_ = "";
     sourceLanguageCode_ = "";
     targetLanguageCode_ = "";
@@ -50,11 +50,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TranslateTextRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -86,7 +81,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   public static final int CONTENTS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList contents_;
+  private com.google.protobuf.LazyStringArrayList contents_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -329,12 +325,16 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. Project or location to make a call. Must refer to a caller's
    * project.
+   *
    * Format: `projects/{project-number-or-id}` or
    * `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * For global calls, use `projects/{project-number-or-id}/locations/global` or
    * `projects/{project-number-or-id}`.
+   *
    * Non-global location is required for requests using AutoML models or
    * custom glossaries.
+   *
    * Models and glossaries must be within the same region (have same
    * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
@@ -363,12 +363,16 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. Project or location to make a call. Must refer to a caller's
    * project.
+   *
    * Format: `projects/{project-number-or-id}` or
    * `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * For global calls, use `projects/{project-number-or-id}/locations/global` or
    * `projects/{project-number-or-id}`.
+   *
    * Non-global location is required for requests using AutoML models or
    * custom glossaries.
+   *
    * Models and glossaries must be within the same region (have same
    * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
@@ -401,15 +405,21 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The `model` type requested for this translation.
+   *
    * The format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
    * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-   * If not provided, the default Google model (NMT) will be used.
+   *
+   * If not provided, the default Google model (NMT) will be used
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -433,15 +443,21 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The `model` type requested for this translation.
+   *
    * The format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
    * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-   * If not provided, the default Google model (NMT) will be used.
+   *
+   * If not provided, the default Google model (NMT) will be used
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -555,10 +571,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -583,10 +601,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -602,10 +622,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -628,10 +650,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -951,8 +975,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      contents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      contents_ = com.google.protobuf.LazyStringArrayList.emptyList();
       mimeType_ = "";
       sourceLanguageCode_ = "";
       targetLanguageCode_ = "";
@@ -991,7 +1014,6 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.translate.v3.TranslateTextRequest buildPartial() {
       com.google.cloud.translate.v3.TranslateTextRequest result =
           new com.google.cloud.translate.v3.TranslateTextRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -999,17 +1021,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.translate.v3.TranslateTextRequest result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        contents_ = contents_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.contents_ = contents_;
-    }
-
     private void buildPartial0(com.google.cloud.translate.v3.TranslateTextRequest result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        contents_.makeImmutable();
+        result.contents_ = contents_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.mimeType_ = mimeType_;
       }
@@ -1084,7 +1101,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       if (!other.contents_.isEmpty()) {
         if (contents_.isEmpty()) {
           contents_ = other.contents_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureContentsIsMutable();
           contents_.addAll(other.contents_);
@@ -1221,14 +1238,14 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList contents_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList contents_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureContentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!contents_.isModifiable()) {
         contents_ = new com.google.protobuf.LazyStringArrayList(contents_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1244,7 +1261,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * @return A list containing the contents.
      */
     public com.google.protobuf.ProtocolStringList getContentsList() {
-      return contents_.getUnmodifiableView();
+      contents_.makeImmutable();
+      return contents_;
     }
     /**
      *
@@ -1317,6 +1335,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       }
       ensureContentsIsMutable();
       contents_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1340,6 +1359,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       }
       ensureContentsIsMutable();
       contents_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1360,6 +1380,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public Builder addAllContents(java.lang.Iterable<java.lang.String> values) {
       ensureContentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contents_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1377,8 +1398,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearContents() {
-      contents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      contents_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1403,6 +1425,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureContentsIsMutable();
       contents_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1762,12 +1785,16 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
+     *
      * Format: `projects/{project-number-or-id}` or
      * `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Non-global location is required for requests using AutoML models or
      * custom glossaries.
+     *
      * Models and glossaries must be within the same region (have same
      * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1795,12 +1822,16 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
+     *
      * Format: `projects/{project-number-or-id}` or
      * `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Non-global location is required for requests using AutoML models or
      * custom glossaries.
+     *
      * Models and glossaries must be within the same region (have same
      * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1828,12 +1859,16 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
+     *
      * Format: `projects/{project-number-or-id}` or
      * `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Non-global location is required for requests using AutoML models or
      * custom glossaries.
+     *
      * Models and glossaries must be within the same region (have same
      * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1860,12 +1895,16 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
+     *
      * Format: `projects/{project-number-or-id}` or
      * `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Non-global location is required for requests using AutoML models or
      * custom glossaries.
+     *
      * Models and glossaries must be within the same region (have same
      * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1888,12 +1927,16 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
+     *
      * Format: `projects/{project-number-or-id}` or
      * `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Non-global location is required for requests using AutoML models or
      * custom glossaries.
+     *
      * Models and glossaries must be within the same region (have same
      * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1922,15 +1965,21 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
+     *
      * The format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-     * If not provided, the default Google model (NMT) will be used.
+     *
+     * If not provided, the default Google model (NMT) will be used
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1953,15 +2002,21 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
+     *
      * The format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-     * If not provided, the default Google model (NMT) will be used.
+     *
+     * If not provided, the default Google model (NMT) will be used
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1984,15 +2039,21 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
+     *
      * The format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-     * If not provided, the default Google model (NMT) will be used.
+     *
+     * If not provided, the default Google model (NMT) will be used
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2014,15 +2075,21 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
+     *
      * The format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-     * If not provided, the default Google model (NMT) will be used.
+     *
+     * If not provided, the default Google model (NMT) will be used
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2040,15 +2107,21 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
+     *
      * The format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-     * If not provided, the default Google model (NMT) will be used.
+     *
+     * If not provided, the default Google model (NMT) will be used
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2322,10 +2395,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2350,10 +2425,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2369,10 +2446,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2395,10 +2474,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2427,10 +2508,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2455,10 +2538,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2481,10 +2566,12 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>

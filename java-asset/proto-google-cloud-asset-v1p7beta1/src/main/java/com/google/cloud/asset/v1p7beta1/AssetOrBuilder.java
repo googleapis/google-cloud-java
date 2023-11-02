@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,7 @@ public interface AssetOrBuilder
    * <pre>
    * The full name of the asset. Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
+   *
    * See [Resource
    * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
@@ -83,6 +84,7 @@ public interface AssetOrBuilder
    * <pre>
    * The full name of the asset. Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
+   *
    * See [Resource
    * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
@@ -99,6 +101,7 @@ public interface AssetOrBuilder
    *
    * <pre>
    * The type of the asset. Example: `compute.googleapis.com/Disk`
+   *
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
@@ -114,6 +117,7 @@ public interface AssetOrBuilder
    *
    * <pre>
    * The type of the asset. Example: `compute.googleapis.com/Disk`
+   *
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
@@ -449,6 +453,7 @@ public interface AssetOrBuilder
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
+   *
    * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
@@ -467,6 +472,7 @@ public interface AssetOrBuilder
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
+   *
    * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
@@ -485,6 +491,7 @@ public interface AssetOrBuilder
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
+   *
    * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
@@ -504,6 +511,7 @@ public interface AssetOrBuilder
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
+   *
    * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
@@ -514,6 +522,5 @@ public interface AssetOrBuilder
    */
   com.google.protobuf.ByteString getAncestorsBytes(int index);
 
-  public com.google.cloud.asset.v1p7beta1.Asset.AccessContextPolicyCase
-      getAccessContextPolicyCase();
+  com.google.cloud.asset.v1p7beta1.Asset.AccessContextPolicyCase getAccessContextPolicyCase();
 }

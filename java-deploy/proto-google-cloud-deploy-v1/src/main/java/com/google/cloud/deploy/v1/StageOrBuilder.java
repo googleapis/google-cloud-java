@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,4 +150,66 @@ public interface StageOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.StrategyOrBuilder getStrategyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for the target in this stage.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.deploy.v1.DeployParameters> getDeployParametersList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for the target in this stage.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.DeployParameters getDeployParameters(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for the target in this stage.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDeployParametersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for the target in this stage.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.deploy.v1.DeployParametersOrBuilder>
+      getDeployParametersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for the target in this stage.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.DeployParameters deploy_parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.DeployParametersOrBuilder getDeployParametersOrBuilder(int index);
 }

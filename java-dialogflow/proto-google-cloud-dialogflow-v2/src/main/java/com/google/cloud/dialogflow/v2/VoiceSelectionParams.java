@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     return new VoiceSelectionParams();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.AudioConfigProto
         .internal_static_google_cloud_dialogflow_v2_VoiceSelectionParams_descriptor;
@@ -81,7 +76,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * [ssml_gender][google.cloud.dialogflow.v2.VoiceSelectionParams.ssml_gender].
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -106,7 +101,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * [ssml_gender][google.cloud.dialogflow.v2.VoiceSelectionParams.ssml_gender].
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -137,7 +132,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * different gender rather than failing the request.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for ssmlGender.
    */
@@ -157,7 +154,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * different gender rather than failing the request.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The ssmlGender.
    */
@@ -546,7 +545,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * [ssml_gender][google.cloud.dialogflow.v2.VoiceSelectionParams.ssml_gender].
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -570,7 +569,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * [ssml_gender][google.cloud.dialogflow.v2.VoiceSelectionParams.ssml_gender].
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -594,7 +593,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * [ssml_gender][google.cloud.dialogflow.v2.VoiceSelectionParams.ssml_gender].
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -617,7 +616,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * [ssml_gender][google.cloud.dialogflow.v2.VoiceSelectionParams.ssml_gender].
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -636,7 +635,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * [ssml_gender][google.cloud.dialogflow.v2.VoiceSelectionParams.ssml_gender].
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -665,7 +664,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * different gender rather than failing the request.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for ssmlGender.
      */
@@ -685,7 +686,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * different gender rather than failing the request.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for ssmlGender to set.
      * @return This builder for chaining.
@@ -708,7 +711,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * different gender rather than failing the request.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The ssmlGender.
      */
@@ -730,7 +735,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * different gender rather than failing the request.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The ssmlGender to set.
      * @return This builder for chaining.
@@ -756,7 +763,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * different gender rather than failing the request.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */

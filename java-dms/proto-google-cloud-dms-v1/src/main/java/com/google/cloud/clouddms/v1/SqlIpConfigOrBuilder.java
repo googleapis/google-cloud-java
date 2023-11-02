@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,6 +88,41 @@ public interface SqlIpConfigOrBuilder
    * @return The bytes for privateNetwork.
    */
   com.google.protobuf.ByteString getPrivateNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the allocated IP address range for the private IP
+   * Cloud SQL instance. This name refers to an already allocated IP range
+   * address. If set, the instance IP address will be created in the allocated
+   * range. Note that this IP address range can't be modified after the instance
+   * is created. If you change the VPC when configuring connectivity settings
+   * for the migration job, this field is not relevant.
+   * </pre>
+   *
+   * <code>string allocated_ip_range = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allocatedIpRange.
+   */
+  java.lang.String getAllocatedIpRange();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the allocated IP address range for the private IP
+   * Cloud SQL instance. This name refers to an already allocated IP range
+   * address. If set, the instance IP address will be created in the allocated
+   * range. Note that this IP address range can't be modified after the instance
+   * is created. If you change the VPC when configuring connectivity settings
+   * for the migration job, this field is not relevant.
+   * </pre>
+   *
+   * <code>string allocated_ip_range = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for allocatedIpRange.
+   */
+  com.google.protobuf.ByteString getAllocatedIpRangeBytes();
 
   /**
    *

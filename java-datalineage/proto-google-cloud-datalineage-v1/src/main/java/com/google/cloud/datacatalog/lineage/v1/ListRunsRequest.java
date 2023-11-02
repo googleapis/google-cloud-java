@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListRunsRequest extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListRunsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -155,6 +150,7 @@ public final class ListRunsRequest extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The page token received from a previous `ListRuns` call. Specify
    * it to get the next page.
+   *
    * When paginating, all other parameters specified in this call must
    * match the parameters of the call that provided the page token.
    * </pre>
@@ -181,6 +177,7 @@ public final class ListRunsRequest extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The page token received from a previous `ListRuns` call. Specify
    * it to get the next page.
+   *
    * When paginating, all other parameters specified in this call must
    * match the parameters of the call that provided the page token.
    * </pre>
@@ -777,6 +774,7 @@ public final class ListRunsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The page token received from a previous `ListRuns` call. Specify
      * it to get the next page.
+     *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
@@ -802,6 +800,7 @@ public final class ListRunsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The page token received from a previous `ListRuns` call. Specify
      * it to get the next page.
+     *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
@@ -827,6 +826,7 @@ public final class ListRunsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The page token received from a previous `ListRuns` call. Specify
      * it to get the next page.
+     *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
@@ -851,6 +851,7 @@ public final class ListRunsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The page token received from a previous `ListRuns` call. Specify
      * it to get the next page.
+     *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
@@ -871,6 +872,7 @@ public final class ListRunsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The page token received from a previous `ListRuns` call. Specify
      * it to get the next page.
+     *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>

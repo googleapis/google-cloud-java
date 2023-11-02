@@ -40,11 +40,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     return new SlsaProvenance();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_descriptor;
   }
@@ -263,11 +258,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SlsaRecipe();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1856,11 +1846,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       return new SlsaCompleteness();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_descriptor;
@@ -2737,11 +2722,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SlsaMetadata();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4286,11 +4266,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       return new SlsaBuilder();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_descriptor;
@@ -4877,11 +4852,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Material();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

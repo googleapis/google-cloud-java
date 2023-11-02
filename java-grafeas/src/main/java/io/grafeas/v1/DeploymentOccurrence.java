@@ -42,7 +42,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     userEmail_ = "";
     config_ = "";
     address_ = "";
-    resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    resourceUri_ = com.google.protobuf.LazyStringArrayList.emptyList();
     platform_ = 0;
   }
 
@@ -50,11 +50,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeploymentOccurrence();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -502,7 +497,8 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public static final int RESOURCE_URI_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resourceUri_;
+  private com.google.protobuf.LazyStringArrayList resourceUri_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -880,8 +876,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
       config_ = "";
       address_ = "";
-      resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      resourceUri_ = com.google.protobuf.LazyStringArrayList.emptyList();
       platform_ = 0;
       return this;
     }
@@ -908,20 +903,11 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public io.grafeas.v1.DeploymentOccurrence buildPartial() {
       io.grafeas.v1.DeploymentOccurrence result = new io.grafeas.v1.DeploymentOccurrence(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(io.grafeas.v1.DeploymentOccurrence result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        resourceUri_ = resourceUri_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.resourceUri_ = resourceUri_;
     }
 
     private void buildPartial0(io.grafeas.v1.DeploymentOccurrence result) {
@@ -941,6 +927,10 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.address_ = address_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        resourceUri_.makeImmutable();
+        result.resourceUri_ = resourceUri_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.platform_ = platform_;
@@ -1016,7 +1006,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       if (!other.resourceUri_.isEmpty()) {
         if (resourceUri_.isEmpty()) {
           resourceUri_ = other.resourceUri_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureResourceUriIsMutable();
           resourceUri_.addAll(other.resourceUri_);
@@ -1798,14 +1788,14 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList resourceUri_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resourceUri_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourceUriIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!resourceUri_.isModifiable()) {
         resourceUri_ = new com.google.protobuf.LazyStringArrayList(resourceUri_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -1820,7 +1810,8 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      * @return A list containing the resourceUri.
      */
     public com.google.protobuf.ProtocolStringList getResourceUriList() {
-      return resourceUri_.getUnmodifiableView();
+      resourceUri_.makeImmutable();
+      return resourceUri_;
     }
     /**
      *
@@ -1889,6 +1880,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
       ensureResourceUriIsMutable();
       resourceUri_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1911,6 +1903,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
       ensureResourceUriIsMutable();
       resourceUri_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1930,6 +1923,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     public Builder addAllResourceUri(java.lang.Iterable<java.lang.String> values) {
       ensureResourceUriIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceUri_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1946,8 +1940,9 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearResourceUri() {
-      resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourceUri_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -1971,6 +1966,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureResourceUriIsMutable();
       resourceUri_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

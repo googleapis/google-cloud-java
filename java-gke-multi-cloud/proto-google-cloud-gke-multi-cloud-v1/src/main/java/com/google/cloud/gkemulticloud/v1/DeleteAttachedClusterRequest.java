@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
     return new DeleteAttachedClusterRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AttachedServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_DeleteAttachedClusterRequest_descriptor;
@@ -78,8 +73,10 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The resource name the
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] to delete.
+   *
    * `AttachedCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -108,8 +105,10 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The resource name the
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] to delete.
+   *
    * `AttachedCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -162,6 +161,7 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
    * is not found, the request will succeed but no action will be taken on the
    * server and a completed [Operation][google.longrunning.Operation] will be
    * returned.
+   *
    * Useful for idempotent deletion.
    * </pre>
    *
@@ -205,7 +205,9 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
    * <pre>
    * The current etag of the
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster].
+   *
    * Allows clients to perform deletions through optimistic concurrency control.
+   *
    * If the provided etag does not match the current etag of the cluster,
    * the request will fail and an ABORTED error will be returned.
    * </pre>
@@ -232,7 +234,9 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
    * <pre>
    * The current etag of the
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster].
+   *
    * Allows clients to perform deletions through optimistic concurrency control.
+   *
    * If the provided etag does not match the current etag of the cluster,
    * the request will fail and an ABORTED error will be returned.
    * </pre>
@@ -697,8 +701,10 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The resource name the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] to delete.
+     *
      * `AttachedCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -726,8 +732,10 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The resource name the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] to delete.
+     *
      * `AttachedCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -755,8 +763,10 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The resource name the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] to delete.
+     *
      * `AttachedCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -783,8 +793,10 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The resource name the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] to delete.
+     *
      * `AttachedCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -807,8 +819,10 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The resource name the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] to delete.
+     *
      * `AttachedCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -894,6 +908,7 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * is not found, the request will succeed but no action will be taken on the
      * server and a completed [Operation][google.longrunning.Operation] will be
      * returned.
+     *
      * Useful for idempotent deletion.
      * </pre>
      *
@@ -914,6 +929,7 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * is not found, the request will succeed but no action will be taken on the
      * server and a completed [Operation][google.longrunning.Operation] will be
      * returned.
+     *
      * Useful for idempotent deletion.
      * </pre>
      *
@@ -938,6 +954,7 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * is not found, the request will succeed but no action will be taken on the
      * server and a completed [Operation][google.longrunning.Operation] will be
      * returned.
+     *
      * Useful for idempotent deletion.
      * </pre>
      *
@@ -1021,7 +1038,9 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * <pre>
      * The current etag of the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided etag does not match the current etag of the cluster,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -1047,7 +1066,9 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * <pre>
      * The current etag of the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided etag does not match the current etag of the cluster,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -1073,7 +1094,9 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * <pre>
      * The current etag of the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided etag does not match the current etag of the cluster,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -1098,7 +1121,9 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * <pre>
      * The current etag of the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided etag does not match the current etag of the cluster,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -1119,7 +1144,9 @@ public final class DeleteAttachedClusterRequest extends com.google.protobuf.Gene
      * <pre>
      * The current etag of the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided etag does not match the current etag of the cluster,
      * the request will fail and an ABORTED error will be returned.
      * </pre>

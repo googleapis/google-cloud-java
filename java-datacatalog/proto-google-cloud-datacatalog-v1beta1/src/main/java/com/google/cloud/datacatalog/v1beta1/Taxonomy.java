@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Taxonomy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -211,6 +206,829 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType)
   }
 
+  public interface ServiceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datacatalog.v1beta1.Taxonomy.Service)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud service name.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.ManagingSystem name = 1;</code>
+     *
+     * @return The enum numeric value on the wire for name.
+     */
+    int getNameValue();
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud service name.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.ManagingSystem name = 1;</code>
+     *
+     * @return The name.
+     */
+    com.google.cloud.datacatalog.v1beta1.ManagingSystem getName();
+
+    /**
+     *
+     *
+     * <pre>
+     * The service agent for the service.
+     * </pre>
+     *
+     * <code>string identity = 2;</code>
+     *
+     * @return The identity.
+     */
+    java.lang.String getIdentity();
+    /**
+     *
+     *
+     * <pre>
+     * The service agent for the service.
+     * </pre>
+     *
+     * <code>string identity = 2;</code>
+     *
+     * @return The bytes for identity.
+     */
+    com.google.protobuf.ByteString getIdentityBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The source system of the Taxonomy.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datacatalog.v1beta1.Taxonomy.Service}
+   */
+  public static final class Service extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.Taxonomy.Service)
+      ServiceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Service.newBuilder() to construct.
+    private Service(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Service() {
+      name_ = 0;
+      identity_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Service();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datacatalog.v1beta1.PolicyTagManagerProto
+          .internal_static_google_cloud_datacatalog_v1beta1_Taxonomy_Service_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datacatalog.v1beta1.PolicyTagManagerProto
+          .internal_static_google_cloud_datacatalog_v1beta1_Taxonomy_Service_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.class,
+              com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private int name_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud service name.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.ManagingSystem name = 1;</code>
+     *
+     * @return The enum numeric value on the wire for name.
+     */
+    @java.lang.Override
+    public int getNameValue() {
+      return name_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud service name.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1beta1.ManagingSystem name = 1;</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1beta1.ManagingSystem getName() {
+      com.google.cloud.datacatalog.v1beta1.ManagingSystem result =
+          com.google.cloud.datacatalog.v1beta1.ManagingSystem.forNumber(name_);
+      return result == null
+          ? com.google.cloud.datacatalog.v1beta1.ManagingSystem.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int IDENTITY_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object identity_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The service agent for the service.
+     * </pre>
+     *
+     * <code>string identity = 2;</code>
+     *
+     * @return The identity.
+     */
+    @java.lang.Override
+    public java.lang.String getIdentity() {
+      java.lang.Object ref = identity_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        identity_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service agent for the service.
+     * </pre>
+     *
+     * <code>string identity = 2;</code>
+     *
+     * @return The bytes for identity.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIdentityBytes() {
+      java.lang.Object ref = identity_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        identity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (name_
+          != com.google.cloud.datacatalog.v1beta1.ManagingSystem.MANAGING_SYSTEM_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identity_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, identity_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (name_
+          != com.google.cloud.datacatalog.v1beta1.ManagingSystem.MANAGING_SYSTEM_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identity_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, identity_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.datacatalog.v1beta1.Taxonomy.Service)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datacatalog.v1beta1.Taxonomy.Service other =
+          (com.google.cloud.datacatalog.v1beta1.Taxonomy.Service) obj;
+
+      if (name_ != other.name_) return false;
+      if (!getIdentity().equals(other.getIdentity())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + name_;
+      hash = (37 * hash) + IDENTITY_FIELD_NUMBER;
+      hash = (53 * hash) + getIdentity().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datacatalog.v1beta1.Taxonomy.Service prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source system of the Taxonomy.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datacatalog.v1beta1.Taxonomy.Service}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datacatalog.v1beta1.Taxonomy.Service)
+        com.google.cloud.datacatalog.v1beta1.Taxonomy.ServiceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datacatalog.v1beta1.PolicyTagManagerProto
+            .internal_static_google_cloud_datacatalog_v1beta1_Taxonomy_Service_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datacatalog.v1beta1.PolicyTagManagerProto
+            .internal_static_google_cloud_datacatalog_v1beta1_Taxonomy_Service_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.class,
+                com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.Builder.class);
+      }
+
+      // Construct using com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = 0;
+        identity_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datacatalog.v1beta1.PolicyTagManagerProto
+            .internal_static_google_cloud_datacatalog_v1beta1_Taxonomy_Service_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datacatalog.v1beta1.Taxonomy.Service getDefaultInstanceForType() {
+        return com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datacatalog.v1beta1.Taxonomy.Service build() {
+        com.google.cloud.datacatalog.v1beta1.Taxonomy.Service result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datacatalog.v1beta1.Taxonomy.Service buildPartial() {
+        com.google.cloud.datacatalog.v1beta1.Taxonomy.Service result =
+            new com.google.cloud.datacatalog.v1beta1.Taxonomy.Service(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.datacatalog.v1beta1.Taxonomy.Service result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.identity_ = identity_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.datacatalog.v1beta1.Taxonomy.Service) {
+          return mergeFrom((com.google.cloud.datacatalog.v1beta1.Taxonomy.Service) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.datacatalog.v1beta1.Taxonomy.Service other) {
+        if (other == com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.getDefaultInstance())
+          return this;
+        if (other.name_ != 0) {
+          setNameValue(other.getNameValue());
+        }
+        if (!other.getIdentity().isEmpty()) {
+          identity_ = other.identity_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  name_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  identity_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int name_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The Google Cloud service name.
+       * </pre>
+       *
+       * <code>.google.cloud.datacatalog.v1beta1.ManagingSystem name = 1;</code>
+       *
+       * @return The enum numeric value on the wire for name.
+       */
+      @java.lang.Override
+      public int getNameValue() {
+        return name_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Google Cloud service name.
+       * </pre>
+       *
+       * <code>.google.cloud.datacatalog.v1beta1.ManagingSystem name = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameValue(int value) {
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Google Cloud service name.
+       * </pre>
+       *
+       * <code>.google.cloud.datacatalog.v1beta1.ManagingSystem name = 1;</code>
+       *
+       * @return The name.
+       */
+      @java.lang.Override
+      public com.google.cloud.datacatalog.v1beta1.ManagingSystem getName() {
+        com.google.cloud.datacatalog.v1beta1.ManagingSystem result =
+            com.google.cloud.datacatalog.v1beta1.ManagingSystem.forNumber(name_);
+        return result == null
+            ? com.google.cloud.datacatalog.v1beta1.ManagingSystem.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Google Cloud service name.
+       * </pre>
+       *
+       * <code>.google.cloud.datacatalog.v1beta1.ManagingSystem name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(com.google.cloud.datacatalog.v1beta1.ManagingSystem value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        name_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Google Cloud service name.
+       * </pre>
+       *
+       * <code>.google.cloud.datacatalog.v1beta1.ManagingSystem name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object identity_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The service agent for the service.
+       * </pre>
+       *
+       * <code>string identity = 2;</code>
+       *
+       * @return The identity.
+       */
+      public java.lang.String getIdentity() {
+        java.lang.Object ref = identity_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          identity_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The service agent for the service.
+       * </pre>
+       *
+       * <code>string identity = 2;</code>
+       *
+       * @return The bytes for identity.
+       */
+      public com.google.protobuf.ByteString getIdentityBytes() {
+        java.lang.Object ref = identity_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          identity_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The service agent for the service.
+       * </pre>
+       *
+       * <code>string identity = 2;</code>
+       *
+       * @param value The identity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdentity(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        identity_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The service agent for the service.
+       * </pre>
+       *
+       * <code>string identity = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIdentity() {
+        identity_ = getDefaultInstance().getIdentity();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The service agent for the service.
+       * </pre>
+       *
+       * <code>string identity = 2;</code>
+       *
+       * @param value The bytes for identity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdentityBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        identity_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datacatalog.v1beta1.Taxonomy.Service)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datacatalog.v1beta1.Taxonomy.Service)
+    private static final com.google.cloud.datacatalog.v1beta1.Taxonomy.Service DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.datacatalog.v1beta1.Taxonomy.Service();
+    }
+
+    public static com.google.cloud.datacatalog.v1beta1.Taxonomy.Service getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Service> PARSER =
+        new com.google.protobuf.AbstractParser<Service>() {
+          @java.lang.Override
+          public Service parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Service> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Service> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1beta1.Taxonomy.Service getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -272,9 +1090,11 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. User defined name of this taxonomy. It must: contain only unicode letters,
-   * numbers, underscores, dashes and spaces; not start or end with spaces; and
-   * be at most 200 bytes long when encoded in UTF-8.
+   * Required. User defined name of this taxonomy. It must: contain only unicode
+   * letters, numbers, underscores, dashes and spaces; not start or end with
+   * spaces; and be at most 200 bytes long when encoded in UTF-8.
+   *
+   * The taxonomy display name must be unique within an organization.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -297,9 +1117,11 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. User defined name of this taxonomy. It must: contain only unicode letters,
-   * numbers, underscores, dashes and spaces; not start or end with spaces; and
-   * be at most 200 bytes long when encoded in UTF-8.
+   * Required. User defined name of this taxonomy. It must: contain only unicode
+   * letters, numbers, underscores, dashes and spaces; not start or end with
+   * spaces; and be at most 200 bytes long when encoded in UTF-8.
+   *
+   * The taxonomy display name must be unique within an organization.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -327,9 +1149,10 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Description of this taxonomy. It must: contain only unicode characters,
-   * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
-   * long when encoded in UTF-8. If not set, defaults to an empty description.
+   * Optional. Description of this taxonomy. It must: contain only unicode
+   * characters, tabs, newlines, carriage returns and page breaks; and be at
+   * most 2000 bytes long when encoded in UTF-8. If not set, defaults to an
+   * empty description.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -352,9 +1175,10 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Description of this taxonomy. It must: contain only unicode characters,
-   * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
-   * long when encoded in UTF-8. If not set, defaults to an empty description.
+   * Optional. Description of this taxonomy. It must: contain only unicode
+   * characters, tabs, newlines, carriage returns and page breaks; and be at
+   * most 2000 bytes long when encoded in UTF-8. If not set, defaults to an
+   * empty description.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -372,6 +1196,84 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int POLICY_TAG_COUNT_FIELD_NUMBER = 4;
+  private int policyTagCount_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of policy tags contained in this taxonomy.
+   * </pre>
+   *
+   * <code>int32 policy_tag_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The policyTagCount.
+   */
+  @java.lang.Override
+  public int getPolicyTagCount() {
+    return policyTagCount_;
+  }
+
+  public static final int TAXONOMY_TIMESTAMPS_FIELD_NUMBER = 5;
+  private com.google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomyTimestamps_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamps about this taxonomy. Only create_time and
+   * update_time are used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the taxonomyTimestamps field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaxonomyTimestamps() {
+    return taxonomyTimestamps_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamps about this taxonomy. Only create_time and
+   * update_time are used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The taxonomyTimestamps.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1beta1.SystemTimestamps getTaxonomyTimestamps() {
+    return taxonomyTimestamps_ == null
+        ? com.google.cloud.datacatalog.v1beta1.SystemTimestamps.getDefaultInstance()
+        : taxonomyTimestamps_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamps about this taxonomy. Only create_time and
+   * update_time are used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1beta1.SystemTimestampsOrBuilder
+      getTaxonomyTimestampsOrBuilder() {
+    return taxonomyTimestamps_ == null
+        ? com.google.cloud.datacatalog.v1beta1.SystemTimestamps.getDefaultInstance()
+        : taxonomyTimestamps_;
   }
 
   public static final int ACTIVATED_POLICY_TYPES_FIELD_NUMBER = 6;
@@ -397,8 +1299,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for this taxonomy. If not set,
-   * defaults to an empty list.
+   * Optional. A list of policy types that are activated for this taxonomy. If
+   * not set, defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -418,8 +1320,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for this taxonomy. If not set,
-   * defaults to an empty list.
+   * Optional. A list of policy types that are activated for this taxonomy. If
+   * not set, defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -436,8 +1338,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for this taxonomy. If not set,
-   * defaults to an empty list.
+   * Optional. A list of policy types that are activated for this taxonomy. If
+   * not set, defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -456,8 +1358,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for this taxonomy. If not set,
-   * defaults to an empty list.
+   * Optional. A list of policy types that are activated for this taxonomy. If
+   * not set, defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -474,8 +1376,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for this taxonomy. If not set,
-   * defaults to an empty list.
+   * Optional. A list of policy types that are activated for this taxonomy. If
+   * not set, defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -491,6 +1393,68 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int activatedPolicyTypesMemoizedSerializedSize;
+
+  public static final int SERVICE_FIELD_NUMBER = 7;
+  private com.google.cloud.datacatalog.v1beta1.Taxonomy.Service service_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Identity of the service which owns the Taxonomy. This field is
+   * only populated when the taxonomy is created by a Google Cloud service.
+   * Currently only 'DATAPLEX' is supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the service field is set.
+   */
+  @java.lang.Override
+  public boolean hasService() {
+    return service_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Identity of the service which owns the Taxonomy. This field is
+   * only populated when the taxonomy is created by a Google Cloud service.
+   * Currently only 'DATAPLEX' is supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The service.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1beta1.Taxonomy.Service getService() {
+    return service_ == null
+        ? com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.getDefaultInstance()
+        : service_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Identity of the service which owns the Taxonomy. This field is
+   * only populated when the taxonomy is created by a Google Cloud service.
+   * Currently only 'DATAPLEX' is supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1beta1.Taxonomy.ServiceOrBuilder getServiceOrBuilder() {
+    return service_ == null
+        ? com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.getDefaultInstance()
+        : service_;
+  }
 
   private byte memoizedIsInitialized = -1;
 
@@ -516,12 +1480,21 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
+    if (policyTagCount_ != 0) {
+      output.writeInt32(4, policyTagCount_);
+    }
+    if (taxonomyTimestamps_ != null) {
+      output.writeMessage(5, getTaxonomyTimestamps());
+    }
     if (getActivatedPolicyTypesList().size() > 0) {
       output.writeUInt32NoTag(50);
       output.writeUInt32NoTag(activatedPolicyTypesMemoizedSerializedSize);
     }
     for (int i = 0; i < activatedPolicyTypes_.size(); i++) {
       output.writeEnumNoTag(activatedPolicyTypes_.get(i));
+    }
+    if (service_ != null) {
+      output.writeMessage(7, getService());
     }
     getUnknownFields().writeTo(output);
   }
@@ -541,6 +1514,12 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
+    if (policyTagCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, policyTagCount_);
+    }
+    if (taxonomyTimestamps_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTaxonomyTimestamps());
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < activatedPolicyTypes_.size(); i++) {
@@ -554,6 +1533,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
       }
       activatedPolicyTypesMemoizedSerializedSize = dataSize;
+    }
+    if (service_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getService());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -574,7 +1556,16 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (getPolicyTagCount() != other.getPolicyTagCount()) return false;
+    if (hasTaxonomyTimestamps() != other.hasTaxonomyTimestamps()) return false;
+    if (hasTaxonomyTimestamps()) {
+      if (!getTaxonomyTimestamps().equals(other.getTaxonomyTimestamps())) return false;
+    }
     if (!activatedPolicyTypes_.equals(other.activatedPolicyTypes_)) return false;
+    if (hasService() != other.hasService()) return false;
+    if (hasService()) {
+      if (!getService().equals(other.getService())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -592,9 +1583,19 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + POLICY_TAG_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getPolicyTagCount();
+    if (hasTaxonomyTimestamps()) {
+      hash = (37 * hash) + TAXONOMY_TIMESTAMPS_FIELD_NUMBER;
+      hash = (53 * hash) + getTaxonomyTimestamps().hashCode();
+    }
     if (getActivatedPolicyTypesCount() > 0) {
       hash = (37 * hash) + ACTIVATED_POLICY_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + activatedPolicyTypes_.hashCode();
+    }
+    if (hasService()) {
+      hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getService().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -742,8 +1743,19 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       displayName_ = "";
       description_ = "";
+      policyTagCount_ = 0;
+      taxonomyTimestamps_ = null;
+      if (taxonomyTimestampsBuilder_ != null) {
+        taxonomyTimestampsBuilder_.dispose();
+        taxonomyTimestampsBuilder_ = null;
+      }
       activatedPolicyTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
+      service_ = null;
+      if (serviceBuilder_ != null) {
+        serviceBuilder_.dispose();
+        serviceBuilder_ = null;
+      }
       return this;
     }
 
@@ -780,9 +1792,9 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.datacatalog.v1beta1.Taxonomy result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         activatedPolicyTypes_ = java.util.Collections.unmodifiableList(activatedPolicyTypes_);
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.activatedPolicyTypes_ = activatedPolicyTypes_;
     }
@@ -797,6 +1809,18 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.policyTagCount_ = policyTagCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.taxonomyTimestamps_ =
+            taxonomyTimestampsBuilder_ == null
+                ? taxonomyTimestamps_
+                : taxonomyTimestampsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.service_ = serviceBuilder_ == null ? service_ : serviceBuilder_.build();
       }
     }
 
@@ -860,15 +1884,24 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.getPolicyTagCount() != 0) {
+        setPolicyTagCount(other.getPolicyTagCount());
+      }
+      if (other.hasTaxonomyTimestamps()) {
+        mergeTaxonomyTimestamps(other.getTaxonomyTimestamps());
+      }
       if (!other.activatedPolicyTypes_.isEmpty()) {
         if (activatedPolicyTypes_.isEmpty()) {
           activatedPolicyTypes_ = other.activatedPolicyTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureActivatedPolicyTypesIsMutable();
           activatedPolicyTypes_.addAll(other.activatedPolicyTypes_);
         }
         onChanged();
+      }
+      if (other.hasService()) {
+        mergeService(other.getService());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -914,6 +1947,19 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                policyTagCount_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(
+                    getTaxonomyTimestampsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             case 48:
               {
                 int tmpRaw = input.readEnum();
@@ -933,6 +1979,12 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
                 input.popLimit(oldLimit);
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getServiceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1068,9 +2120,11 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this taxonomy. It must: contain only unicode letters,
-     * numbers, underscores, dashes and spaces; not start or end with spaces; and
-     * be at most 200 bytes long when encoded in UTF-8.
+     * Required. User defined name of this taxonomy. It must: contain only unicode
+     * letters, numbers, underscores, dashes and spaces; not start or end with
+     * spaces; and be at most 200 bytes long when encoded in UTF-8.
+     *
+     * The taxonomy display name must be unique within an organization.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1092,9 +2146,11 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this taxonomy. It must: contain only unicode letters,
-     * numbers, underscores, dashes and spaces; not start or end with spaces; and
-     * be at most 200 bytes long when encoded in UTF-8.
+     * Required. User defined name of this taxonomy. It must: contain only unicode
+     * letters, numbers, underscores, dashes and spaces; not start or end with
+     * spaces; and be at most 200 bytes long when encoded in UTF-8.
+     *
+     * The taxonomy display name must be unique within an organization.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1116,9 +2172,11 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this taxonomy. It must: contain only unicode letters,
-     * numbers, underscores, dashes and spaces; not start or end with spaces; and
-     * be at most 200 bytes long when encoded in UTF-8.
+     * Required. User defined name of this taxonomy. It must: contain only unicode
+     * letters, numbers, underscores, dashes and spaces; not start or end with
+     * spaces; and be at most 200 bytes long when encoded in UTF-8.
+     *
+     * The taxonomy display name must be unique within an organization.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1139,9 +2197,11 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this taxonomy. It must: contain only unicode letters,
-     * numbers, underscores, dashes and spaces; not start or end with spaces; and
-     * be at most 200 bytes long when encoded in UTF-8.
+     * Required. User defined name of this taxonomy. It must: contain only unicode
+     * letters, numbers, underscores, dashes and spaces; not start or end with
+     * spaces; and be at most 200 bytes long when encoded in UTF-8.
+     *
+     * The taxonomy display name must be unique within an organization.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1158,9 +2218,11 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User defined name of this taxonomy. It must: contain only unicode letters,
-     * numbers, underscores, dashes and spaces; not start or end with spaces; and
-     * be at most 200 bytes long when encoded in UTF-8.
+     * Required. User defined name of this taxonomy. It must: contain only unicode
+     * letters, numbers, underscores, dashes and spaces; not start or end with
+     * spaces; and be at most 200 bytes long when encoded in UTF-8.
+     *
+     * The taxonomy display name must be unique within an organization.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1184,9 +2246,10 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of this taxonomy. It must: contain only unicode characters,
-     * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
-     * long when encoded in UTF-8. If not set, defaults to an empty description.
+     * Optional. Description of this taxonomy. It must: contain only unicode
+     * characters, tabs, newlines, carriage returns and page breaks; and be at
+     * most 2000 bytes long when encoded in UTF-8. If not set, defaults to an
+     * empty description.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1208,9 +2271,10 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of this taxonomy. It must: contain only unicode characters,
-     * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
-     * long when encoded in UTF-8. If not set, defaults to an empty description.
+     * Optional. Description of this taxonomy. It must: contain only unicode
+     * characters, tabs, newlines, carriage returns and page breaks; and be at
+     * most 2000 bytes long when encoded in UTF-8. If not set, defaults to an
+     * empty description.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1232,9 +2296,10 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of this taxonomy. It must: contain only unicode characters,
-     * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
-     * long when encoded in UTF-8. If not set, defaults to an empty description.
+     * Optional. Description of this taxonomy. It must: contain only unicode
+     * characters, tabs, newlines, carriage returns and page breaks; and be at
+     * most 2000 bytes long when encoded in UTF-8. If not set, defaults to an
+     * empty description.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1255,9 +2320,10 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of this taxonomy. It must: contain only unicode characters,
-     * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
-     * long when encoded in UTF-8. If not set, defaults to an empty description.
+     * Optional. Description of this taxonomy. It must: contain only unicode
+     * characters, tabs, newlines, carriage returns and page breaks; and be at
+     * most 2000 bytes long when encoded in UTF-8. If not set, defaults to an
+     * empty description.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1274,9 +2340,10 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of this taxonomy. It must: contain only unicode characters,
-     * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
-     * long when encoded in UTF-8. If not set, defaults to an empty description.
+     * Optional. Description of this taxonomy. It must: contain only unicode
+     * characters, tabs, newlines, carriage returns and page breaks; and be at
+     * most 2000 bytes long when encoded in UTF-8. If not set, defaults to an
+     * empty description.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1295,21 +2362,290 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.util.List<java.lang.Integer> activatedPolicyTypes_ =
-        java.util.Collections.emptyList();
+    private int policyTagCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of policy tags contained in this taxonomy.
+     * </pre>
+     *
+     * <code>int32 policy_tag_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The policyTagCount.
+     */
+    @java.lang.Override
+    public int getPolicyTagCount() {
+      return policyTagCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of policy tags contained in this taxonomy.
+     * </pre>
+     *
+     * <code>int32 policy_tag_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The policyTagCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyTagCount(int value) {
 
-    private void ensureActivatedPolicyTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
-        activatedPolicyTypes_ = new java.util.ArrayList<java.lang.Integer>(activatedPolicyTypes_);
-        bitField0_ |= 0x00000008;
+      policyTagCount_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of policy tags contained in this taxonomy.
+     * </pre>
+     *
+     * <code>int32 policy_tag_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPolicyTagCount() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      policyTagCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomyTimestamps_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1beta1.SystemTimestamps,
+            com.google.cloud.datacatalog.v1beta1.SystemTimestamps.Builder,
+            com.google.cloud.datacatalog.v1beta1.SystemTimestampsOrBuilder>
+        taxonomyTimestampsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamps about this taxonomy. Only create_time and
+     * update_time are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the taxonomyTimestamps field is set.
+     */
+    public boolean hasTaxonomyTimestamps() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamps about this taxonomy. Only create_time and
+     * update_time are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The taxonomyTimestamps.
+     */
+    public com.google.cloud.datacatalog.v1beta1.SystemTimestamps getTaxonomyTimestamps() {
+      if (taxonomyTimestampsBuilder_ == null) {
+        return taxonomyTimestamps_ == null
+            ? com.google.cloud.datacatalog.v1beta1.SystemTimestamps.getDefaultInstance()
+            : taxonomyTimestamps_;
+      } else {
+        return taxonomyTimestampsBuilder_.getMessage();
       }
     }
     /**
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Output only. Timestamps about this taxonomy. Only create_time and
+     * update_time are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTaxonomyTimestamps(
+        com.google.cloud.datacatalog.v1beta1.SystemTimestamps value) {
+      if (taxonomyTimestampsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taxonomyTimestamps_ = value;
+      } else {
+        taxonomyTimestampsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamps about this taxonomy. Only create_time and
+     * update_time are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTaxonomyTimestamps(
+        com.google.cloud.datacatalog.v1beta1.SystemTimestamps.Builder builderForValue) {
+      if (taxonomyTimestampsBuilder_ == null) {
+        taxonomyTimestamps_ = builderForValue.build();
+      } else {
+        taxonomyTimestampsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamps about this taxonomy. Only create_time and
+     * update_time are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeTaxonomyTimestamps(
+        com.google.cloud.datacatalog.v1beta1.SystemTimestamps value) {
+      if (taxonomyTimestampsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && taxonomyTimestamps_ != null
+            && taxonomyTimestamps_
+                != com.google.cloud.datacatalog.v1beta1.SystemTimestamps.getDefaultInstance()) {
+          getTaxonomyTimestampsBuilder().mergeFrom(value);
+        } else {
+          taxonomyTimestamps_ = value;
+        }
+      } else {
+        taxonomyTimestampsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamps about this taxonomy. Only create_time and
+     * update_time are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearTaxonomyTimestamps() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      taxonomyTimestamps_ = null;
+      if (taxonomyTimestampsBuilder_ != null) {
+        taxonomyTimestampsBuilder_.dispose();
+        taxonomyTimestampsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamps about this taxonomy. Only create_time and
+     * update_time are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1beta1.SystemTimestamps.Builder
+        getTaxonomyTimestampsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getTaxonomyTimestampsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamps about this taxonomy. Only create_time and
+     * update_time are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1beta1.SystemTimestampsOrBuilder
+        getTaxonomyTimestampsOrBuilder() {
+      if (taxonomyTimestampsBuilder_ != null) {
+        return taxonomyTimestampsBuilder_.getMessageOrBuilder();
+      } else {
+        return taxonomyTimestamps_ == null
+            ? com.google.cloud.datacatalog.v1beta1.SystemTimestamps.getDefaultInstance()
+            : taxonomyTimestamps_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamps about this taxonomy. Only create_time and
+     * update_time are used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomy_timestamps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1beta1.SystemTimestamps,
+            com.google.cloud.datacatalog.v1beta1.SystemTimestamps.Builder,
+            com.google.cloud.datacatalog.v1beta1.SystemTimestampsOrBuilder>
+        getTaxonomyTimestampsFieldBuilder() {
+      if (taxonomyTimestampsBuilder_ == null) {
+        taxonomyTimestampsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1beta1.SystemTimestamps,
+                com.google.cloud.datacatalog.v1beta1.SystemTimestamps.Builder,
+                com.google.cloud.datacatalog.v1beta1.SystemTimestampsOrBuilder>(
+                getTaxonomyTimestamps(), getParentForChildren(), isClean());
+        taxonomyTimestamps_ = null;
+      }
+      return taxonomyTimestampsBuilder_;
+    }
+
+    private java.util.List<java.lang.Integer> activatedPolicyTypes_ =
+        java.util.Collections.emptyList();
+
+    private void ensureActivatedPolicyTypesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        activatedPolicyTypes_ = new java.util.ArrayList<java.lang.Integer>(activatedPolicyTypes_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1328,8 +2664,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1345,8 +2681,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1364,8 +2700,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1390,8 +2726,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1415,8 +2751,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1440,8 +2776,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1452,7 +2788,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearActivatedPolicyTypes() {
       activatedPolicyTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1460,8 +2796,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1477,8 +2813,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1495,8 +2831,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1517,8 +2853,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1538,8 +2874,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of policy types that are activated for this taxonomy. If not set,
-     * defaults to an empty list.
+     * Optional. A list of policy types that are activated for this taxonomy. If
+     * not set, defaults to an empty list.
      * </pre>
      *
      * <code>
@@ -1556,6 +2892,227 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       }
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.datacatalog.v1beta1.Taxonomy.Service service_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1beta1.Taxonomy.Service,
+            com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.Builder,
+            com.google.cloud.datacatalog.v1beta1.Taxonomy.ServiceOrBuilder>
+        serviceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identity of the service which owns the Taxonomy. This field is
+     * only populated when the taxonomy is created by a Google Cloud service.
+     * Currently only 'DATAPLEX' is supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the service field is set.
+     */
+    public boolean hasService() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identity of the service which owns the Taxonomy. This field is
+     * only populated when the taxonomy is created by a Google Cloud service.
+     * Currently only 'DATAPLEX' is supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The service.
+     */
+    public com.google.cloud.datacatalog.v1beta1.Taxonomy.Service getService() {
+      if (serviceBuilder_ == null) {
+        return service_ == null
+            ? com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.getDefaultInstance()
+            : service_;
+      } else {
+        return serviceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identity of the service which owns the Taxonomy. This field is
+     * only populated when the taxonomy is created by a Google Cloud service.
+     * Currently only 'DATAPLEX' is supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setService(com.google.cloud.datacatalog.v1beta1.Taxonomy.Service value) {
+      if (serviceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        service_ = value;
+      } else {
+        serviceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identity of the service which owns the Taxonomy. This field is
+     * only populated when the taxonomy is created by a Google Cloud service.
+     * Currently only 'DATAPLEX' is supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setService(
+        com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.Builder builderForValue) {
+      if (serviceBuilder_ == null) {
+        service_ = builderForValue.build();
+      } else {
+        serviceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identity of the service which owns the Taxonomy. This field is
+     * only populated when the taxonomy is created by a Google Cloud service.
+     * Currently only 'DATAPLEX' is supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeService(com.google.cloud.datacatalog.v1beta1.Taxonomy.Service value) {
+      if (serviceBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && service_ != null
+            && service_
+                != com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.getDefaultInstance()) {
+          getServiceBuilder().mergeFrom(value);
+        } else {
+          service_ = value;
+        }
+      } else {
+        serviceBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identity of the service which owns the Taxonomy. This field is
+     * only populated when the taxonomy is created by a Google Cloud service.
+     * Currently only 'DATAPLEX' is supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearService() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      service_ = null;
+      if (serviceBuilder_ != null) {
+        serviceBuilder_.dispose();
+        serviceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identity of the service which owns the Taxonomy. This field is
+     * only populated when the taxonomy is created by a Google Cloud service.
+     * Currently only 'DATAPLEX' is supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.Builder getServiceBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getServiceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identity of the service which owns the Taxonomy. This field is
+     * only populated when the taxonomy is created by a Google Cloud service.
+     * Currently only 'DATAPLEX' is supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1beta1.Taxonomy.ServiceOrBuilder getServiceOrBuilder() {
+      if (serviceBuilder_ != null) {
+        return serviceBuilder_.getMessageOrBuilder();
+      } else {
+        return service_ == null
+            ? com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.getDefaultInstance()
+            : service_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identity of the service which owns the Taxonomy. This field is
+     * only populated when the taxonomy is created by a Google Cloud service.
+     * Currently only 'DATAPLEX' is supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1beta1.Taxonomy.Service,
+            com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.Builder,
+            com.google.cloud.datacatalog.v1beta1.Taxonomy.ServiceOrBuilder>
+        getServiceFieldBuilder() {
+      if (serviceBuilder_ == null) {
+        serviceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1beta1.Taxonomy.Service,
+                com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.Builder,
+                com.google.cloud.datacatalog.v1beta1.Taxonomy.ServiceOrBuilder>(
+                getService(), getParentForChildren(), isClean());
+        service_ = null;
+      }
+      return serviceBuilder_;
     }
 
     @java.lang.Override

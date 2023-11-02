@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -206,7 +206,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. The amount of bytes needed to allocate a full copy of the snapshot content
+   * Output only. The amount of bytes needed to allocate a full copy of the
+   * snapshot content
    * </pre>
    *
    * <code>int64 filesystem_used_bytes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

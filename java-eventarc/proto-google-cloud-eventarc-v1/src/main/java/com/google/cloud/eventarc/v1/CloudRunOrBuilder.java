@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface CloudRunOrBuilder
    * <pre>
    * Required. The name of the Cloud Run service being addressed. See
    * https://cloud.google.com/run/docs/reference/rest/v1/namespaces.services.
+   *
    * Only services located in the same project as the trigger object
    * can be addressed.
    * </pre>
@@ -46,6 +47,7 @@ public interface CloudRunOrBuilder
    * <pre>
    * Required. The name of the Cloud Run service being addressed. See
    * https://cloud.google.com/run/docs/reference/rest/v1/namespaces.services.
+   *
    * Only services located in the same project as the trigger object
    * can be addressed.
    * </pre>
@@ -63,6 +65,7 @@ public interface CloudRunOrBuilder
    *
    * <pre>
    * Optional. The relative path on the Cloud Run service the events should be sent to.
+   *
    * The value must conform to the definition of a URI path segment (section 3.3
    * of RFC2396). Examples: "/route", "route", "route/subroute".
    * </pre>
@@ -77,6 +80,7 @@ public interface CloudRunOrBuilder
    *
    * <pre>
    * Optional. The relative path on the Cloud Run service the events should be sent to.
+   *
    * The value must conform to the definition of a URI path segment (section 3.3
    * of RFC2396). Examples: "/route", "route", "route/subroute".
    * </pre>

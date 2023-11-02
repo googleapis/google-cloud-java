@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface DeleteReferenceImageRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the reference image to delete.
+   *
    * Format is:
+   *
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
    * </pre>
    *
@@ -44,7 +46,9 @@ public interface DeleteReferenceImageRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the reference image to delete.
+   *
    * Format is:
+   *
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,16 @@ public enum TableSourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BIGQUERY_TABLE = 5;</code>
    */
   BIGQUERY_TABLE(5),
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery materialized view.
+   * </pre>
+   *
+   * <code>BIGQUERY_MATERIALIZED_VIEW = 7;</code>
+   */
+  BIGQUERY_MATERIALIZED_VIEW(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -91,6 +101,16 @@ public enum TableSourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BIGQUERY_TABLE = 5;</code>
    */
   public static final int BIGQUERY_TABLE_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery materialized view.
+   * </pre>
+   *
+   * <code>BIGQUERY_MATERIALIZED_VIEW = 7;</code>
+   */
+  public static final int BIGQUERY_MATERIALIZED_VIEW_VALUE = 7;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -122,6 +142,8 @@ public enum TableSourceType implements com.google.protobuf.ProtocolMessageEnum {
         return BIGQUERY_VIEW;
       case 5:
         return BIGQUERY_TABLE;
+      case 7:
+        return BIGQUERY_MATERIALIZED_VIEW;
       default:
         return null;
     }

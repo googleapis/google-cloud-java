@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
 
   private ApiTarget() {
     service_ = "";
-    methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    methods_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ApiTarget();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -129,7 +124,8 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
   public static final int METHODS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList methods_;
+  private com.google.protobuf.LazyStringArrayList methods_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -431,8 +427,7 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       service_ = "";
-      methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      methods_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -459,7 +454,6 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.api.apikeys.v2.ApiTarget buildPartial() {
       com.google.api.apikeys.v2.ApiTarget result = new com.google.api.apikeys.v2.ApiTarget(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -467,18 +461,14 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.api.apikeys.v2.ApiTarget result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        methods_ = methods_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.methods_ = methods_;
-    }
-
     private void buildPartial0(com.google.api.apikeys.v2.ApiTarget result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        methods_.makeImmutable();
+        result.methods_ = methods_;
       }
     }
 
@@ -535,7 +525,7 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
       if (!other.methods_.isEmpty()) {
         if (methods_.isEmpty()) {
           methods_ = other.methods_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureMethodsIsMutable();
           methods_.addAll(other.methods_);
@@ -721,14 +711,14 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList methods_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList methods_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMethodsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!methods_.isModifiable()) {
         methods_ = new com.google.protobuf.LazyStringArrayList(methods_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -749,7 +739,8 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the methods.
      */
     public com.google.protobuf.ProtocolStringList getMethodsList() {
-      return methods_.getUnmodifiableView();
+      methods_.makeImmutable();
+      return methods_;
     }
     /**
      *
@@ -842,6 +833,7 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMethodsIsMutable();
       methods_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -870,6 +862,7 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMethodsIsMutable();
       methods_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -895,6 +888,7 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMethods(java.lang.Iterable<java.lang.String> values) {
       ensureMethodsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, methods_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -917,8 +911,9 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMethods() {
-      methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      methods_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -948,6 +943,7 @@ public final class ApiTarget extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMethodsIsMutable();
       methods_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

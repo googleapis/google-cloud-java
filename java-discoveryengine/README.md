@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.13.0</version>
+      <version>26.25.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-discoveryengine</artifactId>
-  <version>0.12.0</version>
+  <version>0.25.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-discoveryengine:0.12.0'
+implementation 'com.google.cloud:google-cloud-discoveryengine:0.25.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-discoveryengine" % "0.12.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-discoveryengine" % "0.25.0"
 ```
 <!-- {x-version-update-end} -->
 
@@ -187,7 +187,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/discovery-engine/docs/introduction
+[product-docs]: https://cloud.google.com/discovery-engine/media/docs
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-discoveryengine/latest/overview
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.html
@@ -201,7 +201,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-discoveryengine.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-discoveryengine/0.12.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-discoveryengine/0.24.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListProcessorVersionsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -134,8 +129,8 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * The maximum number of processor versions to return.
-   * If unspecified, at most 10 processor versions will be returned.
-   * The maximum value is 20; values above 20 will be coerced to 20.
+   * If unspecified, at most `10` processor versions will be returned.
+   * The maximum value is `20`. Values above `20` will be coerced to `20`.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -721,8 +716,8 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The maximum number of processor versions to return.
-     * If unspecified, at most 10 processor versions will be returned.
-     * The maximum value is 20; values above 20 will be coerced to 20.
+     * If unspecified, at most `10` processor versions will be returned.
+     * The maximum value is `20`. Values above `20` will be coerced to `20`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -738,8 +733,8 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The maximum number of processor versions to return.
-     * If unspecified, at most 10 processor versions will be returned.
-     * The maximum value is 20; values above 20 will be coerced to 20.
+     * If unspecified, at most `10` processor versions will be returned.
+     * The maximum value is `20`. Values above `20` will be coerced to `20`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -759,8 +754,8 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The maximum number of processor versions to return.
-     * If unspecified, at most 10 processor versions will be returned.
-     * The maximum value is 20; values above 20 will be coerced to 20.
+     * If unspecified, at most `10` processor versions will be returned.
+     * The maximum value is `20`. Values above `20` will be coerced to `20`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

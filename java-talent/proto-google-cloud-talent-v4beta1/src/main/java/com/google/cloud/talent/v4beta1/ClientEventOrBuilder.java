@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ClientEventOrBuilder
    *
    * <pre>
    * Strongly recommended for the best service experience.
+   *
    * A unique ID generated in the API responses. It can be found in
    * [ResponseMetadata.request_id][google.cloud.talent.v4beta1.ResponseMetadata.request_id].
    * </pre>
@@ -42,6 +43,7 @@ public interface ClientEventOrBuilder
    *
    * <pre>
    * Strongly recommended for the best service experience.
+   *
    * A unique ID generated in the API responses. It can be found in
    * [ResponseMetadata.request_id][google.cloud.talent.v4beta1.ResponseMetadata.request_id].
    * </pre>
@@ -180,5 +182,5 @@ public interface ClientEventOrBuilder
    */
   com.google.protobuf.ByteString getEventNotesBytes();
 
-  public com.google.cloud.talent.v4beta1.ClientEvent.EventCase getEventCase();
+  com.google.cloud.talent.v4beta1.ClientEvent.EventCase getEventCase();
 }

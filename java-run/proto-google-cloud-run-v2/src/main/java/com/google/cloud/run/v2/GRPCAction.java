@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
     return new GRPCAction();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.K8sMinProto
         .internal_static_google_cloud_run_v2_GRPCAction_descriptor;
@@ -96,7 +91,7 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Service is the name of the service to place in the gRPC HealthCheckRequest
-   * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If
+   * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
    * this is not specified, the default behavior is defined by gRPC.
    * </pre>
    *
@@ -121,7 +116,7 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Service is the name of the service to place in the gRPC HealthCheckRequest
-   * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If
+   * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
    * this is not specified, the default behavior is defined by gRPC.
    * </pre>
    *
@@ -567,7 +562,7 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Service is the name of the service to place in the gRPC HealthCheckRequest
-     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If
+     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
      * this is not specified, the default behavior is defined by gRPC.
      * </pre>
      *
@@ -591,7 +586,7 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Service is the name of the service to place in the gRPC HealthCheckRequest
-     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If
+     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
      * this is not specified, the default behavior is defined by gRPC.
      * </pre>
      *
@@ -615,7 +610,7 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Service is the name of the service to place in the gRPC HealthCheckRequest
-     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If
+     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
      * this is not specified, the default behavior is defined by gRPC.
      * </pre>
      *
@@ -638,7 +633,7 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Service is the name of the service to place in the gRPC HealthCheckRequest
-     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If
+     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
      * this is not specified, the default behavior is defined by gRPC.
      * </pre>
      *
@@ -657,7 +652,7 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Service is the name of the service to place in the gRPC HealthCheckRequest
-     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If
+     * (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md ). If
      * this is not specified, the default behavior is defined by gRPC.
      * </pre>
      *

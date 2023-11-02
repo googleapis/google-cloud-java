@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExportModelOperationMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -103,6 +98,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
    * <pre>
    * Further describes the output of model export.
    * Supplements
+   *
    * [ModelExportOutputConfig][google.cloud.automl.v1beta1.ModelExportOutputConfig].
    * </pre>
    *
@@ -127,11 +123,6 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExportModelOutputInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -380,6 +371,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      * <pre>
      * Further describes the output of model export.
      * Supplements
+     *
      * [ModelExportOutputConfig][google.cloud.automl.v1beta1.ModelExportOutputConfig].
      * </pre>
      *

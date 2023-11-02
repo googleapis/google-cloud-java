@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateClusterRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -287,6 +282,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * interrupting jobs). Default timeout is 0 (for forceful decommission), and
    * the maximum allowed timeout is 1 day. (see JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *
@@ -311,6 +307,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * interrupting jobs). Default timeout is 0 (for forceful decommission), and
    * the maximum allowed timeout is 1 day. (see JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *
@@ -337,6 +334,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * interrupting jobs). Default timeout is 0 (for forceful decommission), and
    * the maximum allowed timeout is 1 day. (see JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *
@@ -362,6 +360,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * in a cluster to 5, the `update_mask` parameter would be
    * specified as `config.worker_config.num_instances`,
    * and the `PATCH` request body would specify the new value, as follows:
+   *
    *     {
    *       "config":{
    *         "workerConfig":{
@@ -373,6 +372,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * the `update_mask` parameter would be
    * `config.secondary_worker_config.num_instances`, and the `PATCH` request
    * body would be set as follows:
+   *
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -381,6 +381,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *       }
    *     }
    * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+   *
    *  &lt;table&gt;
    *  &lt;tbody&gt;
    *  &lt;tr&gt;
@@ -425,6 +426,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * in a cluster to 5, the `update_mask` parameter would be
    * specified as `config.worker_config.num_instances`,
    * and the `PATCH` request body would specify the new value, as follows:
+   *
    *     {
    *       "config":{
    *         "workerConfig":{
@@ -436,6 +438,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * the `update_mask` parameter would be
    * `config.secondary_worker_config.num_instances`, and the `PATCH` request
    * body would be set as follows:
+   *
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -444,6 +447,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *       }
    *     }
    * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+   *
    *  &lt;table&gt;
    *  &lt;tbody&gt;
    *  &lt;tr&gt;
@@ -488,6 +492,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * in a cluster to 5, the `update_mask` parameter would be
    * specified as `config.worker_config.num_instances`,
    * and the `PATCH` request body would specify the new value, as follows:
+   *
    *     {
    *       "config":{
    *         "workerConfig":{
@@ -499,6 +504,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * the `update_mask` parameter would be
    * `config.secondary_worker_config.num_instances`, and the `PATCH` request
    * body would be set as follows:
+   *
    *     {
    *       "config":{
    *         "secondaryWorkerConfig":{
@@ -507,6 +513,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *       }
    *     }
    * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+   *
    *  &lt;table&gt;
    *  &lt;tbody&gt;
    *  &lt;tr&gt;
@@ -555,8 +562,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * with the same id, then the second request will be ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created
    * and stored in the backend is returned.
+   *
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
@@ -587,8 +596,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * with the same id, then the second request will be ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created
    * and stored in the backend is returned.
+   *
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
@@ -1665,6 +1676,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * interrupting jobs). Default timeout is 0 (for forceful decommission), and
      * the maximum allowed timeout is 1 day. (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Only supported on Dataproc image versions 1.2 and higher.
      * </pre>
      *
@@ -1688,6 +1700,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * interrupting jobs). Default timeout is 0 (for forceful decommission), and
      * the maximum allowed timeout is 1 day. (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Only supported on Dataproc image versions 1.2 and higher.
      * </pre>
      *
@@ -1717,6 +1730,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * interrupting jobs). Default timeout is 0 (for forceful decommission), and
      * the maximum allowed timeout is 1 day. (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Only supported on Dataproc image versions 1.2 and higher.
      * </pre>
      *
@@ -1748,6 +1762,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * interrupting jobs). Default timeout is 0 (for forceful decommission), and
      * the maximum allowed timeout is 1 day. (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Only supported on Dataproc image versions 1.2 and higher.
      * </pre>
      *
@@ -1777,6 +1792,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * interrupting jobs). Default timeout is 0 (for forceful decommission), and
      * the maximum allowed timeout is 1 day. (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Only supported on Dataproc image versions 1.2 and higher.
      * </pre>
      *
@@ -1811,6 +1827,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * interrupting jobs). Default timeout is 0 (for forceful decommission), and
      * the maximum allowed timeout is 1 day. (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Only supported on Dataproc image versions 1.2 and higher.
      * </pre>
      *
@@ -1839,6 +1856,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * interrupting jobs). Default timeout is 0 (for forceful decommission), and
      * the maximum allowed timeout is 1 day. (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Only supported on Dataproc image versions 1.2 and higher.
      * </pre>
      *
@@ -1862,6 +1880,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * interrupting jobs). Default timeout is 0 (for forceful decommission), and
      * the maximum allowed timeout is 1 day. (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Only supported on Dataproc image versions 1.2 and higher.
      * </pre>
      *
@@ -1889,6 +1908,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * interrupting jobs). Default timeout is 0 (for forceful decommission), and
      * the maximum allowed timeout is 1 day. (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Only supported on Dataproc image versions 1.2 and higher.
      * </pre>
      *
@@ -1928,6 +1948,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * in a cluster to 5, the `update_mask` parameter would be
      * specified as `config.worker_config.num_instances`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "config":{
      *         "workerConfig":{
@@ -1939,6 +1960,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * the `update_mask` parameter would be
      * `config.secondary_worker_config.num_instances`, and the `PATCH` request
      * body would be set as follows:
+     *
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -1947,6 +1969,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *       }
      *     }
      * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+     *
      *  &lt;table&gt;
      *  &lt;tbody&gt;
      *  &lt;tr&gt;
@@ -1990,6 +2013,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * in a cluster to 5, the `update_mask` parameter would be
      * specified as `config.worker_config.num_instances`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "config":{
      *         "workerConfig":{
@@ -2001,6 +2025,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * the `update_mask` parameter would be
      * `config.secondary_worker_config.num_instances`, and the `PATCH` request
      * body would be set as follows:
+     *
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2009,6 +2034,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *       }
      *     }
      * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+     *
      *  &lt;table&gt;
      *  &lt;tbody&gt;
      *  &lt;tr&gt;
@@ -2058,6 +2084,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * in a cluster to 5, the `update_mask` parameter would be
      * specified as `config.worker_config.num_instances`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "config":{
      *         "workerConfig":{
@@ -2069,6 +2096,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * the `update_mask` parameter would be
      * `config.secondary_worker_config.num_instances`, and the `PATCH` request
      * body would be set as follows:
+     *
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2077,6 +2105,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *       }
      *     }
      * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+     *
      *  &lt;table&gt;
      *  &lt;tbody&gt;
      *  &lt;tr&gt;
@@ -2128,6 +2157,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * in a cluster to 5, the `update_mask` parameter would be
      * specified as `config.worker_config.num_instances`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "config":{
      *         "workerConfig":{
@@ -2139,6 +2169,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * the `update_mask` parameter would be
      * `config.secondary_worker_config.num_instances`, and the `PATCH` request
      * body would be set as follows:
+     *
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2147,6 +2178,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *       }
      *     }
      * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+     *
      *  &lt;table&gt;
      *  &lt;tbody&gt;
      *  &lt;tr&gt;
@@ -2195,6 +2227,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * in a cluster to 5, the `update_mask` parameter would be
      * specified as `config.worker_config.num_instances`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "config":{
      *         "workerConfig":{
@@ -2206,6 +2239,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * the `update_mask` parameter would be
      * `config.secondary_worker_config.num_instances`, and the `PATCH` request
      * body would be set as follows:
+     *
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2214,6 +2248,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *       }
      *     }
      * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+     *
      *  &lt;table&gt;
      *  &lt;tbody&gt;
      *  &lt;tr&gt;
@@ -2268,6 +2303,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * in a cluster to 5, the `update_mask` parameter would be
      * specified as `config.worker_config.num_instances`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "config":{
      *         "workerConfig":{
@@ -2279,6 +2315,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * the `update_mask` parameter would be
      * `config.secondary_worker_config.num_instances`, and the `PATCH` request
      * body would be set as follows:
+     *
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2287,6 +2324,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *       }
      *     }
      * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+     *
      *  &lt;table&gt;
      *  &lt;tbody&gt;
      *  &lt;tr&gt;
@@ -2335,6 +2373,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * in a cluster to 5, the `update_mask` parameter would be
      * specified as `config.worker_config.num_instances`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "config":{
      *         "workerConfig":{
@@ -2346,6 +2385,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * the `update_mask` parameter would be
      * `config.secondary_worker_config.num_instances`, and the `PATCH` request
      * body would be set as follows:
+     *
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2354,6 +2394,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *       }
      *     }
      * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+     *
      *  &lt;table&gt;
      *  &lt;tbody&gt;
      *  &lt;tr&gt;
@@ -2397,6 +2438,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * in a cluster to 5, the `update_mask` parameter would be
      * specified as `config.worker_config.num_instances`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "config":{
      *         "workerConfig":{
@@ -2408,6 +2450,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * the `update_mask` parameter would be
      * `config.secondary_worker_config.num_instances`, and the `PATCH` request
      * body would be set as follows:
+     *
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2416,6 +2459,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *       }
      *     }
      * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+     *
      *  &lt;table&gt;
      *  &lt;tbody&gt;
      *  &lt;tr&gt;
@@ -2463,6 +2507,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * in a cluster to 5, the `update_mask` parameter would be
      * specified as `config.worker_config.num_instances`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "config":{
      *         "workerConfig":{
@@ -2474,6 +2519,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * the `update_mask` parameter would be
      * `config.secondary_worker_config.num_instances`, and the `PATCH` request
      * body would be set as follows:
+     *
      *     {
      *       "config":{
      *         "secondaryWorkerConfig":{
@@ -2482,6 +2528,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *       }
      *     }
      * &lt;strong&gt;Note:&lt;/strong&gt; Currently, only the following fields can be updated:
+     *
      *  &lt;table&gt;
      *  &lt;tbody&gt;
      *  &lt;tr&gt;
@@ -2539,8 +2586,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created
      * and stored in the backend is returned.
+     *
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -2570,8 +2619,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created
      * and stored in the backend is returned.
+     *
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -2601,8 +2652,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created
      * and stored in the backend is returned.
+     *
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -2631,8 +2684,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created
      * and stored in the backend is returned.
+     *
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -2657,8 +2712,10 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * with the same id, then the second request will be ignored and the
      * first [google.longrunning.Operation][google.longrunning.Operation] created
      * and stored in the backend is returned.
+     *
      * It is recommended to always set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>

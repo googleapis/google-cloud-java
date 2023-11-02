@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
 
   private BatchEnableServicesRequest() {
     parent_ = "";
-    serviceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    serviceIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchEnableServicesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,8 +72,10 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Parent to enable services on.
+   *
    * An example name would be:
    * `projects/123` where `123` is the project number.
+   *
    * The `BatchEnableServices` method currently only supports projects.
    * </pre>
    *
@@ -103,8 +100,10 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Parent to enable services on.
+   *
    * An example name would be:
    * `projects/123` where `123` is the project number.
+   *
    * The `BatchEnableServices` method currently only supports projects.
    * </pre>
    *
@@ -128,16 +127,20 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
   public static final int SERVICE_IDS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList serviceIds_;
+  private com.google.protobuf.LazyStringArrayList serviceIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * The identifiers of the services to enable on the project.
+   *
    * A valid identifier would be:
    * serviceusage.googleapis.com
+   *
    * Enabling services requires that each service is public or is shared with
    * the user enabling the service.
+   *
    * A single request can enable a maximum of 20 services at a time. If more
    * than 20 services are specified, the request will fail, and no state changes
    * will occur.
@@ -155,10 +158,13 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * The identifiers of the services to enable on the project.
+   *
    * A valid identifier would be:
    * serviceusage.googleapis.com
+   *
    * Enabling services requires that each service is public or is shared with
    * the user enabling the service.
+   *
    * A single request can enable a maximum of 20 services at a time. If more
    * than 20 services are specified, the request will fail, and no state changes
    * will occur.
@@ -176,10 +182,13 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * The identifiers of the services to enable on the project.
+   *
    * A valid identifier would be:
    * serviceusage.googleapis.com
+   *
    * Enabling services requires that each service is public or is shared with
    * the user enabling the service.
+   *
    * A single request can enable a maximum of 20 services at a time. If more
    * than 20 services are specified, the request will fail, and no state changes
    * will occur.
@@ -198,10 +207,13 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * The identifiers of the services to enable on the project.
+   *
    * A valid identifier would be:
    * serviceusage.googleapis.com
+   *
    * Enabling services requires that each service is public or is shared with
    * the user enabling the service.
+   *
    * A single request can enable a maximum of 20 services at a time. If more
    * than 20 services are specified, the request will fail, and no state changes
    * will occur.
@@ -432,8 +444,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       super.clear();
       bitField0_ = 0;
       parent_ = "";
-      serviceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      serviceIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -461,7 +472,6 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
     public com.google.api.serviceusage.v1.BatchEnableServicesRequest buildPartial() {
       com.google.api.serviceusage.v1.BatchEnableServicesRequest result =
           new com.google.api.serviceusage.v1.BatchEnableServicesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -469,19 +479,14 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.api.serviceusage.v1.BatchEnableServicesRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        serviceIds_ = serviceIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.serviceIds_ = serviceIds_;
-    }
-
     private void buildPartial0(com.google.api.serviceusage.v1.BatchEnableServicesRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        serviceIds_.makeImmutable();
+        result.serviceIds_ = serviceIds_;
       }
     }
 
@@ -539,7 +544,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       if (!other.serviceIds_.isEmpty()) {
         if (serviceIds_.isEmpty()) {
           serviceIds_ = other.serviceIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureServiceIdsIsMutable();
           serviceIds_.addAll(other.serviceIds_);
@@ -610,8 +615,10 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Parent to enable services on.
+     *
      * An example name would be:
      * `projects/123` where `123` is the project number.
+     *
      * The `BatchEnableServices` method currently only supports projects.
      * </pre>
      *
@@ -635,8 +642,10 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Parent to enable services on.
+     *
      * An example name would be:
      * `projects/123` where `123` is the project number.
+     *
      * The `BatchEnableServices` method currently only supports projects.
      * </pre>
      *
@@ -660,8 +669,10 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Parent to enable services on.
+     *
      * An example name would be:
      * `projects/123` where `123` is the project number.
+     *
      * The `BatchEnableServices` method currently only supports projects.
      * </pre>
      *
@@ -684,8 +695,10 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Parent to enable services on.
+     *
      * An example name would be:
      * `projects/123` where `123` is the project number.
+     *
      * The `BatchEnableServices` method currently only supports projects.
      * </pre>
      *
@@ -704,8 +717,10 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Parent to enable services on.
+     *
      * An example name would be:
      * `projects/123` where `123` is the project number.
+     *
      * The `BatchEnableServices` method currently only supports projects.
      * </pre>
      *
@@ -725,24 +740,27 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       return this;
     }
 
-    private com.google.protobuf.LazyStringList serviceIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList serviceIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureServiceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!serviceIds_.isModifiable()) {
         serviceIds_ = new com.google.protobuf.LazyStringArrayList(serviceIds_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
      *
      * <pre>
      * The identifiers of the services to enable on the project.
+     *
      * A valid identifier would be:
      * serviceusage.googleapis.com
+     *
      * Enabling services requires that each service is public or is shared with
      * the user enabling the service.
+     *
      * A single request can enable a maximum of 20 services at a time. If more
      * than 20 services are specified, the request will fail, and no state changes
      * will occur.
@@ -753,17 +771,21 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      * @return A list containing the serviceIds.
      */
     public com.google.protobuf.ProtocolStringList getServiceIdsList() {
-      return serviceIds_.getUnmodifiableView();
+      serviceIds_.makeImmutable();
+      return serviceIds_;
     }
     /**
      *
      *
      * <pre>
      * The identifiers of the services to enable on the project.
+     *
      * A valid identifier would be:
      * serviceusage.googleapis.com
+     *
      * Enabling services requires that each service is public or is shared with
      * the user enabling the service.
+     *
      * A single request can enable a maximum of 20 services at a time. If more
      * than 20 services are specified, the request will fail, and no state changes
      * will occur.
@@ -781,10 +803,13 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The identifiers of the services to enable on the project.
+     *
      * A valid identifier would be:
      * serviceusage.googleapis.com
+     *
      * Enabling services requires that each service is public or is shared with
      * the user enabling the service.
+     *
      * A single request can enable a maximum of 20 services at a time. If more
      * than 20 services are specified, the request will fail, and no state changes
      * will occur.
@@ -803,10 +828,13 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The identifiers of the services to enable on the project.
+     *
      * A valid identifier would be:
      * serviceusage.googleapis.com
+     *
      * Enabling services requires that each service is public or is shared with
      * the user enabling the service.
+     *
      * A single request can enable a maximum of 20 services at a time. If more
      * than 20 services are specified, the request will fail, and no state changes
      * will occur.
@@ -825,10 +853,13 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The identifiers of the services to enable on the project.
+     *
      * A valid identifier would be:
      * serviceusage.googleapis.com
+     *
      * Enabling services requires that each service is public or is shared with
      * the user enabling the service.
+     *
      * A single request can enable a maximum of 20 services at a time. If more
      * than 20 services are specified, the request will fail, and no state changes
      * will occur.
@@ -846,6 +877,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       }
       ensureServiceIdsIsMutable();
       serviceIds_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -854,10 +886,13 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The identifiers of the services to enable on the project.
+     *
      * A valid identifier would be:
      * serviceusage.googleapis.com
+     *
      * Enabling services requires that each service is public or is shared with
      * the user enabling the service.
+     *
      * A single request can enable a maximum of 20 services at a time. If more
      * than 20 services are specified, the request will fail, and no state changes
      * will occur.
@@ -874,6 +909,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       }
       ensureServiceIdsIsMutable();
       serviceIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -882,10 +918,13 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The identifiers of the services to enable on the project.
+     *
      * A valid identifier would be:
      * serviceusage.googleapis.com
+     *
      * Enabling services requires that each service is public or is shared with
      * the user enabling the service.
+     *
      * A single request can enable a maximum of 20 services at a time. If more
      * than 20 services are specified, the request will fail, and no state changes
      * will occur.
@@ -899,6 +938,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
     public Builder addAllServiceIds(java.lang.Iterable<java.lang.String> values) {
       ensureServiceIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceIds_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -907,10 +947,13 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The identifiers of the services to enable on the project.
+     *
      * A valid identifier would be:
      * serviceusage.googleapis.com
+     *
      * Enabling services requires that each service is public or is shared with
      * the user enabling the service.
+     *
      * A single request can enable a maximum of 20 services at a time. If more
      * than 20 services are specified, the request will fail, and no state changes
      * will occur.
@@ -921,8 +964,9 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearServiceIds() {
-      serviceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      serviceIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -931,10 +975,13 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The identifiers of the services to enable on the project.
+     *
      * A valid identifier would be:
      * serviceusage.googleapis.com
+     *
      * Enabling services requires that each service is public or is shared with
      * the user enabling the service.
+     *
      * A single request can enable a maximum of 20 services at a time. If more
      * than 20 services are specified, the request will fail, and no state changes
      * will occur.
@@ -952,6 +999,7 @@ public final class BatchEnableServicesRequest extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       ensureServiceIdsIsMutable();
       serviceIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

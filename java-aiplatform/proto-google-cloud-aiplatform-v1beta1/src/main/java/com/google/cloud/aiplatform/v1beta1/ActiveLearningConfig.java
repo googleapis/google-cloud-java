@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
     return new ActiveLearningConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.DataLabelingJobProto
         .internal_static_google_cloud_aiplatform_v1beta1_ActiveLearningConfig_descriptor;
@@ -68,6 +63,8 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
   }
 
   private int humanLabelingBudgetCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object humanLabelingBudget_;
 
   public enum HumanLabelingBudgetCase

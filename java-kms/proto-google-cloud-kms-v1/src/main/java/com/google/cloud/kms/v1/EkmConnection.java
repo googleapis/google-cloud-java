@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,11 +56,6 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EkmConnection();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -333,6 +328,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * Optional. The filter applied to the endpoints of the resolved service. If
      * no filter is specified, all endpoints will be considered. An endpoint
      * will be chosen arbitrarily from the filtered list for each request.
+     *
      * For endpoint filter syntax and examples, see
      * https://cloud.google.com/service-directory/docs/reference/rpc/google.cloud.servicedirectory.v1#resolveservicerequest.
      * </pre>
@@ -349,6 +345,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * Optional. The filter applied to the endpoints of the resolved service. If
      * no filter is specified, all endpoints will be considered. An endpoint
      * will be chosen arbitrarily from the filtered list for each request.
+     *
      * For endpoint filter syntax and examples, see
      * https://cloud.google.com/service-directory/docs/reference/rpc/google.cloud.servicedirectory.v1#resolveservicerequest.
      * </pre>
@@ -490,11 +487,6 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       return new ServiceResolver();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.kms.v1.EkmServiceProto
           .internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_descriptor;
@@ -580,6 +572,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * Optional. The filter applied to the endpoints of the resolved service. If
      * no filter is specified, all endpoints will be considered. An endpoint
      * will be chosen arbitrarily from the filtered list for each request.
+     *
      * For endpoint filter syntax and examples, see
      * https://cloud.google.com/service-directory/docs/reference/rpc/google.cloud.servicedirectory.v1#resolveservicerequest.
      * </pre>
@@ -607,6 +600,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * Optional. The filter applied to the endpoints of the resolved service. If
      * no filter is specified, all endpoints will be considered. An endpoint
      * will be chosen arbitrarily from the filtered list for each request.
+     *
      * For endpoint filter syntax and examples, see
      * https://cloud.google.com/service-directory/docs/reference/rpc/google.cloud.servicedirectory.v1#resolveservicerequest.
      * </pre>
@@ -1375,6 +1369,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        * Optional. The filter applied to the endpoints of the resolved service. If
        * no filter is specified, all endpoints will be considered. An endpoint
        * will be chosen arbitrarily from the filtered list for each request.
+       *
        * For endpoint filter syntax and examples, see
        * https://cloud.google.com/service-directory/docs/reference/rpc/google.cloud.servicedirectory.v1#resolveservicerequest.
        * </pre>
@@ -1401,6 +1396,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        * Optional. The filter applied to the endpoints of the resolved service. If
        * no filter is specified, all endpoints will be considered. An endpoint
        * will be chosen arbitrarily from the filtered list for each request.
+       *
        * For endpoint filter syntax and examples, see
        * https://cloud.google.com/service-directory/docs/reference/rpc/google.cloud.servicedirectory.v1#resolveservicerequest.
        * </pre>
@@ -1427,6 +1423,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        * Optional. The filter applied to the endpoints of the resolved service. If
        * no filter is specified, all endpoints will be considered. An endpoint
        * will be chosen arbitrarily from the filtered list for each request.
+       *
        * For endpoint filter syntax and examples, see
        * https://cloud.google.com/service-directory/docs/reference/rpc/google.cloud.servicedirectory.v1#resolveservicerequest.
        * </pre>
@@ -1452,6 +1449,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        * Optional. The filter applied to the endpoints of the resolved service. If
        * no filter is specified, all endpoints will be considered. An endpoint
        * will be chosen arbitrarily from the filtered list for each request.
+       *
        * For endpoint filter syntax and examples, see
        * https://cloud.google.com/service-directory/docs/reference/rpc/google.cloud.servicedirectory.v1#resolveservicerequest.
        * </pre>
@@ -1473,6 +1471,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        * Optional. The filter applied to the endpoints of the resolved service. If
        * no filter is specified, all endpoints will be considered. An endpoint
        * will be chosen arbitrarily from the filtered list for each request.
+       *
        * For endpoint filter syntax and examples, see
        * https://cloud.google.com/service-directory/docs/reference/rpc/google.cloud.servicedirectory.v1#resolveservicerequest.
        * </pre>

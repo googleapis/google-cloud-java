@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddResourcePoliciesRegionDiskRequest;
+import com.google.cloud.compute.v1.BulkInsertRegionDiskRequest;
 import com.google.cloud.compute.v1.CreateSnapshotRegionDiskRequest;
 import com.google.cloud.compute.v1.DeleteRegionDiskRequest;
 import com.google.cloud.compute.v1.Disk;
@@ -59,6 +60,9 @@ import com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskRequest;
 import com.google.cloud.compute.v1.ResizeRegionDiskRequest;
 import com.google.cloud.compute.v1.SetIamPolicyRegionDiskRequest;
 import com.google.cloud.compute.v1.SetLabelsRegionDiskRequest;
+import com.google.cloud.compute.v1.StartAsyncReplicationRegionDiskRequest;
+import com.google.cloud.compute.v1.StopAsyncReplicationRegionDiskRequest;
+import com.google.cloud.compute.v1.StopGroupAsyncReplicationRegionDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionDiskRequest;
@@ -121,6 +125,9 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
       addResourcePoliciesSettings;
   private final OperationCallSettings<AddResourcePoliciesRegionDiskRequest, Operation, Operation>
       addResourcePoliciesOperationSettings;
+  private final UnaryCallSettings<BulkInsertRegionDiskRequest, Operation> bulkInsertSettings;
+  private final OperationCallSettings<BulkInsertRegionDiskRequest, Operation, Operation>
+      bulkInsertOperationSettings;
   private final UnaryCallSettings<CreateSnapshotRegionDiskRequest, Operation>
       createSnapshotSettings;
   private final OperationCallSettings<CreateSnapshotRegionDiskRequest, Operation, Operation>
@@ -145,6 +152,19 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
   private final UnaryCallSettings<SetLabelsRegionDiskRequest, Operation> setLabelsSettings;
   private final OperationCallSettings<SetLabelsRegionDiskRequest, Operation, Operation>
       setLabelsOperationSettings;
+  private final UnaryCallSettings<StartAsyncReplicationRegionDiskRequest, Operation>
+      startAsyncReplicationSettings;
+  private final OperationCallSettings<StartAsyncReplicationRegionDiskRequest, Operation, Operation>
+      startAsyncReplicationOperationSettings;
+  private final UnaryCallSettings<StopAsyncReplicationRegionDiskRequest, Operation>
+      stopAsyncReplicationSettings;
+  private final OperationCallSettings<StopAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopAsyncReplicationOperationSettings;
+  private final UnaryCallSettings<StopGroupAsyncReplicationRegionDiskRequest, Operation>
+      stopGroupAsyncReplicationSettings;
+  private final OperationCallSettings<
+          StopGroupAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopGroupAsyncReplicationOperationSettings;
   private final UnaryCallSettings<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateRegionDiskRequest, Operation> updateSettings;
@@ -214,6 +234,17 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
   public OperationCallSettings<AddResourcePoliciesRegionDiskRequest, Operation, Operation>
       addResourcePoliciesOperationSettings() {
     return addResourcePoliciesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to bulkInsert. */
+  public UnaryCallSettings<BulkInsertRegionDiskRequest, Operation> bulkInsertSettings() {
+    return bulkInsertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to bulkInsert. */
+  public OperationCallSettings<BulkInsertRegionDiskRequest, Operation, Operation>
+      bulkInsertOperationSettings() {
+    return bulkInsertOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to createSnapshot. */
@@ -301,6 +332,42 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
   public OperationCallSettings<SetLabelsRegionDiskRequest, Operation, Operation>
       setLabelsOperationSettings() {
     return setLabelsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startAsyncReplication. */
+  public UnaryCallSettings<StartAsyncReplicationRegionDiskRequest, Operation>
+      startAsyncReplicationSettings() {
+    return startAsyncReplicationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startAsyncReplication. */
+  public OperationCallSettings<StartAsyncReplicationRegionDiskRequest, Operation, Operation>
+      startAsyncReplicationOperationSettings() {
+    return startAsyncReplicationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopAsyncReplication. */
+  public UnaryCallSettings<StopAsyncReplicationRegionDiskRequest, Operation>
+      stopAsyncReplicationSettings() {
+    return stopAsyncReplicationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopAsyncReplication. */
+  public OperationCallSettings<StopAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopAsyncReplicationOperationSettings() {
+    return stopAsyncReplicationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopGroupAsyncReplication. */
+  public UnaryCallSettings<StopGroupAsyncReplicationRegionDiskRequest, Operation>
+      stopGroupAsyncReplicationSettings() {
+    return stopGroupAsyncReplicationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopGroupAsyncReplication. */
+  public OperationCallSettings<StopGroupAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopGroupAsyncReplicationOperationSettings() {
+    return stopGroupAsyncReplicationOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -399,6 +466,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     addResourcePoliciesSettings = settingsBuilder.addResourcePoliciesSettings().build();
     addResourcePoliciesOperationSettings =
         settingsBuilder.addResourcePoliciesOperationSettings().build();
+    bulkInsertSettings = settingsBuilder.bulkInsertSettings().build();
+    bulkInsertOperationSettings = settingsBuilder.bulkInsertOperationSettings().build();
     createSnapshotSettings = settingsBuilder.createSnapshotSettings().build();
     createSnapshotOperationSettings = settingsBuilder.createSnapshotOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
@@ -416,6 +485,15 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
     setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
+    startAsyncReplicationSettings = settingsBuilder.startAsyncReplicationSettings().build();
+    startAsyncReplicationOperationSettings =
+        settingsBuilder.startAsyncReplicationOperationSettings().build();
+    stopAsyncReplicationSettings = settingsBuilder.stopAsyncReplicationSettings().build();
+    stopAsyncReplicationOperationSettings =
+        settingsBuilder.stopAsyncReplicationOperationSettings().build();
+    stopGroupAsyncReplicationSettings = settingsBuilder.stopGroupAsyncReplicationSettings().build();
+    stopGroupAsyncReplicationOperationSettings =
+        settingsBuilder.stopGroupAsyncReplicationOperationSettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
@@ -429,6 +507,10 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     private final OperationCallSettings.Builder<
             AddResourcePoliciesRegionDiskRequest, Operation, Operation>
         addResourcePoliciesOperationSettings;
+    private final UnaryCallSettings.Builder<BulkInsertRegionDiskRequest, Operation>
+        bulkInsertSettings;
+    private final OperationCallSettings.Builder<BulkInsertRegionDiskRequest, Operation, Operation>
+        bulkInsertOperationSettings;
     private final UnaryCallSettings.Builder<CreateSnapshotRegionDiskRequest, Operation>
         createSnapshotSettings;
     private final OperationCallSettings.Builder<
@@ -459,6 +541,21 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
         setLabelsSettings;
     private final OperationCallSettings.Builder<SetLabelsRegionDiskRequest, Operation, Operation>
         setLabelsOperationSettings;
+    private final UnaryCallSettings.Builder<StartAsyncReplicationRegionDiskRequest, Operation>
+        startAsyncReplicationSettings;
+    private final OperationCallSettings.Builder<
+            StartAsyncReplicationRegionDiskRequest, Operation, Operation>
+        startAsyncReplicationOperationSettings;
+    private final UnaryCallSettings.Builder<StopAsyncReplicationRegionDiskRequest, Operation>
+        stopAsyncReplicationSettings;
+    private final OperationCallSettings.Builder<
+            StopAsyncReplicationRegionDiskRequest, Operation, Operation>
+        stopAsyncReplicationOperationSettings;
+    private final UnaryCallSettings.Builder<StopGroupAsyncReplicationRegionDiskRequest, Operation>
+        stopGroupAsyncReplicationSettings;
+    private final OperationCallSettings.Builder<
+            StopGroupAsyncReplicationRegionDiskRequest, Operation, Operation>
+        stopGroupAsyncReplicationOperationSettings;
     private final UnaryCallSettings.Builder<
             TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
@@ -517,6 +614,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
 
       addResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
+      bulkInsertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      bulkInsertOperationSettings = OperationCallSettings.newBuilder();
       createSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSnapshotOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -533,6 +632,12 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsOperationSettings = OperationCallSettings.newBuilder();
+      startAsyncReplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startAsyncReplicationOperationSettings = OperationCallSettings.newBuilder();
+      stopAsyncReplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      stopAsyncReplicationOperationSettings = OperationCallSettings.newBuilder();
+      stopGroupAsyncReplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      stopGroupAsyncReplicationOperationSettings = OperationCallSettings.newBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
@@ -540,6 +645,7 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addResourcePoliciesSettings,
+              bulkInsertSettings,
               createSnapshotSettings,
               deleteSettings,
               getSettings,
@@ -550,6 +656,9 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
               resizeSettings,
               setIamPolicySettings,
               setLabelsSettings,
+              startAsyncReplicationSettings,
+              stopAsyncReplicationSettings,
+              stopGroupAsyncReplicationSettings,
               testIamPermissionsSettings,
               updateSettings);
       initDefaults(this);
@@ -561,6 +670,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
       addResourcePoliciesSettings = settings.addResourcePoliciesSettings.toBuilder();
       addResourcePoliciesOperationSettings =
           settings.addResourcePoliciesOperationSettings.toBuilder();
+      bulkInsertSettings = settings.bulkInsertSettings.toBuilder();
+      bulkInsertOperationSettings = settings.bulkInsertOperationSettings.toBuilder();
       createSnapshotSettings = settings.createSnapshotSettings.toBuilder();
       createSnapshotOperationSettings = settings.createSnapshotOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
@@ -578,6 +689,15 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
       setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
+      startAsyncReplicationSettings = settings.startAsyncReplicationSettings.toBuilder();
+      startAsyncReplicationOperationSettings =
+          settings.startAsyncReplicationOperationSettings.toBuilder();
+      stopAsyncReplicationSettings = settings.stopAsyncReplicationSettings.toBuilder();
+      stopAsyncReplicationOperationSettings =
+          settings.stopAsyncReplicationOperationSettings.toBuilder();
+      stopGroupAsyncReplicationSettings = settings.stopGroupAsyncReplicationSettings.toBuilder();
+      stopGroupAsyncReplicationOperationSettings =
+          settings.stopGroupAsyncReplicationOperationSettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
@@ -585,6 +705,7 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addResourcePoliciesSettings,
+              bulkInsertSettings,
               createSnapshotSettings,
               deleteSettings,
               getSettings,
@@ -595,6 +716,9 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
               resizeSettings,
               setIamPolicySettings,
               setLabelsSettings,
+              startAsyncReplicationSettings,
+              stopAsyncReplicationSettings,
+              stopGroupAsyncReplicationSettings,
               testIamPermissionsSettings,
               updateSettings);
     }
@@ -615,6 +739,11 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     private static Builder initDefaults(Builder builder) {
       builder
           .addResourcePoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .bulkInsertSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -669,6 +798,21 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .startAsyncReplicationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .stopAsyncReplicationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .stopGroupAsyncReplicationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -684,6 +828,30 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
               UnaryCallSettings
                   .<AddResourcePoliciesRegionDiskRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .bulkInsertOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BulkInsertRegionDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -849,6 +1017,81 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
                       .build()));
 
       builder
+          .startAsyncReplicationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StartAsyncReplicationRegionDiskRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .stopAsyncReplicationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StopAsyncReplicationRegionDiskRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .stopGroupAsyncReplicationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StopGroupAsyncReplicationRegionDiskRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
           .updateOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -902,6 +1145,19 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     public OperationCallSettings.Builder<AddResourcePoliciesRegionDiskRequest, Operation, Operation>
         addResourcePoliciesOperationSettings() {
       return addResourcePoliciesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to bulkInsert. */
+    public UnaryCallSettings.Builder<BulkInsertRegionDiskRequest, Operation> bulkInsertSettings() {
+      return bulkInsertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to bulkInsert. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<BulkInsertRegionDiskRequest, Operation, Operation>
+        bulkInsertOperationSettings() {
+      return bulkInsertOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createSnapshot. */
@@ -1004,6 +1260,51 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     public OperationCallSettings.Builder<SetLabelsRegionDiskRequest, Operation, Operation>
         setLabelsOperationSettings() {
       return setLabelsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startAsyncReplication. */
+    public UnaryCallSettings.Builder<StartAsyncReplicationRegionDiskRequest, Operation>
+        startAsyncReplicationSettings() {
+      return startAsyncReplicationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startAsyncReplication. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            StartAsyncReplicationRegionDiskRequest, Operation, Operation>
+        startAsyncReplicationOperationSettings() {
+      return startAsyncReplicationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopAsyncReplication. */
+    public UnaryCallSettings.Builder<StopAsyncReplicationRegionDiskRequest, Operation>
+        stopAsyncReplicationSettings() {
+      return stopAsyncReplicationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopAsyncReplication. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            StopAsyncReplicationRegionDiskRequest, Operation, Operation>
+        stopAsyncReplicationOperationSettings() {
+      return stopAsyncReplicationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopGroupAsyncReplication. */
+    public UnaryCallSettings.Builder<StopGroupAsyncReplicationRegionDiskRequest, Operation>
+        stopGroupAsyncReplicationSettings() {
+      return stopGroupAsyncReplicationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopGroupAsyncReplication. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            StopGroupAsyncReplicationRegionDiskRequest, Operation, Operation>
+        stopGroupAsyncReplicationOperationSettings() {
+      return stopGroupAsyncReplicationOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bare-metal-solution</artifactId>
-  <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
+  <version>0.30.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
   <packaging>jar</packaging>
   <name>Google Bare Metal SOlution</name>
   <description>Bare Metal SOlution Bring your Oracle workloads to Google Cloud with Bare Metal Solution and jumpstart your cloud journey with minimal risk.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bare-metal-solution-parent</artifactId>
-    <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
+    <version>0.30.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bare-metal-solution</site.installationModule>
@@ -72,7 +72,16 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
-
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bare-metal-solution-v2</artifactId>

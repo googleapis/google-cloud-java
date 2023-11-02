@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -125,4 +125,47 @@ public interface FraudPreventionAssessmentOrBuilder
    */
   com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdictOrBuilder
       getCardTestingVerdictOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Assessment of this transaction for behavioral trust.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * </code>
+   *
+   * @return Whether the behavioralTrustVerdict field is set.
+   */
+  boolean hasBehavioralTrustVerdict();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment of this transaction for behavioral trust.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * </code>
+   *
+   * @return The behavioralTrustVerdict.
+   */
+  com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+      getBehavioralTrustVerdict();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment of this transaction for behavioral trust.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdictOrBuilder
+      getBehavioralTrustVerdictOrBuilder();
 }

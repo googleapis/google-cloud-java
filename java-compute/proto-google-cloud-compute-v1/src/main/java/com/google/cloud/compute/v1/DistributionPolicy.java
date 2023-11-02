@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DistributionPolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -101,6 +96,16 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * The group creates all VM instances within a single zone. The zone is selected based on the present resource constraints and to maximize utilization of unused zonal reservations. Recommended for batch workloads with heavy interprocess communication.
+     * </pre>
+     *
+     * <code>ANY_SINGLE_ZONE = 61100880;</code>
+     */
+    ANY_SINGLE_ZONE(61100880),
+    /**
+     *
+     *
+     * <pre>
      * The group prioritizes acquisition of resources, scheduling VMs in zones where resources are available while distributing VMs as evenly as possible across selected zones to minimize the impact of zonal failure. Recommended for highly available serving workloads.
      * </pre>
      *
@@ -140,6 +145,16 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      * <code>ANY = 64972;</code>
      */
     public static final int ANY_VALUE = 64972;
+    /**
+     *
+     *
+     * <pre>
+     * The group creates all VM instances within a single zone. The zone is selected based on the present resource constraints and to maximize utilization of unused zonal reservations. Recommended for batch workloads with heavy interprocess communication.
+     * </pre>
+     *
+     * <code>ANY_SINGLE_ZONE = 61100880;</code>
+     */
+    public static final int ANY_SINGLE_ZONE_VALUE = 61100880;
     /**
      *
      *
@@ -189,6 +204,8 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
           return UNDEFINED_TARGET_SHAPE;
         case 64972:
           return ANY;
+        case 61100880:
+          return ANY_SINGLE_ZONE;
         case 468409608:
           return BALANCED;
         case 2140442:

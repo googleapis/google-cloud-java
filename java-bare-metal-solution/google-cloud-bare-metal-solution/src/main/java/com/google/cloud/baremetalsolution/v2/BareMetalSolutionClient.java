@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,8 +30,13 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.baremetalsolution.v2.stub.BareMetalSolutionStub;
 import com.google.cloud.baremetalsolution.v2.stub.BareMetalSolutionStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
@@ -611,6 +616,131 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * RenameInstance sets a new name for an instance. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String newInstanceId = "newInstanceId1749535312";
+   *   Instance response = bareMetalSolutionClient.renameInstance(name, newInstanceId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The `name` field is used to identify the instance. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}
+   * @param newInstanceId Required. The new `id` of the instance.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Instance renameInstance(InstanceName name, String newInstanceId) {
+    RenameInstanceRequest request =
+        RenameInstanceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setNewInstanceId(newInstanceId)
+            .build();
+    return renameInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameInstance sets a new name for an instance. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   String newInstanceId = "newInstanceId1749535312";
+   *   Instance response = bareMetalSolutionClient.renameInstance(name, newInstanceId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The `name` field is used to identify the instance. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}
+   * @param newInstanceId Required. The new `id` of the instance.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Instance renameInstance(String name, String newInstanceId) {
+    RenameInstanceRequest request =
+        RenameInstanceRequest.newBuilder().setName(name).setNewInstanceId(newInstanceId).build();
+    return renameInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameInstance sets a new name for an instance. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   RenameInstanceRequest request =
+   *       RenameInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setNewInstanceId("newInstanceId1749535312")
+   *           .build();
+   *   Instance response = bareMetalSolutionClient.renameInstance(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Instance renameInstance(RenameInstanceRequest request) {
+    return renameInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameInstance sets a new name for an instance. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   RenameInstanceRequest request =
+   *       RenameInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setNewInstanceId("newInstanceId1749535312")
+   *           .build();
+   *   ApiFuture<Instance> future =
+   *       bareMetalSolutionClient.renameInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RenameInstanceRequest, Instance> renameInstanceCallable() {
+    return stub.renameInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Perform an ungraceful, hard reset on a server. Equivalent to shutting the power off and then
    * turning it back on.
    *
@@ -1039,6 +1169,312 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Enable the interactive serial console feature on an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   EnableInteractiveSerialConsoleResponse response =
+   *       bareMetalSolutionClient.enableInteractiveSerialConsoleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<EnableInteractiveSerialConsoleResponse, OperationMetadata>
+      enableInteractiveSerialConsoleAsync(InstanceName name) {
+    EnableInteractiveSerialConsoleRequest request =
+        EnableInteractiveSerialConsoleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return enableInteractiveSerialConsoleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enable the interactive serial console feature on an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   EnableInteractiveSerialConsoleResponse response =
+   *       bareMetalSolutionClient.enableInteractiveSerialConsoleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<EnableInteractiveSerialConsoleResponse, OperationMetadata>
+      enableInteractiveSerialConsoleAsync(String name) {
+    EnableInteractiveSerialConsoleRequest request =
+        EnableInteractiveSerialConsoleRequest.newBuilder().setName(name).build();
+    return enableInteractiveSerialConsoleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enable the interactive serial console feature on an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   EnableInteractiveSerialConsoleRequest request =
+   *       EnableInteractiveSerialConsoleRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   EnableInteractiveSerialConsoleResponse response =
+   *       bareMetalSolutionClient.enableInteractiveSerialConsoleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<EnableInteractiveSerialConsoleResponse, OperationMetadata>
+      enableInteractiveSerialConsoleAsync(EnableInteractiveSerialConsoleRequest request) {
+    return enableInteractiveSerialConsoleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enable the interactive serial console feature on an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   EnableInteractiveSerialConsoleRequest request =
+   *       EnableInteractiveSerialConsoleRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   OperationFuture<EnableInteractiveSerialConsoleResponse, OperationMetadata> future =
+   *       bareMetalSolutionClient
+   *           .enableInteractiveSerialConsoleOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   EnableInteractiveSerialConsoleResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          EnableInteractiveSerialConsoleRequest,
+          EnableInteractiveSerialConsoleResponse,
+          OperationMetadata>
+      enableInteractiveSerialConsoleOperationCallable() {
+    return stub.enableInteractiveSerialConsoleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enable the interactive serial console feature on an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   EnableInteractiveSerialConsoleRequest request =
+   *       EnableInteractiveSerialConsoleRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       bareMetalSolutionClient.enableInteractiveSerialConsoleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EnableInteractiveSerialConsoleRequest, Operation>
+      enableInteractiveSerialConsoleCallable() {
+    return stub.enableInteractiveSerialConsoleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disable the interactive serial console feature on an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   DisableInteractiveSerialConsoleResponse response =
+   *       bareMetalSolutionClient.disableInteractiveSerialConsoleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DisableInteractiveSerialConsoleResponse, OperationMetadata>
+      disableInteractiveSerialConsoleAsync(InstanceName name) {
+    DisableInteractiveSerialConsoleRequest request =
+        DisableInteractiveSerialConsoleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return disableInteractiveSerialConsoleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disable the interactive serial console feature on an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   DisableInteractiveSerialConsoleResponse response =
+   *       bareMetalSolutionClient.disableInteractiveSerialConsoleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DisableInteractiveSerialConsoleResponse, OperationMetadata>
+      disableInteractiveSerialConsoleAsync(String name) {
+    DisableInteractiveSerialConsoleRequest request =
+        DisableInteractiveSerialConsoleRequest.newBuilder().setName(name).build();
+    return disableInteractiveSerialConsoleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disable the interactive serial console feature on an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DisableInteractiveSerialConsoleRequest request =
+   *       DisableInteractiveSerialConsoleRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   DisableInteractiveSerialConsoleResponse response =
+   *       bareMetalSolutionClient.disableInteractiveSerialConsoleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DisableInteractiveSerialConsoleResponse, OperationMetadata>
+      disableInteractiveSerialConsoleAsync(DisableInteractiveSerialConsoleRequest request) {
+    return disableInteractiveSerialConsoleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disable the interactive serial console feature on an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DisableInteractiveSerialConsoleRequest request =
+   *       DisableInteractiveSerialConsoleRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   OperationFuture<DisableInteractiveSerialConsoleResponse, OperationMetadata> future =
+   *       bareMetalSolutionClient
+   *           .disableInteractiveSerialConsoleOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   DisableInteractiveSerialConsoleResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DisableInteractiveSerialConsoleRequest,
+          DisableInteractiveSerialConsoleResponse,
+          OperationMetadata>
+      disableInteractiveSerialConsoleOperationCallable() {
+    return stub.disableInteractiveSerialConsoleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disable the interactive serial console feature on an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DisableInteractiveSerialConsoleRequest request =
+   *       DisableInteractiveSerialConsoleRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       bareMetalSolutionClient.disableInteractiveSerialConsoleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DisableInteractiveSerialConsoleRequest, Operation>
+      disableInteractiveSerialConsoleCallable() {
+    return stub.disableInteractiveSerialConsoleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Detach LUN from Instance.
    *
    * <p>Sample code:
@@ -1183,6 +1619,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *       DetachLunRequest.newBuilder()
    *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setLun(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+   *           .setSkipReboot(true)
    *           .build();
    *   Instance response = bareMetalSolutionClient.detachLunAsync(request).get();
    * }
@@ -1213,6 +1650,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *       DetachLunRequest.newBuilder()
    *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setLun(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+   *           .setSkipReboot(true)
    *           .build();
    *   OperationFuture<Instance, OperationMetadata> future =
    *       bareMetalSolutionClient.detachLunOperationCallable().futureCall(request);
@@ -1243,6 +1681,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *       DetachLunRequest.newBuilder()
    *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setLun(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+   *           .setSkipReboot(true)
    *           .build();
    *   ApiFuture<Operation> future = bareMetalSolutionClient.detachLunCallable().futureCall(request);
    *   // Do something.
@@ -1252,6 +1691,422 @@ public class BareMetalSolutionClient implements BackgroundResource {
    */
   public final UnaryCallable<DetachLunRequest, Operation> detachLunCallable() {
     return stub.detachLunCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the public SSH keys registered for the specified project. These SSH keys are used only
+   * for the interactive serial console feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (SSHKey element : bareMetalSolutionClient.listSSHKeys(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent containing the SSH keys. Currently, the only valid value for
+   *     the location is "global".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSSHKeysPagedResponse listSSHKeys(LocationName parent) {
+    ListSSHKeysRequest request =
+        ListSSHKeysRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSSHKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the public SSH keys registered for the specified project. These SSH keys are used only
+   * for the interactive serial console feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (SSHKey element : bareMetalSolutionClient.listSSHKeys(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent containing the SSH keys. Currently, the only valid value for
+   *     the location is "global".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSSHKeysPagedResponse listSSHKeys(String parent) {
+    ListSSHKeysRequest request = ListSSHKeysRequest.newBuilder().setParent(parent).build();
+    return listSSHKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the public SSH keys registered for the specified project. These SSH keys are used only
+   * for the interactive serial console feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListSSHKeysRequest request =
+   *       ListSSHKeysRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SSHKey element : bareMetalSolutionClient.listSSHKeys(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSSHKeysPagedResponse listSSHKeys(ListSSHKeysRequest request) {
+    return listSSHKeysPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the public SSH keys registered for the specified project. These SSH keys are used only
+   * for the interactive serial console feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListSSHKeysRequest request =
+   *       ListSSHKeysRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SSHKey> future =
+   *       bareMetalSolutionClient.listSSHKeysPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SSHKey element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSSHKeysRequest, ListSSHKeysPagedResponse>
+      listSSHKeysPagedCallable() {
+    return stub.listSSHKeysPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the public SSH keys registered for the specified project. These SSH keys are used only
+   * for the interactive serial console feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListSSHKeysRequest request =
+   *       ListSSHKeysRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSSHKeysResponse response = bareMetalSolutionClient.listSSHKeysCallable().call(request);
+   *     for (SSHKey element : response.getSshKeysList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSSHKeysRequest, ListSSHKeysResponse> listSSHKeysCallable() {
+    return stub.listSSHKeysCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Register a public SSH key in the specified project for use with the interactive serial console
+   * feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   SSHKey sshKey = SSHKey.newBuilder().build();
+   *   String sshKeyId = "sshKeyId593257138";
+   *   SSHKey response = bareMetalSolutionClient.createSSHKey(parent, sshKey, sshKeyId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent containing the SSH keys.
+   * @param sshKey Required. The SSH key to register.
+   * @param sshKeyId Required. The ID to use for the key, which will become the final component of
+   *     the key's resource name.
+   *     <p>This value must match the regex: [a-zA-Z0-9{@literal @}.\\-_]{1,64}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SSHKey createSSHKey(LocationName parent, SSHKey sshKey, String sshKeyId) {
+    CreateSSHKeyRequest request =
+        CreateSSHKeyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSshKey(sshKey)
+            .setSshKeyId(sshKeyId)
+            .build();
+    return createSSHKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Register a public SSH key in the specified project for use with the interactive serial console
+   * feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   SSHKey sshKey = SSHKey.newBuilder().build();
+   *   String sshKeyId = "sshKeyId593257138";
+   *   SSHKey response = bareMetalSolutionClient.createSSHKey(parent, sshKey, sshKeyId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent containing the SSH keys.
+   * @param sshKey Required. The SSH key to register.
+   * @param sshKeyId Required. The ID to use for the key, which will become the final component of
+   *     the key's resource name.
+   *     <p>This value must match the regex: [a-zA-Z0-9{@literal @}.\\-_]{1,64}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SSHKey createSSHKey(String parent, SSHKey sshKey, String sshKeyId) {
+    CreateSSHKeyRequest request =
+        CreateSSHKeyRequest.newBuilder()
+            .setParent(parent)
+            .setSshKey(sshKey)
+            .setSshKeyId(sshKeyId)
+            .build();
+    return createSSHKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Register a public SSH key in the specified project for use with the interactive serial console
+   * feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   CreateSSHKeyRequest request =
+   *       CreateSSHKeyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSshKey(SSHKey.newBuilder().build())
+   *           .setSshKeyId("sshKeyId593257138")
+   *           .build();
+   *   SSHKey response = bareMetalSolutionClient.createSSHKey(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SSHKey createSSHKey(CreateSSHKeyRequest request) {
+    return createSSHKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Register a public SSH key in the specified project for use with the interactive serial console
+   * feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   CreateSSHKeyRequest request =
+   *       CreateSSHKeyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSshKey(SSHKey.newBuilder().build())
+   *           .setSshKeyId("sshKeyId593257138")
+   *           .build();
+   *   ApiFuture<SSHKey> future = bareMetalSolutionClient.createSSHKeyCallable().futureCall(request);
+   *   // Do something.
+   *   SSHKey response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSSHKeyRequest, SSHKey> createSSHKeyCallable() {
+    return stub.createSSHKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a public SSH key registered in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   SshKeyName name = SshKeyName.of("[PROJECT]", "[LOCATION]", "[SSH_KEY]");
+   *   bareMetalSolutionClient.deleteSSHKey(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the SSH key to delete. Currently, the only valid value for
+   *     the location is "global".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSSHKey(SshKeyName name) {
+    DeleteSSHKeyRequest request =
+        DeleteSSHKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteSSHKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a public SSH key registered in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = SshKeyName.of("[PROJECT]", "[LOCATION]", "[SSH_KEY]").toString();
+   *   bareMetalSolutionClient.deleteSSHKey(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the SSH key to delete. Currently, the only valid value for
+   *     the location is "global".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSSHKey(String name) {
+    DeleteSSHKeyRequest request = DeleteSSHKeyRequest.newBuilder().setName(name).build();
+    deleteSSHKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a public SSH key registered in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DeleteSSHKeyRequest request =
+   *       DeleteSSHKeyRequest.newBuilder()
+   *           .setName(SshKeyName.of("[PROJECT]", "[LOCATION]", "[SSH_KEY]").toString())
+   *           .build();
+   *   bareMetalSolutionClient.deleteSSHKey(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSSHKey(DeleteSSHKeyRequest request) {
+    deleteSSHKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a public SSH key registered in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DeleteSSHKeyRequest request =
+   *       DeleteSSHKeyRequest.newBuilder()
+   *           .setName(SshKeyName.of("[PROJECT]", "[LOCATION]", "[SSH_KEY]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = bareMetalSolutionClient.deleteSSHKeyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSSHKeyRequest, Empty> deleteSSHKeyCallable() {
+    return stub.deleteSSHKeyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1550,8 +2405,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *     <p>The `name` field is used to identify the volume to update. Format:
    *     projects/{project}/locations/{location}/volumes/{volume}
    * @param updateMask The list of fields to update. The only currently supported fields are:
-   *     `snapshot_auto_delete_behavior` `snapshot_schedule_policy_name` 'labels' 'snapshot_enabled'
-   *     'snapshot_reservation_detail.reserved_space_percent'
+   *     'labels'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> updateVolumeAsync(
@@ -1648,6 +2502,269 @@ public class BareMetalSolutionClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateVolumeRequest, Operation> updateVolumeCallable() {
     return stub.updateVolumeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameVolume sets a new name for a volume. Use with caution, previous names become immediately
+   * invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   VolumeName name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   String newVolumeId = "newVolumeId-613023851";
+   *   Volume response = bareMetalSolutionClient.renameVolume(name, newVolumeId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The `name` field is used to identify the volume. Format:
+   *     projects/{project}/locations/{location}/volumes/{volume}
+   * @param newVolumeId Required. The new `id` of the volume.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Volume renameVolume(VolumeName name, String newVolumeId) {
+    RenameVolumeRequest request =
+        RenameVolumeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setNewVolumeId(newVolumeId)
+            .build();
+    return renameVolume(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameVolume sets a new name for a volume. Use with caution, previous names become immediately
+   * invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   String newVolumeId = "newVolumeId-613023851";
+   *   Volume response = bareMetalSolutionClient.renameVolume(name, newVolumeId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The `name` field is used to identify the volume. Format:
+   *     projects/{project}/locations/{location}/volumes/{volume}
+   * @param newVolumeId Required. The new `id` of the volume.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Volume renameVolume(String name, String newVolumeId) {
+    RenameVolumeRequest request =
+        RenameVolumeRequest.newBuilder().setName(name).setNewVolumeId(newVolumeId).build();
+    return renameVolume(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameVolume sets a new name for a volume. Use with caution, previous names become immediately
+   * invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   RenameVolumeRequest request =
+   *       RenameVolumeRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setNewVolumeId("newVolumeId-613023851")
+   *           .build();
+   *   Volume response = bareMetalSolutionClient.renameVolume(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Volume renameVolume(RenameVolumeRequest request) {
+    return renameVolumeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameVolume sets a new name for a volume. Use with caution, previous names become immediately
+   * invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   RenameVolumeRequest request =
+   *       RenameVolumeRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setNewVolumeId("newVolumeId-613023851")
+   *           .build();
+   *   ApiFuture<Volume> future = bareMetalSolutionClient.renameVolumeCallable().futureCall(request);
+   *   // Do something.
+   *   Volume response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RenameVolumeRequest, Volume> renameVolumeCallable() {
+    return stub.renameVolumeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Skips volume's cooloff and deletes it now. Volume must be in cooloff state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   VolumeName name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   bareMetalSolutionClient.evictVolumeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Volume.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> evictVolumeAsync(VolumeName name) {
+    EvictVolumeRequest request =
+        EvictVolumeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return evictVolumeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Skips volume's cooloff and deletes it now. Volume must be in cooloff state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   bareMetalSolutionClient.evictVolumeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Volume.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> evictVolumeAsync(String name) {
+    EvictVolumeRequest request = EvictVolumeRequest.newBuilder().setName(name).build();
+    return evictVolumeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Skips volume's cooloff and deletes it now. Volume must be in cooloff state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   EvictVolumeRequest request =
+   *       EvictVolumeRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .build();
+   *   bareMetalSolutionClient.evictVolumeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> evictVolumeAsync(
+      EvictVolumeRequest request) {
+    return evictVolumeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Skips volume's cooloff and deletes it now. Volume must be in cooloff state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   EvictVolumeRequest request =
+   *       EvictVolumeRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       bareMetalSolutionClient.evictVolumeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<EvictVolumeRequest, Empty, OperationMetadata>
+      evictVolumeOperationCallable() {
+    return stub.evictVolumeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Skips volume's cooloff and deletes it now. Volume must be in cooloff state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   EvictVolumeRequest request =
+   *       EvictVolumeRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       bareMetalSolutionClient.evictVolumeCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EvictVolumeRequest, Operation> evictVolumeCallable() {
+    return stub.evictVolumeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2216,7 +3333,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *     <p>The `name` field is used to identify the instance to update. Format:
    *     projects/{project}/locations/{location}/networks/{network}
    * @param updateMask The list of fields to update. The only currently supported fields are:
-   *     `labels`, `reservations`
+   *     `labels`, `reservations`, `vrf.vlan_attachments`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Network, OperationMetadata> updateNetworkAsync(
@@ -2313,6 +3430,707 @@ public class BareMetalSolutionClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateNetworkRequest, Operation> updateNetworkCallable() {
     return stub.updateNetworkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Takes a snapshot of a boot volume. Returns INVALID_ARGUMENT if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   VolumeSnapshot volumeSnapshot = VolumeSnapshot.newBuilder().build();
+   *   VolumeSnapshot response =
+   *       bareMetalSolutionClient.createVolumeSnapshot(parent, volumeSnapshot);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The volume to snapshot.
+   * @param volumeSnapshot Required. The snapshot to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VolumeSnapshot createVolumeSnapshot(
+      VolumeName parent, VolumeSnapshot volumeSnapshot) {
+    CreateVolumeSnapshotRequest request =
+        CreateVolumeSnapshotRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setVolumeSnapshot(volumeSnapshot)
+            .build();
+    return createVolumeSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Takes a snapshot of a boot volume. Returns INVALID_ARGUMENT if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   VolumeSnapshot volumeSnapshot = VolumeSnapshot.newBuilder().build();
+   *   VolumeSnapshot response =
+   *       bareMetalSolutionClient.createVolumeSnapshot(parent, volumeSnapshot);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The volume to snapshot.
+   * @param volumeSnapshot Required. The snapshot to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VolumeSnapshot createVolumeSnapshot(String parent, VolumeSnapshot volumeSnapshot) {
+    CreateVolumeSnapshotRequest request =
+        CreateVolumeSnapshotRequest.newBuilder()
+            .setParent(parent)
+            .setVolumeSnapshot(volumeSnapshot)
+            .build();
+    return createVolumeSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Takes a snapshot of a boot volume. Returns INVALID_ARGUMENT if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   CreateVolumeSnapshotRequest request =
+   *       CreateVolumeSnapshotRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setVolumeSnapshot(VolumeSnapshot.newBuilder().build())
+   *           .build();
+   *   VolumeSnapshot response = bareMetalSolutionClient.createVolumeSnapshot(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VolumeSnapshot createVolumeSnapshot(CreateVolumeSnapshotRequest request) {
+    return createVolumeSnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Takes a snapshot of a boot volume. Returns INVALID_ARGUMENT if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   CreateVolumeSnapshotRequest request =
+   *       CreateVolumeSnapshotRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setVolumeSnapshot(VolumeSnapshot.newBuilder().build())
+   *           .build();
+   *   ApiFuture<VolumeSnapshot> future =
+   *       bareMetalSolutionClient.createVolumeSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   VolumeSnapshot response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateVolumeSnapshotRequest, VolumeSnapshot>
+      createVolumeSnapshotCallable() {
+    return stub.createVolumeSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Uses the specified snapshot to restore its parent volume. Returns INVALID_ARGUMENT if called
+   * for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   VolumeSnapshotName volumeSnapshot =
+   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
+   *   VolumeSnapshot response =
+   *       bareMetalSolutionClient.restoreVolumeSnapshotAsync(volumeSnapshot).get();
+   * }
+   * }</pre>
+   *
+   * @param volumeSnapshot Required. Name of the snapshot which will be used to restore its parent
+   *     volume.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<VolumeSnapshot, OperationMetadata> restoreVolumeSnapshotAsync(
+      VolumeSnapshotName volumeSnapshot) {
+    RestoreVolumeSnapshotRequest request =
+        RestoreVolumeSnapshotRequest.newBuilder()
+            .setVolumeSnapshot(volumeSnapshot == null ? null : volumeSnapshot.toString())
+            .build();
+    return restoreVolumeSnapshotAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Uses the specified snapshot to restore its parent volume. Returns INVALID_ARGUMENT if called
+   * for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String volumeSnapshot =
+   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]").toString();
+   *   VolumeSnapshot response =
+   *       bareMetalSolutionClient.restoreVolumeSnapshotAsync(volumeSnapshot).get();
+   * }
+   * }</pre>
+   *
+   * @param volumeSnapshot Required. Name of the snapshot which will be used to restore its parent
+   *     volume.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<VolumeSnapshot, OperationMetadata> restoreVolumeSnapshotAsync(
+      String volumeSnapshot) {
+    RestoreVolumeSnapshotRequest request =
+        RestoreVolumeSnapshotRequest.newBuilder().setVolumeSnapshot(volumeSnapshot).build();
+    return restoreVolumeSnapshotAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Uses the specified snapshot to restore its parent volume. Returns INVALID_ARGUMENT if called
+   * for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   RestoreVolumeSnapshotRequest request =
+   *       RestoreVolumeSnapshotRequest.newBuilder()
+   *           .setVolumeSnapshot(
+   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
+   *                   .toString())
+   *           .build();
+   *   VolumeSnapshot response = bareMetalSolutionClient.restoreVolumeSnapshotAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<VolumeSnapshot, OperationMetadata> restoreVolumeSnapshotAsync(
+      RestoreVolumeSnapshotRequest request) {
+    return restoreVolumeSnapshotOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Uses the specified snapshot to restore its parent volume. Returns INVALID_ARGUMENT if called
+   * for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   RestoreVolumeSnapshotRequest request =
+   *       RestoreVolumeSnapshotRequest.newBuilder()
+   *           .setVolumeSnapshot(
+   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<VolumeSnapshot, OperationMetadata> future =
+   *       bareMetalSolutionClient.restoreVolumeSnapshotOperationCallable().futureCall(request);
+   *   // Do something.
+   *   VolumeSnapshot response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
+      restoreVolumeSnapshotOperationCallable() {
+    return stub.restoreVolumeSnapshotOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Uses the specified snapshot to restore its parent volume. Returns INVALID_ARGUMENT if called
+   * for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   RestoreVolumeSnapshotRequest request =
+   *       RestoreVolumeSnapshotRequest.newBuilder()
+   *           .setVolumeSnapshot(
+   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       bareMetalSolutionClient.restoreVolumeSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestoreVolumeSnapshotRequest, Operation>
+      restoreVolumeSnapshotCallable() {
+    return stub.restoreVolumeSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a volume snapshot. Returns INVALID_ARGUMENT if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   VolumeSnapshotName name =
+   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
+   *   bareMetalSolutionClient.deleteVolumeSnapshot(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the snapshot to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteVolumeSnapshot(VolumeSnapshotName name) {
+    DeleteVolumeSnapshotRequest request =
+        DeleteVolumeSnapshotRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteVolumeSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a volume snapshot. Returns INVALID_ARGUMENT if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name =
+   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]").toString();
+   *   bareMetalSolutionClient.deleteVolumeSnapshot(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the snapshot to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteVolumeSnapshot(String name) {
+    DeleteVolumeSnapshotRequest request =
+        DeleteVolumeSnapshotRequest.newBuilder().setName(name).build();
+    deleteVolumeSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a volume snapshot. Returns INVALID_ARGUMENT if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DeleteVolumeSnapshotRequest request =
+   *       DeleteVolumeSnapshotRequest.newBuilder()
+   *           .setName(
+   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
+   *                   .toString())
+   *           .build();
+   *   bareMetalSolutionClient.deleteVolumeSnapshot(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteVolumeSnapshot(DeleteVolumeSnapshotRequest request) {
+    deleteVolumeSnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a volume snapshot. Returns INVALID_ARGUMENT if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DeleteVolumeSnapshotRequest request =
+   *       DeleteVolumeSnapshotRequest.newBuilder()
+   *           .setName(
+   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       bareMetalSolutionClient.deleteVolumeSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotCallable() {
+    return stub.deleteVolumeSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified snapshot resource. Returns INVALID_ARGUMENT if called for a non-boot
+   * volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   VolumeSnapshotName name =
+   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
+   *   VolumeSnapshot response = bareMetalSolutionClient.getVolumeSnapshot(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the snapshot.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VolumeSnapshot getVolumeSnapshot(VolumeSnapshotName name) {
+    GetVolumeSnapshotRequest request =
+        GetVolumeSnapshotRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getVolumeSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified snapshot resource. Returns INVALID_ARGUMENT if called for a non-boot
+   * volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name =
+   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]").toString();
+   *   VolumeSnapshot response = bareMetalSolutionClient.getVolumeSnapshot(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the snapshot.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VolumeSnapshot getVolumeSnapshot(String name) {
+    GetVolumeSnapshotRequest request = GetVolumeSnapshotRequest.newBuilder().setName(name).build();
+    return getVolumeSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified snapshot resource. Returns INVALID_ARGUMENT if called for a non-boot
+   * volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   GetVolumeSnapshotRequest request =
+   *       GetVolumeSnapshotRequest.newBuilder()
+   *           .setName(
+   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
+   *                   .toString())
+   *           .build();
+   *   VolumeSnapshot response = bareMetalSolutionClient.getVolumeSnapshot(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VolumeSnapshot getVolumeSnapshot(GetVolumeSnapshotRequest request) {
+    return getVolumeSnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified snapshot resource. Returns INVALID_ARGUMENT if called for a non-boot
+   * volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   GetVolumeSnapshotRequest request =
+   *       GetVolumeSnapshotRequest.newBuilder()
+   *           .setName(
+   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<VolumeSnapshot> future =
+   *       bareMetalSolutionClient.getVolumeSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   VolumeSnapshot response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotCallable() {
+    return stub.getVolumeSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of snapshots for the specified volume. Returns a response with an empty list
+   * of snapshots if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   for (VolumeSnapshot element :
+   *       bareMetalSolutionClient.listVolumeSnapshots(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListVolumesRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListVolumeSnapshotsPagedResponse listVolumeSnapshots(VolumeName parent) {
+    ListVolumeSnapshotsRequest request =
+        ListVolumeSnapshotsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listVolumeSnapshots(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of snapshots for the specified volume. Returns a response with an empty list
+   * of snapshots if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   for (VolumeSnapshot element :
+   *       bareMetalSolutionClient.listVolumeSnapshots(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListVolumesRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListVolumeSnapshotsPagedResponse listVolumeSnapshots(String parent) {
+    ListVolumeSnapshotsRequest request =
+        ListVolumeSnapshotsRequest.newBuilder().setParent(parent).build();
+    return listVolumeSnapshots(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of snapshots for the specified volume. Returns a response with an empty list
+   * of snapshots if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListVolumeSnapshotsRequest request =
+   *       ListVolumeSnapshotsRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (VolumeSnapshot element :
+   *       bareMetalSolutionClient.listVolumeSnapshots(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListVolumeSnapshotsPagedResponse listVolumeSnapshots(
+      ListVolumeSnapshotsRequest request) {
+    return listVolumeSnapshotsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of snapshots for the specified volume. Returns a response with an empty list
+   * of snapshots if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListVolumeSnapshotsRequest request =
+   *       ListVolumeSnapshotsRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<VolumeSnapshot> future =
+   *       bareMetalSolutionClient.listVolumeSnapshotsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (VolumeSnapshot element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsPagedResponse>
+      listVolumeSnapshotsPagedCallable() {
+    return stub.listVolumeSnapshotsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of snapshots for the specified volume. Returns a response with an empty list
+   * of snapshots if called for a non-boot volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListVolumeSnapshotsRequest request =
+   *       ListVolumeSnapshotsRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListVolumeSnapshotsResponse response =
+   *         bareMetalSolutionClient.listVolumeSnapshotsCallable().call(request);
+   *     for (VolumeSnapshot element : response.getVolumeSnapshotsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
+      listVolumeSnapshotsCallable() {
+    return stub.listVolumeSnapshotsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2579,6 +4397,143 @@ public class BareMetalSolutionClient implements BackgroundResource {
    */
   public final UnaryCallable<ListLunsRequest, ListLunsResponse> listLunsCallable() {
     return stub.listLunsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Skips lun's cooloff and deletes it now. Lun must be in cooloff state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   LunName name = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]");
+   *   bareMetalSolutionClient.evictLunAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the lun.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> evictLunAsync(LunName name) {
+    EvictLunRequest request =
+        EvictLunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return evictLunAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Skips lun's cooloff and deletes it now. Lun must be in cooloff state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString();
+   *   bareMetalSolutionClient.evictLunAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the lun.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> evictLunAsync(String name) {
+    EvictLunRequest request = EvictLunRequest.newBuilder().setName(name).build();
+    return evictLunAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Skips lun's cooloff and deletes it now. Lun must be in cooloff state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   EvictLunRequest request =
+   *       EvictLunRequest.newBuilder()
+   *           .setName(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+   *           .build();
+   *   bareMetalSolutionClient.evictLunAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> evictLunAsync(EvictLunRequest request) {
+    return evictLunOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Skips lun's cooloff and deletes it now. Lun must be in cooloff state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   EvictLunRequest request =
+   *       EvictLunRequest.newBuilder()
+   *           .setName(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       bareMetalSolutionClient.evictLunOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<EvictLunRequest, Empty, OperationMetadata>
+      evictLunOperationCallable() {
+    return stub.evictLunOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Skips lun's cooloff and deletes it now. Lun must be in cooloff state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   EvictLunRequest request =
+   *       EvictLunRequest.newBuilder()
+   *           .setName(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = bareMetalSolutionClient.evictLunCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EvictLunRequest, Operation> evictLunCallable() {
+    return stub.evictLunCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2879,7 +4834,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *     <p>The `name` field is used to identify the NFS share to update. Format:
    *     projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * @param updateMask The list of fields to update. The only currently supported fields are:
-   *     `labels`
+   *     `labels` `allowed_clients`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<NfsShare, OperationMetadata> updateNfsShareAsync(
@@ -2976,6 +4931,1512 @@ public class BareMetalSolutionClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateNfsShareRequest, Operation> updateNfsShareCallable() {
     return stub.updateNfsShareCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   NfsShare nfsShare = NfsShare.newBuilder().build();
+   *   NfsShare response = bareMetalSolutionClient.createNfsShareAsync(parent, nfsShare).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent project and location.
+   * @param nfsShare Required. The NfsShare to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NfsShare, OperationMetadata> createNfsShareAsync(
+      LocationName parent, NfsShare nfsShare) {
+    CreateNfsShareRequest request =
+        CreateNfsShareRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setNfsShare(nfsShare)
+            .build();
+    return createNfsShareAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   NfsShare nfsShare = NfsShare.newBuilder().build();
+   *   NfsShare response = bareMetalSolutionClient.createNfsShareAsync(parent, nfsShare).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent project and location.
+   * @param nfsShare Required. The NfsShare to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NfsShare, OperationMetadata> createNfsShareAsync(
+      String parent, NfsShare nfsShare) {
+    CreateNfsShareRequest request =
+        CreateNfsShareRequest.newBuilder().setParent(parent).setNfsShare(nfsShare).build();
+    return createNfsShareAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   CreateNfsShareRequest request =
+   *       CreateNfsShareRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setNfsShare(NfsShare.newBuilder().build())
+   *           .build();
+   *   NfsShare response = bareMetalSolutionClient.createNfsShareAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NfsShare, OperationMetadata> createNfsShareAsync(
+      CreateNfsShareRequest request) {
+    return createNfsShareOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   CreateNfsShareRequest request =
+   *       CreateNfsShareRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setNfsShare(NfsShare.newBuilder().build())
+   *           .build();
+   *   OperationFuture<NfsShare, OperationMetadata> future =
+   *       bareMetalSolutionClient.createNfsShareOperationCallable().futureCall(request);
+   *   // Do something.
+   *   NfsShare response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateNfsShareRequest, NfsShare, OperationMetadata>
+      createNfsShareOperationCallable() {
+    return stub.createNfsShareOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   CreateNfsShareRequest request =
+   *       CreateNfsShareRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setNfsShare(NfsShare.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       bareMetalSolutionClient.createNfsShareCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateNfsShareRequest, Operation> createNfsShareCallable() {
+    return stub.createNfsShareCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameNfsShare sets a new name for an nfsshare. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   NFSShareName name = NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]");
+   *   String newNfsshareId = "newNfsshareId1643043071";
+   *   NfsShare response = bareMetalSolutionClient.renameNfsShare(name, newNfsshareId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The `name` field is used to identify the nfsshare. Format:
+   *     projects/{project}/locations/{location}/nfsshares/{nfsshare}
+   * @param newNfsshareId Required. The new `id` of the nfsshare.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NfsShare renameNfsShare(NFSShareName name, String newNfsshareId) {
+    RenameNfsShareRequest request =
+        RenameNfsShareRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setNewNfsshareId(newNfsshareId)
+            .build();
+    return renameNfsShare(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameNfsShare sets a new name for an nfsshare. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString();
+   *   String newNfsshareId = "newNfsshareId1643043071";
+   *   NfsShare response = bareMetalSolutionClient.renameNfsShare(name, newNfsshareId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The `name` field is used to identify the nfsshare. Format:
+   *     projects/{project}/locations/{location}/nfsshares/{nfsshare}
+   * @param newNfsshareId Required. The new `id` of the nfsshare.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NfsShare renameNfsShare(String name, String newNfsshareId) {
+    RenameNfsShareRequest request =
+        RenameNfsShareRequest.newBuilder().setName(name).setNewNfsshareId(newNfsshareId).build();
+    return renameNfsShare(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameNfsShare sets a new name for an nfsshare. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   RenameNfsShareRequest request =
+   *       RenameNfsShareRequest.newBuilder()
+   *           .setName(NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString())
+   *           .setNewNfsshareId("newNfsshareId1643043071")
+   *           .build();
+   *   NfsShare response = bareMetalSolutionClient.renameNfsShare(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NfsShare renameNfsShare(RenameNfsShareRequest request) {
+    return renameNfsShareCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameNfsShare sets a new name for an nfsshare. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   RenameNfsShareRequest request =
+   *       RenameNfsShareRequest.newBuilder()
+   *           .setName(NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString())
+   *           .setNewNfsshareId("newNfsshareId1643043071")
+   *           .build();
+   *   ApiFuture<NfsShare> future =
+   *       bareMetalSolutionClient.renameNfsShareCallable().futureCall(request);
+   *   // Do something.
+   *   NfsShare response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RenameNfsShareRequest, NfsShare> renameNfsShareCallable() {
+    return stub.renameNfsShareCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete an NFS share. The underlying volume is automatically deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   NFSShareName name = NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]");
+   *   bareMetalSolutionClient.deleteNfsShareAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NFS share to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteNfsShareAsync(NFSShareName name) {
+    DeleteNfsShareRequest request =
+        DeleteNfsShareRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteNfsShareAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete an NFS share. The underlying volume is automatically deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString();
+   *   bareMetalSolutionClient.deleteNfsShareAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NFS share to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteNfsShareAsync(String name) {
+    DeleteNfsShareRequest request = DeleteNfsShareRequest.newBuilder().setName(name).build();
+    return deleteNfsShareAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete an NFS share. The underlying volume is automatically deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DeleteNfsShareRequest request =
+   *       DeleteNfsShareRequest.newBuilder()
+   *           .setName(NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString())
+   *           .build();
+   *   bareMetalSolutionClient.deleteNfsShareAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteNfsShareAsync(
+      DeleteNfsShareRequest request) {
+    return deleteNfsShareOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete an NFS share. The underlying volume is automatically deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DeleteNfsShareRequest request =
+   *       DeleteNfsShareRequest.newBuilder()
+   *           .setName(NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       bareMetalSolutionClient.deleteNfsShareOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteNfsShareRequest, Empty, OperationMetadata>
+      deleteNfsShareOperationCallable() {
+    return stub.deleteNfsShareOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete an NFS share. The underlying volume is automatically deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DeleteNfsShareRequest request =
+   *       DeleteNfsShareRequest.newBuilder()
+   *           .setName(NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       bareMetalSolutionClient.deleteNfsShareCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteNfsShareRequest, Operation> deleteNfsShareCallable() {
+    return stub.deleteNfsShareCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List the budget details to provision resources on a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (ProvisioningQuota element :
+   *       bareMetalSolutionClient.listProvisioningQuotas(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListProvisioningQuotasRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProvisioningQuotasPagedResponse listProvisioningQuotas(LocationName parent) {
+    ListProvisioningQuotasRequest request =
+        ListProvisioningQuotasRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listProvisioningQuotas(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List the budget details to provision resources on a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (ProvisioningQuota element :
+   *       bareMetalSolutionClient.listProvisioningQuotas(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListProvisioningQuotasRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProvisioningQuotasPagedResponse listProvisioningQuotas(String parent) {
+    ListProvisioningQuotasRequest request =
+        ListProvisioningQuotasRequest.newBuilder().setParent(parent).build();
+    return listProvisioningQuotas(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List the budget details to provision resources on a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListProvisioningQuotasRequest request =
+   *       ListProvisioningQuotasRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ProvisioningQuota element :
+   *       bareMetalSolutionClient.listProvisioningQuotas(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProvisioningQuotasPagedResponse listProvisioningQuotas(
+      ListProvisioningQuotasRequest request) {
+    return listProvisioningQuotasPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List the budget details to provision resources on a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListProvisioningQuotasRequest request =
+   *       ListProvisioningQuotasRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ProvisioningQuota> future =
+   *       bareMetalSolutionClient.listProvisioningQuotasPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ProvisioningQuota element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProvisioningQuotasRequest, ListProvisioningQuotasPagedResponse>
+      listProvisioningQuotasPagedCallable() {
+    return stub.listProvisioningQuotasPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List the budget details to provision resources on a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListProvisioningQuotasRequest request =
+   *       ListProvisioningQuotasRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListProvisioningQuotasResponse response =
+   *         bareMetalSolutionClient.listProvisioningQuotasCallable().call(request);
+   *     for (ProvisioningQuota element : response.getProvisioningQuotasList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProvisioningQuotasRequest, ListProvisioningQuotasResponse>
+      listProvisioningQuotasCallable() {
+    return stub.listProvisioningQuotasCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submit a provisiong configuration for a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ProvisioningConfig provisioningConfig = ProvisioningConfig.newBuilder().build();
+   *   SubmitProvisioningConfigResponse response =
+   *       bareMetalSolutionClient.submitProvisioningConfig(parent, provisioningConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent project and location containing the ProvisioningConfig.
+   * @param provisioningConfig Required. The ProvisioningConfig to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubmitProvisioningConfigResponse submitProvisioningConfig(
+      LocationName parent, ProvisioningConfig provisioningConfig) {
+    SubmitProvisioningConfigRequest request =
+        SubmitProvisioningConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setProvisioningConfig(provisioningConfig)
+            .build();
+    return submitProvisioningConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submit a provisiong configuration for a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   ProvisioningConfig provisioningConfig = ProvisioningConfig.newBuilder().build();
+   *   SubmitProvisioningConfigResponse response =
+   *       bareMetalSolutionClient.submitProvisioningConfig(parent, provisioningConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent project and location containing the ProvisioningConfig.
+   * @param provisioningConfig Required. The ProvisioningConfig to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubmitProvisioningConfigResponse submitProvisioningConfig(
+      String parent, ProvisioningConfig provisioningConfig) {
+    SubmitProvisioningConfigRequest request =
+        SubmitProvisioningConfigRequest.newBuilder()
+            .setParent(parent)
+            .setProvisioningConfig(provisioningConfig)
+            .build();
+    return submitProvisioningConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submit a provisiong configuration for a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   SubmitProvisioningConfigRequest request =
+   *       SubmitProvisioningConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setProvisioningConfig(ProvisioningConfig.newBuilder().build())
+   *           .setEmail("email96619420")
+   *           .build();
+   *   SubmitProvisioningConfigResponse response =
+   *       bareMetalSolutionClient.submitProvisioningConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubmitProvisioningConfigResponse submitProvisioningConfig(
+      SubmitProvisioningConfigRequest request) {
+    return submitProvisioningConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submit a provisiong configuration for a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   SubmitProvisioningConfigRequest request =
+   *       SubmitProvisioningConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setProvisioningConfig(ProvisioningConfig.newBuilder().build())
+   *           .setEmail("email96619420")
+   *           .build();
+   *   ApiFuture<SubmitProvisioningConfigResponse> future =
+   *       bareMetalSolutionClient.submitProvisioningConfigCallable().futureCall(request);
+   *   // Do something.
+   *   SubmitProvisioningConfigResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SubmitProvisioningConfigRequest, SubmitProvisioningConfigResponse>
+      submitProvisioningConfigCallable() {
+    return stub.submitProvisioningConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get ProvisioningConfig by name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ProvisioningConfigName name =
+   *       ProvisioningConfigName.of("[PROJECT]", "[LOCATION]", "[PROVISIONING_CONFIG]");
+   *   ProvisioningConfig response = bareMetalSolutionClient.getProvisioningConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the ProvisioningConfig.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProvisioningConfig getProvisioningConfig(ProvisioningConfigName name) {
+    GetProvisioningConfigRequest request =
+        GetProvisioningConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getProvisioningConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get ProvisioningConfig by name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name =
+   *       ProvisioningConfigName.of("[PROJECT]", "[LOCATION]", "[PROVISIONING_CONFIG]").toString();
+   *   ProvisioningConfig response = bareMetalSolutionClient.getProvisioningConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the ProvisioningConfig.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProvisioningConfig getProvisioningConfig(String name) {
+    GetProvisioningConfigRequest request =
+        GetProvisioningConfigRequest.newBuilder().setName(name).build();
+    return getProvisioningConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get ProvisioningConfig by name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   GetProvisioningConfigRequest request =
+   *       GetProvisioningConfigRequest.newBuilder()
+   *           .setName(
+   *               ProvisioningConfigName.of("[PROJECT]", "[LOCATION]", "[PROVISIONING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ProvisioningConfig response = bareMetalSolutionClient.getProvisioningConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProvisioningConfig getProvisioningConfig(GetProvisioningConfigRequest request) {
+    return getProvisioningConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get ProvisioningConfig by name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   GetProvisioningConfigRequest request =
+   *       GetProvisioningConfigRequest.newBuilder()
+   *           .setName(
+   *               ProvisioningConfigName.of("[PROJECT]", "[LOCATION]", "[PROVISIONING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ProvisioningConfig> future =
+   *       bareMetalSolutionClient.getProvisioningConfigCallable().futureCall(request);
+   *   // Do something.
+   *   ProvisioningConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetProvisioningConfigRequest, ProvisioningConfig>
+      getProvisioningConfigCallable() {
+    return stub.getProvisioningConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create new ProvisioningConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ProvisioningConfig provisioningConfig = ProvisioningConfig.newBuilder().build();
+   *   ProvisioningConfig response =
+   *       bareMetalSolutionClient.createProvisioningConfig(parent, provisioningConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent project and location containing the ProvisioningConfig.
+   * @param provisioningConfig Required. The ProvisioningConfig to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProvisioningConfig createProvisioningConfig(
+      LocationName parent, ProvisioningConfig provisioningConfig) {
+    CreateProvisioningConfigRequest request =
+        CreateProvisioningConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setProvisioningConfig(provisioningConfig)
+            .build();
+    return createProvisioningConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create new ProvisioningConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   ProvisioningConfig provisioningConfig = ProvisioningConfig.newBuilder().build();
+   *   ProvisioningConfig response =
+   *       bareMetalSolutionClient.createProvisioningConfig(parent, provisioningConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent project and location containing the ProvisioningConfig.
+   * @param provisioningConfig Required. The ProvisioningConfig to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProvisioningConfig createProvisioningConfig(
+      String parent, ProvisioningConfig provisioningConfig) {
+    CreateProvisioningConfigRequest request =
+        CreateProvisioningConfigRequest.newBuilder()
+            .setParent(parent)
+            .setProvisioningConfig(provisioningConfig)
+            .build();
+    return createProvisioningConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create new ProvisioningConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   CreateProvisioningConfigRequest request =
+   *       CreateProvisioningConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setProvisioningConfig(ProvisioningConfig.newBuilder().build())
+   *           .setEmail("email96619420")
+   *           .build();
+   *   ProvisioningConfig response = bareMetalSolutionClient.createProvisioningConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProvisioningConfig createProvisioningConfig(
+      CreateProvisioningConfigRequest request) {
+    return createProvisioningConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create new ProvisioningConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   CreateProvisioningConfigRequest request =
+   *       CreateProvisioningConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setProvisioningConfig(ProvisioningConfig.newBuilder().build())
+   *           .setEmail("email96619420")
+   *           .build();
+   *   ApiFuture<ProvisioningConfig> future =
+   *       bareMetalSolutionClient.createProvisioningConfigCallable().futureCall(request);
+   *   // Do something.
+   *   ProvisioningConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateProvisioningConfigRequest, ProvisioningConfig>
+      createProvisioningConfigCallable() {
+    return stub.createProvisioningConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update existing ProvisioningConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ProvisioningConfig provisioningConfig = ProvisioningConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ProvisioningConfig response =
+   *       bareMetalSolutionClient.updateProvisioningConfig(provisioningConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param provisioningConfig Required. The ProvisioningConfig to update.
+   * @param updateMask Required. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProvisioningConfig updateProvisioningConfig(
+      ProvisioningConfig provisioningConfig, FieldMask updateMask) {
+    UpdateProvisioningConfigRequest request =
+        UpdateProvisioningConfigRequest.newBuilder()
+            .setProvisioningConfig(provisioningConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateProvisioningConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update existing ProvisioningConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   UpdateProvisioningConfigRequest request =
+   *       UpdateProvisioningConfigRequest.newBuilder()
+   *           .setProvisioningConfig(ProvisioningConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setEmail("email96619420")
+   *           .build();
+   *   ProvisioningConfig response = bareMetalSolutionClient.updateProvisioningConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProvisioningConfig updateProvisioningConfig(
+      UpdateProvisioningConfigRequest request) {
+    return updateProvisioningConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update existing ProvisioningConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   UpdateProvisioningConfigRequest request =
+   *       UpdateProvisioningConfigRequest.newBuilder()
+   *           .setProvisioningConfig(ProvisioningConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setEmail("email96619420")
+   *           .build();
+   *   ApiFuture<ProvisioningConfig> future =
+   *       bareMetalSolutionClient.updateProvisioningConfigCallable().futureCall(request);
+   *   // Do something.
+   *   ProvisioningConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateProvisioningConfigRequest, ProvisioningConfig>
+      updateProvisioningConfigCallable() {
+    return stub.updateProvisioningConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameNetwork sets a new name for a network. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   NetworkName name = NetworkName.of("[PROJECT]", "[LOCATION]", "[NETWORK]");
+   *   String newNetworkId = "newNetworkId-1927751127";
+   *   Network response = bareMetalSolutionClient.renameNetwork(name, newNetworkId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The `name` field is used to identify the network. Format:
+   *     projects/{project}/locations/{location}/networks/{network}
+   * @param newNetworkId Required. The new `id` of the network.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Network renameNetwork(NetworkName name, String newNetworkId) {
+    RenameNetworkRequest request =
+        RenameNetworkRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setNewNetworkId(newNetworkId)
+            .build();
+    return renameNetwork(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameNetwork sets a new name for a network. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = NetworkName.of("[PROJECT]", "[LOCATION]", "[NETWORK]").toString();
+   *   String newNetworkId = "newNetworkId-1927751127";
+   *   Network response = bareMetalSolutionClient.renameNetwork(name, newNetworkId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The `name` field is used to identify the network. Format:
+   *     projects/{project}/locations/{location}/networks/{network}
+   * @param newNetworkId Required. The new `id` of the network.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Network renameNetwork(String name, String newNetworkId) {
+    RenameNetworkRequest request =
+        RenameNetworkRequest.newBuilder().setName(name).setNewNetworkId(newNetworkId).build();
+    return renameNetwork(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameNetwork sets a new name for a network. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   RenameNetworkRequest request =
+   *       RenameNetworkRequest.newBuilder()
+   *           .setName(NetworkName.of("[PROJECT]", "[LOCATION]", "[NETWORK]").toString())
+   *           .setNewNetworkId("newNetworkId-1927751127")
+   *           .build();
+   *   Network response = bareMetalSolutionClient.renameNetwork(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Network renameNetwork(RenameNetworkRequest request) {
+    return renameNetworkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RenameNetwork sets a new name for a network. Use with caution, previous names become
+   * immediately invalidated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   RenameNetworkRequest request =
+   *       RenameNetworkRequest.newBuilder()
+   *           .setName(NetworkName.of("[PROJECT]", "[LOCATION]", "[NETWORK]").toString())
+   *           .setNewNetworkId("newNetworkId-1927751127")
+   *           .build();
+   *   ApiFuture<Network> future =
+   *       bareMetalSolutionClient.renameNetworkCallable().futureCall(request);
+   *   // Do something.
+   *   Network response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RenameNetworkRequest, Network> renameNetworkCallable() {
+    return stub.renameNetworkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of OS images which are currently approved.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (OSImage element : bareMetalSolutionClient.listOSImages(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListProvisioningQuotasRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOSImagesPagedResponse listOSImages(LocationName parent) {
+    ListOSImagesRequest request =
+        ListOSImagesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listOSImages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of OS images which are currently approved.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (OSImage element : bareMetalSolutionClient.listOSImages(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListProvisioningQuotasRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOSImagesPagedResponse listOSImages(String parent) {
+    ListOSImagesRequest request = ListOSImagesRequest.newBuilder().setParent(parent).build();
+    return listOSImages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of OS images which are currently approved.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListOSImagesRequest request =
+   *       ListOSImagesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (OSImage element : bareMetalSolutionClient.listOSImages(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOSImagesPagedResponse listOSImages(ListOSImagesRequest request) {
+    return listOSImagesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of OS images which are currently approved.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListOSImagesRequest request =
+   *       ListOSImagesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<OSImage> future =
+   *       bareMetalSolutionClient.listOSImagesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (OSImage element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListOSImagesRequest, ListOSImagesPagedResponse>
+      listOSImagesPagedCallable() {
+    return stub.listOSImagesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of OS images which are currently approved.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListOSImagesRequest request =
+   *       ListOSImagesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListOSImagesResponse response =
+   *         bareMetalSolutionClient.listOSImagesCallable().call(request);
+   *     for (OSImage element : response.getOsImagesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListOSImagesRequest, ListOSImagesResponse> listOSImagesCallable() {
+    return stub.listOSImagesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : bareMetalSolutionClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       bareMetalSolutionClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response =
+   *         bareMetalSolutionClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = bareMetalSolutionClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future =
+   *       bareMetalSolutionClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
   }
 
   @Override
@@ -3081,6 +6542,79 @@ public class BareMetalSolutionClient implements BackgroundResource {
     protected ListInstancesFixedSizeCollection createCollection(
         List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSSHKeysPagedResponse
+      extends AbstractPagedListResponse<
+          ListSSHKeysRequest,
+          ListSSHKeysResponse,
+          SSHKey,
+          ListSSHKeysPage,
+          ListSSHKeysFixedSizeCollection> {
+
+    public static ApiFuture<ListSSHKeysPagedResponse> createAsync(
+        PageContext<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey> context,
+        ApiFuture<ListSSHKeysResponse> futureResponse) {
+      ApiFuture<ListSSHKeysPage> futurePage =
+          ListSSHKeysPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListSSHKeysPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListSSHKeysPagedResponse(ListSSHKeysPage page) {
+      super(page, ListSSHKeysFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSSHKeysPage
+      extends AbstractPage<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey, ListSSHKeysPage> {
+
+    private ListSSHKeysPage(
+        PageContext<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey> context,
+        ListSSHKeysResponse response) {
+      super(context, response);
+    }
+
+    private static ListSSHKeysPage createEmptyPage() {
+      return new ListSSHKeysPage(null, null);
+    }
+
+    @Override
+    protected ListSSHKeysPage createPage(
+        PageContext<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey> context,
+        ListSSHKeysResponse response) {
+      return new ListSSHKeysPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSSHKeysPage> createPageAsync(
+        PageContext<ListSSHKeysRequest, ListSSHKeysResponse, SSHKey> context,
+        ApiFuture<ListSSHKeysResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSSHKeysFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSSHKeysRequest,
+          ListSSHKeysResponse,
+          SSHKey,
+          ListSSHKeysPage,
+          ListSSHKeysFixedSizeCollection> {
+
+    private ListSSHKeysFixedSizeCollection(List<ListSSHKeysPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSSHKeysFixedSizeCollection createEmptyCollection() {
+      return new ListSSHKeysFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSSHKeysFixedSizeCollection createCollection(
+        List<ListSSHKeysPage> pages, int collectionSize) {
+      return new ListSSHKeysFixedSizeCollection(pages, collectionSize);
     }
   }
 
@@ -3232,6 +6766,90 @@ public class BareMetalSolutionClient implements BackgroundResource {
     }
   }
 
+  public static class ListVolumeSnapshotsPagedResponse
+      extends AbstractPagedListResponse<
+          ListVolumeSnapshotsRequest,
+          ListVolumeSnapshotsResponse,
+          VolumeSnapshot,
+          ListVolumeSnapshotsPage,
+          ListVolumeSnapshotsFixedSizeCollection> {
+
+    public static ApiFuture<ListVolumeSnapshotsPagedResponse> createAsync(
+        PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
+            context,
+        ApiFuture<ListVolumeSnapshotsResponse> futureResponse) {
+      ApiFuture<ListVolumeSnapshotsPage> futurePage =
+          ListVolumeSnapshotsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListVolumeSnapshotsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListVolumeSnapshotsPagedResponse(ListVolumeSnapshotsPage page) {
+      super(page, ListVolumeSnapshotsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListVolumeSnapshotsPage
+      extends AbstractPage<
+          ListVolumeSnapshotsRequest,
+          ListVolumeSnapshotsResponse,
+          VolumeSnapshot,
+          ListVolumeSnapshotsPage> {
+
+    private ListVolumeSnapshotsPage(
+        PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
+            context,
+        ListVolumeSnapshotsResponse response) {
+      super(context, response);
+    }
+
+    private static ListVolumeSnapshotsPage createEmptyPage() {
+      return new ListVolumeSnapshotsPage(null, null);
+    }
+
+    @Override
+    protected ListVolumeSnapshotsPage createPage(
+        PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
+            context,
+        ListVolumeSnapshotsResponse response) {
+      return new ListVolumeSnapshotsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListVolumeSnapshotsPage> createPageAsync(
+        PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
+            context,
+        ApiFuture<ListVolumeSnapshotsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListVolumeSnapshotsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListVolumeSnapshotsRequest,
+          ListVolumeSnapshotsResponse,
+          VolumeSnapshot,
+          ListVolumeSnapshotsPage,
+          ListVolumeSnapshotsFixedSizeCollection> {
+
+    private ListVolumeSnapshotsFixedSizeCollection(
+        List<ListVolumeSnapshotsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListVolumeSnapshotsFixedSizeCollection createEmptyCollection() {
+      return new ListVolumeSnapshotsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListVolumeSnapshotsFixedSizeCollection createCollection(
+        List<ListVolumeSnapshotsPage> pages, int collectionSize) {
+      return new ListVolumeSnapshotsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListLunsPagedResponse
       extends AbstractPagedListResponse<
           ListLunsRequest, ListLunsResponse, Lun, ListLunsPage, ListLunsFixedSizeCollection> {
@@ -3368,6 +6986,245 @@ public class BareMetalSolutionClient implements BackgroundResource {
     protected ListNfsSharesFixedSizeCollection createCollection(
         List<ListNfsSharesPage> pages, int collectionSize) {
       return new ListNfsSharesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListProvisioningQuotasPagedResponse
+      extends AbstractPagedListResponse<
+          ListProvisioningQuotasRequest,
+          ListProvisioningQuotasResponse,
+          ProvisioningQuota,
+          ListProvisioningQuotasPage,
+          ListProvisioningQuotasFixedSizeCollection> {
+
+    public static ApiFuture<ListProvisioningQuotasPagedResponse> createAsync(
+        PageContext<
+                ListProvisioningQuotasRequest, ListProvisioningQuotasResponse, ProvisioningQuota>
+            context,
+        ApiFuture<ListProvisioningQuotasResponse> futureResponse) {
+      ApiFuture<ListProvisioningQuotasPage> futurePage =
+          ListProvisioningQuotasPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListProvisioningQuotasPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListProvisioningQuotasPagedResponse(ListProvisioningQuotasPage page) {
+      super(page, ListProvisioningQuotasFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListProvisioningQuotasPage
+      extends AbstractPage<
+          ListProvisioningQuotasRequest,
+          ListProvisioningQuotasResponse,
+          ProvisioningQuota,
+          ListProvisioningQuotasPage> {
+
+    private ListProvisioningQuotasPage(
+        PageContext<
+                ListProvisioningQuotasRequest, ListProvisioningQuotasResponse, ProvisioningQuota>
+            context,
+        ListProvisioningQuotasResponse response) {
+      super(context, response);
+    }
+
+    private static ListProvisioningQuotasPage createEmptyPage() {
+      return new ListProvisioningQuotasPage(null, null);
+    }
+
+    @Override
+    protected ListProvisioningQuotasPage createPage(
+        PageContext<
+                ListProvisioningQuotasRequest, ListProvisioningQuotasResponse, ProvisioningQuota>
+            context,
+        ListProvisioningQuotasResponse response) {
+      return new ListProvisioningQuotasPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListProvisioningQuotasPage> createPageAsync(
+        PageContext<
+                ListProvisioningQuotasRequest, ListProvisioningQuotasResponse, ProvisioningQuota>
+            context,
+        ApiFuture<ListProvisioningQuotasResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListProvisioningQuotasFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListProvisioningQuotasRequest,
+          ListProvisioningQuotasResponse,
+          ProvisioningQuota,
+          ListProvisioningQuotasPage,
+          ListProvisioningQuotasFixedSizeCollection> {
+
+    private ListProvisioningQuotasFixedSizeCollection(
+        List<ListProvisioningQuotasPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListProvisioningQuotasFixedSizeCollection createEmptyCollection() {
+      return new ListProvisioningQuotasFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListProvisioningQuotasFixedSizeCollection createCollection(
+        List<ListProvisioningQuotasPage> pages, int collectionSize) {
+      return new ListProvisioningQuotasFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListOSImagesPagedResponse
+      extends AbstractPagedListResponse<
+          ListOSImagesRequest,
+          ListOSImagesResponse,
+          OSImage,
+          ListOSImagesPage,
+          ListOSImagesFixedSizeCollection> {
+
+    public static ApiFuture<ListOSImagesPagedResponse> createAsync(
+        PageContext<ListOSImagesRequest, ListOSImagesResponse, OSImage> context,
+        ApiFuture<ListOSImagesResponse> futureResponse) {
+      ApiFuture<ListOSImagesPage> futurePage =
+          ListOSImagesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListOSImagesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListOSImagesPagedResponse(ListOSImagesPage page) {
+      super(page, ListOSImagesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListOSImagesPage
+      extends AbstractPage<ListOSImagesRequest, ListOSImagesResponse, OSImage, ListOSImagesPage> {
+
+    private ListOSImagesPage(
+        PageContext<ListOSImagesRequest, ListOSImagesResponse, OSImage> context,
+        ListOSImagesResponse response) {
+      super(context, response);
+    }
+
+    private static ListOSImagesPage createEmptyPage() {
+      return new ListOSImagesPage(null, null);
+    }
+
+    @Override
+    protected ListOSImagesPage createPage(
+        PageContext<ListOSImagesRequest, ListOSImagesResponse, OSImage> context,
+        ListOSImagesResponse response) {
+      return new ListOSImagesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListOSImagesPage> createPageAsync(
+        PageContext<ListOSImagesRequest, ListOSImagesResponse, OSImage> context,
+        ApiFuture<ListOSImagesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListOSImagesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListOSImagesRequest,
+          ListOSImagesResponse,
+          OSImage,
+          ListOSImagesPage,
+          ListOSImagesFixedSizeCollection> {
+
+    private ListOSImagesFixedSizeCollection(List<ListOSImagesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListOSImagesFixedSizeCollection createEmptyCollection() {
+      return new ListOSImagesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListOSImagesFixedSizeCollection createCollection(
+        List<ListOSImagesPage> pages, int collectionSize) {
+      return new ListOSImagesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

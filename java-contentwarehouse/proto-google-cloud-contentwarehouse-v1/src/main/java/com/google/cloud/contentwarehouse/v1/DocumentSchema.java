@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     return new DocumentSchema();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.DocumentSchemaProto
         .internal_static_google_cloud_contentwarehouse_v1_DocumentSchema_descriptor;
@@ -81,6 +76,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
    * The resource name of the document schema.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
+   *
    * The name is ignored when creating a document schema.
    * </pre>
    *
@@ -107,6 +103,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
    * The resource name of the document schema.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
+   *
    * The name is ignored when creating a document schema.
    * </pre>
    *
@@ -981,6 +978,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the document schema.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
+     *
      * The name is ignored when creating a document schema.
      * </pre>
      *
@@ -1006,6 +1004,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the document schema.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
+     *
      * The name is ignored when creating a document schema.
      * </pre>
      *
@@ -1031,6 +1030,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the document schema.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
+     *
      * The name is ignored when creating a document schema.
      * </pre>
      *
@@ -1055,6 +1055,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the document schema.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
+     *
      * The name is ignored when creating a document schema.
      * </pre>
      *
@@ -1075,6 +1076,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the document schema.
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
+     *
      * The name is ignored when creating a document schema.
      * </pre>
      *

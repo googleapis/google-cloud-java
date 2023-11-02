@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,9 +69,9 @@ public final class ImageVersionsOuterClass {
           + "tion.airflow.service.v1beta1.ListImageVe"
           + "rsionsRequest\032M.google.cloud.orchestrati"
           + "on.airflow.service.v1beta1.ListImageVers"
-          + "ionsResponse\"G\202\323\344\223\0028\0226/v1beta1/{parent=p"
-          + "rojects/*/locations/*}/imageVersions\332A\006p"
-          + "arent\032K\312A\027composer.googleapis.com\322A.http"
+          + "ionsResponse\"G\332A\006parent\202\323\344\223\0028\0226/v1beta1/"
+          + "{parent=projects/*/locations/*}/imageVer"
+          + "sions\032K\312A\027composer.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
           + "rmB\214\001\n6com.google.cloud.orchestration.ai"
           + "rflow.service.v1beta1P\001ZPcloud.google.co"

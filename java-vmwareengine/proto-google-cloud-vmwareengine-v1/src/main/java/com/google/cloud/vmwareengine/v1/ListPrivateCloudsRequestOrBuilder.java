@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,7 @@ public interface ListPrivateCloudsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListPrivateClouds` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListPrivateClouds` must
    * match the call that provided the page token.
    * </pre>
@@ -97,6 +98,7 @@ public interface ListPrivateCloudsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListPrivateClouds` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListPrivateClouds` must
    * match the call that provided the page token.
    * </pre>
@@ -116,17 +118,21 @@ public interface ListPrivateCloudsRequestOrBuilder
    * value that you want to use for filtering. The value must be a string, a
    * number, or a boolean. The comparison operator must be `=`, `!=`, `&gt;`, or
    * `&lt;`.
+   *
    * For example, if you are filtering a list of private clouds, you can exclude
    * the ones named `example-pc` by specifying `name != "example-pc"`.
+   *
    * You can also filter nested fields. For example, you could specify
    * `networkConfig.managementCidr = "192.168.0.0/24"` to include private clouds
    * only if they have a matching address in their network configuration.
+   *
    * To filter on multiple expressions, provide each separate expression within
    * parentheses. For example:
    * ```
    * (name = "example-pc")
    * (createTime &gt; "2021-04-12T08:15:10.40Z")
    * ```
+   *
    * By default, each expression is an `AND` expression. However, you can
    * include `AND` and `OR` expressions explicitly. For example:
    * ```
@@ -150,17 +156,21 @@ public interface ListPrivateCloudsRequestOrBuilder
    * value that you want to use for filtering. The value must be a string, a
    * number, or a boolean. The comparison operator must be `=`, `!=`, `&gt;`, or
    * `&lt;`.
+   *
    * For example, if you are filtering a list of private clouds, you can exclude
    * the ones named `example-pc` by specifying `name != "example-pc"`.
+   *
    * You can also filter nested fields. For example, you could specify
    * `networkConfig.managementCidr = "192.168.0.0/24"` to include private clouds
    * only if they have a matching address in their network configuration.
+   *
    * To filter on multiple expressions, provide each separate expression within
    * parentheses. For example:
    * ```
    * (name = "example-pc")
    * (createTime &gt; "2021-04-12T08:15:10.40Z")
    * ```
+   *
    * By default, each expression is an `AND` expression. However, you can
    * include `AND` and `OR` expressions explicitly. For example:
    * ```

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
-   * Output only. This action's identifier. Unique within the workflow invocation.
+   * Output only. This action's identifier. Unique within the workflow
+   * invocation.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
-   * Output only. This action's identifier. Unique within the workflow invocation.
+   * Output only. This action's identifier. Unique within the workflow
+   * invocation.
    * </pre>
    *
    * <code>
@@ -55,7 +57,8 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
-   * Output only. This action's identifier. Unique within the workflow invocation.
+   * Output only. This action's identifier. Unique within the workflow
+   * invocation.
    * </pre>
    *
    * <code>
@@ -68,8 +71,8 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
-   * Output only. The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
+   * Output only. The action's identifier if the project had been compiled
+   * without any overrides configured. Unique within the compilation result.
    * </pre>
    *
    * <code>
@@ -83,8 +86,8 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
-   * Output only. The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
+   * Output only. The action's identifier if the project had been compiled
+   * without any overrides configured. Unique within the compilation result.
    * </pre>
    *
    * <code>
@@ -98,8 +101,8 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
-   * Output only. The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
+   * Output only. The action's identifier if the project had been compiled
+   * without any overrides configured. Unique within the compilation result.
    * </pre>
    *
    * <code>
@@ -141,7 +144,8 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
-   * Output only. If and only if action's state is FAILED a failure reason is set.
+   * Output only. If and only if action's state is FAILED a failure reason is
+   * set.
    * </pre>
    *
    * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -153,7 +157,8 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
-   * Output only. If and only if action's state is FAILED a failure reason is set.
+   * Output only. If and only if action's state is FAILED a failure reason is
+   * set.
    * </pre>
    *
    * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

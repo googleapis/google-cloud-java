@@ -7,7 +7,8 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
   if [[ "${pomFile}" =~ .*google-cloud-jar-parent.* ]] || \
       [[ "${pomFile}" =~ .*google-cloud-pom-parent.* ]] || \
       [[ "${pomFile}" =~ .*CoverageAggregator.* ]] || \
-      [[ "${pomFile}" =~ .*java-shared-dependencies*. ]]; then
+      [[ "${pomFile}" =~ .*java-shared-dependencies*. ]] || \
+      [[ "${pomFile}" =~ .*.github*. ]]; then
     continue
   fi
   if [[ "${pomFile}" =~ .*owl-bot-postprocessor.* ]]; then

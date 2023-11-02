@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,11 +30,12 @@ public interface VoiceSelectionParamsOrBuilder
    * Optional. The name of the voice. If not set, the service will choose a
    * voice based on the other parameters such as language_code and
    * [ssml_gender][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.ssml_gender].
+   *
    * For the list of available voices, please refer to [Supported voices and
    * languages](https://cloud.google.com/text-to-speech/docs/voices).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -46,11 +47,12 @@ public interface VoiceSelectionParamsOrBuilder
    * Optional. The name of the voice. If not set, the service will choose a
    * voice based on the other parameters such as language_code and
    * [ssml_gender][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.ssml_gender].
+   *
    * For the list of available voices, please refer to [Supported voices and
    * languages](https://cloud.google.com/text-to-speech/docs/voices).
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -68,7 +70,9 @@ public interface VoiceSelectionParamsOrBuilder
    * voice with a different gender rather than failing the request.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SsmlVoiceGender ssml_gender = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for ssmlGender.
    */
@@ -85,7 +89,9 @@ public interface VoiceSelectionParamsOrBuilder
    * voice with a different gender rather than failing the request.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SsmlVoiceGender ssml_gender = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The ssmlGender.
    */

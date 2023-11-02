@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,9 @@ public interface PackageOrBuilder
    *
    * <pre>
    * The resource to read the package from. The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}
    *   bucket.storage.googleapis.com/
    * </pre>
@@ -68,7 +70,9 @@ public interface PackageOrBuilder
    *
    * <pre>
    * The resource to read the package from. The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}
    *   bucket.storage.googleapis.com/
    * </pre>

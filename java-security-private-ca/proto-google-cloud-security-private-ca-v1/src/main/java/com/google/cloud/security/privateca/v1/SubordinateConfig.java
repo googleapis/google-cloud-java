@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SubordinateConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -146,18 +141,13 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private SubordinateConfigChain() {
-      pemCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      pemCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SubordinateConfigChain();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -179,7 +169,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     public static final int PEM_CERTIFICATES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList pemCertificates_;
+    private com.google.protobuf.LazyStringArrayList pemCertificates_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -460,8 +451,7 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        pemCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        pemCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -495,7 +485,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.security.privateca.v1.SubordinateConfig.SubordinateConfigChain result =
             new com.google.cloud.security.privateca.v1.SubordinateConfig.SubordinateConfigChain(
                 this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -503,18 +492,13 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.security.privateca.v1.SubordinateConfig.SubordinateConfigChain result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          pemCertificates_ = pemCertificates_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.pemCertificates_ = pemCertificates_;
-      }
-
       private void buildPartial0(
           com.google.cloud.security.privateca.v1.SubordinateConfig.SubordinateConfigChain result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          pemCertificates_.makeImmutable();
+          result.pemCertificates_ = pemCertificates_;
+        }
       }
 
       @java.lang.Override
@@ -574,7 +558,7 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         if (!other.pemCertificates_.isEmpty()) {
           if (pemCertificates_.isEmpty()) {
             pemCertificates_ = other.pemCertificates_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensurePemCertificatesIsMutable();
             pemCertificates_.addAll(other.pemCertificates_);
@@ -633,14 +617,14 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList pemCertificates_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList pemCertificates_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensurePemCertificatesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!pemCertificates_.isModifiable()) {
           pemCertificates_ = new com.google.protobuf.LazyStringArrayList(pemCertificates_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -655,7 +639,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
        * @return A list containing the pemCertificates.
        */
       public com.google.protobuf.ProtocolStringList getPemCertificatesList() {
-        return pemCertificates_.getUnmodifiableView();
+        pemCertificates_.makeImmutable();
+        return pemCertificates_;
       }
       /**
        *
@@ -724,6 +709,7 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         }
         ensurePemCertificatesIsMutable();
         pemCertificates_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -746,6 +732,7 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         }
         ensurePemCertificatesIsMutable();
         pemCertificates_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -765,6 +752,7 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       public Builder addAllPemCertificates(java.lang.Iterable<java.lang.String> values) {
         ensurePemCertificatesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pemCertificates_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -781,8 +769,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearPemCertificates() {
-        pemCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        pemCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -806,6 +795,7 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         checkByteStringIsUtf8(value);
         ensurePemCertificatesIsMutable();
         pemCertificates_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -880,6 +870,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
   }
 
   private int subordinateConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object subordinateConfig_;
 
   public enum SubordinateConfigCase

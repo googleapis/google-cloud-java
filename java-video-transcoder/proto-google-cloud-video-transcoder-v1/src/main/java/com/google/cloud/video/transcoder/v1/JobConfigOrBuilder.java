@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -529,4 +529,71 @@ public interface JobConfigOrBuilder
    * <code>repeated .google.cloud.video.transcoder.v1.Overlay overlays = 10;</code>
    */
   com.google.cloud.video.transcoder.v1.OverlayOrBuilder getOverlaysOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of encryption configurations for the content.
+   * Each configuration has an ID. Specify this ID in the
+   * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+   * field to indicate the configuration to use for that `MuxStream` output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+   */
+  java.util.List<com.google.cloud.video.transcoder.v1.Encryption> getEncryptionsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of encryption configurations for the content.
+   * Each configuration has an ID. Specify this ID in the
+   * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+   * field to indicate the configuration to use for that `MuxStream` output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+   */
+  com.google.cloud.video.transcoder.v1.Encryption getEncryptions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of encryption configurations for the content.
+   * Each configuration has an ID. Specify this ID in the
+   * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+   * field to indicate the configuration to use for that `MuxStream` output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+   */
+  int getEncryptionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of encryption configurations for the content.
+   * Each configuration has an ID. Specify this ID in the
+   * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+   * field to indicate the configuration to use for that `MuxStream` output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+   */
+  java.util.List<? extends com.google.cloud.video.transcoder.v1.EncryptionOrBuilder>
+      getEncryptionsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of encryption configurations for the content.
+   * Each configuration has an ID. Specify this ID in the
+   * [MuxStream.encryption_id][google.cloud.video.transcoder.v1.MuxStream.encryption_id]
+   * field to indicate the configuration to use for that `MuxStream` output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.transcoder.v1.Encryption encryptions = 11;</code>
+   */
+  com.google.cloud.video.transcoder.v1.EncryptionOrBuilder getEncryptionsOrBuilder(int index);
 }

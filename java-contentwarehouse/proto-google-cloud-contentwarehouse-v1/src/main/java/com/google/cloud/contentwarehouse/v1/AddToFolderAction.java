@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
   }
 
   private AddToFolderAction() {
-    folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AddToFolderAction();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
   public static final int FOLDERS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList folders_;
+  private com.google.protobuf.LazyStringArrayList folders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -344,8 +340,7 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -373,7 +368,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.contentwarehouse.v1.AddToFolderAction buildPartial() {
       com.google.cloud.contentwarehouse.v1.AddToFolderAction result =
           new com.google.cloud.contentwarehouse.v1.AddToFolderAction(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -381,17 +375,12 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.contentwarehouse.v1.AddToFolderAction result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        folders_ = folders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.folders_ = folders_;
-    }
-
     private void buildPartial0(com.google.cloud.contentwarehouse.v1.AddToFolderAction result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        folders_.makeImmutable();
+        result.folders_ = folders_;
+      }
     }
 
     @java.lang.Override
@@ -443,7 +432,7 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
       if (!other.folders_.isEmpty()) {
         if (folders_.isEmpty()) {
           folders_ = other.folders_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureFoldersIsMutable();
           folders_.addAll(other.folders_);
@@ -502,14 +491,14 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList folders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList folders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFoldersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!folders_.isModifiable()) {
         folders_ = new com.google.protobuf.LazyStringArrayList(folders_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -525,7 +514,8 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
      * @return A list containing the folders.
      */
     public com.google.protobuf.ProtocolStringList getFoldersList() {
-      return folders_.getUnmodifiableView();
+      folders_.makeImmutable();
+      return folders_;
     }
     /**
      *
@@ -598,6 +588,7 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
       }
       ensureFoldersIsMutable();
       folders_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -621,6 +612,7 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
       }
       ensureFoldersIsMutable();
       folders_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,6 +633,7 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
     public Builder addAllFolders(java.lang.Iterable<java.lang.String> values) {
       ensureFoldersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, folders_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -658,8 +651,9 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFolders() {
-      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -684,6 +678,7 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureFoldersIsMutable();
       folders_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

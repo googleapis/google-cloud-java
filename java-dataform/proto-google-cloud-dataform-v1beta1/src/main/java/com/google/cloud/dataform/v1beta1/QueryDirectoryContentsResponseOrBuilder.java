@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,12 +30,9 @@ public interface QueryDirectoryContentsResponseOrBuilder
    * List of entries in the directory.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse.DirectoryEntry directory_entries = 1;
-   * </code>
+   * <code>repeated .google.cloud.dataform.v1beta1.DirectoryEntry directory_entries = 1;</code>
    */
-  java.util.List<com.google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse.DirectoryEntry>
-      getDirectoryEntriesList();
+  java.util.List<com.google.cloud.dataform.v1beta1.DirectoryEntry> getDirectoryEntriesList();
   /**
    *
    *
@@ -43,12 +40,9 @@ public interface QueryDirectoryContentsResponseOrBuilder
    * List of entries in the directory.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse.DirectoryEntry directory_entries = 1;
-   * </code>
+   * <code>repeated .google.cloud.dataform.v1beta1.DirectoryEntry directory_entries = 1;</code>
    */
-  com.google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse.DirectoryEntry
-      getDirectoryEntries(int index);
+  com.google.cloud.dataform.v1beta1.DirectoryEntry getDirectoryEntries(int index);
   /**
    *
    *
@@ -56,9 +50,7 @@ public interface QueryDirectoryContentsResponseOrBuilder
    * List of entries in the directory.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse.DirectoryEntry directory_entries = 1;
-   * </code>
+   * <code>repeated .google.cloud.dataform.v1beta1.DirectoryEntry directory_entries = 1;</code>
    */
   int getDirectoryEntriesCount();
   /**
@@ -68,14 +60,9 @@ public interface QueryDirectoryContentsResponseOrBuilder
    * List of entries in the directory.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse.DirectoryEntry directory_entries = 1;
-   * </code>
+   * <code>repeated .google.cloud.dataform.v1beta1.DirectoryEntry directory_entries = 1;</code>
    */
-  java.util.List<
-          ? extends
-              com.google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse
-                  .DirectoryEntryOrBuilder>
+  java.util.List<? extends com.google.cloud.dataform.v1beta1.DirectoryEntryOrBuilder>
       getDirectoryEntriesOrBuilderList();
   /**
    *
@@ -84,12 +71,9 @@ public interface QueryDirectoryContentsResponseOrBuilder
    * List of entries in the directory.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse.DirectoryEntry directory_entries = 1;
-   * </code>
+   * <code>repeated .google.cloud.dataform.v1beta1.DirectoryEntry directory_entries = 1;</code>
    */
-  com.google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse.DirectoryEntryOrBuilder
-      getDirectoryEntriesOrBuilder(int index);
+  com.google.cloud.dataform.v1beta1.DirectoryEntryOrBuilder getDirectoryEntriesOrBuilder(int index);
 
   /**
    *

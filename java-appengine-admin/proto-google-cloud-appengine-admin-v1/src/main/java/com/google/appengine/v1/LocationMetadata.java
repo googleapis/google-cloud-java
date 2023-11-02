@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     return new LocationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.LocationProto
         .internal_static_google_appengine_v1_LocationMetadata_descriptor;
@@ -72,6 +67,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * App Engine standard environment is available in the given location.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -91,6 +87,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * App Engine flexible environment is available in the given location.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -514,6 +511,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * App Engine standard environment is available in the given location.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -530,6 +528,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * App Engine standard environment is available in the given location.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -550,6 +549,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * App Engine standard environment is available in the given location.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -570,6 +570,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * App Engine flexible environment is available in the given location.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -586,6 +587,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * App Engine flexible environment is available in the given location.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -606,6 +608,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * App Engine flexible environment is available in the given location.
+     *
      * &#64;OutputOnly
      * </pre>
      *

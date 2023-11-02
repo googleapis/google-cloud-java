@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,6 +124,7 @@ public interface JobOrBuilder
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -138,6 +139,7 @@ public interface JobOrBuilder
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -152,6 +154,7 @@ public interface JobOrBuilder
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -482,5 +485,52 @@ public interface JobOrBuilder
    */
   com.google.cloud.video.transcoder.v1.Job.ProcessingMode getMode();
 
-  public com.google.cloud.video.transcoder.v1.Job.JobConfigCase getJobConfigCase();
+  /**
+   *
+   *
+   * <pre>
+   * The processing priority of a batch job.
+   * This field can only be set for batch mode jobs. The default value is 0.
+   * This value cannot be negative. Higher values correspond to higher
+   * priorities for the job.
+   * </pre>
+   *
+   * <code>int32 batch_mode_priority = 21;</code>
+   *
+   * @return The batchModePriority.
+   */
+  int getBatchModePriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optimization strategy of the job. The default is
+   * `AUTODETECT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.Job.OptimizationStrategy optimization = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for optimization.
+   */
+  int getOptimizationValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optimization strategy of the job. The default is
+   * `AUTODETECT`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.Job.OptimizationStrategy optimization = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The optimization.
+   */
+  com.google.cloud.video.transcoder.v1.Job.OptimizationStrategy getOptimization();
+
+  com.google.cloud.video.transcoder.v1.Job.JobConfigCase getJobConfigCase();
 }

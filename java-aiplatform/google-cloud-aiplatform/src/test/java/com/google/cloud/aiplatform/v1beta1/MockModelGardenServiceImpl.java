@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,6 +75,28 @@ public class MockModelGardenServiceImpl extends ModelGardenServiceImplBase {
                   "Unrecognized response type %s for method GetPublisherModel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PublisherModel.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPublisherModels(
+      ListPublisherModelsRequest request,
+      StreamObserver<ListPublisherModelsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPublisherModelsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPublisherModelsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPublisherModels, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPublisherModelsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

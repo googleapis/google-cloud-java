@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MoveDirectoryRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,8 +127,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The directory's full path including directory name, relative to the
-   * workspace root.
+   * Required. The directory's full path including directory name, relative to
+   * the workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -156,8 +151,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The directory's full path including directory name, relative to the
-   * workspace root.
+   * Required. The directory's full path including directory name, relative to
+   * the workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -185,8 +180,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The new path for the directory including directory name, rooted at
-   * workspace root.
+   * Required. The new path for the directory including directory name, rooted
+   * at workspace root.
    * </pre>
    *
    * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -209,8 +204,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The new path for the directory including directory name, rooted at
-   * workspace root.
+   * Required. The new path for the directory including directory name, rooted
+   * at workspace root.
    * </pre>
    *
    * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -742,8 +737,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The directory's full path including directory name, relative to the
-     * workspace root.
+     * Required. The directory's full path including directory name, relative to
+     * the workspace root.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -765,8 +760,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The directory's full path including directory name, relative to the
-     * workspace root.
+     * Required. The directory's full path including directory name, relative to
+     * the workspace root.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -788,8 +783,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The directory's full path including directory name, relative to the
-     * workspace root.
+     * Required. The directory's full path including directory name, relative to
+     * the workspace root.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -810,8 +805,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The directory's full path including directory name, relative to the
-     * workspace root.
+     * Required. The directory's full path including directory name, relative to
+     * the workspace root.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -828,8 +823,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The directory's full path including directory name, relative to the
-     * workspace root.
+     * Required. The directory's full path including directory name, relative to
+     * the workspace root.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -853,8 +848,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The new path for the directory including directory name, rooted at
-     * workspace root.
+     * Required. The new path for the directory including directory name, rooted
+     * at workspace root.
      * </pre>
      *
      * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -876,8 +871,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The new path for the directory including directory name, rooted at
-     * workspace root.
+     * Required. The new path for the directory including directory name, rooted
+     * at workspace root.
      * </pre>
      *
      * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -899,8 +894,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The new path for the directory including directory name, rooted at
-     * workspace root.
+     * Required. The new path for the directory including directory name, rooted
+     * at workspace root.
      * </pre>
      *
      * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -921,8 +916,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The new path for the directory including directory name, rooted at
-     * workspace root.
+     * Required. The new path for the directory including directory name, rooted
+     * at workspace root.
      * </pre>
      *
      * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -939,8 +934,8 @@ public final class MoveDirectoryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The new path for the directory including directory name, rooted at
-     * workspace root.
+     * Required. The new path for the directory including directory name, rooted
+     * at workspace root.
      * </pre>
      *
      * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>

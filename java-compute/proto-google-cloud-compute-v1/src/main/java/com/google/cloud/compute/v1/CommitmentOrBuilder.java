@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -609,7 +609,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * Source commitment to be splitted into a new commitment.
+   * Source commitment to be split into a new commitment.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>
@@ -621,7 +621,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * Source commitment to be splitted into a new commitment.
+   * Source commitment to be split into a new commitment.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>
@@ -633,7 +633,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * Source commitment to be splitted into a new commitment.
+   * Source commitment to be split into a new commitment.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>

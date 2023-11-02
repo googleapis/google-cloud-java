@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,21 +46,21 @@ public final class DeploymentResourcePoolProto {
           + "vior.proto\032\031google/api/resource.proto\0327g"
           + "oogle/cloud/aiplatform/v1beta1/machine_r"
           + "esources.proto\032\037google/protobuf/timestam"
-          + "p.proto\"\315\002\n\026DeploymentResourcePool\022\021\n\004na"
-          + "me\030\001 \001(\tB\003\340A\003\022U\n\023dedicated_resources\030\002 \001"
-          + "(\01323.google.cloud.aiplatform.v1beta1.Ded"
-          + "icatedResourcesB\003\340A\002\0224\n\013create_time\030\004 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003:\222\001\352A\216"
-          + "\001\n0aiplatform.googleapis.com/DeploymentR"
-          + "esourcePool\022Zprojects/{project}/location"
-          + "s/{location}/deploymentResourcePools/{de"
-          + "ployment_resource_pool}B\362\001\n#com.google.c"
-          + "loud.aiplatform.v1beta1B\033DeploymentResou"
-          + "rcePoolProtoP\001ZCcloud.google.com/go/aipl"
-          + "atform/apiv1beta1/aiplatformpb;aiplatfor"
-          + "mpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
-          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
-          + "::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "p.proto\"\320\002\n\026DeploymentResourcePool\022\022\n\004na"
+          + "me\030\001 \001(\tB\004\342A\001\005\022V\n\023dedicated_resources\030\002 "
+          + "\001(\01323.google.cloud.aiplatform.v1beta1.De"
+          + "dicatedResourcesB\004\342A\001\002\0225\n\013create_time\030\004 "
+          + "\001(\0132\032.google.protobuf.TimestampB\004\342A\001\003:\222\001"
+          + "\352A\216\001\n0aiplatform.googleapis.com/Deployme"
+          + "ntResourcePool\022Zprojects/{project}/locat"
+          + "ions/{location}/deploymentResourcePools/"
+          + "{deployment_resource_pool}B\362\001\n#com.googl"
+          + "e.cloud.aiplatform.v1beta1B\033DeploymentRe"
+          + "sourcePoolProtoP\001ZCcloud.google.com/go/a"
+          + "iplatform/apiv1beta1/aiplatformpb;aiplat"
+          + "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1"
+          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
+          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

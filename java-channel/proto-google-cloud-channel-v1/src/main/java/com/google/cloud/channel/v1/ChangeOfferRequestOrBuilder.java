@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -192,10 +192,12 @@ public interface ChangeOfferRequestOrBuilder
    * Optional. You can specify an optional unique request ID, and if you need to
    * retry your request, the server will know to ignore the request if it's
    * complete.
+   *
    * For example, you make an initial request and the request times out. If you
    * make the request again with the same request ID, the server can check if
    * it received the original operation with the same request ID. If it did, it
    * will ignore the second request.
+   *
    * The request ID must be a valid [UUID](https://tools.ietf.org/html/rfc4122)
    * with the exception that zero UUID is not supported
    * (`00000000-0000-0000-0000-000000000000`).
@@ -213,10 +215,12 @@ public interface ChangeOfferRequestOrBuilder
    * Optional. You can specify an optional unique request ID, and if you need to
    * retry your request, the server will know to ignore the request if it's
    * complete.
+   *
    * For example, you make an initial request and the request times out. If you
    * make the request again with the same request ID, the server can check if
    * it received the original operation with the same request ID. If it did, it
    * will ignore the second request.
+   *
    * The request ID must be a valid [UUID](https://tools.ietf.org/html/rfc4122)
    * with the exception that zero UUID is not supported
    * (`00000000-0000-0000-0000-000000000000`).
@@ -227,4 +231,37 @@ public interface ChangeOfferRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The billing account resource name that is used to pay for this
+   * entitlement when setting up billing on a trial subscription.
+   *
+   * This field is only relevant for multi-currency accounts. It should be
+   * left empty for single currency accounts.
+   * </pre>
+   *
+   * <code>string billing_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The billingAccount.
+   */
+  java.lang.String getBillingAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The billing account resource name that is used to pay for this
+   * entitlement when setting up billing on a trial subscription.
+   *
+   * This field is only relevant for multi-currency accounts. It should be
+   * left empty for single currency accounts.
+   * </pre>
+   *
+   * <code>string billing_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for billingAccount.
+   */
+  com.google.protobuf.ByteString getBillingAccountBytes();
 }

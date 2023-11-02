@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,4 +113,45 @@ public interface UpdateBuildTriggerRequestOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.BuildTriggerOrBuilder getTriggerOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Update mask for the resource. If this is set,
+   * the server will only update the fields specified in the field mask.
+   * Otherwise, a full update of the mutable resource fields will be performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Update mask for the resource. If this is set,
+   * the server will only update the fields specified in the field mask.
+   * Otherwise, a full update of the mutable resource fields will be performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Update mask for the resource. If this is set,
+   * the server will only update the fields specified in the field mask.
+   * Otherwise, a full update of the mutable resource fields will be performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class RollbackApiDeploymentRequest extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RollbackApiDeploymentRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,6 +128,7 @@ public final class RollbackApiDeploymentRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The revision ID to roll back to.
    * It must be a revision of the same deployment.
+   *
    *   Example: `c7cfa2a8`
    * </pre>
    *
@@ -158,6 +154,7 @@ public final class RollbackApiDeploymentRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The revision ID to roll back to.
    * It must be a revision of the same deployment.
+   *
    *   Example: `c7cfa2a8`
    * </pre>
    *
@@ -672,6 +669,7 @@ public final class RollbackApiDeploymentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The revision ID to roll back to.
      * It must be a revision of the same deployment.
+     *
      *   Example: `c7cfa2a8`
      * </pre>
      *
@@ -696,6 +694,7 @@ public final class RollbackApiDeploymentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The revision ID to roll back to.
      * It must be a revision of the same deployment.
+     *
      *   Example: `c7cfa2a8`
      * </pre>
      *
@@ -720,6 +719,7 @@ public final class RollbackApiDeploymentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The revision ID to roll back to.
      * It must be a revision of the same deployment.
+     *
      *   Example: `c7cfa2a8`
      * </pre>
      *
@@ -743,6 +743,7 @@ public final class RollbackApiDeploymentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The revision ID to roll back to.
      * It must be a revision of the same deployment.
+     *
      *   Example: `c7cfa2a8`
      * </pre>
      *
@@ -762,6 +763,7 @@ public final class RollbackApiDeploymentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The revision ID to roll back to.
      * It must be a revision of the same deployment.
+     *
      *   Example: `c7cfa2a8`
      * </pre>
      *

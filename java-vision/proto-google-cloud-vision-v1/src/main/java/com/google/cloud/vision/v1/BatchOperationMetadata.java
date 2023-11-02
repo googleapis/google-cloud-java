@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.vision.v1;
  *
  * <pre>
  * Metadata for the batch operations such as the current state.
+ *
  * This is included in the `metadata` field of the `Operation` returned by the
  * `GetOperation` call of the `google::longrunning::Operations` service.
  * </pre>
@@ -47,11 +48,6 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchOperationMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -604,6 +600,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Metadata for the batch operations such as the current state.
+   *
    * This is included in the `metadata` field of the `Operation` returned by the
    * `GetOperation` call of the `google::longrunning::Operations` service.
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,5 +58,5 @@ public interface OutputResultOrBuilder
    */
   com.google.cloud.asset.v1p7beta1.GcsOutputResultOrBuilder getGcsResultOrBuilder();
 
-  public com.google.cloud.asset.v1p7beta1.OutputResult.ResultCase getResultCase();
+  com.google.cloud.asset.v1p7beta1.OutputResult.ResultCase getResultCase();
 }

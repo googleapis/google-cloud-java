@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ public interface CommitServicePerimetersRequestOrBuilder
    * [Service Perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter] in scope for
    * the commit operation.
+   *
    * Format: `accessPolicies/{policy_id}`
    * </pre>
    *
@@ -51,6 +52,7 @@ public interface CommitServicePerimetersRequestOrBuilder
    * [Service Perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter] in scope for
    * the commit operation.
+   *
    * Format: `accessPolicies/{policy_id}`
    * </pre>
    *

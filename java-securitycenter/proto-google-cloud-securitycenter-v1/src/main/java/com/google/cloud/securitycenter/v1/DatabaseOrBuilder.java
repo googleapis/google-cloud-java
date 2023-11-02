@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,9 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The full resource name of the database the user connected to, if it is
-   * supported by CAI. (https://google.aip.dev/122#full-resource-names)
+   * The [full resource name](https://google.aip.dev/122#full-resource-names) of
+   * the database that the user connected to, if it is supported by Cloud Asset
+   * Inventory.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -40,8 +41,9 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The full resource name of the database the user connected to, if it is
-   * supported by CAI. (https://google.aip.dev/122#full-resource-names)
+   * The [full resource name](https://google.aip.dev/122#full-resource-names) of
+   * the database that the user connected to, if it is supported by Cloud Asset
+   * Inventory.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -54,7 +56,7 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The human readable name of the database the user connected to.
+   * The human-readable name of the database that the user connected to.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -66,7 +68,7 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The human readable name of the database the user connected to.
+   * The human-readable name of the database that the user connected to.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -79,8 +81,8 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The username used to connect to the DB. This may not necessarily be an IAM
-   * principal, and has no required format.
+   * The username used to connect to the database. The username might not be an
+   * IAM principal and does not have a set format.
    * </pre>
    *
    * <code>string user_name = 3;</code>
@@ -92,8 +94,8 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The username used to connect to the DB. This may not necessarily be an IAM
-   * principal, and has no required format.
+   * The username used to connect to the database. The username might not be an
+   * IAM principal and does not have a set format.
    * </pre>
    *
    * <code>string user_name = 3;</code>
@@ -106,7 +108,7 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The SQL statement associated with the relevant access.
+   * The SQL statement that is associated with the database access.
    * </pre>
    *
    * <code>string query = 4;</code>
@@ -118,7 +120,7 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The SQL statement associated with the relevant access.
+   * The SQL statement that is associated with the database access.
    * </pre>
    *
    * <code>string query = 4;</code>
@@ -131,8 +133,8 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-   * policy change).
+   * The target usernames, roles, or groups of an SQL privilege grant, which is
+   * not an IAM policy change.
    * </pre>
    *
    * <code>repeated string grantees = 5;</code>
@@ -144,8 +146,8 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-   * policy change).
+   * The target usernames, roles, or groups of an SQL privilege grant, which is
+   * not an IAM policy change.
    * </pre>
    *
    * <code>repeated string grantees = 5;</code>
@@ -157,8 +159,8 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-   * policy change).
+   * The target usernames, roles, or groups of an SQL privilege grant, which is
+   * not an IAM policy change.
    * </pre>
    *
    * <code>repeated string grantees = 5;</code>
@@ -171,8 +173,8 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * The target usernames/roles/groups of a SQL privilege grant (not an IAM
-   * policy change).
+   * The target usernames, roles, or groups of an SQL privilege grant, which is
+   * not an IAM policy change.
    * </pre>
    *
    * <code>repeated string grantees = 5;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     webHost_ = "";
     sshUsername_ = "";
     sshHost_ = "";
-    publicKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    publicKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Environment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -675,7 +670,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public static final int PUBLIC_KEYS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList publicKeys_;
+  private com.google.protobuf.LazyStringArrayList publicKeys_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1037,8 +1033,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       sshUsername_ = "";
       sshHost_ = "";
       sshPort_ = 0;
-      publicKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      publicKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1066,20 +1061,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.shell.v1.Environment buildPartial() {
       com.google.cloud.shell.v1.Environment result =
           new com.google.cloud.shell.v1.Environment(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.shell.v1.Environment result) {
-      if (((bitField0_ & 0x00000100) != 0)) {
-        publicKeys_ = publicKeys_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.publicKeys_ = publicKeys_;
     }
 
     private void buildPartial0(com.google.cloud.shell.v1.Environment result) {
@@ -1107,6 +1093,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.sshPort_ = sshPort_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        publicKeys_.makeImmutable();
+        result.publicKeys_ = publicKeys_;
       }
     }
 
@@ -1194,7 +1184,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (!other.publicKeys_.isEmpty()) {
         if (publicKeys_.isEmpty()) {
           publicKeys_ = other.publicKeys_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensurePublicKeysIsMutable();
           publicKeys_.addAll(other.publicKeys_);
@@ -2148,14 +2138,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList publicKeys_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList publicKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePublicKeysIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!publicKeys_.isModifiable()) {
         publicKeys_ = new com.google.protobuf.LazyStringArrayList(publicKeys_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -2173,7 +2163,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the publicKeys.
      */
     public com.google.protobuf.ProtocolStringList getPublicKeysList() {
-      return publicKeys_.getUnmodifiableView();
+      publicKeys_.makeImmutable();
+      return publicKeys_;
     }
     /**
      *
@@ -2254,6 +2245,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePublicKeysIsMutable();
       publicKeys_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2279,6 +2271,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePublicKeysIsMutable();
       publicKeys_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2301,6 +2294,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPublicKeys(java.lang.Iterable<java.lang.String> values) {
       ensurePublicKeysIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, publicKeys_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2320,8 +2314,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPublicKeys() {
-      publicKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      publicKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -2348,6 +2343,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePublicKeysIsMutable();
       publicKeys_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

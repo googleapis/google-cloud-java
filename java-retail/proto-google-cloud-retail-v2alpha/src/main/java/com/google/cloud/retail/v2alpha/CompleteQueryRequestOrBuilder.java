@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * Required. Catalog for which the completion is performed.
+   *
    * Full resource name of catalog, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
    * </pre>
@@ -44,6 +45,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * Required. Catalog for which the completion is performed.
+   *
    * Full resource name of catalog, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
    * </pre>
@@ -61,6 +63,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * Required. The query used to generate suggestions.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -74,6 +77,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * Required. The query used to generate suggestions.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -91,6 +95,7 @@ public interface CompleteQueryRequestOrBuilder
    * this could be implemented with an HTTP cookie, which should be able to
    * uniquely identify a visitor on a single device. This unique identifier
    * should not change if the visitor logs in or out of the website.
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -108,6 +113,7 @@ public interface CompleteQueryRequestOrBuilder
    * this could be implemented with an HTTP cookie, which should be able to
    * uniquely identify a visitor on a single device. This unique identifier
    * should not change if the visitor logs in or out of the website.
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -124,6 +130,7 @@ public interface CompleteQueryRequestOrBuilder
    * <pre>
    * Note that this field applies for `user-data` dataset only. For requests
    * with `cloud-retail` dataset, setting this field has no effect.
+   *
    * The language filters applied to the output suggestions. If set, it should
    * contain the language of the query. If not set, suggestions are returned
    * without considering language restrictions. This is the BCP-47 language
@@ -143,6 +150,7 @@ public interface CompleteQueryRequestOrBuilder
    * <pre>
    * Note that this field applies for `user-data` dataset only. For requests
    * with `cloud-retail` dataset, setting this field has no effect.
+   *
    * The language filters applied to the output suggestions. If set, it should
    * contain the language of the query. If not set, suggestions are returned
    * without considering language restrictions. This is the BCP-47 language
@@ -162,6 +170,7 @@ public interface CompleteQueryRequestOrBuilder
    * <pre>
    * Note that this field applies for `user-data` dataset only. For requests
    * with `cloud-retail` dataset, setting this field has no effect.
+   *
    * The language filters applied to the output suggestions. If set, it should
    * contain the language of the query. If not set, suggestions are returned
    * without considering language restrictions. This is the BCP-47 language
@@ -182,6 +191,7 @@ public interface CompleteQueryRequestOrBuilder
    * <pre>
    * Note that this field applies for `user-data` dataset only. For requests
    * with `cloud-retail` dataset, setting this field has no effect.
+   *
    * The language filters applied to the output suggestions. If set, it should
    * contain the language of the query. If not set, suggestions are returned
    * without considering language restrictions. This is the BCP-47 language
@@ -203,13 +213,19 @@ public interface CompleteQueryRequestOrBuilder
    * <pre>
    * The device type context for completion suggestions. We recommend that you
    * leave this field empty.
+   *
    * It can apply different suggestions on different device types, e.g.
    * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
    * types.
+   *
    * Supported formats:
+   *
    * * `UNKNOWN_DEVICE_TYPE`
+   *
    * * `DESKTOP`
+   *
    * * `MOBILE`
+   *
    * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
    * </pre>
    *
@@ -224,13 +240,19 @@ public interface CompleteQueryRequestOrBuilder
    * <pre>
    * The device type context for completion suggestions. We recommend that you
    * leave this field empty.
+   *
    * It can apply different suggestions on different device types, e.g.
    * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
    * types.
+   *
    * Supported formats:
+   *
    * * `UNKNOWN_DEVICE_TYPE`
+   *
    * * `DESKTOP`
+   *
    * * `MOBILE`
+   *
    * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
    * </pre>
    *
@@ -249,8 +271,11 @@ public interface CompleteQueryRequestOrBuilder
    * [CompletionService.ImportCompletionData][google.cloud.retail.v2alpha.CompletionService.ImportCompletionData].
    * "cloud-retail" will use the dataset generated by cloud retail based on user
    * events. If leave empty, it will use the "user-data".
+   *
    * Current supported values:
+   *
    * * user-data
+   *
    * * cloud-retail:
    *   This option requires enabling auto-learning function first. See
    *   [guidelines](https://cloud.google.com/retail/docs/completion-overview#generated-completion-dataset).
@@ -270,8 +295,11 @@ public interface CompleteQueryRequestOrBuilder
    * [CompletionService.ImportCompletionData][google.cloud.retail.v2alpha.CompletionService.ImportCompletionData].
    * "cloud-retail" will use the dataset generated by cloud retail based on user
    * events. If leave empty, it will use the "user-data".
+   *
    * Current supported values:
+   *
    * * user-data
+   *
    * * cloud-retail:
    *   This option requires enabling auto-learning function first. See
    *   [guidelines](https://cloud.google.com/retail/docs/completion-overview#generated-completion-dataset).
@@ -290,6 +318,7 @@ public interface CompleteQueryRequestOrBuilder
    * Completion max suggestions. If left unset or set to 0, then will fallback
    * to the configured value
    * [CompletionConfig.max_suggestions][google.cloud.retail.v2alpha.CompletionConfig.max_suggestions].
+   *
    * The maximum allowed max suggestions is 20. If it is set higher, it will be
    * capped by 20.
    * </pre>
@@ -305,6 +334,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * If true, attribute suggestions are enabled and provided in response.
+   *
    * This field is only available for "cloud-retail" dataset.
    * </pre>
    *

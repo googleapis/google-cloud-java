@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,20 +48,20 @@ public final class GcsFilesetSpecOuterClass {
           + "ileset_spec.proto\022 google.cloud.datacata"
           + "log.v1beta1\032\037google/api/field_behavior.p"
           + "roto\0321google/cloud/datacatalog/v1beta1/t"
-          + "imestamps.proto\"\177\n\016GcsFilesetSpec\022\032\n\rfil"
-          + "e_patterns\030\001 \003(\tB\003\340A\002\022Q\n\025sample_gcs_file"
-          + "_specs\030\002 \003(\0132-.google.cloud.datacatalog."
-          + "v1beta1.GcsFileSpecB\003\340A\003\"\217\001\n\013GcsFileSpec"
-          + "\022\026\n\tfile_path\030\001 \001(\tB\003\340A\002\022O\n\016gcs_timestam"
-          + "ps\030\002 \001(\01322.google.cloud.datacatalog.v1be"
-          + "ta1.SystemTimestampsB\003\340A\003\022\027\n\nsize_bytes\030"
-          + "\004 \001(\003B\003\340A\003B\337\001\n$com.google.cloud.datacata"
-          + "log.v1beta1P\001ZFcloud.google.com/go/datac"
-          + "atalog/apiv1beta1/datacatalogpb;datacata"
-          + "logpb\370\001\001\252\002 Google.Cloud.DataCatalog.V1Be"
-          + "ta1\312\002 Google\\Cloud\\DataCatalog\\V1beta1\352\002"
-          + "#Google::Cloud::DataCatalog::V1beta1b\006pr"
-          + "oto3"
+          + "imestamps.proto\"\201\001\n\016GcsFilesetSpec\022\033\n\rfi"
+          + "le_patterns\030\001 \003(\tB\004\342A\001\002\022R\n\025sample_gcs_fi"
+          + "le_specs\030\002 \003(\0132-.google.cloud.datacatalo"
+          + "g.v1beta1.GcsFileSpecB\004\342A\001\003\"\222\001\n\013GcsFileS"
+          + "pec\022\027\n\tfile_path\030\001 \001(\tB\004\342A\001\002\022P\n\016gcs_time"
+          + "stamps\030\002 \001(\01322.google.cloud.datacatalog."
+          + "v1beta1.SystemTimestampsB\004\342A\001\003\022\030\n\nsize_b"
+          + "ytes\030\004 \001(\003B\004\342A\001\003B\337\001\n$com.google.cloud.da"
+          + "tacatalog.v1beta1P\001ZFcloud.google.com/go"
+          + "/datacatalog/apiv1beta1/datacatalogpb;da"
+          + "tacatalogpb\370\001\001\252\002 Google.Cloud.DataCatalo"
+          + "g.V1Beta1\312\002 Google\\Cloud\\DataCatalog\\V1b"
+          + "eta1\352\002#Google::Cloud::DataCatalog::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

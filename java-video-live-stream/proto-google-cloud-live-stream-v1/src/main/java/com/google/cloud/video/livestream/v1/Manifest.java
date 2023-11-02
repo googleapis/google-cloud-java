@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   private Manifest() {
     fileName_ = "";
     type_ = 0;
-    muxStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    muxStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Manifest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -327,7 +322,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   public static final int MUX_STREAMS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList muxStreams_;
+  private com.google.protobuf.LazyStringArrayList muxStreams_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -335,6 +331,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    * Required. List of `MuxStream`
    * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
    * in this manifest.
+   *
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -354,6 +351,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    * Required. List of `MuxStream`
    * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
    * in this manifest.
+   *
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -373,6 +371,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    * Required. List of `MuxStream`
    * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
    * in this manifest.
+   *
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -393,6 +392,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    * Required. List of `MuxStream`
    * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
    * in this manifest.
+   *
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -500,8 +500,10 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Whether to use the timecode, as specified in timecode config, when setting:
+   *
    * - `availabilityStartTime` attribute in DASH manifests.
    * - `#EXT-X-PROGRAM-DATE-TIME` tag in HLS manifests.
+   *
    * If false, ignore the input timecode and use the time from system clock
    * when the manifest is first generated. This is the default behavior.
    * </pre>
@@ -776,8 +778,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       fileName_ = "";
       type_ = 0;
-      muxStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      muxStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
       maxSegmentCount_ = 0;
       segmentKeepDuration_ = null;
       if (segmentKeepDurationBuilder_ != null) {
@@ -812,20 +813,11 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.Manifest buildPartial() {
       com.google.cloud.video.livestream.v1.Manifest result =
           new com.google.cloud.video.livestream.v1.Manifest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.video.livestream.v1.Manifest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        muxStreams_ = muxStreams_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.muxStreams_ = muxStreams_;
     }
 
     private void buildPartial0(com.google.cloud.video.livestream.v1.Manifest result) {
@@ -835,6 +827,10 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        muxStreams_.makeImmutable();
+        result.muxStreams_ = muxStreams_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.maxSegmentCount_ = maxSegmentCount_;
@@ -906,7 +902,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       if (!other.muxStreams_.isEmpty()) {
         if (muxStreams_.isEmpty()) {
           muxStreams_ = other.muxStreams_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureMuxStreamsIsMutable();
           muxStreams_.addAll(other.muxStreams_);
@@ -1228,14 +1224,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList muxStreams_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList muxStreams_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMuxStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!muxStreams_.isModifiable()) {
         muxStreams_ = new com.google.protobuf.LazyStringArrayList(muxStreams_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1244,6 +1240,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Required. List of `MuxStream`
      * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
      * in this manifest.
+     *
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1254,7 +1251,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the muxStreams.
      */
     public com.google.protobuf.ProtocolStringList getMuxStreamsList() {
-      return muxStreams_.getUnmodifiableView();
+      muxStreams_.makeImmutable();
+      return muxStreams_;
     }
     /**
      *
@@ -1263,6 +1261,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Required. List of `MuxStream`
      * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
      * in this manifest.
+     *
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1282,6 +1281,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Required. List of `MuxStream`
      * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
      * in this manifest.
+     *
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1302,6 +1302,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Required. List of `MuxStream`
      * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
      * in this manifest.
+     *
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1322,6 +1323,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Required. List of `MuxStream`
      * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
      * in this manifest.
+     *
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1339,6 +1341,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMuxStreamsIsMutable();
       muxStreams_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1349,6 +1352,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Required. List of `MuxStream`
      * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
      * in this manifest.
+     *
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1365,6 +1369,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMuxStreamsIsMutable();
       muxStreams_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1375,6 +1380,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Required. List of `MuxStream`
      * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
      * in this manifest.
+     *
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1388,6 +1394,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMuxStreams(java.lang.Iterable<java.lang.String> values) {
       ensureMuxStreamsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, muxStreams_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1398,6 +1405,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Required. List of `MuxStream`
      * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
      * in this manifest.
+     *
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1408,8 +1416,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMuxStreams() {
-      muxStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      muxStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1420,6 +1429,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Required. List of `MuxStream`
      * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
      * in this manifest.
+     *
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1437,6 +1447,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMuxStreamsIsMutable();
       muxStreams_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1737,8 +1748,10 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to use the timecode, as specified in timecode config, when setting:
+     *
      * - `availabilityStartTime` attribute in DASH manifests.
      * - `#EXT-X-PROGRAM-DATE-TIME` tag in HLS manifests.
+     *
      * If false, ignore the input timecode and use the time from system clock
      * when the manifest is first generated. This is the default behavior.
      * </pre>
@@ -1756,8 +1769,10 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to use the timecode, as specified in timecode config, when setting:
+     *
      * - `availabilityStartTime` attribute in DASH manifests.
      * - `#EXT-X-PROGRAM-DATE-TIME` tag in HLS manifests.
+     *
      * If false, ignore the input timecode and use the time from system clock
      * when the manifest is first generated. This is the default behavior.
      * </pre>
@@ -1779,8 +1794,10 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Whether to use the timecode, as specified in timecode config, when setting:
+     *
      * - `availabilityStartTime` attribute in DASH manifests.
      * - `#EXT-X-PROGRAM-DATE-TIME` tag in HLS manifests.
+     *
      * If false, ignore the input timecode and use the time from system clock
      * when the manifest is first generated. This is the default behavior.
      * </pre>

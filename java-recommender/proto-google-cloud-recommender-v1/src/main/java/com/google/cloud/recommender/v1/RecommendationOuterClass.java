@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,14 @@ public final class RecommendationOuterClass {
       internal_static_google_cloud_recommender_v1_SecurityProjection_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recommender_v1_SecurityProjection_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1_SustainabilityProjection_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1_SustainabilityProjection_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1_ReliabilityProjection_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1_ReliabilityProjection_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_recommender_v1_Impact_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -149,36 +157,50 @@ public final class RecommendationOuterClass {
           + "t\030\001 \001(\0132\022.google.type.Money\022+\n\010duration\030"
           + "\002 \001(\0132\031.google.protobuf.Duration\">\n\022Secu"
           + "rityProjection\022(\n\007details\030\002 \001(\0132\027.google"
-          + ".protobuf.Struct\"\320\002\n\006Impact\022>\n\010category\030"
-          + "\001 \001(\0162,.google.cloud.recommender.v1.Impa"
-          + "ct.Category\022F\n\017cost_projection\030d \001(\0132+.g"
-          + "oogle.cloud.recommender.v1.CostProjectio"
-          + "nH\000\022N\n\023security_projection\030e \001(\0132/.googl"
-          + "e.cloud.recommender.v1.SecurityProjectio"
-          + "nH\000\"`\n\010Category\022\030\n\024CATEGORY_UNSPECIFIED\020"
-          + "\000\022\010\n\004COST\020\001\022\014\n\010SECURITY\020\002\022\017\n\013PERFORMANCE"
-          + "\020\003\022\021\n\rMANAGEABILITY\020\004B\014\n\nprojection\"\336\002\n\027"
-          + "RecommendationStateInfo\022I\n\005state\030\001 \001(\0162:"
-          + ".google.cloud.recommender.v1.Recommendat"
-          + "ionStateInfo.State\022_\n\016state_metadata\030\002 \003"
-          + "(\0132G.google.cloud.recommender.v1.Recomme"
-          + "ndationStateInfo.StateMetadataEntry\0324\n\022S"
-          + "tateMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-          + "\002 \001(\t:\0028\001\"a\n\005State\022\025\n\021STATE_UNSPECIFIED\020"
-          + "\000\022\n\n\006ACTIVE\020\001\022\013\n\007CLAIMED\020\006\022\r\n\tSUCCEEDED\020"
-          + "\003\022\n\n\006FAILED\020\004\022\r\n\tDISMISSED\020\005B\336\003\n\037com.goo"
-          + "gle.cloud.recommender.v1P\001ZAcloud.google"
-          + ".com/go/recommender/apiv1/recommenderpb;"
-          + "recommenderpb\242\002\004CREC\252\002\033Google.Cloud.Reco"
-          + "mmender.V1\352A\317\002\n&recommender.googleapis.c"
-          + "om/Recommender\022Bprojects/{project}/locat"
-          + "ions/{location}/recommenders/{recommende"
-          + "r}\022QbillingAccounts/{billing_account}/lo"
-          + "cations/{location}/recommenders/{recomme"
-          + "nder}\022@folders/{folder}/locations/{locat"
-          + "ion}/recommenders/{recommender}\022Lorganiz"
-          + "ations/{organization}/locations/{locatio"
-          + "n}/recommenders/{recommender}b\006proto3"
+          + ".protobuf.Struct\"Y\n\030SustainabilityProjec"
+          + "tion\022\020\n\010kg_c_o2e\030\001 \001(\001\022+\n\010duration\030\002 \001(\013"
+          + "2\031.google.protobuf.Duration\"\354\001\n\025Reliabil"
+          + "ityProjection\022J\n\005risks\030\001 \003(\0162;.google.cl"
+          + "oud.recommender.v1.ReliabilityProjection"
+          + ".RiskType\022(\n\007details\030\002 \001(\0132\027.google.prot"
+          + "obuf.Struct\"]\n\010RiskType\022\031\n\025RISK_TYPE_UNS"
+          + "PECIFIED\020\000\022\026\n\022SERVICE_DISRUPTION\020\001\022\r\n\tDA"
+          + "TA_LOSS\020\002\022\017\n\013ACCESS_DENY\020\003\"\250\004\n\006Impact\022>\n"
+          + "\010category\030\001 \001(\0162,.google.cloud.recommend"
+          + "er.v1.Impact.Category\022F\n\017cost_projection"
+          + "\030d \001(\0132+.google.cloud.recommender.v1.Cos"
+          + "tProjectionH\000\022N\n\023security_projection\030e \001"
+          + "(\0132/.google.cloud.recommender.v1.Securit"
+          + "yProjectionH\000\022Z\n\031sustainability_projecti"
+          + "on\030f \001(\01325.google.cloud.recommender.v1.S"
+          + "ustainabilityProjectionH\000\022T\n\026reliability"
+          + "_projection\030g \001(\01322.google.cloud.recomme"
+          + "nder.v1.ReliabilityProjectionH\000\"\205\001\n\010Cate"
+          + "gory\022\030\n\024CATEGORY_UNSPECIFIED\020\000\022\010\n\004COST\020\001"
+          + "\022\014\n\010SECURITY\020\002\022\017\n\013PERFORMANCE\020\003\022\021\n\rMANAG"
+          + "EABILITY\020\004\022\022\n\016SUSTAINABILITY\020\005\022\017\n\013RELIAB"
+          + "ILITY\020\006B\014\n\nprojection\"\336\002\n\027Recommendation"
+          + "StateInfo\022I\n\005state\030\001 \001(\0162:.google.cloud."
+          + "recommender.v1.RecommendationStateInfo.S"
+          + "tate\022_\n\016state_metadata\030\002 \003(\0132G.google.cl"
+          + "oud.recommender.v1.RecommendationStateIn"
+          + "fo.StateMetadataEntry\0324\n\022StateMetadataEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"a\n\005S"
+          + "tate\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022"
+          + "\013\n\007CLAIMED\020\006\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\022"
+          + "\r\n\tDISMISSED\020\005B\336\003\n\037com.google.cloud.reco"
+          + "mmender.v1P\001ZAcloud.google.com/go/recomm"
+          + "ender/apiv1/recommenderpb;recommenderpb\242"
+          + "\002\004CREC\252\002\033Google.Cloud.Recommender.V1\352A\317\002"
+          + "\n&recommender.googleapis.com/Recommender"
+          + "\022Bprojects/{project}/locations/{location"
+          + "}/recommenders/{recommender}\022QbillingAcc"
+          + "ounts/{billing_account}/locations/{locat"
+          + "ion}/recommenders/{recommender}\022@folders"
+          + "/{folder}/locations/{location}/recommend"
+          + "ers/{recommender}\022Lorganizations/{organi"
+          + "zation}/locations/{location}/recommender"
+          + "s/{recommender}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -293,16 +315,37 @@ public final class RecommendationOuterClass {
             new java.lang.String[] {
               "Details",
             });
-    internal_static_google_cloud_recommender_v1_Impact_descriptor =
+    internal_static_google_cloud_recommender_v1_SustainabilityProjection_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_recommender_v1_SustainabilityProjection_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1_SustainabilityProjection_descriptor,
+            new java.lang.String[] {
+              "KgCO2E", "Duration",
+            });
+    internal_static_google_cloud_recommender_v1_ReliabilityProjection_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_recommender_v1_ReliabilityProjection_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1_ReliabilityProjection_descriptor,
+            new java.lang.String[] {
+              "Risks", "Details",
+            });
+    internal_static_google_cloud_recommender_v1_Impact_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_recommender_v1_Impact_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1_Impact_descriptor,
             new java.lang.String[] {
-              "Category", "CostProjection", "SecurityProjection", "Projection",
+              "Category",
+              "CostProjection",
+              "SecurityProjection",
+              "SustainabilityProjection",
+              "ReliabilityProjection",
+              "Projection",
             });
     internal_static_google_cloud_recommender_v1_RecommendationStateInfo_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_recommender_v1_RecommendationStateInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1_RecommendationStateInfo_descriptor,

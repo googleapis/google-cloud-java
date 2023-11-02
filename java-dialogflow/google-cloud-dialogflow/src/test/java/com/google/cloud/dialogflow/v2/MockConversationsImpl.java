@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -204,6 +204,27 @@ public class MockConversationsImpl extends ConversationsImplBase {
                   "Unrecognized response type %s for method GenerateStatelessSummary, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateStatelessSummaryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void searchKnowledge(
+      SearchKnowledgeRequest request, StreamObserver<SearchKnowledgeResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchKnowledgeResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchKnowledgeResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchKnowledge, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchKnowledgeResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

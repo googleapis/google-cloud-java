@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ListProjectsRequest extends com.google.protobuf.GeneratedMess
     return new ListProjectsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.ProjectsProto
         .internal_static_google_cloud_resourcemanager_v3_ListProjectsRequest_descriptor;
@@ -81,6 +76,7 @@ public final class ListProjectsRequest extends com.google.protobuf.GeneratedMess
    * Required. The name of the parent resource whose projects are being listed.
    * Only children of this parent resource are listed; descendants are not
    * listed.
+   *
    * If the parent is a folder, use the value `folders/{folder_id}`. If the
    * parent is an organization, use the value `organizations/{org_id}`.
    * </pre>
@@ -110,6 +106,7 @@ public final class ListProjectsRequest extends com.google.protobuf.GeneratedMess
    * Required. The name of the parent resource whose projects are being listed.
    * Only children of this parent resource are listed; descendants are not
    * listed.
+   *
    * If the parent is a folder, use the value `folders/{folder_id}`. If the
    * parent is an organization, use the value `organizations/{org_id}`.
    * </pre>
@@ -648,6 +645,7 @@ public final class ListProjectsRequest extends com.google.protobuf.GeneratedMess
      * Required. The name of the parent resource whose projects are being listed.
      * Only children of this parent resource are listed; descendants are not
      * listed.
+     *
      * If the parent is a folder, use the value `folders/{folder_id}`. If the
      * parent is an organization, use the value `organizations/{org_id}`.
      * </pre>
@@ -676,6 +674,7 @@ public final class ListProjectsRequest extends com.google.protobuf.GeneratedMess
      * Required. The name of the parent resource whose projects are being listed.
      * Only children of this parent resource are listed; descendants are not
      * listed.
+     *
      * If the parent is a folder, use the value `folders/{folder_id}`. If the
      * parent is an organization, use the value `organizations/{org_id}`.
      * </pre>
@@ -704,6 +703,7 @@ public final class ListProjectsRequest extends com.google.protobuf.GeneratedMess
      * Required. The name of the parent resource whose projects are being listed.
      * Only children of this parent resource are listed; descendants are not
      * listed.
+     *
      * If the parent is a folder, use the value `folders/{folder_id}`. If the
      * parent is an organization, use the value `organizations/{org_id}`.
      * </pre>
@@ -731,6 +731,7 @@ public final class ListProjectsRequest extends com.google.protobuf.GeneratedMess
      * Required. The name of the parent resource whose projects are being listed.
      * Only children of this parent resource are listed; descendants are not
      * listed.
+     *
      * If the parent is a folder, use the value `folders/{folder_id}`. If the
      * parent is an organization, use the value `organizations/{org_id}`.
      * </pre>
@@ -754,6 +755,7 @@ public final class ListProjectsRequest extends com.google.protobuf.GeneratedMess
      * Required. The name of the parent resource whose projects are being listed.
      * Only children of this parent resource are listed; descendants are not
      * listed.
+     *
      * If the parent is a folder, use the value `folders/{folder_id}`. If the
      * parent is an organization, use the value `organizations/{org_id}`.
      * </pre>

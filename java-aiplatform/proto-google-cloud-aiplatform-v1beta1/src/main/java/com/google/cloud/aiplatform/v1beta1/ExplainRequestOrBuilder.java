@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -263,6 +263,108 @@ public interface ExplainRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverrideOrBuilder
       getExplanationSpecOverrideOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is the same as the one above, but supports multiple
+   * explanations to occur in parallel. The key can be any string. Each override
+   * will be run against the model, then its explanations will be grouped
+   * together.
+   *
+   * Note - these explanations are run **In Addition** to the default
+   * Explanation in the deployed model.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getConcurrentExplanationSpecOverrideCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is the same as the one above, but supports multiple
+   * explanations to occur in parallel. The key can be any string. Each override
+   * will be run against the model, then its explanations will be grouped
+   * together.
+   *
+   * Note - these explanations are run **In Addition** to the default
+   * Explanation in the deployed model.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsConcurrentExplanationSpecOverride(java.lang.String key);
+  /** Use {@link #getConcurrentExplanationSpecOverrideMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+      getConcurrentExplanationSpecOverride();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is the same as the one above, but supports multiple
+   * explanations to occur in parallel. The key can be any string. Each override
+   * will be run against the model, then its explanations will be grouped
+   * together.
+   *
+   * Note - these explanations are run **In Addition** to the default
+   * Explanation in the deployed model.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+      getConcurrentExplanationSpecOverrideMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is the same as the one above, but supports multiple
+   * explanations to occur in parallel. The key can be any string. Each override
+   * will be run against the model, then its explanations will be grouped
+   * together.
+   *
+   * Note - these explanations are run **In Addition** to the default
+   * Explanation in the deployed model.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride
+      getConcurrentExplanationSpecOverrideOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is the same as the one above, but supports multiple
+   * explanations to occur in parallel. The key can be any string. Each override
+   * will be run against the model, then its explanations will be grouped
+   * together.
+   *
+   * Note - these explanations are run **In Addition** to the default
+   * Explanation in the deployed model.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride
+      getConcurrentExplanationSpecOverrideOrThrow(java.lang.String key);
 
   /**
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,16 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  * <pre>
  * Represents the query input. It can contain one of:
- * 1.  A conversational query in the form of text.
- * 2.  An intent query that specifies which intent to trigger.
- * 3.  Natural language speech audio to be processed.
- * 4.  An event to be triggered.
- * 5.  DTMF digits to invoke an intent and fill in parameter value.
+ *
+ * 1. A conversational query in the form of text.
+ *
+ * 2. An intent query that specifies which intent to trigger.
+ *
+ * 3. Natural language speech audio to be processed.
+ *
+ * 4. An event to be triggered.
+ *
+ * 5. DTMF digits to invoke an intent and fill in parameter value.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.QueryInput}
@@ -52,11 +57,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     return new QueryInput();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.SessionProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_QueryInput_descriptor;
@@ -73,6 +73,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int inputCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object input_;
 
   public enum InputCase
@@ -688,11 +690,16 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents the query input. It can contain one of:
-   * 1.  A conversational query in the form of text.
-   * 2.  An intent query that specifies which intent to trigger.
-   * 3.  Natural language speech audio to be processed.
-   * 4.  An event to be triggered.
-   * 5.  DTMF digits to invoke an intent and fill in parameter value.
+   *
+   * 1. A conversational query in the form of text.
+   *
+   * 2. An intent query that specifies which intent to trigger.
+   *
+   * 3. Natural language speech audio to be processed.
+   *
+   * 4. An event to be triggered.
+   *
+   * 5. DTMF digits to invoke an intent and fill in parameter value.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.QueryInput}

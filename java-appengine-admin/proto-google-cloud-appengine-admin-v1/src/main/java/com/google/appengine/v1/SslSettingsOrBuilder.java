@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface SslSettingsOrBuilder
    * <pre>
    * ID of the `AuthorizedCertificate` resource configuring SSL for the
    * application. Clearing this field will remove SSL support.
+   *
    * By default, a managed certificate is automatically created for every
    * domain mapping. To omit SSL support or to configure SSL manually, specify
    * `SslManagementType.MANUAL` on a `CREATE` or `UPDATE` request. You must
@@ -48,6 +49,7 @@ public interface SslSettingsOrBuilder
    * <pre>
    * ID of the `AuthorizedCertificate` resource configuring SSL for the
    * application. Clearing this field will remove SSL support.
+   *
    * By default, a managed certificate is automatically created for every
    * domain mapping. To omit SSL support or to configure SSL manually, specify
    * `SslManagementType.MANUAL` on a `CREATE` or `UPDATE` request. You must
@@ -102,6 +104,7 @@ public interface SslSettingsOrBuilder
    * the new managed certificate and this field will be left empty. To remove
    * SSL support while there is still a pending managed certificate, clear the
    * `certificate_id` field with an `UpdateDomainMappingRequest`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -121,6 +124,7 @@ public interface SslSettingsOrBuilder
    * the new managed certificate and this field will be left empty. To remove
    * SSL support while there is still a pending managed certificate, clear the
    * `certificate_id` field with an `UpdateDomainMappingRequest`.
+   *
    * &#64;OutputOnly
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,11 @@ public interface ListBackupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location for which to retrieve backup information,
-   * in the format `projects/{project_id}/locations/{location}`.
-   * In Filestore, backup locations map to GCP regions,
-   * for example **us-west1**.
-   * To retrieve backup information for all locations, use "-" for the
+   * Required. The project and location for which to retrieve backup
+   * information, in the format `projects/{project_id}/locations/{location}`. In
+   * Filestore, backup locations map to Google Cloud regions, for example
+   * **us-west1**. To retrieve backup information for all locations, use "-" for
+   * the
    * `{location}` value.
    * </pre>
    *
@@ -46,11 +46,11 @@ public interface ListBackupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location for which to retrieve backup information,
-   * in the format `projects/{project_id}/locations/{location}`.
-   * In Filestore, backup locations map to GCP regions,
-   * for example **us-west1**.
-   * To retrieve backup information for all locations, use "-" for the
+   * Required. The project and location for which to retrieve backup
+   * information, in the format `projects/{project_id}/locations/{location}`. In
+   * Filestore, backup locations map to Google Cloud regions, for example
+   * **us-west1**. To retrieve backup information for all locations, use "-" for
+   * the
    * `{location}` value.
    * </pre>
    *

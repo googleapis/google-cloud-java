@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImageTransformations();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -244,8 +239,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
      */
     com.google.privacy.dlp.v2.ColorOrBuilder getRedactionColorOrBuilder();
 
-    public com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.TargetCase
-        getTargetCase();
+    com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.TargetCase getTargetCase();
   }
   /**
    *
@@ -274,11 +268,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return new ImageTransformation();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_ImageTransformations_ImageTransformation_descriptor;
@@ -303,8 +292,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-       * must be unique within the ImageTransformations message.
+       * Required. InfoTypes to apply the transformation to. Required. Provided
+       * InfoType must be unique within the ImageTransformations message.
        * </pre>
        *
        * <code>
@@ -316,8 +305,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-       * must be unique within the ImageTransformations message.
+       * Required. InfoTypes to apply the transformation to. Required. Provided
+       * InfoType must be unique within the ImageTransformations message.
        * </pre>
        *
        * <code>
@@ -329,8 +318,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-       * must be unique within the ImageTransformations message.
+       * Required. InfoTypes to apply the transformation to. Required. Provided
+       * InfoType must be unique within the ImageTransformations message.
        * </pre>
        *
        * <code>
@@ -342,8 +331,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-       * must be unique within the ImageTransformations message.
+       * Required. InfoTypes to apply the transformation to. Required. Provided
+       * InfoType must be unique within the ImageTransformations message.
        * </pre>
        *
        * <code>
@@ -356,8 +345,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-       * must be unique within the ImageTransformations message.
+       * Required. InfoTypes to apply the transformation to. Required. Provided
+       * InfoType must be unique within the ImageTransformations message.
        * </pre>
        *
        * <code>
@@ -396,11 +385,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return new SelectedInfoTypes();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.privacy.dlp.v2.DlpProto
             .internal_static_google_privacy_dlp_v2_ImageTransformations_ImageTransformation_SelectedInfoTypes_descriptor;
@@ -426,8 +410,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-       * must be unique within the ImageTransformations message.
+       * Required. InfoTypes to apply the transformation to. Required. Provided
+       * InfoType must be unique within the ImageTransformations message.
        * </pre>
        *
        * <code>
@@ -442,8 +426,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-       * must be unique within the ImageTransformations message.
+       * Required. InfoTypes to apply the transformation to. Required. Provided
+       * InfoType must be unique within the ImageTransformations message.
        * </pre>
        *
        * <code>
@@ -459,8 +443,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-       * must be unique within the ImageTransformations message.
+       * Required. InfoTypes to apply the transformation to. Required. Provided
+       * InfoType must be unique within the ImageTransformations message.
        * </pre>
        *
        * <code>
@@ -475,8 +459,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-       * must be unique within the ImageTransformations message.
+       * Required. InfoTypes to apply the transformation to. Required. Provided
+       * InfoType must be unique within the ImageTransformations message.
        * </pre>
        *
        * <code>
@@ -491,8 +475,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-       * must be unique within the ImageTransformations message.
+       * Required. InfoTypes to apply the transformation to. Required. Provided
+       * InfoType must be unique within the ImageTransformations message.
        * </pre>
        *
        * <code>
@@ -967,8 +951,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -986,8 +970,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1005,8 +989,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1024,8 +1008,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1049,8 +1033,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1072,8 +1056,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1097,8 +1081,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1122,8 +1106,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1144,8 +1128,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1167,8 +1151,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1190,8 +1174,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1212,8 +1196,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1234,8 +1218,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1249,8 +1233,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1268,8 +1252,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1288,8 +1272,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1304,8 +1288,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1320,8 +1304,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
          *
          *
          * <pre>
-         * Required. InfoTypes to apply the transformation to. Required. Provided InfoType
-         * must be unique within the ImageTransformations message.
+         * Required. InfoTypes to apply the transformation to. Required. Provided
+         * InfoType must be unique within the ImageTransformations message.
          * </pre>
          *
          * <code>
@@ -1454,11 +1438,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new AllInfoTypes();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1918,11 +1897,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return new AllText();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.privacy.dlp.v2.DlpProto
             .internal_static_google_privacy_dlp_v2_ImageTransformations_ImageTransformation_AllText_descriptor;
@@ -2344,6 +2318,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     }
 
     private int targetCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object target_;
 
     public enum TargetCase

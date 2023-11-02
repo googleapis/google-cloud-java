@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,11 @@ public interface DeleteEnvironmentRequestOrBuilder
    * <pre>
    * Required. The name of the environment to delete.
    * / Format:
+   *
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *
    * The environment ID for the default environment is `-`.
    * </pre>
    *
@@ -48,9 +50,11 @@ public interface DeleteEnvironmentRequestOrBuilder
    * <pre>
    * Required. The name of the environment to delete.
    * / Format:
+   *
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *
    * The environment ID for the default environment is `-`.
    * </pre>
    *

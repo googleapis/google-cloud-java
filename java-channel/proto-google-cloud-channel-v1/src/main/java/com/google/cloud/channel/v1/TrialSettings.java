@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class TrialSettings extends com.google.protobuf.GeneratedMessageV3
     return new TrialSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.EntitlementsProto
         .internal_static_google_cloud_channel_v1_TrialSettings_descriptor;
@@ -72,6 +67,7 @@ public final class TrialSettings extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Determines if the entitlement is in a trial or not:
+   *
    * * `true` - The entitlement is in trial.
    * * `false` - The entitlement is not in trial.
    * </pre>
@@ -513,6 +509,7 @@ public final class TrialSettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Determines if the entitlement is in a trial or not:
+     *
      * * `true` - The entitlement is in trial.
      * * `false` - The entitlement is not in trial.
      * </pre>
@@ -530,6 +527,7 @@ public final class TrialSettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Determines if the entitlement is in a trial or not:
+     *
      * * `true` - The entitlement is in trial.
      * * `false` - The entitlement is not in trial.
      * </pre>
@@ -551,6 +549,7 @@ public final class TrialSettings extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Determines if the entitlement is in a trial or not:
+     *
      * * `true` - The entitlement is in trial.
      * * `false` - The entitlement is not in trial.
      * </pre>

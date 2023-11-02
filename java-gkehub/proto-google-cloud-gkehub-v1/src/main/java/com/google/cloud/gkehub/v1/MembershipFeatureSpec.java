@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
     return new MembershipFeatureSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1.FeatureProto
         .internal_static_google_cloud_gkehub_v1_MembershipFeatureSpec_descriptor;
@@ -67,6 +62,8 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
   }
 
   private int featureSpecCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object featureSpec_;
 
   public enum FeatureSpecCase

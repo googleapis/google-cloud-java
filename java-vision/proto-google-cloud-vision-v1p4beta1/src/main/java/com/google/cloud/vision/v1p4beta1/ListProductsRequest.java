@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     return new ListProductsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p4beta1.ProductSearchServiceProto
         .internal_static_google_cloud_vision_v1p4beta1_ListProductsRequest_descriptor;
@@ -77,6 +72,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The project OR ProductSet from which Products should be listed.
+   *
    * Format:
    * `projects/PROJECT_ID/locations/LOC_ID`
    * </pre>
@@ -104,6 +100,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The project OR ProductSet from which Products should be listed.
+   *
    * Format:
    * `projects/PROJECT_ID/locations/LOC_ID`
    * </pre>
@@ -591,6 +588,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The project OR ProductSet from which Products should be listed.
+     *
      * Format:
      * `projects/PROJECT_ID/locations/LOC_ID`
      * </pre>
@@ -617,6 +615,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The project OR ProductSet from which Products should be listed.
+     *
      * Format:
      * `projects/PROJECT_ID/locations/LOC_ID`
      * </pre>
@@ -643,6 +642,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The project OR ProductSet from which Products should be listed.
+     *
      * Format:
      * `projects/PROJECT_ID/locations/LOC_ID`
      * </pre>
@@ -668,6 +668,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The project OR ProductSet from which Products should be listed.
+     *
      * Format:
      * `projects/PROJECT_ID/locations/LOC_ID`
      * </pre>
@@ -689,6 +690,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The project OR ProductSet from which Products should be listed.
+     *
      * Format:
      * `projects/PROJECT_ID/locations/LOC_ID`
      * </pre>

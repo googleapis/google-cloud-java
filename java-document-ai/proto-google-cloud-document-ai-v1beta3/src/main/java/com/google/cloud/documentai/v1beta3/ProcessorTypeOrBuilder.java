@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ public interface ProcessorTypeOrBuilder
    *
    *
    * <pre>
-   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+   * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -66,7 +66,7 @@ public interface ProcessorTypeOrBuilder
    *
    *
    * <pre>
-   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+   * The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
    * </pre>
    *
    * <code>string type = 2;</code>

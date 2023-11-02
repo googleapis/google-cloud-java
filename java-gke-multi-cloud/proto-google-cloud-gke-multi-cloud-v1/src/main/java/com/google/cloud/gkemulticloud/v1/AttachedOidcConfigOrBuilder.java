@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ public interface AttachedOidcConfigOrBuilder
    * Optional. OIDC verification keys in JWKS format (RFC 7517).
    * It contains a list of OIDC verification keys that can be used to verify
    * OIDC JWTs.
+   *
    * This field is required for cluster that doesn't have a publicly available
    * discovery endpoint. When provided, it will be directly used
    * to verify the OIDC JWT asserted by the IDP.

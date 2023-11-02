@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ public final class TranslationServiceGrpc {
 
   private TranslationServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.translation.v3beta1.TranslationService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.translation.v3beta1.TranslationService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -643,7 +644,7 @@ public final class TranslationServiceGrpc {
      *
      *
      * <pre>
-     * Translates a large volume of documents in asynchronous batch mode.
+     * Translates a large volume of document in asynchronous batch mode.
      * This function provides real-time output as the inputs are being processed.
      * If caller cancels a request, the partial results (for an input file, it's
      * all or nothing) may still be available on the specified output location.
@@ -849,7 +850,7 @@ public final class TranslationServiceGrpc {
      *
      *
      * <pre>
-     * Translates a large volume of documents in asynchronous batch mode.
+     * Translates a large volume of document in asynchronous batch mode.
      * This function provides real-time output as the inputs are being processed.
      * If caller cancels a request, the partial results (for an input file, it's
      * all or nothing) may still be available on the specified output location.
@@ -1031,7 +1032,7 @@ public final class TranslationServiceGrpc {
      *
      *
      * <pre>
-     * Translates a large volume of documents in asynchronous batch mode.
+     * Translates a large volume of document in asynchronous batch mode.
      * This function provides real-time output as the inputs are being processed.
      * If caller cancels a request, the partial results (for an input file, it's
      * all or nothing) may still be available on the specified output location.
@@ -1201,7 +1202,7 @@ public final class TranslationServiceGrpc {
      *
      *
      * <pre>
-     * Translates a large volume of documents in asynchronous batch mode.
+     * Translates a large volume of document in asynchronous batch mode.
      * This function provides real-time output as the inputs are being processed.
      * If caller cancels a request, the partial results (for an input file, it's
      * all or nothing) may still be available on the specified output location.
@@ -1474,9 +1475,9 @@ public final class TranslationServiceGrpc {
   private static final class TranslationServiceMethodDescriptorSupplier
       extends TranslationServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    TranslationServiceMethodDescriptorSupplier(String methodName) {
+    TranslationServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

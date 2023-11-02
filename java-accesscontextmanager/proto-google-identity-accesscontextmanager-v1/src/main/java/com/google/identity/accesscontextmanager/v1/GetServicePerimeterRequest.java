@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetServicePerimeterRequest extends com.google.protobuf.Genera
     return new GetServicePerimeterRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.identity.accesscontextmanager.v1.AccessContextManagerProto
         .internal_static_google_identity_accesscontextmanager_v1_GetServicePerimeterRequest_descriptor;
@@ -77,6 +72,7 @@ public final class GetServicePerimeterRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. Resource name for the [Service Perimeter]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+   *
    * Format:
    * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeters_id}`
    * </pre>
@@ -105,6 +101,7 @@ public final class GetServicePerimeterRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. Resource name for the [Service Perimeter]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+   *
    * Format:
    * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeters_id}`
    * </pre>
@@ -487,6 +484,7 @@ public final class GetServicePerimeterRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. Resource name for the [Service Perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+     *
      * Format:
      * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeters_id}`
      * </pre>
@@ -514,6 +512,7 @@ public final class GetServicePerimeterRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. Resource name for the [Service Perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+     *
      * Format:
      * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeters_id}`
      * </pre>
@@ -541,6 +540,7 @@ public final class GetServicePerimeterRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. Resource name for the [Service Perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+     *
      * Format:
      * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeters_id}`
      * </pre>
@@ -567,6 +567,7 @@ public final class GetServicePerimeterRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. Resource name for the [Service Perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+     *
      * Format:
      * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeters_id}`
      * </pre>
@@ -589,6 +590,7 @@ public final class GetServicePerimeterRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. Resource name for the [Service Perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+     *
      * Format:
      * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeters_id}`
      * </pre>

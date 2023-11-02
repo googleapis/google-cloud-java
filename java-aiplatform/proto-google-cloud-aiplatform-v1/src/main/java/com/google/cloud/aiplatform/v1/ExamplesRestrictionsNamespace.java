@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,19 +39,14 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
 
   private ExamplesRestrictionsNamespace() {
     namespaceName_ = "";
-    allow_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    deny_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allow_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    deny_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExamplesRestrictionsNamespace();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -123,7 +118,8 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
   public static final int ALLOW_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allow_;
+  private com.google.protobuf.LazyStringArrayList allow_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -186,7 +182,8 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
   public static final int DENY_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList deny_;
+  private com.google.protobuf.LazyStringArrayList deny_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -478,10 +475,8 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       super.clear();
       bitField0_ = 0;
       namespaceName_ = "";
-      allow_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      deny_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      allow_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      deny_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -510,7 +505,6 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     public com.google.cloud.aiplatform.v1.ExamplesRestrictionsNamespace buildPartial() {
       com.google.cloud.aiplatform.v1.ExamplesRestrictionsNamespace result =
           new com.google.cloud.aiplatform.v1.ExamplesRestrictionsNamespace(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -518,25 +512,19 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1.ExamplesRestrictionsNamespace result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        allow_ = allow_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.allow_ = allow_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        deny_ = deny_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.deny_ = deny_;
-    }
-
     private void buildPartial0(
         com.google.cloud.aiplatform.v1.ExamplesRestrictionsNamespace result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.namespaceName_ = namespaceName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        allow_.makeImmutable();
+        result.allow_ = allow_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        deny_.makeImmutable();
+        result.deny_ = deny_;
       }
     }
 
@@ -595,7 +583,7 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       if (!other.allow_.isEmpty()) {
         if (allow_.isEmpty()) {
           allow_ = other.allow_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAllowIsMutable();
           allow_.addAll(other.allow_);
@@ -605,7 +593,7 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       if (!other.deny_.isEmpty()) {
         if (deny_.isEmpty()) {
           deny_ = other.deny_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureDenyIsMutable();
           deny_.addAll(other.deny_);
@@ -783,14 +771,14 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       return this;
     }
 
-    private com.google.protobuf.LazyStringList allow_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allow_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!allow_.isModifiable()) {
         allow_ = new com.google.protobuf.LazyStringArrayList(allow_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -804,7 +792,8 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
      * @return A list containing the allow.
      */
     public com.google.protobuf.ProtocolStringList getAllowList() {
-      return allow_.getUnmodifiableView();
+      allow_.makeImmutable();
+      return allow_;
     }
     /**
      *
@@ -869,6 +858,7 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       }
       ensureAllowIsMutable();
       allow_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -890,6 +880,7 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       }
       ensureAllowIsMutable();
       allow_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -908,6 +899,7 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     public Builder addAllAllow(java.lang.Iterable<java.lang.String> values) {
       ensureAllowIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allow_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -923,8 +915,9 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearAllow() {
-      allow_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allow_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -947,18 +940,19 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensureAllowIsMutable();
       allow_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList deny_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList deny_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDenyIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!deny_.isModifiable()) {
         deny_ = new com.google.protobuf.LazyStringArrayList(deny_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -972,7 +966,8 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
      * @return A list containing the deny.
      */
     public com.google.protobuf.ProtocolStringList getDenyList() {
-      return deny_.getUnmodifiableView();
+      deny_.makeImmutable();
+      return deny_;
     }
     /**
      *
@@ -1037,6 +1032,7 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       }
       ensureDenyIsMutable();
       deny_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1058,6 +1054,7 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       }
       ensureDenyIsMutable();
       deny_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1076,6 +1073,7 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
     public Builder addAllDeny(java.lang.Iterable<java.lang.String> values) {
       ensureDenyIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deny_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1091,8 +1089,9 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearDeny() {
-      deny_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      deny_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1115,6 +1114,7 @@ public final class ExamplesRestrictionsNamespace extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensureDenyIsMutable();
       deny_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

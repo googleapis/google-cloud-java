@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,11 +62,15 @@ public interface ReservationOrBuilder
    * <pre>
    * Minimum slots available to this reservation. A slot is a unit of
    * computational power in BigQuery, and serves as the unit of parallelism.
+   *
    * Queries using this reservation might use more slots during runtime if
    * ignore_idle_slots is set to false.
+   *
    * If total slot_capacity of the reservation and its siblings
    * exceeds the total slot_count of all capacity commitments, the request will
    * fail with `google.rpc.Code.RESOURCE_EXHAUSTED`.
+   *
+   *
    * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
    * are checked separately for default and auxiliary regions. See
    * multi_region_auxiliary flag for more details.
@@ -237,9 +241,11 @@ public interface ReservationOrBuilder
    * <pre>
    * Applicable only for reservations located within one of the BigQuery
    * multi-regions (US or EU).
+   *
    * If set to true, this reservation is placed in the organization's
    * secondary region which is designated for disaster recovery purposes.
    * If false, this reservation is placed in the organization's default region.
+   *
    * NOTE: this is a preview feature. Project must be allow-listed in order to
    * set this field.
    * </pre>

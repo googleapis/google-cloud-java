@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,4 +53,180 @@ public interface RunTaskRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined labels for the task. If the map is left empty, the
+   * task will run with existing labels from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * labels. If the map contains an entry with an existing label key in task
+   * definition, the task will run with new label value for that entry. Clearing
+   * an existing label will require label value to be explicitly set to a hyphen
+   * "-". The label value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined labels for the task. If the map is left empty, the
+   * task will run with existing labels from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * labels. If the map contains an entry with an existing label key in task
+   * definition, the task will run with new label value for that entry. Clearing
+   * an existing label will require label value to be explicitly set to a hyphen
+   * "-". The label value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined labels for the task. If the map is left empty, the
+   * task will run with existing labels from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * labels. If the map contains an entry with an existing label key in task
+   * definition, the task will run with new label value for that entry. Clearing
+   * an existing label will require label value to be explicitly set to a hyphen
+   * "-". The label value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined labels for the task. If the map is left empty, the
+   * task will run with existing labels from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * labels. If the map contains an entry with an existing label key in task
+   * definition, the task will run with new label value for that entry. Clearing
+   * an existing label will require label value to be explicitly set to a hyphen
+   * "-". The label value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined labels for the task. If the map is left empty, the
+   * task will run with existing labels from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * labels. If the map contains an entry with an existing label key in task
+   * definition, the task will run with new label value for that entry. Clearing
+   * an existing label will require label value to be explicitly set to a hyphen
+   * "-". The label value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution spec arguments. If the map is left empty, the task will
+   * run with existing execution spec args from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * args. If the map contains an entry with an existing arg key in task
+   * definition, the task will run with new arg value for that entry. Clearing
+   * an existing arg will require arg value to be explicitly set to a hyphen
+   * "-". The arg value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getArgsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution spec arguments. If the map is left empty, the task will
+   * run with existing execution spec args from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * args. If the map contains an entry with an existing arg key in task
+   * definition, the task will run with new arg value for that entry. Clearing
+   * an existing arg will require arg value to be explicitly set to a hyphen
+   * "-". The arg value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsArgs(java.lang.String key);
+  /** Use {@link #getArgsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getArgs();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution spec arguments. If the map is left empty, the task will
+   * run with existing execution spec args from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * args. If the map contains an entry with an existing arg key in task
+   * definition, the task will run with new arg value for that entry. Clearing
+   * an existing arg will require arg value to be explicitly set to a hyphen
+   * "-". The arg value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getArgsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution spec arguments. If the map is left empty, the task will
+   * run with existing execution spec args from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * args. If the map contains an entry with an existing arg key in task
+   * definition, the task will run with new arg value for that entry. Clearing
+   * an existing arg will require arg value to be explicitly set to a hyphen
+   * "-". The arg value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  /* nullable */
+  java.lang.String getArgsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution spec arguments. If the map is left empty, the task will
+   * run with existing execution spec args from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * args. If the map contains an entry with an existing arg key in task
+   * definition, the task will run with new arg value for that entry. Clearing
+   * an existing arg will require arg value to be explicitly set to a hyphen
+   * "-". The arg value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getArgsOrThrow(java.lang.String key);
 }

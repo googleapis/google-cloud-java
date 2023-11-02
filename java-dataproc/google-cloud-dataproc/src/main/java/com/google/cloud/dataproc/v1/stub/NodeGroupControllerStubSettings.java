@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
@@ -104,6 +109,10 @@ public class NodeGroupControllerStubSettings extends StubSettings<NodeGroupContr
   private final OperationCallSettings<ResizeNodeGroupRequest, NodeGroup, NodeGroupOperationMetadata>
       resizeNodeGroupOperationSettings;
   private final UnaryCallSettings<GetNodeGroupRequest, NodeGroup> getNodeGroupSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   /** Returns the object with the settings used for calls to createNodeGroup. */
   public UnaryCallSettings<CreateNodeGroupRequest, Operation> createNodeGroupSettings() {
@@ -130,6 +139,22 @@ public class NodeGroupControllerStubSettings extends StubSettings<NodeGroupContr
   /** Returns the object with the settings used for calls to getNodeGroup. */
   public UnaryCallSettings<GetNodeGroupRequest, NodeGroup> getNodeGroupSettings() {
     return getNodeGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public NodeGroupControllerStub createStub() throws IOException {
@@ -243,6 +268,9 @@ public class NodeGroupControllerStubSettings extends StubSettings<NodeGroupContr
     resizeNodeGroupSettings = settingsBuilder.resizeNodeGroupSettings().build();
     resizeNodeGroupOperationSettings = settingsBuilder.resizeNodeGroupOperationSettings().build();
     getNodeGroupSettings = settingsBuilder.getNodeGroupSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for NodeGroupControllerStubSettings. */
@@ -260,6 +288,10 @@ public class NodeGroupControllerStubSettings extends StubSettings<NodeGroupContr
             ResizeNodeGroupRequest, NodeGroup, NodeGroupOperationMetadata>
         resizeNodeGroupOperationSettings;
     private final UnaryCallSettings.Builder<GetNodeGroupRequest, NodeGroup> getNodeGroupSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -292,10 +324,18 @@ public class NodeGroupControllerStubSettings extends StubSettings<NodeGroupContr
       resizeNodeGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resizeNodeGroupOperationSettings = OperationCallSettings.newBuilder();
       getNodeGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createNodeGroupSettings, resizeNodeGroupSettings, getNodeGroupSettings);
+              createNodeGroupSettings,
+              resizeNodeGroupSettings,
+              getNodeGroupSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -307,10 +347,18 @@ public class NodeGroupControllerStubSettings extends StubSettings<NodeGroupContr
       resizeNodeGroupSettings = settings.resizeNodeGroupSettings.toBuilder();
       resizeNodeGroupOperationSettings = settings.resizeNodeGroupOperationSettings.toBuilder();
       getNodeGroupSettings = settings.getNodeGroupSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createNodeGroupSettings, resizeNodeGroupSettings, getNodeGroupSettings);
+              createNodeGroupSettings,
+              resizeNodeGroupSettings,
+              getNodeGroupSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -352,6 +400,21 @@ public class NodeGroupControllerStubSettings extends StubSettings<NodeGroupContr
 
       builder
           .getNodeGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -454,6 +517,22 @@ public class NodeGroupControllerStubSettings extends StubSettings<NodeGroupContr
     /** Returns the builder for the settings used for calls to getNodeGroup. */
     public UnaryCallSettings.Builder<GetNodeGroupRequest, NodeGroup> getNodeGroupSettings() {
       return getNodeGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

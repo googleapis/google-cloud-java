@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    *
    * <pre>
    * Required. The resource name for the ProductSet to modify.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
@@ -44,6 +45,7 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    *
    * <pre>
    * Required. The resource name for the ProductSet to modify.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
@@ -61,6 +63,7 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    *
    * <pre>
    * Required. The resource name for the Product to be removed from this ProductSet.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>
@@ -77,6 +80,7 @@ public interface RemoveProductFromProductSetRequestOrBuilder
    *
    * <pre>
    * Required. The resource name for the Product to be removed from this ProductSet.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    * <pre>
    * The conversation view is not specified.
+   *
    * * Defaults to `FULL` in `GetConversationRequest`.
    * * Defaults to `BASIC` in `ListConversationsRequest`.
    * </pre>
@@ -68,6 +69,7 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    * <pre>
    * The conversation view is not specified.
+   *
    * * Defaults to `FULL` in `GetConversationRequest`.
    * * Defaults to `BASIC` in `ListConversationsRequest`.
    * </pre>

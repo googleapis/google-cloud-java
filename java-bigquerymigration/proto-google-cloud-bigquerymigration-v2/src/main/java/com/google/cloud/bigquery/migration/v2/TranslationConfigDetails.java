@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     return new TranslationConfigDetails();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2.TranslationConfigProto
         .internal_static_google_cloud_bigquery_migration_v2_TranslationConfigDetails_descriptor;
@@ -69,6 +64,8 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
   }
 
   private int sourceLocationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object sourceLocation_;
 
   public enum SourceLocationCase
@@ -113,6 +110,8 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
   }
 
   private int targetLocationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object targetLocation_;
 
   public enum TargetLocationCase
@@ -157,6 +156,8 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
   }
 
   private int outputNameMappingCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object outputNameMapping_;
 
   public enum OutputNameMappingCase

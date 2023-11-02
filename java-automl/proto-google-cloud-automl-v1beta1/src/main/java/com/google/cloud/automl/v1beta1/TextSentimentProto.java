@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,11 +81,6 @@ public final class TextSentimentProto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TextSentimentAnnotation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -890,18 +885,13 @@ public final class TextSentimentProto {
     }
 
     private TextSentimentEvaluationMetrics() {
-      annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      annotationSpecId_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TextSentimentEvaluationMetrics();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1124,7 +1114,8 @@ public final class TextSentimentProto {
     public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 9;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList annotationSpecId_;
+    private com.google.protobuf.LazyStringArrayList annotationSpecId_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1516,8 +1507,7 @@ public final class TextSentimentProto {
           confusionMatrixBuilder_.dispose();
           confusionMatrixBuilder_ = null;
         }
-        annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        annotationSpecId_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -1551,22 +1541,11 @@ public final class TextSentimentProto {
         com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics result =
             new com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics(
                 this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics
-              result) {
-        if (((bitField0_ & 0x00000100) != 0)) {
-          annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000100);
-        }
-        result.annotationSpecId_ = annotationSpecId_;
       }
 
       private void buildPartial0(
@@ -1597,6 +1576,10 @@ public final class TextSentimentProto {
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.confusionMatrix_ =
               confusionMatrixBuilder_ == null ? confusionMatrix_ : confusionMatrixBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          annotationSpecId_.makeImmutable();
+          result.annotationSpecId_ = annotationSpecId_;
         }
       }
 
@@ -1681,7 +1664,7 @@ public final class TextSentimentProto {
         if (!other.annotationSpecId_.isEmpty()) {
           if (annotationSpecId_.isEmpty()) {
             annotationSpecId_ = other.annotationSpecId_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ |= 0x00000100;
           } else {
             ensureAnnotationSpecIdIsMutable();
             annotationSpecId_.addAll(other.annotationSpecId_);
@@ -2421,14 +2404,14 @@ public final class TextSentimentProto {
         return confusionMatrixBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList annotationSpecId_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList annotationSpecId_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAnnotationSpecIdIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!annotationSpecId_.isModifiable()) {
           annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
-          bitField0_ |= 0x00000100;
         }
+        bitField0_ |= 0x00000100;
       }
       /**
        *
@@ -2446,7 +2429,8 @@ public final class TextSentimentProto {
        */
       @java.lang.Deprecated
       public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
-        return annotationSpecId_.getUnmodifiableView();
+        annotationSpecId_.makeImmutable();
+        return annotationSpecId_;
       }
       /**
        *
@@ -2527,6 +2511,7 @@ public final class TextSentimentProto {
         }
         ensureAnnotationSpecIdIsMutable();
         annotationSpecId_.set(index, value);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2552,6 +2537,7 @@ public final class TextSentimentProto {
         }
         ensureAnnotationSpecIdIsMutable();
         annotationSpecId_.add(value);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2574,6 +2560,7 @@ public final class TextSentimentProto {
       public Builder addAllAnnotationSpecId(java.lang.Iterable<java.lang.String> values) {
         ensureAnnotationSpecIdIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, annotationSpecId_);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2593,8 +2580,9 @@ public final class TextSentimentProto {
        */
       @java.lang.Deprecated
       public Builder clearAnnotationSpecId() {
-        annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        annotationSpecId_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000100);
+        ;
         onChanged();
         return this;
       }
@@ -2621,6 +2609,7 @@ public final class TextSentimentProto {
         checkByteStringIsUtf8(value);
         ensureAnnotationSpecIdIsMutable();
         annotationSpecId_.add(value);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }

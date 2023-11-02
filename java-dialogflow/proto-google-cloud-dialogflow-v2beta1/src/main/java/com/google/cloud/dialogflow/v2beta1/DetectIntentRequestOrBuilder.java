@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ public interface DetectIntentRequestOrBuilder
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;`,
+   *
    * If `Location ID` is not specified we assume default 'us' location. If
    * `Environment ID` is not specified, we assume default 'draft' environment
    * (`Environment ID` might be referred to as environment name at some places).
@@ -45,6 +46,7 @@ public interface DetectIntentRequestOrBuilder
    * The length of the `Session ID` and `User ID` must not exceed 36 characters.
    * For more information, see the [API interactions
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
+   *
    * Note: Always use agent versions for production traffic.
    * See [Versions and
    * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
@@ -70,6 +72,7 @@ public interface DetectIntentRequestOrBuilder
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;`,
+   *
    * If `Location ID` is not specified we assume default 'us' location. If
    * `Environment ID` is not specified, we assume default 'draft' environment
    * (`Environment ID` might be referred to as environment name at some places).
@@ -79,6 +82,7 @@ public interface DetectIntentRequestOrBuilder
    * The length of the `Session ID` and `User ID` must not exceed 36 characters.
    * For more information, see the [API interactions
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
+   *
    * Note: Always use agent versions for production traffic.
    * See [Versions and
    * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
@@ -132,10 +136,13 @@ public interface DetectIntentRequestOrBuilder
    *
    * <pre>
    * Required. The input specification. It can be set to:
-   * 1.  an audio config
-   *     which instructs the speech recognizer how to process the speech audio,
-   * 2.  a conversational query in the form of text, or
-   * 3.  an event that specifies which intent to trigger.
+   *
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
+   *
+   * 2. a conversational query in the form of text, or
+   *
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -150,10 +157,13 @@ public interface DetectIntentRequestOrBuilder
    *
    * <pre>
    * Required. The input specification. It can be set to:
-   * 1.  an audio config
-   *     which instructs the speech recognizer how to process the speech audio,
-   * 2.  a conversational query in the form of text, or
-   * 3.  an event that specifies which intent to trigger.
+   *
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
+   *
+   * 2. a conversational query in the form of text, or
+   *
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -168,10 +178,13 @@ public interface DetectIntentRequestOrBuilder
    *
    * <pre>
    * Required. The input specification. It can be set to:
-   * 1.  an audio config
-   *     which instructs the speech recognizer how to process the speech audio,
-   * 2.  a conversational query in the form of text, or
-   * 3.  an event that specifies which intent to trigger.
+   *
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
+   *
+   * 2. a conversational query in the form of text, or
+   *
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -229,6 +242,7 @@ public interface DetectIntentRequestOrBuilder
    * [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config]
    * indicating which settings in this request-level config should override
    * speech synthesizer settings defined at agent-level.
+   *
    * If unspecified or empty,
    * [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config]
    * replaces the agent-level config in its entirety.
@@ -247,6 +261,7 @@ public interface DetectIntentRequestOrBuilder
    * [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config]
    * indicating which settings in this request-level config should override
    * speech synthesizer settings defined at agent-level.
+   *
    * If unspecified or empty,
    * [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config]
    * replaces the agent-level config in its entirety.
@@ -265,6 +280,7 @@ public interface DetectIntentRequestOrBuilder
    * [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config]
    * indicating which settings in this request-level config should override
    * speech synthesizer settings defined at agent-level.
+   *
    * If unspecified or empty,
    * [output_audio_config][google.cloud.dialogflow.v2beta1.DetectIntentRequest.output_audio_config]
    * replaces the agent-level config in its entirety.

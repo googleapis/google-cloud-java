@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     return new GcsDestination();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p2beta1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1p2beta1_GcsDestination_descriptor;
@@ -79,10 +74,13 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * be in JSON format and preceded by its corresponding input URI. This field
    * can either represent a single file, or a prefix for multiple outputs.
    * Prefixes must end in a `/`.
+   *
    * Examples:
+   *
    * *    File: gs://bucket-name/filename.json
    * *    Prefix: gs://bucket-name/prefix/here/
    * *    File: gs://bucket-name/prefix/here
+   *
    * If multiple outputs, each response is still AnnotateFileResponse, each of
    * which contains some subset of the full list of AnnotateImageResponse.
    * Multiple outputs can happen if, for example, the output JSON is too large
@@ -113,10 +111,13 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * be in JSON format and preceded by its corresponding input URI. This field
    * can either represent a single file, or a prefix for multiple outputs.
    * Prefixes must end in a `/`.
+   *
    * Examples:
+   *
    * *    File: gs://bucket-name/filename.json
    * *    Prefix: gs://bucket-name/prefix/here/
    * *    File: gs://bucket-name/prefix/here
+   *
    * If multiple outputs, each response is still AnnotateFileResponse, each of
    * which contains some subset of the full list of AnnotateImageResponse.
    * Multiple outputs can happen if, for example, the output JSON is too large
@@ -491,10 +492,13 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * be in JSON format and preceded by its corresponding input URI. This field
      * can either represent a single file, or a prefix for multiple outputs.
      * Prefixes must end in a `/`.
+     *
      * Examples:
+     *
      * *    File: gs://bucket-name/filename.json
      * *    Prefix: gs://bucket-name/prefix/here/
      * *    File: gs://bucket-name/prefix/here
+     *
      * If multiple outputs, each response is still AnnotateFileResponse, each of
      * which contains some subset of the full list of AnnotateImageResponse.
      * Multiple outputs can happen if, for example, the output JSON is too large
@@ -524,10 +528,13 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * be in JSON format and preceded by its corresponding input URI. This field
      * can either represent a single file, or a prefix for multiple outputs.
      * Prefixes must end in a `/`.
+     *
      * Examples:
+     *
      * *    File: gs://bucket-name/filename.json
      * *    Prefix: gs://bucket-name/prefix/here/
      * *    File: gs://bucket-name/prefix/here
+     *
      * If multiple outputs, each response is still AnnotateFileResponse, each of
      * which contains some subset of the full list of AnnotateImageResponse.
      * Multiple outputs can happen if, for example, the output JSON is too large
@@ -557,10 +564,13 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * be in JSON format and preceded by its corresponding input URI. This field
      * can either represent a single file, or a prefix for multiple outputs.
      * Prefixes must end in a `/`.
+     *
      * Examples:
+     *
      * *    File: gs://bucket-name/filename.json
      * *    Prefix: gs://bucket-name/prefix/here/
      * *    File: gs://bucket-name/prefix/here
+     *
      * If multiple outputs, each response is still AnnotateFileResponse, each of
      * which contains some subset of the full list of AnnotateImageResponse.
      * Multiple outputs can happen if, for example, the output JSON is too large
@@ -589,10 +599,13 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * be in JSON format and preceded by its corresponding input URI. This field
      * can either represent a single file, or a prefix for multiple outputs.
      * Prefixes must end in a `/`.
+     *
      * Examples:
+     *
      * *    File: gs://bucket-name/filename.json
      * *    Prefix: gs://bucket-name/prefix/here/
      * *    File: gs://bucket-name/prefix/here
+     *
      * If multiple outputs, each response is still AnnotateFileResponse, each of
      * which contains some subset of the full list of AnnotateImageResponse.
      * Multiple outputs can happen if, for example, the output JSON is too large
@@ -617,10 +630,13 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * be in JSON format and preceded by its corresponding input URI. This field
      * can either represent a single file, or a prefix for multiple outputs.
      * Prefixes must end in a `/`.
+     *
      * Examples:
+     *
      * *    File: gs://bucket-name/filename.json
      * *    Prefix: gs://bucket-name/prefix/here/
      * *    File: gs://bucket-name/prefix/here
+     *
      * If multiple outputs, each response is still AnnotateFileResponse, each of
      * which contains some subset of the full list of AnnotateImageResponse.
      * Multiple outputs can happen if, for example, the output JSON is too large

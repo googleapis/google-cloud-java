@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ public final class JobProto {
           + "resource.proto\032+google/cloud/scheduler/v"
           + "1beta1/target.proto\032\036google/protobuf/dur"
           + "ation.proto\032\037google/protobuf/timestamp.p"
-          + "roto\032\027google/rpc/status.proto\"\211\007\n\003Job\022\014\n"
+          + "roto\032\027google/rpc/status.proto\"\212\007\n\003Job\022\014\n"
           + "\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022E\n\rpubs"
           + "ub_target\030\004 \001(\0132,.google.cloud.scheduler"
           + ".v1beta1.PubsubTargetH\000\022U\n\026app_engine_ht"
@@ -67,22 +67,22 @@ public final class JobProto {
           + "2\032.google.protobuf.Timestamp\022A\n\014retry_co"
           + "nfig\030\023 \001(\0132+.google.cloud.scheduler.v1be"
           + "ta1.RetryConfig\0223\n\020attempt_deadline\030\026 \001("
-          + "\0132\031.google.protobuf.Duration\022#\n\026legacy_a"
-          + "pp_engine_cron\030\027 \001(\010B\003\340A\005\"X\n\005State\022\025\n\021ST"
-          + "ATE_UNSPECIFIED\020\000\022\013\n\007ENABLED\020\001\022\n\n\006PAUSED"
-          + "\020\002\022\014\n\010DISABLED\020\003\022\021\n\rUPDATE_FAILED\020\004:Z\352AW"
-          + "\n!cloudscheduler.googleapis.com/Job\0222pro"
-          + "jects/{project}/locations/{location}/job"
-          + "s/{job}B\010\n\006target\"\342\001\n\013RetryConfig\022\023\n\013ret"
-          + "ry_count\030\001 \001(\005\0225\n\022max_retry_duration\030\002 \001"
-          + "(\0132\031.google.protobuf.Duration\0227\n\024min_bac"
-          + "koff_duration\030\003 \001(\0132\031.google.protobuf.Du"
-          + "ration\0227\n\024max_backoff_duration\030\004 \001(\0132\031.g"
-          + "oogle.protobuf.Duration\022\025\n\rmax_doublings"
-          + "\030\005 \001(\005Br\n\"com.google.cloud.scheduler.v1b"
-          + "eta1B\010JobProtoP\001Z@cloud.google.com/go/sc"
-          + "heduler/apiv1beta1/schedulerpb;scheduler"
-          + "pbb\006proto3"
+          + "\0132\031.google.protobuf.Duration\022$\n\026legacy_a"
+          + "pp_engine_cron\030\027 \001(\010B\004\342A\001\005\"X\n\005State\022\025\n\021S"
+          + "TATE_UNSPECIFIED\020\000\022\013\n\007ENABLED\020\001\022\n\n\006PAUSE"
+          + "D\020\002\022\014\n\010DISABLED\020\003\022\021\n\rUPDATE_FAILED\020\004:Z\352A"
+          + "W\n!cloudscheduler.googleapis.com/Job\0222pr"
+          + "ojects/{project}/locations/{location}/jo"
+          + "bs/{job}B\010\n\006target\"\342\001\n\013RetryConfig\022\023\n\013re"
+          + "try_count\030\001 \001(\005\0225\n\022max_retry_duration\030\002 "
+          + "\001(\0132\031.google.protobuf.Duration\0227\n\024min_ba"
+          + "ckoff_duration\030\003 \001(\0132\031.google.protobuf.D"
+          + "uration\0227\n\024max_backoff_duration\030\004 \001(\0132\031."
+          + "google.protobuf.Duration\022\025\n\rmax_doubling"
+          + "s\030\005 \001(\005Br\n\"com.google.cloud.scheduler.v1"
+          + "beta1B\010JobProtoP\001Z@cloud.google.com/go/s"
+          + "cheduler/apiv1beta1/schedulerpb;schedule"
+          + "rpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

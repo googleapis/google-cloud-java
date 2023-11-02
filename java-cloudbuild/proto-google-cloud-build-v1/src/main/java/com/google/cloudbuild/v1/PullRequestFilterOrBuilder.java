@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface PullRequestFilterOrBuilder
    *
    * <pre>
    * Regex of branches to match.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -42,6 +43,7 @@ public interface PullRequestFilterOrBuilder
    *
    * <pre>
    * Regex of branches to match.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -56,6 +58,7 @@ public interface PullRequestFilterOrBuilder
    *
    * <pre>
    * Regex of branches to match.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -108,5 +111,5 @@ public interface PullRequestFilterOrBuilder
    */
   boolean getInvertRegex();
 
-  public com.google.cloudbuild.v1.PullRequestFilter.GitRefCase getGitRefCase();
+  com.google.cloudbuild.v1.PullRequestFilter.GitRefCase getGitRefCase();
 }

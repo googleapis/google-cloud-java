@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ import com.google.cloud.language.v1beta2.AnnotateTextRequest;
 import com.google.cloud.language.v1beta2.AnnotateTextResponse;
 import com.google.cloud.language.v1beta2.ClassifyTextRequest;
 import com.google.cloud.language.v1beta2.ClassifyTextResponse;
+import com.google.cloud.language.v1beta2.ModerateTextRequest;
+import com.google.cloud.language.v1beta2.ModerateTextResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -63,6 +65,10 @@ public abstract class LanguageServiceStub implements BackgroundResource {
 
   public UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable() {
     throw new UnsupportedOperationException("Not implemented: classifyTextCallable()");
+  }
+
+  public UnaryCallable<ModerateTextRequest, ModerateTextResponse> moderateTextCallable() {
+    throw new UnsupportedOperationException("Not implemented: moderateTextCallable()");
   }
 
   public UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable() {

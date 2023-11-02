@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ConnectionProfile();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -349,6 +344,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   }
 
   private int connectionProfileCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object connectionProfile_;
 
   public enum ConnectionProfileCase
@@ -357,7 +354,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MYSQL(100),
     POSTGRESQL(101),
+    ORACLE(104),
     CLOUDSQL(102),
+    ALLOYDB(105),
     CONNECTIONPROFILE_NOT_SET(0);
     private final int value;
 
@@ -380,8 +379,12 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           return MYSQL;
         case 101:
           return POSTGRESQL;
+        case 104:
+          return ORACLE;
         case 102:
           return CLOUDSQL;
+        case 105:
+          return ALLOYDB;
         case 0:
           return CONNECTIONPROFILE_NOT_SET;
         default:
@@ -407,7 +410,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The name of this connection profile resource in the form of
-   * projects/{project}/locations/{location}/instances/{instance}.
+   * projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -431,7 +434,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The name of this connection profile resource in the form of
-   * projects/{project}/locations/{location}/instances/{instance}.
+   * projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -594,6 +597,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    * The resource labels for connection profile to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -619,6 +623,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    * The resource labels for connection profile to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -635,6 +640,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    * The resource labels for connection profile to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -658,6 +664,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    * The resource labels for connection profile to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -866,6 +873,57 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.clouddms.v1.PostgreSqlConnectionProfile.getDefaultInstance();
   }
 
+  public static final int ORACLE_FIELD_NUMBER = 104;
+  /**
+   *
+   *
+   * <pre>
+   * An Oracle database connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+   *
+   * @return Whether the oracle field is set.
+   */
+  @java.lang.Override
+  public boolean hasOracle() {
+    return connectionProfileCase_ == 104;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An Oracle database connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+   *
+   * @return The oracle.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.OracleConnectionProfile getOracle() {
+    if (connectionProfileCase_ == 104) {
+      return (com.google.cloud.clouddms.v1.OracleConnectionProfile) connectionProfile_;
+    }
+    return com.google.cloud.clouddms.v1.OracleConnectionProfile.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An Oracle database connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.OracleConnectionProfileOrBuilder getOracleOrBuilder() {
+    if (connectionProfileCase_ == 104) {
+      return (com.google.cloud.clouddms.v1.OracleConnectionProfile) connectionProfile_;
+    }
+    return com.google.cloud.clouddms.v1.OracleConnectionProfile.getDefaultInstance();
+  }
+
   public static final int CLOUDSQL_FIELD_NUMBER = 102;
   /**
    *
@@ -915,6 +973,57 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       return (com.google.cloud.clouddms.v1.CloudSqlConnectionProfile) connectionProfile_;
     }
     return com.google.cloud.clouddms.v1.CloudSqlConnectionProfile.getDefaultInstance();
+  }
+
+  public static final int ALLOYDB_FIELD_NUMBER = 105;
+  /**
+   *
+   *
+   * <pre>
+   * An AlloyDB cluster connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+   *
+   * @return Whether the alloydb field is set.
+   */
+  @java.lang.Override
+  public boolean hasAlloydb() {
+    return connectionProfileCase_ == 105;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An AlloyDB cluster connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+   *
+   * @return The alloydb.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.AlloyDbConnectionProfile getAlloydb() {
+    if (connectionProfileCase_ == 105) {
+      return (com.google.cloud.clouddms.v1.AlloyDbConnectionProfile) connectionProfile_;
+    }
+    return com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An AlloyDB cluster connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.AlloyDbConnectionProfileOrBuilder getAlloydbOrBuilder() {
+    if (connectionProfileCase_ == 105) {
+      return (com.google.cloud.clouddms.v1.AlloyDbConnectionProfile) connectionProfile_;
+    }
+    return com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.getDefaultInstance();
   }
 
   public static final int ERROR_FIELD_NUMBER = 7;
@@ -1050,6 +1159,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           102, (com.google.cloud.clouddms.v1.CloudSqlConnectionProfile) connectionProfile_);
     }
+    if (connectionProfileCase_ == 104) {
+      output.writeMessage(
+          104, (com.google.cloud.clouddms.v1.OracleConnectionProfile) connectionProfile_);
+    }
+    if (connectionProfileCase_ == 105) {
+      output.writeMessage(
+          105, (com.google.cloud.clouddms.v1.AlloyDbConnectionProfile) connectionProfile_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1108,6 +1225,16 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               102, (com.google.cloud.clouddms.v1.CloudSqlConnectionProfile) connectionProfile_);
     }
+    if (connectionProfileCase_ == 104) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              104, (com.google.cloud.clouddms.v1.OracleConnectionProfile) connectionProfile_);
+    }
+    if (connectionProfileCase_ == 105) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              105, (com.google.cloud.clouddms.v1.AlloyDbConnectionProfile) connectionProfile_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1149,8 +1276,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       case 101:
         if (!getPostgresql().equals(other.getPostgresql())) return false;
         break;
+      case 104:
+        if (!getOracle().equals(other.getOracle())) return false;
+        break;
       case 102:
         if (!getCloudsql().equals(other.getCloudsql())) return false;
+        break;
+      case 105:
+        if (!getAlloydb().equals(other.getAlloydb())) return false;
         break;
       case 0:
       default:
@@ -1199,9 +1332,17 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         hash = (37 * hash) + POSTGRESQL_FIELD_NUMBER;
         hash = (53 * hash) + getPostgresql().hashCode();
         break;
+      case 104:
+        hash = (37 * hash) + ORACLE_FIELD_NUMBER;
+        hash = (53 * hash) + getOracle().hashCode();
+        break;
       case 102:
         hash = (37 * hash) + CLOUDSQL_FIELD_NUMBER;
         hash = (53 * hash) + getCloudsql().hashCode();
+        break;
+      case 105:
+        hash = (37 * hash) + ALLOYDB_FIELD_NUMBER;
+        hash = (53 * hash) + getAlloydb().hashCode();
         break;
       case 0:
       default:
@@ -1385,8 +1526,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       if (postgresqlBuilder_ != null) {
         postgresqlBuilder_.clear();
       }
+      if (oracleBuilder_ != null) {
+        oracleBuilder_.clear();
+      }
       if (cloudsqlBuilder_ != null) {
         cloudsqlBuilder_.clear();
+      }
+      if (alloydbBuilder_ != null) {
+        alloydbBuilder_.clear();
       }
       error_ = null;
       if (errorBuilder_ != null) {
@@ -1452,10 +1599,10 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.provider_ = provider_;
       }
     }
@@ -1469,8 +1616,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       if (connectionProfileCase_ == 101 && postgresqlBuilder_ != null) {
         result.connectionProfile_ = postgresqlBuilder_.build();
       }
+      if (connectionProfileCase_ == 104 && oracleBuilder_ != null) {
+        result.connectionProfile_ = oracleBuilder_.build();
+      }
       if (connectionProfileCase_ == 102 && cloudsqlBuilder_ != null) {
         result.connectionProfile_ = cloudsqlBuilder_.build();
+      }
+      if (connectionProfileCase_ == 105 && alloydbBuilder_ != null) {
+        result.connectionProfile_ = alloydbBuilder_.build();
       }
     }
 
@@ -1557,9 +1710,19 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             mergePostgresql(other.getPostgresql());
             break;
           }
+        case ORACLE:
+          {
+            mergeOracle(other.getOracle());
+            break;
+          }
         case CLOUDSQL:
           {
             mergeCloudsql(other.getCloudsql());
+            break;
+          }
+        case ALLOYDB:
+          {
+            mergeAlloydb(other.getAlloydb());
             break;
           }
         case CONNECTIONPROFILE_NOT_SET:
@@ -1638,13 +1801,13 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             case 58:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 58
             case 64:
               {
                 provider_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 64
             case 802:
@@ -1665,6 +1828,18 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
                 connectionProfileCase_ = 102;
                 break;
               } // case 818
+            case 834:
+              {
+                input.readMessage(getOracleFieldBuilder().getBuilder(), extensionRegistry);
+                connectionProfileCase_ = 104;
+                break;
+              } // case 834
+            case 842:
+              {
+                input.readMessage(getAlloydbFieldBuilder().getBuilder(), extensionRegistry);
+                connectionProfileCase_ = 105;
+                break;
+              } // case 842
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1704,7 +1879,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of this connection profile resource in the form of
-     * projects/{project}/locations/{location}/instances/{instance}.
+     * projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1727,7 +1902,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of this connection profile resource in the form of
-     * projects/{project}/locations/{location}/instances/{instance}.
+     * projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1750,7 +1925,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of this connection profile resource in the form of
-     * projects/{project}/locations/{location}/instances/{instance}.
+     * projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1772,7 +1947,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of this connection profile resource in the form of
-     * projects/{project}/locations/{location}/instances/{instance}.
+     * projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1790,7 +1965,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of this connection profile resource in the form of
-     * projects/{project}/locations/{location}/instances/{instance}.
+     * projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2279,6 +2454,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2304,6 +2480,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2320,6 +2497,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2343,6 +2521,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2372,6 +2551,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2397,6 +2577,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2420,6 +2601,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -3053,6 +3235,217 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.OracleConnectionProfile,
+            com.google.cloud.clouddms.v1.OracleConnectionProfile.Builder,
+            com.google.cloud.clouddms.v1.OracleConnectionProfileOrBuilder>
+        oracleBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * An Oracle database connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+     *
+     * @return Whether the oracle field is set.
+     */
+    @java.lang.Override
+    public boolean hasOracle() {
+      return connectionProfileCase_ == 104;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An Oracle database connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+     *
+     * @return The oracle.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.OracleConnectionProfile getOracle() {
+      if (oracleBuilder_ == null) {
+        if (connectionProfileCase_ == 104) {
+          return (com.google.cloud.clouddms.v1.OracleConnectionProfile) connectionProfile_;
+        }
+        return com.google.cloud.clouddms.v1.OracleConnectionProfile.getDefaultInstance();
+      } else {
+        if (connectionProfileCase_ == 104) {
+          return oracleBuilder_.getMessage();
+        }
+        return com.google.cloud.clouddms.v1.OracleConnectionProfile.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An Oracle database connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+     */
+    public Builder setOracle(com.google.cloud.clouddms.v1.OracleConnectionProfile value) {
+      if (oracleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionProfile_ = value;
+        onChanged();
+      } else {
+        oracleBuilder_.setMessage(value);
+      }
+      connectionProfileCase_ = 104;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An Oracle database connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+     */
+    public Builder setOracle(
+        com.google.cloud.clouddms.v1.OracleConnectionProfile.Builder builderForValue) {
+      if (oracleBuilder_ == null) {
+        connectionProfile_ = builderForValue.build();
+        onChanged();
+      } else {
+        oracleBuilder_.setMessage(builderForValue.build());
+      }
+      connectionProfileCase_ = 104;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An Oracle database connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+     */
+    public Builder mergeOracle(com.google.cloud.clouddms.v1.OracleConnectionProfile value) {
+      if (oracleBuilder_ == null) {
+        if (connectionProfileCase_ == 104
+            && connectionProfile_
+                != com.google.cloud.clouddms.v1.OracleConnectionProfile.getDefaultInstance()) {
+          connectionProfile_ =
+              com.google.cloud.clouddms.v1.OracleConnectionProfile.newBuilder(
+                      (com.google.cloud.clouddms.v1.OracleConnectionProfile) connectionProfile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          connectionProfile_ = value;
+        }
+        onChanged();
+      } else {
+        if (connectionProfileCase_ == 104) {
+          oracleBuilder_.mergeFrom(value);
+        } else {
+          oracleBuilder_.setMessage(value);
+        }
+      }
+      connectionProfileCase_ = 104;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An Oracle database connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+     */
+    public Builder clearOracle() {
+      if (oracleBuilder_ == null) {
+        if (connectionProfileCase_ == 104) {
+          connectionProfileCase_ = 0;
+          connectionProfile_ = null;
+          onChanged();
+        }
+      } else {
+        if (connectionProfileCase_ == 104) {
+          connectionProfileCase_ = 0;
+          connectionProfile_ = null;
+        }
+        oracleBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An Oracle database connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+     */
+    public com.google.cloud.clouddms.v1.OracleConnectionProfile.Builder getOracleBuilder() {
+      return getOracleFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An Oracle database connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.OracleConnectionProfileOrBuilder getOracleOrBuilder() {
+      if ((connectionProfileCase_ == 104) && (oracleBuilder_ != null)) {
+        return oracleBuilder_.getMessageOrBuilder();
+      } else {
+        if (connectionProfileCase_ == 104) {
+          return (com.google.cloud.clouddms.v1.OracleConnectionProfile) connectionProfile_;
+        }
+        return com.google.cloud.clouddms.v1.OracleConnectionProfile.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An Oracle database connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.OracleConnectionProfile,
+            com.google.cloud.clouddms.v1.OracleConnectionProfile.Builder,
+            com.google.cloud.clouddms.v1.OracleConnectionProfileOrBuilder>
+        getOracleFieldBuilder() {
+      if (oracleBuilder_ == null) {
+        if (!(connectionProfileCase_ == 104)) {
+          connectionProfile_ =
+              com.google.cloud.clouddms.v1.OracleConnectionProfile.getDefaultInstance();
+        }
+        oracleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.OracleConnectionProfile,
+                com.google.cloud.clouddms.v1.OracleConnectionProfile.Builder,
+                com.google.cloud.clouddms.v1.OracleConnectionProfileOrBuilder>(
+                (com.google.cloud.clouddms.v1.OracleConnectionProfile) connectionProfile_,
+                getParentForChildren(),
+                isClean());
+        connectionProfile_ = null;
+      }
+      connectionProfileCase_ = 104;
+      onChanged();
+      return oracleBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.clouddms.v1.CloudSqlConnectionProfile,
             com.google.cloud.clouddms.v1.CloudSqlConnectionProfile.Builder,
             com.google.cloud.clouddms.v1.CloudSqlConnectionProfileOrBuilder>
@@ -3263,6 +3656,217 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       return cloudsqlBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.AlloyDbConnectionProfile,
+            com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.Builder,
+            com.google.cloud.clouddms.v1.AlloyDbConnectionProfileOrBuilder>
+        alloydbBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * An AlloyDB cluster connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+     *
+     * @return Whether the alloydb field is set.
+     */
+    @java.lang.Override
+    public boolean hasAlloydb() {
+      return connectionProfileCase_ == 105;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An AlloyDB cluster connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+     *
+     * @return The alloydb.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.AlloyDbConnectionProfile getAlloydb() {
+      if (alloydbBuilder_ == null) {
+        if (connectionProfileCase_ == 105) {
+          return (com.google.cloud.clouddms.v1.AlloyDbConnectionProfile) connectionProfile_;
+        }
+        return com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.getDefaultInstance();
+      } else {
+        if (connectionProfileCase_ == 105) {
+          return alloydbBuilder_.getMessage();
+        }
+        return com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An AlloyDB cluster connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+     */
+    public Builder setAlloydb(com.google.cloud.clouddms.v1.AlloyDbConnectionProfile value) {
+      if (alloydbBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionProfile_ = value;
+        onChanged();
+      } else {
+        alloydbBuilder_.setMessage(value);
+      }
+      connectionProfileCase_ = 105;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An AlloyDB cluster connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+     */
+    public Builder setAlloydb(
+        com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.Builder builderForValue) {
+      if (alloydbBuilder_ == null) {
+        connectionProfile_ = builderForValue.build();
+        onChanged();
+      } else {
+        alloydbBuilder_.setMessage(builderForValue.build());
+      }
+      connectionProfileCase_ = 105;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An AlloyDB cluster connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+     */
+    public Builder mergeAlloydb(com.google.cloud.clouddms.v1.AlloyDbConnectionProfile value) {
+      if (alloydbBuilder_ == null) {
+        if (connectionProfileCase_ == 105
+            && connectionProfile_
+                != com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.getDefaultInstance()) {
+          connectionProfile_ =
+              com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.newBuilder(
+                      (com.google.cloud.clouddms.v1.AlloyDbConnectionProfile) connectionProfile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          connectionProfile_ = value;
+        }
+        onChanged();
+      } else {
+        if (connectionProfileCase_ == 105) {
+          alloydbBuilder_.mergeFrom(value);
+        } else {
+          alloydbBuilder_.setMessage(value);
+        }
+      }
+      connectionProfileCase_ = 105;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An AlloyDB cluster connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+     */
+    public Builder clearAlloydb() {
+      if (alloydbBuilder_ == null) {
+        if (connectionProfileCase_ == 105) {
+          connectionProfileCase_ = 0;
+          connectionProfile_ = null;
+          onChanged();
+        }
+      } else {
+        if (connectionProfileCase_ == 105) {
+          connectionProfileCase_ = 0;
+          connectionProfile_ = null;
+        }
+        alloydbBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An AlloyDB cluster connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+     */
+    public com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.Builder getAlloydbBuilder() {
+      return getAlloydbFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An AlloyDB cluster connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.AlloyDbConnectionProfileOrBuilder getAlloydbOrBuilder() {
+      if ((connectionProfileCase_ == 105) && (alloydbBuilder_ != null)) {
+        return alloydbBuilder_.getMessageOrBuilder();
+      } else {
+        if (connectionProfileCase_ == 105) {
+          return (com.google.cloud.clouddms.v1.AlloyDbConnectionProfile) connectionProfile_;
+        }
+        return com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An AlloyDB cluster connection profile.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.AlloyDbConnectionProfile,
+            com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.Builder,
+            com.google.cloud.clouddms.v1.AlloyDbConnectionProfileOrBuilder>
+        getAlloydbFieldBuilder() {
+      if (alloydbBuilder_ == null) {
+        if (!(connectionProfileCase_ == 105)) {
+          connectionProfile_ =
+              com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.getDefaultInstance();
+        }
+        alloydbBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.AlloyDbConnectionProfile,
+                com.google.cloud.clouddms.v1.AlloyDbConnectionProfile.Builder,
+                com.google.cloud.clouddms.v1.AlloyDbConnectionProfileOrBuilder>(
+                (com.google.cloud.clouddms.v1.AlloyDbConnectionProfile) connectionProfile_,
+                getParentForChildren(),
+                isClean());
+        connectionProfile_ = null;
+      }
+      connectionProfileCase_ = 105;
+      onChanged();
+      return alloydbBuilder_;
+    }
+
     private com.google.rpc.Status error_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
@@ -3279,7 +3883,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3317,7 +3921,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3336,7 +3940,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3351,7 +3955,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -3361,7 +3965,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       } else {
         errorBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3375,7 +3979,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * <code>.google.rpc.Status error = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -3394,7 +3998,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * <code>.google.rpc.Status error = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -3467,7 +4071,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      */
     public Builder setProviderValue(int value) {
       provider_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3504,7 +4108,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       provider_ = value.getNumber();
       onChanged();
       return this;
@@ -3521,7 +4125,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearProvider() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       provider_ = 0;
       onChanged();
       return this;

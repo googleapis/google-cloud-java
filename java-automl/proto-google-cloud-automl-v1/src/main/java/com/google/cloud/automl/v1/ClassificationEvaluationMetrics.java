@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,18 +42,13 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
   private ClassificationEvaluationMetrics() {
     confidenceMetricsEntry_ = java.util.Collections.emptyList();
-    annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    annotationSpecId_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ClassificationEvaluationMetrics();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -298,11 +293,6 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ConfidenceMetricsEntry();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2355,8 +2345,8 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     }
 
     private ConfusionMatrix() {
-      annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      displayName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      annotationSpecId_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      displayName_ = com.google.protobuf.LazyStringArrayList.emptyList();
       row_ = java.util.Collections.emptyList();
     }
 
@@ -2364,11 +2354,6 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ConfusionMatrix();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2467,11 +2452,6 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Row();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3189,7 +3169,8 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList annotationSpecId_;
+    private com.google.protobuf.LazyStringArrayList annotationSpecId_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3264,7 +3245,8 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList displayName_;
+    private com.google.protobuf.LazyStringArrayList displayName_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3698,10 +3680,8 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        displayName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        annotationSpecId_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        displayName_ = com.google.protobuf.LazyStringArrayList.emptyList();
         if (rowBuilder_ == null) {
           row_ = java.util.Collections.emptyList();
         } else {
@@ -3750,16 +3730,6 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
       private void buildPartialRepeatedFields(
           com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.annotationSpecId_ = annotationSpecId_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          displayName_ = displayName_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.displayName_ = displayName_;
         if (rowBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)) {
             row_ = java.util.Collections.unmodifiableList(row_);
@@ -3774,6 +3744,14 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       private void buildPartial0(
           com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          annotationSpecId_.makeImmutable();
+          result.annotationSpecId_ = annotationSpecId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          displayName_.makeImmutable();
+          result.displayName_ = displayName_;
+        }
       }
 
       @java.lang.Override
@@ -3831,7 +3809,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         if (!other.annotationSpecId_.isEmpty()) {
           if (annotationSpecId_.isEmpty()) {
             annotationSpecId_ = other.annotationSpecId_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureAnnotationSpecIdIsMutable();
             annotationSpecId_.addAll(other.annotationSpecId_);
@@ -3841,7 +3819,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         if (!other.displayName_.isEmpty()) {
           if (displayName_.isEmpty()) {
             displayName_ = other.displayName_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureDisplayNameIsMutable();
             displayName_.addAll(other.displayName_);
@@ -3949,14 +3927,14 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList annotationSpecId_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList annotationSpecId_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAnnotationSpecIdIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!annotationSpecId_.isModifiable()) {
           annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -3973,7 +3951,8 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * @return A list containing the annotationSpecId.
        */
       public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
-        return annotationSpecId_.getUnmodifiableView();
+        annotationSpecId_.makeImmutable();
+        return annotationSpecId_;
       }
       /**
        *
@@ -4050,6 +4029,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         ensureAnnotationSpecIdIsMutable();
         annotationSpecId_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4074,6 +4054,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         ensureAnnotationSpecIdIsMutable();
         annotationSpecId_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4095,6 +4076,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public Builder addAllAnnotationSpecId(java.lang.Iterable<java.lang.String> values) {
         ensureAnnotationSpecIdIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, annotationSpecId_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4113,8 +4095,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder clearAnnotationSpecId() {
-        annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        annotationSpecId_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -4140,18 +4123,19 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         checkByteStringIsUtf8(value);
         ensureAnnotationSpecIdIsMutable();
         annotationSpecId_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList displayName_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList displayName_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureDisplayNameIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!displayName_.isModifiable()) {
           displayName_ = new com.google.protobuf.LazyStringArrayList(displayName_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -4170,7 +4154,8 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * @return A list containing the displayName.
        */
       public com.google.protobuf.ProtocolStringList getDisplayNameList() {
-        return displayName_.getUnmodifiableView();
+        displayName_.makeImmutable();
+        return displayName_;
       }
       /**
        *
@@ -4255,6 +4240,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         ensureDisplayNameIsMutable();
         displayName_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4281,6 +4267,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         ensureDisplayNameIsMutable();
         displayName_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4304,6 +4291,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       public Builder addAllDisplayName(java.lang.Iterable<java.lang.String> values) {
         ensureDisplayNameIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, displayName_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4324,8 +4312,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-        displayName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        displayName_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -4353,6 +4342,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         checkByteStringIsUtf8(value);
         ensureDisplayNameIsMutable();
         displayName_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5173,7 +5163,8 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
   public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList annotationSpecId_;
+  private com.google.protobuf.LazyStringArrayList annotationSpecId_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -5514,8 +5505,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         confusionMatrixBuilder_.dispose();
         confusionMatrixBuilder_ = null;
       }
-      annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      annotationSpecId_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -5562,11 +5552,6 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       } else {
         result.confidenceMetricsEntry_ = confidenceMetricsEntryBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.annotationSpecId_ = annotationSpecId_;
     }
 
     private void buildPartial0(com.google.cloud.automl.v1.ClassificationEvaluationMetrics result) {
@@ -5583,6 +5568,10 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.confusionMatrix_ =
             confusionMatrixBuilder_ == null ? confusionMatrix_ : confusionMatrixBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        annotationSpecId_.makeImmutable();
+        result.annotationSpecId_ = annotationSpecId_;
       }
     }
 
@@ -5674,7 +5663,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       if (!other.annotationSpecId_.isEmpty()) {
         if (annotationSpecId_.isEmpty()) {
           annotationSpecId_ = other.annotationSpecId_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureAnnotationSpecIdIsMutable();
           annotationSpecId_.addAll(other.annotationSpecId_);
@@ -6718,14 +6707,14 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       return confusionMatrixBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList annotationSpecId_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList annotationSpecId_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAnnotationSpecIdIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!annotationSpecId_.isModifiable()) {
         annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -6739,7 +6728,8 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * @return A list containing the annotationSpecId.
      */
     public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
-      return annotationSpecId_.getUnmodifiableView();
+      annotationSpecId_.makeImmutable();
+      return annotationSpecId_;
     }
     /**
      *
@@ -6804,6 +6794,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       ensureAnnotationSpecIdIsMutable();
       annotationSpecId_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6825,6 +6816,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       }
       ensureAnnotationSpecIdIsMutable();
       annotationSpecId_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6843,6 +6835,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     public Builder addAllAnnotationSpecId(java.lang.Iterable<java.lang.String> values) {
       ensureAnnotationSpecIdIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, annotationSpecId_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6858,8 +6851,9 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecId() {
-      annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      annotationSpecId_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -6882,6 +6876,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       checkByteStringIsUtf8(value);
       ensureAnnotationSpecIdIsMutable();
       annotationSpecId_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

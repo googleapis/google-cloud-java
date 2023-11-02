@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StorageConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -152,7 +147,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
+     *
      * &lt;b&gt;For BigQuery&lt;/b&gt;
+     *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
      * value is specified, then rows are filtered based on the given start and
@@ -160,20 +157,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * skipped.
      * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
      * `TIMESTAMP`, and `DATETIME`.
+     *
      * If your BigQuery table is [partitioned at ingestion
      * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
+     *
      * &lt;ul&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
+     *
      * &lt;b&gt;For Datastore&lt;/b&gt;
+     *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
      * property or contains empty or invalid values, then it is included.
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+     *
      * See the
      * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
      * related to this operation.
@@ -190,7 +192,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
+     *
      * &lt;b&gt;For BigQuery&lt;/b&gt;
+     *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
      * value is specified, then rows are filtered based on the given start and
@@ -198,20 +202,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * skipped.
      * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
      * `TIMESTAMP`, and `DATETIME`.
+     *
      * If your BigQuery table is [partitioned at ingestion
      * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
+     *
      * &lt;ul&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
+     *
      * &lt;b&gt;For Datastore&lt;/b&gt;
+     *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
      * property or contains empty or invalid values, then it is included.
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+     *
      * See the
      * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
      * related to this operation.
@@ -228,7 +237,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
+     *
      * &lt;b&gt;For BigQuery&lt;/b&gt;
+     *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
      * value is specified, then rows are filtered based on the given start and
@@ -236,20 +247,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * skipped.
      * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
      * `TIMESTAMP`, and `DATETIME`.
+     *
      * If your BigQuery table is [partitioned at ingestion
      * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
+     *
      * &lt;ul&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
+     *
      * &lt;b&gt;For Datastore&lt;/b&gt;
+     *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
      * property or contains empty or invalid values, then it is included.
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+     *
      * See the
      * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
      * related to this operation.
@@ -302,11 +318,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TimespanConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -430,7 +441,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
+     *
      * &lt;b&gt;For BigQuery&lt;/b&gt;
+     *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
      * value is specified, then rows are filtered based on the given start and
@@ -438,20 +451,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * skipped.
      * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
      * `TIMESTAMP`, and `DATETIME`.
+     *
      * If your BigQuery table is [partitioned at ingestion
      * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
+     *
      * &lt;ul&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
+     *
      * &lt;b&gt;For Datastore&lt;/b&gt;
+     *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
      * property or contains empty or invalid values, then it is included.
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+     *
      * See the
      * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
      * related to this operation.
@@ -471,7 +489,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
+     *
      * &lt;b&gt;For BigQuery&lt;/b&gt;
+     *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
      * value is specified, then rows are filtered based on the given start and
@@ -479,20 +499,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * skipped.
      * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
      * `TIMESTAMP`, and `DATETIME`.
+     *
      * If your BigQuery table is [partitioned at ingestion
      * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
+     *
      * &lt;ul&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
+     *
      * &lt;b&gt;For Datastore&lt;/b&gt;
+     *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
      * property or contains empty or invalid values, then it is included.
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+     *
      * See the
      * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
      * related to this operation.
@@ -514,7 +539,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore and BigQuery.
+     *
      * &lt;b&gt;For BigQuery&lt;/b&gt;
+     *
      * If this value is not specified and the table was modified between the
      * given start and end times, the entire table will be scanned. If this
      * value is specified, then rows are filtered based on the given start and
@@ -522,20 +549,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * skipped.
      * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
      * `TIMESTAMP`, and `DATETIME`.
+     *
      * If your BigQuery table is [partitioned at ingestion
      * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
      * you can use any of the following pseudo-columns as your timestamp field.
      * When used with Cloud DLP, these pseudo-column names are case sensitive.
+     *
      * &lt;ul&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
+     *
      * &lt;b&gt;For Datastore&lt;/b&gt;
+     *
      * If this value is specified, then entities are filtered based on the given
      * start and end times. If an entity does not contain the provided timestamp
      * property or contains empty or invalid values, then it is included.
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+     *
      * See the
      * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
      * related to this operation.
@@ -1410,7 +1442,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
+       *
        * &lt;b&gt;For BigQuery&lt;/b&gt;
+       *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
        * value is specified, then rows are filtered based on the given start and
@@ -1418,20 +1452,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * skipped.
        * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
        * `TIMESTAMP`, and `DATETIME`.
+       *
        * If your BigQuery table is [partitioned at ingestion
        * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
+       *
        * &lt;ul&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
        * &lt;/ul&gt;
+       *
        * &lt;b&gt;For Datastore&lt;/b&gt;
+       *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
        * property or contains empty or invalid values, then it is included.
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+       *
        * See the
        * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
        * related to this operation.
@@ -1450,7 +1489,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
+       *
        * &lt;b&gt;For BigQuery&lt;/b&gt;
+       *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
        * value is specified, then rows are filtered based on the given start and
@@ -1458,20 +1499,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * skipped.
        * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
        * `TIMESTAMP`, and `DATETIME`.
+       *
        * If your BigQuery table is [partitioned at ingestion
        * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
+       *
        * &lt;ul&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
        * &lt;/ul&gt;
+       *
        * &lt;b&gt;For Datastore&lt;/b&gt;
+       *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
        * property or contains empty or invalid values, then it is included.
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+       *
        * See the
        * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
        * related to this operation.
@@ -1496,7 +1542,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
+       *
        * &lt;b&gt;For BigQuery&lt;/b&gt;
+       *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
        * value is specified, then rows are filtered based on the given start and
@@ -1504,20 +1552,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * skipped.
        * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
        * `TIMESTAMP`, and `DATETIME`.
+       *
        * If your BigQuery table is [partitioned at ingestion
        * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
+       *
        * &lt;ul&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
        * &lt;/ul&gt;
+       *
        * &lt;b&gt;For Datastore&lt;/b&gt;
+       *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
        * property or contains empty or invalid values, then it is included.
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+       *
        * See the
        * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
        * related to this operation.
@@ -1544,7 +1597,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
+       *
        * &lt;b&gt;For BigQuery&lt;/b&gt;
+       *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
        * value is specified, then rows are filtered based on the given start and
@@ -1552,20 +1607,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * skipped.
        * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
        * `TIMESTAMP`, and `DATETIME`.
+       *
        * If your BigQuery table is [partitioned at ingestion
        * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
+       *
        * &lt;ul&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
        * &lt;/ul&gt;
+       *
        * &lt;b&gt;For Datastore&lt;/b&gt;
+       *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
        * property or contains empty or invalid values, then it is included.
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+       *
        * See the
        * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
        * related to this operation.
@@ -1589,7 +1649,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
+       *
        * &lt;b&gt;For BigQuery&lt;/b&gt;
+       *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
        * value is specified, then rows are filtered based on the given start and
@@ -1597,20 +1659,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * skipped.
        * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
        * `TIMESTAMP`, and `DATETIME`.
+       *
        * If your BigQuery table is [partitioned at ingestion
        * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
+       *
        * &lt;ul&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
        * &lt;/ul&gt;
+       *
        * &lt;b&gt;For Datastore&lt;/b&gt;
+       *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
        * property or contains empty or invalid values, then it is included.
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+       *
        * See the
        * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
        * related to this operation.
@@ -1640,7 +1707,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
+       *
        * &lt;b&gt;For BigQuery&lt;/b&gt;
+       *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
        * value is specified, then rows are filtered based on the given start and
@@ -1648,20 +1717,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * skipped.
        * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
        * `TIMESTAMP`, and `DATETIME`.
+       *
        * If your BigQuery table is [partitioned at ingestion
        * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
+       *
        * &lt;ul&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
        * &lt;/ul&gt;
+       *
        * &lt;b&gt;For Datastore&lt;/b&gt;
+       *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
        * property or contains empty or invalid values, then it is included.
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+       *
        * See the
        * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
        * related to this operation.
@@ -1685,7 +1759,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
+       *
        * &lt;b&gt;For BigQuery&lt;/b&gt;
+       *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
        * value is specified, then rows are filtered based on the given start and
@@ -1693,20 +1769,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * skipped.
        * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
        * `TIMESTAMP`, and `DATETIME`.
+       *
        * If your BigQuery table is [partitioned at ingestion
        * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
+       *
        * &lt;ul&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
        * &lt;/ul&gt;
+       *
        * &lt;b&gt;For Datastore&lt;/b&gt;
+       *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
        * property or contains empty or invalid values, then it is included.
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+       *
        * See the
        * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
        * related to this operation.
@@ -1725,7 +1806,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
+       *
        * &lt;b&gt;For BigQuery&lt;/b&gt;
+       *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
        * value is specified, then rows are filtered based on the given start and
@@ -1733,20 +1816,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * skipped.
        * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
        * `TIMESTAMP`, and `DATETIME`.
+       *
        * If your BigQuery table is [partitioned at ingestion
        * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
+       *
        * &lt;ul&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
        * &lt;/ul&gt;
+       *
        * &lt;b&gt;For Datastore&lt;/b&gt;
+       *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
        * property or contains empty or invalid values, then it is included.
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+       *
        * See the
        * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
        * related to this operation.
@@ -1769,7 +1857,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore and BigQuery.
+       *
        * &lt;b&gt;For BigQuery&lt;/b&gt;
+       *
        * If this value is not specified and the table was modified between the
        * given start and end times, the entire table will be scanned. If this
        * value is specified, then rows are filtered based on the given start and
@@ -1777,20 +1867,25 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * skipped.
        * Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`,
        * `TIMESTAMP`, and `DATETIME`.
+       *
        * If your BigQuery table is [partitioned at ingestion
        * time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time),
        * you can use any of the following pseudo-columns as your timestamp field.
        * When used with Cloud DLP, these pseudo-column names are case sensitive.
+       *
        * &lt;ul&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONTIME&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITIONDATE&lt;/code&gt;&lt;/li&gt;
        * &lt;li&gt;&lt;code&gt;_PARTITION_LOAD_TIME&lt;/code&gt;&lt;/li&gt;
        * &lt;/ul&gt;
+       *
        * &lt;b&gt;For Datastore&lt;/b&gt;
+       *
        * If this value is specified, then entities are filtered based on the given
        * start and end times. If an entity does not contain the provided timestamp
        * property or contains empty or invalid values, then it is included.
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
+       *
        * See the
        * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
        * related to this operation.
@@ -1945,6 +2040,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int typeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object type_;
 
   public enum TypeCase

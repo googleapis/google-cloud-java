@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,17 +46,14 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     dumpPath_ = "";
     source_ = "";
     destination_ = "";
+    filter_ = "";
+    cmekKeyName_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MigrationJob();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -908,7 +905,2681 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.clouddms.v1.MigrationJob.Type)
   }
 
+  public interface DumpFlagOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.clouddms.v1.MigrationJob.DumpFlag)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the flag
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the flag
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The value of the flag.
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     *
+     * @return The value.
+     */
+    java.lang.String getValue();
+    /**
+     *
+     *
+     * <pre>
+     * The value of the flag.
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     *
+     * @return The bytes for value.
+     */
+    com.google.protobuf.ByteString getValueBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Dump flag definition.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.clouddms.v1.MigrationJob.DumpFlag}
+   */
+  public static final class DumpFlag extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.MigrationJob.DumpFlag)
+      DumpFlagOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DumpFlag.newBuilder() to construct.
+    private DumpFlag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DumpFlag() {
+      name_ = "";
+      value_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DumpFlag();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+          .internal_static_google_cloud_clouddms_v1_MigrationJob_DumpFlag_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+          .internal_static_google_cloud_clouddms_v1_MigrationJob_DumpFlag_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.class,
+              com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the flag
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the flag
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The value of the flag.
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     *
+     * @return The value.
+     */
+    @java.lang.Override
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The value of the flag.
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     *
+     * @return The bytes for value.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.clouddms.v1.MigrationJob.DumpFlag)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.clouddms.v1.MigrationJob.DumpFlag other =
+          (com.google.cloud.clouddms.v1.MigrationJob.DumpFlag) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!getValue().equals(other.getValue())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.clouddms.v1.MigrationJob.DumpFlag prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Dump flag definition.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.clouddms.v1.MigrationJob.DumpFlag}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.clouddms.v1.MigrationJob.DumpFlag)
+        com.google.cloud.clouddms.v1.MigrationJob.DumpFlagOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_DumpFlag_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_DumpFlag_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.class,
+                com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder.class);
+      }
+
+      // Construct using com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        value_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_DumpFlag_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.DumpFlag getDefaultInstanceForType() {
+        return com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.DumpFlag build() {
+        com.google.cloud.clouddms.v1.MigrationJob.DumpFlag result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.DumpFlag buildPartial() {
+        com.google.cloud.clouddms.v1.MigrationJob.DumpFlag result =
+            new com.google.cloud.clouddms.v1.MigrationJob.DumpFlag(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.clouddms.v1.MigrationJob.DumpFlag result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.clouddms.v1.MigrationJob.DumpFlag) {
+          return mergeFrom((com.google.cloud.clouddms.v1.MigrationJob.DumpFlag) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.clouddms.v1.MigrationJob.DumpFlag other) {
+        if (other == com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.getDefaultInstance())
+          return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  value_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the flag
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the flag
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the flag
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the flag
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the flag
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The value of the flag.
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       *
+       * @return The value.
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The value of the flag.
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       *
+       * @return The bytes for value.
+       */
+      public com.google.protobuf.ByteString getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The value of the flag.
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The value of the flag.
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The value of the flag.
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       *
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        value_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.clouddms.v1.MigrationJob.DumpFlag)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.clouddms.v1.MigrationJob.DumpFlag)
+    private static final com.google.cloud.clouddms.v1.MigrationJob.DumpFlag DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.clouddms.v1.MigrationJob.DumpFlag();
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlag getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DumpFlag> PARSER =
+        new com.google.protobuf.AbstractParser<DumpFlag>() {
+          @java.lang.Override
+          public DumpFlag parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DumpFlag> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DumpFlag> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.MigrationJob.DumpFlag getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface DumpFlagsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.clouddms.v1.MigrationJob.DumpFlags)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The flags for the initial dump.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+     */
+    java.util.List<com.google.cloud.clouddms.v1.MigrationJob.DumpFlag> getDumpFlagsList();
+    /**
+     *
+     *
+     * <pre>
+     * The flags for the initial dump.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+     */
+    com.google.cloud.clouddms.v1.MigrationJob.DumpFlag getDumpFlags(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The flags for the initial dump.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+     */
+    int getDumpFlagsCount();
+    /**
+     *
+     *
+     * <pre>
+     * The flags for the initial dump.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+     */
+    java.util.List<? extends com.google.cloud.clouddms.v1.MigrationJob.DumpFlagOrBuilder>
+        getDumpFlagsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * The flags for the initial dump.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+     */
+    com.google.cloud.clouddms.v1.MigrationJob.DumpFlagOrBuilder getDumpFlagsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Dump flags definition.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.clouddms.v1.MigrationJob.DumpFlags}
+   */
+  public static final class DumpFlags extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.MigrationJob.DumpFlags)
+      DumpFlagsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DumpFlags.newBuilder() to construct.
+    private DumpFlags(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DumpFlags() {
+      dumpFlags_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DumpFlags();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+          .internal_static_google_cloud_clouddms_v1_MigrationJob_DumpFlags_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+          .internal_static_google_cloud_clouddms_v1_MigrationJob_DumpFlags_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.class,
+              com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.Builder.class);
+    }
+
+    public static final int DUMP_FLAGS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.clouddms.v1.MigrationJob.DumpFlag> dumpFlags_;
+    /**
+     *
+     *
+     * <pre>
+     * The flags for the initial dump.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.clouddms.v1.MigrationJob.DumpFlag> getDumpFlagsList() {
+      return dumpFlags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The flags for the initial dump.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.clouddms.v1.MigrationJob.DumpFlagOrBuilder>
+        getDumpFlagsOrBuilderList() {
+      return dumpFlags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The flags for the initial dump.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+     */
+    @java.lang.Override
+    public int getDumpFlagsCount() {
+      return dumpFlags_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The flags for the initial dump.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.MigrationJob.DumpFlag getDumpFlags(int index) {
+      return dumpFlags_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The flags for the initial dump.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.MigrationJob.DumpFlagOrBuilder getDumpFlagsOrBuilder(
+        int index) {
+      return dumpFlags_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < dumpFlags_.size(); i++) {
+        output.writeMessage(1, dumpFlags_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < dumpFlags_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, dumpFlags_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.clouddms.v1.MigrationJob.DumpFlags)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.clouddms.v1.MigrationJob.DumpFlags other =
+          (com.google.cloud.clouddms.v1.MigrationJob.DumpFlags) obj;
+
+      if (!getDumpFlagsList().equals(other.getDumpFlagsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDumpFlagsCount() > 0) {
+        hash = (37 * hash) + DUMP_FLAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getDumpFlagsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.clouddms.v1.MigrationJob.DumpFlags prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Dump flags definition.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.clouddms.v1.MigrationJob.DumpFlags}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.clouddms.v1.MigrationJob.DumpFlags)
+        com.google.cloud.clouddms.v1.MigrationJob.DumpFlagsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_DumpFlags_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_DumpFlags_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.class,
+                com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.Builder.class);
+      }
+
+      // Construct using com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (dumpFlagsBuilder_ == null) {
+          dumpFlags_ = java.util.Collections.emptyList();
+        } else {
+          dumpFlags_ = null;
+          dumpFlagsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_DumpFlags_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.DumpFlags getDefaultInstanceForType() {
+        return com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.DumpFlags build() {
+        com.google.cloud.clouddms.v1.MigrationJob.DumpFlags result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.DumpFlags buildPartial() {
+        com.google.cloud.clouddms.v1.MigrationJob.DumpFlags result =
+            new com.google.cloud.clouddms.v1.MigrationJob.DumpFlags(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.clouddms.v1.MigrationJob.DumpFlags result) {
+        if (dumpFlagsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            dumpFlags_ = java.util.Collections.unmodifiableList(dumpFlags_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.dumpFlags_ = dumpFlags_;
+        } else {
+          result.dumpFlags_ = dumpFlagsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.clouddms.v1.MigrationJob.DumpFlags result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.clouddms.v1.MigrationJob.DumpFlags) {
+          return mergeFrom((com.google.cloud.clouddms.v1.MigrationJob.DumpFlags) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.clouddms.v1.MigrationJob.DumpFlags other) {
+        if (other == com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.getDefaultInstance())
+          return this;
+        if (dumpFlagsBuilder_ == null) {
+          if (!other.dumpFlags_.isEmpty()) {
+            if (dumpFlags_.isEmpty()) {
+              dumpFlags_ = other.dumpFlags_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDumpFlagsIsMutable();
+              dumpFlags_.addAll(other.dumpFlags_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.dumpFlags_.isEmpty()) {
+            if (dumpFlagsBuilder_.isEmpty()) {
+              dumpFlagsBuilder_.dispose();
+              dumpFlagsBuilder_ = null;
+              dumpFlags_ = other.dumpFlags_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              dumpFlagsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getDumpFlagsFieldBuilder()
+                      : null;
+            } else {
+              dumpFlagsBuilder_.addAllMessages(other.dumpFlags_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.clouddms.v1.MigrationJob.DumpFlag m =
+                      input.readMessage(
+                          com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.parser(),
+                          extensionRegistry);
+                  if (dumpFlagsBuilder_ == null) {
+                    ensureDumpFlagsIsMutable();
+                    dumpFlags_.add(m);
+                  } else {
+                    dumpFlagsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.clouddms.v1.MigrationJob.DumpFlag> dumpFlags_ =
+          java.util.Collections.emptyList();
+
+      private void ensureDumpFlagsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          dumpFlags_ =
+              new java.util.ArrayList<com.google.cloud.clouddms.v1.MigrationJob.DumpFlag>(
+                  dumpFlags_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.clouddms.v1.MigrationJob.DumpFlag,
+              com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder,
+              com.google.cloud.clouddms.v1.MigrationJob.DumpFlagOrBuilder>
+          dumpFlagsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public java.util.List<com.google.cloud.clouddms.v1.MigrationJob.DumpFlag> getDumpFlagsList() {
+        if (dumpFlagsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(dumpFlags_);
+        } else {
+          return dumpFlagsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public int getDumpFlagsCount() {
+        if (dumpFlagsBuilder_ == null) {
+          return dumpFlags_.size();
+        } else {
+          return dumpFlagsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public com.google.cloud.clouddms.v1.MigrationJob.DumpFlag getDumpFlags(int index) {
+        if (dumpFlagsBuilder_ == null) {
+          return dumpFlags_.get(index);
+        } else {
+          return dumpFlagsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public Builder setDumpFlags(
+          int index, com.google.cloud.clouddms.v1.MigrationJob.DumpFlag value) {
+        if (dumpFlagsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDumpFlagsIsMutable();
+          dumpFlags_.set(index, value);
+          onChanged();
+        } else {
+          dumpFlagsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public Builder setDumpFlags(
+          int index, com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder builderForValue) {
+        if (dumpFlagsBuilder_ == null) {
+          ensureDumpFlagsIsMutable();
+          dumpFlags_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dumpFlagsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public Builder addDumpFlags(com.google.cloud.clouddms.v1.MigrationJob.DumpFlag value) {
+        if (dumpFlagsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDumpFlagsIsMutable();
+          dumpFlags_.add(value);
+          onChanged();
+        } else {
+          dumpFlagsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public Builder addDumpFlags(
+          int index, com.google.cloud.clouddms.v1.MigrationJob.DumpFlag value) {
+        if (dumpFlagsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDumpFlagsIsMutable();
+          dumpFlags_.add(index, value);
+          onChanged();
+        } else {
+          dumpFlagsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public Builder addDumpFlags(
+          com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder builderForValue) {
+        if (dumpFlagsBuilder_ == null) {
+          ensureDumpFlagsIsMutable();
+          dumpFlags_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dumpFlagsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public Builder addDumpFlags(
+          int index, com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder builderForValue) {
+        if (dumpFlagsBuilder_ == null) {
+          ensureDumpFlagsIsMutable();
+          dumpFlags_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dumpFlagsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public Builder addAllDumpFlags(
+          java.lang.Iterable<? extends com.google.cloud.clouddms.v1.MigrationJob.DumpFlag> values) {
+        if (dumpFlagsBuilder_ == null) {
+          ensureDumpFlagsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dumpFlags_);
+          onChanged();
+        } else {
+          dumpFlagsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public Builder clearDumpFlags() {
+        if (dumpFlagsBuilder_ == null) {
+          dumpFlags_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          dumpFlagsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public Builder removeDumpFlags(int index) {
+        if (dumpFlagsBuilder_ == null) {
+          ensureDumpFlagsIsMutable();
+          dumpFlags_.remove(index);
+          onChanged();
+        } else {
+          dumpFlagsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder getDumpFlagsBuilder(
+          int index) {
+        return getDumpFlagsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public com.google.cloud.clouddms.v1.MigrationJob.DumpFlagOrBuilder getDumpFlagsOrBuilder(
+          int index) {
+        if (dumpFlagsBuilder_ == null) {
+          return dumpFlags_.get(index);
+        } else {
+          return dumpFlagsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public java.util.List<? extends com.google.cloud.clouddms.v1.MigrationJob.DumpFlagOrBuilder>
+          getDumpFlagsOrBuilderList() {
+        if (dumpFlagsBuilder_ != null) {
+          return dumpFlagsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(dumpFlags_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder addDumpFlagsBuilder() {
+        return getDumpFlagsFieldBuilder()
+            .addBuilder(com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder addDumpFlagsBuilder(
+          int index) {
+        return getDumpFlagsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The flags for the initial dump.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.clouddms.v1.MigrationJob.DumpFlag dump_flags = 1;</code>
+       */
+      public java.util.List<com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder>
+          getDumpFlagsBuilderList() {
+        return getDumpFlagsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.clouddms.v1.MigrationJob.DumpFlag,
+              com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder,
+              com.google.cloud.clouddms.v1.MigrationJob.DumpFlagOrBuilder>
+          getDumpFlagsFieldBuilder() {
+        if (dumpFlagsBuilder_ == null) {
+          dumpFlagsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.clouddms.v1.MigrationJob.DumpFlag,
+                  com.google.cloud.clouddms.v1.MigrationJob.DumpFlag.Builder,
+                  com.google.cloud.clouddms.v1.MigrationJob.DumpFlagOrBuilder>(
+                  dumpFlags_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          dumpFlags_ = null;
+        }
+        return dumpFlagsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.clouddms.v1.MigrationJob.DumpFlags)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.clouddms.v1.MigrationJob.DumpFlags)
+    private static final com.google.cloud.clouddms.v1.MigrationJob.DumpFlags DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.clouddms.v1.MigrationJob.DumpFlags();
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.DumpFlags getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DumpFlags> PARSER =
+        new com.google.protobuf.AbstractParser<DumpFlags>() {
+          @java.lang.Override
+          public DumpFlags parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DumpFlags> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DumpFlags> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.MigrationJob.DumpFlags getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface PerformanceConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Initial dump parallelism level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dumpParallelLevel.
+     */
+    int getDumpParallelLevelValue();
+    /**
+     *
+     *
+     * <pre>
+     * Initial dump parallelism level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+     * </code>
+     *
+     * @return The dumpParallelLevel.
+     */
+    com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+        getDumpParallelLevel();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Performance configuration definition.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.clouddms.v1.MigrationJob.PerformanceConfig}
+   */
+  public static final class PerformanceConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)
+      PerformanceConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PerformanceConfig.newBuilder() to construct.
+    private PerformanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PerformanceConfig() {
+      dumpParallelLevel_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PerformanceConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+          .internal_static_google_cloud_clouddms_v1_MigrationJob_PerformanceConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+          .internal_static_google_cloud_clouddms_v1_MigrationJob_PerformanceConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.class,
+              com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes the parallelism level during initial dump.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel}
+     */
+    public enum DumpParallelLevel implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unknown dump parallel level. Will be defaulted to OPTIMAL.
+       * </pre>
+       *
+       * <code>DUMP_PARALLEL_LEVEL_UNSPECIFIED = 0;</code>
+       */
+      DUMP_PARALLEL_LEVEL_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Minimal parallel level.
+       * </pre>
+       *
+       * <code>MIN = 1;</code>
+       */
+      MIN(1),
+      /**
+       *
+       *
+       * <pre>
+       * Optimal parallel level.
+       * </pre>
+       *
+       * <code>OPTIMAL = 2;</code>
+       */
+      OPTIMAL(2),
+      /**
+       *
+       *
+       * <pre>
+       * Maximum parallel level.
+       * </pre>
+       *
+       * <code>MAX = 3;</code>
+       */
+      MAX(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unknown dump parallel level. Will be defaulted to OPTIMAL.
+       * </pre>
+       *
+       * <code>DUMP_PARALLEL_LEVEL_UNSPECIFIED = 0;</code>
+       */
+      public static final int DUMP_PARALLEL_LEVEL_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Minimal parallel level.
+       * </pre>
+       *
+       * <code>MIN = 1;</code>
+       */
+      public static final int MIN_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Optimal parallel level.
+       * </pre>
+       *
+       * <code>OPTIMAL = 2;</code>
+       */
+      public static final int OPTIMAL_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Maximum parallel level.
+       * </pre>
+       *
+       * <code>MAX = 3;</code>
+       */
+      public static final int MAX_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DumpParallelLevel valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DumpParallelLevel forNumber(int value) {
+        switch (value) {
+          case 0:
+            return DUMP_PARALLEL_LEVEL_UNSPECIFIED;
+          case 1:
+            return MIN;
+          case 2:
+            return OPTIMAL;
+          case 3:
+            return MAX;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DumpParallelLevel>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<DumpParallelLevel>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<DumpParallelLevel>() {
+                public DumpParallelLevel findValueByNumber(int number) {
+                  return DumpParallelLevel.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final DumpParallelLevel[] VALUES = values();
+
+      public static DumpParallelLevel valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DumpParallelLevel(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel)
+    }
+
+    public static final int DUMP_PARALLEL_LEVEL_FIELD_NUMBER = 1;
+    private int dumpParallelLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Initial dump parallelism level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dumpParallelLevel.
+     */
+    @java.lang.Override
+    public int getDumpParallelLevelValue() {
+      return dumpParallelLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Initial dump parallelism level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+     * </code>
+     *
+     * @return The dumpParallelLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+        getDumpParallelLevel() {
+      com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel result =
+          com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel.forNumber(
+              dumpParallelLevel_);
+      return result == null
+          ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (dumpParallelLevel_
+          != com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+              .DUMP_PARALLEL_LEVEL_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, dumpParallelLevel_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (dumpParallelLevel_
+          != com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+              .DUMP_PARALLEL_LEVEL_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, dumpParallelLevel_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig other =
+          (com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig) obj;
+
+      if (dumpParallelLevel_ != other.dumpParallelLevel_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DUMP_PARALLEL_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + dumpParallelLevel_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Performance configuration definition.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.clouddms.v1.MigrationJob.PerformanceConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_PerformanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_PerformanceConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.class,
+                com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        dumpParallelLevel_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_PerformanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig build() {
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig buildPartial() {
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig result =
+            new com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dumpParallelLevel_ = dumpParallelLevel_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig) {
+          return mergeFrom((com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig other) {
+        if (other
+            == com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance())
+          return this;
+        if (other.dumpParallelLevel_ != 0) {
+          setDumpParallelLevelValue(other.getDumpParallelLevelValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  dumpParallelLevel_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int dumpParallelLevel_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Initial dump parallelism level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for dumpParallelLevel.
+       */
+      @java.lang.Override
+      public int getDumpParallelLevelValue() {
+        return dumpParallelLevel_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Initial dump parallelism level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for dumpParallelLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDumpParallelLevelValue(int value) {
+        dumpParallelLevel_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Initial dump parallelism level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+       * </code>
+       *
+       * @return The dumpParallelLevel.
+       */
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+          getDumpParallelLevel() {
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel result =
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel.forNumber(
+                dumpParallelLevel_);
+        return result == null
+            ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Initial dump parallelism level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+       * </code>
+       *
+       * @param value The dumpParallelLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDumpParallelLevel(
+          com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        dumpParallelLevel_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Initial dump parallelism level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDumpParallelLevel() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dumpParallelLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)
+    private static final com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig();
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PerformanceConfig> PARSER =
+        new com.google.protobuf.AbstractParser<PerformanceConfig>() {
+          @java.lang.Override
+          public PerformanceConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PerformanceConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PerformanceConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int connectivityCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object connectivity_;
 
   public enum ConnectivityCase
@@ -967,7 +3638,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name (URI) of this migration job resource, in the form of:
-   * projects/{project}/locations/{location}/instances/{instance}.
+   * projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -991,7 +3662,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name (URI) of this migration job resource, in the form of:
-   * projects/{project}/locations/{location}/instances/{instance}.
+   * projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1072,8 +3743,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp when the migration job resource was last updated.
-   * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+   * Output only. The timestamp when the migration job resource was last
+   * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
    * Example: "2014-10-02T15:01:23.045123456Z".
    * </pre>
    *
@@ -1090,8 +3761,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp when the migration job resource was last updated.
-   * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+   * Output only. The timestamp when the migration job resource was last
+   * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
    * Example: "2014-10-02T15:01:23.045123456Z".
    * </pre>
    *
@@ -1108,8 +3779,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp when the migration job resource was last updated.
-   * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+   * Output only. The timestamp when the migration job resource was last
+   * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
    * Example: "2014-10-02T15:01:23.045123456Z".
    * </pre>
    *
@@ -1154,6 +3825,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -1179,6 +3851,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -1195,6 +3868,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -1218,6 +3892,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -1409,6 +4084,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The path to the dump file in Google Cloud Storage,
    * in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
+   * This field and the "dump_flags" field are mutually exclusive.
    * </pre>
    *
    * <code>string dump_path = 9;</code>
@@ -1433,6 +4109,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The path to the dump file in Google Cloud Storage,
    * in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
+   * This field and the "dump_flags" field are mutually exclusive.
    * </pre>
    *
    * <code>string dump_path = 9;</code>
@@ -1450,6 +4127,59 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DUMP_FLAGS_FIELD_NUMBER = 17;
+  private com.google.cloud.clouddms.v1.MigrationJob.DumpFlags dumpFlags_;
+  /**
+   *
+   *
+   * <pre>
+   * The initial dump flags.
+   * This field and the "dump_path" field are mutually exclusive.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+   *
+   * @return Whether the dumpFlags field is set.
+   */
+  @java.lang.Override
+  public boolean hasDumpFlags() {
+    return dumpFlags_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The initial dump flags.
+   * This field and the "dump_path" field are mutually exclusive.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+   *
+   * @return The dumpFlags.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.MigrationJob.DumpFlags getDumpFlags() {
+    return dumpFlags_ == null
+        ? com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.getDefaultInstance()
+        : dumpFlags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The initial dump flags.
+   * This field and the "dump_path" field are mutually exclusive.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.MigrationJob.DumpFlagsOrBuilder getDumpFlagsOrBuilder() {
+    return dumpFlags_ == null
+        ? com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.getDefaultInstance()
+        : dumpFlags_;
   }
 
   public static final int SOURCE_FIELD_NUMBER = 10;
@@ -1719,8 +4449,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The duration of the migration job (in seconds). A duration in seconds
-   * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+   * Output only. The duration of the migration job (in seconds). A duration in
+   * seconds with up to nine fractional digits, terminated by 's'. Example:
+   * "3.5s".
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1736,8 +4467,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The duration of the migration job (in seconds). A duration in seconds
-   * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+   * Output only. The duration of the migration job (in seconds). A duration in
+   * seconds with up to nine fractional digits, terminated by 's'. Example:
+   * "3.5s".
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1753,8 +4485,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The duration of the migration job (in seconds). A duration in seconds
-   * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+   * Output only. The duration of the migration job (in seconds). A duration in
+   * seconds with up to nine fractional digits, terminated by 's'. Example:
+   * "3.5s".
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1917,7 +4650,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If the migration job is completed, the time when it was completed.
+   * Output only. If the migration job is completed, the time when it was
+   * completed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1933,7 +4667,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If the migration job is completed, the time when it was completed.
+   * Output only. If the migration job is completed, the time when it was
+   * completed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1949,7 +4684,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If the migration job is completed, the time when it was completed.
+   * Output only. If the migration job is completed, the time when it was
+   * completed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1958,6 +4694,247 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  }
+
+  public static final int CONVERSION_WORKSPACE_FIELD_NUMBER = 18;
+  private com.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversionWorkspace_;
+  /**
+   *
+   *
+   * <pre>
+   * The conversion workspace used by the migration.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+   *
+   * @return Whether the conversionWorkspace field is set.
+   */
+  @java.lang.Override
+  public boolean hasConversionWorkspace() {
+    return conversionWorkspace_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The conversion workspace used by the migration.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+   *
+   * @return The conversionWorkspace.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.ConversionWorkspaceInfo getConversionWorkspace() {
+    return conversionWorkspace_ == null
+        ? com.google.cloud.clouddms.v1.ConversionWorkspaceInfo.getDefaultInstance()
+        : conversionWorkspace_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The conversion workspace used by the migration.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.ConversionWorkspaceInfoOrBuilder
+      getConversionWorkspaceOrBuilder() {
+    return conversionWorkspace_ == null
+        ? com.google.cloud.clouddms.v1.ConversionWorkspaceInfo.getDefaultInstance()
+        : conversionWorkspace_;
+  }
+
+  public static final int FILTER_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to select the entities to migrate as part of
+   * the migration job. It uses AIP-160 notation to select a subset of the
+   * entities configured on the associated conversion-workspace. This field
+   * should not be set on migration-jobs that are not associated with a
+   * conversion workspace.
+   * </pre>
+   *
+   * <code>string filter = 20;</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to select the entities to migrate as part of
+   * the migration job. It uses AIP-160 notation to select a subset of the
+   * entities configured on the associated conversion-workspace. This field
+   * should not be set on migration-jobs that are not associated with a
+   * conversion workspace.
+   * </pre>
+   *
+   * <code>string filter = 20;</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CMEK_KEY_NAME_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cmekKeyName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The CMEK (customer-managed encryption key) fully qualified key name used
+   * for the migration job.
+   * This field supports all migration jobs types except for:
+   * * Mysql to Mysql (use the cmek field in the cloudsql connection profile
+   * instead).
+   * * PostrgeSQL to PostgreSQL (use the cmek field in the cloudsql
+   * connection profile instead).
+   * * PostgreSQL to AlloyDB (use the kms_key_name field in the alloydb
+   * connection profile instead).
+   * Each Cloud CMEK key has the following format:
+   * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
+   * </pre>
+   *
+   * <code>string cmek_key_name = 21;</code>
+   *
+   * @return The cmekKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getCmekKeyName() {
+    java.lang.Object ref = cmekKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cmekKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The CMEK (customer-managed encryption key) fully qualified key name used
+   * for the migration job.
+   * This field supports all migration jobs types except for:
+   * * Mysql to Mysql (use the cmek field in the cloudsql connection profile
+   * instead).
+   * * PostrgeSQL to PostgreSQL (use the cmek field in the cloudsql
+   * connection profile instead).
+   * * PostgreSQL to AlloyDB (use the kms_key_name field in the alloydb
+   * connection profile instead).
+   * Each Cloud CMEK key has the following format:
+   * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
+   * </pre>
+   *
+   * <code>string cmek_key_name = 21;</code>
+   *
+   * @return The bytes for cmekKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCmekKeyNameBytes() {
+    java.lang.Object ref = cmekKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cmekKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PERFORMANCE_CONFIG_FIELD_NUMBER = 22;
+  private com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the performanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPerformanceConfig() {
+    return performanceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The performanceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig getPerformanceConfig() {
+    return performanceConfig_ == null
+        ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance()
+        : performanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder
+      getPerformanceConfigOrBuilder() {
+    return performanceConfig_ == null
+        ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance()
+        : performanceConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2020,6 +4997,21 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (endTime_ != null) {
       output.writeMessage(16, getEndTime());
+    }
+    if (dumpFlags_ != null) {
+      output.writeMessage(17, getDumpFlags());
+    }
+    if (conversionWorkspace_ != null) {
+      output.writeMessage(18, getConversionWorkspace());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, filter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cmekKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, cmekKeyName_);
+    }
+    if (performanceConfig_ != null) {
+      output.writeMessage(22, getPerformanceConfig());
     }
     if (connectivityCase_ == 101) {
       output.writeMessage(101, (com.google.cloud.clouddms.v1.ReverseSshConnectivity) connectivity_);
@@ -2095,6 +5087,22 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getEndTime());
     }
+    if (dumpFlags_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getDumpFlags());
+    }
+    if (conversionWorkspace_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(18, getConversionWorkspace());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, filter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cmekKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, cmekKeyName_);
+    }
+    if (performanceConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getPerformanceConfig());
+    }
     if (connectivityCase_ == 101) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2141,6 +5149,10 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     if (phase_ != other.phase_) return false;
     if (type_ != other.type_) return false;
     if (!getDumpPath().equals(other.getDumpPath())) return false;
+    if (hasDumpFlags() != other.hasDumpFlags()) return false;
+    if (hasDumpFlags()) {
+      if (!getDumpFlags().equals(other.getDumpFlags())) return false;
+    }
     if (!getSource().equals(other.getSource())) return false;
     if (!getDestination().equals(other.getDestination())) return false;
     if (hasDuration() != other.hasDuration()) return false;
@@ -2162,6 +5174,16 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
+    }
+    if (hasConversionWorkspace() != other.hasConversionWorkspace()) return false;
+    if (hasConversionWorkspace()) {
+      if (!getConversionWorkspace().equals(other.getConversionWorkspace())) return false;
+    }
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (!getCmekKeyName().equals(other.getCmekKeyName())) return false;
+    if (hasPerformanceConfig() != other.hasPerformanceConfig()) return false;
+    if (hasPerformanceConfig()) {
+      if (!getPerformanceConfig().equals(other.getPerformanceConfig())) return false;
     }
     if (!getConnectivityCase().equals(other.getConnectivityCase())) return false;
     switch (connectivityCase_) {
@@ -2212,6 +5234,10 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + type_;
     hash = (37 * hash) + DUMP_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getDumpPath().hashCode();
+    if (hasDumpFlags()) {
+      hash = (37 * hash) + DUMP_FLAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getDumpFlags().hashCode();
+    }
     hash = (37 * hash) + SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getSource().hashCode();
     hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
@@ -2235,6 +5261,18 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTime()) {
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
+    }
+    if (hasConversionWorkspace()) {
+      hash = (37 * hash) + CONVERSION_WORKSPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getConversionWorkspace().hashCode();
+    }
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + CMEK_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getCmekKeyName().hashCode();
+    if (hasPerformanceConfig()) {
+      hash = (37 * hash) + PERFORMANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPerformanceConfig().hashCode();
     }
     switch (connectivityCase_) {
       case 101:
@@ -2428,6 +5466,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       phase_ = 0;
       type_ = 0;
       dumpPath_ = "";
+      dumpFlags_ = null;
+      if (dumpFlagsBuilder_ != null) {
+        dumpFlagsBuilder_.dispose();
+        dumpFlagsBuilder_ = null;
+      }
       source_ = "";
       destination_ = "";
       if (reverseSshConnectivityBuilder_ != null) {
@@ -2463,6 +5506,18 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
+      }
+      conversionWorkspace_ = null;
+      if (conversionWorkspaceBuilder_ != null) {
+        conversionWorkspaceBuilder_.dispose();
+        conversionWorkspaceBuilder_ = null;
+      }
+      filter_ = "";
+      cmekKeyName_ = "";
+      performanceConfig_ = null;
+      if (performanceConfigBuilder_ != null) {
+        performanceConfigBuilder_.dispose();
+        performanceConfigBuilder_ = null;
       }
       connectivityCase_ = 0;
       connectivity_ = null;
@@ -2532,29 +5587,50 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         result.dumpPath_ = dumpPath_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.source_ = source_;
+        result.dumpFlags_ = dumpFlagsBuilder_ == null ? dumpFlags_ : dumpFlagsBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.source_ = source_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.destination_ = destination_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.sourceDatabase_ =
             sourceDatabaseBuilder_ == null ? sourceDatabase_ : sourceDatabaseBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.destinationDatabase_ =
             destinationDatabaseBuilder_ == null
                 ? destinationDatabase_
                 : destinationDatabaseBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.conversionWorkspace_ =
+            conversionWorkspaceBuilder_ == null
+                ? conversionWorkspace_
+                : conversionWorkspaceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.cmekKeyName_ = cmekKeyName_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.performanceConfig_ =
+            performanceConfigBuilder_ == null
+                ? performanceConfig_
+                : performanceConfigBuilder_.build();
       }
     }
 
@@ -2649,14 +5725,17 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.hasDumpFlags()) {
+        mergeDumpFlags(other.getDumpFlags());
+      }
       if (!other.getSource().isEmpty()) {
         source_ = other.source_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getDestination().isEmpty()) {
         destination_ = other.destination_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasDuration()) {
@@ -2673,6 +5752,22 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
+      }
+      if (other.hasConversionWorkspace()) {
+        mergeConversionWorkspace(other.getConversionWorkspace());
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      if (!other.getCmekKeyName().isEmpty()) {
+        cmekKeyName_ = other.cmekKeyName_;
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      if (other.hasPerformanceConfig()) {
+        mergePerformanceConfig(other.getPerformanceConfig());
       }
       switch (other.getConnectivityCase()) {
         case REVERSE_SSH_CONNECTIVITY:
@@ -2784,46 +5879,78 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 source_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
               {
                 destination_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getSourceDatabaseFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(
                     getDestinationDatabaseFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 130
+            case 138:
+              {
+                input.readMessage(getDumpFlagsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(
+                    getConversionWorkspaceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 146
+            case 162:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 162
+            case 170:
+              {
+                cmekKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getPerformanceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 178
             case 810:
               {
                 input.readMessage(
@@ -2884,7 +6011,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name (URI) of this migration job resource, in the form of:
-     * projects/{project}/locations/{location}/instances/{instance}.
+     * projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2907,7 +6034,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name (URI) of this migration job resource, in the form of:
-     * projects/{project}/locations/{location}/instances/{instance}.
+     * projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2930,7 +6057,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name (URI) of this migration job resource, in the form of:
-     * projects/{project}/locations/{location}/instances/{instance}.
+     * projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2952,7 +6079,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name (URI) of this migration job resource, in the form of:
-     * projects/{project}/locations/{location}/instances/{instance}.
+     * projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2970,7 +6097,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name (URI) of this migration job resource, in the form of:
-     * projects/{project}/locations/{location}/instances/{instance}.
+     * projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3218,8 +6345,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the migration job resource was last updated.
-     * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+     * Output only. The timestamp when the migration job resource was last
+     * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
      * Example: "2014-10-02T15:01:23.045123456Z".
      * </pre>
      *
@@ -3236,8 +6363,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the migration job resource was last updated.
-     * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+     * Output only. The timestamp when the migration job resource was last
+     * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
      * Example: "2014-10-02T15:01:23.045123456Z".
      * </pre>
      *
@@ -3260,8 +6387,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the migration job resource was last updated.
-     * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+     * Output only. The timestamp when the migration job resource was last
+     * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
      * Example: "2014-10-02T15:01:23.045123456Z".
      * </pre>
      *
@@ -3286,8 +6413,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the migration job resource was last updated.
-     * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+     * Output only. The timestamp when the migration job resource was last
+     * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
      * Example: "2014-10-02T15:01:23.045123456Z".
      * </pre>
      *
@@ -3309,8 +6436,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the migration job resource was last updated.
-     * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+     * Output only. The timestamp when the migration job resource was last
+     * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
      * Example: "2014-10-02T15:01:23.045123456Z".
      * </pre>
      *
@@ -3338,8 +6465,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the migration job resource was last updated.
-     * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+     * Output only. The timestamp when the migration job resource was last
+     * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
      * Example: "2014-10-02T15:01:23.045123456Z".
      * </pre>
      *
@@ -3361,8 +6488,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the migration job resource was last updated.
-     * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+     * Output only. The timestamp when the migration job resource was last
+     * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
      * Example: "2014-10-02T15:01:23.045123456Z".
      * </pre>
      *
@@ -3379,8 +6506,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the migration job resource was last updated.
-     * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+     * Output only. The timestamp when the migration job resource was last
+     * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
      * Example: "2014-10-02T15:01:23.045123456Z".
      * </pre>
      *
@@ -3401,8 +6528,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp when the migration job resource was last updated.
-     * A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
+     * Output only. The timestamp when the migration job resource was last
+     * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
      * Example: "2014-10-02T15:01:23.045123456Z".
      * </pre>
      *
@@ -3459,6 +6586,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -3484,6 +6612,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -3500,6 +6629,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -3523,6 +6653,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -3552,6 +6683,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -3577,6 +6709,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -3600,6 +6733,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -4014,6 +7148,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The path to the dump file in Google Cloud Storage,
      * in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
+     * This field and the "dump_flags" field are mutually exclusive.
      * </pre>
      *
      * <code>string dump_path = 9;</code>
@@ -4037,6 +7172,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The path to the dump file in Google Cloud Storage,
      * in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
+     * This field and the "dump_flags" field are mutually exclusive.
      * </pre>
      *
      * <code>string dump_path = 9;</code>
@@ -4060,6 +7196,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The path to the dump file in Google Cloud Storage,
      * in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
+     * This field and the "dump_flags" field are mutually exclusive.
      * </pre>
      *
      * <code>string dump_path = 9;</code>
@@ -4082,6 +7219,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The path to the dump file in Google Cloud Storage,
      * in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
+     * This field and the "dump_flags" field are mutually exclusive.
      * </pre>
      *
      * <code>string dump_path = 9;</code>
@@ -4100,6 +7238,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The path to the dump file in Google Cloud Storage,
      * in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
+     * This field and the "dump_flags" field are mutually exclusive.
      * </pre>
      *
      * <code>string dump_path = 9;</code>
@@ -4116,6 +7255,200 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.clouddms.v1.MigrationJob.DumpFlags dumpFlags_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.MigrationJob.DumpFlags,
+            com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.Builder,
+            com.google.cloud.clouddms.v1.MigrationJob.DumpFlagsOrBuilder>
+        dumpFlagsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The initial dump flags.
+     * This field and the "dump_path" field are mutually exclusive.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+     *
+     * @return Whether the dumpFlags field is set.
+     */
+    public boolean hasDumpFlags() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The initial dump flags.
+     * This field and the "dump_path" field are mutually exclusive.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+     *
+     * @return The dumpFlags.
+     */
+    public com.google.cloud.clouddms.v1.MigrationJob.DumpFlags getDumpFlags() {
+      if (dumpFlagsBuilder_ == null) {
+        return dumpFlags_ == null
+            ? com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.getDefaultInstance()
+            : dumpFlags_;
+      } else {
+        return dumpFlagsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The initial dump flags.
+     * This field and the "dump_path" field are mutually exclusive.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+     */
+    public Builder setDumpFlags(com.google.cloud.clouddms.v1.MigrationJob.DumpFlags value) {
+      if (dumpFlagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dumpFlags_ = value;
+      } else {
+        dumpFlagsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The initial dump flags.
+     * This field and the "dump_path" field are mutually exclusive.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+     */
+    public Builder setDumpFlags(
+        com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.Builder builderForValue) {
+      if (dumpFlagsBuilder_ == null) {
+        dumpFlags_ = builderForValue.build();
+      } else {
+        dumpFlagsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The initial dump flags.
+     * This field and the "dump_path" field are mutually exclusive.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+     */
+    public Builder mergeDumpFlags(com.google.cloud.clouddms.v1.MigrationJob.DumpFlags value) {
+      if (dumpFlagsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && dumpFlags_ != null
+            && dumpFlags_
+                != com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.getDefaultInstance()) {
+          getDumpFlagsBuilder().mergeFrom(value);
+        } else {
+          dumpFlags_ = value;
+        }
+      } else {
+        dumpFlagsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The initial dump flags.
+     * This field and the "dump_path" field are mutually exclusive.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+     */
+    public Builder clearDumpFlags() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      dumpFlags_ = null;
+      if (dumpFlagsBuilder_ != null) {
+        dumpFlagsBuilder_.dispose();
+        dumpFlagsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The initial dump flags.
+     * This field and the "dump_path" field are mutually exclusive.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+     */
+    public com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.Builder getDumpFlagsBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getDumpFlagsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The initial dump flags.
+     * This field and the "dump_path" field are mutually exclusive.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+     */
+    public com.google.cloud.clouddms.v1.MigrationJob.DumpFlagsOrBuilder getDumpFlagsOrBuilder() {
+      if (dumpFlagsBuilder_ != null) {
+        return dumpFlagsBuilder_.getMessageOrBuilder();
+      } else {
+        return dumpFlags_ == null
+            ? com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.getDefaultInstance()
+            : dumpFlags_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The initial dump flags.
+     * This field and the "dump_path" field are mutually exclusive.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MigrationJob.DumpFlags dump_flags = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.MigrationJob.DumpFlags,
+            com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.Builder,
+            com.google.cloud.clouddms.v1.MigrationJob.DumpFlagsOrBuilder>
+        getDumpFlagsFieldBuilder() {
+      if (dumpFlagsBuilder_ == null) {
+        dumpFlagsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.MigrationJob.DumpFlags,
+                com.google.cloud.clouddms.v1.MigrationJob.DumpFlags.Builder,
+                com.google.cloud.clouddms.v1.MigrationJob.DumpFlagsOrBuilder>(
+                getDumpFlags(), getParentForChildren(), isClean());
+        dumpFlags_ = null;
+      }
+      return dumpFlagsBuilder_;
     }
 
     private java.lang.Object source_ = "";
@@ -4180,7 +7513,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       source_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4197,7 +7530,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSource() {
       source_ = getDefaultInstance().getSource();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4219,7 +7552,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       source_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4286,7 +7619,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       destination_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4303,7 +7636,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDestination() {
       destination_ = getDefaultInstance().getDestination();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4325,7 +7658,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       destination_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4991,8 +8324,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The duration of the migration job (in seconds). A duration in seconds
-     * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+     * Output only. The duration of the migration job (in seconds). A duration in
+     * seconds with up to nine fractional digits, terminated by 's'. Example:
+     * "3.5s".
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5001,14 +8335,15 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the duration field is set.
      */
     public boolean hasDuration() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. The duration of the migration job (in seconds). A duration in seconds
-     * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+     * Output only. The duration of the migration job (in seconds). A duration in
+     * seconds with up to nine fractional digits, terminated by 's'. Example:
+     * "3.5s".
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5027,8 +8362,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The duration of the migration job (in seconds). A duration in seconds
-     * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+     * Output only. The duration of the migration job (in seconds). A duration in
+     * seconds with up to nine fractional digits, terminated by 's'. Example:
+     * "3.5s".
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5043,7 +8379,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         durationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5051,8 +8387,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The duration of the migration job (in seconds). A duration in seconds
-     * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+     * Output only. The duration of the migration job (in seconds). A duration in
+     * seconds with up to nine fractional digits, terminated by 's'. Example:
+     * "3.5s".
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5064,7 +8401,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         durationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5072,8 +8409,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The duration of the migration job (in seconds). A duration in seconds
-     * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+     * Output only. The duration of the migration job (in seconds). A duration in
+     * seconds with up to nine fractional digits, terminated by 's'. Example:
+     * "3.5s".
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5081,7 +8419,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDuration(com.google.protobuf.Duration value) {
       if (durationBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && duration_ != null
             && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getDurationBuilder().mergeFrom(value);
@@ -5091,7 +8429,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         durationBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5099,15 +8437,16 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The duration of the migration job (in seconds). A duration in seconds
-     * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+     * Output only. The duration of the migration job (in seconds). A duration in
+     * seconds with up to nine fractional digits, terminated by 's'. Example:
+     * "3.5s".
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearDuration() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       duration_ = null;
       if (durationBuilder_ != null) {
         durationBuilder_.dispose();
@@ -5120,15 +8459,16 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The duration of the migration job (in seconds). A duration in seconds
-     * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+     * Output only. The duration of the migration job (in seconds). A duration in
+     * seconds with up to nine fractional digits, terminated by 's'. Example:
+     * "3.5s".
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.Duration.Builder getDurationBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
@@ -5136,8 +8476,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The duration of the migration job (in seconds). A duration in seconds
-     * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+     * Output only. The duration of the migration job (in seconds). A duration in
+     * seconds with up to nine fractional digits, terminated by 's'. Example:
+     * "3.5s".
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5154,8 +8495,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The duration of the migration job (in seconds). A duration in seconds
-     * with up to nine fractional digits, terminated by 's'. Example: "3.5s".
+     * Output only. The duration of the migration job (in seconds). A duration in
+     * seconds with up to nine fractional digits, terminated by 's'. Example:
+     * "3.5s".
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5194,7 +8536,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -5232,7 +8574,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5251,7 +8593,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5266,7 +8608,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -5276,7 +8618,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5290,7 +8632,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -5309,7 +8651,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -5370,7 +8712,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceDatabase field is set.
      */
     public boolean hasSourceDatabase() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -5410,7 +8752,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceDatabaseBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5430,7 +8772,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceDatabaseBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5445,7 +8787,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSourceDatabase(com.google.cloud.clouddms.v1.DatabaseType value) {
       if (sourceDatabaseBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && sourceDatabase_ != null
             && sourceDatabase_ != com.google.cloud.clouddms.v1.DatabaseType.getDefaultInstance()) {
           getSourceDatabaseBuilder().mergeFrom(value);
@@ -5455,7 +8797,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceDatabaseBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5469,7 +8811,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.clouddms.v1.DatabaseType source_database = 14;</code>
      */
     public Builder clearSourceDatabase() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       sourceDatabase_ = null;
       if (sourceDatabaseBuilder_ != null) {
         sourceDatabaseBuilder_.dispose();
@@ -5488,7 +8830,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.clouddms.v1.DatabaseType source_database = 14;</code>
      */
     public com.google.cloud.clouddms.v1.DatabaseType.Builder getSourceDatabaseBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getSourceDatabaseFieldBuilder().getBuilder();
     }
@@ -5554,7 +8896,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the destinationDatabase field is set.
      */
     public boolean hasDestinationDatabase() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5594,7 +8936,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         destinationDatabaseBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5614,7 +8956,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         destinationDatabaseBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5629,7 +8971,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDestinationDatabase(com.google.cloud.clouddms.v1.DatabaseType value) {
       if (destinationDatabaseBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && destinationDatabase_ != null
             && destinationDatabase_
                 != com.google.cloud.clouddms.v1.DatabaseType.getDefaultInstance()) {
@@ -5640,7 +8982,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         destinationDatabaseBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5654,7 +8996,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.clouddms.v1.DatabaseType destination_database = 15;</code>
      */
     public Builder clearDestinationDatabase() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       destinationDatabase_ = null;
       if (destinationDatabaseBuilder_ != null) {
         destinationDatabaseBuilder_.dispose();
@@ -5673,7 +9015,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.clouddms.v1.DatabaseType destination_database = 15;</code>
      */
     public com.google.cloud.clouddms.v1.DatabaseType.Builder getDestinationDatabaseBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getDestinationDatabaseFieldBuilder().getBuilder();
     }
@@ -5731,7 +9073,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the migration job is completed, the time when it was completed.
+     * Output only. If the migration job is completed, the time when it was
+     * completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5740,13 +9083,14 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. If the migration job is completed, the time when it was completed.
+     * Output only. If the migration job is completed, the time when it was
+     * completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5765,7 +9109,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the migration job is completed, the time when it was completed.
+     * Output only. If the migration job is completed, the time when it was
+     * completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5780,7 +9125,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5788,7 +9133,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the migration job is completed, the time when it was completed.
+     * Output only. If the migration job is completed, the time when it was
+     * completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5800,7 +9146,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5808,7 +9154,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the migration job is completed, the time when it was completed.
+     * Output only. If the migration job is completed, the time when it was
+     * completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5816,7 +9163,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -5826,7 +9173,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5834,14 +9181,15 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the migration job is completed, the time when it was completed.
+     * Output only. If the migration job is completed, the time when it was
+     * completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -5854,14 +9202,15 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the migration job is completed, the time when it was completed.
+     * Output only. If the migration job is completed, the time when it was
+     * completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -5869,7 +9218,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the migration job is completed, the time when it was completed.
+     * Output only. If the migration job is completed, the time when it was
+     * completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5886,7 +9236,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the migration job is completed, the time when it was completed.
+     * Output only. If the migration job is completed, the time when it was
+     * completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5907,6 +9258,694 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         endTime_ = null;
       }
       return endTimeBuilder_;
+    }
+
+    private com.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversionWorkspace_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.ConversionWorkspaceInfo,
+            com.google.cloud.clouddms.v1.ConversionWorkspaceInfo.Builder,
+            com.google.cloud.clouddms.v1.ConversionWorkspaceInfoOrBuilder>
+        conversionWorkspaceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The conversion workspace used by the migration.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+     *
+     * @return Whether the conversionWorkspace field is set.
+     */
+    public boolean hasConversionWorkspace() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conversion workspace used by the migration.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+     *
+     * @return The conversionWorkspace.
+     */
+    public com.google.cloud.clouddms.v1.ConversionWorkspaceInfo getConversionWorkspace() {
+      if (conversionWorkspaceBuilder_ == null) {
+        return conversionWorkspace_ == null
+            ? com.google.cloud.clouddms.v1.ConversionWorkspaceInfo.getDefaultInstance()
+            : conversionWorkspace_;
+      } else {
+        return conversionWorkspaceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conversion workspace used by the migration.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+     */
+    public Builder setConversionWorkspace(
+        com.google.cloud.clouddms.v1.ConversionWorkspaceInfo value) {
+      if (conversionWorkspaceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        conversionWorkspace_ = value;
+      } else {
+        conversionWorkspaceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conversion workspace used by the migration.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+     */
+    public Builder setConversionWorkspace(
+        com.google.cloud.clouddms.v1.ConversionWorkspaceInfo.Builder builderForValue) {
+      if (conversionWorkspaceBuilder_ == null) {
+        conversionWorkspace_ = builderForValue.build();
+      } else {
+        conversionWorkspaceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conversion workspace used by the migration.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+     */
+    public Builder mergeConversionWorkspace(
+        com.google.cloud.clouddms.v1.ConversionWorkspaceInfo value) {
+      if (conversionWorkspaceBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && conversionWorkspace_ != null
+            && conversionWorkspace_
+                != com.google.cloud.clouddms.v1.ConversionWorkspaceInfo.getDefaultInstance()) {
+          getConversionWorkspaceBuilder().mergeFrom(value);
+        } else {
+          conversionWorkspace_ = value;
+        }
+      } else {
+        conversionWorkspaceBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conversion workspace used by the migration.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+     */
+    public Builder clearConversionWorkspace() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      conversionWorkspace_ = null;
+      if (conversionWorkspaceBuilder_ != null) {
+        conversionWorkspaceBuilder_.dispose();
+        conversionWorkspaceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conversion workspace used by the migration.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+     */
+    public com.google.cloud.clouddms.v1.ConversionWorkspaceInfo.Builder
+        getConversionWorkspaceBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getConversionWorkspaceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conversion workspace used by the migration.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+     */
+    public com.google.cloud.clouddms.v1.ConversionWorkspaceInfoOrBuilder
+        getConversionWorkspaceOrBuilder() {
+      if (conversionWorkspaceBuilder_ != null) {
+        return conversionWorkspaceBuilder_.getMessageOrBuilder();
+      } else {
+        return conversionWorkspace_ == null
+            ? com.google.cloud.clouddms.v1.ConversionWorkspaceInfo.getDefaultInstance()
+            : conversionWorkspace_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conversion workspace used by the migration.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.ConversionWorkspaceInfo conversion_workspace = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.ConversionWorkspaceInfo,
+            com.google.cloud.clouddms.v1.ConversionWorkspaceInfo.Builder,
+            com.google.cloud.clouddms.v1.ConversionWorkspaceInfoOrBuilder>
+        getConversionWorkspaceFieldBuilder() {
+      if (conversionWorkspaceBuilder_ == null) {
+        conversionWorkspaceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.ConversionWorkspaceInfo,
+                com.google.cloud.clouddms.v1.ConversionWorkspaceInfo.Builder,
+                com.google.cloud.clouddms.v1.ConversionWorkspaceInfoOrBuilder>(
+                getConversionWorkspace(), getParentForChildren(), isClean());
+        conversionWorkspace_ = null;
+      }
+      return conversionWorkspaceBuilder_;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to select the entities to migrate as part of
+     * the migration job. It uses AIP-160 notation to select a subset of the
+     * entities configured on the associated conversion-workspace. This field
+     * should not be set on migration-jobs that are not associated with a
+     * conversion workspace.
+     * </pre>
+     *
+     * <code>string filter = 20;</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to select the entities to migrate as part of
+     * the migration job. It uses AIP-160 notation to select a subset of the
+     * entities configured on the associated conversion-workspace. This field
+     * should not be set on migration-jobs that are not associated with a
+     * conversion workspace.
+     * </pre>
+     *
+     * <code>string filter = 20;</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to select the entities to migrate as part of
+     * the migration job. It uses AIP-160 notation to select a subset of the
+     * entities configured on the associated conversion-workspace. This field
+     * should not be set on migration-jobs that are not associated with a
+     * conversion workspace.
+     * </pre>
+     *
+     * <code>string filter = 20;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to select the entities to migrate as part of
+     * the migration job. It uses AIP-160 notation to select a subset of the
+     * entities configured on the associated conversion-workspace. This field
+     * should not be set on migration-jobs that are not associated with a
+     * conversion workspace.
+     * </pre>
+     *
+     * <code>string filter = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00200000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to select the entities to migrate as part of
+     * the migration job. It uses AIP-160 notation to select a subset of the
+     * entities configured on the associated conversion-workspace. This field
+     * should not be set on migration-jobs that are not associated with a
+     * conversion workspace.
+     * </pre>
+     *
+     * <code>string filter = 20;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cmekKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The CMEK (customer-managed encryption key) fully qualified key name used
+     * for the migration job.
+     * This field supports all migration jobs types except for:
+     * * Mysql to Mysql (use the cmek field in the cloudsql connection profile
+     * instead).
+     * * PostrgeSQL to PostgreSQL (use the cmek field in the cloudsql
+     * connection profile instead).
+     * * PostgreSQL to AlloyDB (use the kms_key_name field in the alloydb
+     * connection profile instead).
+     * Each Cloud CMEK key has the following format:
+     * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
+     * </pre>
+     *
+     * <code>string cmek_key_name = 21;</code>
+     *
+     * @return The cmekKeyName.
+     */
+    public java.lang.String getCmekKeyName() {
+      java.lang.Object ref = cmekKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cmekKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CMEK (customer-managed encryption key) fully qualified key name used
+     * for the migration job.
+     * This field supports all migration jobs types except for:
+     * * Mysql to Mysql (use the cmek field in the cloudsql connection profile
+     * instead).
+     * * PostrgeSQL to PostgreSQL (use the cmek field in the cloudsql
+     * connection profile instead).
+     * * PostgreSQL to AlloyDB (use the kms_key_name field in the alloydb
+     * connection profile instead).
+     * Each Cloud CMEK key has the following format:
+     * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
+     * </pre>
+     *
+     * <code>string cmek_key_name = 21;</code>
+     *
+     * @return The bytes for cmekKeyName.
+     */
+    public com.google.protobuf.ByteString getCmekKeyNameBytes() {
+      java.lang.Object ref = cmekKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cmekKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CMEK (customer-managed encryption key) fully qualified key name used
+     * for the migration job.
+     * This field supports all migration jobs types except for:
+     * * Mysql to Mysql (use the cmek field in the cloudsql connection profile
+     * instead).
+     * * PostrgeSQL to PostgreSQL (use the cmek field in the cloudsql
+     * connection profile instead).
+     * * PostgreSQL to AlloyDB (use the kms_key_name field in the alloydb
+     * connection profile instead).
+     * Each Cloud CMEK key has the following format:
+     * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
+     * </pre>
+     *
+     * <code>string cmek_key_name = 21;</code>
+     *
+     * @param value The cmekKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCmekKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      cmekKeyName_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CMEK (customer-managed encryption key) fully qualified key name used
+     * for the migration job.
+     * This field supports all migration jobs types except for:
+     * * Mysql to Mysql (use the cmek field in the cloudsql connection profile
+     * instead).
+     * * PostrgeSQL to PostgreSQL (use the cmek field in the cloudsql
+     * connection profile instead).
+     * * PostgreSQL to AlloyDB (use the kms_key_name field in the alloydb
+     * connection profile instead).
+     * Each Cloud CMEK key has the following format:
+     * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
+     * </pre>
+     *
+     * <code>string cmek_key_name = 21;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCmekKeyName() {
+      cmekKeyName_ = getDefaultInstance().getCmekKeyName();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CMEK (customer-managed encryption key) fully qualified key name used
+     * for the migration job.
+     * This field supports all migration jobs types except for:
+     * * Mysql to Mysql (use the cmek field in the cloudsql connection profile
+     * instead).
+     * * PostrgeSQL to PostgreSQL (use the cmek field in the cloudsql
+     * connection profile instead).
+     * * PostgreSQL to AlloyDB (use the kms_key_name field in the alloydb
+     * connection profile instead).
+     * Each Cloud CMEK key has the following format:
+     * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
+     * </pre>
+     *
+     * <code>string cmek_key_name = 21;</code>
+     *
+     * @param value The bytes for cmekKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCmekKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      cmekKeyName_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig,
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder,
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder>
+        performanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the performanceConfig field is set.
+     */
+    public boolean hasPerformanceConfig() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The performanceConfig.
+     */
+    public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig getPerformanceConfig() {
+      if (performanceConfigBuilder_ == null) {
+        return performanceConfig_ == null
+            ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance()
+            : performanceConfig_;
+      } else {
+        return performanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPerformanceConfig(
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig value) {
+      if (performanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        performanceConfig_ = value;
+      } else {
+        performanceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPerformanceConfig(
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder builderForValue) {
+      if (performanceConfigBuilder_ == null) {
+        performanceConfig_ = builderForValue.build();
+      } else {
+        performanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePerformanceConfig(
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig value) {
+      if (performanceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)
+            && performanceConfig_ != null
+            && performanceConfig_
+                != com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig
+                    .getDefaultInstance()) {
+          getPerformanceConfigBuilder().mergeFrom(value);
+        } else {
+          performanceConfig_ = value;
+        }
+      } else {
+        performanceConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPerformanceConfig() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      performanceConfig_ = null;
+      if (performanceConfigBuilder_ != null) {
+        performanceConfigBuilder_.dispose();
+        performanceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder
+        getPerformanceConfigBuilder() {
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return getPerformanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder
+        getPerformanceConfigOrBuilder() {
+      if (performanceConfigBuilder_ != null) {
+        return performanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return performanceConfig_ == null
+            ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance()
+            : performanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig,
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder,
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder>
+        getPerformanceConfigFieldBuilder() {
+      if (performanceConfigBuilder_ == null) {
+        performanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig,
+                com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder,
+                com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder>(
+                getPerformanceConfig(), getParentForChildren(), isClean());
+        performanceConfig_ = null;
+      }
+      return performanceConfigBuilder_;
     }
 
     @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface AwsClusterNetworkingOrBuilder
    * <pre>
    * Required. The VPC associated with the cluster. All component clusters
    * (i.e. control plane and node pools) run on a single VPC.
+   *
    * This field cannot be changed after creation.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface AwsClusterNetworkingOrBuilder
    * <pre>
    * Required. The VPC associated with the cluster. All component clusters
    * (i.e. control plane and node pools) run on a single VPC.
+   *
    * This field cannot be changed after creation.
    * </pre>
    *

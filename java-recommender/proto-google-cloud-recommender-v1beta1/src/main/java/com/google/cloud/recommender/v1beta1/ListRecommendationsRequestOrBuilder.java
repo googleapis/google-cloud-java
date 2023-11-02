@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,11 +29,17 @@ public interface ListRecommendationsRequestOrBuilder
    * <pre>
    * Required. The container resource on which to execute the request.
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *
    * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *
    * * `folders/[FOLDER_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
    * RECOMMENDER_ID refers to supported recommenders:
@@ -53,11 +59,17 @@ public interface ListRecommendationsRequestOrBuilder
    * <pre>
    * Required. The container resource on which to execute the request.
    * Acceptable formats:
+   *
    * * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *
    * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *
    * * `folders/[FOLDER_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]`
+   *
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
    * RECOMMENDER_ID refers to supported recommenders:
@@ -76,9 +88,9 @@ public interface ListRecommendationsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of results to return from this request.  Non-positive
-   * values are ignored. If not specified, the server will determine the number
-   * of results to return.
+   * Optional. The maximum number of results to return from this request.
+   * Non-positive values are ignored. If not specified, the server will
+   * determine the number of results to return.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -91,10 +103,10 @@ public interface ListRecommendationsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If present, retrieves the next batch of results from the preceding call to
-   * this method. `page_token` must be the value of `next_page_token` from the
-   * previous response. The values of other method parameters must be identical
-   * to those in the previous call.
+   * Optional. If present, retrieves the next batch of results from the
+   * preceding call to this method. `page_token` must be the value of
+   * `next_page_token` from the previous response. The values of other method
+   * parameters must be identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -106,10 +118,10 @@ public interface ListRecommendationsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If present, retrieves the next batch of results from the preceding call to
-   * this method. `page_token` must be the value of `next_page_token` from the
-   * previous response. The values of other method parameters must be identical
-   * to those in the previous call.
+   * Optional. If present, retrieves the next batch of results from the
+   * preceding call to this method. `page_token` must be the value of
+   * `next_page_token` from the previous response. The values of other method
+   * parameters must be identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -124,14 +136,23 @@ public interface ListRecommendationsRequestOrBuilder
    * <pre>
    * Filter expression to restrict the recommendations returned. Supported
    * filter fields:
+   *
    * * `state_info.state`
+   *
    * * `recommenderSubtype`
+   *
    * * `priority`
+   *
    * Examples:
+   *
    * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   *
    * * `recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE`
+   *
    * * `priority = P1 OR priority = P2`
+   *
    * * `stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)`
+   *
    * (These expressions are based on the filter language described at
    * https://google.aip.dev/160)
    * </pre>
@@ -147,14 +168,23 @@ public interface ListRecommendationsRequestOrBuilder
    * <pre>
    * Filter expression to restrict the recommendations returned. Supported
    * filter fields:
+   *
    * * `state_info.state`
+   *
    * * `recommenderSubtype`
+   *
    * * `priority`
+   *
    * Examples:
+   *
    * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
+   *
    * * `recommenderSubtype = REMOVE_ROLE OR recommenderSubtype = REPLACE_ROLE`
+   *
    * * `priority = P1 OR priority = P2`
+   *
    * * `stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)`
+   *
    * (These expressions are based on the filter language described at
    * https://google.aip.dev/160)
    * </pre>

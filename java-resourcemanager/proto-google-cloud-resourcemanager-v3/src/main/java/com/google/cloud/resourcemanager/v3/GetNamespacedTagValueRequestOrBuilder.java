@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface GetNamespacedTagValueRequestOrBuilder
    *
    * <pre>
    * Required. A namespaced tag value name in the following format:
+   *
    *   `{parentId}/{tagKeyShort}/{tagValueShort}`
+   *
    * Examples:
    * - `42/foo/abc` for a value with short name "abc" under the key with short
    *   name "foo" under the organization with ID 42
@@ -48,7 +50,9 @@ public interface GetNamespacedTagValueRequestOrBuilder
    *
    * <pre>
    * Required. A namespaced tag value name in the following format:
+   *
    *   `{parentId}/{tagKeyShort}/{tagValueShort}`
+   *
    * Examples:
    * - `42/foo/abc` for a value with short name "abc" under the key with short
    *   name "foo" under the organization with ID 42

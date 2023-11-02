@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,6 +87,41 @@ public interface SchedulingOrBuilder
    * @return The bytes for instanceTerminationAction.
    */
   com.google.protobuf.ByteString getInstanceTerminationActionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;</code>
+   *
+   * @return Whether the localSsdRecoveryTimeout field is set.
+   */
+  boolean hasLocalSsdRecoveryTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;</code>
+   *
+   * @return The localSsdRecoveryTimeout.
+   */
+  com.google.cloud.compute.v1.Duration getLocalSsdRecoveryTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;</code>
+   */
+  com.google.cloud.compute.v1.DurationOrBuilder getLocalSsdRecoveryTimeoutOrBuilder();
 
   /**
    *

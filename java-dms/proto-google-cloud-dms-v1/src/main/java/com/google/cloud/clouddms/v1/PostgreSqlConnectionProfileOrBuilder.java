@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,8 +65,9 @@ public interface PostgreSqlConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Required. The username that Database Migration Service will use to connect to the
-   * database. The value is encrypted when stored in Database Migration Service.
+   * Required. The username that Database Migration Service will use to connect
+   * to the database. The value is encrypted when stored in Database Migration
+   * Service.
    * </pre>
    *
    * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -78,8 +79,9 @@ public interface PostgreSqlConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Required. The username that Database Migration Service will use to connect to the
-   * database. The value is encrypted when stored in Database Migration Service.
+   * Required. The username that Database Migration Service will use to connect
+   * to the database. The value is encrypted when stored in Database Migration
+   * Service.
    * </pre>
    *
    * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -92,9 +94,10 @@ public interface PostgreSqlConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. The password for the user that Database Migration Service will be using to
-   * connect to the database. This field is not returned on request, and the
-   * value is encrypted when stored in Database Migration Service.
+   * Required. Input only. The password for the user that Database Migration
+   * Service will be using to connect to the database. This field is not
+   * returned on request, and the value is encrypted when stored in Database
+   * Migration Service.
    * </pre>
    *
    * <code>
@@ -108,9 +111,10 @@ public interface PostgreSqlConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. The password for the user that Database Migration Service will be using to
-   * connect to the database. This field is not returned on request, and the
-   * value is encrypted when stored in Database Migration Service.
+   * Required. Input only. The password for the user that Database Migration
+   * Service will be using to connect to the database. This field is not
+   * returned on request, and the value is encrypted when stored in Database
+   * Migration Service.
    * </pre>
    *
    * <code>
@@ -195,4 +199,115 @@ public interface PostgreSqlConnectionProfileOrBuilder
    * @return The bytes for cloudSqlId.
    */
   com.google.protobuf.ByteString getCloudSqlIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the source is a Cloud SQL database, this field indicates
+   * the network architecture it's associated with.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.NetworkArchitecture network_architecture = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for networkArchitecture.
+   */
+  int getNetworkArchitectureValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the source is a Cloud SQL database, this field indicates
+   * the network architecture it's associated with.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.NetworkArchitecture network_architecture = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The networkArchitecture.
+   */
+  com.google.cloud.clouddms.v1.NetworkArchitecture getNetworkArchitecture();
+
+  /**
+   *
+   *
+   * <pre>
+   * Static ip connectivity data (default, no additional details needed).
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+   *
+   * @return Whether the staticIpConnectivity field is set.
+   */
+  boolean hasStaticIpConnectivity();
+  /**
+   *
+   *
+   * <pre>
+   * Static ip connectivity data (default, no additional details needed).
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+   *
+   * @return The staticIpConnectivity.
+   */
+  com.google.cloud.clouddms.v1.StaticIpConnectivity getStaticIpConnectivity();
+  /**
+   *
+   *
+   * <pre>
+   * Static ip connectivity data (default, no additional details needed).
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+   */
+  com.google.cloud.clouddms.v1.StaticIpConnectivityOrBuilder getStaticIpConnectivityOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Private service connect connectivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+   * </code>
+   *
+   * @return Whether the privateServiceConnectConnectivity field is set.
+   */
+  boolean hasPrivateServiceConnectConnectivity();
+  /**
+   *
+   *
+   * <pre>
+   * Private service connect connectivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+   * </code>
+   *
+   * @return The privateServiceConnectConnectivity.
+   */
+  com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity
+      getPrivateServiceConnectConnectivity();
+  /**
+   *
+   *
+   * <pre>
+   * Private service connect connectivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+   * </code>
+   */
+  com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivityOrBuilder
+      getPrivateServiceConnectConnectivityOrBuilder();
+
+  com.google.cloud.clouddms.v1.PostgreSqlConnectionProfile.ConnectivityCase getConnectivityCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface UpdateRestorePlanRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the RestorePlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the RestorePlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface UpdateRestorePlanRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the RestorePlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the RestorePlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>
@@ -57,8 +57,8 @@ public interface UpdateRestorePlanRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A new version of the RestorePlan resource that contains updated fields.
-   * This may be sparsely populated if an `update_mask` is provided.
+   * Required. A new version of the RestorePlan resource that contains updated
+   * fields. This may be sparsely populated if an `update_mask` is provided.
    * </pre>
    *
    * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     kind_ = "";
     labelFingerprint_ = "";
     licenseCodes_ = emptyLongList();
-    licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     locationHint_ = "";
     name_ = "";
     selfLink_ = "";
@@ -56,18 +56,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     sourceSnapshotSchedulePolicyId_ = "";
     status_ = "";
     storageBytesStatus_ = "";
-    storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Snapshot();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1472,7 +1467,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public static final int LICENSES_FIELD_NUMBER = 337642578;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList licenses_;
+  private com.google.protobuf.LazyStringArrayList licenses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2384,7 +2380,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public static final int STORAGE_LOCATIONS_FIELD_NUMBER = 328005274;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList storageLocations_;
+  private com.google.protobuf.LazyStringArrayList storageLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -3116,8 +3113,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       labelFingerprint_ = "";
       internalGetMutableLabels().clear();
       licenseCodes_ = emptyLongList();
-      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00002000);
+      licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       locationHint_ = "";
       name_ = "";
       satisfiesPzs_ = false;
@@ -3140,8 +3136,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       status_ = "";
       storageBytes_ = 0L;
       storageBytesStatus_ = "";
-      storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x10000000);
+      storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -3182,16 +3177,6 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00001000);
       }
       result.licenseCodes_ = licenseCodes_;
-      if (((bitField0_ & 0x00002000) != 0)) {
-        licenses_ = licenses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00002000);
-      }
-      result.licenses_ = licenses_;
-      if (((bitField0_ & 0x10000000) != 0)) {
-        storageLocations_ = storageLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x10000000);
-      }
-      result.storageLocations_ = storageLocations_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Snapshot result) {
@@ -3244,6 +3229,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        licenses_.makeImmutable();
+        result.licenses_ = licenses_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.locationHint_ = locationHint_;
@@ -3306,6 +3295,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x08000000) != 0)) {
         result.storageBytesStatus_ = storageBytesStatus_;
         to_bitField0_ |= 0x01000000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        storageLocations_.makeImmutable();
+        result.storageLocations_ = storageLocations_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3415,7 +3408,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       if (!other.licenses_.isEmpty()) {
         if (licenses_.isEmpty()) {
           licenses_ = other.licenses_;
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ |= 0x00002000;
         } else {
           ensureLicensesIsMutable();
           licenses_.addAll(other.licenses_);
@@ -3487,7 +3480,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       if (!other.storageLocations_.isEmpty()) {
         if (storageLocations_.isEmpty()) {
           storageLocations_ = other.storageLocations_;
-          bitField0_ = (bitField0_ & ~0x10000000);
+          bitField0_ |= 0x10000000;
         } else {
           ensureStorageLocationsIsMutable();
           storageLocations_.addAll(other.storageLocations_);
@@ -5092,14 +5085,14 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList licenses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList licenses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLicensesIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!licenses_.isModifiable()) {
         licenses_ = new com.google.protobuf.LazyStringArrayList(licenses_);
-        bitField0_ |= 0x00002000;
       }
+      bitField0_ |= 0x00002000;
     }
     /**
      *
@@ -5113,7 +5106,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the licenses.
      */
     public com.google.protobuf.ProtocolStringList getLicensesList() {
-      return licenses_.getUnmodifiableView();
+      licenses_.makeImmutable();
+      return licenses_;
     }
     /**
      *
@@ -5178,6 +5172,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLicensesIsMutable();
       licenses_.set(index, value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5199,6 +5194,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLicensesIsMutable();
       licenses_.add(value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5217,6 +5213,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLicenses(java.lang.Iterable<java.lang.String> values) {
       ensureLicensesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, licenses_);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5232,8 +5229,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLicenses() {
-      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00002000);
+      ;
       onChanged();
       return this;
     }
@@ -5256,6 +5254,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLicensesIsMutable();
       licenses_.add(value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7028,14 +7027,14 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList storageLocations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList storageLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureStorageLocationsIsMutable() {
-      if (!((bitField0_ & 0x10000000) != 0)) {
+      if (!storageLocations_.isModifiable()) {
         storageLocations_ = new com.google.protobuf.LazyStringArrayList(storageLocations_);
-        bitField0_ |= 0x10000000;
       }
+      bitField0_ |= 0x10000000;
     }
     /**
      *
@@ -7049,7 +7048,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the storageLocations.
      */
     public com.google.protobuf.ProtocolStringList getStorageLocationsList() {
-      return storageLocations_.getUnmodifiableView();
+      storageLocations_.makeImmutable();
+      return storageLocations_;
     }
     /**
      *
@@ -7114,6 +7114,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.set(index, value);
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -7135,6 +7136,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -7153,6 +7155,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllStorageLocations(java.lang.Iterable<java.lang.String> values) {
       ensureStorageLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storageLocations_);
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -7168,8 +7171,9 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStorageLocations() {
-      storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x10000000);
+      ;
       onChanged();
       return this;
     }
@@ -7192,6 +7196,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }

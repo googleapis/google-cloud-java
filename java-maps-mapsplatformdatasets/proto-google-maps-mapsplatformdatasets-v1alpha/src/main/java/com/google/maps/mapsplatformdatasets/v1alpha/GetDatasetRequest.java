@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
     return new GetDatasetRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.mapsplatformdatasets.v1alpha.MapsPlatformDatasetsProto
         .internal_static_google_maps_mapsplatformdatasets_v1alpha_GetDatasetRequest_descriptor;
@@ -79,6 +74,7 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
    * Required. Resource name. Can also fetch a specified version
    * projects/{project}/datasets/{dataset_id}
    * projects/{project}/datasets/{dataset_id}&#64;{version-id}
+   *
    * In order to retrieve a previous version of the dataset, also provide
    * the version ID.
    * Example: projects/123/datasets/assisted-driving-preferences&#64;c7cfa2a8
@@ -109,6 +105,7 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
    * Required. Resource name. Can also fetch a specified version
    * projects/{project}/datasets/{dataset_id}
    * projects/{project}/datasets/{dataset_id}&#64;{version-id}
+   *
    * In order to retrieve a previous version of the dataset, also provide
    * the version ID.
    * Example: projects/123/datasets/assisted-driving-preferences&#64;c7cfa2a8
@@ -554,6 +551,7 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      * Required. Resource name. Can also fetch a specified version
      * projects/{project}/datasets/{dataset_id}
      * projects/{project}/datasets/{dataset_id}&#64;{version-id}
+     *
      * In order to retrieve a previous version of the dataset, also provide
      * the version ID.
      * Example: projects/123/datasets/assisted-driving-preferences&#64;c7cfa2a8
@@ -583,6 +581,7 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      * Required. Resource name. Can also fetch a specified version
      * projects/{project}/datasets/{dataset_id}
      * projects/{project}/datasets/{dataset_id}&#64;{version-id}
+     *
      * In order to retrieve a previous version of the dataset, also provide
      * the version ID.
      * Example: projects/123/datasets/assisted-driving-preferences&#64;c7cfa2a8
@@ -612,6 +611,7 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      * Required. Resource name. Can also fetch a specified version
      * projects/{project}/datasets/{dataset_id}
      * projects/{project}/datasets/{dataset_id}&#64;{version-id}
+     *
      * In order to retrieve a previous version of the dataset, also provide
      * the version ID.
      * Example: projects/123/datasets/assisted-driving-preferences&#64;c7cfa2a8
@@ -640,6 +640,7 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      * Required. Resource name. Can also fetch a specified version
      * projects/{project}/datasets/{dataset_id}
      * projects/{project}/datasets/{dataset_id}&#64;{version-id}
+     *
      * In order to retrieve a previous version of the dataset, also provide
      * the version ID.
      * Example: projects/123/datasets/assisted-driving-preferences&#64;c7cfa2a8
@@ -664,6 +665,7 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
      * Required. Resource name. Can also fetch a specified version
      * projects/{project}/datasets/{dataset_id}
      * projects/{project}/datasets/{dataset_id}&#64;{version-id}
+     *
      * In order to retrieve a previous version of the dataset, also provide
      * the version ID.
      * Example: projects/123/datasets/assisted-driving-preferences&#64;c7cfa2a8

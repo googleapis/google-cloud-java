@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
   }
 
   private BrowserKeyRestrictions() {
-    allowedReferrers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowedReferrers_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BrowserKeyRestrictions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
   public static final int ALLOWED_REFERRERS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowedReferrers_;
+  private com.google.protobuf.LazyStringArrayList allowedReferrers_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -339,8 +335,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      allowedReferrers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      allowedReferrers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -368,7 +363,6 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
     public com.google.api.apikeys.v2.BrowserKeyRestrictions buildPartial() {
       com.google.api.apikeys.v2.BrowserKeyRestrictions result =
           new com.google.api.apikeys.v2.BrowserKeyRestrictions(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -376,17 +370,12 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.api.apikeys.v2.BrowserKeyRestrictions result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        allowedReferrers_ = allowedReferrers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.allowedReferrers_ = allowedReferrers_;
-    }
-
     private void buildPartial0(com.google.api.apikeys.v2.BrowserKeyRestrictions result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        allowedReferrers_.makeImmutable();
+        result.allowedReferrers_ = allowedReferrers_;
+      }
     }
 
     @java.lang.Override
@@ -438,7 +427,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
       if (!other.allowedReferrers_.isEmpty()) {
         if (allowedReferrers_.isEmpty()) {
           allowedReferrers_ = other.allowedReferrers_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureAllowedReferrersIsMutable();
           allowedReferrers_.addAll(other.allowedReferrers_);
@@ -497,14 +486,14 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList allowedReferrers_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowedReferrers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowedReferrersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!allowedReferrers_.isModifiable()) {
         allowedReferrers_ = new com.google.protobuf.LazyStringArrayList(allowedReferrers_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -519,7 +508,8 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
      * @return A list containing the allowedReferrers.
      */
     public com.google.protobuf.ProtocolStringList getAllowedReferrersList() {
-      return allowedReferrers_.getUnmodifiableView();
+      allowedReferrers_.makeImmutable();
+      return allowedReferrers_;
     }
     /**
      *
@@ -588,6 +578,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       ensureAllowedReferrersIsMutable();
       allowedReferrers_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -610,6 +601,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
       }
       ensureAllowedReferrersIsMutable();
       allowedReferrers_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -629,6 +621,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
     public Builder addAllAllowedReferrers(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedReferrersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedReferrers_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -645,8 +638,9 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAllowedReferrers() {
-      allowedReferrers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedReferrers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -670,6 +664,7 @@ public final class BrowserKeyRestrictions extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureAllowedReferrersIsMutable();
       allowedReferrers_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

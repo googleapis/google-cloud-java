@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,10 @@ public interface BatchRecognizeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the recognizer to be used for ASR.
+   * Required. The name of the Recognizer to use during recognition. The
+   * expected format is
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>
@@ -41,7 +44,10 @@ public interface BatchRecognizeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the recognizer to be used for ASR.
+   * Required. The name of the Recognizer to use during recognition. The
+   * expected format is
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>
@@ -264,4 +270,31 @@ public interface BatchRecognizeRequestOrBuilder
    * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
    */
   com.google.cloud.speech.v2.RecognitionOutputConfigOrBuilder getRecognitionOutputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Processing strategy to use for this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy processing_strategy = 7;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for processingStrategy.
+   */
+  int getProcessingStrategyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Processing strategy to use for this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy processing_strategy = 7;
+   * </code>
+   *
+   * @return The processingStrategy.
+   */
+  com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy getProcessingStrategy();
 }

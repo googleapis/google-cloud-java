@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     displayName_ = "";
     etag_ = "";
-    parentContexts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    parentContexts_ = com.google.protobuf.LazyStringArrayList.emptyList();
     schemaTitle_ = "";
     schemaVersion_ = "";
     description_ = "";
@@ -51,11 +51,6 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Context();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -92,10 +87,10 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Context.
+   * Immutable. The resource name of the Context.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The name.
    */
@@ -115,10 +110,10 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Context.
+   * Immutable. The resource name of the Context.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for name.
    */
@@ -272,6 +267,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Contexts.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -299,6 +295,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Contexts.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -317,6 +314,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Contexts.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -342,6 +340,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Contexts.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -464,7 +463,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
   public static final int PARENT_CONTEXTS_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList parentContexts_;
+  private com.google.protobuf.LazyStringArrayList parentContexts_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -545,6 +545,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The title of the schema describing the metadata.
+   *
    * Schema title and version is expected to be registered in earlier Create
    * Schema calls. And both are used together as unique identifiers to identify
    * schemas within the local metadata store.
@@ -571,6 +572,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The title of the schema describing the metadata.
+   *
    * Schema title and version is expected to be registered in earlier Create
    * Schema calls. And both are used together as unique identifiers to identify
    * schemas within the local metadata store.
@@ -602,6 +604,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The version of the schema in schema_name to use.
+   *
    * Schema title and version is expected to be registered in earlier Create
    * Schema calls. And both are used together as unique identifiers to identify
    * schemas within the local metadata store.
@@ -628,6 +631,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The version of the schema in schema_name to use.
+   *
    * Schema title and version is expected to be registered in earlier Create
    * Schema calls. And both are used together as unique identifiers to identify
    * schemas within the local metadata store.
@@ -1104,8 +1108,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      parentContexts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      parentContexts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       schemaTitle_ = "";
       schemaVersion_ = "";
       metadata_ = null;
@@ -1141,20 +1144,11 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Context buildPartial() {
       com.google.cloud.aiplatform.v1.Context result =
           new com.google.cloud.aiplatform.v1.Context(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.Context result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
-        parentContexts_ = parentContexts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.parentContexts_ = parentContexts_;
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1.Context result) {
@@ -1177,6 +1171,10 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        parentContexts_.makeImmutable();
+        result.parentContexts_ = parentContexts_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.schemaTitle_ = schemaTitle_;
@@ -1263,7 +1261,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       if (!other.parentContexts_.isEmpty()) {
         if (parentContexts_.isEmpty()) {
           parentContexts_ = other.parentContexts_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureParentContextsIsMutable();
           parentContexts_.addAll(other.parentContexts_);
@@ -1411,10 +1409,10 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Context.
+     * Immutable. The resource name of the Context.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The name.
      */
@@ -1433,10 +1431,10 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Context.
+     * Immutable. The resource name of the Context.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for name.
      */
@@ -1455,10 +1453,10 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Context.
+     * Immutable. The resource name of the Context.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1476,10 +1474,10 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Context.
+     * Immutable. The resource name of the Context.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return This builder for chaining.
      */
@@ -1493,10 +1491,10 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Context.
+     * Immutable. The resource name of the Context.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1764,6 +1762,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Contexts.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1791,6 +1790,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Contexts.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1809,6 +1809,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Contexts.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1834,6 +1835,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Contexts.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1865,6 +1867,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Contexts.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1892,6 +1895,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Contexts.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1917,6 +1921,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Contexts.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -2334,14 +2339,14 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       return updateTimeBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList parentContexts_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList parentContexts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureParentContextsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!parentContexts_.isModifiable()) {
         parentContexts_ = new com.google.protobuf.LazyStringArrayList(parentContexts_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2358,7 +2363,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the parentContexts.
      */
     public com.google.protobuf.ProtocolStringList getParentContextsList() {
-      return parentContexts_.getUnmodifiableView();
+      parentContexts_.makeImmutable();
+      return parentContexts_;
     }
     /**
      *
@@ -2435,6 +2441,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       }
       ensureParentContextsIsMutable();
       parentContexts_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2459,6 +2466,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       }
       ensureParentContextsIsMutable();
       parentContexts_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2480,6 +2488,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllParentContexts(java.lang.Iterable<java.lang.String> values) {
       ensureParentContextsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, parentContexts_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2498,8 +2507,9 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParentContexts() {
-      parentContexts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      parentContexts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2525,6 +2535,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureParentContextsIsMutable();
       parentContexts_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2535,6 +2546,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The title of the schema describing the metadata.
+     *
      * Schema title and version is expected to be registered in earlier Create
      * Schema calls. And both are used together as unique identifiers to identify
      * schemas within the local metadata store.
@@ -2560,6 +2572,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The title of the schema describing the metadata.
+     *
      * Schema title and version is expected to be registered in earlier Create
      * Schema calls. And both are used together as unique identifiers to identify
      * schemas within the local metadata store.
@@ -2585,6 +2598,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The title of the schema describing the metadata.
+     *
      * Schema title and version is expected to be registered in earlier Create
      * Schema calls. And both are used together as unique identifiers to identify
      * schemas within the local metadata store.
@@ -2609,6 +2623,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The title of the schema describing the metadata.
+     *
      * Schema title and version is expected to be registered in earlier Create
      * Schema calls. And both are used together as unique identifiers to identify
      * schemas within the local metadata store.
@@ -2629,6 +2644,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The title of the schema describing the metadata.
+     *
      * Schema title and version is expected to be registered in earlier Create
      * Schema calls. And both are used together as unique identifiers to identify
      * schemas within the local metadata store.
@@ -2656,6 +2672,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The version of the schema in schema_name to use.
+     *
      * Schema title and version is expected to be registered in earlier Create
      * Schema calls. And both are used together as unique identifiers to identify
      * schemas within the local metadata store.
@@ -2681,6 +2698,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The version of the schema in schema_name to use.
+     *
      * Schema title and version is expected to be registered in earlier Create
      * Schema calls. And both are used together as unique identifiers to identify
      * schemas within the local metadata store.
@@ -2706,6 +2724,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The version of the schema in schema_name to use.
+     *
      * Schema title and version is expected to be registered in earlier Create
      * Schema calls. And both are used together as unique identifiers to identify
      * schemas within the local metadata store.
@@ -2730,6 +2749,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The version of the schema in schema_name to use.
+     *
      * Schema title and version is expected to be registered in earlier Create
      * Schema calls. And both are used together as unique identifiers to identify
      * schemas within the local metadata store.
@@ -2750,6 +2770,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The version of the schema in schema_name to use.
+     *
      * Schema title and version is expected to be registered in earlier Create
      * Schema calls. And both are used together as unique identifiers to identify
      * schemas within the local metadata store.

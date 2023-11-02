@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,22 +43,22 @@ public final class SpecialistPoolProto {
       "\n5google/cloud/aiplatform/v1beta1/specia"
           + "list_pool.proto\022\037google.cloud.aiplatform"
           + ".v1beta1\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\"\316\002\n\016Special"
-          + "istPool\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\031\n\014display_na"
-          + "me\030\002 \001(\tB\003\340A\002\022&\n\031specialist_managers_cou"
-          + "nt\030\003 \001(\005B\003\340A\003\022!\n\031specialist_manager_emai"
-          + "ls\030\004 \003(\t\022\'\n\032pending_data_labeling_jobs\030\005"
-          + " \003(\tB\003\340A\003\022 \n\030specialist_worker_emails\030\007 "
-          + "\003(\t:x\352Au\n(aiplatform.googleapis.com/Spec"
-          + "ialistPool\022Iprojects/{project}/locations"
-          + "/{location}/specialistPools/{specialist_"
-          + "pool}B\352\001\n#com.google.cloud.aiplatform.v1"
-          + "beta1B\023SpecialistPoolProtoP\001ZCcloud.goog"
-          + "le.com/go/aiplatform/apiv1beta1/aiplatfo"
-          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
-          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
-          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
-          + "a1b\006proto3"
+          + "o\032\031google/api/resource.proto\"\322\002\n\016Special"
+          + "istPool\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\022\032\n\014display_n"
+          + "ame\030\002 \001(\tB\004\342A\001\002\022\'\n\031specialist_managers_c"
+          + "ount\030\003 \001(\005B\004\342A\001\003\022!\n\031specialist_manager_e"
+          + "mails\030\004 \003(\t\022(\n\032pending_data_labeling_job"
+          + "s\030\005 \003(\tB\004\342A\001\003\022 \n\030specialist_worker_email"
+          + "s\030\007 \003(\t:x\352Au\n(aiplatform.googleapis.com/"
+          + "SpecialistPool\022Iprojects/{project}/locat"
+          + "ions/{location}/specialistPools/{special"
+          + "ist_pool}B\352\001\n#com.google.cloud.aiplatfor"
+          + "m.v1beta1B\023SpecialistPoolProtoP\001ZCcloud."
+          + "google.com/go/aiplatform/apiv1beta1/aipl"
+          + "atformpb;aiplatformpb\252\002\037Google.Cloud.AIP"
+          + "latform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfor"
+          + "m\\V1beta1\352\002\"Google::Cloud::AIPlatform::V"
+          + "1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

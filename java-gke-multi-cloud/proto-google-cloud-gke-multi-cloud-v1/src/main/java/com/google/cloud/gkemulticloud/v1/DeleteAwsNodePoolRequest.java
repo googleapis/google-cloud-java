@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     return new DeleteAwsNodePoolRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AwsServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_DeleteAwsNodePoolRequest_descriptor;
@@ -78,8 +73,10 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The resource name the
    * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to delete.
+   *
    * `AwsNodePool` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -108,8 +105,10 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The resource name the
    * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to delete.
+   *
    * `AwsNodePool` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -162,6 +161,7 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
    * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource is not
    * found, the request will succeed but no action will be taken on the server
    * and a completed [Operation][google.longrunning.Operation] will be returned.
+   *
    * Useful for idempotent deletion.
    * </pre>
    *
@@ -184,7 +184,9 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
    * <pre>
    * The current ETag of the
    * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
+   *
    * Allows clients to perform deletions through optimistic concurrency control.
+   *
    * If the provided ETag does not match the current etag of the node pool,
    * the request will fail and an ABORTED error will be returned.
    * </pre>
@@ -211,7 +213,9 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
    * <pre>
    * The current ETag of the
    * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
+   *
    * Allows clients to perform deletions through optimistic concurrency control.
+   *
    * If the provided ETag does not match the current etag of the node pool,
    * the request will fail and an ABORTED error will be returned.
    * </pre>
@@ -651,8 +655,10 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The resource name the
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to delete.
+     *
      * `AwsNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -680,8 +686,10 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The resource name the
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to delete.
+     *
      * `AwsNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -709,8 +717,10 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The resource name the
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to delete.
+     *
      * `AwsNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -737,8 +747,10 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The resource name the
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to delete.
+     *
      * `AwsNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -761,8 +773,10 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The resource name the
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to delete.
+     *
      * `AwsNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -850,6 +864,7 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource is not
      * found, the request will succeed but no action will be taken on the server
      * and a completed [Operation][google.longrunning.Operation] will be returned.
+     *
      * Useful for idempotent deletion.
      * </pre>
      *
@@ -869,6 +884,7 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource is not
      * found, the request will succeed but no action will be taken on the server
      * and a completed [Operation][google.longrunning.Operation] will be returned.
+     *
      * Useful for idempotent deletion.
      * </pre>
      *
@@ -892,6 +908,7 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource is not
      * found, the request will succeed but no action will be taken on the server
      * and a completed [Operation][google.longrunning.Operation] will be returned.
+     *
      * Useful for idempotent deletion.
      * </pre>
      *
@@ -913,7 +930,9 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * <pre>
      * The current ETag of the
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided ETag does not match the current etag of the node pool,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -939,7 +958,9 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * <pre>
      * The current ETag of the
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided ETag does not match the current etag of the node pool,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -965,7 +986,9 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * <pre>
      * The current ETag of the
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided ETag does not match the current etag of the node pool,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -990,7 +1013,9 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * <pre>
      * The current ETag of the
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided ETag does not match the current etag of the node pool,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -1011,7 +1036,9 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      * <pre>
      * The current ETag of the
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided ETag does not match the current etag of the node pool,
      * the request will fail and an ABORTED error will be returned.
      * </pre>

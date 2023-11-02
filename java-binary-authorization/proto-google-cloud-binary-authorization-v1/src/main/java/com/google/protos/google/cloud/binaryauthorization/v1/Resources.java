@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -687,11 +687,6 @@ public final class Resources {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Policy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5002,11 +4997,6 @@ public final class Resources {
       return new AdmissionWhitelistPattern();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.protos.google.cloud.binaryauthorization.v1.Resources
           .internal_static_google_cloud_binaryauthorization_v1_AdmissionWhitelistPattern_descriptor;
@@ -5715,6 +5705,7 @@ public final class Resources {
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -5734,6 +5725,7 @@ public final class Resources {
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -5753,6 +5745,7 @@ public final class Resources {
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -5773,6 +5766,7 @@ public final class Resources {
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -5823,6 +5817,7 @@ public final class Resources {
    * used in a pod creation request must be attested to by one or more
    * [attestors][google.cloud.binaryauthorization.v1.Attestor], that all pod creations will be allowed, or that all
    * pod creations will be denied.
+   *
    * Images matching an [admission allowlist pattern][google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern]
    * are exempted from admission rules and will never block a pod creation.
    * </pre>
@@ -5841,7 +5836,7 @@ public final class Resources {
 
     private AdmissionRule() {
       evaluationMode_ = 0;
-      requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.emptyList();
       enforcementMode_ = 0;
     }
 
@@ -5849,11 +5844,6 @@ public final class Resources {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AdmissionRule();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6267,7 +6257,8 @@ public final class Resources {
     public static final int REQUIRE_ATTESTATIONS_BY_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList requireAttestationsBy_;
+    private com.google.protobuf.LazyStringArrayList requireAttestationsBy_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -6277,6 +6268,7 @@ public final class Resources {
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -6298,6 +6290,7 @@ public final class Resources {
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -6319,6 +6312,7 @@ public final class Resources {
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -6341,6 +6335,7 @@ public final class Resources {
      * attestor must exist before a policy can reference it.  To add an attestor
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
+     *
      * Note: this field must be non-empty when the evaluation_mode field specifies
      * REQUIRE_ATTESTATION, otherwise it must be empty.
      * </pre>
@@ -6617,6 +6612,7 @@ public final class Resources {
      * used in a pod creation request must be attested to by one or more
      * [attestors][google.cloud.binaryauthorization.v1.Attestor], that all pod creations will be allowed, or that all
      * pod creations will be denied.
+     *
      * Images matching an [admission allowlist pattern][google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern]
      * are exempted from admission rules and will never block a pod creation.
      * </pre>
@@ -6657,8 +6653,7 @@ public final class Resources {
         super.clear();
         bitField0_ = 0;
         evaluationMode_ = 0;
-        requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.emptyList();
         enforcementMode_ = 0;
         return this;
       }
@@ -6691,7 +6686,6 @@ public final class Resources {
           buildPartial() {
         com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule result =
             new com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -6699,20 +6693,15 @@ public final class Resources {
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          requireAttestationsBy_ = requireAttestationsBy_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.requireAttestationsBy_ = requireAttestationsBy_;
-      }
-
       private void buildPartial0(
           com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.evaluationMode_ = evaluationMode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          requireAttestationsBy_.makeImmutable();
+          result.requireAttestationsBy_ = requireAttestationsBy_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.enforcementMode_ = enforcementMode_;
@@ -6779,7 +6768,7 @@ public final class Resources {
         if (!other.requireAttestationsBy_.isEmpty()) {
           if (requireAttestationsBy_.isEmpty()) {
             requireAttestationsBy_ = other.requireAttestationsBy_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureRequireAttestationsByIsMutable();
             requireAttestationsBy_.addAll(other.requireAttestationsBy_);
@@ -6963,15 +6952,15 @@ public final class Resources {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList requireAttestationsBy_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList requireAttestationsBy_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureRequireAttestationsByIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!requireAttestationsBy_.isModifiable()) {
           requireAttestationsBy_ =
               new com.google.protobuf.LazyStringArrayList(requireAttestationsBy_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -6982,6 +6971,7 @@ public final class Resources {
        * attestor must exist before a policy can reference it.  To add an attestor
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
+       *
        * Note: this field must be non-empty when the evaluation_mode field specifies
        * REQUIRE_ATTESTATION, otherwise it must be empty.
        * </pre>
@@ -6993,7 +6983,8 @@ public final class Resources {
        * @return A list containing the requireAttestationsBy.
        */
       public com.google.protobuf.ProtocolStringList getRequireAttestationsByList() {
-        return requireAttestationsBy_.getUnmodifiableView();
+        requireAttestationsBy_.makeImmutable();
+        return requireAttestationsBy_;
       }
       /**
        *
@@ -7004,6 +6995,7 @@ public final class Resources {
        * attestor must exist before a policy can reference it.  To add an attestor
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
+       *
        * Note: this field must be non-empty when the evaluation_mode field specifies
        * REQUIRE_ATTESTATION, otherwise it must be empty.
        * </pre>
@@ -7026,6 +7018,7 @@ public final class Resources {
        * attestor must exist before a policy can reference it.  To add an attestor
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
+       *
        * Note: this field must be non-empty when the evaluation_mode field specifies
        * REQUIRE_ATTESTATION, otherwise it must be empty.
        * </pre>
@@ -7049,6 +7042,7 @@ public final class Resources {
        * attestor must exist before a policy can reference it.  To add an attestor
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
+       *
        * Note: this field must be non-empty when the evaluation_mode field specifies
        * REQUIRE_ATTESTATION, otherwise it must be empty.
        * </pre>
@@ -7072,6 +7066,7 @@ public final class Resources {
        * attestor must exist before a policy can reference it.  To add an attestor
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
+       *
        * Note: this field must be non-empty when the evaluation_mode field specifies
        * REQUIRE_ATTESTATION, otherwise it must be empty.
        * </pre>
@@ -7090,6 +7085,7 @@ public final class Resources {
         }
         ensureRequireAttestationsByIsMutable();
         requireAttestationsBy_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7102,6 +7098,7 @@ public final class Resources {
        * attestor must exist before a policy can reference it.  To add an attestor
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
+       *
        * Note: this field must be non-empty when the evaluation_mode field specifies
        * REQUIRE_ATTESTATION, otherwise it must be empty.
        * </pre>
@@ -7119,6 +7116,7 @@ public final class Resources {
         }
         ensureRequireAttestationsByIsMutable();
         requireAttestationsBy_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7131,6 +7129,7 @@ public final class Resources {
        * attestor must exist before a policy can reference it.  To add an attestor
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
+       *
        * Note: this field must be non-empty when the evaluation_mode field specifies
        * REQUIRE_ATTESTATION, otherwise it must be empty.
        * </pre>
@@ -7145,6 +7144,7 @@ public final class Resources {
       public Builder addAllRequireAttestationsBy(java.lang.Iterable<java.lang.String> values) {
         ensureRequireAttestationsByIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, requireAttestationsBy_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7157,6 +7157,7 @@ public final class Resources {
        * attestor must exist before a policy can reference it.  To add an attestor
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
+       *
        * Note: this field must be non-empty when the evaluation_mode field specifies
        * REQUIRE_ATTESTATION, otherwise it must be empty.
        * </pre>
@@ -7168,8 +7169,9 @@ public final class Resources {
        * @return This builder for chaining.
        */
       public Builder clearRequireAttestationsBy() {
-        requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        requireAttestationsBy_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -7182,6 +7184,7 @@ public final class Resources {
        * attestor must exist before a policy can reference it.  To add an attestor
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
+       *
        * Note: this field must be non-empty when the evaluation_mode field specifies
        * REQUIRE_ATTESTATION, otherwise it must be empty.
        * </pre>
@@ -7200,6 +7203,7 @@ public final class Resources {
         checkByteStringIsUtf8(value);
         ensureRequireAttestationsByIsMutable();
         requireAttestationsBy_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7527,7 +7531,7 @@ public final class Resources {
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
-    public com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor.AttestorTypeCase
+    com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor.AttestorTypeCase
         getAttestorTypeCase();
   }
   /**
@@ -7562,11 +7566,6 @@ public final class Resources {
       return new Attestor();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.protos.google.cloud.binaryauthorization.v1.Resources
           .internal_static_google_cloud_binaryauthorization_v1_Attestor_descriptor;
@@ -7584,6 +7583,8 @@ public final class Resources {
     }
 
     private int attestorTypeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object attestorType_;
 
     public enum AttestorTypeCase
@@ -9124,6 +9125,7 @@ public final class Resources {
      * Required. The Grafeas resource name of a Attestation.Authority Note,
      * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
      * not be updated.
+     *
      * An attestation by this attestor is stored as a Grafeas
      * Attestation.Authority Occurrence that names a container image and that
      * links to this Note. Grafeas is an external dependency.
@@ -9141,6 +9143,7 @@ public final class Resources {
      * Required. The Grafeas resource name of a Attestation.Authority Note,
      * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
      * not be updated.
+     *
      * An attestation by this attestor is stored as a Grafeas
      * Attestation.Authority Occurrence that names a container image and that
      * links to this Note. Grafeas is an external dependency.
@@ -9158,9 +9161,11 @@ public final class Resources {
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -9178,9 +9183,11 @@ public final class Resources {
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -9197,9 +9204,11 @@ public final class Resources {
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -9215,9 +9224,11 @@ public final class Resources {
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -9237,9 +9248,11 @@ public final class Resources {
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -9260,6 +9273,7 @@ public final class Resources {
      * Analysis. Attestor administrators must grant this service account the
      * IAM role needed to read attestations from the [note_reference][Note] in
      * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     *
      * This email address is fixed for the lifetime of the Attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
@@ -9281,6 +9295,7 @@ public final class Resources {
      * Analysis. Attestor administrators must grant this service account the
      * IAM role needed to read attestations from the [note_reference][Note] in
      * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     *
      * This email address is fixed for the lifetime of the Attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
@@ -9326,11 +9341,6 @@ public final class Resources {
       return new UserOwnedGrafeasNote();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.protos.google.cloud.binaryauthorization.v1.Resources
           .internal_static_google_cloud_binaryauthorization_v1_UserOwnedGrafeasNote_descriptor;
@@ -9359,6 +9369,7 @@ public final class Resources {
      * Required. The Grafeas resource name of a Attestation.Authority Note,
      * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
      * not be updated.
+     *
      * An attestation by this attestor is stored as a Grafeas
      * Attestation.Authority Occurrence that names a container image and that
      * links to this Note. Grafeas is an external dependency.
@@ -9387,6 +9398,7 @@ public final class Resources {
      * Required. The Grafeas resource name of a Attestation.Authority Note,
      * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
      * not be updated.
+     *
      * An attestation by this attestor is stored as a Grafeas
      * Attestation.Authority Occurrence that names a container image and that
      * links to this Note. Grafeas is an external dependency.
@@ -9421,9 +9433,11 @@ public final class Resources {
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -9444,9 +9458,11 @@ public final class Resources {
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -9469,9 +9485,11 @@ public final class Resources {
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -9490,9 +9508,11 @@ public final class Resources {
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -9512,9 +9532,11 @@ public final class Resources {
      * <pre>
      * Optional. Public keys that verify attestations signed by this
      * attestor.  This field may be updated.
+     *
      * If this field is non-empty, one of the specified public keys must
      * verify that an attestation was signed by this attestor for the
      * image specified in the admission request.
+     *
      * If this field is empty, this attestor always returns that no
      * valid attestations exist.
      * </pre>
@@ -9543,6 +9565,7 @@ public final class Resources {
      * Analysis. Attestor administrators must grant this service account the
      * IAM role needed to read attestations from the [note_reference][Note] in
      * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     *
      * This email address is fixed for the lifetime of the Attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
@@ -9575,6 +9598,7 @@ public final class Resources {
      * Analysis. Attestor administrators must grant this service account the
      * IAM role needed to read attestations from the [note_reference][Note] in
      * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     *
      * This email address is fixed for the lifetime of the Attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
@@ -10101,6 +10125,7 @@ public final class Resources {
        * Required. The Grafeas resource name of a Attestation.Authority Note,
        * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
        * not be updated.
+       *
        * An attestation by this attestor is stored as a Grafeas
        * Attestation.Authority Occurrence that names a container image and that
        * links to this Note. Grafeas is an external dependency.
@@ -10128,6 +10153,7 @@ public final class Resources {
        * Required. The Grafeas resource name of a Attestation.Authority Note,
        * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
        * not be updated.
+       *
        * An attestation by this attestor is stored as a Grafeas
        * Attestation.Authority Occurrence that names a container image and that
        * links to this Note. Grafeas is an external dependency.
@@ -10155,6 +10181,7 @@ public final class Resources {
        * Required. The Grafeas resource name of a Attestation.Authority Note,
        * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
        * not be updated.
+       *
        * An attestation by this attestor is stored as a Grafeas
        * Attestation.Authority Occurrence that names a container image and that
        * links to this Note. Grafeas is an external dependency.
@@ -10181,6 +10208,7 @@ public final class Resources {
        * Required. The Grafeas resource name of a Attestation.Authority Note,
        * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
        * not be updated.
+       *
        * An attestation by this attestor is stored as a Grafeas
        * Attestation.Authority Occurrence that names a container image and that
        * links to this Note. Grafeas is an external dependency.
@@ -10203,6 +10231,7 @@ public final class Resources {
        * Required. The Grafeas resource name of a Attestation.Authority Note,
        * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
        * not be updated.
+       *
        * An attestation by this attestor is stored as a Grafeas
        * Attestation.Authority Occurrence that names a container image and that
        * links to this Note. Grafeas is an external dependency.
@@ -10252,9 +10281,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10278,9 +10309,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10302,9 +10335,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10327,9 +10362,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10359,9 +10396,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10389,9 +10428,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10420,9 +10461,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10452,9 +10495,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10481,9 +10526,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10511,9 +10558,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10543,9 +10592,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10570,9 +10621,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10597,9 +10650,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10619,9 +10674,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10645,9 +10702,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10673,9 +10732,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10698,9 +10759,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10724,9 +10787,11 @@ public final class Resources {
        * <pre>
        * Optional. Public keys that verify attestations signed by this
        * attestor.  This field may be updated.
+       *
        * If this field is non-empty, one of the specified public keys must
        * verify that an attestation was signed by this attestor for the
        * image specified in the admission request.
+       *
        * If this field is empty, this attestor always returns that no
        * valid attestations exist.
        * </pre>
@@ -10773,6 +10838,7 @@ public final class Resources {
        * Analysis. Attestor administrators must grant this service account the
        * IAM role needed to read attestations from the [note_reference][Note] in
        * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+       *
        * This email address is fixed for the lifetime of the Attestor, but callers
        * should not make any other assumptions about the service account email;
        * future versions may use an email based on a different naming pattern.
@@ -10804,6 +10870,7 @@ public final class Resources {
        * Analysis. Attestor administrators must grant this service account the
        * IAM role needed to read attestations from the [note_reference][Note] in
        * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+       *
        * This email address is fixed for the lifetime of the Attestor, but callers
        * should not make any other assumptions about the service account email;
        * future versions may use an email based on a different naming pattern.
@@ -10835,6 +10902,7 @@ public final class Resources {
        * Analysis. Attestor administrators must grant this service account the
        * IAM role needed to read attestations from the [note_reference][Note] in
        * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+       *
        * This email address is fixed for the lifetime of the Attestor, but callers
        * should not make any other assumptions about the service account email;
        * future versions may use an email based on a different naming pattern.
@@ -10865,6 +10933,7 @@ public final class Resources {
        * Analysis. Attestor administrators must grant this service account the
        * IAM role needed to read attestations from the [note_reference][Note] in
        * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+       *
        * This email address is fixed for the lifetime of the Attestor, but callers
        * should not make any other assumptions about the service account email;
        * future versions may use an email based on a different naming pattern.
@@ -10891,6 +10960,7 @@ public final class Resources {
        * Analysis. Attestor administrators must grant this service account the
        * IAM role needed to read attestations from the [note_reference][Note] in
        * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+       *
        * This email address is fixed for the lifetime of the Attestor, but callers
        * should not make any other assumptions about the service account email;
        * future versions may use an email based on a different naming pattern.
@@ -11086,11 +11156,6 @@ public final class Resources {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PkixPublicKey();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -12505,6 +12570,7 @@ public final class Resources {
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -12521,6 +12587,7 @@ public final class Resources {
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -12538,6 +12605,7 @@ public final class Resources {
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -12549,8 +12617,7 @@ public final class Resources {
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.PkixPublicKeyOrBuilder
         getPkixPublicKeyOrBuilder();
 
-    public com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorPublicKey
-            .PublicKeyCase
+    com.google.protos.google.cloud.binaryauthorization.v1.Resources.AttestorPublicKey.PublicKeyCase
         getPublicKeyCase();
   }
   /**
@@ -12584,11 +12651,6 @@ public final class Resources {
       return new AttestorPublicKey();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.protos.google.cloud.binaryauthorization.v1.Resources
           .internal_static_google_cloud_binaryauthorization_v1_AttestorPublicKey_descriptor;
@@ -12607,6 +12669,8 @@ public final class Resources {
     }
 
     private int publicKeyCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object publicKey_;
 
     public enum PublicKeyCase
@@ -12864,6 +12928,7 @@ public final class Resources {
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -12883,6 +12948,7 @@ public final class Resources {
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -12908,6 +12974,7 @@ public final class Resources {
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -13858,6 +13925,7 @@ public final class Resources {
        *
        * <pre>
        * A raw PKIX SubjectPublicKeyInfo format public key.
+       *
        * NOTE: `id` may be explicitly provided by the caller when using this
        * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
        * blank, a default one will be computed based on the digest of the DER
@@ -13877,6 +13945,7 @@ public final class Resources {
        *
        * <pre>
        * A raw PKIX SubjectPublicKeyInfo format public key.
+       *
        * NOTE: `id` may be explicitly provided by the caller when using this
        * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
        * blank, a default one will be computed based on the digest of the DER
@@ -13910,6 +13979,7 @@ public final class Resources {
        *
        * <pre>
        * A raw PKIX SubjectPublicKeyInfo format public key.
+       *
        * NOTE: `id` may be explicitly provided by the caller when using this
        * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
        * blank, a default one will be computed based on the digest of the DER
@@ -13937,6 +14007,7 @@ public final class Resources {
        *
        * <pre>
        * A raw PKIX SubjectPublicKeyInfo format public key.
+       *
        * NOTE: `id` may be explicitly provided by the caller when using this
        * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
        * blank, a default one will be computed based on the digest of the DER
@@ -13962,6 +14033,7 @@ public final class Resources {
        *
        * <pre>
        * A raw PKIX SubjectPublicKeyInfo format public key.
+       *
        * NOTE: `id` may be explicitly provided by the caller when using this
        * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
        * blank, a default one will be computed based on the digest of the DER
@@ -14004,6 +14076,7 @@ public final class Resources {
        *
        * <pre>
        * A raw PKIX SubjectPublicKeyInfo format public key.
+       *
        * NOTE: `id` may be explicitly provided by the caller when using this
        * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
        * blank, a default one will be computed based on the digest of the DER
@@ -14033,6 +14106,7 @@ public final class Resources {
        *
        * <pre>
        * A raw PKIX SubjectPublicKeyInfo format public key.
+       *
        * NOTE: `id` may be explicitly provided by the caller when using this
        * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
        * blank, a default one will be computed based on the digest of the DER
@@ -14050,6 +14124,7 @@ public final class Resources {
        *
        * <pre>
        * A raw PKIX SubjectPublicKeyInfo format public key.
+       *
        * NOTE: `id` may be explicitly provided by the caller when using this
        * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
        * blank, a default one will be computed based on the digest of the DER
@@ -14077,6 +14152,7 @@ public final class Resources {
        *
        * <pre>
        * A raw PKIX SubjectPublicKeyInfo format public key.
+       *
        * NOTE: `id` may be explicitly provided by the caller when using this
        * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
        * blank, a default one will be computed based on the digest of the DER
@@ -14241,100 +14317,101 @@ public final class Resources {
           + "sources.proto\022#google.cloud.binaryauthor"
           + "ization.v1\032\037google/api/field_behavior.pr"
           + "oto\032\031google/api/resource.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\"\370\014\n\006Policy\022\021\n\004na"
-          + "me\030\001 \001(\tB\003\340A\003\022\030\n\013description\030\006 \001(\tB\003\340A\001\022"
-          + "r\n\035global_policy_evaluation_mode\030\007 \001(\0162F"
-          + ".google.cloud.binaryauthorization.v1.Pol"
-          + "icy.GlobalPolicyEvaluationModeB\003\340A\001\022i\n\034a"
-          + "dmission_whitelist_patterns\030\002 \003(\0132>.goog"
-          + "le.cloud.binaryauthorization.v1.Admissio"
-          + "nWhitelistPatternB\003\340A\001\022l\n\027cluster_admiss"
-          + "ion_rules\030\003 \003(\0132F.google.cloud.binaryaut"
-          + "horization.v1.Policy.ClusterAdmissionRul"
-          + "esEntryB\003\340A\001\022\205\001\n$kubernetes_namespace_ad"
-          + "mission_rules\030\n \003(\0132R.google.cloud.binar"
-          + "yauthorization.v1.Policy.KubernetesNames"
-          + "paceAdmissionRulesEntryB\003\340A\001\022\220\001\n*kuberne"
-          + "tes_service_account_admission_rules\030\010 \003("
-          + "\0132W.google.cloud.binaryauthorization.v1."
-          + "Policy.KubernetesServiceAccountAdmission"
-          + "RulesEntryB\003\340A\001\022\210\001\n&istio_service_identi"
-          + "ty_admission_rules\030\t \003(\0132S.google.cloud."
-          + "binaryauthorization.v1.Policy.IstioServi"
-          + "ceIdentityAdmissionRulesEntryB\003\340A\001\022W\n\026de"
-          + "fault_admission_rule\030\004 \001(\01322.google.clou"
-          + "d.binaryauthorization.v1.AdmissionRuleB\003"
-          + "\340A\002\0224\n\013update_time\030\005 \001(\0132\032.google.protob"
-          + "uf.TimestampB\003\340A\003\032p\n\032ClusterAdmissionRul"
-          + "esEntry\022\013\n\003key\030\001 \001(\t\022A\n\005value\030\002 \001(\01322.go"
-          + "ogle.cloud.binaryauthorization.v1.Admiss"
-          + "ionRule:\0028\001\032|\n&KubernetesNamespaceAdmiss"
-          + "ionRulesEntry\022\013\n\003key\030\001 \001(\t\022A\n\005value\030\002 \001("
-          + "\01322.google.cloud.binaryauthorization.v1."
-          + "AdmissionRule:\0028\001\032\201\001\n+KubernetesServiceA"
-          + "ccountAdmissionRulesEntry\022\013\n\003key\030\001 \001(\t\022A"
-          + "\n\005value\030\002 \001(\01322.google.cloud.binaryautho"
-          + "rization.v1.AdmissionRule:\0028\001\032}\n\'IstioSe"
-          + "rviceIdentityAdmissionRulesEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022A\n\005value\030\002 \001(\01322.google.cloud.bina"
-          + "ryauthorization.v1.AdmissionRule:\0028\001\"d\n\032"
-          + "GlobalPolicyEvaluationMode\022-\n)GLOBAL_POL"
-          + "ICY_EVALUATION_MODE_UNSPECIFIED\020\000\022\n\n\006ENA"
-          + "BLE\020\001\022\013\n\007DISABLE\020\002:f\352Ac\n)binaryauthoriza"
-          + "tion.googleapis.com/Policy\022\031projects/{pr"
-          + "oject}/policy\022\033locations/{location}/poli"
-          + "cy\"1\n\031AdmissionWhitelistPattern\022\024\n\014name_"
-          + "pattern\030\001 \001(\t\"\332\003\n\rAdmissionRule\022_\n\017evalu"
-          + "ation_mode\030\001 \001(\0162A.google.cloud.binaryau"
-          + "thorization.v1.AdmissionRule.EvaluationM"
-          + "odeB\003\340A\002\022$\n\027require_attestations_by\030\002 \003("
-          + "\tB\003\340A\001\022a\n\020enforcement_mode\030\003 \001(\0162B.googl"
-          + "e.cloud.binaryauthorization.v1.Admission"
-          + "Rule.EnforcementModeB\003\340A\002\"m\n\016EvaluationM"
-          + "ode\022\037\n\033EVALUATION_MODE_UNSPECIFIED\020\000\022\020\n\014"
-          + "ALWAYS_ALLOW\020\001\022\027\n\023REQUIRE_ATTESTATION\020\002\022"
-          + "\017\n\013ALWAYS_DENY\020\003\"p\n\017EnforcementMode\022 \n\034E"
-          + "NFORCEMENT_MODE_UNSPECIFIED\020\000\022 \n\034ENFORCE"
-          + "D_BLOCK_AND_AUDIT_LOG\020\001\022\031\n\025DRYRUN_AUDIT_"
-          + "LOG_ONLY\020\002\"\267\002\n\010Attestor\022\021\n\004name\030\001 \001(\tB\003\340"
-          + "A\002\022\030\n\013description\030\006 \001(\tB\003\340A\001\022\\\n\027user_own"
-          + "ed_grafeas_note\030\003 \001(\01329.google.cloud.bin"
-          + "aryauthorization.v1.UserOwnedGrafeasNote"
-          + "H\000\0224\n\013update_time\030\004 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003:Y\352AV\n+binaryauthorizati"
-          + "on.googleapis.com/Attestor\022\'projects/{pr"
-          + "oject}/attestors/{attestor}B\017\n\rattestor_"
-          + "type\"\264\001\n\024UserOwnedGrafeasNote\022\033\n\016note_re"
-          + "ference\030\001 \001(\tB\003\340A\002\022P\n\013public_keys\030\002 \003(\0132"
-          + "6.google.cloud.binaryauthorization.v1.At"
-          + "testorPublicKeyB\003\340A\001\022-\n delegation_servi"
-          + "ce_account_email\030\003 \001(\tB\003\340A\003\"\277\004\n\rPkixPubl"
-          + "icKey\022\026\n\016public_key_pem\030\001 \001(\t\022b\n\023signatu"
-          + "re_algorithm\030\002 \001(\0162E.google.cloud.binary"
-          + "authorization.v1.PkixPublicKey.Signature"
-          + "Algorithm\"\261\003\n\022SignatureAlgorithm\022#\n\037SIGN"
-          + "ATURE_ALGORITHM_UNSPECIFIED\020\000\022\027\n\023RSA_PSS"
-          + "_2048_SHA256\020\001\022\027\n\023RSA_PSS_3072_SHA256\020\002\022"
-          + "\027\n\023RSA_PSS_4096_SHA256\020\003\022\027\n\023RSA_PSS_4096"
-          + "_SHA512\020\004\022\036\n\032RSA_SIGN_PKCS1_2048_SHA256\020"
-          + "\005\022\036\n\032RSA_SIGN_PKCS1_3072_SHA256\020\006\022\036\n\032RSA"
-          + "_SIGN_PKCS1_4096_SHA256\020\007\022\036\n\032RSA_SIGN_PK"
-          + "CS1_4096_SHA512\020\010\022\025\n\021ECDSA_P256_SHA256\020\t"
-          + "\022\027\n\023EC_SIGN_P256_SHA256\020\t\022\025\n\021ECDSA_P384_"
-          + "SHA384\020\n\022\027\n\023EC_SIGN_P384_SHA384\020\n\022\025\n\021ECD"
-          + "SA_P521_SHA512\020\013\022\027\n\023EC_SIGN_P521_SHA512\020"
-          + "\013\032\002\020\001\"\272\001\n\021AttestorPublicKey\022\024\n\007comment\030\001"
-          + " \001(\tB\003\340A\001\022\n\n\002id\030\002 \001(\t\022&\n\034ascii_armored_p"
-          + "gp_public_key\030\003 \001(\tH\000\022M\n\017pkix_public_key"
-          + "\030\005 \001(\01322.google.cloud.binaryauthorizatio"
-          + "n.v1.PkixPublicKeyH\000B\014\n\npublic_keyB\214\002\n5c"
-          + "om.google.protos.google.cloud.binaryauth"
-          + "orization.v1P\000ZYcloud.google.com/go/bina"
-          + "ryauthorization/apiv1/binaryauthorizatio"
-          + "npb;binaryauthorizationpb\370\001\001\252\002#Google.Cl"
-          + "oud.BinaryAuthorization.V1\312\002#Google\\Clou"
-          + "d\\BinaryAuthorization\\V1\352\002&Google::Cloud"
-          + "::BinaryAuthorization::V1b\006proto3"
+          + "rotobuf/timestamp.proto\"\202\r\n\006Policy\022\022\n\004na"
+          + "me\030\001 \001(\tB\004\342A\001\003\022\031\n\013description\030\006 \001(\tB\004\342A\001"
+          + "\001\022s\n\035global_policy_evaluation_mode\030\007 \001(\016"
+          + "2F.google.cloud.binaryauthorization.v1.P"
+          + "olicy.GlobalPolicyEvaluationModeB\004\342A\001\001\022j"
+          + "\n\034admission_whitelist_patterns\030\002 \003(\0132>.g"
+          + "oogle.cloud.binaryauthorization.v1.Admis"
+          + "sionWhitelistPatternB\004\342A\001\001\022m\n\027cluster_ad"
+          + "mission_rules\030\003 \003(\0132F.google.cloud.binar"
+          + "yauthorization.v1.Policy.ClusterAdmissio"
+          + "nRulesEntryB\004\342A\001\001\022\206\001\n$kubernetes_namespa"
+          + "ce_admission_rules\030\n \003(\0132R.google.cloud."
+          + "binaryauthorization.v1.Policy.Kubernetes"
+          + "NamespaceAdmissionRulesEntryB\004\342A\001\001\022\221\001\n*k"
+          + "ubernetes_service_account_admission_rule"
+          + "s\030\010 \003(\0132W.google.cloud.binaryauthorizati"
+          + "on.v1.Policy.KubernetesServiceAccountAdm"
+          + "issionRulesEntryB\004\342A\001\001\022\211\001\n&istio_service"
+          + "_identity_admission_rules\030\t \003(\0132S.google"
+          + ".cloud.binaryauthorization.v1.Policy.Ist"
+          + "ioServiceIdentityAdmissionRulesEntryB\004\342A"
+          + "\001\001\022X\n\026default_admission_rule\030\004 \001(\01322.goo"
+          + "gle.cloud.binaryauthorization.v1.Admissi"
+          + "onRuleB\004\342A\001\002\0225\n\013update_time\030\005 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\004\342A\001\003\032p\n\032ClusterAd"
+          + "missionRulesEntry\022\013\n\003key\030\001 \001(\t\022A\n\005value\030"
+          + "\002 \001(\01322.google.cloud.binaryauthorization"
+          + ".v1.AdmissionRule:\0028\001\032|\n&KubernetesNames"
+          + "paceAdmissionRulesEntry\022\013\n\003key\030\001 \001(\t\022A\n\005"
+          + "value\030\002 \001(\01322.google.cloud.binaryauthori"
+          + "zation.v1.AdmissionRule:\0028\001\032\201\001\n+Kubernet"
+          + "esServiceAccountAdmissionRulesEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022A\n\005value\030\002 \001(\01322.google.cloud.b"
+          + "inaryauthorization.v1.AdmissionRule:\0028\001\032"
+          + "}\n\'IstioServiceIdentityAdmissionRulesEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022A\n\005value\030\002 \001(\01322.google."
+          + "cloud.binaryauthorization.v1.AdmissionRu"
+          + "le:\0028\001\"d\n\032GlobalPolicyEvaluationMode\022-\n)"
+          + "GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIE"
+          + "D\020\000\022\n\n\006ENABLE\020\001\022\013\n\007DISABLE\020\002:f\352Ac\n)binar"
+          + "yauthorization.googleapis.com/Policy\022\031pr"
+          + "ojects/{project}/policy\022\033locations/{loca"
+          + "tion}/policy\"1\n\031AdmissionWhitelistPatter"
+          + "n\022\024\n\014name_pattern\030\001 \001(\t\"\335\003\n\rAdmissionRul"
+          + "e\022`\n\017evaluation_mode\030\001 \001(\0162A.google.clou"
+          + "d.binaryauthorization.v1.AdmissionRule.E"
+          + "valuationModeB\004\342A\001\002\022%\n\027require_attestati"
+          + "ons_by\030\002 \003(\tB\004\342A\001\001\022b\n\020enforcement_mode\030\003"
+          + " \001(\0162B.google.cloud.binaryauthorization."
+          + "v1.AdmissionRule.EnforcementModeB\004\342A\001\002\"m"
+          + "\n\016EvaluationMode\022\037\n\033EVALUATION_MODE_UNSP"
+          + "ECIFIED\020\000\022\020\n\014ALWAYS_ALLOW\020\001\022\027\n\023REQUIRE_A"
+          + "TTESTATION\020\002\022\017\n\013ALWAYS_DENY\020\003\"p\n\017Enforce"
+          + "mentMode\022 \n\034ENFORCEMENT_MODE_UNSPECIFIED"
+          + "\020\000\022 \n\034ENFORCED_BLOCK_AND_AUDIT_LOG\020\001\022\031\n\025"
+          + "DRYRUN_AUDIT_LOG_ONLY\020\002\"\272\002\n\010Attestor\022\022\n\004"
+          + "name\030\001 \001(\tB\004\342A\001\002\022\031\n\013description\030\006 \001(\tB\004\342"
+          + "A\001\001\022\\\n\027user_owned_grafeas_note\030\003 \001(\01329.g"
+          + "oogle.cloud.binaryauthorization.v1.UserO"
+          + "wnedGrafeasNoteH\000\0225\n\013update_time\030\004 \001(\0132\032"
+          + ".google.protobuf.TimestampB\004\342A\001\003:Y\352AV\n+b"
+          + "inaryauthorization.googleapis.com/Attest"
+          + "or\022\'projects/{project}/attestors/{attest"
+          + "or}B\017\n\rattestor_type\"\267\001\n\024UserOwnedGrafea"
+          + "sNote\022\034\n\016note_reference\030\001 \001(\tB\004\342A\001\002\022Q\n\013p"
+          + "ublic_keys\030\002 \003(\01326.google.cloud.binaryau"
+          + "thorization.v1.AttestorPublicKeyB\004\342A\001\001\022."
+          + "\n delegation_service_account_email\030\003 \001(\t"
+          + "B\004\342A\001\003\"\277\004\n\rPkixPublicKey\022\026\n\016public_key_p"
+          + "em\030\001 \001(\t\022b\n\023signature_algorithm\030\002 \001(\0162E."
+          + "google.cloud.binaryauthorization.v1.Pkix"
+          + "PublicKey.SignatureAlgorithm\"\261\003\n\022Signatu"
+          + "reAlgorithm\022#\n\037SIGNATURE_ALGORITHM_UNSPE"
+          + "CIFIED\020\000\022\027\n\023RSA_PSS_2048_SHA256\020\001\022\027\n\023RSA"
+          + "_PSS_3072_SHA256\020\002\022\027\n\023RSA_PSS_4096_SHA25"
+          + "6\020\003\022\027\n\023RSA_PSS_4096_SHA512\020\004\022\036\n\032RSA_SIGN"
+          + "_PKCS1_2048_SHA256\020\005\022\036\n\032RSA_SIGN_PKCS1_3"
+          + "072_SHA256\020\006\022\036\n\032RSA_SIGN_PKCS1_4096_SHA2"
+          + "56\020\007\022\036\n\032RSA_SIGN_PKCS1_4096_SHA512\020\010\022\025\n\021"
+          + "ECDSA_P256_SHA256\020\t\022\027\n\023EC_SIGN_P256_SHA2"
+          + "56\020\t\022\025\n\021ECDSA_P384_SHA384\020\n\022\027\n\023EC_SIGN_P"
+          + "384_SHA384\020\n\022\025\n\021ECDSA_P521_SHA512\020\013\022\027\n\023E"
+          + "C_SIGN_P521_SHA512\020\013\032\002\020\001\"\273\001\n\021AttestorPub"
+          + "licKey\022\025\n\007comment\030\001 \001(\tB\004\342A\001\001\022\n\n\002id\030\002 \001("
+          + "\t\022&\n\034ascii_armored_pgp_public_key\030\003 \001(\tH"
+          + "\000\022M\n\017pkix_public_key\030\005 \001(\01322.google.clou"
+          + "d.binaryauthorization.v1.PkixPublicKeyH\000"
+          + "B\014\n\npublic_keyB\214\002\n5com.google.protos.goo"
+          + "gle.cloud.binaryauthorization.v1P\000ZYclou"
+          + "d.google.com/go/binaryauthorization/apiv"
+          + "1/binaryauthorizationpb;binaryauthorizat"
+          + "ionpb\370\001\001\252\002#Google.Cloud.BinaryAuthorizat"
+          + "ion.V1\312\002#Google\\Cloud\\BinaryAuthorizatio"
+          + "n\\V1\352\002&Google::Cloud::BinaryAuthorizatio"
+          + "n::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

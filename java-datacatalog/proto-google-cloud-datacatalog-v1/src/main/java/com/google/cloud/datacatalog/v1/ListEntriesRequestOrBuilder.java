@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ListEntriesRequestOrBuilder
    *
    * <pre>
    * Required. The name of the entry group that contains the entries to list.
+   *
    * Can be provided in URL format.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface ListEntriesRequestOrBuilder
    *
    * <pre>
    * Required. The name of the entry group that contains the entries to list.
+   *
    * Can be provided in URL format.
    * </pre>
    *
@@ -101,6 +103,7 @@ public interface ListEntriesRequestOrBuilder
    * <pre>
    * The fields to return for each entry. If empty or omitted, all
    * fields are returned.
+   *
    * For example, to return a list of entries with only the `name` field,
    * set `read_mask` to only one path with the `name` value.
    * </pre>
@@ -116,6 +119,7 @@ public interface ListEntriesRequestOrBuilder
    * <pre>
    * The fields to return for each entry. If empty or omitted, all
    * fields are returned.
+   *
    * For example, to return a list of entries with only the `name` field,
    * set `read_mask` to only one path with the `name` value.
    * </pre>
@@ -131,6 +135,7 @@ public interface ListEntriesRequestOrBuilder
    * <pre>
    * The fields to return for each entry. If empty or omitted, all
    * fields are returned.
+   *
    * For example, to return a list of entries with only the `name` field,
    * set `read_mask` to only one path with the `name` value.
    * </pre>

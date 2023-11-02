@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
   }
 
   private PrivateServiceConnectConfig() {
-    projectAllowlist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    projectAllowlist_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PrivateServiceConnectConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -88,7 +83,8 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
   public static final int PROJECT_ALLOWLIST_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList projectAllowlist_;
+  private com.google.protobuf.LazyStringArrayList projectAllowlist_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -369,8 +365,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       super.clear();
       bitField0_ = 0;
       enablePrivateServiceConnect_ = false;
-      projectAllowlist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      projectAllowlist_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -398,7 +393,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig buildPartial() {
       com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig result =
           new com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -406,19 +400,14 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        projectAllowlist_ = projectAllowlist_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.projectAllowlist_ = projectAllowlist_;
-    }
-
     private void buildPartial0(com.google.cloud.aiplatform.v1.PrivateServiceConnectConfig result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enablePrivateServiceConnect_ = enablePrivateServiceConnect_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        projectAllowlist_.makeImmutable();
+        result.projectAllowlist_ = projectAllowlist_;
       }
     }
 
@@ -474,7 +463,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       if (!other.projectAllowlist_.isEmpty()) {
         if (projectAllowlist_.isEmpty()) {
           projectAllowlist_ = other.projectAllowlist_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureProjectAllowlistIsMutable();
           projectAllowlist_.addAll(other.projectAllowlist_);
@@ -595,14 +584,14 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       return this;
     }
 
-    private com.google.protobuf.LazyStringList projectAllowlist_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList projectAllowlist_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureProjectAllowlistIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!projectAllowlist_.isModifiable()) {
         projectAllowlist_ = new com.google.protobuf.LazyStringArrayList(projectAllowlist_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -617,7 +606,8 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
      * @return A list containing the projectAllowlist.
      */
     public com.google.protobuf.ProtocolStringList getProjectAllowlistList() {
-      return projectAllowlist_.getUnmodifiableView();
+      projectAllowlist_.makeImmutable();
+      return projectAllowlist_;
     }
     /**
      *
@@ -686,6 +676,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       }
       ensureProjectAllowlistIsMutable();
       projectAllowlist_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -708,6 +699,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       }
       ensureProjectAllowlistIsMutable();
       projectAllowlist_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -727,6 +719,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     public Builder addAllProjectAllowlist(java.lang.Iterable<java.lang.String> values) {
       ensureProjectAllowlistIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, projectAllowlist_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -743,8 +736,9 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearProjectAllowlist() {
-      projectAllowlist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      projectAllowlist_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -768,6 +762,7 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensureProjectAllowlistIsMutable();
       projectAllowlist_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

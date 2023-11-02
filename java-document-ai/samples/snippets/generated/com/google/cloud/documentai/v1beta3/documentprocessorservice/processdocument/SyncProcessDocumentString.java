@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 package com.google.cloud.documentai.v1beta3.samples;
 
 // [START documentai_v1beta3_generated_DocumentProcessorService_ProcessDocument_String_sync]
+import com.google.cloud.documentai.v1beta3.DatasetName;
 import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient;
-import com.google.cloud.documentai.v1beta3.EvaluationName;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
 
 public class SyncProcessDocumentString {
@@ -35,10 +35,7 @@ public class SyncProcessDocumentString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DocumentProcessorServiceClient documentProcessorServiceClient =
         DocumentProcessorServiceClient.create()) {
-      String name =
-          EvaluationName.of(
-                  "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]", "[EVALUATION]")
-              .toString();
+      String name = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
       ProcessResponse response = documentProcessorServiceClient.processDocument(name);
     }
   }

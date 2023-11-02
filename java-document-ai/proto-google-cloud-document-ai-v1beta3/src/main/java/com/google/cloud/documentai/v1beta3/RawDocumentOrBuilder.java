@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,4 +62,37 @@ public interface RawDocumentOrBuilder
    * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the document, it supports all Unicode characters except
+   * the following:
+   * `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `&#92;"`, `,`
+   * `~`, `=` and `:` are reserved.
+   * If not specified, a default ID is generated.
+   * </pre>
+   *
+   * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the document, it supports all Unicode characters except
+   * the following:
+   * `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `&#92;"`, `,`
+   * `~`, `=` and `:` are reserved.
+   * If not specified, a default ID is generated.
+   * </pre>
+   *
+   * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
 }

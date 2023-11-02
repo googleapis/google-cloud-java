@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -256,9 +256,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the task was created by the job
-   * controller. It is not guaranteed to be set in happens-before order across
-   * separate operations.
+   * Output only. Represents time when the task was created by the system.
+   * It is not guaranteed to be set in happens-before order across separate
+   * operations.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -271,9 +271,9 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the task was created by the job
-   * controller. It is not guaranteed to be set in happens-before order across
-   * separate operations.
+   * Output only. Represents time when the task was created by the system.
+   * It is not guaranteed to be set in happens-before order across separate
+   * operations.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -286,15 +286,62 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. Represents time when the task was created by the job
-   * controller. It is not guaranteed to be set in happens-before order across
-   * separate operations.
+   * Output only. Represents time when the task was created by the system.
+   * It is not guaranteed to be set in happens-before order across separate
+   * operations.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents time when the task was scheduled to run by the
+   * system. It is not guaranteed to be set in happens-before order across
+   * separate operations.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp scheduled_time = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the scheduledTime field is set.
+   */
+  boolean hasScheduledTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents time when the task was scheduled to run by the
+   * system. It is not guaranteed to be set in happens-before order across
+   * separate operations.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp scheduled_time = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The scheduledTime.
+   */
+  com.google.protobuf.Timestamp getScheduledTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents time when the task was scheduled to run by the
+   * system. It is not guaranteed to be set in happens-before order across
+   * separate operations.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp scheduled_time = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getScheduledTimeOrBuilder();
 
   /**
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,13 +60,16 @@ public interface ListDatasetsRequestOrBuilder
    * <pre>
    * An expression for filtering the results of the request. For field names
    * both snake_case and camelCase are supported.
+   *
    *   * `display_name`: supports = and !=
    *   * `metadata_schema_uri`: supports = and !=
    *   * `labels` supports general map functions that is:
    *     * `labels.key=value` - key:value equality
    *     * `labels.key:* or labels:key - key existence
    *     * A key including a space must be quoted. `labels."a key"`.
+   *
    * Some examples:
+   *
    *   * `displayName="myDisplayName"`
    *   * `labels.myKey="myValue"`
    * </pre>
@@ -82,13 +85,16 @@ public interface ListDatasetsRequestOrBuilder
    * <pre>
    * An expression for filtering the results of the request. For field names
    * both snake_case and camelCase are supported.
+   *
    *   * `display_name`: supports = and !=
    *   * `metadata_schema_uri`: supports = and !=
    *   * `labels` supports general map functions that is:
    *     * `labels.key=value` - key:value equality
    *     * `labels.key:* or labels:key - key existence
    *     * A key including a space must be quoted. `labels."a key"`.
+   *
    * Some examples:
+   *
    *   * `displayName="myDisplayName"`
    *   * `labels.myKey="myValue"`
    * </pre>
@@ -179,6 +185,7 @@ public interface ListDatasetsRequestOrBuilder
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
    * Supported fields:
+   *
    *   * `display_name`
    *   * `create_time`
    *   * `update_time`
@@ -196,6 +203,7 @@ public interface ListDatasetsRequestOrBuilder
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
    * Supported fields:
+   *
    *   * `display_name`
    *   * `create_time`
    *   * `update_time`

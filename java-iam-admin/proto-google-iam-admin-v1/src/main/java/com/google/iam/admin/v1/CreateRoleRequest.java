@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
     return new CreateRoleRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_CreateRoleRequest_descriptor;
@@ -82,18 +77,21 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
    * or
    * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
    * Each resource type's `parent` value format is described below:
+   *
    * * [`projects.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/create):
    *   `projects/{PROJECT_ID}`. This method creates project-level
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+   *
    * * [`organizations.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/create):
    *   `organizations/{ORGANIZATION_ID}`. This method creates organization-level
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+   *
    * Note: Wildcard (*) values are invalid; you must specify a complete project
    * ID or organization ID.
    * </pre>
@@ -124,18 +122,21 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
    * or
    * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
    * Each resource type's `parent` value format is described below:
+   *
    * * [`projects.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/create):
    *   `projects/{PROJECT_ID}`. This method creates project-level
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+   *
    * * [`organizations.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/create):
    *   `organizations/{ORGANIZATION_ID}`. This method creates organization-level
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+   *
    * Note: Wildcard (*) values are invalid; you must specify a complete project
    * ID or organization ID.
    * </pre>
@@ -166,6 +167,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The role ID to use for this role.
+   *
    * A role ID may contain alphanumeric characters, underscores (`_`), and
    * periods (`.`). It must contain a minimum of 3 characters and a maximum of
    * 64 characters.
@@ -192,6 +194,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The role ID to use for this role.
+   *
    * A role ID may contain alphanumeric characters, underscores (`_`), and
    * periods (`.`). It must contain a minimum of 3 characters and a maximum of
    * 64 characters.
@@ -667,18 +670,21 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `parent` value format is described below:
+     *
      * * [`projects.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/create):
      *   `projects/{PROJECT_ID}`. This method creates project-level
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
      *   Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+     *
      * * [`organizations.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/create):
      *   `organizations/{ORGANIZATION_ID}`. This method creates organization-level
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
      *   Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -708,18 +714,21 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `parent` value format is described below:
+     *
      * * [`projects.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/create):
      *   `projects/{PROJECT_ID}`. This method creates project-level
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
      *   Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+     *
      * * [`organizations.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/create):
      *   `organizations/{ORGANIZATION_ID}`. This method creates organization-level
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
      *   Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -749,18 +758,21 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `parent` value format is described below:
+     *
      * * [`projects.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/create):
      *   `projects/{PROJECT_ID}`. This method creates project-level
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
      *   Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+     *
      * * [`organizations.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/create):
      *   `organizations/{ORGANIZATION_ID}`. This method creates organization-level
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
      *   Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -789,18 +801,21 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `parent` value format is described below:
+     *
      * * [`projects.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/create):
      *   `projects/{PROJECT_ID}`. This method creates project-level
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
      *   Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+     *
      * * [`organizations.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/create):
      *   `organizations/{ORGANIZATION_ID}`. This method creates organization-level
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
      *   Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -825,18 +840,21 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `parent` value format is described below:
+     *
      * * [`projects.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/create):
      *   `projects/{PROJECT_ID}`. This method creates project-level
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
      *   Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+     *
      * * [`organizations.roles.create()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/create):
      *   `organizations/{ORGANIZATION_ID}`. This method creates organization-level
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
      *   Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -863,6 +881,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The role ID to use for this role.
+     *
      * A role ID may contain alphanumeric characters, underscores (`_`), and
      * periods (`.`). It must contain a minimum of 3 characters and a maximum of
      * 64 characters.
@@ -888,6 +907,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The role ID to use for this role.
+     *
      * A role ID may contain alphanumeric characters, underscores (`_`), and
      * periods (`.`). It must contain a minimum of 3 characters and a maximum of
      * 64 characters.
@@ -913,6 +933,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The role ID to use for this role.
+     *
      * A role ID may contain alphanumeric characters, underscores (`_`), and
      * periods (`.`). It must contain a minimum of 3 characters and a maximum of
      * 64 characters.
@@ -937,6 +958,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The role ID to use for this role.
+     *
      * A role ID may contain alphanumeric characters, underscores (`_`), and
      * periods (`.`). It must contain a minimum of 3 characters and a maximum of
      * 64 characters.
@@ -957,6 +979,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The role ID to use for this role.
+     *
      * A role ID may contain alphanumeric characters, underscores (`_`), and
      * periods (`.`). It must contain a minimum of 3 characters and a maximum of
      * 64 characters.

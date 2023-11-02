@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Rollout();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -398,10 +393,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    * send traffic to use different config versions. This is generally
    * used by API proxy to split traffic based on your configured percentage for
    * each config version.
+   *
    * One example of how to gradually rollout a new service configuration using
    * this
    * strategy:
    * Day 1
+   *
    *     Rollout {
    *       id: "example.googleapis.com/rollout_20160206"
    *       traffic_percent_strategy {
@@ -411,7 +408,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *         }
    *       }
    *     }
+   *
    * Day 2
+   *
    *     Rollout {
    *       id: "example.googleapis.com/rollout_20160207"
    *       traffic_percent_strategy: {
@@ -440,11 +439,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TrafficPercentStrategy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -760,10 +754,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * send traffic to use different config versions. This is generally
      * used by API proxy to split traffic based on your configured percentage for
      * each config version.
+     *
      * One example of how to gradually rollout a new service configuration using
      * this
      * strategy:
      * Day 1
+     *
      *     Rollout {
      *       id: "example.googleapis.com/rollout_20160206"
      *       traffic_percent_strategy {
@@ -773,7 +769,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *         }
      *       }
      *     }
+     *
      * Day 2
+     *
      *     Rollout {
      *       id: "example.googleapis.com/rollout_20160207"
      *       traffic_percent_strategy: {
@@ -1268,11 +1266,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return new DeleteServiceStrategy();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.api.servicemanagement.v1.ResourcesProto
           .internal_static_google_api_servicemanagement_v1_Rollout_DeleteServiceStrategy_descriptor;
@@ -1677,6 +1670,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int strategyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object strategy_;
 
   public enum StrategyCase
@@ -1734,6 +1729,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    * Optional. Unique identifier of this Rollout. Must be no longer than 63
    * characters and only lower case letters, digits, '.', '_' and '-' are
    * allowed.
+   *
    * If not specified by client, the server will generate one. The generated id
    * will have the form of &lt;date&gt;&lt;revision number&gt;, where "date" is the create
    * date in ISO 8601 format.  "revision number" is a monotonically increasing
@@ -1764,6 +1760,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    * Optional. Unique identifier of this Rollout. Must be no longer than 63
    * characters and only lower case letters, digits, '.', '_' and '-' are
    * allowed.
+   *
    * If not specified by client, the server will generate one. The generated id
    * will have the form of &lt;date&gt;&lt;revision number&gt;, where "date" is the create
    * date in ISO 8601 format.  "revision number" is a monotonically increasing
@@ -2662,6 +2659,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * Optional. Unique identifier of this Rollout. Must be no longer than 63
      * characters and only lower case letters, digits, '.', '_' and '-' are
      * allowed.
+     *
      * If not specified by client, the server will generate one. The generated id
      * will have the form of &lt;date&gt;&lt;revision number&gt;, where "date" is the create
      * date in ISO 8601 format.  "revision number" is a monotonically increasing
@@ -2691,6 +2689,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * Optional. Unique identifier of this Rollout. Must be no longer than 63
      * characters and only lower case letters, digits, '.', '_' and '-' are
      * allowed.
+     *
      * If not specified by client, the server will generate one. The generated id
      * will have the form of &lt;date&gt;&lt;revision number&gt;, where "date" is the create
      * date in ISO 8601 format.  "revision number" is a monotonically increasing
@@ -2720,6 +2719,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * Optional. Unique identifier of this Rollout. Must be no longer than 63
      * characters and only lower case letters, digits, '.', '_' and '-' are
      * allowed.
+     *
      * If not specified by client, the server will generate one. The generated id
      * will have the form of &lt;date&gt;&lt;revision number&gt;, where "date" is the create
      * date in ISO 8601 format.  "revision number" is a monotonically increasing
@@ -2748,6 +2748,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * Optional. Unique identifier of this Rollout. Must be no longer than 63
      * characters and only lower case letters, digits, '.', '_' and '-' are
      * allowed.
+     *
      * If not specified by client, the server will generate one. The generated id
      * will have the form of &lt;date&gt;&lt;revision number&gt;, where "date" is the create
      * date in ISO 8601 format.  "revision number" is a monotonically increasing
@@ -2772,6 +2773,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * Optional. Unique identifier of this Rollout. Must be no longer than 63
      * characters and only lower case letters, digits, '.', '_' and '-' are
      * allowed.
+     *
      * If not specified by client, the server will generate one. The generated id
      * will have the form of &lt;date&gt;&lt;revision number&gt;, where "date" is the create
      * date in ISO 8601 format.  "revision number" is a monotonically increasing

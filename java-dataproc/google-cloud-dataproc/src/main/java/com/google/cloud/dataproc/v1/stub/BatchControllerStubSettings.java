@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -115,6 +120,10 @@ public class BatchControllerStubSettings extends StubSettings<BatchControllerStu
   private final PagedCallSettings<ListBatchesRequest, ListBatchesResponse, ListBatchesPagedResponse>
       listBatchesSettings;
   private final UnaryCallSettings<DeleteBatchRequest, Empty> deleteBatchSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListBatchesRequest, ListBatchesResponse, Batch>
       LIST_BATCHES_PAGE_STR_DESC =
@@ -194,6 +203,22 @@ public class BatchControllerStubSettings extends StubSettings<BatchControllerStu
   /** Returns the object with the settings used for calls to deleteBatch. */
   public UnaryCallSettings<DeleteBatchRequest, Empty> deleteBatchSettings() {
     return deleteBatchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public BatchControllerStub createStub() throws IOException {
@@ -307,6 +332,9 @@ public class BatchControllerStubSettings extends StubSettings<BatchControllerStu
     getBatchSettings = settingsBuilder.getBatchSettings().build();
     listBatchesSettings = settingsBuilder.listBatchesSettings().build();
     deleteBatchSettings = settingsBuilder.deleteBatchSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for BatchControllerStubSettings. */
@@ -320,6 +348,10 @@ public class BatchControllerStubSettings extends StubSettings<BatchControllerStu
             ListBatchesRequest, ListBatchesResponse, ListBatchesPagedResponse>
         listBatchesSettings;
     private final UnaryCallSettings.Builder<DeleteBatchRequest, Empty> deleteBatchSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -352,10 +384,19 @@ public class BatchControllerStubSettings extends StubSettings<BatchControllerStu
       getBatchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listBatchesSettings = PagedCallSettings.newBuilder(LIST_BATCHES_PAGE_STR_FACT);
       deleteBatchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createBatchSettings, getBatchSettings, listBatchesSettings, deleteBatchSettings);
+              createBatchSettings,
+              getBatchSettings,
+              listBatchesSettings,
+              deleteBatchSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -367,10 +408,19 @@ public class BatchControllerStubSettings extends StubSettings<BatchControllerStu
       getBatchSettings = settings.getBatchSettings.toBuilder();
       listBatchesSettings = settings.listBatchesSettings.toBuilder();
       deleteBatchSettings = settings.deleteBatchSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createBatchSettings, getBatchSettings, listBatchesSettings, deleteBatchSettings);
+              createBatchSettings,
+              getBatchSettings,
+              listBatchesSettings,
+              deleteBatchSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -417,6 +467,21 @@ public class BatchControllerStubSettings extends StubSettings<BatchControllerStu
 
       builder
           .deleteBatchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -489,6 +554,22 @@ public class BatchControllerStubSettings extends StubSettings<BatchControllerStu
     /** Returns the builder for the settings used for calls to deleteBatch. */
     public UnaryCallSettings.Builder<DeleteBatchRequest, Empty> deleteBatchSettings() {
       return deleteBatchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

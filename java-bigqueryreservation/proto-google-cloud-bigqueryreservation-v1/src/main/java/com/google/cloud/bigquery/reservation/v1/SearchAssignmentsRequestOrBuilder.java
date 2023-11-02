@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +61,9 @@ public interface SearchAssignmentsRequestOrBuilder
    *
    * <pre>
    * Please specify resource name as assignee in the query.
+   *
    * Examples:
+   *
    * * `assignee=projects/myproject`
    * * `assignee=folders/123`
    * * `assignee=organizations/456`
@@ -77,7 +79,9 @@ public interface SearchAssignmentsRequestOrBuilder
    *
    * <pre>
    * Please specify resource name as assignee in the query.
+   *
    * Examples:
+   *
    * * `assignee=projects/myproject`
    * * `assignee=folders/123`
    * * `assignee=organizations/456`

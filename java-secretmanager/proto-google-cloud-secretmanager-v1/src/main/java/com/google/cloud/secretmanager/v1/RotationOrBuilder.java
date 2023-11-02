@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface RotationOrBuilder
    * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
    * Cannot be set to less than 300s (5 min) in the future and at most
    * 3153600000s (100 years).
+   *
    * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
    * MUST  be set if
    * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
@@ -52,6 +53,7 @@ public interface RotationOrBuilder
    * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
    * Cannot be set to less than 300s (5 min) in the future and at most
    * 3153600000s (100 years).
+   *
    * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
    * MUST  be set if
    * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
@@ -73,6 +75,7 @@ public interface RotationOrBuilder
    * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
    * Cannot be set to less than 300s (5 min) in the future and at most
    * 3153600000s (100 years).
+   *
    * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
    * MUST  be set if
    * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
@@ -91,6 +94,7 @@ public interface RotationOrBuilder
    * <pre>
    * Input only. The Duration between rotation notifications. Must be in seconds
    * and at least 3600s (1h) and at most 3153600000s (100 years).
+   *
    * If
    * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
    * is set,
@@ -114,6 +118,7 @@ public interface RotationOrBuilder
    * <pre>
    * Input only. The Duration between rotation notifications. Must be in seconds
    * and at least 3600s (1h) and at most 3153600000s (100 years).
+   *
    * If
    * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
    * is set,
@@ -137,6 +142,7 @@ public interface RotationOrBuilder
    * <pre>
    * Input only. The Duration between rotation notifications. Must be in seconds
    * and at least 3600s (1h) and at most 3153600000s (100 years).
+   *
    * If
    * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
    * is set,

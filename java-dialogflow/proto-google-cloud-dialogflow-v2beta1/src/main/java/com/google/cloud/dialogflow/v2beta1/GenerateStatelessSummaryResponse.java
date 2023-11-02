@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GenerateStatelessSummaryResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -166,6 +161,33 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
      * <code>map&lt;string, string&gt; text_sections = 2;</code>
      */
     java.lang.String getTextSectionsOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * The baseline model version used to generate this summary. It is empty if
+     * a baseline model was not used to generate this summary.
+     * </pre>
+     *
+     * <code>string baseline_model_version = 4;</code>
+     *
+     * @return The baselineModelVersion.
+     */
+    java.lang.String getBaselineModelVersion();
+    /**
+     *
+     *
+     * <pre>
+     * The baseline model version used to generate this summary. It is empty if
+     * a baseline model was not used to generate this summary.
+     * </pre>
+     *
+     * <code>string baseline_model_version = 4;</code>
+     *
+     * @return The bytes for baselineModelVersion.
+     */
+    com.google.protobuf.ByteString getBaselineModelVersionBytes();
   }
   /**
    *
@@ -188,17 +210,13 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
 
     private Summary() {
       text_ = "";
+      baselineModelVersion_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Summary();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -391,6 +409,59 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
       return map.get(key);
     }
 
+    public static final int BASELINE_MODEL_VERSION_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object baselineModelVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The baseline model version used to generate this summary. It is empty if
+     * a baseline model was not used to generate this summary.
+     * </pre>
+     *
+     * <code>string baseline_model_version = 4;</code>
+     *
+     * @return The baselineModelVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getBaselineModelVersion() {
+      java.lang.Object ref = baselineModelVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baselineModelVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The baseline model version used to generate this summary. It is empty if
+     * a baseline model was not used to generate this summary.
+     * </pre>
+     *
+     * <code>string baseline_model_version = 4;</code>
+     *
+     * @return The bytes for baselineModelVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBaselineModelVersionBytes() {
+      java.lang.Object ref = baselineModelVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        baselineModelVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -410,6 +481,9 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetTextSections(), TextSectionsDefaultEntryHolder.defaultEntry, 2);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baselineModelVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, baselineModelVersion_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -432,6 +506,9 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
                 .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, textSections__);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baselineModelVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, baselineModelVersion_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -452,6 +529,7 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
 
       if (!getText().equals(other.getText())) return false;
       if (!internalGetTextSections().equals(other.internalGetTextSections())) return false;
+      if (!getBaselineModelVersion().equals(other.getBaselineModelVersion())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -469,6 +547,8 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
         hash = (37 * hash) + TEXT_SECTIONS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetTextSections().hashCode();
       }
+      hash = (37 * hash) + BASELINE_MODEL_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getBaselineModelVersion().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -642,6 +722,7 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
         bitField0_ = 0;
         text_ = "";
         internalGetMutableTextSections().clear();
+        baselineModelVersion_ = "";
         return this;
       }
 
@@ -689,6 +770,9 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.textSections_ = internalGetTextSections();
           result.textSections_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.baselineModelVersion_ = baselineModelVersion_;
         }
       }
 
@@ -752,6 +836,11 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
         }
         internalGetMutableTextSections().mergeFrom(other.internalGetTextSections());
         bitField0_ |= 0x00000002;
+        if (!other.getBaselineModelVersion().isEmpty()) {
+          baselineModelVersion_ = other.baselineModelVersion_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -796,6 +885,12 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 34:
+                {
+                  baselineModelVersion_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1098,6 +1193,117 @@ public final class GenerateStatelessSummaryResponse extends com.google.protobuf.
       public Builder putAllTextSections(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableTextSections().getMutableMap().putAll(values);
         bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      private java.lang.Object baselineModelVersion_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The baseline model version used to generate this summary. It is empty if
+       * a baseline model was not used to generate this summary.
+       * </pre>
+       *
+       * <code>string baseline_model_version = 4;</code>
+       *
+       * @return The baselineModelVersion.
+       */
+      public java.lang.String getBaselineModelVersion() {
+        java.lang.Object ref = baselineModelVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          baselineModelVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The baseline model version used to generate this summary. It is empty if
+       * a baseline model was not used to generate this summary.
+       * </pre>
+       *
+       * <code>string baseline_model_version = 4;</code>
+       *
+       * @return The bytes for baselineModelVersion.
+       */
+      public com.google.protobuf.ByteString getBaselineModelVersionBytes() {
+        java.lang.Object ref = baselineModelVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          baselineModelVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The baseline model version used to generate this summary. It is empty if
+       * a baseline model was not used to generate this summary.
+       * </pre>
+       *
+       * <code>string baseline_model_version = 4;</code>
+       *
+       * @param value The baselineModelVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBaselineModelVersion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        baselineModelVersion_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The baseline model version used to generate this summary. It is empty if
+       * a baseline model was not used to generate this summary.
+       * </pre>
+       *
+       * <code>string baseline_model_version = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBaselineModelVersion() {
+        baselineModelVersion_ = getDefaultInstance().getBaselineModelVersion();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The baseline model version used to generate this summary. It is empty if
+       * a baseline model was not used to generate this summary.
+       * </pre>
+       *
+       * <code>string baseline_model_version = 4;</code>
+       *
+       * @param value The bytes for baselineModelVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBaselineModelVersionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        baselineModelVersion_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
 

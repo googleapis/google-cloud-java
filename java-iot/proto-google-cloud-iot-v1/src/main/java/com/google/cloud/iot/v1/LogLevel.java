@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.iot.v1;
  *
  * <pre>
  * **Beta Feature**
+ *
  * The logging verbosity for device activity. Specifies which events should be
  * written to logs. For example, if the LogLevel is ERROR, only events that
  * terminate in errors will be logged. LogLevel is inclusive; enabling INFO

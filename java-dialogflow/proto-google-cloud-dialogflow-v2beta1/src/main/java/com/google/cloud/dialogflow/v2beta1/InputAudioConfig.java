@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   private InputAudioConfig() {
     audioEncoding_ = 0;
     languageCode_ = "";
-    phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    phraseHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
     speechContexts_ = java.util.Collections.emptyList();
     model_ = "";
     modelVariant_ = 0;
@@ -50,11 +50,6 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InputAudioConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -81,7 +76,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * Required. Audio encoding of the audio content to process.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for audioEncoding.
    */
@@ -96,7 +93,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * Required. Audio encoding of the audio content to process.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The audioEncoding.
    */
@@ -114,13 +113,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Sample rate (in Hertz) of the audio content sent in the query.
-   * Refer to
-   * [Cloud Speech API
+   * Refer to [Cloud Speech API
    * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
    * more details.
    * </pre>
    *
-   * <code>int32 sample_rate_hertz = 2;</code>
+   * <code>int32 sample_rate_hertz = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The sampleRateHertz.
    */
@@ -144,7 +142,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * the same session do not necessarily need to specify the same language.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The languageCode.
    */
@@ -171,7 +169,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * the same session do not necessarily need to specify the same language.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for languageCode.
    */
@@ -214,25 +212,28 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
   public static final int PHRASE_HINTS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList phraseHints_;
+  private com.google.protobuf.LazyStringArrayList phraseHints_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   *
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
    * @return A list containing the phraseHints.
    */
   @java.lang.Deprecated
@@ -245,18 +246,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   *
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
    * @return The count of phraseHints.
    */
   @java.lang.Deprecated
@@ -269,18 +272,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   *
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
    * @param index The index of the element to return.
    * @return The phraseHints at the given index.
    */
@@ -294,18 +299,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   *
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
    * @param index The index of the value to return.
    * @return The bytes of the phraseHints at the given index.
    */
@@ -323,6 +330,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Context information to assist speech recognition.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -339,6 +347,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Context information to assist speech recognition.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -356,6 +365,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Context information to assist speech recognition.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -372,6 +382,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Context information to assist speech recognition.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -388,6 +399,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Context information to assist speech recognition.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -422,6 +434,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * for more details.
    * If you specify a model, the following models typically have the best
    * performance:
+   *
    * - phone_call (best for Agent Assist and telephony)
    * - latest_short (best for Dialogflow non-telephony)
    * - command_and_search (best for very short utterances and commands)
@@ -460,6 +473,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * for more details.
    * If you specify a model, the following models typically have the best
    * performance:
+   *
    * - phone_call (best for Agent Assist and telephony)
    * - latest_short (best for Dialogflow non-telephony)
    * - command_and_search (best for very short utterances and commands)
@@ -967,8 +981,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       sampleRateHertz_ = 0;
       languageCode_ = "";
       enableWordInfo_ = false;
-      phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      phraseHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
       } else {
@@ -1023,11 +1036,6 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(
         com.google.cloud.dialogflow.v2beta1.InputAudioConfig result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        phraseHints_ = phraseHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.phraseHints_ = phraseHints_;
       if (speechContextsBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
@@ -1052,6 +1060,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.enableWordInfo_ = enableWordInfo_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        phraseHints_.makeImmutable();
+        result.phraseHints_ = phraseHints_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.model_ = model_;
@@ -1137,7 +1149,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (!other.phraseHints_.isEmpty()) {
         if (phraseHints_.isEmpty()) {
           phraseHints_ = other.phraseHints_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensurePhraseHintsIsMutable();
           phraseHints_.addAll(other.phraseHints_);
@@ -1325,7 +1337,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * Required. Audio encoding of the audio content to process.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for audioEncoding.
      */
@@ -1340,7 +1354,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * Required. Audio encoding of the audio content to process.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The enum numeric value on the wire for audioEncoding to set.
      * @return This builder for chaining.
@@ -1358,7 +1374,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * Required. Audio encoding of the audio content to process.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The audioEncoding.
      */
@@ -1377,7 +1395,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * Required. Audio encoding of the audio content to process.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The audioEncoding to set.
      * @return This builder for chaining.
@@ -1398,7 +1418,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * Required. Audio encoding of the audio content to process.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1415,13 +1437,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to
-     * [Cloud Speech API
+     * Refer to [Cloud Speech API
      * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
      * more details.
      * </pre>
      *
-     * <code>int32 sample_rate_hertz = 2;</code>
+     * <code>int32 sample_rate_hertz = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The sampleRateHertz.
      */
@@ -1434,13 +1455,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to
-     * [Cloud Speech API
+     * Refer to [Cloud Speech API
      * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
      * more details.
      * </pre>
      *
-     * <code>int32 sample_rate_hertz = 2;</code>
+     * <code>int32 sample_rate_hertz = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The sampleRateHertz to set.
      * @return This builder for chaining.
@@ -1457,13 +1477,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Sample rate (in Hertz) of the audio content sent in the query.
-     * Refer to
-     * [Cloud Speech API
+     * Refer to [Cloud Speech API
      * documentation](https://cloud.google.com/speech-to-text/docs/basics) for
      * more details.
      * </pre>
      *
-     * <code>int32 sample_rate_hertz = 2;</code>
+     * <code>int32 sample_rate_hertz = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1486,7 +1505,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * the same session do not necessarily need to specify the same language.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The languageCode.
      */
@@ -1512,7 +1531,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * the same session do not necessarily need to specify the same language.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for languageCode.
      */
@@ -1538,7 +1557,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * the same session do not necessarily need to specify the same language.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The languageCode to set.
      * @return This builder for chaining.
@@ -1563,7 +1582,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * the same session do not necessarily need to specify the same language.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1584,7 +1603,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * the same session do not necessarily need to specify the same language.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for languageCode to set.
      * @return This builder for chaining.
@@ -1668,14 +1687,14 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList phraseHints_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList phraseHints_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePhraseHintsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!phraseHints_.isModifiable()) {
         phraseHints_ = new com.google.protobuf.LazyStringArrayList(phraseHints_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1683,23 +1702,26 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A list of strings containing words and phrases that the speech
      * recognizer should recognize with higher likelihood.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     *
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @return A list containing the phraseHints.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getPhraseHintsList() {
-      return phraseHints_.getUnmodifiableView();
+      phraseHints_.makeImmutable();
+      return phraseHints_;
     }
     /**
      *
@@ -1707,18 +1729,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A list of strings containing words and phrases that the speech
      * recognizer should recognize with higher likelihood.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     *
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @return The count of phraseHints.
      */
     @java.lang.Deprecated
@@ -1731,18 +1755,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A list of strings containing words and phrases that the speech
      * recognizer should recognize with higher likelihood.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     *
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param index The index of the element to return.
      * @return The phraseHints at the given index.
      */
@@ -1756,18 +1782,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A list of strings containing words and phrases that the speech
      * recognizer should recognize with higher likelihood.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     *
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param index The index of the value to return.
      * @return The bytes of the phraseHints at the given index.
      */
@@ -1781,18 +1809,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A list of strings containing words and phrases that the speech
      * recognizer should recognize with higher likelihood.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     *
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param index The index to set the value at.
      * @param value The phraseHints to set.
      * @return This builder for chaining.
@@ -1804,6 +1834,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       ensurePhraseHintsIsMutable();
       phraseHints_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1813,18 +1844,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A list of strings containing words and phrases that the speech
      * recognizer should recognize with higher likelihood.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     *
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param value The phraseHints to add.
      * @return This builder for chaining.
      */
@@ -1835,6 +1868,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       ensurePhraseHintsIsMutable();
       phraseHints_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1844,18 +1878,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A list of strings containing words and phrases that the speech
      * recognizer should recognize with higher likelihood.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     *
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param values The phraseHints to add.
      * @return This builder for chaining.
      */
@@ -1863,6 +1899,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder addAllPhraseHints(java.lang.Iterable<java.lang.String> values) {
       ensurePhraseHintsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, phraseHints_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1872,24 +1909,27 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A list of strings containing words and phrases that the speech
      * recognizer should recognize with higher likelihood.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     *
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearPhraseHints() {
-      phraseHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      phraseHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1899,18 +1939,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A list of strings containing words and phrases that the speech
      * recognizer should recognize with higher likelihood.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     *
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param value The bytes of the phraseHints to add.
      * @return This builder for chaining.
      */
@@ -1922,6 +1964,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensurePhraseHintsIsMutable();
       phraseHints_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1949,6 +1992,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -1969,6 +2013,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -1988,6 +2033,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2007,6 +2053,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2033,6 +2080,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2056,6 +2104,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2081,6 +2130,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2107,6 +2157,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2130,6 +2181,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2153,6 +2205,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2176,6 +2229,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2198,6 +2252,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2220,6 +2275,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2236,6 +2292,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2256,6 +2313,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2276,6 +2334,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2292,6 +2351,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2310,6 +2370,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Context information to assist speech recognition.
+     *
      * See [the Cloud Speech
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
@@ -2360,6 +2421,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * for more details.
      * If you specify a model, the following models typically have the best
      * performance:
+     *
      * - phone_call (best for Agent Assist and telephony)
      * - latest_short (best for Dialogflow non-telephony)
      * - command_and_search (best for very short utterances and commands)
@@ -2397,6 +2459,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * for more details.
      * If you specify a model, the following models typically have the best
      * performance:
+     *
      * - phone_call (best for Agent Assist and telephony)
      * - latest_short (best for Dialogflow non-telephony)
      * - command_and_search (best for very short utterances and commands)
@@ -2434,6 +2497,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * for more details.
      * If you specify a model, the following models typically have the best
      * performance:
+     *
      * - phone_call (best for Agent Assist and telephony)
      * - latest_short (best for Dialogflow non-telephony)
      * - command_and_search (best for very short utterances and commands)
@@ -2470,6 +2534,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * for more details.
      * If you specify a model, the following models typically have the best
      * performance:
+     *
      * - phone_call (best for Agent Assist and telephony)
      * - latest_short (best for Dialogflow non-telephony)
      * - command_and_search (best for very short utterances and commands)
@@ -2502,6 +2567,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * for more details.
      * If you specify a model, the following models typically have the best
      * performance:
+     *
      * - phone_call (best for Agent Assist and telephony)
      * - latest_short (best for Dialogflow non-telephony)
      * - command_and_search (best for very short utterances and commands)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Warnings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -188,6 +183,16 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      * <code>LARGE_DEPLOYMENT_WARNING = 481440678;</code>
      */
     LARGE_DEPLOYMENT_WARNING(481440678),
+    /**
+     *
+     *
+     * <pre>
+     * Resource can't be retrieved due to list overhead quota exceed which captures the amount of resources filtered out by user-defined list filter.
+     * </pre>
+     *
+     * <code>LIST_OVERHEAD_QUOTA_EXCEED = 47618117;</code>
+     */
+    LIST_OVERHEAD_QUOTA_EXCEED(47618117),
     /**
      *
      *
@@ -475,6 +480,16 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Resource can't be retrieved due to list overhead quota exceed which captures the amount of resources filtered out by user-defined list filter.
+     * </pre>
+     *
+     * <code>LIST_OVERHEAD_QUOTA_EXCEED = 47618117;</code>
+     */
+    public static final int LIST_OVERHEAD_QUOTA_EXCEED_VALUE = 47618117;
+    /**
+     *
+     *
+     * <pre>
      * A resource depends on a missing type
      * </pre>
      *
@@ -688,6 +703,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
           return INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB;
         case 481440678:
           return LARGE_DEPLOYMENT_WARNING;
+        case 47618117:
+          return LIST_OVERHEAD_QUOTA_EXCEED;
         case 344505463:
           return MISSING_TYPE_DEPENDENCY;
         case 324964999:

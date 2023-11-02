@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
     return new CreateProductRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ProductSearchServiceProto
         .internal_static_google_cloud_vision_v1_CreateProductRequest_descriptor;
@@ -77,6 +72,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The project in which the Product should be created.
+   *
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
@@ -104,6 +100,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The project in which the Product should be created.
+   *
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
@@ -636,6 +633,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The project in which the Product should be created.
+     *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
@@ -662,6 +660,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The project in which the Product should be created.
+     *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
@@ -688,6 +687,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The project in which the Product should be created.
+     *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
@@ -713,6 +713,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The project in which the Product should be created.
+     *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
@@ -734,6 +735,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The project in which the Product should be created.
+     *
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
     return new UniversalAction();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.gmail.GmailAddOnManifestProto
         .internal_static_google_apps_script_type_gmail_UniversalAction_descriptor;
@@ -69,6 +64,8 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
   }
 
   private int actionTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object actionType_;
 
   public enum ActionTypeCase

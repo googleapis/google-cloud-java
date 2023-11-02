@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListDataPoliciesRequest extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListDataPoliciesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -211,9 +206,10 @@ public final class ListDataPoliciesRequest extends com.google.protobuf.Generated
    * are associated with. Currently filter only supports
    * "policy&lt;span&gt;&lt;/span&gt;_tag" based filtering and OR based predicates. Sample
    * filter can be "policy&lt;span&gt;&lt;/span&gt;_tag:
-   * `'projects/1/locations/us/taxonomies/2/policyTags/3'`". You may use
-   * wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
-   * `'projects/1/locations/us/taxonomies/2/&#42;'`".
+   * projects/1/locations/us/taxonomies/2/policyTags/3".
+   * You may also use wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
+   * projects/1/locations/us/taxonomies/2*". Please note that OR predicates
+   * cannot be used with wildcard filters.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -240,9 +236,10 @@ public final class ListDataPoliciesRequest extends com.google.protobuf.Generated
    * are associated with. Currently filter only supports
    * "policy&lt;span&gt;&lt;/span&gt;_tag" based filtering and OR based predicates. Sample
    * filter can be "policy&lt;span&gt;&lt;/span&gt;_tag:
-   * `'projects/1/locations/us/taxonomies/2/policyTags/3'`". You may use
-   * wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
-   * `'projects/1/locations/us/taxonomies/2/&#42;'`".
+   * projects/1/locations/us/taxonomies/2/policyTags/3".
+   * You may also use wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
+   * projects/1/locations/us/taxonomies/2*". Please note that OR predicates
+   * cannot be used with wildcard filters.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -981,9 +978,10 @@ public final class ListDataPoliciesRequest extends com.google.protobuf.Generated
      * are associated with. Currently filter only supports
      * "policy&lt;span&gt;&lt;/span&gt;_tag" based filtering and OR based predicates. Sample
      * filter can be "policy&lt;span&gt;&lt;/span&gt;_tag:
-     * `'projects/1/locations/us/taxonomies/2/policyTags/3'`". You may use
-     * wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
-     * `'projects/1/locations/us/taxonomies/2/&#42;'`".
+     * projects/1/locations/us/taxonomies/2/policyTags/3".
+     * You may also use wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
+     * projects/1/locations/us/taxonomies/2*". Please note that OR predicates
+     * cannot be used with wildcard filters.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1009,9 +1007,10 @@ public final class ListDataPoliciesRequest extends com.google.protobuf.Generated
      * are associated with. Currently filter only supports
      * "policy&lt;span&gt;&lt;/span&gt;_tag" based filtering and OR based predicates. Sample
      * filter can be "policy&lt;span&gt;&lt;/span&gt;_tag:
-     * `'projects/1/locations/us/taxonomies/2/policyTags/3'`". You may use
-     * wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
-     * `'projects/1/locations/us/taxonomies/2/&#42;'`".
+     * projects/1/locations/us/taxonomies/2/policyTags/3".
+     * You may also use wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
+     * projects/1/locations/us/taxonomies/2*". Please note that OR predicates
+     * cannot be used with wildcard filters.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1037,9 +1036,10 @@ public final class ListDataPoliciesRequest extends com.google.protobuf.Generated
      * are associated with. Currently filter only supports
      * "policy&lt;span&gt;&lt;/span&gt;_tag" based filtering and OR based predicates. Sample
      * filter can be "policy&lt;span&gt;&lt;/span&gt;_tag:
-     * `'projects/1/locations/us/taxonomies/2/policyTags/3'`". You may use
-     * wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
-     * `'projects/1/locations/us/taxonomies/2/&#42;'`".
+     * projects/1/locations/us/taxonomies/2/policyTags/3".
+     * You may also use wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
+     * projects/1/locations/us/taxonomies/2*". Please note that OR predicates
+     * cannot be used with wildcard filters.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1064,9 +1064,10 @@ public final class ListDataPoliciesRequest extends com.google.protobuf.Generated
      * are associated with. Currently filter only supports
      * "policy&lt;span&gt;&lt;/span&gt;_tag" based filtering and OR based predicates. Sample
      * filter can be "policy&lt;span&gt;&lt;/span&gt;_tag:
-     * `'projects/1/locations/us/taxonomies/2/policyTags/3'`". You may use
-     * wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
-     * `'projects/1/locations/us/taxonomies/2/&#42;'`".
+     * projects/1/locations/us/taxonomies/2/policyTags/3".
+     * You may also use wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
+     * projects/1/locations/us/taxonomies/2*". Please note that OR predicates
+     * cannot be used with wildcard filters.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1087,9 +1088,10 @@ public final class ListDataPoliciesRequest extends com.google.protobuf.Generated
      * are associated with. Currently filter only supports
      * "policy&lt;span&gt;&lt;/span&gt;_tag" based filtering and OR based predicates. Sample
      * filter can be "policy&lt;span&gt;&lt;/span&gt;_tag:
-     * `'projects/1/locations/us/taxonomies/2/policyTags/3'`". You may use
-     * wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
-     * `'projects/1/locations/us/taxonomies/2/&#42;'`".
+     * projects/1/locations/us/taxonomies/2/policyTags/3".
+     * You may also use wildcard such as "policy&lt;span&gt;&lt;/span&gt;_tag:
+     * projects/1/locations/us/taxonomies/2*". Please note that OR predicates
+     * cannot be used with wildcard filters.
      * </pre>
      *
      * <code>string filter = 4;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface CreateFunctionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location in which the function should be created, specified
-   * in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location in which the function should be created,
+   * specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateFunctionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location in which the function should be created, specified
-   * in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location in which the function should be created,
+   * specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -101,6 +101,7 @@ public interface CreateFunctionRequestOrBuilder
    * <pre>
    * The ID to use for the function, which will become the final component of
    * the function's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -116,6 +117,7 @@ public interface CreateFunctionRequestOrBuilder
    * <pre>
    * The ID to use for the function, which will become the final component of
    * the function's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>

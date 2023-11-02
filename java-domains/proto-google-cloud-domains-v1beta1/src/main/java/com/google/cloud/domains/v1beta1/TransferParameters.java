@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   private TransferParameters() {
     domainName_ = "";
     currentRegistrar_ = "";
-    nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    nameServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
     transferLockState_ = 0;
     supportedPrivacy_ = java.util.Collections.emptyList();
   }
@@ -49,11 +49,6 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TransferParameters();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -176,7 +171,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   public static final int NAME_SERVERS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList nameServers_;
+  private com.google.protobuf.LazyStringArrayList nameServers_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -701,8 +697,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       bitField0_ = 0;
       domainName_ = "";
       currentRegistrar_ = "";
-      nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      nameServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       transferLockState_ = 0;
       supportedPrivacy_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -748,11 +743,6 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
 
     private void buildPartialRepeatedFields(
         com.google.cloud.domains.v1beta1.TransferParameters result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        nameServers_ = nameServers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.nameServers_ = nameServers_;
       if (((bitField0_ & 0x00000010) != 0)) {
         supportedPrivacy_ = java.util.Collections.unmodifiableList(supportedPrivacy_);
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -767,6 +757,10 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.currentRegistrar_ = currentRegistrar_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        nameServers_.makeImmutable();
+        result.nameServers_ = nameServers_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.transferLockState_ = transferLockState_;
@@ -836,7 +830,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       if (!other.nameServers_.isEmpty()) {
         if (nameServers_.isEmpty()) {
           nameServers_ = other.nameServers_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureNameServersIsMutable();
           nameServers_.addAll(other.nameServers_);
@@ -1166,14 +1160,14 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.LazyStringList nameServers_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList nameServers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNameServersIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!nameServers_.isModifiable()) {
         nameServers_ = new com.google.protobuf.LazyStringArrayList(nameServers_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1187,7 +1181,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      * @return A list containing the nameServers.
      */
     public com.google.protobuf.ProtocolStringList getNameServersList() {
-      return nameServers_.getUnmodifiableView();
+      nameServers_.makeImmutable();
+      return nameServers_;
     }
     /**
      *
@@ -1252,6 +1247,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       }
       ensureNameServersIsMutable();
       nameServers_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1273,6 +1269,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       }
       ensureNameServersIsMutable();
       nameServers_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1291,6 +1288,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public Builder addAllNameServers(java.lang.Iterable<java.lang.String> values) {
       ensureNameServersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nameServers_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1306,8 +1304,9 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNameServers() {
-      nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      nameServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1330,6 +1329,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureNameServersIsMutable();
       nameServers_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

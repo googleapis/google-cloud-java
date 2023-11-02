@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,14 @@ package com.google.cloudbuild.v1;
  *
  * <pre>
  * A build resource in the Cloud Build API.
+ *
  * At a high level, a `Build` describes where to find source code, how to build
  * it (for example, the builder image to run on the source), and where to store
  * the built artifacts.
+ *
  * Fields can include the following variables, which will be expanded when the
  * build is created:
+ *
  * - $PROJECT_ID: the project ID of the build.
  * - $PROJECT_NUMBER: the project number of the build.
  * - $LOCATION: the location/region of the build.
@@ -59,11 +62,11 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     status_ = 0;
     statusDetail_ = "";
     steps_ = java.util.Collections.emptyList();
-    images_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    images_ = com.google.protobuf.LazyStringArrayList.emptyList();
     logsBucket_ = "";
     buildTriggerId_ = "";
     logUrl_ = "";
-    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     secrets_ = java.util.Collections.emptyList();
     serviceAccount_ = "";
     warnings_ = java.util.Collections.emptyList();
@@ -73,11 +76,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Build();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -503,11 +501,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Warning();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1503,11 +1496,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FailureInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3013,6 +3001,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Time at which execution of the build was finished.
+   *
    * The difference between finish_time and start_time is the duration of the
    * build's execution.
    * </pre>
@@ -3031,6 +3020,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Time at which execution of the build was finished.
+   *
    * The difference between finish_time and start_time is the duration of the
    * build's execution.
    * </pre>
@@ -3049,6 +3039,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Time at which execution of the build was finished.
+   *
    * The difference between finish_time and start_time is the duration of the
    * build's execution.
    * </pre>
@@ -3070,7 +3061,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Amount of time that this build should be allowed to run, to second
    * granularity. If this amount of time elapses, work on the build will cease
    * and the build status will be `TIMEOUT`.
+   *
    * `timeout` starts ticking from `startTime`.
+   *
    * Default time is 60 minutes.
    * </pre>
    *
@@ -3089,7 +3082,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Amount of time that this build should be allowed to run, to second
    * granularity. If this amount of time elapses, work on the build will cease
    * and the build status will be `TIMEOUT`.
+   *
    * `timeout` starts ticking from `startTime`.
+   *
    * Default time is 60 minutes.
    * </pre>
    *
@@ -3108,7 +3103,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * Amount of time that this build should be allowed to run, to second
    * granularity. If this amount of time elapses, work on the build will cease
    * and the build status will be `TIMEOUT`.
+   *
    * `timeout` starts ticking from `startTime`.
+   *
    * Default time is 60 minutes.
    * </pre>
    *
@@ -3122,16 +3119,20 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
   public static final int IMAGES_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList images_;
+  private com.google.protobuf.LazyStringArrayList images_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * A list of images to be pushed upon the successful completion of all build
    * steps.
+   *
    * The images are pushed using the builder service account's credentials.
+   *
    * The digests of the pushed images will be stored in the `Build` resource's
    * results field.
+   *
    * If any of the images fail to be pushed, the build status is marked
    * `FAILURE`.
    * </pre>
@@ -3149,9 +3150,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of images to be pushed upon the successful completion of all build
    * steps.
+   *
    * The images are pushed using the builder service account's credentials.
+   *
    * The digests of the pushed images will be stored in the `Build` resource's
    * results field.
+   *
    * If any of the images fail to be pushed, the build status is marked
    * `FAILURE`.
    * </pre>
@@ -3169,9 +3173,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of images to be pushed upon the successful completion of all build
    * steps.
+   *
    * The images are pushed using the builder service account's credentials.
+   *
    * The digests of the pushed images will be stored in the `Build` resource's
    * results field.
+   *
    * If any of the images fail to be pushed, the build status is marked
    * `FAILURE`.
    * </pre>
@@ -3190,9 +3197,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of images to be pushed upon the successful completion of all build
    * steps.
+   *
    * The images are pushed using the builder service account's credentials.
+   *
    * The digests of the pushed images will be stored in the `Build` resource's
    * results field.
+   *
    * If any of the images fail to be pushed, the build status is marked
    * `FAILURE`.
    * </pre>
@@ -3215,6 +3225,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * TTL in queue for this build. If provided and the build is enqueued longer
    * than this value, the build will expire and the build status will be
    * `EXPIRED`.
+   *
    * The TTL starts ticking from create_time.
    * </pre>
    *
@@ -3233,6 +3244,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * TTL in queue for this build. If provided and the build is enqueued longer
    * than this value, the build will expire and the build status will be
    * `EXPIRED`.
+   *
    * The TTL starts ticking from create_time.
    * </pre>
    *
@@ -3251,6 +3263,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * TTL in queue for this build. If provided and the build is enqueued longer
    * than this value, the build will expire and the build status will be
    * `EXPIRED`.
+   *
    * The TTL starts ticking from create_time.
    * </pre>
    *
@@ -3322,7 +3335,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Storage bucket where logs should be written (see
+   * Cloud Storage bucket where logs should be written (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
@@ -3348,7 +3361,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Storage bucket where logs should be written (see
+   * Cloud Storage bucket where logs should be written (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
@@ -3684,7 +3697,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
   public static final int TAGS_FIELD_NUMBER = 31;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tags_;
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -3870,11 +3884,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
+   *
    * * BUILD: time to execute all build steps.
    * * PUSH: time to push all artifacts including docker images and non docker
    * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
+   *
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -3902,11 +3918,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
+   *
    * * BUILD: time to execute all build steps.
    * * PUSH: time to push all artifacts including docker images and non docker
    * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
+   *
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -3925,11 +3943,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
+   *
    * * BUILD: time to execute all build steps.
    * * PUSH: time to push all artifacts including docker images and non docker
    * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
+   *
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -3956,11 +3976,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
+   *
    * * BUILD: time to execute all build steps.
    * * PUSH: time to push all artifacts including docker images and non docker
    * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
+   *
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -4803,11 +4825,14 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A build resource in the Cloud Build API.
+   *
    * At a high level, a `Build` describes where to find source code, how to build
    * it (for example, the builder image to run on the source), and where to store
    * the built artifacts.
+   *
    * Fields can include the following variables, which will be expanded when the
    * build is created:
+   *
    * - $PROJECT_ID: the project ID of the build.
    * - $PROJECT_NUMBER: the project number of the build.
    * - $LOCATION: the location/region of the build.
@@ -4917,8 +4942,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-      images_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      images_ = com.google.protobuf.LazyStringArrayList.emptyList();
       queueTtl_ = null;
       if (queueTtlBuilder_ != null) {
         queueTtlBuilder_.dispose();
@@ -4943,8 +4967,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       }
       logUrl_ = "";
       internalGetMutableSubstitutions().clear();
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00200000);
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (secretsBuilder_ == null) {
         secrets_ = java.util.Collections.emptyList();
       } else {
@@ -5020,16 +5043,6 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.steps_ = stepsBuilder_.build();
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        images_ = images_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00001000);
-      }
-      result.images_ = images_;
-      if (((bitField0_ & 0x00200000) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00200000);
-      }
-      result.tags_ = tags_;
       if (secretsBuilder_ == null) {
         if (((bitField0_ & 0x00400000) != 0)) {
           secrets_ = java.util.Collections.unmodifiableList(secrets_);
@@ -5085,6 +5098,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        images_.makeImmutable();
+        result.images_ = images_;
+      }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.queueTtl_ = queueTtlBuilder_ == null ? queueTtl_ : queueTtlBuilder_.build();
       }
@@ -5110,6 +5127,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.substitutions_ = internalGetSubstitutions();
         result.substitutions_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
         result.timing_ = internalGetTiming();
@@ -5247,7 +5268,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       if (!other.images_.isEmpty()) {
         if (images_.isEmpty()) {
           images_ = other.images_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ |= 0x00001000;
         } else {
           ensureImagesIsMutable();
           images_.addAll(other.images_);
@@ -5286,7 +5307,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ |= 0x00200000;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -7275,6 +7296,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time at which execution of the build was finished.
+     *
      * The difference between finish_time and start_time is the duration of the
      * build's execution.
      * </pre>
@@ -7293,6 +7315,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time at which execution of the build was finished.
+     *
      * The difference between finish_time and start_time is the duration of the
      * build's execution.
      * </pre>
@@ -7317,6 +7340,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time at which execution of the build was finished.
+     *
      * The difference between finish_time and start_time is the duration of the
      * build's execution.
      * </pre>
@@ -7343,6 +7367,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time at which execution of the build was finished.
+     *
      * The difference between finish_time and start_time is the duration of the
      * build's execution.
      * </pre>
@@ -7366,6 +7391,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time at which execution of the build was finished.
+     *
      * The difference between finish_time and start_time is the duration of the
      * build's execution.
      * </pre>
@@ -7395,6 +7421,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time at which execution of the build was finished.
+     *
      * The difference between finish_time and start_time is the duration of the
      * build's execution.
      * </pre>
@@ -7418,6 +7445,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time at which execution of the build was finished.
+     *
      * The difference between finish_time and start_time is the duration of the
      * build's execution.
      * </pre>
@@ -7436,6 +7464,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time at which execution of the build was finished.
+     *
      * The difference between finish_time and start_time is the duration of the
      * build's execution.
      * </pre>
@@ -7458,6 +7487,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time at which execution of the build was finished.
+     *
      * The difference between finish_time and start_time is the duration of the
      * build's execution.
      * </pre>
@@ -7496,7 +7526,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Amount of time that this build should be allowed to run, to second
      * granularity. If this amount of time elapses, work on the build will cease
      * and the build status will be `TIMEOUT`.
+     *
      * `timeout` starts ticking from `startTime`.
+     *
      * Default time is 60 minutes.
      * </pre>
      *
@@ -7514,7 +7546,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Amount of time that this build should be allowed to run, to second
      * granularity. If this amount of time elapses, work on the build will cease
      * and the build status will be `TIMEOUT`.
+     *
      * `timeout` starts ticking from `startTime`.
+     *
      * Default time is 60 minutes.
      * </pre>
      *
@@ -7536,7 +7570,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Amount of time that this build should be allowed to run, to second
      * granularity. If this amount of time elapses, work on the build will cease
      * and the build status will be `TIMEOUT`.
+     *
      * `timeout` starts ticking from `startTime`.
+     *
      * Default time is 60 minutes.
      * </pre>
      *
@@ -7562,7 +7598,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Amount of time that this build should be allowed to run, to second
      * granularity. If this amount of time elapses, work on the build will cease
      * and the build status will be `TIMEOUT`.
+     *
      * `timeout` starts ticking from `startTime`.
+     *
      * Default time is 60 minutes.
      * </pre>
      *
@@ -7585,7 +7623,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Amount of time that this build should be allowed to run, to second
      * granularity. If this amount of time elapses, work on the build will cease
      * and the build status will be `TIMEOUT`.
+     *
      * `timeout` starts ticking from `startTime`.
+     *
      * Default time is 60 minutes.
      * </pre>
      *
@@ -7614,7 +7654,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Amount of time that this build should be allowed to run, to second
      * granularity. If this amount of time elapses, work on the build will cease
      * and the build status will be `TIMEOUT`.
+     *
      * `timeout` starts ticking from `startTime`.
+     *
      * Default time is 60 minutes.
      * </pre>
      *
@@ -7637,7 +7679,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Amount of time that this build should be allowed to run, to second
      * granularity. If this amount of time elapses, work on the build will cease
      * and the build status will be `TIMEOUT`.
+     *
      * `timeout` starts ticking from `startTime`.
+     *
      * Default time is 60 minutes.
      * </pre>
      *
@@ -7655,7 +7699,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Amount of time that this build should be allowed to run, to second
      * granularity. If this amount of time elapses, work on the build will cease
      * and the build status will be `TIMEOUT`.
+     *
      * `timeout` starts ticking from `startTime`.
+     *
      * Default time is 60 minutes.
      * </pre>
      *
@@ -7675,7 +7721,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * Amount of time that this build should be allowed to run, to second
      * granularity. If this amount of time elapses, work on the build will cease
      * and the build status will be `TIMEOUT`.
+     *
      * `timeout` starts ticking from `startTime`.
+     *
      * Default time is 60 minutes.
      * </pre>
      *
@@ -7698,14 +7746,14 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       return timeoutBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList images_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList images_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureImagesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!images_.isModifiable()) {
         images_ = new com.google.protobuf.LazyStringArrayList(images_);
-        bitField0_ |= 0x00001000;
       }
+      bitField0_ |= 0x00001000;
     }
     /**
      *
@@ -7713,9 +7761,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of images to be pushed upon the successful completion of all build
      * steps.
+     *
      * The images are pushed using the builder service account's credentials.
+     *
      * The digests of the pushed images will be stored in the `Build` resource's
      * results field.
+     *
      * If any of the images fail to be pushed, the build status is marked
      * `FAILURE`.
      * </pre>
@@ -7725,7 +7776,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the images.
      */
     public com.google.protobuf.ProtocolStringList getImagesList() {
-      return images_.getUnmodifiableView();
+      images_.makeImmutable();
+      return images_;
     }
     /**
      *
@@ -7733,9 +7785,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of images to be pushed upon the successful completion of all build
      * steps.
+     *
      * The images are pushed using the builder service account's credentials.
+     *
      * The digests of the pushed images will be stored in the `Build` resource's
      * results field.
+     *
      * If any of the images fail to be pushed, the build status is marked
      * `FAILURE`.
      * </pre>
@@ -7753,9 +7808,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of images to be pushed upon the successful completion of all build
      * steps.
+     *
      * The images are pushed using the builder service account's credentials.
+     *
      * The digests of the pushed images will be stored in the `Build` resource's
      * results field.
+     *
      * If any of the images fail to be pushed, the build status is marked
      * `FAILURE`.
      * </pre>
@@ -7774,9 +7832,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of images to be pushed upon the successful completion of all build
      * steps.
+     *
      * The images are pushed using the builder service account's credentials.
+     *
      * The digests of the pushed images will be stored in the `Build` resource's
      * results field.
+     *
      * If any of the images fail to be pushed, the build status is marked
      * `FAILURE`.
      * </pre>
@@ -7795,9 +7856,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of images to be pushed upon the successful completion of all build
      * steps.
+     *
      * The images are pushed using the builder service account's credentials.
+     *
      * The digests of the pushed images will be stored in the `Build` resource's
      * results field.
+     *
      * If any of the images fail to be pushed, the build status is marked
      * `FAILURE`.
      * </pre>
@@ -7814,6 +7878,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       }
       ensureImagesIsMutable();
       images_.set(index, value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7823,9 +7888,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of images to be pushed upon the successful completion of all build
      * steps.
+     *
      * The images are pushed using the builder service account's credentials.
+     *
      * The digests of the pushed images will be stored in the `Build` resource's
      * results field.
+     *
      * If any of the images fail to be pushed, the build status is marked
      * `FAILURE`.
      * </pre>
@@ -7841,6 +7909,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       }
       ensureImagesIsMutable();
       images_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7850,9 +7919,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of images to be pushed upon the successful completion of all build
      * steps.
+     *
      * The images are pushed using the builder service account's credentials.
+     *
      * The digests of the pushed images will be stored in the `Build` resource's
      * results field.
+     *
      * If any of the images fail to be pushed, the build status is marked
      * `FAILURE`.
      * </pre>
@@ -7865,6 +7937,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllImages(java.lang.Iterable<java.lang.String> values) {
       ensureImagesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, images_);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7874,9 +7947,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of images to be pushed upon the successful completion of all build
      * steps.
+     *
      * The images are pushed using the builder service account's credentials.
+     *
      * The digests of the pushed images will be stored in the `Build` resource's
      * results field.
+     *
      * If any of the images fail to be pushed, the build status is marked
      * `FAILURE`.
      * </pre>
@@ -7886,8 +7962,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImages() {
-      images_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      images_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00001000);
+      ;
       onChanged();
       return this;
     }
@@ -7897,9 +7974,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of images to be pushed upon the successful completion of all build
      * steps.
+     *
      * The images are pushed using the builder service account's credentials.
+     *
      * The digests of the pushed images will be stored in the `Build` resource's
      * results field.
+     *
      * If any of the images fail to be pushed, the build status is marked
      * `FAILURE`.
      * </pre>
@@ -7916,6 +7996,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureImagesIsMutable();
       images_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7933,6 +8014,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * TTL in queue for this build. If provided and the build is enqueued longer
      * than this value, the build will expire and the build status will be
      * `EXPIRED`.
+     *
      * The TTL starts ticking from create_time.
      * </pre>
      *
@@ -7950,6 +8032,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * TTL in queue for this build. If provided and the build is enqueued longer
      * than this value, the build will expire and the build status will be
      * `EXPIRED`.
+     *
      * The TTL starts ticking from create_time.
      * </pre>
      *
@@ -7971,6 +8054,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * TTL in queue for this build. If provided and the build is enqueued longer
      * than this value, the build will expire and the build status will be
      * `EXPIRED`.
+     *
      * The TTL starts ticking from create_time.
      * </pre>
      *
@@ -7996,6 +8080,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * TTL in queue for this build. If provided and the build is enqueued longer
      * than this value, the build will expire and the build status will be
      * `EXPIRED`.
+     *
      * The TTL starts ticking from create_time.
      * </pre>
      *
@@ -8018,6 +8103,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * TTL in queue for this build. If provided and the build is enqueued longer
      * than this value, the build will expire and the build status will be
      * `EXPIRED`.
+     *
      * The TTL starts ticking from create_time.
      * </pre>
      *
@@ -8046,6 +8132,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * TTL in queue for this build. If provided and the build is enqueued longer
      * than this value, the build will expire and the build status will be
      * `EXPIRED`.
+     *
      * The TTL starts ticking from create_time.
      * </pre>
      *
@@ -8068,6 +8155,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * TTL in queue for this build. If provided and the build is enqueued longer
      * than this value, the build will expire and the build status will be
      * `EXPIRED`.
+     *
      * The TTL starts ticking from create_time.
      * </pre>
      *
@@ -8085,6 +8173,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * TTL in queue for this build. If provided and the build is enqueued longer
      * than this value, the build will expire and the build status will be
      * `EXPIRED`.
+     *
      * The TTL starts ticking from create_time.
      * </pre>
      *
@@ -8104,6 +8193,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * TTL in queue for this build. If provided and the build is enqueued longer
      * than this value, the build will expire and the build status will be
      * `EXPIRED`.
+     *
      * The TTL starts ticking from create_time.
      * </pre>
      *
@@ -8323,7 +8413,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage bucket where logs should be written (see
+     * Cloud Storage bucket where logs should be written (see
      * [Bucket Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
@@ -8348,7 +8438,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage bucket where logs should be written (see
+     * Cloud Storage bucket where logs should be written (see
      * [Bucket Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
@@ -8373,7 +8463,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage bucket where logs should be written (see
+     * Cloud Storage bucket where logs should be written (see
      * [Bucket Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
@@ -8397,7 +8487,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage bucket where logs should be written (see
+     * Cloud Storage bucket where logs should be written (see
      * [Bucket Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
@@ -8417,7 +8507,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage bucket where logs should be written (see
+     * Cloud Storage bucket where logs should be written (see
      * [Bucket Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
@@ -9208,14 +9298,14 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00200000;
       }
+      bitField0_ |= 0x00200000;
     }
     /**
      *
@@ -9229,7 +9319,8 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      return tags_.getUnmodifiableView();
+      tags_.makeImmutable();
+      return tags_;
     }
     /**
      *
@@ -9294,6 +9385,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9315,6 +9407,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9333,6 +9426,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9348,8 +9442,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00200000);
+      ;
       onChanged();
       return this;
     }
@@ -9372,6 +9467,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9827,11 +9923,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
+     *
      * * BUILD: time to execute all build steps.
      * * PUSH: time to push all artifacts including docker images and non docker
      * artifacts.
      * * FETCHSOURCE: time to fetch source.
      * * SETUPBUILD: time to set up build.
+     *
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -9859,11 +9957,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
+     *
      * * BUILD: time to execute all build steps.
      * * PUSH: time to push all artifacts including docker images and non docker
      * artifacts.
      * * FETCHSOURCE: time to fetch source.
      * * SETUPBUILD: time to set up build.
+     *
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -9882,11 +9982,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
+     *
      * * BUILD: time to execute all build steps.
      * * PUSH: time to push all artifacts including docker images and non docker
      * artifacts.
      * * FETCHSOURCE: time to fetch source.
      * * SETUPBUILD: time to set up build.
+     *
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -9913,11 +10015,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
+     *
      * * BUILD: time to execute all build steps.
      * * PUSH: time to push all artifacts including docker images and non docker
      * artifacts.
      * * FETCHSOURCE: time to fetch source.
      * * SETUPBUILD: time to set up build.
+     *
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -9950,11 +10054,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
+     *
      * * BUILD: time to execute all build steps.
      * * PUSH: time to push all artifacts including docker images and non docker
      * artifacts.
      * * FETCHSOURCE: time to fetch source.
      * * SETUPBUILD: time to set up build.
+     *
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -9982,11 +10088,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
+     *
      * * BUILD: time to execute all build steps.
      * * PUSH: time to push all artifacts including docker images and non docker
      * artifacts.
      * * FETCHSOURCE: time to fetch source.
      * * SETUPBUILD: time to set up build.
+     *
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>
@@ -10012,11 +10120,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Stores timing information for phases of the build. Valid keys
      * are:
+     *
      * * BUILD: time to execute all build steps.
      * * PUSH: time to push all artifacts including docker images and non docker
      * artifacts.
      * * FETCHSOURCE: time to fetch source.
      * * SETUPBUILD: time to set up build.
+     *
      * If the build does not specify source or images,
      * these keys will not be included.
      * </pre>

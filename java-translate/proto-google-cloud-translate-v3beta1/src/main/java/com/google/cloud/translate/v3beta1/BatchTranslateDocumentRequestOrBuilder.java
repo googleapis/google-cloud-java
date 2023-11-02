@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. Location to make a regional call.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * The `global` location is not supported for batch translation.
+   *
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
    * error is returned.
@@ -47,8 +50,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. Location to make a regional call.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * The `global` location is not supported for batch translation.
+   *
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
    * error is returned.
@@ -68,7 +74,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * <pre>
    * Required. The BCP-47 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * Language Support (https://cloud.google.com/translate/docs/languages).
+   * [Language Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -82,7 +88,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * <pre>
    * Required. The BCP-47 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * Language Support (https://cloud.google.com/translate/docs/languages).
+   * [Language Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -282,11 +288,16 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -301,11 +312,16 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -323,11 +339,16 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -342,11 +363,16 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -365,11 +391,16 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -456,9 +487,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -475,9 +508,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -497,9 +532,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -516,9 +553,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -539,9 +578,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -551,4 +592,65 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * </code>
    */
   java.lang.String getFormatConversionsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is to support user customized attribution.
+   * If not provided, the default is `Machine Translated by Google`.
+   * Customized attribution should follow rules in
+   * https://cloud.google.com/translate/attribution#attribution_and_logos
+   * </pre>
+   *
+   * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customizedAttribution.
+   */
+  java.lang.String getCustomizedAttribution();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is to support user customized attribution.
+   * If not provided, the default is `Machine Translated by Google`.
+   * Customized attribution should follow rules in
+   * https://cloud.google.com/translate/attribution#attribution_and_logos
+   * </pre>
+   *
+   * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customizedAttribution.
+   */
+  com.google.protobuf.ByteString getCustomizedAttributionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, use the text removal server to remove the shadow text on
+   * background image for native pdf translation.
+   * Shadow removal feature can only be enabled when
+   * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
+   * </pre>
+   *
+   * <code>bool enable_shadow_removal_native_pdf = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableShadowRemovalNativePdf.
+   */
+  boolean getEnableShadowRemovalNativePdf();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, enable auto rotation correction in DVS.
+   * </pre>
+   *
+   * <code>bool enable_rotation_correction = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableRotationCorrection.
+   */
+  boolean getEnableRotationCorrection();
 }

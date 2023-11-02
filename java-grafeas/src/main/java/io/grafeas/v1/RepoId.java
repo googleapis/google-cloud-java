@@ -46,11 +46,6 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     return new RepoId();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Provenance.internal_static_grafeas_v1_RepoId_descriptor;
   }
@@ -64,6 +59,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int idCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object id_;
 
   public enum IdCase

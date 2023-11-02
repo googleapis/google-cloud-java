@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ public interface InspectConfigOrBuilder
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
-   * system may automatically choose what detectors to run. By default this may
-   * be all types, but may change over time as detectors are updated.
+   * system may automatically choose a default list of detectors to run, which
+   * may change over time.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -48,9 +50,11 @@ public interface InspectConfigOrBuilder
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
-   * system may automatically choose what detectors to run. By default this may
-   * be all types, but may change over time as detectors are updated.
+   * system may automatically choose a default list of detectors to run, which
+   * may change over time.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -66,9 +70,11 @@ public interface InspectConfigOrBuilder
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
-   * system may automatically choose what detectors to run. By default this may
-   * be all types, but may change over time as detectors are updated.
+   * system may automatically choose a default list of detectors to run, which
+   * may change over time.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -84,9 +90,11 @@ public interface InspectConfigOrBuilder
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
-   * system may automatically choose what detectors to run. By default this may
-   * be all types, but may change over time as detectors are updated.
+   * system may automatically choose a default list of detectors to run, which
+   * may change over time.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -102,9 +110,11 @@ public interface InspectConfigOrBuilder
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
-   * system may automatically choose what detectors to run. By default this may
-   * be all types, but may change over time as detectors are updated.
+   * system may automatically choose a default list of detectors to run, which
+   * may change over time.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -118,9 +128,12 @@ public interface InspectConfigOrBuilder
    *
    *
    * <pre>
-   * Only returns findings equal or above this threshold. The default is
+   * Only returns findings equal to or above this threshold. The default is
    * POSSIBLE.
-   * See https://cloud.google.com/dlp/docs/likelihood to learn more.
+   *
+   * In general, the highest likelihood setting yields the fewest findings in
+   * results and the lowest chance of a false positive. For more information,
+   * see [Match likelihood](https://cloud.google.com/dlp/docs/likelihood).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -132,9 +145,12 @@ public interface InspectConfigOrBuilder
    *
    *
    * <pre>
-   * Only returns findings equal or above this threshold. The default is
+   * Only returns findings equal to or above this threshold. The default is
    * POSSIBLE.
-   * See https://cloud.google.com/dlp/docs/likelihood to learn more.
+   *
+   * In general, the highest likelihood setting yields the fewest findings in
+   * results and the lowest chance of a false positive. For more information,
+   * see [Match likelihood](https://cloud.google.com/dlp/docs/likelihood).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -147,13 +163,100 @@ public interface InspectConfigOrBuilder
    *
    *
    * <pre>
+   * Minimum likelihood per infotype. For each infotype, a user can specify a
+   * minimum likelihood. The system only returns a finding if its likelihood is
+   * above this threshold. If this field is not set, the system uses the
+   * InspectConfig min_likelihood.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+   * </code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood>
+      getMinLikelihoodPerInfoTypeList();
+  /**
+   *
+   *
+   * <pre>
+   * Minimum likelihood per infotype. For each infotype, a user can specify a
+   * minimum likelihood. The system only returns a finding if its likelihood is
+   * above this threshold. If this field is not set, the system uses the
+   * InspectConfig min_likelihood.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood getMinLikelihoodPerInfoType(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Minimum likelihood per infotype. For each infotype, a user can specify a
+   * minimum likelihood. The system only returns a finding if its likelihood is
+   * above this threshold. If this field is not set, the system uses the
+   * InspectConfig min_likelihood.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+   * </code>
+   */
+  int getMinLikelihoodPerInfoTypeCount();
+  /**
+   *
+   *
+   * <pre>
+   * Minimum likelihood per infotype. For each infotype, a user can specify a
+   * minimum likelihood. The system only returns a finding if its likelihood is
+   * above this threshold. If this field is not set, the system uses the
+   * InspectConfig min_likelihood.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+   * </code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihoodOrBuilder>
+      getMinLikelihoodPerInfoTypeOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Minimum likelihood per infotype. For each infotype, a user can specify a
+   * minimum likelihood. The system only returns a finding if its likelihood is
+   * above this threshold. If this field is not set, the system uses the
+   * InspectConfig min_likelihood.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihoodOrBuilder
+      getMinLikelihoodPerInfoTypeOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
    * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
    * requests. Otherwise, Cloud DLP returns an error.
+   *
+   * When set within an
+   * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+   * maximum values aren't hard limits. If an inspection job reaches these
+   * limits, the job ends gradually, not abruptly. Therefore, the actual number
+   * of findings that Cloud DLP returns can be multiple times higher than these
+   * maximum values.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -167,11 +270,19 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
    * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
    * requests. Otherwise, Cloud DLP returns an error.
+   *
+   * When set within an
+   * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+   * maximum values aren't hard limits. If an inspection job reaches these
+   * limits, the job ends gradually, not abruptly. Therefore, the actual number
+   * of findings that Cloud DLP returns can be multiple times higher than these
+   * maximum values.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -185,11 +296,19 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
    * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
    * requests. Otherwise, Cloud DLP returns an error.
+   *
+   * When set within an
+   * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+   * maximum values aren't hard limits. If an inspection job reaches these
+   * limits, the job ends gradually, not abruptly. Therefore, the actual number
+   * of findings that Cloud DLP returns can be multiple times higher than these
+   * maximum values.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -201,8 +320,9 @@ public interface InspectConfigOrBuilder
    *
    * <pre>
    * When true, a contextual quote from the data that triggered a finding is
-   * included in the response; see [Finding.quote][google.privacy.dlp.v2.Finding.quote].
-   * This is not used for data profiling.
+   * included in the response; see
+   * [Finding.quote][google.privacy.dlp.v2.Finding.quote]. This is not used for
+   * data profiling.
    * </pre>
    *
    * <code>bool include_quote = 4;</code>

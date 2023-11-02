@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,9 @@ public interface PullMessageOrBuilder
    *
    * <pre>
    * The tasks's tag.
+   *
    * The tag is less than 500 characters.
+   *
    * SDK compatibility: Although the SDK allows tags to be either
    * string or
    * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
@@ -59,7 +61,9 @@ public interface PullMessageOrBuilder
    *
    * <pre>
    * The tasks's tag.
+   *
    * The tag is less than 500 characters.
+   *
    * SDK compatibility: Although the SDK allows tags to be either
    * string or
    * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),

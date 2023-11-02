@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     aggregationInterval_ = "";
     filterExpr_ = "";
     metadata_ = "";
-    metadataFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    metadataFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SubnetworkLogConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -429,7 +424,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
+   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. Flow logging isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -444,7 +439,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
+   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. Flow logging isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -627,7 +622,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
   public static final int METADATA_FIELDS_FIELD_NUMBER = 378461641;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList metadataFields_;
+  private com.google.protobuf.LazyStringArrayList metadataFields_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -970,8 +966,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       filterExpr_ = "";
       flowSampling_ = 0F;
       metadata_ = "";
-      metadataFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      metadataFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -999,21 +994,11 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.SubnetworkLogConfig buildPartial() {
       com.google.cloud.compute.v1.SubnetworkLogConfig result =
           new com.google.cloud.compute.v1.SubnetworkLogConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.SubnetworkLogConfig result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        metadataFields_ = metadataFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.metadataFields_ = metadataFields_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.SubnetworkLogConfig result) {
@@ -1038,6 +1023,10 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.metadata_ = metadata_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        metadataFields_.makeImmutable();
+        result.metadataFields_ = metadataFields_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1112,7 +1101,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       if (!other.metadataFields_.isEmpty()) {
         if (metadataFields_.isEmpty()) {
           metadataFields_ = other.metadataFields_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureMetadataFieldsIsMutable();
           metadataFields_.addAll(other.metadataFields_);
@@ -1332,7 +1321,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. Flow logging isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -1347,7 +1336,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. Flow logging isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -1362,7 +1351,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. Flow logging isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -1381,7 +1370,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled.
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. Flow logging isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -1709,14 +1698,14 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.LazyStringList metadataFields_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList metadataFields_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMetadataFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!metadataFields_.isModifiable()) {
         metadataFields_ = new com.google.protobuf.LazyStringArrayList(metadataFields_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -1730,7 +1719,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * @return A list containing the metadataFields.
      */
     public com.google.protobuf.ProtocolStringList getMetadataFieldsList() {
-      return metadataFields_.getUnmodifiableView();
+      metadataFields_.makeImmutable();
+      return metadataFields_;
     }
     /**
      *
@@ -1795,6 +1785,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       }
       ensureMetadataFieldsIsMutable();
       metadataFields_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1816,6 +1807,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       }
       ensureMetadataFieldsIsMutable();
       metadataFields_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1834,6 +1826,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public Builder addAllMetadataFields(java.lang.Iterable<java.lang.String> values) {
       ensureMetadataFieldsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, metadataFields_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1849,8 +1842,9 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMetadataFields() {
-      metadataFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      metadataFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -1873,6 +1867,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureMetadataFieldsIsMutable();
       metadataFields_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

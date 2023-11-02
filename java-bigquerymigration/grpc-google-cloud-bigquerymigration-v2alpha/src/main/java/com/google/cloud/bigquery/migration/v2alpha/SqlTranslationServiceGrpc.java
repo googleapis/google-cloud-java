@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class SqlTranslationServiceGrpc {
 
   private SqlTranslationServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.bigquery.migration.v2alpha.SqlTranslationService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -352,9 +352,9 @@ public final class SqlTranslationServiceGrpc {
   private static final class SqlTranslationServiceMethodDescriptorSupplier
       extends SqlTranslationServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SqlTranslationServiceMethodDescriptorSupplier(String methodName) {
+    SqlTranslationServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

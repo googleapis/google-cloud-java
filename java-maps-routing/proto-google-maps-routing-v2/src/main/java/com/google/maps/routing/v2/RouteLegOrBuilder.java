@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,7 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The duration of traveling through the leg, calculated without taking
+   * The duration of travel through the leg, calculated without taking
    * traffic conditions into consideration.
    * </pre>
    *
@@ -100,7 +100,7 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The duration of traveling through the leg, calculated without taking
+   * The duration of travel through the leg, calculated without taking
    * traffic conditions into consideration.
    * </pre>
    *
@@ -113,7 +113,7 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The duration of traveling through the leg, calculated without taking
+   * The duration of travel through the leg, calculated without taking
    * traffic conditions into consideration.
    * </pre>
    *
@@ -125,7 +125,7 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The overall polyline for this leg. This includes that each `step`'s
+   * The overall polyline for this leg that includes each `step`'s
    * polyline.
    * </pre>
    *
@@ -138,7 +138,7 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The overall polyline for this leg. This includes that each `step`'s
+   * The overall polyline for this leg that includes each `step`'s
    * polyline.
    * </pre>
    *
@@ -151,7 +151,7 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The overall polyline for this leg. This includes that each `step`'s
+   * The overall polyline for this leg that includes each `step`'s
    * polyline.
    * </pre>
    *
@@ -163,9 +163,9 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The start location of this leg. This might be different from the provided
-   * `origin`. For example, when the provided `origin` is not near a road, this
-   * is a point on the road.
+   * The start location of this leg. This location might be different from the
+   * provided `origin`. For example, when the provided `origin` is not near a
+   * road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -177,9 +177,9 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The start location of this leg. This might be different from the provided
-   * `origin`. For example, when the provided `origin` is not near a road, this
-   * is a point on the road.
+   * The start location of this leg. This location might be different from the
+   * provided `origin`. For example, when the provided `origin` is not near a
+   * road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -191,9 +191,9 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The start location of this leg. This might be different from the provided
-   * `origin`. For example, when the provided `origin` is not near a road, this
-   * is a point on the road.
+   * The start location of this leg. This location might be different from the
+   * provided `origin`. For example, when the provided `origin` is not near a
+   * road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location start_location = 5;</code>
@@ -204,9 +204,9 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The end location of this leg. This might be different from the provided
-   * `destination`. For example, when the provided `destination` is not near a
-   * road, this is a point on the road.
+   * The end location of this leg. This location might be different from the
+   * provided `destination`. For example, when the provided `destination` is not
+   * near a road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -218,9 +218,9 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The end location of this leg. This might be different from the provided
-   * `destination`. For example, when the provided `destination` is not near a
-   * road, this is a point on the road.
+   * The end location of this leg. This location might be different from the
+   * provided `destination`. For example, when the provided `destination` is not
+   * near a road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -232,9 +232,9 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * The end location of this leg. This might be different from the provided
-   * `destination`. For example, when the provided `destination` is not near a
-   * road, this is a point on the road.
+   * The end location of this leg. This location might be different from the
+   * provided `destination`. For example, when the provided `destination` is not
+   * near a road, this is a point on the road.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Location end_location = 6;</code>
@@ -302,8 +302,8 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction etc. on a route leg.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a route leg.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -315,8 +315,8 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction etc. on a route leg.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a route leg.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
@@ -328,11 +328,85 @@ public interface RouteLegOrBuilder
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction etc. on a route leg.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a route leg.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegTravelAdvisory travel_advisory = 8;</code>
    */
   com.google.maps.routing.v2.RouteLegTravelAdvisoryOrBuilder getTravelAdvisoryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLeg`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+   *
+   * @return Whether the localizedValues field is set.
+   */
+  boolean hasLocalizedValues();
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLeg`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+   *
+   * @return The localizedValues.
+   */
+  com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues getLocalizedValues();
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLeg`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValues localized_values = 9;</code>
+   */
+  com.google.maps.routing.v2.RouteLeg.RouteLegLocalizedValuesOrBuilder
+      getLocalizedValuesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Overview information about the steps in this `RouteLeg`. This field is only
+   * populated for TRANSIT routes.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+   *
+   * @return Whether the stepsOverview field is set.
+   */
+  boolean hasStepsOverview();
+  /**
+   *
+   *
+   * <pre>
+   * Overview information about the steps in this `RouteLeg`. This field is only
+   * populated for TRANSIT routes.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+   *
+   * @return The stepsOverview.
+   */
+  com.google.maps.routing.v2.RouteLeg.StepsOverview getStepsOverview();
+  /**
+   *
+   *
+   * <pre>
+   * Overview information about the steps in this `RouteLeg`. This field is only
+   * populated for TRANSIT routes.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLeg.StepsOverview steps_overview = 10;</code>
+   */
+  com.google.maps.routing.v2.RouteLeg.StepsOverviewOrBuilder getStepsOverviewOrBuilder();
 }

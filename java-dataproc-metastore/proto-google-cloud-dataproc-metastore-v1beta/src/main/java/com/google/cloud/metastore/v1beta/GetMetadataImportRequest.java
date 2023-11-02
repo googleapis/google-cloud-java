@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class GetMetadataImportRequest extends com.google.protobuf.Generate
     return new GetMetadataImportRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1beta.MetastoreProto
         .internal_static_google_cloud_metastore_v1beta_GetMetadataImportRequest_descriptor;
@@ -78,6 +73,7 @@ public final class GetMetadataImportRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The relative resource name of the metadata import to retrieve, in
    * the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
    * </pre>
    *
@@ -105,6 +101,7 @@ public final class GetMetadataImportRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The relative resource name of the metadata import to retrieve, in
    * the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
    * </pre>
    *
@@ -478,6 +475,7 @@ public final class GetMetadataImportRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The relative resource name of the metadata import to retrieve, in
      * the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
      * </pre>
      *
@@ -504,6 +502,7 @@ public final class GetMetadataImportRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The relative resource name of the metadata import to retrieve, in
      * the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
      * </pre>
      *
@@ -530,6 +529,7 @@ public final class GetMetadataImportRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The relative resource name of the metadata import to retrieve, in
      * the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
      * </pre>
      *
@@ -555,6 +555,7 @@ public final class GetMetadataImportRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The relative resource name of the metadata import to retrieve, in
      * the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
      * </pre>
      *
@@ -576,6 +577,7 @@ public final class GetMetadataImportRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The relative resource name of the metadata import to retrieve, in
      * the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
      * </pre>
      *

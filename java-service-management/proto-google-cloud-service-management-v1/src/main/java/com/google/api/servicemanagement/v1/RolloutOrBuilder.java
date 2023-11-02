@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface RolloutOrBuilder
    * Optional. Unique identifier of this Rollout. Must be no longer than 63
    * characters and only lower case letters, digits, '.', '_' and '-' are
    * allowed.
+   *
    * If not specified by client, the server will generate one. The generated id
    * will have the form of &lt;date&gt;&lt;revision number&gt;, where "date" is the create
    * date in ISO 8601 format.  "revision number" is a monotonically increasing
@@ -49,6 +50,7 @@ public interface RolloutOrBuilder
    * Optional. Unique identifier of this Rollout. Must be no longer than 63
    * characters and only lower case letters, digits, '.', '_' and '-' are
    * allowed.
+   *
    * If not specified by client, the server will generate one. The generated id
    * will have the form of &lt;date&gt;&lt;revision number&gt;, where "date" is the create
    * date in ISO 8601 format.  "revision number" is a monotonically increasing
@@ -266,5 +268,5 @@ public interface RolloutOrBuilder
    */
   com.google.protobuf.ByteString getServiceNameBytes();
 
-  public com.google.api.servicemanagement.v1.Rollout.StrategyCase getStrategyCase();
+  com.google.api.servicemanagement.v1.Rollout.StrategyCase getStrategyCase();
 }

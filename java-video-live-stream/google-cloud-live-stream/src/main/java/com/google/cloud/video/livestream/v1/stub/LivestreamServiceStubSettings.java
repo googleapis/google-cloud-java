@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.video.livestream.v1.stub;
 
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
@@ -54,19 +55,26 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.video.livestream.v1.Asset;
 import com.google.cloud.video.livestream.v1.Channel;
 import com.google.cloud.video.livestream.v1.ChannelOperationResponse;
+import com.google.cloud.video.livestream.v1.CreateAssetRequest;
 import com.google.cloud.video.livestream.v1.CreateChannelRequest;
 import com.google.cloud.video.livestream.v1.CreateEventRequest;
 import com.google.cloud.video.livestream.v1.CreateInputRequest;
+import com.google.cloud.video.livestream.v1.DeleteAssetRequest;
 import com.google.cloud.video.livestream.v1.DeleteChannelRequest;
 import com.google.cloud.video.livestream.v1.DeleteEventRequest;
 import com.google.cloud.video.livestream.v1.DeleteInputRequest;
 import com.google.cloud.video.livestream.v1.Event;
+import com.google.cloud.video.livestream.v1.GetAssetRequest;
 import com.google.cloud.video.livestream.v1.GetChannelRequest;
 import com.google.cloud.video.livestream.v1.GetEventRequest;
 import com.google.cloud.video.livestream.v1.GetInputRequest;
+import com.google.cloud.video.livestream.v1.GetPoolRequest;
 import com.google.cloud.video.livestream.v1.Input;
+import com.google.cloud.video.livestream.v1.ListAssetsRequest;
+import com.google.cloud.video.livestream.v1.ListAssetsResponse;
 import com.google.cloud.video.livestream.v1.ListChannelsRequest;
 import com.google.cloud.video.livestream.v1.ListChannelsResponse;
 import com.google.cloud.video.livestream.v1.ListEventsRequest;
@@ -74,10 +82,12 @@ import com.google.cloud.video.livestream.v1.ListEventsResponse;
 import com.google.cloud.video.livestream.v1.ListInputsRequest;
 import com.google.cloud.video.livestream.v1.ListInputsResponse;
 import com.google.cloud.video.livestream.v1.OperationMetadata;
+import com.google.cloud.video.livestream.v1.Pool;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
+import com.google.cloud.video.livestream.v1.UpdatePoolRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -171,6 +181,19 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       listEventsSettings;
   private final UnaryCallSettings<GetEventRequest, Event> getEventSettings;
   private final UnaryCallSettings<DeleteEventRequest, Empty> deleteEventSettings;
+  private final UnaryCallSettings<CreateAssetRequest, Operation> createAssetSettings;
+  private final OperationCallSettings<CreateAssetRequest, Asset, OperationMetadata>
+      createAssetOperationSettings;
+  private final UnaryCallSettings<DeleteAssetRequest, Operation> deleteAssetSettings;
+  private final OperationCallSettings<DeleteAssetRequest, Empty, OperationMetadata>
+      deleteAssetOperationSettings;
+  private final UnaryCallSettings<GetAssetRequest, Asset> getAssetSettings;
+  private final PagedCallSettings<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
+      listAssetsSettings;
+  private final UnaryCallSettings<GetPoolRequest, Pool> getPoolSettings;
+  private final UnaryCallSettings<UpdatePoolRequest, Operation> updatePoolSettings;
+  private final OperationCallSettings<UpdatePoolRequest, Pool, OperationMetadata>
+      updatePoolOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -284,6 +307,42 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
             }
           };
 
+  private static final PagedListDescriptor<ListAssetsRequest, ListAssetsResponse, Asset>
+      LIST_ASSETS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAssetsRequest, ListAssetsResponse, Asset>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAssetsRequest injectToken(ListAssetsRequest payload, String token) {
+              return ListAssetsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAssetsRequest injectPageSize(ListAssetsRequest payload, int pageSize) {
+              return ListAssetsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAssetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAssetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Asset> extractResources(ListAssetsResponse payload) {
+              return payload.getAssetsList() == null
+                  ? ImmutableList.<Asset>of()
+                  : payload.getAssetsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -368,6 +427,23 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
               PageContext<ListEventsRequest, ListEventsResponse, Event> pageContext =
                   PageContext.create(callable, LIST_EVENTS_PAGE_STR_DESC, request, context);
               return ListEventsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
+      LIST_ASSETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAssetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAssetsRequest, ListAssetsResponse> callable,
+                ListAssetsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAssetsResponse> futureResponse) {
+              PageContext<ListAssetsRequest, ListAssetsResponse, Asset> pageContext =
+                  PageContext.create(callable, LIST_ASSETS_PAGE_STR_DESC, request, context);
+              return ListAssetsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -519,6 +595,55 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     return deleteEventSettings;
   }
 
+  /** Returns the object with the settings used for calls to createAsset. */
+  public UnaryCallSettings<CreateAssetRequest, Operation> createAssetSettings() {
+    return createAssetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAsset. */
+  public OperationCallSettings<CreateAssetRequest, Asset, OperationMetadata>
+      createAssetOperationSettings() {
+    return createAssetOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAsset. */
+  public UnaryCallSettings<DeleteAssetRequest, Operation> deleteAssetSettings() {
+    return deleteAssetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAsset. */
+  public OperationCallSettings<DeleteAssetRequest, Empty, OperationMetadata>
+      deleteAssetOperationSettings() {
+    return deleteAssetOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAsset. */
+  public UnaryCallSettings<GetAssetRequest, Asset> getAssetSettings() {
+    return getAssetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAssets. */
+  public PagedCallSettings<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
+      listAssetsSettings() {
+    return listAssetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPool. */
+  public UnaryCallSettings<GetPoolRequest, Pool> getPoolSettings() {
+    return getPoolSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updatePool. */
+  public UnaryCallSettings<UpdatePoolRequest, Operation> updatePoolSettings() {
+    return updatePoolSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updatePool. */
+  public OperationCallSettings<UpdatePoolRequest, Pool, OperationMetadata>
+      updatePoolOperationSettings() {
+    return updatePoolOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -660,6 +785,15 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     listEventsSettings = settingsBuilder.listEventsSettings().build();
     getEventSettings = settingsBuilder.getEventSettings().build();
     deleteEventSettings = settingsBuilder.deleteEventSettings().build();
+    createAssetSettings = settingsBuilder.createAssetSettings().build();
+    createAssetOperationSettings = settingsBuilder.createAssetOperationSettings().build();
+    deleteAssetSettings = settingsBuilder.deleteAssetSettings().build();
+    deleteAssetOperationSettings = settingsBuilder.deleteAssetOperationSettings().build();
+    getAssetSettings = settingsBuilder.getAssetSettings().build();
+    listAssetsSettings = settingsBuilder.listAssetsSettings().build();
+    getPoolSettings = settingsBuilder.getPoolSettings().build();
+    updatePoolSettings = settingsBuilder.updatePoolSettings().build();
+    updatePoolOperationSettings = settingsBuilder.updatePoolOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -707,6 +841,20 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
         listEventsSettings;
     private final UnaryCallSettings.Builder<GetEventRequest, Event> getEventSettings;
     private final UnaryCallSettings.Builder<DeleteEventRequest, Empty> deleteEventSettings;
+    private final UnaryCallSettings.Builder<CreateAssetRequest, Operation> createAssetSettings;
+    private final OperationCallSettings.Builder<CreateAssetRequest, Asset, OperationMetadata>
+        createAssetOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAssetRequest, Operation> deleteAssetSettings;
+    private final OperationCallSettings.Builder<DeleteAssetRequest, Empty, OperationMetadata>
+        deleteAssetOperationSettings;
+    private final UnaryCallSettings.Builder<GetAssetRequest, Asset> getAssetSettings;
+    private final PagedCallSettings.Builder<
+            ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
+        listAssetsSettings;
+    private final UnaryCallSettings.Builder<GetPoolRequest, Pool> getPoolSettings;
+    private final UnaryCallSettings.Builder<UpdatePoolRequest, Operation> updatePoolSettings;
+    private final OperationCallSettings.Builder<UpdatePoolRequest, Pool, OperationMetadata>
+        updatePoolOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -786,6 +934,15 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       listEventsSettings = PagedCallSettings.newBuilder(LIST_EVENTS_PAGE_STR_FACT);
       getEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAssetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAssetOperationSettings = OperationCallSettings.newBuilder();
+      deleteAssetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAssetOperationSettings = OperationCallSettings.newBuilder();
+      getAssetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAssetsSettings = PagedCallSettings.newBuilder(LIST_ASSETS_PAGE_STR_FACT);
+      getPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updatePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updatePoolOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -807,6 +964,12 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
               listEventsSettings,
               getEventSettings,
               deleteEventSettings,
+              createAssetSettings,
+              deleteAssetSettings,
+              getAssetSettings,
+              listAssetsSettings,
+              getPoolSettings,
+              updatePoolSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -839,6 +1002,15 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
       listEventsSettings = settings.listEventsSettings.toBuilder();
       getEventSettings = settings.getEventSettings.toBuilder();
       deleteEventSettings = settings.deleteEventSettings.toBuilder();
+      createAssetSettings = settings.createAssetSettings.toBuilder();
+      createAssetOperationSettings = settings.createAssetOperationSettings.toBuilder();
+      deleteAssetSettings = settings.deleteAssetSettings.toBuilder();
+      deleteAssetOperationSettings = settings.deleteAssetOperationSettings.toBuilder();
+      getAssetSettings = settings.getAssetSettings.toBuilder();
+      listAssetsSettings = settings.listAssetsSettings.toBuilder();
+      getPoolSettings = settings.getPoolSettings.toBuilder();
+      updatePoolSettings = settings.updatePoolSettings.toBuilder();
+      updatePoolOperationSettings = settings.updatePoolOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -860,6 +1032,12 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
               listEventsSettings,
               getEventSettings,
               deleteEventSettings,
+              createAssetSettings,
+              deleteAssetSettings,
+              getAssetSettings,
+              listAssetsSettings,
+              getPoolSettings,
+              updatePoolSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -970,6 +1148,36 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
           .deleteEventSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createAssetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteAssetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getAssetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAssetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getPoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updatePoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -1169,6 +1377,74 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createAssetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CreateAssetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Asset.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteAssetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteAssetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updatePoolOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<UpdatePoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.create(Pool.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1335,6 +1611,61 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     /** Returns the builder for the settings used for calls to deleteEvent. */
     public UnaryCallSettings.Builder<DeleteEventRequest, Empty> deleteEventSettings() {
       return deleteEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAsset. */
+    public UnaryCallSettings.Builder<CreateAssetRequest, Operation> createAssetSettings() {
+      return createAssetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAsset. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateAssetRequest, Asset, OperationMetadata>
+        createAssetOperationSettings() {
+      return createAssetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAsset. */
+    public UnaryCallSettings.Builder<DeleteAssetRequest, Operation> deleteAssetSettings() {
+      return deleteAssetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAsset. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteAssetRequest, Empty, OperationMetadata>
+        deleteAssetOperationSettings() {
+      return deleteAssetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAsset. */
+    public UnaryCallSettings.Builder<GetAssetRequest, Asset> getAssetSettings() {
+      return getAssetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAssets. */
+    public PagedCallSettings.Builder<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
+        listAssetsSettings() {
+      return listAssetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPool. */
+    public UnaryCallSettings.Builder<GetPoolRequest, Pool> getPoolSettings() {
+      return getPoolSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePool. */
+    public UnaryCallSettings.Builder<UpdatePoolRequest, Operation> updatePoolSettings() {
+      return updatePoolSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePool. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdatePoolRequest, Pool, OperationMetadata>
+        updatePoolOperationSettings() {
+      return updatePoolOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

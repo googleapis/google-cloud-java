@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,43 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * The url of the consumer network.
+   * </pre>
+   *
+   * <code>optional string consumer_network = 254357221;</code>
+   *
+   * @return Whether the consumerNetwork field is set.
+   */
+  boolean hasConsumerNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * The url of the consumer network.
+   * </pre>
+   *
+   * <code>optional string consumer_network = 254357221;</code>
+   *
+   * @return The consumerNetwork.
+   */
+  java.lang.String getConsumerNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * The url of the consumer network.
+   * </pre>
+   *
+   * <code>optional string consumer_network = 254357221;</code>
+   *
+   * @return The bytes for consumerNetwork.
+   */
+  com.google.protobuf.ByteString getConsumerNetworkBytes();
 
   /**
    *

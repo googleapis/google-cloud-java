@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,8 +60,10 @@ public interface GenerateUploadUrlRequestOrBuilder
    * gets copied to a staging Cloud Storage bucket in an internal regional
    * project. The source code is then copied to a versioned directory in the
    * sources bucket in the consumer project during the function deployment.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
    * The Google Cloud Functions service account
    * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
    * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -86,8 +88,10 @@ public interface GenerateUploadUrlRequestOrBuilder
    * gets copied to a staging Cloud Storage bucket in an internal regional
    * project. The source code is then copied to a versioned directory in the
    * sources bucket in the consumer project during the function deployment.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
    * The Google Cloud Functions service account
    * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
    * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter

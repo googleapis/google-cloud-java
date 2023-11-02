@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class AccessMetric extends com.google.protobuf.GeneratedMessageV3
     return new AccessMetric();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AccessReportProto
         .internal_static_google_analytics_admin_v1alpha_AccessMetric_descriptor;
@@ -79,6 +74,7 @@ public final class AccessMetric extends com.google.protobuf.GeneratedMessageV3
    * The API name of the metric. See [Data Access
    * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
    * for the list of metrics supported in this API.
+   *
    * Metrics are referenced by name in `metricFilter` &amp; `orderBys`.
    * </pre>
    *
@@ -105,6 +101,7 @@ public final class AccessMetric extends com.google.protobuf.GeneratedMessageV3
    * The API name of the metric. See [Data Access
    * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
    * for the list of metrics supported in this API.
+   *
    * Metrics are referenced by name in `metricFilter` &amp; `orderBys`.
    * </pre>
    *
@@ -476,6 +473,7 @@ public final class AccessMetric extends com.google.protobuf.GeneratedMessageV3
      * The API name of the metric. See [Data Access
      * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
      * for the list of metrics supported in this API.
+     *
      * Metrics are referenced by name in `metricFilter` &amp; `orderBys`.
      * </pre>
      *
@@ -501,6 +499,7 @@ public final class AccessMetric extends com.google.protobuf.GeneratedMessageV3
      * The API name of the metric. See [Data Access
      * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
      * for the list of metrics supported in this API.
+     *
      * Metrics are referenced by name in `metricFilter` &amp; `orderBys`.
      * </pre>
      *
@@ -526,6 +525,7 @@ public final class AccessMetric extends com.google.protobuf.GeneratedMessageV3
      * The API name of the metric. See [Data Access
      * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
      * for the list of metrics supported in this API.
+     *
      * Metrics are referenced by name in `metricFilter` &amp; `orderBys`.
      * </pre>
      *
@@ -550,6 +550,7 @@ public final class AccessMetric extends com.google.protobuf.GeneratedMessageV3
      * The API name of the metric. See [Data Access
      * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
      * for the list of metrics supported in this API.
+     *
      * Metrics are referenced by name in `metricFilter` &amp; `orderBys`.
      * </pre>
      *
@@ -570,6 +571,7 @@ public final class AccessMetric extends com.google.protobuf.GeneratedMessageV3
      * The API name of the metric. See [Data Access
      * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
      * for the list of metrics supported in this API.
+     *
      * Metrics are referenced by name in `metricFilter` &amp; `orderBys`.
      * </pre>
      *

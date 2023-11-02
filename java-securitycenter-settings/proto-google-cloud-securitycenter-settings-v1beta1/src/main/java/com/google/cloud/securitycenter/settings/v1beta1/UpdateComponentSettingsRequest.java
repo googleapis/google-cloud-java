@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
     return new UpdateComponentSettingsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.settings.v1beta1.SettingsServiceProto
         .internal_static_google_cloud_securitycenter_settings_v1beta1_UpdateComponentSettingsRequest_descriptor;
@@ -74,6 +69,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The component settings to update.
+   *
    * The component settings' `name` field is used to identify the component
    * settings to be updated. Formats:
    *  * `organizations/{organization}/components/{component}/settings`
@@ -99,6 +95,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The component settings to update.
+   *
    * The component settings' `name` field is used to identify the component
    * settings to be updated. Formats:
    *  * `organizations/{organization}/components/{component}/settings`
@@ -126,6 +123,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The component settings to update.
+   *
    * The component settings' `name` field is used to identify the component
    * settings to be updated. Formats:
    *  * `organizations/{organization}/components/{component}/settings`
@@ -612,6 +610,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The component settings to update.
+     *
      * The component settings' `name` field is used to identify the component
      * settings to be updated. Formats:
      *  * `organizations/{organization}/components/{component}/settings`
@@ -636,6 +635,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The component settings to update.
+     *
      * The component settings' `name` field is used to identify the component
      * settings to be updated. Formats:
      *  * `organizations/{organization}/components/{component}/settings`
@@ -668,6 +668,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The component settings to update.
+     *
      * The component settings' `name` field is used to identify the component
      * settings to be updated. Formats:
      *  * `organizations/{organization}/components/{component}/settings`
@@ -701,6 +702,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The component settings to update.
+     *
      * The component settings' `name` field is used to identify the component
      * settings to be updated. Formats:
      *  * `organizations/{organization}/components/{component}/settings`
@@ -732,6 +734,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The component settings to update.
+     *
      * The component settings' `name` field is used to identify the component
      * settings to be updated. Formats:
      *  * `organizations/{organization}/components/{component}/settings`
@@ -770,6 +773,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The component settings to update.
+     *
      * The component settings' `name` field is used to identify the component
      * settings to be updated. Formats:
      *  * `organizations/{organization}/components/{component}/settings`
@@ -799,6 +803,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The component settings to update.
+     *
      * The component settings' `name` field is used to identify the component
      * settings to be updated. Formats:
      *  * `organizations/{organization}/components/{component}/settings`
@@ -824,6 +829,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The component settings to update.
+     *
      * The component settings' `name` field is used to identify the component
      * settings to be updated. Formats:
      *  * `organizations/{organization}/components/{component}/settings`
@@ -854,6 +860,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The component settings to update.
+     *
      * The component settings' `name` field is used to identify the component
      * settings to be updated. Formats:
      *  * `organizations/{organization}/components/{component}/settings`

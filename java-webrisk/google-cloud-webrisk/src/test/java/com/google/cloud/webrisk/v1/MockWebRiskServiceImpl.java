@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.webrisk.v1;
 
 import com.google.api.core.BetaApi;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.webrisk.v1.ComputeThreatListDiffRequest;
 import com.google.webrisk.v1.ComputeThreatListDiffResponse;
@@ -26,6 +27,7 @@ import com.google.webrisk.v1.SearchHashesResponse;
 import com.google.webrisk.v1.SearchUrisRequest;
 import com.google.webrisk.v1.SearchUrisResponse;
 import com.google.webrisk.v1.Submission;
+import com.google.webrisk.v1.SubmitUriRequest;
 import com.google.webrisk.v1.WebRiskServiceGrpc.WebRiskServiceImplBase;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -147,6 +149,26 @@ public class MockWebRiskServiceImpl extends WebRiskServiceImplBase {
                   "Unrecognized response type %s for method CreateSubmission, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Submission.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void submitUri(SubmitUriRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SubmitUri, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

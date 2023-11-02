@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,17 +42,13 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     displayName_ = "";
     description_ = "";
     policyTags_ = java.util.Collections.emptyList();
+    activatedPolicyTypes_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SerializedTaxonomy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,7 +74,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
+   * Required. Display name of the taxonomy. Max 200 bytes when encoded in
+   * UTF-8.
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -101,7 +98,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
+   * Required. Display name of the taxonomy. Max 200 bytes when encoded in
+   * UTF-8.
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -249,6 +247,119 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     return policyTags_.get(index);
   }
 
+  public static final int ACTIVATED_POLICY_TYPES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> activatedPolicyTypes_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>
+      activatedPolicyTypes_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>() {
+            public com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType convert(
+                java.lang.Integer from) {
+              com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType result =
+                  com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType.forNumber(from);
+              return result == null
+                  ? com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType.UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * A list of policy types that are activated for a taxonomy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+   * </code>
+   *
+   * @return A list containing the activatedPolicyTypes.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>
+      getActivatedPolicyTypesList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>(
+        activatedPolicyTypes_, activatedPolicyTypes_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of policy types that are activated for a taxonomy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+   * </code>
+   *
+   * @return The count of activatedPolicyTypes.
+   */
+  @java.lang.Override
+  public int getActivatedPolicyTypesCount() {
+    return activatedPolicyTypes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of policy types that are activated for a taxonomy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The activatedPolicyTypes at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType getActivatedPolicyTypes(
+      int index) {
+    return activatedPolicyTypes_converter_.convert(activatedPolicyTypes_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of policy types that are activated for a taxonomy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for activatedPolicyTypes.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList() {
+    return activatedPolicyTypes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of policy types that are activated for a taxonomy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of activatedPolicyTypes at the given index.
+   */
+  @java.lang.Override
+  public int getActivatedPolicyTypesValue(int index) {
+    return activatedPolicyTypes_.get(index);
+  }
+
+  private int activatedPolicyTypesMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -263,6 +374,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
     }
@@ -271,6 +383,13 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     }
     for (int i = 0; i < policyTags_.size(); i++) {
       output.writeMessage(3, policyTags_.get(i));
+    }
+    if (getActivatedPolicyTypesList().size() > 0) {
+      output.writeUInt32NoTag(34);
+      output.writeUInt32NoTag(activatedPolicyTypesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < activatedPolicyTypes_.size(); i++) {
+      output.writeEnumNoTag(activatedPolicyTypes_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -289,6 +408,20 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     }
     for (int i = 0; i < policyTags_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, policyTags_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < activatedPolicyTypes_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                activatedPolicyTypes_.get(i));
+      }
+      size += dataSize;
+      if (!getActivatedPolicyTypesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      activatedPolicyTypesMemoizedSerializedSize = dataSize;
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -309,6 +442,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getPolicyTagsList().equals(other.getPolicyTagsList())) return false;
+    if (!activatedPolicyTypes_.equals(other.activatedPolicyTypes_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -327,6 +461,10 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     if (getPolicyTagsCount() > 0) {
       hash = (37 * hash) + POLICY_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getPolicyTagsList().hashCode();
+    }
+    if (getActivatedPolicyTypesCount() > 0) {
+      hash = (37 * hash) + ACTIVATED_POLICY_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + activatedPolicyTypes_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -478,6 +616,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         policyTagsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      activatedPolicyTypes_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -524,6 +664,11 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       } else {
         result.policyTags_ = policyTagsBuilder_.build();
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        activatedPolicyTypes_ = java.util.Collections.unmodifiableList(activatedPolicyTypes_);
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.activatedPolicyTypes_ = activatedPolicyTypes_;
     }
 
     private void buildPartial0(com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy result) {
@@ -619,6 +764,16 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
           }
         }
       }
+      if (!other.activatedPolicyTypes_.isEmpty()) {
+        if (activatedPolicyTypes_.isEmpty()) {
+          activatedPolicyTypes_ = other.activatedPolicyTypes_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureActivatedPolicyTypesIsMutable();
+          activatedPolicyTypes_.addAll(other.activatedPolicyTypes_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -671,6 +826,25 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case 26
+            case 32:
+              {
+                int tmpRaw = input.readEnum();
+                ensureActivatedPolicyTypesIsMutable();
+                activatedPolicyTypes_.add(tmpRaw);
+                break;
+              } // case 32
+            case 34:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureActivatedPolicyTypesIsMutable();
+                  activatedPolicyTypes_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -695,7 +869,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
+     * Required. Display name of the taxonomy. Max 200 bytes when encoded in
+     * UTF-8.
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -717,7 +892,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
+     * Required. Display name of the taxonomy. Max 200 bytes when encoded in
+     * UTF-8.
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -739,7 +915,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
+     * Required. Display name of the taxonomy. Max 200 bytes when encoded in
+     * UTF-8.
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -760,7 +937,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
+     * Required. Display name of the taxonomy. Max 200 bytes when encoded in
+     * UTF-8.
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -777,7 +955,8 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
+     * Required. Display name of the taxonomy. Max 200 bytes when encoded in
+     * UTF-8.
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1274,6 +1453,257 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         policyTags_ = null;
       }
       return policyTagsBuilder_;
+    }
+
+    private java.util.List<java.lang.Integer> activatedPolicyTypes_ =
+        java.util.Collections.emptyList();
+
+    private void ensureActivatedPolicyTypesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        activatedPolicyTypes_ = new java.util.ArrayList<java.lang.Integer>(activatedPolicyTypes_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @return A list containing the activatedPolicyTypes.
+     */
+    public java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>
+        getActivatedPolicyTypesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>(
+          activatedPolicyTypes_, activatedPolicyTypes_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @return The count of activatedPolicyTypes.
+     */
+    public int getActivatedPolicyTypesCount() {
+      return activatedPolicyTypes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The activatedPolicyTypes at the given index.
+     */
+    public com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType getActivatedPolicyTypes(
+        int index) {
+      return activatedPolicyTypes_converter_.convert(activatedPolicyTypes_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The activatedPolicyTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActivatedPolicyTypes(
+        int index, com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureActivatedPolicyTypesIsMutable();
+      activatedPolicyTypes_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @param value The activatedPolicyTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addActivatedPolicyTypes(
+        com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureActivatedPolicyTypesIsMutable();
+      activatedPolicyTypes_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @param values The activatedPolicyTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllActivatedPolicyTypes(
+        java.lang.Iterable<? extends com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>
+            values) {
+      ensureActivatedPolicyTypesIsMutable();
+      for (com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType value : values) {
+        activatedPolicyTypes_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearActivatedPolicyTypes() {
+      activatedPolicyTypes_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for activatedPolicyTypes.
+     */
+    public java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList() {
+      return java.util.Collections.unmodifiableList(activatedPolicyTypes_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of activatedPolicyTypes at the given index.
+     */
+    public int getActivatedPolicyTypesValue(int index) {
+      return activatedPolicyTypes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for activatedPolicyTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActivatedPolicyTypesValue(int index, int value) {
+      ensureActivatedPolicyTypesIsMutable();
+      activatedPolicyTypes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for activatedPolicyTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addActivatedPolicyTypesValue(int value) {
+      ensureActivatedPolicyTypesIsMutable();
+      activatedPolicyTypes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of policy types that are activated for a taxonomy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType activated_policy_types = 4;
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for activatedPolicyTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllActivatedPolicyTypesValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureActivatedPolicyTypesIsMutable();
+      for (int value : values) {
+        activatedPolicyTypes_.add(value);
+      }
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

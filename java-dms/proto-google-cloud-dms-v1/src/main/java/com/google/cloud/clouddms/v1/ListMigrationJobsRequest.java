@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.cloud.clouddms.v1;
  *
  *
  * <pre>
- * Retrieve a list of all migration jobs in a given project and location.
+ * Retrieves a list of all migration jobs in a given project and location.
  * </pre>
  *
  * Protobuf type {@code google.cloud.clouddms.v1.ListMigrationJobsRequest}
@@ -50,11 +50,6 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
     return new ListMigrationJobsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsProto
         .internal_static_google_cloud_clouddms_v1_ListMigrationJobsRequest_descriptor;
@@ -78,7 +73,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of migrationJobs.
+   * Required. The parent which owns this collection of migrationJobs.
    * </pre>
    *
    * <code>
@@ -103,7 +98,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of migrationJobs.
+   * Required. The parent which owns this collection of migrationJobs.
    * </pre>
    *
    * <code>
@@ -133,7 +128,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
    * <pre>
    * The maximum number of migration jobs to return. The service may return
    * fewer than this value. If unspecified, at most 50 migration jobs will be
-   * returned. The maximum value is 1000; values above 1000 will be coerced to
+   * returned. The maximum value is 1000; values above 1000 are coerced to
    * 1000.
    * </pre>
    *
@@ -525,7 +520,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Retrieve a list of all migration jobs in a given project and location.
+   * Retrieves a list of all migration jobs in a given project and location.
    * </pre>
    *
    * Protobuf type {@code google.cloud.clouddms.v1.ListMigrationJobsRequest}
@@ -767,7 +762,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of migrationJobs.
+     * Required. The parent which owns this collection of migrationJobs.
      * </pre>
      *
      * <code>
@@ -791,7 +786,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of migrationJobs.
+     * Required. The parent which owns this collection of migrationJobs.
      * </pre>
      *
      * <code>
@@ -815,7 +810,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of migrationJobs.
+     * Required. The parent which owns this collection of migrationJobs.
      * </pre>
      *
      * <code>
@@ -838,7 +833,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of migrationJobs.
+     * Required. The parent which owns this collection of migrationJobs.
      * </pre>
      *
      * <code>
@@ -857,7 +852,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of migrationJobs.
+     * Required. The parent which owns this collection of migrationJobs.
      * </pre>
      *
      * <code>
@@ -885,7 +880,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
      * <pre>
      * The maximum number of migration jobs to return. The service may return
      * fewer than this value. If unspecified, at most 50 migration jobs will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
+     * returned. The maximum value is 1000; values above 1000 are coerced to
      * 1000.
      * </pre>
      *
@@ -903,7 +898,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
      * <pre>
      * The maximum number of migration jobs to return. The service may return
      * fewer than this value. If unspecified, at most 50 migration jobs will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
+     * returned. The maximum value is 1000; values above 1000 are coerced to
      * 1000.
      * </pre>
      *
@@ -925,7 +920,7 @@ public final class ListMigrationJobsRequest extends com.google.protobuf.Generate
      * <pre>
      * The maximum number of migration jobs to return. The service may return
      * fewer than this value. If unspecified, at most 50 migration jobs will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
+     * returned. The maximum value is 1000; values above 1000 are coerced to
      * 1000.
      * </pre>
      *

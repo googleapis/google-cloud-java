@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,6 +102,7 @@ public interface SearchMigratableResourcesRequestOrBuilder
    *
    * <pre>
    * A filter for your search. You can use the following types of filters:
+   *
    * *   Resource type filters. The following strings filter for a specific type
    *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
    *     *   `ml_engine_model_version:*`
@@ -124,6 +125,7 @@ public interface SearchMigratableResourcesRequestOrBuilder
    *
    * <pre>
    * A filter for your search. You can use the following types of filters:
+   *
    * *   Resource type filters. The following strings filter for a specific type
    *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
    *     *   `ml_engine_model_version:*`

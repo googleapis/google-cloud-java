@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchCatalogResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -177,6 +172,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * <pre>
    * The relative resource name of the resource in URL format.
    * Examples:
+   *
    *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
    *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
    * </pre>
@@ -203,6 +199,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * <pre>
    * The relative resource name of the resource in URL format.
    * Examples:
+   *
    *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
    *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
    * </pre>
@@ -235,6 +232,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Example:
+   *
    *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
    * </pre>
    *
@@ -261,6 +259,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Example:
+   *
    *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
    * </pre>
    *
@@ -279,6 +278,52 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int MODIFY_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp modifyTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   *
+   * @return Whether the modifyTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasModifyTime() {
+    return modifyTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   *
+   * @return The modifyTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getModifyTime() {
+    return modifyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifyTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getModifyTimeOrBuilder() {
+    return modifyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifyTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -309,6 +354,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(linkedResource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, linkedResource_);
     }
+    if (modifyTime_ != null) {
+      output.writeMessage(7, getModifyTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -332,6 +380,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(linkedResource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, linkedResource_);
     }
+    if (modifyTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getModifyTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -352,6 +403,10 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     if (!getSearchResultSubtype().equals(other.getSearchResultSubtype())) return false;
     if (!getRelativeResourceName().equals(other.getRelativeResourceName())) return false;
     if (!getLinkedResource().equals(other.getLinkedResource())) return false;
+    if (hasModifyTime() != other.hasModifyTime()) return false;
+    if (hasModifyTime()) {
+      if (!getModifyTime().equals(other.getModifyTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -371,6 +426,10 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getRelativeResourceName().hashCode();
     hash = (37 * hash) + LINKED_RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getLinkedResource().hashCode();
+    if (hasModifyTime()) {
+      hash = (37 * hash) + MODIFY_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getModifyTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -516,6 +575,11 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       searchResultSubtype_ = "";
       relativeResourceName_ = "";
       linkedResource_ = "";
+      modifyTime_ = null;
+      if (modifyTimeBuilder_ != null) {
+        modifyTimeBuilder_.dispose();
+        modifyTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -563,6 +627,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.linkedResource_ = linkedResource_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.modifyTime_ = modifyTimeBuilder_ == null ? modifyTime_ : modifyTimeBuilder_.build();
       }
     }
 
@@ -630,6 +697,9 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasModifyTime()) {
+        mergeModifyTime(other.getModifyTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -680,6 +750,12 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 58:
+              {
+                input.readMessage(getModifyTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -925,6 +1001,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <pre>
      * The relative resource name of the resource in URL format.
      * Examples:
+     *
      *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
      *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
      * </pre>
@@ -950,6 +1027,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <pre>
      * The relative resource name of the resource in URL format.
      * Examples:
+     *
      *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
      *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
      * </pre>
@@ -975,6 +1053,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <pre>
      * The relative resource name of the resource in URL format.
      * Examples:
+     *
      *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
      *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
      * </pre>
@@ -999,6 +1078,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <pre>
      * The relative resource name of the resource in URL format.
      * Examples:
+     *
      *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
      *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
      * </pre>
@@ -1019,6 +1099,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <pre>
      * The relative resource name of the resource in URL format.
      * Examples:
+     *
      *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
      *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
      * </pre>
@@ -1047,6 +1128,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name.
      * Example:
+     *
      *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
      * </pre>
      *
@@ -1072,6 +1154,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name.
      * Example:
+     *
      *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
      * </pre>
      *
@@ -1097,6 +1180,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name.
      * Example:
+     *
      *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
      * </pre>
      *
@@ -1121,6 +1205,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name.
      * Example:
+     *
      *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
      * </pre>
      *
@@ -1141,6 +1226,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name.
      * Example:
+     *
      *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
      * </pre>
      *
@@ -1158,6 +1244,189 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp modifyTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        modifyTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     *
+     * @return Whether the modifyTime field is set.
+     */
+    public boolean hasModifyTime() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     *
+     * @return The modifyTime.
+     */
+    public com.google.protobuf.Timestamp getModifyTime() {
+      if (modifyTimeBuilder_ == null) {
+        return modifyTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : modifyTime_;
+      } else {
+        return modifyTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public Builder setModifyTime(com.google.protobuf.Timestamp value) {
+      if (modifyTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modifyTime_ = value;
+      } else {
+        modifyTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public Builder setModifyTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (modifyTimeBuilder_ == null) {
+        modifyTime_ = builderForValue.build();
+      } else {
+        modifyTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public Builder mergeModifyTime(com.google.protobuf.Timestamp value) {
+      if (modifyTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && modifyTime_ != null
+            && modifyTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getModifyTimeBuilder().mergeFrom(value);
+        } else {
+          modifyTime_ = value;
+        }
+      } else {
+        modifyTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public Builder clearModifyTime() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      modifyTime_ = null;
+      if (modifyTimeBuilder_ != null) {
+        modifyTimeBuilder_.dispose();
+        modifyTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getModifyTimeBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getModifyTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getModifyTimeOrBuilder() {
+      if (modifyTimeBuilder_ != null) {
+        return modifyTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return modifyTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : modifyTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getModifyTimeFieldBuilder() {
+      if (modifyTimeBuilder_ == null) {
+        modifyTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getModifyTime(), getParentForChildren(), isClean());
+        modifyTime_ = null;
+      }
+      return modifyTimeBuilder_;
     }
 
     @java.lang.Override

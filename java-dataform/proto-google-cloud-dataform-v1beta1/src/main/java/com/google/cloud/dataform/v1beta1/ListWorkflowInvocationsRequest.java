@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,17 +41,14 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
   private ListWorkflowInvocationsRequest() {
     parent_ = "";
     pageToken_ = "";
+    orderBy_ = "";
+    filter_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListWorkflowInvocationsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,8 +74,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The parent resource of the WorkflowInvocation type. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The parent resource of the WorkflowInvocation type. Must be in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>
@@ -103,8 +100,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The parent resource of the WorkflowInvocation type. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The parent resource of the WorkflowInvocation type. Must be in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>
@@ -132,8 +129,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Maximum number of workflow invocations to return. The server may return
-   * fewer items than requested. If unspecified, the server will pick an
+   * Optional. Maximum number of workflow invocations to return. The server may
+   * return fewer items than requested. If unspecified, the server will pick an
    * appropriate default.
    * </pre>
    *
@@ -154,8 +151,9 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `ListWorkflowInvocations` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `ListWorkflowInvocations`
+   * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListWorkflowInvocations`
    * must match the call that provided the page token.
    * </pre>
@@ -180,8 +178,9 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `ListWorkflowInvocations` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `ListWorkflowInvocations`
+   * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListWorkflowInvocations`
    * must match the call that provided the page token.
    * </pre>
@@ -197,6 +196,112 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       pageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORDER_BY_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field only supports ordering by `name`. If unspecified, the
+   * server will choose the ordering. If specified, the default order is
+   * ascending for the `name` field.
+   * </pre>
+   *
+   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  @java.lang.Override
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field only supports ordering by `name`. If unspecified, the
+   * server will choose the ordering. If specified, the default order is
+   * ascending for the `name` field.
+   * </pre>
+   *
+   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FILTER_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for the returned list.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for the returned list.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -226,6 +331,12 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, orderBy_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -243,6 +354,12 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, orderBy_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -263,6 +380,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -280,6 +399,10 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -423,6 +546,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
       parent_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      orderBy_ = "";
+      filter_ = "";
       return this;
     }
 
@@ -469,6 +594,12 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.filter_ = filter_;
       }
     }
 
@@ -533,6 +664,16 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -577,6 +718,18 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -601,8 +754,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource of the WorkflowInvocation type. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The parent resource of the WorkflowInvocation type. Must be in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -626,8 +779,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource of the WorkflowInvocation type. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The parent resource of the WorkflowInvocation type. Must be in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -651,8 +804,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource of the WorkflowInvocation type. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The parent resource of the WorkflowInvocation type. Must be in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -675,8 +828,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource of the WorkflowInvocation type. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The parent resource of the WorkflowInvocation type. Must be in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -695,8 +848,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource of the WorkflowInvocation type. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The parent resource of the WorkflowInvocation type. Must be in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -722,8 +875,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Maximum number of workflow invocations to return. The server may return
-     * fewer items than requested. If unspecified, the server will pick an
+     * Optional. Maximum number of workflow invocations to return. The server may
+     * return fewer items than requested. If unspecified, the server will pick an
      * appropriate default.
      * </pre>
      *
@@ -739,8 +892,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Maximum number of workflow invocations to return. The server may return
-     * fewer items than requested. If unspecified, the server will pick an
+     * Optional. Maximum number of workflow invocations to return. The server may
+     * return fewer items than requested. If unspecified, the server will pick an
      * appropriate default.
      * </pre>
      *
@@ -760,8 +913,8 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Maximum number of workflow invocations to return. The server may return
-     * fewer items than requested. If unspecified, the server will pick an
+     * Optional. Maximum number of workflow invocations to return. The server may
+     * return fewer items than requested. If unspecified, the server will pick an
      * appropriate default.
      * </pre>
      *
@@ -781,8 +934,9 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Page token received from a previous `ListWorkflowInvocations` call.
-     * Provide this to retrieve the subsequent page.
+     * Optional. Page token received from a previous `ListWorkflowInvocations`
+     * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListWorkflowInvocations`
      * must match the call that provided the page token.
      * </pre>
@@ -806,8 +960,9 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Page token received from a previous `ListWorkflowInvocations` call.
-     * Provide this to retrieve the subsequent page.
+     * Optional. Page token received from a previous `ListWorkflowInvocations`
+     * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListWorkflowInvocations`
      * must match the call that provided the page token.
      * </pre>
@@ -831,8 +986,9 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Page token received from a previous `ListWorkflowInvocations` call.
-     * Provide this to retrieve the subsequent page.
+     * Optional. Page token received from a previous `ListWorkflowInvocations`
+     * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListWorkflowInvocations`
      * must match the call that provided the page token.
      * </pre>
@@ -855,8 +1011,9 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Page token received from a previous `ListWorkflowInvocations` call.
-     * Provide this to retrieve the subsequent page.
+     * Optional. Page token received from a previous `ListWorkflowInvocations`
+     * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListWorkflowInvocations`
      * must match the call that provided the page token.
      * </pre>
@@ -875,8 +1032,9 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Page token received from a previous `ListWorkflowInvocations` call.
-     * Provide this to retrieve the subsequent page.
+     * Optional. Page token received from a previous `ListWorkflowInvocations`
+     * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListWorkflowInvocations`
      * must match the call that provided the page token.
      * </pre>
@@ -893,6 +1051,228 @@ public final class ListWorkflowInvocationsRequest extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field only supports ordering by `name`. If unspecified, the
+     * server will choose the ordering. If specified, the default order is
+     * ascending for the `name` field.
+     * </pre>
+     *
+     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The orderBy.
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field only supports ordering by `name`. If unspecified, the
+     * server will choose the ordering. If specified, the default order is
+     * ascending for the `name` field.
+     * </pre>
+     *
+     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for orderBy.
+     */
+    public com.google.protobuf.ByteString getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field only supports ordering by `name`. If unspecified, the
+     * server will choose the ordering. If specified, the default order is
+     * ascending for the `name` field.
+     * </pre>
+     *
+     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderBy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      orderBy_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field only supports ordering by `name`. If unspecified, the
+     * server will choose the ordering. If specified, the default order is
+     * ascending for the `name` field.
+     * </pre>
+     *
+     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderBy() {
+      orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field only supports ordering by `name`. If unspecified, the
+     * server will choose the ordering. If specified, the default order is
+     * ascending for the `name` field.
+     * </pre>
+     *
+     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      orderBy_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for the returned list.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for the returned list.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for the returned list.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for the returned list.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for the returned list.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

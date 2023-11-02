@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,19 +38,14 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   }
 
   private AnnotatorSelector() {
-    phraseMatchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    issueModels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    phraseMatchers_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    issueModels_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnnotatorSelector();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -161,8 +156,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
             .SummarizationModel
         getSummarizationModel();
 
-    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
-            .ModelSourceCase
+    com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.ModelSourceCase
         getModelSourceCase();
   }
   /**
@@ -191,11 +185,6 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SummarizationConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -357,6 +346,8 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     }
 
     private int modelSourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object modelSource_;
 
     public enum ModelSourceCase
@@ -1394,7 +1385,8 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   public static final int PHRASE_MATCHERS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList phraseMatchers_;
+  private com.google.protobuf.LazyStringArrayList phraseMatchers_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1546,7 +1538,8 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
   public static final int ISSUE_MODELS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList issueModels_;
+  private com.google.protobuf.LazyStringArrayList issueModels_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2013,14 +2006,12 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       runInterruptionAnnotator_ = false;
       runSilenceAnnotator_ = false;
       runPhraseMatcherAnnotator_ = false;
-      phraseMatchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      phraseMatchers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       runSentimentAnnotator_ = false;
       runEntityAnnotator_ = false;
       runIntentAnnotator_ = false;
       runIssueModelAnnotator_ = false;
-      issueModels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      issueModels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       runSummarizationAnnotator_ = false;
       summarizationConfig_ = null;
       if (summarizationConfigBuilder_ != null) {
@@ -2054,26 +2045,11 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector buildPartial() {
       com.google.cloud.contactcenterinsights.v1.AnnotatorSelector result =
           new com.google.cloud.contactcenterinsights.v1.AnnotatorSelector(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        phraseMatchers_ = phraseMatchers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.phraseMatchers_ = phraseMatchers_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        issueModels_ = issueModels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.issueModels_ = issueModels_;
     }
 
     private void buildPartial0(com.google.cloud.contactcenterinsights.v1.AnnotatorSelector result) {
@@ -2087,6 +2063,10 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.runPhraseMatcherAnnotator_ = runPhraseMatcherAnnotator_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        phraseMatchers_.makeImmutable();
+        result.phraseMatchers_ = phraseMatchers_;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.runSentimentAnnotator_ = runSentimentAnnotator_;
       }
@@ -2098,6 +2078,10 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.runIssueModelAnnotator_ = runIssueModelAnnotator_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        issueModels_.makeImmutable();
+        result.issueModels_ = issueModels_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.runSummarizationAnnotator_ = runSummarizationAnnotator_;
@@ -2168,7 +2152,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       if (!other.phraseMatchers_.isEmpty()) {
         if (phraseMatchers_.isEmpty()) {
           phraseMatchers_ = other.phraseMatchers_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensurePhraseMatchersIsMutable();
           phraseMatchers_.addAll(other.phraseMatchers_);
@@ -2190,7 +2174,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       if (!other.issueModels_.isEmpty()) {
         if (issueModels_.isEmpty()) {
           issueModels_ = other.issueModels_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureIssueModelsIsMutable();
           issueModels_.addAll(other.issueModels_);
@@ -2476,14 +2460,14 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList phraseMatchers_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList phraseMatchers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePhraseMatchersIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!phraseMatchers_.isModifiable()) {
         phraseMatchers_ = new com.google.protobuf.LazyStringArrayList(phraseMatchers_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -2501,7 +2485,8 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      * @return A list containing the phraseMatchers.
      */
     public com.google.protobuf.ProtocolStringList getPhraseMatchersList() {
-      return phraseMatchers_.getUnmodifiableView();
+      phraseMatchers_.makeImmutable();
+      return phraseMatchers_;
     }
     /**
      *
@@ -2582,6 +2567,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       }
       ensurePhraseMatchersIsMutable();
       phraseMatchers_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2607,6 +2593,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       }
       ensurePhraseMatchersIsMutable();
       phraseMatchers_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2629,6 +2616,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     public Builder addAllPhraseMatchers(java.lang.Iterable<java.lang.String> values) {
       ensurePhraseMatchersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, phraseMatchers_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2648,8 +2636,9 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPhraseMatchers() {
-      phraseMatchers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      phraseMatchers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -2676,6 +2665,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensurePhraseMatchersIsMutable();
       phraseMatchers_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2895,14 +2885,14 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList issueModels_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList issueModels_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIssueModelsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!issueModels_.isModifiable()) {
         issueModels_ = new com.google.protobuf.LazyStringArrayList(issueModels_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -2920,7 +2910,8 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      * @return A list containing the issueModels.
      */
     public com.google.protobuf.ProtocolStringList getIssueModelsList() {
-      return issueModels_.getUnmodifiableView();
+      issueModels_.makeImmutable();
+      return issueModels_;
     }
     /**
      *
@@ -3001,6 +2992,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       }
       ensureIssueModelsIsMutable();
       issueModels_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3026,6 +3018,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       }
       ensureIssueModelsIsMutable();
       issueModels_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3048,6 +3041,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     public Builder addAllIssueModels(java.lang.Iterable<java.lang.String> values) {
       ensureIssueModelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, issueModels_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3067,8 +3061,9 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearIssueModels() {
-      issueModels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      issueModels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -3095,6 +3090,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureIssueModelsIsMutable();
       issueModels_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

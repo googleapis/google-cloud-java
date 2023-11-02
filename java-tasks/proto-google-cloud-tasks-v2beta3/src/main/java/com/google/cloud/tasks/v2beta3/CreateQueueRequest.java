@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.tasks.v2beta3;
  *
  *
  * <pre>
- * Request message for [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
+ * Request message for
+ * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.CreateQueueRequest}
@@ -45,11 +46,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateQueueRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,6 +73,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The location name in which the queue will be created.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+   *
    * The list of allowed locations can be obtained by calling Cloud
    * Tasks' implementation of
    * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -106,6 +103,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The location name in which the queue will be created.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+   *
    * The list of allowed locations can be obtained by calling Cloud
    * Tasks' implementation of
    * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -137,7 +135,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+   *
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -154,7 +154,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+   *
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -171,7 +173,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+   *
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -359,7 +363,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
+   * Request message for
+   * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.CreateQueueRequest}
@@ -562,6 +567,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+     *
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -590,6 +596,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+     *
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -618,6 +625,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+     *
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -645,6 +653,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+     *
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -668,6 +677,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+     *
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -702,7 +712,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     *
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -718,7 +730,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     *
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -738,7 +752,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     *
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -762,7 +778,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     *
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -783,7 +801,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     *
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -810,7 +830,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     *
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -831,7 +853,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     *
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -847,7 +871,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     *
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -865,7 +891,9 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     *
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Condition();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1323,6 +1318,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLING = 4;</code>
      */
     CANCELLING(4),
+    /**
+     *
+     *
+     * <pre>
+     * The execution was deleted.
+     * </pre>
+     *
+     * <code>DELETED = 5;</code>
+     */
+    DELETED(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -1377,6 +1382,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLING = 4;</code>
      */
     public static final int CANCELLING_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The execution was deleted.
+     * </pre>
+     *
+     * <code>DELETED = 5;</code>
+     */
+    public static final int DELETED_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1412,6 +1427,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return CANCELLED;
         case 4:
           return CANCELLING;
+        case 5:
+          return DELETED;
         default:
           return null;
       }
@@ -1468,6 +1485,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int reasonsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object reasons_;
 
   public enum ReasonsCase

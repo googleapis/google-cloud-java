@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ChangeHistoryChange();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -364,7 +359,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     com.google.analytics.admin.v1beta.DataStreamOrBuilder getDataStreamOrBuilder();
 
-    public com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
+    com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
   }
   /**
@@ -395,11 +390,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return new ChangeHistoryResource();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.admin.v1beta.ResourcesProto
           .internal_static_google_analytics_admin_v1beta_ChangeHistoryChange_ChangeHistoryResource_descriptor;
@@ -417,6 +407,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     private int resourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object resource_;
 
     public enum ResourceCase

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,6 +100,7 @@ public interface CreateBackupRequestOrBuilder
    * <pre>
    * Required. The ID to use for the backup.
    * The ID must be unique within the specified project and location.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * Values that do not match this pattern will trigger an INVALID_ARGUMENT
@@ -117,6 +118,7 @@ public interface CreateBackupRequestOrBuilder
    * <pre>
    * Required. The ID to use for the backup.
    * The ID must be unique within the specified project and location.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * Values that do not match this pattern will trigger an INVALID_ARGUMENT

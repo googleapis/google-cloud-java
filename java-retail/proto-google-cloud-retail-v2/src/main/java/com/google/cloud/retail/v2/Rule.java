@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.retail.v2;
  *
  * <pre>
  * A rule is a condition-action pair
+ *
  * * A condition defines when a rule is to be triggered.
  * * An action specifies what occurs on that trigger.
  * Currently rules only work for [controls][google.cloud.retail.v2.Control] with
@@ -47,11 +48,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Rule();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -79,16 +75,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Strength of the condition boost, which must be in [-1, 1]. Negative
      * boost means demotion. Default is 0.0.
+     *
      * Setting to 1.0 gives the item a big promotion. However, it does not
      * necessarily mean that the boosted item will be the top result at all
      * times, nor that other items will be excluded. Results could still be
      * shown even when none of them matches the condition. And results that
      * are significantly more relevant to the search query can still trump
      * your heavily favored but irrelevant items.
+     *
      * Setting to -1.0 gives the item a big demotion. However, results that
      * are deeply relevant might still be shown. The item will have an
      * upstream battle to get a fairly high ranking, but it is not blocked out
      * completely.
+     *
      * Setting to 0.0 means no boost applied. The boosting condition is
      * ignored.
      * </pre>
@@ -108,7 +107,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * The syntax and supported fields are the same as a filter expression. See
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
      * detail syntax and limitations.
+     *
      * Examples:
+     *
      * * To boost products with product ID "product_1" or "product_2", and
      * color
      *   "Red" or "Blue":&lt;br&gt;
@@ -131,7 +132,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * The syntax and supported fields are the same as a filter expression. See
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
      * detail syntax and limitations.
+     *
      * Examples:
+     *
      * * To boost products with product ID "product_1" or "product_2", and
      * color
      *   "Red" or "Blue":&lt;br&gt;
@@ -175,11 +178,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       return new BoostAction();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.retail.v2.CommonProto
           .internal_static_google_cloud_retail_v2_Rule_BoostAction_descriptor;
@@ -203,16 +201,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Strength of the condition boost, which must be in [-1, 1]. Negative
      * boost means demotion. Default is 0.0.
+     *
      * Setting to 1.0 gives the item a big promotion. However, it does not
      * necessarily mean that the boosted item will be the top result at all
      * times, nor that other items will be excluded. Results could still be
      * shown even when none of them matches the condition. And results that
      * are significantly more relevant to the search query can still trump
      * your heavily favored but irrelevant items.
+     *
      * Setting to -1.0 gives the item a big demotion. However, results that
      * are deeply relevant might still be shown. The item will have an
      * upstream battle to get a fairly high ranking, but it is not blocked out
      * completely.
+     *
      * Setting to 0.0 means no boost applied. The boosting condition is
      * ignored.
      * </pre>
@@ -239,7 +240,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * The syntax and supported fields are the same as a filter expression. See
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
      * detail syntax and limitations.
+     *
      * Examples:
+     *
      * * To boost products with product ID "product_1" or "product_2", and
      * color
      *   "Red" or "Blue":&lt;br&gt;
@@ -273,7 +276,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * The syntax and supported fields are the same as a filter expression. See
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
      * detail syntax and limitations.
+     *
      * Examples:
+     *
      * * To boost products with product ID "product_1" or "product_2", and
      * color
      *   "Red" or "Blue":&lt;br&gt;
@@ -674,16 +679,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Strength of the condition boost, which must be in [-1, 1]. Negative
        * boost means demotion. Default is 0.0.
+       *
        * Setting to 1.0 gives the item a big promotion. However, it does not
        * necessarily mean that the boosted item will be the top result at all
        * times, nor that other items will be excluded. Results could still be
        * shown even when none of them matches the condition. And results that
        * are significantly more relevant to the search query can still trump
        * your heavily favored but irrelevant items.
+       *
        * Setting to -1.0 gives the item a big demotion. However, results that
        * are deeply relevant might still be shown. The item will have an
        * upstream battle to get a fairly high ranking, but it is not blocked out
        * completely.
+       *
        * Setting to 0.0 means no boost applied. The boosting condition is
        * ignored.
        * </pre>
@@ -702,16 +710,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Strength of the condition boost, which must be in [-1, 1]. Negative
        * boost means demotion. Default is 0.0.
+       *
        * Setting to 1.0 gives the item a big promotion. However, it does not
        * necessarily mean that the boosted item will be the top result at all
        * times, nor that other items will be excluded. Results could still be
        * shown even when none of them matches the condition. And results that
        * are significantly more relevant to the search query can still trump
        * your heavily favored but irrelevant items.
+       *
        * Setting to -1.0 gives the item a big demotion. However, results that
        * are deeply relevant might still be shown. The item will have an
        * upstream battle to get a fairly high ranking, but it is not blocked out
        * completely.
+       *
        * Setting to 0.0 means no boost applied. The boosting condition is
        * ignored.
        * </pre>
@@ -734,16 +745,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Strength of the condition boost, which must be in [-1, 1]. Negative
        * boost means demotion. Default is 0.0.
+       *
        * Setting to 1.0 gives the item a big promotion. However, it does not
        * necessarily mean that the boosted item will be the top result at all
        * times, nor that other items will be excluded. Results could still be
        * shown even when none of them matches the condition. And results that
        * are significantly more relevant to the search query can still trump
        * your heavily favored but irrelevant items.
+       *
        * Setting to -1.0 gives the item a big demotion. However, results that
        * are deeply relevant might still be shown. The item will have an
        * upstream battle to get a fairly high ranking, but it is not blocked out
        * completely.
+       *
        * Setting to 0.0 means no boost applied. The boosting condition is
        * ignored.
        * </pre>
@@ -769,7 +783,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * The syntax and supported fields are the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
        * detail syntax and limitations.
+       *
        * Examples:
+       *
        * * To boost products with product ID "product_1" or "product_2", and
        * color
        *   "Red" or "Blue":&lt;br&gt;
@@ -802,7 +818,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * The syntax and supported fields are the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
        * detail syntax and limitations.
+       *
        * Examples:
+       *
        * * To boost products with product ID "product_1" or "product_2", and
        * color
        *   "Red" or "Blue":&lt;br&gt;
@@ -835,7 +853,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * The syntax and supported fields are the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
        * detail syntax and limitations.
+       *
        * Examples:
+       *
        * * To boost products with product ID "product_1" or "product_2", and
        * color
        *   "Red" or "Blue":&lt;br&gt;
@@ -867,7 +887,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * The syntax and supported fields are the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
        * detail syntax and limitations.
+       *
        * Examples:
+       *
        * * To boost products with product ID "product_1" or "product_2", and
        * color
        *   "Red" or "Blue":&lt;br&gt;
@@ -895,7 +917,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * The syntax and supported fields are the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter] for
        * detail syntax and limitations.
+       *
        * Examples:
+       *
        * * To boost products with product ID "product_1" or "product_2", and
        * color
        *   "Red" or "Blue":&lt;br&gt;
@@ -994,6 +1018,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A filter to apply on the matching condition results. Supported features:
+     *
      * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
      * * Filter syntax is identical to
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
@@ -1018,6 +1043,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A filter to apply on the matching condition results. Supported features:
+     *
      * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
      * * Filter syntax is identical to
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
@@ -1080,11 +1106,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       return new FilterAction();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.retail.v2.CommonProto
           .internal_static_google_cloud_retail_v2_Rule_FilterAction_descriptor;
@@ -1109,6 +1130,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A filter to apply on the matching condition results. Supported features:
+     *
      * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
      * * Filter syntax is identical to
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
@@ -1144,6 +1166,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A filter to apply on the matching condition results. Supported features:
+     *
      * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
      * * Filter syntax is identical to
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
@@ -1539,6 +1562,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A filter to apply on the matching condition results. Supported features:
+       *
        * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
        * * Filter syntax is identical to
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
@@ -1573,6 +1597,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A filter to apply on the matching condition results. Supported features:
+       *
        * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
        * * Filter syntax is identical to
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
@@ -1607,6 +1632,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A filter to apply on the matching condition results. Supported features:
+       *
        * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
        * * Filter syntax is identical to
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
@@ -1640,6 +1666,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A filter to apply on the matching condition results. Supported features:
+       *
        * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
        * * Filter syntax is identical to
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
@@ -1669,6 +1696,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A filter to apply on the matching condition results. Supported features:
+       *
        * * [filter][google.cloud.retail.v2.Rule.FilterAction.filter] must be set.
        * * Filter syntax is identical to
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter]. See
@@ -1798,6 +1826,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Redirects a shopper to a specific page.
+   *
    * * Rule Condition:
    *   - Must specify
    *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms].
@@ -1825,11 +1854,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new RedirectAction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2063,6 +2087,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Redirects a shopper to a specific page.
+     *
      * * Rule Condition:
      *   - Must specify
      *   [Condition.query_terms][google.cloud.retail.v2.Condition.query_terms].
@@ -2489,6 +2514,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Creates a set of terms that will be treated as synonyms of each other.
    * Example: synonyms of "sneakers" and "shoes":
+   *
    *  * "sneakers" will use a synonym of "shoes".
    *  * "shoes" will use a synonym of "sneakers".
    * </pre>
@@ -2506,18 +2532,13 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private TwowaySynonymsAction() {
-      synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TwowaySynonymsAction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2538,7 +2559,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public static final int SYNONYMS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList synonyms_;
+    private com.google.protobuf.LazyStringArrayList synonyms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -2780,6 +2802,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Creates a set of terms that will be treated as synonyms of each other.
      * Example: synonyms of "sneakers" and "shoes":
+     *
      *  * "sneakers" will use a synonym of "shoes".
      *  * "shoes" will use a synonym of "sneakers".
      * </pre>
@@ -2817,8 +2840,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -2846,7 +2868,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2.Rule.TwowaySynonymsAction buildPartial() {
         com.google.cloud.retail.v2.Rule.TwowaySynonymsAction result =
             new com.google.cloud.retail.v2.Rule.TwowaySynonymsAction(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -2854,17 +2875,12 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.retail.v2.Rule.TwowaySynonymsAction result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          synonyms_ = synonyms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.synonyms_ = synonyms_;
-      }
-
       private void buildPartial0(com.google.cloud.retail.v2.Rule.TwowaySynonymsAction result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          synonyms_.makeImmutable();
+          result.synonyms_ = synonyms_;
+        }
       }
 
       @java.lang.Override
@@ -2918,7 +2934,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         if (!other.synonyms_.isEmpty()) {
           if (synonyms_.isEmpty()) {
             synonyms_ = other.synonyms_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureSynonymsIsMutable();
             synonyms_.addAll(other.synonyms_);
@@ -2977,14 +2993,14 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList synonyms_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList synonyms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureSynonymsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!synonyms_.isModifiable()) {
           synonyms_ = new com.google.protobuf.LazyStringArrayList(synonyms_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -3000,7 +3016,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the synonyms.
        */
       public com.google.protobuf.ProtocolStringList getSynonymsList() {
-        return synonyms_.getUnmodifiableView();
+        synonyms_.makeImmutable();
+        return synonyms_;
       }
       /**
        *
@@ -3073,6 +3090,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSynonymsIsMutable();
         synonyms_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3096,6 +3114,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSynonymsIsMutable();
         synonyms_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3116,6 +3135,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllSynonyms(java.lang.Iterable<java.lang.String> values) {
         ensureSynonymsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, synonyms_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3133,8 +3153,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSynonyms() {
-        synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -3159,6 +3180,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureSynonymsIsMutable();
         synonyms_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3429,20 +3451,15 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private OnewaySynonymsAction() {
-      queryTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      onewayTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      queryTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      onewayTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new OnewaySynonymsAction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3463,7 +3480,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public static final int QUERY_TERMS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList queryTerms_;
+    private com.google.protobuf.LazyStringArrayList queryTerms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3538,7 +3556,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public static final int SYNONYMS_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList synonyms_;
+    private com.google.protobuf.LazyStringArrayList synonyms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3609,7 +3628,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public static final int ONEWAY_TERMS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList onewayTerms_;
+    private com.google.protobuf.LazyStringArrayList onewayTerms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3913,12 +3933,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        queryTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onewayTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        queryTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        onewayTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -3946,7 +3963,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2.Rule.OnewaySynonymsAction buildPartial() {
         com.google.cloud.retail.v2.Rule.OnewaySynonymsAction result =
             new com.google.cloud.retail.v2.Rule.OnewaySynonymsAction(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -3954,27 +3970,20 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.retail.v2.Rule.OnewaySynonymsAction result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          queryTerms_ = queryTerms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.queryTerms_ = queryTerms_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          synonyms_ = synonyms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.synonyms_ = synonyms_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          onewayTerms_ = onewayTerms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.onewayTerms_ = onewayTerms_;
-      }
-
       private void buildPartial0(com.google.cloud.retail.v2.Rule.OnewaySynonymsAction result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          queryTerms_.makeImmutable();
+          result.queryTerms_ = queryTerms_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          synonyms_.makeImmutable();
+          result.synonyms_ = synonyms_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          onewayTerms_.makeImmutable();
+          result.onewayTerms_ = onewayTerms_;
+        }
       }
 
       @java.lang.Override
@@ -4028,7 +4037,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         if (!other.queryTerms_.isEmpty()) {
           if (queryTerms_.isEmpty()) {
             queryTerms_ = other.queryTerms_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureQueryTermsIsMutable();
             queryTerms_.addAll(other.queryTerms_);
@@ -4038,7 +4047,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         if (!other.synonyms_.isEmpty()) {
           if (synonyms_.isEmpty()) {
             synonyms_ = other.synonyms_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureSynonymsIsMutable();
             synonyms_.addAll(other.synonyms_);
@@ -4048,7 +4057,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         if (!other.onewayTerms_.isEmpty()) {
           if (onewayTerms_.isEmpty()) {
             onewayTerms_ = other.onewayTerms_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureOnewayTermsIsMutable();
             onewayTerms_.addAll(other.onewayTerms_);
@@ -4121,14 +4130,14 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList queryTerms_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList queryTerms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureQueryTermsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!queryTerms_.isModifiable()) {
           queryTerms_ = new com.google.protobuf.LazyStringArrayList(queryTerms_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -4145,7 +4154,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the queryTerms.
        */
       public com.google.protobuf.ProtocolStringList getQueryTermsList() {
-        return queryTerms_.getUnmodifiableView();
+        queryTerms_.makeImmutable();
+        return queryTerms_;
       }
       /**
        *
@@ -4222,6 +4232,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureQueryTermsIsMutable();
         queryTerms_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4246,6 +4257,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureQueryTermsIsMutable();
         queryTerms_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4267,6 +4279,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllQueryTerms(java.lang.Iterable<java.lang.String> values) {
         ensureQueryTermsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryTerms_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4285,8 +4298,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearQueryTerms() {
-        queryTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        queryTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -4312,18 +4326,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureQueryTermsIsMutable();
         queryTerms_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList synonyms_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList synonyms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureSynonymsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!synonyms_.isModifiable()) {
           synonyms_ = new com.google.protobuf.LazyStringArrayList(synonyms_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -4339,7 +4354,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the synonyms.
        */
       public com.google.protobuf.ProtocolStringList getSynonymsList() {
-        return synonyms_.getUnmodifiableView();
+        synonyms_.makeImmutable();
+        return synonyms_;
       }
       /**
        *
@@ -4412,6 +4428,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSynonymsIsMutable();
         synonyms_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4435,6 +4452,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSynonymsIsMutable();
         synonyms_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4455,6 +4473,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllSynonyms(java.lang.Iterable<java.lang.String> values) {
         ensureSynonymsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, synonyms_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4472,8 +4491,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSynonyms() {
-        synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -4498,18 +4518,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureSynonymsIsMutable();
         synonyms_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList onewayTerms_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList onewayTerms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureOnewayTermsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!onewayTerms_.isModifiable()) {
           onewayTerms_ = new com.google.protobuf.LazyStringArrayList(onewayTerms_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -4523,7 +4544,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the onewayTerms.
        */
       public com.google.protobuf.ProtocolStringList getOnewayTermsList() {
-        return onewayTerms_.getUnmodifiableView();
+        onewayTerms_.makeImmutable();
+        return onewayTerms_;
       }
       /**
        *
@@ -4588,6 +4610,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureOnewayTermsIsMutable();
         onewayTerms_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4609,6 +4632,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureOnewayTermsIsMutable();
         onewayTerms_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4627,6 +4651,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllOnewayTerms(java.lang.Iterable<java.lang.String> values) {
         ensureOnewayTermsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, onewayTerms_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4642,8 +4667,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearOnewayTerms() {
-        onewayTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        onewayTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -4666,6 +4692,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureOnewayTermsIsMutable();
         onewayTerms_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4926,20 +4953,15 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private DoNotAssociateAction() {
-      queryTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      doNotAssociateTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      terms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      queryTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      doNotAssociateTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      terms_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DoNotAssociateAction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4960,7 +4982,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public static final int QUERY_TERMS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList queryTerms_;
+    private com.google.protobuf.LazyStringArrayList queryTerms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -5031,7 +5054,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public static final int DO_NOT_ASSOCIATE_TERMS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList doNotAssociateTerms_;
+    private com.google.protobuf.LazyStringArrayList doNotAssociateTerms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -5098,7 +5122,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public static final int TERMS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList terms_;
+    private com.google.protobuf.LazyStringArrayList terms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -5401,12 +5426,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        queryTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        doNotAssociateTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        terms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        queryTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        doNotAssociateTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        terms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -5434,7 +5456,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2.Rule.DoNotAssociateAction buildPartial() {
         com.google.cloud.retail.v2.Rule.DoNotAssociateAction result =
             new com.google.cloud.retail.v2.Rule.DoNotAssociateAction(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -5442,27 +5463,20 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.retail.v2.Rule.DoNotAssociateAction result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          queryTerms_ = queryTerms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.queryTerms_ = queryTerms_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          doNotAssociateTerms_ = doNotAssociateTerms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.doNotAssociateTerms_ = doNotAssociateTerms_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          terms_ = terms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.terms_ = terms_;
-      }
-
       private void buildPartial0(com.google.cloud.retail.v2.Rule.DoNotAssociateAction result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          queryTerms_.makeImmutable();
+          result.queryTerms_ = queryTerms_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          doNotAssociateTerms_.makeImmutable();
+          result.doNotAssociateTerms_ = doNotAssociateTerms_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          terms_.makeImmutable();
+          result.terms_ = terms_;
+        }
       }
 
       @java.lang.Override
@@ -5516,7 +5530,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         if (!other.queryTerms_.isEmpty()) {
           if (queryTerms_.isEmpty()) {
             queryTerms_ = other.queryTerms_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureQueryTermsIsMutable();
             queryTerms_.addAll(other.queryTerms_);
@@ -5526,7 +5540,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         if (!other.doNotAssociateTerms_.isEmpty()) {
           if (doNotAssociateTerms_.isEmpty()) {
             doNotAssociateTerms_ = other.doNotAssociateTerms_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureDoNotAssociateTermsIsMutable();
             doNotAssociateTerms_.addAll(other.doNotAssociateTerms_);
@@ -5536,7 +5550,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         if (!other.terms_.isEmpty()) {
           if (terms_.isEmpty()) {
             terms_ = other.terms_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureTermsIsMutable();
             terms_.addAll(other.terms_);
@@ -5609,14 +5623,14 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList queryTerms_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList queryTerms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureQueryTermsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!queryTerms_.isModifiable()) {
           queryTerms_ = new com.google.protobuf.LazyStringArrayList(queryTerms_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -5632,7 +5646,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the queryTerms.
        */
       public com.google.protobuf.ProtocolStringList getQueryTermsList() {
-        return queryTerms_.getUnmodifiableView();
+        queryTerms_.makeImmutable();
+        return queryTerms_;
       }
       /**
        *
@@ -5705,6 +5720,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureQueryTermsIsMutable();
         queryTerms_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5728,6 +5744,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureQueryTermsIsMutable();
         queryTerms_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5748,6 +5765,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllQueryTerms(java.lang.Iterable<java.lang.String> values) {
         ensureQueryTermsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryTerms_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5765,8 +5783,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearQueryTerms() {
-        queryTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        queryTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -5791,18 +5810,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureQueryTermsIsMutable();
         queryTerms_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList doNotAssociateTerms_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList doNotAssociateTerms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureDoNotAssociateTermsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!doNotAssociateTerms_.isModifiable()) {
           doNotAssociateTerms_ = new com.google.protobuf.LazyStringArrayList(doNotAssociateTerms_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -5817,7 +5837,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the doNotAssociateTerms.
        */
       public com.google.protobuf.ProtocolStringList getDoNotAssociateTermsList() {
-        return doNotAssociateTerms_.getUnmodifiableView();
+        doNotAssociateTerms_.makeImmutable();
+        return doNotAssociateTerms_;
       }
       /**
        *
@@ -5886,6 +5907,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDoNotAssociateTermsIsMutable();
         doNotAssociateTerms_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5908,6 +5930,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDoNotAssociateTermsIsMutable();
         doNotAssociateTerms_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5927,6 +5950,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllDoNotAssociateTerms(java.lang.Iterable<java.lang.String> values) {
         ensureDoNotAssociateTermsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, doNotAssociateTerms_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5943,8 +5967,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDoNotAssociateTerms() {
-        doNotAssociateTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        doNotAssociateTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -5968,18 +5993,19 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureDoNotAssociateTermsIsMutable();
         doNotAssociateTerms_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList terms_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList terms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureTermsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!terms_.isModifiable()) {
           terms_ = new com.google.protobuf.LazyStringArrayList(terms_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -5993,7 +6019,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the terms.
        */
       public com.google.protobuf.ProtocolStringList getTermsList() {
-        return terms_.getUnmodifiableView();
+        terms_.makeImmutable();
+        return terms_;
       }
       /**
        *
@@ -6058,6 +6085,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureTermsIsMutable();
         terms_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6079,6 +6107,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureTermsIsMutable();
         terms_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6097,6 +6126,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllTerms(java.lang.Iterable<java.lang.String> values) {
         ensureTermsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, terms_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6112,8 +6142,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTerms() {
-        terms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        terms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -6136,6 +6167,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureTermsIsMutable();
         terms_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6340,7 +6372,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private ReplacementAction() {
-      queryTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      queryTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
       replacementTerm_ = "";
       term_ = "";
     }
@@ -6349,11 +6381,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ReplacementAction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6374,7 +6401,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public static final int QUERY_TERMS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList queryTerms_;
+    private com.google.protobuf.LazyStringArrayList queryTerms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -6771,8 +6799,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        queryTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        queryTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         replacementTerm_ = "";
         term_ = "";
         return this;
@@ -6802,7 +6829,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2.Rule.ReplacementAction buildPartial() {
         com.google.cloud.retail.v2.Rule.ReplacementAction result =
             new com.google.cloud.retail.v2.Rule.ReplacementAction(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -6810,17 +6836,12 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.retail.v2.Rule.ReplacementAction result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          queryTerms_ = queryTerms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.queryTerms_ = queryTerms_;
-      }
-
       private void buildPartial0(com.google.cloud.retail.v2.Rule.ReplacementAction result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          queryTerms_.makeImmutable();
+          result.queryTerms_ = queryTerms_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.replacementTerm_ = replacementTerm_;
         }
@@ -6880,7 +6901,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         if (!other.queryTerms_.isEmpty()) {
           if (queryTerms_.isEmpty()) {
             queryTerms_ = other.queryTerms_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureQueryTermsIsMutable();
             queryTerms_.addAll(other.queryTerms_);
@@ -6961,14 +6982,14 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList queryTerms_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList queryTerms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureQueryTermsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!queryTerms_.isModifiable()) {
           queryTerms_ = new com.google.protobuf.LazyStringArrayList(queryTerms_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -6984,7 +7005,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the queryTerms.
        */
       public com.google.protobuf.ProtocolStringList getQueryTermsList() {
-        return queryTerms_.getUnmodifiableView();
+        queryTerms_.makeImmutable();
+        return queryTerms_;
       }
       /**
        *
@@ -7057,6 +7079,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureQueryTermsIsMutable();
         queryTerms_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7080,6 +7103,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureQueryTermsIsMutable();
         queryTerms_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7100,6 +7124,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllQueryTerms(java.lang.Iterable<java.lang.String> values) {
         ensureQueryTermsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryTerms_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7117,8 +7142,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearQueryTerms() {
-        queryTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        queryTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -7143,6 +7169,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureQueryTermsIsMutable();
         queryTerms_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7500,18 +7527,13 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private IgnoreAction() {
-      ignoreTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ignoreTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IgnoreAction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7532,7 +7554,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public static final int IGNORE_TERMS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList ignoreTerms_;
+    private com.google.protobuf.LazyStringArrayList ignoreTerms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -7800,8 +7823,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        ignoreTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        ignoreTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -7829,7 +7851,6 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2.Rule.IgnoreAction buildPartial() {
         com.google.cloud.retail.v2.Rule.IgnoreAction result =
             new com.google.cloud.retail.v2.Rule.IgnoreAction(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -7837,16 +7858,12 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(com.google.cloud.retail.v2.Rule.IgnoreAction result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          ignoreTerms_ = ignoreTerms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.ignoreTerms_ = ignoreTerms_;
-      }
-
       private void buildPartial0(com.google.cloud.retail.v2.Rule.IgnoreAction result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          ignoreTerms_.makeImmutable();
+          result.ignoreTerms_ = ignoreTerms_;
+        }
       }
 
       @java.lang.Override
@@ -7899,7 +7916,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         if (!other.ignoreTerms_.isEmpty()) {
           if (ignoreTerms_.isEmpty()) {
             ignoreTerms_ = other.ignoreTerms_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureIgnoreTermsIsMutable();
             ignoreTerms_.addAll(other.ignoreTerms_);
@@ -7958,14 +7975,14 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList ignoreTerms_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList ignoreTerms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIgnoreTermsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!ignoreTerms_.isModifiable()) {
           ignoreTerms_ = new com.google.protobuf.LazyStringArrayList(ignoreTerms_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -7979,7 +7996,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the ignoreTerms.
        */
       public com.google.protobuf.ProtocolStringList getIgnoreTermsList() {
-        return ignoreTerms_.getUnmodifiableView();
+        ignoreTerms_.makeImmutable();
+        return ignoreTerms_;
       }
       /**
        *
@@ -8044,6 +8062,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureIgnoreTermsIsMutable();
         ignoreTerms_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8065,6 +8084,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         }
         ensureIgnoreTermsIsMutable();
         ignoreTerms_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8083,6 +8103,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllIgnoreTerms(java.lang.Iterable<java.lang.String> values) {
         ensureIgnoreTermsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ignoreTerms_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8098,8 +8119,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearIgnoreTerms() {
-        ignoreTerms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        ignoreTerms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -8122,6 +8144,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureIgnoreTermsIsMutable();
         ignoreTerms_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8191,6 +8214,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int actionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object action_;
 
   public enum ActionCase
@@ -9025,6 +9050,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A rule is a condition-action pair
+   *
    * * A condition defines when a rule is to be triggered.
    * * An action specifies what occurs on that trigger.
    * Currently rules only work for [controls][google.cloud.retail.v2.Control] with

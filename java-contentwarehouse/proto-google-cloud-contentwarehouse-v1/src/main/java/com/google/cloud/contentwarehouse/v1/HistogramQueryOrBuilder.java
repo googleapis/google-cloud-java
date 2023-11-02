@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface HistogramQueryOrBuilder
    * <pre>
    * An expression specifies a histogram request against matching documents for
    * searches.
+   *
    * See
    * [SearchDocumentsRequest.histogram_queries][google.cloud.contentwarehouse.v1.SearchDocumentsRequest.histogram_queries]
    * for details about syntax.
@@ -45,6 +46,7 @@ public interface HistogramQueryOrBuilder
    * <pre>
    * An expression specifies a histogram request against matching documents for
    * searches.
+   *
    * See
    * [SearchDocumentsRequest.histogram_queries][google.cloud.contentwarehouse.v1.SearchDocumentsRequest.histogram_queries]
    * for details about syntax.
@@ -62,6 +64,7 @@ public interface HistogramQueryOrBuilder
    * <pre>
    * Controls if the histogram query requires the return of a precise count.
    * Enable this flag may adversely impact performance.
+   *
    * Defaults to true.
    * </pre>
    *

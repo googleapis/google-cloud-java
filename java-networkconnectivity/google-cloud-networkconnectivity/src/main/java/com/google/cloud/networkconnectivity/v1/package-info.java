@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,26 @@
  * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
  *   HubName name = HubName.of("[PROJECT]", "[HUB]");
  *   Hub response = hubServiceClient.getHub(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= PolicyBasedRoutingServiceClient =======================
+ *
+ * <p>Service Description: Policy-Based Routing allows GCP customers to specify flexibile routing
+ * policies for Layer 4 traffic traversing through the connected service.
+ *
+ * <p>Sample for PolicyBasedRoutingServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (PolicyBasedRoutingServiceClient policyBasedRoutingServiceClient =
+ *     PolicyBasedRoutingServiceClient.create()) {
+ *   PolicyBasedRouteName name = PolicyBasedRouteName.of("[PROJECT]", "[POLICY_BASED_ROUTE]");
+ *   PolicyBasedRoute response = policyBasedRoutingServiceClient.getPolicyBasedRoute(name);
  * }
  * }</pre>
  */

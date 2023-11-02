@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,19 +42,14 @@ public final class AddContextArtifactsAndExecutionsRequest
 
   private AddContextArtifactsAndExecutionsRequest() {
     context_ = "";
-    artifacts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    executions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    artifacts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    executions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AddContextArtifactsAndExecutionsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -134,12 +129,14 @@ public final class AddContextArtifactsAndExecutionsRequest
   public static final int ARTIFACTS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList artifacts_;
+  private com.google.protobuf.LazyStringArrayList artifacts_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
@@ -156,6 +153,7 @@ public final class AddContextArtifactsAndExecutionsRequest
    *
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
@@ -172,6 +170,7 @@ public final class AddContextArtifactsAndExecutionsRequest
    *
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
@@ -189,6 +188,7 @@ public final class AddContextArtifactsAndExecutionsRequest
    *
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
@@ -205,13 +205,15 @@ public final class AddContextArtifactsAndExecutionsRequest
   public static final int EXECUTIONS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList executions_;
+  private com.google.protobuf.LazyStringArrayList executions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * The resource names of the Executions to associate with the
    * Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
@@ -229,6 +231,7 @@ public final class AddContextArtifactsAndExecutionsRequest
    * <pre>
    * The resource names of the Executions to associate with the
    * Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
@@ -246,6 +249,7 @@ public final class AddContextArtifactsAndExecutionsRequest
    * <pre>
    * The resource names of the Executions to associate with the
    * Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
@@ -264,6 +268,7 @@ public final class AddContextArtifactsAndExecutionsRequest
    * <pre>
    * The resource names of the Executions to associate with the
    * Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
@@ -512,10 +517,8 @@ public final class AddContextArtifactsAndExecutionsRequest
       super.clear();
       bitField0_ = 0;
       context_ = "";
-      artifacts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      executions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      artifacts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      executions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -546,7 +549,6 @@ public final class AddContextArtifactsAndExecutionsRequest
     public com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest buildPartial() {
       com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest result =
           new com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -554,25 +556,19 @@ public final class AddContextArtifactsAndExecutionsRequest
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        artifacts_ = artifacts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.artifacts_ = artifacts_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        executions_ = executions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.executions_ = executions_;
-    }
-
     private void buildPartial0(
         com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.context_ = context_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        artifacts_.makeImmutable();
+        result.artifacts_ = artifacts_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        executions_.makeImmutable();
+        result.executions_ = executions_;
       }
     }
 
@@ -633,7 +629,7 @@ public final class AddContextArtifactsAndExecutionsRequest
       if (!other.artifacts_.isEmpty()) {
         if (artifacts_.isEmpty()) {
           artifacts_ = other.artifacts_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureArtifactsIsMutable();
           artifacts_.addAll(other.artifacts_);
@@ -643,7 +639,7 @@ public final class AddContextArtifactsAndExecutionsRequest
       if (!other.executions_.isEmpty()) {
         if (executions_.isEmpty()) {
           executions_ = other.executions_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureExecutionsIsMutable();
           executions_.addAll(other.executions_);
@@ -841,20 +837,21 @@ public final class AddContextArtifactsAndExecutionsRequest
       return this;
     }
 
-    private com.google.protobuf.LazyStringList artifacts_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList artifacts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureArtifactsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!artifacts_.isModifiable()) {
         artifacts_ = new com.google.protobuf.LazyStringArrayList(artifacts_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
      *
      * <pre>
      * The resource names of the Artifacts to attribute to the Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
@@ -864,13 +861,15 @@ public final class AddContextArtifactsAndExecutionsRequest
      * @return A list containing the artifacts.
      */
     public com.google.protobuf.ProtocolStringList getArtifactsList() {
-      return artifacts_.getUnmodifiableView();
+      artifacts_.makeImmutable();
+      return artifacts_;
     }
     /**
      *
      *
      * <pre>
      * The resource names of the Artifacts to attribute to the Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
@@ -887,6 +886,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      * <pre>
      * The resource names of the Artifacts to attribute to the Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
@@ -904,6 +904,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      * <pre>
      * The resource names of the Artifacts to attribute to the Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
@@ -921,6 +922,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      * <pre>
      * The resource names of the Artifacts to attribute to the Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
@@ -937,6 +939,7 @@ public final class AddContextArtifactsAndExecutionsRequest
       }
       ensureArtifactsIsMutable();
       artifacts_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,6 +948,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      * <pre>
      * The resource names of the Artifacts to attribute to the Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
@@ -960,6 +964,7 @@ public final class AddContextArtifactsAndExecutionsRequest
       }
       ensureArtifactsIsMutable();
       artifacts_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -968,6 +973,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      * <pre>
      * The resource names of the Artifacts to attribute to the Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
@@ -980,6 +986,7 @@ public final class AddContextArtifactsAndExecutionsRequest
     public Builder addAllArtifacts(java.lang.Iterable<java.lang.String> values) {
       ensureArtifactsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, artifacts_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -988,6 +995,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      * <pre>
      * The resource names of the Artifacts to attribute to the Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
@@ -997,8 +1005,9 @@ public final class AddContextArtifactsAndExecutionsRequest
      * @return This builder for chaining.
      */
     public Builder clearArtifacts() {
-      artifacts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      artifacts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1007,6 +1016,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      * <pre>
      * The resource names of the Artifacts to attribute to the Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * </pre>
@@ -1023,18 +1033,19 @@ public final class AddContextArtifactsAndExecutionsRequest
       checkByteStringIsUtf8(value);
       ensureArtifactsIsMutable();
       artifacts_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList executions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList executions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureExecutionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!executions_.isModifiable()) {
         executions_ = new com.google.protobuf.LazyStringArrayList(executions_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1042,6 +1053,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      * <pre>
      * The resource names of the Executions to associate with the
      * Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
@@ -1051,7 +1063,8 @@ public final class AddContextArtifactsAndExecutionsRequest
      * @return A list containing the executions.
      */
     public com.google.protobuf.ProtocolStringList getExecutionsList() {
-      return executions_.getUnmodifiableView();
+      executions_.makeImmutable();
+      return executions_;
     }
     /**
      *
@@ -1059,6 +1072,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      * <pre>
      * The resource names of the Executions to associate with the
      * Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
@@ -1076,6 +1090,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      * <pre>
      * The resource names of the Executions to associate with the
      * Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
@@ -1094,6 +1109,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      * <pre>
      * The resource names of the Executions to associate with the
      * Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
@@ -1112,6 +1128,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      * <pre>
      * The resource names of the Executions to associate with the
      * Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
@@ -1128,6 +1145,7 @@ public final class AddContextArtifactsAndExecutionsRequest
       }
       ensureExecutionsIsMutable();
       executions_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1137,6 +1155,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      * <pre>
      * The resource names of the Executions to associate with the
      * Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
@@ -1152,6 +1171,7 @@ public final class AddContextArtifactsAndExecutionsRequest
       }
       ensureExecutionsIsMutable();
       executions_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1161,6 +1181,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      * <pre>
      * The resource names of the Executions to associate with the
      * Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
@@ -1173,6 +1194,7 @@ public final class AddContextArtifactsAndExecutionsRequest
     public Builder addAllExecutions(java.lang.Iterable<java.lang.String> values) {
       ensureExecutionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, executions_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1182,6 +1204,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      * <pre>
      * The resource names of the Executions to associate with the
      * Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
@@ -1191,8 +1214,9 @@ public final class AddContextArtifactsAndExecutionsRequest
      * @return This builder for chaining.
      */
     public Builder clearExecutions() {
-      executions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      executions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1202,6 +1226,7 @@ public final class AddContextArtifactsAndExecutionsRequest
      * <pre>
      * The resource names of the Executions to associate with the
      * Context.
+     *
      * Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * </pre>
@@ -1218,6 +1243,7 @@ public final class AddContextArtifactsAndExecutionsRequest
       checkByteStringIsUtf8(value);
       ensureExecutionsIsMutable();
       executions_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

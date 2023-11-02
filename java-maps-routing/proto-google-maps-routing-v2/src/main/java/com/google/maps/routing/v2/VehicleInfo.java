@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,7 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Encapsulates the vehicle information, such as the license plate last
- * character.
+ * Contains the vehicle information, such as the vehicle emission type.
  * </pre>
  *
  * Protobuf type {@code google.maps.routing.v2.VehicleInfo}
@@ -48,11 +47,6 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
     return new VehicleInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.VehicleInfoProto
         .internal_static_google_maps_routing_v2_VehicleInfo_descriptor;
@@ -75,7 +69,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Describes the vehicle's emission type.
-   * Applies only to the `DRIVE` travel mode.
+   * Applies only to the `DRIVE`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.maps.routing.v2.VehicleEmissionType emission_type = 2;</code>
@@ -91,7 +86,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Describes the vehicle's emission type.
-   * Applies only to the `DRIVE` travel mode.
+   * Applies only to the `DRIVE`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.maps.routing.v2.VehicleEmissionType emission_type = 2;</code>
@@ -271,8 +267,7 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates the vehicle information, such as the license plate last
-   * character.
+   * Contains the vehicle information, such as the vehicle emission type.
    * </pre>
    *
    * Protobuf type {@code google.maps.routing.v2.VehicleInfo}
@@ -454,7 +449,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Describes the vehicle's emission type.
-     * Applies only to the `DRIVE` travel mode.
+     * Applies only to the `DRIVE`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.maps.routing.v2.VehicleEmissionType emission_type = 2;</code>
@@ -470,7 +466,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Describes the vehicle's emission type.
-     * Applies only to the `DRIVE` travel mode.
+     * Applies only to the `DRIVE`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.maps.routing.v2.VehicleEmissionType emission_type = 2;</code>
@@ -489,7 +486,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Describes the vehicle's emission type.
-     * Applies only to the `DRIVE` travel mode.
+     * Applies only to the `DRIVE`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.maps.routing.v2.VehicleEmissionType emission_type = 2;</code>
@@ -507,7 +505,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Describes the vehicle's emission type.
-     * Applies only to the `DRIVE` travel mode.
+     * Applies only to the `DRIVE`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.maps.routing.v2.VehicleEmissionType emission_type = 2;</code>
@@ -529,7 +528,8 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Describes the vehicle's emission type.
-     * Applies only to the `DRIVE` travel mode.
+     * Applies only to the `DRIVE`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.maps.routing.v2.VehicleEmissionType emission_type = 2;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
     return new ImportAgentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AgentProto
         .internal_static_google_cloud_dialogflow_v2beta1_ImportAgentRequest_descriptor;
@@ -69,6 +64,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
   }
 
   private int agentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object agent_;
 
   public enum AgentCase
@@ -181,6 +178,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The URI to a Google Cloud Storage file containing the agent to import.
    * Note: The URI must start with "gs://".
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -201,6 +199,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The URI to a Google Cloud Storage file containing the agent to import.
    * Note: The URI must start with "gs://".
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -234,6 +233,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The URI to a Google Cloud Storage file containing the agent to import.
    * Note: The URI must start with "gs://".
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -863,6 +863,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -884,6 +885,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -918,6 +920,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -952,6 +955,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -979,6 +983,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1004,6 +1009,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The URI to a Google Cloud Storage file containing the agent to import.
      * Note: The URI must start with "gs://".
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see

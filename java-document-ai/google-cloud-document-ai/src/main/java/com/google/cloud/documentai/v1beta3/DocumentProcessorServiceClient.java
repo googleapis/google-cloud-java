@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service to call Cloud DocumentAI to process documents according to the
+ * Service Description: Service to call Document AI to process documents according to the
  * processor's definition. Processors are built using state-of-the-art Google AI such as natural
  * language, computer vision, and translation to extract structured information from unstructured or
  * semi-structured documents.
@@ -267,10 +267,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   String name =
-   *       EvaluationName.of(
-   *               "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]", "[EVALUATION]")
-   *           .toString();
+   *   String name = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
    * }
    * }</pre>
@@ -406,10 +403,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   String name =
-   *       EvaluationName.of(
-   *               "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]", "[EVALUATION]")
-   *           .toString();
+   *   String name = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
    *   BatchProcessResponse response =
    *       documentProcessorServiceClient.batchProcessDocumentsAsync(name).get();
    * }
@@ -543,8 +537,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches processor types. Note that we do not use ListProcessorTypes here because it is not
-   * paginated.
+   * Fetches processor types. Note that we don't use
+   * [ListProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorTypes]
+   * here, because it isn't paginated.
    *
    * <p>Sample code:
    *
@@ -562,9 +557,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project of processor type to list. The available processor types
-   *     may depend on the allow-listing on projects. Format:
-   *     `projects/{project}/locations/{location}`
+   * @param parent Required. The location of processor types to list. Format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchProcessorTypesResponse fetchProcessorTypes(LocationName parent) {
@@ -577,8 +571,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches processor types. Note that we do not use ListProcessorTypes here because it is not
-   * paginated.
+   * Fetches processor types. Note that we don't use
+   * [ListProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorTypes]
+   * here, because it isn't paginated.
    *
    * <p>Sample code:
    *
@@ -596,9 +591,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project of processor type to list. The available processor types
-   *     may depend on the allow-listing on projects. Format:
-   *     `projects/{project}/locations/{location}`
+   * @param parent Required. The location of processor types to list. Format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchProcessorTypesResponse fetchProcessorTypes(String parent) {
@@ -609,8 +603,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches processor types. Note that we do not use ListProcessorTypes here because it is not
-   * paginated.
+   * Fetches processor types. Note that we don't use
+   * [ListProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorTypes]
+   * here, because it isn't paginated.
    *
    * <p>Sample code:
    *
@@ -640,8 +635,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches processor types. Note that we do not use ListProcessorTypes here because it is not
-   * paginated.
+   * Fetches processor types. Note that we don't use
+   * [ListProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.ListProcessorTypes]
+   * here, because it isn't paginated.
    *
    * <p>Sample code:
    *
@@ -691,9 +687,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The location of processor type to list. The available processor types
-   *     may depend on the allow-listing on projects. Format:
-   *     `projects/{project}/locations/{location}`
+   * @param parent Required. The location of processor types to list. Format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListProcessorTypesPagedResponse listProcessorTypes(LocationName parent) {
@@ -726,9 +721,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The location of processor type to list. The available processor types
-   *     may depend on the allow-listing on projects. Format:
-   *     `projects/{project}/locations/{location}`
+   * @param parent Required. The location of processor types to list. Format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListProcessorTypesPagedResponse listProcessorTypes(String parent) {
@@ -1250,7 +1244,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains a new processor version. Operation metadata is returned as
-   * cloud_documentai_core.TrainProcessorVersionMetadata.
+   * [TrainProcessorVersionMetadata][google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata].
    *
    * <p>Sample code:
    *
@@ -1287,7 +1281,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains a new processor version. Operation metadata is returned as
-   * cloud_documentai_core.TrainProcessorVersionMetadata.
+   * [TrainProcessorVersionMetadata][google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata].
    *
    * <p>Sample code:
    *
@@ -1324,7 +1318,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains a new processor version. Operation metadata is returned as
-   * cloud_documentai_core.TrainProcessorVersionMetadata.
+   * [TrainProcessorVersionMetadata][google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata].
    *
    * <p>Sample code:
    *
@@ -1360,7 +1354,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains a new processor version. Operation metadata is returned as
-   * cloud_documentai_core.TrainProcessorVersionMetadata.
+   * [TrainProcessorVersionMetadata][google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata].
    *
    * <p>Sample code:
    *
@@ -1400,7 +1394,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains a new processor version. Operation metadata is returned as
-   * cloud_documentai_core.TrainProcessorVersionMetadata.
+   * [TrainProcessorVersionMetadata][google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata].
    *
    * <p>Sample code:
    *
@@ -2241,8 +2235,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a processor from the type processor that the user chose. The processor will be at
-   * "ENABLED" state by default after its creation.
+   * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
+   * provided. The processor will be at `ENABLED` state by default after its creation.
    *
    * <p>Sample code:
    *
@@ -2262,8 +2256,11 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent (project and location) under which to create the processor.
    *     Format: `projects/{project}/locations/{location}`
-   * @param processor Required. The processor to be created, requires [processor_type] and
-   *     [display_name] to be set. Also, the processor is under CMEK if CMEK fields are set.
+   * @param processor Required. The processor to be created, requires
+   *     [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
+   *     [Processor.display_name]][] to be set. Also, the
+   *     [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name] field must
+   *     be set if the processor is under CMEK.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Processor createProcessor(LocationName parent, Processor processor) {
@@ -2277,8 +2274,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a processor from the type processor that the user chose. The processor will be at
-   * "ENABLED" state by default after its creation.
+   * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
+   * provided. The processor will be at `ENABLED` state by default after its creation.
    *
    * <p>Sample code:
    *
@@ -2298,8 +2295,11 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent (project and location) under which to create the processor.
    *     Format: `projects/{project}/locations/{location}`
-   * @param processor Required. The processor to be created, requires [processor_type] and
-   *     [display_name] to be set. Also, the processor is under CMEK if CMEK fields are set.
+   * @param processor Required. The processor to be created, requires
+   *     [Processor.type][google.cloud.documentai.v1beta3.Processor.type] and
+   *     [Processor.display_name]][] to be set. Also, the
+   *     [Processor.kms_key_name][google.cloud.documentai.v1beta3.Processor.kms_key_name] field must
+   *     be set if the processor is under CMEK.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Processor createProcessor(String parent, Processor processor) {
@@ -2310,8 +2310,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a processor from the type processor that the user chose. The processor will be at
-   * "ENABLED" state by default after its creation.
+   * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
+   * provided. The processor will be at `ENABLED` state by default after its creation.
    *
    * <p>Sample code:
    *
@@ -2341,8 +2341,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a processor from the type processor that the user chose. The processor will be at
-   * "ENABLED" state by default after its creation.
+   * Creates a processor from the [ProcessorType][google.cloud.documentai.v1beta3.ProcessorType]
+   * provided. The processor will be at `ENABLED` state by default after its creation.
    *
    * <p>Sample code:
    *
@@ -2843,7 +2843,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param humanReviewConfig Required. The resource name of the HumanReviewConfig that the document
+   * @param humanReviewConfig Required. The resource name of the
+   *     [HumanReviewConfig][google.cloud.documentai.v1beta3.HumanReviewConfig] that the document
    *     will be reviewed with.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2878,7 +2879,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param humanReviewConfig Required. The resource name of the HumanReviewConfig that the document
+   * @param humanReviewConfig Required. The resource name of the
+   *     [HumanReviewConfig][google.cloud.documentai.v1beta3.HumanReviewConfig] that the document
    *     will be reviewed with.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

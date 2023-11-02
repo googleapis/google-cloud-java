@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class PushGitCommitsRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PushGitCommitsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -131,8 +126,9 @@ public final class PushGitCommitsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The name of the branch in the Git remote to which commits should be pushed.
-   * If left unset, the repository's default branch name will be used.
+   * Optional. The name of the branch in the Git remote to which commits should
+   * be pushed. If left unset, the repository's default branch name will be
+   * used.
    * </pre>
    *
    * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -155,8 +151,9 @@ public final class PushGitCommitsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The name of the branch in the Git remote to which commits should be pushed.
-   * If left unset, the repository's default branch name will be used.
+   * Optional. The name of the branch in the Git remote to which commits should
+   * be pushed. If left unset, the repository's default branch name will be
+   * used.
    * </pre>
    *
    * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -664,8 +661,9 @@ public final class PushGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The name of the branch in the Git remote to which commits should be pushed.
-     * If left unset, the repository's default branch name will be used.
+     * Optional. The name of the branch in the Git remote to which commits should
+     * be pushed. If left unset, the repository's default branch name will be
+     * used.
      * </pre>
      *
      * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -687,8 +685,9 @@ public final class PushGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The name of the branch in the Git remote to which commits should be pushed.
-     * If left unset, the repository's default branch name will be used.
+     * Optional. The name of the branch in the Git remote to which commits should
+     * be pushed. If left unset, the repository's default branch name will be
+     * used.
      * </pre>
      *
      * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -710,8 +709,9 @@ public final class PushGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The name of the branch in the Git remote to which commits should be pushed.
-     * If left unset, the repository's default branch name will be used.
+     * Optional. The name of the branch in the Git remote to which commits should
+     * be pushed. If left unset, the repository's default branch name will be
+     * used.
      * </pre>
      *
      * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -732,8 +732,9 @@ public final class PushGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The name of the branch in the Git remote to which commits should be pushed.
-     * If left unset, the repository's default branch name will be used.
+     * Optional. The name of the branch in the Git remote to which commits should
+     * be pushed. If left unset, the repository's default branch name will be
+     * used.
      * </pre>
      *
      * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -750,8 +751,9 @@ public final class PushGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The name of the branch in the Git remote to which commits should be pushed.
-     * If left unset, the repository's default branch name will be used.
+     * Optional. The name of the branch in the Git remote to which commits should
+     * be pushed. If left unset, the repository's default branch name will be
+     * used.
      * </pre>
      *
      * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

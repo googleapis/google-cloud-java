@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ public final class StorageTransferServiceGrpc {
 
   private StorageTransferServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.storagetransfer.v1.StorageTransferService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.storagetransfer.v1.StorageTransferService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -829,8 +830,8 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Updates a transfer job. Updating a job's transfer spec does not affect
      * transfer operations that are running already.
-     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status] field can be modified
-     * using this RPC (for example, to set a job's status to
+     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status]
+     * field can be modified using this RPC (for example, to set a job's status to
      * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED],
      * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], or
      * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]).
@@ -907,9 +908,10 @@ public final class StorageTransferServiceGrpc {
      *
      *
      * <pre>
-     * Attempts to start a new TransferOperation for the current TransferJob. A
-     * TransferJob has a maximum of one active TransferOperation. If this method
-     * is called while a TransferOperation is active, an error will be returned.
+     * Starts a new operation for the specified transfer job.
+     * A `TransferJob` has a maximum of one active `TransferOperation`. If this
+     * method is called while a `TransferOperation` is active, an error is
+     * returned.
      * </pre>
      */
     default void runTransferJob(
@@ -1097,8 +1099,8 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Updates a transfer job. Updating a job's transfer spec does not affect
      * transfer operations that are running already.
-     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status] field can be modified
-     * using this RPC (for example, to set a job's status to
+     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status]
+     * field can be modified using this RPC (for example, to set a job's status to
      * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED],
      * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], or
      * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]).
@@ -1185,9 +1187,10 @@ public final class StorageTransferServiceGrpc {
      *
      *
      * <pre>
-     * Attempts to start a new TransferOperation for the current TransferJob. A
-     * TransferJob has a maximum of one active TransferOperation. If this method
-     * is called while a TransferOperation is active, an error will be returned.
+     * Starts a new operation for the specified transfer job.
+     * A `TransferJob` has a maximum of one active `TransferOperation`. If this
+     * method is called while a `TransferOperation` is active, an error is
+     * returned.
      * </pre>
      */
     public void runTransferJob(
@@ -1365,8 +1368,8 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Updates a transfer job. Updating a job's transfer spec does not affect
      * transfer operations that are running already.
-     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status] field can be modified
-     * using this RPC (for example, to set a job's status to
+     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status]
+     * field can be modified using this RPC (for example, to set a job's status to
      * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED],
      * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], or
      * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]).
@@ -1435,9 +1438,10 @@ public final class StorageTransferServiceGrpc {
      *
      *
      * <pre>
-     * Attempts to start a new TransferOperation for the current TransferJob. A
-     * TransferJob has a maximum of one active TransferOperation. If this method
-     * is called while a TransferOperation is active, an error will be returned.
+     * Starts a new operation for the specified transfer job.
+     * A `TransferJob` has a maximum of one active `TransferOperation`. If this
+     * method is called while a `TransferOperation` is active, an error is
+     * returned.
      * </pre>
      */
     public com.google.longrunning.Operation runTransferJob(
@@ -1593,8 +1597,8 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Updates a transfer job. Updating a job's transfer spec does not affect
      * transfer operations that are running already.
-     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status] field can be modified
-     * using this RPC (for example, to set a job's status to
+     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status]
+     * field can be modified using this RPC (for example, to set a job's status to
      * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED],
      * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], or
      * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]).
@@ -1672,9 +1676,10 @@ public final class StorageTransferServiceGrpc {
      *
      *
      * <pre>
-     * Attempts to start a new TransferOperation for the current TransferJob. A
-     * TransferJob has a maximum of one active TransferOperation. If this method
-     * is called while a TransferOperation is active, an error will be returned.
+     * Starts a new operation for the specified transfer job.
+     * A `TransferJob` has a maximum of one active `TransferOperation`. If this
+     * method is called while a `TransferOperation` is active, an error is
+     * returned.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2037,9 +2042,9 @@ public final class StorageTransferServiceGrpc {
   private static final class StorageTransferServiceMethodDescriptorSupplier
       extends StorageTransferServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    StorageTransferServiceMethodDescriptorSupplier(String methodName) {
+    StorageTransferServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

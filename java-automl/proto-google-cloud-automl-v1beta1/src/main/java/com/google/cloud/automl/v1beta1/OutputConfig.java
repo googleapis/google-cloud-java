@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,19 +29,23 @@ package com.google.cloud.automl.v1beta1;
  *         given ML_USE, using the following row format per line:
  *         TEXT_SNIPPET (in source language) &#92;t TEXT_SNIPPET (in target
  *         language)
+ *
  *   *  For Tables:
  *         Output depends on whether the dataset was imported from GCS or
  *         BigQuery.
  *         GCS case:
+ *
  * [gcs_destination][google.cloud.automl.v1beta1.OutputConfig.gcs_destination]
  *           must be set. Exported are CSV file(s) `tables_1.csv`,
  *           `tables_2.csv`,...,`tables_N.csv` with each having as header line
  *           the table's column names, and all other lines contain values for
  *           the header columns.
  *         BigQuery case:
+ *
  * [bigquery_destination][google.cloud.automl.v1beta1.OutputConfig.bigquery_destination]
  *           pointing to a BigQuery project must be set. In the given project a
  *           new dataset will be created with name
+ *
  * `export_data_&lt;automl-dataset-display-name&gt;_&lt;timestamp-of-export-call&gt;`
  *           where &lt;automl-dataset-display-name&gt; will be made
  *           BigQuery-dataset-name compatible (e.g. most special characters will
@@ -71,11 +75,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     return new OutputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Io
         .internal_static_google_cloud_automl_v1beta1_OutputConfig_descriptor;
@@ -92,6 +91,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase
@@ -456,19 +457,23 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *         given ML_USE, using the following row format per line:
    *         TEXT_SNIPPET (in source language) &#92;t TEXT_SNIPPET (in target
    *         language)
+   *
    *   *  For Tables:
    *         Output depends on whether the dataset was imported from GCS or
    *         BigQuery.
    *         GCS case:
+   *
    * [gcs_destination][google.cloud.automl.v1beta1.OutputConfig.gcs_destination]
    *           must be set. Exported are CSV file(s) `tables_1.csv`,
    *           `tables_2.csv`,...,`tables_N.csv` with each having as header line
    *           the table's column names, and all other lines contain values for
    *           the header columns.
    *         BigQuery case:
+   *
    * [bigquery_destination][google.cloud.automl.v1beta1.OutputConfig.bigquery_destination]
    *           pointing to a BigQuery project must be set. In the given project a
    *           new dataset will be created with name
+   *
    * `export_data_&lt;automl-dataset-display-name&gt;_&lt;timestamp-of-export-call&gt;`
    *           where &lt;automl-dataset-display-name&gt; will be made
    *           BigQuery-dataset-name compatible (e.g. most special characters will

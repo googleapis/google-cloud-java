@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public interface ListChannelConnectionsRequestOrBuilder
    *
    * <pre>
    * The maximum number of channel connections to return on each page.
+   *
    * Note: The service may send fewer responses.
    * </pre>
    *
@@ -72,6 +73,7 @@ public interface ListChannelConnectionsRequestOrBuilder
    * <pre>
    * The page token; provide the value from the `next_page_token` field in a
    * previous `ListChannelConnections` call to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListChannelConnetions`
    * match the call that provided the page token.
    * </pre>
@@ -87,6 +89,7 @@ public interface ListChannelConnectionsRequestOrBuilder
    * <pre>
    * The page token; provide the value from the `next_page_token` field in a
    * previous `ListChannelConnections` call to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListChannelConnetions`
    * match the call that provided the page token.
    * </pre>

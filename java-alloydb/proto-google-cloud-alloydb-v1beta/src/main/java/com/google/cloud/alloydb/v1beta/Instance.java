@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,11 +55,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Instance();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -587,10 +582,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Availability type of an instance. Potential values:
+   *
    * - ZONAL: The instance serves data from only one zone. Outages in that
-   * zone affect instance availability.
+   *     zone affect instance availability.
    * - REGIONAL: The instance can serve data from more than one zone in a
-   * region (it is highly available).
+   *     region (it is highly available).
    * </pre>
    *
    * Protobuf enum {@code google.cloud.alloydb.v1beta.Instance.AvailabilityType}
@@ -788,11 +784,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MachineConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1433,11 +1424,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Node();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2718,11 +2704,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return new QueryInsightsInstanceConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.alloydb.v1beta.ResourcesProto
           .internal_static_google_cloud_alloydb_v1beta_Instance_QueryInsightsInstanceConfig_descriptor;
@@ -3693,11 +3674,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return new ReadPoolConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.alloydb.v1beta.ResourcesProto
           .internal_static_google_cloud_alloydb_v1beta_Instance_ReadPoolConfig_descriptor;
@@ -4189,6 +4165,1667 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface UpdatePolicyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1beta.Instance.UpdatePolicy)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Mode for updating the instance.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode mode = 1;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    int getModeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Mode for updating the instance.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode mode = 1;</code>
+     *
+     * @return The mode.
+     */
+    com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode getMode();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Policy to be used while updating the instance.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1beta.Instance.UpdatePolicy}
+   */
+  public static final class UpdatePolicy extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.Instance.UpdatePolicy)
+      UpdatePolicyOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use UpdatePolicy.newBuilder() to construct.
+    private UpdatePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private UpdatePolicy() {
+      mode_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new UpdatePolicy();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Instance_UpdatePolicy_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Instance_UpdatePolicy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.class,
+              com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the available modes of update.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode}
+     */
+    public enum Mode implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Mode is unknown.
+       * </pre>
+       *
+       * <code>MODE_UNSPECIFIED = 0;</code>
+       */
+      MODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Least disruptive way to apply the update.
+       * </pre>
+       *
+       * <code>DEFAULT = 1;</code>
+       */
+      DEFAULT(1),
+      /**
+       *
+       *
+       * <pre>
+       * Performs a forced update when applicable. This will be fast but may
+       * incur a downtime.
+       * </pre>
+       *
+       * <code>FORCE_APPLY = 2;</code>
+       */
+      FORCE_APPLY(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Mode is unknown.
+       * </pre>
+       *
+       * <code>MODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int MODE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Least disruptive way to apply the update.
+       * </pre>
+       *
+       * <code>DEFAULT = 1;</code>
+       */
+      public static final int DEFAULT_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Performs a forced update when applicable. This will be fast but may
+       * incur a downtime.
+       * </pre>
+       *
+       * <code>FORCE_APPLY = 2;</code>
+       */
+      public static final int FORCE_APPLY_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Mode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Mode forNumber(int value) {
+        switch (value) {
+          case 0:
+            return MODE_UNSPECIFIED;
+          case 1:
+            return DEFAULT;
+          case 2:
+            return FORCE_APPLY;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Mode> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Mode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Mode>() {
+            public Mode findValueByNumber(int number) {
+              return Mode.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Mode[] VALUES = values();
+
+      public static Mode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Mode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode)
+    }
+
+    public static final int MODE_FIELD_NUMBER = 1;
+    private int mode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Mode for updating the instance.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode mode = 1;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    @java.lang.Override
+    public int getModeValue() {
+      return mode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mode for updating the instance.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode mode = 1;</code>
+     *
+     * @return The mode.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode getMode() {
+      com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode result =
+          com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode.forNumber(mode_);
+      return result == null
+          ? com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (mode_
+          != com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode.MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, mode_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (mode_
+          != com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode.MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, mode_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy other =
+          (com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy) obj;
+
+      if (mode_ != other.mode_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + mode_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Policy to be used while updating the instance.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1beta.Instance.UpdatePolicy}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1beta.Instance.UpdatePolicy)
+        com.google.cloud.alloydb.v1beta.Instance.UpdatePolicyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_UpdatePolicy_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_UpdatePolicy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.class,
+                com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        mode_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_UpdatePolicy_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy build() {
+        com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy buildPartial() {
+        com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy result =
+            new com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.mode_ = mode_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy) {
+          return mergeFrom((com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy other) {
+        if (other == com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.getDefaultInstance())
+          return this;
+        if (other.mode_ != 0) {
+          setModeValue(other.getModeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  mode_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int mode_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Mode for updating the instance.
+       * </pre>
+       *
+       * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode mode = 1;</code>
+       *
+       * @return The enum numeric value on the wire for mode.
+       */
+      @java.lang.Override
+      public int getModeValue() {
+        return mode_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mode for updating the instance.
+       * </pre>
+       *
+       * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode mode = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModeValue(int value) {
+        mode_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mode for updating the instance.
+       * </pre>
+       *
+       * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode mode = 1;</code>
+       *
+       * @return The mode.
+       */
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode getMode() {
+        com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode result =
+            com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode.forNumber(mode_);
+        return result == null
+            ? com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mode for updating the instance.
+       * </pre>
+       *
+       * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode mode = 1;</code>
+       *
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        mode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mode for updating the instance.
+       * </pre>
+       *
+       * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode mode = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        mode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1beta.Instance.UpdatePolicy)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1beta.Instance.UpdatePolicy)
+    private static final com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy();
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdatePolicy> PARSER =
+        new com.google.protobuf.AbstractParser<UpdatePolicy>() {
+          @java.lang.Override
+          public UpdatePolicy parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<UpdatePolicy> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdatePolicy> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ClientConnectionConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enforce connectors only (ex: AuthProxy)
+     * connections to the database.
+     * </pre>
+     *
+     * <code>bool require_connectors = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requireConnectors.
+     */
+    boolean getRequireConnectors();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sslConfig field is set.
+     */
+    boolean hasSslConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sslConfig.
+     */
+    com.google.cloud.alloydb.v1beta.SslConfig getSslConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.alloydb.v1beta.SslConfigOrBuilder getSslConfigOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Client connection configuration
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig}
+   */
+  public static final class ClientConnectionConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig)
+      ClientConnectionConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ClientConnectionConfig.newBuilder() to construct.
+    private ClientConnectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ClientConnectionConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClientConnectionConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Instance_ClientConnectionConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Instance_ClientConnectionConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.class,
+              com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.Builder.class);
+    }
+
+    public static final int REQUIRE_CONNECTORS_FIELD_NUMBER = 1;
+    private boolean requireConnectors_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enforce connectors only (ex: AuthProxy)
+     * connections to the database.
+     * </pre>
+     *
+     * <code>bool require_connectors = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requireConnectors.
+     */
+    @java.lang.Override
+    public boolean getRequireConnectors() {
+      return requireConnectors_;
+    }
+
+    public static final int SSL_CONFIG_FIELD_NUMBER = 2;
+    private com.google.cloud.alloydb.v1beta.SslConfig sslConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sslConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSslConfig() {
+      return sslConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sslConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.SslConfig getSslConfig() {
+      return sslConfig_ == null
+          ? com.google.cloud.alloydb.v1beta.SslConfig.getDefaultInstance()
+          : sslConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL config option for this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.SslConfigOrBuilder getSslConfigOrBuilder() {
+      return sslConfig_ == null
+          ? com.google.cloud.alloydb.v1beta.SslConfig.getDefaultInstance()
+          : sslConfig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (requireConnectors_ != false) {
+        output.writeBool(1, requireConnectors_);
+      }
+      if (sslConfig_ != null) {
+        output.writeMessage(2, getSslConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (requireConnectors_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, requireConnectors_);
+      }
+      if (sslConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSslConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig other =
+          (com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig) obj;
+
+      if (getRequireConnectors() != other.getRequireConnectors()) return false;
+      if (hasSslConfig() != other.hasSslConfig()) return false;
+      if (hasSslConfig()) {
+        if (!getSslConfig().equals(other.getSslConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUIRE_CONNECTORS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequireConnectors());
+      if (hasSslConfig()) {
+        hash = (37 * hash) + SSL_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSslConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Client connection configuration
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig)
+        com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_ClientConnectionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_ClientConnectionConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.class,
+                com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        requireConnectors_ = false;
+        sslConfig_ = null;
+        if (sslConfigBuilder_ != null) {
+          sslConfigBuilder_.dispose();
+          sslConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_ClientConnectionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig build() {
+        com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig buildPartial() {
+        com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig result =
+            new com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.requireConnectors_ = requireConnectors_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sslConfig_ = sslConfigBuilder_ == null ? sslConfig_ : sslConfigBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig) {
+          return mergeFrom((com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig other) {
+        if (other
+            == com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.getDefaultInstance())
+          return this;
+        if (other.getRequireConnectors() != false) {
+          setRequireConnectors(other.getRequireConnectors());
+        }
+        if (other.hasSslConfig()) {
+          mergeSslConfig(other.getSslConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  requireConnectors_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(getSslConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean requireConnectors_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration to enforce connectors only (ex: AuthProxy)
+       * connections to the database.
+       * </pre>
+       *
+       * <code>bool require_connectors = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The requireConnectors.
+       */
+      @java.lang.Override
+      public boolean getRequireConnectors() {
+        return requireConnectors_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration to enforce connectors only (ex: AuthProxy)
+       * connections to the database.
+       * </pre>
+       *
+       * <code>bool require_connectors = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The requireConnectors to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequireConnectors(boolean value) {
+
+        requireConnectors_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration to enforce connectors only (ex: AuthProxy)
+       * connections to the database.
+       * </pre>
+       *
+       * <code>bool require_connectors = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRequireConnectors() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        requireConnectors_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.alloydb.v1beta.SslConfig sslConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.alloydb.v1beta.SslConfig,
+              com.google.cloud.alloydb.v1beta.SslConfig.Builder,
+              com.google.cloud.alloydb.v1beta.SslConfigOrBuilder>
+          sslConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the sslConfig field is set.
+       */
+      public boolean hasSslConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The sslConfig.
+       */
+      public com.google.cloud.alloydb.v1beta.SslConfig getSslConfig() {
+        if (sslConfigBuilder_ == null) {
+          return sslConfig_ == null
+              ? com.google.cloud.alloydb.v1beta.SslConfig.getDefaultInstance()
+              : sslConfig_;
+        } else {
+          return sslConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSslConfig(com.google.cloud.alloydb.v1beta.SslConfig value) {
+        if (sslConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sslConfig_ = value;
+        } else {
+          sslConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSslConfig(
+          com.google.cloud.alloydb.v1beta.SslConfig.Builder builderForValue) {
+        if (sslConfigBuilder_ == null) {
+          sslConfig_ = builderForValue.build();
+        } else {
+          sslConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSslConfig(com.google.cloud.alloydb.v1beta.SslConfig value) {
+        if (sslConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && sslConfig_ != null
+              && sslConfig_ != com.google.cloud.alloydb.v1beta.SslConfig.getDefaultInstance()) {
+            getSslConfigBuilder().mergeFrom(value);
+          } else {
+            sslConfig_ = value;
+          }
+        } else {
+          sslConfigBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSslConfig() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        sslConfig_ = null;
+        if (sslConfigBuilder_ != null) {
+          sslConfigBuilder_.dispose();
+          sslConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.SslConfig.Builder getSslConfigBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getSslConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.SslConfigOrBuilder getSslConfigOrBuilder() {
+        if (sslConfigBuilder_ != null) {
+          return sslConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return sslConfig_ == null
+              ? com.google.cloud.alloydb.v1beta.SslConfig.getDefaultInstance()
+              : sslConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SSL config option for this instance.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1beta.SslConfig ssl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.alloydb.v1beta.SslConfig,
+              com.google.cloud.alloydb.v1beta.SslConfig.Builder,
+              com.google.cloud.alloydb.v1beta.SslConfigOrBuilder>
+          getSslConfigFieldBuilder() {
+        if (sslConfigBuilder_ == null) {
+          sslConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.alloydb.v1beta.SslConfig,
+                  com.google.cloud.alloydb.v1beta.SslConfig.Builder,
+                  com.google.cloud.alloydb.v1beta.SslConfigOrBuilder>(
+                  getSslConfig(), getParentForChildren(), isClean());
+          sslConfig_ = null;
+        }
+        return sslConfigBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig)
+    private static final com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig();
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ClientConnectionConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ClientConnectionConfig>() {
+          @java.lang.Override
+          public ClientConnectionConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ClientConnectionConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientConnectionConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -4754,8 +6391,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Availability type of an Instance.
-   * Defaults to REGIONAL for both primary and read instances.
-   * Note that primary and read instances can have different availability types.
+   * If empty, defaults to REGIONAL for primary instances.
+   * For read pools, availability_type is always UNSPECIFIED. Instances in the
+   * read pools are evenly distributed across available zones within the region
+   * (i.e. read pools with more than one node will have a node in at
+   * least two zones).
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1beta.Instance.AvailabilityType availability_type = 11;</code>
@@ -4771,8 +6411,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Availability type of an Instance.
-   * Defaults to REGIONAL for both primary and read instances.
-   * Note that primary and read instances can have different availability types.
+   * If empty, defaults to REGIONAL for primary instances.
+   * For read pools, availability_type is always UNSPECIFIED. Instances in the
+   * read pools are evenly distributed across available zones within the region
+   * (i.e. read pools with more than one node will have a node in at
+   * least two zones).
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1beta.Instance.AvailabilityType availability_type = 11;</code>
@@ -4886,6 +6529,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -4919,6 +6564,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -4943,6 +6590,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -4974,6 +6623,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -5488,6 +7139,123 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int UPDATE_POLICY_FIELD_NUMBER = 22;
+  private com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy updatePolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Update policy that will be applied during instance update.
+   * This field is not persisted when you update the instance.
+   * To use a non-default update policy, you must
+   * specify explicitly specify the value in each update request.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+   *
+   * @return Whether the updatePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdatePolicy() {
+    return updatePolicy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Update policy that will be applied during instance update.
+   * This field is not persisted when you update the instance.
+   * To use a non-default update policy, you must
+   * specify explicitly specify the value in each update request.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+   *
+   * @return The updatePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy getUpdatePolicy() {
+    return updatePolicy_ == null
+        ? com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.getDefaultInstance()
+        : updatePolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Update policy that will be applied during instance update.
+   * This field is not persisted when you update the instance.
+   * To use a non-default update policy, you must
+   * specify explicitly specify the value in each update request.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicyOrBuilder getUpdatePolicyOrBuilder() {
+    return updatePolicy_ == null
+        ? com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.getDefaultInstance()
+        : updatePolicy_;
+  }
+
+  public static final int CLIENT_CONNECTION_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig clientConnectionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientConnectionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientConnectionConfig() {
+    return clientConnectionConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientConnectionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig
+      getClientConnectionConfig() {
+    return clientConnectionConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.getDefaultInstance()
+        : clientConnectionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfigOrBuilder
+      getClientConnectionConfigOrBuilder() {
+    return clientConnectionConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.getDefaultInstance()
+        : clientConnectionConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5565,6 +7333,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (queryInsightsConfig_ != null) {
       output.writeMessage(21, getQueryInsightsConfig());
+    }
+    if (updatePolicy_ != null) {
+      output.writeMessage(22, getUpdatePolicy());
+    }
+    if (clientConnectionConfig_ != null) {
+      output.writeMessage(23, getClientConnectionConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -5664,6 +7438,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(21, getQueryInsightsConfig());
     }
+    if (updatePolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getUpdatePolicy());
+    }
+    if (clientConnectionConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getClientConnectionConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5721,6 +7502,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (getReconciling() != other.getReconciling()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
+    if (hasUpdatePolicy() != other.hasUpdatePolicy()) return false;
+    if (hasUpdatePolicy()) {
+      if (!getUpdatePolicy().equals(other.getUpdatePolicy())) return false;
+    }
+    if (hasClientConnectionConfig() != other.hasClientConnectionConfig()) return false;
+    if (hasClientConnectionConfig()) {
+      if (!getClientConnectionConfig().equals(other.getClientConnectionConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5795,6 +7584,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetAnnotations().getMap().isEmpty()) {
       hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAnnotations().hashCode();
+    }
+    if (hasUpdatePolicy()) {
+      hash = (37 * hash) + UPDATE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatePolicy().hashCode();
+    }
+    if (hasClientConnectionConfig()) {
+      hash = (37 * hash) + CLIENT_CONNECTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getClientConnectionConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -6019,6 +7816,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       reconciling_ = false;
       etag_ = "";
       internalGetMutableAnnotations().clear();
+      updatePolicy_ = null;
+      if (updatePolicyBuilder_ != null) {
+        updatePolicyBuilder_.dispose();
+        updatePolicyBuilder_ = null;
+      }
+      clientConnectionConfig_ = null;
+      if (clientConnectionConfigBuilder_ != null) {
+        clientConnectionConfigBuilder_.dispose();
+        clientConnectionConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -6136,6 +7943,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.updatePolicy_ =
+            updatePolicyBuilder_ == null ? updatePolicy_ : updatePolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.clientConnectionConfig_ =
+            clientConnectionConfigBuilder_ == null
+                ? clientConnectionConfig_
+                : clientConnectionConfigBuilder_.build();
       }
     }
 
@@ -6280,6 +8097,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       bitField0_ |= 0x00100000;
+      if (other.hasUpdatePolicy()) {
+        mergeUpdatePolicy(other.getUpdatePolicy());
+      }
+      if (other.hasClientConnectionConfig()) {
+        mergeClientConnectionConfig(other.getClientConnectionConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -6458,6 +8281,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00008000;
                 break;
               } // case 170
+            case 178:
+              {
+                input.readMessage(getUpdatePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 178
+            case 186:
+              {
+                input.readMessage(
+                    getClientConnectionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8011,8 +9847,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Availability type of an Instance.
-     * Defaults to REGIONAL for both primary and read instances.
-     * Note that primary and read instances can have different availability types.
+     * If empty, defaults to REGIONAL for primary instances.
+     * For read pools, availability_type is always UNSPECIFIED. Instances in the
+     * read pools are evenly distributed across available zones within the region
+     * (i.e. read pools with more than one node will have a node in at
+     * least two zones).
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.AvailabilityType availability_type = 11;</code>
@@ -8028,8 +9867,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Availability type of an Instance.
-     * Defaults to REGIONAL for both primary and read instances.
-     * Note that primary and read instances can have different availability types.
+     * If empty, defaults to REGIONAL for primary instances.
+     * For read pools, availability_type is always UNSPECIFIED. Instances in the
+     * read pools are evenly distributed across available zones within the region
+     * (i.e. read pools with more than one node will have a node in at
+     * least two zones).
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.AvailabilityType availability_type = 11;</code>
@@ -8048,8 +9890,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Availability type of an Instance.
-     * Defaults to REGIONAL for both primary and read instances.
-     * Note that primary and read instances can have different availability types.
+     * If empty, defaults to REGIONAL for primary instances.
+     * For read pools, availability_type is always UNSPECIFIED. Instances in the
+     * read pools are evenly distributed across available zones within the region
+     * (i.e. read pools with more than one node will have a node in at
+     * least two zones).
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.AvailabilityType availability_type = 11;</code>
@@ -8069,8 +9914,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Availability type of an Instance.
-     * Defaults to REGIONAL for both primary and read instances.
-     * Note that primary and read instances can have different availability types.
+     * If empty, defaults to REGIONAL for primary instances.
+     * For read pools, availability_type is always UNSPECIFIED. Instances in the
+     * read pools are evenly distributed across available zones within the region
+     * (i.e. read pools with more than one node will have a node in at
+     * least two zones).
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.AvailabilityType availability_type = 11;</code>
@@ -8093,8 +9941,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Availability type of an Instance.
-     * Defaults to REGIONAL for both primary and read instances.
-     * Note that primary and read instances can have different availability types.
+     * If empty, defaults to REGIONAL for primary instances.
+     * For read pools, availability_type is always UNSPECIFIED. Instances in the
+     * read pools are evenly distributed across available zones within the region
+     * (i.e. read pools with more than one node will have a node in at
+     * least two zones).
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.AvailabilityType availability_type = 11;</code>
@@ -8276,6 +10127,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8309,6 +10162,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8333,6 +10188,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8364,6 +10221,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8401,6 +10260,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8434,6 +10295,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8465,6 +10328,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -9959,6 +11824,428 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().putAll(values);
       bitField0_ |= 0x00100000;
       return this;
+    }
+
+    private com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy updatePolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy,
+            com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Builder,
+            com.google.cloud.alloydb.v1beta.Instance.UpdatePolicyOrBuilder>
+        updatePolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Update policy that will be applied during instance update.
+     * This field is not persisted when you update the instance.
+     * To use a non-default update policy, you must
+     * specify explicitly specify the value in each update request.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+     *
+     * @return Whether the updatePolicy field is set.
+     */
+    public boolean hasUpdatePolicy() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update policy that will be applied during instance update.
+     * This field is not persisted when you update the instance.
+     * To use a non-default update policy, you must
+     * specify explicitly specify the value in each update request.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+     *
+     * @return The updatePolicy.
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy getUpdatePolicy() {
+      if (updatePolicyBuilder_ == null) {
+        return updatePolicy_ == null
+            ? com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.getDefaultInstance()
+            : updatePolicy_;
+      } else {
+        return updatePolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update policy that will be applied during instance update.
+     * This field is not persisted when you update the instance.
+     * To use a non-default update policy, you must
+     * specify explicitly specify the value in each update request.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+     */
+    public Builder setUpdatePolicy(com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy value) {
+      if (updatePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updatePolicy_ = value;
+      } else {
+        updatePolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update policy that will be applied during instance update.
+     * This field is not persisted when you update the instance.
+     * To use a non-default update policy, you must
+     * specify explicitly specify the value in each update request.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+     */
+    public Builder setUpdatePolicy(
+        com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Builder builderForValue) {
+      if (updatePolicyBuilder_ == null) {
+        updatePolicy_ = builderForValue.build();
+      } else {
+        updatePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update policy that will be applied during instance update.
+     * This field is not persisted when you update the instance.
+     * To use a non-default update policy, you must
+     * specify explicitly specify the value in each update request.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+     */
+    public Builder mergeUpdatePolicy(com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy value) {
+      if (updatePolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && updatePolicy_ != null
+            && updatePolicy_
+                != com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.getDefaultInstance()) {
+          getUpdatePolicyBuilder().mergeFrom(value);
+        } else {
+          updatePolicy_ = value;
+        }
+      } else {
+        updatePolicyBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update policy that will be applied during instance update.
+     * This field is not persisted when you update the instance.
+     * To use a non-default update policy, you must
+     * specify explicitly specify the value in each update request.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+     */
+    public Builder clearUpdatePolicy() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      updatePolicy_ = null;
+      if (updatePolicyBuilder_ != null) {
+        updatePolicyBuilder_.dispose();
+        updatePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update policy that will be applied during instance update.
+     * This field is not persisted when you update the instance.
+     * To use a non-default update policy, you must
+     * specify explicitly specify the value in each update request.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Builder getUpdatePolicyBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getUpdatePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update policy that will be applied during instance update.
+     * This field is not persisted when you update the instance.
+     * To use a non-default update policy, you must
+     * specify explicitly specify the value in each update request.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicyOrBuilder
+        getUpdatePolicyOrBuilder() {
+      if (updatePolicyBuilder_ != null) {
+        return updatePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return updatePolicy_ == null
+            ? com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.getDefaultInstance()
+            : updatePolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update policy that will be applied during instance update.
+     * This field is not persisted when you update the instance.
+     * To use a non-default update policy, you must
+     * specify explicitly specify the value in each update request.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy,
+            com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Builder,
+            com.google.cloud.alloydb.v1beta.Instance.UpdatePolicyOrBuilder>
+        getUpdatePolicyFieldBuilder() {
+      if (updatePolicyBuilder_ == null) {
+        updatePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy,
+                com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Builder,
+                com.google.cloud.alloydb.v1beta.Instance.UpdatePolicyOrBuilder>(
+                getUpdatePolicy(), getParentForChildren(), isClean());
+        updatePolicy_ = null;
+      }
+      return updatePolicyBuilder_;
+    }
+
+    private com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig clientConnectionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig,
+            com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.Builder,
+            com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfigOrBuilder>
+        clientConnectionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the clientConnectionConfig field is set.
+     */
+    public boolean hasClientConnectionConfig() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The clientConnectionConfig.
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig
+        getClientConnectionConfig() {
+      if (clientConnectionConfigBuilder_ == null) {
+        return clientConnectionConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.getDefaultInstance()
+            : clientConnectionConfig_;
+      } else {
+        return clientConnectionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientConnectionConfig(
+        com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig value) {
+      if (clientConnectionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clientConnectionConfig_ = value;
+      } else {
+        clientConnectionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientConnectionConfig(
+        com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.Builder builderForValue) {
+      if (clientConnectionConfigBuilder_ == null) {
+        clientConnectionConfig_ = builderForValue.build();
+      } else {
+        clientConnectionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeClientConnectionConfig(
+        com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig value) {
+      if (clientConnectionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && clientConnectionConfig_ != null
+            && clientConnectionConfig_
+                != com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig
+                    .getDefaultInstance()) {
+          getClientConnectionConfigBuilder().mergeFrom(value);
+        } else {
+          clientConnectionConfig_ = value;
+        }
+      } else {
+        clientConnectionConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearClientConnectionConfig() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      clientConnectionConfig_ = null;
+      if (clientConnectionConfigBuilder_ != null) {
+        clientConnectionConfigBuilder_.dispose();
+        clientConnectionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.Builder
+        getClientConnectionConfigBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getClientConnectionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfigOrBuilder
+        getClientConnectionConfigOrBuilder() {
+      if (clientConnectionConfigBuilder_ != null) {
+        return clientConnectionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return clientConnectionConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.getDefaultInstance()
+            : clientConnectionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client connection specific configurations
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig,
+            com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.Builder,
+            com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfigOrBuilder>
+        getClientConnectionConfigFieldBuilder() {
+      if (clientConnectionConfigBuilder_ == null) {
+        clientConnectionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig,
+                com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.Builder,
+                com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfigOrBuilder>(
+                getClientConnectionConfig(), getParentForChildren(), isClean());
+        clientConnectionConfig_ = null;
+      }
+      return clientConnectionConfigBuilder_;
     }
 
     @java.lang.Override

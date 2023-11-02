@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GKE();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -289,6 +284,7 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The relative path on the GKE service the events should be sent to.
+   *
    * The value must conform to the definition of a URI path segment (section 3.3
    * of RFC2396). Examples: "/route", "route", "route/subroute".
    * </pre>
@@ -314,6 +310,7 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The relative path on the GKE service the events should be sent to.
+   *
    * The value must conform to the definition of a URI path segment (section 3.3
    * of RFC2396). Examples: "/route", "route", "route/subroute".
    * </pre>
@@ -1214,6 +1211,7 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The relative path on the GKE service the events should be sent to.
+     *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
      * </pre>
@@ -1238,6 +1236,7 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The relative path on the GKE service the events should be sent to.
+     *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
      * </pre>
@@ -1262,6 +1261,7 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The relative path on the GKE service the events should be sent to.
+     *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
      * </pre>
@@ -1285,6 +1285,7 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The relative path on the GKE service the events should be sent to.
+     *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
      * </pre>
@@ -1304,6 +1305,7 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The relative path on the GKE service the events should be sent to.
+     *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
      * </pre>

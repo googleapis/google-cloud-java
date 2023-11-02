@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,13 +22,16 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * A Network Connectivity Center spoke represents a connection between your
- * Google Cloud network resources and a non-Google-Cloud network.
- * When you create a spoke, you associate it with a hub. You must also identify
- * a value for exactly one of the following fields:
+ * A Network Connectivity Center spoke represents one or more network
+ * connectivity resources.
+ *
+ * When you create a spoke, you associate it with a hub. You must also
+ * identify a value for exactly one of the following fields:
+ *
  * * linked_vpn_tunnels
  * * linked_interconnect_attachments
  * * linked_router_appliance_instances
+ * * linked_vpc_network
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.Spoke}
@@ -47,19 +50,17 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     description_ = "";
     hub_ = "";
+    group_ = "";
     uniqueId_ = "";
     state_ = 0;
+    reasons_ = java.util.Collections.emptyList();
+    spokeType_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Spoke();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -86,6 +87,1241 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.networkconnectivity.v1.Spoke.class,
             com.google.cloud.networkconnectivity.v1.Spoke.Builder.class);
+  }
+
+  public interface StateReasonOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.networkconnectivity.v1.Spoke.StateReason)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The code associated with this reason.
+     * </pre>
+     *
+     * <code>.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code code = 1;</code>
+     *
+     * @return The enum numeric value on the wire for code.
+     */
+    int getCodeValue();
+    /**
+     *
+     *
+     * <pre>
+     * The code associated with this reason.
+     * </pre>
+     *
+     * <code>.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code code = 1;</code>
+     *
+     * @return The code.
+     */
+    com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code getCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * Human-readable details about this reason.
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     *
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     *
+     *
+     * <pre>
+     * Human-readable details about this reason.
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     *
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString getMessageBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional information provided by the user in the RejectSpoke call.
+     * </pre>
+     *
+     * <code>string user_details = 3;</code>
+     *
+     * @return The userDetails.
+     */
+    java.lang.String getUserDetails();
+    /**
+     *
+     *
+     * <pre>
+     * Additional information provided by the user in the RejectSpoke call.
+     * </pre>
+     *
+     * <code>string user_details = 3;</code>
+     *
+     * @return The bytes for userDetails.
+     */
+    com.google.protobuf.ByteString getUserDetailsBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The reason a spoke is inactive.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.networkconnectivity.v1.Spoke.StateReason}
+   */
+  public static final class StateReason extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.Spoke.StateReason)
+      StateReasonOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use StateReason.newBuilder() to construct.
+    private StateReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private StateReason() {
+      code_ = 0;
+      message_ = "";
+      userDetails_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StateReason();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.networkconnectivity.v1.HubProto
+          .internal_static_google_cloud_networkconnectivity_v1_Spoke_StateReason_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.networkconnectivity.v1.HubProto
+          .internal_static_google_cloud_networkconnectivity_v1_Spoke_StateReason_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.networkconnectivity.v1.Spoke.StateReason.class,
+              com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Code enum represents the various reasons a state can be `INACTIVE`.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.networkconnectivity.v1.Spoke.StateReason.Code}
+     */
+    public enum Code implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * No information available.
+       * </pre>
+       *
+       * <code>CODE_UNSPECIFIED = 0;</code>
+       */
+      CODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The proposed spoke is pending review.
+       * </pre>
+       *
+       * <code>PENDING_REVIEW = 1;</code>
+       */
+      PENDING_REVIEW(1),
+      /**
+       *
+       *
+       * <pre>
+       * The proposed spoke has been rejected by the hub administrator.
+       * </pre>
+       *
+       * <code>REJECTED = 2;</code>
+       */
+      REJECTED(2),
+      /**
+       *
+       *
+       * <pre>
+       * The spoke has been deactivated internally.
+       * </pre>
+       *
+       * <code>PAUSED = 3;</code>
+       */
+      PAUSED(3),
+      /**
+       *
+       *
+       * <pre>
+       * Network Connectivity Center encountered errors while accepting
+       * the spoke.
+       * </pre>
+       *
+       * <code>FAILED = 4;</code>
+       */
+      FAILED(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * No information available.
+       * </pre>
+       *
+       * <code>CODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int CODE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The proposed spoke is pending review.
+       * </pre>
+       *
+       * <code>PENDING_REVIEW = 1;</code>
+       */
+      public static final int PENDING_REVIEW_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * The proposed spoke has been rejected by the hub administrator.
+       * </pre>
+       *
+       * <code>REJECTED = 2;</code>
+       */
+      public static final int REJECTED_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * The spoke has been deactivated internally.
+       * </pre>
+       *
+       * <code>PAUSED = 3;</code>
+       */
+      public static final int PAUSED_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * Network Connectivity Center encountered errors while accepting
+       * the spoke.
+       * </pre>
+       *
+       * <code>FAILED = 4;</code>
+       */
+      public static final int FAILED_VALUE = 4;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Code valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Code forNumber(int value) {
+        switch (value) {
+          case 0:
+            return CODE_UNSPECIFIED;
+          case 1:
+            return PENDING_REVIEW;
+          case 2:
+            return REJECTED;
+          case 3:
+            return PAUSED;
+          case 4:
+            return FAILED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Code> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Code> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Code>() {
+            public Code findValueByNumber(int number) {
+              return Code.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.networkconnectivity.v1.Spoke.StateReason.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Code[] VALUES = values();
+
+      public static Code valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Code(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.networkconnectivity.v1.Spoke.StateReason.Code)
+    }
+
+    public static final int CODE_FIELD_NUMBER = 1;
+    private int code_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The code associated with this reason.
+     * </pre>
+     *
+     * <code>.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code code = 1;</code>
+     *
+     * @return The enum numeric value on the wire for code.
+     */
+    @java.lang.Override
+    public int getCodeValue() {
+      return code_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The code associated with this reason.
+     * </pre>
+     *
+     * <code>.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code code = 1;</code>
+     *
+     * @return The code.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code getCode() {
+      com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code result =
+          com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code.forNumber(code_);
+      return result == null
+          ? com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Human-readable details about this reason.
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     *
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Human-readable details about this reason.
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     *
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_DETAILS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userDetails_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Additional information provided by the user in the RejectSpoke call.
+     * </pre>
+     *
+     * <code>string user_details = 3;</code>
+     *
+     * @return The userDetails.
+     */
+    @java.lang.Override
+    public java.lang.String getUserDetails() {
+      java.lang.Object ref = userDetails_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userDetails_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional information provided by the user in the RejectSpoke call.
+     * </pre>
+     *
+     * <code>string user_details = 3;</code>
+     *
+     * @return The bytes for userDetails.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUserDetailsBytes() {
+      java.lang.Object ref = userDetails_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        userDetails_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (code_
+          != com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code.CODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, code_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userDetails_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userDetails_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (code_
+          != com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code.CODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, code_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userDetails_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userDetails_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.networkconnectivity.v1.Spoke.StateReason)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.networkconnectivity.v1.Spoke.StateReason other =
+          (com.google.cloud.networkconnectivity.v1.Spoke.StateReason) obj;
+
+      if (code_ != other.code_) return false;
+      if (!getMessage().equals(other.getMessage())) return false;
+      if (!getUserDetails().equals(other.getUserDetails())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + code_;
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + USER_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getUserDetails().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.networkconnectivity.v1.Spoke.StateReason prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The reason a spoke is inactive.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.networkconnectivity.v1.Spoke.StateReason}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.networkconnectivity.v1.Spoke.StateReason)
+        com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.networkconnectivity.v1.HubProto
+            .internal_static_google_cloud_networkconnectivity_v1_Spoke_StateReason_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.networkconnectivity.v1.HubProto
+            .internal_static_google_cloud_networkconnectivity_v1_Spoke_StateReason_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.networkconnectivity.v1.Spoke.StateReason.class,
+                com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder.class);
+      }
+
+      // Construct using com.google.cloud.networkconnectivity.v1.Spoke.StateReason.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        code_ = 0;
+        message_ = "";
+        userDetails_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.networkconnectivity.v1.HubProto
+            .internal_static_google_cloud_networkconnectivity_v1_Spoke_StateReason_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkconnectivity.v1.Spoke.StateReason getDefaultInstanceForType() {
+        return com.google.cloud.networkconnectivity.v1.Spoke.StateReason.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkconnectivity.v1.Spoke.StateReason build() {
+        com.google.cloud.networkconnectivity.v1.Spoke.StateReason result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkconnectivity.v1.Spoke.StateReason buildPartial() {
+        com.google.cloud.networkconnectivity.v1.Spoke.StateReason result =
+            new com.google.cloud.networkconnectivity.v1.Spoke.StateReason(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.networkconnectivity.v1.Spoke.StateReason result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.code_ = code_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.message_ = message_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.userDetails_ = userDetails_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.networkconnectivity.v1.Spoke.StateReason) {
+          return mergeFrom((com.google.cloud.networkconnectivity.v1.Spoke.StateReason) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.networkconnectivity.v1.Spoke.StateReason other) {
+        if (other == com.google.cloud.networkconnectivity.v1.Spoke.StateReason.getDefaultInstance())
+          return this;
+        if (other.code_ != 0) {
+          setCodeValue(other.getCodeValue());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getUserDetails().isEmpty()) {
+          userDetails_ = other.userDetails_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  code_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  message_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  userDetails_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int code_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The code associated with this reason.
+       * </pre>
+       *
+       * <code>.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code code = 1;</code>
+       *
+       * @return The enum numeric value on the wire for code.
+       */
+      @java.lang.Override
+      public int getCodeValue() {
+        return code_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The code associated with this reason.
+       * </pre>
+       *
+       * <code>.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code code = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodeValue(int value) {
+        code_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The code associated with this reason.
+       * </pre>
+       *
+       * <code>.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code code = 1;</code>
+       *
+       * @return The code.
+       */
+      @java.lang.Override
+      public com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code getCode() {
+        com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code result =
+            com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code.forNumber(code_);
+        return result == null
+            ? com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The code associated with this reason.
+       * </pre>
+       *
+       * <code>.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code code = 1;</code>
+       *
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        code_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The code associated with this reason.
+       * </pre>
+       *
+       * <code>.google.cloud.networkconnectivity.v1.Spoke.StateReason.Code code = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        code_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Human-readable details about this reason.
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       *
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Human-readable details about this reason.
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       *
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Human-readable details about this reason.
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       *
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        message_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Human-readable details about this reason.
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Human-readable details about this reason.
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       *
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userDetails_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Additional information provided by the user in the RejectSpoke call.
+       * </pre>
+       *
+       * <code>string user_details = 3;</code>
+       *
+       * @return The userDetails.
+       */
+      public java.lang.String getUserDetails() {
+        java.lang.Object ref = userDetails_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userDetails_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional information provided by the user in the RejectSpoke call.
+       * </pre>
+       *
+       * <code>string user_details = 3;</code>
+       *
+       * @return The bytes for userDetails.
+       */
+      public com.google.protobuf.ByteString getUserDetailsBytes() {
+        java.lang.Object ref = userDetails_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          userDetails_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional information provided by the user in the RejectSpoke call.
+       * </pre>
+       *
+       * <code>string user_details = 3;</code>
+       *
+       * @param value The userDetails to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserDetails(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userDetails_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional information provided by the user in the RejectSpoke call.
+       * </pre>
+       *
+       * <code>string user_details = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUserDetails() {
+        userDetails_ = getDefaultInstance().getUserDetails();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional information provided by the user in the RejectSpoke call.
+       * </pre>
+       *
+       * <code>string user_details = 3;</code>
+       *
+       * @param value The bytes for userDetails to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserDetailsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        userDetails_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.networkconnectivity.v1.Spoke.StateReason)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.networkconnectivity.v1.Spoke.StateReason)
+    private static final com.google.cloud.networkconnectivity.v1.Spoke.StateReason DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.networkconnectivity.v1.Spoke.StateReason();
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Spoke.StateReason getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StateReason> PARSER =
+        new com.google.protobuf.AbstractParser<StateReason>() {
+          @java.lang.Override
+          public StateReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<StateReason> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StateReason> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.networkconnectivity.v1.Spoke.StateReason getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -271,8 +1507,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -295,8 +1531,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -310,8 +1546,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -332,8 +1568,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -451,6 +1687,61 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       hub_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int GROUP_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object group_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the group that this spoke is associated with.
+   * </pre>
+   *
+   * <code>
+   * string group = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The group.
+   */
+  @java.lang.Override
+  public java.lang.String getGroup() {
+    java.lang.Object ref = group_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      group_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the group that this spoke is associated with.
+   * </pre>
+   *
+   * <code>
+   * string group = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for group.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGroupBytes() {
+    java.lang.Object ref = group_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      group_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -628,6 +1919,63 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         : linkedRouterApplianceInstances_;
   }
 
+  public static final int LINKED_VPC_NETWORK_FIELD_NUMBER = 20;
+  private com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork linkedVpcNetwork_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. VPC network that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the linkedVpcNetwork field is set.
+   */
+  @java.lang.Override
+  public boolean hasLinkedVpcNetwork() {
+    return linkedVpcNetwork_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. VPC network that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The linkedVpcNetwork.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork getLinkedVpcNetwork() {
+    return linkedVpcNetwork_ == null
+        ? com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.getDefaultInstance()
+        : linkedVpcNetwork_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. VPC network that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.LinkedVpcNetworkOrBuilder
+      getLinkedVpcNetworkOrBuilder() {
+    return linkedVpcNetwork_ == null
+        ? com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.getDefaultInstance()
+        : linkedVpcNetwork_;
+  }
+
   public static final int UNIQUE_ID_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
@@ -638,7 +1986,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The Google-generated UUID for the spoke. This value is unique
    * across all spoke resources. If a spoke is deleted and another with the same
-   * name is created, the new spoke is assigned a different unique_id.
+   * name is created, the new spoke is assigned a different `unique_id`.
    * </pre>
    *
    * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -663,7 +2011,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The Google-generated UUID for the spoke. This value is unique
    * across all spoke resources. If a spoke is deleted and another with the same
-   * name is created, the new spoke is assigned a different unique_id.
+   * name is created, the new spoke is assigned a different `unique_id`.
    * </pre>
    *
    * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -722,6 +2070,134 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.networkconnectivity.v1.State.UNRECOGNIZED : result;
   }
 
+  public static final int REASONS_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.networkconnectivity.v1.Spoke.StateReason> reasons_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reasons for current state of the spoke. Only present when
+   * the spoke is in the `INACTIVE` state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.networkconnectivity.v1.Spoke.StateReason>
+      getReasonsList() {
+    return reasons_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reasons for current state of the spoke. Only present when
+   * the spoke is in the `INACTIVE` state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder>
+      getReasonsOrBuilderList() {
+    return reasons_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reasons for current state of the spoke. Only present when
+   * the spoke is in the `INACTIVE` state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getReasonsCount() {
+    return reasons_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reasons for current state of the spoke. Only present when
+   * the spoke is in the `INACTIVE` state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.Spoke.StateReason getReasons(int index) {
+    return reasons_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reasons for current state of the spoke. Only present when
+   * the spoke is in the `INACTIVE` state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder getReasonsOrBuilder(
+      int index) {
+    return reasons_.get(index);
+  }
+
+  public static final int SPOKE_TYPE_FIELD_NUMBER = 22;
+  private int spokeType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of resource associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.SpokeType spoke_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for spokeType.
+   */
+  @java.lang.Override
+  public int getSpokeTypeValue() {
+    return spokeType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of resource associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.SpokeType spoke_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The spokeType.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.SpokeType getSpokeType() {
+    com.google.cloud.networkconnectivity.v1.SpokeType result =
+        com.google.cloud.networkconnectivity.v1.SpokeType.forNumber(spokeType_);
+    return result == null ? com.google.cloud.networkconnectivity.v1.SpokeType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -767,6 +2243,19 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
     if (linkedRouterApplianceInstances_ != null) {
       output.writeMessage(19, getLinkedRouterApplianceInstances());
+    }
+    if (linkedVpcNetwork_ != null) {
+      output.writeMessage(20, getLinkedVpcNetwork());
+    }
+    for (int i = 0; i < reasons_.size(); i++) {
+      output.writeMessage(21, reasons_.get(i));
+    }
+    if (spokeType_
+        != com.google.cloud.networkconnectivity.v1.SpokeType.SPOKE_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(22, spokeType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(group_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, group_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -821,6 +2310,19 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               19, getLinkedRouterApplianceInstances());
     }
+    if (linkedVpcNetwork_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getLinkedVpcNetwork());
+    }
+    for (int i = 0; i < reasons_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, reasons_.get(i));
+    }
+    if (spokeType_
+        != com.google.cloud.networkconnectivity.v1.SpokeType.SPOKE_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, spokeType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(group_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, group_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -849,6 +2351,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getHub().equals(other.getHub())) return false;
+    if (!getGroup().equals(other.getGroup())) return false;
     if (hasLinkedVpnTunnels() != other.hasLinkedVpnTunnels()) return false;
     if (hasLinkedVpnTunnels()) {
       if (!getLinkedVpnTunnels().equals(other.getLinkedVpnTunnels())) return false;
@@ -865,8 +2368,14 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       if (!getLinkedRouterApplianceInstances().equals(other.getLinkedRouterApplianceInstances()))
         return false;
     }
+    if (hasLinkedVpcNetwork() != other.hasLinkedVpcNetwork()) return false;
+    if (hasLinkedVpcNetwork()) {
+      if (!getLinkedVpcNetwork().equals(other.getLinkedVpcNetwork())) return false;
+    }
     if (!getUniqueId().equals(other.getUniqueId())) return false;
     if (state_ != other.state_) return false;
+    if (!getReasonsList().equals(other.getReasonsList())) return false;
+    if (spokeType_ != other.spokeType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -896,6 +2405,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + HUB_FIELD_NUMBER;
     hash = (53 * hash) + getHub().hashCode();
+    hash = (37 * hash) + GROUP_FIELD_NUMBER;
+    hash = (53 * hash) + getGroup().hashCode();
     if (hasLinkedVpnTunnels()) {
       hash = (37 * hash) + LINKED_VPN_TUNNELS_FIELD_NUMBER;
       hash = (53 * hash) + getLinkedVpnTunnels().hashCode();
@@ -908,10 +2419,20 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LINKED_ROUTER_APPLIANCE_INSTANCES_FIELD_NUMBER;
       hash = (53 * hash) + getLinkedRouterApplianceInstances().hashCode();
     }
+    if (hasLinkedVpcNetwork()) {
+      hash = (37 * hash) + LINKED_VPC_NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getLinkedVpcNetwork().hashCode();
+    }
     hash = (37 * hash) + UNIQUE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUniqueId().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (getReasonsCount() > 0) {
+      hash = (37 * hash) + REASONS_FIELD_NUMBER;
+      hash = (53 * hash) + getReasonsList().hashCode();
+    }
+    hash = (37 * hash) + SPOKE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + spokeType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1016,13 +2537,16 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Network Connectivity Center spoke represents a connection between your
-   * Google Cloud network resources and a non-Google-Cloud network.
-   * When you create a spoke, you associate it with a hub. You must also identify
-   * a value for exactly one of the following fields:
+   * A Network Connectivity Center spoke represents one or more network
+   * connectivity resources.
+   *
+   * When you create a spoke, you associate it with a hub. You must also
+   * identify a value for exactly one of the following fields:
+   *
    * * linked_vpn_tunnels
    * * linked_interconnect_attachments
    * * linked_router_appliance_instances
+   * * linked_vpc_network
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.Spoke}
@@ -1091,6 +2615,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       description_ = "";
       hub_ = "";
+      group_ = "";
       linkedVpnTunnels_ = null;
       if (linkedVpnTunnelsBuilder_ != null) {
         linkedVpnTunnelsBuilder_.dispose();
@@ -1106,8 +2631,21 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         linkedRouterApplianceInstancesBuilder_.dispose();
         linkedRouterApplianceInstancesBuilder_ = null;
       }
+      linkedVpcNetwork_ = null;
+      if (linkedVpcNetworkBuilder_ != null) {
+        linkedVpcNetworkBuilder_.dispose();
+        linkedVpcNetworkBuilder_ = null;
+      }
       uniqueId_ = "";
       state_ = 0;
+      if (reasonsBuilder_ == null) {
+        reasons_ = java.util.Collections.emptyList();
+      } else {
+        reasons_ = null;
+        reasonsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00002000);
+      spokeType_ = 0;
       return this;
     }
 
@@ -1135,11 +2673,24 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkconnectivity.v1.Spoke buildPartial() {
       com.google.cloud.networkconnectivity.v1.Spoke result =
           new com.google.cloud.networkconnectivity.v1.Spoke(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.networkconnectivity.v1.Spoke result) {
+      if (reasonsBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)) {
+          reasons_ = java.util.Collections.unmodifiableList(reasons_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.reasons_ = reasons_;
+      } else {
+        result.reasons_ = reasonsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.networkconnectivity.v1.Spoke result) {
@@ -1164,26 +2715,36 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         result.hub_ = hub_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.group_ = group_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.linkedVpnTunnels_ =
             linkedVpnTunnelsBuilder_ == null ? linkedVpnTunnels_ : linkedVpnTunnelsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.linkedInterconnectAttachments_ =
             linkedInterconnectAttachmentsBuilder_ == null
                 ? linkedInterconnectAttachments_
                 : linkedInterconnectAttachmentsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.linkedRouterApplianceInstances_ =
             linkedRouterApplianceInstancesBuilder_ == null
                 ? linkedRouterApplianceInstances_
                 : linkedRouterApplianceInstancesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.linkedVpcNetwork_ =
+            linkedVpcNetworkBuilder_ == null ? linkedVpcNetwork_ : linkedVpcNetworkBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.uniqueId_ = uniqueId_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.spokeType_ = spokeType_;
       }
     }
 
@@ -1255,6 +2816,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (!other.getGroup().isEmpty()) {
+        group_ = other.group_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       if (other.hasLinkedVpnTunnels()) {
         mergeLinkedVpnTunnels(other.getLinkedVpnTunnels());
       }
@@ -1264,13 +2830,46 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLinkedRouterApplianceInstances()) {
         mergeLinkedRouterApplianceInstances(other.getLinkedRouterApplianceInstances());
       }
+      if (other.hasLinkedVpcNetwork()) {
+        mergeLinkedVpcNetwork(other.getLinkedVpcNetwork());
+      }
       if (!other.getUniqueId().isEmpty()) {
         uniqueId_ = other.uniqueId_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (reasonsBuilder_ == null) {
+        if (!other.reasons_.isEmpty()) {
+          if (reasons_.isEmpty()) {
+            reasons_ = other.reasons_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureReasonsIsMutable();
+            reasons_.addAll(other.reasons_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.reasons_.isEmpty()) {
+          if (reasonsBuilder_.isEmpty()) {
+            reasonsBuilder_.dispose();
+            reasonsBuilder_ = null;
+            reasons_ = other.reasons_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+            reasonsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getReasonsFieldBuilder()
+                    : null;
+          } else {
+            reasonsBuilder_.addAllMessages(other.reasons_);
+          }
+        }
+      }
+      if (other.spokeType_ != 0) {
+        setSpokeTypeValue(other.getSpokeTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1343,27 +2942,27 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 uniqueId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 120:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 120
             case 138:
               {
                 input.readMessage(
                     getLinkedVpnTunnelsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(
                     getLinkedInterconnectAttachmentsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 146
             case 154:
@@ -1371,9 +2970,42 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
                 input.readMessage(
                     getLinkedRouterApplianceInstancesFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    getLinkedVpcNetworkFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 162
+            case 170:
+              {
+                com.google.cloud.networkconnectivity.v1.Spoke.StateReason m =
+                    input.readMessage(
+                        com.google.cloud.networkconnectivity.v1.Spoke.StateReason.parser(),
+                        extensionRegistry);
+                if (reasonsBuilder_ == null) {
+                  ensureReasonsIsMutable();
+                  reasons_.add(m);
+                } else {
+                  reasonsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 170
+            case 176:
+              {
+                spokeType_ = input.readEnum();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 176
+            case 186:
+              {
+                group_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1940,8 +3572,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -1964,8 +3596,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -1979,8 +3611,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -2001,8 +3633,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -2029,8 +3661,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -2053,8 +3685,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -2075,8 +3707,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional labels in key:value format. For more information about labels, see
-     * [Requirements for
+     * Optional labels in key-value pair format. For more information about
+     * labels, see [Requirements for
      * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
      * </pre>
      *
@@ -2310,6 +3942,122 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object group_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the group that this spoke is associated with.
+     * </pre>
+     *
+     * <code>
+     * string group = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The group.
+     */
+    public java.lang.String getGroup() {
+      java.lang.Object ref = group_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        group_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the group that this spoke is associated with.
+     * </pre>
+     *
+     * <code>
+     * string group = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for group.
+     */
+    public com.google.protobuf.ByteString getGroupBytes() {
+      java.lang.Object ref = group_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        group_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the group that this spoke is associated with.
+     * </pre>
+     *
+     * <code>
+     * string group = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The group to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGroup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      group_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the group that this spoke is associated with.
+     * </pre>
+     *
+     * <code>
+     * string group = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGroup() {
+      group_ = getDefaultInstance().getGroup();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the group that this spoke is associated with.
+     * </pre>
+     *
+     * <code>
+     * string group = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for group to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGroupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      group_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels linkedVpnTunnels_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels,
@@ -2328,7 +4076,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the linkedVpnTunnels field is set.
      */
     public boolean hasLinkedVpnTunnels() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2369,7 +4117,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       } else {
         linkedVpnTunnelsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2389,7 +4137,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       } else {
         linkedVpnTunnelsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2405,7 +4153,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeLinkedVpnTunnels(
         com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels value) {
       if (linkedVpnTunnelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && linkedVpnTunnels_ != null
             && linkedVpnTunnels_
                 != com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels.getDefaultInstance()) {
@@ -2416,7 +4164,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       } else {
         linkedVpnTunnelsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2430,7 +4178,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.networkconnectivity.v1.LinkedVpnTunnels linked_vpn_tunnels = 17;</code>
      */
     public Builder clearLinkedVpnTunnels() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       linkedVpnTunnels_ = null;
       if (linkedVpnTunnelsBuilder_ != null) {
         linkedVpnTunnelsBuilder_.dispose();
@@ -2450,7 +4198,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels.Builder
         getLinkedVpnTunnelsBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getLinkedVpnTunnelsFieldBuilder().getBuilder();
     }
@@ -2520,7 +4268,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the linkedInterconnectAttachments field is set.
      */
     public boolean hasLinkedInterconnectAttachments() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2567,7 +4315,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       } else {
         linkedInterconnectAttachmentsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2590,7 +4338,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       } else {
         linkedInterconnectAttachmentsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2608,7 +4356,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeLinkedInterconnectAttachments(
         com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments value) {
       if (linkedInterconnectAttachmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && linkedInterconnectAttachments_ != null
             && linkedInterconnectAttachments_
                 != com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments
@@ -2620,7 +4368,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       } else {
         linkedInterconnectAttachmentsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2636,7 +4384,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLinkedInterconnectAttachments() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       linkedInterconnectAttachments_ = null;
       if (linkedInterconnectAttachmentsBuilder_ != null) {
         linkedInterconnectAttachmentsBuilder_.dispose();
@@ -2658,7 +4406,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments.Builder
         getLinkedInterconnectAttachmentsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getLinkedInterconnectAttachmentsFieldBuilder().getBuilder();
     }
@@ -2733,7 +4481,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the linkedRouterApplianceInstances field is set.
      */
     public boolean hasLinkedRouterApplianceInstances() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2780,7 +4528,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       } else {
         linkedRouterApplianceInstancesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2803,7 +4551,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       } else {
         linkedRouterApplianceInstancesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2821,7 +4569,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeLinkedRouterApplianceInstances(
         com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances value) {
       if (linkedRouterApplianceInstancesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && linkedRouterApplianceInstances_ != null
             && linkedRouterApplianceInstances_
                 != com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances
@@ -2833,7 +4581,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       } else {
         linkedRouterApplianceInstancesBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2849,7 +4597,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLinkedRouterApplianceInstances() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       linkedRouterApplianceInstances_ = null;
       if (linkedRouterApplianceInstancesBuilder_ != null) {
         linkedRouterApplianceInstancesBuilder_.dispose();
@@ -2871,7 +4619,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances.Builder
         getLinkedRouterApplianceInstancesBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getLinkedRouterApplianceInstancesFieldBuilder().getBuilder();
     }
@@ -2925,6 +4673,213 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       return linkedRouterApplianceInstancesBuilder_;
     }
 
+    private com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork linkedVpcNetwork_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork,
+            com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.Builder,
+            com.google.cloud.networkconnectivity.v1.LinkedVpcNetworkOrBuilder>
+        linkedVpcNetworkBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC network that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the linkedVpcNetwork field is set.
+     */
+    public boolean hasLinkedVpcNetwork() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC network that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The linkedVpcNetwork.
+     */
+    public com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork getLinkedVpcNetwork() {
+      if (linkedVpcNetworkBuilder_ == null) {
+        return linkedVpcNetwork_ == null
+            ? com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.getDefaultInstance()
+            : linkedVpcNetwork_;
+      } else {
+        return linkedVpcNetworkBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC network that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLinkedVpcNetwork(
+        com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork value) {
+      if (linkedVpcNetworkBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        linkedVpcNetwork_ = value;
+      } else {
+        linkedVpcNetworkBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC network that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLinkedVpcNetwork(
+        com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.Builder builderForValue) {
+      if (linkedVpcNetworkBuilder_ == null) {
+        linkedVpcNetwork_ = builderForValue.build();
+      } else {
+        linkedVpcNetworkBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC network that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLinkedVpcNetwork(
+        com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork value) {
+      if (linkedVpcNetworkBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && linkedVpcNetwork_ != null
+            && linkedVpcNetwork_
+                != com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.getDefaultInstance()) {
+          getLinkedVpcNetworkBuilder().mergeFrom(value);
+        } else {
+          linkedVpcNetwork_ = value;
+        }
+      } else {
+        linkedVpcNetworkBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC network that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLinkedVpcNetwork() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      linkedVpcNetwork_ = null;
+      if (linkedVpcNetworkBuilder_ != null) {
+        linkedVpcNetworkBuilder_.dispose();
+        linkedVpcNetworkBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC network that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.Builder
+        getLinkedVpcNetworkBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getLinkedVpcNetworkFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC network that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.LinkedVpcNetworkOrBuilder
+        getLinkedVpcNetworkOrBuilder() {
+      if (linkedVpcNetworkBuilder_ != null) {
+        return linkedVpcNetworkBuilder_.getMessageOrBuilder();
+      } else {
+        return linkedVpcNetwork_ == null
+            ? com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.getDefaultInstance()
+            : linkedVpcNetwork_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC network that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork,
+            com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.Builder,
+            com.google.cloud.networkconnectivity.v1.LinkedVpcNetworkOrBuilder>
+        getLinkedVpcNetworkFieldBuilder() {
+      if (linkedVpcNetworkBuilder_ == null) {
+        linkedVpcNetworkBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork,
+                com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork.Builder,
+                com.google.cloud.networkconnectivity.v1.LinkedVpcNetworkOrBuilder>(
+                getLinkedVpcNetwork(), getParentForChildren(), isClean());
+        linkedVpcNetwork_ = null;
+      }
+      return linkedVpcNetworkBuilder_;
+    }
+
     private java.lang.Object uniqueId_ = "";
     /**
      *
@@ -2932,7 +4887,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The Google-generated UUID for the spoke. This value is unique
      * across all spoke resources. If a spoke is deleted and another with the same
-     * name is created, the new spoke is assigned a different unique_id.
+     * name is created, the new spoke is assigned a different `unique_id`.
      * </pre>
      *
      * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2956,7 +4911,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The Google-generated UUID for the spoke. This value is unique
      * across all spoke resources. If a spoke is deleted and another with the same
-     * name is created, the new spoke is assigned a different unique_id.
+     * name is created, the new spoke is assigned a different `unique_id`.
      * </pre>
      *
      * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2980,7 +4935,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The Google-generated UUID for the spoke. This value is unique
      * across all spoke resources. If a spoke is deleted and another with the same
-     * name is created, the new spoke is assigned a different unique_id.
+     * name is created, the new spoke is assigned a different `unique_id`.
      * </pre>
      *
      * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2993,7 +4948,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uniqueId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3003,7 +4958,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The Google-generated UUID for the spoke. This value is unique
      * across all spoke resources. If a spoke is deleted and another with the same
-     * name is created, the new spoke is assigned a different unique_id.
+     * name is created, the new spoke is assigned a different `unique_id`.
      * </pre>
      *
      * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3012,7 +4967,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUniqueId() {
       uniqueId_ = getDefaultInstance().getUniqueId();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3022,7 +4977,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The Google-generated UUID for the spoke. This value is unique
      * across all spoke resources. If a spoke is deleted and another with the same
-     * name is created, the new spoke is assigned a different unique_id.
+     * name is created, the new spoke is assigned a different `unique_id`.
      * </pre>
      *
      * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3036,7 +4991,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uniqueId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3075,7 +5030,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3116,7 +5071,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3135,8 +5090,529 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.networkconnectivity.v1.Spoke.StateReason> reasons_ =
+        java.util.Collections.emptyList();
+
+    private void ensureReasonsIsMutable() {
+      if (!((bitField0_ & 0x00002000) != 0)) {
+        reasons_ =
+            new java.util.ArrayList<com.google.cloud.networkconnectivity.v1.Spoke.StateReason>(
+                reasons_);
+        bitField0_ |= 0x00002000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.Spoke.StateReason,
+            com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder,
+            com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder>
+        reasonsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.networkconnectivity.v1.Spoke.StateReason>
+        getReasonsList() {
+      if (reasonsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(reasons_);
+      } else {
+        return reasonsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getReasonsCount() {
+      if (reasonsBuilder_ == null) {
+        return reasons_.size();
+      } else {
+        return reasonsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.Spoke.StateReason getReasons(int index) {
+      if (reasonsBuilder_ == null) {
+        return reasons_.get(index);
+      } else {
+        return reasonsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setReasons(
+        int index, com.google.cloud.networkconnectivity.v1.Spoke.StateReason value) {
+      if (reasonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReasonsIsMutable();
+        reasons_.set(index, value);
+        onChanged();
+      } else {
+        reasonsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setReasons(
+        int index,
+        com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder builderForValue) {
+      if (reasonsBuilder_ == null) {
+        ensureReasonsIsMutable();
+        reasons_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        reasonsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addReasons(com.google.cloud.networkconnectivity.v1.Spoke.StateReason value) {
+      if (reasonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReasonsIsMutable();
+        reasons_.add(value);
+        onChanged();
+      } else {
+        reasonsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addReasons(
+        int index, com.google.cloud.networkconnectivity.v1.Spoke.StateReason value) {
+      if (reasonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReasonsIsMutable();
+        reasons_.add(index, value);
+        onChanged();
+      } else {
+        reasonsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addReasons(
+        com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder builderForValue) {
+      if (reasonsBuilder_ == null) {
+        ensureReasonsIsMutable();
+        reasons_.add(builderForValue.build());
+        onChanged();
+      } else {
+        reasonsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addReasons(
+        int index,
+        com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder builderForValue) {
+      if (reasonsBuilder_ == null) {
+        ensureReasonsIsMutable();
+        reasons_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        reasonsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllReasons(
+        java.lang.Iterable<? extends com.google.cloud.networkconnectivity.v1.Spoke.StateReason>
+            values) {
+      if (reasonsBuilder_ == null) {
+        ensureReasonsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, reasons_);
+        onChanged();
+      } else {
+        reasonsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearReasons() {
+      if (reasonsBuilder_ == null) {
+        reasons_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+      } else {
+        reasonsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeReasons(int index) {
+      if (reasonsBuilder_ == null) {
+        ensureReasonsIsMutable();
+        reasons_.remove(index);
+        onChanged();
+      } else {
+        reasonsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder getReasonsBuilder(
+        int index) {
+      return getReasonsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder getReasonsOrBuilder(
+        int index) {
+      if (reasonsBuilder_ == null) {
+        return reasons_.get(index);
+      } else {
+        return reasonsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder>
+        getReasonsOrBuilderList() {
+      if (reasonsBuilder_ != null) {
+        return reasonsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(reasons_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder addReasonsBuilder() {
+      return getReasonsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.networkconnectivity.v1.Spoke.StateReason.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder addReasonsBuilder(
+        int index) {
+      return getReasonsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.networkconnectivity.v1.Spoke.StateReason.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reasons for current state of the spoke. Only present when
+     * the spoke is in the `INACTIVE` state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder>
+        getReasonsBuilderList() {
+      return getReasonsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.Spoke.StateReason,
+            com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder,
+            com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder>
+        getReasonsFieldBuilder() {
+      if (reasonsBuilder_ == null) {
+        reasonsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.networkconnectivity.v1.Spoke.StateReason,
+                com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder,
+                com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder>(
+                reasons_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
+        reasons_ = null;
+      }
+      return reasonsBuilder_;
+    }
+
+    private int spokeType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of resource associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeType spoke_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for spokeType.
+     */
+    @java.lang.Override
+    public int getSpokeTypeValue() {
+      return spokeType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of resource associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeType spoke_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for spokeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpokeTypeValue(int value) {
+      spokeType_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of resource associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeType spoke_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The spokeType.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkconnectivity.v1.SpokeType getSpokeType() {
+      com.google.cloud.networkconnectivity.v1.SpokeType result =
+          com.google.cloud.networkconnectivity.v1.SpokeType.forNumber(spokeType_);
+      return result == null
+          ? com.google.cloud.networkconnectivity.v1.SpokeType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of resource associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeType spoke_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The spokeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpokeType(com.google.cloud.networkconnectivity.v1.SpokeType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00004000;
+      spokeType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of resource associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.SpokeType spoke_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSpokeType() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      spokeType_ = 0;
       onChanged();
       return this;
     }

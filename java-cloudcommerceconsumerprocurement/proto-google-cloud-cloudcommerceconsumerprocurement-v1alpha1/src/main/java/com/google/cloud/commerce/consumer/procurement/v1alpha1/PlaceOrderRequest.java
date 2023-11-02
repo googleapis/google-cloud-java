@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.commerce.consumer.procurement.v1alpha1;
  *
  *
  * <pre>
- * Request message for [ConsumerProcurementService.PlaceOrder][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService.PlaceOrder].
+ * Request message for
+ * [ConsumerProcurementService.PlaceOrder][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService.PlaceOrder].
  * </pre>
  *
  * Protobuf type {@code google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest}
@@ -48,11 +49,6 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PlaceOrderRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,7 +133,6 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The user-specified name of the order being placed.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -161,7 +156,6 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The user-specified name of the order being placed.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -190,7 +184,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -206,7 +201,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -223,7 +219,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -238,7 +235,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -254,7 +252,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -278,6 +277,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    * Optional. A unique identifier for this request.
    * The server will ignore subsequent requests that provide a duplicate request
    * ID for at least 120 minutes after the first request.
+   *
    * The request ID must be a valid
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
    * </pre>
@@ -305,6 +305,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    * Optional. A unique identifier for this request.
    * The server will ignore subsequent requests that provide a duplicate request
    * ID for at least 120 minutes after the first request.
+   *
    * The request ID must be a valid
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
    * </pre>
@@ -521,7 +522,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [ConsumerProcurementService.PlaceOrder][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService.PlaceOrder].
+   * Request message for
+   * [ConsumerProcurementService.PlaceOrder][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService.PlaceOrder].
    * </pre>
    *
    * Protobuf type {@code google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest}
@@ -931,7 +933,6 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The user-specified name of the order being placed.
-     * Must be unique within a billing account.
      * </pre>
      *
      * <code>string display_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -954,7 +955,6 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The user-specified name of the order being placed.
-     * Must be unique within a billing account.
      * </pre>
      *
      * <code>string display_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -977,7 +977,6 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The user-specified name of the order being placed.
-     * Must be unique within a billing account.
      * </pre>
      *
      * <code>string display_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -999,7 +998,6 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The user-specified name of the order being placed.
-     * Must be unique within a billing account.
      * </pre>
      *
      * <code>string display_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1017,7 +1015,6 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The user-specified name of the order being placed.
-     * Must be unique within a billing account.
      * </pre>
      *
      * <code>string display_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1059,7 +1056,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1078,7 +1076,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1096,7 +1095,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1115,7 +1115,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1140,7 +1141,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1164,7 +1166,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1189,7 +1192,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1214,7 +1218,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1237,7 +1242,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1261,7 +1267,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1285,7 +1292,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1306,7 +1314,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1327,7 +1336,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1342,7 +1352,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1361,7 +1372,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1381,7 +1393,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1399,7 +1412,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1418,7 +1432,8 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Places order for offer. Required when an offer-based order is being placed.
+     * Optional. Places order for offer. Required when an offer-based order is
+     * being placed.
      * </pre>
      *
      * <code>
@@ -1456,6 +1471,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * Optional. A unique identifier for this request.
      * The server will ignore subsequent requests that provide a duplicate request
      * ID for at least 120 minutes after the first request.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
      * </pre>
@@ -1482,6 +1498,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * Optional. A unique identifier for this request.
      * The server will ignore subsequent requests that provide a duplicate request
      * ID for at least 120 minutes after the first request.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
      * </pre>
@@ -1508,6 +1525,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * Optional. A unique identifier for this request.
      * The server will ignore subsequent requests that provide a duplicate request
      * ID for at least 120 minutes after the first request.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
      * </pre>
@@ -1533,6 +1551,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * Optional. A unique identifier for this request.
      * The server will ignore subsequent requests that provide a duplicate request
      * ID for at least 120 minutes after the first request.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
      * </pre>
@@ -1554,6 +1573,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * Optional. A unique identifier for this request.
      * The server will ignore subsequent requests that provide a duplicate request
      * ID for at least 120 minutes after the first request.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
      * </pre>

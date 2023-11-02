@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,9 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The notification channel for which a verification code is to be generated
-   * and retrieved. This must name a channel that is already verified; if
-   * the specified channel is not verified, the request will fail.
+   * Required. The notification channel for which a verification code is to be
+   * generated and retrieved. This must name a channel that is already verified;
+   * if the specified channel is not verified, the request will fail.
    * </pre>
    *
    * <code>
@@ -43,9 +43,9 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The notification channel for which a verification code is to be generated
-   * and retrieved. This must name a channel that is already verified; if
-   * the specified channel is not verified, the request will fail.
+   * Required. The notification channel for which a verification code is to be
+   * generated and retrieved. This must name a channel that is already verified;
+   * if the specified channel is not verified, the request will fail.
    * </pre>
    *
    * <code>

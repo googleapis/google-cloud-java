@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListClustersPagedRe
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListInstancesPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListLocationsPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListSupportedDatabaseFlagsPagedResponse;
+import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListUsersPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -203,6 +204,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -212,6 +214,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSslConfig(SslConfig.newBuilder().build())
             .setEncryptionConfig(EncryptionConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .build();
@@ -265,6 +269,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -274,6 +279,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSslConfig(SslConfig.newBuilder().build())
             .setEncryptionConfig(EncryptionConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .build();
@@ -327,6 +334,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -336,6 +344,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSslConfig(SslConfig.newBuilder().build())
             .setEncryptionConfig(EncryptionConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .build();
@@ -398,6 +408,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -407,6 +418,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSslConfig(SslConfig.newBuilder().build())
             .setEncryptionConfig(EncryptionConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .build();
@@ -469,6 +482,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -478,6 +492,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSslConfig(SslConfig.newBuilder().build())
             .setEncryptionConfig(EncryptionConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .build();
@@ -499,6 +515,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -508,6 +525,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSslConfig(SslConfig.newBuilder().build())
             .setEncryptionConfig(EncryptionConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .build();
@@ -549,6 +568,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setDeleteTime(Timestamp.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setDatabaseVersion(DatabaseVersion.forNumber(0))
+              .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
               .setNetwork("network1843485230")
               .setEtag("etag3123477")
               .putAllAnnotations(new HashMap<String, String>())
@@ -558,6 +578,8 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setSslConfig(SslConfig.newBuilder().build())
               .setEncryptionConfig(EncryptionConfig.newBuilder().build())
               .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+              .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+              .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
               .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
               .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
               .build();
@@ -659,6 +681,146 @@ public class AlloyDBAdminClientHttpJsonTest {
   }
 
   @Test
+  public void promoteClusterTest() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
+            .setNetwork("network1843485230")
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setReconciling(true)
+            .setInitialUser(UserPassword.newBuilder().build())
+            .setAutomatedBackupPolicy(AutomatedBackupPolicy.newBuilder().build())
+            .setSslConfig(SslConfig.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
+            .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
+            .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("promoteClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    Cluster actualResponse = client.promoteClusterAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void promoteClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.promoteClusterAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void promoteClusterTest2() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
+            .setNetwork("network1843485230")
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setReconciling(true)
+            .setInitialUser(UserPassword.newBuilder().build())
+            .setAutomatedBackupPolicy(AutomatedBackupPolicy.newBuilder().build())
+            .setSslConfig(SslConfig.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
+            .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
+            .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("promoteClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+
+    Cluster actualResponse = client.promoteClusterAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void promoteClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+      client.promoteClusterAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void restoreClusterTest() throws Exception {
     Cluster expectedResponse =
         Cluster.newBuilder()
@@ -670,6 +832,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -679,6 +842,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSslConfig(SslConfig.newBuilder().build())
             .setEncryptionConfig(EncryptionConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
             .build();
@@ -734,6 +899,154 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setValidateOnly(true)
               .build();
       client.restoreClusterAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createSecondaryClusterTest() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
+            .setNetwork("network1843485230")
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setReconciling(true)
+            .setInitialUser(UserPassword.newBuilder().build())
+            .setAutomatedBackupPolicy(AutomatedBackupPolicy.newBuilder().build())
+            .setSslConfig(SslConfig.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
+            .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
+            .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSecondaryClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Cluster cluster = Cluster.newBuilder().build();
+    String clusterId = "clusterId561939637";
+
+    Cluster actualResponse = client.createSecondaryClusterAsync(parent, cluster, clusterId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSecondaryClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Cluster cluster = Cluster.newBuilder().build();
+      String clusterId = "clusterId561939637";
+      client.createSecondaryClusterAsync(parent, cluster, clusterId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createSecondaryClusterTest2() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
+            .setNetwork("network1843485230")
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setReconciling(true)
+            .setInitialUser(UserPassword.newBuilder().build())
+            .setAutomatedBackupPolicy(AutomatedBackupPolicy.newBuilder().build())
+            .setSslConfig(SslConfig.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setContinuousBackupConfig(ContinuousBackupConfig.newBuilder().build())
+            .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
+            .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
+            .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSecondaryClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    Cluster cluster = Cluster.newBuilder().build();
+    String clusterId = "clusterId561939637";
+
+    Cluster actualResponse = client.createSecondaryClusterAsync(parent, cluster, clusterId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSecondaryClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      Cluster cluster = Cluster.newBuilder().build();
+      String clusterId = "clusterId561939637";
+      client.createSecondaryClusterAsync(parent, cluster, clusterId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -862,6 +1175,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -924,6 +1238,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -988,6 +1303,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1059,6 +1375,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1102,6 +1419,152 @@ public class AlloyDBAdminClientHttpJsonTest {
       Instance instance = Instance.newBuilder().build();
       String instanceId = "instanceId902024336";
       client.createInstanceAsync(parent, instance, instanceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createSecondaryInstanceTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(
+                InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setMachineConfig(Instance.MachineConfig.newBuilder().build())
+            .setGceZone("gceZone-146048427")
+            .putAllDatabaseFlags(new HashMap<String, String>())
+            .setWritableNode(Instance.Node.newBuilder().build())
+            .addAllNodes(new ArrayList<Instance.Node>())
+            .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
+            .setIpAddress("ipAddress1634032845")
+            .setReconciling(true)
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSecondaryInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    Instance instance = Instance.newBuilder().build();
+    String instanceId = "instanceId902024336";
+
+    Instance actualResponse =
+        client.createSecondaryInstanceAsync(parent, instance, instanceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSecondaryInstanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      Instance instance = Instance.newBuilder().build();
+      String instanceId = "instanceId902024336";
+      client.createSecondaryInstanceAsync(parent, instance, instanceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createSecondaryInstanceTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(
+                InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setMachineConfig(Instance.MachineConfig.newBuilder().build())
+            .setGceZone("gceZone-146048427")
+            .putAllDatabaseFlags(new HashMap<String, String>())
+            .setWritableNode(Instance.Node.newBuilder().build())
+            .addAllNodes(new ArrayList<Instance.Node>())
+            .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
+            .setIpAddress("ipAddress1634032845")
+            .setReconciling(true)
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSecondaryInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+    Instance instance = Instance.newBuilder().build();
+    String instanceId = "instanceId902024336";
+
+    Instance actualResponse =
+        client.createSecondaryInstanceAsync(parent, instance, instanceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSecondaryInstanceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+      Instance instance = Instance.newBuilder().build();
+      String instanceId = "instanceId902024336";
+      client.createSecondaryInstanceAsync(parent, instance, instanceId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -1189,6 +1652,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1219,6 +1683,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1269,6 +1734,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setReconciling(true)
               .setEtag("etag3123477")
               .putAllAnnotations(new HashMap<String, String>())
+              .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -1392,6 +1858,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1459,6 +1926,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1506,6 +1974,148 @@ public class AlloyDBAdminClientHttpJsonTest {
   }
 
   @Test
+  public void injectFaultTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(
+                InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setMachineConfig(Instance.MachineConfig.newBuilder().build())
+            .setGceZone("gceZone-146048427")
+            .putAllDatabaseFlags(new HashMap<String, String>())
+            .setWritableNode(Instance.Node.newBuilder().build())
+            .addAllNodes(new ArrayList<Instance.Node>())
+            .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
+            .setIpAddress("ipAddress1634032845")
+            .setReconciling(true)
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("injectFaultTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    InjectFaultRequest.FaultType faultType = InjectFaultRequest.FaultType.forNumber(0);
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+
+    Instance actualResponse = client.injectFaultAsync(faultType, name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void injectFaultExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InjectFaultRequest.FaultType faultType = InjectFaultRequest.FaultType.forNumber(0);
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+      client.injectFaultAsync(faultType, name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void injectFaultTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(
+                InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setMachineConfig(Instance.MachineConfig.newBuilder().build())
+            .setGceZone("gceZone-146048427")
+            .putAllDatabaseFlags(new HashMap<String, String>())
+            .setWritableNode(Instance.Node.newBuilder().build())
+            .addAllNodes(new ArrayList<Instance.Node>())
+            .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
+            .setIpAddress("ipAddress1634032845")
+            .setReconciling(true)
+            .setEtag("etag3123477")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("injectFaultTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    InjectFaultRequest.FaultType faultType = InjectFaultRequest.FaultType.forNumber(0);
+    String name =
+        "projects/project-867/locations/location-867/clusters/cluster-867/instances/instance-867";
+
+    Instance actualResponse = client.injectFaultAsync(faultType, name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void injectFaultExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InjectFaultRequest.FaultType faultType = InjectFaultRequest.FaultType.forNumber(0);
+      String name =
+          "projects/project-867/locations/location-867/clusters/cluster-867/instances/instance-867";
+      client.injectFaultAsync(faultType, name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void restartInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
@@ -1528,6 +2138,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1595,6 +2206,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1762,6 +2374,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1822,6 +2436,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1882,6 +2498,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1951,6 +2569,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2020,6 +2640,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2048,6 +2670,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2096,6 +2720,8 @@ public class AlloyDBAdminClientHttpJsonTest {
               .putAllAnnotations(new HashMap<String, String>())
               .setSizeBytes(-1796325715)
               .setExpiryTime(Timestamp.newBuilder().build())
+              .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+              .setDatabaseVersion(DatabaseVersion.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();
@@ -2290,6 +2916,624 @@ public class AlloyDBAdminClientHttpJsonTest {
     try {
       String parent = "projects/project-5833/locations/location-5833";
       client.listSupportedDatabaseFlags(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateClientCertificateTest() throws Exception {
+    GenerateClientCertificateResponse expectedResponse =
+        GenerateClientCertificateResponse.newBuilder()
+            .addAllPemCertificateChain(new ArrayList<String>())
+            .setCaCert("caCert-1369003102")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    GenerateClientCertificateResponse actualResponse = client.generateClientCertificate(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateClientCertificateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.generateClientCertificate(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateClientCertificateTest2() throws Exception {
+    GenerateClientCertificateResponse expectedResponse =
+        GenerateClientCertificateResponse.newBuilder()
+            .addAllPemCertificateChain(new ArrayList<String>())
+            .setCaCert("caCert-1369003102")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+
+    GenerateClientCertificateResponse actualResponse = client.generateClientCertificate(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateClientCertificateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+      client.generateClientCertificate(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConnectionInfoTest() throws Exception {
+    ConnectionInfo expectedResponse =
+        ConnectionInfo.newBuilder()
+            .setName("name3373707")
+            .setIpAddress("ipAddress1634032845")
+            .setInstanceUid("instanceUid-2102004869")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+
+    ConnectionInfo actualResponse = client.getConnectionInfo(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getConnectionInfoExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+      client.getConnectionInfo(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConnectionInfoTest2() throws Exception {
+    ConnectionInfo expectedResponse =
+        ConnectionInfo.newBuilder()
+            .setName("name3373707")
+            .setIpAddress("ipAddress1634032845")
+            .setInstanceUid("instanceUid-2102004869")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-9084/locations/location-9084/clusters/cluster-9084/instances/instance-9084";
+
+    ConnectionInfo actualResponse = client.getConnectionInfo(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getConnectionInfoExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-9084/locations/location-9084/clusters/cluster-9084/instances/instance-9084";
+      client.getConnectionInfo(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUsersTest() throws Exception {
+    User responsesElement = User.newBuilder().build();
+    ListUsersResponse expectedResponse =
+        ListUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllUsers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    ListUsersPagedResponse pagedListResponse = client.listUsers(parent);
+
+    List<User> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUsersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listUsersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.listUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUsersTest2() throws Exception {
+    User responsesElement = User.newBuilder().build();
+    ListUsersResponse expectedResponse =
+        ListUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllUsers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+
+    ListUsersPagedResponse pagedListResponse = client.listUsers(parent);
+
+    List<User> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUsersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listUsersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+      client.listUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getUserTest() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
+            .setPassword("password1216985755")
+            .addAllDatabaseRoles(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    UserName name = UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]");
+
+    User actualResponse = client.getUser(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserName name = UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]");
+      client.getUser(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getUserTest2() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
+            .setPassword("password1216985755")
+            .addAllDatabaseRoles(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6835/locations/location-6835/clusters/cluster-6835/users/user-6835";
+
+    User actualResponse = client.getUser(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getUserExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6835/locations/location-6835/clusters/cluster-6835/users/user-6835";
+      client.getUser(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createUserTest() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
+            .setPassword("password1216985755")
+            .addAllDatabaseRoles(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    User user = User.newBuilder().build();
+    String userId = "userId-836030906";
+
+    User actualResponse = client.createUser(parent, user, userId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      User user = User.newBuilder().build();
+      String userId = "userId-836030906";
+      client.createUser(parent, user, userId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createUserTest2() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
+            .setPassword("password1216985755")
+            .addAllDatabaseRoles(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+    User user = User.newBuilder().build();
+    String userId = "userId-836030906";
+
+    User actualResponse = client.createUser(parent, user, userId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createUserExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+      User user = User.newBuilder().build();
+      String userId = "userId-836030906";
+      client.createUser(parent, user, userId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateUserTest() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
+            .setPassword("password1216985755")
+            .addAllDatabaseRoles(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    User user =
+        User.newBuilder()
+            .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
+            .setPassword("password1216985755")
+            .addAllDatabaseRoles(new ArrayList<String>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    User actualResponse = client.updateUser(user, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      User user =
+          User.newBuilder()
+              .setName(UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]").toString())
+              .setPassword("password1216985755")
+              .addAllDatabaseRoles(new ArrayList<String>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateUser(user, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteUserTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    UserName name = UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]");
+
+    client.deleteUser(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserName name = UserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[USER]");
+      client.deleteUser(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteUserTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6835/locations/location-6835/clusters/cluster-6835/users/user-6835";
+
+    client.deleteUser(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteUserExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6835/locations/location-6835/clusters/cluster-6835/users/user-6835";
+      client.deleteUser(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

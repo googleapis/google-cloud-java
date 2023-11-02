@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4.Company;
 import com.google.cloud.talent.v4.CreateCompanyRequest;
@@ -31,7 +32,6 @@ import com.google.cloud.talent.v4.GetCompanyRequest;
 import com.google.cloud.talent.v4.ListCompaniesRequest;
 import com.google.cloud.talent.v4.ListCompaniesResponse;
 import com.google.cloud.talent.v4.UpdateCompanyRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -152,9 +152,9 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
             .setMethodDescriptor(createCompanyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetCompanyRequest, Company> getCompanyTransportSettings =
@@ -162,9 +162,9 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
             .setMethodDescriptor(getCompanyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateCompanyRequest, Company> updateCompanyTransportSettings =
@@ -172,9 +172,9 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
             .setMethodDescriptor(updateCompanyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("company.name", String.valueOf(request.getCompany().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("company.name", String.valueOf(request.getCompany().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteCompanyRequest, Empty> deleteCompanyTransportSettings =
@@ -182,9 +182,9 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
             .setMethodDescriptor(deleteCompanyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCompaniesRequest, ListCompaniesResponse> listCompaniesTransportSettings =
@@ -192,9 +192,9 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
             .setMethodDescriptor(listCompaniesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 

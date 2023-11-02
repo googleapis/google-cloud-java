@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     return new NotificationMessage();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.NotificationMessageProto
         .internal_static_google_cloud_securitycenter_v1_NotificationMessage_descriptor;
@@ -68,6 +63,8 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
   }
 
   private int eventCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object event_;
 
   public enum EventCase

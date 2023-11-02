@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
     return new Evaluation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_Evaluation_descriptor;
@@ -79,6 +74,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Resource name of an evaluation. The name has the following
    * format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id&lt;/var&gt;}'
    * </pre>
    *
@@ -104,6 +100,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Resource name of an evaluation. The name has the following
    * format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id&lt;/var&gt;}'
    * </pre>
    *
@@ -335,6 +332,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Type of task that the model version being evaluated performs,
    * as defined in the
+   *
    * [evaluationJobConfig.inputConfig.annotationType][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config]
    * field of the evaluation job that created this evaluation.
    * </pre>
@@ -353,6 +351,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Type of task that the model version being evaluated performs,
    * as defined in the
+   *
    * [evaluationJobConfig.inputConfig.annotationType][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config]
    * field of the evaluation job that created this evaluation.
    * </pre>
@@ -921,6 +920,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of an evaluation. The name has the following
      * format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id&lt;/var&gt;}'
      * </pre>
      *
@@ -945,6 +945,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of an evaluation. The name has the following
      * format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id&lt;/var&gt;}'
      * </pre>
      *
@@ -969,6 +970,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of an evaluation. The name has the following
      * format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id&lt;/var&gt;}'
      * </pre>
      *
@@ -992,6 +994,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of an evaluation. The name has the following
      * format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id&lt;/var&gt;}'
      * </pre>
      *
@@ -1011,6 +1014,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of an evaluation. The name has the following
      * format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id&lt;/var&gt;}'
      * </pre>
      *
@@ -1795,6 +1799,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Type of task that the model version being evaluated performs,
      * as defined in the
+     *
      * [evaluationJobConfig.inputConfig.annotationType][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config]
      * field of the evaluation job that created this evaluation.
      * </pre>
@@ -1813,6 +1818,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Type of task that the model version being evaluated performs,
      * as defined in the
+     *
      * [evaluationJobConfig.inputConfig.annotationType][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config]
      * field of the evaluation job that created this evaluation.
      * </pre>
@@ -1834,6 +1840,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Type of task that the model version being evaluated performs,
      * as defined in the
+     *
      * [evaluationJobConfig.inputConfig.annotationType][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config]
      * field of the evaluation job that created this evaluation.
      * </pre>
@@ -1856,6 +1863,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Type of task that the model version being evaluated performs,
      * as defined in the
+     *
      * [evaluationJobConfig.inputConfig.annotationType][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config]
      * field of the evaluation job that created this evaluation.
      * </pre>
@@ -1880,6 +1888,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Type of task that the model version being evaluated performs,
      * as defined in the
+     *
      * [evaluationJobConfig.inputConfig.annotationType][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config]
      * field of the evaluation job that created this evaluation.
      * </pre>

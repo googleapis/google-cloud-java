@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Operation();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -237,6 +232,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * service that generated the operation. If the service calls
    * Check() and Report() on the same operation, the two calls should carry
    * the same id.
+   *
    * UUID version 4 is recommended, though not required.
    * In scenarios where an operation is computed from existing information
    * and an idempotent id is desirable for deduplication purpose, UUID version 5
@@ -267,6 +263,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * service that generated the operation. If the service calls
    * Check() and Report() on the same operation, the two calls should carry
    * the same id.
+   *
    * UUID version 4 is recommended, though not required.
    * In scenarios where an operation is computed from existing information
    * and an idempotent id is desirable for deduplication purpose, UUID version 5
@@ -353,6 +350,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * This field should be filled in for the operations initiated by a
    * consumer, but not for service-initiated operations that are
    * not related to a specific consumer.
+   *
    * - This can be in one of the following formats:
    *     - project:PROJECT_ID,
    *     - project`_`number:PROJECT_NUMBER,
@@ -386,6 +384,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * This field should be filled in for the operations initiated by a
    * consumer, but not for service-initiated operations that are
    * not related to a specific consumer.
+   *
    * - This can be in one of the following formats:
    *     - project:PROJECT_ID,
    *     - project`_`number:PROJECT_NUMBER,
@@ -547,6 +546,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels describing the operation. Only the following labels are allowed:
+   *
    * - Labels describing monitored resources as defined in
    *   the service configuration.
    * - Default labels of metric values. When specified, labels defined in the
@@ -583,6 +583,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels describing the operation. Only the following labels are allowed:
+   *
    * - Labels describing monitored resources as defined in
    *   the service configuration.
    * - Default labels of metric values. When specified, labels defined in the
@@ -610,6 +611,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels describing the operation. Only the following labels are allowed:
+   *
    * - Labels describing monitored resources as defined in
    *   the service configuration.
    * - Default labels of metric values. When specified, labels defined in the
@@ -644,6 +646,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels describing the operation. Only the following labels are allowed:
+   *
    * - Labels describing monitored resources as defined in
    *   the service configuration.
    * - Default labels of metric values. When specified, labels defined in the
@@ -686,6 +689,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * corresponds to a metric defined in the service configuration.
    * The data type used in the MetricValueSet must agree with
    * the data type specified in the metric definition.
+   *
    * Within a single operation, it is not allowed to have more than one
    * MetricValue instances that have the same metric names and identical
    * label value combinations. If a request has such duplicated MetricValue
@@ -707,6 +711,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * corresponds to a metric defined in the service configuration.
    * The data type used in the MetricValueSet must agree with
    * the data type specified in the metric definition.
+   *
    * Within a single operation, it is not allowed to have more than one
    * MetricValue instances that have the same metric names and identical
    * label value combinations. If a request has such duplicated MetricValue
@@ -729,6 +734,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * corresponds to a metric defined in the service configuration.
    * The data type used in the MetricValueSet must agree with
    * the data type specified in the metric definition.
+   *
    * Within a single operation, it is not allowed to have more than one
    * MetricValue instances that have the same metric names and identical
    * label value combinations. If a request has such duplicated MetricValue
@@ -750,6 +756,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * corresponds to a metric defined in the service configuration.
    * The data type used in the MetricValueSet must agree with
    * the data type specified in the metric definition.
+   *
    * Within a single operation, it is not allowed to have more than one
    * MetricValue instances that have the same metric names and identical
    * label value combinations. If a request has such duplicated MetricValue
@@ -771,6 +778,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * corresponds to a metric defined in the service configuration.
    * The data type used in the MetricValueSet must agree with
    * the data type specified in the metric definition.
+   *
    * Within a single operation, it is not allowed to have more than one
    * MetricValue instances that have the same metric names and identical
    * label value combinations. If a request has such duplicated MetricValue
@@ -1707,6 +1715,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * service that generated the operation. If the service calls
      * Check() and Report() on the same operation, the two calls should carry
      * the same id.
+     *
      * UUID version 4 is recommended, though not required.
      * In scenarios where an operation is computed from existing information
      * and an idempotent id is desirable for deduplication purpose, UUID version 5
@@ -1736,6 +1745,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * service that generated the operation. If the service calls
      * Check() and Report() on the same operation, the two calls should carry
      * the same id.
+     *
      * UUID version 4 is recommended, though not required.
      * In scenarios where an operation is computed from existing information
      * and an idempotent id is desirable for deduplication purpose, UUID version 5
@@ -1765,6 +1775,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * service that generated the operation. If the service calls
      * Check() and Report() on the same operation, the two calls should carry
      * the same id.
+     *
      * UUID version 4 is recommended, though not required.
      * In scenarios where an operation is computed from existing information
      * and an idempotent id is desirable for deduplication purpose, UUID version 5
@@ -1793,6 +1804,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * service that generated the operation. If the service calls
      * Check() and Report() on the same operation, the two calls should carry
      * the same id.
+     *
      * UUID version 4 is recommended, though not required.
      * In scenarios where an operation is computed from existing information
      * and an idempotent id is desirable for deduplication purpose, UUID version 5
@@ -1817,6 +1829,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * service that generated the operation. If the service calls
      * Check() and Report() on the same operation, the two calls should carry
      * the same id.
+     *
      * UUID version 4 is recommended, though not required.
      * In scenarios where an operation is computed from existing information
      * and an idempotent id is desirable for deduplication purpose, UUID version 5
@@ -1954,6 +1967,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * This field should be filled in for the operations initiated by a
      * consumer, but not for service-initiated operations that are
      * not related to a specific consumer.
+     *
      * - This can be in one of the following formats:
      *     - project:PROJECT_ID,
      *     - project`_`number:PROJECT_NUMBER,
@@ -1986,6 +2000,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * This field should be filled in for the operations initiated by a
      * consumer, but not for service-initiated operations that are
      * not related to a specific consumer.
+     *
      * - This can be in one of the following formats:
      *     - project:PROJECT_ID,
      *     - project`_`number:PROJECT_NUMBER,
@@ -2018,6 +2033,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * This field should be filled in for the operations initiated by a
      * consumer, but not for service-initiated operations that are
      * not related to a specific consumer.
+     *
      * - This can be in one of the following formats:
      *     - project:PROJECT_ID,
      *     - project`_`number:PROJECT_NUMBER,
@@ -2049,6 +2065,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * This field should be filled in for the operations initiated by a
      * consumer, but not for service-initiated operations that are
      * not related to a specific consumer.
+     *
      * - This can be in one of the following formats:
      *     - project:PROJECT_ID,
      *     - project`_`number:PROJECT_NUMBER,
@@ -2076,6 +2093,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * This field should be filled in for the operations initiated by a
      * consumer, but not for service-initiated operations that are
      * not related to a specific consumer.
+     *
      * - This can be in one of the following formats:
      *     - project:PROJECT_ID,
      *     - project`_`number:PROJECT_NUMBER,
@@ -2525,6 +2543,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels describing the operation. Only the following labels are allowed:
+     *
      * - Labels describing monitored resources as defined in
      *   the service configuration.
      * - Default labels of metric values. When specified, labels defined in the
@@ -2561,6 +2580,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels describing the operation. Only the following labels are allowed:
+     *
      * - Labels describing monitored resources as defined in
      *   the service configuration.
      * - Default labels of metric values. When specified, labels defined in the
@@ -2588,6 +2608,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels describing the operation. Only the following labels are allowed:
+     *
      * - Labels describing monitored resources as defined in
      *   the service configuration.
      * - Default labels of metric values. When specified, labels defined in the
@@ -2622,6 +2643,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels describing the operation. Only the following labels are allowed:
+     *
      * - Labels describing monitored resources as defined in
      *   the service configuration.
      * - Default labels of metric values. When specified, labels defined in the
@@ -2662,6 +2684,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels describing the operation. Only the following labels are allowed:
+     *
      * - Labels describing monitored resources as defined in
      *   the service configuration.
      * - Default labels of metric values. When specified, labels defined in the
@@ -2698,6 +2721,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels describing the operation. Only the following labels are allowed:
+     *
      * - Labels describing monitored resources as defined in
      *   the service configuration.
      * - Default labels of metric values. When specified, labels defined in the
@@ -2732,6 +2756,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels describing the operation. Only the following labels are allowed:
+     *
      * - Labels describing monitored resources as defined in
      *   the service configuration.
      * - Default labels of metric values. When specified, labels defined in the
@@ -2782,6 +2807,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -2807,6 +2833,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -2831,6 +2858,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -2855,6 +2883,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -2886,6 +2915,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -2914,6 +2944,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -2944,6 +2975,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -2975,6 +3007,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -3003,6 +3036,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -3031,6 +3065,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -3059,6 +3094,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -3086,6 +3122,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -3113,6 +3150,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -3134,6 +3172,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -3159,6 +3198,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -3184,6 +3224,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -3205,6 +3246,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue
@@ -3227,6 +3269,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * corresponds to a metric defined in the service configuration.
      * The data type used in the MetricValueSet must agree with
      * the data type specified in the metric definition.
+     *
      * Within a single operation, it is not allowed to have more than one
      * MetricValue instances that have the same metric names and identical
      * label value combinations. If a request has such duplicated MetricValue

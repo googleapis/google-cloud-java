@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
     return new MediaInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1beta.UserEventProto
         .internal_static_google_cloud_discoveryengine_v1beta_MediaInfo_descriptor;
@@ -74,8 +69,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The media progress time in seconds, if applicable.
    * For example, if the end user has finished 90 seconds of a playback video,
-   * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-   * be set to 90.
+   * then
+   * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+   * should be set to 90.
    * </pre>
    *
    * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -92,8 +88,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The media progress time in seconds, if applicable.
    * For example, if the end user has finished 90 seconds of a playback video,
-   * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-   * be set to 90.
+   * then
+   * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+   * should be set to 90.
    * </pre>
    *
    * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -112,8 +109,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The media progress time in seconds, if applicable.
    * For example, if the end user has finished 90 seconds of a playback video,
-   * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-   * be set to 90.
+   * then
+   * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+   * should be set to 90.
    * </pre>
    *
    * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -131,9 +129,12 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Media progress should be computed using only the media_progress_duration
+   * Media progress should be computed using only the
+   * [media_progress_duration][google.cloud.discoveryengine.v1beta.MediaInfo.media_progress_duration]
    * relative to the media total length.
+   *
    * This value must be between `[0, 1.0]` inclusive.
+   *
    * If this is not a playback or the progress cannot be computed (e.g. ongoing
    * livestream), this field should be unset.
    * </pre>
@@ -150,9 +151,12 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Media progress should be computed using only the media_progress_duration
+   * Media progress should be computed using only the
+   * [media_progress_duration][google.cloud.discoveryengine.v1beta.MediaInfo.media_progress_duration]
    * relative to the media total length.
+   *
    * This value must be between `[0, 1.0]` inclusive.
+   *
    * If this is not a playback or the progress cannot be computed (e.g. ongoing
    * livestream), this field should be unset.
    * </pre>
@@ -563,8 +567,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The media progress time in seconds, if applicable.
      * For example, if the end user has finished 90 seconds of a playback video,
-     * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-     * be set to 90.
+     * then
+     * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+     * should be set to 90.
      * </pre>
      *
      * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -580,8 +585,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The media progress time in seconds, if applicable.
      * For example, if the end user has finished 90 seconds of a playback video,
-     * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-     * be set to 90.
+     * then
+     * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+     * should be set to 90.
      * </pre>
      *
      * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -603,8 +609,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The media progress time in seconds, if applicable.
      * For example, if the end user has finished 90 seconds of a playback video,
-     * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-     * be set to 90.
+     * then
+     * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+     * should be set to 90.
      * </pre>
      *
      * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -628,8 +635,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The media progress time in seconds, if applicable.
      * For example, if the end user has finished 90 seconds of a playback video,
-     * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-     * be set to 90.
+     * then
+     * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+     * should be set to 90.
      * </pre>
      *
      * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -650,8 +658,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The media progress time in seconds, if applicable.
      * For example, if the end user has finished 90 seconds of a playback video,
-     * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-     * be set to 90.
+     * then
+     * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+     * should be set to 90.
      * </pre>
      *
      * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -678,8 +687,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The media progress time in seconds, if applicable.
      * For example, if the end user has finished 90 seconds of a playback video,
-     * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-     * be set to 90.
+     * then
+     * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+     * should be set to 90.
      * </pre>
      *
      * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -700,8 +710,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The media progress time in seconds, if applicable.
      * For example, if the end user has finished 90 seconds of a playback video,
-     * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-     * be set to 90.
+     * then
+     * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+     * should be set to 90.
      * </pre>
      *
      * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -717,8 +728,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The media progress time in seconds, if applicable.
      * For example, if the end user has finished 90 seconds of a playback video,
-     * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-     * be set to 90.
+     * then
+     * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+     * should be set to 90.
      * </pre>
      *
      * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -738,8 +750,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The media progress time in seconds, if applicable.
      * For example, if the end user has finished 90 seconds of a playback video,
-     * then [MediaInfo.media_progress_duration.seconds][Duration.seconds] should
-     * be set to 90.
+     * then
+     * [MediaInfo.media_progress_duration.seconds][google.protobuf.Duration.seconds]
+     * should be set to 90.
      * </pre>
      *
      * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
@@ -766,9 +779,12 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Media progress should be computed using only the media_progress_duration
+     * Media progress should be computed using only the
+     * [media_progress_duration][google.cloud.discoveryengine.v1beta.MediaInfo.media_progress_duration]
      * relative to the media total length.
+     *
      * This value must be between `[0, 1.0]` inclusive.
+     *
      * If this is not a playback or the progress cannot be computed (e.g. ongoing
      * livestream), this field should be unset.
      * </pre>
@@ -785,9 +801,12 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Media progress should be computed using only the media_progress_duration
+     * Media progress should be computed using only the
+     * [media_progress_duration][google.cloud.discoveryengine.v1beta.MediaInfo.media_progress_duration]
      * relative to the media total length.
+     *
      * This value must be between `[0, 1.0]` inclusive.
+     *
      * If this is not a playback or the progress cannot be computed (e.g. ongoing
      * livestream), this field should be unset.
      * </pre>
@@ -804,9 +823,12 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Media progress should be computed using only the media_progress_duration
+     * Media progress should be computed using only the
+     * [media_progress_duration][google.cloud.discoveryengine.v1beta.MediaInfo.media_progress_duration]
      * relative to the media total length.
+     *
      * This value must be between `[0, 1.0]` inclusive.
+     *
      * If this is not a playback or the progress cannot be computed (e.g. ongoing
      * livestream), this field should be unset.
      * </pre>
@@ -827,9 +849,12 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Media progress should be computed using only the media_progress_duration
+     * Media progress should be computed using only the
+     * [media_progress_duration][google.cloud.discoveryengine.v1beta.MediaInfo.media_progress_duration]
      * relative to the media total length.
+     *
      * This value must be between `[0, 1.0]` inclusive.
+     *
      * If this is not a playback or the progress cannot be computed (e.g. ongoing
      * livestream), this field should be unset.
      * </pre>

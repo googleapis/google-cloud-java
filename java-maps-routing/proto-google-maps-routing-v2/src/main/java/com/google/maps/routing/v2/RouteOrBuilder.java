@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,13 +95,13 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * A collection of legs (path segments between waypoints) that make-up the
+   * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
    * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
    * intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
-   * order of Waypoints from `origin` to `intermediates` to `destination`.
+   * order of waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -111,13 +111,13 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * A collection of legs (path segments between waypoints) that make-up the
+   * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
    * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
    * intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
-   * order of Waypoints from `origin` to `intermediates` to `destination`.
+   * order of waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -127,13 +127,13 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * A collection of legs (path segments between waypoints) that make-up the
+   * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
    * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
    * intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
-   * order of Waypoints from `origin` to `intermediates` to `destination`.
+   * order of waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -143,13 +143,13 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * A collection of legs (path segments between waypoints) that make-up the
+   * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
    * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
    * intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
-   * order of Waypoints from `origin` to `intermediates` to `destination`.
+   * order of waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -159,13 +159,13 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * A collection of legs (path segments between waypoints) that make-up the
+   * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
    * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
    * intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
-   * order of Waypoints from `origin` to `intermediates` to `destination`.
+   * order of waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -236,7 +236,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The duration of traveling through the route without taking traffic
+   * The duration of travel through the route without taking traffic
    * conditions into consideration.
    * </pre>
    *
@@ -249,7 +249,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The duration of traveling through the route without taking traffic
+   * The duration of travel through the route without taking traffic
    * conditions into consideration.
    * </pre>
    *
@@ -262,7 +262,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The duration of traveling through the route without taking traffic
+   * The duration of travel through the route without taking traffic
    * conditions into consideration.
    * </pre>
    *
@@ -274,7 +274,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The overall route polyline. This polyline will be the combined polyline of
+   * The overall route polyline. This polyline is the combined polyline of
    * all `legs`.
    * </pre>
    *
@@ -287,7 +287,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The overall route polyline. This polyline will be the combined polyline of
+   * The overall route polyline. This polyline is the combined polyline of
    * all `legs`.
    * </pre>
    *
@@ -300,7 +300,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The overall route polyline. This polyline will be the combined polyline of
+   * The overall route polyline. This polyline is the combined polyline of
    * all `legs`.
    * </pre>
    *
@@ -458,15 +458,112 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * Web-safe base64 encoded route token that can be passed to NavigationSDK,
-   * which allows the Navigation SDK to reconstruct the route during navigation,
-   * and in the event of rerouting honor the original intention when Routes
-   * ComputeRoutes is called. Customers should treat this token as an
-   * opaque blob.
+   * If you set
+   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * to true, this field contains the optimized ordering of intermediate
+   * waypoints. Otherwise, this field is empty.
+   * For example, if you give an input of Origin: LA; Intermediate waypoints:
+   * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+   * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+   * contains the values [2, 0, 1]. The index starts with 0 for the first
+   * intermediate waypoint provided in the input.
+   * </pre>
+   *
+   * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+   *
+   * @return A list containing the optimizedIntermediateWaypointIndex.
+   */
+  java.util.List<java.lang.Integer> getOptimizedIntermediateWaypointIndexList();
+  /**
+   *
+   *
+   * <pre>
+   * If you set
+   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * to true, this field contains the optimized ordering of intermediate
+   * waypoints. Otherwise, this field is empty.
+   * For example, if you give an input of Origin: LA; Intermediate waypoints:
+   * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+   * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+   * contains the values [2, 0, 1]. The index starts with 0 for the first
+   * intermediate waypoint provided in the input.
+   * </pre>
+   *
+   * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+   *
+   * @return The count of optimizedIntermediateWaypointIndex.
+   */
+  int getOptimizedIntermediateWaypointIndexCount();
+  /**
+   *
+   *
+   * <pre>
+   * If you set
+   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * to true, this field contains the optimized ordering of intermediate
+   * waypoints. Otherwise, this field is empty.
+   * For example, if you give an input of Origin: LA; Intermediate waypoints:
+   * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+   * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+   * contains the values [2, 0, 1]. The index starts with 0 for the first
+   * intermediate waypoint provided in the input.
+   * </pre>
+   *
+   * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The optimizedIntermediateWaypointIndex at the given index.
+   */
+  int getOptimizedIntermediateWaypointIndex(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `Route`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+   *
+   * @return Whether the localizedValues field is set.
+   */
+  boolean hasLocalizedValues();
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `Route`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+   *
+   * @return The localizedValues.
+   */
+  com.google.maps.routing.v2.Route.RouteLocalizedValues getLocalizedValues();
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `Route`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+   */
+  com.google.maps.routing.v2.Route.RouteLocalizedValuesOrBuilder getLocalizedValuesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A web-safe, base64-encoded route token that can be passed to the Navigation
+   * SDK, that allows the Navigation SDK to reconstruct the route during
+   * navigation, and, in the event of rerouting, honor the original intention
+   * when you created the route by calling ComputeRoutes. Customers should treat
+   * this token as an opaque blob. It is not meant for reading or mutating.
    * NOTE: `Route.route_token` is only available for requests that have set
    * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
-   * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is also not supported for
-   * requests that have Via waypoints.
+   * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
+   * that have Via waypoints.
    * </pre>
    *
    * <code>string route_token = 12;</code>
@@ -478,15 +575,15 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * Web-safe base64 encoded route token that can be passed to NavigationSDK,
-   * which allows the Navigation SDK to reconstruct the route during navigation,
-   * and in the event of rerouting honor the original intention when Routes
-   * ComputeRoutes is called. Customers should treat this token as an
-   * opaque blob.
+   * A web-safe, base64-encoded route token that can be passed to the Navigation
+   * SDK, that allows the Navigation SDK to reconstruct the route during
+   * navigation, and, in the event of rerouting, honor the original intention
+   * when you created the route by calling ComputeRoutes. Customers should treat
+   * this token as an opaque blob. It is not meant for reading or mutating.
    * NOTE: `Route.route_token` is only available for requests that have set
    * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
-   * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is also not supported for
-   * requests that have Via waypoints.
+   * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
+   * that have Via waypoints.
    * </pre>
    *
    * <code>string route_token = 12;</code>

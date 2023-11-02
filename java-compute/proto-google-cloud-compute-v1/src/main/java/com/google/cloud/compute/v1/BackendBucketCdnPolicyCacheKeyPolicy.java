@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,19 +40,14 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
   }
 
   private BackendBucketCdnPolicyCacheKeyPolicy() {
-    includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BackendBucketCdnPolicyCacheKeyPolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -73,7 +68,8 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
   public static final int INCLUDE_HTTP_HEADERS_FIELD_NUMBER = 2489606;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList includeHttpHeaders_;
+  private com.google.protobuf.LazyStringArrayList includeHttpHeaders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -136,7 +132,8 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
   public static final int QUERY_STRING_WHITELIST_FIELD_NUMBER = 52456496;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList queryStringWhitelist_;
+  private com.google.protobuf.LazyStringArrayList queryStringWhitelist_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -420,10 +417,8 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -452,7 +447,6 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
     public com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy buildPartial() {
       com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy result =
           new com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -460,23 +454,17 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        includeHttpHeaders_ = includeHttpHeaders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.includeHttpHeaders_ = includeHttpHeaders_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        queryStringWhitelist_ = queryStringWhitelist_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.queryStringWhitelist_ = queryStringWhitelist_;
-    }
-
     private void buildPartial0(
         com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        includeHttpHeaders_.makeImmutable();
+        result.includeHttpHeaders_ = includeHttpHeaders_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        queryStringWhitelist_.makeImmutable();
+        result.queryStringWhitelist_ = queryStringWhitelist_;
+      }
     }
 
     @java.lang.Override
@@ -530,7 +518,7 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
       if (!other.includeHttpHeaders_.isEmpty()) {
         if (includeHttpHeaders_.isEmpty()) {
           includeHttpHeaders_ = other.includeHttpHeaders_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureIncludeHttpHeadersIsMutable();
           includeHttpHeaders_.addAll(other.includeHttpHeaders_);
@@ -540,7 +528,7 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
       if (!other.queryStringWhitelist_.isEmpty()) {
         if (queryStringWhitelist_.isEmpty()) {
           queryStringWhitelist_ = other.queryStringWhitelist_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureQueryStringWhitelistIsMutable();
           queryStringWhitelist_.addAll(other.queryStringWhitelist_);
@@ -606,14 +594,14 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList includeHttpHeaders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList includeHttpHeaders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIncludeHttpHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!includeHttpHeaders_.isModifiable()) {
         includeHttpHeaders_ = new com.google.protobuf.LazyStringArrayList(includeHttpHeaders_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -627,7 +615,8 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
      * @return A list containing the includeHttpHeaders.
      */
     public com.google.protobuf.ProtocolStringList getIncludeHttpHeadersList() {
-      return includeHttpHeaders_.getUnmodifiableView();
+      includeHttpHeaders_.makeImmutable();
+      return includeHttpHeaders_;
     }
     /**
      *
@@ -692,6 +681,7 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
       }
       ensureIncludeHttpHeadersIsMutable();
       includeHttpHeaders_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -713,6 +703,7 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
       }
       ensureIncludeHttpHeadersIsMutable();
       includeHttpHeaders_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -731,6 +722,7 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
     public Builder addAllIncludeHttpHeaders(java.lang.Iterable<java.lang.String> values) {
       ensureIncludeHttpHeadersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeHttpHeaders_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -746,8 +738,9 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
      * @return This builder for chaining.
      */
     public Builder clearIncludeHttpHeaders() {
-      includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -770,18 +763,19 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
       checkByteStringIsUtf8(value);
       ensureIncludeHttpHeadersIsMutable();
       includeHttpHeaders_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList queryStringWhitelist_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList queryStringWhitelist_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureQueryStringWhitelistIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!queryStringWhitelist_.isModifiable()) {
         queryStringWhitelist_ = new com.google.protobuf.LazyStringArrayList(queryStringWhitelist_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -795,7 +789,8 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
      * @return A list containing the queryStringWhitelist.
      */
     public com.google.protobuf.ProtocolStringList getQueryStringWhitelistList() {
-      return queryStringWhitelist_.getUnmodifiableView();
+      queryStringWhitelist_.makeImmutable();
+      return queryStringWhitelist_;
     }
     /**
      *
@@ -860,6 +855,7 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
       }
       ensureQueryStringWhitelistIsMutable();
       queryStringWhitelist_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -881,6 +877,7 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
       }
       ensureQueryStringWhitelistIsMutable();
       queryStringWhitelist_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -899,6 +896,7 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
     public Builder addAllQueryStringWhitelist(java.lang.Iterable<java.lang.String> values) {
       ensureQueryStringWhitelistIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryStringWhitelist_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -914,8 +912,9 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
      * @return This builder for chaining.
      */
     public Builder clearQueryStringWhitelist() {
-      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -938,6 +937,7 @@ public final class BackendBucketCdnPolicyCacheKeyPolicy
       checkByteStringIsUtf8(value);
       ensureQueryStringWhitelistIsMutable();
       queryStringWhitelist_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

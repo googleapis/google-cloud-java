@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
     return new UserSegmentSequenceGroup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_UserSegmentSequenceGroup_descriptor;
@@ -80,6 +75,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
    * USER_CRITERIA_WITHIN_SAME_SESSION`, all sequence steps must complete within
    * one session for the user to match the sequence. `sequenceScoping =
    * USER_CRITERIA_WITHIN_SAME_EVENT` is not supported.
+   *
    * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
    * used.
    * </pre>
@@ -101,6 +97,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
    * USER_CRITERIA_WITHIN_SAME_SESSION`, all sequence steps must complete within
    * one session for the user to match the sequence. `sequenceScoping =
    * USER_CRITERIA_WITHIN_SAME_EVENT` is not supported.
+   *
    * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
    * used.
    * </pre>
@@ -129,6 +126,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
    * of the endpoint at the microsecond granularity. For example a sequence
    * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
    * seconds, but not 5 seconds and 1 microsecond.
+   *
    * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
    * be completed in any time duration.
    * </pre>
@@ -150,6 +148,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
    * of the endpoint at the microsecond granularity. For example a sequence
    * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
    * seconds, but not 5 seconds and 1 microsecond.
+   *
    * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
    * be completed in any time duration.
    * </pre>
@@ -173,6 +172,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
    * of the endpoint at the microsecond granularity. For example a sequence
    * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
    * seconds, but not 5 seconds and 1 microsecond.
+   *
    * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
    * be completed in any time duration.
    * </pre>
@@ -735,6 +735,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * USER_CRITERIA_WITHIN_SAME_SESSION`, all sequence steps must complete within
      * one session for the user to match the sequence. `sequenceScoping =
      * USER_CRITERIA_WITHIN_SAME_EVENT` is not supported.
+     *
      * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
      * used.
      * </pre>
@@ -756,6 +757,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * USER_CRITERIA_WITHIN_SAME_SESSION`, all sequence steps must complete within
      * one session for the user to match the sequence. `sequenceScoping =
      * USER_CRITERIA_WITHIN_SAME_EVENT` is not supported.
+     *
      * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
      * used.
      * </pre>
@@ -780,6 +782,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * USER_CRITERIA_WITHIN_SAME_SESSION`, all sequence steps must complete within
      * one session for the user to match the sequence. `sequenceScoping =
      * USER_CRITERIA_WITHIN_SAME_EVENT` is not supported.
+     *
      * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
      * used.
      * </pre>
@@ -805,6 +808,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * USER_CRITERIA_WITHIN_SAME_SESSION`, all sequence steps must complete within
      * one session for the user to match the sequence. `sequenceScoping =
      * USER_CRITERIA_WITHIN_SAME_EVENT` is not supported.
+     *
      * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
      * used.
      * </pre>
@@ -832,6 +836,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * USER_CRITERIA_WITHIN_SAME_SESSION`, all sequence steps must complete within
      * one session for the user to match the sequence. `sequenceScoping =
      * USER_CRITERIA_WITHIN_SAME_EVENT` is not supported.
+     *
      * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
      * used.
      * </pre>
@@ -862,6 +867,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * of the endpoint at the microsecond granularity. For example a sequence
      * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
      * seconds, but not 5 seconds and 1 microsecond.
+     *
      * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
      * be completed in any time duration.
      * </pre>
@@ -882,6 +888,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * of the endpoint at the microsecond granularity. For example a sequence
      * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
      * seconds, but not 5 seconds and 1 microsecond.
+     *
      * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
      * be completed in any time duration.
      * </pre>
@@ -908,6 +915,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * of the endpoint at the microsecond granularity. For example a sequence
      * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
      * seconds, but not 5 seconds and 1 microsecond.
+     *
      * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
      * be completed in any time duration.
      * </pre>
@@ -936,6 +944,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * of the endpoint at the microsecond granularity. For example a sequence
      * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
      * seconds, but not 5 seconds and 1 microsecond.
+     *
      * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
      * be completed in any time duration.
      * </pre>
@@ -962,6 +971,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * of the endpoint at the microsecond granularity. For example a sequence
      * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
      * seconds, but not 5 seconds and 1 microsecond.
+     *
      * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
      * be completed in any time duration.
      * </pre>
@@ -993,6 +1003,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * of the endpoint at the microsecond granularity. For example a sequence
      * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
      * seconds, but not 5 seconds and 1 microsecond.
+     *
      * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
      * be completed in any time duration.
      * </pre>
@@ -1018,6 +1029,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * of the endpoint at the microsecond granularity. For example a sequence
      * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
      * seconds, but not 5 seconds and 1 microsecond.
+     *
      * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
      * be completed in any time duration.
      * </pre>
@@ -1038,6 +1050,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * of the endpoint at the microsecond granularity. For example a sequence
      * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
      * seconds, but not 5 seconds and 1 microsecond.
+     *
      * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
      * be completed in any time duration.
      * </pre>
@@ -1062,6 +1075,7 @@ public final class UserSegmentSequenceGroup extends com.google.protobuf.Generate
      * of the endpoint at the microsecond granularity. For example a sequence
      * with a maximum duration of 5 seconds can be completed at 4.9 or 5.0
      * seconds, but not 5 seconds and 1 microsecond.
+     *
      * `sequenceMaximumDuration` is optional, and if unspecified, sequences can
      * be completed in any time duration.
      * </pre>

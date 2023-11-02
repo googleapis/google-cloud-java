@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     return new MaintenanceWindow();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_MaintenanceWindow_descriptor;
@@ -77,6 +72,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   }
 
   private int policyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object policy_;
 
   public enum PolicyCase

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
 
   private AuditConfig() {
     auditLogConfigs_ = java.util.Collections.emptyList();
-    exemptedMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    exemptedMembers_ = com.google.protobuf.LazyStringArrayList.emptyList();
     service_ = "";
   }
 
@@ -47,11 +47,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AuditConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -145,7 +140,8 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int EXEMPTED_MEMBERS_FIELD_NUMBER = 232615576;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList exemptedMembers_;
+  private com.google.protobuf.LazyStringArrayList exemptedMembers_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -510,8 +506,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
         auditLogConfigsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      exemptedMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      exemptedMembers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       service_ = "";
       return this;
     }
@@ -558,15 +553,14 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.auditLogConfigs_ = auditLogConfigsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        exemptedMembers_ = exemptedMembers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.exemptedMembers_ = exemptedMembers_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.AuditConfig result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        exemptedMembers_.makeImmutable();
+        result.exemptedMembers_ = exemptedMembers_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.service_ = service_;
@@ -650,7 +644,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.exemptedMembers_.isEmpty()) {
         if (exemptedMembers_.isEmpty()) {
           exemptedMembers_ = other.exemptedMembers_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureExemptedMembersIsMutable();
           exemptedMembers_.addAll(other.exemptedMembers_);
@@ -1088,14 +1082,14 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       return auditLogConfigsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList exemptedMembers_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList exemptedMembers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureExemptedMembersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!exemptedMembers_.isModifiable()) {
         exemptedMembers_ = new com.google.protobuf.LazyStringArrayList(exemptedMembers_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1109,7 +1103,8 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the exemptedMembers.
      */
     public com.google.protobuf.ProtocolStringList getExemptedMembersList() {
-      return exemptedMembers_.getUnmodifiableView();
+      exemptedMembers_.makeImmutable();
+      return exemptedMembers_;
     }
     /**
      *
@@ -1174,6 +1169,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExemptedMembersIsMutable();
       exemptedMembers_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1195,6 +1191,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExemptedMembersIsMutable();
       exemptedMembers_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1213,6 +1210,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllExemptedMembers(java.lang.Iterable<java.lang.String> values) {
       ensureExemptedMembersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exemptedMembers_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1228,8 +1226,9 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExemptedMembers() {
-      exemptedMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      exemptedMembers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1252,6 +1251,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureExemptedMembersIsMutable();
       exemptedMembers_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

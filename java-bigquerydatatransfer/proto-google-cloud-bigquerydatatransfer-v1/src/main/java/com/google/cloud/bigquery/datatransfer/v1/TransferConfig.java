@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,11 +58,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     return new TransferConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.datatransfer.v1.TransferProto
         .internal_static_google_cloud_bigquery_datatransfer_v1_TransferConfig_descriptor;
@@ -80,6 +75,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase
@@ -132,9 +129,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the transfer config.
-   * Transfer config names have the form
-   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-   * Where `config_id` is usually a uuid, even though it is not
+   * Transfer config names have the form either
+   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/transferConfigs/{config_id}`,
+   * where `config_id` is usually a UUID, even though it is not
    * guaranteed or required. The name is ignored when creating a transfer
    * config.
    * </pre>
@@ -160,9 +158,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the transfer config.
-   * Transfer config names have the form
-   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-   * Where `config_id` is usually a uuid, even though it is not
+   * Transfer config names have the form either
+   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/transferConfigs/{config_id}`,
+   * where `config_id` is usually a UUID, even though it is not
    * guaranteed or required. The name is ignored when creating a transfer
    * config.
    * </pre>
@@ -434,6 +433,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+   *
    * NOTE: The minimum interval time between recurring transfers depends on the
    * data source; refer to the documentation for your data source.
    * </pre>
@@ -469,6 +469,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+   *
    * NOTE: The minimum interval time between recurring transfers depends on the
    * data source; refer to the documentation for your data source.
    * </pre>
@@ -804,6 +805,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -830,6 +832,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -967,6 +970,77 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
         : ownerInfo_;
   }
 
+  public static final int ENCRYPTION_CONFIGURATION_FIELD_NUMBER = 28;
+  private com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration
+      encryptionConfiguration_;
+  /**
+   *
+   *
+   * <pre>
+   * The encryption configuration part. Currently, it is only used for the
+   * optional KMS key name. The BigQuery service account of your project must be
+   * granted permissions to use the key. Read methods will return the key name
+   * applied in effect. Write methods will apply the key if it is present, or
+   * otherwise try to apply project default keys if it is absent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+   * </code>
+   *
+   * @return Whether the encryptionConfiguration field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionConfiguration() {
+    return encryptionConfiguration_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The encryption configuration part. Currently, it is only used for the
+   * optional KMS key name. The BigQuery service account of your project must be
+   * granted permissions to use the key. Read methods will return the key name
+   * applied in effect. Write methods will apply the key if it is present, or
+   * otherwise try to apply project default keys if it is absent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+   * </code>
+   *
+   * @return The encryptionConfiguration.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration
+      getEncryptionConfiguration() {
+    return encryptionConfiguration_ == null
+        ? com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration.getDefaultInstance()
+        : encryptionConfiguration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The encryption configuration part. Currently, it is only used for the
+   * optional KMS key name. The BigQuery service account of your project must be
+   * granted permissions to use the key. Read methods will return the key name
+   * applied in effect. Write methods will apply the key if it is present, or
+   * otherwise try to apply project default keys if it is absent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.datatransfer.v1.EncryptionConfigurationOrBuilder
+      getEncryptionConfigurationOrBuilder() {
+    return encryptionConfiguration_ == null
+        ? com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration.getDefaultInstance()
+        : encryptionConfiguration_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1034,6 +1108,9 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(27, getOwnerInfo());
     }
+    if (encryptionConfiguration_ != null) {
+      output.writeMessage(28, getEncryptionConfiguration());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1097,6 +1174,11 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getOwnerInfo());
     }
+    if (encryptionConfiguration_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              28, getEncryptionConfiguration());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1146,6 +1228,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasOwnerInfo() != other.hasOwnerInfo()) return false;
     if (hasOwnerInfo()) {
       if (!getOwnerInfo().equals(other.getOwnerInfo())) return false;
+    }
+    if (hasEncryptionConfiguration() != other.hasEncryptionConfiguration()) return false;
+    if (hasEncryptionConfiguration()) {
+      if (!getEncryptionConfiguration().equals(other.getEncryptionConfiguration())) return false;
     }
     if (!getDestinationCase().equals(other.getDestinationCase())) return false;
     switch (destinationCase_) {
@@ -1209,6 +1295,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasOwnerInfo()) {
       hash = (37 * hash) + OWNER_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getOwnerInfo().hashCode();
+    }
+    if (hasEncryptionConfiguration()) {
+      hash = (37 * hash) + ENCRYPTION_CONFIGURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionConfiguration().hashCode();
     }
     switch (destinationCase_) {
       case 2:
@@ -1370,6 +1460,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
         getNextRunTimeFieldBuilder();
         getEmailPreferencesFieldBuilder();
         getOwnerInfoFieldBuilder();
+        getEncryptionConfigurationFieldBuilder();
       }
     }
 
@@ -1416,6 +1507,11 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       if (ownerInfoBuilder_ != null) {
         ownerInfoBuilder_.dispose();
         ownerInfoBuilder_ = null;
+      }
+      encryptionConfiguration_ = null;
+      if (encryptionConfigurationBuilder_ != null) {
+        encryptionConfigurationBuilder_.dispose();
+        encryptionConfigurationBuilder_ = null;
       }
       destinationCase_ = 0;
       destination_ = null;
@@ -1508,6 +1604,12 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.ownerInfo_ = ownerInfoBuilder_ == null ? ownerInfo_ : ownerInfoBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.encryptionConfiguration_ =
+            encryptionConfigurationBuilder_ == null
+                ? encryptionConfiguration_
+                : encryptionConfigurationBuilder_.build();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1623,6 +1725,9 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasOwnerInfo()) {
         mergeOwnerInfo(other.getOwnerInfo());
+      }
+      if (other.hasEncryptionConfiguration()) {
+        mergeEncryptionConfiguration(other.getEncryptionConfiguration());
       }
       switch (other.getDestinationCase()) {
         case DESTINATION_DATASET_ID:
@@ -1767,6 +1872,13 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 218
+            case 226:
+              {
+                input.readMessage(
+                    getEncryptionConfigurationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1806,9 +1918,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the transfer config.
-     * Transfer config names have the form
-     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-     * Where `config_id` is usually a uuid, even though it is not
+     * Transfer config names have the form either
+     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/transferConfigs/{config_id}`,
+     * where `config_id` is usually a UUID, even though it is not
      * guaranteed or required. The name is ignored when creating a transfer
      * config.
      * </pre>
@@ -1833,9 +1946,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the transfer config.
-     * Transfer config names have the form
-     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-     * Where `config_id` is usually a uuid, even though it is not
+     * Transfer config names have the form either
+     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/transferConfigs/{config_id}`,
+     * where `config_id` is usually a UUID, even though it is not
      * guaranteed or required. The name is ignored when creating a transfer
      * config.
      * </pre>
@@ -1860,9 +1974,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the transfer config.
-     * Transfer config names have the form
-     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-     * Where `config_id` is usually a uuid, even though it is not
+     * Transfer config names have the form either
+     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/transferConfigs/{config_id}`,
+     * where `config_id` is usually a UUID, even though it is not
      * guaranteed or required. The name is ignored when creating a transfer
      * config.
      * </pre>
@@ -1886,9 +2001,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the transfer config.
-     * Transfer config names have the form
-     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-     * Where `config_id` is usually a uuid, even though it is not
+     * Transfer config names have the form either
+     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/transferConfigs/{config_id}`,
+     * where `config_id` is usually a UUID, even though it is not
      * guaranteed or required. The name is ignored when creating a transfer
      * config.
      * </pre>
@@ -1908,9 +2024,10 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the transfer config.
-     * Transfer config names have the form
-     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-     * Where `config_id` is usually a uuid, even though it is not
+     * Transfer config names have the form either
+     * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
+     * `projects/{project_id}/transferConfigs/{config_id}`,
+     * where `config_id` is usually a UUID, even though it is not
      * guaranteed or required. The name is ignored when creating a transfer
      * config.
      * </pre>
@@ -2509,6 +2626,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+     *
      * NOTE: The minimum interval time between recurring transfers depends on the
      * data source; refer to the documentation for your data source.
      * </pre>
@@ -2543,6 +2661,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+     *
      * NOTE: The minimum interval time between recurring transfers depends on the
      * data source; refer to the documentation for your data source.
      * </pre>
@@ -2577,6 +2696,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+     *
      * NOTE: The minimum interval time between recurring transfers depends on the
      * data source; refer to the documentation for your data source.
      * </pre>
@@ -2610,6 +2730,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+     *
      * NOTE: The minimum interval time between recurring transfers depends on the
      * data source; refer to the documentation for your data source.
      * </pre>
@@ -2639,6 +2760,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+     *
      * NOTE: The minimum interval time between recurring transfers depends on the
      * data source; refer to the documentation for your data source.
      * </pre>
@@ -3642,6 +3764,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Pub/Sub topic where notifications will be sent after transfer runs
      * associated with this transfer config finish.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3667,6 +3790,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Pub/Sub topic where notifications will be sent after transfer runs
      * associated with this transfer config finish.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3692,6 +3816,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Pub/Sub topic where notifications will be sent after transfer runs
      * associated with this transfer config finish.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3716,6 +3841,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Pub/Sub topic where notifications will be sent after transfer runs
      * associated with this transfer config finish.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3736,6 +3862,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Pub/Sub topic where notifications will be sent after transfer runs
      * associated with this transfer config finish.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -4174,6 +4301,252 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
         ownerInfo_ = null;
       }
       return ownerInfoBuilder_;
+    }
+
+    private com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration
+        encryptionConfiguration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration,
+            com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.EncryptionConfigurationOrBuilder>
+        encryptionConfigurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The encryption configuration part. Currently, it is only used for the
+     * optional KMS key name. The BigQuery service account of your project must be
+     * granted permissions to use the key. Read methods will return the key name
+     * applied in effect. Write methods will apply the key if it is present, or
+     * otherwise try to apply project default keys if it is absent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+     * </code>
+     *
+     * @return Whether the encryptionConfiguration field is set.
+     */
+    public boolean hasEncryptionConfiguration() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encryption configuration part. Currently, it is only used for the
+     * optional KMS key name. The BigQuery service account of your project must be
+     * granted permissions to use the key. Read methods will return the key name
+     * applied in effect. Write methods will apply the key if it is present, or
+     * otherwise try to apply project default keys if it is absent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+     * </code>
+     *
+     * @return The encryptionConfiguration.
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration
+        getEncryptionConfiguration() {
+      if (encryptionConfigurationBuilder_ == null) {
+        return encryptionConfiguration_ == null
+            ? com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration.getDefaultInstance()
+            : encryptionConfiguration_;
+      } else {
+        return encryptionConfigurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encryption configuration part. Currently, it is only used for the
+     * optional KMS key name. The BigQuery service account of your project must be
+     * granted permissions to use the key. Read methods will return the key name
+     * applied in effect. Write methods will apply the key if it is present, or
+     * otherwise try to apply project default keys if it is absent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+     * </code>
+     */
+    public Builder setEncryptionConfiguration(
+        com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration value) {
+      if (encryptionConfigurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionConfiguration_ = value;
+      } else {
+        encryptionConfigurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encryption configuration part. Currently, it is only used for the
+     * optional KMS key name. The BigQuery service account of your project must be
+     * granted permissions to use the key. Read methods will return the key name
+     * applied in effect. Write methods will apply the key if it is present, or
+     * otherwise try to apply project default keys if it is absent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+     * </code>
+     */
+    public Builder setEncryptionConfiguration(
+        com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration.Builder builderForValue) {
+      if (encryptionConfigurationBuilder_ == null) {
+        encryptionConfiguration_ = builderForValue.build();
+      } else {
+        encryptionConfigurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encryption configuration part. Currently, it is only used for the
+     * optional KMS key name. The BigQuery service account of your project must be
+     * granted permissions to use the key. Read methods will return the key name
+     * applied in effect. Write methods will apply the key if it is present, or
+     * otherwise try to apply project default keys if it is absent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+     * </code>
+     */
+    public Builder mergeEncryptionConfiguration(
+        com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration value) {
+      if (encryptionConfigurationBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && encryptionConfiguration_ != null
+            && encryptionConfiguration_
+                != com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration
+                    .getDefaultInstance()) {
+          getEncryptionConfigurationBuilder().mergeFrom(value);
+        } else {
+          encryptionConfiguration_ = value;
+        }
+      } else {
+        encryptionConfigurationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encryption configuration part. Currently, it is only used for the
+     * optional KMS key name. The BigQuery service account of your project must be
+     * granted permissions to use the key. Read methods will return the key name
+     * applied in effect. Write methods will apply the key if it is present, or
+     * otherwise try to apply project default keys if it is absent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+     * </code>
+     */
+    public Builder clearEncryptionConfiguration() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      encryptionConfiguration_ = null;
+      if (encryptionConfigurationBuilder_ != null) {
+        encryptionConfigurationBuilder_.dispose();
+        encryptionConfigurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encryption configuration part. Currently, it is only used for the
+     * optional KMS key name. The BigQuery service account of your project must be
+     * granted permissions to use the key. Read methods will return the key name
+     * applied in effect. Write methods will apply the key if it is present, or
+     * otherwise try to apply project default keys if it is absent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+     * </code>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration.Builder
+        getEncryptionConfigurationBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getEncryptionConfigurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encryption configuration part. Currently, it is only used for the
+     * optional KMS key name. The BigQuery service account of your project must be
+     * granted permissions to use the key. Read methods will return the key name
+     * applied in effect. Write methods will apply the key if it is present, or
+     * otherwise try to apply project default keys if it is absent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+     * </code>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.EncryptionConfigurationOrBuilder
+        getEncryptionConfigurationOrBuilder() {
+      if (encryptionConfigurationBuilder_ != null) {
+        return encryptionConfigurationBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionConfiguration_ == null
+            ? com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration.getDefaultInstance()
+            : encryptionConfiguration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encryption configuration part. Currently, it is only used for the
+     * optional KMS key name. The BigQuery service account of your project must be
+     * granted permissions to use the key. Read methods will return the key name
+     * applied in effect. Write methods will apply the key if it is present, or
+     * otherwise try to apply project default keys if it is absent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration,
+            com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.EncryptionConfigurationOrBuilder>
+        getEncryptionConfigurationFieldBuilder() {
+      if (encryptionConfigurationBuilder_ == null) {
+        encryptionConfigurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration,
+                com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration.Builder,
+                com.google.cloud.bigquery.datatransfer.v1.EncryptionConfigurationOrBuilder>(
+                getEncryptionConfiguration(), getParentForChildren(), isClean());
+        encryptionConfiguration_ = null;
+      }
+      return encryptionConfigurationBuilder_;
     }
 
     @java.lang.Override

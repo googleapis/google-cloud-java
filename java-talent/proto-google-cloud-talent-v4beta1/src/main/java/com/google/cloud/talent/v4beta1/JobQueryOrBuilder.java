@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface JobQueryOrBuilder
    * <pre>
    * The query string that matches against the job title, description, and
    * location fields.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface JobQueryOrBuilder
    * <pre>
    * The query string that matches against the job title, description, and
    * location fields.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -58,8 +60,10 @@ public interface JobQueryOrBuilder
    * <pre>
    * The language code of [query][google.cloud.talent.v4beta1.JobQuery.query].
    * For example, "en-US". This field helps to better interpret the query.
+   *
    * If a value isn't specified, the query language code is automatically
    * detected, which may not be accurate.
+   *
    * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -76,8 +80,10 @@ public interface JobQueryOrBuilder
    * <pre>
    * The language code of [query][google.cloud.talent.v4beta1.JobQuery.query].
    * For example, "en-US". This field helps to better interpret the query.
+   *
    * If a value isn't specified, the query language code is automatically
    * detected, which may not be accurate.
+   *
    * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -94,15 +100,20 @@ public interface JobQueryOrBuilder
    *
    * <pre>
    * This filter specifies the company entities to search against.
+   *
    * If a value isn't specified, jobs are searched for against all
    * companies.
+   *
    * If multiple values are specified, jobs are searched against the
    * companies specified.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}". For
    * example, "projects/foo/tenants/bar/companies/baz".
+   *
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/companies/bar".
+   *
    * At most 20 company filters are allowed.
    * </pre>
    *
@@ -116,15 +127,20 @@ public interface JobQueryOrBuilder
    *
    * <pre>
    * This filter specifies the company entities to search against.
+   *
    * If a value isn't specified, jobs are searched for against all
    * companies.
+   *
    * If multiple values are specified, jobs are searched against the
    * companies specified.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}". For
    * example, "projects/foo/tenants/bar/companies/baz".
+   *
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/companies/bar".
+   *
    * At most 20 company filters are allowed.
    * </pre>
    *
@@ -138,15 +154,20 @@ public interface JobQueryOrBuilder
    *
    * <pre>
    * This filter specifies the company entities to search against.
+   *
    * If a value isn't specified, jobs are searched for against all
    * companies.
+   *
    * If multiple values are specified, jobs are searched against the
    * companies specified.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}". For
    * example, "projects/foo/tenants/bar/companies/baz".
+   *
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/companies/bar".
+   *
    * At most 20 company filters are allowed.
    * </pre>
    *
@@ -161,15 +182,20 @@ public interface JobQueryOrBuilder
    *
    * <pre>
    * This filter specifies the company entities to search against.
+   *
    * If a value isn't specified, jobs are searched for against all
    * companies.
+   *
    * If multiple values are specified, jobs are searched against the
    * companies specified.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}". For
    * example, "projects/foo/tenants/bar/companies/baz".
+   *
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/companies/bar".
+   *
    * At most 20 company filters are allowed.
    * </pre>
    *
@@ -188,12 +214,15 @@ public interface JobQueryOrBuilder
    * search against. See
    * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] for more
    * information.
+   *
    * If a location value isn't specified, jobs fitting the other search
    * criteria are retrieved regardless of where they're located.
+   *
    * If multiple values are specified, jobs are retrieved from any of the
    * specified locations. If different values are specified for the
    * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles]
    * parameter, the maximum provided distance is used for all locations.
+   *
    * At most 5 location filters are allowed.
    * </pre>
    *
@@ -208,12 +237,15 @@ public interface JobQueryOrBuilder
    * search against. See
    * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] for more
    * information.
+   *
    * If a location value isn't specified, jobs fitting the other search
    * criteria are retrieved regardless of where they're located.
+   *
    * If multiple values are specified, jobs are retrieved from any of the
    * specified locations. If different values are specified for the
    * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles]
    * parameter, the maximum provided distance is used for all locations.
+   *
    * At most 5 location filters are allowed.
    * </pre>
    *
@@ -228,12 +260,15 @@ public interface JobQueryOrBuilder
    * search against. See
    * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] for more
    * information.
+   *
    * If a location value isn't specified, jobs fitting the other search
    * criteria are retrieved regardless of where they're located.
+   *
    * If multiple values are specified, jobs are retrieved from any of the
    * specified locations. If different values are specified for the
    * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles]
    * parameter, the maximum provided distance is used for all locations.
+   *
    * At most 5 location filters are allowed.
    * </pre>
    *
@@ -248,12 +283,15 @@ public interface JobQueryOrBuilder
    * search against. See
    * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] for more
    * information.
+   *
    * If a location value isn't specified, jobs fitting the other search
    * criteria are retrieved regardless of where they're located.
+   *
    * If multiple values are specified, jobs are retrieved from any of the
    * specified locations. If different values are specified for the
    * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles]
    * parameter, the maximum provided distance is used for all locations.
+   *
    * At most 5 location filters are allowed.
    * </pre>
    *
@@ -269,12 +307,15 @@ public interface JobQueryOrBuilder
    * search against. See
    * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] for more
    * information.
+   *
    * If a location value isn't specified, jobs fitting the other search
    * criteria are retrieved regardless of where they're located.
+   *
    * If multiple values are specified, jobs are retrieved from any of the
    * specified locations. If different values are specified for the
    * [LocationFilter.distance_in_miles][google.cloud.talent.v4beta1.LocationFilter.distance_in_miles]
    * parameter, the maximum provided distance is used for all locations.
+   *
    * At most 5 location filters are allowed.
    * </pre>
    *
@@ -289,7 +330,9 @@ public interface JobQueryOrBuilder
    * The category filter specifies the categories of jobs to search against.
    * See [JobCategory][google.cloud.talent.v4beta1.JobCategory] for more
    * information.
+   *
    * If a value isn't specified, jobs from any category are searched against.
+   *
    * If multiple values are specified, jobs from any of the specified
    * categories are searched against.
    * </pre>
@@ -306,7 +349,9 @@ public interface JobQueryOrBuilder
    * The category filter specifies the categories of jobs to search against.
    * See [JobCategory][google.cloud.talent.v4beta1.JobCategory] for more
    * information.
+   *
    * If a value isn't specified, jobs from any category are searched against.
+   *
    * If multiple values are specified, jobs from any of the specified
    * categories are searched against.
    * </pre>
@@ -323,7 +368,9 @@ public interface JobQueryOrBuilder
    * The category filter specifies the categories of jobs to search against.
    * See [JobCategory][google.cloud.talent.v4beta1.JobCategory] for more
    * information.
+   *
    * If a value isn't specified, jobs from any category are searched against.
+   *
    * If multiple values are specified, jobs from any of the specified
    * categories are searched against.
    * </pre>
@@ -341,7 +388,9 @@ public interface JobQueryOrBuilder
    * The category filter specifies the categories of jobs to search against.
    * See [JobCategory][google.cloud.talent.v4beta1.JobCategory] for more
    * information.
+   *
    * If a value isn't specified, jobs from any category are searched against.
+   *
    * If multiple values are specified, jobs from any of the specified
    * categories are searched against.
    * </pre>
@@ -358,7 +407,9 @@ public interface JobQueryOrBuilder
    * The category filter specifies the categories of jobs to search against.
    * See [JobCategory][google.cloud.talent.v4beta1.JobCategory] for more
    * information.
+   *
    * If a value isn't specified, jobs from any category are searched against.
+   *
    * If multiple values are specified, jobs from any of the specified
    * categories are searched against.
    * </pre>
@@ -376,10 +427,12 @@ public interface JobQueryOrBuilder
    * <pre>
    * Allows filtering jobs by commute time with different travel methods (for
    *  example, driving or public transit).
+   *
    * Note: This only works when you specify a
    * [CommuteMethod][google.cloud.talent.v4beta1.CommuteMethod]. In this case,
    * [location_filters][google.cloud.talent.v4beta1.JobQuery.location_filters]
    * is ignored.
+   *
    *  Currently we don't support sorting by commute time.
    * </pre>
    *
@@ -394,10 +447,12 @@ public interface JobQueryOrBuilder
    * <pre>
    * Allows filtering jobs by commute time with different travel methods (for
    *  example, driving or public transit).
+   *
    * Note: This only works when you specify a
    * [CommuteMethod][google.cloud.talent.v4beta1.CommuteMethod]. In this case,
    * [location_filters][google.cloud.talent.v4beta1.JobQuery.location_filters]
    * is ignored.
+   *
    *  Currently we don't support sorting by commute time.
    * </pre>
    *
@@ -412,10 +467,12 @@ public interface JobQueryOrBuilder
    * <pre>
    * Allows filtering jobs by commute time with different travel methods (for
    *  example, driving or public transit).
+   *
    * Note: This only works when you specify a
    * [CommuteMethod][google.cloud.talent.v4beta1.CommuteMethod]. In this case,
    * [location_filters][google.cloud.talent.v4beta1.JobQuery.location_filters]
    * is ignored.
+   *
    *  Currently we don't support sorting by commute time.
    * </pre>
    *
@@ -430,21 +487,28 @@ public interface JobQueryOrBuilder
    * This filter specifies the company
    * [Company.display_name][google.cloud.talent.v4beta1.Company.display_name] of
    * the jobs to search against. The company name must match the value exactly.
+   *
    * Alternatively, the value being searched for can be wrapped in different
    * match operators.
    * `SUBSTRING_MATCH([value])`
    * The company name must contain a case insensitive substring match of the
    * value. Using this function may increase latency.
+   *
    * Sample Value: `SUBSTRING_MATCH(google)`
+   *
    * `MULTI_WORD_TOKEN_MATCH([value])`
    * The value will be treated as a multi word token and the company name must
    * contain a case insensitive match of the value. Using this function may
    * increase latency.
+   *
    * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
+   *
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
+   *
    * If multiple values are specified, jobs within the search results may be
    * associated with any of the specified companies.
+   *
    * At most 20 company display name filters are allowed.
    * </pre>
    *
@@ -460,21 +524,28 @@ public interface JobQueryOrBuilder
    * This filter specifies the company
    * [Company.display_name][google.cloud.talent.v4beta1.Company.display_name] of
    * the jobs to search against. The company name must match the value exactly.
+   *
    * Alternatively, the value being searched for can be wrapped in different
    * match operators.
    * `SUBSTRING_MATCH([value])`
    * The company name must contain a case insensitive substring match of the
    * value. Using this function may increase latency.
+   *
    * Sample Value: `SUBSTRING_MATCH(google)`
+   *
    * `MULTI_WORD_TOKEN_MATCH([value])`
    * The value will be treated as a multi word token and the company name must
    * contain a case insensitive match of the value. Using this function may
    * increase latency.
+   *
    * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
+   *
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
+   *
    * If multiple values are specified, jobs within the search results may be
    * associated with any of the specified companies.
+   *
    * At most 20 company display name filters are allowed.
    * </pre>
    *
@@ -490,21 +561,28 @@ public interface JobQueryOrBuilder
    * This filter specifies the company
    * [Company.display_name][google.cloud.talent.v4beta1.Company.display_name] of
    * the jobs to search against. The company name must match the value exactly.
+   *
    * Alternatively, the value being searched for can be wrapped in different
    * match operators.
    * `SUBSTRING_MATCH([value])`
    * The company name must contain a case insensitive substring match of the
    * value. Using this function may increase latency.
+   *
    * Sample Value: `SUBSTRING_MATCH(google)`
+   *
    * `MULTI_WORD_TOKEN_MATCH([value])`
    * The value will be treated as a multi word token and the company name must
    * contain a case insensitive match of the value. Using this function may
    * increase latency.
+   *
    * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
+   *
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
+   *
    * If multiple values are specified, jobs within the search results may be
    * associated with any of the specified companies.
+   *
    * At most 20 company display name filters are allowed.
    * </pre>
    *
@@ -521,21 +599,28 @@ public interface JobQueryOrBuilder
    * This filter specifies the company
    * [Company.display_name][google.cloud.talent.v4beta1.Company.display_name] of
    * the jobs to search against. The company name must match the value exactly.
+   *
    * Alternatively, the value being searched for can be wrapped in different
    * match operators.
    * `SUBSTRING_MATCH([value])`
    * The company name must contain a case insensitive substring match of the
    * value. Using this function may increase latency.
+   *
    * Sample Value: `SUBSTRING_MATCH(google)`
+   *
    * `MULTI_WORD_TOKEN_MATCH([value])`
    * The value will be treated as a multi word token and the company name must
    * contain a case insensitive match of the value. Using this function may
    * increase latency.
+   *
    * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
+   *
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
+   *
    * If multiple values are specified, jobs within the search results may be
    * associated with any of the specified companies.
+   *
    * At most 20 company display name filters are allowed.
    * </pre>
    *
@@ -600,18 +685,23 @@ public interface JobQueryOrBuilder
    * This filter specifies a structured syntax to match against the
    * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
    * marked as `filterable`.
+   *
    * The syntax for this expression is a subset of SQL syntax.
+   *
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the
    * left of the operator is a custom field key and the right of the operator
    * is a number or a quoted string. You must escape backslash (&#92;&#92;) and
    * quote (&#92;") characters.
+   *
    * Supported functions are `LOWER([field_name])` to
    * perform a case insensitive match and `EMPTY([field_name])` to filter on the
    * existence of a key.
+   *
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
    * nesting (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression
    * must be &lt; 10000 bytes in length.
+   *
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
@@ -629,18 +719,23 @@ public interface JobQueryOrBuilder
    * This filter specifies a structured syntax to match against the
    * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes]
    * marked as `filterable`.
+   *
    * The syntax for this expression is a subset of SQL syntax.
+   *
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the
    * left of the operator is a custom field key and the right of the operator
    * is a number or a quoted string. You must escape backslash (&#92;&#92;) and
    * quote (&#92;") characters.
+   *
    * Supported functions are `LOWER([field_name])` to
    * perform a case insensitive match and `EMPTY([field_name])` to filter on the
    * existence of a key.
+   *
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
    * nesting (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression
    * must be &lt; 10000 bytes in length.
+   *
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
@@ -659,6 +754,7 @@ public interface JobQueryOrBuilder
    * This flag controls the spell-check feature. If false, the
    * service attempts to correct a misspelled query,
    * for example, "enginee" is corrected to "engineer".
+   *
    * Defaults to false: a spell check is performed.
    * </pre>
    *
@@ -675,8 +771,10 @@ public interface JobQueryOrBuilder
    * The employment type filter specifies the employment type of jobs to
    * search against, such as
    * [EmploymentType.FULL_TIME][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME].
+   *
    * If a value isn't specified, jobs in the search results includes any
    * employment type.
+   *
    * If multiple values are specified, jobs in the search results include
    * any of the specified employment types.
    * </pre>
@@ -693,8 +791,10 @@ public interface JobQueryOrBuilder
    * The employment type filter specifies the employment type of jobs to
    * search against, such as
    * [EmploymentType.FULL_TIME][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME].
+   *
    * If a value isn't specified, jobs in the search results includes any
    * employment type.
+   *
    * If multiple values are specified, jobs in the search results include
    * any of the specified employment types.
    * </pre>
@@ -711,8 +811,10 @@ public interface JobQueryOrBuilder
    * The employment type filter specifies the employment type of jobs to
    * search against, such as
    * [EmploymentType.FULL_TIME][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME].
+   *
    * If a value isn't specified, jobs in the search results includes any
    * employment type.
+   *
    * If multiple values are specified, jobs in the search results include
    * any of the specified employment types.
    * </pre>
@@ -730,8 +832,10 @@ public interface JobQueryOrBuilder
    * The employment type filter specifies the employment type of jobs to
    * search against, such as
    * [EmploymentType.FULL_TIME][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME].
+   *
    * If a value isn't specified, jobs in the search results includes any
    * employment type.
+   *
    * If multiple values are specified, jobs in the search results include
    * any of the specified employment types.
    * </pre>
@@ -748,8 +852,10 @@ public interface JobQueryOrBuilder
    * The employment type filter specifies the employment type of jobs to
    * search against, such as
    * [EmploymentType.FULL_TIME][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME].
+   *
    * If a value isn't specified, jobs in the search results includes any
    * employment type.
+   *
    * If multiple values are specified, jobs in the search results include
    * any of the specified employment types.
    * </pre>
@@ -767,11 +873,15 @@ public interface JobQueryOrBuilder
    * <pre>
    * This filter specifies the locale of jobs to search against,
    * for example, "en-US".
+   *
    * If a value isn't specified, the search results can contain jobs in any
    * locale.
+   *
+   *
    * Language codes should be in BCP-47 format, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   *
    * At most 10 language code filters are allowed.
    * </pre>
    *
@@ -786,11 +896,15 @@ public interface JobQueryOrBuilder
    * <pre>
    * This filter specifies the locale of jobs to search against,
    * for example, "en-US".
+   *
    * If a value isn't specified, the search results can contain jobs in any
    * locale.
+   *
+   *
    * Language codes should be in BCP-47 format, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   *
    * At most 10 language code filters are allowed.
    * </pre>
    *
@@ -805,11 +919,15 @@ public interface JobQueryOrBuilder
    * <pre>
    * This filter specifies the locale of jobs to search against,
    * for example, "en-US".
+   *
    * If a value isn't specified, the search results can contain jobs in any
    * locale.
+   *
+   *
    * Language codes should be in BCP-47 format, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   *
    * At most 10 language code filters are allowed.
    * </pre>
    *
@@ -825,11 +943,15 @@ public interface JobQueryOrBuilder
    * <pre>
    * This filter specifies the locale of jobs to search against,
    * for example, "en-US".
+   *
    * If a value isn't specified, the search results can contain jobs in any
    * locale.
+   *
+   *
    * Language codes should be in BCP-47 format, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   *
    * At most 10 language code filters are allowed.
    * </pre>
    *
@@ -883,6 +1005,7 @@ public interface JobQueryOrBuilder
    *
    * <pre>
    * This filter specifies a list of job names to be excluded during search.
+   *
    * At most 400 excluded job names are allowed.
    * </pre>
    *
@@ -896,6 +1019,7 @@ public interface JobQueryOrBuilder
    *
    * <pre>
    * This filter specifies a list of job names to be excluded during search.
+   *
    * At most 400 excluded job names are allowed.
    * </pre>
    *
@@ -909,6 +1033,7 @@ public interface JobQueryOrBuilder
    *
    * <pre>
    * This filter specifies a list of job names to be excluded during search.
+   *
    * At most 400 excluded job names are allowed.
    * </pre>
    *
@@ -923,6 +1048,7 @@ public interface JobQueryOrBuilder
    *
    * <pre>
    * This filter specifies a list of job names to be excluded during search.
+   *
    * At most 400 excluded job names are allowed.
    * </pre>
    *

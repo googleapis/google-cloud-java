@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -757,6 +757,77 @@ public class RecommenderClientHttpJsonTest {
       String name =
           "projects/project-9152/locations/location-9152/recommenders/recommender-9152/recommendations/recommendation-9152";
       client.getRecommendation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void markRecommendationDismissedTest() throws Exception {
+    Recommendation expectedResponse =
+        Recommendation.newBuilder()
+            .setName(
+                RecommendationName.ofProjectLocationRecommenderRecommendationName(
+                        "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setRecommenderSubtype("recommenderSubtype1811451601")
+            .setLastRefreshTime(Timestamp.newBuilder().build())
+            .setPrimaryImpact(Impact.newBuilder().build())
+            .addAllAdditionalImpact(new ArrayList<Impact>())
+            .setContent(RecommendationContent.newBuilder().build())
+            .setStateInfo(RecommendationStateInfo.newBuilder().build())
+            .setEtag("etag3123477")
+            .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
+            .setXorGroupId("xorGroupId-2095769825")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MarkRecommendationDismissedRequest request =
+        MarkRecommendationDismissedRequest.newBuilder()
+            .setName(
+                RecommendationName.ofProjectLocationRecommenderRecommendationName(
+                        "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
+                    .toString())
+            .setEtag("etag3123477")
+            .build();
+
+    Recommendation actualResponse = client.markRecommendationDismissed(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void markRecommendationDismissedExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MarkRecommendationDismissedRequest request =
+          MarkRecommendationDismissedRequest.newBuilder()
+              .setName(
+                  RecommendationName.ofProjectLocationRecommenderRecommendationName(
+                          "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
+                      .toString())
+              .setEtag("etag3123477")
+              .build();
+      client.markRecommendationDismissed(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

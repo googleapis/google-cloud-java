@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface AgentAssistantFeedbackOrBuilder
    *
    * <pre>
    * Optional. Whether or not the suggested answer is relevant.
+   *
    * For example:
+   *
    * * Query: "Can I change my mailing address?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -47,7 +49,9 @@ public interface AgentAssistantFeedbackOrBuilder
    *
    * <pre>
    * Optional. Whether or not the suggested answer is relevant.
+   *
    * For example:
+   *
    * * Query: "Can I change my mailing address?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -67,7 +71,9 @@ public interface AgentAssistantFeedbackOrBuilder
    *
    * <pre>
    * Optional. Whether or not the information in the document is correct.
+   *
    * For example:
+   *
    * * Query: "Can I return the package in 2 days once received?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -87,7 +93,9 @@ public interface AgentAssistantFeedbackOrBuilder
    *
    * <pre>
    * Optional. Whether or not the information in the document is correct.
+   *
    * For example:
+   *
    * * Query: "Can I return the package in 2 days once received?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -186,4 +194,47 @@ public interface AgentAssistantFeedbackOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedbackOrBuilder
       getSummarizationFeedbackOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knowledgeSearchFeedback field is set.
+   */
+  boolean hasKnowledgeSearchFeedback();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knowledgeSearchFeedback.
+   */
+  com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedback
+      getKnowledgeSearchFeedback();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedbackOrBuilder
+      getKnowledgeSearchFeedbackOrBuilder();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public interface GcsSourcesOrBuilder
    * <pre>
    * Required. Google Cloud Storage URIs for the inputs. A URI is of the
    * form:
-   *   gs://bucket/object-prefix-or-name
+   * `gs://bucket/object-prefix-or-name`
    * Whether a prefix or name is used depends on the use case.
    * </pre>
    *
@@ -44,7 +44,7 @@ public interface GcsSourcesOrBuilder
    * <pre>
    * Required. Google Cloud Storage URIs for the inputs. A URI is of the
    * form:
-   *   gs://bucket/object-prefix-or-name
+   * `gs://bucket/object-prefix-or-name`
    * Whether a prefix or name is used depends on the use case.
    * </pre>
    *
@@ -59,7 +59,7 @@ public interface GcsSourcesOrBuilder
    * <pre>
    * Required. Google Cloud Storage URIs for the inputs. A URI is of the
    * form:
-   *   gs://bucket/object-prefix-or-name
+   * `gs://bucket/object-prefix-or-name`
    * Whether a prefix or name is used depends on the use case.
    * </pre>
    *
@@ -75,7 +75,7 @@ public interface GcsSourcesOrBuilder
    * <pre>
    * Required. Google Cloud Storage URIs for the inputs. A URI is of the
    * form:
-   *   gs://bucket/object-prefix-or-name
+   * `gs://bucket/object-prefix-or-name`
    * Whether a prefix or name is used depends on the use case.
    * </pre>
    *

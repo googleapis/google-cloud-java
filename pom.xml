@@ -18,6 +18,7 @@
     <module>java-accesscontextmanager</module>
     <module>java-advisorynotifications</module>
     <module>java-aiplatform</module>
+    <module>java-alloydb-connectors</module>
     <module>java-alloydb</module>
     <module>java-analytics-admin</module>
     <module>java-analytics-data</module>
@@ -88,7 +89,6 @@
     <module>java-eventarc-publishing</module>
     <module>java-filestore</module>
     <module>java-functions</module>
-    <module>java-game-servers</module>
     <module>java-gke-backup</module>
     <module>java-gke-connect-gateway</module>
     <module>java-gkehub</module>
@@ -99,6 +99,7 @@
     <module>java-iamcredentials</module>
     <module>java-iam</module>
     <module>java-ids</module>
+    <module>java-infra-manager</module>
     <module>java-iot</module>
     <module>java-kmsinventory</module>
     <module>java-kms</module>
@@ -106,14 +107,17 @@
     <module>java-life-sciences</module>
     <module>java-managed-identities</module>
     <module>java-maps-addressvalidation</module>
+    <module>java-maps-fleetengine-delivery</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
     <module>java-maps-routing</module>
     <module>java-mediatranslation</module>
     <module>java-memcache</module>
+    <module>java-migrationcenter</module>
     <module>java-monitoring-dashboards</module>
     <module>java-monitoring-metricsscope</module>
     <module>java-monitoring</module>
+    <module>java-netapp</module>
     <module>java-networkconnectivity</module>
     <module>java-network-management</module>
     <module>java-network-security</module>
@@ -125,13 +129,16 @@
     <module>java-os-config</module>
     <module>java-os-login</module>
     <module>java-phishingprotection</module>
+    <module>java-policysimulator</module>
     <module>java-policy-troubleshooter</module>
     <module>java-private-catalog</module>
     <module>java-profiler</module>
     <module>java-publicca</module>
+    <module>java-rapidmigrationassessment</module>
     <module>java-recaptchaenterprise</module>
     <module>java-recommendations-ai</module>
     <module>java-recommender</module>
+    <module>java-redis-cluster</module>
     <module>java-redis</module>
     <module>java-resourcemanager</module>
     <module>java-resource-settings</module>
@@ -147,6 +154,8 @@
     <module>java-service-management</module>
     <module>java-service-usage</module>
     <module>java-shell</module>
+    <module>java-shopping-merchant-inventories</module>
+    <module>java-shopping-merchant-reports</module>
     <module>java-speech</module>
     <module>java-storageinsights</module>
     <module>java-storage-transfer</module>

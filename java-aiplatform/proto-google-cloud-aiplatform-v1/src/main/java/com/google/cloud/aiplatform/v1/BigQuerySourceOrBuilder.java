@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface BigQuerySourceOrBuilder
    * <pre>
    * Required. BigQuery URI to a table, up to 2000 characters long.
    * Accepted forms:
+   *
    * *  BigQuery path. For example: `bq://projectId.bqDatasetId.bqTableId`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface BigQuerySourceOrBuilder
    * <pre>
    * Required. BigQuery URI to a table, up to 2000 characters long.
    * Accepted forms:
+   *
    * *  BigQuery path. For example: `bq://projectId.bqDatasetId.bqTableId`.
    * </pre>
    *

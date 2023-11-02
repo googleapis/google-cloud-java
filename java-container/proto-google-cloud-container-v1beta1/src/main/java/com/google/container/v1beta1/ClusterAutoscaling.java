@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,18 +43,13 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   private ClusterAutoscaling() {
     resourceLimits_ = java.util.Collections.emptyList();
     autoscalingProfile_ = 0;
-    autoprovisioningLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    autoprovisioningLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ClusterAutoscaling();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -432,7 +427,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
   public static final int AUTOPROVISIONING_LOCATIONS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList autoprovisioningLocations_;
+  private com.google.protobuf.LazyStringArrayList autoprovisioningLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -775,8 +771,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         autoprovisioningNodePoolDefaultsBuilder_.dispose();
         autoprovisioningNodePoolDefaultsBuilder_ = null;
       }
-      autoprovisioningLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      autoprovisioningLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -823,11 +818,6 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       } else {
         result.resourceLimits_ = resourceLimitsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        autoprovisioningLocations_ = autoprovisioningLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.autoprovisioningLocations_ = autoprovisioningLocations_;
     }
 
     private void buildPartial0(com.google.container.v1beta1.ClusterAutoscaling result) {
@@ -843,6 +833,10 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
             autoprovisioningNodePoolDefaultsBuilder_ == null
                 ? autoprovisioningNodePoolDefaults_
                 : autoprovisioningNodePoolDefaultsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        autoprovisioningLocations_.makeImmutable();
+        result.autoprovisioningLocations_ = autoprovisioningLocations_;
       }
     }
 
@@ -931,7 +925,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       if (!other.autoprovisioningLocations_.isEmpty()) {
         if (autoprovisioningLocations_.isEmpty()) {
           autoprovisioningLocations_ = other.autoprovisioningLocations_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureAutoprovisioningLocationsIsMutable();
           autoprovisioningLocations_.addAll(other.autoprovisioningLocations_);
@@ -1773,15 +1767,15 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       return autoprovisioningNodePoolDefaultsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList autoprovisioningLocations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList autoprovisioningLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAutoprovisioningLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!autoprovisioningLocations_.isModifiable()) {
         autoprovisioningLocations_ =
             new com.google.protobuf.LazyStringArrayList(autoprovisioningLocations_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1797,7 +1791,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      * @return A list containing the autoprovisioningLocations.
      */
     public com.google.protobuf.ProtocolStringList getAutoprovisioningLocationsList() {
-      return autoprovisioningLocations_.getUnmodifiableView();
+      autoprovisioningLocations_.makeImmutable();
+      return autoprovisioningLocations_;
     }
     /**
      *
@@ -1870,6 +1865,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       ensureAutoprovisioningLocationsIsMutable();
       autoprovisioningLocations_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1893,6 +1889,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       }
       ensureAutoprovisioningLocationsIsMutable();
       autoprovisioningLocations_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1913,6 +1910,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     public Builder addAllAutoprovisioningLocations(java.lang.Iterable<java.lang.String> values) {
       ensureAutoprovisioningLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, autoprovisioningLocations_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1930,8 +1928,9 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAutoprovisioningLocations() {
-      autoprovisioningLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      autoprovisioningLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1956,6 +1955,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureAutoprovisioningLocationsIsMutable();
       autoprovisioningLocations_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,10 +32,12 @@ public interface AggregationOrBuilder
    * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
    * time. This will be done before the per-series aligner can be applied to
    * the data.
+   *
    * The value must be at least 60 seconds. If a per-series aligner other than
    * `ALIGN_NONE` is specified, this field is required or an error is returned.
    * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
    * specified, then this field is ignored.
+   *
    * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
    * </pre>
    *
@@ -53,10 +55,12 @@ public interface AggregationOrBuilder
    * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
    * time. This will be done before the per-series aligner can be applied to
    * the data.
+   *
    * The value must be at least 60 seconds. If a per-series aligner other than
    * `ALIGN_NONE` is specified, this field is required or an error is returned.
    * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
    * specified, then this field is ignored.
+   *
    * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
    * </pre>
    *
@@ -74,10 +78,12 @@ public interface AggregationOrBuilder
    * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
    * time. This will be done before the per-series aligner can be applied to
    * the data.
+   *
    * The value must be at least 60 seconds. If a per-series aligner other than
    * `ALIGN_NONE` is specified, this field is required or an error is returned.
    * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
    * specified, then this field is ignored.
+   *
    * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
    * </pre>
    *
@@ -94,10 +100,12 @@ public interface AggregationOrBuilder
    * alignments cause all the data points in an `alignment_period` to be
    * mathematically grouped together, resulting in a single data point for
    * each `alignment_period` with end timestamp at the end of the period.
+   *
    * Not all alignment operations may be applied to all time series. The valid
    * choices depend on the `metric_kind` and `value_type` of the original time
    * series. Alignment can change the `metric_kind` or the `value_type` of
    * the time series.
+   *
    * Time series data must be aligned in order to perform cross-time
    * series reduction. If `cross_series_reducer` is specified, then
    * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
@@ -119,10 +127,12 @@ public interface AggregationOrBuilder
    * alignments cause all the data points in an `alignment_period` to be
    * mathematically grouped together, resulting in a single data point for
    * each `alignment_period` with end timestamp at the end of the period.
+   *
    * Not all alignment operations may be applied to all time series. The valid
    * choices depend on the `metric_kind` and `value_type` of the original time
    * series. Alignment can change the `metric_kind` or the `value_type` of
    * the time series.
+   *
    * Time series data must be aligned in order to perform cross-time
    * series reduction. If `cross_series_reducer` is specified, then
    * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
@@ -143,10 +153,12 @@ public interface AggregationOrBuilder
    * The reduction operation to be used to combine time series into a single
    * time series, where the value of each data point in the resulting series is
    * a function of all the already aligned values in the input time series.
+   *
    * Not all reducer operations can be applied to all time series. The valid
    * choices depend on the `metric_kind` and the `value_type` of the original
    * time series. Reduction can yield a time series with a different
    * `metric_kind` or `value_type` than the input time series.
+   *
    * Time series data must first be aligned (see `per_series_aligner`) in order
    * to perform cross-time series reduction. If `cross_series_reducer` is
    * specified, then `per_series_aligner` must be specified, and must not be
@@ -166,10 +178,12 @@ public interface AggregationOrBuilder
    * The reduction operation to be used to combine time series into a single
    * time series, where the value of each data point in the resulting series is
    * a function of all the already aligned values in the input time series.
+   *
    * Not all reducer operations can be applied to all time series. The valid
    * choices depend on the `metric_kind` and the `value_type` of the original
    * time series. Reduction can yield a time series with a different
    * `metric_kind` or `value_type` than the input time series.
+   *
    * Time series data must first be aligned (see `per_series_aligner`) in order
    * to perform cross-time series reduction. If `cross_series_reducer` is
    * specified, then `per_series_aligner` must be specified, and must not be

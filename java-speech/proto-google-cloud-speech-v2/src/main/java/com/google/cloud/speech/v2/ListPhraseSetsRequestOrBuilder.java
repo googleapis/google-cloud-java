@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,8 +59,8 @@ public interface ListPhraseSetsRequestOrBuilder
    *
    * <pre>
    * The maximum number of PhraseSets to return. The service may return fewer
-   * than this value. If unspecified, at most 20 PhraseSets will be returned.
-   * The maximum value is 20; values above 20 will be coerced to 20.
+   * than this value. If unspecified, at most 5 PhraseSets will be returned.
+   * The maximum value is 100; values above 100 will be coerced to 100.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -76,6 +76,7 @@ public interface ListPhraseSetsRequestOrBuilder
    * A page token, received from a previous
    * [ListPhraseSets][google.cloud.speech.v2.Speech.ListPhraseSets] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListPhraseSets][google.cloud.speech.v2.Speech.ListPhraseSets] must match
    * the call that provided the page token.
@@ -93,6 +94,7 @@ public interface ListPhraseSetsRequestOrBuilder
    * A page token, received from a previous
    * [ListPhraseSets][google.cloud.speech.v2.Speech.ListPhraseSets] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListPhraseSets][google.cloud.speech.v2.Speech.ListPhraseSets] must match
    * the call that provided the page token.

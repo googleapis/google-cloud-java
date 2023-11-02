@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.cloud.baremetalsolution.v2;
  *
  *
  * <pre>
- * Message requesting to updating a NFS share.
+ * Message requesting to updating an NFS share.
  * </pre>
  *
  * Protobuf type {@code google.cloud.baremetalsolution.v2.UpdateNfsShareRequest}
@@ -43,11 +43,6 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateNfsShareRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,6 +67,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>
@@ -91,6 +87,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>
@@ -112,6 +109,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>
@@ -136,6 +134,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    * The list of fields to update.
    * The only currently supported fields are:
    *   `labels`
+   *   `allowed_clients`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -153,6 +152,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    * The list of fields to update.
    * The only currently supported fields are:
    *   `labels`
+   *   `allowed_clients`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -170,6 +170,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    * The list of fields to update.
    * The only currently supported fields are:
    *   `labels`
+   *   `allowed_clients`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -362,7 +363,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Message requesting to updating a NFS share.
+   * Message requesting to updating an NFS share.
    * </pre>
    *
    * Protobuf type {@code google.cloud.baremetalsolution.v2.UpdateNfsShareRequest}
@@ -571,6 +572,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -589,6 +591,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -613,6 +616,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -639,6 +643,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -663,6 +668,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -692,6 +698,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -715,6 +722,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -733,6 +741,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -755,6 +764,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -793,6 +803,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * The list of fields to update.
      * The only currently supported fields are:
      *   `labels`
+     *   `allowed_clients`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -809,6 +820,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * The list of fields to update.
      * The only currently supported fields are:
      *   `labels`
+     *   `allowed_clients`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -831,6 +843,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * The list of fields to update.
      * The only currently supported fields are:
      *   `labels`
+     *   `allowed_clients`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -855,6 +868,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * The list of fields to update.
      * The only currently supported fields are:
      *   `labels`
+     *   `allowed_clients`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -876,6 +890,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * The list of fields to update.
      * The only currently supported fields are:
      *   `labels`
+     *   `allowed_clients`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -903,6 +918,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * The list of fields to update.
      * The only currently supported fields are:
      *   `labels`
+     *   `allowed_clients`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -924,6 +940,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * The list of fields to update.
      * The only currently supported fields are:
      *   `labels`
+     *   `allowed_clients`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -940,6 +957,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * The list of fields to update.
      * The only currently supported fields are:
      *   `labels`
+     *   `allowed_clients`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -960,6 +978,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * The list of fields to update.
      * The only currently supported fields are:
      *   `labels`
+     *   `allowed_clients`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

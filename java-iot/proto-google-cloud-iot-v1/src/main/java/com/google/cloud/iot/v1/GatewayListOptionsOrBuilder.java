@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -158,5 +158,5 @@ public interface GatewayListOptionsOrBuilder
    */
   com.google.protobuf.ByteString getAssociationsDeviceIdBytes();
 
-  public com.google.cloud.iot.v1.GatewayListOptions.FilterCase getFilterCase();
+  com.google.cloud.iot.v1.GatewayListOptions.FilterCase getFilterCase();
 }

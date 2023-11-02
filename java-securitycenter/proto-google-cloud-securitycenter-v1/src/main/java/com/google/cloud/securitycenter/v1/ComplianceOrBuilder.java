@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface ComplianceOrBuilder
    *
    *
    * <pre>
-   * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-   * etc.
+   * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+   * OWASP.
    * </pre>
    *
    * <code>string standard = 1;</code>
@@ -40,8 +40,8 @@ public interface ComplianceOrBuilder
    *
    *
    * <pre>
-   * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-   * etc.
+   * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+   * OWASP.
    * </pre>
    *
    * <code>string standard = 1;</code>
@@ -54,7 +54,7 @@ public interface ComplianceOrBuilder
    *
    *
    * <pre>
-   * Version of the standard/benchmark e.g. 1.1
+   * Version of the standard or benchmark, for example, 1.1
    * </pre>
    *
    * <code>string version = 2;</code>
@@ -66,7 +66,7 @@ public interface ComplianceOrBuilder
    *
    *
    * <pre>
-   * Version of the standard/benchmark e.g. 1.1
+   * Version of the standard or benchmark, for example, 1.1
    * </pre>
    *
    * <code>string version = 2;</code>
@@ -79,7 +79,7 @@ public interface ComplianceOrBuilder
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>
@@ -91,7 +91,7 @@ public interface ComplianceOrBuilder
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>
@@ -103,7 +103,7 @@ public interface ComplianceOrBuilder
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>
@@ -116,7 +116,7 @@ public interface ComplianceOrBuilder
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>

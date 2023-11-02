@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
     return new UpdateSnapshotRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
         .internal_static_google_cloud_filestore_v1beta1_UpdateSnapshotRequest_descriptor;
@@ -71,8 +66,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Mask of fields to update.  At least one path must be supplied in this
-   * field.
+   * Required. Mask of fields to update.  At least one path must be supplied in
+   * this field.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -88,8 +83,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Mask of fields to update.  At least one path must be supplied in this
-   * field.
+   * Required. Mask of fields to update.  At least one path must be supplied in
+   * this field.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -105,8 +100,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Mask of fields to update.  At least one path must be supplied in this
-   * field.
+   * Required. Mask of fields to update.  At least one path must be supplied in
+   * this field.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -564,8 +559,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Mask of fields to update.  At least one path must be supplied in this
-     * field.
+     * Required. Mask of fields to update.  At least one path must be supplied in
+     * this field.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -580,8 +575,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Mask of fields to update.  At least one path must be supplied in this
-     * field.
+     * Required. Mask of fields to update.  At least one path must be supplied in
+     * this field.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -602,8 +597,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Mask of fields to update.  At least one path must be supplied in this
-     * field.
+     * Required. Mask of fields to update.  At least one path must be supplied in
+     * this field.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -626,8 +621,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Mask of fields to update.  At least one path must be supplied in this
-     * field.
+     * Required. Mask of fields to update.  At least one path must be supplied in
+     * this field.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -647,8 +642,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Mask of fields to update.  At least one path must be supplied in this
-     * field.
+     * Required. Mask of fields to update.  At least one path must be supplied in
+     * this field.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -674,8 +669,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Mask of fields to update.  At least one path must be supplied in this
-     * field.
+     * Required. Mask of fields to update.  At least one path must be supplied in
+     * this field.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -695,8 +690,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Mask of fields to update.  At least one path must be supplied in this
-     * field.
+     * Required. Mask of fields to update.  At least one path must be supplied in
+     * this field.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -711,8 +706,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Mask of fields to update.  At least one path must be supplied in this
-     * field.
+     * Required. Mask of fields to update.  At least one path must be supplied in
+     * this field.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -731,8 +726,8 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Mask of fields to update.  At least one path must be supplied in this
-     * field.
+     * Required. Mask of fields to update.  At least one path must be supplied in
+     * this field.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];

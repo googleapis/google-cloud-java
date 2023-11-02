@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
   private RelatedAsset() {
     asset_ = "";
     assetType_ = "";
-    ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ancestors_ = com.google.protobuf.LazyStringArrayList.emptyList();
     relationshipType_ = "";
   }
 
@@ -55,11 +55,6 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RelatedAsset();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -87,6 +82,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The full name of the asset. Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
+   *
    * See [Resource
    * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
@@ -114,6 +110,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The full name of the asset. Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
+   *
    * See [Resource
    * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
@@ -145,6 +142,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The type of the asset. Example: `compute.googleapis.com/Disk`
+   *
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
@@ -171,6 +169,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The type of the asset. Example: `compute.googleapis.com/Disk`
+   *
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
@@ -196,7 +195,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
   public static final int ANCESTORS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ancestors_;
+  private com.google.protobuf.LazyStringArrayList ancestors_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -205,6 +205,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.
+   *
    * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
@@ -223,6 +224,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.
+   *
    * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
@@ -241,6 +243,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.
+   *
    * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
@@ -260,6 +263,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.
+   *
    * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
@@ -565,8 +569,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       asset_ = "";
       assetType_ = "";
-      ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      ancestors_ = com.google.protobuf.LazyStringArrayList.emptyList();
       relationshipType_ = "";
       return this;
     }
@@ -595,20 +598,11 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1.RelatedAsset buildPartial() {
       com.google.cloud.asset.v1.RelatedAsset result =
           new com.google.cloud.asset.v1.RelatedAsset(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.RelatedAsset result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        ancestors_ = ancestors_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.ancestors_ = ancestors_;
     }
 
     private void buildPartial0(com.google.cloud.asset.v1.RelatedAsset result) {
@@ -618,6 +612,10 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.assetType_ = assetType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        ancestors_.makeImmutable();
+        result.ancestors_ = ancestors_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.relationshipType_ = relationshipType_;
@@ -682,7 +680,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       if (!other.ancestors_.isEmpty()) {
         if (ancestors_.isEmpty()) {
           ancestors_ = other.ancestors_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureAncestorsIsMutable();
           ancestors_.addAll(other.ancestors_);
@@ -771,6 +769,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The full name of the asset. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
+     *
      * See [Resource
      * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
@@ -797,6 +796,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The full name of the asset. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
+     *
      * See [Resource
      * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
@@ -823,6 +823,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The full name of the asset. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
+     *
      * See [Resource
      * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
@@ -848,6 +849,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The full name of the asset. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
+     *
      * See [Resource
      * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
@@ -869,6 +871,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The full name of the asset. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
+     *
      * See [Resource
      * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
@@ -896,6 +899,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of the asset. Example: `compute.googleapis.com/Disk`
+     *
      * See [Supported asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for more information.
@@ -921,6 +925,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of the asset. Example: `compute.googleapis.com/Disk`
+     *
      * See [Supported asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for more information.
@@ -946,6 +951,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of the asset. Example: `compute.googleapis.com/Disk`
+     *
      * See [Supported asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for more information.
@@ -970,6 +976,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of the asset. Example: `compute.googleapis.com/Disk`
+     *
      * See [Supported asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for more information.
@@ -990,6 +997,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The type of the asset. Example: `compute.googleapis.com/Disk`
+     *
      * See [Supported asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for more information.
@@ -1011,14 +1019,14 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ancestors_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ancestors_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAncestorsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!ancestors_.isModifiable()) {
         ancestors_ = new com.google.protobuf.LazyStringArrayList(ancestors_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1028,6 +1036,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
+     *
      * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
@@ -1036,7 +1045,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ancestors.
      */
     public com.google.protobuf.ProtocolStringList getAncestorsList() {
-      return ancestors_.getUnmodifiableView();
+      ancestors_.makeImmutable();
+      return ancestors_;
     }
     /**
      *
@@ -1046,6 +1056,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
+     *
      * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
@@ -1064,6 +1075,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
+     *
      * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
@@ -1083,6 +1095,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
+     *
      * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
@@ -1102,6 +1115,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
+     *
      * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
@@ -1117,6 +1131,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAncestorsIsMutable();
       ancestors_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1128,6 +1143,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
+     *
      * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
@@ -1142,6 +1158,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAncestorsIsMutable();
       ancestors_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1153,6 +1170,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
+     *
      * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
@@ -1164,6 +1182,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAncestors(java.lang.Iterable<java.lang.String> values) {
       ensureAncestorsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ancestors_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1175,6 +1194,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
+     *
      * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
@@ -1183,8 +1203,9 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAncestors() {
-      ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ancestors_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1196,6 +1217,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
+     *
      * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
@@ -1211,6 +1233,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAncestorsIsMutable();
       ancestors_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

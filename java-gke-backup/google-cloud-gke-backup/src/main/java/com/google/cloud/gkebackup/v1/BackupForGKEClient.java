@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,16 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkebackup.v1.stub.BackupForGKEStub;
 import com.google.cloud.gkebackup.v1.stub.BackupForGKEStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -224,7 +233,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location within which to create the BackupPlan. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @param backupPlan Required. The BackupPlan resource object to create.
    * @param backupPlanId Required. The client-provided short name for the BackupPlan resource. This
    *     name must:
@@ -266,7 +275,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location within which to create the BackupPlan. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @param backupPlan Required. The BackupPlan resource object to create.
    * @param backupPlanId Required. The client-provided short name for the BackupPlan resource. This
    *     name must:
@@ -399,7 +408,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location that contains the BackupPlans to list. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBackupPlansPagedResponse listBackupPlans(LocationName parent) {
@@ -431,7 +440,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location that contains the BackupPlans to list. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBackupPlansPagedResponse listBackupPlans(String parent) {
@@ -569,7 +578,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Fully qualified BackupPlan name. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BackupPlan getBackupPlan(BackupPlanName name) {
@@ -597,7 +606,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Fully qualified BackupPlan name. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BackupPlan getBackupPlan(String name) {
@@ -808,7 +817,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Fully qualified BackupPlan name. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupPlanAsync(
@@ -837,7 +846,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Fully qualified BackupPlan name. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupPlanAsync(String name) {
@@ -955,7 +964,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The BackupPlan within which to create the Backup. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
    * @param backup The Backup resource to create.
    * @param backupId The client-provided short name for the Backup resource. This name must:
    *     <p>- be between 1 and 63 characters long (inclusive) - consist of only lower-case ASCII
@@ -995,7 +1004,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The BackupPlan within which to create the Backup. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
    * @param backup The Backup resource to create.
    * @param backupId The client-provided short name for the Backup resource. This name must:
    *     <p>- be between 1 and 63 characters long (inclusive) - consist of only lower-case ASCII
@@ -1126,7 +1135,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The BackupPlan that contains the Backups to list. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBackupsPagedResponse listBackups(BackupPlanName parent) {
@@ -1158,7 +1167,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The BackupPlan that contains the Backups to list. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBackupsPagedResponse listBackups(String parent) {
@@ -1293,7 +1302,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full name of the Backup resource. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Backup getBackup(BackupName name) {
@@ -1322,7 +1331,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full name of the Backup resource. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Backup getBackup(String name) {
@@ -1530,7 +1539,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the Backup resource. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(BackupName name) {
@@ -1559,7 +1568,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the Backup resource. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(String name) {
@@ -1682,7 +1691,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The Backup that contains the VolumeBackups to list. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVolumeBackupsPagedResponse listVolumeBackups(BackupName parent) {
@@ -1715,7 +1724,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The Backup that contains the VolumeBackups to list. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVolumeBackupsPagedResponse listVolumeBackups(String parent) {
@@ -1859,7 +1868,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full name of the VolumeBackup resource. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;/volumeBackups/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;/volumeBackups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final VolumeBackup getVolumeBackup(VolumeBackupName name) {
@@ -1890,7 +1899,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full name of the VolumeBackup resource. Format:
-   *     projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;/volumeBackups/&#42;
+   *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;/volumeBackups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final VolumeBackup getVolumeBackup(String name) {
@@ -1982,7 +1991,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location within which to create the RestorePlan. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @param restorePlan Required. The RestorePlan resource object to create.
    * @param restorePlanId Required. The client-provided short name for the RestorePlan resource.
    *     This name must:
@@ -2024,7 +2033,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location within which to create the RestorePlan. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @param restorePlan Required. The RestorePlan resource object to create.
    * @param restorePlanId Required. The client-provided short name for the RestorePlan resource.
    *     This name must:
@@ -2157,7 +2166,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location that contains the RestorePlans to list. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRestorePlansPagedResponse listRestorePlans(LocationName parent) {
@@ -2189,7 +2198,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location that contains the RestorePlans to list. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRestorePlansPagedResponse listRestorePlans(String parent) {
@@ -2328,7 +2337,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Fully qualified RestorePlan name. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RestorePlan getRestorePlan(RestorePlanName name) {
@@ -2356,7 +2365,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Fully qualified RestorePlan name. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RestorePlan getRestorePlan(String name) {
@@ -2568,7 +2577,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Fully qualified RestorePlan name. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRestorePlanAsync(
@@ -2599,7 +2608,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Fully qualified RestorePlan name. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRestorePlanAsync(String name) {
@@ -2720,7 +2729,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The RestorePlan within which to create the Restore. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;`
    * @param restore Required. The restore resource to create.
    * @param restoreId Required. The client-provided short name for the Restore resource. This name
    *     must:
@@ -2761,7 +2770,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The RestorePlan within which to create the Restore. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;`
    * @param restore Required. The restore resource to create.
    * @param restoreId Required. The client-provided short name for the Restore resource. This name
    *     must:
@@ -2893,7 +2902,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The RestorePlan that contains the Restores to list. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRestoresPagedResponse listRestores(RestorePlanName parent) {
@@ -2925,7 +2934,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The RestorePlan that contains the Restores to list. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRestoresPagedResponse listRestores(String parent) {
@@ -3061,7 +3070,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the restore resource. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Restore getRestore(RestoreName name) {
@@ -3090,7 +3099,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the restore resource. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Restore getRestore(String name) {
@@ -3300,7 +3309,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full name of the Restore Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRestoreAsync(RestoreName name) {
@@ -3329,7 +3338,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full name of the Restore Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRestoreAsync(String name) {
@@ -3455,7 +3464,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The Restore that contains the VolumeRestores to list. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVolumeRestoresPagedResponse listVolumeRestores(RestoreName parent) {
@@ -3488,7 +3497,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The Restore that contains the VolumeRestores to list. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVolumeRestoresPagedResponse listVolumeRestores(String parent) {
@@ -3636,7 +3645,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full name of the VolumeRestore resource. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;/volumeRestores/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;/volumeRestores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final VolumeRestore getVolumeRestore(VolumeRestoreName name) {
@@ -3667,7 +3676,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full name of the VolumeRestore resource. Format:
-   *     projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;/volumeRestores/&#42;
+   *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;/volumeRestores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final VolumeRestore getVolumeRestore(String name) {
@@ -3743,6 +3752,358 @@ public class BackupForGKEClient implements BackgroundResource {
    */
   public final UnaryCallable<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreCallable() {
     return stub.getVolumeRestoreCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : backupForGKEClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       backupForGKEClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response = backupForGKEClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = backupForGKEClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future = backupForGKEClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = backupForGKEClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = backupForGKEClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = backupForGKEClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = backupForGKEClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = backupForGKEClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       backupForGKEClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override
@@ -4234,6 +4595,82 @@ public class BackupForGKEClient implements BackgroundResource {
     protected ListVolumeRestoresFixedSizeCollection createCollection(
         List<ListVolumeRestoresPage> pages, int collectionSize) {
       return new ListVolumeRestoresFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

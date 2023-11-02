@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,6 +136,7 @@ public interface ListEntitiesRequestOrBuilder
    * <pre>
    * Optional. The following filter parameters can be added to the URL to limit
    * the entities returned by the API:
+   *
    * - Entity ID: ?filter="id=entityID"
    * - Asset ID: ?filter="asset=assetID"
    * - Data path ?filter="data_path=gs://my-bucket"
@@ -154,6 +155,7 @@ public interface ListEntitiesRequestOrBuilder
    * <pre>
    * Optional. The following filter parameters can be added to the URL to limit
    * the entities returned by the API:
+   *
    * - Entity ID: ?filter="id=entityID"
    * - Asset ID: ?filter="asset=assetID"
    * - Data path ?filter="data_path=gs://my-bucket"

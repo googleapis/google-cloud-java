@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ListChannelPartnerRepricingConfigsRequest
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListChannelPartnerRepricingConfigsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -231,6 +226,7 @@ public final class ListChannelPartnerRepricingConfigsRequest
    * (channel_partner_link only). You can use this filter when you support a
    * BatchGet-like query. To use the filter, you must set
    * `parent=accounts/{account_id}/channelPartnerLinks/-`.
+   *
    * Example: `channel_partner_link =
    * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
    * accounts/account_id/channelPartnerLinks/c2`.
@@ -261,6 +257,7 @@ public final class ListChannelPartnerRepricingConfigsRequest
    * (channel_partner_link only). You can use this filter when you support a
    * BatchGet-like query. To use the filter, you must set
    * `parent=accounts/{account_id}/channelPartnerLinks/-`.
+   *
    * Example: `channel_partner_link =
    * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
    * accounts/account_id/channelPartnerLinks/c2`.
@@ -1046,6 +1043,7 @@ public final class ListChannelPartnerRepricingConfigsRequest
      * (channel_partner_link only). You can use this filter when you support a
      * BatchGet-like query. To use the filter, you must set
      * `parent=accounts/{account_id}/channelPartnerLinks/-`.
+     *
      * Example: `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c2`.
@@ -1075,6 +1073,7 @@ public final class ListChannelPartnerRepricingConfigsRequest
      * (channel_partner_link only). You can use this filter when you support a
      * BatchGet-like query. To use the filter, you must set
      * `parent=accounts/{account_id}/channelPartnerLinks/-`.
+     *
      * Example: `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c2`.
@@ -1104,6 +1103,7 @@ public final class ListChannelPartnerRepricingConfigsRequest
      * (channel_partner_link only). You can use this filter when you support a
      * BatchGet-like query. To use the filter, you must set
      * `parent=accounts/{account_id}/channelPartnerLinks/-`.
+     *
      * Example: `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c2`.
@@ -1132,6 +1132,7 @@ public final class ListChannelPartnerRepricingConfigsRequest
      * (channel_partner_link only). You can use this filter when you support a
      * BatchGet-like query. To use the filter, you must set
      * `parent=accounts/{account_id}/channelPartnerLinks/-`.
+     *
      * Example: `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c2`.
@@ -1156,6 +1157,7 @@ public final class ListChannelPartnerRepricingConfigsRequest
      * (channel_partner_link only). You can use this filter when you support a
      * BatchGet-like query. To use the filter, you must set
      * `parent=accounts/{account_id}/channelPartnerLinks/-`.
+     *
      * Example: `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c2`.

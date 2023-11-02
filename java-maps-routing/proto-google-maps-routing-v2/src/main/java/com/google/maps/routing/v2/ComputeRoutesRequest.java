@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,17 +48,13 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
     units_ = 0;
     requestedReferenceRoutes_ = java.util.Collections.emptyList();
     extraComputations_ = java.util.Collections.emptyList();
+    trafficModel_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ComputeRoutesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -263,6 +259,20 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <code>TRAFFIC_ON_POLYLINE = 3;</code>
      */
     TRAFFIC_ON_POLYLINE(3),
+    /**
+     *
+     *
+     * <pre>
+     * [Navigation
+     * Instructions][google.maps.routing.v2.NavigationInstructions.instructions]
+     * presented as a formatted HTML text string. This content
+     * is meant to be read as-is. This content is for display only.
+     * Do not programmatically parse it.
+     * </pre>
+     *
+     * <code>HTML_FORMATTED_NAVIGATION_INSTRUCTIONS = 4;</code>
+     */
+    HTML_FORMATTED_NAVIGATION_INSTRUCTIONS(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -306,6 +316,20 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <code>TRAFFIC_ON_POLYLINE = 3;</code>
      */
     public static final int TRAFFIC_ON_POLYLINE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * [Navigation
+     * Instructions][google.maps.routing.v2.NavigationInstructions.instructions]
+     * presented as a formatted HTML text string. This content
+     * is meant to be read as-is. This content is for display only.
+     * Do not programmatically parse it.
+     * </pre>
+     *
+     * <code>HTML_FORMATTED_NAVIGATION_INSTRUCTIONS = 4;</code>
+     */
+    public static final int HTML_FORMATTED_NAVIGATION_INSTRUCTIONS_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -339,6 +363,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
           return FUEL_CONSUMPTION;
         case 3:
           return TRAFFIC_ON_POLYLINE;
+        case 4:
+          return HTML_FORMATTED_NAVIGATION_INSTRUCTIONS;
         default:
           return null;
       }
@@ -761,8 +787,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The departure time. If you don't set this value, then this value
-   * defaults to the time that you made the request. If you set this value to a
-   * time that has already occurred, then the request fails.
+   * defaults to the time that you made the request.
+   * NOTE: You can only specify a `departure_time` in the past when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -779,8 +807,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The departure time. If you don't set this value, then this value
-   * defaults to the time that you made the request. If you set this value to a
-   * time that has already occurred, then the request fails.
+   * defaults to the time that you made the request.
+   * NOTE: You can only specify a `departure_time` in the past when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -799,8 +829,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The departure time. If you don't set this value, then this value
-   * defaults to the time that you made the request. If you set this value to a
-   * time that has already occurred, then the request fails.
+   * defaults to the time that you made the request.
+   * NOTE: You can only specify a `departure_time` in the past when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -811,6 +843,67 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
     return departureTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : departureTime_;
+  }
+
+  public static final int ARRIVAL_TIME_FIELD_NUMBER = 19;
+  private com.google.protobuf.Timestamp arrivalTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The arrival time.
+   * NOTE: Can only be set when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+   * both.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the arrivalTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasArrivalTime() {
+    return arrivalTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The arrival time.
+   * NOTE: Can only be set when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+   * both.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The arrivalTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getArrivalTime() {
+    return arrivalTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : arrivalTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The arrival time.
+   * NOTE: Can only be set when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+   * both.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getArrivalTimeOrBuilder() {
+    return arrivalTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : arrivalTime_;
   }
 
   public static final int COMPUTE_ALTERNATIVE_ROUTES_FIELD_NUMBER = 8;
@@ -1014,12 +1107,12 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Specifies the units of measure for the display fields. This
-   * includes the `instruction` field in
+   * Optional. Specifies the units of measure for the display fields. These
+   * fields include the `instruction` field in
    * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
    * units of measure used for the route, leg, step distance, and duration are
    * not affected by this value. If you don't provide this value, then the
-   * display units are inferred from the location of the request.
+   * display units are inferred from the location of the first origin.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Units units = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -1035,12 +1128,12 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Specifies the units of measure for the display fields. This
-   * includes the `instruction` field in
+   * Optional. Specifies the units of measure for the display fields. These
+   * fields include the `instruction` field in
    * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
    * units of measure used for the route, leg, step distance, and duration are
    * not affected by this value. If you don't provide this value, then the
-   * display units are inferred from the location of the request.
+   * display units are inferred from the location of the first origin.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Units units = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -1052,6 +1145,33 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
   public com.google.maps.routing.v2.Units getUnits() {
     com.google.maps.routing.v2.Units result = com.google.maps.routing.v2.Units.forNumber(units_);
     return result == null ? com.google.maps.routing.v2.Units.UNRECOGNIZED : result;
+  }
+
+  public static final int OPTIMIZE_WAYPOINT_ORDER_FIELD_NUMBER = 13;
+  private boolean optimizeWaypointOrder_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the service attempts to minimize the overall cost
+   * of the route by re-ordering the specified intermediate waypoints. The
+   * request fails if any of the intermediate waypoints is a `via` waypoint. Use
+   * `ComputeRoutesResponse.Routes.optimized_intermediate_waypoint_index` to
+   * find the new ordering.
+   * If `ComputeRoutesResponseroutes.optimized_intermediate_waypoint_index` is
+   * not requested in the `X-Goog-FieldMask` header, the request fails.
+   * If `optimize_waypoint_order` is set to false,
+   * `ComputeRoutesResponse.optimized_intermediate_waypoint_index` will be
+   * empty.
+   * </pre>
+   *
+   * <code>bool optimize_waypoint_order = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The optimizeWaypointOrder.
+   */
+  @java.lang.Override
+  public boolean getOptimizeWaypointOrder() {
+    return optimizeWaypointOrder_;
   }
 
   public static final int REQUESTED_REFERENCE_ROUTES_FIELD_NUMBER = 14;
@@ -1316,6 +1436,130 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
 
   private int extraComputationsMemoizedSerializedSize;
 
+  public static final int TRAFFIC_MODEL_FIELD_NUMBER = 18;
+  private int trafficModel_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the assumptions to use when calculating time in
+   * traffic. This setting affects the value returned in the duration field in
+   * the [Route][google.maps.routing.v2.Route] and
+   * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+   * time in traffic based on historical averages.
+   * `TrafficModel` is only available for requests that have set
+   * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+   * `TRAFFIC_AWARE_OPTIMAL` and
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+   * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TrafficModel traffic_model = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for trafficModel.
+   */
+  @java.lang.Override
+  public int getTrafficModelValue() {
+    return trafficModel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the assumptions to use when calculating time in
+   * traffic. This setting affects the value returned in the duration field in
+   * the [Route][google.maps.routing.v2.Route] and
+   * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+   * time in traffic based on historical averages.
+   * `TrafficModel` is only available for requests that have set
+   * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+   * `TRAFFIC_AWARE_OPTIMAL` and
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+   * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TrafficModel traffic_model = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The trafficModel.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.TrafficModel getTrafficModel() {
+    com.google.maps.routing.v2.TrafficModel result =
+        com.google.maps.routing.v2.TrafficModel.forNumber(trafficModel_);
+    return result == null ? com.google.maps.routing.v2.TrafficModel.UNRECOGNIZED : result;
+  }
+
+  public static final int TRANSIT_PREFERENCES_FIELD_NUMBER = 20;
+  private com.google.maps.routing.v2.TransitPreferences transitPreferences_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies preferences that influence the route returned for
+   * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transitPreferences field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransitPreferences() {
+    return transitPreferences_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies preferences that influence the route returned for
+   * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transitPreferences.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.TransitPreferences getTransitPreferences() {
+    return transitPreferences_ == null
+        ? com.google.maps.routing.v2.TransitPreferences.getDefaultInstance()
+        : transitPreferences_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies preferences that influence the route returned for
+   * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.TransitPreferencesOrBuilder getTransitPreferencesOrBuilder() {
+    return transitPreferences_ == null
+        ? com.google.maps.routing.v2.TransitPreferences.getDefaultInstance()
+        : transitPreferences_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1372,6 +1616,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
         != com.google.maps.routing.v2.PolylineEncoding.POLYLINE_ENCODING_UNSPECIFIED.getNumber()) {
       output.writeEnum(12, polylineEncoding_);
     }
+    if (optimizeWaypointOrder_ != false) {
+      output.writeBool(13, optimizeWaypointOrder_);
+    }
     if (getRequestedReferenceRoutesList().size() > 0) {
       output.writeUInt32NoTag(114);
       output.writeUInt32NoTag(requestedReferenceRoutesMemoizedSerializedSize);
@@ -1388,6 +1635,16 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, regionCode_);
+    }
+    if (trafficModel_
+        != com.google.maps.routing.v2.TrafficModel.TRAFFIC_MODEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(18, trafficModel_);
+    }
+    if (arrivalTime_ != null) {
+      output.writeMessage(19, getArrivalTime());
+    }
+    if (transitPreferences_ != null) {
+      output.writeMessage(20, getTransitPreferences());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1439,6 +1696,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
         != com.google.maps.routing.v2.PolylineEncoding.POLYLINE_ENCODING_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, polylineEncoding_);
     }
+    if (optimizeWaypointOrder_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, optimizeWaypointOrder_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < requestedReferenceRoutes_.size(); i++) {
@@ -1468,6 +1728,16 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, regionCode_);
+    }
+    if (trafficModel_
+        != com.google.maps.routing.v2.TrafficModel.TRAFFIC_MODEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, trafficModel_);
+    }
+    if (arrivalTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getArrivalTime());
+    }
+    if (transitPreferences_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getTransitPreferences());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1502,6 +1772,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
     if (hasDepartureTime()) {
       if (!getDepartureTime().equals(other.getDepartureTime())) return false;
     }
+    if (hasArrivalTime() != other.hasArrivalTime()) return false;
+    if (hasArrivalTime()) {
+      if (!getArrivalTime().equals(other.getArrivalTime())) return false;
+    }
     if (getComputeAlternativeRoutes() != other.getComputeAlternativeRoutes()) return false;
     if (hasRouteModifiers() != other.hasRouteModifiers()) return false;
     if (hasRouteModifiers()) {
@@ -1510,8 +1784,14 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getRegionCode().equals(other.getRegionCode())) return false;
     if (units_ != other.units_) return false;
+    if (getOptimizeWaypointOrder() != other.getOptimizeWaypointOrder()) return false;
     if (!requestedReferenceRoutes_.equals(other.requestedReferenceRoutes_)) return false;
     if (!extraComputations_.equals(other.extraComputations_)) return false;
+    if (trafficModel_ != other.trafficModel_) return false;
+    if (hasTransitPreferences() != other.hasTransitPreferences()) return false;
+    if (hasTransitPreferences()) {
+      if (!getTransitPreferences().equals(other.getTransitPreferences())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1547,6 +1827,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + DEPARTURE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getDepartureTime().hashCode();
     }
+    if (hasArrivalTime()) {
+      hash = (37 * hash) + ARRIVAL_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getArrivalTime().hashCode();
+    }
     hash = (37 * hash) + COMPUTE_ALTERNATIVE_ROUTES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getComputeAlternativeRoutes());
     if (hasRouteModifiers()) {
@@ -1559,6 +1843,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getRegionCode().hashCode();
     hash = (37 * hash) + UNITS_FIELD_NUMBER;
     hash = (53 * hash) + units_;
+    hash = (37 * hash) + OPTIMIZE_WAYPOINT_ORDER_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOptimizeWaypointOrder());
     if (getRequestedReferenceRoutesCount() > 0) {
       hash = (37 * hash) + REQUESTED_REFERENCE_ROUTES_FIELD_NUMBER;
       hash = (53 * hash) + requestedReferenceRoutes_.hashCode();
@@ -1566,6 +1852,12 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
     if (getExtraComputationsCount() > 0) {
       hash = (37 * hash) + EXTRA_COMPUTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + extraComputations_.hashCode();
+    }
+    hash = (37 * hash) + TRAFFIC_MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + trafficModel_;
+    if (hasTransitPreferences()) {
+      hash = (37 * hash) + TRANSIT_PREFERENCES_FIELD_NUMBER;
+      hash = (53 * hash) + getTransitPreferences().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1732,6 +2024,11 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
         departureTimeBuilder_.dispose();
         departureTimeBuilder_ = null;
       }
+      arrivalTime_ = null;
+      if (arrivalTimeBuilder_ != null) {
+        arrivalTimeBuilder_.dispose();
+        arrivalTimeBuilder_ = null;
+      }
       computeAlternativeRoutes_ = false;
       routeModifiers_ = null;
       if (routeModifiersBuilder_ != null) {
@@ -1741,10 +2038,17 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       languageCode_ = "";
       regionCode_ = "";
       units_ = 0;
+      optimizeWaypointOrder_ = false;
       requestedReferenceRoutes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       extraComputations_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
+      trafficModel_ = 0;
+      transitPreferences_ = null;
+      if (transitPreferencesBuilder_ != null) {
+        transitPreferencesBuilder_.dispose();
+        transitPreferencesBuilder_ = null;
+      }
       return this;
     }
 
@@ -1791,15 +2095,15 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       } else {
         result.intermediates_ = intermediatesBuilder_.build();
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         requestedReferenceRoutes_ =
             java.util.Collections.unmodifiableList(requestedReferenceRoutes_);
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00008000);
       }
       result.requestedReferenceRoutes_ = requestedReferenceRoutes_;
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         extraComputations_ = java.util.Collections.unmodifiableList(extraComputations_);
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00010000);
       }
       result.extraComputations_ = extraComputations_;
     }
@@ -1830,20 +2134,36 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
             departureTimeBuilder_ == null ? departureTime_ : departureTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.computeAlternativeRoutes_ = computeAlternativeRoutes_;
+        result.arrivalTime_ =
+            arrivalTimeBuilder_ == null ? arrivalTime_ : arrivalTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.computeAlternativeRoutes_ = computeAlternativeRoutes_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.routeModifiers_ =
             routeModifiersBuilder_ == null ? routeModifiers_ : routeModifiersBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.languageCode_ = languageCode_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.regionCode_ = regionCode_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.units_ = units_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.optimizeWaypointOrder_ = optimizeWaypointOrder_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.trafficModel_ = trafficModel_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.transitPreferences_ =
+            transitPreferencesBuilder_ == null
+                ? transitPreferences_
+                : transitPreferencesBuilder_.build();
       }
     }
 
@@ -1941,6 +2261,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       if (other.hasDepartureTime()) {
         mergeDepartureTime(other.getDepartureTime());
       }
+      if (other.hasArrivalTime()) {
+        mergeArrivalTime(other.getArrivalTime());
+      }
       if (other.getComputeAlternativeRoutes() != false) {
         setComputeAlternativeRoutes(other.getComputeAlternativeRoutes());
       }
@@ -1949,21 +2272,24 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getRegionCode().isEmpty()) {
         regionCode_ = other.regionCode_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.units_ != 0) {
         setUnitsValue(other.getUnitsValue());
       }
+      if (other.getOptimizeWaypointOrder() != false) {
+        setOptimizeWaypointOrder(other.getOptimizeWaypointOrder());
+      }
       if (!other.requestedReferenceRoutes_.isEmpty()) {
         if (requestedReferenceRoutes_.isEmpty()) {
           requestedReferenceRoutes_ = other.requestedReferenceRoutes_;
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         } else {
           ensureRequestedReferenceRoutesIsMutable();
           requestedReferenceRoutes_.addAll(other.requestedReferenceRoutes_);
@@ -1973,12 +2299,18 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       if (!other.extraComputations_.isEmpty()) {
         if (extraComputations_.isEmpty()) {
           extraComputations_ = other.extraComputations_;
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         } else {
           ensureExtraComputationsIsMutable();
           extraComputations_.addAll(other.extraComputations_);
         }
         onChanged();
+      }
+      if (other.trafficModel_ != 0) {
+        setTrafficModelValue(other.getTrafficModelValue());
+      }
+      if (other.hasTransitPreferences()) {
+        mergeTransitPreferences(other.getTransitPreferences());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2058,25 +2390,25 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
             case 64:
               {
                 computeAlternativeRoutes_ = input.readBool();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 64
             case 74:
               {
                 input.readMessage(getRouteModifiersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 82:
               {
                 languageCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 88:
               {
                 units_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 88
             case 96:
@@ -2085,6 +2417,12 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000040;
                 break;
               } // case 96
+            case 104:
+              {
+                optimizeWaypointOrder_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 104
             case 112:
               {
                 int tmpRaw = input.readEnum();
@@ -2126,9 +2464,28 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
             case 130:
               {
                 regionCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 130
+            case 144:
+              {
+                trafficModel_ = input.readEnum();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 144
+            case 154:
+              {
+                input.readMessage(getArrivalTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    getTransitPreferencesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3393,8 +3750,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The departure time. If you don't set this value, then this value
-     * defaults to the time that you made the request. If you set this value to a
-     * time that has already occurred, then the request fails.
+     * defaults to the time that you made the request.
+     * NOTE: You can only specify a `departure_time` in the past when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -3411,8 +3770,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The departure time. If you don't set this value, then this value
-     * defaults to the time that you made the request. If you set this value to a
-     * time that has already occurred, then the request fails.
+     * defaults to the time that you made the request.
+     * NOTE: You can only specify a `departure_time` in the past when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -3435,8 +3796,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The departure time. If you don't set this value, then this value
-     * defaults to the time that you made the request. If you set this value to a
-     * time that has already occurred, then the request fails.
+     * defaults to the time that you made the request.
+     * NOTE: You can only specify a `departure_time` in the past when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -3461,8 +3824,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The departure time. If you don't set this value, then this value
-     * defaults to the time that you made the request. If you set this value to a
-     * time that has already occurred, then the request fails.
+     * defaults to the time that you made the request.
+     * NOTE: You can only specify a `departure_time` in the past when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -3484,8 +3849,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The departure time. If you don't set this value, then this value
-     * defaults to the time that you made the request. If you set this value to a
-     * time that has already occurred, then the request fails.
+     * defaults to the time that you made the request.
+     * NOTE: You can only specify a `departure_time` in the past when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -3513,8 +3880,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The departure time. If you don't set this value, then this value
-     * defaults to the time that you made the request. If you set this value to a
-     * time that has already occurred, then the request fails.
+     * defaults to the time that you made the request.
+     * NOTE: You can only specify a `departure_time` in the past when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -3536,8 +3905,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The departure time. If you don't set this value, then this value
-     * defaults to the time that you made the request. If you set this value to a
-     * time that has already occurred, then the request fails.
+     * defaults to the time that you made the request.
+     * NOTE: You can only specify a `departure_time` in the past when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -3554,8 +3925,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The departure time. If you don't set this value, then this value
-     * defaults to the time that you made the request. If you set this value to a
-     * time that has already occurred, then the request fails.
+     * defaults to the time that you made the request.
+     * NOTE: You can only specify a `departure_time` in the past when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -3576,8 +3949,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The departure time. If you don't set this value, then this value
-     * defaults to the time that you made the request. If you set this value to a
-     * time that has already occurred, then the request fails.
+     * defaults to the time that you made the request.
+     * NOTE: You can only specify a `departure_time` in the past when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
      * </pre>
      *
      * <code>
@@ -3599,6 +3974,234 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
         departureTime_ = null;
       }
       return departureTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp arrivalTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        arrivalTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The arrival time.
+     * NOTE: Can only be set when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+     * both.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the arrivalTime field is set.
+     */
+    public boolean hasArrivalTime() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The arrival time.
+     * NOTE: Can only be set when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+     * both.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The arrivalTime.
+     */
+    public com.google.protobuf.Timestamp getArrivalTime() {
+      if (arrivalTimeBuilder_ == null) {
+        return arrivalTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : arrivalTime_;
+      } else {
+        return arrivalTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The arrival time.
+     * NOTE: Can only be set when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+     * both.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setArrivalTime(com.google.protobuf.Timestamp value) {
+      if (arrivalTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        arrivalTime_ = value;
+      } else {
+        arrivalTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The arrival time.
+     * NOTE: Can only be set when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+     * both.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setArrivalTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (arrivalTimeBuilder_ == null) {
+        arrivalTime_ = builderForValue.build();
+      } else {
+        arrivalTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The arrival time.
+     * NOTE: Can only be set when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+     * both.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeArrivalTime(com.google.protobuf.Timestamp value) {
+      if (arrivalTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && arrivalTime_ != null
+            && arrivalTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getArrivalTimeBuilder().mergeFrom(value);
+        } else {
+          arrivalTime_ = value;
+        }
+      } else {
+        arrivalTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The arrival time.
+     * NOTE: Can only be set when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+     * both.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearArrivalTime() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      arrivalTime_ = null;
+      if (arrivalTimeBuilder_ != null) {
+        arrivalTimeBuilder_.dispose();
+        arrivalTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The arrival time.
+     * NOTE: Can only be set when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+     * both.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getArrivalTimeBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getArrivalTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The arrival time.
+     * NOTE: Can only be set when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+     * both.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getArrivalTimeOrBuilder() {
+      if (arrivalTimeBuilder_ != null) {
+        return arrivalTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return arrivalTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : arrivalTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The arrival time.
+     * NOTE: Can only be set when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+     * both.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getArrivalTimeFieldBuilder() {
+      if (arrivalTimeBuilder_ == null) {
+        arrivalTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getArrivalTime(), getParentForChildren(), isClean());
+        arrivalTime_ = null;
+      }
+      return arrivalTimeBuilder_;
     }
 
     private boolean computeAlternativeRoutes_;
@@ -3636,7 +4239,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
     public Builder setComputeAlternativeRoutes(boolean value) {
 
       computeAlternativeRoutes_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3654,7 +4257,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearComputeAlternativeRoutes() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       computeAlternativeRoutes_ = false;
       onChanged();
       return this;
@@ -3681,7 +4284,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the routeModifiers field is set.
      */
     public boolean hasRouteModifiers() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3727,7 +4330,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       } else {
         routeModifiersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3750,7 +4353,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       } else {
         routeModifiersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3768,7 +4371,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeRouteModifiers(com.google.maps.routing.v2.RouteModifiers value) {
       if (routeModifiersBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && routeModifiers_ != null
             && routeModifiers_ != com.google.maps.routing.v2.RouteModifiers.getDefaultInstance()) {
           getRouteModifiersBuilder().mergeFrom(value);
@@ -3778,7 +4381,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       } else {
         routeModifiersBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3795,7 +4398,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearRouteModifiers() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       routeModifiers_ = null;
       if (routeModifiersBuilder_ != null) {
         routeModifiersBuilder_.dispose();
@@ -3817,7 +4420,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.maps.routing.v2.RouteModifiers.Builder getRouteModifiersBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getRouteModifiersFieldBuilder().getBuilder();
     }
@@ -3948,7 +4551,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       languageCode_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3970,7 +4573,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearLanguageCode() {
       languageCode_ = getDefaultInstance().getLanguageCode();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3997,7 +4600,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       languageCode_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4070,7 +4673,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       regionCode_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4089,7 +4692,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearRegionCode() {
       regionCode_ = getDefaultInstance().getRegionCode();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4113,7 +4716,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       regionCode_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4123,12 +4726,12 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the units of measure for the display fields. This
-     * includes the `instruction` field in
+     * Optional. Specifies the units of measure for the display fields. These
+     * fields include the `instruction` field in
      * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
      * units of measure used for the route, leg, step distance, and duration are
      * not affected by this value. If you don't provide this value, then the
-     * display units are inferred from the location of the request.
+     * display units are inferred from the location of the first origin.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Units units = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -4144,12 +4747,12 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the units of measure for the display fields. This
-     * includes the `instruction` field in
+     * Optional. Specifies the units of measure for the display fields. These
+     * fields include the `instruction` field in
      * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
      * units of measure used for the route, leg, step distance, and duration are
      * not affected by this value. If you don't provide this value, then the
-     * display units are inferred from the location of the request.
+     * display units are inferred from the location of the first origin.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Units units = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -4160,7 +4763,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder setUnitsValue(int value) {
       units_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4168,12 +4771,12 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the units of measure for the display fields. This
-     * includes the `instruction` field in
+     * Optional. Specifies the units of measure for the display fields. These
+     * fields include the `instruction` field in
      * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
      * units of measure used for the route, leg, step distance, and duration are
      * not affected by this value. If you don't provide this value, then the
-     * display units are inferred from the location of the request.
+     * display units are inferred from the location of the first origin.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Units units = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -4190,12 +4793,12 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the units of measure for the display fields. This
-     * includes the `instruction` field in
+     * Optional. Specifies the units of measure for the display fields. These
+     * fields include the `instruction` field in
      * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
      * units of measure used for the route, leg, step distance, and duration are
      * not affected by this value. If you don't provide this value, then the
-     * display units are inferred from the location of the request.
+     * display units are inferred from the location of the first origin.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Units units = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -4208,7 +4811,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       units_ = value.getNumber();
       onChanged();
       return this;
@@ -4217,12 +4820,12 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the units of measure for the display fields. This
-     * includes the `instruction` field in
+     * Optional. Specifies the units of measure for the display fields. These
+     * fields include the `instruction` field in
      * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
      * units of measure used for the route, leg, step distance, and duration are
      * not affected by this value. If you don't provide this value, then the
-     * display units are inferred from the location of the request.
+     * display units are inferred from the location of the first origin.
      * </pre>
      *
      * <code>.google.maps.routing.v2.Units units = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -4231,8 +4834,88 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearUnits() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       units_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean optimizeWaypointOrder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the service attempts to minimize the overall cost
+     * of the route by re-ordering the specified intermediate waypoints. The
+     * request fails if any of the intermediate waypoints is a `via` waypoint. Use
+     * `ComputeRoutesResponse.Routes.optimized_intermediate_waypoint_index` to
+     * find the new ordering.
+     * If `ComputeRoutesResponseroutes.optimized_intermediate_waypoint_index` is
+     * not requested in the `X-Goog-FieldMask` header, the request fails.
+     * If `optimize_waypoint_order` is set to false,
+     * `ComputeRoutesResponse.optimized_intermediate_waypoint_index` will be
+     * empty.
+     * </pre>
+     *
+     * <code>bool optimize_waypoint_order = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The optimizeWaypointOrder.
+     */
+    @java.lang.Override
+    public boolean getOptimizeWaypointOrder() {
+      return optimizeWaypointOrder_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the service attempts to minimize the overall cost
+     * of the route by re-ordering the specified intermediate waypoints. The
+     * request fails if any of the intermediate waypoints is a `via` waypoint. Use
+     * `ComputeRoutesResponse.Routes.optimized_intermediate_waypoint_index` to
+     * find the new ordering.
+     * If `ComputeRoutesResponseroutes.optimized_intermediate_waypoint_index` is
+     * not requested in the `X-Goog-FieldMask` header, the request fails.
+     * If `optimize_waypoint_order` is set to false,
+     * `ComputeRoutesResponse.optimized_intermediate_waypoint_index` will be
+     * empty.
+     * </pre>
+     *
+     * <code>bool optimize_waypoint_order = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The optimizeWaypointOrder to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOptimizeWaypointOrder(boolean value) {
+
+      optimizeWaypointOrder_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the service attempts to minimize the overall cost
+     * of the route by re-ordering the specified intermediate waypoints. The
+     * request fails if any of the intermediate waypoints is a `via` waypoint. Use
+     * `ComputeRoutesResponse.Routes.optimized_intermediate_waypoint_index` to
+     * find the new ordering.
+     * If `ComputeRoutesResponseroutes.optimized_intermediate_waypoint_index` is
+     * not requested in the `X-Goog-FieldMask` header, the request fails.
+     * If `optimize_waypoint_order` is set to false,
+     * `ComputeRoutesResponse.optimized_intermediate_waypoint_index` will be
+     * empty.
+     * </pre>
+     *
+     * <code>bool optimize_waypoint_order = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOptimizeWaypointOrder() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      optimizeWaypointOrder_ = false;
       onChanged();
       return this;
     }
@@ -4241,10 +4924,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureRequestedReferenceRoutesIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         requestedReferenceRoutes_ =
             new java.util.ArrayList<java.lang.Integer>(requestedReferenceRoutes_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
       }
     }
     /**
@@ -4416,7 +5099,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearRequestedReferenceRoutes() {
       requestedReferenceRoutes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4542,9 +5225,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureExtraComputationsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         extraComputations_ = new java.util.ArrayList<java.lang.Integer>(extraComputations_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
       }
     }
     /**
@@ -4710,7 +5393,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearExtraComputations() {
       extraComputations_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4824,6 +5507,386 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
       }
       onChanged();
       return this;
+    }
+
+    private int trafficModel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the assumptions to use when calculating time in
+     * traffic. This setting affects the value returned in the duration field in
+     * the [Route][google.maps.routing.v2.Route] and
+     * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+     * time in traffic based on historical averages.
+     * `TrafficModel` is only available for requests that have set
+     * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+     * `TRAFFIC_AWARE_OPTIMAL` and
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+     * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TrafficModel traffic_model = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for trafficModel.
+     */
+    @java.lang.Override
+    public int getTrafficModelValue() {
+      return trafficModel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the assumptions to use when calculating time in
+     * traffic. This setting affects the value returned in the duration field in
+     * the [Route][google.maps.routing.v2.Route] and
+     * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+     * time in traffic based on historical averages.
+     * `TrafficModel` is only available for requests that have set
+     * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+     * `TRAFFIC_AWARE_OPTIMAL` and
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+     * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TrafficModel traffic_model = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for trafficModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrafficModelValue(int value) {
+      trafficModel_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the assumptions to use when calculating time in
+     * traffic. This setting affects the value returned in the duration field in
+     * the [Route][google.maps.routing.v2.Route] and
+     * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+     * time in traffic based on historical averages.
+     * `TrafficModel` is only available for requests that have set
+     * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+     * `TRAFFIC_AWARE_OPTIMAL` and
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+     * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TrafficModel traffic_model = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The trafficModel.
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.TrafficModel getTrafficModel() {
+      com.google.maps.routing.v2.TrafficModel result =
+          com.google.maps.routing.v2.TrafficModel.forNumber(trafficModel_);
+      return result == null ? com.google.maps.routing.v2.TrafficModel.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the assumptions to use when calculating time in
+     * traffic. This setting affects the value returned in the duration field in
+     * the [Route][google.maps.routing.v2.Route] and
+     * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+     * time in traffic based on historical averages.
+     * `TrafficModel` is only available for requests that have set
+     * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+     * `TRAFFIC_AWARE_OPTIMAL` and
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+     * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TrafficModel traffic_model = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The trafficModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrafficModel(com.google.maps.routing.v2.TrafficModel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00020000;
+      trafficModel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the assumptions to use when calculating time in
+     * traffic. This setting affects the value returned in the duration field in
+     * the [Route][google.maps.routing.v2.Route] and
+     * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+     * time in traffic based on historical averages.
+     * `TrafficModel` is only available for requests that have set
+     * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+     * `TRAFFIC_AWARE_OPTIMAL` and
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+     * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
+     * specified.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TrafficModel traffic_model = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTrafficModel() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      trafficModel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.maps.routing.v2.TransitPreferences transitPreferences_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.TransitPreferences,
+            com.google.maps.routing.v2.TransitPreferences.Builder,
+            com.google.maps.routing.v2.TransitPreferencesOrBuilder>
+        transitPreferencesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies preferences that influence the route returned for
+     * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the transitPreferences field is set.
+     */
+    public boolean hasTransitPreferences() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies preferences that influence the route returned for
+     * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The transitPreferences.
+     */
+    public com.google.maps.routing.v2.TransitPreferences getTransitPreferences() {
+      if (transitPreferencesBuilder_ == null) {
+        return transitPreferences_ == null
+            ? com.google.maps.routing.v2.TransitPreferences.getDefaultInstance()
+            : transitPreferences_;
+      } else {
+        return transitPreferencesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies preferences that influence the route returned for
+     * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTransitPreferences(com.google.maps.routing.v2.TransitPreferences value) {
+      if (transitPreferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transitPreferences_ = value;
+      } else {
+        transitPreferencesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies preferences that influence the route returned for
+     * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTransitPreferences(
+        com.google.maps.routing.v2.TransitPreferences.Builder builderForValue) {
+      if (transitPreferencesBuilder_ == null) {
+        transitPreferences_ = builderForValue.build();
+      } else {
+        transitPreferencesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies preferences that influence the route returned for
+     * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTransitPreferences(com.google.maps.routing.v2.TransitPreferences value) {
+      if (transitPreferencesBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && transitPreferences_ != null
+            && transitPreferences_
+                != com.google.maps.routing.v2.TransitPreferences.getDefaultInstance()) {
+          getTransitPreferencesBuilder().mergeFrom(value);
+        } else {
+          transitPreferences_ = value;
+        }
+      } else {
+        transitPreferencesBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies preferences that influence the route returned for
+     * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTransitPreferences() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      transitPreferences_ = null;
+      if (transitPreferencesBuilder_ != null) {
+        transitPreferencesBuilder_.dispose();
+        transitPreferencesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies preferences that influence the route returned for
+     * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.maps.routing.v2.TransitPreferences.Builder getTransitPreferencesBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getTransitPreferencesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies preferences that influence the route returned for
+     * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.maps.routing.v2.TransitPreferencesOrBuilder getTransitPreferencesOrBuilder() {
+      if (transitPreferencesBuilder_ != null) {
+        return transitPreferencesBuilder_.getMessageOrBuilder();
+      } else {
+        return transitPreferences_ == null
+            ? com.google.maps.routing.v2.TransitPreferences.getDefaultInstance()
+            : transitPreferences_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies preferences that influence the route returned for
+     * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+     * `TRANSIT`.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.TransitPreferences,
+            com.google.maps.routing.v2.TransitPreferences.Builder,
+            com.google.maps.routing.v2.TransitPreferencesOrBuilder>
+        getTransitPreferencesFieldBuilder() {
+      if (transitPreferencesBuilder_ == null) {
+        transitPreferencesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routing.v2.TransitPreferences,
+                com.google.maps.routing.v2.TransitPreferences.Builder,
+                com.google.maps.routing.v2.TransitPreferencesOrBuilder>(
+                getTransitPreferences(), getParentForChildren(), isClean());
+        transitPreferences_ = null;
+      }
+      return transitPreferencesBuilder_;
     }
 
     @java.lang.Override

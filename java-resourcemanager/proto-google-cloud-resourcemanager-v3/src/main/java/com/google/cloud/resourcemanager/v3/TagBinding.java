@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TagBinding();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -244,6 +239,7 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
    * The namespaced name for the TagValue of the TagBinding.
    * Must be in the format
    * `{parent_id}/{tag_key_short_name}/{short_name}`.
+   *
    * For methods that support TagValue namespaced name, only one of
    * tag_value_namespaced_name or tag_value may be filled. Requests with both
    * fields will be rejected.
@@ -272,6 +268,7 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
    * The namespaced name for the TagValue of the TagBinding.
    * Must be in the format
    * `{parent_id}/{tag_key_short_name}/{short_name}`.
+   *
    * For methods that support TagValue namespaced name, only one of
    * tag_value_namespaced_name or tag_value may be filled. Requests with both
    * fields will be rejected.
@@ -1055,6 +1052,7 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
      * The namespaced name for the TagValue of the TagBinding.
      * Must be in the format
      * `{parent_id}/{tag_key_short_name}/{short_name}`.
+     *
      * For methods that support TagValue namespaced name, only one of
      * tag_value_namespaced_name or tag_value may be filled. Requests with both
      * fields will be rejected.
@@ -1082,6 +1080,7 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
      * The namespaced name for the TagValue of the TagBinding.
      * Must be in the format
      * `{parent_id}/{tag_key_short_name}/{short_name}`.
+     *
      * For methods that support TagValue namespaced name, only one of
      * tag_value_namespaced_name or tag_value may be filled. Requests with both
      * fields will be rejected.
@@ -1109,6 +1108,7 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
      * The namespaced name for the TagValue of the TagBinding.
      * Must be in the format
      * `{parent_id}/{tag_key_short_name}/{short_name}`.
+     *
      * For methods that support TagValue namespaced name, only one of
      * tag_value_namespaced_name or tag_value may be filled. Requests with both
      * fields will be rejected.
@@ -1135,6 +1135,7 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
      * The namespaced name for the TagValue of the TagBinding.
      * Must be in the format
      * `{parent_id}/{tag_key_short_name}/{short_name}`.
+     *
      * For methods that support TagValue namespaced name, only one of
      * tag_value_namespaced_name or tag_value may be filled. Requests with both
      * fields will be rejected.
@@ -1157,6 +1158,7 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
      * The namespaced name for the TagValue of the TagBinding.
      * Must be in the format
      * `{parent_id}/{tag_key_short_name}/{short_name}`.
+     *
      * For methods that support TagValue namespaced name, only one of
      * tag_value_namespaced_name or tag_value may be filled. Requests with both
      * fields will be rejected.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,31 +49,6 @@ public interface FunctionOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Describe whether the function is gen1 or gen2.
-   * </pre>
-   *
-   * <code>.google.cloud.functions.v2alpha.Environment environment = 10;</code>
-   *
-   * @return The enum numeric value on the wire for environment.
-   */
-  int getEnvironmentValue();
-  /**
-   *
-   *
-   * <pre>
-   * Describe whether the function is gen1 or gen2.
-   * </pre>
-   *
-   * <code>.google.cloud.functions.v2alpha.Environment environment = 10;</code>
-   *
-   * @return The environment.
-   */
-  com.google.cloud.functions.v2alpha.Environment getEnvironment();
 
   /**
    *
@@ -400,4 +375,87 @@ public interface FunctionOrBuilder
    * </code>
    */
   com.google.cloud.functions.v2alpha.StateMessageOrBuilder getStateMessagesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Describe whether the function is 1st Gen or 2nd Gen.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2alpha.Environment environment = 10;</code>
+   *
+   * @return The enum numeric value on the wire for environment.
+   */
+  int getEnvironmentValue();
+  /**
+   *
+   *
+   * <pre>
+   * Describe whether the function is 1st Gen or 2nd Gen.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2alpha.Environment environment = 10;</code>
+   *
+   * @return The environment.
+   */
+  com.google.cloud.functions.v2alpha.Environment getEnvironment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployed url for the function.
+   * </pre>
+   *
+   * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The url.
+   */
+  java.lang.String getUrl();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployed url for the function.
+   * </pre>
+   *
+   * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for url.
+   */
+  com.google.protobuf.ByteString getUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   *
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The kmsKeyName.
+   */
+  java.lang.String getKmsKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   *
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  com.google.protobuf.ByteString getKmsKeyNameBytes();
 }

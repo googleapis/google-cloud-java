@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.stub;
 
+import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListLocationsPagedResponse;
 import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListQueuesPagedResponse;
 import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListTasksPagedResponse;
 
@@ -25,8 +26,15 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest;
+import com.google.cloud.tasks.v2beta2.BufferTaskRequest;
+import com.google.cloud.tasks.v2beta2.BufferTaskResponse;
 import com.google.cloud.tasks.v2beta2.CancelLeaseRequest;
 import com.google.cloud.tasks.v2beta2.CreateQueueRequest;
 import com.google.cloud.tasks.v2beta2.CreateTaskRequest;
@@ -48,7 +56,7 @@ import com.google.cloud.tasks.v2beta2.ResumeQueueRequest;
 import com.google.cloud.tasks.v2beta2.RunTaskRequest;
 import com.google.cloud.tasks.v2beta2.Task;
 import com.google.cloud.tasks.v2beta2.UpdateQueueRequest;
-import com.google.common.collect.ImmutableMap;
+import com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -135,6 +143,16 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ResumeQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<UploadQueueYamlRequest, Empty>
+      uploadQueueYamlMethodDescriptor =
+          MethodDescriptor.<UploadQueueYamlRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/UploadQueueYaml")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UploadQueueYamlRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
@@ -239,6 +257,34 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<BufferTaskRequest, BufferTaskResponse>
+      bufferTaskMethodDescriptor =
+          MethodDescriptor.<BufferTaskRequest, BufferTaskResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/BufferTask")
+              .setRequestMarshaller(ProtoUtils.marshaller(BufferTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(BufferTaskResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<ListQueuesRequest, ListQueuesResponse> listQueuesCallable;
   private final UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable;
   private final UnaryCallable<GetQueueRequest, Queue> getQueueCallable;
@@ -248,6 +294,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   private final UnaryCallable<PurgeQueueRequest, Queue> purgeQueueCallable;
   private final UnaryCallable<PauseQueueRequest, Queue> pauseQueueCallable;
   private final UnaryCallable<ResumeQueueRequest, Queue> resumeQueueCallable;
+  private final UnaryCallable<UploadQueueYamlRequest, Empty> uploadQueueYamlCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -262,6 +309,11 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   private final UnaryCallable<RenewLeaseRequest, Task> renewLeaseCallable;
   private final UnaryCallable<CancelLeaseRequest, Task> cancelLeaseCallable;
   private final UnaryCallable<RunTaskRequest, Task> runTaskCallable;
+  private final UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -310,9 +362,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(listQueuesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetQueueRequest, Queue> getQueueTransportSettings =
@@ -320,9 +372,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(getQueueMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateQueueRequest, Queue> createQueueTransportSettings =
@@ -330,9 +382,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(createQueueMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateQueueRequest, Queue> updateQueueTransportSettings =
@@ -340,9 +392,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(updateQueueMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("queue.name", String.valueOf(request.getQueue().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("queue.name", String.valueOf(request.getQueue().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteQueueRequest, Empty> deleteQueueTransportSettings =
@@ -350,9 +402,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(deleteQueueMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PurgeQueueRequest, Queue> purgeQueueTransportSettings =
@@ -360,9 +412,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(purgeQueueMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PauseQueueRequest, Queue> pauseQueueTransportSettings =
@@ -370,9 +422,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(pauseQueueMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResumeQueueRequest, Queue> resumeQueueTransportSettings =
@@ -380,19 +432,23 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(resumeQueueMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
+            .build();
+    GrpcCallSettings<UploadQueueYamlRequest, Empty> uploadQueueYamlTransportSettings =
+        GrpcCallSettings.<UploadQueueYamlRequest, Empty>newBuilder()
+            .setMethodDescriptor(uploadQueueYamlMethodDescriptor)
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -400,9 +456,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -411,9 +467,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
@@ -421,9 +477,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(listTasksMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetTaskRequest, Task> getTaskTransportSettings =
@@ -431,9 +487,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(getTaskMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateTaskRequest, Task> createTaskTransportSettings =
@@ -441,9 +497,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(createTaskMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteTaskRequest, Empty> deleteTaskTransportSettings =
@@ -451,9 +507,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(deleteTaskMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<LeaseTasksRequest, LeaseTasksResponse> leaseTasksTransportSettings =
@@ -461,9 +517,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(leaseTasksMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<AcknowledgeTaskRequest, Empty> acknowledgeTaskTransportSettings =
@@ -471,9 +527,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(acknowledgeTaskMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RenewLeaseRequest, Task> renewLeaseTransportSettings =
@@ -481,9 +537,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(renewLeaseMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CancelLeaseRequest, Task> cancelLeaseTransportSettings =
@@ -491,9 +547,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(cancelLeaseMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RunTaskRequest, Task> runTaskTransportSettings =
@@ -501,9 +557,40 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
             .setMethodDescriptor(runTaskMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<BufferTaskRequest, BufferTaskResponse> bufferTaskTransportSettings =
+        GrpcCallSettings.<BufferTaskRequest, BufferTaskResponse>newBuilder()
+            .setMethodDescriptor(bufferTaskMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("queue", String.valueOf(request.getQueue()));
+                  builder.add("task_id", String.valueOf(request.getTaskId()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 
@@ -534,6 +621,9 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
     this.resumeQueueCallable =
         callableFactory.createUnaryCallable(
             resumeQueueTransportSettings, settings.resumeQueueSettings(), clientContext);
+    this.uploadQueueYamlCallable =
+        callableFactory.createUnaryCallable(
+            uploadQueueYamlTransportSettings, settings.uploadQueueYamlSettings(), clientContext);
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
@@ -575,6 +665,18 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
     this.runTaskCallable =
         callableFactory.createUnaryCallable(
             runTaskTransportSettings, settings.runTaskSettings(), clientContext);
+    this.bufferTaskCallable =
+        callableFactory.createUnaryCallable(
+            bufferTaskTransportSettings, settings.bufferTaskSettings(), clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -627,6 +729,11 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   @Override
   public UnaryCallable<ResumeQueueRequest, Queue> resumeQueueCallable() {
     return resumeQueueCallable;
+  }
+
+  @Override
+  public UnaryCallable<UploadQueueYamlRequest, Empty> uploadQueueYamlCallable() {
+    return uploadQueueYamlCallable;
   }
 
   @Override
@@ -693,6 +800,27 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   @Override
   public UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     return runTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable() {
+    return bufferTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

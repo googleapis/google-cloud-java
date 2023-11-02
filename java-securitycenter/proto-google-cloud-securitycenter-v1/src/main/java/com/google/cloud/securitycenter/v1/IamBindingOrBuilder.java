@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,8 +79,8 @@ public interface IamBindingOrBuilder
    *
    *
    * <pre>
-   * A single identity requesting access for a Cloud Platform resource,
-   * e.g. "foo&#64;google.com".
+   * A single identity requesting access for a Cloud Platform resource, for
+   * example, "foo&#64;google.com".
    * </pre>
    *
    * <code>string member = 3;</code>
@@ -92,8 +92,8 @@ public interface IamBindingOrBuilder
    *
    *
    * <pre>
-   * A single identity requesting access for a Cloud Platform resource,
-   * e.g. "foo&#64;google.com".
+   * A single identity requesting access for a Cloud Platform resource, for
+   * example, "foo&#64;google.com".
    * </pre>
    *
    * <code>string member = 3;</code>

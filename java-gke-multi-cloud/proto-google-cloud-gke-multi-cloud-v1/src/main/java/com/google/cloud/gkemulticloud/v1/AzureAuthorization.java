@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
     return new AzureAuthorization();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AzureAuthorization_descriptor;
@@ -78,6 +73,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
    * Required. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
+   *
    * For more info on RBAC, see
    * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
    * </pre>
@@ -97,6 +93,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
    * Required. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
+   *
    * For more info on RBAC, see
    * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
    * </pre>
@@ -117,6 +114,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
    * Required. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
+   *
    * For more info on RBAC, see
    * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
    * </pre>
@@ -136,6 +134,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
    * Required. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
+   *
    * For more info on RBAC, see
    * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
    * </pre>
@@ -155,6 +154,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
    * Required. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
+   *
    * For more info on RBAC, see
    * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
    * </pre>
@@ -585,6 +585,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -607,6 +608,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -629,6 +631,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -651,6 +654,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -680,6 +684,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -706,6 +711,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -734,6 +740,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -763,6 +770,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -789,6 +797,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -815,6 +824,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -841,6 +851,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -866,6 +877,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -891,6 +903,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -910,6 +923,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -933,6 +947,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -956,6 +971,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -975,6 +991,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>
@@ -996,6 +1013,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
      * Required. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
+     *
      * For more info on RBAC, see
      * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
      * </pre>

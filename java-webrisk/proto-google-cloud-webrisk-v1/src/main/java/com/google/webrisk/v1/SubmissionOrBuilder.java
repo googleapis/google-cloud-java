@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ public interface SubmissionOrBuilder
    *
    *
    * <pre>
-   * Required. The URI that is being reported for malicious content to be analyzed.
+   * Required. The URI that is being reported for malicious content to be
+   * analyzed.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39,7 +40,8 @@ public interface SubmissionOrBuilder
    *
    *
    * <pre>
-   * Required. The URI that is being reported for malicious content to be analyzed.
+   * Required. The URI that is being reported for malicious content to be
+   * analyzed.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -47,4 +49,87 @@ public interface SubmissionOrBuilder
    * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ThreatTypes found to be associated with the submitted URI
+   * after reviewing it. This might be empty if the URI was not added to any
+   * list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.webrisk.v1.ThreatType threat_types = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the threatTypes.
+   */
+  java.util.List<com.google.webrisk.v1.ThreatType> getThreatTypesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ThreatTypes found to be associated with the submitted URI
+   * after reviewing it. This might be empty if the URI was not added to any
+   * list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.webrisk.v1.ThreatType threat_types = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of threatTypes.
+   */
+  int getThreatTypesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ThreatTypes found to be associated with the submitted URI
+   * after reviewing it. This might be empty if the URI was not added to any
+   * list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.webrisk.v1.ThreatType threat_types = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The threatTypes at the given index.
+   */
+  com.google.webrisk.v1.ThreatType getThreatTypes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ThreatTypes found to be associated with the submitted URI
+   * after reviewing it. This might be empty if the URI was not added to any
+   * list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.webrisk.v1.ThreatType threat_types = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for threatTypes.
+   */
+  java.util.List<java.lang.Integer> getThreatTypesValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ThreatTypes found to be associated with the submitted URI
+   * after reviewing it. This might be empty if the URI was not added to any
+   * list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.webrisk.v1.ThreatType threat_types = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of threatTypes at the given index.
+   */
+  int getThreatTypesValue(int index);
 }

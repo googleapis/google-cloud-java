@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     return new CommonFeatureSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1.FeatureProto
         .internal_static_google_cloud_gkehub_v1_CommonFeatureSpec_descriptor;
@@ -66,6 +61,8 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
   }
 
   private int featureSpecCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object featureSpec_;
 
   public enum FeatureSpecCase

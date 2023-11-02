@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,13 +24,13 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommendationengine.v1beta1.CreatePredictionApiKeyRegistrationRequest;
 import com.google.cloud.recommendationengine.v1beta1.DeletePredictionApiKeyRegistrationRequest;
 import com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsRequest;
 import com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsResponse;
 import com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -157,9 +157,9 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                 .setMethodDescriptor(createPredictionApiKeyRegistrationMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -172,9 +172,9 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                 .setMethodDescriptor(listPredictionApiKeyRegistrationsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
@@ -183,9 +183,9 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                 .setMethodDescriptor(deletePredictionApiKeyRegistrationMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -297,6 +297,5 @@ public interface LabelImageRequestOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature getFeature();
 
-  public com.google.cloud.datalabeling.v1beta1.LabelImageRequest.RequestConfigCase
-      getRequestConfigCase();
+  com.google.cloud.datalabeling.v1beta1.LabelImageRequest.RequestConfigCase getRequestConfigCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
     return new BatchDocumentInputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3beta1.TranslationServiceProto
         .internal_static_google_cloud_translation_v3beta1_BatchDocumentInputConfig_descriptor;
@@ -66,6 +61,8 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -118,6 +115,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
    * This can be a single file (for example,
    * `gs://translation-test/input.docx`) or a wildcard (for example,
    * `gs://translation-test/&#42;`).
+   *
    * File mime type is determined based on extension. Supported mime type
    * includes:
    * - `pdf`, application/pdf
@@ -127,6 +125,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
    * application/vnd.openxmlformats-officedocument.presentationml.presentation
    * - `xlsx`,
    * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+   *
    * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
    * The max file size to support for `.pdf` is 1GB and the max page limit is
    * 1000 pages.
@@ -149,6 +148,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
    * This can be a single file (for example,
    * `gs://translation-test/input.docx`) or a wildcard (for example,
    * `gs://translation-test/&#42;`).
+   *
    * File mime type is determined based on extension. Supported mime type
    * includes:
    * - `pdf`, application/pdf
@@ -158,6 +158,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
    * application/vnd.openxmlformats-officedocument.presentationml.presentation
    * - `xlsx`,
    * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+   *
    * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
    * The max file size to support for `.pdf` is 1GB and the max page limit is
    * 1000 pages.
@@ -183,6 +184,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
    * This can be a single file (for example,
    * `gs://translation-test/input.docx`) or a wildcard (for example,
    * `gs://translation-test/&#42;`).
+   *
    * File mime type is determined based on extension. Supported mime type
    * includes:
    * - `pdf`, application/pdf
@@ -192,6 +194,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
    * application/vnd.openxmlformats-officedocument.presentationml.presentation
    * - `xlsx`,
    * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+   *
    * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
    * The max file size to support for `.pdf` is 1GB and the max page limit is
    * 1000 pages.
@@ -610,6 +613,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * This can be a single file (for example,
      * `gs://translation-test/input.docx`) or a wildcard (for example,
      * `gs://translation-test/&#42;`).
+     *
      * File mime type is determined based on extension. Supported mime type
      * includes:
      * - `pdf`, application/pdf
@@ -619,6 +623,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+     *
      * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
      * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
@@ -641,6 +646,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * This can be a single file (for example,
      * `gs://translation-test/input.docx`) or a wildcard (for example,
      * `gs://translation-test/&#42;`).
+     *
      * File mime type is determined based on extension. Supported mime type
      * includes:
      * - `pdf`, application/pdf
@@ -650,6 +656,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+     *
      * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
      * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
@@ -682,6 +689,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * This can be a single file (for example,
      * `gs://translation-test/input.docx`) or a wildcard (for example,
      * `gs://translation-test/&#42;`).
+     *
      * File mime type is determined based on extension. Supported mime type
      * includes:
      * - `pdf`, application/pdf
@@ -691,6 +699,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+     *
      * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
      * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
@@ -720,6 +729,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * This can be a single file (for example,
      * `gs://translation-test/input.docx`) or a wildcard (for example,
      * `gs://translation-test/&#42;`).
+     *
      * File mime type is determined based on extension. Supported mime type
      * includes:
      * - `pdf`, application/pdf
@@ -729,6 +739,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+     *
      * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
      * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
@@ -756,6 +767,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * This can be a single file (for example,
      * `gs://translation-test/input.docx`) or a wildcard (for example,
      * `gs://translation-test/&#42;`).
+     *
      * File mime type is determined based on extension. Supported mime type
      * includes:
      * - `pdf`, application/pdf
@@ -765,6 +777,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+     *
      * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
      * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
@@ -804,6 +817,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * This can be a single file (for example,
      * `gs://translation-test/input.docx`) or a wildcard (for example,
      * `gs://translation-test/&#42;`).
+     *
      * File mime type is determined based on extension. Supported mime type
      * includes:
      * - `pdf`, application/pdf
@@ -813,6 +827,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+     *
      * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
      * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
@@ -845,6 +860,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * This can be a single file (for example,
      * `gs://translation-test/input.docx`) or a wildcard (for example,
      * `gs://translation-test/&#42;`).
+     *
      * File mime type is determined based on extension. Supported mime type
      * includes:
      * - `pdf`, application/pdf
@@ -854,6 +870,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+     *
      * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
      * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
@@ -873,6 +890,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * This can be a single file (for example,
      * `gs://translation-test/input.docx`) or a wildcard (for example,
      * `gs://translation-test/&#42;`).
+     *
      * File mime type is determined based on extension. Supported mime type
      * includes:
      * - `pdf`, application/pdf
@@ -882,6 +900,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+     *
      * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
      * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.
@@ -909,6 +928,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * This can be a single file (for example,
      * `gs://translation-test/input.docx`) or a wildcard (for example,
      * `gs://translation-test/&#42;`).
+     *
      * File mime type is determined based on extension. Supported mime type
      * includes:
      * - `pdf`, application/pdf
@@ -918,6 +938,7 @@ public final class BatchDocumentInputConfig extends com.google.protobuf.Generate
      * application/vnd.openxmlformats-officedocument.presentationml.presentation
      * - `xlsx`,
      * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+     *
      * The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
      * The max file size to support for `.pdf` is 1GB and the max page limit is
      * 1000 pages.

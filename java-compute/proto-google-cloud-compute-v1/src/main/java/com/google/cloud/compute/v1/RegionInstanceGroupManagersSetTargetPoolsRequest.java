@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
 
   private RegionInstanceGroupManagersSetTargetPoolsRequest() {
     fingerprint_ = "";
-    targetPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    targetPools_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RegionInstanceGroupManagersSetTargetPoolsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -140,7 +135,8 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
   public static final int TARGET_POOLS_FIELD_NUMBER = 336072617;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList targetPools_;
+  private com.google.protobuf.LazyStringArrayList targetPools_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -429,8 +425,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       super.clear();
       bitField0_ = 0;
       fingerprint_ = "";
-      targetPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      targetPools_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -462,21 +457,11 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
         buildPartial() {
       com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest result =
           new com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        targetPools_ = targetPools_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.targetPools_ = targetPools_;
     }
 
     private void buildPartial0(
@@ -486,6 +471,10 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.fingerprint_ = fingerprint_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        targetPools_.makeImmutable();
+        result.targetPools_ = targetPools_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -548,7 +537,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       if (!other.targetPools_.isEmpty()) {
         if (targetPools_.isEmpty()) {
           targetPools_ = other.targetPools_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureTargetPoolsIsMutable();
           targetPools_.addAll(other.targetPools_);
@@ -733,14 +722,14 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       return this;
     }
 
-    private com.google.protobuf.LazyStringList targetPools_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList targetPools_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTargetPoolsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!targetPools_.isModifiable()) {
         targetPools_ = new com.google.protobuf.LazyStringArrayList(targetPools_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -754,7 +743,8 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * @return A list containing the targetPools.
      */
     public com.google.protobuf.ProtocolStringList getTargetPoolsList() {
-      return targetPools_.getUnmodifiableView();
+      targetPools_.makeImmutable();
+      return targetPools_;
     }
     /**
      *
@@ -819,6 +809,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       }
       ensureTargetPoolsIsMutable();
       targetPools_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -840,6 +831,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       }
       ensureTargetPoolsIsMutable();
       targetPools_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -858,6 +850,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
     public Builder addAllTargetPools(java.lang.Iterable<java.lang.String> values) {
       ensureTargetPoolsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetPools_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -873,8 +866,9 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
      * @return This builder for chaining.
      */
     public Builder clearTargetPools() {
-      targetPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      targetPools_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -897,6 +891,7 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest
       checkByteStringIsUtf8(value);
       ensureTargetPoolsIsMutable();
       targetPools_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

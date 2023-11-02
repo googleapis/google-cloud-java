@@ -16,8 +16,17 @@
             "CreateEnvironment": {
               "methods": ["createEnvironmentAsync", "createEnvironmentAsync", "createEnvironmentOperationCallable", "createEnvironmentCallable"]
             },
+            "DatabaseFailover": {
+              "methods": ["databaseFailoverAsync", "databaseFailoverOperationCallable", "databaseFailoverCallable"]
+            },
             "DeleteEnvironment": {
               "methods": ["deleteEnvironmentAsync", "deleteEnvironmentAsync", "deleteEnvironmentOperationCallable", "deleteEnvironmentCallable"]
+            },
+            "ExecuteAirflowCommand": {
+              "methods": ["executeAirflowCommand", "executeAirflowCommandCallable"]
+            },
+            "FetchDatabaseProperties": {
+              "methods": ["fetchDatabaseProperties", "fetchDatabasePropertiesCallable"]
             },
             "GetEnvironment": {
               "methods": ["getEnvironment", "getEnvironment", "getEnvironmentCallable"]
@@ -28,11 +37,17 @@
             "LoadSnapshot": {
               "methods": ["loadSnapshotAsync", "loadSnapshotOperationCallable", "loadSnapshotCallable"]
             },
+            "PollAirflowCommand": {
+              "methods": ["pollAirflowCommand", "pollAirflowCommandCallable"]
+            },
             "RestartWebServer": {
               "methods": ["restartWebServerAsync", "restartWebServerOperationCallable", "restartWebServerCallable"]
             },
             "SaveSnapshot": {
               "methods": ["saveSnapshotAsync", "saveSnapshotOperationCallable", "saveSnapshotCallable"]
+            },
+            "StopAirflowCommand": {
+              "methods": ["stopAirflowCommand", "stopAirflowCommandCallable"]
             },
             "UpdateEnvironment": {
               "methods": ["updateEnvironmentAsync", "updateEnvironmentAsync", "updateEnvironmentOperationCallable", "updateEnvironmentCallable"]

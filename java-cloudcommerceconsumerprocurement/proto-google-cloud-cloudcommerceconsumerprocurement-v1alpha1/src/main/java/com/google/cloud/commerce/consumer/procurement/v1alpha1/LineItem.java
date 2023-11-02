@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LineItem();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -253,9 +248,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Changes made on the item that are not pending anymore which might be
-   * because they already took effect, were reverted by the customer, or were
-   * rejected by the partner. No more operations are allowed on these changes.
+   * Output only. Changes made on the item that are not pending anymore which
+   * might be because they already took effect, were reverted by the customer,
+   * or were rejected by the partner. No more operations are allowed on these
+   * changes.
    * </pre>
    *
    * <code>
@@ -271,9 +267,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Changes made on the item that are not pending anymore which might be
-   * because they already took effect, were reverted by the customer, or were
-   * rejected by the partner. No more operations are allowed on these changes.
+   * Output only. Changes made on the item that are not pending anymore which
+   * might be because they already took effect, were reverted by the customer,
+   * or were rejected by the partner. No more operations are allowed on these
+   * changes.
    * </pre>
    *
    * <code>
@@ -290,9 +287,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Changes made on the item that are not pending anymore which might be
-   * because they already took effect, were reverted by the customer, or were
-   * rejected by the partner. No more operations are allowed on these changes.
+   * Output only. Changes made on the item that are not pending anymore which
+   * might be because they already took effect, were reverted by the customer,
+   * or were rejected by the partner. No more operations are allowed on these
+   * changes.
    * </pre>
    *
    * <code>
@@ -307,9 +305,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Changes made on the item that are not pending anymore which might be
-   * because they already took effect, were reverted by the customer, or were
-   * rejected by the partner. No more operations are allowed on these changes.
+   * Output only. Changes made on the item that are not pending anymore which
+   * might be because they already took effect, were reverted by the customer,
+   * or were rejected by the partner. No more operations are allowed on these
+   * changes.
    * </pre>
    *
    * <code>
@@ -325,9 +324,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Changes made on the item that are not pending anymore which might be
-   * because they already took effect, were reverted by the customer, or were
-   * rejected by the partner. No more operations are allowed on these changes.
+   * Output only. Changes made on the item that are not pending anymore which
+   * might be because they already took effect, were reverted by the customer,
+   * or were rejected by the partner. No more operations are allowed on these
+   * changes.
    * </pre>
    *
    * <code>
@@ -1404,9 +1404,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1425,9 +1426,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1445,9 +1447,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1466,9 +1469,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1493,9 +1497,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1519,9 +1524,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1546,9 +1552,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1573,9 +1580,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1598,9 +1606,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1624,9 +1633,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1650,9 +1660,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1673,9 +1684,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1696,9 +1708,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1713,9 +1726,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1734,9 +1748,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1757,9 +1772,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1777,9 +1793,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>
@@ -1798,9 +1815,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Changes made on the item that are not pending anymore which might be
-     * because they already took effect, were reverted by the customer, or were
-     * rejected by the partner. No more operations are allowed on these changes.
+     * Output only. Changes made on the item that are not pending anymore which
+     * might be because they already took effect, were reverted by the customer,
+     * or were rejected by the partner. No more operations are allowed on these
+     * changes.
      * </pre>
      *
      * <code>

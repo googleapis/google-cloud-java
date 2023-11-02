@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
   }
 
   private StorageProperties() {
-    filePattern_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    filePattern_ = com.google.protobuf.LazyStringArrayList.emptyList();
     fileType_ = "";
   }
 
@@ -46,11 +46,6 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StorageProperties();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,13 +66,16 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
   public static final int FILE_PATTERN_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList filePattern_;
+  private com.google.protobuf.LazyStringArrayList filePattern_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Patterns to identify a set of files for this fileset.
+   *
    * Examples of a valid `file_pattern`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -108,7 +106,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Patterns to identify a set of files for this fileset.
+   *
    * Examples of a valid `file_pattern`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -139,7 +139,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Patterns to identify a set of files for this fileset.
+   *
    * Examples of a valid `file_pattern`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -171,7 +173,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Patterns to identify a set of files for this fileset.
+   *
    * Examples of a valid `file_pattern`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -464,8 +468,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      filePattern_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      filePattern_ = com.google.protobuf.LazyStringArrayList.emptyList();
       fileType_ = "";
       return this;
     }
@@ -494,7 +497,6 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datacatalog.v1.StorageProperties buildPartial() {
       com.google.cloud.datacatalog.v1.StorageProperties result =
           new com.google.cloud.datacatalog.v1.StorageProperties(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -502,17 +504,12 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.datacatalog.v1.StorageProperties result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        filePattern_ = filePattern_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.filePattern_ = filePattern_;
-    }
-
     private void buildPartial0(com.google.cloud.datacatalog.v1.StorageProperties result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        filePattern_.makeImmutable();
+        result.filePattern_ = filePattern_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.fileType_ = fileType_;
       }
@@ -567,7 +564,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       if (!other.filePattern_.isEmpty()) {
         if (filePattern_.isEmpty()) {
           filePattern_ = other.filePattern_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureFilePatternIsMutable();
           filePattern_.addAll(other.filePattern_);
@@ -637,21 +634,23 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList filePattern_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList filePattern_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFilePatternIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!filePattern_.isModifiable()) {
         filePattern_ = new com.google.protobuf.LazyStringArrayList(filePattern_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
      *
      * <pre>
      * Patterns to identify a set of files for this fileset.
+     *
      * Examples of a valid `file_pattern`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -675,14 +674,17 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
      * @return A list containing the filePattern.
      */
     public com.google.protobuf.ProtocolStringList getFilePatternList() {
-      return filePattern_.getUnmodifiableView();
+      filePattern_.makeImmutable();
+      return filePattern_;
     }
     /**
      *
      *
      * <pre>
      * Patterns to identify a set of files for this fileset.
+     *
      * Examples of a valid `file_pattern`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -713,7 +715,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Patterns to identify a set of files for this fileset.
+     *
      * Examples of a valid `file_pattern`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -745,7 +749,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Patterns to identify a set of files for this fileset.
+     *
      * Examples of a valid `file_pattern`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -777,7 +783,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Patterns to identify a set of files for this fileset.
+     *
      * Examples of a valid `file_pattern`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -808,6 +816,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       }
       ensureFilePatternIsMutable();
       filePattern_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -816,7 +825,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Patterns to identify a set of files for this fileset.
+     *
      * Examples of a valid `file_pattern`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -846,6 +857,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       }
       ensureFilePatternIsMutable();
       filePattern_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -854,7 +866,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Patterns to identify a set of files for this fileset.
+     *
      * Examples of a valid `file_pattern`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -881,6 +895,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
     public Builder addAllFilePattern(java.lang.Iterable<java.lang.String> values) {
       ensureFilePatternIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, filePattern_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -889,7 +904,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Patterns to identify a set of files for this fileset.
+     *
      * Examples of a valid `file_pattern`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -913,8 +930,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFilePattern() {
-      filePattern_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      filePattern_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -923,7 +941,9 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Patterns to identify a set of files for this fileset.
+     *
      * Examples of a valid `file_pattern`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in the `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in the `bucket_name/dir`
@@ -954,6 +974,7 @@ public final class StorageProperties extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureFilePatternIsMutable();
       filePattern_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

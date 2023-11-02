@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.reservation.v1.Assignment;
 import com.google.cloud.bigquery.reservation.v1.BiReservation;
@@ -984,33 +985,70 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
         HttpJsonCallSettings.<CreateReservationRequest, Reservation>newBuilder()
             .setMethodDescriptor(createReservationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListReservationsRequest, ListReservationsResponse>
         listReservationsTransportSettings =
             HttpJsonCallSettings.<ListReservationsRequest, ListReservationsResponse>newBuilder()
                 .setMethodDescriptor(listReservationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetReservationRequest, Reservation> getReservationTransportSettings =
         HttpJsonCallSettings.<GetReservationRequest, Reservation>newBuilder()
             .setMethodDescriptor(getReservationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteReservationRequest, Empty> deleteReservationTransportSettings =
         HttpJsonCallSettings.<DeleteReservationRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteReservationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateReservationRequest, Reservation> updateReservationTransportSettings =
         HttpJsonCallSettings.<UpdateReservationRequest, Reservation>newBuilder()
             .setMethodDescriptor(updateReservationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "reservation.name", String.valueOf(request.getReservation().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateCapacityCommitmentRequest, CapacityCommitment>
         createCapacityCommitmentTransportSettings =
             HttpJsonCallSettings.<CreateCapacityCommitmentRequest, CapacityCommitment>newBuilder()
                 .setMethodDescriptor(createCapacityCommitmentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
         listCapacityCommitmentsTransportSettings =
@@ -1018,24 +1056,50 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                 .<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>newBuilder()
                 .setMethodDescriptor(listCapacityCommitmentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetCapacityCommitmentRequest, CapacityCommitment>
         getCapacityCommitmentTransportSettings =
             HttpJsonCallSettings.<GetCapacityCommitmentRequest, CapacityCommitment>newBuilder()
                 .setMethodDescriptor(getCapacityCommitmentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteCapacityCommitmentRequest, Empty>
         deleteCapacityCommitmentTransportSettings =
             HttpJsonCallSettings.<DeleteCapacityCommitmentRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteCapacityCommitmentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateCapacityCommitmentRequest, CapacityCommitment>
         updateCapacityCommitmentTransportSettings =
             HttpJsonCallSettings.<UpdateCapacityCommitmentRequest, CapacityCommitment>newBuilder()
                 .setMethodDescriptor(updateCapacityCommitmentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "capacity_commitment.name",
+                          String.valueOf(request.getCapacityCommitment().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SplitCapacityCommitmentRequest, SplitCapacityCommitmentResponse>
         splitCapacityCommitmentTransportSettings =
@@ -1043,34 +1107,70 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                 .<SplitCapacityCommitmentRequest, SplitCapacityCommitmentResponse>newBuilder()
                 .setMethodDescriptor(splitCapacityCommitmentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<MergeCapacityCommitmentsRequest, CapacityCommitment>
         mergeCapacityCommitmentsTransportSettings =
             HttpJsonCallSettings.<MergeCapacityCommitmentsRequest, CapacityCommitment>newBuilder()
                 .setMethodDescriptor(mergeCapacityCommitmentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateAssignmentRequest, Assignment> createAssignmentTransportSettings =
         HttpJsonCallSettings.<CreateAssignmentRequest, Assignment>newBuilder()
             .setMethodDescriptor(createAssignmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAssignmentsRequest, ListAssignmentsResponse>
         listAssignmentsTransportSettings =
             HttpJsonCallSettings.<ListAssignmentsRequest, ListAssignmentsResponse>newBuilder()
                 .setMethodDescriptor(listAssignmentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentTransportSettings =
         HttpJsonCallSettings.<DeleteAssignmentRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAssignmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SearchAssignmentsRequest, SearchAssignmentsResponse>
         searchAssignmentsTransportSettings =
             HttpJsonCallSettings.<SearchAssignmentsRequest, SearchAssignmentsResponse>newBuilder()
                 .setMethodDescriptor(searchAssignmentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
         searchAllAssignmentsTransportSettings =
@@ -1078,27 +1178,59 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                 .<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>newBuilder()
                 .setMethodDescriptor(searchAllAssignmentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<MoveAssignmentRequest, Assignment> moveAssignmentTransportSettings =
         HttpJsonCallSettings.<MoveAssignmentRequest, Assignment>newBuilder()
             .setMethodDescriptor(moveAssignmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateAssignmentRequest, Assignment> updateAssignmentTransportSettings =
         HttpJsonCallSettings.<UpdateAssignmentRequest, Assignment>newBuilder()
             .setMethodDescriptor(updateAssignmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("assignment.name", String.valueOf(request.getAssignment().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetBiReservationRequest, BiReservation> getBiReservationTransportSettings =
         HttpJsonCallSettings.<GetBiReservationRequest, BiReservation>newBuilder()
             .setMethodDescriptor(getBiReservationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateBiReservationRequest, BiReservation>
         updateBiReservationTransportSettings =
             HttpJsonCallSettings.<UpdateBiReservationRequest, BiReservation>newBuilder()
                 .setMethodDescriptor(updateBiReservationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "bi_reservation.name",
+                          String.valueOf(request.getBiReservation().getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createReservationCallable =

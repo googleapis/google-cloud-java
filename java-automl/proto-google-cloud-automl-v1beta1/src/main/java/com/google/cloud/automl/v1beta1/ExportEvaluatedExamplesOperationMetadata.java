@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExportEvaluatedExamplesOperationMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -105,6 +100,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
    * <pre>
    * Further describes the output of the evaluated examples export.
    * Supplements
+   *
    * [ExportEvaluatedExamplesOutputConfig][google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig].
    * </pre>
    *
@@ -131,11 +127,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExportEvaluatedExamplesOutputInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -402,6 +393,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
      * <pre>
      * Further describes the output of the evaluated examples export.
      * Supplements
+     *
      * [ExportEvaluatedExamplesOutputConfig][google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig].
      * </pre>
      *

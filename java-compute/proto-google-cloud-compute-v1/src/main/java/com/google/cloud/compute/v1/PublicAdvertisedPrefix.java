@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,11 +55,6 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PublicAdvertisedPrefix();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -487,7 +482,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The IPv4 address to be used for reverse DNS verification.
+   * The address to be used for reverse DNS verification.
    * </pre>
    *
    * <code>optional string dns_verification_ip = 241011381;</code>
@@ -502,7 +497,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The IPv4 address to be used for reverse DNS verification.
+   * The address to be used for reverse DNS verification.
    * </pre>
    *
    * <code>optional string dns_verification_ip = 241011381;</code>
@@ -525,7 +520,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The IPv4 address to be used for reverse DNS verification.
+   * The address to be used for reverse DNS verification.
    * </pre>
    *
    * <code>optional string dns_verification_ip = 241011381;</code>
@@ -652,7 +647,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -667,7 +662,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -690,7 +685,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -2102,7 +2097,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address to be used for reverse DNS verification.
+     * The address to be used for reverse DNS verification.
      * </pre>
      *
      * <code>optional string dns_verification_ip = 241011381;</code>
@@ -2116,7 +2111,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address to be used for reverse DNS verification.
+     * The address to be used for reverse DNS verification.
      * </pre>
      *
      * <code>optional string dns_verification_ip = 241011381;</code>
@@ -2138,7 +2133,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address to be used for reverse DNS verification.
+     * The address to be used for reverse DNS verification.
      * </pre>
      *
      * <code>optional string dns_verification_ip = 241011381;</code>
@@ -2160,7 +2155,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address to be used for reverse DNS verification.
+     * The address to be used for reverse DNS verification.
      * </pre>
      *
      * <code>optional string dns_verification_ip = 241011381;</code>
@@ -2181,7 +2176,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address to be used for reverse DNS verification.
+     * The address to be used for reverse DNS verification.
      * </pre>
      *
      * <code>optional string dns_verification_ip = 241011381;</code>
@@ -2198,7 +2193,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address to be used for reverse DNS verification.
+     * The address to be used for reverse DNS verification.
      * </pre>
      *
      * <code>optional string dns_verification_ip = 241011381;</code>
@@ -2410,7 +2405,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -2424,7 +2419,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -2446,7 +2441,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -2468,7 +2463,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -2489,7 +2484,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -2506,7 +2501,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -238,4 +238,104 @@ public interface LunOrBuilder
    * @return The bytes for wwid.
    */
   com.google.protobuf.ByteString getWwidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which LUN will be fully deleted.
+   * It is filled only for LUNs in COOL_OFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  boolean hasExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which LUN will be fully deleted.
+   * It is filled only for LUNs in COOL_OFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The expireTime.
+   */
+  com.google.protobuf.Timestamp getExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which LUN will be fully deleted.
+   * It is filled only for LUNs in COOL_OFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Lun is attached to.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the instances.
+   */
+  java.util.List<java.lang.String> getInstancesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Lun is attached to.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of instances.
+   */
+  int getInstancesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Lun is attached to.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The instances at the given index.
+   */
+  java.lang.String getInstances(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Lun is attached to.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the instances at the given index.
+   */
+  com.google.protobuf.ByteString getInstancesBytes(int index);
 }

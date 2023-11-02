@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface QueryListOrBuilder
    * with a semicolon. Multiple queries can be specified in one
    * string by separating each with a semicolon. Here is an example of a
    * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+   *
    *     "hiveJob": {
    *       "queryList": {
    *         "queries": [
@@ -55,6 +56,7 @@ public interface QueryListOrBuilder
    * with a semicolon. Multiple queries can be specified in one
    * string by separating each with a semicolon. Here is an example of a
    * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+   *
    *     "hiveJob": {
    *       "queryList": {
    *         "queries": [
@@ -79,6 +81,7 @@ public interface QueryListOrBuilder
    * with a semicolon. Multiple queries can be specified in one
    * string by separating each with a semicolon. Here is an example of a
    * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+   *
    *     "hiveJob": {
    *       "queryList": {
    *         "queries": [
@@ -104,6 +107,7 @@ public interface QueryListOrBuilder
    * with a semicolon. Multiple queries can be specified in one
    * string by separating each with a semicolon. Here is an example of a
    * Dataproc API snippet that uses a QueryList to specify a HiveJob:
+   *
    *     "hiveJob": {
    *       "queryList": {
    *         "queries": [

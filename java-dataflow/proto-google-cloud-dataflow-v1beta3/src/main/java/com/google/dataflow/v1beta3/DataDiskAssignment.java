@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
 
   private DataDiskAssignment() {
     vmInstance_ = "";
-    dataDisks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    dataDisks_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DataDiskAssignment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -124,7 +119,8 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
   public static final int DATA_DISKS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList dataDisks_;
+  private com.google.protobuf.LazyStringArrayList dataDisks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -411,8 +407,7 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       vmInstance_ = "";
-      dataDisks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      dataDisks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -440,7 +435,6 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
     public com.google.dataflow.v1beta3.DataDiskAssignment buildPartial() {
       com.google.dataflow.v1beta3.DataDiskAssignment result =
           new com.google.dataflow.v1beta3.DataDiskAssignment(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -448,18 +442,14 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.DataDiskAssignment result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        dataDisks_ = dataDisks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.dataDisks_ = dataDisks_;
-    }
-
     private void buildPartial0(com.google.dataflow.v1beta3.DataDiskAssignment result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.vmInstance_ = vmInstance_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        dataDisks_.makeImmutable();
+        result.dataDisks_ = dataDisks_;
       }
     }
 
@@ -516,7 +506,7 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       if (!other.dataDisks_.isEmpty()) {
         if (dataDisks_.isEmpty()) {
           dataDisks_ = other.dataDisks_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureDataDisksIsMutable();
           dataDisks_.addAll(other.dataDisks_);
@@ -692,14 +682,14 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.LazyStringList dataDisks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList dataDisks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDataDisksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!dataDisks_.isModifiable()) {
         dataDisks_ = new com.google.protobuf.LazyStringArrayList(dataDisks_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -716,7 +706,8 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
      * @return A list containing the dataDisks.
      */
     public com.google.protobuf.ProtocolStringList getDataDisksList() {
-      return dataDisks_.getUnmodifiableView();
+      dataDisks_.makeImmutable();
+      return dataDisks_;
     }
     /**
      *
@@ -793,6 +784,7 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       }
       ensureDataDisksIsMutable();
       dataDisks_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -817,6 +809,7 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       }
       ensureDataDisksIsMutable();
       dataDisks_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -838,6 +831,7 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
     public Builder addAllDataDisks(java.lang.Iterable<java.lang.String> values) {
       ensureDataDisksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataDisks_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -856,8 +850,9 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDataDisks() {
-      dataDisks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      dataDisks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -883,6 +878,7 @@ public final class DataDiskAssignment extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureDataDisksIsMutable();
       dataDisks_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

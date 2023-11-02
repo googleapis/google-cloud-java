@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,6 +116,7 @@ public interface CreateTransferConfigRequestOrBuilder
    * returned by ListDataSources method.
    * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
    * method.
+   *
    * Note that this should not be set when `service_account_name` is used to
    * create the transfer config.
    * </pre>
@@ -140,6 +141,7 @@ public interface CreateTransferConfigRequestOrBuilder
    * returned by ListDataSources method.
    * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
    * method.
+   *
    * Note that this should not be set when `service_account_name` is used to
    * create the transfer config.
    * </pre>
@@ -165,6 +167,7 @@ public interface CreateTransferConfigRequestOrBuilder
    * returned by ListDataSources method.
    * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
    * method.
+   *
    * Note that this should not be set when `service_account_name` is used to
    * create the transfer config.
    * </pre>
@@ -189,6 +192,7 @@ public interface CreateTransferConfigRequestOrBuilder
    * returned by ListDataSources method.
    * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
    * method.
+   *
    * Note that this should not be set when `service_account_name` is used to
    * create the transfer config.
    * </pre>
@@ -207,6 +211,7 @@ public interface CreateTransferConfigRequestOrBuilder
    * will be created with this service account's credentials. It requires that
    * the requesting user calling this API has permissions to act as this service
    * account.
+   *
    * Note that not all data sources support service account credentials when
    * creating a transfer config. For the latest list of data sources, read about
    * [using service
@@ -226,6 +231,7 @@ public interface CreateTransferConfigRequestOrBuilder
    * will be created with this service account's credentials. It requires that
    * the requesting user calling this API has permissions to act as this service
    * account.
+   *
    * Note that not all data sources support service account credentials when
    * creating a transfer config. For the latest list of data sources, read about
    * [using service

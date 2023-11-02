@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -280,4 +280,39 @@ public interface AllocationPolicyOrBuilder
    * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
    */
   com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicyOrBuilder getNetworkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The placement policy.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.AllocationPolicy.PlacementPolicy placement = 10;</code>
+   *
+   * @return Whether the placement field is set.
+   */
+  boolean hasPlacement();
+  /**
+   *
+   *
+   * <pre>
+   * The placement policy.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.AllocationPolicy.PlacementPolicy placement = 10;</code>
+   *
+   * @return The placement.
+   */
+  com.google.cloud.batch.v1.AllocationPolicy.PlacementPolicy getPlacement();
+  /**
+   *
+   *
+   * <pre>
+   * The placement policy.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.AllocationPolicy.PlacementPolicy placement = 10;</code>
+   */
+  com.google.cloud.batch.v1.AllocationPolicy.PlacementPolicyOrBuilder getPlacementOrBuilder();
 }

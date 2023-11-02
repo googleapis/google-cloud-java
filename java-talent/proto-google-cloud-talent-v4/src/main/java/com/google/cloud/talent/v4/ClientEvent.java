@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,11 +53,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     return new ClientEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4.EventProto
         .internal_static_google_cloud_talent_v4_ClientEvent_descriptor;
@@ -74,6 +69,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int eventCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object event_;
 
   public enum EventCase
@@ -126,6 +123,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Strongly recommended for the best service experience.
+   *
    * A unique ID generated in the API responses. It can be found in
    * [ResponseMetadata.request_id][google.cloud.talent.v4.ResponseMetadata.request_id].
    * </pre>
@@ -151,6 +149,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Strongly recommended for the best service experience.
+   *
    * A unique ID generated in the API responses. It can be found in
    * [ResponseMetadata.request_id][google.cloud.talent.v4.ResponseMetadata.request_id].
    * </pre>
@@ -877,6 +876,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Strongly recommended for the best service experience.
+     *
      * A unique ID generated in the API responses. It can be found in
      * [ResponseMetadata.request_id][google.cloud.talent.v4.ResponseMetadata.request_id].
      * </pre>
@@ -901,6 +901,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Strongly recommended for the best service experience.
+     *
      * A unique ID generated in the API responses. It can be found in
      * [ResponseMetadata.request_id][google.cloud.talent.v4.ResponseMetadata.request_id].
      * </pre>
@@ -925,6 +926,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Strongly recommended for the best service experience.
+     *
      * A unique ID generated in the API responses. It can be found in
      * [ResponseMetadata.request_id][google.cloud.talent.v4.ResponseMetadata.request_id].
      * </pre>
@@ -948,6 +950,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Strongly recommended for the best service experience.
+     *
      * A unique ID generated in the API responses. It can be found in
      * [ResponseMetadata.request_id][google.cloud.talent.v4.ResponseMetadata.request_id].
      * </pre>
@@ -967,6 +970,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Strongly recommended for the best service experience.
+     *
      * A unique ID generated in the API responses. It can be found in
      * [ResponseMetadata.request_id][google.cloud.talent.v4.ResponseMetadata.request_id].
      * </pre>

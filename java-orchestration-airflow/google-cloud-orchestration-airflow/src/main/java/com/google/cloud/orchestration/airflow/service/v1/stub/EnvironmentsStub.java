@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,16 +22,26 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.DatabaseFailoverRequest;
+import com.google.cloud.orchestration.airflow.service.v1.DatabaseFailoverResponse;
 import com.google.cloud.orchestration.airflow.service.v1.DeleteEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.Environment;
+import com.google.cloud.orchestration.airflow.service.v1.ExecuteAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1.ExecuteAirflowCommandResponse;
+import com.google.cloud.orchestration.airflow.service.v1.FetchDatabasePropertiesRequest;
+import com.google.cloud.orchestration.airflow.service.v1.FetchDatabasePropertiesResponse;
 import com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse;
 import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.OperationMetadata;
+import com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse;
+import com.google.cloud.orchestration.airflow.service.v1.StopAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1.StopAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -99,6 +109,21 @@ public abstract class EnvironmentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteEnvironmentCallable()");
   }
 
+  public UnaryCallable<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+      executeAirflowCommandCallable() {
+    throw new UnsupportedOperationException("Not implemented: executeAirflowCommandCallable()");
+  }
+
+  public UnaryCallable<StopAirflowCommandRequest, StopAirflowCommandResponse>
+      stopAirflowCommandCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopAirflowCommandCallable()");
+  }
+
+  public UnaryCallable<PollAirflowCommandRequest, PollAirflowCommandResponse>
+      pollAirflowCommandCallable() {
+    throw new UnsupportedOperationException("Not implemented: pollAirflowCommandCallable()");
+  }
+
   public OperationCallable<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
       saveSnapshotOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: saveSnapshotOperationCallable()");
@@ -115,6 +140,20 @@ public abstract class EnvironmentsStub implements BackgroundResource {
 
   public UnaryCallable<LoadSnapshotRequest, Operation> loadSnapshotCallable() {
     throw new UnsupportedOperationException("Not implemented: loadSnapshotCallable()");
+  }
+
+  public OperationCallable<DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
+      databaseFailoverOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: databaseFailoverOperationCallable()");
+  }
+
+  public UnaryCallable<DatabaseFailoverRequest, Operation> databaseFailoverCallable() {
+    throw new UnsupportedOperationException("Not implemented: databaseFailoverCallable()");
+  }
+
+  public UnaryCallable<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+      fetchDatabasePropertiesCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchDatabasePropertiesCallable()");
   }
 
   @Override

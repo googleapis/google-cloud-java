@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
     return new DeleteRestorePlanRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.GKEBackupProto
         .internal_static_google_cloud_gkebackup_v1_DeleteRestorePlanRequest_descriptor;
@@ -77,7 +72,7 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Fully qualified RestorePlan name.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
    * </pre>
    *
    * <code>
@@ -103,7 +98,7 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Fully qualified RestorePlan name.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
    * </pre>
    *
    * <code>
@@ -134,8 +129,8 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * If provided, this value must match the current value of the
-   * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag] field or the request is
-   * rejected.
+   * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
+   * field or the request is rejected.
    * </pre>
    *
    * <code>string etag = 2;</code>
@@ -159,8 +154,8 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * If provided, this value must match the current value of the
-   * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag] field or the request is
-   * rejected.
+   * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
+   * field or the request is rejected.
    * </pre>
    *
    * <code>string etag = 2;</code>
@@ -595,7 +590,7 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Fully qualified RestorePlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
      * </pre>
      *
      * <code>
@@ -620,7 +615,7 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Fully qualified RestorePlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
      * </pre>
      *
      * <code>
@@ -645,7 +640,7 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Fully qualified RestorePlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
      * </pre>
      *
      * <code>
@@ -669,7 +664,7 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Fully qualified RestorePlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
      * </pre>
      *
      * <code>
@@ -689,7 +684,7 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Fully qualified RestorePlan name.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
      * </pre>
      *
      * <code>
@@ -716,8 +711,8 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag] field or the request is
-     * rejected.
+     * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
+     * field or the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -740,8 +735,8 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag] field or the request is
-     * rejected.
+     * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
+     * field or the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -764,8 +759,8 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag] field or the request is
-     * rejected.
+     * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
+     * field or the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -787,8 +782,8 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag] field or the request is
-     * rejected.
+     * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
+     * field or the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>
@@ -806,8 +801,8 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * If provided, this value must match the current value of the
-     * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag] field or the request is
-     * rejected.
+     * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
+     * field or the request is rejected.
      * </pre>
      *
      * <code>string etag = 2;</code>

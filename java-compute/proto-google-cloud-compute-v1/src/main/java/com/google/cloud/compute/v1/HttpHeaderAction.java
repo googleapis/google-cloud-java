@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,20 +39,15 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
 
   private HttpHeaderAction() {
     requestHeadersToAdd_ = java.util.Collections.emptyList();
-    requestHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    requestHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.emptyList();
     responseHeadersToAdd_ = java.util.Collections.emptyList();
-    responseHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    responseHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new HttpHeaderAction();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -150,7 +145,8 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public static final int REQUEST_HEADERS_TO_REMOVE_FIELD_NUMBER = 218425247;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList requestHeadersToRemove_;
+  private com.google.protobuf.LazyStringArrayList requestHeadersToRemove_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -291,7 +287,8 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
   public static final int RESPONSE_HEADERS_TO_REMOVE_FIELD_NUMBER = 75415761;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList responseHeadersToRemove_;
+  private com.google.protobuf.LazyStringArrayList responseHeadersToRemove_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -609,8 +606,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         requestHeadersToAddBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      requestHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      requestHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (responseHeadersToAddBuilder_ == null) {
         responseHeadersToAdd_ = java.util.Collections.emptyList();
       } else {
@@ -618,8 +614,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
         responseHeadersToAddBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      responseHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      responseHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -665,11 +660,6 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       } else {
         result.requestHeadersToAdd_ = requestHeadersToAddBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        requestHeadersToRemove_ = requestHeadersToRemove_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.requestHeadersToRemove_ = requestHeadersToRemove_;
       if (responseHeadersToAddBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           responseHeadersToAdd_ = java.util.Collections.unmodifiableList(responseHeadersToAdd_);
@@ -679,15 +669,18 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       } else {
         result.responseHeadersToAdd_ = responseHeadersToAddBuilder_.build();
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        responseHeadersToRemove_ = responseHeadersToRemove_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.responseHeadersToRemove_ = responseHeadersToRemove_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.HttpHeaderAction result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        requestHeadersToRemove_.makeImmutable();
+        result.requestHeadersToRemove_ = requestHeadersToRemove_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        responseHeadersToRemove_.makeImmutable();
+        result.responseHeadersToRemove_ = responseHeadersToRemove_;
+      }
     }
 
     @java.lang.Override
@@ -765,7 +758,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       if (!other.requestHeadersToRemove_.isEmpty()) {
         if (requestHeadersToRemove_.isEmpty()) {
           requestHeadersToRemove_ = other.requestHeadersToRemove_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureRequestHeadersToRemoveIsMutable();
           requestHeadersToRemove_.addAll(other.requestHeadersToRemove_);
@@ -802,7 +795,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       if (!other.responseHeadersToRemove_.isEmpty()) {
         if (responseHeadersToRemove_.isEmpty()) {
           responseHeadersToRemove_ = other.responseHeadersToRemove_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureResponseHeadersToRemoveIsMutable();
           responseHeadersToRemove_.addAll(other.responseHeadersToRemove_);
@@ -1273,15 +1266,15 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       return requestHeadersToAddBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList requestHeadersToRemove_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList requestHeadersToRemove_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRequestHeadersToRemoveIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!requestHeadersToRemove_.isModifiable()) {
         requestHeadersToRemove_ =
             new com.google.protobuf.LazyStringArrayList(requestHeadersToRemove_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1295,7 +1288,8 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
      * @return A list containing the requestHeadersToRemove.
      */
     public com.google.protobuf.ProtocolStringList getRequestHeadersToRemoveList() {
-      return requestHeadersToRemove_.getUnmodifiableView();
+      requestHeadersToRemove_.makeImmutable();
+      return requestHeadersToRemove_;
     }
     /**
      *
@@ -1360,6 +1354,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       ensureRequestHeadersToRemoveIsMutable();
       requestHeadersToRemove_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1381,6 +1376,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       ensureRequestHeadersToRemoveIsMutable();
       requestHeadersToRemove_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1399,6 +1395,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     public Builder addAllRequestHeadersToRemove(java.lang.Iterable<java.lang.String> values) {
       ensureRequestHeadersToRemoveIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, requestHeadersToRemove_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1414,8 +1411,9 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRequestHeadersToRemove() {
-      requestHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      requestHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1438,6 +1436,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureRequestHeadersToRemoveIsMutable();
       requestHeadersToRemove_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1821,15 +1820,15 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       return responseHeadersToAddBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList responseHeadersToRemove_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList responseHeadersToRemove_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResponseHeadersToRemoveIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!responseHeadersToRemove_.isModifiable()) {
         responseHeadersToRemove_ =
             new com.google.protobuf.LazyStringArrayList(responseHeadersToRemove_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1843,7 +1842,8 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
      * @return A list containing the responseHeadersToRemove.
      */
     public com.google.protobuf.ProtocolStringList getResponseHeadersToRemoveList() {
-      return responseHeadersToRemove_.getUnmodifiableView();
+      responseHeadersToRemove_.makeImmutable();
+      return responseHeadersToRemove_;
     }
     /**
      *
@@ -1908,6 +1908,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       ensureResponseHeadersToRemoveIsMutable();
       responseHeadersToRemove_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1929,6 +1930,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       }
       ensureResponseHeadersToRemoveIsMutable();
       responseHeadersToRemove_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1947,6 +1949,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
     public Builder addAllResponseHeadersToRemove(java.lang.Iterable<java.lang.String> values) {
       ensureResponseHeadersToRemoveIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, responseHeadersToRemove_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1962,8 +1965,9 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearResponseHeadersToRemove() {
-      responseHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      responseHeadersToRemove_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1986,6 +1990,7 @@ public final class HttpHeaderAction extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureResponseHeadersToRemoveIsMutable();
       responseHeadersToRemove_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

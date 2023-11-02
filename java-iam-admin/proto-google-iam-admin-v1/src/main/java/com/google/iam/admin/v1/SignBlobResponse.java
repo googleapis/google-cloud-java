@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.iam.admin.v1;
  * <pre>
  * Deprecated. [Migrate to Service Account Credentials
  * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+ *
  * The service account sign blob response.
  * </pre>
  *
@@ -48,11 +49,6 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SignBlobResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -80,6 +76,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The id of the key used to sign the blob.
    * </pre>
    *
@@ -108,6 +105,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The id of the key used to sign the blob.
    * </pre>
    *
@@ -139,6 +137,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The signed blob.
    * </pre>
    *
@@ -327,6 +326,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The service account sign blob response.
    * </pre>
    *
@@ -525,6 +525,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Deprecated. [Migrate to Service Account Credentials
      * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
      * The id of the key used to sign the blob.
      * </pre>
      *
@@ -552,6 +553,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Deprecated. [Migrate to Service Account Credentials
      * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
      * The id of the key used to sign the blob.
      * </pre>
      *
@@ -579,6 +581,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Deprecated. [Migrate to Service Account Credentials
      * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
      * The id of the key used to sign the blob.
      * </pre>
      *
@@ -605,6 +608,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Deprecated. [Migrate to Service Account Credentials
      * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
      * The id of the key used to sign the blob.
      * </pre>
      *
@@ -627,6 +631,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Deprecated. [Migrate to Service Account Credentials
      * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
      * The id of the key used to sign the blob.
      * </pre>
      *
@@ -656,6 +661,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Deprecated. [Migrate to Service Account Credentials
      * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
      * The signed blob.
      * </pre>
      *
@@ -676,6 +682,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Deprecated. [Migrate to Service Account Credentials
      * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
      * The signed blob.
      * </pre>
      *
@@ -702,6 +709,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Deprecated. [Migrate to Service Account Credentials
      * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+     *
      * The signed blob.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,20 +43,15 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     machineType_ = "";
     network_ = "";
     subnetwork_ = "";
-    oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serviceAccount_ = "";
-    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NodeConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -87,6 +82,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/zones/{zoneId}".
+   *
    * This `location` must belong to the enclosing environment's project and
    * location. If both this field and `nodeConfig.machineType` are specified,
    * `nodeConfig.machineType` must belong to this `location`; if both are
@@ -95,6 +91,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * both fields. If only one field (`location` or `nodeConfig.machineType`) is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -124,6 +121,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/zones/{zoneId}".
+   *
    * This `location` must belong to the enclosing environment's project and
    * location. If both this field and `nodeConfig.machineType` are specified,
    * `nodeConfig.machineType` must belong to this `location`; if both are
@@ -132,6 +130,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * both fields. If only one field (`location` or `nodeConfig.machineType`) is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -167,6 +166,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}".
+   *
    * The `machineType` must belong to the enclosing environment's project and
    * location. If both this field and `nodeConfig.location` are specified,
    * this `machineType` must belong to the `nodeConfig.location`; if both are
@@ -175,10 +175,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * both fields. If exactly one of this field and `nodeConfig.location` is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   *
    * The `machineTypeId` must not be a [shared-core machine
    * type](/compute/docs/machine-types#sharedcore).
+   *
    * If this field is unspecified, the `machineTypeId` defaults
    * to "n1-standard-1".
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -209,6 +212,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}".
+   *
    * The `machineType` must belong to the enclosing environment's project and
    * location. If both this field and `nodeConfig.location` are specified,
    * this `machineType` must belong to the `nodeConfig.location`; if both are
@@ -217,10 +221,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * both fields. If exactly one of this field and `nodeConfig.location` is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   *
    * The `machineTypeId` must not be a [shared-core machine
    * type](/compute/docs/machine-types#sharedcore).
+   *
    * If this field is unspecified, the `machineTypeId` defaults
    * to "n1-standard-1".
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -255,6 +262,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/global/networks/{networkId}".
+   *
    * If unspecified, the default network in the environment's project is used.
    * If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets)
    * is provided, `nodeConfig.subnetwork` must also be provided. For
@@ -287,6 +295,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/global/networks/{networkId}".
+   *
    * If unspecified, the default network in the environment's project is used.
    * If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets)
    * is provided, `nodeConfig.subnetwork` must also be provided. For
@@ -324,6 +333,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}"
+   *
    * If a subnetwork is provided, `nodeConfig.network` must also be provided,
    * and the subnetwork must belong to the enclosing environment's project and
    * location.
@@ -354,6 +364,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}"
+   *
    * If a subnetwork is provided, `nodeConfig.network` must also be provided,
    * and the subnetwork must belong to the enclosing environment's project and
    * location.
@@ -384,6 +395,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The disk size in GB used for node VMs. Minimum size is 30GB.
    * If unspecified, defaults to 100GB. Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -400,7 +412,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int OAUTH_SCOPES_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList oauthScopes_;
+  private com.google.protobuf.LazyStringArrayList oauthScopes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -408,6 +421,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -426,6 +440,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -444,6 +459,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -463,6 +479,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -534,7 +551,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int TAGS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tags_;
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -683,6 +701,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * allocation]
    * (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr).
    * Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -705,6 +724,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
    * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
    * all destination addresses, except between pods traffic.
+   *
    * See:
    * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
    * </pre>
@@ -1034,11 +1054,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       network_ = "";
       subnetwork_ = "";
       diskSizeGb_ = 0;
-      oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       serviceAccount_ = "";
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       ipAllocationPolicy_ = null;
       if (ipAllocationPolicyBuilder_ != null) {
         ipAllocationPolicyBuilder_.dispose();
@@ -1074,26 +1092,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig result =
           new com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        oauthScopes_ = oauthScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.oauthScopes_ = oauthScopes_;
-      if (((bitField0_ & 0x00000080) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.tags_ = tags_;
     }
 
     private void buildPartial0(
@@ -1114,8 +1117,16 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.diskSizeGb_ = diskSizeGb_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        oauthScopes_.makeImmutable();
+        result.oauthScopes_ = oauthScopes_;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.ipAllocationPolicy_ =
@@ -1205,7 +1216,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.oauthScopes_.isEmpty()) {
         if (oauthScopes_.isEmpty()) {
           oauthScopes_ = other.oauthScopes_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureOauthScopesIsMutable();
           oauthScopes_.addAll(other.oauthScopes_);
@@ -1220,7 +1231,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -1360,6 +1371,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/zones/{zoneId}".
+     *
      * This `location` must belong to the enclosing environment's project and
      * location. If both this field and `nodeConfig.machineType` are specified,
      * `nodeConfig.machineType` must belong to this `location`; if both are
@@ -1368,6 +1380,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If only one field (`location` or `nodeConfig.machineType`) is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1396,6 +1409,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/zones/{zoneId}".
+     *
      * This `location` must belong to the enclosing environment's project and
      * location. If both this field and `nodeConfig.machineType` are specified,
      * `nodeConfig.machineType` must belong to this `location`; if both are
@@ -1404,6 +1418,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If only one field (`location` or `nodeConfig.machineType`) is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1432,6 +1447,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/zones/{zoneId}".
+     *
      * This `location` must belong to the enclosing environment's project and
      * location. If both this field and `nodeConfig.machineType` are specified,
      * `nodeConfig.machineType` must belong to this `location`; if both are
@@ -1440,6 +1456,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If only one field (`location` or `nodeConfig.machineType`) is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1467,6 +1484,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/zones/{zoneId}".
+     *
      * This `location` must belong to the enclosing environment's project and
      * location. If both this field and `nodeConfig.machineType` are specified,
      * `nodeConfig.machineType` must belong to this `location`; if both are
@@ -1475,6 +1493,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If only one field (`location` or `nodeConfig.machineType`) is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1498,6 +1517,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/zones/{zoneId}".
+     *
      * This `location` must belong to the enclosing environment's project and
      * location. If both this field and `nodeConfig.machineType` are specified,
      * `nodeConfig.machineType` must belong to this `location`; if both are
@@ -1506,6 +1526,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If only one field (`location` or `nodeConfig.machineType`) is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1537,6 +1558,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}".
+     *
      * The `machineType` must belong to the enclosing environment's project and
      * location. If both this field and `nodeConfig.location` are specified,
      * this `machineType` must belong to the `nodeConfig.location`; if both are
@@ -1545,10 +1567,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If exactly one of this field and `nodeConfig.location` is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     *
      * The `machineTypeId` must not be a [shared-core machine
      * type](/compute/docs/machine-types#sharedcore).
+     *
      * If this field is unspecified, the `machineTypeId` defaults
      * to "n1-standard-1".
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1578,6 +1603,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}".
+     *
      * The `machineType` must belong to the enclosing environment's project and
      * location. If both this field and `nodeConfig.location` are specified,
      * this `machineType` must belong to the `nodeConfig.location`; if both are
@@ -1586,10 +1612,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If exactly one of this field and `nodeConfig.location` is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     *
      * The `machineTypeId` must not be a [shared-core machine
      * type](/compute/docs/machine-types#sharedcore).
+     *
      * If this field is unspecified, the `machineTypeId` defaults
      * to "n1-standard-1".
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1619,6 +1648,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}".
+     *
      * The `machineType` must belong to the enclosing environment's project and
      * location. If both this field and `nodeConfig.location` are specified,
      * this `machineType` must belong to the `nodeConfig.location`; if both are
@@ -1627,10 +1657,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If exactly one of this field and `nodeConfig.location` is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     *
      * The `machineTypeId` must not be a [shared-core machine
      * type](/compute/docs/machine-types#sharedcore).
+     *
      * If this field is unspecified, the `machineTypeId` defaults
      * to "n1-standard-1".
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1659,6 +1692,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}".
+     *
      * The `machineType` must belong to the enclosing environment's project and
      * location. If both this field and `nodeConfig.location` are specified,
      * this `machineType` must belong to the `nodeConfig.location`; if both are
@@ -1667,10 +1701,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If exactly one of this field and `nodeConfig.location` is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     *
      * The `machineTypeId` must not be a [shared-core machine
      * type](/compute/docs/machine-types#sharedcore).
+     *
      * If this field is unspecified, the `machineTypeId` defaults
      * to "n1-standard-1".
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1695,6 +1732,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}".
+     *
      * The `machineType` must belong to the enclosing environment's project and
      * location. If both this field and `nodeConfig.location` are specified,
      * this `machineType` must belong to the `nodeConfig.location`; if both are
@@ -1703,10 +1741,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If exactly one of this field and `nodeConfig.location` is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     *
      * The `machineTypeId` must not be a [shared-core machine
      * type](/compute/docs/machine-types#sharedcore).
+     *
      * If this field is unspecified, the `machineTypeId` defaults
      * to "n1-standard-1".
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1737,6 +1778,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/global/networks/{networkId}".
+     *
      * If unspecified, the default network in the environment's project is used.
      * If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets)
      * is provided, `nodeConfig.subnetwork` must also be provided. For
@@ -1768,6 +1810,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/global/networks/{networkId}".
+     *
      * If unspecified, the default network in the environment's project is used.
      * If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets)
      * is provided, `nodeConfig.subnetwork` must also be provided. For
@@ -1799,6 +1842,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/global/networks/{networkId}".
+     *
      * If unspecified, the default network in the environment's project is used.
      * If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets)
      * is provided, `nodeConfig.subnetwork` must also be provided. For
@@ -1829,6 +1873,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/global/networks/{networkId}".
+     *
      * If unspecified, the default network in the environment's project is used.
      * If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets)
      * is provided, `nodeConfig.subnetwork` must also be provided. For
@@ -1855,6 +1900,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/global/networks/{networkId}".
+     *
      * If unspecified, the default network in the environment's project is used.
      * If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets)
      * is provided, `nodeConfig.subnetwork` must also be provided. For
@@ -1888,6 +1934,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}"
+     *
      * If a subnetwork is provided, `nodeConfig.network` must also be provided,
      * and the subnetwork must belong to the enclosing environment's project and
      * location.
@@ -1917,6 +1964,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}"
+     *
      * If a subnetwork is provided, `nodeConfig.network` must also be provided,
      * and the subnetwork must belong to the enclosing environment's project and
      * location.
@@ -1946,6 +1994,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}"
+     *
      * If a subnetwork is provided, `nodeConfig.network` must also be provided,
      * and the subnetwork must belong to the enclosing environment's project and
      * location.
@@ -1974,6 +2023,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}"
+     *
      * If a subnetwork is provided, `nodeConfig.network` must also be provided,
      * and the subnetwork must belong to the enclosing environment's project and
      * location.
@@ -1998,6 +2048,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * [relative resource
      * name](/apis/design/resource_names#relative_resource_name). For example:
      * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}"
+     *
      * If a subnetwork is provided, `nodeConfig.network` must also be provided,
      * and the subnetwork must belong to the enclosing environment's project and
      * location.
@@ -2026,6 +2077,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The disk size in GB used for node VMs. Minimum size is 30GB.
      * If unspecified, defaults to 100GB. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2044,6 +2096,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The disk size in GB used for node VMs. Minimum size is 30GB.
      * If unspecified, defaults to 100GB. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2066,6 +2119,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The disk size in GB used for node VMs. Minimum size is 30GB.
      * If unspecified, defaults to 100GB. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2081,14 +2135,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList oauthScopes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList oauthScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureOauthScopesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!oauthScopes_.isModifiable()) {
         oauthScopes_ = new com.google.protobuf.LazyStringArrayList(oauthScopes_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2097,6 +2151,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2106,7 +2161,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the oauthScopes.
      */
     public com.google.protobuf.ProtocolStringList getOauthScopesList() {
-      return oauthScopes_.getUnmodifiableView();
+      oauthScopes_.makeImmutable();
+      return oauthScopes_;
     }
     /**
      *
@@ -2115,6 +2171,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2133,6 +2190,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2152,6 +2210,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2171,6 +2230,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2187,6 +2247,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureOauthScopesIsMutable();
       oauthScopes_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2197,6 +2258,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2212,6 +2274,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureOauthScopesIsMutable();
       oauthScopes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2222,6 +2285,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2234,6 +2298,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllOauthScopes(java.lang.Iterable<java.lang.String> values) {
       ensureOauthScopesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, oauthScopes_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2244,6 +2309,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2253,8 +2319,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOauthScopes() {
-      oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2265,6 +2332,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2281,6 +2349,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureOauthScopesIsMutable();
       oauthScopes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2401,14 +2470,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -2425,7 +2494,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      return tags_.getUnmodifiableView();
+      tags_.makeImmutable();
+      return tags_;
     }
     /**
      *
@@ -2502,6 +2572,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2526,6 +2597,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2547,6 +2619,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2565,8 +2638,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -2592,6 +2666,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2824,6 +2899,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * allocation]
      * (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr).
      * Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2850,6 +2926,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * allocation]
      * (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr).
      * Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2880,6 +2957,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * allocation]
      * (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr).
      * Cannot be updated.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2903,6 +2981,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
      * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
      * all destination addresses, except between pods traffic.
+     *
      * See:
      * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
      * </pre>
@@ -2922,6 +3001,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
      * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
      * all destination addresses, except between pods traffic.
+     *
      * See:
      * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
      * </pre>
@@ -2945,6 +3025,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
      * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
      * all destination addresses, except between pods traffic.
+     *
      * See:
      * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
      * </pre>

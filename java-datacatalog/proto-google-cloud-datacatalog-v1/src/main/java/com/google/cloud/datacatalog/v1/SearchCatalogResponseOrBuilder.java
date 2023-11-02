@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,6 +79,19 @@ public interface SearchCatalogResponseOrBuilder
    *
    *
    * <pre>
+   * The approximate total number of entries matched by the query.
+   * </pre>
+   *
+   * <code>int32 total_size = 2;</code>
+   *
+   * @return The totalSize.
+   */
+  int getTotalSize();
+
+  /**
+   *
+   *
+   * <pre>
    * Pagination token that can be used in subsequent calls to retrieve the next
    * page of results.
    * </pre>
@@ -108,6 +121,7 @@ public interface SearchCatalogResponseOrBuilder
    * <pre>
    * Unreachable locations. Search results don't include data from those
    * locations.
+   *
    * To get additional information on an error, repeat the search request and
    * restrict it to specific locations by setting the
    * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -124,6 +138,7 @@ public interface SearchCatalogResponseOrBuilder
    * <pre>
    * Unreachable locations. Search results don't include data from those
    * locations.
+   *
    * To get additional information on an error, repeat the search request and
    * restrict it to specific locations by setting the
    * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -140,6 +155,7 @@ public interface SearchCatalogResponseOrBuilder
    * <pre>
    * Unreachable locations. Search results don't include data from those
    * locations.
+   *
    * To get additional information on an error, repeat the search request and
    * restrict it to specific locations by setting the
    * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -157,6 +173,7 @@ public interface SearchCatalogResponseOrBuilder
    * <pre>
    * Unreachable locations. Search results don't include data from those
    * locations.
+   *
    * To get additional information on an error, repeat the search request and
    * restrict it to specific locations by setting the
    * `SearchCatalogRequest.scope.restricted_locations` parameter.

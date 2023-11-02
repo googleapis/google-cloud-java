@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
   private AzureServerConfig() {
     name_ = "";
     validVersions_ = java.util.Collections.emptyList();
-    supportedAzureRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    supportedAzureRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AzureServerConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -79,8 +74,10 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The `AzureServerConfig` resource name.
+   *
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -106,8 +103,10 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The `AzureServerConfig` resource name.
+   *
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -205,7 +204,8 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
   public static final int SUPPORTED_AZURE_REGIONS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList supportedAzureRegions_;
+  private com.google.protobuf.LazyStringArrayList supportedAzureRegions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -500,8 +500,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
         validVersionsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
-      supportedAzureRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      supportedAzureRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -548,17 +547,16 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
       } else {
         result.validVersions_ = validVersionsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        supportedAzureRegions_ = supportedAzureRegions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.supportedAzureRegions_ = supportedAzureRegions_;
     }
 
     private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureServerConfig result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        supportedAzureRegions_.makeImmutable();
+        result.supportedAzureRegions_ = supportedAzureRegions_;
       }
     }
 
@@ -643,7 +641,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
       if (!other.supportedAzureRegions_.isEmpty()) {
         if (supportedAzureRegions_.isEmpty()) {
           supportedAzureRegions_ = other.supportedAzureRegions_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureSupportedAzureRegionsIsMutable();
           supportedAzureRegions_.addAll(other.supportedAzureRegions_);
@@ -728,8 +726,10 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The `AzureServerConfig` resource name.
+     *
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -754,8 +754,10 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The `AzureServerConfig` resource name.
+     *
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -780,8 +782,10 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The `AzureServerConfig` resource name.
+     *
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -805,8 +809,10 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The `AzureServerConfig` resource name.
+     *
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -826,8 +832,10 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The `AzureServerConfig` resource name.
+     *
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -1211,15 +1219,15 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
       return validVersionsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList supportedAzureRegions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList supportedAzureRegions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSupportedAzureRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!supportedAzureRegions_.isModifiable()) {
         supportedAzureRegions_ =
             new com.google.protobuf.LazyStringArrayList(supportedAzureRegions_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1233,7 +1241,8 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      * @return A list containing the supportedAzureRegions.
      */
     public com.google.protobuf.ProtocolStringList getSupportedAzureRegionsList() {
-      return supportedAzureRegions_.getUnmodifiableView();
+      supportedAzureRegions_.makeImmutable();
+      return supportedAzureRegions_;
     }
     /**
      *
@@ -1298,6 +1307,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
       }
       ensureSupportedAzureRegionsIsMutable();
       supportedAzureRegions_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1319,6 +1329,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
       }
       ensureSupportedAzureRegionsIsMutable();
       supportedAzureRegions_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1337,6 +1348,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
     public Builder addAllSupportedAzureRegions(java.lang.Iterable<java.lang.String> values) {
       ensureSupportedAzureRegionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, supportedAzureRegions_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1352,8 +1364,9 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSupportedAzureRegions() {
-      supportedAzureRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      supportedAzureRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1376,6 +1389,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureSupportedAzureRegionsIsMutable();
       supportedAzureRegions_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

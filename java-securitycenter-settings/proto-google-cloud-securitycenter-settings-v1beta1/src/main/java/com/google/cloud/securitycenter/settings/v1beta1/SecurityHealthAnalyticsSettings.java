@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SecurityHealthAnalyticsSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -185,18 +180,13 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     }
 
     private NonOrgIamMemberSettings() {
-      approvedIdentities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      approvedIdentities_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NonOrgIamMemberSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -219,7 +209,8 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public static final int APPROVED_IDENTITIES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList approvedIdentities_;
+    private com.google.protobuf.LazyStringArrayList approvedIdentities_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -560,8 +551,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        approvedIdentities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        approvedIdentities_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -601,7 +591,6 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             result =
                 new com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
                     .NonOrgIamMemberSettings(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -609,22 +598,15 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
-                  .NonOrgIamMemberSettings
-              result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          approvedIdentities_ = approvedIdentities_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.approvedIdentities_ = approvedIdentities_;
-      }
-
       private void buildPartial0(
           com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
                   .NonOrgIamMemberSettings
               result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          approvedIdentities_.makeImmutable();
+          result.approvedIdentities_ = approvedIdentities_;
+        }
       }
 
       @java.lang.Override
@@ -688,7 +670,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         if (!other.approvedIdentities_.isEmpty()) {
           if (approvedIdentities_.isEmpty()) {
             approvedIdentities_ = other.approvedIdentities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureApprovedIdentitiesIsMutable();
             approvedIdentities_.addAll(other.approvedIdentities_);
@@ -747,14 +729,14 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList approvedIdentities_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList approvedIdentities_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureApprovedIdentitiesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!approvedIdentities_.isModifiable()) {
           approvedIdentities_ = new com.google.protobuf.LazyStringArrayList(approvedIdentities_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -778,7 +760,8 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
        * @return A list containing the approvedIdentities.
        */
       public com.google.protobuf.ProtocolStringList getApprovedIdentitiesList() {
-        return approvedIdentities_.getUnmodifiableView();
+        approvedIdentities_.makeImmutable();
+        return approvedIdentities_;
       }
       /**
        *
@@ -883,6 +866,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         }
         ensureApprovedIdentitiesIsMutable();
         approvedIdentities_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -914,6 +898,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         }
         ensureApprovedIdentitiesIsMutable();
         approvedIdentities_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -942,6 +927,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       public Builder addAllApprovedIdentities(java.lang.Iterable<java.lang.String> values) {
         ensureApprovedIdentitiesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, approvedIdentities_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -967,8 +953,9 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder clearApprovedIdentities() {
-        approvedIdentities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        approvedIdentities_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1001,6 +988,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         checkByteStringIsUtf8(value);
         ensureApprovedIdentitiesIsMutable();
         approvedIdentities_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1191,18 +1179,13 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     }
 
     private AdminServiceAccountSettings() {
-      approvedIdentities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      approvedIdentities_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AdminServiceAccountSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1225,7 +1208,8 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     public static final int APPROVED_IDENTITIES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList approvedIdentities_;
+    private com.google.protobuf.LazyStringArrayList approvedIdentities_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1562,8 +1546,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        approvedIdentities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        approvedIdentities_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -1603,7 +1586,6 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             result =
                 new com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
                     .AdminServiceAccountSettings(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1611,22 +1593,15 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
-                  .AdminServiceAccountSettings
-              result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          approvedIdentities_ = approvedIdentities_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.approvedIdentities_ = approvedIdentities_;
-      }
-
       private void buildPartial0(
           com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
                   .AdminServiceAccountSettings
               result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          approvedIdentities_.makeImmutable();
+          result.approvedIdentities_ = approvedIdentities_;
+        }
       }
 
       @java.lang.Override
@@ -1690,7 +1665,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         if (!other.approvedIdentities_.isEmpty()) {
           if (approvedIdentities_.isEmpty()) {
             approvedIdentities_ = other.approvedIdentities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureApprovedIdentitiesIsMutable();
             approvedIdentities_.addAll(other.approvedIdentities_);
@@ -1749,14 +1724,14 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList approvedIdentities_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList approvedIdentities_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureApprovedIdentitiesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!approvedIdentities_.isModifiable()) {
           approvedIdentities_ = new com.google.protobuf.LazyStringArrayList(approvedIdentities_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -1779,7 +1754,8 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
        * @return A list containing the approvedIdentities.
        */
       public com.google.protobuf.ProtocolStringList getApprovedIdentitiesList() {
-        return approvedIdentities_.getUnmodifiableView();
+        approvedIdentities_.makeImmutable();
+        return approvedIdentities_;
       }
       /**
        *
@@ -1880,6 +1856,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         }
         ensureApprovedIdentitiesIsMutable();
         approvedIdentities_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1910,6 +1887,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         }
         ensureApprovedIdentitiesIsMutable();
         approvedIdentities_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1937,6 +1915,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       public Builder addAllApprovedIdentities(java.lang.Iterable<java.lang.String> values) {
         ensureApprovedIdentitiesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, approvedIdentities_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1961,8 +1940,9 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder clearApprovedIdentities() {
-        approvedIdentities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        approvedIdentities_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1994,6 +1974,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         checkByteStringIsUtf8(value);
         ensureApprovedIdentitiesIsMutable();
         approvedIdentities_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }

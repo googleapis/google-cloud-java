@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. Type of the manifest, can be `HLS` or `DASH`.
+   * Required. Type of the manifest.
    * </pre>
    *
    * <code>
@@ -68,7 +68,7 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. Type of the manifest, can be `HLS` or `DASH`.
+   * Required. Type of the manifest.
    * </pre>
    *
    * <code>
@@ -85,6 +85,7 @@ public interface ManifestOrBuilder
    * <pre>
    * Required. List of user given `MuxStream.key`s that should appear in this
    * manifest.
+   *
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -101,6 +102,7 @@ public interface ManifestOrBuilder
    * <pre>
    * Required. List of user given `MuxStream.key`s that should appear in this
    * manifest.
+   *
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -117,6 +119,7 @@ public interface ManifestOrBuilder
    * <pre>
    * Required. List of user given `MuxStream.key`s that should appear in this
    * manifest.
+   *
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -134,6 +137,7 @@ public interface ManifestOrBuilder
    * <pre>
    * Required. List of user given `MuxStream.key`s that should appear in this
    * manifest.
+   *
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -145,4 +149,41 @@ public interface ManifestOrBuilder
    * @return The bytes of the muxStreams at the given index.
    */
   com.google.protobuf.ByteString getMuxStreamsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * `DASH` manifest configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+   *
+   * @return Whether the dash field is set.
+   */
+  boolean hasDash();
+  /**
+   *
+   *
+   * <pre>
+   * `DASH` manifest configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+   *
+   * @return The dash.
+   */
+  com.google.cloud.video.transcoder.v1.Manifest.DashConfig getDash();
+  /**
+   *
+   *
+   * <pre>
+   * `DASH` manifest configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+   */
+  com.google.cloud.video.transcoder.v1.Manifest.DashConfigOrBuilder getDashOrBuilder();
+
+  com.google.cloud.video.transcoder.v1.Manifest.ManifestConfigCase getManifestConfigCase();
 }

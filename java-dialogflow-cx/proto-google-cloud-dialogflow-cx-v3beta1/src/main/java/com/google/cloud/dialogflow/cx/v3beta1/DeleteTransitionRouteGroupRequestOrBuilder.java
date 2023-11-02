@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ public interface DeleteTransitionRouteGroupRequestOrBuilder
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
    * to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition
-   * Route Group ID&gt;`.
+   * Route Group ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
    * </pre>
    *
    * <code>
@@ -49,7 +50,8 @@ public interface DeleteTransitionRouteGroupRequestOrBuilder
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
    * to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition
-   * Route Group ID&gt;`.
+   * Route Group ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
    * </pre>
    *
    * <code>
@@ -66,6 +68,7 @@ public interface DeleteTransitionRouteGroupRequestOrBuilder
    * <pre>
    * This field has no effect for transition route group that no page is using.
    * If the transition route group is referenced by any page:
+   *
    * *  If `force` is set to false, an error will be returned with message
    *    indicating pages that reference the transition route group.
    * *  If `force` is set to true, Dialogflow will remove the transition route

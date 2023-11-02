@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,11 +96,10 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Required. Human-readable display name of the listing. The display name must contain
-   * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
-   * ( ), ampersands (&amp;) and can't start or end with spaces.
-   * Default value is an empty string.
-   * Max length: 63 bytes.
+   * Required. Human-readable display name of the listing. The display name must
+   * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
+   * spaces ( ), ampersands (&amp;) and can't start or end with spaces. Default
+   * value is an empty string. Max length: 63 bytes.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -112,11 +111,10 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Required. Human-readable display name of the listing. The display name must contain
-   * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
-   * ( ), ampersands (&amp;) and can't start or end with spaces.
-   * Default value is an empty string.
-   * Max length: 63 bytes.
+   * Required. Human-readable display name of the listing. The display name must
+   * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
+   * spaces ( ), ampersands (&amp;) and can't start or end with spaces. Default
+   * value is an empty string. Max length: 63 bytes.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -129,11 +127,10 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Short description of the listing. The description must not contain
-   * Unicode non-characters and C0 and C1 control codes except tabs (HT),
-   * new lines (LF), carriage returns (CR), and page breaks (FF).
-   * Default value is an empty string.
-   * Max length: 2000 bytes.
+   * Optional. Short description of the listing. The description must not
+   * contain Unicode non-characters and C0 and C1 control codes except tabs
+   * (HT), new lines (LF), carriage returns (CR), and page breaks (FF). Default
+   * value is an empty string. Max length: 2000 bytes.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -145,11 +142,10 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Short description of the listing. The description must not contain
-   * Unicode non-characters and C0 and C1 control codes except tabs (HT),
-   * new lines (LF), carriage returns (CR), and page breaks (FF).
-   * Default value is an empty string.
-   * Max length: 2000 bytes.
+   * Optional. Short description of the listing. The description must not
+   * contain Unicode non-characters and C0 and C1 control codes except tabs
+   * (HT), new lines (LF), carriage returns (CR), and page breaks (FF). Default
+   * value is an empty string. Max length: 2000 bytes.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -443,5 +439,51 @@ public interface ListingOrBuilder
    */
   com.google.protobuf.ByteString getRequestAccessBytes();
 
-  public com.google.cloud.bigquery.analyticshub.v1.Listing.SourceCase getSourceCase();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, restricted export configuration will be propagated and
+   * enforced on the linked dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig restricted_export_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the restrictedExportConfig field is set.
+   */
+  boolean hasRestrictedExportConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, restricted export configuration will be propagated and
+   * enforced on the linked dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig restricted_export_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The restrictedExportConfig.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig
+      getRestrictedExportConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, restricted export configuration will be propagated and
+   * enforced on the linked dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig restricted_export_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfigOrBuilder
+      getRestrictedExportConfigOrBuilder();
+
+  com.google.cloud.bigquery.analyticshub.v1.Listing.SourceCase getSourceCase();
 }

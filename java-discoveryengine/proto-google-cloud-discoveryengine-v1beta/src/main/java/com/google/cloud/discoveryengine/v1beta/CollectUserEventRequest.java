@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CollectUserEventRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -190,7 +185,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    * <pre>
    * The URL including cgi-parameters but excluding the hash fragment with a
    * length limit of 5,000 characters. This is often more useful than the
-   * referer URL, because many browsers only send the domain for 3rd party
+   * referer URL, because many browsers only send the domain for third-party
    * requests.
    * </pre>
    *
@@ -208,7 +203,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    * <pre>
    * The URL including cgi-parameters but excluding the hash fragment with a
    * length limit of 5,000 characters. This is often more useful than the
-   * referer URL, because many browsers only send the domain for 3rd party
+   * referer URL, because many browsers only send the domain for third-party
    * requests.
    * </pre>
    *
@@ -234,7 +229,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    * <pre>
    * The URL including cgi-parameters but excluding the hash fragment with a
    * length limit of 5,000 characters. This is often more useful than the
-   * referer URL, because many browsers only send the domain for 3rd party
+   * referer URL, because many browsers only send the domain for third-party
    * requests.
    * </pre>
    *
@@ -962,7 +957,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * <pre>
      * The URL including cgi-parameters but excluding the hash fragment with a
      * length limit of 5,000 characters. This is often more useful than the
-     * referer URL, because many browsers only send the domain for 3rd party
+     * referer URL, because many browsers only send the domain for third-party
      * requests.
      * </pre>
      *
@@ -979,7 +974,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * <pre>
      * The URL including cgi-parameters but excluding the hash fragment with a
      * length limit of 5,000 characters. This is often more useful than the
-     * referer URL, because many browsers only send the domain for 3rd party
+     * referer URL, because many browsers only send the domain for third-party
      * requests.
      * </pre>
      *
@@ -1004,7 +999,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * <pre>
      * The URL including cgi-parameters but excluding the hash fragment with a
      * length limit of 5,000 characters. This is often more useful than the
-     * referer URL, because many browsers only send the domain for 3rd party
+     * referer URL, because many browsers only send the domain for third-party
      * requests.
      * </pre>
      *
@@ -1029,7 +1024,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * <pre>
      * The URL including cgi-parameters but excluding the hash fragment with a
      * length limit of 5,000 characters. This is often more useful than the
-     * referer URL, because many browsers only send the domain for 3rd party
+     * referer URL, because many browsers only send the domain for third-party
      * requests.
      * </pre>
      *
@@ -1053,7 +1048,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * <pre>
      * The URL including cgi-parameters but excluding the hash fragment with a
      * length limit of 5,000 characters. This is often more useful than the
-     * referer URL, because many browsers only send the domain for 3rd party
+     * referer URL, because many browsers only send the domain for third-party
      * requests.
      * </pre>
      *
@@ -1073,7 +1068,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      * <pre>
      * The URL including cgi-parameters but excluding the hash fragment with a
      * length limit of 5,000 characters. This is often more useful than the
-     * referer URL, because many browsers only send the domain for 3rd party
+     * referer URL, because many browsers only send the domain for third-party
      * requests.
      * </pre>
      *

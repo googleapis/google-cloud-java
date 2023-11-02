@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public interface ListSchedulesRequestOrBuilder
    * <pre>
    * Lists the Schedules that match the filter expression. The following
    * fields are supported:
+   *
    * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
    * * `state`: Supports `=` and `!=` comparisons.
    * * `request`: Supports existence of the &lt;request_type&gt; check.
@@ -73,11 +74,15 @@ public interface ListSchedulesRequestOrBuilder
    *       existence check. Values must be in RFC 3339 format.
    * * `next_run_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=`
    *       comparisons. Values must be in RFC 3339 format.
+   *
+   *
    * Filter expressions can be combined together using logical operators
    * (`NOT`, `AND` &amp; `OR`).
    * The syntax to define filter expression is based on
    * https://google.aip.dev/160.
+   *
    * Examples:
+   *
    * * `state="ACTIVE" AND display_name:"my_schedule_*"`
    * * `NOT display_name="my_schedule"`
    * * `create_time&gt;"2021-05-18T00:00:00Z"`
@@ -96,6 +101,7 @@ public interface ListSchedulesRequestOrBuilder
    * <pre>
    * Lists the Schedules that match the filter expression. The following
    * fields are supported:
+   *
    * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
    * * `state`: Supports `=` and `!=` comparisons.
    * * `request`: Supports existence of the &lt;request_type&gt; check.
@@ -109,11 +115,15 @@ public interface ListSchedulesRequestOrBuilder
    *       existence check. Values must be in RFC 3339 format.
    * * `next_run_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=`
    *       comparisons. Values must be in RFC 3339 format.
+   *
+   *
    * Filter expressions can be combined together using logical operators
    * (`NOT`, `AND` &amp; `OR`).
    * The syntax to define filter expression is based on
    * https://google.aip.dev/160.
+   *
    * Examples:
+   *
    * * `state="ACTIVE" AND display_name:"my_schedule_*"`
    * * `NOT display_name="my_schedule"`
    * * `create_time&gt;"2021-05-18T00:00:00Z"`
@@ -183,12 +193,16 @@ public interface ListSchedulesRequestOrBuilder
    * A comma-separated list of fields to order by. The default sort order is in
    * ascending order. Use "desc" after a field name for descending. You can have
    * multiple order_by fields provided.
+   *
    * For example, using "create_time desc, end_time" will order results by
    * create time in descending order, and if there are multiple schedules having
    * the same create time, order them by the end time in ascending order.
+   *
    * If order_by is not specified, it will order by default with create_time in
    * descending order.
+   *
    * Supported fields:
+   *
    *   * `create_time`
    *   * `start_time`
    *   * `end_time`
@@ -207,12 +221,16 @@ public interface ListSchedulesRequestOrBuilder
    * A comma-separated list of fields to order by. The default sort order is in
    * ascending order. Use "desc" after a field name for descending. You can have
    * multiple order_by fields provided.
+   *
    * For example, using "create_time desc, end_time" will order results by
    * create time in descending order, and if there are multiple schedules having
    * the same create time, order them by the end time in ascending order.
+   *
    * If order_by is not specified, it will order by default with create_time in
    * descending order.
+   *
    * Supported fields:
+   *
    *   * `create_time`
    *   * `start_time`
    *   * `end_time`

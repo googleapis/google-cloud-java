@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,15 +151,19 @@ public interface SecuritySettingsOrBuilder
    * <pre>
    * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
    * template to define inspect base settings.
+   *
    * The `DLP Inspect Templates Reader` role is needed on the Dialogflow
    * service identity service account (has the form
    * `service-PROJECT_NUMBER&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`)
    * for your agent's project.
+   *
    * If empty, we use the default DLP inspect config.
+   *
    * The template name will have one of the following formats:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
    * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
    * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   *
    * Note: `inspect_template` must be located in the same region as the
    * `SecuritySettings`.
    * </pre>
@@ -175,15 +179,19 @@ public interface SecuritySettingsOrBuilder
    * <pre>
    * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
    * template to define inspect base settings.
+   *
    * The `DLP Inspect Templates Reader` role is needed on the Dialogflow
    * service identity service account (has the form
    * `service-PROJECT_NUMBER&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`)
    * for your agent's project.
+   *
    * If empty, we use the default DLP inspect config.
+   *
    * The template name will have one of the following formats:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
    * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
    * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   *
    * Note: `inspect_template` must be located in the same region as the
    * `SecuritySettings`.
    * </pre>
@@ -200,15 +208,19 @@ public interface SecuritySettingsOrBuilder
    * <pre>
    * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
    * template to define de-identification configuration for the content.
+   *
    * The `DLP De-identify Templates Reader` role is needed on the Dialogflow
    * service identity service account (has the form
    * `service-PROJECT_NUMBER&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`)
    * for your agent's project.
+   *
    * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+   *
    * The template name will have one of the following formats:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
    * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+   *
    * Note: `deidentify_template` must be located in the same region as the
    * `SecuritySettings`.
    * </pre>
@@ -224,15 +236,19 @@ public interface SecuritySettingsOrBuilder
    * <pre>
    * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
    * template to define de-identification configuration for the content.
+   *
    * The `DLP De-identify Templates Reader` role is needed on the Dialogflow
    * service identity service account (has the form
    * `service-PROJECT_NUMBER&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`)
    * for your agent's project.
+   *
    * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+   *
    * The template name will have one of the following formats:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
    * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+   *
    * Note: `deidentify_template` must be located in the same region as the
    * `SecuritySettings`.
    * </pre>
@@ -275,6 +291,49 @@ public interface SecuritySettingsOrBuilder
    * @return The retentionWindowDays.
    */
   int getRetentionWindowDays();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the retention behavior defined by
+   * [SecuritySettings.RetentionStrategy][google.cloud.dialogflow.cx.v3.SecuritySettings.RetentionStrategy].
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.RetentionStrategy retention_strategy = 7;
+   * </code>
+   *
+   * @return Whether the retentionStrategy field is set.
+   */
+  boolean hasRetentionStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the retention behavior defined by
+   * [SecuritySettings.RetentionStrategy][google.cloud.dialogflow.cx.v3.SecuritySettings.RetentionStrategy].
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.RetentionStrategy retention_strategy = 7;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for retentionStrategy.
+   */
+  int getRetentionStrategyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the retention behavior defined by
+   * [SecuritySettings.RetentionStrategy][google.cloud.dialogflow.cx.v3.SecuritySettings.RetentionStrategy].
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.RetentionStrategy retention_strategy = 7;
+   * </code>
+   *
+   * @return The retentionStrategy.
+   */
+  com.google.cloud.dialogflow.cx.v3.SecuritySettings.RetentionStrategy getRetentionStrategy();
 
   /**
    *
@@ -357,13 +416,16 @@ public interface SecuritySettingsOrBuilder
    * Controls audio export settings for post-conversation analytics when
    * ingesting audio to conversations via [Participants.AnalyzeContent][] or
    * [Participants.StreamingAnalyzeContent][].
+   *
    * If
    * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
    * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
    * is empty, audio export is disabled.
+   *
    * If audio export is enabled, audio is recorded and saved to
    * [audio_export_settings.gcs_bucket][], subject to retention policy of
    * [audio_export_settings.gcs_bucket][].
+   *
    * This setting won't effect audio input for implicit sessions via
    * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
    * or
@@ -384,13 +446,16 @@ public interface SecuritySettingsOrBuilder
    * Controls audio export settings for post-conversation analytics when
    * ingesting audio to conversations via [Participants.AnalyzeContent][] or
    * [Participants.StreamingAnalyzeContent][].
+   *
    * If
    * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
    * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
    * is empty, audio export is disabled.
+   *
    * If audio export is enabled, audio is recorded and saved to
    * [audio_export_settings.gcs_bucket][], subject to retention policy of
    * [audio_export_settings.gcs_bucket][].
+   *
    * This setting won't effect audio input for implicit sessions via
    * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
    * or
@@ -411,13 +476,16 @@ public interface SecuritySettingsOrBuilder
    * Controls audio export settings for post-conversation analytics when
    * ingesting audio to conversations via [Participants.AnalyzeContent][] or
    * [Participants.StreamingAnalyzeContent][].
+   *
    * If
    * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
    * is set to REMOVE_AFTER_CONVERSATION or [audio_export_settings.gcs_bucket][]
    * is empty, audio export is disabled.
+   *
    * If audio export is enabled, audio is recorded and saved to
    * [audio_export_settings.gcs_bucket][], subject to retention policy of
    * [audio_export_settings.gcs_bucket][].
+   *
    * This setting won't effect audio input for implicit sessions via
    * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent]
    * or
@@ -437,6 +505,7 @@ public interface SecuritySettingsOrBuilder
    * <pre>
    * Controls conversation exporting settings to Insights after conversation is
    * completed.
+   *
    * If
    * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
    * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
@@ -456,6 +525,7 @@ public interface SecuritySettingsOrBuilder
    * <pre>
    * Controls conversation exporting settings to Insights after conversation is
    * completed.
+   *
    * If
    * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
    * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
@@ -476,6 +546,7 @@ public interface SecuritySettingsOrBuilder
    * <pre>
    * Controls conversation exporting settings to Insights after conversation is
    * completed.
+   *
    * If
    * [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
    * is set to REMOVE_AFTER_CONVERSATION, Insights export is disabled no matter
@@ -489,6 +560,5 @@ public interface SecuritySettingsOrBuilder
   com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettingsOrBuilder
       getInsightsExportSettingsOrBuilder();
 
-  public com.google.cloud.dialogflow.cx.v3.SecuritySettings.DataRetentionCase
-      getDataRetentionCase();
+  com.google.cloud.dialogflow.cx.v3.SecuritySettings.DataRetentionCase getDataRetentionCase();
 }

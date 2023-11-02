@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public interface GetClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.GetClusterRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2634
+   *     google/container/v1beta1/cluster_service.proto;l=2965
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface GetClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.GetClusterRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2634
+   *     google/container/v1beta1/cluster_service.proto;l=2965
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface GetClusterRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.GetClusterRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2641
+   *     google/container/v1beta1/cluster_service.proto;l=2972
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface GetClusterRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.GetClusterRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2641
+   *     google/container/v1beta1/cluster_service.proto;l=2972
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface GetClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.GetClusterRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2645
+   *     google/container/v1beta1/cluster_service.proto;l=2976
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface GetClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.GetClusterRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2645
+   *     google/container/v1beta1/cluster_service.proto;l=2976
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

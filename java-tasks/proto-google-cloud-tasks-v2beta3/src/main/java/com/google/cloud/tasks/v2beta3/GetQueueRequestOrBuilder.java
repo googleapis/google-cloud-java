@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,8 +58,8 @@ public interface GetQueueRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Read mask is used for a more granular control over what the API returns.
-   * If the mask is not present all fields will be returned except
+   * Optional. Read mask is used for a more granular control over what the API
+   * returns. If the mask is not present all fields will be returned except
    * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
    * specified in the mask.
    * </pre>
@@ -74,8 +74,8 @@ public interface GetQueueRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Read mask is used for a more granular control over what the API returns.
-   * If the mask is not present all fields will be returned except
+   * Optional. Read mask is used for a more granular control over what the API
+   * returns. If the mask is not present all fields will be returned except
    * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
    * specified in the mask.
    * </pre>
@@ -90,8 +90,8 @@ public interface GetQueueRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Read mask is used for a more granular control over what the API returns.
-   * If the mask is not present all fields will be returned except
+   * Optional. Read mask is used for a more granular control over what the API
+   * returns. If the mask is not present all fields will be returned except
    * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
    * specified in the mask.
    * </pre>

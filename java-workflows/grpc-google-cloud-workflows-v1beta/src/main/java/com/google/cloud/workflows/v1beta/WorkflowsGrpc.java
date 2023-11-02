@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ public final class WorkflowsGrpc {
 
   private WorkflowsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.workflows.v1beta.Workflows";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.workflows.v1beta.Workflows";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -835,9 +835,9 @@ public final class WorkflowsGrpc {
   private static final class WorkflowsMethodDescriptorSupplier
       extends WorkflowsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    WorkflowsMethodDescriptorSupplier(String methodName) {
+    WorkflowsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

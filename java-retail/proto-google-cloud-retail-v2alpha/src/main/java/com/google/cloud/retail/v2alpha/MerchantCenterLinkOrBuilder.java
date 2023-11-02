@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ public interface MerchantCenterLinkOrBuilder
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
+   *
    * A single branch ID can only have one linked merchant center account ID.
    * </pre>
    *
@@ -62,6 +63,7 @@ public interface MerchantCenterLinkOrBuilder
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
+   *
    * A single branch ID can only have one linked merchant center account ID.
    * </pre>
    *
@@ -155,6 +157,7 @@ public interface MerchantCenterLinkOrBuilder
    * [here](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
    * under the `region` tag. If left blank no region filtering will be
    * performed.
+   *
    * Example value: `US`.
    * </pre>
    *
@@ -172,6 +175,7 @@ public interface MerchantCenterLinkOrBuilder
    * [here](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
    * under the `region` tag. If left blank no region filtering will be
    * performed.
+   *
    * Example value: `US`.
    * </pre>
    *
@@ -188,8 +192,10 @@ public interface MerchantCenterLinkOrBuilder
    * Language of the title/description and other string attributes. Use language
    * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
    * ISO 639-1.
+   *
    * This specifies the language of offers in Merchant Center that will be
    * accepted. If  empty no language filtering will be performed.
+   *
    * Example value: `en`.
    * </pre>
    *
@@ -205,8 +211,10 @@ public interface MerchantCenterLinkOrBuilder
    * Language of the title/description and other string attributes. Use language
    * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
    * ISO 639-1.
+   *
    * This specifies the language of offers in Merchant Center that will be
    * accepted. If  empty no language filtering will be performed.
+   *
    * Example value: `en`.
    * </pre>
    *

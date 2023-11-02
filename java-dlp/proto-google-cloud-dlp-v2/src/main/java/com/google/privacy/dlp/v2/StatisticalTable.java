@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StatisticalTable();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -170,11 +165,6 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new QuasiIdentifierField();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1179,8 +1169,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The relative frequency column must contain a floating-point number
-   * between 0 and 1 (inclusive). Null values are assumed to be zero.
+   * Required. The relative frequency column must contain a floating-point
+   * number between 0 and 1 (inclusive). Null values are assumed to be zero.
    * </pre>
    *
    * <code>
@@ -1197,8 +1187,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The relative frequency column must contain a floating-point number
-   * between 0 and 1 (inclusive). Null values are assumed to be zero.
+   * Required. The relative frequency column must contain a floating-point
+   * number between 0 and 1 (inclusive). Null values are assumed to be zero.
    * </pre>
    *
    * <code>
@@ -1217,8 +1207,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The relative frequency column must contain a floating-point number
-   * between 0 and 1 (inclusive). Null values are assumed to be zero.
+   * Required. The relative frequency column must contain a floating-point
+   * number between 0 and 1 (inclusive). Null values are assumed to be zero.
    * </pre>
    *
    * <code>
@@ -2308,8 +2298,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The relative frequency column must contain a floating-point number
-     * between 0 and 1 (inclusive). Null values are assumed to be zero.
+     * Required. The relative frequency column must contain a floating-point
+     * number between 0 and 1 (inclusive). Null values are assumed to be zero.
      * </pre>
      *
      * <code>
@@ -2325,8 +2315,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The relative frequency column must contain a floating-point number
-     * between 0 and 1 (inclusive). Null values are assumed to be zero.
+     * Required. The relative frequency column must contain a floating-point
+     * number between 0 and 1 (inclusive). Null values are assumed to be zero.
      * </pre>
      *
      * <code>
@@ -2348,8 +2338,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The relative frequency column must contain a floating-point number
-     * between 0 and 1 (inclusive). Null values are assumed to be zero.
+     * Required. The relative frequency column must contain a floating-point
+     * number between 0 and 1 (inclusive). Null values are assumed to be zero.
      * </pre>
      *
      * <code>
@@ -2373,8 +2363,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The relative frequency column must contain a floating-point number
-     * between 0 and 1 (inclusive). Null values are assumed to be zero.
+     * Required. The relative frequency column must contain a floating-point
+     * number between 0 and 1 (inclusive). Null values are assumed to be zero.
      * </pre>
      *
      * <code>
@@ -2395,8 +2385,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The relative frequency column must contain a floating-point number
-     * between 0 and 1 (inclusive). Null values are assumed to be zero.
+     * Required. The relative frequency column must contain a floating-point
+     * number between 0 and 1 (inclusive). Null values are assumed to be zero.
      * </pre>
      *
      * <code>
@@ -2423,8 +2413,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The relative frequency column must contain a floating-point number
-     * between 0 and 1 (inclusive). Null values are assumed to be zero.
+     * Required. The relative frequency column must contain a floating-point
+     * number between 0 and 1 (inclusive). Null values are assumed to be zero.
      * </pre>
      *
      * <code>
@@ -2445,8 +2435,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The relative frequency column must contain a floating-point number
-     * between 0 and 1 (inclusive). Null values are assumed to be zero.
+     * Required. The relative frequency column must contain a floating-point
+     * number between 0 and 1 (inclusive). Null values are assumed to be zero.
      * </pre>
      *
      * <code>
@@ -2462,8 +2452,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The relative frequency column must contain a floating-point number
-     * between 0 and 1 (inclusive). Null values are assumed to be zero.
+     * Required. The relative frequency column must contain a floating-point
+     * number between 0 and 1 (inclusive). Null values are assumed to be zero.
      * </pre>
      *
      * <code>
@@ -2483,8 +2473,8 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The relative frequency column must contain a floating-point number
-     * between 0 and 1 (inclusive). Null values are assumed to be zero.
+     * Required. The relative frequency column must contain a floating-point
+     * number between 0 and 1 (inclusive). Null values are assumed to be zero.
      * </pre>
      *
      * <code>

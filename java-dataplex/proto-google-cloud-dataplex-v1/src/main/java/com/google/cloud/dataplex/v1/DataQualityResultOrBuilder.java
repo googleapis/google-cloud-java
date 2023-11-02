@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -188,4 +188,46 @@ public interface DataQualityResultOrBuilder
    * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
    */
   com.google.cloud.dataplex.v1.ScannedDataOrBuilder getScannedDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityResult.PostScanActionsResult post_scan_actions_result = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the postScanActionsResult field is set.
+   */
+  boolean hasPostScanActionsResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityResult.PostScanActionsResult post_scan_actions_result = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The postScanActionsResult.
+   */
+  com.google.cloud.dataplex.v1.DataQualityResult.PostScanActionsResult getPostScanActionsResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityResult.PostScanActionsResult post_scan_actions_result = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityResult.PostScanActionsResultOrBuilder
+      getPostScanActionsResultOrBuilder();
 }

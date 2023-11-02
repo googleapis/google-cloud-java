@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     title_ = "";
     description_ = "";
-    includedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    includedPermissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     stage_ = 0;
     etag_ = com.google.protobuf.ByteString.EMPTY;
   }
@@ -50,11 +50,6 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Role();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -309,7 +304,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the role.
+   *
    * When Role is used in CreateRole, the role name must not be set.
+   *
    * When Role is used in output and other input such as UpdateRole, the role
    * name is the complete path, e.g., roles/logging.viewer for predefined roles
    * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
@@ -336,7 +333,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the role.
+   *
    * When Role is used in CreateRole, the role name must not be set.
+   *
    * When Role is used in output and other input such as UpdateRole, the role
    * name is the complete path, e.g., roles/logging.viewer for predefined roles
    * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
@@ -466,7 +465,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   public static final int INCLUDED_PERMISSIONS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList includedPermissions_;
+  private com.google.protobuf.LazyStringArrayList includedPermissions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -859,8 +859,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       title_ = "";
       description_ = "";
-      includedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      includedPermissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       stage_ = 0;
       etag_ = com.google.protobuf.ByteString.EMPTY;
       deleted_ = false;
@@ -889,20 +888,11 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.iam.admin.v1.Role buildPartial() {
       com.google.iam.admin.v1.Role result = new com.google.iam.admin.v1.Role(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.iam.admin.v1.Role result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        includedPermissions_ = includedPermissions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.includedPermissions_ = includedPermissions_;
     }
 
     private void buildPartial0(com.google.iam.admin.v1.Role result) {
@@ -915,6 +905,10 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        includedPermissions_.makeImmutable();
+        result.includedPermissions_ = includedPermissions_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.stage_ = stage_;
@@ -990,7 +984,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       if (!other.includedPermissions_.isEmpty()) {
         if (includedPermissions_.isEmpty()) {
           includedPermissions_ = other.includedPermissions_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureIncludedPermissionsIsMutable();
           includedPermissions_.addAll(other.includedPermissions_);
@@ -1100,7 +1094,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the role.
+     *
      * When Role is used in CreateRole, the role name must not be set.
+     *
      * When Role is used in output and other input such as UpdateRole, the role
      * name is the complete path, e.g., roles/logging.viewer for predefined roles
      * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
@@ -1126,7 +1122,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the role.
+     *
      * When Role is used in CreateRole, the role name must not be set.
+     *
      * When Role is used in output and other input such as UpdateRole, the role
      * name is the complete path, e.g., roles/logging.viewer for predefined roles
      * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
@@ -1152,7 +1150,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the role.
+     *
      * When Role is used in CreateRole, the role name must not be set.
+     *
      * When Role is used in output and other input such as UpdateRole, the role
      * name is the complete path, e.g., roles/logging.viewer for predefined roles
      * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
@@ -1177,7 +1177,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the role.
+     *
      * When Role is used in CreateRole, the role name must not be set.
+     *
      * When Role is used in output and other input such as UpdateRole, the role
      * name is the complete path, e.g., roles/logging.viewer for predefined roles
      * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
@@ -1198,7 +1200,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the role.
+     *
      * When Role is used in CreateRole, the role name must not be set.
+     *
      * When Role is used in output and other input such as UpdateRole, the role
      * name is the complete path, e.g., roles/logging.viewer for predefined roles
      * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
@@ -1437,14 +1441,14 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList includedPermissions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList includedPermissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIncludedPermissionsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!includedPermissions_.isModifiable()) {
         includedPermissions_ = new com.google.protobuf.LazyStringArrayList(includedPermissions_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1458,7 +1462,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the includedPermissions.
      */
     public com.google.protobuf.ProtocolStringList getIncludedPermissionsList() {
-      return includedPermissions_.getUnmodifiableView();
+      includedPermissions_.makeImmutable();
+      return includedPermissions_;
     }
     /**
      *
@@ -1523,6 +1528,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIncludedPermissionsIsMutable();
       includedPermissions_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1544,6 +1550,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIncludedPermissionsIsMutable();
       includedPermissions_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1562,6 +1569,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIncludedPermissions(java.lang.Iterable<java.lang.String> values) {
       ensureIncludedPermissionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includedPermissions_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1577,8 +1585,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIncludedPermissions() {
-      includedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includedPermissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1601,6 +1610,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIncludedPermissionsIsMutable();
       includedPermissions_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

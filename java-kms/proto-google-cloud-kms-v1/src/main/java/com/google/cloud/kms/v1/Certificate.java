@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     rawDer_ = com.google.protobuf.ByteString.EMPTY;
     issuer_ = "";
     subject_ = "";
-    subjectAlternativeDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    subjectAlternativeDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serialNumber_ = "";
     sha256Fingerprint_ = "";
   }
@@ -51,11 +51,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Certificate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -218,7 +213,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   public static final int SUBJECT_ALTERNATIVE_DNS_NAMES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList subjectAlternativeDnsNames_;
+  private com.google.protobuf.LazyStringArrayList subjectAlternativeDnsNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -806,8 +802,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       parsed_ = false;
       issuer_ = "";
       subject_ = "";
-      subjectAlternativeDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      subjectAlternativeDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       notBeforeTime_ = null;
       if (notBeforeTimeBuilder_ != null) {
         notBeforeTimeBuilder_.dispose();
@@ -846,20 +841,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.kms.v1.Certificate buildPartial() {
       com.google.cloud.kms.v1.Certificate result = new com.google.cloud.kms.v1.Certificate(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.kms.v1.Certificate result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        subjectAlternativeDnsNames_ = subjectAlternativeDnsNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.subjectAlternativeDnsNames_ = subjectAlternativeDnsNames_;
     }
 
     private void buildPartial0(com.google.cloud.kms.v1.Certificate result) {
@@ -875,6 +861,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.subject_ = subject_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        subjectAlternativeDnsNames_.makeImmutable();
+        result.subjectAlternativeDnsNames_ = subjectAlternativeDnsNames_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.notBeforeTime_ =
@@ -956,7 +946,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (!other.subjectAlternativeDnsNames_.isEmpty()) {
         if (subjectAlternativeDnsNames_.isEmpty()) {
           subjectAlternativeDnsNames_ = other.subjectAlternativeDnsNames_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureSubjectAlternativeDnsNamesIsMutable();
           subjectAlternativeDnsNames_.addAll(other.subjectAlternativeDnsNames_);
@@ -1409,15 +1399,15 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList subjectAlternativeDnsNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList subjectAlternativeDnsNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSubjectAlternativeDnsNamesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!subjectAlternativeDnsNames_.isModifiable()) {
         subjectAlternativeDnsNames_ =
             new com.google.protobuf.LazyStringArrayList(subjectAlternativeDnsNames_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1434,7 +1424,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the subjectAlternativeDnsNames.
      */
     public com.google.protobuf.ProtocolStringList getSubjectAlternativeDnsNamesList() {
-      return subjectAlternativeDnsNames_.getUnmodifiableView();
+      subjectAlternativeDnsNames_.makeImmutable();
+      return subjectAlternativeDnsNames_;
     }
     /**
      *
@@ -1511,6 +1502,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSubjectAlternativeDnsNamesIsMutable();
       subjectAlternativeDnsNames_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1535,6 +1527,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSubjectAlternativeDnsNamesIsMutable();
       subjectAlternativeDnsNames_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1556,6 +1549,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSubjectAlternativeDnsNames(java.lang.Iterable<java.lang.String> values) {
       ensureSubjectAlternativeDnsNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subjectAlternativeDnsNames_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1574,8 +1568,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubjectAlternativeDnsNames() {
-      subjectAlternativeDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      subjectAlternativeDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1601,6 +1596,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSubjectAlternativeDnsNamesIsMutable();
       subjectAlternativeDnsNames_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

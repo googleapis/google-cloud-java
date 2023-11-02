@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface GetInventoryRequestOrBuilder
    *
    * <pre>
    * Required. API resource name for inventory resource.
+   *
    * Format:
    * `projects/{project}/locations/{location}/instances/{instance}/inventory`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * For `{instance}`, either Compute Engine  `instance-id` or `instance-name`
    * can be provided.
@@ -47,8 +49,10 @@ public interface GetInventoryRequestOrBuilder
    *
    * <pre>
    * Required. API resource name for inventory resource.
+   *
    * Format:
    * `projects/{project}/locations/{location}/instances/{instance}/inventory`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * For `{instance}`, either Compute Engine  `instance-id` or `instance-name`
    * can be provided.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,12 @@ public interface UptimeCheckConfigOrBuilder
    *
    * <pre>
    * A unique resource name for this Uptime check configuration. The format is:
+   *
    *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+   *
    * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
    * Uptime check.
+   *
    * This field should be omitted when creating the Uptime check configuration;
    * on create, the resource name is assigned by the server and included in the
    * response.
@@ -46,9 +49,12 @@ public interface UptimeCheckConfigOrBuilder
    *
    * <pre>
    * A unique resource name for this Uptime check configuration. The format is:
+   *
    *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+   *
    * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
    * Uptime check.
+   *
    * This field should be omitted when creating the Uptime check configuration;
    * on create, the resource name is assigned by the server and included in the
    * response.
@@ -638,6 +644,7 @@ public interface UptimeCheckConfigOrBuilder
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `UptimeCheckConfig` objects.
+   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -653,6 +660,7 @@ public interface UptimeCheckConfigOrBuilder
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `UptimeCheckConfig` objects.
+   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -671,6 +679,7 @@ public interface UptimeCheckConfigOrBuilder
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `UptimeCheckConfig` objects.
+   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -686,6 +695,7 @@ public interface UptimeCheckConfigOrBuilder
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `UptimeCheckConfig` objects.
+   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -705,6 +715,7 @@ public interface UptimeCheckConfigOrBuilder
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `UptimeCheckConfig` objects.
+   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -715,7 +726,7 @@ public interface UptimeCheckConfigOrBuilder
    */
   java.lang.String getUserLabelsOrThrow(java.lang.String key);
 
-  public com.google.monitoring.v3.UptimeCheckConfig.ResourceCase getResourceCase();
+  com.google.monitoring.v3.UptimeCheckConfig.ResourceCase getResourceCase();
 
-  public com.google.monitoring.v3.UptimeCheckConfig.CheckRequestTypeCase getCheckRequestTypeCase();
+  com.google.monitoring.v3.UptimeCheckConfig.CheckRequestTypeCase getCheckRequestTypeCase();
 }

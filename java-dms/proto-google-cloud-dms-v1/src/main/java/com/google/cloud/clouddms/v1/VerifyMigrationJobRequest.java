@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class VerifyMigrationJobRequest extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new VerifyMigrationJobRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -118,6 +113,117 @@ public final class VerifyMigrationJobRequest extends com.google.protobuf.Generat
     }
   }
 
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field mask is used to specify the changed fields to be verified.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field mask is used to specify the changed fields to be verified.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field mask is used to specify the changed fields to be verified.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+
+  public static final int MIGRATION_JOB_FIELD_NUMBER = 3;
+  private com.google.cloud.clouddms.v1.MigrationJob migrationJob_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The changed migration job parameters to verify.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the migrationJob field is set.
+   */
+  @java.lang.Override
+  public boolean hasMigrationJob() {
+    return migrationJob_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The changed migration job parameters to verify.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The migrationJob.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.MigrationJob getMigrationJob() {
+    return migrationJob_ == null
+        ? com.google.cloud.clouddms.v1.MigrationJob.getDefaultInstance()
+        : migrationJob_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The changed migration job parameters to verify.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.MigrationJobOrBuilder getMigrationJobOrBuilder() {
+    return migrationJob_ == null
+        ? com.google.cloud.clouddms.v1.MigrationJob.getDefaultInstance()
+        : migrationJob_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -135,6 +241,12 @@ public final class VerifyMigrationJobRequest extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
+    }
+    if (migrationJob_ != null) {
+      output.writeMessage(3, getMigrationJob());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -146,6 +258,12 @@ public final class VerifyMigrationJobRequest extends com.google.protobuf.Generat
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
+    }
+    if (migrationJob_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMigrationJob());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -164,6 +282,14 @@ public final class VerifyMigrationJobRequest extends com.google.protobuf.Generat
         (com.google.cloud.clouddms.v1.VerifyMigrationJobRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+    }
+    if (hasMigrationJob() != other.hasMigrationJob()) return false;
+    if (hasMigrationJob()) {
+      if (!getMigrationJob().equals(other.getMigrationJob())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -177,6 +303,14 @@ public final class VerifyMigrationJobRequest extends com.google.protobuf.Generat
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
+    }
+    if (hasMigrationJob()) {
+      hash = (37 * hash) + MIGRATION_JOB_FIELD_NUMBER;
+      hash = (53 * hash) + getMigrationJob().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -318,6 +452,16 @@ public final class VerifyMigrationJobRequest extends com.google.protobuf.Generat
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
+      }
+      migrationJob_ = null;
+      if (migrationJobBuilder_ != null) {
+        migrationJobBuilder_.dispose();
+        migrationJobBuilder_ = null;
+      }
       return this;
     }
 
@@ -356,6 +500,13 @@ public final class VerifyMigrationJobRequest extends com.google.protobuf.Generat
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.migrationJob_ =
+            migrationJobBuilder_ == null ? migrationJob_ : migrationJobBuilder_.build();
       }
     }
 
@@ -410,6 +561,12 @@ public final class VerifyMigrationJobRequest extends com.google.protobuf.Generat
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
+      }
+      if (other.hasMigrationJob()) {
+        mergeMigrationJob(other.getMigrationJob());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -442,6 +599,18 @@ public final class VerifyMigrationJobRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getMigrationJobFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -565,6 +734,418 @@ public final class VerifyMigrationJobRequest extends com.google.protobuf.Generat
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask is used to specify the changed fields to be verified.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask is used to specify the changed fields to be verified.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask is used to specify the changed fields to be verified.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask is used to specify the changed fields to be verified.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask is used to specify the changed fields to be verified.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
+        } else {
+          updateMask_ = value;
+        }
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask is used to specify the changed fields to be verified.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearUpdateMask() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask is used to specify the changed fields to be verified.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask is used to specify the changed fields to be verified.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field mask is used to specify the changed fields to be verified.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
+    }
+
+    private com.google.cloud.clouddms.v1.MigrationJob migrationJob_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.MigrationJob,
+            com.google.cloud.clouddms.v1.MigrationJob.Builder,
+            com.google.cloud.clouddms.v1.MigrationJobOrBuilder>
+        migrationJobBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The changed migration job parameters to verify.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the migrationJob field is set.
+     */
+    public boolean hasMigrationJob() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The changed migration job parameters to verify.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The migrationJob.
+     */
+    public com.google.cloud.clouddms.v1.MigrationJob getMigrationJob() {
+      if (migrationJobBuilder_ == null) {
+        return migrationJob_ == null
+            ? com.google.cloud.clouddms.v1.MigrationJob.getDefaultInstance()
+            : migrationJob_;
+      } else {
+        return migrationJobBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The changed migration job parameters to verify.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMigrationJob(com.google.cloud.clouddms.v1.MigrationJob value) {
+      if (migrationJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        migrationJob_ = value;
+      } else {
+        migrationJobBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The changed migration job parameters to verify.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMigrationJob(
+        com.google.cloud.clouddms.v1.MigrationJob.Builder builderForValue) {
+      if (migrationJobBuilder_ == null) {
+        migrationJob_ = builderForValue.build();
+      } else {
+        migrationJobBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The changed migration job parameters to verify.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMigrationJob(com.google.cloud.clouddms.v1.MigrationJob value) {
+      if (migrationJobBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && migrationJob_ != null
+            && migrationJob_ != com.google.cloud.clouddms.v1.MigrationJob.getDefaultInstance()) {
+          getMigrationJobBuilder().mergeFrom(value);
+        } else {
+          migrationJob_ = value;
+        }
+      } else {
+        migrationJobBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The changed migration job parameters to verify.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMigrationJob() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      migrationJob_ = null;
+      if (migrationJobBuilder_ != null) {
+        migrationJobBuilder_.dispose();
+        migrationJobBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The changed migration job parameters to verify.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.clouddms.v1.MigrationJob.Builder getMigrationJobBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getMigrationJobFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The changed migration job parameters to verify.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.clouddms.v1.MigrationJobOrBuilder getMigrationJobOrBuilder() {
+      if (migrationJobBuilder_ != null) {
+        return migrationJobBuilder_.getMessageOrBuilder();
+      } else {
+        return migrationJob_ == null
+            ? com.google.cloud.clouddms.v1.MigrationJob.getDefaultInstance()
+            : migrationJob_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The changed migration job parameters to verify.
+     * It will not update the migration job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.MigrationJob,
+            com.google.cloud.clouddms.v1.MigrationJob.Builder,
+            com.google.cloud.clouddms.v1.MigrationJobOrBuilder>
+        getMigrationJobFieldBuilder() {
+      if (migrationJobBuilder_ == null) {
+        migrationJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.MigrationJob,
+                com.google.cloud.clouddms.v1.MigrationJob.Builder,
+                com.google.cloud.clouddms.v1.MigrationJobOrBuilder>(
+                getMigrationJob(), getParentForChildren(), isClean());
+        migrationJob_ = null;
+      }
+      return migrationJobBuilder_;
     }
 
     @java.lang.Override

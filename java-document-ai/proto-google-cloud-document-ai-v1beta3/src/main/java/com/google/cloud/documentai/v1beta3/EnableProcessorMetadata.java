@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * The long running operation metadata for enable processor method.
+ * The long-running operation metadata for the
+ * [EnableProcessor][google.cloud.documentai.v1beta3.DocumentProcessorService.EnableProcessor]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.EnableProcessorMetadata}
@@ -43,11 +45,6 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EnableProcessorMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +68,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -86,7 +83,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -103,7 +100,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -285,7 +282,9 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The long running operation metadata for enable processor method.
+   * The long-running operation metadata for the
+   * [EnableProcessor][google.cloud.documentai.v1beta3.DocumentProcessorService.EnableProcessor]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.EnableProcessorMetadata}
@@ -477,7 +476,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -491,7 +490,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -511,7 +510,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -534,7 +533,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -554,7 +553,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -582,7 +581,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -601,7 +600,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -616,7 +615,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
@@ -635,7 +634,7 @@ public final class EnableProcessorMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>

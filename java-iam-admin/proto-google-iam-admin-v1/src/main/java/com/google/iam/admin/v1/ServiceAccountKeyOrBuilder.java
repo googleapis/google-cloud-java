@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public interface ServiceAccountKeyOrBuilder
    * The output format for the private key.
    * Only provided in `CreateServiceAccountKey` responses, not
    * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+   *
    * Google never exposes system-managed private keys, and never retains
    * user-managed private keys.
    * </pre>
@@ -73,6 +74,7 @@ public interface ServiceAccountKeyOrBuilder
    * The output format for the private key.
    * Only provided in `CreateServiceAccountKey` responses, not
    * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+   *
    * Google never exposes system-managed private keys, and never retains
    * user-managed private keys.
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CheckResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -189,18 +184,13 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private CheckInfo() {
-      unusedArguments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unusedArguments_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CheckInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -221,7 +211,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     public static final int UNUSED_ARGUMENTS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList unusedArguments_;
+    private com.google.protobuf.LazyStringArrayList unusedArguments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -562,8 +553,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        unusedArguments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        unusedArguments_ = com.google.protobuf.LazyStringArrayList.emptyList();
         consumerInfo_ = null;
         if (consumerInfoBuilder_ != null) {
           consumerInfoBuilder_.dispose();
@@ -596,7 +586,6 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.api.servicecontrol.v1.CheckResponse.CheckInfo buildPartial() {
         com.google.api.servicecontrol.v1.CheckResponse.CheckInfo result =
             new com.google.api.servicecontrol.v1.CheckResponse.CheckInfo(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -604,17 +593,12 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.api.servicecontrol.v1.CheckResponse.CheckInfo result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          unusedArguments_ = unusedArguments_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.unusedArguments_ = unusedArguments_;
-      }
-
       private void buildPartial0(com.google.api.servicecontrol.v1.CheckResponse.CheckInfo result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          unusedArguments_.makeImmutable();
+          result.unusedArguments_ = unusedArguments_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.consumerInfo_ =
               consumerInfoBuilder_ == null ? consumerInfo_ : consumerInfoBuilder_.build();
@@ -672,7 +656,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         if (!other.unusedArguments_.isEmpty()) {
           if (unusedArguments_.isEmpty()) {
             unusedArguments_ = other.unusedArguments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureUnusedArgumentsIsMutable();
             unusedArguments_.addAll(other.unusedArguments_);
@@ -740,14 +724,14 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList unusedArguments_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList unusedArguments_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureUnusedArgumentsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!unusedArguments_.isModifiable()) {
           unusedArguments_ = new com.google.protobuf.LazyStringArrayList(unusedArguments_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -763,7 +747,8 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the unusedArguments.
        */
       public com.google.protobuf.ProtocolStringList getUnusedArgumentsList() {
-        return unusedArguments_.getUnmodifiableView();
+        unusedArguments_.makeImmutable();
+        return unusedArguments_;
       }
       /**
        *
@@ -836,6 +821,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         }
         ensureUnusedArgumentsIsMutable();
         unusedArguments_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -859,6 +845,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         }
         ensureUnusedArgumentsIsMutable();
         unusedArguments_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -879,6 +866,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllUnusedArguments(java.lang.Iterable<java.lang.String> values) {
         ensureUnusedArgumentsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unusedArguments_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -896,8 +884,9 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUnusedArguments() {
-        unusedArguments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        unusedArguments_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -922,6 +911,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureUnusedArgumentsIsMutable();
         unusedArguments_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1191,6 +1181,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google cloud project number, e.g. 1234567890. A value of 0 indicates
      * no project number is found.
+     *
      * NOTE: This field is deprecated after we support flexible consumer
      * id. New code should not depend on this field anymore.
      * </pre>
@@ -1270,11 +1261,6 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ConsumerInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1508,6 +1494,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Google cloud project number, e.g. 1234567890. A value of 0 indicates
      * no project number is found.
+     *
      * NOTE: This field is deprecated after we support flexible consumer
      * id. New code should not depend on this field anymore.
      * </pre>
@@ -1985,6 +1972,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The Google cloud project number, e.g. 1234567890. A value of 0 indicates
        * no project number is found.
+       *
        * NOTE: This field is deprecated after we support flexible consumer
        * id. New code should not depend on this field anymore.
        * </pre>
@@ -2003,6 +1991,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The Google cloud project number, e.g. 1234567890. A value of 0 indicates
        * no project number is found.
+       *
        * NOTE: This field is deprecated after we support flexible consumer
        * id. New code should not depend on this field anymore.
        * </pre>
@@ -2025,6 +2014,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The Google cloud project number, e.g. 1234567890. A value of 0 indicates
        * no project number is found.
+       *
        * NOTE: This field is deprecated after we support flexible consumer
        * id. New code should not depend on this field anymore.
        * </pre>
@@ -2332,6 +2322,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicate the decision of the check.
+   *
    * If no check errors are present, the service should process the operation.
    * Otherwise the service should use the list of errors to determine the
    * appropriate action.
@@ -2348,6 +2339,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicate the decision of the check.
+   *
    * If no check errors are present, the service should process the operation.
    * Otherwise the service should use the list of errors to determine the
    * appropriate action.
@@ -2365,6 +2357,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicate the decision of the check.
+   *
    * If no check errors are present, the service should process the operation.
    * Otherwise the service should use the list of errors to determine the
    * appropriate action.
@@ -2381,6 +2374,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicate the decision of the check.
+   *
    * If no check errors are present, the service should process the operation.
    * Otherwise the service should use the list of errors to determine the
    * appropriate action.
@@ -2397,6 +2391,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicate the decision of the check.
+   *
    * If no check errors are present, the service should process the operation.
    * Otherwise the service should use the list of errors to determine the
    * appropriate action.
@@ -3190,6 +3185,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3209,6 +3205,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3228,6 +3225,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3247,6 +3245,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3272,6 +3271,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3295,6 +3295,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3320,6 +3321,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3345,6 +3347,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3368,6 +3371,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3391,6 +3395,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3414,6 +3419,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3436,6 +3442,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3458,6 +3465,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3473,6 +3481,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3492,6 +3501,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3512,6 +3522,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3528,6 +3539,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.
@@ -3544,6 +3556,7 @@ public final class CheckResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicate the decision of the check.
+     *
      * If no check errors are present, the service should process the operation.
      * Otherwise the service should use the list of errors to determine the
      * appropriate action.

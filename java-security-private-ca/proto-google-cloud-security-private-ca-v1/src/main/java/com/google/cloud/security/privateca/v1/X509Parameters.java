@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
 
   private X509Parameters() {
     policyIds_ = java.util.Collections.emptyList();
-    aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
     additionalExtensions_ = java.util.Collections.emptyList();
   }
 
@@ -50,11 +50,6 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new X509Parameters();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -168,11 +163,6 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CaOptions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1438,25 +1428,20 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     }
 
     private NameConstraints() {
-      permittedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      excludedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      permittedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      excludedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      permittedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      excludedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      permittedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      excludedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      permittedDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludedDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      permittedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      permittedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      permittedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NameConstraints();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1495,7 +1480,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public static final int PERMITTED_DNS_NAMES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList permittedDnsNames_;
+    private com.google.protobuf.LazyStringArrayList permittedDnsNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1574,7 +1560,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public static final int EXCLUDED_DNS_NAMES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList excludedDnsNames_;
+    private com.google.protobuf.LazyStringArrayList excludedDnsNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1653,7 +1640,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public static final int PERMITTED_IP_RANGES_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList permittedIpRanges_;
+    private com.google.protobuf.LazyStringArrayList permittedIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1728,7 +1716,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public static final int EXCLUDED_IP_RANGES_FIELD_NUMBER = 5;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList excludedIpRanges_;
+    private com.google.protobuf.LazyStringArrayList excludedIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1803,7 +1792,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public static final int PERMITTED_EMAIL_ADDRESSES_FIELD_NUMBER = 6;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList permittedEmailAddresses_;
+    private com.google.protobuf.LazyStringArrayList permittedEmailAddresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1878,7 +1868,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public static final int EXCLUDED_EMAIL_ADDRESSES_FIELD_NUMBER = 7;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList excludedEmailAddresses_;
+    private com.google.protobuf.LazyStringArrayList excludedEmailAddresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1953,7 +1944,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public static final int PERMITTED_URIS_FIELD_NUMBER = 8;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList permittedUris_;
+    private com.google.protobuf.LazyStringArrayList permittedUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -2024,7 +2016,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public static final int EXCLUDED_URIS_FIELD_NUMBER = 9;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList excludedUris_;
+    private com.google.protobuf.LazyStringArrayList excludedUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -2430,22 +2423,14 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         critical_ = false;
-        permittedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        excludedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        permittedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        excludedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        permittedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        excludedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
-        permittedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000080);
-        excludedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        permittedDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludedDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        permittedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        permittedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        permittedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -2476,7 +2461,6 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints buildPartial() {
         com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints result =
             new com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -2484,55 +2468,43 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          permittedDnsNames_ = permittedDnsNames_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.permittedDnsNames_ = permittedDnsNames_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          excludedDnsNames_ = excludedDnsNames_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.excludedDnsNames_ = excludedDnsNames_;
-        if (((bitField0_ & 0x00000008) != 0)) {
-          permittedIpRanges_ = permittedIpRanges_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.permittedIpRanges_ = permittedIpRanges_;
-        if (((bitField0_ & 0x00000010) != 0)) {
-          excludedIpRanges_ = excludedIpRanges_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.excludedIpRanges_ = excludedIpRanges_;
-        if (((bitField0_ & 0x00000020) != 0)) {
-          permittedEmailAddresses_ = permittedEmailAddresses_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.permittedEmailAddresses_ = permittedEmailAddresses_;
-        if (((bitField0_ & 0x00000040) != 0)) {
-          excludedEmailAddresses_ = excludedEmailAddresses_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000040);
-        }
-        result.excludedEmailAddresses_ = excludedEmailAddresses_;
-        if (((bitField0_ & 0x00000080) != 0)) {
-          permittedUris_ = permittedUris_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000080);
-        }
-        result.permittedUris_ = permittedUris_;
-        if (((bitField0_ & 0x00000100) != 0)) {
-          excludedUris_ = excludedUris_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000100);
-        }
-        result.excludedUris_ = excludedUris_;
-      }
-
       private void buildPartial0(
           com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.critical_ = critical_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          permittedDnsNames_.makeImmutable();
+          result.permittedDnsNames_ = permittedDnsNames_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          excludedDnsNames_.makeImmutable();
+          result.excludedDnsNames_ = excludedDnsNames_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          permittedIpRanges_.makeImmutable();
+          result.permittedIpRanges_ = permittedIpRanges_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          excludedIpRanges_.makeImmutable();
+          result.excludedIpRanges_ = excludedIpRanges_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          permittedEmailAddresses_.makeImmutable();
+          result.permittedEmailAddresses_ = permittedEmailAddresses_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          excludedEmailAddresses_.makeImmutable();
+          result.excludedEmailAddresses_ = excludedEmailAddresses_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          permittedUris_.makeImmutable();
+          result.permittedUris_ = permittedUris_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          excludedUris_.makeImmutable();
+          result.excludedUris_ = excludedUris_;
         }
       }
 
@@ -2594,7 +2566,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         if (!other.permittedDnsNames_.isEmpty()) {
           if (permittedDnsNames_.isEmpty()) {
             permittedDnsNames_ = other.permittedDnsNames_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensurePermittedDnsNamesIsMutable();
             permittedDnsNames_.addAll(other.permittedDnsNames_);
@@ -2604,7 +2576,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         if (!other.excludedDnsNames_.isEmpty()) {
           if (excludedDnsNames_.isEmpty()) {
             excludedDnsNames_ = other.excludedDnsNames_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureExcludedDnsNamesIsMutable();
             excludedDnsNames_.addAll(other.excludedDnsNames_);
@@ -2614,7 +2586,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         if (!other.permittedIpRanges_.isEmpty()) {
           if (permittedIpRanges_.isEmpty()) {
             permittedIpRanges_ = other.permittedIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensurePermittedIpRangesIsMutable();
             permittedIpRanges_.addAll(other.permittedIpRanges_);
@@ -2624,7 +2596,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         if (!other.excludedIpRanges_.isEmpty()) {
           if (excludedIpRanges_.isEmpty()) {
             excludedIpRanges_ = other.excludedIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ |= 0x00000010;
           } else {
             ensureExcludedIpRangesIsMutable();
             excludedIpRanges_.addAll(other.excludedIpRanges_);
@@ -2634,7 +2606,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         if (!other.permittedEmailAddresses_.isEmpty()) {
           if (permittedEmailAddresses_.isEmpty()) {
             permittedEmailAddresses_ = other.permittedEmailAddresses_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ |= 0x00000020;
           } else {
             ensurePermittedEmailAddressesIsMutable();
             permittedEmailAddresses_.addAll(other.permittedEmailAddresses_);
@@ -2644,7 +2616,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         if (!other.excludedEmailAddresses_.isEmpty()) {
           if (excludedEmailAddresses_.isEmpty()) {
             excludedEmailAddresses_ = other.excludedEmailAddresses_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ |= 0x00000040;
           } else {
             ensureExcludedEmailAddressesIsMutable();
             excludedEmailAddresses_.addAll(other.excludedEmailAddresses_);
@@ -2654,7 +2626,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         if (!other.permittedUris_.isEmpty()) {
           if (permittedUris_.isEmpty()) {
             permittedUris_ = other.permittedUris_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ |= 0x00000080;
           } else {
             ensurePermittedUrisIsMutable();
             permittedUris_.addAll(other.permittedUris_);
@@ -2664,7 +2636,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         if (!other.excludedUris_.isEmpty()) {
           if (excludedUris_.isEmpty()) {
             excludedUris_ = other.excludedUris_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ |= 0x00000100;
           } else {
             ensureExcludedUrisIsMutable();
             excludedUris_.addAll(other.excludedUris_);
@@ -2831,14 +2803,14 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList permittedDnsNames_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList permittedDnsNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensurePermittedDnsNamesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!permittedDnsNames_.isModifiable()) {
           permittedDnsNames_ = new com.google.protobuf.LazyStringArrayList(permittedDnsNames_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -2856,7 +2828,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the permittedDnsNames.
        */
       public com.google.protobuf.ProtocolStringList getPermittedDnsNamesList() {
-        return permittedDnsNames_.getUnmodifiableView();
+        permittedDnsNames_.makeImmutable();
+        return permittedDnsNames_;
       }
       /**
        *
@@ -2937,6 +2910,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePermittedDnsNamesIsMutable();
         permittedDnsNames_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2962,6 +2936,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePermittedDnsNamesIsMutable();
         permittedDnsNames_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2984,6 +2959,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllPermittedDnsNames(java.lang.Iterable<java.lang.String> values) {
         ensurePermittedDnsNamesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, permittedDnsNames_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3003,8 +2979,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPermittedDnsNames() {
-        permittedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        permittedDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -3031,18 +3008,19 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensurePermittedDnsNamesIsMutable();
         permittedDnsNames_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList excludedDnsNames_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList excludedDnsNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureExcludedDnsNamesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!excludedDnsNames_.isModifiable()) {
           excludedDnsNames_ = new com.google.protobuf.LazyStringArrayList(excludedDnsNames_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -3060,7 +3038,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the excludedDnsNames.
        */
       public com.google.protobuf.ProtocolStringList getExcludedDnsNamesList() {
-        return excludedDnsNames_.getUnmodifiableView();
+        excludedDnsNames_.makeImmutable();
+        return excludedDnsNames_;
       }
       /**
        *
@@ -3141,6 +3120,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludedDnsNamesIsMutable();
         excludedDnsNames_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3166,6 +3146,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludedDnsNamesIsMutable();
         excludedDnsNames_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3188,6 +3169,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllExcludedDnsNames(java.lang.Iterable<java.lang.String> values) {
         ensureExcludedDnsNamesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedDnsNames_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3207,8 +3189,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearExcludedDnsNames() {
-        excludedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        excludedDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -3235,18 +3218,19 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureExcludedDnsNamesIsMutable();
         excludedDnsNames_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList permittedIpRanges_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList permittedIpRanges_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensurePermittedIpRangesIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!permittedIpRanges_.isModifiable()) {
           permittedIpRanges_ = new com.google.protobuf.LazyStringArrayList(permittedIpRanges_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -3263,7 +3247,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the permittedIpRanges.
        */
       public com.google.protobuf.ProtocolStringList getPermittedIpRangesList() {
-        return permittedIpRanges_.getUnmodifiableView();
+        permittedIpRanges_.makeImmutable();
+        return permittedIpRanges_;
       }
       /**
        *
@@ -3340,6 +3325,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePermittedIpRangesIsMutable();
         permittedIpRanges_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3364,6 +3350,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePermittedIpRangesIsMutable();
         permittedIpRanges_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3385,6 +3372,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllPermittedIpRanges(java.lang.Iterable<java.lang.String> values) {
         ensurePermittedIpRangesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, permittedIpRanges_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3403,8 +3391,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPermittedIpRanges() {
-        permittedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        permittedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -3430,18 +3419,19 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensurePermittedIpRangesIsMutable();
         permittedIpRanges_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList excludedIpRanges_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList excludedIpRanges_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureExcludedIpRangesIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!excludedIpRanges_.isModifiable()) {
           excludedIpRanges_ = new com.google.protobuf.LazyStringArrayList(excludedIpRanges_);
-          bitField0_ |= 0x00000010;
         }
+        bitField0_ |= 0x00000010;
       }
       /**
        *
@@ -3458,7 +3448,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the excludedIpRanges.
        */
       public com.google.protobuf.ProtocolStringList getExcludedIpRangesList() {
-        return excludedIpRanges_.getUnmodifiableView();
+        excludedIpRanges_.makeImmutable();
+        return excludedIpRanges_;
       }
       /**
        *
@@ -3535,6 +3526,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludedIpRangesIsMutable();
         excludedIpRanges_.set(index, value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3559,6 +3551,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludedIpRangesIsMutable();
         excludedIpRanges_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3580,6 +3573,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllExcludedIpRanges(java.lang.Iterable<java.lang.String> values) {
         ensureExcludedIpRangesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedIpRanges_);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3598,8 +3592,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearExcludedIpRanges() {
-        excludedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        excludedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
+        ;
         onChanged();
         return this;
       }
@@ -3625,19 +3620,20 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureExcludedIpRangesIsMutable();
         excludedIpRanges_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList permittedEmailAddresses_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList permittedEmailAddresses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensurePermittedEmailAddressesIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!permittedEmailAddresses_.isModifiable()) {
           permittedEmailAddresses_ =
               new com.google.protobuf.LazyStringArrayList(permittedEmailAddresses_);
-          bitField0_ |= 0x00000020;
         }
+        bitField0_ |= 0x00000020;
       }
       /**
        *
@@ -3654,7 +3650,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the permittedEmailAddresses.
        */
       public com.google.protobuf.ProtocolStringList getPermittedEmailAddressesList() {
-        return permittedEmailAddresses_.getUnmodifiableView();
+        permittedEmailAddresses_.makeImmutable();
+        return permittedEmailAddresses_;
       }
       /**
        *
@@ -3731,6 +3728,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePermittedEmailAddressesIsMutable();
         permittedEmailAddresses_.set(index, value);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -3755,6 +3753,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePermittedEmailAddressesIsMutable();
         permittedEmailAddresses_.add(value);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -3776,6 +3775,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllPermittedEmailAddresses(java.lang.Iterable<java.lang.String> values) {
         ensurePermittedEmailAddressesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, permittedEmailAddresses_);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -3794,8 +3794,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPermittedEmailAddresses() {
-        permittedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        permittedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000020);
+        ;
         onChanged();
         return this;
       }
@@ -3821,19 +3822,20 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensurePermittedEmailAddressesIsMutable();
         permittedEmailAddresses_.add(value);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList excludedEmailAddresses_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList excludedEmailAddresses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureExcludedEmailAddressesIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!excludedEmailAddresses_.isModifiable()) {
           excludedEmailAddresses_ =
               new com.google.protobuf.LazyStringArrayList(excludedEmailAddresses_);
-          bitField0_ |= 0x00000040;
         }
+        bitField0_ |= 0x00000040;
       }
       /**
        *
@@ -3850,7 +3852,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the excludedEmailAddresses.
        */
       public com.google.protobuf.ProtocolStringList getExcludedEmailAddressesList() {
-        return excludedEmailAddresses_.getUnmodifiableView();
+        excludedEmailAddresses_.makeImmutable();
+        return excludedEmailAddresses_;
       }
       /**
        *
@@ -3927,6 +3930,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludedEmailAddressesIsMutable();
         excludedEmailAddresses_.set(index, value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3951,6 +3955,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludedEmailAddressesIsMutable();
         excludedEmailAddresses_.add(value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3972,6 +3977,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllExcludedEmailAddresses(java.lang.Iterable<java.lang.String> values) {
         ensureExcludedEmailAddressesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedEmailAddresses_);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3990,8 +3996,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearExcludedEmailAddresses() {
-        excludedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        excludedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000040);
+        ;
         onChanged();
         return this;
       }
@@ -4017,18 +4024,19 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureExcludedEmailAddressesIsMutable();
         excludedEmailAddresses_.add(value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList permittedUris_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList permittedUris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensurePermittedUrisIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!permittedUris_.isModifiable()) {
           permittedUris_ = new com.google.protobuf.LazyStringArrayList(permittedUris_);
-          bitField0_ |= 0x00000080;
         }
+        bitField0_ |= 0x00000080;
       }
       /**
        *
@@ -4044,7 +4052,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the permittedUris.
        */
       public com.google.protobuf.ProtocolStringList getPermittedUrisList() {
-        return permittedUris_.getUnmodifiableView();
+        permittedUris_.makeImmutable();
+        return permittedUris_;
       }
       /**
        *
@@ -4117,6 +4126,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePermittedUrisIsMutable();
         permittedUris_.set(index, value);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4140,6 +4150,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePermittedUrisIsMutable();
         permittedUris_.add(value);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4160,6 +4171,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllPermittedUris(java.lang.Iterable<java.lang.String> values) {
         ensurePermittedUrisIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, permittedUris_);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4177,8 +4189,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPermittedUris() {
-        permittedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        permittedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000080);
+        ;
         onChanged();
         return this;
       }
@@ -4203,18 +4216,19 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensurePermittedUrisIsMutable();
         permittedUris_.add(value);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList excludedUris_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList excludedUris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureExcludedUrisIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!excludedUris_.isModifiable()) {
           excludedUris_ = new com.google.protobuf.LazyStringArrayList(excludedUris_);
-          bitField0_ |= 0x00000100;
         }
+        bitField0_ |= 0x00000100;
       }
       /**
        *
@@ -4230,7 +4244,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the excludedUris.
        */
       public com.google.protobuf.ProtocolStringList getExcludedUrisList() {
-        return excludedUris_.getUnmodifiableView();
+        excludedUris_.makeImmutable();
+        return excludedUris_;
       }
       /**
        *
@@ -4303,6 +4318,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludedUrisIsMutable();
         excludedUris_.set(index, value);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4326,6 +4342,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludedUrisIsMutable();
         excludedUris_.add(value);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4346,6 +4363,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllExcludedUris(java.lang.Iterable<java.lang.String> values) {
         ensureExcludedUrisIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedUris_);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4363,8 +4381,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearExcludedUris() {
-        excludedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        excludedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000100);
+        ;
         onChanged();
         return this;
       }
@@ -4389,6 +4408,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureExcludedUrisIsMutable();
         excludedUris_.add(value);
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4672,7 +4692,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
   public static final int AIA_OCSP_SERVERS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList aiaOcspServers_;
+  private com.google.protobuf.LazyStringArrayList aiaOcspServers_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -5173,8 +5194,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         policyIdsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       nameConstraints_ = null;
       if (nameConstraintsBuilder_ != null) {
         nameConstraintsBuilder_.dispose();
@@ -5233,11 +5253,6 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.policyIds_ = policyIdsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        aiaOcspServers_ = aiaOcspServers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.aiaOcspServers_ = aiaOcspServers_;
       if (additionalExtensionsBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           additionalExtensions_ = java.util.Collections.unmodifiableList(additionalExtensions_);
@@ -5256,6 +5271,10 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.caOptions_ = caOptionsBuilder_ == null ? caOptions_ : caOptionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        aiaOcspServers_.makeImmutable();
+        result.aiaOcspServers_ = aiaOcspServers_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.nameConstraints_ =
@@ -5345,7 +5364,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       if (!other.aiaOcspServers_.isEmpty()) {
         if (aiaOcspServers_.isEmpty()) {
           aiaOcspServers_ = other.aiaOcspServers_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureAiaOcspServersIsMutable();
           aiaOcspServers_.addAll(other.aiaOcspServers_);
@@ -6323,14 +6342,14 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       return policyIdsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList aiaOcspServers_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList aiaOcspServers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAiaOcspServersIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!aiaOcspServers_.isModifiable()) {
         aiaOcspServers_ = new com.google.protobuf.LazyStringArrayList(aiaOcspServers_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -6346,7 +6365,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the aiaOcspServers.
      */
     public com.google.protobuf.ProtocolStringList getAiaOcspServersList() {
-      return aiaOcspServers_.getUnmodifiableView();
+      aiaOcspServers_.makeImmutable();
+      return aiaOcspServers_;
     }
     /**
      *
@@ -6419,6 +6439,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAiaOcspServersIsMutable();
       aiaOcspServers_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6442,6 +6463,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAiaOcspServersIsMutable();
       aiaOcspServers_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6462,6 +6484,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAiaOcspServers(java.lang.Iterable<java.lang.String> values) {
       ensureAiaOcspServersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, aiaOcspServers_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6479,8 +6502,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAiaOcspServers() {
-      aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -6505,6 +6529,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAiaOcspServersIsMutable();
       aiaOcspServers_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

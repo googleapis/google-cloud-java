@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
     return new ListSettingsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcesettings.v1.ResourceSettingsProto
         .internal_static_google_cloud_resourcesettings_v1_ListSettingsRequest_descriptor;
@@ -79,6 +74,7 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The Cloud resource that parents the setting. Must be in one of the
    * following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`
@@ -109,6 +105,7 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The Cloud resource that parents the setting. Must be in one of the
    * following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`
@@ -658,6 +655,7 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The Cloud resource that parents the setting. Must be in one of the
      * following forms:
+     *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -687,6 +685,7 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The Cloud resource that parents the setting. Must be in one of the
      * following forms:
+     *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -716,6 +715,7 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The Cloud resource that parents the setting. Must be in one of the
      * following forms:
+     *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -744,6 +744,7 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The Cloud resource that parents the setting. Must be in one of the
      * following forms:
+     *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -768,6 +769,7 @@ public final class ListSettingsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The Cloud resource that parents the setting. Must be in one of the
      * following forms:
+     *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`

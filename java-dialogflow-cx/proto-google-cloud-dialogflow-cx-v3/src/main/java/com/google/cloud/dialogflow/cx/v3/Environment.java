@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,11 +55,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Environment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -140,11 +135,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new VersionConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -869,18 +859,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private TestCasesConfig() {
-      testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      testCases_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TestCasesConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -901,7 +886,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public static final int TEST_CASES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList testCases_;
+    private com.google.protobuf.LazyStringArrayList testCases_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1235,8 +1221,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        testCases_ = com.google.protobuf.LazyStringArrayList.emptyList();
         enableContinuousRun_ = false;
         enablePredeploymentRun_ = false;
         return this;
@@ -1267,7 +1252,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig buildPartial() {
         com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig result =
             new com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1275,18 +1259,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          testCases_ = testCases_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.testCases_ = testCases_;
-      }
-
       private void buildPartial0(
           com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          testCases_.makeImmutable();
+          result.testCases_ = testCases_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.enableContinuousRun_ = enableContinuousRun_;
         }
@@ -1348,7 +1327,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         if (!other.testCases_.isEmpty()) {
           if (testCases_.isEmpty()) {
             testCases_ = other.testCases_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureTestCasesIsMutable();
             testCases_.addAll(other.testCases_);
@@ -1425,14 +1404,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList testCases_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList testCases_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureTestCasesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!testCases_.isModifiable()) {
           testCases_ = new com.google.protobuf.LazyStringArrayList(testCases_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -1448,7 +1427,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the testCases.
        */
       public com.google.protobuf.ProtocolStringList getTestCasesList() {
-        return testCases_.getUnmodifiableView();
+        testCases_.makeImmutable();
+        return testCases_;
       }
       /**
        *
@@ -1521,6 +1501,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         }
         ensureTestCasesIsMutable();
         testCases_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1544,6 +1525,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         }
         ensureTestCasesIsMutable();
         testCases_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1564,6 +1546,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllTestCases(java.lang.Iterable<java.lang.String> values) {
         ensureTestCasesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, testCases_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1581,8 +1564,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTestCases() {
-        testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        testCases_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1607,6 +1591,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureTestCasesIsMutable();
         testCases_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1900,11 +1885,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new WebhookConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

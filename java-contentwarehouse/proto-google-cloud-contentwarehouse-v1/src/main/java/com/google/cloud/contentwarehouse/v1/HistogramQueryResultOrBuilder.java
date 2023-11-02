@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,9 @@ public interface HistogramQueryResultOrBuilder
    * <pre>
    * A map from the values of the facet associated with distinct values to the
    * number of matching entries with corresponding value.
+   *
    * The key format is:
+   *
    * * (for string histogram) string values stored in the field.
    * </pre>
    *
@@ -67,7 +69,9 @@ public interface HistogramQueryResultOrBuilder
    * <pre>
    * A map from the values of the facet associated with distinct values to the
    * number of matching entries with corresponding value.
+   *
    * The key format is:
+   *
    * * (for string histogram) string values stored in the field.
    * </pre>
    *
@@ -83,7 +87,9 @@ public interface HistogramQueryResultOrBuilder
    * <pre>
    * A map from the values of the facet associated with distinct values to the
    * number of matching entries with corresponding value.
+   *
    * The key format is:
+   *
    * * (for string histogram) string values stored in the field.
    * </pre>
    *
@@ -96,7 +102,9 @@ public interface HistogramQueryResultOrBuilder
    * <pre>
    * A map from the values of the facet associated with distinct values to the
    * number of matching entries with corresponding value.
+   *
    * The key format is:
+   *
    * * (for string histogram) string values stored in the field.
    * </pre>
    *
@@ -109,7 +117,9 @@ public interface HistogramQueryResultOrBuilder
    * <pre>
    * A map from the values of the facet associated with distinct values to the
    * number of matching entries with corresponding value.
+   *
    * The key format is:
+   *
    * * (for string histogram) string values stored in the field.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
   }
 
   private IosKeyRestrictions() {
-    allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new IosKeyRestrictions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
   public static final int ALLOWED_BUNDLE_IDS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowedBundleIds_;
+  private com.google.protobuf.LazyStringArrayList allowedBundleIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -335,8 +331,7 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -364,7 +359,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
     public com.google.api.apikeys.v2.IosKeyRestrictions buildPartial() {
       com.google.api.apikeys.v2.IosKeyRestrictions result =
           new com.google.api.apikeys.v2.IosKeyRestrictions(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -372,16 +366,12 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.api.apikeys.v2.IosKeyRestrictions result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        allowedBundleIds_ = allowedBundleIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.allowedBundleIds_ = allowedBundleIds_;
-    }
-
     private void buildPartial0(com.google.api.apikeys.v2.IosKeyRestrictions result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        allowedBundleIds_.makeImmutable();
+        result.allowedBundleIds_ = allowedBundleIds_;
+      }
     }
 
     @java.lang.Override
@@ -432,7 +422,7 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
       if (!other.allowedBundleIds_.isEmpty()) {
         if (allowedBundleIds_.isEmpty()) {
           allowedBundleIds_ = other.allowedBundleIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureAllowedBundleIdsIsMutable();
           allowedBundleIds_.addAll(other.allowedBundleIds_);
@@ -491,14 +481,14 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList allowedBundleIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowedBundleIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowedBundleIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!allowedBundleIds_.isModifiable()) {
         allowedBundleIds_ = new com.google.protobuf.LazyStringArrayList(allowedBundleIds_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -512,7 +502,8 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
      * @return A list containing the allowedBundleIds.
      */
     public com.google.protobuf.ProtocolStringList getAllowedBundleIdsList() {
-      return allowedBundleIds_.getUnmodifiableView();
+      allowedBundleIds_.makeImmutable();
+      return allowedBundleIds_;
     }
     /**
      *
@@ -577,6 +568,7 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
       }
       ensureAllowedBundleIdsIsMutable();
       allowedBundleIds_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -598,6 +590,7 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
       }
       ensureAllowedBundleIdsIsMutable();
       allowedBundleIds_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -616,6 +609,7 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
     public Builder addAllAllowedBundleIds(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedBundleIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedBundleIds_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +625,9 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAllowedBundleIds() {
-      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -655,6 +650,7 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureAllowedBundleIdsIsMutable();
       allowedBundleIds_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

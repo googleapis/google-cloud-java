@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,5 +178,5 @@ public interface StorageConfigOrBuilder
   /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
   com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder getTimespanConfigOrBuilder();
 
-  public com.google.privacy.dlp.v2.StorageConfig.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.StorageConfig.TypeCase getTypeCase();
 }

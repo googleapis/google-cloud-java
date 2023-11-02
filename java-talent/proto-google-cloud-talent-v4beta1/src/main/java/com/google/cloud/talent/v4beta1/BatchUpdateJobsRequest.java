@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
     return new BatchUpdateJobsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.JobServiceProto
         .internal_static_google_cloud_talent_v4beta1_BatchUpdateJobsRequest_descriptor;
@@ -77,6 +72,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    * is created. For example, "projects/foo".
@@ -105,6 +101,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    * is created. For example, "projects/foo".
@@ -218,13 +215,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Strongly recommended for the best service experience. Be aware that it will
    * also increase latency when checking the status of a batch operation.
+   *
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, only the specified fields in
    * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
    * fields are updated.
+   *
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+   *
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
@@ -248,13 +248,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Strongly recommended for the best service experience. Be aware that it will
    * also increase latency when checking the status of a batch operation.
+   *
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, only the specified fields in
    * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
    * fields are updated.
+   *
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+   *
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
@@ -278,13 +281,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Strongly recommended for the best service experience. Be aware that it will
    * also increase latency when checking the status of a batch operation.
+   *
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, only the specified fields in
    * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
    * fields are updated.
+   *
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+   *
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
@@ -753,6 +759,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
@@ -780,6 +787,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
@@ -807,6 +815,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
@@ -833,6 +842,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
@@ -855,6 +865,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
@@ -1272,13 +1283,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
      * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
      * fields are updated.
+     *
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
@@ -1301,13 +1315,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
      * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
      * fields are updated.
+     *
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
@@ -1336,13 +1353,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
      * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
      * fields are updated.
+     *
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
@@ -1373,13 +1393,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
      * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
      * fields are updated.
+     *
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
@@ -1407,13 +1430,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
      * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
      * fields are updated.
+     *
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
@@ -1447,13 +1473,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
      * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
      * fields are updated.
+     *
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
@@ -1481,13 +1510,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
      * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
      * fields are updated.
+     *
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
@@ -1510,13 +1542,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
      * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
      * fields are updated.
+     *
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside
@@ -1543,13 +1578,16 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Strongly recommended for the best service experience. Be aware that it will
      * also increase latency when checking the status of a batch operation.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
      * [Job][google.cloud.talent.v4beta1.Job] are updated. Otherwise all the
      * fields are updated.
+     *
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4beta1.Job] are supported.
+     *
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, The [Job][google.cloud.talent.v4beta1.Job] inside

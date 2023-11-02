@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OSPolicyResourceConfigStep();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -128,6 +123,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * <pre>
      * Re-check desired state status for a resource after enforcement of all
      * resources in the current configuration run.
+     *
      * This step is used to determine the final desired state status for the
      * resource. It accounts for any resources that might have drifted from
      * their desired state due to side effects from configuring other resources
@@ -186,6 +182,7 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * <pre>
      * Re-check desired state status for a resource after enforcement of all
      * resources in the current configuration run.
+     *
      * This step is used to determine the final desired state status for the
      * resource. It accounts for any resources that might have drifted from
      * their desired state due to side effects from configuring other resources

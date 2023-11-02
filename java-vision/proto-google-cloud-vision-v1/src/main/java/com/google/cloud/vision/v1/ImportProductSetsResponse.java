@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.vision.v1;
  *
  * <pre>
  * Response message for the `ImportProductSets` method.
+ *
  * This message is returned by the
  * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
  * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
@@ -49,11 +50,6 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImportProductSetsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -152,6 +148,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
+   *
    * The number of statuses here matches the number of lines in the csv file,
    * and statuses[i] stores the success or failure status of processing the i-th
    * line of the csv, starting from line 0.
@@ -169,6 +166,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
+   *
    * The number of statuses here matches the number of lines in the csv file,
    * and statuses[i] stores the success or failure status of processing the i-th
    * line of the csv, starting from line 0.
@@ -186,6 +184,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
+   *
    * The number of statuses here matches the number of lines in the csv file,
    * and statuses[i] stores the success or failure status of processing the i-th
    * line of the csv, starting from line 0.
@@ -203,6 +202,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
+   *
    * The number of statuses here matches the number of lines in the csv file,
    * and statuses[i] stores the success or failure status of processing the i-th
    * line of the csv, starting from line 0.
@@ -220,6 +220,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
+   *
    * The number of statuses here matches the number of lines in the csv file,
    * and statuses[i] stores the success or failure status of processing the i-th
    * line of the csv, starting from line 0.
@@ -409,6 +410,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * Response message for the `ImportProductSets` method.
+   *
    * This message is returned by the
    * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
    * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
@@ -1065,6 +1067,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1085,6 +1088,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1105,6 +1109,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1125,6 +1130,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1151,6 +1157,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1174,6 +1181,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1200,6 +1208,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1226,6 +1235,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1249,6 +1259,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1272,6 +1283,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1295,6 +1307,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1318,6 +1331,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1341,6 +1355,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1357,6 +1372,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1377,6 +1393,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1397,6 +1414,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1413,6 +1431,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.
@@ -1430,6 +1449,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
+     *
      * The number of statuses here matches the number of lines in the csv file,
      * and statuses[i] stores the success or failure status of processing the i-th
      * line of the csv, starting from line 0.

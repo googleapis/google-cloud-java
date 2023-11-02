@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     return new Replication();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.secretmanager.v1.ResourcesProto
         .internal_static_google_cloud_secretmanager_v1_Replication_descriptor;
@@ -77,6 +72,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * Optional. The customer-managed encryption configuration of the
      * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
      * provided, Google-managed default encryption is used.
+     *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
      * configuration only apply to
      * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -98,6 +94,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * Optional. The customer-managed encryption configuration of the
      * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
      * provided, Google-managed default encryption is used.
+     *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
      * configuration only apply to
      * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -119,6 +116,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * Optional. The customer-managed encryption configuration of the
      * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
      * provided, Google-managed default encryption is used.
+     *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
      * configuration only apply to
      * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -162,11 +160,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return new Automatic();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.secretmanager.v1.ResourcesProto
           .internal_static_google_cloud_secretmanager_v1_Replication_Automatic_descriptor;
@@ -191,6 +184,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * Optional. The customer-managed encryption configuration of the
      * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
      * provided, Google-managed default encryption is used.
+     *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
      * configuration only apply to
      * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -215,6 +209,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * Optional. The customer-managed encryption configuration of the
      * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
      * provided, Google-managed default encryption is used.
+     *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
      * configuration only apply to
      * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -242,6 +237,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * Optional. The customer-managed encryption configuration of the
      * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
      * provided, Google-managed default encryption is used.
+     *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
      * configuration only apply to
      * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -638,6 +634,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
        * provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
        * configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -661,6 +658,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
        * provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
        * configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -691,6 +689,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
        * provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
        * configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -723,6 +722,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
        * provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
        * configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -752,6 +752,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
        * provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
        * configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -789,6 +790,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
        * provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
        * configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -817,6 +819,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
        * provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
        * configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -841,6 +844,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
        * provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
        * configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -869,6 +873,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [Secret][google.cloud.secretmanager.v1.Secret]. If no configuration is
        * provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
        * configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -972,6 +977,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The list of Replicas for this
      * [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * Cannot be empty.
      * </pre>
      *
@@ -987,6 +993,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The list of Replicas for this
      * [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * Cannot be empty.
      * </pre>
      *
@@ -1001,6 +1008,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The list of Replicas for this
      * [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * Cannot be empty.
      * </pre>
      *
@@ -1015,6 +1023,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The list of Replicas for this
      * [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * Cannot be empty.
      * </pre>
      *
@@ -1031,6 +1040,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The list of Replicas for this
      * [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * Cannot be empty.
      * </pre>
      *
@@ -1070,11 +1080,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new UserManaged();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1131,6 +1136,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [User-Managed Replica][Replication.UserManaged.Replica]. If no
        * configuration is provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
        * encryption configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -1152,6 +1158,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [User-Managed Replica][Replication.UserManaged.Replica]. If no
        * configuration is provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
        * encryption configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -1173,6 +1180,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [User-Managed Replica][Replication.UserManaged.Replica]. If no
        * configuration is provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
        * encryption configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -1215,11 +1223,6 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Replica();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1300,6 +1303,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [User-Managed Replica][Replication.UserManaged.Replica]. If no
        * configuration is provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
        * encryption configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -1324,6 +1328,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [User-Managed Replica][Replication.UserManaged.Replica]. If no
        * configuration is provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
        * encryption configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -1351,6 +1356,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * Optional. The customer-managed encryption configuration of the
        * [User-Managed Replica][Replication.UserManaged.Replica]. If no
        * configuration is provided, Google-managed default encryption is used.
+       *
        * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
        * encryption configuration only apply to
        * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -1890,6 +1896,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * Optional. The customer-managed encryption configuration of the
          * [User-Managed Replica][Replication.UserManaged.Replica]. If no
          * configuration is provided, Google-managed default encryption is used.
+         *
          * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
          * encryption configuration only apply to
          * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -1913,6 +1920,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * Optional. The customer-managed encryption configuration of the
          * [User-Managed Replica][Replication.UserManaged.Replica]. If no
          * configuration is provided, Google-managed default encryption is used.
+         *
          * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
          * encryption configuration only apply to
          * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -1943,6 +1951,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * Optional. The customer-managed encryption configuration of the
          * [User-Managed Replica][Replication.UserManaged.Replica]. If no
          * configuration is provided, Google-managed default encryption is used.
+         *
          * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
          * encryption configuration only apply to
          * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -1975,6 +1984,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * Optional. The customer-managed encryption configuration of the
          * [User-Managed Replica][Replication.UserManaged.Replica]. If no
          * configuration is provided, Google-managed default encryption is used.
+         *
          * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
          * encryption configuration only apply to
          * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -2004,6 +2014,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * Optional. The customer-managed encryption configuration of the
          * [User-Managed Replica][Replication.UserManaged.Replica]. If no
          * configuration is provided, Google-managed default encryption is used.
+         *
          * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
          * encryption configuration only apply to
          * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -2041,6 +2052,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * Optional. The customer-managed encryption configuration of the
          * [User-Managed Replica][Replication.UserManaged.Replica]. If no
          * configuration is provided, Google-managed default encryption is used.
+         *
          * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
          * encryption configuration only apply to
          * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -2069,6 +2081,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * Optional. The customer-managed encryption configuration of the
          * [User-Managed Replica][Replication.UserManaged.Replica]. If no
          * configuration is provided, Google-managed default encryption is used.
+         *
          * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
          * encryption configuration only apply to
          * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -2093,6 +2106,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * Optional. The customer-managed encryption configuration of the
          * [User-Managed Replica][Replication.UserManaged.Replica]. If no
          * configuration is provided, Google-managed default encryption is used.
+         *
          * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
          * encryption configuration only apply to
          * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -2121,6 +2135,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          * Optional. The customer-managed encryption configuration of the
          * [User-Managed Replica][Replication.UserManaged.Replica]. If no
          * configuration is provided, Google-managed default encryption is used.
+         *
          * Updates to the [Secret][google.cloud.secretmanager.v1.Secret]
          * encryption configuration only apply to
          * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added
@@ -2227,6 +2242,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The list of Replicas for this
      * [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * Cannot be empty.
      * </pre>
      *
@@ -2245,6 +2261,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The list of Replicas for this
      * [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * Cannot be empty.
      * </pre>
      *
@@ -2264,6 +2281,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The list of Replicas for this
      * [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * Cannot be empty.
      * </pre>
      *
@@ -2281,6 +2299,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The list of Replicas for this
      * [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * Cannot be empty.
      * </pre>
      *
@@ -2299,6 +2318,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The list of Replicas for this
      * [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * Cannot be empty.
      * </pre>
      *
@@ -2735,6 +2755,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -2756,6 +2777,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -2776,6 +2798,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -2797,6 +2820,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -2824,6 +2848,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -2850,6 +2875,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -2877,6 +2903,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -2904,6 +2931,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -2929,6 +2957,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -2955,6 +2984,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -2981,6 +3011,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -3004,6 +3035,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -3027,6 +3059,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -3044,6 +3077,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -3065,6 +3099,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -3087,6 +3122,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -3107,6 +3143,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -3128,6 +3165,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The list of Replicas for this
        * [Secret][google.cloud.secretmanager.v1.Secret].
+       *
        * Cannot be empty.
        * </pre>
        *
@@ -3223,6 +3261,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int replicationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object replication_;
 
   public enum ReplicationCase

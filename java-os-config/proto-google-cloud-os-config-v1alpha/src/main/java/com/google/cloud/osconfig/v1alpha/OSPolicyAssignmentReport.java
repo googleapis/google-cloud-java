@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OSPolicyAssignmentReport();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,7 +132,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * The reason for the OS policy to be in an unknown compliance state.
      * This field is always populated when `compliance_state` is `UNKNOWN`.
+     *
      * If populated, the field can contain one of the following values:
+     *
      * * `vm-not-running`: The VM was not running.
      * * `os-policies-not-supported-by-agent`: The version of the OS Config
      * agent running on the VM does not support running OS policies.
@@ -166,7 +163,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * The reason for the OS policy to be in an unknown compliance state.
      * This field is always populated when `compliance_state` is `UNKNOWN`.
+     *
      * If populated, the field can contain one of the following values:
+     *
      * * `vm-not-running`: The VM was not running.
      * * `os-policies-not-supported-by-agent`: The version of the OS Config
      * agent running on the VM does not support running OS policies.
@@ -299,11 +298,6 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
       return new OSPolicyCompliance();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReportsProto
           .internal_static_google_cloud_osconfig_v1alpha_OSPolicyAssignmentReport_OSPolicyCompliance_descriptor;
@@ -336,6 +330,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        *
        * <pre>
        * The policy is in an unknown compliance state.
+       *
        * Refer to the field `compliance_state_reason` to learn the exact reason
        * for the policy to be in this compliance state.
        * </pre>
@@ -348,6 +343,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        *
        * <pre>
        * Policy is compliant.
+       *
        * The policy is compliant if all the underlying resources are also
        * compliant.
        * </pre>
@@ -360,6 +356,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        *
        * <pre>
        * Policy is non-compliant.
+       *
        * The policy is non-compliant if one or more underlying resources are
        * non-compliant.
        * </pre>
@@ -375,6 +372,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        *
        * <pre>
        * The policy is in an unknown compliance state.
+       *
        * Refer to the field `compliance_state_reason` to learn the exact reason
        * for the policy to be in this compliance state.
        * </pre>
@@ -387,6 +385,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        *
        * <pre>
        * Policy is compliant.
+       *
        * The policy is compliant if all the underlying resources are also
        * compliant.
        * </pre>
@@ -399,6 +398,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        *
        * <pre>
        * Policy is non-compliant.
+       *
        * The policy is non-compliant if one or more underlying resources are
        * non-compliant.
        * </pre>
@@ -640,7 +640,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        * <pre>
        * A reason for the resource to be in the given compliance state.
        * This field is always populated when `compliance_state` is `UNKNOWN`.
+       *
        * The following values are supported when `compliance_state == UNKNOWN`
+       *
        * * `execution-errors`: Errors were encountered by the agent while
        * executing the resource and the compliance state couldn't be
        * determined.
@@ -663,7 +665,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        * <pre>
        * A reason for the resource to be in the given compliance state.
        * This field is always populated when `compliance_state` is `UNKNOWN`.
+       *
        * The following values are supported when `compliance_state == UNKNOWN`
+       *
        * * `execution-errors`: Errors were encountered by the agent while
        * executing the resource and the compliance state couldn't be
        * determined.
@@ -726,7 +730,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
               .OSPolicyResourceCompliance.ExecResourceOutputOrBuilder
           getExecResourceOutputOrBuilder();
 
-      public com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport.OSPolicyCompliance
+      com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport.OSPolicyCompliance
               .OSPolicyResourceCompliance.OutputCase
           getOutputCase();
     }
@@ -765,11 +769,6 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
         return new OSPolicyResourceCompliance();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReportsProto
             .internal_static_google_cloud_osconfig_v1alpha_OSPolicyAssignmentReport_OSPolicyCompliance_OSPolicyResourceCompliance_descriptor;
@@ -803,6 +802,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
          *
          * <pre>
          * The resource is in an unknown compliance state.
+         *
          * To get more details about why the policy is in this state, review
          * the output of the `compliance_state_reason` field.
          * </pre>
@@ -838,6 +838,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
          *
          * <pre>
          * The resource is in an unknown compliance state.
+         *
          * To get more details about why the policy is in this state, review
          * the output of the `compliance_state_reason` field.
          * </pre>
@@ -1053,11 +1054,6 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           return new OSPolicyResourceConfigStep();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReportsProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicyAssignmentReport_OSPolicyCompliance_OSPolicyResourceCompliance_OSPolicyResourceConfigStep_descriptor;
@@ -1133,6 +1129,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
            * <pre>
            * Re-checks the status of the desired state. This check is done
            * for a resource after the enforcement of all OS policies.
+           *
            * This step is used to determine the final desired state status for
            * the resource. It accounts for any resources that might have drifted
            * from their desired state due to side effects from executing other
@@ -1192,6 +1189,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
            * <pre>
            * Re-checks the status of the desired state. This check is done
            * for a resource after the enforcement of all OS policies.
+           *
            * This step is used to determine the final desired state status for
            * the resource. It accounts for any resources that might have drifted
            * from their desired state due to side effects from executing other
@@ -2177,11 +2175,6 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           return new ExecResourceOutput();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReportsProto
               .internal_static_google_cloud_osconfig_v1alpha_OSPolicyAssignmentReport_OSPolicyCompliance_OSPolicyResourceCompliance_ExecResourceOutput_descriptor;
@@ -2759,6 +2752,8 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
       }
 
       private int outputCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object output_;
 
       public enum OutputCase
@@ -3009,7 +3004,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        * <pre>
        * A reason for the resource to be in the given compliance state.
        * This field is always populated when `compliance_state` is `UNKNOWN`.
+       *
        * The following values are supported when `compliance_state == UNKNOWN`
+       *
        * * `execution-errors`: Errors were encountered by the agent while
        * executing the resource and the compliance state couldn't be
        * determined.
@@ -3043,7 +3040,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        * <pre>
        * A reason for the resource to be in the given compliance state.
        * This field is always populated when `compliance_state` is `UNKNOWN`.
+       *
        * The following values are supported when `compliance_state == UNKNOWN`
+       *
        * * `execution-errors`: Errors were encountered by the agent while
        * executing the resource and the compliance state couldn't be
        * determined.
@@ -4449,7 +4448,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
          * <pre>
          * A reason for the resource to be in the given compliance state.
          * This field is always populated when `compliance_state` is `UNKNOWN`.
+         *
          * The following values are supported when `compliance_state == UNKNOWN`
+         *
          * * `execution-errors`: Errors were encountered by the agent while
          * executing the resource and the compliance state couldn't be
          * determined.
@@ -4482,7 +4483,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
          * <pre>
          * A reason for the resource to be in the given compliance state.
          * This field is always populated when `compliance_state` is `UNKNOWN`.
+         *
          * The following values are supported when `compliance_state == UNKNOWN`
+         *
          * * `execution-errors`: Errors were encountered by the agent while
          * executing the resource and the compliance state couldn't be
          * determined.
@@ -4515,7 +4518,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
          * <pre>
          * A reason for the resource to be in the given compliance state.
          * This field is always populated when `compliance_state` is `UNKNOWN`.
+         *
          * The following values are supported when `compliance_state == UNKNOWN`
+         *
          * * `execution-errors`: Errors were encountered by the agent while
          * executing the resource and the compliance state couldn't be
          * determined.
@@ -4547,7 +4552,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
          * <pre>
          * A reason for the resource to be in the given compliance state.
          * This field is always populated when `compliance_state` is `UNKNOWN`.
+         *
          * The following values are supported when `compliance_state == UNKNOWN`
+         *
          * * `execution-errors`: Errors were encountered by the agent while
          * executing the resource and the compliance state couldn't be
          * determined.
@@ -4575,7 +4582,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
          * <pre>
          * A reason for the resource to be in the given compliance state.
          * This field is always populated when `compliance_state` is `UNKNOWN`.
+         *
          * The following values are supported when `compliance_state == UNKNOWN`
+         *
          * * `execution-errors`: Errors were encountered by the agent while
          * executing the resource and the compliance state couldn't be
          * determined.
@@ -5048,7 +5057,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * The reason for the OS policy to be in an unknown compliance state.
      * This field is always populated when `compliance_state` is `UNKNOWN`.
+     *
      * If populated, the field can contain one of the following values:
+     *
      * * `vm-not-running`: The VM was not running.
      * * `os-policies-not-supported-by-agent`: The version of the OS Config
      * agent running on the VM does not support running OS policies.
@@ -5088,7 +5099,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * The reason for the OS policy to be in an unknown compliance state.
      * This field is always populated when `compliance_state` is `UNKNOWN`.
+     *
      * If populated, the field can contain one of the following values:
+     *
      * * `vm-not-running`: The VM was not running.
      * * `os-policies-not-supported-by-agent`: The version of the OS Config
      * agent running on the VM does not support running OS policies.
@@ -5948,7 +5961,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        * <pre>
        * The reason for the OS policy to be in an unknown compliance state.
        * This field is always populated when `compliance_state` is `UNKNOWN`.
+       *
        * If populated, the field can contain one of the following values:
+       *
        * * `vm-not-running`: The VM was not running.
        * * `os-policies-not-supported-by-agent`: The version of the OS Config
        * agent running on the VM does not support running OS policies.
@@ -5987,7 +6002,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        * <pre>
        * The reason for the OS policy to be in an unknown compliance state.
        * This field is always populated when `compliance_state` is `UNKNOWN`.
+       *
        * If populated, the field can contain one of the following values:
+       *
        * * `vm-not-running`: The VM was not running.
        * * `os-policies-not-supported-by-agent`: The version of the OS Config
        * agent running on the VM does not support running OS policies.
@@ -6026,7 +6043,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        * <pre>
        * The reason for the OS policy to be in an unknown compliance state.
        * This field is always populated when `compliance_state` is `UNKNOWN`.
+       *
        * If populated, the field can contain one of the following values:
+       *
        * * `vm-not-running`: The VM was not running.
        * * `os-policies-not-supported-by-agent`: The version of the OS Config
        * agent running on the VM does not support running OS policies.
@@ -6064,7 +6083,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        * <pre>
        * The reason for the OS policy to be in an unknown compliance state.
        * This field is always populated when `compliance_state` is `UNKNOWN`.
+       *
        * If populated, the field can contain one of the following values:
+       *
        * * `vm-not-running`: The VM was not running.
        * * `os-policies-not-supported-by-agent`: The version of the OS Config
        * agent running on the VM does not support running OS policies.
@@ -6098,7 +6119,9 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
        * <pre>
        * The reason for the OS policy to be in an unknown compliance state.
        * This field is always populated when `compliance_state` is `UNKNOWN`.
+       *
        * If populated, the field can contain one of the following values:
+       *
        * * `vm-not-running`: The VM was not running.
        * * `os-policies-not-supported-by-agent`: The version of the OS Config
        * agent running on the VM does not support running OS policies.
@@ -6678,6 +6701,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
    *
    * <pre>
    * The `OSPolicyAssignmentReport` API resource name.
+   *
    * Format:
    * `projects/{project_number}/locations/{location}/instances/{instance_id}/osPolicyAssignments/{os_policy_assignment_id}/report`
    * </pre>
@@ -6703,6 +6727,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
    *
    * <pre>
    * The `OSPolicyAssignmentReport` API resource name.
+   *
    * Format:
    * `projects/{project_number}/locations/{location}/instances/{instance_id}/osPolicyAssignments/{os_policy_assignment_id}/report`
    * </pre>
@@ -6785,6 +6810,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
    * <pre>
    * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
    * belongs to.
+   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
    * </pre>
@@ -6811,6 +6837,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
    * <pre>
    * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
    * belongs to.
+   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
    * </pre>
@@ -6978,6 +7005,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
    * <pre>
    * Unique identifier of the last attempted run to apply the OS policies
    * associated with this assignment on the VM.
+   *
    * This ID is logged by the OS Config agent while applying the OS
    * policies associated with this assignment on the VM.
    * NOTE: If the service is unable to successfully connect to the agent for
@@ -7006,6 +7034,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
    * <pre>
    * Unique identifier of the last attempted run to apply the OS policies
    * associated with this assignment on the VM.
+   *
    * This ID is logged by the OS Config agent while applying the OS
    * policies associated with this assignment on the VM.
    * NOTE: If the service is unable to successfully connect to the agent for
@@ -7556,6 +7585,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      *
      * <pre>
      * The `OSPolicyAssignmentReport` API resource name.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/instances/{instance_id}/osPolicyAssignments/{os_policy_assignment_id}/report`
      * </pre>
@@ -7580,6 +7610,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      *
      * <pre>
      * The `OSPolicyAssignmentReport` API resource name.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/instances/{instance_id}/osPolicyAssignments/{os_policy_assignment_id}/report`
      * </pre>
@@ -7604,6 +7635,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      *
      * <pre>
      * The `OSPolicyAssignmentReport` API resource name.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/instances/{instance_id}/osPolicyAssignments/{os_policy_assignment_id}/report`
      * </pre>
@@ -7627,6 +7659,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      *
      * <pre>
      * The `OSPolicyAssignmentReport` API resource name.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/instances/{instance_id}/osPolicyAssignments/{os_policy_assignment_id}/report`
      * </pre>
@@ -7646,6 +7679,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      *
      * <pre>
      * The `OSPolicyAssignmentReport` API resource name.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/instances/{instance_id}/osPolicyAssignments/{os_policy_assignment_id}/report`
      * </pre>
@@ -7779,6 +7813,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
      * belongs to.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -7804,6 +7839,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
      * belongs to.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -7829,6 +7865,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
      * belongs to.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -7853,6 +7890,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
      * belongs to.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -7873,6 +7911,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
      * belongs to.
+     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -8507,6 +8546,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * Unique identifier of the last attempted run to apply the OS policies
      * associated with this assignment on the VM.
+     *
      * This ID is logged by the OS Config agent while applying the OS
      * policies associated with this assignment on the VM.
      * NOTE: If the service is unable to successfully connect to the agent for
@@ -8534,6 +8574,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * Unique identifier of the last attempted run to apply the OS policies
      * associated with this assignment on the VM.
+     *
      * This ID is logged by the OS Config agent while applying the OS
      * policies associated with this assignment on the VM.
      * NOTE: If the service is unable to successfully connect to the agent for
@@ -8561,6 +8602,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * Unique identifier of the last attempted run to apply the OS policies
      * associated with this assignment on the VM.
+     *
      * This ID is logged by the OS Config agent while applying the OS
      * policies associated with this assignment on the VM.
      * NOTE: If the service is unable to successfully connect to the agent for
@@ -8587,6 +8629,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * Unique identifier of the last attempted run to apply the OS policies
      * associated with this assignment on the VM.
+     *
      * This ID is logged by the OS Config agent while applying the OS
      * policies associated with this assignment on the VM.
      * NOTE: If the service is unable to successfully connect to the agent for
@@ -8609,6 +8652,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
      * <pre>
      * Unique identifier of the last attempted run to apply the OS policies
      * associated with this assignment on the VM.
+     *
      * This ID is logged by the OS Config agent while applying the OS
      * policies associated with this assignment on the VM.
      * NOTE: If the service is unable to successfully connect to the agent for

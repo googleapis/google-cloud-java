@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
 
   private ExecutionConfig() {
     serviceAccount_ = "";
-    networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     kmsKey_ = "";
     stagingBucket_ = "";
   }
@@ -48,11 +48,6 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExecutionConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,6 +66,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   private int networkCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object network_;
 
   public enum NetworkCase
@@ -311,7 +308,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   public static final int NETWORK_TAGS_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList networkTags_;
+  private com.google.protobuf.LazyStringArrayList networkTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -842,8 +840,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       serviceAccount_ = "";
-      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       kmsKey_ = "";
       ttl_ = null;
       if (ttlBuilder_ != null) {
@@ -880,7 +877,6 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dataproc.v1.ExecutionConfig buildPartial() {
       com.google.cloud.dataproc.v1.ExecutionConfig result =
           new com.google.cloud.dataproc.v1.ExecutionConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -889,18 +885,14 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.ExecutionConfig result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        networkTags_ = networkTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.networkTags_ = networkTags_;
-    }
-
     private void buildPartial0(com.google.cloud.dataproc.v1.ExecutionConfig result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        networkTags_.makeImmutable();
+        result.networkTags_ = networkTags_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.kmsKey_ = kmsKey_;
@@ -971,7 +963,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
@@ -1489,14 +1481,14 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.LazyStringList networkTags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList networkTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNetworkTagsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!networkTags_.isModifiable()) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1510,7 +1502,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the networkTags.
      */
     public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
-      return networkTags_.getUnmodifiableView();
+      networkTags_.makeImmutable();
+      return networkTags_;
     }
     /**
      *
@@ -1575,6 +1568,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       }
       ensureNetworkTagsIsMutable();
       networkTags_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1596,6 +1590,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       }
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1614,6 +1609,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
       ensureNetworkTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1629,8 +1625,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearNetworkTags() {
-      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1653,6 +1650,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

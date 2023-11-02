@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OSPolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -268,9 +263,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The OS version
+     *
      * Prefix matches are supported if asterisk(*) is provided as the
      * last character. For example, to match all versions with a major
      * version of `7`, specify the following value for this field `7.*`
+     *
      * An empty string matches all OS versions.
      * </pre>
      *
@@ -284,9 +281,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The OS version
+     *
      * Prefix matches are supported if asterisk(*) is provided as the
      * last character. For example, to match all versions with a major
      * version of `7`, specify the following value for this field `7.*`
+     *
      * An empty string matches all OS versions.
      * </pre>
      *
@@ -324,11 +323,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InventoryFilter();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -406,9 +400,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The OS version
+     *
      * Prefix matches are supported if asterisk(*) is provided as the
      * last character. For example, to match all versions with a major
      * version of `7`, specify the following value for this field `7.*`
+     *
      * An empty string matches all OS versions.
      * </pre>
      *
@@ -433,9 +429,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The OS version
+     *
      * Prefix matches are supported if asterisk(*) is provided as the
      * last character. For example, to match all versions with a major
      * version of `7`, specify the following value for this field `7.*`
+     *
      * An empty string matches all OS versions.
      * </pre>
      *
@@ -939,9 +937,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The OS version
+       *
        * Prefix matches are supported if asterisk(*) is provided as the
        * last character. For example, to match all versions with a major
        * version of `7`, specify the following value for this field `7.*`
+       *
        * An empty string matches all OS versions.
        * </pre>
        *
@@ -965,9 +965,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The OS version
+       *
        * Prefix matches are supported if asterisk(*) is provided as the
        * last character. For example, to match all versions with a major
        * version of `7`, specify the following value for this field `7.*`
+       *
        * An empty string matches all OS versions.
        * </pre>
        *
@@ -991,9 +993,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The OS version
+       *
        * Prefix matches are supported if asterisk(*) is provided as the
        * last character. For example, to match all versions with a major
        * version of `7`, specify the following value for this field `7.*`
+       *
        * An empty string matches all OS versions.
        * </pre>
        *
@@ -1016,9 +1020,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The OS version
+       *
        * Prefix matches are supported if asterisk(*) is provided as the
        * last character. For example, to match all versions with a major
        * version of `7`, specify the following value for this field `7.*`
+       *
        * An empty string matches all OS versions.
        * </pre>
        *
@@ -1037,9 +1043,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The OS version
+       *
        * Prefix matches are supported if asterisk(*) is provided as the
        * last character. For example, to match all versions with a major
        * version of `7`, specify the following value for this field `7.*`
+       *
        * An empty string matches all OS versions.
        * </pre>
        *
@@ -1133,6 +1141,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The id of the resource with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -1150,6 +1159,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The id of the resource with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -1304,7 +1314,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResourceOrBuilder getFileOrBuilder();
 
-    public com.google.cloud.osconfig.v1.OSPolicy.Resource.ResourceTypeCase getResourceTypeCase();
+    com.google.cloud.osconfig.v1.OSPolicy.Resource.ResourceTypeCase getResourceTypeCase();
   }
   /**
    *
@@ -1313,6 +1323,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
    * An OS policy resource is used to define the desired state configuration
    * and provides a specific functionality like installing/removing packages,
    * executing a script etc.
+   *
    * The system ensures that resources are always in their desired state by
    * taking necessary actions if they have drifted from their desired state.
    * </pre>
@@ -1337,11 +1348,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Resource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1477,6 +1483,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Defaults to false. When false, files are subject to validations
        * based on the file type:
+       *
        * Remote: A checksum must be specified.
        * Cloud Storage: An object generation number must be specified.
        * </pre>
@@ -1487,7 +1494,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        */
       boolean getAllowInsecure();
 
-      public com.google.cloud.osconfig.v1.OSPolicy.Resource.File.TypeCase getTypeCase();
+      com.google.cloud.osconfig.v1.OSPolicy.Resource.File.TypeCase getTypeCase();
     }
     /**
      *
@@ -1514,11 +1521,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new File();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1621,11 +1623,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new Remote();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2506,11 +2503,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           return new Gcs();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.osconfig.v1.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1_OSPolicy_Resource_File_Gcs_descriptor;
@@ -3375,6 +3367,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int typeCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object type_;
 
       public enum TypeCase
@@ -3605,6 +3599,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Defaults to false. When false, files are subject to validations
        * based on the file type:
+       *
        * Remote: A checksum must be specified.
        * Cloud Storage: An object generation number must be specified.
        * </pre>
@@ -4660,6 +4655,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Defaults to false. When false, files are subject to validations
          * based on the file type:
+         *
          * Remote: A checksum must be specified.
          * Cloud Storage: An object generation number must be specified.
          * </pre>
@@ -4678,6 +4674,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Defaults to false. When false, files are subject to validations
          * based on the file type:
+         *
          * Remote: A checksum must be specified.
          * Cloud Storage: An object generation number must be specified.
          * </pre>
@@ -4700,6 +4697,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Defaults to false. When false, files are subject to validations
          * based on the file type:
+         *
          * Remote: A checksum must be specified.
          * Cloud Storage: An object generation number must be specified.
          * </pre>
@@ -5060,7 +5058,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.MSIOrBuilder getMsiOrBuilder();
 
-      public com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.SystemPackageCase
+      com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.SystemPackageCase
           getSystemPackageCase();
     }
     /**
@@ -5090,11 +5088,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new PackageResource();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5364,11 +5357,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new Deb();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6248,11 +6236,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           return new APT();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.osconfig.v1.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1_OSPolicy_Resource_PackageResource_APT_descriptor;
@@ -6945,11 +6928,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new RPM();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7830,11 +7808,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           return new YUM();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.osconfig.v1.OsPolicyProto
               .internal_static_google_cloud_osconfig_v1_OSPolicy_Resource_PackageResource_YUM_descriptor;
@@ -8499,11 +8472,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new Zypper();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9178,11 +9146,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new GooGet();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9927,18 +9890,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         private MSI() {
-          properties_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          properties_ = com.google.protobuf.LazyStringArrayList.emptyList();
         }
 
         @java.lang.Override
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new MSI();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10015,7 +9973,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public static final int PROPERTIES_FIELD_NUMBER = 2;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList properties_;
+        private com.google.protobuf.LazyStringArrayList properties_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -10322,8 +10281,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
               sourceBuilder_.dispose();
               sourceBuilder_ = null;
             }
-            properties_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            properties_ = com.google.protobuf.LazyStringArrayList.emptyList();
             return this;
           }
 
@@ -10354,7 +10312,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.MSI buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.MSI result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.MSI(this);
-            buildPartialRepeatedFields(result);
             if (bitField0_ != 0) {
               buildPartial0(result);
             }
@@ -10362,20 +10319,15 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             return result;
           }
 
-          private void buildPartialRepeatedFields(
-              com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.MSI result) {
-            if (((bitField0_ & 0x00000002) != 0)) {
-              properties_ = properties_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000002);
-            }
-            result.properties_ = properties_;
-          }
-
           private void buildPartial0(
               com.google.cloud.osconfig.v1.OSPolicy.Resource.PackageResource.MSI result) {
             int from_bitField0_ = bitField0_;
             if (((from_bitField0_ & 0x00000001) != 0)) {
               result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              properties_.makeImmutable();
+              result.properties_ = properties_;
             }
           }
 
@@ -10437,7 +10389,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.properties_.isEmpty()) {
               if (properties_.isEmpty()) {
                 properties_ = other.properties_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ |= 0x00000002;
               } else {
                 ensurePropertiesIsMutable();
                 properties_.addAll(other.properties_);
@@ -10705,14 +10657,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             return sourceBuilder_;
           }
 
-          private com.google.protobuf.LazyStringList properties_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList properties_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensurePropertiesIsMutable() {
-            if (!((bitField0_ & 0x00000002) != 0)) {
+            if (!properties_.isModifiable()) {
               properties_ = new com.google.protobuf.LazyStringArrayList(properties_);
-              bitField0_ |= 0x00000002;
             }
+            bitField0_ |= 0x00000002;
           }
           /**
            *
@@ -10729,7 +10681,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the properties.
            */
           public com.google.protobuf.ProtocolStringList getPropertiesList() {
-            return properties_.getUnmodifiableView();
+            properties_.makeImmutable();
+            return properties_;
           }
           /**
            *
@@ -10806,6 +10759,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             ensurePropertiesIsMutable();
             properties_.set(index, value);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -10830,6 +10784,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             ensurePropertiesIsMutable();
             properties_.add(value);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -10851,6 +10806,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllProperties(java.lang.Iterable<java.lang.String> values) {
             ensurePropertiesIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, properties_);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -10869,8 +10825,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearProperties() {
-            properties_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            properties_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000002);
+            ;
             onChanged();
             return this;
           }
@@ -10896,6 +10853,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensurePropertiesIsMutable();
             properties_.add(value);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -10969,6 +10927,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int systemPackageCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object systemPackage_;
 
       public enum SystemPackageCase
@@ -14053,7 +14013,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.GooRepositoryOrBuilder
           getGooOrBuilder();
 
-      public com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.RepositoryCase
+      com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.RepositoryCase
           getRepositoryCase();
     }
     /**
@@ -14081,11 +14041,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new RepositoryResource();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -14296,7 +14251,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           archiveType_ = 0;
           uri_ = "";
           distribution_ = "";
-          components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          components_ = com.google.protobuf.LazyStringArrayList.emptyList();
           gpgKey_ = "";
         }
 
@@ -14304,11 +14259,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new AptRepository();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -14645,7 +14595,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public static final int COMPONENTS_FIELD_NUMBER = 4;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList components_;
+        private com.google.protobuf.LazyStringArrayList components_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -15048,8 +14999,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             archiveType_ = 0;
             uri_ = "";
             distribution_ = "";
-            components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            components_ = com.google.protobuf.LazyStringArrayList.emptyList();
             gpgKey_ = "";
             return this;
           }
@@ -15084,22 +15034,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository(
                     this);
-            buildPartialRepeatedFields(result);
             if (bitField0_ != 0) {
               buildPartial0(result);
             }
             onBuilt();
             return result;
-          }
-
-          private void buildPartialRepeatedFields(
-              com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.AptRepository
-                  result) {
-            if (((bitField0_ & 0x00000008) != 0)) {
-              components_ = components_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000008);
-            }
-            result.components_ = components_;
           }
 
           private void buildPartial0(
@@ -15114,6 +15053,10 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             if (((from_bitField0_ & 0x00000004) != 0)) {
               result.distribution_ = distribution_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              components_.makeImmutable();
+              result.components_ = components_;
             }
             if (((from_bitField0_ & 0x00000010) != 0)) {
               result.gpgKey_ = gpgKey_;
@@ -15191,7 +15134,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.components_.isEmpty()) {
               if (components_.isEmpty()) {
                 components_ = other.components_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ |= 0x00000008;
               } else {
                 ensureComponentsIsMutable();
                 components_.addAll(other.components_);
@@ -15602,14 +15545,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
-          private com.google.protobuf.LazyStringList components_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList components_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensureComponentsIsMutable() {
-            if (!((bitField0_ & 0x00000008) != 0)) {
+            if (!components_.isModifiable()) {
               components_ = new com.google.protobuf.LazyStringArrayList(components_);
-              bitField0_ |= 0x00000008;
             }
+            bitField0_ |= 0x00000008;
           }
           /**
            *
@@ -15624,7 +15567,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the components.
            */
           public com.google.protobuf.ProtocolStringList getComponentsList() {
-            return components_.getUnmodifiableView();
+            components_.makeImmutable();
+            return components_;
           }
           /**
            *
@@ -15693,6 +15637,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             ensureComponentsIsMutable();
             components_.set(index, value);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -15715,6 +15660,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             ensureComponentsIsMutable();
             components_.add(value);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -15734,6 +15680,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllComponents(java.lang.Iterable<java.lang.String> values) {
             ensureComponentsIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, components_);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -15750,8 +15697,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearComponents() {
-            components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            components_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000008);
+            ;
             onChanged();
             return this;
           }
@@ -15775,6 +15723,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensureComponentsIsMutable();
             components_.add(value);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -16123,18 +16072,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           id_ = "";
           displayName_ = "";
           baseUrl_ = "";
-          gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
         }
 
         @java.lang.Override
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new YumRepository();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -16316,7 +16260,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public static final int GPG_KEYS_FIELD_NUMBER = 4;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList gpgKeys_;
+        private com.google.protobuf.LazyStringArrayList gpgKeys_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -16647,8 +16592,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             id_ = "";
             displayName_ = "";
             baseUrl_ = "";
-            gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
             return this;
           }
 
@@ -16682,22 +16626,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.YumRepository result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.YumRepository(
                     this);
-            buildPartialRepeatedFields(result);
             if (bitField0_ != 0) {
               buildPartial0(result);
             }
             onBuilt();
             return result;
-          }
-
-          private void buildPartialRepeatedFields(
-              com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.YumRepository
-                  result) {
-            if (((bitField0_ & 0x00000008) != 0)) {
-              gpgKeys_ = gpgKeys_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000008);
-            }
-            result.gpgKeys_ = gpgKeys_;
           }
 
           private void buildPartial0(
@@ -16712,6 +16645,10 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             if (((from_bitField0_ & 0x00000004) != 0)) {
               result.baseUrl_ = baseUrl_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              gpgKeys_.makeImmutable();
+              result.gpgKeys_ = gpgKeys_;
             }
           }
 
@@ -16788,7 +16725,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.gpgKeys_.isEmpty()) {
               if (gpgKeys_.isEmpty()) {
                 gpgKeys_ = other.gpgKeys_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ |= 0x00000008;
               } else {
                 ensureGpgKeysIsMutable();
                 gpgKeys_.addAll(other.gpgKeys_);
@@ -17198,14 +17135,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
-          private com.google.protobuf.LazyStringList gpgKeys_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList gpgKeys_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensureGpgKeysIsMutable() {
-            if (!((bitField0_ & 0x00000008) != 0)) {
+            if (!gpgKeys_.isModifiable()) {
               gpgKeys_ = new com.google.protobuf.LazyStringArrayList(gpgKeys_);
-              bitField0_ |= 0x00000008;
             }
+            bitField0_ |= 0x00000008;
           }
           /**
            *
@@ -17219,7 +17156,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the gpgKeys.
            */
           public com.google.protobuf.ProtocolStringList getGpgKeysList() {
-            return gpgKeys_.getUnmodifiableView();
+            gpgKeys_.makeImmutable();
+            return gpgKeys_;
           }
           /**
            *
@@ -17284,6 +17222,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             ensureGpgKeysIsMutable();
             gpgKeys_.set(index, value);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -17305,6 +17244,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             ensureGpgKeysIsMutable();
             gpgKeys_.add(value);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -17323,6 +17263,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllGpgKeys(java.lang.Iterable<java.lang.String> values) {
             ensureGpgKeysIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, gpgKeys_);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -17338,8 +17279,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearGpgKeys() {
-            gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000008);
+            ;
             onChanged();
             return this;
           }
@@ -17362,6 +17304,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensureGpgKeysIsMutable();
             gpgKeys_.add(value);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -17599,18 +17542,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           id_ = "";
           displayName_ = "";
           baseUrl_ = "";
-          gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
         }
 
         @java.lang.Override
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new ZypperRepository();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -17792,7 +17730,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public static final int GPG_KEYS_FIELD_NUMBER = 4;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList gpgKeys_;
+        private com.google.protobuf.LazyStringArrayList gpgKeys_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -18124,8 +18063,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             id_ = "";
             displayName_ = "";
             baseUrl_ = "";
-            gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
             return this;
           }
 
@@ -18160,22 +18098,11 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource
                         .ZypperRepository(this);
-            buildPartialRepeatedFields(result);
             if (bitField0_ != 0) {
               buildPartial0(result);
             }
             onBuilt();
             return result;
-          }
-
-          private void buildPartialRepeatedFields(
-              com.google.cloud.osconfig.v1.OSPolicy.Resource.RepositoryResource.ZypperRepository
-                  result) {
-            if (((bitField0_ & 0x00000008) != 0)) {
-              gpgKeys_ = gpgKeys_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000008);
-            }
-            result.gpgKeys_ = gpgKeys_;
           }
 
           private void buildPartial0(
@@ -18190,6 +18117,10 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             if (((from_bitField0_ & 0x00000004) != 0)) {
               result.baseUrl_ = baseUrl_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              gpgKeys_.makeImmutable();
+              result.gpgKeys_ = gpgKeys_;
             }
           }
 
@@ -18268,7 +18199,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.gpgKeys_.isEmpty()) {
               if (gpgKeys_.isEmpty()) {
                 gpgKeys_ = other.gpgKeys_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ |= 0x00000008;
               } else {
                 ensureGpgKeysIsMutable();
                 gpgKeys_.addAll(other.gpgKeys_);
@@ -18678,14 +18609,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
-          private com.google.protobuf.LazyStringList gpgKeys_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList gpgKeys_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensureGpgKeysIsMutable() {
-            if (!((bitField0_ & 0x00000008) != 0)) {
+            if (!gpgKeys_.isModifiable()) {
               gpgKeys_ = new com.google.protobuf.LazyStringArrayList(gpgKeys_);
-              bitField0_ |= 0x00000008;
             }
+            bitField0_ |= 0x00000008;
           }
           /**
            *
@@ -18699,7 +18630,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the gpgKeys.
            */
           public com.google.protobuf.ProtocolStringList getGpgKeysList() {
-            return gpgKeys_.getUnmodifiableView();
+            gpgKeys_.makeImmutable();
+            return gpgKeys_;
           }
           /**
            *
@@ -18764,6 +18696,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             ensureGpgKeysIsMutable();
             gpgKeys_.set(index, value);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -18785,6 +18718,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             ensureGpgKeysIsMutable();
             gpgKeys_.add(value);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -18803,6 +18737,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllGpgKeys(java.lang.Iterable<java.lang.String> values) {
             ensureGpgKeysIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, gpgKeys_);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -18818,8 +18753,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearGpgKeys() {
-            gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000008);
+            ;
             onChanged();
             return this;
           }
@@ -18842,6 +18778,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensureGpgKeysIsMutable();
             gpgKeys_.add(value);
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -19003,11 +18940,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new GooRepository();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -19831,6 +19763,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int repositoryCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object repository_;
 
       public enum RepositoryCase
@@ -21853,14 +21787,17 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A resource that allows executing scripts on the VM.
+     *
      * The `ExecResource` has 2 stages: `validate` and `enforce` and both stages
      * accept a script as an argument to execute.
+     *
      * When the `ExecResource` is applied by the agent, it first executes the
      * script in the `validate` stage. The `validate` stage can signal that the
      * `ExecResource` is already in the desired state by returning an exit code
      * of `100`. If the `ExecResource` is not in the desired state, it should
      * return an exit code of `101`. Any other exit code returned by this stage
      * is considered an error.
+     *
      * If the `ExecResource` is not in the desired state based on the exit code
      * from the `validate` stage, the agent proceeds to execute the script from
      * the `enforce` stage. If the `ExecResource` is already in the desired
@@ -21868,6 +21805,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * Similar to `validate` stage, the `enforce` stage should return an exit
      * code of `100` to indicate that the resource in now in its desired state.
      * Any other exit code is considered an error.
+     *
      * NOTE: An exit code of `100` was chosen over `0` (and `101` vs `1`) to
      * have an explicit indicator of `in desired state`, `not in desired state`
      * and errors. Because, for example, Powershell will always return an exit
@@ -21894,11 +21832,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ExecResource();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -22112,8 +22045,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getOutputFilePathBytes();
 
-        public com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.SourceCase
-            getSourceCase();
+        com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec.SourceCase getSourceCase();
       }
       /**
        *
@@ -22135,7 +22067,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         private Exec() {
-          args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          args_ = com.google.protobuf.LazyStringArrayList.emptyList();
           interpreter_ = 0;
           outputFilePath_ = "";
         }
@@ -22144,11 +22076,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new Exec();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -22363,6 +22290,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int sourceCase_ = 0;
+
+        @SuppressWarnings("serial")
         private java.lang.Object source_;
 
         public enum SourceCase
@@ -22536,7 +22465,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
         public static final int ARGS_FIELD_NUMBER = 3;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList args_;
+        private com.google.protobuf.LazyStringArrayList args_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -22978,8 +22908,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (fileBuilder_ != null) {
               fileBuilder_.clear();
             }
-            args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            args_ = com.google.protobuf.LazyStringArrayList.emptyList();
             interpreter_ = 0;
             outputFilePath_ = "";
             sourceCase_ = 0;
@@ -23014,7 +22943,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec buildPartial() {
             com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec result =
                 new com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec(this);
-            buildPartialRepeatedFields(result);
             if (bitField0_ != 0) {
               buildPartial0(result);
             }
@@ -23023,18 +22951,13 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             return result;
           }
 
-          private void buildPartialRepeatedFields(
-              com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec result) {
-            if (((bitField0_ & 0x00000004) != 0)) {
-              args_ = args_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000004);
-            }
-            result.args_ = args_;
-          }
-
           private void buildPartial0(
               com.google.cloud.osconfig.v1.OSPolicy.Resource.ExecResource.Exec result) {
             int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              args_.makeImmutable();
+              result.args_ = args_;
+            }
             if (((from_bitField0_ & 0x00000008) != 0)) {
               result.interpreter_ = interpreter_;
             }
@@ -23106,7 +23029,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             if (!other.args_.isEmpty()) {
               if (args_.isEmpty()) {
                 args_ = other.args_;
-                bitField0_ = (bitField0_ & ~0x00000004);
+                bitField0_ |= 0x00000004;
               } else {
                 ensureArgsIsMutable();
                 args_.addAll(other.args_);
@@ -23580,14 +23503,14 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
-          private com.google.protobuf.LazyStringList args_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList args_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensureArgsIsMutable() {
-            if (!((bitField0_ & 0x00000004) != 0)) {
+            if (!args_.isModifiable()) {
               args_ = new com.google.protobuf.LazyStringArrayList(args_);
-              bitField0_ |= 0x00000004;
             }
+            bitField0_ |= 0x00000004;
           }
           /**
            *
@@ -23601,7 +23524,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the args.
            */
           public com.google.protobuf.ProtocolStringList getArgsList() {
-            return args_.getUnmodifiableView();
+            args_.makeImmutable();
+            return args_;
           }
           /**
            *
@@ -23666,6 +23590,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             ensureArgsIsMutable();
             args_.set(index, value);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -23687,6 +23612,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             }
             ensureArgsIsMutable();
             args_.add(value);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -23705,6 +23631,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
             ensureArgsIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, args_);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -23720,8 +23647,9 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearArgs() {
-            args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            args_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000004);
+            ;
             onChanged();
             return this;
           }
@@ -23744,6 +23672,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensureArgsIsMutable();
             args_.add(value);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -24360,14 +24289,17 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A resource that allows executing scripts on the VM.
+       *
        * The `ExecResource` has 2 stages: `validate` and `enforce` and both stages
        * accept a script as an argument to execute.
+       *
        * When the `ExecResource` is applied by the agent, it first executes the
        * script in the `validate` stage. The `validate` stage can signal that the
        * `ExecResource` is already in the desired state by returning an exit code
        * of `100`. If the `ExecResource` is not in the desired state, it should
        * return an exit code of `101`. Any other exit code returned by this stage
        * is considered an error.
+       *
        * If the `ExecResource` is not in the desired state based on the exit code
        * from the `validate` stage, the agent proceeds to execute the script from
        * the `enforce` stage. If the `ExecResource` is already in the desired
@@ -24375,6 +24307,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * Similar to `validate` stage, the `enforce` stage should return an exit
        * code of `100` to indicate that the resource in now in its desired state.
        * Any other exit code is considered an error.
+       *
        * NOTE: An exit code of `100` was chosen over `0` (and `101` vs `1`) to
        * have an explicit indicator of `in desired state`, `not in desired state`
        * and errors. Because, for example, Powershell will always return an exit
@@ -25246,6 +25179,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * corresponding to the read permissions, the 2 bit corresponds to the
        * write bit, and the one bit corresponds to the execute permission.
        * Default behavior is 755.
+       *
        * Below are some examples of permissions and their associated values:
        * read, write, and execute: 7
        * read and execute: 5
@@ -25269,6 +25203,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * corresponding to the read permissions, the 2 bit corresponds to the
        * write bit, and the one bit corresponds to the execute permission.
        * Default behavior is 755.
+       *
        * Below are some examples of permissions and their associated values:
        * read, write, and execute: 7
        * read and execute: 5
@@ -25282,7 +25217,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getPermissionsBytes();
 
-      public com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.SourceCase getSourceCase();
+      com.google.cloud.osconfig.v1.OSPolicy.Resource.FileResource.SourceCase getSourceCase();
     }
     /**
      *
@@ -25313,11 +25248,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new FileResource();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -25522,6 +25452,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int sourceCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object source_;
 
       public enum SourceCase
@@ -25800,6 +25732,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * corresponding to the read permissions, the 2 bit corresponds to the
        * write bit, and the one bit corresponds to the execute permission.
        * Default behavior is 755.
+       *
        * Below are some examples of permissions and their associated values:
        * read, write, and execute: 7
        * read and execute: 5
@@ -25834,6 +25767,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * corresponding to the read permissions, the 2 bit corresponds to the
        * write bit, and the one bit corresponds to the execute permission.
        * Default behavior is 755.
+       *
        * Below are some examples of permissions and their associated values:
        * read, write, and execute: 7
        * read and execute: 5
@@ -26931,6 +26865,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * corresponding to the read permissions, the 2 bit corresponds to the
          * write bit, and the one bit corresponds to the execute permission.
          * Default behavior is 755.
+         *
          * Below are some examples of permissions and their associated values:
          * read, write, and execute: 7
          * read and execute: 5
@@ -26964,6 +26899,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * corresponding to the read permissions, the 2 bit corresponds to the
          * write bit, and the one bit corresponds to the execute permission.
          * Default behavior is 755.
+         *
          * Below are some examples of permissions and their associated values:
          * read, write, and execute: 7
          * read and execute: 5
@@ -26997,6 +26933,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * corresponding to the read permissions, the 2 bit corresponds to the
          * write bit, and the one bit corresponds to the execute permission.
          * Default behavior is 755.
+         *
          * Below are some examples of permissions and their associated values:
          * read, write, and execute: 7
          * read and execute: 5
@@ -27029,6 +26966,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * corresponding to the read permissions, the 2 bit corresponds to the
          * write bit, and the one bit corresponds to the execute permission.
          * Default behavior is 755.
+         *
          * Below are some examples of permissions and their associated values:
          * read, write, and execute: 7
          * read and execute: 5
@@ -27057,6 +26995,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
          * corresponding to the read permissions, the 2 bit corresponds to the
          * write bit, and the one bit corresponds to the execute permission.
          * Default behavior is 755.
+         *
          * Below are some examples of permissions and their associated values:
          * read, write, and execute: 7
          * read and execute: 5
@@ -27148,6 +27087,8 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int resourceTypeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object resourceType_;
 
     public enum ResourceTypeCase
@@ -27209,6 +27150,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The id of the resource with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -27237,6 +27179,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The id of the resource with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -27708,6 +27651,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * An OS policy resource is used to define the desired state configuration
      * and provides a specific functionality like installing/removing packages,
      * executing a script etc.
+     *
      * The system ensures that resources are always in their desired state by
      * taking necessary actions if they have drifted from their desired state.
      * </pre>
@@ -27993,6 +27937,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The id of the resource with the following restrictions:
+       *
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -28020,6 +27965,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The id of the resource with the following restrictions:
+       *
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -28047,6 +27993,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The id of the resource with the following restrictions:
+       *
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -28073,6 +28020,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The id of the resource with the following restrictions:
+       *
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -28095,6 +28043,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The id of the resource with the following restrictions:
+       *
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -29061,13 +29010,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of inventory filters for the resource group.
+     *
      * The resources in this resource group are applied to the target VM if it
      * satisfies at least one of the following inventory filters.
+     *
      * For example, to apply this resource group to VMs running either `RHEL` or
      * `CentOS` operating systems, specify 2 items for the list with following
      * values:
      * inventory_filters[0].os_short_name='rhel' and
      * inventory_filters[1].os_short_name='centos'
+     *
      * If the list is empty, this resource group will be applied to the target
      * VM unconditionally.
      * </pre>
@@ -29081,13 +29033,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of inventory filters for the resource group.
+     *
      * The resources in this resource group are applied to the target VM if it
      * satisfies at least one of the following inventory filters.
+     *
      * For example, to apply this resource group to VMs running either `RHEL` or
      * `CentOS` operating systems, specify 2 items for the list with following
      * values:
      * inventory_filters[0].os_short_name='rhel' and
      * inventory_filters[1].os_short_name='centos'
+     *
      * If the list is empty, this resource group will be applied to the target
      * VM unconditionally.
      * </pre>
@@ -29101,13 +29056,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of inventory filters for the resource group.
+     *
      * The resources in this resource group are applied to the target VM if it
      * satisfies at least one of the following inventory filters.
+     *
      * For example, to apply this resource group to VMs running either `RHEL` or
      * `CentOS` operating systems, specify 2 items for the list with following
      * values:
      * inventory_filters[0].os_short_name='rhel' and
      * inventory_filters[1].os_short_name='centos'
+     *
      * If the list is empty, this resource group will be applied to the target
      * VM unconditionally.
      * </pre>
@@ -29121,13 +29079,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of inventory filters for the resource group.
+     *
      * The resources in this resource group are applied to the target VM if it
      * satisfies at least one of the following inventory filters.
+     *
      * For example, to apply this resource group to VMs running either `RHEL` or
      * `CentOS` operating systems, specify 2 items for the list with following
      * values:
      * inventory_filters[0].os_short_name='rhel' and
      * inventory_filters[1].os_short_name='centos'
+     *
      * If the list is empty, this resource group will be applied to the target
      * VM unconditionally.
      * </pre>
@@ -29142,13 +29103,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of inventory filters for the resource group.
+     *
      * The resources in this resource group are applied to the target VM if it
      * satisfies at least one of the following inventory filters.
+     *
      * For example, to apply this resource group to VMs running either `RHEL` or
      * `CentOS` operating systems, specify 2 items for the list with following
      * values:
      * inventory_filters[0].os_short_name='rhel' and
      * inventory_filters[1].os_short_name='centos'
+     *
      * If the list is empty, this resource group will be applied to the target
      * VM unconditionally.
      * </pre>
@@ -29231,8 +29195,10 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource groups provide a mechanism to group OS policy resources.
+   *
    * Resource groups enable OS policy authors to create a single OS policy
    * to be applied to VMs running different operating Systems.
+   *
    * When the OS policy is applied to a target VM, the appropriate resource
    * group within the OS policy is selected based on the `OSFilter` specified
    * within the resource group.
@@ -29261,11 +29227,6 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
       return new ResourceGroup();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1.OsPolicyProto
           .internal_static_google_cloud_osconfig_v1_OSPolicy_ResourceGroup_descriptor;
@@ -29290,13 +29251,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of inventory filters for the resource group.
+     *
      * The resources in this resource group are applied to the target VM if it
      * satisfies at least one of the following inventory filters.
+     *
      * For example, to apply this resource group to VMs running either `RHEL` or
      * `CentOS` operating systems, specify 2 items for the list with following
      * values:
      * inventory_filters[0].os_short_name='rhel' and
      * inventory_filters[1].os_short_name='centos'
+     *
      * If the list is empty, this resource group will be applied to the target
      * VM unconditionally.
      * </pre>
@@ -29314,13 +29278,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of inventory filters for the resource group.
+     *
      * The resources in this resource group are applied to the target VM if it
      * satisfies at least one of the following inventory filters.
+     *
      * For example, to apply this resource group to VMs running either `RHEL` or
      * `CentOS` operating systems, specify 2 items for the list with following
      * values:
      * inventory_filters[0].os_short_name='rhel' and
      * inventory_filters[1].os_short_name='centos'
+     *
      * If the list is empty, this resource group will be applied to the target
      * VM unconditionally.
      * </pre>
@@ -29338,13 +29305,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of inventory filters for the resource group.
+     *
      * The resources in this resource group are applied to the target VM if it
      * satisfies at least one of the following inventory filters.
+     *
      * For example, to apply this resource group to VMs running either `RHEL` or
      * `CentOS` operating systems, specify 2 items for the list with following
      * values:
      * inventory_filters[0].os_short_name='rhel' and
      * inventory_filters[1].os_short_name='centos'
+     *
      * If the list is empty, this resource group will be applied to the target
      * VM unconditionally.
      * </pre>
@@ -29361,13 +29331,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of inventory filters for the resource group.
+     *
      * The resources in this resource group are applied to the target VM if it
      * satisfies at least one of the following inventory filters.
+     *
      * For example, to apply this resource group to VMs running either `RHEL` or
      * `CentOS` operating systems, specify 2 items for the list with following
      * values:
      * inventory_filters[0].os_short_name='rhel' and
      * inventory_filters[1].os_short_name='centos'
+     *
      * If the list is empty, this resource group will be applied to the target
      * VM unconditionally.
      * </pre>
@@ -29384,13 +29357,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of inventory filters for the resource group.
+     *
      * The resources in this resource group are applied to the target VM if it
      * satisfies at least one of the following inventory filters.
+     *
      * For example, to apply this resource group to VMs running either `RHEL` or
      * `CentOS` operating systems, specify 2 items for the list with following
      * values:
      * inventory_filters[0].os_short_name='rhel' and
      * inventory_filters[1].os_short_name='centos'
+     *
      * If the list is empty, this resource group will be applied to the target
      * VM unconditionally.
      * </pre>
@@ -29671,8 +29647,10 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource groups provide a mechanism to group OS policy resources.
+     *
      * Resource groups enable OS policy authors to create a single OS policy
      * to be applied to VMs running different operating Systems.
+     *
      * When the OS policy is applied to a target VM, the appropriate resource
      * group within the OS policy is selected based on the `OSFilter` specified
      * within the resource group.
@@ -29984,13 +29962,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30011,13 +29992,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30037,13 +30021,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30063,13 +30050,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30096,13 +30086,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30127,13 +30120,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30160,13 +30156,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30193,13 +30192,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30223,13 +30225,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30254,13 +30259,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30285,13 +30293,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30314,13 +30325,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30343,13 +30357,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30366,13 +30383,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30393,13 +30413,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30421,13 +30444,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30445,13 +30471,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30470,13 +30499,16 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of inventory filters for the resource group.
+       *
        * The resources in this resource group are applied to the target VM if it
        * satisfies at least one of the following inventory filters.
+       *
        * For example, to apply this resource group to VMs running either `RHEL` or
        * `CentOS` operating systems, specify 2 items for the list with following
        * values:
        * inventory_filters[0].os_short_name='rhel' and
        * inventory_filters[1].os_short_name='centos'
+       *
        * If the list is empty, this resource group will be applied to the target
        * VM unconditionally.
        * </pre>
@@ -30988,6 +31020,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The id of the OS policy with the following restrictions:
+   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-63 characters.
@@ -31016,6 +31049,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The id of the OS policy with the following restrictions:
+   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-63 characters.
@@ -31144,6 +31178,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
    * For a particular VM, resource groups are evaluated in the order specified
    * and the first resource group that is applicable is selected and the rest
    * are ignored.
+   *
    * If none of the resource groups are applicable for a VM, the VM is
    * considered to be non-compliant w.r.t this policy. This behavior can be
    * toggled by the flag `allow_no_resource_group_match`
@@ -31166,6 +31201,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
    * For a particular VM, resource groups are evaluated in the order specified
    * and the first resource group that is applicable is selected and the rest
    * are ignored.
+   *
    * If none of the resource groups are applicable for a VM, the VM is
    * considered to be non-compliant w.r.t this policy. This behavior can be
    * toggled by the flag `allow_no_resource_group_match`
@@ -31188,6 +31224,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
    * For a particular VM, resource groups are evaluated in the order specified
    * and the first resource group that is applicable is selected and the rest
    * are ignored.
+   *
    * If none of the resource groups are applicable for a VM, the VM is
    * considered to be non-compliant w.r.t this policy. This behavior can be
    * toggled by the flag `allow_no_resource_group_match`
@@ -31209,6 +31246,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
    * For a particular VM, resource groups are evaluated in the order specified
    * and the first resource group that is applicable is selected and the rest
    * are ignored.
+   *
    * If none of the resource groups are applicable for a VM, the VM is
    * considered to be non-compliant w.r.t this policy. This behavior can be
    * toggled by the flag `allow_no_resource_group_match`
@@ -31230,6 +31268,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
    * For a particular VM, resource groups are evaluated in the order specified
    * and the first resource group that is applicable is selected and the rest
    * are ignored.
+   *
    * If none of the resource groups are applicable for a VM, the VM is
    * considered to be non-compliant w.r.t this policy. This behavior can be
    * toggled by the flag `allow_no_resource_group_match`
@@ -31751,6 +31790,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The id of the OS policy with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -31778,6 +31818,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The id of the OS policy with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -31805,6 +31846,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The id of the OS policy with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -31831,6 +31873,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The id of the OS policy with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -31853,6 +31896,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The id of the OS policy with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -32113,6 +32157,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32138,6 +32183,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32162,6 +32208,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32186,6 +32233,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32217,6 +32265,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32245,6 +32294,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32275,6 +32325,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32306,6 +32357,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32334,6 +32386,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32362,6 +32415,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32390,6 +32444,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32417,6 +32472,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32444,6 +32500,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32465,6 +32522,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32490,6 +32548,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32515,6 +32574,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32536,6 +32596,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`
@@ -32559,6 +32620,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * For a particular VM, resource groups are evaluated in the order specified
      * and the first resource group that is applicable is selected and the rest
      * are ignored.
+     *
      * If none of the resource groups are applicable for a VM, the VM is
      * considered to be non-compliant w.r.t this policy. This behavior can be
      * toggled by the flag `allow_no_resource_group_match`

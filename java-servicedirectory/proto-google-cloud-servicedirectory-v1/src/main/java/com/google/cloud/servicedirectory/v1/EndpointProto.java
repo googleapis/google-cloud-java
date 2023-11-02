@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,23 +47,27 @@ public final class EndpointProto {
       "\n/google/cloud/servicedirectory/v1/endpo"
           + "int.proto\022 google.cloud.servicedirectory"
           + ".v1\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\"\352\002\n\010Endpoint\022\021\n\004"
-          + "name\030\001 \001(\tB\003\340A\005\022\024\n\007address\030\002 \001(\tB\003\340A\001\022\021\n"
-          + "\004port\030\003 \001(\005B\003\340A\001\022U\n\013annotations\030\005 \003(\0132;."
-          + "google.cloud.servicedirectory.v1.Endpoin"
-          + "t.AnnotationsEntryB\003\340A\001\0322\n\020AnnotationsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\226\001\352A"
-          + "\222\001\n(servicedirectory.googleapis.com/Endp"
-          + "oint\022fprojects/{project}/locations/{loca"
-          + "tion}/namespaces/{namespace}/services/{s"
-          + "ervice}/endpoints/{endpoint}B\370\001\n$com.goo"
-          + "gle.cloud.servicedirectory.v1B\rEndpointP"
-          + "rotoP\001ZPcloud.google.com/go/servicedirec"
-          + "tory/apiv1/servicedirectorypb;servicedir"
-          + "ectorypb\370\001\001\252\002 Google.Cloud.ServiceDirect"
-          + "ory.V1\312\002 Google\\Cloud\\ServiceDirectory\\V"
-          + "1\352\002#Google::Cloud::ServiceDirectory::V1b"
-          + "\006proto3"
+          + "ogle/api/resource.proto\"\304\003\n\010Endpoint\022\022\n\004"
+          + "name\030\001 \001(\tB\004\342A\001\005\022\025\n\007address\030\002 \001(\tB\004\342A\001\001\022"
+          + "\022\n\004port\030\003 \001(\005B\004\342A\001\001\022V\n\013annotations\030\005 \003(\013"
+          + "2;.google.cloud.servicedirectory.v1.Endp"
+          + "oint.AnnotationsEntryB\004\342A\001\001\022A\n\007network\030\010"
+          + " \001(\tB0\342A\001\005\372A)\n\'servicedirectory.googleap"
+          + "is.com/Network\022\021\n\003uid\030\t \001(\tB\004\342A\001\003\0322\n\020Ann"
+          + "otationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
+          + "\t:\0028\001:\226\001\352A\222\001\n(servicedirectory.googleapi"
+          + "s.com/Endpoint\022fprojects/{project}/locat"
+          + "ions/{location}/namespaces/{namespace}/s"
+          + "ervices/{service}/endpoints/{endpoint}B\334"
+          + "\002\n$com.google.cloud.servicedirectory.v1B"
+          + "\rEndpointProtoP\001ZPcloud.google.com/go/se"
+          + "rvicedirectory/apiv1/servicedirectorypb;"
+          + "servicedirectorypb\370\001\001\252\002 Google.Cloud.Ser"
+          + "viceDirectory.V1\312\002 Google\\Cloud\\ServiceD"
+          + "irectory\\V1\352\002#Google::Cloud::ServiceDire"
+          + "ctory::V1\352Aa\n\'servicedirectory.googleapi"
+          + "s.com/Network\0226projects/{project}/locati"
+          + "ons/global/networks/{network}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -78,7 +82,7 @@ public final class EndpointProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_servicedirectory_v1_Endpoint_descriptor,
             new java.lang.String[] {
-              "Name", "Address", "Port", "Annotations",
+              "Name", "Address", "Port", "Annotations", "Network", "Uid",
             });
     internal_static_google_cloud_servicedirectory_v1_Endpoint_AnnotationsEntry_descriptor =
         internal_static_google_cloud_servicedirectory_v1_Endpoint_descriptor
@@ -94,6 +98,8 @@ public final class EndpointProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

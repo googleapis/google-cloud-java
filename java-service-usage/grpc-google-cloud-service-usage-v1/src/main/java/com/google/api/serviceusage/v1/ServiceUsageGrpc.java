@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public final class ServiceUsageGrpc {
 
   private ServiceUsageGrpc() {}
 
-  public static final String SERVICE_NAME = "google.api.serviceusage.v1.ServiceUsage";
+  public static final java.lang.String SERVICE_NAME = "google.api.serviceusage.v1.ServiceUsage";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1005,9 +1005,9 @@ public final class ServiceUsageGrpc {
   private static final class ServiceUsageMethodDescriptorSupplier
       extends ServiceUsageBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ServiceUsageMethodDescriptorSupplier(String methodName) {
+    ServiceUsageMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

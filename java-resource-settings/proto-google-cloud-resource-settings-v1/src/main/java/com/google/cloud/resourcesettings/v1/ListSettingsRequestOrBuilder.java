@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ListSettingsRequestOrBuilder
    * <pre>
    * Required. The Cloud resource that parents the setting. Must be in one of the
    * following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`
@@ -48,6 +49,7 @@ public interface ListSettingsRequestOrBuilder
    * <pre>
    * Required. The Cloud resource that parents the setting. Must be in one of the
    * following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`

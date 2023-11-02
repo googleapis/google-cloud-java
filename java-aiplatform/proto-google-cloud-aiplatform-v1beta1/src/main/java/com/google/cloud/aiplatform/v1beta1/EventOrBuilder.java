@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,11 +153,13 @@ public interface EventOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to annotate Events.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one Event (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable.
@@ -171,11 +173,13 @@ public interface EventOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to annotate Events.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one Event (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable.
@@ -192,11 +196,13 @@ public interface EventOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to annotate Events.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one Event (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable.
@@ -210,11 +216,13 @@ public interface EventOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to annotate Events.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one Event (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable.
@@ -232,11 +240,13 @@ public interface EventOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to annotate Events.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one Event (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable.

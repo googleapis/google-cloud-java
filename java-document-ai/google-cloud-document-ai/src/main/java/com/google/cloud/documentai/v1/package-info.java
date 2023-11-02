@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
  *
  * <p>======================= DocumentProcessorServiceClient =======================
  *
- * <p>Service Description: Service to call Cloud DocumentAI to process documents according to the
+ * <p>Service Description: Service to call Document AI to process documents according to the
  * processor's definition. Processors are built using state-of-the-art Google AI such as natural
  * language, computer vision, and translation to extract structured information from unstructured or
  * semi-structured documents.

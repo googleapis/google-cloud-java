@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.GetRegionNetworkEndpointGroupRequest;
@@ -328,6 +329,16 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
             HttpJsonCallSettings.<DeleteRegionNetworkEndpointGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRegionNetworkEndpointGroupRequest, NetworkEndpointGroup>
         getTransportSettings =
@@ -335,12 +346,29 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                 .<GetRegionNetworkEndpointGroupRequest, NetworkEndpointGroup>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertRegionNetworkEndpointGroupRequest, Operation>
         insertTransportSettings =
             HttpJsonCallSettings.<InsertRegionNetworkEndpointGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(insertMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
         listTransportSettings =
@@ -348,6 +376,13 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                 .<ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
 
     this.deleteCallable =

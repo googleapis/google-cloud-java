@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,18 +33,29 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.DatabaseFailoverRequest;
+import com.google.cloud.orchestration.airflow.service.v1.DatabaseFailoverResponse;
 import com.google.cloud.orchestration.airflow.service.v1.DeleteEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.Environment;
+import com.google.cloud.orchestration.airflow.service.v1.ExecuteAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1.ExecuteAirflowCommandResponse;
+import com.google.cloud.orchestration.airflow.service.v1.FetchDatabasePropertiesRequest;
+import com.google.cloud.orchestration.airflow.service.v1.FetchDatabasePropertiesResponse;
 import com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse;
 import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.OperationMetadata;
+import com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1.PollAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse;
+import com.google.cloud.orchestration.airflow.service.v1.StopAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1.StopAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -69,6 +80,7 @@ import javax.annotation.Generated;
 public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(DatabaseFailoverResponse.getDescriptor())
           .add(Environment.getDescriptor())
           .add(Empty.getDescriptor())
           .add(OperationMetadata.getDescriptor())
@@ -269,6 +281,128 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+      executeAirflowCommandMethodDescriptor =
+          ApiMethodDescriptor
+              .<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/ExecuteAirflowCommand")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExecuteAirflowCommandRequest>newBuilder()
+                      .setPath(
+                          "/v1/{environment=projects/*/locations/*/environments/*}:executeAirflowCommand",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteAirflowCommandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "environment", request.getEnvironment());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteAirflowCommandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExecuteAirflowCommandResponse>newBuilder()
+                      .setDefaultInstance(ExecuteAirflowCommandResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<StopAirflowCommandRequest, StopAirflowCommandResponse>
+      stopAirflowCommandMethodDescriptor =
+          ApiMethodDescriptor.<StopAirflowCommandRequest, StopAirflowCommandResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/StopAirflowCommand")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StopAirflowCommandRequest>newBuilder()
+                      .setPath(
+                          "/v1/{environment=projects/*/locations/*/environments/*}:stopAirflowCommand",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StopAirflowCommandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "environment", request.getEnvironment());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StopAirflowCommandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<StopAirflowCommandResponse>newBuilder()
+                      .setDefaultInstance(StopAirflowCommandResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<PollAirflowCommandRequest, PollAirflowCommandResponse>
+      pollAirflowCommandMethodDescriptor =
+          ApiMethodDescriptor.<PollAirflowCommandRequest, PollAirflowCommandResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/PollAirflowCommand")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PollAirflowCommandRequest>newBuilder()
+                      .setPath(
+                          "/v1/{environment=projects/*/locations/*/environments/*}:pollAirflowCommand",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PollAirflowCommandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "environment", request.getEnvironment());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PollAirflowCommandRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PollAirflowCommandResponse>newBuilder()
+                      .setDefaultInstance(PollAirflowCommandResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<SaveSnapshotRequest, Operation>
       saveSnapshotMethodDescriptor =
           ApiMethodDescriptor.<SaveSnapshotRequest, Operation>newBuilder()
@@ -355,6 +489,87 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<DatabaseFailoverRequest, Operation>
+      databaseFailoverMethodDescriptor =
+          ApiMethodDescriptor.<DatabaseFailoverRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/DatabaseFailover")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DatabaseFailoverRequest>newBuilder()
+                      .setPath(
+                          "/v1/{environment=projects/*/locations/*/environments/*}:databaseFailover",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DatabaseFailoverRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "environment", request.getEnvironment());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DatabaseFailoverRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DatabaseFailoverRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+      fetchDatabasePropertiesMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/FetchDatabaseProperties")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchDatabasePropertiesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{environment=projects/*/locations/*/environments/*}:fetchDatabaseProperties",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchDatabasePropertiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "environment", request.getEnvironment());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchDatabasePropertiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchDatabasePropertiesResponse>newBuilder()
+                      .setDefaultInstance(FetchDatabasePropertiesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable;
   private final OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
       createEnvironmentOperationCallable;
@@ -369,12 +584,24 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
   private final UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable;
   private final OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationCallable;
+  private final UnaryCallable<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+      executeAirflowCommandCallable;
+  private final UnaryCallable<StopAirflowCommandRequest, StopAirflowCommandResponse>
+      stopAirflowCommandCallable;
+  private final UnaryCallable<PollAirflowCommandRequest, PollAirflowCommandResponse>
+      pollAirflowCommandCallable;
   private final UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable;
   private final OperationCallable<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
       saveSnapshotOperationCallable;
   private final UnaryCallable<LoadSnapshotRequest, Operation> loadSnapshotCallable;
   private final OperationCallable<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
       loadSnapshotOperationCallable;
+  private final UnaryCallable<DatabaseFailoverRequest, Operation> databaseFailoverCallable;
+  private final OperationCallable<
+          DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
+      databaseFailoverOperationCallable;
+  private final UnaryCallable<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+      fetchDatabasePropertiesCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -445,38 +672,141 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
         HttpJsonCallSettings.<CreateEnvironmentRequest, Operation>newBuilder()
             .setMethodDescriptor(createEnvironmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
         HttpJsonCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
             .setMethodDescriptor(getEnvironmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListEnvironmentsRequest, ListEnvironmentsResponse>
         listEnvironmentsTransportSettings =
             HttpJsonCallSettings.<ListEnvironmentsRequest, ListEnvironmentsResponse>newBuilder()
                 .setMethodDescriptor(listEnvironmentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateEnvironmentRequest, Operation> updateEnvironmentTransportSettings =
         HttpJsonCallSettings.<UpdateEnvironmentRequest, Operation>newBuilder()
             .setMethodDescriptor(updateEnvironmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteEnvironmentRequest, Operation> deleteEnvironmentTransportSettings =
         HttpJsonCallSettings.<DeleteEnvironmentRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteEnvironmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
+    HttpJsonCallSettings<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+        executeAirflowCommandTransportSettings =
+            HttpJsonCallSettings
+                .<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>newBuilder()
+                .setMethodDescriptor(executeAirflowCommandMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("environment", String.valueOf(request.getEnvironment()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<StopAirflowCommandRequest, StopAirflowCommandResponse>
+        stopAirflowCommandTransportSettings =
+            HttpJsonCallSettings.<StopAirflowCommandRequest, StopAirflowCommandResponse>newBuilder()
+                .setMethodDescriptor(stopAirflowCommandMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("environment", String.valueOf(request.getEnvironment()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<PollAirflowCommandRequest, PollAirflowCommandResponse>
+        pollAirflowCommandTransportSettings =
+            HttpJsonCallSettings.<PollAirflowCommandRequest, PollAirflowCommandResponse>newBuilder()
+                .setMethodDescriptor(pollAirflowCommandMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("environment", String.valueOf(request.getEnvironment()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<SaveSnapshotRequest, Operation> saveSnapshotTransportSettings =
         HttpJsonCallSettings.<SaveSnapshotRequest, Operation>newBuilder()
             .setMethodDescriptor(saveSnapshotMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<LoadSnapshotRequest, Operation> loadSnapshotTransportSettings =
         HttpJsonCallSettings.<LoadSnapshotRequest, Operation>newBuilder()
             .setMethodDescriptor(loadSnapshotMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
+                })
             .build();
+    HttpJsonCallSettings<DatabaseFailoverRequest, Operation> databaseFailoverTransportSettings =
+        HttpJsonCallSettings.<DatabaseFailoverRequest, Operation>newBuilder()
+            .setMethodDescriptor(databaseFailoverMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+        fetchDatabasePropertiesTransportSettings =
+            HttpJsonCallSettings
+                .<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>newBuilder()
+                .setMethodDescriptor(fetchDatabasePropertiesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("environment", String.valueOf(request.getEnvironment()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createEnvironmentCallable =
         callableFactory.createUnaryCallable(
@@ -520,6 +850,21 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
             settings.deleteEnvironmentOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.executeAirflowCommandCallable =
+        callableFactory.createUnaryCallable(
+            executeAirflowCommandTransportSettings,
+            settings.executeAirflowCommandSettings(),
+            clientContext);
+    this.stopAirflowCommandCallable =
+        callableFactory.createUnaryCallable(
+            stopAirflowCommandTransportSettings,
+            settings.stopAirflowCommandSettings(),
+            clientContext);
+    this.pollAirflowCommandCallable =
+        callableFactory.createUnaryCallable(
+            pollAirflowCommandTransportSettings,
+            settings.pollAirflowCommandSettings(),
+            clientContext);
     this.saveSnapshotCallable =
         callableFactory.createUnaryCallable(
             saveSnapshotTransportSettings, settings.saveSnapshotSettings(), clientContext);
@@ -538,6 +883,20 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
             settings.loadSnapshotOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.databaseFailoverCallable =
+        callableFactory.createUnaryCallable(
+            databaseFailoverTransportSettings, settings.databaseFailoverSettings(), clientContext);
+    this.databaseFailoverOperationCallable =
+        callableFactory.createOperationCallable(
+            databaseFailoverTransportSettings,
+            settings.databaseFailoverOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.fetchDatabasePropertiesCallable =
+        callableFactory.createUnaryCallable(
+            fetchDatabasePropertiesTransportSettings,
+            settings.fetchDatabasePropertiesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -551,8 +910,13 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
     methodDescriptors.add(listEnvironmentsMethodDescriptor);
     methodDescriptors.add(updateEnvironmentMethodDescriptor);
     methodDescriptors.add(deleteEnvironmentMethodDescriptor);
+    methodDescriptors.add(executeAirflowCommandMethodDescriptor);
+    methodDescriptors.add(stopAirflowCommandMethodDescriptor);
+    methodDescriptors.add(pollAirflowCommandMethodDescriptor);
     methodDescriptors.add(saveSnapshotMethodDescriptor);
     methodDescriptors.add(loadSnapshotMethodDescriptor);
+    methodDescriptors.add(databaseFailoverMethodDescriptor);
+    methodDescriptors.add(fetchDatabasePropertiesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -611,6 +975,24 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
   }
 
   @Override
+  public UnaryCallable<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+      executeAirflowCommandCallable() {
+    return executeAirflowCommandCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopAirflowCommandRequest, StopAirflowCommandResponse>
+      stopAirflowCommandCallable() {
+    return stopAirflowCommandCallable;
+  }
+
+  @Override
+  public UnaryCallable<PollAirflowCommandRequest, PollAirflowCommandResponse>
+      pollAirflowCommandCallable() {
+    return pollAirflowCommandCallable;
+  }
+
+  @Override
   public UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable() {
     return saveSnapshotCallable;
   }
@@ -630,6 +1012,23 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
   public OperationCallable<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
       loadSnapshotOperationCallable() {
     return loadSnapshotOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DatabaseFailoverRequest, Operation> databaseFailoverCallable() {
+    return databaseFailoverCallable;
+  }
+
+  @Override
+  public OperationCallable<DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
+      databaseFailoverOperationCallable() {
+    return databaseFailoverOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+      fetchDatabasePropertiesCallable() {
+    return fetchDatabasePropertiesCallable;
   }
 
   @Override

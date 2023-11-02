@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,5 +99,5 @@ public interface CommonFeatureStateOrBuilder
    */
   com.google.cloud.gkehub.v1alpha.FeatureStateOrBuilder getStateOrBuilder();
 
-  public com.google.cloud.gkehub.v1alpha.CommonFeatureState.FeatureStateCase getFeatureStateCase();
+  com.google.cloud.gkehub.v1alpha.CommonFeatureState.FeatureStateCase getFeatureStateCase();
 }

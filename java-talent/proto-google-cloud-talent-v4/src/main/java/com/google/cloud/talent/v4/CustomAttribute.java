@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   }
 
   private CustomAttribute() {
-    stringValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    stringValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
     longValues_ = emptyLongList();
   }
 
@@ -46,11 +46,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CustomAttribute();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   public static final int STRING_VALUES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList stringValues_;
+  private com.google.protobuf.LazyStringArrayList stringValues_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -80,12 +76,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
    * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
    * specified.
+   *
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
    * is allowed, with each `string_value` has a byte size of no more than
    * 500B. For unfilterable `string_values`, the maximum total byte size of
    * unfilterable `string_values` is 50KB.
+   *
    * Empty string isn't allowed.
    * </pre>
    *
@@ -104,12 +102,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
    * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
    * specified.
+   *
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
    * is allowed, with each `string_value` has a byte size of no more than
    * 500B. For unfilterable `string_values`, the maximum total byte size of
    * unfilterable `string_values` is 50KB.
+   *
    * Empty string isn't allowed.
    * </pre>
    *
@@ -128,12 +128,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
    * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
    * specified.
+   *
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
    * is allowed, with each `string_value` has a byte size of no more than
    * 500B. For unfilterable `string_values`, the maximum total byte size of
    * unfilterable `string_values` is 50KB.
+   *
    * Empty string isn't allowed.
    * </pre>
    *
@@ -153,12 +155,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
    * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
    * specified.
+   *
    * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
    * `CASE_INSENSITIVE_MATCH`) search.
    * For filterable `string_value`s, a maximum total number of 200 values
    * is allowed, with each `string_value` has a byte size of no more than
    * 500B. For unfilterable `string_values`, the maximum total byte size of
    * unfilterable `string_values` is 50KB.
+   *
    * Empty string isn't allowed.
    * </pre>
    *
@@ -183,8 +187,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
    * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
    * specified.
+   *
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
+   *
    * Currently at most 1
    * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
    * supported.
@@ -206,8 +212,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
    * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
    * specified.
+   *
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
+   *
    * Currently at most 1
    * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
    * supported.
@@ -228,8 +236,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
    * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
    * specified.
+   *
    * This field is used to perform number range search.
    * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
+   *
    * Currently at most 1
    * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
    * supported.
@@ -256,6 +266,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * custom attribute filters
    * [JobQuery.custom_attribute_filter][google.cloud.talent.v4.JobQuery.custom_attribute_filter].
    * If false, these values may not be used for custom attribute filters.
+   *
    * Default is false.
    * </pre>
    *
@@ -277,6 +288,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * If the `keyword_searchable` flag is true, the keywords in custom fields are
    * searchable by keyword match.
    * If false, the values are not searchable by keyword match.
+   *
    * Default is false.
    * </pre>
    *
@@ -538,8 +550,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      stringValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      stringValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       longValues_ = emptyLongList();
       filterable_ = false;
       keywordSearchable_ = false;
@@ -579,11 +590,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.talent.v4.CustomAttribute result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        stringValues_ = stringValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.stringValues_ = stringValues_;
       if (((bitField0_ & 0x00000002) != 0)) {
         longValues_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -593,6 +599,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
 
     private void buildPartial0(com.google.cloud.talent.v4.CustomAttribute result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        stringValues_.makeImmutable();
+        result.stringValues_ = stringValues_;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.filterable_ = filterable_;
       }
@@ -649,7 +659,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       if (!other.stringValues_.isEmpty()) {
         if (stringValues_.isEmpty()) {
           stringValues_ = other.stringValues_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureStringValuesIsMutable();
           stringValues_.addAll(other.stringValues_);
@@ -754,14 +764,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList stringValues_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList stringValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureStringValuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!stringValues_.isModifiable()) {
         stringValues_ = new com.google.protobuf.LazyStringArrayList(stringValues_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -771,12 +781,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
      * is allowed, with each `string_value` has a byte size of no more than
      * 500B. For unfilterable `string_values`, the maximum total byte size of
      * unfilterable `string_values` is 50KB.
+     *
      * Empty string isn't allowed.
      * </pre>
      *
@@ -785,7 +797,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the stringValues.
      */
     public com.google.protobuf.ProtocolStringList getStringValuesList() {
-      return stringValues_.getUnmodifiableView();
+      stringValues_.makeImmutable();
+      return stringValues_;
     }
     /**
      *
@@ -795,12 +808,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
      * is allowed, with each `string_value` has a byte size of no more than
      * 500B. For unfilterable `string_values`, the maximum total byte size of
      * unfilterable `string_values` is 50KB.
+     *
      * Empty string isn't allowed.
      * </pre>
      *
@@ -819,12 +834,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
      * is allowed, with each `string_value` has a byte size of no more than
      * 500B. For unfilterable `string_values`, the maximum total byte size of
      * unfilterable `string_values` is 50KB.
+     *
      * Empty string isn't allowed.
      * </pre>
      *
@@ -844,12 +861,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
      * is allowed, with each `string_value` has a byte size of no more than
      * 500B. For unfilterable `string_values`, the maximum total byte size of
      * unfilterable `string_values` is 50KB.
+     *
      * Empty string isn't allowed.
      * </pre>
      *
@@ -869,12 +888,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
      * is allowed, with each `string_value` has a byte size of no more than
      * 500B. For unfilterable `string_values`, the maximum total byte size of
      * unfilterable `string_values` is 50KB.
+     *
      * Empty string isn't allowed.
      * </pre>
      *
@@ -890,6 +911,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       }
       ensureStringValuesIsMutable();
       stringValues_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -901,12 +923,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
      * is allowed, with each `string_value` has a byte size of no more than
      * 500B. For unfilterable `string_values`, the maximum total byte size of
      * unfilterable `string_values` is 50KB.
+     *
      * Empty string isn't allowed.
      * </pre>
      *
@@ -921,6 +945,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       }
       ensureStringValuesIsMutable();
       stringValues_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -932,12 +957,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
      * is allowed, with each `string_value` has a byte size of no more than
      * 500B. For unfilterable `string_values`, the maximum total byte size of
      * unfilterable `string_values` is 50KB.
+     *
      * Empty string isn't allowed.
      * </pre>
      *
@@ -949,6 +976,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public Builder addAllStringValues(java.lang.Iterable<java.lang.String> values) {
       ensureStringValuesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, stringValues_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -960,12 +988,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
      * is allowed, with each `string_value` has a byte size of no more than
      * 500B. For unfilterable `string_values`, the maximum total byte size of
      * unfilterable `string_values` is 50KB.
+     *
      * Empty string isn't allowed.
      * </pre>
      *
@@ -974,8 +1004,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearStringValues() {
-      stringValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      stringValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -987,12 +1018,14 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform a string match (`CASE_SENSITIVE_MATCH` or
      * `CASE_INSENSITIVE_MATCH`) search.
      * For filterable `string_value`s, a maximum total number of 200 values
      * is allowed, with each `string_value` has a byte size of no more than
      * 500B. For unfilterable `string_values`, the maximum total byte size of
      * unfilterable `string_values` is 50KB.
+     *
      * Empty string isn't allowed.
      * </pre>
      *
@@ -1008,6 +1041,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureStringValuesIsMutable();
       stringValues_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1028,8 +1062,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
+     *
      * Currently at most 1
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
      * supported.
@@ -1052,8 +1088,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
+     *
      * Currently at most 1
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
      * supported.
@@ -1074,8 +1112,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
+     *
      * Currently at most 1
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
      * supported.
@@ -1097,8 +1137,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
+     *
      * Currently at most 1
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
      * supported.
@@ -1125,8 +1167,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
+     *
      * Currently at most 1
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
      * supported.
@@ -1152,8 +1196,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
+     *
      * Currently at most 1
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
      * supported.
@@ -1178,8 +1224,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * [string_values][google.cloud.talent.v4.CustomAttribute.string_values] or
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] must be
      * specified.
+     *
      * This field is used to perform number range search.
      * (`EQ`, `GT`, `GE`, `LE`, `LT`) over filterable `long_value`.
+     *
      * Currently at most 1
      * [long_values][google.cloud.talent.v4.CustomAttribute.long_values] is
      * supported.
@@ -1205,6 +1253,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * custom attribute filters
      * [JobQuery.custom_attribute_filter][google.cloud.talent.v4.JobQuery.custom_attribute_filter].
      * If false, these values may not be used for custom attribute filters.
+     *
      * Default is false.
      * </pre>
      *
@@ -1224,6 +1273,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * custom attribute filters
      * [JobQuery.custom_attribute_filter][google.cloud.talent.v4.JobQuery.custom_attribute_filter].
      * If false, these values may not be used for custom attribute filters.
+     *
      * Default is false.
      * </pre>
      *
@@ -1247,6 +1297,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * custom attribute filters
      * [JobQuery.custom_attribute_filter][google.cloud.talent.v4.JobQuery.custom_attribute_filter].
      * If false, these values may not be used for custom attribute filters.
+     *
      * Default is false.
      * </pre>
      *
@@ -1269,6 +1320,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * If the `keyword_searchable` flag is true, the keywords in custom fields are
      * searchable by keyword match.
      * If false, the values are not searchable by keyword match.
+     *
      * Default is false.
      * </pre>
      *
@@ -1287,6 +1339,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * If the `keyword_searchable` flag is true, the keywords in custom fields are
      * searchable by keyword match.
      * If false, the values are not searchable by keyword match.
+     *
      * Default is false.
      * </pre>
      *
@@ -1309,6 +1362,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * If the `keyword_searchable` flag is true, the keywords in custom fields are
      * searchable by keyword match.
      * If false, the values are not searchable by keyword match.
+     *
      * Default is false.
      * </pre>
      *

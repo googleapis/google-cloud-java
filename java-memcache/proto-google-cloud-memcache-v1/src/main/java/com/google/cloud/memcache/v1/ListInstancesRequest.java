@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListInstancesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -136,6 +131,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The maximum number of items to return.
+   *
    * If not specified, a default value of 1000 will be used by the service.
    * Regardless of the `page_size` value, the response may include a partial
    * list and a caller should only rely on response's
@@ -875,6 +871,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the `page_size` value, the response may include a partial
      * list and a caller should only rely on response's
@@ -895,6 +892,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the `page_size` value, the response may include a partial
      * list and a caller should only rely on response's
@@ -919,6 +917,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the `page_size` value, the response may include a partial
      * list and a caller should only rely on response's

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SoftwareConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -173,9 +168,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `core:hadoop.tmp.dir`. The following are supported prefixes
    * and their mappings:
+   *
    * * capacity-scheduler: `capacity-scheduler.xml`
    * * core:   `core-site.xml`
    * * distcp: `distcp-default.xml`
@@ -185,6 +182,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * * pig:    `pig.properties`
    * * spark:  `spark-defaults.conf`
    * * yarn:   `yarn-site.xml`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -210,9 +208,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `core:hadoop.tmp.dir`. The following are supported prefixes
    * and their mappings:
+   *
    * * capacity-scheduler: `capacity-scheduler.xml`
    * * core:   `core-site.xml`
    * * distcp: `distcp-default.xml`
@@ -222,6 +222,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * * pig:    `pig.properties`
    * * spark:  `spark-defaults.conf`
    * * yarn:   `yarn-site.xml`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -238,9 +239,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `core:hadoop.tmp.dir`. The following are supported prefixes
    * and their mappings:
+   *
    * * capacity-scheduler: `capacity-scheduler.xml`
    * * core:   `core-site.xml`
    * * distcp: `distcp-default.xml`
@@ -250,6 +253,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * * pig:    `pig.properties`
    * * spark:  `spark-defaults.conf`
    * * yarn:   `yarn-site.xml`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -273,9 +277,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `core:hadoop.tmp.dir`. The following are supported prefixes
    * and their mappings:
+   *
    * * capacity-scheduler: `capacity-scheduler.xml`
    * * core:   `core-site.xml`
    * * distcp: `distcp-default.xml`
@@ -285,6 +291,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * * pig:    `pig.properties`
    * * spark:  `spark-defaults.conf`
    * * yarn:   `yarn-site.xml`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -1044,9 +1051,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `core:hadoop.tmp.dir`. The following are supported prefixes
      * and their mappings:
+     *
      * * capacity-scheduler: `capacity-scheduler.xml`
      * * core:   `core-site.xml`
      * * distcp: `distcp-default.xml`
@@ -1056,6 +1065,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -1081,9 +1091,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `core:hadoop.tmp.dir`. The following are supported prefixes
      * and their mappings:
+     *
      * * capacity-scheduler: `capacity-scheduler.xml`
      * * core:   `core-site.xml`
      * * distcp: `distcp-default.xml`
@@ -1093,6 +1105,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -1109,9 +1122,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `core:hadoop.tmp.dir`. The following are supported prefixes
      * and their mappings:
+     *
      * * capacity-scheduler: `capacity-scheduler.xml`
      * * core:   `core-site.xml`
      * * distcp: `distcp-default.xml`
@@ -1121,6 +1136,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -1144,9 +1160,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `core:hadoop.tmp.dir`. The following are supported prefixes
      * and their mappings:
+     *
      * * capacity-scheduler: `capacity-scheduler.xml`
      * * core:   `core-site.xml`
      * * distcp: `distcp-default.xml`
@@ -1156,6 +1174,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -1185,9 +1204,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `core:hadoop.tmp.dir`. The following are supported prefixes
      * and their mappings:
+     *
      * * capacity-scheduler: `capacity-scheduler.xml`
      * * core:   `core-site.xml`
      * * distcp: `distcp-default.xml`
@@ -1197,6 +1218,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -1222,9 +1244,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `core:hadoop.tmp.dir`. The following are supported prefixes
      * and their mappings:
+     *
      * * capacity-scheduler: `capacity-scheduler.xml`
      * * core:   `core-site.xml`
      * * distcp: `distcp-default.xml`
@@ -1234,6 +1258,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -1257,9 +1282,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `core:hadoop.tmp.dir`. The following are supported prefixes
      * and their mappings:
+     *
      * * capacity-scheduler: `capacity-scheduler.xml`
      * * core:   `core-site.xml`
      * * distcp: `distcp-default.xml`
@@ -1269,6 +1296,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * * pig:    `pig.properties`
      * * spark:  `spark-defaults.conf`
      * * yarn:   `yarn-site.xml`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>

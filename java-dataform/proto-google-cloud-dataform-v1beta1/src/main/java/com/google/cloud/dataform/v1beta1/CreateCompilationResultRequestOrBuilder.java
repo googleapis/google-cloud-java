@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface CreateCompilationResultRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The repository in which to create the compilation result. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The repository in which to create the compilation result. Must be
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateCompilationResultRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The repository in which to create the compilation result. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The repository in which to create the compilation result. Must be
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,30 +48,31 @@ public final class EndpointProto {
           + "endpoint.proto\022%google.cloud.servicedire"
           + "ctory.v1beta1\032\037google/api/field_behavior"
           + ".proto\032\031google/api/resource.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\"\224\004\n\010Endpoint\022"
-          + "\021\n\004name\030\001 \001(\tB\003\340A\005\022\024\n\007address\030\002 \001(\tB\003\340A\001"
-          + "\022\021\n\004port\030\003 \001(\005B\003\340A\001\022T\n\010metadata\030\004 \003(\0132=."
-          + "google.cloud.servicedirectory.v1beta1.En"
-          + "dpoint.MetadataEntryB\003\340A\001\022@\n\007network\030\005 \001"
-          + "(\tB/\340A\005\372A)\n\'servicedirectory.googleapis."
-          + "com/Network\0224\n\013create_time\030\006 \001(\0132\032.googl"
-          + "e.protobuf.TimestampB\003\340A\003\0224\n\013update_time"
-          + "\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032"
-          + "/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
-          + " \001(\t:\0028\001:\226\001\352A\222\001\n(servicedirectory.google"
-          + "apis.com/Endpoint\022fprojects/{project}/lo"
-          + "cations/{location}/namespaces/{namespace"
-          + "}/services/{service}/endpoints/{endpoint"
-          + "}B\365\002\n)com.google.cloud.servicedirectory."
-          + "v1beta1B\rEndpointProtoP\001ZUcloud.google.c"
-          + "om/go/servicedirectory/apiv1beta1/servic"
-          + "edirectorypb;servicedirectorypb\370\001\001\252\002%Goo"
-          + "gle.Cloud.ServiceDirectory.V1Beta1\312\002%Goo"
-          + "gle\\Cloud\\ServiceDirectory\\V1beta1\352\002(Goo"
-          + "gle::Cloud::ServiceDirectory::V1beta1\352Aa"
-          + "\n\'servicedirectory.googleapis.com/Networ"
-          + "k\0226projects/{project}/locations/global/n"
-          + "etworks/{network}b\006proto3"
+          + "e/protobuf/timestamp.proto\"\256\004\n\010Endpoint\022"
+          + "\022\n\004name\030\001 \001(\tB\004\342A\001\005\022\025\n\007address\030\002 \001(\tB\004\342A"
+          + "\001\001\022\022\n\004port\030\003 \001(\005B\004\342A\001\001\022U\n\010metadata\030\004 \003(\013"
+          + "2=.google.cloud.servicedirectory.v1beta1"
+          + ".Endpoint.MetadataEntryB\004\342A\001\001\022A\n\007network"
+          + "\030\005 \001(\tB0\342A\001\005\372A)\n\'servicedirectory.google"
+          + "apis.com/Network\0225\n\013create_time\030\006 \001(\0132\032."
+          + "google.protobuf.TimestampB\004\342A\001\003\0225\n\013updat"
+          + "e_time\030\007 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\004\342A\001\003\022\021\n\003uid\030\010 \001(\tB\004\342A\001\003\032/\n\rMetadataEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\226\001\352A\222"
+          + "\001\n(servicedirectory.googleapis.com/Endpo"
+          + "int\022fprojects/{project}/locations/{locat"
+          + "ion}/namespaces/{namespace}/services/{se"
+          + "rvice}/endpoints/{endpoint}B\365\002\n)com.goog"
+          + "le.cloud.servicedirectory.v1beta1B\rEndpo"
+          + "intProtoP\001ZUcloud.google.com/go/serviced"
+          + "irectory/apiv1beta1/servicedirectorypb;s"
+          + "ervicedirectorypb\370\001\001\252\002%Google.Cloud.Serv"
+          + "iceDirectory.V1Beta1\312\002%Google\\Cloud\\Serv"
+          + "iceDirectory\\V1beta1\352\002(Google::Cloud::Se"
+          + "rviceDirectory::V1beta1\352Aa\n\'servicedirec"
+          + "tory.googleapis.com/Network\0226projects/{p"
+          + "roject}/locations/global/networks/{netwo"
+          + "rk}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -87,7 +88,7 @@ public final class EndpointProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_servicedirectory_v1beta1_Endpoint_descriptor,
             new java.lang.String[] {
-              "Name", "Address", "Port", "Metadata", "Network", "CreateTime", "UpdateTime",
+              "Name", "Address", "Port", "Metadata", "Network", "CreateTime", "UpdateTime", "Uid",
             });
     internal_static_google_cloud_servicedirectory_v1beta1_Endpoint_MetadataEntry_descriptor =
         internal_static_google_cloud_servicedirectory_v1beta1_Endpoint_descriptor

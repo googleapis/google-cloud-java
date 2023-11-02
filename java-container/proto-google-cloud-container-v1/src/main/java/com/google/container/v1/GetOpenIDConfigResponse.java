@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,22 +41,17 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
   private GetOpenIDConfigResponse() {
     issuer_ = "";
     jwksUri_ = "";
-    responseTypesSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    subjectTypesSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    idTokenSigningAlgValuesSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    claimsSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    grantTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    responseTypesSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    subjectTypesSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    idTokenSigningAlgValuesSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    claimsSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    grantTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GetOpenIDConfigResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -179,7 +174,8 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
   public static final int RESPONSE_TYPES_SUPPORTED_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList responseTypesSupported_;
+  private com.google.protobuf.LazyStringArrayList responseTypesSupported_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -242,7 +238,8 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
   public static final int SUBJECT_TYPES_SUPPORTED_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList subjectTypesSupported_;
+  private com.google.protobuf.LazyStringArrayList subjectTypesSupported_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -305,7 +302,8 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
   public static final int ID_TOKEN_SIGNING_ALG_VALUES_SUPPORTED_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList idTokenSigningAlgValuesSupported_;
+  private com.google.protobuf.LazyStringArrayList idTokenSigningAlgValuesSupported_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -368,7 +366,8 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
   public static final int CLAIMS_SUPPORTED_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList claimsSupported_;
+  private com.google.protobuf.LazyStringArrayList claimsSupported_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -431,7 +430,8 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
   public static final int GRANT_TYPES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList grantTypes_;
+  private com.google.protobuf.LazyStringArrayList grantTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -786,16 +786,11 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       bitField0_ = 0;
       issuer_ = "";
       jwksUri_ = "";
-      responseTypesSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      subjectTypesSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      idTokenSigningAlgValuesSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
-      claimsSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
-      grantTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      responseTypesSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      subjectTypesSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      idTokenSigningAlgValuesSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      claimsSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      grantTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -823,41 +818,11 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
     public com.google.container.v1.GetOpenIDConfigResponse buildPartial() {
       com.google.container.v1.GetOpenIDConfigResponse result =
           new com.google.container.v1.GetOpenIDConfigResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.container.v1.GetOpenIDConfigResponse result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        responseTypesSupported_ = responseTypesSupported_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.responseTypesSupported_ = responseTypesSupported_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        subjectTypesSupported_ = subjectTypesSupported_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.subjectTypesSupported_ = subjectTypesSupported_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        idTokenSigningAlgValuesSupported_ = idTokenSigningAlgValuesSupported_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.idTokenSigningAlgValuesSupported_ = idTokenSigningAlgValuesSupported_;
-      if (((bitField0_ & 0x00000020) != 0)) {
-        claimsSupported_ = claimsSupported_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.claimsSupported_ = claimsSupported_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        grantTypes_ = grantTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.grantTypes_ = grantTypes_;
     }
 
     private void buildPartial0(com.google.container.v1.GetOpenIDConfigResponse result) {
@@ -867,6 +832,26 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.jwksUri_ = jwksUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        responseTypesSupported_.makeImmutable();
+        result.responseTypesSupported_ = responseTypesSupported_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        subjectTypesSupported_.makeImmutable();
+        result.subjectTypesSupported_ = subjectTypesSupported_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        idTokenSigningAlgValuesSupported_.makeImmutable();
+        result.idTokenSigningAlgValuesSupported_ = idTokenSigningAlgValuesSupported_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        claimsSupported_.makeImmutable();
+        result.claimsSupported_ = claimsSupported_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        grantTypes_.makeImmutable();
+        result.grantTypes_ = grantTypes_;
       }
     }
 
@@ -929,7 +914,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       if (!other.responseTypesSupported_.isEmpty()) {
         if (responseTypesSupported_.isEmpty()) {
           responseTypesSupported_ = other.responseTypesSupported_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureResponseTypesSupportedIsMutable();
           responseTypesSupported_.addAll(other.responseTypesSupported_);
@@ -939,7 +924,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       if (!other.subjectTypesSupported_.isEmpty()) {
         if (subjectTypesSupported_.isEmpty()) {
           subjectTypesSupported_ = other.subjectTypesSupported_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureSubjectTypesSupportedIsMutable();
           subjectTypesSupported_.addAll(other.subjectTypesSupported_);
@@ -949,7 +934,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       if (!other.idTokenSigningAlgValuesSupported_.isEmpty()) {
         if (idTokenSigningAlgValuesSupported_.isEmpty()) {
           idTokenSigningAlgValuesSupported_ = other.idTokenSigningAlgValuesSupported_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureIdTokenSigningAlgValuesSupportedIsMutable();
           idTokenSigningAlgValuesSupported_.addAll(other.idTokenSigningAlgValuesSupported_);
@@ -959,7 +944,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       if (!other.claimsSupported_.isEmpty()) {
         if (claimsSupported_.isEmpty()) {
           claimsSupported_ = other.claimsSupported_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureClaimsSupportedIsMutable();
           claimsSupported_.addAll(other.claimsSupported_);
@@ -969,7 +954,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       if (!other.grantTypes_.isEmpty()) {
         if (grantTypes_.isEmpty()) {
           grantTypes_ = other.grantTypes_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureGrantTypesIsMutable();
           grantTypes_.addAll(other.grantTypes_);
@@ -1280,15 +1265,15 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.protobuf.LazyStringList responseTypesSupported_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList responseTypesSupported_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResponseTypesSupportedIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!responseTypesSupported_.isModifiable()) {
         responseTypesSupported_ =
             new com.google.protobuf.LazyStringArrayList(responseTypesSupported_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1302,7 +1287,8 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
      * @return A list containing the responseTypesSupported.
      */
     public com.google.protobuf.ProtocolStringList getResponseTypesSupportedList() {
-      return responseTypesSupported_.getUnmodifiableView();
+      responseTypesSupported_.makeImmutable();
+      return responseTypesSupported_;
     }
     /**
      *
@@ -1367,6 +1353,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       }
       ensureResponseTypesSupportedIsMutable();
       responseTypesSupported_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1388,6 +1375,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       }
       ensureResponseTypesSupportedIsMutable();
       responseTypesSupported_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1406,6 +1394,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
     public Builder addAllResponseTypesSupported(java.lang.Iterable<java.lang.String> values) {
       ensureResponseTypesSupportedIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, responseTypesSupported_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1421,8 +1410,9 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearResponseTypesSupported() {
-      responseTypesSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      responseTypesSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1445,19 +1435,20 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureResponseTypesSupportedIsMutable();
       responseTypesSupported_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList subjectTypesSupported_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList subjectTypesSupported_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSubjectTypesSupportedIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!subjectTypesSupported_.isModifiable()) {
         subjectTypesSupported_ =
             new com.google.protobuf.LazyStringArrayList(subjectTypesSupported_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1471,7 +1462,8 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
      * @return A list containing the subjectTypesSupported.
      */
     public com.google.protobuf.ProtocolStringList getSubjectTypesSupportedList() {
-      return subjectTypesSupported_.getUnmodifiableView();
+      subjectTypesSupported_.makeImmutable();
+      return subjectTypesSupported_;
     }
     /**
      *
@@ -1536,6 +1528,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       }
       ensureSubjectTypesSupportedIsMutable();
       subjectTypesSupported_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1557,6 +1550,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       }
       ensureSubjectTypesSupportedIsMutable();
       subjectTypesSupported_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1575,6 +1569,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
     public Builder addAllSubjectTypesSupported(java.lang.Iterable<java.lang.String> values) {
       ensureSubjectTypesSupportedIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subjectTypesSupported_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1590,8 +1585,9 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSubjectTypesSupported() {
-      subjectTypesSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      subjectTypesSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1614,19 +1610,20 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureSubjectTypesSupportedIsMutable();
       subjectTypesSupported_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList idTokenSigningAlgValuesSupported_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList idTokenSigningAlgValuesSupported_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIdTokenSigningAlgValuesSupportedIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!idTokenSigningAlgValuesSupported_.isModifiable()) {
         idTokenSigningAlgValuesSupported_ =
             new com.google.protobuf.LazyStringArrayList(idTokenSigningAlgValuesSupported_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1640,7 +1637,8 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
      * @return A list containing the idTokenSigningAlgValuesSupported.
      */
     public com.google.protobuf.ProtocolStringList getIdTokenSigningAlgValuesSupportedList() {
-      return idTokenSigningAlgValuesSupported_.getUnmodifiableView();
+      idTokenSigningAlgValuesSupported_.makeImmutable();
+      return idTokenSigningAlgValuesSupported_;
     }
     /**
      *
@@ -1705,6 +1703,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       }
       ensureIdTokenSigningAlgValuesSupportedIsMutable();
       idTokenSigningAlgValuesSupported_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1726,6 +1725,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       }
       ensureIdTokenSigningAlgValuesSupportedIsMutable();
       idTokenSigningAlgValuesSupported_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1746,6 +1746,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       ensureIdTokenSigningAlgValuesSupportedIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, idTokenSigningAlgValuesSupported_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1761,8 +1762,9 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearIdTokenSigningAlgValuesSupported() {
-      idTokenSigningAlgValuesSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      idTokenSigningAlgValuesSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1785,18 +1787,19 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureIdTokenSigningAlgValuesSupportedIsMutable();
       idTokenSigningAlgValuesSupported_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList claimsSupported_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList claimsSupported_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureClaimsSupportedIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!claimsSupported_.isModifiable()) {
         claimsSupported_ = new com.google.protobuf.LazyStringArrayList(claimsSupported_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -1810,7 +1813,8 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
      * @return A list containing the claimsSupported.
      */
     public com.google.protobuf.ProtocolStringList getClaimsSupportedList() {
-      return claimsSupported_.getUnmodifiableView();
+      claimsSupported_.makeImmutable();
+      return claimsSupported_;
     }
     /**
      *
@@ -1875,6 +1879,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       }
       ensureClaimsSupportedIsMutable();
       claimsSupported_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1896,6 +1901,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       }
       ensureClaimsSupportedIsMutable();
       claimsSupported_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1914,6 +1920,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
     public Builder addAllClaimsSupported(java.lang.Iterable<java.lang.String> values) {
       ensureClaimsSupportedIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, claimsSupported_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1929,8 +1936,9 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearClaimsSupported() {
-      claimsSupported_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      claimsSupported_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -1953,18 +1961,19 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureClaimsSupportedIsMutable();
       claimsSupported_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList grantTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList grantTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureGrantTypesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!grantTypes_.isModifiable()) {
         grantTypes_ = new com.google.protobuf.LazyStringArrayList(grantTypes_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -1978,7 +1987,8 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
      * @return A list containing the grantTypes.
      */
     public com.google.protobuf.ProtocolStringList getGrantTypesList() {
-      return grantTypes_.getUnmodifiableView();
+      grantTypes_.makeImmutable();
+      return grantTypes_;
     }
     /**
      *
@@ -2043,6 +2053,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       }
       ensureGrantTypesIsMutable();
       grantTypes_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2064,6 +2075,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       }
       ensureGrantTypesIsMutable();
       grantTypes_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2082,6 +2094,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
     public Builder addAllGrantTypes(java.lang.Iterable<java.lang.String> values) {
       ensureGrantTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, grantTypes_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2097,8 +2110,9 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearGrantTypes() {
-      grantTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      grantTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2121,6 +2135,7 @@ public final class GetOpenIDConfigResponse extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureGrantTypesIsMutable();
       grantTypes_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

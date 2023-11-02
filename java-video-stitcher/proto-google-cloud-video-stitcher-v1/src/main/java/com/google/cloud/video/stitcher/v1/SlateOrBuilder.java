@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,4 +76,39 @@ public interface SlateOrBuilder
    * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * gam_slate has all the GAM-related attributes of slates.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.Slate.GamSlate gam_slate = 3;</code>
+   *
+   * @return Whether the gamSlate field is set.
+   */
+  boolean hasGamSlate();
+  /**
+   *
+   *
+   * <pre>
+   * gam_slate has all the GAM-related attributes of slates.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.Slate.GamSlate gam_slate = 3;</code>
+   *
+   * @return The gamSlate.
+   */
+  com.google.cloud.video.stitcher.v1.Slate.GamSlate getGamSlate();
+  /**
+   *
+   *
+   * <pre>
+   * gam_slate has all the GAM-related attributes of slates.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.Slate.GamSlate gam_slate = 3;</code>
+   */
+  com.google.cloud.video.stitcher.v1.Slate.GamSlateOrBuilder getGamSlateOrBuilder();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,6 @@ public interface StreamingAnnotateVideoRequestOrBuilder
    */
   com.google.protobuf.ByteString getInputContent();
 
-  public com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest
-          .StreamingRequestCase
+  com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest.StreamingRequestCase
       getStreamingRequestCase();
 }

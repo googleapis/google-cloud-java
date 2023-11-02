@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,14 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * AutoML Vision Object Detection
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per image.
+   *
    * AutoML Video Intelligence Object Tracking
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
@@ -44,10 +48,14 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * AutoML Vision Object Detection
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per image.
+   *
    * AutoML Video Intelligence Object Tracking
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
@@ -63,10 +71,14 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * AutoML Vision Object Detection
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per image.
+   *
    * AutoML Video Intelligence Object Tracking
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
@@ -79,10 +91,14 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * AutoML Vision Object Detection
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per image.
+   *
    * AutoML Video Intelligence Object Tracking
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>
@@ -99,10 +115,14 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * AutoML Vision Object Detection
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per image.
+   *
    * AutoML Video Intelligence Object Tracking
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding boxes returned per frame.
    * </pre>

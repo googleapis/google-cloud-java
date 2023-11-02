@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     guestOsFeatures_ = java.util.Collections.emptyList();
     interface_ = "";
     kind_ = "";
-    licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     mode_ = "";
     source_ = "";
     storageBytesStatus_ = "";
@@ -54,11 +54,6 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SavedAttachedDisk();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1140,7 +1135,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
   public static final int LICENSES_FIELD_NUMBER = 337642578;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList licenses_;
+  private com.google.protobuf.LazyStringArrayList licenses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1953,8 +1949,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       index_ = 0;
       interface_ = "";
       kind_ = "";
-      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       mode_ = "";
       source_ = "";
       storageBytes_ = 0L;
@@ -2005,11 +2000,6 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       } else {
         result.guestOsFeatures_ = guestOsFeaturesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
-        licenses_ = licenses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.licenses_ = licenses_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.SavedAttachedDisk result) {
@@ -2053,6 +2043,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.kind_ = kind_;
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        licenses_.makeImmutable();
+        result.licenses_ = licenses_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.mode_ = mode_;
@@ -2187,7 +2181,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       if (!other.licenses_.isEmpty()) {
         if (licenses_.isEmpty()) {
           licenses_ = other.licenses_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensureLicensesIsMutable();
           licenses_.addAll(other.licenses_);
@@ -3684,14 +3678,14 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList licenses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList licenses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLicensesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!licenses_.isModifiable()) {
         licenses_ = new com.google.protobuf.LazyStringArrayList(licenses_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -3705,7 +3699,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return A list containing the licenses.
      */
     public com.google.protobuf.ProtocolStringList getLicensesList() {
-      return licenses_.getUnmodifiableView();
+      licenses_.makeImmutable();
+      return licenses_;
     }
     /**
      *
@@ -3770,6 +3765,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       ensureLicensesIsMutable();
       licenses_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3791,6 +3787,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       }
       ensureLicensesIsMutable();
       licenses_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3809,6 +3806,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
     public Builder addAllLicenses(java.lang.Iterable<java.lang.String> values) {
       ensureLicensesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, licenses_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3824,8 +3822,9 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLicenses() {
-      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -3848,6 +3847,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureLicensesIsMutable();
       licenses_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

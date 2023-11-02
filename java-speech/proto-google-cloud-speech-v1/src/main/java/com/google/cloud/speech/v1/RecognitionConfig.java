@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   private RecognitionConfig() {
     encoding_ = 0;
     languageCode_ = "";
-    alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     speechContexts_ = java.util.Collections.emptyList();
     model_ = "";
   }
@@ -50,11 +50,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RecognitionConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,15 +72,18 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The encoding of the audio data sent in the request.
+   *
    * All encodings support only 1 channel (mono) audio, unless the
    * `audio_channel_count` and `enable_separate_recognition_per_channel` fields
    * are set.
+   *
    * For best results, the audio source should be captured and transmitted using
    * a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech
    * recognition can be reduced if lossy codecs are used to capture or transmit
    * audio, particularly if background noise is present. Lossy codecs include
    * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, `MP3`,
    * and `WEBM_OPUS`.
+   *
    * The `FLAC` and `WAV` audio file formats include a header that describes the
    * included audio content. You can request recognition for `WAV` files that
    * contain either `LINEAR16` or `MULAW` encoded audio.
@@ -205,6 +203,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * MP3 audio. MP3 encoding is a Beta feature and only available in
+     * v1p1beta1. Support all standard MP3 bitrates (which range from 32-320
+     * kbps). When using this encoding, `sample_rate_hertz` has to match the
+     * sample rate of the file being used.
+     * </pre>
+     *
+     * <code>MP3 = 8;</code>
+     */
+    MP3(8),
+    /**
+     *
+     *
+     * <pre>
      * Opus encoded audio frames in WebM container
      * ([OggOpus](https://wiki.xiph.org/OggOpus)). `sample_rate_hertz` must be
      * one of 8000, 12000, 16000, 24000, or 48000.
@@ -319,6 +330,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * MP3 audio. MP3 encoding is a Beta feature and only available in
+     * v1p1beta1. Support all standard MP3 bitrates (which range from 32-320
+     * kbps). When using this encoding, `sample_rate_hertz` has to match the
+     * sample rate of the file being used.
+     * </pre>
+     *
+     * <code>MP3 = 8;</code>
+     */
+    public static final int MP3_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
      * Opus encoded audio frames in WebM container
      * ([OggOpus](https://wiki.xiph.org/OggOpus)). `sample_rate_hertz` must be
      * one of 8000, 12000, 16000, 24000, or 48000.
@@ -368,6 +392,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           return OGG_OPUS;
         case 7:
           return SPEEX_WITH_HEADER_BYTE;
+        case 8:
+          return MP3;
         case 9:
           return WEBM_OPUS;
         default:
@@ -603,7 +629,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   public static final int ALTERNATIVE_LANGUAGE_CODES_FIELD_NUMBER = 18;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList alternativeLanguageCodes_;
+  private com.google.protobuf.LazyStringArrayList alternativeLanguageCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -811,6 +838,72 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     return adaptation_ == null
         ? com.google.cloud.speech.v1.SpeechAdaptation.getDefaultInstance()
         : adaptation_;
+  }
+
+  public static final int TRANSCRIPT_NORMALIZATION_FIELD_NUMBER = 24;
+  private com.google.cloud.speech.v1.TranscriptNormalization transcriptNormalization_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transcriptNormalization field is set.
+   */
+  @java.lang.Override
+  public boolean hasTranscriptNormalization() {
+    return transcriptNormalization_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transcriptNormalization.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1.TranscriptNormalization getTranscriptNormalization() {
+    return transcriptNormalization_ == null
+        ? com.google.cloud.speech.v1.TranscriptNormalization.getDefaultInstance()
+        : transcriptNormalization_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1.TranscriptNormalizationOrBuilder
+      getTranscriptNormalizationOrBuilder() {
+    return transcriptNormalization_ == null
+        ? com.google.cloud.speech.v1.TranscriptNormalization.getDefaultInstance()
+        : transcriptNormalization_;
   }
 
   public static final int SPEECH_CONTEXTS_FIELD_NUMBER = 6;
@@ -1379,6 +1472,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * If `use_enhanced` is set to true and the `model` field is not set, then
    * an appropriate enhanced model is chosen if an enhanced model exists for
    * the audio.
+   *
    * If `use_enhanced` is true and an enhanced version of the specified model
    * does not exist, then the speech is recognized using the standard version
    * of the specified model.
@@ -1467,6 +1561,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (enableSpokenEmojis_ != null) {
       output.writeMessage(23, getEnableSpokenEmojis());
     }
+    if (transcriptNormalization_ != null) {
+      output.writeMessage(24, getTranscriptNormalization());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1545,6 +1642,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (enableSpokenEmojis_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getEnableSpokenEmojis());
     }
+    if (transcriptNormalization_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, getTranscriptNormalization());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1574,6 +1676,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (hasAdaptation() != other.hasAdaptation()) return false;
     if (hasAdaptation()) {
       if (!getAdaptation().equals(other.getAdaptation())) return false;
+    }
+    if (hasTranscriptNormalization() != other.hasTranscriptNormalization()) return false;
+    if (hasTranscriptNormalization()) {
+      if (!getTranscriptNormalization().equals(other.getTranscriptNormalization())) return false;
     }
     if (!getSpeechContextsList().equals(other.getSpeechContextsList())) return false;
     if (getEnableWordTimeOffsets() != other.getEnableWordTimeOffsets()) return false;
@@ -1631,6 +1737,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (hasAdaptation()) {
       hash = (37 * hash) + ADAPTATION_FIELD_NUMBER;
       hash = (53 * hash) + getAdaptation().hashCode();
+    }
+    if (hasTranscriptNormalization()) {
+      hash = (37 * hash) + TRANSCRIPT_NORMALIZATION_FIELD_NUMBER;
+      hash = (53 * hash) + getTranscriptNormalization().hashCode();
     }
     if (getSpeechContextsCount() > 0) {
       hash = (37 * hash) + SPEECH_CONTEXTS_FIELD_NUMBER;
@@ -1807,8 +1917,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       audioChannelCount_ = 0;
       enableSeparateRecognitionPerChannel_ = false;
       languageCode_ = "";
-      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       maxAlternatives_ = 0;
       profanityFilter_ = false;
       adaptation_ = null;
@@ -1816,13 +1925,18 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         adaptationBuilder_.dispose();
         adaptationBuilder_ = null;
       }
+      transcriptNormalization_ = null;
+      if (transcriptNormalizationBuilder_ != null) {
+        transcriptNormalizationBuilder_.dispose();
+        transcriptNormalizationBuilder_ = null;
+      }
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
       } else {
         speechContexts_ = null;
         speechContextsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       enableWordTimeOffsets_ = false;
       enableWordConfidence_ = false;
       enableAutomaticPunctuation_ = false;
@@ -1884,15 +1998,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.speech.v1.RecognitionConfig result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        alternativeLanguageCodes_ = alternativeLanguageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.alternativeLanguageCodes_ = alternativeLanguageCodes_;
       if (speechContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.speechContexts_ = speechContexts_;
       } else {
@@ -1917,6 +2026,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.languageCode_ = languageCode_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        alternativeLanguageCodes_.makeImmutable();
+        result.alternativeLanguageCodes_ = alternativeLanguageCodes_;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.maxAlternatives_ = maxAlternatives_;
       }
@@ -1926,40 +2039,46 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.adaptation_ = adaptationBuilder_ == null ? adaptation_ : adaptationBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.enableWordTimeOffsets_ = enableWordTimeOffsets_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.transcriptNormalization_ =
+            transcriptNormalizationBuilder_ == null
+                ? transcriptNormalization_
+                : transcriptNormalizationBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.enableWordConfidence_ = enableWordConfidence_;
+        result.enableWordTimeOffsets_ = enableWordTimeOffsets_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
+        result.enableWordConfidence_ = enableWordConfidence_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.enableSpokenPunctuation_ =
             enableSpokenPunctuationBuilder_ == null
                 ? enableSpokenPunctuation_
                 : enableSpokenPunctuationBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.enableSpokenEmojis_ =
             enableSpokenEmojisBuilder_ == null
                 ? enableSpokenEmojis_
                 : enableSpokenEmojisBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.diarizationConfig_ =
             diarizationConfigBuilder_ == null
                 ? diarizationConfig_
                 : diarizationConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.model_ = model_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.useEnhanced_ = useEnhanced_;
       }
     }
@@ -2029,7 +2148,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (!other.alternativeLanguageCodes_.isEmpty()) {
         if (alternativeLanguageCodes_.isEmpty()) {
           alternativeLanguageCodes_ = other.alternativeLanguageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureAlternativeLanguageCodesIsMutable();
           alternativeLanguageCodes_.addAll(other.alternativeLanguageCodes_);
@@ -2045,11 +2164,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (other.hasAdaptation()) {
         mergeAdaptation(other.getAdaptation());
       }
+      if (other.hasTranscriptNormalization()) {
+        mergeTranscriptNormalization(other.getTranscriptNormalization());
+      }
       if (speechContextsBuilder_ == null) {
         if (!other.speechContexts_.isEmpty()) {
           if (speechContexts_.isEmpty()) {
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureSpeechContextsIsMutable();
             speechContexts_.addAll(other.speechContexts_);
@@ -2062,7 +2184,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             speechContextsBuilder_.dispose();
             speechContextsBuilder_ = null;
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             speechContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpeechContextsFieldBuilder()
@@ -2095,7 +2217,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.getUseEnhanced() != false) {
@@ -2179,19 +2301,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             case 64:
               {
                 enableWordTimeOffsets_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 64
             case 74:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 74
             case 88:
               {
                 enableAutomaticPunctuation_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 88
             case 96:
@@ -2203,19 +2325,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             case 106:
               {
                 model_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 106
             case 112:
               {
                 useEnhanced_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 112
             case 120:
               {
                 enableWordConfidence_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 120
             case 146:
@@ -2229,7 +2351,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getDiarizationConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 154
             case 162:
@@ -2242,16 +2364,23 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getEnableSpokenPunctuationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 178
             case 186:
               {
                 input.readMessage(
                     getEnableSpokenEmojisFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 186
+            case 194:
+              {
+                input.readMessage(
+                    getTranscriptNormalizationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2725,15 +2854,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList alternativeLanguageCodes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList alternativeLanguageCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAlternativeLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!alternativeLanguageCodes_.isModifiable()) {
         alternativeLanguageCodes_ =
             new com.google.protobuf.LazyStringArrayList(alternativeLanguageCodes_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2758,7 +2887,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return A list containing the alternativeLanguageCodes.
      */
     public com.google.protobuf.ProtocolStringList getAlternativeLanguageCodesList() {
-      return alternativeLanguageCodes_.getUnmodifiableView();
+      alternativeLanguageCodes_.makeImmutable();
+      return alternativeLanguageCodes_;
     }
     /**
      *
@@ -2867,6 +2997,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       ensureAlternativeLanguageCodesIsMutable();
       alternativeLanguageCodes_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2899,6 +3030,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       ensureAlternativeLanguageCodesIsMutable();
       alternativeLanguageCodes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2928,6 +3060,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder addAllAlternativeLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureAlternativeLanguageCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, alternativeLanguageCodes_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2954,8 +3087,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAlternativeLanguageCodes() {
-      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2989,6 +3123,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureAlternativeLanguageCodesIsMutable();
       alternativeLanguageCodes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3343,14 +3478,248 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return adaptationBuilder_;
     }
 
+    private com.google.cloud.speech.v1.TranscriptNormalization transcriptNormalization_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1.TranscriptNormalization,
+            com.google.cloud.speech.v1.TranscriptNormalization.Builder,
+            com.google.cloud.speech.v1.TranscriptNormalizationOrBuilder>
+        transcriptNormalizationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the transcriptNormalization field is set.
+     */
+    public boolean hasTranscriptNormalization() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The transcriptNormalization.
+     */
+    public com.google.cloud.speech.v1.TranscriptNormalization getTranscriptNormalization() {
+      if (transcriptNormalizationBuilder_ == null) {
+        return transcriptNormalization_ == null
+            ? com.google.cloud.speech.v1.TranscriptNormalization.getDefaultInstance()
+            : transcriptNormalization_;
+      } else {
+        return transcriptNormalizationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTranscriptNormalization(
+        com.google.cloud.speech.v1.TranscriptNormalization value) {
+      if (transcriptNormalizationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transcriptNormalization_ = value;
+      } else {
+        transcriptNormalizationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTranscriptNormalization(
+        com.google.cloud.speech.v1.TranscriptNormalization.Builder builderForValue) {
+      if (transcriptNormalizationBuilder_ == null) {
+        transcriptNormalization_ = builderForValue.build();
+      } else {
+        transcriptNormalizationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTranscriptNormalization(
+        com.google.cloud.speech.v1.TranscriptNormalization value) {
+      if (transcriptNormalizationBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && transcriptNormalization_ != null
+            && transcriptNormalization_
+                != com.google.cloud.speech.v1.TranscriptNormalization.getDefaultInstance()) {
+          getTranscriptNormalizationBuilder().mergeFrom(value);
+        } else {
+          transcriptNormalization_ = value;
+        }
+      } else {
+        transcriptNormalizationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTranscriptNormalization() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      transcriptNormalization_ = null;
+      if (transcriptNormalizationBuilder_ != null) {
+        transcriptNormalizationBuilder_.dispose();
+        transcriptNormalizationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.speech.v1.TranscriptNormalization.Builder
+        getTranscriptNormalizationBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getTranscriptNormalizationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.speech.v1.TranscriptNormalizationOrBuilder
+        getTranscriptNormalizationOrBuilder() {
+      if (transcriptNormalizationBuilder_ != null) {
+        return transcriptNormalizationBuilder_.getMessageOrBuilder();
+      } else {
+        return transcriptNormalization_ == null
+            ? com.google.cloud.speech.v1.TranscriptNormalization.getDefaultInstance()
+            : transcriptNormalization_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
+     * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+     * and final transcripts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1.TranscriptNormalization,
+            com.google.cloud.speech.v1.TranscriptNormalization.Builder,
+            com.google.cloud.speech.v1.TranscriptNormalizationOrBuilder>
+        getTranscriptNormalizationFieldBuilder() {
+      if (transcriptNormalizationBuilder_ == null) {
+        transcriptNormalizationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v1.TranscriptNormalization,
+                com.google.cloud.speech.v1.TranscriptNormalization.Builder,
+                com.google.cloud.speech.v1.TranscriptNormalizationOrBuilder>(
+                getTranscriptNormalization(), getParentForChildren(), isClean());
+        transcriptNormalization_ = null;
+      }
+      return transcriptNormalizationBuilder_;
+    }
+
     private java.util.List<com.google.cloud.speech.v1.SpeechContext> speechContexts_ =
         java.util.Collections.emptyList();
 
     private void ensureSpeechContextsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         speechContexts_ =
             new java.util.ArrayList<com.google.cloud.speech.v1.SpeechContext>(speechContexts_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -3610,7 +3979,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearSpeechContexts() {
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         speechContextsBuilder_.clear();
@@ -3761,7 +4130,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.speech.v1.SpeechContext.Builder,
                 com.google.cloud.speech.v1.SpeechContextOrBuilder>(
                 speechContexts_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         speechContexts_ = null;
@@ -3806,7 +4175,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder setEnableWordTimeOffsets(boolean value) {
 
       enableWordTimeOffsets_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3825,7 +4194,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnableWordTimeOffsets() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       enableWordTimeOffsets_ = false;
       onChanged();
       return this;
@@ -3866,7 +4235,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder setEnableWordConfidence(boolean value) {
 
       enableWordConfidence_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3884,7 +4253,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnableWordConfidence() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       enableWordConfidence_ = false;
       onChanged();
       return this;
@@ -3927,7 +4296,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder setEnableAutomaticPunctuation(boolean value) {
 
       enableAutomaticPunctuation_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3946,7 +4315,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnableAutomaticPunctuation() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       enableAutomaticPunctuation_ = false;
       onChanged();
       return this;
@@ -3976,7 +4345,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the enableSpokenPunctuation field is set.
      */
     public boolean hasEnableSpokenPunctuation() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4028,7 +4397,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         enableSpokenPunctuationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4054,7 +4423,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         enableSpokenPunctuationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4075,7 +4444,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeEnableSpokenPunctuation(com.google.protobuf.BoolValue value) {
       if (enableSpokenPunctuationBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && enableSpokenPunctuation_ != null
             && enableSpokenPunctuation_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
           getEnableSpokenPunctuationBuilder().mergeFrom(value);
@@ -4085,7 +4454,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         enableSpokenPunctuationBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4105,7 +4474,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
      */
     public Builder clearEnableSpokenPunctuation() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       enableSpokenPunctuation_ = null;
       if (enableSpokenPunctuationBuilder_ != null) {
         enableSpokenPunctuationBuilder_.dispose();
@@ -4130,7 +4499,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
      */
     public com.google.protobuf.BoolValue.Builder getEnableSpokenPunctuationBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getEnableSpokenPunctuationFieldBuilder().getBuilder();
     }
@@ -4212,7 +4581,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the enableSpokenEmojis field is set.
      */
     public boolean hasEnableSpokenEmojis() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4260,7 +4629,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         enableSpokenEmojisBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4283,7 +4652,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         enableSpokenEmojisBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4302,7 +4671,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeEnableSpokenEmojis(com.google.protobuf.BoolValue value) {
       if (enableSpokenEmojisBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && enableSpokenEmojis_ != null
             && enableSpokenEmojis_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
           getEnableSpokenEmojisBuilder().mergeFrom(value);
@@ -4312,7 +4681,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         enableSpokenEmojisBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4330,7 +4699,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
      */
     public Builder clearEnableSpokenEmojis() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       enableSpokenEmojis_ = null;
       if (enableSpokenEmojisBuilder_ != null) {
         enableSpokenEmojisBuilder_.dispose();
@@ -4353,7 +4722,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
      */
     public com.google.protobuf.BoolValue.Builder getEnableSpokenEmojisBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getEnableSpokenEmojisFieldBuilder().getBuilder();
     }
@@ -4434,7 +4803,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the diarizationConfig field is set.
      */
     public boolean hasDiarizationConfig() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4488,7 +4857,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         diarizationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4515,7 +4884,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         diarizationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4538,7 +4907,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeDiarizationConfig(
         com.google.cloud.speech.v1.SpeakerDiarizationConfig value) {
       if (diarizationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && diarizationConfig_ != null
             && diarizationConfig_
                 != com.google.cloud.speech.v1.SpeakerDiarizationConfig.getDefaultInstance()) {
@@ -4549,7 +4918,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         diarizationConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4570,7 +4939,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v1.SpeakerDiarizationConfig diarization_config = 19;</code>
      */
     public Builder clearDiarizationConfig() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       diarizationConfig_ = null;
       if (diarizationConfigBuilder_ != null) {
         diarizationConfigBuilder_.dispose();
@@ -4597,7 +4966,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.speech.v1.SpeakerDiarizationConfig.Builder
         getDiarizationConfigBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getDiarizationConfigFieldBuilder().getBuilder();
     }
@@ -4678,7 +5047,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4718,7 +5087,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         metadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4738,7 +5107,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4753,7 +5122,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeMetadata(com.google.cloud.speech.v1.RecognitionMetadata value) {
       if (metadataBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && metadata_ != null
             && metadata_ != com.google.cloud.speech.v1.RecognitionMetadata.getDefaultInstance()) {
           getMetadataBuilder().mergeFrom(value);
@@ -4763,7 +5132,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4777,7 +5146,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
      */
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       metadata_ = null;
       if (metadataBuilder_ != null) {
         metadataBuilder_.dispose();
@@ -4796,7 +5165,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
      */
     public com.google.cloud.speech.v1.RecognitionMetadata.Builder getMetadataBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -5056,7 +5425,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       model_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5123,7 +5492,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearModel() {
       model_ = getDefaultInstance().getModel();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5195,7 +5564,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       model_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5209,6 +5578,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * If `use_enhanced` is set to true and the `model` field is not set, then
      * an appropriate enhanced model is chosen if an enhanced model exists for
      * the audio.
+     *
      * If `use_enhanced` is true and an enhanced version of the specified model
      * does not exist, then the speech is recognized using the standard version
      * of the specified model.
@@ -5230,6 +5600,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * If `use_enhanced` is set to true and the `model` field is not set, then
      * an appropriate enhanced model is chosen if an enhanced model exists for
      * the audio.
+     *
      * If `use_enhanced` is true and an enhanced version of the specified model
      * does not exist, then the speech is recognized using the standard version
      * of the specified model.
@@ -5243,7 +5614,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder setUseEnhanced(boolean value) {
 
       useEnhanced_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5255,6 +5626,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * If `use_enhanced` is set to true and the `model` field is not set, then
      * an appropriate enhanced model is chosen if an enhanced model exists for
      * the audio.
+     *
      * If `use_enhanced` is true and an enhanced version of the specified model
      * does not exist, then the speech is recognized using the standard version
      * of the specified model.
@@ -5265,7 +5637,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearUseEnhanced() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       useEnhanced_ = false;
       onChanged();
       return this;

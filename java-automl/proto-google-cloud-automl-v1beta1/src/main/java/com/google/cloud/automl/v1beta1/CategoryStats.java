@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CategoryStats();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,11 +132,6 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SingleCategoryStats();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -841,6 +831,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -858,6 +849,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -876,6 +868,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -892,6 +885,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -909,6 +903,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -1335,6 +1330,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1355,6 +1351,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1374,6 +1371,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1394,6 +1392,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1420,6 +1419,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1444,6 +1444,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1470,6 +1471,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1496,6 +1498,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1519,6 +1522,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1543,6 +1547,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1568,6 +1573,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1590,6 +1596,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1612,6 +1619,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1628,6 +1636,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1648,6 +1657,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1669,6 +1679,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1688,6 +1699,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *
@@ -1708,6 +1720,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The statistics of the top 20 CATEGORY values, ordered by
+     *
      * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
      * </pre>
      *

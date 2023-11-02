@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,9 +39,9 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   }
 
   private ServicePerimeterConfig() {
-    resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    accessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    restrictedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    accessLevels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    restrictedServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
     ingressPolicies_ = java.util.Collections.emptyList();
     egressPolicies_ = java.util.Collections.emptyList();
   }
@@ -50,11 +50,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ServicePerimeterConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -363,18 +358,13 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
 
     private VpcAccessibleServices() {
-      allowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new VpcAccessibleServices();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -416,7 +406,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public static final int ALLOWED_SERVICES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList allowedServices_;
+    private com.google.protobuf.LazyStringArrayList allowedServices_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -737,8 +728,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         super.clear();
         bitField0_ = 0;
         enableRestriction_ = false;
-        allowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        allowedServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -776,22 +766,11 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
             result =
                 new com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
                     .VpcAccessibleServices(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.VpcAccessibleServices
-              result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          allowedServices_ = allowedServices_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.allowedServices_ = allowedServices_;
       }
 
       private void buildPartial0(
@@ -800,6 +779,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.enableRestriction_ = enableRestriction_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          allowedServices_.makeImmutable();
+          result.allowedServices_ = allowedServices_;
         }
       }
 
@@ -866,7 +849,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         if (!other.allowedServices_.isEmpty()) {
           if (allowedServices_.isEmpty()) {
             allowedServices_ = other.allowedServices_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureAllowedServicesIsMutable();
             allowedServices_.addAll(other.allowedServices_);
@@ -987,14 +970,14 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return this;
       }
 
-      private com.google.protobuf.LazyStringList allowedServices_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList allowedServices_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAllowedServicesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!allowedServices_.isModifiable()) {
           allowedServices_ = new com.google.protobuf.LazyStringArrayList(allowedServices_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1011,7 +994,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return A list containing the allowedServices.
        */
       public com.google.protobuf.ProtocolStringList getAllowedServicesList() {
-        return allowedServices_.getUnmodifiableView();
+        allowedServices_.makeImmutable();
+        return allowedServices_;
       }
       /**
        *
@@ -1088,6 +1072,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureAllowedServicesIsMutable();
         allowedServices_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1112,6 +1097,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureAllowedServicesIsMutable();
         allowedServices_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1133,6 +1119,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public Builder addAllAllowedServices(java.lang.Iterable<java.lang.String> values) {
         ensureAllowedServicesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedServices_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1151,8 +1138,9 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearAllowedServices() {
-        allowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        allowedServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1178,6 +1166,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         checkByteStringIsUtf8(value);
         ensureAllowedServicesIsMutable();
         allowedServices_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1350,8 +1339,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getPermissionBytes();
 
-    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector
-            .KindCase
+    com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector.KindCase
         getKindCase();
   }
   /**
@@ -1383,11 +1371,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       return new MethodSelector();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
           .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_MethodSelector_descriptor;
@@ -1406,6 +1389,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
 
     private int kindCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object kind_;
 
     public enum KindCase
@@ -2589,11 +2574,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ApiOperation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4100,8 +4080,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getResourceBytes();
 
-    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource
-            .SourceCase
+    com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource.SourceCase
         getSourceCase();
   }
   /**
@@ -4134,11 +4113,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       return new IngressSource();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
           .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressSource_descriptor;
@@ -4157,6 +4131,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
 
     private int sourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object source_;
 
     public enum SourceCase
@@ -5532,7 +5508,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     private IngressFrom() {
       sources_ = java.util.Collections.emptyList();
-      identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      identities_ = com.google.protobuf.LazyStringArrayList.emptyList();
       identityType_ = 0;
     }
 
@@ -5540,11 +5516,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IngressFrom();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5666,7 +5637,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public static final int IDENTITIES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList identities_;
+    private com.google.protobuf.LazyStringArrayList identities_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -6039,8 +6011,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           sourcesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
-        identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        identities_ = com.google.protobuf.LazyStringArrayList.emptyList();
         identityType_ = 0;
         return this;
       }
@@ -6094,16 +6065,15 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         } else {
           result.sources_ = sourcesBuilder_.build();
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
-          identities_ = identities_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.identities_ = identities_;
       }
 
       private void buildPartial0(
           com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressFrom result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          identities_.makeImmutable();
+          result.identities_ = identities_;
+        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.identityType_ = identityType_;
         }
@@ -6193,7 +6163,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         if (!other.identities_.isEmpty()) {
           if (identities_.isEmpty()) {
             identities_ = other.identities_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureIdentitiesIsMutable();
             identities_.addAll(other.identities_);
@@ -6744,14 +6714,14 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return sourcesBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList identities_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList identities_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIdentitiesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!identities_.isModifiable()) {
           identities_ = new com.google.protobuf.LazyStringArrayList(identities_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -6767,7 +6737,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return A list containing the identities.
        */
       public com.google.protobuf.ProtocolStringList getIdentitiesList() {
-        return identities_.getUnmodifiableView();
+        identities_.makeImmutable();
+        return identities_;
       }
       /**
        *
@@ -6840,6 +6811,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureIdentitiesIsMutable();
         identities_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6863,6 +6835,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureIdentitiesIsMutable();
         identities_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6883,6 +6856,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public Builder addAllIdentities(java.lang.Iterable<java.lang.String> values) {
         ensureIdentitiesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, identities_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6900,8 +6874,9 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearIdentities() {
-        identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        identities_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -6926,6 +6901,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         checkByteStringIsUtf8(value);
         ensureIdentitiesIsMutable();
         identities_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7325,18 +7301,13 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     private IngressTo() {
       operations_ = java.util.Collections.emptyList();
-      resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IngressTo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7478,7 +7449,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public static final int RESOURCES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList resources_;
+    private com.google.protobuf.LazyStringArrayList resources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -7810,8 +7782,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           operationsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
-        resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -7862,16 +7833,15 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         } else {
           result.operations_ = operationsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
-          resources_ = resources_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.resources_ = resources_;
       }
 
       private void buildPartial0(
           com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressTo result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          resources_.makeImmutable();
+          result.resources_ = resources_;
+        }
       }
 
       @java.lang.Override
@@ -7957,7 +7927,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         if (!other.resources_.isEmpty()) {
           if (resources_.isEmpty()) {
             resources_ = other.resources_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureResourcesIsMutable();
             resources_.addAll(other.resources_);
@@ -8568,14 +8538,14 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return operationsBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList resources_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList resources_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureResourcesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!resources_.isModifiable()) {
           resources_ = new com.google.protobuf.LazyStringArrayList(resources_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -8596,7 +8566,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return A list containing the resources.
        */
       public com.google.protobuf.ProtocolStringList getResourcesList() {
-        return resources_.getUnmodifiableView();
+        resources_.makeImmutable();
+        return resources_;
       }
       /**
        *
@@ -8689,6 +8660,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureResourcesIsMutable();
         resources_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8717,6 +8689,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureResourcesIsMutable();
         resources_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8742,6 +8715,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public Builder addAllResources(java.lang.Iterable<java.lang.String> values) {
         ensureResourcesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resources_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8764,8 +8738,9 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearResources() {
-        resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -8795,6 +8770,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         checkByteStringIsUtf8(value);
         ensureResourcesIsMutable();
         resources_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8984,6 +8960,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
    * <pre>
    * Policy for ingress into [ServicePerimeter]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+   *
    * [IngressPolicies]
    * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
    * match requests based on `ingress_from` and `ingress_to` stanzas.  For an
@@ -8992,11 +8969,13 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
    * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
    * matches a request, the request is allowed through the perimeter boundary
    * from outside the perimeter.
+   *
    * For example, access from the internet can be allowed either
    * based on an [AccessLevel]
    * [google.identity.accesscontextmanager.v1.AccessLevel] or, for traffic
    * hosted on Google Cloud, the project of the source network. For access from
    * private networks, using the project of the hosting network is required.
+   *
    * Individual ingress policies can be limited by restricting which
    * services and/or actions they match using the `ingress_to` field.
    * </pre>
@@ -9020,11 +8999,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IngressPolicy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9381,6 +9355,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * <pre>
      * Policy for ingress into [ServicePerimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+     *
      * [IngressPolicies]
      * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
      * match requests based on `ingress_from` and `ingress_to` stanzas.  For an
@@ -9389,11 +9364,13 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
      * matches a request, the request is allowed through the perimeter boundary
      * from outside the perimeter.
+     *
      * For example, access from the internet can be allowed either
      * based on an [AccessLevel]
      * [google.identity.accesscontextmanager.v1.AccessLevel] or, for traffic
      * hosted on Google Cloud, the project of the source network. For access from
      * private networks, using the project of the hosting network is required.
+     *
      * Individual ingress policies can be limited by restricting which
      * services and/or actions they match using the `ingress_to` field.
      * </pre>
@@ -10306,7 +10283,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
 
     private EgressFrom() {
-      identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      identities_ = com.google.protobuf.LazyStringArrayList.emptyList();
       identityType_ = 0;
     }
 
@@ -10314,11 +10291,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new EgressFrom();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10340,7 +10312,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public static final int IDENTITIES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList identities_;
+    private com.google.protobuf.LazyStringArrayList identities_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -10700,8 +10673,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        identities_ = com.google.protobuf.LazyStringArrayList.emptyList();
         identityType_ = 0;
         return this;
       }
@@ -10734,7 +10706,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           buildPartial() {
         com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom result =
             new com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -10742,18 +10713,13 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          identities_ = identities_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.identities_ = identities_;
-      }
-
       private void buildPartial0(
           com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          identities_.makeImmutable();
+          result.identities_ = identities_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.identityType_ = identityType_;
         }
@@ -10816,7 +10782,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         if (!other.identities_.isEmpty()) {
           if (identities_.isEmpty()) {
             identities_ = other.identities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureIdentitiesIsMutable();
             identities_.addAll(other.identities_);
@@ -10884,14 +10850,14 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList identities_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList identities_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIdentitiesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!identities_.isModifiable()) {
           identities_ = new com.google.protobuf.LazyStringArrayList(identities_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -10907,7 +10873,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return A list containing the identities.
        */
       public com.google.protobuf.ProtocolStringList getIdentitiesList() {
-        return identities_.getUnmodifiableView();
+        identities_.makeImmutable();
+        return identities_;
       }
       /**
        *
@@ -10980,6 +10947,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureIdentitiesIsMutable();
         identities_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -11003,6 +10971,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureIdentitiesIsMutable();
         identities_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -11023,6 +10992,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public Builder addAllIdentities(java.lang.Iterable<java.lang.String> values) {
         ensureIdentitiesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, identities_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -11040,8 +11010,9 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearIdentities() {
-        identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        identities_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -11066,6 +11037,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         checkByteStringIsUtf8(value);
         ensureIdentitiesIsMutable();
         identities_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -11537,20 +11509,15 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
 
     private EgressTo() {
-      resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       operations_ = java.util.Collections.emptyList();
-      externalResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      externalResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new EgressTo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11572,7 +11539,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public static final int RESOURCES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList resources_;
+    private com.google.protobuf.LazyStringArrayList resources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -11778,7 +11746,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public static final int EXTERNAL_RESOURCES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList externalResources_;
+    private com.google.protobuf.LazyStringArrayList externalResources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -12116,8 +12085,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
         if (operationsBuilder_ == null) {
           operations_ = java.util.Collections.emptyList();
         } else {
@@ -12125,8 +12093,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           operationsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
-        externalResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        externalResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -12168,11 +12135,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       private void buildPartialRepeatedFields(
           com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          resources_ = resources_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.resources_ = resources_;
         if (operationsBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             operations_ = java.util.Collections.unmodifiableList(operations_);
@@ -12182,16 +12144,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         } else {
           result.operations_ = operationsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
-          externalResources_ = externalResources_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.externalResources_ = externalResources_;
       }
 
       private void buildPartial0(
           com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          resources_.makeImmutable();
+          result.resources_ = resources_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          externalResources_.makeImmutable();
+          result.externalResources_ = externalResources_;
+        }
       }
 
       @java.lang.Override
@@ -12250,7 +12215,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         if (!other.resources_.isEmpty()) {
           if (resources_.isEmpty()) {
             resources_ = other.resources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureResourcesIsMutable();
             resources_.addAll(other.resources_);
@@ -12287,7 +12252,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         if (!other.externalResources_.isEmpty()) {
           if (externalResources_.isEmpty()) {
             externalResources_ = other.externalResources_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureExternalResourcesIsMutable();
             externalResources_.addAll(other.externalResources_);
@@ -12369,14 +12334,14 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList resources_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList resources_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureResourcesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!resources_.isModifiable()) {
           resources_ = new com.google.protobuf.LazyStringArrayList(resources_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -12397,7 +12362,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return A list containing the resources.
        */
       public com.google.protobuf.ProtocolStringList getResourcesList() {
-        return resources_.getUnmodifiableView();
+        resources_.makeImmutable();
+        return resources_;
       }
       /**
        *
@@ -12490,6 +12456,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureResourcesIsMutable();
         resources_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -12518,6 +12485,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureResourcesIsMutable();
         resources_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -12543,6 +12511,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public Builder addAllResources(java.lang.Iterable<java.lang.String> values) {
         ensureResourcesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resources_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -12565,8 +12534,9 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearResources() {
-        resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -12596,6 +12566,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         checkByteStringIsUtf8(value);
         ensureResourcesIsMutable();
         resources_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -13118,14 +13089,14 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         return operationsBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList externalResources_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList externalResources_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureExternalResourcesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!externalResources_.isModifiable()) {
           externalResources_ = new com.google.protobuf.LazyStringArrayList(externalResources_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -13144,7 +13115,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return A list containing the externalResources.
        */
       public com.google.protobuf.ProtocolStringList getExternalResourcesList() {
-        return externalResources_.getUnmodifiableView();
+        externalResources_.makeImmutable();
+        return externalResources_;
       }
       /**
        *
@@ -13229,6 +13201,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureExternalResourcesIsMutable();
         externalResources_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -13255,6 +13228,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         }
         ensureExternalResourcesIsMutable();
         externalResources_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -13278,6 +13252,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       public Builder addAllExternalResources(java.lang.Iterable<java.lang.String> values) {
         ensureExternalResourcesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, externalResources_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -13298,8 +13273,9 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearExternalResources() {
-        externalResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        externalResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -13327,6 +13303,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         checkByteStringIsUtf8(value);
         ensureExternalResourcesIsMutable();
         externalResources_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -13508,6 +13485,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Policy for egress from perimeter.
+   *
    * [EgressPolicies]
    * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
    * match requests based on `egress_from` and `egress_to` stanzas.  For an
@@ -13524,6 +13502,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
    * [google.identity.accesscontextmanager.v1.ServicePerimeter] to access a
    * defined set of projects outside the perimeter in certain contexts (e.g. to
    * read data from a Cloud Storage bucket or query against a BigQuery dataset).
+   *
    * [EgressPolicies]
    * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
    * are concerned with the *resources* that a request relates as well as the
@@ -13554,11 +13533,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new EgressPolicy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -13906,6 +13880,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Policy for egress from perimeter.
+     *
      * [EgressPolicies]
      * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
      * match requests based on `egress_from` and `egress_to` stanzas.  For an
@@ -13922,6 +13897,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] to access a
      * defined set of projects outside the perimeter in certain contexts (e.g. to
      * read data from a Cloud Storage bucket or query against a BigQuery dataset).
+     *
      * [EgressPolicies]
      * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
      * are concerned with the *resources* that a request relates as well as the
@@ -14704,7 +14680,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public static final int RESOURCES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resources_;
+  private com.google.protobuf.LazyStringArrayList resources_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -14771,7 +14748,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public static final int ACCESS_LEVELS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList accessLevels_;
+  private com.google.protobuf.LazyStringArrayList accessLevels_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -14862,7 +14840,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
   public static final int RESTRICTED_SERVICES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList restrictedServices_;
+  private com.google.protobuf.LazyStringArrayList restrictedServices_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -15524,12 +15503,9 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      accessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      restrictedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      accessLevels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      restrictedServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
       vpcAccessibleServices_ = null;
       if (vpcAccessibleServicesBuilder_ != null) {
         vpcAccessibleServicesBuilder_.dispose();
@@ -15588,21 +15564,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     private void buildPartialRepeatedFields(
         com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        resources_ = resources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.resources_ = resources_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        accessLevels_ = accessLevels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.accessLevels_ = accessLevels_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        restrictedServices_ = restrictedServices_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.restrictedServices_ = restrictedServices_;
       if (ingressPoliciesBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
           ingressPolicies_ = java.util.Collections.unmodifiableList(ingressPolicies_);
@@ -15626,6 +15587,18 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     private void buildPartial0(
         com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        resources_.makeImmutable();
+        result.resources_ = resources_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        accessLevels_.makeImmutable();
+        result.accessLevels_ = accessLevels_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        restrictedServices_.makeImmutable();
+        result.restrictedServices_ = restrictedServices_;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.vpcAccessibleServices_ =
             vpcAccessibleServicesBuilder_ == null
@@ -15686,7 +15659,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (!other.resources_.isEmpty()) {
         if (resources_.isEmpty()) {
           resources_ = other.resources_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureResourcesIsMutable();
           resources_.addAll(other.resources_);
@@ -15696,7 +15669,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (!other.accessLevels_.isEmpty()) {
         if (accessLevels_.isEmpty()) {
           accessLevels_ = other.accessLevels_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAccessLevelsIsMutable();
           accessLevels_.addAll(other.accessLevels_);
@@ -15706,7 +15679,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (!other.restrictedServices_.isEmpty()) {
         if (restrictedServices_.isEmpty()) {
           restrictedServices_ = other.restrictedServices_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureRestrictedServicesIsMutable();
           restrictedServices_.addAll(other.restrictedServices_);
@@ -15873,14 +15846,14 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList resources_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!resources_.isModifiable()) {
         resources_ = new com.google.protobuf.LazyStringArrayList(resources_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -15895,7 +15868,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return A list containing the resources.
      */
     public com.google.protobuf.ProtocolStringList getResourcesList() {
-      return resources_.getUnmodifiableView();
+      resources_.makeImmutable();
+      return resources_;
     }
     /**
      *
@@ -15964,6 +15938,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       ensureResourcesIsMutable();
       resources_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -15986,6 +15961,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       ensureResourcesIsMutable();
       resources_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -16005,6 +15981,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public Builder addAllResources(java.lang.Iterable<java.lang.String> values) {
       ensureResourcesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resources_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -16021,8 +15998,9 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearResources() {
-      resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -16046,18 +16024,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureResourcesIsMutable();
       resources_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList accessLevels_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList accessLevels_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAccessLevelsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!accessLevels_.isModifiable()) {
         accessLevels_ = new com.google.protobuf.LazyStringArrayList(accessLevels_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -16078,7 +16057,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return A list containing the accessLevels.
      */
     public com.google.protobuf.ProtocolStringList getAccessLevelsList() {
-      return accessLevels_.getUnmodifiableView();
+      accessLevels_.makeImmutable();
+      return accessLevels_;
     }
     /**
      *
@@ -16171,6 +16151,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       ensureAccessLevelsIsMutable();
       accessLevels_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -16199,6 +16180,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       ensureAccessLevelsIsMutable();
       accessLevels_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -16224,6 +16206,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public Builder addAllAccessLevels(java.lang.Iterable<java.lang.String> values) {
       ensureAccessLevelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, accessLevels_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -16246,8 +16229,9 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAccessLevels() {
-      accessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      accessLevels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -16277,18 +16261,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureAccessLevelsIsMutable();
       accessLevels_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList restrictedServices_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList restrictedServices_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRestrictedServicesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!restrictedServices_.isModifiable()) {
         restrictedServices_ = new com.google.protobuf.LazyStringArrayList(restrictedServices_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -16305,7 +16290,8 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return A list containing the restrictedServices.
      */
     public com.google.protobuf.ProtocolStringList getRestrictedServicesList() {
-      return restrictedServices_.getUnmodifiableView();
+      restrictedServices_.makeImmutable();
+      return restrictedServices_;
     }
     /**
      *
@@ -16382,6 +16368,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       ensureRestrictedServicesIsMutable();
       restrictedServices_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -16406,6 +16393,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       ensureRestrictedServicesIsMutable();
       restrictedServices_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -16427,6 +16415,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     public Builder addAllRestrictedServices(java.lang.Iterable<java.lang.String> values) {
       ensureRestrictedServicesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, restrictedServices_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -16445,8 +16434,9 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRestrictedServices() {
-      restrictedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      restrictedServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -16472,6 +16462,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureRestrictedServicesIsMutable();
       restrictedServices_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

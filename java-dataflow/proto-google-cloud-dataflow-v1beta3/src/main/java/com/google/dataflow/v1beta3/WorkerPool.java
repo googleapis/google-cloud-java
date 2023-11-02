@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,11 +63,6 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WorkerPool();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -345,11 +340,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * the job succeeds. `TEARDOWN_ON_SUCCESS` means workers are torn down
    * if the job succeeds. `TEARDOWN_NEVER` means the workers are never torn
    * down.
+   *
    * If the workers are not torn down by the service, they will
    * continue to run and use Google Compute Engine VM resources in the
    * user's project until they are explicitly terminated by the user.
    * Because of this, Google recommends using the `TEARDOWN_ALWAYS`
    * policy except for small, manually supervised test jobs.
+   *
    * If unknown or unspecified, the service will attempt to choose a reasonable
    * default.
    * </pre>
@@ -373,11 +370,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * the job succeeds. `TEARDOWN_ON_SUCCESS` means workers are torn down
    * if the job succeeds. `TEARDOWN_NEVER` means the workers are never torn
    * down.
+   *
    * If the workers are not torn down by the service, they will
    * continue to run and use Google Compute Engine VM resources in the
    * user's project until they are explicitly terminated by the user.
    * Because of this, Google recommends using the `TEARDOWN_ALWAYS`
    * policy except for small, manually supervised test jobs.
+   *
    * If unknown or unspecified, the service will attempt to choose a reasonable
    * default.
    * </pre>
@@ -1064,6 +1063,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Docker container image that executes the Cloud Dataflow worker
    * harness, residing in Google Container Registry.
+   *
    * Deprecated for the Fn API path. Use sdk_harness_container_images instead.
    * </pre>
    *
@@ -1089,6 +1089,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Docker container image that executes the Cloud Dataflow worker
    * harness, residing in Google Container Registry.
+   *
    * Deprecated for the Fn API path. Use sdk_harness_container_images instead.
    * </pre>
    *
@@ -3053,11 +3054,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * the job succeeds. `TEARDOWN_ON_SUCCESS` means workers are torn down
      * if the job succeeds. `TEARDOWN_NEVER` means the workers are never torn
      * down.
+     *
      * If the workers are not torn down by the service, they will
      * continue to run and use Google Compute Engine VM resources in the
      * user's project until they are explicitly terminated by the user.
      * Because of this, Google recommends using the `TEARDOWN_ALWAYS`
      * policy except for small, manually supervised test jobs.
+     *
      * If unknown or unspecified, the service will attempt to choose a reasonable
      * default.
      * </pre>
@@ -3081,11 +3084,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * the job succeeds. `TEARDOWN_ON_SUCCESS` means workers are torn down
      * if the job succeeds. `TEARDOWN_NEVER` means the workers are never torn
      * down.
+     *
      * If the workers are not torn down by the service, they will
      * continue to run and use Google Compute Engine VM resources in the
      * user's project until they are explicitly terminated by the user.
      * Because of this, Google recommends using the `TEARDOWN_ALWAYS`
      * policy except for small, manually supervised test jobs.
+     *
      * If unknown or unspecified, the service will attempt to choose a reasonable
      * default.
      * </pre>
@@ -3112,11 +3117,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * the job succeeds. `TEARDOWN_ON_SUCCESS` means workers are torn down
      * if the job succeeds. `TEARDOWN_NEVER` means the workers are never torn
      * down.
+     *
      * If the workers are not torn down by the service, they will
      * continue to run and use Google Compute Engine VM resources in the
      * user's project until they are explicitly terminated by the user.
      * Because of this, Google recommends using the `TEARDOWN_ALWAYS`
      * policy except for small, manually supervised test jobs.
+     *
      * If unknown or unspecified, the service will attempt to choose a reasonable
      * default.
      * </pre>
@@ -3142,11 +3149,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * the job succeeds. `TEARDOWN_ON_SUCCESS` means workers are torn down
      * if the job succeeds. `TEARDOWN_NEVER` means the workers are never torn
      * down.
+     *
      * If the workers are not torn down by the service, they will
      * continue to run and use Google Compute Engine VM resources in the
      * user's project until they are explicitly terminated by the user.
      * Because of this, Google recommends using the `TEARDOWN_ALWAYS`
      * policy except for small, manually supervised test jobs.
+     *
      * If unknown or unspecified, the service will attempt to choose a reasonable
      * default.
      * </pre>
@@ -3176,11 +3185,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * the job succeeds. `TEARDOWN_ON_SUCCESS` means workers are torn down
      * if the job succeeds. `TEARDOWN_NEVER` means the workers are never torn
      * down.
+     *
      * If the workers are not torn down by the service, they will
      * continue to run and use Google Compute Engine VM resources in the
      * user's project until they are explicitly terminated by the user.
      * Because of this, Google recommends using the `TEARDOWN_ALWAYS`
      * policy except for small, manually supervised test jobs.
+     *
      * If unknown or unspecified, the service will attempt to choose a reasonable
      * default.
      * </pre>
@@ -5000,6 +5011,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Docker container image that executes the Cloud Dataflow worker
      * harness, residing in Google Container Registry.
+     *
      * Deprecated for the Fn API path. Use sdk_harness_container_images instead.
      * </pre>
      *
@@ -5024,6 +5036,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Docker container image that executes the Cloud Dataflow worker
      * harness, residing in Google Container Registry.
+     *
      * Deprecated for the Fn API path. Use sdk_harness_container_images instead.
      * </pre>
      *
@@ -5048,6 +5061,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Docker container image that executes the Cloud Dataflow worker
      * harness, residing in Google Container Registry.
+     *
      * Deprecated for the Fn API path. Use sdk_harness_container_images instead.
      * </pre>
      *
@@ -5071,6 +5085,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Docker container image that executes the Cloud Dataflow worker
      * harness, residing in Google Container Registry.
+     *
      * Deprecated for the Fn API path. Use sdk_harness_container_images instead.
      * </pre>
      *
@@ -5090,6 +5105,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Docker container image that executes the Cloud Dataflow worker
      * harness, residing in Google Container Registry.
+     *
      * Deprecated for the Fn API path. Use sdk_harness_container_images instead.
      * </pre>
      *

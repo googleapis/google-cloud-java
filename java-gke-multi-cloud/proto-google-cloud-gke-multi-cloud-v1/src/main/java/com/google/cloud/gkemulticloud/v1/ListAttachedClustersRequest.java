@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
     return new ListAttachedClustersRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AttachedServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_ListAttachedClustersRequest_descriptor;
@@ -78,7 +73,9 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
    * <pre>
    * Required. The parent location which owns this collection of
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -107,7 +104,9 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
    * <pre>
    * Required. The parent location which owns this collection of
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -138,6 +137,7 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * The maximum number of items to return.
+   *
    * If not specified, a default value of 50 will be used by the service.
    * Regardless of the pageSize value, the response can include a partial list
    * and a caller should only rely on response's
@@ -608,7 +608,9 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The parent location which owns this collection of
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -636,7 +638,9 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The parent location which owns this collection of
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -664,7 +668,9 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The parent location which owns this collection of
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -691,7 +697,9 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The parent location which owns this collection of
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -714,7 +722,9 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The parent location which owns this collection of
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -743,6 +753,7 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the pageSize value, the response can include a partial list
      * and a caller should only rely on response's
@@ -763,6 +774,7 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the pageSize value, the response can include a partial list
      * and a caller should only rely on response's
@@ -787,6 +799,7 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the pageSize value, the response can include a partial list
      * and a caller should only rely on response's

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public final class VizierServiceGrpc {
 
   private VizierServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.aiplatform.v1.VizierService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.aiplatform.v1.VizierService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -829,7 +829,8 @@ public final class VizierServiceGrpc {
      * suggested by Vertex AI Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
-     * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
+     * a
+     * [SuggestTrialsResponse][google.cloud.aiplatform.v1.SuggestTrialsResponse].
      * </pre>
      */
     default void suggestTrials(
@@ -1101,7 +1102,8 @@ public final class VizierServiceGrpc {
      * suggested by Vertex AI Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
-     * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
+     * a
+     * [SuggestTrialsResponse][google.cloud.aiplatform.v1.SuggestTrialsResponse].
      * </pre>
      */
     public void suggestTrials(
@@ -1358,7 +1360,8 @@ public final class VizierServiceGrpc {
      * suggested by Vertex AI Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
-     * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
+     * a
+     * [SuggestTrialsResponse][google.cloud.aiplatform.v1.SuggestTrialsResponse].
      * </pre>
      */
     public com.google.longrunning.Operation suggestTrials(
@@ -1590,7 +1593,8 @@ public final class VizierServiceGrpc {
      * suggested by Vertex AI Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
-     * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
+     * a
+     * [SuggestTrialsResponse][google.cloud.aiplatform.v1.SuggestTrialsResponse].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1978,9 +1982,9 @@ public final class VizierServiceGrpc {
   private static final class VizierServiceMethodDescriptorSupplier
       extends VizierServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    VizierServiceMethodDescriptorSupplier(String methodName) {
+    VizierServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ package com.google.monitoring.dashboard.v1;
  * Describes a ranking-based time series filter. Each input time series is
  * ranked with an aligner. The filter will allow up to `num_time_series` time
  * series to pass through it, selecting them based on the relative ranking.
+ *
  * For example, if `ranking_method` is `METHOD_MEAN`,`direction` is `BOTTOM`,
  * and `num_time_series` is 3, then the 3 times series with the lowest mean
  * values will pass through the filter.
@@ -51,11 +52,6 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PickTimeSeriesFilter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -750,6 +746,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    * Describes a ranking-based time series filter. Each input time series is
    * ranked with an aligner. The filter will allow up to `num_time_series` time
    * series to pass through it, selecting them based on the relative ranking.
+   *
    * For example, if `ranking_method` is `METHOD_MEAN`,`direction` is `BOTTOM`,
    * and `num_time_series` is 3, then the 3 times series with the lowest mean
    * values will pass through the filter.

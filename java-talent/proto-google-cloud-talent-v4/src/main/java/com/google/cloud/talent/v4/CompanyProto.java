@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,24 +48,24 @@ public final class CompanyProto {
           + "google.cloud.talent.v4\032\037google/api/field"
           + "_behavior.proto\032\031google/api/resource.pro"
           + "to\032#google/cloud/talent/v4/common.proto\""
-          + "\310\004\n\007Company\022\014\n\004name\030\001 \001(\t\022\031\n\014display_nam"
-          + "e\030\002 \001(\tB\003\340A\002\022\030\n\013external_id\030\003 \001(\tB\003\340A\002\0221"
-          + "\n\004size\030\004 \001(\0162#.google.cloud.talent.v4.Co"
-          + "mpanySize\022\034\n\024headquarters_address\030\005 \001(\t\022"
-          + "\025\n\rhiring_agency\030\006 \001(\010\022\020\n\010eeo_text\030\007 \001(\t"
-          + "\022\023\n\013website_uri\030\010 \001(\t\022\027\n\017career_site_uri"
-          + "\030\t \001(\t\022\021\n\timage_uri\030\n \001(\t\0224\n(keyword_sea"
-          + "rchable_job_custom_attributes\030\013 \003(\tB\002\030\001\022"
-          + "F\n\014derived_info\030\014 \001(\0132+.google.cloud.tal"
-          + "ent.v4.Company.DerivedInfoB\003\340A\003\022\026\n\tsuspe"
-          + "nded\030\r \001(\010B\003\340A\003\032N\n\013DerivedInfo\022?\n\025headqu"
-          + "arters_location\030\001 \001(\0132 .google.cloud.tal"
-          + "ent.v4.Location:Y\352AV\n\033jobs.googleapis.co"
-          + "m/Company\0227projects/{project}/tenants/{t"
-          + "enant}/companies/{company}Bf\n\032com.google"
-          + ".cloud.talent.v4B\014CompanyProtoP\001Z2cloud."
-          + "google.com/go/talent/apiv4/talentpb;tale"
-          + "ntpb\242\002\003CTSb\006proto3"
+          + "\314\004\n\007Company\022\014\n\004name\030\001 \001(\t\022\032\n\014display_nam"
+          + "e\030\002 \001(\tB\004\342A\001\002\022\031\n\013external_id\030\003 \001(\tB\004\342A\001\002"
+          + "\0221\n\004size\030\004 \001(\0162#.google.cloud.talent.v4."
+          + "CompanySize\022\034\n\024headquarters_address\030\005 \001("
+          + "\t\022\025\n\rhiring_agency\030\006 \001(\010\022\020\n\010eeo_text\030\007 \001"
+          + "(\t\022\023\n\013website_uri\030\010 \001(\t\022\027\n\017career_site_u"
+          + "ri\030\t \001(\t\022\021\n\timage_uri\030\n \001(\t\0224\n(keyword_s"
+          + "earchable_job_custom_attributes\030\013 \003(\tB\002\030"
+          + "\001\022G\n\014derived_info\030\014 \001(\0132+.google.cloud.t"
+          + "alent.v4.Company.DerivedInfoB\004\342A\001\003\022\027\n\tsu"
+          + "spended\030\r \001(\010B\004\342A\001\003\032N\n\013DerivedInfo\022?\n\025he"
+          + "adquarters_location\030\001 \001(\0132 .google.cloud"
+          + ".talent.v4.Location:Y\352AV\n\033jobs.googleapi"
+          + "s.com/Company\0227projects/{project}/tenant"
+          + "s/{tenant}/companies/{company}Bf\n\032com.go"
+          + "ogle.cloud.talent.v4B\014CompanyProtoP\001Z2cl"
+          + "oud.google.com/go/talent/apiv4/talentpb;"
+          + "talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

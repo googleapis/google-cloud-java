@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     return new CopyModelRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ModelServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_CopyModelRequest_descriptor;
@@ -70,6 +65,8 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
   }
 
   private int destinationModelCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destinationModel_;
 
   public enum DestinationModelCase
@@ -123,6 +120,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Copy source_model into a new Model with this ID. The ID will
    * become the final component of the model resource name.
+   *
    * This value may be up to 63 characters, and valid characters are
    * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
    * </pre>
@@ -140,6 +138,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Copy source_model into a new Model with this ID. The ID will
    * become the final component of the model resource name.
+   *
    * This value may be up to 63 characters, and valid characters are
    * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
    * </pre>
@@ -170,6 +169,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Copy source_model into a new Model with this ID. The ID will
    * become the final component of the model resource name.
+   *
    * This value may be up to 63 characters, and valid characters are
    * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
    * </pre>
@@ -942,6 +942,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Copy source_model into a new Model with this ID. The ID will
      * become the final component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -960,6 +961,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Copy source_model into a new Model with this ID. The ID will
      * become the final component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -991,6 +993,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Copy source_model into a new Model with this ID. The ID will
      * become the final component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -1022,6 +1025,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Copy source_model into a new Model with this ID. The ID will
      * become the final component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -1046,6 +1050,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Copy source_model into a new Model with this ID. The ID will
      * become the final component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -1068,6 +1073,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Copy source_model into a new Model with this ID. The ID will
      * become the final component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>

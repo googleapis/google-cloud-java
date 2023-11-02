@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public interface ListEndpointsRequestOrBuilder
    * <pre>
    * Optional. An expression for filtering the results of the request. For field
    * names both snake_case and camelCase are supported.
+   *
    *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
    *     i.e. the last segment of the Endpoint's [resource
    *     name][google.cloud.aiplatform.v1beta1.Endpoint.name].
@@ -68,6 +69,7 @@ public interface ListEndpointsRequestOrBuilder
    *     * `labels.key=value` - key:value equality
    *     * `labels.key:* or labels:key - key existence
    *     * A key including a space must be quoted. `labels."a key"`.
+   *
    * Some examples:
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`
@@ -85,6 +87,7 @@ public interface ListEndpointsRequestOrBuilder
    * <pre>
    * Optional. An expression for filtering the results of the request. For field
    * names both snake_case and camelCase are supported.
+   *
    *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
    *     i.e. the last segment of the Endpoint's [resource
    *     name][google.cloud.aiplatform.v1beta1.Endpoint.name].
@@ -93,6 +96,7 @@ public interface ListEndpointsRequestOrBuilder
    *     * `labels.key=value` - key:value equality
    *     * `labels.key:* or labels:key - key existence
    *     * A key including a space must be quoted. `labels."a key"`.
+   *
    * Some examples:
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`

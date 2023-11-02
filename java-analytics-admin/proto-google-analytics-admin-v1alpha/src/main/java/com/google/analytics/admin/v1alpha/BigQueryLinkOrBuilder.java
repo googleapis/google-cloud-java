@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,14 +155,14 @@ public interface BigQueryLinkOrBuilder
    *
    *
    * <pre>
-   * If set true, enables intraday export to the linked Google Cloud project.
+   * If set true, enables fresh daily export to the linked Google Cloud project.
    * </pre>
    *
-   * <code>bool intraday_export_enabled = 9;</code>
+   * <code>bool fresh_daily_export_enabled = 9;</code>
    *
-   * @return The intradayExportEnabled.
+   * @return The freshDailyExportEnabled.
    */
-  boolean getIntradayExportEnabled();
+  boolean getFreshDailyExportEnabled();
 
   /**
    *

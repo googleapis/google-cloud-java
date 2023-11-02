@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -479,6 +479,203 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetNotificationRequest, Notification> getNotificationCallable() {
     return stub.getNotificationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get notification settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
+   *     AdvisoryNotificationsServiceClient.create()) {
+   *   SettingsName name = SettingsName.of("[ORGANIZATION]", "[LOCATION]");
+   *   Settings response = advisoryNotificationsServiceClient.getSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the settings to retrieve. Format:
+   *     organizations/{organization}/locations/{location}/settings.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Settings getSettings(SettingsName name) {
+    GetSettingsRequest request =
+        GetSettingsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get notification settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
+   *     AdvisoryNotificationsServiceClient.create()) {
+   *   String name = SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   Settings response = advisoryNotificationsServiceClient.getSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the settings to retrieve. Format:
+   *     organizations/{organization}/locations/{location}/settings.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Settings getSettings(String name) {
+    GetSettingsRequest request = GetSettingsRequest.newBuilder().setName(name).build();
+    return getSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get notification settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
+   *     AdvisoryNotificationsServiceClient.create()) {
+   *   GetSettingsRequest request =
+   *       GetSettingsRequest.newBuilder()
+   *           .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .build();
+   *   Settings response = advisoryNotificationsServiceClient.getSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Settings getSettings(GetSettingsRequest request) {
+    return getSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get notification settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
+   *     AdvisoryNotificationsServiceClient.create()) {
+   *   GetSettingsRequest request =
+   *       GetSettingsRequest.newBuilder()
+   *           .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<Settings> future =
+   *       advisoryNotificationsServiceClient.getSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   Settings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable() {
+    return stub.getSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update notification settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
+   *     AdvisoryNotificationsServiceClient.create()) {
+   *   Settings settings = Settings.newBuilder().build();
+   *   Settings response = advisoryNotificationsServiceClient.updateSettings(settings);
+   * }
+   * }</pre>
+   *
+   * @param settings Required. New settings.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Settings updateSettings(Settings settings) {
+    UpdateSettingsRequest request =
+        UpdateSettingsRequest.newBuilder().setSettings(settings).build();
+    return updateSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update notification settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
+   *     AdvisoryNotificationsServiceClient.create()) {
+   *   UpdateSettingsRequest request =
+   *       UpdateSettingsRequest.newBuilder().setSettings(Settings.newBuilder().build()).build();
+   *   Settings response = advisoryNotificationsServiceClient.updateSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Settings updateSettings(UpdateSettingsRequest request) {
+    return updateSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update notification settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
+   *     AdvisoryNotificationsServiceClient.create()) {
+   *   UpdateSettingsRequest request =
+   *       UpdateSettingsRequest.newBuilder().setSettings(Settings.newBuilder().build()).build();
+   *   ApiFuture<Settings> future =
+   *       advisoryNotificationsServiceClient.updateSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   Settings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
+    return stub.updateSettingsCallable();
   }
 
   @Override

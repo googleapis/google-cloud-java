@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkehub.v1alpha.CreateFeatureRequest;
 import com.google.cloud.gkehub.v1alpha.DeleteFeatureRequest;
@@ -349,26 +350,56 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
         HttpJsonCallSettings.<ListFeaturesRequest, ListFeaturesResponse>newBuilder()
             .setMethodDescriptor(listFeaturesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetFeatureRequest, Feature> getFeatureTransportSettings =
         HttpJsonCallSettings.<GetFeatureRequest, Feature>newBuilder()
             .setMethodDescriptor(getFeatureMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateFeatureRequest, Operation> createFeatureTransportSettings =
         HttpJsonCallSettings.<CreateFeatureRequest, Operation>newBuilder()
             .setMethodDescriptor(createFeatureMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteFeatureRequest, Operation> deleteFeatureTransportSettings =
         HttpJsonCallSettings.<DeleteFeatureRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteFeatureMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateFeatureRequest, Operation> updateFeatureTransportSettings =
         HttpJsonCallSettings.<UpdateFeatureRequest, Operation>newBuilder()
             .setMethodDescriptor(updateFeatureMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listFeaturesCallable =

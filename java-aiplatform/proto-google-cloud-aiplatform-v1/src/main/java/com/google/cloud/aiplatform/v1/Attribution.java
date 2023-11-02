@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     return new Attribution();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ExplanationProto
         .internal_static_google_cloud_aiplatform_v1_Attribution_descriptor;
@@ -80,9 +75,11 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
    * The field name of the output is determined by the key in
    * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1.ExplanationMetadata.outputs].
+   *
    * If the Model's predicted output has multiple dimensions (rank &gt; 1), this is
    * the value in the output located by
    * [output_index][google.cloud.aiplatform.v1.Attribution.output_index].
+   *
    * If there are multiple baselines, their output values are averaged.
    * </pre>
    *
@@ -105,6 +102,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * instance][ExplainRequest.instances]. The field name of the output is
    * determined by the key in
    * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1.ExplanationMetadata.outputs].
+   *
    * If the Model predicted output has multiple dimensions, this is the value in
    * the output located by
    * [output_index][google.cloud.aiplatform.v1.Attribution.output_index].
@@ -130,20 +128,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
    * to [explanation metadata for
    * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+   *
    * The value is a struct, whose keys are the name of the feature. The values
    * are how much the feature in the
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
    * to the predicted result.
+   *
    * The format of the value is determined by the feature's input format:
+   *
    *   * If the feature is a scalar value, the attribution value is a
    *     [floating number][google.protobuf.Value.number_value].
+   *
    *   * If the feature is an array of scalar values, the attribution value is
    *     an [array][google.protobuf.Value.list_value].
+   *
    *   * If the feature is a struct, the attribution value is a
    *     [struct][google.protobuf.Value.struct_value]. The keys in the
    *     attribution value struct are the same as the keys in the feature
    *     struct. The formats of the values in the attribution struct are
    *     determined by the formats of the values in the feature struct.
+   *
    * The
    * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
    * field, pointed to by the
@@ -172,20 +176,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
    * to [explanation metadata for
    * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+   *
    * The value is a struct, whose keys are the name of the feature. The values
    * are how much the feature in the
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
    * to the predicted result.
+   *
    * The format of the value is determined by the feature's input format:
+   *
    *   * If the feature is a scalar value, the attribution value is a
    *     [floating number][google.protobuf.Value.number_value].
+   *
    *   * If the feature is an array of scalar values, the attribution value is
    *     an [array][google.protobuf.Value.list_value].
+   *
    *   * If the feature is a struct, the attribution value is a
    *     [struct][google.protobuf.Value.struct_value]. The keys in the
    *     attribution value struct are the same as the keys in the feature
    *     struct. The formats of the values in the attribution struct are
    *     determined by the formats of the values in the feature struct.
+   *
    * The
    * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
    * field, pointed to by the
@@ -216,20 +226,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
    * to [explanation metadata for
    * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+   *
    * The value is a struct, whose keys are the name of the feature. The values
    * are how much the feature in the
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
    * to the predicted result.
+   *
    * The format of the value is determined by the feature's input format:
+   *
    *   * If the feature is a scalar value, the attribution value is a
    *     [floating number][google.protobuf.Value.number_value].
+   *
    *   * If the feature is an array of scalar values, the attribution value is
    *     an [array][google.protobuf.Value.list_value].
+   *
    *   * If the feature is a struct, the attribution value is a
    *     [struct][google.protobuf.Value.struct_value]. The keys in the
    *     attribution value struct are the same as the keys in the feature
    *     struct. The formats of the values in the attribution struct are
    *     determined by the formats of the values in the feature struct.
+   *
    * The
    * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
    * field, pointed to by the
@@ -259,6 +275,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The index that locates the explained prediction output.
+   *
    * If the prediction output is a scalar value, output_index is not populated.
    * If the prediction output has multiple dimensions, the length of the
    * output_index list is the same as the number of dimensions of the output.
@@ -279,6 +296,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The index that locates the explained prediction output.
+   *
    * If the prediction output is a scalar value, output_index is not populated.
    * If the prediction output has multiple dimensions, the length of the
    * output_index list is the same as the number of dimensions of the output.
@@ -298,6 +316,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The index that locates the explained prediction output.
+   *
    * If the prediction output is a scalar value, output_index is not populated.
    * If the prediction output has multiple dimensions, the length of the
    * output_index list is the same as the number of dimensions of the output.
@@ -327,6 +346,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * Output only. The display name of the output identified by
    * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]. For
    * example, the predicted class name by a multi-classification Model.
+   *
    * This field is only populated iff the Model predicts display names as a
    * separate field along with the explained output. The predicted display name
    * must has the same shape of the explained output, and can be located using
@@ -356,6 +376,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * Output only. The display name of the output identified by
    * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]. For
    * example, the predicted class name by a multi-classification Model.
+   *
    * This field is only populated iff the Model predicts display names as a
    * separate field along with the explained output. The predicted display name
    * must has the same shape of the explained output, and can be located using
@@ -389,6 +410,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * [feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
    * caused by approximation used in the explanation method. Lower value means
    * more precise attributions.
+   *
    * * For Sampled Shapley
    * [attribution][google.cloud.aiplatform.v1.ExplanationParameters.sampled_shapley_attribution],
    * increasing
@@ -404,6 +426,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * increasing
    * [step_count][google.cloud.aiplatform.v1.XraiAttribution.step_count] might
    * reduce the error.
+   *
    * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
    * for more information.
    * </pre>
@@ -1022,9 +1045,11 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * The field name of the output is determined by the key in
      * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1.ExplanationMetadata.outputs].
+     *
      * If the Model's predicted output has multiple dimensions (rank &gt; 1), this is
      * the value in the output located by
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index].
+     *
      * If there are multiple baselines, their output values are averaged.
      * </pre>
      *
@@ -1045,9 +1070,11 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * The field name of the output is determined by the key in
      * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1.ExplanationMetadata.outputs].
+     *
      * If the Model's predicted output has multiple dimensions (rank &gt; 1), this is
      * the value in the output located by
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index].
+     *
      * If there are multiple baselines, their output values are averaged.
      * </pre>
      *
@@ -1072,9 +1099,11 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * The field name of the output is determined by the key in
      * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1.ExplanationMetadata.outputs].
+     *
      * If the Model's predicted output has multiple dimensions (rank &gt; 1), this is
      * the value in the output located by
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index].
+     *
      * If there are multiple baselines, their output values are averaged.
      * </pre>
      *
@@ -1098,6 +1127,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instance][ExplainRequest.instances]. The field name of the output is
      * determined by the key in
      * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1.ExplanationMetadata.outputs].
+     *
      * If the Model predicted output has multiple dimensions, this is the value in
      * the output located by
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index].
@@ -1119,6 +1149,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instance][ExplainRequest.instances]. The field name of the output is
      * determined by the key in
      * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1.ExplanationMetadata.outputs].
+     *
      * If the Model predicted output has multiple dimensions, this is the value in
      * the output located by
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index].
@@ -1144,6 +1175,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instance][ExplainRequest.instances]. The field name of the output is
      * determined by the key in
      * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1.ExplanationMetadata.outputs].
+     *
      * If the Model predicted output has multiple dimensions, this is the value in
      * the output located by
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index].
@@ -1175,20 +1207,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
      * to [explanation metadata for
      * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     *
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
      * to the predicted result.
+     *
      * The format of the value is determined by the feature's input format:
+     *
      *   * If the feature is a scalar value, the attribution value is a
      *     [floating number][google.protobuf.Value.number_value].
+     *
      *   * If the feature is an array of scalar values, the attribution value is
      *     an [array][google.protobuf.Value.list_value].
+     *
      *   * If the feature is a struct, the attribution value is a
      *     [struct][google.protobuf.Value.struct_value]. The keys in the
      *     attribution value struct are the same as the keys in the feature
      *     struct. The formats of the values in the attribution struct are
      *     determined by the formats of the values in the feature struct.
+     *
      * The
      * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
      * field, pointed to by the
@@ -1216,20 +1254,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
      * to [explanation metadata for
      * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     *
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
      * to the predicted result.
+     *
      * The format of the value is determined by the feature's input format:
+     *
      *   * If the feature is a scalar value, the attribution value is a
      *     [floating number][google.protobuf.Value.number_value].
+     *
      *   * If the feature is an array of scalar values, the attribution value is
      *     an [array][google.protobuf.Value.list_value].
+     *
      *   * If the feature is a struct, the attribution value is a
      *     [struct][google.protobuf.Value.struct_value]. The keys in the
      *     attribution value struct are the same as the keys in the feature
      *     struct. The formats of the values in the attribution struct are
      *     determined by the formats of the values in the feature struct.
+     *
      * The
      * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
      * field, pointed to by the
@@ -1263,20 +1307,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
      * to [explanation metadata for
      * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     *
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
      * to the predicted result.
+     *
      * The format of the value is determined by the feature's input format:
+     *
      *   * If the feature is a scalar value, the attribution value is a
      *     [floating number][google.protobuf.Value.number_value].
+     *
      *   * If the feature is an array of scalar values, the attribution value is
      *     an [array][google.protobuf.Value.list_value].
+     *
      *   * If the feature is a struct, the attribution value is a
      *     [struct][google.protobuf.Value.struct_value]. The keys in the
      *     attribution value struct are the same as the keys in the feature
      *     struct. The formats of the values in the attribution struct are
      *     determined by the formats of the values in the feature struct.
+     *
      * The
      * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
      * field, pointed to by the
@@ -1312,20 +1362,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
      * to [explanation metadata for
      * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     *
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
      * to the predicted result.
+     *
      * The format of the value is determined by the feature's input format:
+     *
      *   * If the feature is a scalar value, the attribution value is a
      *     [floating number][google.protobuf.Value.number_value].
+     *
      *   * If the feature is an array of scalar values, the attribution value is
      *     an [array][google.protobuf.Value.list_value].
+     *
      *   * If the feature is a struct, the attribution value is a
      *     [struct][google.protobuf.Value.struct_value]. The keys in the
      *     attribution value struct are the same as the keys in the feature
      *     struct. The formats of the values in the attribution struct are
      *     determined by the formats of the values in the feature struct.
+     *
      * The
      * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
      * field, pointed to by the
@@ -1358,20 +1414,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
      * to [explanation metadata for
      * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     *
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
      * to the predicted result.
+     *
      * The format of the value is determined by the feature's input format:
+     *
      *   * If the feature is a scalar value, the attribution value is a
      *     [floating number][google.protobuf.Value.number_value].
+     *
      *   * If the feature is an array of scalar values, the attribution value is
      *     an [array][google.protobuf.Value.list_value].
+     *
      *   * If the feature is a struct, the attribution value is a
      *     [struct][google.protobuf.Value.struct_value]. The keys in the
      *     attribution value struct are the same as the keys in the feature
      *     struct. The formats of the values in the attribution struct are
      *     determined by the formats of the values in the feature struct.
+     *
      * The
      * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
      * field, pointed to by the
@@ -1410,20 +1472,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
      * to [explanation metadata for
      * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     *
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
      * to the predicted result.
+     *
      * The format of the value is determined by the feature's input format:
+     *
      *   * If the feature is a scalar value, the attribution value is a
      *     [floating number][google.protobuf.Value.number_value].
+     *
      *   * If the feature is an array of scalar values, the attribution value is
      *     an [array][google.protobuf.Value.list_value].
+     *
      *   * If the feature is a struct, the attribution value is a
      *     [struct][google.protobuf.Value.struct_value]. The keys in the
      *     attribution value struct are the same as the keys in the feature
      *     struct. The formats of the values in the attribution struct are
      *     determined by the formats of the values in the feature struct.
+     *
      * The
      * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
      * field, pointed to by the
@@ -1456,20 +1524,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
      * to [explanation metadata for
      * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     *
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
      * to the predicted result.
+     *
      * The format of the value is determined by the feature's input format:
+     *
      *   * If the feature is a scalar value, the attribution value is a
      *     [floating number][google.protobuf.Value.number_value].
+     *
      *   * If the feature is an array of scalar values, the attribution value is
      *     an [array][google.protobuf.Value.list_value].
+     *
      *   * If the feature is a struct, the attribution value is a
      *     [struct][google.protobuf.Value.struct_value]. The keys in the
      *     attribution value struct are the same as the keys in the feature
      *     struct. The formats of the values in the attribution struct are
      *     determined by the formats of the values in the feature struct.
+     *
      * The
      * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
      * field, pointed to by the
@@ -1497,20 +1571,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
      * to [explanation metadata for
      * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     *
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
      * to the predicted result.
+     *
      * The format of the value is determined by the feature's input format:
+     *
      *   * If the feature is a scalar value, the attribution value is a
      *     [floating number][google.protobuf.Value.number_value].
+     *
      *   * If the feature is an array of scalar values, the attribution value is
      *     an [array][google.protobuf.Value.list_value].
+     *
      *   * If the feature is a struct, the attribution value is a
      *     [struct][google.protobuf.Value.struct_value]. The keys in the
      *     attribution value struct are the same as the keys in the feature
      *     struct. The formats of the values in the attribution struct are
      *     determined by the formats of the values in the feature struct.
+     *
      * The
      * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
      * field, pointed to by the
@@ -1542,20 +1622,26 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
      * to [explanation metadata for
      * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     *
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances] contributed
      * to the predicted result.
+     *
      * The format of the value is determined by the feature's input format:
+     *
      *   * If the feature is a scalar value, the attribution value is a
      *     [floating number][google.protobuf.Value.number_value].
+     *
      *   * If the feature is an array of scalar values, the attribution value is
      *     an [array][google.protobuf.Value.list_value].
+     *
      *   * If the feature is a struct, the attribution value is a
      *     [struct][google.protobuf.Value.struct_value]. The keys in the
      *     attribution value struct are the same as the keys in the feature
      *     struct. The formats of the values in the attribution struct are
      *     determined by the formats of the values in the feature struct.
+     *
      * The
      * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
      * field, pointed to by the
@@ -1599,6 +1685,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The index that locates the explained prediction output.
+     *
      * If the prediction output is a scalar value, output_index is not populated.
      * If the prediction output has multiple dimensions, the length of the
      * output_index list is the same as the number of dimensions of the output.
@@ -1620,6 +1707,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The index that locates the explained prediction output.
+     *
      * If the prediction output is a scalar value, output_index is not populated.
      * If the prediction output has multiple dimensions, the length of the
      * output_index list is the same as the number of dimensions of the output.
@@ -1639,6 +1727,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The index that locates the explained prediction output.
+     *
      * If the prediction output is a scalar value, output_index is not populated.
      * If the prediction output has multiple dimensions, the length of the
      * output_index list is the same as the number of dimensions of the output.
@@ -1659,6 +1748,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The index that locates the explained prediction output.
+     *
      * If the prediction output is a scalar value, output_index is not populated.
      * If the prediction output has multiple dimensions, the length of the
      * output_index list is the same as the number of dimensions of the output.
@@ -1684,6 +1774,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The index that locates the explained prediction output.
+     *
      * If the prediction output is a scalar value, output_index is not populated.
      * If the prediction output has multiple dimensions, the length of the
      * output_index list is the same as the number of dimensions of the output.
@@ -1708,6 +1799,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The index that locates the explained prediction output.
+     *
      * If the prediction output is a scalar value, output_index is not populated.
      * If the prediction output has multiple dimensions, the length of the
      * output_index list is the same as the number of dimensions of the output.
@@ -1731,6 +1823,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The index that locates the explained prediction output.
+     *
      * If the prediction output is a scalar value, output_index is not populated.
      * If the prediction output has multiple dimensions, the length of the
      * output_index list is the same as the number of dimensions of the output.
@@ -1757,6 +1850,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the output identified by
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]. For
      * example, the predicted class name by a multi-classification Model.
+     *
      * This field is only populated iff the Model predicts display names as a
      * separate field along with the explained output. The predicted display name
      * must has the same shape of the explained output, and can be located using
@@ -1785,6 +1879,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the output identified by
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]. For
      * example, the predicted class name by a multi-classification Model.
+     *
      * This field is only populated iff the Model predicts display names as a
      * separate field along with the explained output. The predicted display name
      * must has the same shape of the explained output, and can be located using
@@ -1813,6 +1908,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the output identified by
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]. For
      * example, the predicted class name by a multi-classification Model.
+     *
      * This field is only populated iff the Model predicts display names as a
      * separate field along with the explained output. The predicted display name
      * must has the same shape of the explained output, and can be located using
@@ -1840,6 +1936,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the output identified by
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]. For
      * example, the predicted class name by a multi-classification Model.
+     *
      * This field is only populated iff the Model predicts display names as a
      * separate field along with the explained output. The predicted display name
      * must has the same shape of the explained output, and can be located using
@@ -1863,6 +1960,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the output identified by
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]. For
      * example, the predicted class name by a multi-classification Model.
+     *
      * This field is only populated iff the Model predicts display names as a
      * separate field along with the explained output. The predicted display name
      * must has the same shape of the explained output, and can be located using
@@ -1894,6 +1992,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * [feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
      * caused by approximation used in the explanation method. Lower value means
      * more precise attributions.
+     *
      * * For Sampled Shapley
      * [attribution][google.cloud.aiplatform.v1.ExplanationParameters.sampled_shapley_attribution],
      * increasing
@@ -1909,6 +2008,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * increasing
      * [step_count][google.cloud.aiplatform.v1.XraiAttribution.step_count] might
      * reduce the error.
+     *
      * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
      * for more information.
      * </pre>
@@ -1929,6 +2029,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * [feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
      * caused by approximation used in the explanation method. Lower value means
      * more precise attributions.
+     *
      * * For Sampled Shapley
      * [attribution][google.cloud.aiplatform.v1.ExplanationParameters.sampled_shapley_attribution],
      * increasing
@@ -1944,6 +2045,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * increasing
      * [step_count][google.cloud.aiplatform.v1.XraiAttribution.step_count] might
      * reduce the error.
+     *
      * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
      * for more information.
      * </pre>
@@ -1968,6 +2070,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * [feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
      * caused by approximation used in the explanation method. Lower value means
      * more precise attributions.
+     *
      * * For Sampled Shapley
      * [attribution][google.cloud.aiplatform.v1.ExplanationParameters.sampled_shapley_attribution],
      * increasing
@@ -1983,6 +2086,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * increasing
      * [step_count][google.cloud.aiplatform.v1.XraiAttribution.step_count] might
      * reduce the error.
+     *
      * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
      * for more information.
      * </pre>

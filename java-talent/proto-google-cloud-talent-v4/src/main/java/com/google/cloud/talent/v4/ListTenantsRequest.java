@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListTenantsRequest extends com.google.protobuf.GeneratedMessa
     return new ListTenantsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4.TenantServiceProto
         .internal_static_google_cloud_talent_v4_ListTenantsRequest_descriptor;
@@ -77,6 +72,7 @@ public final class ListTenantsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. Resource name of the project under which the tenant is created.
+   *
    * The format is "projects/{project_id}", for example,
    * "projects/foo".
    * </pre>
@@ -104,6 +100,7 @@ public final class ListTenantsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. Resource name of the project under which the tenant is created.
+   *
    * The format is "projects/{project_id}", for example,
    * "projects/foo".
    * </pre>
@@ -590,6 +587,7 @@ public final class ListTenantsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Resource name of the project under which the tenant is created.
+     *
      * The format is "projects/{project_id}", for example,
      * "projects/foo".
      * </pre>
@@ -616,6 +614,7 @@ public final class ListTenantsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Resource name of the project under which the tenant is created.
+     *
      * The format is "projects/{project_id}", for example,
      * "projects/foo".
      * </pre>
@@ -642,6 +641,7 @@ public final class ListTenantsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Resource name of the project under which the tenant is created.
+     *
      * The format is "projects/{project_id}", for example,
      * "projects/foo".
      * </pre>
@@ -667,6 +667,7 @@ public final class ListTenantsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Resource name of the project under which the tenant is created.
+     *
      * The format is "projects/{project_id}", for example,
      * "projects/foo".
      * </pre>
@@ -688,6 +689,7 @@ public final class ListTenantsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Resource name of the project under which the tenant is created.
+     *
      * The format is "projects/{project_id}", for example,
      * "projects/foo".
      * </pre>

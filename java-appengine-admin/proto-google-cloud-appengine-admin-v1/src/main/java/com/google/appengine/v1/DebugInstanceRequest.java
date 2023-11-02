@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class DebugInstanceRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DebugInstanceRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,8 +125,10 @@ public final class DebugInstanceRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Public SSH key to add to the instance. Examples:
+   *
    * * `[USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME]`
    * * `[USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {"userName":"[USERNAME]","expireOn":"[EXPIRE_TIME]"}`
+   *
    * For more information, see
    * [Adding and Removing SSH Keys](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
    * </pre>
@@ -157,8 +154,10 @@ public final class DebugInstanceRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Public SSH key to add to the instance. Examples:
+   *
    * * `[USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME]`
    * * `[USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {"userName":"[USERNAME]","expireOn":"[EXPIRE_TIME]"}`
+   *
    * For more information, see
    * [Adding and Removing SSH Keys](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
    * </pre>
@@ -662,8 +661,10 @@ public final class DebugInstanceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Public SSH key to add to the instance. Examples:
+     *
      * * `[USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME]`
      * * `[USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {"userName":"[USERNAME]","expireOn":"[EXPIRE_TIME]"}`
+     *
      * For more information, see
      * [Adding and Removing SSH Keys](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
      * </pre>
@@ -688,8 +689,10 @@ public final class DebugInstanceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Public SSH key to add to the instance. Examples:
+     *
      * * `[USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME]`
      * * `[USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {"userName":"[USERNAME]","expireOn":"[EXPIRE_TIME]"}`
+     *
      * For more information, see
      * [Adding and Removing SSH Keys](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
      * </pre>
@@ -714,8 +717,10 @@ public final class DebugInstanceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Public SSH key to add to the instance. Examples:
+     *
      * * `[USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME]`
      * * `[USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {"userName":"[USERNAME]","expireOn":"[EXPIRE_TIME]"}`
+     *
      * For more information, see
      * [Adding and Removing SSH Keys](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
      * </pre>
@@ -739,8 +744,10 @@ public final class DebugInstanceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Public SSH key to add to the instance. Examples:
+     *
      * * `[USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME]`
      * * `[USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {"userName":"[USERNAME]","expireOn":"[EXPIRE_TIME]"}`
+     *
      * For more information, see
      * [Adding and Removing SSH Keys](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
      * </pre>
@@ -760,8 +767,10 @@ public final class DebugInstanceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Public SSH key to add to the instance. Examples:
+     *
      * * `[USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME]`
      * * `[USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {"userName":"[USERNAME]","expireOn":"[EXPIRE_TIME]"}`
+     *
      * For more information, see
      * [Adding and Removing SSH Keys](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
      * </pre>

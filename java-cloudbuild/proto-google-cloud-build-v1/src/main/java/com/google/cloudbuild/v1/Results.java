@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
 
   private Results() {
     images_ = java.util.Collections.emptyList();
-    buildStepImages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    buildStepImages_ = com.google.protobuf.LazyStringArrayList.emptyList();
     artifactManifest_ = "";
     buildStepOutputs_ = java.util.Collections.emptyList();
     pythonPackages_ = java.util.Collections.emptyList();
@@ -51,11 +51,6 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Results();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -146,7 +141,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
   public static final int BUILD_STEP_IMAGES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList buildStepImages_;
+  private com.google.protobuf.LazyStringArrayList buildStepImages_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -292,6 +288,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * List of build step outputs, produced by builder images, in the order
    * corresponding to build step indices.
+   *
    * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
    * can produce this output by writing to `$BUILDER_OUTPUT/output`.
    * Only the first 4KB of data is stored.
@@ -311,6 +308,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * List of build step outputs, produced by builder images, in the order
    * corresponding to build step indices.
+   *
    * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
    * can produce this output by writing to `$BUILDER_OUTPUT/output`.
    * Only the first 4KB of data is stored.
@@ -329,6 +327,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * List of build step outputs, produced by builder images, in the order
    * corresponding to build step indices.
+   *
    * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
    * can produce this output by writing to `$BUILDER_OUTPUT/output`.
    * Only the first 4KB of data is stored.
@@ -911,8 +910,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         imagesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      buildStepImages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      buildStepImages_ = com.google.protobuf.LazyStringArrayList.emptyList();
       artifactManifest_ = "";
       numArtifacts_ = 0L;
       buildStepOutputs_ = java.util.Collections.emptyList();
@@ -986,11 +984,6 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.images_ = imagesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        buildStepImages_ = buildStepImages_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.buildStepImages_ = buildStepImages_;
       if (((bitField0_ & 0x00000010) != 0)) {
         buildStepOutputs_ = java.util.Collections.unmodifiableList(buildStepOutputs_);
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -1027,6 +1020,10 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloudbuild.v1.Results result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        buildStepImages_.makeImmutable();
+        result.buildStepImages_ = buildStepImages_;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.artifactManifest_ = artifactManifest_;
       }
@@ -1114,7 +1111,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       if (!other.buildStepImages_.isEmpty()) {
         if (buildStepImages_.isEmpty()) {
           buildStepImages_ = other.buildStepImages_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureBuildStepImagesIsMutable();
           buildStepImages_.addAll(other.buildStepImages_);
@@ -1700,14 +1697,14 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       return imagesBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList buildStepImages_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList buildStepImages_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureBuildStepImagesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!buildStepImages_.isModifiable()) {
         buildStepImages_ = new com.google.protobuf.LazyStringArrayList(buildStepImages_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1722,7 +1719,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the buildStepImages.
      */
     public com.google.protobuf.ProtocolStringList getBuildStepImagesList() {
-      return buildStepImages_.getUnmodifiableView();
+      buildStepImages_.makeImmutable();
+      return buildStepImages_;
     }
     /**
      *
@@ -1791,6 +1789,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       }
       ensureBuildStepImagesIsMutable();
       buildStepImages_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1813,6 +1812,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       }
       ensureBuildStepImagesIsMutable();
       buildStepImages_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1832,6 +1832,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllBuildStepImages(java.lang.Iterable<java.lang.String> values) {
       ensureBuildStepImagesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, buildStepImages_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1848,8 +1849,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBuildStepImages() {
-      buildStepImages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      buildStepImages_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1873,6 +1875,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureBuildStepImagesIsMutable();
       buildStepImages_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2060,6 +2063,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of build step outputs, produced by builder images, in the order
      * corresponding to build step indices.
+     *
      * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
      * can produce this output by writing to `$BUILDER_OUTPUT/output`.
      * Only the first 4KB of data is stored.
@@ -2080,6 +2084,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of build step outputs, produced by builder images, in the order
      * corresponding to build step indices.
+     *
      * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
      * can produce this output by writing to `$BUILDER_OUTPUT/output`.
      * Only the first 4KB of data is stored.
@@ -2098,6 +2103,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of build step outputs, produced by builder images, in the order
      * corresponding to build step indices.
+     *
      * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
      * can produce this output by writing to `$BUILDER_OUTPUT/output`.
      * Only the first 4KB of data is stored.
@@ -2117,6 +2123,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of build step outputs, produced by builder images, in the order
      * corresponding to build step indices.
+     *
      * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
      * can produce this output by writing to `$BUILDER_OUTPUT/output`.
      * Only the first 4KB of data is stored.
@@ -2143,6 +2150,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of build step outputs, produced by builder images, in the order
      * corresponding to build step indices.
+     *
      * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
      * can produce this output by writing to `$BUILDER_OUTPUT/output`.
      * Only the first 4KB of data is stored.
@@ -2168,6 +2176,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of build step outputs, produced by builder images, in the order
      * corresponding to build step indices.
+     *
      * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
      * can produce this output by writing to `$BUILDER_OUTPUT/output`.
      * Only the first 4KB of data is stored.
@@ -2191,6 +2200,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of build step outputs, produced by builder images, in the order
      * corresponding to build step indices.
+     *
      * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
      * can produce this output by writing to `$BUILDER_OUTPUT/output`.
      * Only the first 4KB of data is stored.

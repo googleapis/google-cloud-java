@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ public final class ModelGardenServiceGrpc {
 
   private ModelGardenServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.aiplatform.v1beta1.ModelGardenService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.aiplatform.v1beta1.ModelGardenService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -81,6 +82,56 @@ public final class ModelGardenServiceGrpc {
       }
     }
     return getGetPublisherModelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse>
+      getListPublisherModelsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPublisherModels",
+      requestType = com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse>
+      getListPublisherModelsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest,
+            com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse>
+        getListPublisherModelsMethod;
+    if ((getListPublisherModelsMethod = ModelGardenServiceGrpc.getListPublisherModelsMethod)
+        == null) {
+      synchronized (ModelGardenServiceGrpc.class) {
+        if ((getListPublisherModelsMethod = ModelGardenServiceGrpc.getListPublisherModelsMethod)
+            == null) {
+          ModelGardenServiceGrpc.getListPublisherModelsMethod =
+              getListPublisherModelsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest,
+                          com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListPublisherModels"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelGardenServiceMethodDescriptorSupplier("ListPublisherModels"))
+                      .build();
+        }
+      }
+    }
+    return getListPublisherModelsMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -147,6 +198,21 @@ public final class ModelGardenServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetPublisherModelMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists publisher models in Model Garden.
+     * </pre>
+     */
+    default void listPublisherModels(
+        com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPublisherModelsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -200,6 +266,23 @@ public final class ModelGardenServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists publisher models in Model Garden.
+     * </pre>
+     */
+    public void listPublisherModels(
+        com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPublisherModelsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -233,6 +316,19 @@ public final class ModelGardenServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPublisherModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists publisher models in Model Garden.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse listPublisherModels(
+        com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPublisherModelsMethod(), getCallOptions(), request);
     }
   }
 
@@ -268,9 +364,25 @@ public final class ModelGardenServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPublisherModelMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists publisher models in Model Garden.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse>
+        listPublisherModels(
+            com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPublisherModelsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_PUBLISHER_MODEL = 0;
+  private static final int METHODID_LIST_PUBLISHER_MODELS = 1;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -293,6 +405,13 @@ public final class ModelGardenServiceGrpc {
           serviceImpl.getPublisherModel(
               (com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PublisherModel>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_PUBLISHER_MODELS:
+          serviceImpl.listPublisherModels(
+              (com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse>)
                   responseObserver);
           break;
         default:
@@ -320,6 +439,13 @@ public final class ModelGardenServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest,
                     com.google.cloud.aiplatform.v1beta1.PublisherModel>(
                     service, METHODID_GET_PUBLISHER_MODEL)))
+        .addMethod(
+            getListPublisherModelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse>(
+                    service, METHODID_LIST_PUBLISHER_MODELS)))
         .build();
   }
 
@@ -347,9 +473,9 @@ public final class ModelGardenServiceGrpc {
   private static final class ModelGardenServiceMethodDescriptorSupplier
       extends ModelGardenServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ModelGardenServiceMethodDescriptorSupplier(String methodName) {
+    ModelGardenServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -372,6 +498,7 @@ public final class ModelGardenServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ModelGardenServiceFileDescriptorSupplier())
                       .addMethod(getGetPublisherModelMethod())
+                      .addMethod(getListPublisherModelsMethod())
                       .build();
         }
       }

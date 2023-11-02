@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ package com.google.cloud.discoveryengine.v1beta;
  *
  *
  * <pre>
- * Metadata related to the progress of the ImportDocuments operation. This will
- * be returned by the google.longrunning.Operation.metadata field.
+ * Metadata related to the progress of the ImportDocuments operation. This is
+ * returned by the google.longrunning.Operation.metadata field.
  * </pre>
  *
  * Protobuf type {@code google.cloud.discoveryengine.v1beta.ImportDocumentsMetadata}
@@ -44,11 +44,6 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImportDocumentsMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -398,8 +393,8 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Metadata related to the progress of the ImportDocuments operation. This will
-   * be returned by the google.longrunning.Operation.metadata field.
+   * Metadata related to the progress of the ImportDocuments operation. This is
+   * returned by the google.longrunning.Operation.metadata field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1beta.ImportDocumentsMetadata}

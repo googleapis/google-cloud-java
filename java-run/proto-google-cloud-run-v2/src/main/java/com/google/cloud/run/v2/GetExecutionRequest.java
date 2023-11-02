@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
     return new GetExecutionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.ExecutionProto
         .internal_static_google_cloud_run_v2_GetExecutionRequest_descriptor;
@@ -77,8 +72,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The full name of the Execution.
    * Format:
-   * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-   * where {project} can be project id or number.
+   * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -105,8 +100,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The full name of the Execution.
    * Format:
-   * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-   * where {project} can be project id or number.
+   * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -476,8 +471,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The full name of the Execution.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -503,8 +498,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The full name of the Execution.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -530,8 +525,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The full name of the Execution.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -556,8 +551,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The full name of the Execution.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -578,8 +573,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The full name of the Execution.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>

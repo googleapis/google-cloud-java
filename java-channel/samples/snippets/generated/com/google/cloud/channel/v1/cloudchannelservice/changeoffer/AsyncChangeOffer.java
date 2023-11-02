@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ public class AsyncChangeOffer {
               .addAllParameters(new ArrayList<Parameter>())
               .setPurchaseOrderId("purchaseOrderId2029917384")
               .setRequestId("requestId693933066")
+              .setBillingAccount("billingAccount708726578")
               .build();
       ApiFuture<Operation> future =
           cloudChannelServiceClient.changeOfferCallable().futureCall(request);

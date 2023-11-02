@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ public interface ListJobsRequestOrBuilder
    *
    * <pre>
    * Requested page size.
+   *
    * The maximum page size is 500. If unspecified, the page size will
    * be the maximum. Fewer jobs than requested might be returned,
    * even if more jobs exist; use next_page_token to determine if more

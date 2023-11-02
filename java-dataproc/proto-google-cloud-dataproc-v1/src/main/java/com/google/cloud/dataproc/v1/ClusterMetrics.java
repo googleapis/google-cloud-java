@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.dataproc.v1;
  *
  * <pre>
  * Contains cluster daemon metrics, such as HDFS and YARN stats.
+ *
  * **Beta Feature**: This report is available for testing purposes only. It may
  * be changed before final release.
  * </pre>
@@ -45,11 +46,6 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ClusterMetrics();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -467,6 +463,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Contains cluster daemon metrics, such as HDFS and YARN stats.
+   *
    * **Beta Feature**: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>

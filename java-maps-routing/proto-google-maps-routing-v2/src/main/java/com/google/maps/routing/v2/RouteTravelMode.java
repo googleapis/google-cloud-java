@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,6 +83,16 @@ public enum RouteTravelMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TWO_WHEELER = 4;</code>
    */
   TWO_WHEELER(4),
+  /**
+   *
+   *
+   * <pre>
+   * Travel by public transit routes, where available.
+   * </pre>
+   *
+   * <code>TRANSIT = 7;</code>
+   */
+  TRANSIT(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -137,6 +147,16 @@ public enum RouteTravelMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TWO_WHEELER = 4;</code>
    */
   public static final int TWO_WHEELER_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Travel by public transit routes, where available.
+   * </pre>
+   *
+   * <code>TRANSIT = 7;</code>
+   */
+  public static final int TRANSIT_VALUE = 7;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -172,6 +192,8 @@ public enum RouteTravelMode implements com.google.protobuf.ProtocolMessageEnum {
         return WALK;
       case 4:
         return TWO_WHEELER;
+      case 7:
+        return TRANSIT;
       default:
         return null;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,10 @@ public interface ListAzureNodePoolsRequestOrBuilder
    * <pre>
    * Required. The parent `AzureCluster` which owns this collection of
    * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources.
+   *
    * `AzureCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -48,8 +50,10 @@ public interface ListAzureNodePoolsRequestOrBuilder
    * <pre>
    * Required. The parent `AzureCluster` which owns this collection of
    * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources.
+   *
    * `AzureCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -67,6 +71,7 @@ public interface ListAzureNodePoolsRequestOrBuilder
    *
    * <pre>
    * The maximum number of items to return.
+   *
    * If not specified, a default value of 50 will be used by the service.
    * Regardless of the pageSize value, the response can include a partial list
    * and a caller should only rely on response's

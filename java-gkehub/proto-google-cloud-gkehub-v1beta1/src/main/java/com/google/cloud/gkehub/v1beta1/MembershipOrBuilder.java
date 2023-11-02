@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,10 +30,13 @@ public interface MembershipOrBuilder
    * Output only. The full, unique name of this Membership resource in the
    * format `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during
    * creation.
+   *
    * `membership_id` must be a valid RFC 1123 compliant DNS label:
+   *
    *   1. At most 63 characters in length
    *   2. It must consist of lower case alphanumeric characters or `-`
    *   3. It must start and end with an alphanumeric character
+   *
    * Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`,
    * with a maximum length of 63 characters.
    * </pre>
@@ -50,10 +53,13 @@ public interface MembershipOrBuilder
    * Output only. The full, unique name of this Membership resource in the
    * format `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during
    * creation.
+   *
    * `membership_id` must be a valid RFC 1123 compliant DNS label:
+   *
    *   1. At most 63 characters in length
    *   2. It must consist of lower case alphanumeric characters or `-`
    *   3. It must start and end with an alphanumeric character
+   *
    * Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`,
    * with a maximum length of 63 characters.
    * </pre>
@@ -400,7 +406,9 @@ public interface MembershipOrBuilder
    * ID may be modified after creation, but this is not recommended. For GKE
    * clusters, external_id is managed by the Hub API and updates will be
    * ignored.
+   *
    * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
+   *
    * If this Membership represents a Kubernetes cluster, this value should be
    * set to the UID of the `kube-system` namespace object.
    * </pre>
@@ -418,7 +426,9 @@ public interface MembershipOrBuilder
    * ID may be modified after creation, but this is not recommended. For GKE
    * clusters, external_id is managed by the Hub API and updates will be
    * ignored.
+   *
    * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
+   *
    * If this Membership represents a Kubernetes cluster, this value should be
    * set to the UID of the `kube-system` namespace object.
    * </pre>
@@ -581,5 +591,5 @@ public interface MembershipOrBuilder
    */
   com.google.cloud.gkehub.v1beta1.MonitoringConfigOrBuilder getMonitoringConfigOrBuilder();
 
-  public com.google.cloud.gkehub.v1beta1.Membership.TypeCase getTypeCase();
+  com.google.cloud.gkehub.v1beta1.Membership.TypeCase getTypeCase();
 }

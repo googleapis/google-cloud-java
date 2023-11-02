@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return new Job();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1alpha.JobProto
         .internal_static_google_cloud_batch_v1alpha_Job_descriptor;
@@ -88,6 +83,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The order that TaskGroups are scheduled relative to each other.
+   *
    * Not yet implemented.
    * </pre>
    *

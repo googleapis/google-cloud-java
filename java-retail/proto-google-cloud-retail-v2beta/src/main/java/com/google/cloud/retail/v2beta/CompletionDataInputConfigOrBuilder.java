@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface CompletionDataInputConfigOrBuilder
    *
    * <pre>
    * Required. BigQuery input source.
+   *
    * Add the IAM permission "BigQuery Data Viewer" for
    * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
    * using this feature otherwise an error is thrown.
@@ -45,6 +46,7 @@ public interface CompletionDataInputConfigOrBuilder
    *
    * <pre>
    * Required. BigQuery input source.
+   *
    * Add the IAM permission "BigQuery Data Viewer" for
    * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
    * using this feature otherwise an error is thrown.
@@ -62,6 +64,7 @@ public interface CompletionDataInputConfigOrBuilder
    *
    * <pre>
    * Required. BigQuery input source.
+   *
    * Add the IAM permission "BigQuery Data Viewer" for
    * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
    * using this feature otherwise an error is thrown.
@@ -73,5 +76,5 @@ public interface CompletionDataInputConfigOrBuilder
    */
   com.google.cloud.retail.v2beta.BigQuerySourceOrBuilder getBigQuerySourceOrBuilder();
 
-  public com.google.cloud.retail.v2beta.CompletionDataInputConfig.SourceCase getSourceCase();
+  com.google.cloud.retail.v2beta.CompletionDataInputConfig.SourceCase getSourceCase();
 }

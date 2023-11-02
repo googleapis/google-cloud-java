@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,7 +129,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
+   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If set to true, clients can access the Internal TCP/UDP Load Balancer, Internal HTTP(S) and TCP Proxy Load Balancer from all regions. If false, only allows access from the local region the load balancer is located at. Note that for INTERNAL_MANAGED forwarding rules, this field cannot be changed after the forwarding rule is created.
    * </pre>
    *
    * <code>optional bool allow_global_access = 499409674;</code>
@@ -141,7 +141,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
+   * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If set to true, clients can access the Internal TCP/UDP Load Balancer, Internal HTTP(S) and TCP Proxy Load Balancer from all regions. If false, only allows access from the local region the load balancer is located at. Note that for INTERNAL_MANAGED forwarding rules, this field cannot be changed after the forwarding rule is created.
    * </pre>
    *
    * <code>optional bool allow_global_access = 499409674;</code>
@@ -149,6 +149,31 @@ public interface ForwardingRuleOrBuilder
    * @return The allowGlobalAccess.
    */
   boolean getAllowGlobalAccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * This is used in PSC consumer ForwardingRule to control whether the PSC endpoint can be accessed from another region.
+   * </pre>
+   *
+   * <code>optional bool allow_psc_global_access = 263471819;</code>
+   *
+   * @return Whether the allowPscGlobalAccess field is set.
+   */
+  boolean hasAllowPscGlobalAccess();
+  /**
+   *
+   *
+   * <pre>
+   * This is used in PSC consumer ForwardingRule to control whether the PSC endpoint can be accessed from another region.
+   * </pre>
+   *
+   * <code>optional bool allow_psc_global_access = 263471819;</code>
+   *
+   * @return The allowPscGlobalAccess.
+   */
+  boolean getAllowPscGlobalAccess();
 
   /**
    *
@@ -690,7 +715,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * This field is not used for external load balancing. For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
+   * This field is not used for external load balancing. For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If the subnetwork is specified, the network of the subnetwork will be used. If neither subnetwork nor this field is specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -702,7 +727,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * This field is not used for external load balancing. For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
+   * This field is not used for external load balancing. For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If the subnetwork is specified, the network of the subnetwork will be used. If neither subnetwork nor this field is specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -714,7 +739,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * This field is not used for external load balancing. For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
+   * This field is not used for external load balancing. For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If the subnetwork is specified, the network of the subnetwork will be used. If neither subnetwork nor this field is specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>

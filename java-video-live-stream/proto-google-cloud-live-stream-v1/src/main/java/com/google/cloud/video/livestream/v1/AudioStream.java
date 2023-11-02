@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
   private AudioStream() {
     codec_ = "";
-    channelLayout_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    channelLayout_ = com.google.protobuf.LazyStringArrayList.emptyList();
     mapping_ = java.util.Collections.emptyList();
   }
 
@@ -47,11 +47,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AudioStream();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -192,11 +187,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AudioMapping();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1246,7 +1236,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The codec for this audio stream. The default is `aac`.
+   *
    * Supported audio codecs:
+   *
    * - `aac`
    * </pre>
    *
@@ -1271,7 +1263,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The codec for this audio stream. The default is `aac`.
+   *
    * Supported audio codecs:
+   *
    * - `aac`
    * </pre>
    *
@@ -1332,7 +1326,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
   public static final int CHANNEL_LAYOUT_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList channelLayout_;
+  private com.google.protobuf.LazyStringArrayList channelLayout_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1340,7 +1335,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    * A list of channel names specifying layout of the audio channels.
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `[fl, fr]`.
+   *
    * Supported channel names:
+   *
    * - `fl` - Front left channel
    * - `fr` - Front right channel
    * - `sl` - Side left channel
@@ -1363,7 +1360,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    * A list of channel names specifying layout of the audio channels.
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `[fl, fr]`.
+   *
    * Supported channel names:
+   *
    * - `fl` - Front left channel
    * - `fr` - Front right channel
    * - `sl` - Side left channel
@@ -1386,7 +1385,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    * A list of channel names specifying layout of the audio channels.
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `[fl, fr]`.
+   *
    * Supported channel names:
+   *
    * - `fl` - Front left channel
    * - `fr` - Front right channel
    * - `sl` - Side left channel
@@ -1410,7 +1411,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    * A list of channel names specifying layout of the audio channels.
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `[fl, fr]`.
+   *
    * Supported channel names:
+   *
    * - `fl` - Front left channel
    * - `fr` - Front right channel
    * - `sl` - Side left channel
@@ -1785,8 +1788,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       codec_ = "";
       bitrateBps_ = 0;
       channelCount_ = 0;
-      channelLayout_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      channelLayout_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (mappingBuilder_ == null) {
         mapping_ = java.util.Collections.emptyList();
       } else {
@@ -1832,11 +1834,6 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(
         com.google.cloud.video.livestream.v1.AudioStream result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        channelLayout_ = channelLayout_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.channelLayout_ = channelLayout_;
       if (mappingBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           mapping_ = java.util.Collections.unmodifiableList(mapping_);
@@ -1861,6 +1858,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.channelCount_ = channelCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        channelLayout_.makeImmutable();
+        result.channelLayout_ = channelLayout_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.sampleRateHertz_ = sampleRateHertz_;
@@ -1930,7 +1931,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       if (!other.channelLayout_.isEmpty()) {
         if (channelLayout_.isEmpty()) {
           channelLayout_ = other.channelLayout_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureChannelLayoutIsMutable();
           channelLayout_.addAll(other.channelLayout_);
@@ -2128,7 +2129,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The codec for this audio stream. The default is `aac`.
+     *
      * Supported audio codecs:
+     *
      * - `aac`
      * </pre>
      *
@@ -2152,7 +2155,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The codec for this audio stream. The default is `aac`.
+     *
      * Supported audio codecs:
+     *
      * - `aac`
      * </pre>
      *
@@ -2176,7 +2181,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The codec for this audio stream. The default is `aac`.
+     *
      * Supported audio codecs:
+     *
      * - `aac`
      * </pre>
      *
@@ -2199,7 +2206,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The codec for this audio stream. The default is `aac`.
+     *
      * Supported audio codecs:
+     *
      * - `aac`
      * </pre>
      *
@@ -2218,7 +2227,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The codec for this audio stream. The default is `aac`.
+     *
      * Supported audio codecs:
+     *
      * - `aac`
      * </pre>
      *
@@ -2347,14 +2358,14 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList channelLayout_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList channelLayout_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureChannelLayoutIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!channelLayout_.isModifiable()) {
         channelLayout_ = new com.google.protobuf.LazyStringArrayList(channelLayout_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2363,7 +2374,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * A list of channel names specifying layout of the audio channels.
      * This only affects the metadata embedded in the container headers, if
      * supported by the specified format. The default is `[fl, fr]`.
+     *
      * Supported channel names:
+     *
      * - `fl` - Front left channel
      * - `fr` - Front right channel
      * - `sl` - Side left channel
@@ -2377,7 +2390,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the channelLayout.
      */
     public com.google.protobuf.ProtocolStringList getChannelLayoutList() {
-      return channelLayout_.getUnmodifiableView();
+      channelLayout_.makeImmutable();
+      return channelLayout_;
     }
     /**
      *
@@ -2386,7 +2400,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * A list of channel names specifying layout of the audio channels.
      * This only affects the metadata embedded in the container headers, if
      * supported by the specified format. The default is `[fl, fr]`.
+     *
      * Supported channel names:
+     *
      * - `fl` - Front left channel
      * - `fr` - Front right channel
      * - `sl` - Side left channel
@@ -2409,7 +2425,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * A list of channel names specifying layout of the audio channels.
      * This only affects the metadata embedded in the container headers, if
      * supported by the specified format. The default is `[fl, fr]`.
+     *
      * Supported channel names:
+     *
      * - `fl` - Front left channel
      * - `fr` - Front right channel
      * - `sl` - Side left channel
@@ -2433,7 +2451,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * A list of channel names specifying layout of the audio channels.
      * This only affects the metadata embedded in the container headers, if
      * supported by the specified format. The default is `[fl, fr]`.
+     *
      * Supported channel names:
+     *
      * - `fl` - Front left channel
      * - `fr` - Front right channel
      * - `sl` - Side left channel
@@ -2457,7 +2477,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * A list of channel names specifying layout of the audio channels.
      * This only affects the metadata embedded in the container headers, if
      * supported by the specified format. The default is `[fl, fr]`.
+     *
      * Supported channel names:
+     *
      * - `fl` - Front left channel
      * - `fr` - Front right channel
      * - `sl` - Side left channel
@@ -2478,6 +2500,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       ensureChannelLayoutIsMutable();
       channelLayout_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2488,7 +2511,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * A list of channel names specifying layout of the audio channels.
      * This only affects the metadata embedded in the container headers, if
      * supported by the specified format. The default is `[fl, fr]`.
+     *
      * Supported channel names:
+     *
      * - `fl` - Front left channel
      * - `fr` - Front right channel
      * - `sl` - Side left channel
@@ -2508,6 +2533,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       ensureChannelLayoutIsMutable();
       channelLayout_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2518,7 +2544,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * A list of channel names specifying layout of the audio channels.
      * This only affects the metadata embedded in the container headers, if
      * supported by the specified format. The default is `[fl, fr]`.
+     *
      * Supported channel names:
+     *
      * - `fl` - Front left channel
      * - `fr` - Front right channel
      * - `sl` - Side left channel
@@ -2535,6 +2563,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllChannelLayout(java.lang.Iterable<java.lang.String> values) {
       ensureChannelLayoutIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, channelLayout_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2545,7 +2574,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * A list of channel names specifying layout of the audio channels.
      * This only affects the metadata embedded in the container headers, if
      * supported by the specified format. The default is `[fl, fr]`.
+     *
      * Supported channel names:
+     *
      * - `fl` - Front left channel
      * - `fr` - Front right channel
      * - `sl` - Side left channel
@@ -2559,8 +2590,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearChannelLayout() {
-      channelLayout_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      channelLayout_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2571,7 +2603,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * A list of channel names specifying layout of the audio channels.
      * This only affects the metadata embedded in the container headers, if
      * supported by the specified format. The default is `[fl, fr]`.
+     *
      * Supported channel names:
+     *
      * - `fl` - Front left channel
      * - `fr` - Front right channel
      * - `sl` - Side left channel
@@ -2592,6 +2626,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureChannelLayoutIsMutable();
       channelLayout_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

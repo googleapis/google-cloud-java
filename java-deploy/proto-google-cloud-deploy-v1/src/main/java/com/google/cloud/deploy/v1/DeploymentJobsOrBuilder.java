@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,4 +98,86 @@ public interface DeploymentJobsOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.JobOrBuilder getVerifyJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The predeploy Job, which is the first job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the predeployJob field is set.
+   */
+  boolean hasPredeployJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The predeploy Job, which is the first job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The predeployJob.
+   */
+  com.google.cloud.deploy.v1.Job getPredeployJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The predeploy Job, which is the first job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.JobOrBuilder getPredeployJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The postdeploy Job, which is the last job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job postdeploy_job = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the postdeployJob field is set.
+   */
+  boolean hasPostdeployJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The postdeploy Job, which is the last job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job postdeploy_job = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The postdeployJob.
+   */
+  com.google.cloud.deploy.v1.Job getPostdeployJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The postdeploy Job, which is the last job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job postdeploy_job = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.JobOrBuilder getPostdeployJobOrBuilder();
 }

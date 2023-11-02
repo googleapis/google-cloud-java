@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,13 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     scope_ = "";
     cryptoKey_ = "";
     pageToken_ = "";
+    resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchProtectedResourcesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -217,6 +213,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
    * A page token, received from a previous
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * must match the call that provided the page token.
@@ -245,6 +242,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
    * A page token, received from a previous
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * must match the call that provided the page token.
@@ -265,6 +263,122 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int RESOURCE_TYPES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList resourceTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of resource types that this request searches for. If
+   * empty, it will search all the [trackable resource
+   * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+   *
+   * Regular expressions are also supported. For example:
+   *
+   * * `compute.googleapis.com.*` snapshots resources whose type starts
+   * with `compute.googleapis.com`.
+   * * `.*Image` snapshots resources whose type ends with `Image`.
+   * * `.*Image.*` snapshots resources whose type contains `Image`.
+   *
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported resource type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the resourceTypes.
+   */
+  public com.google.protobuf.ProtocolStringList getResourceTypesList() {
+    return resourceTypes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of resource types that this request searches for. If
+   * empty, it will search all the [trackable resource
+   * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+   *
+   * Regular expressions are also supported. For example:
+   *
+   * * `compute.googleapis.com.*` snapshots resources whose type starts
+   * with `compute.googleapis.com`.
+   * * `.*Image` snapshots resources whose type ends with `Image`.
+   * * `.*Image.*` snapshots resources whose type contains `Image`.
+   *
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported resource type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of resourceTypes.
+   */
+  public int getResourceTypesCount() {
+    return resourceTypes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of resource types that this request searches for. If
+   * empty, it will search all the [trackable resource
+   * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+   *
+   * Regular expressions are also supported. For example:
+   *
+   * * `compute.googleapis.com.*` snapshots resources whose type starts
+   * with `compute.googleapis.com`.
+   * * `.*Image` snapshots resources whose type ends with `Image`.
+   * * `.*Image.*` snapshots resources whose type contains `Image`.
+   *
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported resource type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The resourceTypes at the given index.
+   */
+  public java.lang.String getResourceTypes(int index) {
+    return resourceTypes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of resource types that this request searches for. If
+   * empty, it will search all the [trackable resource
+   * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+   *
+   * Regular expressions are also supported. For example:
+   *
+   * * `compute.googleapis.com.*` snapshots resources whose type starts
+   * with `compute.googleapis.com`.
+   * * `.*Image` snapshots resources whose type ends with `Image`.
+   * * `.*Image.*` snapshots resources whose type contains `Image`.
+   *
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported resource type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceTypes at the given index.
+   */
+  public com.google.protobuf.ByteString getResourceTypesBytes(int index) {
+    return resourceTypes_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -293,6 +407,9 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
     }
+    for (int i = 0; i < resourceTypes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, resourceTypes_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -314,6 +431,14 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < resourceTypes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(resourceTypes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getResourceTypesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -334,6 +459,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     if (!getCryptoKey().equals(other.getCryptoKey())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!getResourceTypesList().equals(other.getResourceTypesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -353,6 +479,10 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    if (getResourceTypesCount() > 0) {
+      hash = (37 * hash) + RESOURCE_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceTypesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -500,6 +630,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       cryptoKey_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -549,6 +680,10 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        resourceTypes_.makeImmutable();
+        result.resourceTypes_ = resourceTypes_;
       }
     }
 
@@ -618,6 +753,16 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.resourceTypes_.isEmpty()) {
+        if (resourceTypes_.isEmpty()) {
+          resourceTypes_ = other.resourceTypes_;
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureResourceTypesIsMutable();
+          resourceTypes_.addAll(other.resourceTypes_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -668,6 +813,13 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureResourceTypesIsMutable();
+                resourceTypes_.add(s);
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -999,6 +1151,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      * A page token, received from a previous
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * must match the call that provided the page token.
@@ -1026,6 +1179,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      * A page token, received from a previous
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * must match the call that provided the page token.
@@ -1053,6 +1207,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      * A page token, received from a previous
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * must match the call that provided the page token.
@@ -1079,6 +1234,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      * A page token, received from a previous
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * must match the call that provided the page token.
@@ -1101,6 +1257,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      * A page token, received from a previous
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * must match the call that provided the page token.
@@ -1118,6 +1275,297 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList resourceTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureResourceTypesIsMutable() {
+      if (!resourceTypes_.isModifiable()) {
+        resourceTypes_ = new com.google.protobuf.LazyStringArrayList(resourceTypes_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of resource types that this request searches for. If
+     * empty, it will search all the [trackable resource
+     * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+     *
+     * Regular expressions are also supported. For example:
+     *
+     * * `compute.googleapis.com.*` snapshots resources whose type starts
+     * with `compute.googleapis.com`.
+     * * `.*Image` snapshots resources whose type ends with `Image`.
+     * * `.*Image.*` snapshots resources whose type contains `Image`.
+     *
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported resource type, an INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the resourceTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getResourceTypesList() {
+      resourceTypes_.makeImmutable();
+      return resourceTypes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of resource types that this request searches for. If
+     * empty, it will search all the [trackable resource
+     * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+     *
+     * Regular expressions are also supported. For example:
+     *
+     * * `compute.googleapis.com.*` snapshots resources whose type starts
+     * with `compute.googleapis.com`.
+     * * `.*Image` snapshots resources whose type ends with `Image`.
+     * * `.*Image.*` snapshots resources whose type contains `Image`.
+     *
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported resource type, an INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of resourceTypes.
+     */
+    public int getResourceTypesCount() {
+      return resourceTypes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of resource types that this request searches for. If
+     * empty, it will search all the [trackable resource
+     * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+     *
+     * Regular expressions are also supported. For example:
+     *
+     * * `compute.googleapis.com.*` snapshots resources whose type starts
+     * with `compute.googleapis.com`.
+     * * `.*Image` snapshots resources whose type ends with `Image`.
+     * * `.*Image.*` snapshots resources whose type contains `Image`.
+     *
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported resource type, an INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The resourceTypes at the given index.
+     */
+    public java.lang.String getResourceTypes(int index) {
+      return resourceTypes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of resource types that this request searches for. If
+     * empty, it will search all the [trackable resource
+     * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+     *
+     * Regular expressions are also supported. For example:
+     *
+     * * `compute.googleapis.com.*` snapshots resources whose type starts
+     * with `compute.googleapis.com`.
+     * * `.*Image` snapshots resources whose type ends with `Image`.
+     * * `.*Image.*` snapshots resources whose type contains `Image`.
+     *
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported resource type, an INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getResourceTypesBytes(int index) {
+      return resourceTypes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of resource types that this request searches for. If
+     * empty, it will search all the [trackable resource
+     * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+     *
+     * Regular expressions are also supported. For example:
+     *
+     * * `compute.googleapis.com.*` snapshots resources whose type starts
+     * with `compute.googleapis.com`.
+     * * `.*Image` snapshots resources whose type ends with `Image`.
+     * * `.*Image.*` snapshots resources whose type contains `Image`.
+     *
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported resource type, an INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The resourceTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceTypes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResourceTypesIsMutable();
+      resourceTypes_.set(index, value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of resource types that this request searches for. If
+     * empty, it will search all the [trackable resource
+     * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+     *
+     * Regular expressions are also supported. For example:
+     *
+     * * `compute.googleapis.com.*` snapshots resources whose type starts
+     * with `compute.googleapis.com`.
+     * * `.*Image` snapshots resources whose type ends with `Image`.
+     * * `.*Image.*` snapshots resources whose type contains `Image`.
+     *
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported resource type, an INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The resourceTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResourceTypes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResourceTypesIsMutable();
+      resourceTypes_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of resource types that this request searches for. If
+     * empty, it will search all the [trackable resource
+     * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+     *
+     * Regular expressions are also supported. For example:
+     *
+     * * `compute.googleapis.com.*` snapshots resources whose type starts
+     * with `compute.googleapis.com`.
+     * * `.*Image` snapshots resources whose type ends with `Image`.
+     * * `.*Image.*` snapshots resources whose type contains `Image`.
+     *
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported resource type, an INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The resourceTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllResourceTypes(java.lang.Iterable<java.lang.String> values) {
+      ensureResourceTypesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceTypes_);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of resource types that this request searches for. If
+     * empty, it will search all the [trackable resource
+     * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+     *
+     * Regular expressions are also supported. For example:
+     *
+     * * `compute.googleapis.com.*` snapshots resources whose type starts
+     * with `compute.googleapis.com`.
+     * * `.*Image` snapshots resources whose type ends with `Image`.
+     * * `.*Image.*` snapshots resources whose type contains `Image`.
+     *
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported resource type, an INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceTypes() {
+      resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of resource types that this request searches for. If
+     * empty, it will search all the [trackable resource
+     * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+     *
+     * Regular expressions are also supported. For example:
+     *
+     * * `compute.googleapis.com.*` snapshots resources whose type starts
+     * with `compute.googleapis.com`.
+     * * `.*Image` snapshots resources whose type ends with `Image`.
+     * * `.*Image.*` snapshots resources whose type contains `Image`.
+     *
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported resource type, an INVALID_ARGUMENT error will be returned.
+     * </pre>
+     *
+     * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the resourceTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResourceTypesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureResourceTypesIsMutable();
+      resourceTypes_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

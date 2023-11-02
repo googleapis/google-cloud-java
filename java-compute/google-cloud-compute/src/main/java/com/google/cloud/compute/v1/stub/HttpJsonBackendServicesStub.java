@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.AggregatedListBackendServicesRequest;
@@ -869,6 +870,13 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
             HttpJsonCallSettings.<AddSignedUrlKeyBackendServiceRequest, Operation>newBuilder()
                 .setMethodDescriptor(addSignedUrlKeyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("backend_service", String.valueOf(request.getBackendService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AggregatedListBackendServicesRequest, BackendServiceAggregatedList>
         aggregatedListTransportSettings =
@@ -876,22 +884,49 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                 .<AggregatedListBackendServicesRequest, BackendServiceAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteBackendServiceRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backend_service", String.valueOf(request.getBackendService()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteSignedUrlKeyBackendServiceRequest, Operation>
         deleteSignedUrlKeyTransportSettings =
             HttpJsonCallSettings.<DeleteSignedUrlKeyBackendServiceRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteSignedUrlKeyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("backend_service", String.valueOf(request.getBackendService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetBackendServiceRequest, BackendService> getTransportSettings =
         HttpJsonCallSettings.<GetBackendServiceRequest, BackendService>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backend_service", String.valueOf(request.getBackendService()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
         getHealthTransportSettings =
@@ -899,48 +934,109 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                 .<GetHealthBackendServiceRequest, BackendServiceGroupHealth>newBuilder()
                 .setMethodDescriptor(getHealthMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("backend_service", String.valueOf(request.getBackendService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetIamPolicyBackendServiceRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyBackendServiceRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertBackendServiceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListBackendServicesRequest, BackendServiceList> listTransportSettings =
         HttpJsonCallSettings.<ListBackendServicesRequest, BackendServiceList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PatchBackendServiceRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backend_service", String.valueOf(request.getBackendService()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetEdgeSecurityPolicyBackendServiceRequest, Operation>
         setEdgeSecurityPolicyTransportSettings =
             HttpJsonCallSettings.<SetEdgeSecurityPolicyBackendServiceRequest, Operation>newBuilder()
                 .setMethodDescriptor(setEdgeSecurityPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("backend_service", String.valueOf(request.getBackendService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetIamPolicyBackendServiceRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyBackendServiceRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetSecurityPolicyBackendServiceRequest, Operation>
         setSecurityPolicyTransportSettings =
             HttpJsonCallSettings.<SetSecurityPolicyBackendServiceRequest, Operation>newBuilder()
                 .setMethodDescriptor(setSecurityPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("backend_service", String.valueOf(request.getBackendService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateBackendServiceRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backend_service", String.valueOf(request.getBackendService()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
 
     this.addSignedUrlKeyCallable =

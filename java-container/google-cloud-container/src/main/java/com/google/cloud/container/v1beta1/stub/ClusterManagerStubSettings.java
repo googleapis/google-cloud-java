@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.container.v1beta1.CancelOperationRequest;
+import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
+import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
@@ -185,6 +187,9 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
           ListUsableSubnetworksResponse,
           ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksSettings;
+  private final UnaryCallSettings<
+          CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
+      checkAutopilotCompatibilitySettings;
   private final UnaryCallSettings<ListLocationsRequest, ListLocationsResponse>
       listLocationsSettings;
 
@@ -431,6 +436,12 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     return listUsableSubnetworksSettings;
   }
 
+  /** Returns the object with the settings used for calls to checkAutopilotCompatibility. */
+  public UnaryCallSettings<CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
+      checkAutopilotCompatibilitySettings() {
+    return checkAutopilotCompatibilitySettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public UnaryCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsSettings() {
     return listLocationsSettings;
@@ -544,6 +555,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     setNetworkPolicySettings = settingsBuilder.setNetworkPolicySettings().build();
     setMaintenancePolicySettings = settingsBuilder.setMaintenancePolicySettings().build();
     listUsableSubnetworksSettings = settingsBuilder.listUsableSubnetworksSettings().build();
+    checkAutopilotCompatibilitySettings =
+        settingsBuilder.checkAutopilotCompatibilitySettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
   }
 
@@ -607,6 +620,9 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
             ListUsableSubnetworksResponse,
             ListUsableSubnetworksPagedResponse>
         listUsableSubnetworksSettings;
+    private final UnaryCallSettings.Builder<
+            CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
+        checkAutopilotCompatibilitySettings;
     private final UnaryCallSettings.Builder<ListLocationsRequest, ListLocationsResponse>
         listLocationsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -696,6 +712,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       setMaintenancePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listUsableSubnetworksSettings =
           PagedCallSettings.newBuilder(LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT);
+      checkAutopilotCompatibilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -733,6 +750,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               setNetworkPolicySettings,
               setMaintenancePolicySettings,
               listUsableSubnetworksSettings,
+              checkAutopilotCompatibilitySettings,
               listLocationsSettings);
       initDefaults(this);
     }
@@ -773,6 +791,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       setNetworkPolicySettings = settings.setNetworkPolicySettings.toBuilder();
       setMaintenancePolicySettings = settings.setMaintenancePolicySettings.toBuilder();
       listUsableSubnetworksSettings = settings.listUsableSubnetworksSettings.toBuilder();
+      checkAutopilotCompatibilitySettings =
+          settings.checkAutopilotCompatibilitySettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -810,6 +830,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               setNetworkPolicySettings,
               setMaintenancePolicySettings,
               listUsableSubnetworksSettings,
+              checkAutopilotCompatibilitySettings,
               listLocationsSettings);
     }
 
@@ -991,6 +1012,11 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
           .listUsableSubnetworksSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .checkAutopilotCompatibilitySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -1201,6 +1227,13 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
             ListUsableSubnetworksPagedResponse>
         listUsableSubnetworksSettings() {
       return listUsableSubnetworksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to checkAutopilotCompatibility. */
+    public UnaryCallSettings.Builder<
+            CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
+        checkAutopilotCompatibilitySettings() {
+      return checkAutopilotCompatibilitySettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

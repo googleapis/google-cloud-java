@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ResourceRequirementsOrBuilder
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -44,6 +45,7 @@ public interface ResourceRequirementsOrBuilder
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -63,6 +65,7 @@ public interface ResourceRequirementsOrBuilder
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -79,6 +82,7 @@ public interface ResourceRequirementsOrBuilder
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -99,6 +103,7 @@ public interface ResourceRequirementsOrBuilder
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to

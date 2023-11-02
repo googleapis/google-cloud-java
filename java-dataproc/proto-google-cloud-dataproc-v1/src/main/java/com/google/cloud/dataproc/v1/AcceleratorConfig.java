@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     return new AcceleratorConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_AcceleratorConfig_descriptor;
@@ -81,10 +76,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * expose to this instance. See
    * [Compute Engine
    * AcceleratorTypes](https://cloud.google.com/compute/docs/reference/v1/acceleratorTypes).
+   *
    * Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
    * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
    * * `nvidia-tesla-k80`
+   *
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -116,10 +114,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * expose to this instance. See
    * [Compute Engine
    * AcceleratorTypes](https://cloud.google.com/compute/docs/reference/v1/acceleratorTypes).
+   *
    * Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
    * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
    * * `nvidia-tesla-k80`
+   *
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -536,10 +537,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * expose to this instance. See
      * [Compute Engine
      * AcceleratorTypes](https://cloud.google.com/compute/docs/reference/v1/acceleratorTypes).
+     *
      * Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
      * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
+     *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -570,10 +574,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * expose to this instance. See
      * [Compute Engine
      * AcceleratorTypes](https://cloud.google.com/compute/docs/reference/v1/acceleratorTypes).
+     *
      * Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
      * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
+     *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -604,10 +611,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * expose to this instance. See
      * [Compute Engine
      * AcceleratorTypes](https://cloud.google.com/compute/docs/reference/v1/acceleratorTypes).
+     *
      * Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
      * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
+     *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -637,10 +647,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * expose to this instance. See
      * [Compute Engine
      * AcceleratorTypes](https://cloud.google.com/compute/docs/reference/v1/acceleratorTypes).
+     *
      * Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
      * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
+     *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -666,10 +679,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * expose to this instance. See
      * [Compute Engine
      * AcceleratorTypes](https://cloud.google.com/compute/docs/reference/v1/acceleratorTypes).
+     *
      * Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
      * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
      * * `nvidia-tesla-k80`
+     *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)

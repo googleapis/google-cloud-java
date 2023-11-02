@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,17 +89,21 @@ public interface CompleteQueryRequestOrBuilder
    * <pre>
    * Selects data model of query suggestions for serving. Currently supported
    * values:
+   *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * API calls. Do not use it when there is no traffic for Search API.
    * * `user-event` - Using suggestions generated from user-imported search
    * events.
+   * * `document-completable` - Using suggestions taken directly from
+   * user-imported document fields marked as completable.
+   *
    * Default values:
+   *
    * * `document` is the default model for regular dataStores.
    * * `search-history` is the default model for
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * dataStores.
+   * [IndustryVertical.SITE_SEARCH][] dataStores.
    * </pre>
    *
    * <code>string query_model = 3;</code>
@@ -113,17 +117,21 @@ public interface CompleteQueryRequestOrBuilder
    * <pre>
    * Selects data model of query suggestions for serving. Currently supported
    * values:
+   *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * API calls. Do not use it when there is no traffic for Search API.
    * * `user-event` - Using suggestions generated from user-imported search
    * events.
+   * * `document-completable` - Using suggestions taken directly from
+   * user-imported document fields marked as completable.
+   *
    * Default values:
+   *
    * * `document` is the default model for regular dataStores.
    * * `search-history` is the default model for
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * dataStores.
+   * [IndustryVertical.SITE_SEARCH][] dataStores.
    * </pre>
    *
    * <code>string query_model = 3;</code>
@@ -140,11 +148,14 @@ public interface CompleteQueryRequestOrBuilder
    * implemented with an HTTP cookie, which should be able to uniquely identify
    * a visitor on a single device. This unique identifier should not change if
    * the visitor logs in or out of the website.
+   *
    * This field should NOT have a fixed value such as `unknown_visitor`.
+   *
    * This should be the same identifier as
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
    * and
    * [SearchRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.SearchRequest.user_pseudo_id].
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
@@ -162,11 +173,14 @@ public interface CompleteQueryRequestOrBuilder
    * implemented with an HTTP cookie, which should be able to uniquely identify
    * a visitor on a single device. This unique identifier should not change if
    * the visitor logs in or out of the website.
+   *
    * This field should NOT have a fixed value such as `unknown_visitor`.
+   *
    * This should be the same identifier as
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
    * and
    * [SearchRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.SearchRequest.user_pseudo_id].
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
@@ -176,4 +190,20 @@ public interface CompleteQueryRequestOrBuilder
    * @return The bytes for userPseudoId.
    */
   com.google.protobuf.ByteString getUserPseudoIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates if tail suggestions should be returned if there are no
+   * suggestions that match the full query. Even if set to true, if there are
+   * suggestions that match the full query, those are returned and no
+   * tail suggestions are returned.
+   * </pre>
+   *
+   * <code>bool include_tail_suggestions = 5;</code>
+   *
+   * @return The includeTailSuggestions.
+   */
+  boolean getIncludeTailSuggestions();
 }

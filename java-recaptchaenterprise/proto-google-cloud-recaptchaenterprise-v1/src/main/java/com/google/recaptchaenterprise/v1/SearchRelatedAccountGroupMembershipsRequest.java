@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class SearchRelatedAccountGroupMembershipsRequest
     return new SearchRelatedAccountGroupMembershipsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_SearchRelatedAccountGroupMembershipsRequest_descriptor;
@@ -83,7 +78,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    * <pre>
    * Required. The name of the project to search related account group
    * memberships from. Specify the project name in the following format:
-   * "projects/{project}".
+   * `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -110,7 +105,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    * <pre>
    * Required. The name of the project to search related account group
    * memberships from. Specify the project name in the following format:
-   * "projects/{project}".
+   * `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -138,8 +133,8 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    *
    *
    * <pre>
-   * Optional. The unique stable hashed user identifier we should search
-   * connections to. The identifier should correspond to a `hashed_account_id`
+   * Optional. The unique stable hashed user identifier used to search
+   * connections. The identifier should correspond to a `hashed_account_id`
    * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
    * </pre>
    *
@@ -183,6 +178,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    * Optional. A page token, received from a previous
    * `SearchRelatedAccountGroupMemberships` call. Provide this to retrieve the
    * subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `SearchRelatedAccountGroupMemberships` must match the call that provided
    * the page token.
@@ -211,6 +207,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    * Optional. A page token, received from a previous
    * `SearchRelatedAccountGroupMemberships` call. Provide this to retrieve the
    * subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `SearchRelatedAccountGroupMemberships` must match the call that provided
    * the page token.
@@ -671,7 +668,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * <pre>
      * Required. The name of the project to search related account group
      * memberships from. Specify the project name in the following format:
-     * "projects/{project}".
+     * `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -697,7 +694,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * <pre>
      * Required. The name of the project to search related account group
      * memberships from. Specify the project name in the following format:
-     * "projects/{project}".
+     * `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -723,7 +720,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * <pre>
      * Required. The name of the project to search related account group
      * memberships from. Specify the project name in the following format:
-     * "projects/{project}".
+     * `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -748,7 +745,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * <pre>
      * Required. The name of the project to search related account group
      * memberships from. Specify the project name in the following format:
-     * "projects/{project}".
+     * `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -769,7 +766,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * <pre>
      * Required. The name of the project to search related account group
      * memberships from. Specify the project name in the following format:
-     * "projects/{project}".
+     * `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -795,8 +792,8 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The unique stable hashed user identifier we should search
-     * connections to. The identifier should correspond to a `hashed_account_id`
+     * Optional. The unique stable hashed user identifier used to search
+     * connections. The identifier should correspond to a `hashed_account_id`
      * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *
@@ -812,8 +809,8 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The unique stable hashed user identifier we should search
-     * connections to. The identifier should correspond to a `hashed_account_id`
+     * Optional. The unique stable hashed user identifier used to search
+     * connections. The identifier should correspond to a `hashed_account_id`
      * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *
@@ -835,8 +832,8 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The unique stable hashed user identifier we should search
-     * connections to. The identifier should correspond to a `hashed_account_id`
+     * Optional. The unique stable hashed user identifier used to search
+     * connections. The identifier should correspond to a `hashed_account_id`
      * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *
@@ -918,6 +915,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * Optional. A page token, received from a previous
      * `SearchRelatedAccountGroupMemberships` call. Provide this to retrieve the
      * subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `SearchRelatedAccountGroupMemberships` must match the call that provided
      * the page token.
@@ -945,6 +943,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * Optional. A page token, received from a previous
      * `SearchRelatedAccountGroupMemberships` call. Provide this to retrieve the
      * subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `SearchRelatedAccountGroupMemberships` must match the call that provided
      * the page token.
@@ -972,6 +971,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * Optional. A page token, received from a previous
      * `SearchRelatedAccountGroupMemberships` call. Provide this to retrieve the
      * subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `SearchRelatedAccountGroupMemberships` must match the call that provided
      * the page token.
@@ -998,6 +998,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * Optional. A page token, received from a previous
      * `SearchRelatedAccountGroupMemberships` call. Provide this to retrieve the
      * subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `SearchRelatedAccountGroupMemberships` must match the call that provided
      * the page token.
@@ -1020,6 +1021,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * Optional. A page token, received from a previous
      * `SearchRelatedAccountGroupMemberships` call. Provide this to retrieve the
      * subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `SearchRelatedAccountGroupMemberships` must match the call that provided
      * the page token.

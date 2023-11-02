@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,21 +40,18 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
 
   private Function() {
     name_ = "";
-    environment_ = 0;
     description_ = "";
     state_ = 0;
     stateMessages_ = java.util.Collections.emptyList();
+    environment_ = 0;
+    url_ = "";
+    kmsKeyName_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Function();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -359,41 +356,6 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int ENVIRONMENT_FIELD_NUMBER = 10;
-  private int environment_ = 0;
-  /**
-   *
-   *
-   * <pre>
-   * Describe whether the function is gen1 or gen2.
-   * </pre>
-   *
-   * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
-   *
-   * @return The enum numeric value on the wire for environment.
-   */
-  @java.lang.Override
-  public int getEnvironmentValue() {
-    return environment_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Describe whether the function is gen1 or gen2.
-   * </pre>
-   *
-   * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
-   *
-   * @return The environment.
-   */
-  @java.lang.Override
-  public com.google.cloud.functions.v2beta.Environment getEnvironment() {
-    com.google.cloud.functions.v2beta.Environment result =
-        com.google.cloud.functions.v2beta.Environment.forNumber(environment_);
-    return result == null ? com.google.cloud.functions.v2beta.Environment.UNRECOGNIZED : result;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
@@ -878,6 +840,151 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     return stateMessages_.get(index);
   }
 
+  public static final int ENVIRONMENT_FIELD_NUMBER = 10;
+  private int environment_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Describe whether the function is 1st Gen or 2nd Gen.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
+   *
+   * @return The enum numeric value on the wire for environment.
+   */
+  @java.lang.Override
+  public int getEnvironmentValue() {
+    return environment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describe whether the function is 1st Gen or 2nd Gen.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
+   *
+   * @return The environment.
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v2beta.Environment getEnvironment() {
+    com.google.cloud.functions.v2beta.Environment result =
+        com.google.cloud.functions.v2beta.Environment.forNumber(environment_);
+    return result == null ? com.google.cloud.functions.v2beta.Environment.UNRECOGNIZED : result;
+  }
+
+  public static final int URL_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployed url for the function.
+   * </pre>
+   *
+   * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The url.
+   */
+  @java.lang.Override
+  public java.lang.String getUrl() {
+    java.lang.Object ref = url_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      url_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployed url for the function.
+   * </pre>
+   *
+   * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for url.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUrlBytes() {
+    java.lang.Object ref = url_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      url_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int KMS_KEY_NAME_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   *
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The kmsKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyName() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   *
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -921,6 +1028,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     if (environment_
         != com.google.cloud.functions.v2beta.Environment.ENVIRONMENT_UNSPECIFIED.getNumber()) {
       output.writeEnum(10, environment_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, url_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, kmsKeyName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -969,6 +1082,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.functions.v2beta.Environment.ENVIRONMENT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, environment_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, url_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, kmsKeyName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -986,7 +1105,6 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.functions.v2beta.Function) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (environment_ != other.environment_) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (hasBuildConfig() != other.hasBuildConfig()) return false;
     if (hasBuildConfig()) {
@@ -1007,6 +1125,9 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getStateMessagesList().equals(other.getStateMessagesList())) return false;
+    if (environment_ != other.environment_) return false;
+    if (!getUrl().equals(other.getUrl())) return false;
+    if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1020,8 +1141,6 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
-    hash = (53 * hash) + environment_;
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     if (hasBuildConfig()) {
@@ -1050,6 +1169,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + STATE_MESSAGES_FIELD_NUMBER;
       hash = (53 * hash) + getStateMessagesList().hashCode();
     }
+    hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+    hash = (53 * hash) + environment_;
+    hash = (37 * hash) + URL_FIELD_NUMBER;
+    hash = (53 * hash) + getUrl().hashCode();
+    hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKeyName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1211,7 +1336,6 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      environment_ = 0;
       description_ = "";
       buildConfig_ = null;
       if (buildConfigBuilder_ != null) {
@@ -1241,7 +1365,10 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         stateMessages_ = null;
         stateMessagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000100);
+      environment_ = 0;
+      url_ = "";
+      kmsKeyName_ = "";
       return this;
     }
 
@@ -1279,9 +1406,9 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.functions.v2beta.Function result) {
       if (stateMessagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           stateMessages_ = java.util.Collections.unmodifiableList(stateMessages_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.stateMessages_ = stateMessages_;
       } else {
@@ -1295,32 +1422,38 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.environment_ = environment_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.buildConfig_ =
             buildConfigBuilder_ == null ? buildConfig_ : buildConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.serviceConfig_ =
             serviceConfigBuilder_ == null ? serviceConfig_ : serviceConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.eventTrigger_ =
             eventTriggerBuilder_ == null ? eventTrigger_ : eventTriggerBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.environment_ = environment_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.url_ = url_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
       }
     }
 
@@ -1374,12 +1507,9 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.environment_ != 0) {
-        setEnvironmentValue(other.getEnvironmentValue());
-      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasBuildConfig()) {
@@ -1398,12 +1528,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       if (stateMessagesBuilder_ == null) {
         if (!other.stateMessages_.isEmpty()) {
           if (stateMessages_.isEmpty()) {
             stateMessages_ = other.stateMessages_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureStateMessagesIsMutable();
             stateMessages_.addAll(other.stateMessages_);
@@ -1416,7 +1546,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
             stateMessagesBuilder_.dispose();
             stateMessagesBuilder_ = null;
             stateMessages_ = other.stateMessages_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000100);
             stateMessagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStateMessagesFieldBuilder()
@@ -1425,6 +1555,19 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
             stateMessagesBuilder_.addAllMessages(other.stateMessages_);
           }
         }
+      }
+      if (other.environment_ != 0) {
+        setEnvironmentValue(other.getEnvironmentValue());
+      }
+      if (!other.getUrl().isEmpty()) {
+        url_ = other.url_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.getKmsKeyName().isEmpty()) {
+        kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000800;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1461,37 +1604,37 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getBuildConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getServiceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getEventTriggerFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1503,7 +1646,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
@@ -1522,9 +1665,21 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
             case 80:
               {
                 environment_ = input.readEnum();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
+            case 114:
+              {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 114
+            case 202:
+              {
+                kmsKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1655,96 +1810,6 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int environment_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Describe whether the function is gen1 or gen2.
-     * </pre>
-     *
-     * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
-     *
-     * @return The enum numeric value on the wire for environment.
-     */
-    @java.lang.Override
-    public int getEnvironmentValue() {
-      return environment_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Describe whether the function is gen1 or gen2.
-     * </pre>
-     *
-     * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
-     *
-     * @param value The enum numeric value on the wire for environment to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEnvironmentValue(int value) {
-      environment_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Describe whether the function is gen1 or gen2.
-     * </pre>
-     *
-     * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
-     *
-     * @return The environment.
-     */
-    @java.lang.Override
-    public com.google.cloud.functions.v2beta.Environment getEnvironment() {
-      com.google.cloud.functions.v2beta.Environment result =
-          com.google.cloud.functions.v2beta.Environment.forNumber(environment_);
-      return result == null ? com.google.cloud.functions.v2beta.Environment.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Describe whether the function is gen1 or gen2.
-     * </pre>
-     *
-     * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
-     *
-     * @param value The environment to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEnvironment(com.google.cloud.functions.v2beta.Environment value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      environment_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Describe whether the function is gen1 or gen2.
-     * </pre>
-     *
-     * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearEnvironment() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      environment_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object description_ = "";
     /**
      *
@@ -1807,7 +1872,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1824,7 +1889,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1846,7 +1911,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1870,7 +1935,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the buildConfig field is set.
      */
     public boolean hasBuildConfig() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1912,7 +1977,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         buildConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1933,7 +1998,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         buildConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1949,7 +2014,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBuildConfig(com.google.cloud.functions.v2beta.BuildConfig value) {
       if (buildConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && buildConfig_ != null
             && buildConfig_ != com.google.cloud.functions.v2beta.BuildConfig.getDefaultInstance()) {
           getBuildConfigBuilder().mergeFrom(value);
@@ -1959,7 +2024,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         buildConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1974,7 +2039,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v2beta.BuildConfig build_config = 3;</code>
      */
     public Builder clearBuildConfig() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       buildConfig_ = null;
       if (buildConfigBuilder_ != null) {
         buildConfigBuilder_.dispose();
@@ -1994,7 +2059,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v2beta.BuildConfig build_config = 3;</code>
      */
     public com.google.cloud.functions.v2beta.BuildConfig.Builder getBuildConfigBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getBuildConfigFieldBuilder().getBuilder();
     }
@@ -2063,7 +2128,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serviceConfig field is set.
      */
     public boolean hasServiceConfig() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2105,7 +2170,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         serviceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2126,7 +2191,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         serviceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2142,7 +2207,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeServiceConfig(com.google.cloud.functions.v2beta.ServiceConfig value) {
       if (serviceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && serviceConfig_ != null
             && serviceConfig_
                 != com.google.cloud.functions.v2beta.ServiceConfig.getDefaultInstance()) {
@@ -2153,7 +2218,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         serviceConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2168,7 +2233,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v2beta.ServiceConfig service_config = 4;</code>
      */
     public Builder clearServiceConfig() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       serviceConfig_ = null;
       if (serviceConfigBuilder_ != null) {
         serviceConfigBuilder_.dispose();
@@ -2188,7 +2253,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v2beta.ServiceConfig service_config = 4;</code>
      */
     public com.google.cloud.functions.v2beta.ServiceConfig.Builder getServiceConfigBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getServiceConfigFieldBuilder().getBuilder();
     }
@@ -2257,7 +2322,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the eventTrigger field is set.
      */
     public boolean hasEventTrigger() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2299,7 +2364,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         eventTriggerBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2320,7 +2385,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         eventTriggerBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2336,7 +2401,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEventTrigger(com.google.cloud.functions.v2beta.EventTrigger value) {
       if (eventTriggerBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && eventTrigger_ != null
             && eventTrigger_
                 != com.google.cloud.functions.v2beta.EventTrigger.getDefaultInstance()) {
@@ -2347,7 +2412,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         eventTriggerBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2362,7 +2427,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v2beta.EventTrigger event_trigger = 5;</code>
      */
     public Builder clearEventTrigger() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       eventTrigger_ = null;
       if (eventTriggerBuilder_ != null) {
         eventTriggerBuilder_.dispose();
@@ -2382,7 +2447,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.functions.v2beta.EventTrigger event_trigger = 5;</code>
      */
     public com.google.cloud.functions.v2beta.EventTrigger.Builder getEventTriggerBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getEventTriggerFieldBuilder().getBuilder();
     }
@@ -2466,7 +2531,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2509,7 +2574,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2528,7 +2593,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -2554,7 +2619,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2598,7 +2663,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2619,7 +2684,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2636,7 +2701,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2646,7 +2711,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2662,7 +2727,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2683,7 +2748,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2752,7 +2817,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return labels_;
     }
@@ -2837,7 +2902,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2860,7 +2925,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2880,7 +2945,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2894,7 +2959,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -2902,10 +2967,10 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStateMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         stateMessages_ =
             new java.util.ArrayList<com.google.cloud.functions.v2beta.StateMessage>(stateMessages_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -3145,7 +3210,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStateMessages() {
       if (stateMessagesBuilder_ == null) {
         stateMessages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         stateMessagesBuilder_.clear();
@@ -3285,12 +3350,334 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.functions.v2beta.StateMessage.Builder,
                 com.google.cloud.functions.v2beta.StateMessageOrBuilder>(
                 stateMessages_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         stateMessages_ = null;
       }
       return stateMessagesBuilder_;
+    }
+
+    private int environment_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Describe whether the function is 1st Gen or 2nd Gen.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
+     *
+     * @return The enum numeric value on the wire for environment.
+     */
+    @java.lang.Override
+    public int getEnvironmentValue() {
+      return environment_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describe whether the function is 1st Gen or 2nd Gen.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
+     *
+     * @param value The enum numeric value on the wire for environment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironmentValue(int value) {
+      environment_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describe whether the function is 1st Gen or 2nd Gen.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
+     *
+     * @return The environment.
+     */
+    @java.lang.Override
+    public com.google.cloud.functions.v2beta.Environment getEnvironment() {
+      com.google.cloud.functions.v2beta.Environment result =
+          com.google.cloud.functions.v2beta.Environment.forNumber(environment_);
+      return result == null ? com.google.cloud.functions.v2beta.Environment.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describe whether the function is 1st Gen or 2nd Gen.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
+     *
+     * @param value The environment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironment(com.google.cloud.functions.v2beta.Environment value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      environment_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describe whether the function is 1st Gen or 2nd Gen.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v2beta.Environment environment = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnvironment() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      environment_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object url_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployed url for the function.
+     * </pre>
+     *
+     * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The url.
+     */
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployed url for the function.
+     * </pre>
+     *
+     * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for url.
+     */
+    public com.google.protobuf.ByteString getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployed url for the function.
+     * </pre>
+     *
+     * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The url to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      url_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployed url for the function.
+     * </pre>
+     *
+     * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUrl() {
+      url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployed url for the function.
+     * </pre>
+     *
+     * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      url_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object kmsKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     *
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The kmsKeyName.
+     */
+    public java.lang.String getKmsKeyName() {
+      java.lang.Object ref = kmsKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     *
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for kmsKeyName.
+     */
+    public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+      java.lang.Object ref = kmsKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     *
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     *
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyName() {
+      kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     *
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

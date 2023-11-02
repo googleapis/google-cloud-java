@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     type_ = 0;
     tier_ = 0;
     state_ = 0;
-    pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
     caCertificateDescriptions_ = java.util.Collections.emptyList();
     gcsBucket_ = "";
   }
@@ -52,11 +52,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CertificateAuthority();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -975,11 +970,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IssuingOptions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2020,8 +2010,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
             .IssuanceModesOrBuilder
         getAllowedIssuanceModesOrBuilder();
 
-    public com.google.cloud.security.privateca.v1beta1.CertificateAuthority
-            .CertificateAuthorityPolicy.ConfigPolicyCase
+    com.google.cloud.security.privateca.v1beta1.CertificateAuthority.CertificateAuthorityPolicy
+            .ConfigPolicyCase
         getConfigPolicyCase();
   }
   /**
@@ -2049,18 +2039,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
 
     private CertificateAuthorityPolicy() {
       allowedLocationsAndOrganizations_ = java.util.Collections.emptyList();
-      allowedCommonNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedCommonNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CertificateAuthorityPolicy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2188,11 +2173,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new AllowedConfigList();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3629,21 +3609,16 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       }
 
       private AllowedSubjectAltNames() {
-        allowedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        allowedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        allowedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        allowedIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        allowedDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        allowedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        allowedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        allowedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new AllowedSubjectAltNames();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3666,7 +3641,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       public static final int ALLOWED_DNS_NAMES_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList allowedDnsNames_;
+      private com.google.protobuf.LazyStringArrayList allowedDnsNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -3757,7 +3733,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       public static final int ALLOWED_URIS_FIELD_NUMBER = 2;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList allowedUris_;
+      private com.google.protobuf.LazyStringArrayList allowedUris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -3828,7 +3805,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       public static final int ALLOWED_EMAIL_ADDRESSES_FIELD_NUMBER = 3;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList allowedEmailAddresses_;
+      private com.google.protobuf.LazyStringArrayList allowedEmailAddresses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -3903,7 +3881,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       public static final int ALLOWED_IPS_FIELD_NUMBER = 4;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList allowedIps_;
+      private com.google.protobuf.LazyStringArrayList allowedIps_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -4327,14 +4306,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          allowedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          allowedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          allowedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          allowedIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          allowedDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          allowedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          allowedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          allowedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
           allowGlobbingDnsWildcards_ = false;
           allowCustomSans_ = false;
           return this;
@@ -4376,7 +4351,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
               result =
                   new com.google.cloud.security.privateca.v1beta1.CertificateAuthority
                       .CertificateAuthorityPolicy.AllowedSubjectAltNames(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -4384,37 +4358,27 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.security.privateca.v1beta1.CertificateAuthority
-                    .CertificateAuthorityPolicy.AllowedSubjectAltNames
-                result) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            allowedDnsNames_ = allowedDnsNames_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.allowedDnsNames_ = allowedDnsNames_;
-          if (((bitField0_ & 0x00000002) != 0)) {
-            allowedUris_ = allowedUris_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.allowedUris_ = allowedUris_;
-          if (((bitField0_ & 0x00000004) != 0)) {
-            allowedEmailAddresses_ = allowedEmailAddresses_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.allowedEmailAddresses_ = allowedEmailAddresses_;
-          if (((bitField0_ & 0x00000008) != 0)) {
-            allowedIps_ = allowedIps_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.allowedIps_ = allowedIps_;
-        }
-
         private void buildPartial0(
             com.google.cloud.security.privateca.v1beta1.CertificateAuthority
                     .CertificateAuthorityPolicy.AllowedSubjectAltNames
                 result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            allowedDnsNames_.makeImmutable();
+            result.allowedDnsNames_ = allowedDnsNames_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            allowedUris_.makeImmutable();
+            result.allowedUris_ = allowedUris_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            allowedEmailAddresses_.makeImmutable();
+            result.allowedEmailAddresses_ = allowedEmailAddresses_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            allowedIps_.makeImmutable();
+            result.allowedIps_ = allowedIps_;
+          }
           if (((from_bitField0_ & 0x00000010) != 0)) {
             result.allowGlobbingDnsWildcards_ = allowGlobbingDnsWildcards_;
           }
@@ -4485,7 +4449,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           if (!other.allowedDnsNames_.isEmpty()) {
             if (allowedDnsNames_.isEmpty()) {
               allowedDnsNames_ = other.allowedDnsNames_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ |= 0x00000001;
             } else {
               ensureAllowedDnsNamesIsMutable();
               allowedDnsNames_.addAll(other.allowedDnsNames_);
@@ -4495,7 +4459,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           if (!other.allowedUris_.isEmpty()) {
             if (allowedUris_.isEmpty()) {
               allowedUris_ = other.allowedUris_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ |= 0x00000002;
             } else {
               ensureAllowedUrisIsMutable();
               allowedUris_.addAll(other.allowedUris_);
@@ -4505,7 +4469,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           if (!other.allowedEmailAddresses_.isEmpty()) {
             if (allowedEmailAddresses_.isEmpty()) {
               allowedEmailAddresses_ = other.allowedEmailAddresses_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ |= 0x00000004;
             } else {
               ensureAllowedEmailAddressesIsMutable();
               allowedEmailAddresses_.addAll(other.allowedEmailAddresses_);
@@ -4515,7 +4479,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           if (!other.allowedIps_.isEmpty()) {
             if (allowedIps_.isEmpty()) {
               allowedIps_ = other.allowedIps_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ |= 0x00000008;
             } else {
               ensureAllowedIpsIsMutable();
               allowedIps_.addAll(other.allowedIps_);
@@ -4613,14 +4577,14 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList allowedDnsNames_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList allowedDnsNames_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureAllowedDnsNamesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!allowedDnsNames_.isModifiable()) {
             allowedDnsNames_ = new com.google.protobuf.LazyStringArrayList(allowedDnsNames_);
-            bitField0_ |= 0x00000001;
           }
+          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -4641,7 +4605,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
          * @return A list containing the allowedDnsNames.
          */
         public com.google.protobuf.ProtocolStringList getAllowedDnsNamesList() {
-          return allowedDnsNames_.getUnmodifiableView();
+          allowedDnsNames_.makeImmutable();
+          return allowedDnsNames_;
         }
         /**
          *
@@ -4734,6 +4699,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           }
           ensureAllowedDnsNamesIsMutable();
           allowedDnsNames_.set(index, value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4762,6 +4728,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           }
           ensureAllowedDnsNamesIsMutable();
           allowedDnsNames_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4787,6 +4754,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         public Builder addAllAllowedDnsNames(java.lang.Iterable<java.lang.String> values) {
           ensureAllowedDnsNamesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedDnsNames_);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4809,8 +4777,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearAllowedDnsNames() {
-          allowedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          allowedDnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          ;
           onChanged();
           return this;
         }
@@ -4840,18 +4809,19 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           checkByteStringIsUtf8(value);
           ensureAllowedDnsNamesIsMutable();
           allowedDnsNames_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringList allowedUris_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList allowedUris_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureAllowedUrisIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!allowedUris_.isModifiable()) {
             allowedUris_ = new com.google.protobuf.LazyStringArrayList(allowedUris_);
-            bitField0_ |= 0x00000002;
           }
+          bitField0_ |= 0x00000002;
         }
         /**
          *
@@ -4867,7 +4837,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
          * @return A list containing the allowedUris.
          */
         public com.google.protobuf.ProtocolStringList getAllowedUrisList() {
-          return allowedUris_.getUnmodifiableView();
+          allowedUris_.makeImmutable();
+          return allowedUris_;
         }
         /**
          *
@@ -4940,6 +4911,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           }
           ensureAllowedUrisIsMutable();
           allowedUris_.set(index, value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -4963,6 +4935,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           }
           ensureAllowedUrisIsMutable();
           allowedUris_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -4983,6 +4956,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         public Builder addAllAllowedUris(java.lang.Iterable<java.lang.String> values) {
           ensureAllowedUrisIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedUris_);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -5000,8 +4974,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearAllowedUris() {
-          allowedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          allowedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
+          ;
           onChanged();
           return this;
         }
@@ -5026,19 +5001,20 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           checkByteStringIsUtf8(value);
           ensureAllowedUrisIsMutable();
           allowedUris_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringList allowedEmailAddresses_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList allowedEmailAddresses_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureAllowedEmailAddressesIsMutable() {
-          if (!((bitField0_ & 0x00000004) != 0)) {
+          if (!allowedEmailAddresses_.isModifiable()) {
             allowedEmailAddresses_ =
                 new com.google.protobuf.LazyStringArrayList(allowedEmailAddresses_);
-            bitField0_ |= 0x00000004;
           }
+          bitField0_ |= 0x00000004;
         }
         /**
          *
@@ -5055,7 +5031,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
          * @return A list containing the allowedEmailAddresses.
          */
         public com.google.protobuf.ProtocolStringList getAllowedEmailAddressesList() {
-          return allowedEmailAddresses_.getUnmodifiableView();
+          allowedEmailAddresses_.makeImmutable();
+          return allowedEmailAddresses_;
         }
         /**
          *
@@ -5132,6 +5109,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           }
           ensureAllowedEmailAddressesIsMutable();
           allowedEmailAddresses_.set(index, value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -5156,6 +5134,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           }
           ensureAllowedEmailAddressesIsMutable();
           allowedEmailAddresses_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -5177,6 +5156,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         public Builder addAllAllowedEmailAddresses(java.lang.Iterable<java.lang.String> values) {
           ensureAllowedEmailAddressesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedEmailAddresses_);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -5195,8 +5175,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearAllowedEmailAddresses() {
-          allowedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          allowedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
+          ;
           onChanged();
           return this;
         }
@@ -5222,18 +5203,19 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           checkByteStringIsUtf8(value);
           ensureAllowedEmailAddressesIsMutable();
           allowedEmailAddresses_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringList allowedIps_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList allowedIps_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureAllowedIpsIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!allowedIps_.isModifiable()) {
             allowedIps_ = new com.google.protobuf.LazyStringArrayList(allowedIps_);
-            bitField0_ |= 0x00000008;
           }
+          bitField0_ |= 0x00000008;
         }
         /**
          *
@@ -5250,7 +5232,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
          * @return A list containing the allowedIps.
          */
         public com.google.protobuf.ProtocolStringList getAllowedIpsList() {
-          return allowedIps_.getUnmodifiableView();
+          allowedIps_.makeImmutable();
+          return allowedIps_;
         }
         /**
          *
@@ -5327,6 +5310,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           }
           ensureAllowedIpsIsMutable();
           allowedIps_.set(index, value);
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -5351,6 +5335,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           }
           ensureAllowedIpsIsMutable();
           allowedIps_.add(value);
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -5372,6 +5357,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         public Builder addAllAllowedIps(java.lang.Iterable<java.lang.String> values) {
           ensureAllowedIpsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedIps_);
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -5390,8 +5376,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearAllowedIps() {
-          allowedIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          allowedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
+          ;
           onChanged();
           return this;
         }
@@ -5417,6 +5404,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           checkByteStringIsUtf8(value);
           ensureAllowedIpsIsMutable();
           allowedIps_.add(value);
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -5667,11 +5655,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new IssuanceModes();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6348,6 +6331,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     }
 
     private int configPolicyCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object configPolicy_;
 
     public enum ConfigPolicyCase
@@ -6632,7 +6617,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     public static final int ALLOWED_COMMON_NAMES_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList allowedCommonNames_;
+    private com.google.protobuf.LazyStringArrayList allowedCommonNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -7275,8 +7261,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           allowedLocationsAndOrganizationsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
-        allowedCommonNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        allowedCommonNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         allowedSans_ = null;
         if (allowedSansBuilder_ != null) {
           allowedSansBuilder_.dispose();
@@ -7355,11 +7340,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           result.allowedLocationsAndOrganizations_ =
               allowedLocationsAndOrganizationsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
-          allowedCommonNames_ = allowedCommonNames_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.allowedCommonNames_ = allowedCommonNames_;
       }
 
       private void buildPartial0(
@@ -7367,6 +7347,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
                   .CertificateAuthorityPolicy
               result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          allowedCommonNames_.makeImmutable();
+          result.allowedCommonNames_ = allowedCommonNames_;
+        }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.allowedSans_ =
               allowedSansBuilder_ == null ? allowedSans_ : allowedSansBuilder_.build();
@@ -7486,7 +7470,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         if (!other.allowedCommonNames_.isEmpty()) {
           if (allowedCommonNames_.isEmpty()) {
             allowedCommonNames_ = other.allowedCommonNames_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureAllowedCommonNamesIsMutable();
             allowedCommonNames_.addAll(other.allowedCommonNames_);
@@ -8625,14 +8609,14 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         return allowedLocationsAndOrganizationsBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList allowedCommonNames_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList allowedCommonNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAllowedCommonNamesIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!allowedCommonNames_.isModifiable()) {
           allowedCommonNames_ = new com.google.protobuf.LazyStringArrayList(allowedCommonNames_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -8650,7 +8634,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        * @return A list containing the allowedCommonNames.
        */
       public com.google.protobuf.ProtocolStringList getAllowedCommonNamesList() {
-        return allowedCommonNames_.getUnmodifiableView();
+        allowedCommonNames_.makeImmutable();
+        return allowedCommonNames_;
       }
       /**
        *
@@ -8731,6 +8716,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         ensureAllowedCommonNamesIsMutable();
         allowedCommonNames_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -8756,6 +8742,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         ensureAllowedCommonNamesIsMutable();
         allowedCommonNames_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -8778,6 +8765,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       public Builder addAllAllowedCommonNames(java.lang.Iterable<java.lang.String> values) {
         ensureAllowedCommonNamesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedCommonNames_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -8797,8 +8785,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearAllowedCommonNames() {
-        allowedCommonNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        allowedCommonNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -8825,6 +8814,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureAllowedCommonNamesIsMutable();
         allowedCommonNames_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -9723,11 +9713,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AccessUrls();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10637,8 +10622,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     com.google.cloud.security.privateca.v1beta1.CertificateAuthority.SignHashAlgorithm
         getAlgorithm();
 
-    public com.google.cloud.security.privateca.v1beta1.CertificateAuthority.KeyVersionSpec
-            .KeyVersionCase
+    com.google.cloud.security.privateca.v1beta1.CertificateAuthority.KeyVersionSpec.KeyVersionCase
         getKeyVersionCase();
   }
   /**
@@ -10669,11 +10653,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       return new KeyVersionSpec();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.security.privateca.v1beta1.PrivateCaResourcesProto
           .internal_static_google_cloud_security_privateca_v1beta1_CertificateAuthority_KeyVersionSpec_descriptor;
@@ -10691,6 +10670,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     }
 
     private int keyVersionCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object keyVersion_;
 
     public enum KeyVersionCase
@@ -12251,7 +12232,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
   public static final int PEM_CA_CERTIFICATES_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList pemCaCertificates_;
+  private com.google.protobuf.LazyStringArrayList pemCaCertificates_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -13283,8 +13265,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         subordinateConfigBuilder_ = null;
       }
       state_ = 0;
-      pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (caCertificateDescriptionsBuilder_ == null) {
         caCertificateDescriptions_ = java.util.Collections.emptyList();
       } else {
@@ -13352,11 +13333,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
 
     private void buildPartialRepeatedFields(
         com.google.cloud.security.privateca.v1beta1.CertificateAuthority result) {
-      if (((bitField0_ & 0x00000400) != 0)) {
-        pemCaCertificates_ = pemCaCertificates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.pemCaCertificates_ = pemCaCertificates_;
       if (caCertificateDescriptionsBuilder_ == null) {
         if (((bitField0_ & 0x00000800) != 0)) {
           caCertificateDescriptions_ =
@@ -13408,6 +13384,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        pemCaCertificates_.makeImmutable();
+        result.pemCaCertificates_ = pemCaCertificates_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.gcsBucket_ = gcsBucket_;
@@ -13513,7 +13493,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       if (!other.pemCaCertificates_.isEmpty()) {
         if (pemCaCertificates_.isEmpty()) {
           pemCaCertificates_ = other.pemCaCertificates_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensurePemCaCertificatesIsMutable();
           pemCaCertificates_.addAll(other.pemCaCertificates_);
@@ -15502,14 +15482,14 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList pemCaCertificates_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList pemCaCertificates_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePemCaCertificatesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!pemCaCertificates_.isModifiable()) {
         pemCaCertificates_ = new com.google.protobuf.LazyStringArrayList(pemCaCertificates_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -15527,7 +15507,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * @return A list containing the pemCaCertificates.
      */
     public com.google.protobuf.ProtocolStringList getPemCaCertificatesList() {
-      return pemCaCertificates_.getUnmodifiableView();
+      pemCaCertificates_.makeImmutable();
+      return pemCaCertificates_;
     }
     /**
      *
@@ -15608,6 +15589,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       }
       ensurePemCaCertificatesIsMutable();
       pemCaCertificates_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -15633,6 +15615,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       }
       ensurePemCaCertificatesIsMutable();
       pemCaCertificates_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -15655,6 +15638,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     public Builder addAllPemCaCertificates(java.lang.Iterable<java.lang.String> values) {
       ensurePemCaCertificatesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pemCaCertificates_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -15674,8 +15658,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPemCaCertificates() {
-      pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -15702,6 +15687,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensurePemCaCertificatesIsMutable();
       pemCaCertificates_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

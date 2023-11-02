@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
   }
 
   private OcrParams() {
-    languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OcrParams();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
   public static final int LANGUAGE_HINTS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList languageHints_;
+  private com.google.protobuf.LazyStringArrayList languageHints_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -363,8 +359,7 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -392,7 +387,6 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta2.OcrParams buildPartial() {
       com.google.cloud.documentai.v1beta2.OcrParams result =
           new com.google.cloud.documentai.v1beta2.OcrParams(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -400,16 +394,12 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.documentai.v1beta2.OcrParams result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        languageHints_ = languageHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.languageHints_ = languageHints_;
-    }
-
     private void buildPartial0(com.google.cloud.documentai.v1beta2.OcrParams result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        languageHints_.makeImmutable();
+        result.languageHints_ = languageHints_;
+      }
     }
 
     @java.lang.Override
@@ -460,7 +450,7 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
       if (!other.languageHints_.isEmpty()) {
         if (languageHints_.isEmpty()) {
           languageHints_ = other.languageHints_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureLanguageHintsIsMutable();
           languageHints_.addAll(other.languageHints_);
@@ -519,14 +509,14 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList languageHints_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList languageHints_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLanguageHintsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!languageHints_.isModifiable()) {
         languageHints_ = new com.google.protobuf.LazyStringArrayList(languageHints_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -547,7 +537,8 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the languageHints.
      */
     public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
-      return languageHints_.getUnmodifiableView();
+      languageHints_.makeImmutable();
+      return languageHints_;
     }
     /**
      *
@@ -640,6 +631,7 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLanguageHintsIsMutable();
       languageHints_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,6 +660,7 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLanguageHintsIsMutable();
       languageHints_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,6 +686,7 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLanguageHints(java.lang.Iterable<java.lang.String> values) {
       ensureLanguageHintsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, languageHints_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +709,9 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLanguageHints() {
-      languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -746,6 +741,7 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLanguageHintsIsMutable();
       languageHints_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

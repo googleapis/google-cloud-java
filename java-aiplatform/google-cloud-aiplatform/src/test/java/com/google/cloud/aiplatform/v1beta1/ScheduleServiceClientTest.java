@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -696,6 +696,61 @@ public class ScheduleServiceClientTest {
       String name = "name3373707";
       boolean catchUp = true;
       client.resumeSchedule(name, catchUp);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateScheduleTest() throws Exception {
+    Schedule expectedResponse =
+        Schedule.newBuilder()
+            .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setMaxRunCount(-845001408)
+            .setStartedRunCount(-479303651)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastPauseTime(Timestamp.newBuilder().build())
+            .setLastResumeTime(Timestamp.newBuilder().build())
+            .setMaxConcurrentRunCount(-1478623794)
+            .setAllowQueueing(true)
+            .setCatchUp(true)
+            .setLastScheduledRunResponse(Schedule.RunResponse.newBuilder().build())
+            .build();
+    mockScheduleService.addResponse(expectedResponse);
+
+    Schedule schedule = Schedule.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Schedule actualResponse = client.updateSchedule(schedule, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockScheduleService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateScheduleRequest actualRequest = ((UpdateScheduleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(schedule, actualRequest.getSchedule());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateScheduleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockScheduleService.addException(exception);
+
+    try {
+      Schedule schedule = Schedule.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSchedule(schedule, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

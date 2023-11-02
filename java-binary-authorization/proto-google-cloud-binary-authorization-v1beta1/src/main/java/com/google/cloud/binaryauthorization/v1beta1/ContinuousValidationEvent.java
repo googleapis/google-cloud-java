@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ContinuousValidationEvent();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -119,6 +114,31 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
      * @return The bytes for pod.
      */
     com.google.protobuf.ByteString getPodBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the policy.
+     * </pre>
+     *
+     * <code>string policy_name = 8;</code>
+     *
+     * @return The policyName.
+     */
+    java.lang.String getPolicyName();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the policy.
+     * </pre>
+     *
+     * <code>string policy_name = 8;</code>
+     *
+     * @return The bytes for policyName.
+     */
+    com.google.protobuf.ByteString getPolicyNameBytes();
 
     /**
      *
@@ -318,6 +338,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     private ContinuousValidationPodEvent() {
       podNamespace_ = "";
       pod_ = "";
+      policyName_ = "";
       verdict_ = 0;
       images_ = java.util.Collections.emptyList();
     }
@@ -326,11 +347,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ContinuousValidationPodEvent();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -577,6 +593,78 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * @return The bytes for description.
        */
       com.google.protobuf.ByteString getDescriptionBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * List of check results.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult>
+          getCheckResultsList();
+      /**
+       *
+       *
+       * <pre>
+       * List of check results.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+       * </code>
+       */
+      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+              .ContinuousValidationPodEvent.ImageDetails.CheckResult
+          getCheckResults(int index);
+      /**
+       *
+       *
+       * <pre>
+       * List of check results.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+       * </code>
+       */
+      int getCheckResultsCount();
+      /**
+       *
+       *
+       * <pre>
+       * List of check results.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResultOrBuilder>
+          getCheckResultsOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * List of check results.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+       * </code>
+       */
+      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+              .ContinuousValidationPodEvent.ImageDetails.CheckResultOrBuilder
+          getCheckResultsOrBuilder(int index);
     }
     /**
      *
@@ -602,17 +690,13 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         image_ = "";
         result_ = 0;
         description_ = "";
+        checkResults_ = java.util.Collections.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ImageDetails();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -796,6 +880,3696 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         // @@protoc_insertion_point(enum_scope:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.AuditResult)
       }
 
+      public interface CheckResultOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * The index of the check set.
+         * </pre>
+         *
+         * <code>string check_set_index = 1;</code>
+         *
+         * @return The checkSetIndex.
+         */
+        java.lang.String getCheckSetIndex();
+        /**
+         *
+         *
+         * <pre>
+         * The index of the check set.
+         * </pre>
+         *
+         * <code>string check_set_index = 1;</code>
+         *
+         * @return The bytes for checkSetIndex.
+         */
+        com.google.protobuf.ByteString getCheckSetIndexBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The name of the check set.
+         * </pre>
+         *
+         * <code>string check_set_name = 2;</code>
+         *
+         * @return The checkSetName.
+         */
+        java.lang.String getCheckSetName();
+        /**
+         *
+         *
+         * <pre>
+         * The name of the check set.
+         * </pre>
+         *
+         * <code>string check_set_name = 2;</code>
+         *
+         * @return The bytes for checkSetName.
+         */
+        com.google.protobuf.ByteString getCheckSetNameBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The scope of the check set.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+         * </code>
+         *
+         * @return Whether the checkSetScope field is set.
+         */
+        boolean hasCheckSetScope();
+        /**
+         *
+         *
+         * <pre>
+         * The scope of the check set.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+         * </code>
+         *
+         * @return The checkSetScope.
+         */
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+            getCheckSetScope();
+        /**
+         *
+         *
+         * <pre>
+         * The scope of the check set.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+         * </code>
+         */
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScopeOrBuilder
+            getCheckSetScopeOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * The index of the check.
+         * </pre>
+         *
+         * <code>string check_index = 4;</code>
+         *
+         * @return The checkIndex.
+         */
+        java.lang.String getCheckIndex();
+        /**
+         *
+         *
+         * <pre>
+         * The index of the check.
+         * </pre>
+         *
+         * <code>string check_index = 4;</code>
+         *
+         * @return The bytes for checkIndex.
+         */
+        com.google.protobuf.ByteString getCheckIndexBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The name of the check.
+         * </pre>
+         *
+         * <code>string check_name = 5;</code>
+         *
+         * @return The checkName.
+         */
+        java.lang.String getCheckName();
+        /**
+         *
+         *
+         * <pre>
+         * The name of the check.
+         * </pre>
+         *
+         * <code>string check_name = 5;</code>
+         *
+         * @return The bytes for checkName.
+         */
+        com.google.protobuf.ByteString getCheckNameBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The type of the check.
+         * </pre>
+         *
+         * <code>string check_type = 6;</code>
+         *
+         * @return The checkType.
+         */
+        java.lang.String getCheckType();
+        /**
+         *
+         *
+         * <pre>
+         * The type of the check.
+         * </pre>
+         *
+         * <code>string check_type = 6;</code>
+         *
+         * @return The bytes for checkType.
+         */
+        com.google.protobuf.ByteString getCheckTypeBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The verdict of this check.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict verdict = 7;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for verdict.
+         */
+        int getVerdictValue();
+        /**
+         *
+         *
+         * <pre>
+         * The verdict of this check.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict verdict = 7;
+         * </code>
+         *
+         * @return The verdict.
+         */
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict
+            getVerdict();
+
+        /**
+         *
+         *
+         * <pre>
+         * User-friendly explanation of this check result.
+         * </pre>
+         *
+         * <code>string explanation = 8;</code>
+         *
+         * @return The explanation.
+         */
+        java.lang.String getExplanation();
+        /**
+         *
+         *
+         * <pre>
+         * User-friendly explanation of this check result.
+         * </pre>
+         *
+         * <code>string explanation = 8;</code>
+         *
+         * @return The bytes for explanation.
+         */
+        com.google.protobuf.ByteString getExplanationBytes();
+      }
+      /**
+       * Protobuf type {@code
+       * google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult}
+       */
+      public static final class CheckResult extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult)
+          CheckResultOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use CheckResult.newBuilder() to construct.
+        private CheckResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private CheckResult() {
+          checkSetIndex_ = "";
+          checkSetName_ = "";
+          checkIndex_ = "";
+          checkName_ = "";
+          checkType_ = "";
+          verdict_ = 0;
+          explanation_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new CheckResult();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
+              .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
+              .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.class,
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder.class);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Result of evaluating one check.
+         * </pre>
+         *
+         * Protobuf enum {@code
+         * google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict}
+         */
+        public enum CheckVerdict implements com.google.protobuf.ProtocolMessageEnum {
+          /**
+           *
+           *
+           * <pre>
+           * We should always have a verdict. This is an error.
+           * </pre>
+           *
+           * <code>CHECK_VERDICT_UNSPECIFIED = 0;</code>
+           */
+          CHECK_VERDICT_UNSPECIFIED(0),
+          /**
+           *
+           *
+           * <pre>
+           * The check was successfully evaluated and the image did not satisfy
+           * the check.
+           * </pre>
+           *
+           * <code>NON_CONFORMANT = 1;</code>
+           */
+          NON_CONFORMANT(1),
+          UNRECOGNIZED(-1),
+          ;
+
+          /**
+           *
+           *
+           * <pre>
+           * We should always have a verdict. This is an error.
+           * </pre>
+           *
+           * <code>CHECK_VERDICT_UNSPECIFIED = 0;</code>
+           */
+          public static final int CHECK_VERDICT_UNSPECIFIED_VALUE = 0;
+          /**
+           *
+           *
+           * <pre>
+           * The check was successfully evaluated and the image did not satisfy
+           * the check.
+           * </pre>
+           *
+           * <code>NON_CONFORMANT = 1;</code>
+           */
+          public static final int NON_CONFORMANT_VALUE = 1;
+
+          public final int getNumber() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalArgumentException(
+                  "Can't get the number of an unknown enum value.");
+            }
+            return value;
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static CheckVerdict valueOf(int value) {
+            return forNumber(value);
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           */
+          public static CheckVerdict forNumber(int value) {
+            switch (value) {
+              case 0:
+                return CHECK_VERDICT_UNSPECIFIED;
+              case 1:
+                return NON_CONFORMANT;
+              default:
+                return null;
+            }
+          }
+
+          public static com.google.protobuf.Internal.EnumLiteMap<CheckVerdict>
+              internalGetValueMap() {
+            return internalValueMap;
+          }
+
+          private static final com.google.protobuf.Internal.EnumLiteMap<CheckVerdict>
+              internalValueMap =
+                  new com.google.protobuf.Internal.EnumLiteMap<CheckVerdict>() {
+                    public CheckVerdict findValueByNumber(int number) {
+                      return CheckVerdict.forNumber(number);
+                    }
+                  };
+
+          public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalStateException(
+                  "Can't get the descriptor of an unrecognized enum value.");
+            }
+            return getDescriptor().getValues().get(ordinal());
+          }
+
+          public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+            return getDescriptor();
+          }
+
+          public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+            return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.getDescriptor()
+                .getEnumTypes()
+                .get(0);
+          }
+
+          private static final CheckVerdict[] VALUES = values();
+
+          public static CheckVerdict valueOf(
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+              throw new java.lang.IllegalArgumentException(
+                  "EnumValueDescriptor is not for this type.");
+            }
+            if (desc.getIndex() == -1) {
+              return UNRECOGNIZED;
+            }
+            return VALUES[desc.getIndex()];
+          }
+
+          private final int value;
+
+          private CheckVerdict(int value) {
+            this.value = value;
+          }
+
+          // @@protoc_insertion_point(enum_scope:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict)
+        }
+
+        public interface CheckSetScopeOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope)
+            com.google.protobuf.MessageOrBuilder {
+
+          /**
+           *
+           *
+           * <pre>
+           * Matches a single Kubernetes service account, e.g.
+           * 'my-namespace:my-service-account'.
+           * `kubernetes_service_account` scope is always more specific than
+           * `kubernetes_namespace` scope for the same namespace.
+           * </pre>
+           *
+           * <code>string kubernetes_service_account = 1;</code>
+           *
+           * @return Whether the kubernetesServiceAccount field is set.
+           */
+          boolean hasKubernetesServiceAccount();
+          /**
+           *
+           *
+           * <pre>
+           * Matches a single Kubernetes service account, e.g.
+           * 'my-namespace:my-service-account'.
+           * `kubernetes_service_account` scope is always more specific than
+           * `kubernetes_namespace` scope for the same namespace.
+           * </pre>
+           *
+           * <code>string kubernetes_service_account = 1;</code>
+           *
+           * @return The kubernetesServiceAccount.
+           */
+          java.lang.String getKubernetesServiceAccount();
+          /**
+           *
+           *
+           * <pre>
+           * Matches a single Kubernetes service account, e.g.
+           * 'my-namespace:my-service-account'.
+           * `kubernetes_service_account` scope is always more specific than
+           * `kubernetes_namespace` scope for the same namespace.
+           * </pre>
+           *
+           * <code>string kubernetes_service_account = 1;</code>
+           *
+           * @return The bytes for kubernetesServiceAccount.
+           */
+          com.google.protobuf.ByteString getKubernetesServiceAccountBytes();
+
+          /**
+           *
+           *
+           * <pre>
+           * Matches all Kubernetes service accounts in the provided
+           * namespace, unless a more specific `kubernetes_service_account`
+           * scope already matched.
+           * </pre>
+           *
+           * <code>string kubernetes_namespace = 2;</code>
+           *
+           * @return Whether the kubernetesNamespace field is set.
+           */
+          boolean hasKubernetesNamespace();
+          /**
+           *
+           *
+           * <pre>
+           * Matches all Kubernetes service accounts in the provided
+           * namespace, unless a more specific `kubernetes_service_account`
+           * scope already matched.
+           * </pre>
+           *
+           * <code>string kubernetes_namespace = 2;</code>
+           *
+           * @return The kubernetesNamespace.
+           */
+          java.lang.String getKubernetesNamespace();
+          /**
+           *
+           *
+           * <pre>
+           * Matches all Kubernetes service accounts in the provided
+           * namespace, unless a more specific `kubernetes_service_account`
+           * scope already matched.
+           * </pre>
+           *
+           * <code>string kubernetes_namespace = 2;</code>
+           *
+           * @return The bytes for kubernetesNamespace.
+           */
+          com.google.protobuf.ByteString getKubernetesNamespaceBytes();
+
+          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope.ScopeCase
+              getScopeCase();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A scope specifier for check sets.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope}
+         */
+        public static final class CheckSetScope extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope)
+            CheckSetScopeOrBuilder {
+          private static final long serialVersionUID = 0L;
+          // Use CheckSetScope.newBuilder() to construct.
+          private CheckSetScope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+          }
+
+          private CheckSetScope() {}
+
+          @java.lang.Override
+          @SuppressWarnings({"unused"})
+          protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new CheckSetScope();
+          }
+
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
+                .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_CheckSetScope_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
+                .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_CheckSetScope_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope.class,
+                    com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope.Builder
+                        .class);
+          }
+
+          private int scopeCase_ = 0;
+
+          @SuppressWarnings("serial")
+          private java.lang.Object scope_;
+
+          public enum ScopeCase
+              implements
+                  com.google.protobuf.Internal.EnumLite,
+                  com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+            KUBERNETES_SERVICE_ACCOUNT(1),
+            KUBERNETES_NAMESPACE(2),
+            SCOPE_NOT_SET(0);
+            private final int value;
+
+            private ScopeCase(int value) {
+              this.value = value;
+            }
+            /**
+             * @param value The number of the enum to look for.
+             * @return The enum associated with the given number.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static ScopeCase valueOf(int value) {
+              return forNumber(value);
+            }
+
+            public static ScopeCase forNumber(int value) {
+              switch (value) {
+                case 1:
+                  return KUBERNETES_SERVICE_ACCOUNT;
+                case 2:
+                  return KUBERNETES_NAMESPACE;
+                case 0:
+                  return SCOPE_NOT_SET;
+                default:
+                  return null;
+              }
+            }
+
+            public int getNumber() {
+              return this.value;
+            }
+          };
+
+          public ScopeCase getScopeCase() {
+            return ScopeCase.forNumber(scopeCase_);
+          }
+
+          public static final int KUBERNETES_SERVICE_ACCOUNT_FIELD_NUMBER = 1;
+          /**
+           *
+           *
+           * <pre>
+           * Matches a single Kubernetes service account, e.g.
+           * 'my-namespace:my-service-account'.
+           * `kubernetes_service_account` scope is always more specific than
+           * `kubernetes_namespace` scope for the same namespace.
+           * </pre>
+           *
+           * <code>string kubernetes_service_account = 1;</code>
+           *
+           * @return Whether the kubernetesServiceAccount field is set.
+           */
+          public boolean hasKubernetesServiceAccount() {
+            return scopeCase_ == 1;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Matches a single Kubernetes service account, e.g.
+           * 'my-namespace:my-service-account'.
+           * `kubernetes_service_account` scope is always more specific than
+           * `kubernetes_namespace` scope for the same namespace.
+           * </pre>
+           *
+           * <code>string kubernetes_service_account = 1;</code>
+           *
+           * @return The kubernetesServiceAccount.
+           */
+          public java.lang.String getKubernetesServiceAccount() {
+            java.lang.Object ref = "";
+            if (scopeCase_ == 1) {
+              ref = scope_;
+            }
+            if (ref instanceof java.lang.String) {
+              return (java.lang.String) ref;
+            } else {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (scopeCase_ == 1) {
+                scope_ = s;
+              }
+              return s;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Matches a single Kubernetes service account, e.g.
+           * 'my-namespace:my-service-account'.
+           * `kubernetes_service_account` scope is always more specific than
+           * `kubernetes_namespace` scope for the same namespace.
+           * </pre>
+           *
+           * <code>string kubernetes_service_account = 1;</code>
+           *
+           * @return The bytes for kubernetesServiceAccount.
+           */
+          public com.google.protobuf.ByteString getKubernetesServiceAccountBytes() {
+            java.lang.Object ref = "";
+            if (scopeCase_ == 1) {
+              ref = scope_;
+            }
+            if (ref instanceof java.lang.String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              if (scopeCase_ == 1) {
+                scope_ = b;
+              }
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          public static final int KUBERNETES_NAMESPACE_FIELD_NUMBER = 2;
+          /**
+           *
+           *
+           * <pre>
+           * Matches all Kubernetes service accounts in the provided
+           * namespace, unless a more specific `kubernetes_service_account`
+           * scope already matched.
+           * </pre>
+           *
+           * <code>string kubernetes_namespace = 2;</code>
+           *
+           * @return Whether the kubernetesNamespace field is set.
+           */
+          public boolean hasKubernetesNamespace() {
+            return scopeCase_ == 2;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Matches all Kubernetes service accounts in the provided
+           * namespace, unless a more specific `kubernetes_service_account`
+           * scope already matched.
+           * </pre>
+           *
+           * <code>string kubernetes_namespace = 2;</code>
+           *
+           * @return The kubernetesNamespace.
+           */
+          public java.lang.String getKubernetesNamespace() {
+            java.lang.Object ref = "";
+            if (scopeCase_ == 2) {
+              ref = scope_;
+            }
+            if (ref instanceof java.lang.String) {
+              return (java.lang.String) ref;
+            } else {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (scopeCase_ == 2) {
+                scope_ = s;
+              }
+              return s;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Matches all Kubernetes service accounts in the provided
+           * namespace, unless a more specific `kubernetes_service_account`
+           * scope already matched.
+           * </pre>
+           *
+           * <code>string kubernetes_namespace = 2;</code>
+           *
+           * @return The bytes for kubernetesNamespace.
+           */
+          public com.google.protobuf.ByteString getKubernetesNamespaceBytes() {
+            java.lang.Object ref = "";
+            if (scopeCase_ == 2) {
+              ref = scope_;
+            }
+            if (ref instanceof java.lang.String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              if (scopeCase_ == 2) {
+                scope_ = b;
+              }
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          private byte memoizedIsInitialized = -1;
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+          }
+
+          @java.lang.Override
+          public void writeTo(com.google.protobuf.CodedOutputStream output)
+              throws java.io.IOException {
+            if (scopeCase_ == 1) {
+              com.google.protobuf.GeneratedMessageV3.writeString(output, 1, scope_);
+            }
+            if (scopeCase_ == 2) {
+              com.google.protobuf.GeneratedMessageV3.writeString(output, 2, scope_);
+            }
+            getUnknownFields().writeTo(output);
+          }
+
+          @java.lang.Override
+          public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (scopeCase_ == 1) {
+              size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, scope_);
+            }
+            if (scopeCase_ == 2) {
+              size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, scope_);
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
+          }
+
+          @java.lang.Override
+          public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+              return true;
+            }
+            if (!(obj
+                instanceof
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope)) {
+              return super.equals(obj);
+            }
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                other =
+                    (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                            .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope)
+                        obj;
+
+            if (!getScopeCase().equals(other.getScopeCase())) return false;
+            switch (scopeCase_) {
+              case 1:
+                if (!getKubernetesServiceAccount().equals(other.getKubernetesServiceAccount()))
+                  return false;
+                break;
+              case 2:
+                if (!getKubernetesNamespace().equals(other.getKubernetesNamespace())) return false;
+                break;
+              case 0:
+              default:
+            }
+            if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+            return true;
+          }
+
+          @java.lang.Override
+          public int hashCode() {
+            if (memoizedHashCode != 0) {
+              return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            switch (scopeCase_) {
+              case 1:
+                hash = (37 * hash) + KUBERNETES_SERVICE_ACCOUNT_FIELD_NUMBER;
+                hash = (53 * hash) + getKubernetesServiceAccount().hashCode();
+                break;
+              case 2:
+                hash = (37 * hash) + KUBERNETES_NAMESPACE_FIELD_NUMBER;
+                hash = (53 * hash) + getKubernetesNamespace().hashCode();
+                break;
+              case 0:
+              default:
+            }
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseFrom(java.nio.ByteBuffer data)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseFrom(
+                  java.nio.ByteBuffer data,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseFrom(com.google.protobuf.ByteString data)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseFrom(
+                  com.google.protobuf.ByteString data,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseFrom(
+                  java.io.InputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                PARSER, input);
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseDelimitedFrom(
+                  java.io.InputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              parseFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          @java.lang.Override
+          public Builder newBuilderForType() {
+            return newBuilder();
+          }
+
+          public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+          }
+
+          public static Builder newBuilder(
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                  prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+          }
+
+          @java.lang.Override
+          public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+          }
+
+          @java.lang.Override
+          protected Builder newBuilderForType(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A scope specifier for check sets.
+           * </pre>
+           *
+           * Protobuf type {@code
+           * google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope}
+           */
+          public static final class Builder
+              extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+              implements
+              // @@protoc_insertion_point(builder_implements:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope)
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScopeOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+              return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
+                  .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_CheckSetScope_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+              return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
+                  .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_CheckSetScope_fieldAccessorTable
+                  .ensureFieldAccessorsInitialized(
+                      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                          .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                          .class,
+                      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                          .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                          .Builder.class);
+            }
+
+            // Construct using
+            // com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope.newBuilder()
+            private Builder() {}
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+              super(parent);
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+              super.clear();
+              bitField0_ = 0;
+              scopeCase_ = 0;
+              scope_ = null;
+              return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+              return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
+                  .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_CheckSetScope_descriptor;
+            }
+
+            @java.lang.Override
+            public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                getDefaultInstanceForType() {
+              return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                  .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                build() {
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                  result = buildPartial();
+              if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+              }
+              return result;
+            }
+
+            @java.lang.Override
+            public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                buildPartial() {
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                  result =
+                      new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                          .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope(
+                          this);
+              if (bitField0_ != 0) {
+                buildPartial0(result);
+              }
+              buildPartialOneofs(result);
+              onBuilt();
+              return result;
+            }
+
+            private void buildPartial0(
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                    result) {
+              int from_bitField0_ = bitField0_;
+            }
+
+            private void buildPartialOneofs(
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                    result) {
+              result.scopeCase_ = scopeCase_;
+              result.scope_ = this.scope_;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+              return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+              return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+              return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index,
+                java.lang.Object value) {
+              return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+              return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+              if (other
+                  instanceof
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope) {
+                return mergeFrom(
+                    (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                            .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope)
+                        other);
+              } else {
+                super.mergeFrom(other);
+                return this;
+              }
+            }
+
+            public Builder mergeFrom(
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                    other) {
+              if (other
+                  == com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                      .getDefaultInstance()) return this;
+              switch (other.getScopeCase()) {
+                case KUBERNETES_SERVICE_ACCOUNT:
+                  {
+                    scopeCase_ = 1;
+                    scope_ = other.scope_;
+                    onChanged();
+                    break;
+                  }
+                case KUBERNETES_NAMESPACE:
+                  {
+                    scopeCase_ = 2;
+                    scope_ = other.scope_;
+                    onChanged();
+                    break;
+                  }
+                case SCOPE_NOT_SET:
+                  {
+                    break;
+                  }
+              }
+              this.mergeUnknownFields(other.getUnknownFields());
+              onChanged();
+              return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+              return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+              if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+              }
+              try {
+                boolean done = false;
+                while (!done) {
+                  int tag = input.readTag();
+                  switch (tag) {
+                    case 0:
+                      done = true;
+                      break;
+                    case 10:
+                      {
+                        java.lang.String s = input.readStringRequireUtf8();
+                        scopeCase_ = 1;
+                        scope_ = s;
+                        break;
+                      } // case 10
+                    case 18:
+                      {
+                        java.lang.String s = input.readStringRequireUtf8();
+                        scopeCase_ = 2;
+                        scope_ = s;
+                        break;
+                      } // case 18
+                    default:
+                      {
+                        if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                          done = true; // was an endgroup tag
+                        }
+                        break;
+                      } // default:
+                  } // switch (tag)
+                } // while (!done)
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.unwrapIOException();
+              } finally {
+                onChanged();
+              } // finally
+              return this;
+            }
+
+            private int scopeCase_ = 0;
+            private java.lang.Object scope_;
+
+            public ScopeCase getScopeCase() {
+              return ScopeCase.forNumber(scopeCase_);
+            }
+
+            public Builder clearScope() {
+              scopeCase_ = 0;
+              scope_ = null;
+              onChanged();
+              return this;
+            }
+
+            private int bitField0_;
+
+            /**
+             *
+             *
+             * <pre>
+             * Matches a single Kubernetes service account, e.g.
+             * 'my-namespace:my-service-account'.
+             * `kubernetes_service_account` scope is always more specific than
+             * `kubernetes_namespace` scope for the same namespace.
+             * </pre>
+             *
+             * <code>string kubernetes_service_account = 1;</code>
+             *
+             * @return Whether the kubernetesServiceAccount field is set.
+             */
+            @java.lang.Override
+            public boolean hasKubernetesServiceAccount() {
+              return scopeCase_ == 1;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Matches a single Kubernetes service account, e.g.
+             * 'my-namespace:my-service-account'.
+             * `kubernetes_service_account` scope is always more specific than
+             * `kubernetes_namespace` scope for the same namespace.
+             * </pre>
+             *
+             * <code>string kubernetes_service_account = 1;</code>
+             *
+             * @return The kubernetesServiceAccount.
+             */
+            @java.lang.Override
+            public java.lang.String getKubernetesServiceAccount() {
+              java.lang.Object ref = "";
+              if (scopeCase_ == 1) {
+                ref = scope_;
+              }
+              if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (scopeCase_ == 1) {
+                  scope_ = s;
+                }
+                return s;
+              } else {
+                return (java.lang.String) ref;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Matches a single Kubernetes service account, e.g.
+             * 'my-namespace:my-service-account'.
+             * `kubernetes_service_account` scope is always more specific than
+             * `kubernetes_namespace` scope for the same namespace.
+             * </pre>
+             *
+             * <code>string kubernetes_service_account = 1;</code>
+             *
+             * @return The bytes for kubernetesServiceAccount.
+             */
+            @java.lang.Override
+            public com.google.protobuf.ByteString getKubernetesServiceAccountBytes() {
+              java.lang.Object ref = "";
+              if (scopeCase_ == 1) {
+                ref = scope_;
+              }
+              if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                if (scopeCase_ == 1) {
+                  scope_ = b;
+                }
+                return b;
+              } else {
+                return (com.google.protobuf.ByteString) ref;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Matches a single Kubernetes service account, e.g.
+             * 'my-namespace:my-service-account'.
+             * `kubernetes_service_account` scope is always more specific than
+             * `kubernetes_namespace` scope for the same namespace.
+             * </pre>
+             *
+             * <code>string kubernetes_service_account = 1;</code>
+             *
+             * @param value The kubernetesServiceAccount to set.
+             * @return This builder for chaining.
+             */
+            public Builder setKubernetesServiceAccount(java.lang.String value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              scopeCase_ = 1;
+              scope_ = value;
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Matches a single Kubernetes service account, e.g.
+             * 'my-namespace:my-service-account'.
+             * `kubernetes_service_account` scope is always more specific than
+             * `kubernetes_namespace` scope for the same namespace.
+             * </pre>
+             *
+             * <code>string kubernetes_service_account = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearKubernetesServiceAccount() {
+              if (scopeCase_ == 1) {
+                scopeCase_ = 0;
+                scope_ = null;
+                onChanged();
+              }
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Matches a single Kubernetes service account, e.g.
+             * 'my-namespace:my-service-account'.
+             * `kubernetes_service_account` scope is always more specific than
+             * `kubernetes_namespace` scope for the same namespace.
+             * </pre>
+             *
+             * <code>string kubernetes_service_account = 1;</code>
+             *
+             * @param value The bytes for kubernetesServiceAccount to set.
+             * @return This builder for chaining.
+             */
+            public Builder setKubernetesServiceAccountBytes(com.google.protobuf.ByteString value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              checkByteStringIsUtf8(value);
+              scopeCase_ = 1;
+              scope_ = value;
+              onChanged();
+              return this;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * Matches all Kubernetes service accounts in the provided
+             * namespace, unless a more specific `kubernetes_service_account`
+             * scope already matched.
+             * </pre>
+             *
+             * <code>string kubernetes_namespace = 2;</code>
+             *
+             * @return Whether the kubernetesNamespace field is set.
+             */
+            @java.lang.Override
+            public boolean hasKubernetesNamespace() {
+              return scopeCase_ == 2;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Matches all Kubernetes service accounts in the provided
+             * namespace, unless a more specific `kubernetes_service_account`
+             * scope already matched.
+             * </pre>
+             *
+             * <code>string kubernetes_namespace = 2;</code>
+             *
+             * @return The kubernetesNamespace.
+             */
+            @java.lang.Override
+            public java.lang.String getKubernetesNamespace() {
+              java.lang.Object ref = "";
+              if (scopeCase_ == 2) {
+                ref = scope_;
+              }
+              if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (scopeCase_ == 2) {
+                  scope_ = s;
+                }
+                return s;
+              } else {
+                return (java.lang.String) ref;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Matches all Kubernetes service accounts in the provided
+             * namespace, unless a more specific `kubernetes_service_account`
+             * scope already matched.
+             * </pre>
+             *
+             * <code>string kubernetes_namespace = 2;</code>
+             *
+             * @return The bytes for kubernetesNamespace.
+             */
+            @java.lang.Override
+            public com.google.protobuf.ByteString getKubernetesNamespaceBytes() {
+              java.lang.Object ref = "";
+              if (scopeCase_ == 2) {
+                ref = scope_;
+              }
+              if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                if (scopeCase_ == 2) {
+                  scope_ = b;
+                }
+                return b;
+              } else {
+                return (com.google.protobuf.ByteString) ref;
+              }
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Matches all Kubernetes service accounts in the provided
+             * namespace, unless a more specific `kubernetes_service_account`
+             * scope already matched.
+             * </pre>
+             *
+             * <code>string kubernetes_namespace = 2;</code>
+             *
+             * @param value The kubernetesNamespace to set.
+             * @return This builder for chaining.
+             */
+            public Builder setKubernetesNamespace(java.lang.String value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              scopeCase_ = 2;
+              scope_ = value;
+              onChanged();
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Matches all Kubernetes service accounts in the provided
+             * namespace, unless a more specific `kubernetes_service_account`
+             * scope already matched.
+             * </pre>
+             *
+             * <code>string kubernetes_namespace = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearKubernetesNamespace() {
+              if (scopeCase_ == 2) {
+                scopeCase_ = 0;
+                scope_ = null;
+                onChanged();
+              }
+              return this;
+            }
+            /**
+             *
+             *
+             * <pre>
+             * Matches all Kubernetes service accounts in the provided
+             * namespace, unless a more specific `kubernetes_service_account`
+             * scope already matched.
+             * </pre>
+             *
+             * <code>string kubernetes_namespace = 2;</code>
+             *
+             * @param value The bytes for kubernetesNamespace to set.
+             * @return This builder for chaining.
+             */
+            public Builder setKubernetesNamespaceBytes(com.google.protobuf.ByteString value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              checkByteStringIsUtf8(value);
+              scopeCase_ = 2;
+              scope_ = value;
+              onChanged();
+              return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+              return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+              return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope)
+          }
+
+          // @@protoc_insertion_point(class_scope:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope)
+          private static final com.google.cloud.binaryauthorization.v1beta1
+                  .ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult
+                  .CheckSetScope
+              DEFAULT_INSTANCE;
+
+          static {
+            DEFAULT_INSTANCE =
+                new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope();
+          }
+
+          public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+          }
+
+          private static final com.google.protobuf.Parser<CheckSetScope> PARSER =
+              new com.google.protobuf.AbstractParser<CheckSetScope>() {
+                @java.lang.Override
+                public CheckSetScope parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                  Builder builder = newBuilder();
+                  try {
+                    builder.mergeFrom(input, extensionRegistry);
+                  } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                  } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException()
+                        .setUnfinishedMessage(builder.buildPartial());
+                  } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                        .setUnfinishedMessage(builder.buildPartial());
+                  }
+                  return builder.buildPartial();
+                }
+              };
+
+          public static com.google.protobuf.Parser<CheckSetScope> parser() {
+            return PARSER;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Parser<CheckSetScope> getParserForType() {
+            return PARSER;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+          }
+        }
+
+        public static final int CHECK_SET_INDEX_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object checkSetIndex_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The index of the check set.
+         * </pre>
+         *
+         * <code>string check_set_index = 1;</code>
+         *
+         * @return The checkSetIndex.
+         */
+        @java.lang.Override
+        public java.lang.String getCheckSetIndex() {
+          java.lang.Object ref = checkSetIndex_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            checkSetIndex_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The index of the check set.
+         * </pre>
+         *
+         * <code>string check_set_index = 1;</code>
+         *
+         * @return The bytes for checkSetIndex.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getCheckSetIndexBytes() {
+          java.lang.Object ref = checkSetIndex_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            checkSetIndex_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int CHECK_SET_NAME_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object checkSetName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The name of the check set.
+         * </pre>
+         *
+         * <code>string check_set_name = 2;</code>
+         *
+         * @return The checkSetName.
+         */
+        @java.lang.Override
+        public java.lang.String getCheckSetName() {
+          java.lang.Object ref = checkSetName_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            checkSetName_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The name of the check set.
+         * </pre>
+         *
+         * <code>string check_set_name = 2;</code>
+         *
+         * @return The bytes for checkSetName.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getCheckSetNameBytes() {
+          java.lang.Object ref = checkSetName_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            checkSetName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int CHECK_SET_SCOPE_FIELD_NUMBER = 3;
+        private com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+            checkSetScope_;
+        /**
+         *
+         *
+         * <pre>
+         * The scope of the check set.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+         * </code>
+         *
+         * @return Whether the checkSetScope field is set.
+         */
+        @java.lang.Override
+        public boolean hasCheckSetScope() {
+          return checkSetScope_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The scope of the check set.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+         * </code>
+         *
+         * @return The checkSetScope.
+         */
+        @java.lang.Override
+        public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+            getCheckSetScope() {
+          return checkSetScope_ == null
+              ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                  .getDefaultInstance()
+              : checkSetScope_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The scope of the check set.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScopeOrBuilder
+            getCheckSetScopeOrBuilder() {
+          return checkSetScope_ == null
+              ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                  .getDefaultInstance()
+              : checkSetScope_;
+        }
+
+        public static final int CHECK_INDEX_FIELD_NUMBER = 4;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object checkIndex_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The index of the check.
+         * </pre>
+         *
+         * <code>string check_index = 4;</code>
+         *
+         * @return The checkIndex.
+         */
+        @java.lang.Override
+        public java.lang.String getCheckIndex() {
+          java.lang.Object ref = checkIndex_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            checkIndex_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The index of the check.
+         * </pre>
+         *
+         * <code>string check_index = 4;</code>
+         *
+         * @return The bytes for checkIndex.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getCheckIndexBytes() {
+          java.lang.Object ref = checkIndex_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            checkIndex_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int CHECK_NAME_FIELD_NUMBER = 5;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object checkName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The name of the check.
+         * </pre>
+         *
+         * <code>string check_name = 5;</code>
+         *
+         * @return The checkName.
+         */
+        @java.lang.Override
+        public java.lang.String getCheckName() {
+          java.lang.Object ref = checkName_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            checkName_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The name of the check.
+         * </pre>
+         *
+         * <code>string check_name = 5;</code>
+         *
+         * @return The bytes for checkName.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getCheckNameBytes() {
+          java.lang.Object ref = checkName_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            checkName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int CHECK_TYPE_FIELD_NUMBER = 6;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object checkType_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The type of the check.
+         * </pre>
+         *
+         * <code>string check_type = 6;</code>
+         *
+         * @return The checkType.
+         */
+        @java.lang.Override
+        public java.lang.String getCheckType() {
+          java.lang.Object ref = checkType_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            checkType_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of the check.
+         * </pre>
+         *
+         * <code>string check_type = 6;</code>
+         *
+         * @return The bytes for checkType.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getCheckTypeBytes() {
+          java.lang.Object ref = checkType_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            checkType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int VERDICT_FIELD_NUMBER = 7;
+        private int verdict_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * The verdict of this check.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict verdict = 7;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for verdict.
+         */
+        @java.lang.Override
+        public int getVerdictValue() {
+          return verdict_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The verdict of this check.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict verdict = 7;
+         * </code>
+         *
+         * @return The verdict.
+         */
+        @java.lang.Override
+        public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict
+            getVerdict() {
+          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict
+              result =
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict.forNumber(
+                      verdict_);
+          return result == null
+              ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict.UNRECOGNIZED
+              : result;
+        }
+
+        public static final int EXPLANATION_FIELD_NUMBER = 8;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object explanation_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * User-friendly explanation of this check result.
+         * </pre>
+         *
+         * <code>string explanation = 8;</code>
+         *
+         * @return The explanation.
+         */
+        @java.lang.Override
+        public java.lang.String getExplanation() {
+          java.lang.Object ref = explanation_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            explanation_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * User-friendly explanation of this check result.
+         * </pre>
+         *
+         * <code>string explanation = 8;</code>
+         *
+         * @return The bytes for explanation.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getExplanationBytes() {
+          java.lang.Object ref = explanation_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            explanation_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkSetIndex_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, checkSetIndex_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkSetName_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, checkSetName_);
+          }
+          if (checkSetScope_ != null) {
+            output.writeMessage(3, getCheckSetScope());
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkIndex_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 4, checkIndex_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkName_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 5, checkName_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkType_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 6, checkType_);
+          }
+          if (verdict_
+              != com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict
+                  .CHECK_VERDICT_UNSPECIFIED
+                  .getNumber()) {
+            output.writeEnum(7, verdict_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(explanation_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 8, explanation_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkSetIndex_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, checkSetIndex_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkSetName_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, checkSetName_);
+          }
+          if (checkSetScope_ != null) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCheckSetScope());
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkIndex_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, checkIndex_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkName_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, checkName_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkType_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, checkType_);
+          }
+          if (verdict_
+              != com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict
+                  .CHECK_VERDICT_UNSPECIFIED
+                  .getNumber()) {
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, verdict_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(explanation_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, explanation_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult
+              other =
+                  (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                          .ContinuousValidationPodEvent.ImageDetails.CheckResult)
+                      obj;
+
+          if (!getCheckSetIndex().equals(other.getCheckSetIndex())) return false;
+          if (!getCheckSetName().equals(other.getCheckSetName())) return false;
+          if (hasCheckSetScope() != other.hasCheckSetScope()) return false;
+          if (hasCheckSetScope()) {
+            if (!getCheckSetScope().equals(other.getCheckSetScope())) return false;
+          }
+          if (!getCheckIndex().equals(other.getCheckIndex())) return false;
+          if (!getCheckName().equals(other.getCheckName())) return false;
+          if (!getCheckType().equals(other.getCheckType())) return false;
+          if (verdict_ != other.verdict_) return false;
+          if (!getExplanation().equals(other.getExplanation())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + CHECK_SET_INDEX_FIELD_NUMBER;
+          hash = (53 * hash) + getCheckSetIndex().hashCode();
+          hash = (37 * hash) + CHECK_SET_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getCheckSetName().hashCode();
+          if (hasCheckSetScope()) {
+            hash = (37 * hash) + CHECK_SET_SCOPE_FIELD_NUMBER;
+            hash = (53 * hash) + getCheckSetScope().hashCode();
+          }
+          hash = (37 * hash) + CHECK_INDEX_FIELD_NUMBER;
+          hash = (53 * hash) + getCheckIndex().hashCode();
+          hash = (37 * hash) + CHECK_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getCheckName().hashCode();
+          hash = (37 * hash) + CHECK_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getCheckType().hashCode();
+          hash = (37 * hash) + VERDICT_FIELD_NUMBER;
+          hash = (53 * hash) + verdict_;
+          hash = (37 * hash) + EXPLANATION_FIELD_NUMBER;
+          hash = (53 * hash) + getExplanation().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         * Protobuf type {@code
+         * google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult)
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResultOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
+                .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
+                .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult.class,
+                    com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            checkSetIndex_ = "";
+            checkSetName_ = "";
+            checkSetScope_ = null;
+            if (checkSetScopeBuilder_ != null) {
+              checkSetScopeBuilder_.dispose();
+              checkSetScopeBuilder_ = null;
+            }
+            checkIndex_ = "";
+            checkName_ = "";
+            checkType_ = "";
+            verdict_ = 0;
+            explanation_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
+                .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_ImageDetails_CheckResult_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult
+              getDefaultInstanceForType() {
+            return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult
+              build() {
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult
+              buildPartial() {
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult
+                result =
+                    new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.checkSetIndex_ = checkSetIndex_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.checkSetName_ = checkSetName_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.checkSetScope_ =
+                  checkSetScopeBuilder_ == null ? checkSetScope_ : checkSetScopeBuilder_.build();
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.checkIndex_ = checkIndex_;
+            }
+            if (((from_bitField0_ & 0x00000010) != 0)) {
+              result.checkName_ = checkName_;
+            }
+            if (((from_bitField0_ & 0x00000020) != 0)) {
+              result.checkType_ = checkType_;
+            }
+            if (((from_bitField0_ & 0x00000040) != 0)) {
+              result.verdict_ = verdict_;
+            }
+            if (((from_bitField0_ & 0x00000080) != 0)) {
+              result.explanation_ = explanation_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult) {
+              return mergeFrom(
+                  (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                          .ContinuousValidationPodEvent.ImageDetails.CheckResult)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult
+                  other) {
+            if (other
+                == com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.getDefaultInstance())
+              return this;
+            if (!other.getCheckSetIndex().isEmpty()) {
+              checkSetIndex_ = other.checkSetIndex_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.getCheckSetName().isEmpty()) {
+              checkSetName_ = other.checkSetName_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            if (other.hasCheckSetScope()) {
+              mergeCheckSetScope(other.getCheckSetScope());
+            }
+            if (!other.getCheckIndex().isEmpty()) {
+              checkIndex_ = other.checkIndex_;
+              bitField0_ |= 0x00000008;
+              onChanged();
+            }
+            if (!other.getCheckName().isEmpty()) {
+              checkName_ = other.checkName_;
+              bitField0_ |= 0x00000010;
+              onChanged();
+            }
+            if (!other.getCheckType().isEmpty()) {
+              checkType_ = other.checkType_;
+              bitField0_ |= 0x00000020;
+              onChanged();
+            }
+            if (other.verdict_ != 0) {
+              setVerdictValue(other.getVerdictValue());
+            }
+            if (!other.getExplanation().isEmpty()) {
+              explanation_ = other.explanation_;
+              bitField0_ |= 0x00000080;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      checkSetIndex_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      checkSetName_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  case 26:
+                    {
+                      input.readMessage(
+                          getCheckSetScopeFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 26
+                  case 34:
+                    {
+                      checkIndex_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000008;
+                      break;
+                    } // case 34
+                  case 42:
+                    {
+                      checkName_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000010;
+                      break;
+                    } // case 42
+                  case 50:
+                    {
+                      checkType_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000020;
+                      break;
+                    } // case 50
+                  case 56:
+                    {
+                      verdict_ = input.readEnum();
+                      bitField0_ |= 0x00000040;
+                      break;
+                    } // case 56
+                  case 66:
+                    {
+                      explanation_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000080;
+                      break;
+                    } // case 66
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object checkSetIndex_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * The index of the check set.
+           * </pre>
+           *
+           * <code>string check_set_index = 1;</code>
+           *
+           * @return The checkSetIndex.
+           */
+          public java.lang.String getCheckSetIndex() {
+            java.lang.Object ref = checkSetIndex_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              checkSetIndex_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The index of the check set.
+           * </pre>
+           *
+           * <code>string check_set_index = 1;</code>
+           *
+           * @return The bytes for checkSetIndex.
+           */
+          public com.google.protobuf.ByteString getCheckSetIndexBytes() {
+            java.lang.Object ref = checkSetIndex_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              checkSetIndex_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The index of the check set.
+           * </pre>
+           *
+           * <code>string check_set_index = 1;</code>
+           *
+           * @param value The checkSetIndex to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCheckSetIndex(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkSetIndex_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The index of the check set.
+           * </pre>
+           *
+           * <code>string check_set_index = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearCheckSetIndex() {
+            checkSetIndex_ = getDefaultInstance().getCheckSetIndex();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The index of the check set.
+           * </pre>
+           *
+           * <code>string check_set_index = 1;</code>
+           *
+           * @param value The bytes for checkSetIndex to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCheckSetIndexBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            checkSetIndex_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object checkSetName_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * The name of the check set.
+           * </pre>
+           *
+           * <code>string check_set_name = 2;</code>
+           *
+           * @return The checkSetName.
+           */
+          public java.lang.String getCheckSetName() {
+            java.lang.Object ref = checkSetName_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              checkSetName_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the check set.
+           * </pre>
+           *
+           * <code>string check_set_name = 2;</code>
+           *
+           * @return The bytes for checkSetName.
+           */
+          public com.google.protobuf.ByteString getCheckSetNameBytes() {
+            java.lang.Object ref = checkSetName_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              checkSetName_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the check set.
+           * </pre>
+           *
+           * <code>string check_set_name = 2;</code>
+           *
+           * @param value The checkSetName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCheckSetName(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkSetName_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the check set.
+           * </pre>
+           *
+           * <code>string check_set_name = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearCheckSetName() {
+            checkSetName_ = getDefaultInstance().getCheckSetName();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the check set.
+           * </pre>
+           *
+           * <code>string check_set_name = 2;</code>
+           *
+           * @param value The bytes for checkSetName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCheckSetNameBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            checkSetName_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          private com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              checkSetScope_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope,
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope.Builder,
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScopeOrBuilder>
+              checkSetScopeBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * The scope of the check set.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+           * </code>
+           *
+           * @return Whether the checkSetScope field is set.
+           */
+          public boolean hasCheckSetScope() {
+            return ((bitField0_ & 0x00000004) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The scope of the check set.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+           * </code>
+           *
+           * @return The checkSetScope.
+           */
+          public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+              getCheckSetScope() {
+            if (checkSetScopeBuilder_ == null) {
+              return checkSetScope_ == null
+                  ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                      .getDefaultInstance()
+                  : checkSetScope_;
+            } else {
+              return checkSetScopeBuilder_.getMessage();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The scope of the check set.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+           * </code>
+           */
+          public Builder setCheckSetScope(
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                  value) {
+            if (checkSetScopeBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              checkSetScope_ = value;
+            } else {
+              checkSetScopeBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The scope of the check set.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+           * </code>
+           */
+          public Builder setCheckSetScope(
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope.Builder
+                  builderForValue) {
+            if (checkSetScopeBuilder_ == null) {
+              checkSetScope_ = builderForValue.build();
+            } else {
+              checkSetScopeBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The scope of the check set.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+           * </code>
+           */
+          public Builder mergeCheckSetScope(
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                  value) {
+            if (checkSetScopeBuilder_ == null) {
+              if (((bitField0_ & 0x00000004) != 0)
+                  && checkSetScope_ != null
+                  && checkSetScope_
+                      != com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                          .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                          .getDefaultInstance()) {
+                getCheckSetScopeBuilder().mergeFrom(value);
+              } else {
+                checkSetScope_ = value;
+              }
+            } else {
+              checkSetScopeBuilder_.mergeFrom(value);
+            }
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The scope of the check set.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+           * </code>
+           */
+          public Builder clearCheckSetScope() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            checkSetScope_ = null;
+            if (checkSetScopeBuilder_ != null) {
+              checkSetScopeBuilder_.dispose();
+              checkSetScopeBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The scope of the check set.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+           * </code>
+           */
+          public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope.Builder
+              getCheckSetScopeBuilder() {
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return getCheckSetScopeFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The scope of the check set.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+           * </code>
+           */
+          public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScopeOrBuilder
+              getCheckSetScopeOrBuilder() {
+            if (checkSetScopeBuilder_ != null) {
+              return checkSetScopeBuilder_.getMessageOrBuilder();
+            } else {
+              return checkSetScope_ == null
+                  ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                      .getDefaultInstance()
+                  : checkSetScope_;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The scope of the check set.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope check_set_scope = 3;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope,
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope.Builder,
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScopeOrBuilder>
+              getCheckSetScopeFieldBuilder() {
+            if (checkSetScopeBuilder_ == null) {
+              checkSetScopeBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                          .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope,
+                      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                          .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckSetScope
+                          .Builder,
+                      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                          .ContinuousValidationPodEvent.ImageDetails.CheckResult
+                          .CheckSetScopeOrBuilder>(
+                      getCheckSetScope(), getParentForChildren(), isClean());
+              checkSetScope_ = null;
+            }
+            return checkSetScopeBuilder_;
+          }
+
+          private java.lang.Object checkIndex_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * The index of the check.
+           * </pre>
+           *
+           * <code>string check_index = 4;</code>
+           *
+           * @return The checkIndex.
+           */
+          public java.lang.String getCheckIndex() {
+            java.lang.Object ref = checkIndex_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              checkIndex_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The index of the check.
+           * </pre>
+           *
+           * <code>string check_index = 4;</code>
+           *
+           * @return The bytes for checkIndex.
+           */
+          public com.google.protobuf.ByteString getCheckIndexBytes() {
+            java.lang.Object ref = checkIndex_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              checkIndex_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The index of the check.
+           * </pre>
+           *
+           * <code>string check_index = 4;</code>
+           *
+           * @param value The checkIndex to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCheckIndex(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkIndex_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The index of the check.
+           * </pre>
+           *
+           * <code>string check_index = 4;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearCheckIndex() {
+            checkIndex_ = getDefaultInstance().getCheckIndex();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The index of the check.
+           * </pre>
+           *
+           * <code>string check_index = 4;</code>
+           *
+           * @param value The bytes for checkIndex to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCheckIndexBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            checkIndex_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object checkName_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * The name of the check.
+           * </pre>
+           *
+           * <code>string check_name = 5;</code>
+           *
+           * @return The checkName.
+           */
+          public java.lang.String getCheckName() {
+            java.lang.Object ref = checkName_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              checkName_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the check.
+           * </pre>
+           *
+           * <code>string check_name = 5;</code>
+           *
+           * @return The bytes for checkName.
+           */
+          public com.google.protobuf.ByteString getCheckNameBytes() {
+            java.lang.Object ref = checkName_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              checkName_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the check.
+           * </pre>
+           *
+           * <code>string check_name = 5;</code>
+           *
+           * @param value The checkName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCheckName(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkName_ = value;
+            bitField0_ |= 0x00000010;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the check.
+           * </pre>
+           *
+           * <code>string check_name = 5;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearCheckName() {
+            checkName_ = getDefaultInstance().getCheckName();
+            bitField0_ = (bitField0_ & ~0x00000010);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The name of the check.
+           * </pre>
+           *
+           * <code>string check_name = 5;</code>
+           *
+           * @param value The bytes for checkName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCheckNameBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            checkName_ = value;
+            bitField0_ |= 0x00000010;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object checkType_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * The type of the check.
+           * </pre>
+           *
+           * <code>string check_type = 6;</code>
+           *
+           * @return The checkType.
+           */
+          public java.lang.String getCheckType() {
+            java.lang.Object ref = checkType_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              checkType_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The type of the check.
+           * </pre>
+           *
+           * <code>string check_type = 6;</code>
+           *
+           * @return The bytes for checkType.
+           */
+          public com.google.protobuf.ByteString getCheckTypeBytes() {
+            java.lang.Object ref = checkType_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              checkType_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The type of the check.
+           * </pre>
+           *
+           * <code>string check_type = 6;</code>
+           *
+           * @param value The checkType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCheckType(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkType_ = value;
+            bitField0_ |= 0x00000020;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The type of the check.
+           * </pre>
+           *
+           * <code>string check_type = 6;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearCheckType() {
+            checkType_ = getDefaultInstance().getCheckType();
+            bitField0_ = (bitField0_ & ~0x00000020);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The type of the check.
+           * </pre>
+           *
+           * <code>string check_type = 6;</code>
+           *
+           * @param value The bytes for checkType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCheckTypeBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            checkType_ = value;
+            bitField0_ |= 0x00000020;
+            onChanged();
+            return this;
+          }
+
+          private int verdict_ = 0;
+          /**
+           *
+           *
+           * <pre>
+           * The verdict of this check.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict verdict = 7;
+           * </code>
+           *
+           * @return The enum numeric value on the wire for verdict.
+           */
+          @java.lang.Override
+          public int getVerdictValue() {
+            return verdict_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The verdict of this check.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict verdict = 7;
+           * </code>
+           *
+           * @param value The enum numeric value on the wire for verdict to set.
+           * @return This builder for chaining.
+           */
+          public Builder setVerdictValue(int value) {
+            verdict_ = value;
+            bitField0_ |= 0x00000040;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The verdict of this check.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict verdict = 7;
+           * </code>
+           *
+           * @return The verdict.
+           */
+          @java.lang.Override
+          public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict
+              getVerdict() {
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict
+                result =
+                    com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict
+                        .forNumber(verdict_);
+            return result == null
+                ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict.UNRECOGNIZED
+                : result;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The verdict of this check.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict verdict = 7;
+           * </code>
+           *
+           * @param value The verdict to set.
+           * @return This builder for chaining.
+           */
+          public Builder setVerdict(
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict
+                  value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            bitField0_ |= 0x00000040;
+            verdict_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The verdict of this check.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult.CheckVerdict verdict = 7;
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearVerdict() {
+            bitField0_ = (bitField0_ & ~0x00000040);
+            verdict_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object explanation_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * User-friendly explanation of this check result.
+           * </pre>
+           *
+           * <code>string explanation = 8;</code>
+           *
+           * @return The explanation.
+           */
+          public java.lang.String getExplanation() {
+            java.lang.Object ref = explanation_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              explanation_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * User-friendly explanation of this check result.
+           * </pre>
+           *
+           * <code>string explanation = 8;</code>
+           *
+           * @return The bytes for explanation.
+           */
+          public com.google.protobuf.ByteString getExplanationBytes() {
+            java.lang.Object ref = explanation_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              explanation_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * User-friendly explanation of this check result.
+           * </pre>
+           *
+           * <code>string explanation = 8;</code>
+           *
+           * @param value The explanation to set.
+           * @return This builder for chaining.
+           */
+          public Builder setExplanation(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            explanation_ = value;
+            bitField0_ |= 0x00000080;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * User-friendly explanation of this check result.
+           * </pre>
+           *
+           * <code>string explanation = 8;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearExplanation() {
+            explanation_ = getDefaultInstance().getExplanation();
+            bitField0_ = (bitField0_ & ~0x00000080);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * User-friendly explanation of this check result.
+           * </pre>
+           *
+           * <code>string explanation = 8;</code>
+           *
+           * @param value The bytes for explanation to set.
+           * @return This builder for chaining.
+           */
+          public Builder setExplanationBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            explanation_ = value;
+            bitField0_ |= 0x00000080;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult)
+        private static final com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult();
+        }
+
+        public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<CheckResult> PARSER =
+            new com.google.protobuf.AbstractParser<CheckResult>() {
+              @java.lang.Override
+              public CheckResult parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<CheckResult> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<CheckResult> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
       public static final int IMAGE_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
@@ -945,6 +4719,100 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         }
       }
 
+      public static final int CHECK_RESULTS_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult>
+          checkResults_;
+      /**
+       *
+       *
+       * <pre>
+       * List of check results.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.CheckResult>
+          getCheckResultsList() {
+        return checkResults_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of check results.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResultOrBuilder>
+          getCheckResultsOrBuilderList() {
+        return checkResults_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of check results.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public int getCheckResultsCount() {
+        return checkResults_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of check results.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+              .ContinuousValidationPodEvent.ImageDetails.CheckResult
+          getCheckResults(int index) {
+        return checkResults_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of check results.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+              .ContinuousValidationPodEvent.ImageDetails.CheckResultOrBuilder
+          getCheckResultsOrBuilder(int index) {
+        return checkResults_.get(index);
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -971,6 +4839,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
         }
+        for (int i = 0; i < checkResults_.size(); i++) {
+          output.writeMessage(4, checkResults_.get(i));
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -991,6 +4862,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
+        }
+        for (int i = 0; i < checkResults_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, checkResults_.get(i));
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -1018,6 +4892,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (!getImage().equals(other.getImage())) return false;
         if (result_ != other.result_) return false;
         if (!getDescription().equals(other.getDescription())) return false;
+        if (!getCheckResultsList().equals(other.getCheckResultsList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -1035,6 +4910,10 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         hash = (53 * hash) + result_;
         hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
         hash = (53 * hash) + getDescription().hashCode();
+        if (getCheckResultsCount() > 0) {
+          hash = (37 * hash) + CHECK_RESULTS_FIELD_NUMBER;
+          hash = (53 * hash) + getCheckResultsList().hashCode();
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1207,6 +5086,13 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           image_ = "";
           result_ = 0;
           description_ = "";
+          if (checkResultsBuilder_ == null) {
+            checkResults_ = java.util.Collections.emptyList();
+          } else {
+            checkResults_ = null;
+            checkResultsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -1246,11 +5132,27 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
               result =
                   new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                       .ContinuousValidationPodEvent.ImageDetails(this);
+          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails
+                result) {
+          if (checkResultsBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) != 0)) {
+              checkResults_ = java.util.Collections.unmodifiableList(checkResults_);
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.checkResults_ = checkResults_;
+          } else {
+            result.checkResults_ = checkResultsBuilder_.build();
+          }
         }
 
         private void buildPartial0(
@@ -1340,6 +5242,33 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             bitField0_ |= 0x00000004;
             onChanged();
           }
+          if (checkResultsBuilder_ == null) {
+            if (!other.checkResults_.isEmpty()) {
+              if (checkResults_.isEmpty()) {
+                checkResults_ = other.checkResults_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+              } else {
+                ensureCheckResultsIsMutable();
+                checkResults_.addAll(other.checkResults_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.checkResults_.isEmpty()) {
+              if (checkResultsBuilder_.isEmpty()) {
+                checkResultsBuilder_.dispose();
+                checkResultsBuilder_ = null;
+                checkResults_ = other.checkResults_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+                checkResultsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getCheckResultsFieldBuilder()
+                        : null;
+              } else {
+                checkResultsBuilder_.addAllMessages(other.checkResults_);
+              }
+            }
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -1384,6 +5313,24 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                     bitField0_ |= 0x00000004;
                     break;
                   } // case 26
+                case 34:
+                  {
+                    com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                            .ContinuousValidationPodEvent.ImageDetails.CheckResult
+                        m =
+                            input.readMessage(
+                                com.google.cloud.binaryauthorization.v1beta1
+                                    .ContinuousValidationEvent.ContinuousValidationPodEvent
+                                    .ImageDetails.CheckResult.parser(),
+                                extensionRegistry);
+                    if (checkResultsBuilder_ == null) {
+                      ensureCheckResultsIsMutable();
+                      checkResults_.add(m);
+                    } else {
+                      checkResultsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 34
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1726,6 +5673,455 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           return this;
         }
 
+        private java.util.List<
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult>
+            checkResults_ = java.util.Collections.emptyList();
+
+        private void ensureCheckResultsIsMutable() {
+          if (!((bitField0_ & 0x00000008) != 0)) {
+            checkResults_ =
+                new java.util.ArrayList<
+                    com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult>(checkResults_);
+            bitField0_ |= 0x00000008;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult,
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder,
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResultOrBuilder>
+            checkResultsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult>
+            getCheckResultsList() {
+          if (checkResultsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(checkResults_);
+          } else {
+            return checkResultsBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public int getCheckResultsCount() {
+          if (checkResultsBuilder_ == null) {
+            return checkResults_.size();
+          } else {
+            return checkResultsBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult
+            getCheckResults(int index) {
+          if (checkResultsBuilder_ == null) {
+            return checkResults_.get(index);
+          } else {
+            return checkResultsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public Builder setCheckResults(
+            int index,
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult
+                value) {
+          if (checkResultsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureCheckResultsIsMutable();
+            checkResults_.set(index, value);
+            onChanged();
+          } else {
+            checkResultsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public Builder setCheckResults(
+            int index,
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder
+                builderForValue) {
+          if (checkResultsBuilder_ == null) {
+            ensureCheckResultsIsMutable();
+            checkResults_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            checkResultsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public Builder addCheckResults(
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult
+                value) {
+          if (checkResultsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureCheckResultsIsMutable();
+            checkResults_.add(value);
+            onChanged();
+          } else {
+            checkResultsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public Builder addCheckResults(
+            int index,
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult
+                value) {
+          if (checkResultsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureCheckResultsIsMutable();
+            checkResults_.add(index, value);
+            onChanged();
+          } else {
+            checkResultsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public Builder addCheckResults(
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder
+                builderForValue) {
+          if (checkResultsBuilder_ == null) {
+            ensureCheckResultsIsMutable();
+            checkResults_.add(builderForValue.build());
+            onChanged();
+          } else {
+            checkResultsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public Builder addCheckResults(
+            int index,
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder
+                builderForValue) {
+          if (checkResultsBuilder_ == null) {
+            ensureCheckResultsIsMutable();
+            checkResults_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            checkResultsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public Builder addAllCheckResults(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                            .ContinuousValidationPodEvent.ImageDetails.CheckResult>
+                values) {
+          if (checkResultsBuilder_ == null) {
+            ensureCheckResultsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, checkResults_);
+            onChanged();
+          } else {
+            checkResultsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public Builder clearCheckResults() {
+          if (checkResultsBuilder_ == null) {
+            checkResults_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+          } else {
+            checkResultsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public Builder removeCheckResults(int index) {
+          if (checkResultsBuilder_ == null) {
+            ensureCheckResultsIsMutable();
+            checkResults_.remove(index);
+            onChanged();
+          } else {
+            checkResultsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder
+            getCheckResultsBuilder(int index) {
+          return getCheckResultsFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResultOrBuilder
+            getCheckResultsOrBuilder(int index) {
+          if (checkResultsBuilder_ == null) {
+            return checkResults_.get(index);
+          } else {
+            return checkResultsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResultOrBuilder>
+            getCheckResultsOrBuilderList() {
+          if (checkResultsBuilder_ != null) {
+            return checkResultsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(checkResults_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder
+            addCheckResultsBuilder() {
+          return getCheckResultsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder
+            addCheckResultsBuilder(int index) {
+          return getCheckResultsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.CheckResult.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of check results.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.CheckResult check_results = 4;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder>
+            getCheckResultsBuilderList() {
+          return getCheckResultsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult,
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder,
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.CheckResultOrBuilder>
+            getCheckResultsFieldBuilder() {
+          if (checkResultsBuilder_ == null) {
+            checkResultsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult,
+                    com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResult.Builder,
+                    com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                        .ContinuousValidationPodEvent.ImageDetails.CheckResultOrBuilder>(
+                    checkResults_,
+                    ((bitField0_ & 0x00000008) != 0),
+                    getParentForChildren(),
+                    isClean());
+            checkResults_ = null;
+          }
+          return checkResultsBuilder_;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1894,6 +6290,57 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         pod_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int POLICY_NAME_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object policyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the policy.
+     * </pre>
+     *
+     * <code>string policy_name = 8;</code>
+     *
+     * @return The policyName.
+     */
+    @java.lang.Override
+    public java.lang.String getPolicyName() {
+      java.lang.Object ref = policyName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        policyName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the policy.
+     * </pre>
+     *
+     * <code>string policy_name = 8;</code>
+     *
+     * @return The bytes for policyName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPolicyNameBytes() {
+      java.lang.Object ref = policyName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        policyName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2169,6 +6616,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podNamespace_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, podNamespace_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, policyName_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2200,6 +6650,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podNamespace_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, podNamespace_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, policyName_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2225,6 +6678,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
 
       if (!getPodNamespace().equals(other.getPodNamespace())) return false;
       if (!getPod().equals(other.getPod())) return false;
+      if (!getPolicyName().equals(other.getPolicyName())) return false;
       if (hasDeployTime() != other.hasDeployTime()) return false;
       if (hasDeployTime()) {
         if (!getDeployTime().equals(other.getDeployTime())) return false;
@@ -2250,6 +6704,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       hash = (53 * hash) + getPodNamespace().hashCode();
       hash = (37 * hash) + POD_FIELD_NUMBER;
       hash = (53 * hash) + getPod().hashCode();
+      hash = (37 * hash) + POLICY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPolicyName().hashCode();
       if (hasDeployTime()) {
         hash = (37 * hash) + DEPLOY_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getDeployTime().hashCode();
@@ -2433,6 +6889,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         bitField0_ = 0;
         podNamespace_ = "";
         pod_ = "";
+        policyName_ = "";
         deployTime_ = null;
         if (deployTimeBuilder_ != null) {
           deployTimeBuilder_.dispose();
@@ -2450,7 +6907,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           images_ = null;
           imagesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -2503,9 +6960,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                   .ContinuousValidationPodEvent
               result) {
         if (imagesBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             images_ = java.util.Collections.unmodifiableList(images_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.images_ = images_;
         } else {
@@ -2525,13 +6982,16 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           result.pod_ = pod_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.policyName_ = policyName_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.deployTime_ =
               deployTimeBuilder_ == null ? deployTime_ : deployTimeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.verdict_ = verdict_;
         }
       }
@@ -2604,6 +7064,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (!other.getPolicyName().isEmpty()) {
+          policyName_ = other.policyName_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         if (other.hasDeployTime()) {
           mergeDeployTime(other.getDeployTime());
         }
@@ -2617,7 +7082,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           if (!other.images_.isEmpty()) {
             if (images_.isEmpty()) {
               images_ = other.images_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureImagesIsMutable();
               images_.addAll(other.images_);
@@ -2630,7 +7095,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
               imagesBuilder_.dispose();
               imagesBuilder_ = null;
               images_ = other.images_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000040);
               imagesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getImagesFieldBuilder()
@@ -2675,19 +7140,19 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
               case 18:
                 {
                   input.readMessage(getDeployTimeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 26
               case 32:
                 {
                   verdict_ = input.readEnum();
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 32
               case 42:
@@ -2713,6 +7178,12 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 58
+              case 66:
+                {
+                  policyName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2944,6 +7415,112 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         return this;
       }
 
+      private java.lang.Object policyName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the policy.
+       * </pre>
+       *
+       * <code>string policy_name = 8;</code>
+       *
+       * @return The policyName.
+       */
+      public java.lang.String getPolicyName() {
+        java.lang.Object ref = policyName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          policyName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the policy.
+       * </pre>
+       *
+       * <code>string policy_name = 8;</code>
+       *
+       * @return The bytes for policyName.
+       */
+      public com.google.protobuf.ByteString getPolicyNameBytes() {
+        java.lang.Object ref = policyName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          policyName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the policy.
+       * </pre>
+       *
+       * <code>string policy_name = 8;</code>
+       *
+       * @param value The policyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPolicyName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        policyName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the policy.
+       * </pre>
+       *
+       * <code>string policy_name = 8;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPolicyName() {
+        policyName_ = getDefaultInstance().getPolicyName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the policy.
+       * </pre>
+       *
+       * <code>string policy_name = 8;</code>
+       *
+       * @param value The bytes for policyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPolicyNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        policyName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Timestamp deployTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -2962,7 +7539,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * @return Whether the deployTime field is set.
        */
       public boolean hasDeployTime() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -3002,7 +7579,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         } else {
           deployTimeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3021,7 +7598,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         } else {
           deployTimeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3036,7 +7613,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        */
       public Builder mergeDeployTime(com.google.protobuf.Timestamp value) {
         if (deployTimeBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)
+          if (((bitField0_ & 0x00000008) != 0)
               && deployTime_ != null
               && deployTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
             getDeployTimeBuilder().mergeFrom(value);
@@ -3046,7 +7623,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         } else {
           deployTimeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3060,7 +7637,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
        */
       public Builder clearDeployTime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         deployTime_ = null;
         if (deployTimeBuilder_ != null) {
           deployTimeBuilder_.dispose();
@@ -3079,7 +7656,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getDeployTimeBuilder() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return getDeployTimeFieldBuilder().getBuilder();
       }
@@ -3145,7 +7722,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * @return Whether the endTime field is set.
        */
       public boolean hasEndTime() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -3183,7 +7760,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         } else {
           endTimeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3202,7 +7779,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         } else {
           endTimeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3217,7 +7794,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        */
       public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
         if (endTimeBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)
+          if (((bitField0_ & 0x00000010) != 0)
               && endTime_ != null
               && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
             getEndTimeBuilder().mergeFrom(value);
@@ -3227,7 +7804,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         } else {
           endTimeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3241,7 +7818,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * <code>.google.protobuf.Timestamp end_time = 3;</code>
        */
       public Builder clearEndTime() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         endTime_ = null;
         if (endTimeBuilder_ != null) {
           endTimeBuilder_.dispose();
@@ -3260,7 +7837,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * <code>.google.protobuf.Timestamp end_time = 3;</code>
        */
       public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
@@ -3340,7 +7917,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        */
       public Builder setVerdictValue(int value) {
         verdict_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -3392,7 +7969,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         verdict_ = value.getNumber();
         onChanged();
         return this;
@@ -3411,7 +7988,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        * @return This builder for chaining.
        */
       public Builder clearVerdict() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         verdict_ = 0;
         onChanged();
         return this;
@@ -3423,12 +8000,12 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           images_ = java.util.Collections.emptyList();
 
       private void ensureImagesIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           images_ =
               new java.util.ArrayList<
                   com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                       .ContinuousValidationPodEvent.ImageDetails>(images_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
         }
       }
 
@@ -3697,7 +8274,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       public Builder clearImages() {
         if (imagesBuilder_ == null) {
           images_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           imagesBuilder_.clear();
@@ -3857,7 +8434,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                       .ContinuousValidationPodEvent.ImageDetails.Builder,
                   com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                       .ContinuousValidationPodEvent.ImageDetailsOrBuilder>(
-                  images_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                  images_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
           images_ = null;
         }
         return imagesBuilder_;
@@ -3935,16 +8512,16 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
   }
 
-  public interface UnsupportedPolicyEventOrBuilder
+  public interface ConfigErrorEventOrBuilder
       extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent)
+      // @@protoc_insertion_point(interface_extends:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      *
      *
      * <pre>
-     * A description of the unsupported policy.
+     * A description of the issue.
      * </pre>
      *
      * <code>string description = 1;</code>
@@ -3956,7 +8533,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A description of the unsupported policy.
+     * A description of the issue.
      * </pre>
      *
      * <code>string description = 1;</code>
@@ -3969,52 +8546,48 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * An event describing that the project policy is unsupported by CV.
+   * An event describing a user-actionable configuration issue that prevents CV
+   * from auditing.
    * </pre>
    *
    * Protobuf type {@code
-   * google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent}
+   * google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent}
    */
-  public static final class UnsupportedPolicyEvent extends com.google.protobuf.GeneratedMessageV3
+  public static final class ConfigErrorEvent extends com.google.protobuf.GeneratedMessageV3
       implements
-      // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent)
-      UnsupportedPolicyEventOrBuilder {
+      // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent)
+      ConfigErrorEventOrBuilder {
     private static final long serialVersionUID = 0L;
-    // Use UnsupportedPolicyEvent.newBuilder() to construct.
-    private UnsupportedPolicyEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ConfigErrorEvent.newBuilder() to construct.
+    private ConfigErrorEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
 
-    private UnsupportedPolicyEvent() {
+    private ConfigErrorEvent() {
       description_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new UnsupportedPolicyEvent();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
+      return new ConfigErrorEvent();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
-          .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_descriptor;
+          .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ConfigErrorEvent_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
-          .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_fieldAccessorTable
+          .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ConfigErrorEvent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                  .UnsupportedPolicyEvent.class,
+                  .ConfigErrorEvent.class,
               com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                  .UnsupportedPolicyEvent.Builder.class);
+                  .ConfigErrorEvent.Builder.class);
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 1;
@@ -4025,7 +8598,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A description of the unsupported policy.
+     * A description of the issue.
      * </pre>
      *
      * <code>string description = 1;</code>
@@ -4048,7 +8621,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A description of the unsupported policy.
+     * A description of the issue.
      * </pre>
      *
      * <code>string description = 1;</code>
@@ -4110,13 +8683,13 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       if (!(obj
           instanceof
           com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-              .UnsupportedPolicyEvent)) {
+              .ConfigErrorEvent)) {
         return super.equals(obj);
       }
-      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent
+      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
           other =
               (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                      .UnsupportedPolicyEvent)
+                      .ConfigErrorEvent)
                   obj;
 
       if (!getDescription().equals(other.getDescription())) return false;
@@ -4139,14 +8712,14 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseFrom(java.nio.ByteBuffer data)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseFrom(
             java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4154,14 +8727,14 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseFrom(com.google.protobuf.ByteString data)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseFrom(
             com.google.protobuf.ByteString data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4170,26 +8743,26 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseFrom(java.io.InputStream input) throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseFrom(
             java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
@@ -4198,13 +8771,13 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseDelimitedFrom(
             java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
@@ -4213,13 +8786,13 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         parseFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4238,8 +8811,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     public static Builder newBuilder(
-        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
             prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
@@ -4259,37 +8831,38 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * An event describing that the project policy is unsupported by CV.
+     * An event describing a user-actionable configuration issue that prevents CV
+     * from auditing.
      * </pre>
      *
      * Protobuf type {@code
-     * google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent}
+     * google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent}
      */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent)
+        // @@protoc_insertion_point(builder_implements:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent)
         com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEventOrBuilder {
+            .ConfigErrorEventOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
-            .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_descriptor;
+            .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ConfigErrorEvent_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
-            .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_fieldAccessorTable
+            .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ConfigErrorEvent_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                    .UnsupportedPolicyEvent.class,
+                    .ConfigErrorEvent.class,
                 com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                    .UnsupportedPolicyEvent.Builder.class);
+                    .ConfigErrorEvent.Builder.class);
       }
 
       // Construct using
-      // com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent.newBuilder()
+      // com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent.newBuilder()
       private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -4307,23 +8880,20 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
-            .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_descriptor;
+            .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ConfigErrorEvent_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-              .UnsupportedPolicyEvent
+      public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
           getDefaultInstanceForType() {
         return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent.getDefaultInstance();
+            .ConfigErrorEvent.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-              .UnsupportedPolicyEvent
+      public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
           build() {
-        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
             result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -4332,14 +8902,12 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
 
       @java.lang.Override
-      public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-              .UnsupportedPolicyEvent
+      public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
           buildPartial() {
-        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
             result =
                 new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                    .UnsupportedPolicyEvent(this);
+                    .ConfigErrorEvent(this);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -4348,8 +8916,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
 
       private void buildPartial0(
-          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                  .UnsupportedPolicyEvent
+          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
               result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -4397,10 +8964,10 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (other
             instanceof
             com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent) {
+                .ConfigErrorEvent) {
           return mergeFrom(
               (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                      .UnsupportedPolicyEvent)
+                      .ConfigErrorEvent)
                   other);
         } else {
           super.mergeFrom(other);
@@ -4409,12 +8976,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
 
       public Builder mergeFrom(
-          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                  .UnsupportedPolicyEvent
+          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
               other) {
         if (other
             == com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent.getDefaultInstance()) return this;
+                .ConfigErrorEvent.getDefaultInstance()) return this;
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
           bitField0_ |= 0x00000001;
@@ -4476,7 +9042,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * A description of the unsupported policy.
+       * A description of the issue.
        * </pre>
        *
        * <code>string description = 1;</code>
@@ -4498,7 +9064,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * A description of the unsupported policy.
+       * A description of the issue.
        * </pre>
        *
        * <code>string description = 1;</code>
@@ -4520,7 +9086,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * A description of the unsupported policy.
+       * A description of the issue.
        * </pre>
        *
        * <code>string description = 1;</code>
@@ -4541,7 +9107,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * A description of the unsupported policy.
+       * A description of the issue.
        * </pre>
        *
        * <code>string description = 1;</code>
@@ -4558,7 +9124,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * A description of the unsupported policy.
+       * A description of the issue.
        * </pre>
        *
        * <code>string description = 1;</code>
@@ -4589,30 +9155,30 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         return super.mergeUnknownFields(unknownFields);
       }
 
-      // @@protoc_insertion_point(builder_scope:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent)
+      // @@protoc_insertion_point(builder_scope:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent)
     }
 
-    // @@protoc_insertion_point(class_scope:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent)
+    // @@protoc_insertion_point(class_scope:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent)
     private static final com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         DEFAULT_INSTANCE;
 
     static {
       DEFAULT_INSTANCE =
           new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-              .UnsupportedPolicyEvent();
+              .ConfigErrorEvent();
     }
 
     public static com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+            .ConfigErrorEvent
         getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UnsupportedPolicyEvent> PARSER =
-        new com.google.protobuf.AbstractParser<UnsupportedPolicyEvent>() {
+    private static final com.google.protobuf.Parser<ConfigErrorEvent> PARSER =
+        new com.google.protobuf.AbstractParser<ConfigErrorEvent>() {
           @java.lang.Override
-          public UnsupportedPolicyEvent parsePartialFrom(
+          public ConfigErrorEvent parsePartialFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4632,24 +9198,25 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           }
         };
 
-    public static com.google.protobuf.Parser<UnsupportedPolicyEvent> parser() {
+    public static com.google.protobuf.Parser<ConfigErrorEvent> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UnsupportedPolicyEvent> getParserForType() {
+    public com.google.protobuf.Parser<ConfigErrorEvent> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
+    public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
 
   private int eventTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object eventType_;
 
   public enum EventTypeCase
@@ -4657,7 +9224,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     POD_EVENT(1),
-    UNSUPPORTED_POLICY_EVENT(2),
+    CONFIG_ERROR_EVENT(4),
     EVENTTYPE_NOT_SET(0);
     private final int value;
 
@@ -4678,8 +9245,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       switch (value) {
         case 1:
           return POD_EVENT;
-        case 2:
-          return UNSUPPORTED_POLICY_EVENT;
+        case 4:
+          return CONFIG_ERROR_EVENT;
         case 0:
           return EVENTTYPE_NOT_SET;
         default:
@@ -4763,71 +9330,70 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         .ContinuousValidationPodEvent.getDefaultInstance();
   }
 
-  public static final int UNSUPPORTED_POLICY_EVENT_FIELD_NUMBER = 2;
+  public static final int CONFIG_ERROR_EVENT_FIELD_NUMBER = 4;
   /**
    *
    *
    * <pre>
-   * Unsupported policy event.
+   * Config error event.
    * </pre>
    *
    * <code>
-   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
    * </code>
    *
-   * @return Whether the unsupportedPolicyEvent field is set.
+   * @return Whether the configErrorEvent field is set.
    */
   @java.lang.Override
-  public boolean hasUnsupportedPolicyEvent() {
-    return eventTypeCase_ == 2;
+  public boolean hasConfigErrorEvent() {
+    return eventTypeCase_ == 4;
   }
   /**
    *
    *
    * <pre>
-   * Unsupported policy event.
+   * Config error event.
    * </pre>
    *
    * <code>
-   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
    * </code>
    *
-   * @return The unsupportedPolicyEvent.
+   * @return The configErrorEvent.
    */
   @java.lang.Override
-  public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-          .UnsupportedPolicyEvent
-      getUnsupportedPolicyEvent() {
-    if (eventTypeCase_ == 2) {
+  public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
+      getConfigErrorEvent() {
+    if (eventTypeCase_ == 4) {
       return (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-              .UnsupportedPolicyEvent)
+              .ConfigErrorEvent)
           eventType_;
     }
-    return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-        .UnsupportedPolicyEvent.getDefaultInstance();
+    return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
+        .getDefaultInstance();
   }
   /**
    *
    *
    * <pre>
-   * Unsupported policy event.
+   * Config error event.
    * </pre>
    *
    * <code>
-   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-          .UnsupportedPolicyEventOrBuilder
-      getUnsupportedPolicyEventOrBuilder() {
-    if (eventTypeCase_ == 2) {
+          .ConfigErrorEventOrBuilder
+      getConfigErrorEventOrBuilder() {
+    if (eventTypeCase_ == 4) {
       return (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-              .UnsupportedPolicyEvent)
+              .ConfigErrorEvent)
           eventType_;
     }
-    return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-        .UnsupportedPolicyEvent.getDefaultInstance();
+    return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
+        .getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4851,11 +9417,10 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                   .ContinuousValidationPodEvent)
               eventType_);
     }
-    if (eventTypeCase_ == 2) {
+    if (eventTypeCase_ == 4) {
       output.writeMessage(
-          2,
-          (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                  .UnsupportedPolicyEvent)
+          4,
+          (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent)
               eventType_);
     }
     getUnknownFields().writeTo(output);
@@ -4875,12 +9440,12 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                       .ContinuousValidationPodEvent)
                   eventType_);
     }
-    if (eventTypeCase_ == 2) {
+    if (eventTypeCase_ == 4) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              2,
+              4,
               (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                      .UnsupportedPolicyEvent)
+                      .ConfigErrorEvent)
                   eventType_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -4904,8 +9469,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       case 1:
         if (!getPodEvent().equals(other.getPodEvent())) return false;
         break;
-      case 2:
-        if (!getUnsupportedPolicyEvent().equals(other.getUnsupportedPolicyEvent())) return false;
+      case 4:
+        if (!getConfigErrorEvent().equals(other.getConfigErrorEvent())) return false;
         break;
       case 0:
       default:
@@ -4926,9 +9491,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         hash = (37 * hash) + POD_EVENT_FIELD_NUMBER;
         hash = (53 * hash) + getPodEvent().hashCode();
         break;
-      case 2:
-        hash = (37 * hash) + UNSUPPORTED_POLICY_EVENT_FIELD_NUMBER;
-        hash = (53 * hash) + getUnsupportedPolicyEvent().hashCode();
+      case 4:
+        hash = (37 * hash) + CONFIG_ERROR_EVENT_FIELD_NUMBER;
+        hash = (53 * hash) + getConfigErrorEvent().hashCode();
         break;
       case 0:
       default:
@@ -5078,8 +9643,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       if (podEventBuilder_ != null) {
         podEventBuilder_.clear();
       }
-      if (unsupportedPolicyEventBuilder_ != null) {
-        unsupportedPolicyEventBuilder_.clear();
+      if (configErrorEventBuilder_ != null) {
+        configErrorEventBuilder_.clear();
       }
       eventTypeCase_ = 0;
       eventType_ = null;
@@ -5133,8 +9698,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       if (eventTypeCase_ == 1 && podEventBuilder_ != null) {
         result.eventType_ = podEventBuilder_.build();
       }
-      if (eventTypeCase_ == 2 && unsupportedPolicyEventBuilder_ != null) {
-        result.eventType_ = unsupportedPolicyEventBuilder_.build();
+      if (eventTypeCase_ == 4 && configErrorEventBuilder_ != null) {
+        result.eventType_ = configErrorEventBuilder_.build();
       }
     }
 
@@ -5193,9 +9758,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             mergePodEvent(other.getPodEvent());
             break;
           }
-        case UNSUPPORTED_POLICY_EVENT:
+        case CONFIG_ERROR_EVENT:
           {
-            mergeUnsupportedPolicyEvent(other.getUnsupportedPolicyEvent());
+            mergeConfigErrorEvent(other.getConfigErrorEvent());
             break;
           }
         case EVENTTYPE_NOT_SET:
@@ -5235,13 +9800,13 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                 eventTypeCase_ = 1;
                 break;
               } // case 10
-            case 18:
+            case 34:
               {
                 input.readMessage(
-                    getUnsupportedPolicyEventFieldBuilder().getBuilder(), extensionRegistry);
-                eventTypeCase_ = 2;
+                    getConfigErrorEventFieldBuilder().getBuilder(), extensionRegistry);
+                eventTypeCase_ = 4;
                 break;
-              } // case 18
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5542,139 +10107,135 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent,
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
+                .Builder,
             com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent,
-            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent.Builder,
-            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEventOrBuilder>
-        unsupportedPolicyEventBuilder_;
+                .ConfigErrorEventOrBuilder>
+        configErrorEventBuilder_;
     /**
      *
      *
      * <pre>
-     * Unsupported policy event.
+     * Config error event.
      * </pre>
      *
      * <code>
-     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
      * </code>
      *
-     * @return Whether the unsupportedPolicyEvent field is set.
+     * @return Whether the configErrorEvent field is set.
      */
     @java.lang.Override
-    public boolean hasUnsupportedPolicyEvent() {
-      return eventTypeCase_ == 2;
+    public boolean hasConfigErrorEvent() {
+      return eventTypeCase_ == 4;
     }
     /**
      *
      *
      * <pre>
-     * Unsupported policy event.
+     * Config error event.
      * </pre>
      *
      * <code>
-     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
      * </code>
      *
-     * @return The unsupportedPolicyEvent.
+     * @return The configErrorEvent.
      */
     @java.lang.Override
-    public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent
-        getUnsupportedPolicyEvent() {
-      if (unsupportedPolicyEventBuilder_ == null) {
-        if (eventTypeCase_ == 2) {
+    public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
+        getConfigErrorEvent() {
+      if (configErrorEventBuilder_ == null) {
+        if (eventTypeCase_ == 4) {
           return (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                  .UnsupportedPolicyEvent)
+                  .ConfigErrorEvent)
               eventType_;
         }
         return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent.getDefaultInstance();
+            .ConfigErrorEvent.getDefaultInstance();
       } else {
-        if (eventTypeCase_ == 2) {
-          return unsupportedPolicyEventBuilder_.getMessage();
+        if (eventTypeCase_ == 4) {
+          return configErrorEventBuilder_.getMessage();
         }
         return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent.getDefaultInstance();
+            .ConfigErrorEvent.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Unsupported policy event.
+     * Config error event.
      * </pre>
      *
      * <code>
-     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
      * </code>
      */
-    public Builder setUnsupportedPolicyEvent(
-        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent
+    public Builder setConfigErrorEvent(
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
             value) {
-      if (unsupportedPolicyEventBuilder_ == null) {
+      if (configErrorEventBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         eventType_ = value;
         onChanged();
       } else {
-        unsupportedPolicyEventBuilder_.setMessage(value);
+        configErrorEventBuilder_.setMessage(value);
       }
-      eventTypeCase_ = 2;
+      eventTypeCase_ = 4;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Unsupported policy event.
+     * Config error event.
      * </pre>
      *
      * <code>
-     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
      * </code>
      */
-    public Builder setUnsupportedPolicyEvent(
-        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent.Builder
+    public Builder setConfigErrorEvent(
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
+                .Builder
             builderForValue) {
-      if (unsupportedPolicyEventBuilder_ == null) {
+      if (configErrorEventBuilder_ == null) {
         eventType_ = builderForValue.build();
         onChanged();
       } else {
-        unsupportedPolicyEventBuilder_.setMessage(builderForValue.build());
+        configErrorEventBuilder_.setMessage(builderForValue.build());
       }
-      eventTypeCase_ = 2;
+      eventTypeCase_ = 4;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Unsupported policy event.
+     * Config error event.
      * </pre>
      *
      * <code>
-     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
      * </code>
      */
-    public Builder mergeUnsupportedPolicyEvent(
-        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent
+    public Builder mergeConfigErrorEvent(
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
             value) {
-      if (unsupportedPolicyEventBuilder_ == null) {
-        if (eventTypeCase_ == 2
+      if (configErrorEventBuilder_ == null) {
+        if (eventTypeCase_ == 4
             && eventType_
                 != com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                    .UnsupportedPolicyEvent.getDefaultInstance()) {
+                    .ConfigErrorEvent.getDefaultInstance()) {
           eventType_ =
               com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                  .UnsupportedPolicyEvent.newBuilder(
+                  .ConfigErrorEvent.newBuilder(
                       (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                              .UnsupportedPolicyEvent)
+                              .ConfigErrorEvent)
                           eventType_)
                   .mergeFrom(value)
                   .buildPartial();
@@ -5683,39 +10244,39 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         }
         onChanged();
       } else {
-        if (eventTypeCase_ == 2) {
-          unsupportedPolicyEventBuilder_.mergeFrom(value);
+        if (eventTypeCase_ == 4) {
+          configErrorEventBuilder_.mergeFrom(value);
         } else {
-          unsupportedPolicyEventBuilder_.setMessage(value);
+          configErrorEventBuilder_.setMessage(value);
         }
       }
-      eventTypeCase_ = 2;
+      eventTypeCase_ = 4;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Unsupported policy event.
+     * Config error event.
      * </pre>
      *
      * <code>
-     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
      * </code>
      */
-    public Builder clearUnsupportedPolicyEvent() {
-      if (unsupportedPolicyEventBuilder_ == null) {
-        if (eventTypeCase_ == 2) {
+    public Builder clearConfigErrorEvent() {
+      if (configErrorEventBuilder_ == null) {
+        if (eventTypeCase_ == 4) {
           eventTypeCase_ = 0;
           eventType_ = null;
           onChanged();
         }
       } else {
-        if (eventTypeCase_ == 2) {
+        if (eventTypeCase_ == 4) {
           eventTypeCase_ = 0;
           eventType_ = null;
         }
-        unsupportedPolicyEventBuilder_.clear();
+        configErrorEventBuilder_.clear();
       }
       return this;
     }
@@ -5723,88 +10284,87 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Unsupported policy event.
+     * Config error event.
      * </pre>
      *
      * <code>
-     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
      * </code>
      */
-    public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent.Builder
-        getUnsupportedPolicyEventBuilder() {
-      return getUnsupportedPolicyEventFieldBuilder().getBuilder();
+    public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
+            .Builder
+        getConfigErrorEventBuilder() {
+      return getConfigErrorEventFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Unsupported policy event.
+     * Config error event.
      * </pre>
      *
      * <code>
-     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
      * </code>
      */
     @java.lang.Override
     public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEventOrBuilder
-        getUnsupportedPolicyEventOrBuilder() {
-      if ((eventTypeCase_ == 2) && (unsupportedPolicyEventBuilder_ != null)) {
-        return unsupportedPolicyEventBuilder_.getMessageOrBuilder();
+            .ConfigErrorEventOrBuilder
+        getConfigErrorEventOrBuilder() {
+      if ((eventTypeCase_ == 4) && (configErrorEventBuilder_ != null)) {
+        return configErrorEventBuilder_.getMessageOrBuilder();
       } else {
-        if (eventTypeCase_ == 2) {
+        if (eventTypeCase_ == 4) {
           return (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                  .UnsupportedPolicyEvent)
+                  .ConfigErrorEvent)
               eventType_;
         }
         return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-            .UnsupportedPolicyEvent.getDefaultInstance();
+            .ConfigErrorEvent.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Unsupported policy event.
+     * Config error event.
      * </pre>
      *
      * <code>
-     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+     * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent,
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
+                .Builder,
             com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent,
-            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent.Builder,
-            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEventOrBuilder>
-        getUnsupportedPolicyEventFieldBuilder() {
-      if (unsupportedPolicyEventBuilder_ == null) {
-        if (!(eventTypeCase_ == 2)) {
+                .ConfigErrorEventOrBuilder>
+        getConfigErrorEventFieldBuilder() {
+      if (configErrorEventBuilder_ == null) {
+        if (!(eventTypeCase_ == 4)) {
           eventType_ =
               com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                  .UnsupportedPolicyEvent.getDefaultInstance();
+                  .ConfigErrorEvent.getDefaultInstance();
         }
-        unsupportedPolicyEventBuilder_ =
+        configErrorEventBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                    .UnsupportedPolicyEvent,
+                    .ConfigErrorEvent,
                 com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                    .UnsupportedPolicyEvent.Builder,
+                    .ConfigErrorEvent.Builder,
                 com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                    .UnsupportedPolicyEventOrBuilder>(
+                    .ConfigErrorEventOrBuilder>(
                 (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                        .UnsupportedPolicyEvent)
+                        .ConfigErrorEvent)
                     eventType_,
                 getParentForChildren(),
                 isClean());
         eventType_ = null;
       }
-      eventTypeCase_ = 2;
+      eventTypeCase_ = 4;
       onChanged();
-      return unsupportedPolicyEventBuilder_;
+      return configErrorEventBuilder_;
     }
 
     @java.lang.Override

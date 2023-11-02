@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest;
+import com.google.cloud.metastore.v1.AlterMetadataResourceLocationResponse;
 import com.google.cloud.metastore.v1.Backup;
 import com.google.cloud.metastore.v1.CreateBackupRequest;
 import com.google.cloud.metastore.v1.CreateMetadataImportRequest;
@@ -72,7 +74,11 @@ import com.google.cloud.metastore.v1.ListServicesRequest;
 import com.google.cloud.metastore.v1.ListServicesResponse;
 import com.google.cloud.metastore.v1.MetadataExport;
 import com.google.cloud.metastore.v1.MetadataImport;
+import com.google.cloud.metastore.v1.MoveTableToDatabaseRequest;
+import com.google.cloud.metastore.v1.MoveTableToDatabaseResponse;
 import com.google.cloud.metastore.v1.OperationMetadata;
+import com.google.cloud.metastore.v1.QueryMetadataRequest;
+import com.google.cloud.metastore.v1.QueryMetadataResponse;
 import com.google.cloud.metastore.v1.Restore;
 import com.google.cloud.metastore.v1.RestoreServiceRequest;
 import com.google.cloud.metastore.v1.Service;
@@ -181,6 +187,22 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
   private final UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings;
   private final OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
       deleteBackupOperationSettings;
+  private final UnaryCallSettings<QueryMetadataRequest, Operation> queryMetadataSettings;
+  private final OperationCallSettings<
+          QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+      queryMetadataOperationSettings;
+  private final UnaryCallSettings<MoveTableToDatabaseRequest, Operation>
+      moveTableToDatabaseSettings;
+  private final OperationCallSettings<
+          MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseOperationSettings;
+  private final UnaryCallSettings<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationSettings;
+  private final OperationCallSettings<
+          AlterMetadataResourceLocationRequest,
+          AlterMetadataResourceLocationResponse,
+          OperationMetadata>
+      alterMetadataResourceLocationOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -543,6 +565,44 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     return deleteBackupOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to queryMetadata. */
+  public UnaryCallSettings<QueryMetadataRequest, Operation> queryMetadataSettings() {
+    return queryMetadataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to queryMetadata. */
+  public OperationCallSettings<QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+      queryMetadataOperationSettings() {
+    return queryMetadataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to moveTableToDatabase. */
+  public UnaryCallSettings<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseSettings() {
+    return moveTableToDatabaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to moveTableToDatabase. */
+  public OperationCallSettings<
+          MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseOperationSettings() {
+    return moveTableToDatabaseOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to alterMetadataResourceLocation. */
+  public UnaryCallSettings<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationSettings() {
+    return alterMetadataResourceLocationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to alterMetadataResourceLocation. */
+  public OperationCallSettings<
+          AlterMetadataResourceLocationRequest,
+          AlterMetadataResourceLocationResponse,
+          OperationMetadata>
+      alterMetadataResourceLocationOperationSettings() {
+    return alterMetadataResourceLocationOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -702,6 +762,15 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     createBackupOperationSettings = settingsBuilder.createBackupOperationSettings().build();
     deleteBackupSettings = settingsBuilder.deleteBackupSettings().build();
     deleteBackupOperationSettings = settingsBuilder.deleteBackupOperationSettings().build();
+    queryMetadataSettings = settingsBuilder.queryMetadataSettings().build();
+    queryMetadataOperationSettings = settingsBuilder.queryMetadataOperationSettings().build();
+    moveTableToDatabaseSettings = settingsBuilder.moveTableToDatabaseSettings().build();
+    moveTableToDatabaseOperationSettings =
+        settingsBuilder.moveTableToDatabaseOperationSettings().build();
+    alterMetadataResourceLocationSettings =
+        settingsBuilder.alterMetadataResourceLocationSettings().build();
+    alterMetadataResourceLocationOperationSettings =
+        settingsBuilder.alterMetadataResourceLocationOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -761,6 +830,22 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     private final UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings;
     private final OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
         deleteBackupOperationSettings;
+    private final UnaryCallSettings.Builder<QueryMetadataRequest, Operation> queryMetadataSettings;
+    private final OperationCallSettings.Builder<
+            QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+        queryMetadataOperationSettings;
+    private final UnaryCallSettings.Builder<MoveTableToDatabaseRequest, Operation>
+        moveTableToDatabaseSettings;
+    private final OperationCallSettings.Builder<
+            MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+        moveTableToDatabaseOperationSettings;
+    private final UnaryCallSettings.Builder<AlterMetadataResourceLocationRequest, Operation>
+        alterMetadataResourceLocationSettings;
+    private final OperationCallSettings.Builder<
+            AlterMetadataResourceLocationRequest,
+            AlterMetadataResourceLocationResponse,
+            OperationMetadata>
+        alterMetadataResourceLocationOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -842,6 +927,12 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
       createBackupOperationSettings = OperationCallSettings.newBuilder();
       deleteBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteBackupOperationSettings = OperationCallSettings.newBuilder();
+      queryMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      queryMetadataOperationSettings = OperationCallSettings.newBuilder();
+      moveTableToDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      moveTableToDatabaseOperationSettings = OperationCallSettings.newBuilder();
+      alterMetadataResourceLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      alterMetadataResourceLocationOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -865,6 +956,9 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
               getBackupSettings,
               createBackupSettings,
               deleteBackupSettings,
+              queryMetadataSettings,
+              moveTableToDatabaseSettings,
+              alterMetadataResourceLocationSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -902,6 +996,15 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
       createBackupOperationSettings = settings.createBackupOperationSettings.toBuilder();
       deleteBackupSettings = settings.deleteBackupSettings.toBuilder();
       deleteBackupOperationSettings = settings.deleteBackupOperationSettings.toBuilder();
+      queryMetadataSettings = settings.queryMetadataSettings.toBuilder();
+      queryMetadataOperationSettings = settings.queryMetadataOperationSettings.toBuilder();
+      moveTableToDatabaseSettings = settings.moveTableToDatabaseSettings.toBuilder();
+      moveTableToDatabaseOperationSettings =
+          settings.moveTableToDatabaseOperationSettings.toBuilder();
+      alterMetadataResourceLocationSettings =
+          settings.alterMetadataResourceLocationSettings.toBuilder();
+      alterMetadataResourceLocationOperationSettings =
+          settings.alterMetadataResourceLocationOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -925,6 +1028,9 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
               getBackupSettings,
               createBackupSettings,
               deleteBackupSettings,
+              queryMetadataSettings,
+              moveTableToDatabaseSettings,
+              alterMetadataResourceLocationSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1033,6 +1139,21 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
           .deleteBackupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .queryMetadataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .moveTableToDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .alterMetadataResourceLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listLocationsSettings()
@@ -1275,6 +1396,81 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
                       .setTotalTimeout(Duration.ofMillis(1500000L))
                       .build()));
 
+      builder
+          .queryMetadataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<QueryMetadataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(QueryMetadataResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .moveTableToDatabaseOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<MoveTableToDatabaseRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  MoveTableToDatabaseResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .alterMetadataResourceLocationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AlterMetadataResourceLocationRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  AlterMetadataResourceLocationResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1451,6 +1647,52 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
         deleteBackupOperationSettings() {
       return deleteBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryMetadata. */
+    public UnaryCallSettings.Builder<QueryMetadataRequest, Operation> queryMetadataSettings() {
+      return queryMetadataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryMetadata. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+        queryMetadataOperationSettings() {
+      return queryMetadataOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to moveTableToDatabase. */
+    public UnaryCallSettings.Builder<MoveTableToDatabaseRequest, Operation>
+        moveTableToDatabaseSettings() {
+      return moveTableToDatabaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to moveTableToDatabase. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+        moveTableToDatabaseOperationSettings() {
+      return moveTableToDatabaseOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to alterMetadataResourceLocation. */
+    public UnaryCallSettings.Builder<AlterMetadataResourceLocationRequest, Operation>
+        alterMetadataResourceLocationSettings() {
+      return alterMetadataResourceLocationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to alterMetadataResourceLocation. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            AlterMetadataResourceLocationRequest,
+            AlterMetadataResourceLocationResponse,
+            OperationMetadata>
+        alterMetadataResourceLocationOperationSettings() {
+      return alterMetadataResourceLocationOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

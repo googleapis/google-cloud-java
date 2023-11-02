@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.video.livestream.v1;
 
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
@@ -214,6 +215,55 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
   /** Returns the object with the settings used for calls to deleteEvent. */
   public UnaryCallSettings<DeleteEventRequest, Empty> deleteEventSettings() {
     return ((LivestreamServiceStubSettings) getStubSettings()).deleteEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAsset. */
+  public UnaryCallSettings<CreateAssetRequest, Operation> createAssetSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).createAssetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAsset. */
+  public OperationCallSettings<CreateAssetRequest, Asset, OperationMetadata>
+      createAssetOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).createAssetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAsset. */
+  public UnaryCallSettings<DeleteAssetRequest, Operation> deleteAssetSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).deleteAssetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAsset. */
+  public OperationCallSettings<DeleteAssetRequest, Empty, OperationMetadata>
+      deleteAssetOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).deleteAssetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAsset. */
+  public UnaryCallSettings<GetAssetRequest, Asset> getAssetSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).getAssetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAssets. */
+  public PagedCallSettings<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
+      listAssetsSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).listAssetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPool. */
+  public UnaryCallSettings<GetPoolRequest, Pool> getPoolSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).getPoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePool. */
+  public UnaryCallSettings<UpdatePoolRequest, Operation> updatePoolSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).updatePoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePool. */
+  public OperationCallSettings<UpdatePoolRequest, Pool, OperationMetadata>
+      updatePoolOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).updatePoolOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -474,6 +524,55 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
     /** Returns the builder for the settings used for calls to deleteEvent. */
     public UnaryCallSettings.Builder<DeleteEventRequest, Empty> deleteEventSettings() {
       return getStubSettingsBuilder().deleteEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAsset. */
+    public UnaryCallSettings.Builder<CreateAssetRequest, Operation> createAssetSettings() {
+      return getStubSettingsBuilder().createAssetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAsset. */
+    public OperationCallSettings.Builder<CreateAssetRequest, Asset, OperationMetadata>
+        createAssetOperationSettings() {
+      return getStubSettingsBuilder().createAssetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAsset. */
+    public UnaryCallSettings.Builder<DeleteAssetRequest, Operation> deleteAssetSettings() {
+      return getStubSettingsBuilder().deleteAssetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAsset. */
+    public OperationCallSettings.Builder<DeleteAssetRequest, Empty, OperationMetadata>
+        deleteAssetOperationSettings() {
+      return getStubSettingsBuilder().deleteAssetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAsset. */
+    public UnaryCallSettings.Builder<GetAssetRequest, Asset> getAssetSettings() {
+      return getStubSettingsBuilder().getAssetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAssets. */
+    public PagedCallSettings.Builder<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
+        listAssetsSettings() {
+      return getStubSettingsBuilder().listAssetsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPool. */
+    public UnaryCallSettings.Builder<GetPoolRequest, Pool> getPoolSettings() {
+      return getStubSettingsBuilder().getPoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePool. */
+    public UnaryCallSettings.Builder<UpdatePoolRequest, Operation> updatePoolSettings() {
+      return getStubSettingsBuilder().updatePoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePool. */
+    public OperationCallSettings.Builder<UpdatePoolRequest, Pool, OperationMetadata>
+        updatePoolOperationSettings() {
+      return getStubSettingsBuilder().updatePoolOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ package com.google.devtools.cloudtrace.v2;
  * nested to form a trace tree. Often, a trace contains a root span
  * that describes the end-to-end latency, and one or more subspans for
  * its sub-operations.
+ *
  * A trace can also contain multiple root spans, or none at all.
  * Spans do not need to be contiguous. There might be
  * gaps or overlaps between spans in a trace.
@@ -54,11 +55,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Span();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -330,6 +326,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
      * or the boolean values `true` or `false`. For example:
+     *
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -346,6 +343,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
      * or the boolean values `true` or `false`. For example:
+     *
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -366,6 +364,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
      * or the boolean values `true` or `false`. For example:
+     *
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -383,6 +382,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
      * or the boolean values `true` or `false`. For example:
+     *
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -403,6 +403,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
      * or the boolean values `true` or `false`. For example:
+     *
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -453,11 +454,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Attributes();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -528,6 +524,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
      * or the boolean values `true` or `false`. For example:
+     *
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -557,6 +554,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
      * or the boolean values `true` or `false`. For example:
+     *
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -577,6 +575,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
      * or the boolean values `true` or `false`. For example:
+     *
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -604,6 +603,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
      * or the boolean values `true` or `false`. For example:
+     *
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -1089,6 +1089,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
        * or the boolean values `true` or `false`. For example:
+       *
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1118,6 +1119,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
        * or the boolean values `true` or `false`. For example:
+       *
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1138,6 +1140,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
        * or the boolean values `true` or `false`. For example:
+       *
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1166,6 +1169,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
        * or the boolean values `true` or `false`. For example:
+       *
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1200,6 +1204,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
        * or the boolean values `true` or `false`. For example:
+       *
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1229,6 +1234,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
        * or the boolean values `true` or `false`. For example:
+       *
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1256,6 +1262,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
        * or the boolean values `true` or `false`. For example:
+       *
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1506,7 +1513,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     com.google.devtools.cloudtrace.v2.Span.TimeEvent.MessageEventOrBuilder
         getMessageEventOrBuilder();
 
-    public com.google.devtools.cloudtrace.v2.Span.TimeEvent.ValueCase getValueCase();
+    com.google.devtools.cloudtrace.v2.Span.TimeEvent.ValueCase getValueCase();
   }
   /**
    *
@@ -1533,11 +1540,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TimeEvent();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1661,11 +1663,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Annotation();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2740,11 +2737,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         return new MessageEvent();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.devtools.cloudtrace.v2.TraceProto
             .internal_static_google_devtools_cloudtrace_v2_Span_TimeEvent_MessageEvent_descriptor;
@@ -3772,6 +3764,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int valueCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object value_;
 
     public enum ValueCase
@@ -5215,11 +5209,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       return new TimeEvents();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.devtools.cloudtrace.v2.TraceProto
           .internal_static_google_devtools_cloudtrace_v2_Span_TimeEvents_descriptor;
@@ -6470,11 +6459,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Link();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7931,11 +7915,6 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       return new Links();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.devtools.cloudtrace.v2.TraceProto
           .internal_static_google_devtools_cloudtrace_v2_Span_Links_descriptor;
@@ -8934,10 +8913,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the span in the following format:
+   *
    *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+   *
    * `[TRACE_ID]` is a unique identifier for a trace within a project;
    * it is a 32-character hexadecimal encoding of a 16-byte array. It should
    * not be zero.
+   *
    * `[SPAN_ID]` is a unique identifier for a span within a trace; it
    * is a 16-character hexadecimal encoding of an 8-byte array. It should not
    * be zero.
@@ -8965,10 +8947,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the span in the following format:
+   *
    *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+   *
    * `[TRACE_ID]` is a unique identifier for a trace within a project;
    * it is a 32-character hexadecimal encoding of a 16-byte array. It should
    * not be zero.
+   *
    * `[SPAN_ID]` is a unique identifier for a span within a trace; it
    * is a 16-character hexadecimal encoding of an 8-byte array. It should not
    * be zero.
@@ -10033,6 +10018,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * nested to form a trace tree. Often, a trace contains a root span
    * that describes the end-to-end latency, and one or more subspans for
    * its sub-operations.
+   *
    * A trace can also contain multiple root spans, or none at all.
    * Spans do not need to be contiguous. There might be
    * gaps or overlaps between spans in a trace.
@@ -10438,10 +10424,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the span in the following format:
+     *
      *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+     *
      * `[TRACE_ID]` is a unique identifier for a trace within a project;
      * it is a 32-character hexadecimal encoding of a 16-byte array. It should
      * not be zero.
+     *
      * `[SPAN_ID]` is a unique identifier for a span within a trace; it
      * is a 16-character hexadecimal encoding of an 8-byte array. It should not
      * be zero.
@@ -10468,10 +10457,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the span in the following format:
+     *
      *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+     *
      * `[TRACE_ID]` is a unique identifier for a trace within a project;
      * it is a 32-character hexadecimal encoding of a 16-byte array. It should
      * not be zero.
+     *
      * `[SPAN_ID]` is a unique identifier for a span within a trace; it
      * is a 16-character hexadecimal encoding of an 8-byte array. It should not
      * be zero.
@@ -10498,10 +10490,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the span in the following format:
+     *
      *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+     *
      * `[TRACE_ID]` is a unique identifier for a trace within a project;
      * it is a 32-character hexadecimal encoding of a 16-byte array. It should
      * not be zero.
+     *
      * `[SPAN_ID]` is a unique identifier for a span within a trace; it
      * is a 16-character hexadecimal encoding of an 8-byte array. It should not
      * be zero.
@@ -10527,10 +10522,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the span in the following format:
+     *
      *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+     *
      * `[TRACE_ID]` is a unique identifier for a trace within a project;
      * it is a 32-character hexadecimal encoding of a 16-byte array. It should
      * not be zero.
+     *
      * `[SPAN_ID]` is a unique identifier for a span within a trace; it
      * is a 16-character hexadecimal encoding of an 8-byte array. It should not
      * be zero.
@@ -10552,10 +10550,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the span in the following format:
+     *
      *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+     *
      * `[TRACE_ID]` is a unique identifier for a trace within a project;
      * it is a 32-character hexadecimal encoding of a 16-byte array. It should
      * not be zero.
+     *
      * `[SPAN_ID]` is a unique identifier for a span within a trace; it
      * is a 16-character hexadecimal encoding of an 8-byte array. It should not
      * be zero.

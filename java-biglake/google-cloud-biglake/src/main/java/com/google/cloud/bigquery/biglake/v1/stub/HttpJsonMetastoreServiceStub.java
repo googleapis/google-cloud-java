@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.biglake.v1.Catalog;
 import com.google.cloud.bigquery.biglake.v1.CreateCatalogRequest;
@@ -673,77 +674,167 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
         HttpJsonCallSettings.<CreateCatalogRequest, Catalog>newBuilder()
             .setMethodDescriptor(createCatalogMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteCatalogRequest, Catalog> deleteCatalogTransportSettings =
         HttpJsonCallSettings.<DeleteCatalogRequest, Catalog>newBuilder()
             .setMethodDescriptor(deleteCatalogMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetCatalogRequest, Catalog> getCatalogTransportSettings =
         HttpJsonCallSettings.<GetCatalogRequest, Catalog>newBuilder()
             .setMethodDescriptor(getCatalogMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListCatalogsRequest, ListCatalogsResponse> listCatalogsTransportSettings =
         HttpJsonCallSettings.<ListCatalogsRequest, ListCatalogsResponse>newBuilder()
             .setMethodDescriptor(listCatalogsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateDatabaseRequest, Database> createDatabaseTransportSettings =
         HttpJsonCallSettings.<CreateDatabaseRequest, Database>newBuilder()
             .setMethodDescriptor(createDatabaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteDatabaseRequest, Database> deleteDatabaseTransportSettings =
         HttpJsonCallSettings.<DeleteDatabaseRequest, Database>newBuilder()
             .setMethodDescriptor(deleteDatabaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateDatabaseRequest, Database> updateDatabaseTransportSettings =
         HttpJsonCallSettings.<UpdateDatabaseRequest, Database>newBuilder()
             .setMethodDescriptor(updateDatabaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("database.name", String.valueOf(request.getDatabase().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetDatabaseRequest, Database> getDatabaseTransportSettings =
         HttpJsonCallSettings.<GetDatabaseRequest, Database>newBuilder()
             .setMethodDescriptor(getDatabaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListDatabasesRequest, ListDatabasesResponse>
         listDatabasesTransportSettings =
             HttpJsonCallSettings.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
                 .setMethodDescriptor(listDatabasesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateTableRequest, Table> createTableTransportSettings =
         HttpJsonCallSettings.<CreateTableRequest, Table>newBuilder()
             .setMethodDescriptor(createTableMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteTableRequest, Table> deleteTableTransportSettings =
         HttpJsonCallSettings.<DeleteTableRequest, Table>newBuilder()
             .setMethodDescriptor(deleteTableMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateTableRequest, Table> updateTableTransportSettings =
         HttpJsonCallSettings.<UpdateTableRequest, Table>newBuilder()
             .setMethodDescriptor(updateTableMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("table.name", String.valueOf(request.getTable().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RenameTableRequest, Table> renameTableTransportSettings =
         HttpJsonCallSettings.<RenameTableRequest, Table>newBuilder()
             .setMethodDescriptor(renameTableMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetTableRequest, Table> getTableTransportSettings =
         HttpJsonCallSettings.<GetTableRequest, Table>newBuilder()
             .setMethodDescriptor(getTableMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListTablesRequest, ListTablesResponse> listTablesTransportSettings =
         HttpJsonCallSettings.<ListTablesRequest, ListTablesResponse>newBuilder()
             .setMethodDescriptor(listTablesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
 
     this.createCatalogCallable =

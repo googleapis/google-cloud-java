@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CloudStorageOptions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -225,11 +220,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
      * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+     *
      * If the url ends in a trailing slash, the bucket or directory represented
      * by the url will be scanned non-recursively (content in sub-directories
      * will not be scanned). This means that `gs://mybucket/` is equivalent to
      * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
      * `gs://mybucket/directory/&#42;`.
+     *
      * Exactly one of `url` or `regex_file_set` must be set.
      * </pre>
      *
@@ -244,11 +241,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
      * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+     *
      * If the url ends in a trailing slash, the bucket or directory represented
      * by the url will be scanned non-recursively (content in sub-directories
      * will not be scanned). This means that `gs://mybucket/` is equivalent to
      * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
      * `gs://mybucket/directory/&#42;`.
+     *
      * Exactly one of `url` or `regex_file_set` must be set.
      * </pre>
      *
@@ -325,11 +324,6 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       return new FileSet();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpStorage
           .internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_descriptor;
@@ -355,11 +349,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
      * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+     *
      * If the url ends in a trailing slash, the bucket or directory represented
      * by the url will be scanned non-recursively (content in sub-directories
      * will not be scanned). This means that `gs://mybucket/` is equivalent to
      * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
      * `gs://mybucket/directory/&#42;`.
+     *
      * Exactly one of `url` or `regex_file_set` must be set.
      * </pre>
      *
@@ -385,11 +381,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
      * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+     *
      * If the url ends in a trailing slash, the bucket or directory represented
      * by the url will be scanned non-recursively (content in sub-directories
      * will not be scanned). This means that `gs://mybucket/` is equivalent to
      * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
      * `gs://mybucket/directory/&#42;`.
+     *
      * Exactly one of `url` or `regex_file_set` must be set.
      * </pre>
      *
@@ -849,11 +847,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
        * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+       *
        * If the url ends in a trailing slash, the bucket or directory represented
        * by the url will be scanned non-recursively (content in sub-directories
        * will not be scanned). This means that `gs://mybucket/` is equivalent to
        * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
        * `gs://mybucket/directory/&#42;`.
+       *
        * Exactly one of `url` or `regex_file_set` must be set.
        * </pre>
        *
@@ -878,11 +878,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
        * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+       *
        * If the url ends in a trailing slash, the bucket or directory represented
        * by the url will be scanned non-recursively (content in sub-directories
        * will not be scanned). This means that `gs://mybucket/` is equivalent to
        * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
        * `gs://mybucket/directory/&#42;`.
+       *
        * Exactly one of `url` or `regex_file_set` must be set.
        * </pre>
        *
@@ -907,11 +909,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
        * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+       *
        * If the url ends in a trailing slash, the bucket or directory represented
        * by the url will be scanned non-recursively (content in sub-directories
        * will not be scanned). This means that `gs://mybucket/` is equivalent to
        * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
        * `gs://mybucket/directory/&#42;`.
+       *
        * Exactly one of `url` or `regex_file_set` must be set.
        * </pre>
        *
@@ -935,11 +939,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
        * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+       *
        * If the url ends in a trailing slash, the bucket or directory represented
        * by the url will be scanned non-recursively (content in sub-directories
        * will not be scanned). This means that `gs://mybucket/` is equivalent to
        * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
        * `gs://mybucket/directory/&#42;`.
+       *
        * Exactly one of `url` or `regex_file_set` must be set.
        * </pre>
        *
@@ -959,11 +965,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
        * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+       *
        * If the url ends in a trailing slash, the bucket or directory represented
        * by the url will be scanned non-recursively (content in sub-directories
        * will not be scanned). This means that `gs://mybucket/` is equivalent to
        * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
        * `gs://mybucket/directory/&#42;`.
+       *
        * Exactly one of `url` or `regex_file_set` must be set.
        * </pre>
        *
@@ -1299,9 +1307,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Max number of bytes to scan from a file. If a scanned file's size is bigger
-   * than this value then the rest of the bytes are omitted. Only one
-   * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
-   * Cannot be set if de-identification is requested.
+   * than this value then the rest of the bytes are omitted. Only one of
+   * `bytes_limit_per_file` and `bytes_limit_per_file_percent` can be specified.
+   * This field can't be set if de-identification is requested. For certain file
+   * types, setting this field has no effect. For more information, see [Limits
+   * on bytes scanned per
+   * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
    * </pre>
    *
    * <code>int64 bytes_limit_per_file = 4;</code>
@@ -1321,9 +1332,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * <pre>
    * Max percentage of bytes to scan from a file. The rest are omitted. The
    * number of bytes scanned is rounded down. Must be between 0 and 100,
-   * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
-   * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
-   * Cannot be set if de-identification is requested.
+   * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of
+   * bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
+   * This field can't be set if de-identification is requested. For certain file
+   * types, setting this field has no effect. For more information, see [Limits
+   * on bytes scanned per
+   * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
    * </pre>
    *
    * <code>int32 bytes_limit_per_file_percent = 8;</code>
@@ -2204,9 +2218,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Max number of bytes to scan from a file. If a scanned file's size is bigger
-     * than this value then the rest of the bytes are omitted. Only one
-     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
-     * Cannot be set if de-identification is requested.
+     * than this value then the rest of the bytes are omitted. Only one of
+     * `bytes_limit_per_file` and `bytes_limit_per_file_percent` can be specified.
+     * This field can't be set if de-identification is requested. For certain file
+     * types, setting this field has no effect. For more information, see [Limits
+     * on bytes scanned per
+     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -2222,9 +2239,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Max number of bytes to scan from a file. If a scanned file's size is bigger
-     * than this value then the rest of the bytes are omitted. Only one
-     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
-     * Cannot be set if de-identification is requested.
+     * than this value then the rest of the bytes are omitted. Only one of
+     * `bytes_limit_per_file` and `bytes_limit_per_file_percent` can be specified.
+     * This field can't be set if de-identification is requested. For certain file
+     * types, setting this field has no effect. For more information, see [Limits
+     * on bytes scanned per
+     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -2244,9 +2264,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Max number of bytes to scan from a file. If a scanned file's size is bigger
-     * than this value then the rest of the bytes are omitted. Only one
-     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
-     * Cannot be set if de-identification is requested.
+     * than this value then the rest of the bytes are omitted. Only one of
+     * `bytes_limit_per_file` and `bytes_limit_per_file_percent` can be specified.
+     * This field can't be set if de-identification is requested. For certain file
+     * types, setting this field has no effect. For more information, see [Limits
+     * on bytes scanned per
+     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -2267,9 +2290,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * <pre>
      * Max percentage of bytes to scan from a file. The rest are omitted. The
      * number of bytes scanned is rounded down. Must be between 0 and 100,
-     * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
-     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
-     * Cannot be set if de-identification is requested.
+     * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of
+     * bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
+     * This field can't be set if de-identification is requested. For certain file
+     * types, setting this field has no effect. For more information, see [Limits
+     * on bytes scanned per
+     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
@@ -2286,9 +2312,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * <pre>
      * Max percentage of bytes to scan from a file. The rest are omitted. The
      * number of bytes scanned is rounded down. Must be between 0 and 100,
-     * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
-     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
-     * Cannot be set if de-identification is requested.
+     * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of
+     * bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
+     * This field can't be set if de-identification is requested. For certain file
+     * types, setting this field has no effect. For more information, see [Limits
+     * on bytes scanned per
+     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
@@ -2309,9 +2338,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * <pre>
      * Max percentage of bytes to scan from a file. The rest are omitted. The
      * number of bytes scanned is rounded down. Must be between 0 and 100,
-     * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
-     * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
-     * Cannot be set if de-identification is requested.
+     * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of
+     * bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
+     * This field can't be set if de-identification is requested. For certain file
+     * types, setting this field has no effect. For more information, see [Limits
+     * on bytes scanned per
+     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>

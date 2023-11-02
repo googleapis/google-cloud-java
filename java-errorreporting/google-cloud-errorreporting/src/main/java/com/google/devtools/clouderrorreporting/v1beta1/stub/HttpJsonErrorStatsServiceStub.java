@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
@@ -238,16 +239,34 @@ public class HttpJsonErrorStatsServiceStub extends ErrorStatsServiceStub {
             HttpJsonCallSettings.<ListGroupStatsRequest, ListGroupStatsResponse>newBuilder()
                 .setMethodDescriptor(listGroupStatsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project_name", String.valueOf(request.getProjectName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
         HttpJsonCallSettings.<ListEventsRequest, ListEventsResponse>newBuilder()
             .setMethodDescriptor(listEventsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_name", String.valueOf(request.getProjectName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsTransportSettings =
         HttpJsonCallSettings.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
             .setMethodDescriptor(deleteEventsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_name", String.valueOf(request.getProjectName()));
+                  return builder.build();
+                })
             .build();
 
     this.listGroupStatsCallable =

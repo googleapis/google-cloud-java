@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
   }
 
   private SendTestMessageRequest() {
-    contacts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    contacts_ = com.google.protobuf.LazyStringArrayList.emptyList();
     resource_ = "";
     notificationCategory_ = 0;
   }
@@ -47,11 +47,6 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SendTestMessageRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,7 +67,8 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
   public static final int CONTACTS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList contacts_;
+  private com.google.protobuf.LazyStringArrayList contacts_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -488,8 +484,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      contacts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      contacts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       resource_ = "";
       notificationCategory_ = 0;
       return this;
@@ -520,7 +515,6 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.essentialcontacts.v1.SendTestMessageRequest buildPartial() {
       com.google.cloud.essentialcontacts.v1.SendTestMessageRequest result =
           new com.google.cloud.essentialcontacts.v1.SendTestMessageRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -528,18 +522,13 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.essentialcontacts.v1.SendTestMessageRequest result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        contacts_ = contacts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.contacts_ = contacts_;
-    }
-
     private void buildPartial0(
         com.google.cloud.essentialcontacts.v1.SendTestMessageRequest result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        contacts_.makeImmutable();
+        result.contacts_ = contacts_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.resource_ = resource_;
       }
@@ -598,7 +587,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       if (!other.contacts_.isEmpty()) {
         if (contacts_.isEmpty()) {
           contacts_ = other.contacts_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureContactsIsMutable();
           contacts_.addAll(other.contacts_);
@@ -677,14 +666,14 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList contacts_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList contacts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureContactsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!contacts_.isModifiable()) {
         contacts_ = new com.google.protobuf.LazyStringArrayList(contacts_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -703,7 +692,8 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
      * @return A list containing the contacts.
      */
     public com.google.protobuf.ProtocolStringList getContactsList() {
-      return contacts_.getUnmodifiableView();
+      contacts_.makeImmutable();
+      return contacts_;
     }
     /**
      *
@@ -788,6 +778,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       }
       ensureContactsIsMutable();
       contacts_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -814,6 +805,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       }
       ensureContactsIsMutable();
       contacts_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,6 +829,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     public Builder addAllContacts(java.lang.Iterable<java.lang.String> values) {
       ensureContactsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contacts_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -857,8 +850,9 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearContacts() {
-      contacts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      contacts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -886,6 +880,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureContactsIsMutable();
       contacts_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

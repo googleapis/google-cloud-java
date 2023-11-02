@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface AwsControlPlaneOrBuilder
    * <pre>
    * Required. The Kubernetes version to run on control plane replicas
    * (e.g. `1.19.10-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -45,6 +46,7 @@ public interface AwsControlPlaneOrBuilder
    * <pre>
    * Required. The Kubernetes version to run on control plane replicas
    * (e.g. `1.19.10-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -61,6 +63,7 @@ public interface AwsControlPlaneOrBuilder
    *
    * <pre>
    * Optional. The AWS instance type.
+   *
    * When unspecified, it uses a default based on the cluster's version.
    * </pre>
    *
@@ -74,6 +77,7 @@ public interface AwsControlPlaneOrBuilder
    *
    * <pre>
    * Optional. The AWS instance type.
+   *
    * When unspecified, it uses a default based on the cluster's version.
    * </pre>
    *
@@ -282,8 +286,10 @@ public interface AwsControlPlaneOrBuilder
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * control plane replica.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -300,8 +306,10 @@ public interface AwsControlPlaneOrBuilder
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * control plane replica.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -318,8 +326,10 @@ public interface AwsControlPlaneOrBuilder
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * control plane replica.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -336,8 +346,10 @@ public interface AwsControlPlaneOrBuilder
    * Optional. Configuration related to the main volume provisioned for each
    * control plane replica.
    * The main volume is in charge of storing all of the cluster's etcd state.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 8 GiB with the GP2 volume type.
    * </pre>
    *
@@ -355,8 +367,10 @@ public interface AwsControlPlaneOrBuilder
    * Optional. Configuration related to the main volume provisioned for each
    * control plane replica.
    * The main volume is in charge of storing all of the cluster's etcd state.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 8 GiB with the GP2 volume type.
    * </pre>
    *
@@ -374,8 +388,10 @@ public interface AwsControlPlaneOrBuilder
    * Optional. Configuration related to the main volume provisioned for each
    * control plane replica.
    * The main volume is in charge of storing all of the cluster's etcd state.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 8 GiB with the GP2 volume type.
    * </pre>
    *
@@ -432,6 +448,7 @@ public interface AwsControlPlaneOrBuilder
    * <pre>
    * Optional. A set of AWS resource tags to propagate to all underlying managed
    * AWS resources.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -446,6 +463,7 @@ public interface AwsControlPlaneOrBuilder
    * <pre>
    * Optional. A set of AWS resource tags to propagate to all underlying managed
    * AWS resources.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -463,6 +481,7 @@ public interface AwsControlPlaneOrBuilder
    * <pre>
    * Optional. A set of AWS resource tags to propagate to all underlying managed
    * AWS resources.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -477,6 +496,7 @@ public interface AwsControlPlaneOrBuilder
    * <pre>
    * Optional. A set of AWS resource tags to propagate to all underlying managed
    * AWS resources.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -495,6 +515,7 @@ public interface AwsControlPlaneOrBuilder
    * <pre>
    * Optional. A set of AWS resource tags to propagate to all underlying managed
    * AWS resources.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Block();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -354,14 +349,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    * is represented as around the top-left corner as defined when the text is
    * read in the 'natural' orientation.
    * For example:
+   *
    * * when the text is horizontal it might look like:
+   *
    *         0----1
    *         |    |
    *         3----2
+   *
    * * when it's rotated 180 degrees around the top-left corner it becomes:
+   *
    *         2----3
    *         |    |
    *         1----0
+   *
    *   and the vertex order will still be (0, 1, 2, 3).
    * </pre>
    *
@@ -383,14 +383,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    * is represented as around the top-left corner as defined when the text is
    * read in the 'natural' orientation.
    * For example:
+   *
    * * when the text is horizontal it might look like:
+   *
    *         0----1
    *         |    |
    *         3----2
+   *
    * * when it's rotated 180 degrees around the top-left corner it becomes:
+   *
    *         2----3
    *         |    |
    *         1----0
+   *
    *   and the vertex order will still be (0, 1, 2, 3).
    * </pre>
    *
@@ -414,14 +419,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    * is represented as around the top-left corner as defined when the text is
    * read in the 'natural' orientation.
    * For example:
+   *
    * * when the text is horizontal it might look like:
+   *
    *         0----1
    *         |    |
    *         3----2
+   *
    * * when it's rotated 180 degrees around the top-left corner it becomes:
+   *
    *         2----3
    *         |    |
    *         1----0
+   *
    *   and the vertex order will still be (0, 1, 2, 3).
    * </pre>
    *
@@ -1259,14 +1269,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * is represented as around the top-left corner as defined when the text is
      * read in the 'natural' orientation.
      * For example:
+     *
      * * when the text is horizontal it might look like:
+     *
      *         0----1
      *         |    |
      *         3----2
+     *
      * * when it's rotated 180 degrees around the top-left corner it becomes:
+     *
      *         2----3
      *         |    |
      *         1----0
+     *
      *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
@@ -1287,14 +1302,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * is represented as around the top-left corner as defined when the text is
      * read in the 'natural' orientation.
      * For example:
+     *
      * * when the text is horizontal it might look like:
+     *
      *         0----1
      *         |    |
      *         3----2
+     *
      * * when it's rotated 180 degrees around the top-left corner it becomes:
+     *
      *         2----3
      *         |    |
      *         1----0
+     *
      *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
@@ -1321,14 +1341,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * is represented as around the top-left corner as defined when the text is
      * read in the 'natural' orientation.
      * For example:
+     *
      * * when the text is horizontal it might look like:
+     *
      *         0----1
      *         |    |
      *         3----2
+     *
      * * when it's rotated 180 degrees around the top-left corner it becomes:
+     *
      *         2----3
      *         |    |
      *         1----0
+     *
      *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
@@ -1357,14 +1382,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * is represented as around the top-left corner as defined when the text is
      * read in the 'natural' orientation.
      * For example:
+     *
      * * when the text is horizontal it might look like:
+     *
      *         0----1
      *         |    |
      *         3----2
+     *
      * * when it's rotated 180 degrees around the top-left corner it becomes:
+     *
      *         2----3
      *         |    |
      *         1----0
+     *
      *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
@@ -1391,14 +1421,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * is represented as around the top-left corner as defined when the text is
      * read in the 'natural' orientation.
      * For example:
+     *
      * * when the text is horizontal it might look like:
+     *
      *         0----1
      *         |    |
      *         3----2
+     *
      * * when it's rotated 180 degrees around the top-left corner it becomes:
+     *
      *         2----3
      *         |    |
      *         1----0
+     *
      *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
@@ -1431,14 +1466,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * is represented as around the top-left corner as defined when the text is
      * read in the 'natural' orientation.
      * For example:
+     *
      * * when the text is horizontal it might look like:
+     *
      *         0----1
      *         |    |
      *         3----2
+     *
      * * when it's rotated 180 degrees around the top-left corner it becomes:
+     *
      *         2----3
      *         |    |
      *         1----0
+     *
      *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
@@ -1464,14 +1504,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * is represented as around the top-left corner as defined when the text is
      * read in the 'natural' orientation.
      * For example:
+     *
      * * when the text is horizontal it might look like:
+     *
      *         0----1
      *         |    |
      *         3----2
+     *
      * * when it's rotated 180 degrees around the top-left corner it becomes:
+     *
      *         2----3
      *         |    |
      *         1----0
+     *
      *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
@@ -1492,14 +1537,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * is represented as around the top-left corner as defined when the text is
      * read in the 'natural' orientation.
      * For example:
+     *
      * * when the text is horizontal it might look like:
+     *
      *         0----1
      *         |    |
      *         3----2
+     *
      * * when it's rotated 180 degrees around the top-left corner it becomes:
+     *
      *         2----3
      *         |    |
      *         1----0
+     *
      *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
@@ -1524,14 +1574,19 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * is represented as around the top-left corner as defined when the text is
      * read in the 'natural' orientation.
      * For example:
+     *
      * * when the text is horizontal it might look like:
+     *
      *         0----1
      *         |    |
      *         3----2
+     *
      * * when it's rotated 180 degrees around the top-left corner it becomes:
+     *
      *         2----3
      *         |    |
      *         1----0
+     *
      *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *

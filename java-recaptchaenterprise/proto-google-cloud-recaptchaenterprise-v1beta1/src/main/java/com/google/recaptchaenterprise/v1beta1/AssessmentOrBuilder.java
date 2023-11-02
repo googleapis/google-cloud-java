@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface AssessmentOrBuilder
    *
    * <pre>
    * Output only. The resource name for the Assessment in the format
-   * "projects/{project_number}/assessments/{assessment_id}".
+   * `projects/{project_number}/assessments/{assessment_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,7 +41,7 @@ public interface AssessmentOrBuilder
    *
    * <pre>
    * Output only. The resource name for the Assessment in the format
-   * "projects/{project_number}/assessments/{assessment_id}".
+   * `projects/{project_number}/assessments/{assessment_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

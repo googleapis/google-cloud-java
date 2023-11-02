@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -233,5 +233,5 @@ public interface PhysicalSchemaOrBuilder
    */
   com.google.cloud.datacatalog.v1.PhysicalSchema.CsvSchemaOrBuilder getCsvOrBuilder();
 
-  public com.google.cloud.datacatalog.v1.PhysicalSchema.SchemaCase getSchemaCase();
+  com.google.cloud.datacatalog.v1.PhysicalSchema.SchemaCase getSchemaCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1272,7 +1272,6 @@ public class MetadataServiceClient implements BackgroundResource {
    *     Artifact to be updated. Format:
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * @param updateMask Optional. A FieldMask indicating which fields should be updated.
-   *     Functionality of this field is not yet supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Artifact updateArtifact(Artifact artifact, FieldMask updateMask) {
@@ -2110,7 +2109,6 @@ public class MetadataServiceClient implements BackgroundResource {
    *     Context to be updated. Format:
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * @param updateMask Optional. A FieldMask indicating which fields should be updated.
-   *     Functionality of this field is not yet supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context updateContext(Context context, FieldMask updateMask) {
@@ -3537,7 +3535,6 @@ public class MetadataServiceClient implements BackgroundResource {
    *     Execution to be updated. Format:
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * @param updateMask Optional. A FieldMask indicating which fields should be updated.
-   *     Functionality of this field is not yet supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Execution updateExecution(Execution execution, FieldMask updateMask) {

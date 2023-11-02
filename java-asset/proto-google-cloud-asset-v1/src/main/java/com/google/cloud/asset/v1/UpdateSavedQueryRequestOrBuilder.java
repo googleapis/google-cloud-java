@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface UpdateSavedQueryRequestOrBuilder
    *
    * <pre>
    * Required. The saved query to update.
+   *
    * The saved query's `name` field is used to identify the one to update,
    * which has format as below:
+   *
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id
@@ -47,8 +49,10 @@ public interface UpdateSavedQueryRequestOrBuilder
    *
    * <pre>
    * Required. The saved query to update.
+   *
    * The saved query's `name` field is used to identify the one to update,
    * which has format as below:
+   *
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id
@@ -66,8 +70,10 @@ public interface UpdateSavedQueryRequestOrBuilder
    *
    * <pre>
    * Required. The saved query to update.
+   *
    * The saved query's `name` field is used to identify the one to update,
    * which has format as below:
+   *
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,11 +62,13 @@ public interface GenerateClientCertificateRequestOrBuilder
    * request ID so that if you must retry your request, the server will know to
    * ignore the request if it has already been completed. The server will
    * guarantee that for at least 60 minutes after the first request.
+   *
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
+   *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
@@ -84,11 +86,13 @@ public interface GenerateClientCertificateRequestOrBuilder
    * request ID so that if you must retry your request, the server will know to
    * ignore the request if it has already been completed. The server will
    * guarantee that for at least 60 minutes after the first request.
+   *
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
+   *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
@@ -106,10 +110,13 @@ public interface GenerateClientCertificateRequestOrBuilder
    * Optional. A pem-encoded X.509 certificate signing request (CSR).
    * </pre>
    *
-   * <code>string pem_csr = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateRequest.pem_csr is deprecated.
+   *     See google/cloud/alloydb/v1beta/service.proto;l=1351
    * @return The pemCsr.
    */
+  @java.lang.Deprecated
   java.lang.String getPemCsr();
   /**
    *
@@ -118,10 +125,13 @@ public interface GenerateClientCertificateRequestOrBuilder
    * Optional. A pem-encoded X.509 certificate signing request (CSR).
    * </pre>
    *
-   * <code>string pem_csr = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateRequest.pem_csr is deprecated.
+   *     See google/cloud/alloydb/v1beta/service.proto;l=1351
    * @return The bytes for pemCsr.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getPemCsrBytes();
 
   /**
@@ -173,4 +183,44 @@ public interface GenerateClientCertificateRequestOrBuilder
    * </code>
    */
   com.google.protobuf.DurationOrBuilder getCertDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The public key from the client.
+   * </pre>
+   *
+   * <code>string public_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The publicKey.
+   */
+  java.lang.String getPublicKey();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The public key from the client.
+   * </pre>
+   *
+   * <code>string public_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for publicKey.
+   */
+  com.google.protobuf.ByteString getPublicKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional hint to the endpoint to generate a client
+   * ceritificate that can be used by AlloyDB connectors to exchange additional
+   * metadata with the server after TLS handshake.
+   * </pre>
+   *
+   * <code>bool use_metadata_exchange = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useMetadataExchange.
+   */
+  boolean getUseMetadataExchange();
 }

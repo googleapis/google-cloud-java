@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ApplianceClusterOrBuilder
    * <pre>
    * Immutable. Self-link of the GCP resource for the Appliance Cluster. For
    * example:
+   *
    * //transferappliance.googleapis.com/projects/my-project/locations/us-west1-a/appliances/my-appliance
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface ApplianceClusterOrBuilder
    * <pre>
    * Immutable. Self-link of the GCP resource for the Appliance Cluster. For
    * example:
+   *
    * //transferappliance.googleapis.com/projects/my-project/locations/us-west1-a/appliances/my-appliance
    * </pre>
    *

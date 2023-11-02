@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -375,6 +375,7 @@ public class BackendServicesClientTest {
             .setLocalityLbPolicy("localityLbPolicy-1807450933")
             .setLogConfig(BackendServiceLogConfig.newBuilder().build())
             .setMaxStreamDuration(Duration.newBuilder().build())
+            .putAllMetadatas(new HashMap<String, String>())
             .setName("name3373707")
             .setNetwork("network1843485230")
             .setOutlierDetection(OutlierDetection.newBuilder().build())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface AlterMetadataResourceLocationRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the metastore service to mutate
    * metadata, in the following format:
+   *
    * `projects/{project_id}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface AlterMetadataResourceLocationRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the metastore service to mutate
    * metadata, in the following format:
+   *
    * `projects/{project_id}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -61,6 +63,7 @@ public interface AlterMetadataResourceLocationRequestOrBuilder
    *
    * <pre>
    * Required. The relative metadata resource name in the following format.
+   *
    * `databases/{database_id}`
    * or
    * `databases/{database_id}/tables/{table_id}`
@@ -78,6 +81,7 @@ public interface AlterMetadataResourceLocationRequestOrBuilder
    *
    * <pre>
    * Required. The relative metadata resource name in the following format.
+   *
    * `databases/{database_id}`
    * or
    * `databases/{database_id}/tables/{table_id}`

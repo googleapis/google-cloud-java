@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,6 +219,7 @@ public interface SavedQueryOrBuilder
    * <pre>
    * Required. Problem type of the SavedQuery.
    * Allowed values:
+   *
    * * IMAGE_CLASSIFICATION_SINGLE_LABEL
    * * IMAGE_CLASSIFICATION_MULTI_LABEL
    * * IMAGE_BOUNDING_POLY
@@ -242,6 +243,7 @@ public interface SavedQueryOrBuilder
    * <pre>
    * Required. Problem type of the SavedQuery.
    * Allowed values:
+   *
    * * IMAGE_CLASSIFICATION_SINGLE_LABEL
    * * IMAGE_CLASSIFICATION_MULTI_LABEL
    * * IMAGE_BOUNDING_POLY

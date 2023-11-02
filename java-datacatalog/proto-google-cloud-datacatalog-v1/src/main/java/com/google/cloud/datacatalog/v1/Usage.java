@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,26 +64,26 @@ public final class Usage {
           + "(\002\022\033\n\023total_cancellations\030\003 \001(\002\0223\n+total"
           + "_execution_time_for_completions_millis\030\004"
           + " \001(\002\":\n\020CommonUsageStats\022\027\n\nview_count\030\001"
-          + " \001(\003H\000\210\001\001B\r\n\013_view_count\"\242\004\n\013UsageSignal"
+          + " \001(\003H\000\210\001\001B\r\n\013_view_count\"\243\004\n\013UsageSignal"
           + "\022/\n\013update_time\030\001 \001(\0132\032.google.protobuf."
-          + "Timestamp\022h\n\027usage_within_time_range\030\002 \003"
+          + "Timestamp\022i\n\027usage_within_time_range\030\002 \003"
           + "(\0132B.google.cloud.datacatalog.v1.UsageSi"
-          + "gnal.UsageWithinTimeRangeEntryB\003\340A\003\022p\n\036c"
-          + "ommon_usage_within_time_range\030\003 \003(\0132H.go"
-          + "ogle.cloud.datacatalog.v1.UsageSignal.Co"
-          + "mmonUsageWithinTimeRangeEntry\022\033\n\016favorit"
-          + "e_count\030\004 \001(\003H\000\210\001\001\032d\n\031UsageWithinTimeRan"
-          + "geEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.go"
-          + "ogle.cloud.datacatalog.v1.UsageStats:\0028\001"
-          + "\032p\n\037CommonUsageWithinTimeRangeEntry\022\013\n\003k"
-          + "ey\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.google.cloud.d"
-          + "atacatalog.v1.CommonUsageStats:\0028\001B\021\n\017_f"
-          + "avorite_countB\306\001\n\037com.google.cloud.datac"
-          + "atalog.v1P\001ZAcloud.google.com/go/datacat"
-          + "alog/apiv1/datacatalogpb;datacatalogpb\370\001"
-          + "\001\252\002\033Google.Cloud.DataCatalog.V1\312\002\033Google"
-          + "\\Cloud\\DataCatalog\\V1\352\002\036Google::Cloud::D"
-          + "ataCatalog::V1b\006proto3"
+          + "gnal.UsageWithinTimeRangeEntryB\004\342A\001\003\022p\n\036"
+          + "common_usage_within_time_range\030\003 \003(\0132H.g"
+          + "oogle.cloud.datacatalog.v1.UsageSignal.C"
+          + "ommonUsageWithinTimeRangeEntry\022\033\n\016favori"
+          + "te_count\030\004 \001(\003H\000\210\001\001\032d\n\031UsageWithinTimeRa"
+          + "ngeEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.g"
+          + "oogle.cloud.datacatalog.v1.UsageStats:\0028"
+          + "\001\032p\n\037CommonUsageWithinTimeRangeEntry\022\013\n\003"
+          + "key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.google.cloud."
+          + "datacatalog.v1.CommonUsageStats:\0028\001B\021\n\017_"
+          + "favorite_countB\306\001\n\037com.google.cloud.data"
+          + "catalog.v1P\001ZAcloud.google.com/go/dataca"
+          + "talog/apiv1/datacatalogpb;datacatalogpb\370"
+          + "\001\001\252\002\033Google.Cloud.DataCatalog.V1\312\002\033Googl"
+          + "e\\Cloud\\DataCatalog\\V1\352\002\036Google::Cloud::"
+          + "DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

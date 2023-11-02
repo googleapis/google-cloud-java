@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,5 +103,5 @@ public interface CharsToIgnoreOrBuilder
    */
   com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore getCommonCharactersToIgnore();
 
-  public com.google.privacy.dlp.v2.CharsToIgnore.CharactersCase getCharactersCase();
+  com.google.privacy.dlp.v2.CharsToIgnore.CharactersCase getCharactersCase();
 }

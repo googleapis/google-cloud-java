@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2364,6 +2364,8 @@ public class DataplexServiceClientTest {
             .setRetryCount(-928040776)
             .setServiceJob("serviceJob-1724783416")
             .setMessage("message954925063")
+            .putAllLabels(new HashMap<String, String>())
+            .setExecutionSpec(Task.ExecutionSpec.newBuilder().build())
             .build();
     mockDataplexService.addResponse(expectedResponse);
 
@@ -2408,6 +2410,8 @@ public class DataplexServiceClientTest {
             .setRetryCount(-928040776)
             .setServiceJob("serviceJob-1724783416")
             .setMessage("message954925063")
+            .putAllLabels(new HashMap<String, String>())
+            .setExecutionSpec(Task.ExecutionSpec.newBuilder().build())
             .build();
     mockDataplexService.addResponse(expectedResponse);
 

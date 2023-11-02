@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,9 @@ public interface NodeGroupAffinityOrBuilder
    * sole-tenant [node group
    * resource](https://cloud.google.com/compute/docs/reference/rest/v1/nodeGroups)
    * that the cluster will be created on.
+   *
    * A full URL, partial URI, or node group name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/nodeGroups/node-group-1`
    * * `projects/[project_id]/zones/[zone]/nodeGroups/node-group-1`
    * * `node-group-1`
@@ -50,7 +52,9 @@ public interface NodeGroupAffinityOrBuilder
    * sole-tenant [node group
    * resource](https://cloud.google.com/compute/docs/reference/rest/v1/nodeGroups)
    * that the cluster will be created on.
+   *
    * A full URL, partial URI, or node group name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/nodeGroups/node-group-1`
    * * `projects/[project_id]/zones/[zone]/nodeGroups/node-group-1`
    * * `node-group-1`

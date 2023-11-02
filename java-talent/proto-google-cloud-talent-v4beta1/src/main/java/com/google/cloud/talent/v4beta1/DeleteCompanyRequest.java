@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
     return new DeleteCompanyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.CompanyServiceProto
         .internal_static_google_cloud_talent_v4beta1_DeleteCompanyRequest_descriptor;
@@ -76,9 +71,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The resource name of the company to be deleted.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/foo/tenants/bar/companies/baz".
+   *
    * If tenant id is unspecified, the default tenant is used, for
    * example, "projects/foo/companies/bar".
    * </pre>
@@ -106,9 +103,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The resource name of the company to be deleted.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/foo/tenants/bar/companies/baz".
+   *
    * If tenant id is unspecified, the default tenant is used, for
    * example, "projects/foo/companies/bar".
    * </pre>
@@ -480,9 +479,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the company to be deleted.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
      * example, "projects/foo/tenants/bar/companies/baz".
+     *
      * If tenant id is unspecified, the default tenant is used, for
      * example, "projects/foo/companies/bar".
      * </pre>
@@ -509,9 +510,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the company to be deleted.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
      * example, "projects/foo/tenants/bar/companies/baz".
+     *
      * If tenant id is unspecified, the default tenant is used, for
      * example, "projects/foo/companies/bar".
      * </pre>
@@ -538,9 +541,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the company to be deleted.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
      * example, "projects/foo/tenants/bar/companies/baz".
+     *
      * If tenant id is unspecified, the default tenant is used, for
      * example, "projects/foo/companies/bar".
      * </pre>
@@ -566,9 +571,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the company to be deleted.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
      * example, "projects/foo/tenants/bar/companies/baz".
+     *
      * If tenant id is unspecified, the default tenant is used, for
      * example, "projects/foo/companies/bar".
      * </pre>
@@ -590,9 +597,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the company to be deleted.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
      * example, "projects/foo/tenants/bar/companies/baz".
+     *
      * If tenant id is unspecified, the default tenant is used, for
      * example, "projects/foo/companies/bar".
      * </pre>

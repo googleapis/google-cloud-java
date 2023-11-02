@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     return new SpeakerDiarizationConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1.SpeechProto
         .internal_static_google_cloud_speech_v1_SpeakerDiarizationConfig_descriptor;
@@ -72,8 +67,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    * <pre>
    * If 'true', enables speaker detection for each recognized word in
-   * the top alternative of the recognition result using a speaker_tag provided
-   * in the WordInfo.
+   * the top alternative of the recognition result using a speaker_label
+   * provided in the WordInfo.
    * </pre>
    *
    * <code>bool enable_speaker_diarization = 1;</code>
@@ -138,7 +133,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    * </code>
    *
    * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
-   *     google/cloud/speech/v1/cloud_speech.proto;l=480
+   *     google/cloud/speech/v1/cloud_speech.proto;l=493
    * @return The speakerTag.
    */
   @java.lang.Override
@@ -559,8 +554,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * If 'true', enables speaker detection for each recognized word in
-     * the top alternative of the recognition result using a speaker_tag provided
-     * in the WordInfo.
+     * the top alternative of the recognition result using a speaker_label
+     * provided in the WordInfo.
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 1;</code>
@@ -576,8 +571,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * If 'true', enables speaker detection for each recognized word in
-     * the top alternative of the recognition result using a speaker_tag provided
-     * in the WordInfo.
+     * the top alternative of the recognition result using a speaker_label
+     * provided in the WordInfo.
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 1;</code>
@@ -597,8 +592,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * If 'true', enables speaker detection for each recognized word in
-     * the top alternative of the recognition result using a speaker_tag provided
-     * in the WordInfo.
+     * the top alternative of the recognition result using a speaker_label
+     * provided in the WordInfo.
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 1;</code>
@@ -742,7 +737,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
-     *     google/cloud/speech/v1/cloud_speech.proto;l=480
+     *     google/cloud/speech/v1/cloud_speech.proto;l=493
      * @return The speakerTag.
      */
     @java.lang.Override
@@ -761,7 +756,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
-     *     google/cloud/speech/v1/cloud_speech.proto;l=480
+     *     google/cloud/speech/v1/cloud_speech.proto;l=493
      * @param value The speakerTag to set.
      * @return This builder for chaining.
      */
@@ -784,7 +779,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
-     *     google/cloud/speech/v1/cloud_speech.proto;l=480
+     *     google/cloud/speech/v1/cloud_speech.proto;l=493
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

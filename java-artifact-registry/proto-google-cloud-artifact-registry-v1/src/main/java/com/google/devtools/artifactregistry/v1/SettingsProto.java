@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,20 +62,20 @@ public final class SettingsProto {
           + "_IO_ENABLED\020\002\022)\n!REDIRECTION_FROM_GCR_IO"
           + "_FINALIZED\020\003\032\002\010\001:X\352AU\n/artifactregistry."
           + "googleapis.com/ProjectSettings\022\"projects"
-          + "/{project}/projectSettings\"b\n\031GetProject"
-          + "SettingsRequest\022E\n\004name\030\001 \001(\tB7\340A\002\372A1\n/a"
-          + "rtifactregistry.googleapis.com/ProjectSe"
-          + "ttings\"\237\001\n\034UpdateProjectSettingsRequest\022"
-          + "N\n\020project_settings\030\002 \001(\01324.google.devto"
-          + "ols.artifactregistry.v1.ProjectSettings\022"
-          + "/\n\013update_mask\030\003 \001(\0132\032.google.protobuf.F"
-          + "ieldMaskB\370\001\n\'com.google.devtools.artifac"
-          + "tregistry.v1B\rSettingsProtoP\001ZPcloud.goo"
-          + "gle.com/go/artifactregistry/apiv1/artifa"
-          + "ctregistrypb;artifactregistrypb\252\002 Google"
-          + ".Cloud.ArtifactRegistry.V1\312\002 Google\\Clou"
-          + "d\\ArtifactRegistry\\V1\352\002#Google::Cloud::A"
-          + "rtifactRegistry::V1b\006proto3"
+          + "/{project}/projectSettings\"c\n\031GetProject"
+          + "SettingsRequest\022F\n\004name\030\001 \001(\tB8\342A\001\002\372A1\n/"
+          + "artifactregistry.googleapis.com/ProjectS"
+          + "ettings\"\237\001\n\034UpdateProjectSettingsRequest"
+          + "\022N\n\020project_settings\030\002 \001(\01324.google.devt"
+          + "ools.artifactregistry.v1.ProjectSettings"
+          + "\022/\n\013update_mask\030\003 \001(\0132\032.google.protobuf."
+          + "FieldMaskB\370\001\n\'com.google.devtools.artifa"
+          + "ctregistry.v1B\rSettingsProtoP\001ZPcloud.go"
+          + "ogle.com/go/artifactregistry/apiv1/artif"
+          + "actregistrypb;artifactregistrypb\252\002 Googl"
+          + "e.Cloud.ArtifactRegistry.V1\312\002 Google\\Clo"
+          + "ud\\ArtifactRegistry\\V1\352\002#Google::Cloud::"
+          + "ArtifactRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

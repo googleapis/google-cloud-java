@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
     return new CaseClassification();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.support.v2.CaseProto
         .internal_static_google_cloud_support_v2_CaseClassification_descriptor;
@@ -77,6 +72,7 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The unique ID for a classification. Must be specified for case creation.
+   *
    * To retrieve valid classification IDs for case creation, use
    * `caseClassifications.search`.
    * </pre>
@@ -102,6 +98,7 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The unique ID for a classification. Must be specified for case creation.
+   *
    * To retrieve valid classification IDs for case creation, use
    * `caseClassifications.search`.
    * </pre>
@@ -545,6 +542,7 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The unique ID for a classification. Must be specified for case creation.
+     *
      * To retrieve valid classification IDs for case creation, use
      * `caseClassifications.search`.
      * </pre>
@@ -569,6 +567,7 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The unique ID for a classification. Must be specified for case creation.
+     *
      * To retrieve valid classification IDs for case creation, use
      * `caseClassifications.search`.
      * </pre>
@@ -593,6 +592,7 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The unique ID for a classification. Must be specified for case creation.
+     *
      * To retrieve valid classification IDs for case creation, use
      * `caseClassifications.search`.
      * </pre>
@@ -616,6 +616,7 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The unique ID for a classification. Must be specified for case creation.
+     *
      * To retrieve valid classification IDs for case creation, use
      * `caseClassifications.search`.
      * </pre>
@@ -635,6 +636,7 @@ public final class CaseClassification extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The unique ID for a classification. Must be specified for case creation.
+     *
      * To retrieve valid classification IDs for case creation, use
      * `caseClassifications.search`.
      * </pre>

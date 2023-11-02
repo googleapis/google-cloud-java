@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,14 @@ public interface RawPredictRequestOrBuilder
    *
    * <pre>
    * The prediction input. Supports HTTP headers and arbitrary data payload.
+   *
    * A [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] may have
    * an upper limit on the number of instances it supports per request. When
    * this limit it is exceeded for an AutoML model, the
    * [RawPredict][google.cloud.aiplatform.v1beta1.PredictionService.RawPredict]
    * method returns an error. When this limit is exceeded for a custom-trained
    * model, the behavior varies depending on the model.
+   *
    * You can specify the schema for each instance in the
    * [predict_schemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
    * field when you create a [Model][google.cloud.aiplatform.v1beta1.Model].
@@ -85,12 +87,14 @@ public interface RawPredictRequestOrBuilder
    *
    * <pre>
    * The prediction input. Supports HTTP headers and arbitrary data payload.
+   *
    * A [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] may have
    * an upper limit on the number of instances it supports per request. When
    * this limit it is exceeded for an AutoML model, the
    * [RawPredict][google.cloud.aiplatform.v1beta1.PredictionService.RawPredict]
    * method returns an error. When this limit is exceeded for a custom-trained
    * model, the behavior varies depending on the model.
+   *
    * You can specify the schema for each instance in the
    * [predict_schemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
    * field when you create a [Model][google.cloud.aiplatform.v1beta1.Model].
@@ -109,12 +113,14 @@ public interface RawPredictRequestOrBuilder
    *
    * <pre>
    * The prediction input. Supports HTTP headers and arbitrary data payload.
+   *
    * A [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] may have
    * an upper limit on the number of instances it supports per request. When
    * this limit it is exceeded for an AutoML model, the
    * [RawPredict][google.cloud.aiplatform.v1beta1.PredictionService.RawPredict]
    * method returns an error. When this limit is exceeded for a custom-trained
    * model, the behavior varies depending on the model.
+   *
    * You can specify the schema for each instance in the
    * [predict_schemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
    * field when you create a [Model][google.cloud.aiplatform.v1beta1.Model].

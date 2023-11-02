@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImportFlowRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -237,6 +232,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
   }
 
   private int flowCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object flow_;
 
   public enum FlowCase
@@ -348,6 +345,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -369,6 +367,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -403,6 +402,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -503,6 +503,66 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
         : result;
   }
 
+  public static final int FLOW_IMPORT_STRATEGY_FIELD_NUMBER = 5;
+  private com.google.cloud.dialogflow.cx.v3.FlowImportStrategy flowImportStrategy_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the import strategy used when resolving resource
+   * conflicts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the flowImportStrategy field is set.
+   */
+  @java.lang.Override
+  public boolean hasFlowImportStrategy() {
+    return flowImportStrategy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the import strategy used when resolving resource
+   * conflicts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The flowImportStrategy.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.FlowImportStrategy getFlowImportStrategy() {
+    return flowImportStrategy_ == null
+        ? com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.getDefaultInstance()
+        : flowImportStrategy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the import strategy used when resolving resource
+   * conflicts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.FlowImportStrategyOrBuilder
+      getFlowImportStrategyOrBuilder() {
+    return flowImportStrategy_ == null
+        ? com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.getDefaultInstance()
+        : flowImportStrategy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -532,6 +592,9 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(4, importOption_);
     }
+    if (flowImportStrategy_ != null) {
+      output.writeMessage(5, getFlowImportStrategy());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -558,6 +621,9 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, importOption_);
     }
+    if (flowImportStrategy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getFlowImportStrategy());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -576,6 +642,10 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
 
     if (!getParent().equals(other.getParent())) return false;
     if (importOption_ != other.importOption_) return false;
+    if (hasFlowImportStrategy() != other.hasFlowImportStrategy()) return false;
+    if (hasFlowImportStrategy()) {
+      if (!getFlowImportStrategy().equals(other.getFlowImportStrategy())) return false;
+    }
     if (!getFlowCase().equals(other.getFlowCase())) return false;
     switch (flowCase_) {
       case 2:
@@ -602,6 +672,10 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + IMPORT_OPTION_FIELD_NUMBER;
     hash = (53 * hash) + importOption_;
+    if (hasFlowImportStrategy()) {
+      hash = (37 * hash) + FLOW_IMPORT_STRATEGY_FIELD_NUMBER;
+      hash = (53 * hash) + getFlowImportStrategy().hashCode();
+    }
     switch (flowCase_) {
       case 2:
         hash = (37 * hash) + FLOW_URI_FIELD_NUMBER;
@@ -756,6 +830,11 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       bitField0_ = 0;
       parent_ = "";
       importOption_ = 0;
+      flowImportStrategy_ = null;
+      if (flowImportStrategyBuilder_ != null) {
+        flowImportStrategyBuilder_.dispose();
+        flowImportStrategyBuilder_ = null;
+      }
       flowCase_ = 0;
       flow_ = null;
       return this;
@@ -800,6 +879,12 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.importOption_ = importOption_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.flowImportStrategy_ =
+            flowImportStrategyBuilder_ == null
+                ? flowImportStrategy_
+                : flowImportStrategyBuilder_.build();
       }
     }
 
@@ -861,6 +946,9 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       }
       if (other.importOption_ != 0) {
         setImportOptionValue(other.getImportOptionValue());
+      }
+      if (other.hasFlowImportStrategy()) {
+        mergeFlowImportStrategy(other.getFlowImportStrategy());
       }
       switch (other.getFlowCase()) {
         case FLOW_URI:
@@ -931,6 +1019,13 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 42:
+              {
+                input.readMessage(
+                    getFlowImportStrategyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1092,6 +1187,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1114,6 +1210,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1149,6 +1246,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1184,6 +1282,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1212,6 +1311,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1238,6 +1338,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1424,6 +1525,222 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       importOption_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3.FlowImportStrategy flowImportStrategy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.FlowImportStrategy,
+            com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.Builder,
+            com.google.cloud.dialogflow.cx.v3.FlowImportStrategyOrBuilder>
+        flowImportStrategyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the import strategy used when resolving resource
+     * conflicts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the flowImportStrategy field is set.
+     */
+    public boolean hasFlowImportStrategy() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the import strategy used when resolving resource
+     * conflicts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The flowImportStrategy.
+     */
+    public com.google.cloud.dialogflow.cx.v3.FlowImportStrategy getFlowImportStrategy() {
+      if (flowImportStrategyBuilder_ == null) {
+        return flowImportStrategy_ == null
+            ? com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.getDefaultInstance()
+            : flowImportStrategy_;
+      } else {
+        return flowImportStrategyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the import strategy used when resolving resource
+     * conflicts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFlowImportStrategy(
+        com.google.cloud.dialogflow.cx.v3.FlowImportStrategy value) {
+      if (flowImportStrategyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        flowImportStrategy_ = value;
+      } else {
+        flowImportStrategyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the import strategy used when resolving resource
+     * conflicts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFlowImportStrategy(
+        com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.Builder builderForValue) {
+      if (flowImportStrategyBuilder_ == null) {
+        flowImportStrategy_ = builderForValue.build();
+      } else {
+        flowImportStrategyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the import strategy used when resolving resource
+     * conflicts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFlowImportStrategy(
+        com.google.cloud.dialogflow.cx.v3.FlowImportStrategy value) {
+      if (flowImportStrategyBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && flowImportStrategy_ != null
+            && flowImportStrategy_
+                != com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.getDefaultInstance()) {
+          getFlowImportStrategyBuilder().mergeFrom(value);
+        } else {
+          flowImportStrategy_ = value;
+        }
+      } else {
+        flowImportStrategyBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the import strategy used when resolving resource
+     * conflicts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFlowImportStrategy() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      flowImportStrategy_ = null;
+      if (flowImportStrategyBuilder_ != null) {
+        flowImportStrategyBuilder_.dispose();
+        flowImportStrategyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the import strategy used when resolving resource
+     * conflicts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.Builder
+        getFlowImportStrategyBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getFlowImportStrategyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the import strategy used when resolving resource
+     * conflicts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.FlowImportStrategyOrBuilder
+        getFlowImportStrategyOrBuilder() {
+      if (flowImportStrategyBuilder_ != null) {
+        return flowImportStrategyBuilder_.getMessageOrBuilder();
+      } else {
+        return flowImportStrategy_ == null
+            ? com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.getDefaultInstance()
+            : flowImportStrategy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the import strategy used when resolving resource
+     * conflicts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.FlowImportStrategy,
+            com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.Builder,
+            com.google.cloud.dialogflow.cx.v3.FlowImportStrategyOrBuilder>
+        getFlowImportStrategyFieldBuilder() {
+      if (flowImportStrategyBuilder_ == null) {
+        flowImportStrategyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.FlowImportStrategy,
+                com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.Builder,
+                com.google.cloud.dialogflow.cx.v3.FlowImportStrategyOrBuilder>(
+                getFlowImportStrategy(), getParentForChildren(), isClean());
+        flowImportStrategy_ = null;
+      }
+      return flowImportStrategyBuilder_;
     }
 
     @java.lang.Override

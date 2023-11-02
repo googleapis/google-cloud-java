@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest;
 import com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse;
@@ -778,79 +779,169 @@ public class HttpJsonLineageStub extends LineageStub {
         HttpJsonCallSettings.<CreateProcessRequest, Process>newBuilder()
             .setMethodDescriptor(createProcessMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateProcessRequest, Process> updateProcessTransportSettings =
         HttpJsonCallSettings.<UpdateProcessRequest, Process>newBuilder()
             .setMethodDescriptor(updateProcessMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("process.name", String.valueOf(request.getProcess().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetProcessRequest, Process> getProcessTransportSettings =
         HttpJsonCallSettings.<GetProcessRequest, Process>newBuilder()
             .setMethodDescriptor(getProcessMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListProcessesRequest, ListProcessesResponse>
         listProcessesTransportSettings =
             HttpJsonCallSettings.<ListProcessesRequest, ListProcessesResponse>newBuilder()
                 .setMethodDescriptor(listProcessesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteProcessRequest, Operation> deleteProcessTransportSettings =
         HttpJsonCallSettings.<DeleteProcessRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteProcessMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateRunRequest, Run> createRunTransportSettings =
         HttpJsonCallSettings.<CreateRunRequest, Run>newBuilder()
             .setMethodDescriptor(createRunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateRunRequest, Run> updateRunTransportSettings =
         HttpJsonCallSettings.<UpdateRunRequest, Run>newBuilder()
             .setMethodDescriptor(updateRunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("run.name", String.valueOf(request.getRun().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRunRequest, Run> getRunTransportSettings =
         HttpJsonCallSettings.<GetRunRequest, Run>newBuilder()
             .setMethodDescriptor(getRunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRunsRequest, ListRunsResponse> listRunsTransportSettings =
         HttpJsonCallSettings.<ListRunsRequest, ListRunsResponse>newBuilder()
             .setMethodDescriptor(listRunsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteRunRequest, Operation> deleteRunTransportSettings =
         HttpJsonCallSettings.<DeleteRunRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateLineageEventRequest, LineageEvent>
         createLineageEventTransportSettings =
             HttpJsonCallSettings.<CreateLineageEventRequest, LineageEvent>newBuilder()
                 .setMethodDescriptor(createLineageEventMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLineageEventRequest, LineageEvent> getLineageEventTransportSettings =
         HttpJsonCallSettings.<GetLineageEventRequest, LineageEvent>newBuilder()
             .setMethodDescriptor(getLineageEventMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListLineageEventsRequest, ListLineageEventsResponse>
         listLineageEventsTransportSettings =
             HttpJsonCallSettings.<ListLineageEventsRequest, ListLineageEventsResponse>newBuilder()
                 .setMethodDescriptor(listLineageEventsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteLineageEventRequest, Empty> deleteLineageEventTransportSettings =
         HttpJsonCallSettings.<DeleteLineageEventRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteLineageEventMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SearchLinksRequest, SearchLinksResponse> searchLinksTransportSettings =
         HttpJsonCallSettings.<SearchLinksRequest, SearchLinksResponse>newBuilder()
             .setMethodDescriptor(searchLinksMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse>
         batchSearchLinkProcessesTransportSettings =
@@ -858,6 +949,12 @@ public class HttpJsonLineageStub extends LineageStub {
                 .<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse>newBuilder()
                 .setMethodDescriptor(batchSearchLinkProcessesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createProcessCallable =

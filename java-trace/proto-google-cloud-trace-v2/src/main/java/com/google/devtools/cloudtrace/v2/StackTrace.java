@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StackTrace();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -312,11 +307,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new StackFrame();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2417,11 +2407,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       return new StackFrames();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.devtools.cloudtrace.v2.TraceProto
           .internal_static_google_devtools_cloudtrace_v2_StackTrace_StackFrames_descriptor;
@@ -3495,9 +3480,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The hash ID is used to conserve network bandwidth for duplicate
    * stack traces within a single trace.
+   *
    * Often multiple spans will have identical stack traces.
    * The first occurrence of a stack trace should contain both the
    * `stackFrame` content and a value in `stackTraceHashId`.
+   *
    * Subsequent spans within the same request can refer
    * to that stack trace by only setting `stackTraceHashId`.
    * </pre>
@@ -4077,9 +4064,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hash ID is used to conserve network bandwidth for duplicate
      * stack traces within a single trace.
+     *
      * Often multiple spans will have identical stack traces.
      * The first occurrence of a stack trace should contain both the
      * `stackFrame` content and a value in `stackTraceHashId`.
+     *
      * Subsequent spans within the same request can refer
      * to that stack trace by only setting `stackTraceHashId`.
      * </pre>
@@ -4098,9 +4087,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hash ID is used to conserve network bandwidth for duplicate
      * stack traces within a single trace.
+     *
      * Often multiple spans will have identical stack traces.
      * The first occurrence of a stack trace should contain both the
      * `stackFrame` content and a value in `stackTraceHashId`.
+     *
      * Subsequent spans within the same request can refer
      * to that stack trace by only setting `stackTraceHashId`.
      * </pre>
@@ -4123,9 +4114,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hash ID is used to conserve network bandwidth for duplicate
      * stack traces within a single trace.
+     *
      * Often multiple spans will have identical stack traces.
      * The first occurrence of a stack trace should contain both the
      * `stackFrame` content and a value in `stackTraceHashId`.
+     *
      * Subsequent spans within the same request can refer
      * to that stack trace by only setting `stackTraceHashId`.
      * </pre>

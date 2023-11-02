@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,13 @@ public interface WorkerSettingsOrBuilder
    *
    * <pre>
    * The base URL for accessing Google Cloud APIs.
+   *
    * When workers access Google Cloud APIs, they logically do so via
    * relative URLs.  If this field is specified, it supplies the base
    * URL to use for resolving these relative URLs.  The normative
    * algorithm used is defined by RFC 1808, "Relative Uniform Resource
    * Locators".
+   *
    * If not specified, the default value is "http://www.googleapis.com/"
    * </pre>
    *
@@ -46,11 +48,13 @@ public interface WorkerSettingsOrBuilder
    *
    * <pre>
    * The base URL for accessing Google Cloud APIs.
+   *
    * When workers access Google Cloud APIs, they logically do so via
    * relative URLs.  If this field is specified, it supplies the base
    * URL to use for resolving these relative URLs.  The normative
    * algorithm used is defined by RFC 1808, "Relative Uniform Resource
    * Locators".
+   *
    * If not specified, the default value is "http://www.googleapis.com/"
    * </pre>
    *
@@ -158,8 +162,11 @@ public interface WorkerSettingsOrBuilder
    * <pre>
    * The prefix of the resources the system should use for temporary
    * storage.
+   *
    * The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
    * </pre>
@@ -175,8 +182,11 @@ public interface WorkerSettingsOrBuilder
    * <pre>
    * The prefix of the resources the system should use for temporary
    * storage.
+   *
    * The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
    * </pre>

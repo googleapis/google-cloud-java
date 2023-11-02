@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,6 +101,7 @@ public interface StreamingRecognitionResultOrBuilder
    * A higher number indicates an estimated greater likelihood that the
    * recognized words are correct. The default of 0.0 is a sentinel value
    * indicating that confidence was not set.
+   *
    * This field is typically only provided if `is_final` is true and you should
    * not rely on it being accurate or even set.
    * </pre>

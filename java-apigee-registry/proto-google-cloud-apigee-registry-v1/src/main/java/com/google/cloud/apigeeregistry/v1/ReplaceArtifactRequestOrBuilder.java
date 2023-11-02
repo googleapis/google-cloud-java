@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ReplaceArtifactRequestOrBuilder
    *
    * <pre>
    * Required. The artifact to replace.
+   *
    * The `name` field is used to identify the artifact to replace.
    * Format: `{parent}/artifacts/&#42;`
    * </pre>
@@ -44,6 +45,7 @@ public interface ReplaceArtifactRequestOrBuilder
    *
    * <pre>
    * Required. The artifact to replace.
+   *
    * The `name` field is used to identify the artifact to replace.
    * Format: `{parent}/artifacts/&#42;`
    * </pre>
@@ -60,6 +62,7 @@ public interface ReplaceArtifactRequestOrBuilder
    *
    * <pre>
    * Required. The artifact to replace.
+   *
    * The `name` field is used to identify the artifact to replace.
    * Format: `{parent}/artifacts/&#42;`
    * </pre>

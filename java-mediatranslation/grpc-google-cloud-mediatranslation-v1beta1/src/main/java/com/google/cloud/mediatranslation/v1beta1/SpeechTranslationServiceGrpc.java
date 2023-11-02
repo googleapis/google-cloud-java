@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class SpeechTranslationServiceGrpc {
 
   private SpeechTranslationServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.mediatranslation.v1beta1.SpeechTranslationService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -336,9 +336,9 @@ public final class SpeechTranslationServiceGrpc {
   private static final class SpeechTranslationServiceMethodDescriptorSupplier
       extends SpeechTranslationServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SpeechTranslationServiceMethodDescriptorSupplier(String methodName) {
+    SpeechTranslationServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

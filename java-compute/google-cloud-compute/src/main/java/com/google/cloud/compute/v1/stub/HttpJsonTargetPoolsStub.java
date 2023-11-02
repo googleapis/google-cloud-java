@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddHealthCheckTargetPoolRequest;
 import com.google.cloud.compute.v1.AddInstanceTargetPoolRequest;
@@ -732,11 +733,27 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
             HttpJsonCallSettings.<AddHealthCheckTargetPoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(addHealthCheckMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("target_pool", String.valueOf(request.getTargetPool()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AddInstanceTargetPoolRequest, Operation> addInstanceTransportSettings =
         HttpJsonCallSettings.<AddInstanceTargetPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(addInstanceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("target_pool", String.valueOf(request.getTargetPool()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>
         aggregatedListTransportSettings =
@@ -744,49 +761,117 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                 .<AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteTargetPoolRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("target_pool", String.valueOf(request.getTargetPool()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetTargetPoolRequest, TargetPool> getTransportSettings =
         HttpJsonCallSettings.<GetTargetPoolRequest, TargetPool>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("target_pool", String.valueOf(request.getTargetPool()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>
         getHealthTransportSettings =
             HttpJsonCallSettings.<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>newBuilder()
                 .setMethodDescriptor(getHealthMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("target_pool", String.valueOf(request.getTargetPool()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertTargetPoolRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListTargetPoolsRequest, TargetPoolList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetPoolsRequest, TargetPoolList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RemoveHealthCheckTargetPoolRequest, Operation>
         removeHealthCheckTransportSettings =
             HttpJsonCallSettings.<RemoveHealthCheckTargetPoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeHealthCheckMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("target_pool", String.valueOf(request.getTargetPool()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RemoveInstanceTargetPoolRequest, Operation>
         removeInstanceTransportSettings =
             HttpJsonCallSettings.<RemoveInstanceTargetPoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeInstanceMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("target_pool", String.valueOf(request.getTargetPool()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetBackupTargetPoolRequest, Operation> setBackupTransportSettings =
         HttpJsonCallSettings.<SetBackupTargetPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(setBackupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("target_pool", String.valueOf(request.getTargetPool()));
+                  return builder.build();
+                })
             .build();
 
     this.addHealthCheckCallable =

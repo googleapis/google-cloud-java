@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -322,11 +322,15 @@ public interface VirtualMachineConfigOrBuilder
    * communications. Cannot be specified with subnetwork. If neither
    * `network` nor `subnet` is specified, the "default" network of
    * the project is used, if it exists.
+   *
    * A full URL or partial URI. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
    * * `projects/[project_id]/global/networks/default`
+   *
    * Runtimes are managed resources inside Google Infrastructure.
    * Runtimes support the following network configurations:
+   *
    * * Google Managed Network (Network &amp; subnet are empty)
    * * Consumer Project VPC (network &amp; subnet are required). Requires
    * configuring Private Service Access.
@@ -347,11 +351,15 @@ public interface VirtualMachineConfigOrBuilder
    * communications. Cannot be specified with subnetwork. If neither
    * `network` nor `subnet` is specified, the "default" network of
    * the project is used, if it exists.
+   *
    * A full URL or partial URI. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
    * * `projects/[project_id]/global/networks/default`
+   *
    * Runtimes are managed resources inside Google Infrastructure.
    * Runtimes support the following network configurations:
+   *
    * * Google Managed Network (Network &amp; subnet are empty)
    * * Consumer Project VPC (network &amp; subnet are required). Requires
    * configuring Private Service Access.
@@ -371,7 +379,9 @@ public interface VirtualMachineConfigOrBuilder
    * <pre>
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network.
+   *
    * A full URL or partial URI are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * </pre>
@@ -387,7 +397,9 @@ public interface VirtualMachineConfigOrBuilder
    * <pre>
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network.
+   *
    * A full URL or partial URI are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * </pre>
@@ -747,7 +759,9 @@ public interface VirtualMachineConfigOrBuilder
    * <pre>
    * Optional. Reserved IP Range name is used for VPC Peering.
    * The subnetwork allocation will use the range *name* if it's assigned.
+   *
    * Example: managed-notebooks-range-c
+   *
    *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
    *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
    *       --global &#92;
@@ -756,6 +770,7 @@ public interface VirtualMachineConfigOrBuilder
    *       --network=$NETWORK &#92;
    *       --addresses=192.168.0.0 &#92;
    *       --purpose=VPC_PEERING
+   *
    * Field value will be: `managed-notebooks-range-c`
    * </pre>
    *
@@ -770,7 +785,9 @@ public interface VirtualMachineConfigOrBuilder
    * <pre>
    * Optional. Reserved IP Range name is used for VPC Peering.
    * The subnetwork allocation will use the range *name* if it's assigned.
+   *
    * Example: managed-notebooks-range-c
+   *
    *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
    *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
    *       --global &#92;
@@ -779,6 +796,7 @@ public interface VirtualMachineConfigOrBuilder
    *       --network=$NETWORK &#92;
    *       --addresses=192.168.0.0 &#92;
    *       --purpose=VPC_PEERING
+   *
    * Field value will be: `managed-notebooks-range-c`
    * </pre>
    *

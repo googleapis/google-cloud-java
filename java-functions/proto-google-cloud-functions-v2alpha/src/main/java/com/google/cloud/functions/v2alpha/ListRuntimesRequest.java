@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListRuntimesRequest extends com.google.protobuf.GeneratedMess
     return new ListRuntimesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v2alpha.FunctionsProto
         .internal_static_google_cloud_functions_v2alpha_ListRuntimesRequest_descriptor;
@@ -76,8 +71,8 @@ public final class ListRuntimesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The project and location from which the runtimes should be listed,
-   * specified in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location from which the runtimes should be
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -102,8 +97,8 @@ public final class ListRuntimesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The project and location from which the runtimes should be listed,
-   * specified in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location from which the runtimes should be
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -550,8 +545,8 @@ public final class ListRuntimesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The project and location from which the runtimes should be listed,
-     * specified in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location from which the runtimes should be
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -575,8 +570,8 @@ public final class ListRuntimesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The project and location from which the runtimes should be listed,
-     * specified in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location from which the runtimes should be
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -600,8 +595,8 @@ public final class ListRuntimesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The project and location from which the runtimes should be listed,
-     * specified in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location from which the runtimes should be
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -624,8 +619,8 @@ public final class ListRuntimesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The project and location from which the runtimes should be listed,
-     * specified in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location from which the runtimes should be
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -644,8 +639,8 @@ public final class ListRuntimesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The project and location from which the runtimes should be listed,
-     * specified in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location from which the runtimes should be
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Name of the `Target`. Format is
-   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,7 +41,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Name of the `Target`. Format is
-   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -130,7 +130,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -144,7 +144,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -161,7 +161,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -175,7 +175,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -193,7 +193,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -208,14 +208,15 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -227,14 +228,15 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -249,14 +251,15 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -268,14 +271,15 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -291,14 +295,15 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -399,10 +404,11 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the gke field is set.
    */
@@ -411,10 +417,11 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The gke.
    */
@@ -423,10 +430,11 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.GkeClusterOrBuilder getGkeOrBuilder();
 
@@ -434,10 +442,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the anthosCluster field is set.
    */
@@ -446,10 +456,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The anthosCluster.
    */
@@ -458,10 +470,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.AnthosClusterOrBuilder getAnthosClusterOrBuilder();
 
@@ -469,10 +483,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the run field is set.
    */
@@ -481,10 +497,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The run.
    */
@@ -493,10 +511,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.CloudRunLocationOrBuilder getRunOrBuilder();
 
@@ -504,10 +524,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the multiTarget field is set.
    */
@@ -516,10 +538,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The multiTarget.
    */
@@ -528,10 +552,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.MultiTargetOrBuilder getMultiTargetOrBuilder();
 
@@ -646,5 +672,73 @@ public interface TargetOrBuilder
    */
   com.google.cloud.deploy.v1.ExecutionConfigOrBuilder getExecutionConfigsOrBuilder(int index);
 
-  public com.google.cloud.deploy.v1.Target.DeploymentTargetCase getDeploymentTargetCase();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for this target.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDeployParametersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for this target.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsDeployParameters(java.lang.String key);
+  /** Use {@link #getDeployParametersMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getDeployParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for this target.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getDeployParametersMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for this target.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getDeployParametersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for this target.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getDeployParametersOrThrow(java.lang.String key);
+
+  com.google.cloud.deploy.v1.Target.DeploymentTargetCase getDeploymentTargetCase();
 }

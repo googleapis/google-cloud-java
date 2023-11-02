@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,6 +108,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * User-assigned name of the trigger. Must be unique within the project.
    * Trigger names must meet the following requirements:
+   *
    * + They must contain only alphanumeric characters and dashes.
    * + They can be 1-64 characters long.
    * + They must begin and end with an alphanumeric character.
@@ -124,6 +125,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * User-assigned name of the trigger. Must be unique within the project.
    * Trigger names must meet the following requirements:
+   *
    * + They must contain only alphanumeric characters and dashes.
    * + They can be 1-64 characters long.
    * + They must begin and end with an alphanumeric character.
@@ -191,9 +193,11 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * Template describing the types of source changes to trigger a build.
+   *
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   *
    * Mutually exclusive with `github`.
    * </pre>
    *
@@ -207,9 +211,11 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * Template describing the types of source changes to trigger a build.
+   *
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   *
    * Mutually exclusive with `github`.
    * </pre>
    *
@@ -223,9 +229,11 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * Template describing the types of source changes to trigger a build.
+   *
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   *
    * Mutually exclusive with `github`.
    * </pre>
    *
@@ -239,6 +247,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   *
    * Mutually exclusive with `trigger_template`.
    * </pre>
    *
@@ -253,6 +262,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   *
    * Mutually exclusive with `trigger_template`.
    * </pre>
    *
@@ -267,6 +277,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   *
    * Mutually exclusive with `trigger_template`.
    * </pre>
    *
@@ -356,10 +367,12 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * Autodetect build configuration.  The following precedence is used (case
    * insensitive):
+   *
    * 1. cloudbuild.yaml
    * 2. cloudbuild.yml
    * 3. cloudbuild.json
    * 4. Dockerfile
+   *
    * Currently only available for GitHub App Triggers.
    * </pre>
    *
@@ -374,10 +387,12 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * Autodetect build configuration.  The following precedence is used (case
    * insensitive):
+   *
    * 1. cloudbuild.yaml
    * 2. cloudbuild.yml
    * 3. cloudbuild.json
    * 4. Dockerfile
+   *
    * Currently only available for GitHub App Triggers.
    * </pre>
    *
@@ -461,6 +476,41 @@ public interface BuildTriggerOrBuilder
    * @return The bytes for filename.
    */
   com.google.protobuf.ByteString getFilenameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The file source describing the local or remote Build template.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+   *
+   * @return Whether the gitFileSource field is set.
+   */
+  boolean hasGitFileSource();
+  /**
+   *
+   *
+   * <pre>
+   * The file source describing the local or remote Build template.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+   *
+   * @return The gitFileSource.
+   */
+  com.google.cloudbuild.v1.GitFileSource getGitFileSource();
+  /**
+   *
+   *
+   * <pre>
+   * The file source describing the local or remote Build template.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+   */
+  com.google.cloudbuild.v1.GitFileSourceOrBuilder getGitFileSourceOrBuilder();
 
   /**
    *
@@ -582,8 +632,10 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -600,8 +652,10 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -618,8 +672,10 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -637,8 +693,10 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -658,6 +716,7 @@ public interface BuildTriggerOrBuilder
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -676,6 +735,7 @@ public interface BuildTriggerOrBuilder
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -694,6 +754,7 @@ public interface BuildTriggerOrBuilder
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -713,6 +774,7 @@ public interface BuildTriggerOrBuilder
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -755,6 +817,56 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
+   * The repo and ref of the repository from which to build. This field
+   * is used only for those triggers that do not respond to SCM events.
+   * Triggers that respond to such events build source at whatever commit
+   * caused the event.
+   * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+   * triggers.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+   *
+   * @return Whether the sourceToBuild field is set.
+   */
+  boolean hasSourceToBuild();
+  /**
+   *
+   *
+   * <pre>
+   * The repo and ref of the repository from which to build. This field
+   * is used only for those triggers that do not respond to SCM events.
+   * Triggers that respond to such events build source at whatever commit
+   * caused the event.
+   * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+   * triggers.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+   *
+   * @return The sourceToBuild.
+   */
+  com.google.cloudbuild.v1.GitRepoSource getSourceToBuild();
+  /**
+   *
+   *
+   * <pre>
+   * The repo and ref of the repository from which to build. This field
+   * is used only for those triggers that do not respond to SCM events.
+   * Triggers that respond to such events build source at whatever commit
+   * caused the event.
+   * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+   * triggers.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+   */
+  com.google.cloudbuild.v1.GitRepoSourceOrBuilder getSourceToBuildOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The service account used for all user-controlled operations including
    * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
    * If no service account is set, then the standard Cloud Build service account
@@ -784,5 +896,43 @@ public interface BuildTriggerOrBuilder
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
 
-  public com.google.cloudbuild.v1.BuildTrigger.BuildTemplateCase getBuildTemplateCase();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration of a trigger that creates a build whenever an event from
+   * Repo API is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;</code>
+   *
+   * @return Whether the repositoryEventConfig field is set.
+   */
+  boolean hasRepositoryEventConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration of a trigger that creates a build whenever an event from
+   * Repo API is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;</code>
+   *
+   * @return The repositoryEventConfig.
+   */
+  com.google.cloudbuild.v1.RepositoryEventConfig getRepositoryEventConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration of a trigger that creates a build whenever an event from
+   * Repo API is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.RepositoryEventConfig repository_event_config = 39;</code>
+   */
+  com.google.cloudbuild.v1.RepositoryEventConfigOrBuilder getRepositoryEventConfigOrBuilder();
+
+  com.google.cloudbuild.v1.BuildTrigger.BuildTemplateCase getBuildTemplateCase();
 }

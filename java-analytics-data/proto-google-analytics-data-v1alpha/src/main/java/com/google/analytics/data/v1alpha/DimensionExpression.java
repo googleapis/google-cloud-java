@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DimensionExpression();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -127,11 +122,6 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CaseExpression();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -801,6 +791,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The delimiter placed between dimension names.
+     *
      * Delimiters are often single characters such as "|" or "," but can be
      * longer strings. If a dimension value contains the delimiter, both will be
      * present in response with no distinction. For example if dimension 1 value
@@ -818,6 +809,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The delimiter placed between dimension names.
+     *
      * Delimiters are often single characters such as "|" or "," but can be
      * longer strings. If a dimension value contains the delimiter, both will be
      * present in response with no distinction. For example if dimension 1 value
@@ -851,7 +843,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     }
 
     private ConcatenateExpression() {
-      dimensionNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      dimensionNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       delimiter_ = "";
     }
 
@@ -859,11 +851,6 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ConcatenateExpression();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -885,7 +872,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     public static final int DIMENSION_NAMES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList dimensionNames_;
+    private com.google.protobuf.LazyStringArrayList dimensionNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -958,6 +946,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The delimiter placed between dimension names.
+     *
      * Delimiters are often single characters such as "|" or "," but can be
      * longer strings. If a dimension value contains the delimiter, both will be
      * present in response with no distinction. For example if dimension 1 value
@@ -986,6 +975,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The delimiter placed between dimension names.
+     *
      * Delimiters are often single characters such as "|" or "," but can be
      * longer strings. If a dimension value contains the delimiter, both will be
      * present in response with no distinction. For example if dimension 1 value
@@ -1236,8 +1226,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        dimensionNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        dimensionNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         delimiter_ = "";
         return this;
       }
@@ -1270,7 +1259,6 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
           buildPartial() {
         com.google.analytics.data.v1alpha.DimensionExpression.ConcatenateExpression result =
             new com.google.analytics.data.v1alpha.DimensionExpression.ConcatenateExpression(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1278,18 +1266,13 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.analytics.data.v1alpha.DimensionExpression.ConcatenateExpression result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          dimensionNames_ = dimensionNames_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.dimensionNames_ = dimensionNames_;
-      }
-
       private void buildPartial0(
           com.google.analytics.data.v1alpha.DimensionExpression.ConcatenateExpression result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          dimensionNames_.makeImmutable();
+          result.dimensionNames_ = dimensionNames_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.delimiter_ = delimiter_;
         }
@@ -1351,7 +1334,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         if (!other.dimensionNames_.isEmpty()) {
           if (dimensionNames_.isEmpty()) {
             dimensionNames_ = other.dimensionNames_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureDimensionNamesIsMutable();
             dimensionNames_.addAll(other.dimensionNames_);
@@ -1421,14 +1404,14 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList dimensionNames_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList dimensionNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureDimensionNamesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!dimensionNames_.isModifiable()) {
           dimensionNames_ = new com.google.protobuf.LazyStringArrayList(dimensionNames_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -1443,7 +1426,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
        * @return A list containing the dimensionNames.
        */
       public com.google.protobuf.ProtocolStringList getDimensionNamesList() {
-        return dimensionNames_.getUnmodifiableView();
+        dimensionNames_.makeImmutable();
+        return dimensionNames_;
       }
       /**
        *
@@ -1512,6 +1496,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         }
         ensureDimensionNamesIsMutable();
         dimensionNames_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1534,6 +1519,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         }
         ensureDimensionNamesIsMutable();
         dimensionNames_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1553,6 +1539,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       public Builder addAllDimensionNames(java.lang.Iterable<java.lang.String> values) {
         ensureDimensionNamesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dimensionNames_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1569,8 +1556,9 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearDimensionNames() {
-        dimensionNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        dimensionNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1594,6 +1582,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         checkByteStringIsUtf8(value);
         ensureDimensionNamesIsMutable();
         dimensionNames_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1604,6 +1593,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The delimiter placed between dimension names.
+       *
        * Delimiters are often single characters such as "|" or "," but can be
        * longer strings. If a dimension value contains the delimiter, both will be
        * present in response with no distinction. For example if dimension 1 value
@@ -1631,6 +1621,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The delimiter placed between dimension names.
+       *
        * Delimiters are often single characters such as "|" or "," but can be
        * longer strings. If a dimension value contains the delimiter, both will be
        * present in response with no distinction. For example if dimension 1 value
@@ -1658,6 +1649,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The delimiter placed between dimension names.
+       *
        * Delimiters are often single characters such as "|" or "," but can be
        * longer strings. If a dimension value contains the delimiter, both will be
        * present in response with no distinction. For example if dimension 1 value
@@ -1684,6 +1676,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The delimiter placed between dimension names.
+       *
        * Delimiters are often single characters such as "|" or "," but can be
        * longer strings. If a dimension value contains the delimiter, both will be
        * present in response with no distinction. For example if dimension 1 value
@@ -1706,6 +1699,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The delimiter placed between dimension names.
+       *
        * Delimiters are often single characters such as "|" or "," but can be
        * longer strings. If a dimension value contains the delimiter, both will be
        * present in response with no distinction. For example if dimension 1 value
@@ -1798,6 +1792,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
   }
 
   private int oneExpressionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneExpression_;
 
   public enum OneExpressionCase

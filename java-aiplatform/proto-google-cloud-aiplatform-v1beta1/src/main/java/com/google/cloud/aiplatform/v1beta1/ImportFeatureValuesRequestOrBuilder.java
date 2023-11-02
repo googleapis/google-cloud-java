@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,7 +184,7 @@ public interface ImportFeatureValuesRequestOrBuilder
    *
    * <pre>
    * Source column that holds entity IDs. If not provided, entity IDs are
-   * extracted from the column named `entity_id`.
+   * extracted from the column named entity_id.
    * </pre>
    *
    * <code>string entity_id_field = 5;</code>
@@ -197,7 +197,7 @@ public interface ImportFeatureValuesRequestOrBuilder
    *
    * <pre>
    * Source column that holds entity IDs. If not provided, entity IDs are
-   * extracted from the column named `entity_id`.
+   * extracted from the column named entity_id.
    * </pre>
    *
    * <code>string entity_id_field = 5;</code>
@@ -329,8 +329,8 @@ public interface ImportFeatureValuesRequestOrBuilder
    */
   boolean getDisableIngestionAnalysis();
 
-  public com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.SourceCase getSourceCase();
+  com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.SourceCase getSourceCase();
 
-  public com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.FeatureTimeSourceCase
+  com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.FeatureTimeSourceCase
       getFeatureTimeSourceCase();
 }

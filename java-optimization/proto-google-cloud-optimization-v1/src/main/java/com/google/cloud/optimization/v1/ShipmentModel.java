@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.optimization.v1;
  * <pre>
  * A shipment model contains a set of shipments which must be performed by a
  * set of vehicles, while minimizing the overall cost, which is the sum of:
+ *
  * * the cost of routing the vehicles (sum of cost per total time, cost per
  *   travel time, and fixed cost over all vehicles).
  * * the unperformed shipment penalties.
@@ -46,8 +47,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     shipments_ = java.util.Collections.emptyList();
     vehicles_ = java.util.Collections.emptyList();
     durationDistanceMatrices_ = java.util.Collections.emptyList();
-    durationDistanceMatrixSrcTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    durationDistanceMatrixDstTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    durationDistanceMatrixSrcTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    durationDistanceMatrixDstTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     transitionAttributes_ = java.util.Collections.emptyList();
     shipmentTypeIncompatibilities_ = java.util.Collections.emptyList();
     shipmentTypeRequirements_ = java.util.Collections.emptyList();
@@ -59,11 +60,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ShipmentModel();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -169,9 +165,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * Tag defining to which vehicles this duration and distance matrix applies.
      * If empty, this applies to all vehicles, and there can only be a single
      * matrix.
+     *
      * Each vehicle start must match exactly one matrix, i.e. exactly one of
      * their `start_tags` field must match the `vehicle_start_tag` of a matrix
      * (and of that matrix only).
+     *
      * All matrices must have a different `vehicle_start_tag`.
      * </pre>
      *
@@ -187,9 +185,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * Tag defining to which vehicles this duration and distance matrix applies.
      * If empty, this applies to all vehicles, and there can only be a single
      * matrix.
+     *
      * Each vehicle start must match exactly one matrix, i.e. exactly one of
      * their `start_tags` field must match the `vehicle_start_tag` of a matrix
      * (and of that matrix only).
+     *
      * All matrices must have a different `vehicle_start_tag`.
      * </pre>
      *
@@ -228,11 +228,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DurationDistanceMatrix();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -383,11 +378,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Row();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1699,9 +1689,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * Tag defining to which vehicles this duration and distance matrix applies.
      * If empty, this applies to all vehicles, and there can only be a single
      * matrix.
+     *
      * Each vehicle start must match exactly one matrix, i.e. exactly one of
      * their `start_tags` field must match the `vehicle_start_tag` of a matrix
      * (and of that matrix only).
+     *
      * All matrices must have a different `vehicle_start_tag`.
      * </pre>
      *
@@ -1728,9 +1720,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * Tag defining to which vehicles this duration and distance matrix applies.
      * If empty, this applies to all vehicles, and there can only be a single
      * matrix.
+     *
      * Each vehicle start must match exactly one matrix, i.e. exactly one of
      * their `start_tags` field must match the `vehicle_start_tag` of a matrix
      * (and of that matrix only).
+     *
      * All matrices must have a different `vehicle_start_tag`.
      * </pre>
      *
@@ -2647,9 +2641,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        * Tag defining to which vehicles this duration and distance matrix applies.
        * If empty, this applies to all vehicles, and there can only be a single
        * matrix.
+       *
        * Each vehicle start must match exactly one matrix, i.e. exactly one of
        * their `start_tags` field must match the `vehicle_start_tag` of a matrix
        * (and of that matrix only).
+       *
        * All matrices must have a different `vehicle_start_tag`.
        * </pre>
        *
@@ -2675,9 +2671,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        * Tag defining to which vehicles this duration and distance matrix applies.
        * If empty, this applies to all vehicles, and there can only be a single
        * matrix.
+       *
        * Each vehicle start must match exactly one matrix, i.e. exactly one of
        * their `start_tags` field must match the `vehicle_start_tag` of a matrix
        * (and of that matrix only).
+       *
        * All matrices must have a different `vehicle_start_tag`.
        * </pre>
        *
@@ -2703,9 +2701,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        * Tag defining to which vehicles this duration and distance matrix applies.
        * If empty, this applies to all vehicles, and there can only be a single
        * matrix.
+       *
        * Each vehicle start must match exactly one matrix, i.e. exactly one of
        * their `start_tags` field must match the `vehicle_start_tag` of a matrix
        * (and of that matrix only).
+       *
        * All matrices must have a different `vehicle_start_tag`.
        * </pre>
        *
@@ -2730,9 +2730,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        * Tag defining to which vehicles this duration and distance matrix applies.
        * If empty, this applies to all vehicles, and there can only be a single
        * matrix.
+       *
        * Each vehicle start must match exactly one matrix, i.e. exactly one of
        * their `start_tags` field must match the `vehicle_start_tag` of a matrix
        * (and of that matrix only).
+       *
        * All matrices must have a different `vehicle_start_tag`.
        * </pre>
        *
@@ -2753,9 +2755,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        * Tag defining to which vehicles this duration and distance matrix applies.
        * If empty, this applies to all vehicles, and there can only be a single
        * matrix.
+       *
        * Each vehicle start must match exactly one matrix, i.e. exactly one of
        * their `start_tags` field must match the `vehicle_start_tag` of a matrix
        * (and of that matrix only).
+       *
        * All matrices must have a different `vehicle_start_tag`.
        * </pre>
        *
@@ -2966,9 +2970,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * A precedence rule between two events (each event is the pickup or the
    * delivery of a shipment): the "second" event has to start at least
    * `offset_duration` after "first" has started.
+   *
    * Several precedences can refer to the same (or related) events, e.g.,
    * "pickup of B happens after delivery of A" and "pickup of C happens after
    * pickup of B".
+   *
    * Furthermore, precedences only apply when both shipments are performed and
    * are otherwise ignored.
    * </pre>
@@ -2991,11 +2997,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PrecedenceRule();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3385,9 +3386,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * A precedence rule between two events (each event is the pickup or the
      * delivery of a shipment): the "second" event has to start at least
      * `offset_duration` after "first" has started.
+     *
      * Several precedences can refer to the same (or related) events, e.g.,
      * "pickup of B happens after delivery of A" and "pickup of C happens after
      * pickup of B".
+     *
      * Furthermore, precedences only apply when both shipments are performed and
      * are otherwise ignored.
      * </pre>
@@ -4283,6 +4286,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * breaks). A break is a contiguous period of time during which the vehicle
    * remains idle at its current position and cannot perform any visit. A break
    * may occur:
+   *
    * * during the travel between two visits (which includes the time right
    *   before or right after a visit, but not in the middle of a visit), in
    *   which case it extends the corresponding transit time between the visits
@@ -4313,11 +4317,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BreakRule();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4489,11 +4488,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new BreakRequest();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5904,9 +5898,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *    max_inter_break_duration { seconds: 39600 }  # 11 hours (12 - 1 = 11).
      * }
      * ```
+     *
      * The timing and duration of the breaks in the solution will respect all
      * such constraints, in addition to the time windows and minimum durations
      * already specified in the `BreakRequest`.
+     *
      * A `FrequencyConstraint` may in practice apply to non-consecutive breaks.
      * For example, the following schedule honors the "1h every 12h" example:
      * ```
@@ -5944,11 +5940,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new FrequencyConstraint();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6297,9 +6288,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        *    max_inter_break_duration { seconds: 39600 }  # 11 hours (12 - 1 = 11).
        * }
        * ```
+       *
        * The timing and duration of the breaks in the solution will respect all
        * such constraints, in addition to the time windows and minimum durations
        * already specified in the `BreakRequest`.
+       *
        * A `FrequencyConstraint` may in practice apply to non-consecutive breaks.
        * For example, the following schedule honors the "1h every 12h" example:
        * ```
@@ -7408,6 +7401,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * breaks). A break is a contiguous period of time during which the vehicle
      * remains idle at its current position and cannot perform any visit. A break
      * may occur:
+     *
      * * during the travel between two visits (which includes the time right
      *   before or right after a visit, but not in the middle of a visit), in
      *   which case it extends the corresponding transit time between the visits
@@ -8817,8 +8811,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Global start and end time of the model: no times outside of this range
    * can be considered valid.
+   *
    * The model's time span must be less than a year, i.e. the `global_end_time`
    * and the `global_start_time` must be within 31536000 seconds of each other.
+   *
    * When using `cost_per_*hour` fields, you might want to set this window to a
    * smaller interval to increase performance (eg. if you model a single day,
    * you should set the global time limits to that day).
@@ -8840,8 +8836,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Global start and end time of the model: no times outside of this range
    * can be considered valid.
+   *
    * The model's time span must be less than a year, i.e. the `global_end_time`
    * and the `global_start_time` must be within 31536000 seconds of each other.
+   *
    * When using `cost_per_*hour` fields, you might want to set this window to a
    * smaller interval to increase performance (eg. if you model a single day,
    * you should set the global time limits to that day).
@@ -8865,8 +8863,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Global start and end time of the model: no times outside of this range
    * can be considered valid.
+   *
    * The model's time span must be less than a year, i.e. the `global_end_time`
    * and the `global_start_time` must be within 31536000 seconds of each other.
+   *
    * When using `cost_per_*hour` fields, you might want to set this window to a
    * smaller interval to increase performance (eg. if you model a single day,
    * you should set the global time limits to that day).
@@ -8974,10 +8974,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * `use_geodesic_distances` cannot be true and neither
    * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
    * can be empty.
+   *
    * Usage examples:
+   *
    * * There are two locations: locA and locB.
    * * 1 vehicle starting its route at locA and ending it at locA.
    * * 1 pickup visit request at locB.
+   *
    * ```
    * model {
    *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -8998,6 +9001,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *   }
    * }
    * ```
+   *
+   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -9006,6 +9011,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * * 1 vehicle starting its route at locB and ending it at locB, using
    *   matrix "fast".
    * * 1 pickup visit request at locC.
+   *
    * ```
    * model {
    *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -9070,10 +9076,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * `use_geodesic_distances` cannot be true and neither
    * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
    * can be empty.
+   *
    * Usage examples:
+   *
    * * There are two locations: locA and locB.
    * * 1 vehicle starting its route at locA and ending it at locA.
    * * 1 pickup visit request at locB.
+   *
    * ```
    * model {
    *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -9094,6 +9103,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *   }
    * }
    * ```
+   *
+   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -9102,6 +9113,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * * 1 vehicle starting its route at locB and ending it at locB, using
    *   matrix "fast".
    * * 1 pickup visit request at locC.
+   *
    * ```
    * model {
    *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -9167,10 +9179,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * `use_geodesic_distances` cannot be true and neither
    * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
    * can be empty.
+   *
    * Usage examples:
+   *
    * * There are two locations: locA and locB.
    * * 1 vehicle starting its route at locA and ending it at locA.
    * * 1 pickup visit request at locB.
+   *
    * ```
    * model {
    *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -9191,6 +9206,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *   }
    * }
    * ```
+   *
+   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -9199,6 +9216,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * * 1 vehicle starting its route at locB and ending it at locB, using
    *   matrix "fast".
    * * 1 pickup visit request at locC.
+   *
    * ```
    * model {
    *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -9262,10 +9280,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * `use_geodesic_distances` cannot be true and neither
    * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
    * can be empty.
+   *
    * Usage examples:
+   *
    * * There are two locations: locA and locB.
    * * 1 vehicle starting its route at locA and ending it at locA.
    * * 1 pickup visit request at locB.
+   *
    * ```
    * model {
    *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -9286,6 +9307,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *   }
    * }
    * ```
+   *
+   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -9294,6 +9317,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * * 1 vehicle starting its route at locB and ending it at locB, using
    *   matrix "fast".
    * * 1 pickup visit request at locC.
+   *
    * ```
    * model {
    *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -9358,10 +9382,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * `use_geodesic_distances` cannot be true and neither
    * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
    * can be empty.
+   *
    * Usage examples:
+   *
    * * There are two locations: locA and locB.
    * * 1 vehicle starting its route at locA and ending it at locA.
    * * 1 pickup visit request at locB.
+   *
    * ```
    * model {
    *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -9382,6 +9409,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *   }
    * }
    * ```
+   *
+   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -9390,6 +9419,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * * 1 vehicle starting its route at locB and ending it at locB, using
    *   matrix "fast".
    * * 1 pickup visit request at locC.
+   *
    * ```
    * model {
    *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -9448,7 +9478,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public static final int DURATION_DISTANCE_MATRIX_SRC_TAGS_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList durationDistanceMatrixSrcTags_;
+  private com.google.protobuf.LazyStringArrayList durationDistanceMatrixSrcTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -9457,6 +9488,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * `duration_distance_matrices(i).rows(j)` defines durations and distances
    * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
    * in matrix i.
+   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -9482,6 +9514,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * `duration_distance_matrices(i).rows(j)` defines durations and distances
    * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
    * in matrix i.
+   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -9507,6 +9540,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * `duration_distance_matrices(i).rows(j)` defines durations and distances
    * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
    * in matrix i.
+   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -9533,6 +9567,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * `duration_distance_matrices(i).rows(j)` defines durations and distances
    * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
    * in matrix i.
+   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -9555,7 +9590,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public static final int DURATION_DISTANCE_MATRIX_DST_TAGS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList durationDistanceMatrixDstTags_;
+  private com.google.protobuf.LazyStringArrayList durationDistanceMatrixDstTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -9566,6 +9602,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * (resp. the distance) of the travel from visits with tag
    * `duration_distance_matrix_src_tags(j)` to visits with tag
    * `duration_distance_matrix_dst_tags(k)` in matrix i.
+   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -9593,6 +9630,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * (resp. the distance) of the travel from visits with tag
    * `duration_distance_matrix_src_tags(j)` to visits with tag
    * `duration_distance_matrix_dst_tags(k)` in matrix i.
+   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -9620,6 +9658,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * (resp. the distance) of the travel from visits with tag
    * `duration_distance_matrix_src_tags(j)` to visits with tag
    * `duration_distance_matrix_dst_tags(k)` in matrix i.
+   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -9648,6 +9687,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * (resp. the distance) of the travel from visits with tag
    * `duration_distance_matrix_src_tags(j)` to visits with tag
    * `duration_distance_matrix_dst_tags(k)` in matrix i.
+   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -10458,6 +10498,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A shipment model contains a set of shipments which must be performed by a
    * set of vehicles, while minimizing the overall cost, which is the sum of:
+   *
    * * the cost of routing the vehicles (sum of cost per total time, cost per
    *   travel time, and fixed cost over all vehicles).
    * * the unperformed shipment penalties.
@@ -10529,10 +10570,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         durationDistanceMatricesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
-      durationDistanceMatrixSrcTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
-      durationDistanceMatrixDstTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      durationDistanceMatrixSrcTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      durationDistanceMatrixDstTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (transitionAttributesBuilder_ == null) {
         transitionAttributes_ = java.util.Collections.emptyList();
       } else {
@@ -10632,16 +10671,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.durationDistanceMatrices_ = durationDistanceMatricesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        durationDistanceMatrixSrcTags_ = durationDistanceMatrixSrcTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.durationDistanceMatrixSrcTags_ = durationDistanceMatrixSrcTags_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        durationDistanceMatrixDstTags_ = durationDistanceMatrixDstTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.durationDistanceMatrixDstTags_ = durationDistanceMatrixDstTags_;
       if (transitionAttributesBuilder_ == null) {
         if (((bitField0_ & 0x00000200) != 0)) {
           transitionAttributes_ = java.util.Collections.unmodifiableList(transitionAttributes_);
@@ -10708,6 +10737,14 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.globalDurationCostPerHour_ = globalDurationCostPerHour_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        durationDistanceMatrixSrcTags_.makeImmutable();
+        result.durationDistanceMatrixSrcTags_ = durationDistanceMatrixSrcTags_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        durationDistanceMatrixDstTags_.makeImmutable();
+        result.durationDistanceMatrixDstTags_ = durationDistanceMatrixDstTags_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -10853,7 +10890,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       if (!other.durationDistanceMatrixSrcTags_.isEmpty()) {
         if (durationDistanceMatrixSrcTags_.isEmpty()) {
           durationDistanceMatrixSrcTags_ = other.durationDistanceMatrixSrcTags_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureDurationDistanceMatrixSrcTagsIsMutable();
           durationDistanceMatrixSrcTags_.addAll(other.durationDistanceMatrixSrcTags_);
@@ -10863,7 +10900,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       if (!other.durationDistanceMatrixDstTags_.isEmpty()) {
         if (durationDistanceMatrixDstTags_.isEmpty()) {
           durationDistanceMatrixDstTags_ = other.durationDistanceMatrixDstTags_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureDurationDistanceMatrixDstTagsIsMutable();
           durationDistanceMatrixDstTags_.addAll(other.durationDistanceMatrixDstTags_);
@@ -11998,8 +12035,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Global start and end time of the model: no times outside of this range
      * can be considered valid.
+     *
      * The model's time span must be less than a year, i.e. the `global_end_time`
      * and the `global_start_time` must be within 31536000 seconds of each other.
+     *
      * When using `cost_per_*hour` fields, you might want to set this window to a
      * smaller interval to increase performance (eg. if you model a single day,
      * you should set the global time limits to that day).
@@ -12020,8 +12059,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Global start and end time of the model: no times outside of this range
      * can be considered valid.
+     *
      * The model's time span must be less than a year, i.e. the `global_end_time`
      * and the `global_start_time` must be within 31536000 seconds of each other.
+     *
      * When using `cost_per_*hour` fields, you might want to set this window to a
      * smaller interval to increase performance (eg. if you model a single day,
      * you should set the global time limits to that day).
@@ -12048,8 +12089,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Global start and end time of the model: no times outside of this range
      * can be considered valid.
+     *
      * The model's time span must be less than a year, i.e. the `global_end_time`
      * and the `global_start_time` must be within 31536000 seconds of each other.
+     *
      * When using `cost_per_*hour` fields, you might want to set this window to a
      * smaller interval to increase performance (eg. if you model a single day,
      * you should set the global time limits to that day).
@@ -12078,8 +12121,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Global start and end time of the model: no times outside of this range
      * can be considered valid.
+     *
      * The model's time span must be less than a year, i.e. the `global_end_time`
      * and the `global_start_time` must be within 31536000 seconds of each other.
+     *
      * When using `cost_per_*hour` fields, you might want to set this window to a
      * smaller interval to increase performance (eg. if you model a single day,
      * you should set the global time limits to that day).
@@ -12105,8 +12150,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Global start and end time of the model: no times outside of this range
      * can be considered valid.
+     *
      * The model's time span must be less than a year, i.e. the `global_end_time`
      * and the `global_start_time` must be within 31536000 seconds of each other.
+     *
      * When using `cost_per_*hour` fields, you might want to set this window to a
      * smaller interval to increase performance (eg. if you model a single day,
      * you should set the global time limits to that day).
@@ -12138,8 +12185,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Global start and end time of the model: no times outside of this range
      * can be considered valid.
+     *
      * The model's time span must be less than a year, i.e. the `global_end_time`
      * and the `global_start_time` must be within 31536000 seconds of each other.
+     *
      * When using `cost_per_*hour` fields, you might want to set this window to a
      * smaller interval to increase performance (eg. if you model a single day,
      * you should set the global time limits to that day).
@@ -12165,8 +12214,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Global start and end time of the model: no times outside of this range
      * can be considered valid.
+     *
      * The model's time span must be less than a year, i.e. the `global_end_time`
      * and the `global_start_time` must be within 31536000 seconds of each other.
+     *
      * When using `cost_per_*hour` fields, you might want to set this window to a
      * smaller interval to increase performance (eg. if you model a single day,
      * you should set the global time limits to that day).
@@ -12187,8 +12238,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Global start and end time of the model: no times outside of this range
      * can be considered valid.
+     *
      * The model's time span must be less than a year, i.e. the `global_end_time`
      * and the `global_start_time` must be within 31536000 seconds of each other.
+     *
      * When using `cost_per_*hour` fields, you might want to set this window to a
      * smaller interval to increase performance (eg. if you model a single day,
      * you should set the global time limits to that day).
@@ -12213,8 +12266,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Global start and end time of the model: no times outside of this range
      * can be considered valid.
+     *
      * The model's time span must be less than a year, i.e. the `global_end_time`
      * and the `global_start_time` must be within 31536000 seconds of each other.
+     *
      * When using `cost_per_*hour` fields, you might want to set this window to a
      * smaller interval to increase performance (eg. if you model a single day,
      * you should set the global time limits to that day).
@@ -12530,10 +12585,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -12554,6 +12612,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -12562,6 +12622,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -12629,10 +12690,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -12653,6 +12717,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -12661,6 +12727,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -12727,10 +12794,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -12751,6 +12821,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -12759,6 +12831,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -12826,10 +12899,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -12850,6 +12926,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -12858,6 +12936,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -12931,10 +13010,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -12955,6 +13037,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -12963,6 +13047,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -13035,10 +13120,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -13059,6 +13147,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -13067,6 +13157,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -13140,10 +13231,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -13164,6 +13258,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -13172,6 +13268,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -13245,10 +13342,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -13269,6 +13369,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -13277,6 +13379,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -13348,10 +13451,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -13372,6 +13478,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -13380,6 +13488,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -13452,10 +13561,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -13476,6 +13588,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -13484,6 +13598,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -13556,10 +13671,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -13580,6 +13698,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -13588,6 +13708,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -13657,10 +13778,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -13681,6 +13805,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -13689,6 +13815,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -13758,10 +13885,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -13782,6 +13912,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -13790,6 +13922,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -13853,10 +13986,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -13877,6 +14013,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -13885,6 +14023,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -13952,10 +14091,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -13976,6 +14118,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -13984,6 +14128,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -14053,10 +14198,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -14077,6 +14225,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -14085,6 +14235,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -14151,10 +14302,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -14175,6 +14329,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -14183,6 +14339,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -14250,10 +14407,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `use_geodesic_distances` cannot be true and neither
      * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
      * can be empty.
+     *
      * Usage examples:
+     *
      * * There are two locations: locA and locB.
      * * 1 vehicle starting its route at locA and ending it at locA.
      * * 1 pickup visit request at locB.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -14274,6 +14434,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
+     *
+     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -14282,6 +14444,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * * 1 vehicle starting its route at locB and ending it at locB, using
      *   matrix "fast".
      * * 1 pickup visit request at locC.
+     *
      * ```
      * model {
      *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -14357,15 +14520,15 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       return durationDistanceMatricesBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList durationDistanceMatrixSrcTags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList durationDistanceMatrixSrcTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDurationDistanceMatrixSrcTagsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!durationDistanceMatrixSrcTags_.isModifiable()) {
         durationDistanceMatrixSrcTags_ =
             new com.google.protobuf.LazyStringArrayList(durationDistanceMatrixSrcTags_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -14375,6 +14538,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `duration_distance_matrices(i).rows(j)` defines durations and distances
      * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
      * in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14390,7 +14554,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the durationDistanceMatrixSrcTags.
      */
     public com.google.protobuf.ProtocolStringList getDurationDistanceMatrixSrcTagsList() {
-      return durationDistanceMatrixSrcTags_.getUnmodifiableView();
+      durationDistanceMatrixSrcTags_.makeImmutable();
+      return durationDistanceMatrixSrcTags_;
     }
     /**
      *
@@ -14400,6 +14565,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `duration_distance_matrices(i).rows(j)` defines durations and distances
      * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
      * in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14425,6 +14591,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `duration_distance_matrices(i).rows(j)` defines durations and distances
      * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
      * in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14451,6 +14618,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `duration_distance_matrices(i).rows(j)` defines durations and distances
      * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
      * in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14477,6 +14645,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `duration_distance_matrices(i).rows(j)` defines durations and distances
      * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
      * in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14499,6 +14668,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDurationDistanceMatrixSrcTagsIsMutable();
       durationDistanceMatrixSrcTags_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -14510,6 +14680,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `duration_distance_matrices(i).rows(j)` defines durations and distances
      * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
      * in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14531,6 +14702,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDurationDistanceMatrixSrcTagsIsMutable();
       durationDistanceMatrixSrcTags_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -14542,6 +14714,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `duration_distance_matrices(i).rows(j)` defines durations and distances
      * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
      * in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14562,6 +14735,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       ensureDurationDistanceMatrixSrcTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, durationDistanceMatrixSrcTags_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -14573,6 +14747,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `duration_distance_matrices(i).rows(j)` defines durations and distances
      * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
      * in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14588,8 +14763,9 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDurationDistanceMatrixSrcTags() {
-      durationDistanceMatrixSrcTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      durationDistanceMatrixSrcTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -14601,6 +14777,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * `duration_distance_matrices(i).rows(j)` defines durations and distances
      * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
      * in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14623,19 +14800,20 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDurationDistanceMatrixSrcTagsIsMutable();
       durationDistanceMatrixSrcTags_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList durationDistanceMatrixDstTags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList durationDistanceMatrixDstTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDurationDistanceMatrixDstTagsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!durationDistanceMatrixDstTags_.isModifiable()) {
         durationDistanceMatrixDstTags_ =
             new com.google.protobuf.LazyStringArrayList(durationDistanceMatrixDstTags_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -14647,6 +14825,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * (resp. the distance) of the travel from visits with tag
      * `duration_distance_matrix_src_tags(j)` to visits with tag
      * `duration_distance_matrix_dst_tags(k)` in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14662,7 +14841,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the durationDistanceMatrixDstTags.
      */
     public com.google.protobuf.ProtocolStringList getDurationDistanceMatrixDstTagsList() {
-      return durationDistanceMatrixDstTags_.getUnmodifiableView();
+      durationDistanceMatrixDstTags_.makeImmutable();
+      return durationDistanceMatrixDstTags_;
     }
     /**
      *
@@ -14674,6 +14854,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * (resp. the distance) of the travel from visits with tag
      * `duration_distance_matrix_src_tags(j)` to visits with tag
      * `duration_distance_matrix_dst_tags(k)` in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14701,6 +14882,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * (resp. the distance) of the travel from visits with tag
      * `duration_distance_matrix_src_tags(j)` to visits with tag
      * `duration_distance_matrix_dst_tags(k)` in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14729,6 +14911,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * (resp. the distance) of the travel from visits with tag
      * `duration_distance_matrix_src_tags(j)` to visits with tag
      * `duration_distance_matrix_dst_tags(k)` in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14757,6 +14940,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * (resp. the distance) of the travel from visits with tag
      * `duration_distance_matrix_src_tags(j)` to visits with tag
      * `duration_distance_matrix_dst_tags(k)` in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14779,6 +14963,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDurationDistanceMatrixDstTagsIsMutable();
       durationDistanceMatrixDstTags_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -14792,6 +14977,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * (resp. the distance) of the travel from visits with tag
      * `duration_distance_matrix_src_tags(j)` to visits with tag
      * `duration_distance_matrix_dst_tags(k)` in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14813,6 +14999,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDurationDistanceMatrixDstTagsIsMutable();
       durationDistanceMatrixDstTags_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -14826,6 +15013,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * (resp. the distance) of the travel from visits with tag
      * `duration_distance_matrix_src_tags(j)` to visits with tag
      * `duration_distance_matrix_dst_tags(k)` in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14846,6 +15034,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       ensureDurationDistanceMatrixDstTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, durationDistanceMatrixDstTags_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -14859,6 +15048,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * (resp. the distance) of the travel from visits with tag
      * `duration_distance_matrix_src_tags(j)` to visits with tag
      * `duration_distance_matrix_dst_tags(k)` in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14874,8 +15064,9 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDurationDistanceMatrixDstTags() {
-      durationDistanceMatrixDstTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      durationDistanceMatrixDstTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -14889,6 +15080,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * (resp. the distance) of the travel from visits with tag
      * `duration_distance_matrix_src_tags(j)` to visits with tag
      * `duration_distance_matrix_dst_tags(k)` in matrix i.
+     *
      * Tags correspond to
      * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
      * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -14911,6 +15103,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDurationDistanceMatrixDstTagsIsMutable();
       durationDistanceMatrixDstTags_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

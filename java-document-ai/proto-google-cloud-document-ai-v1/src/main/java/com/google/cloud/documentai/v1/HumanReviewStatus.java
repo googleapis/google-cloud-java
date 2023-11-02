@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
     return new HumanReviewStatus();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1_HumanReviewStatus_descriptor;
@@ -94,7 +89,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Human review is skipped for the document. This can happen because human
-     * review is not enabled on the processor or the processing request has
+     * review isn't enabled on the processor or the processing request has
      * been set to skip this document.
      * </pre>
      *
@@ -126,7 +121,8 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Some error happened during triggering human review, see the
-     * [state_message] for details.
+     * [state_message][google.cloud.documentai.v1.HumanReviewStatus.state_message]
+     * for details.
      * </pre>
      *
      * <code>ERROR = 4;</code>
@@ -150,7 +146,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Human review is skipped for the document. This can happen because human
-     * review is not enabled on the processor or the processing request has
+     * review isn't enabled on the processor or the processing request has
      * been set to skip this document.
      * </pre>
      *
@@ -182,7 +178,8 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Some error happened during triggering human review, see the
-     * [state_message] for details.
+     * [state_message][google.cloud.documentai.v1.HumanReviewStatus.state_message]
+     * for details.
      * </pre>
      *
      * <code>ERROR = 4;</code>
@@ -373,9 +370,11 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The name of the operation triggered by the processed document. This field
-   * is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has
-   * the same response type and metadata as the long running operation returned
-   * by [ReviewDocument] method.
+   * is populated only when the
+   * [state][google.cloud.documentai.v1.HumanReviewStatus.state] is
+   * `HUMAN_REVIEW_IN_PROGRESS`. It has the same response type and metadata as
+   * the long-running operation returned by
+   * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument].
    * </pre>
    *
    * <code>string human_review_operation = 3;</code>
@@ -399,9 +398,11 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The name of the operation triggered by the processed document. This field
-   * is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has
-   * the same response type and metadata as the long running operation returned
-   * by [ReviewDocument] method.
+   * is populated only when the
+   * [state][google.cloud.documentai.v1.HumanReviewStatus.state] is
+   * `HUMAN_REVIEW_IN_PROGRESS`. It has the same response type and metadata as
+   * the long-running operation returned by
+   * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument].
    * </pre>
    *
    * <code>string human_review_operation = 3;</code>
@@ -1015,9 +1016,11 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of the operation triggered by the processed document. This field
-     * is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has
-     * the same response type and metadata as the long running operation returned
-     * by [ReviewDocument] method.
+     * is populated only when the
+     * [state][google.cloud.documentai.v1.HumanReviewStatus.state] is
+     * `HUMAN_REVIEW_IN_PROGRESS`. It has the same response type and metadata as
+     * the long-running operation returned by
+     * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument].
      * </pre>
      *
      * <code>string human_review_operation = 3;</code>
@@ -1040,9 +1043,11 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of the operation triggered by the processed document. This field
-     * is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has
-     * the same response type and metadata as the long running operation returned
-     * by [ReviewDocument] method.
+     * is populated only when the
+     * [state][google.cloud.documentai.v1.HumanReviewStatus.state] is
+     * `HUMAN_REVIEW_IN_PROGRESS`. It has the same response type and metadata as
+     * the long-running operation returned by
+     * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument].
      * </pre>
      *
      * <code>string human_review_operation = 3;</code>
@@ -1065,9 +1070,11 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of the operation triggered by the processed document. This field
-     * is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has
-     * the same response type and metadata as the long running operation returned
-     * by [ReviewDocument] method.
+     * is populated only when the
+     * [state][google.cloud.documentai.v1.HumanReviewStatus.state] is
+     * `HUMAN_REVIEW_IN_PROGRESS`. It has the same response type and metadata as
+     * the long-running operation returned by
+     * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument].
      * </pre>
      *
      * <code>string human_review_operation = 3;</code>
@@ -1089,9 +1096,11 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of the operation triggered by the processed document. This field
-     * is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has
-     * the same response type and metadata as the long running operation returned
-     * by [ReviewDocument] method.
+     * is populated only when the
+     * [state][google.cloud.documentai.v1.HumanReviewStatus.state] is
+     * `HUMAN_REVIEW_IN_PROGRESS`. It has the same response type and metadata as
+     * the long-running operation returned by
+     * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument].
      * </pre>
      *
      * <code>string human_review_operation = 3;</code>
@@ -1109,9 +1118,11 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of the operation triggered by the processed document. This field
-     * is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has
-     * the same response type and metadata as the long running operation returned
-     * by [ReviewDocument] method.
+     * is populated only when the
+     * [state][google.cloud.documentai.v1.HumanReviewStatus.state] is
+     * `HUMAN_REVIEW_IN_PROGRESS`. It has the same response type and metadata as
+     * the long-running operation returned by
+     * [ReviewDocument][google.cloud.documentai.v1.DocumentProcessorService.ReviewDocument].
      * </pre>
      *
      * <code>string human_review_operation = 3;</code>

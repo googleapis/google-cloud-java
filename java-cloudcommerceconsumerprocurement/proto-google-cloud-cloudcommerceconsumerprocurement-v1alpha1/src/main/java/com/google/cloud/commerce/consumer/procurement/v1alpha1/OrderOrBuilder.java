@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,6 @@ public interface OrderOrBuilder
    *
    * <pre>
    * Required. The user-specified name of the order.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 10 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -70,7 +69,6 @@ public interface OrderOrBuilder
    *
    * <pre>
    * Required. The user-specified name of the order.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 10 [(.google.api.field_behavior) = REQUIRED];</code>

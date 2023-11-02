@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,11 +110,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GoogleServiceAccount();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -961,6 +956,7 @@ public final class TransferTypes {
    * AWS access key (see
    * [AWS Security
    * Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)).
+   *
    * For information on our data retention policy for user credentials, see
    * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
    * </pre>
@@ -986,11 +982,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AwsAccessKey();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1289,6 +1280,7 @@ public final class TransferTypes {
      * AWS access key (see
      * [AWS Security
      * Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)).
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -1785,6 +1777,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. Azure shared access signature (SAS).
+     *
      * For more information about SAS, see
      * [Grant limited access to Azure Storage resources using shared access
      * signatures
@@ -1801,6 +1794,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. Azure shared access signature (SAS).
+     *
      * For more information about SAS, see
      * [Grant limited access to Azure Storage resources using shared access
      * signatures
@@ -1818,6 +1812,7 @@ public final class TransferTypes {
    *
    * <pre>
    * Azure credentials
+   *
    * For information on our data retention policy for user credentials, see
    * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
    * </pre>
@@ -1844,11 +1839,6 @@ public final class TransferTypes {
       return new AzureCredentials();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferTypes
           .internal_static_google_storagetransfer_v1_AzureCredentials_descriptor;
@@ -1873,6 +1863,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. Azure shared access signature (SAS).
+     *
      * For more information about SAS, see
      * [Grant limited access to Azure Storage resources using shared access
      * signatures
@@ -1900,6 +1891,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. Azure shared access signature (SAS).
+     *
      * For more information about SAS, see
      * [Grant limited access to Azure Storage resources using shared access
      * signatures
@@ -2090,6 +2082,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Azure credentials
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -2286,6 +2279,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. Azure shared access signature (SAS).
+       *
        * For more information about SAS, see
        * [Grant limited access to Azure Storage resources using shared access
        * signatures
@@ -2312,6 +2306,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. Azure shared access signature (SAS).
+       *
        * For more information about SAS, see
        * [Grant limited access to Azure Storage resources using shared access
        * signatures
@@ -2338,6 +2333,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. Azure shared access signature (SAS).
+       *
        * For more information about SAS, see
        * [Grant limited access to Azure Storage resources using shared access
        * signatures
@@ -2363,6 +2359,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. Azure shared access signature (SAS).
+       *
        * For more information about SAS, see
        * [Grant limited access to Azure Storage resources using shared access
        * signatures
@@ -2384,6 +2381,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. Azure shared access signature (SAS).
+       *
        * For more information about SAS, see
        * [Grant limited access to Azure Storage resources using shared access
        * signatures
@@ -2484,11 +2482,12 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred until a specific minimum time
      * has elapsed after the "last modification time". When a
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-     * transferred only if the elapsed time between the
-     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-     * and the "last modification time" of the object is equal to or
-     * greater than the value of min_time_elapsed_since_last_modification`.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+     * objects with a "last modification time" are transferred only if the elapsed
+     * time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * `TransferOperation` and the "last modification time" of the object is equal
+     * to or greater than the value of min_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
      * </pre>
      *
@@ -2503,11 +2502,12 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred until a specific minimum time
      * has elapsed after the "last modification time". When a
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-     * transferred only if the elapsed time between the
-     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-     * and the "last modification time" of the object is equal to or
-     * greater than the value of min_time_elapsed_since_last_modification`.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+     * objects with a "last modification time" are transferred only if the elapsed
+     * time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * `TransferOperation` and the "last modification time" of the object is equal
+     * to or greater than the value of min_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
      * </pre>
      *
@@ -2522,11 +2522,12 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred until a specific minimum time
      * has elapsed after the "last modification time". When a
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-     * transferred only if the elapsed time between the
-     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-     * and the "last modification time" of the object is equal to or
-     * greater than the value of min_time_elapsed_since_last_modification`.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+     * objects with a "last modification time" are transferred only if the elapsed
+     * time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * `TransferOperation` and the "last modification time" of the object is equal
+     * to or greater than the value of min_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
      * </pre>
      *
@@ -2540,9 +2541,10 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred if a specific maximum time
      * has elapsed since the "last modification time".
-     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-     * "last modification time" are transferred only if the elapsed time
-     * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+     * begins, objects with a "last modification time" are transferred only if the
+     * elapsed time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
      * `TransferOperation`and the "last modification time" of the object
      *  is less than the value of max_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
@@ -2559,9 +2561,10 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred if a specific maximum time
      * has elapsed since the "last modification time".
-     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-     * "last modification time" are transferred only if the elapsed time
-     * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+     * begins, objects with a "last modification time" are transferred only if the
+     * elapsed time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
      * `TransferOperation`and the "last modification time" of the object
      *  is less than the value of max_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
@@ -2578,9 +2581,10 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred if a specific maximum time
      * has elapsed since the "last modification time".
-     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-     * "last modification time" are transferred only if the elapsed time
-     * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+     * begins, objects with a "last modification time" are transferred only if the
+     * elapsed time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
      * `TransferOperation`and the "last modification time" of the object
      *  is less than the value of max_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
@@ -2597,22 +2601,30 @@ public final class TransferTypes {
      * If you specify `include_prefixes`, Storage Transfer Service uses the items
      * in the `include_prefixes` array to determine which objects to include in a
      * transfer. Objects must start with one of the matching `include_prefixes`
-     * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-     * objects must not start with any of the `exclude_prefixes` specified for
-     * inclusion in the transfer.
+     * for inclusion in the transfer. If
+     * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+     * is specified, objects must not start with any of the `exclude_prefixes`
+     * specified for inclusion in the transfer.
+     *
      * The following are requirements of `include_prefixes`:
+     *
      *   * Each include-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each include-prefix must omit the leading slash. For example, to
      *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the include-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the include-prefix values can be empty, if specified.
+     *
      *   * Each include-prefix must include a distinct portion of the object
      *     namespace. No include-prefix may be a prefix of another
      *     include-prefix.
+     *
      * The max size of `include_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -2629,22 +2641,30 @@ public final class TransferTypes {
      * If you specify `include_prefixes`, Storage Transfer Service uses the items
      * in the `include_prefixes` array to determine which objects to include in a
      * transfer. Objects must start with one of the matching `include_prefixes`
-     * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-     * objects must not start with any of the `exclude_prefixes` specified for
-     * inclusion in the transfer.
+     * for inclusion in the transfer. If
+     * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+     * is specified, objects must not start with any of the `exclude_prefixes`
+     * specified for inclusion in the transfer.
+     *
      * The following are requirements of `include_prefixes`:
+     *
      *   * Each include-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each include-prefix must omit the leading slash. For example, to
      *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the include-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the include-prefix values can be empty, if specified.
+     *
      *   * Each include-prefix must include a distinct portion of the object
      *     namespace. No include-prefix may be a prefix of another
      *     include-prefix.
+     *
      * The max size of `include_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -2661,22 +2681,30 @@ public final class TransferTypes {
      * If you specify `include_prefixes`, Storage Transfer Service uses the items
      * in the `include_prefixes` array to determine which objects to include in a
      * transfer. Objects must start with one of the matching `include_prefixes`
-     * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-     * objects must not start with any of the `exclude_prefixes` specified for
-     * inclusion in the transfer.
+     * for inclusion in the transfer. If
+     * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+     * is specified, objects must not start with any of the `exclude_prefixes`
+     * specified for inclusion in the transfer.
+     *
      * The following are requirements of `include_prefixes`:
+     *
      *   * Each include-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each include-prefix must omit the leading slash. For example, to
      *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the include-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the include-prefix values can be empty, if specified.
+     *
      *   * Each include-prefix must include a distinct portion of the object
      *     namespace. No include-prefix may be a prefix of another
      *     include-prefix.
+     *
      * The max size of `include_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -2694,22 +2722,30 @@ public final class TransferTypes {
      * If you specify `include_prefixes`, Storage Transfer Service uses the items
      * in the `include_prefixes` array to determine which objects to include in a
      * transfer. Objects must start with one of the matching `include_prefixes`
-     * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-     * objects must not start with any of the `exclude_prefixes` specified for
-     * inclusion in the transfer.
+     * for inclusion in the transfer. If
+     * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+     * is specified, objects must not start with any of the `exclude_prefixes`
+     * specified for inclusion in the transfer.
+     *
      * The following are requirements of `include_prefixes`:
+     *
      *   * Each include-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each include-prefix must omit the leading slash. For example, to
      *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the include-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the include-prefix values can be empty, if specified.
+     *
      *   * Each include-prefix must include a distinct portion of the object
      *     namespace. No include-prefix may be a prefix of another
      *     include-prefix.
+     *
      * The max size of `include_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -2729,21 +2765,31 @@ public final class TransferTypes {
      * in the `exclude_prefixes` array to determine which objects to exclude from
      * a transfer. Objects must not start with one of the matching
      * `exclude_prefixes` for inclusion in a transfer.
+     *
      * The following are requirements of `exclude_prefixes`:
+     *
      *   * Each exclude-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each exclude-prefix must omit the leading slash. For example, to
      *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the exclude-prefix values can be empty, if specified.
+     *
      *   * Each exclude-prefix must exclude a distinct portion of the object
      *     namespace. No exclude-prefix may be a prefix of another
      *     exclude-prefix.
-     *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-     *   start with the value of a path explicitly included by `include_prefixes`.
+     *
+     *   * If
+     *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+     *   is specified, then each exclude-prefix must start with the value of a
+     *   path explicitly included by `include_prefixes`.
+     *
      * The max size of `exclude_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -2761,21 +2807,31 @@ public final class TransferTypes {
      * in the `exclude_prefixes` array to determine which objects to exclude from
      * a transfer. Objects must not start with one of the matching
      * `exclude_prefixes` for inclusion in a transfer.
+     *
      * The following are requirements of `exclude_prefixes`:
+     *
      *   * Each exclude-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each exclude-prefix must omit the leading slash. For example, to
      *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the exclude-prefix values can be empty, if specified.
+     *
      *   * Each exclude-prefix must exclude a distinct portion of the object
      *     namespace. No exclude-prefix may be a prefix of another
      *     exclude-prefix.
-     *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-     *   start with the value of a path explicitly included by `include_prefixes`.
+     *
+     *   * If
+     *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+     *   is specified, then each exclude-prefix must start with the value of a
+     *   path explicitly included by `include_prefixes`.
+     *
      * The max size of `exclude_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -2793,21 +2849,31 @@ public final class TransferTypes {
      * in the `exclude_prefixes` array to determine which objects to exclude from
      * a transfer. Objects must not start with one of the matching
      * `exclude_prefixes` for inclusion in a transfer.
+     *
      * The following are requirements of `exclude_prefixes`:
+     *
      *   * Each exclude-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each exclude-prefix must omit the leading slash. For example, to
      *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the exclude-prefix values can be empty, if specified.
+     *
      *   * Each exclude-prefix must exclude a distinct portion of the object
      *     namespace. No exclude-prefix may be a prefix of another
      *     exclude-prefix.
-     *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-     *   start with the value of a path explicitly included by `include_prefixes`.
+     *
+     *   * If
+     *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+     *   is specified, then each exclude-prefix must start with the value of a
+     *   path explicitly included by `include_prefixes`.
+     *
      * The max size of `exclude_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -2826,21 +2892,31 @@ public final class TransferTypes {
      * in the `exclude_prefixes` array to determine which objects to exclude from
      * a transfer. Objects must not start with one of the matching
      * `exclude_prefixes` for inclusion in a transfer.
+     *
      * The following are requirements of `exclude_prefixes`:
+     *
      *   * Each exclude-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each exclude-prefix must omit the leading slash. For example, to
      *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the exclude-prefix values can be empty, if specified.
+     *
      *   * Each exclude-prefix must exclude a distinct portion of the object
      *     namespace. No exclude-prefix may be a prefix of another
      *     exclude-prefix.
-     *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-     *   start with the value of a path explicitly included by `include_prefixes`.
+     *
+     *   * If
+     *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+     *   is specified, then each exclude-prefix must start with the value of a
+     *   path explicitly included by `include_prefixes`.
+     *
      * The max size of `exclude_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -2859,11 +2935,14 @@ public final class TransferTypes {
      * If specified, only objects with a "last modification time" on or after
      * this timestamp and objects that don't have a "last modification time" are
      * transferred.
+     *
      * The `last_modified_since` and `last_modified_before` fields can be used
      * together for chunked data processing. For example, consider a script that
      * processes each day's worth of data at a time. For that you'd set each
      * of the fields as follows:
+     *
      * *  `last_modified_since` to the start of the day
+     *
      * *  `last_modified_before` to the end of the day
      * </pre>
      *
@@ -2879,11 +2958,14 @@ public final class TransferTypes {
      * If specified, only objects with a "last modification time" on or after
      * this timestamp and objects that don't have a "last modification time" are
      * transferred.
+     *
      * The `last_modified_since` and `last_modified_before` fields can be used
      * together for chunked data processing. For example, consider a script that
      * processes each day's worth of data at a time. For that you'd set each
      * of the fields as follows:
+     *
      * *  `last_modified_since` to the start of the day
+     *
      * *  `last_modified_before` to the end of the day
      * </pre>
      *
@@ -2899,11 +2981,14 @@ public final class TransferTypes {
      * If specified, only objects with a "last modification time" on or after
      * this timestamp and objects that don't have a "last modification time" are
      * transferred.
+     *
      * The `last_modified_since` and `last_modified_before` fields can be used
      * together for chunked data processing. For example, consider a script that
      * processes each day's worth of data at a time. For that you'd set each
      * of the fields as follows:
+     *
      * *  `last_modified_since` to the start of the day
+     *
      * *  `last_modified_before` to the end of the day
      * </pre>
      *
@@ -2958,12 +3043,14 @@ public final class TransferTypes {
    * <pre>
    * Conditions that determine which objects are transferred. Applies only
    * to Cloud Data Sources such as S3, Azure, and Cloud Storage.
+   *
    * The "last modification time" refers to the time of the
    * last change to the object's content or metadata — specifically, this is
    * the `updated` property of Cloud Storage objects, the `LastModified` field
    * of S3 objects, and the `Last-Modified` header of Azure blobs.
-   * Transfers with a [PosixFilesystem][google.storagetransfer.v1.PosixFilesystem] source or destination don't support
-   * `ObjectConditions`.
+   *
+   * Transfers with a [PosixFilesystem][google.storagetransfer.v1.PosixFilesystem]
+   * source or destination don't support `ObjectConditions`.
    * </pre>
    *
    * Protobuf type {@code google.storagetransfer.v1.ObjectConditions}
@@ -2979,19 +3066,14 @@ public final class TransferTypes {
     }
 
     private ObjectConditions() {
-      includePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      excludePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ObjectConditions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3017,11 +3099,12 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred until a specific minimum time
      * has elapsed after the "last modification time". When a
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-     * transferred only if the elapsed time between the
-     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-     * and the "last modification time" of the object is equal to or
-     * greater than the value of min_time_elapsed_since_last_modification`.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+     * objects with a "last modification time" are transferred only if the elapsed
+     * time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * `TransferOperation` and the "last modification time" of the object is equal
+     * to or greater than the value of min_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
      * </pre>
      *
@@ -3039,11 +3122,12 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred until a specific minimum time
      * has elapsed after the "last modification time". When a
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-     * transferred only if the elapsed time between the
-     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-     * and the "last modification time" of the object is equal to or
-     * greater than the value of min_time_elapsed_since_last_modification`.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+     * objects with a "last modification time" are transferred only if the elapsed
+     * time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * `TransferOperation` and the "last modification time" of the object is equal
+     * to or greater than the value of min_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
      * </pre>
      *
@@ -3063,11 +3147,12 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred until a specific minimum time
      * has elapsed after the "last modification time". When a
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-     * transferred only if the elapsed time between the
-     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-     * and the "last modification time" of the object is equal to or
-     * greater than the value of min_time_elapsed_since_last_modification`.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+     * objects with a "last modification time" are transferred only if the elapsed
+     * time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * `TransferOperation` and the "last modification time" of the object is equal
+     * to or greater than the value of min_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
      * </pre>
      *
@@ -3088,9 +3173,10 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred if a specific maximum time
      * has elapsed since the "last modification time".
-     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-     * "last modification time" are transferred only if the elapsed time
-     * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+     * begins, objects with a "last modification time" are transferred only if the
+     * elapsed time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
      * `TransferOperation`and the "last modification time" of the object
      *  is less than the value of max_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
@@ -3110,9 +3196,10 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred if a specific maximum time
      * has elapsed since the "last modification time".
-     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-     * "last modification time" are transferred only if the elapsed time
-     * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+     * begins, objects with a "last modification time" are transferred only if the
+     * elapsed time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
      * `TransferOperation`and the "last modification time" of the object
      *  is less than the value of max_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
@@ -3134,9 +3221,10 @@ public final class TransferTypes {
      * <pre>
      * Ensures that objects are not transferred if a specific maximum time
      * has elapsed since the "last modification time".
-     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-     * "last modification time" are transferred only if the elapsed time
-     * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+     * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+     * begins, objects with a "last modification time" are transferred only if the
+     * elapsed time between the
+     * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
      * `TransferOperation`and the "last modification time" of the object
      *  is less than the value of max_time_elapsed_since_last_modification`.
      * Objects that do not have a "last modification time" are also transferred.
@@ -3154,7 +3242,8 @@ public final class TransferTypes {
     public static final int INCLUDE_PREFIXES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList includePrefixes_;
+    private com.google.protobuf.LazyStringArrayList includePrefixes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3162,22 +3251,30 @@ public final class TransferTypes {
      * If you specify `include_prefixes`, Storage Transfer Service uses the items
      * in the `include_prefixes` array to determine which objects to include in a
      * transfer. Objects must start with one of the matching `include_prefixes`
-     * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-     * objects must not start with any of the `exclude_prefixes` specified for
-     * inclusion in the transfer.
+     * for inclusion in the transfer. If
+     * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+     * is specified, objects must not start with any of the `exclude_prefixes`
+     * specified for inclusion in the transfer.
+     *
      * The following are requirements of `include_prefixes`:
+     *
      *   * Each include-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each include-prefix must omit the leading slash. For example, to
      *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the include-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the include-prefix values can be empty, if specified.
+     *
      *   * Each include-prefix must include a distinct portion of the object
      *     namespace. No include-prefix may be a prefix of another
      *     include-prefix.
+     *
      * The max size of `include_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -3196,22 +3293,30 @@ public final class TransferTypes {
      * If you specify `include_prefixes`, Storage Transfer Service uses the items
      * in the `include_prefixes` array to determine which objects to include in a
      * transfer. Objects must start with one of the matching `include_prefixes`
-     * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-     * objects must not start with any of the `exclude_prefixes` specified for
-     * inclusion in the transfer.
+     * for inclusion in the transfer. If
+     * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+     * is specified, objects must not start with any of the `exclude_prefixes`
+     * specified for inclusion in the transfer.
+     *
      * The following are requirements of `include_prefixes`:
+     *
      *   * Each include-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each include-prefix must omit the leading slash. For example, to
      *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the include-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the include-prefix values can be empty, if specified.
+     *
      *   * Each include-prefix must include a distinct portion of the object
      *     namespace. No include-prefix may be a prefix of another
      *     include-prefix.
+     *
      * The max size of `include_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -3230,22 +3335,30 @@ public final class TransferTypes {
      * If you specify `include_prefixes`, Storage Transfer Service uses the items
      * in the `include_prefixes` array to determine which objects to include in a
      * transfer. Objects must start with one of the matching `include_prefixes`
-     * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-     * objects must not start with any of the `exclude_prefixes` specified for
-     * inclusion in the transfer.
+     * for inclusion in the transfer. If
+     * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+     * is specified, objects must not start with any of the `exclude_prefixes`
+     * specified for inclusion in the transfer.
+     *
      * The following are requirements of `include_prefixes`:
+     *
      *   * Each include-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each include-prefix must omit the leading slash. For example, to
      *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the include-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the include-prefix values can be empty, if specified.
+     *
      *   * Each include-prefix must include a distinct portion of the object
      *     namespace. No include-prefix may be a prefix of another
      *     include-prefix.
+     *
      * The max size of `include_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -3265,22 +3378,30 @@ public final class TransferTypes {
      * If you specify `include_prefixes`, Storage Transfer Service uses the items
      * in the `include_prefixes` array to determine which objects to include in a
      * transfer. Objects must start with one of the matching `include_prefixes`
-     * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-     * objects must not start with any of the `exclude_prefixes` specified for
-     * inclusion in the transfer.
+     * for inclusion in the transfer. If
+     * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+     * is specified, objects must not start with any of the `exclude_prefixes`
+     * specified for inclusion in the transfer.
+     *
      * The following are requirements of `include_prefixes`:
+     *
      *   * Each include-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each include-prefix must omit the leading slash. For example, to
      *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the include-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the include-prefix values can be empty, if specified.
+     *
      *   * Each include-prefix must include a distinct portion of the object
      *     namespace. No include-prefix may be a prefix of another
      *     include-prefix.
+     *
      * The max size of `include_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -3297,7 +3418,8 @@ public final class TransferTypes {
     public static final int EXCLUDE_PREFIXES_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList excludePrefixes_;
+    private com.google.protobuf.LazyStringArrayList excludePrefixes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3306,21 +3428,31 @@ public final class TransferTypes {
      * in the `exclude_prefixes` array to determine which objects to exclude from
      * a transfer. Objects must not start with one of the matching
      * `exclude_prefixes` for inclusion in a transfer.
+     *
      * The following are requirements of `exclude_prefixes`:
+     *
      *   * Each exclude-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each exclude-prefix must omit the leading slash. For example, to
      *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the exclude-prefix values can be empty, if specified.
+     *
      *   * Each exclude-prefix must exclude a distinct portion of the object
      *     namespace. No exclude-prefix may be a prefix of another
      *     exclude-prefix.
-     *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-     *   start with the value of a path explicitly included by `include_prefixes`.
+     *
+     *   * If
+     *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+     *   is specified, then each exclude-prefix must start with the value of a
+     *   path explicitly included by `include_prefixes`.
+     *
      * The max size of `exclude_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -3340,21 +3472,31 @@ public final class TransferTypes {
      * in the `exclude_prefixes` array to determine which objects to exclude from
      * a transfer. Objects must not start with one of the matching
      * `exclude_prefixes` for inclusion in a transfer.
+     *
      * The following are requirements of `exclude_prefixes`:
+     *
      *   * Each exclude-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each exclude-prefix must omit the leading slash. For example, to
      *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the exclude-prefix values can be empty, if specified.
+     *
      *   * Each exclude-prefix must exclude a distinct portion of the object
      *     namespace. No exclude-prefix may be a prefix of another
      *     exclude-prefix.
-     *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-     *   start with the value of a path explicitly included by `include_prefixes`.
+     *
+     *   * If
+     *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+     *   is specified, then each exclude-prefix must start with the value of a
+     *   path explicitly included by `include_prefixes`.
+     *
      * The max size of `exclude_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -3374,21 +3516,31 @@ public final class TransferTypes {
      * in the `exclude_prefixes` array to determine which objects to exclude from
      * a transfer. Objects must not start with one of the matching
      * `exclude_prefixes` for inclusion in a transfer.
+     *
      * The following are requirements of `exclude_prefixes`:
+     *
      *   * Each exclude-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each exclude-prefix must omit the leading slash. For example, to
      *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the exclude-prefix values can be empty, if specified.
+     *
      *   * Each exclude-prefix must exclude a distinct portion of the object
      *     namespace. No exclude-prefix may be a prefix of another
      *     exclude-prefix.
-     *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-     *   start with the value of a path explicitly included by `include_prefixes`.
+     *
+     *   * If
+     *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+     *   is specified, then each exclude-prefix must start with the value of a
+     *   path explicitly included by `include_prefixes`.
+     *
      * The max size of `exclude_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -3409,21 +3561,31 @@ public final class TransferTypes {
      * in the `exclude_prefixes` array to determine which objects to exclude from
      * a transfer. Objects must not start with one of the matching
      * `exclude_prefixes` for inclusion in a transfer.
+     *
      * The following are requirements of `exclude_prefixes`:
+     *
      *   * Each exclude-prefix can contain any sequence of Unicode characters, to
      *     a max length of 1024 bytes when UTF8-encoded, and must not contain
      *     Carriage Return or Line Feed characters.  Wildcard matching and regular
      *     expression matching are not supported.
+     *
      *   * Each exclude-prefix must omit the leading slash. For example, to
      *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
      *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+     *
      *   * None of the exclude-prefix values can be empty, if specified.
+     *
      *   * Each exclude-prefix must exclude a distinct portion of the object
      *     namespace. No exclude-prefix may be a prefix of another
      *     exclude-prefix.
-     *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-     *   start with the value of a path explicitly included by `include_prefixes`.
+     *
+     *   * If
+     *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+     *   is specified, then each exclude-prefix must start with the value of a
+     *   path explicitly included by `include_prefixes`.
+     *
      * The max size of `exclude_prefixes` is 1000.
+     *
      * For more information, see [Filtering objects from
      * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
      * </pre>
@@ -3446,11 +3608,14 @@ public final class TransferTypes {
      * If specified, only objects with a "last modification time" on or after
      * this timestamp and objects that don't have a "last modification time" are
      * transferred.
+     *
      * The `last_modified_since` and `last_modified_before` fields can be used
      * together for chunked data processing. For example, consider a script that
      * processes each day's worth of data at a time. For that you'd set each
      * of the fields as follows:
+     *
      * *  `last_modified_since` to the start of the day
+     *
      * *  `last_modified_before` to the end of the day
      * </pre>
      *
@@ -3469,11 +3634,14 @@ public final class TransferTypes {
      * If specified, only objects with a "last modification time" on or after
      * this timestamp and objects that don't have a "last modification time" are
      * transferred.
+     *
      * The `last_modified_since` and `last_modified_before` fields can be used
      * together for chunked data processing. For example, consider a script that
      * processes each day's worth of data at a time. For that you'd set each
      * of the fields as follows:
+     *
      * *  `last_modified_since` to the start of the day
+     *
      * *  `last_modified_before` to the end of the day
      * </pre>
      *
@@ -3494,11 +3662,14 @@ public final class TransferTypes {
      * If specified, only objects with a "last modification time" on or after
      * this timestamp and objects that don't have a "last modification time" are
      * transferred.
+     *
      * The `last_modified_since` and `last_modified_before` fields can be used
      * together for chunked data processing. For example, consider a script that
      * processes each day's worth of data at a time. For that you'd set each
      * of the fields as follows:
+     *
      * *  `last_modified_since` to the start of the day
+     *
      * *  `last_modified_before` to the end of the day
      * </pre>
      *
@@ -3823,12 +3994,14 @@ public final class TransferTypes {
      * <pre>
      * Conditions that determine which objects are transferred. Applies only
      * to Cloud Data Sources such as S3, Azure, and Cloud Storage.
+     *
      * The "last modification time" refers to the time of the
      * last change to the object's content or metadata — specifically, this is
      * the `updated` property of Cloud Storage objects, the `LastModified` field
      * of S3 objects, and the `Last-Modified` header of Azure blobs.
-     * Transfers with a [PosixFilesystem][google.storagetransfer.v1.PosixFilesystem] source or destination don't support
-     * `ObjectConditions`.
+     *
+     * Transfers with a [PosixFilesystem][google.storagetransfer.v1.PosixFilesystem]
+     * source or destination don't support `ObjectConditions`.
      * </pre>
      *
      * Protobuf type {@code google.storagetransfer.v1.ObjectConditions}
@@ -3875,10 +4048,8 @@ public final class TransferTypes {
           maxTimeElapsedSinceLastModificationBuilder_.dispose();
           maxTimeElapsedSinceLastModificationBuilder_ = null;
         }
-        includePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        excludePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        includePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         lastModifiedSince_ = null;
         if (lastModifiedSinceBuilder_ != null) {
           lastModifiedSinceBuilder_.dispose();
@@ -3918,26 +4089,11 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions result =
             new com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
-          includePrefixes_ = includePrefixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.includePrefixes_ = includePrefixes_;
-        if (((bitField0_ & 0x00000008) != 0)) {
-          excludePrefixes_ = excludePrefixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.excludePrefixes_ = excludePrefixes_;
       }
 
       private void buildPartial0(
@@ -3954,6 +4110,14 @@ public final class TransferTypes {
               maxTimeElapsedSinceLastModificationBuilder_ == null
                   ? maxTimeElapsedSinceLastModification_
                   : maxTimeElapsedSinceLastModificationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          includePrefixes_.makeImmutable();
+          result.includePrefixes_ = includePrefixes_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          excludePrefixes_.makeImmutable();
+          result.excludePrefixes_ = excludePrefixes_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.lastModifiedSince_ =
@@ -4029,7 +4193,7 @@ public final class TransferTypes {
         if (!other.includePrefixes_.isEmpty()) {
           if (includePrefixes_.isEmpty()) {
             includePrefixes_ = other.includePrefixes_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureIncludePrefixesIsMutable();
             includePrefixes_.addAll(other.includePrefixes_);
@@ -4039,7 +4203,7 @@ public final class TransferTypes {
         if (!other.excludePrefixes_.isEmpty()) {
           if (excludePrefixes_.isEmpty()) {
             excludePrefixes_ = other.excludePrefixes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureExcludePrefixesIsMutable();
             excludePrefixes_.addAll(other.excludePrefixes_);
@@ -4153,11 +4317,12 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred until a specific minimum time
        * has elapsed after the "last modification time". When a
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-       * transferred only if the elapsed time between the
-       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-       * and the "last modification time" of the object is equal to or
-       * greater than the value of min_time_elapsed_since_last_modification`.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+       * objects with a "last modification time" are transferred only if the elapsed
+       * time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * `TransferOperation` and the "last modification time" of the object is equal
+       * to or greater than the value of min_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
        * </pre>
        *
@@ -4174,11 +4339,12 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred until a specific minimum time
        * has elapsed after the "last modification time". When a
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-       * transferred only if the elapsed time between the
-       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-       * and the "last modification time" of the object is equal to or
-       * greater than the value of min_time_elapsed_since_last_modification`.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+       * objects with a "last modification time" are transferred only if the elapsed
+       * time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * `TransferOperation` and the "last modification time" of the object is equal
+       * to or greater than the value of min_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
        * </pre>
        *
@@ -4201,11 +4367,12 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred until a specific minimum time
        * has elapsed after the "last modification time". When a
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-       * transferred only if the elapsed time between the
-       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-       * and the "last modification time" of the object is equal to or
-       * greater than the value of min_time_elapsed_since_last_modification`.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+       * objects with a "last modification time" are transferred only if the elapsed
+       * time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * `TransferOperation` and the "last modification time" of the object is equal
+       * to or greater than the value of min_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
        * </pre>
        *
@@ -4230,11 +4397,12 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred until a specific minimum time
        * has elapsed after the "last modification time". When a
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-       * transferred only if the elapsed time between the
-       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-       * and the "last modification time" of the object is equal to or
-       * greater than the value of min_time_elapsed_since_last_modification`.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+       * objects with a "last modification time" are transferred only if the elapsed
+       * time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * `TransferOperation` and the "last modification time" of the object is equal
+       * to or greater than the value of min_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
        * </pre>
        *
@@ -4257,11 +4425,12 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred until a specific minimum time
        * has elapsed after the "last modification time". When a
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-       * transferred only if the elapsed time between the
-       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-       * and the "last modification time" of the object is equal to or
-       * greater than the value of min_time_elapsed_since_last_modification`.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+       * objects with a "last modification time" are transferred only if the elapsed
+       * time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * `TransferOperation` and the "last modification time" of the object is equal
+       * to or greater than the value of min_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
        * </pre>
        *
@@ -4290,11 +4459,12 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred until a specific minimum time
        * has elapsed after the "last modification time". When a
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-       * transferred only if the elapsed time between the
-       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-       * and the "last modification time" of the object is equal to or
-       * greater than the value of min_time_elapsed_since_last_modification`.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+       * objects with a "last modification time" are transferred only if the elapsed
+       * time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * `TransferOperation` and the "last modification time" of the object is equal
+       * to or greater than the value of min_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
        * </pre>
        *
@@ -4316,11 +4486,12 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred until a specific minimum time
        * has elapsed after the "last modification time". When a
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-       * transferred only if the elapsed time between the
-       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-       * and the "last modification time" of the object is equal to or
-       * greater than the value of min_time_elapsed_since_last_modification`.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+       * objects with a "last modification time" are transferred only if the elapsed
+       * time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * `TransferOperation` and the "last modification time" of the object is equal
+       * to or greater than the value of min_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
        * </pre>
        *
@@ -4337,11 +4508,12 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred until a specific minimum time
        * has elapsed after the "last modification time". When a
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-       * transferred only if the elapsed time between the
-       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-       * and the "last modification time" of the object is equal to or
-       * greater than the value of min_time_elapsed_since_last_modification`.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+       * objects with a "last modification time" are transferred only if the elapsed
+       * time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * `TransferOperation` and the "last modification time" of the object is equal
+       * to or greater than the value of min_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
        * </pre>
        *
@@ -4363,11 +4535,12 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred until a specific minimum time
        * has elapsed after the "last modification time". When a
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a "last modification time" are
-       * transferred only if the elapsed time between the
-       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the `TransferOperation`
-       * and the "last modification time" of the object is equal to or
-       * greater than the value of min_time_elapsed_since_last_modification`.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] begins,
+       * objects with a "last modification time" are transferred only if the elapsed
+       * time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * `TransferOperation` and the "last modification time" of the object is equal
+       * to or greater than the value of min_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
        * </pre>
        *
@@ -4402,9 +4575,10 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred if a specific maximum time
        * has elapsed since the "last modification time".
-       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-       * "last modification time" are transferred only if the elapsed time
-       * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+       * begins, objects with a "last modification time" are transferred only if the
+       * elapsed time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
        * `TransferOperation`and the "last modification time" of the object
        *  is less than the value of max_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
@@ -4423,9 +4597,10 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred if a specific maximum time
        * has elapsed since the "last modification time".
-       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-       * "last modification time" are transferred only if the elapsed time
-       * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+       * begins, objects with a "last modification time" are transferred only if the
+       * elapsed time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
        * `TransferOperation`and the "last modification time" of the object
        *  is less than the value of max_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
@@ -4450,9 +4625,10 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred if a specific maximum time
        * has elapsed since the "last modification time".
-       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-       * "last modification time" are transferred only if the elapsed time
-       * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+       * begins, objects with a "last modification time" are transferred only if the
+       * elapsed time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
        * `TransferOperation`and the "last modification time" of the object
        *  is less than the value of max_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
@@ -4479,9 +4655,10 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred if a specific maximum time
        * has elapsed since the "last modification time".
-       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-       * "last modification time" are transferred only if the elapsed time
-       * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+       * begins, objects with a "last modification time" are transferred only if the
+       * elapsed time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
        * `TransferOperation`and the "last modification time" of the object
        *  is less than the value of max_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
@@ -4506,9 +4683,10 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred if a specific maximum time
        * has elapsed since the "last modification time".
-       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-       * "last modification time" are transferred only if the elapsed time
-       * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+       * begins, objects with a "last modification time" are transferred only if the
+       * elapsed time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
        * `TransferOperation`and the "last modification time" of the object
        *  is less than the value of max_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
@@ -4539,9 +4717,10 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred if a specific maximum time
        * has elapsed since the "last modification time".
-       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-       * "last modification time" are transferred only if the elapsed time
-       * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+       * begins, objects with a "last modification time" are transferred only if the
+       * elapsed time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
        * `TransferOperation`and the "last modification time" of the object
        *  is less than the value of max_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
@@ -4565,9 +4744,10 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred if a specific maximum time
        * has elapsed since the "last modification time".
-       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-       * "last modification time" are transferred only if the elapsed time
-       * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+       * begins, objects with a "last modification time" are transferred only if the
+       * elapsed time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
        * `TransferOperation`and the "last modification time" of the object
        *  is less than the value of max_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
@@ -4586,9 +4766,10 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred if a specific maximum time
        * has elapsed since the "last modification time".
-       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-       * "last modification time" are transferred only if the elapsed time
-       * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+       * begins, objects with a "last modification time" are transferred only if the
+       * elapsed time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
        * `TransferOperation`and the "last modification time" of the object
        *  is less than the value of max_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
@@ -4612,9 +4793,10 @@ public final class TransferTypes {
        * <pre>
        * Ensures that objects are not transferred if a specific maximum time
        * has elapsed since the "last modification time".
-       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation] begins, objects with a
-       * "last modification time" are transferred only if the elapsed time
-       * between the [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
+       * When a [TransferOperation][google.storagetransfer.v1.TransferOperation]
+       * begins, objects with a "last modification time" are transferred only if the
+       * elapsed time between the
+       * [start_time][google.storagetransfer.v1.TransferOperation.start_time] of the
        * `TransferOperation`and the "last modification time" of the object
        *  is less than the value of max_time_elapsed_since_last_modification`.
        * Objects that do not have a "last modification time" are also transferred.
@@ -4639,14 +4821,14 @@ public final class TransferTypes {
         return maxTimeElapsedSinceLastModificationBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList includePrefixes_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList includePrefixes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIncludePrefixesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!includePrefixes_.isModifiable()) {
           includePrefixes_ = new com.google.protobuf.LazyStringArrayList(includePrefixes_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -4655,22 +4837,30 @@ public final class TransferTypes {
        * If you specify `include_prefixes`, Storage Transfer Service uses the items
        * in the `include_prefixes` array to determine which objects to include in a
        * transfer. Objects must start with one of the matching `include_prefixes`
-       * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-       * objects must not start with any of the `exclude_prefixes` specified for
-       * inclusion in the transfer.
+       * for inclusion in the transfer. If
+       * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+       * is specified, objects must not start with any of the `exclude_prefixes`
+       * specified for inclusion in the transfer.
+       *
        * The following are requirements of `include_prefixes`:
+       *
        *   * Each include-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each include-prefix must omit the leading slash. For example, to
        *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the include-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the include-prefix values can be empty, if specified.
+       *
        *   * Each include-prefix must include a distinct portion of the object
        *     namespace. No include-prefix may be a prefix of another
        *     include-prefix.
+       *
        * The max size of `include_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -4680,7 +4870,8 @@ public final class TransferTypes {
        * @return A list containing the includePrefixes.
        */
       public com.google.protobuf.ProtocolStringList getIncludePrefixesList() {
-        return includePrefixes_.getUnmodifiableView();
+        includePrefixes_.makeImmutable();
+        return includePrefixes_;
       }
       /**
        *
@@ -4689,22 +4880,30 @@ public final class TransferTypes {
        * If you specify `include_prefixes`, Storage Transfer Service uses the items
        * in the `include_prefixes` array to determine which objects to include in a
        * transfer. Objects must start with one of the matching `include_prefixes`
-       * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-       * objects must not start with any of the `exclude_prefixes` specified for
-       * inclusion in the transfer.
+       * for inclusion in the transfer. If
+       * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+       * is specified, objects must not start with any of the `exclude_prefixes`
+       * specified for inclusion in the transfer.
+       *
        * The following are requirements of `include_prefixes`:
+       *
        *   * Each include-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each include-prefix must omit the leading slash. For example, to
        *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the include-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the include-prefix values can be empty, if specified.
+       *
        *   * Each include-prefix must include a distinct portion of the object
        *     namespace. No include-prefix may be a prefix of another
        *     include-prefix.
+       *
        * The max size of `include_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -4723,22 +4922,30 @@ public final class TransferTypes {
        * If you specify `include_prefixes`, Storage Transfer Service uses the items
        * in the `include_prefixes` array to determine which objects to include in a
        * transfer. Objects must start with one of the matching `include_prefixes`
-       * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-       * objects must not start with any of the `exclude_prefixes` specified for
-       * inclusion in the transfer.
+       * for inclusion in the transfer. If
+       * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+       * is specified, objects must not start with any of the `exclude_prefixes`
+       * specified for inclusion in the transfer.
+       *
        * The following are requirements of `include_prefixes`:
+       *
        *   * Each include-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each include-prefix must omit the leading slash. For example, to
        *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the include-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the include-prefix values can be empty, if specified.
+       *
        *   * Each include-prefix must include a distinct portion of the object
        *     namespace. No include-prefix may be a prefix of another
        *     include-prefix.
+       *
        * The max size of `include_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -4758,22 +4965,30 @@ public final class TransferTypes {
        * If you specify `include_prefixes`, Storage Transfer Service uses the items
        * in the `include_prefixes` array to determine which objects to include in a
        * transfer. Objects must start with one of the matching `include_prefixes`
-       * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-       * objects must not start with any of the `exclude_prefixes` specified for
-       * inclusion in the transfer.
+       * for inclusion in the transfer. If
+       * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+       * is specified, objects must not start with any of the `exclude_prefixes`
+       * specified for inclusion in the transfer.
+       *
        * The following are requirements of `include_prefixes`:
+       *
        *   * Each include-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each include-prefix must omit the leading slash. For example, to
        *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the include-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the include-prefix values can be empty, if specified.
+       *
        *   * Each include-prefix must include a distinct portion of the object
        *     namespace. No include-prefix may be a prefix of another
        *     include-prefix.
+       *
        * The max size of `include_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -4793,22 +5008,30 @@ public final class TransferTypes {
        * If you specify `include_prefixes`, Storage Transfer Service uses the items
        * in the `include_prefixes` array to determine which objects to include in a
        * transfer. Objects must start with one of the matching `include_prefixes`
-       * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-       * objects must not start with any of the `exclude_prefixes` specified for
-       * inclusion in the transfer.
+       * for inclusion in the transfer. If
+       * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+       * is specified, objects must not start with any of the `exclude_prefixes`
+       * specified for inclusion in the transfer.
+       *
        * The following are requirements of `include_prefixes`:
+       *
        *   * Each include-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each include-prefix must omit the leading slash. For example, to
        *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the include-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the include-prefix values can be empty, if specified.
+       *
        *   * Each include-prefix must include a distinct portion of the object
        *     namespace. No include-prefix may be a prefix of another
        *     include-prefix.
+       *
        * The max size of `include_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -4825,6 +5048,7 @@ public final class TransferTypes {
         }
         ensureIncludePrefixesIsMutable();
         includePrefixes_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4835,22 +5059,30 @@ public final class TransferTypes {
        * If you specify `include_prefixes`, Storage Transfer Service uses the items
        * in the `include_prefixes` array to determine which objects to include in a
        * transfer. Objects must start with one of the matching `include_prefixes`
-       * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-       * objects must not start with any of the `exclude_prefixes` specified for
-       * inclusion in the transfer.
+       * for inclusion in the transfer. If
+       * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+       * is specified, objects must not start with any of the `exclude_prefixes`
+       * specified for inclusion in the transfer.
+       *
        * The following are requirements of `include_prefixes`:
+       *
        *   * Each include-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each include-prefix must omit the leading slash. For example, to
        *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the include-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the include-prefix values can be empty, if specified.
+       *
        *   * Each include-prefix must include a distinct portion of the object
        *     namespace. No include-prefix may be a prefix of another
        *     include-prefix.
+       *
        * The max size of `include_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -4866,6 +5098,7 @@ public final class TransferTypes {
         }
         ensureIncludePrefixesIsMutable();
         includePrefixes_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4876,22 +5109,30 @@ public final class TransferTypes {
        * If you specify `include_prefixes`, Storage Transfer Service uses the items
        * in the `include_prefixes` array to determine which objects to include in a
        * transfer. Objects must start with one of the matching `include_prefixes`
-       * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-       * objects must not start with any of the `exclude_prefixes` specified for
-       * inclusion in the transfer.
+       * for inclusion in the transfer. If
+       * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+       * is specified, objects must not start with any of the `exclude_prefixes`
+       * specified for inclusion in the transfer.
+       *
        * The following are requirements of `include_prefixes`:
+       *
        *   * Each include-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each include-prefix must omit the leading slash. For example, to
        *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the include-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the include-prefix values can be empty, if specified.
+       *
        *   * Each include-prefix must include a distinct portion of the object
        *     namespace. No include-prefix may be a prefix of another
        *     include-prefix.
+       *
        * The max size of `include_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -4904,6 +5145,7 @@ public final class TransferTypes {
       public Builder addAllIncludePrefixes(java.lang.Iterable<java.lang.String> values) {
         ensureIncludePrefixesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includePrefixes_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4914,22 +5156,30 @@ public final class TransferTypes {
        * If you specify `include_prefixes`, Storage Transfer Service uses the items
        * in the `include_prefixes` array to determine which objects to include in a
        * transfer. Objects must start with one of the matching `include_prefixes`
-       * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-       * objects must not start with any of the `exclude_prefixes` specified for
-       * inclusion in the transfer.
+       * for inclusion in the transfer. If
+       * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+       * is specified, objects must not start with any of the `exclude_prefixes`
+       * specified for inclusion in the transfer.
+       *
        * The following are requirements of `include_prefixes`:
+       *
        *   * Each include-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each include-prefix must omit the leading slash. For example, to
        *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the include-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the include-prefix values can be empty, if specified.
+       *
        *   * Each include-prefix must include a distinct portion of the object
        *     namespace. No include-prefix may be a prefix of another
        *     include-prefix.
+       *
        * The max size of `include_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -4939,8 +5189,9 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearIncludePrefixes() {
-        includePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        includePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -4951,22 +5202,30 @@ public final class TransferTypes {
        * If you specify `include_prefixes`, Storage Transfer Service uses the items
        * in the `include_prefixes` array to determine which objects to include in a
        * transfer. Objects must start with one of the matching `include_prefixes`
-       * for inclusion in the transfer. If [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes] is specified,
-       * objects must not start with any of the `exclude_prefixes` specified for
-       * inclusion in the transfer.
+       * for inclusion in the transfer. If
+       * [exclude_prefixes][google.storagetransfer.v1.ObjectConditions.exclude_prefixes]
+       * is specified, objects must not start with any of the `exclude_prefixes`
+       * specified for inclusion in the transfer.
+       *
        * The following are requirements of `include_prefixes`:
+       *
        *   * Each include-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each include-prefix must omit the leading slash. For example, to
        *     include the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the include-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the include-prefix values can be empty, if specified.
+       *
        *   * Each include-prefix must include a distinct portion of the object
        *     namespace. No include-prefix may be a prefix of another
        *     include-prefix.
+       *
        * The max size of `include_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -4983,18 +5242,19 @@ public final class TransferTypes {
         checkByteStringIsUtf8(value);
         ensureIncludePrefixesIsMutable();
         includePrefixes_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList excludePrefixes_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList excludePrefixes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureExcludePrefixesIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!excludePrefixes_.isModifiable()) {
           excludePrefixes_ = new com.google.protobuf.LazyStringArrayList(excludePrefixes_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -5004,21 +5264,31 @@ public final class TransferTypes {
        * in the `exclude_prefixes` array to determine which objects to exclude from
        * a transfer. Objects must not start with one of the matching
        * `exclude_prefixes` for inclusion in a transfer.
+       *
        * The following are requirements of `exclude_prefixes`:
+       *
        *   * Each exclude-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each exclude-prefix must omit the leading slash. For example, to
        *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the exclude-prefix values can be empty, if specified.
+       *
        *   * Each exclude-prefix must exclude a distinct portion of the object
        *     namespace. No exclude-prefix may be a prefix of another
        *     exclude-prefix.
-       *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-       *   start with the value of a path explicitly included by `include_prefixes`.
+       *
+       *   * If
+       *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+       *   is specified, then each exclude-prefix must start with the value of a
+       *   path explicitly included by `include_prefixes`.
+       *
        * The max size of `exclude_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -5028,7 +5298,8 @@ public final class TransferTypes {
        * @return A list containing the excludePrefixes.
        */
       public com.google.protobuf.ProtocolStringList getExcludePrefixesList() {
-        return excludePrefixes_.getUnmodifiableView();
+        excludePrefixes_.makeImmutable();
+        return excludePrefixes_;
       }
       /**
        *
@@ -5038,21 +5309,31 @@ public final class TransferTypes {
        * in the `exclude_prefixes` array to determine which objects to exclude from
        * a transfer. Objects must not start with one of the matching
        * `exclude_prefixes` for inclusion in a transfer.
+       *
        * The following are requirements of `exclude_prefixes`:
+       *
        *   * Each exclude-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each exclude-prefix must omit the leading slash. For example, to
        *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the exclude-prefix values can be empty, if specified.
+       *
        *   * Each exclude-prefix must exclude a distinct portion of the object
        *     namespace. No exclude-prefix may be a prefix of another
        *     exclude-prefix.
-       *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-       *   start with the value of a path explicitly included by `include_prefixes`.
+       *
+       *   * If
+       *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+       *   is specified, then each exclude-prefix must start with the value of a
+       *   path explicitly included by `include_prefixes`.
+       *
        * The max size of `exclude_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -5072,21 +5353,31 @@ public final class TransferTypes {
        * in the `exclude_prefixes` array to determine which objects to exclude from
        * a transfer. Objects must not start with one of the matching
        * `exclude_prefixes` for inclusion in a transfer.
+       *
        * The following are requirements of `exclude_prefixes`:
+       *
        *   * Each exclude-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each exclude-prefix must omit the leading slash. For example, to
        *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the exclude-prefix values can be empty, if specified.
+       *
        *   * Each exclude-prefix must exclude a distinct portion of the object
        *     namespace. No exclude-prefix may be a prefix of another
        *     exclude-prefix.
-       *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-       *   start with the value of a path explicitly included by `include_prefixes`.
+       *
+       *   * If
+       *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+       *   is specified, then each exclude-prefix must start with the value of a
+       *   path explicitly included by `include_prefixes`.
+       *
        * The max size of `exclude_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -5107,21 +5398,31 @@ public final class TransferTypes {
        * in the `exclude_prefixes` array to determine which objects to exclude from
        * a transfer. Objects must not start with one of the matching
        * `exclude_prefixes` for inclusion in a transfer.
+       *
        * The following are requirements of `exclude_prefixes`:
+       *
        *   * Each exclude-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each exclude-prefix must omit the leading slash. For example, to
        *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the exclude-prefix values can be empty, if specified.
+       *
        *   * Each exclude-prefix must exclude a distinct portion of the object
        *     namespace. No exclude-prefix may be a prefix of another
        *     exclude-prefix.
-       *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-       *   start with the value of a path explicitly included by `include_prefixes`.
+       *
+       *   * If
+       *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+       *   is specified, then each exclude-prefix must start with the value of a
+       *   path explicitly included by `include_prefixes`.
+       *
        * The max size of `exclude_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -5142,21 +5443,31 @@ public final class TransferTypes {
        * in the `exclude_prefixes` array to determine which objects to exclude from
        * a transfer. Objects must not start with one of the matching
        * `exclude_prefixes` for inclusion in a transfer.
+       *
        * The following are requirements of `exclude_prefixes`:
+       *
        *   * Each exclude-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each exclude-prefix must omit the leading slash. For example, to
        *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the exclude-prefix values can be empty, if specified.
+       *
        *   * Each exclude-prefix must exclude a distinct portion of the object
        *     namespace. No exclude-prefix may be a prefix of another
        *     exclude-prefix.
-       *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-       *   start with the value of a path explicitly included by `include_prefixes`.
+       *
+       *   * If
+       *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+       *   is specified, then each exclude-prefix must start with the value of a
+       *   path explicitly included by `include_prefixes`.
+       *
        * The max size of `exclude_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -5173,6 +5484,7 @@ public final class TransferTypes {
         }
         ensureExcludePrefixesIsMutable();
         excludePrefixes_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -5184,21 +5496,31 @@ public final class TransferTypes {
        * in the `exclude_prefixes` array to determine which objects to exclude from
        * a transfer. Objects must not start with one of the matching
        * `exclude_prefixes` for inclusion in a transfer.
+       *
        * The following are requirements of `exclude_prefixes`:
+       *
        *   * Each exclude-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each exclude-prefix must omit the leading slash. For example, to
        *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the exclude-prefix values can be empty, if specified.
+       *
        *   * Each exclude-prefix must exclude a distinct portion of the object
        *     namespace. No exclude-prefix may be a prefix of another
        *     exclude-prefix.
-       *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-       *   start with the value of a path explicitly included by `include_prefixes`.
+       *
+       *   * If
+       *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+       *   is specified, then each exclude-prefix must start with the value of a
+       *   path explicitly included by `include_prefixes`.
+       *
        * The max size of `exclude_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -5214,6 +5536,7 @@ public final class TransferTypes {
         }
         ensureExcludePrefixesIsMutable();
         excludePrefixes_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -5225,21 +5548,31 @@ public final class TransferTypes {
        * in the `exclude_prefixes` array to determine which objects to exclude from
        * a transfer. Objects must not start with one of the matching
        * `exclude_prefixes` for inclusion in a transfer.
+       *
        * The following are requirements of `exclude_prefixes`:
+       *
        *   * Each exclude-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each exclude-prefix must omit the leading slash. For example, to
        *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the exclude-prefix values can be empty, if specified.
+       *
        *   * Each exclude-prefix must exclude a distinct portion of the object
        *     namespace. No exclude-prefix may be a prefix of another
        *     exclude-prefix.
-       *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-       *   start with the value of a path explicitly included by `include_prefixes`.
+       *
+       *   * If
+       *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+       *   is specified, then each exclude-prefix must start with the value of a
+       *   path explicitly included by `include_prefixes`.
+       *
        * The max size of `exclude_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -5252,6 +5585,7 @@ public final class TransferTypes {
       public Builder addAllExcludePrefixes(java.lang.Iterable<java.lang.String> values) {
         ensureExcludePrefixesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludePrefixes_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -5263,21 +5597,31 @@ public final class TransferTypes {
        * in the `exclude_prefixes` array to determine which objects to exclude from
        * a transfer. Objects must not start with one of the matching
        * `exclude_prefixes` for inclusion in a transfer.
+       *
        * The following are requirements of `exclude_prefixes`:
+       *
        *   * Each exclude-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each exclude-prefix must omit the leading slash. For example, to
        *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the exclude-prefix values can be empty, if specified.
+       *
        *   * Each exclude-prefix must exclude a distinct portion of the object
        *     namespace. No exclude-prefix may be a prefix of another
        *     exclude-prefix.
-       *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-       *   start with the value of a path explicitly included by `include_prefixes`.
+       *
+       *   * If
+       *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+       *   is specified, then each exclude-prefix must start with the value of a
+       *   path explicitly included by `include_prefixes`.
+       *
        * The max size of `exclude_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -5287,8 +5631,9 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearExcludePrefixes() {
-        excludePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        excludePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -5300,21 +5645,31 @@ public final class TransferTypes {
        * in the `exclude_prefixes` array to determine which objects to exclude from
        * a transfer. Objects must not start with one of the matching
        * `exclude_prefixes` for inclusion in a transfer.
+       *
        * The following are requirements of `exclude_prefixes`:
+       *
        *   * Each exclude-prefix can contain any sequence of Unicode characters, to
        *     a max length of 1024 bytes when UTF8-encoded, and must not contain
        *     Carriage Return or Line Feed characters.  Wildcard matching and regular
        *     expression matching are not supported.
+       *
        *   * Each exclude-prefix must omit the leading slash. For example, to
        *     exclude the object `s3://my-aws-bucket/logs/y=2015/requests.gz`,
        *     specify the exclude-prefix as `logs/y=2015/requests.gz`.
+       *
        *   * None of the exclude-prefix values can be empty, if specified.
+       *
        *   * Each exclude-prefix must exclude a distinct portion of the object
        *     namespace. No exclude-prefix may be a prefix of another
        *     exclude-prefix.
-       *   * If [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes] is specified, then each exclude-prefix must
-       *   start with the value of a path explicitly included by `include_prefixes`.
+       *
+       *   * If
+       *   [include_prefixes][google.storagetransfer.v1.ObjectConditions.include_prefixes]
+       *   is specified, then each exclude-prefix must start with the value of a
+       *   path explicitly included by `include_prefixes`.
+       *
        * The max size of `exclude_prefixes` is 1000.
+       *
        * For more information, see [Filtering objects from
        * transfers](/storage-transfer/docs/filtering-objects-from-transfers).
        * </pre>
@@ -5331,6 +5686,7 @@ public final class TransferTypes {
         checkByteStringIsUtf8(value);
         ensureExcludePrefixesIsMutable();
         excludePrefixes_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -5348,11 +5704,14 @@ public final class TransferTypes {
        * If specified, only objects with a "last modification time" on or after
        * this timestamp and objects that don't have a "last modification time" are
        * transferred.
+       *
        * The `last_modified_since` and `last_modified_before` fields can be used
        * together for chunked data processing. For example, consider a script that
        * processes each day's worth of data at a time. For that you'd set each
        * of the fields as follows:
+       *
        * *  `last_modified_since` to the start of the day
+       *
        * *  `last_modified_before` to the end of the day
        * </pre>
        *
@@ -5370,11 +5729,14 @@ public final class TransferTypes {
        * If specified, only objects with a "last modification time" on or after
        * this timestamp and objects that don't have a "last modification time" are
        * transferred.
+       *
        * The `last_modified_since` and `last_modified_before` fields can be used
        * together for chunked data processing. For example, consider a script that
        * processes each day's worth of data at a time. For that you'd set each
        * of the fields as follows:
+       *
        * *  `last_modified_since` to the start of the day
+       *
        * *  `last_modified_before` to the end of the day
        * </pre>
        *
@@ -5398,11 +5760,14 @@ public final class TransferTypes {
        * If specified, only objects with a "last modification time" on or after
        * this timestamp and objects that don't have a "last modification time" are
        * transferred.
+       *
        * The `last_modified_since` and `last_modified_before` fields can be used
        * together for chunked data processing. For example, consider a script that
        * processes each day's worth of data at a time. For that you'd set each
        * of the fields as follows:
+       *
        * *  `last_modified_since` to the start of the day
+       *
        * *  `last_modified_before` to the end of the day
        * </pre>
        *
@@ -5428,11 +5793,14 @@ public final class TransferTypes {
        * If specified, only objects with a "last modification time" on or after
        * this timestamp and objects that don't have a "last modification time" are
        * transferred.
+       *
        * The `last_modified_since` and `last_modified_before` fields can be used
        * together for chunked data processing. For example, consider a script that
        * processes each day's worth of data at a time. For that you'd set each
        * of the fields as follows:
+       *
        * *  `last_modified_since` to the start of the day
+       *
        * *  `last_modified_before` to the end of the day
        * </pre>
        *
@@ -5455,11 +5823,14 @@ public final class TransferTypes {
        * If specified, only objects with a "last modification time" on or after
        * this timestamp and objects that don't have a "last modification time" are
        * transferred.
+       *
        * The `last_modified_since` and `last_modified_before` fields can be used
        * together for chunked data processing. For example, consider a script that
        * processes each day's worth of data at a time. For that you'd set each
        * of the fields as follows:
+       *
        * *  `last_modified_since` to the start of the day
+       *
        * *  `last_modified_before` to the end of the day
        * </pre>
        *
@@ -5488,11 +5859,14 @@ public final class TransferTypes {
        * If specified, only objects with a "last modification time" on or after
        * this timestamp and objects that don't have a "last modification time" are
        * transferred.
+       *
        * The `last_modified_since` and `last_modified_before` fields can be used
        * together for chunked data processing. For example, consider a script that
        * processes each day's worth of data at a time. For that you'd set each
        * of the fields as follows:
+       *
        * *  `last_modified_since` to the start of the day
+       *
        * *  `last_modified_before` to the end of the day
        * </pre>
        *
@@ -5515,11 +5889,14 @@ public final class TransferTypes {
        * If specified, only objects with a "last modification time" on or after
        * this timestamp and objects that don't have a "last modification time" are
        * transferred.
+       *
        * The `last_modified_since` and `last_modified_before` fields can be used
        * together for chunked data processing. For example, consider a script that
        * processes each day's worth of data at a time. For that you'd set each
        * of the fields as follows:
+       *
        * *  `last_modified_since` to the start of the day
+       *
        * *  `last_modified_before` to the end of the day
        * </pre>
        *
@@ -5537,11 +5914,14 @@ public final class TransferTypes {
        * If specified, only objects with a "last modification time" on or after
        * this timestamp and objects that don't have a "last modification time" are
        * transferred.
+       *
        * The `last_modified_since` and `last_modified_before` fields can be used
        * together for chunked data processing. For example, consider a script that
        * processes each day's worth of data at a time. For that you'd set each
        * of the fields as follows:
+       *
        * *  `last_modified_since` to the start of the day
+       *
        * *  `last_modified_before` to the end of the day
        * </pre>
        *
@@ -5563,11 +5943,14 @@ public final class TransferTypes {
        * If specified, only objects with a "last modification time" on or after
        * this timestamp and objects that don't have a "last modification time" are
        * transferred.
+       *
        * The `last_modified_since` and `last_modified_before` fields can be used
        * together for chunked data processing. For example, consider a script that
        * processes each day's worth of data at a time. For that you'd set each
        * of the fields as follows:
+       *
        * *  `last_modified_since` to the start of the day
+       *
        * *  `last_modified_before` to the end of the day
        * </pre>
        *
@@ -5895,9 +6278,11 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
+     *
      * The root path value must meet
      * [Object Name Requirements](/storage/docs/naming#objectnames).
      * </pre>
@@ -5912,9 +6297,11 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
+     *
      * The root path value must meet
      * [Object Name Requirements](/storage/docs/naming#objectnames).
      * </pre>
@@ -5956,11 +6343,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GcsData();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6040,9 +6422,11 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
+     *
      * The root path value must meet
      * [Object Name Requirements](/storage/docs/naming#objectnames).
      * </pre>
@@ -6068,9 +6452,11 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
+     *
      * The root path value must meet
      * [Object Name Requirements](/storage/docs/naming#objectnames).
      * </pre>
@@ -6583,9 +6969,11 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
+       *
        * The root path value must meet
        * [Object Name Requirements](/storage/docs/naming#objectnames).
        * </pre>
@@ -6610,9 +6998,11 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
+       *
        * The root path value must meet
        * [Object Name Requirements](/storage/docs/naming#objectnames).
        * </pre>
@@ -6637,9 +7027,11 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
+       *
        * The root path value must meet
        * [Object Name Requirements](/storage/docs/naming#objectnames).
        * </pre>
@@ -6663,9 +7055,11 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
+       *
        * The root path value must meet
        * [Object Name Requirements](/storage/docs/naming#objectnames).
        * </pre>
@@ -6685,9 +7079,11 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
+       *
        * The root path value must meet
        * [Object Name Requirements](/storage/docs/naming#objectnames).
        * </pre>
@@ -6810,9 +7206,10 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-     * Permissions on the bucket must be granted to the access ID of the AWS
-     * access key.
+     * Input only. AWS access key used to sign the API requests to the AWS S3
+     * bucket. Permissions on the bucket must be granted to the access ID of the
+     * AWS access key.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -6828,9 +7225,10 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-     * Permissions on the bucket must be granted to the access ID of the AWS
-     * access key.
+     * Input only. AWS access key used to sign the API requests to the AWS S3
+     * bucket. Permissions on the bucket must be granted to the access ID of the
+     * AWS access key.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -6846,9 +7244,10 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-     * Permissions on the bucket must be granted to the access ID of the AWS
-     * access key.
+     * Input only. AWS access key used to sign the API requests to the AWS S3
+     * bucket. Permissions on the bucket must be granted to the access ID of the
+     * AWS access key.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -6865,6 +7264,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
@@ -6880,6 +7280,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
@@ -6899,9 +7300,12 @@ public final class TransferTypes {
      * credentials via `AssumeRoleWithWebIdentity`. For more information about
      * ARNs, see [IAM
      * ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+     *
      * When a role ARN is provided, Transfer Service fetches temporary
      * credentials for the session using a `AssumeRoleWithWebIdentity` call for
-     * the provided role using the [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for this project.
+     * the provided role using the
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for
+     * this project.
      * </pre>
      *
      * <code>string role_arn = 4;</code>
@@ -6917,9 +7321,12 @@ public final class TransferTypes {
      * credentials via `AssumeRoleWithWebIdentity`. For more information about
      * ARNs, see [IAM
      * ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+     *
      * When a role ARN is provided, Transfer Service fetches temporary
      * credentials for the session using a `AssumeRoleWithWebIdentity` call for
-     * the provided role using the [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for this project.
+     * the provided role using the
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for
+     * this project.
      * </pre>
      *
      * <code>string role_arn = 4;</code>
@@ -6927,6 +7334,67 @@ public final class TransferTypes {
      * @return The bytes for roleArn.
      */
     com.google.protobuf.ByteString getRoleArnBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Resource name of a secret in Secret Manager.
+     *
+     * The Azure SAS token must be stored in Secret Manager in JSON format:
+     * &lt;pre&gt;{
+     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+     * }&lt;/pre&gt;
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+     * be granted `roles/secretmanager.secretAccessor` for the resource.
+     *
+     * See [Configure access to a source: Microsoft Azure Blob Storage]
+     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * for more information.
+     *
+     * If `credentials_secret` is specified, do not specify [azure_credentials][].
+     *
+     * This feature is in
+     * [preview](https://cloud.google.com/terms/service-terms#1).
+     *
+     * Format: `projects/{project_number}/secrets/{secret_name}`
+     * </pre>
+     *
+     * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The credentialsSecret.
+     */
+    java.lang.String getCredentialsSecret();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Resource name of a secret in Secret Manager.
+     *
+     * The Azure SAS token must be stored in Secret Manager in JSON format:
+     * &lt;pre&gt;{
+     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+     * }&lt;/pre&gt;
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+     * be granted `roles/secretmanager.secretAccessor` for the resource.
+     *
+     * See [Configure access to a source: Microsoft Azure Blob Storage]
+     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * for more information.
+     *
+     * If `credentials_secret` is specified, do not specify [azure_credentials][].
+     *
+     * This feature is in
+     * [preview](https://cloud.google.com/terms/service-terms#1).
+     *
+     * Format: `projects/{project_number}/secrets/{secret_name}`
+     * </pre>
+     *
+     * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for credentialsSecret.
+     */
+    com.google.protobuf.ByteString getCredentialsSecretBytes();
   }
   /**
    *
@@ -6952,17 +7420,13 @@ public final class TransferTypes {
       bucketName_ = "";
       path_ = "";
       roleArn_ = "";
+      credentialsSecret_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AwsS3Data();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7041,9 +7505,10 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-     * Permissions on the bucket must be granted to the access ID of the AWS
-     * access key.
+     * Input only. AWS access key used to sign the API requests to the AWS S3
+     * bucket. Permissions on the bucket must be granted to the access ID of the
+     * AWS access key.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -7062,9 +7527,10 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-     * Permissions on the bucket must be granted to the access ID of the AWS
-     * access key.
+     * Input only. AWS access key used to sign the API requests to the AWS S3
+     * bucket. Permissions on the bucket must be granted to the access ID of the
+     * AWS access key.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -7085,9 +7551,10 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-     * Permissions on the bucket must be granted to the access ID of the AWS
-     * access key.
+     * Input only. AWS access key used to sign the API requests to the AWS S3
+     * bucket. Permissions on the bucket must be granted to the access ID of the
+     * AWS access key.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -7113,6 +7580,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
@@ -7139,6 +7607,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
@@ -7173,9 +7642,12 @@ public final class TransferTypes {
      * credentials via `AssumeRoleWithWebIdentity`. For more information about
      * ARNs, see [IAM
      * ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+     *
      * When a role ARN is provided, Transfer Service fetches temporary
      * credentials for the session using a `AssumeRoleWithWebIdentity` call for
-     * the provided role using the [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for this project.
+     * the provided role using the
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for
+     * this project.
      * </pre>
      *
      * <code>string role_arn = 4;</code>
@@ -7202,9 +7674,12 @@ public final class TransferTypes {
      * credentials via `AssumeRoleWithWebIdentity`. For more information about
      * ARNs, see [IAM
      * ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+     *
      * When a role ARN is provided, Transfer Service fetches temporary
      * credentials for the session using a `AssumeRoleWithWebIdentity` call for
-     * the provided role using the [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for this project.
+     * the provided role using the
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for
+     * this project.
      * </pre>
      *
      * <code>string role_arn = 4;</code>
@@ -7218,6 +7693,93 @@ public final class TransferTypes {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         roleArn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREDENTIALS_SECRET_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object credentialsSecret_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Resource name of a secret in Secret Manager.
+     *
+     * The Azure SAS token must be stored in Secret Manager in JSON format:
+     * &lt;pre&gt;{
+     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+     * }&lt;/pre&gt;
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+     * be granted `roles/secretmanager.secretAccessor` for the resource.
+     *
+     * See [Configure access to a source: Microsoft Azure Blob Storage]
+     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * for more information.
+     *
+     * If `credentials_secret` is specified, do not specify [azure_credentials][].
+     *
+     * This feature is in
+     * [preview](https://cloud.google.com/terms/service-terms#1).
+     *
+     * Format: `projects/{project_number}/secrets/{secret_name}`
+     * </pre>
+     *
+     * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The credentialsSecret.
+     */
+    @java.lang.Override
+    public java.lang.String getCredentialsSecret() {
+      java.lang.Object ref = credentialsSecret_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        credentialsSecret_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Resource name of a secret in Secret Manager.
+     *
+     * The Azure SAS token must be stored in Secret Manager in JSON format:
+     * &lt;pre&gt;{
+     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+     * }&lt;/pre&gt;
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+     * be granted `roles/secretmanager.secretAccessor` for the resource.
+     *
+     * See [Configure access to a source: Microsoft Azure Blob Storage]
+     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * for more information.
+     *
+     * If `credentials_secret` is specified, do not specify [azure_credentials][].
+     *
+     * This feature is in
+     * [preview](https://cloud.google.com/terms/service-terms#1).
+     *
+     * Format: `projects/{project_number}/secrets/{secret_name}`
+     * </pre>
+     *
+     * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for credentialsSecret.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCredentialsSecretBytes() {
+      java.lang.Object ref = credentialsSecret_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        credentialsSecret_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -7250,6 +7812,9 @@ public final class TransferTypes {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleArn_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roleArn_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(credentialsSecret_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, credentialsSecret_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7270,6 +7835,9 @@ public final class TransferTypes {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleArn_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roleArn_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(credentialsSecret_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, credentialsSecret_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7294,6 +7862,7 @@ public final class TransferTypes {
       }
       if (!getPath().equals(other.getPath())) return false;
       if (!getRoleArn().equals(other.getRoleArn())) return false;
+      if (!getCredentialsSecret().equals(other.getCredentialsSecret())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -7315,6 +7884,8 @@ public final class TransferTypes {
       hash = (53 * hash) + getPath().hashCode();
       hash = (37 * hash) + ROLE_ARN_FIELD_NUMBER;
       hash = (53 * hash) + getRoleArn().hashCode();
+      hash = (37 * hash) + CREDENTIALS_SECRET_FIELD_NUMBER;
+      hash = (53 * hash) + getCredentialsSecret().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7466,6 +8037,7 @@ public final class TransferTypes {
         }
         path_ = "";
         roleArn_ = "";
+        credentialsSecret_ = "";
         return this;
       }
 
@@ -7516,6 +8088,9 @@ public final class TransferTypes {
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.roleArn_ = roleArn_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.credentialsSecret_ = credentialsSecret_;
         }
       }
 
@@ -7586,6 +8161,11 @@ public final class TransferTypes {
           bitField0_ |= 0x00000008;
           onChanged();
         }
+        if (!other.getCredentialsSecret().isEmpty()) {
+          credentialsSecret_ = other.credentialsSecret_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -7636,6 +8216,12 @@ public final class TransferTypes {
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 58:
+                {
+                  credentialsSecret_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7781,9 +8367,10 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-       * Permissions on the bucket must be granted to the access ID of the AWS
-       * access key.
+       * Input only. AWS access key used to sign the API requests to the AWS S3
+       * bucket. Permissions on the bucket must be granted to the access ID of the
+       * AWS access key.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -7801,9 +8388,10 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-       * Permissions on the bucket must be granted to the access ID of the AWS
-       * access key.
+       * Input only. AWS access key used to sign the API requests to the AWS S3
+       * bucket. Permissions on the bucket must be granted to the access ID of the
+       * AWS access key.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -7827,9 +8415,10 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-       * Permissions on the bucket must be granted to the access ID of the AWS
-       * access key.
+       * Input only. AWS access key used to sign the API requests to the AWS S3
+       * bucket. Permissions on the bucket must be granted to the access ID of the
+       * AWS access key.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -7856,9 +8445,10 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-       * Permissions on the bucket must be granted to the access ID of the AWS
-       * access key.
+       * Input only. AWS access key used to sign the API requests to the AWS S3
+       * bucket. Permissions on the bucket must be granted to the access ID of the
+       * AWS access key.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -7882,9 +8472,10 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-       * Permissions on the bucket must be granted to the access ID of the AWS
-       * access key.
+       * Input only. AWS access key used to sign the API requests to the AWS S3
+       * bucket. Permissions on the bucket must be granted to the access ID of the
+       * AWS access key.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -7916,9 +8507,10 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-       * Permissions on the bucket must be granted to the access ID of the AWS
-       * access key.
+       * Input only. AWS access key used to sign the API requests to the AWS S3
+       * bucket. Permissions on the bucket must be granted to the access ID of the
+       * AWS access key.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -7941,9 +8533,10 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-       * Permissions on the bucket must be granted to the access ID of the AWS
-       * access key.
+       * Input only. AWS access key used to sign the API requests to the AWS S3
+       * bucket. Permissions on the bucket must be granted to the access ID of the
+       * AWS access key.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -7962,9 +8555,10 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-       * Permissions on the bucket must be granted to the access ID of the AWS
-       * access key.
+       * Input only. AWS access key used to sign the API requests to the AWS S3
+       * bucket. Permissions on the bucket must be granted to the access ID of the
+       * AWS access key.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -7987,9 +8581,10 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Input only. AWS access key used to sign the API requests to the AWS S3 bucket.
-       * Permissions on the bucket must be granted to the access ID of the AWS
-       * access key.
+       * Input only. AWS access key used to sign the API requests to the AWS S3
+       * bucket. Permissions on the bucket must be granted to the access ID of the
+       * AWS access key.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -8021,6 +8616,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
@@ -8046,6 +8642,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
@@ -8071,6 +8668,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
@@ -8095,6 +8693,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
@@ -8115,6 +8714,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
@@ -8145,9 +8745,12 @@ public final class TransferTypes {
        * credentials via `AssumeRoleWithWebIdentity`. For more information about
        * ARNs, see [IAM
        * ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+       *
        * When a role ARN is provided, Transfer Service fetches temporary
        * credentials for the session using a `AssumeRoleWithWebIdentity` call for
-       * the provided role using the [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for this project.
+       * the provided role using the
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for
+       * this project.
        * </pre>
        *
        * <code>string role_arn = 4;</code>
@@ -8173,9 +8776,12 @@ public final class TransferTypes {
        * credentials via `AssumeRoleWithWebIdentity`. For more information about
        * ARNs, see [IAM
        * ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+       *
        * When a role ARN is provided, Transfer Service fetches temporary
        * credentials for the session using a `AssumeRoleWithWebIdentity` call for
-       * the provided role using the [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for this project.
+       * the provided role using the
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for
+       * this project.
        * </pre>
        *
        * <code>string role_arn = 4;</code>
@@ -8201,9 +8807,12 @@ public final class TransferTypes {
        * credentials via `AssumeRoleWithWebIdentity`. For more information about
        * ARNs, see [IAM
        * ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+       *
        * When a role ARN is provided, Transfer Service fetches temporary
        * credentials for the session using a `AssumeRoleWithWebIdentity` call for
-       * the provided role using the [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for this project.
+       * the provided role using the
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for
+       * this project.
        * </pre>
        *
        * <code>string role_arn = 4;</code>
@@ -8228,9 +8837,12 @@ public final class TransferTypes {
        * credentials via `AssumeRoleWithWebIdentity`. For more information about
        * ARNs, see [IAM
        * ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+       *
        * When a role ARN is provided, Transfer Service fetches temporary
        * credentials for the session using a `AssumeRoleWithWebIdentity` call for
-       * the provided role using the [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for this project.
+       * the provided role using the
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for
+       * this project.
        * </pre>
        *
        * <code>string role_arn = 4;</code>
@@ -8251,9 +8863,12 @@ public final class TransferTypes {
        * credentials via `AssumeRoleWithWebIdentity`. For more information about
        * ARNs, see [IAM
        * ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+       *
        * When a role ARN is provided, Transfer Service fetches temporary
        * credentials for the session using a `AssumeRoleWithWebIdentity` call for
-       * the provided role using the [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for this project.
+       * the provided role using the
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] for
+       * this project.
        * </pre>
        *
        * <code>string role_arn = 4;</code>
@@ -8268,6 +8883,202 @@ public final class TransferTypes {
         checkByteStringIsUtf8(value);
         roleArn_ = value;
         bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object credentialsSecret_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Resource name of a secret in Secret Manager.
+       *
+       * The Azure SAS token must be stored in Secret Manager in JSON format:
+       * &lt;pre&gt;{
+       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+       * }&lt;/pre&gt;
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+       * be granted `roles/secretmanager.secretAccessor` for the resource.
+       *
+       * See [Configure access to a source: Microsoft Azure Blob Storage]
+       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * for more information.
+       *
+       * If `credentials_secret` is specified, do not specify [azure_credentials][].
+       *
+       * This feature is in
+       * [preview](https://cloud.google.com/terms/service-terms#1).
+       *
+       * Format: `projects/{project_number}/secrets/{secret_name}`
+       * </pre>
+       *
+       * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The credentialsSecret.
+       */
+      public java.lang.String getCredentialsSecret() {
+        java.lang.Object ref = credentialsSecret_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          credentialsSecret_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Resource name of a secret in Secret Manager.
+       *
+       * The Azure SAS token must be stored in Secret Manager in JSON format:
+       * &lt;pre&gt;{
+       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+       * }&lt;/pre&gt;
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+       * be granted `roles/secretmanager.secretAccessor` for the resource.
+       *
+       * See [Configure access to a source: Microsoft Azure Blob Storage]
+       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * for more information.
+       *
+       * If `credentials_secret` is specified, do not specify [azure_credentials][].
+       *
+       * This feature is in
+       * [preview](https://cloud.google.com/terms/service-terms#1).
+       *
+       * Format: `projects/{project_number}/secrets/{secret_name}`
+       * </pre>
+       *
+       * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for credentialsSecret.
+       */
+      public com.google.protobuf.ByteString getCredentialsSecretBytes() {
+        java.lang.Object ref = credentialsSecret_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          credentialsSecret_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Resource name of a secret in Secret Manager.
+       *
+       * The Azure SAS token must be stored in Secret Manager in JSON format:
+       * &lt;pre&gt;{
+       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+       * }&lt;/pre&gt;
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+       * be granted `roles/secretmanager.secretAccessor` for the resource.
+       *
+       * See [Configure access to a source: Microsoft Azure Blob Storage]
+       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * for more information.
+       *
+       * If `credentials_secret` is specified, do not specify [azure_credentials][].
+       *
+       * This feature is in
+       * [preview](https://cloud.google.com/terms/service-terms#1).
+       *
+       * Format: `projects/{project_number}/secrets/{secret_name}`
+       * </pre>
+       *
+       * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The credentialsSecret to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCredentialsSecret(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        credentialsSecret_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Resource name of a secret in Secret Manager.
+       *
+       * The Azure SAS token must be stored in Secret Manager in JSON format:
+       * &lt;pre&gt;{
+       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+       * }&lt;/pre&gt;
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+       * be granted `roles/secretmanager.secretAccessor` for the resource.
+       *
+       * See [Configure access to a source: Microsoft Azure Blob Storage]
+       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * for more information.
+       *
+       * If `credentials_secret` is specified, do not specify [azure_credentials][].
+       *
+       * This feature is in
+       * [preview](https://cloud.google.com/terms/service-terms#1).
+       *
+       * Format: `projects/{project_number}/secrets/{secret_name}`
+       * </pre>
+       *
+       * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCredentialsSecret() {
+        credentialsSecret_ = getDefaultInstance().getCredentialsSecret();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Resource name of a secret in Secret Manager.
+       *
+       * The Azure SAS token must be stored in Secret Manager in JSON format:
+       * &lt;pre&gt;{
+       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+       * }&lt;/pre&gt;
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+       * be granted `roles/secretmanager.secretAccessor` for the resource.
+       *
+       * See [Configure access to a source: Microsoft Azure Blob Storage]
+       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * for more information.
+       *
+       * If `credentials_secret` is specified, do not specify [azure_credentials][].
+       *
+       * This feature is in
+       * [preview](https://cloud.google.com/terms/service-terms#1).
+       *
+       * Format: `projects/{project_number}/secrets/{secret_name}`
+       * </pre>
+       *
+       * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for credentialsSecret to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCredentialsSecretBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        credentialsSecret_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -8371,7 +9182,9 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Required. Input only. Credentials used to authenticate API requests to Azure.
+     * Required. Input only. Credentials used to authenticate API requests to
+     * Azure.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -8387,7 +9200,9 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Required. Input only. Credentials used to authenticate API requests to Azure.
+     * Required. Input only. Credentials used to authenticate API requests to
+     * Azure.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -8403,7 +9218,9 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Required. Input only. Credentials used to authenticate API requests to Azure.
+     * Required. Input only. Credentials used to authenticate API requests to
+     * Azure.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -8445,6 +9262,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
@@ -8460,6 +9278,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
@@ -8470,6 +9289,69 @@ public final class TransferTypes {
      * @return The bytes for path.
      */
     com.google.protobuf.ByteString getPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Resource name of a secret in Secret Manager.
+     *
+     * The Azure SAS token must be stored in Secret Manager in JSON format:
+     * &lt;pre&gt;{
+     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+     * }&lt;/pre&gt;
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+     * be granted `roles/secretmanager.secretAccessor` for the resource.
+     *
+     * See [Configure access to a source: Microsoft Azure Blob Storage]
+     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * for more information.
+     *
+     * If `credentials_secret` is specified, do not specify
+     * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
+     *
+     * This feature is in
+     * [preview](https://cloud.google.com/terms/service-terms#1).
+     *
+     * Format: `projects/{project_number}/secrets/{secret_name}`
+     * </pre>
+     *
+     * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The credentialsSecret.
+     */
+    java.lang.String getCredentialsSecret();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Resource name of a secret in Secret Manager.
+     *
+     * The Azure SAS token must be stored in Secret Manager in JSON format:
+     * &lt;pre&gt;{
+     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+     * }&lt;/pre&gt;
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+     * be granted `roles/secretmanager.secretAccessor` for the resource.
+     *
+     * See [Configure access to a source: Microsoft Azure Blob Storage]
+     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * for more information.
+     *
+     * If `credentials_secret` is specified, do not specify
+     * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
+     *
+     * This feature is in
+     * [preview](https://cloud.google.com/terms/service-terms#1).
+     *
+     * Format: `projects/{project_number}/secrets/{secret_name}`
+     * </pre>
+     *
+     * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for credentialsSecret.
+     */
+    com.google.protobuf.ByteString getCredentialsSecretBytes();
   }
   /**
    *
@@ -8500,17 +9382,13 @@ public final class TransferTypes {
       storageAccount_ = "";
       container_ = "";
       path_ = "";
+      credentialsSecret_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AzureBlobStorageData();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8585,7 +9463,9 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Required. Input only. Credentials used to authenticate API requests to Azure.
+     * Required. Input only. Credentials used to authenticate API requests to
+     * Azure.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -8604,7 +9484,9 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Required. Input only. Credentials used to authenticate API requests to Azure.
+     * Required. Input only. Credentials used to authenticate API requests to
+     * Azure.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -8626,7 +9508,9 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Required. Input only. Credentials used to authenticate API requests to Azure.
+     * Required. Input only. Credentials used to authenticate API requests to
+     * Azure.
+     *
      * For information on our data retention policy for user credentials, see
      * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
      * </pre>
@@ -8703,6 +9587,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
@@ -8729,6 +9614,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This field
      * is treated as an object prefix. As such, it should generally not begin with
      * a '/'.
@@ -8745,6 +9631,95 @@ public final class TransferTypes {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREDENTIALS_SECRET_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object credentialsSecret_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Resource name of a secret in Secret Manager.
+     *
+     * The Azure SAS token must be stored in Secret Manager in JSON format:
+     * &lt;pre&gt;{
+     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+     * }&lt;/pre&gt;
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+     * be granted `roles/secretmanager.secretAccessor` for the resource.
+     *
+     * See [Configure access to a source: Microsoft Azure Blob Storage]
+     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * for more information.
+     *
+     * If `credentials_secret` is specified, do not specify
+     * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
+     *
+     * This feature is in
+     * [preview](https://cloud.google.com/terms/service-terms#1).
+     *
+     * Format: `projects/{project_number}/secrets/{secret_name}`
+     * </pre>
+     *
+     * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The credentialsSecret.
+     */
+    @java.lang.Override
+    public java.lang.String getCredentialsSecret() {
+      java.lang.Object ref = credentialsSecret_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        credentialsSecret_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Resource name of a secret in Secret Manager.
+     *
+     * The Azure SAS token must be stored in Secret Manager in JSON format:
+     * &lt;pre&gt;{
+     *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+     * }&lt;/pre&gt;
+     * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+     * be granted `roles/secretmanager.secretAccessor` for the resource.
+     *
+     * See [Configure access to a source: Microsoft Azure Blob Storage]
+     * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+     * for more information.
+     *
+     * If `credentials_secret` is specified, do not specify
+     * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
+     *
+     * This feature is in
+     * [preview](https://cloud.google.com/terms/service-terms#1).
+     *
+     * Format: `projects/{project_number}/secrets/{secret_name}`
+     * </pre>
+     *
+     * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for credentialsSecret.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCredentialsSecretBytes() {
+      java.lang.Object ref = credentialsSecret_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        credentialsSecret_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -8777,6 +9752,9 @@ public final class TransferTypes {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, path_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(credentialsSecret_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, credentialsSecret_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -8797,6 +9775,9 @@ public final class TransferTypes {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, path_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(credentialsSecret_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, credentialsSecret_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -8822,6 +9803,7 @@ public final class TransferTypes {
       }
       if (!getContainer().equals(other.getContainer())) return false;
       if (!getPath().equals(other.getPath())) return false;
+      if (!getCredentialsSecret().equals(other.getCredentialsSecret())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -8843,6 +9825,8 @@ public final class TransferTypes {
       hash = (53 * hash) + getContainer().hashCode();
       hash = (37 * hash) + PATH_FIELD_NUMBER;
       hash = (53 * hash) + getPath().hashCode();
+      hash = (37 * hash) + CREDENTIALS_SECRET_FIELD_NUMBER;
+      hash = (53 * hash) + getCredentialsSecret().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9002,6 +9986,7 @@ public final class TransferTypes {
         }
         container_ = "";
         path_ = "";
+        credentialsSecret_ = "";
         return this;
       }
 
@@ -9056,6 +10041,9 @@ public final class TransferTypes {
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.credentialsSecret_ = credentialsSecret_;
         }
       }
 
@@ -9129,6 +10117,11 @@ public final class TransferTypes {
           bitField0_ |= 0x00000008;
           onChanged();
         }
+        if (!other.getCredentialsSecret().isEmpty()) {
+          credentialsSecret_ = other.credentialsSecret_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -9180,6 +10173,12 @@ public final class TransferTypes {
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 42
+              case 58:
+                {
+                  credentialsSecret_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9315,7 +10314,9 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Required. Input only. Credentials used to authenticate API requests to Azure.
+       * Required. Input only. Credentials used to authenticate API requests to
+       * Azure.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -9333,7 +10334,9 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Required. Input only. Credentials used to authenticate API requests to Azure.
+       * Required. Input only. Credentials used to authenticate API requests to
+       * Azure.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -9359,7 +10362,9 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Required. Input only. Credentials used to authenticate API requests to Azure.
+       * Required. Input only. Credentials used to authenticate API requests to
+       * Azure.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -9386,7 +10391,9 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Required. Input only. Credentials used to authenticate API requests to Azure.
+       * Required. Input only. Credentials used to authenticate API requests to
+       * Azure.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -9411,7 +10418,9 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Required. Input only. Credentials used to authenticate API requests to Azure.
+       * Required. Input only. Credentials used to authenticate API requests to
+       * Azure.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -9443,7 +10452,9 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Required. Input only. Credentials used to authenticate API requests to Azure.
+       * Required. Input only. Credentials used to authenticate API requests to
+       * Azure.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -9466,7 +10477,9 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Required. Input only. Credentials used to authenticate API requests to Azure.
+       * Required. Input only. Credentials used to authenticate API requests to
+       * Azure.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -9485,7 +10498,9 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Required. Input only. Credentials used to authenticate API requests to Azure.
+       * Required. Input only. Credentials used to authenticate API requests to
+       * Azure.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -9509,7 +10524,9 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Required. Input only. Credentials used to authenticate API requests to Azure.
+       * Required. Input only. Credentials used to authenticate API requests to
+       * Azure.
+       *
        * For information on our data retention policy for user credentials, see
        * [User credentials](/storage-transfer/docs/data-retention#user-credentials).
        * </pre>
@@ -9647,6 +10664,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
@@ -9672,6 +10690,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
@@ -9697,6 +10716,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
@@ -9721,6 +10741,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
@@ -9741,6 +10762,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This field
        * is treated as an object prefix. As such, it should generally not begin with
        * a '/'.
@@ -9758,6 +10780,207 @@ public final class TransferTypes {
         checkByteStringIsUtf8(value);
         path_ = value;
         bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object credentialsSecret_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Resource name of a secret in Secret Manager.
+       *
+       * The Azure SAS token must be stored in Secret Manager in JSON format:
+       * &lt;pre&gt;{
+       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+       * }&lt;/pre&gt;
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+       * be granted `roles/secretmanager.secretAccessor` for the resource.
+       *
+       * See [Configure access to a source: Microsoft Azure Blob Storage]
+       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * for more information.
+       *
+       * If `credentials_secret` is specified, do not specify
+       * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
+       *
+       * This feature is in
+       * [preview](https://cloud.google.com/terms/service-terms#1).
+       *
+       * Format: `projects/{project_number}/secrets/{secret_name}`
+       * </pre>
+       *
+       * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The credentialsSecret.
+       */
+      public java.lang.String getCredentialsSecret() {
+        java.lang.Object ref = credentialsSecret_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          credentialsSecret_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Resource name of a secret in Secret Manager.
+       *
+       * The Azure SAS token must be stored in Secret Manager in JSON format:
+       * &lt;pre&gt;{
+       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+       * }&lt;/pre&gt;
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+       * be granted `roles/secretmanager.secretAccessor` for the resource.
+       *
+       * See [Configure access to a source: Microsoft Azure Blob Storage]
+       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * for more information.
+       *
+       * If `credentials_secret` is specified, do not specify
+       * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
+       *
+       * This feature is in
+       * [preview](https://cloud.google.com/terms/service-terms#1).
+       *
+       * Format: `projects/{project_number}/secrets/{secret_name}`
+       * </pre>
+       *
+       * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for credentialsSecret.
+       */
+      public com.google.protobuf.ByteString getCredentialsSecretBytes() {
+        java.lang.Object ref = credentialsSecret_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          credentialsSecret_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Resource name of a secret in Secret Manager.
+       *
+       * The Azure SAS token must be stored in Secret Manager in JSON format:
+       * &lt;pre&gt;{
+       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+       * }&lt;/pre&gt;
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+       * be granted `roles/secretmanager.secretAccessor` for the resource.
+       *
+       * See [Configure access to a source: Microsoft Azure Blob Storage]
+       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * for more information.
+       *
+       * If `credentials_secret` is specified, do not specify
+       * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
+       *
+       * This feature is in
+       * [preview](https://cloud.google.com/terms/service-terms#1).
+       *
+       * Format: `projects/{project_number}/secrets/{secret_name}`
+       * </pre>
+       *
+       * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The credentialsSecret to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCredentialsSecret(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        credentialsSecret_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Resource name of a secret in Secret Manager.
+       *
+       * The Azure SAS token must be stored in Secret Manager in JSON format:
+       * &lt;pre&gt;{
+       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+       * }&lt;/pre&gt;
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+       * be granted `roles/secretmanager.secretAccessor` for the resource.
+       *
+       * See [Configure access to a source: Microsoft Azure Blob Storage]
+       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * for more information.
+       *
+       * If `credentials_secret` is specified, do not specify
+       * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
+       *
+       * This feature is in
+       * [preview](https://cloud.google.com/terms/service-terms#1).
+       *
+       * Format: `projects/{project_number}/secrets/{secret_name}`
+       * </pre>
+       *
+       * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCredentialsSecret() {
+        credentialsSecret_ = getDefaultInstance().getCredentialsSecret();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Resource name of a secret in Secret Manager.
+       *
+       * The Azure SAS token must be stored in Secret Manager in JSON format:
+       * &lt;pre&gt;{
+       *  "sas_token" : "&lt;var&gt;SAS_TOKEN&lt;/var&gt;"
+       * }&lt;/pre&gt;
+       * [GoogleServiceAccount][google.storagetransfer.v1.GoogleServiceAccount] must
+       * be granted `roles/secretmanager.secretAccessor` for the resource.
+       *
+       * See [Configure access to a source: Microsoft Azure Blob Storage]
+       * (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager)
+       * for more information.
+       *
+       * If `credentials_secret` is specified, do not specify
+       * [azure_credentials][google.storagetransfer.v1.AzureBlobStorageData.azure_credentials].
+       *
+       * This feature is in
+       * [preview](https://cloud.google.com/terms/service-terms#1).
+       *
+       * Format: `projects/{project_number}/secrets/{secret_name}`
+       * </pre>
+       *
+       * <code>string credentials_secret = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for credentialsSecret to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCredentialsSecretBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        credentialsSecret_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -9874,28 +11097,40 @@ public final class TransferTypes {
    * `"TsvHttpData-1.0"`, which specifies the format of the file.  Subsequent
    * lines specify the information of the list of objects, one object per list
    * entry. Each entry has the following tab-delimited fields:
+   *
    * * **HTTP URL** — The location of the object.
+   *
    * * **Length** — The size of the object in bytes.
+   *
    * * **MD5** — The base64-encoded MD5 hash of the object.
+   *
    * For an example of a valid TSV file, see
    * [Transferring data from
    * URLs](https://cloud.google.com/storage-transfer/docs/create-url-list).
+   *
    * When transferring data based on a URL list, keep the following in mind:
+   *
    * * When an object located at `http(s)://hostname:port/&lt;URL-path&gt;` is
    * transferred to a data sink, the name of the object at the data sink is
    * `&lt;hostname&gt;/&lt;URL-path&gt;`.
+   *
    * * If the specified size of an object does not match the actual size of the
    * object fetched, the object is not transferred.
+   *
    * * If the specified MD5 does not match the MD5 computed from the transferred
    * bytes, the object transfer fails.
+   *
    * * Ensure that each URL you specify is publicly accessible. For
    * example, in Cloud Storage you can
    * [share an object publicly]
    * (/storage/docs/cloud-console#_sharingdata) and get a link to it.
+   *
    * * Storage Transfer Service obeys `robots.txt` rules and requires the source
    * HTTP server to support `Range` requests and to return a `Content-Length`
    * header in each response.
-   * * [ObjectConditions][google.storagetransfer.v1.ObjectConditions] have no effect when filtering objects to transfer.
+   *
+   * * [ObjectConditions][google.storagetransfer.v1.ObjectConditions] have no
+   * effect when filtering objects to transfer.
    * </pre>
    *
    * Protobuf type {@code google.storagetransfer.v1.HttpData}
@@ -9918,11 +11153,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new HttpData();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10166,28 +11396,40 @@ public final class TransferTypes {
      * `"TsvHttpData-1.0"`, which specifies the format of the file.  Subsequent
      * lines specify the information of the list of objects, one object per list
      * entry. Each entry has the following tab-delimited fields:
+     *
      * * **HTTP URL** — The location of the object.
+     *
      * * **Length** — The size of the object in bytes.
+     *
      * * **MD5** — The base64-encoded MD5 hash of the object.
+     *
      * For an example of a valid TSV file, see
      * [Transferring data from
      * URLs](https://cloud.google.com/storage-transfer/docs/create-url-list).
+     *
      * When transferring data based on a URL list, keep the following in mind:
+     *
      * * When an object located at `http(s)://hostname:port/&lt;URL-path&gt;` is
      * transferred to a data sink, the name of the object at the data sink is
      * `&lt;hostname&gt;/&lt;URL-path&gt;`.
+     *
      * * If the specified size of an object does not match the actual size of the
      * object fetched, the object is not transferred.
+     *
      * * If the specified MD5 does not match the MD5 computed from the transferred
      * bytes, the object transfer fails.
+     *
      * * Ensure that each URL you specify is publicly accessible. For
      * example, in Cloud Storage you can
      * [share an object publicly]
      * (/storage/docs/cloud-console#_sharingdata) and get a link to it.
+     *
      * * Storage Transfer Service obeys `robots.txt` rules and requires the source
      * HTTP server to support `Range` requests and to return a `Content-Length`
      * header in each response.
-     * * [ObjectConditions][google.storagetransfer.v1.ObjectConditions] have no effect when filtering objects to transfer.
+     *
+     * * [ObjectConditions][google.storagetransfer.v1.ObjectConditions] have no
+     * effect when filtering objects to transfer.
      * </pre>
      *
      * Protobuf type {@code google.storagetransfer.v1.HttpData}
@@ -10610,11 +11852,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PosixFilesystem();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11246,6 +12483,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This
      * field is treated as an object prefix. As such, it should generally not
      * begin with a '/'.
@@ -11261,6 +12499,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This
      * field is treated as an object prefix. As such, it should generally not
      * begin with a '/'.
@@ -11360,7 +12599,7 @@ public final class TransferTypes {
     com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadataOrBuilder
         getS3MetadataOrBuilder();
 
-    public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.DataProviderCase
+    com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.DataProviderCase
         getDataProviderCase();
   }
   /**
@@ -11395,11 +12634,6 @@ public final class TransferTypes {
       return new AwsS3CompatibleData();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferTypes
           .internal_static_google_storagetransfer_v1_AwsS3CompatibleData_descriptor;
@@ -11416,6 +12650,8 @@ public final class TransferTypes {
     }
 
     private int dataProviderCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object dataProvider_;
 
     public enum DataProviderCase
@@ -11519,6 +12755,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This
      * field is treated as an object prefix. As such, it should generally not
      * begin with a '/'.
@@ -11545,6 +12782,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the root path to transfer objects.
+     *
      * Must be an empty string or full path name that ends with a '/'. This
      * field is treated as an object prefix. As such, it should generally not
      * begin with a '/'.
@@ -12343,6 +13581,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This
        * field is treated as an object prefix. As such, it should generally not
        * begin with a '/'.
@@ -12368,6 +13607,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This
        * field is treated as an object prefix. As such, it should generally not
        * begin with a '/'.
@@ -12393,6 +13633,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This
        * field is treated as an object prefix. As such, it should generally not
        * begin with a '/'.
@@ -12417,6 +13658,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This
        * field is treated as an object prefix. As such, it should generally not
        * begin with a '/'.
@@ -12437,6 +13679,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Specifies the root path to transfer objects.
+       *
        * Must be an empty string or full path name that ends with a '/'. This
        * field is treated as an object prefix. As such, it should generally not
        * begin with a '/'.
@@ -13120,11 +14363,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new S3CompatibleMetadata();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -14914,6 +16152,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. Specifies a unique string that identifies the agent pool.
+     *
      * Format: `projects/{project_id}/agentPools/{agent_pool_id}`
      * </pre>
      *
@@ -14927,6 +16166,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. Specifies a unique string that identifies the agent pool.
+     *
      * Format: `projects/{project_id}/agentPools/{agent_pool_id}`
      * </pre>
      *
@@ -15058,11 +16298,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AgentPool();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -15311,11 +16546,6 @@ public final class TransferTypes {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new BandwidthLimit();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -15854,6 +17084,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. Specifies a unique string that identifies the agent pool.
+     *
      * Format: `projects/{project_id}/agentPools/{agent_pool_id}`
      * </pre>
      *
@@ -15878,6 +17109,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. Specifies a unique string that identifies the agent pool.
+     *
      * Format: `projects/{project_id}/agentPools/{agent_pool_id}`
      * </pre>
      *
@@ -16487,6 +17719,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. Specifies a unique string that identifies the agent pool.
+       *
        * Format: `projects/{project_id}/agentPools/{agent_pool_id}`
        * </pre>
        *
@@ -16510,6 +17743,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. Specifies a unique string that identifies the agent pool.
+       *
        * Format: `projects/{project_id}/agentPools/{agent_pool_id}`
        * </pre>
        *
@@ -16533,6 +17767,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. Specifies a unique string that identifies the agent pool.
+       *
        * Format: `projects/{project_id}/agentPools/{agent_pool_id}`
        * </pre>
        *
@@ -16555,6 +17790,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. Specifies a unique string that identifies the agent pool.
+       *
        * Format: `projects/{project_id}/agentPools/{agent_pool_id}`
        * </pre>
        *
@@ -16573,6 +17809,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. Specifies a unique string that identifies the agent pool.
+       *
        * Format: `projects/{project_id}/agentPools/{agent_pool_id}`
        * </pre>
        *
@@ -17098,8 +18335,10 @@ public final class TransferTypes {
      *
      * <pre>
      * Whether objects that exist only in the sink should be deleted.
-     * **Note:** This option and [delete_objects_from_source_after_transfer][google.storagetransfer.v1.TransferOptions.delete_objects_from_source_after_transfer] are
-     * mutually exclusive.
+     *
+     * **Note:** This option and
+     * [delete_objects_from_source_after_transfer][google.storagetransfer.v1.TransferOptions.delete_objects_from_source_after_transfer]
+     * are mutually exclusive.
      * </pre>
      *
      * <code>bool delete_objects_unique_in_sink = 2;</code>
@@ -17114,8 +18353,10 @@ public final class TransferTypes {
      * <pre>
      * Whether objects should be deleted from the source after they are
      * transferred to the sink.
-     * **Note:** This option and [delete_objects_unique_in_sink][google.storagetransfer.v1.TransferOptions.delete_objects_unique_in_sink] are mutually
-     * exclusive.
+     *
+     * **Note:** This option and
+     * [delete_objects_unique_in_sink][google.storagetransfer.v1.TransferOptions.delete_objects_unique_in_sink]
+     * are mutually exclusive.
      * </pre>
      *
      * <code>bool delete_objects_from_source_after_transfer = 3;</code>
@@ -17217,11 +18458,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TransferOptions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -17457,8 +18693,10 @@ public final class TransferTypes {
      *
      * <pre>
      * Whether objects that exist only in the sink should be deleted.
-     * **Note:** This option and [delete_objects_from_source_after_transfer][google.storagetransfer.v1.TransferOptions.delete_objects_from_source_after_transfer] are
-     * mutually exclusive.
+     *
+     * **Note:** This option and
+     * [delete_objects_from_source_after_transfer][google.storagetransfer.v1.TransferOptions.delete_objects_from_source_after_transfer]
+     * are mutually exclusive.
      * </pre>
      *
      * <code>bool delete_objects_unique_in_sink = 2;</code>
@@ -17478,8 +18716,10 @@ public final class TransferTypes {
      * <pre>
      * Whether objects should be deleted from the source after they are
      * transferred to the sink.
-     * **Note:** This option and [delete_objects_unique_in_sink][google.storagetransfer.v1.TransferOptions.delete_objects_unique_in_sink] are mutually
-     * exclusive.
+     *
+     * **Note:** This option and
+     * [delete_objects_unique_in_sink][google.storagetransfer.v1.TransferOptions.delete_objects_unique_in_sink]
+     * are mutually exclusive.
      * </pre>
      *
      * <code>bool delete_objects_from_source_after_transfer = 3;</code>
@@ -18125,8 +19365,10 @@ public final class TransferTypes {
        *
        * <pre>
        * Whether objects that exist only in the sink should be deleted.
-       * **Note:** This option and [delete_objects_from_source_after_transfer][google.storagetransfer.v1.TransferOptions.delete_objects_from_source_after_transfer] are
-       * mutually exclusive.
+       *
+       * **Note:** This option and
+       * [delete_objects_from_source_after_transfer][google.storagetransfer.v1.TransferOptions.delete_objects_from_source_after_transfer]
+       * are mutually exclusive.
        * </pre>
        *
        * <code>bool delete_objects_unique_in_sink = 2;</code>
@@ -18142,8 +19384,10 @@ public final class TransferTypes {
        *
        * <pre>
        * Whether objects that exist only in the sink should be deleted.
-       * **Note:** This option and [delete_objects_from_source_after_transfer][google.storagetransfer.v1.TransferOptions.delete_objects_from_source_after_transfer] are
-       * mutually exclusive.
+       *
+       * **Note:** This option and
+       * [delete_objects_from_source_after_transfer][google.storagetransfer.v1.TransferOptions.delete_objects_from_source_after_transfer]
+       * are mutually exclusive.
        * </pre>
        *
        * <code>bool delete_objects_unique_in_sink = 2;</code>
@@ -18163,8 +19407,10 @@ public final class TransferTypes {
        *
        * <pre>
        * Whether objects that exist only in the sink should be deleted.
-       * **Note:** This option and [delete_objects_from_source_after_transfer][google.storagetransfer.v1.TransferOptions.delete_objects_from_source_after_transfer] are
-       * mutually exclusive.
+       *
+       * **Note:** This option and
+       * [delete_objects_from_source_after_transfer][google.storagetransfer.v1.TransferOptions.delete_objects_from_source_after_transfer]
+       * are mutually exclusive.
        * </pre>
        *
        * <code>bool delete_objects_unique_in_sink = 2;</code>
@@ -18185,8 +19431,10 @@ public final class TransferTypes {
        * <pre>
        * Whether objects should be deleted from the source after they are
        * transferred to the sink.
-       * **Note:** This option and [delete_objects_unique_in_sink][google.storagetransfer.v1.TransferOptions.delete_objects_unique_in_sink] are mutually
-       * exclusive.
+       *
+       * **Note:** This option and
+       * [delete_objects_unique_in_sink][google.storagetransfer.v1.TransferOptions.delete_objects_unique_in_sink]
+       * are mutually exclusive.
        * </pre>
        *
        * <code>bool delete_objects_from_source_after_transfer = 3;</code>
@@ -18203,8 +19451,10 @@ public final class TransferTypes {
        * <pre>
        * Whether objects should be deleted from the source after they are
        * transferred to the sink.
-       * **Note:** This option and [delete_objects_unique_in_sink][google.storagetransfer.v1.TransferOptions.delete_objects_unique_in_sink] are mutually
-       * exclusive.
+       *
+       * **Note:** This option and
+       * [delete_objects_unique_in_sink][google.storagetransfer.v1.TransferOptions.delete_objects_unique_in_sink]
+       * are mutually exclusive.
        * </pre>
        *
        * <code>bool delete_objects_from_source_after_transfer = 3;</code>
@@ -18225,8 +19475,10 @@ public final class TransferTypes {
        * <pre>
        * Whether objects should be deleted from the source after they are
        * transferred to the sink.
-       * **Note:** This option and [delete_objects_unique_in_sink][google.storagetransfer.v1.TransferOptions.delete_objects_unique_in_sink] are mutually
-       * exclusive.
+       *
+       * **Note:** This option and
+       * [delete_objects_unique_in_sink][google.storagetransfer.v1.TransferOptions.delete_objects_unique_in_sink]
+       * are mutually exclusive.
        * </pre>
        *
        * <code>bool delete_objects_from_source_after_transfer = 3;</code>
@@ -18910,7 +20162,12 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Cloud Storage intermediate data location.
+     * For transfers between file systems, specifies a Cloud Storage bucket
+     * to be used as an intermediate location through which to transfer data.
+     *
+     * See [Transfer data between file
+     * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+     * more information.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -18922,7 +20179,12 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Cloud Storage intermediate data location.
+     * For transfers between file systems, specifies a Cloud Storage bucket
+     * to be used as an intermediate location through which to transfer data.
+     *
+     * See [Transfer data between file
+     * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+     * more information.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -18934,7 +20196,12 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Cloud Storage intermediate data location.
+     * For transfers between file systems, specifies a Cloud Storage bucket
+     * to be used as an intermediate location through which to transfer data.
+     *
+     * See [Transfer data between file
+     * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+     * more information.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -19128,14 +20395,12 @@ public final class TransferTypes {
      */
     com.google.protobuf.ByteString getSinkAgentPoolNameBytes();
 
-    public com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.DataSinkCase
-        getDataSinkCase();
+    com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.DataSinkCase getDataSinkCase();
 
-    public com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.DataSourceCase
+    com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.DataSourceCase
         getDataSourceCase();
 
-    public com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec
-            .IntermediateDataLocationCase
+    com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.IntermediateDataLocationCase
         getIntermediateDataLocationCase();
   }
   /**
@@ -19168,11 +20433,6 @@ public final class TransferTypes {
       return new TransferSpec();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferTypes
           .internal_static_google_storagetransfer_v1_TransferSpec_descriptor;
@@ -19189,6 +20449,8 @@ public final class TransferTypes {
     }
 
     private int dataSinkCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object dataSink_;
 
     public enum DataSinkCase
@@ -19236,6 +20498,8 @@ public final class TransferTypes {
     }
 
     private int dataSourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object dataSource_;
 
     public enum DataSourceCase
@@ -19295,6 +20559,8 @@ public final class TransferTypes {
     }
 
     private int intermediateDataLocationCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object intermediateDataLocation_;
 
     public enum IntermediateDataLocationCase
@@ -19771,7 +21037,12 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Cloud Storage intermediate data location.
+     * For transfers between file systems, specifies a Cloud Storage bucket
+     * to be used as an intermediate location through which to transfer data.
+     *
+     * See [Transfer data between file
+     * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+     * more information.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -19786,7 +21057,12 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Cloud Storage intermediate data location.
+     * For transfers between file systems, specifies a Cloud Storage bucket
+     * to be used as an intermediate location through which to transfer data.
+     *
+     * See [Transfer data between file
+     * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+     * more information.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -19806,7 +21082,12 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Cloud Storage intermediate data location.
+     * For transfers between file systems, specifies a Cloud Storage bucket
+     * to be used as an intermediate location through which to transfer data.
+     *
+     * See [Transfer data between file
+     * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+     * more information.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -22793,7 +24074,12 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Cloud Storage intermediate data location.
+       * For transfers between file systems, specifies a Cloud Storage bucket
+       * to be used as an intermediate location through which to transfer data.
+       *
+       * See [Transfer data between file
+       * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+       * more information.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -22808,7 +24094,12 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Cloud Storage intermediate data location.
+       * For transfers between file systems, specifies a Cloud Storage bucket
+       * to be used as an intermediate location through which to transfer data.
+       *
+       * See [Transfer data between file
+       * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+       * more information.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -22835,7 +24126,12 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Cloud Storage intermediate data location.
+       * For transfers between file systems, specifies a Cloud Storage bucket
+       * to be used as an intermediate location through which to transfer data.
+       *
+       * See [Transfer data between file
+       * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+       * more information.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -22858,7 +24154,12 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Cloud Storage intermediate data location.
+       * For transfers between file systems, specifies a Cloud Storage bucket
+       * to be used as an intermediate location through which to transfer data.
+       *
+       * See [Transfer data between file
+       * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+       * more information.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -22878,7 +24179,12 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Cloud Storage intermediate data location.
+       * For transfers between file systems, specifies a Cloud Storage bucket
+       * to be used as an intermediate location through which to transfer data.
+       *
+       * See [Transfer data between file
+       * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+       * more information.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -22914,7 +24220,12 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Cloud Storage intermediate data location.
+       * For transfers between file systems, specifies a Cloud Storage bucket
+       * to be used as an intermediate location through which to transfer data.
+       *
+       * See [Transfer data between file
+       * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+       * more information.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -22939,7 +24250,12 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Cloud Storage intermediate data location.
+       * For transfers between file systems, specifies a Cloud Storage bucket
+       * to be used as an intermediate location through which to transfer data.
+       *
+       * See [Transfer data between file
+       * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+       * more information.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -22952,7 +24268,12 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Cloud Storage intermediate data location.
+       * For transfers between file systems, specifies a Cloud Storage bucket
+       * to be used as an intermediate location through which to transfer data.
+       *
+       * See [Transfer data between file
+       * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+       * more information.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -22975,7 +24296,12 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Cloud Storage intermediate data location.
+       * For transfers between file systems, specifies a Cloud Storage bucket
+       * to be used as an intermediate location through which to transfer data.
+       *
+       * See [Transfer data between file
+       * systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for
+       * more information.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.GcsData gcs_intermediate_data_location = 16;</code>
@@ -24260,11 +25586,6 @@ public final class TransferTypes {
       return new MetadataOptions();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferTypes
           .internal_static_google_storagetransfer_v1_MetadataOptions_descriptor;
@@ -25118,7 +26439,9 @@ public final class TransferTypes {
        *
        * <pre>
        * Preserve the object's original storage class. This is only supported for
-       * transfers from Google Cloud Storage buckets.
+       * transfers from Google Cloud Storage buckets. REGIONAL and MULTI_REGIONAL
+       * storage classes will be mapped to STANDARD to ensure they can be written
+       * to the destination bucket.
        * </pre>
        *
        * <code>STORAGE_CLASS_PRESERVE = 2;</code>
@@ -25192,7 +26515,9 @@ public final class TransferTypes {
        *
        * <pre>
        * Preserve the object's original storage class. This is only supported for
-       * transfers from Google Cloud Storage buckets.
+       * transfers from Google Cloud Storage buckets. REGIONAL and MULTI_REGIONAL
+       * storage classes will be mapped to STANDARD to ensure they can be written
+       * to the destination bucket.
        * </pre>
        *
        * <code>STORAGE_CLASS_PRESERVE = 2;</code>
@@ -27869,11 +29194,6 @@ public final class TransferTypes {
       return new TransferManifest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferTypes
           .internal_static_google_storagetransfer_v1_TransferManifest_descriptor;
@@ -28499,16 +29819,19 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. The start date of a transfer. Date boundaries are determined
-     * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     * relative to UTC time. If `schedule_start_date` and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
      * are in the past relative to the job's creation time, the transfer starts
      * the day after you schedule the transfer request.
+     *
      * **Note:** When starting jobs at or near midnight UTC it is possible that
      * a job starts later than expected. For example, if you send an outbound
      * request on June 1 one millisecond prior to midnight UTC and the Storage
      * Transfer Service server receives the request on June 2, then it creates
      * a TransferJob with `schedule_start_date` set to June 2 and a
      * `start_time_of_day` set to midnight UTC. The first scheduled
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+     * place on June 3 at midnight UTC.
      * </pre>
      *
      * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -28522,16 +29845,19 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. The start date of a transfer. Date boundaries are determined
-     * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     * relative to UTC time. If `schedule_start_date` and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
      * are in the past relative to the job's creation time, the transfer starts
      * the day after you schedule the transfer request.
+     *
      * **Note:** When starting jobs at or near midnight UTC it is possible that
      * a job starts later than expected. For example, if you send an outbound
      * request on June 1 one millisecond prior to midnight UTC and the Storage
      * Transfer Service server receives the request on June 2, then it creates
      * a TransferJob with `schedule_start_date` set to June 2 and a
      * `start_time_of_day` set to midnight UTC. The first scheduled
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+     * place on June 3 at midnight UTC.
      * </pre>
      *
      * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -28545,16 +29871,19 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. The start date of a transfer. Date boundaries are determined
-     * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     * relative to UTC time. If `schedule_start_date` and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
      * are in the past relative to the job's creation time, the transfer starts
      * the day after you schedule the transfer request.
+     *
      * **Note:** When starting jobs at or near midnight UTC it is possible that
      * a job starts later than expected. For example, if you send an outbound
      * request on June 1 one millisecond prior to midnight UTC and the Storage
      * Transfer Service server receives the request on June 2, then it creates
      * a TransferJob with `schedule_start_date` set to June 2 and a
      * `start_time_of_day` set to midnight UTC. The first scheduled
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+     * place on June 3 at midnight UTC.
      * </pre>
      *
      * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -28568,11 +29897,16 @@ public final class TransferTypes {
      * <pre>
      * The last day a transfer runs. Date boundaries are determined relative to
      * UTC time. A job runs once per 24 hours within the following guidelines:
-     * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+     *
+     * *   If `schedule_end_date` and
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * are the same and in
      *     the future relative to UTC, the transfer is executed only one time.
      * *   If `schedule_end_date` is later than `schedule_start_date`  and
      *     `schedule_end_date` is in the future relative to UTC, the job runs each
-     *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+     *     day at
+     *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     *     through `schedule_end_date`.
      * </pre>
      *
      * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -28586,11 +29920,16 @@ public final class TransferTypes {
      * <pre>
      * The last day a transfer runs. Date boundaries are determined relative to
      * UTC time. A job runs once per 24 hours within the following guidelines:
-     * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+     *
+     * *   If `schedule_end_date` and
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * are the same and in
      *     the future relative to UTC, the transfer is executed only one time.
      * *   If `schedule_end_date` is later than `schedule_start_date`  and
      *     `schedule_end_date` is in the future relative to UTC, the job runs each
-     *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+     *     day at
+     *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     *     through `schedule_end_date`.
      * </pre>
      *
      * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -28604,11 +29943,16 @@ public final class TransferTypes {
      * <pre>
      * The last day a transfer runs. Date boundaries are determined relative to
      * UTC time. A job runs once per 24 hours within the following guidelines:
-     * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+     *
+     * *   If `schedule_end_date` and
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * are the same and in
      *     the future relative to UTC, the transfer is executed only one time.
      * *   If `schedule_end_date` is later than `schedule_start_date`  and
      *     `schedule_end_date` is in the future relative to UTC, the job runs each
-     *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+     *     day at
+     *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     *     through `schedule_end_date`.
      * </pre>
      *
      * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -28621,11 +29965,16 @@ public final class TransferTypes {
      * <pre>
      * The time in UTC that a transfer job is scheduled to run. Transfers may
      * start later than this time.
+     *
      * If `start_time_of_day` is not specified:
+     *
      * *   One-time transfers run immediately.
      * *   Recurring transfers run immediately, and each day at midnight UTC,
-     *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *     through
+     *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *
      * If `start_time_of_day` is specified:
+     *
      * *   One-time transfers run at the specified time.
      * *   Recurring transfers run at the specified time each day, through
      *     `schedule_end_date`.
@@ -28642,11 +29991,16 @@ public final class TransferTypes {
      * <pre>
      * The time in UTC that a transfer job is scheduled to run. Transfers may
      * start later than this time.
+     *
      * If `start_time_of_day` is not specified:
+     *
      * *   One-time transfers run immediately.
      * *   Recurring transfers run immediately, and each day at midnight UTC,
-     *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *     through
+     *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *
      * If `start_time_of_day` is specified:
+     *
      * *   One-time transfers run at the specified time.
      * *   Recurring transfers run at the specified time each day, through
      *     `schedule_end_date`.
@@ -28663,11 +30017,16 @@ public final class TransferTypes {
      * <pre>
      * The time in UTC that a transfer job is scheduled to run. Transfers may
      * start later than this time.
+     *
      * If `start_time_of_day` is not specified:
+     *
      * *   One-time transfers run immediately.
      * *   Recurring transfers run immediately, and each day at midnight UTC,
-     *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *     through
+     *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *
      * If `start_time_of_day` is specified:
+     *
      * *   One-time transfers run at the specified time.
      * *   Recurring transfers run at the specified time each day, through
      *     `schedule_end_date`.
@@ -28682,13 +30041,19 @@ public final class TransferTypes {
      *
      * <pre>
      * The time in UTC that no further transfer operations are scheduled. Combined
-     * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-     * time for starting new transfer operations. This field must be greater than
-     * or equal to the timestamp corresponding to the combintation of
-     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-     * following:
+     * with
+     * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+     * `end_time_of_day` specifies the end date and time for starting new transfer
+     * operations. This field must be greater than or equal to the timestamp
+     * corresponding to the combintation of
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+     * and is subject to the following:
+     *
      * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
      *     a default value of `23:59:59` is used for `end_time_of_day`.
+     *
      * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
      *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
      * </pre>
@@ -28703,13 +30068,19 @@ public final class TransferTypes {
      *
      * <pre>
      * The time in UTC that no further transfer operations are scheduled. Combined
-     * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-     * time for starting new transfer operations. This field must be greater than
-     * or equal to the timestamp corresponding to the combintation of
-     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-     * following:
+     * with
+     * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+     * `end_time_of_day` specifies the end date and time for starting new transfer
+     * operations. This field must be greater than or equal to the timestamp
+     * corresponding to the combintation of
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+     * and is subject to the following:
+     *
      * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
      *     a default value of `23:59:59` is used for `end_time_of_day`.
+     *
      * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
      *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
      * </pre>
@@ -28724,13 +30095,19 @@ public final class TransferTypes {
      *
      * <pre>
      * The time in UTC that no further transfer operations are scheduled. Combined
-     * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-     * time for starting new transfer operations. This field must be greater than
-     * or equal to the timestamp corresponding to the combintation of
-     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-     * following:
+     * with
+     * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+     * `end_time_of_day` specifies the end date and time for starting new transfer
+     * operations. This field must be greater than or equal to the timestamp
+     * corresponding to the combintation of
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+     * and is subject to the following:
+     *
      * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
      *     a default value of `23:59:59` is used for `end_time_of_day`.
+     *
      * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
      *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
      * </pre>
@@ -28807,11 +30184,6 @@ public final class TransferTypes {
       return new Schedule();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferTypes
           .internal_static_google_storagetransfer_v1_Schedule_descriptor;
@@ -28834,16 +30206,19 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. The start date of a transfer. Date boundaries are determined
-     * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     * relative to UTC time. If `schedule_start_date` and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
      * are in the past relative to the job's creation time, the transfer starts
      * the day after you schedule the transfer request.
+     *
      * **Note:** When starting jobs at or near midnight UTC it is possible that
      * a job starts later than expected. For example, if you send an outbound
      * request on June 1 one millisecond prior to midnight UTC and the Storage
      * Transfer Service server receives the request on June 2, then it creates
      * a TransferJob with `schedule_start_date` set to June 2 and a
      * `start_time_of_day` set to midnight UTC. The first scheduled
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+     * place on June 3 at midnight UTC.
      * </pre>
      *
      * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -28860,16 +30235,19 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. The start date of a transfer. Date boundaries are determined
-     * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     * relative to UTC time. If `schedule_start_date` and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
      * are in the past relative to the job's creation time, the transfer starts
      * the day after you schedule the transfer request.
+     *
      * **Note:** When starting jobs at or near midnight UTC it is possible that
      * a job starts later than expected. For example, if you send an outbound
      * request on June 1 one millisecond prior to midnight UTC and the Storage
      * Transfer Service server receives the request on June 2, then it creates
      * a TransferJob with `schedule_start_date` set to June 2 and a
      * `start_time_of_day` set to midnight UTC. The first scheduled
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+     * place on June 3 at midnight UTC.
      * </pre>
      *
      * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -28888,16 +30266,19 @@ public final class TransferTypes {
      *
      * <pre>
      * Required. The start date of a transfer. Date boundaries are determined
-     * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     * relative to UTC time. If `schedule_start_date` and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
      * are in the past relative to the job's creation time, the transfer starts
      * the day after you schedule the transfer request.
+     *
      * **Note:** When starting jobs at or near midnight UTC it is possible that
      * a job starts later than expected. For example, if you send an outbound
      * request on June 1 one millisecond prior to midnight UTC and the Storage
      * Transfer Service server receives the request on June 2, then it creates
      * a TransferJob with `schedule_start_date` set to June 2 and a
      * `start_time_of_day` set to midnight UTC. The first scheduled
-     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+     * place on June 3 at midnight UTC.
      * </pre>
      *
      * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -28918,11 +30299,16 @@ public final class TransferTypes {
      * <pre>
      * The last day a transfer runs. Date boundaries are determined relative to
      * UTC time. A job runs once per 24 hours within the following guidelines:
-     * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+     *
+     * *   If `schedule_end_date` and
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * are the same and in
      *     the future relative to UTC, the transfer is executed only one time.
      * *   If `schedule_end_date` is later than `schedule_start_date`  and
      *     `schedule_end_date` is in the future relative to UTC, the job runs each
-     *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+     *     day at
+     *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     *     through `schedule_end_date`.
      * </pre>
      *
      * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -28939,11 +30325,16 @@ public final class TransferTypes {
      * <pre>
      * The last day a transfer runs. Date boundaries are determined relative to
      * UTC time. A job runs once per 24 hours within the following guidelines:
-     * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+     *
+     * *   If `schedule_end_date` and
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * are the same and in
      *     the future relative to UTC, the transfer is executed only one time.
      * *   If `schedule_end_date` is later than `schedule_start_date`  and
      *     `schedule_end_date` is in the future relative to UTC, the job runs each
-     *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+     *     day at
+     *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     *     through `schedule_end_date`.
      * </pre>
      *
      * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -28962,11 +30353,16 @@ public final class TransferTypes {
      * <pre>
      * The last day a transfer runs. Date boundaries are determined relative to
      * UTC time. A job runs once per 24 hours within the following guidelines:
-     * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+     *
+     * *   If `schedule_end_date` and
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * are the same and in
      *     the future relative to UTC, the transfer is executed only one time.
      * *   If `schedule_end_date` is later than `schedule_start_date`  and
      *     `schedule_end_date` is in the future relative to UTC, the job runs each
-     *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+     *     day at
+     *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+     *     through `schedule_end_date`.
      * </pre>
      *
      * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -28986,11 +30382,16 @@ public final class TransferTypes {
      * <pre>
      * The time in UTC that a transfer job is scheduled to run. Transfers may
      * start later than this time.
+     *
      * If `start_time_of_day` is not specified:
+     *
      * *   One-time transfers run immediately.
      * *   Recurring transfers run immediately, and each day at midnight UTC,
-     *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *     through
+     *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *
      * If `start_time_of_day` is specified:
+     *
      * *   One-time transfers run at the specified time.
      * *   Recurring transfers run at the specified time each day, through
      *     `schedule_end_date`.
@@ -29010,11 +30411,16 @@ public final class TransferTypes {
      * <pre>
      * The time in UTC that a transfer job is scheduled to run. Transfers may
      * start later than this time.
+     *
      * If `start_time_of_day` is not specified:
+     *
      * *   One-time transfers run immediately.
      * *   Recurring transfers run immediately, and each day at midnight UTC,
-     *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *     through
+     *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *
      * If `start_time_of_day` is specified:
+     *
      * *   One-time transfers run at the specified time.
      * *   Recurring transfers run at the specified time each day, through
      *     `schedule_end_date`.
@@ -29036,11 +30442,16 @@ public final class TransferTypes {
      * <pre>
      * The time in UTC that a transfer job is scheduled to run. Transfers may
      * start later than this time.
+     *
      * If `start_time_of_day` is not specified:
+     *
      * *   One-time transfers run immediately.
      * *   Recurring transfers run immediately, and each day at midnight UTC,
-     *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *     through
+     *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+     *
      * If `start_time_of_day` is specified:
+     *
      * *   One-time transfers run at the specified time.
      * *   Recurring transfers run at the specified time each day, through
      *     `schedule_end_date`.
@@ -29062,13 +30473,19 @@ public final class TransferTypes {
      *
      * <pre>
      * The time in UTC that no further transfer operations are scheduled. Combined
-     * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-     * time for starting new transfer operations. This field must be greater than
-     * or equal to the timestamp corresponding to the combintation of
-     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-     * following:
+     * with
+     * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+     * `end_time_of_day` specifies the end date and time for starting new transfer
+     * operations. This field must be greater than or equal to the timestamp
+     * corresponding to the combintation of
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+     * and is subject to the following:
+     *
      * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
      *     a default value of `23:59:59` is used for `end_time_of_day`.
+     *
      * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
      *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
      * </pre>
@@ -29086,13 +30503,19 @@ public final class TransferTypes {
      *
      * <pre>
      * The time in UTC that no further transfer operations are scheduled. Combined
-     * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-     * time for starting new transfer operations. This field must be greater than
-     * or equal to the timestamp corresponding to the combintation of
-     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-     * following:
+     * with
+     * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+     * `end_time_of_day` specifies the end date and time for starting new transfer
+     * operations. This field must be greater than or equal to the timestamp
+     * corresponding to the combintation of
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+     * and is subject to the following:
+     *
      * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
      *     a default value of `23:59:59` is used for `end_time_of_day`.
+     *
      * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
      *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
      * </pre>
@@ -29110,13 +30533,19 @@ public final class TransferTypes {
      *
      * <pre>
      * The time in UTC that no further transfer operations are scheduled. Combined
-     * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-     * time for starting new transfer operations. This field must be greater than
-     * or equal to the timestamp corresponding to the combintation of
-     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-     * following:
+     * with
+     * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+     * `end_time_of_day` specifies the end date and time for starting new transfer
+     * operations. This field must be greater than or equal to the timestamp
+     * corresponding to the combintation of
+     * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+     * and
+     * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+     * and is subject to the following:
+     *
      * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
      *     a default value of `23:59:59` is used for `end_time_of_day`.
+     *
      * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
      *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
      * </pre>
@@ -29685,16 +31114,19 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. The start date of a transfer. Date boundaries are determined
-       * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       * relative to UTC time. If `schedule_start_date` and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
        * are in the past relative to the job's creation time, the transfer starts
        * the day after you schedule the transfer request.
+       *
        * **Note:** When starting jobs at or near midnight UTC it is possible that
        * a job starts later than expected. For example, if you send an outbound
        * request on June 1 one millisecond prior to midnight UTC and the Storage
        * Transfer Service server receives the request on June 2, then it creates
        * a TransferJob with `schedule_start_date` set to June 2 and a
        * `start_time_of_day` set to midnight UTC. The first scheduled
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+       * place on June 3 at midnight UTC.
        * </pre>
        *
        * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -29710,16 +31142,19 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. The start date of a transfer. Date boundaries are determined
-       * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       * relative to UTC time. If `schedule_start_date` and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
        * are in the past relative to the job's creation time, the transfer starts
        * the day after you schedule the transfer request.
+       *
        * **Note:** When starting jobs at or near midnight UTC it is possible that
        * a job starts later than expected. For example, if you send an outbound
        * request on June 1 one millisecond prior to midnight UTC and the Storage
        * Transfer Service server receives the request on June 2, then it creates
        * a TransferJob with `schedule_start_date` set to June 2 and a
        * `start_time_of_day` set to midnight UTC. The first scheduled
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+       * place on June 3 at midnight UTC.
        * </pre>
        *
        * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -29741,16 +31176,19 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. The start date of a transfer. Date boundaries are determined
-       * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       * relative to UTC time. If `schedule_start_date` and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
        * are in the past relative to the job's creation time, the transfer starts
        * the day after you schedule the transfer request.
+       *
        * **Note:** When starting jobs at or near midnight UTC it is possible that
        * a job starts later than expected. For example, if you send an outbound
        * request on June 1 one millisecond prior to midnight UTC and the Storage
        * Transfer Service server receives the request on June 2, then it creates
        * a TransferJob with `schedule_start_date` set to June 2 and a
        * `start_time_of_day` set to midnight UTC. The first scheduled
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+       * place on June 3 at midnight UTC.
        * </pre>
        *
        * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -29774,16 +31212,19 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. The start date of a transfer. Date boundaries are determined
-       * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       * relative to UTC time. If `schedule_start_date` and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
        * are in the past relative to the job's creation time, the transfer starts
        * the day after you schedule the transfer request.
+       *
        * **Note:** When starting jobs at or near midnight UTC it is possible that
        * a job starts later than expected. For example, if you send an outbound
        * request on June 1 one millisecond prior to midnight UTC and the Storage
        * Transfer Service server receives the request on June 2, then it creates
        * a TransferJob with `schedule_start_date` set to June 2 and a
        * `start_time_of_day` set to midnight UTC. The first scheduled
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+       * place on June 3 at midnight UTC.
        * </pre>
        *
        * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -29804,16 +31245,19 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. The start date of a transfer. Date boundaries are determined
-       * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       * relative to UTC time. If `schedule_start_date` and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
        * are in the past relative to the job's creation time, the transfer starts
        * the day after you schedule the transfer request.
+       *
        * **Note:** When starting jobs at or near midnight UTC it is possible that
        * a job starts later than expected. For example, if you send an outbound
        * request on June 1 one millisecond prior to midnight UTC and the Storage
        * Transfer Service server receives the request on June 2, then it creates
        * a TransferJob with `schedule_start_date` set to June 2 and a
        * `start_time_of_day` set to midnight UTC. The first scheduled
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+       * place on June 3 at midnight UTC.
        * </pre>
        *
        * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -29840,16 +31284,19 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. The start date of a transfer. Date boundaries are determined
-       * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       * relative to UTC time. If `schedule_start_date` and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
        * are in the past relative to the job's creation time, the transfer starts
        * the day after you schedule the transfer request.
+       *
        * **Note:** When starting jobs at or near midnight UTC it is possible that
        * a job starts later than expected. For example, if you send an outbound
        * request on June 1 one millisecond prior to midnight UTC and the Storage
        * Transfer Service server receives the request on June 2, then it creates
        * a TransferJob with `schedule_start_date` set to June 2 and a
        * `start_time_of_day` set to midnight UTC. The first scheduled
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+       * place on June 3 at midnight UTC.
        * </pre>
        *
        * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -29870,16 +31317,19 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. The start date of a transfer. Date boundaries are determined
-       * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       * relative to UTC time. If `schedule_start_date` and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
        * are in the past relative to the job's creation time, the transfer starts
        * the day after you schedule the transfer request.
+       *
        * **Note:** When starting jobs at or near midnight UTC it is possible that
        * a job starts later than expected. For example, if you send an outbound
        * request on June 1 one millisecond prior to midnight UTC and the Storage
        * Transfer Service server receives the request on June 2, then it creates
        * a TransferJob with `schedule_start_date` set to June 2 and a
        * `start_time_of_day` set to midnight UTC. The first scheduled
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+       * place on June 3 at midnight UTC.
        * </pre>
        *
        * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -29895,16 +31345,19 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. The start date of a transfer. Date boundaries are determined
-       * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       * relative to UTC time. If `schedule_start_date` and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
        * are in the past relative to the job's creation time, the transfer starts
        * the day after you schedule the transfer request.
+       *
        * **Note:** When starting jobs at or near midnight UTC it is possible that
        * a job starts later than expected. For example, if you send an outbound
        * request on June 1 one millisecond prior to midnight UTC and the Storage
        * Transfer Service server receives the request on June 2, then it creates
        * a TransferJob with `schedule_start_date` set to June 2 and a
        * `start_time_of_day` set to midnight UTC. The first scheduled
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+       * place on June 3 at midnight UTC.
        * </pre>
        *
        * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -29924,16 +31377,19 @@ public final class TransferTypes {
        *
        * <pre>
        * Required. The start date of a transfer. Date boundaries are determined
-       * relative to UTC time. If `schedule_start_date` and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       * relative to UTC time. If `schedule_start_date` and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
        * are in the past relative to the job's creation time, the transfer starts
        * the day after you schedule the transfer request.
+       *
        * **Note:** When starting jobs at or near midnight UTC it is possible that
        * a job starts later than expected. For example, if you send an outbound
        * request on June 1 one millisecond prior to midnight UTC and the Storage
        * Transfer Service server receives the request on June 2, then it creates
        * a TransferJob with `schedule_start_date` set to June 2 and a
        * `start_time_of_day` set to midnight UTC. The first scheduled
-       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes place on June 3 at midnight UTC.
+       * [TransferOperation][google.storagetransfer.v1.TransferOperation] takes
+       * place on June 3 at midnight UTC.
        * </pre>
        *
        * <code>.google.type.Date schedule_start_date = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -29964,11 +31420,16 @@ public final class TransferTypes {
        * <pre>
        * The last day a transfer runs. Date boundaries are determined relative to
        * UTC time. A job runs once per 24 hours within the following guidelines:
-       * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+       *
+       * *   If `schedule_end_date` and
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * are the same and in
        *     the future relative to UTC, the transfer is executed only one time.
        * *   If `schedule_end_date` is later than `schedule_start_date`  and
        *     `schedule_end_date` is in the future relative to UTC, the job runs each
-       *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+       *     day at
+       *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       *     through `schedule_end_date`.
        * </pre>
        *
        * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -29984,11 +31445,16 @@ public final class TransferTypes {
        * <pre>
        * The last day a transfer runs. Date boundaries are determined relative to
        * UTC time. A job runs once per 24 hours within the following guidelines:
-       * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+       *
+       * *   If `schedule_end_date` and
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * are the same and in
        *     the future relative to UTC, the transfer is executed only one time.
        * *   If `schedule_end_date` is later than `schedule_start_date`  and
        *     `schedule_end_date` is in the future relative to UTC, the job runs each
-       *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+       *     day at
+       *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       *     through `schedule_end_date`.
        * </pre>
        *
        * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -30010,11 +31476,16 @@ public final class TransferTypes {
        * <pre>
        * The last day a transfer runs. Date boundaries are determined relative to
        * UTC time. A job runs once per 24 hours within the following guidelines:
-       * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+       *
+       * *   If `schedule_end_date` and
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * are the same and in
        *     the future relative to UTC, the transfer is executed only one time.
        * *   If `schedule_end_date` is later than `schedule_start_date`  and
        *     `schedule_end_date` is in the future relative to UTC, the job runs each
-       *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+       *     day at
+       *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       *     through `schedule_end_date`.
        * </pre>
        *
        * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -30038,11 +31509,16 @@ public final class TransferTypes {
        * <pre>
        * The last day a transfer runs. Date boundaries are determined relative to
        * UTC time. A job runs once per 24 hours within the following guidelines:
-       * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+       *
+       * *   If `schedule_end_date` and
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * are the same and in
        *     the future relative to UTC, the transfer is executed only one time.
        * *   If `schedule_end_date` is later than `schedule_start_date`  and
        *     `schedule_end_date` is in the future relative to UTC, the job runs each
-       *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+       *     day at
+       *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       *     through `schedule_end_date`.
        * </pre>
        *
        * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -30063,11 +31539,16 @@ public final class TransferTypes {
        * <pre>
        * The last day a transfer runs. Date boundaries are determined relative to
        * UTC time. A job runs once per 24 hours within the following guidelines:
-       * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+       *
+       * *   If `schedule_end_date` and
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * are the same and in
        *     the future relative to UTC, the transfer is executed only one time.
        * *   If `schedule_end_date` is later than `schedule_start_date`  and
        *     `schedule_end_date` is in the future relative to UTC, the job runs each
-       *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+       *     day at
+       *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       *     through `schedule_end_date`.
        * </pre>
        *
        * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -30094,11 +31575,16 @@ public final class TransferTypes {
        * <pre>
        * The last day a transfer runs. Date boundaries are determined relative to
        * UTC time. A job runs once per 24 hours within the following guidelines:
-       * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+       *
+       * *   If `schedule_end_date` and
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * are the same and in
        *     the future relative to UTC, the transfer is executed only one time.
        * *   If `schedule_end_date` is later than `schedule_start_date`  and
        *     `schedule_end_date` is in the future relative to UTC, the job runs each
-       *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+       *     day at
+       *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       *     through `schedule_end_date`.
        * </pre>
        *
        * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -30119,11 +31605,16 @@ public final class TransferTypes {
        * <pre>
        * The last day a transfer runs. Date boundaries are determined relative to
        * UTC time. A job runs once per 24 hours within the following guidelines:
-       * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+       *
+       * *   If `schedule_end_date` and
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * are the same and in
        *     the future relative to UTC, the transfer is executed only one time.
        * *   If `schedule_end_date` is later than `schedule_start_date`  and
        *     `schedule_end_date` is in the future relative to UTC, the job runs each
-       *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+       *     day at
+       *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       *     through `schedule_end_date`.
        * </pre>
        *
        * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -30139,11 +31630,16 @@ public final class TransferTypes {
        * <pre>
        * The last day a transfer runs. Date boundaries are determined relative to
        * UTC time. A job runs once per 24 hours within the following guidelines:
-       * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+       *
+       * *   If `schedule_end_date` and
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * are the same and in
        *     the future relative to UTC, the transfer is executed only one time.
        * *   If `schedule_end_date` is later than `schedule_start_date`  and
        *     `schedule_end_date` is in the future relative to UTC, the job runs each
-       *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+       *     day at
+       *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       *     through `schedule_end_date`.
        * </pre>
        *
        * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -30163,11 +31659,16 @@ public final class TransferTypes {
        * <pre>
        * The last day a transfer runs. Date boundaries are determined relative to
        * UTC time. A job runs once per 24 hours within the following guidelines:
-       * *   If `schedule_end_date` and [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] are the same and in
+       *
+       * *   If `schedule_end_date` and
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * are the same and in
        *     the future relative to UTC, the transfer is executed only one time.
        * *   If `schedule_end_date` is later than `schedule_start_date`  and
        *     `schedule_end_date` is in the future relative to UTC, the job runs each
-       *     day at [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day] through `schedule_end_date`.
+       *     day at
+       *     [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day]
+       *     through `schedule_end_date`.
        * </pre>
        *
        * <code>.google.type.Date schedule_end_date = 2;</code>
@@ -30199,11 +31700,16 @@ public final class TransferTypes {
        * <pre>
        * The time in UTC that a transfer job is scheduled to run. Transfers may
        * start later than this time.
+       *
        * If `start_time_of_day` is not specified:
+       *
        * *   One-time transfers run immediately.
        * *   Recurring transfers run immediately, and each day at midnight UTC,
-       *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *     through
+       *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *
        * If `start_time_of_day` is specified:
+       *
        * *   One-time transfers run at the specified time.
        * *   Recurring transfers run at the specified time each day, through
        *     `schedule_end_date`.
@@ -30222,11 +31728,16 @@ public final class TransferTypes {
        * <pre>
        * The time in UTC that a transfer job is scheduled to run. Transfers may
        * start later than this time.
+       *
        * If `start_time_of_day` is not specified:
+       *
        * *   One-time transfers run immediately.
        * *   Recurring transfers run immediately, and each day at midnight UTC,
-       *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *     through
+       *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *
        * If `start_time_of_day` is specified:
+       *
        * *   One-time transfers run at the specified time.
        * *   Recurring transfers run at the specified time each day, through
        *     `schedule_end_date`.
@@ -30251,11 +31762,16 @@ public final class TransferTypes {
        * <pre>
        * The time in UTC that a transfer job is scheduled to run. Transfers may
        * start later than this time.
+       *
        * If `start_time_of_day` is not specified:
+       *
        * *   One-time transfers run immediately.
        * *   Recurring transfers run immediately, and each day at midnight UTC,
-       *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *     through
+       *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *
        * If `start_time_of_day` is specified:
+       *
        * *   One-time transfers run at the specified time.
        * *   Recurring transfers run at the specified time each day, through
        *     `schedule_end_date`.
@@ -30282,11 +31798,16 @@ public final class TransferTypes {
        * <pre>
        * The time in UTC that a transfer job is scheduled to run. Transfers may
        * start later than this time.
+       *
        * If `start_time_of_day` is not specified:
+       *
        * *   One-time transfers run immediately.
        * *   Recurring transfers run immediately, and each day at midnight UTC,
-       *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *     through
+       *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *
        * If `start_time_of_day` is specified:
+       *
        * *   One-time transfers run at the specified time.
        * *   Recurring transfers run at the specified time each day, through
        *     `schedule_end_date`.
@@ -30310,11 +31831,16 @@ public final class TransferTypes {
        * <pre>
        * The time in UTC that a transfer job is scheduled to run. Transfers may
        * start later than this time.
+       *
        * If `start_time_of_day` is not specified:
+       *
        * *   One-time transfers run immediately.
        * *   Recurring transfers run immediately, and each day at midnight UTC,
-       *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *     through
+       *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *
        * If `start_time_of_day` is specified:
+       *
        * *   One-time transfers run at the specified time.
        * *   Recurring transfers run at the specified time each day, through
        *     `schedule_end_date`.
@@ -30344,11 +31870,16 @@ public final class TransferTypes {
        * <pre>
        * The time in UTC that a transfer job is scheduled to run. Transfers may
        * start later than this time.
+       *
        * If `start_time_of_day` is not specified:
+       *
        * *   One-time transfers run immediately.
        * *   Recurring transfers run immediately, and each day at midnight UTC,
-       *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *     through
+       *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *
        * If `start_time_of_day` is specified:
+       *
        * *   One-time transfers run at the specified time.
        * *   Recurring transfers run at the specified time each day, through
        *     `schedule_end_date`.
@@ -30372,11 +31903,16 @@ public final class TransferTypes {
        * <pre>
        * The time in UTC that a transfer job is scheduled to run. Transfers may
        * start later than this time.
+       *
        * If `start_time_of_day` is not specified:
+       *
        * *   One-time transfers run immediately.
        * *   Recurring transfers run immediately, and each day at midnight UTC,
-       *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *     through
+       *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *
        * If `start_time_of_day` is specified:
+       *
        * *   One-time transfers run at the specified time.
        * *   Recurring transfers run at the specified time each day, through
        *     `schedule_end_date`.
@@ -30395,11 +31931,16 @@ public final class TransferTypes {
        * <pre>
        * The time in UTC that a transfer job is scheduled to run. Transfers may
        * start later than this time.
+       *
        * If `start_time_of_day` is not specified:
+       *
        * *   One-time transfers run immediately.
        * *   Recurring transfers run immediately, and each day at midnight UTC,
-       *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *     through
+       *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *
        * If `start_time_of_day` is specified:
+       *
        * *   One-time transfers run at the specified time.
        * *   Recurring transfers run at the specified time each day, through
        *     `schedule_end_date`.
@@ -30422,11 +31963,16 @@ public final class TransferTypes {
        * <pre>
        * The time in UTC that a transfer job is scheduled to run. Transfers may
        * start later than this time.
+       *
        * If `start_time_of_day` is not specified:
+       *
        * *   One-time transfers run immediately.
        * *   Recurring transfers run immediately, and each day at midnight UTC,
-       *     through [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *     through
+       *     [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date].
+       *
        * If `start_time_of_day` is specified:
+       *
        * *   One-time transfers run at the specified time.
        * *   Recurring transfers run at the specified time each day, through
        *     `schedule_end_date`.
@@ -30462,13 +32008,19 @@ public final class TransferTypes {
        *
        * <pre>
        * The time in UTC that no further transfer operations are scheduled. Combined
-       * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-       * time for starting new transfer operations. This field must be greater than
-       * or equal to the timestamp corresponding to the combintation of
-       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-       * following:
+       * with
+       * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+       * `end_time_of_day` specifies the end date and time for starting new transfer
+       * operations. This field must be greater than or equal to the timestamp
+       * corresponding to the combintation of
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+       * and is subject to the following:
+       *
        * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
        *     a default value of `23:59:59` is used for `end_time_of_day`.
+       *
        * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
        *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
        * </pre>
@@ -30485,13 +32037,19 @@ public final class TransferTypes {
        *
        * <pre>
        * The time in UTC that no further transfer operations are scheduled. Combined
-       * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-       * time for starting new transfer operations. This field must be greater than
-       * or equal to the timestamp corresponding to the combintation of
-       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-       * following:
+       * with
+       * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+       * `end_time_of_day` specifies the end date and time for starting new transfer
+       * operations. This field must be greater than or equal to the timestamp
+       * corresponding to the combintation of
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+       * and is subject to the following:
+       *
        * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
        *     a default value of `23:59:59` is used for `end_time_of_day`.
+       *
        * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
        *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
        * </pre>
@@ -30514,13 +32072,19 @@ public final class TransferTypes {
        *
        * <pre>
        * The time in UTC that no further transfer operations are scheduled. Combined
-       * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-       * time for starting new transfer operations. This field must be greater than
-       * or equal to the timestamp corresponding to the combintation of
-       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-       * following:
+       * with
+       * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+       * `end_time_of_day` specifies the end date and time for starting new transfer
+       * operations. This field must be greater than or equal to the timestamp
+       * corresponding to the combintation of
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+       * and is subject to the following:
+       *
        * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
        *     a default value of `23:59:59` is used for `end_time_of_day`.
+       *
        * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
        *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
        * </pre>
@@ -30545,13 +32109,19 @@ public final class TransferTypes {
        *
        * <pre>
        * The time in UTC that no further transfer operations are scheduled. Combined
-       * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-       * time for starting new transfer operations. This field must be greater than
-       * or equal to the timestamp corresponding to the combintation of
-       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-       * following:
+       * with
+       * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+       * `end_time_of_day` specifies the end date and time for starting new transfer
+       * operations. This field must be greater than or equal to the timestamp
+       * corresponding to the combintation of
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+       * and is subject to the following:
+       *
        * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
        *     a default value of `23:59:59` is used for `end_time_of_day`.
+       *
        * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
        *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
        * </pre>
@@ -30573,13 +32143,19 @@ public final class TransferTypes {
        *
        * <pre>
        * The time in UTC that no further transfer operations are scheduled. Combined
-       * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-       * time for starting new transfer operations. This field must be greater than
-       * or equal to the timestamp corresponding to the combintation of
-       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-       * following:
+       * with
+       * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+       * `end_time_of_day` specifies the end date and time for starting new transfer
+       * operations. This field must be greater than or equal to the timestamp
+       * corresponding to the combintation of
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+       * and is subject to the following:
+       *
        * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
        *     a default value of `23:59:59` is used for `end_time_of_day`.
+       *
        * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
        *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
        * </pre>
@@ -30607,13 +32183,19 @@ public final class TransferTypes {
        *
        * <pre>
        * The time in UTC that no further transfer operations are scheduled. Combined
-       * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-       * time for starting new transfer operations. This field must be greater than
-       * or equal to the timestamp corresponding to the combintation of
-       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-       * following:
+       * with
+       * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+       * `end_time_of_day` specifies the end date and time for starting new transfer
+       * operations. This field must be greater than or equal to the timestamp
+       * corresponding to the combintation of
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+       * and is subject to the following:
+       *
        * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
        *     a default value of `23:59:59` is used for `end_time_of_day`.
+       *
        * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
        *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
        * </pre>
@@ -30635,13 +32217,19 @@ public final class TransferTypes {
        *
        * <pre>
        * The time in UTC that no further transfer operations are scheduled. Combined
-       * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-       * time for starting new transfer operations. This field must be greater than
-       * or equal to the timestamp corresponding to the combintation of
-       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-       * following:
+       * with
+       * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+       * `end_time_of_day` specifies the end date and time for starting new transfer
+       * operations. This field must be greater than or equal to the timestamp
+       * corresponding to the combintation of
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+       * and is subject to the following:
+       *
        * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
        *     a default value of `23:59:59` is used for `end_time_of_day`.
+       *
        * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
        *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
        * </pre>
@@ -30658,13 +32246,19 @@ public final class TransferTypes {
        *
        * <pre>
        * The time in UTC that no further transfer operations are scheduled. Combined
-       * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-       * time for starting new transfer operations. This field must be greater than
-       * or equal to the timestamp corresponding to the combintation of
-       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-       * following:
+       * with
+       * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+       * `end_time_of_day` specifies the end date and time for starting new transfer
+       * operations. This field must be greater than or equal to the timestamp
+       * corresponding to the combintation of
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+       * and is subject to the following:
+       *
        * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
        *     a default value of `23:59:59` is used for `end_time_of_day`.
+       *
        * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
        *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
        * </pre>
@@ -30685,13 +32279,19 @@ public final class TransferTypes {
        *
        * <pre>
        * The time in UTC that no further transfer operations are scheduled. Combined
-       * with [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date], `end_time_of_day` specifies the end date and
-       * time for starting new transfer operations. This field must be greater than
-       * or equal to the timestamp corresponding to the combintation of
-       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date] and [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day], and is subject to the
-       * following:
+       * with
+       * [schedule_end_date][google.storagetransfer.v1.Schedule.schedule_end_date],
+       * `end_time_of_day` specifies the end date and time for starting new transfer
+       * operations. This field must be greater than or equal to the timestamp
+       * corresponding to the combintation of
+       * [schedule_start_date][google.storagetransfer.v1.Schedule.schedule_start_date]
+       * and
+       * [start_time_of_day][google.storagetransfer.v1.Schedule.start_time_of_day],
+       * and is subject to the following:
+       *
        * *   If `end_time_of_day` is not set and `schedule_end_date` is set, then
        *     a default value of `23:59:59` is used for `end_time_of_day`.
+       *
        * *   If `end_time_of_day` is set and `schedule_end_date` is not set, then
        *     [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] is returned.
        * </pre>
@@ -30981,6 +32581,1371 @@ public final class TransferTypes {
     }
   }
 
+  public interface EventStreamOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.EventStream)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies a unique name of the resource such as AWS SQS
+     * ARN in the form 'arn:aws:sqs:region:account_id:queue_name',
+     * or Pub/Sub subscription resource name in the form
+     * 'projects/{project}/subscriptions/{sub}'.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies a unique name of the resource such as AWS SQS
+     * ARN in the form 'arn:aws:sqs:region:account_id:queue_name',
+     * or Pub/Sub subscription resource name in the form
+     * 'projects/{project}/subscriptions/{sub}'.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the date and time that Storage Transfer Service starts
+     * listening for events from this stream. If no start time is specified or
+     * start time is in the past, Storage Transfer Service starts listening
+     * immediately.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+     *
+     * @return Whether the eventStreamStartTime field is set.
+     */
+    boolean hasEventStreamStartTime();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the date and time that Storage Transfer Service starts
+     * listening for events from this stream. If no start time is specified or
+     * start time is in the past, Storage Transfer Service starts listening
+     * immediately.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+     *
+     * @return The eventStreamStartTime.
+     */
+    com.google.protobuf.Timestamp getEventStreamStartTime();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the date and time that Storage Transfer Service starts
+     * listening for events from this stream. If no start time is specified or
+     * start time is in the past, Storage Transfer Service starts listening
+     * immediately.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getEventStreamStartTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the data and time at which Storage Transfer Service stops
+     * listening for events from this stream. After this time, any transfers in
+     * progress will complete, but no new transfers are initiated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+     *
+     * @return Whether the eventStreamExpirationTime field is set.
+     */
+    boolean hasEventStreamExpirationTime();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the data and time at which Storage Transfer Service stops
+     * listening for events from this stream. After this time, any transfers in
+     * progress will complete, but no new transfers are initiated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+     *
+     * @return The eventStreamExpirationTime.
+     */
+    com.google.protobuf.Timestamp getEventStreamExpirationTime();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the data and time at which Storage Transfer Service stops
+     * listening for events from this stream. After this time, any transfers in
+     * progress will complete, but no new transfers are initiated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getEventStreamExpirationTimeOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the Event-driven transfer options. Event-driven transfers listen to
+   * an event stream to transfer updated files.
+   * </pre>
+   *
+   * Protobuf type {@code google.storagetransfer.v1.EventStream}
+   */
+  public static final class EventStream extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.storagetransfer.v1.EventStream)
+      EventStreamOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use EventStream.newBuilder() to construct.
+    private EventStream(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EventStream() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EventStream();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.storagetransfer.v1.proto.TransferTypes
+          .internal_static_google_storagetransfer_v1_EventStream_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.storagetransfer.v1.proto.TransferTypes
+          .internal_static_google_storagetransfer_v1_EventStream_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.storagetransfer.v1.proto.TransferTypes.EventStream.class,
+              com.google.storagetransfer.v1.proto.TransferTypes.EventStream.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies a unique name of the resource such as AWS SQS
+     * ARN in the form 'arn:aws:sqs:region:account_id:queue_name',
+     * or Pub/Sub subscription resource name in the form
+     * 'projects/{project}/subscriptions/{sub}'.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies a unique name of the resource such as AWS SQS
+     * ARN in the form 'arn:aws:sqs:region:account_id:queue_name',
+     * or Pub/Sub subscription resource name in the form
+     * 'projects/{project}/subscriptions/{sub}'.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EVENT_STREAM_START_TIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp eventStreamStartTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the date and time that Storage Transfer Service starts
+     * listening for events from this stream. If no start time is specified or
+     * start time is in the past, Storage Transfer Service starts listening
+     * immediately.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+     *
+     * @return Whether the eventStreamStartTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasEventStreamStartTime() {
+      return eventStreamStartTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the date and time that Storage Transfer Service starts
+     * listening for events from this stream. If no start time is specified or
+     * start time is in the past, Storage Transfer Service starts listening
+     * immediately.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+     *
+     * @return The eventStreamStartTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getEventStreamStartTime() {
+      return eventStreamStartTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : eventStreamStartTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the date and time that Storage Transfer Service starts
+     * listening for events from this stream. If no start time is specified or
+     * start time is in the past, Storage Transfer Service starts listening
+     * immediately.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getEventStreamStartTimeOrBuilder() {
+      return eventStreamStartTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : eventStreamStartTime_;
+    }
+
+    public static final int EVENT_STREAM_EXPIRATION_TIME_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp eventStreamExpirationTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the data and time at which Storage Transfer Service stops
+     * listening for events from this stream. After this time, any transfers in
+     * progress will complete, but no new transfers are initiated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+     *
+     * @return Whether the eventStreamExpirationTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasEventStreamExpirationTime() {
+      return eventStreamExpirationTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the data and time at which Storage Transfer Service stops
+     * listening for events from this stream. After this time, any transfers in
+     * progress will complete, but no new transfers are initiated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+     *
+     * @return The eventStreamExpirationTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getEventStreamExpirationTime() {
+      return eventStreamExpirationTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : eventStreamExpirationTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the data and time at which Storage Transfer Service stops
+     * listening for events from this stream. After this time, any transfers in
+     * progress will complete, but no new transfers are initiated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getEventStreamExpirationTimeOrBuilder() {
+      return eventStreamExpirationTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : eventStreamExpirationTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (eventStreamStartTime_ != null) {
+        output.writeMessage(2, getEventStreamStartTime());
+      }
+      if (eventStreamExpirationTime_ != null) {
+        output.writeMessage(3, getEventStreamExpirationTime());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (eventStreamStartTime_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEventStreamStartTime());
+      }
+      if (eventStreamExpirationTime_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, getEventStreamExpirationTime());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.storagetransfer.v1.proto.TransferTypes.EventStream)) {
+        return super.equals(obj);
+      }
+      com.google.storagetransfer.v1.proto.TransferTypes.EventStream other =
+          (com.google.storagetransfer.v1.proto.TransferTypes.EventStream) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (hasEventStreamStartTime() != other.hasEventStreamStartTime()) return false;
+      if (hasEventStreamStartTime()) {
+        if (!getEventStreamStartTime().equals(other.getEventStreamStartTime())) return false;
+      }
+      if (hasEventStreamExpirationTime() != other.hasEventStreamExpirationTime()) return false;
+      if (hasEventStreamExpirationTime()) {
+        if (!getEventStreamExpirationTime().equals(other.getEventStreamExpirationTime()))
+          return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (hasEventStreamStartTime()) {
+        hash = (37 * hash) + EVENT_STREAM_START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getEventStreamStartTime().hashCode();
+      }
+      if (hasEventStreamExpirationTime()) {
+        hash = (37 * hash) + EVENT_STREAM_EXPIRATION_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getEventStreamExpirationTime().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.storagetransfer.v1.proto.TransferTypes.EventStream prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the Event-driven transfer options. Event-driven transfers listen to
+     * an event stream to transfer updated files.
+     * </pre>
+     *
+     * Protobuf type {@code google.storagetransfer.v1.EventStream}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.storagetransfer.v1.EventStream)
+        com.google.storagetransfer.v1.proto.TransferTypes.EventStreamOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_EventStream_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_EventStream_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.storagetransfer.v1.proto.TransferTypes.EventStream.class,
+                com.google.storagetransfer.v1.proto.TransferTypes.EventStream.Builder.class);
+      }
+
+      // Construct using com.google.storagetransfer.v1.proto.TransferTypes.EventStream.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        eventStreamStartTime_ = null;
+        if (eventStreamStartTimeBuilder_ != null) {
+          eventStreamStartTimeBuilder_.dispose();
+          eventStreamStartTimeBuilder_ = null;
+        }
+        eventStreamExpirationTime_ = null;
+        if (eventStreamExpirationTimeBuilder_ != null) {
+          eventStreamExpirationTimeBuilder_.dispose();
+          eventStreamExpirationTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_EventStream_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.EventStream
+          getDefaultInstanceForType() {
+        return com.google.storagetransfer.v1.proto.TransferTypes.EventStream.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.EventStream build() {
+        com.google.storagetransfer.v1.proto.TransferTypes.EventStream result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.EventStream buildPartial() {
+        com.google.storagetransfer.v1.proto.TransferTypes.EventStream result =
+            new com.google.storagetransfer.v1.proto.TransferTypes.EventStream(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.EventStream result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.eventStreamStartTime_ =
+              eventStreamStartTimeBuilder_ == null
+                  ? eventStreamStartTime_
+                  : eventStreamStartTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.eventStreamExpirationTime_ =
+              eventStreamExpirationTimeBuilder_ == null
+                  ? eventStreamExpirationTime_
+                  : eventStreamExpirationTimeBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.storagetransfer.v1.proto.TransferTypes.EventStream) {
+          return mergeFrom((com.google.storagetransfer.v1.proto.TransferTypes.EventStream) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.storagetransfer.v1.proto.TransferTypes.EventStream other) {
+        if (other
+            == com.google.storagetransfer.v1.proto.TransferTypes.EventStream.getDefaultInstance())
+          return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasEventStreamStartTime()) {
+          mergeEventStreamStartTime(other.getEventStreamStartTime());
+        }
+        if (other.hasEventStreamExpirationTime()) {
+          mergeEventStreamExpirationTime(other.getEventStreamExpirationTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getEventStreamStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getEventStreamExpirationTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies a unique name of the resource such as AWS SQS
+       * ARN in the form 'arn:aws:sqs:region:account_id:queue_name',
+       * or Pub/Sub subscription resource name in the form
+       * 'projects/{project}/subscriptions/{sub}'.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies a unique name of the resource such as AWS SQS
+       * ARN in the form 'arn:aws:sqs:region:account_id:queue_name',
+       * or Pub/Sub subscription resource name in the form
+       * 'projects/{project}/subscriptions/{sub}'.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies a unique name of the resource such as AWS SQS
+       * ARN in the form 'arn:aws:sqs:region:account_id:queue_name',
+       * or Pub/Sub subscription resource name in the form
+       * 'projects/{project}/subscriptions/{sub}'.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies a unique name of the resource such as AWS SQS
+       * ARN in the form 'arn:aws:sqs:region:account_id:queue_name',
+       * or Pub/Sub subscription resource name in the form
+       * 'projects/{project}/subscriptions/{sub}'.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies a unique name of the resource such as AWS SQS
+       * ARN in the form 'arn:aws:sqs:region:account_id:queue_name',
+       * or Pub/Sub subscription resource name in the form
+       * 'projects/{project}/subscriptions/{sub}'.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp eventStreamStartTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          eventStreamStartTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the date and time that Storage Transfer Service starts
+       * listening for events from this stream. If no start time is specified or
+       * start time is in the past, Storage Transfer Service starts listening
+       * immediately.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+       *
+       * @return Whether the eventStreamStartTime field is set.
+       */
+      public boolean hasEventStreamStartTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the date and time that Storage Transfer Service starts
+       * listening for events from this stream. If no start time is specified or
+       * start time is in the past, Storage Transfer Service starts listening
+       * immediately.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+       *
+       * @return The eventStreamStartTime.
+       */
+      public com.google.protobuf.Timestamp getEventStreamStartTime() {
+        if (eventStreamStartTimeBuilder_ == null) {
+          return eventStreamStartTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : eventStreamStartTime_;
+        } else {
+          return eventStreamStartTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the date and time that Storage Transfer Service starts
+       * listening for events from this stream. If no start time is specified or
+       * start time is in the past, Storage Transfer Service starts listening
+       * immediately.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+       */
+      public Builder setEventStreamStartTime(com.google.protobuf.Timestamp value) {
+        if (eventStreamStartTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          eventStreamStartTime_ = value;
+        } else {
+          eventStreamStartTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the date and time that Storage Transfer Service starts
+       * listening for events from this stream. If no start time is specified or
+       * start time is in the past, Storage Transfer Service starts listening
+       * immediately.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+       */
+      public Builder setEventStreamStartTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (eventStreamStartTimeBuilder_ == null) {
+          eventStreamStartTime_ = builderForValue.build();
+        } else {
+          eventStreamStartTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the date and time that Storage Transfer Service starts
+       * listening for events from this stream. If no start time is specified or
+       * start time is in the past, Storage Transfer Service starts listening
+       * immediately.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+       */
+      public Builder mergeEventStreamStartTime(com.google.protobuf.Timestamp value) {
+        if (eventStreamStartTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && eventStreamStartTime_ != null
+              && eventStreamStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getEventStreamStartTimeBuilder().mergeFrom(value);
+          } else {
+            eventStreamStartTime_ = value;
+          }
+        } else {
+          eventStreamStartTimeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the date and time that Storage Transfer Service starts
+       * listening for events from this stream. If no start time is specified or
+       * start time is in the past, Storage Transfer Service starts listening
+       * immediately.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+       */
+      public Builder clearEventStreamStartTime() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        eventStreamStartTime_ = null;
+        if (eventStreamStartTimeBuilder_ != null) {
+          eventStreamStartTimeBuilder_.dispose();
+          eventStreamStartTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the date and time that Storage Transfer Service starts
+       * listening for events from this stream. If no start time is specified or
+       * start time is in the past, Storage Transfer Service starts listening
+       * immediately.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getEventStreamStartTimeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getEventStreamStartTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the date and time that Storage Transfer Service starts
+       * listening for events from this stream. If no start time is specified or
+       * start time is in the past, Storage Transfer Service starts listening
+       * immediately.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getEventStreamStartTimeOrBuilder() {
+        if (eventStreamStartTimeBuilder_ != null) {
+          return eventStreamStartTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return eventStreamStartTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : eventStreamStartTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the date and time that Storage Transfer Service starts
+       * listening for events from this stream. If no start time is specified or
+       * start time is in the past, Storage Transfer Service starts listening
+       * immediately.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_start_time = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getEventStreamStartTimeFieldBuilder() {
+        if (eventStreamStartTimeBuilder_ == null) {
+          eventStreamStartTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getEventStreamStartTime(), getParentForChildren(), isClean());
+          eventStreamStartTime_ = null;
+        }
+        return eventStreamStartTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp eventStreamExpirationTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          eventStreamExpirationTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the data and time at which Storage Transfer Service stops
+       * listening for events from this stream. After this time, any transfers in
+       * progress will complete, but no new transfers are initiated.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+       *
+       * @return Whether the eventStreamExpirationTime field is set.
+       */
+      public boolean hasEventStreamExpirationTime() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the data and time at which Storage Transfer Service stops
+       * listening for events from this stream. After this time, any transfers in
+       * progress will complete, but no new transfers are initiated.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+       *
+       * @return The eventStreamExpirationTime.
+       */
+      public com.google.protobuf.Timestamp getEventStreamExpirationTime() {
+        if (eventStreamExpirationTimeBuilder_ == null) {
+          return eventStreamExpirationTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : eventStreamExpirationTime_;
+        } else {
+          return eventStreamExpirationTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the data and time at which Storage Transfer Service stops
+       * listening for events from this stream. After this time, any transfers in
+       * progress will complete, but no new transfers are initiated.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+       */
+      public Builder setEventStreamExpirationTime(com.google.protobuf.Timestamp value) {
+        if (eventStreamExpirationTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          eventStreamExpirationTime_ = value;
+        } else {
+          eventStreamExpirationTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the data and time at which Storage Transfer Service stops
+       * listening for events from this stream. After this time, any transfers in
+       * progress will complete, but no new transfers are initiated.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+       */
+      public Builder setEventStreamExpirationTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (eventStreamExpirationTimeBuilder_ == null) {
+          eventStreamExpirationTime_ = builderForValue.build();
+        } else {
+          eventStreamExpirationTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the data and time at which Storage Transfer Service stops
+       * listening for events from this stream. After this time, any transfers in
+       * progress will complete, but no new transfers are initiated.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+       */
+      public Builder mergeEventStreamExpirationTime(com.google.protobuf.Timestamp value) {
+        if (eventStreamExpirationTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && eventStreamExpirationTime_ != null
+              && eventStreamExpirationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getEventStreamExpirationTimeBuilder().mergeFrom(value);
+          } else {
+            eventStreamExpirationTime_ = value;
+          }
+        } else {
+          eventStreamExpirationTimeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the data and time at which Storage Transfer Service stops
+       * listening for events from this stream. After this time, any transfers in
+       * progress will complete, but no new transfers are initiated.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+       */
+      public Builder clearEventStreamExpirationTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        eventStreamExpirationTime_ = null;
+        if (eventStreamExpirationTimeBuilder_ != null) {
+          eventStreamExpirationTimeBuilder_.dispose();
+          eventStreamExpirationTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the data and time at which Storage Transfer Service stops
+       * listening for events from this stream. After this time, any transfers in
+       * progress will complete, but no new transfers are initiated.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getEventStreamExpirationTimeBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getEventStreamExpirationTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the data and time at which Storage Transfer Service stops
+       * listening for events from this stream. After this time, any transfers in
+       * progress will complete, but no new transfers are initiated.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getEventStreamExpirationTimeOrBuilder() {
+        if (eventStreamExpirationTimeBuilder_ != null) {
+          return eventStreamExpirationTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return eventStreamExpirationTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : eventStreamExpirationTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the data and time at which Storage Transfer Service stops
+       * listening for events from this stream. After this time, any transfers in
+       * progress will complete, but no new transfers are initiated.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp event_stream_expiration_time = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getEventStreamExpirationTimeFieldBuilder() {
+        if (eventStreamExpirationTimeBuilder_ == null) {
+          eventStreamExpirationTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getEventStreamExpirationTime(), getParentForChildren(), isClean());
+          eventStreamExpirationTime_ = null;
+        }
+        return eventStreamExpirationTimeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.storagetransfer.v1.EventStream)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.storagetransfer.v1.EventStream)
+    private static final com.google.storagetransfer.v1.proto.TransferTypes.EventStream
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.storagetransfer.v1.proto.TransferTypes.EventStream();
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.EventStream
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EventStream> PARSER =
+        new com.google.protobuf.AbstractParser<EventStream>() {
+          @java.lang.Override
+          public EventStream parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EventStream> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EventStream> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.EventStream
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface TransferJobOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.TransferJob)
@@ -30994,19 +33959,25 @@ public final class TransferTypes {
      * created.  If this field is empty in a CreateTransferJobRequest, Storage
      * Transfer Service assigns a unique name. Otherwise, the specified name
      * is used as the unique name for this job.
+     *
      * If the specified name is in use by a job, the creation request fails with
      * an [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+     *
      * This name must start with `"transferJobs/"` prefix and end with a letter or
      * a number, and should be no more than 128 characters. For transfers
      * involving PosixFilesystem, this name must start with `transferJobs/OPI`
      * specifically. For all other transfer types, this name must not start with
      * `transferJobs/OPI`.
+     *
      * Non-PosixFilesystem example:
      * `"transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+     *
      * PosixFilesystem example:
      * `"transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+     *
      * Applications must not rely on the enforcement of naming requirements
      * involving OPI.
+     *
      * Invalid job names fail with an
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error.
      * </pre>
@@ -31024,19 +33995,25 @@ public final class TransferTypes {
      * created.  If this field is empty in a CreateTransferJobRequest, Storage
      * Transfer Service assigns a unique name. Otherwise, the specified name
      * is used as the unique name for this job.
+     *
      * If the specified name is in use by a job, the creation request fails with
      * an [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+     *
      * This name must start with `"transferJobs/"` prefix and end with a letter or
      * a number, and should be no more than 128 characters. For transfers
      * involving PosixFilesystem, this name must start with `transferJobs/OPI`
      * specifically. For all other transfer types, this name must not start with
      * `transferJobs/OPI`.
+     *
      * Non-PosixFilesystem example:
      * `"transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+     *
      * PosixFilesystem example:
      * `"transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+     *
      * Applications must not rely on the enforcement of naming requirements
      * involving OPI.
+     *
      * Invalid job names fail with an
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error.
      * </pre>
@@ -31258,13 +34235,54 @@ public final class TransferTypes {
      *
      *
      * <pre>
+     * Specifies the event stream for the transfer job for event-driven transfers.
+     * When EventStream is specified, the Schedule fields are ignored.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+     *
+     * @return Whether the eventStream field is set.
+     */
+    boolean hasEventStream();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the event stream for the transfer job for event-driven transfers.
+     * When EventStream is specified, the Schedule fields are ignored.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+     *
+     * @return The eventStream.
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.EventStream getEventStream();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the event stream for the transfer job for event-driven transfers.
+     * When EventStream is specified, the Schedule fields are ignored.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.EventStreamOrBuilder
+        getEventStreamOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Status of the job. This value MUST be specified for
      * `CreateTransferJobRequests`.
+     *
      * **Note:** The effect of the new job status takes place during a subsequent
      * job run. For example, if you change the job status from
-     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an operation
-     * spawned by the transfer is running, the status change would not affect the
-     * current operation.
+     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to
+     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an
+     * operation spawned by the transfer is running, the status change would not
+     * affect the current operation.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.TransferJob.Status status = 6;</code>
@@ -31278,11 +34296,13 @@ public final class TransferTypes {
      * <pre>
      * Status of the job. This value MUST be specified for
      * `CreateTransferJobRequests`.
+     *
      * **Note:** The effect of the new job status takes place during a subsequent
      * job run. For example, if you change the job status from
-     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an operation
-     * spawned by the transfer is running, the status change would not affect the
-     * current operation.
+     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to
+     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an
+     * operation spawned by the transfer is running, the status change would not
+     * affect the current operation.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.TransferJob.Status status = 6;</code>
@@ -31473,11 +34493,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TransferJob();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -31694,19 +34709,25 @@ public final class TransferTypes {
      * created.  If this field is empty in a CreateTransferJobRequest, Storage
      * Transfer Service assigns a unique name. Otherwise, the specified name
      * is used as the unique name for this job.
+     *
      * If the specified name is in use by a job, the creation request fails with
      * an [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+     *
      * This name must start with `"transferJobs/"` prefix and end with a letter or
      * a number, and should be no more than 128 characters. For transfers
      * involving PosixFilesystem, this name must start with `transferJobs/OPI`
      * specifically. For all other transfer types, this name must not start with
      * `transferJobs/OPI`.
+     *
      * Non-PosixFilesystem example:
      * `"transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+     *
      * PosixFilesystem example:
      * `"transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+     *
      * Applications must not rely on the enforcement of naming requirements
      * involving OPI.
+     *
      * Invalid job names fail with an
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error.
      * </pre>
@@ -31735,19 +34756,25 @@ public final class TransferTypes {
      * created.  If this field is empty in a CreateTransferJobRequest, Storage
      * Transfer Service assigns a unique name. Otherwise, the specified name
      * is used as the unique name for this job.
+     *
      * If the specified name is in use by a job, the creation request fails with
      * an [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+     *
      * This name must start with `"transferJobs/"` prefix and end with a letter or
      * a number, and should be no more than 128 characters. For transfers
      * involving PosixFilesystem, this name must start with `transferJobs/OPI`
      * specifically. For all other transfer types, this name must not start with
      * `transferJobs/OPI`.
+     *
      * Non-PosixFilesystem example:
      * `"transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+     *
      * PosixFilesystem example:
      * `"transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+     *
      * Applications must not rely on the enforcement of naming requirements
      * involving OPI.
+     *
      * Invalid job names fail with an
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error.
      * </pre>
@@ -32093,6 +35120,60 @@ public final class TransferTypes {
           : schedule_;
     }
 
+    public static final int EVENT_STREAM_FIELD_NUMBER = 15;
+    private com.google.storagetransfer.v1.proto.TransferTypes.EventStream eventStream_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the event stream for the transfer job for event-driven transfers.
+     * When EventStream is specified, the Schedule fields are ignored.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+     *
+     * @return Whether the eventStream field is set.
+     */
+    @java.lang.Override
+    public boolean hasEventStream() {
+      return eventStream_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the event stream for the transfer job for event-driven transfers.
+     * When EventStream is specified, the Schedule fields are ignored.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+     *
+     * @return The eventStream.
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.EventStream getEventStream() {
+      return eventStream_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.EventStream.getDefaultInstance()
+          : eventStream_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the event stream for the transfer job for event-driven transfers.
+     * When EventStream is specified, the Schedule fields are ignored.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.EventStreamOrBuilder
+        getEventStreamOrBuilder() {
+      return eventStream_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.EventStream.getDefaultInstance()
+          : eventStream_;
+    }
+
     public static final int STATUS_FIELD_NUMBER = 6;
     private int status_ = 0;
     /**
@@ -32101,11 +35182,13 @@ public final class TransferTypes {
      * <pre>
      * Status of the job. This value MUST be specified for
      * `CreateTransferJobRequests`.
+     *
      * **Note:** The effect of the new job status takes place during a subsequent
      * job run. For example, if you change the job status from
-     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an operation
-     * spawned by the transfer is running, the status change would not affect the
-     * current operation.
+     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to
+     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an
+     * operation spawned by the transfer is running, the status change would not
+     * affect the current operation.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.TransferJob.Status status = 6;</code>
@@ -32122,11 +35205,13 @@ public final class TransferTypes {
      * <pre>
      * Status of the job. This value MUST be specified for
      * `CreateTransferJobRequests`.
+     *
      * **Note:** The effect of the new job status takes place during a subsequent
      * job run. For example, if you change the job status from
-     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an operation
-     * spawned by the transfer is running, the status change would not affect the
-     * current operation.
+     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to
+     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an
+     * operation spawned by the transfer is running, the status change would not
+     * affect the current operation.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.TransferJob.Status status = 6;</code>
@@ -32415,6 +35500,9 @@ public final class TransferTypes {
       if (loggingConfig_ != null) {
         output.writeMessage(14, getLoggingConfig());
       }
+      if (eventStream_ != null) {
+        output.writeMessage(15, getEventStream());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -32464,6 +35552,9 @@ public final class TransferTypes {
       if (loggingConfig_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLoggingConfig());
       }
+      if (eventStream_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getEventStream());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -32498,6 +35589,10 @@ public final class TransferTypes {
       if (hasSchedule() != other.hasSchedule()) return false;
       if (hasSchedule()) {
         if (!getSchedule().equals(other.getSchedule())) return false;
+      }
+      if (hasEventStream() != other.hasEventStream()) return false;
+      if (hasEventStream()) {
+        if (!getEventStream().equals(other.getEventStream())) return false;
       }
       if (status_ != other.status_) return false;
       if (hasCreationTime() != other.hasCreationTime()) return false;
@@ -32545,6 +35640,10 @@ public final class TransferTypes {
       if (hasSchedule()) {
         hash = (37 * hash) + SCHEDULE_FIELD_NUMBER;
         hash = (53 * hash) + getSchedule().hashCode();
+      }
+      if (hasEventStream()) {
+        hash = (37 * hash) + EVENT_STREAM_FIELD_NUMBER;
+        hash = (53 * hash) + getEventStream().hashCode();
       }
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
@@ -32728,6 +35827,11 @@ public final class TransferTypes {
           scheduleBuilder_.dispose();
           scheduleBuilder_ = null;
         }
+        eventStream_ = null;
+        if (eventStreamBuilder_ != null) {
+          eventStreamBuilder_.dispose();
+          eventStreamBuilder_ = null;
+        }
         status_ = 0;
         creationTime_ = null;
         if (creationTimeBuilder_ != null) {
@@ -32810,23 +35914,27 @@ public final class TransferTypes {
           result.schedule_ = scheduleBuilder_ == null ? schedule_ : scheduleBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.status_ = status_;
+          result.eventStream_ =
+              eventStreamBuilder_ == null ? eventStream_ : eventStreamBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
           result.creationTime_ =
               creationTimeBuilder_ == null ? creationTime_ : creationTimeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           result.lastModificationTime_ =
               lastModificationTimeBuilder_ == null
                   ? lastModificationTime_
                   : lastModificationTimeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
           result.deletionTime_ =
               deletionTimeBuilder_ == null ? deletionTime_ : deletionTimeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
           result.latestOperationName_ = latestOperationName_;
         }
       }
@@ -32908,6 +36016,9 @@ public final class TransferTypes {
         if (other.hasSchedule()) {
           mergeSchedule(other.getSchedule());
         }
+        if (other.hasEventStream()) {
+          mergeEventStream(other.getEventStream());
+        }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
         }
@@ -32922,7 +36033,7 @@ public final class TransferTypes {
         }
         if (!other.getLatestOperationName().isEmpty()) {
           latestOperationName_ = other.latestOperationName_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -32984,26 +36095,26 @@ public final class TransferTypes {
               case 48:
                 {
                   status_ = input.readEnum();
-                  bitField0_ |= 0x00000080;
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 48
               case 58:
                 {
                   input.readMessage(getCreationTimeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000100;
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 58
               case 66:
                 {
                   input.readMessage(
                       getLastModificationTimeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000200;
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 66
               case 74:
                 {
                   input.readMessage(getDeletionTimeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000400;
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 74
               case 90:
@@ -33016,7 +36127,7 @@ public final class TransferTypes {
               case 98:
                 {
                   latestOperationName_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000800;
+                  bitField0_ |= 0x00001000;
                   break;
                 } // case 98
               case 114:
@@ -33025,6 +36136,12 @@ public final class TransferTypes {
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 114
+              case 122:
+                {
+                  input.readMessage(getEventStreamFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 122
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -33053,19 +36170,25 @@ public final class TransferTypes {
        * created.  If this field is empty in a CreateTransferJobRequest, Storage
        * Transfer Service assigns a unique name. Otherwise, the specified name
        * is used as the unique name for this job.
+       *
        * If the specified name is in use by a job, the creation request fails with
        * an [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+       *
        * This name must start with `"transferJobs/"` prefix and end with a letter or
        * a number, and should be no more than 128 characters. For transfers
        * involving PosixFilesystem, this name must start with `transferJobs/OPI`
        * specifically. For all other transfer types, this name must not start with
        * `transferJobs/OPI`.
+       *
        * Non-PosixFilesystem example:
        * `"transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+       *
        * PosixFilesystem example:
        * `"transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+       *
        * Applications must not rely on the enforcement of naming requirements
        * involving OPI.
+       *
        * Invalid job names fail with an
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error.
        * </pre>
@@ -33093,19 +36216,25 @@ public final class TransferTypes {
        * created.  If this field is empty in a CreateTransferJobRequest, Storage
        * Transfer Service assigns a unique name. Otherwise, the specified name
        * is used as the unique name for this job.
+       *
        * If the specified name is in use by a job, the creation request fails with
        * an [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+       *
        * This name must start with `"transferJobs/"` prefix and end with a letter or
        * a number, and should be no more than 128 characters. For transfers
        * involving PosixFilesystem, this name must start with `transferJobs/OPI`
        * specifically. For all other transfer types, this name must not start with
        * `transferJobs/OPI`.
+       *
        * Non-PosixFilesystem example:
        * `"transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+       *
        * PosixFilesystem example:
        * `"transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+       *
        * Applications must not rely on the enforcement of naming requirements
        * involving OPI.
+       *
        * Invalid job names fail with an
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error.
        * </pre>
@@ -33133,19 +36262,25 @@ public final class TransferTypes {
        * created.  If this field is empty in a CreateTransferJobRequest, Storage
        * Transfer Service assigns a unique name. Otherwise, the specified name
        * is used as the unique name for this job.
+       *
        * If the specified name is in use by a job, the creation request fails with
        * an [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+       *
        * This name must start with `"transferJobs/"` prefix and end with a letter or
        * a number, and should be no more than 128 characters. For transfers
        * involving PosixFilesystem, this name must start with `transferJobs/OPI`
        * specifically. For all other transfer types, this name must not start with
        * `transferJobs/OPI`.
+       *
        * Non-PosixFilesystem example:
        * `"transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+       *
        * PosixFilesystem example:
        * `"transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+       *
        * Applications must not rely on the enforcement of naming requirements
        * involving OPI.
+       *
        * Invalid job names fail with an
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error.
        * </pre>
@@ -33172,19 +36307,25 @@ public final class TransferTypes {
        * created.  If this field is empty in a CreateTransferJobRequest, Storage
        * Transfer Service assigns a unique name. Otherwise, the specified name
        * is used as the unique name for this job.
+       *
        * If the specified name is in use by a job, the creation request fails with
        * an [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+       *
        * This name must start with `"transferJobs/"` prefix and end with a letter or
        * a number, and should be no more than 128 characters. For transfers
        * involving PosixFilesystem, this name must start with `transferJobs/OPI`
        * specifically. For all other transfer types, this name must not start with
        * `transferJobs/OPI`.
+       *
        * Non-PosixFilesystem example:
        * `"transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+       *
        * PosixFilesystem example:
        * `"transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+       *
        * Applications must not rely on the enforcement of naming requirements
        * involving OPI.
+       *
        * Invalid job names fail with an
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error.
        * </pre>
@@ -33207,19 +36348,25 @@ public final class TransferTypes {
        * created.  If this field is empty in a CreateTransferJobRequest, Storage
        * Transfer Service assigns a unique name. Otherwise, the specified name
        * is used as the unique name for this job.
+       *
        * If the specified name is in use by a job, the creation request fails with
        * an [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+       *
        * This name must start with `"transferJobs/"` prefix and end with a letter or
        * a number, and should be no more than 128 characters. For transfers
        * involving PosixFilesystem, this name must start with `transferJobs/OPI`
        * specifically. For all other transfer types, this name must not start with
        * `transferJobs/OPI`.
+       *
        * Non-PosixFilesystem example:
        * `"transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+       *
        * PosixFilesystem example:
        * `"transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+       *
        * Applications must not rely on the enforcement of naming requirements
        * involving OPI.
+       *
        * Invalid job names fail with an
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error.
        * </pre>
@@ -34257,6 +37404,205 @@ public final class TransferTypes {
         return scheduleBuilder_;
       }
 
+      private com.google.storagetransfer.v1.proto.TransferTypes.EventStream eventStream_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.EventStream,
+              com.google.storagetransfer.v1.proto.TransferTypes.EventStream.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.EventStreamOrBuilder>
+          eventStreamBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the event stream for the transfer job for event-driven transfers.
+       * When EventStream is specified, the Schedule fields are ignored.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+       *
+       * @return Whether the eventStream field is set.
+       */
+      public boolean hasEventStream() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the event stream for the transfer job for event-driven transfers.
+       * When EventStream is specified, the Schedule fields are ignored.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+       *
+       * @return The eventStream.
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.EventStream getEventStream() {
+        if (eventStreamBuilder_ == null) {
+          return eventStream_ == null
+              ? com.google.storagetransfer.v1.proto.TransferTypes.EventStream.getDefaultInstance()
+              : eventStream_;
+        } else {
+          return eventStreamBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the event stream for the transfer job for event-driven transfers.
+       * When EventStream is specified, the Schedule fields are ignored.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+       */
+      public Builder setEventStream(
+          com.google.storagetransfer.v1.proto.TransferTypes.EventStream value) {
+        if (eventStreamBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          eventStream_ = value;
+        } else {
+          eventStreamBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the event stream for the transfer job for event-driven transfers.
+       * When EventStream is specified, the Schedule fields are ignored.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+       */
+      public Builder setEventStream(
+          com.google.storagetransfer.v1.proto.TransferTypes.EventStream.Builder builderForValue) {
+        if (eventStreamBuilder_ == null) {
+          eventStream_ = builderForValue.build();
+        } else {
+          eventStreamBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the event stream for the transfer job for event-driven transfers.
+       * When EventStream is specified, the Schedule fields are ignored.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+       */
+      public Builder mergeEventStream(
+          com.google.storagetransfer.v1.proto.TransferTypes.EventStream value) {
+        if (eventStreamBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)
+              && eventStream_ != null
+              && eventStream_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.EventStream
+                      .getDefaultInstance()) {
+            getEventStreamBuilder().mergeFrom(value);
+          } else {
+            eventStream_ = value;
+          }
+        } else {
+          eventStreamBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the event stream for the transfer job for event-driven transfers.
+       * When EventStream is specified, the Schedule fields are ignored.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+       */
+      public Builder clearEventStream() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        eventStream_ = null;
+        if (eventStreamBuilder_ != null) {
+          eventStreamBuilder_.dispose();
+          eventStreamBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the event stream for the transfer job for event-driven transfers.
+       * When EventStream is specified, the Schedule fields are ignored.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.EventStream.Builder
+          getEventStreamBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getEventStreamFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the event stream for the transfer job for event-driven transfers.
+       * When EventStream is specified, the Schedule fields are ignored.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.EventStreamOrBuilder
+          getEventStreamOrBuilder() {
+        if (eventStreamBuilder_ != null) {
+          return eventStreamBuilder_.getMessageOrBuilder();
+        } else {
+          return eventStream_ == null
+              ? com.google.storagetransfer.v1.proto.TransferTypes.EventStream.getDefaultInstance()
+              : eventStream_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the event stream for the transfer job for event-driven transfers.
+       * When EventStream is specified, the Schedule fields are ignored.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.EventStream event_stream = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.EventStream,
+              com.google.storagetransfer.v1.proto.TransferTypes.EventStream.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.EventStreamOrBuilder>
+          getEventStreamFieldBuilder() {
+        if (eventStreamBuilder_ == null) {
+          eventStreamBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.storagetransfer.v1.proto.TransferTypes.EventStream,
+                  com.google.storagetransfer.v1.proto.TransferTypes.EventStream.Builder,
+                  com.google.storagetransfer.v1.proto.TransferTypes.EventStreamOrBuilder>(
+                  getEventStream(), getParentForChildren(), isClean());
+          eventStream_ = null;
+        }
+        return eventStreamBuilder_;
+      }
+
       private int status_ = 0;
       /**
        *
@@ -34264,11 +37610,13 @@ public final class TransferTypes {
        * <pre>
        * Status of the job. This value MUST be specified for
        * `CreateTransferJobRequests`.
+       *
        * **Note:** The effect of the new job status takes place during a subsequent
        * job run. For example, if you change the job status from
-       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an operation
-       * spawned by the transfer is running, the status change would not affect the
-       * current operation.
+       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to
+       * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an
+       * operation spawned by the transfer is running, the status change would not
+       * affect the current operation.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.TransferJob.Status status = 6;</code>
@@ -34285,11 +37633,13 @@ public final class TransferTypes {
        * <pre>
        * Status of the job. This value MUST be specified for
        * `CreateTransferJobRequests`.
+       *
        * **Note:** The effect of the new job status takes place during a subsequent
        * job run. For example, if you change the job status from
-       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an operation
-       * spawned by the transfer is running, the status change would not affect the
-       * current operation.
+       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to
+       * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an
+       * operation spawned by the transfer is running, the status change would not
+       * affect the current operation.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.TransferJob.Status status = 6;</code>
@@ -34299,7 +37649,7 @@ public final class TransferTypes {
        */
       public Builder setStatusValue(int value) {
         status_ = value;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -34309,11 +37659,13 @@ public final class TransferTypes {
        * <pre>
        * Status of the job. This value MUST be specified for
        * `CreateTransferJobRequests`.
+       *
        * **Note:** The effect of the new job status takes place during a subsequent
        * job run. For example, if you change the job status from
-       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an operation
-       * spawned by the transfer is running, the status change would not affect the
-       * current operation.
+       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to
+       * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an
+       * operation spawned by the transfer is running, the status change would not
+       * affect the current operation.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.TransferJob.Status status = 6;</code>
@@ -34334,11 +37686,13 @@ public final class TransferTypes {
        * <pre>
        * Status of the job. This value MUST be specified for
        * `CreateTransferJobRequests`.
+       *
        * **Note:** The effect of the new job status takes place during a subsequent
        * job run. For example, if you change the job status from
-       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an operation
-       * spawned by the transfer is running, the status change would not affect the
-       * current operation.
+       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to
+       * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an
+       * operation spawned by the transfer is running, the status change would not
+       * affect the current operation.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.TransferJob.Status status = 6;</code>
@@ -34351,7 +37705,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         status_ = value.getNumber();
         onChanged();
         return this;
@@ -34362,11 +37716,13 @@ public final class TransferTypes {
        * <pre>
        * Status of the job. This value MUST be specified for
        * `CreateTransferJobRequests`.
+       *
        * **Note:** The effect of the new job status takes place during a subsequent
        * job run. For example, if you change the job status from
-       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an operation
-       * spawned by the transfer is running, the status change would not affect the
-       * current operation.
+       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED] to
+       * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and an
+       * operation spawned by the transfer is running, the status change would not
+       * affect the current operation.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.TransferJob.Status status = 6;</code>
@@ -34374,7 +37730,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         status_ = 0;
         onChanged();
         return this;
@@ -34400,7 +37756,7 @@ public final class TransferTypes {
        * @return Whether the creationTime field is set.
        */
       public boolean hasCreationTime() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
        *
@@ -34444,7 +37800,7 @@ public final class TransferTypes {
         } else {
           creationTimeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -34465,7 +37821,7 @@ public final class TransferTypes {
         } else {
           creationTimeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -34482,7 +37838,7 @@ public final class TransferTypes {
        */
       public Builder mergeCreationTime(com.google.protobuf.Timestamp value) {
         if (creationTimeBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0)
+          if (((bitField0_ & 0x00000200) != 0)
               && creationTime_ != null
               && creationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
             getCreationTimeBuilder().mergeFrom(value);
@@ -34492,7 +37848,7 @@ public final class TransferTypes {
         } else {
           creationTimeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -34508,7 +37864,7 @@ public final class TransferTypes {
        * </code>
        */
       public Builder clearCreationTime() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         creationTime_ = null;
         if (creationTimeBuilder_ != null) {
           creationTimeBuilder_.dispose();
@@ -34529,7 +37885,7 @@ public final class TransferTypes {
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getCreationTimeBuilder() {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
         return getCreationTimeFieldBuilder().getBuilder();
       }
@@ -34601,7 +37957,7 @@ public final class TransferTypes {
        * @return Whether the lastModificationTime field is set.
        */
       public boolean hasLastModificationTime() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        *
@@ -34645,7 +38001,7 @@ public final class TransferTypes {
         } else {
           lastModificationTimeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -34667,7 +38023,7 @@ public final class TransferTypes {
         } else {
           lastModificationTimeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -34684,7 +38040,7 @@ public final class TransferTypes {
        */
       public Builder mergeLastModificationTime(com.google.protobuf.Timestamp value) {
         if (lastModificationTimeBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) != 0)
+          if (((bitField0_ & 0x00000400) != 0)
               && lastModificationTime_ != null
               && lastModificationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
             getLastModificationTimeBuilder().mergeFrom(value);
@@ -34694,7 +38050,7 @@ public final class TransferTypes {
         } else {
           lastModificationTimeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -34710,7 +38066,7 @@ public final class TransferTypes {
        * </code>
        */
       public Builder clearLastModificationTime() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         lastModificationTime_ = null;
         if (lastModificationTimeBuilder_ != null) {
           lastModificationTimeBuilder_.dispose();
@@ -34731,7 +38087,7 @@ public final class TransferTypes {
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getLastModificationTimeBuilder() {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return getLastModificationTimeFieldBuilder().getBuilder();
       }
@@ -34803,7 +38159,7 @@ public final class TransferTypes {
        * @return Whether the deletionTime field is set.
        */
       public boolean hasDeletionTime() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
        *
@@ -34847,7 +38203,7 @@ public final class TransferTypes {
         } else {
           deletionTimeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -34868,7 +38224,7 @@ public final class TransferTypes {
         } else {
           deletionTimeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -34885,7 +38241,7 @@ public final class TransferTypes {
        */
       public Builder mergeDeletionTime(com.google.protobuf.Timestamp value) {
         if (deletionTimeBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) != 0)
+          if (((bitField0_ & 0x00000800) != 0)
               && deletionTime_ != null
               && deletionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
             getDeletionTimeBuilder().mergeFrom(value);
@@ -34895,7 +38251,7 @@ public final class TransferTypes {
         } else {
           deletionTimeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -34911,7 +38267,7 @@ public final class TransferTypes {
        * </code>
        */
       public Builder clearDeletionTime() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         deletionTime_ = null;
         if (deletionTimeBuilder_ != null) {
           deletionTimeBuilder_.dispose();
@@ -34932,7 +38288,7 @@ public final class TransferTypes {
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getDeletionTimeBuilder() {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return getDeletionTimeFieldBuilder().getBuilder();
       }
@@ -35049,7 +38405,7 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         latestOperationName_ = value;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -35067,7 +38423,7 @@ public final class TransferTypes {
        */
       public Builder clearLatestOperationName() {
         latestOperationName_ = getDefaultInstance().getLatestOperationName();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
         return this;
       }
@@ -35090,7 +38446,7 @@ public final class TransferTypes {
         }
         checkByteStringIsUtf8(value);
         latestOperationName_ = value;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -35266,18 +38622,13 @@ public final class TransferTypes {
 
     private ErrorLogEntry() {
       url_ = "";
-      errorDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      errorDetails_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ErrorLogEntry();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -35351,7 +38702,8 @@ public final class TransferTypes {
     public static final int ERROR_DETAILS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList errorDetails_;
+    private com.google.protobuf.LazyStringArrayList errorDetails_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -35631,8 +38983,7 @@ public final class TransferTypes {
         super.clear();
         bitField0_ = 0;
         url_ = "";
-        errorDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        errorDetails_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -35661,7 +39012,6 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry result =
             new com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -35669,20 +39019,15 @@ public final class TransferTypes {
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          errorDetails_ = errorDetails_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.errorDetails_ = errorDetails_;
-      }
-
       private void buildPartial0(
           com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.url_ = url_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          errorDetails_.makeImmutable();
+          result.errorDetails_ = errorDetails_;
         }
       }
 
@@ -35744,7 +39089,7 @@ public final class TransferTypes {
         if (!other.errorDetails_.isEmpty()) {
           if (errorDetails_.isEmpty()) {
             errorDetails_ = other.errorDetails_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureErrorDetailsIsMutable();
             errorDetails_.addAll(other.errorDetails_);
@@ -35920,14 +39265,14 @@ public final class TransferTypes {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList errorDetails_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList errorDetails_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureErrorDetailsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!errorDetails_.isModifiable()) {
           errorDetails_ = new com.google.protobuf.LazyStringArrayList(errorDetails_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -35941,7 +39286,8 @@ public final class TransferTypes {
        * @return A list containing the errorDetails.
        */
       public com.google.protobuf.ProtocolStringList getErrorDetailsList() {
-        return errorDetails_.getUnmodifiableView();
+        errorDetails_.makeImmutable();
+        return errorDetails_;
       }
       /**
        *
@@ -36006,6 +39352,7 @@ public final class TransferTypes {
         }
         ensureErrorDetailsIsMutable();
         errorDetails_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -36027,6 +39374,7 @@ public final class TransferTypes {
         }
         ensureErrorDetailsIsMutable();
         errorDetails_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -36045,6 +39393,7 @@ public final class TransferTypes {
       public Builder addAllErrorDetails(java.lang.Iterable<java.lang.String> values) {
         ensureErrorDetailsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errorDetails_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -36060,8 +39409,9 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearErrorDetails() {
-        errorDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        errorDetails_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -36084,6 +39434,7 @@ public final class TransferTypes {
         checkByteStringIsUtf8(value);
         ensureErrorDetailsIsMutable();
         errorDetails_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -36203,6 +39554,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Error samples.
+     *
      * At most 5 error log entries are recorded for a given
      * error code for a single transfer operation.
      * </pre>
@@ -36216,6 +39568,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Error samples.
+     *
      * At most 5 error log entries are recorded for a given
      * error code for a single transfer operation.
      * </pre>
@@ -36228,6 +39581,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Error samples.
+     *
      * At most 5 error log entries are recorded for a given
      * error code for a single transfer operation.
      * </pre>
@@ -36240,6 +39594,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Error samples.
+     *
      * At most 5 error log entries are recorded for a given
      * error code for a single transfer operation.
      * </pre>
@@ -36254,6 +39609,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Error samples.
+     *
      * At most 5 error log entries are recorded for a given
      * error code for a single transfer operation.
      * </pre>
@@ -36292,11 +39648,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ErrorSummary();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -36376,6 +39727,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Error samples.
+     *
      * At most 5 error log entries are recorded for a given
      * error code for a single transfer operation.
      * </pre>
@@ -36392,6 +39744,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Error samples.
+     *
      * At most 5 error log entries are recorded for a given
      * error code for a single transfer operation.
      * </pre>
@@ -36409,6 +39762,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Error samples.
+     *
      * At most 5 error log entries are recorded for a given
      * error code for a single transfer operation.
      * </pre>
@@ -36424,6 +39778,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Error samples.
+     *
      * At most 5 error log entries are recorded for a given
      * error code for a single transfer operation.
      * </pre>
@@ -36440,6 +39795,7 @@ public final class TransferTypes {
      *
      * <pre>
      * Error samples.
+     *
      * At most 5 error log entries are recorded for a given
      * error code for a single transfer operation.
      * </pre>
@@ -37064,6 +40420,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37083,6 +40440,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37101,6 +40459,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37120,6 +40479,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37145,6 +40505,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37168,6 +40529,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37193,6 +40555,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37218,6 +40581,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37240,6 +40604,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37263,6 +40628,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37287,6 +40653,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37308,6 +40675,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37329,6 +40697,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37344,6 +40713,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37363,6 +40733,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37383,6 +40754,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37401,6 +40773,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37420,6 +40793,7 @@ public final class TransferTypes {
        *
        * <pre>
        * Error samples.
+       *
        * At most 5 error log entries are recorded for a given
        * error code for a single transfer operation.
        * </pre>
@@ -37744,6 +41118,7 @@ public final class TransferTypes {
      *
      * <pre>
      * For transfers involving PosixFilesystem only.
+     *
      * Number of directories found while listing. For example, if the root
      * directory of the transfer is `base/` and there are two other directories,
      * `a/` and `b/` under this directory, the count after listing `base/`,
@@ -37761,6 +41136,7 @@ public final class TransferTypes {
      *
      * <pre>
      * For transfers involving PosixFilesystem only.
+     *
      * Number of listing failures for each directory found at the source.
      * Potential failures when listing a directory include permission failure or
      * block failure. If listing a directory fails, no files in the directory are
@@ -37778,6 +41154,7 @@ public final class TransferTypes {
      *
      * <pre>
      * For transfers involving PosixFilesystem only.
+     *
      * Number of successful listings for each directory found at the source.
      * </pre>
      *
@@ -37838,11 +41215,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TransferCounters();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -38163,6 +41535,7 @@ public final class TransferTypes {
      *
      * <pre>
      * For transfers involving PosixFilesystem only.
+     *
      * Number of directories found while listing. For example, if the root
      * directory of the transfer is `base/` and there are two other directories,
      * `a/` and `b/` under this directory, the count after listing `base/`,
@@ -38185,6 +41558,7 @@ public final class TransferTypes {
      *
      * <pre>
      * For transfers involving PosixFilesystem only.
+     *
      * Number of listing failures for each directory found at the source.
      * Potential failures when listing a directory include permission failure or
      * block failure. If listing a directory fails, no files in the directory are
@@ -38207,6 +41581,7 @@ public final class TransferTypes {
      *
      * <pre>
      * For transfers involving PosixFilesystem only.
+     *
      * Number of successful listings for each directory found at the source.
      * </pre>
      *
@@ -39963,6 +43338,7 @@ public final class TransferTypes {
        *
        * <pre>
        * For transfers involving PosixFilesystem only.
+       *
        * Number of directories found while listing. For example, if the root
        * directory of the transfer is `base/` and there are two other directories,
        * `a/` and `b/` under this directory, the count after listing `base/`,
@@ -39982,6 +43358,7 @@ public final class TransferTypes {
        *
        * <pre>
        * For transfers involving PosixFilesystem only.
+       *
        * Number of directories found while listing. For example, if the root
        * directory of the transfer is `base/` and there are two other directories,
        * `a/` and `b/` under this directory, the count after listing `base/`,
@@ -40005,6 +43382,7 @@ public final class TransferTypes {
        *
        * <pre>
        * For transfers involving PosixFilesystem only.
+       *
        * Number of directories found while listing. For example, if the root
        * directory of the transfer is `base/` and there are two other directories,
        * `a/` and `b/` under this directory, the count after listing `base/`,
@@ -40028,6 +43406,7 @@ public final class TransferTypes {
        *
        * <pre>
        * For transfers involving PosixFilesystem only.
+       *
        * Number of listing failures for each directory found at the source.
        * Potential failures when listing a directory include permission failure or
        * block failure. If listing a directory fails, no files in the directory are
@@ -40047,6 +43426,7 @@ public final class TransferTypes {
        *
        * <pre>
        * For transfers involving PosixFilesystem only.
+       *
        * Number of listing failures for each directory found at the source.
        * Potential failures when listing a directory include permission failure or
        * block failure. If listing a directory fails, no files in the directory are
@@ -40070,6 +43450,7 @@ public final class TransferTypes {
        *
        * <pre>
        * For transfers involving PosixFilesystem only.
+       *
        * Number of listing failures for each directory found at the source.
        * Potential failures when listing a directory include permission failure or
        * block failure. If listing a directory fails, no files in the directory are
@@ -40093,6 +43474,7 @@ public final class TransferTypes {
        *
        * <pre>
        * For transfers involving PosixFilesystem only.
+       *
        * Number of successful listings for each directory found at the source.
        * </pre>
        *
@@ -40109,6 +43491,7 @@ public final class TransferTypes {
        *
        * <pre>
        * For transfers involving PosixFilesystem only.
+       *
        * Number of successful listings for each directory found at the source.
        * </pre>
        *
@@ -40129,6 +43512,7 @@ public final class TransferTypes {
        *
        * <pre>
        * For transfers involving PosixFilesystem only.
+       *
        * Number of successful listings for each directory found at the source.
        * </pre>
        *
@@ -40464,16 +43848,24 @@ public final class TransferTypes {
    * Specification to configure notifications published to Pub/Sub.
    * Notifications are published to the customer-provided topic using the
    * following `PubsubMessage.attributes`:
-   * * `"eventType"`: one of the [EventType][google.storagetransfer.v1.NotificationConfig.EventType] values
-   * * `"payloadFormat"`: one of the [PayloadFormat][google.storagetransfer.v1.NotificationConfig.PayloadFormat] values
-   * * `"projectId"`: the [project_id][google.storagetransfer.v1.TransferOperation.project_id] of the
+   *
+   * * `"eventType"`: one of the
+   * [EventType][google.storagetransfer.v1.NotificationConfig.EventType] values
+   * * `"payloadFormat"`: one of the
+   * [PayloadFormat][google.storagetransfer.v1.NotificationConfig.PayloadFormat]
+   * values
+   * * `"projectId"`: the
+   * [project_id][google.storagetransfer.v1.TransferOperation.project_id] of the
    * `TransferOperation`
    * * `"transferJobName"`: the
-   * [transfer_job_name][google.storagetransfer.v1.TransferOperation.transfer_job_name] of the
+   * [transfer_job_name][google.storagetransfer.v1.TransferOperation.transfer_job_name]
+   * of the `TransferOperation`
+   * * `"transferOperationName"`: the
+   * [name][google.storagetransfer.v1.TransferOperation.name] of the
    * `TransferOperation`
-   * * `"transferOperationName"`: the [name][google.storagetransfer.v1.TransferOperation.name] of the
-   * `TransferOperation`
-   * The `PubsubMessage.data` contains a [TransferOperation][google.storagetransfer.v1.TransferOperation] resource
+   *
+   * The `PubsubMessage.data` contains a
+   * [TransferOperation][google.storagetransfer.v1.TransferOperation] resource
    * formatted according to the specified `PayloadFormat`.
    * </pre>
    *
@@ -40501,11 +43893,6 @@ public final class TransferTypes {
       return new NotificationConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferTypes
           .internal_static_google_storagetransfer_v1_NotificationConfig_descriptor;
@@ -40527,6 +43914,7 @@ public final class TransferTypes {
      * <pre>
      * Enum for specifying event types for which notifications are to be
      * published.
+     *
      * Additional event types may be added in the future. Clients should either
      * safely ignore unrecognized event types or explicitly specify which event
      * types they are prepared to accept.
@@ -41308,16 +44696,24 @@ public final class TransferTypes {
      * Specification to configure notifications published to Pub/Sub.
      * Notifications are published to the customer-provided topic using the
      * following `PubsubMessage.attributes`:
-     * * `"eventType"`: one of the [EventType][google.storagetransfer.v1.NotificationConfig.EventType] values
-     * * `"payloadFormat"`: one of the [PayloadFormat][google.storagetransfer.v1.NotificationConfig.PayloadFormat] values
-     * * `"projectId"`: the [project_id][google.storagetransfer.v1.TransferOperation.project_id] of the
+     *
+     * * `"eventType"`: one of the
+     * [EventType][google.storagetransfer.v1.NotificationConfig.EventType] values
+     * * `"payloadFormat"`: one of the
+     * [PayloadFormat][google.storagetransfer.v1.NotificationConfig.PayloadFormat]
+     * values
+     * * `"projectId"`: the
+     * [project_id][google.storagetransfer.v1.TransferOperation.project_id] of the
      * `TransferOperation`
      * * `"transferJobName"`: the
-     * [transfer_job_name][google.storagetransfer.v1.TransferOperation.transfer_job_name] of the
+     * [transfer_job_name][google.storagetransfer.v1.TransferOperation.transfer_job_name]
+     * of the `TransferOperation`
+     * * `"transferOperationName"`: the
+     * [name][google.storagetransfer.v1.TransferOperation.name] of the
      * `TransferOperation`
-     * * `"transferOperationName"`: the [name][google.storagetransfer.v1.TransferOperation.name] of the
-     * `TransferOperation`
-     * The `PubsubMessage.data` contains a [TransferOperation][google.storagetransfer.v1.TransferOperation] resource
+     *
+     * The `PubsubMessage.data` contains a
+     * [TransferOperation][google.storagetransfer.v1.TransferOperation] resource
      * formatted according to the specified `PayloadFormat`.
      * </pre>
      *
@@ -42125,7 +45521,8 @@ public final class TransferTypes {
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -42141,7 +45538,8 @@ public final class TransferTypes {
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -42156,7 +45554,8 @@ public final class TransferTypes {
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -42173,7 +45572,8 @@ public final class TransferTypes {
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -42188,7 +45588,8 @@ public final class TransferTypes {
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -42205,7 +45606,8 @@ public final class TransferTypes {
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>
@@ -42223,7 +45625,8 @@ public final class TransferTypes {
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>
@@ -42239,7 +45642,8 @@ public final class TransferTypes {
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>
@@ -42257,7 +45661,8 @@ public final class TransferTypes {
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>
@@ -42273,7 +45678,8 @@ public final class TransferTypes {
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>
@@ -42304,10 +45710,12 @@ public final class TransferTypes {
    *
    * <pre>
    * Specifies the logging behavior for transfer operations.
+   *
    * For cloud-to-cloud transfers, logs are sent to Cloud Logging. See
    * [Read transfer
    * logs](https://cloud.google.com/storage-transfer/docs/read-transfer-logs) for
    * details.
+   *
    * For transfers to or from a POSIX file system, logs are stored in the
    * Cloud Storage bucket that is the source or sink of the transfer.
    * See [Managing Transfer for on-premises jobs]
@@ -42336,11 +45744,6 @@ public final class TransferTypes {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LoggingConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -42737,7 +46140,8 @@ public final class TransferTypes {
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -42760,7 +46164,8 @@ public final class TransferTypes {
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -42778,7 +46183,8 @@ public final class TransferTypes {
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -42798,7 +46204,8 @@ public final class TransferTypes {
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -42816,7 +46223,8 @@ public final class TransferTypes {
      * <pre>
      * Specifies the actions to be logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -42864,7 +46272,8 @@ public final class TransferTypes {
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>
@@ -42888,7 +46297,8 @@ public final class TransferTypes {
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>
@@ -42907,7 +46317,8 @@ public final class TransferTypes {
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>
@@ -42928,7 +46339,8 @@ public final class TransferTypes {
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>
@@ -42947,7 +46359,8 @@ public final class TransferTypes {
      * <pre>
      * States in which `log_actions` are logged. If empty, no logs are generated.
      * Not supported for transfers with PosixFilesystem data sources; use
-     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+     * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+     * instead.
      * </pre>
      *
      * <code>
@@ -43203,10 +46616,12 @@ public final class TransferTypes {
      *
      * <pre>
      * Specifies the logging behavior for transfer operations.
+     *
      * For cloud-to-cloud transfers, logs are sent to Cloud Logging. See
      * [Read transfer
      * logs](https://cloud.google.com/storage-transfer/docs/read-transfer-logs) for
      * details.
+     *
      * For transfers to or from a POSIX file system, logs are stored in the
      * Cloud Storage bucket that is the source or sink of the transfer.
      * See [Managing Transfer for on-premises jobs]
@@ -43487,7 +46902,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43509,7 +46925,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43526,7 +46943,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43545,7 +46963,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43572,7 +46991,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43597,7 +47017,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43626,7 +47047,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43646,7 +47068,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43663,7 +47086,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43681,7 +47105,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43703,7 +47128,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43724,7 +47150,8 @@ public final class TransferTypes {
        * <pre>
        * Specifies the actions to be logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
@@ -43757,7 +47184,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -43780,7 +47208,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -43798,7 +47227,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -43818,7 +47248,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -43847,7 +47278,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -43874,7 +47306,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -43904,7 +47337,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -43925,7 +47359,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -43943,7 +47378,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -43962,7 +47398,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -43985,7 +47422,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -44007,7 +47445,8 @@ public final class TransferTypes {
        * <pre>
        * States in which `log_actions` are logged. If empty, no logs are generated.
        * Not supported for transfers with PosixFilesystem data sources; use
-       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs] instead.
+       * [enable_onprem_gcs_transfer_logs][google.storagetransfer.v1.LoggingConfig.enable_onprem_gcs_transfer_logs]
+       * instead.
        * </pre>
        *
        * <code>
@@ -44280,6 +47719,42 @@ public final class TransferTypes {
      *
      *
      * <pre>
+     * Cloud Logging configuration.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+     *
+     * @return Whether the loggingConfig field is set.
+     */
+    boolean hasLoggingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Logging configuration.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+     *
+     * @return The loggingConfig.
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig getLoggingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Logging configuration.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfigOrBuilder
+        getLoggingConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Start time of this transfer execution.
      * </pre>
      *
@@ -44520,11 +47995,6 @@ public final class TransferTypes {
       return new TransferOperation();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferTypes
           .internal_static_google_storagetransfer_v1_TransferOperation_descriptor;
@@ -44620,6 +48090,16 @@ public final class TransferTypes {
        * <code>QUEUED = 6;</code>
        */
       QUEUED(6),
+      /**
+       *
+       *
+       * <pre>
+       * The operation is suspending and draining the ongoing work to completion.
+       * </pre>
+       *
+       * <code>SUSPENDING = 7;</code>
+       */
+      SUSPENDING(7),
       UNRECOGNIZED(-1),
       ;
 
@@ -44693,6 +48173,16 @@ public final class TransferTypes {
        * <code>QUEUED = 6;</code>
        */
       public static final int QUEUED_VALUE = 6;
+      /**
+       *
+       *
+       * <pre>
+       * The operation is suspending and draining the ongoing work to completion.
+       * </pre>
+       *
+       * <code>SUSPENDING = 7;</code>
+       */
+      public static final int SUSPENDING_VALUE = 7;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -44732,6 +48222,8 @@ public final class TransferTypes {
             return ABORTED;
           case 6:
             return QUEUED;
+          case 7:
+            return SUSPENDING;
           default:
             return null;
         }
@@ -44993,6 +48485,57 @@ public final class TransferTypes {
           ? com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig
               .getDefaultInstance()
           : notificationConfig_;
+    }
+
+    public static final int LOGGING_CONFIG_FIELD_NUMBER = 12;
+    private com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig loggingConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Logging configuration.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+     *
+     * @return Whether the loggingConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasLoggingConfig() {
+      return loggingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Logging configuration.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+     *
+     * @return The loggingConfig.
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig getLoggingConfig() {
+      return loggingConfig_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.getDefaultInstance()
+          : loggingConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Logging configuration.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfigOrBuilder
+        getLoggingConfigOrBuilder() {
+      return loggingConfig_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.getDefaultInstance()
+          : loggingConfig_;
     }
 
     public static final int START_TIME_FIELD_NUMBER = 4;
@@ -45350,6 +48893,9 @@ public final class TransferTypes {
       if (notificationConfig_ != null) {
         output.writeMessage(10, getNotificationConfig());
       }
+      if (loggingConfig_ != null) {
+        output.writeMessage(12, getLoggingConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -45394,6 +48940,9 @@ public final class TransferTypes {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(10, getNotificationConfig());
       }
+      if (loggingConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getLoggingConfig());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -45419,6 +48968,10 @@ public final class TransferTypes {
       if (hasNotificationConfig() != other.hasNotificationConfig()) return false;
       if (hasNotificationConfig()) {
         if (!getNotificationConfig().equals(other.getNotificationConfig())) return false;
+      }
+      if (hasLoggingConfig() != other.hasLoggingConfig()) return false;
+      if (hasLoggingConfig()) {
+        if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
       }
       if (hasStartTime() != other.hasStartTime()) return false;
       if (hasStartTime()) {
@@ -45457,6 +49010,10 @@ public final class TransferTypes {
       if (hasNotificationConfig()) {
         hash = (37 * hash) + NOTIFICATION_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getNotificationConfig().hashCode();
+      }
+      if (hasLoggingConfig()) {
+        hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getLoggingConfig().hashCode();
       }
       if (hasStartTime()) {
         hash = (37 * hash) + START_TIME_FIELD_NUMBER;
@@ -45634,6 +49191,11 @@ public final class TransferTypes {
           notificationConfigBuilder_.dispose();
           notificationConfigBuilder_ = null;
         }
+        loggingConfig_ = null;
+        if (loggingConfigBuilder_ != null) {
+          loggingConfigBuilder_.dispose();
+          loggingConfigBuilder_ = null;
+        }
         startTime_ = null;
         if (startTimeBuilder_ != null) {
           startTimeBuilder_.dispose();
@@ -45656,7 +49218,7 @@ public final class TransferTypes {
           errorBreakdowns_ = null;
           errorBreakdownsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         transferJobName_ = "";
         return this;
       }
@@ -45698,9 +49260,9 @@ public final class TransferTypes {
       private void buildPartialRepeatedFields(
           com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation result) {
         if (errorBreakdownsBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0)) {
+          if (((bitField0_ & 0x00000200) != 0)) {
             errorBreakdowns_ = java.util.Collections.unmodifiableList(errorBreakdowns_);
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           }
           result.errorBreakdowns_ = errorBreakdowns_;
         } else {
@@ -45728,18 +49290,22 @@ public final class TransferTypes {
                   : notificationConfigBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+          result.loggingConfig_ =
+              loggingConfigBuilder_ == null ? loggingConfig_ : loggingConfigBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+          result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.status_ = status_;
+          result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           result.counters_ = countersBuilder_ == null ? counters_ : countersBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           result.transferJobName_ = transferJobName_;
         }
       }
@@ -45811,6 +49377,9 @@ public final class TransferTypes {
         if (other.hasNotificationConfig()) {
           mergeNotificationConfig(other.getNotificationConfig());
         }
+        if (other.hasLoggingConfig()) {
+          mergeLoggingConfig(other.getLoggingConfig());
+        }
         if (other.hasStartTime()) {
           mergeStartTime(other.getStartTime());
         }
@@ -45827,7 +49396,7 @@ public final class TransferTypes {
           if (!other.errorBreakdowns_.isEmpty()) {
             if (errorBreakdowns_.isEmpty()) {
               errorBreakdowns_ = other.errorBreakdowns_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000200);
             } else {
               ensureErrorBreakdownsIsMutable();
               errorBreakdowns_.addAll(other.errorBreakdowns_);
@@ -45840,7 +49409,7 @@ public final class TransferTypes {
               errorBreakdownsBuilder_.dispose();
               errorBreakdownsBuilder_ = null;
               errorBreakdowns_ = other.errorBreakdowns_;
-              bitField0_ = (bitField0_ & ~0x00000100);
+              bitField0_ = (bitField0_ & ~0x00000200);
               errorBreakdownsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getErrorBreakdownsFieldBuilder()
@@ -45852,7 +49421,7 @@ public final class TransferTypes {
         }
         if (!other.getTransferJobName().isEmpty()) {
           transferJobName_ = other.transferJobName_;
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -45902,25 +49471,25 @@ public final class TransferTypes {
               case 34:
                 {
                   input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 34
               case 42:
                 {
                   input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 42
               case 48:
                 {
                   status_ = input.readEnum();
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 48
               case 58:
                 {
                   input.readMessage(getCountersFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000080;
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 58
               case 66:
@@ -45940,7 +49509,7 @@ public final class TransferTypes {
               case 74:
                 {
                   transferJobName_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000200;
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 74
               case 82:
@@ -45950,6 +49519,12 @@ public final class TransferTypes {
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 82
+              case 98:
+                {
+                  input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 98
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -46566,6 +50141,196 @@ public final class TransferTypes {
         return notificationConfigBuilder_;
       }
 
+      private com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig loggingConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig,
+              com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfigOrBuilder>
+          loggingConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Logging configuration.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+       *
+       * @return Whether the loggingConfig field is set.
+       */
+      public boolean hasLoggingConfig() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Logging configuration.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+       *
+       * @return The loggingConfig.
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig getLoggingConfig() {
+        if (loggingConfigBuilder_ == null) {
+          return loggingConfig_ == null
+              ? com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.getDefaultInstance()
+              : loggingConfig_;
+        } else {
+          return loggingConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Logging configuration.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+       */
+      public Builder setLoggingConfig(
+          com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig value) {
+        if (loggingConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          loggingConfig_ = value;
+        } else {
+          loggingConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Logging configuration.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+       */
+      public Builder setLoggingConfig(
+          com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.Builder builderForValue) {
+        if (loggingConfigBuilder_ == null) {
+          loggingConfig_ = builderForValue.build();
+        } else {
+          loggingConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Logging configuration.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+       */
+      public Builder mergeLoggingConfig(
+          com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig value) {
+        if (loggingConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && loggingConfig_ != null
+              && loggingConfig_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig
+                      .getDefaultInstance()) {
+            getLoggingConfigBuilder().mergeFrom(value);
+          } else {
+            loggingConfig_ = value;
+          }
+        } else {
+          loggingConfigBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Logging configuration.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+       */
+      public Builder clearLoggingConfig() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        loggingConfig_ = null;
+        if (loggingConfigBuilder_ != null) {
+          loggingConfigBuilder_.dispose();
+          loggingConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Logging configuration.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.Builder
+          getLoggingConfigBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getLoggingConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Logging configuration.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfigOrBuilder
+          getLoggingConfigOrBuilder() {
+        if (loggingConfigBuilder_ != null) {
+          return loggingConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return loggingConfig_ == null
+              ? com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.getDefaultInstance()
+              : loggingConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Logging configuration.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig,
+              com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfigOrBuilder>
+          getLoggingConfigFieldBuilder() {
+        if (loggingConfigBuilder_ == null) {
+          loggingConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig,
+                  com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.Builder,
+                  com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfigOrBuilder>(
+                  getLoggingConfig(), getParentForChildren(), isClean());
+          loggingConfig_ = null;
+        }
+        return loggingConfigBuilder_;
+      }
+
       private com.google.protobuf.Timestamp startTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -46584,7 +50349,7 @@ public final class TransferTypes {
        * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -46624,7 +50389,7 @@ public final class TransferTypes {
         } else {
           startTimeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -46643,7 +50408,7 @@ public final class TransferTypes {
         } else {
           startTimeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -46658,7 +50423,7 @@ public final class TransferTypes {
        */
       public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
         if (startTimeBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)
+          if (((bitField0_ & 0x00000020) != 0)
               && startTime_ != null
               && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
             getStartTimeBuilder().mergeFrom(value);
@@ -46668,7 +50433,7 @@ public final class TransferTypes {
         } else {
           startTimeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -46682,7 +50447,7 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp start_time = 4;</code>
        */
       public Builder clearStartTime() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         startTime_ = null;
         if (startTimeBuilder_ != null) {
           startTimeBuilder_.dispose();
@@ -46701,7 +50466,7 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp start_time = 4;</code>
        */
       public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
@@ -46767,7 +50532,7 @@ public final class TransferTypes {
        * @return Whether the endTime field is set.
        */
       public boolean hasEndTime() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        *
@@ -46805,7 +50570,7 @@ public final class TransferTypes {
         } else {
           endTimeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -46824,7 +50589,7 @@ public final class TransferTypes {
         } else {
           endTimeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -46839,7 +50604,7 @@ public final class TransferTypes {
        */
       public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
         if (endTimeBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)
+          if (((bitField0_ & 0x00000040) != 0)
               && endTime_ != null
               && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
             getEndTimeBuilder().mergeFrom(value);
@@ -46849,7 +50614,7 @@ public final class TransferTypes {
         } else {
           endTimeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -46863,7 +50628,7 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp end_time = 5;</code>
        */
       public Builder clearEndTime() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         endTime_ = null;
         if (endTimeBuilder_ != null) {
           endTimeBuilder_.dispose();
@@ -46882,7 +50647,7 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp end_time = 5;</code>
        */
       public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
@@ -46958,7 +50723,7 @@ public final class TransferTypes {
        */
       public Builder setStatusValue(int value) {
         status_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -47001,7 +50766,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         status_ = value.getNumber();
         onChanged();
         return this;
@@ -47018,7 +50783,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         status_ = 0;
         onChanged();
         return this;
@@ -47042,7 +50807,7 @@ public final class TransferTypes {
        * @return Whether the counters field is set.
        */
       public boolean hasCounters() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        *
@@ -47084,7 +50849,7 @@ public final class TransferTypes {
         } else {
           countersBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -47105,7 +50870,7 @@ public final class TransferTypes {
         } else {
           countersBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -47121,7 +50886,7 @@ public final class TransferTypes {
       public Builder mergeCounters(
           com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters value) {
         if (countersBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)
+          if (((bitField0_ & 0x00000100) != 0)
               && counters_ != null
               && counters_
                   != com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters
@@ -47133,7 +50898,7 @@ public final class TransferTypes {
         } else {
           countersBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -47147,7 +50912,7 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.TransferCounters counters = 7;</code>
        */
       public Builder clearCounters() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         counters_ = null;
         if (countersBuilder_ != null) {
           countersBuilder_.dispose();
@@ -47167,7 +50932,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters.Builder
           getCountersBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return getCountersFieldBuilder().getBuilder();
       }
@@ -47221,11 +50986,11 @@ public final class TransferTypes {
           errorBreakdowns_ = java.util.Collections.emptyList();
 
       private void ensureErrorBreakdownsIsMutable() {
-        if (!((bitField0_ & 0x00000100) != 0)) {
+        if (!((bitField0_ & 0x00000200) != 0)) {
           errorBreakdowns_ =
               new java.util.ArrayList<
                   com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummary>(errorBreakdowns_);
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
         }
       }
 
@@ -47450,7 +51215,7 @@ public final class TransferTypes {
       public Builder clearErrorBreakdowns() {
         if (errorBreakdownsBuilder_ == null) {
           errorBreakdowns_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
           onChanged();
         } else {
           errorBreakdownsBuilder_.clear();
@@ -47583,7 +51348,7 @@ public final class TransferTypes {
                   com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummary.Builder,
                   com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummaryOrBuilder>(
                   errorBreakdowns_,
-                  ((bitField0_ & 0x00000100) != 0),
+                  ((bitField0_ & 0x00000200) != 0),
                   getParentForChildren(),
                   isClean());
           errorBreakdowns_ = null;
@@ -47653,7 +51418,7 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         transferJobName_ = value;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -47670,7 +51435,7 @@ public final class TransferTypes {
        */
       public Builder clearTransferJobName() {
         transferJobName_ = getDefaultInstance().getTransferJobName();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -47692,7 +51457,7 @@ public final class TransferTypes {
         }
         checkByteStringIsUtf8(value);
         transferJobName_ = value;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -47837,6 +51602,10 @@ public final class TransferTypes {
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_storagetransfer_v1_Schedule_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_storagetransfer_v1_EventStream_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_storagetransfer_v1_EventStream_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_storagetransfer_v1_TransferJob_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_storagetransfer_v1_TransferJob_fieldAccessorTable;
@@ -47881,56 +51650,58 @@ public final class TransferTypes {
           + "\032\025google/rpc/code.proto\032\026google/type/dat"
           + "e.proto\032\033google/type/timeofday.proto\"A\n\024"
           + "GoogleServiceAccount\022\025\n\raccount_email\030\001 "
-          + "\001(\t\022\022\n\nsubject_id\030\002 \001(\t\"J\n\014AwsAccessKey\022"
-          + "\032\n\raccess_key_id\030\001 \001(\tB\003\340A\002\022\036\n\021secret_ac"
-          + "cess_key\030\002 \001(\tB\003\340A\002\"*\n\020AzureCredentials\022"
-          + "\026\n\tsas_token\030\002 \001(\tB\003\340A\002\"\323\002\n\020ObjectCondit"
-          + "ions\022K\n(min_time_elapsed_since_last_modi"
-          + "fication\030\001 \001(\0132\031.google.protobuf.Duratio"
-          + "n\022K\n(max_time_elapsed_since_last_modific"
-          + "ation\030\002 \001(\0132\031.google.protobuf.Duration\022\030"
-          + "\n\020include_prefixes\030\003 \003(\t\022\030\n\020exclude_pref"
-          + "ixes\030\004 \003(\t\0227\n\023last_modified_since\030\005 \001(\0132"
-          + "\032.google.protobuf.Timestamp\0228\n\024last_modi"
-          + "fied_before\030\006 \001(\0132\032.google.protobuf.Time"
-          + "stamp\"1\n\007GcsData\022\030\n\013bucket_name\030\001 \001(\tB\003\340"
-          + "A\002\022\014\n\004path\030\003 \001(\t\"\213\001\n\tAwsS3Data\022\030\n\013bucket"
-          + "_name\030\001 \001(\tB\003\340A\002\022D\n\016aws_access_key\030\002 \001(\013"
-          + "2\'.google.storagetransfer.v1.AwsAccessKe"
-          + "yB\003\340A\004\022\014\n\004path\030\003 \001(\t\022\020\n\010role_arn\030\004 \001(\t\"\252"
-          + "\001\n\024AzureBlobStorageData\022\034\n\017storage_accou"
-          + "nt\030\001 \001(\tB\003\340A\002\022N\n\021azure_credentials\030\002 \001(\013"
-          + "2+.google.storagetransfer.v1.AzureCreden"
-          + "tialsB\006\340A\002\340A\004\022\026\n\tcontainer\030\004 \001(\tB\003\340A\002\022\014\n"
-          + "\004path\030\005 \001(\t\"!\n\010HttpData\022\025\n\010list_url\030\001 \001("
-          + "\tB\003\340A\002\")\n\017PosixFilesystem\022\026\n\016root_direct"
-          + "ory\030\001 \001(\t\"\275\001\n\023AwsS3CompatibleData\022\030\n\013buc"
-          + "ket_name\030\001 \001(\tB\003\340A\002\022\014\n\004path\030\002 \001(\t\022\025\n\010end"
-          + "point\030\003 \001(\tB\003\340A\002\022\016\n\006region\030\005 \001(\t\022F\n\013s3_m"
-          + "etadata\030\004 \001(\0132/.google.storagetransfer.v"
-          + "1.S3CompatibleMetadataH\000B\017\n\rdata_provide"
-          + "r\"\366\005\n\024S3CompatibleMetadata\022O\n\013auth_metho"
-          + "d\030\001 \001(\0162:.google.storagetransfer.v1.S3Co"
-          + "mpatibleMetadata.AuthMethod\022S\n\rrequest_m"
-          + "odel\030\002 \001(\0162<.google.storagetransfer.v1.S"
-          + "3CompatibleMetadata.RequestModel\022Q\n\010prot"
-          + "ocol\030\003 \001(\0162?.google.storagetransfer.v1.S"
-          + "3CompatibleMetadata.NetworkProtocol\022I\n\010l"
-          + "ist_api\030\004 \001(\01627.google.storagetransfer.v"
-          + "1.S3CompatibleMetadata.ListApi\"m\n\nAuthMe"
-          + "thod\022\033\n\027AUTH_METHOD_UNSPECIFIED\020\000\022 \n\034AUT"
-          + "H_METHOD_AWS_SIGNATURE_V4\020\001\022 \n\034AUTH_METH"
-          + "OD_AWS_SIGNATURE_V2\020\002\"s\n\014RequestModel\022\035\n"
-          + "\031REQUEST_MODEL_UNSPECIFIED\020\000\022&\n\"REQUEST_"
-          + "MODEL_VIRTUAL_HOSTED_STYLE\020\001\022\034\n\030REQUEST_"
-          + "MODEL_PATH_STYLE\020\002\"j\n\017NetworkProtocol\022 \n"
-          + "\034NETWORK_PROTOCOL_UNSPECIFIED\020\000\022\032\n\026NETWO"
-          + "RK_PROTOCOL_HTTPS\020\001\022\031\n\025NETWORK_PROTOCOL_"
-          + "HTTP\020\002\"J\n\007ListApi\022\030\n\024LIST_API_UNSPECIFIE"
-          + "D\020\000\022\023\n\017LIST_OBJECTS_V2\020\001\022\020\n\014LIST_OBJECTS"
-          + "\020\002\"\223\003\n\tAgentPool\022\021\n\004name\030\002 \001(\tB\003\340A\002\022\024\n\014d"
-          + "isplay_name\030\003 \001(\t\022>\n\005state\030\004 \001(\0162*.googl"
-          + "e.storagetransfer.v1.AgentPool.StateB\003\340A"
+          + "\001(\t\022\022\n\nsubject_id\030\002 \001(\t\"L\n\014AwsAccessKey\022"
+          + "\033\n\raccess_key_id\030\001 \001(\tB\004\342A\001\002\022\037\n\021secret_a"
+          + "ccess_key\030\002 \001(\tB\004\342A\001\002\"+\n\020AzureCredential"
+          + "s\022\027\n\tsas_token\030\002 \001(\tB\004\342A\001\002\"\323\002\n\020ObjectCon"
+          + "ditions\022K\n(min_time_elapsed_since_last_m"
+          + "odification\030\001 \001(\0132\031.google.protobuf.Dura"
+          + "tion\022K\n(max_time_elapsed_since_last_modi"
+          + "fication\030\002 \001(\0132\031.google.protobuf.Duratio"
+          + "n\022\030\n\020include_prefixes\030\003 \003(\t\022\030\n\020exclude_p"
+          + "refixes\030\004 \003(\t\0227\n\023last_modified_since\030\005 \001"
+          + "(\0132\032.google.protobuf.Timestamp\0228\n\024last_m"
+          + "odified_before\030\006 \001(\0132\032.google.protobuf.T"
+          + "imestamp\"2\n\007GcsData\022\031\n\013bucket_name\030\001 \001(\t"
+          + "B\004\342A\001\002\022\014\n\004path\030\003 \001(\t\"\257\001\n\tAwsS3Data\022\031\n\013bu"
+          + "cket_name\030\001 \001(\tB\004\342A\001\002\022E\n\016aws_access_key\030"
+          + "\002 \001(\0132\'.google.storagetransfer.v1.AwsAcc"
+          + "essKeyB\004\342A\001\004\022\014\n\004path\030\003 \001(\t\022\020\n\010role_arn\030\004"
+          + " \001(\t\022 \n\022credentials_secret\030\007 \001(\tB\004\342A\001\001\"\315"
+          + "\001\n\024AzureBlobStorageData\022\035\n\017storage_accou"
+          + "nt\030\001 \001(\tB\004\342A\001\002\022M\n\021azure_credentials\030\002 \001("
+          + "\0132+.google.storagetransfer.v1.AzureCrede"
+          + "ntialsB\005\342A\002\002\004\022\027\n\tcontainer\030\004 \001(\tB\004\342A\001\002\022\014"
+          + "\n\004path\030\005 \001(\t\022 \n\022credentials_secret\030\007 \001(\t"
+          + "B\004\342A\001\001\"\"\n\010HttpData\022\026\n\010list_url\030\001 \001(\tB\004\342A"
+          + "\001\002\")\n\017PosixFilesystem\022\026\n\016root_directory\030"
+          + "\001 \001(\t\"\277\001\n\023AwsS3CompatibleData\022\031\n\013bucket_"
+          + "name\030\001 \001(\tB\004\342A\001\002\022\014\n\004path\030\002 \001(\t\022\026\n\010endpoi"
+          + "nt\030\003 \001(\tB\004\342A\001\002\022\016\n\006region\030\005 \001(\t\022F\n\013s3_met"
+          + "adata\030\004 \001(\0132/.google.storagetransfer.v1."
+          + "S3CompatibleMetadataH\000B\017\n\rdata_provider\""
+          + "\366\005\n\024S3CompatibleMetadata\022O\n\013auth_method\030"
+          + "\001 \001(\0162:.google.storagetransfer.v1.S3Comp"
+          + "atibleMetadata.AuthMethod\022S\n\rrequest_mod"
+          + "el\030\002 \001(\0162<.google.storagetransfer.v1.S3C"
+          + "ompatibleMetadata.RequestModel\022Q\n\010protoc"
+          + "ol\030\003 \001(\0162?.google.storagetransfer.v1.S3C"
+          + "ompatibleMetadata.NetworkProtocol\022I\n\010lis"
+          + "t_api\030\004 \001(\01627.google.storagetransfer.v1."
+          + "S3CompatibleMetadata.ListApi\"m\n\nAuthMeth"
+          + "od\022\033\n\027AUTH_METHOD_UNSPECIFIED\020\000\022 \n\034AUTH_"
+          + "METHOD_AWS_SIGNATURE_V4\020\001\022 \n\034AUTH_METHOD"
+          + "_AWS_SIGNATURE_V2\020\002\"s\n\014RequestModel\022\035\n\031R"
+          + "EQUEST_MODEL_UNSPECIFIED\020\000\022&\n\"REQUEST_MO"
+          + "DEL_VIRTUAL_HOSTED_STYLE\020\001\022\034\n\030REQUEST_MO"
+          + "DEL_PATH_STYLE\020\002\"j\n\017NetworkProtocol\022 \n\034N"
+          + "ETWORK_PROTOCOL_UNSPECIFIED\020\000\022\032\n\026NETWORK"
+          + "_PROTOCOL_HTTPS\020\001\022\031\n\025NETWORK_PROTOCOL_HT"
+          + "TP\020\002\"J\n\007ListApi\022\030\n\024LIST_API_UNSPECIFIED\020"
+          + "\000\022\023\n\017LIST_OBJECTS_V2\020\001\022\020\n\014LIST_OBJECTS\020\002"
+          + "\"\225\003\n\tAgentPool\022\022\n\004name\030\002 \001(\tB\004\342A\001\002\022\024\n\014di"
+          + "splay_name\030\003 \001(\t\022?\n\005state\030\004 \001(\0162*.google"
+          + ".storagetransfer.v1.AgentPool.StateB\004\342A\001"
           + "\003\022L\n\017bandwidth_limit\030\005 \001(\01323.google.stor"
           + "agetransfer.v1.AgentPool.BandwidthLimit\032"
           + "$\n\016BandwidthLimit\022\022\n\nlimit_mbps\030\001 \001(\003\"G\n"
@@ -48012,99 +51783,107 @@ public final class TransferTypes {
           + "eCreated\022\034\n\030TIME_CREATED_UNSPECIFIED\020\000\022\025"
           + "\n\021TIME_CREATED_SKIP\020\001\022(\n$TIME_CREATED_PR"
           + "ESERVE_AS_CUSTOM_TIME\020\002\"$\n\020TransferManif"
-          + "est\022\020\n\010location\030\001 \001(\t\"\205\002\n\010Schedule\0223\n\023sc"
+          + "est\022\020\n\010location\030\001 \001(\t\"\206\002\n\010Schedule\0224\n\023sc"
           + "hedule_start_date\030\001 \001(\0132\021.google.type.Da"
-          + "teB\003\340A\002\022,\n\021schedule_end_date\030\002 \001(\0132\021.goo"
-          + "gle.type.Date\0221\n\021start_time_of_day\030\003 \001(\013"
-          + "2\026.google.type.TimeOfDay\022/\n\017end_time_of_"
-          + "day\030\004 \001(\0132\026.google.type.TimeOfDay\0222\n\017rep"
-          + "eat_interval\030\005 \001(\0132\031.google.protobuf.Dur"
-          + "ation\"\242\005\n\013TransferJob\022\014\n\004name\030\001 \001(\t\022\023\n\013d"
-          + "escription\030\002 \001(\t\022\022\n\nproject_id\030\003 \001(\t\022>\n\r"
-          + "transfer_spec\030\004 \001(\0132\'.google.storagetran"
-          + "sfer.v1.TransferSpec\022J\n\023notification_con"
-          + "fig\030\013 \001(\0132-.google.storagetransfer.v1.No"
-          + "tificationConfig\022@\n\016logging_config\030\016 \001(\013"
-          + "2(.google.storagetransfer.v1.LoggingConf"
-          + "ig\0225\n\010schedule\030\005 \001(\0132#.google.storagetra"
-          + "nsfer.v1.Schedule\022=\n\006status\030\006 \001(\0162-.goog"
-          + "le.storagetransfer.v1.TransferJob.Status"
-          + "\0226\n\rcreation_time\030\007 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\022?\n\026last_modification_ti"
-          + "me\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\0226\n\rdeletion_time\030\t \001(\0132\032.google.protob"
-          + "uf.TimestampB\003\340A\003\022\035\n\025latest_operation_na"
-          + "me\030\014 \001(\t\"H\n\006Status\022\026\n\022STATUS_UNSPECIFIED"
-          + "\020\000\022\013\n\007ENABLED\020\001\022\014\n\010DISABLED\020\002\022\013\n\007DELETED"
-          + "\020\003\"8\n\rErrorLogEntry\022\020\n\003url\030\001 \001(\tB\003\340A\002\022\025\n"
-          + "\rerror_details\030\003 \003(\t\"\230\001\n\014ErrorSummary\022)\n"
-          + "\nerror_code\030\001 \001(\0162\020.google.rpc.CodeB\003\340A\002"
-          + "\022\030\n\013error_count\030\002 \001(\003B\003\340A\002\022C\n\021error_log_"
-          + "entries\030\003 \003(\0132(.google.storagetransfer.v"
-          + "1.ErrorLogEntry\"\303\006\n\020TransferCounters\022!\n\031"
-          + "objects_found_from_source\030\001 \001(\003\022\037\n\027bytes"
-          + "_found_from_source\030\002 \001(\003\022$\n\034objects_foun"
-          + "d_only_from_sink\030\003 \001(\003\022\"\n\032bytes_found_on"
-          + "ly_from_sink\030\004 \001(\003\022+\n#objects_from_sourc"
-          + "e_skipped_by_sync\030\005 \001(\003\022)\n!bytes_from_so"
-          + "urce_skipped_by_sync\030\006 \001(\003\022\036\n\026objects_co"
-          + "pied_to_sink\030\007 \001(\003\022\034\n\024bytes_copied_to_si"
-          + "nk\030\010 \001(\003\022#\n\033objects_deleted_from_source\030"
-          + "\t \001(\003\022!\n\031bytes_deleted_from_source\030\n \001(\003"
-          + "\022!\n\031objects_deleted_from_sink\030\013 \001(\003\022\037\n\027b"
-          + "ytes_deleted_from_sink\030\014 \001(\003\022\"\n\032objects_"
-          + "from_source_failed\030\r \001(\003\022 \n\030bytes_from_s"
-          + "ource_failed\030\016 \001(\003\022*\n\"objects_failed_to_"
-          + "delete_from_sink\030\017 \001(\003\022(\n bytes_failed_t"
-          + "o_delete_from_sink\030\020 \001(\003\022%\n\035directories_"
-          + "found_from_source\030\021 \001(\003\022.\n&directories_f"
-          + "ailed_to_list_from_source\030\022 \001(\003\0223\n+direc"
-          + "tories_successfully_listed_from_source\030\023"
-          + " \001(\003\022\'\n\037intermediate_objects_cleaned_up\030"
-          + "\026 \001(\003\022.\n&intermediate_objects_failed_cle"
-          + "aned_up\030\027 \001(\003\"\245\003\n\022NotificationConfig\022\031\n\014"
-          + "pubsub_topic\030\001 \001(\tB\003\340A\002\022L\n\013event_types\030\002"
-          + " \003(\01627.google.storagetransfer.v1.Notific"
-          + "ationConfig.EventType\022X\n\016payload_format\030"
-          + "\003 \001(\0162;.google.storagetransfer.v1.Notifi"
-          + "cationConfig.PayloadFormatB\003\340A\002\"\206\001\n\tEven"
-          + "tType\022\032\n\026EVENT_TYPE_UNSPECIFIED\020\000\022\036\n\032TRA"
-          + "NSFER_OPERATION_SUCCESS\020\001\022\035\n\031TRANSFER_OP"
-          + "ERATION_FAILED\020\002\022\036\n\032TRANSFER_OPERATION_A"
-          + "BORTED\020\003\"C\n\rPayloadFormat\022\036\n\032PAYLOAD_FOR"
-          + "MAT_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\010\n\004JSON\020\002\"\213\003"
-          + "\n\rLoggingConfig\022L\n\013log_actions\030\001 \003(\01627.g"
-          + "oogle.storagetransfer.v1.LoggingConfig.L"
-          + "oggableAction\022W\n\021log_action_states\030\002 \003(\016"
-          + "2<.google.storagetransfer.v1.LoggingConf"
-          + "ig.LoggableActionState\022\'\n\037enable_onprem_"
-          + "gcs_transfer_logs\030\003 \001(\010\"Q\n\016LoggableActio"
-          + "n\022\037\n\033LOGGABLE_ACTION_UNSPECIFIED\020\000\022\010\n\004FI"
-          + "ND\020\001\022\n\n\006DELETE\020\002\022\010\n\004COPY\020\003\"W\n\023LoggableAc"
-          + "tionState\022%\n!LOGGABLE_ACTION_STATE_UNSPE"
-          + "CIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAILED\020\002\"\362\004\n\021"
-          + "TransferOperation\022\014\n\004name\030\001 \001(\t\022\022\n\nproje"
-          + "ct_id\030\002 \001(\t\022>\n\rtransfer_spec\030\003 \001(\0132\'.goo"
-          + "gle.storagetransfer.v1.TransferSpec\022J\n\023n"
-          + "otification_config\030\n \001(\0132-.google.storag"
-          + "etransfer.v1.NotificationConfig\022.\n\nstart"
-          + "_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022"
-          + ",\n\010end_time\030\005 \001(\0132\032.google.protobuf.Time"
-          + "stamp\022C\n\006status\030\006 \001(\01623.google.storagetr"
-          + "ansfer.v1.TransferOperation.Status\022=\n\010co"
-          + "unters\030\007 \001(\0132+.google.storagetransfer.v1"
-          + ".TransferCounters\022A\n\020error_breakdowns\030\010 "
-          + "\003(\0132\'.google.storagetransfer.v1.ErrorSum"
-          + "mary\022\031\n\021transfer_job_name\030\t \001(\t\"o\n\006Statu"
-          + "s\022\026\n\022STATUS_UNSPECIFIED\020\000\022\017\n\013IN_PROGRESS"
-          + "\020\001\022\n\n\006PAUSED\020\002\022\013\n\007SUCCESS\020\003\022\n\n\006FAILED\020\004\022"
-          + "\013\n\007ABORTED\020\005\022\n\n\006QUEUED\020\006B\357\001\n#com.google."
-          + "storagetransfer.v1.protoB\rTransferTypesZ"
-          + "Mcloud.google.com/go/storagetransfer/api"
-          + "v1/storagetransferpb;storagetransferpb\370\001"
-          + "\001\252\002\037Google.Cloud.StorageTransfer.V1\312\002\037Go"
-          + "ogle\\Cloud\\StorageTransfer\\V1\352\002\"Google::"
-          + "Cloud::StorageTransfer::V1b\006proto3"
+          + "teB\004\342A\001\002\022,\n\021schedule_end_date\030\002 \001(\0132\021.go"
+          + "ogle.type.Date\0221\n\021start_time_of_day\030\003 \001("
+          + "\0132\026.google.type.TimeOfDay\022/\n\017end_time_of"
+          + "_day\030\004 \001(\0132\026.google.type.TimeOfDay\0222\n\017re"
+          + "peat_interval\030\005 \001(\0132\031.google.protobuf.Du"
+          + "ration\"\240\001\n\013EventStream\022\022\n\004name\030\001 \001(\tB\004\342A"
+          + "\001\002\022;\n\027event_stream_start_time\030\002 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022@\n\034event_stream_"
+          + "expiration_time\030\003 \001(\0132\032.google.protobuf."
+          + "Timestamp\"\343\005\n\013TransferJob\022\014\n\004name\030\001 \001(\t\022"
+          + "\023\n\013description\030\002 \001(\t\022\022\n\nproject_id\030\003 \001(\t"
+          + "\022>\n\rtransfer_spec\030\004 \001(\0132\'.google.storage"
+          + "transfer.v1.TransferSpec\022J\n\023notification"
+          + "_config\030\013 \001(\0132-.google.storagetransfer.v"
+          + "1.NotificationConfig\022@\n\016logging_config\030\016"
+          + " \001(\0132(.google.storagetransfer.v1.Logging"
+          + "Config\0225\n\010schedule\030\005 \001(\0132#.google.storag"
+          + "etransfer.v1.Schedule\022<\n\014event_stream\030\017 "
+          + "\001(\0132&.google.storagetransfer.v1.EventStr"
+          + "eam\022=\n\006status\030\006 \001(\0162-.google.storagetran"
+          + "sfer.v1.TransferJob.Status\0227\n\rcreation_t"
+          + "ime\030\007 \001(\0132\032.google.protobuf.TimestampB\004\342"
+          + "A\001\003\022@\n\026last_modification_time\030\010 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\004\342A\001\003\0227\n\rdeletio"
+          + "n_time\030\t \001(\0132\032.google.protobuf.Timestamp"
+          + "B\004\342A\001\003\022\035\n\025latest_operation_name\030\014 \001(\t\"H\n"
+          + "\006Status\022\026\n\022STATUS_UNSPECIFIED\020\000\022\013\n\007ENABL"
+          + "ED\020\001\022\014\n\010DISABLED\020\002\022\013\n\007DELETED\020\003\"9\n\rError"
+          + "LogEntry\022\021\n\003url\030\001 \001(\tB\004\342A\001\002\022\025\n\rerror_det"
+          + "ails\030\003 \003(\t\"\232\001\n\014ErrorSummary\022*\n\nerror_cod"
+          + "e\030\001 \001(\0162\020.google.rpc.CodeB\004\342A\001\002\022\031\n\013error"
+          + "_count\030\002 \001(\003B\004\342A\001\002\022C\n\021error_log_entries\030"
+          + "\003 \003(\0132(.google.storagetransfer.v1.ErrorL"
+          + "ogEntry\"\303\006\n\020TransferCounters\022!\n\031objects_"
+          + "found_from_source\030\001 \001(\003\022\037\n\027bytes_found_f"
+          + "rom_source\030\002 \001(\003\022$\n\034objects_found_only_f"
+          + "rom_sink\030\003 \001(\003\022\"\n\032bytes_found_only_from_"
+          + "sink\030\004 \001(\003\022+\n#objects_from_source_skippe"
+          + "d_by_sync\030\005 \001(\003\022)\n!bytes_from_source_ski"
+          + "pped_by_sync\030\006 \001(\003\022\036\n\026objects_copied_to_"
+          + "sink\030\007 \001(\003\022\034\n\024bytes_copied_to_sink\030\010 \001(\003"
+          + "\022#\n\033objects_deleted_from_source\030\t \001(\003\022!\n"
+          + "\031bytes_deleted_from_source\030\n \001(\003\022!\n\031obje"
+          + "cts_deleted_from_sink\030\013 \001(\003\022\037\n\027bytes_del"
+          + "eted_from_sink\030\014 \001(\003\022\"\n\032objects_from_sou"
+          + "rce_failed\030\r \001(\003\022 \n\030bytes_from_source_fa"
+          + "iled\030\016 \001(\003\022*\n\"objects_failed_to_delete_f"
+          + "rom_sink\030\017 \001(\003\022(\n bytes_failed_to_delete"
+          + "_from_sink\030\020 \001(\003\022%\n\035directories_found_fr"
+          + "om_source\030\021 \001(\003\022.\n&directories_failed_to"
+          + "_list_from_source\030\022 \001(\003\0223\n+directories_s"
+          + "uccessfully_listed_from_source\030\023 \001(\003\022\'\n\037"
+          + "intermediate_objects_cleaned_up\030\026 \001(\003\022.\n"
+          + "&intermediate_objects_failed_cleaned_up\030"
+          + "\027 \001(\003\"\247\003\n\022NotificationConfig\022\032\n\014pubsub_t"
+          + "opic\030\001 \001(\tB\004\342A\001\002\022L\n\013event_types\030\002 \003(\01627."
+          + "google.storagetransfer.v1.NotificationCo"
+          + "nfig.EventType\022Y\n\016payload_format\030\003 \001(\0162;"
+          + ".google.storagetransfer.v1.NotificationC"
+          + "onfig.PayloadFormatB\004\342A\001\002\"\206\001\n\tEventType\022"
+          + "\032\n\026EVENT_TYPE_UNSPECIFIED\020\000\022\036\n\032TRANSFER_"
+          + "OPERATION_SUCCESS\020\001\022\035\n\031TRANSFER_OPERATIO"
+          + "N_FAILED\020\002\022\036\n\032TRANSFER_OPERATION_ABORTED"
+          + "\020\003\"C\n\rPayloadFormat\022\036\n\032PAYLOAD_FORMAT_UN"
+          + "SPECIFIED\020\000\022\010\n\004NONE\020\001\022\010\n\004JSON\020\002\"\213\003\n\rLogg"
+          + "ingConfig\022L\n\013log_actions\030\001 \003(\01627.google."
+          + "storagetransfer.v1.LoggingConfig.Loggabl"
+          + "eAction\022W\n\021log_action_states\030\002 \003(\0162<.goo"
+          + "gle.storagetransfer.v1.LoggingConfig.Log"
+          + "gableActionState\022\'\n\037enable_onprem_gcs_tr"
+          + "ansfer_logs\030\003 \001(\010\"Q\n\016LoggableAction\022\037\n\033L"
+          + "OGGABLE_ACTION_UNSPECIFIED\020\000\022\010\n\004FIND\020\001\022\n"
+          + "\n\006DELETE\020\002\022\010\n\004COPY\020\003\"W\n\023LoggableActionSt"
+          + "ate\022%\n!LOGGABLE_ACTION_STATE_UNSPECIFIED"
+          + "\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAILED\020\002\"\304\005\n\021Transf"
+          + "erOperation\022\014\n\004name\030\001 \001(\t\022\022\n\nproject_id\030"
+          + "\002 \001(\t\022>\n\rtransfer_spec\030\003 \001(\0132\'.google.st"
+          + "oragetransfer.v1.TransferSpec\022J\n\023notific"
+          + "ation_config\030\n \001(\0132-.google.storagetrans"
+          + "fer.v1.NotificationConfig\022@\n\016logging_con"
+          + "fig\030\014 \001(\0132(.google.storagetransfer.v1.Lo"
+          + "ggingConfig\022.\n\nstart_time\030\004 \001(\0132\032.google"
+          + ".protobuf.Timestamp\022,\n\010end_time\030\005 \001(\0132\032."
+          + "google.protobuf.Timestamp\022C\n\006status\030\006 \001("
+          + "\01623.google.storagetransfer.v1.TransferOp"
+          + "eration.Status\022=\n\010counters\030\007 \001(\0132+.googl"
+          + "e.storagetransfer.v1.TransferCounters\022A\n"
+          + "\020error_breakdowns\030\010 \003(\0132\'.google.storage"
+          + "transfer.v1.ErrorSummary\022\031\n\021transfer_job"
+          + "_name\030\t \001(\t\"\177\n\006Status\022\026\n\022STATUS_UNSPECIF"
+          + "IED\020\000\022\017\n\013IN_PROGRESS\020\001\022\n\n\006PAUSED\020\002\022\013\n\007SU"
+          + "CCESS\020\003\022\n\n\006FAILED\020\004\022\013\n\007ABORTED\020\005\022\n\n\006QUEU"
+          + "ED\020\006\022\016\n\nSUSPENDING\020\007B\357\001\n#com.google.stor"
+          + "agetransfer.v1.protoB\rTransferTypesZMclo"
+          + "ud.google.com/go/storagetransfer/apiv1/s"
+          + "toragetransferpb;storagetransferpb\370\001\001\252\002\037"
+          + "Google.Cloud.StorageTransfer.V1\312\002\037Google"
+          + "\\Cloud\\StorageTransfer\\V1\352\002\"Google::Clou"
+          + "d::StorageTransfer::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -48169,7 +51948,7 @@ public final class TransferTypes {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_AwsS3Data_descriptor,
             new java.lang.String[] {
-              "BucketName", "AwsAccessKey", "Path", "RoleArn",
+              "BucketName", "AwsAccessKey", "Path", "RoleArn", "CredentialsSecret",
             });
     internal_static_google_storagetransfer_v1_AzureBlobStorageData_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -48177,7 +51956,7 @@ public final class TransferTypes {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_AzureBlobStorageData_descriptor,
             new java.lang.String[] {
-              "StorageAccount", "AzureCredentials", "Container", "Path",
+              "StorageAccount", "AzureCredentials", "Container", "Path", "CredentialsSecret",
             });
     internal_static_google_storagetransfer_v1_HttpData_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -48299,8 +52078,16 @@ public final class TransferTypes {
               "EndTimeOfDay",
               "RepeatInterval",
             });
-    internal_static_google_storagetransfer_v1_TransferJob_descriptor =
+    internal_static_google_storagetransfer_v1_EventStream_descriptor =
         getDescriptor().getMessageTypes().get(17);
+    internal_static_google_storagetransfer_v1_EventStream_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_storagetransfer_v1_EventStream_descriptor,
+            new java.lang.String[] {
+              "Name", "EventStreamStartTime", "EventStreamExpirationTime",
+            });
+    internal_static_google_storagetransfer_v1_TransferJob_descriptor =
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_storagetransfer_v1_TransferJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferJob_descriptor,
@@ -48312,6 +52099,7 @@ public final class TransferTypes {
               "NotificationConfig",
               "LoggingConfig",
               "Schedule",
+              "EventStream",
               "Status",
               "CreationTime",
               "LastModificationTime",
@@ -48319,7 +52107,7 @@ public final class TransferTypes {
               "LatestOperationName",
             });
     internal_static_google_storagetransfer_v1_ErrorLogEntry_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_storagetransfer_v1_ErrorLogEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_ErrorLogEntry_descriptor,
@@ -48327,7 +52115,7 @@ public final class TransferTypes {
               "Url", "ErrorDetails",
             });
     internal_static_google_storagetransfer_v1_ErrorSummary_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_storagetransfer_v1_ErrorSummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_ErrorSummary_descriptor,
@@ -48335,7 +52123,7 @@ public final class TransferTypes {
               "ErrorCode", "ErrorCount", "ErrorLogEntries",
             });
     internal_static_google_storagetransfer_v1_TransferCounters_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_storagetransfer_v1_TransferCounters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferCounters_descriptor,
@@ -48363,7 +52151,7 @@ public final class TransferTypes {
               "IntermediateObjectsFailedCleanedUp",
             });
     internal_static_google_storagetransfer_v1_NotificationConfig_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_storagetransfer_v1_NotificationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_NotificationConfig_descriptor,
@@ -48371,7 +52159,7 @@ public final class TransferTypes {
               "PubsubTopic", "EventTypes", "PayloadFormat",
             });
     internal_static_google_storagetransfer_v1_LoggingConfig_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_storagetransfer_v1_LoggingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_LoggingConfig_descriptor,
@@ -48379,7 +52167,7 @@ public final class TransferTypes {
               "LogActions", "LogActionStates", "EnableOnpremGcsTransferLogs",
             });
     internal_static_google_storagetransfer_v1_TransferOperation_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_storagetransfer_v1_TransferOperation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferOperation_descriptor,
@@ -48388,6 +52176,7 @@ public final class TransferTypes {
               "ProjectId",
               "TransferSpec",
               "NotificationConfig",
+              "LoggingConfig",
               "StartTime",
               "EndTime",
               "Status",

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface SearchExampleComparisonsRequestOrBuilder
    * <pre>
    * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
    * comparisons from. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface SearchExampleComparisonsRequestOrBuilder
    * <pre>
    * Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
    * comparisons from. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;"
    * </pre>
    *
@@ -78,6 +80,7 @@ public interface SearchExampleComparisonsRequestOrBuilder
    * Typically obtained by the
    * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
    * to a previous search rquest.
+   *
    * If you don't specify this field, the API call requests the first page of
    * the search.
    * </pre>
@@ -95,6 +98,7 @@ public interface SearchExampleComparisonsRequestOrBuilder
    * Typically obtained by the
    * [nextPageToken][SearchExampleComparisons.next_page_token] of the response
    * to a previous search rquest.
+   *
    * If you don't specify this field, the API call requests the first page of
    * the search.
    * </pre>

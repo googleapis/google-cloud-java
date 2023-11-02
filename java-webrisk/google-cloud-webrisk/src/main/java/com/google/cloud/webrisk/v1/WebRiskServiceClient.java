@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,15 @@
 
 package com.google.cloud.webrisk.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.webrisk.v1.stub.WebRiskServiceStub;
 import com.google.cloud.webrisk.v1.stub.WebRiskServiceStubSettings;
+import com.google.longrunning.Operation;
 import com.google.protobuf.ByteString;
 import com.google.webrisk.v1.ComputeThreatListDiffRequest;
 import com.google.webrisk.v1.ComputeThreatListDiffResponse;
@@ -30,6 +35,8 @@ import com.google.webrisk.v1.SearchHashesResponse;
 import com.google.webrisk.v1.SearchUrisRequest;
 import com.google.webrisk.v1.SearchUrisResponse;
 import com.google.webrisk.v1.Submission;
+import com.google.webrisk.v1.SubmitUriMetadata;
+import com.google.webrisk.v1.SubmitUriRequest;
 import com.google.webrisk.v1.ThreatType;
 import java.io.IOException;
 import java.util.List;
@@ -134,6 +141,8 @@ import javax.annotation.Generated;
 public class WebRiskServiceClient implements BackgroundResource {
   private final WebRiskServiceSettings settings;
   private final WebRiskServiceStub stub;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of WebRiskServiceClient with default settings. */
   public static final WebRiskServiceClient create() throws IOException {
@@ -165,11 +174,17 @@ public class WebRiskServiceClient implements BackgroundResource {
   protected WebRiskServiceClient(WebRiskServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((WebRiskServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected WebRiskServiceClient(WebRiskServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final WebRiskServiceSettings getSettings() {
@@ -178,6 +193,23 @@ public class WebRiskServiceClient implements BackgroundResource {
 
   public WebRiskServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
+    return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -638,6 +670,121 @@ public class WebRiskServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateSubmissionRequest, Submission> createSubmissionCallable() {
     return stub.createSubmissionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a URI suspected of containing malicious content to be reviewed. Returns a
+   * google.longrunning.Operation which, once the review is complete, is updated with its result.
+   * You can use the [Pub/Sub API] (https://cloud.google.com/pubsub) to receive notifications for
+   * the returned Operation. If the result verifies the existence of malicious content, the site
+   * will be added to the [Google's Social Engineering lists]
+   * (https://support.google.com/webmasters/answer/6350487/) in order to protect users that could
+   * get exposed to this threat in the future. Only allowlisted projects can use this method during
+   * Early Access. Please reach out to Sales or your customer engineer to obtain access.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WebRiskServiceClient webRiskServiceClient = WebRiskServiceClient.create()) {
+   *   SubmitUriRequest request =
+   *       SubmitUriRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setSubmission(Submission.newBuilder().build())
+   *           .setThreatInfo(ThreatInfo.newBuilder().build())
+   *           .setThreatDiscovery(ThreatDiscovery.newBuilder().build())
+   *           .build();
+   *   Submission response = webRiskServiceClient.submitUriAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Submission, SubmitUriMetadata> submitUriAsync(
+      SubmitUriRequest request) {
+    return submitUriOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a URI suspected of containing malicious content to be reviewed. Returns a
+   * google.longrunning.Operation which, once the review is complete, is updated with its result.
+   * You can use the [Pub/Sub API] (https://cloud.google.com/pubsub) to receive notifications for
+   * the returned Operation. If the result verifies the existence of malicious content, the site
+   * will be added to the [Google's Social Engineering lists]
+   * (https://support.google.com/webmasters/answer/6350487/) in order to protect users that could
+   * get exposed to this threat in the future. Only allowlisted projects can use this method during
+   * Early Access. Please reach out to Sales or your customer engineer to obtain access.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WebRiskServiceClient webRiskServiceClient = WebRiskServiceClient.create()) {
+   *   SubmitUriRequest request =
+   *       SubmitUriRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setSubmission(Submission.newBuilder().build())
+   *           .setThreatInfo(ThreatInfo.newBuilder().build())
+   *           .setThreatDiscovery(ThreatDiscovery.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Submission, SubmitUriMetadata> future =
+   *       webRiskServiceClient.submitUriOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Submission response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SubmitUriRequest, Submission, SubmitUriMetadata>
+      submitUriOperationCallable() {
+    return stub.submitUriOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a URI suspected of containing malicious content to be reviewed. Returns a
+   * google.longrunning.Operation which, once the review is complete, is updated with its result.
+   * You can use the [Pub/Sub API] (https://cloud.google.com/pubsub) to receive notifications for
+   * the returned Operation. If the result verifies the existence of malicious content, the site
+   * will be added to the [Google's Social Engineering lists]
+   * (https://support.google.com/webmasters/answer/6350487/) in order to protect users that could
+   * get exposed to this threat in the future. Only allowlisted projects can use this method during
+   * Early Access. Please reach out to Sales or your customer engineer to obtain access.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WebRiskServiceClient webRiskServiceClient = WebRiskServiceClient.create()) {
+   *   SubmitUriRequest request =
+   *       SubmitUriRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setSubmission(Submission.newBuilder().build())
+   *           .setThreatInfo(ThreatInfo.newBuilder().build())
+   *           .setThreatDiscovery(ThreatDiscovery.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = webRiskServiceClient.submitUriCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SubmitUriRequest, Operation> submitUriCallable() {
+    return stub.submitUriCallable();
   }
 
   @Override

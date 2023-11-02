@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
     return new EncryptRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsProto
         .internal_static_google_cloud_kms_v1_EncryptRequest_descriptor;
@@ -82,6 +77,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
    * encryption.
+   *
    * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
    * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
    * </pre>
@@ -112,6 +108,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
    * encryption.
+   *
    * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
    * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
    * </pre>
@@ -142,6 +139,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The data to encrypt. Must be no larger than 64KiB.
+   *
    * The maximum size depends on the key version's
    * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
    * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE],
@@ -172,6 +170,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
    * Optional. Optional data that, if specified, must also be provided during
    * decryption through
    * [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
+   *
    * The maximum size depends on the key version's
    * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
    * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE],
@@ -880,6 +879,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
      * encryption.
+     *
      * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
      * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
@@ -909,6 +909,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
      * encryption.
+     *
      * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
      * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
@@ -938,6 +939,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
      * encryption.
+     *
      * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
      * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
@@ -966,6 +968,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
      * encryption.
+     *
      * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
      * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
@@ -990,6 +993,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] or
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
      * encryption.
+     *
      * If a [CryptoKey][google.cloud.kms.v1.CryptoKey] is specified, the server
      * will use its [primary version][google.cloud.kms.v1.CryptoKey.primary].
      * </pre>
@@ -1018,6 +1022,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The data to encrypt. Must be no larger than 64KiB.
+     *
      * The maximum size depends on the key version's
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
      * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE],
@@ -1042,6 +1047,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The data to encrypt. Must be no larger than 64KiB.
+     *
      * The maximum size depends on the key version's
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
      * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE],
@@ -1072,6 +1078,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The data to encrypt. Must be no larger than 64KiB.
+     *
      * The maximum size depends on the key version's
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
      * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE],
@@ -1103,6 +1110,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * Optional. Optional data that, if specified, must also be provided during
      * decryption through
      * [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
+     *
      * The maximum size depends on the key version's
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
      * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE],
@@ -1130,6 +1138,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * Optional. Optional data that, if specified, must also be provided during
      * decryption through
      * [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
+     *
      * The maximum size depends on the key version's
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
      * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE],
@@ -1163,6 +1172,7 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
      * Optional. Optional data that, if specified, must also be provided during
      * decryption through
      * [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
+     *
      * The maximum size depends on the key version's
      * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level].
      * For [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE],

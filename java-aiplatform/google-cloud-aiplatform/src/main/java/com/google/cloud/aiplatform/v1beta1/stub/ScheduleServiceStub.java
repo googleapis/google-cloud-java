@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.cloud.aiplatform.v1beta1.ListSchedulesResponse;
 import com.google.cloud.aiplatform.v1beta1.PauseScheduleRequest;
 import com.google.cloud.aiplatform.v1beta1.ResumeScheduleRequest;
 import com.google.cloud.aiplatform.v1beta1.Schedule;
+import com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -92,6 +93,10 @@ public abstract class ScheduleServiceStub implements BackgroundResource {
 
   public UnaryCallable<ResumeScheduleRequest, Empty> resumeScheduleCallable() {
     throw new UnsupportedOperationException("Not implemented: resumeScheduleCallable()");
+  }
+
+  public UnaryCallable<UpdateScheduleRequest, Schedule> updateScheduleCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateScheduleCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,18 +42,13 @@ public final class PublishChannelConnectionEventsRequest
   private PublishChannelConnectionEventsRequest() {
     channelConnection_ = "";
     events_ = java.util.Collections.emptyList();
-    textEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    textEvents_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PublishChannelConnectionEventsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -203,7 +198,8 @@ public final class PublishChannelConnectionEventsRequest
   public static final int TEXT_EVENTS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList textEvents_;
+  private com.google.protobuf.LazyStringArrayList textEvents_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -522,8 +518,7 @@ public final class PublishChannelConnectionEventsRequest
         eventsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
-      textEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      textEvents_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -574,11 +569,6 @@ public final class PublishChannelConnectionEventsRequest
       } else {
         result.events_ = eventsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        textEvents_ = textEvents_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.textEvents_ = textEvents_;
     }
 
     private void buildPartial0(
@@ -586,6 +576,10 @@ public final class PublishChannelConnectionEventsRequest
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.channelConnection_ = channelConnection_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        textEvents_.makeImmutable();
+        result.textEvents_ = textEvents_;
       }
     }
 
@@ -675,7 +669,7 @@ public final class PublishChannelConnectionEventsRequest
       if (!other.textEvents_.isEmpty()) {
         if (textEvents_.isEmpty()) {
           textEvents_ = other.textEvents_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureTextEventsIsMutable();
           textEvents_.addAll(other.textEvents_);
@@ -1223,14 +1217,14 @@ public final class PublishChannelConnectionEventsRequest
       return eventsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList textEvents_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList textEvents_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTextEventsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!textEvents_.isModifiable()) {
         textEvents_ = new com.google.protobuf.LazyStringArrayList(textEvents_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1248,7 +1242,8 @@ public final class PublishChannelConnectionEventsRequest
      * @return A list containing the textEvents.
      */
     public com.google.protobuf.ProtocolStringList getTextEventsList() {
-      return textEvents_.getUnmodifiableView();
+      textEvents_.makeImmutable();
+      return textEvents_;
     }
     /**
      *
@@ -1329,6 +1324,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       ensureTextEventsIsMutable();
       textEvents_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1354,6 +1350,7 @@ public final class PublishChannelConnectionEventsRequest
       }
       ensureTextEventsIsMutable();
       textEvents_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1376,6 +1373,7 @@ public final class PublishChannelConnectionEventsRequest
     public Builder addAllTextEvents(java.lang.Iterable<java.lang.String> values) {
       ensureTextEventsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, textEvents_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1395,8 +1393,9 @@ public final class PublishChannelConnectionEventsRequest
      * @return This builder for chaining.
      */
     public Builder clearTextEvents() {
-      textEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      textEvents_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1423,6 +1422,7 @@ public final class PublishChannelConnectionEventsRequest
       checkByteStringIsUtf8(value);
       ensureTextEventsIsMutable();
       textEvents_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

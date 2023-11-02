@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,6 +147,7 @@ public interface SearchLinksRequestOrBuilder
    * Optional. The maximum number of links to return in a single page of the
    * response. A page may contain fewer links than this value. If unspecified,
    * at most 10 links are returned.
+   *
    * Maximum value is 100; values greater than 100 are reduced to 100.
    * </pre>
    *
@@ -162,6 +163,7 @@ public interface SearchLinksRequestOrBuilder
    * <pre>
    * Optional. The page token received from a previous `SearchLinksRequest`
    * call. Use it to get the next page.
+   *
    * When requesting subsequent pages of a response, remember that
    * all parameters must match the values you provided
    * in the original request.
@@ -178,6 +180,7 @@ public interface SearchLinksRequestOrBuilder
    * <pre>
    * Optional. The page token received from a previous `SearchLinksRequest`
    * call. Use it to get the next page.
+   *
    * When requesting subsequent pages of a response, remember that
    * all parameters must match the values you provided
    * in the original request.
@@ -189,5 +192,5 @@ public interface SearchLinksRequestOrBuilder
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
-  public com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest.CriteriaCase getCriteriaCase();
+  com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest.CriteriaCase getCriteriaCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,14 @@ package com.google.cloud.dialogflow.v2;
  *
  * <pre>
  * The top-level message returned from the `StreamingAnalyzeContent` method.
+ *
  * Multiple response messages can be returned in order:
+ *
  * 1.  If the input was set to streaming audio, the first one or more messages
  *     contain `recognition_result`. Each `recognition_result` represents a more
  *     complete transcript of what the user said. The last `recognition_result`
  *     has `is_final` set to `true`.
+ *
  * 2.  In virtual agent stage: if `enable_partial_automated_agent_reply` is
  *     true, the following N (currently 1 &lt;= N &lt;= 4) messages
  *     contain `automated_agent_reply` and optionally `reply_audio`
@@ -37,6 +40,7 @@ package com.google.cloud.dialogflow.v2;
  *     `automated_agent_reply_type` set to `FINAL`.
  *     If `enable_partial_automated_agent_reply` is not enabled, response stream
  *     only contains the final reply.
+ *
  *     In human assist stage: the following N (N &gt;= 1) messages contain
  *     `human_agent_suggestion_results`, `end_user_suggestion_results` or
  *     `message`.
@@ -65,11 +69,6 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StreamingAnalyzeContentResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -199,10 +198,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
    * <pre>
    * The audio data bytes encoded as specified in the request.
    * This field is set if:
+   *
    *  - The `reply_audio_config` field is specified in the request.
    *  - The automated agent, which this output comes from, responded with audio.
    *    In such case, the `reply_audio.config` field contains settings used to
    *    synthesize the speech.
+   *
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
    * has content.
@@ -222,10 +223,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
    * <pre>
    * The audio data bytes encoded as specified in the request.
    * This field is set if:
+   *
    *  - The `reply_audio_config` field is specified in the request.
    *  - The automated agent, which this output comes from, responded with audio.
    *    In such case, the `reply_audio.config` field contains settings used to
    *    synthesize the speech.
+   *
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
    * has content.
@@ -247,10 +250,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
    * <pre>
    * The audio data bytes encoded as specified in the request.
    * This field is set if:
+   *
    *  - The `reply_audio_config` field is specified in the request.
    *  - The automated agent, which this output comes from, responded with audio.
    *    In such case, the `reply_audio.config` field contains settings used to
    *    synthesize the speech.
+   *
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
    * has content.
@@ -949,11 +954,14 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
    *
    * <pre>
    * The top-level message returned from the `StreamingAnalyzeContent` method.
+   *
    * Multiple response messages can be returned in order:
+   *
    * 1.  If the input was set to streaming audio, the first one or more messages
    *     contain `recognition_result`. Each `recognition_result` represents a more
    *     complete transcript of what the user said. The last `recognition_result`
    *     has `is_final` set to `true`.
+   *
    * 2.  In virtual agent stage: if `enable_partial_automated_agent_reply` is
    *     true, the following N (currently 1 &lt;= N &lt;= 4) messages
    *     contain `automated_agent_reply` and optionally `reply_audio`
@@ -963,6 +971,7 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
    *     `automated_agent_reply_type` set to `FINAL`.
    *     If `enable_partial_automated_agent_reply` is not enabled, response stream
    *     only contains the final reply.
+   *
    *     In human assist stage: the following N (N &gt;= 1) messages contain
    *     `human_agent_suggestion_results`, `end_user_suggestion_results` or
    *     `message`.
@@ -1692,10 +1701,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - The `reply_audio_config` field is specified in the request.
      *  - The automated agent, which this output comes from, responded with audio.
      *    In such case, the `reply_audio.config` field contains settings used to
      *    synthesize the speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1714,10 +1725,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - The `reply_audio_config` field is specified in the request.
      *  - The automated agent, which this output comes from, responded with audio.
      *    In such case, the `reply_audio.config` field contains settings used to
      *    synthesize the speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1742,10 +1755,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - The `reply_audio_config` field is specified in the request.
      *  - The automated agent, which this output comes from, responded with audio.
      *    In such case, the `reply_audio.config` field contains settings used to
      *    synthesize the speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1772,10 +1787,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - The `reply_audio_config` field is specified in the request.
      *  - The automated agent, which this output comes from, responded with audio.
      *    In such case, the `reply_audio.config` field contains settings used to
      *    synthesize the speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1800,10 +1817,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - The `reply_audio_config` field is specified in the request.
      *  - The automated agent, which this output comes from, responded with audio.
      *    In such case, the `reply_audio.config` field contains settings used to
      *    synthesize the speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1833,10 +1852,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - The `reply_audio_config` field is specified in the request.
      *  - The automated agent, which this output comes from, responded with audio.
      *    In such case, the `reply_audio.config` field contains settings used to
      *    synthesize the speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1860,10 +1881,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - The `reply_audio_config` field is specified in the request.
      *  - The automated agent, which this output comes from, responded with audio.
      *    In such case, the `reply_audio.config` field contains settings used to
      *    synthesize the speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1882,10 +1905,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - The `reply_audio_config` field is specified in the request.
      *  - The automated agent, which this output comes from, responded with audio.
      *    In such case, the `reply_audio.config` field contains settings used to
      *    synthesize the speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1908,10 +1933,12 @@ public final class StreamingAnalyzeContentResponse extends com.google.protobuf.G
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - The `reply_audio_config` field is specified in the request.
      *  - The automated agent, which this output comes from, responded with audio.
      *    In such case, the `reply_audio.config` field contains settings used to
      *    synthesize the speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.

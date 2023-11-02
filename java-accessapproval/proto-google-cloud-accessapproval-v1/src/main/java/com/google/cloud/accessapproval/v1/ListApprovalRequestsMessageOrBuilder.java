@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public interface ListApprovalRequestsMessageOrBuilder
    * <pre>
    * A filter on the type of approval requests to retrieve. Must be one of the
    * following values:
+   *
    *   * [not set]: Requests that are pending or have active approvals.
    *   * ALL: All requests.
    *   * PENDING: Only pending requests.
@@ -78,6 +79,7 @@ public interface ListApprovalRequestsMessageOrBuilder
    * <pre>
    * A filter on the type of approval requests to retrieve. Must be one of the
    * following values:
+   *
    *   * [not set]: Requests that are pending or have active approvals.
    *   * ALL: All requests.
    *   * PENDING: Only pending requests.

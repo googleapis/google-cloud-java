@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -218,6 +218,56 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>ENHANCED_MEASUREMENT_SETTINGS = 24;</code>
    */
   ENHANCED_MEASUREMENT_SETTINGS(24),
+  /**
+   *
+   *
+   * <pre>
+   * DataRedactionSettings resource
+   * </pre>
+   *
+   * <code>DATA_REDACTION_SETTINGS = 25;</code>
+   */
+  DATA_REDACTION_SETTINGS(25),
+  /**
+   *
+   *
+   * <pre>
+   * SKAdNetworkConversionValueSchema resource
+   * </pre>
+   *
+   * <code>SKADNETWORK_CONVERSION_VALUE_SCHEMA = 26;</code>
+   */
+  SKADNETWORK_CONVERSION_VALUE_SCHEMA(26),
+  /**
+   *
+   *
+   * <pre>
+   * AdSenseLink resource
+   * </pre>
+   *
+   * <code>ADSENSE_LINK = 27;</code>
+   */
+  ADSENSE_LINK(27),
+  /**
+   *
+   *
+   * <pre>
+   * Audience resource
+   * </pre>
+   *
+   * <code>AUDIENCE = 28;</code>
+   */
+  AUDIENCE(28),
+  /**
+   *
+   *
+   * <pre>
+   * EventCreateRule resource
+   * </pre>
+   *
+   * <code>EVENT_CREATE_RULE = 29;</code>
+   */
+  EVENT_CREATE_RULE(29),
   UNRECOGNIZED(-1),
   ;
 
@@ -411,6 +461,56 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>ENHANCED_MEASUREMENT_SETTINGS = 24;</code>
    */
   public static final int ENHANCED_MEASUREMENT_SETTINGS_VALUE = 24;
+  /**
+   *
+   *
+   * <pre>
+   * DataRedactionSettings resource
+   * </pre>
+   *
+   * <code>DATA_REDACTION_SETTINGS = 25;</code>
+   */
+  public static final int DATA_REDACTION_SETTINGS_VALUE = 25;
+  /**
+   *
+   *
+   * <pre>
+   * SKAdNetworkConversionValueSchema resource
+   * </pre>
+   *
+   * <code>SKADNETWORK_CONVERSION_VALUE_SCHEMA = 26;</code>
+   */
+  public static final int SKADNETWORK_CONVERSION_VALUE_SCHEMA_VALUE = 26;
+  /**
+   *
+   *
+   * <pre>
+   * AdSenseLink resource
+   * </pre>
+   *
+   * <code>ADSENSE_LINK = 27;</code>
+   */
+  public static final int ADSENSE_LINK_VALUE = 27;
+  /**
+   *
+   *
+   * <pre>
+   * Audience resource
+   * </pre>
+   *
+   * <code>AUDIENCE = 28;</code>
+   */
+  public static final int AUDIENCE_VALUE = 28;
+  /**
+   *
+   *
+   * <pre>
+   * EventCreateRule resource
+   * </pre>
+   *
+   * <code>EVENT_CREATE_RULE = 29;</code>
+   */
+  public static final int EVENT_CREATE_RULE_VALUE = 29;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -474,6 +574,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return CHANNEL_GROUP;
       case 24:
         return ENHANCED_MEASUREMENT_SETTINGS;
+      case 25:
+        return DATA_REDACTION_SETTINGS;
+      case 26:
+        return SKADNETWORK_CONVERSION_VALUE_SCHEMA;
+      case 27:
+        return ADSENSE_LINK;
+      case 28:
+        return AUDIENCE;
+      case 29:
+        return EVENT_CREATE_RULE;
       default:
         return null;
     }

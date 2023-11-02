@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.monitoring.v3.CreateSnoozeRequest;
 import com.google.monitoring.v3.GetSnoozeRequest;
@@ -134,9 +134,9 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
             .setMethodDescriptor(createSnoozeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListSnoozesRequest, ListSnoozesResponse> listSnoozesTransportSettings =
@@ -144,9 +144,9 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
             .setMethodDescriptor(listSnoozesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetSnoozeRequest, Snooze> getSnoozeTransportSettings =
@@ -154,9 +154,9 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
             .setMethodDescriptor(getSnoozeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateSnoozeRequest, Snooze> updateSnoozeTransportSettings =
@@ -164,9 +164,9 @@ public class GrpcSnoozeServiceStub extends SnoozeServiceStub {
             .setMethodDescriptor(updateSnoozeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("snooze.name", String.valueOf(request.getSnooze().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("snooze.name", String.valueOf(request.getSnooze().getName()));
+                  return builder.build();
                 })
             .build();
 

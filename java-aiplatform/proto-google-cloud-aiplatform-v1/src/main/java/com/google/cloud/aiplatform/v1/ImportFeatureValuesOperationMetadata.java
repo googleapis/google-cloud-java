@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,14 @@ public final class ImportFeatureValuesOperationMetadata
   }
 
   private ImportFeatureValuesOperationMetadata() {
-    sourceUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    sourceUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    blockingOperationIds_ = emptyLongList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImportFeatureValuesOperationMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -159,7 +155,8 @@ public final class ImportFeatureValuesOperationMetadata
   public static final int SOURCE_URIS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList sourceUris_;
+  private com.google.protobuf.LazyStringArrayList sourceUris_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -260,6 +257,60 @@ public final class ImportFeatureValuesOperationMetadata
     return timestampOutsideRetentionRowsCount_;
   }
 
+  public static final int BLOCKING_OPERATION_IDS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.LongList blockingOperationIds_;
+  /**
+   *
+   *
+   * <pre>
+   * List of ImportFeatureValues operations running under a single EntityType
+   * that are blocking this operation.
+   * </pre>
+   *
+   * <code>repeated int64 blocking_operation_ids = 8;</code>
+   *
+   * @return A list containing the blockingOperationIds.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Long> getBlockingOperationIdsList() {
+    return blockingOperationIds_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of ImportFeatureValues operations running under a single EntityType
+   * that are blocking this operation.
+   * </pre>
+   *
+   * <code>repeated int64 blocking_operation_ids = 8;</code>
+   *
+   * @return The count of blockingOperationIds.
+   */
+  public int getBlockingOperationIdsCount() {
+    return blockingOperationIds_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of ImportFeatureValues operations running under a single EntityType
+   * that are blocking this operation.
+   * </pre>
+   *
+   * <code>repeated int64 blocking_operation_ids = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The blockingOperationIds at the given index.
+   */
+  public long getBlockingOperationIds(int index) {
+    return blockingOperationIds_.getLong(index);
+  }
+
+  private int blockingOperationIdsMemoizedSerializedSize = -1;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -274,6 +325,7 @@ public final class ImportFeatureValuesOperationMetadata
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (genericMetadata_ != null) {
       output.writeMessage(1, getGenericMetadata());
     }
@@ -291,6 +343,13 @@ public final class ImportFeatureValuesOperationMetadata
     }
     if (timestampOutsideRetentionRowsCount_ != 0L) {
       output.writeInt64(7, timestampOutsideRetentionRowsCount_);
+    }
+    if (getBlockingOperationIdsList().size() > 0) {
+      output.writeUInt32NoTag(66);
+      output.writeUInt32NoTag(blockingOperationIdsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < blockingOperationIds_.size(); i++) {
+      output.writeInt64NoTag(blockingOperationIds_.getLong(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -326,6 +385,20 @@ public final class ImportFeatureValuesOperationMetadata
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               7, timestampOutsideRetentionRowsCount_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < blockingOperationIds_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeInt64SizeNoTag(
+                blockingOperationIds_.getLong(i));
+      }
+      size += dataSize;
+      if (!getBlockingOperationIdsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+      }
+      blockingOperationIdsMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -352,6 +425,7 @@ public final class ImportFeatureValuesOperationMetadata
     if (getInvalidRowCount() != other.getInvalidRowCount()) return false;
     if (getTimestampOutsideRetentionRowsCount() != other.getTimestampOutsideRetentionRowsCount())
       return false;
+    if (!getBlockingOperationIdsList().equals(other.getBlockingOperationIdsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -381,6 +455,10 @@ public final class ImportFeatureValuesOperationMetadata
     hash =
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(getTimestampOutsideRetentionRowsCount());
+    if (getBlockingOperationIdsCount() > 0) {
+      hash = (37 * hash) + BLOCKING_OPERATION_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getBlockingOperationIdsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -530,10 +608,10 @@ public final class ImportFeatureValuesOperationMetadata
       }
       importedEntityCount_ = 0L;
       importedFeatureValueCount_ = 0L;
-      sourceUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      sourceUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       invalidRowCount_ = 0L;
       timestampOutsideRetentionRowsCount_ = 0L;
+      blockingOperationIds_ = emptyLongList();
       return this;
     }
 
@@ -573,11 +651,11 @@ public final class ImportFeatureValuesOperationMetadata
 
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        sourceUris_ = sourceUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+      if (((bitField0_ & 0x00000040) != 0)) {
+        blockingOperationIds_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
-      result.sourceUris_ = sourceUris_;
+      result.blockingOperationIds_ = blockingOperationIds_;
     }
 
     private void buildPartial0(
@@ -592,6 +670,10 @@ public final class ImportFeatureValuesOperationMetadata
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.importedFeatureValueCount_ = importedFeatureValueCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        sourceUris_.makeImmutable();
+        result.sourceUris_ = sourceUris_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.invalidRowCount_ = invalidRowCount_;
@@ -662,7 +744,7 @@ public final class ImportFeatureValuesOperationMetadata
       if (!other.sourceUris_.isEmpty()) {
         if (sourceUris_.isEmpty()) {
           sourceUris_ = other.sourceUris_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureSourceUrisIsMutable();
           sourceUris_.addAll(other.sourceUris_);
@@ -674,6 +756,16 @@ public final class ImportFeatureValuesOperationMetadata
       }
       if (other.getTimestampOutsideRetentionRowsCount() != 0L) {
         setTimestampOutsideRetentionRowsCount(other.getTimestampOutsideRetentionRowsCount());
+      }
+      if (!other.blockingOperationIds_.isEmpty()) {
+        if (blockingOperationIds_.isEmpty()) {
+          blockingOperationIds_ = other.blockingOperationIds_;
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          ensureBlockingOperationIdsIsMutable();
+          blockingOperationIds_.addAll(other.blockingOperationIds_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -738,6 +830,24 @@ public final class ImportFeatureValuesOperationMetadata
                 bitField0_ |= 0x00000020;
                 break;
               } // case 56
+            case 64:
+              {
+                long v = input.readInt64();
+                ensureBlockingOperationIdsIsMutable();
+                blockingOperationIds_.addLong(v);
+                break;
+              } // case 64
+            case 66:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureBlockingOperationIdsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  blockingOperationIds_.addLong(input.readInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1052,14 +1162,14 @@ public final class ImportFeatureValuesOperationMetadata
       return this;
     }
 
-    private com.google.protobuf.LazyStringList sourceUris_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList sourceUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSourceUrisIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!sourceUris_.isModifiable()) {
         sourceUris_ = new com.google.protobuf.LazyStringArrayList(sourceUris_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1073,7 +1183,8 @@ public final class ImportFeatureValuesOperationMetadata
      * @return A list containing the sourceUris.
      */
     public com.google.protobuf.ProtocolStringList getSourceUrisList() {
-      return sourceUris_.getUnmodifiableView();
+      sourceUris_.makeImmutable();
+      return sourceUris_;
     }
     /**
      *
@@ -1138,6 +1249,7 @@ public final class ImportFeatureValuesOperationMetadata
       }
       ensureSourceUrisIsMutable();
       sourceUris_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1159,6 +1271,7 @@ public final class ImportFeatureValuesOperationMetadata
       }
       ensureSourceUrisIsMutable();
       sourceUris_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1177,6 +1290,7 @@ public final class ImportFeatureValuesOperationMetadata
     public Builder addAllSourceUris(java.lang.Iterable<java.lang.String> values) {
       ensureSourceUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceUris_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1192,8 +1306,9 @@ public final class ImportFeatureValuesOperationMetadata
      * @return This builder for chaining.
      */
     public Builder clearSourceUris() {
-      sourceUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sourceUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1216,6 +1331,7 @@ public final class ImportFeatureValuesOperationMetadata
       checkByteStringIsUtf8(value);
       ensureSourceUrisIsMutable();
       sourceUris_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1337,6 +1453,141 @@ public final class ImportFeatureValuesOperationMetadata
     public Builder clearTimestampOutsideRetentionRowsCount() {
       bitField0_ = (bitField0_ & ~0x00000020);
       timestampOutsideRetentionRowsCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.LongList blockingOperationIds_ = emptyLongList();
+
+    private void ensureBlockingOperationIdsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        blockingOperationIds_ = mutableCopy(blockingOperationIds_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of ImportFeatureValues operations running under a single EntityType
+     * that are blocking this operation.
+     * </pre>
+     *
+     * <code>repeated int64 blocking_operation_ids = 8;</code>
+     *
+     * @return A list containing the blockingOperationIds.
+     */
+    public java.util.List<java.lang.Long> getBlockingOperationIdsList() {
+      return ((bitField0_ & 0x00000040) != 0)
+          ? java.util.Collections.unmodifiableList(blockingOperationIds_)
+          : blockingOperationIds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of ImportFeatureValues operations running under a single EntityType
+     * that are blocking this operation.
+     * </pre>
+     *
+     * <code>repeated int64 blocking_operation_ids = 8;</code>
+     *
+     * @return The count of blockingOperationIds.
+     */
+    public int getBlockingOperationIdsCount() {
+      return blockingOperationIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of ImportFeatureValues operations running under a single EntityType
+     * that are blocking this operation.
+     * </pre>
+     *
+     * <code>repeated int64 blocking_operation_ids = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The blockingOperationIds at the given index.
+     */
+    public long getBlockingOperationIds(int index) {
+      return blockingOperationIds_.getLong(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of ImportFeatureValues operations running under a single EntityType
+     * that are blocking this operation.
+     * </pre>
+     *
+     * <code>repeated int64 blocking_operation_ids = 8;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The blockingOperationIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBlockingOperationIds(int index, long value) {
+
+      ensureBlockingOperationIdsIsMutable();
+      blockingOperationIds_.setLong(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of ImportFeatureValues operations running under a single EntityType
+     * that are blocking this operation.
+     * </pre>
+     *
+     * <code>repeated int64 blocking_operation_ids = 8;</code>
+     *
+     * @param value The blockingOperationIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addBlockingOperationIds(long value) {
+
+      ensureBlockingOperationIdsIsMutable();
+      blockingOperationIds_.addLong(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of ImportFeatureValues operations running under a single EntityType
+     * that are blocking this operation.
+     * </pre>
+     *
+     * <code>repeated int64 blocking_operation_ids = 8;</code>
+     *
+     * @param values The blockingOperationIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllBlockingOperationIds(java.lang.Iterable<? extends java.lang.Long> values) {
+      ensureBlockingOperationIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blockingOperationIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of ImportFeatureValues operations running under a single EntityType
+     * that are blocking this operation.
+     * </pre>
+     *
+     * <code>repeated int64 blocking_operation_ids = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBlockingOperationIds() {
+      blockingOperationIds_ = emptyLongList();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }

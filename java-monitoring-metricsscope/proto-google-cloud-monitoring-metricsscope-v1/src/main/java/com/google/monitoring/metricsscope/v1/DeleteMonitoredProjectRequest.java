@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DeleteMonitoredProjectRequest extends com.google.protobuf.Gen
     return new DeleteMonitoredProjectRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.metricsscope.v1.MetricsScopesProto
         .internal_static_google_monitoring_metricsscope_v1_DeleteMonitoredProjectRequest_descriptor;
@@ -78,6 +73,7 @@ public final class DeleteMonitoredProjectRequest extends com.google.protobuf.Gen
    * Required. The resource name of the `MonitoredProject`.
    * Example:
    * `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
+   *
    * Authorization requires the following [Google
    * IAM](https://cloud.google.com/iam) permissions on both the `Metrics Scope`
    * and on the `MonitoredProject`: `monitoring.metricsScopes.link`
@@ -108,6 +104,7 @@ public final class DeleteMonitoredProjectRequest extends com.google.protobuf.Gen
    * Required. The resource name of the `MonitoredProject`.
    * Example:
    * `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
+   *
    * Authorization requires the following [Google
    * IAM](https://cloud.google.com/iam) permissions on both the `Metrics Scope`
    * and on the `MonitoredProject`: `monitoring.metricsScopes.link`
@@ -491,6 +488,7 @@ public final class DeleteMonitoredProjectRequest extends com.google.protobuf.Gen
      * Required. The resource name of the `MonitoredProject`.
      * Example:
      * `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
+     *
      * Authorization requires the following [Google
      * IAM](https://cloud.google.com/iam) permissions on both the `Metrics Scope`
      * and on the `MonitoredProject`: `monitoring.metricsScopes.link`
@@ -520,6 +518,7 @@ public final class DeleteMonitoredProjectRequest extends com.google.protobuf.Gen
      * Required. The resource name of the `MonitoredProject`.
      * Example:
      * `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
+     *
      * Authorization requires the following [Google
      * IAM](https://cloud.google.com/iam) permissions on both the `Metrics Scope`
      * and on the `MonitoredProject`: `monitoring.metricsScopes.link`
@@ -549,6 +548,7 @@ public final class DeleteMonitoredProjectRequest extends com.google.protobuf.Gen
      * Required. The resource name of the `MonitoredProject`.
      * Example:
      * `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
+     *
      * Authorization requires the following [Google
      * IAM](https://cloud.google.com/iam) permissions on both the `Metrics Scope`
      * and on the `MonitoredProject`: `monitoring.metricsScopes.link`
@@ -577,6 +577,7 @@ public final class DeleteMonitoredProjectRequest extends com.google.protobuf.Gen
      * Required. The resource name of the `MonitoredProject`.
      * Example:
      * `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
+     *
      * Authorization requires the following [Google
      * IAM](https://cloud.google.com/iam) permissions on both the `Metrics Scope`
      * and on the `MonitoredProject`: `monitoring.metricsScopes.link`
@@ -601,6 +602,7 @@ public final class DeleteMonitoredProjectRequest extends com.google.protobuf.Gen
      * Required. The resource name of the `MonitoredProject`.
      * Example:
      * `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
+     *
      * Authorization requires the following [Google
      * IAM](https://cloud.google.com/iam) permissions on both the `Metrics Scope`
      * and on the `MonitoredProject`: `monitoring.metricsScopes.link`

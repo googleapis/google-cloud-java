@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,9 +53,9 @@ public interface SecretEnvVarOrBuilder
    *
    * <pre>
    * Project identifier (preferrably project number but can also be the project
-   * ID) of the project that contains the secret. If not set, it will be
-   * populated with the function's project assuming that the secret exists in
-   * the same project as of the function.
+   * ID) of the project that contains the secret. If not set, it is
+   * populated with the function's project, assuming that the secret exists in
+   * the same project as the function.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -68,9 +68,9 @@ public interface SecretEnvVarOrBuilder
    *
    * <pre>
    * Project identifier (preferrably project number but can also be the project
-   * ID) of the project that contains the secret. If not set, it will be
-   * populated with the function's project assuming that the secret exists in
-   * the same project as of the function.
+   * ID) of the project that contains the secret. If not set, it is
+   * populated with the function's project, assuming that the secret exists in
+   * the same project as the function.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -83,7 +83,7 @@ public interface SecretEnvVarOrBuilder
    *
    *
    * <pre>
-   * Name of the secret in secret manager (not the full resource name).
+   * Name of the secret in Secret Manager (not the full resource name).
    * </pre>
    *
    * <code>string secret = 3;</code>
@@ -95,7 +95,7 @@ public interface SecretEnvVarOrBuilder
    *
    *
    * <pre>
-   * Name of the secret in secret manager (not the full resource name).
+   * Name of the secret in Secret Manager (not the full resource name).
    * </pre>
    *
    * <code>string secret = 3;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ParameterDefinition();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -120,6 +115,16 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>DOUBLE = 3;</code>
      */
     DOUBLE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Boolean type.
+     * </pre>
+     *
+     * <code>BOOLEAN = 4;</code>
+     */
+    BOOLEAN(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -163,6 +168,16 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>DOUBLE = 3;</code>
      */
     public static final int DOUBLE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Boolean type.
+     * </pre>
+     *
+     * <code>BOOLEAN = 4;</code>
+     */
+    public static final int BOOLEAN_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -196,6 +211,8 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
           return STRING;
         case 3:
           return DOUBLE;
+        case 4:
+          return BOOLEAN;
         default:
           return null;
       }

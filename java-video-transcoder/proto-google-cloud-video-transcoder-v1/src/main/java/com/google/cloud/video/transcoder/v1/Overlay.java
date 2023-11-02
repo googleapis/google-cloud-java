@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Overlay();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -280,11 +275,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NormalizedCoordinate();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1010,11 +1000,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Image();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2131,11 +2116,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AnimationStatic();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3316,11 +3296,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AnimationFade();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4833,11 +4808,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       return new AnimationEnd();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.transcoder.v1.ResourcesProto
           .internal_static_google_cloud_video_transcoder_v1_Overlay_AnimationEnd_descriptor;
@@ -5619,8 +5589,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.video.transcoder.v1.Overlay.AnimationEndOrBuilder getAnimationEndOrBuilder();
 
-    public com.google.cloud.video.transcoder.v1.Overlay.Animation.AnimationTypeCase
-        getAnimationTypeCase();
+    com.google.cloud.video.transcoder.v1.Overlay.Animation.AnimationTypeCase getAnimationTypeCase();
   }
   /**
    *
@@ -5649,11 +5618,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       return new Animation();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.transcoder.v1.ResourcesProto
           .internal_static_google_cloud_video_transcoder_v1_Overlay_Animation_descriptor;
@@ -5670,6 +5634,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int animationTypeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object animationType_;
 
     public enum AnimationTypeCase

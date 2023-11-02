@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Asset();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -204,11 +199,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SecurityStatus();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1690,7 +1680,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getScheduleBytes();
 
-    public com.google.cloud.dataplex.v1.Asset.DiscoverySpec.TriggerCase getTriggerCase();
+    com.google.cloud.dataplex.v1.Asset.DiscoverySpec.TriggerCase getTriggerCase();
   }
   /**
    *
@@ -1712,19 +1702,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private DiscoverySpec() {
-      includePatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      excludePatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includePatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludePatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DiscoverySpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1855,11 +1840,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new CsvOptions();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2908,11 +2888,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return new JsonOptions();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dataplex.v1.ResourcesProto
             .internal_static_google_cloud_dataplex_v1_Asset_DiscoverySpec_JsonOptions_descriptor;
@@ -3605,6 +3580,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int triggerCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object trigger_;
 
     public enum TriggerCase
@@ -3669,7 +3646,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public static final int INCLUDE_PATTERNS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList includePatterns_;
+    private com.google.protobuf.LazyStringArrayList includePatterns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3748,7 +3726,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public static final int EXCLUDE_PATTERNS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList excludePatterns_;
+    private com.google.protobuf.LazyStringArrayList excludePatterns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -4308,10 +4287,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         enabled_ = false;
-        includePatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        excludePatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        includePatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludePatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
         csvOptions_ = null;
         if (csvOptionsBuilder_ != null) {
           csvOptionsBuilder_.dispose();
@@ -4351,7 +4328,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.Asset.DiscoverySpec buildPartial() {
         com.google.cloud.dataplex.v1.Asset.DiscoverySpec result =
             new com.google.cloud.dataplex.v1.Asset.DiscoverySpec(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -4360,24 +4336,18 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dataplex.v1.Asset.DiscoverySpec result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          includePatterns_ = includePatterns_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.includePatterns_ = includePatterns_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          excludePatterns_ = excludePatterns_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.excludePatterns_ = excludePatterns_;
-      }
-
       private void buildPartial0(com.google.cloud.dataplex.v1.Asset.DiscoverySpec result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.enabled_ = enabled_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          includePatterns_.makeImmutable();
+          result.includePatterns_ = includePatterns_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          excludePatterns_.makeImmutable();
+          result.excludePatterns_ = excludePatterns_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.csvOptions_ =
@@ -4448,7 +4418,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         if (!other.includePatterns_.isEmpty()) {
           if (includePatterns_.isEmpty()) {
             includePatterns_ = other.includePatterns_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureIncludePatternsIsMutable();
             includePatterns_.addAll(other.includePatterns_);
@@ -4458,7 +4428,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         if (!other.excludePatterns_.isEmpty()) {
           if (excludePatterns_.isEmpty()) {
             excludePatterns_ = other.excludePatterns_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureExcludePatternsIsMutable();
             excludePatterns_.addAll(other.excludePatterns_);
@@ -4635,14 +4605,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList includePatterns_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList includePatterns_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIncludePatternsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!includePatterns_.isModifiable()) {
           includePatterns_ = new com.google.protobuf.LazyStringArrayList(includePatterns_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -4661,7 +4631,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the includePatterns.
        */
       public com.google.protobuf.ProtocolStringList getIncludePatternsList() {
-        return includePatterns_.getUnmodifiableView();
+        includePatterns_.makeImmutable();
+        return includePatterns_;
       }
       /**
        *
@@ -4746,6 +4717,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         ensureIncludePatternsIsMutable();
         includePatterns_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4772,6 +4744,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         ensureIncludePatternsIsMutable();
         includePatterns_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4795,6 +4768,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllIncludePatterns(java.lang.Iterable<java.lang.String> values) {
         ensureIncludePatternsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includePatterns_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4815,8 +4789,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearIncludePatterns() {
-        includePatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        includePatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -4844,18 +4819,19 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureIncludePatternsIsMutable();
         includePatterns_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList excludePatterns_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList excludePatterns_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureExcludePatternsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!excludePatterns_.isModifiable()) {
           excludePatterns_ = new com.google.protobuf.LazyStringArrayList(excludePatterns_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -4873,7 +4849,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the excludePatterns.
        */
       public com.google.protobuf.ProtocolStringList getExcludePatternsList() {
-        return excludePatterns_.getUnmodifiableView();
+        excludePatterns_.makeImmutable();
+        return excludePatterns_;
       }
       /**
        *
@@ -4954,6 +4931,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludePatternsIsMutable();
         excludePatterns_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4979,6 +4957,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludePatternsIsMutable();
         excludePatterns_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5001,6 +4980,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllExcludePatterns(java.lang.Iterable<java.lang.String> values) {
         ensureExcludePatternsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludePatterns_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5020,8 +5000,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearExcludePatterns() {
-        excludePatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        excludePatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -5048,6 +5029,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureExcludePatternsIsMutable();
         excludePatterns_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5833,11 +5815,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ResourceSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7250,11 +7227,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ResourceStatus();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8825,11 +8797,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return new DiscoveryStatus();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.ResourcesProto
           .internal_static_google_cloud_dataplex_v1_Asset_DiscoveryStatus_descriptor;
@@ -9132,11 +9099,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Stats();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

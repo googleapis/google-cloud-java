@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,11 @@ public interface DeleteJobRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the job to be deleted.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
    * example, "projects/foo/tenants/bar/jobs/baz".
+   *
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/jobs/bar".
    * </pre>
@@ -47,9 +49,11 @@ public interface DeleteJobRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the job to be deleted.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
    * example, "projects/foo/tenants/bar/jobs/baz".
+   *
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/jobs/bar".
    * </pre>

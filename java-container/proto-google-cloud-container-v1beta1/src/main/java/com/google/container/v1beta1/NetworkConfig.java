@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,17 +42,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     subnetwork_ = "";
     datapathProvider_ = 0;
     privateIpv6GoogleAccess_ = 0;
+    inTransitEncryptionConfig_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NetworkConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +66,866 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.NetworkConfig.Builder.class);
   }
 
+  public interface ClusterNetworkPerformanceConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the total network bandwidth tier for the NodePool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+     * </code>
+     *
+     * @return Whether the totalEgressBandwidthTier field is set.
+     */
+    boolean hasTotalEgressBandwidthTier();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the total network bandwidth tier for the NodePool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for totalEgressBandwidthTier.
+     */
+    int getTotalEgressBandwidthTierValue();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the total network bandwidth tier for the NodePool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+     * </code>
+     *
+     * @return The totalEgressBandwidthTier.
+     */
+    com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier
+        getTotalEgressBandwidthTier();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of all network bandwidth tiers
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig}
+   */
+  public static final class ClusterNetworkPerformanceConfig
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig)
+      ClusterNetworkPerformanceConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ClusterNetworkPerformanceConfig.newBuilder() to construct.
+    private ClusterNetworkPerformanceConfig(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ClusterNetworkPerformanceConfig() {
+      totalEgressBandwidthTier_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClusterNetworkPerformanceConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_NetworkConfig_ClusterNetworkPerformanceConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_NetworkConfig_ClusterNetworkPerformanceConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.class,
+              com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Node network tier
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier}
+     */
+    public enum Tier implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value
+       * </pre>
+       *
+       * <code>TIER_UNSPECIFIED = 0;</code>
+       */
+      TIER_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Higher bandwidth, actual values based on VM size.
+       * </pre>
+       *
+       * <code>TIER_1 = 1;</code>
+       */
+      TIER_1(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value
+       * </pre>
+       *
+       * <code>TIER_UNSPECIFIED = 0;</code>
+       */
+      public static final int TIER_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Higher bandwidth, actual values based on VM size.
+       * </pre>
+       *
+       * <code>TIER_1 = 1;</code>
+       */
+      public static final int TIER_1_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Tier valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Tier forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TIER_UNSPECIFIED;
+          case 1:
+            return TIER_1;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Tier> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Tier> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Tier>() {
+            public Tier findValueByNumber(int number) {
+              return Tier.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Tier[] VALUES = values();
+
+      public static Tier valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Tier(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier)
+    }
+
+    private int bitField0_;
+    public static final int TOTAL_EGRESS_BANDWIDTH_TIER_FIELD_NUMBER = 1;
+    private int totalEgressBandwidthTier_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the total network bandwidth tier for the NodePool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+     * </code>
+     *
+     * @return Whether the totalEgressBandwidthTier field is set.
+     */
+    @java.lang.Override
+    public boolean hasTotalEgressBandwidthTier() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the total network bandwidth tier for the NodePool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for totalEgressBandwidthTier.
+     */
+    @java.lang.Override
+    public int getTotalEgressBandwidthTierValue() {
+      return totalEgressBandwidthTier_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the total network bandwidth tier for the NodePool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+     * </code>
+     *
+     * @return The totalEgressBandwidthTier.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier
+        getTotalEgressBandwidthTier() {
+      com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier result =
+          com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier.forNumber(
+              totalEgressBandwidthTier_);
+      return result == null
+          ? com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeEnum(1, totalEgressBandwidthTier_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, totalEgressBandwidthTier_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig other =
+          (com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig) obj;
+
+      if (hasTotalEgressBandwidthTier() != other.hasTotalEgressBandwidthTier()) return false;
+      if (hasTotalEgressBandwidthTier()) {
+        if (totalEgressBandwidthTier_ != other.totalEgressBandwidthTier_) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTotalEgressBandwidthTier()) {
+        hash = (37 * hash) + TOTAL_EGRESS_BANDWIDTH_TIER_FIELD_NUMBER;
+        hash = (53 * hash) + totalEgressBandwidthTier_;
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of all network bandwidth tiers
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig)
+        com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NetworkConfig_ClusterNetworkPerformanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NetworkConfig_ClusterNetworkPerformanceConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.class,
+                com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        totalEgressBandwidthTier_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NetworkConfig_ClusterNetworkPerformanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+          getDefaultInstanceForType() {
+        return com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig build() {
+        com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+          buildPartial() {
+        com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig result =
+            new com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.totalEgressBandwidthTier_ = totalEgressBandwidthTier_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig) {
+          return mergeFrom(
+              (com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig other) {
+        if (other
+            == com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+                .getDefaultInstance()) return this;
+        if (other.hasTotalEgressBandwidthTier()) {
+          setTotalEgressBandwidthTier(other.getTotalEgressBandwidthTier());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  totalEgressBandwidthTier_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int totalEgressBandwidthTier_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the total network bandwidth tier for the NodePool.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+       * </code>
+       *
+       * @return Whether the totalEgressBandwidthTier field is set.
+       */
+      @java.lang.Override
+      public boolean hasTotalEgressBandwidthTier() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the total network bandwidth tier for the NodePool.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for totalEgressBandwidthTier.
+       */
+      @java.lang.Override
+      public int getTotalEgressBandwidthTierValue() {
+        return totalEgressBandwidthTier_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the total network bandwidth tier for the NodePool.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for totalEgressBandwidthTier to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalEgressBandwidthTierValue(int value) {
+        totalEgressBandwidthTier_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the total network bandwidth tier for the NodePool.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+       * </code>
+       *
+       * @return The totalEgressBandwidthTier.
+       */
+      @java.lang.Override
+      public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier
+          getTotalEgressBandwidthTier() {
+        com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier result =
+            com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier
+                .forNumber(totalEgressBandwidthTier_);
+        return result == null
+            ? com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the total network bandwidth tier for the NodePool.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+       * </code>
+       *
+       * @param value The totalEgressBandwidthTier to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalEgressBandwidthTier(
+          com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        totalEgressBandwidthTier_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the total network bandwidth tier for the NodePool.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Tier total_egress_bandwidth_tier = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalEgressBandwidthTier() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        totalEgressBandwidthTier_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig)
+    private static final com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig();
+    }
+
+    public static com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ClusterNetworkPerformanceConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ClusterNetworkPerformanceConfig>() {
+          @java.lang.Override
+          public ClusterNetworkPerformanceConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ClusterNetworkPerformanceConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClusterNetworkPerformanceConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int NETWORK_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -518,6 +1374,177 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         : gatewayApiConfig_;
   }
 
+  public static final int ENABLE_MULTI_NETWORKING_FIELD_NUMBER = 17;
+  private boolean enableMultiNetworking_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether multi-networking is enabled for this cluster.
+   * </pre>
+   *
+   * <code>bool enable_multi_networking = 17;</code>
+   *
+   * @return The enableMultiNetworking.
+   */
+  @java.lang.Override
+  public boolean getEnableMultiNetworking() {
+    return enableMultiNetworking_;
+  }
+
+  public static final int NETWORK_PERFORMANCE_CONFIG_FIELD_NUMBER = 18;
+  private com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+      networkPerformanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+   * </code>
+   *
+   * @return Whether the networkPerformanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkPerformanceConfig() {
+    return networkPerformanceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+   * </code>
+   *
+   * @return The networkPerformanceConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+      getNetworkPerformanceConfig() {
+    return networkPerformanceConfig_ == null
+        ? com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+            .getDefaultInstance()
+        : networkPerformanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfigOrBuilder
+      getNetworkPerformanceConfigOrBuilder() {
+    return networkPerformanceConfig_ == null
+        ? com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+            .getDefaultInstance()
+        : networkPerformanceConfig_;
+  }
+
+  public static final int ENABLE_FQDN_NETWORK_POLICY_FIELD_NUMBER = 19;
+  private boolean enableFqdnNetworkPolicy_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether FQDN Network Policy is enabled on this cluster.
+   * </pre>
+   *
+   * <code>optional bool enable_fqdn_network_policy = 19;</code>
+   *
+   * @return Whether the enableFqdnNetworkPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableFqdnNetworkPolicy() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether FQDN Network Policy is enabled on this cluster.
+   * </pre>
+   *
+   * <code>optional bool enable_fqdn_network_policy = 19;</code>
+   *
+   * @return The enableFqdnNetworkPolicy.
+   */
+  @java.lang.Override
+  public boolean getEnableFqdnNetworkPolicy() {
+    return enableFqdnNetworkPolicy_;
+  }
+
+  public static final int IN_TRANSIT_ENCRYPTION_CONFIG_FIELD_NUMBER = 20;
+  private int inTransitEncryptionConfig_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+   * </code>
+   *
+   * @return Whether the inTransitEncryptionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasInTransitEncryptionConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for inTransitEncryptionConfig.
+   */
+  @java.lang.Override
+  public int getInTransitEncryptionConfigValue() {
+    return inTransitEncryptionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+   * </code>
+   *
+   * @return The inTransitEncryptionConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.InTransitEncryptionConfig getInTransitEncryptionConfig() {
+    com.google.container.v1beta1.InTransitEncryptionConfig result =
+        com.google.container.v1beta1.InTransitEncryptionConfig.forNumber(
+            inTransitEncryptionConfig_);
+    return result == null
+        ? com.google.container.v1beta1.InTransitEncryptionConfig.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -567,6 +1594,18 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (gatewayApiConfig_ != null) {
       output.writeMessage(16, getGatewayApiConfig());
     }
+    if (enableMultiNetworking_ != false) {
+      output.writeBool(17, enableMultiNetworking_);
+    }
+    if (networkPerformanceConfig_ != null) {
+      output.writeMessage(18, getNetworkPerformanceConfig());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(19, enableFqdnNetworkPolicy_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(20, inTransitEncryptionConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -613,6 +1652,20 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (gatewayApiConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getGatewayApiConfig());
     }
+    if (enableMultiNetworking_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, enableMultiNetworking_);
+    }
+    if (networkPerformanceConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, getNetworkPerformanceConfig());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, enableFqdnNetworkPolicy_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, inTransitEncryptionConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -650,6 +1703,19 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasGatewayApiConfig() != other.hasGatewayApiConfig()) return false;
     if (hasGatewayApiConfig()) {
       if (!getGatewayApiConfig().equals(other.getGatewayApiConfig())) return false;
+    }
+    if (getEnableMultiNetworking() != other.getEnableMultiNetworking()) return false;
+    if (hasNetworkPerformanceConfig() != other.hasNetworkPerformanceConfig()) return false;
+    if (hasNetworkPerformanceConfig()) {
+      if (!getNetworkPerformanceConfig().equals(other.getNetworkPerformanceConfig())) return false;
+    }
+    if (hasEnableFqdnNetworkPolicy() != other.hasEnableFqdnNetworkPolicy()) return false;
+    if (hasEnableFqdnNetworkPolicy()) {
+      if (getEnableFqdnNetworkPolicy() != other.getEnableFqdnNetworkPolicy()) return false;
+    }
+    if (hasInTransitEncryptionConfig() != other.hasInTransitEncryptionConfig()) return false;
+    if (hasInTransitEncryptionConfig()) {
+      if (inTransitEncryptionConfig_ != other.inTransitEncryptionConfig_) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -689,6 +1755,20 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasGatewayApiConfig()) {
       hash = (37 * hash) + GATEWAY_API_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getGatewayApiConfig().hashCode();
+    }
+    hash = (37 * hash) + ENABLE_MULTI_NETWORKING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableMultiNetworking());
+    if (hasNetworkPerformanceConfig()) {
+      hash = (37 * hash) + NETWORK_PERFORMANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkPerformanceConfig().hashCode();
+    }
+    if (hasEnableFqdnNetworkPolicy()) {
+      hash = (37 * hash) + ENABLE_FQDN_NETWORK_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableFqdnNetworkPolicy());
+    }
+    if (hasInTransitEncryptionConfig()) {
+      hash = (37 * hash) + IN_TRANSIT_ENCRYPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + inTransitEncryptionConfig_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -855,6 +1935,14 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         gatewayApiConfigBuilder_.dispose();
         gatewayApiConfigBuilder_ = null;
       }
+      enableMultiNetworking_ = false;
+      networkPerformanceConfig_ = null;
+      if (networkPerformanceConfigBuilder_ != null) {
+        networkPerformanceConfigBuilder_.dispose();
+        networkPerformanceConfigBuilder_ = null;
+      }
+      enableFqdnNetworkPolicy_ = false;
+      inTransitEncryptionConfig_ = 0;
       return this;
     }
 
@@ -928,6 +2016,25 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         result.gatewayApiConfig_ =
             gatewayApiConfigBuilder_ == null ? gatewayApiConfig_ : gatewayApiConfigBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.enableMultiNetworking_ = enableMultiNetworking_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.networkPerformanceConfig_ =
+            networkPerformanceConfigBuilder_ == null
+                ? networkPerformanceConfig_
+                : networkPerformanceConfigBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.enableFqdnNetworkPolicy_ = enableFqdnNetworkPolicy_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.inTransitEncryptionConfig_ = inTransitEncryptionConfig_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1008,6 +2115,18 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasGatewayApiConfig()) {
         mergeGatewayApiConfig(other.getGatewayApiConfig());
+      }
+      if (other.getEnableMultiNetworking() != false) {
+        setEnableMultiNetworking(other.getEnableMultiNetworking());
+      }
+      if (other.hasNetworkPerformanceConfig()) {
+        mergeNetworkPerformanceConfig(other.getNetworkPerformanceConfig());
+      }
+      if (other.hasEnableFqdnNetworkPolicy()) {
+        setEnableFqdnNetworkPolicy(other.getEnableFqdnNetworkPolicy());
+      }
+      if (other.hasInTransitEncryptionConfig()) {
+        setInTransitEncryptionConfig(other.getInTransitEncryptionConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1098,6 +2217,31 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 130
+            case 136:
+              {
+                enableMultiNetworking_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 136
+            case 146:
+              {
+                input.readMessage(
+                    getNetworkPerformanceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 146
+            case 152:
+              {
+                enableFqdnNetworkPolicy_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 152
+            case 160:
+              {
+                inTransitEncryptionConfig_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2465,6 +3609,462 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         gatewayApiConfig_ = null;
       }
       return gatewayApiConfigBuilder_;
+    }
+
+    private boolean enableMultiNetworking_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether multi-networking is enabled for this cluster.
+     * </pre>
+     *
+     * <code>bool enable_multi_networking = 17;</code>
+     *
+     * @return The enableMultiNetworking.
+     */
+    @java.lang.Override
+    public boolean getEnableMultiNetworking() {
+      return enableMultiNetworking_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether multi-networking is enabled for this cluster.
+     * </pre>
+     *
+     * <code>bool enable_multi_networking = 17;</code>
+     *
+     * @param value The enableMultiNetworking to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableMultiNetworking(boolean value) {
+
+      enableMultiNetworking_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether multi-networking is enabled for this cluster.
+     * </pre>
+     *
+     * <code>bool enable_multi_networking = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableMultiNetworking() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      enableMultiNetworking_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        networkPerformanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig,
+            com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Builder,
+            com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfigOrBuilder>
+        networkPerformanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Network bandwidth tier configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+     * </code>
+     *
+     * @return Whether the networkPerformanceConfig field is set.
+     */
+    public boolean hasNetworkPerformanceConfig() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network bandwidth tier configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+     * </code>
+     *
+     * @return The networkPerformanceConfig.
+     */
+    public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+        getNetworkPerformanceConfig() {
+      if (networkPerformanceConfigBuilder_ == null) {
+        return networkPerformanceConfig_ == null
+            ? com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+                .getDefaultInstance()
+            : networkPerformanceConfig_;
+      } else {
+        return networkPerformanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network bandwidth tier configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+     * </code>
+     */
+    public Builder setNetworkPerformanceConfig(
+        com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig value) {
+      if (networkPerformanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkPerformanceConfig_ = value;
+      } else {
+        networkPerformanceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network bandwidth tier configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+     * </code>
+     */
+    public Builder setNetworkPerformanceConfig(
+        com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Builder
+            builderForValue) {
+      if (networkPerformanceConfigBuilder_ == null) {
+        networkPerformanceConfig_ = builderForValue.build();
+      } else {
+        networkPerformanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network bandwidth tier configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+     * </code>
+     */
+    public Builder mergeNetworkPerformanceConfig(
+        com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig value) {
+      if (networkPerformanceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && networkPerformanceConfig_ != null
+            && networkPerformanceConfig_
+                != com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+                    .getDefaultInstance()) {
+          getNetworkPerformanceConfigBuilder().mergeFrom(value);
+        } else {
+          networkPerformanceConfig_ = value;
+        }
+      } else {
+        networkPerformanceConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network bandwidth tier configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+     * </code>
+     */
+    public Builder clearNetworkPerformanceConfig() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      networkPerformanceConfig_ = null;
+      if (networkPerformanceConfigBuilder_ != null) {
+        networkPerformanceConfigBuilder_.dispose();
+        networkPerformanceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network bandwidth tier configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+     * </code>
+     */
+    public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Builder
+        getNetworkPerformanceConfigBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getNetworkPerformanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network bandwidth tier configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+     * </code>
+     */
+    public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfigOrBuilder
+        getNetworkPerformanceConfigOrBuilder() {
+      if (networkPerformanceConfigBuilder_ != null) {
+        return networkPerformanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkPerformanceConfig_ == null
+            ? com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
+                .getDefaultInstance()
+            : networkPerformanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network bandwidth tier configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig,
+            com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Builder,
+            com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfigOrBuilder>
+        getNetworkPerformanceConfigFieldBuilder() {
+      if (networkPerformanceConfigBuilder_ == null) {
+        networkPerformanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig,
+                com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Builder,
+                com.google.container.v1beta1.NetworkConfig
+                    .ClusterNetworkPerformanceConfigOrBuilder>(
+                getNetworkPerformanceConfig(), getParentForChildren(), isClean());
+        networkPerformanceConfig_ = null;
+      }
+      return networkPerformanceConfigBuilder_;
+    }
+
+    private boolean enableFqdnNetworkPolicy_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether FQDN Network Policy is enabled on this cluster.
+     * </pre>
+     *
+     * <code>optional bool enable_fqdn_network_policy = 19;</code>
+     *
+     * @return Whether the enableFqdnNetworkPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableFqdnNetworkPolicy() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether FQDN Network Policy is enabled on this cluster.
+     * </pre>
+     *
+     * <code>optional bool enable_fqdn_network_policy = 19;</code>
+     *
+     * @return The enableFqdnNetworkPolicy.
+     */
+    @java.lang.Override
+    public boolean getEnableFqdnNetworkPolicy() {
+      return enableFqdnNetworkPolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether FQDN Network Policy is enabled on this cluster.
+     * </pre>
+     *
+     * <code>optional bool enable_fqdn_network_policy = 19;</code>
+     *
+     * @param value The enableFqdnNetworkPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableFqdnNetworkPolicy(boolean value) {
+
+      enableFqdnNetworkPolicy_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether FQDN Network Policy is enabled on this cluster.
+     * </pre>
+     *
+     * <code>optional bool enable_fqdn_network_policy = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableFqdnNetworkPolicy() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      enableFqdnNetworkPolicy_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int inTransitEncryptionConfig_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @return Whether the inTransitEncryptionConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasInTransitEncryptionConfig() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for inTransitEncryptionConfig.
+     */
+    @java.lang.Override
+    public int getInTransitEncryptionConfigValue() {
+      return inTransitEncryptionConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for inTransitEncryptionConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInTransitEncryptionConfigValue(int value) {
+      inTransitEncryptionConfig_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @return The inTransitEncryptionConfig.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.InTransitEncryptionConfig getInTransitEncryptionConfig() {
+      com.google.container.v1beta1.InTransitEncryptionConfig result =
+          com.google.container.v1beta1.InTransitEncryptionConfig.forNumber(
+              inTransitEncryptionConfig_);
+      return result == null
+          ? com.google.container.v1beta1.InTransitEncryptionConfig.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @param value The inTransitEncryptionConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInTransitEncryptionConfig(
+        com.google.container.v1beta1.InTransitEncryptionConfig value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      inTransitEncryptionConfig_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInTransitEncryptionConfig() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      inTransitEncryptionConfig_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

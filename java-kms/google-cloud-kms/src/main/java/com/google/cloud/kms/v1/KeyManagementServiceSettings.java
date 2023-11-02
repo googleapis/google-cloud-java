@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -209,6 +209,16 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
   /** Returns the object with the settings used for calls to decrypt. */
   public UnaryCallSettings<DecryptRequest, DecryptResponse> decryptSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).decryptSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rawEncrypt. */
+  public UnaryCallSettings<RawEncryptRequest, RawEncryptResponse> rawEncryptSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).rawEncryptSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rawDecrypt. */
+  public UnaryCallSettings<RawDecryptRequest, RawDecryptResponse> rawDecryptSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).rawDecryptSettings();
   }
 
   /** Returns the object with the settings used for calls to asymmetricSign. */
@@ -501,6 +511,16 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     /** Returns the builder for the settings used for calls to decrypt. */
     public UnaryCallSettings.Builder<DecryptRequest, DecryptResponse> decryptSettings() {
       return getStubSettingsBuilder().decryptSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rawEncrypt. */
+    public UnaryCallSettings.Builder<RawEncryptRequest, RawEncryptResponse> rawEncryptSettings() {
+      return getStubSettingsBuilder().rawEncryptSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rawDecrypt. */
+    public UnaryCallSettings.Builder<RawDecryptRequest, RawDecryptResponse> rawDecryptSettings() {
+      return getStubSettingsBuilder().rawDecryptSettings();
     }
 
     /** Returns the builder for the settings used for calls to asymmetricSign. */

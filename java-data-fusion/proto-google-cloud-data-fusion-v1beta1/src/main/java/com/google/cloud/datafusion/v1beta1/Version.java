@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
   private Version() {
     versionNumber_ = "";
-    availableFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    availableFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
     type_ = 0;
   }
 
@@ -47,11 +47,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Version();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -298,7 +293,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public static final int AVAILABLE_FEATURES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList availableFeatures_;
+  private com.google.protobuf.LazyStringArrayList availableFeatures_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -627,8 +623,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       versionNumber_ = "";
       defaultVersion_ = false;
-      availableFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      availableFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
       type_ = 0;
       return this;
     }
@@ -657,20 +652,11 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datafusion.v1beta1.Version buildPartial() {
       com.google.cloud.datafusion.v1beta1.Version result =
           new com.google.cloud.datafusion.v1beta1.Version(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.datafusion.v1beta1.Version result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        availableFeatures_ = availableFeatures_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.availableFeatures_ = availableFeatures_;
     }
 
     private void buildPartial0(com.google.cloud.datafusion.v1beta1.Version result) {
@@ -680,6 +666,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.defaultVersion_ = defaultVersion_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        availableFeatures_.makeImmutable();
+        result.availableFeatures_ = availableFeatures_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.type_ = type_;
@@ -742,7 +732,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (!other.availableFeatures_.isEmpty()) {
         if (availableFeatures_.isEmpty()) {
           availableFeatures_ = other.availableFeatures_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureAvailableFeaturesIsMutable();
           availableFeatures_.addAll(other.availableFeatures_);
@@ -981,14 +971,14 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList availableFeatures_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList availableFeatures_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAvailableFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!availableFeatures_.isModifiable()) {
         availableFeatures_ = new com.google.protobuf.LazyStringArrayList(availableFeatures_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1002,7 +992,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the availableFeatures.
      */
     public com.google.protobuf.ProtocolStringList getAvailableFeaturesList() {
-      return availableFeatures_.getUnmodifiableView();
+      availableFeatures_.makeImmutable();
+      return availableFeatures_;
     }
     /**
      *
@@ -1067,6 +1058,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAvailableFeaturesIsMutable();
       availableFeatures_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1088,6 +1080,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAvailableFeaturesIsMutable();
       availableFeatures_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1106,6 +1099,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAvailableFeatures(java.lang.Iterable<java.lang.String> values) {
       ensureAvailableFeaturesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, availableFeatures_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1121,8 +1115,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvailableFeatures() {
-      availableFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      availableFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1145,6 +1140,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAvailableFeaturesIsMutable();
       availableFeatures_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -189,5 +189,5 @@ public interface QuasiIdOrBuilder
    */
   com.google.protobuf.EmptyOrBuilder getInferredOrBuilder();
 
-  public com.google.privacy.dlp.v2.QuasiId.TagCase getTagCase();
+  com.google.privacy.dlp.v2.QuasiId.TagCase getTagCase();
 }

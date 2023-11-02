@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,17 +40,13 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   private ImportDocumentsRequest() {
     parent_ = "";
     reconciliationMode_ = 0;
+    idField_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImportDocumentsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -84,7 +80,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defaults to INCREMENTAL.
+     * Defaults to `INCREMENTAL`.
      * </pre>
      *
      * <code>RECONCILIATION_MODE_UNSPECIFIED = 0;</code>
@@ -118,7 +114,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defaults to INCREMENTAL.
+     * Defaults to `INCREMENTAL`.
      * </pre>
      *
      * <code>RECONCILIATION_MODE_UNSPECIFIED = 0;</code>
@@ -338,11 +334,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InlineSource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1366,6 +1357,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -1737,6 +1730,151 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         : result;
   }
 
+  public static final int AUTO_GENERATE_IDS_FIELD_NUMBER = 8;
+  private boolean autoGenerateIds_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to automatically generate IDs for the documents if absent.
+   *
+   * If set to `true`,
+   * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s are
+   * automatically generated based on the hash of the payload, where IDs may not
+   * be consistent during multiple imports. In which case
+   * [ReconciliationMode.FULL][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode.FULL]
+   * is highly recommended to avoid duplicate contents. If unset or set to
+   * `false`, [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s
+   * have to be specified using
+   * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
+   * otherwise, documents without IDs fail to be imported.
+   *
+   * Only set this field when using
+   * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
+   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
+   * when
+   * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+   * or
+   * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+   * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * </pre>
+   *
+   * <code>bool auto_generate_ids = 8;</code>
+   *
+   * @return The autoGenerateIds.
+   */
+  @java.lang.Override
+  public boolean getAutoGenerateIds() {
+    return autoGenerateIds_;
+  }
+
+  public static final int ID_FIELD_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object idField_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The field in the Cloud Storage and BigQuery sources that indicates the
+   * unique IDs of the documents.
+   *
+   * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
+   * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
+   * "some_uuid"}`. For
+   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
+   * the column name of the BigQuery table where the unique ids are stored.
+   *
+   * The values of the JSON field or the BigQuery column are used as the
+   * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
+   * field or the BigQuery column must be of string type, and the values must be
+   * set as valid strings conform to
+   * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
+   * Otherwise, documents without valid IDs fail to be imported.
+   *
+   * Only set this field when using
+   * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
+   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
+   * when
+   * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+   * or
+   * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+   * is `custom`. And only set this field when
+   * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
+   * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   *
+   * If it is unset, a default value `_id` is used when importing from the
+   * allowed data sources.
+   * </pre>
+   *
+   * <code>string id_field = 9;</code>
+   *
+   * @return The idField.
+   */
+  @java.lang.Override
+  public java.lang.String getIdField() {
+    java.lang.Object ref = idField_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      idField_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The field in the Cloud Storage and BigQuery sources that indicates the
+   * unique IDs of the documents.
+   *
+   * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
+   * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
+   * "some_uuid"}`. For
+   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
+   * the column name of the BigQuery table where the unique ids are stored.
+   *
+   * The values of the JSON field or the BigQuery column are used as the
+   * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
+   * field or the BigQuery column must be of string type, and the values must be
+   * set as valid strings conform to
+   * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
+   * Otherwise, documents without valid IDs fail to be imported.
+   *
+   * Only set this field when using
+   * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
+   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
+   * when
+   * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+   * or
+   * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+   * is `custom`. And only set this field when
+   * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
+   * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   *
+   * If it is unset, a default value `_id` is used when importing from the
+   * allowed data sources.
+   * </pre>
+   *
+   * <code>string id_field = 9;</code>
+   *
+   * @return The bytes for idField.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIdFieldBytes() {
+    java.lang.Object ref = idField_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      idField_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1772,6 +1910,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             .RECONCILIATION_MODE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(6, reconciliationMode_);
+    }
+    if (autoGenerateIds_ != false) {
+      output.writeBool(8, autoGenerateIds_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idField_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, idField_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1811,6 +1955,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, reconciliationMode_);
     }
+    if (autoGenerateIds_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, autoGenerateIds_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idField_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, idField_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1833,6 +1983,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       if (!getErrorConfig().equals(other.getErrorConfig())) return false;
     }
     if (reconciliationMode_ != other.reconciliationMode_) return false;
+    if (getAutoGenerateIds() != other.getAutoGenerateIds()) return false;
+    if (!getIdField().equals(other.getIdField())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 2:
@@ -1866,6 +2018,10 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     hash = (37 * hash) + RECONCILIATION_MODE_FIELD_NUMBER;
     hash = (53 * hash) + reconciliationMode_;
+    hash = (37 * hash) + AUTO_GENERATE_IDS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoGenerateIds());
+    hash = (37 * hash) + ID_FIELD_FIELD_NUMBER;
+    hash = (53 * hash) + getIdField().hashCode();
     switch (sourceCase_) {
       case 2:
         hash = (37 * hash) + INLINE_SOURCE_FIELD_NUMBER;
@@ -2038,6 +2194,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         errorConfigBuilder_ = null;
       }
       reconciliationMode_ = 0;
+      autoGenerateIds_ = false;
+      idField_ = "";
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -2088,6 +2246,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.reconciliationMode_ = reconciliationMode_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.autoGenerateIds_ = autoGenerateIds_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.idField_ = idField_;
       }
     }
 
@@ -2163,6 +2327,14 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       if (other.reconciliationMode_ != 0) {
         setReconciliationModeValue(other.getReconciliationModeValue());
+      }
+      if (other.getAutoGenerateIds() != false) {
+        setAutoGenerateIds(other.getAutoGenerateIds());
+      }
+      if (!other.getIdField().isEmpty()) {
+        idField_ = other.idField_;
+        bitField0_ |= 0x00000080;
+        onChanged();
       }
       switch (other.getSourceCase()) {
         case INLINE_SOURCE:
@@ -2247,6 +2419,18 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 64:
+              {
+                autoGenerateIds_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
+            case 74:
+              {
+                idField_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3374,6 +3558,365 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder clearReconciliationMode() {
       bitField0_ = (bitField0_ & ~0x00000020);
       reconciliationMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean autoGenerateIds_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to automatically generate IDs for the documents if absent.
+     *
+     * If set to `true`,
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s are
+     * automatically generated based on the hash of the payload, where IDs may not
+     * be consistent during multiple imports. In which case
+     * [ReconciliationMode.FULL][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode.FULL]
+     * is highly recommended to avoid duplicate contents. If unset or set to
+     * `false`, [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s
+     * have to be specified using
+     * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
+     * otherwise, documents without IDs fail to be imported.
+     *
+     * Only set this field when using
+     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
+     * when
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * or
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * </pre>
+     *
+     * <code>bool auto_generate_ids = 8;</code>
+     *
+     * @return The autoGenerateIds.
+     */
+    @java.lang.Override
+    public boolean getAutoGenerateIds() {
+      return autoGenerateIds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to automatically generate IDs for the documents if absent.
+     *
+     * If set to `true`,
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s are
+     * automatically generated based on the hash of the payload, where IDs may not
+     * be consistent during multiple imports. In which case
+     * [ReconciliationMode.FULL][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode.FULL]
+     * is highly recommended to avoid duplicate contents. If unset or set to
+     * `false`, [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s
+     * have to be specified using
+     * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
+     * otherwise, documents without IDs fail to be imported.
+     *
+     * Only set this field when using
+     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
+     * when
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * or
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * </pre>
+     *
+     * <code>bool auto_generate_ids = 8;</code>
+     *
+     * @param value The autoGenerateIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoGenerateIds(boolean value) {
+
+      autoGenerateIds_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to automatically generate IDs for the documents if absent.
+     *
+     * If set to `true`,
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s are
+     * automatically generated based on the hash of the payload, where IDs may not
+     * be consistent during multiple imports. In which case
+     * [ReconciliationMode.FULL][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.ReconciliationMode.FULL]
+     * is highly recommended to avoid duplicate contents. If unset or set to
+     * `false`, [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s
+     * have to be specified using
+     * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
+     * otherwise, documents without IDs fail to be imported.
+     *
+     * Only set this field when using
+     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
+     * when
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * or
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * </pre>
+     *
+     * <code>bool auto_generate_ids = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoGenerateIds() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      autoGenerateIds_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object idField_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The field in the Cloud Storage and BigQuery sources that indicates the
+     * unique IDs of the documents.
+     *
+     * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
+     * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
+     * "some_uuid"}`. For
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
+     * the column name of the BigQuery table where the unique ids are stored.
+     *
+     * The values of the JSON field or the BigQuery column are used as the
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
+     * field or the BigQuery column must be of string type, and the values must be
+     * set as valid strings conform to
+     * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
+     * Otherwise, documents without valid IDs fail to be imported.
+     *
+     * Only set this field when using
+     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
+     * when
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * or
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * is `custom`. And only set this field when
+     * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
+     * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     *
+     * If it is unset, a default value `_id` is used when importing from the
+     * allowed data sources.
+     * </pre>
+     *
+     * <code>string id_field = 9;</code>
+     *
+     * @return The idField.
+     */
+    public java.lang.String getIdField() {
+      java.lang.Object ref = idField_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        idField_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The field in the Cloud Storage and BigQuery sources that indicates the
+     * unique IDs of the documents.
+     *
+     * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
+     * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
+     * "some_uuid"}`. For
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
+     * the column name of the BigQuery table where the unique ids are stored.
+     *
+     * The values of the JSON field or the BigQuery column are used as the
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
+     * field or the BigQuery column must be of string type, and the values must be
+     * set as valid strings conform to
+     * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
+     * Otherwise, documents without valid IDs fail to be imported.
+     *
+     * Only set this field when using
+     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
+     * when
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * or
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * is `custom`. And only set this field when
+     * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
+     * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     *
+     * If it is unset, a default value `_id` is used when importing from the
+     * allowed data sources.
+     * </pre>
+     *
+     * <code>string id_field = 9;</code>
+     *
+     * @return The bytes for idField.
+     */
+    public com.google.protobuf.ByteString getIdFieldBytes() {
+      java.lang.Object ref = idField_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        idField_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The field in the Cloud Storage and BigQuery sources that indicates the
+     * unique IDs of the documents.
+     *
+     * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
+     * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
+     * "some_uuid"}`. For
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
+     * the column name of the BigQuery table where the unique ids are stored.
+     *
+     * The values of the JSON field or the BigQuery column are used as the
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
+     * field or the BigQuery column must be of string type, and the values must be
+     * set as valid strings conform to
+     * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
+     * Otherwise, documents without valid IDs fail to be imported.
+     *
+     * Only set this field when using
+     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
+     * when
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * or
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * is `custom`. And only set this field when
+     * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
+     * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     *
+     * If it is unset, a default value `_id` is used when importing from the
+     * allowed data sources.
+     * </pre>
+     *
+     * <code>string id_field = 9;</code>
+     *
+     * @param value The idField to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdField(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      idField_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The field in the Cloud Storage and BigQuery sources that indicates the
+     * unique IDs of the documents.
+     *
+     * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
+     * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
+     * "some_uuid"}`. For
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
+     * the column name of the BigQuery table where the unique ids are stored.
+     *
+     * The values of the JSON field or the BigQuery column are used as the
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
+     * field or the BigQuery column must be of string type, and the values must be
+     * set as valid strings conform to
+     * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
+     * Otherwise, documents without valid IDs fail to be imported.
+     *
+     * Only set this field when using
+     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
+     * when
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * or
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * is `custom`. And only set this field when
+     * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
+     * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     *
+     * If it is unset, a default value `_id` is used when importing from the
+     * allowed data sources.
+     * </pre>
+     *
+     * <code>string id_field = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIdField() {
+      idField_ = getDefaultInstance().getIdField();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The field in the Cloud Storage and BigQuery sources that indicates the
+     * unique IDs of the documents.
+     *
+     * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
+     * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
+     * "some_uuid"}`. For
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
+     * the column name of the BigQuery table where the unique ids are stored.
+     *
+     * The values of the JSON field or the BigQuery column are used as the
+     * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
+     * field or the BigQuery column must be of string type, and the values must be
+     * set as valid strings conform to
+     * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
+     * Otherwise, documents without valid IDs fail to be imported.
+     *
+     * Only set this field when using
+     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
+     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
+     * when
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * or
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * is `custom`. And only set this field when
+     * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
+     * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     *
+     * If it is unset, a default value `_id` is used when importing from the
+     * allowed data sources.
+     * </pre>
+     *
+     * <code>string id_field = 9;</code>
+     *
+     * @param value The bytes for idField to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdFieldBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      idField_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

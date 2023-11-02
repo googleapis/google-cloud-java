@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,10 +22,10 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Exfiltration represents a data exfiltration attempt of one or more
- * sources to one or more targets. Sources represent the source
- * of data that is exfiltrated, and Targets represents the destination the
- * data was copied to.
+ * Exfiltration represents a data exfiltration attempt from one or more sources
+ * to one or more targets. The `sources` attribute lists the sources of the
+ * exfiltrated data. The `targets` attribute lists the destinations the data was
+ * copied to.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.Exfiltration}
@@ -49,11 +49,6 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Exfiltration();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -404,10 +399,10 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Exfiltration represents a data exfiltration attempt of one or more
-   * sources to one or more targets. Sources represent the source
-   * of data that is exfiltrated, and Targets represents the destination the
-   * data was copied to.
+   * Exfiltration represents a data exfiltration attempt from one or more sources
+   * to one or more targets. The `sources` attribute lists the sources of the
+   * exfiltrated data. The `targets` attribute lists the destinations the data was
+   * copied to.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Exfiltration}

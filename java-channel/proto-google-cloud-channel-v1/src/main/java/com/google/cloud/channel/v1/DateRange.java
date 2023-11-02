@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     return new DateRange();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.ReportsServiceProto
         .internal_static_google_cloud_channel_v1_DateRange_descriptor;
@@ -72,6 +67,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The earliest usage date time (inclusive).
+   *
    * If you use time groupings (daily, weekly, etc), each group uses
    * midnight to midnight (Pacific time). The usage start date is
    * rounded down to include all usage from the specified date. We recommend
@@ -91,6 +87,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The earliest usage date time (inclusive).
+   *
    * If you use time groupings (daily, weekly, etc), each group uses
    * midnight to midnight (Pacific time). The usage start date is
    * rounded down to include all usage from the specified date. We recommend
@@ -112,6 +109,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The earliest usage date time (inclusive).
+   *
    * If you use time groupings (daily, weekly, etc), each group uses
    * midnight to midnight (Pacific time). The usage start date is
    * rounded down to include all usage from the specified date. We recommend
@@ -134,6 +132,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The latest usage date time (exclusive).
+   *
    * If you use time groupings (daily, weekly, etc), each group uses
    * midnight to midnight (Pacific time). The usage end date is
    * rounded down to include all usage from the specified date. We recommend
@@ -153,6 +152,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The latest usage date time (exclusive).
+   *
    * If you use time groupings (daily, weekly, etc), each group uses
    * midnight to midnight (Pacific time). The usage end date is
    * rounded down to include all usage from the specified date. We recommend
@@ -174,6 +174,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The latest usage date time (exclusive).
+   *
    * If you use time groupings (daily, weekly, etc), each group uses
    * midnight to midnight (Pacific time). The usage end date is
    * rounded down to include all usage from the specified date. We recommend
@@ -196,8 +197,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The earliest invoice date (inclusive).
-   * If your product uses monthly invoices, and this value is not the beginning
-   * of a month, this will adjust the date to the first day of the given month.
+   *
+   * If this value is not the first day of a month, this will move it back to
+   * the first day of the given month.
    * </pre>
    *
    * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -213,8 +215,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The earliest invoice date (inclusive).
-   * If your product uses monthly invoices, and this value is not the beginning
-   * of a month, this will adjust the date to the first day of the given month.
+   *
+   * If this value is not the first day of a month, this will move it back to
+   * the first day of the given month.
    * </pre>
    *
    * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -232,8 +235,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The earliest invoice date (inclusive).
-   * If your product uses monthly invoices, and this value is not the beginning
-   * of a month, this will adjust the date to the first day of the given month.
+   *
+   * If this value is not the first day of a month, this will move it back to
+   * the first day of the given month.
    * </pre>
    *
    * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -251,10 +255,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The latest invoice date (exclusive).
-   * If your product uses monthly invoices, and this value is not the beginning
-   * of a month, this will adjust the date to the first day of the following
-   * month.
+   * The latest invoice date (inclusive).
+   *
+   * If this value is not the last day of a month, this will move it forward to
+   * the last day of the given month.
    * </pre>
    *
    * <code>.google.type.Date invoice_end_date = 4;</code>
@@ -269,10 +273,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The latest invoice date (exclusive).
-   * If your product uses monthly invoices, and this value is not the beginning
-   * of a month, this will adjust the date to the first day of the following
-   * month.
+   * The latest invoice date (inclusive).
+   *
+   * If this value is not the last day of a month, this will move it forward to
+   * the last day of the given month.
    * </pre>
    *
    * <code>.google.type.Date invoice_end_date = 4;</code>
@@ -287,10 +291,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The latest invoice date (exclusive).
-   * If your product uses monthly invoices, and this value is not the beginning
-   * of a month, this will adjust the date to the first day of the following
-   * month.
+   * The latest invoice date (inclusive).
+   *
+   * If this value is not the last day of a month, this will move it forward to
+   * the last day of the given month.
    * </pre>
    *
    * <code>.google.type.Date invoice_end_date = 4;</code>
@@ -759,6 +763,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest usage date time (inclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage start date is
      * rounded down to include all usage from the specified date. We recommend
@@ -777,6 +782,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest usage date time (inclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage start date is
      * rounded down to include all usage from the specified date. We recommend
@@ -801,6 +807,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest usage date time (inclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage start date is
      * rounded down to include all usage from the specified date. We recommend
@@ -827,6 +834,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest usage date time (inclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage start date is
      * rounded down to include all usage from the specified date. We recommend
@@ -850,6 +858,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest usage date time (inclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage start date is
      * rounded down to include all usage from the specified date. We recommend
@@ -879,6 +888,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest usage date time (inclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage start date is
      * rounded down to include all usage from the specified date. We recommend
@@ -902,6 +912,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest usage date time (inclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage start date is
      * rounded down to include all usage from the specified date. We recommend
@@ -920,6 +931,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest usage date time (inclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage start date is
      * rounded down to include all usage from the specified date. We recommend
@@ -942,6 +954,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest usage date time (inclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage start date is
      * rounded down to include all usage from the specified date. We recommend
@@ -978,6 +991,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The latest usage date time (exclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage end date is
      * rounded down to include all usage from the specified date. We recommend
@@ -996,6 +1010,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The latest usage date time (exclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage end date is
      * rounded down to include all usage from the specified date. We recommend
@@ -1020,6 +1035,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The latest usage date time (exclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage end date is
      * rounded down to include all usage from the specified date. We recommend
@@ -1046,6 +1062,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The latest usage date time (exclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage end date is
      * rounded down to include all usage from the specified date. We recommend
@@ -1069,6 +1086,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The latest usage date time (exclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage end date is
      * rounded down to include all usage from the specified date. We recommend
@@ -1098,6 +1116,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The latest usage date time (exclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage end date is
      * rounded down to include all usage from the specified date. We recommend
@@ -1121,6 +1140,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The latest usage date time (exclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage end date is
      * rounded down to include all usage from the specified date. We recommend
@@ -1139,6 +1159,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The latest usage date time (exclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage end date is
      * rounded down to include all usage from the specified date. We recommend
@@ -1161,6 +1182,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The latest usage date time (exclusive).
+     *
      * If you use time groupings (daily, weekly, etc), each group uses
      * midnight to midnight (Pacific time). The usage end date is
      * rounded down to include all usage from the specified date. We recommend
@@ -1195,8 +1217,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest invoice date (inclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the given month.
+     *
+     * If this value is not the first day of a month, this will move it back to
+     * the first day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -1211,8 +1234,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest invoice date (inclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the given month.
+     *
+     * If this value is not the first day of a month, this will move it back to
+     * the first day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -1233,8 +1257,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest invoice date (inclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the given month.
+     *
+     * If this value is not the first day of a month, this will move it back to
+     * the first day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -1257,8 +1282,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest invoice date (inclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the given month.
+     *
+     * If this value is not the first day of a month, this will move it back to
+     * the first day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -1278,8 +1304,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest invoice date (inclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the given month.
+     *
+     * If this value is not the first day of a month, this will move it back to
+     * the first day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -1305,8 +1332,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest invoice date (inclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the given month.
+     *
+     * If this value is not the first day of a month, this will move it back to
+     * the first day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -1326,8 +1354,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest invoice date (inclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the given month.
+     *
+     * If this value is not the first day of a month, this will move it back to
+     * the first day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -1342,8 +1371,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest invoice date (inclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the given month.
+     *
+     * If this value is not the first day of a month, this will move it back to
+     * the first day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -1362,8 +1392,9 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The earliest invoice date (inclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the given month.
+     *
+     * If this value is not the first day of a month, this will move it back to
+     * the first day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_start_date = 3;</code>
@@ -1389,10 +1420,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest invoice date (exclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the following
-     * month.
+     * The latest invoice date (inclusive).
+     *
+     * If this value is not the last day of a month, this will move it forward to
+     * the last day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_end_date = 4;</code>
@@ -1406,10 +1437,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest invoice date (exclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the following
-     * month.
+     * The latest invoice date (inclusive).
+     *
+     * If this value is not the last day of a month, this will move it forward to
+     * the last day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_end_date = 4;</code>
@@ -1429,10 +1460,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest invoice date (exclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the following
-     * month.
+     * The latest invoice date (inclusive).
+     *
+     * If this value is not the last day of a month, this will move it forward to
+     * the last day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_end_date = 4;</code>
@@ -1454,10 +1485,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest invoice date (exclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the following
-     * month.
+     * The latest invoice date (inclusive).
+     *
+     * If this value is not the last day of a month, this will move it forward to
+     * the last day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_end_date = 4;</code>
@@ -1476,10 +1507,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest invoice date (exclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the following
-     * month.
+     * The latest invoice date (inclusive).
+     *
+     * If this value is not the last day of a month, this will move it forward to
+     * the last day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_end_date = 4;</code>
@@ -1504,10 +1535,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest invoice date (exclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the following
-     * month.
+     * The latest invoice date (inclusive).
+     *
+     * If this value is not the last day of a month, this will move it forward to
+     * the last day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_end_date = 4;</code>
@@ -1526,10 +1557,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest invoice date (exclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the following
-     * month.
+     * The latest invoice date (inclusive).
+     *
+     * If this value is not the last day of a month, this will move it forward to
+     * the last day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_end_date = 4;</code>
@@ -1543,10 +1574,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest invoice date (exclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the following
-     * month.
+     * The latest invoice date (inclusive).
+     *
+     * If this value is not the last day of a month, this will move it forward to
+     * the last day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_end_date = 4;</code>
@@ -1564,10 +1595,10 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The latest invoice date (exclusive).
-     * If your product uses monthly invoices, and this value is not the beginning
-     * of a month, this will adjust the date to the first day of the following
-     * month.
+     * The latest invoice date (inclusive).
+     *
+     * If this value is not the last day of a month, this will move it forward to
+     * the last day of the given month.
      * </pre>
      *
      * <code>.google.type.Date invoice_end_date = 4;</code>

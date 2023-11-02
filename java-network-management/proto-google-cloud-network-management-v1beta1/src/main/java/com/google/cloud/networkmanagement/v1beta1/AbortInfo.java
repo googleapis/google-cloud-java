@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
   private AbortInfo() {
     cause_ = 0;
     resourceUri_ = "";
-    projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AbortInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -254,6 +249,72 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSUPPORTED = 15;</code>
      */
     UNSUPPORTED(15),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source and destination resources have no common IP
+     * version.
+     * </pre>
+     *
+     * <code>MISMATCHED_IP_VERSION = 16;</code>
+     */
+    MISMATCHED_IP_VERSION(16),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the connection between the control plane and the node of
+     * the source cluster is initiated by the node and managed by the
+     * Konnectivity proxy.
+     * </pre>
+     *
+     * <code>GKE_KONNECTIVITY_PROXY_UNSUPPORTED = 17;</code>
+     */
+    GKE_KONNECTIVITY_PROXY_UNSUPPORTED(17),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because expected resource configuration was missing.
+     * </pre>
+     *
+     * <code>RESOURCE_CONFIG_NOT_FOUND = 18;</code>
+     */
+    RESOURCE_CONFIG_NOT_FOUND(18),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because a PSC endpoint selection for the Google-managed service
+     * is ambiguous (several PSC endpoints satisfy test input).
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT = 19;</code>
+     */
+    GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT(19),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because tests with a PSC-based Cloud SQL instance as a source are
+     * not supported.
+     * </pre>
+     *
+     * <code>SOURCE_PSC_CLOUD_SQL_UNSUPPORTED = 20;</code>
+     */
+    SOURCE_PSC_CLOUD_SQL_UNSUPPORTED(20),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because tests with a forwarding rule as a source are not
+     * supported.
+     * </pre>
+     *
+     * <code>SOURCE_FORWARDING_RULE_UNSUPPORTED = 21;</code>
+     */
+    SOURCE_FORWARDING_RULE_UNSUPPORTED(21),
     UNRECOGNIZED(-1),
     ;
 
@@ -432,6 +493,72 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSUPPORTED = 15;</code>
      */
     public static final int UNSUPPORTED_VALUE = 15;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source and destination resources have no common IP
+     * version.
+     * </pre>
+     *
+     * <code>MISMATCHED_IP_VERSION = 16;</code>
+     */
+    public static final int MISMATCHED_IP_VERSION_VALUE = 16;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the connection between the control plane and the node of
+     * the source cluster is initiated by the node and managed by the
+     * Konnectivity proxy.
+     * </pre>
+     *
+     * <code>GKE_KONNECTIVITY_PROXY_UNSUPPORTED = 17;</code>
+     */
+    public static final int GKE_KONNECTIVITY_PROXY_UNSUPPORTED_VALUE = 17;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because expected resource configuration was missing.
+     * </pre>
+     *
+     * <code>RESOURCE_CONFIG_NOT_FOUND = 18;</code>
+     */
+    public static final int RESOURCE_CONFIG_NOT_FOUND_VALUE = 18;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because a PSC endpoint selection for the Google-managed service
+     * is ambiguous (several PSC endpoints satisfy test input).
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT = 19;</code>
+     */
+    public static final int GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT_VALUE = 19;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because tests with a PSC-based Cloud SQL instance as a source are
+     * not supported.
+     * </pre>
+     *
+     * <code>SOURCE_PSC_CLOUD_SQL_UNSUPPORTED = 20;</code>
+     */
+    public static final int SOURCE_PSC_CLOUD_SQL_UNSUPPORTED_VALUE = 20;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because tests with a forwarding rule as a source are not
+     * supported.
+     * </pre>
+     *
+     * <code>SOURCE_FORWARDING_RULE_UNSUPPORTED = 21;</code>
+     */
+    public static final int SOURCE_FORWARDING_RULE_UNSUPPORTED_VALUE = 21;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -489,6 +616,18 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return MISMATCHED_DESTINATION_NETWORK;
         case 15:
           return UNSUPPORTED;
+        case 16:
+          return MISMATCHED_IP_VERSION;
+        case 17:
+          return GKE_KONNECTIVITY_PROXY_UNSUPPORTED;
+        case 18:
+          return RESOURCE_CONFIG_NOT_FOUND;
+        case 19:
+          return GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT;
+        case 20:
+          return SOURCE_PSC_CLOUD_SQL_UNSUPPORTED;
+        case 21:
+          return SOURCE_FORWARDING_RULE_UNSUPPORTED;
         default:
           return null;
       }
@@ -635,7 +774,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
   public static final int PROJECTS_MISSING_PERMISSION_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList projectsMissingPermission_;
+  private com.google.protobuf.LazyStringArrayList projectsMissingPermission_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -934,8 +1074,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       cause_ = 0;
       resourceUri_ = "";
-      projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -963,21 +1102,11 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1beta1.AbortInfo buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.AbortInfo result =
           new com.google.cloud.networkmanagement.v1beta1.AbortInfo(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.networkmanagement.v1beta1.AbortInfo result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        projectsMissingPermission_ = projectsMissingPermission_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.projectsMissingPermission_ = projectsMissingPermission_;
     }
 
     private void buildPartial0(com.google.cloud.networkmanagement.v1beta1.AbortInfo result) {
@@ -987,6 +1116,10 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.resourceUri_ = resourceUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        projectsMissingPermission_.makeImmutable();
+        result.projectsMissingPermission_ = projectsMissingPermission_;
       }
     }
 
@@ -1047,7 +1180,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.projectsMissingPermission_.isEmpty()) {
         if (projectsMissingPermission_.isEmpty()) {
           projectsMissingPermission_ = other.projectsMissingPermission_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureProjectsMissingPermissionIsMutable();
           projectsMissingPermission_.addAll(other.projectsMissingPermission_);
@@ -1316,15 +1449,15 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList projectsMissingPermission_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList projectsMissingPermission_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureProjectsMissingPermissionIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!projectsMissingPermission_.isModifiable()) {
         projectsMissingPermission_ =
             new com.google.protobuf.LazyStringArrayList(projectsMissingPermission_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1340,7 +1473,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the projectsMissingPermission.
      */
     public com.google.protobuf.ProtocolStringList getProjectsMissingPermissionList() {
-      return projectsMissingPermission_.getUnmodifiableView();
+      projectsMissingPermission_.makeImmutable();
+      return projectsMissingPermission_;
     }
     /**
      *
@@ -1413,6 +1547,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProjectsMissingPermissionIsMutable();
       projectsMissingPermission_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1436,6 +1571,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProjectsMissingPermissionIsMutable();
       projectsMissingPermission_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1456,6 +1592,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllProjectsMissingPermission(java.lang.Iterable<java.lang.String> values) {
       ensureProjectsMissingPermissionIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, projectsMissingPermission_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1473,8 +1610,9 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectsMissingPermission() {
-      projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1499,6 +1637,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureProjectsMissingPermissionIsMutable();
       projectsMissingPermission_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

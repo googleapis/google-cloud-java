@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,9 +78,11 @@ public interface HumanReviewStatusOrBuilder
    *
    * <pre>
    * The name of the operation triggered by the processed document. This field
-   * is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has
-   * the same response type and metadata as the long running operation returned
-   * by [ReviewDocument] method.
+   * is populated only when the
+   * [state][google.cloud.documentai.v1beta3.HumanReviewStatus.state] is
+   * `HUMAN_REVIEW_IN_PROGRESS`. It has the same response type and metadata as
+   * the long-running operation returned by
+   * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument].
    * </pre>
    *
    * <code>string human_review_operation = 3;</code>
@@ -93,9 +95,11 @@ public interface HumanReviewStatusOrBuilder
    *
    * <pre>
    * The name of the operation triggered by the processed document. This field
-   * is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has
-   * the same response type and metadata as the long running operation returned
-   * by [ReviewDocument] method.
+   * is populated only when the
+   * [state][google.cloud.documentai.v1beta3.HumanReviewStatus.state] is
+   * `HUMAN_REVIEW_IN_PROGRESS`. It has the same response type and metadata as
+   * the long-running operation returned by
+   * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument].
    * </pre>
    *
    * <code>string human_review_operation = 3;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
     return new CreateDeploymentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gsuiteaddons.v1.GSuiteAddOnsProto
         .internal_static_google_cloud_gsuiteaddons_v1_CreateDeploymentRequest_descriptor;
@@ -77,6 +72,7 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Name of the project in which to create the deployment.
+   *
    * Example: `projects/my_project`.
    * </pre>
    *
@@ -103,6 +99,7 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Name of the project in which to create the deployment.
+   *
    * Example: `projects/my_project`.
    * </pre>
    *
@@ -638,6 +635,7 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the project in which to create the deployment.
+     *
      * Example: `projects/my_project`.
      * </pre>
      *
@@ -663,6 +661,7 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the project in which to create the deployment.
+     *
      * Example: `projects/my_project`.
      * </pre>
      *
@@ -688,6 +687,7 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the project in which to create the deployment.
+     *
      * Example: `projects/my_project`.
      * </pre>
      *
@@ -712,6 +712,7 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the project in which to create the deployment.
+     *
      * Example: `projects/my_project`.
      * </pre>
      *
@@ -732,6 +733,7 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the project in which to create the deployment.
+     *
      * Example: `projects/my_project`.
      * </pre>
      *

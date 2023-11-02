@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import com.google.protos.google.cloud.binaryauthorization.v1.Resources;
@@ -186,9 +186,9 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
             .setMethodDescriptor(getPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<Service.UpdatePolicyRequest, Resources.Policy> updatePolicyTransportSettings =
@@ -196,9 +196,9 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
             .setMethodDescriptor(updatePolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("policy.name", String.valueOf(request.getPolicy().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("policy.name", String.valueOf(request.getPolicy().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<Service.CreateAttestorRequest, Resources.Attestor>
@@ -207,9 +207,9 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                 .setMethodDescriptor(createAttestorMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<Service.GetAttestorRequest, Resources.Attestor> getAttestorTransportSettings =
@@ -217,9 +217,9 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
             .setMethodDescriptor(getAttestorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<Service.UpdateAttestorRequest, Resources.Attestor>
@@ -228,9 +228,9 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                 .setMethodDescriptor(updateAttestorMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("attestor.name", String.valueOf(request.getAttestor().getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("attestor.name", String.valueOf(request.getAttestor().getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<Service.ListAttestorsRequest, Service.ListAttestorsResponse>
@@ -240,9 +240,9 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
                 .setMethodDescriptor(listAttestorsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<Service.DeleteAttestorRequest, Empty> deleteAttestorTransportSettings =
@@ -250,9 +250,9 @@ public class GrpcBinauthzManagementServiceV1Stub extends BinauthzManagementServi
             .setMethodDescriptor(deleteAttestorMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

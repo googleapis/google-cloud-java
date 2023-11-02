@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -364,6 +364,7 @@ public interface BuildOrBuilder
    *
    * <pre>
    * Output only. Time at which execution of the build was finished.
+   *
    * The difference between finish_time and start_time is the duration of the
    * build's execution.
    * </pre>
@@ -379,6 +380,7 @@ public interface BuildOrBuilder
    *
    * <pre>
    * Output only. Time at which execution of the build was finished.
+   *
    * The difference between finish_time and start_time is the duration of the
    * build's execution.
    * </pre>
@@ -394,6 +396,7 @@ public interface BuildOrBuilder
    *
    * <pre>
    * Output only. Time at which execution of the build was finished.
+   *
    * The difference between finish_time and start_time is the duration of the
    * build's execution.
    * </pre>
@@ -410,7 +413,9 @@ public interface BuildOrBuilder
    * Amount of time that this build should be allowed to run, to second
    * granularity. If this amount of time elapses, work on the build will cease
    * and the build status will be `TIMEOUT`.
+   *
    * `timeout` starts ticking from `startTime`.
+   *
    * Default time is 60 minutes.
    * </pre>
    *
@@ -426,7 +431,9 @@ public interface BuildOrBuilder
    * Amount of time that this build should be allowed to run, to second
    * granularity. If this amount of time elapses, work on the build will cease
    * and the build status will be `TIMEOUT`.
+   *
    * `timeout` starts ticking from `startTime`.
+   *
    * Default time is 60 minutes.
    * </pre>
    *
@@ -442,7 +449,9 @@ public interface BuildOrBuilder
    * Amount of time that this build should be allowed to run, to second
    * granularity. If this amount of time elapses, work on the build will cease
    * and the build status will be `TIMEOUT`.
+   *
    * `timeout` starts ticking from `startTime`.
+   *
    * Default time is 60 minutes.
    * </pre>
    *
@@ -456,9 +465,12 @@ public interface BuildOrBuilder
    * <pre>
    * A list of images to be pushed upon the successful completion of all build
    * steps.
+   *
    * The images are pushed using the builder service account's credentials.
+   *
    * The digests of the pushed images will be stored in the `Build` resource's
    * results field.
+   *
    * If any of the images fail to be pushed, the build status is marked
    * `FAILURE`.
    * </pre>
@@ -474,9 +486,12 @@ public interface BuildOrBuilder
    * <pre>
    * A list of images to be pushed upon the successful completion of all build
    * steps.
+   *
    * The images are pushed using the builder service account's credentials.
+   *
    * The digests of the pushed images will be stored in the `Build` resource's
    * results field.
+   *
    * If any of the images fail to be pushed, the build status is marked
    * `FAILURE`.
    * </pre>
@@ -492,9 +507,12 @@ public interface BuildOrBuilder
    * <pre>
    * A list of images to be pushed upon the successful completion of all build
    * steps.
+   *
    * The images are pushed using the builder service account's credentials.
+   *
    * The digests of the pushed images will be stored in the `Build` resource's
    * results field.
+   *
    * If any of the images fail to be pushed, the build status is marked
    * `FAILURE`.
    * </pre>
@@ -511,9 +529,12 @@ public interface BuildOrBuilder
    * <pre>
    * A list of images to be pushed upon the successful completion of all build
    * steps.
+   *
    * The images are pushed using the builder service account's credentials.
+   *
    * The digests of the pushed images will be stored in the `Build` resource's
    * results field.
+   *
    * If any of the images fail to be pushed, the build status is marked
    * `FAILURE`.
    * </pre>
@@ -532,6 +553,7 @@ public interface BuildOrBuilder
    * TTL in queue for this build. If provided and the build is enqueued longer
    * than this value, the build will expire and the build status will be
    * `EXPIRED`.
+   *
    * The TTL starts ticking from create_time.
    * </pre>
    *
@@ -547,6 +569,7 @@ public interface BuildOrBuilder
    * TTL in queue for this build. If provided and the build is enqueued longer
    * than this value, the build will expire and the build status will be
    * `EXPIRED`.
+   *
    * The TTL starts ticking from create_time.
    * </pre>
    *
@@ -562,6 +585,7 @@ public interface BuildOrBuilder
    * TTL in queue for this build. If provided and the build is enqueued longer
    * than this value, the build will expire and the build status will be
    * `EXPIRED`.
+   *
    * The TTL starts ticking from create_time.
    * </pre>
    *
@@ -611,7 +635,7 @@ public interface BuildOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage bucket where logs should be written (see
+   * Cloud Storage bucket where logs should be written (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
@@ -626,7 +650,7 @@ public interface BuildOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage bucket where logs should be written (see
+   * Cloud Storage bucket where logs should be written (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
@@ -952,11 +976,13 @@ public interface BuildOrBuilder
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
+   *
    * * BUILD: time to execute all build steps.
    * * PUSH: time to push all artifacts including docker images and non docker
    * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
+   *
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -972,11 +998,13 @@ public interface BuildOrBuilder
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
+   *
    * * BUILD: time to execute all build steps.
    * * PUSH: time to push all artifacts including docker images and non docker
    * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
+   *
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -995,11 +1023,13 @@ public interface BuildOrBuilder
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
+   *
    * * BUILD: time to execute all build steps.
    * * PUSH: time to push all artifacts including docker images and non docker
    * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
+   *
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -1015,11 +1045,13 @@ public interface BuildOrBuilder
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
+   *
    * * BUILD: time to execute all build steps.
    * * PUSH: time to push all artifacts including docker images and non docker
    * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
+   *
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>
@@ -1039,11 +1071,13 @@ public interface BuildOrBuilder
    * <pre>
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
+   *
    * * BUILD: time to execute all build steps.
    * * PUSH: time to push all artifacts including docker images and non docker
    * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
+   *
    * If the build does not specify source or images,
    * these keys will not be included.
    * </pre>

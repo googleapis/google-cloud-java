@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,20 +73,26 @@ public interface CryptoDeterministicConfigOrBuilder
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
    * format: {info type name}({surrogate character count}):{surrogate}
+   *
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+   *
    * This annotation identifies the surrogate when inspecting content using the
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
+   *
    * Note: For record transformations where the entire cell in a table is being
    * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
+   *
    * In order for inspection to work properly, the name of this info type must
    * not occur naturally anywhere in your data; otherwise, inspection may either
+   *
    * - reverse a surrogate that does not correspond to an actual identifier
    * - be unable to parse the surrogate and result in an error
+   *
    * Therefore, choose your custom info type name carefully after considering
    * what your data looks like. One way to select a name that has a high chance
    * of yielding reliable detection is to include one or more unicode characters
@@ -110,20 +116,26 @@ public interface CryptoDeterministicConfigOrBuilder
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
    * format: {info type name}({surrogate character count}):{surrogate}
+   *
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+   *
    * This annotation identifies the surrogate when inspecting content using the
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
+   *
    * Note: For record transformations where the entire cell in a table is being
    * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
+   *
    * In order for inspection to work properly, the name of this info type must
    * not occur naturally anywhere in your data; otherwise, inspection may either
+   *
    * - reverse a surrogate that does not correspond to an actual identifier
    * - be unable to parse the surrogate and result in an error
+   *
    * Therefore, choose your custom info type name carefully after considering
    * what your data looks like. One way to select a name that has a high chance
    * of yielding reliable detection is to include one or more unicode characters
@@ -147,20 +159,26 @@ public interface CryptoDeterministicConfigOrBuilder
    * the name of the custom info type followed by the number of
    * characters comprising the surrogate. The following scheme defines the
    * format: {info type name}({surrogate character count}):{surrogate}
+   *
    * For example, if the name of custom info type is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+   *
    * This annotation identifies the surrogate when inspecting content using the
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
+   *
    * Note: For record transformations where the entire cell in a table is being
    * transformed, surrogates are not mandatory. Surrogates are used to denote
    * the location of the token and are necessary for re-identification in free
    * form text.
+   *
    * In order for inspection to work properly, the name of this info type must
    * not occur naturally anywhere in your data; otherwise, inspection may either
+   *
    * - reverse a surrogate that does not correspond to an actual identifier
    * - be unable to parse the surrogate and result in an error
+   *
    * Therefore, choose your custom info type name carefully after considering
    * what your data looks like. One way to select a name that has a high chance
    * of yielding reliable detection is to include one or more unicode characters
@@ -185,11 +203,15 @@ public interface CryptoDeterministicConfigOrBuilder
    * validated against the value used during encryption. If a context was
    * provided during encryption, same context must be provided during decryption
    * as well.
+   *
    * If the context is not set, plaintext would be used as is for encryption.
    * If the context is set but:
+   *
    * 1. there is no record present when transforming a given value or
    * 2. the field is not present when transforming a given value,
+   *
    * plaintext would be used as is for encryption.
+   *
    * Note that case (1) is expected when an `InfoTypeTransformation` is
    * applied to both structured and unstructured `ContentItem`s.
    * </pre>
@@ -210,11 +232,15 @@ public interface CryptoDeterministicConfigOrBuilder
    * validated against the value used during encryption. If a context was
    * provided during encryption, same context must be provided during decryption
    * as well.
+   *
    * If the context is not set, plaintext would be used as is for encryption.
    * If the context is set but:
+   *
    * 1. there is no record present when transforming a given value or
    * 2. the field is not present when transforming a given value,
+   *
    * plaintext would be used as is for encryption.
+   *
    * Note that case (1) is expected when an `InfoTypeTransformation` is
    * applied to both structured and unstructured `ContentItem`s.
    * </pre>
@@ -235,11 +261,15 @@ public interface CryptoDeterministicConfigOrBuilder
    * validated against the value used during encryption. If a context was
    * provided during encryption, same context must be provided during decryption
    * as well.
+   *
    * If the context is not set, plaintext would be used as is for encryption.
    * If the context is set but:
+   *
    * 1. there is no record present when transforming a given value or
    * 2. the field is not present when transforming a given value,
+   *
    * plaintext would be used as is for encryption.
+   *
    * Note that case (1) is expected when an `InfoTypeTransformation` is
    * applied to both structured and unstructured `ContentItem`s.
    * </pre>

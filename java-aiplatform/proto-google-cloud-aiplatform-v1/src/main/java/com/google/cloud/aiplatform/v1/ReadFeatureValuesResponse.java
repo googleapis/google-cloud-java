@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ReadFeatureValuesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -123,11 +118,6 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FeatureDescriptor();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -874,11 +864,6 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Header();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2258,11 +2243,6 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       return new EntityView();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.FeaturestoreOnlineServiceProto
           .internal_static_google_cloud_aiplatform_v1_ReadFeatureValuesResponse_EntityView_descriptor;
@@ -2362,7 +2342,7 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
        */
       com.google.cloud.aiplatform.v1.FeatureValueListOrBuilder getValuesOrBuilder();
 
-      public com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.Data.DataCase
+      com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse.EntityView.Data.DataCase
           getDataCase();
     }
     /**
@@ -2393,11 +2373,6 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
         return new Data();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1.FeaturestoreOnlineServiceProto
             .internal_static_google_cloud_aiplatform_v1_ReadFeatureValuesResponse_EntityView_Data_descriptor;
@@ -2415,6 +2390,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       }
 
       private int dataCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object data_;
 
       public enum DataCase

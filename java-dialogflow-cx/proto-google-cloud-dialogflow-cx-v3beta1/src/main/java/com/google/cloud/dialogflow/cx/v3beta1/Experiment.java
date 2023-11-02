@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Experiment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -346,8 +341,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dialogflow.cx.v3beta1.VersionVariantsOrBuilder getVersionVariantsOrBuilder();
 
-    public com.google.cloud.dialogflow.cx.v3beta1.Experiment.Definition.VariantsCase
-        getVariantsCase();
+    com.google.cloud.dialogflow.cx.v3beta1.Experiment.Definition.VariantsCase getVariantsCase();
   }
   /**
    *
@@ -378,11 +372,6 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       return new Definition();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3beta1.ExperimentProto
           .internal_static_google_cloud_dialogflow_cx_v3beta1_Experiment_Definition_descriptor;
@@ -399,6 +388,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int variantsCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object variants_;
 
     public enum VariantsCase
@@ -1514,11 +1505,6 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       return new Result();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3beta1.ExperimentProto
           .internal_static_google_cloud_dialogflow_cx_v3beta1_Experiment_Result_descriptor;
@@ -2027,11 +2013,6 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ConfidenceInterval();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3020,8 +3001,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.ConfidenceIntervalOrBuilder
           getConfidenceIntervalOrBuilder();
 
-      public com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.Metric.ValueCase
-          getValueCase();
+      com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.Metric.ValueCase getValueCase();
     }
     /**
      *
@@ -3053,11 +3033,6 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
         return new Metric();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.cx.v3beta1.ExperimentProto
             .internal_static_google_cloud_dialogflow_cx_v3beta1_Experiment_Result_Metric_descriptor;
@@ -3074,6 +3049,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int valueCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object value_;
 
       public enum ValueCase
@@ -4634,11 +4611,6 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new VersionMetrics();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

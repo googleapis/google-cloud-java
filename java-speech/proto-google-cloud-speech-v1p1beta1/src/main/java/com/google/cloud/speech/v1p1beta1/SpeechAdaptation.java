@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
 
   private SpeechAdaptation() {
     phraseSets_ = java.util.Collections.emptyList();
-    phraseSetReferences_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    phraseSetReferences_ = com.google.protobuf.LazyStringArrayList.emptyList();
     customClasses_ = java.util.Collections.emptyList();
   }
 
@@ -47,11 +47,6 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SpeechAdaptation();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -141,18 +136,13 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     }
 
     private ABNFGrammar() {
-      abnfStrings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      abnfStrings_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ABNFGrammar();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -173,7 +163,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     public static final int ABNF_STRINGS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList abnfStrings_;
+    private com.google.protobuf.LazyStringArrayList abnfStrings_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -437,8 +428,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        abnfStrings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        abnfStrings_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -467,7 +457,6 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar buildPartial() {
         com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar result =
             new com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -475,18 +464,13 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          abnfStrings_ = abnfStrings_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.abnfStrings_ = abnfStrings_;
-      }
-
       private void buildPartial0(
           com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          abnfStrings_.makeImmutable();
+          result.abnfStrings_ = abnfStrings_;
+        }
       }
 
       @java.lang.Override
@@ -542,7 +526,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         if (!other.abnfStrings_.isEmpty()) {
           if (abnfStrings_.isEmpty()) {
             abnfStrings_ = other.abnfStrings_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureAbnfStringsIsMutable();
             abnfStrings_.addAll(other.abnfStrings_);
@@ -601,14 +585,14 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList abnfStrings_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList abnfStrings_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAbnfStringsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!abnfStrings_.isModifiable()) {
           abnfStrings_ = new com.google.protobuf.LazyStringArrayList(abnfStrings_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -623,7 +607,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        * @return A list containing the abnfStrings.
        */
       public com.google.protobuf.ProtocolStringList getAbnfStringsList() {
-        return abnfStrings_.getUnmodifiableView();
+        abnfStrings_.makeImmutable();
+        return abnfStrings_;
       }
       /**
        *
@@ -692,6 +677,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         }
         ensureAbnfStringsIsMutable();
         abnfStrings_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -714,6 +700,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         }
         ensureAbnfStringsIsMutable();
         abnfStrings_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -733,6 +720,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       public Builder addAllAbnfStrings(java.lang.Iterable<java.lang.String> values) {
         ensureAbnfStringsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, abnfStrings_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -749,8 +737,9 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearAbnfStrings() {
-        abnfStrings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        abnfStrings_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -774,6 +763,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         ensureAbnfStringsIsMutable();
         abnfStrings_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -929,7 +919,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
   public static final int PHRASE_SET_REFERENCES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList phraseSetReferences_;
+  private com.google.protobuf.LazyStringArrayList phraseSetReferences_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1385,8 +1376,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         phraseSetsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      phraseSetReferences_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      phraseSetReferences_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (customClassesBuilder_ == null) {
         customClasses_ = java.util.Collections.emptyList();
       } else {
@@ -1445,11 +1435,6 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       } else {
         result.phraseSets_ = phraseSetsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        phraseSetReferences_ = phraseSetReferences_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.phraseSetReferences_ = phraseSetReferences_;
       if (customClassesBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           customClasses_ = java.util.Collections.unmodifiableList(customClasses_);
@@ -1463,6 +1448,10 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.speech.v1p1beta1.SpeechAdaptation result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        phraseSetReferences_.makeImmutable();
+        result.phraseSetReferences_ = phraseSetReferences_;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.abnfGrammar_ =
             abnfGrammarBuilder_ == null ? abnfGrammar_ : abnfGrammarBuilder_.build();
@@ -1545,7 +1534,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       if (!other.phraseSetReferences_.isEmpty()) {
         if (phraseSetReferences_.isEmpty()) {
           phraseSetReferences_ = other.phraseSetReferences_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePhraseSetReferencesIsMutable();
           phraseSetReferences_.addAll(other.phraseSetReferences_);
@@ -2053,14 +2042,14 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       return phraseSetsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList phraseSetReferences_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList phraseSetReferences_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePhraseSetReferencesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!phraseSetReferences_.isModifiable()) {
         phraseSetReferences_ = new com.google.protobuf.LazyStringArrayList(phraseSetReferences_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -2075,7 +2064,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      * @return A list containing the phraseSetReferences.
      */
     public com.google.protobuf.ProtocolStringList getPhraseSetReferencesList() {
-      return phraseSetReferences_.getUnmodifiableView();
+      phraseSetReferences_.makeImmutable();
+      return phraseSetReferences_;
     }
     /**
      *
@@ -2144,6 +2134,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       ensurePhraseSetReferencesIsMutable();
       phraseSetReferences_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2166,6 +2157,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       }
       ensurePhraseSetReferencesIsMutable();
       phraseSetReferences_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2185,6 +2177,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     public Builder addAllPhraseSetReferences(java.lang.Iterable<java.lang.String> values) {
       ensurePhraseSetReferencesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, phraseSetReferences_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2201,8 +2194,9 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPhraseSetReferences() {
-      phraseSetReferences_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      phraseSetReferences_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -2226,6 +2220,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensurePhraseSetReferencesIsMutable();
       phraseSetReferences_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

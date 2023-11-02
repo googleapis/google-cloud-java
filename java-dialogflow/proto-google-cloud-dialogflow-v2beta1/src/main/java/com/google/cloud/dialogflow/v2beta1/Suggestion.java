@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Suggestion();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -291,7 +286,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     private Article() {
       title_ = "";
       uri_ = "";
-      snippets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      snippets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       answerRecord_ = "";
     }
 
@@ -299,11 +294,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Article();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -437,7 +427,8 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     public static final int SNIPPETS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList snippets_;
+    private com.google.protobuf.LazyStringArrayList snippets_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -932,8 +923,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         title_ = "";
         uri_ = "";
-        snippets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        snippets_ = com.google.protobuf.LazyStringArrayList.emptyList();
         internalGetMutableMetadata().clear();
         answerRecord_ = "";
         return this;
@@ -963,21 +953,11 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.v2beta1.Suggestion.Article buildPartial() {
         com.google.cloud.dialogflow.v2beta1.Suggestion.Article result =
             new com.google.cloud.dialogflow.v2beta1.Suggestion.Article(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dialogflow.v2beta1.Suggestion.Article result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
-          snippets_ = snippets_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.snippets_ = snippets_;
       }
 
       private void buildPartial0(com.google.cloud.dialogflow.v2beta1.Suggestion.Article result) {
@@ -987,6 +967,10 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.uri_ = uri_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          snippets_.makeImmutable();
+          result.snippets_ = snippets_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.metadata_ = internalGetMetadata();
@@ -1058,7 +1042,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         if (!other.snippets_.isEmpty()) {
           if (snippets_.isEmpty()) {
             snippets_ = other.snippets_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureSnippetsIsMutable();
             snippets_.addAll(other.snippets_);
@@ -1366,14 +1350,14 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList snippets_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList snippets_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureSnippetsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!snippets_.isModifiable()) {
           snippets_ = new com.google.protobuf.LazyStringArrayList(snippets_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -1387,7 +1371,8 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the snippets.
        */
       public com.google.protobuf.ProtocolStringList getSnippetsList() {
-        return snippets_.getUnmodifiableView();
+        snippets_.makeImmutable();
+        return snippets_;
       }
       /**
        *
@@ -1452,6 +1437,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSnippetsIsMutable();
         snippets_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1473,6 +1459,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSnippetsIsMutable();
         snippets_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1491,6 +1478,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllSnippets(java.lang.Iterable<java.lang.String> values) {
         ensureSnippetsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, snippets_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1506,8 +1494,9 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSnippets() {
-        snippets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        snippets_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -1530,6 +1519,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureSnippetsIsMutable();
         snippets_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2110,11 +2100,6 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FaqAnswer();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3983,6 +3968,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Latest message used as context to compile this suggestion.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -4008,6 +3994,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Latest message used as context to compile this suggestion.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -5599,6 +5586,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Latest message used as context to compile this suggestion.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -5623,6 +5611,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Latest message used as context to compile this suggestion.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -5647,6 +5636,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Latest message used as context to compile this suggestion.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -5670,6 +5660,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Latest message used as context to compile this suggestion.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -5689,6 +5680,7 @@ public final class Suggestion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Latest message used as context to compile this suggestion.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>

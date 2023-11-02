@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class AppGatewaysServiceGrpc {
 
   private AppGatewaysServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.beyondcorp.appgateways.v1.AppGatewaysService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -750,9 +750,9 @@ public final class AppGatewaysServiceGrpc {
   private static final class AppGatewaysServiceMethodDescriptorSupplier
       extends AppGatewaysServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AppGatewaysServiceMethodDescriptorSupplier(String methodName) {
+    AppGatewaysServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

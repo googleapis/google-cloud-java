@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,4 +80,42 @@ public interface InfoTypeOrBuilder
    * @return The bytes for version.
    */
   com.google.protobuf.ByteString getVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional custom sensitivity for this InfoType.
+   * This only applies to data profiling.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 3;</code>
+   *
+   * @return Whether the sensitivityScore field is set.
+   */
+  boolean hasSensitivityScore();
+  /**
+   *
+   *
+   * <pre>
+   * Optional custom sensitivity for this InfoType.
+   * This only applies to data profiling.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 3;</code>
+   *
+   * @return The sensitivityScore.
+   */
+  com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
+  /**
+   *
+   *
+   * <pre>
+   * Optional custom sensitivity for this InfoType.
+   * This only applies to data profiling.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 3;</code>
+   */
+  com.google.privacy.dlp.v2.SensitivityScoreOrBuilder getSensitivityScoreOrBuilder();
 }

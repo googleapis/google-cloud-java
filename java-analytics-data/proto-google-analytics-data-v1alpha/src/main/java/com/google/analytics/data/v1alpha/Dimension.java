@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
     return new Dimension();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_Dimension_descriptor;
@@ -80,11 +75,13 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
    * The name of the dimension. See the [API
    * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#dimensions)
    * for the list of dimension names.
+   *
    * If `dimensionExpression` is specified, `name` can be any string that you
    * would like within the allowed character set. For example if a
    * `dimensionExpression` concatenates `country` and `city`, you could call
    * that dimension `countryAndCity`. Dimension names that you choose must match
    * the regular expression `^[a-zA-Z0-9_]$`.
+   *
    * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
    * `dimensionExpression`, and `pivots`.
    * </pre>
@@ -112,11 +109,13 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
    * The name of the dimension. See the [API
    * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#dimensions)
    * for the list of dimension names.
+   *
    * If `dimensionExpression` is specified, `name` can be any string that you
    * would like within the allowed character set. For example if a
    * `dimensionExpression` concatenates `country` and `city`, you could call
    * that dimension `countryAndCity`. Dimension names that you choose must match
    * the regular expression `^[a-zA-Z0-9_]$`.
+   *
    * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
    * `dimensionExpression`, and `pivots`.
    * </pre>
@@ -578,11 +577,13 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      * The name of the dimension. See the [API
      * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#dimensions)
      * for the list of dimension names.
+     *
      * If `dimensionExpression` is specified, `name` can be any string that you
      * would like within the allowed character set. For example if a
      * `dimensionExpression` concatenates `country` and `city`, you could call
      * that dimension `countryAndCity`. Dimension names that you choose must match
      * the regular expression `^[a-zA-Z0-9_]$`.
+     *
      * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
      * `dimensionExpression`, and `pivots`.
      * </pre>
@@ -609,11 +610,13 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      * The name of the dimension. See the [API
      * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#dimensions)
      * for the list of dimension names.
+     *
      * If `dimensionExpression` is specified, `name` can be any string that you
      * would like within the allowed character set. For example if a
      * `dimensionExpression` concatenates `country` and `city`, you could call
      * that dimension `countryAndCity`. Dimension names that you choose must match
      * the regular expression `^[a-zA-Z0-9_]$`.
+     *
      * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
      * `dimensionExpression`, and `pivots`.
      * </pre>
@@ -640,11 +643,13 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      * The name of the dimension. See the [API
      * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#dimensions)
      * for the list of dimension names.
+     *
      * If `dimensionExpression` is specified, `name` can be any string that you
      * would like within the allowed character set. For example if a
      * `dimensionExpression` concatenates `country` and `city`, you could call
      * that dimension `countryAndCity`. Dimension names that you choose must match
      * the regular expression `^[a-zA-Z0-9_]$`.
+     *
      * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
      * `dimensionExpression`, and `pivots`.
      * </pre>
@@ -670,11 +675,13 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      * The name of the dimension. See the [API
      * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#dimensions)
      * for the list of dimension names.
+     *
      * If `dimensionExpression` is specified, `name` can be any string that you
      * would like within the allowed character set. For example if a
      * `dimensionExpression` concatenates `country` and `city`, you could call
      * that dimension `countryAndCity`. Dimension names that you choose must match
      * the regular expression `^[a-zA-Z0-9_]$`.
+     *
      * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
      * `dimensionExpression`, and `pivots`.
      * </pre>
@@ -696,11 +703,13 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      * The name of the dimension. See the [API
      * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#dimensions)
      * for the list of dimension names.
+     *
      * If `dimensionExpression` is specified, `name` can be any string that you
      * would like within the allowed character set. For example if a
      * `dimensionExpression` concatenates `country` and `city`, you could call
      * that dimension `countryAndCity`. Dimension names that you choose must match
      * the regular expression `^[a-zA-Z0-9_]$`.
+     *
      * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
      * `dimensionExpression`, and `pivots`.
      * </pre>

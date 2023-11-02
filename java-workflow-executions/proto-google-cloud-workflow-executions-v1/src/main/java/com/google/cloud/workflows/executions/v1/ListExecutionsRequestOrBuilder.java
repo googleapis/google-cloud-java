@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ public interface ListExecutionsRequestOrBuilder
    *
    * <pre>
    * Maximum number of executions to return per call.
-   * Max supported value depends on the selected Execution view: it's 10000 for
+   * Max supported value depends on the selected Execution view: it's 1000 for
    * BASIC and 100 for FULL. The default value used if the field is not
    * specified is 100, regardless of the selected view. Values greater than
    * the max value will be coerced down to it.
@@ -77,8 +77,12 @@ public interface ListExecutionsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListExecutions` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListExecutions` must
    * match the call that provided the page token.
+   *
+   * Note that pagination is applied to dynamic data. The list of executions
+   * returned can change between page requests.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -92,8 +96,12 @@ public interface ListExecutionsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListExecutions` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListExecutions` must
    * match the call that provided the page token.
+   *
+   * Note that pagination is applied to dynamic data. The list of executions
+   * returned can change between page requests.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -106,8 +114,8 @@ public interface ListExecutionsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A view defining which fields should be filled in the returned executions.
-   * The API will default to the BASIC view.
+   * Optional. A view defining which fields should be filled in the returned
+   * executions. The API will default to the BASIC view.
    * </pre>
    *
    * <code>
@@ -121,8 +129,8 @@ public interface ListExecutionsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A view defining which fields should be filled in the returned executions.
-   * The API will default to the BASIC view.
+   * Optional. A view defining which fields should be filled in the returned
+   * executions. The API will default to the BASIC view.
    * </pre>
    *
    * <code>
@@ -132,4 +140,66 @@ public interface ListExecutionsRequestOrBuilder
    * @return The view.
    */
   com.google.cloud.workflows.executions.v1.ExecutionView getView();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filters applied to the [Executions.ListExecutions] results.
+   * The following fields are supported for filtering:
+   * executionID, state, startTime, endTime, duration, workflowRevisionID,
+   * stepName, and label.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filters applied to the [Executions.ListExecutions] results.
+   * The following fields are supported for filtering:
+   * executionID, state, startTime, endTime, duration, workflowRevisionID,
+   * stepName, and label.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ordering applied to the [Executions.ListExecutions] results.
+   * By default the ordering is based on descending start time.
+   * The following fields are supported for order by:
+   * executionID, startTime, endTime, duration, state, and workflowRevisionID.
+   * </pre>
+   *
+   * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ordering applied to the [Executions.ListExecutions] results.
+   * By default the ordering is based on descending start time.
+   * The following fields are supported for order by:
+   * executionID, startTime, endTime, duration, state, and workflowRevisionID.
+   * </pre>
+   *
+   * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

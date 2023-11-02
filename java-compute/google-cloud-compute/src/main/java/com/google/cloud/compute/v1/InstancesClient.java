@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -4933,6 +4933,7 @@ public class InstancesClient implements BackgroundResource {
    *       SimulateMaintenanceEventInstanceRequest.newBuilder()
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
    *   Operation response = instancesClient.simulateMaintenanceEventAsync(request).get();
@@ -4967,6 +4968,7 @@ public class InstancesClient implements BackgroundResource {
    *       SimulateMaintenanceEventInstanceRequest.newBuilder()
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
    *   OperationFuture<Operation, Operation> future =
@@ -4999,6 +5001,7 @@ public class InstancesClient implements BackgroundResource {
    *       SimulateMaintenanceEventInstanceRequest.newBuilder()
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<Operation> future =

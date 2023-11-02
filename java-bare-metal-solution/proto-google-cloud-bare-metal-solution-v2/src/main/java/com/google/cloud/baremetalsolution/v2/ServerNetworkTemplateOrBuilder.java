@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ public interface ServerNetworkTemplateOrBuilder
    *
    *
    * <pre>
-   * Output only. Template's unique name. The full resource name follows the pattern:
+   * Output only. Template's unique name. The full resource name follows the
+   * pattern:
    * `projects/{project}/locations/{location}/serverNetworkTemplate/{server_network_template}`
    * Generally, the {server_network_template} follows the syntax of
    * "bond&lt;interface_type_index&gt;&lt;bond_mode&gt;" or "nic&lt;interface_type_index&gt;".
@@ -42,7 +43,8 @@ public interface ServerNetworkTemplateOrBuilder
    *
    *
    * <pre>
-   * Output only. Template's unique name. The full resource name follows the pattern:
+   * Output only. Template's unique name. The full resource name follows the
+   * pattern:
    * `projects/{project}/locations/{location}/serverNetworkTemplate/{server_network_template}`
    * Generally, the {server_network_template} follows the syntax of
    * "bond&lt;interface_type_index&gt;&lt;bond_mode&gt;" or "nic&lt;interface_type_index&gt;".

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListTargetTcpProxiesRequest;
 import com.google.cloud.compute.v1.DeleteTargetTcpProxyRequest;
@@ -500,38 +501,84 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                 .<AggregatedListTargetTcpProxiesRequest, TargetTcpProxyAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteTargetTcpProxyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetTcpProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetTargetTcpProxyRequest, TargetTcpProxy> getTransportSettings =
         HttpJsonCallSettings.<GetTargetTcpProxyRequest, TargetTcpProxy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertTargetTcpProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetTcpProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListTargetTcpProxiesRequest, TargetTcpProxyList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetTcpProxiesRequest, TargetTcpProxyList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetBackendServiceTargetTcpProxyRequest, Operation>
         setBackendServiceTransportSettings =
             HttpJsonCallSettings.<SetBackendServiceTargetTcpProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setBackendServiceMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetProxyHeaderTargetTcpProxyRequest, Operation>
         setProxyHeaderTransportSettings =
             HttpJsonCallSettings.<SetProxyHeaderTargetTcpProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setProxyHeaderMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
+                      return builder.build();
+                    })
                 .build();
 
     this.aggregatedListCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
     return new ListRelatedAccountGroupsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupsRequest_descriptor;
@@ -78,7 +73,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The name of the project to list related account groups from, in
-   * the format "projects/{project}".
+   * the format `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -104,7 +99,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The name of the project to list related account groups from, in
-   * the format "projects/{project}".
+   * the format `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -156,6 +151,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
    * <pre>
    * Optional. A page token, received from a previous `ListRelatedAccountGroups`
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListRelatedAccountGroups` must match the call that provided the page
    * token.
@@ -183,6 +179,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
    * <pre>
    * Optional. A page token, received from a previous `ListRelatedAccountGroups`
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListRelatedAccountGroups` must match the call that provided the page
    * token.
@@ -606,7 +603,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The name of the project to list related account groups from, in
-     * the format "projects/{project}".
+     * the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -631,7 +628,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The name of the project to list related account groups from, in
-     * the format "projects/{project}".
+     * the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -656,7 +653,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The name of the project to list related account groups from, in
-     * the format "projects/{project}".
+     * the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -680,7 +677,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The name of the project to list related account groups from, in
-     * the format "projects/{project}".
+     * the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -700,7 +697,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The name of the project to list related account groups from, in
-     * the format "projects/{project}".
+     * the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -787,6 +784,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      * <pre>
      * Optional. A page token, received from a previous `ListRelatedAccountGroups`
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListRelatedAccountGroups` must match the call that provided the page
      * token.
@@ -813,6 +811,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      * <pre>
      * Optional. A page token, received from a previous `ListRelatedAccountGroups`
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListRelatedAccountGroups` must match the call that provided the page
      * token.
@@ -839,6 +838,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      * <pre>
      * Optional. A page token, received from a previous `ListRelatedAccountGroups`
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListRelatedAccountGroups` must match the call that provided the page
      * token.
@@ -864,6 +864,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      * <pre>
      * Optional. A page token, received from a previous `ListRelatedAccountGroups`
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListRelatedAccountGroups` must match the call that provided the page
      * token.
@@ -885,6 +886,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      * <pre>
      * Optional. A page token, received from a previous `ListRelatedAccountGroups`
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListRelatedAccountGroups` must match the call that provided the page
      * token.

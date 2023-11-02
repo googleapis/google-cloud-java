@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ public interface ListDeploymentResourcePoolsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListDeploymentResourcePools` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListDeploymentResourcePools` must match the call that provided the page
    * token.
@@ -90,6 +91,7 @@ public interface ListDeploymentResourcePoolsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListDeploymentResourcePools` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListDeploymentResourcePools` must match the call that provided the page
    * token.

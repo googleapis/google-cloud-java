@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,7 +119,9 @@ public interface MuteConfigOrBuilder
    * mindful of the scope in which the mute configuration is being created.
    * E.g., If a filter contains project = X but is created under the project = Y
    * scope, it might not match any findings.
+   *
    * The following field and operator combinations are supported:
+   *
    * * severity: `=`, `:`
    * * category: `=`, `:`
    * * resource.name: `=`, `:`
@@ -148,7 +150,9 @@ public interface MuteConfigOrBuilder
    * mindful of the scope in which the mute configuration is being created.
    * E.g., If a filter contains project = X but is created under the project = Y
    * scope, it might not match any findings.
+   *
    * The following field and operator combinations are supported:
+   *
    * * severity: `=`, `:`
    * * category: `=`, `:`
    * * resource.name: `=`, `:`

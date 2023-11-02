@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,11 +54,6 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MerchantCenterAccountLink();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -330,11 +325,6 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MerchantCenterFeedFilter();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1214,6 +1204,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
+   *
    * A single branch id can only have one linked merchant center account id.
    * </pre>
    *
@@ -1241,6 +1232,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
+   *
    * A single branch id can only have one linked merchant center account id.
    * </pre>
    *
@@ -1272,6 +1264,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
    * The FeedLabel used to perform filtering.
    * Note: this replaces
    * [region_id](https://developers.google.com/shopping-content/reference/rest/v2.1/products#Product.FIELDS.feed_label).
+   *
    * Example value: `US`.
    * Example value: `FeedLabel1`.
    * </pre>
@@ -1299,6 +1292,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
    * The FeedLabel used to perform filtering.
    * Note: this replaces
    * [region_id](https://developers.google.com/shopping-content/reference/rest/v2.1/products#Product.FIELDS.feed_label).
+   *
    * Example value: `US`.
    * Example value: `FeedLabel1`.
    * </pre>
@@ -1331,8 +1325,10 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
    * Language of the title/description and other string attributes. Use language
    * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
    * ISO 639-1.
+   *
    * This specifies the language of offers in Merchant Center that will be
    * accepted. If empty, no language filtering will be performed.
+   *
    * Example value: `en`.
    * </pre>
    *
@@ -1359,8 +1355,10 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
    * Language of the title/description and other string attributes. Use language
    * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
    * ISO 639-1.
+   *
    * This specifies the language of offers in Merchant Center that will be
    * accepted. If empty, no language filtering will be performed.
+   *
    * Example value: `en`.
    * </pre>
    *
@@ -2501,6 +2499,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
+     *
      * A single branch id can only have one linked merchant center account id.
      * </pre>
      *
@@ -2527,6 +2526,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
+     *
      * A single branch id can only have one linked merchant center account id.
      * </pre>
      *
@@ -2553,6 +2553,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
+     *
      * A single branch id can only have one linked merchant center account id.
      * </pre>
      *
@@ -2578,6 +2579,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
+     *
      * A single branch id can only have one linked merchant center account id.
      * </pre>
      *
@@ -2599,6 +2601,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
+     *
      * A single branch id can only have one linked merchant center account id.
      * </pre>
      *
@@ -2626,6 +2629,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * The FeedLabel used to perform filtering.
      * Note: this replaces
      * [region_id](https://developers.google.com/shopping-content/reference/rest/v2.1/products#Product.FIELDS.feed_label).
+     *
      * Example value: `US`.
      * Example value: `FeedLabel1`.
      * </pre>
@@ -2652,6 +2656,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * The FeedLabel used to perform filtering.
      * Note: this replaces
      * [region_id](https://developers.google.com/shopping-content/reference/rest/v2.1/products#Product.FIELDS.feed_label).
+     *
      * Example value: `US`.
      * Example value: `FeedLabel1`.
      * </pre>
@@ -2678,6 +2683,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * The FeedLabel used to perform filtering.
      * Note: this replaces
      * [region_id](https://developers.google.com/shopping-content/reference/rest/v2.1/products#Product.FIELDS.feed_label).
+     *
      * Example value: `US`.
      * Example value: `FeedLabel1`.
      * </pre>
@@ -2703,6 +2709,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * The FeedLabel used to perform filtering.
      * Note: this replaces
      * [region_id](https://developers.google.com/shopping-content/reference/rest/v2.1/products#Product.FIELDS.feed_label).
+     *
      * Example value: `US`.
      * Example value: `FeedLabel1`.
      * </pre>
@@ -2724,6 +2731,7 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * The FeedLabel used to perform filtering.
      * Note: this replaces
      * [region_id](https://developers.google.com/shopping-content/reference/rest/v2.1/products#Product.FIELDS.feed_label).
+     *
      * Example value: `US`.
      * Example value: `FeedLabel1`.
      * </pre>
@@ -2752,8 +2760,10 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * Language of the title/description and other string attributes. Use language
      * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * ISO 639-1.
+     *
      * This specifies the language of offers in Merchant Center that will be
      * accepted. If empty, no language filtering will be performed.
+     *
      * Example value: `en`.
      * </pre>
      *
@@ -2779,8 +2789,10 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * Language of the title/description and other string attributes. Use language
      * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * ISO 639-1.
+     *
      * This specifies the language of offers in Merchant Center that will be
      * accepted. If empty, no language filtering will be performed.
+     *
      * Example value: `en`.
      * </pre>
      *
@@ -2806,8 +2818,10 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * Language of the title/description and other string attributes. Use language
      * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * ISO 639-1.
+     *
      * This specifies the language of offers in Merchant Center that will be
      * accepted. If empty, no language filtering will be performed.
+     *
      * Example value: `en`.
      * </pre>
      *
@@ -2832,8 +2846,10 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * Language of the title/description and other string attributes. Use language
      * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * ISO 639-1.
+     *
      * This specifies the language of offers in Merchant Center that will be
      * accepted. If empty, no language filtering will be performed.
+     *
      * Example value: `en`.
      * </pre>
      *
@@ -2854,8 +2870,10 @@ public final class MerchantCenterAccountLink extends com.google.protobuf.Generat
      * Language of the title/description and other string attributes. Use language
      * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * ISO 639-1.
+     *
      * This specifies the language of offers in Merchant Center that will be
      * accepted. If empty, no language filtering will be performed.
+     *
      * Example value: `en`.
      * </pre>
      *

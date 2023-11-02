@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
 
   private EncryptionInfo() {
     encryptionType_ = 0;
-    kmsKeyVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    kmsKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EncryptionInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -271,7 +266,8 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
   public static final int KMS_KEY_VERSIONS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList kmsKeyVersions_;
+  private com.google.protobuf.LazyStringArrayList kmsKeyVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -560,8 +556,7 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       encryptionType_ = 0;
-      kmsKeyVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      kmsKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -589,7 +584,6 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.alloydb.v1.EncryptionInfo buildPartial() {
       com.google.cloud.alloydb.v1.EncryptionInfo result =
           new com.google.cloud.alloydb.v1.EncryptionInfo(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -597,18 +591,14 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.alloydb.v1.EncryptionInfo result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        kmsKeyVersions_ = kmsKeyVersions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.kmsKeyVersions_ = kmsKeyVersions_;
-    }
-
     private void buildPartial0(com.google.cloud.alloydb.v1.EncryptionInfo result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.encryptionType_ = encryptionType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        kmsKeyVersions_.makeImmutable();
+        result.kmsKeyVersions_ = kmsKeyVersions_;
       }
     }
 
@@ -663,7 +653,7 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.kmsKeyVersions_.isEmpty()) {
         if (kmsKeyVersions_.isEmpty()) {
           kmsKeyVersions_ = other.kmsKeyVersions_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureKmsKeyVersionsIsMutable();
           kmsKeyVersions_.addAll(other.kmsKeyVersions_);
@@ -828,14 +818,14 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList kmsKeyVersions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList kmsKeyVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureKmsKeyVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!kmsKeyVersions_.isModifiable()) {
         kmsKeyVersions_ = new com.google.protobuf.LazyStringArrayList(kmsKeyVersions_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -852,7 +842,8 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the kmsKeyVersions.
      */
     public com.google.protobuf.ProtocolStringList getKmsKeyVersionsList() {
-      return kmsKeyVersions_.getUnmodifiableView();
+      kmsKeyVersions_.makeImmutable();
+      return kmsKeyVersions_;
     }
     /**
      *
@@ -929,6 +920,7 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureKmsKeyVersionsIsMutable();
       kmsKeyVersions_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -953,6 +945,7 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureKmsKeyVersionsIsMutable();
       kmsKeyVersions_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -974,6 +967,7 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllKmsKeyVersions(java.lang.Iterable<java.lang.String> values) {
       ensureKmsKeyVersionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, kmsKeyVersions_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -992,8 +986,9 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyVersions() {
-      kmsKeyVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      kmsKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1019,6 +1014,7 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureKmsKeyVersionsIsMutable();
       kmsKeyVersions_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

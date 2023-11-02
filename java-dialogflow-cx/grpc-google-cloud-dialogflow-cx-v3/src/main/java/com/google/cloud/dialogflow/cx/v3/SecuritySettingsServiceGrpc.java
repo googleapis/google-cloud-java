@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ public final class SecuritySettingsServiceGrpc {
 
   private SecuritySettingsServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.cx.v3.SecuritySettingsService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.dialogflow.cx.v3.SecuritySettingsService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -871,9 +872,9 @@ public final class SecuritySettingsServiceGrpc {
   private static final class SecuritySettingsServiceMethodDescriptorSupplier
       extends SecuritySettingsServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SecuritySettingsServiceMethodDescriptorSupplier(String methodName) {
+    SecuritySettingsServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

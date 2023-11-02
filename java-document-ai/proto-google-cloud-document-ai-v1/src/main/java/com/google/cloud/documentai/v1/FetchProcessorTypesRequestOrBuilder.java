@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,8 @@ public interface FetchProcessorTypesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project of processor type to list.
-   * The available processor types may depend on the allow-listing on projects.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The location of processor types to list.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -43,9 +42,8 @@ public interface FetchProcessorTypesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project of processor type to list.
-   * The available processor types may depend on the allow-listing on projects.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The location of processor types to list.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>

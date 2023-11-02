@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface CreateEntryGroupRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project this entry group is in. Example:
+   *
    * * projects/{project_id}/locations/{location}
+   *
    * Note that this EntryGroup and its child resources may not actually be
    * stored in the location in this name.
    * </pre>
@@ -45,7 +47,9 @@ public interface CreateEntryGroupRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project this entry group is in. Example:
+   *
    * * projects/{project_id}/locations/{location}
+   *
    * Note that this EntryGroup and its child resources may not actually be
    * stored in the location in this name.
    * </pre>

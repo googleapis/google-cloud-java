@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,7 @@ public interface JobRunOrBuilder
    *
    * <pre>
    * Optional. Name of the `JobRun`. Format is
-   * projects/{project}/locations/{location}/
-   * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-   * {rollouts}/jobRuns/{uuid}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -43,9 +41,7 @@ public interface JobRunOrBuilder
    *
    * <pre>
    * Optional. Name of the `JobRun`. Format is
-   * projects/{project}/locations/{location}/
-   * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-   * {rollouts}/jobRuns/{uuid}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -358,6 +354,88 @@ public interface JobRunOrBuilder
    *
    *
    * <pre>
+   * Output only. Information specific to a predeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the predeployJobRun field is set.
+   */
+  boolean hasPredeployJobRun();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a predeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The predeployJobRun.
+   */
+  com.google.cloud.deploy.v1.PredeployJobRun getPredeployJobRun();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a predeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.PredeployJobRunOrBuilder getPredeployJobRunOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a postdeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the postdeployJobRun field is set.
+   */
+  boolean hasPostdeployJobRun();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a postdeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The postdeployJobRun.
+   */
+  com.google.cloud.deploy.v1.PostdeployJobRun getPostdeployJobRun();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a postdeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.PostdeployJobRunOrBuilder getPostdeployJobRunOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Information specific to a createChildRollout `JobRun`.
    * </pre>
    *
@@ -467,5 +545,5 @@ public interface JobRunOrBuilder
    */
   com.google.protobuf.ByteString getEtagBytes();
 
-  public com.google.cloud.deploy.v1.JobRun.JobRunCase getJobRunCase();
+  com.google.cloud.deploy.v1.JobRun.JobRunCase getJobRunCase();
 }

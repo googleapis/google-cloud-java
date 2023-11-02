@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -498,7 +498,7 @@ public interface ConnectionProfileOrBuilder
    */
   com.google.cloud.datastream.v1.PrivateConnectivityOrBuilder getPrivateConnectivityOrBuilder();
 
-  public com.google.cloud.datastream.v1.ConnectionProfile.ProfileCase getProfileCase();
+  com.google.cloud.datastream.v1.ConnectionProfile.ProfileCase getProfileCase();
 
-  public com.google.cloud.datastream.v1.ConnectionProfile.ConnectivityCase getConnectivityCase();
+  com.google.cloud.datastream.v1.ConnectionProfile.ConnectivityCase getConnectivityCase();
 }

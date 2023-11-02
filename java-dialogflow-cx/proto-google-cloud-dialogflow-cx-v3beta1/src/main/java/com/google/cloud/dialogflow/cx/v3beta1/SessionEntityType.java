@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,11 +25,14 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * Session entity types are referred to as **User** entity types and are
  * entities that are built for an individual user such as favorites,
  * preferences, playlists, and so on.
+ *
  * You can redefine a session entity type at the session level to extend or
  * replace a [custom entity type][google.cloud.dialogflow.cx.v3beta1.EntityType]
  * at the user session level (we refer to the entity types defined at the agent
  * level as "custom entity types").
+ *
  * Note: session entity types apply to all queries, regardless of the language.
+ *
  * For more information about entity types, see the [Dialogflow
  * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
  * </pre>
@@ -56,11 +59,6 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SessionEntityType();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -115,6 +113,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The collection of session entities extends the collection of entities in
      * the corresponding custom entity type.
+     *
      * Note: Even in this override mode calls to `ListSessionEntityTypes`,
      * `GetSessionEntityType`, `CreateSessionEntityType` and
      * `UpdateSessionEntityType` only return the additional entities added in
@@ -157,6 +156,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The collection of session entities extends the collection of entities in
      * the corresponding custom entity type.
+     *
      * Note: Even in this override mode calls to `ListSessionEntityTypes`,
      * `GetSessionEntityType`, `CreateSessionEntityType` and
      * `UpdateSessionEntityType` only return the additional entities added in
@@ -647,11 +647,14 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * Session entity types are referred to as **User** entity types and are
    * entities that are built for an individual user such as favorites,
    * preferences, playlists, and so on.
+   *
    * You can redefine a session entity type at the session level to extend or
    * replace a [custom entity type][google.cloud.dialogflow.cx.v3beta1.EntityType]
    * at the user session level (we refer to the entity types defined at the agent
    * level as "custom entity types").
+   *
    * Note: session entity types apply to all queries, regardless of the language.
+   *
    * For more information about entity types, see the [Dialogflow
    * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     return new Annotation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_Annotation_descriptor;
@@ -80,6 +75,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Unique name of this annotation, format is:
+   *
    * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset}/examples/{example_id}/annotations/{annotation_id}
    * </pre>
    *
@@ -104,6 +100,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Unique name of this annotation, format is:
+   *
    * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset}/examples/{example_id}/annotations/{annotation_id}
    * </pre>
    *
@@ -777,6 +774,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Unique name of this annotation, format is:
+     *
      * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset}/examples/{example_id}/annotations/{annotation_id}
      * </pre>
      *
@@ -800,6 +798,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Unique name of this annotation, format is:
+     *
      * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset}/examples/{example_id}/annotations/{annotation_id}
      * </pre>
      *
@@ -823,6 +822,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Unique name of this annotation, format is:
+     *
      * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset}/examples/{example_id}/annotations/{annotation_id}
      * </pre>
      *
@@ -845,6 +845,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Unique name of this annotation, format is:
+     *
      * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset}/examples/{example_id}/annotations/{annotation_id}
      * </pre>
      *
@@ -863,6 +864,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Unique name of this annotation, format is:
+     *
      * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset}/examples/{example_id}/annotations/{annotation_id}
      * </pre>
      *

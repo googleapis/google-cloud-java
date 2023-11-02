@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   }
 
   private PolicyController() {
-    exemptableNamespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    exemptableNamespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PolicyController();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -159,7 +154,8 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   public static final int EXEMPTABLE_NAMESPACES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList exemptableNamespaces_;
+  private com.google.protobuf.LazyStringArrayList exemptableNamespaces_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -554,8 +550,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       enabled_ = false;
       templateLibraryInstalled_ = false;
       auditIntervalSeconds_ = 0L;
-      exemptableNamespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      exemptableNamespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
       referentialRulesEnabled_ = false;
       logDeniesEnabled_ = false;
       mutationEnabled_ = false;
@@ -587,21 +582,11 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gkehub.configmanagement.v1alpha.PolicyController buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1alpha.PolicyController result =
           new com.google.cloud.gkehub.configmanagement.v1alpha.PolicyController(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.gkehub.configmanagement.v1alpha.PolicyController result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        exemptableNamespaces_ = exemptableNamespaces_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.exemptableNamespaces_ = exemptableNamespaces_;
     }
 
     private void buildPartial0(
@@ -618,6 +603,10 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.auditIntervalSeconds_ = auditIntervalSeconds_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        exemptableNamespaces_.makeImmutable();
+        result.exemptableNamespaces_ = exemptableNamespaces_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.referentialRulesEnabled_ = referentialRulesEnabled_;
@@ -691,7 +680,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       if (!other.exemptableNamespaces_.isEmpty()) {
         if (exemptableNamespaces_.isEmpty()) {
           exemptableNamespaces_ = other.exemptableNamespaces_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureExemptableNamespacesIsMutable();
           exemptableNamespaces_.addAll(other.exemptableNamespaces_);
@@ -994,14 +983,14 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList exemptableNamespaces_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList exemptableNamespaces_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureExemptableNamespacesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!exemptableNamespaces_.isModifiable()) {
         exemptableNamespaces_ = new com.google.protobuf.LazyStringArrayList(exemptableNamespaces_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1016,7 +1005,8 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      * @return A list containing the exemptableNamespaces.
      */
     public com.google.protobuf.ProtocolStringList getExemptableNamespacesList() {
-      return exemptableNamespaces_.getUnmodifiableView();
+      exemptableNamespaces_.makeImmutable();
+      return exemptableNamespaces_;
     }
     /**
      *
@@ -1085,6 +1075,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       }
       ensureExemptableNamespacesIsMutable();
       exemptableNamespaces_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1107,6 +1098,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       }
       ensureExemptableNamespacesIsMutable();
       exemptableNamespaces_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1126,6 +1118,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public Builder addAllExemptableNamespaces(java.lang.Iterable<java.lang.String> values) {
       ensureExemptableNamespacesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exemptableNamespaces_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1142,8 +1135,9 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExemptableNamespaces() {
-      exemptableNamespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      exemptableNamespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1167,6 +1161,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureExemptableNamespacesIsMutable();
       exemptableNamespaces_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

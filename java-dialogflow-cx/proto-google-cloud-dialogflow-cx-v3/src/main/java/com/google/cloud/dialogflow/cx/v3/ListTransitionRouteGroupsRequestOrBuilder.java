@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ public interface ListTransitionRouteGroupsRequestOrBuilder
    * <pre>
    * Required. The flow to list all transition route groups for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
    * </pre>
    *
    * <code>
@@ -45,7 +46,8 @@ public interface ListTransitionRouteGroupsRequestOrBuilder
    * <pre>
    * Required. The flow to list all transition route groups for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
    * </pre>
    *
    * <code>
@@ -101,9 +103,12 @@ public interface ListTransitionRouteGroupsRequestOrBuilder
    * <pre>
    * The language to list transition route groups for. The following fields are
    * language dependent:
+   *
    * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
    * *
    * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+   *
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -122,9 +127,12 @@ public interface ListTransitionRouteGroupsRequestOrBuilder
    * <pre>
    * The language to list transition route groups for. The following fields are
    * language dependent:
+   *
    * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
    * *
    * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+   *
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

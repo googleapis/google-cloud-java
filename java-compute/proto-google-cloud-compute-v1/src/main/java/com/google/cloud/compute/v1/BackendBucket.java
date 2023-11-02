@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     bucketName_ = "";
     compressionMode_ = "";
     creationTimestamp_ = "";
-    customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
     description_ = "";
     edgeSecurityPolicy_ = "";
     kind_ = "";
@@ -53,11 +53,6 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BackendBucket();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -489,12 +484,13 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   public static final int CUSTOM_RESPONSE_HEADERS_FIELD_NUMBER = 387539094;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList customResponseHeaders_;
+  private com.google.protobuf.LazyStringArrayList customResponseHeaders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -508,7 +504,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -522,7 +518,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -537,7 +533,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -1324,8 +1320,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       }
       compressionMode_ = "";
       creationTimestamp_ = "";
-      customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       description_ = "";
       edgeSecurityPolicy_ = "";
       enableCdn_ = false;
@@ -1360,20 +1355,11 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.BackendBucket buildPartial() {
       com.google.cloud.compute.v1.BackendBucket result =
           new com.google.cloud.compute.v1.BackendBucket(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.BackendBucket result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        customResponseHeaders_ = customResponseHeaders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.customResponseHeaders_ = customResponseHeaders_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.BackendBucket result) {
@@ -1394,6 +1380,10 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        customResponseHeaders_.makeImmutable();
+        result.customResponseHeaders_ = customResponseHeaders_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.description_ = description_;
@@ -1492,7 +1482,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       if (!other.customResponseHeaders_.isEmpty()) {
         if (customResponseHeaders_.isEmpty()) {
           customResponseHeaders_ = other.customResponseHeaders_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureCustomResponseHeadersIsMutable();
           customResponseHeaders_.addAll(other.customResponseHeaders_);
@@ -2199,21 +2189,21 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList customResponseHeaders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList customResponseHeaders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCustomResponseHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!customResponseHeaders_.isModifiable()) {
         customResponseHeaders_ =
             new com.google.protobuf.LazyStringArrayList(customResponseHeaders_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the Application Load Balancer should add to proxied responses.
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -2221,13 +2211,14 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the customResponseHeaders.
      */
     public com.google.protobuf.ProtocolStringList getCustomResponseHeadersList() {
-      return customResponseHeaders_.getUnmodifiableView();
+      customResponseHeaders_.makeImmutable();
+      return customResponseHeaders_;
     }
     /**
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the Application Load Balancer should add to proxied responses.
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -2241,7 +2232,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the Application Load Balancer should add to proxied responses.
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -2256,7 +2247,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the Application Load Balancer should add to proxied responses.
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -2271,7 +2262,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the Application Load Balancer should add to proxied responses.
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -2286,6 +2277,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomResponseHeadersIsMutable();
       customResponseHeaders_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2293,7 +2285,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the Application Load Balancer should add to proxied responses.
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -2307,6 +2299,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomResponseHeadersIsMutable();
       customResponseHeaders_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2314,7 +2307,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the Application Load Balancer should add to proxied responses.
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -2325,6 +2318,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllCustomResponseHeaders(java.lang.Iterable<java.lang.String> values) {
       ensureCustomResponseHeadersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customResponseHeaders_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2332,7 +2326,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the Application Load Balancer should add to proxied responses.
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -2340,8 +2334,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCustomResponseHeaders() {
-      customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2349,7 +2344,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * Headers that the Application Load Balancer should add to proxied responses.
      * </pre>
      *
      * <code>repeated string custom_response_headers = 387539094;</code>
@@ -2364,6 +2359,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCustomResponseHeadersIsMutable();
       customResponseHeaders_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

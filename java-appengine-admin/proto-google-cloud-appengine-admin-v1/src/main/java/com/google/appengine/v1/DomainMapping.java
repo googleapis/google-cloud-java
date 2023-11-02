@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     return new DomainMapping();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.DomainMappingProto
         .internal_static_google_appengine_v1_DomainMapping_descriptor;
@@ -79,6 +74,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Full path to the `DomainMapping` resource in the API. Example:
    * `apps/myapp/domainMapping/example.com`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -104,6 +100,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Full path to the `DomainMapping` resource in the API. Example:
    * `apps/myapp/domainMapping/example.com`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -241,6 +238,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
    * The resource records required to configure this domain mapping. These
    * records must be added to the domain's DNS configuration in order to
    * serve the application via this domain mapping.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -257,6 +255,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
    * The resource records required to configure this domain mapping. These
    * records must be added to the domain's DNS configuration in order to
    * serve the application via this domain mapping.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -274,6 +273,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
    * The resource records required to configure this domain mapping. These
    * records must be added to the domain's DNS configuration in order to
    * serve the application via this domain mapping.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -290,6 +290,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
    * The resource records required to configure this domain mapping. These
    * records must be added to the domain's DNS configuration in order to
    * serve the application via this domain mapping.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -306,6 +307,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
    * The resource records required to configure this domain mapping. These
    * records must be added to the domain's DNS configuration in order to
    * serve the application via this domain mapping.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -789,6 +791,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the `DomainMapping` resource in the API. Example:
      * `apps/myapp/domainMapping/example.com`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -813,6 +816,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the `DomainMapping` resource in the API. Example:
      * `apps/myapp/domainMapping/example.com`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -837,6 +841,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the `DomainMapping` resource in the API. Example:
      * `apps/myapp/domainMapping/example.com`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -860,6 +865,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the `DomainMapping` resource in the API. Example:
      * `apps/myapp/domainMapping/example.com`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -879,6 +885,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Full path to the `DomainMapping` resource in the API. Example:
      * `apps/myapp/domainMapping/example.com`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1225,6 +1232,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1244,6 +1252,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1263,6 +1272,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1282,6 +1292,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1307,6 +1318,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1330,6 +1342,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1355,6 +1368,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1380,6 +1394,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1403,6 +1418,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1426,6 +1442,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1449,6 +1466,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1471,6 +1489,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1493,6 +1512,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1508,6 +1528,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1527,6 +1548,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1547,6 +1569,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1563,6 +1586,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1579,6 +1603,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * The resource records required to configure this domain mapping. These
      * records must be added to the domain's DNS configuration in order to
      * serve the application via this domain mapping.
+     *
      * &#64;OutputOnly
      * </pre>
      *

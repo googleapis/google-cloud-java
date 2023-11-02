@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -531,6 +531,8 @@ public class DocumentServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
+            .setAutoGenerateIds(true)
+            .setIdField("idField1629396127")
             .build();
 
     ImportDocumentsResponse actualResponse = client.importDocumentsAsync(request).get();
@@ -546,6 +548,8 @@ public class DocumentServiceClientTest {
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());
     Assert.assertEquals(request.getReconciliationMode(), actualRequest.getReconciliationMode());
+    Assert.assertEquals(request.getAutoGenerateIds(), actualRequest.getAutoGenerateIds());
+    Assert.assertEquals(request.getIdField(), actualRequest.getIdField());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -565,6 +569,8 @@ public class DocumentServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .setAutoGenerateIds(true)
+              .setIdField("idField1629396127")
               .build();
       client.importDocumentsAsync(request).get();
       Assert.fail("No exception raised");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,6 +77,7 @@ public interface ConnectAgentOrBuilder
    * <pre>
    * Optional. Namespace for GKE Connect agent resources. Defaults to
    * `gke-connect`.
+   *
    * The Connect Agent is authorized automatically when run in the default
    * namespace. Otherwise, explicit authorization must be granted with an
    * additional IAM binding.
@@ -93,6 +94,7 @@ public interface ConnectAgentOrBuilder
    * <pre>
    * Optional. Namespace for GKE Connect agent resources. Defaults to
    * `gke-connect`.
+   *
    * The Connect Agent is authorized automatically when run in the default
    * namespace. Otherwise, explicit authorization must be granted with an
    * additional IAM binding.

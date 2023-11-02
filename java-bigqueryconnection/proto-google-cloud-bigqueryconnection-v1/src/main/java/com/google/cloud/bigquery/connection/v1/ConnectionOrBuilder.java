@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -316,6 +316,54 @@ public interface ConnectionOrBuilder
    *
    *
    * <pre>
+   * Optional. Salesforce DataCloud properties. This field is intended for
+   * use only by Salesforce partner projects. This field contains properties
+   * for your Salesforce DataCloud connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.connection.v1.SalesforceDataCloudProperties salesforce_data_cloud = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the salesforceDataCloud field is set.
+   */
+  boolean hasSalesforceDataCloud();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Salesforce DataCloud properties. This field is intended for
+   * use only by Salesforce partner projects. This field contains properties
+   * for your Salesforce DataCloud connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.connection.v1.SalesforceDataCloudProperties salesforce_data_cloud = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The salesforceDataCloud.
+   */
+  com.google.cloud.bigquery.connection.v1.SalesforceDataCloudProperties getSalesforceDataCloud();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Salesforce DataCloud properties. This field is intended for
+   * use only by Salesforce partner projects. This field contains properties
+   * for your Salesforce DataCloud connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.connection.v1.SalesforceDataCloudProperties salesforce_data_cloud = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.bigquery.connection.v1.SalesforceDataCloudPropertiesOrBuilder
+      getSalesforceDataCloudOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The creation timestamp of the connection.
    * </pre>
    *
@@ -351,5 +399,5 @@ public interface ConnectionOrBuilder
    */
   boolean getHasCredential();
 
-  public com.google.cloud.bigquery.connection.v1.Connection.PropertiesCase getPropertiesCase();
+  com.google.cloud.bigquery.connection.v1.Connection.PropertiesCase getPropertiesCase();
 }

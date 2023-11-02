@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -145,6 +145,7 @@ public interface CloudSqlPropertiesOrBuilder
    * <pre>
    * Output only. The account ID of the service used for the purpose of this
    * connection.
+   *
    * When the connection is used in the context of an operation in
    * BigQuery, this service account will serve as the identity being used for
    * connecting to the CloudSQL instance specified in this connection.
@@ -161,6 +162,7 @@ public interface CloudSqlPropertiesOrBuilder
    * <pre>
    * Output only. The account ID of the service used for the purpose of this
    * connection.
+   *
    * When the connection is used in the context of an operation in
    * BigQuery, this service account will serve as the identity being used for
    * connecting to the CloudSQL instance specified in this connection.

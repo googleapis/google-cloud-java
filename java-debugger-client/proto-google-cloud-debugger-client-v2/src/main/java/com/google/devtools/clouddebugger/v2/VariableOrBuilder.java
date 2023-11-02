@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -206,12 +206,17 @@ public interface VariableOrBuilder
    * expression. The rest of breakpoint data still remains valid. Variables
    * might be reported in error state even when breakpoint is not in final
    * state.
+   *
    * The message may refer to variable name with `refers_to` set to
    * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
    * In either case variable value and members will be unset.
+   *
    * Example of error message applied to name: `Invalid expression syntax`.
+   *
    * Example of information message applied to value: `Not captured`.
+   *
    * Examples of error message applied to value:
+   *
    * *   `Malformed string`,
    * *   `Field f not found in class C`
    * *   `Null pointer dereference`
@@ -231,12 +236,17 @@ public interface VariableOrBuilder
    * expression. The rest of breakpoint data still remains valid. Variables
    * might be reported in error state even when breakpoint is not in final
    * state.
+   *
    * The message may refer to variable name with `refers_to` set to
    * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
    * In either case variable value and members will be unset.
+   *
    * Example of error message applied to name: `Invalid expression syntax`.
+   *
    * Example of information message applied to value: `Not captured`.
+   *
    * Examples of error message applied to value:
+   *
    * *   `Malformed string`,
    * *   `Field f not found in class C`
    * *   `Null pointer dereference`
@@ -256,12 +266,17 @@ public interface VariableOrBuilder
    * expression. The rest of breakpoint data still remains valid. Variables
    * might be reported in error state even when breakpoint is not in final
    * state.
+   *
    * The message may refer to variable name with `refers_to` set to
    * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
    * In either case variable value and members will be unset.
+   *
    * Example of error message applied to name: `Invalid expression syntax`.
+   *
    * Example of information message applied to value: `Not captured`.
+   *
    * Examples of error message applied to value:
+   *
    * *   `Malformed string`,
    * *   `Field f not found in class C`
    * *   `Null pointer dereference`

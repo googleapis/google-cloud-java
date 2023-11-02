@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,6 +103,7 @@ public interface SuggestSmartRepliesRequestOrBuilder
    * <pre>
    * The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -118,6 +119,7 @@ public interface SuggestSmartRepliesRequestOrBuilder
    * <pre>
    * The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>

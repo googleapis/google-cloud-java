@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,23 +31,29 @@ public interface PredictRequestOrBuilder
    * `{name=projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}`
    * The id of the recommendation engine placement. This id is used to identify
    * the set of models that will be used to make the prediction.
+   *
    * We currently support three placements with the following IDs by default:
+   *
    * * `shopping_cart`: Predicts items frequently bought together with one or
    *   more catalog items in the same shopping session. Commonly displayed after
    *   `add-to-cart` events, on product detail pages, or on the shopping cart
    *   page.
+   *
    * * `home_page`: Predicts the next product that a user will most likely
    *   engage with or purchase based on the shopping or viewing history of the
    *   specified `userId` or `visitorId`. For example - Recommendations for you.
+   *
    * * `product_detail`: Predicts the next product that a user will most likely
    *   engage with or purchase. The prediction is based on the shopping or
    *   viewing history of the specified `userId` or `visitorId` and its
    *   relevance to a specified `CatalogItem`. Typically used on product detail
    *   pages. For example - More items like this.
+   *
    * * `recently_viewed_default`: Returns up to 75 items recently viewed by the
    *   specified `userId` or `visitorId`, most recent ones first. Returns
    *   nothing if neither of them has viewed any items yet. For example -
    *   Recently viewed.
+   *
    * The full list of available placements can be seen at
    * https://console.cloud.google.com/recommendation/datafeeds/default_catalog/dashboard
    * </pre>
@@ -67,23 +73,29 @@ public interface PredictRequestOrBuilder
    * `{name=projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}`
    * The id of the recommendation engine placement. This id is used to identify
    * the set of models that will be used to make the prediction.
+   *
    * We currently support three placements with the following IDs by default:
+   *
    * * `shopping_cart`: Predicts items frequently bought together with one or
    *   more catalog items in the same shopping session. Commonly displayed after
    *   `add-to-cart` events, on product detail pages, or on the shopping cart
    *   page.
+   *
    * * `home_page`: Predicts the next product that a user will most likely
    *   engage with or purchase based on the shopping or viewing history of the
    *   specified `userId` or `visitorId`. For example - Recommendations for you.
+   *
    * * `product_detail`: Predicts the next product that a user will most likely
    *   engage with or purchase. The prediction is based on the shopping or
    *   viewing history of the specified `userId` or `visitorId` and its
    *   relevance to a specified `CatalogItem`. Typically used on product detail
    *   pages. For example - More items like this.
+   *
    * * `recently_viewed_default`: Returns up to 75 items recently viewed by the
    *   specified `userId` or `visitorId`, most recent ones first. Returns
    *   nothing if neither of them has viewed any items yet. For example -
    *   Recently viewed.
+   *
    * The full list of available placements can be seen at
    * https://console.cloud.google.com/recommendation/datafeeds/default_catalog/dashboard
    * </pre>
@@ -192,15 +204,19 @@ public interface PredictRequestOrBuilder
    * <pre>
    * Optional. Filter for restricting prediction results. Accepts values for
    * tags and the `filterOutOfStockItems` flag.
+   *
    *  * Tag expressions. Restricts predictions to items that match all of the
    *    specified tags. Boolean operators `OR` and `NOT` are supported if the
    *    expression is enclosed in parentheses, and must be separated from the
    *    tag values by a space. `-"tagA"` is also supported and is equivalent to
    *    `NOT "tagA"`. Tag values must be double quoted UTF-8 encoded strings
    *    with a size limit of 1 KiB.
+   *
    *  * filterOutOfStockItems. Restricts predictions to items that do not have a
    *    stockState value of OUT_OF_STOCK.
+   *
    * Examples:
+   *
    *  * tag=("Red" OR "Blue") tag="New-Arrival" tag=(NOT "promotional")
    *  * filterOutOfStockItems  tag=(-"promotional")
    *  * filterOutOfStockItems
@@ -217,15 +233,19 @@ public interface PredictRequestOrBuilder
    * <pre>
    * Optional. Filter for restricting prediction results. Accepts values for
    * tags and the `filterOutOfStockItems` flag.
+   *
    *  * Tag expressions. Restricts predictions to items that match all of the
    *    specified tags. Boolean operators `OR` and `NOT` are supported if the
    *    expression is enclosed in parentheses, and must be separated from the
    *    tag values by a space. `-"tagA"` is also supported and is equivalent to
    *    `NOT "tagA"`. Tag values must be double quoted UTF-8 encoded strings
    *    with a size limit of 1 KiB.
+   *
    *  * filterOutOfStockItems. Restricts predictions to items that do not have a
    *    stockState value of OUT_OF_STOCK.
+   *
    * Examples:
+   *
    *  * tag=("Red" OR "Blue") tag="New-Arrival" tag=(NOT "promotional")
    *  * filterOutOfStockItems  tag=(-"promotional")
    *  * filterOutOfStockItems
@@ -258,7 +278,9 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Optional. Additional domain specific parameters for the predictions.
+   *
    * Allowed values:
+   *
    * * `returnCatalogItem`: Boolean. If set to true, the associated catalogItem
    *    object will be returned in the
    *   `PredictResponse.PredictionResult.itemMetadata` object in the method
@@ -280,7 +302,9 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Optional. Additional domain specific parameters for the predictions.
+   *
    * Allowed values:
+   *
    * * `returnCatalogItem`: Boolean. If set to true, the associated catalogItem
    *    object will be returned in the
    *   `PredictResponse.PredictionResult.itemMetadata` object in the method
@@ -305,7 +329,9 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Optional. Additional domain specific parameters for the predictions.
+   *
    * Allowed values:
+   *
    * * `returnCatalogItem`: Boolean. If set to true, the associated catalogItem
    *    object will be returned in the
    *   `PredictResponse.PredictionResult.itemMetadata` object in the method
@@ -327,7 +353,9 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Optional. Additional domain specific parameters for the predictions.
+   *
    * Allowed values:
+   *
    * * `returnCatalogItem`: Boolean. If set to true, the associated catalogItem
    *    object will be returned in the
    *   `PredictResponse.PredictionResult.itemMetadata` object in the method
@@ -353,7 +381,9 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Optional. Additional domain specific parameters for the predictions.
+   *
    * Allowed values:
+   *
    * * `returnCatalogItem`: Boolean. If set to true, the associated catalogItem
    *    object will be returned in the
    *   `PredictResponse.PredictionResult.itemMetadata` object in the method
@@ -376,11 +406,13 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Optional. The labels for the predict request.
+   *
    *  * Label keys can contain lowercase letters, digits and hyphens, must start
    *    with a letter, and must end with a letter or digit.
    *  * Non-zero label values can contain lowercase letters, digits and hyphens,
    *    must start with a letter, and must end with a letter or digit.
    *  * No more than 64 labels can be associated with a given request.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * </pre>
    *
@@ -392,11 +424,13 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Optional. The labels for the predict request.
+   *
    *  * Label keys can contain lowercase letters, digits and hyphens, must start
    *    with a letter, and must end with a letter or digit.
    *  * Non-zero label values can contain lowercase letters, digits and hyphens,
    *    must start with a letter, and must end with a letter or digit.
    *  * No more than 64 labels can be associated with a given request.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * </pre>
    *
@@ -411,11 +445,13 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Optional. The labels for the predict request.
+   *
    *  * Label keys can contain lowercase letters, digits and hyphens, must start
    *    with a letter, and must end with a letter or digit.
    *  * Non-zero label values can contain lowercase letters, digits and hyphens,
    *    must start with a letter, and must end with a letter or digit.
    *  * No more than 64 labels can be associated with a given request.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * </pre>
    *
@@ -427,11 +463,13 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Optional. The labels for the predict request.
+   *
    *  * Label keys can contain lowercase letters, digits and hyphens, must start
    *    with a letter, and must end with a letter or digit.
    *  * Non-zero label values can contain lowercase letters, digits and hyphens,
    *    must start with a letter, and must end with a letter or digit.
    *  * No more than 64 labels can be associated with a given request.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * </pre>
    *
@@ -447,11 +485,13 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Optional. The labels for the predict request.
+   *
    *  * Label keys can contain lowercase letters, digits and hyphens, must start
    *    with a letter, and must end with a letter or digit.
    *  * Non-zero label values can contain lowercase letters, digits and hyphens,
    *    must start with a letter, and must end with a letter or digit.
    *  * No more than 64 labels can be associated with a given request.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2beta.Product], such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
@@ -49,6 +50,7 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2beta.Product], such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
@@ -68,7 +70,9 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * <pre>
    * Required. The fulfillment type, including commonly used types (such as
    * pickup in store and same day delivery), and custom types.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -78,8 +82,10 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * This field directly corresponds to
    * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
    * </pre>
@@ -95,7 +101,9 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * <pre>
    * Required. The fulfillment type, including commonly used types (such as
    * pickup in store and same day delivery), and custom types.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -105,8 +113,10 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * This field directly corresponds to
    * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
    * </pre>
@@ -126,6 +136,7 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * such as the store IDs for "pickup-in-store" or the region IDs for
    * "same-day-delivery", to be removed for this
    * [type][google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest.type].
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -146,6 +157,7 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * such as the store IDs for "pickup-in-store" or the region IDs for
    * "same-day-delivery", to be removed for this
    * [type][google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest.type].
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -166,6 +178,7 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * such as the store IDs for "pickup-in-store" or the region IDs for
    * "same-day-delivery", to be removed for this
    * [type][google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest.type].
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -187,6 +200,7 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * such as the store IDs for "pickup-in-store" or the region IDs for
    * "same-day-delivery", to be removed for this
    * [type][google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest.type].
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an

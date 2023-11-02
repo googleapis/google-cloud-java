@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
 
   private BatchDeleteEntitiesRequest() {
     parent_ = "";
-    entityValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    entityValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
     languageCode_ = "";
   }
 
@@ -48,11 +48,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchDeleteEntitiesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -136,7 +131,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
   public static final int ENTITY_VALUES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList entityValues_;
+  private com.google.protobuf.LazyStringArrayList entityValues_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -489,8 +485,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       super.clear();
       bitField0_ = 0;
       parent_ = "";
-      entityValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      entityValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       languageCode_ = "";
       return this;
     }
@@ -520,7 +515,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     public com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest buildPartial() {
       com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest result =
           new com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -528,20 +522,15 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        entityValues_ = entityValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.entityValues_ = entityValues_;
-    }
-
     private void buildPartial0(
         com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        entityValues_.makeImmutable();
+        result.entityValues_ = entityValues_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.languageCode_ = languageCode_;
@@ -603,7 +592,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       if (!other.entityValues_.isEmpty()) {
         if (entityValues_.isEmpty()) {
           entityValues_ = other.entityValues_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureEntityValuesIsMutable();
           entityValues_.addAll(other.entityValues_);
@@ -815,14 +804,14 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       return this;
     }
 
-    private com.google.protobuf.LazyStringList entityValues_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList entityValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureEntityValuesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!entityValues_.isModifiable()) {
         entityValues_ = new com.google.protobuf.LazyStringArrayList(entityValues_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -838,7 +827,8 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * @return A list containing the entityValues.
      */
     public com.google.protobuf.ProtocolStringList getEntityValuesList() {
-      return entityValues_.getUnmodifiableView();
+      entityValues_.makeImmutable();
+      return entityValues_;
     }
     /**
      *
@@ -911,6 +901,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       }
       ensureEntityValuesIsMutable();
       entityValues_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -934,6 +925,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       }
       ensureEntityValuesIsMutable();
       entityValues_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -954,6 +946,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     public Builder addAllEntityValues(java.lang.Iterable<java.lang.String> values) {
       ensureEntityValuesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entityValues_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -971,8 +964,9 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearEntityValues() {
-      entityValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      entityValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -997,6 +991,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       ensureEntityValuesIsMutable();
       entityValues_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     return new ReachabilityDetails();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkmanagement.v1beta1.TestOuterClass
         .internal_static_google_cloud_networkmanagement_v1beta1_ReachabilityDetails_descriptor;
@@ -93,6 +88,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Possible scenarios are:
+     *
      * * The configuration analysis determined that a packet originating from
      *   the source is expected to reach the destination.
      * * The analysis didn't complete because the user lacks permission for
@@ -132,6 +128,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The configuration analysis did not complete. Possible reasons are:
+     *
      * * A permissions error occurred--for example, the user might not have
      *   read permission for all of the resources named in the test.
      * * An internal error occurred.
@@ -160,6 +157,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Possible scenarios are:
+     *
      * * The configuration analysis determined that a packet originating from
      *   the source is expected to reach the destination.
      * * The analysis didn't complete because the user lacks permission for
@@ -199,6 +197,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The configuration analysis did not complete. Possible reasons are:
+     *
      * * A permissions error occurred--for example, the user might not have
      *   read permission for all of the resources named in the test.
      * * An internal error occurred.

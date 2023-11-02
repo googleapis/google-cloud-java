@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Xss() {
-    stackTraces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    stackTraces_ = com.google.protobuf.LazyStringArrayList.emptyList();
     errorMessage_ = "";
   }
 
@@ -46,11 +46,6 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Xss();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   public static final int STACK_TRACES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList stackTraces_;
+  private com.google.protobuf.LazyStringArrayList stackTraces_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -396,8 +392,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      stackTraces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      stackTraces_ = com.google.protobuf.LazyStringArrayList.emptyList();
       errorMessage_ = "";
       return this;
     }
@@ -426,7 +421,6 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.websecurityscanner.v1alpha.Xss buildPartial() {
       com.google.cloud.websecurityscanner.v1alpha.Xss result =
           new com.google.cloud.websecurityscanner.v1alpha.Xss(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -434,17 +428,12 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.websecurityscanner.v1alpha.Xss result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        stackTraces_ = stackTraces_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.stackTraces_ = stackTraces_;
-    }
-
     private void buildPartial0(com.google.cloud.websecurityscanner.v1alpha.Xss result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        stackTraces_.makeImmutable();
+        result.stackTraces_ = stackTraces_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.errorMessage_ = errorMessage_;
       }
@@ -499,7 +488,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       if (!other.stackTraces_.isEmpty()) {
         if (stackTraces_.isEmpty()) {
           stackTraces_ = other.stackTraces_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureStackTracesIsMutable();
           stackTraces_.addAll(other.stackTraces_);
@@ -569,14 +558,14 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList stackTraces_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList stackTraces_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureStackTracesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!stackTraces_.isModifiable()) {
         stackTraces_ = new com.google.protobuf.LazyStringArrayList(stackTraces_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -590,7 +579,8 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the stackTraces.
      */
     public com.google.protobuf.ProtocolStringList getStackTracesList() {
-      return stackTraces_.getUnmodifiableView();
+      stackTraces_.makeImmutable();
+      return stackTraces_;
     }
     /**
      *
@@ -655,6 +645,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStackTracesIsMutable();
       stackTraces_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -676,6 +667,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStackTracesIsMutable();
       stackTraces_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -694,6 +686,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllStackTraces(java.lang.Iterable<java.lang.String> values) {
       ensureStackTracesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, stackTraces_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,8 +702,9 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStackTraces() {
-      stackTraces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      stackTraces_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -733,6 +727,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureStackTracesIsMutable();
       stackTraces_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

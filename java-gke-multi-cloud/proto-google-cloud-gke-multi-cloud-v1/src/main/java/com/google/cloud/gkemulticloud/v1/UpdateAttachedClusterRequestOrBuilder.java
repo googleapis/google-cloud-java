@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,6 +91,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    * this field. The elements of the repeated paths field can only include these
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `platform_version`.
@@ -113,6 +114,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    * this field. The elements of the repeated paths field can only include these
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `platform_version`.
@@ -135,6 +137,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    * this field. The elements of the repeated paths field can only include these
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `platform_version`.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ public interface AdmissionRuleOrBuilder
    * attestor must exist before a policy can reference it.  To add an attestor
    * to a policy the principal issuing the policy change request must be able
    * to read the attestor resource.
+   *
    * Note: this field must be non-empty when the evaluation_mode field specifies
    * REQUIRE_ATTESTATION, otherwise it must be empty.
    * </pre>
@@ -80,6 +81,7 @@ public interface AdmissionRuleOrBuilder
    * attestor must exist before a policy can reference it.  To add an attestor
    * to a policy the principal issuing the policy change request must be able
    * to read the attestor resource.
+   *
    * Note: this field must be non-empty when the evaluation_mode field specifies
    * REQUIRE_ATTESTATION, otherwise it must be empty.
    * </pre>
@@ -99,6 +101,7 @@ public interface AdmissionRuleOrBuilder
    * attestor must exist before a policy can reference it.  To add an attestor
    * to a policy the principal issuing the policy change request must be able
    * to read the attestor resource.
+   *
    * Note: this field must be non-empty when the evaluation_mode field specifies
    * REQUIRE_ATTESTATION, otherwise it must be empty.
    * </pre>
@@ -119,6 +122,7 @@ public interface AdmissionRuleOrBuilder
    * attestor must exist before a policy can reference it.  To add an attestor
    * to a policy the principal issuing the policy change request must be able
    * to read the attestor resource.
+   *
    * Note: this field must be non-empty when the evaluation_mode field specifies
    * REQUIRE_ATTESTATION, otherwise it must be empty.
    * </pre>

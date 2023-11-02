@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
     return new WorkloadIdentityConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_WorkloadIdentityConfig_descriptor;
@@ -84,7 +79,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
    * <code>string identity_namespace = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4715
+   *     See google/container/v1beta1/cluster_service.proto;l=5152
    * @return The identityNamespace.
    */
   @java.lang.Override
@@ -110,7 +105,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
    * <code>string identity_namespace = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4715
+   *     See google/container/v1beta1/cluster_service.proto;l=5152
    * @return The bytes for identityNamespace.
    */
   @java.lang.Override
@@ -631,7 +626,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4715
+     *     See google/container/v1beta1/cluster_service.proto;l=5152
      * @return The identityNamespace.
      */
     @java.lang.Deprecated
@@ -656,7 +651,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4715
+     *     See google/container/v1beta1/cluster_service.proto;l=5152
      * @return The bytes for identityNamespace.
      */
     @java.lang.Deprecated
@@ -681,7 +676,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4715
+     *     See google/container/v1beta1/cluster_service.proto;l=5152
      * @param value The identityNamespace to set.
      * @return This builder for chaining.
      */
@@ -705,7 +700,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4715
+     *     See google/container/v1beta1/cluster_service.proto;l=5152
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -725,7 +720,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4715
+     *     See google/container/v1beta1/cluster_service.proto;l=5152
      * @param value The bytes for identityNamespace to set.
      * @return This builder for chaining.
      */

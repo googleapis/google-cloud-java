@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,12 +29,14 @@ public interface SchemaOrBuilder
    * <pre>
    * Required. Set to `true` if user-managed or `false` if managed by Dataplex.
    * The default is `false` (managed by Dataplex).
+   *
    * - Set to `false`to enable Dataplex discovery to update the schema.
    *   including new data discovery, schema inference, and schema evolution.
    *   Users retain the ability to input and edit the schema. Dataplex
    *   treats schema input by the user as though produced
    *   by a previous Dataplex discovery operation, and it will
    *   evolve the schema and take action based on that treatment.
+   *
    * - Set to `true` to fully manage the entity
    *   schema. This setting guarantees that Dataplex will not
    *   change schema fields.

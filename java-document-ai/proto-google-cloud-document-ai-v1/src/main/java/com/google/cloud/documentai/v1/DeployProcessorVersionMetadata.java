@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * The long running operation metadata for deploy processor version method.
+ * The long-running operation metadata for the
+ * [DeployProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.DeployProcessorVersion]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.DeployProcessorVersionMetadata}
@@ -46,11 +48,6 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
     return new DeployProcessorVersionMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1_DeployProcessorVersionMetadata_descriptor;
@@ -72,7 +69,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
@@ -87,7 +84,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
@@ -104,7 +101,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
@@ -286,7 +283,9 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The long running operation metadata for deploy processor version method.
+   * The long-running operation metadata for the
+   * [DeployProcessorVersion][google.cloud.documentai.v1.DocumentProcessorService.DeployProcessorVersion]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.DeployProcessorVersionMetadata}
@@ -481,7 +480,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
@@ -495,7 +494,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
@@ -515,7 +514,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
@@ -537,7 +536,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
@@ -557,7 +556,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
@@ -584,7 +583,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
@@ -603,7 +602,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
@@ -618,7 +617,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
@@ -637,7 +636,7 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>

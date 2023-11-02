@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     bypassCacheOnRequestHeaders_ = java.util.Collections.emptyList();
     cacheMode_ = "";
     negativeCachingPolicy_ = java.util.Collections.emptyList();
-    signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BackendBucketCdnPolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -794,7 +789,8 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
   public static final int SIGNED_URL_KEY_NAMES_FIELD_NUMBER = 371848885;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList signedUrlKeyNames_;
+  private com.google.protobuf.LazyStringArrayList signedUrlKeyNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1254,8 +1250,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       requestCoalescing_ = false;
       serveWhileStale_ = 0;
       signedUrlCacheMaxAgeSec_ = 0L;
-      signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1312,11 +1307,6 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       } else {
         result.negativeCachingPolicy_ = negativeCachingPolicyBuilder_.build();
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        signedUrlKeyNames_ = signedUrlKeyNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
-      }
-      result.signedUrlKeyNames_ = signedUrlKeyNames_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.BackendBucketCdnPolicy result) {
@@ -1358,6 +1348,10 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.signedUrlCacheMaxAgeSec_ = signedUrlCacheMaxAgeSec_;
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        signedUrlKeyNames_.makeImmutable();
+        result.signedUrlKeyNames_ = signedUrlKeyNames_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1494,7 +1488,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       if (!other.signedUrlKeyNames_.isEmpty()) {
         if (signedUrlKeyNames_.isEmpty()) {
           signedUrlKeyNames_ = other.signedUrlKeyNames_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ |= 0x00000800;
         } else {
           ensureSignedUrlKeyNamesIsMutable();
           signedUrlKeyNames_.addAll(other.signedUrlKeyNames_);
@@ -3288,14 +3282,14 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.protobuf.LazyStringList signedUrlKeyNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList signedUrlKeyNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSignedUrlKeyNamesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!signedUrlKeyNames_.isModifiable()) {
         signedUrlKeyNames_ = new com.google.protobuf.LazyStringArrayList(signedUrlKeyNames_);
-        bitField0_ |= 0x00000800;
       }
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -3309,7 +3303,8 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * @return A list containing the signedUrlKeyNames.
      */
     public com.google.protobuf.ProtocolStringList getSignedUrlKeyNamesList() {
-      return signedUrlKeyNames_.getUnmodifiableView();
+      signedUrlKeyNames_.makeImmutable();
+      return signedUrlKeyNames_;
     }
     /**
      *
@@ -3374,6 +3369,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       ensureSignedUrlKeyNamesIsMutable();
       signedUrlKeyNames_.set(index, value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3395,6 +3391,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       }
       ensureSignedUrlKeyNamesIsMutable();
       signedUrlKeyNames_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3413,6 +3410,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
     public Builder addAllSignedUrlKeyNames(java.lang.Iterable<java.lang.String> values) {
       ensureSignedUrlKeyNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, signedUrlKeyNames_);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3428,8 +3426,9 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSignedUrlKeyNames() {
-      signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000800);
+      ;
       onChanged();
       return this;
     }
@@ -3452,6 +3451,7 @@ public final class BackendBucketCdnPolicy extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureSignedUrlKeyNamesIsMutable();
       signedUrlKeyNames_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

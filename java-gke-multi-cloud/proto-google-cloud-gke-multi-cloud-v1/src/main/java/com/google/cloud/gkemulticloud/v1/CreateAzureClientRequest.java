@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
     return new CreateAzureClientRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_CreateAzureClientRequest_descriptor;
@@ -79,7 +74,9 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
    * Required. The parent location where this
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource will be
    * created.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -109,7 +106,9 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
    * Required. The parent location where this
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource will be
    * created.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -202,10 +201,12 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. A client provided ID the resource. Must be unique within the
    * parent resource.
+   *
    * The provided ID will be part of the
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource name
    * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+   *
    * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * </pre>
    *
@@ -231,10 +232,12 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. A client provided ID the resource. Must be unique within the
    * parent resource.
+   *
    * The provided ID will be part of the
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource name
    * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+   *
    * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * </pre>
    *
@@ -702,7 +705,9 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * Required. The parent location where this
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource will be
      * created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -731,7 +736,9 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * Required. The parent location where this
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource will be
      * created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -760,7 +767,9 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * Required. The parent location where this
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource will be
      * created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -788,7 +797,9 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * Required. The parent location where this
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource will be
      * created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -812,7 +823,9 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * Required. The parent location where this
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource will be
      * created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -1053,10 +1066,12 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. A client provided ID the resource. Must be unique within the
      * parent resource.
+     *
      * The provided ID will be part of the
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource name
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * </pre>
      *
@@ -1081,10 +1096,12 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. A client provided ID the resource. Must be unique within the
      * parent resource.
+     *
      * The provided ID will be part of the
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource name
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * </pre>
      *
@@ -1109,10 +1126,12 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. A client provided ID the resource. Must be unique within the
      * parent resource.
+     *
      * The provided ID will be part of the
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource name
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * </pre>
      *
@@ -1136,10 +1155,12 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. A client provided ID the resource. Must be unique within the
      * parent resource.
+     *
      * The provided ID will be part of the
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource name
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * </pre>
      *
@@ -1159,10 +1180,12 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. A client provided ID the resource. Must be unique within the
      * parent resource.
+     *
      * The provided ID will be part of the
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource name
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * </pre>
      *

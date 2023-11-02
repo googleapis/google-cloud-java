@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,7 +117,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1108
+   *     google/container/v1/cluster_service.proto;l=1198
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -137,7 +137,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1108
+   *     google/container/v1/cluster_service.proto;l=1198
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -426,4 +426,39 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
    */
   com.google.container.v1.GkeBackupAgentConfigOrBuilder getGkeBackupAgentConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Fuse CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcsFuseCsiDriverConfig gcs_fuse_csi_driver_config = 17;</code>
+   *
+   * @return Whether the gcsFuseCsiDriverConfig field is set.
+   */
+  boolean hasGcsFuseCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Fuse CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcsFuseCsiDriverConfig gcs_fuse_csi_driver_config = 17;</code>
+   *
+   * @return The gcsFuseCsiDriverConfig.
+   */
+  com.google.container.v1.GcsFuseCsiDriverConfig getGcsFuseCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Fuse CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1.GcsFuseCsiDriverConfig gcs_fuse_csi_driver_config = 17;</code>
+   */
+  com.google.container.v1.GcsFuseCsiDriverConfigOrBuilder getGcsFuseCsiDriverConfigOrBuilder();
 }

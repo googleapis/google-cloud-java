@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
   private GcpUserAccessBinding() {
     name_ = "";
     groupKey_ = "";
-    accessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    accessLevels_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GcpUserAccessBinding();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -199,7 +194,8 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
   public static final int ACCESS_LEVELS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList accessLevels_;
+  private com.google.protobuf.LazyStringArrayList accessLevels_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -506,8 +502,7 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       bitField0_ = 0;
       name_ = "";
       groupKey_ = "";
-      accessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      accessLevels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -536,21 +531,11 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
     public com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding buildPartial() {
       com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding result =
           new com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        accessLevels_ = accessLevels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.accessLevels_ = accessLevels_;
     }
 
     private void buildPartial0(
@@ -561,6 +546,10 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.groupKey_ = groupKey_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        accessLevels_.makeImmutable();
+        result.accessLevels_ = accessLevels_;
       }
     }
 
@@ -625,7 +614,7 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       if (!other.accessLevels_.isEmpty()) {
         if (accessLevels_.isEmpty()) {
           accessLevels_ = other.accessLevels_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureAccessLevelsIsMutable();
           accessLevels_.addAll(other.accessLevels_);
@@ -968,14 +957,14 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList accessLevels_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList accessLevels_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAccessLevelsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!accessLevels_.isModifiable()) {
         accessLevels_ = new com.google.protobuf.LazyStringArrayList(accessLevels_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -994,7 +983,8 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
      * @return A list containing the accessLevels.
      */
     public com.google.protobuf.ProtocolStringList getAccessLevelsList() {
-      return accessLevels_.getUnmodifiableView();
+      accessLevels_.makeImmutable();
+      return accessLevels_;
     }
     /**
      *
@@ -1079,6 +1069,7 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       }
       ensureAccessLevelsIsMutable();
       accessLevels_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1105,6 +1096,7 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       }
       ensureAccessLevelsIsMutable();
       accessLevels_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1128,6 +1120,7 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
     public Builder addAllAccessLevels(java.lang.Iterable<java.lang.String> values) {
       ensureAccessLevelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, accessLevels_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1148,8 +1141,9 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAccessLevels() {
-      accessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      accessLevels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1177,6 +1171,7 @@ public final class GcpUserAccessBinding extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureAccessLevelsIsMutable();
       accessLevels_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

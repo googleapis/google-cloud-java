@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,8 +56,9 @@ public interface UpdateProjectBillingInfoRequestOrBuilder
    *
    *
    * <pre>
-   * The new billing information for the project. Read-only fields are ignored;
-   * thus, you can leave empty all fields except `billing_account_name`.
+   * The new billing information for the project. Output-only fields are
+   * ignored; thus, you can leave empty all fields except
+   * `billing_account_name`.
    * </pre>
    *
    * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -69,8 +70,9 @@ public interface UpdateProjectBillingInfoRequestOrBuilder
    *
    *
    * <pre>
-   * The new billing information for the project. Read-only fields are ignored;
-   * thus, you can leave empty all fields except `billing_account_name`.
+   * The new billing information for the project. Output-only fields are
+   * ignored; thus, you can leave empty all fields except
+   * `billing_account_name`.
    * </pre>
    *
    * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -82,8 +84,9 @@ public interface UpdateProjectBillingInfoRequestOrBuilder
    *
    *
    * <pre>
-   * The new billing information for the project. Read-only fields are ignored;
-   * thus, you can leave empty all fields except `billing_account_name`.
+   * The new billing information for the project. Output-only fields are
+   * ignored; thus, you can leave empty all fields except
+   * `billing_account_name`.
    * </pre>
    *
    * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>

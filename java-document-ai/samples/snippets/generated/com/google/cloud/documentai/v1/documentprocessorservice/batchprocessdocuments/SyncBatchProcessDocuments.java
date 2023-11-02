@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.cloud.documentai.v1.BatchProcessRequest;
 import com.google.cloud.documentai.v1.BatchProcessResponse;
 import com.google.cloud.documentai.v1.DocumentOutputConfig;
 import com.google.cloud.documentai.v1.DocumentProcessorServiceClient;
+import com.google.cloud.documentai.v1.ProcessOptions;
 import com.google.cloud.documentai.v1.ProcessorName;
 
 public class SyncBatchProcessDocuments {
@@ -44,6 +45,7 @@ public class SyncBatchProcessDocuments {
               .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
               .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
               .setSkipHumanReview(true)
+              .setProcessOptions(ProcessOptions.newBuilder().build())
               .build();
       BatchProcessResponse response =
           documentProcessorServiceClient.batchProcessDocumentsAsync(request).get();

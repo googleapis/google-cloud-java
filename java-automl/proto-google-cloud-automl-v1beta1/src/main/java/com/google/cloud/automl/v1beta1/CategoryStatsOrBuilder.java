@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface CategoryStatsOrBuilder
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -42,6 +43,7 @@ public interface CategoryStatsOrBuilder
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -55,6 +57,7 @@ public interface CategoryStatsOrBuilder
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -68,6 +71,7 @@ public interface CategoryStatsOrBuilder
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -83,6 +87,7 @@ public interface CategoryStatsOrBuilder
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *

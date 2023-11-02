@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,20 @@ public interface RepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level. This is
-   * the only supported value for CustomerRepricingConfig.
+   * Applies the repricing configuration at the entitlement level.
+   *
+   * Note: If a
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * using
+   * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+   * becomes effective, then no existing or future
+   * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+   * will apply to the
+   * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+   * This is the recommended value for both
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   * and
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
    * </pre>
    *
    * <code>
@@ -42,8 +54,20 @@ public interface RepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level. This is
-   * the only supported value for CustomerRepricingConfig.
+   * Applies the repricing configuration at the entitlement level.
+   *
+   * Note: If a
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * using
+   * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+   * becomes effective, then no existing or future
+   * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+   * will apply to the
+   * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+   * This is the recommended value for both
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   * and
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
    * </pre>
    *
    * <code>
@@ -57,8 +81,20 @@ public interface RepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level. This is
-   * the only supported value for CustomerRepricingConfig.
+   * Applies the repricing configuration at the entitlement level.
+   *
+   * Note: If a
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * using
+   * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+   * becomes effective, then no existing or future
+   * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+   * will apply to the
+   * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+   * This is the recommended value for both
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   * and
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
    * </pre>
    *
    * <code>
@@ -73,30 +109,44 @@ public interface RepricingConfigOrBuilder
    *
    * <pre>
    * Applies the repricing configuration at the channel partner level.
-   * This is the only supported value for ChannelPartnerRepricingConfig.
+   * Only
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * supports this value. Deprecated: This is no longer supported. Use
+   * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is deprecated.
+   *     See google/cloud/channel/v1/repricing.proto;l=139
    * @return Whether the channelPartnerGranularity field is set.
    */
+  @java.lang.Deprecated
   boolean hasChannelPartnerGranularity();
   /**
    *
    *
    * <pre>
    * Applies the repricing configuration at the channel partner level.
-   * This is the only supported value for ChannelPartnerRepricingConfig.
+   * Only
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * supports this value. Deprecated: This is no longer supported. Use
+   * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is deprecated.
+   *     See google/cloud/channel/v1/repricing.proto;l=139
    * @return The channelPartnerGranularity.
    */
+  @java.lang.Deprecated
   com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity
       getChannelPartnerGranularity();
   /**
@@ -104,13 +154,18 @@ public interface RepricingConfigOrBuilder
    *
    * <pre>
    * Applies the repricing configuration at the channel partner level.
-   * This is the only supported value for ChannelPartnerRepricingConfig.
+   * Only
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * supports this value. Deprecated: This is no longer supported. Use
+   * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularityOrBuilder
       getChannelPartnerGranularityOrBuilder();
 
@@ -292,5 +347,5 @@ public interface RepricingConfigOrBuilder
   com.google.cloud.channel.v1.ConditionalOverrideOrBuilder getConditionalOverridesOrBuilder(
       int index);
 
-  public com.google.cloud.channel.v1.RepricingConfig.GranularityCase getGranularityCase();
+  com.google.cloud.channel.v1.RepricingConfig.GranularityCase getGranularityCase();
 }

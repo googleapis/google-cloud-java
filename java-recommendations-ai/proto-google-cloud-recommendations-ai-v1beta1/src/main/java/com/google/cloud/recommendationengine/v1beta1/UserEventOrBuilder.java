@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface UserEventOrBuilder
    *
    * <pre>
    * Required. User event type. Allowed values are:
+   *
    * * `add-to-cart` Products being added to cart.
    * * `add-to-list` Items being added to a list (shopping list, favorites
    *   etc).
@@ -56,6 +57,7 @@ public interface UserEventOrBuilder
    *
    * <pre>
    * Required. User event type. Allowed values are:
+   *
    * * `add-to-cart` Products being added to cart.
    * * `add-to-list` Items being added to a list (shopping list, favorites
    *   etc).
@@ -170,7 +172,9 @@ public interface UserEventOrBuilder
    *
    * <pre>
    * Optional. Retail product specific user event metadata.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `category-page-view`
@@ -181,11 +185,15 @@ public interface UserEventOrBuilder
    * * `remove-from-cart`
    * * `remove-from-list`
    * * `search`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_event_detail' should be
    *   set for this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `home-page-view`
    * </pre>
    *
@@ -201,7 +209,9 @@ public interface UserEventOrBuilder
    *
    * <pre>
    * Optional. Retail product specific user event metadata.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `category-page-view`
@@ -212,11 +222,15 @@ public interface UserEventOrBuilder
    * * `remove-from-cart`
    * * `remove-from-list`
    * * `search`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_event_detail' should be
    *   set for this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `home-page-view`
    * </pre>
    *
@@ -232,7 +246,9 @@ public interface UserEventOrBuilder
    *
    * <pre>
    * Optional. Retail product specific user event metadata.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `category-page-view`
@@ -243,11 +259,15 @@ public interface UserEventOrBuilder
    * * `remove-from-cart`
    * * `remove-from-list`
    * * `search`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_event_detail' should be
    *   set for this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `home-page-view`
    * </pre>
    *

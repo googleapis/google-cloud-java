@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface RetrieveLegacySecretKeyRequestOrBuilder
    *
    * <pre>
    * Required. The public key name linked to the requested secret key in the
-   * format "projects/{project}/keys/{key}".
+   * format `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface RetrieveLegacySecretKeyRequestOrBuilder
    *
    * <pre>
    * Required. The public key name linked to the requested secret key in the
-   * format "projects/{project}/keys/{key}".
+   * format `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>

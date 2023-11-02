@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateRuntimeRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -127,6 +122,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
    * kernels, the `update_mask` parameter would be
    * specified as `software_config.kernels`,
    * and the `PATCH` request body would specify the new value, as follows:
+   *
    *     {
    *       "software_config":{
    *         "kernels": [{
@@ -135,6 +131,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
    *            'latest' }],
    *         }
    *     }
+   *
+   *
    * Currently, only the following fields can be updated:
    * - `software_config.kernels`
    * - `software_config.post_startup_script`
@@ -162,6 +160,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
    * kernels, the `update_mask` parameter would be
    * specified as `software_config.kernels`,
    * and the `PATCH` request body would specify the new value, as follows:
+   *
    *     {
    *       "software_config":{
    *         "kernels": [{
@@ -170,6 +169,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
    *            'latest' }],
    *         }
    *     }
+   *
+   *
    * Currently, only the following fields can be updated:
    * - `software_config.kernels`
    * - `software_config.post_startup_script`
@@ -197,6 +198,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
    * kernels, the `update_mask` parameter would be
    * specified as `software_config.kernels`,
    * and the `PATCH` request body would specify the new value, as follows:
+   *
    *     {
    *       "software_config":{
    *         "kernels": [{
@@ -205,6 +207,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
    *            'latest' }],
    *         }
    *     }
+   *
+   *
    * Currently, only the following fields can be updated:
    * - `software_config.kernels`
    * - `software_config.post_startup_script`
@@ -893,6 +897,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * kernels, the `update_mask` parameter would be
      * specified as `software_config.kernels`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "software_config":{
      *         "kernels": [{
@@ -901,6 +906,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      *            'latest' }],
      *         }
      *     }
+     *
+     *
      * Currently, only the following fields can be updated:
      * - `software_config.kernels`
      * - `software_config.post_startup_script`
@@ -927,6 +934,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * kernels, the `update_mask` parameter would be
      * specified as `software_config.kernels`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "software_config":{
      *         "kernels": [{
@@ -935,6 +943,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      *            'latest' }],
      *         }
      *     }
+     *
+     *
      * Currently, only the following fields can be updated:
      * - `software_config.kernels`
      * - `software_config.post_startup_script`
@@ -967,6 +977,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * kernels, the `update_mask` parameter would be
      * specified as `software_config.kernels`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "software_config":{
      *         "kernels": [{
@@ -975,6 +986,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      *            'latest' }],
      *         }
      *     }
+     *
+     *
      * Currently, only the following fields can be updated:
      * - `software_config.kernels`
      * - `software_config.post_startup_script`
@@ -1009,6 +1022,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * kernels, the `update_mask` parameter would be
      * specified as `software_config.kernels`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "software_config":{
      *         "kernels": [{
@@ -1017,6 +1031,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      *            'latest' }],
      *         }
      *     }
+     *
+     *
      * Currently, only the following fields can be updated:
      * - `software_config.kernels`
      * - `software_config.post_startup_script`
@@ -1048,6 +1064,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * kernels, the `update_mask` parameter would be
      * specified as `software_config.kernels`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "software_config":{
      *         "kernels": [{
@@ -1056,6 +1073,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      *            'latest' }],
      *         }
      *     }
+     *
+     *
      * Currently, only the following fields can be updated:
      * - `software_config.kernels`
      * - `software_config.post_startup_script`
@@ -1093,6 +1112,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * kernels, the `update_mask` parameter would be
      * specified as `software_config.kernels`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "software_config":{
      *         "kernels": [{
@@ -1101,6 +1121,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      *            'latest' }],
      *         }
      *     }
+     *
+     *
      * Currently, only the following fields can be updated:
      * - `software_config.kernels`
      * - `software_config.post_startup_script`
@@ -1132,6 +1154,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * kernels, the `update_mask` parameter would be
      * specified as `software_config.kernels`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "software_config":{
      *         "kernels": [{
@@ -1140,6 +1163,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      *            'latest' }],
      *         }
      *     }
+     *
+     *
      * Currently, only the following fields can be updated:
      * - `software_config.kernels`
      * - `software_config.post_startup_script`
@@ -1166,6 +1191,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * kernels, the `update_mask` parameter would be
      * specified as `software_config.kernels`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "software_config":{
      *         "kernels": [{
@@ -1174,6 +1200,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      *            'latest' }],
      *         }
      *     }
+     *
+     *
      * Currently, only the following fields can be updated:
      * - `software_config.kernels`
      * - `software_config.post_startup_script`
@@ -1204,6 +1232,7 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      * kernels, the `update_mask` parameter would be
      * specified as `software_config.kernels`,
      * and the `PATCH` request body would specify the new value, as follows:
+     *
      *     {
      *       "software_config":{
      *         "kernels": [{
@@ -1212,6 +1241,8 @@ public final class UpdateRuntimeRequest extends com.google.protobuf.GeneratedMes
      *            'latest' }],
      *         }
      *     }
+     *
+     *
      * Currently, only the following fields can be updated:
      * - `software_config.kernels`
      * - `software_config.post_startup_script`

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListFeaturesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -208,12 +203,19 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Lists Features that match the filter expression, following the syntax
    * outlined in https://google.aip.dev/160.
+   *
    * Examples:
+   *
    *   - Feature with the name "servicemesh" in project "foo-proj":
+   *
    *       name = "projects/foo-proj/locations/global/features/servicemesh"
+   *
    *   - Features that have a label called `foo`:
+   *
    *       labels.foo:*
+   *
    *   - Features that have a label called `foo` whose value is `bar`:
+   *
    *       labels.foo = bar
    * </pre>
    *
@@ -239,12 +241,19 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Lists Features that match the filter expression, following the syntax
    * outlined in https://google.aip.dev/160.
+   *
    * Examples:
+   *
    *   - Feature with the name "servicemesh" in project "foo-proj":
+   *
    *       name = "projects/foo-proj/locations/global/features/servicemesh"
+   *
    *   - Features that have a label called `foo`:
+   *
    *       labels.foo:*
+   *
    *   - Features that have a label called `foo` whose value is `bar`:
+   *
    *       labels.foo = bar
    * </pre>
    *
@@ -1047,12 +1056,19 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Lists Features that match the filter expression, following the syntax
      * outlined in https://google.aip.dev/160.
+     *
      * Examples:
+     *
      *   - Feature with the name "servicemesh" in project "foo-proj":
+     *
      *       name = "projects/foo-proj/locations/global/features/servicemesh"
+     *
      *   - Features that have a label called `foo`:
+     *
      *       labels.foo:*
+     *
      *   - Features that have a label called `foo` whose value is `bar`:
+     *
      *       labels.foo = bar
      * </pre>
      *
@@ -1077,12 +1093,19 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Lists Features that match the filter expression, following the syntax
      * outlined in https://google.aip.dev/160.
+     *
      * Examples:
+     *
      *   - Feature with the name "servicemesh" in project "foo-proj":
+     *
      *       name = "projects/foo-proj/locations/global/features/servicemesh"
+     *
      *   - Features that have a label called `foo`:
+     *
      *       labels.foo:*
+     *
      *   - Features that have a label called `foo` whose value is `bar`:
+     *
      *       labels.foo = bar
      * </pre>
      *
@@ -1107,12 +1130,19 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Lists Features that match the filter expression, following the syntax
      * outlined in https://google.aip.dev/160.
+     *
      * Examples:
+     *
      *   - Feature with the name "servicemesh" in project "foo-proj":
+     *
      *       name = "projects/foo-proj/locations/global/features/servicemesh"
+     *
      *   - Features that have a label called `foo`:
+     *
      *       labels.foo:*
+     *
      *   - Features that have a label called `foo` whose value is `bar`:
+     *
      *       labels.foo = bar
      * </pre>
      *
@@ -1136,12 +1166,19 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Lists Features that match the filter expression, following the syntax
      * outlined in https://google.aip.dev/160.
+     *
      * Examples:
+     *
      *   - Feature with the name "servicemesh" in project "foo-proj":
+     *
      *       name = "projects/foo-proj/locations/global/features/servicemesh"
+     *
      *   - Features that have a label called `foo`:
+     *
      *       labels.foo:*
+     *
      *   - Features that have a label called `foo` whose value is `bar`:
+     *
      *       labels.foo = bar
      * </pre>
      *
@@ -1161,12 +1198,19 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Lists Features that match the filter expression, following the syntax
      * outlined in https://google.aip.dev/160.
+     *
      * Examples:
+     *
      *   - Feature with the name "servicemesh" in project "foo-proj":
+     *
      *       name = "projects/foo-proj/locations/global/features/servicemesh"
+     *
      *   - Features that have a label called `foo`:
+     *
      *       labels.foo:*
+     *
      *   - Features that have a label called `foo` whose value is `bar`:
+     *
      *       labels.foo = bar
      * </pre>
      *

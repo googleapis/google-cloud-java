@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,7 +147,7 @@ public interface GenerateSshScriptRequestOrBuilder
    *
    *
    * <pre>
-   * The port that will be open on the bastion host
+   * The port that will be open on the bastion host.
    * </pre>
    *
    * <code>int32 vm_port = 3;</code>
@@ -156,5 +156,5 @@ public interface GenerateSshScriptRequestOrBuilder
    */
   int getVmPort();
 
-  public com.google.cloud.clouddms.v1.GenerateSshScriptRequest.VmConfigCase getVmConfigCase();
+  com.google.cloud.clouddms.v1.GenerateSshScriptRequest.VmConfigCase getVmConfigCase();
 }

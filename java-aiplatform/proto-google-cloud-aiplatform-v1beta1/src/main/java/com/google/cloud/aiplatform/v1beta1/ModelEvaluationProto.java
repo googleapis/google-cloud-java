@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,10 @@ public final class ModelEvaluationProto {
       internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_ModelEvaluationExplanationSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_ModelEvaluationExplanationSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_BiasConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_BiasConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -49,32 +53,39 @@ public final class ModelEvaluationProto {
           + "m.v1beta1\032\037google/api/field_behavior.pro"
           + "to\032\031google/api/resource.proto\0321google/cl"
           + "oud/aiplatform/v1beta1/explanation.proto"
-          + "\032\034google/protobuf/struct.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\"\275\005\n\017ModelEvaluat"
-          + "ion\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014display_name\030\n"
-          + " \001(\t\022\032\n\022metrics_schema_uri\030\002 \001(\t\022\'\n\007metr"
-          + "ics\030\003 \001(\0132\026.google.protobuf.Value\0224\n\013cre"
-          + "ate_time\030\004 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\003\022\030\n\020slice_dimensions\030\005 \003(\t\022L\n\021mod"
-          + "el_explanation\030\010 \001(\01321.google.cloud.aipl"
-          + "atform.v1beta1.ModelExplanation\022j\n\021expla"
-          + "nation_specs\030\t \003(\0132O.google.cloud.aiplat"
-          + "form.v1beta1.ModelEvaluation.ModelEvalua"
-          + "tionExplanationSpec\022(\n\010metadata\030\013 \001(\0132\026."
-          + "google.protobuf.Value\032\206\001\n\036ModelEvaluatio"
-          + "nExplanationSpec\022\030\n\020explanation_type\030\001 \001"
-          + "(\t\022J\n\020explanation_spec\030\002 \001(\01320.google.cl"
-          + "oud.aiplatform.v1beta1.ExplanationSpec:\177"
-          + "\352A|\n)aiplatform.googleapis.com/ModelEval"
-          + "uation\022Oprojects/{project}/locations/{lo"
-          + "cation}/models/{model}/evaluations/{eval"
-          + "uation}B\353\001\n#com.google.cloud.aiplatform."
-          + "v1beta1B\024ModelEvaluationProtoP\001ZCcloud.g"
-          + "oogle.com/go/aiplatform/apiv1beta1/aipla"
-          + "tformpb;aiplatformpb\252\002\037Google.Cloud.AIPl"
-          + "atform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform"
-          + "\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1"
-          + "beta1b\006proto3"
+          + "\032<google/cloud/aiplatform/v1beta1/model_"
+          + "evaluation_slice.proto\032\034google/protobuf/"
+          + "struct.proto\032\037google/protobuf/timestamp."
+          + "proto\"\214\007\n\017ModelEvaluation\022\022\n\004name\030\001 \001(\tB"
+          + "\004\342A\001\003\022\024\n\014display_name\030\n \001(\t\022\032\n\022metrics_s"
+          + "chema_uri\030\002 \001(\t\022\'\n\007metrics\030\003 \001(\0132\026.googl"
+          + "e.protobuf.Value\0225\n\013create_time\030\004 \001(\0132\032."
+          + "google.protobuf.TimestampB\004\342A\001\003\022\030\n\020slice"
+          + "_dimensions\030\005 \003(\t\022L\n\021model_explanation\030\010"
+          + " \001(\01321.google.cloud.aiplatform.v1beta1.M"
+          + "odelExplanation\022j\n\021explanation_specs\030\t \003"
+          + "(\0132O.google.cloud.aiplatform.v1beta1.Mod"
+          + "elEvaluation.ModelEvaluationExplanationS"
+          + "pec\022(\n\010metadata\030\013 \001(\0132\026.google.protobuf."
+          + "Value\022Q\n\014bias_configs\030\014 \001(\0132;.google.clo"
+          + "ud.aiplatform.v1beta1.ModelEvaluation.Bi"
+          + "asConfig\032\206\001\n\036ModelEvaluationExplanationS"
+          + "pec\022\030\n\020explanation_type\030\001 \001(\t\022J\n\020explana"
+          + "tion_spec\030\002 \001(\01320.google.cloud.aiplatfor"
+          + "m.v1beta1.ExplanationSpec\032x\n\nBiasConfig\022"
+          + "Z\n\013bias_slices\030\001 \001(\0132E.google.cloud.aipl"
+          + "atform.v1beta1.ModelEvaluationSlice.Slic"
+          + "e.SliceSpec\022\016\n\006labels\030\002 \003(\t:\177\352A|\n)aiplat"
+          + "form.googleapis.com/ModelEvaluation\022Opro"
+          + "jects/{project}/locations/{location}/mod"
+          + "els/{model}/evaluations/{evaluation}B\353\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\024Mo"
+          + "delEvaluationProtoP\001ZCcloud.google.com/g"
+          + "o/aiplatform/apiv1beta1/aiplatformpb;aip"
+          + "latformpb\252\002\037Google.Cloud.AIPlatform.V1Be"
+          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
+          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -83,6 +94,7 @@ public final class ModelEvaluationProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluationSliceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -101,6 +113,7 @@ public final class ModelEvaluationProto {
               "ModelExplanation",
               "ExplanationSpecs",
               "Metadata",
+              "BiasConfigs",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_ModelEvaluationExplanationSpec_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_descriptor
@@ -112,6 +125,16 @@ public final class ModelEvaluationProto {
             new java.lang.String[] {
               "ExplanationType", "ExplanationSpec",
             });
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_BiasConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_BiasConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_BiasConfig_descriptor,
+            new java.lang.String[] {
+              "BiasSlices", "Labels",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -121,6 +144,7 @@ public final class ModelEvaluationProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.ModelEvaluationSliceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

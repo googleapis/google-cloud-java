@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
     return new WorkloadCertificates();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_WorkloadCertificates_descriptor;
@@ -72,9 +67,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * enable_certificates controls issuance of workload mTLS certificates.
+   *
    * If set, the GKE Workload Identity Certificates controller and node agent
    * will be deployed in the cluster, which can then be configured by creating a
    * WorkloadCertificateConfig Custom Resource.
+   *
    * Requires Workload Identity
    * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
    * must be non-empty).
@@ -93,9 +90,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * enable_certificates controls issuance of workload mTLS certificates.
+   *
    * If set, the GKE Workload Identity Certificates controller and node agent
    * will be deployed in the cluster, which can then be configured by creating a
    * WorkloadCertificateConfig Custom Resource.
+   *
    * Requires Workload Identity
    * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
    * must be non-empty).
@@ -116,9 +115,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * enable_certificates controls issuance of workload mTLS certificates.
+   *
    * If set, the GKE Workload Identity Certificates controller and node agent
    * will be deployed in the cluster, which can then be configured by creating a
    * WorkloadCertificateConfig Custom Resource.
+   *
    * Requires Workload Identity
    * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
    * must be non-empty).
@@ -497,9 +498,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * enable_certificates controls issuance of workload mTLS certificates.
+     *
      * If set, the GKE Workload Identity Certificates controller and node agent
      * will be deployed in the cluster, which can then be configured by creating a
      * WorkloadCertificateConfig Custom Resource.
+     *
      * Requires Workload Identity
      * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
      * must be non-empty).
@@ -517,9 +520,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * enable_certificates controls issuance of workload mTLS certificates.
+     *
      * If set, the GKE Workload Identity Certificates controller and node agent
      * will be deployed in the cluster, which can then be configured by creating a
      * WorkloadCertificateConfig Custom Resource.
+     *
      * Requires Workload Identity
      * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
      * must be non-empty).
@@ -543,9 +548,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * enable_certificates controls issuance of workload mTLS certificates.
+     *
      * If set, the GKE Workload Identity Certificates controller and node agent
      * will be deployed in the cluster, which can then be configured by creating a
      * WorkloadCertificateConfig Custom Resource.
+     *
      * Requires Workload Identity
      * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
      * must be non-empty).
@@ -571,9 +578,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * enable_certificates controls issuance of workload mTLS certificates.
+     *
      * If set, the GKE Workload Identity Certificates controller and node agent
      * will be deployed in the cluster, which can then be configured by creating a
      * WorkloadCertificateConfig Custom Resource.
+     *
      * Requires Workload Identity
      * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
      * must be non-empty).
@@ -596,9 +605,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * enable_certificates controls issuance of workload mTLS certificates.
+     *
      * If set, the GKE Workload Identity Certificates controller and node agent
      * will be deployed in the cluster, which can then be configured by creating a
      * WorkloadCertificateConfig Custom Resource.
+     *
      * Requires Workload Identity
      * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
      * must be non-empty).
@@ -627,9 +638,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * enable_certificates controls issuance of workload mTLS certificates.
+     *
      * If set, the GKE Workload Identity Certificates controller and node agent
      * will be deployed in the cluster, which can then be configured by creating a
      * WorkloadCertificateConfig Custom Resource.
+     *
      * Requires Workload Identity
      * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
      * must be non-empty).
@@ -652,9 +665,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * enable_certificates controls issuance of workload mTLS certificates.
+     *
      * If set, the GKE Workload Identity Certificates controller and node agent
      * will be deployed in the cluster, which can then be configured by creating a
      * WorkloadCertificateConfig Custom Resource.
+     *
      * Requires Workload Identity
      * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
      * must be non-empty).
@@ -672,9 +687,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * enable_certificates controls issuance of workload mTLS certificates.
+     *
      * If set, the GKE Workload Identity Certificates controller and node agent
      * will be deployed in the cluster, which can then be configured by creating a
      * WorkloadCertificateConfig Custom Resource.
+     *
      * Requires Workload Identity
      * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
      * must be non-empty).
@@ -696,9 +713,11 @@ public final class WorkloadCertificates extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * enable_certificates controls issuance of workload mTLS certificates.
+     *
      * If set, the GKE Workload Identity Certificates controller and node agent
      * will be deployed in the cluster, which can then be configured by creating a
      * WorkloadCertificateConfig Custom Resource.
+     *
      * Requires Workload Identity
      * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
      * must be non-empty).

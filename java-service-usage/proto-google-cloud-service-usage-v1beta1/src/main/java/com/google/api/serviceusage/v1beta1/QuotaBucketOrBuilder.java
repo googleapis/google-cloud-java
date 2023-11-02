@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,11 +160,50 @@ public interface QuotaBucketOrBuilder
    *
    *
    * <pre>
+   * Producer policy inherited from the closet ancestor of the current consumer.
+   * </pre>
+   *
+   * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+   *
+   * @return Whether the producerQuotaPolicy field is set.
+   */
+  boolean hasProducerQuotaPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Producer policy inherited from the closet ancestor of the current consumer.
+   * </pre>
+   *
+   * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+   *
+   * @return The producerQuotaPolicy.
+   */
+  com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy getProducerQuotaPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Producer policy inherited from the closet ancestor of the current consumer.
+   * </pre>
+   *
+   * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+   */
+  com.google.api.serviceusage.v1beta1.ProducerQuotaPolicyOrBuilder
+      getProducerQuotaPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -178,10 +217,13 @@ public interface QuotaBucketOrBuilder
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -198,10 +240,13 @@ public interface QuotaBucketOrBuilder
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -215,10 +260,13 @@ public interface QuotaBucketOrBuilder
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -236,10 +284,13 @@ public interface QuotaBucketOrBuilder
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.

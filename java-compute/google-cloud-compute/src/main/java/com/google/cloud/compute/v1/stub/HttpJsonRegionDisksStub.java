@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,8 +31,10 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddResourcePoliciesRegionDiskRequest;
+import com.google.cloud.compute.v1.BulkInsertRegionDiskRequest;
 import com.google.cloud.compute.v1.CreateSnapshotRegionDiskRequest;
 import com.google.cloud.compute.v1.DeleteRegionDiskRequest;
 import com.google.cloud.compute.v1.Disk;
@@ -48,6 +50,9 @@ import com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskRequest;
 import com.google.cloud.compute.v1.ResizeRegionDiskRequest;
 import com.google.cloud.compute.v1.SetIamPolicyRegionDiskRequest;
 import com.google.cloud.compute.v1.SetLabelsRegionDiskRequest;
+import com.google.cloud.compute.v1.StartAsyncReplicationRegionDiskRequest;
+import com.google.cloud.compute.v1.StopAsyncReplicationRegionDiskRequest;
+import com.google.cloud.compute.v1.StopGroupAsyncReplicationRegionDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionDiskRequest;
@@ -116,6 +121,62 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .setOperationSnapshotFactory(
                   (AddResourcePoliciesRegionDiskRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<BulkInsertRegionDiskRequest, Operation>
+      bulkInsertMethodDescriptor =
+          ApiMethodDescriptor.<BulkInsertRegionDiskRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/BulkInsert")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BulkInsertRegionDiskRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/disks/bulkInsert",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkInsertRegionDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkInsertRegionDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "bulkInsertDiskResourceResource",
+                                      request.getBulkInsertDiskResourceResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BulkInsertRegionDiskRequest request, Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     opName.append(":").append(request.getRegion());
@@ -627,6 +688,171 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<StartAsyncReplicationRegionDiskRequest, Operation>
+      startAsyncReplicationMethodDescriptor =
+          ApiMethodDescriptor.<StartAsyncReplicationRegionDiskRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/StartAsyncReplication")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StartAsyncReplicationRegionDiskRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/disks/{disk}/startAsyncReplication",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StartAsyncReplicationRegionDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "disk", request.getDisk());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StartAsyncReplicationRegionDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "regionDisksStartAsyncReplicationRequestResource",
+                                      request.getRegionDisksStartAsyncReplicationRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StartAsyncReplicationRegionDiskRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<StopAsyncReplicationRegionDiskRequest, Operation>
+      stopAsyncReplicationMethodDescriptor =
+          ApiMethodDescriptor.<StopAsyncReplicationRegionDiskRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/StopAsyncReplication")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StopAsyncReplicationRegionDiskRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/disks/{disk}/stopAsyncReplication",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StopAsyncReplicationRegionDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "disk", request.getDisk());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StopAsyncReplicationRegionDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StopAsyncReplicationRegionDiskRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<StopGroupAsyncReplicationRegionDiskRequest, Operation>
+      stopGroupAsyncReplicationMethodDescriptor =
+          ApiMethodDescriptor.<StopGroupAsyncReplicationRegionDiskRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/StopGroupAsyncReplication")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<StopGroupAsyncReplicationRegionDiskRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/disks/stopGroupAsyncReplication",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StopGroupAsyncReplicationRegionDiskRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StopGroupAsyncReplicationRegionDiskRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "disksStopGroupAsyncReplicationResourceResource",
+                                      request.getDisksStopGroupAsyncReplicationResourceResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StopGroupAsyncReplicationRegionDiskRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<
           TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
@@ -735,6 +961,9 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       addResourcePoliciesCallable;
   private final OperationCallable<AddResourcePoliciesRegionDiskRequest, Operation, Operation>
       addResourcePoliciesOperationCallable;
+  private final UnaryCallable<BulkInsertRegionDiskRequest, Operation> bulkInsertCallable;
+  private final OperationCallable<BulkInsertRegionDiskRequest, Operation, Operation>
+      bulkInsertOperationCallable;
   private final UnaryCallable<CreateSnapshotRegionDiskRequest, Operation> createSnapshotCallable;
   private final OperationCallable<CreateSnapshotRegionDiskRequest, Operation, Operation>
       createSnapshotOperationCallable;
@@ -759,6 +988,18 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
   private final UnaryCallable<SetLabelsRegionDiskRequest, Operation> setLabelsCallable;
   private final OperationCallable<SetLabelsRegionDiskRequest, Operation, Operation>
       setLabelsOperationCallable;
+  private final UnaryCallable<StartAsyncReplicationRegionDiskRequest, Operation>
+      startAsyncReplicationCallable;
+  private final OperationCallable<StartAsyncReplicationRegionDiskRequest, Operation, Operation>
+      startAsyncReplicationOperationCallable;
+  private final UnaryCallable<StopAsyncReplicationRegionDiskRequest, Operation>
+      stopAsyncReplicationCallable;
+  private final OperationCallable<StopAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopAsyncReplicationOperationCallable;
+  private final UnaryCallable<StopGroupAsyncReplicationRegionDiskRequest, Operation>
+      stopGroupAsyncReplicationCallable;
+  private final OperationCallable<StopGroupAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopGroupAsyncReplicationOperationCallable;
   private final UnaryCallable<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
   private final UnaryCallable<UpdateRegionDiskRequest, Operation> updateCallable;
@@ -814,70 +1055,225 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
             HttpJsonCallSettings.<AddResourcePoliciesRegionDiskRequest, Operation>newBuilder()
                 .setMethodDescriptor(addResourcePoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("disk", String.valueOf(request.getDisk()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
+    HttpJsonCallSettings<BulkInsertRegionDiskRequest, Operation> bulkInsertTransportSettings =
+        HttpJsonCallSettings.<BulkInsertRegionDiskRequest, Operation>newBuilder()
+            .setMethodDescriptor(bulkInsertMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<CreateSnapshotRegionDiskRequest, Operation>
         createSnapshotTransportSettings =
             HttpJsonCallSettings.<CreateSnapshotRegionDiskRequest, Operation>newBuilder()
                 .setMethodDescriptor(createSnapshotMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("disk", String.valueOf(request.getDisk()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRegionDiskRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRegionDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("disk", String.valueOf(request.getDisk()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRegionDiskRequest, Disk> getTransportSettings =
         HttpJsonCallSettings.<GetRegionDiskRequest, Disk>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("disk", String.valueOf(request.getDisk()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRegionDiskRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRegionDiskRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertRegionDiskRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRegionDisksRequest, DiskList> listTransportSettings =
         HttpJsonCallSettings.<ListRegionDisksRequest, DiskList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RemoveResourcePoliciesRegionDiskRequest, Operation>
         removeResourcePoliciesTransportSettings =
             HttpJsonCallSettings.<RemoveResourcePoliciesRegionDiskRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeResourcePoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("disk", String.valueOf(request.getDisk()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ResizeRegionDiskRequest, Operation> resizeTransportSettings =
         HttpJsonCallSettings.<ResizeRegionDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(resizeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("disk", String.valueOf(request.getDisk()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRegionDiskRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRegionDiskRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetLabelsRegionDiskRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsRegionDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
+    HttpJsonCallSettings<StartAsyncReplicationRegionDiskRequest, Operation>
+        startAsyncReplicationTransportSettings =
+            HttpJsonCallSettings.<StartAsyncReplicationRegionDiskRequest, Operation>newBuilder()
+                .setMethodDescriptor(startAsyncReplicationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("disk", String.valueOf(request.getDisk()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<StopAsyncReplicationRegionDiskRequest, Operation>
+        stopAsyncReplicationTransportSettings =
+            HttpJsonCallSettings.<StopAsyncReplicationRegionDiskRequest, Operation>newBuilder()
+                .setMethodDescriptor(stopAsyncReplicationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("disk", String.valueOf(request.getDisk()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<StopGroupAsyncReplicationRegionDiskRequest, Operation>
+        stopGroupAsyncReplicationTransportSettings =
+            HttpJsonCallSettings.<StopGroupAsyncReplicationRegionDiskRequest, Operation>newBuilder()
+                .setMethodDescriptor(stopGroupAsyncReplicationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
                 .<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateRegionDiskRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateRegionDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("disk", String.valueOf(request.getDisk()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
 
     this.addResourcePoliciesCallable =
@@ -889,6 +1285,15 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
         callableFactory.createOperationCallable(
             addResourcePoliciesTransportSettings,
             settings.addResourcePoliciesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.bulkInsertCallable =
+        callableFactory.createUnaryCallable(
+            bulkInsertTransportSettings, settings.bulkInsertSettings(), clientContext);
+    this.bulkInsertOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkInsertTransportSettings,
+            settings.bulkInsertOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.createSnapshotCallable =
@@ -962,6 +1367,39 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
             settings.setLabelsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.startAsyncReplicationCallable =
+        callableFactory.createUnaryCallable(
+            startAsyncReplicationTransportSettings,
+            settings.startAsyncReplicationSettings(),
+            clientContext);
+    this.startAsyncReplicationOperationCallable =
+        callableFactory.createOperationCallable(
+            startAsyncReplicationTransportSettings,
+            settings.startAsyncReplicationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.stopAsyncReplicationCallable =
+        callableFactory.createUnaryCallable(
+            stopAsyncReplicationTransportSettings,
+            settings.stopAsyncReplicationSettings(),
+            clientContext);
+    this.stopAsyncReplicationOperationCallable =
+        callableFactory.createOperationCallable(
+            stopAsyncReplicationTransportSettings,
+            settings.stopAsyncReplicationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.stopGroupAsyncReplicationCallable =
+        callableFactory.createUnaryCallable(
+            stopGroupAsyncReplicationTransportSettings,
+            settings.stopGroupAsyncReplicationSettings(),
+            clientContext);
+    this.stopGroupAsyncReplicationOperationCallable =
+        callableFactory.createOperationCallable(
+            stopGroupAsyncReplicationTransportSettings,
+            settings.stopGroupAsyncReplicationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -985,6 +1423,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(addResourcePoliciesMethodDescriptor);
+    methodDescriptors.add(bulkInsertMethodDescriptor);
     methodDescriptors.add(createSnapshotMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
@@ -995,6 +1434,9 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
     methodDescriptors.add(resizeMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(setLabelsMethodDescriptor);
+    methodDescriptors.add(startAsyncReplicationMethodDescriptor);
+    methodDescriptors.add(stopAsyncReplicationMethodDescriptor);
+    methodDescriptors.add(stopGroupAsyncReplicationMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
@@ -1010,6 +1452,17 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
   public OperationCallable<AddResourcePoliciesRegionDiskRequest, Operation, Operation>
       addResourcePoliciesOperationCallable() {
     return addResourcePoliciesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BulkInsertRegionDiskRequest, Operation> bulkInsertCallable() {
+    return bulkInsertCallable;
+  }
+
+  @Override
+  public OperationCallable<BulkInsertRegionDiskRequest, Operation, Operation>
+      bulkInsertOperationCallable() {
+    return bulkInsertOperationCallable;
   }
 
   @Override
@@ -1102,6 +1555,42 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
   public OperationCallable<SetLabelsRegionDiskRequest, Operation, Operation>
       setLabelsOperationCallable() {
     return setLabelsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartAsyncReplicationRegionDiskRequest, Operation>
+      startAsyncReplicationCallable() {
+    return startAsyncReplicationCallable;
+  }
+
+  @Override
+  public OperationCallable<StartAsyncReplicationRegionDiskRequest, Operation, Operation>
+      startAsyncReplicationOperationCallable() {
+    return startAsyncReplicationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopAsyncReplicationRegionDiskRequest, Operation>
+      stopAsyncReplicationCallable() {
+    return stopAsyncReplicationCallable;
+  }
+
+  @Override
+  public OperationCallable<StopAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopAsyncReplicationOperationCallable() {
+    return stopAsyncReplicationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopGroupAsyncReplicationRegionDiskRequest, Operation>
+      stopGroupAsyncReplicationCallable() {
+    return stopGroupAsyncReplicationCallable;
+  }
+
+  @Override
+  public OperationCallable<StopGroupAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopGroupAsyncReplicationOperationCallable() {
+    return stopGroupAsyncReplicationOperationCallable;
   }
 
   @Override

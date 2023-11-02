@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -283,6 +283,7 @@ public interface OperationOrBuilder
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
+   *
    * * Example:
    * ```
    * {
@@ -320,6 +321,7 @@ public interface OperationOrBuilder
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
+   *
    * * Example:
    * ```
    * {
@@ -360,6 +362,7 @@ public interface OperationOrBuilder
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
+   *
    * * Example:
    * ```
    * {
@@ -397,6 +400,7 @@ public interface OperationOrBuilder
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
+   *
    * * Example:
    * ```
    * {
@@ -438,6 +442,7 @@ public interface OperationOrBuilder
    * tested/modified.
    * This is intended to be an exact match per filter. To perform advanced
    * matching, use path_value_matchers.
+   *
    * * Example:
    * ```
    * {
@@ -552,5 +557,5 @@ public interface OperationOrBuilder
    */
   com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrThrow(java.lang.String key);
 
-  public com.google.cloud.recommender.v1.Operation.PathValueCase getPathValueCase();
+  com.google.cloud.recommender.v1.Operation.PathValueCase getPathValueCase();
 }

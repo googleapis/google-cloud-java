@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface AnalyzeOrgPolicyGovernedContainersRequestOrBuilder
    * policies within the scope will be analyzed. The output containers will
    * also be limited to the ones governed by those in-scope organization
    * policies.
+   *
    * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
    * </pre>
    *
@@ -47,6 +48,7 @@ public interface AnalyzeOrgPolicyGovernedContainersRequestOrBuilder
    * policies within the scope will be analyzed. The output containers will
    * also be limited to the ones governed by those in-scope organization
    * policies.
+   *
    * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
    * </pre>
    *
@@ -92,6 +94,7 @@ public interface AnalyzeOrgPolicyGovernedContainersRequestOrBuilder
    * The expression to filter the governed containers in result.
    * The only supported field is `parent`, and the only supported operator is
    * `=`.
+   *
    * Example:
    * parent="//cloudresourcemanager.googleapis.com/folders/001" will return all
    * containers under "folders/001".
@@ -109,6 +112,7 @@ public interface AnalyzeOrgPolicyGovernedContainersRequestOrBuilder
    * The expression to filter the governed containers in result.
    * The only supported field is `parent`, and the only supported operator is
    * `=`.
+   *
    * Example:
    * parent="//cloudresourcemanager.googleapis.com/folders/001" will return all
    * containers under "folders/001".

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage bucket containing the source (see
+   * Cloud Storage bucket containing the source (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * </pre>
@@ -41,7 +41,7 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage bucket containing the source (see
+   * Cloud Storage bucket containing the source (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * </pre>
@@ -56,9 +56,10 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage object containing the source.
-   * This object must be a gzipped archive file (`.tar.gz`) containing source to
-   * build.
+   * Cloud Storage object containing the source.
+   *
+   * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
+   * containing source to build.
    * </pre>
    *
    * <code>string object = 2;</code>
@@ -70,9 +71,10 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage object containing the source.
-   * This object must be a gzipped archive file (`.tar.gz`) containing source to
-   * build.
+   * Cloud Storage object containing the source.
+   *
+   * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
+   * containing source to build.
    * </pre>
    *
    * <code>string object = 2;</code>
@@ -85,7 +87,7 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage generation for the object. If the generation is
+   * Cloud Storage generation for the object. If the generation is
    * omitted, the latest generation will be used.
    * </pre>
    *
@@ -94,4 +96,33 @@ public interface StorageSourceOrBuilder
    * @return The generation.
    */
   long getGeneration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Option to specify the tool to fetch the source file for the build.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSource.SourceFetcher source_fetcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for sourceFetcher.
+   */
+  int getSourceFetcherValue();
+  /**
+   *
+   *
+   * <pre>
+   * Option to specify the tool to fetch the source file for the build.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSource.SourceFetcher source_fetcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sourceFetcher.
+   */
+  com.google.cloudbuild.v1.StorageSource.SourceFetcher getSourceFetcher();
 }

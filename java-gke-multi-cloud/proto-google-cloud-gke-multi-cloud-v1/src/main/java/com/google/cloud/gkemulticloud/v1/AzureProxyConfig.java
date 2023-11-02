@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
     return new AzureProxyConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AzureProxyConfig_descriptor;
@@ -77,6 +72,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The ARM ID the of the resource group containing proxy keyvault.
+   *
    * Resource group ids are formatted as
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`.
    * </pre>
@@ -102,6 +98,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The ARM ID the of the resource group containing proxy keyvault.
+   *
    * Resource group ids are formatted as
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`.
    * </pre>
@@ -132,9 +129,11 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The URL the of the proxy setting secret with its version.
+   *
    * The secret must be a JSON encoded proxy configuration
    * as described in
    * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+   *
    * Secret ids are formatted as
    * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
    * </pre>
@@ -160,9 +159,11 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The URL the of the proxy setting secret with its version.
+   *
    * The secret must be a JSON encoded proxy configuration
    * as described in
    * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+   *
    * Secret ids are formatted as
    * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
    * </pre>
@@ -556,6 +557,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The ARM ID the of the resource group containing proxy keyvault.
+     *
      * Resource group ids are formatted as
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`.
      * </pre>
@@ -580,6 +582,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The ARM ID the of the resource group containing proxy keyvault.
+     *
      * Resource group ids are formatted as
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`.
      * </pre>
@@ -604,6 +607,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The ARM ID the of the resource group containing proxy keyvault.
+     *
      * Resource group ids are formatted as
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`.
      * </pre>
@@ -627,6 +631,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The ARM ID the of the resource group containing proxy keyvault.
+     *
      * Resource group ids are formatted as
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`.
      * </pre>
@@ -646,6 +651,7 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The ARM ID the of the resource group containing proxy keyvault.
+     *
      * Resource group ids are formatted as
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`.
      * </pre>
@@ -672,9 +678,11 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The URL the of the proxy setting secret with its version.
+     *
      * The secret must be a JSON encoded proxy configuration
      * as described in
      * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+     *
      * Secret ids are formatted as
      * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
      * </pre>
@@ -699,9 +707,11 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The URL the of the proxy setting secret with its version.
+     *
      * The secret must be a JSON encoded proxy configuration
      * as described in
      * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+     *
      * Secret ids are formatted as
      * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
      * </pre>
@@ -726,9 +736,11 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The URL the of the proxy setting secret with its version.
+     *
      * The secret must be a JSON encoded proxy configuration
      * as described in
      * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+     *
      * Secret ids are formatted as
      * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
      * </pre>
@@ -752,9 +764,11 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The URL the of the proxy setting secret with its version.
+     *
      * The secret must be a JSON encoded proxy configuration
      * as described in
      * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+     *
      * Secret ids are formatted as
      * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
      * </pre>
@@ -774,9 +788,11 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The URL the of the proxy setting secret with its version.
+     *
      * The secret must be a JSON encoded proxy configuration
      * as described in
      * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
+     *
      * Secret ids are formatted as
      * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
      * </pre>

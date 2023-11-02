@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloudbuild.v1.ApproveBuildRequest;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.BuildOperationMetadata;
@@ -56,7 +58,6 @@ import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
 import com.google.cloudbuild.v1.WorkerPool;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -294,6 +295,41 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
+  private static final PathTemplate CREATE_BUILD_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate GET_BUILD_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/builds/*");
+  private static final PathTemplate LIST_BUILDS_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate CANCEL_BUILD_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/builds/*");
+  private static final PathTemplate RETRY_BUILD_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/builds/*");
+  private static final PathTemplate APPROVE_BUILD_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/builds/*");
+  private static final PathTemplate CREATE_BUILD_TRIGGER_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate GET_BUILD_TRIGGER_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/triggers/*");
+  private static final PathTemplate LIST_BUILD_TRIGGERS_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate DELETE_BUILD_TRIGGER_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/triggers/*");
+  private static final PathTemplate UPDATE_BUILD_TRIGGER_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/triggers/*");
+  private static final PathTemplate RUN_BUILD_TRIGGER_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/triggers/*");
+  private static final PathTemplate CREATE_WORKER_POOL_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate GET_WORKER_POOL_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/workerPools/*");
+  private static final PathTemplate DELETE_WORKER_POOL_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/workerPools/*");
+  private static final PathTemplate UPDATE_WORKER_POOL_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/workerPools/*");
+  private static final PathTemplate LIST_WORKER_POOLS_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+
   public static final GrpcCloudBuildStub create(CloudBuildStubSettings settings)
       throws IOException {
     return new GrpcCloudBuildStub(settings, ClientContext.create(settings));
@@ -337,10 +373,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(createBuildMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getParent(), "location", CREATE_BUILD_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetBuildRequest, Build> getBuildTransportSettings =
@@ -348,11 +383,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(getBuildMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("id", String.valueOf(request.getId()));
-                  params.put("name", String.valueOf(request.getName()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", GET_BUILD_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListBuildsRequest, ListBuildsResponse> listBuildsTransportSettings =
@@ -360,10 +393,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(listBuildsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getParent(), "location", LIST_BUILDS_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CancelBuildRequest, Build> cancelBuildTransportSettings =
@@ -371,11 +403,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(cancelBuildMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("id", String.valueOf(request.getId()));
-                  params.put("name", String.valueOf(request.getName()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", CANCEL_BUILD_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RetryBuildRequest, Operation> retryBuildTransportSettings =
@@ -383,11 +413,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(retryBuildMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("id", String.valueOf(request.getId()));
-                  params.put("name", String.valueOf(request.getName()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", RETRY_BUILD_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ApproveBuildRequest, Operation> approveBuildTransportSettings =
@@ -395,9 +423,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(approveBuildMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", APPROVE_BUILD_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateBuildTriggerRequest, BuildTrigger> createBuildTriggerTransportSettings =
@@ -405,10 +433,10 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(createBuildTriggerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      request.getParent(), "location", CREATE_BUILD_TRIGGER_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetBuildTriggerRequest, BuildTrigger> getBuildTriggerTransportSettings =
@@ -416,11 +444,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(getBuildTriggerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put("trigger_id", String.valueOf(request.getTriggerId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", GET_BUILD_TRIGGER_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListBuildTriggersRequest, ListBuildTriggersResponse>
@@ -429,10 +455,10 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                 .setMethodDescriptor(listBuildTriggersMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      params.put("project_id", String.valueOf(request.getProjectId()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getParent(), "location", LIST_BUILD_TRIGGERS_0_PATH_TEMPLATE);
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerTransportSettings =
@@ -440,11 +466,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(deleteBuildTriggerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put("trigger_id", String.valueOf(request.getTriggerId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", DELETE_BUILD_TRIGGER_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerTransportSettings =
@@ -452,13 +476,14 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(updateBuildTriggerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put(
-                      "trigger.resource_name",
-                      String.valueOf(request.getTrigger().getResourceName()));
-                  params.put("trigger_id", String.valueOf(request.getTriggerId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  if (request.getTrigger() != null) {
+                    builder.add(
+                        request.getTrigger().getResourceName(),
+                        "location",
+                        UPDATE_BUILD_TRIGGER_0_PATH_TEMPLATE);
+                  }
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RunBuildTriggerRequest, Operation> runBuildTriggerTransportSettings =
@@ -466,11 +491,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(runBuildTriggerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put("trigger_id", String.valueOf(request.getTriggerId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", RUN_BUILD_TRIGGER_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
@@ -480,11 +503,11 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                 .setMethodDescriptor(receiveTriggerWebhookMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      params.put("project_id", String.valueOf(request.getProjectId()));
-                      params.put("trigger", String.valueOf(request.getTrigger()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      builder.add("trigger", String.valueOf(request.getTrigger()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateWorkerPoolRequest, Operation> createWorkerPoolTransportSettings =
@@ -492,9 +515,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(createWorkerPoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getParent(), "location", CREATE_WORKER_POOL_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetWorkerPoolRequest, WorkerPool> getWorkerPoolTransportSettings =
@@ -502,9 +525,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(getWorkerPoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", GET_WORKER_POOL_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolTransportSettings =
@@ -512,9 +535,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(deleteWorkerPoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", DELETE_WORKER_POOL_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateWorkerPoolRequest, Operation> updateWorkerPoolTransportSettings =
@@ -522,9 +545,14 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             .setMethodDescriptor(updateWorkerPoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("worker_pool.name", String.valueOf(request.getWorkerPool().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  if (request.getWorkerPool() != null) {
+                    builder.add(
+                        request.getWorkerPool().getName(),
+                        "location",
+                        UPDATE_WORKER_POOL_0_PATH_TEMPLATE);
+                  }
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
@@ -533,9 +561,10 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                 .setMethodDescriptor(listWorkerPoolsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getParent(), "location", LIST_WORKER_POOLS_0_PATH_TEMPLATE);
+                      return builder.build();
                     })
                 .build();
 

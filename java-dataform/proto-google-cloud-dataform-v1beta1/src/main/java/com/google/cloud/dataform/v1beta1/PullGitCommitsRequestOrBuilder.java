@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,8 +56,8 @@ public interface PullGitCommitsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the branch in the Git remote from which to pull commits.
-   * If left unset, the repository's default branch name will be used.
+   * Optional. The name of the branch in the Git remote from which to pull
+   * commits. If left unset, the repository's default branch name will be used.
    * </pre>
    *
    * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -69,8 +69,8 @@ public interface PullGitCommitsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the branch in the Git remote from which to pull commits.
-   * If left unset, the repository's default branch name will be used.
+   * Optional. The name of the branch in the Git remote from which to pull
+   * commits. If left unset, the repository's default branch name will be used.
    * </pre>
    *
    * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -83,8 +83,8 @@ public interface PullGitCommitsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The author of any merge commit which may be created as a result of merging
-   * fetched Git commits into this workspace.
+   * Required. The author of any merge commit which may be created as a result
+   * of merging fetched Git commits into this workspace.
    * </pre>
    *
    * <code>
@@ -98,8 +98,8 @@ public interface PullGitCommitsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The author of any merge commit which may be created as a result of merging
-   * fetched Git commits into this workspace.
+   * Required. The author of any merge commit which may be created as a result
+   * of merging fetched Git commits into this workspace.
    * </pre>
    *
    * <code>
@@ -113,8 +113,8 @@ public interface PullGitCommitsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The author of any merge commit which may be created as a result of merging
-   * fetched Git commits into this workspace.
+   * Required. The author of any merge commit which may be created as a result
+   * of merging fetched Git commits into this workspace.
    * </pre>
    *
    * <code>

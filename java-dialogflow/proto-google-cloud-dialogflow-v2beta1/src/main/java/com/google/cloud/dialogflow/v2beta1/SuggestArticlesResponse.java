@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SuggestArticlesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -151,6 +146,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
    * <pre>
    * The name of the latest conversation message used to compile
    * suggestion for.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -177,6 +173,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
    * <pre>
    * The name of the latest conversation message used to compile
    * suggestion for.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -1029,6 +1026,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      * <pre>
      * The name of the latest conversation message used to compile
      * suggestion for.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -1054,6 +1052,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      * <pre>
      * The name of the latest conversation message used to compile
      * suggestion for.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -1079,6 +1078,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      * <pre>
      * The name of the latest conversation message used to compile
      * suggestion for.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -1103,6 +1103,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      * <pre>
      * The name of the latest conversation message used to compile
      * suggestion for.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -1123,6 +1124,7 @@ public final class SuggestArticlesResponse extends com.google.protobuf.Generated
      * <pre>
      * The name of the latest conversation message used to compile
      * suggestion for.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>

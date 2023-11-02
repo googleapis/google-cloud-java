@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -769,7 +769,7 @@ public interface OperationMetadataOrBuilder
    */
   com.google.cloud.speech.v2.BatchRecognizeMetadataOrBuilder getBatchRecognizeMetadataOrBuilder();
 
-  public com.google.cloud.speech.v2.OperationMetadata.RequestCase getRequestCase();
+  com.google.cloud.speech.v2.OperationMetadata.RequestCase getRequestCase();
 
-  public com.google.cloud.speech.v2.OperationMetadata.MetadataCase getMetadataCase();
+  com.google.cloud.speech.v2.OperationMetadata.MetadataCase getMetadataCase();
 }

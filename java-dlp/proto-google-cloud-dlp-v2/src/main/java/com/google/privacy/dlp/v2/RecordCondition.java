@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RecordCondition();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -182,6 +177,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
    * EQUAL_TO and NOT_EQUAL_TO attempt to compare even with incompatible types,
    * but all other comparisons are invalid with incompatible types.
    * A `value` of type:
+   *
    * - `string` can be compared against all other types
    * - `boolean` can only be compared against other booleans
    * - `integer` can be compared against doubles or a string if the string value
@@ -192,6 +188,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
    * format.
    * - `TimeOfDay` can be compared against timestamps and strings in the format
    * of 'HH:mm:ss'.
+   *
    * If we fail to compare do to type mismatch, a warning will be given and
    * the condition will evaluate to false.
    * </pre>
@@ -216,11 +213,6 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Condition();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -574,6 +566,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * EQUAL_TO and NOT_EQUAL_TO attempt to compare even with incompatible types,
      * but all other comparisons are invalid with incompatible types.
      * A `value` of type:
+     *
      * - `string` can be compared against all other types
      * - `boolean` can only be compared against other booleans
      * - `integer` can be compared against doubles or a string if the string value
@@ -584,6 +577,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * format.
      * - `TimeOfDay` can be compared against timestamps and strings in the format
      * of 'HH:mm:ss'.
+     *
      * If we fail to compare do to type mismatch, a warning will be given and
      * the condition will evaluate to false.
      * </pre>
@@ -1414,11 +1408,6 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Conditions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2399,7 +2388,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      */
     com.google.privacy.dlp.v2.RecordCondition.ConditionsOrBuilder getConditionsOrBuilder();
 
-    public com.google.privacy.dlp.v2.RecordCondition.Expressions.TypeCase getTypeCase();
+    com.google.privacy.dlp.v2.RecordCondition.Expressions.TypeCase getTypeCase();
   }
   /**
    *
@@ -2428,11 +2417,6 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Expressions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2591,6 +2575,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     }
 
     private int typeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object type_;
 
     public enum TypeCase

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.shell.v1.AddPublicKeyMetadata;
 import com.google.cloud.shell.v1.AddPublicKeyRequest;
@@ -37,7 +38,6 @@ import com.google.cloud.shell.v1.RemovePublicKeyResponse;
 import com.google.cloud.shell.v1.StartEnvironmentMetadata;
 import com.google.cloud.shell.v1.StartEnvironmentRequest;
 import com.google.cloud.shell.v1.StartEnvironmentResponse;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -169,9 +169,9 @@ public class GrpcCloudShellServiceStub extends CloudShellServiceStub {
             .setMethodDescriptor(getEnvironmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StartEnvironmentRequest, Operation> startEnvironmentTransportSettings =
@@ -179,9 +179,9 @@ public class GrpcCloudShellServiceStub extends CloudShellServiceStub {
             .setMethodDescriptor(startEnvironmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<AuthorizeEnvironmentRequest, Operation> authorizeEnvironmentTransportSettings =
@@ -189,9 +189,9 @@ public class GrpcCloudShellServiceStub extends CloudShellServiceStub {
             .setMethodDescriptor(authorizeEnvironmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<AddPublicKeyRequest, Operation> addPublicKeyTransportSettings =
@@ -199,9 +199,9 @@ public class GrpcCloudShellServiceStub extends CloudShellServiceStub {
             .setMethodDescriptor(addPublicKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("environment", String.valueOf(request.getEnvironment()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RemovePublicKeyRequest, Operation> removePublicKeyTransportSettings =
@@ -209,9 +209,9 @@ public class GrpcCloudShellServiceStub extends CloudShellServiceStub {
             .setMethodDescriptor(removePublicKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("environment", String.valueOf(request.getEnvironment()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
                 })
             .build();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,6 +120,7 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * **Beta Feature**
+   *
    * The source repository where a function is hosted.
    * </pre>
    *
@@ -133,6 +134,7 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * **Beta Feature**
+   *
    * The source repository where a function is hosted.
    * </pre>
    *
@@ -146,6 +148,7 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * **Beta Feature**
+   *
    * The source repository where a function is hosted.
    * </pre>
    *
@@ -157,8 +160,9 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage signed URL used for source uploading, generated
+   * The Google Cloud Storage-signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+   *
    * The signature is validated on write methods (Create, Update)
    * The signature is stripped from the Function object on read methods (Get,
    * List)
@@ -173,8 +177,9 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage signed URL used for source uploading, generated
+   * The Google Cloud Storage-signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+   *
    * The signature is validated on write methods (Create, Update)
    * The signature is stripped from the Function object on read methods (Get,
    * List)
@@ -189,8 +194,9 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage signed URL used for source uploading, generated
+   * The Google Cloud Storage-signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+   *
    * The signature is validated on write methods (Create, Update)
    * The signature is stripped from the Function object on read methods (Get,
    * List)
@@ -305,12 +311,12 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The name of the function (as defined in source code) that will be
-   * executed. Defaults to the resource name suffix, if not specified. For
-   * backward compatibility, if function with given name is not found, then the
-   * system will try to use function named "function".
-   * For Node.js this is name of a function exported by the module specified
-   * in `source_location`.
+   * The name of the function (as defined in source code) that is executed.
+   * Defaults to the resource name suffix, if not specified. For
+   * backward compatibility, if function with given name is not found, the
+   * system tries to use the function named "function".
+   * For Node.js, this is the name of a function exported by the module
+   * as specified in `source_location`.
    * </pre>
    *
    * <code>string entry_point = 8;</code>
@@ -322,12 +328,12 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The name of the function (as defined in source code) that will be
-   * executed. Defaults to the resource name suffix, if not specified. For
-   * backward compatibility, if function with given name is not found, then the
-   * system will try to use function named "function".
-   * For Node.js this is name of a function exported by the module specified
-   * in `source_location`.
+   * The name of the function (as defined in source code) that is executed.
+   * Defaults to the resource name suffix, if not specified. For
+   * backward compatibility, if function with given name is not found, the
+   * system tries to use the function named "function".
+   * For Node.js, this is the name of a function exported by the module
+   * as specified in `source_location`.
    * </pre>
    *
    * <code>string entry_point = 8;</code>
@@ -493,8 +499,8 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * Output only. The version identifier of the Cloud Function. Each deployment attempt
-   * results in a new version of a function being created.
+   * Output only. The version identifier of the Cloud Function. Each deployment
+   * attempt results in a new version of a function being created.
    * </pre>
    *
    * <code>int64 version_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -681,16 +687,18 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The VPC Network that this cloud function can connect to. It can be
-   * either the fully-qualified URI, or the short name of the network resource.
-   * If the short network name is used, the network must belong to the same
-   * project. Otherwise, it must belong to a project within the same
-   * organization. The format of this field is either
+   * The Serverless VPC Access connector that this cloud function can connect
+   * to. It can be either the fully qualified URI, or the short name of the
+   * connector resource. If the connector name is used, the connector must
+   * belong to the same project as the function. Otherwise, it must belong to a
+   * project within the same organization. The format of this field is either
    * `projects/{project}/global/networks/{network}` or `{network}`, where
    * `{project}` is a project id where the network is defined, and `{network}`
    * is the short name of the network.
+   *
    * This field is mutually exclusive with `vpc_connector` and will be replaced
    * by it.
+   *
    * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
    * more information on connecting Cloud projects.
    * </pre>
@@ -704,16 +712,18 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The VPC Network that this cloud function can connect to. It can be
-   * either the fully-qualified URI, or the short name of the network resource.
-   * If the short network name is used, the network must belong to the same
-   * project. Otherwise, it must belong to a project within the same
-   * organization. The format of this field is either
+   * The Serverless VPC Access connector that this cloud function can connect
+   * to. It can be either the fully qualified URI, or the short name of the
+   * connector resource. If the connector name is used, the connector must
+   * belong to the same project as the function. Otherwise, it must belong to a
+   * project within the same organization. The format of this field is either
    * `projects/{project}/global/networks/{network}` or `{network}`, where
    * `{project}` is a project id where the network is defined, and `{network}`
    * is the short name of the network.
+   *
    * This field is mutually exclusive with `vpc_connector` and will be replaced
    * by it.
+   *
    * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
    * more information on connecting Cloud projects.
    * </pre>
@@ -728,13 +738,15 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The limit on the maximum number of function instances that may coexist at a
+   * The limit on the maximum number of function instances that can coexist at a
    * given time.
-   * In some cases, such as rapid traffic surges, Cloud Functions may, for a
-   * short period of time, create more instances than the specified max
+   *
+   * In some cases, such as rapid traffic surges, Cloud Functions can for a
+   * short period of time create more instances than the specified max
    * instances limit. If your function cannot tolerate this temporary behavior,
-   * you may want to factor in a safety margin and set a lower max instances
+   * you might want to factor in a safety margin and set a lower max instances
    * value than your function can tolerate.
+   *
    * See the [Max
    * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
    * more details.
@@ -750,7 +762,7 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * A lower bound for the number function instances that may coexist at a
+   * A lower bound for the number function instances that can coexist at a
    * given time.
    * </pre>
    *
@@ -765,11 +777,13 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * The VPC Network Connector that this cloud function can connect to. It can
-   * be either the fully-qualified URI, or the short name of the network
+   * be either the fully qualified URI, or the short name of the network
    * connector resource. The format of this field is
    * `projects/&#42;&#47;locations/&#42;&#47;connectors/&#42;`
+   *
    * This field is mutually exclusive with `network` field and will eventually
    * replace it.
+   *
    * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
    * more information on connecting Cloud projects.
    * </pre>
@@ -784,11 +798,13 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * The VPC Network Connector that this cloud function can connect to. It can
-   * be either the fully-qualified URI, or the short name of the network
+   * be either the fully qualified URI, or the short name of the network
    * connector resource. The format of this field is
    * `projects/&#42;&#47;locations/&#42;&#47;connectors/&#42;`
+   *
    * This field is mutually exclusive with `network` field and will eventually
    * replace it.
+   *
    * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
    * more information on connecting Cloud projects.
    * </pre>
@@ -864,14 +880,18 @@ public interface CloudFunctionOrBuilder
    * <pre>
    * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function resources.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
    * If specified, you must also provide an artifact registry repository using
    * the `docker_repository` field that was created with the same KMS crypto
    * key.
+   *
    * The following service accounts need to be granted the role 'Cloud KMS
    * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
    * on the Key/KeyRing/Project/Organization (least access preferred).
+   *
    * 1. Google Cloud Functions service account
    *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
    *    Required to protect the function's image.
@@ -883,6 +903,7 @@ public interface CloudFunctionOrBuilder
    *    information, see
    *    https://cloud.google.com/storage/docs/projects#service-agents and
    *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+   *
    * Google Cloud Functions delegates access to service agents to protect
    * function resources in internal projects that are not accessible by the
    * end user.
@@ -899,14 +920,18 @@ public interface CloudFunctionOrBuilder
    * <pre>
    * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function resources.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
    * If specified, you must also provide an artifact registry repository using
    * the `docker_repository` field that was created with the same KMS crypto
    * key.
+   *
    * The following service accounts need to be granted the role 'Cloud KMS
    * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
    * on the Key/KeyRing/Project/Organization (least access preferred).
+   *
    * 1. Google Cloud Functions service account
    *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
    *    Required to protect the function's image.
@@ -918,6 +943,7 @@ public interface CloudFunctionOrBuilder
    *    information, see
    *    https://cloud.google.com/storage/docs/projects#service-agents and
    *    https://cloud.google.com/storage/docs/getting-service-agent#gsutil.
+   *
    * Google Cloud Functions delegates access to service agents to protect
    * function resources in internal projects that are not accessible by the
    * end user.
@@ -939,6 +965,7 @@ public interface CloudFunctionOrBuilder
    * `{project}` and `{region}` are the project id and region respectively where
    * the worker pool is defined and `{workerPool}` is the short name of the
    * worker pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
@@ -961,6 +988,7 @@ public interface CloudFunctionOrBuilder
    * `{project}` and `{region}` are the project id and region respectively where
    * the worker pool is defined and `{workerPool}` is the short name of the
    * worker pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (`service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com`) must
@@ -1142,8 +1170,8 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
-   * supported for Firebase function deployments.
+   * Input only. An identifier for Firebase function sources. Disclaimer: This
+   * field is only supported for Firebase function deployments.
    * </pre>
    *
    * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1155,8 +1183,8 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
-   * supported for Firebase function deployments.
+   * Input only. An identifier for Firebase function sources. Disclaimer: This
+   * field is only supported for Firebase function deployments.
    * </pre>
    *
    * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1174,9 +1202,11 @@ public interface CloudFunctionOrBuilder
    * Artifact Registry. If unspecified and the deployment is eligible to use
    * Artifact Registry, GCF will create and use a repository named
    * 'gcf-artifacts' for every deployed region. This is the repository to which
-   * the function docker image will be pushed after it is built by Cloud Build.
+   * the function docker image is pushed after it is built by Cloud Build.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
@@ -1196,9 +1226,11 @@ public interface CloudFunctionOrBuilder
    * Artifact Registry. If unspecified and the deployment is eligible to use
    * Artifact Registry, GCF will create and use a repository named
    * 'gcf-artifacts' for every deployed region. This is the repository to which
-   * the function docker image will be pushed after it is built by Cloud Build.
+   * the function docker image is pushed after it is built by Cloud Build.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
@@ -1215,7 +1247,8 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * Docker Registry to use for this deployment.
-   * If `docker_repository` field is specified, this field will be automatically
+   *
+   * If `docker_repository` field is specified, this field is automatically
    * set as `ARTIFACT_REGISTRY`.
    * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
    * This field may be overridden by the backend for eligible deployments.
@@ -1231,7 +1264,8 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * Docker Registry to use for this deployment.
-   * If `docker_repository` field is specified, this field will be automatically
+   *
+   * If `docker_repository` field is specified, this field is automatically
    * set as `ARTIFACT_REGISTRY`.
    * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
    * This field may be overridden by the backend for eligible deployments.
@@ -1243,7 +1277,7 @@ public interface CloudFunctionOrBuilder
    */
   com.google.cloud.functions.v1.CloudFunction.DockerRegistry getDockerRegistry();
 
-  public com.google.cloud.functions.v1.CloudFunction.SourceCodeCase getSourceCodeCase();
+  com.google.cloud.functions.v1.CloudFunction.SourceCodeCase getSourceCodeCase();
 
-  public com.google.cloud.functions.v1.CloudFunction.TriggerCase getTriggerCase();
+  com.google.cloud.functions.v1.CloudFunction.TriggerCase getTriggerCase();
 }

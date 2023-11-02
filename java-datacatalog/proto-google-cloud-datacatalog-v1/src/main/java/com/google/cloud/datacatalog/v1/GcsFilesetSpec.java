@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   private GcsFilesetSpec() {
-    filePatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    filePatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
     sampleGcsFileSpecs_ = java.util.Collections.emptyList();
   }
 
@@ -46,11 +46,6 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GcsFilesetSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,16 +66,21 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
   public static final int FILE_PATTERNS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList filePatterns_;
+  private com.google.protobuf.LazyStringArrayList filePatterns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Required. Patterns to identify a set of files in Google Cloud Storage.
+   *
    * For more information, see [Wildcard Names]
    * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+   *
    * Note: Currently, bucket wildcards are not supported.
+   *
    * Examples of valid `file_patterns`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -97,7 +97,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to match complex sets of files, for example:
+   *
    * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *
@@ -113,10 +115,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Patterns to identify a set of files in Google Cloud Storage.
+   *
    * For more information, see [Wildcard Names]
    * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+   *
    * Note: Currently, bucket wildcards are not supported.
+   *
    * Examples of valid `file_patterns`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -133,7 +139,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to match complex sets of files, for example:
+   *
    * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *
@@ -149,10 +157,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Patterns to identify a set of files in Google Cloud Storage.
+   *
    * For more information, see [Wildcard Names]
    * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+   *
    * Note: Currently, bucket wildcards are not supported.
+   *
    * Examples of valid `file_patterns`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -169,7 +181,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to match complex sets of files, for example:
+   *
    * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *
@@ -186,10 +200,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Patterns to identify a set of files in Google Cloud Storage.
+   *
    * For more information, see [Wildcard Names]
    * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+   *
    * Note: Currently, bucket wildcards are not supported.
+   *
    * Examples of valid `file_patterns`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -206,7 +224,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to match complex sets of files, for example:
+   *
    * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *
@@ -523,8 +543,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      filePatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      filePatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (sampleGcsFileSpecsBuilder_ == null) {
         sampleGcsFileSpecs_ = java.util.Collections.emptyList();
       } else {
@@ -568,11 +587,6 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.datacatalog.v1.GcsFilesetSpec result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        filePatterns_ = filePatterns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.filePatterns_ = filePatterns_;
       if (sampleGcsFileSpecsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           sampleGcsFileSpecs_ = java.util.Collections.unmodifiableList(sampleGcsFileSpecs_);
@@ -586,6 +600,10 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.datacatalog.v1.GcsFilesetSpec result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        filePatterns_.makeImmutable();
+        result.filePatterns_ = filePatterns_;
+      }
     }
 
     @java.lang.Override
@@ -636,7 +654,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       if (!other.filePatterns_.isEmpty()) {
         if (filePatterns_.isEmpty()) {
           filePatterns_ = other.filePatterns_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureFilePatternsIsMutable();
           filePatterns_.addAll(other.filePatterns_);
@@ -735,24 +753,28 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList filePatterns_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList filePatterns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFilePatternsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!filePatterns_.isModifiable()) {
         filePatterns_ = new com.google.protobuf.LazyStringArrayList(filePatterns_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
      *
      * <pre>
      * Required. Patterns to identify a set of files in Google Cloud Storage.
+     *
      * For more information, see [Wildcard Names]
      * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+     *
      * Note: Currently, bucket wildcards are not supported.
+     *
      * Examples of valid `file_patterns`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -769,7 +791,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
      *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
      *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+     *
      * You can combine wildcards to match complex sets of files, for example:
+     *
      * `gs://bucket_name/[a-m]??.j*g`
      * </pre>
      *
@@ -778,17 +802,22 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the filePatterns.
      */
     public com.google.protobuf.ProtocolStringList getFilePatternsList() {
-      return filePatterns_.getUnmodifiableView();
+      filePatterns_.makeImmutable();
+      return filePatterns_;
     }
     /**
      *
      *
      * <pre>
      * Required. Patterns to identify a set of files in Google Cloud Storage.
+     *
      * For more information, see [Wildcard Names]
      * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+     *
      * Note: Currently, bucket wildcards are not supported.
+     *
      * Examples of valid `file_patterns`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -805,7 +834,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
      *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
      *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+     *
      * You can combine wildcards to match complex sets of files, for example:
+     *
      * `gs://bucket_name/[a-m]??.j*g`
      * </pre>
      *
@@ -821,10 +852,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Patterns to identify a set of files in Google Cloud Storage.
+     *
      * For more information, see [Wildcard Names]
      * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+     *
      * Note: Currently, bucket wildcards are not supported.
+     *
      * Examples of valid `file_patterns`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -841,7 +876,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
      *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
      *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+     *
      * You can combine wildcards to match complex sets of files, for example:
+     *
      * `gs://bucket_name/[a-m]??.j*g`
      * </pre>
      *
@@ -858,10 +895,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Patterns to identify a set of files in Google Cloud Storage.
+     *
      * For more information, see [Wildcard Names]
      * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+     *
      * Note: Currently, bucket wildcards are not supported.
+     *
      * Examples of valid `file_patterns`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -878,7 +919,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
      *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
      *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+     *
      * You can combine wildcards to match complex sets of files, for example:
+     *
      * `gs://bucket_name/[a-m]??.j*g`
      * </pre>
      *
@@ -895,10 +938,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Patterns to identify a set of files in Google Cloud Storage.
+     *
      * For more information, see [Wildcard Names]
      * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+     *
      * Note: Currently, bucket wildcards are not supported.
+     *
      * Examples of valid `file_patterns`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -915,7 +962,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
      *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
      *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+     *
      * You can combine wildcards to match complex sets of files, for example:
+     *
      * `gs://bucket_name/[a-m]??.j*g`
      * </pre>
      *
@@ -931,6 +980,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureFilePatternsIsMutable();
       filePatterns_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -939,10 +989,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Patterns to identify a set of files in Google Cloud Storage.
+     *
      * For more information, see [Wildcard Names]
      * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+     *
      * Note: Currently, bucket wildcards are not supported.
+     *
      * Examples of valid `file_patterns`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -959,7 +1013,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
      *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
      *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+     *
      * You can combine wildcards to match complex sets of files, for example:
+     *
      * `gs://bucket_name/[a-m]??.j*g`
      * </pre>
      *
@@ -974,6 +1030,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureFilePatternsIsMutable();
       filePatterns_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -982,10 +1039,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Patterns to identify a set of files in Google Cloud Storage.
+     *
      * For more information, see [Wildcard Names]
      * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+     *
      * Note: Currently, bucket wildcards are not supported.
+     *
      * Examples of valid `file_patterns`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -1002,7 +1063,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
      *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
      *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+     *
      * You can combine wildcards to match complex sets of files, for example:
+     *
      * `gs://bucket_name/[a-m]??.j*g`
      * </pre>
      *
@@ -1014,6 +1077,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllFilePatterns(java.lang.Iterable<java.lang.String> values) {
       ensureFilePatternsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, filePatterns_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1022,10 +1086,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Patterns to identify a set of files in Google Cloud Storage.
+     *
      * For more information, see [Wildcard Names]
      * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+     *
      * Note: Currently, bucket wildcards are not supported.
+     *
      * Examples of valid `file_patterns`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -1042,7 +1110,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
      *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
      *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+     *
      * You can combine wildcards to match complex sets of files, for example:
+     *
      * `gs://bucket_name/[a-m]??.j*g`
      * </pre>
      *
@@ -1051,8 +1121,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFilePatterns() {
-      filePatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      filePatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1061,10 +1132,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Patterns to identify a set of files in Google Cloud Storage.
+     *
      * For more information, see [Wildcard Names]
      * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+     *
      * Note: Currently, bucket wildcards are not supported.
+     *
      * Examples of valid `file_patterns`:
+     *
      *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
      *                              directory
      *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -1081,7 +1156,9 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
      *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
      *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+     *
      * You can combine wildcards to match complex sets of files, for example:
+     *
      * `gs://bucket_name/[a-m]??.j*g`
      * </pre>
      *
@@ -1097,6 +1174,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureFilePatternsIsMutable();
       filePatterns_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

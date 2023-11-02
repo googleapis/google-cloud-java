@@ -118,6 +118,12 @@
             "ListPurchasableSkus": {
               "methods": ["listPurchasableSkus", "listPurchasableSkusPagedCallable", "listPurchasableSkusCallable"]
             },
+            "ListSkuGroupBillableSkus": {
+              "methods": ["listSkuGroupBillableSkus", "listSkuGroupBillableSkus", "listSkuGroupBillableSkus", "listSkuGroupBillableSkusPagedCallable", "listSkuGroupBillableSkusCallable"]
+            },
+            "ListSkuGroups": {
+              "methods": ["listSkuGroups", "listSkuGroups", "listSkuGroupsPagedCallable", "listSkuGroupsCallable"]
+            },
             "ListSkus": {
               "methods": ["listSkus", "listSkusPagedCallable", "listSkusCallable"]
             },
@@ -135,6 +141,9 @@
             },
             "ProvisionCloudIdentity": {
               "methods": ["provisionCloudIdentityAsync", "provisionCloudIdentityOperationCallable", "provisionCloudIdentityCallable"]
+            },
+            "QueryEligibleBillingAccounts": {
+              "methods": ["queryEligibleBillingAccounts", "queryEligibleBillingAccountsCallable"]
             },
             "RegisterSubscriber": {
               "methods": ["registerSubscriber", "registerSubscriberCallable"]

@@ -41,11 +41,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
     return new EnvelopeSignature();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Common.internal_static_grafeas_v1_EnvelopeSignature_descriptor;
   }

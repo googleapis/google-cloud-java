@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
     return new UpdateRepositoryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataform.v1beta1.DataformProto
         .internal_static_google_cloud_dataform_v1beta1_UpdateRepositoryRequest_descriptor;
@@ -71,8 +66,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Specifies the fields to be updated in the repository. If left unset,
-   * all fields will be updated.
+   * Optional. Specifies the fields to be updated in the repository. If left
+   * unset, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -88,8 +83,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Specifies the fields to be updated in the repository. If left unset,
-   * all fields will be updated.
+   * Optional. Specifies the fields to be updated in the repository. If left
+   * unset, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -105,8 +100,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Specifies the fields to be updated in the repository. If left unset,
-   * all fields will be updated.
+   * Optional. Specifies the fields to be updated in the repository. If left
+   * unset, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -564,8 +559,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Specifies the fields to be updated in the repository. If left unset,
-     * all fields will be updated.
+     * Optional. Specifies the fields to be updated in the repository. If left
+     * unset, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -580,8 +575,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Specifies the fields to be updated in the repository. If left unset,
-     * all fields will be updated.
+     * Optional. Specifies the fields to be updated in the repository. If left
+     * unset, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -602,8 +597,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Specifies the fields to be updated in the repository. If left unset,
-     * all fields will be updated.
+     * Optional. Specifies the fields to be updated in the repository. If left
+     * unset, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -626,8 +621,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Specifies the fields to be updated in the repository. If left unset,
-     * all fields will be updated.
+     * Optional. Specifies the fields to be updated in the repository. If left
+     * unset, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -647,8 +642,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Specifies the fields to be updated in the repository. If left unset,
-     * all fields will be updated.
+     * Optional. Specifies the fields to be updated in the repository. If left
+     * unset, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -674,8 +669,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Specifies the fields to be updated in the repository. If left unset,
-     * all fields will be updated.
+     * Optional. Specifies the fields to be updated in the repository. If left
+     * unset, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -695,8 +690,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Specifies the fields to be updated in the repository. If left unset,
-     * all fields will be updated.
+     * Optional. Specifies the fields to be updated in the repository. If left
+     * unset, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -711,8 +706,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Specifies the fields to be updated in the repository. If left unset,
-     * all fields will be updated.
+     * Optional. Specifies the fields to be updated in the repository. If left
+     * unset, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -731,8 +726,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Specifies the fields to be updated in the repository. If left unset,
-     * all fields will be updated.
+     * Optional. Specifies the fields to be updated in the repository. If left
+     * unset, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];

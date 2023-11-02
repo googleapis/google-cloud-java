@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,25 +23,31 @@ package com.google.cloud.tasks.v2beta3;
  *
  * <pre>
  * HTTP request.
+ *
  * The task will be pushed to the worker as an HTTP request. If the worker
  * or the redirected worker acknowledges the task by returning a successful HTTP
  * response code ([`200` - `299`]), the task will be removed from the queue. If
  * any other HTTP response code is returned or no response is received, the
  * task will be retried according to the following:
+ *
  * * User-specified throttling: [retry
  * configuration][google.cloud.tasks.v2beta3.Queue.retry_config],
  *   [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits], and the
  *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+ *
  * * System throttling: To prevent the worker from overloading, Cloud Tasks may
  *   temporarily reduce the queue's effective rate. User-specified settings
  *   will not be changed.
+ *
  *  System throttling happens because:
+ *
  *   * Cloud Tasks backs off on all errors. Normally the backoff specified in
  *     [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits] will be used.
  *     But if the worker returns `429` (Too Many Requests), `503` (Service
  *     Unavailable), or the rate of errors is high, Cloud Tasks will use a
  *     higher backoff rate. The retry specified in the `Retry-After` HTTP
  *     response header is considered.
+ *
  *   * To prevent traffic spikes and to smooth sudden increases in traffic,
  *     dispatches ramp up slowly when the queue is newly created or idle and
  *     if large numbers of tasks suddenly become available to dispatch (due to
@@ -73,11 +79,6 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     return new HttpRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tasks.v2beta3.TargetProto
         .internal_static_google_cloud_tasks_v2beta3_HttpRequest_descriptor;
@@ -105,6 +106,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int authorizationHeaderCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object authorizationHeader_;
 
   public enum AuthorizationHeaderCase
@@ -160,10 +163,12 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The full url path that the request will be sent to.
+   *
    * This string must begin with either "http://" or "https://". Some examples
    * are: `http://acme.com` and `https://acme.com/sales:8080`. Cloud Tasks will
    * encode some characters for safety and compatibility. The maximum allowed
    * URL length is 2083 characters after encoding.
+   *
    * The `Location` header response from a redirect response [`300` - `399`]
    * may be followed. The redirect is not counted as a separate attempt.
    * </pre>
@@ -189,10 +194,12 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The full url path that the request will be sent to.
+   *
    * This string must begin with either "http://" or "https://". Some examples
    * are: `http://acme.com` and `https://acme.com/sales:8080`. Cloud Tasks will
    * encode some characters for safety and compatibility. The maximum allowed
    * URL length is 2083 characters after encoding.
+   *
    * The `Location` header response from a redirect response [`300` - `399`]
    * may be followed. The redirect is not counted as a separate attempt.
    * </pre>
@@ -280,25 +287,35 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTP request headers.
+   *
    * This map contains the header field names and values.
    * Headers can be set when the
    * [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+   *
    * These headers represent a subset of the headers that will accompany the
    * task's HTTP request. Some HTTP request headers will be ignored or replaced.
+   *
    * A partial list of headers that will be ignored or replaced is:
+   *
+   * * Any header that is prefixed with "X-CloudTasks-" will be treated
+   * as service header. Service headers define properties of the task and are
+   * predefined in CloudTask.
    * * Host: This will be computed by Cloud Tasks and derived from
    *   [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
    * * Content-Length: This will be computed by Cloud Tasks.
    * * User-Agent: This will be set to `"Google-Cloud-Tasks"`.
    * * `X-Google-*`: Google use only.
    * * `X-AppEngine-*`: Google use only.
+   *
    * `Content-Type` won't be set by Cloud Tasks. You can explicitly set
    * `Content-Type` to a media type when the
    *  [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
    *  For example, `Content-Type` can be set to `"application/octet-stream"` or
    *  `"application/json"`.
+   *
    * Headers which can have multiple values (according to RFC2616) can be
    * specified using comma-separated values.
+   *
    * The size of the headers must be less than 80KB.
    * </pre>
    *
@@ -322,25 +339,35 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTP request headers.
+   *
    * This map contains the header field names and values.
    * Headers can be set when the
    * [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+   *
    * These headers represent a subset of the headers that will accompany the
    * task's HTTP request. Some HTTP request headers will be ignored or replaced.
+   *
    * A partial list of headers that will be ignored or replaced is:
+   *
+   * * Any header that is prefixed with "X-CloudTasks-" will be treated
+   * as service header. Service headers define properties of the task and are
+   * predefined in CloudTask.
    * * Host: This will be computed by Cloud Tasks and derived from
    *   [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
    * * Content-Length: This will be computed by Cloud Tasks.
    * * User-Agent: This will be set to `"Google-Cloud-Tasks"`.
    * * `X-Google-*`: Google use only.
    * * `X-AppEngine-*`: Google use only.
+   *
    * `Content-Type` won't be set by Cloud Tasks. You can explicitly set
    * `Content-Type` to a media type when the
    *  [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
    *  For example, `Content-Type` can be set to `"application/octet-stream"` or
    *  `"application/json"`.
+   *
    * Headers which can have multiple values (according to RFC2616) can be
    * specified using comma-separated values.
+   *
    * The size of the headers must be less than 80KB.
    * </pre>
    *
@@ -355,25 +382,35 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTP request headers.
+   *
    * This map contains the header field names and values.
    * Headers can be set when the
    * [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+   *
    * These headers represent a subset of the headers that will accompany the
    * task's HTTP request. Some HTTP request headers will be ignored or replaced.
+   *
    * A partial list of headers that will be ignored or replaced is:
+   *
+   * * Any header that is prefixed with "X-CloudTasks-" will be treated
+   * as service header. Service headers define properties of the task and are
+   * predefined in CloudTask.
    * * Host: This will be computed by Cloud Tasks and derived from
    *   [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
    * * Content-Length: This will be computed by Cloud Tasks.
    * * User-Agent: This will be set to `"Google-Cloud-Tasks"`.
    * * `X-Google-*`: Google use only.
    * * `X-AppEngine-*`: Google use only.
+   *
    * `Content-Type` won't be set by Cloud Tasks. You can explicitly set
    * `Content-Type` to a media type when the
    *  [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
    *  For example, `Content-Type` can be set to `"application/octet-stream"` or
    *  `"application/json"`.
+   *
    * Headers which can have multiple values (according to RFC2616) can be
    * specified using comma-separated values.
+   *
    * The size of the headers must be less than 80KB.
    * </pre>
    *
@@ -395,25 +432,35 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTP request headers.
+   *
    * This map contains the header field names and values.
    * Headers can be set when the
    * [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+   *
    * These headers represent a subset of the headers that will accompany the
    * task's HTTP request. Some HTTP request headers will be ignored or replaced.
+   *
    * A partial list of headers that will be ignored or replaced is:
+   *
+   * * Any header that is prefixed with "X-CloudTasks-" will be treated
+   * as service header. Service headers define properties of the task and are
+   * predefined in CloudTask.
    * * Host: This will be computed by Cloud Tasks and derived from
    *   [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
    * * Content-Length: This will be computed by Cloud Tasks.
    * * User-Agent: This will be set to `"Google-Cloud-Tasks"`.
    * * `X-Google-*`: Google use only.
    * * `X-AppEngine-*`: Google use only.
+   *
    * `Content-Type` won't be set by Cloud Tasks. You can explicitly set
    * `Content-Type` to a media type when the
    *  [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
    *  For example, `Content-Type` can be set to `"application/octet-stream"` or
    *  `"application/json"`.
+   *
    * Headers which can have multiple values (according to RFC2616) can be
    * specified using comma-separated values.
+   *
    * The size of the headers must be less than 80KB.
    * </pre>
    *
@@ -438,6 +485,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTP request body.
+   *
    * A request body is allowed only if the
    * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
    * PUT, or PATCH. It is an error to set body on a task with an incompatible
@@ -462,6 +510,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
    * will be generated and attached as an `Authorization` header in the HTTP
    * request.
+   *
    * This type of authorization should generally only be used when calling
    * Google APIs hosted on *.googleapis.com.
    * </pre>
@@ -482,6 +531,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
    * will be generated and attached as an `Authorization` header in the HTTP
    * request.
+   *
    * This type of authorization should generally only be used when calling
    * Google APIs hosted on *.googleapis.com.
    * </pre>
@@ -505,6 +555,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
    * will be generated and attached as an `Authorization` header in the HTTP
    * request.
+   *
    * This type of authorization should generally only be used when calling
    * Google APIs hosted on *.googleapis.com.
    * </pre>
@@ -528,6 +579,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
+   *
    * This type of authorization can be used for many scenarios, including
    * calling Cloud Run, or endpoints where you intend to validate the token
    * yourself.
@@ -549,6 +601,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
+   *
    * This type of authorization can be used for many scenarios, including
    * calling Cloud Run, or endpoints where you intend to validate the token
    * yourself.
@@ -573,6 +626,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
+   *
    * This type of authorization can be used for many scenarios, including
    * calling Cloud Run, or endpoints where you intend to validate the token
    * yourself.
@@ -828,25 +882,31 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTP request.
+   *
    * The task will be pushed to the worker as an HTTP request. If the worker
    * or the redirected worker acknowledges the task by returning a successful HTTP
    * response code ([`200` - `299`]), the task will be removed from the queue. If
    * any other HTTP response code is returned or no response is received, the
    * task will be retried according to the following:
+   *
    * * User-specified throttling: [retry
    * configuration][google.cloud.tasks.v2beta3.Queue.retry_config],
    *   [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits], and the
    *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+   *
    * * System throttling: To prevent the worker from overloading, Cloud Tasks may
    *   temporarily reduce the queue's effective rate. User-specified settings
    *   will not be changed.
+   *
    *  System throttling happens because:
+   *
    *   * Cloud Tasks backs off on all errors. Normally the backoff specified in
    *     [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits] will be used.
    *     But if the worker returns `429` (Too Many Requests), `503` (Service
    *     Unavailable), or the rate of errors is high, Cloud Tasks will use a
    *     higher backoff rate. The retry specified in the `Retry-After` HTTP
    *     response header is considered.
+   *
    *   * To prevent traffic spikes and to smooth sudden increases in traffic,
    *     dispatches ramp up slowly when the queue is newly created or idle and
    *     if large numbers of tasks suddenly become available to dispatch (due to
@@ -1162,10 +1222,12 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The full url path that the request will be sent to.
+     *
      * This string must begin with either "http://" or "https://". Some examples
      * are: `http://acme.com` and `https://acme.com/sales:8080`. Cloud Tasks will
      * encode some characters for safety and compatibility. The maximum allowed
      * URL length is 2083 characters after encoding.
+     *
      * The `Location` header response from a redirect response [`300` - `399`]
      * may be followed. The redirect is not counted as a separate attempt.
      * </pre>
@@ -1190,10 +1252,12 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The full url path that the request will be sent to.
+     *
      * This string must begin with either "http://" or "https://". Some examples
      * are: `http://acme.com` and `https://acme.com/sales:8080`. Cloud Tasks will
      * encode some characters for safety and compatibility. The maximum allowed
      * URL length is 2083 characters after encoding.
+     *
      * The `Location` header response from a redirect response [`300` - `399`]
      * may be followed. The redirect is not counted as a separate attempt.
      * </pre>
@@ -1218,10 +1282,12 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The full url path that the request will be sent to.
+     *
      * This string must begin with either "http://" or "https://". Some examples
      * are: `http://acme.com` and `https://acme.com/sales:8080`. Cloud Tasks will
      * encode some characters for safety and compatibility. The maximum allowed
      * URL length is 2083 characters after encoding.
+     *
      * The `Location` header response from a redirect response [`300` - `399`]
      * may be followed. The redirect is not counted as a separate attempt.
      * </pre>
@@ -1245,10 +1311,12 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The full url path that the request will be sent to.
+     *
      * This string must begin with either "http://" or "https://". Some examples
      * are: `http://acme.com` and `https://acme.com/sales:8080`. Cloud Tasks will
      * encode some characters for safety and compatibility. The maximum allowed
      * URL length is 2083 characters after encoding.
+     *
      * The `Location` header response from a redirect response [`300` - `399`]
      * may be followed. The redirect is not counted as a separate attempt.
      * </pre>
@@ -1268,10 +1336,12 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The full url path that the request will be sent to.
+     *
      * This string must begin with either "http://" or "https://". Some examples
      * are: `http://acme.com` and `https://acme.com/sales:8080`. Cloud Tasks will
      * encode some characters for safety and compatibility. The maximum allowed
      * URL length is 2083 characters after encoding.
+     *
      * The `Location` header response from a redirect response [`300` - `399`]
      * may be followed. The redirect is not counted as a separate attempt.
      * </pre>
@@ -1412,25 +1482,35 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request headers.
+     *
      * This map contains the header field names and values.
      * Headers can be set when the
      * [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     *
      * These headers represent a subset of the headers that will accompany the
      * task's HTTP request. Some HTTP request headers will be ignored or replaced.
+     *
      * A partial list of headers that will be ignored or replaced is:
+     *
+     * * Any header that is prefixed with "X-CloudTasks-" will be treated
+     * as service header. Service headers define properties of the task and are
+     * predefined in CloudTask.
      * * Host: This will be computed by Cloud Tasks and derived from
      *   [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
      * * User-Agent: This will be set to `"Google-Cloud-Tasks"`.
      * * `X-Google-*`: Google use only.
      * * `X-AppEngine-*`: Google use only.
+     *
      * `Content-Type` won't be set by Cloud Tasks. You can explicitly set
      * `Content-Type` to a media type when the
      *  [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      *  For example, `Content-Type` can be set to `"application/octet-stream"` or
      *  `"application/json"`.
+     *
      * Headers which can have multiple values (according to RFC2616) can be
      * specified using comma-separated values.
+     *
      * The size of the headers must be less than 80KB.
      * </pre>
      *
@@ -1454,25 +1534,35 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request headers.
+     *
      * This map contains the header field names and values.
      * Headers can be set when the
      * [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     *
      * These headers represent a subset of the headers that will accompany the
      * task's HTTP request. Some HTTP request headers will be ignored or replaced.
+     *
      * A partial list of headers that will be ignored or replaced is:
+     *
+     * * Any header that is prefixed with "X-CloudTasks-" will be treated
+     * as service header. Service headers define properties of the task and are
+     * predefined in CloudTask.
      * * Host: This will be computed by Cloud Tasks and derived from
      *   [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
      * * User-Agent: This will be set to `"Google-Cloud-Tasks"`.
      * * `X-Google-*`: Google use only.
      * * `X-AppEngine-*`: Google use only.
+     *
      * `Content-Type` won't be set by Cloud Tasks. You can explicitly set
      * `Content-Type` to a media type when the
      *  [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      *  For example, `Content-Type` can be set to `"application/octet-stream"` or
      *  `"application/json"`.
+     *
      * Headers which can have multiple values (according to RFC2616) can be
      * specified using comma-separated values.
+     *
      * The size of the headers must be less than 80KB.
      * </pre>
      *
@@ -1487,25 +1577,35 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request headers.
+     *
      * This map contains the header field names and values.
      * Headers can be set when the
      * [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     *
      * These headers represent a subset of the headers that will accompany the
      * task's HTTP request. Some HTTP request headers will be ignored or replaced.
+     *
      * A partial list of headers that will be ignored or replaced is:
+     *
+     * * Any header that is prefixed with "X-CloudTasks-" will be treated
+     * as service header. Service headers define properties of the task and are
+     * predefined in CloudTask.
      * * Host: This will be computed by Cloud Tasks and derived from
      *   [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
      * * User-Agent: This will be set to `"Google-Cloud-Tasks"`.
      * * `X-Google-*`: Google use only.
      * * `X-AppEngine-*`: Google use only.
+     *
      * `Content-Type` won't be set by Cloud Tasks. You can explicitly set
      * `Content-Type` to a media type when the
      *  [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      *  For example, `Content-Type` can be set to `"application/octet-stream"` or
      *  `"application/json"`.
+     *
      * Headers which can have multiple values (according to RFC2616) can be
      * specified using comma-separated values.
+     *
      * The size of the headers must be less than 80KB.
      * </pre>
      *
@@ -1527,25 +1627,35 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request headers.
+     *
      * This map contains the header field names and values.
      * Headers can be set when the
      * [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     *
      * These headers represent a subset of the headers that will accompany the
      * task's HTTP request. Some HTTP request headers will be ignored or replaced.
+     *
      * A partial list of headers that will be ignored or replaced is:
+     *
+     * * Any header that is prefixed with "X-CloudTasks-" will be treated
+     * as service header. Service headers define properties of the task and are
+     * predefined in CloudTask.
      * * Host: This will be computed by Cloud Tasks and derived from
      *   [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
      * * User-Agent: This will be set to `"Google-Cloud-Tasks"`.
      * * `X-Google-*`: Google use only.
      * * `X-AppEngine-*`: Google use only.
+     *
      * `Content-Type` won't be set by Cloud Tasks. You can explicitly set
      * `Content-Type` to a media type when the
      *  [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      *  For example, `Content-Type` can be set to `"application/octet-stream"` or
      *  `"application/json"`.
+     *
      * Headers which can have multiple values (according to RFC2616) can be
      * specified using comma-separated values.
+     *
      * The size of the headers must be less than 80KB.
      * </pre>
      *
@@ -1573,25 +1683,35 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request headers.
+     *
      * This map contains the header field names and values.
      * Headers can be set when the
      * [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     *
      * These headers represent a subset of the headers that will accompany the
      * task's HTTP request. Some HTTP request headers will be ignored or replaced.
+     *
      * A partial list of headers that will be ignored or replaced is:
+     *
+     * * Any header that is prefixed with "X-CloudTasks-" will be treated
+     * as service header. Service headers define properties of the task and are
+     * predefined in CloudTask.
      * * Host: This will be computed by Cloud Tasks and derived from
      *   [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
      * * User-Agent: This will be set to `"Google-Cloud-Tasks"`.
      * * `X-Google-*`: Google use only.
      * * `X-AppEngine-*`: Google use only.
+     *
      * `Content-Type` won't be set by Cloud Tasks. You can explicitly set
      * `Content-Type` to a media type when the
      *  [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      *  For example, `Content-Type` can be set to `"application/octet-stream"` or
      *  `"application/json"`.
+     *
      * Headers which can have multiple values (according to RFC2616) can be
      * specified using comma-separated values.
+     *
      * The size of the headers must be less than 80KB.
      * </pre>
      *
@@ -1615,25 +1735,35 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request headers.
+     *
      * This map contains the header field names and values.
      * Headers can be set when the
      * [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     *
      * These headers represent a subset of the headers that will accompany the
      * task's HTTP request. Some HTTP request headers will be ignored or replaced.
+     *
      * A partial list of headers that will be ignored or replaced is:
+     *
+     * * Any header that is prefixed with "X-CloudTasks-" will be treated
+     * as service header. Service headers define properties of the task and are
+     * predefined in CloudTask.
      * * Host: This will be computed by Cloud Tasks and derived from
      *   [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
      * * User-Agent: This will be set to `"Google-Cloud-Tasks"`.
      * * `X-Google-*`: Google use only.
      * * `X-AppEngine-*`: Google use only.
+     *
      * `Content-Type` won't be set by Cloud Tasks. You can explicitly set
      * `Content-Type` to a media type when the
      *  [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      *  For example, `Content-Type` can be set to `"application/octet-stream"` or
      *  `"application/json"`.
+     *
      * Headers which can have multiple values (according to RFC2616) can be
      * specified using comma-separated values.
+     *
      * The size of the headers must be less than 80KB.
      * </pre>
      *
@@ -1655,25 +1785,35 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request headers.
+     *
      * This map contains the header field names and values.
      * Headers can be set when the
      * [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     *
      * These headers represent a subset of the headers that will accompany the
      * task's HTTP request. Some HTTP request headers will be ignored or replaced.
+     *
      * A partial list of headers that will be ignored or replaced is:
+     *
+     * * Any header that is prefixed with "X-CloudTasks-" will be treated
+     * as service header. Service headers define properties of the task and are
+     * predefined in CloudTask.
      * * Host: This will be computed by Cloud Tasks and derived from
      *   [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
      * * User-Agent: This will be set to `"Google-Cloud-Tasks"`.
      * * `X-Google-*`: Google use only.
      * * `X-AppEngine-*`: Google use only.
+     *
      * `Content-Type` won't be set by Cloud Tasks. You can explicitly set
      * `Content-Type` to a media type when the
      *  [task is created][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      *  For example, `Content-Type` can be set to `"application/octet-stream"` or
      *  `"application/json"`.
+     *
      * Headers which can have multiple values (according to RFC2616) can be
      * specified using comma-separated values.
+     *
      * The size of the headers must be less than 80KB.
      * </pre>
      *
@@ -1691,6 +1831,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request body.
+     *
      * A request body is allowed only if the
      * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
      * PUT, or PATCH. It is an error to set body on a task with an incompatible
@@ -1710,6 +1851,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request body.
+     *
      * A request body is allowed only if the
      * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
      * PUT, or PATCH. It is an error to set body on a task with an incompatible
@@ -1735,6 +1877,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTP request body.
+     *
      * A request body is allowed only if the
      * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
      * PUT, or PATCH. It is an error to set body on a task with an incompatible
@@ -1765,6 +1908,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
      * will be generated and attached as an `Authorization` header in the HTTP
      * request.
+     *
      * This type of authorization should generally only be used when calling
      * Google APIs hosted on *.googleapis.com.
      * </pre>
@@ -1785,6 +1929,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
      * will be generated and attached as an `Authorization` header in the HTTP
      * request.
+     *
      * This type of authorization should generally only be used when calling
      * Google APIs hosted on *.googleapis.com.
      * </pre>
@@ -1815,6 +1960,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
      * will be generated and attached as an `Authorization` header in the HTTP
      * request.
+     *
      * This type of authorization should generally only be used when calling
      * Google APIs hosted on *.googleapis.com.
      * </pre>
@@ -1842,6 +1988,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
      * will be generated and attached as an `Authorization` header in the HTTP
      * request.
+     *
      * This type of authorization should generally only be used when calling
      * Google APIs hosted on *.googleapis.com.
      * </pre>
@@ -1867,6 +2014,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
      * will be generated and attached as an `Authorization` header in the HTTP
      * request.
+     *
      * This type of authorization should generally only be used when calling
      * Google APIs hosted on *.googleapis.com.
      * </pre>
@@ -1905,6 +2053,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
      * will be generated and attached as an `Authorization` header in the HTTP
      * request.
+     *
      * This type of authorization should generally only be used when calling
      * Google APIs hosted on *.googleapis.com.
      * </pre>
@@ -1935,6 +2084,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
      * will be generated and attached as an `Authorization` header in the HTTP
      * request.
+     *
      * This type of authorization should generally only be used when calling
      * Google APIs hosted on *.googleapis.com.
      * </pre>
@@ -1952,6 +2102,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
      * will be generated and attached as an `Authorization` header in the HTTP
      * request.
+     *
      * This type of authorization should generally only be used when calling
      * Google APIs hosted on *.googleapis.com.
      * </pre>
@@ -1977,6 +2128,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
      * will be generated and attached as an `Authorization` header in the HTTP
      * request.
+     *
      * This type of authorization should generally only be used when calling
      * Google APIs hosted on *.googleapis.com.
      * </pre>
@@ -2020,6 +2172,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
+     *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
      * yourself.
@@ -2041,6 +2194,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
+     *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
      * yourself.
@@ -2072,6 +2226,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
+     *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
      * yourself.
@@ -2100,6 +2255,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
+     *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
      * yourself.
@@ -2125,6 +2281,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
+     *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
      * yourself.
@@ -2164,6 +2321,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
+     *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
      * yourself.
@@ -2195,6 +2353,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
+     *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
      * yourself.
@@ -2213,6 +2372,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
+     *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
      * yourself.
@@ -2239,6 +2399,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
      * token will be generated and attached as an `Authorization` header in the
      * HTTP request.
+     *
      * This type of authorization can be used for many scenarios, including
      * calling Cloud Run, or endpoints where you intend to validate the token
      * yourself.

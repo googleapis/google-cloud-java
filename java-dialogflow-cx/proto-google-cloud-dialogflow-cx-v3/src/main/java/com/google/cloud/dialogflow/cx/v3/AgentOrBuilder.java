@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -383,7 +383,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=257
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=314
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated
@@ -459,6 +459,48 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
+   * Git integration settings for this agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.GitIntegrationSettings git_integration_settings = 30;
+   * </code>
+   *
+   * @return Whether the gitIntegrationSettings field is set.
+   */
+  boolean hasGitIntegrationSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Git integration settings for this agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.GitIntegrationSettings git_integration_settings = 30;
+   * </code>
+   *
+   * @return The gitIntegrationSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.GitIntegrationSettings getGitIntegrationSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Git integration settings for this agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.GitIntegrationSettings git_integration_settings = 30;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.GitIntegrationSettingsOrBuilder
+      getGitIntegrationSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Settings on instructing the speech synthesizer on how to generate the
    * output audio content.
    * </pre>
@@ -493,4 +535,46 @@ public interface AgentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.TextToSpeechSettingsOrBuilder
       getTextToSpeechSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Gen App Builder-related agent-level settings.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettings gen_app_builder_settings = 33;
+   * </code>
+   *
+   * @return Whether the genAppBuilderSettings field is set.
+   */
+  boolean hasGenAppBuilderSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Gen App Builder-related agent-level settings.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettings gen_app_builder_settings = 33;
+   * </code>
+   *
+   * @return The genAppBuilderSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettings getGenAppBuilderSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Gen App Builder-related agent-level settings.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettings gen_app_builder_settings = 33;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettingsOrBuilder
+      getGenAppBuilderSettingsOrBuilder();
 }

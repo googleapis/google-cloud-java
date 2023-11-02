@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateWorkstationClusterRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -181,11 +176,11 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * If set, validate the request and preview the review, but do not actually
-   * apply it.
+   * Optional. If set, validate the request and preview the review, but do not
+   * actually apply it.
    * </pre>
    *
-   * <code>bool validate_only = 3;</code>
+   * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The validateOnly.
    */
@@ -200,11 +195,12 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * If set, and the workstation cluster is not found, a new workstation
-   * cluster will be created. In this situation, update_mask is ignored.
+   * Optional. If set, and the workstation cluster is not found, a new
+   * workstation cluster will be created. In this situation, update_mask is
+   * ignored.
    * </pre>
    *
-   * <code>bool allow_missing = 4;</code>
+   * <code>bool allow_missing = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMissing.
    */
@@ -1059,11 +1055,11 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * actually apply it.
      * </pre>
      *
-     * <code>bool validate_only = 3;</code>
+     * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The validateOnly.
      */
@@ -1075,11 +1071,11 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * actually apply it.
      * </pre>
      *
-     * <code>bool validate_only = 3;</code>
+     * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The validateOnly to set.
      * @return This builder for chaining.
@@ -1095,11 +1091,11 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * actually apply it.
      * </pre>
      *
-     * <code>bool validate_only = 3;</code>
+     * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1115,11 +1111,12 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, and the workstation cluster is not found, a new workstation
-     * cluster will be created. In this situation, update_mask is ignored.
+     * Optional. If set, and the workstation cluster is not found, a new
+     * workstation cluster will be created. In this situation, update_mask is
+     * ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 4;</code>
+     * <code>bool allow_missing = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowMissing.
      */
@@ -1131,11 +1128,12 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, and the workstation cluster is not found, a new workstation
-     * cluster will be created. In this situation, update_mask is ignored.
+     * Optional. If set, and the workstation cluster is not found, a new
+     * workstation cluster will be created. In this situation, update_mask is
+     * ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 4;</code>
+     * <code>bool allow_missing = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowMissing to set.
      * @return This builder for chaining.
@@ -1151,11 +1149,12 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * If set, and the workstation cluster is not found, a new workstation
-     * cluster will be created. In this situation, update_mask is ignored.
+     * Optional. If set, and the workstation cluster is not found, a new
+     * workstation cluster will be created. In this situation, update_mask is
+     * ignored.
      * </pre>
      *
-     * <code>bool allow_missing = 4;</code>
+     * <code>bool allow_missing = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

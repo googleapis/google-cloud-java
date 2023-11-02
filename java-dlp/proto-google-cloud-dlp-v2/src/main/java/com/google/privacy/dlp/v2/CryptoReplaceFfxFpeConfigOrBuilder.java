@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,15 +71,21 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
    * the context is not set, a default tweak will be used.
+   *
    * If the context is set but:
+   *
    * 1. there is no record present when transforming a given value or
    * 1. the field is not present when transforming a given value,
+   *
    * a default tweak will be used.
+   *
    * Note that case (1) is expected when an `InfoTypeTransformation` is
    * applied to both structured and unstructured `ContentItem`s.
    * Currently, the referenced field may be of value type integer or string.
+   *
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
+   *
    * - a 64 bit integer is encoded followed by a single byte of value 1
    * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
@@ -96,15 +102,21 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
    * the context is not set, a default tweak will be used.
+   *
    * If the context is set but:
+   *
    * 1. there is no record present when transforming a given value or
    * 1. the field is not present when transforming a given value,
+   *
    * a default tweak will be used.
+   *
    * Note that case (1) is expected when an `InfoTypeTransformation` is
    * applied to both structured and unstructured `ContentItem`s.
    * Currently, the referenced field may be of value type integer or string.
+   *
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
+   *
    * - a 64 bit integer is encoded followed by a single byte of value 1
    * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
@@ -121,15 +133,21 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
    * the context is not set, a default tweak will be used.
+   *
    * If the context is set but:
+   *
    * 1. there is no record present when transforming a given value or
    * 1. the field is not present when transforming a given value,
+   *
    * a default tweak will be used.
+   *
    * Note that case (1) is expected when an `InfoTypeTransformation` is
    * applied to both structured and unstructured `ContentItem`s.
    * Currently, the referenced field may be of value type integer or string.
+   *
    * The tweak is constructed as a sequence of bytes in big endian byte order
    * such that:
+   *
    * - a 64 bit integer is encoded followed by a single byte of value 1
    * - a string is encoded in UTF-8 format followed by a single byte of value 2
    * </pre>
@@ -279,13 +297,16 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * the name of the custom infoType followed by the number of
    * characters comprising the surrogate. The following scheme defines the
    * format: info_type_name(surrogate_character_count):surrogate
+   *
    * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+   *
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
    * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
+   *
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may
    * find a surrogate that does not correspond to an actual identifier.
@@ -312,13 +333,16 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * the name of the custom infoType followed by the number of
    * characters comprising the surrogate. The following scheme defines the
    * format: info_type_name(surrogate_character_count):surrogate
+   *
    * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+   *
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
    * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
+   *
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may
    * find a surrogate that does not correspond to an actual identifier.
@@ -345,13 +369,16 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * the name of the custom infoType followed by the number of
    * characters comprising the surrogate. The following scheme defines the
    * format: info_type_name(surrogate_character_count):surrogate
+   *
    * For example, if the name of custom infoType is 'MY_TOKEN_INFO_TYPE' and
    * the surrogate is 'abc', the full replacement value
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
+   *
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
    * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
+   *
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may
    * find a surrogate that does not correspond to an actual identifier.
@@ -368,5 +395,5 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    */
   com.google.privacy.dlp.v2.InfoTypeOrBuilder getSurrogateInfoTypeOrBuilder();
 
-  public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.AlphabetCase getAlphabetCase();
+  com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.AlphabetCase getAlphabetCase();
 }

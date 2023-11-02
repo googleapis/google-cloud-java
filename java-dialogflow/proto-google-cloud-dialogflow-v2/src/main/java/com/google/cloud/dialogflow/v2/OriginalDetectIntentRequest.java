@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OriginalDetectIntentRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -184,6 +179,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    * Optional. This field is set to the value of the `QueryParameters.payload`
    * field passed in the request. Some integrations that query a Dialogflow
    * agent may provide additional information in the payload.
+   *
    * In particular, for the Dialogflow Phone Gateway integration, this field has
    * the form:
    * &lt;pre&gt;{
@@ -211,6 +207,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    * Optional. This field is set to the value of the `QueryParameters.payload`
    * field passed in the request. Some integrations that query a Dialogflow
    * agent may provide additional information in the payload.
+   *
    * In particular, for the Dialogflow Phone Gateway integration, this field has
    * the form:
    * &lt;pre&gt;{
@@ -238,6 +235,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    * Optional. This field is set to the value of the `QueryParameters.payload`
    * field passed in the request. Some integrations that query a Dialogflow
    * agent may provide additional information in the payload.
+   *
    * In particular, for the Dialogflow Phone Gateway integration, this field has
    * the form:
    * &lt;pre&gt;{
@@ -891,6 +889,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * Optional. This field is set to the value of the `QueryParameters.payload`
      * field passed in the request. Some integrations that query a Dialogflow
      * agent may provide additional information in the payload.
+     *
      * In particular, for the Dialogflow Phone Gateway integration, this field has
      * the form:
      * &lt;pre&gt;{
@@ -917,6 +916,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * Optional. This field is set to the value of the `QueryParameters.payload`
      * field passed in the request. Some integrations that query a Dialogflow
      * agent may provide additional information in the payload.
+     *
      * In particular, for the Dialogflow Phone Gateway integration, this field has
      * the form:
      * &lt;pre&gt;{
@@ -947,6 +947,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * Optional. This field is set to the value of the `QueryParameters.payload`
      * field passed in the request. Some integrations that query a Dialogflow
      * agent may provide additional information in the payload.
+     *
      * In particular, for the Dialogflow Phone Gateway integration, this field has
      * the form:
      * &lt;pre&gt;{
@@ -981,6 +982,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * Optional. This field is set to the value of the `QueryParameters.payload`
      * field passed in the request. Some integrations that query a Dialogflow
      * agent may provide additional information in the payload.
+     *
      * In particular, for the Dialogflow Phone Gateway integration, this field has
      * the form:
      * &lt;pre&gt;{
@@ -1012,6 +1014,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * Optional. This field is set to the value of the `QueryParameters.payload`
      * field passed in the request. Some integrations that query a Dialogflow
      * agent may provide additional information in the payload.
+     *
      * In particular, for the Dialogflow Phone Gateway integration, this field has
      * the form:
      * &lt;pre&gt;{
@@ -1049,6 +1052,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * Optional. This field is set to the value of the `QueryParameters.payload`
      * field passed in the request. Some integrations that query a Dialogflow
      * agent may provide additional information in the payload.
+     *
      * In particular, for the Dialogflow Phone Gateway integration, this field has
      * the form:
      * &lt;pre&gt;{
@@ -1080,6 +1084,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * Optional. This field is set to the value of the `QueryParameters.payload`
      * field passed in the request. Some integrations that query a Dialogflow
      * agent may provide additional information in the payload.
+     *
      * In particular, for the Dialogflow Phone Gateway integration, this field has
      * the form:
      * &lt;pre&gt;{
@@ -1106,6 +1111,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * Optional. This field is set to the value of the `QueryParameters.payload`
      * field passed in the request. Some integrations that query a Dialogflow
      * agent may provide additional information in the payload.
+     *
      * In particular, for the Dialogflow Phone Gateway integration, this field has
      * the form:
      * &lt;pre&gt;{
@@ -1134,6 +1140,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      * Optional. This field is set to the value of the `QueryParameters.payload`
      * field passed in the request. Some integrations that query a Dialogflow
      * agent may provide additional information in the payload.
+     *
      * In particular, for the Dialogflow Phone Gateway integration, this field has
      * the form:
      * &lt;pre&gt;{

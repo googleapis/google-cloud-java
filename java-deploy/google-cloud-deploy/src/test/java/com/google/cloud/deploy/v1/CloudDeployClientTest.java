@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.cloud.deploy.v1;
 
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -669,6 +671,96 @@ public class CloudDeployClientTest {
   }
 
   @Test
+  public void rollbackTargetTest() throws Exception {
+    RollbackTargetResponse expectedResponse =
+        RollbackTargetResponse.newBuilder()
+            .setRollbackConfig(RollbackTargetConfig.newBuilder().build())
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    DeliveryPipelineName name =
+        DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+    String targetId = "targetId-441951604";
+    String rolloutId = "rolloutId551248556";
+
+    RollbackTargetResponse actualResponse = client.rollbackTarget(name, targetId, rolloutId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RollbackTargetRequest actualRequest = ((RollbackTargetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(targetId, actualRequest.getTargetId());
+    Assert.assertEquals(rolloutId, actualRequest.getRolloutId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rollbackTargetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      DeliveryPipelineName name =
+          DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+      String targetId = "targetId-441951604";
+      String rolloutId = "rolloutId551248556";
+      client.rollbackTarget(name, targetId, rolloutId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void rollbackTargetTest2() throws Exception {
+    RollbackTargetResponse expectedResponse =
+        RollbackTargetResponse.newBuilder()
+            .setRollbackConfig(RollbackTargetConfig.newBuilder().build())
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String targetId = "targetId-441951604";
+    String rolloutId = "rolloutId551248556";
+
+    RollbackTargetResponse actualResponse = client.rollbackTarget(name, targetId, rolloutId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RollbackTargetRequest actualRequest = ((RollbackTargetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(targetId, actualRequest.getTargetId());
+    Assert.assertEquals(rolloutId, actualRequest.getRolloutId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rollbackTargetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String targetId = "targetId-441951604";
+      String rolloutId = "rolloutId551248556";
+      client.rollbackTarget(name, targetId, rolloutId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getTargetTest() throws Exception {
     Target expectedResponse =
         Target.newBuilder()
@@ -683,6 +775,7 @@ public class CloudDeployClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -731,6 +824,7 @@ public class CloudDeployClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -779,6 +873,7 @@ public class CloudDeployClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -841,6 +936,7 @@ public class CloudDeployClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -903,6 +999,7 @@ public class CloudDeployClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .addAllExecutionConfigs(new ArrayList<ExecutionConfig>())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1146,6 +1243,7 @@ public class CloudDeployClientTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -1206,6 +1304,7 @@ public class CloudDeployClientTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -1264,6 +1363,7 @@ public class CloudDeployClientTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1338,6 +1438,7 @@ public class CloudDeployClientTest {
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
             .setCondition(Release.ReleaseCondition.newBuilder().build())
+            .putAllDeployParameters(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1796,6 +1897,8 @@ public class CloudDeployClientTest {
             .addAllPhases(new ArrayList<Phase>())
             .setMetadata(Metadata.newBuilder().build())
             .setControllerRollout("controllerRollout-685691275")
+            .setRollbackOfRollout("rollbackOfRollout-1379582634")
+            .addAllRolledBackByRollouts(new ArrayList<String>())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -1856,6 +1959,8 @@ public class CloudDeployClientTest {
             .addAllPhases(new ArrayList<Phase>())
             .setMetadata(Metadata.newBuilder().build())
             .setControllerRollout("controllerRollout-685691275")
+            .setRollbackOfRollout("rollbackOfRollout-1379582634")
+            .addAllRolledBackByRollouts(new ArrayList<String>())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -1913,6 +2018,8 @@ public class CloudDeployClientTest {
             .addAllPhases(new ArrayList<Phase>())
             .setMetadata(Metadata.newBuilder().build())
             .setControllerRollout("controllerRollout-685691275")
+            .setRollbackOfRollout("rollbackOfRollout-1379582634")
+            .addAllRolledBackByRollouts(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1986,6 +2093,8 @@ public class CloudDeployClientTest {
             .addAllPhases(new ArrayList<Phase>())
             .setMetadata(Metadata.newBuilder().build())
             .setControllerRollout("controllerRollout-685691275")
+            .setRollbackOfRollout("rollbackOfRollout-1379582634")
+            .addAllRolledBackByRollouts(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2572,6 +2681,752 @@ public class CloudDeployClientTest {
     try {
       String name = "name3373707";
       client.getConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAutomationTest() throws Exception {
+    Automation expectedResponse =
+        Automation.newBuilder()
+            .setName(
+                AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+                    .toString())
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setSuspended(true)
+            .setServiceAccount("serviceAccount1079137720")
+            .setSelector(AutomationResourceSelector.newBuilder().build())
+            .addAllRules(new ArrayList<AutomationRule>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAutomationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudDeploy.addResponse(resultOperation);
+
+    DeliveryPipelineName parent =
+        DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+    Automation automation = Automation.newBuilder().build();
+    String automationId = "automationId64173202";
+
+    Automation actualResponse =
+        client.createAutomationAsync(parent, automation, automationId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAutomationRequest actualRequest = ((CreateAutomationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(automation, actualRequest.getAutomation());
+    Assert.assertEquals(automationId, actualRequest.getAutomationId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAutomationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      DeliveryPipelineName parent =
+          DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+      Automation automation = Automation.newBuilder().build();
+      String automationId = "automationId64173202";
+      client.createAutomationAsync(parent, automation, automationId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createAutomationTest2() throws Exception {
+    Automation expectedResponse =
+        Automation.newBuilder()
+            .setName(
+                AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+                    .toString())
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setSuspended(true)
+            .setServiceAccount("serviceAccount1079137720")
+            .setSelector(AutomationResourceSelector.newBuilder().build())
+            .addAllRules(new ArrayList<AutomationRule>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAutomationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudDeploy.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Automation automation = Automation.newBuilder().build();
+    String automationId = "automationId64173202";
+
+    Automation actualResponse =
+        client.createAutomationAsync(parent, automation, automationId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAutomationRequest actualRequest = ((CreateAutomationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(automation, actualRequest.getAutomation());
+    Assert.assertEquals(automationId, actualRequest.getAutomationId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAutomationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Automation automation = Automation.newBuilder().build();
+      String automationId = "automationId64173202";
+      client.createAutomationAsync(parent, automation, automationId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateAutomationTest() throws Exception {
+    Automation expectedResponse =
+        Automation.newBuilder()
+            .setName(
+                AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+                    .toString())
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setSuspended(true)
+            .setServiceAccount("serviceAccount1079137720")
+            .setSelector(AutomationResourceSelector.newBuilder().build())
+            .addAllRules(new ArrayList<AutomationRule>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAutomationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudDeploy.addResponse(resultOperation);
+
+    Automation automation = Automation.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Automation actualResponse = client.updateAutomationAsync(automation, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAutomationRequest actualRequest = ((UpdateAutomationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(automation, actualRequest.getAutomation());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAutomationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      Automation automation = Automation.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAutomationAsync(automation, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAutomationTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAutomationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudDeploy.addResponse(resultOperation);
+
+    AutomationName name =
+        AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]");
+
+    client.deleteAutomationAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAutomationRequest actualRequest = ((DeleteAutomationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAutomationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      AutomationName name =
+          AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]");
+      client.deleteAutomationAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAutomationTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAutomationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudDeploy.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteAutomationAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAutomationRequest actualRequest = ((DeleteAutomationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAutomationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAutomationAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getAutomationTest() throws Exception {
+    Automation expectedResponse =
+        Automation.newBuilder()
+            .setName(
+                AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+                    .toString())
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setSuspended(true)
+            .setServiceAccount("serviceAccount1079137720")
+            .setSelector(AutomationResourceSelector.newBuilder().build())
+            .addAllRules(new ArrayList<AutomationRule>())
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    AutomationName name =
+        AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]");
+
+    Automation actualResponse = client.getAutomation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAutomationRequest actualRequest = ((GetAutomationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAutomationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      AutomationName name =
+          AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]");
+      client.getAutomation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutomationTest2() throws Exception {
+    Automation expectedResponse =
+        Automation.newBuilder()
+            .setName(
+                AutomationName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION]")
+                    .toString())
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setSuspended(true)
+            .setServiceAccount("serviceAccount1079137720")
+            .setSelector(AutomationResourceSelector.newBuilder().build())
+            .addAllRules(new ArrayList<AutomationRule>())
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Automation actualResponse = client.getAutomation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAutomationRequest actualRequest = ((GetAutomationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAutomationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAutomation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAutomationsTest() throws Exception {
+    Automation responsesElement = Automation.newBuilder().build();
+    ListAutomationsResponse expectedResponse =
+        ListAutomationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutomations(Arrays.asList(responsesElement))
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    DeliveryPipelineName parent =
+        DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+
+    ListAutomationsPagedResponse pagedListResponse = client.listAutomations(parent);
+
+    List<Automation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAutomationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAutomationsRequest actualRequest = ((ListAutomationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAutomationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      DeliveryPipelineName parent =
+          DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+      client.listAutomations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAutomationsTest2() throws Exception {
+    Automation responsesElement = Automation.newBuilder().build();
+    ListAutomationsResponse expectedResponse =
+        ListAutomationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutomations(Arrays.asList(responsesElement))
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAutomationsPagedResponse pagedListResponse = client.listAutomations(parent);
+
+    List<Automation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAutomationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAutomationsRequest actualRequest = ((ListAutomationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAutomationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAutomations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutomationRunTest() throws Exception {
+    AutomationRun expectedResponse =
+        AutomationRun.newBuilder()
+            .setName(
+                AutomationRunName.of(
+                        "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .setServiceAccount("serviceAccount1079137720")
+            .setAutomationSnapshot(Automation.newBuilder().build())
+            .setTargetId("targetId-441951604")
+            .setStateDescription("stateDescription-1173318997")
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setRuleId("ruleId-919875273")
+            .setAutomationId("automationId64173202")
+            .setWaitUntilTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    AutomationRunName name =
+        AutomationRunName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]");
+
+    AutomationRun actualResponse = client.getAutomationRun(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAutomationRunRequest actualRequest = ((GetAutomationRunRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAutomationRunExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      AutomationRunName name =
+          AutomationRunName.of(
+              "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]");
+      client.getAutomationRun(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutomationRunTest2() throws Exception {
+    AutomationRun expectedResponse =
+        AutomationRun.newBuilder()
+            .setName(
+                AutomationRunName.of(
+                        "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .setServiceAccount("serviceAccount1079137720")
+            .setAutomationSnapshot(Automation.newBuilder().build())
+            .setTargetId("targetId-441951604")
+            .setStateDescription("stateDescription-1173318997")
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setRuleId("ruleId-919875273")
+            .setAutomationId("automationId64173202")
+            .setWaitUntilTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AutomationRun actualResponse = client.getAutomationRun(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAutomationRunRequest actualRequest = ((GetAutomationRunRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAutomationRunExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAutomationRun(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAutomationRunsTest() throws Exception {
+    AutomationRun responsesElement = AutomationRun.newBuilder().build();
+    ListAutomationRunsResponse expectedResponse =
+        ListAutomationRunsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutomationRuns(Arrays.asList(responsesElement))
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    DeliveryPipelineName parent =
+        DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+
+    ListAutomationRunsPagedResponse pagedListResponse = client.listAutomationRuns(parent);
+
+    List<AutomationRun> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAutomationRunsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAutomationRunsRequest actualRequest = ((ListAutomationRunsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAutomationRunsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      DeliveryPipelineName parent =
+          DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]");
+      client.listAutomationRuns(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAutomationRunsTest2() throws Exception {
+    AutomationRun responsesElement = AutomationRun.newBuilder().build();
+    ListAutomationRunsResponse expectedResponse =
+        ListAutomationRunsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutomationRuns(Arrays.asList(responsesElement))
+            .build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAutomationRunsPagedResponse pagedListResponse = client.listAutomationRuns(parent);
+
+    List<AutomationRun> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAutomationRunsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAutomationRunsRequest actualRequest = ((ListAutomationRunsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAutomationRunsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAutomationRuns(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelAutomationRunTest() throws Exception {
+    CancelAutomationRunResponse expectedResponse = CancelAutomationRunResponse.newBuilder().build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    AutomationRunName name =
+        AutomationRunName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]");
+
+    CancelAutomationRunResponse actualResponse = client.cancelAutomationRun(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelAutomationRunRequest actualRequest = ((CancelAutomationRunRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelAutomationRunExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      AutomationRunName name =
+          AutomationRunName.of(
+              "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[AUTOMATION_RUN]");
+      client.cancelAutomationRun(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelAutomationRunTest2() throws Exception {
+    CancelAutomationRunResponse expectedResponse = CancelAutomationRunResponse.newBuilder().build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    CancelAutomationRunResponse actualResponse = client.cancelAutomationRun(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelAutomationRunRequest actualRequest = ((CancelAutomationRunRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelAutomationRunExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.cancelAutomationRun(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

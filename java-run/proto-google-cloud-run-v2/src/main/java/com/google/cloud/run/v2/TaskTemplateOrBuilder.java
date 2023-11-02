@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -324,5 +324,5 @@ public interface TaskTemplateOrBuilder
    */
   com.google.cloud.run.v2.VpcAccessOrBuilder getVpcAccessOrBuilder();
 
-  public com.google.cloud.run.v2.TaskTemplate.RetriesCase getRetriesCase();
+  com.google.cloud.run.v2.TaskTemplate.RetriesCase getRetriesCase();
 }

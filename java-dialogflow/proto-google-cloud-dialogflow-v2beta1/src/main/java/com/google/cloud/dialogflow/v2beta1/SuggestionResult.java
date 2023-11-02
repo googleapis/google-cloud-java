@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     return new SuggestionResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2beta1_SuggestionResult_descriptor;
@@ -72,6 +67,8 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
   }
 
   private int suggestionResponseCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object suggestionResponse_;
 
   public enum SuggestionResponseCase
@@ -82,6 +79,8 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     SUGGEST_ARTICLES_RESPONSE(2),
     SUGGEST_FAQ_ANSWERS_RESPONSE(3),
     SUGGEST_SMART_REPLIES_RESPONSE(4),
+    SUGGEST_DIALOGFLOW_ASSISTS_RESPONSE(5),
+    SUGGEST_ENTITY_EXTRACTION_RESPONSE(7),
     SUGGESTIONRESPONSE_NOT_SET(0);
     private final int value;
 
@@ -108,6 +107,10 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
           return SUGGEST_FAQ_ANSWERS_RESPONSE;
         case 4:
           return SUGGEST_SMART_REPLIES_RESPONSE;
+        case 5:
+          return SUGGEST_DIALOGFLOW_ASSISTS_RESPONSE;
+        case 7:
+          return SUGGEST_ENTITY_EXTRACTION_RESPONSE;
         case 0:
           return SUGGESTIONRESPONSE_NOT_SET;
         default:
@@ -348,6 +351,132 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.getDefaultInstance();
   }
 
+  public static final int SUGGEST_DIALOGFLOW_ASSISTS_RESPONSE_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+   * </code>
+   *
+   * @return Whether the suggestDialogflowAssistsResponse field is set.
+   */
+  @java.lang.Override
+  public boolean hasSuggestDialogflowAssistsResponse() {
+    return suggestionResponseCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+   * </code>
+   *
+   * @return The suggestDialogflowAssistsResponse.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+      getSuggestDialogflowAssistsResponse() {
+    if (suggestionResponseCase_ == 5) {
+      return (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+          suggestionResponse_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder
+      getSuggestDialogflowAssistsResponseOrBuilder() {
+    if (suggestionResponseCase_ == 5) {
+      return (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+          suggestionResponse_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+        .getDefaultInstance();
+  }
+
+  public static final int SUGGEST_ENTITY_EXTRACTION_RESPONSE_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+   * </code>
+   *
+   * @return Whether the suggestEntityExtractionResponse field is set.
+   */
+  @java.lang.Override
+  public boolean hasSuggestEntityExtractionResponse() {
+    return suggestionResponseCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+   * </code>
+   *
+   * @return The suggestEntityExtractionResponse.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+      getSuggestEntityExtractionResponse() {
+    if (suggestionResponseCase_ == 7) {
+      return (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+          suggestionResponse_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder
+      getSuggestEntityExtractionResponseOrBuilder() {
+    if (suggestionResponseCase_ == 7) {
+      return (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+          suggestionResponse_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -376,6 +505,18 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     if (suggestionResponseCase_ == 4) {
       output.writeMessage(
           4, (com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse) suggestionResponse_);
+    }
+    if (suggestionResponseCase_ == 5) {
+      output.writeMessage(
+          5,
+          (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+              suggestionResponse_);
+    }
+    if (suggestionResponseCase_ == 7) {
+      output.writeMessage(
+          7,
+          (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+              suggestionResponse_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -407,6 +548,20 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4,
               (com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse)
+                  suggestionResponse_);
+    }
+    if (suggestionResponseCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5,
+              (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+                  suggestionResponse_);
+    }
+    if (suggestionResponseCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7,
+              (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
                   suggestionResponse_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -441,6 +596,14 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         if (!getSuggestSmartRepliesResponse().equals(other.getSuggestSmartRepliesResponse()))
           return false;
         break;
+      case 5:
+        if (!getSuggestDialogflowAssistsResponse()
+            .equals(other.getSuggestDialogflowAssistsResponse())) return false;
+        break;
+      case 7:
+        if (!getSuggestEntityExtractionResponse()
+            .equals(other.getSuggestEntityExtractionResponse())) return false;
+        break;
       case 0:
       default:
     }
@@ -471,6 +634,14 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       case 4:
         hash = (37 * hash) + SUGGEST_SMART_REPLIES_RESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getSuggestSmartRepliesResponse().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + SUGGEST_DIALOGFLOW_ASSISTS_RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getSuggestDialogflowAssistsResponse().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + SUGGEST_ENTITY_EXTRACTION_RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getSuggestEntityExtractionResponse().hashCode();
         break;
       case 0:
       default:
@@ -632,6 +803,12 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       if (suggestSmartRepliesResponseBuilder_ != null) {
         suggestSmartRepliesResponseBuilder_.clear();
       }
+      if (suggestDialogflowAssistsResponseBuilder_ != null) {
+        suggestDialogflowAssistsResponseBuilder_.clear();
+      }
+      if (suggestEntityExtractionResponseBuilder_ != null) {
+        suggestEntityExtractionResponseBuilder_.clear();
+      }
       suggestionResponseCase_ = 0;
       suggestionResponse_ = null;
       return this;
@@ -687,6 +864,12 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       if (suggestionResponseCase_ == 4 && suggestSmartRepliesResponseBuilder_ != null) {
         result.suggestionResponse_ = suggestSmartRepliesResponseBuilder_.build();
+      }
+      if (suggestionResponseCase_ == 5 && suggestDialogflowAssistsResponseBuilder_ != null) {
+        result.suggestionResponse_ = suggestDialogflowAssistsResponseBuilder_.build();
+      }
+      if (suggestionResponseCase_ == 7 && suggestEntityExtractionResponseBuilder_ != null) {
+        result.suggestionResponse_ = suggestEntityExtractionResponseBuilder_.build();
       }
     }
 
@@ -757,6 +940,16 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             mergeSuggestSmartRepliesResponse(other.getSuggestSmartRepliesResponse());
             break;
           }
+        case SUGGEST_DIALOGFLOW_ASSISTS_RESPONSE:
+          {
+            mergeSuggestDialogflowAssistsResponse(other.getSuggestDialogflowAssistsResponse());
+            break;
+          }
+        case SUGGEST_ENTITY_EXTRACTION_RESPONSE:
+          {
+            mergeSuggestEntityExtractionResponse(other.getSuggestEntityExtractionResponse());
+            break;
+          }
         case SUGGESTIONRESPONSE_NOT_SET:
           {
             break;
@@ -815,6 +1008,22 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
                 suggestionResponseCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getSuggestDialogflowAssistsResponseFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                suggestionResponseCase_ = 5;
+                break;
+              } // case 42
+            case 58:
+              {
+                input.readMessage(
+                    getSuggestEntityExtractionResponseFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                suggestionResponseCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1751,6 +1960,494 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 4;
       onChanged();
       return suggestSmartRepliesResponseBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse,
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder,
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder>
+        suggestDialogflowAssistsResponseBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+     * </code>
+     *
+     * @return Whether the suggestDialogflowAssistsResponse field is set.
+     */
+    @java.lang.Override
+    public boolean hasSuggestDialogflowAssistsResponse() {
+      return suggestionResponseCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+     * </code>
+     *
+     * @return The suggestDialogflowAssistsResponse.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+        getSuggestDialogflowAssistsResponse() {
+      if (suggestDialogflowAssistsResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 5) {
+          return (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+              suggestionResponse_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+            .getDefaultInstance();
+      } else {
+        if (suggestionResponseCase_ == 5) {
+          return suggestDialogflowAssistsResponseBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+     * </code>
+     */
+    public Builder setSuggestDialogflowAssistsResponse(
+        com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse value) {
+      if (suggestDialogflowAssistsResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        suggestionResponse_ = value;
+        onChanged();
+      } else {
+        suggestDialogflowAssistsResponseBuilder_.setMessage(value);
+      }
+      suggestionResponseCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+     * </code>
+     */
+    public Builder setSuggestDialogflowAssistsResponse(
+        com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder
+            builderForValue) {
+      if (suggestDialogflowAssistsResponseBuilder_ == null) {
+        suggestionResponse_ = builderForValue.build();
+        onChanged();
+      } else {
+        suggestDialogflowAssistsResponseBuilder_.setMessage(builderForValue.build());
+      }
+      suggestionResponseCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+     * </code>
+     */
+    public Builder mergeSuggestDialogflowAssistsResponse(
+        com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse value) {
+      if (suggestDialogflowAssistsResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 5
+            && suggestionResponse_
+                != com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+                    .getDefaultInstance()) {
+          suggestionResponse_ =
+              com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+                          suggestionResponse_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          suggestionResponse_ = value;
+        }
+        onChanged();
+      } else {
+        if (suggestionResponseCase_ == 5) {
+          suggestDialogflowAssistsResponseBuilder_.mergeFrom(value);
+        } else {
+          suggestDialogflowAssistsResponseBuilder_.setMessage(value);
+        }
+      }
+      suggestionResponseCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+     * </code>
+     */
+    public Builder clearSuggestDialogflowAssistsResponse() {
+      if (suggestDialogflowAssistsResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 5) {
+          suggestionResponseCase_ = 0;
+          suggestionResponse_ = null;
+          onChanged();
+        }
+      } else {
+        if (suggestionResponseCase_ == 5) {
+          suggestionResponseCase_ = 0;
+          suggestionResponse_ = null;
+        }
+        suggestDialogflowAssistsResponseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder
+        getSuggestDialogflowAssistsResponseBuilder() {
+      return getSuggestDialogflowAssistsResponseFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder
+        getSuggestDialogflowAssistsResponseOrBuilder() {
+      if ((suggestionResponseCase_ == 5) && (suggestDialogflowAssistsResponseBuilder_ != null)) {
+        return suggestDialogflowAssistsResponseBuilder_.getMessageOrBuilder();
+      } else {
+        if (suggestionResponseCase_ == 5) {
+          return (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+              suggestionResponse_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_dialogflow_assists_response = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse,
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder,
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder>
+        getSuggestDialogflowAssistsResponseFieldBuilder() {
+      if (suggestDialogflowAssistsResponseBuilder_ == null) {
+        if (!(suggestionResponseCase_ == 5)) {
+          suggestionResponse_ =
+              com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+                  .getDefaultInstance();
+        }
+        suggestDialogflowAssistsResponseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse,
+                com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder,
+                com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder>(
+                (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+                    suggestionResponse_,
+                getParentForChildren(),
+                isClean());
+        suggestionResponse_ = null;
+      }
+      suggestionResponseCase_ = 5;
+      onChanged();
+      return suggestDialogflowAssistsResponseBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse,
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder,
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder>
+        suggestEntityExtractionResponseBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+     * </code>
+     *
+     * @return Whether the suggestEntityExtractionResponse field is set.
+     */
+    @java.lang.Override
+    public boolean hasSuggestEntityExtractionResponse() {
+      return suggestionResponseCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+     * </code>
+     *
+     * @return The suggestEntityExtractionResponse.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+        getSuggestEntityExtractionResponse() {
+      if (suggestEntityExtractionResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 7) {
+          return (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+              suggestionResponse_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+            .getDefaultInstance();
+      } else {
+        if (suggestionResponseCase_ == 7) {
+          return suggestEntityExtractionResponseBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+     * </code>
+     */
+    public Builder setSuggestEntityExtractionResponse(
+        com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse value) {
+      if (suggestEntityExtractionResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        suggestionResponse_ = value;
+        onChanged();
+      } else {
+        suggestEntityExtractionResponseBuilder_.setMessage(value);
+      }
+      suggestionResponseCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+     * </code>
+     */
+    public Builder setSuggestEntityExtractionResponse(
+        com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder
+            builderForValue) {
+      if (suggestEntityExtractionResponseBuilder_ == null) {
+        suggestionResponse_ = builderForValue.build();
+        onChanged();
+      } else {
+        suggestEntityExtractionResponseBuilder_.setMessage(builderForValue.build());
+      }
+      suggestionResponseCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+     * </code>
+     */
+    public Builder mergeSuggestEntityExtractionResponse(
+        com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse value) {
+      if (suggestEntityExtractionResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 7
+            && suggestionResponse_
+                != com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+                    .getDefaultInstance()) {
+          suggestionResponse_ =
+              com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+                          suggestionResponse_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          suggestionResponse_ = value;
+        }
+        onChanged();
+      } else {
+        if (suggestionResponseCase_ == 7) {
+          suggestEntityExtractionResponseBuilder_.mergeFrom(value);
+        } else {
+          suggestEntityExtractionResponseBuilder_.setMessage(value);
+        }
+      }
+      suggestionResponseCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+     * </code>
+     */
+    public Builder clearSuggestEntityExtractionResponse() {
+      if (suggestEntityExtractionResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 7) {
+          suggestionResponseCase_ = 0;
+          suggestionResponse_ = null;
+          onChanged();
+        }
+      } else {
+        if (suggestionResponseCase_ == 7) {
+          suggestionResponseCase_ = 0;
+          suggestionResponse_ = null;
+        }
+        suggestEntityExtractionResponseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder
+        getSuggestEntityExtractionResponseBuilder() {
+      return getSuggestEntityExtractionResponseFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder
+        getSuggestEntityExtractionResponseOrBuilder() {
+      if ((suggestionResponseCase_ == 7) && (suggestEntityExtractionResponseBuilder_ != null)) {
+        return suggestEntityExtractionResponseBuilder_.getMessageOrBuilder();
+      } else {
+        if (suggestionResponseCase_ == 7) {
+          return (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+              suggestionResponse_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse suggest_entity_extraction_response = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse,
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder,
+            com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder>
+        getSuggestEntityExtractionResponseFieldBuilder() {
+      if (suggestEntityExtractionResponseBuilder_ == null) {
+        if (!(suggestionResponseCase_ == 7)) {
+          suggestionResponse_ =
+              com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse
+                  .getDefaultInstance();
+        }
+        suggestEntityExtractionResponseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse,
+                com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse.Builder,
+                com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponseOrBuilder>(
+                (com.google.cloud.dialogflow.v2beta1.SuggestDialogflowAssistsResponse)
+                    suggestionResponse_,
+                getParentForChildren(),
+                isClean());
+        suggestionResponse_ = null;
+      }
+      suggestionResponseCase_ = 7;
+      onChanged();
+      return suggestEntityExtractionResponseBuilder_;
     }
 
     @java.lang.Override

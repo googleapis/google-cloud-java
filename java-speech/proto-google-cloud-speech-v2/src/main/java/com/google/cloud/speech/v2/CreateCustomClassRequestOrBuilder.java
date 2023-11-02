@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,7 @@ public interface CreateCustomClassRequestOrBuilder
    * <pre>
    * The ID to use for the CustomClass, which will become the final component of
    * the CustomClass's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -99,6 +100,7 @@ public interface CreateCustomClassRequestOrBuilder
    * <pre>
    * The ID to use for the CustomClass, which will become the final component of
    * the CustomClass's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>

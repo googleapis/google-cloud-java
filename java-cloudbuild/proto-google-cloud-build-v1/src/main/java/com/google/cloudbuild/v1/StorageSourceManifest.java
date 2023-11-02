@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.cloudbuild.v1;
  *
  *
  * <pre>
- * Location of the source manifest in Google Cloud Storage.
+ * Location of the source manifest in Cloud Storage.
  * This feature is in Preview; see description
  * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
  * </pre>
@@ -50,11 +50,6 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
     return new StorageSourceManifest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_StorageSourceManifest_descriptor;
@@ -78,7 +73,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Google Cloud Storage bucket containing the source manifest (see [Bucket
+   * Cloud Storage bucket containing the source manifest (see [Bucket
    * Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * </pre>
@@ -103,7 +98,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Google Cloud Storage bucket containing the source manifest (see [Bucket
+   * Cloud Storage bucket containing the source manifest (see [Bucket
    * Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * </pre>
@@ -133,7 +128,8 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Google Cloud Storage object containing the source manifest.
+   * Cloud Storage object containing the source manifest.
+   *
    * This object must be a JSON file.
    * </pre>
    *
@@ -157,7 +153,8 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Google Cloud Storage object containing the source manifest.
+   * Cloud Storage object containing the source manifest.
+   *
    * This object must be a JSON file.
    * </pre>
    *
@@ -184,7 +181,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Google Cloud Storage generation for the object. If the generation is
+   * Cloud Storage generation for the object. If the generation is
    * omitted, the latest generation will be used.
    * </pre>
    *
@@ -378,7 +375,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Location of the source manifest in Google Cloud Storage.
+   * Location of the source manifest in Cloud Storage.
    * This feature is in Preview; see description
    * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
    * </pre>
@@ -591,7 +588,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage bucket containing the source manifest (see [Bucket
+     * Cloud Storage bucket containing the source manifest (see [Bucket
      * Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
@@ -615,7 +612,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage bucket containing the source manifest (see [Bucket
+     * Cloud Storage bucket containing the source manifest (see [Bucket
      * Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
@@ -639,7 +636,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage bucket containing the source manifest (see [Bucket
+     * Cloud Storage bucket containing the source manifest (see [Bucket
      * Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
@@ -662,7 +659,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage bucket containing the source manifest (see [Bucket
+     * Cloud Storage bucket containing the source manifest (see [Bucket
      * Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
@@ -681,7 +678,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage bucket containing the source manifest (see [Bucket
+     * Cloud Storage bucket containing the source manifest (see [Bucket
      * Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
@@ -707,7 +704,8 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage object containing the source manifest.
+     * Cloud Storage object containing the source manifest.
+     *
      * This object must be a JSON file.
      * </pre>
      *
@@ -730,7 +728,8 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage object containing the source manifest.
+     * Cloud Storage object containing the source manifest.
+     *
      * This object must be a JSON file.
      * </pre>
      *
@@ -753,7 +752,8 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage object containing the source manifest.
+     * Cloud Storage object containing the source manifest.
+     *
      * This object must be a JSON file.
      * </pre>
      *
@@ -775,7 +775,8 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage object containing the source manifest.
+     * Cloud Storage object containing the source manifest.
+     *
      * This object must be a JSON file.
      * </pre>
      *
@@ -793,7 +794,8 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage object containing the source manifest.
+     * Cloud Storage object containing the source manifest.
+     *
      * This object must be a JSON file.
      * </pre>
      *
@@ -818,7 +820,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage generation for the object. If the generation is
+     * Cloud Storage generation for the object. If the generation is
      * omitted, the latest generation will be used.
      * </pre>
      *
@@ -834,7 +836,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage generation for the object. If the generation is
+     * Cloud Storage generation for the object. If the generation is
      * omitted, the latest generation will be used.
      * </pre>
      *
@@ -854,7 +856,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Google Cloud Storage generation for the object. If the generation is
+     * Cloud Storage generation for the object. If the generation is
      * omitted, the latest generation will be used.
      * </pre>
      *

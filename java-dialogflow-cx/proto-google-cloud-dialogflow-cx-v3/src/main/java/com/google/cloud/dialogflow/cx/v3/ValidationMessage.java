@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
 
   private ValidationMessage() {
     resourceType_ = 0;
-    resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
     resourceNames_ = java.util.Collections.emptyList();
     severity_ = 0;
     detail_ = "";
@@ -49,11 +49,6 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ValidationMessage();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -221,6 +216,16 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>TRANSITION_ROUTE_GROUP = 7;</code>
      */
     TRANSITION_ROUTE_GROUP(7),
+    /**
+     *
+     *
+     * <pre>
+     * Agent transition route group.
+     * </pre>
+     *
+     * <code>AGENT_TRANSITION_ROUTE_GROUP = 14;</code>
+     */
+    AGENT_TRANSITION_ROUTE_GROUP(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -364,6 +369,16 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>TRANSITION_ROUTE_GROUP = 7;</code>
      */
     public static final int TRANSITION_ROUTE_GROUP_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Agent transition route group.
+     * </pre>
+     *
+     * <code>AGENT_TRANSITION_ROUTE_GROUP = 14;</code>
+     */
+    public static final int AGENT_TRANSITION_ROUTE_GROUP_VALUE = 14;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -417,6 +432,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
           return PAGES;
         case 7:
           return TRANSITION_ROUTE_GROUP;
+        case 14:
+          return AGENT_TRANSITION_ROUTE_GROUP;
         default:
           return null;
       }
@@ -693,7 +710,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
   public static final int RESOURCES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resources_;
+  private com.google.protobuf.LazyStringArrayList resources_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -704,7 +722,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
    * @return A list containing the resources.
    */
   @java.lang.Deprecated
@@ -721,7 +739,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
    * @return The count of resources.
    */
   @java.lang.Deprecated
@@ -738,7 +756,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
    * @param index The index of the element to return.
    * @return The resources at the given index.
    */
@@ -756,7 +774,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
    * @param index The index of the value to return.
    * @return The bytes of the resources at the given index.
    */
@@ -1179,8 +1197,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       resourceType_ = 0;
-      resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (resourceNamesBuilder_ == null) {
         resourceNames_ = java.util.Collections.emptyList();
       } else {
@@ -1227,11 +1244,6 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
 
     private void buildPartialRepeatedFields(
         com.google.cloud.dialogflow.cx.v3.ValidationMessage result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        resources_ = resources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.resources_ = resources_;
       if (resourceNamesBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           resourceNames_ = java.util.Collections.unmodifiableList(resourceNames_);
@@ -1247,6 +1259,10 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        resources_.makeImmutable();
+        result.resources_ = resources_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.severity_ = severity_;
@@ -1308,7 +1324,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       if (!other.resources_.isEmpty()) {
         if (resources_.isEmpty()) {
           resources_ = other.resources_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureResourcesIsMutable();
           resources_.addAll(other.resources_);
@@ -1526,14 +1542,14 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList resources_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!resources_.isModifiable()) {
         resources_ = new com.google.protobuf.LazyStringArrayList(resources_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1545,12 +1561,13 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
      * @return A list containing the resources.
      */
     @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getResourcesList() {
-      return resources_.getUnmodifiableView();
+      resources_.makeImmutable();
+      return resources_;
     }
     /**
      *
@@ -1562,7 +1579,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
      * @return The count of resources.
      */
     @java.lang.Deprecated
@@ -1579,7 +1596,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
      * @param index The index of the element to return.
      * @return The resources at the given index.
      */
@@ -1597,7 +1614,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
      * @param index The index of the value to return.
      * @return The bytes of the resources at the given index.
      */
@@ -1615,7 +1632,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
      * @param index The index to set the value at.
      * @param value The resources to set.
      * @return This builder for chaining.
@@ -1627,6 +1644,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       }
       ensureResourcesIsMutable();
       resources_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1640,7 +1658,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
      * @param value The resources to add.
      * @return This builder for chaining.
      */
@@ -1651,6 +1669,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       }
       ensureResourcesIsMutable();
       resources_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1664,7 +1683,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
      * @param values The resources to add.
      * @return This builder for chaining.
      */
@@ -1672,6 +1691,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     public Builder addAllResources(java.lang.Iterable<java.lang.String> values) {
       ensureResourcesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resources_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1685,13 +1705,14 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearResources() {
-      resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1705,7 +1726,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=93
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
      * @param value The bytes of the resources to add.
      * @return This builder for chaining.
      */
@@ -1717,6 +1738,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureResourcesIsMutable();
       resources_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

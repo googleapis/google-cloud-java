@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,56 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Resource state changed.
+   * </pre>
+   *
+   * <code>TYPE_RESOURCE_STATE_CHANGE = 3;</code>
+   */
+  TYPE_RESOURCE_STATE_CHANGE(3),
+  /**
+   *
+   *
+   * <pre>
+   * A process aborted.
+   * </pre>
+   *
+   * <code>TYPE_PROCESS_ABORTED = 4;</code>
+   */
+  TYPE_PROCESS_ABORTED(4),
+  /**
+   *
+   *
+   * <pre>
+   * Restriction check failed.
+   * </pre>
+   *
+   * <code>TYPE_RESTRICTION_VIOLATED = 5;</code>
+   */
+  TYPE_RESTRICTION_VIOLATED(5),
+  /**
+   *
+   *
+   * <pre>
+   * Resource deleted.
+   * </pre>
+   *
+   * <code>TYPE_RESOURCE_DELETED = 6;</code>
+   */
+  TYPE_RESOURCE_DELETED(6),
+  /**
+   *
+   *
+   * <pre>
+   * Rollout updated.
+   * </pre>
+   *
+   * <code>TYPE_ROLLOUT_UPDATE = 7;</code>
+   */
+  TYPE_ROLLOUT_UPDATE(7),
+  /**
+   *
+   *
+   * <pre>
    * Deprecated: This field is never used. Use release_render log type instead.
    * </pre>
    *
@@ -82,6 +132,56 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_PUBSUB_NOTIFICATION_FAILURE = 1;</code>
    */
   public static final int TYPE_PUBSUB_NOTIFICATION_FAILURE_VALUE = 1;
+  /**
+   *
+   *
+   * <pre>
+   * Resource state changed.
+   * </pre>
+   *
+   * <code>TYPE_RESOURCE_STATE_CHANGE = 3;</code>
+   */
+  public static final int TYPE_RESOURCE_STATE_CHANGE_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * A process aborted.
+   * </pre>
+   *
+   * <code>TYPE_PROCESS_ABORTED = 4;</code>
+   */
+  public static final int TYPE_PROCESS_ABORTED_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Restriction check failed.
+   * </pre>
+   *
+   * <code>TYPE_RESTRICTION_VIOLATED = 5;</code>
+   */
+  public static final int TYPE_RESTRICTION_VIOLATED_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Resource deleted.
+   * </pre>
+   *
+   * <code>TYPE_RESOURCE_DELETED = 6;</code>
+   */
+  public static final int TYPE_RESOURCE_DELETED_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Rollout updated.
+   * </pre>
+   *
+   * <code>TYPE_ROLLOUT_UPDATE = 7;</code>
+   */
+  public static final int TYPE_ROLLOUT_UPDATE_VALUE = 7;
   /**
    *
    *
@@ -121,6 +221,16 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
         return TYPE_UNSPECIFIED;
       case 1:
         return TYPE_PUBSUB_NOTIFICATION_FAILURE;
+      case 3:
+        return TYPE_RESOURCE_STATE_CHANGE;
+      case 4:
+        return TYPE_PROCESS_ABORTED;
+      case 5:
+        return TYPE_RESTRICTION_VIOLATED;
+      case 6:
+        return TYPE_RESOURCE_DELETED;
+      case 7:
+        return TYPE_ROLLOUT_UPDATE;
       case 2:
         return TYPE_RENDER_STATUES_CHANGE;
       default:

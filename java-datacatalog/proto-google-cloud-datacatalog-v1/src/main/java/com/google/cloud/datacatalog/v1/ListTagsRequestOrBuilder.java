@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ListTagsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the Data Catalog resource to list the tags of.
+   *
    * The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
    * or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
    * (without `/entries/{entries}` at the end).
@@ -45,6 +46,7 @@ public interface ListTagsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the Data Catalog resource to list the tags of.
+   *
    * The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
    * or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
    * (without `/entries/{entries}` at the end).

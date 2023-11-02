@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     return new Task();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tasks.v2beta2.TaskProto
         .internal_static_google_cloud_tasks_v2beta2_Task_descriptor;
@@ -74,6 +69,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The view specifies a subset of [Task][google.cloud.tasks.v2beta2.Task]
    * data.
+   *
    * When a task is returned in a response, not all
    * information is retrieved by default because some data, such as
    * payloads, might be desirable to return only when needed because
@@ -100,6 +96,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The basic view omits fields which can be large or can contain
      * sensitive data.
+     *
      * This view does not include the
      * ([payload in
      * AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
@@ -118,6 +115,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * All information is returned.
+     *
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
      * requires `cloudtasks.tasks.fullView` [Google
      * IAM](https://cloud.google.com/iam/) permission on the
@@ -146,6 +144,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The basic view omits fields which can be large or can contain
      * sensitive data.
+     *
      * This view does not include the
      * ([payload in
      * AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
@@ -164,6 +163,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * All information is returned.
+     *
      * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
      * requires `cloudtasks.tasks.fullView` [Google
      * IAM](https://cloud.google.com/iam/) permission on the
@@ -258,6 +258,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int payloadTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object payloadType_;
 
   public enum PayloadTypeCase
@@ -266,6 +268,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     APP_ENGINE_HTTP_REQUEST(3),
     PULL_MESSAGE(4),
+    HTTP_REQUEST(13),
     PAYLOADTYPE_NOT_SET(0);
     private final int value;
 
@@ -288,6 +291,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return APP_ENGINE_HTTP_REQUEST;
         case 4:
           return PULL_MESSAGE;
+        case 13:
+          return HTTP_REQUEST;
         case 0:
           return PAYLOADTYPE_NOT_SET;
         default:
@@ -314,9 +319,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optionally caller-specified in
    * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+   *
    * The task name.
+   *
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+   *
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
@@ -354,9 +362,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optionally caller-specified in
    * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+   *
    * The task name.
+   *
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+   *
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
@@ -398,6 +409,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * be set only if
    * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
    * is set on the queue.
+   *
    * An App Engine task is a task that has
    * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
    * set.
@@ -419,6 +431,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * be set only if
    * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
    * is set on the queue.
+   *
    * An App Engine task is a task that has
    * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
    * set.
@@ -443,6 +456,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * be set only if
    * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
    * is set on the queue.
+   *
    * An App Engine task is a task that has
    * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
    * set.
@@ -468,6 +482,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * the task. Can be set only if
    * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
    * queue.
+   *
    * A pull task is a task that has
    * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
@@ -488,6 +503,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * the task. Can be set only if
    * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
    * queue.
+   *
    * A pull task is a task that has
    * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
@@ -511,6 +527,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * the task. Can be set only if
    * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
    * queue.
+   *
    * A pull task is a task that has
    * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
@@ -525,6 +542,66 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.tasks.v2beta2.PullMessage.getDefaultInstance();
   }
 
+  public static final int HTTP_REQUEST_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   *
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+   *
+   * @return Whether the httpRequest field is set.
+   */
+  @java.lang.Override
+  public boolean hasHttpRequest() {
+    return payloadTypeCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   *
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+   *
+   * @return The httpRequest.
+   */
+  @java.lang.Override
+  public com.google.cloud.tasks.v2beta2.HttpRequest getHttpRequest() {
+    if (payloadTypeCase_ == 13) {
+      return (com.google.cloud.tasks.v2beta2.HttpRequest) payloadType_;
+    }
+    return com.google.cloud.tasks.v2beta2.HttpRequest.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   *
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.tasks.v2beta2.HttpRequestOrBuilder getHttpRequestOrBuilder() {
+    if (payloadTypeCase_ == 13) {
+      return (com.google.cloud.tasks.v2beta2.HttpRequest) payloadType_;
+    }
+    return com.google.cloud.tasks.v2beta2.HttpRequest.getDefaultInstance();
+  }
+
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp scheduleTime_;
   /**
@@ -532,12 +609,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The time when the task is scheduled to be attempted.
+   *
    * For App Engine queues, this is when the task will be attempted or retried.
+   *
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
    * leased plus the
    * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   *
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -554,12 +634,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The time when the task is scheduled to be attempted.
+   *
    * For App Engine queues, this is when the task will be attempted or retried.
+   *
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
    * leased plus the
    * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   *
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -578,12 +661,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The time when the task is scheduled to be attempted.
+   *
    * For App Engine queues, this is when the task will be attempted or retried.
+   *
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
    * leased plus the
    * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   *
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -603,6 +689,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that the task was created.
+   *
    * `create_time` will be truncated to the nearest second.
    * </pre>
    *
@@ -619,6 +706,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that the task was created.
+   *
    * `create_time` will be truncated to the nearest second.
    * </pre>
    *
@@ -635,6 +723,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The time that the task was created.
+   *
    * `create_time` will be truncated to the nearest second.
    * </pre>
    *
@@ -767,6 +856,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (view_ != com.google.cloud.tasks.v2beta2.Task.View.VIEW_UNSPECIFIED.getNumber()) {
       output.writeEnum(8, view_);
     }
+    if (payloadTypeCase_ == 13) {
+      output.writeMessage(13, (com.google.cloud.tasks.v2beta2.HttpRequest) payloadType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -800,6 +892,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
     if (view_ != com.google.cloud.tasks.v2beta2.Task.View.VIEW_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, view_);
+    }
+    if (payloadTypeCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.tasks.v2beta2.HttpRequest) payloadType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -837,6 +934,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         break;
       case 4:
         if (!getPullMessage().equals(other.getPullMessage())) return false;
+        break;
+      case 13:
+        if (!getHttpRequest().equals(other.getHttpRequest())) return false;
         break;
       case 0:
       default:
@@ -876,6 +976,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       case 4:
         hash = (37 * hash) + PULL_MESSAGE_FIELD_NUMBER;
         hash = (53 * hash) + getPullMessage().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + HTTP_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getHttpRequest().hashCode();
         break;
       case 0:
       default:
@@ -1025,6 +1129,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (pullMessageBuilder_ != null) {
         pullMessageBuilder_.clear();
       }
+      if (httpRequestBuilder_ != null) {
+        httpRequestBuilder_.clear();
+      }
       scheduleTime_ = null;
       if (scheduleTimeBuilder_ != null) {
         scheduleTimeBuilder_.dispose();
@@ -1082,17 +1189,17 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.scheduleTime_ =
             scheduleTimeBuilder_ == null ? scheduleTime_ : scheduleTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.view_ = view_;
       }
     }
@@ -1105,6 +1212,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       if (payloadTypeCase_ == 4 && pullMessageBuilder_ != null) {
         result.payloadType_ = pullMessageBuilder_.build();
+      }
+      if (payloadTypeCase_ == 13 && httpRequestBuilder_ != null) {
+        result.payloadType_ = httpRequestBuilder_.build();
       }
     }
 
@@ -1181,6 +1291,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             mergePullMessage(other.getPullMessage());
             break;
           }
+        case HTTP_REQUEST:
+          {
+            mergeHttpRequest(other.getHttpRequest());
+            break;
+          }
         case PAYLOADTYPE_NOT_SET:
           {
             break;
@@ -1234,27 +1349,33 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getScheduleTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 64:
               {
                 view_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
+            case 106:
+              {
+                input.readMessage(getHttpRequestFieldBuilder().getBuilder(), extensionRegistry);
+                payloadTypeCase_ = 13;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1295,9 +1416,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optionally caller-specified in
      * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+     *
      * The task name.
+     *
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+     *
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
@@ -1334,9 +1458,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optionally caller-specified in
      * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+     *
      * The task name.
+     *
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+     *
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
@@ -1373,9 +1500,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optionally caller-specified in
      * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+     *
      * The task name.
+     *
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+     *
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
@@ -1411,9 +1541,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optionally caller-specified in
      * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+     *
      * The task name.
+     *
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+     *
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
@@ -1445,9 +1578,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optionally caller-specified in
      * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+     *
      * The task name.
+     *
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+     *
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
@@ -1492,6 +1628,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * be set only if
      * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
      * is set on the queue.
+     *
      * An App Engine task is a task that has
      * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
      * set.
@@ -1513,6 +1650,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * be set only if
      * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
      * is set on the queue.
+     *
      * An App Engine task is a task that has
      * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
      * set.
@@ -1544,6 +1682,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * be set only if
      * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
      * is set on the queue.
+     *
      * An App Engine task is a task that has
      * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
      * set.
@@ -1573,6 +1712,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * be set only if
      * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
      * is set on the queue.
+     *
      * An App Engine task is a task that has
      * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
      * set.
@@ -1599,6 +1739,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * be set only if
      * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
      * is set on the queue.
+     *
      * An App Engine task is a task that has
      * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
      * set.
@@ -1639,6 +1780,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * be set only if
      * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
      * is set on the queue.
+     *
      * An App Engine task is a task that has
      * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
      * set.
@@ -1670,6 +1812,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * be set only if
      * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
      * is set on the queue.
+     *
      * An App Engine task is a task that has
      * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
      * set.
@@ -1689,6 +1832,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * be set only if
      * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
      * is set on the queue.
+     *
      * An App Engine task is a task that has
      * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
      * set.
@@ -1716,6 +1860,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * be set only if
      * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
      * is set on the queue.
+     *
      * An App Engine task is a task that has
      * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
      * set.
@@ -1760,6 +1905,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * the task. Can be set only if
      * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
      * queue.
+     *
      * A pull task is a task that has
      * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
@@ -1780,6 +1926,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * the task. Can be set only if
      * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
      * queue.
+     *
      * A pull task is a task that has
      * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
@@ -1810,6 +1957,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * the task. Can be set only if
      * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
      * queue.
+     *
      * A pull task is a task that has
      * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
@@ -1837,6 +1985,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * the task. Can be set only if
      * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
      * queue.
+     *
      * A pull task is a task that has
      * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
@@ -1862,6 +2011,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * the task. Can be set only if
      * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
      * queue.
+     *
      * A pull task is a task that has
      * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
@@ -1899,6 +2049,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * the task. Can be set only if
      * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
      * queue.
+     *
      * A pull task is a task that has
      * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
@@ -1929,6 +2080,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * the task. Can be set only if
      * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
      * queue.
+     *
      * A pull task is a task that has
      * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
@@ -1946,6 +2098,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * the task. Can be set only if
      * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
      * queue.
+     *
      * A pull task is a task that has
      * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
@@ -1971,6 +2124,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * the task. Can be set only if
      * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
      * queue.
+     *
      * A pull task is a task that has
      * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
      * </pre>
@@ -2001,6 +2155,242 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return pullMessageBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta2.HttpRequest,
+            com.google.cloud.tasks.v2beta2.HttpRequest.Builder,
+            com.google.cloud.tasks.v2beta2.HttpRequestOrBuilder>
+        httpRequestBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     *
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+     *
+     * @return Whether the httpRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasHttpRequest() {
+      return payloadTypeCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     *
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+     *
+     * @return The httpRequest.
+     */
+    @java.lang.Override
+    public com.google.cloud.tasks.v2beta2.HttpRequest getHttpRequest() {
+      if (httpRequestBuilder_ == null) {
+        if (payloadTypeCase_ == 13) {
+          return (com.google.cloud.tasks.v2beta2.HttpRequest) payloadType_;
+        }
+        return com.google.cloud.tasks.v2beta2.HttpRequest.getDefaultInstance();
+      } else {
+        if (payloadTypeCase_ == 13) {
+          return httpRequestBuilder_.getMessage();
+        }
+        return com.google.cloud.tasks.v2beta2.HttpRequest.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     *
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+     */
+    public Builder setHttpRequest(com.google.cloud.tasks.v2beta2.HttpRequest value) {
+      if (httpRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payloadType_ = value;
+        onChanged();
+      } else {
+        httpRequestBuilder_.setMessage(value);
+      }
+      payloadTypeCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     *
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+     */
+    public Builder setHttpRequest(
+        com.google.cloud.tasks.v2beta2.HttpRequest.Builder builderForValue) {
+      if (httpRequestBuilder_ == null) {
+        payloadType_ = builderForValue.build();
+        onChanged();
+      } else {
+        httpRequestBuilder_.setMessage(builderForValue.build());
+      }
+      payloadTypeCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     *
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+     */
+    public Builder mergeHttpRequest(com.google.cloud.tasks.v2beta2.HttpRequest value) {
+      if (httpRequestBuilder_ == null) {
+        if (payloadTypeCase_ == 13
+            && payloadType_ != com.google.cloud.tasks.v2beta2.HttpRequest.getDefaultInstance()) {
+          payloadType_ =
+              com.google.cloud.tasks.v2beta2.HttpRequest.newBuilder(
+                      (com.google.cloud.tasks.v2beta2.HttpRequest) payloadType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          payloadType_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadTypeCase_ == 13) {
+          httpRequestBuilder_.mergeFrom(value);
+        } else {
+          httpRequestBuilder_.setMessage(value);
+        }
+      }
+      payloadTypeCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     *
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+     */
+    public Builder clearHttpRequest() {
+      if (httpRequestBuilder_ == null) {
+        if (payloadTypeCase_ == 13) {
+          payloadTypeCase_ = 0;
+          payloadType_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadTypeCase_ == 13) {
+          payloadTypeCase_ = 0;
+          payloadType_ = null;
+        }
+        httpRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     *
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+     */
+    public com.google.cloud.tasks.v2beta2.HttpRequest.Builder getHttpRequestBuilder() {
+      return getHttpRequestFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     *
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.tasks.v2beta2.HttpRequestOrBuilder getHttpRequestOrBuilder() {
+      if ((payloadTypeCase_ == 13) && (httpRequestBuilder_ != null)) {
+        return httpRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadTypeCase_ == 13) {
+          return (com.google.cloud.tasks.v2beta2.HttpRequest) payloadType_;
+        }
+        return com.google.cloud.tasks.v2beta2.HttpRequest.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     *
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta2.HttpRequest,
+            com.google.cloud.tasks.v2beta2.HttpRequest.Builder,
+            com.google.cloud.tasks.v2beta2.HttpRequestOrBuilder>
+        getHttpRequestFieldBuilder() {
+      if (httpRequestBuilder_ == null) {
+        if (!(payloadTypeCase_ == 13)) {
+          payloadType_ = com.google.cloud.tasks.v2beta2.HttpRequest.getDefaultInstance();
+        }
+        httpRequestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta2.HttpRequest,
+                com.google.cloud.tasks.v2beta2.HttpRequest.Builder,
+                com.google.cloud.tasks.v2beta2.HttpRequestOrBuilder>(
+                (com.google.cloud.tasks.v2beta2.HttpRequest) payloadType_,
+                getParentForChildren(),
+                isClean());
+        payloadType_ = null;
+      }
+      payloadTypeCase_ = 13;
+      onChanged();
+      return httpRequestBuilder_;
+    }
+
     private com.google.protobuf.Timestamp scheduleTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -2012,12 +2402,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time when the task is scheduled to be attempted.
+     *
      * For App Engine queues, this is when the task will be attempted or retried.
+     *
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
      * leased plus the
      * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2026,19 +2419,22 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
      *
      * <pre>
      * The time when the task is scheduled to be attempted.
+     *
      * For App Engine queues, this is when the task will be attempted or retried.
+     *
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
      * leased plus the
      * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2060,12 +2456,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time when the task is scheduled to be attempted.
+     *
      * For App Engine queues, this is when the task will be attempted or retried.
+     *
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
      * leased plus the
      * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2080,7 +2479,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         scheduleTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2089,12 +2488,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time when the task is scheduled to be attempted.
+     *
      * For App Engine queues, this is when the task will be attempted or retried.
+     *
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
      * leased plus the
      * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2106,7 +2508,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         scheduleTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2115,12 +2517,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time when the task is scheduled to be attempted.
+     *
      * For App Engine queues, this is when the task will be attempted or retried.
+     *
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
      * leased plus the
      * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2128,7 +2533,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeScheduleTime(com.google.protobuf.Timestamp value) {
       if (scheduleTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && scheduleTime_ != null
             && scheduleTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getScheduleTimeBuilder().mergeFrom(value);
@@ -2138,7 +2543,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         scheduleTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2147,19 +2552,22 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time when the task is scheduled to be attempted.
+     *
      * For App Engine queues, this is when the task will be attempted or retried.
+     *
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
      * leased plus the
      * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 5;</code>
      */
     public Builder clearScheduleTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       scheduleTime_ = null;
       if (scheduleTimeBuilder_ != null) {
         scheduleTimeBuilder_.dispose();
@@ -2173,19 +2581,22 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time when the task is scheduled to be attempted.
+     *
      * For App Engine queues, this is when the task will be attempted or retried.
+     *
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
      * leased plus the
      * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
@@ -2194,12 +2605,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time when the task is scheduled to be attempted.
+     *
      * For App Engine queues, this is when the task will be attempted or retried.
+     *
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
      * leased plus the
      * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2219,12 +2633,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time when the task is scheduled to be attempted.
+     *
      * For App Engine queues, this is when the task will be attempted or retried.
+     *
      * For pull queues, this is the time when the task is available to
      * be leased; if a task is currently leased, this is the time when
      * the current lease expires, that is, the time that the task was
      * leased plus the
      * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+     *
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -2258,6 +2675,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that the task was created.
+     *
      * `create_time` will be truncated to the nearest second.
      * </pre>
      *
@@ -2266,13 +2684,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
      *
      * <pre>
      * Output only. The time that the task was created.
+     *
      * `create_time` will be truncated to the nearest second.
      * </pre>
      *
@@ -2294,6 +2713,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that the task was created.
+     *
      * `create_time` will be truncated to the nearest second.
      * </pre>
      *
@@ -2308,7 +2728,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2317,6 +2737,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that the task was created.
+     *
      * `create_time` will be truncated to the nearest second.
      * </pre>
      *
@@ -2328,7 +2749,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2337,6 +2758,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that the task was created.
+     *
      * `create_time` will be truncated to the nearest second.
      * </pre>
      *
@@ -2344,7 +2766,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2354,7 +2776,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2363,13 +2785,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that the task was created.
+     *
      * `create_time` will be truncated to the nearest second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2383,13 +2806,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that the task was created.
+     *
      * `create_time` will be truncated to the nearest second.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2398,6 +2822,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that the task was created.
+     *
      * `create_time` will be truncated to the nearest second.
      * </pre>
      *
@@ -2417,6 +2842,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The time that the task was created.
+     *
      * `create_time` will be truncated to the nearest second.
      * </pre>
      *
@@ -2457,7 +2883,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2497,7 +2923,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2516,7 +2942,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2531,7 +2957,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.cloud.tasks.v2beta2.TaskStatus value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && status_ != null
             && status_ != com.google.cloud.tasks.v2beta2.TaskStatus.getDefaultInstance()) {
           getStatusBuilder().mergeFrom(value);
@@ -2541,7 +2967,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2555,7 +2981,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta2.TaskStatus status = 7;</code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -2574,7 +3000,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta2.TaskStatus status = 7;</code>
      */
     public com.google.cloud.tasks.v2beta2.TaskStatus.Builder getStatusBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -2654,7 +3080,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setViewValue(int value) {
       view_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2693,7 +3119,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -2711,7 +3137,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearView() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       view_ = 0;
       onChanged();
       return this;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RunFunnelReportRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -252,6 +247,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -281,6 +277,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -511,8 +508,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * If specified, next action adds a dimension to the funnel visualization sub
    * report response. This next action dimension expands each funnel step to the
    * unique values of the next action. For example a next action of the
-   * `eventName` dimension will create rows for several events (i.e.
+   * `eventName` dimension will create rows for several events (for example
    * `session_start` &amp; `click`) and the total.
+   *
    * Next action only supports `eventName` and most Page / Screen dimensions
    * like `pageTitle` and `pagePath`.
    * </pre>
@@ -532,8 +530,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * If specified, next action adds a dimension to the funnel visualization sub
    * report response. This next action dimension expands each funnel step to the
    * unique values of the next action. For example a next action of the
-   * `eventName` dimension will create rows for several events (i.e.
+   * `eventName` dimension will create rows for several events (for example
    * `session_start` &amp; `click`) and the total.
+   *
    * Next action only supports `eventName` and most Page / Screen dimensions
    * like `pageTitle` and `pagePath`.
    * </pre>
@@ -555,8 +554,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * If specified, next action adds a dimension to the funnel visualization sub
    * report response. This next action dimension expands each funnel step to the
    * unique values of the next action. For example a next action of the
-   * `eventName` dimension will create rows for several events (i.e.
+   * `eventName` dimension will create rows for several events (for example
    * `session_start` &amp; `click`) and the total.
+   *
    * Next action only supports `eventName` and most Page / Screen dimensions
    * like `pageTitle` and `pagePath`.
    * </pre>
@@ -629,9 +629,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * The configurations of segments. Segments are subsets of a property's data.
    * In a funnel report with segments, the funnel is evaluated in each segment.
+   *
    * Each segment specified in this request
    * produces a separate row in the response; in the response, each segment
    * identified by its name.
+   *
    * The segments parameter is optional. Requests are limited to 4 segments.
    * </pre>
    *
@@ -647,9 +649,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * The configurations of segments. Segments are subsets of a property's data.
    * In a funnel report with segments, the funnel is evaluated in each segment.
+   *
    * Each segment specified in this request
    * produces a separate row in the response; in the response, each segment
    * identified by its name.
+   *
    * The segments parameter is optional. Requests are limited to 4 segments.
    * </pre>
    *
@@ -666,9 +670,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * The configurations of segments. Segments are subsets of a property's data.
    * In a funnel report with segments, the funnel is evaluated in each segment.
+   *
    * Each segment specified in this request
    * produces a separate row in the response; in the response, each segment
    * identified by its name.
+   *
    * The segments parameter is optional. Requests are limited to 4 segments.
    * </pre>
    *
@@ -684,9 +690,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * The configurations of segments. Segments are subsets of a property's data.
    * In a funnel report with segments, the funnel is evaluated in each segment.
+   *
    * Each segment specified in this request
    * produces a separate row in the response; in the response, each segment
    * identified by its name.
+   *
    * The segments parameter is optional. Requests are limited to 4 segments.
    * </pre>
    *
@@ -702,9 +710,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * The configurations of segments. Segments are subsets of a property's data.
    * In a funnel report with segments, the funnel is evaluated in each segment.
+   *
    * Each segment specified in this request
    * produces a separate row in the response; in the response, each segment
    * identified by its name.
+   *
    * The segments parameter is optional. Requests are limited to 4 segments.
    * </pre>
    *
@@ -722,8 +732,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The number of rows to return. If unspecified, 10,000 rows are returned. The
-   * API returns a maximum of 100,000 rows per request, no matter how many you
+   * API returns a maximum of 250,000 rows per request, no matter how many you
    * ask for. `limit` must be positive.
+   *
    * The API can also return fewer rows than the requested `limit`, if there
    * aren't as many dimension values as the `limit`.
    * </pre>
@@ -1508,6 +1519,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1536,6 +1548,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1564,6 +1577,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1591,6 +1605,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1614,6 +1629,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -2465,8 +2481,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * If specified, next action adds a dimension to the funnel visualization sub
      * report response. This next action dimension expands each funnel step to the
      * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (i.e.
+     * `eventName` dimension will create rows for several events (for example
      * `session_start` &amp; `click`) and the total.
+     *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
@@ -2485,8 +2502,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * If specified, next action adds a dimension to the funnel visualization sub
      * report response. This next action dimension expands each funnel step to the
      * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (i.e.
+     * `eventName` dimension will create rows for several events (for example
      * `session_start` &amp; `click`) and the total.
+     *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
@@ -2511,8 +2529,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * If specified, next action adds a dimension to the funnel visualization sub
      * report response. This next action dimension expands each funnel step to the
      * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (i.e.
+     * `eventName` dimension will create rows for several events (for example
      * `session_start` &amp; `click`) and the total.
+     *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
@@ -2539,8 +2558,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * If specified, next action adds a dimension to the funnel visualization sub
      * report response. This next action dimension expands each funnel step to the
      * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (i.e.
+     * `eventName` dimension will create rows for several events (for example
      * `session_start` &amp; `click`) and the total.
+     *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
@@ -2565,8 +2585,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * If specified, next action adds a dimension to the funnel visualization sub
      * report response. This next action dimension expands each funnel step to the
      * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (i.e.
+     * `eventName` dimension will create rows for several events (for example
      * `session_start` &amp; `click`) and the total.
+     *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
@@ -2597,8 +2618,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * If specified, next action adds a dimension to the funnel visualization sub
      * report response. This next action dimension expands each funnel step to the
      * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (i.e.
+     * `eventName` dimension will create rows for several events (for example
      * `session_start` &amp; `click`) and the total.
+     *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
@@ -2622,8 +2644,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * If specified, next action adds a dimension to the funnel visualization sub
      * report response. This next action dimension expands each funnel step to the
      * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (i.e.
+     * `eventName` dimension will create rows for several events (for example
      * `session_start` &amp; `click`) and the total.
+     *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
@@ -2642,8 +2665,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * If specified, next action adds a dimension to the funnel visualization sub
      * report response. This next action dimension expands each funnel step to the
      * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (i.e.
+     * `eventName` dimension will create rows for several events (for example
      * `session_start` &amp; `click`) and the total.
+     *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
@@ -2667,8 +2691,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * If specified, next action adds a dimension to the funnel visualization sub
      * report response. This next action dimension expands each funnel step to the
      * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (i.e.
+     * `eventName` dimension will create rows for several events (for example
      * `session_start` &amp; `click`) and the total.
+     *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
@@ -2830,9 +2855,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -2851,9 +2878,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -2872,9 +2901,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -2893,9 +2924,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -2920,9 +2953,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -2945,9 +2980,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -2972,9 +3009,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -2999,9 +3038,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -3023,9 +3064,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -3048,9 +3091,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -3073,9 +3118,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -3097,9 +3144,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -3121,9 +3170,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -3138,9 +3189,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -3159,9 +3212,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -3181,9 +3236,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -3199,9 +3256,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -3217,9 +3276,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The configurations of segments. Segments are subsets of a property's data.
      * In a funnel report with segments, the funnel is evaluated in each segment.
+     *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
      * identified by its name.
+     *
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
@@ -3253,8 +3314,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
-     * API returns a maximum of 100,000 rows per request, no matter how many you
+     * API returns a maximum of 250,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
+     *
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`.
      * </pre>
@@ -3272,8 +3334,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
-     * API returns a maximum of 100,000 rows per request, no matter how many you
+     * API returns a maximum of 250,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
+     *
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`.
      * </pre>
@@ -3295,8 +3358,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
-     * API returns a maximum of 100,000 rows per request, no matter how many you
+     * API returns a maximum of 250,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
+     *
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`.
      * </pre>

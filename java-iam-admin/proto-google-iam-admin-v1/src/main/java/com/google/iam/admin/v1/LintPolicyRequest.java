@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
     return new LintPolicyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_LintPolicyRequest_descriptor;
@@ -68,6 +63,8 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
   }
 
   private int lintObjectCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object lintObject_;
 
   public enum LintObjectCase
@@ -120,9 +117,11 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The full resource name of the policy this lint request is about.
+   *
    * The name follows the Google Cloud Platform (GCP) resource format.
    * For example, a GCP project with ID `my-project` will be named
    * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+   *
    * The resource name is not used to read the policy instance from the Cloud
    * IAM database. The candidate policy for lint has to be provided in the same
    * request object.
@@ -149,9 +148,11 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The full resource name of the policy this lint request is about.
+   *
    * The name follows the Google Cloud Platform (GCP) resource format.
    * For example, a GCP project with ID `my-project` will be named
    * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+   *
    * The resource name is not used to read the policy instance from the Cloud
    * IAM database. The candidate policy for lint has to be provided in the same
    * request object.
@@ -641,9 +642,11 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The full resource name of the policy this lint request is about.
+     *
      * The name follows the Google Cloud Platform (GCP) resource format.
      * For example, a GCP project with ID `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+     *
      * The resource name is not used to read the policy instance from the Cloud
      * IAM database. The candidate policy for lint has to be provided in the same
      * request object.
@@ -669,9 +672,11 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The full resource name of the policy this lint request is about.
+     *
      * The name follows the Google Cloud Platform (GCP) resource format.
      * For example, a GCP project with ID `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+     *
      * The resource name is not used to read the policy instance from the Cloud
      * IAM database. The candidate policy for lint has to be provided in the same
      * request object.
@@ -697,9 +702,11 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The full resource name of the policy this lint request is about.
+     *
      * The name follows the Google Cloud Platform (GCP) resource format.
      * For example, a GCP project with ID `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+     *
      * The resource name is not used to read the policy instance from the Cloud
      * IAM database. The candidate policy for lint has to be provided in the same
      * request object.
@@ -724,9 +731,11 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The full resource name of the policy this lint request is about.
+     *
      * The name follows the Google Cloud Platform (GCP) resource format.
      * For example, a GCP project with ID `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+     *
      * The resource name is not used to read the policy instance from the Cloud
      * IAM database. The candidate policy for lint has to be provided in the same
      * request object.
@@ -747,9 +756,11 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The full resource name of the policy this lint request is about.
+     *
      * The name follows the Google Cloud Platform (GCP) resource format.
      * For example, a GCP project with ID `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+     *
      * The resource name is not used to read the policy instance from the Cloud
      * IAM database. The candidate policy for lint has to be provided in the same
      * request object.

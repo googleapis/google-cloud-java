@@ -16,8 +16,14 @@
             "DeleteWorkflow": {
               "methods": ["deleteWorkflowAsync", "deleteWorkflowAsync", "deleteWorkflowAsync", "deleteWorkflowOperationCallable", "deleteWorkflowCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetWorkflow": {
               "methods": ["getWorkflow", "getWorkflow", "getWorkflow", "getWorkflowCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListWorkflows": {
               "methods": ["listWorkflows", "listWorkflows", "listWorkflows", "listWorkflowsPagedCallable", "listWorkflowsCallable"]

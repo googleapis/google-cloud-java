@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,9 +30,11 @@ public interface ContentLocationOrBuilder
    * Name of the container where the finding is located.
    * The top level name is the source file name or table name. Names of some
    * common storage containers are formatted as follows:
+   *
    * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
    * * Cloud Storage files: `gs://{bucket}/{path}`
    * * Datastore namespace: {namespace}
+   *
    * Nested names could be absent if the embedded object has no string
    * identifier (for example, an image contained within a document).
    * </pre>
@@ -49,9 +51,11 @@ public interface ContentLocationOrBuilder
    * Name of the container where the finding is located.
    * The top level name is the source file name or table name. Names of some
    * common storage containers are formatted as follows:
+   *
    * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
    * * Cloud Storage files: `gs://{bucket}/{path}`
    * * Datastore namespace: {namespace}
+   *
    * Nested names could be absent if the embedded object has no string
    * identifier (for example, an image contained within a document).
    * </pre>
@@ -273,5 +277,5 @@ public interface ContentLocationOrBuilder
    */
   com.google.protobuf.ByteString getContainerVersionBytes();
 
-  public com.google.privacy.dlp.v2.ContentLocation.LocationCase getLocationCase();
+  com.google.privacy.dlp.v2.ContentLocation.LocationCase getLocationCase();
 }

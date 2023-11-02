@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  * <pre>
  * Links represent the data flow between **source** (upstream)
  * and **target** (downstream) assets in transformation pipelines.
+ *
  * Links are created when LineageEvents record data transformation between
  * related assets.
  * </pre>
@@ -48,11 +49,6 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Link();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -540,6 +536,7 @@ public final class Link extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Links represent the data flow between **source** (upstream)
    * and **target** (downstream) assets in transformation pipelines.
+   *
    * Links are created when LineageEvents record data transformation between
    * related assets.
    * </pre>

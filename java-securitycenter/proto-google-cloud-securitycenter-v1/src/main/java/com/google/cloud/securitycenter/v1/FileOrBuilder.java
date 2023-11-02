@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,8 +122,7 @@ public interface FileOrBuilder
    *
    *
    * <pre>
-   * Prefix of the file contents as a JSON encoded string.
-   * (Currently only populated for Malicious Script Executed findings.)
+   * Prefix of the file contents as a JSON-encoded string.
    * </pre>
    *
    * <code>string contents = 6;</code>
@@ -135,8 +134,7 @@ public interface FileOrBuilder
    *
    *
    * <pre>
-   * Prefix of the file contents as a JSON encoded string.
-   * (Currently only populated for Malicious Script Executed findings.)
+   * Prefix of the file contents as a JSON-encoded string.
    * </pre>
    *
    * <code>string contents = 6;</code>

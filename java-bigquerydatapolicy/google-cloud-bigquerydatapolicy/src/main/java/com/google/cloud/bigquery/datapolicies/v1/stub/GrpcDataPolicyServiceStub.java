@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.datapolicies.v1.CreateDataPolicyRequest;
 import com.google.cloud.bigquery.datapolicies.v1.DataPolicy;
@@ -32,7 +33,6 @@ import com.google.cloud.bigquery.datapolicies.v1.ListDataPoliciesRequest;
 import com.google.cloud.bigquery.datapolicies.v1.ListDataPoliciesResponse;
 import com.google.cloud.bigquery.datapolicies.v1.RenameDataPolicyRequest;
 import com.google.cloud.bigquery.datapolicies.v1.UpdateDataPolicyRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -212,9 +212,9 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
             .setMethodDescriptor(createDataPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateDataPolicyRequest, DataPolicy> updateDataPolicyTransportSettings =
@@ -222,9 +222,10 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
             .setMethodDescriptor(updateDataPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("data_policy.name", String.valueOf(request.getDataPolicy().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "data_policy.name", String.valueOf(request.getDataPolicy().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RenameDataPolicyRequest, DataPolicy> renameDataPolicyTransportSettings =
@@ -232,9 +233,9 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
             .setMethodDescriptor(renameDataPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteDataPolicyRequest, Empty> deleteDataPolicyTransportSettings =
@@ -242,9 +243,9 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
             .setMethodDescriptor(deleteDataPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetDataPolicyRequest, DataPolicy> getDataPolicyTransportSettings =
@@ -252,9 +253,9 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
             .setMethodDescriptor(getDataPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListDataPoliciesRequest, ListDataPoliciesResponse>
@@ -263,9 +264,9 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                 .setMethodDescriptor(listDataPoliciesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -273,9 +274,9 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -283,9 +284,9 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -294,9 +295,9 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.maps.addressvalidation.v1;
  *
  * <pre>
  * The response for validation feedback.
+ *
  * The response is empty if the feedback is sent successfully.
  * </pre>
  *
@@ -45,11 +46,6 @@ public final class ProvideValidationFeedbackResponse extends com.google.protobuf
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ProvideValidationFeedbackResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -224,6 +220,7 @@ public final class ProvideValidationFeedbackResponse extends com.google.protobuf
    *
    * <pre>
    * The response for validation feedback.
+   *
    * The response is empty if the feedback is sent successfully.
    * </pre>
    *

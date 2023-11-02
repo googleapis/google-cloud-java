@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,11 @@ package com.google.cloudbuild.v1;
  *
  * <pre>
  * Configuration for a `WorkerPool`.
+ *
  * Cloud Build owns and maintains a pool of workers for general use and have no
  * access to a project's private network. By default, builds submitted to
  * Cloud Build will use a worker from this pool.
+ *
  * If your build needs access to resources on a private network,
  * create and use a `WorkerPool` to run your builds. Private `WorkerPool`s give
  * your builds access to any single VPC network that you
@@ -59,11 +61,6 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WorkerPool();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -152,6 +149,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETED = 4;</code>
      */
     DELETED(4),
+    /**
+     *
+     *
+     * <pre>
+     * `WorkerPool` is being updated; new builds cannot be run.
+     * </pre>
+     *
+     * <code>UPDATING = 5;</code>
+     */
+    UPDATING(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -205,6 +212,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETED = 4;</code>
      */
     public static final int DELETED_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * `WorkerPool` is being updated; new builds cannot be run.
+     * </pre>
+     *
+     * <code>UPDATING = 5;</code>
+     */
+    public static final int UPDATING_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -240,6 +257,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
           return DELETING;
         case 4:
           return DELETED;
+        case 5:
+          return UPDATING;
         default:
           return null;
       }
@@ -294,6 +313,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int configCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object config_;
 
   public enum ConfigCase
@@ -1189,9 +1210,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration for a `WorkerPool`.
+   *
    * Cloud Build owns and maintains a pool of workers for general use and have no
    * access to a project's private network. By default, builds submitted to
    * Cloud Build will use a worker from this pool.
+   *
    * If your build needs access to resources on a private network,
    * create and use a `WorkerPool` to run your builds. Private `WorkerPool`s give
    * your builds access to any single VPC network that you

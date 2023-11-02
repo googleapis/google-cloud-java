@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -300,6 +300,49 @@ public interface InterconnectAttachmentOrBuilder
    * @return The bytes for cloudRouterIpv6InterfaceId.
    */
   com.google.protobuf.ByteString getCloudRouterIpv6InterfaceIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+   * </code>
+   *
+   * @return Whether the configurationConstraints field is set.
+   */
+  boolean hasConfigurationConstraints();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+   * </code>
+   *
+   * @return The configurationConstraints.
+   */
+  com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
+      getConfigurationConstraints();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraintsOrBuilder
+      getConfigurationConstraintsOrBuilder();
 
   /**
    *
@@ -694,7 +737,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -706,7 +749,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -718,7 +761,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -731,7 +774,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -777,6 +820,101 @@ public interface InterconnectAttachmentOrBuilder
    * @return The bytes for kind.
    */
   com.google.protobuf.ByteString getKindBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+   * </pre>
+   *
+   * <code>optional string label_fingerprint = 178124825;</code>
+   *
+   * @return Whether the labelFingerprint field is set.
+   */
+  boolean hasLabelFingerprint();
+  /**
+   *
+   *
+   * <pre>
+   * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+   * </pre>
+   *
+   * <code>optional string label_fingerprint = 178124825;</code>
+   *
+   * @return The labelFingerprint.
+   */
+  java.lang.String getLabelFingerprint();
+  /**
+   *
+   *
+   * <pre>
+   * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+   * </pre>
+   *
+   * <code>optional string label_fingerprint = 178124825;</code>
+   *
+   * @return The bytes for labelFingerprint.
+   */
+  com.google.protobuf.ByteString getLabelFingerprintBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   */
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
    *
@@ -1067,6 +1205,43 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
+   * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+   * </pre>
+   *
+   * <code>optional string remote_service = 391954364;</code>
+   *
+   * @return Whether the remoteService field is set.
+   */
+  boolean hasRemoteService();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+   * </pre>
+   *
+   * <code>optional string remote_service = 391954364;</code>
+   *
+   * @return The remoteService.
+   */
+  java.lang.String getRemoteService();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+   * </pre>
+   *
+   * <code>optional string remote_service = 391954364;</code>
+   *
+   * @return The bytes for remoteService.
+   */
+  com.google.protobuf.ByteString getRemoteServiceBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * URL of the Cloud Router to be used for dynamic routing. This router must be in the same region as this InterconnectAttachment. The InterconnectAttachment will automatically connect the Interconnect to the network &amp; region within which the Cloud Router is configured.
    * </pre>
    *
@@ -1241,6 +1416,31 @@ public interface InterconnectAttachmentOrBuilder
    * @return The bytes for state.
    */
   com.google.protobuf.ByteString getStateBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Length of the IPv4 subnet mask. Allowed values: - 29 (default) - 30 The default value is 29, except for Cross-Cloud Interconnect connections that use an InterconnectRemoteLocation with a constraints.subnetLengthRange.min equal to 30. For example, connections that use an Azure remote location fall into this category. In these cases, the default value is 30, and requesting 29 returns an error. Where both 29 and 30 are allowed, 29 is preferred, because it gives Google Cloud Support more debugging visibility.
+   * </pre>
+   *
+   * <code>optional int32 subnet_length = 279831048;</code>
+   *
+   * @return Whether the subnetLength field is set.
+   */
+  boolean hasSubnetLength();
+  /**
+   *
+   *
+   * <pre>
+   * Length of the IPv4 subnet mask. Allowed values: - 29 (default) - 30 The default value is 29, except for Cross-Cloud Interconnect connections that use an InterconnectRemoteLocation with a constraints.subnetLengthRange.min equal to 30. For example, connections that use an Azure remote location fall into this category. In these cases, the default value is 30, and requesting 29 returns an error. Where both 29 and 30 are allowed, 29 is preferred, because it gives Google Cloud Support more debugging visibility.
+   * </pre>
+   *
+   * <code>optional int32 subnet_length = 279831048;</code>
+   *
+   * @return The subnetLength.
+   */
+  int getSubnetLength();
 
   /**
    *

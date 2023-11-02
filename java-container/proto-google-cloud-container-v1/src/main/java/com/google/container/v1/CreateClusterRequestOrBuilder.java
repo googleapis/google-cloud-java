@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public interface CreateClusterRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.CreateClusterRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2350
+   *     google/container/v1/cluster_service.proto;l=2555
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface CreateClusterRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.CreateClusterRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2350
+   *     google/container/v1/cluster_service.proto;l=2555
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface CreateClusterRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.CreateClusterRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2356
+   *     google/container/v1/cluster_service.proto;l=2561
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface CreateClusterRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.CreateClusterRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2356
+   *     google/container/v1/cluster_service.proto;l=2561
    * @return The bytes for zone.
    */
   @java.lang.Deprecated

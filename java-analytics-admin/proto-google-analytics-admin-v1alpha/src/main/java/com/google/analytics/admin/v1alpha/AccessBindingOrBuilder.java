@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,8 +68,10 @@ public interface AccessBindingOrBuilder
    *
    * <pre>
    * Output only. Resource name of this binding.
+   *
    * Format: accounts/{account}/accessBindings/{access_binding} or
    * properties/{property}/accessBindings/{access_binding}
+   *
    * Example:
    * "accounts/100/accessBindings/200"
    * </pre>
@@ -84,8 +86,10 @@ public interface AccessBindingOrBuilder
    *
    * <pre>
    * Output only. Resource name of this binding.
+   *
    * Format: accounts/{account}/accessBindings/{access_binding} or
    * properties/{property}/accessBindings/{access_binding}
+   *
    * Example:
    * "accounts/100/accessBindings/200"
    * </pre>
@@ -101,6 +105,7 @@ public interface AccessBindingOrBuilder
    *
    * <pre>
    * A list of roles for to grant to the parent resource.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -108,6 +113,7 @@ public interface AccessBindingOrBuilder
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * For users, if an empty list of roles is set, this AccessBinding will be
    * deleted.
    * </pre>
@@ -122,6 +128,7 @@ public interface AccessBindingOrBuilder
    *
    * <pre>
    * A list of roles for to grant to the parent resource.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -129,6 +136,7 @@ public interface AccessBindingOrBuilder
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * For users, if an empty list of roles is set, this AccessBinding will be
    * deleted.
    * </pre>
@@ -143,6 +151,7 @@ public interface AccessBindingOrBuilder
    *
    * <pre>
    * A list of roles for to grant to the parent resource.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -150,6 +159,7 @@ public interface AccessBindingOrBuilder
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * For users, if an empty list of roles is set, this AccessBinding will be
    * deleted.
    * </pre>
@@ -165,6 +175,7 @@ public interface AccessBindingOrBuilder
    *
    * <pre>
    * A list of roles for to grant to the parent resource.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -172,6 +183,7 @@ public interface AccessBindingOrBuilder
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * For users, if an empty list of roles is set, this AccessBinding will be
    * deleted.
    * </pre>
@@ -183,5 +195,5 @@ public interface AccessBindingOrBuilder
    */
   com.google.protobuf.ByteString getRolesBytes(int index);
 
-  public com.google.analytics.admin.v1alpha.AccessBinding.AccessTargetCase getAccessTargetCase();
+  com.google.analytics.admin.v1alpha.AccessBinding.AccessTargetCase getAccessTargetCase();
 }

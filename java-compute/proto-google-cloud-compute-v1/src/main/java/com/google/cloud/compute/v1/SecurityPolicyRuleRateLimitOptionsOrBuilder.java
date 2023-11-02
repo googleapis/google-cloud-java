@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,6 +171,74 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    *
    *
    * <pre>
+   * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig>
+      getEnforceOnKeyConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig
+      getEnforceOnKeyConfigs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+   * </code>
+   */
+  int getEnforceOnKeyConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder>
+      getEnforceOnKeyConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, any combination of values of enforce_on_key_type/enforce_on_key_name is treated as the key on which ratelimit threshold/action is enforced. You can specify up to 3 enforce_on_key_configs. If enforce_on_key_configs is specified, enforce_on_key must not be specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig enforce_on_key_configs = 33906478;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigOrBuilder
+      getEnforceOnKeyConfigsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Rate limit key name applicable only for the following key types: HTTP_HEADER -- Name of the HTTP header whose value is taken as the key value. HTTP_COOKIE -- Name of the HTTP cookie whose value is taken as the key value.
    * </pre>
    *
@@ -208,7 +276,7 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    *
    *
    * <pre>
-   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>optional string exceed_action = 167159073;</code>
@@ -220,7 +288,7 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    *
    *
    * <pre>
-   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>optional string exceed_action = 167159073;</code>
@@ -232,7 +300,7 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    *
    *
    * <pre>
-   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below.
+   * Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint. Valid options are `deny(STATUS)`, where valid values for `STATUS` are 403, 404, 429, and 502, and `redirect`, where the redirect parameters come from `exceedRedirectOptions` below. The `redirect` action is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>optional string exceed_action = 167159073;</code>
@@ -245,7 +313,7 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    *
    *
    * <pre>
-   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>
@@ -259,7 +327,7 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    *
    *
    * <pre>
-   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>
@@ -273,7 +341,7 @@ public interface SecurityPolicyRuleRateLimitOptionsOrBuilder
    *
    *
    * <pre>
-   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect.
+   * Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
    * </pre>
    *
    * <code>

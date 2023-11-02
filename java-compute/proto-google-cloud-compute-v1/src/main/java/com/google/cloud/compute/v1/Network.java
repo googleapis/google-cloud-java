@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     peerings_ = java.util.Collections.emptyList();
     selfLink_ = "";
     selfLinkWithId_ = "";
-    subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    subnetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Network();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -548,7 +543,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+   * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
    * </pre>
    *
    * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -563,7 +558,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+   * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
    * </pre>
    *
    * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -586,7 +581,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+   * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
    * </pre>
    *
    * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -1195,7 +1190,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   public static final int SUBNETWORKS_FIELD_NUMBER = 415853125;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList subnetworks_;
+  private com.google.protobuf.LazyStringArrayList subnetworks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1740,8 +1736,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       selfLink_ = "";
       selfLinkWithId_ = "";
-      subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00020000);
+      subnetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1786,11 +1781,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.peerings_ = peeringsBuilder_.build();
       }
-      if (((bitField0_ & 0x00020000) != 0)) {
-        subnetworks_ = subnetworks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00020000);
-      }
-      result.subnetworks_ = subnetworks_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Network result) {
@@ -1860,6 +1850,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        subnetworks_.makeImmutable();
+        result.subnetworks_ = subnetworks_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2009,7 +2003,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (!other.subnetworks_.isEmpty()) {
         if (subnetworks_.isEmpty()) {
           subnetworks_ = other.subnetworks_;
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ |= 0x00020000;
         } else {
           ensureSubnetworksIsMutable();
           subnetworks_.addAll(other.subnetworks_);
@@ -2798,7 +2792,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+     * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
      * </pre>
      *
      * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -2812,7 +2806,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+     * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
      * </pre>
      *
      * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -2834,7 +2828,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+     * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
      * </pre>
      *
      * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -2856,7 +2850,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+     * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
      * </pre>
      *
      * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -2877,7 +2871,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+     * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
      * </pre>
      *
      * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -2894,7 +2888,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routing out of the network, selected by GCP.
+     * [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
      * </pre>
      *
      * <code>optional string gateway_i_pv4 = 178678877;</code>
@@ -4320,14 +4314,14 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList subnetworks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList subnetworks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSubnetworksIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!subnetworks_.isModifiable()) {
         subnetworks_ = new com.google.protobuf.LazyStringArrayList(subnetworks_);
-        bitField0_ |= 0x00020000;
       }
+      bitField0_ |= 0x00020000;
     }
     /**
      *
@@ -4341,7 +4335,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the subnetworks.
      */
     public com.google.protobuf.ProtocolStringList getSubnetworksList() {
-      return subnetworks_.getUnmodifiableView();
+      subnetworks_.makeImmutable();
+      return subnetworks_;
     }
     /**
      *
@@ -4406,6 +4401,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSubnetworksIsMutable();
       subnetworks_.set(index, value);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4427,6 +4423,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSubnetworksIsMutable();
       subnetworks_.add(value);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4445,6 +4442,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSubnetworks(java.lang.Iterable<java.lang.String> values) {
       ensureSubnetworksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subnetworks_);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4460,8 +4458,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubnetworks() {
-      subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      subnetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00020000);
+      ;
       onChanged();
       return this;
     }
@@ -4484,6 +4483,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSubnetworksIsMutable();
       subnetworks_.add(value);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

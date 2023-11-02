@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public interface MuxStreamOrBuilder
    * <pre>
    * The name of the generated file. The default is `MuxStream.key` with the
    * extension suffix corresponding to the `MuxStream.container`.
+   *
    * Individual segments also have an incremental 10-digit zero-padded suffix
    * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
    * </pre>
@@ -71,6 +72,7 @@ public interface MuxStreamOrBuilder
    * <pre>
    * The name of the generated file. The default is `MuxStream.key` with the
    * extension suffix corresponding to the `MuxStream.container`.
+   *
    * Individual segments also have an incremental 10-digit zero-padded suffix
    * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
    * </pre>
@@ -86,11 +88,14 @@ public interface MuxStreamOrBuilder
    *
    * <pre>
    * The container format. The default is `mp4`
+   *
    * Supported container formats:
+   *
    * - `ts`
    * - `fmp4`- the corresponding file extension is `.m4s`
    * - `mp4`
    * - `vtt`
+   *
    * See also:
    * [Supported input and output
    * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -106,11 +111,14 @@ public interface MuxStreamOrBuilder
    *
    * <pre>
    * The container format. The default is `mp4`
+   *
    * Supported container formats:
+   *
    * - `ts`
    * - `fmp4`- the corresponding file extension is `.m4s`
    * - `mp4`
    * - `vtt`
+   *
    * See also:
    * [Supported input and output
    * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -207,4 +215,31 @@ public interface MuxStreamOrBuilder
    * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
    */
   com.google.cloud.video.transcoder.v1.SegmentSettingsOrBuilder getSegmentSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifier of the encryption configuration to use. If omitted, output will
+   * be unencrypted.
+   * </pre>
+   *
+   * <code>string encryption_id = 7;</code>
+   *
+   * @return The encryptionId.
+   */
+  java.lang.String getEncryptionId();
+  /**
+   *
+   *
+   * <pre>
+   * Identifier of the encryption configuration to use. If omitted, output will
+   * be unencrypted.
+   * </pre>
+   *
+   * <code>string encryption_id = 7;</code>
+   *
+   * @return The bytes for encryptionId.
+   */
+  com.google.protobuf.ByteString getEncryptionIdBytes();
 }

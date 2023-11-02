@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,43 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return The maxResults.
    */
   int getMaxResults();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * </pre>
+   *
+   * <code>optional string nat_name = 425596649;</code>
+   *
+   * @return Whether the natName field is set.
+   */
+  boolean hasNatName();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * </pre>
+   *
+   * <code>optional string nat_name = 425596649;</code>
+   *
+   * @return The natName.
+   */
+  java.lang.String getNatName();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * </pre>
+   *
+   * <code>optional string nat_name = 425596649;</code>
+   *
+   * @return The bytes for natName.
+   */
+  com.google.protobuf.ByteString getNatNameBytes();
 
   /**
    *

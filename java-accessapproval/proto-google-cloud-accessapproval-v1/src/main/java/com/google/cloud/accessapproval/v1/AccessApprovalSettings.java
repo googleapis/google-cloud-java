@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
 
   private AccessApprovalSettings() {
     name_ = "";
-    notificationEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    notificationEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
     enrolledServices_ = java.util.Collections.emptyList();
     activeKeyVersion_ = "";
   }
@@ -48,11 +48,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AccessApprovalSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -79,6 +74,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The resource name of the settings. Format is one of:
+   *
    *   * "projects/{project}/accessApprovalSettings"
    *   * "folders/{folder}/accessApprovalSettings"
    *   * "organizations/{organization}/accessApprovalSettings"
@@ -105,6 +101,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The resource name of the settings. Format is one of:
+   *
    *   * "projects/{project}/accessApprovalSettings"
    *   * "folders/{folder}/accessApprovalSettings"
    *   * "organizations/{organization}/accessApprovalSettings"
@@ -130,7 +127,8 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   public static final int NOTIFICATION_EMAILS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList notificationEmails_;
+  private com.google.protobuf.LazyStringArrayList notificationEmails_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -216,6 +214,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    * approval. If name refers to an organization, enrollment can be done for
    * individual services. If name refers to a folder or project, enrollment can
    * only be done on an all or nothing basis.
+   *
    * If a cloud_product is repeated in this list, the first entry will be
    * honored and all following entries will be discarded. A maximum of 10
    * enrolled services will be enforced, to be expanded as the set of supported
@@ -239,6 +238,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    * approval. If name refers to an organization, enrollment can be done for
    * individual services. If name refers to a folder or project, enrollment can
    * only be done on an all or nothing basis.
+   *
    * If a cloud_product is repeated in this list, the first entry will be
    * honored and all following entries will be discarded. A maximum of 10
    * enrolled services will be enforced, to be expanded as the set of supported
@@ -262,6 +262,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    * approval. If name refers to an organization, enrollment can be done for
    * individual services. If name refers to a folder or project, enrollment can
    * only be done on an all or nothing basis.
+   *
    * If a cloud_product is repeated in this list, the first entry will be
    * honored and all following entries will be discarded. A maximum of 10
    * enrolled services will be enforced, to be expanded as the set of supported
@@ -284,6 +285,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    * approval. If name refers to an organization, enrollment can be done for
    * individual services. If name refers to a folder or project, enrollment can
    * only be done on an all or nothing basis.
+   *
    * If a cloud_product is repeated in this list, the first entry will be
    * honored and all following entries will be discarded. A maximum of 10
    * enrolled services will be enforced, to be expanded as the set of supported
@@ -306,6 +308,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    * approval. If name refers to an organization, enrollment can be done for
    * individual services. If name refers to a folder or project, enrollment can
    * only be done on an all or nothing basis.
+   *
    * If a cloud_product is repeated in this list, the first entry will be
    * honored and all following entries will be discarded. A maximum of 10
    * enrolled services will be enforced, to be expanded as the set of supported
@@ -709,8 +712,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      notificationEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      notificationEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (enrolledServicesBuilder_ == null) {
         enrolledServices_ = java.util.Collections.emptyList();
       } else {
@@ -759,11 +761,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
 
     private void buildPartialRepeatedFields(
         com.google.cloud.accessapproval.v1.AccessApprovalSettings result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        notificationEmails_ = notificationEmails_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.notificationEmails_ = notificationEmails_;
       if (enrolledServicesBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           enrolledServices_ = java.util.Collections.unmodifiableList(enrolledServices_);
@@ -779,6 +776,10 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        notificationEmails_.makeImmutable();
+        result.notificationEmails_ = notificationEmails_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.enrolledAncestor_ = enrolledAncestor_;
@@ -848,7 +849,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       if (!other.notificationEmails_.isEmpty()) {
         if (notificationEmails_.isEmpty()) {
           notificationEmails_ = other.notificationEmails_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureNotificationEmailsIsMutable();
           notificationEmails_.addAll(other.notificationEmails_);
@@ -998,6 +999,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
+     *
      *   * "projects/{project}/accessApprovalSettings"
      *   * "folders/{folder}/accessApprovalSettings"
      *   * "organizations/{organization}/accessApprovalSettings"
@@ -1023,6 +1025,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
+     *
      *   * "projects/{project}/accessApprovalSettings"
      *   * "folders/{folder}/accessApprovalSettings"
      *   * "organizations/{organization}/accessApprovalSettings"
@@ -1048,6 +1051,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
+     *
      *   * "projects/{project}/accessApprovalSettings"
      *   * "folders/{folder}/accessApprovalSettings"
      *   * "organizations/{organization}/accessApprovalSettings"
@@ -1072,6 +1076,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
+     *
      *   * "projects/{project}/accessApprovalSettings"
      *   * "folders/{folder}/accessApprovalSettings"
      *   * "organizations/{organization}/accessApprovalSettings"
@@ -1092,6 +1097,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
+     *
      *   * "projects/{project}/accessApprovalSettings"
      *   * "folders/{folder}/accessApprovalSettings"
      *   * "organizations/{organization}/accessApprovalSettings"
@@ -1113,14 +1119,14 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.protobuf.LazyStringList notificationEmails_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList notificationEmails_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNotificationEmailsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!notificationEmails_.isModifiable()) {
         notificationEmails_ = new com.google.protobuf.LazyStringArrayList(notificationEmails_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1137,7 +1143,8 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * @return A list containing the notificationEmails.
      */
     public com.google.protobuf.ProtocolStringList getNotificationEmailsList() {
-      return notificationEmails_.getUnmodifiableView();
+      notificationEmails_.makeImmutable();
+      return notificationEmails_;
     }
     /**
      *
@@ -1214,6 +1221,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       ensureNotificationEmailsIsMutable();
       notificationEmails_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1238,6 +1246,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       ensureNotificationEmailsIsMutable();
       notificationEmails_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1259,6 +1268,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public Builder addAllNotificationEmails(java.lang.Iterable<java.lang.String> values) {
       ensureNotificationEmailsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, notificationEmails_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1277,8 +1287,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearNotificationEmails() {
-      notificationEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      notificationEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1304,6 +1315,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureNotificationEmailsIsMutable();
       notificationEmails_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1336,6 +1348,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1362,6 +1375,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1387,6 +1401,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1412,6 +1427,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1444,6 +1460,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1473,6 +1490,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1504,6 +1522,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1536,6 +1555,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1565,6 +1585,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1594,6 +1615,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1623,6 +1645,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1651,6 +1674,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1679,6 +1703,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1701,6 +1726,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1727,6 +1753,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1753,6 +1780,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1775,6 +1803,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported
@@ -1799,6 +1828,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * approval. If name refers to an organization, enrollment can be done for
      * individual services. If name refers to a folder or project, enrollment can
      * only be done on an all or nothing basis.
+     *
      * If a cloud_product is repeated in this list, the first entry will be
      * honored and all following entries will be discarded. A maximum of 10
      * enrolled services will be enforced, to be expanded as the set of supported

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface ProcessDocumentRequestOrBuilder
    *
    * <pre>
    * Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no location is specified, a region will be chosen automatically.
    * This field is only populated when used in ProcessDocument method.
    * </pre>
@@ -43,7 +45,9 @@ public interface ProcessDocumentRequestOrBuilder
    *
    * <pre>
    * Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no location is specified, a region will be chosen automatically.
    * This field is only populated when used in ProcessDocument method.
    * </pre>
@@ -99,13 +103,11 @@ public interface ProcessDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The desired output location. This field is only needed in
+   * The desired output location. This field is only needed in
    * BatchProcessDocumentsRequest.
    * </pre>
    *
-   * <code>
-   * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
    *
    * @return Whether the outputConfig field is set.
    */
@@ -114,13 +116,11 @@ public interface ProcessDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The desired output location. This field is only needed in
+   * The desired output location. This field is only needed in
    * BatchProcessDocumentsRequest.
    * </pre>
    *
-   * <code>
-   * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
    *
    * @return The outputConfig.
    */
@@ -129,13 +129,11 @@ public interface ProcessDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The desired output location. This field is only needed in
+   * The desired output location. This field is only needed in
    * BatchProcessDocumentsRequest.
    * </pre>
    *
-   * <code>
-   * .google.cloud.documentai.v1beta2.OutputConfig output_config = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
    */
   com.google.cloud.documentai.v1beta2.OutputConfigOrBuilder getOutputConfigOrBuilder();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,4 +106,29 @@ public interface GenerateClientCertificateResponseOrBuilder
    * @return The bytes of the pemCertificateChain at the given index.
    */
   com.google.protobuf.ByteString getPemCertificateChainBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pem-encoded cluster ca X.509 certificate.
+   * </pre>
+   *
+   * <code>string ca_cert = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The caCert.
+   */
+  java.lang.String getCaCert();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pem-encoded cluster ca X.509 certificate.
+   * </pre>
+   *
+   * <code>string ca_cert = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for caCert.
+   */
+  com.google.protobuf.ByteString getCaCertBytes();
 }

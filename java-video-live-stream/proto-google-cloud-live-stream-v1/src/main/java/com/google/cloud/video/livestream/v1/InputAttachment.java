@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InputAttachment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -156,18 +151,13 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
     }
 
     private AutomaticFailover() {
-      inputKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      inputKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AutomaticFailover();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -188,7 +178,8 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
     public static final int INPUT_KEYS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList inputKeys_;
+    private com.google.protobuf.LazyStringArrayList inputKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -472,8 +463,7 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        inputKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        inputKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -504,7 +494,6 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover buildPartial() {
         com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover result =
             new com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -512,18 +501,13 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          inputKeys_ = inputKeys_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.inputKeys_ = inputKeys_;
-      }
-
       private void buildPartial0(
           com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          inputKeys_.makeImmutable();
+          result.inputKeys_ = inputKeys_;
+        }
       }
 
       @java.lang.Override
@@ -581,7 +565,7 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
         if (!other.inputKeys_.isEmpty()) {
           if (inputKeys_.isEmpty()) {
             inputKeys_ = other.inputKeys_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureInputKeysIsMutable();
             inputKeys_.addAll(other.inputKeys_);
@@ -640,14 +624,14 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList inputKeys_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList inputKeys_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureInputKeysIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!inputKeys_.isModifiable()) {
           inputKeys_ = new com.google.protobuf.LazyStringArrayList(inputKeys_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -664,7 +648,8 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
        * @return A list containing the inputKeys.
        */
       public com.google.protobuf.ProtocolStringList getInputKeysList() {
-        return inputKeys_.getUnmodifiableView();
+        inputKeys_.makeImmutable();
+        return inputKeys_;
       }
       /**
        *
@@ -741,6 +726,7 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
         }
         ensureInputKeysIsMutable();
         inputKeys_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -765,6 +751,7 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
         }
         ensureInputKeysIsMutable();
         inputKeys_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -786,6 +773,7 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
       public Builder addAllInputKeys(java.lang.Iterable<java.lang.String> values) {
         ensureInputKeysIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inputKeys_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -804,8 +792,9 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearInputKeys() {
-        inputKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        inputKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -831,6 +820,7 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
         checkByteStringIsUtf8(value);
         ensureInputKeysIsMutable();
         inputKeys_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }

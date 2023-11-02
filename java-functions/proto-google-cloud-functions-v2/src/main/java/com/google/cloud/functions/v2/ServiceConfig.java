@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ package com.google.cloud.functions.v2;
  * <pre>
  * Describes the Service being deployed.
  * Currently Supported : Cloud Run (fully managed).
- * Next tag: 23
  * </pre>
  *
  * Protobuf type {@code google.cloud.functions.v2.ServiceConfig}
@@ -60,11 +59,6 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     return new ServiceConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v2.FunctionsProto
         .internal_static_google_cloud_functions_v2_ServiceConfig_descriptor;
@@ -96,6 +90,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Available egress settings.
+   *
    * This controls what traffic is diverted through the VPC Access Connector
    * resource. By default PRIVATE_RANGES_ONLY will be used.
    * </pre>
@@ -260,7 +255,9 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Available ingress settings.
+   *
    * This controls what traffic can reach the function.
+   *
    * If unspecified, ALLOW_ALL will be used.
    * </pre>
    *
@@ -443,8 +440,10 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Available security level settings.
+   *
    * This enforces security protocol on function URL.
-   * Security level is only ocnfigurable for 1st Gen functions, If unspecified,
+   *
+   * Security level is only configurable for 1st Gen functions, If unspecified,
    * SECURE_OPTIONAL will be used. 2nd Gen functions are SECURE_ALWAYS ONLY.
    * </pre>
    *
@@ -754,7 +753,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The number of CPUs used in a single container instance.
+   * [Preview] The number of CPUs used in a single container instance.
    * Default value is calculated from available memory.
    * Supports the same values as Cloud Run, see
    * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -781,7 +780,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The number of CPUs used in a single container instance.
+   * [Preview] The number of CPUs used in a single container instance.
    * Default value is calculated from available memory.
    * Supports the same values as Cloud Run, see
    * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -919,11 +918,13 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The limit on the maximum number of function instances that may coexist at a
    * given time.
+   *
    * In some cases, such as rapid traffic surges, Cloud Functions may, for a
    * short period of time, create more instances than the specified max
    * instances limit. If your function cannot tolerate this temporary behavior,
    * you may want to factor in a safety margin and set a lower max instances
    * value than your function can tolerate.
+   *
    * See the [Max
    * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
    * more details.
@@ -946,6 +947,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The limit on the minimum number of function instances that may coexist at a
    * given time.
+   *
    * Function instances are kept in idle state for a short period after they
    * finished executing the request to reduce cold start time for subsequent
    * requests. Setting a minimum instance count will ensure that the given
@@ -1432,8 +1434,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sets the maximum number of concurrent requests that each instance can
-   * receive. Defaults to 1.
+   * [Preview] Sets the maximum number of concurrent requests that each instance
+   * can receive. Defaults to 1.
    * </pre>
    *
    * <code>int32 max_instance_request_concurrency = 20;</code>
@@ -1843,7 +1845,6 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Describes the Service being deployed.
    * Currently Supported : Cloud Run (fully managed).
-   * Next tag: 23
    * </pre>
    *
    * Protobuf type {@code google.cloud.functions.v2.ServiceConfig}
@@ -2693,7 +2694,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of CPUs used in a single container instance.
+     * [Preview] The number of CPUs used in a single container instance.
      * Default value is calculated from available memory.
      * Supports the same values as Cloud Run, see
      * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -2719,7 +2720,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of CPUs used in a single container instance.
+     * [Preview] The number of CPUs used in a single container instance.
      * Default value is calculated from available memory.
      * Supports the same values as Cloud Run, see
      * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -2745,7 +2746,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of CPUs used in a single container instance.
+     * [Preview] The number of CPUs used in a single container instance.
      * Default value is calculated from available memory.
      * Supports the same values as Cloud Run, see
      * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -2770,7 +2771,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of CPUs used in a single container instance.
+     * [Preview] The number of CPUs used in a single container instance.
      * Default value is calculated from available memory.
      * Supports the same values as Cloud Run, see
      * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -2791,7 +2792,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of CPUs used in a single container instance.
+     * [Preview] The number of CPUs used in a single container instance.
      * Default value is calculated from available memory.
      * Supports the same values as Cloud Run, see
      * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
@@ -2991,11 +2992,13 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The limit on the maximum number of function instances that may coexist at a
      * given time.
+     *
      * In some cases, such as rapid traffic surges, Cloud Functions may, for a
      * short period of time, create more instances than the specified max
      * instances limit. If your function cannot tolerate this temporary behavior,
      * you may want to factor in a safety margin and set a lower max instances
      * value than your function can tolerate.
+     *
      * See the [Max
      * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
      * more details.
@@ -3015,11 +3018,13 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The limit on the maximum number of function instances that may coexist at a
      * given time.
+     *
      * In some cases, such as rapid traffic surges, Cloud Functions may, for a
      * short period of time, create more instances than the specified max
      * instances limit. If your function cannot tolerate this temporary behavior,
      * you may want to factor in a safety margin and set a lower max instances
      * value than your function can tolerate.
+     *
      * See the [Max
      * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
      * more details.
@@ -3043,11 +3048,13 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The limit on the maximum number of function instances that may coexist at a
      * given time.
+     *
      * In some cases, such as rapid traffic surges, Cloud Functions may, for a
      * short period of time, create more instances than the specified max
      * instances limit. If your function cannot tolerate this temporary behavior,
      * you may want to factor in a safety margin and set a lower max instances
      * value than your function can tolerate.
+     *
      * See the [Max
      * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
      * more details.
@@ -3071,6 +3078,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The limit on the minimum number of function instances that may coexist at a
      * given time.
+     *
      * Function instances are kept in idle state for a short period after they
      * finished executing the request to reduce cold start time for subsequent
      * requests. Setting a minimum instance count will ensure that the given
@@ -3093,6 +3101,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The limit on the minimum number of function instances that may coexist at a
      * given time.
+     *
      * Function instances are kept in idle state for a short period after they
      * finished executing the request to reduce cold start time for subsequent
      * requests. Setting a minimum instance count will ensure that the given
@@ -3119,6 +3128,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The limit on the minimum number of function instances that may coexist at a
      * given time.
+     *
      * Function instances are kept in idle state for a short period after they
      * finished executing the request to reduce cold start time for subsequent
      * requests. Setting a minimum instance count will ensure that the given
@@ -4585,8 +4595,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the maximum number of concurrent requests that each instance can
-     * receive. Defaults to 1.
+     * [Preview] Sets the maximum number of concurrent requests that each instance
+     * can receive. Defaults to 1.
      * </pre>
      *
      * <code>int32 max_instance_request_concurrency = 20;</code>
@@ -4601,8 +4611,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the maximum number of concurrent requests that each instance can
-     * receive. Defaults to 1.
+     * [Preview] Sets the maximum number of concurrent requests that each instance
+     * can receive. Defaults to 1.
      * </pre>
      *
      * <code>int32 max_instance_request_concurrency = 20;</code>
@@ -4621,8 +4631,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the maximum number of concurrent requests that each instance can
-     * receive. Defaults to 1.
+     * [Preview] Sets the maximum number of concurrent requests that each instance
+     * can receive. Defaults to 1.
      * </pre>
      *
      * <code>int32 max_instance_request_concurrency = 20;</code>

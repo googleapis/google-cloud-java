@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkehub.v1alpha2.CreateMembershipRequest;
 import com.google.cloud.gkehub.v1alpha2.DeleteMembershipRequest;
@@ -438,26 +439,56 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
             HttpJsonCallSettings.<ListMembershipsRequest, ListMembershipsResponse>newBuilder()
                 .setMethodDescriptor(listMembershipsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetMembershipRequest, Membership> getMembershipTransportSettings =
         HttpJsonCallSettings.<GetMembershipRequest, Membership>newBuilder()
             .setMethodDescriptor(getMembershipMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateMembershipRequest, Operation> createMembershipTransportSettings =
         HttpJsonCallSettings.<CreateMembershipRequest, Operation>newBuilder()
             .setMethodDescriptor(createMembershipMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteMembershipRequest, Operation> deleteMembershipTransportSettings =
         HttpJsonCallSettings.<DeleteMembershipRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMembershipMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateMembershipRequest, Operation> updateMembershipTransportSettings =
         HttpJsonCallSettings.<UpdateMembershipRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMembershipMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GenerateConnectManifestRequest, GenerateConnectManifestResponse>
         generateConnectManifestTransportSettings =
@@ -465,12 +496,24 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                 .<GenerateConnectManifestRequest, GenerateConnectManifestResponse>newBuilder()
                 .setMethodDescriptor(generateConnectManifestMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InitializeHubRequest, InitializeHubResponse>
         initializeHubTransportSettings =
             HttpJsonCallSettings.<InitializeHubRequest, InitializeHubResponse>newBuilder()
                 .setMethodDescriptor(initializeHubMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listMembershipsCallable =

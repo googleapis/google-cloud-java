@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
     return new UpdateRunRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.lineage.v1.LineageProto
         .internal_static_google_cloud_datacatalog_lineage_v1_UpdateRunRequest_descriptor;
@@ -73,7 +68,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The lineage run to update.
+   *
    * The run's `name` field is used to identify the run to update.
+   *
    * Format:
    * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
    * </pre>
@@ -93,7 +90,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The lineage run to update.
+   *
    * The run's `name` field is used to identify the run to update.
+   *
    * Format:
    * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
    * </pre>
@@ -113,7 +112,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The lineage run to update.
+   *
    * The run's `name` field is used to identify the run to update.
+   *
    * Format:
    * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
    * </pre>
@@ -569,7 +570,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The lineage run to update.
+     *
      * The run's `name` field is used to identify the run to update.
+     *
      * Format:
      * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
      * </pre>
@@ -588,7 +591,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The lineage run to update.
+     *
      * The run's `name` field is used to identify the run to update.
+     *
      * Format:
      * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
      * </pre>
@@ -613,7 +618,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The lineage run to update.
+     *
      * The run's `name` field is used to identify the run to update.
+     *
      * Format:
      * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
      * </pre>
@@ -640,7 +647,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The lineage run to update.
+     *
      * The run's `name` field is used to identify the run to update.
+     *
      * Format:
      * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
      * </pre>
@@ -664,7 +673,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The lineage run to update.
+     *
      * The run's `name` field is used to identify the run to update.
+     *
      * Format:
      * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
      * </pre>
@@ -694,7 +705,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The lineage run to update.
+     *
      * The run's `name` field is used to identify the run to update.
+     *
      * Format:
      * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
      * </pre>
@@ -718,7 +731,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The lineage run to update.
+     *
      * The run's `name` field is used to identify the run to update.
+     *
      * Format:
      * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
      * </pre>
@@ -737,7 +752,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The lineage run to update.
+     *
      * The run's `name` field is used to identify the run to update.
+     *
      * Format:
      * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
      * </pre>
@@ -760,7 +777,9 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The lineage run to update.
+     *
      * The run's `name` field is used to identify the run to update.
+     *
      * Format:
      * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
      * </pre>

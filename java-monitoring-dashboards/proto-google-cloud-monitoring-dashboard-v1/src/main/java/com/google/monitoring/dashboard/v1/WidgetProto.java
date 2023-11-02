@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,27 +51,28 @@ public final class WidgetProto {
           + "/monitoring/dashboard/v1/table.proto\032)go"
           + "ogle/monitoring/dashboard/v1/text.proto\032"
           + ",google/monitoring/dashboard/v1/xychart."
-          + "proto\032\033google/protobuf/empty.proto\"\244\004\n\006W"
-          + "idget\022\022\n\005title\030\001 \001(\tB\003\340A\001\022;\n\010xy_chart\030\002 "
-          + "\001(\0132\'.google.monitoring.dashboard.v1.XyC"
-          + "hartH\000\022>\n\tscorecard\030\003 \001(\0132).google.monit"
-          + "oring.dashboard.v1.ScorecardH\000\0224\n\004text\030\004"
-          + " \001(\0132$.google.monitoring.dashboard.v1.Te"
-          + "xtH\000\022\'\n\005blank\030\005 \001(\0132\026.google.protobuf.Em"
-          + "ptyH\000\022A\n\013alert_chart\030\007 \001(\0132*.google.moni"
-          + "toring.dashboard.v1.AlertChartH\000\022L\n\021time"
-          + "_series_table\030\010 \001(\0132/.google.monitoring."
-          + "dashboard.v1.TimeSeriesTableH\000\022M\n\021collap"
-          + "sible_group\030\t \001(\01320.google.monitoring.da"
-          + "shboard.v1.CollapsibleGroupH\000\022?\n\nlogs_pa"
-          + "nel\030\n \001(\0132).google.monitoring.dashboard."
-          + "v1.LogsPanelH\000B\t\n\007contentB\364\001\n\"com.google"
-          + ".monitoring.dashboard.v1B\013WidgetProtoP\001Z"
-          + "Fcloud.google.com/go/monitoring/dashboar"
-          + "d/apiv1/dashboardpb;dashboardpb\252\002$Google"
-          + ".Cloud.Monitoring.Dashboard.V1\312\002$Google\\"
-          + "Cloud\\Monitoring\\Dashboard\\V1\352\002(Google::"
-          + "Cloud::Monitoring::Dashboard::V1b\006proto3"
+          + "proto\032\033google/protobuf/empty.proto\"\245\004\n\006W"
+          + "idget\022\023\n\005title\030\001 \001(\tB\004\342A\001\001\022;\n\010xy_chart\030\002"
+          + " \001(\0132\'.google.monitoring.dashboard.v1.Xy"
+          + "ChartH\000\022>\n\tscorecard\030\003 \001(\0132).google.moni"
+          + "toring.dashboard.v1.ScorecardH\000\0224\n\004text\030"
+          + "\004 \001(\0132$.google.monitoring.dashboard.v1.T"
+          + "extH\000\022\'\n\005blank\030\005 \001(\0132\026.google.protobuf.E"
+          + "mptyH\000\022A\n\013alert_chart\030\007 \001(\0132*.google.mon"
+          + "itoring.dashboard.v1.AlertChartH\000\022L\n\021tim"
+          + "e_series_table\030\010 \001(\0132/.google.monitoring"
+          + ".dashboard.v1.TimeSeriesTableH\000\022M\n\021colla"
+          + "psible_group\030\t \001(\01320.google.monitoring.d"
+          + "ashboard.v1.CollapsibleGroupH\000\022?\n\nlogs_p"
+          + "anel\030\n \001(\0132).google.monitoring.dashboard"
+          + ".v1.LogsPanelH\000B\t\n\007contentB\364\001\n\"com.googl"
+          + "e.monitoring.dashboard.v1B\013WidgetProtoP\001"
+          + "ZFcloud.google.com/go/monitoring/dashboa"
+          + "rd/apiv1/dashboardpb;dashboardpb\252\002$Googl"
+          + "e.Cloud.Monitoring.Dashboard.V1\312\002$Google"
+          + "\\Cloud\\Monitoring\\Dashboard\\V1\352\002(Google:"
+          + ":Cloud::Monitoring::Dashboard::V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

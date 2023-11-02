@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BlueGreenSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -157,7 +152,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.DurationOrBuilder getBatchSoakDurationOrBuilder();
 
-    public com.google.container.v1beta1.BlueGreenSettings.StandardRolloutPolicy.UpdateBatchSizeCase
+    com.google.container.v1beta1.BlueGreenSettings.StandardRolloutPolicy.UpdateBatchSizeCase
         getUpdateBatchSizeCase();
   }
   /**
@@ -187,11 +182,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       return new StandardRolloutPolicy();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.container.v1beta1.ClusterServiceProto
           .internal_static_google_container_v1beta1_BlueGreenSettings_StandardRolloutPolicy_descriptor;
@@ -209,6 +199,8 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
 
     private int bitField0_;
     private int updateBatchSizeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object updateBatchSize_;
 
     public enum UpdateBatchSizeCase
@@ -1243,6 +1235,8 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   private int rolloutPolicyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object rolloutPolicy_;
 
   public enum RolloutPolicyCase

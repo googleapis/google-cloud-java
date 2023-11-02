@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
     return new Metrics();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_Metrics_descriptor;
@@ -78,7 +73,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The name of the metrics, in the format
-   * "projects/{project}/keys/{key}/metrics".
+   * `projects/{project}/keys/{key}/metrics`.
    * </pre>
    *
    * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -102,7 +97,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The name of the metrics, in the format
-   * "projects/{project}/keys/{key}/metrics".
+   * `projects/{project}/keys/{key}/metrics`.
    * </pre>
    *
    * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -850,7 +845,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of the metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -873,7 +868,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of the metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -896,7 +891,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of the metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -918,7 +913,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of the metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -936,7 +931,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of the metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

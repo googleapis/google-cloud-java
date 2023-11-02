@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Featurestore();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -355,11 +350,6 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       return new OnlineServingConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.FeaturestoreProto
           .internal_static_google_cloud_aiplatform_v1_Featurestore_OnlineServingConfig_descriptor;
@@ -454,11 +444,6 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Scaling();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2252,9 +2237,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * Featurestore.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Featurestore(System
    * labels are excluded)."
@@ -2283,9 +2270,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * Featurestore.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Featurestore(System
    * labels are excluded)."
@@ -2305,9 +2294,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * Featurestore.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Featurestore(System
    * labels are excluded)."
@@ -2334,9 +2325,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * Featurestore.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Featurestore(System
    * labels are excluded)."
@@ -3796,9 +3789,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * Featurestore.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Featurestore(System
      * labels are excluded)."
@@ -3827,9 +3822,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * Featurestore.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Featurestore(System
      * labels are excluded)."
@@ -3849,9 +3846,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * Featurestore.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Featurestore(System
      * labels are excluded)."
@@ -3878,9 +3877,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * Featurestore.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Featurestore(System
      * labels are excluded)."
@@ -3913,9 +3914,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * Featurestore.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Featurestore(System
      * labels are excluded)."
@@ -3944,9 +3947,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * Featurestore.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Featurestore(System
      * labels are excluded)."
@@ -3973,9 +3978,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The labels with user-defined metadata to organize your
      * Featurestore.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * No more than 64 user labels can be associated with one Featurestore(System
      * labels are excluded)."

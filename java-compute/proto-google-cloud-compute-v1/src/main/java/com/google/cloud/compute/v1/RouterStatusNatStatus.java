@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,24 +38,19 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   }
 
   private RouterStatusNatStatus() {
-    autoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    drainAutoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    drainUserAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    autoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    drainAutoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    drainUserAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
     name_ = "";
     ruleStatus_ = java.util.Collections.emptyList();
-    userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RouterStatusNatStatus();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,7 +72,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public static final int AUTO_ALLOCATED_NAT_IPS_FIELD_NUMBER = 510794246;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList autoAllocatedNatIps_;
+  private com.google.protobuf.LazyStringArrayList autoAllocatedNatIps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -140,7 +136,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public static final int DRAIN_AUTO_ALLOCATED_NAT_IPS_FIELD_NUMBER = 309184557;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList drainAutoAllocatedNatIps_;
+  private com.google.protobuf.LazyStringArrayList drainAutoAllocatedNatIps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -203,7 +200,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public static final int DRAIN_USER_ALLOCATED_NAT_IPS_FIELD_NUMBER = 305268553;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList drainUserAllocatedNatIps_;
+  private com.google.protobuf.LazyStringArrayList drainUserAllocatedNatIps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -483,7 +481,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public static final int USER_ALLOCATED_NAT_IP_RESOURCES_FIELD_NUMBER = 212776151;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList userAllocatedNatIpResources_;
+  private com.google.protobuf.LazyStringArrayList userAllocatedNatIpResources_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -546,7 +545,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
   public static final int USER_ALLOCATED_NAT_IPS_FIELD_NUMBER = 506878242;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList userAllocatedNatIps_;
+  private com.google.protobuf.LazyStringArrayList userAllocatedNatIps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -942,12 +942,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      autoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      drainAutoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      drainUserAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      autoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      drainAutoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      drainUserAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       minExtraNatIpsNeeded_ = 0;
       name_ = "";
       numVmEndpointsWithNatMappings_ = 0;
@@ -958,10 +955,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
         ruleStatusBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
-      userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
-      userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -999,21 +994,6 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
 
     private void buildPartialRepeatedFields(
         com.google.cloud.compute.v1.RouterStatusNatStatus result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        autoAllocatedNatIps_ = autoAllocatedNatIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.autoAllocatedNatIps_ = autoAllocatedNatIps_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        drainAutoAllocatedNatIps_ = drainAutoAllocatedNatIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.drainAutoAllocatedNatIps_ = drainAutoAllocatedNatIps_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        drainUserAllocatedNatIps_ = drainUserAllocatedNatIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.drainUserAllocatedNatIps_ = drainUserAllocatedNatIps_;
       if (ruleStatusBuilder_ == null) {
         if (((bitField0_ & 0x00000040) != 0)) {
           ruleStatus_ = java.util.Collections.unmodifiableList(ruleStatus_);
@@ -1023,20 +1003,22 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       } else {
         result.ruleStatus_ = ruleStatusBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        userAllocatedNatIpResources_ = userAllocatedNatIpResources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.userAllocatedNatIpResources_ = userAllocatedNatIpResources_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        userAllocatedNatIps_ = userAllocatedNatIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.userAllocatedNatIps_ = userAllocatedNatIps_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.RouterStatusNatStatus result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        autoAllocatedNatIps_.makeImmutable();
+        result.autoAllocatedNatIps_ = autoAllocatedNatIps_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        drainAutoAllocatedNatIps_.makeImmutable();
+        result.drainAutoAllocatedNatIps_ = drainAutoAllocatedNatIps_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        drainUserAllocatedNatIps_.makeImmutable();
+        result.drainUserAllocatedNatIps_ = drainUserAllocatedNatIps_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.minExtraNatIpsNeeded_ = minExtraNatIpsNeeded_;
@@ -1049,6 +1031,14 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.numVmEndpointsWithNatMappings_ = numVmEndpointsWithNatMappings_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        userAllocatedNatIpResources_.makeImmutable();
+        result.userAllocatedNatIpResources_ = userAllocatedNatIpResources_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        userAllocatedNatIps_.makeImmutable();
+        result.userAllocatedNatIps_ = userAllocatedNatIps_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1102,7 +1092,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (!other.autoAllocatedNatIps_.isEmpty()) {
         if (autoAllocatedNatIps_.isEmpty()) {
           autoAllocatedNatIps_ = other.autoAllocatedNatIps_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureAutoAllocatedNatIpsIsMutable();
           autoAllocatedNatIps_.addAll(other.autoAllocatedNatIps_);
@@ -1112,7 +1102,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (!other.drainAutoAllocatedNatIps_.isEmpty()) {
         if (drainAutoAllocatedNatIps_.isEmpty()) {
           drainAutoAllocatedNatIps_ = other.drainAutoAllocatedNatIps_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureDrainAutoAllocatedNatIpsIsMutable();
           drainAutoAllocatedNatIps_.addAll(other.drainAutoAllocatedNatIps_);
@@ -1122,7 +1112,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (!other.drainUserAllocatedNatIps_.isEmpty()) {
         if (drainUserAllocatedNatIps_.isEmpty()) {
           drainUserAllocatedNatIps_ = other.drainUserAllocatedNatIps_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureDrainUserAllocatedNatIpsIsMutable();
           drainUserAllocatedNatIps_.addAll(other.drainUserAllocatedNatIps_);
@@ -1170,7 +1160,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (!other.userAllocatedNatIpResources_.isEmpty()) {
         if (userAllocatedNatIpResources_.isEmpty()) {
           userAllocatedNatIpResources_ = other.userAllocatedNatIpResources_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureUserAllocatedNatIpResourcesIsMutable();
           userAllocatedNatIpResources_.addAll(other.userAllocatedNatIpResources_);
@@ -1180,7 +1170,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       if (!other.userAllocatedNatIps_.isEmpty()) {
         if (userAllocatedNatIps_.isEmpty()) {
           userAllocatedNatIps_ = other.userAllocatedNatIps_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureUserAllocatedNatIpsIsMutable();
           userAllocatedNatIps_.addAll(other.userAllocatedNatIps_);
@@ -1299,14 +1289,14 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList autoAllocatedNatIps_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList autoAllocatedNatIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAutoAllocatedNatIpsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!autoAllocatedNatIps_.isModifiable()) {
         autoAllocatedNatIps_ = new com.google.protobuf.LazyStringArrayList(autoAllocatedNatIps_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1320,7 +1310,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return A list containing the autoAllocatedNatIps.
      */
     public com.google.protobuf.ProtocolStringList getAutoAllocatedNatIpsList() {
-      return autoAllocatedNatIps_.getUnmodifiableView();
+      autoAllocatedNatIps_.makeImmutable();
+      return autoAllocatedNatIps_;
     }
     /**
      *
@@ -1385,6 +1376,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       ensureAutoAllocatedNatIpsIsMutable();
       autoAllocatedNatIps_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1406,6 +1398,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       ensureAutoAllocatedNatIpsIsMutable();
       autoAllocatedNatIps_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1424,6 +1417,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public Builder addAllAutoAllocatedNatIps(java.lang.Iterable<java.lang.String> values) {
       ensureAutoAllocatedNatIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, autoAllocatedNatIps_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1439,8 +1433,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAutoAllocatedNatIps() {
-      autoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      autoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1463,19 +1458,20 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureAutoAllocatedNatIpsIsMutable();
       autoAllocatedNatIps_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList drainAutoAllocatedNatIps_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList drainAutoAllocatedNatIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDrainAutoAllocatedNatIpsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!drainAutoAllocatedNatIps_.isModifiable()) {
         drainAutoAllocatedNatIps_ =
             new com.google.protobuf.LazyStringArrayList(drainAutoAllocatedNatIps_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1489,7 +1485,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return A list containing the drainAutoAllocatedNatIps.
      */
     public com.google.protobuf.ProtocolStringList getDrainAutoAllocatedNatIpsList() {
-      return drainAutoAllocatedNatIps_.getUnmodifiableView();
+      drainAutoAllocatedNatIps_.makeImmutable();
+      return drainAutoAllocatedNatIps_;
     }
     /**
      *
@@ -1554,6 +1551,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       ensureDrainAutoAllocatedNatIpsIsMutable();
       drainAutoAllocatedNatIps_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1575,6 +1573,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       ensureDrainAutoAllocatedNatIpsIsMutable();
       drainAutoAllocatedNatIps_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1593,6 +1592,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public Builder addAllDrainAutoAllocatedNatIps(java.lang.Iterable<java.lang.String> values) {
       ensureDrainAutoAllocatedNatIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, drainAutoAllocatedNatIps_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1608,8 +1608,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDrainAutoAllocatedNatIps() {
-      drainAutoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      drainAutoAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1632,19 +1633,20 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureDrainAutoAllocatedNatIpsIsMutable();
       drainAutoAllocatedNatIps_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList drainUserAllocatedNatIps_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList drainUserAllocatedNatIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDrainUserAllocatedNatIpsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!drainUserAllocatedNatIps_.isModifiable()) {
         drainUserAllocatedNatIps_ =
             new com.google.protobuf.LazyStringArrayList(drainUserAllocatedNatIps_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1658,7 +1660,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return A list containing the drainUserAllocatedNatIps.
      */
     public com.google.protobuf.ProtocolStringList getDrainUserAllocatedNatIpsList() {
-      return drainUserAllocatedNatIps_.getUnmodifiableView();
+      drainUserAllocatedNatIps_.makeImmutable();
+      return drainUserAllocatedNatIps_;
     }
     /**
      *
@@ -1723,6 +1726,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       ensureDrainUserAllocatedNatIpsIsMutable();
       drainUserAllocatedNatIps_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1744,6 +1748,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       ensureDrainUserAllocatedNatIpsIsMutable();
       drainUserAllocatedNatIps_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1762,6 +1767,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public Builder addAllDrainUserAllocatedNatIps(java.lang.Iterable<java.lang.String> values) {
       ensureDrainUserAllocatedNatIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, drainUserAllocatedNatIps_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1777,8 +1783,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDrainUserAllocatedNatIps() {
-      drainUserAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      drainUserAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1801,6 +1808,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureDrainUserAllocatedNatIpsIsMutable();
       drainUserAllocatedNatIps_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2464,15 +2472,15 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       return ruleStatusBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList userAllocatedNatIpResources_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList userAllocatedNatIpResources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUserAllocatedNatIpResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!userAllocatedNatIpResources_.isModifiable()) {
         userAllocatedNatIpResources_ =
             new com.google.protobuf.LazyStringArrayList(userAllocatedNatIpResources_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -2486,7 +2494,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return A list containing the userAllocatedNatIpResources.
      */
     public com.google.protobuf.ProtocolStringList getUserAllocatedNatIpResourcesList() {
-      return userAllocatedNatIpResources_.getUnmodifiableView();
+      userAllocatedNatIpResources_.makeImmutable();
+      return userAllocatedNatIpResources_;
     }
     /**
      *
@@ -2551,6 +2560,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       ensureUserAllocatedNatIpResourcesIsMutable();
       userAllocatedNatIpResources_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2572,6 +2582,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       ensureUserAllocatedNatIpResourcesIsMutable();
       userAllocatedNatIpResources_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2590,6 +2601,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public Builder addAllUserAllocatedNatIpResources(java.lang.Iterable<java.lang.String> values) {
       ensureUserAllocatedNatIpResourcesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, userAllocatedNatIpResources_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2605,8 +2617,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearUserAllocatedNatIpResources() {
-      userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      userAllocatedNatIpResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -2629,18 +2642,19 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureUserAllocatedNatIpResourcesIsMutable();
       userAllocatedNatIpResources_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList userAllocatedNatIps_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList userAllocatedNatIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUserAllocatedNatIpsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!userAllocatedNatIps_.isModifiable()) {
         userAllocatedNatIps_ = new com.google.protobuf.LazyStringArrayList(userAllocatedNatIps_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -2654,7 +2668,8 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return A list containing the userAllocatedNatIps.
      */
     public com.google.protobuf.ProtocolStringList getUserAllocatedNatIpsList() {
-      return userAllocatedNatIps_.getUnmodifiableView();
+      userAllocatedNatIps_.makeImmutable();
+      return userAllocatedNatIps_;
     }
     /**
      *
@@ -2719,6 +2734,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       ensureUserAllocatedNatIpsIsMutable();
       userAllocatedNatIps_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2740,6 +2756,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       }
       ensureUserAllocatedNatIpsIsMutable();
       userAllocatedNatIps_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2758,6 +2775,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
     public Builder addAllUserAllocatedNatIps(java.lang.Iterable<java.lang.String> values) {
       ensureUserAllocatedNatIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, userAllocatedNatIps_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2773,8 +2791,9 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearUserAllocatedNatIps() {
-      userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      userAllocatedNatIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -2797,6 +2816,7 @@ public final class RouterStatusNatStatus extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureUserAllocatedNatIpsIsMutable();
       userAllocatedNatIps_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

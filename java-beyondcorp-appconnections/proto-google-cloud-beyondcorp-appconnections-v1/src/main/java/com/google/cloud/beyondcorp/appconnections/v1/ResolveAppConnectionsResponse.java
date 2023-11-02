@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
   private ResolveAppConnectionsResponse() {
     appConnectionDetails_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
-    unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ResolveAppConnectionsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -187,18 +182,13 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     }
 
     private AppConnectionDetails() {
-      recentMigVms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      recentMigVms_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AppConnectionDetails();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -272,7 +262,8 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     public static final int RECENT_MIG_VMS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList recentMigVms_;
+    private com.google.protobuf.LazyStringArrayList recentMigVms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -595,8 +586,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
           appConnectionBuilder_.dispose();
           appConnectionBuilder_ = null;
         }
-        recentMigVms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        recentMigVms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -636,23 +626,11 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
             result =
                 new com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse
                     .AppConnectionDetails(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse
-                  .AppConnectionDetails
-              result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          recentMigVms_ = recentMigVms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.recentMigVms_ = recentMigVms_;
       }
 
       private void buildPartial0(
@@ -663,6 +641,10 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.appConnection_ =
               appConnectionBuilder_ == null ? appConnection_ : appConnectionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          recentMigVms_.makeImmutable();
+          result.recentMigVms_ = recentMigVms_;
         }
       }
 
@@ -730,7 +712,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         if (!other.recentMigVms_.isEmpty()) {
           if (recentMigVms_.isEmpty()) {
             recentMigVms_ = other.recentMigVms_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureRecentMigVmsIsMutable();
             recentMigVms_.addAll(other.recentMigVms_);
@@ -985,14 +967,14 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         return appConnectionBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList recentMigVms_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList recentMigVms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureRecentMigVmsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!recentMigVms_.isModifiable()) {
           recentMigVms_ = new com.google.protobuf.LazyStringArrayList(recentMigVms_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1007,7 +989,8 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
        * @return A list containing the recentMigVms.
        */
       public com.google.protobuf.ProtocolStringList getRecentMigVmsList() {
-        return recentMigVms_.getUnmodifiableView();
+        recentMigVms_.makeImmutable();
+        return recentMigVms_;
       }
       /**
        *
@@ -1076,6 +1059,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         }
         ensureRecentMigVmsIsMutable();
         recentMigVms_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1098,6 +1082,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         }
         ensureRecentMigVmsIsMutable();
         recentMigVms_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1117,6 +1102,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       public Builder addAllRecentMigVms(java.lang.Iterable<java.lang.String> values) {
         ensureRecentMigVmsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, recentMigVms_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1133,8 +1119,9 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder clearRecentMigVms() {
-        recentMigVms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        recentMigVms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1158,6 +1145,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
         checkByteStringIsUtf8(value);
         ensureRecentMigVmsIsMutable();
         recentMigVms_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1384,7 +1372,8 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
   public static final int UNREACHABLE_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unreachable_;
+  private com.google.protobuf.LazyStringArrayList unreachable_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1688,8 +1677,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1740,11 +1728,6 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       } else {
         result.appConnectionDetails_ = appConnectionDetailsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        unreachable_ = unreachable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.unreachable_ = unreachable_;
     }
 
     private void buildPartial0(
@@ -1752,6 +1735,10 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        unreachable_.makeImmutable();
+        result.unreachable_ = unreachable_;
       }
     }
 
@@ -1840,7 +1827,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       if (!other.unreachable_.isEmpty()) {
         if (unreachable_.isEmpty()) {
           unreachable_ = other.unreachable_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureUnreachableIsMutable();
           unreachable_.addAll(other.unreachable_);
@@ -2482,14 +2469,14 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       return this;
     }
 
-    private com.google.protobuf.LazyStringList unreachable_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUnreachableIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!unreachable_.isModifiable()) {
         unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -2503,7 +2490,8 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
      * @return A list containing the unreachable.
      */
     public com.google.protobuf.ProtocolStringList getUnreachableList() {
-      return unreachable_.getUnmodifiableView();
+      unreachable_.makeImmutable();
+      return unreachable_;
     }
     /**
      *
@@ -2568,6 +2556,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       ensureUnreachableIsMutable();
       unreachable_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2589,6 +2578,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       }
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2607,6 +2597,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
     public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
       ensureUnreachableIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2622,8 +2613,9 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearUnreachable() {
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -2646,6 +2638,7 @@ public final class ResolveAppConnectionsResponse extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

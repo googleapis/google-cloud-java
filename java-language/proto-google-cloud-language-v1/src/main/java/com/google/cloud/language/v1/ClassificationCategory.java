@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     return new ClassificationCategory();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.language.v1.LanguageServiceProto
         .internal_static_google_cloud_language_v1_ClassificationCategory_descriptor;
@@ -75,8 +70,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The name of the category representing the document, from the [predefined
-   * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+   * The name of the category representing the document.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -99,8 +93,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The name of the category representing the document, from the [predefined
-   * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+   * The name of the category representing the document.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -509,8 +502,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the category representing the document, from the [predefined
-     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+     * The name of the category representing the document.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -532,8 +524,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the category representing the document, from the [predefined
-     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+     * The name of the category representing the document.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -555,8 +546,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the category representing the document, from the [predefined
-     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+     * The name of the category representing the document.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -577,8 +567,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the category representing the document, from the [predefined
-     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+     * The name of the category representing the document.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -595,8 +584,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the category representing the document, from the [predefined
-     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+     * The name of the category representing the document.
      * </pre>
      *
      * <code>string name = 1;</code>

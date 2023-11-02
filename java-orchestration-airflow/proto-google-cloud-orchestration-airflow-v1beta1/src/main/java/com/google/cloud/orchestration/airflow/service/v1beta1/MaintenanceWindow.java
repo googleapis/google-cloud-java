@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.orchestration.airflow.service.v1beta1;
  * <pre>
  * The configuration settings for Cloud Composer maintenance window.
  * The following example:
+ *
  * ```
  *    {
  *      "startTime":"2019-08-01T01:00:00Z"
@@ -31,6 +32,7 @@ package com.google.cloud.orchestration.airflow.service.v1beta1;
  *      "recurrence":"FREQ=WEEKLY;BYDAY=TU,WE"
  *    }
  * ```
+ *
  * would define a maintenance window between 01 and 07 hours UTC during
  * each Tuesday and Wednesday.
  * </pre>
@@ -55,11 +57,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MaintenanceWindow();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -431,6 +428,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The configuration settings for Cloud Composer maintenance window.
    * The following example:
+   *
    * ```
    *    {
    *      "startTime":"2019-08-01T01:00:00Z"
@@ -438,6 +436,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *      "recurrence":"FREQ=WEEKLY;BYDAY=TU,WE"
    *    }
    * ```
+   *
    * would define a maintenance window between 01 and 07 hours UTC during
    * each Tuesday and Wednesday.
    * </pre>

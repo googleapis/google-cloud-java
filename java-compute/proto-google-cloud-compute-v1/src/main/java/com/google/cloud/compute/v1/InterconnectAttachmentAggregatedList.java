@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,18 +43,13 @@ public final class InterconnectAttachmentAggregatedList
     kind_ = "";
     nextPageToken_ = "";
     selfLink_ = "";
-    unreachables_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unreachables_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InterconnectAttachmentAggregatedList();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -478,7 +473,8 @@ public final class InterconnectAttachmentAggregatedList
   public static final int UNREACHABLES_FIELD_NUMBER = 243372063;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unreachables_;
+  private com.google.protobuf.LazyStringArrayList unreachables_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -914,8 +910,7 @@ public final class InterconnectAttachmentAggregatedList
       kind_ = "";
       nextPageToken_ = "";
       selfLink_ = "";
-      unreachables_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      unreachables_ = com.google.protobuf.LazyStringArrayList.emptyList();
       warning_ = null;
       if (warningBuilder_ != null) {
         warningBuilder_.dispose();
@@ -949,21 +944,11 @@ public final class InterconnectAttachmentAggregatedList
     public com.google.cloud.compute.v1.InterconnectAttachmentAggregatedList buildPartial() {
       com.google.cloud.compute.v1.InterconnectAttachmentAggregatedList result =
           new com.google.cloud.compute.v1.InterconnectAttachmentAggregatedList(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.InterconnectAttachmentAggregatedList result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        unreachables_ = unreachables_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.unreachables_ = unreachables_;
     }
 
     private void buildPartial0(
@@ -989,6 +974,10 @@ public final class InterconnectAttachmentAggregatedList
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        unreachables_.makeImmutable();
+        result.unreachables_ = unreachables_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.warning_ = warningBuilder_ == null ? warning_ : warningBuilder_.build();
@@ -1070,7 +1059,7 @@ public final class InterconnectAttachmentAggregatedList
       if (!other.unreachables_.isEmpty()) {
         if (unreachables_.isEmpty()) {
           unreachables_ = other.unreachables_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureUnreachablesIsMutable();
           unreachables_.addAll(other.unreachables_);
@@ -1851,14 +1840,14 @@ public final class InterconnectAttachmentAggregatedList
       return this;
     }
 
-    private com.google.protobuf.LazyStringList unreachables_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unreachables_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUnreachablesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!unreachables_.isModifiable()) {
         unreachables_ = new com.google.protobuf.LazyStringArrayList(unreachables_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -1872,7 +1861,8 @@ public final class InterconnectAttachmentAggregatedList
      * @return A list containing the unreachables.
      */
     public com.google.protobuf.ProtocolStringList getUnreachablesList() {
-      return unreachables_.getUnmodifiableView();
+      unreachables_.makeImmutable();
+      return unreachables_;
     }
     /**
      *
@@ -1937,6 +1927,7 @@ public final class InterconnectAttachmentAggregatedList
       }
       ensureUnreachablesIsMutable();
       unreachables_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1958,6 +1949,7 @@ public final class InterconnectAttachmentAggregatedList
       }
       ensureUnreachablesIsMutable();
       unreachables_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1976,6 +1968,7 @@ public final class InterconnectAttachmentAggregatedList
     public Builder addAllUnreachables(java.lang.Iterable<java.lang.String> values) {
       ensureUnreachablesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachables_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1991,8 +1984,9 @@ public final class InterconnectAttachmentAggregatedList
      * @return This builder for chaining.
      */
     public Builder clearUnreachables() {
-      unreachables_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unreachables_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2015,6 +2009,7 @@ public final class InterconnectAttachmentAggregatedList
       checkByteStringIsUtf8(value);
       ensureUnreachablesIsMutable();
       unreachables_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

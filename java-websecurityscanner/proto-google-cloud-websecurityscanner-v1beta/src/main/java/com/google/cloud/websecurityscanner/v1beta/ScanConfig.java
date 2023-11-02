@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,9 +40,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   private ScanConfig() {
     name_ = "";
     displayName_ = "";
-    startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    startingUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
     userAgent_ = 0;
-    blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
     targetPlatforms_ = java.util.Collections.emptyList();
     exportToSecurityCommandCenter_ = 0;
     riskLevel_ = 0;
@@ -52,11 +52,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ScanConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -832,7 +827,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.websecurityscanner.v1beta.ScanConfig.Authentication.CustomAccountOrBuilder
         getCustomAccountOrBuilder();
 
-    public com.google.cloud.websecurityscanner.v1beta.ScanConfig.Authentication.AuthenticationCase
+    com.google.cloud.websecurityscanner.v1beta.ScanConfig.Authentication.AuthenticationCase
         getAuthenticationCase();
   }
   /**
@@ -860,11 +855,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Authentication();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -972,11 +962,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new GoogleAccount();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1934,11 +1919,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new CustomAccount();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2962,6 +2942,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int authenticationCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object authentication_;
 
     public enum AuthenticationCase
@@ -4256,11 +4238,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return new Schedule();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.websecurityscanner.v1beta.ScanConfigProto
           .internal_static_google_cloud_websecurityscanner_v1beta_ScanConfig_Schedule_descriptor;
@@ -5194,7 +5171,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int STARTING_URLS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList startingUrls_;
+  private com.google.protobuf.LazyStringArrayList startingUrls_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -5351,7 +5329,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int BLACKLIST_PATTERNS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList blacklistPatterns_;
+  private com.google.protobuf.LazyStringArrayList blacklistPatterns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -6082,16 +6061,14 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       displayName_ = "";
       maxQps_ = 0;
-      startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      startingUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       authentication_ = null;
       if (authenticationBuilder_ != null) {
         authenticationBuilder_.dispose();
         authenticationBuilder_ = null;
       }
       userAgent_ = 0;
-      blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       schedule_ = null;
       if (scheduleBuilder_ != null) {
         scheduleBuilder_.dispose();
@@ -6143,16 +6120,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(
         com.google.cloud.websecurityscanner.v1beta.ScanConfig result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        startingUrls_ = startingUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.startingUrls_ = startingUrls_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        blacklistPatterns_ = blacklistPatterns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.blacklistPatterns_ = blacklistPatterns_;
       if (((bitField0_ & 0x00000100) != 0)) {
         targetPlatforms_ = java.util.Collections.unmodifiableList(targetPlatforms_);
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -6171,12 +6138,20 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.maxQps_ = maxQps_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        startingUrls_.makeImmutable();
+        result.startingUrls_ = startingUrls_;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.authentication_ =
             authenticationBuilder_ == null ? authentication_ : authenticationBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.userAgent_ = userAgent_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        blacklistPatterns_.makeImmutable();
+        result.blacklistPatterns_ = blacklistPatterns_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.schedule_ = scheduleBuilder_ == null ? schedule_ : scheduleBuilder_.build();
@@ -6254,7 +6229,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.startingUrls_.isEmpty()) {
         if (startingUrls_.isEmpty()) {
           startingUrls_ = other.startingUrls_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureStartingUrlsIsMutable();
           startingUrls_.addAll(other.startingUrls_);
@@ -6270,7 +6245,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.blacklistPatterns_.isEmpty()) {
         if (blacklistPatterns_.isEmpty()) {
           blacklistPatterns_ = other.blacklistPatterns_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureBlacklistPatternsIsMutable();
           blacklistPatterns_.addAll(other.blacklistPatterns_);
@@ -6715,14 +6690,14 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList startingUrls_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList startingUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureStartingUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!startingUrls_.isModifiable()) {
         startingUrls_ = new com.google.protobuf.LazyStringArrayList(startingUrls_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -6736,7 +6711,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the startingUrls.
      */
     public com.google.protobuf.ProtocolStringList getStartingUrlsList() {
-      return startingUrls_.getUnmodifiableView();
+      startingUrls_.makeImmutable();
+      return startingUrls_;
     }
     /**
      *
@@ -6801,6 +6777,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStartingUrlsIsMutable();
       startingUrls_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6822,6 +6799,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStartingUrlsIsMutable();
       startingUrls_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6840,6 +6818,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllStartingUrls(java.lang.Iterable<java.lang.String> values) {
       ensureStartingUrlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, startingUrls_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6855,8 +6834,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStartingUrls() {
-      startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      startingUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -6879,6 +6859,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureStartingUrlsIsMutable();
       startingUrls_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7188,14 +7169,14 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList blacklistPatterns_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList blacklistPatterns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureBlacklistPatternsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!blacklistPatterns_.isModifiable()) {
         blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList(blacklistPatterns_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -7210,7 +7191,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the blacklistPatterns.
      */
     public com.google.protobuf.ProtocolStringList getBlacklistPatternsList() {
-      return blacklistPatterns_.getUnmodifiableView();
+      blacklistPatterns_.makeImmutable();
+      return blacklistPatterns_;
     }
     /**
      *
@@ -7279,6 +7261,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureBlacklistPatternsIsMutable();
       blacklistPatterns_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -7301,6 +7284,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureBlacklistPatternsIsMutable();
       blacklistPatterns_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -7320,6 +7304,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllBlacklistPatterns(java.lang.Iterable<java.lang.String> values) {
       ensureBlacklistPatternsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blacklistPatterns_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -7336,8 +7321,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBlacklistPatterns() {
-      blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -7361,6 +7347,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureBlacklistPatternsIsMutable();
       blacklistPatterns_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

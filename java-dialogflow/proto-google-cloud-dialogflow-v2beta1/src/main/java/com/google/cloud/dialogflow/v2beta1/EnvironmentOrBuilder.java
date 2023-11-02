@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,9 @@ public interface EnvironmentOrBuilder
    * <pre>
    * Output only. The unique identifier of this agent environment.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -45,9 +45,9 @@ public interface EnvironmentOrBuilder
    * <pre>
    * Output only. The unique identifier of this agent environment.
    * Supported formats:
-   * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -91,7 +91,7 @@ public interface EnvironmentOrBuilder
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
-   *   ID&gt;`
+   * ID&gt;`
    * </pre>
    *
    * <code>
@@ -109,7 +109,7 @@ public interface EnvironmentOrBuilder
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
-   *   ID&gt;`
+   * ID&gt;`
    * </pre>
    *
    * <code>

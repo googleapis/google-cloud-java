@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,8 @@ public interface TestRunDifferenceOrBuilder
    *
    *
    * <pre>
-   * A description of the diff, showing the actual output vs expected output.
+   * A human readable description of the diff, showing the actual output vs
+   * expected output.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -64,7 +65,8 @@ public interface TestRunDifferenceOrBuilder
    *
    *
    * <pre>
-   * A description of the diff, showing the actual output vs expected output.
+   * A human readable description of the diff, showing the actual output vs
+   * expected output.
    * </pre>
    *
    * <code>string description = 2;</code>

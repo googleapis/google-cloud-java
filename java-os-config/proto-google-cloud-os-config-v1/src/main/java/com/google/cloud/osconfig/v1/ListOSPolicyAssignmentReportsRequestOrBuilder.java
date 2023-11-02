@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface ListOSPolicyAssignmentReportsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name.
+   *
    * Format:
    * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * For `{instance}`, either `instance-name`, `instance-id`, or `-` can be
    * provided. If '-' is provided, the response will include
@@ -38,6 +40,7 @@ public interface ListOSPolicyAssignmentReportsRequestOrBuilder
    * is provided, the response will include OSPolicyAssignmentReports for all
    * OSPolicyAssignments in the project/location.
    * Either {instance} or {assignment} must be `-`.
+   *
    * For example:
    * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
    *  returns all reports for the instance
@@ -59,8 +62,10 @@ public interface ListOSPolicyAssignmentReportsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name.
+   *
    * Format:
    * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/reports`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * For `{instance}`, either `instance-name`, `instance-id`, or `-` can be
    * provided. If '-' is provided, the response will include
@@ -69,6 +74,7 @@ public interface ListOSPolicyAssignmentReportsRequestOrBuilder
    * is provided, the response will include OSPolicyAssignmentReports for all
    * OSPolicyAssignments in the project/location.
    * Either {instance} or {assignment} must be `-`.
+   *
    * For example:
    * `projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/-/reports`
    *  returns all reports for the instance

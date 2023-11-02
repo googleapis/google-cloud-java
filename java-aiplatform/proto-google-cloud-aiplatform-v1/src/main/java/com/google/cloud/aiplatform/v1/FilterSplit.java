@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ package com.google.cloud.aiplatform.v1;
  * supported for Datasets containing DataItems.
  * If any of the filters in this message are to match nothing, then they can be
  * set as '-' (the minus sign).
+ *
  * Supported only for unstructured Datasets.
  * </pre>
  *
@@ -52,11 +53,6 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FilterSplit();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -449,6 +445,7 @@ public final class FilterSplit extends com.google.protobuf.GeneratedMessageV3
    * supported for Datasets containing DataItems.
    * If any of the filters in this message are to match nothing, then they can be
    * set as '-' (the minus sign).
+   *
    * Supported only for unstructured Datasets.
    * </pre>
    *

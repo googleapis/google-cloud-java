@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,6 +93,7 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Optional. A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -109,6 +110,7 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Optional. A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -125,6 +127,7 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Optional. A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -142,6 +145,7 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Optional. A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -171,6 +175,7 @@ public interface InputAudioConfigOrBuilder
    * for more details.
    * If you specify a model, the following models typically have the best
    * performance:
+   *
    * - phone_call (best for Agent Assist and telephony)
    * - latest_short (best for Dialogflow non-telephony)
    * - command_and_search (best for very short utterances and commands)
@@ -198,6 +203,7 @@ public interface InputAudioConfigOrBuilder
    * for more details.
    * If you specify a model, the following models typically have the best
    * performance:
+   *
    * - phone_call (best for Agent Assist and telephony)
    * - latest_short (best for Dialogflow non-telephony)
    * - command_and_search (best for very short utterances and commands)

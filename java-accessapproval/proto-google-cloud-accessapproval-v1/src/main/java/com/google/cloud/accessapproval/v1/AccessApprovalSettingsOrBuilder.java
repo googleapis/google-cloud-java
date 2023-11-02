@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface AccessApprovalSettingsOrBuilder
    *
    * <pre>
    * The resource name of the settings. Format is one of:
+   *
    *   * "projects/{project}/accessApprovalSettings"
    *   * "folders/{folder}/accessApprovalSettings"
    *   * "organizations/{organization}/accessApprovalSettings"
@@ -43,6 +44,7 @@ public interface AccessApprovalSettingsOrBuilder
    *
    * <pre>
    * The resource name of the settings. Format is one of:
+   *
    *   * "projects/{project}/accessApprovalSettings"
    *   * "folders/{folder}/accessApprovalSettings"
    *   * "organizations/{organization}/accessApprovalSettings"
@@ -127,6 +129,7 @@ public interface AccessApprovalSettingsOrBuilder
    * approval. If name refers to an organization, enrollment can be done for
    * individual services. If name refers to a folder or project, enrollment can
    * only be done on an all or nothing basis.
+   *
    * If a cloud_product is repeated in this list, the first entry will be
    * honored and all following entries will be discarded. A maximum of 10
    * enrolled services will be enforced, to be expanded as the set of supported
@@ -146,6 +149,7 @@ public interface AccessApprovalSettingsOrBuilder
    * approval. If name refers to an organization, enrollment can be done for
    * individual services. If name refers to a folder or project, enrollment can
    * only be done on an all or nothing basis.
+   *
    * If a cloud_product is repeated in this list, the first entry will be
    * honored and all following entries will be discarded. A maximum of 10
    * enrolled services will be enforced, to be expanded as the set of supported
@@ -165,6 +169,7 @@ public interface AccessApprovalSettingsOrBuilder
    * approval. If name refers to an organization, enrollment can be done for
    * individual services. If name refers to a folder or project, enrollment can
    * only be done on an all or nothing basis.
+   *
    * If a cloud_product is repeated in this list, the first entry will be
    * honored and all following entries will be discarded. A maximum of 10
    * enrolled services will be enforced, to be expanded as the set of supported
@@ -184,6 +189,7 @@ public interface AccessApprovalSettingsOrBuilder
    * approval. If name refers to an organization, enrollment can be done for
    * individual services. If name refers to a folder or project, enrollment can
    * only be done on an all or nothing basis.
+   *
    * If a cloud_product is repeated in this list, the first entry will be
    * honored and all following entries will be discarded. A maximum of 10
    * enrolled services will be enforced, to be expanded as the set of supported
@@ -204,6 +210,7 @@ public interface AccessApprovalSettingsOrBuilder
    * approval. If name refers to an organization, enrollment can be done for
    * individual services. If name refers to a folder or project, enrollment can
    * only be done on an all or nothing basis.
+   *
    * If a cloud_product is repeated in this list, the first entry will be
    * honored and all following entries will be discarded. A maximum of 10
    * enrolled services will be enforced, to be expanded as the set of supported

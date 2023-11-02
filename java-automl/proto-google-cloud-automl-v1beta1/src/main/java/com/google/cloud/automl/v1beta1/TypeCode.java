@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,6 +78,7 @@ public enum TypeCode implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Encoded as `list`, where the list elements are represented according to
+   *
    * [list_element_type][google.cloud.automl.v1beta1.DataType.list_element_type].
    * </pre>
    *
@@ -162,6 +163,7 @@ public enum TypeCode implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Encoded as `list`, where the list elements are represented according to
+   *
    * [list_element_type][google.cloud.automl.v1beta1.DataType.list_element_type].
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,17 @@ public final class AlertChartProto {
       "\n/google/monitoring/dashboard/v1/alertch"
           + "art.proto\022\036google.monitoring.dashboard.v"
           + "1\032\037google/api/field_behavior.proto\032\031goog"
-          + "le/api/resource.proto\"|\n\nAlertChart\022\021\n\004n"
-          + "ame\030\001 \001(\tB\003\340A\002:[\352AX\n%monitoring.googleap"
-          + "is.com/AlertPolicy\022/projects/{project}/a"
-          + "lertPolicies/{alert_policy}B\370\001\n\"com.goog"
-          + "le.monitoring.dashboard.v1B\017AlertChartPr"
-          + "otoP\001ZFcloud.google.com/go/monitoring/da"
-          + "shboard/apiv1/dashboardpb;dashboardpb\252\002$"
-          + "Google.Cloud.Monitoring.Dashboard.V1\312\002$G"
-          + "oogle\\Cloud\\Monitoring\\Dashboard\\V1\352\002(Go"
-          + "ogle::Cloud::Monitoring::Dashboard::V1b\006"
-          + "proto3"
+          + "le/api/resource.proto\"}\n\nAlertChart\022\022\n\004n"
+          + "ame\030\001 \001(\tB\004\342A\001\002:[\352AX\n%monitoring.googlea"
+          + "pis.com/AlertPolicy\022/projects/{project}/"
+          + "alertPolicies/{alert_policy}B\370\001\n\"com.goo"
+          + "gle.monitoring.dashboard.v1B\017AlertChartP"
+          + "rotoP\001ZFcloud.google.com/go/monitoring/d"
+          + "ashboard/apiv1/dashboardpb;dashboardpb\252\002"
+          + "$Google.Cloud.Monitoring.Dashboard.V1\312\002$"
+          + "Google\\Cloud\\Monitoring\\Dashboard\\V1\352\002(G"
+          + "oogle::Cloud::Monitoring::Dashboard::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

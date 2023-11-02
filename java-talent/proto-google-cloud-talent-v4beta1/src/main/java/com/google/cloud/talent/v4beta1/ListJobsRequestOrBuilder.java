@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ListJobsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    * is created. For example, "projects/foo".
@@ -45,6 +46,7 @@ public interface ListJobsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    * is created. For example, "projects/foo".
@@ -63,15 +65,21 @@ public interface ListJobsRequestOrBuilder
    *
    * <pre>
    * Required. The filter string specifies the jobs to be enumerated.
+   *
    * Supported operator: =, AND
+   *
    * The fields eligible for filtering are:
+   *
    * * `companyName`
    * * `requisitionId`
    * * `status` Available values: OPEN, EXPIRED, ALL. Defaults to
    * OPEN if no value is specified.
+   *
    * At least one of `companyName` and `requisitionId` must present or an
    * INVALID_ARGUMENT error is thrown.
+   *
    * Sample Query:
+   *
    * * companyName = "projects/foo/tenants/bar/companies/baz"
    * * companyName = "projects/foo/tenants/bar/companies/baz" AND
    * requisitionId = "req-1"
@@ -91,15 +99,21 @@ public interface ListJobsRequestOrBuilder
    *
    * <pre>
    * Required. The filter string specifies the jobs to be enumerated.
+   *
    * Supported operator: =, AND
+   *
    * The fields eligible for filtering are:
+   *
    * * `companyName`
    * * `requisitionId`
    * * `status` Available values: OPEN, EXPIRED, ALL. Defaults to
    * OPEN if no value is specified.
+   *
    * At least one of `companyName` and `requisitionId` must present or an
    * INVALID_ARGUMENT error is thrown.
+   *
    * Sample Query:
+   *
    * * companyName = "projects/foo/tenants/bar/companies/baz"
    * * companyName = "projects/foo/tenants/bar/companies/baz" AND
    * requisitionId = "req-1"
@@ -145,11 +159,13 @@ public interface ListJobsRequestOrBuilder
    *
    * <pre>
    * The maximum number of jobs to be returned per page of results.
+   *
    * If [job_view][google.cloud.talent.v4beta1.ListJobsRequest.job_view] is set
    * to
    * [JobView.JOB_VIEW_ID_ONLY][google.cloud.talent.v4beta1.JobView.JOB_VIEW_ID_ONLY],
    * the maximum allowed page size is 1000. Otherwise, the maximum allowed page
    * size is 100.
+   *
    * Default is 100 if empty or a number &lt; 1 is specified.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,21 +29,27 @@ public interface DocumentQueryOrBuilder
    * <pre>
    * The query string that matches against the full text of the document and
    * the searchable properties.
+   *
    * The query partially supports [Google AIP style
    * syntax](https://google.aip.dev/160). Specifically, the query supports
    * literals, logical operators, negation operators, comparison operators, and
    * functions.
+   *
    * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
    * matched against. It searches over the full text of the document and the
    * searchable properties.
+   *
    * Logical operators: "AND", "and", "OR", and "or" are binary logical
    * operators (example: "engineer OR developer").
+   *
    * Negation operators: "NOT" and "!" are negation operators (example: "NOT
    * software").
+   *
    * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
    * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
    * `~~` for string. It provides semantic search functionality by parsing,
    * stemming and doing synonyms expansion against the input query.
+   *
    * To specify a property in the query, the left hand side expression in the
    * comparison must be the property ID including the parent. The right hand
    * side must be literals. For example:
@@ -51,15 +57,19 @@ public interface DocumentQueryOrBuilder
    * "property_a" is less than 1 in project 123 and us location.
    * The literals and comparison expression can be connected in a single query
    * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+   *
    * Functions: supported functions are `LOWER([property_name])` to perform a
    * case insensitive match and `EMPTY([property_name])` to filter on the
    * existence of a key.
+   *
    * Support nested expressions connected using parenthesis and logical
    * operators. The default logical operators is `AND` if there is no operators
    * between expressions.
+   *
    * The query can be used with other filters e.g. `time_filters` and
    * `folder_name_filter`. They are connected with `AND` operator under the
    * hood.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -74,21 +84,27 @@ public interface DocumentQueryOrBuilder
    * <pre>
    * The query string that matches against the full text of the document and
    * the searchable properties.
+   *
    * The query partially supports [Google AIP style
    * syntax](https://google.aip.dev/160). Specifically, the query supports
    * literals, logical operators, negation operators, comparison operators, and
    * functions.
+   *
    * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
    * matched against. It searches over the full text of the document and the
    * searchable properties.
+   *
    * Logical operators: "AND", "and", "OR", and "or" are binary logical
    * operators (example: "engineer OR developer").
+   *
    * Negation operators: "NOT" and "!" are negation operators (example: "NOT
    * software").
+   *
    * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
    * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
    * `~~` for string. It provides semantic search functionality by parsing,
    * stemming and doing synonyms expansion against the input query.
+   *
    * To specify a property in the query, the left hand side expression in the
    * comparison must be the property ID including the parent. The right hand
    * side must be literals. For example:
@@ -96,15 +112,19 @@ public interface DocumentQueryOrBuilder
    * "property_a" is less than 1 in project 123 and us location.
    * The literals and comparison expression can be connected in a single query
    * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+   *
    * Functions: supported functions are `LOWER([property_name])` to perform a
    * case insensitive match and `EMPTY([property_name])` to filter on the
    * existence of a key.
+   *
    * Support nested expressions connected using parenthesis and logical
    * operators. The default logical operators is `AND` if there is no operators
    * between expressions.
+   *
    * The query can be used with other filters e.g. `time_filters` and
    * `folder_name_filter`. They are connected with `AND` operator under the
    * hood.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -140,16 +160,19 @@ public interface DocumentQueryOrBuilder
    * This filter specifies a structured syntax to match against the
    * [PropertyDefinition].[is_filterable][] marked as `true`. The syntax for
    * this expression is a subset of SQL syntax.
+   *
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the left
    * of the operator is a property name and the right of the operator is a
    * number or a quoted string. You must escape backslash (&#92;&#92;) and quote (&#92;")
    * characters. Supported functions are `LOWER([property_name])` to perform a
    * case insensitive match and `EMPTY([property_name])` to filter on the
    * existence of a key.
+   *
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
    * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression must
    * be &lt; 6000 bytes in length.
+   *
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
@@ -170,16 +193,19 @@ public interface DocumentQueryOrBuilder
    * This filter specifies a structured syntax to match against the
    * [PropertyDefinition].[is_filterable][] marked as `true`. The syntax for
    * this expression is a subset of SQL syntax.
+   *
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the left
    * of the operator is a property name and the right of the operator is a
    * number or a quoted string. You must escape backslash (&#92;&#92;) and quote (&#92;")
    * characters. Supported functions are `LOWER([property_name])` to perform a
    * case insensitive match and `EMPTY([property_name])` to filter on the
    * existence of a key.
+   *
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
    * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression must
    * be &lt; 6000 bytes in length.
+   *
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
@@ -258,10 +284,12 @@ public interface DocumentQueryOrBuilder
    * This filter specifies the exact document schema
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
    * schemas.
+   *
    * At most 20 document schema names are allowed.
    * </pre>
    *
@@ -277,10 +305,12 @@ public interface DocumentQueryOrBuilder
    * This filter specifies the exact document schema
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
    * schemas.
+   *
    * At most 20 document schema names are allowed.
    * </pre>
    *
@@ -296,10 +326,12 @@ public interface DocumentQueryOrBuilder
    * This filter specifies the exact document schema
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
    * schemas.
+   *
    * At most 20 document schema names are allowed.
    * </pre>
    *
@@ -316,10 +348,12 @@ public interface DocumentQueryOrBuilder
    * This filter specifies the exact document schema
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
    * schemas.
+   *
    * At most 20 document schema names are allowed.
    * </pre>
    *
@@ -401,6 +435,7 @@ public interface DocumentQueryOrBuilder
    * If FOLDER or FILE is specified, then only either folders or files will be
    * returned, respectively. If ALL is specified, both folders and files will be
    * returned.
+   *
    * If no value is specified, ALL files will be returned.
    * </pre>
    *
@@ -417,6 +452,7 @@ public interface DocumentQueryOrBuilder
    * If FOLDER or FILE is specified, then only either folders or files will be
    * returned, respectively. If ALL is specified, both folders and files will be
    * returned.
+   *
    * If no value is specified, ALL files will be returned.
    * </pre>
    *
@@ -433,6 +469,7 @@ public interface DocumentQueryOrBuilder
    * If FOLDER or FILE is specified, then only either folders or files will be
    * returned, respectively. If ALL is specified, both folders and files will be
    * returned.
+   *
    * If no value is specified, ALL files will be returned.
    * </pre>
    *
@@ -468,6 +505,65 @@ public interface DocumentQueryOrBuilder
    * @return The bytes for folderNameFilter.
    */
   com.google.protobuf.ByteString getFolderNameFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @return A list containing the documentNameFilter.
+   */
+  java.util.List<java.lang.String> getDocumentNameFilterList();
+  /**
+   *
+   *
+   * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @return The count of documentNameFilter.
+   */
+  int getDocumentNameFilterCount();
+  /**
+   *
+   *
+   * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The documentNameFilter at the given index.
+   */
+  java.lang.String getDocumentNameFilter(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the documentNameFilter at the given index.
+   */
+  com.google.protobuf.ByteString getDocumentNameFilterBytes(int index);
 
   /**
    *
@@ -549,6 +645,7 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * The exact creator(s) of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any creator. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -565,6 +662,7 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * The exact creator(s) of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any creator. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -581,6 +679,7 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * The exact creator(s) of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any creator. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -598,6 +697,7 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * The exact creator(s) of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any creator. If multiple values are specified, documents
    * within the search results may be associated with any of the specified

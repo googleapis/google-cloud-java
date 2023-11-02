@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Zone() {
-    availableCpuPlatforms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    availableCpuPlatforms_ = com.google.protobuf.LazyStringArrayList.emptyList();
     creationTimestamp_ = "";
     description_ = "";
     kind_ = "";
@@ -52,11 +52,6 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Zone();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -202,7 +197,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
   public static final int AVAILABLE_CPU_PLATFORMS_FIELD_NUMBER = 175536531;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList availableCpuPlatforms_;
+  private com.google.protobuf.LazyStringArrayList availableCpuPlatforms_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1197,8 +1193,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      availableCpuPlatforms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      availableCpuPlatforms_ = com.google.protobuf.LazyStringArrayList.emptyList();
       creationTimestamp_ = "";
       deprecated_ = null;
       if (deprecatedBuilder_ != null) {
@@ -1239,7 +1234,6 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Zone buildPartial() {
       com.google.cloud.compute.v1.Zone result = new com.google.cloud.compute.v1.Zone(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -1247,16 +1241,12 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Zone result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        availableCpuPlatforms_ = availableCpuPlatforms_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.availableCpuPlatforms_ = availableCpuPlatforms_;
-    }
-
     private void buildPartial0(com.google.cloud.compute.v1.Zone result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        availableCpuPlatforms_.makeImmutable();
+        result.availableCpuPlatforms_ = availableCpuPlatforms_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.creationTimestamp_ = creationTimestamp_;
@@ -1349,7 +1339,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       if (!other.availableCpuPlatforms_.isEmpty()) {
         if (availableCpuPlatforms_.isEmpty()) {
           availableCpuPlatforms_ = other.availableCpuPlatforms_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureAvailableCpuPlatformsIsMutable();
           availableCpuPlatforms_.addAll(other.availableCpuPlatforms_);
@@ -1512,15 +1502,15 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList availableCpuPlatforms_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList availableCpuPlatforms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAvailableCpuPlatformsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!availableCpuPlatforms_.isModifiable()) {
         availableCpuPlatforms_ =
             new com.google.protobuf.LazyStringArrayList(availableCpuPlatforms_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1534,7 +1524,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the availableCpuPlatforms.
      */
     public com.google.protobuf.ProtocolStringList getAvailableCpuPlatformsList() {
-      return availableCpuPlatforms_.getUnmodifiableView();
+      availableCpuPlatforms_.makeImmutable();
+      return availableCpuPlatforms_;
     }
     /**
      *
@@ -1599,6 +1590,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAvailableCpuPlatformsIsMutable();
       availableCpuPlatforms_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1620,6 +1612,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAvailableCpuPlatformsIsMutable();
       availableCpuPlatforms_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1638,6 +1631,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAvailableCpuPlatforms(java.lang.Iterable<java.lang.String> values) {
       ensureAvailableCpuPlatformsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, availableCpuPlatforms_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1653,8 +1647,9 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvailableCpuPlatforms() {
-      availableCpuPlatforms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      availableCpuPlatforms_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1677,6 +1672,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAvailableCpuPlatformsIsMutable();
       availableCpuPlatforms_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,6 +95,27 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
                   "Unrecognized response type %s for method RawPredict, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   HttpBody.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void serverStreamingPredict(
+      StreamingPredictRequest request, StreamObserver<StreamingPredictResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof StreamingPredictResponse) {
+      requests.add(request);
+      responseObserver.onNext(((StreamingPredictResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ServerStreamingPredict, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  StreamingPredictResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BigQueryOptions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -436,6 +431,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -450,6 +448,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -465,6 +466,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -479,6 +483,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -493,6 +500,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -511,6 +521,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Limit scanning only to these fields.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -524,6 +537,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Limit scanning only to these fields.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -538,6 +554,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Limit scanning only to these fields.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -551,6 +570,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Limit scanning only to these fields.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -564,6 +586,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Limit scanning only to these fields.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2019,6 +2044,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2036,6 +2064,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2053,6 +2084,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2070,6 +2104,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2093,6 +2130,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2114,6 +2154,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2137,6 +2180,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2160,6 +2206,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2180,6 +2229,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2201,6 +2253,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2222,6 +2277,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2242,6 +2300,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2262,6 +2323,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2275,6 +2339,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2292,6 +2359,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2310,6 +2380,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2324,6 +2397,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2338,6 +2414,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * References to fields excluded from scanning. This allows you to skip
      * inspection of entire columns which you know have no findings.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -2389,6 +2468,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2405,6 +2487,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2421,6 +2506,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2437,6 +2525,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2459,6 +2550,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2479,6 +2573,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2501,6 +2598,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2523,6 +2623,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2542,6 +2645,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2562,6 +2668,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2582,6 +2691,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2601,6 +2713,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2620,6 +2735,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2632,6 +2750,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2648,6 +2769,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2665,6 +2789,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2678,6 +2805,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -2691,6 +2821,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Limit scanning only to these fields.
+     * When inspecting a table, we recommend that you inspect all columns.
+     * Otherwise, findings might be affected because hints from excluded columns
+     * will not be used.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>

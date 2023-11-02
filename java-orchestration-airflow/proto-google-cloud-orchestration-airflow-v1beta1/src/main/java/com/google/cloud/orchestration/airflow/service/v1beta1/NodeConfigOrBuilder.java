@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ public interface NodeConfigOrBuilder
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/zones/{zoneId}".
+   *
    * This `location` must belong to the enclosing environment's project and
    * location. If both this field and `nodeConfig.machineType` are specified,
    * `nodeConfig.machineType` must belong to this `location`; if both are
@@ -40,6 +41,7 @@ public interface NodeConfigOrBuilder
    * both fields. If only one field (`location` or `nodeConfig.machineType`) is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -58,6 +60,7 @@ public interface NodeConfigOrBuilder
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/zones/{zoneId}".
+   *
    * This `location` must belong to the enclosing environment's project and
    * location. If both this field and `nodeConfig.machineType` are specified,
    * `nodeConfig.machineType` must belong to this `location`; if both are
@@ -66,6 +69,7 @@ public interface NodeConfigOrBuilder
    * both fields. If only one field (`location` or `nodeConfig.machineType`) is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -86,6 +90,7 @@ public interface NodeConfigOrBuilder
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}".
+   *
    * The `machineType` must belong to the enclosing environment's project and
    * location. If both this field and `nodeConfig.location` are specified,
    * this `machineType` must belong to the `nodeConfig.location`; if both are
@@ -94,10 +99,13 @@ public interface NodeConfigOrBuilder
    * both fields. If exactly one of this field and `nodeConfig.location` is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   *
    * The `machineTypeId` must not be a [shared-core machine
    * type](/compute/docs/machine-types#sharedcore).
+   *
    * If this field is unspecified, the `machineTypeId` defaults
    * to "n1-standard-1".
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -117,6 +125,7 @@ public interface NodeConfigOrBuilder
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}".
+   *
    * The `machineType` must belong to the enclosing environment's project and
    * location. If both this field and `nodeConfig.location` are specified,
    * this `machineType` must belong to the `nodeConfig.location`; if both are
@@ -125,10 +134,13 @@ public interface NodeConfigOrBuilder
    * both fields. If exactly one of this field and `nodeConfig.location` is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   *
    * The `machineTypeId` must not be a [shared-core machine
    * type](/compute/docs/machine-types#sharedcore).
+   *
    * If this field is unspecified, the `machineTypeId` defaults
    * to "n1-standard-1".
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -148,6 +160,7 @@ public interface NodeConfigOrBuilder
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/global/networks/{networkId}".
+   *
    * If unspecified, the default network in the environment's project is used.
    * If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets)
    * is provided, `nodeConfig.subnetwork` must also be provided. For
@@ -169,6 +182,7 @@ public interface NodeConfigOrBuilder
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/global/networks/{networkId}".
+   *
    * If unspecified, the default network in the environment's project is used.
    * If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets)
    * is provided, `nodeConfig.subnetwork` must also be provided. For
@@ -191,6 +205,7 @@ public interface NodeConfigOrBuilder
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}"
+   *
    * If a subnetwork is provided, `nodeConfig.network` must also be provided,
    * and the subnetwork must belong to the enclosing environment's project and
    * location.
@@ -210,6 +225,7 @@ public interface NodeConfigOrBuilder
    * [relative resource
    * name](/apis/design/resource_names#relative_resource_name). For example:
    * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}"
+   *
    * If a subnetwork is provided, `nodeConfig.network` must also be provided,
    * and the subnetwork must belong to the enclosing environment's project and
    * location.
@@ -227,6 +243,7 @@ public interface NodeConfigOrBuilder
    * <pre>
    * Optional. The disk size in GB used for node VMs. Minimum size is 30GB.
    * If unspecified, defaults to 100GB. Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -244,6 +261,7 @@ public interface NodeConfigOrBuilder
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -260,6 +278,7 @@ public interface NodeConfigOrBuilder
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -276,6 +295,7 @@ public interface NodeConfigOrBuilder
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -293,6 +313,7 @@ public interface NodeConfigOrBuilder
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -452,6 +473,7 @@ public interface NodeConfigOrBuilder
    * allocation]
    * (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr).
    * Cannot be updated.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -469,6 +491,7 @@ public interface NodeConfigOrBuilder
    * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
    * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
    * all destination addresses, except between pods traffic.
+   *
    * See:
    * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
    * </pre>

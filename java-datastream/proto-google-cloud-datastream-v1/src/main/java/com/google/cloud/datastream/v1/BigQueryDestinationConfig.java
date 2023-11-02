@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BigQueryDestinationConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -122,11 +117,6 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SingleTargetDataset();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -817,11 +807,6 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       return new SourceHierarchyDatasets();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datastream.v1.DatastreamResourcesProto
           .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_SourceHierarchyDatasets_descriptor;
@@ -969,11 +954,6 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new DatasetTemplate();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2808,6 +2788,8 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   }
 
   private int datasetConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object datasetConfig_;
 
   public enum DatasetConfigCase

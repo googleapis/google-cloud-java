@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,10 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Kubernetes Pods associated with the finding. This field will contain Pod
-   * records for each container that is owned by a Pod.
+   * Kubernetes
+   * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * associated with the finding. This field contains Pod records for each
+   * container that is owned by a Pod.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -38,8 +40,10 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Kubernetes Pods associated with the finding. This field will contain Pod
-   * records for each container that is owned by a Pod.
+   * Kubernetes
+   * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * associated with the finding. This field contains Pod records for each
+   * container that is owned by a Pod.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -49,8 +53,10 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Kubernetes Pods associated with the finding. This field will contain Pod
-   * records for each container that is owned by a Pod.
+   * Kubernetes
+   * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * associated with the finding. This field contains Pod records for each
+   * container that is owned by a Pod.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -60,8 +66,10 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Kubernetes Pods associated with the finding. This field will contain Pod
-   * records for each container that is owned by a Pod.
+   * Kubernetes
+   * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * associated with the finding. This field contains Pod records for each
+   * container that is owned by a Pod.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -72,8 +80,10 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Kubernetes Pods associated with the finding. This field will contain Pod
-   * records for each container that is owned by a Pod.
+   * Kubernetes
+   * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * associated with the finding. This field contains Pod records for each
+   * container that is owned by a Pod.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -84,7 +94,9 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides Kubernetes Node information.
+   * Provides Kubernetes
+   * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+   * information.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -94,7 +106,9 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides Kubernetes Node information.
+   * Provides Kubernetes
+   * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+   * information.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -104,7 +118,9 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides Kubernetes Node information.
+   * Provides Kubernetes
+   * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+   * information.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -114,7 +130,9 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides Kubernetes Node information.
+   * Provides Kubernetes
+   * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+   * information.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -125,7 +143,9 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides Kubernetes Node information.
+   * Provides Kubernetes
+   * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+   * information.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -136,8 +156,10 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * GKE Node Pools associated with the finding. This field will
-   * contain NodePool information for each Node, when it is available.
+   * GKE [node
+   * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+   * associated with the finding. This field contains node pool information for
+   * each node, when it is available.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -147,8 +169,10 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * GKE Node Pools associated with the finding. This field will
-   * contain NodePool information for each Node, when it is available.
+   * GKE [node
+   * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+   * associated with the finding. This field contains node pool information for
+   * each node, when it is available.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -158,8 +182,10 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * GKE Node Pools associated with the finding. This field will
-   * contain NodePool information for each Node, when it is available.
+   * GKE [node
+   * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+   * associated with the finding. This field contains node pool information for
+   * each node, when it is available.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -169,8 +195,10 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * GKE Node Pools associated with the finding. This field will
-   * contain NodePool information for each Node, when it is available.
+   * GKE [node
+   * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+   * associated with the finding. This field contains node pool information for
+   * each node, when it is available.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -181,8 +209,10 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * GKE Node Pools associated with the finding. This field will
-   * contain NodePool information for each Node, when it is available.
+   * GKE [node
+   * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+   * associated with the finding. This field contains node pool information for
+   * each node, when it is available.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -193,8 +223,8 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides Kubernetes role information for findings that involve
-   * Roles or ClusterRoles.
+   * Provides Kubernetes role information for findings that involve [Roles or
+   * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -204,8 +234,8 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides Kubernetes role information for findings that involve
-   * Roles or ClusterRoles.
+   * Provides Kubernetes role information for findings that involve [Roles or
+   * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -215,8 +245,8 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides Kubernetes role information for findings that involve
-   * Roles or ClusterRoles.
+   * Provides Kubernetes role information for findings that involve [Roles or
+   * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -226,8 +256,8 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides Kubernetes role information for findings that involve
-   * Roles or ClusterRoles.
+   * Provides Kubernetes role information for findings that involve [Roles or
+   * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -238,8 +268,8 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides Kubernetes role information for findings that involve
-   * Roles or ClusterRoles.
+   * Provides Kubernetes role information for findings that involve [Roles or
+   * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -251,7 +281,8 @@ public interface KubernetesOrBuilder
    *
    * <pre>
    * Provides Kubernetes role binding information for findings that involve
-   * RoleBindings or ClusterRoleBindings.
+   * [RoleBindings or
+   * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -262,7 +293,8 @@ public interface KubernetesOrBuilder
    *
    * <pre>
    * Provides Kubernetes role binding information for findings that involve
-   * RoleBindings or ClusterRoleBindings.
+   * [RoleBindings or
+   * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -273,7 +305,8 @@ public interface KubernetesOrBuilder
    *
    * <pre>
    * Provides Kubernetes role binding information for findings that involve
-   * RoleBindings or ClusterRoleBindings.
+   * [RoleBindings or
+   * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -284,7 +317,8 @@ public interface KubernetesOrBuilder
    *
    * <pre>
    * Provides Kubernetes role binding information for findings that involve
-   * RoleBindings or ClusterRoleBindings.
+   * [RoleBindings or
+   * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -296,7 +330,8 @@ public interface KubernetesOrBuilder
    *
    * <pre>
    * Provides Kubernetes role binding information for findings that involve
-   * RoleBindings or ClusterRoleBindings.
+   * [RoleBindings or
+   * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -307,8 +342,8 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides information on any Kubernetes access reviews (i.e. privilege
-   * checks) relevant to the finding.
+   * Provides information on any Kubernetes access reviews (privilege checks)
+   * relevant to the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -319,8 +354,8 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides information on any Kubernetes access reviews (i.e. privilege
-   * checks) relevant to the finding.
+   * Provides information on any Kubernetes access reviews (privilege checks)
+   * relevant to the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -331,8 +366,8 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides information on any Kubernetes access reviews (i.e. privilege
-   * checks) relevant to the finding.
+   * Provides information on any Kubernetes access reviews (privilege checks)
+   * relevant to the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -343,8 +378,8 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides information on any Kubernetes access reviews (i.e. privilege
-   * checks) relevant to the finding.
+   * Provides information on any Kubernetes access reviews (privilege checks)
+   * relevant to the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -356,8 +391,8 @@ public interface KubernetesOrBuilder
    *
    *
    * <pre>
-   * Provides information on any Kubernetes access reviews (i.e. privilege
-   * checks) relevant to the finding.
+   * Provides information on any Kubernetes access reviews (privilege checks)
+   * relevant to the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;

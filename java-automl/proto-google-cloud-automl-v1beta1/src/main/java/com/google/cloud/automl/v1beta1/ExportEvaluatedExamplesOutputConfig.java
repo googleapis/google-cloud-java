@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,16 +26,20 @@ package com.google.cloud.automl.v1beta1;
  * is available only for 30 days since the moment the model was evaluated.
  * The output depends on the domain, as follows (note that only examples from
  * the TEST set are exported):
+ *
  *  *  For Tables:
+ *
  * [bigquery_destination][google.cloud.automl.v1beta1.OutputConfig.bigquery_destination]
  *       pointing to a BigQuery project must be set. In the given project a
  *       new dataset will be created with name
+ *
  * `export_evaluated_examples_&lt;model-display-name&gt;_&lt;timestamp-of-export-call&gt;`
  *       where &lt;model-display-name&gt; will be made BigQuery-dataset-name
  *       compatible (e.g. most special characters will become underscores),
  *       and timestamp will be in YYYY_MM_DDThh_mm_ss_sssZ "based on ISO-8601"
  *       format. In the dataset an `evaluated_examples` table will be
  *       created. It will have all the same columns as the
+ *
  * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id]
  *       of the
  *       [dataset][google.cloud.automl.v1beta1.Model.dataset_id] from which
@@ -71,11 +75,6 @@ public final class ExportEvaluatedExamplesOutputConfig
     return new ExportEvaluatedExamplesOutputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Io
         .internal_static_google_cloud_automl_v1beta1_ExportEvaluatedExamplesOutputConfig_descriptor;
@@ -92,6 +91,8 @@ public final class ExportEvaluatedExamplesOutputConfig
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase
@@ -371,16 +372,20 @@ public final class ExportEvaluatedExamplesOutputConfig
    * is available only for 30 days since the moment the model was evaluated.
    * The output depends on the domain, as follows (note that only examples from
    * the TEST set are exported):
+   *
    *  *  For Tables:
+   *
    * [bigquery_destination][google.cloud.automl.v1beta1.OutputConfig.bigquery_destination]
    *       pointing to a BigQuery project must be set. In the given project a
    *       new dataset will be created with name
+   *
    * `export_evaluated_examples_&lt;model-display-name&gt;_&lt;timestamp-of-export-call&gt;`
    *       where &lt;model-display-name&gt; will be made BigQuery-dataset-name
    *       compatible (e.g. most special characters will become underscores),
    *       and timestamp will be in YYYY_MM_DDThh_mm_ss_sssZ "based on ISO-8601"
    *       format. In the dataset an `evaluated_examples` table will be
    *       created. It will have all the same columns as the
+   *
    * [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id]
    *       of the
    *       [dataset][google.cloud.automl.v1beta1.Model.dataset_id] from which

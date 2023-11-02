@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -229,6 +229,39 @@ public interface ListTransferableOffersRequestOrBuilder
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
-  public com.google.cloud.channel.v1.ListTransferableOffersRequest.TransferredCustomerIdentityCase
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Billing Account to look up Offers for. Format:
+   * accounts/{account_id}/billingAccounts/{billing_account_id}.
+   *
+   * This field is only relevant for multi-currency accounts. It should be left
+   * empty for single currency accounts.
+   * </pre>
+   *
+   * <code>string billing_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The billingAccount.
+   */
+  java.lang.String getBillingAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Billing Account to look up Offers for. Format:
+   * accounts/{account_id}/billingAccounts/{billing_account_id}.
+   *
+   * This field is only relevant for multi-currency accounts. It should be left
+   * empty for single currency accounts.
+   * </pre>
+   *
+   * <code>string billing_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for billingAccount.
+   */
+  com.google.protobuf.ByteString getBillingAccountBytes();
+
+  com.google.cloud.channel.v1.ListTransferableOffersRequest.TransferredCustomerIdentityCase
       getTransferredCustomerIdentityCase();
 }

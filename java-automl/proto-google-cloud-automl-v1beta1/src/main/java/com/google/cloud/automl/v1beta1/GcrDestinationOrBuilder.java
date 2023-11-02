@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,12 +29,14 @@ public interface GcrDestinationOrBuilder
    * <pre>
    * Required. Google Contained Registry URI of the new image, up to 2000
    * characters long. See
+   *
    * https:
    * //cloud.google.com/container-registry/do
    * // cs/pushing-and-pulling#pushing_an_image_to_a_registry
    * Accepted forms:
    * * [HOSTNAME]/[PROJECT-ID]/[IMAGE]
    * * [HOSTNAME]/[PROJECT-ID]/[IMAGE]:[TAG]
+   *
    * The requesting user must have permission to push images the project.
    * </pre>
    *
@@ -49,12 +51,14 @@ public interface GcrDestinationOrBuilder
    * <pre>
    * Required. Google Contained Registry URI of the new image, up to 2000
    * characters long. See
+   *
    * https:
    * //cloud.google.com/container-registry/do
    * // cs/pushing-and-pulling#pushing_an_image_to_a_registry
    * Accepted forms:
    * * [HOSTNAME]/[PROJECT-ID]/[IMAGE]
    * * [HOSTNAME]/[PROJECT-ID]/[IMAGE]:[TAG]
+   *
    * The requesting user must have permission to push images the project.
    * </pre>
    *

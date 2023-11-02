@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,21 +47,17 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     cidrBlock_ = "";
     networkEndpoints_ = java.util.Collections.emptyList();
     health_ = 0;
-    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     dataDisks_ = java.util.Collections.emptyList();
     apiVersion_ = 0;
     symptoms_ = java.util.Collections.emptyList();
+    queuedResource_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Node();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -166,7 +162,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TPU node is being repaired and may be unusable. Details can be
-     * found in the `help_description` field.
+     * found in the 'help_description' field.
      * </pre>
      *
      * <code>REPAIRING = 6;</code>
@@ -321,7 +317,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TPU node is being repaired and may be unusable. Details can be
-     * found in the `help_description` field.
+     * found in the 'help_description' field.
      * </pre>
      *
      * <code>REPAIRING = 6;</code>
@@ -1035,10 +1031,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The type of hardware accelerators associated with this node.
+   * Optional. The type of hardware accelerators associated with this node.
    * </pre>
    *
-   * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string accelerator_type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The acceleratorType.
    */
@@ -1058,10 +1054,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The type of hardware accelerators associated with this node.
+   * Optional. The type of hardware accelerators associated with this node.
    * </pre>
    *
-   * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string accelerator_type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for acceleratorType.
    */
@@ -1823,7 +1819,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
   public static final int TAGS_FIELD_NUMBER = 40;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tags_;
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2197,6 +2194,77 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         : acceleratorConfig_;
   }
 
+  public static final int QUEUED_RESOURCE_FIELD_NUMBER = 47;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object queuedResource_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The qualified name of the QueuedResource that requested this
+   * Node.
+   * </pre>
+   *
+   * <code>string queued_resource = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The queuedResource.
+   */
+  @java.lang.Override
+  public java.lang.String getQueuedResource() {
+    java.lang.Object ref = queuedResource_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      queuedResource_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The qualified name of the QueuedResource that requested this
+   * Node.
+   * </pre>
+   *
+   * <code>string queued_resource = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for queuedResource.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getQueuedResourceBytes() {
+    java.lang.Object ref = queuedResource_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      queuedResource_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MULTISLICE_NODE_FIELD_NUMBER = 48;
+  private boolean multisliceNode_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the Node belongs to a Multislice group.
+   * </pre>
+   *
+   * <code>bool multislice_node = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The multisliceNode.
+   */
+  @java.lang.Override
+  public boolean getMultisliceNode() {
+    return multisliceNode_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2275,6 +2343,12 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     }
     if (acceleratorConfig_ != null) {
       output.writeMessage(46, getAcceleratorConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queuedResource_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 47, queuedResource_);
+    }
+    if (multisliceNode_ != false) {
+      output.writeBool(48, multisliceNode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2373,6 +2447,12 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     if (acceleratorConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(46, getAcceleratorConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queuedResource_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47, queuedResource_);
+    }
+    if (multisliceNode_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(48, multisliceNode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2428,6 +2508,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     if (hasAcceleratorConfig()) {
       if (!getAcceleratorConfig().equals(other.getAcceleratorConfig())) return false;
     }
+    if (!getQueuedResource().equals(other.getQueuedResource())) return false;
+    if (getMultisliceNode() != other.getMultisliceNode()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2507,6 +2589,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ACCELERATOR_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAcceleratorConfig().hashCode();
     }
+    hash = (37 * hash) + QUEUED_RESOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + getQueuedResource().hashCode();
+    hash = (37 * hash) + MULTISLICE_NODE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultisliceNode());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2705,8 +2791,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       health_ = 0;
       internalGetMutableLabels().clear();
       internalGetMutableMetadata().clear();
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00008000);
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       id_ = 0L;
       if (dataDisksBuilder_ == null) {
         dataDisks_ = java.util.Collections.emptyList();
@@ -2733,6 +2818,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         acceleratorConfigBuilder_.dispose();
         acceleratorConfigBuilder_ = null;
       }
+      queuedResource_ = "";
+      multisliceNode_ = false;
       return this;
     }
 
@@ -2777,11 +2864,6 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.networkEndpoints_ = networkEndpointsBuilder_.build();
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00008000);
-      }
-      result.tags_ = tags_;
       if (dataDisksBuilder_ == null) {
         if (((bitField0_ & 0x00020000) != 0)) {
           dataDisks_ = java.util.Collections.unmodifiableList(dataDisks_);
@@ -2851,6 +2933,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
+      }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.id_ = id_;
       }
@@ -2868,6 +2954,12 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             acceleratorConfigBuilder_ == null
                 ? acceleratorConfig_
                 : acceleratorConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.queuedResource_ = queuedResource_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.multisliceNode_ = multisliceNode_;
       }
     }
 
@@ -2998,7 +3090,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ |= 0x00008000;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -3070,6 +3162,14 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAcceleratorConfig()) {
         mergeAcceleratorConfig(other.getAcceleratorConfig());
+      }
+      if (!other.getQueuedResource().isEmpty()) {
+        queuedResource_ = other.queuedResource_;
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      if (other.getMultisliceNode() != false) {
+        setMultisliceNode(other.getMultisliceNode());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3265,6 +3365,18 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00200000;
                 break;
               } // case 370
+            case 378:
+              {
+                queuedResource_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 378
+            case 384:
+              {
+                multisliceNode_ = input.readBool();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 384
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3511,10 +3623,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of hardware accelerators associated with this node.
+     * Optional. The type of hardware accelerators associated with this node.
      * </pre>
      *
-     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The acceleratorType.
      */
@@ -3533,10 +3645,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of hardware accelerators associated with this node.
+     * Optional. The type of hardware accelerators associated with this node.
      * </pre>
      *
-     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for acceleratorType.
      */
@@ -3555,10 +3667,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of hardware accelerators associated with this node.
+     * Optional. The type of hardware accelerators associated with this node.
      * </pre>
      *
-     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The acceleratorType to set.
      * @return This builder for chaining.
@@ -3576,10 +3688,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of hardware accelerators associated with this node.
+     * Optional. The type of hardware accelerators associated with this node.
      * </pre>
      *
-     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3593,10 +3705,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of hardware accelerators associated with this node.
+     * Optional. The type of hardware accelerators associated with this node.
      * </pre>
      *
-     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for acceleratorType to set.
      * @return This builder for chaining.
@@ -5677,14 +5789,14 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00008000;
       }
+      bitField0_ |= 0x00008000;
     }
     /**
      *
@@ -5699,7 +5811,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      return tags_.getUnmodifiableView();
+      tags_.makeImmutable();
+      return tags_;
     }
     /**
      *
@@ -5768,6 +5881,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5790,6 +5904,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5809,6 +5924,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5825,8 +5941,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00008000);
+      ;
       onChanged();
       return this;
     }
@@ -5850,6 +5967,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7108,6 +7226,170 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         acceleratorConfig_ = null;
       }
       return acceleratorConfigBuilder_;
+    }
+
+    private java.lang.Object queuedResource_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The qualified name of the QueuedResource that requested this
+     * Node.
+     * </pre>
+     *
+     * <code>string queued_resource = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The queuedResource.
+     */
+    public java.lang.String getQueuedResource() {
+      java.lang.Object ref = queuedResource_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queuedResource_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The qualified name of the QueuedResource that requested this
+     * Node.
+     * </pre>
+     *
+     * <code>string queued_resource = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for queuedResource.
+     */
+    public com.google.protobuf.ByteString getQueuedResourceBytes() {
+      java.lang.Object ref = queuedResource_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        queuedResource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The qualified name of the QueuedResource that requested this
+     * Node.
+     * </pre>
+     *
+     * <code>string queued_resource = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The queuedResource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueuedResource(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      queuedResource_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The qualified name of the QueuedResource that requested this
+     * Node.
+     * </pre>
+     *
+     * <code>string queued_resource = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQueuedResource() {
+      queuedResource_ = getDefaultInstance().getQueuedResource();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The qualified name of the QueuedResource that requested this
+     * Node.
+     * </pre>
+     *
+     * <code>string queued_resource = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for queuedResource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueuedResourceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      queuedResource_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    private boolean multisliceNode_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the Node belongs to a Multislice group.
+     * </pre>
+     *
+     * <code>bool multislice_node = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The multisliceNode.
+     */
+    @java.lang.Override
+    public boolean getMultisliceNode() {
+      return multisliceNode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the Node belongs to a Multislice group.
+     * </pre>
+     *
+     * <code>bool multislice_node = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The multisliceNode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMultisliceNode(boolean value) {
+
+      multisliceNode_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the Node belongs to a Multislice group.
+     * </pre>
+     *
+     * <code>bool multislice_node = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMultisliceNode() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      multisliceNode_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

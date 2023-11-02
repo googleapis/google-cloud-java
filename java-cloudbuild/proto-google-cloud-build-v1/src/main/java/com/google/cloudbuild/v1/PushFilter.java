@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
     return new PushFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_PushFilter_descriptor;
@@ -66,6 +61,8 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int gitRefCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object gitRef_;
 
   public enum GitRefCase
@@ -118,6 +115,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regexes matching branches to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -134,6 +132,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regexes matching branches to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -163,6 +162,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regexes matching branches to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -194,6 +194,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regexes matching tags to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -210,6 +211,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regexes matching tags to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -239,6 +241,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Regexes matching tags to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -715,6 +718,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -732,6 +736,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -762,6 +767,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -792,6 +798,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -815,6 +822,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -836,6 +844,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching branches to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -861,6 +870,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -878,6 +888,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -908,6 +919,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -938,6 +950,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -961,6 +974,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -982,6 +996,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Regexes matching tags to build.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>

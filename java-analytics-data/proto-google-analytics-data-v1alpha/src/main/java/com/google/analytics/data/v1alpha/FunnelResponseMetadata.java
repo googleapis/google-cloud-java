@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
     return new FunnelResponseMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_FunnelResponseMetadata_descriptor;
@@ -82,6 +77,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
    * `samplingMetadatas` is populated for each date range. Each
    * `samplingMetadatas` corresponds to a date range in order that date ranges
    * were specified in the request.
+   *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
    *
@@ -102,6 +98,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
    * `samplingMetadatas` is populated for each date range. Each
    * `samplingMetadatas` corresponds to a date range in order that date ranges
    * were specified in the request.
+   *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
    *
@@ -122,6 +119,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
    * `samplingMetadatas` is populated for each date range. Each
    * `samplingMetadatas` corresponds to a date range in order that date ranges
    * were specified in the request.
+   *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
    *
@@ -141,6 +139,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
    * `samplingMetadatas` is populated for each date range. Each
    * `samplingMetadatas` corresponds to a date range in order that date ranges
    * were specified in the request.
+   *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
    *
@@ -160,6 +159,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
    * `samplingMetadatas` is populated for each date range. Each
    * `samplingMetadatas` corresponds to a date range in order that date ranges
    * were specified in the request.
+   *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
    *
@@ -593,6 +593,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -616,6 +617,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -638,6 +640,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -660,6 +663,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -689,6 +693,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -715,6 +720,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -743,6 +749,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -772,6 +779,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -798,6 +806,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -824,6 +833,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -850,6 +860,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -875,6 +886,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -900,6 +912,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -919,6 +932,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -942,6 +956,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -965,6 +980,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -985,6 +1001,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *
@@ -1006,6 +1023,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * `samplingMetadatas` is populated for each date range. Each
      * `samplingMetadatas` corresponds to a date range in order that date ranges
      * were specified in the request.
+     *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
      *

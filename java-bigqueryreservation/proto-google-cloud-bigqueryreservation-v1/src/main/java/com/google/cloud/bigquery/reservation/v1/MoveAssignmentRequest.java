@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,10 @@ package com.google.cloud.bigquery.reservation.v1;
  * <pre>
  * The request for
  * [ReservationService.MoveAssignment][google.cloud.bigquery.reservation.v1.ReservationService.MoveAssignment].
+ *
  * **Note**: "bigquery.reservationAssignments.create" permission is required on
  * the destination_id.
+ *
  * **Note**: "bigquery.reservationAssignments.create" and
  * "bigquery.reservationAssignments.delete" permission are required on the
  * related assignee.
@@ -53,11 +55,6 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MoveAssignmentRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -197,6 +194,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The optional assignment ID. A new assignment name is generated if this
    * field is empty.
+   *
    * This field can contain only lowercase alphanumeric characters or dashes.
    * Max length is 64 characters.
    * </pre>
@@ -223,6 +221,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The optional assignment ID. A new assignment name is generated if this
    * field is empty.
+   *
    * This field can contain only lowercase alphanumeric characters or dashes.
    * Max length is 64 characters.
    * </pre>
@@ -428,8 +427,10 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The request for
    * [ReservationService.MoveAssignment][google.cloud.bigquery.reservation.v1.ReservationService.MoveAssignment].
+   *
    * **Note**: "bigquery.reservationAssignments.create" permission is required on
    * the destination_id.
+   *
    * **Note**: "bigquery.reservationAssignments.create" and
    * "bigquery.reservationAssignments.delete" permission are required on the
    * related assignee.
@@ -888,6 +889,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The optional assignment ID. A new assignment name is generated if this
      * field is empty.
+     *
      * This field can contain only lowercase alphanumeric characters or dashes.
      * Max length is 64 characters.
      * </pre>
@@ -913,6 +915,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The optional assignment ID. A new assignment name is generated if this
      * field is empty.
+     *
      * This field can contain only lowercase alphanumeric characters or dashes.
      * Max length is 64 characters.
      * </pre>
@@ -938,6 +941,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The optional assignment ID. A new assignment name is generated if this
      * field is empty.
+     *
      * This field can contain only lowercase alphanumeric characters or dashes.
      * Max length is 64 characters.
      * </pre>
@@ -962,6 +966,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The optional assignment ID. A new assignment name is generated if this
      * field is empty.
+     *
      * This field can contain only lowercase alphanumeric characters or dashes.
      * Max length is 64 characters.
      * </pre>
@@ -982,6 +987,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The optional assignment ID. A new assignment name is generated if this
      * field is empty.
+     *
      * This field can contain only lowercase alphanumeric characters or dashes.
      * Max length is 64 characters.
      * </pre>

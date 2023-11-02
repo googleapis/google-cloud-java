@@ -51,11 +51,6 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     return new ImageOccurrence();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Image.internal_static_grafeas_v1_ImageOccurrence_descriptor;
   }

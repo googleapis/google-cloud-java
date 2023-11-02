@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface GetIntentRequestOrBuilder
    * <pre>
    * Required. The name of the intent.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
@@ -46,6 +47,7 @@ public interface GetIntentRequestOrBuilder
    * <pre>
    * Required. The name of the intent.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>

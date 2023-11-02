@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeletePublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.GetPublicAdvertisedPrefixeRequest;
@@ -385,6 +386,15 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
         HttpJsonCallSettings.<DeletePublicAdvertisedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add(
+                      "public_advertised_prefix",
+                      String.valueOf(request.getPublicAdvertisedPrefix()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>
         getTransportSettings =
@@ -392,11 +402,26 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                 .<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "public_advertised_prefix",
+                          String.valueOf(request.getPublicAdvertisedPrefix()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertPublicAdvertisedPrefixeRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertPublicAdvertisedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>
         listTransportSettings =
@@ -404,11 +429,26 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                 .<ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchPublicAdvertisedPrefixeRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchPublicAdvertisedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add(
+                      "public_advertised_prefix",
+                      String.valueOf(request.getPublicAdvertisedPrefix()));
+                  return builder.build();
+                })
             .build();
 
     this.deleteCallable =

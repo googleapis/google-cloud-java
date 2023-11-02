@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ProductOrBuilder
    * <pre>
    * Output only. The resource name of the target product, in the format of
    * `products/[a-z][-a-z0-9]*[a-z0-9]'.
+   *
    * A unique identifier for the product under a catalog.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface ProductOrBuilder
    * <pre>
    * Output only. The resource name of the target product, in the format of
    * `products/[a-z][-a-z0-9]*[a-z0-9]'.
+   *
    * A unique identifier for the product under a catalog.
    * </pre>
    *
@@ -57,6 +59,7 @@ public interface ProductOrBuilder
    *
    * <pre>
    * Output only. The type of the product asset. It can be one of the following values:
+   *
    * * `google.deploymentmanager.Template`
    * * `google.cloudprivatecatalog.ListingOnly`
    * * `google.cloudprivatecatalog.Terraform`
@@ -72,6 +75,7 @@ public interface ProductOrBuilder
    *
    * <pre>
    * Output only. The type of the product asset. It can be one of the following values:
+   *
    * * `google.deploymentmanager.Template`
    * * `google.cloudprivatecatalog.ListingOnly`
    * * `google.cloudprivatecatalog.Terraform`
@@ -91,6 +95,7 @@ public interface ProductOrBuilder
    * metadata differs by [Product.asset_type][google.cloud.privatecatalog.v1beta1.Product.asset_type].
    * When the type is `google.deploymentmanager.Template`, the schema is as
    * follows:
+   *
    * ```
    * "$schema": http://json-schema.org/draft-04/schema#
    * type: object
@@ -136,9 +141,12 @@ public interface ProductOrBuilder
    * - name
    * - description
    * additionalProperties: false
+   *
    * ```
+   *
    * When the asset type is `google.cloudprivatecatalog.ListingOnly`, the schema
    * is as follows:
+   *
    * ```
    * "$schema": http://json-schema.org/draft-04/schema#
    * type: object
@@ -189,9 +197,12 @@ public interface ProductOrBuilder
    * - description
    * - signup_url
    * additionalProperties: false
+   *
    * ```
+   *
    * When the asset type is `google.cloudprivatecatalog.Terraform`, the schema
    * is as follows:
+   *
    * ```
    * "$schema": http://json-schema.org/draft-04/schema#
    * type: object
@@ -254,6 +265,7 @@ public interface ProductOrBuilder
    * metadata differs by [Product.asset_type][google.cloud.privatecatalog.v1beta1.Product.asset_type].
    * When the type is `google.deploymentmanager.Template`, the schema is as
    * follows:
+   *
    * ```
    * "$schema": http://json-schema.org/draft-04/schema#
    * type: object
@@ -299,9 +311,12 @@ public interface ProductOrBuilder
    * - name
    * - description
    * additionalProperties: false
+   *
    * ```
+   *
    * When the asset type is `google.cloudprivatecatalog.ListingOnly`, the schema
    * is as follows:
+   *
    * ```
    * "$schema": http://json-schema.org/draft-04/schema#
    * type: object
@@ -352,9 +367,12 @@ public interface ProductOrBuilder
    * - description
    * - signup_url
    * additionalProperties: false
+   *
    * ```
+   *
    * When the asset type is `google.cloudprivatecatalog.Terraform`, the schema
    * is as follows:
+   *
    * ```
    * "$schema": http://json-schema.org/draft-04/schema#
    * type: object
@@ -417,6 +435,7 @@ public interface ProductOrBuilder
    * metadata differs by [Product.asset_type][google.cloud.privatecatalog.v1beta1.Product.asset_type].
    * When the type is `google.deploymentmanager.Template`, the schema is as
    * follows:
+   *
    * ```
    * "$schema": http://json-schema.org/draft-04/schema#
    * type: object
@@ -462,9 +481,12 @@ public interface ProductOrBuilder
    * - name
    * - description
    * additionalProperties: false
+   *
    * ```
+   *
    * When the asset type is `google.cloudprivatecatalog.ListingOnly`, the schema
    * is as follows:
+   *
    * ```
    * "$schema": http://json-schema.org/draft-04/schema#
    * type: object
@@ -515,9 +537,12 @@ public interface ProductOrBuilder
    * - description
    * - signup_url
    * additionalProperties: false
+   *
    * ```
+   *
    * When the asset type is `google.cloudprivatecatalog.Terraform`, the schema
    * is as follows:
+   *
    * ```
    * "$schema": http://json-schema.org/draft-04/schema#
    * type: object

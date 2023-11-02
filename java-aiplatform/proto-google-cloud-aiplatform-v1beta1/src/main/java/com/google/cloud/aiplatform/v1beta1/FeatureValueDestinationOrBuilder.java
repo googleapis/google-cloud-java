@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,8 +76,10 @@ public interface FeatureValueDestinationOrBuilder
    *
    * <pre>
    * Output in TFRecord format.
+   *
    * Below are the mapping from Feature value type
    * in Featurestore to Feature value type in TFRecord:
+   *
    *     Value type in Featurestore                 | Value type in TFRecord
    *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
    *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -96,8 +98,10 @@ public interface FeatureValueDestinationOrBuilder
    *
    * <pre>
    * Output in TFRecord format.
+   *
    * Below are the mapping from Feature value type
    * in Featurestore to Feature value type in TFRecord:
+   *
    *     Value type in Featurestore                 | Value type in TFRecord
    *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
    *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -116,8 +120,10 @@ public interface FeatureValueDestinationOrBuilder
    *
    * <pre>
    * Output in TFRecord format.
+   *
    * Below are the mapping from Feature value type
    * in Featurestore to Feature value type in TFRecord:
+   *
    *     Value type in Featurestore                 | Value type in TFRecord
    *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
    *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -169,6 +175,5 @@ public interface FeatureValueDestinationOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.CsvDestinationOrBuilder getCsvDestinationOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.FeatureValueDestination.DestinationCase
-      getDestinationCase();
+  com.google.cloud.aiplatform.v1beta1.FeatureValueDestination.DestinationCase getDestinationCase();
 }

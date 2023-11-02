@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public final class GatewayServiceGrpc {
 
   private GatewayServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.gkeconnect.gateway.v1beta1.GatewayService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -762,9 +762,9 @@ public final class GatewayServiceGrpc {
   private static final class GatewayServiceMethodDescriptorSupplier
       extends GatewayServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    GatewayServiceMethodDescriptorSupplier(String methodName) {
+    GatewayServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

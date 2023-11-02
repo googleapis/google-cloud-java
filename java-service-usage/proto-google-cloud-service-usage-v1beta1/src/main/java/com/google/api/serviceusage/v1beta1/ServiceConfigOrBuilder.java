@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ServiceConfigOrBuilder
    *
    * <pre>
    * The DNS address at which this service is available.
+   *
    * An example DNS address would be:
    * `calendar.googleapis.com`.
    * </pre>
@@ -42,6 +43,7 @@ public interface ServiceConfigOrBuilder
    *
    * <pre>
    * The DNS address at which this service is available.
+   *
    * An example DNS address would be:
    * `calendar.googleapis.com`.
    * </pre>
@@ -337,7 +339,8 @@ public interface ServiceConfigOrBuilder
    *
    * <pre>
    * Defines the monitored resources used by this service. This is required
-   * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+   * by the [Service.monitoring][google.api.Service.monitoring] and
+   * [Service.logging][google.api.Service.logging] configurations.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -348,7 +351,8 @@ public interface ServiceConfigOrBuilder
    *
    * <pre>
    * Defines the monitored resources used by this service. This is required
-   * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+   * by the [Service.monitoring][google.api.Service.monitoring] and
+   * [Service.logging][google.api.Service.logging] configurations.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -359,7 +363,8 @@ public interface ServiceConfigOrBuilder
    *
    * <pre>
    * Defines the monitored resources used by this service. This is required
-   * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+   * by the [Service.monitoring][google.api.Service.monitoring] and
+   * [Service.logging][google.api.Service.logging] configurations.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -370,7 +375,8 @@ public interface ServiceConfigOrBuilder
    *
    * <pre>
    * Defines the monitored resources used by this service. This is required
-   * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+   * by the [Service.monitoring][google.api.Service.monitoring] and
+   * [Service.logging][google.api.Service.logging] configurations.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -382,7 +388,8 @@ public interface ServiceConfigOrBuilder
    *
    * <pre>
    * Defines the monitored resources used by this service. This is required
-   * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+   * by the [Service.monitoring][google.api.Service.monitoring] and
+   * [Service.logging][google.api.Service.logging] configurations.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>

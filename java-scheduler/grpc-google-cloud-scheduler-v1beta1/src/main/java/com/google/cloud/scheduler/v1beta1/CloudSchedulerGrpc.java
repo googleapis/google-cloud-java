@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,8 @@ public final class CloudSchedulerGrpc {
 
   private CloudSchedulerGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.scheduler.v1beta1.CloudScheduler";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.scheduler.v1beta1.CloudScheduler";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1229,9 +1230,9 @@ public final class CloudSchedulerGrpc {
   private static final class CloudSchedulerMethodDescriptorSupplier
       extends CloudSchedulerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudSchedulerMethodDescriptorSupplier(String methodName) {
+    CloudSchedulerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

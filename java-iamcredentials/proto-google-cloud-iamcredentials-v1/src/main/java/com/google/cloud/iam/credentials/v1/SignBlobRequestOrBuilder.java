@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,7 @@ public interface SignBlobRequestOrBuilder
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.
@@ -88,6 +89,7 @@ public interface SignBlobRequestOrBuilder
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.
@@ -108,6 +110,7 @@ public interface SignBlobRequestOrBuilder
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.
@@ -129,6 +132,7 @@ public interface SignBlobRequestOrBuilder
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.

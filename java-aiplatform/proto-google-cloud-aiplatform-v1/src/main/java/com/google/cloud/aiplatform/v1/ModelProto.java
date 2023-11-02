@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,10 @@ public final class ModelProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_Model_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_LargeModelReference_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_LargeModelReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_PredictSchemata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_PredictSchemata_fieldAccessorTable;
@@ -77,80 +81,84 @@ public final class ModelProto {
           + "cloud/aiplatform/v1/env_var.proto\032,googl"
           + "e/cloud/aiplatform/v1/explanation.proto\032"
           + "\034google/protobuf/struct.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\"\232\020\n\005Model\022\014\n\004name"
-          + "\030\001 \001(\t\022\032\n\nversion_id\030\034 \001(\tB\006\340A\005\340A\003\022\027\n\017ve"
-          + "rsion_aliases\030\035 \003(\t\022<\n\023version_create_ti"
-          + "me\030\037 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\022<\n\023version_update_time\030  \001(\0132\032.google."
-          + "protobuf.TimestampB\003\340A\003\022\031\n\014display_name\030"
-          + "\002 \001(\tB\003\340A\002\022\023\n\013description\030\003 \001(\t\022\033\n\023versi"
-          + "on_description\030\036 \001(\t\022E\n\020predict_schemata"
-          + "\030\004 \001(\0132+.google.cloud.aiplatform.v1.Pred"
-          + "ictSchemata\022 \n\023metadata_schema_uri\030\005 \001(\t"
-          + "B\003\340A\005\022-\n\010metadata\030\006 \001(\0132\026.google.protobu"
-          + "f.ValueB\003\340A\005\022U\n\030supported_export_formats"
-          + "\030\024 \003(\0132..google.cloud.aiplatform.v1.Mode"
-          + "l.ExportFormatB\003\340A\003\022M\n\021training_pipeline"
-          + "\030\007 \001(\tB2\340A\003\372A,\n*aiplatform.googleapis.co"
-          + "m/TrainingPipeline\022K\n\016container_spec\030\t \001"
-          + "(\0132..google.cloud.aiplatform.v1.ModelCon"
-          + "tainerSpecB\003\340A\004\022\031\n\014artifact_uri\030\032 \001(\tB\003\340"
-          + "A\005\022l\n$supported_deployment_resources_typ"
-          + "es\030\n \003(\01629.google.cloud.aiplatform.v1.Mo"
-          + "del.DeploymentResourcesTypeB\003\340A\003\022,\n\037supp"
-          + "orted_input_storage_formats\030\013 \003(\tB\003\340A\003\022-"
+          + "otobuf/timestamp.proto\"\364\020\n\005Model\022\014\n\004name"
+          + "\030\001 \001(\t\022\031\n\nversion_id\030\034 \001(\tB\005\342A\002\005\003\022\027\n\017ver"
+          + "sion_aliases\030\035 \003(\t\022=\n\023version_create_tim"
+          + "e\030\037 \001(\0132\032.google.protobuf.TimestampB\004\342A\001"
+          + "\003\022=\n\023version_update_time\030  \001(\0132\032.google."
+          + "protobuf.TimestampB\004\342A\001\003\022\032\n\014display_name"
+          + "\030\002 \001(\tB\004\342A\001\002\022\023\n\013description\030\003 \001(\t\022\033\n\023ver"
+          + "sion_description\030\036 \001(\t\022E\n\020predict_schema"
+          + "ta\030\004 \001(\0132+.google.cloud.aiplatform.v1.Pr"
+          + "edictSchemata\022!\n\023metadata_schema_uri\030\005 \001"
+          + "(\tB\004\342A\001\005\022.\n\010metadata\030\006 \001(\0132\026.google.prot"
+          + "obuf.ValueB\004\342A\001\005\022V\n\030supported_export_for"
+          + "mats\030\024 \003(\0132..google.cloud.aiplatform.v1."
+          + "Model.ExportFormatB\004\342A\001\003\022N\n\021training_pip"
+          + "eline\030\007 \001(\tB3\342A\001\003\372A,\n*aiplatform.googlea"
+          + "pis.com/TrainingPipeline\022D\n\014pipeline_job"
+          + "\030/ \001(\tB.\342A\001\001\372A\'\n%aiplatform.googleapis.c"
+          + "om/PipelineJob\022L\n\016container_spec\030\t \001(\0132."
+          + ".google.cloud.aiplatform.v1.ModelContain"
+          + "erSpecB\004\342A\001\004\022\032\n\014artifact_uri\030\032 \001(\tB\004\342A\001\005"
+          + "\022m\n$supported_deployment_resources_types"
+          + "\030\n \003(\01629.google.cloud.aiplatform.v1.Mode"
+          + "l.DeploymentResourcesTypeB\004\342A\001\003\022-\n\037suppo"
+          + "rted_input_storage_formats\030\013 \003(\tB\004\342A\001\003\022."
           + "\n supported_output_storage_formats\030\014 \003(\t"
-          + "B\003\340A\003\0224\n\013create_time\030\r \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\0224\n\013update_time\030\016 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\022J\n\017dep"
-          + "loyed_models\030\017 \003(\0132,.google.cloud.aiplat"
-          + "form.v1.DeployedModelRefB\003\340A\003\022E\n\020explana"
-          + "tion_spec\030\027 \001(\0132+.google.cloud.aiplatfor"
-          + "m.v1.ExplanationSpec\022\014\n\004etag\030\020 \001(\t\022=\n\006la"
-          + "bels\030\021 \003(\0132-.google.cloud.aiplatform.v1."
-          + "Model.LabelsEntry\022C\n\017encryption_spec\030\030 \001"
-          + "(\0132*.google.cloud.aiplatform.v1.Encrypti"
-          + "onSpec\022K\n\021model_source_info\030& \001(\0132+.goog"
-          + "le.cloud.aiplatform.v1.ModelSourceInfoB\003"
-          + "\340A\003\022U\n\023original_model_info\030\" \001(\01323.googl"
-          + "e.cloud.aiplatform.v1.Model.OriginalMode"
-          + "lInfoB\003\340A\003\022\036\n\021metadata_artifact\030, \001(\tB\003\340"
-          + "A\003\032\325\001\n\014ExportFormat\022\017\n\002id\030\001 \001(\tB\003\340A\003\022b\n\023"
-          + "exportable_contents\030\002 \003(\0162@.google.cloud"
-          + ".aiplatform.v1.Model.ExportFormat.Export"
-          + "ableContentB\003\340A\003\"P\n\021ExportableContent\022\"\n"
-          + "\036EXPORTABLE_CONTENT_UNSPECIFIED\020\000\022\014\n\010ART"
-          + "IFACT\020\001\022\t\n\005IMAGE\020\002\032K\n\021OriginalModelInfo\022"
-          + "6\n\005model\030\001 \001(\tB\'\340A\003\372A!\n\037aiplatform.googl"
-          + "eapis.com/Model\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\214\001\n\027DeploymentRes"
-          + "ourcesType\022)\n%DEPLOYMENT_RESOURCES_TYPE_"
-          + "UNSPECIFIED\020\000\022\027\n\023DEDICATED_RESOURCES\020\001\022\027"
-          + "\n\023AUTOMATIC_RESOURCES\020\002\022\024\n\020SHARED_RESOUR"
-          + "CES\020\003:\\\352AY\n\037aiplatform.googleapis.com/Mo"
-          + "del\0226projects/{project}/locations/{locat"
-          + "ion}/models/{model}\"{\n\017PredictSchemata\022 "
-          + "\n\023instance_schema_uri\030\001 \001(\tB\003\340A\005\022\"\n\025para"
-          + "meters_schema_uri\030\002 \001(\tB\003\340A\005\022\"\n\025predicti"
-          + "on_schema_uri\030\003 \001(\tB\003\340A\005\"\373\001\n\022ModelContai"
-          + "nerSpec\022\031\n\timage_uri\030\001 \001(\tB\006\340A\002\340A\005\022\024\n\007co"
-          + "mmand\030\002 \003(\tB\003\340A\005\022\021\n\004args\030\003 \003(\tB\003\340A\005\0224\n\003e"
-          + "nv\030\004 \003(\0132\".google.cloud.aiplatform.v1.En"
-          + "vVarB\003\340A\005\0224\n\005ports\030\005 \003(\0132 .google.cloud."
-          + "aiplatform.v1.PortB\003\340A\005\022\032\n\rpredict_route"
-          + "\030\006 \001(\tB\003\340A\005\022\031\n\014health_route\030\007 \001(\tB\003\340A\005\"\036"
-          + "\n\004Port\022\026\n\016container_port\030\003 \001(\005\"\346\001\n\017Model"
-          + "SourceInfo\022P\n\013source_type\030\001 \001(\0162;.google"
-          + ".cloud.aiplatform.v1.ModelSourceInfo.Mod"
-          + "elSourceType\022\014\n\004copy\030\002 \001(\010\"s\n\017ModelSourc"
-          + "eType\022!\n\035MODEL_SOURCE_TYPE_UNSPECIFIED\020\000"
-          + "\022\n\n\006AUTOML\020\001\022\n\n\006CUSTOM\020\002\022\010\n\004BQML\020\003\022\020\n\014MO"
-          + "DEL_GARDEN\020\004\022\t\n\005GENIE\020\005B\310\001\n\036com.google.c"
-          + "loud.aiplatform.v1B\nModelProtoP\001Z>cloud."
-          + "google.com/go/aiplatform/apiv1/aiplatfor"
-          + "mpb;aiplatformpb\252\002\032Google.Cloud.AIPlatfo"
-          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goo"
-          + "gle::Cloud::AIPlatform::V1b\006proto3"
+          + "B\004\342A\001\003\0225\n\013create_time\030\r \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\004\342A\001\003\0225\n\013update_time\030\016 \001"
+          + "(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022K\n\017"
+          + "deployed_models\030\017 \003(\0132,.google.cloud.aip"
+          + "latform.v1.DeployedModelRefB\004\342A\001\003\022E\n\020exp"
+          + "lanation_spec\030\027 \001(\0132+.google.cloud.aipla"
+          + "tform.v1.ExplanationSpec\022\014\n\004etag\030\020 \001(\t\022="
+          + "\n\006labels\030\021 \003(\0132-.google.cloud.aiplatform"
+          + ".v1.Model.LabelsEntry\022C\n\017encryption_spec"
+          + "\030\030 \001(\0132*.google.cloud.aiplatform.v1.Encr"
+          + "yptionSpec\022L\n\021model_source_info\030& \001(\0132+."
+          + "google.cloud.aiplatform.v1.ModelSourceIn"
+          + "foB\004\342A\001\003\022V\n\023original_model_info\030\" \001(\01323."
+          + "google.cloud.aiplatform.v1.Model.Origina"
+          + "lModelInfoB\004\342A\001\003\022\037\n\021metadata_artifact\030, "
+          + "\001(\tB\004\342A\001\003\032\327\001\n\014ExportFormat\022\020\n\002id\030\001 \001(\tB\004"
+          + "\342A\001\003\022c\n\023exportable_contents\030\002 \003(\0162@.goog"
+          + "le.cloud.aiplatform.v1.Model.ExportForma"
+          + "t.ExportableContentB\004\342A\001\003\"P\n\021ExportableC"
+          + "ontent\022\"\n\036EXPORTABLE_CONTENT_UNSPECIFIED"
+          + "\020\000\022\014\n\010ARTIFACT\020\001\022\t\n\005IMAGE\020\002\032L\n\021OriginalM"
+          + "odelInfo\0227\n\005model\030\001 \001(\tB(\342A\001\003\372A!\n\037aiplat"
+          + "form.googleapis.com/Model\032-\n\013LabelsEntry"
+          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\214\001\n\027Dep"
+          + "loymentResourcesType\022)\n%DEPLOYMENT_RESOU"
+          + "RCES_TYPE_UNSPECIFIED\020\000\022\027\n\023DEDICATED_RES"
+          + "OURCES\020\001\022\027\n\023AUTOMATIC_RESOURCES\020\002\022\024\n\020SHA"
+          + "RED_RESOURCES\020\003:\\\352AY\n\037aiplatform.googlea"
+          + "pis.com/Model\0226projects/{project}/locati"
+          + "ons/{location}/models/{model}\")\n\023LargeMo"
+          + "delReference\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\"~\n\017Pred"
+          + "ictSchemata\022!\n\023instance_schema_uri\030\001 \001(\t"
+          + "B\004\342A\001\005\022#\n\025parameters_schema_uri\030\002 \001(\tB\004\342"
+          + "A\001\005\022#\n\025prediction_schema_uri\030\003 \001(\tB\004\342A\001\005"
+          + "\"\200\002\n\022ModelContainerSpec\022\030\n\timage_uri\030\001 \001"
+          + "(\tB\005\342A\002\002\005\022\025\n\007command\030\002 \003(\tB\004\342A\001\005\022\022\n\004args"
+          + "\030\003 \003(\tB\004\342A\001\005\0225\n\003env\030\004 \003(\0132\".google.cloud"
+          + ".aiplatform.v1.EnvVarB\004\342A\001\005\0225\n\005ports\030\005 \003"
+          + "(\0132 .google.cloud.aiplatform.v1.PortB\004\342A"
+          + "\001\005\022\033\n\rpredict_route\030\006 \001(\tB\004\342A\001\005\022\032\n\014healt"
+          + "h_route\030\007 \001(\tB\004\342A\001\005\"\036\n\004Port\022\026\n\016container"
+          + "_port\030\003 \001(\005\"\346\001\n\017ModelSourceInfo\022P\n\013sourc"
+          + "e_type\030\001 \001(\0162;.google.cloud.aiplatform.v"
+          + "1.ModelSourceInfo.ModelSourceType\022\014\n\004cop"
+          + "y\030\002 \001(\010\"s\n\017ModelSourceType\022!\n\035MODEL_SOUR"
+          + "CE_TYPE_UNSPECIFIED\020\000\022\n\n\006AUTOML\020\001\022\n\n\006CUS"
+          + "TOM\020\002\022\010\n\004BQML\020\003\022\020\n\014MODEL_GARDEN\020\004\022\t\n\005GEN"
+          + "IE\020\005B\310\001\n\036com.google.cloud.aiplatform.v1B"
+          + "\nModelProtoP\001Z>cloud.google.com/go/aipla"
+          + "tform/apiv1/aiplatformpb;aiplatformpb\252\002\032"
+          + "Google.Cloud.AIPlatform.V1\312\002\032Google\\Clou"
+          + "d\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatf"
+          + "orm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -184,6 +192,7 @@ public final class ModelProto {
               "Metadata",
               "SupportedExportFormats",
               "TrainingPipeline",
+              "PipelineJob",
               "ContainerSpec",
               "ArtifactUri",
               "SupportedDeploymentResourcesTypes",
@@ -224,8 +233,16 @@ public final class ModelProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_aiplatform_v1_PredictSchemata_descriptor =
+    internal_static_google_cloud_aiplatform_v1_LargeModelReference_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_aiplatform_v1_LargeModelReference_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_LargeModelReference_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_aiplatform_v1_PredictSchemata_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_aiplatform_v1_PredictSchemata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_PredictSchemata_descriptor,
@@ -233,7 +250,7 @@ public final class ModelProto {
               "InstanceSchemaUri", "ParametersSchemaUri", "PredictionSchemaUri",
             });
     internal_static_google_cloud_aiplatform_v1_ModelContainerSpec_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_aiplatform_v1_ModelContainerSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ModelContainerSpec_descriptor,
@@ -241,7 +258,7 @@ public final class ModelProto {
               "ImageUri", "Command", "Args", "Env", "Ports", "PredictRoute", "HealthRoute",
             });
     internal_static_google_cloud_aiplatform_v1_Port_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_aiplatform_v1_Port_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Port_descriptor,
@@ -249,7 +266,7 @@ public final class ModelProto {
               "ContainerPort",
             });
     internal_static_google_cloud_aiplatform_v1_ModelSourceInfo_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_aiplatform_v1_ModelSourceInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ModelSourceInfo_descriptor,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public interface ExportTestCasesRequestOrBuilder
    * export the test cases to. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
    * cases is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -82,6 +83,7 @@ public interface ExportTestCasesRequestOrBuilder
    * export the test cases to. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
    * cases is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -102,6 +104,7 @@ public interface ExportTestCasesRequestOrBuilder
    * export the test cases to. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
    * cases is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -149,8 +152,11 @@ public interface ExportTestCasesRequestOrBuilder
    * The filter expression used to filter exported test cases, see
    * [API Filtering](https://aip.dev/160). The expression is case insensitive
    * and supports the following syntax:
+   *
    *   name = &lt;value&gt; [OR name = &lt;value&gt;] ...
+   *
    * For example:
+   *
    * *   "name = t1 OR name = t2" matches the test case with the exact resource
    *     name "t1" or "t2".
    * </pre>
@@ -167,8 +173,11 @@ public interface ExportTestCasesRequestOrBuilder
    * The filter expression used to filter exported test cases, see
    * [API Filtering](https://aip.dev/160). The expression is case insensitive
    * and supports the following syntax:
+   *
    *   name = &lt;value&gt; [OR name = &lt;value&gt;] ...
+   *
    * For example:
+   *
    * *   "name = t1 OR name = t2" matches the test case with the exact resource
    *     name "t1" or "t2".
    * </pre>
@@ -179,6 +188,5 @@ public interface ExportTestCasesRequestOrBuilder
    */
   com.google.protobuf.ByteString getFilterBytes();
 
-  public com.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest.DestinationCase
-      getDestinationCase();
+  com.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest.DestinationCase getDestinationCase();
 }

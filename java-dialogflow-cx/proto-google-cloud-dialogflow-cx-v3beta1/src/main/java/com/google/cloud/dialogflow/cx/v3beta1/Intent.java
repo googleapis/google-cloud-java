@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  * <pre>
  * An intent represents a user's intent to interact with a conversational agent.
+ *
  * You can provide information for the Dialogflow API to use to match user input
  * to an intent by adding training phrases (i.e., examples of user input) to
  * your intent.
@@ -52,11 +53,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Intent();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -121,16 +117,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries, so the
      * training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `parameter_id` field is set.
@@ -148,16 +149,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries, so the
      * training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `parameter_id` field is set.
@@ -174,16 +180,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries, so the
      * training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `parameter_id` field is set.
@@ -200,16 +211,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries, so the
      * training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `parameter_id` field is set.
@@ -228,16 +244,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries, so the
      * training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `parameter_id` field is set.
@@ -291,11 +312,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TrainingPhrase();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -400,11 +416,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Part();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1259,16 +1270,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries, so the
      * training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `parameter_id` field is set.
@@ -1289,16 +1305,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries, so the
      * training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `parameter_id` field is set.
@@ -1320,16 +1341,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries, so the
      * training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `parameter_id` field is set.
@@ -1349,16 +1375,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries, so the
      * training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `parameter_id` field is set.
@@ -1378,16 +1409,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ordered list of training phrase parts.
      * The parts are concatenated in order to form the training phrase.
+     *
      * Note: The API does not automatically annotate training phrases like the
      * Dialogflow Console does.
+     *
      * Note: Do not forget to include whitespace at part boundaries, so the
      * training phrase is well formatted when the parts are concatenated.
+     *
      * If the training phrase does not need to be annotated with parameters,
      * you just need a single part with only the
      * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
      * field set.
+     *
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
+     *
      * -   `Part.text` is set to a part of the phrase that has no parameters.
      * -   `Part.text` is set to a part of the phrase that you want to annotate,
      *     and the `parameter_id` field is set.
@@ -1997,16 +2033,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2030,16 +2071,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2062,16 +2108,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2094,16 +2145,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2133,16 +2189,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2171,16 +2232,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2210,16 +2276,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2249,16 +2320,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2286,16 +2362,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2324,16 +2405,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2362,16 +2448,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2397,16 +2488,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2432,16 +2528,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2461,16 +2562,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2494,16 +2600,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2528,16 +2639,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2560,16 +2676,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2593,16 +2714,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The ordered list of training phrase parts.
        * The parts are concatenated in order to form the training phrase.
+       *
        * Note: The API does not automatically annotate training phrases like the
        * Dialogflow Console does.
+       *
        * Note: Do not forget to include whitespace at part boundaries, so the
        * training phrase is well formatted when the parts are concatenated.
+       *
        * If the training phrase does not need to be annotated with parameters,
        * you just need a single part with only the
        * [Part.text][google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part.text]
        * field set.
+       *
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
+       *
        * -   `Part.text` is set to a part of the phrase that has no parameters.
        * -   `Part.text` is set to a part of the phrase that you want to annotate,
        *     and the `parameter_id` field is set.
@@ -2892,11 +3018,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Parameter();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4233,6 +4354,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The priority of this intent. Higher numbers represent higher
    * priorities.
+   *
    * - If the supplied value is unspecified or 0, the service
    *   translates the value to 500,000, which corresponds to the
    *   `Normal` priority in the console.
@@ -4307,6 +4429,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
    * and no more than 128 bytes.
+   *
    * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
    * Dialogflow defined labels include:
    * * sys-head
@@ -4339,6 +4462,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
    * and no more than 128 bytes.
+   *
    * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
    * Dialogflow defined labels include:
    * * sys-head
@@ -4362,6 +4486,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
    * and no more than 128 bytes.
+   *
    * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
    * Dialogflow defined labels include:
    * * sys-head
@@ -4392,6 +4517,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
    * and no more than 128 bytes.
+   *
    * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
    * Dialogflow defined labels include:
    * * sys-head
@@ -4706,6 +4832,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * An intent represents a user's intent to interact with a conversational agent.
+   *
    * You can provide information for the Dialogflow API to use to match user input
    * to an intent by adding training phrases (i.e., examples of user input) to
    * your intent.
@@ -6141,6 +6268,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The priority of this intent. Higher numbers represent higher
      * priorities.
+     *
      * - If the supplied value is unspecified or 0, the service
      *   translates the value to 500,000, which corresponds to the
      *   `Normal` priority in the console.
@@ -6162,6 +6290,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The priority of this intent. Higher numbers represent higher
      * priorities.
+     *
      * - If the supplied value is unspecified or 0, the service
      *   translates the value to 500,000, which corresponds to the
      *   `Normal` priority in the console.
@@ -6187,6 +6316,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The priority of this intent. Higher numbers represent higher
      * priorities.
+     *
      * - If the supplied value is unspecified or 0, the service
      *   translates the value to 500,000, which corresponds to the
      *   `Normal` priority in the console.
@@ -6307,6 +6437,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
      * and no more than 128 bytes.
+     *
      * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
      * Dialogflow defined labels include:
      * * sys-head
@@ -6339,6 +6470,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
      * and no more than 128 bytes.
+     *
      * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
      * Dialogflow defined labels include:
      * * sys-head
@@ -6362,6 +6494,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
      * and no more than 128 bytes.
+     *
      * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
      * Dialogflow defined labels include:
      * * sys-head
@@ -6392,6 +6525,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
      * and no more than 128 bytes.
+     *
      * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
      * Dialogflow defined labels include:
      * * sys-head
@@ -6428,6 +6562,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
      * and no more than 128 bytes.
+     *
      * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
      * Dialogflow defined labels include:
      * * sys-head
@@ -6460,6 +6595,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
      * and no more than 128 bytes.
+     *
      * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
      * Dialogflow defined labels include:
      * * sys-head
@@ -6490,6 +6626,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
      * and no more than 128 bytes.
+     *
      * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
      * Dialogflow defined labels include:
      * * sys-head

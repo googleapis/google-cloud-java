@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,4 +53,35 @@ public interface GetClusterRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The view of the cluster to return. Returns all default fields if
+   * not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.ClusterView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  int getViewValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The view of the cluster to return. Returns all default fields if
+   * not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.ClusterView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  com.google.cloud.alloydb.v1alpha.ClusterView getView();
 }

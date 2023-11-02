@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class ExecutionsGrpc {
 
   private ExecutionsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.run.v2.Executions";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.run.v2.Executions";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -162,6 +162,48 @@ public final class ExecutionsGrpc {
     return getDeleteExecutionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.run.v2.CancelExecutionRequest, com.google.longrunning.Operation>
+      getCancelExecutionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelExecution",
+      requestType = com.google.cloud.run.v2.CancelExecutionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.run.v2.CancelExecutionRequest, com.google.longrunning.Operation>
+      getCancelExecutionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.run.v2.CancelExecutionRequest, com.google.longrunning.Operation>
+        getCancelExecutionMethod;
+    if ((getCancelExecutionMethod = ExecutionsGrpc.getCancelExecutionMethod) == null) {
+      synchronized (ExecutionsGrpc.class) {
+        if ((getCancelExecutionMethod = ExecutionsGrpc.getCancelExecutionMethod) == null) {
+          ExecutionsGrpc.getCancelExecutionMethod =
+              getCancelExecutionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.run.v2.CancelExecutionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelExecution"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.run.v2.CancelExecutionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ExecutionsMethodDescriptorSupplier("CancelExecution"))
+                      .build();
+        }
+      }
+    }
+    return getCancelExecutionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ExecutionsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ExecutionsStub> factory =
@@ -253,6 +295,20 @@ public final class ExecutionsGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteExecutionMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an Execution.
+     * </pre>
+     */
+    default void cancelExecution(
+        com.google.cloud.run.v2.CancelExecutionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelExecutionMethod(), responseObserver);
+    }
   }
 
   /**
@@ -335,6 +391,22 @@ public final class ExecutionsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an Execution.
+     * </pre>
+     */
+    public void cancelExecution(
+        com.google.cloud.run.v2.CancelExecutionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelExecutionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -393,6 +465,19 @@ public final class ExecutionsGrpc {
         com.google.cloud.run.v2.DeleteExecutionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteExecutionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an Execution.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelExecution(
+        com.google.cloud.run.v2.CancelExecutionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelExecutionMethod(), getCallOptions(), request);
     }
   }
 
@@ -453,11 +538,25 @@ public final class ExecutionsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteExecutionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an Execution.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        cancelExecution(com.google.cloud.run.v2.CancelExecutionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelExecutionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_EXECUTION = 0;
   private static final int METHODID_LIST_EXECUTIONS = 1;
   private static final int METHODID_DELETE_EXECUTION = 2;
+  private static final int METHODID_CANCEL_EXECUTION = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -490,6 +589,11 @@ public final class ExecutionsGrpc {
         case METHODID_DELETE_EXECUTION:
           serviceImpl.deleteExecution(
               (com.google.cloud.run.v2.DeleteExecutionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CANCEL_EXECUTION:
+          serviceImpl.cancelExecution(
+              (com.google.cloud.run.v2.CancelExecutionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -529,6 +633,12 @@ public final class ExecutionsGrpc {
                 new MethodHandlers<
                     com.google.cloud.run.v2.DeleteExecutionRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_EXECUTION)))
+        .addMethod(
+            getCancelExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.CancelExecutionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CANCEL_EXECUTION)))
         .build();
   }
 
@@ -556,9 +666,9 @@ public final class ExecutionsGrpc {
   private static final class ExecutionsMethodDescriptorSupplier
       extends ExecutionsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ExecutionsMethodDescriptorSupplier(String methodName) {
+    ExecutionsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -583,6 +693,7 @@ public final class ExecutionsGrpc {
                       .addMethod(getGetExecutionMethod())
                       .addMethod(getListExecutionsMethod())
                       .addMethod(getDeleteExecutionMethod())
+                      .addMethod(getCancelExecutionMethod())
                       .build();
         }
       }

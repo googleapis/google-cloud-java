@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,8 +178,9 @@ public interface PivotOrBuilder
    * The number of unique combinations of dimension values to return in this
    * pivot. The `limit` parameter is required. A `limit` of 10,000 is common for
    * single pivot requests.
+   *
    * The product of the `limit` for each `pivot` in a `RunPivotReportRequest`
-   * must not exceed 100,000. For example, a two pivot request with `limit:
+   * must not exceed 250,000. For example, a two pivot request with `limit:
    * 1000` in each pivot will fail because the product is `1,000,000`.
    * </pre>
    *

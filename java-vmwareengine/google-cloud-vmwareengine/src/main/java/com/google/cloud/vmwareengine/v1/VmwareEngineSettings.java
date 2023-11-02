@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLocationsP
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPoliciesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodeTypesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateCloudsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionPeeringRoutesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListSubnetsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListVmwareEngineNetworksPagedResponse;
 
@@ -199,6 +201,22 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
     return ((VmwareEngineStubSettings) getStubSettings()).listSubnetsSettings();
   }
 
+  /** Returns the object with the settings used for calls to getSubnet. */
+  public UnaryCallSettings<GetSubnetRequest, Subnet> getSubnetSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).getSubnetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSubnet. */
+  public UnaryCallSettings<UpdateSubnetRequest, Operation> updateSubnetSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateSubnetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSubnet. */
+  public OperationCallSettings<UpdateSubnetRequest, Subnet, OperationMetadata>
+      updateSubnetOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updateSubnetOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listNodeTypes. */
   public PagedCallSettings<ListNodeTypesRequest, ListNodeTypesResponse, ListNodeTypesPagedResponse>
       listNodeTypesSettings() {
@@ -371,6 +389,70 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
           ListVmwareEngineNetworksPagedResponse>
       listVmwareEngineNetworksSettings() {
     return ((VmwareEngineStubSettings) getStubSettings()).listVmwareEngineNetworksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPrivateConnection. */
+  public UnaryCallSettings<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).createPrivateConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPrivateConnection. */
+  public OperationCallSettings<CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .createPrivateConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPrivateConnection. */
+  public UnaryCallSettings<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).getPrivateConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPrivateConnections. */
+  public PagedCallSettings<
+          ListPrivateConnectionsRequest,
+          ListPrivateConnectionsResponse,
+          ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).listPrivateConnectionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePrivateConnection. */
+  public UnaryCallSettings<UpdatePrivateConnectionRequest, Operation>
+      updatePrivateConnectionSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).updatePrivateConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePrivateConnection. */
+  public OperationCallSettings<UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      updatePrivateConnectionOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .updatePrivateConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePrivateConnection. */
+  public UnaryCallSettings<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings()).deletePrivateConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePrivateConnection. */
+  public OperationCallSettings<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .deletePrivateConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPrivateConnectionPeeringRoutes. */
+  public PagedCallSettings<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesResponse,
+          ListPrivateConnectionPeeringRoutesPagedResponse>
+      listPrivateConnectionPeeringRoutesSettings() {
+    return ((VmwareEngineStubSettings) getStubSettings())
+        .listPrivateConnectionPeeringRoutesSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -629,6 +711,22 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
       return getStubSettingsBuilder().listSubnetsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getSubnet. */
+    public UnaryCallSettings.Builder<GetSubnetRequest, Subnet> getSubnetSettings() {
+      return getStubSettingsBuilder().getSubnetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubnet. */
+    public UnaryCallSettings.Builder<UpdateSubnetRequest, Operation> updateSubnetSettings() {
+      return getStubSettingsBuilder().updateSubnetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubnet. */
+    public OperationCallSettings.Builder<UpdateSubnetRequest, Subnet, OperationMetadata>
+        updateSubnetOperationSettings() {
+      return getStubSettingsBuilder().updateSubnetOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listNodeTypes. */
     public PagedCallSettings.Builder<
             ListNodeTypesRequest, ListNodeTypesResponse, ListNodeTypesPagedResponse>
@@ -811,6 +909,70 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
             ListVmwareEngineNetworksPagedResponse>
         listVmwareEngineNetworksSettings() {
       return getStubSettingsBuilder().listVmwareEngineNetworksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPrivateConnection. */
+    public UnaryCallSettings.Builder<CreatePrivateConnectionRequest, Operation>
+        createPrivateConnectionSettings() {
+      return getStubSettingsBuilder().createPrivateConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPrivateConnection. */
+    public OperationCallSettings.Builder<
+            CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+        createPrivateConnectionOperationSettings() {
+      return getStubSettingsBuilder().createPrivateConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPrivateConnection. */
+    public UnaryCallSettings.Builder<GetPrivateConnectionRequest, PrivateConnection>
+        getPrivateConnectionSettings() {
+      return getStubSettingsBuilder().getPrivateConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPrivateConnections. */
+    public PagedCallSettings.Builder<
+            ListPrivateConnectionsRequest,
+            ListPrivateConnectionsResponse,
+            ListPrivateConnectionsPagedResponse>
+        listPrivateConnectionsSettings() {
+      return getStubSettingsBuilder().listPrivateConnectionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePrivateConnection. */
+    public UnaryCallSettings.Builder<UpdatePrivateConnectionRequest, Operation>
+        updatePrivateConnectionSettings() {
+      return getStubSettingsBuilder().updatePrivateConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePrivateConnection. */
+    public OperationCallSettings.Builder<
+            UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+        updatePrivateConnectionOperationSettings() {
+      return getStubSettingsBuilder().updatePrivateConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePrivateConnection. */
+    public UnaryCallSettings.Builder<DeletePrivateConnectionRequest, Operation>
+        deletePrivateConnectionSettings() {
+      return getStubSettingsBuilder().deletePrivateConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePrivateConnection. */
+    public OperationCallSettings.Builder<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+        deletePrivateConnectionOperationSettings() {
+      return getStubSettingsBuilder().deletePrivateConnectionOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listPrivateConnectionPeeringRoutes.
+     */
+    public PagedCallSettings.Builder<
+            ListPrivateConnectionPeeringRoutesRequest,
+            ListPrivateConnectionPeeringRoutesResponse,
+            ListPrivateConnectionPeeringRoutesPagedResponse>
+        listPrivateConnectionPeeringRoutesSettings() {
+      return getStubSettingsBuilder().listPrivateConnectionPeeringRoutesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

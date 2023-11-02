@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,18 +43,13 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     description_ = "";
     dataType_ = 0;
-    blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    blockingResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Instruction();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -365,6 +360,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
+   *
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
@@ -389,6 +385,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
+   *
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
@@ -415,6 +412,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
+   *
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
@@ -489,7 +487,8 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public static final int BLOCKING_RESOURCES_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList blockingResources_;
+  private com.google.protobuf.LazyStringArrayList blockingResources_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -877,8 +876,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         pdfInstructionBuilder_.dispose();
         pdfInstructionBuilder_ = null;
       }
-      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -906,21 +904,11 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.Instruction buildPartial() {
       com.google.cloud.datalabeling.v1beta1.Instruction result =
           new com.google.cloud.datalabeling.v1beta1.Instruction(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.datalabeling.v1beta1.Instruction result) {
-      if (((bitField0_ & 0x00000100) != 0)) {
-        blockingResources_ = blockingResources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.blockingResources_ = blockingResources_;
     }
 
     private void buildPartial0(com.google.cloud.datalabeling.v1beta1.Instruction result) {
@@ -950,6 +938,10 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.pdfInstruction_ =
             pdfInstructionBuilder_ == null ? pdfInstruction_ : pdfInstructionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        blockingResources_.makeImmutable();
+        result.blockingResources_ = blockingResources_;
       }
     }
 
@@ -1032,7 +1024,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       if (!other.blockingResources_.isEmpty()) {
         if (blockingResources_.isEmpty()) {
           blockingResources_ = other.blockingResources_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureBlockingResourcesIsMutable();
           blockingResources_.addAll(other.blockingResources_);
@@ -1936,6 +1928,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
+     *
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
@@ -1959,6 +1952,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
+     *
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
@@ -1988,6 +1982,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
+     *
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
@@ -2017,6 +2012,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
+     *
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
@@ -2044,6 +2040,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
+     *
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
@@ -2077,6 +2074,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
+     *
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
@@ -2103,6 +2101,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
+     *
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
@@ -2124,6 +2123,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
+     *
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
@@ -2150,6 +2150,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * Deprecated: this instruction format is not supported any more.
      * Instruction from a CSV file, such as for classification task.
      * The CSV file should have exact two columns, in the following format:
+     *
      * * The first column is labeled data, such as an image reference, text.
      * * The second column is comma separated labels associated with data.
      * </pre>
@@ -2370,14 +2371,14 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       return pdfInstructionBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList blockingResources_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList blockingResources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureBlockingResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!blockingResources_.isModifiable()) {
         blockingResources_ = new com.google.protobuf.LazyStringArrayList(blockingResources_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -2392,7 +2393,8 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the blockingResources.
      */
     public com.google.protobuf.ProtocolStringList getBlockingResourcesList() {
-      return blockingResources_.getUnmodifiableView();
+      blockingResources_.makeImmutable();
+      return blockingResources_;
     }
     /**
      *
@@ -2461,6 +2463,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       }
       ensureBlockingResourcesIsMutable();
       blockingResources_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2483,6 +2486,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       }
       ensureBlockingResourcesIsMutable();
       blockingResources_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2502,6 +2506,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllBlockingResources(java.lang.Iterable<java.lang.String> values) {
       ensureBlockingResourcesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blockingResources_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2518,8 +2523,9 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBlockingResources() {
-      blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      blockingResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -2543,6 +2549,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureBlockingResourcesIsMutable();
       blockingResources_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

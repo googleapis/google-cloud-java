@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
     return new ReportRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicecontrol.v2.ServiceControllerProto
         .internal_static_google_api_servicecontrol_v2_ReportRequest_descriptor;
@@ -79,6 +74,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The service name as specified in its service configuration. For example,
    * `"pubsub.googleapis.com"`.
+   *
    * See
    * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
    * for the definition of a service name.
@@ -106,6 +102,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The service name as specified in its service configuration. For example,
    * `"pubsub.googleapis.com"`.
+   *
    * See
    * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
    * for the definition of a service name.
@@ -707,6 +704,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service name as specified in its service configuration. For example,
      * `"pubsub.googleapis.com"`.
+     *
      * See
      * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
      * for the definition of a service name.
@@ -733,6 +731,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service name as specified in its service configuration. For example,
      * `"pubsub.googleapis.com"`.
+     *
      * See
      * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
      * for the definition of a service name.
@@ -759,6 +758,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service name as specified in its service configuration. For example,
      * `"pubsub.googleapis.com"`.
+     *
      * See
      * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
      * for the definition of a service name.
@@ -784,6 +784,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service name as specified in its service configuration. For example,
      * `"pubsub.googleapis.com"`.
+     *
      * See
      * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
      * for the definition of a service name.
@@ -805,6 +806,7 @@ public final class ReportRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service name as specified in its service configuration. For example,
      * `"pubsub.googleapis.com"`.
+     *
      * See
      * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
      * for the definition of a service name.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface DeleteApiDeploymentRevisionRequestOrBuilder
    * <pre>
    * Required. The name of the deployment revision to be deleted,
    * with a revision ID explicitly included.
+   *
    * Example:
    * `projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8`
    * </pre>
@@ -46,6 +47,7 @@ public interface DeleteApiDeploymentRevisionRequestOrBuilder
    * <pre>
    * Required. The name of the deployment revision to be deleted,
    * with a revision ID explicitly included.
+   *
    * Example:
    * `projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8`
    * </pre>

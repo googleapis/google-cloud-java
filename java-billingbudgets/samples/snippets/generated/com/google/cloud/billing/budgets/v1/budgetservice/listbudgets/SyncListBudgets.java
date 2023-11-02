@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ public class SyncListBudgets {
       ListBudgetsRequest request =
           ListBudgetsRequest.newBuilder()
               .setParent(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+              .setScope("scope109264468")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

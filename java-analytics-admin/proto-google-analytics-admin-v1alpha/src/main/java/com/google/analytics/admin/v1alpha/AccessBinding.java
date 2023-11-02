@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
 
   private AccessBinding() {
     name_ = "";
-    roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    roles_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AccessBinding();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -69,6 +64,8 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int accessTargetCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object accessTarget_;
 
   public enum AccessTargetCase
@@ -194,8 +191,10 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Resource name of this binding.
+   *
    * Format: accounts/{account}/accessBindings/{access_binding} or
    * properties/{property}/accessBindings/{access_binding}
+   *
    * Example:
    * "accounts/100/accessBindings/200"
    * </pre>
@@ -221,8 +220,10 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Resource name of this binding.
+   *
    * Format: accounts/{account}/accessBindings/{access_binding} or
    * properties/{property}/accessBindings/{access_binding}
+   *
    * Example:
    * "accounts/100/accessBindings/200"
    * </pre>
@@ -247,12 +248,14 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
   public static final int ROLES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList roles_;
+  private com.google.protobuf.LazyStringArrayList roles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * A list of roles for to grant to the parent resource.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -260,6 +263,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * For users, if an empty list of roles is set, this AccessBinding will be
    * deleted.
    * </pre>
@@ -276,6 +280,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of roles for to grant to the parent resource.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -283,6 +288,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * For users, if an empty list of roles is set, this AccessBinding will be
    * deleted.
    * </pre>
@@ -299,6 +305,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of roles for to grant to the parent resource.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -306,6 +313,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * For users, if an empty list of roles is set, this AccessBinding will be
    * deleted.
    * </pre>
@@ -323,6 +331,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of roles for to grant to the parent resource.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -330,6 +339,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * For users, if an empty list of roles is set, this AccessBinding will be
    * deleted.
    * </pre>
@@ -580,8 +590,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      roles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       accessTargetCase_ = 0;
       accessTarget_ = null;
       return this;
@@ -611,7 +620,6 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1alpha.AccessBinding buildPartial() {
       com.google.analytics.admin.v1alpha.AccessBinding result =
           new com.google.analytics.admin.v1alpha.AccessBinding(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -620,19 +628,14 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.analytics.admin.v1alpha.AccessBinding result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        roles_ = roles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.roles_ = roles_;
-    }
-
     private void buildPartial0(com.google.analytics.admin.v1alpha.AccessBinding result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        roles_.makeImmutable();
+        result.roles_ = roles_;
       }
     }
 
@@ -695,7 +698,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       if (!other.roles_.isEmpty()) {
         if (roles_.isEmpty()) {
           roles_ = other.roles_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureRolesIsMutable();
           roles_.addAll(other.roles_);
@@ -940,8 +943,10 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Resource name of this binding.
+     *
      * Format: accounts/{account}/accessBindings/{access_binding} or
      * properties/{property}/accessBindings/{access_binding}
+     *
      * Example:
      * "accounts/100/accessBindings/200"
      * </pre>
@@ -966,8 +971,10 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Resource name of this binding.
+     *
      * Format: accounts/{account}/accessBindings/{access_binding} or
      * properties/{property}/accessBindings/{access_binding}
+     *
      * Example:
      * "accounts/100/accessBindings/200"
      * </pre>
@@ -992,8 +999,10 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Resource name of this binding.
+     *
      * Format: accounts/{account}/accessBindings/{access_binding} or
      * properties/{property}/accessBindings/{access_binding}
+     *
      * Example:
      * "accounts/100/accessBindings/200"
      * </pre>
@@ -1017,8 +1026,10 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Resource name of this binding.
+     *
      * Format: accounts/{account}/accessBindings/{access_binding} or
      * properties/{property}/accessBindings/{access_binding}
+     *
      * Example:
      * "accounts/100/accessBindings/200"
      * </pre>
@@ -1038,8 +1049,10 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Resource name of this binding.
+     *
      * Format: accounts/{account}/accessBindings/{access_binding} or
      * properties/{property}/accessBindings/{access_binding}
+     *
      * Example:
      * "accounts/100/accessBindings/200"
      * </pre>
@@ -1060,20 +1073,21 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList roles_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList roles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRolesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!roles_.isModifiable()) {
         roles_ = new com.google.protobuf.LazyStringArrayList(roles_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
      *
      * <pre>
      * A list of roles for to grant to the parent resource.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1081,6 +1095,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * For users, if an empty list of roles is set, this AccessBinding will be
      * deleted.
      * </pre>
@@ -1090,13 +1105,15 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the roles.
      */
     public com.google.protobuf.ProtocolStringList getRolesList() {
-      return roles_.getUnmodifiableView();
+      roles_.makeImmutable();
+      return roles_;
     }
     /**
      *
      *
      * <pre>
      * A list of roles for to grant to the parent resource.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1104,6 +1121,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * For users, if an empty list of roles is set, this AccessBinding will be
      * deleted.
      * </pre>
@@ -1120,6 +1138,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of roles for to grant to the parent resource.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1127,6 +1146,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * For users, if an empty list of roles is set, this AccessBinding will be
      * deleted.
      * </pre>
@@ -1144,6 +1164,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of roles for to grant to the parent resource.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1151,6 +1172,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * For users, if an empty list of roles is set, this AccessBinding will be
      * deleted.
      * </pre>
@@ -1168,6 +1190,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of roles for to grant to the parent resource.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1175,6 +1198,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * For users, if an empty list of roles is set, this AccessBinding will be
      * deleted.
      * </pre>
@@ -1191,6 +1215,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRolesIsMutable();
       roles_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1199,6 +1224,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of roles for to grant to the parent resource.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1206,6 +1232,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * For users, if an empty list of roles is set, this AccessBinding will be
      * deleted.
      * </pre>
@@ -1221,6 +1248,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRolesIsMutable();
       roles_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1229,6 +1257,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of roles for to grant to the parent resource.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1236,6 +1265,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * For users, if an empty list of roles is set, this AccessBinding will be
      * deleted.
      * </pre>
@@ -1248,6 +1278,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRoles(java.lang.Iterable<java.lang.String> values) {
       ensureRolesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, roles_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1256,6 +1287,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of roles for to grant to the parent resource.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1263,6 +1295,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * For users, if an empty list of roles is set, this AccessBinding will be
      * deleted.
      * </pre>
@@ -1272,8 +1305,9 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRoles() {
-      roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      roles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1282,6 +1316,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of roles for to grant to the parent resource.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1289,6 +1324,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * For users, if an empty list of roles is set, this AccessBinding will be
      * deleted.
      * </pre>
@@ -1305,6 +1341,7 @@ public final class AccessBinding extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRolesIsMutable();
       roles_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

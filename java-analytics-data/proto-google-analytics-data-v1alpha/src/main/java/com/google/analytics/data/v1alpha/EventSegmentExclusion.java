@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
     return new EventSegmentExclusion();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_EventSegmentExclusion_descriptor;
@@ -74,6 +69,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * `eventExclusionDuration` should always be `PERMANENTLY_EXCLUDE`.
+   *
    * Optional. If unspecified, an `eventExclusionDuration` of
    * `EVENT_EXCLUSION_PERMANENT` is used.
    * </pre>
@@ -92,6 +88,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * `eventExclusionDuration` should always be `PERMANENTLY_EXCLUDE`.
+   *
    * Optional. If unspecified, an `eventExclusionDuration` of
    * `EVENT_EXCLUSION_PERMANENT` is used.
    * </pre>
@@ -553,6 +550,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * `eventExclusionDuration` should always be `PERMANENTLY_EXCLUDE`.
+     *
      * Optional. If unspecified, an `eventExclusionDuration` of
      * `EVENT_EXCLUSION_PERMANENT` is used.
      * </pre>
@@ -571,6 +569,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * `eventExclusionDuration` should always be `PERMANENTLY_EXCLUDE`.
+     *
      * Optional. If unspecified, an `eventExclusionDuration` of
      * `EVENT_EXCLUSION_PERMANENT` is used.
      * </pre>
@@ -592,6 +591,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * `eventExclusionDuration` should always be `PERMANENTLY_EXCLUDE`.
+     *
      * Optional. If unspecified, an `eventExclusionDuration` of
      * `EVENT_EXCLUSION_PERMANENT` is used.
      * </pre>
@@ -615,6 +615,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * `eventExclusionDuration` should always be `PERMANENTLY_EXCLUDE`.
+     *
      * Optional. If unspecified, an `eventExclusionDuration` of
      * `EVENT_EXCLUSION_PERMANENT` is used.
      * </pre>
@@ -640,6 +641,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * `eventExclusionDuration` should always be `PERMANENTLY_EXCLUDE`.
+     *
      * Optional. If unspecified, an `eventExclusionDuration` of
      * `EVENT_EXCLUSION_PERMANENT` is used.
      * </pre>

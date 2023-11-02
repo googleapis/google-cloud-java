@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteEntryRequest extends com.google.protobuf.GeneratedMessa
     return new DeleteEntryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_DeleteEntryRequest_descriptor;
@@ -77,6 +72,7 @@ public final class DeleteEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The name of the entry. Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>
    *
@@ -103,6 +99,7 @@ public final class DeleteEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The name of the entry. Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>
    *
@@ -475,6 +472,7 @@ public final class DeleteEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
      *
@@ -500,6 +498,7 @@ public final class DeleteEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
      *
@@ -525,6 +524,7 @@ public final class DeleteEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
      *
@@ -549,6 +549,7 @@ public final class DeleteEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
      *
@@ -569,6 +570,7 @@ public final class DeleteEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * </pre>
      *

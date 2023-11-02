@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,8 +184,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -199,8 +200,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -214,8 +216,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -230,8 +233,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -252,6 +256,7 @@ public interface ModelEvaluationOrBuilder
    * [EvaluatedAnnotation.data_item_payload][google.cloud.aiplatform.v1.EvaluatedAnnotation.data_item_payload].
    * The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+   *
    * This field is not populated if there are neither EvaluatedDataItemViews nor
    * EvaluatedAnnotations under this ModelEvaluation.
    * </pre>
@@ -270,6 +275,7 @@ public interface ModelEvaluationOrBuilder
    * [EvaluatedAnnotation.data_item_payload][google.cloud.aiplatform.v1.EvaluatedAnnotation.data_item_payload].
    * The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+   *
    * This field is not populated if there are neither EvaluatedDataItemViews nor
    * EvaluatedAnnotations under this ModelEvaluation.
    * </pre>
@@ -292,6 +298,7 @@ public interface ModelEvaluationOrBuilder
    * [EvaluatedAnnotation.ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
    * The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+   *
    * This field is not populated if there are neither EvaluatedDataItemViews nor
    * EvaluatedAnnotations under this ModelEvaluation.
    * </pre>
@@ -313,6 +320,7 @@ public interface ModelEvaluationOrBuilder
    * [EvaluatedAnnotation.ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
    * The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+   *
    * This field is not populated if there are neither EvaluatedDataItemViews nor
    * EvaluatedAnnotations under this ModelEvaluation.
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -188,5 +188,5 @@ public interface AccessFilterOrBuilder
    */
   com.google.protobuf.ByteString getFieldNameBytes();
 
-  public com.google.analytics.admin.v1alpha.AccessFilter.OneFilterCase getOneFilterCase();
+  com.google.analytics.admin.v1alpha.AccessFilter.OneFilterCase getOneFilterCase();
 }

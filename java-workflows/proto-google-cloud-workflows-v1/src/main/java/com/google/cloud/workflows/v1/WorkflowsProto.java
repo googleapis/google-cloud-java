@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,9 +32,17 @@ public final class WorkflowsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_workflows_v1_Workflow_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workflows_v1_Workflow_StateError_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_workflows_v1_Workflow_StateError_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_workflows_v1_Workflow_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_workflows_v1_Workflow_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workflows_v1_Workflow_UserEnvVarsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_workflows_v1_Workflow_UserEnvVarsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_workflows_v1_ListWorkflowsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -77,78 +85,98 @@ public final class WorkflowsProto {
           + "pi/annotations.proto\032\027google/api/client."
           + "proto\032\037google/api/field_behavior.proto\032\031"
           + "google/api/resource.proto\032#google/longru"
-          + "nning/operations.proto\032 google/protobuf/"
-          + "field_mask.proto\032\037google/protobuf/timest"
-          + "amp.proto\"\366\004\n\010Workflow\022\014\n\004name\030\001 \001(\t\022\023\n\013"
-          + "description\030\002 \001(\t\022=\n\005state\030\003 \001(\0162).googl"
-          + "e.cloud.workflows.v1.Workflow.StateB\003\340A\003"
-          + "\022\030\n\013revision_id\030\004 \001(\tB\003\340A\003\0224\n\013create_tim"
-          + "e\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
-          + "\0224\n\013update_time\030\006 \001(\0132\032.google.protobuf."
-          + "TimestampB\003\340A\003\022=\n\024revision_create_time\030\007"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022?\n"
-          + "\006labels\030\010 \003(\0132/.google.cloud.workflows.v"
-          + "1.Workflow.LabelsEntry\022\027\n\017service_accoun"
-          + "t\030\t \001(\t\022\031\n\017source_contents\030\n \001(\tH\000\032-\n\013La"
-          + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
-          + "\001\"*\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACT"
-          + "IVE\020\001:d\352Aa\n!workflows.googleapis.com/Wor"
-          + "kflow\022<projects/{project}/locations/{loc"
-          + "ation}/workflows/{workflow}B\r\n\013source_co"
-          + "de\"\232\001\n\024ListWorkflowsRequest\0229\n\006parent\030\001 "
-          + "\001(\tB)\340A\002\372A#\n!locations.googleapis.com/Lo"
-          + "cation\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030"
-          + "\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\""
-          + "}\n\025ListWorkflowsResponse\0226\n\tworkflows\030\001 "
-          + "\003(\0132#.google.cloud.workflows.v1.Workflow"
-          + "\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable"
-          + "\030\003 \003(\t\"M\n\022GetWorkflowRequest\0227\n\004name\030\001 \001"
-          + "(\tB)\340A\002\372A#\n!workflows.googleapis.com/Wor"
-          + "kflow\"\250\001\n\025CreateWorkflowRequest\0229\n\006paren"
-          + "t\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.co"
-          + "m/Location\022:\n\010workflow\030\002 \001(\0132#.google.cl"
-          + "oud.workflows.v1.WorkflowB\003\340A\002\022\030\n\013workfl"
-          + "ow_id\030\003 \001(\tB\003\340A\002\"P\n\025DeleteWorkflowReques"
-          + "t\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!workflows.googl"
-          + "eapis.com/Workflow\"\204\001\n\025UpdateWorkflowReq"
-          + "uest\022:\n\010workflow\030\001 \001(\0132#.google.cloud.wo"
-          + "rkflows.v1.WorkflowB\003\340A\002\022/\n\013update_mask\030"
-          + "\002 \001(\0132\032.google.protobuf.FieldMask\"\245\001\n\021Op"
-          + "erationMetadata\022/\n\013create_time\030\001 \001(\0132\032.g"
-          + "oogle.protobuf.Timestamp\022,\n\010end_time\030\002 \001"
-          + "(\0132\032.google.protobuf.Timestamp\022\016\n\006target"
-          + "\030\003 \001(\t\022\014\n\004verb\030\004 \001(\t\022\023\n\013api_version\030\005 \001("
-          + "\t2\307\010\n\tWorkflows\022\262\001\n\rListWorkflows\022/.goog"
-          + "le.cloud.workflows.v1.ListWorkflowsReque"
-          + "st\0320.google.cloud.workflows.v1.ListWorkf"
-          + "lowsResponse\">\202\323\344\223\002/\022-/v1/{parent=projec"
-          + "ts/*/locations/*}/workflows\332A\006parent\022\237\001\n"
-          + "\013GetWorkflow\022-.google.cloud.workflows.v1"
-          + ".GetWorkflowRequest\032#.google.cloud.workf"
-          + "lows.v1.Workflow\"<\202\323\344\223\002/\022-/v1/{name=proj"
-          + "ects/*/locations/*/workflows/*}\332A\004name\022\340"
-          + "\001\n\016CreateWorkflow\0220.google.cloud.workflo"
-          + "ws.v1.CreateWorkflowRequest\032\035.google.lon"
-          + "grunning.Operation\"}\202\323\344\223\0029\"-/v1/{parent="
-          + "projects/*/locations/*}/workflows:\010workf"
-          + "low\332A\033parent,workflow,workflow_id\312A\035\n\010Wo"
-          + "rkflow\022\021OperationMetadata\022\314\001\n\016DeleteWork"
-          + "flow\0220.google.cloud.workflows.v1.DeleteW"
-          + "orkflowRequest\032\035.google.longrunning.Oper"
-          + "ation\"i\202\323\344\223\002/*-/v1/{name=projects/*/loca"
-          + "tions/*/workflows/*}\332A\004name\312A*\n\025google.p"
-          + "rotobuf.Empty\022\021OperationMetadata\022\342\001\n\016Upd"
-          + "ateWorkflow\0220.google.cloud.workflows.v1."
-          + "UpdateWorkflowRequest\032\035.google.longrunni"
-          + "ng.Operation\"\177\202\323\344\223\002B26/v1/{workflow.name"
-          + "=projects/*/locations/*/workflows/*}:\010wo"
-          + "rkflow\332A\024workflow,update_mask\312A\035\n\010Workfl"
-          + "ow\022\021OperationMetadata\032L\312A\030workflows.goog"
-          + "leapis.com\322A.https://www.googleapis.com/"
-          + "auth/cloud-platformBn\n\035com.google.cloud."
-          + "workflows.v1B\016WorkflowsProtoP\001Z;cloud.go"
-          + "ogle.com/go/workflows/apiv1/workflowspb;"
-          + "workflowspbb\006proto3"
+          + "nning/operations.proto\032\033google/protobuf/"
+          + "empty.proto\032 google/protobuf/field_mask."
+          + "proto\032\037google/protobuf/timestamp.proto\"\351"
+          + "\t\n\010Workflow\022\014\n\004name\030\001 \001(\t\022\023\n\013description"
+          + "\030\002 \001(\t\022>\n\005state\030\003 \001(\0162).google.cloud.wor"
+          + "kflows.v1.Workflow.StateB\004\342A\001\003\022\031\n\013revisi"
+          + "on_id\030\004 \001(\tB\004\342A\001\003\0225\n\013create_time\030\005 \001(\0132\032"
+          + ".google.protobuf.TimestampB\004\342A\001\003\0225\n\013upda"
+          + "te_time\030\006 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\004\342A\001\003\022>\n\024revision_create_time\030\007 \001(\0132\032."
+          + "google.protobuf.TimestampB\004\342A\001\003\022?\n\006label"
+          + "s\030\010 \003(\0132/.google.cloud.workflows.v1.Work"
+          + "flow.LabelsEntry\022\027\n\017service_account\030\t \001("
+          + "\t\022\031\n\017source_contents\030\n \001(\tH\000\022C\n\017crypto_k"
+          + "ey_name\030\013 \001(\tB*\342A\001\001\372A#\n!cloudkms.googlea"
+          + "pis.com/CryptoKey\022I\n\013state_error\030\014 \001(\0132."
+          + ".google.cloud.workflows.v1.Workflow.Stat"
+          + "eErrorB\004\342A\001\003\022N\n\016call_log_level\030\r \001(\01620.g"
+          + "oogle.cloud.workflows.v1.Workflow.CallLo"
+          + "gLevelB\004\342A\001\001\022Q\n\ruser_env_vars\030\016 \003(\01324.go"
+          + "ogle.cloud.workflows.v1.Workflow.UserEnv"
+          + "VarsEntryB\004\342A\001\001\032\215\001\n\nStateError\022\017\n\007detail"
+          + "s\030\001 \001(\t\022A\n\004type\030\002 \001(\01623.google.cloud.wor"
+          + "kflows.v1.Workflow.StateError.Type\"+\n\004Ty"
+          + "pe\022\024\n\020TYPE_UNSPECIFIED\020\000\022\r\n\tKMS_ERROR\020\001\032"
+          + "-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+          + "(\t:\0028\001\0322\n\020UserEnvVarsEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "\r\n\005value\030\002 \001(\t:\0028\001\";\n\005State\022\025\n\021STATE_UNS"
+          + "PECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\017\n\013UNAVAILABLE\020\002\""
+          + "d\n\014CallLogLevel\022\036\n\032CALL_LOG_LEVEL_UNSPEC"
+          + "IFIED\020\000\022\021\n\rLOG_ALL_CALLS\020\001\022\023\n\017LOG_ERRORS"
+          + "_ONLY\020\002\022\014\n\010LOG_NONE\020\003:d\352Aa\n!workflows.go"
+          + "ogleapis.com/Workflow\022<projects/{project"
+          + "}/locations/{location}/workflows/{workfl"
+          + "ow}B\r\n\013source_code\"\233\001\n\024ListWorkflowsRequ"
+          + "est\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations."
+          + "googleapis.com/Location\022\021\n\tpage_size\030\002 \001"
+          + "(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020"
+          + "\n\010order_by\030\005 \001(\t\"}\n\025ListWorkflowsRespons"
+          + "e\0226\n\tworkflows\030\001 \003(\0132#.google.cloud.work"
+          + "flows.v1.Workflow\022\027\n\017next_page_token\030\002 \001"
+          + "(\t\022\023\n\013unreachable\030\003 \003(\t\"i\n\022GetWorkflowRe"
+          + "quest\0228\n\004name\030\001 \001(\tB*\342A\001\002\372A#\n!workflows."
+          + "googleapis.com/Workflow\022\031\n\013revision_id\030\002"
+          + " \001(\tB\004\342A\001\001\"\253\001\n\025CreateWorkflowRequest\022:\n\006"
+          + "parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations.googlea"
+          + "pis.com/Location\022;\n\010workflow\030\002 \001(\0132#.goo"
+          + "gle.cloud.workflows.v1.WorkflowB\004\342A\001\002\022\031\n"
+          + "\013workflow_id\030\003 \001(\tB\004\342A\001\002\"Q\n\025DeleteWorkfl"
+          + "owRequest\0228\n\004name\030\001 \001(\tB*\342A\001\002\372A#\n!workfl"
+          + "ows.googleapis.com/Workflow\"\205\001\n\025UpdateWo"
+          + "rkflowRequest\022;\n\010workflow\030\001 \001(\0132#.google"
+          + ".cloud.workflows.v1.WorkflowB\004\342A\001\002\022/\n\013up"
+          + "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM"
+          + "ask\"\245\001\n\021OperationMetadata\022/\n\013create_time"
+          + "\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n\010en"
+          + "d_time\030\002 \001(\0132\032.google.protobuf.Timestamp"
+          + "\022\016\n\006target\030\003 \001(\t\022\014\n\004verb\030\004 \001(\t\022\023\n\013api_ve"
+          + "rsion\030\005 \001(\t2\307\010\n\tWorkflows\022\262\001\n\rListWorkfl"
+          + "ows\022/.google.cloud.workflows.v1.ListWork"
+          + "flowsRequest\0320.google.cloud.workflows.v1"
+          + ".ListWorkflowsResponse\">\332A\006parent\202\323\344\223\002/\022"
+          + "-/v1/{parent=projects/*/locations/*}/wor"
+          + "kflows\022\237\001\n\013GetWorkflow\022-.google.cloud.wo"
+          + "rkflows.v1.GetWorkflowRequest\032#.google.c"
+          + "loud.workflows.v1.Workflow\"<\332A\004name\202\323\344\223\002"
+          + "/\022-/v1/{name=projects/*/locations/*/work"
+          + "flows/*}\022\340\001\n\016CreateWorkflow\0220.google.clo"
+          + "ud.workflows.v1.CreateWorkflowRequest\032\035."
+          + "google.longrunning.Operation\"}\312A\035\n\010Workf"
+          + "low\022\021OperationMetadata\332A\033parent,workflow"
+          + ",workflow_id\202\323\344\223\0029\"-/v1/{parent=projects"
+          + "/*/locations/*}/workflows:\010workflow\022\314\001\n\016"
+          + "DeleteWorkflow\0220.google.cloud.workflows."
+          + "v1.DeleteWorkflowRequest\032\035.google.longru"
+          + "nning.Operation\"i\312A*\n\025google.protobuf.Em"
+          + "pty\022\021OperationMetadata\332A\004name\202\323\344\223\002/*-/v1"
+          + "/{name=projects/*/locations/*/workflows/"
+          + "*}\022\342\001\n\016UpdateWorkflow\0220.google.cloud.wor"
+          + "kflows.v1.UpdateWorkflowRequest\032\035.google"
+          + ".longrunning.Operation\"\177\312A\035\n\010Workflow\022\021O"
+          + "perationMetadata\332A\024workflow,update_mask\202"
+          + "\323\344\223\002B26/v1/{workflow.name=projects/*/loc"
+          + "ations/*/workflows/*}:\010workflow\032L\312A\030work"
+          + "flows.googleapis.com\322A.https://www.googl"
+          + "eapis.com/auth/cloud-platformB\347\001\n\035com.go"
+          + "ogle.cloud.workflows.v1B\016WorkflowsProtoP"
+          + "\001Z;cloud.google.com/go/workflows/apiv1/w"
+          + "orkflowspb;workflowspb\352Av\n!cloudkms.goog"
+          + "leapis.com/CryptoKey\022Qprojects/{project}"
+          + "/locations/{location}/keyRings/{keyRing}"
+          + "/cryptoKeys/{cryptoKey}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -159,6 +187,7 @@ public final class WorkflowsProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -178,13 +207,33 @@ public final class WorkflowsProto {
               "Labels",
               "ServiceAccount",
               "SourceContents",
+              "CryptoKeyName",
+              "StateError",
+              "CallLogLevel",
+              "UserEnvVars",
               "SourceCode",
             });
-    internal_static_google_cloud_workflows_v1_Workflow_LabelsEntry_descriptor =
+    internal_static_google_cloud_workflows_v1_Workflow_StateError_descriptor =
         internal_static_google_cloud_workflows_v1_Workflow_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_workflows_v1_Workflow_StateError_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_workflows_v1_Workflow_StateError_descriptor,
+            new java.lang.String[] {
+              "Details", "Type",
+            });
+    internal_static_google_cloud_workflows_v1_Workflow_LabelsEntry_descriptor =
+        internal_static_google_cloud_workflows_v1_Workflow_descriptor.getNestedTypes().get(1);
     internal_static_google_cloud_workflows_v1_Workflow_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_workflows_v1_Workflow_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_workflows_v1_Workflow_UserEnvVarsEntry_descriptor =
+        internal_static_google_cloud_workflows_v1_Workflow_descriptor.getNestedTypes().get(2);
+    internal_static_google_cloud_workflows_v1_Workflow_UserEnvVarsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_workflows_v1_Workflow_UserEnvVarsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });
@@ -210,7 +259,7 @@ public final class WorkflowsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_workflows_v1_GetWorkflowRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "RevisionId",
             });
     internal_static_google_cloud_workflows_v1_CreateWorkflowRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -252,6 +301,7 @@ public final class WorkflowsProto {
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
@@ -261,6 +311,7 @@ public final class WorkflowsProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ public interface RecognizeRequestOrBuilder
    * <pre>
    * Required. The name of the Recognizer to use during recognition. The
    * expected format is
-   * `projects/{project}/locations/{location}/recognizers/{recognizer}`.
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>
@@ -45,7 +46,8 @@ public interface RecognizeRequestOrBuilder
    * <pre>
    * Required. The name of the Recognizer to use during recognition. The
    * expected format is
-   * `projects/{project}/locations/{location}/recognizers/{recognizer}`.
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>
@@ -266,5 +268,5 @@ public interface RecognizeRequestOrBuilder
    */
   com.google.protobuf.ByteString getUriBytes();
 
-  public com.google.cloud.speech.v2.RecognizeRequest.AudioSourceCase getAudioSourceCase();
+  com.google.cloud.speech.v2.RecognizeRequest.AudioSourceCase getAudioSourceCase();
 }

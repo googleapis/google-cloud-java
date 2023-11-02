@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest;
@@ -1123,11 +1124,23 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
         HttpJsonCallSettings.<ExportAssetsRequest, Operation>newBuilder()
             .setMethodDescriptor(exportAssetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         HttpJsonCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
             .setMethodDescriptor(listAssetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
         batchGetAssetsHistoryTransportSettings =
@@ -1135,37 +1148,79 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                 .<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>newBuilder()
                 .setMethodDescriptor(batchGetAssetsHistoryMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateFeedRequest, Feed> createFeedTransportSettings =
         HttpJsonCallSettings.<CreateFeedRequest, Feed>newBuilder()
             .setMethodDescriptor(createFeedMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetFeedRequest, Feed> getFeedTransportSettings =
         HttpJsonCallSettings.<GetFeedRequest, Feed>newBuilder()
             .setMethodDescriptor(getFeedMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListFeedsRequest, ListFeedsResponse> listFeedsTransportSettings =
         HttpJsonCallSettings.<ListFeedsRequest, ListFeedsResponse>newBuilder()
             .setMethodDescriptor(listFeedsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateFeedRequest, Feed> updateFeedTransportSettings =
         HttpJsonCallSettings.<UpdateFeedRequest, Feed>newBuilder()
             .setMethodDescriptor(updateFeedMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("feed.name", String.valueOf(request.getFeed().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteFeedRequest, Empty> deleteFeedTransportSettings =
         HttpJsonCallSettings.<DeleteFeedRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteFeedMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SearchAllResourcesRequest, SearchAllResourcesResponse>
         searchAllResourcesTransportSettings =
             HttpJsonCallSettings.<SearchAllResourcesRequest, SearchAllResourcesResponse>newBuilder()
                 .setMethodDescriptor(searchAllResourcesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("scope", String.valueOf(request.getScope()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
         searchAllIamPoliciesTransportSettings =
@@ -1173,54 +1228,119 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                 .<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>newBuilder()
                 .setMethodDescriptor(searchAllIamPoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("scope", String.valueOf(request.getScope()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
         analyzeIamPolicyTransportSettings =
             HttpJsonCallSettings.<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>newBuilder()
                 .setMethodDescriptor(analyzeIamPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "analysis_query.scope",
+                          String.valueOf(request.getAnalysisQuery().getScope()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AnalyzeIamPolicyLongrunningRequest, Operation>
         analyzeIamPolicyLongrunningTransportSettings =
             HttpJsonCallSettings.<AnalyzeIamPolicyLongrunningRequest, Operation>newBuilder()
                 .setMethodDescriptor(analyzeIamPolicyLongrunningMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "analysis_query.scope",
+                          String.valueOf(request.getAnalysisQuery().getScope()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveTransportSettings =
         HttpJsonCallSettings.<AnalyzeMoveRequest, AnalyzeMoveResponse>newBuilder()
             .setMethodDescriptor(analyzeMoveMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<QueryAssetsRequest, QueryAssetsResponse> queryAssetsTransportSettings =
         HttpJsonCallSettings.<QueryAssetsRequest, QueryAssetsResponse>newBuilder()
             .setMethodDescriptor(queryAssetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQueryTransportSettings =
         HttpJsonCallSettings.<CreateSavedQueryRequest, SavedQuery>newBuilder()
             .setMethodDescriptor(createSavedQueryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetSavedQueryRequest, SavedQuery> getSavedQueryTransportSettings =
         HttpJsonCallSettings.<GetSavedQueryRequest, SavedQuery>newBuilder()
             .setMethodDescriptor(getSavedQueryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListSavedQueriesRequest, ListSavedQueriesResponse>
         listSavedQueriesTransportSettings =
             HttpJsonCallSettings.<ListSavedQueriesRequest, ListSavedQueriesResponse>newBuilder()
                 .setMethodDescriptor(listSavedQueriesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateSavedQueryRequest, SavedQuery> updateSavedQueryTransportSettings =
         HttpJsonCallSettings.<UpdateSavedQueryRequest, SavedQuery>newBuilder()
             .setMethodDescriptor(updateSavedQueryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "saved_query.name", String.valueOf(request.getSavedQuery().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteSavedQueryRequest, Empty> deleteSavedQueryTransportSettings =
         HttpJsonCallSettings.<DeleteSavedQueryRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteSavedQueryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
         batchGetEffectiveIamPoliciesTransportSettings =
@@ -1229,12 +1349,24 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                     newBuilder()
                 .setMethodDescriptor(batchGetEffectiveIamPoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("scope", String.valueOf(request.getScope()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
         analyzeOrgPoliciesTransportSettings =
             HttpJsonCallSettings.<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>newBuilder()
                 .setMethodDescriptor(analyzeOrgPoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("scope", String.valueOf(request.getScope()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             AnalyzeOrgPolicyGovernedContainersRequest, AnalyzeOrgPolicyGovernedContainersResponse>
@@ -1245,6 +1377,12 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                     newBuilder()
                 .setMethodDescriptor(analyzeOrgPolicyGovernedContainersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("scope", String.valueOf(request.getScope()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
@@ -1254,6 +1392,12 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                     newBuilder()
                 .setMethodDescriptor(analyzeOrgPolicyGovernedAssetsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("scope", String.valueOf(request.getScope()));
+                      return builder.build();
+                    })
                 .build();
 
     this.exportAssetsCallable =

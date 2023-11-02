@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.datacatalog.v1;
  *
  * <pre>
  * Common statistics on the entry's usage.
+ *
  * They can be set on any system.
  * </pre>
  *
@@ -44,11 +45,6 @@ public final class CommonUsageStats extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CommonUsageStats();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -269,6 +265,7 @@ public final class CommonUsageStats extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Common statistics on the entry's usage.
+   *
    * They can be set on any system.
    * </pre>
    *

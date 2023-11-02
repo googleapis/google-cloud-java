@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,24 +41,31 @@ public final class ReleaseRenderPayloadProto {
   static {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/deploy/v1/release_render_"
-          + "payload.proto\022\026google.cloud.deploy.v1\"6\n"
-          + "\022ReleaseRenderEvent\022\017\n\007message\030\001 \001(\t\022\017\n\007"
-          + "release\030\002 \001(\tBm\n\032com.google.cloud.deploy"
-          + ".v1B\031ReleaseRenderPayloadProtoP\001Z2cloud."
-          + "google.com/go/deploy/apiv1/deploypb;depl"
-          + "oypbb\006proto3"
+          + "payload.proto\022\026google.cloud.deploy.v1\032)g"
+          + "oogle/cloud/deploy/v1/cloud_deploy.proto"
+          + "\"\201\001\n\022ReleaseRenderEvent\022\017\n\007message\030\001 \001(\t"
+          + "\022\017\n\007release\030\002 \001(\t\022I\n\024release_render_stat"
+          + "e\030\003 \001(\0162+.google.cloud.deploy.v1.Release"
+          + ".RenderStateBm\n\032com.google.cloud.deploy."
+          + "v1B\031ReleaseRenderPayloadProtoP\001Z2cloud.g"
+          + "oogle.com/go/deploy/apiv1/deploypb;deplo"
+          + "ypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.cloud.deploy.v1.CloudDeployProto.getDescriptor(),
+            });
     internal_static_google_cloud_deploy_v1_ReleaseRenderEvent_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_deploy_v1_ReleaseRenderEvent_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ReleaseRenderEvent_descriptor,
             new java.lang.String[] {
-              "Message", "Release",
+              "Message", "Release", "ReleaseRenderState",
             });
+    com.google.cloud.deploy.v1.CloudDeployProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

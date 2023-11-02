@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,15 +29,18 @@ public interface BuildStepOrBuilder
    * <pre>
    * Required. The name of the container image that will run this particular
    * build step.
+   *
    * If the image is available in the host's Docker daemon's cache, it
    * will be run directly. If not, the host will attempt to pull the image
    * first, using the builder service account's credentials if necessary.
+   *
    * The Docker daemon's cache will already have the latest versions of all of
    * the officially supported build steps
    * ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)).
    * The Docker daemon will also have cached many of the layers for some popular
    * images, like "ubuntu", "debian", but they will be refreshed at the time you
    * attempt to use them.
+   *
    * If you built an image in a previous build step, it will be stored in the
    * host's Docker daemon's cache and is available to use as the name for a
    * later build step.
@@ -54,15 +57,18 @@ public interface BuildStepOrBuilder
    * <pre>
    * Required. The name of the container image that will run this particular
    * build step.
+   *
    * If the image is available in the host's Docker daemon's cache, it
    * will be run directly. If not, the host will attempt to pull the image
    * first, using the builder service account's credentials if necessary.
+   *
    * The Docker daemon's cache will already have the latest versions of all of
    * the officially supported build steps
    * ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)).
    * The Docker daemon will also have cached many of the layers for some popular
    * images, like "ubuntu", "debian", but they will be refreshed at the time you
    * attempt to use them.
+   *
    * If you built an image in a previous build step, it will be stored in the
    * host's Docker daemon's cache and is available to use as the name for a
    * later build step.
@@ -79,6 +85,7 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * A list of environment variable definitions to be used when running a step.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -93,6 +100,7 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * A list of environment variable definitions to be used when running a step.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -107,6 +115,7 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * A list of environment variable definitions to be used when running a step.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -122,6 +131,7 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * A list of environment variable definitions to be used when running a step.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -138,6 +148,7 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * A list of arguments that will be presented to the step when it is started.
+   *
    * If the image used to run the step's container has an entrypoint, the `args`
    * are used as arguments to that entrypoint. If the image does not define
    * an entrypoint, the first element in args is used as the entrypoint,
@@ -154,6 +165,7 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * A list of arguments that will be presented to the step when it is started.
+   *
    * If the image used to run the step's container has an entrypoint, the `args`
    * are used as arguments to that entrypoint. If the image does not define
    * an entrypoint, the first element in args is used as the entrypoint,
@@ -170,6 +182,7 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * A list of arguments that will be presented to the step when it is started.
+   *
    * If the image used to run the step's container has an entrypoint, the `args`
    * are used as arguments to that entrypoint. If the image does not define
    * an entrypoint, the first element in args is used as the entrypoint,
@@ -187,6 +200,7 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * A list of arguments that will be presented to the step when it is started.
+   *
    * If the image used to run the step's container has an entrypoint, the `args`
    * are used as arguments to that entrypoint. If the image does not define
    * an entrypoint, the first element in args is used as the entrypoint,
@@ -205,10 +219,12 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * Working directory to use when running this step's container.
+   *
    * If this value is a relative path, it is relative to the build's working
    * directory. If this value is absolute, it may be outside the build's working
    * directory, in which case the contents of the path may not be persisted
    * across build step executions, unless a `volume` for that path is specified.
+   *
    * If the build specifies a `RepoSource` with `dir` and a step with a `dir`,
    * which specifies an absolute path, the `RepoSource` `dir` is ignored for
    * the step's execution.
@@ -224,10 +240,12 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * Working directory to use when running this step's container.
+   *
    * If this value is a relative path, it is relative to the build's working
    * directory. If this value is absolute, it may be outside the build's working
    * directory, in which case the contents of the path may not be persisted
    * across build step executions, unless a `volume` for that path is specified.
+   *
    * If the build specifies a `RepoSource` with `dir` and a step with a `dir`,
    * which specifies an absolute path, the `RepoSource` `dir` is ignored for
    * the step's execution.
@@ -424,9 +442,11 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * List of volumes to mount into the build step.
+   *
    * Each volume is created as an empty volume prior to execution of the
    * build step. Upon completion of the build, volumes and their contents are
    * discarded.
+   *
    * Using a named volume in only one step is not valid as it is indicative
    * of a build request with an incorrect configuration.
    * </pre>
@@ -439,9 +459,11 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * List of volumes to mount into the build step.
+   *
    * Each volume is created as an empty volume prior to execution of the
    * build step. Upon completion of the build, volumes and their contents are
    * discarded.
+   *
    * Using a named volume in only one step is not valid as it is indicative
    * of a build request with an incorrect configuration.
    * </pre>
@@ -454,9 +476,11 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * List of volumes to mount into the build step.
+   *
    * Each volume is created as an empty volume prior to execution of the
    * build step. Upon completion of the build, volumes and their contents are
    * discarded.
+   *
    * Using a named volume in only one step is not valid as it is indicative
    * of a build request with an incorrect configuration.
    * </pre>
@@ -469,9 +493,11 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * List of volumes to mount into the build step.
+   *
    * Each volume is created as an empty volume prior to execution of the
    * build step. Upon completion of the build, volumes and their contents are
    * discarded.
+   *
    * Using a named volume in only one step is not valid as it is indicative
    * of a build request with an incorrect configuration.
    * </pre>
@@ -484,9 +510,11 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * List of volumes to mount into the build step.
+   *
    * Each volume is created as an empty volume prior to execution of the
    * build step. Upon completion of the build, volumes and their contents are
    * discarded.
+   *
    * Using a named volume in only one step is not valid as it is indicative
    * of a build request with an incorrect configuration.
    * </pre>
@@ -659,6 +687,7 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * Allow this build step to fail without failing the entire build.
+   *
    * If false, the entire build will fail if this step fails. Otherwise, the
    * build will succeed, but this step will still have a failure status.
    * Error information will be reported in the failure_detail field.
@@ -732,6 +761,7 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * A shell script to be executed in the step.
+   *
    * When script is provided, the user cannot specify the entrypoint or args.
    * </pre>
    *
@@ -745,6 +775,7 @@ public interface BuildStepOrBuilder
    *
    * <pre>
    * A shell script to be executed in the step.
+   *
    * When script is provided, the user cannot specify the entrypoint or args.
    * </pre>
    *
@@ -753,4 +784,33 @@ public interface BuildStepOrBuilder
    * @return The bytes for script.
    */
   com.google.protobuf.ByteString getScriptBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Option to include built-in and custom substitutions as env variables
+   * for this build step. This option will override the global option
+   * in BuildOption.
+   * </pre>
+   *
+   * <code>optional bool automap_substitutions = 20;</code>
+   *
+   * @return Whether the automapSubstitutions field is set.
+   */
+  boolean hasAutomapSubstitutions();
+  /**
+   *
+   *
+   * <pre>
+   * Option to include built-in and custom substitutions as env variables
+   * for this build step. This option will override the global option
+   * in BuildOption.
+   * </pre>
+   *
+   * <code>optional bool automap_substitutions = 20;</code>
+   *
+   * @return The automapSubstitutions.
+   */
+  boolean getAutomapSubstitutions();
 }

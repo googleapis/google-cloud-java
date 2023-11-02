@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,8 +30,10 @@ public interface ListFoldersRequestOrBuilder
    * Required. The name of the parent resource whose folders are being listed.
    * Only children of this parent resource are listed; descendants are not
    * listed.
+   *
    * If the parent is a folder, use the value `folders/{folder_id}`. If the
    * parent is an organization, use the value `organizations/{org_id}`.
+   *
    * Access to this method is controlled by checking the
    * `resourcemanager.folders.list` permission on the `parent`.
    * </pre>
@@ -50,8 +52,10 @@ public interface ListFoldersRequestOrBuilder
    * Required. The name of the parent resource whose folders are being listed.
    * Only children of this parent resource are listed; descendants are not
    * listed.
+   *
    * If the parent is a folder, use the value `folders/{folder_id}`. If the
    * parent is an organization, use the value `organizations/{org_id}`.
+   *
    * Access to this method is controlled by checking the
    * `resourcemanager.folders.list` permission on the `parent`.
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ExistingDisk extends com.google.protobuf.GeneratedMessageV3
     return new ExistingDisk();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.lifesciences.v2beta.WorkflowsProto
         .internal_static_google_cloud_lifesciences_v2beta_ExistingDisk_descriptor;
@@ -80,6 +75,7 @@ public final class ExistingDisk extends com.google.protobuf.GeneratedMessageV3
    * Life Sciences API assumes that the disk is a zonal disk and a URL will be
    * generated of the form `zones/&lt;zone&gt;/disks/&lt;disk&gt;`, where `&lt;zone&gt;` is the
    * zone in which the instance is allocated. The disk must be ext4 formatted.
+   *
    * If all `Mount` references to this disk have the `read_only` flag set to
    * true, the disk will be attached in `read-only` mode and can be shared with
    * other instances. Otherwise, the disk will be available for writing but
@@ -111,6 +107,7 @@ public final class ExistingDisk extends com.google.protobuf.GeneratedMessageV3
    * Life Sciences API assumes that the disk is a zonal disk and a URL will be
    * generated of the form `zones/&lt;zone&gt;/disks/&lt;disk&gt;`, where `&lt;zone&gt;` is the
    * zone in which the instance is allocated. The disk must be ext4 formatted.
+   *
    * If all `Mount` references to this disk have the `read_only` flag set to
    * true, the disk will be attached in `read-only` mode and can be shared with
    * other instances. Otherwise, the disk will be available for writing but
@@ -486,6 +483,7 @@ public final class ExistingDisk extends com.google.protobuf.GeneratedMessageV3
      * Life Sciences API assumes that the disk is a zonal disk and a URL will be
      * generated of the form `zones/&lt;zone&gt;/disks/&lt;disk&gt;`, where `&lt;zone&gt;` is the
      * zone in which the instance is allocated. The disk must be ext4 formatted.
+     *
      * If all `Mount` references to this disk have the `read_only` flag set to
      * true, the disk will be attached in `read-only` mode and can be shared with
      * other instances. Otherwise, the disk will be available for writing but
@@ -516,6 +514,7 @@ public final class ExistingDisk extends com.google.protobuf.GeneratedMessageV3
      * Life Sciences API assumes that the disk is a zonal disk and a URL will be
      * generated of the form `zones/&lt;zone&gt;/disks/&lt;disk&gt;`, where `&lt;zone&gt;` is the
      * zone in which the instance is allocated. The disk must be ext4 formatted.
+     *
      * If all `Mount` references to this disk have the `read_only` flag set to
      * true, the disk will be attached in `read-only` mode and can be shared with
      * other instances. Otherwise, the disk will be available for writing but
@@ -546,6 +545,7 @@ public final class ExistingDisk extends com.google.protobuf.GeneratedMessageV3
      * Life Sciences API assumes that the disk is a zonal disk and a URL will be
      * generated of the form `zones/&lt;zone&gt;/disks/&lt;disk&gt;`, where `&lt;zone&gt;` is the
      * zone in which the instance is allocated. The disk must be ext4 formatted.
+     *
      * If all `Mount` references to this disk have the `read_only` flag set to
      * true, the disk will be attached in `read-only` mode and can be shared with
      * other instances. Otherwise, the disk will be available for writing but
@@ -575,6 +575,7 @@ public final class ExistingDisk extends com.google.protobuf.GeneratedMessageV3
      * Life Sciences API assumes that the disk is a zonal disk and a URL will be
      * generated of the form `zones/&lt;zone&gt;/disks/&lt;disk&gt;`, where `&lt;zone&gt;` is the
      * zone in which the instance is allocated. The disk must be ext4 formatted.
+     *
      * If all `Mount` references to this disk have the `read_only` flag set to
      * true, the disk will be attached in `read-only` mode and can be shared with
      * other instances. Otherwise, the disk will be available for writing but
@@ -600,6 +601,7 @@ public final class ExistingDisk extends com.google.protobuf.GeneratedMessageV3
      * Life Sciences API assumes that the disk is a zonal disk and a URL will be
      * generated of the form `zones/&lt;zone&gt;/disks/&lt;disk&gt;`, where `&lt;zone&gt;` is the
      * zone in which the instance is allocated. The disk must be ext4 formatted.
+     *
      * If all `Mount` references to this disk have the `read_only` flag set to
      * true, the disk will be attached in `read-only` mode and can be shared with
      * other instances. Otherwise, the disk will be available for writing but

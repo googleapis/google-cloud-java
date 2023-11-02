@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,41 @@ public interface DataScanEventOrBuilder
    * @return The bytes for jobId.
    */
   com.google.protobuf.ByteString getJobIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the data scan job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12;</code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time when the data scan job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12;</code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time when the data scan job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
    *
@@ -363,5 +398,133 @@ public interface DataScanEventOrBuilder
    */
   com.google.cloud.dataplex.v1.DataScanEvent.DataQualityResultOrBuilder getDataQualityOrBuilder();
 
-  public com.google.cloud.dataplex.v1.DataScanEvent.ResultCase getResultCase();
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data profile type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+   * </code>
+   *
+   * @return Whether the dataProfileConfigs field is set.
+   */
+  boolean hasDataProfileConfigs();
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data profile type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+   * </code>
+   *
+   * @return The dataProfileConfigs.
+   */
+  com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs getDataProfileConfigs();
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data profile type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigsOrBuilder
+      getDataProfileConfigsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data quality type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+   * </code>
+   *
+   * @return Whether the dataQualityConfigs field is set.
+   */
+  boolean hasDataQualityConfigs();
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data quality type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+   * </code>
+   *
+   * @return The dataQualityConfigs.
+   */
+  com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs getDataQualityConfigs();
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data quality type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigsOrBuilder
+      getDataQualityConfigsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+   * </code>
+   *
+   * @return Whether the postScanActionsResult field is set.
+   */
+  boolean hasPostScanActionsResult();
+  /**
+   *
+   *
+   * <pre>
+   * The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+   * </code>
+   *
+   * @return The postScanActionsResult.
+   */
+  com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult getPostScanActionsResult();
+  /**
+   *
+   *
+   * <pre>
+   * The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResultOrBuilder
+      getPostScanActionsResultOrBuilder();
+
+  com.google.cloud.dataplex.v1.DataScanEvent.ResultCase getResultCase();
+
+  com.google.cloud.dataplex.v1.DataScanEvent.AppliedConfigsCase getAppliedConfigsCase();
 }

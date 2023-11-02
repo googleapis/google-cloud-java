@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class SparkProperties extends com.google.protobuf.GeneratedMessageV
     return new SparkProperties();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_SparkProperties_descriptor;
@@ -78,11 +73,13 @@ public final class SparkProperties extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Output only. The account ID of the service created for the purpose of this
    * connection.
+   *
    * The service account does not have any permissions associated with it when
    * it is created. After creation, customers delegate permissions to the
    * service account. When the connection is used in the context of a stored
-   * procedure for Apache Spark in BigQuery, the service account will be used to
+   * procedure for Apache Spark in BigQuery, the service account is used to
    * connect to the desired resources in Google Cloud.
+   *
    * The account ID is in the form of:
    * bqcx-&lt;projectnumber&gt;-&lt;uniqueid&gt;&#64;gcp-sa-bigquery-consp.iam.gserviceaccount.com
    * </pre>
@@ -109,11 +106,13 @@ public final class SparkProperties extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Output only. The account ID of the service created for the purpose of this
    * connection.
+   *
    * The service account does not have any permissions associated with it when
    * it is created. After creation, customers delegate permissions to the
    * service account. When the connection is used in the context of a stored
-   * procedure for Apache Spark in BigQuery, the service account will be used to
+   * procedure for Apache Spark in BigQuery, the service account is used to
    * connect to the desired resources in Google Cloud.
+   *
    * The account ID is in the form of:
    * bqcx-&lt;projectnumber&gt;-&lt;uniqueid&gt;&#64;gcp-sa-bigquery-consp.iam.gserviceaccount.com
    * </pre>
@@ -676,11 +675,13 @@ public final class SparkProperties extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Output only. The account ID of the service created for the purpose of this
      * connection.
+     *
      * The service account does not have any permissions associated with it when
      * it is created. After creation, customers delegate permissions to the
      * service account. When the connection is used in the context of a stored
-     * procedure for Apache Spark in BigQuery, the service account will be used to
+     * procedure for Apache Spark in BigQuery, the service account is used to
      * connect to the desired resources in Google Cloud.
+     *
      * The account ID is in the form of:
      * bqcx-&lt;projectnumber&gt;-&lt;uniqueid&gt;&#64;gcp-sa-bigquery-consp.iam.gserviceaccount.com
      * </pre>
@@ -706,11 +707,13 @@ public final class SparkProperties extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Output only. The account ID of the service created for the purpose of this
      * connection.
+     *
      * The service account does not have any permissions associated with it when
      * it is created. After creation, customers delegate permissions to the
      * service account. When the connection is used in the context of a stored
-     * procedure for Apache Spark in BigQuery, the service account will be used to
+     * procedure for Apache Spark in BigQuery, the service account is used to
      * connect to the desired resources in Google Cloud.
+     *
      * The account ID is in the form of:
      * bqcx-&lt;projectnumber&gt;-&lt;uniqueid&gt;&#64;gcp-sa-bigquery-consp.iam.gserviceaccount.com
      * </pre>
@@ -736,11 +739,13 @@ public final class SparkProperties extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Output only. The account ID of the service created for the purpose of this
      * connection.
+     *
      * The service account does not have any permissions associated with it when
      * it is created. After creation, customers delegate permissions to the
      * service account. When the connection is used in the context of a stored
-     * procedure for Apache Spark in BigQuery, the service account will be used to
+     * procedure for Apache Spark in BigQuery, the service account is used to
      * connect to the desired resources in Google Cloud.
+     *
      * The account ID is in the form of:
      * bqcx-&lt;projectnumber&gt;-&lt;uniqueid&gt;&#64;gcp-sa-bigquery-consp.iam.gserviceaccount.com
      * </pre>
@@ -765,11 +770,13 @@ public final class SparkProperties extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Output only. The account ID of the service created for the purpose of this
      * connection.
+     *
      * The service account does not have any permissions associated with it when
      * it is created. After creation, customers delegate permissions to the
      * service account. When the connection is used in the context of a stored
-     * procedure for Apache Spark in BigQuery, the service account will be used to
+     * procedure for Apache Spark in BigQuery, the service account is used to
      * connect to the desired resources in Google Cloud.
+     *
      * The account ID is in the form of:
      * bqcx-&lt;projectnumber&gt;-&lt;uniqueid&gt;&#64;gcp-sa-bigquery-consp.iam.gserviceaccount.com
      * </pre>
@@ -790,11 +797,13 @@ public final class SparkProperties extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Output only. The account ID of the service created for the purpose of this
      * connection.
+     *
      * The service account does not have any permissions associated with it when
      * it is created. After creation, customers delegate permissions to the
      * service account. When the connection is used in the context of a stored
-     * procedure for Apache Spark in BigQuery, the service account will be used to
+     * procedure for Apache Spark in BigQuery, the service account is used to
      * connect to the desired resources in Google Cloud.
+     *
      * The account ID is in the form of:
      * bqcx-&lt;projectnumber&gt;-&lt;uniqueid&gt;&#64;gcp-sa-bigquery-consp.iam.gserviceaccount.com
      * </pre>

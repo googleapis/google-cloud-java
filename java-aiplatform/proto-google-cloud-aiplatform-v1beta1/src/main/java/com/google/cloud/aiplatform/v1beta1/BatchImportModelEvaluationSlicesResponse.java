@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class BatchImportModelEvaluationSlicesResponse
   }
 
   private BatchImportModelEvaluationSlicesResponse() {
-    importedModelEvaluationSlices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    importedModelEvaluationSlices_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchImportModelEvaluationSlicesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -74,7 +69,8 @@ public final class BatchImportModelEvaluationSlicesResponse
   public static final int IMPORTED_MODEL_EVALUATION_SLICES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList importedModelEvaluationSlices_;
+  private com.google.protobuf.LazyStringArrayList importedModelEvaluationSlices_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -364,8 +360,7 @@ public final class BatchImportModelEvaluationSlicesResponse
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      importedModelEvaluationSlices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      importedModelEvaluationSlices_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -397,7 +392,6 @@ public final class BatchImportModelEvaluationSlicesResponse
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesResponse result =
           new com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -405,18 +399,13 @@ public final class BatchImportModelEvaluationSlicesResponse
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesResponse result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        importedModelEvaluationSlices_ = importedModelEvaluationSlices_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.importedModelEvaluationSlices_ = importedModelEvaluationSlices_;
-    }
-
     private void buildPartial0(
         com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        importedModelEvaluationSlices_.makeImmutable();
+        result.importedModelEvaluationSlices_ = importedModelEvaluationSlices_;
+      }
     }
 
     @java.lang.Override
@@ -472,7 +461,7 @@ public final class BatchImportModelEvaluationSlicesResponse
       if (!other.importedModelEvaluationSlices_.isEmpty()) {
         if (importedModelEvaluationSlices_.isEmpty()) {
           importedModelEvaluationSlices_ = other.importedModelEvaluationSlices_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureImportedModelEvaluationSlicesIsMutable();
           importedModelEvaluationSlices_.addAll(other.importedModelEvaluationSlices_);
@@ -531,15 +520,15 @@ public final class BatchImportModelEvaluationSlicesResponse
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList importedModelEvaluationSlices_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList importedModelEvaluationSlices_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureImportedModelEvaluationSlicesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!importedModelEvaluationSlices_.isModifiable()) {
         importedModelEvaluationSlices_ =
             new com.google.protobuf.LazyStringArrayList(importedModelEvaluationSlices_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -556,7 +545,8 @@ public final class BatchImportModelEvaluationSlicesResponse
      * @return A list containing the importedModelEvaluationSlices.
      */
     public com.google.protobuf.ProtocolStringList getImportedModelEvaluationSlicesList() {
-      return importedModelEvaluationSlices_.getUnmodifiableView();
+      importedModelEvaluationSlices_.makeImmutable();
+      return importedModelEvaluationSlices_;
     }
     /**
      *
@@ -633,6 +623,7 @@ public final class BatchImportModelEvaluationSlicesResponse
       }
       ensureImportedModelEvaluationSlicesIsMutable();
       importedModelEvaluationSlices_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -657,6 +648,7 @@ public final class BatchImportModelEvaluationSlicesResponse
       }
       ensureImportedModelEvaluationSlicesIsMutable();
       importedModelEvaluationSlices_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -680,6 +672,7 @@ public final class BatchImportModelEvaluationSlicesResponse
       ensureImportedModelEvaluationSlicesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, importedModelEvaluationSlices_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,8 +691,9 @@ public final class BatchImportModelEvaluationSlicesResponse
      * @return This builder for chaining.
      */
     public Builder clearImportedModelEvaluationSlices() {
-      importedModelEvaluationSlices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      importedModelEvaluationSlices_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -725,6 +719,7 @@ public final class BatchImportModelEvaluationSlicesResponse
       checkByteStringIsUtf8(value);
       ensureImportedModelEvaluationSlicesIsMutable();
       importedModelEvaluationSlices_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

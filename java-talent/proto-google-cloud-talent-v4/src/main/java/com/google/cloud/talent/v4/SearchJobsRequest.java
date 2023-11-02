@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchJobsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -254,6 +249,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
    * being displayed lower down in the results.
+   *
    * If you are using pageToken to page through the result set,
    * latency might be lower but we can't guarantee that all results are
    * returned. If you are using page offset, latency might be higher but all
@@ -321,6 +317,18 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <code>TWO_PER_COMPANY = 4;</code>
      */
     TWO_PER_COMPANY(4),
+    /**
+     *
+     *
+     * <pre>
+     * Similar to ONE_PER_COMPANY, but it allows at most three jobs in the
+     * same company to be shown at once, the other jobs under same company are
+     * dropped.
+     * </pre>
+     *
+     * <code>MAX_THREE_PER_COMPANY = 6;</code>
+     */
+    MAX_THREE_PER_COMPANY(6),
     /**
      *
      *
@@ -398,6 +406,18 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * Similar to ONE_PER_COMPANY, but it allows at most three jobs in the
+     * same company to be shown at once, the other jobs under same company are
+     * dropped.
+     * </pre>
+     *
+     * <code>MAX_THREE_PER_COMPANY = 6;</code>
+     */
+    public static final int MAX_THREE_PER_COMPANY_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
      * The result list is ordered such that somewhat similar results are pushed
      * to the end of the last page of the search results. This option is
      * recommended if SIMPLE diversification does not diversify enough.
@@ -441,6 +461,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           return ONE_PER_COMPANY;
         case 4:
           return TWO_PER_COMPANY;
+        case 6:
+          return MAX_THREE_PER_COMPANY;
         case 5:
           return DIVERSIFY_BY_LOOSER_SIMILARITY;
         default:
@@ -510,9 +532,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * job posting with the title "software developer," which doesn't fall into
    * "program manager" ontology, and "program manager" appearing in its
    * description will be surfaced.
+   *
    * For queries like "cloud" that don't contain title or
    * location specific ontology, jobs with "cloud" keyword matches are returned
    * regardless of this enum's value.
+   *
    * Use
    * [Company.keyword_searchable_job_custom_attributes][google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes]
    * if company-specific globally matched custom field/attribute string values
@@ -728,6 +752,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Required. Controls over how important the score of
      * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.ranking_expression]
      * gets applied to job's final ranking position.
+     *
      * An error is thrown if not specified.
      * </pre>
      *
@@ -745,6 +770,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Required. Controls over how important the score of
      * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.ranking_expression]
      * gets applied to job's final ranking position.
+     *
      * An error is thrown if not specified.
      * </pre>
      *
@@ -765,18 +791,23 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * relevance score (determined by API algorithm). A combination of the
      * ranking expression and relevance score is used to determine job's final
      * ranking position.
+     *
      * The syntax for this expression is a subset of Google SQL syntax.
+     *
      * Supported operators are: +, -, *, /, where the left and right side of
      * the operator is either a numeric
      * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
      * key, integer/double value or an expression that can be evaluated to a
      * number.
+     *
      * Parenthesis are supported to adjust calculation precedence. The
      * expression must be &lt; 200 characters in length.
+     *
      * The expression is considered invalid for a job if the expression
      * references custom attributes that are not populated on the job or if the
      * expression results in a divide by zero. If an expression is invalid for a
      * job, that job is demoted to the end of the results.
+     *
      * Sample ranking expression
      * (year + 25) * 0.25 - (freshness / 0.5)
      * </pre>
@@ -794,18 +825,23 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * relevance score (determined by API algorithm). A combination of the
      * ranking expression and relevance score is used to determine job's final
      * ranking position.
+     *
      * The syntax for this expression is a subset of Google SQL syntax.
+     *
      * Supported operators are: +, -, *, /, where the left and right side of
      * the operator is either a numeric
      * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
      * key, integer/double value or an expression that can be evaluated to a
      * number.
+     *
      * Parenthesis are supported to adjust calculation precedence. The
      * expression must be &lt; 200 characters in length.
+     *
      * The expression is considered invalid for a job if the expression
      * references custom attributes that are not populated on the job or if the
      * expression results in a divide by zero. If an expression is invalid for a
      * job, that job is demoted to the end of the results.
+     *
      * Sample ranking expression
      * (year + 25) * 0.25 - (freshness / 0.5)
      * </pre>
@@ -845,11 +881,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CustomRankingInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1152,6 +1183,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Required. Controls over how important the score of
      * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.ranking_expression]
      * gets applied to job's final ranking position.
+     *
      * An error is thrown if not specified.
      * </pre>
      *
@@ -1172,6 +1204,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Required. Controls over how important the score of
      * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.ranking_expression]
      * gets applied to job's final ranking position.
+     *
      * An error is thrown if not specified.
      * </pre>
      *
@@ -1205,18 +1238,23 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * relevance score (determined by API algorithm). A combination of the
      * ranking expression and relevance score is used to determine job's final
      * ranking position.
+     *
      * The syntax for this expression is a subset of Google SQL syntax.
+     *
      * Supported operators are: +, -, *, /, where the left and right side of
      * the operator is either a numeric
      * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
      * key, integer/double value or an expression that can be evaluated to a
      * number.
+     *
      * Parenthesis are supported to adjust calculation precedence. The
      * expression must be &lt; 200 characters in length.
+     *
      * The expression is considered invalid for a job if the expression
      * references custom attributes that are not populated on the job or if the
      * expression results in a divide by zero. If an expression is invalid for a
      * job, that job is demoted to the end of the results.
+     *
      * Sample ranking expression
      * (year + 25) * 0.25 - (freshness / 0.5)
      * </pre>
@@ -1245,18 +1283,23 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * relevance score (determined by API algorithm). A combination of the
      * ranking expression and relevance score is used to determine job's final
      * ranking position.
+     *
      * The syntax for this expression is a subset of Google SQL syntax.
+     *
      * Supported operators are: +, -, *, /, where the left and right side of
      * the operator is either a numeric
      * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
      * key, integer/double value or an expression that can be evaluated to a
      * number.
+     *
      * Parenthesis are supported to adjust calculation precedence. The
      * expression must be &lt; 200 characters in length.
+     *
      * The expression is considered invalid for a job if the expression
      * references custom attributes that are not populated on the job or if the
      * expression results in a divide by zero. If an expression is invalid for a
      * job, that job is demoted to the end of the results.
+     *
      * Sample ranking expression
      * (year + 25) * 0.25 - (freshness / 0.5)
      * </pre>
@@ -1666,6 +1709,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * Required. Controls over how important the score of
        * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.ranking_expression]
        * gets applied to job's final ranking position.
+       *
        * An error is thrown if not specified.
        * </pre>
        *
@@ -1686,6 +1730,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * Required. Controls over how important the score of
        * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.ranking_expression]
        * gets applied to job's final ranking position.
+       *
        * An error is thrown if not specified.
        * </pre>
        *
@@ -1709,6 +1754,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * Required. Controls over how important the score of
        * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.ranking_expression]
        * gets applied to job's final ranking position.
+       *
        * An error is thrown if not specified.
        * </pre>
        *
@@ -1736,6 +1782,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * Required. Controls over how important the score of
        * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.ranking_expression]
        * gets applied to job's final ranking position.
+       *
        * An error is thrown if not specified.
        * </pre>
        *
@@ -1763,6 +1810,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * Required. Controls over how important the score of
        * [CustomRankingInfo.ranking_expression][google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.ranking_expression]
        * gets applied to job's final ranking position.
+       *
        * An error is thrown if not specified.
        * </pre>
        *
@@ -1788,18 +1836,23 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * relevance score (determined by API algorithm). A combination of the
        * ranking expression and relevance score is used to determine job's final
        * ranking position.
+       *
        * The syntax for this expression is a subset of Google SQL syntax.
+       *
        * Supported operators are: +, -, *, /, where the left and right side of
        * the operator is either a numeric
        * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
        * key, integer/double value or an expression that can be evaluated to a
        * number.
+       *
        * Parenthesis are supported to adjust calculation precedence. The
        * expression must be &lt; 200 characters in length.
+       *
        * The expression is considered invalid for a job if the expression
        * references custom attributes that are not populated on the job or if the
        * expression results in a divide by zero. If an expression is invalid for a
        * job, that job is demoted to the end of the results.
+       *
        * Sample ranking expression
        * (year + 25) * 0.25 - (freshness / 0.5)
        * </pre>
@@ -1827,18 +1880,23 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * relevance score (determined by API algorithm). A combination of the
        * ranking expression and relevance score is used to determine job's final
        * ranking position.
+       *
        * The syntax for this expression is a subset of Google SQL syntax.
+       *
        * Supported operators are: +, -, *, /, where the left and right side of
        * the operator is either a numeric
        * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
        * key, integer/double value or an expression that can be evaluated to a
        * number.
+       *
        * Parenthesis are supported to adjust calculation precedence. The
        * expression must be &lt; 200 characters in length.
+       *
        * The expression is considered invalid for a job if the expression
        * references custom attributes that are not populated on the job or if the
        * expression results in a divide by zero. If an expression is invalid for a
        * job, that job is demoted to the end of the results.
+       *
        * Sample ranking expression
        * (year + 25) * 0.25 - (freshness / 0.5)
        * </pre>
@@ -1866,18 +1924,23 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * relevance score (determined by API algorithm). A combination of the
        * ranking expression and relevance score is used to determine job's final
        * ranking position.
+       *
        * The syntax for this expression is a subset of Google SQL syntax.
+       *
        * Supported operators are: +, -, *, /, where the left and right side of
        * the operator is either a numeric
        * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
        * key, integer/double value or an expression that can be evaluated to a
        * number.
+       *
        * Parenthesis are supported to adjust calculation precedence. The
        * expression must be &lt; 200 characters in length.
+       *
        * The expression is considered invalid for a job if the expression
        * references custom attributes that are not populated on the job or if the
        * expression results in a divide by zero. If an expression is invalid for a
        * job, that job is demoted to the end of the results.
+       *
        * Sample ranking expression
        * (year + 25) * 0.25 - (freshness / 0.5)
        * </pre>
@@ -1904,18 +1967,23 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * relevance score (determined by API algorithm). A combination of the
        * ranking expression and relevance score is used to determine job's final
        * ranking position.
+       *
        * The syntax for this expression is a subset of Google SQL syntax.
+       *
        * Supported operators are: +, -, *, /, where the left and right side of
        * the operator is either a numeric
        * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
        * key, integer/double value or an expression that can be evaluated to a
        * number.
+       *
        * Parenthesis are supported to adjust calculation precedence. The
        * expression must be &lt; 200 characters in length.
+       *
        * The expression is considered invalid for a job if the expression
        * references custom attributes that are not populated on the job or if the
        * expression results in a divide by zero. If an expression is invalid for a
        * job, that job is demoted to the end of the results.
+       *
        * Sample ranking expression
        * (year + 25) * 0.25 - (freshness / 0.5)
        * </pre>
@@ -1938,18 +2006,23 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * relevance score (determined by API algorithm). A combination of the
        * ranking expression and relevance score is used to determine job's final
        * ranking position.
+       *
        * The syntax for this expression is a subset of Google SQL syntax.
+       *
        * Supported operators are: +, -, *, /, where the left and right side of
        * the operator is either a numeric
        * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
        * key, integer/double value or an expression that can be evaluated to a
        * number.
+       *
        * Parenthesis are supported to adjust calculation precedence. The
        * expression must be &lt; 200 characters in length.
+       *
        * The expression is considered invalid for a job if the expression
        * references custom attributes that are not populated on the job or if the
        * expression results in a divide by zero. If an expression is invalid for a
        * job, that job is demoted to the end of the results.
+       *
        * Sample ranking expression
        * (year + 25) * 0.25 - (freshness / 0.5)
        * </pre>
@@ -2046,6 +2119,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The resource name of the tenant to search within.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenants/bar".
    * </pre>
@@ -2073,6 +2147,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The resource name of the tenant to search within.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenants/bar".
    * </pre>
@@ -2103,6 +2178,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Mode of a search.
+   *
    * Defaults to
    * [SearchMode.JOB_SEARCH][google.cloud.talent.v4.SearchJobsRequest.SearchMode.JOB_SEARCH].
    * </pre>
@@ -2120,6 +2196,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Mode of a search.
+   *
    * Defaults to
    * [SearchMode.JOB_SEARCH][google.cloud.talent.v4.SearchJobsRequest.SearchMode.JOB_SEARCH].
    * </pre>
@@ -2254,6 +2331,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * Controls whether to broaden the search when it produces sparse results.
    * Broadened queries append results to the end of the matching results
    * list.
+   *
    * Defaults to false.
    * </pre>
    *
@@ -2275,28 +2353,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * An expression specifies a histogram request against matching jobs.
+   *
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
+   *
    * Available aggregation function calls are:
    * * `count(string_histogram_facet)`: Count the number of matching entities,
    * for each distinct attribute value.
    * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
    * matching entities within each bucket.
+   *
    * A maximum of 200 histogram buckets are supported.
+   *
    * Data types:
+   *
    * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
    * * String: string like "any string with backslash escape for quote(&#92;")."
    * * Number: whole number and floating point number like 10, -1 and -0.01.
    * * List: list of elements with comma(,) separator surrounded by square
    * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+   *
    * Built-in constants:
+   *
    * * MIN (minimum number similar to java Double.MIN_VALUE)
    * * MAX (maximum number similar to java Double.MAX_VALUE)
+   *
    * Built-in functions:
+   *
    * * bucket(start, end[, label]): bucket built-in function creates a bucket
    * with range of [start, end). Note that the end is exclusive, for example,
    * bucket(1, MAX, "positive number") or bucket(1, 10).
+   *
    * Job histogram facets:
+   *
    * * company_display_name: histogram by
    * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
    * * employment_type: histogram by
@@ -2365,7 +2454,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *   Values can be accessed via square bracket notations like
    *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *   group results by.
+   *
    * Example expressions:
+   *
    * * `count(admin1)`
    * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
    * bucket(100000, MAX)])`
@@ -2385,28 +2476,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * An expression specifies a histogram request against matching jobs.
+   *
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
+   *
    * Available aggregation function calls are:
    * * `count(string_histogram_facet)`: Count the number of matching entities,
    * for each distinct attribute value.
    * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
    * matching entities within each bucket.
+   *
    * A maximum of 200 histogram buckets are supported.
+   *
    * Data types:
+   *
    * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
    * * String: string like "any string with backslash escape for quote(&#92;")."
    * * Number: whole number and floating point number like 10, -1 and -0.01.
    * * List: list of elements with comma(,) separator surrounded by square
    * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+   *
    * Built-in constants:
+   *
    * * MIN (minimum number similar to java Double.MIN_VALUE)
    * * MAX (maximum number similar to java Double.MAX_VALUE)
+   *
    * Built-in functions:
+   *
    * * bucket(start, end[, label]): bucket built-in function creates a bucket
    * with range of [start, end). Note that the end is exclusive, for example,
    * bucket(1, MAX, "positive number") or bucket(1, 10).
+   *
    * Job histogram facets:
+   *
    * * company_display_name: histogram by
    * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
    * * employment_type: histogram by
@@ -2475,7 +2577,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *   Values can be accessed via square bracket notations like
    *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *   group results by.
+   *
    * Example expressions:
+   *
    * * `count(admin1)`
    * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
    * bucket(100000, MAX)])`
@@ -2496,28 +2600,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * An expression specifies a histogram request against matching jobs.
+   *
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
+   *
    * Available aggregation function calls are:
    * * `count(string_histogram_facet)`: Count the number of matching entities,
    * for each distinct attribute value.
    * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
    * matching entities within each bucket.
+   *
    * A maximum of 200 histogram buckets are supported.
+   *
    * Data types:
+   *
    * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
    * * String: string like "any string with backslash escape for quote(&#92;")."
    * * Number: whole number and floating point number like 10, -1 and -0.01.
    * * List: list of elements with comma(,) separator surrounded by square
    * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+   *
    * Built-in constants:
+   *
    * * MIN (minimum number similar to java Double.MIN_VALUE)
    * * MAX (maximum number similar to java Double.MAX_VALUE)
+   *
    * Built-in functions:
+   *
    * * bucket(start, end[, label]): bucket built-in function creates a bucket
    * with range of [start, end). Note that the end is exclusive, for example,
    * bucket(1, MAX, "positive number") or bucket(1, 10).
+   *
    * Job histogram facets:
+   *
    * * company_display_name: histogram by
    * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
    * * employment_type: histogram by
@@ -2586,7 +2701,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *   Values can be accessed via square bracket notations like
    *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *   group results by.
+   *
    * Example expressions:
+   *
    * * `count(admin1)`
    * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
    * bucket(100000, MAX)])`
@@ -2606,28 +2723,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * An expression specifies a histogram request against matching jobs.
+   *
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
+   *
    * Available aggregation function calls are:
    * * `count(string_histogram_facet)`: Count the number of matching entities,
    * for each distinct attribute value.
    * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
    * matching entities within each bucket.
+   *
    * A maximum of 200 histogram buckets are supported.
+   *
    * Data types:
+   *
    * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
    * * String: string like "any string with backslash escape for quote(&#92;")."
    * * Number: whole number and floating point number like 10, -1 and -0.01.
    * * List: list of elements with comma(,) separator surrounded by square
    * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+   *
    * Built-in constants:
+   *
    * * MIN (minimum number similar to java Double.MIN_VALUE)
    * * MAX (maximum number similar to java Double.MAX_VALUE)
+   *
    * Built-in functions:
+   *
    * * bucket(start, end[, label]): bucket built-in function creates a bucket
    * with range of [start, end). Note that the end is exclusive, for example,
    * bucket(1, MAX, "positive number") or bucket(1, 10).
+   *
    * Job histogram facets:
+   *
    * * company_display_name: histogram by
    * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
    * * employment_type: histogram by
@@ -2696,7 +2824,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *   Values can be accessed via square bracket notations like
    *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *   group results by.
+   *
    * Example expressions:
+   *
    * * `count(admin1)`
    * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
    * bucket(100000, MAX)])`
@@ -2716,28 +2846,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * An expression specifies a histogram request against matching jobs.
+   *
    * Expression syntax is an aggregation function call with histogram facets and
    * other options.
+   *
    * Available aggregation function calls are:
    * * `count(string_histogram_facet)`: Count the number of matching entities,
    * for each distinct attribute value.
    * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
    * matching entities within each bucket.
+   *
    * A maximum of 200 histogram buckets are supported.
+   *
    * Data types:
+   *
    * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
    * * String: string like "any string with backslash escape for quote(&#92;")."
    * * Number: whole number and floating point number like 10, -1 and -0.01.
    * * List: list of elements with comma(,) separator surrounded by square
    * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+   *
    * Built-in constants:
+   *
    * * MIN (minimum number similar to java Double.MIN_VALUE)
    * * MAX (maximum number similar to java Double.MAX_VALUE)
+   *
    * Built-in functions:
+   *
    * * bucket(start, end[, label]): bucket built-in function creates a bucket
    * with range of [start, end). Note that the end is exclusive, for example,
    * bucket(1, MAX, "positive number") or bucket(1, 10).
+   *
    * Job histogram facets:
+   *
    * * company_display_name: histogram by
    * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
    * * employment_type: histogram by
@@ -2806,7 +2947,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *   Values can be accessed via square bracket notations like
    *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
    *   group results by.
+   *
    * Example expressions:
+   *
    * * `count(admin1)`
    * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
    * bucket(100000, MAX)])`
@@ -2874,7 +3017,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * location, amongst the jobs deemed by the API as relevant) in search
    * results. This field is only considered if
    * [page_token][google.cloud.talent.v4.SearchJobsRequest.page_token] is unset.
+   *
    * The maximum allowed value is 5000. Otherwise an error is thrown.
+   *
    * For example, 0 means to  return results starting from the first matching
    * job, and 10 means to return from the 11th job. This can be used for
    * pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -2977,7 +3122,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The criteria determining how search results are sorted. Default is
    * `"relevance desc"`.
+   *
    * Supported options are:
+   *
    * * `"relevance desc"`: By relevance descending, as determined by the API
    *   algorithms. Relevance thresholding of query results is only available
    *   with this ordering.
@@ -3050,7 +3197,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The criteria determining how search results are sorted. Default is
    * `"relevance desc"`.
+   *
    * Supported options are:
+   *
    * * `"relevance desc"`: By relevance descending, as determined by the API
    *   algorithms. Relevance thresholding of query results is only available
    *   with this ordering.
@@ -3130,6 +3279,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
    * being displayed lower down in the results.
+   *
    * Defaults to
    * [DiversificationLevel.SIMPLE][google.cloud.talent.v4.SearchJobsRequest.DiversificationLevel.SIMPLE]
    * if no value is specified.
@@ -3155,6 +3305,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * clustered so that only one representative job of the cluster is
    * displayed to the job seeker higher up in the results, with the other jobs
    * being displayed lower down in the results.
+   *
    * Defaults to
    * [DiversificationLevel.SIMPLE][google.cloud.talent.v4.SearchJobsRequest.DiversificationLevel.SIMPLE]
    * if no value is specified.
@@ -3243,6 +3394,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * This field is deprecated. Please use
    * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode]
    * going forward.
+   *
    * To migrate, disable_keyword_match set to false maps to
    * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL],
    * and disable_keyword_match set to true maps to
@@ -3250,6 +3402,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * If
    * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode]
    * is set, this field is ignored.
+   *
    * Controls whether to disable exact keyword match on
    * [Job.title][google.cloud.talent.v4.Job.title],
    * [Job.description][google.cloud.talent.v4.Job.description],
@@ -3262,21 +3415,24 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * job posting has the title "software developer," which doesn't fall into
    * "program manager" ontology, but does have "program manager" appearing in
    * its description.
+   *
    * For queries like "cloud" that don't contain title or
    * location specific ontology, jobs with "cloud" keyword matches are returned
    * regardless of this flag's value.
+   *
    * Use
    * [Company.keyword_searchable_job_custom_attributes][google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes]
    * if company-specific globally matched custom field/attribute string values
    * are needed. Enabling keyword match improves recall of subsequent search
    * requests.
+   *
    * Defaults to false.
    * </pre>
    *
    * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
-   *     google/cloud/talent/v4/job_service.proto;l=799
+   *     google/cloud/talent/v4/job_service.proto;l=804
    * @return The disableKeywordMatch.
    */
   @java.lang.Override
@@ -3293,6 +3449,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Controls what keyword match options to use. If both keyword_match_mode and
    * disable_keyword_match are set, keyword_match_mode will take precedence.
+   *
    * Defaults to
    * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL]
    * if no value is specified.
@@ -3313,6 +3470,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Controls what keyword match options to use. If both keyword_match_mode and
    * disable_keyword_match are set, keyword_match_mode will take precedence.
+   *
    * Defaults to
    * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL]
    * if no value is specified.
@@ -4088,6 +4246,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the tenant to search within.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenants/bar".
      * </pre>
@@ -4114,6 +4273,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the tenant to search within.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenants/bar".
      * </pre>
@@ -4140,6 +4300,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the tenant to search within.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenants/bar".
      * </pre>
@@ -4165,6 +4326,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the tenant to search within.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenants/bar".
      * </pre>
@@ -4186,6 +4348,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the tenant to search within.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenants/bar".
      * </pre>
@@ -4214,6 +4377,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Mode of a search.
+     *
      * Defaults to
      * [SearchMode.JOB_SEARCH][google.cloud.talent.v4.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
@@ -4231,6 +4395,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Mode of a search.
+     *
      * Defaults to
      * [SearchMode.JOB_SEARCH][google.cloud.talent.v4.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
@@ -4251,6 +4416,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Mode of a search.
+     *
      * Defaults to
      * [SearchMode.JOB_SEARCH][google.cloud.talent.v4.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
@@ -4272,6 +4438,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Mode of a search.
+     *
      * Defaults to
      * [SearchMode.JOB_SEARCH][google.cloud.talent.v4.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
@@ -4295,6 +4462,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Mode of a search.
+     *
      * Defaults to
      * [SearchMode.JOB_SEARCH][google.cloud.talent.v4.SearchJobsRequest.SearchMode.JOB_SEARCH].
      * </pre>
@@ -4722,6 +4890,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Controls whether to broaden the search when it produces sparse results.
      * Broadened queries append results to the end of the matching results
      * list.
+     *
      * Defaults to false.
      * </pre>
      *
@@ -4740,6 +4909,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Controls whether to broaden the search when it produces sparse results.
      * Broadened queries append results to the end of the matching results
      * list.
+     *
      * Defaults to false.
      * </pre>
      *
@@ -4762,6 +4932,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * Controls whether to broaden the search when it produces sparse results.
      * Broadened queries append results to the end of the matching results
      * list.
+     *
      * Defaults to false.
      * </pre>
      *
@@ -4798,28 +4969,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -4888,7 +5070,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -4911,28 +5095,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -5001,7 +5196,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -5024,28 +5221,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -5114,7 +5322,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -5137,28 +5347,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -5227,7 +5448,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -5256,28 +5479,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -5346,7 +5580,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -5373,28 +5609,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -5463,7 +5710,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -5492,28 +5741,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -5582,7 +5842,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -5611,28 +5873,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -5701,7 +5974,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -5728,28 +6003,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -5818,7 +6104,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -5845,28 +6133,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -5935,7 +6234,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -5962,28 +6263,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -6052,7 +6364,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -6078,28 +6392,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -6168,7 +6493,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -6194,28 +6521,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -6284,7 +6622,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -6303,28 +6643,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -6393,7 +6744,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -6417,28 +6770,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -6507,7 +6871,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -6531,28 +6897,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -6621,7 +6998,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -6641,28 +7020,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -6731,7 +7121,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -6751,28 +7143,39 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * An expression specifies a histogram request against matching jobs.
+     *
      * Expression syntax is an aggregation function call with histogram facets and
      * other options.
+     *
      * Available aggregation function calls are:
      * * `count(string_histogram_facet)`: Count the number of matching entities,
      * for each distinct attribute value.
      * * `count(numeric_histogram_facet, list of buckets)`: Count the number of
      * matching entities within each bucket.
+     *
      * A maximum of 200 histogram buckets are supported.
+     *
      * Data types:
+     *
      * * Histogram facet: facet names with format `[a-zA-Z][a-zA-Z0-9_]+`.
      * * String: string like "any string with backslash escape for quote(&#92;")."
      * * Number: whole number and floating point number like 10, -1 and -0.01.
      * * List: list of elements with comma(,) separator surrounded by square
      * brackets, for example, [1, 2, 3] and ["one", "two", "three"].
+     *
      * Built-in constants:
+     *
      * * MIN (minimum number similar to java Double.MIN_VALUE)
      * * MAX (maximum number similar to java Double.MAX_VALUE)
+     *
      * Built-in functions:
+     *
      * * bucket(start, end[, label]): bucket built-in function creates a bucket
      * with range of [start, end). Note that the end is exclusive, for example,
      * bucket(1, MAX, "positive number") or bucket(1, 10).
+     *
      * Job histogram facets:
+     *
      * * company_display_name: histogram by
      * [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
      * * employment_type: histogram by
@@ -6841,7 +7244,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *   Values can be accessed via square bracket notations like
      *   numeric_custom_attribute["key1"]. Must specify list of numeric buckets to
      *   group results by.
+     *
      * Example expressions:
+     *
      * * `count(admin1)`
      * * `count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000),
      * bucket(100000, MAX)])`
@@ -6991,7 +7396,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * location, amongst the jobs deemed by the API as relevant) in search
      * results. This field is only considered if
      * [page_token][google.cloud.talent.v4.SearchJobsRequest.page_token] is unset.
+     *
      * The maximum allowed value is 5000. Otherwise an error is thrown.
+     *
      * For example, 0 means to  return results starting from the first matching
      * job, and 10 means to return from the 11th job. This can be used for
      * pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -7014,7 +7421,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * location, amongst the jobs deemed by the API as relevant) in search
      * results. This field is only considered if
      * [page_token][google.cloud.talent.v4.SearchJobsRequest.page_token] is unset.
+     *
      * The maximum allowed value is 5000. Otherwise an error is thrown.
+     *
      * For example, 0 means to  return results starting from the first matching
      * job, and 10 means to return from the 11th job. This can be used for
      * pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -7041,7 +7450,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * location, amongst the jobs deemed by the API as relevant) in search
      * results. This field is only considered if
      * [page_token][google.cloud.talent.v4.SearchJobsRequest.page_token] is unset.
+     *
      * The maximum allowed value is 5000. Otherwise an error is thrown.
+     *
      * For example, 0 means to  return results starting from the first matching
      * job, and 10 means to return from the 11th job. This can be used for
      * pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -7246,7 +7657,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The criteria determining how search results are sorted. Default is
      * `"relevance desc"`.
+     *
      * Supported options are:
+     *
      * * `"relevance desc"`: By relevance descending, as determined by the API
      *   algorithms. Relevance thresholding of query results is only available
      *   with this ordering.
@@ -7318,7 +7731,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The criteria determining how search results are sorted. Default is
      * `"relevance desc"`.
+     *
      * Supported options are:
+     *
      * * `"relevance desc"`: By relevance descending, as determined by the API
      *   algorithms. Relevance thresholding of query results is only available
      *   with this ordering.
@@ -7390,7 +7805,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The criteria determining how search results are sorted. Default is
      * `"relevance desc"`.
+     *
      * Supported options are:
+     *
      * * `"relevance desc"`: By relevance descending, as determined by the API
      *   algorithms. Relevance thresholding of query results is only available
      *   with this ordering.
@@ -7461,7 +7878,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The criteria determining how search results are sorted. Default is
      * `"relevance desc"`.
+     *
      * Supported options are:
+     *
      * * `"relevance desc"`: By relevance descending, as determined by the API
      *   algorithms. Relevance thresholding of query results is only available
      *   with this ordering.
@@ -7528,7 +7947,9 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The criteria determining how search results are sorted. Default is
      * `"relevance desc"`.
+     *
      * Supported options are:
+     *
      * * `"relevance desc"`: By relevance descending, as determined by the API
      *   algorithms. Relevance thresholding of query results is only available
      *   with this ordering.
@@ -7606,6 +8027,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
      * being displayed lower down in the results.
+     *
      * Defaults to
      * [DiversificationLevel.SIMPLE][google.cloud.talent.v4.SearchJobsRequest.DiversificationLevel.SIMPLE]
      * if no value is specified.
@@ -7631,6 +8053,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
      * being displayed lower down in the results.
+     *
      * Defaults to
      * [DiversificationLevel.SIMPLE][google.cloud.talent.v4.SearchJobsRequest.DiversificationLevel.SIMPLE]
      * if no value is specified.
@@ -7659,6 +8082,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
      * being displayed lower down in the results.
+     *
      * Defaults to
      * [DiversificationLevel.SIMPLE][google.cloud.talent.v4.SearchJobsRequest.DiversificationLevel.SIMPLE]
      * if no value is specified.
@@ -7690,6 +8114,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
      * being displayed lower down in the results.
+     *
      * Defaults to
      * [DiversificationLevel.SIMPLE][google.cloud.talent.v4.SearchJobsRequest.DiversificationLevel.SIMPLE]
      * if no value is specified.
@@ -7722,6 +8147,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * clustered so that only one representative job of the cluster is
      * displayed to the job seeker higher up in the results, with the other jobs
      * being displayed lower down in the results.
+     *
      * Defaults to
      * [DiversificationLevel.SIMPLE][google.cloud.talent.v4.SearchJobsRequest.DiversificationLevel.SIMPLE]
      * if no value is specified.
@@ -7956,6 +8382,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * This field is deprecated. Please use
      * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode]
      * going forward.
+     *
      * To migrate, disable_keyword_match set to false maps to
      * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL],
      * and disable_keyword_match set to true maps to
@@ -7963,6 +8390,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * If
      * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode]
      * is set, this field is ignored.
+     *
      * Controls whether to disable exact keyword match on
      * [Job.title][google.cloud.talent.v4.Job.title],
      * [Job.description][google.cloud.talent.v4.Job.description],
@@ -7975,21 +8403,24 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * job posting has the title "software developer," which doesn't fall into
      * "program manager" ontology, but does have "program manager" appearing in
      * its description.
+     *
      * For queries like "cloud" that don't contain title or
      * location specific ontology, jobs with "cloud" keyword matches are returned
      * regardless of this flag's value.
+     *
      * Use
      * [Company.keyword_searchable_job_custom_attributes][google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes]
      * if company-specific globally matched custom field/attribute string values
      * are needed. Enabling keyword match improves recall of subsequent search
      * requests.
+     *
      * Defaults to false.
      * </pre>
      *
      * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
-     *     google/cloud/talent/v4/job_service.proto;l=799
+     *     google/cloud/talent/v4/job_service.proto;l=804
      * @return The disableKeywordMatch.
      */
     @java.lang.Override
@@ -8004,6 +8435,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * This field is deprecated. Please use
      * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode]
      * going forward.
+     *
      * To migrate, disable_keyword_match set to false maps to
      * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL],
      * and disable_keyword_match set to true maps to
@@ -8011,6 +8443,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * If
      * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode]
      * is set, this field is ignored.
+     *
      * Controls whether to disable exact keyword match on
      * [Job.title][google.cloud.talent.v4.Job.title],
      * [Job.description][google.cloud.talent.v4.Job.description],
@@ -8023,21 +8456,24 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * job posting has the title "software developer," which doesn't fall into
      * "program manager" ontology, but does have "program manager" appearing in
      * its description.
+     *
      * For queries like "cloud" that don't contain title or
      * location specific ontology, jobs with "cloud" keyword matches are returned
      * regardless of this flag's value.
+     *
      * Use
      * [Company.keyword_searchable_job_custom_attributes][google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes]
      * if company-specific globally matched custom field/attribute string values
      * are needed. Enabling keyword match improves recall of subsequent search
      * requests.
+     *
      * Defaults to false.
      * </pre>
      *
      * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
-     *     google/cloud/talent/v4/job_service.proto;l=799
+     *     google/cloud/talent/v4/job_service.proto;l=804
      * @param value The disableKeywordMatch to set.
      * @return This builder for chaining.
      */
@@ -8056,6 +8492,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * This field is deprecated. Please use
      * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode]
      * going forward.
+     *
      * To migrate, disable_keyword_match set to false maps to
      * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL],
      * and disable_keyword_match set to true maps to
@@ -8063,6 +8500,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * If
      * [SearchJobsRequest.keyword_match_mode][google.cloud.talent.v4.SearchJobsRequest.keyword_match_mode]
      * is set, this field is ignored.
+     *
      * Controls whether to disable exact keyword match on
      * [Job.title][google.cloud.talent.v4.Job.title],
      * [Job.description][google.cloud.talent.v4.Job.description],
@@ -8075,21 +8513,24 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * job posting has the title "software developer," which doesn't fall into
      * "program manager" ontology, but does have "program manager" appearing in
      * its description.
+     *
      * For queries like "cloud" that don't contain title or
      * location specific ontology, jobs with "cloud" keyword matches are returned
      * regardless of this flag's value.
+     *
      * Use
      * [Company.keyword_searchable_job_custom_attributes][google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes]
      * if company-specific globally matched custom field/attribute string values
      * are needed. Enabling keyword match improves recall of subsequent search
      * requests.
+     *
      * Defaults to false.
      * </pre>
      *
      * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
-     *     google/cloud/talent/v4/job_service.proto;l=799
+     *     google/cloud/talent/v4/job_service.proto;l=804
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -8107,6 +8548,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Controls what keyword match options to use. If both keyword_match_mode and
      * disable_keyword_match are set, keyword_match_mode will take precedence.
+     *
      * Defaults to
      * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL]
      * if no value is specified.
@@ -8127,6 +8569,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Controls what keyword match options to use. If both keyword_match_mode and
      * disable_keyword_match are set, keyword_match_mode will take precedence.
+     *
      * Defaults to
      * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL]
      * if no value is specified.
@@ -8150,6 +8593,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Controls what keyword match options to use. If both keyword_match_mode and
      * disable_keyword_match are set, keyword_match_mode will take precedence.
+     *
      * Defaults to
      * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL]
      * if no value is specified.
@@ -8175,6 +8619,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Controls what keyword match options to use. If both keyword_match_mode and
      * disable_keyword_match are set, keyword_match_mode will take precedence.
+     *
      * Defaults to
      * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL]
      * if no value is specified.
@@ -8202,6 +8647,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Controls what keyword match options to use. If both keyword_match_mode and
      * disable_keyword_match are set, keyword_match_mode will take precedence.
+     *
      * Defaults to
      * [KeywordMatchMode.KEYWORD_MATCH_ALL][google.cloud.talent.v4.SearchJobsRequest.KeywordMatchMode.KEYWORD_MATCH_ALL]
      * if no value is specified.

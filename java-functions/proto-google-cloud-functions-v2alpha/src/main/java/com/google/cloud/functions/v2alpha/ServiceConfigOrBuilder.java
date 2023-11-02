@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,6 +110,39 @@ public interface ServiceConfigOrBuilder
    *
    *
    * <pre>
+   * [Preview] The number of CPUs used in a single container instance.
+   * Default value is calculated from available memory.
+   * Supports the same values as Cloud Run, see
+   * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
+   * Example: "1" indicates 1 vCPU
+   * </pre>
+   *
+   * <code>string available_cpu = 22;</code>
+   *
+   * @return The availableCpu.
+   */
+  java.lang.String getAvailableCpu();
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] The number of CPUs used in a single container instance.
+   * Default value is calculated from available memory.
+   * Supports the same values as Cloud Run, see
+   * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
+   * Example: "1" indicates 1 vCPU
+   * </pre>
+   *
+   * <code>string available_cpu = 22;</code>
+   *
+   * @return The bytes for availableCpu.
+   */
+  com.google.protobuf.ByteString getAvailableCpuBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Environment variables that shall be available during function execution.
    * </pre>
    *
@@ -170,11 +203,13 @@ public interface ServiceConfigOrBuilder
    * <pre>
    * The limit on the maximum number of function instances that may coexist at a
    * given time.
+   *
    * In some cases, such as rapid traffic surges, Cloud Functions may, for a
    * short period of time, create more instances than the specified max
    * instances limit. If your function cannot tolerate this temporary behavior,
    * you may want to factor in a safety margin and set a lower max instances
    * value than your function can tolerate.
+   *
    * See the [Max
    * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
    * more details.
@@ -192,6 +227,7 @@ public interface ServiceConfigOrBuilder
    * <pre>
    * The limit on the minimum number of function instances that may coexist at a
    * given time.
+   *
    * Function instances are kept in idle state for a short period after they
    * finished executing the request to reduce cold start time for subsequent
    * requests. Setting a minimum instance count will ensure that the given
@@ -498,4 +534,49 @@ public interface ServiceConfigOrBuilder
    * @return The bytes for revision.
    */
   com.google.protobuf.ByteString getRevisionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Sets the maximum number of concurrent requests that each instance
+   * can receive. Defaults to 1.
+   * </pre>
+   *
+   * <code>int32 max_instance_request_concurrency = 20;</code>
+   *
+   * @return The maxInstanceRequestConcurrency.
+   */
+  int getMaxInstanceRequestConcurrency();
+
+  /**
+   *
+   *
+   * <pre>
+   * Security level configure whether the function only accepts https.
+   * This configuration is only applicable to 1st Gen functions with Http
+   * trigger. By default https is optional for 1st Gen functions; 2nd Gen
+   * functions are https ONLY.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel security_level = 21;</code>
+   *
+   * @return The enum numeric value on the wire for securityLevel.
+   */
+  int getSecurityLevelValue();
+  /**
+   *
+   *
+   * <pre>
+   * Security level configure whether the function only accepts https.
+   * This configuration is only applicable to 1st Gen functions with Http
+   * trigger. By default https is optional for 1st Gen functions; 2nd Gen
+   * functions are https ONLY.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel security_level = 21;</code>
+   *
+   * @return The securityLevel.
+   */
+  com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel getSecurityLevel();
 }

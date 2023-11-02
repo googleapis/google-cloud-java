@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   }
 
   private InterconnectOutageNotification() {
-    affectedCircuits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    affectedCircuits_ = com.google.protobuf.LazyStringArrayList.emptyList();
     description_ = "";
     issueType_ = "";
     name_ = "";
@@ -51,11 +51,6 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InterconnectOutageNotification();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -664,7 +659,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
   public static final int AFFECTED_CIRCUITS_FIELD_NUMBER = 177717013;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList affectedCircuits_;
+  private com.google.protobuf.LazyStringArrayList affectedCircuits_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1434,8 +1430,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      affectedCircuits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      affectedCircuits_ = com.google.protobuf.LazyStringArrayList.emptyList();
       description_ = "";
       endTime_ = 0L;
       issueType_ = "";
@@ -1470,7 +1465,6 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.InterconnectOutageNotification buildPartial() {
       com.google.cloud.compute.v1.InterconnectOutageNotification result =
           new com.google.cloud.compute.v1.InterconnectOutageNotification(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -1478,17 +1472,12 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.InterconnectOutageNotification result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        affectedCircuits_ = affectedCircuits_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.affectedCircuits_ = affectedCircuits_;
-    }
-
     private void buildPartial0(com.google.cloud.compute.v1.InterconnectOutageNotification result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        affectedCircuits_.makeImmutable();
+        result.affectedCircuits_ = affectedCircuits_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.description_ = description_;
@@ -1570,7 +1559,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       if (!other.affectedCircuits_.isEmpty()) {
         if (affectedCircuits_.isEmpty()) {
           affectedCircuits_ = other.affectedCircuits_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureAffectedCircuitsIsMutable();
           affectedCircuits_.addAll(other.affectedCircuits_);
@@ -1702,14 +1691,14 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList affectedCircuits_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList affectedCircuits_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAffectedCircuitsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!affectedCircuits_.isModifiable()) {
         affectedCircuits_ = new com.google.protobuf.LazyStringArrayList(affectedCircuits_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1723,7 +1712,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * @return A list containing the affectedCircuits.
      */
     public com.google.protobuf.ProtocolStringList getAffectedCircuitsList() {
-      return affectedCircuits_.getUnmodifiableView();
+      affectedCircuits_.makeImmutable();
+      return affectedCircuits_;
     }
     /**
      *
@@ -1788,6 +1778,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       }
       ensureAffectedCircuitsIsMutable();
       affectedCircuits_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1809,6 +1800,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       }
       ensureAffectedCircuitsIsMutable();
       affectedCircuits_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1827,6 +1819,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
     public Builder addAllAffectedCircuits(java.lang.Iterable<java.lang.String> values) {
       ensureAffectedCircuitsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, affectedCircuits_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1842,8 +1835,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearAffectedCircuits() {
-      affectedCircuits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      affectedCircuits_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1866,6 +1860,7 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       ensureAffectedCircuitsIsMutable();
       affectedCircuits_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ import org.junit.Test;
 @Generated("by gapic-generator-java")
 public class DataCatalogClientTest {
   private static MockDataCatalog mockDataCatalog;
+  private static MockIAMPolicy mockIAMPolicy;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
   private DataCatalogClient client;
@@ -66,9 +67,11 @@ public class DataCatalogClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockDataCatalog = new MockDataCatalog();
+    mockIAMPolicy = new MockIAMPolicy();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockDataCatalog));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockDataCatalog, mockIAMPolicy));
     mockServiceHelper.start();
   }
 
@@ -656,6 +659,7 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -705,6 +709,7 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -754,6 +759,7 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -797,6 +803,7 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -911,6 +918,7 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -954,6 +962,7 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -997,6 +1006,7 @@ public class DataCatalogClientTest {
             .setDescription("description-1724546052")
             .setSchema(Schema.newBuilder().build())
             .setSourceSystemTimestamps(SystemTimestamps.newBuilder().build())
+            .setUsageSignal(UsageSignal.newBuilder().build())
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -1458,6 +1468,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1510,6 +1521,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1562,6 +1574,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1612,6 +1625,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1660,6 +1674,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1714,6 +1729,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1766,6 +1782,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1816,6 +1833,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setType(FieldType.newBuilder().build())
             .setIsRequired(true)
+            .setDescription("description-1724546052")
             .setOrder(106006350)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
@@ -1848,6 +1866,118 @@ public class DataCatalogClientTest {
       String name = "name3373707";
       String newTagTemplateFieldId = "newTagTemplateFieldId2008993953";
       client.renameTagTemplateField(name, newTagTemplateFieldId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameTagTemplateFieldEnumValueTest() throws Exception {
+    TagTemplateField expectedResponse =
+        TagTemplateField.newBuilder()
+            .setName(
+                TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setType(FieldType.newBuilder().build())
+            .setIsRequired(true)
+            .setDescription("description-1724546052")
+            .setOrder(106006350)
+            .build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    TagTemplateFieldEnumValueName name =
+        TagTemplateFieldEnumValueName.of(
+            "[PROJECT]",
+            "[LOCATION]",
+            "[TAG_TEMPLATE]",
+            "[TAG_TEMPLATE_FIELD_ID]",
+            "[ENUM_VALUE_DISPLAY_NAME]");
+    String newEnumValueDisplayName = "newEnumValueDisplayName-1119629027";
+
+    TagTemplateField actualResponse =
+        client.renameTagTemplateFieldEnumValue(name, newEnumValueDisplayName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RenameTagTemplateFieldEnumValueRequest actualRequest =
+        ((RenameTagTemplateFieldEnumValueRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(newEnumValueDisplayName, actualRequest.getNewEnumValueDisplayName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void renameTagTemplateFieldEnumValueExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      TagTemplateFieldEnumValueName name =
+          TagTemplateFieldEnumValueName.of(
+              "[PROJECT]",
+              "[LOCATION]",
+              "[TAG_TEMPLATE]",
+              "[TAG_TEMPLATE_FIELD_ID]",
+              "[ENUM_VALUE_DISPLAY_NAME]");
+      String newEnumValueDisplayName = "newEnumValueDisplayName-1119629027";
+      client.renameTagTemplateFieldEnumValue(name, newEnumValueDisplayName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameTagTemplateFieldEnumValueTest2() throws Exception {
+    TagTemplateField expectedResponse =
+        TagTemplateField.newBuilder()
+            .setName(
+                TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setType(FieldType.newBuilder().build())
+            .setIsRequired(true)
+            .setDescription("description-1724546052")
+            .setOrder(106006350)
+            .build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String newEnumValueDisplayName = "newEnumValueDisplayName-1119629027";
+
+    TagTemplateField actualResponse =
+        client.renameTagTemplateFieldEnumValue(name, newEnumValueDisplayName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RenameTagTemplateFieldEnumValueRequest actualRequest =
+        ((RenameTagTemplateFieldEnumValueRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(newEnumValueDisplayName, actualRequest.getNewEnumValueDisplayName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void renameTagTemplateFieldEnumValueExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String newEnumValueDisplayName = "newEnumValueDisplayName-1119629027";
+      client.renameTagTemplateFieldEnumValue(name, newEnumValueDisplayName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

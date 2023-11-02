@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
   }
 
   private AndroidKeySettings() {
-    allowedPackageNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowedPackageNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AndroidKeySettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -88,7 +83,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
   public static final int ALLOWED_PACKAGE_NAMES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowedPackageNames_;
+  private com.google.protobuf.LazyStringArrayList allowedPackageNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -152,6 +148,25 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     return allowedPackageNames_.getByteString(index);
   }
 
+  public static final int SUPPORT_NON_GOOGLE_APP_STORE_DISTRIBUTION_FIELD_NUMBER = 3;
+  private boolean supportNonGoogleAppStoreDistribution_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Set to true for keys that are used in an Android application that is
+   * available for download in app stores in addition to the Google Play Store.
+   * </pre>
+   *
+   * <code>bool support_non_google_app_store_distribution = 3;</code>
+   *
+   * @return The supportNonGoogleAppStoreDistribution.
+   */
+  @java.lang.Override
+  public boolean getSupportNonGoogleAppStoreDistribution() {
+    return supportNonGoogleAppStoreDistribution_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -171,6 +186,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     }
     if (allowAllPackageNames_ != false) {
       output.writeBool(2, allowAllPackageNames_);
+    }
+    if (supportNonGoogleAppStoreDistribution_ != false) {
+      output.writeBool(3, supportNonGoogleAppStoreDistribution_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -192,6 +210,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     if (allowAllPackageNames_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, allowAllPackageNames_);
     }
+    if (supportNonGoogleAppStoreDistribution_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              3, supportNonGoogleAppStoreDistribution_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -210,6 +233,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
 
     if (getAllowAllPackageNames() != other.getAllowAllPackageNames()) return false;
     if (!getAllowedPackageNamesList().equals(other.getAllowedPackageNamesList())) return false;
+    if (getSupportNonGoogleAppStoreDistribution()
+        != other.getSupportNonGoogleAppStoreDistribution()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -227,6 +252,10 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + ALLOWED_PACKAGE_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getAllowedPackageNamesList().hashCode();
     }
+    hash = (37 * hash) + SUPPORT_NON_GOOGLE_APP_STORE_DISTRIBUTION_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getSupportNonGoogleAppStoreDistribution());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -367,8 +396,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       allowAllPackageNames_ = false;
-      allowedPackageNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      allowedPackageNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      supportNonGoogleAppStoreDistribution_ = false;
       return this;
     }
 
@@ -396,7 +425,6 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     public com.google.recaptchaenterprise.v1.AndroidKeySettings buildPartial() {
       com.google.recaptchaenterprise.v1.AndroidKeySettings result =
           new com.google.recaptchaenterprise.v1.AndroidKeySettings(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -404,19 +432,17 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.recaptchaenterprise.v1.AndroidKeySettings result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        allowedPackageNames_ = allowedPackageNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.allowedPackageNames_ = allowedPackageNames_;
-    }
-
     private void buildPartial0(com.google.recaptchaenterprise.v1.AndroidKeySettings result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.allowAllPackageNames_ = allowAllPackageNames_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        allowedPackageNames_.makeImmutable();
+        result.allowedPackageNames_ = allowedPackageNames_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.supportNonGoogleAppStoreDistribution_ = supportNonGoogleAppStoreDistribution_;
       }
     }
 
@@ -472,12 +498,15 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       if (!other.allowedPackageNames_.isEmpty()) {
         if (allowedPackageNames_.isEmpty()) {
           allowedPackageNames_ = other.allowedPackageNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAllowedPackageNamesIsMutable();
           allowedPackageNames_.addAll(other.allowedPackageNames_);
         }
         onChanged();
+      }
+      if (other.getSupportNonGoogleAppStoreDistribution() != false) {
+        setSupportNonGoogleAppStoreDistribution(other.getSupportNonGoogleAppStoreDistribution());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -518,6 +547,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000001;
                 break;
               } // case 16
+            case 24:
+              {
+                supportNonGoogleAppStoreDistribution_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -590,14 +625,14 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.LazyStringList allowedPackageNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowedPackageNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowedPackageNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!allowedPackageNames_.isModifiable()) {
         allowedPackageNames_ = new com.google.protobuf.LazyStringArrayList(allowedPackageNames_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -612,7 +647,8 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * @return A list containing the allowedPackageNames.
      */
     public com.google.protobuf.ProtocolStringList getAllowedPackageNamesList() {
-      return allowedPackageNames_.getUnmodifiableView();
+      allowedPackageNames_.makeImmutable();
+      return allowedPackageNames_;
     }
     /**
      *
@@ -681,6 +717,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       }
       ensureAllowedPackageNamesIsMutable();
       allowedPackageNames_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -703,6 +740,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       }
       ensureAllowedPackageNamesIsMutable();
       allowedPackageNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -722,6 +760,7 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
     public Builder addAllAllowedPackageNames(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedPackageNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedPackageNames_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -738,8 +777,9 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAllowedPackageNames() {
-      allowedPackageNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedPackageNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -763,6 +803,63 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureAllowedPackageNamesIsMutable();
       allowedPackageNames_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean supportNonGoogleAppStoreDistribution_;
+    /**
+     *
+     *
+     * <pre>
+     * Set to true for keys that are used in an Android application that is
+     * available for download in app stores in addition to the Google Play Store.
+     * </pre>
+     *
+     * <code>bool support_non_google_app_store_distribution = 3;</code>
+     *
+     * @return The supportNonGoogleAppStoreDistribution.
+     */
+    @java.lang.Override
+    public boolean getSupportNonGoogleAppStoreDistribution() {
+      return supportNonGoogleAppStoreDistribution_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to true for keys that are used in an Android application that is
+     * available for download in app stores in addition to the Google Play Store.
+     * </pre>
+     *
+     * <code>bool support_non_google_app_store_distribution = 3;</code>
+     *
+     * @param value The supportNonGoogleAppStoreDistribution to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportNonGoogleAppStoreDistribution(boolean value) {
+
+      supportNonGoogleAppStoreDistribution_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to true for keys that are used in an Android application that is
+     * available for download in app stores in addition to the Google Play Store.
+     * </pre>
+     *
+     * <code>bool support_non_google_app_store_distribution = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportNonGoogleAppStoreDistribution() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      supportNonGoogleAppStoreDistribution_ = false;
       onChanged();
       return this;
     }

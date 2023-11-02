@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ package com.google.cloud.alloydb.v1beta;
  *   2. Instance2 = ROLLED_BACK
  *   3. Instance3 = FAILED
  *   4. Instance4 = FAILED
+ *
  * However, while the operation is running, the instance might be in other
  * states including PENDING_CREATE, ACTIVE, DELETING and CREATING. The states
  * / do not get further updated once the operation is done.
@@ -60,11 +61,6 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchCreateInstanceStatus();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -730,6 +726,7 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
    *   2. Instance2 = ROLLED_BACK
    *   3. Instance3 = FAILED
    *   4. Instance4 = FAILED
+   *
    * However, while the operation is running, the instance might be in other
    * states including PENDING_CREATE, ACTIVE, DELETING and CREATING. The states
    * / do not get further updated once the operation is done.

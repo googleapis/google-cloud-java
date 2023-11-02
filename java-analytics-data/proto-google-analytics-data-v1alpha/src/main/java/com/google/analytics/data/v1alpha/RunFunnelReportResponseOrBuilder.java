@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface RunFunnelReportResponseOrBuilder
    * The funnel table is a report with the funnel step, segment, breakdown
    * dimension, active users, completion rate, abandonments, and abandonments
    * rate.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The breakdown dimension is only present in this response if it
    * was requested.
@@ -47,6 +48,7 @@ public interface RunFunnelReportResponseOrBuilder
    * The funnel table is a report with the funnel step, segment, breakdown
    * dimension, active users, completion rate, abandonments, and abandonments
    * rate.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The breakdown dimension is only present in this response if it
    * was requested.
@@ -64,6 +66,7 @@ public interface RunFunnelReportResponseOrBuilder
    * The funnel table is a report with the funnel step, segment, breakdown
    * dimension, active users, completion rate, abandonments, and abandonments
    * rate.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The breakdown dimension is only present in this response if it
    * was requested.
@@ -79,10 +82,11 @@ public interface RunFunnelReportResponseOrBuilder
    * <pre>
    * The funnel visualization is a report with the funnel step, segment, date,
    * next action dimension, and active users.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The date dimension is only present in this response if it was
-   * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-   * is only present in the response if it was requested.
+   * requested through the `TRENDED_FUNNEL` funnel type. The next action
+   * dimension is only present in the response if it was requested.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -96,10 +100,11 @@ public interface RunFunnelReportResponseOrBuilder
    * <pre>
    * The funnel visualization is a report with the funnel step, segment, date,
    * next action dimension, and active users.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The date dimension is only present in this response if it was
-   * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-   * is only present in the response if it was requested.
+   * requested through the `TRENDED_FUNNEL` funnel type. The next action
+   * dimension is only present in the response if it was requested.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -113,10 +118,11 @@ public interface RunFunnelReportResponseOrBuilder
    * <pre>
    * The funnel visualization is a report with the funnel step, segment, date,
    * next action dimension, and active users.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The date dimension is only present in this response if it was
-   * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-   * is only present in the response if it was requested.
+   * requested through the `TRENDED_FUNNEL` funnel type. The next action
+   * dimension is only present in the response if it was requested.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>

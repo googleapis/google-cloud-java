@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
     proxyHeader_ = "";
     selfLink_ = "";
     service_ = "";
-    sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    sslCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
     sslPolicy_ = "";
   }
 
@@ -54,11 +54,6 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TargetSslProxy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -210,7 +205,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>
@@ -225,7 +220,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>
@@ -248,7 +243,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>
@@ -769,7 +764,8 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
   public static final int SSL_CERTIFICATES_FIELD_NUMBER = 366006543;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList sslCertificates_;
+  private com.google.protobuf.LazyStringArrayList sslCertificates_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1251,8 +1247,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
       proxyHeader_ = "";
       selfLink_ = "";
       service_ = "";
-      sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      sslCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       sslPolicy_ = "";
       return this;
     }
@@ -1281,20 +1276,11 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.TargetSslProxy buildPartial() {
       com.google.cloud.compute.v1.TargetSslProxy result =
           new com.google.cloud.compute.v1.TargetSslProxy(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.TargetSslProxy result) {
-      if (((bitField0_ & 0x00000200) != 0)) {
-        sslCertificates_ = sslCertificates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.sslCertificates_ = sslCertificates_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.TargetSslProxy result) {
@@ -1335,6 +1321,10 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.service_ = service_;
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        sslCertificates_.makeImmutable();
+        result.sslCertificates_ = sslCertificates_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.sslPolicy_ = sslPolicy_;
@@ -1434,7 +1424,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
       if (!other.sslCertificates_.isEmpty()) {
         if (sslCertificates_.isEmpty()) {
           sslCertificates_ = other.sslCertificates_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureSslCertificatesIsMutable();
           sslCertificates_.addAll(other.sslCertificates_);
@@ -1563,7 +1553,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -1577,7 +1567,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -1599,7 +1589,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -1621,7 +1611,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -1642,7 +1632,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -1659,7 +1649,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
      * </pre>
      *
      * <code>optional string certificate_map = 156463796;</code>
@@ -2592,14 +2582,14 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList sslCertificates_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList sslCertificates_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSslCertificatesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!sslCertificates_.isModifiable()) {
         sslCertificates_ = new com.google.protobuf.LazyStringArrayList(sslCertificates_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -2613,7 +2603,8 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the sslCertificates.
      */
     public com.google.protobuf.ProtocolStringList getSslCertificatesList() {
-      return sslCertificates_.getUnmodifiableView();
+      sslCertificates_.makeImmutable();
+      return sslCertificates_;
     }
     /**
      *
@@ -2678,6 +2669,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSslCertificatesIsMutable();
       sslCertificates_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2699,6 +2691,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSslCertificatesIsMutable();
       sslCertificates_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2717,6 +2710,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSslCertificates(java.lang.Iterable<java.lang.String> values) {
       ensureSslCertificatesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sslCertificates_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2732,8 +2726,9 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSslCertificates() {
-      sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sslCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -2756,6 +2751,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSslCertificatesIsMutable();
       sslCertificates_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressList;
@@ -38,6 +39,7 @@ import com.google.cloud.compute.v1.DeleteGlobalAddressRequest;
 import com.google.cloud.compute.v1.GetGlobalAddressRequest;
 import com.google.cloud.compute.v1.InsertGlobalAddressRequest;
 import com.google.cloud.compute.v1.ListGlobalAddressesRequest;
+import com.google.cloud.compute.v1.MoveGlobalAddressRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.SetLabelsGlobalAddressRequest;
@@ -247,6 +249,61 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<MoveGlobalAddressRequest, Operation>
+      moveMethodDescriptor =
+          ApiMethodDescriptor.<MoveGlobalAddressRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/Move")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<MoveGlobalAddressRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/addresses/{address}/move",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveGlobalAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "address", request.getAddress());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveGlobalAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "globalAddressesMoveRequestResource",
+                                      request.getGlobalAddressesMoveRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (MoveGlobalAddressRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<SetLabelsGlobalAddressRequest, Operation>
       setLabelsMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsGlobalAddressRequest, Operation>newBuilder()
@@ -308,6 +365,9 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
       insertOperationCallable;
   private final UnaryCallable<ListGlobalAddressesRequest, AddressList> listCallable;
   private final UnaryCallable<ListGlobalAddressesRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<MoveGlobalAddressRequest, Operation> moveCallable;
+  private final OperationCallable<MoveGlobalAddressRequest, Operation, Operation>
+      moveOperationCallable;
   private final UnaryCallable<SetLabelsGlobalAddressRequest, Operation> setLabelsCallable;
   private final OperationCallable<SetLabelsGlobalAddressRequest, Operation, Operation>
       setLabelsOperationCallable;
@@ -361,26 +421,71 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
         HttpJsonCallSettings.<DeleteGlobalAddressRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("address", String.valueOf(request.getAddress()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetGlobalAddressRequest, Address> getTransportSettings =
         HttpJsonCallSettings.<GetGlobalAddressRequest, Address>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("address", String.valueOf(request.getAddress()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertGlobalAddressRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertGlobalAddressRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListGlobalAddressesRequest, AddressList> listTransportSettings =
         HttpJsonCallSettings.<ListGlobalAddressesRequest, AddressList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<MoveGlobalAddressRequest, Operation> moveTransportSettings =
+        HttpJsonCallSettings.<MoveGlobalAddressRequest, Operation>newBuilder()
+            .setMethodDescriptor(moveMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("address", String.valueOf(request.getAddress()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetLabelsGlobalAddressRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsGlobalAddressRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
 
     this.deleteCallable =
@@ -410,6 +515,15 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.moveCallable =
+        callableFactory.createUnaryCallable(
+            moveTransportSettings, settings.moveSettings(), clientContext);
+    this.moveOperationCallable =
+        callableFactory.createOperationCallable(
+            moveTransportSettings,
+            settings.moveOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setLabelsCallable =
         callableFactory.createUnaryCallable(
             setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
@@ -431,6 +545,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(moveMethodDescriptor);
     methodDescriptors.add(setLabelsMethodDescriptor);
     return methodDescriptors;
   }
@@ -470,6 +585,16 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
   @Override
   public UnaryCallable<ListGlobalAddressesRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveGlobalAddressRequest, Operation> moveCallable() {
+    return moveCallable;
+  }
+
+  @Override
+  public OperationCallable<MoveGlobalAddressRequest, Operation, Operation> moveOperationCallable() {
+    return moveOperationCallable;
   }
 
   @Override

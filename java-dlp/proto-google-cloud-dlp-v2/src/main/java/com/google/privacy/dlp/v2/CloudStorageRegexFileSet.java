@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,14 +25,17 @@ package com.google.privacy.dlp.v2;
  * Message representing a set of files in a Cloud Storage bucket. Regular
  * expressions are used to allow fine-grained control over which files in the
  * bucket to include.
+ *
  * Included files are those that match at least one item in `include_regex` and
  * do not match any items in `exclude_regex`. Note that a file that matches
  * items from both lists will _not_ be included. For a match to occur, the
  * entire file path (i.e., everything in the url after the bucket name) must
  * match the regular expression.
+ *
  * For example, given the input `{bucket_name: "mybucket", include_regex:
  * ["directory1/.*"], exclude_regex:
  * ["directory1/excluded.*"]}`:
+ *
  * * `gs://mybucket/directory1/myfile` will be included
  * * `gs://mybucket/directory1/directory2/myfile` will be included (`.*` matches
  * across `/`)
@@ -40,9 +43,12 @@ package com.google.privacy.dlp.v2;
  * full path doesn't match any items in `include_regex`)
  * * `gs://mybucket/directory1/excludedfile` will _not_ be included (the path
  * matches an item in `exclude_regex`)
+ *
  * If `include_regex` is left empty, it will match all files by default
  * (this is equivalent to setting `include_regex: [".*"]`).
+ *
  * Some other common use cases:
+ *
  * * `{bucket_name: "mybucket", exclude_regex: [".*&#92;.pdf"]}` will include all
  * files in `mybucket` except for .pdf files
  * * `{bucket_name: "mybucket", include_regex: ["directory/[^/]+"]}` will
@@ -64,19 +70,14 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
 
   private CloudStorageRegexFileSet() {
     bucketName_ = "";
-    includeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    excludeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    includeRegex_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    excludeRegex_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CloudStorageRegexFileSet();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -148,7 +149,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   public static final int INCLUDE_REGEX_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList includeRegex_;
+  private com.google.protobuf.LazyStringArrayList includeRegex_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -158,6 +160,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * included in the set of files, except for those that also match an item in
    * `exclude_regex`. Leaving this field empty will match all files by default
    * (this is equivalent to including `.*` in the list).
+   *
    * Regular expressions use RE2
    * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * under the google/re2 repository on GitHub.
@@ -179,6 +182,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * included in the set of files, except for those that also match an item in
    * `exclude_regex`. Leaving this field empty will match all files by default
    * (this is equivalent to including `.*` in the list).
+   *
    * Regular expressions use RE2
    * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * under the google/re2 repository on GitHub.
@@ -200,6 +204,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * included in the set of files, except for those that also match an item in
    * `exclude_regex`. Leaving this field empty will match all files by default
    * (this is equivalent to including `.*` in the list).
+   *
    * Regular expressions use RE2
    * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * under the google/re2 repository on GitHub.
@@ -222,6 +227,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * included in the set of files, except for those that also match an item in
    * `exclude_regex`. Leaving this field empty will match all files by default
    * (this is equivalent to including `.*` in the list).
+   *
    * Regular expressions use RE2
    * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * under the google/re2 repository on GitHub.
@@ -239,7 +245,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   public static final int EXCLUDE_REGEX_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList excludeRegex_;
+  private com.google.protobuf.LazyStringArrayList excludeRegex_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -247,6 +254,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.
+   *
    * Regular expressions use RE2
    * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * under the google/re2 repository on GitHub.
@@ -266,6 +274,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.
+   *
    * Regular expressions use RE2
    * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * under the google/re2 repository on GitHub.
@@ -285,6 +294,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.
+   *
    * Regular expressions use RE2
    * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * under the google/re2 repository on GitHub.
@@ -305,6 +315,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.
+   *
    * Regular expressions use RE2
    * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * under the google/re2 repository on GitHub.
@@ -517,14 +528,17 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * Message representing a set of files in a Cloud Storage bucket. Regular
    * expressions are used to allow fine-grained control over which files in the
    * bucket to include.
+   *
    * Included files are those that match at least one item in `include_regex` and
    * do not match any items in `exclude_regex`. Note that a file that matches
    * items from both lists will _not_ be included. For a match to occur, the
    * entire file path (i.e., everything in the url after the bucket name) must
    * match the regular expression.
+   *
    * For example, given the input `{bucket_name: "mybucket", include_regex:
    * ["directory1/.*"], exclude_regex:
    * ["directory1/excluded.*"]}`:
+   *
    * * `gs://mybucket/directory1/myfile` will be included
    * * `gs://mybucket/directory1/directory2/myfile` will be included (`.*` matches
    * across `/`)
@@ -532,9 +546,12 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    * full path doesn't match any items in `include_regex`)
    * * `gs://mybucket/directory1/excludedfile` will _not_ be included (the path
    * matches an item in `exclude_regex`)
+   *
    * If `include_regex` is left empty, it will match all files by default
    * (this is equivalent to setting `include_regex: [".*"]`).
+   *
    * Some other common use cases:
+   *
    * * `{bucket_name: "mybucket", exclude_regex: [".*&#92;.pdf"]}` will include all
    * files in `mybucket` except for .pdf files
    * * `{bucket_name: "mybucket", include_regex: ["directory/[^/]+"]}` will
@@ -575,10 +592,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       super.clear();
       bitField0_ = 0;
       bucketName_ = "";
-      includeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      excludeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      includeRegex_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludeRegex_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -606,7 +621,6 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     public com.google.privacy.dlp.v2.CloudStorageRegexFileSet buildPartial() {
       com.google.privacy.dlp.v2.CloudStorageRegexFileSet result =
           new com.google.privacy.dlp.v2.CloudStorageRegexFileSet(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -614,24 +628,18 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.privacy.dlp.v2.CloudStorageRegexFileSet result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        includeRegex_ = includeRegex_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.includeRegex_ = includeRegex_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        excludeRegex_ = excludeRegex_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.excludeRegex_ = excludeRegex_;
-    }
-
     private void buildPartial0(com.google.privacy.dlp.v2.CloudStorageRegexFileSet result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.bucketName_ = bucketName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        includeRegex_.makeImmutable();
+        result.includeRegex_ = includeRegex_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        excludeRegex_.makeImmutable();
+        result.excludeRegex_ = excludeRegex_;
       }
     }
 
@@ -689,7 +697,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       if (!other.includeRegex_.isEmpty()) {
         if (includeRegex_.isEmpty()) {
           includeRegex_ = other.includeRegex_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureIncludeRegexIsMutable();
           includeRegex_.addAll(other.includeRegex_);
@@ -699,7 +707,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       if (!other.excludeRegex_.isEmpty()) {
         if (excludeRegex_.isEmpty()) {
           excludeRegex_ = other.excludeRegex_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureExcludeRegexIsMutable();
           excludeRegex_.addAll(other.excludeRegex_);
@@ -877,14 +885,14 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.protobuf.LazyStringList includeRegex_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList includeRegex_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIncludeRegexIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!includeRegex_.isModifiable()) {
         includeRegex_ = new com.google.protobuf.LazyStringArrayList(includeRegex_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -895,6 +903,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * included in the set of files, except for those that also match an item in
      * `exclude_regex`. Leaving this field empty will match all files by default
      * (this is equivalent to including `.*` in the list).
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -905,7 +914,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * @return A list containing the includeRegex.
      */
     public com.google.protobuf.ProtocolStringList getIncludeRegexList() {
-      return includeRegex_.getUnmodifiableView();
+      includeRegex_.makeImmutable();
+      return includeRegex_;
     }
     /**
      *
@@ -916,6 +926,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * included in the set of files, except for those that also match an item in
      * `exclude_regex`. Leaving this field empty will match all files by default
      * (this is equivalent to including `.*` in the list).
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -937,6 +948,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * included in the set of files, except for those that also match an item in
      * `exclude_regex`. Leaving this field empty will match all files by default
      * (this is equivalent to including `.*` in the list).
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -959,6 +971,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * included in the set of files, except for those that also match an item in
      * `exclude_regex`. Leaving this field empty will match all files by default
      * (this is equivalent to including `.*` in the list).
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -981,6 +994,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * included in the set of files, except for those that also match an item in
      * `exclude_regex`. Leaving this field empty will match all files by default
      * (this is equivalent to including `.*` in the list).
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -998,6 +1012,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       }
       ensureIncludeRegexIsMutable();
       includeRegex_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1010,6 +1025,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * included in the set of files, except for those that also match an item in
      * `exclude_regex`. Leaving this field empty will match all files by default
      * (this is equivalent to including `.*` in the list).
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1026,6 +1042,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       }
       ensureIncludeRegexIsMutable();
       includeRegex_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1038,6 +1055,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * included in the set of files, except for those that also match an item in
      * `exclude_regex`. Leaving this field empty will match all files by default
      * (this is equivalent to including `.*` in the list).
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1051,6 +1069,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     public Builder addAllIncludeRegex(java.lang.Iterable<java.lang.String> values) {
       ensureIncludeRegexIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeRegex_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1063,6 +1082,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * included in the set of files, except for those that also match an item in
      * `exclude_regex`. Leaving this field empty will match all files by default
      * (this is equivalent to including `.*` in the list).
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1073,8 +1093,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearIncludeRegex() {
-      includeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includeRegex_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1087,6 +1108,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * included in the set of files, except for those that also match an item in
      * `exclude_regex`. Leaving this field empty will match all files by default
      * (this is equivalent to including `.*` in the list).
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1104,18 +1126,19 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureIncludeRegexIsMutable();
       includeRegex_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList excludeRegex_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList excludeRegex_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureExcludeRegexIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!excludeRegex_.isModifiable()) {
         excludeRegex_ = new com.google.protobuf.LazyStringArrayList(excludeRegex_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1124,6 +1147,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
      * excluded from the scan.
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1134,7 +1158,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * @return A list containing the excludeRegex.
      */
     public com.google.protobuf.ProtocolStringList getExcludeRegexList() {
-      return excludeRegex_.getUnmodifiableView();
+      excludeRegex_.makeImmutable();
+      return excludeRegex_;
     }
     /**
      *
@@ -1143,6 +1168,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
      * excluded from the scan.
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1162,6 +1188,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
      * excluded from the scan.
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1182,6 +1209,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
      * excluded from the scan.
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1202,6 +1230,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
      * excluded from the scan.
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1219,6 +1248,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       }
       ensureExcludeRegexIsMutable();
       excludeRegex_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1229,6 +1259,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
      * excluded from the scan.
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1245,6 +1276,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       }
       ensureExcludeRegexIsMutable();
       excludeRegex_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1255,6 +1287,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
      * excluded from the scan.
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1268,6 +1301,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     public Builder addAllExcludeRegex(java.lang.Iterable<java.lang.String> values) {
       ensureExcludeRegexIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeRegex_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1278,6 +1312,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
      * excluded from the scan.
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1288,8 +1323,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearExcludeRegex() {
-      excludeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      excludeRegex_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1300,6 +1336,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
      * excluded from the scan.
+     *
      * Regular expressions use RE2
      * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
      * under the google/re2 repository on GitHub.
@@ -1317,6 +1354,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureExcludeRegexIsMutable();
       excludeRegex_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

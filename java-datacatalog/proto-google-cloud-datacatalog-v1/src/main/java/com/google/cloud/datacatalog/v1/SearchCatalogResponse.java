@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
   private SearchCatalogResponse() {
     results_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
-    unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchCatalogResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -142,6 +137,24 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     return results_.get(index);
   }
 
+  public static final int TOTAL_SIZE_FIELD_NUMBER = 2;
+  private int totalSize_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The approximate total number of entries matched by the query.
+   * </pre>
+   *
+   * <code>int32 total_size = 2;</code>
+   *
+   * @return The totalSize.
+   */
+  @java.lang.Override
+  public int getTotalSize() {
+    return totalSize_;
+  }
+
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -198,13 +211,15 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
   public static final int UNREACHABLE_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unreachable_;
+  private com.google.protobuf.LazyStringArrayList unreachable_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Unreachable locations. Search results don't include data from those
    * locations.
+   *
    * To get additional information on an error, repeat the search request and
    * restrict it to specific locations by setting the
    * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -223,6 +238,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * Unreachable locations. Search results don't include data from those
    * locations.
+   *
    * To get additional information on an error, repeat the search request and
    * restrict it to specific locations by setting the
    * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -241,6 +257,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * Unreachable locations. Search results don't include data from those
    * locations.
+   *
    * To get additional information on an error, repeat the search request and
    * restrict it to specific locations by setting the
    * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -260,6 +277,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * Unreachable locations. Search results don't include data from those
    * locations.
+   *
    * To get additional information on an error, repeat the search request and
    * restrict it to specific locations by setting the
    * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -291,6 +309,9 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < results_.size(); i++) {
       output.writeMessage(1, results_.get(i));
     }
+    if (totalSize_ != 0) {
+      output.writeInt32(2, totalSize_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextPageToken_);
     }
@@ -308,6 +329,9 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     size = 0;
     for (int i = 0; i < results_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, results_.get(i));
+    }
+    if (totalSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, totalSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextPageToken_);
@@ -337,6 +361,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         (com.google.cloud.datacatalog.v1.SearchCatalogResponse) obj;
 
     if (!getResultsList().equals(other.getResultsList())) return false;
+    if (getTotalSize() != other.getTotalSize()) return false;
     if (!getNextPageToken().equals(other.getNextPageToken())) return false;
     if (!getUnreachableList().equals(other.getUnreachableList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -354,6 +379,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + getResultsList().hashCode();
     }
+    hash = (37 * hash) + TOTAL_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalSize();
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
     if (getUnreachableCount() > 0) {
@@ -508,9 +535,9 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         resultsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      totalSize_ = 0;
       nextPageToken_ = "";
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -557,17 +584,19 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.results_ = resultsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        unreachable_ = unreachable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.unreachable_ = unreachable_;
     }
 
     private void buildPartial0(com.google.cloud.datacatalog.v1.SearchCatalogResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.totalSize_ = totalSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        unreachable_.makeImmutable();
+        result.unreachable_ = unreachable_;
       }
     }
 
@@ -644,15 +673,18 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
           }
         }
       }
+      if (other.getTotalSize() != 0) {
+        setTotalSize(other.getTotalSize());
+      }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.unreachable_.isEmpty()) {
         if (unreachable_.isEmpty()) {
           unreachable_ = other.unreachable_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000008;
         } else {
           ensureUnreachableIsMutable();
           unreachable_.addAll(other.unreachable_);
@@ -699,10 +731,16 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
                 }
                 break;
               } // case 10
+            case 16:
+              {
+                totalSize_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             case 26:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 50:
@@ -1088,6 +1126,59 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       return resultsBuilder_;
     }
 
+    private int totalSize_;
+    /**
+     *
+     *
+     * <pre>
+     * The approximate total number of entries matched by the query.
+     * </pre>
+     *
+     * <code>int32 total_size = 2;</code>
+     *
+     * @return The totalSize.
+     */
+    @java.lang.Override
+    public int getTotalSize() {
+      return totalSize_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The approximate total number of entries matched by the query.
+     * </pre>
+     *
+     * <code>int32 total_size = 2;</code>
+     *
+     * @param value The totalSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalSize(int value) {
+
+      totalSize_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The approximate total number of entries matched by the query.
+     * </pre>
+     *
+     * <code>int32 total_size = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalSize() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      totalSize_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object nextPageToken_ = "";
     /**
      *
@@ -1153,7 +1244,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       nextPageToken_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1171,7 +1262,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      */
     public Builder clearNextPageToken() {
       nextPageToken_ = getDefaultInstance().getNextPageToken();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1194,19 +1285,19 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       nextPageToken_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList unreachable_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUnreachableIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!unreachable_.isModifiable()) {
         unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1214,6 +1305,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Unreachable locations. Search results don't include data from those
      * locations.
+     *
      * To get additional information on an error, repeat the search request and
      * restrict it to specific locations by setting the
      * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -1224,7 +1316,8 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * @return A list containing the unreachable.
      */
     public com.google.protobuf.ProtocolStringList getUnreachableList() {
-      return unreachable_.getUnmodifiableView();
+      unreachable_.makeImmutable();
+      return unreachable_;
     }
     /**
      *
@@ -1232,6 +1325,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Unreachable locations. Search results don't include data from those
      * locations.
+     *
      * To get additional information on an error, repeat the search request and
      * restrict it to specific locations by setting the
      * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -1250,6 +1344,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Unreachable locations. Search results don't include data from those
      * locations.
+     *
      * To get additional information on an error, repeat the search request and
      * restrict it to specific locations by setting the
      * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -1269,6 +1364,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Unreachable locations. Search results don't include data from those
      * locations.
+     *
      * To get additional information on an error, repeat the search request and
      * restrict it to specific locations by setting the
      * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -1288,6 +1384,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Unreachable locations. Search results don't include data from those
      * locations.
+     *
      * To get additional information on an error, repeat the search request and
      * restrict it to specific locations by setting the
      * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -1305,6 +1402,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       ensureUnreachableIsMutable();
       unreachable_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1314,6 +1412,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Unreachable locations. Search results don't include data from those
      * locations.
+     *
      * To get additional information on an error, repeat the search request and
      * restrict it to specific locations by setting the
      * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -1330,6 +1429,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1339,6 +1439,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Unreachable locations. Search results don't include data from those
      * locations.
+     *
      * To get additional information on an error, repeat the search request and
      * restrict it to specific locations by setting the
      * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -1352,6 +1453,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
       ensureUnreachableIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1361,6 +1463,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Unreachable locations. Search results don't include data from those
      * locations.
+     *
      * To get additional information on an error, repeat the search request and
      * restrict it to specific locations by setting the
      * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -1371,8 +1474,9 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearUnreachable() {
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1382,6 +1486,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Unreachable locations. Search results don't include data from those
      * locations.
+     *
      * To get additional information on an error, repeat the search request and
      * restrict it to specific locations by setting the
      * `SearchCatalogRequest.scope.restricted_locations` parameter.
@@ -1399,6 +1504,7 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -38,11 +38,6 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
     return new DSSEAttestationNote();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.DsseAttestation.internal_static_grafeas_v1_DSSEAttestationNote_descriptor;
   }
@@ -122,11 +117,6 @@ public final class DSSEAttestationNote extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DSSEHint();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

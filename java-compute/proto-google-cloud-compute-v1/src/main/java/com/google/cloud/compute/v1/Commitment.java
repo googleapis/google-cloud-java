@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     endTimestamp_ = "";
     kind_ = "";
-    mergeSourceCommitments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    mergeSourceCommitments_ = com.google.protobuf.LazyStringArrayList.emptyList();
     name_ = "";
     plan_ = "";
     region_ = "";
@@ -61,11 +61,6 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Commitment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -542,6 +537,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     GENERAL_PURPOSE_N2D(232471400),
     /** <code>GENERAL_PURPOSE_T2D = 232477166;</code> */
     GENERAL_PURPOSE_T2D(232477166),
+    /** <code>GRAPHICS_OPTIMIZED = 68500563;</code> */
+    GRAPHICS_OPTIMIZED(68500563),
     /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
     MEMORY_OPTIMIZED(281753417),
     /** <code>MEMORY_OPTIMIZED_M3 = 276301372;</code> */
@@ -579,6 +576,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int GENERAL_PURPOSE_N2D_VALUE = 232471400;
     /** <code>GENERAL_PURPOSE_T2D = 232477166;</code> */
     public static final int GENERAL_PURPOSE_T2D_VALUE = 232477166;
+    /** <code>GRAPHICS_OPTIMIZED = 68500563;</code> */
+    public static final int GRAPHICS_OPTIMIZED_VALUE = 68500563;
     /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
     public static final int MEMORY_OPTIMIZED_VALUE = 281753417;
     /** <code>MEMORY_OPTIMIZED_M3 = 276301372;</code> */
@@ -630,6 +629,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return GENERAL_PURPOSE_N2D;
         case 232477166:
           return GENERAL_PURPOSE_T2D;
+        case 68500563:
+          return GRAPHICS_OPTIMIZED;
         case 281753417:
           return MEMORY_OPTIMIZED;
         case 276301372:
@@ -1146,7 +1147,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
   public static final int MERGE_SOURCE_COMMITMENTS_FIELD_NUMBER = 188093761;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList mergeSourceCommitments_;
+  private com.google.protobuf.LazyStringArrayList mergeSourceCommitments_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1623,7 +1625,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source commitment to be splitted into a new commitment.
+   * Source commitment to be split into a new commitment.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>
@@ -1638,7 +1640,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source commitment to be splitted into a new commitment.
+   * Source commitment to be split into a new commitment.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>
@@ -1661,7 +1663,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source commitment to be splitted into a new commitment.
+   * Source commitment to be split into a new commitment.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>
@@ -2446,8 +2448,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         licenseResourceBuilder_.dispose();
         licenseResourceBuilder_ = null;
       }
-      mergeSourceCommitments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      mergeSourceCommitments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       name_ = "";
       plan_ = "";
       region_ = "";
@@ -2507,11 +2508,6 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Commitment result) {
-      if (((bitField0_ & 0x00000100) != 0)) {
-        mergeSourceCommitments_ = mergeSourceCommitments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.mergeSourceCommitments_ = mergeSourceCommitments_;
       if (reservationsBuilder_ == null) {
         if (((bitField0_ & 0x00001000) != 0)) {
           reservations_ = java.util.Collections.unmodifiableList(reservations_);
@@ -2567,6 +2563,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         result.licenseResource_ =
             licenseResourceBuilder_ == null ? licenseResource_ : licenseResourceBuilder_.build();
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        mergeSourceCommitments_.makeImmutable();
+        result.mergeSourceCommitments_ = mergeSourceCommitments_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.name_ = name_;
@@ -2689,7 +2689,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       if (!other.mergeSourceCommitments_.isEmpty()) {
         if (mergeSourceCommitments_.isEmpty()) {
           mergeSourceCommitments_ = other.mergeSourceCommitments_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureMergeSourceCommitmentsIsMutable();
           mergeSourceCommitments_.addAll(other.mergeSourceCommitments_);
@@ -3923,15 +3923,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       return licenseResourceBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList mergeSourceCommitments_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList mergeSourceCommitments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMergeSourceCommitmentsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!mergeSourceCommitments_.isModifiable()) {
         mergeSourceCommitments_ =
             new com.google.protobuf.LazyStringArrayList(mergeSourceCommitments_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -3945,7 +3945,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the mergeSourceCommitments.
      */
     public com.google.protobuf.ProtocolStringList getMergeSourceCommitmentsList() {
-      return mergeSourceCommitments_.getUnmodifiableView();
+      mergeSourceCommitments_.makeImmutable();
+      return mergeSourceCommitments_;
     }
     /**
      *
@@ -4010,6 +4011,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMergeSourceCommitmentsIsMutable();
       mergeSourceCommitments_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4031,6 +4033,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMergeSourceCommitmentsIsMutable();
       mergeSourceCommitments_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4049,6 +4052,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMergeSourceCommitments(java.lang.Iterable<java.lang.String> values) {
       ensureMergeSourceCommitmentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mergeSourceCommitments_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4064,8 +4068,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMergeSourceCommitments() {
-      mergeSourceCommitments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      mergeSourceCommitments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -4088,6 +4093,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMergeSourceCommitmentsIsMutable();
       mergeSourceCommitments_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5286,7 +5292,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source commitment to be splitted into a new commitment.
+     * Source commitment to be split into a new commitment.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>
@@ -5300,7 +5306,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source commitment to be splitted into a new commitment.
+     * Source commitment to be split into a new commitment.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>
@@ -5322,7 +5328,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source commitment to be splitted into a new commitment.
+     * Source commitment to be split into a new commitment.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>
@@ -5344,7 +5350,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source commitment to be splitted into a new commitment.
+     * Source commitment to be split into a new commitment.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>
@@ -5365,7 +5371,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source commitment to be splitted into a new commitment.
+     * Source commitment to be split into a new commitment.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>
@@ -5382,7 +5388,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source commitment to be splitted into a new commitment.
+     * Source commitment to be split into a new commitment.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>

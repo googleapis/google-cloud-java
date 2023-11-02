@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,13 @@ public interface SpanOrBuilder
    *
    * <pre>
    * Required. The resource name of the span in the following format:
+   *
    *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+   *
    * `[TRACE_ID]` is a unique identifier for a trace within a project;
    * it is a 32-character hexadecimal encoding of a 16-byte array. It should
    * not be zero.
+   *
    * `[SPAN_ID]` is a unique identifier for a span within a trace; it
    * is a 16-character hexadecimal encoding of an 8-byte array. It should not
    * be zero.
@@ -48,10 +51,13 @@ public interface SpanOrBuilder
    *
    * <pre>
    * Required. The resource name of the span in the following format:
+   *
    *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+   *
    * `[TRACE_ID]` is a unique identifier for a trace within a project;
    * it is a 32-character hexadecimal encoding of a 16-byte array. It should
    * not be zero.
+   *
    * `[SPAN_ID]` is a unique identifier for a span within a trace; it
    * is a 16-character hexadecimal encoding of an 8-byte array. It should not
    * be zero.

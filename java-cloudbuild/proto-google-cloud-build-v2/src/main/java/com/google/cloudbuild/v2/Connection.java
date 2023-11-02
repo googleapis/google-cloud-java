@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     return new Connection();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v2.RepositoryManagerProto
         .internal_static_google_devtools_cloudbuild_v2_Connection_descriptor;
@@ -81,6 +76,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int connectionConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object connectionConfig_;
 
   public enum ConnectionConfigCase
@@ -89,6 +86,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GITHUB_CONFIG(5),
     GITHUB_ENTERPRISE_CONFIG(6),
+    GITLAB_CONFIG(7),
     CONNECTIONCONFIG_NOT_SET(0);
     private final int value;
 
@@ -111,6 +109,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           return GITHUB_CONFIG;
         case 6:
           return GITHUB_ENTERPRISE_CONFIG;
+        case 7:
+          return GITLAB_CONFIG;
         case 0:
           return CONNECTIONCONFIG_NOT_SET;
         default:
@@ -382,6 +382,60 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloudbuild.v2.GitHubEnterpriseConfig) connectionConfig_;
     }
     return com.google.cloudbuild.v2.GitHubEnterpriseConfig.getDefaultInstance();
+  }
+
+  public static final int GITLAB_CONFIG_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to gitlab.com or an instance of GitLab
+   * Enterprise.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+   *
+   * @return Whether the gitlabConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGitlabConfig() {
+    return connectionConfigCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to gitlab.com or an instance of GitLab
+   * Enterprise.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+   *
+   * @return The gitlabConfig.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v2.GitLabConfig getGitlabConfig() {
+    if (connectionConfigCase_ == 7) {
+      return (com.google.cloudbuild.v2.GitLabConfig) connectionConfig_;
+    }
+    return com.google.cloudbuild.v2.GitLabConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to gitlab.com or an instance of GitLab
+   * Enterprise.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v2.GitLabConfigOrBuilder getGitlabConfigOrBuilder() {
+    if (connectionConfigCase_ == 7) {
+      return (com.google.cloudbuild.v2.GitLabConfig) connectionConfig_;
+    }
+    return com.google.cloudbuild.v2.GitLabConfig.getDefaultInstance();
   }
 
   public static final int INSTALLATION_STATE_FIELD_NUMBER = 12;
@@ -666,6 +720,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     if (connectionConfigCase_ == 6) {
       output.writeMessage(6, (com.google.cloudbuild.v2.GitHubEnterpriseConfig) connectionConfig_);
     }
+    if (connectionConfigCase_ == 7) {
+      output.writeMessage(7, (com.google.cloudbuild.v2.GitLabConfig) connectionConfig_);
+    }
     if (installationState_ != null) {
       output.writeMessage(12, getInstallationState());
     }
@@ -707,6 +764,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloudbuild.v2.GitHubEnterpriseConfig) connectionConfig_);
+    }
+    if (connectionConfigCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloudbuild.v2.GitLabConfig) connectionConfig_);
     }
     if (installationState_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getInstallationState());
@@ -770,6 +832,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       case 6:
         if (!getGithubEnterpriseConfig().equals(other.getGithubEnterpriseConfig())) return false;
         break;
+      case 7:
+        if (!getGitlabConfig().equals(other.getGitlabConfig())) return false;
+        break;
       case 0:
       default:
     }
@@ -816,6 +881,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       case 6:
         hash = (37 * hash) + GITHUB_ENTERPRISE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getGithubEnterpriseConfig().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + GITLAB_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getGitlabConfig().hashCode();
         break;
       case 0:
       default:
@@ -996,6 +1065,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (githubEnterpriseConfigBuilder_ != null) {
         githubEnterpriseConfigBuilder_.clear();
       }
+      if (gitlabConfigBuilder_ != null) {
+        gitlabConfigBuilder_.clear();
+      }
       installationState_ = null;
       if (installationStateBuilder_ != null) {
         installationStateBuilder_.dispose();
@@ -1052,23 +1124,23 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.installationState_ =
             installationStateBuilder_ == null
                 ? installationState_
                 : installationStateBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.disabled_ = disabled_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.reconciling_ = reconciling_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.etag_ = etag_;
       }
     }
@@ -1081,6 +1153,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       if (connectionConfigCase_ == 6 && githubEnterpriseConfigBuilder_ != null) {
         result.connectionConfig_ = githubEnterpriseConfigBuilder_.build();
+      }
+      if (connectionConfigCase_ == 7 && gitlabConfigBuilder_ != null) {
+        result.connectionConfig_ = gitlabConfigBuilder_.build();
       }
     }
 
@@ -1150,10 +1225,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         setReconciling(other.getReconciling());
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       switch (other.getConnectionConfigCase()) {
@@ -1165,6 +1240,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         case GITHUB_ENTERPRISE_CONFIG:
           {
             mergeGithubEnterpriseConfig(other.getGithubEnterpriseConfig());
+            break;
+          }
+        case GITLAB_CONFIG:
+          {
+            mergeGitlabConfig(other.getGitlabConfig());
             break;
           }
         case CONNECTIONCONFIG_NOT_SET:
@@ -1229,23 +1309,29 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
                 connectionConfigCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getGitlabConfigFieldBuilder().getBuilder(), extensionRegistry);
+                connectionConfigCase_ = 7;
+                break;
+              } // case 58
             case 98:
               {
                 input.readMessage(
                     getInstallationStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 98
             case 104:
               {
                 disabled_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 104
             case 112:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 112
             case 122:
@@ -1257,13 +1343,13 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 122
             case 130:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 130
             default:
@@ -2243,6 +2329,223 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return githubEnterpriseConfigBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v2.GitLabConfig,
+            com.google.cloudbuild.v2.GitLabConfig.Builder,
+            com.google.cloudbuild.v2.GitLabConfigOrBuilder>
+        gitlabConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to gitlab.com or an instance of GitLab
+     * Enterprise.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+     *
+     * @return Whether the gitlabConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasGitlabConfig() {
+      return connectionConfigCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to gitlab.com or an instance of GitLab
+     * Enterprise.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+     *
+     * @return The gitlabConfig.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v2.GitLabConfig getGitlabConfig() {
+      if (gitlabConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 7) {
+          return (com.google.cloudbuild.v2.GitLabConfig) connectionConfig_;
+        }
+        return com.google.cloudbuild.v2.GitLabConfig.getDefaultInstance();
+      } else {
+        if (connectionConfigCase_ == 7) {
+          return gitlabConfigBuilder_.getMessage();
+        }
+        return com.google.cloudbuild.v2.GitLabConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to gitlab.com or an instance of GitLab
+     * Enterprise.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+     */
+    public Builder setGitlabConfig(com.google.cloudbuild.v2.GitLabConfig value) {
+      if (gitlabConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionConfig_ = value;
+        onChanged();
+      } else {
+        gitlabConfigBuilder_.setMessage(value);
+      }
+      connectionConfigCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to gitlab.com or an instance of GitLab
+     * Enterprise.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+     */
+    public Builder setGitlabConfig(com.google.cloudbuild.v2.GitLabConfig.Builder builderForValue) {
+      if (gitlabConfigBuilder_ == null) {
+        connectionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gitlabConfigBuilder_.setMessage(builderForValue.build());
+      }
+      connectionConfigCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to gitlab.com or an instance of GitLab
+     * Enterprise.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+     */
+    public Builder mergeGitlabConfig(com.google.cloudbuild.v2.GitLabConfig value) {
+      if (gitlabConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 7
+            && connectionConfig_ != com.google.cloudbuild.v2.GitLabConfig.getDefaultInstance()) {
+          connectionConfig_ =
+              com.google.cloudbuild.v2.GitLabConfig.newBuilder(
+                      (com.google.cloudbuild.v2.GitLabConfig) connectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          connectionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (connectionConfigCase_ == 7) {
+          gitlabConfigBuilder_.mergeFrom(value);
+        } else {
+          gitlabConfigBuilder_.setMessage(value);
+        }
+      }
+      connectionConfigCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to gitlab.com or an instance of GitLab
+     * Enterprise.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+     */
+    public Builder clearGitlabConfig() {
+      if (gitlabConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 7) {
+          connectionConfigCase_ = 0;
+          connectionConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (connectionConfigCase_ == 7) {
+          connectionConfigCase_ = 0;
+          connectionConfig_ = null;
+        }
+        gitlabConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to gitlab.com or an instance of GitLab
+     * Enterprise.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+     */
+    public com.google.cloudbuild.v2.GitLabConfig.Builder getGitlabConfigBuilder() {
+      return getGitlabConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to gitlab.com or an instance of GitLab
+     * Enterprise.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v2.GitLabConfigOrBuilder getGitlabConfigOrBuilder() {
+      if ((connectionConfigCase_ == 7) && (gitlabConfigBuilder_ != null)) {
+        return gitlabConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (connectionConfigCase_ == 7) {
+          return (com.google.cloudbuild.v2.GitLabConfig) connectionConfig_;
+        }
+        return com.google.cloudbuild.v2.GitLabConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to gitlab.com or an instance of GitLab
+     * Enterprise.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v2.GitLabConfig,
+            com.google.cloudbuild.v2.GitLabConfig.Builder,
+            com.google.cloudbuild.v2.GitLabConfigOrBuilder>
+        getGitlabConfigFieldBuilder() {
+      if (gitlabConfigBuilder_ == null) {
+        if (!(connectionConfigCase_ == 7)) {
+          connectionConfig_ = com.google.cloudbuild.v2.GitLabConfig.getDefaultInstance();
+        }
+        gitlabConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v2.GitLabConfig,
+                com.google.cloudbuild.v2.GitLabConfig.Builder,
+                com.google.cloudbuild.v2.GitLabConfigOrBuilder>(
+                (com.google.cloudbuild.v2.GitLabConfig) connectionConfig_,
+                getParentForChildren(),
+                isClean());
+        connectionConfig_ = null;
+      }
+      connectionConfigCase_ = 7;
+      onChanged();
+      return gitlabConfigBuilder_;
+    }
+
     private com.google.cloudbuild.v2.InstallationState installationState_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v2.InstallationState,
@@ -2263,7 +2566,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the installationState field is set.
      */
     public boolean hasInstallationState() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2307,7 +2610,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       } else {
         installationStateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2329,7 +2632,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       } else {
         installationStateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2346,7 +2649,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInstallationState(com.google.cloudbuild.v2.InstallationState value) {
       if (installationStateBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && installationState_ != null
             && installationState_
                 != com.google.cloudbuild.v2.InstallationState.getDefaultInstance()) {
@@ -2357,7 +2660,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       } else {
         installationStateBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2373,7 +2676,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInstallationState() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       installationState_ = null;
       if (installationStateBuilder_ != null) {
         installationStateBuilder_.dispose();
@@ -2394,7 +2697,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloudbuild.v2.InstallationState.Builder getInstallationStateBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getInstallationStateFieldBuilder().getBuilder();
     }
@@ -2481,7 +2784,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2499,7 +2802,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       disabled_ = false;
       onChanged();
       return this;
@@ -2538,7 +2841,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2555,7 +2858,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       reconciling_ = false;
       onChanged();
       return this;
@@ -2581,7 +2884,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return annotations_;
     }
@@ -2666,7 +2969,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -2689,7 +2992,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -2709,7 +3012,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -2723,7 +3026,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -2795,7 +3098,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2814,7 +3117,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2838,7 +3141,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.cloud.channel.v1.CloudChannelReportsServiceClient;
 import com.google.cloud.channel.v1.FetchReportResultsRequest;
 import com.google.cloud.channel.v1.ReportJobName;
 import com.google.cloud.channel.v1.Row;
+import java.util.ArrayList;
 
 public class AsyncFetchReportResults {
 
@@ -42,6 +43,7 @@ public class AsyncFetchReportResults {
               .setReportJob(ReportJobName.of("[ACCOUNT]", "[REPORT_JOB]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .addAllPartitionKeys(new ArrayList<String>())
               .build();
       ApiFuture<Row> future =
           cloudChannelReportsServiceClient.fetchReportResultsPagedCallable().futureCall(request);

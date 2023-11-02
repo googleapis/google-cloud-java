@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,8 @@ import com.google.cloud.dialogflow.v2beta1.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2beta1.ListMessagesRequest;
 import com.google.cloud.dialogflow.v2beta1.ListMessagesResponse;
 import com.google.cloud.dialogflow.v2beta1.Message;
+import com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest;
+import com.google.cloud.dialogflow.v2beta1.SearchKnowledgeResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -138,6 +140,8 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       suggestConversationSummarySettings;
   private final UnaryCallSettings<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
       generateStatelessSummarySettings;
+  private final UnaryCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
+      searchKnowledgeSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -357,6 +361,12 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     return generateStatelessSummarySettings;
   }
 
+  /** Returns the object with the settings used for calls to searchKnowledge. */
+  public UnaryCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
+      searchKnowledgeSettings() {
+    return searchKnowledgeSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -483,6 +493,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     suggestConversationSummarySettings =
         settingsBuilder.suggestConversationSummarySettings().build();
     generateStatelessSummarySettings = settingsBuilder.generateStatelessSummarySettings().build();
+    searchKnowledgeSettings = settingsBuilder.searchKnowledgeSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -510,6 +521,8 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     private final UnaryCallSettings.Builder<
             GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
         generateStatelessSummarySettings;
+    private final UnaryCallSettings.Builder<SearchKnowledgeRequest, SearchKnowledgeResponse>
+        searchKnowledgeSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -560,6 +573,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       listMessagesSettings = PagedCallSettings.newBuilder(LIST_MESSAGES_PAGE_STR_FACT);
       suggestConversationSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateStatelessSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      searchKnowledgeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -573,6 +587,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               listMessagesSettings,
               suggestConversationSummarySettings,
               generateStatelessSummarySettings,
+              searchKnowledgeSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -589,6 +604,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       listMessagesSettings = settings.listMessagesSettings.toBuilder();
       suggestConversationSummarySettings = settings.suggestConversationSummarySettings.toBuilder();
       generateStatelessSummarySettings = settings.generateStatelessSummarySettings.toBuilder();
+      searchKnowledgeSettings = settings.searchKnowledgeSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -602,6 +618,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               listMessagesSettings,
               suggestConversationSummarySettings,
               generateStatelessSummarySettings,
+              searchKnowledgeSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -670,6 +687,11 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
 
       builder
           .generateStatelessSummarySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .searchKnowledgeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -751,6 +773,12 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
             GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
         generateStatelessSummarySettings() {
       return generateStatelessSummarySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchKnowledge. */
+    public UnaryCallSettings.Builder<SearchKnowledgeRequest, SearchKnowledgeResponse>
+        searchKnowledgeSettings() {
+      return searchKnowledgeSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

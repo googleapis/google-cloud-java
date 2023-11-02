@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface SignJwtRequestOrBuilder
    * <pre>
    * Required. Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The resource name of the service account in the following format:
    * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
@@ -52,6 +53,7 @@ public interface SignJwtRequestOrBuilder
    * <pre>
    * Required. Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The resource name of the service account in the following format:
    * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
@@ -76,11 +78,14 @@ public interface SignJwtRequestOrBuilder
    * <pre>
    * Required. Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The JWT payload to sign. Must be a serialized JSON object that contains a
    * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+   *
    * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
    * an integer timestamp that is not in the past and no more than 12 hours in
    * the future.
+   *
    * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
    * this claim is added automatically, with a timestamp that is 1 hour in the
    * future.
@@ -100,11 +105,14 @@ public interface SignJwtRequestOrBuilder
    * <pre>
    * Required. Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The JWT payload to sign. Must be a serialized JSON object that contains a
    * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
+   *
    * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
    * an integer timestamp that is not in the past and no more than 12 hours in
    * the future.
+   *
    * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
    * this claim is added automatically, with a timestamp that is 1 hour in the
    * future.

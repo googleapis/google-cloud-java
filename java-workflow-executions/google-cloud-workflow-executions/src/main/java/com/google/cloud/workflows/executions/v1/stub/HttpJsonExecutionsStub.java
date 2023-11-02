@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.workflows.executions.v1.CancelExecutionRequest;
 import com.google.cloud.workflows.executions.v1.CreateExecutionRequest;
@@ -78,6 +79,8 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListExecutionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
@@ -252,21 +255,45 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
             HttpJsonCallSettings.<ListExecutionsRequest, ListExecutionsResponse>newBuilder()
                 .setMethodDescriptor(listExecutionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateExecutionRequest, Execution> createExecutionTransportSettings =
         HttpJsonCallSettings.<CreateExecutionRequest, Execution>newBuilder()
             .setMethodDescriptor(createExecutionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
         HttpJsonCallSettings.<GetExecutionRequest, Execution>newBuilder()
             .setMethodDescriptor(getExecutionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CancelExecutionRequest, Execution> cancelExecutionTransportSettings =
         HttpJsonCallSettings.<CancelExecutionRequest, Execution>newBuilder()
             .setMethodDescriptor(cancelExecutionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listExecutionsCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListKnowledgeBasesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -207,11 +202,16 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    * <pre>
    * The filter expression used to filter knowledge bases returned by the list
    * method. The expression has the following syntax:
+   *
    *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+   *
    * The following fields and operators are supported:
+   *
    * * display_name with has(:) operator
    * * language_code with equals(=) operator
+   *
    * Examples:
+   *
    * * 'language_code=en-us' matches knowledge bases with en-us language code.
    * * 'display_name:articles' matches knowledge bases whose display name
    *   contains "articles".
@@ -220,8 +220,10 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    * * 'language_code=en-gb AND display_name=articles' matches all knowledge
    *   bases whose display name contains "articles" and whose language code is
    *   "en-gb".
+   *
    * Note: An empty filter string (i.e. "") is a no-op and will result in no
    * filtering.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -248,11 +250,16 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    * <pre>
    * The filter expression used to filter knowledge bases returned by the list
    * method. The expression has the following syntax:
+   *
    *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+   *
    * The following fields and operators are supported:
+   *
    * * display_name with has(:) operator
    * * language_code with equals(=) operator
+   *
    * Examples:
+   *
    * * 'language_code=en-us' matches knowledge bases with en-us language code.
    * * 'display_name:articles' matches knowledge bases whose display name
    *   contains "articles".
@@ -261,8 +268,10 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    * * 'language_code=en-gb AND display_name=articles' matches all knowledge
    *   bases whose display name contains "articles" and whose language code is
    *   "en-gb".
+   *
    * Note: An empty filter string (i.e. "") is a no-op and will result in no
    * filtering.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -988,11 +997,16 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * <pre>
      * The filter expression used to filter knowledge bases returned by the list
      * method. The expression has the following syntax:
+     *
      *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+     *
      * The following fields and operators are supported:
+     *
      * * display_name with has(:) operator
      * * language_code with equals(=) operator
+     *
      * Examples:
+     *
      * * 'language_code=en-us' matches knowledge bases with en-us language code.
      * * 'display_name:articles' matches knowledge bases whose display name
      *   contains "articles".
@@ -1001,8 +1015,10 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * * 'language_code=en-gb AND display_name=articles' matches all knowledge
      *   bases whose display name contains "articles" and whose language code is
      *   "en-gb".
+     *
      * Note: An empty filter string (i.e. "") is a no-op and will result in no
      * filtering.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1028,11 +1044,16 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * <pre>
      * The filter expression used to filter knowledge bases returned by the list
      * method. The expression has the following syntax:
+     *
      *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+     *
      * The following fields and operators are supported:
+     *
      * * display_name with has(:) operator
      * * language_code with equals(=) operator
+     *
      * Examples:
+     *
      * * 'language_code=en-us' matches knowledge bases with en-us language code.
      * * 'display_name:articles' matches knowledge bases whose display name
      *   contains "articles".
@@ -1041,8 +1062,10 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * * 'language_code=en-gb AND display_name=articles' matches all knowledge
      *   bases whose display name contains "articles" and whose language code is
      *   "en-gb".
+     *
      * Note: An empty filter string (i.e. "") is a no-op and will result in no
      * filtering.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1068,11 +1091,16 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * <pre>
      * The filter expression used to filter knowledge bases returned by the list
      * method. The expression has the following syntax:
+     *
      *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+     *
      * The following fields and operators are supported:
+     *
      * * display_name with has(:) operator
      * * language_code with equals(=) operator
+     *
      * Examples:
+     *
      * * 'language_code=en-us' matches knowledge bases with en-us language code.
      * * 'display_name:articles' matches knowledge bases whose display name
      *   contains "articles".
@@ -1081,8 +1109,10 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * * 'language_code=en-gb AND display_name=articles' matches all knowledge
      *   bases whose display name contains "articles" and whose language code is
      *   "en-gb".
+     *
      * Note: An empty filter string (i.e. "") is a no-op and will result in no
      * filtering.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1107,11 +1137,16 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * <pre>
      * The filter expression used to filter knowledge bases returned by the list
      * method. The expression has the following syntax:
+     *
      *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+     *
      * The following fields and operators are supported:
+     *
      * * display_name with has(:) operator
      * * language_code with equals(=) operator
+     *
      * Examples:
+     *
      * * 'language_code=en-us' matches knowledge bases with en-us language code.
      * * 'display_name:articles' matches knowledge bases whose display name
      *   contains "articles".
@@ -1120,8 +1155,10 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * * 'language_code=en-gb AND display_name=articles' matches all knowledge
      *   bases whose display name contains "articles" and whose language code is
      *   "en-gb".
+     *
      * Note: An empty filter string (i.e. "") is a no-op and will result in no
      * filtering.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1142,11 +1179,16 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * <pre>
      * The filter expression used to filter knowledge bases returned by the list
      * method. The expression has the following syntax:
+     *
      *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+     *
      * The following fields and operators are supported:
+     *
      * * display_name with has(:) operator
      * * language_code with equals(=) operator
+     *
      * Examples:
+     *
      * * 'language_code=en-us' matches knowledge bases with en-us language code.
      * * 'display_name:articles' matches knowledge bases whose display name
      *   contains "articles".
@@ -1155,8 +1197,10 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      * * 'language_code=en-gb AND display_name=articles' matches all knowledge
      *   bases whose display name contains "articles" and whose language code is
      *   "en-gb".
+     *
      * Note: An empty filter string (i.e. "") is a no-op and will result in no
      * filtering.
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>

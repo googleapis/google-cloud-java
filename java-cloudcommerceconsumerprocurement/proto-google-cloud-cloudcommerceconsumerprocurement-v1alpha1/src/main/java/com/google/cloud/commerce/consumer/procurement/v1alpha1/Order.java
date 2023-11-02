@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,8 +26,10 @@ package com.google.cloud.commerce.consumer.procurement.v1alpha1;
  * Creating an order makes sure that both the Google backend systems
  * as well as external service provider's systems (if needed) allow use of
  * purchased products and ensures the appropriate billing events occur.
+ *
  * An Order can be made against one Product with multiple add-ons (optional) or
  * one Quote which might reference multiple products.
+ *
  * Customers typically choose a price plan for each Product purchased when
  * they create an order and can change their plan later, if the product allows.
  * </pre>
@@ -56,11 +58,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Order();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -142,7 +139,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The user-specified name of the order.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 10 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -166,7 +162,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The user-specified name of the order.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 10 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -743,8 +738,10 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * Creating an order makes sure that both the Google backend systems
    * as well as external service provider's systems (if needed) allow use of
    * purchased products and ensures the appropriate billing events occur.
+   *
    * An Order can be made against one Product with multiple add-ons (optional) or
    * one Quote which might reference multiple products.
+   *
    * Customers typically choose a price plan for each Product purchased when
    * they create an order and can change their plan later, if the product allows.
    * </pre>
@@ -1233,7 +1230,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-specified name of the order.
-     * Must be unique within a billing account.
      * </pre>
      *
      * <code>string display_name = 10 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1256,7 +1252,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-specified name of the order.
-     * Must be unique within a billing account.
      * </pre>
      *
      * <code>string display_name = 10 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1279,7 +1274,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-specified name of the order.
-     * Must be unique within a billing account.
      * </pre>
      *
      * <code>string display_name = 10 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1301,7 +1295,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-specified name of the order.
-     * Must be unique within a billing account.
      * </pre>
      *
      * <code>string display_name = 10 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1319,7 +1312,6 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-specified name of the order.
-     * Must be unique within a billing account.
      * </pre>
      *
      * <code>string display_name = 10 [(.google.api.field_behavior) = REQUIRED];</code>

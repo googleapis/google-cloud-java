@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface TagOrBuilder
    * <pre>
    * The resource name of the tag in URL format where tag ID is a
    * system-generated identifier.
+   *
    * Note: The tag itself might not be stored in the location specified in its
    * name.
    * </pre>
@@ -44,6 +45,7 @@ public interface TagOrBuilder
    * <pre>
    * The resource name of the tag in URL format where tag ID is a
    * system-generated identifier.
+   *
    * Note: The tag itself might not be stored in the location specified in its
    * name.
    * </pre>
@@ -59,7 +61,9 @@ public interface TagOrBuilder
    *
    * <pre>
    * Required. The resource name of the tag template this tag uses. Example:
+   *
    * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
+   *
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -73,7 +77,9 @@ public interface TagOrBuilder
    *
    * <pre>
    * Required. The resource name of the tag template this tag uses. Example:
+   *
    * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
+   *
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -114,6 +120,7 @@ public interface TagOrBuilder
    * <pre>
    * Resources like entry can have schemas associated with them. This scope
    * allows you to attach tags to an individual column based on that schema.
+   *
    * To attach a tag to a nested column, separate column names with a dot
    * (`.`). Example: `column.nested_column`.
    * </pre>
@@ -129,6 +136,7 @@ public interface TagOrBuilder
    * <pre>
    * Resources like entry can have schemas associated with them. This scope
    * allows you to attach tags to an individual column based on that schema.
+   *
    * To attach a tag to a nested column, separate column names with a dot
    * (`.`). Example: `column.nested_column`.
    * </pre>
@@ -144,6 +152,7 @@ public interface TagOrBuilder
    * <pre>
    * Resources like entry can have schemas associated with them. This scope
    * allows you to attach tags to an individual column based on that schema.
+   *
    * To attach a tag to a nested column, separate column names with a dot
    * (`.`). Example: `column.nested_column`.
    * </pre>
@@ -160,6 +169,7 @@ public interface TagOrBuilder
    * <pre>
    * Required. Maps the ID of a tag field to its value and additional
    * information about that field.
+   *
    * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
@@ -175,6 +185,7 @@ public interface TagOrBuilder
    * <pre>
    * Required. Maps the ID of a tag field to its value and additional
    * information about that field.
+   *
    * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
@@ -193,6 +204,7 @@ public interface TagOrBuilder
    * <pre>
    * Required. Maps the ID of a tag field to its value and additional
    * information about that field.
+   *
    * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
@@ -208,6 +220,7 @@ public interface TagOrBuilder
    * <pre>
    * Required. Maps the ID of a tag field to its value and additional
    * information about that field.
+   *
    * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
@@ -227,6 +240,7 @@ public interface TagOrBuilder
    * <pre>
    * Required. Maps the ID of a tag field to its value and additional
    * information about that field.
+   *
    * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
@@ -237,5 +251,5 @@ public interface TagOrBuilder
    */
   com.google.cloud.datacatalog.v1.TagField getFieldsOrThrow(java.lang.String key);
 
-  public com.google.cloud.datacatalog.v1.Tag.ScopeCase getScopeCase();
+  com.google.cloud.datacatalog.v1.Tag.ScopeCase getScopeCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,12 +54,15 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses like:
+   * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses
+   * like:
+   *
    * *   `8.8.8`
    * *   `8.8.8.8:53`
    * *   `test:bad:address`
    * *   `[::1]`
    * *   `[::1]:8080`
+   *
    * Limited to 45 characters.
    * </pre>
    *
@@ -72,12 +75,15 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses like:
+   * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses
+   * like:
+   *
    * *   `8.8.8`
    * *   `8.8.8.8:53`
    * *   `test:bad:address`
    * *   `[::1]`
    * *   `[::1]:8080`
+   *
    * Limited to 45 characters.
    * </pre>
    *
@@ -106,7 +112,9 @@ public interface EndpointOrBuilder
    * <pre>
    * Optional. Metadata for the endpoint. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 512 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -118,10 +126,7 @@ public interface EndpointOrBuilder
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -136,7 +141,9 @@ public interface EndpointOrBuilder
    * <pre>
    * Optional. Metadata for the endpoint. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 512 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -148,10 +155,7 @@ public interface EndpointOrBuilder
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -169,7 +173,9 @@ public interface EndpointOrBuilder
    * <pre>
    * Optional. Metadata for the endpoint. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 512 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -181,10 +187,7 @@ public interface EndpointOrBuilder
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -199,7 +202,9 @@ public interface EndpointOrBuilder
    * <pre>
    * Optional. Metadata for the endpoint. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 512 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -211,10 +216,7 @@ public interface EndpointOrBuilder
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -233,7 +235,9 @@ public interface EndpointOrBuilder
    * <pre>
    * Optional. Metadata for the endpoint. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 512 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -245,10 +249,7 @@ public interface EndpointOrBuilder
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -262,8 +263,9 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * Immutable. The Google Compute Engine network (VPC) of the endpoint in the format
-   * `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+   * Immutable. The Google Compute Engine network (VPC) of the endpoint in the
+   * format `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+   *
    * The project must be specified by project number (project id is rejected).
    * Incorrectly formatted networks are rejected, but no other validation
    * is performed on this field (ex. network or project existence, reachability,
@@ -281,8 +283,9 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * Immutable. The Google Compute Engine network (VPC) of the endpoint in the format
-   * `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+   * Immutable. The Google Compute Engine network (VPC) of the endpoint in the
+   * format `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+   *
    * The project must be specified by project number (project id is rejected).
    * Incorrectly formatted networks are rejected, but no other validation
    * is performed on this field (ex. network or project existence, reachability,
@@ -372,4 +375,31 @@ public interface EndpointOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A globally unique identifier (in UUID4 format) for this
+   * endpoint.
+   * </pre>
+   *
+   * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The uid.
+   */
+  java.lang.String getUid();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A globally unique identifier (in UUID4 format) for this
+   * endpoint.
+   * </pre>
+   *
+   * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for uid.
+   */
+  com.google.protobuf.ByteString getUidBytes();
 }

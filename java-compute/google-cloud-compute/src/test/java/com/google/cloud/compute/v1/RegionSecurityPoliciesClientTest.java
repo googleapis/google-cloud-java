@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
@@ -161,6 +162,8 @@ public class RegionSecurityPoliciesClientTest {
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
             .setKind("kind3292052")
+            .setLabelFingerprint("labelFingerprint379449680")
+            .putAllLabels(new HashMap<String, String>())
             .setName("name3373707")
             .setRecaptchaOptionsConfig(SecurityPolicyRecaptchaOptionsConfig.newBuilder().build())
             .setRegion("region-934795532")

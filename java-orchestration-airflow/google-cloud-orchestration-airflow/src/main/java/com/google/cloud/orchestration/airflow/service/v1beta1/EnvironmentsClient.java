@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1040,6 +1040,200 @@ public class EnvironmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Executes Airflow CLI command.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ExecuteAirflowCommandRequest request =
+   *       ExecuteAirflowCommandRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setCommand("command950394699")
+   *           .setSubcommand("subcommand2099091723")
+   *           .addAllParameters(new ArrayList<String>())
+   *           .build();
+   *   ExecuteAirflowCommandResponse response = environmentsClient.executeAirflowCommand(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteAirflowCommandResponse executeAirflowCommand(
+      ExecuteAirflowCommandRequest request) {
+    return executeAirflowCommandCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes Airflow CLI command.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ExecuteAirflowCommandRequest request =
+   *       ExecuteAirflowCommandRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setCommand("command950394699")
+   *           .setSubcommand("subcommand2099091723")
+   *           .addAllParameters(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<ExecuteAirflowCommandResponse> future =
+   *       environmentsClient.executeAirflowCommandCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteAirflowCommandResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+      executeAirflowCommandCallable() {
+    return stub.executeAirflowCommandCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops Airflow CLI command execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   StopAirflowCommandRequest request =
+   *       StopAirflowCommandRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setExecutionId("executionId-454906285")
+   *           .setPod("pod111173")
+   *           .setPodNamespace("podNamespace463962262")
+   *           .setForce(true)
+   *           .build();
+   *   StopAirflowCommandResponse response = environmentsClient.stopAirflowCommand(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StopAirflowCommandResponse stopAirflowCommand(StopAirflowCommandRequest request) {
+    return stopAirflowCommandCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops Airflow CLI command execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   StopAirflowCommandRequest request =
+   *       StopAirflowCommandRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setExecutionId("executionId-454906285")
+   *           .setPod("pod111173")
+   *           .setPodNamespace("podNamespace463962262")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<StopAirflowCommandResponse> future =
+   *       environmentsClient.stopAirflowCommandCallable().futureCall(request);
+   *   // Do something.
+   *   StopAirflowCommandResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StopAirflowCommandRequest, StopAirflowCommandResponse>
+      stopAirflowCommandCallable() {
+    return stub.stopAirflowCommandCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Polls Airflow CLI command execution and fetches logs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   PollAirflowCommandRequest request =
+   *       PollAirflowCommandRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setExecutionId("executionId-454906285")
+   *           .setPod("pod111173")
+   *           .setPodNamespace("podNamespace463962262")
+   *           .setNextLineNumber(1176642216)
+   *           .build();
+   *   PollAirflowCommandResponse response = environmentsClient.pollAirflowCommand(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PollAirflowCommandResponse pollAirflowCommand(PollAirflowCommandRequest request) {
+    return pollAirflowCommandCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Polls Airflow CLI command execution and fetches logs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   PollAirflowCommandRequest request =
+   *       PollAirflowCommandRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setExecutionId("executionId-454906285")
+   *           .setPod("pod111173")
+   *           .setPodNamespace("podNamespace463962262")
+   *           .setNextLineNumber(1176642216)
+   *           .build();
+   *   ApiFuture<PollAirflowCommandResponse> future =
+   *       environmentsClient.pollAirflowCommandCallable().futureCall(request);
+   *   // Do something.
+   *   PollAirflowCommandResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PollAirflowCommandRequest, PollAirflowCommandResponse>
+      pollAirflowCommandCallable() {
+    return stub.pollAirflowCommandCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a snapshots of a Cloud Composer environment.
    *
    * <p>As a result of this operation, snapshot of environment's state is stored in a location
@@ -1242,6 +1436,148 @@ public class EnvironmentsClient implements BackgroundResource {
    */
   public final UnaryCallable<LoadSnapshotRequest, Operation> loadSnapshotCallable() {
     return stub.loadSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers database failover (only for highly resilient environments).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DatabaseFailoverRequest request =
+   *       DatabaseFailoverRequest.newBuilder().setEnvironment("environment-85904877").build();
+   *   DatabaseFailoverResponse response = environmentsClient.databaseFailoverAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatabaseFailoverResponse, OperationMetadata> databaseFailoverAsync(
+      DatabaseFailoverRequest request) {
+    return databaseFailoverOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers database failover (only for highly resilient environments).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DatabaseFailoverRequest request =
+   *       DatabaseFailoverRequest.newBuilder().setEnvironment("environment-85904877").build();
+   *   OperationFuture<DatabaseFailoverResponse, OperationMetadata> future =
+   *       environmentsClient.databaseFailoverOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DatabaseFailoverResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
+      databaseFailoverOperationCallable() {
+    return stub.databaseFailoverOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers database failover (only for highly resilient environments).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DatabaseFailoverRequest request =
+   *       DatabaseFailoverRequest.newBuilder().setEnvironment("environment-85904877").build();
+   *   ApiFuture<Operation> future =
+   *       environmentsClient.databaseFailoverCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DatabaseFailoverRequest, Operation> databaseFailoverCallable() {
+    return stub.databaseFailoverCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches database properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   FetchDatabasePropertiesRequest request =
+   *       FetchDatabasePropertiesRequest.newBuilder()
+   *           .setEnvironment(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .build();
+   *   FetchDatabasePropertiesResponse response =
+   *       environmentsClient.fetchDatabaseProperties(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchDatabasePropertiesResponse fetchDatabaseProperties(
+      FetchDatabasePropertiesRequest request) {
+    return fetchDatabasePropertiesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches database properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   FetchDatabasePropertiesRequest request =
+   *       FetchDatabasePropertiesRequest.newBuilder()
+   *           .setEnvironment(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[ENVIRONMENT]").toString())
+   *           .build();
+   *   ApiFuture<FetchDatabasePropertiesResponse> future =
+   *       environmentsClient.fetchDatabasePropertiesCallable().futureCall(request);
+   *   // Do something.
+   *   FetchDatabasePropertiesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+      fetchDatabasePropertiesCallable() {
+    return stub.fetchDatabasePropertiesCallable();
   }
 
   @Override

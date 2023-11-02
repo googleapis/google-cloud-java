@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.kms.v1.CreateEkmConnectionRequest;
 import com.google.cloud.kms.v1.EkmConfig;
@@ -34,11 +35,12 @@ import com.google.cloud.kms.v1.ListEkmConnectionsRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsResponse;
 import com.google.cloud.kms.v1.UpdateEkmConfigRequest;
 import com.google.cloud.kms.v1.UpdateEkmConnectionRequest;
+import com.google.cloud.kms.v1.VerifyConnectivityRequest;
+import com.google.cloud.kms.v1.VerifyConnectivityResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -119,6 +121,17 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(EkmConfig.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivityMethodDescriptor =
+          MethodDescriptor.<VerifyConnectivityRequest, VerifyConnectivityResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.EkmService/VerifyConnectivity")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(VerifyConnectivityRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(VerifyConnectivityResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -176,6 +189,8 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
       updateEkmConnectionCallable;
   private final UnaryCallable<GetEkmConfigRequest, EkmConfig> getEkmConfigCallable;
   private final UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable;
+  private final UnaryCallable<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivityCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -233,9 +248,9 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
                 .setMethodDescriptor(listEkmConnectionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetEkmConnectionRequest, EkmConnection> getEkmConnectionTransportSettings =
@@ -243,9 +258,9 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
             .setMethodDescriptor(getEkmConnectionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateEkmConnectionRequest, EkmConnection>
@@ -254,9 +269,9 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
                 .setMethodDescriptor(createEkmConnectionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateEkmConnectionRequest, EkmConnection>
@@ -265,11 +280,11 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
                 .setMethodDescriptor(updateEkmConnectionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "ekm_connection.name",
                           String.valueOf(request.getEkmConnection().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetEkmConfigRequest, EkmConfig> getEkmConfigTransportSettings =
@@ -277,9 +292,9 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
             .setMethodDescriptor(getEkmConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigTransportSettings =
@@ -287,19 +302,30 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
             .setMethodDescriptor(updateEkmConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("ekm_config.name", String.valueOf(request.getEkmConfig().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("ekm_config.name", String.valueOf(request.getEkmConfig().getName()));
+                  return builder.build();
                 })
             .build();
+    GrpcCallSettings<VerifyConnectivityRequest, VerifyConnectivityResponse>
+        verifyConnectivityTransportSettings =
+            GrpcCallSettings.<VerifyConnectivityRequest, VerifyConnectivityResponse>newBuilder()
+                .setMethodDescriptor(verifyConnectivityMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -307,9 +333,9 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -317,9 +343,9 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -327,9 +353,9 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -338,9 +364,9 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 
@@ -373,6 +399,11 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
     this.updateEkmConfigCallable =
         callableFactory.createUnaryCallable(
             updateEkmConfigTransportSettings, settings.updateEkmConfigSettings(), clientContext);
+    this.verifyConnectivityCallable =
+        callableFactory.createUnaryCallable(
+            verifyConnectivityTransportSettings,
+            settings.verifyConnectivitySettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -437,6 +468,12 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
   @Override
   public UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable() {
     return updateEkmConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivityCallable() {
+    return verifyConnectivityCallable;
   }
 
   @Override

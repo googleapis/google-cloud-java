@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface CreateServiceRequestOrBuilder
    * <pre>
    * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
    * the parent workspace. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface CreateServiceRequestOrBuilder
    * <pre>
    * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
    * the parent workspace. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Form();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -268,6 +263,44 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * @return The redact.
      */
     boolean getRedact();
+
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this parameter. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+     *
+     * @return Whether the advancedSettings field is set.
+     */
+    boolean hasAdvancedSettings();
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this parameter. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+     *
+     * @return The advancedSettings.
+     */
+    com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings();
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this parameter. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+     */
+    com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder getAdvancedSettingsOrBuilder();
   }
   /**
    *
@@ -297,11 +330,6 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Parameter();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -380,23 +408,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
        * *   `sys.no-input-default`
        * *   `sys.invalid-parameter`
+       *
        * `initial_prompt_fulfillment` provides the first prompt for the
        * parameter.
+       *
        * If the user's response does not fill the parameter, a
        * no-match/no-input event will be triggered, and the fulfillment
        * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
        * defined) will be called to provide a prompt. The
        * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
        * the next no-match/no-input event, and so on.
+       *
        * A `sys.no-match-default` or `sys.no-input-default` handler will be used
        * to handle all following no-match/no-input events after all numbered
        * no-match/no-input handlers for the parameter are consumed.
+       *
        * A `sys.invalid-parameter` handler can be defined to handle the case
        * where the parameter values have been `invalidated` by webhook. For
        * example, if the user's response fill the parameter, however the
        * parameter was invalidated by webhook, the fulfillment associated with
        * the `sys.invalid-parameter` handler (if defined) will be called to
        * provide a prompt.
+       *
        * If the event handler for the corresponding event can't be found on the
        * parameter, `initial_prompt_fulfillment` will be re-prompted.
        * </pre>
@@ -417,23 +450,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
        * *   `sys.no-input-default`
        * *   `sys.invalid-parameter`
+       *
        * `initial_prompt_fulfillment` provides the first prompt for the
        * parameter.
+       *
        * If the user's response does not fill the parameter, a
        * no-match/no-input event will be triggered, and the fulfillment
        * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
        * defined) will be called to provide a prompt. The
        * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
        * the next no-match/no-input event, and so on.
+       *
        * A `sys.no-match-default` or `sys.no-input-default` handler will be used
        * to handle all following no-match/no-input events after all numbered
        * no-match/no-input handlers for the parameter are consumed.
+       *
        * A `sys.invalid-parameter` handler can be defined to handle the case
        * where the parameter values have been `invalidated` by webhook. For
        * example, if the user's response fill the parameter, however the
        * parameter was invalidated by webhook, the fulfillment associated with
        * the `sys.invalid-parameter` handler (if defined) will be called to
        * provide a prompt.
+       *
        * If the event handler for the corresponding event can't be found on the
        * parameter, `initial_prompt_fulfillment` will be re-prompted.
        * </pre>
@@ -454,23 +492,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
        * *   `sys.no-input-default`
        * *   `sys.invalid-parameter`
+       *
        * `initial_prompt_fulfillment` provides the first prompt for the
        * parameter.
+       *
        * If the user's response does not fill the parameter, a
        * no-match/no-input event will be triggered, and the fulfillment
        * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
        * defined) will be called to provide a prompt. The
        * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
        * the next no-match/no-input event, and so on.
+       *
        * A `sys.no-match-default` or `sys.no-input-default` handler will be used
        * to handle all following no-match/no-input events after all numbered
        * no-match/no-input handlers for the parameter are consumed.
+       *
        * A `sys.invalid-parameter` handler can be defined to handle the case
        * where the parameter values have been `invalidated` by webhook. For
        * example, if the user's response fill the parameter, however the
        * parameter was invalidated by webhook, the fulfillment associated with
        * the `sys.invalid-parameter` handler (if defined) will be called to
        * provide a prompt.
+       *
        * If the event handler for the corresponding event can't be found on the
        * parameter, `initial_prompt_fulfillment` will be re-prompted.
        * </pre>
@@ -491,23 +534,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
        * *   `sys.no-input-default`
        * *   `sys.invalid-parameter`
+       *
        * `initial_prompt_fulfillment` provides the first prompt for the
        * parameter.
+       *
        * If the user's response does not fill the parameter, a
        * no-match/no-input event will be triggered, and the fulfillment
        * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
        * defined) will be called to provide a prompt. The
        * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
        * the next no-match/no-input event, and so on.
+       *
        * A `sys.no-match-default` or `sys.no-input-default` handler will be used
        * to handle all following no-match/no-input events after all numbered
        * no-match/no-input handlers for the parameter are consumed.
+       *
        * A `sys.invalid-parameter` handler can be defined to handle the case
        * where the parameter values have been `invalidated` by webhook. For
        * example, if the user's response fill the parameter, however the
        * parameter was invalidated by webhook, the fulfillment associated with
        * the `sys.invalid-parameter` handler (if defined) will be called to
        * provide a prompt.
+       *
        * If the event handler for the corresponding event can't be found on the
        * parameter, `initial_prompt_fulfillment` will be re-prompted.
        * </pre>
@@ -529,23 +577,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
        * *   `sys.no-input-default`
        * *   `sys.invalid-parameter`
+       *
        * `initial_prompt_fulfillment` provides the first prompt for the
        * parameter.
+       *
        * If the user's response does not fill the parameter, a
        * no-match/no-input event will be triggered, and the fulfillment
        * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
        * defined) will be called to provide a prompt. The
        * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
        * the next no-match/no-input event, and so on.
+       *
        * A `sys.no-match-default` or `sys.no-input-default` handler will be used
        * to handle all following no-match/no-input events after all numbered
        * no-match/no-input handlers for the parameter are consumed.
+       *
        * A `sys.invalid-parameter` handler can be defined to handle the case
        * where the parameter values have been `invalidated` by webhook. For
        * example, if the user's response fill the parameter, however the
        * parameter was invalidated by webhook, the fulfillment associated with
        * the `sys.invalid-parameter` handler (if defined) will be called to
        * provide a prompt.
+       *
        * If the event handler for the corresponding event can't be found on the
        * parameter, `initial_prompt_fulfillment` will be re-prompted.
        * </pre>
@@ -583,11 +636,6 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new FillBehavior();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -681,23 +729,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
        * *   `sys.no-input-default`
        * *   `sys.invalid-parameter`
+       *
        * `initial_prompt_fulfillment` provides the first prompt for the
        * parameter.
+       *
        * If the user's response does not fill the parameter, a
        * no-match/no-input event will be triggered, and the fulfillment
        * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
        * defined) will be called to provide a prompt. The
        * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
        * the next no-match/no-input event, and so on.
+       *
        * A `sys.no-match-default` or `sys.no-input-default` handler will be used
        * to handle all following no-match/no-input events after all numbered
        * no-match/no-input handlers for the parameter are consumed.
+       *
        * A `sys.invalid-parameter` handler can be defined to handle the case
        * where the parameter values have been `invalidated` by webhook. For
        * example, if the user's response fill the parameter, however the
        * parameter was invalidated by webhook, the fulfillment associated with
        * the `sys.invalid-parameter` handler (if defined) will be called to
        * provide a prompt.
+       *
        * If the event handler for the corresponding event can't be found on the
        * parameter, `initial_prompt_fulfillment` will be re-prompted.
        * </pre>
@@ -722,23 +775,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
        * *   `sys.no-input-default`
        * *   `sys.invalid-parameter`
+       *
        * `initial_prompt_fulfillment` provides the first prompt for the
        * parameter.
+       *
        * If the user's response does not fill the parameter, a
        * no-match/no-input event will be triggered, and the fulfillment
        * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
        * defined) will be called to provide a prompt. The
        * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
        * the next no-match/no-input event, and so on.
+       *
        * A `sys.no-match-default` or `sys.no-input-default` handler will be used
        * to handle all following no-match/no-input events after all numbered
        * no-match/no-input handlers for the parameter are consumed.
+       *
        * A `sys.invalid-parameter` handler can be defined to handle the case
        * where the parameter values have been `invalidated` by webhook. For
        * example, if the user's response fill the parameter, however the
        * parameter was invalidated by webhook, the fulfillment associated with
        * the `sys.invalid-parameter` handler (if defined) will be called to
        * provide a prompt.
+       *
        * If the event handler for the corresponding event can't be found on the
        * parameter, `initial_prompt_fulfillment` will be re-prompted.
        * </pre>
@@ -763,23 +821,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
        * *   `sys.no-input-default`
        * *   `sys.invalid-parameter`
+       *
        * `initial_prompt_fulfillment` provides the first prompt for the
        * parameter.
+       *
        * If the user's response does not fill the parameter, a
        * no-match/no-input event will be triggered, and the fulfillment
        * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
        * defined) will be called to provide a prompt. The
        * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
        * the next no-match/no-input event, and so on.
+       *
        * A `sys.no-match-default` or `sys.no-input-default` handler will be used
        * to handle all following no-match/no-input events after all numbered
        * no-match/no-input handlers for the parameter are consumed.
+       *
        * A `sys.invalid-parameter` handler can be defined to handle the case
        * where the parameter values have been `invalidated` by webhook. For
        * example, if the user's response fill the parameter, however the
        * parameter was invalidated by webhook, the fulfillment associated with
        * the `sys.invalid-parameter` handler (if defined) will be called to
        * provide a prompt.
+       *
        * If the event handler for the corresponding event can't be found on the
        * parameter, `initial_prompt_fulfillment` will be re-prompted.
        * </pre>
@@ -803,23 +866,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
        * *   `sys.no-input-default`
        * *   `sys.invalid-parameter`
+       *
        * `initial_prompt_fulfillment` provides the first prompt for the
        * parameter.
+       *
        * If the user's response does not fill the parameter, a
        * no-match/no-input event will be triggered, and the fulfillment
        * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
        * defined) will be called to provide a prompt. The
        * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
        * the next no-match/no-input event, and so on.
+       *
        * A `sys.no-match-default` or `sys.no-input-default` handler will be used
        * to handle all following no-match/no-input events after all numbered
        * no-match/no-input handlers for the parameter are consumed.
+       *
        * A `sys.invalid-parameter` handler can be defined to handle the case
        * where the parameter values have been `invalidated` by webhook. For
        * example, if the user's response fill the parameter, however the
        * parameter was invalidated by webhook, the fulfillment associated with
        * the `sys.invalid-parameter` handler (if defined) will be called to
        * provide a prompt.
+       *
        * If the event handler for the corresponding event can't be found on the
        * parameter, `initial_prompt_fulfillment` will be re-prompted.
        * </pre>
@@ -843,23 +911,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
        * *   `sys.no-input-default`
        * *   `sys.invalid-parameter`
+       *
        * `initial_prompt_fulfillment` provides the first prompt for the
        * parameter.
+       *
        * If the user's response does not fill the parameter, a
        * no-match/no-input event will be triggered, and the fulfillment
        * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
        * defined) will be called to provide a prompt. The
        * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
        * the next no-match/no-input event, and so on.
+       *
        * A `sys.no-match-default` or `sys.no-input-default` handler will be used
        * to handle all following no-match/no-input events after all numbered
        * no-match/no-input handlers for the parameter are consumed.
+       *
        * A `sys.invalid-parameter` handler can be defined to handle the case
        * where the parameter values have been `invalidated` by webhook. For
        * example, if the user's response fill the parameter, however the
        * parameter was invalidated by webhook, the fulfillment associated with
        * the `sys.invalid-parameter` handler (if defined) will be called to
        * provide a prompt.
+       *
        * If the event handler for the corresponding event can't be found on the
        * parameter, `initial_prompt_fulfillment` will be re-prompted.
        * </pre>
@@ -1564,23 +1637,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -1608,23 +1686,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -1651,23 +1734,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -1694,23 +1782,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -1744,23 +1837,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -1791,23 +1889,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -1841,23 +1944,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -1891,23 +1999,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -1938,23 +2051,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -1985,23 +2103,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -2032,23 +2155,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -2078,23 +2206,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -2124,23 +2257,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -2164,23 +2302,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -2208,23 +2351,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -2252,23 +2400,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -2293,23 +2446,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -2335,23 +2493,28 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
          * *   `sys.no-input-&lt;N&gt;`, where N can be from 1 to 6
          * *   `sys.no-input-default`
          * *   `sys.invalid-parameter`
+         *
          * `initial_prompt_fulfillment` provides the first prompt for the
          * parameter.
+         *
          * If the user's response does not fill the parameter, a
          * no-match/no-input event will be triggered, and the fulfillment
          * associated with the `sys.no-match-1`/`sys.no-input-1` handler (if
          * defined) will be called to provide a prompt. The
          * `sys.no-match-2`/`sys.no-input-2` handler (if defined) will respond to
          * the next no-match/no-input event, and so on.
+         *
          * A `sys.no-match-default` or `sys.no-input-default` handler will be used
          * to handle all following no-match/no-input events after all numbered
          * no-match/no-input handlers for the parameter are consumed.
+         *
          * A `sys.invalid-parameter` handler can be defined to handle the case
          * where the parameter values have been `invalidated` by webhook. For
          * example, if the user's response fill the parameter, however the
          * parameter was invalidated by webhook, the fulfillment associated with
          * the `sys.invalid-parameter` handler (if defined) will be called to
          * provide a prompt.
+         *
          * If the event handler for the corresponding event can't be found on the
          * parameter, `initial_prompt_fulfillment` will be re-prompted.
          * </pre>
@@ -2736,6 +2899,60 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       return redact_;
     }
 
+    public static final int ADVANCED_SETTINGS_FIELD_NUMBER = 12;
+    private com.google.cloud.dialogflow.cx.v3.AdvancedSettings advancedSettings_;
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this parameter. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+     *
+     * @return Whether the advancedSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdvancedSettings() {
+      return advancedSettings_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this parameter. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+     *
+     * @return The advancedSettings.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings() {
+      return advancedSettings_ == null
+          ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+          : advancedSettings_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this parameter. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder
+        getAdvancedSettingsOrBuilder() {
+      return advancedSettings_ == null
+          ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+          : advancedSettings_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2771,6 +2988,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       if (redact_ != false) {
         output.writeBool(11, redact_);
       }
+      if (advancedSettings_ != null) {
+        output.writeMessage(12, getAdvancedSettings());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2801,6 +3021,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       if (redact_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, redact_);
       }
+      if (advancedSettings_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getAdvancedSettings());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2830,6 +3053,10 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         if (!getDefaultValue().equals(other.getDefaultValue())) return false;
       }
       if (getRedact() != other.getRedact()) return false;
+      if (hasAdvancedSettings() != other.hasAdvancedSettings()) return false;
+      if (hasAdvancedSettings()) {
+        if (!getAdvancedSettings().equals(other.getAdvancedSettings())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2859,6 +3086,10 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + REDACT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRedact());
+      if (hasAdvancedSettings()) {
+        hash = (37 * hash) + ADVANCED_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getAdvancedSettings().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3015,6 +3246,11 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
           defaultValueBuilder_ = null;
         }
         redact_ = false;
+        advancedSettings_ = null;
+        if (advancedSettingsBuilder_ != null) {
+          advancedSettingsBuilder_.dispose();
+          advancedSettingsBuilder_ = null;
+        }
         return this;
       }
 
@@ -3073,6 +3309,12 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.redact_ = redact_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.advancedSettings_ =
+              advancedSettingsBuilder_ == null
+                  ? advancedSettings_
+                  : advancedSettingsBuilder_.build();
         }
       }
 
@@ -3149,6 +3391,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         if (other.getRedact() != false) {
           setRedact(other.getRedact());
         }
+        if (other.hasAdvancedSettings()) {
+          mergeAdvancedSettings(other.getAdvancedSettings());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3217,6 +3462,13 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000040;
                   break;
                 } // case 88
+              case 98:
+                {
+                  input.readMessage(
+                      getAdvancedSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 98
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4066,6 +4318,203 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         redact_ = false;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.dialogflow.cx.v3.AdvancedSettings advancedSettings_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3.AdvancedSettings,
+              com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder,
+              com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder>
+          advancedSettingsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Hierarchical advanced settings for this parameter. The settings exposed
+       * at the lower level overrides the settings exposed at the higher level.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+       *
+       * @return Whether the advancedSettings field is set.
+       */
+      public boolean hasAdvancedSettings() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Hierarchical advanced settings for this parameter. The settings exposed
+       * at the lower level overrides the settings exposed at the higher level.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+       *
+       * @return The advancedSettings.
+       */
+      public com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings() {
+        if (advancedSettingsBuilder_ == null) {
+          return advancedSettings_ == null
+              ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+              : advancedSettings_;
+        } else {
+          return advancedSettingsBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Hierarchical advanced settings for this parameter. The settings exposed
+       * at the lower level overrides the settings exposed at the higher level.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+       */
+      public Builder setAdvancedSettings(com.google.cloud.dialogflow.cx.v3.AdvancedSettings value) {
+        if (advancedSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          advancedSettings_ = value;
+        } else {
+          advancedSettingsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Hierarchical advanced settings for this parameter. The settings exposed
+       * at the lower level overrides the settings exposed at the higher level.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+       */
+      public Builder setAdvancedSettings(
+          com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder builderForValue) {
+        if (advancedSettingsBuilder_ == null) {
+          advancedSettings_ = builderForValue.build();
+        } else {
+          advancedSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Hierarchical advanced settings for this parameter. The settings exposed
+       * at the lower level overrides the settings exposed at the higher level.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+       */
+      public Builder mergeAdvancedSettings(
+          com.google.cloud.dialogflow.cx.v3.AdvancedSettings value) {
+        if (advancedSettingsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)
+              && advancedSettings_ != null
+              && advancedSettings_
+                  != com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()) {
+            getAdvancedSettingsBuilder().mergeFrom(value);
+          } else {
+            advancedSettings_ = value;
+          }
+        } else {
+          advancedSettingsBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Hierarchical advanced settings for this parameter. The settings exposed
+       * at the lower level overrides the settings exposed at the higher level.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+       */
+      public Builder clearAdvancedSettings() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        advancedSettings_ = null;
+        if (advancedSettingsBuilder_ != null) {
+          advancedSettingsBuilder_.dispose();
+          advancedSettingsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Hierarchical advanced settings for this parameter. The settings exposed
+       * at the lower level overrides the settings exposed at the higher level.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder
+          getAdvancedSettingsBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getAdvancedSettingsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Hierarchical advanced settings for this parameter. The settings exposed
+       * at the lower level overrides the settings exposed at the higher level.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder
+          getAdvancedSettingsOrBuilder() {
+        if (advancedSettingsBuilder_ != null) {
+          return advancedSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          return advancedSettings_ == null
+              ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+              : advancedSettings_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Hierarchical advanced settings for this parameter. The settings exposed
+       * at the lower level overrides the settings exposed at the higher level.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3.AdvancedSettings,
+              com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder,
+              com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder>
+          getAdvancedSettingsFieldBuilder() {
+        if (advancedSettingsBuilder_ == null) {
+          advancedSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3.AdvancedSettings,
+                  com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder,
+                  com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder>(
+                  getAdvancedSettings(), getParentForChildren(), isClean());
+          advancedSettings_ = null;
+        }
+        return advancedSettingsBuilder_;
       }
 
       @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PrivateEnvironmentConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -171,6 +166,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    * reserved. Needs to be disjoint from
    * `private_cluster_config.master_ipv4_cidr_block` and
    * `cloud_sql_ipv4_cidr_block`.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -199,6 +195,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    * reserved. Needs to be disjoint from
    * `private_cluster_config.master_ipv4_cidr_block` and
    * `cloud_sql_ipv4_cidr_block`.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -284,6 +281,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    *
    * <pre>
    * Output only. The IP range reserved for the tenant project's App Engine VMs.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -310,6 +308,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    *
    * <pre>
    * Output only. The IP range reserved for the tenant project's App Engine VMs.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -344,6 +343,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    * tenant project will be reserved. Needs to be disjoint from
    * private_cluster_config.master_ipv4_cidr_block and
    * cloud_sql_ipv4_cidr_block.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -374,6 +374,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    * tenant project will be reserved. Needs to be disjoint from
    * private_cluster_config.master_ipv4_cidr_block and
    * cloud_sql_ipv4_cidr_block.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -407,6 +408,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    * <pre>
    * Output only. The IP range reserved for the tenant project's Cloud Composer
    * network.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -435,6 +437,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    * <pre>
    * Output only. The IP range reserved for the tenant project's Cloud Composer
    * network.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -1506,6 +1509,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * reserved. Needs to be disjoint from
      * `private_cluster_config.master_ipv4_cidr_block` and
      * `cloud_sql_ipv4_cidr_block`.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1533,6 +1537,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * reserved. Needs to be disjoint from
      * `private_cluster_config.master_ipv4_cidr_block` and
      * `cloud_sql_ipv4_cidr_block`.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1560,6 +1565,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * reserved. Needs to be disjoint from
      * `private_cluster_config.master_ipv4_cidr_block` and
      * `cloud_sql_ipv4_cidr_block`.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1586,6 +1592,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * reserved. Needs to be disjoint from
      * `private_cluster_config.master_ipv4_cidr_block` and
      * `cloud_sql_ipv4_cidr_block`.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1608,6 +1615,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * reserved. Needs to be disjoint from
      * `private_cluster_config.master_ipv4_cidr_block` and
      * `cloud_sql_ipv4_cidr_block`.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1750,6 +1758,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The IP range reserved for the tenant project's App Engine VMs.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1775,6 +1784,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The IP range reserved for the tenant project's App Engine VMs.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1800,6 +1810,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The IP range reserved for the tenant project's App Engine VMs.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1824,6 +1835,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The IP range reserved for the tenant project's App Engine VMs.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1844,6 +1856,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The IP range reserved for the tenant project's App Engine VMs.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -1874,6 +1887,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * tenant project will be reserved. Needs to be disjoint from
      * private_cluster_config.master_ipv4_cidr_block and
      * cloud_sql_ipv4_cidr_block.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -1903,6 +1917,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * tenant project will be reserved. Needs to be disjoint from
      * private_cluster_config.master_ipv4_cidr_block and
      * cloud_sql_ipv4_cidr_block.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -1932,6 +1947,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * tenant project will be reserved. Needs to be disjoint from
      * private_cluster_config.master_ipv4_cidr_block and
      * cloud_sql_ipv4_cidr_block.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -1960,6 +1976,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * tenant project will be reserved. Needs to be disjoint from
      * private_cluster_config.master_ipv4_cidr_block and
      * cloud_sql_ipv4_cidr_block.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -1985,6 +2002,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * tenant project will be reserved. Needs to be disjoint from
      * private_cluster_config.master_ipv4_cidr_block and
      * cloud_sql_ipv4_cidr_block.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -2014,6 +2032,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * <pre>
      * Output only. The IP range reserved for the tenant project's Cloud Composer
      * network.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -2041,6 +2060,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * <pre>
      * Output only. The IP range reserved for the tenant project's Cloud Composer
      * network.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -2068,6 +2088,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * <pre>
      * Output only. The IP range reserved for the tenant project's Cloud Composer
      * network.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -2094,6 +2115,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * <pre>
      * Output only. The IP range reserved for the tenant project's Cloud Composer
      * network.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -2117,6 +2139,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * <pre>
      * Output only. The IP range reserved for the tenant project's Cloud Composer
      * network.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>

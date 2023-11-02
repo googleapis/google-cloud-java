@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     return new UpdateInstanceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
         .internal_static_google_cloud_redis_v1beta1_UpdateInstanceRequest_descriptor;
@@ -74,6 +69,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
    * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+   *
    *  *   `displayName`
    *  *   `labels`
    *  *   `memorySizeGb`
@@ -97,6 +93,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
    * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+   *
    *  *   `displayName`
    *  *   `labels`
    *  *   `memorySizeGb`
@@ -120,6 +117,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
    * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+   *
    *  *   `displayName`
    *  *   `labels`
    *  *   `memorySizeGb`
@@ -587,6 +585,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
      * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *
      *  *   `displayName`
      *  *   `labels`
      *  *   `memorySizeGb`
@@ -609,6 +608,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
      * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *
      *  *   `displayName`
      *  *   `labels`
      *  *   `memorySizeGb`
@@ -637,6 +637,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
      * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *
      *  *   `displayName`
      *  *   `labels`
      *  *   `memorySizeGb`
@@ -667,6 +668,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
      * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *
      *  *   `displayName`
      *  *   `labels`
      *  *   `memorySizeGb`
@@ -694,6 +696,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
      * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *
      *  *   `displayName`
      *  *   `labels`
      *  *   `memorySizeGb`
@@ -727,6 +730,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
      * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *
      *  *   `displayName`
      *  *   `labels`
      *  *   `memorySizeGb`
@@ -754,6 +758,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
      * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *
      *  *   `displayName`
      *  *   `labels`
      *  *   `memorySizeGb`
@@ -776,6 +781,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
      * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *
      *  *   `displayName`
      *  *   `labels`
      *  *   `memorySizeGb`
@@ -802,6 +808,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field may only include these
      * fields from [Instance][google.cloud.redis.v1beta1.Instance]:
+     *
      *  *   `displayName`
      *  *   `labels`
      *  *   `memorySizeGb`

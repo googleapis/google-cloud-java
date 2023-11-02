@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,22 +23,27 @@ package com.google.iam.admin.v1;
  *
  * <pre>
  * Represents a service account key.
+ *
  * A service account has two sets of key-pairs: user-managed, and
  * system-managed.
+ *
  * User-managed key-pairs can be created and deleted by users.  Users are
  * responsible for rotating these keys periodically to ensure security of
  * their service accounts.  Users retain the private key of these key-pairs,
  * and Google retains ONLY the public key.
+ *
  * System-managed keys are automatically rotated by Google, and are used for
  * signing for a maximum of two weeks. The rotation process is probabilistic,
  * and usage of the new key will gradually ramp up and down over the key's
  * lifetime.
+ *
  * If you cache the public key set for a service account, we recommend that you
  * update the cache every 15 minutes. User-managed keys can be added and removed
  * at any time, so it is important to update the cache frequently. For
  * Google-managed keys, Google will publish a key at least 6 hours before it is
  * first used for signing and will keep publishing it for at least 6 hours after
  * it was last used for signing.
+ *
  * Public keys for all service accounts are also published at the OAuth2
  * Service Account API.
  * </pre>
@@ -69,11 +74,6 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ServiceAccountKey();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -153,6 +153,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
    * The output format for the private key.
    * Only provided in `CreateServiceAccountKey` responses, not
    * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+   *
    * Google never exposes system-managed private keys, and never retains
    * user-managed private keys.
    * </pre>
@@ -172,6 +173,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
    * The output format for the private key.
    * Only provided in `CreateServiceAccountKey` responses, not
    * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+   *
    * Google never exposes system-managed private keys, and never retains
    * user-managed private keys.
    * </pre>
@@ -732,22 +734,27 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Represents a service account key.
+   *
    * A service account has two sets of key-pairs: user-managed, and
    * system-managed.
+   *
    * User-managed key-pairs can be created and deleted by users.  Users are
    * responsible for rotating these keys periodically to ensure security of
    * their service accounts.  Users retain the private key of these key-pairs,
    * and Google retains ONLY the public key.
+   *
    * System-managed keys are automatically rotated by Google, and are used for
    * signing for a maximum of two weeks. The rotation process is probabilistic,
    * and usage of the new key will gradually ramp up and down over the key's
    * lifetime.
+   *
    * If you cache the public key set for a service account, we recommend that you
    * update the cache every 15 minutes. User-managed keys can be added and removed
    * at any time, so it is important to update the cache frequently. For
    * Google-managed keys, Google will publish a key at least 6 hours before it is
    * first used for signing and will keep publishing it for at least 6 hours after
    * it was last used for signing.
+   *
    * Public keys for all service accounts are also published at the OAuth2
    * Service Account API.
    * </pre>
@@ -1173,6 +1180,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * The output format for the private key.
      * Only provided in `CreateServiceAccountKey` responses, not
      * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+     *
      * Google never exposes system-managed private keys, and never retains
      * user-managed private keys.
      * </pre>
@@ -1192,6 +1200,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * The output format for the private key.
      * Only provided in `CreateServiceAccountKey` responses, not
      * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+     *
      * Google never exposes system-managed private keys, and never retains
      * user-managed private keys.
      * </pre>
@@ -1214,6 +1223,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * The output format for the private key.
      * Only provided in `CreateServiceAccountKey` responses, not
      * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+     *
      * Google never exposes system-managed private keys, and never retains
      * user-managed private keys.
      * </pre>
@@ -1237,6 +1247,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * The output format for the private key.
      * Only provided in `CreateServiceAccountKey` responses, not
      * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+     *
      * Google never exposes system-managed private keys, and never retains
      * user-managed private keys.
      * </pre>
@@ -1262,6 +1273,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * The output format for the private key.
      * Only provided in `CreateServiceAccountKey` responses, not
      * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+     *
      * Google never exposes system-managed private keys, and never retains
      * user-managed private keys.
      * </pre>

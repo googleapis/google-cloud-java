@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ImportConsumerOverridesRequestOrBuilder
    *
    * <pre>
    * The resource name of the consumer.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com`
    * </pre>
@@ -42,6 +43,7 @@ public interface ImportConsumerOverridesRequestOrBuilder
    *
    * <pre>
    * The resource name of the consumer.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com`
    * </pre>
@@ -180,6 +182,5 @@ public interface ImportConsumerOverridesRequestOrBuilder
    */
   int getForceOnlyValue(int index);
 
-  public com.google.api.serviceusage.v1beta1.ImportConsumerOverridesRequest.SourceCase
-      getSourceCase();
+  com.google.api.serviceusage.v1beta1.ImportConsumerOverridesRequest.SourceCase getSourceCase();
 }

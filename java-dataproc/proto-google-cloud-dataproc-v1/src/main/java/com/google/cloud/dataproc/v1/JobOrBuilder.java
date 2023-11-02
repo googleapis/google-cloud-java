@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -594,6 +594,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
+   *
    * **Beta** Feature: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -608,6 +609,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
+   *
    * **Beta** Feature: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -622,6 +624,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
+   *
    * **Beta** Feature: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -636,6 +639,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
+   *
    * **Beta** Feature: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -651,6 +655,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
+   *
    * **Beta** Feature: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -934,5 +939,5 @@ public interface JobOrBuilder
    */
   com.google.cloud.dataproc.v1.DriverSchedulingConfigOrBuilder getDriverSchedulingConfigOrBuilder();
 
-  public com.google.cloud.dataproc.v1.Job.TypeJobCase getTypeJobCase();
+  com.google.cloud.dataproc.v1.Job.TypeJobCase getTypeJobCase();
 }

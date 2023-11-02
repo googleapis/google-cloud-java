@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,7 @@ public interface MenuItemExtensionPointOrBuilder
    *
    * <pre>
    * The URL for the logo image shown in the add-on toolbar.
+   *
    * If not set, defaults to the add-on's primary logo URL.
    * </pre>
    *
@@ -95,6 +96,7 @@ public interface MenuItemExtensionPointOrBuilder
    *
    * <pre>
    * The URL for the logo image shown in the add-on toolbar.
+   *
    * If not set, defaults to the add-on's primary logo URL.
    * </pre>
    *

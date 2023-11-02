@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RoutineSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -342,11 +337,6 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Argument();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1464,6 +1454,8 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int systemSpecCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object systemSpec_;
 
   public enum SystemSpecCase
@@ -1554,6 +1546,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The language the routine is written in. The exact value depends on the
    * source system. For BigQuery routines, possible values are:
+   *
    * * `SQL`
    * * `JAVASCRIPT`
    * </pre>
@@ -1580,6 +1573,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The language the routine is written in. The exact value depends on the
    * source system. For BigQuery routines, possible values are:
+   *
    * * `SQL`
    * * `JAVASCRIPT`
    * </pre>
@@ -2487,6 +2481,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The language the routine is written in. The exact value depends on the
      * source system. For BigQuery routines, possible values are:
+     *
      * * `SQL`
      * * `JAVASCRIPT`
      * </pre>
@@ -2512,6 +2507,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The language the routine is written in. The exact value depends on the
      * source system. For BigQuery routines, possible values are:
+     *
      * * `SQL`
      * * `JAVASCRIPT`
      * </pre>
@@ -2537,6 +2533,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The language the routine is written in. The exact value depends on the
      * source system. For BigQuery routines, possible values are:
+     *
      * * `SQL`
      * * `JAVASCRIPT`
      * </pre>
@@ -2561,6 +2558,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The language the routine is written in. The exact value depends on the
      * source system. For BigQuery routines, possible values are:
+     *
      * * `SQL`
      * * `JAVASCRIPT`
      * </pre>
@@ -2581,6 +2579,7 @@ public final class RoutineSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The language the routine is written in. The exact value depends on the
      * source system. For BigQuery routines, possible values are:
+     *
      * * `SQL`
      * * `JAVASCRIPT`
      * </pre>

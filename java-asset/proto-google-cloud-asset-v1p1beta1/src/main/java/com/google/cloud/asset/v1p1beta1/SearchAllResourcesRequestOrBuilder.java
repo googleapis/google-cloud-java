@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface SearchAllResourcesRequestOrBuilder
    * <pre>
    * Required. The relative name of an asset. The search is limited to the
    * resources within the `scope`. The allowed value must be:
+   *
    * * Organization number (such as "organizations/123")
    * * Folder number (such as "folders/1234")
    * * Project number (such as "projects/12345")
@@ -46,6 +47,7 @@ public interface SearchAllResourcesRequestOrBuilder
    * <pre>
    * Required. The relative name of an asset. The search is limited to the
    * resources within the `scope`. The allowed value must be:
+   *
    * * Organization number (such as "organizations/123")
    * * Folder number (such as "folders/1234")
    * * Project number (such as "projects/12345")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
 
   private RouterBgp() {
     advertiseMode_ = "";
-    advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    advertisedGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
     advertisedIpRanges_ = java.util.Collections.emptyList();
   }
 
@@ -46,11 +46,6 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RouterBgp();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -402,7 +397,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
   public static final int ADVERTISED_GROUPS_FIELD_NUMBER = 21065526;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList advertisedGroups_;
+  private com.google.protobuf.LazyStringArrayList advertisedGroups_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -875,8 +871,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       advertiseMode_ = "";
-      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (advertisedIpRangesBuilder_ == null) {
         advertisedIpRanges_ = java.util.Collections.emptyList();
       } else {
@@ -922,11 +917,6 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.RouterBgp result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        advertisedGroups_ = advertisedGroups_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.advertisedGroups_ = advertisedGroups_;
       if (advertisedIpRangesBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           advertisedIpRanges_ = java.util.Collections.unmodifiableList(advertisedIpRanges_);
@@ -944,6 +934,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.advertiseMode_ = advertiseMode_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        advertisedGroups_.makeImmutable();
+        result.advertisedGroups_ = advertisedGroups_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.asn_ = asn_;
@@ -1009,7 +1003,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       if (!other.advertisedGroups_.isEmpty()) {
         if (advertisedGroups_.isEmpty()) {
           advertisedGroups_ = other.advertisedGroups_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAdvertisedGroupsIsMutable();
           advertisedGroups_.addAll(other.advertisedGroups_);
@@ -1259,14 +1253,14 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList advertisedGroups_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList advertisedGroups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAdvertisedGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!advertisedGroups_.isModifiable()) {
         advertisedGroups_ = new com.google.protobuf.LazyStringArrayList(advertisedGroups_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1281,7 +1275,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the advertisedGroups.
      */
     public com.google.protobuf.ProtocolStringList getAdvertisedGroupsList() {
-      return advertisedGroups_.getUnmodifiableView();
+      advertisedGroups_.makeImmutable();
+      return advertisedGroups_;
     }
     /**
      *
@@ -1350,6 +1345,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAdvertisedGroupsIsMutable();
       advertisedGroups_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1372,6 +1368,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAdvertisedGroupsIsMutable();
       advertisedGroups_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1391,6 +1388,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAdvertisedGroups(java.lang.Iterable<java.lang.String> values) {
       ensureAdvertisedGroupsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, advertisedGroups_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1407,8 +1405,9 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdvertisedGroups() {
-      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1432,6 +1431,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAdvertisedGroupsIsMutable();
       advertisedGroups_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

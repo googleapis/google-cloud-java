@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface ListInfoTypesRequestOrBuilder
    *
    * <pre>
    * The parent resource name.
+   *
    * The format of this value is as follows:
+   *
    *     locations/&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * </pre>
    *
@@ -42,7 +44,9 @@ public interface ListInfoTypesRequestOrBuilder
    *
    * <pre>
    * The parent resource name.
+   *
    * The format of this value is as follows:
+   *
    *     locations/&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * </pre>
    *

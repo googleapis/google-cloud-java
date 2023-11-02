@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class ControlServiceGrpc {
 
   private ControlServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.retail.v2beta.ControlService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.retail.v2beta.ControlService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -833,9 +833,9 @@ public final class ControlServiceGrpc {
   private static final class ControlServiceMethodDescriptorSupplier
       extends ControlServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ControlServiceMethodDescriptorSupplier(String methodName) {
+    ControlServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

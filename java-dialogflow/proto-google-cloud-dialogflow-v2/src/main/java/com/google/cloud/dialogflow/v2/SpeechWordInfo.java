@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SpeechWordInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -232,6 +227,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    * indicates an estimated greater likelihood that the recognized word is
    * correct. The default of 0.0 is a sentinel value indicating that confidence
    * was not set.
+   *
    * This field is not guaranteed to be fully stable over time for the same
    * audio input. Users should also not rely on it to always be provided.
    * </pre>
@@ -1185,6 +1181,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized word is
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
+     *
      * This field is not guaranteed to be fully stable over time for the same
      * audio input. Users should also not rely on it to always be provided.
      * </pre>
@@ -1205,6 +1202,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized word is
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
+     *
      * This field is not guaranteed to be fully stable over time for the same
      * audio input. Users should also not rely on it to always be provided.
      * </pre>
@@ -1229,6 +1227,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized word is
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
+     *
      * This field is not guaranteed to be fully stable over time for the same
      * audio input. Users should also not rely on it to always be provided.
      * </pre>

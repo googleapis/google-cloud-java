@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
     return new GenerateDownloadUrlRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v2alpha.FunctionsProto
         .internal_static_google_cloud_functions_v2alpha_GenerateDownloadUrlRequest_descriptor;
@@ -75,8 +70,8 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The name of function for which source code Google Cloud Storage signed
-   * URL should be generated.
+   * Required. The name of function for which source code Google Cloud Storage
+   * signed URL should be generated.
    * </pre>
    *
    * <code>
@@ -101,8 +96,8 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The name of function for which source code Google Cloud Storage signed
-   * URL should be generated.
+   * Required. The name of function for which source code Google Cloud Storage
+   * signed URL should be generated.
    * </pre>
    *
    * <code>
@@ -475,8 +470,8 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of function for which source code Google Cloud Storage signed
-     * URL should be generated.
+     * Required. The name of function for which source code Google Cloud Storage
+     * signed URL should be generated.
      * </pre>
      *
      * <code>
@@ -500,8 +495,8 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of function for which source code Google Cloud Storage signed
-     * URL should be generated.
+     * Required. The name of function for which source code Google Cloud Storage
+     * signed URL should be generated.
      * </pre>
      *
      * <code>
@@ -525,8 +520,8 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of function for which source code Google Cloud Storage signed
-     * URL should be generated.
+     * Required. The name of function for which source code Google Cloud Storage
+     * signed URL should be generated.
      * </pre>
      *
      * <code>
@@ -549,8 +544,8 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of function for which source code Google Cloud Storage signed
-     * URL should be generated.
+     * Required. The name of function for which source code Google Cloud Storage
+     * signed URL should be generated.
      * </pre>
      *
      * <code>
@@ -569,8 +564,8 @@ public final class GenerateDownloadUrlRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of function for which source code Google Cloud Storage signed
-     * URL should be generated.
+     * Required. The name of function for which source code Google Cloud Storage
+     * signed URL should be generated.
      * </pre>
      *
      * <code>

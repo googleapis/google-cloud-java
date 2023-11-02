@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.dialogflow.v2beta1;
  * <pre>
  * Defines the hand off to a live agent, typically on which external agent
  * service provider to connect to a conversation.
+ *
  * Currently, this feature is not general available, please contact Google
  * to get access.
  * </pre>
@@ -46,11 +47,6 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new HumanAgentHandoffConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -127,11 +123,6 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LivePersonConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -893,11 +884,6 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SalesforceLiveAgentConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2101,6 +2087,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
   }
 
   private int agentServiceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object agentService_;
 
   public enum AgentServiceCase
@@ -2482,6 +2470,7 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
    * <pre>
    * Defines the hand off to a live agent, typically on which external agent
    * service provider to connect to a conversation.
+   *
    * Currently, this feature is not general available, please contact Google
    * to get access.
    * </pre>

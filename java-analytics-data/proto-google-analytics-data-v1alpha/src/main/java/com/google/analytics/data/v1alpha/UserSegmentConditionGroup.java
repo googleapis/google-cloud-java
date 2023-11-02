@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
     return new UserSegmentConditionGroup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_UserSegmentConditionGroup_descriptor;
@@ -84,6 +79,7 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
    * USER_CRITERIA_WITHIN_SAME_EVENT`, the expression is evaluated on a single
    * event, and then, the condition group is determined to be matched or not for
    * this user.
+   *
    * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
    * used.
    * </pre>
@@ -110,6 +106,7 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
    * USER_CRITERIA_WITHIN_SAME_EVENT`, the expression is evaluated on a single
    * event, and then, the condition group is determined to be matched or not for
    * this user.
+   *
    * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
    * used.
    * </pre>
@@ -584,6 +581,7 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
      * USER_CRITERIA_WITHIN_SAME_EVENT`, the expression is evaluated on a single
      * event, and then, the condition group is determined to be matched or not for
      * this user.
+     *
      * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
      * used.
      * </pre>
@@ -610,6 +608,7 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
      * USER_CRITERIA_WITHIN_SAME_EVENT`, the expression is evaluated on a single
      * event, and then, the condition group is determined to be matched or not for
      * this user.
+     *
      * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
      * used.
      * </pre>
@@ -639,6 +638,7 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
      * USER_CRITERIA_WITHIN_SAME_EVENT`, the expression is evaluated on a single
      * event, and then, the condition group is determined to be matched or not for
      * this user.
+     *
      * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
      * used.
      * </pre>
@@ -669,6 +669,7 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
      * USER_CRITERIA_WITHIN_SAME_EVENT`, the expression is evaluated on a single
      * event, and then, the condition group is determined to be matched or not for
      * this user.
+     *
      * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
      * used.
      * </pre>
@@ -702,6 +703,7 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
      * USER_CRITERIA_WITHIN_SAME_EVENT`, the expression is evaluated on a single
      * event, and then, the condition group is determined to be matched or not for
      * this user.
+     *
      * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
      * used.
      * </pre>

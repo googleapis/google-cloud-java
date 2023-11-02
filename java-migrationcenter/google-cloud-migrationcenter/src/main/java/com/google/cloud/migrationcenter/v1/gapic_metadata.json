@@ -1,0 +1,168 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.migrationcenter.v1",
+  "libraryPackage": "com.google.cloud.migrationcenter.v1",
+  "services": {
+    "MigrationCenter": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MigrationCenterClient",
+          "rpcs": {
+            "AddAssetsToGroup": {
+              "methods": ["addAssetsToGroupAsync", "addAssetsToGroupAsync", "addAssetsToGroupAsync", "addAssetsToGroupOperationCallable", "addAssetsToGroupCallable"]
+            },
+            "AggregateAssetsValues": {
+              "methods": ["aggregateAssetsValues", "aggregateAssetsValuesCallable"]
+            },
+            "BatchDeleteAssets": {
+              "methods": ["batchDeleteAssets", "batchDeleteAssets", "batchDeleteAssets", "batchDeleteAssetsCallable"]
+            },
+            "BatchUpdateAssets": {
+              "methods": ["batchUpdateAssets", "batchUpdateAssets", "batchUpdateAssets", "batchUpdateAssetsCallable"]
+            },
+            "CreateGroup": {
+              "methods": ["createGroupAsync", "createGroupAsync", "createGroupAsync", "createGroupOperationCallable", "createGroupCallable"]
+            },
+            "CreateImportDataFile": {
+              "methods": ["createImportDataFileAsync", "createImportDataFileAsync", "createImportDataFileAsync", "createImportDataFileOperationCallable", "createImportDataFileCallable"]
+            },
+            "CreateImportJob": {
+              "methods": ["createImportJobAsync", "createImportJobAsync", "createImportJobAsync", "createImportJobOperationCallable", "createImportJobCallable"]
+            },
+            "CreatePreferenceSet": {
+              "methods": ["createPreferenceSetAsync", "createPreferenceSetAsync", "createPreferenceSetAsync", "createPreferenceSetOperationCallable", "createPreferenceSetCallable"]
+            },
+            "CreateReport": {
+              "methods": ["createReportAsync", "createReportAsync", "createReportAsync", "createReportOperationCallable", "createReportCallable"]
+            },
+            "CreateReportConfig": {
+              "methods": ["createReportConfigAsync", "createReportConfigAsync", "createReportConfigAsync", "createReportConfigOperationCallable", "createReportConfigCallable"]
+            },
+            "CreateSource": {
+              "methods": ["createSourceAsync", "createSourceAsync", "createSourceAsync", "createSourceOperationCallable", "createSourceCallable"]
+            },
+            "DeleteAsset": {
+              "methods": ["deleteAsset", "deleteAsset", "deleteAsset", "deleteAssetCallable"]
+            },
+            "DeleteGroup": {
+              "methods": ["deleteGroupAsync", "deleteGroupAsync", "deleteGroupAsync", "deleteGroupOperationCallable", "deleteGroupCallable"]
+            },
+            "DeleteImportDataFile": {
+              "methods": ["deleteImportDataFileAsync", "deleteImportDataFileAsync", "deleteImportDataFileAsync", "deleteImportDataFileOperationCallable", "deleteImportDataFileCallable"]
+            },
+            "DeleteImportJob": {
+              "methods": ["deleteImportJobAsync", "deleteImportJobAsync", "deleteImportJobAsync", "deleteImportJobOperationCallable", "deleteImportJobCallable"]
+            },
+            "DeletePreferenceSet": {
+              "methods": ["deletePreferenceSetAsync", "deletePreferenceSetAsync", "deletePreferenceSetAsync", "deletePreferenceSetOperationCallable", "deletePreferenceSetCallable"]
+            },
+            "DeleteReport": {
+              "methods": ["deleteReportAsync", "deleteReportAsync", "deleteReportAsync", "deleteReportOperationCallable", "deleteReportCallable"]
+            },
+            "DeleteReportConfig": {
+              "methods": ["deleteReportConfigAsync", "deleteReportConfigAsync", "deleteReportConfigAsync", "deleteReportConfigOperationCallable", "deleteReportConfigCallable"]
+            },
+            "DeleteSource": {
+              "methods": ["deleteSourceAsync", "deleteSourceAsync", "deleteSourceAsync", "deleteSourceOperationCallable", "deleteSourceCallable"]
+            },
+            "GetAsset": {
+              "methods": ["getAsset", "getAsset", "getAsset", "getAssetCallable"]
+            },
+            "GetErrorFrame": {
+              "methods": ["getErrorFrame", "getErrorFrame", "getErrorFrame", "getErrorFrameCallable"]
+            },
+            "GetGroup": {
+              "methods": ["getGroup", "getGroup", "getGroup", "getGroupCallable"]
+            },
+            "GetImportDataFile": {
+              "methods": ["getImportDataFile", "getImportDataFile", "getImportDataFile", "getImportDataFileCallable"]
+            },
+            "GetImportJob": {
+              "methods": ["getImportJob", "getImportJob", "getImportJob", "getImportJobCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPreferenceSet": {
+              "methods": ["getPreferenceSet", "getPreferenceSet", "getPreferenceSet", "getPreferenceSetCallable"]
+            },
+            "GetReport": {
+              "methods": ["getReport", "getReport", "getReport", "getReportCallable"]
+            },
+            "GetReportConfig": {
+              "methods": ["getReportConfig", "getReportConfig", "getReportConfig", "getReportConfigCallable"]
+            },
+            "GetSettings": {
+              "methods": ["getSettings", "getSettings", "getSettings", "getSettingsCallable"]
+            },
+            "GetSource": {
+              "methods": ["getSource", "getSource", "getSource", "getSourceCallable"]
+            },
+            "ListAssets": {
+              "methods": ["listAssets", "listAssets", "listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
+            },
+            "ListErrorFrames": {
+              "methods": ["listErrorFrames", "listErrorFrames", "listErrorFrames", "listErrorFramesPagedCallable", "listErrorFramesCallable"]
+            },
+            "ListGroups": {
+              "methods": ["listGroups", "listGroups", "listGroups", "listGroupsPagedCallable", "listGroupsCallable"]
+            },
+            "ListImportDataFiles": {
+              "methods": ["listImportDataFiles", "listImportDataFiles", "listImportDataFiles", "listImportDataFilesPagedCallable", "listImportDataFilesCallable"]
+            },
+            "ListImportJobs": {
+              "methods": ["listImportJobs", "listImportJobs", "listImportJobs", "listImportJobsPagedCallable", "listImportJobsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPreferenceSets": {
+              "methods": ["listPreferenceSets", "listPreferenceSets", "listPreferenceSets", "listPreferenceSetsPagedCallable", "listPreferenceSetsCallable"]
+            },
+            "ListReportConfigs": {
+              "methods": ["listReportConfigs", "listReportConfigs", "listReportConfigs", "listReportConfigsPagedCallable", "listReportConfigsCallable"]
+            },
+            "ListReports": {
+              "methods": ["listReports", "listReports", "listReports", "listReportsPagedCallable", "listReportsCallable"]
+            },
+            "ListSources": {
+              "methods": ["listSources", "listSources", "listSources", "listSourcesPagedCallable", "listSourcesCallable"]
+            },
+            "RemoveAssetsFromGroup": {
+              "methods": ["removeAssetsFromGroupAsync", "removeAssetsFromGroupAsync", "removeAssetsFromGroupAsync", "removeAssetsFromGroupOperationCallable", "removeAssetsFromGroupCallable"]
+            },
+            "ReportAssetFrames": {
+              "methods": ["reportAssetFrames", "reportAssetFramesCallable"]
+            },
+            "RunImportJob": {
+              "methods": ["runImportJobAsync", "runImportJobAsync", "runImportJobAsync", "runImportJobOperationCallable", "runImportJobCallable"]
+            },
+            "UpdateAsset": {
+              "methods": ["updateAsset", "updateAsset", "updateAssetCallable"]
+            },
+            "UpdateGroup": {
+              "methods": ["updateGroupAsync", "updateGroupAsync", "updateGroupOperationCallable", "updateGroupCallable"]
+            },
+            "UpdateImportJob": {
+              "methods": ["updateImportJobAsync", "updateImportJobAsync", "updateImportJobOperationCallable", "updateImportJobCallable"]
+            },
+            "UpdatePreferenceSet": {
+              "methods": ["updatePreferenceSetAsync", "updatePreferenceSetAsync", "updatePreferenceSetOperationCallable", "updatePreferenceSetCallable"]
+            },
+            "UpdateSettings": {
+              "methods": ["updateSettingsAsync", "updateSettingsAsync", "updateSettingsOperationCallable", "updateSettingsCallable"]
+            },
+            "UpdateSource": {
+              "methods": ["updateSourceAsync", "updateSourceAsync", "updateSourceOperationCallable", "updateSourceCallable"]
+            },
+            "ValidateImportJob": {
+              "methods": ["validateImportJobAsync", "validateImportJobAsync", "validateImportJobAsync", "validateImportJobOperationCallable", "validateImportJobCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

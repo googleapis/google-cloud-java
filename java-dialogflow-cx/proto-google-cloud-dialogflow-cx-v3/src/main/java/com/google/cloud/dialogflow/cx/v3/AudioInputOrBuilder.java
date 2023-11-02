@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,6 +73,7 @@ public interface AudioInputOrBuilder
    * The [transcribed
    * text][google.cloud.dialogflow.cx.v3.QueryResult.transcript] cannot contain
    * more than 256 bytes.
+   *
    * For non-streaming audio detect intent, both `config` and `audio` must be
    * provided.
    * For streaming audio detect intent, `config` must be provided in

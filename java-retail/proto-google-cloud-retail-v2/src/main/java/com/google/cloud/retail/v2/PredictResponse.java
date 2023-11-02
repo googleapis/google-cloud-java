@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   private PredictResponse() {
     results_ = java.util.Collections.emptyList();
     attributionToken_ = "";
-    missingIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    missingIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PredictResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -104,7 +99,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional product metadata / annotations.
+     *
      * Possible values:
+     *
      * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Is set if
@@ -119,7 +116,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional product metadata / annotations.
+     *
      * Possible values:
+     *
      * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Is set if
@@ -137,7 +136,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional product metadata / annotations.
+     *
      * Possible values:
+     *
      * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Is set if
@@ -152,7 +153,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional product metadata / annotations.
+     *
      * Possible values:
+     *
      * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Is set if
@@ -171,7 +174,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional product metadata / annotations.
+     *
      * Possible values:
+     *
      * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Is set if
@@ -209,11 +214,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PredictionResult();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -327,7 +327,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional product metadata / annotations.
+     *
      * Possible values:
+     *
      * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Is set if
@@ -354,7 +356,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional product metadata / annotations.
+     *
      * Possible values:
+     *
      * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Is set if
@@ -372,7 +376,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional product metadata / annotations.
+     *
      * Possible values:
+     *
      * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Is set if
@@ -398,7 +404,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional product metadata / annotations.
+     *
      * Possible values:
+     *
      * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Is set if
@@ -966,7 +974,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional product metadata / annotations.
+       *
        * Possible values:
+       *
        * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Is set if
@@ -993,7 +1003,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional product metadata / annotations.
+       *
        * Possible values:
+       *
        * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Is set if
@@ -1011,7 +1023,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional product metadata / annotations.
+       *
        * Possible values:
+       *
        * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Is set if
@@ -1037,7 +1051,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional product metadata / annotations.
+       *
        * Possible values:
+       *
        * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Is set if
@@ -1069,7 +1085,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional product metadata / annotations.
+       *
        * Possible values:
+       *
        * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Is set if
@@ -1096,7 +1114,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional product metadata / annotations.
+       *
        * Possible values:
+       *
        * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Is set if
@@ -1121,7 +1141,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional product metadata / annotations.
+       *
        * Possible values:
+       *
        * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Is set if
@@ -1341,7 +1363,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   public static final int MISSING_IDS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList missingIds_;
+  private com.google.protobuf.LazyStringArrayList missingIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1661,8 +1684,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       attributionToken_ = "";
-      missingIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      missingIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       validateOnly_ = false;
       return this;
     }
@@ -1709,17 +1731,16 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       } else {
         result.results_ = resultsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        missingIds_ = missingIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.missingIds_ = missingIds_;
     }
 
     private void buildPartial0(com.google.cloud.retail.v2.PredictResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.attributionToken_ = attributionToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        missingIds_.makeImmutable();
+        result.missingIds_ = missingIds_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.validateOnly_ = validateOnly_;
@@ -1806,7 +1827,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (!other.missingIds_.isEmpty()) {
         if (missingIds_.isEmpty()) {
           missingIds_ = other.missingIds_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureMissingIdsIsMutable();
           missingIds_.addAll(other.missingIds_);
@@ -2398,14 +2419,14 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.LazyStringList missingIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList missingIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMissingIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!missingIds_.isModifiable()) {
         missingIds_ = new com.google.protobuf.LazyStringArrayList(missingIds_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -2419,7 +2440,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the missingIds.
      */
     public com.google.protobuf.ProtocolStringList getMissingIdsList() {
-      return missingIds_.getUnmodifiableView();
+      missingIds_.makeImmutable();
+      return missingIds_;
     }
     /**
      *
@@ -2484,6 +2506,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       ensureMissingIdsIsMutable();
       missingIds_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2505,6 +2528,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       ensureMissingIdsIsMutable();
       missingIds_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2523,6 +2547,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public Builder addAllMissingIds(java.lang.Iterable<java.lang.String> values) {
       ensureMissingIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, missingIds_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2538,8 +2563,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMissingIds() {
-      missingIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      missingIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -2562,6 +2588,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureMissingIdsIsMutable();
       missingIds_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

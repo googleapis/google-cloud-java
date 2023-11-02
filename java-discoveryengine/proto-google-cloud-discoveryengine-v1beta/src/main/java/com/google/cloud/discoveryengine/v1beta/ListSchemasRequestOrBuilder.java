@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,8 +60,10 @@ public interface ListSchemasRequestOrBuilder
    * <pre>
    * The maximum number of [Schema][google.cloud.discoveryengine.v1beta.Schema]s
    * to return. The service may return fewer than this value.
+   *
    * If unspecified, at most 100
    * [Schema][google.cloud.discoveryengine.v1beta.Schema]s will be returned.
+   *
    * The maximum value is 1000; values above 1000 will be coerced to 1000.
    * </pre>
    *
@@ -78,6 +80,7 @@ public interface ListSchemasRequestOrBuilder
    * A page token, received from a previous
    * [SchemaService.ListSchemas][google.cloud.discoveryengine.v1beta.SchemaService.ListSchemas]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [SchemaService.ListSchemas][google.cloud.discoveryengine.v1beta.SchemaService.ListSchemas]
    * must match the call that provided the page token.
@@ -95,6 +98,7 @@ public interface ListSchemasRequestOrBuilder
    * A page token, received from a previous
    * [SchemaService.ListSchemas][google.cloud.discoveryengine.v1beta.SchemaService.ListSchemas]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [SchemaService.ListSchemas][google.cloud.discoveryengine.v1beta.SchemaService.ListSchemas]
    * must match the call that provided the page token.

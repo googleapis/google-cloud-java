@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateTagTemplateRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,9 +125,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` and `is_publicly_readable` can be overwritten.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
+   *
    * Note: Updating the `is_publicly_readable` field may require up to 12
    * hours to take effect in search results.
    * </pre>
@@ -151,9 +148,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` and `is_publicly_readable` can be overwritten.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
+   *
    * Note: Updating the `is_publicly_readable` field may require up to 12
    * hours to take effect in search results.
    * </pre>
@@ -172,9 +171,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` and `is_publicly_readable` can be overwritten.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
+   *
    * Note: Updating the `is_publicly_readable` field may require up to 12
    * hours to take effect in search results.
    * </pre>
@@ -783,9 +784,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` and `is_publicly_readable` can be overwritten.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * Note: Updating the `is_publicly_readable` field may require up to 12
      * hours to take effect in search results.
      * </pre>
@@ -803,9 +806,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` and `is_publicly_readable` can be overwritten.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * Note: Updating the `is_publicly_readable` field may require up to 12
      * hours to take effect in search results.
      * </pre>
@@ -829,9 +834,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` and `is_publicly_readable` can be overwritten.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * Note: Updating the `is_publicly_readable` field may require up to 12
      * hours to take effect in search results.
      * </pre>
@@ -857,9 +864,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` and `is_publicly_readable` can be overwritten.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * Note: Updating the `is_publicly_readable` field may require up to 12
      * hours to take effect in search results.
      * </pre>
@@ -882,9 +891,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` and `is_publicly_readable` can be overwritten.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * Note: Updating the `is_publicly_readable` field may require up to 12
      * hours to take effect in search results.
      * </pre>
@@ -913,9 +924,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` and `is_publicly_readable` can be overwritten.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * Note: Updating the `is_publicly_readable` field may require up to 12
      * hours to take effect in search results.
      * </pre>
@@ -938,9 +951,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` and `is_publicly_readable` can be overwritten.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * Note: Updating the `is_publicly_readable` field may require up to 12
      * hours to take effect in search results.
      * </pre>
@@ -958,9 +973,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` and `is_publicly_readable` can be overwritten.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * Note: Updating the `is_publicly_readable` field may require up to 12
      * hours to take effect in search results.
      * </pre>
@@ -982,9 +999,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` and `is_publicly_readable` can be overwritten.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * Note: Updating the `is_publicly_readable` field may require up to 12
      * hours to take effect in search results.
      * </pre>

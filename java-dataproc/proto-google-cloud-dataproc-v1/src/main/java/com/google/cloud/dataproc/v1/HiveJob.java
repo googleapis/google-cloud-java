@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   private HiveJob() {
-    jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    jarFileUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new HiveJob();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -82,6 +77,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int queriesCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object queries_;
 
   public enum QueriesCase
@@ -413,7 +410,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -439,7 +436,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -456,7 +453,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -480,7 +477,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
@@ -502,7 +499,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   public static final int JAR_FILE_URIS_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList jarFileUris_;
+  private com.google.protobuf.LazyStringArrayList jarFileUris_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -884,8 +882,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       continueOnFailure_ = false;
       internalGetMutableScriptVariables().clear();
       internalGetMutableProperties().clear();
-      jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      jarFileUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       queriesCase_ = 0;
       queries_ = null;
       return this;
@@ -914,21 +911,12 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dataproc.v1.HiveJob buildPartial() {
       com.google.cloud.dataproc.v1.HiveJob result = new com.google.cloud.dataproc.v1.HiveJob(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.HiveJob result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        jarFileUris_ = jarFileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.jarFileUris_ = jarFileUris_;
     }
 
     private void buildPartial0(com.google.cloud.dataproc.v1.HiveJob result) {
@@ -943,6 +931,10 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.properties_ = internalGetProperties();
         result.properties_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        jarFileUris_.makeImmutable();
+        result.jarFileUris_ = jarFileUris_;
       }
     }
 
@@ -1009,7 +1001,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.jarFileUris_.isEmpty()) {
         if (jarFileUris_.isEmpty()) {
           jarFileUris_ = other.jarFileUris_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureJarFileUrisIsMutable();
           jarFileUris_.addAll(other.jarFileUris_);
@@ -1766,7 +1758,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Dataproc API may be
-     * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+     * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
@@ -1792,7 +1784,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Dataproc API may be
-     * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+     * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
@@ -1809,7 +1801,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Dataproc API may be
-     * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+     * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
@@ -1833,7 +1825,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Dataproc API may be
-     * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+     * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
@@ -1863,7 +1855,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Dataproc API may be
-     * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+     * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
@@ -1889,7 +1881,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Dataproc API may be
-     * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+     * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
@@ -1913,7 +1905,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Dataproc API may be
-     * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
+     * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site.xml`,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
@@ -1926,14 +1918,14 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList jarFileUris_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList jarFileUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureJarFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!jarFileUris_.isModifiable()) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -1949,7 +1941,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the jarFileUris.
      */
     public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
-      return jarFileUris_.getUnmodifiableView();
+      jarFileUris_.makeImmutable();
+      return jarFileUris_;
     }
     /**
      *
@@ -2022,6 +2015,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       }
       ensureJarFileUrisIsMutable();
       jarFileUris_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2045,6 +2039,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       }
       ensureJarFileUrisIsMutable();
       jarFileUris_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2065,6 +2060,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllJarFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureJarFileUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jarFileUris_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2082,8 +2078,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearJarFileUris() {
-      jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      jarFileUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2108,6 +2105,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureJarFileUrisIsMutable();
       jarFileUris_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

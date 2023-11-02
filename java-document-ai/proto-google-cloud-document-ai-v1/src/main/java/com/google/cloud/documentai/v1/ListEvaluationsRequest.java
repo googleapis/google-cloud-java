@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Retrieves a list of evaluations for a given ProcessorVersion.
+ * Retrieves a list of evaluations for a given
+ * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.ListEvaluationsRequest}
@@ -46,11 +47,6 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListEvaluationsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -136,8 +132,8 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The standard list page size.
-   * If unspecified, at most 5 evaluations will be returned.
-   * The maximum value is 100; values above 100 will be coerced to 100.
+   * If unspecified, at most `5` evaluations are returned.
+   * The maximum value is `100`. Values above `100` are coerced to `100`.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -384,7 +380,8 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Retrieves a list of evaluations for a given ProcessorVersion.
+   * Retrieves a list of evaluations for a given
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.ListEvaluationsRequest}
@@ -728,8 +725,8 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The standard list page size.
-     * If unspecified, at most 5 evaluations will be returned.
-     * The maximum value is 100; values above 100 will be coerced to 100.
+     * If unspecified, at most `5` evaluations are returned.
+     * The maximum value is `100`. Values above `100` are coerced to `100`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -745,8 +742,8 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The standard list page size.
-     * If unspecified, at most 5 evaluations will be returned.
-     * The maximum value is 100; values above 100 will be coerced to 100.
+     * If unspecified, at most `5` evaluations are returned.
+     * The maximum value is `100`. Values above `100` are coerced to `100`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -766,8 +763,8 @@ public final class ListEvaluationsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The standard list page size.
-     * If unspecified, at most 5 evaluations will be returned.
-     * The maximum value is 100; values above 100 will be coerced to 100.
+     * If unspecified, at most `5` evaluations are returned.
+     * The maximum value is `100`. Values above `100` are coerced to `100`.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

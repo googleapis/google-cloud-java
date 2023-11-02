@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
     return new DataplexTableSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.DataplexSpecProto
         .internal_static_google_cloud_datacatalog_v1_DataplexTableSpec_descriptor;
@@ -77,6 +72,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
    * <pre>
    * List of external tables registered by Dataplex in other systems based on
    * the same underlying data.
+   *
    * External tables allow to query this data in those systems.
    * </pre>
    *
@@ -93,6 +89,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
    * <pre>
    * List of external tables registered by Dataplex in other systems based on
    * the same underlying data.
+   *
    * External tables allow to query this data in those systems.
    * </pre>
    *
@@ -109,6 +106,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
    * <pre>
    * List of external tables registered by Dataplex in other systems based on
    * the same underlying data.
+   *
    * External tables allow to query this data in those systems.
    * </pre>
    *
@@ -124,6 +122,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
    * <pre>
    * List of external tables registered by Dataplex in other systems based on
    * the same underlying data.
+   *
    * External tables allow to query this data in those systems.
    * </pre>
    *
@@ -139,6 +138,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
    * <pre>
    * List of external tables registered by Dataplex in other systems based on
    * the same underlying data.
+   *
    * External tables allow to query this data in those systems.
    * </pre>
    *
@@ -687,6 +687,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -706,6 +707,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -724,6 +726,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -742,6 +745,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -767,6 +771,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -789,6 +794,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -813,6 +819,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -838,6 +845,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -860,6 +868,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -882,6 +891,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -905,6 +915,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -926,6 +937,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -947,6 +959,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -962,6 +975,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -981,6 +995,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -1000,6 +1015,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -1016,6 +1032,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *
@@ -1033,6 +1050,7 @@ public final class DataplexTableSpec extends com.google.protobuf.GeneratedMessag
      * <pre>
      * List of external tables registered by Dataplex in other systems based on
      * the same underlying data.
+     *
      * External tables allow to query this data in those systems.
      * </pre>
      *

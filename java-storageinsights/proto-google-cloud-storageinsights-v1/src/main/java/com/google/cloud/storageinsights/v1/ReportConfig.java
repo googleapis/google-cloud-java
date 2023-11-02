@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,9 @@ package com.google.cloud.storageinsights.v1;
  * <pre>
  * Message describing ReportConfig object. ReportConfig is the configuration to
  * generate reports.
+ * See
+ * https://cloud.google.com/storage/docs/insights/using-inventory-reports#create-config-rest
+ * for more details on how to set various fields.
  * Next ID: 12
  * </pre>
  *
@@ -48,11 +51,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ReportConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -82,6 +80,8 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int reportFormatCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object reportFormat_;
 
   public enum ReportFormatCase
@@ -129,6 +129,8 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int reportKindCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object reportKind_;
 
   public enum ReportKindCase
@@ -988,6 +990,9 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Message describing ReportConfig object. ReportConfig is the configuration to
    * generate reports.
+   * See
+   * https://cloud.google.com/storage/docs/insights/using-inventory-reports#create-config-rest
+   * for more details on how to set various fields.
    * Next ID: 12
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateAzureClusterRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -151,6 +146,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+   *
    *  *   `description`.
    *  *   `azureClient`.
    *  *   `control_plane.version`.
@@ -185,6 +181,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+   *
    *  *   `description`.
    *  *   `azureClient`.
    *  *   `control_plane.version`.
@@ -219,6 +216,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+   *
    *  *   `description`.
    *  *   `azureClient`.
    *  *   `control_plane.version`.
@@ -927,6 +925,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+     *
      *  *   `description`.
      *  *   `azureClient`.
      *  *   `control_plane.version`.
@@ -960,6 +959,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+     *
      *  *   `description`.
      *  *   `azureClient`.
      *  *   `control_plane.version`.
@@ -999,6 +999,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+     *
      *  *   `description`.
      *  *   `azureClient`.
      *  *   `control_plane.version`.
@@ -1040,6 +1041,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+     *
      *  *   `description`.
      *  *   `azureClient`.
      *  *   `control_plane.version`.
@@ -1078,6 +1080,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+     *
      *  *   `description`.
      *  *   `azureClient`.
      *  *   `control_plane.version`.
@@ -1122,6 +1125,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+     *
      *  *   `description`.
      *  *   `azureClient`.
      *  *   `control_plane.version`.
@@ -1160,6 +1164,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+     *
      *  *   `description`.
      *  *   `azureClient`.
      *  *   `control_plane.version`.
@@ -1193,6 +1198,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+     *
      *  *   `description`.
      *  *   `azureClient`.
      *  *   `control_plane.version`.
@@ -1230,6 +1236,7 @@ public final class UpdateAzureClusterRequest extends com.google.protobuf.Generat
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+     *
      *  *   `description`.
      *  *   `azureClient`.
      *  *   `control_plane.version`.

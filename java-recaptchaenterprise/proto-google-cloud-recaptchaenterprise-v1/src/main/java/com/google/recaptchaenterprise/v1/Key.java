@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     return new Key();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_Key_descriptor;
@@ -81,6 +76,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int platformSettingsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object platformSettings_;
 
   public enum PlatformSettingsCase
@@ -139,7 +136,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name for the Key in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -163,7 +160,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name for the Key in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -418,8 +415,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-   * Creating and managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -441,8 +438,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-   * Creating and managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -455,8 +452,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-   * Creating and managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -476,8 +473,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-   * Creating and managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -500,7 +497,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this key.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -516,7 +513,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this key.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -532,7 +529,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this key.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1298,7 +1295,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name for the Key in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1321,7 +1318,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name for the Key in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1344,7 +1341,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name for the Key in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1366,7 +1363,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name for the Key in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1384,7 +1381,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name for the Key in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2172,8 +2169,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-     * Creating and managing labels&lt;/a&gt;.
+     * See [Creating and managing labels]
+     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -2195,8 +2192,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-     * Creating and managing labels&lt;/a&gt;.
+     * See [Creating and managing labels]
+     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -2209,8 +2206,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-     * Creating and managing labels&lt;/a&gt;.
+     * See [Creating and managing labels]
+     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -2230,8 +2227,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-     * Creating and managing labels&lt;/a&gt;.
+     * See [Creating and managing labels]
+     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -2257,8 +2254,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-     * Creating and managing labels&lt;/a&gt;.
+     * See [Creating and managing labels]
+     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -2280,8 +2277,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-     * Creating and managing labels&lt;/a&gt;.
+     * See [Creating and managing labels]
+     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -2301,8 +2298,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
-     * Creating and managing labels&lt;/a&gt;.
+     * See [Creating and managing labels]
+     * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -2323,7 +2320,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this key.
      * </pre>
      *
      * <code>
@@ -2339,7 +2336,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this key.
      * </pre>
      *
      * <code>
@@ -2361,7 +2358,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this key.
      * </pre>
      *
      * <code>
@@ -2385,7 +2382,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this key.
      * </pre>
      *
      * <code>
@@ -2406,7 +2403,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this key.
      * </pre>
      *
      * <code>
@@ -2433,7 +2430,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this key.
      * </pre>
      *
      * <code>
@@ -2454,7 +2451,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this key.
      * </pre>
      *
      * <code>
@@ -2470,7 +2467,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this key.
      * </pre>
      *
      * <code>
@@ -2490,7 +2487,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this key.
      * </pre>
      *
      * <code>

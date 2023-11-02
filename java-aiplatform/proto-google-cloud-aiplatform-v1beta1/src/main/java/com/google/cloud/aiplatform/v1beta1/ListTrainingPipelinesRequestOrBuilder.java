@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,9 @@ public interface ListTrainingPipelinesRequestOrBuilder
    *
    * <pre>
    * The standard list filter.
+   *
    * Supported fields:
+   *
    *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
    *   * `state` supports `=`, `!=` comparisons.
    *   * `training_task_definition` `=`, `!=` comparisons, and `:` wildcard.
@@ -68,7 +70,9 @@ public interface ListTrainingPipelinesRequestOrBuilder
    *   * `labels` supports general map functions that is:
    *     `labels.key=value` - key:value equality
    *     `labels.key:* - key existence
+   *
    * Some examples of using the filter are:
+   *
    *   * `state="PIPELINE_STATE_SUCCEEDED" AND display_name:"my_pipeline_*"`
    *   * `state!="PIPELINE_STATE_FAILED" OR display_name="my_pipeline"`
    *   * `NOT display_name="my_pipeline"`
@@ -86,7 +90,9 @@ public interface ListTrainingPipelinesRequestOrBuilder
    *
    * <pre>
    * The standard list filter.
+   *
    * Supported fields:
+   *
    *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
    *   * `state` supports `=`, `!=` comparisons.
    *   * `training_task_definition` `=`, `!=` comparisons, and `:` wildcard.
@@ -95,7 +101,9 @@ public interface ListTrainingPipelinesRequestOrBuilder
    *   * `labels` supports general map functions that is:
    *     `labels.key=value` - key:value equality
    *     `labels.key:* - key existence
+   *
    * Some examples of using the filter are:
+   *
    *   * `state="PIPELINE_STATE_SUCCEEDED" AND display_name:"my_pipeline_*"`
    *   * `state!="PIPELINE_STATE_FAILED" OR display_name="my_pipeline"`
    *   * `NOT display_name="my_pipeline"`

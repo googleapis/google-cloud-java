@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface BackendMetastoreOrBuilder
    * The relative resource name of the metastore that is being federated.
    * The formats of the relative resource names for the currently supported
    * metastores are listed below:
+   *
    * * BigQuery
    *     * `projects/{project_id}`
    * * Dataproc Metastore
@@ -48,6 +49,7 @@ public interface BackendMetastoreOrBuilder
    * The relative resource name of the metastore that is being federated.
    * The formats of the relative resource names for the currently supported
    * metastores are listed below:
+   *
    * * BigQuery
    *     * `projects/{project_id}`
    * * Dataproc Metastore

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface ListServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the namespace whose services we'd
+   * Required. The resource name of the namespace whose services you'd
    * like to list.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface ListServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the namespace whose services we'd
+   * Required. The resource name of the namespace whose services you'd
    * like to list.
    * </pre>
    *
@@ -98,27 +98,36 @@ public interface ListServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The filter to list result by.
-   * General filter string syntax:
-   * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
-   * &lt;field&gt; can be "name", or "metadata.&lt;key&gt;" for map field.
-   * &lt;operator&gt; can be "&lt;, &gt;, &lt;=, &gt;=, !=, =, :". Of which ":" means HAS, and
-   * is roughly the same as "=".
-   * &lt;value&gt; must be the same data type as field.
-   * &lt;logical connector&gt; can be "AND, OR, NOT".
+   * Optional. The filter to list results by.
+   *
+   * General `filter` string syntax:
+   * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   *
+   * *   `&lt;field&gt;` can be `name` or `annotations.&lt;key&gt;` for map field
+   * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
+   *     means `HAS`, and is roughly the same as `=`
+   * *   `&lt;value&gt;` must be the same data type as field
+   * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+   *
    * Examples of valid filters:
-   * * "metadata.owner" returns Services that have a label with the key "owner"
-   *   this is the same as "metadata:owner".
-   * * "metadata.protocol=gRPC" returns Services that have key/value
-   *   "protocol=gRPC".
-   * * "name&gt;projects/my-project/locations/us-east/namespaces/my-namespace/services/service-c"
-   *   returns Services that have name that is alphabetically later than the
-   *   string, so "service-e" will be returned but "service-a" will not be.
-   * * "metadata.owner!=sd AND metadata.foo=bar" returns Services that have
-   *   "owner" in label key but value is not "sd" AND have key/value foo=bar.
-   * * "doesnotexist.foo=bar" returns an empty list. Note that Service doesn't
-   *   have a field called "doesnotexist". Since the filter does not match any
-   *   Services, it returns no results.
+   *
+   * *   `annotations.owner` returns services that have a annotation with the
+   *     key `owner`, this is the same as `annotations:owner`
+   * *   `annotations.protocol=gRPC` returns services that have key/value
+   *     `protocol=gRPC`
+   * *
+   * `name&gt;projects/my-project/locations/us-east1/namespaces/my-namespace/services/service-c`
+   *     returns services that have name that is alphabetically later than the
+   *     string, so "service-e" is returned but "service-a" is not
+   * *   `annotations.owner!=sd AND annotations.foo=bar` returns services that
+   *     have `owner` in annotation key but value is not `sd` AND have
+   *     key/value `foo=bar`
+   * *   `doesnotexist.foo=bar` returns an empty list. Note that service
+   *     doesn't have a field called "doesnotexist". Since the filter does not
+   *     match any services, it returns no results
+   *
+   * For more information about filtering, see
+   * [API Filtering](https://aip.dev/160).
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -130,27 +139,36 @@ public interface ListServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The filter to list result by.
-   * General filter string syntax:
-   * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
-   * &lt;field&gt; can be "name", or "metadata.&lt;key&gt;" for map field.
-   * &lt;operator&gt; can be "&lt;, &gt;, &lt;=, &gt;=, !=, =, :". Of which ":" means HAS, and
-   * is roughly the same as "=".
-   * &lt;value&gt; must be the same data type as field.
-   * &lt;logical connector&gt; can be "AND, OR, NOT".
+   * Optional. The filter to list results by.
+   *
+   * General `filter` string syntax:
+   * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   *
+   * *   `&lt;field&gt;` can be `name` or `annotations.&lt;key&gt;` for map field
+   * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
+   *     means `HAS`, and is roughly the same as `=`
+   * *   `&lt;value&gt;` must be the same data type as field
+   * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+   *
    * Examples of valid filters:
-   * * "metadata.owner" returns Services that have a label with the key "owner"
-   *   this is the same as "metadata:owner".
-   * * "metadata.protocol=gRPC" returns Services that have key/value
-   *   "protocol=gRPC".
-   * * "name&gt;projects/my-project/locations/us-east/namespaces/my-namespace/services/service-c"
-   *   returns Services that have name that is alphabetically later than the
-   *   string, so "service-e" will be returned but "service-a" will not be.
-   * * "metadata.owner!=sd AND metadata.foo=bar" returns Services that have
-   *   "owner" in label key but value is not "sd" AND have key/value foo=bar.
-   * * "doesnotexist.foo=bar" returns an empty list. Note that Service doesn't
-   *   have a field called "doesnotexist". Since the filter does not match any
-   *   Services, it returns no results.
+   *
+   * *   `annotations.owner` returns services that have a annotation with the
+   *     key `owner`, this is the same as `annotations:owner`
+   * *   `annotations.protocol=gRPC` returns services that have key/value
+   *     `protocol=gRPC`
+   * *
+   * `name&gt;projects/my-project/locations/us-east1/namespaces/my-namespace/services/service-c`
+   *     returns services that have name that is alphabetically later than the
+   *     string, so "service-e" is returned but "service-a" is not
+   * *   `annotations.owner!=sd AND annotations.foo=bar` returns services that
+   *     have `owner` in annotation key but value is not `sd` AND have
+   *     key/value `foo=bar`
+   * *   `doesnotexist.foo=bar` returns an empty list. Note that service
+   *     doesn't have a field called "doesnotexist". Since the filter does not
+   *     match any services, it returns no results
+   *
+   * For more information about filtering, see
+   * [API Filtering](https://aip.dev/160).
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -163,7 +181,16 @@ public interface ListServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The order to list result by.
+   * Optional. The order to list results by.
+   *
+   * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+   *
+   * *   `&lt;field&gt;` allows value: `name`
+   * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
+   *     left blank, `asc` is used
+   *
+   * Note that an empty `order_by` string results in default order, which is
+   * order by `name` in ascending order.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -175,7 +202,16 @@ public interface ListServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The order to list result by.
+   * Optional. The order to list results by.
+   *
+   * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+   *
+   * *   `&lt;field&gt;` allows value: `name`
+   * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
+   *     left blank, `asc` is used
+   *
+   * Note that an empty `order_by` string results in default order, which is
+   * order by `name` in ascending order.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

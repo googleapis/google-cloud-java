@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * A `Target` resource in the Google Cloud Deploy API.
+ * A `Target` resource in the Cloud Deploy API.
+ *
  * A `Target` defines a location to which a Skaffold configuration
  * can be deployed.
  * </pre>
@@ -54,11 +55,6 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     return new Target();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_Target_descriptor;
@@ -72,6 +68,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         return internalGetAnnotations();
       case 6:
         return internalGetLabels();
+      case 20:
+        return internalGetDeployParameters();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -88,6 +86,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int deploymentTargetCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object deploymentTarget_;
 
   public enum DeploymentTargetCase
@@ -149,7 +149,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `Target`. Format is
-   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -173,7 +173,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `Target`. Format is
-   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -378,7 +378,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -404,7 +404,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -421,7 +421,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -445,7 +445,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -496,14 +496,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -527,14 +528,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -549,14 +551,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -578,14 +581,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -724,10 +728,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the gke field is set.
    */
@@ -739,10 +744,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The gke.
    */
@@ -757,10 +763,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a GKE Cluster.
+   * Optional. Information specifying a GKE Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+   * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.GkeClusterOrBuilder getGkeOrBuilder() {
@@ -775,10 +782,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the anthosCluster field is set.
    */
@@ -790,10 +799,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The anthosCluster.
    */
@@ -808,10 +819,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying an Anthos Cluster.
+   * Optional. Information specifying an Anthos Cluster.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   * <code>
+   * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.AnthosClusterOrBuilder getAnthosClusterOrBuilder() {
@@ -826,10 +839,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the run field is set.
    */
@@ -841,10 +856,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The run.
    */
@@ -859,10 +876,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a Cloud Run deployment target.
+   * Optional. Information specifying a Cloud Run deployment target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.CloudRunLocationOrBuilder getRunOrBuilder() {
@@ -877,10 +896,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the multiTarget field is set.
    */
@@ -892,10 +913,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The multiTarget.
    */
@@ -910,10 +933,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information specifying a multiTarget.
+   * Optional. Information specifying a multiTarget.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   * <code>
+   * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.MultiTargetOrBuilder getMultiTargetOrBuilder() {
@@ -1080,6 +1105,118 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     return executionConfigs_.get(index);
   }
 
+  public static final int DEPLOY_PARAMETERS_FIELD_NUMBER = 20;
+
+  private static final class DeployParametersDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.deploy.v1.CloudDeployProto
+                .internal_static_google_cloud_deploy_v1_Target_DeployParametersEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> deployParameters_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetDeployParameters() {
+    if (deployParameters_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          DeployParametersDefaultEntryHolder.defaultEntry);
+    }
+    return deployParameters_;
+  }
+
+  public int getDeployParametersCount() {
+    return internalGetDeployParameters().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for this target.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsDeployParameters(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetDeployParameters().getMap().containsKey(key);
+  }
+  /** Use {@link #getDeployParametersMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getDeployParameters() {
+    return getDeployParametersMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for this target.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getDeployParametersMap() {
+    return internalGetDeployParameters().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for this target.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getDeployParametersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetDeployParameters().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for this target.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getDeployParametersOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetDeployParameters().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1137,6 +1274,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     if (deploymentTargetCase_ == 19) {
       output.writeMessage(19, (com.google.cloud.deploy.v1.MultiTarget) deploymentTarget_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetDeployParameters(), DeployParametersDefaultEntryHolder.defaultEntry, 20);
     getUnknownFields().writeTo(output);
   }
 
@@ -1214,6 +1353,16 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               19, (com.google.cloud.deploy.v1.MultiTarget) deploymentTarget_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetDeployParameters().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> deployParameters__ =
+          DeployParametersDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, deployParameters__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1246,6 +1395,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getExecutionConfigsList().equals(other.getExecutionConfigsList())) return false;
+    if (!internalGetDeployParameters().equals(other.internalGetDeployParameters())) return false;
     if (!getDeploymentTargetCase().equals(other.getDeploymentTargetCase())) return false;
     switch (deploymentTargetCase_) {
       case 15:
@@ -1305,6 +1455,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     if (getExecutionConfigsCount() > 0) {
       hash = (37 * hash) + EXECUTION_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getExecutionConfigsList().hashCode();
+    }
+    if (!internalGetDeployParameters().getMap().isEmpty()) {
+      hash = (37 * hash) + DEPLOY_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetDeployParameters().hashCode();
     }
     switch (deploymentTargetCase_) {
       case 15:
@@ -1429,7 +1583,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A `Target` resource in the Google Cloud Deploy API.
+   * A `Target` resource in the Cloud Deploy API.
+   *
    * A `Target` defines a location to which a Skaffold configuration
    * can be deployed.
    * </pre>
@@ -1452,6 +1607,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           return internalGetAnnotations();
         case 6:
           return internalGetLabels();
+        case 20:
+          return internalGetDeployParameters();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1464,6 +1621,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           return internalGetMutableAnnotations();
         case 6:
           return internalGetMutableLabels();
+        case 20:
+          return internalGetMutableDeployParameters();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1527,6 +1686,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         executionConfigsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00004000);
+      internalGetMutableDeployParameters().clear();
       deploymentTargetCase_ = 0;
       deploymentTarget_ = null;
       return this;
@@ -1609,6 +1769,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.deployParameters_ = internalGetDeployParameters();
+        result.deployParameters_.makeImmutable();
       }
     }
 
@@ -1739,6 +1903,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      internalGetMutableDeployParameters().mergeFrom(other.internalGetDeployParameters());
+      bitField0_ |= 0x00008000;
       switch (other.getDeploymentTargetCase()) {
         case GKE:
           {
@@ -1900,6 +2066,19 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
                 deploymentTargetCase_ = 19;
                 break;
               } // case 154
+            case 162:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    deployParameters__ =
+                        input.readMessage(
+                            DeployParametersDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableDeployParameters()
+                    .getMutableMap()
+                    .put(deployParameters__.getKey(), deployParameters__.getValue());
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1939,7 +2118,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Target`. Format is
-     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1962,7 +2141,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Target`. Format is
-     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1985,7 +2164,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Target`. Format is
-     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2007,7 +2186,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Target`. Format is
-     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2025,7 +2204,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Target`. Format is
-     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2395,7 +2574,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2421,7 +2600,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2438,7 +2617,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2462,7 +2641,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2492,7 +2671,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2518,7 +2697,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2542,7 +2721,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2586,14 +2765,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -2617,14 +2797,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -2639,14 +2820,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -2668,14 +2850,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -2703,14 +2886,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -2734,14 +2918,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -2763,14 +2948,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -3246,10 +3432,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the gke field is set.
      */
@@ -3261,10 +3448,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The gke.
      */
@@ -3286,10 +3474,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGke(com.google.cloud.deploy.v1.GkeCluster value) {
       if (gkeBuilder_ == null) {
@@ -3308,10 +3497,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGke(com.google.cloud.deploy.v1.GkeCluster.Builder builderForValue) {
       if (gkeBuilder_ == null) {
@@ -3327,10 +3517,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeGke(com.google.cloud.deploy.v1.GkeCluster value) {
       if (gkeBuilder_ == null) {
@@ -3359,10 +3550,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearGke() {
       if (gkeBuilder_ == null) {
@@ -3384,10 +3576,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.GkeCluster.Builder getGkeBuilder() {
       return getGkeFieldBuilder().getBuilder();
@@ -3396,10 +3589,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.GkeClusterOrBuilder getGkeOrBuilder() {
@@ -3416,10 +3610,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a GKE Cluster.
+     * Optional. Information specifying a GKE Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
+     * <code>.google.cloud.deploy.v1.GkeCluster gke = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.GkeCluster,
@@ -3454,10 +3649,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the anthosCluster field is set.
      */
@@ -3469,10 +3666,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The anthosCluster.
      */
@@ -3494,10 +3693,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAnthosCluster(com.google.cloud.deploy.v1.AnthosCluster value) {
       if (anthosClusterBuilder_ == null) {
@@ -3516,10 +3717,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAnthosCluster(
         com.google.cloud.deploy.v1.AnthosCluster.Builder builderForValue) {
@@ -3536,10 +3739,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeAnthosCluster(com.google.cloud.deploy.v1.AnthosCluster value) {
       if (anthosClusterBuilder_ == null) {
@@ -3568,10 +3773,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAnthosCluster() {
       if (anthosClusterBuilder_ == null) {
@@ -3593,10 +3800,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.AnthosCluster.Builder getAnthosClusterBuilder() {
       return getAnthosClusterFieldBuilder().getBuilder();
@@ -3605,10 +3814,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.AnthosClusterOrBuilder getAnthosClusterOrBuilder() {
@@ -3625,10 +3836,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying an Anthos Cluster.
+     * Optional. Information specifying an Anthos Cluster.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     * <code>
+     * .google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.AnthosCluster,
@@ -3663,10 +3876,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the run field is set.
      */
@@ -3678,10 +3893,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The run.
      */
@@ -3703,10 +3920,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setRun(com.google.cloud.deploy.v1.CloudRunLocation value) {
       if (runBuilder_ == null) {
@@ -3725,10 +3944,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setRun(com.google.cloud.deploy.v1.CloudRunLocation.Builder builderForValue) {
       if (runBuilder_ == null) {
@@ -3744,10 +3965,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeRun(com.google.cloud.deploy.v1.CloudRunLocation value) {
       if (runBuilder_ == null) {
@@ -3777,10 +4000,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearRun() {
       if (runBuilder_ == null) {
@@ -3802,10 +4027,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.CloudRunLocation.Builder getRunBuilder() {
       return getRunFieldBuilder().getBuilder();
@@ -3814,10 +4041,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.CloudRunLocationOrBuilder getRunOrBuilder() {
@@ -3834,10 +4063,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a Cloud Run deployment target.
+     * Optional. Information specifying a Cloud Run deployment target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunLocation run = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.CloudRunLocation,
@@ -3872,10 +4103,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the multiTarget field is set.
      */
@@ -3887,10 +4120,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The multiTarget.
      */
@@ -3912,10 +4147,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMultiTarget(com.google.cloud.deploy.v1.MultiTarget value) {
       if (multiTargetBuilder_ == null) {
@@ -3934,10 +4171,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMultiTarget(com.google.cloud.deploy.v1.MultiTarget.Builder builderForValue) {
       if (multiTargetBuilder_ == null) {
@@ -3953,10 +4192,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeMultiTarget(com.google.cloud.deploy.v1.MultiTarget value) {
       if (multiTargetBuilder_ == null) {
@@ -3985,10 +4226,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearMultiTarget() {
       if (multiTargetBuilder_ == null) {
@@ -4010,10 +4253,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.MultiTarget.Builder getMultiTargetBuilder() {
       return getMultiTargetFieldBuilder().getBuilder();
@@ -4022,10 +4267,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.MultiTargetOrBuilder getMultiTargetOrBuilder() {
@@ -4042,10 +4289,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information specifying a multiTarget.
+     * Optional. Information specifying a multiTarget.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     * <code>
+     * .google.cloud.deploy.v1.MultiTarget multi_target = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.MultiTarget,
@@ -4652,6 +4901,190 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         executionConfigs_ = null;
       }
       return executionConfigsBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> deployParameters_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetDeployParameters() {
+      if (deployParameters_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DeployParametersDefaultEntryHolder.defaultEntry);
+      }
+      return deployParameters_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableDeployParameters() {
+      if (deployParameters_ == null) {
+        deployParameters_ =
+            com.google.protobuf.MapField.newMapField(
+                DeployParametersDefaultEntryHolder.defaultEntry);
+      }
+      if (!deployParameters_.isMutable()) {
+        deployParameters_ = deployParameters_.copy();
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return deployParameters_;
+    }
+
+    public int getDeployParametersCount() {
+      return internalGetDeployParameters().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for this target.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsDeployParameters(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetDeployParameters().getMap().containsKey(key);
+    }
+    /** Use {@link #getDeployParametersMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getDeployParameters() {
+      return getDeployParametersMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for this target.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getDeployParametersMap() {
+      return internalGetDeployParameters().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for this target.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getDeployParametersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetDeployParameters().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for this target.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getDeployParametersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetDeployParameters().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearDeployParameters() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      internalGetMutableDeployParameters().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for this target.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDeployParameters(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableDeployParameters().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableDeployParameters() {
+      bitField0_ |= 0x00008000;
+      return internalGetMutableDeployParameters().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for this target.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putDeployParameters(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableDeployParameters().getMutableMap().put(key, value);
+      bitField0_ |= 0x00008000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for this target.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllDeployParameters(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableDeployParameters().getMutableMap().putAll(values);
+      bitField0_ |= 0x00008000;
+      return this;
     }
 
     @java.lang.Override

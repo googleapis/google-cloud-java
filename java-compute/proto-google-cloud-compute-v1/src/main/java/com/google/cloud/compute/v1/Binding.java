@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
 
   private Binding() {
     bindingId_ = "";
-    members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    members_ = com.google.protobuf.LazyStringArrayList.emptyList();
     role_ = "";
   }
 
@@ -47,11 +47,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Binding();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -185,7 +180,8 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
   public static final int MEMBERS_FIELD_NUMBER = 412010777;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList members_;
+  private com.google.protobuf.LazyStringArrayList members_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -571,8 +567,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
         conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
-      members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      members_ = com.google.protobuf.LazyStringArrayList.emptyList();
       role_ = "";
       return this;
     }
@@ -600,20 +595,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Binding buildPartial() {
       com.google.cloud.compute.v1.Binding result = new com.google.cloud.compute.v1.Binding(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Binding result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        members_ = members_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.members_ = members_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Binding result) {
@@ -626,6 +612,10 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        members_.makeImmutable();
+        result.members_ = members_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.role_ = role_;
@@ -690,7 +680,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       if (!other.members_.isEmpty()) {
         if (members_.isEmpty()) {
           members_ = other.members_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureMembersIsMutable();
           members_.addAll(other.members_);
@@ -1075,14 +1065,14 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       return conditionBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList members_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList members_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMembersIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!members_.isModifiable()) {
         members_ = new com.google.protobuf.LazyStringArrayList(members_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1096,7 +1086,8 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the members.
      */
     public com.google.protobuf.ProtocolStringList getMembersList() {
-      return members_.getUnmodifiableView();
+      members_.makeImmutable();
+      return members_;
     }
     /**
      *
@@ -1161,6 +1152,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMembersIsMutable();
       members_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1182,6 +1174,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMembersIsMutable();
       members_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1200,6 +1193,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMembers(java.lang.Iterable<java.lang.String> values) {
       ensureMembersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, members_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1215,8 +1209,9 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMembers() {
-      members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      members_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1239,6 +1234,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMembersIsMutable();
       members_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateVmwareEngineNetworkRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -150,6 +145,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
    * This identifier must be unique among VMware Engine network resources
    * within the parent and becomes the final token in the name URI. The
    * identifier must meet the following requirements:
+   *
    * * For networks of type LEGACY, adheres to the format:
    * `{region-id}-default`. Replace `{region-id}` with the region where you want
    * to create the VMware Engine network. For example, "us-central1-default".
@@ -185,6 +181,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
    * This identifier must be unique among VMware Engine network resources
    * within the parent and becomes the final token in the name URI. The
    * identifier must meet the following requirements:
+   *
    * * For networks of type LEGACY, adheres to the format:
    * `{region-id}-default`. Replace `{region-id}` with the region where you want
    * to create the VMware Engine network. For example, "us-central1-default".
@@ -283,11 +280,13 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
    * the request if it has already been completed. The server guarantees that a
    * request doesn't result in creation of duplicate commitments for at least 60
    * minutes.
+   *
    * For example, consider a situation where you make an initial request and the
    * request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
+   *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
@@ -317,11 +316,13 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
    * the request if it has already been completed. The server guarantees that a
    * request doesn't result in creation of duplicate commitments for at least 60
    * minutes.
+   *
    * For example, consider a situation where you make an initial request and the
    * request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
+   *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
@@ -931,6 +932,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * This identifier must be unique among VMware Engine network resources
      * within the parent and becomes the final token in the name URI. The
      * identifier must meet the following requirements:
+     *
      * * For networks of type LEGACY, adheres to the format:
      * `{region-id}-default`. Replace `{region-id}` with the region where you want
      * to create the VMware Engine network. For example, "us-central1-default".
@@ -965,6 +967,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * This identifier must be unique among VMware Engine network resources
      * within the parent and becomes the final token in the name URI. The
      * identifier must meet the following requirements:
+     *
      * * For networks of type LEGACY, adheres to the format:
      * `{region-id}-default`. Replace `{region-id}` with the region where you want
      * to create the VMware Engine network. For example, "us-central1-default".
@@ -999,6 +1002,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * This identifier must be unique among VMware Engine network resources
      * within the parent and becomes the final token in the name URI. The
      * identifier must meet the following requirements:
+     *
      * * For networks of type LEGACY, adheres to the format:
      * `{region-id}-default`. Replace `{region-id}` with the region where you want
      * to create the VMware Engine network. For example, "us-central1-default".
@@ -1032,6 +1036,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * This identifier must be unique among VMware Engine network resources
      * within the parent and becomes the final token in the name URI. The
      * identifier must meet the following requirements:
+     *
      * * For networks of type LEGACY, adheres to the format:
      * `{region-id}-default`. Replace `{region-id}` with the region where you want
      * to create the VMware Engine network. For example, "us-central1-default".
@@ -1061,6 +1066,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * This identifier must be unique among VMware Engine network resources
      * within the parent and becomes the final token in the name URI. The
      * identifier must meet the following requirements:
+     *
      * * For networks of type LEGACY, adheres to the format:
      * `{region-id}-default`. Replace `{region-id}` with the region where you want
      * to create the VMware Engine network. For example, "us-central1-default".
@@ -1305,11 +1311,13 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * the request if it has already been completed. The server guarantees that a
      * request doesn't result in creation of duplicate commitments for at least 60
      * minutes.
+     *
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1338,11 +1346,13 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * the request if it has already been completed. The server guarantees that a
      * request doesn't result in creation of duplicate commitments for at least 60
      * minutes.
+     *
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1371,11 +1381,13 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * the request if it has already been completed. The server guarantees that a
      * request doesn't result in creation of duplicate commitments for at least 60
      * minutes.
+     *
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1403,11 +1415,13 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * the request if it has already been completed. The server guarantees that a
      * request doesn't result in creation of duplicate commitments for at least 60
      * minutes.
+     *
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1431,11 +1445,13 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * the request if it has already been completed. The server guarantees that a
      * request doesn't result in creation of duplicate commitments for at least 60
      * minutes.
+     *
      * For example, consider a situation where you make an initial request and the
      * request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>

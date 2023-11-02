@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetJobRunRequest extends com.google.protobuf.GeneratedMessage
     return new GetJobRunRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_GetJobRunRequest_descriptor;
@@ -76,7 +71,7 @@ public final class GetJobRunRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Name of the `JobRun`. Format must be
-   * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}.
+   * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}`.
    * </pre>
    *
    * <code>
@@ -102,7 +97,7 @@ public final class GetJobRunRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Name of the `JobRun`. Format must be
-   * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}.
+   * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}`.
    * </pre>
    *
    * <code>
@@ -471,7 +466,7 @@ public final class GetJobRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Name of the `JobRun`. Format must be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}`.
      * </pre>
      *
      * <code>
@@ -496,7 +491,7 @@ public final class GetJobRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Name of the `JobRun`. Format must be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}`.
      * </pre>
      *
      * <code>
@@ -521,7 +516,7 @@ public final class GetJobRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Name of the `JobRun`. Format must be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}`.
      * </pre>
      *
      * <code>
@@ -545,7 +540,7 @@ public final class GetJobRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Name of the `JobRun`. Format must be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}`.
      * </pre>
      *
      * <code>
@@ -565,7 +560,7 @@ public final class GetJobRunRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Name of the `JobRun`. Format must be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}/rollouts/{rollout_name}/jobRuns/{job_run_name}`.
      * </pre>
      *
      * <code>

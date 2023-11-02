@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CertificateMap();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -243,7 +238,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfigOrBuilder
         getIpConfigsOrBuilder(int index);
 
-    public com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.TargetProxyCase
+    com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.TargetProxyCase
         getTargetProxyCase();
   }
   /**
@@ -273,11 +268,6 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GclbTarget();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -391,11 +381,6 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new IpConfig();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1252,6 +1237,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int targetProxyCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object targetProxy_;
 
     public enum TargetProxyCase

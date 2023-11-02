@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Encapsulates route information computed for an origin/destination pair in the
+ * Contains route information computed for an origin/destination pair in the
  * ComputeRouteMatrix API. This proto can be streamed to the client.
  * </pre>
  *
@@ -48,11 +48,6 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
     return new RouteMatrixElement();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.RoutesServiceProto
         .internal_static_google_maps_routing_v2_RouteMatrixElement_descriptor;
@@ -66,6 +61,1675 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.maps.routing.v2.RouteMatrixElement.class,
             com.google.maps.routing.v2.RouteMatrixElement.Builder.class);
+  }
+
+  public interface LocalizedValuesOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.routing.v2.RouteMatrixElement.LocalizedValues)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return Whether the distance field is set.
+     */
+    boolean hasDistance();
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return The distance.
+     */
+    com.google.type.LocalizedText getDistance();
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form taking traffic conditions into
+     * consideration. Note: If traffic information was not requested, this value
+     * is the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    boolean hasDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form taking traffic conditions into
+     * consideration. Note: If traffic information was not requested, this value
+     * is the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return The duration.
+     */
+    com.google.type.LocalizedText getDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form taking traffic conditions into
+     * consideration. Note: If traffic information was not requested, this value
+     * is the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form without taking traffic conditions into
+     * consideration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return Whether the staticDuration field is set.
+     */
+    boolean hasStaticDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form without taking traffic conditions into
+     * consideration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return The staticDuration.
+     */
+    com.google.type.LocalizedText getStaticDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form without taking traffic conditions into
+     * consideration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     *
+     * @return Whether the transitFare field is set.
+     */
+    boolean hasTransitFare();
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     *
+     * @return The transitFare.
+     */
+    com.google.type.LocalizedText getTransitFare();
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getTransitFareOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of certain properties.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.routing.v2.RouteMatrixElement.LocalizedValues}
+   */
+  public static final class LocalizedValues extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.routing.v2.RouteMatrixElement.LocalizedValues)
+      LocalizedValuesOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use LocalizedValues.newBuilder() to construct.
+    private LocalizedValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private LocalizedValues() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new LocalizedValues();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.routing.v2.RoutesServiceProto
+          .internal_static_google_maps_routing_v2_RouteMatrixElement_LocalizedValues_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.routing.v2.RoutesServiceProto
+          .internal_static_google_maps_routing_v2_RouteMatrixElement_LocalizedValues_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.class,
+              com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.Builder.class);
+    }
+
+    public static final int DISTANCE_FIELD_NUMBER = 1;
+    private com.google.type.LocalizedText distance_;
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return Whether the distance field is set.
+     */
+    @java.lang.Override
+    public boolean hasDistance() {
+      return distance_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return The distance.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getDistance() {
+      return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder() {
+      return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+    }
+
+    public static final int DURATION_FIELD_NUMBER = 2;
+    private com.google.type.LocalizedText duration_;
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form taking traffic conditions into
+     * consideration. Note: If traffic information was not requested, this value
+     * is the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    @java.lang.Override
+    public boolean hasDuration() {
+      return duration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form taking traffic conditions into
+     * consideration. Note: If traffic information was not requested, this value
+     * is the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return The duration.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getDuration() {
+      return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form taking traffic conditions into
+     * consideration. Note: If traffic information was not requested, this value
+     * is the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getDurationOrBuilder() {
+      return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+    }
+
+    public static final int STATIC_DURATION_FIELD_NUMBER = 3;
+    private com.google.type.LocalizedText staticDuration_;
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form without taking traffic conditions into
+     * consideration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return Whether the staticDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasStaticDuration() {
+      return staticDuration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form without taking traffic conditions into
+     * consideration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return The staticDuration.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getStaticDuration() {
+      return staticDuration_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : staticDuration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration represented in text form without taking traffic conditions into
+     * consideration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder() {
+      return staticDuration_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : staticDuration_;
+    }
+
+    public static final int TRANSIT_FARE_FIELD_NUMBER = 4;
+    private com.google.type.LocalizedText transitFare_;
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     *
+     * @return Whether the transitFare field is set.
+     */
+    @java.lang.Override
+    public boolean hasTransitFare() {
+      return transitFare_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     *
+     * @return The transitFare.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getTransitFare() {
+      return transitFare_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : transitFare_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getTransitFareOrBuilder() {
+      return transitFare_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : transitFare_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (distance_ != null) {
+        output.writeMessage(1, getDistance());
+      }
+      if (duration_ != null) {
+        output.writeMessage(2, getDuration());
+      }
+      if (staticDuration_ != null) {
+        output.writeMessage(3, getStaticDuration());
+      }
+      if (transitFare_ != null) {
+        output.writeMessage(4, getTransitFare());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (distance_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDistance());
+      }
+      if (duration_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDuration());
+      }
+      if (staticDuration_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStaticDuration());
+      }
+      if (transitFare_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTransitFare());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues)) {
+        return super.equals(obj);
+      }
+      com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues other =
+          (com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues) obj;
+
+      if (hasDistance() != other.hasDistance()) return false;
+      if (hasDistance()) {
+        if (!getDistance().equals(other.getDistance())) return false;
+      }
+      if (hasDuration() != other.hasDuration()) return false;
+      if (hasDuration()) {
+        if (!getDuration().equals(other.getDuration())) return false;
+      }
+      if (hasStaticDuration() != other.hasStaticDuration()) return false;
+      if (hasStaticDuration()) {
+        if (!getStaticDuration().equals(other.getStaticDuration())) return false;
+      }
+      if (hasTransitFare() != other.hasTransitFare()) return false;
+      if (hasTransitFare()) {
+        if (!getTransitFare().equals(other.getTransitFare())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDistance()) {
+        hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getDistance().hashCode();
+      }
+      if (hasDuration()) {
+        hash = (37 * hash) + DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getDuration().hashCode();
+      }
+      if (hasStaticDuration()) {
+        hash = (37 * hash) + STATIC_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getStaticDuration().hashCode();
+      }
+      if (hasTransitFare()) {
+        hash = (37 * hash) + TRANSIT_FARE_FIELD_NUMBER;
+        hash = (53 * hash) + getTransitFare().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of certain properties.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.routing.v2.RouteMatrixElement.LocalizedValues}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.routing.v2.RouteMatrixElement.LocalizedValues)
+        com.google.maps.routing.v2.RouteMatrixElement.LocalizedValuesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.routing.v2.RoutesServiceProto
+            .internal_static_google_maps_routing_v2_RouteMatrixElement_LocalizedValues_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.routing.v2.RoutesServiceProto
+            .internal_static_google_maps_routing_v2_RouteMatrixElement_LocalizedValues_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.class,
+                com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.Builder.class);
+      }
+
+      // Construct using com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        distance_ = null;
+        if (distanceBuilder_ != null) {
+          distanceBuilder_.dispose();
+          distanceBuilder_ = null;
+        }
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
+          durationBuilder_ = null;
+        }
+        staticDuration_ = null;
+        if (staticDurationBuilder_ != null) {
+          staticDurationBuilder_.dispose();
+          staticDurationBuilder_ = null;
+        }
+        transitFare_ = null;
+        if (transitFareBuilder_ != null) {
+          transitFareBuilder_.dispose();
+          transitFareBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.routing.v2.RoutesServiceProto
+            .internal_static_google_maps_routing_v2_RouteMatrixElement_LocalizedValues_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues
+          getDefaultInstanceForType() {
+        return com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues build() {
+        com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues buildPartial() {
+        com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues result =
+            new com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.distance_ = distanceBuilder_ == null ? distance_ : distanceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.staticDuration_ =
+              staticDurationBuilder_ == null ? staticDuration_ : staticDurationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.transitFare_ =
+              transitFareBuilder_ == null ? transitFare_ : transitFareBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues) {
+          return mergeFrom((com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues other) {
+        if (other
+            == com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.getDefaultInstance())
+          return this;
+        if (other.hasDistance()) {
+          mergeDistance(other.getDistance());
+        }
+        if (other.hasDuration()) {
+          mergeDuration(other.getDuration());
+        }
+        if (other.hasStaticDuration()) {
+          mergeStaticDuration(other.getStaticDuration());
+        }
+        if (other.hasTransitFare()) {
+          mergeTransitFare(other.getTransitFare());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getDistanceFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getStaticDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getTransitFareFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.type.LocalizedText distance_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          distanceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       *
+       * @return Whether the distance field is set.
+       */
+      public boolean hasDistance() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       *
+       * @return The distance.
+       */
+      public com.google.type.LocalizedText getDistance() {
+        if (distanceBuilder_ == null) {
+          return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+        } else {
+          return distanceBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder setDistance(com.google.type.LocalizedText value) {
+        if (distanceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          distance_ = value;
+        } else {
+          distanceBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder setDistance(com.google.type.LocalizedText.Builder builderForValue) {
+        if (distanceBuilder_ == null) {
+          distance_ = builderForValue.build();
+        } else {
+          distanceBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder mergeDistance(com.google.type.LocalizedText value) {
+        if (distanceBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && distance_ != null
+              && distance_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getDistanceBuilder().mergeFrom(value);
+          } else {
+            distance_ = value;
+          }
+        } else {
+          distanceBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder clearDistance() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        distance_ = null;
+        if (distanceBuilder_ != null) {
+          distanceBuilder_.dispose();
+          distanceBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public com.google.type.LocalizedText.Builder getDistanceBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getDistanceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder() {
+        if (distanceBuilder_ != null) {
+          return distanceBuilder_.getMessageOrBuilder();
+        } else {
+          return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getDistanceFieldBuilder() {
+        if (distanceBuilder_ == null) {
+          distanceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getDistance(), getParentForChildren(), isClean());
+          distance_ = null;
+        }
+        return distanceBuilder_;
+      }
+
+      private com.google.type.LocalizedText duration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          durationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form taking traffic conditions into
+       * consideration. Note: If traffic information was not requested, this value
+       * is the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       *
+       * @return Whether the duration field is set.
+       */
+      public boolean hasDuration() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form taking traffic conditions into
+       * consideration. Note: If traffic information was not requested, this value
+       * is the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       *
+       * @return The duration.
+       */
+      public com.google.type.LocalizedText getDuration() {
+        if (durationBuilder_ == null) {
+          return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+        } else {
+          return durationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form taking traffic conditions into
+       * consideration. Note: If traffic information was not requested, this value
+       * is the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder setDuration(com.google.type.LocalizedText value) {
+        if (durationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          duration_ = value;
+        } else {
+          durationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form taking traffic conditions into
+       * consideration. Note: If traffic information was not requested, this value
+       * is the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder setDuration(com.google.type.LocalizedText.Builder builderForValue) {
+        if (durationBuilder_ == null) {
+          duration_ = builderForValue.build();
+        } else {
+          durationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form taking traffic conditions into
+       * consideration. Note: If traffic information was not requested, this value
+       * is the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder mergeDuration(com.google.type.LocalizedText value) {
+        if (durationBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && duration_ != null
+              && duration_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getDurationBuilder().mergeFrom(value);
+          } else {
+            duration_ = value;
+          }
+        } else {
+          durationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form taking traffic conditions into
+       * consideration. Note: If traffic information was not requested, this value
+       * is the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder clearDuration() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
+          durationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form taking traffic conditions into
+       * consideration. Note: If traffic information was not requested, this value
+       * is the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public com.google.type.LocalizedText.Builder getDurationBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form taking traffic conditions into
+       * consideration. Note: If traffic information was not requested, this value
+       * is the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getDurationOrBuilder() {
+        if (durationBuilder_ != null) {
+          return durationBuilder_.getMessageOrBuilder();
+        } else {
+          return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form taking traffic conditions into
+       * consideration. Note: If traffic information was not requested, this value
+       * is the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getDurationFieldBuilder() {
+        if (durationBuilder_ == null) {
+          durationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getDuration(), getParentForChildren(), isClean());
+          duration_ = null;
+        }
+        return durationBuilder_;
+      }
+
+      private com.google.type.LocalizedText staticDuration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          staticDurationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form without taking traffic conditions into
+       * consideration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       *
+       * @return Whether the staticDuration field is set.
+       */
+      public boolean hasStaticDuration() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form without taking traffic conditions into
+       * consideration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       *
+       * @return The staticDuration.
+       */
+      public com.google.type.LocalizedText getStaticDuration() {
+        if (staticDurationBuilder_ == null) {
+          return staticDuration_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : staticDuration_;
+        } else {
+          return staticDurationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form without taking traffic conditions into
+       * consideration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder setStaticDuration(com.google.type.LocalizedText value) {
+        if (staticDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          staticDuration_ = value;
+        } else {
+          staticDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form without taking traffic conditions into
+       * consideration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder setStaticDuration(com.google.type.LocalizedText.Builder builderForValue) {
+        if (staticDurationBuilder_ == null) {
+          staticDuration_ = builderForValue.build();
+        } else {
+          staticDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form without taking traffic conditions into
+       * consideration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder mergeStaticDuration(com.google.type.LocalizedText value) {
+        if (staticDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && staticDuration_ != null
+              && staticDuration_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getStaticDurationBuilder().mergeFrom(value);
+          } else {
+            staticDuration_ = value;
+          }
+        } else {
+          staticDurationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form without taking traffic conditions into
+       * consideration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder clearStaticDuration() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        staticDuration_ = null;
+        if (staticDurationBuilder_ != null) {
+          staticDurationBuilder_.dispose();
+          staticDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form without taking traffic conditions into
+       * consideration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public com.google.type.LocalizedText.Builder getStaticDurationBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getStaticDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form without taking traffic conditions into
+       * consideration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder() {
+        if (staticDurationBuilder_ != null) {
+          return staticDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return staticDuration_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : staticDuration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration represented in text form without taking traffic conditions into
+       * consideration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getStaticDurationFieldBuilder() {
+        if (staticDurationBuilder_ == null) {
+          staticDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getStaticDuration(), getParentForChildren(), isClean());
+          staticDuration_ = null;
+        }
+        return staticDurationBuilder_;
+      }
+
+      private com.google.type.LocalizedText transitFare_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          transitFareBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       *
+       * @return Whether the transitFare field is set.
+       */
+      public boolean hasTransitFare() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       *
+       * @return The transitFare.
+       */
+      public com.google.type.LocalizedText getTransitFare() {
+        if (transitFareBuilder_ == null) {
+          return transitFare_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : transitFare_;
+        } else {
+          return transitFareBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public Builder setTransitFare(com.google.type.LocalizedText value) {
+        if (transitFareBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transitFare_ = value;
+        } else {
+          transitFareBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public Builder setTransitFare(com.google.type.LocalizedText.Builder builderForValue) {
+        if (transitFareBuilder_ == null) {
+          transitFare_ = builderForValue.build();
+        } else {
+          transitFareBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public Builder mergeTransitFare(com.google.type.LocalizedText value) {
+        if (transitFareBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && transitFare_ != null
+              && transitFare_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getTransitFareBuilder().mergeFrom(value);
+          } else {
+            transitFare_ = value;
+          }
+        } else {
+          transitFareBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public Builder clearTransitFare() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        transitFare_ = null;
+        if (transitFareBuilder_ != null) {
+          transitFareBuilder_.dispose();
+          transitFareBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public com.google.type.LocalizedText.Builder getTransitFareBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getTransitFareFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getTransitFareOrBuilder() {
+        if (transitFareBuilder_ != null) {
+          return transitFareBuilder_.getMessageOrBuilder();
+        } else {
+          return transitFare_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : transitFare_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getTransitFareFieldBuilder() {
+        if (transitFareBuilder_ == null) {
+          transitFareBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getTransitFare(), getParentForChildren(), isClean());
+          transitFare_ = null;
+        }
+        return transitFareBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.routing.v2.RouteMatrixElement.LocalizedValues)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.routing.v2.RouteMatrixElement.LocalizedValues)
+    private static final com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues();
+    }
+
+    public static com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LocalizedValues> PARSER =
+        new com.google.protobuf.AbstractParser<LocalizedValues>() {
+          @java.lang.Override
+          public LocalizedValues parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<LocalizedValues> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LocalizedValues> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -465,6 +2129,57 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
         : fallbackInfo_;
   }
 
+  public static final int LOCALIZED_VALUES_FIELD_NUMBER = 10;
+  private com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localizedValues_;
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteMatrixElement`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;</code>
+   *
+   * @return Whether the localizedValues field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalizedValues() {
+    return localizedValues_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteMatrixElement`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;</code>
+   *
+   * @return The localizedValues.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues getLocalizedValues() {
+    return localizedValues_ == null
+        ? com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.getDefaultInstance()
+        : localizedValues_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteMatrixElement`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.RouteMatrixElement.LocalizedValuesOrBuilder
+      getLocalizedValuesOrBuilder() {
+    return localizedValues_ == null
+        ? com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.getDefaultInstance()
+        : localizedValues_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -509,6 +2224,9 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
             .getNumber()) {
       output.writeEnum(9, condition_);
     }
+    if (localizedValues_ != null) {
+      output.writeMessage(10, getLocalizedValues());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -547,6 +2265,9 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
             .ROUTE_MATRIX_ELEMENT_CONDITION_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, condition_);
+    }
+    if (localizedValues_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getLocalizedValues());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -594,6 +2315,10 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
     if (hasFallbackInfo()) {
       if (!getFallbackInfo().equals(other.getFallbackInfo())) return false;
     }
+    if (hasLocalizedValues() != other.hasLocalizedValues()) return false;
+    if (hasLocalizedValues()) {
+      if (!getLocalizedValues().equals(other.getLocalizedValues())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -636,6 +2361,10 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
     if (hasFallbackInfo()) {
       hash = (37 * hash) + FALLBACK_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getFallbackInfo().hashCode();
+    }
+    if (hasLocalizedValues()) {
+      hash = (37 * hash) + LOCALIZED_VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalizedValues().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -741,7 +2470,7 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Encapsulates route information computed for an origin/destination pair in the
+   * Contains route information computed for an origin/destination pair in the
    * ComputeRouteMatrix API. This proto can be streamed to the client.
    * </pre>
    *
@@ -805,6 +2534,11 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
       if (fallbackInfoBuilder_ != null) {
         fallbackInfoBuilder_.dispose();
         fallbackInfoBuilder_ = null;
+      }
+      localizedValues_ = null;
+      if (localizedValuesBuilder_ != null) {
+        localizedValuesBuilder_.dispose();
+        localizedValuesBuilder_ = null;
       }
       return this;
     }
@@ -874,6 +2608,10 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.fallbackInfo_ =
             fallbackInfoBuilder_ == null ? fallbackInfo_ : fallbackInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.localizedValues_ =
+            localizedValuesBuilder_ == null ? localizedValues_ : localizedValuesBuilder_.build();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -949,6 +2687,9 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasFallbackInfo()) {
         mergeFallbackInfo(other.getFallbackInfo());
+      }
+      if (other.hasLocalizedValues()) {
+        mergeLocalizedValues(other.getLocalizedValues());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1030,6 +2771,12 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000008;
                 break;
               } // case 72
+            case 82:
+              {
+                input.readMessage(getLocalizedValuesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2332,6 +4079,205 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
         fallbackInfo_ = null;
       }
       return fallbackInfoBuilder_;
+    }
+
+    private com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localizedValues_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues,
+            com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.Builder,
+            com.google.maps.routing.v2.RouteMatrixElement.LocalizedValuesOrBuilder>
+        localizedValuesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteMatrixElement`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;
+     * </code>
+     *
+     * @return Whether the localizedValues field is set.
+     */
+    public boolean hasLocalizedValues() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteMatrixElement`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;
+     * </code>
+     *
+     * @return The localizedValues.
+     */
+    public com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues getLocalizedValues() {
+      if (localizedValuesBuilder_ == null) {
+        return localizedValues_ == null
+            ? com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.getDefaultInstance()
+            : localizedValues_;
+      } else {
+        return localizedValuesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteMatrixElement`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;
+     * </code>
+     */
+    public Builder setLocalizedValues(
+        com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues value) {
+      if (localizedValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        localizedValues_ = value;
+      } else {
+        localizedValuesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteMatrixElement`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;
+     * </code>
+     */
+    public Builder setLocalizedValues(
+        com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.Builder builderForValue) {
+      if (localizedValuesBuilder_ == null) {
+        localizedValues_ = builderForValue.build();
+      } else {
+        localizedValuesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteMatrixElement`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;
+     * </code>
+     */
+    public Builder mergeLocalizedValues(
+        com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues value) {
+      if (localizedValuesBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && localizedValues_ != null
+            && localizedValues_
+                != com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues
+                    .getDefaultInstance()) {
+          getLocalizedValuesBuilder().mergeFrom(value);
+        } else {
+          localizedValues_ = value;
+        }
+      } else {
+        localizedValuesBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteMatrixElement`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;
+     * </code>
+     */
+    public Builder clearLocalizedValues() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      localizedValues_ = null;
+      if (localizedValuesBuilder_ != null) {
+        localizedValuesBuilder_.dispose();
+        localizedValuesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteMatrixElement`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;
+     * </code>
+     */
+    public com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.Builder
+        getLocalizedValuesBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getLocalizedValuesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteMatrixElement`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;
+     * </code>
+     */
+    public com.google.maps.routing.v2.RouteMatrixElement.LocalizedValuesOrBuilder
+        getLocalizedValuesOrBuilder() {
+      if (localizedValuesBuilder_ != null) {
+        return localizedValuesBuilder_.getMessageOrBuilder();
+      } else {
+        return localizedValues_ == null
+            ? com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.getDefaultInstance()
+            : localizedValues_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `RouteMatrixElement`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues,
+            com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.Builder,
+            com.google.maps.routing.v2.RouteMatrixElement.LocalizedValuesOrBuilder>
+        getLocalizedValuesFieldBuilder() {
+      if (localizedValuesBuilder_ == null) {
+        localizedValuesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues,
+                com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues.Builder,
+                com.google.maps.routing.v2.RouteMatrixElement.LocalizedValuesOrBuilder>(
+                getLocalizedValues(), getParentForChildren(), isClean());
+        localizedValues_ = null;
+      }
+      return localizedValuesBuilder_;
     }
 
     @java.lang.Override

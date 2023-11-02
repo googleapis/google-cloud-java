@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -152,7 +152,7 @@ public enum DatabaseVersion implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.alloydb.v1.ResourcesProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.cloud.alloydb.v1.ResourcesProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final DatabaseVersion[] VALUES = values();

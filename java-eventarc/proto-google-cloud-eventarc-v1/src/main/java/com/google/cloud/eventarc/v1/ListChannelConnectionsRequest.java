@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListChannelConnectionsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,6 +125,7 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * The maximum number of channel connections to return on each page.
+   *
    * Note: The service may send fewer responses.
    * </pre>
    *
@@ -152,6 +148,7 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
    * <pre>
    * The page token; provide the value from the `next_page_token` field in a
    * previous `ListChannelConnections` call to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListChannelConnetions`
    * match the call that provided the page token.
    * </pre>
@@ -178,6 +175,7 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
    * <pre>
    * The page token; provide the value from the `next_page_token` field in a
    * previous `ListChannelConnections` call to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListChannelConnetions`
    * match the call that provided the page token.
    * </pre>
@@ -710,6 +708,7 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * The maximum number of channel connections to return on each page.
+     *
      * Note: The service may send fewer responses.
      * </pre>
      *
@@ -726,6 +725,7 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * The maximum number of channel connections to return on each page.
+     *
      * Note: The service may send fewer responses.
      * </pre>
      *
@@ -746,6 +746,7 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * The maximum number of channel connections to return on each page.
+     *
      * Note: The service may send fewer responses.
      * </pre>
      *
@@ -767,6 +768,7 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListChannelConnections` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListChannelConnetions`
      * match the call that provided the page token.
      * </pre>
@@ -792,6 +794,7 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListChannelConnections` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListChannelConnetions`
      * match the call that provided the page token.
      * </pre>
@@ -817,6 +820,7 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListChannelConnections` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListChannelConnetions`
      * match the call that provided the page token.
      * </pre>
@@ -841,6 +845,7 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListChannelConnections` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListChannelConnetions`
      * match the call that provided the page token.
      * </pre>
@@ -861,6 +866,7 @@ public final class ListChannelConnectionsRequest extends com.google.protobuf.Gen
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListChannelConnections` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListChannelConnetions`
      * match the call that provided the page token.
      * </pre>

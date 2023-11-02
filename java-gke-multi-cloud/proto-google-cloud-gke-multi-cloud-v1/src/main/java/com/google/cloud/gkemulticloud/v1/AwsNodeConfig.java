@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,18 +42,13 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     taints_ = java.util.Collections.emptyList();
     iamInstanceProfile_ = "";
     imageType_ = "";
-    securityGroupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    securityGroupIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AwsNodeConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -93,6 +88,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The AWS instance type.
+   *
    * When unspecified, it uses a default based on the node pool's version.
    * </pre>
    *
@@ -117,6 +113,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The AWS instance type.
+   *
    * When unspecified, it uses a default based on the node pool's version.
    * </pre>
    *
@@ -146,6 +143,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Template for the root volume provisioned for node pool nodes.
    * Volumes will be provisioned in the availability zone assigned
    * to the node pool subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -166,6 +164,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Template for the root volume provisioned for node pool nodes.
    * Volumes will be provisioned in the availability zone assigned
    * to the node pool subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -188,6 +187,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Template for the root volume provisioned for node pool nodes.
    * Volumes will be provisioned in the availability zone assigned
    * to the node pool subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -571,6 +571,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The OS image type to use on node pool instances.
    * Can have a value of `ubuntu`, or `windows` if the cluster enables
    * the Windows node pool preview feature.
+   *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
    *
@@ -597,6 +598,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The OS image type to use on node pool instances.
    * Can have a value of `ubuntu`, or `windows` if the cluster enables
    * the Windows node pool preview feature.
+   *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
    *
@@ -676,7 +678,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int SECURITY_GROUP_IDS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList securityGroupIds_;
+  private com.google.protobuf.LazyStringArrayList securityGroupIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -926,6 +929,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Configuration related to CloudWatch metrics collection on the
    * Auto Scaling group of the node pool.
+   *
    * When unspecified, metrics collection is disabled.
    * </pre>
    *
@@ -945,6 +949,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Configuration related to CloudWatch metrics collection on the
    * Auto Scaling group of the node pool.
+   *
    * When unspecified, metrics collection is disabled.
    * </pre>
    *
@@ -968,6 +973,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Configuration related to CloudWatch metrics collection on the
    * Auto Scaling group of the node pool.
+   *
    * When unspecified, metrics collection is disabled.
    * </pre>
    *
@@ -1394,8 +1400,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         sshConfigBuilder_.dispose();
         sshConfigBuilder_ = null;
       }
-      securityGroupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      securityGroupIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       proxyConfig_ = null;
       if (proxyConfigBuilder_ != null) {
         proxyConfigBuilder_.dispose();
@@ -1462,11 +1467,6 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.taints_ = taintsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        securityGroupIds_ = securityGroupIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.securityGroupIds_ = securityGroupIds_;
     }
 
     private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsNodeConfig result) {
@@ -1493,6 +1493,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.sshConfig_ = sshConfigBuilder_ == null ? sshConfig_ : sshConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        securityGroupIds_.makeImmutable();
+        result.securityGroupIds_ = securityGroupIds_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.proxyConfig_ =
@@ -1617,7 +1621,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.securityGroupIds_.isEmpty()) {
         if (securityGroupIds_.isEmpty()) {
           securityGroupIds_ = other.securityGroupIds_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureSecurityGroupIdsIsMutable();
           securityGroupIds_.addAll(other.securityGroupIds_);
@@ -1785,6 +1789,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AWS instance type.
+     *
      * When unspecified, it uses a default based on the node pool's version.
      * </pre>
      *
@@ -1808,6 +1813,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AWS instance type.
+     *
      * When unspecified, it uses a default based on the node pool's version.
      * </pre>
      *
@@ -1831,6 +1837,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AWS instance type.
+     *
      * When unspecified, it uses a default based on the node pool's version.
      * </pre>
      *
@@ -1853,6 +1860,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AWS instance type.
+     *
      * When unspecified, it uses a default based on the node pool's version.
      * </pre>
      *
@@ -1871,6 +1879,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The AWS instance type.
+     *
      * When unspecified, it uses a default based on the node pool's version.
      * </pre>
      *
@@ -1903,6 +1912,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Template for the root volume provisioned for node pool nodes.
      * Volumes will be provisioned in the availability zone assigned
      * to the node pool subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -1922,6 +1932,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Template for the root volume provisioned for node pool nodes.
      * Volumes will be provisioned in the availability zone assigned
      * to the node pool subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -1947,6 +1958,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Template for the root volume provisioned for node pool nodes.
      * Volumes will be provisioned in the availability zone assigned
      * to the node pool subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -1974,6 +1986,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Template for the root volume provisioned for node pool nodes.
      * Volumes will be provisioned in the availability zone assigned
      * to the node pool subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -1999,6 +2012,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Template for the root volume provisioned for node pool nodes.
      * Volumes will be provisioned in the availability zone assigned
      * to the node pool subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2030,6 +2044,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Template for the root volume provisioned for node pool nodes.
      * Volumes will be provisioned in the availability zone assigned
      * to the node pool subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2054,6 +2069,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Template for the root volume provisioned for node pool nodes.
      * Volumes will be provisioned in the availability zone assigned
      * to the node pool subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2073,6 +2089,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Template for the root volume provisioned for node pool nodes.
      * Volumes will be provisioned in the availability zone assigned
      * to the node pool subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2096,6 +2113,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Template for the root volume provisioned for node pool nodes.
      * Volumes will be provisioned in the availability zone assigned
      * to the node pool subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2985,6 +3003,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The OS image type to use on node pool instances.
      * Can have a value of `ubuntu`, or `windows` if the cluster enables
      * the Windows node pool preview feature.
+     *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
      *
@@ -3010,6 +3029,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The OS image type to use on node pool instances.
      * Can have a value of `ubuntu`, or `windows` if the cluster enables
      * the Windows node pool preview feature.
+     *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
      *
@@ -3035,6 +3055,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The OS image type to use on node pool instances.
      * Can have a value of `ubuntu`, or `windows` if the cluster enables
      * the Windows node pool preview feature.
+     *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
      *
@@ -3059,6 +3080,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The OS image type to use on node pool instances.
      * Can have a value of `ubuntu`, or `windows` if the cluster enables
      * the Windows node pool preview feature.
+     *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
      *
@@ -3079,6 +3101,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The OS image type to use on node pool instances.
      * Can have a value of `ubuntu`, or `windows` if the cluster enables
      * the Windows node pool preview feature.
+     *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
      *
@@ -3300,14 +3323,14 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       return sshConfigBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList securityGroupIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList securityGroupIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSecurityGroupIdsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!securityGroupIds_.isModifiable()) {
         securityGroupIds_ = new com.google.protobuf.LazyStringArrayList(securityGroupIds_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -3324,7 +3347,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the securityGroupIds.
      */
     public com.google.protobuf.ProtocolStringList getSecurityGroupIdsList() {
-      return securityGroupIds_.getUnmodifiableView();
+      securityGroupIds_.makeImmutable();
+      return securityGroupIds_;
     }
     /**
      *
@@ -3401,6 +3425,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSecurityGroupIdsIsMutable();
       securityGroupIds_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3425,6 +3450,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSecurityGroupIdsIsMutable();
       securityGroupIds_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3446,6 +3472,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSecurityGroupIds(java.lang.Iterable<java.lang.String> values) {
       ensureSecurityGroupIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, securityGroupIds_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3464,8 +3491,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecurityGroupIds() {
-      securityGroupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      securityGroupIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -3491,6 +3519,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSecurityGroupIdsIsMutable();
       securityGroupIds_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4134,6 +4163,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Configuration related to CloudWatch metrics collection on the
      * Auto Scaling group of the node pool.
+     *
      * When unspecified, metrics collection is disabled.
      * </pre>
      *
@@ -4152,6 +4182,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Configuration related to CloudWatch metrics collection on the
      * Auto Scaling group of the node pool.
+     *
      * When unspecified, metrics collection is disabled.
      * </pre>
      *
@@ -4178,6 +4209,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Configuration related to CloudWatch metrics collection on the
      * Auto Scaling group of the node pool.
+     *
      * When unspecified, metrics collection is disabled.
      * </pre>
      *
@@ -4205,6 +4237,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Configuration related to CloudWatch metrics collection on the
      * Auto Scaling group of the node pool.
+     *
      * When unspecified, metrics collection is disabled.
      * </pre>
      *
@@ -4230,6 +4263,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Configuration related to CloudWatch metrics collection on the
      * Auto Scaling group of the node pool.
+     *
      * When unspecified, metrics collection is disabled.
      * </pre>
      *
@@ -4262,6 +4296,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Configuration related to CloudWatch metrics collection on the
      * Auto Scaling group of the node pool.
+     *
      * When unspecified, metrics collection is disabled.
      * </pre>
      *
@@ -4285,6 +4320,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Configuration related to CloudWatch metrics collection on the
      * Auto Scaling group of the node pool.
+     *
      * When unspecified, metrics collection is disabled.
      * </pre>
      *
@@ -4304,6 +4340,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Configuration related to CloudWatch metrics collection on the
      * Auto Scaling group of the node pool.
+     *
      * When unspecified, metrics collection is disabled.
      * </pre>
      *
@@ -4328,6 +4365,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Configuration related to CloudWatch metrics collection on the
      * Auto Scaling group of the node pool.
+     *
      * When unspecified, metrics collection is disabled.
      * </pre>
      *

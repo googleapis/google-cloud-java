@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,11 @@ public interface CreateInspectTemplateRequestOrBuilder
    *
    * <pre>
    * Required. Parent resource name.
+   *
    * The format of this value varies depending on the scope of the request
    * (project or organization) and whether you have [specified a processing
    * location](https://cloud.google.com/dlp/docs/specifying-location):
+   *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -39,9 +41,11 @@ public interface CreateInspectTemplateRequestOrBuilder
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
+   *
    *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *
@@ -57,9 +61,11 @@ public interface CreateInspectTemplateRequestOrBuilder
    *
    * <pre>
    * Required. Parent resource name.
+   *
    * The format of this value varies depending on the scope of the request
    * (project or organization) and whether you have [specified a processing
    * location](https://cloud.google.com/dlp/docs/specifying-location):
+   *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -68,9 +74,11 @@ public interface CreateInspectTemplateRequestOrBuilder
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
    *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
+   *
    *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *

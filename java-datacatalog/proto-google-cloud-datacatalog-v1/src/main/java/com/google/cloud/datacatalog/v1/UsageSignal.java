@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.datacatalog.v1;
  *
  * <pre>
  * The set of all usage signals that Data Catalog stores.
+ *
  * Note: Usually, these signals are updated daily. In rare cases, an update may
  * fail but will be performed again on the next day.
  * </pre>
@@ -45,11 +46,6 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UsageSignal();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -165,6 +161,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. BigQuery usage statistics over each of the predefined time
    * ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -192,6 +189,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. BigQuery usage statistics over each of the predefined time
    * ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -210,6 +208,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. BigQuery usage statistics over each of the predefined time
    * ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -235,6 +234,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. BigQuery usage statistics over each of the predefined time
    * ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -296,6 +296,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Common usage statistics over each of the predefined time ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
    * </pre>
    *
@@ -322,6 +323,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Common usage statistics over each of the predefined time ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
    * </pre>
    *
@@ -339,6 +341,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Common usage statistics over each of the predefined time ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
    * </pre>
    *
@@ -364,6 +367,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Common usage statistics over each of the predefined time ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
    * </pre>
    *
@@ -647,6 +651,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The set of all usage signals that Data Catalog stores.
+   *
    * Note: Usually, these signals are updated daily. In rare cases, an update may
    * fail but will be performed again on the next day.
    * </pre>
@@ -1136,6 +1141,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. BigQuery usage statistics over each of the predefined time
      * ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -1163,6 +1169,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. BigQuery usage statistics over each of the predefined time
      * ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -1181,6 +1188,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. BigQuery usage statistics over each of the predefined time
      * ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -1207,6 +1215,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. BigQuery usage statistics over each of the predefined time
      * ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -1239,6 +1248,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. BigQuery usage statistics over each of the predefined time
      * ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -1266,6 +1276,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. BigQuery usage statistics over each of the predefined time
      * ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -1291,6 +1302,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. BigQuery usage statistics over each of the predefined time
      * ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -1343,6 +1355,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Common usage statistics over each of the predefined time ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
      * </pre>
      *
@@ -1369,6 +1382,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Common usage statistics over each of the predefined time ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
      * </pre>
      *
@@ -1386,6 +1400,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Common usage statistics over each of the predefined time ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
      * </pre>
      *
@@ -1411,6 +1426,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Common usage statistics over each of the predefined time ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
      * </pre>
      *
@@ -1442,6 +1458,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Common usage statistics over each of the predefined time ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
      * </pre>
      *
@@ -1468,6 +1485,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Common usage statistics over each of the predefined time ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
      * </pre>
      *
@@ -1492,6 +1510,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Common usage statistics over each of the predefined time ranges.
+     *
      * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
      * </pre>
      *

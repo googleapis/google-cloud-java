@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class TagKeysGrpc {
 
   private TagKeysGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.resourcemanager.v3.TagKeys";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.resourcemanager.v3.TagKeys";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1300,9 +1300,9 @@ public final class TagKeysGrpc {
 
   private static final class TagKeysMethodDescriptorSupplier extends TagKeysBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    TagKeysMethodDescriptorSupplier(String methodName) {
+    TagKeysMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

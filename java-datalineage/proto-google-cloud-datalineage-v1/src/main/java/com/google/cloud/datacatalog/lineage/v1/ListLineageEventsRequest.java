@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListLineageEventsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,6 +128,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * The maximum number of lineage events to return.
+   *
    * The service may return fewer events than this value.
    * If unspecified, at most 50 events are returned. The maximum value is 100;
    * values greater than 100 are cut to 100.
@@ -157,6 +153,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
    * <pre>
    * The page token received from a previous `ListLineageEvents` call. Specify
    * it to get the next page.
+   *
    * When paginating, all other parameters specified in this call must
    * match the parameters of the call that provided the page token.
    * </pre>
@@ -183,6 +180,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
    * <pre>
    * The page token received from a previous `ListLineageEvents` call. Specify
    * it to get the next page.
+   *
    * When paginating, all other parameters specified in this call must
    * match the parameters of the call that provided the page token.
    * </pre>
@@ -725,6 +723,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The maximum number of lineage events to return.
+     *
      * The service may return fewer events than this value.
      * If unspecified, at most 50 events are returned. The maximum value is 100;
      * values greater than 100 are cut to 100.
@@ -743,6 +742,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The maximum number of lineage events to return.
+     *
      * The service may return fewer events than this value.
      * If unspecified, at most 50 events are returned. The maximum value is 100;
      * values greater than 100 are cut to 100.
@@ -765,6 +765,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The maximum number of lineage events to return.
+     *
      * The service may return fewer events than this value.
      * If unspecified, at most 50 events are returned. The maximum value is 100;
      * values greater than 100 are cut to 100.
@@ -788,6 +789,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      * <pre>
      * The page token received from a previous `ListLineageEvents` call. Specify
      * it to get the next page.
+     *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
@@ -813,6 +815,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      * <pre>
      * The page token received from a previous `ListLineageEvents` call. Specify
      * it to get the next page.
+     *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
@@ -838,6 +841,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      * <pre>
      * The page token received from a previous `ListLineageEvents` call. Specify
      * it to get the next page.
+     *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
@@ -862,6 +866,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      * <pre>
      * The page token received from a previous `ListLineageEvents` call. Specify
      * it to get the next page.
+     *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
@@ -882,6 +887,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      * <pre>
      * The page token received from a previous `ListLineageEvents` call. Specify
      * it to get the next page.
+     *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>

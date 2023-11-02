@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 
 package com.google.cloud.recommender.v1beta1.stub;
 
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightTypesPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightsPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendationsPagedResponse;
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendersPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -25,6 +27,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommender.v1beta1.GetInsightRequest;
 import com.google.cloud.recommender.v1beta1.GetInsightTypeConfigRequest;
@@ -32,10 +35,14 @@ import com.google.cloud.recommender.v1beta1.GetRecommendationRequest;
 import com.google.cloud.recommender.v1beta1.GetRecommenderConfigRequest;
 import com.google.cloud.recommender.v1beta1.Insight;
 import com.google.cloud.recommender.v1beta1.InsightTypeConfig;
+import com.google.cloud.recommender.v1beta1.ListInsightTypesRequest;
+import com.google.cloud.recommender.v1beta1.ListInsightTypesResponse;
 import com.google.cloud.recommender.v1beta1.ListInsightsRequest;
 import com.google.cloud.recommender.v1beta1.ListInsightsResponse;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsResponse;
+import com.google.cloud.recommender.v1beta1.ListRecommendersRequest;
+import com.google.cloud.recommender.v1beta1.ListRecommendersResponse;
 import com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest;
@@ -44,7 +51,6 @@ import com.google.cloud.recommender.v1beta1.Recommendation;
 import com.google.cloud.recommender.v1beta1.RecommenderConfig;
 import com.google.cloud.recommender.v1beta1.UpdateInsightTypeConfigRequest;
 import com.google.cloud.recommender.v1beta1.UpdateRecommenderConfigRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -187,6 +193,28 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setResponseMarshaller(ProtoUtils.marshaller(InsightTypeConfig.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListRecommendersRequest, ListRecommendersResponse>
+      listRecommendersMethodDescriptor =
+          MethodDescriptor.<ListRecommendersRequest, ListRecommendersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.recommender.v1beta1.Recommender/ListRecommenders")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListRecommendersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListRecommendersResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListInsightTypesRequest, ListInsightTypesResponse>
+      listInsightTypesMethodDescriptor =
+          MethodDescriptor.<ListInsightTypesRequest, ListInsightTypesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.recommender.v1beta1.Recommender/ListInsightTypes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListInsightTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListInsightTypesResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable;
   private final UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse>
       listInsightsPagedCallable;
@@ -211,6 +239,14 @@ public class GrpcRecommenderStub extends RecommenderStub {
       getInsightTypeConfigCallable;
   private final UnaryCallable<UpdateInsightTypeConfigRequest, InsightTypeConfig>
       updateInsightTypeConfigCallable;
+  private final UnaryCallable<ListRecommendersRequest, ListRecommendersResponse>
+      listRecommendersCallable;
+  private final UnaryCallable<ListRecommendersRequest, ListRecommendersPagedResponse>
+      listRecommendersPagedCallable;
+  private final UnaryCallable<ListInsightTypesRequest, ListInsightTypesResponse>
+      listInsightTypesCallable;
+  private final UnaryCallable<ListInsightTypesRequest, ListInsightTypesPagedResponse>
+      listInsightTypesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -259,9 +295,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
             .setMethodDescriptor(listInsightsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetInsightRequest, Insight> getInsightTransportSettings =
@@ -269,9 +305,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
             .setMethodDescriptor(getInsightMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<MarkInsightAcceptedRequest, Insight> markInsightAcceptedTransportSettings =
@@ -279,9 +315,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
             .setMethodDescriptor(markInsightAcceptedMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListRecommendationsRequest, ListRecommendationsResponse>
@@ -290,9 +326,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(listRecommendationsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetRecommendationRequest, Recommendation> getRecommendationTransportSettings =
@@ -300,9 +336,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
             .setMethodDescriptor(getRecommendationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<MarkRecommendationClaimedRequest, Recommendation>
@@ -311,9 +347,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(markRecommendationClaimedMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<MarkRecommendationSucceededRequest, Recommendation>
@@ -322,9 +358,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(markRecommendationSucceededMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<MarkRecommendationFailedRequest, Recommendation>
@@ -333,9 +369,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(markRecommendationFailedMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetRecommenderConfigRequest, RecommenderConfig>
@@ -344,9 +380,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(getRecommenderConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateRecommenderConfigRequest, RecommenderConfig>
@@ -355,11 +391,11 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(updateRecommenderConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "recommender_config.name",
                           String.valueOf(request.getRecommenderConfig().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetInsightTypeConfigRequest, InsightTypeConfig>
@@ -368,9 +404,9 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(getInsightTypeConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
@@ -379,12 +415,22 @@ public class GrpcRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(updateInsightTypeConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "insight_type_config.name",
                           String.valueOf(request.getInsightTypeConfig().getName()));
-                      return params.build();
+                      return builder.build();
                     })
+                .build();
+    GrpcCallSettings<ListRecommendersRequest, ListRecommendersResponse>
+        listRecommendersTransportSettings =
+            GrpcCallSettings.<ListRecommendersRequest, ListRecommendersResponse>newBuilder()
+                .setMethodDescriptor(listRecommendersMethodDescriptor)
+                .build();
+    GrpcCallSettings<ListInsightTypesRequest, ListInsightTypesResponse>
+        listInsightTypesTransportSettings =
+            GrpcCallSettings.<ListInsightTypesRequest, ListInsightTypesResponse>newBuilder()
+                .setMethodDescriptor(listInsightTypesMethodDescriptor)
                 .build();
 
     this.listInsightsCallable =
@@ -451,6 +497,18 @@ public class GrpcRecommenderStub extends RecommenderStub {
             updateInsightTypeConfigTransportSettings,
             settings.updateInsightTypeConfigSettings(),
             clientContext);
+    this.listRecommendersCallable =
+        callableFactory.createUnaryCallable(
+            listRecommendersTransportSettings, settings.listRecommendersSettings(), clientContext);
+    this.listRecommendersPagedCallable =
+        callableFactory.createPagedCallable(
+            listRecommendersTransportSettings, settings.listRecommendersSettings(), clientContext);
+    this.listInsightTypesCallable =
+        callableFactory.createUnaryCallable(
+            listInsightTypesTransportSettings, settings.listInsightTypesSettings(), clientContext);
+    this.listInsightTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listInsightTypesTransportSettings, settings.listInsightTypesSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -537,6 +595,30 @@ public class GrpcRecommenderStub extends RecommenderStub {
   public UnaryCallable<UpdateInsightTypeConfigRequest, InsightTypeConfig>
       updateInsightTypeConfigCallable() {
     return updateInsightTypeConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRecommendersRequest, ListRecommendersResponse>
+      listRecommendersCallable() {
+    return listRecommendersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRecommendersRequest, ListRecommendersPagedResponse>
+      listRecommendersPagedCallable() {
+    return listRecommendersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListInsightTypesRequest, ListInsightTypesResponse>
+      listInsightTypesCallable() {
+    return listInsightTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListInsightTypesRequest, ListInsightTypesPagedResponse>
+      listInsightTypesPagedCallable() {
+    return listInsightTypesPagedCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,6 +87,7 @@ public interface SearchCatalogResultOrBuilder
    * <pre>
    * The relative resource name of the resource in URL format.
    * Examples:
+   *
    *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
    *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
    * </pre>
@@ -102,6 +103,7 @@ public interface SearchCatalogResultOrBuilder
    * <pre>
    * The relative resource name of the resource in URL format.
    * Examples:
+   *
    *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
    *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
    * </pre>
@@ -119,6 +121,7 @@ public interface SearchCatalogResultOrBuilder
    * The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Example:
+   *
    *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
    * </pre>
    *
@@ -134,6 +137,7 @@ public interface SearchCatalogResultOrBuilder
    * The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Example:
+   *
    *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
    * </pre>
    *
@@ -142,4 +146,39 @@ public interface SearchCatalogResultOrBuilder
    * @return The bytes for linkedResource.
    */
   com.google.protobuf.ByteString getLinkedResourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   *
+   * @return Whether the modifyTime field is set.
+   */
+  boolean hasModifyTime();
+  /**
+   *
+   *
+   * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   *
+   * @return The modifyTime.
+   */
+  com.google.protobuf.Timestamp getModifyTime();
+  /**
+   *
+   *
+   * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getModifyTimeOrBuilder();
 }

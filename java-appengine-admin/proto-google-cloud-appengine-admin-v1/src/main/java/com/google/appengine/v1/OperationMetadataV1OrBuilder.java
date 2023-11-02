@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface OperationMetadataV1OrBuilder
    * <pre>
    * API method that initiated this operation. Example:
    * `google.appengine.v1.Versions.CreateVersion`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface OperationMetadataV1OrBuilder
    * <pre>
    * API method that initiated this operation. Example:
    * `google.appengine.v1.Versions.CreateVersion`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -57,6 +59,7 @@ public interface OperationMetadataV1OrBuilder
    *
    * <pre>
    * Time that this operation was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -70,6 +73,7 @@ public interface OperationMetadataV1OrBuilder
    *
    * <pre>
    * Time that this operation was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -83,6 +87,7 @@ public interface OperationMetadataV1OrBuilder
    *
    * <pre>
    * Time that this operation was created.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -95,6 +100,7 @@ public interface OperationMetadataV1OrBuilder
    *
    * <pre>
    * Time that this operation completed.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -108,6 +114,7 @@ public interface OperationMetadataV1OrBuilder
    *
    * <pre>
    * Time that this operation completed.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -121,6 +128,7 @@ public interface OperationMetadataV1OrBuilder
    *
    * <pre>
    * Time that this operation completed.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -133,6 +141,7 @@ public interface OperationMetadataV1OrBuilder
    *
    * <pre>
    * User who requested this operation.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -146,6 +155,7 @@ public interface OperationMetadataV1OrBuilder
    *
    * <pre>
    * User who requested this operation.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -161,6 +171,7 @@ public interface OperationMetadataV1OrBuilder
    * <pre>
    * Name of the resource that this operation is acting on. Example:
    * `apps/myapp/services/default`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -175,6 +186,7 @@ public interface OperationMetadataV1OrBuilder
    * <pre>
    * Name of the resource that this operation is acting on. Example:
    * `apps/myapp/services/default`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -281,5 +293,5 @@ public interface OperationMetadataV1OrBuilder
   /** <code>.google.appengine.v1.CreateVersionMetadataV1 create_version_metadata = 8;</code> */
   com.google.appengine.v1.CreateVersionMetadataV1OrBuilder getCreateVersionMetadataOrBuilder();
 
-  public com.google.appengine.v1.OperationMetadataV1.MethodMetadataCase getMethodMetadataCase();
+  com.google.appengine.v1.OperationMetadataV1.MethodMetadataCase getMethodMetadataCase();
 }

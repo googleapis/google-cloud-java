@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class ListMonitoredResourceDescriptorsRequest
     return new ListMonitoredResourceDescriptorsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.MetricServiceProto
         .internal_static_google_monitoring_v3_ListMonitoredResourceDescriptorsRequest_descriptor;
@@ -81,6 +76,7 @@ public final class ListMonitoredResourceDescriptorsRequest
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -108,6 +104,7 @@ public final class ListMonitoredResourceDescriptorsRequest
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -142,6 +139,7 @@ public final class ListMonitoredResourceDescriptorsRequest
    * describing the descriptors to be returned.  The filter can reference the
    * descriptor's type and labels. For example, the following filter returns
    * only Google Compute Engine descriptors that have an `id` label:
+   *
    *     resource.type = starts_with("gce_") AND resource.label:id
    * </pre>
    *
@@ -169,6 +167,7 @@ public final class ListMonitoredResourceDescriptorsRequest
    * describing the descriptors to be returned.  The filter can reference the
    * descriptor's type and labels. For example, the following filter returns
    * only Google Compute Engine descriptors that have an `id` label:
+   *
    *     resource.type = starts_with("gce_") AND resource.label:id
    * </pre>
    *
@@ -686,6 +685,7 @@ public final class ListMonitoredResourceDescriptorsRequest
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -712,6 +712,7 @@ public final class ListMonitoredResourceDescriptorsRequest
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -738,6 +739,7 @@ public final class ListMonitoredResourceDescriptorsRequest
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -763,6 +765,7 @@ public final class ListMonitoredResourceDescriptorsRequest
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -784,6 +787,7 @@ public final class ListMonitoredResourceDescriptorsRequest
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -814,6 +818,7 @@ public final class ListMonitoredResourceDescriptorsRequest
      * describing the descriptors to be returned.  The filter can reference the
      * descriptor's type and labels. For example, the following filter returns
      * only Google Compute Engine descriptors that have an `id` label:
+     *
      *     resource.type = starts_with("gce_") AND resource.label:id
      * </pre>
      *
@@ -840,6 +845,7 @@ public final class ListMonitoredResourceDescriptorsRequest
      * describing the descriptors to be returned.  The filter can reference the
      * descriptor's type and labels. For example, the following filter returns
      * only Google Compute Engine descriptors that have an `id` label:
+     *
      *     resource.type = starts_with("gce_") AND resource.label:id
      * </pre>
      *
@@ -866,6 +872,7 @@ public final class ListMonitoredResourceDescriptorsRequest
      * describing the descriptors to be returned.  The filter can reference the
      * descriptor's type and labels. For example, the following filter returns
      * only Google Compute Engine descriptors that have an `id` label:
+     *
      *     resource.type = starts_with("gce_") AND resource.label:id
      * </pre>
      *
@@ -891,6 +898,7 @@ public final class ListMonitoredResourceDescriptorsRequest
      * describing the descriptors to be returned.  The filter can reference the
      * descriptor's type and labels. For example, the following filter returns
      * only Google Compute Engine descriptors that have an `id` label:
+     *
      *     resource.type = starts_with("gce_") AND resource.label:id
      * </pre>
      *
@@ -912,6 +920,7 @@ public final class ListMonitoredResourceDescriptorsRequest
      * describing the descriptors to be returned.  The filter can reference the
      * descriptor's type and labels. For example, the following filter returns
      * only Google Compute Engine descriptors that have an `id` label:
+     *
      *     resource.type = starts_with("gce_") AND resource.label:id
      * </pre>
      *

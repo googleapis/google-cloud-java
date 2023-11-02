@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,12 +42,15 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableMap;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest;
 import com.google.devtools.artifactregistry.v1.CreateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.CreateTagRequest;
 import com.google.devtools.artifactregistry.v1.DeletePackageRequest;
@@ -132,6 +135,7 @@ import javax.annotation.Generated;
 public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(BatchDeleteVersionsMetadata.getDescriptor())
           .add(Empty.getDescriptor())
           .add(ImportYumArtifactsResponse.getDescriptor())
           .add(ImportAptArtifactsResponse.getDescriptor())
@@ -925,6 +929,47 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<BatchDeleteVersionsRequest, Operation>
+      batchDeleteVersionsMethodDescriptor =
+          ApiMethodDescriptor.<BatchDeleteVersionsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/BatchDeleteVersions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchDeleteVersionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*/packages/*}/versions:batchDelete",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BatchDeleteVersionsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListFilesRequest, ListFilesResponse>
       listFilesMethodDescriptor =
           ApiMethodDescriptor.<ListFilesRequest, ListFilesResponse>newBuilder()
@@ -1555,6 +1600,9 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   private final UnaryCallable<DeleteVersionRequest, Operation> deleteVersionCallable;
   private final OperationCallable<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationCallable;
+  private final UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable;
+  private final OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationCallable;
   private final UnaryCallable<ListFilesRequest, ListFilesResponse> listFilesCallable;
   private final UnaryCallable<ListFilesRequest, ListFilesPagedResponse> listFilesPagedCallable;
   private final UnaryCallable<GetFileRequest, File> getFileCallable;
@@ -1639,194 +1687,431 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
             HttpJsonCallSettings.<ListDockerImagesRequest, ListDockerImagesResponse>newBuilder()
                 .setMethodDescriptor(listDockerImagesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetDockerImageRequest, DockerImage> getDockerImageTransportSettings =
         HttpJsonCallSettings.<GetDockerImageRequest, DockerImage>newBuilder()
             .setMethodDescriptor(getDockerImageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListMavenArtifactsRequest, ListMavenArtifactsResponse>
         listMavenArtifactsTransportSettings =
             HttpJsonCallSettings.<ListMavenArtifactsRequest, ListMavenArtifactsResponse>newBuilder()
                 .setMethodDescriptor(listMavenArtifactsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactTransportSettings =
         HttpJsonCallSettings.<GetMavenArtifactRequest, MavenArtifact>newBuilder()
             .setMethodDescriptor(getMavenArtifactMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNpmPackagesRequest, ListNpmPackagesResponse>
         listNpmPackagesTransportSettings =
             HttpJsonCallSettings.<ListNpmPackagesRequest, ListNpmPackagesResponse>newBuilder()
                 .setMethodDescriptor(listNpmPackagesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetNpmPackageRequest, NpmPackage> getNpmPackageTransportSettings =
         HttpJsonCallSettings.<GetNpmPackageRequest, NpmPackage>newBuilder()
             .setMethodDescriptor(getNpmPackageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListPythonPackagesRequest, ListPythonPackagesResponse>
         listPythonPackagesTransportSettings =
             HttpJsonCallSettings.<ListPythonPackagesRequest, ListPythonPackagesResponse>newBuilder()
                 .setMethodDescriptor(listPythonPackagesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetPythonPackageRequest, PythonPackage> getPythonPackageTransportSettings =
         HttpJsonCallSettings.<GetPythonPackageRequest, PythonPackage>newBuilder()
             .setMethodDescriptor(getPythonPackageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ImportAptArtifactsRequest, Operation> importAptArtifactsTransportSettings =
         HttpJsonCallSettings.<ImportAptArtifactsRequest, Operation>newBuilder()
             .setMethodDescriptor(importAptArtifactsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ImportYumArtifactsRequest, Operation> importYumArtifactsTransportSettings =
         HttpJsonCallSettings.<ImportYumArtifactsRequest, Operation>newBuilder()
             .setMethodDescriptor(importYumArtifactsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
         listRepositoriesTransportSettings =
             HttpJsonCallSettings.<ListRepositoriesRequest, ListRepositoriesResponse>newBuilder()
                 .setMethodDescriptor(listRepositoriesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         HttpJsonCallSettings.<GetRepositoryRequest, Repository>newBuilder()
             .setMethodDescriptor(getRepositoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateRepositoryRequest, Operation> createRepositoryTransportSettings =
         HttpJsonCallSettings.<CreateRepositoryRequest, Operation>newBuilder()
             .setMethodDescriptor(createRepositoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateRepositoryRequest, Repository> updateRepositoryTransportSettings =
         HttpJsonCallSettings.<UpdateRepositoryRequest, Repository>newBuilder()
             .setMethodDescriptor(updateRepositoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("repository.name", String.valueOf(request.getRepository().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteRepositoryRequest, Operation> deleteRepositoryTransportSettings =
         HttpJsonCallSettings.<DeleteRepositoryRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRepositoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListPackagesRequest, ListPackagesResponse> listPackagesTransportSettings =
         HttpJsonCallSettings.<ListPackagesRequest, ListPackagesResponse>newBuilder()
             .setMethodDescriptor(listPackagesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetPackageRequest, Package> getPackageTransportSettings =
         HttpJsonCallSettings.<GetPackageRequest, Package>newBuilder()
             .setMethodDescriptor(getPackageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeletePackageRequest, Operation> deletePackageTransportSettings =
         HttpJsonCallSettings.<DeletePackageRequest, Operation>newBuilder()
             .setMethodDescriptor(deletePackageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListVersionsRequest, ListVersionsResponse> listVersionsTransportSettings =
         HttpJsonCallSettings.<ListVersionsRequest, ListVersionsResponse>newBuilder()
             .setMethodDescriptor(listVersionsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetVersionRequest, Version> getVersionTransportSettings =
         HttpJsonCallSettings.<GetVersionRequest, Version>newBuilder()
             .setMethodDescriptor(getVersionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteVersionRequest, Operation> deleteVersionTransportSettings =
         HttpJsonCallSettings.<DeleteVersionRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteVersionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
+    HttpJsonCallSettings<BatchDeleteVersionsRequest, Operation>
+        batchDeleteVersionsTransportSettings =
+            HttpJsonCallSettings.<BatchDeleteVersionsRequest, Operation>newBuilder()
+                .setMethodDescriptor(batchDeleteVersionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListFilesRequest, ListFilesResponse> listFilesTransportSettings =
         HttpJsonCallSettings.<ListFilesRequest, ListFilesResponse>newBuilder()
             .setMethodDescriptor(listFilesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetFileRequest, File> getFileTransportSettings =
         HttpJsonCallSettings.<GetFileRequest, File>newBuilder()
             .setMethodDescriptor(getFileMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListTagsRequest, ListTagsResponse> listTagsTransportSettings =
         HttpJsonCallSettings.<ListTagsRequest, ListTagsResponse>newBuilder()
             .setMethodDescriptor(listTagsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetTagRequest, Tag> getTagTransportSettings =
         HttpJsonCallSettings.<GetTagRequest, Tag>newBuilder()
             .setMethodDescriptor(getTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateTagRequest, Tag> createTagTransportSettings =
         HttpJsonCallSettings.<CreateTagRequest, Tag>newBuilder()
             .setMethodDescriptor(createTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateTagRequest, Tag> updateTagTransportSettings =
         HttpJsonCallSettings.<UpdateTagRequest, Tag>newBuilder()
             .setMethodDescriptor(updateTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("tag.name", String.valueOf(request.getTag().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteTagRequest, Empty> deleteTagTransportSettings =
         HttpJsonCallSettings.<DeleteTagRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetProjectSettingsRequest, ProjectSettings>
         getProjectSettingsTransportSettings =
             HttpJsonCallSettings.<GetProjectSettingsRequest, ProjectSettings>newBuilder()
                 .setMethodDescriptor(getProjectSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateProjectSettingsRequest, ProjectSettings>
         updateProjectSettingsTransportSettings =
             HttpJsonCallSettings.<UpdateProjectSettingsRequest, ProjectSettings>newBuilder()
                 .setMethodDescriptor(updateProjectSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "project_settings.name",
+                          String.valueOf(request.getProjectSettings().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigTransportSettings =
         HttpJsonCallSettings.<GetVPCSCConfigRequest, VPCSCConfig>newBuilder()
             .setMethodDescriptor(getVPCSCConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigTransportSettings =
         HttpJsonCallSettings.<UpdateVPCSCConfigRequest, VPCSCConfig>newBuilder()
             .setMethodDescriptor(updateVPCSCConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "vpcsc_config.name", String.valueOf(request.getVpcscConfig().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listDockerImagesCallable =
@@ -1961,6 +2246,17 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
             settings.deleteVersionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.batchDeleteVersionsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteVersionsTransportSettings,
+            settings.batchDeleteVersionsSettings(),
+            clientContext);
+    this.batchDeleteVersionsOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteVersionsTransportSettings,
+            settings.batchDeleteVersionsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listFilesCallable =
         callableFactory.createUnaryCallable(
             listFilesTransportSettings, settings.listFilesSettings(), clientContext);
@@ -2055,6 +2351,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     methodDescriptors.add(listVersionsMethodDescriptor);
     methodDescriptors.add(getVersionMethodDescriptor);
     methodDescriptors.add(deleteVersionMethodDescriptor);
+    methodDescriptors.add(batchDeleteVersionsMethodDescriptor);
     methodDescriptors.add(listFilesMethodDescriptor);
     methodDescriptors.add(getFileMethodDescriptor);
     methodDescriptors.add(listTagsMethodDescriptor);
@@ -2263,6 +2560,17 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   public OperationCallable<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationCallable() {
     return deleteVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable() {
+    return batchDeleteVersionsCallable;
+  }
+
+  @Override
+  public OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationCallable() {
+    return batchDeleteVersionsOperationCallable;
   }
 
   @Override

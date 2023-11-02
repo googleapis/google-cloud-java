@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,11 +59,6 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     return new ServicePerimeter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
         .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeter_descriptor;
@@ -87,12 +82,14 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    * bridge. Regular Service Perimeter contains resources, access levels, and
    * restricted services. Every resource can be in at most ONE
    * regular Service Perimeter.
+   *
    * In addition to being in a regular service perimeter, a resource can also
    * be in zero or more perimeter bridges.  A perimeter bridge only contains
    * resources.  Cross project operations are permitted if all effected
    * resources share some perimeter (whether bridge or regular). Perimeter
    * Bridge does not contain access levels or services: those are governed
    * entirely by the regular perimeter that resource is in.
+   *
    * Perimeter Bridges are typically useful when building more complex toplogies
    * with many independent perimeters that need to share some data with a common
    * perimeter, but should not be able to share data among themselves.

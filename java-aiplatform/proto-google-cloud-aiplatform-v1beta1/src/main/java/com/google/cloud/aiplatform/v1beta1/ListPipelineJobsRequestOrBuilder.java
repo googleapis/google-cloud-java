@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public interface ListPipelineJobsRequestOrBuilder
    * <pre>
    * Lists the PipelineJobs that match the filter expression. The following
    * fields are supported:
+   *
    * * `pipeline_name`: Supports `=` and `!=` comparisons.
    * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
    * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
@@ -76,12 +77,16 @@ public interface ListPipelineJobsRequestOrBuilder
    * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
    * * `template_metadata.version`: Supports `=`, `!=` comparisons, and `:`
    *   wildcard.
+   *
    * Filter expressions can be combined together using logical operators
    * (`AND` &amp; `OR`).
    * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
+   *
    * The syntax to define filter expression is based on
    * https://google.aip.dev/160.
+   *
    * Examples:
+   *
    * * `create_time&gt;"2021-05-18T00:00:00Z" OR
    *   update_time&gt;"2020-05-18T00:00:00Z"` PipelineJobs created or updated
    *   after 2020-05-18 00:00:00 UTC.
@@ -100,6 +105,7 @@ public interface ListPipelineJobsRequestOrBuilder
    * <pre>
    * Lists the PipelineJobs that match the filter expression. The following
    * fields are supported:
+   *
    * * `pipeline_name`: Supports `=` and `!=` comparisons.
    * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
    * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
@@ -116,12 +122,16 @@ public interface ListPipelineJobsRequestOrBuilder
    * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
    * * `template_metadata.version`: Supports `=`, `!=` comparisons, and `:`
    *   wildcard.
+   *
    * Filter expressions can be combined together using logical operators
    * (`AND` &amp; `OR`).
    * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
+   *
    * The syntax to define filter expression is based on
    * https://google.aip.dev/160.
+   *
    * Examples:
+   *
    * * `create_time&gt;"2021-05-18T00:00:00Z" OR
    *   update_time&gt;"2020-05-18T00:00:00Z"` PipelineJobs created or updated
    *   after 2020-05-18 00:00:00 UTC.
@@ -195,6 +205,7 @@ public interface ListPipelineJobsRequestOrBuilder
    * there are multiple jobs having the same create time, order them by the end
    * time in ascending order. if order_by is not specified, it will order by
    * default order is create time in descending order. Supported fields:
+   *
    *   * `create_time`
    *   * `update_time`
    *   * `end_time`
@@ -218,6 +229,7 @@ public interface ListPipelineJobsRequestOrBuilder
    * there are multiple jobs having the same create time, order them by the end
    * time in ascending order. if order_by is not specified, it will order by
    * default order is create time in descending order. Supported fields:
+   *
    *   * `create_time`
    *   * `update_time`
    *   * `end_time`

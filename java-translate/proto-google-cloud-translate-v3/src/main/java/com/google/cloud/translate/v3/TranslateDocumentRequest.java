@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     return new TranslateDocumentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3.TranslationServiceProto
         .internal_static_google_cloud_translation_v3_TranslateDocumentRequest_descriptor;
@@ -91,11 +86,15 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Location to make a regional call.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * For global calls, use `projects/{project-number-or-id}/locations/global` or
    * `projects/{project-number-or-id}`.
+   *
    * Non-global location is required for requests using AutoML models or custom
    * glossaries.
+   *
    * Models and glossaries must be within the same region (have the same
    * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
@@ -121,11 +120,15 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Location to make a regional call.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * For global calls, use `projects/{project-number-or-id}/locations/global` or
    * `projects/{project-number-or-id}`.
+   *
    * Non-global location is required for requests using AutoML models or custom
    * glossaries.
+   *
    * Models and glossaries must be within the same region (have the same
    * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
@@ -396,11 +399,16 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. The `model` type requested for this translation.
+   *
    * The format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If not provided, the default Google model (NMT) will be used for
    * translation.
    * </pre>
@@ -426,11 +434,16 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. The `model` type requested for this translation.
+   *
    * The format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If not provided, the default Google model (NMT) will be used for
    * translation.
    * </pre>
@@ -546,10 +559,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters (Unicode
    * codepoints), can only contain lowercase letters, numeric characters,
    * underscores and dashes. International characters are allowed. Label values
    * are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -574,10 +589,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters (Unicode
    * codepoints), can only contain lowercase letters, numeric characters,
    * underscores and dashes. International characters are allowed. Label values
    * are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -593,10 +610,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters (Unicode
    * codepoints), can only contain lowercase letters, numeric characters,
    * underscores and dashes. International characters are allowed. Label values
    * are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -619,10 +638,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters (Unicode
    * codepoints), can only contain lowercase letters, numeric characters,
    * underscores and dashes. International characters are allowed. Label values
    * are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -704,8 +725,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. If true, the page limit of online native pdf translation is 300
-   * and only native pdf pages will be translated.
+   * Optional. is_translate_native_pdf_only field for external customers.
+   * If true, the page limit of online native pdf translation is 300 and only
+   * native pdf pages will be translated.
    * </pre>
    *
    * <code>bool is_translate_native_pdf_only = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -723,10 +745,10 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. If true, use the text removal to remove the shadow text on
+   * Optional. If true, use the text removal server to remove the shadow text on
    * background image for native pdf translation.
    * Shadow removal feature can only be enabled when
-   * is_translate_native_pdf_only is false
+   * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
    * </pre>
    *
    * <code>bool enable_shadow_removal_native_pdf = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -737,6 +759,24 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
   @java.lang.Override
   public boolean getEnableShadowRemovalNativePdf() {
     return enableShadowRemovalNativePdf_;
+  }
+
+  public static final int ENABLE_ROTATION_CORRECTION_FIELD_NUMBER = 13;
+  private boolean enableRotationCorrection_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, enable auto rotation correction in DVS.
+   * </pre>
+   *
+   * <code>bool enable_rotation_correction = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableRotationCorrection.
+   */
+  @java.lang.Override
+  public boolean getEnableRotationCorrection() {
+    return enableRotationCorrection_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -784,6 +824,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     }
     if (enableShadowRemovalNativePdf_ != false) {
       output.writeBool(12, enableShadowRemovalNativePdf_);
+    }
+    if (enableRotationCorrection_ != false) {
+      output.writeBool(13, enableRotationCorrection_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -836,6 +879,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(12, enableShadowRemovalNativePdf_);
     }
+    if (enableRotationCorrection_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, enableRotationCorrection_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -872,6 +918,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     if (!getCustomizedAttribution().equals(other.getCustomizedAttribution())) return false;
     if (getIsTranslateNativePdfOnly() != other.getIsTranslateNativePdfOnly()) return false;
     if (getEnableShadowRemovalNativePdf() != other.getEnableShadowRemovalNativePdf()) return false;
+    if (getEnableRotationCorrection() != other.getEnableRotationCorrection()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -914,6 +961,8 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     hash = (37 * hash) + ENABLE_SHADOW_REMOVAL_NATIVE_PDF_FIELD_NUMBER;
     hash =
         (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableShadowRemovalNativePdf());
+    hash = (37 * hash) + ENABLE_ROTATION_CORRECTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableRotationCorrection());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1097,6 +1146,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       customizedAttribution_ = "";
       isTranslateNativePdfOnly_ = false;
       enableShadowRemovalNativePdf_ = false;
+      enableRotationCorrection_ = false;
       return this;
     }
 
@@ -1173,6 +1223,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.enableShadowRemovalNativePdf_ = enableShadowRemovalNativePdf_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.enableRotationCorrection_ = enableRotationCorrection_;
       }
     }
 
@@ -1263,6 +1316,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       }
       if (other.getEnableShadowRemovalNativePdf() != false) {
         setEnableShadowRemovalNativePdf(other.getEnableShadowRemovalNativePdf());
+      }
+      if (other.getEnableRotationCorrection() != false) {
+        setEnableRotationCorrection(other.getEnableRotationCorrection());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1364,6 +1420,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000400;
                 break;
               } // case 96
+            case 104:
+              {
+                enableRotationCorrection_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1389,11 +1451,15 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Location to make a regional call.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Non-global location is required for requests using AutoML models or custom
      * glossaries.
+     *
      * Models and glossaries must be within the same region (have the same
      * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1418,11 +1484,15 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Location to make a regional call.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Non-global location is required for requests using AutoML models or custom
      * glossaries.
+     *
      * Models and glossaries must be within the same region (have the same
      * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1447,11 +1517,15 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Location to make a regional call.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Non-global location is required for requests using AutoML models or custom
      * glossaries.
+     *
      * Models and glossaries must be within the same region (have the same
      * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1475,11 +1549,15 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Location to make a regional call.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Non-global location is required for requests using AutoML models or custom
      * glossaries.
+     *
      * Models and glossaries must be within the same region (have the same
      * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1499,11 +1577,15 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Location to make a regional call.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Non-global location is required for requests using AutoML models or custom
      * glossaries.
+     *
      * Models and glossaries must be within the same region (have the same
      * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -2221,11 +2303,16 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
+     *
      * The format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If not provided, the default Google model (NMT) will be used for
      * translation.
      * </pre>
@@ -2250,11 +2337,16 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
+     *
      * The format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If not provided, the default Google model (NMT) will be used for
      * translation.
      * </pre>
@@ -2279,11 +2371,16 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
+     *
      * The format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If not provided, the default Google model (NMT) will be used for
      * translation.
      * </pre>
@@ -2307,11 +2404,16 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
+     *
      * The format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If not provided, the default Google model (NMT) will be used for
      * translation.
      * </pre>
@@ -2331,11 +2433,16 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The `model` type requested for this translation.
+     *
      * The format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If not provided, the default Google model (NMT) will be used for
      * translation.
      * </pre>
@@ -2611,10 +2718,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters (Unicode
      * codepoints), can only contain lowercase letters, numeric characters,
      * underscores and dashes. International characters are allowed. Label values
      * are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2639,10 +2748,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters (Unicode
      * codepoints), can only contain lowercase letters, numeric characters,
      * underscores and dashes. International characters are allowed. Label values
      * are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2658,10 +2769,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters (Unicode
      * codepoints), can only contain lowercase letters, numeric characters,
      * underscores and dashes. International characters are allowed. Label values
      * are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2684,10 +2797,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters (Unicode
      * codepoints), can only contain lowercase letters, numeric characters,
      * underscores and dashes. International characters are allowed. Label values
      * are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2716,10 +2831,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters (Unicode
      * codepoints), can only contain lowercase letters, numeric characters,
      * underscores and dashes. International characters are allowed. Label values
      * are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2744,10 +2861,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters (Unicode
      * codepoints), can only contain lowercase letters, numeric characters,
      * underscores and dashes. International characters are allowed. Label values
      * are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2770,10 +2889,12 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters (Unicode
      * codepoints), can only contain lowercase letters, numeric characters,
      * underscores and dashes. International characters are allowed. Label values
      * are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -2912,8 +3033,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If true, the page limit of online native pdf translation is 300
-     * and only native pdf pages will be translated.
+     * Optional. is_translate_native_pdf_only field for external customers.
+     * If true, the page limit of online native pdf translation is 300 and only
+     * native pdf pages will be translated.
      * </pre>
      *
      * <code>bool is_translate_native_pdf_only = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -2929,8 +3051,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If true, the page limit of online native pdf translation is 300
-     * and only native pdf pages will be translated.
+     * Optional. is_translate_native_pdf_only field for external customers.
+     * If true, the page limit of online native pdf translation is 300 and only
+     * native pdf pages will be translated.
      * </pre>
      *
      * <code>bool is_translate_native_pdf_only = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -2950,8 +3073,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If true, the page limit of online native pdf translation is 300
-     * and only native pdf pages will be translated.
+     * Optional. is_translate_native_pdf_only field for external customers.
+     * If true, the page limit of online native pdf translation is 300 and only
+     * native pdf pages will be translated.
      * </pre>
      *
      * <code>bool is_translate_native_pdf_only = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -2971,10 +3095,10 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If true, use the text removal to remove the shadow text on
+     * Optional. If true, use the text removal server to remove the shadow text on
      * background image for native pdf translation.
      * Shadow removal feature can only be enabled when
-     * is_translate_native_pdf_only is false
+     * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
      * </pre>
      *
      * <code>bool enable_shadow_removal_native_pdf = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -2990,10 +3114,10 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If true, use the text removal to remove the shadow text on
+     * Optional. If true, use the text removal server to remove the shadow text on
      * background image for native pdf translation.
      * Shadow removal feature can only be enabled when
-     * is_translate_native_pdf_only is false
+     * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
      * </pre>
      *
      * <code>bool enable_shadow_removal_native_pdf = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -3013,10 +3137,10 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If true, use the text removal to remove the shadow text on
+     * Optional. If true, use the text removal server to remove the shadow text on
      * background image for native pdf translation.
      * Shadow removal feature can only be enabled when
-     * is_translate_native_pdf_only is false
+     * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
      * </pre>
      *
      * <code>bool enable_shadow_removal_native_pdf = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -3027,6 +3151,59 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     public Builder clearEnableShadowRemovalNativePdf() {
       bitField0_ = (bitField0_ & ~0x00000400);
       enableShadowRemovalNativePdf_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableRotationCorrection_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, enable auto rotation correction in DVS.
+     * </pre>
+     *
+     * <code>bool enable_rotation_correction = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableRotationCorrection.
+     */
+    @java.lang.Override
+    public boolean getEnableRotationCorrection() {
+      return enableRotationCorrection_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, enable auto rotation correction in DVS.
+     * </pre>
+     *
+     * <code>bool enable_rotation_correction = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableRotationCorrection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableRotationCorrection(boolean value) {
+
+      enableRotationCorrection_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, enable auto rotation correction in DVS.
+     * </pre>
+     *
+     * <code>bool enable_rotation_correction = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableRotationCorrection() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      enableRotationCorrection_ = false;
       onChanged();
       return this;
     }

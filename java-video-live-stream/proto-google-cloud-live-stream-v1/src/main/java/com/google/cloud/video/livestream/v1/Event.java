@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Event();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -386,11 +381,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InputSwitchTask();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1061,11 +1051,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       return new AdBreakTask();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.livestream.v1.ResourcesProto
           .internal_static_google_cloud_video_livestream_v1_Event_AdBreakTask_descriptor;
@@ -1724,6 +1709,981 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface SlateTaskOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.Event.SlateTask)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of the slate. Must be greater than 0 if specified.
+     * Omit this field for a long running slate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    boolean hasDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of the slate. Must be greater than 0 if specified.
+     * Omit this field for a long running slate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     *
+     * @return The duration.
+     */
+    com.google.protobuf.Duration getDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of the slate. Must be greater than 0 if specified.
+     * Omit this field for a long running slate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Slate asset to use for the duration. If its duration is less than the
+     * duration of the SlateTask, then it will be looped. The slate must be
+     * represented in the form of:
+     * `projects/{project}/locations/{location}/assets/{assetId}`.
+     * </pre>
+     *
+     * <code>string asset = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The asset.
+     */
+    java.lang.String getAsset();
+    /**
+     *
+     *
+     * <pre>
+     * Slate asset to use for the duration. If its duration is less than the
+     * duration of the SlateTask, then it will be looped. The slate must be
+     * represented in the form of:
+     * `projects/{project}/locations/{location}/assets/{assetId}`.
+     * </pre>
+     *
+     * <code>string asset = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for asset.
+     */
+    com.google.protobuf.ByteString getAssetBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Inserts a slate.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.livestream.v1.Event.SlateTask}
+   */
+  public static final class SlateTask extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Event.SlateTask)
+      SlateTaskOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SlateTask.newBuilder() to construct.
+    private SlateTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SlateTask() {
+      asset_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SlateTask();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_SlateTask_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_SlateTask_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.livestream.v1.Event.SlateTask.class,
+              com.google.cloud.video.livestream.v1.Event.SlateTask.Builder.class);
+    }
+
+    public static final int DURATION_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration duration_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of the slate. Must be greater than 0 if specified.
+     * Omit this field for a long running slate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    @java.lang.Override
+    public boolean hasDuration() {
+      return duration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of the slate. Must be greater than 0 if specified.
+     * Omit this field for a long running slate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     *
+     * @return The duration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getDuration() {
+      return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of the slate. Must be greater than 0 if specified.
+     * Omit this field for a long running slate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+      return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+    }
+
+    public static final int ASSET_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object asset_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Slate asset to use for the duration. If its duration is less than the
+     * duration of the SlateTask, then it will be looped. The slate must be
+     * represented in the form of:
+     * `projects/{project}/locations/{location}/assets/{assetId}`.
+     * </pre>
+     *
+     * <code>string asset = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The asset.
+     */
+    @java.lang.Override
+    public java.lang.String getAsset() {
+      java.lang.Object ref = asset_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        asset_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Slate asset to use for the duration. If its duration is less than the
+     * duration of the SlateTask, then it will be looped. The slate must be
+     * represented in the form of:
+     * `projects/{project}/locations/{location}/assets/{assetId}`.
+     * </pre>
+     *
+     * <code>string asset = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for asset.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAssetBytes() {
+      java.lang.Object ref = asset_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        asset_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (duration_ != null) {
+        output.writeMessage(1, getDuration());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(asset_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, asset_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (duration_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDuration());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(asset_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, asset_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.livestream.v1.Event.SlateTask)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.livestream.v1.Event.SlateTask other =
+          (com.google.cloud.video.livestream.v1.Event.SlateTask) obj;
+
+      if (hasDuration() != other.hasDuration()) return false;
+      if (hasDuration()) {
+        if (!getDuration().equals(other.getDuration())) return false;
+      }
+      if (!getAsset().equals(other.getAsset())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDuration()) {
+        hash = (37 * hash) + DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getDuration().hashCode();
+      }
+      hash = (37 * hash) + ASSET_FIELD_NUMBER;
+      hash = (53 * hash) + getAsset().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.livestream.v1.Event.SlateTask prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a slate.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.livestream.v1.Event.SlateTask}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.livestream.v1.Event.SlateTask)
+        com.google.cloud.video.livestream.v1.Event.SlateTaskOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_SlateTask_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_SlateTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.livestream.v1.Event.SlateTask.class,
+                com.google.cloud.video.livestream.v1.Event.SlateTask.Builder.class);
+      }
+
+      // Construct using com.google.cloud.video.livestream.v1.Event.SlateTask.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
+          durationBuilder_ = null;
+        }
+        asset_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_SlateTask_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.SlateTask getDefaultInstanceForType() {
+        return com.google.cloud.video.livestream.v1.Event.SlateTask.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.SlateTask build() {
+        com.google.cloud.video.livestream.v1.Event.SlateTask result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.SlateTask buildPartial() {
+        com.google.cloud.video.livestream.v1.Event.SlateTask result =
+            new com.google.cloud.video.livestream.v1.Event.SlateTask(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.video.livestream.v1.Event.SlateTask result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.asset_ = asset_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.livestream.v1.Event.SlateTask) {
+          return mergeFrom((com.google.cloud.video.livestream.v1.Event.SlateTask) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.video.livestream.v1.Event.SlateTask other) {
+        if (other == com.google.cloud.video.livestream.v1.Event.SlateTask.getDefaultInstance())
+          return this;
+        if (other.hasDuration()) {
+          mergeDuration(other.getDuration());
+        }
+        if (!other.getAsset().isEmpty()) {
+          asset_ = other.asset_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  asset_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Duration duration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          durationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of the slate. Must be greater than 0 if specified.
+       * Omit this field for a long running slate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       *
+       * @return Whether the duration field is set.
+       */
+      public boolean hasDuration() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of the slate. Must be greater than 0 if specified.
+       * Omit this field for a long running slate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       *
+       * @return The duration.
+       */
+      public com.google.protobuf.Duration getDuration() {
+        if (durationBuilder_ == null) {
+          return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+        } else {
+          return durationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of the slate. Must be greater than 0 if specified.
+       * Omit this field for a long running slate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public Builder setDuration(com.google.protobuf.Duration value) {
+        if (durationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          duration_ = value;
+        } else {
+          durationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of the slate. Must be greater than 0 if specified.
+       * Omit this field for a long running slate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
+        if (durationBuilder_ == null) {
+          duration_ = builderForValue.build();
+        } else {
+          durationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of the slate. Must be greater than 0 if specified.
+       * Omit this field for a long running slate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public Builder mergeDuration(com.google.protobuf.Duration value) {
+        if (durationBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && duration_ != null
+              && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getDurationBuilder().mergeFrom(value);
+          } else {
+            duration_ = value;
+          }
+        } else {
+          durationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of the slate. Must be greater than 0 if specified.
+       * Omit this field for a long running slate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public Builder clearDuration() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
+          durationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of the slate. Must be greater than 0 if specified.
+       * Omit this field for a long running slate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public com.google.protobuf.Duration.Builder getDurationBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of the slate. Must be greater than 0 if specified.
+       * Omit this field for a long running slate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+        if (durationBuilder_ != null) {
+          return durationBuilder_.getMessageOrBuilder();
+        } else {
+          return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of the slate. Must be greater than 0 if specified.
+       * Omit this field for a long running slate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getDurationFieldBuilder() {
+        if (durationBuilder_ == null) {
+          durationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getDuration(), getParentForChildren(), isClean());
+          duration_ = null;
+        }
+        return durationBuilder_;
+      }
+
+      private java.lang.Object asset_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Slate asset to use for the duration. If its duration is less than the
+       * duration of the SlateTask, then it will be looped. The slate must be
+       * represented in the form of:
+       * `projects/{project}/locations/{location}/assets/{assetId}`.
+       * </pre>
+       *
+       * <code>string asset = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The asset.
+       */
+      public java.lang.String getAsset() {
+        java.lang.Object ref = asset_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          asset_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Slate asset to use for the duration. If its duration is less than the
+       * duration of the SlateTask, then it will be looped. The slate must be
+       * represented in the form of:
+       * `projects/{project}/locations/{location}/assets/{assetId}`.
+       * </pre>
+       *
+       * <code>string asset = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for asset.
+       */
+      public com.google.protobuf.ByteString getAssetBytes() {
+        java.lang.Object ref = asset_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          asset_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Slate asset to use for the duration. If its duration is less than the
+       * duration of the SlateTask, then it will be looped. The slate must be
+       * represented in the form of:
+       * `projects/{project}/locations/{location}/assets/{assetId}`.
+       * </pre>
+       *
+       * <code>string asset = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The asset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAsset(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        asset_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Slate asset to use for the duration. If its duration is less than the
+       * duration of the SlateTask, then it will be looped. The slate must be
+       * represented in the form of:
+       * `projects/{project}/locations/{location}/assets/{assetId}`.
+       * </pre>
+       *
+       * <code>string asset = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAsset() {
+        asset_ = getDefaultInstance().getAsset();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Slate asset to use for the duration. If its duration is less than the
+       * duration of the SlateTask, then it will be looped. The slate must be
+       * represented in the form of:
+       * `projects/{project}/locations/{location}/assets/{assetId}`.
+       * </pre>
+       *
+       * <code>string asset = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The bytes for asset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAssetBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        asset_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.livestream.v1.Event.SlateTask)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.livestream.v1.Event.SlateTask)
+    private static final com.google.cloud.video.livestream.v1.Event.SlateTask DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.livestream.v1.Event.SlateTask();
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.SlateTask getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SlateTask> PARSER =
+        new com.google.protobuf.AbstractParser<SlateTask>() {
+          @java.lang.Override
+          public SlateTask parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SlateTask> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SlateTask> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.SlateTask getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ReturnToProgramTaskOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.Event.ReturnToProgramTask)
@@ -1754,11 +2714,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ReturnToProgramTask();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2228,11 +3183,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MuteTask();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2937,11 +3887,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       return new UnmuteTask();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.livestream.v1.ResourcesProto
           .internal_static_google_cloud_video_livestream_v1_Event_UnmuteTask_descriptor;
@@ -3336,6 +4281,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int taskCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object task_;
 
   public enum TaskCase
@@ -3345,6 +4292,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     INPUT_SWITCH(5),
     AD_BREAK(6),
     RETURN_TO_PROGRAM(13),
+    SLATE(14),
     MUTE(15),
     UNMUTE(16),
     TASK_NOT_SET(0);
@@ -3371,6 +4319,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           return AD_BREAK;
         case 13:
           return RETURN_TO_PROGRAM;
+        case 14:
+          return SLATE;
         case 15:
           return MUTE;
         case 16:
@@ -3649,12 +4599,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Switches to another input stream.
+   * Switches to another input stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
    *
    * @return Whether the inputSwitch field is set.
    */
@@ -3666,12 +4614,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Switches to another input stream.
+   * Switches to another input stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
    *
    * @return The inputSwitch.
    */
@@ -3686,12 +4632,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Switches to another input stream.
+   * Switches to another input stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.Event.InputSwitchTaskOrBuilder
@@ -3707,12 +4651,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Inserts a new ad opportunity.
+   * Inserts a new ad opportunity.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
    *
    * @return Whether the adBreak field is set.
    */
@@ -3724,12 +4666,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Inserts a new ad opportunity.
+   * Inserts a new ad opportunity.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
    *
    * @return The adBreak.
    */
@@ -3744,12 +4684,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Inserts a new ad opportunity.
+   * Inserts a new ad opportunity.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.Event.AdBreakTaskOrBuilder getAdBreakOrBuilder() {
@@ -3764,11 +4702,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Stops any running ad break.
+   * Stops any running ad break.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
    * </code>
    *
    * @return Whether the returnToProgram field is set.
@@ -3781,11 +4718,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Stops any running ad break.
+   * Stops any running ad break.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
    * </code>
    *
    * @return The returnToProgram.
@@ -3801,11 +4737,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Stops any running ad break.
+   * Stops any running ad break.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
    * </code>
    */
   @java.lang.Override
@@ -3817,17 +4752,66 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.getDefaultInstance();
   }
 
+  public static final int SLATE_FIELD_NUMBER = 14;
+  /**
+   *
+   *
+   * <pre>
+   * Inserts a slate.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+   *
+   * @return Whether the slate field is set.
+   */
+  @java.lang.Override
+  public boolean hasSlate() {
+    return taskCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Inserts a slate.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+   *
+   * @return The slate.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.SlateTask getSlate() {
+    if (taskCase_ == 14) {
+      return (com.google.cloud.video.livestream.v1.Event.SlateTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.SlateTask.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Inserts a slate.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.SlateTaskOrBuilder getSlateOrBuilder() {
+    if (taskCase_ == 14) {
+      return (com.google.cloud.video.livestream.v1.Event.SlateTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.SlateTask.getDefaultInstance();
+  }
+
   public static final int MUTE_FIELD_NUMBER = 15;
   /**
    *
    *
    * <pre>
-   * Required. Mutes the stream.
+   * Mutes the stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
    *
    * @return Whether the mute field is set.
    */
@@ -3839,12 +4823,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Mutes the stream.
+   * Mutes the stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
    *
    * @return The mute.
    */
@@ -3859,12 +4841,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Mutes the stream.
+   * Mutes the stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.Event.MuteTaskOrBuilder getMuteOrBuilder() {
@@ -3879,12 +4859,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Unmutes the stream.
+   * Unmutes the stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
    *
    * @return Whether the unmute field is set.
    */
@@ -3896,12 +4874,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Unmutes the stream.
+   * Unmutes the stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
    *
    * @return The unmute.
    */
@@ -3916,12 +4892,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Unmutes the stream.
+   * Unmutes the stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.Event.UnmuteTaskOrBuilder getUnmuteOrBuilder() {
@@ -4156,6 +5130,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           13, (com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) task_);
     }
+    if (taskCase_ == 14) {
+      output.writeMessage(14, (com.google.cloud.video.livestream.v1.Event.SlateTask) task_);
+    }
     if (taskCase_ == 15) {
       output.writeMessage(15, (com.google.cloud.video.livestream.v1.Event.MuteTask) task_);
     }
@@ -4217,6 +5194,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) task_);
     }
+    if (taskCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.cloud.video.livestream.v1.Event.SlateTask) task_);
+    }
     if (taskCase_ == 15) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -4273,6 +5255,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         break;
       case 13:
         if (!getReturnToProgram().equals(other.getReturnToProgram())) return false;
+        break;
+      case 14:
+        if (!getSlate().equals(other.getSlate())) return false;
         break;
       case 15:
         if (!getMute().equals(other.getMute())) return false;
@@ -4332,6 +5317,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       case 13:
         hash = (37 * hash) + RETURN_TO_PROGRAM_FIELD_NUMBER;
         hash = (53 * hash) + getReturnToProgram().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + SLATE_FIELD_NUMBER;
+        hash = (53 * hash) + getSlate().hashCode();
         break;
       case 15:
         hash = (37 * hash) + MUTE_FIELD_NUMBER;
@@ -4525,6 +5514,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (returnToProgramBuilder_ != null) {
         returnToProgramBuilder_.clear();
       }
+      if (slateBuilder_ != null) {
+        slateBuilder_.clear();
+      }
       if (muteBuilder_ != null) {
         muteBuilder_.clear();
       }
@@ -4595,17 +5587,17 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.executeNow_ = executeNow_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.executionTime_ =
             executionTimeBuilder_ == null ? executionTime_ : executionTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
       }
     }
@@ -4621,6 +5613,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       if (taskCase_ == 13 && returnToProgramBuilder_ != null) {
         result.task_ = returnToProgramBuilder_.build();
+      }
+      if (taskCase_ == 14 && slateBuilder_ != null) {
+        result.task_ = slateBuilder_.build();
       }
       if (taskCase_ == 15 && muteBuilder_ != null) {
         result.task_ = muteBuilder_.build();
@@ -4716,6 +5711,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             mergeReturnToProgram(other.getReturnToProgram());
             break;
           }
+        case SLATE:
+          {
+            mergeSlate(other.getSlate());
+            break;
+          }
         case MUTE:
           {
             mergeMute(other.getMute());
@@ -4802,25 +5802,25 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             case 72:
               {
                 executeNow_ = input.readBool();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 72
             case 82:
               {
                 input.readMessage(getExecutionTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 88:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 98
             case 106:
@@ -4829,6 +5829,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
                 taskCase_ = 13;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(getSlateFieldBuilder().getBuilder(), extensionRegistry);
+                taskCase_ = 14;
+                break;
+              } // case 114
             case 122:
               {
                 input.readMessage(getMuteFieldBuilder().getBuilder(), extensionRegistry);
@@ -5559,12 +6565,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Switches to another input stream.
+     * Switches to another input stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
      *
      * @return Whether the inputSwitch field is set.
      */
@@ -5576,12 +6580,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Switches to another input stream.
+     * Switches to another input stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
      *
      * @return The inputSwitch.
      */
@@ -5603,12 +6605,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Switches to another input stream.
+     * Switches to another input stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
      */
     public Builder setInputSwitch(
         com.google.cloud.video.livestream.v1.Event.InputSwitchTask value) {
@@ -5628,12 +6628,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Switches to another input stream.
+     * Switches to another input stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
      */
     public Builder setInputSwitch(
         com.google.cloud.video.livestream.v1.Event.InputSwitchTask.Builder builderForValue) {
@@ -5650,12 +6648,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Switches to another input stream.
+     * Switches to another input stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
      */
     public Builder mergeInputSwitch(
         com.google.cloud.video.livestream.v1.Event.InputSwitchTask value) {
@@ -5687,12 +6683,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Switches to another input stream.
+     * Switches to another input stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
      */
     public Builder clearInputSwitch() {
       if (inputSwitchBuilder_ == null) {
@@ -5714,12 +6708,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Switches to another input stream.
+     * Switches to another input stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
      */
     public com.google.cloud.video.livestream.v1.Event.InputSwitchTask.Builder
         getInputSwitchBuilder() {
@@ -5729,12 +6721,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Switches to another input stream.
+     * Switches to another input stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
      */
     @java.lang.Override
     public com.google.cloud.video.livestream.v1.Event.InputSwitchTaskOrBuilder
@@ -5752,12 +6742,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Switches to another input stream.
+     * Switches to another input stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.video.livestream.v1.Event.InputSwitchTask,
@@ -5792,12 +6780,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Inserts a new ad opportunity.
+     * Inserts a new ad opportunity.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
      *
      * @return Whether the adBreak field is set.
      */
@@ -5809,12 +6795,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Inserts a new ad opportunity.
+     * Inserts a new ad opportunity.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
      *
      * @return The adBreak.
      */
@@ -5836,12 +6820,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Inserts a new ad opportunity.
+     * Inserts a new ad opportunity.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
      */
     public Builder setAdBreak(com.google.cloud.video.livestream.v1.Event.AdBreakTask value) {
       if (adBreakBuilder_ == null) {
@@ -5860,12 +6842,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Inserts a new ad opportunity.
+     * Inserts a new ad opportunity.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
      */
     public Builder setAdBreak(
         com.google.cloud.video.livestream.v1.Event.AdBreakTask.Builder builderForValue) {
@@ -5882,12 +6862,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Inserts a new ad opportunity.
+     * Inserts a new ad opportunity.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
      */
     public Builder mergeAdBreak(com.google.cloud.video.livestream.v1.Event.AdBreakTask value) {
       if (adBreakBuilder_ == null) {
@@ -5917,12 +6895,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Inserts a new ad opportunity.
+     * Inserts a new ad opportunity.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
      */
     public Builder clearAdBreak() {
       if (adBreakBuilder_ == null) {
@@ -5944,12 +6920,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Inserts a new ad opportunity.
+     * Inserts a new ad opportunity.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
      */
     public com.google.cloud.video.livestream.v1.Event.AdBreakTask.Builder getAdBreakBuilder() {
       return getAdBreakFieldBuilder().getBuilder();
@@ -5958,12 +6932,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Inserts a new ad opportunity.
+     * Inserts a new ad opportunity.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
      */
     @java.lang.Override
     public com.google.cloud.video.livestream.v1.Event.AdBreakTaskOrBuilder getAdBreakOrBuilder() {
@@ -5980,12 +6952,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Inserts a new ad opportunity.
+     * Inserts a new ad opportunity.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.video.livestream.v1.Event.AdBreakTask,
@@ -6020,11 +6990,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Stops any running ad break.
+     * Stops any running ad break.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
      * </code>
      *
      * @return Whether the returnToProgram field is set.
@@ -6037,11 +7006,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Stops any running ad break.
+     * Stops any running ad break.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
      * </code>
      *
      * @return The returnToProgram.
@@ -6064,11 +7032,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Stops any running ad break.
+     * Stops any running ad break.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
      * </code>
      */
     public Builder setReturnToProgram(
@@ -6089,11 +7056,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Stops any running ad break.
+     * Stops any running ad break.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
      * </code>
      */
     public Builder setReturnToProgram(
@@ -6111,11 +7077,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Stops any running ad break.
+     * Stops any running ad break.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
      * </code>
      */
     public Builder mergeReturnToProgram(
@@ -6148,11 +7113,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Stops any running ad break.
+     * Stops any running ad break.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
      * </code>
      */
     public Builder clearReturnToProgram() {
@@ -6175,11 +7139,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Stops any running ad break.
+     * Stops any running ad break.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
      * </code>
      */
     public com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.Builder
@@ -6190,11 +7153,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Stops any running ad break.
+     * Stops any running ad break.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
      * </code>
      */
     @java.lang.Override
@@ -6213,11 +7175,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Stops any running ad break.
+     * Stops any running ad break.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -6246,6 +7207,215 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.SlateTask,
+            com.google.cloud.video.livestream.v1.Event.SlateTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.SlateTaskOrBuilder>
+        slateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a slate.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+     *
+     * @return Whether the slate field is set.
+     */
+    @java.lang.Override
+    public boolean hasSlate() {
+      return taskCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a slate.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+     *
+     * @return The slate.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.SlateTask getSlate() {
+      if (slateBuilder_ == null) {
+        if (taskCase_ == 14) {
+          return (com.google.cloud.video.livestream.v1.Event.SlateTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.SlateTask.getDefaultInstance();
+      } else {
+        if (taskCase_ == 14) {
+          return slateBuilder_.getMessage();
+        }
+        return com.google.cloud.video.livestream.v1.Event.SlateTask.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a slate.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+     */
+    public Builder setSlate(com.google.cloud.video.livestream.v1.Event.SlateTask value) {
+      if (slateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        task_ = value;
+        onChanged();
+      } else {
+        slateBuilder_.setMessage(value);
+      }
+      taskCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a slate.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+     */
+    public Builder setSlate(
+        com.google.cloud.video.livestream.v1.Event.SlateTask.Builder builderForValue) {
+      if (slateBuilder_ == null) {
+        task_ = builderForValue.build();
+        onChanged();
+      } else {
+        slateBuilder_.setMessage(builderForValue.build());
+      }
+      taskCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a slate.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+     */
+    public Builder mergeSlate(com.google.cloud.video.livestream.v1.Event.SlateTask value) {
+      if (slateBuilder_ == null) {
+        if (taskCase_ == 14
+            && task_ != com.google.cloud.video.livestream.v1.Event.SlateTask.getDefaultInstance()) {
+          task_ =
+              com.google.cloud.video.livestream.v1.Event.SlateTask.newBuilder(
+                      (com.google.cloud.video.livestream.v1.Event.SlateTask) task_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          task_ = value;
+        }
+        onChanged();
+      } else {
+        if (taskCase_ == 14) {
+          slateBuilder_.mergeFrom(value);
+        } else {
+          slateBuilder_.setMessage(value);
+        }
+      }
+      taskCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a slate.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+     */
+    public Builder clearSlate() {
+      if (slateBuilder_ == null) {
+        if (taskCase_ == 14) {
+          taskCase_ = 0;
+          task_ = null;
+          onChanged();
+        }
+      } else {
+        if (taskCase_ == 14) {
+          taskCase_ = 0;
+          task_ = null;
+        }
+        slateBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a slate.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+     */
+    public com.google.cloud.video.livestream.v1.Event.SlateTask.Builder getSlateBuilder() {
+      return getSlateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a slate.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.SlateTaskOrBuilder getSlateOrBuilder() {
+      if ((taskCase_ == 14) && (slateBuilder_ != null)) {
+        return slateBuilder_.getMessageOrBuilder();
+      } else {
+        if (taskCase_ == 14) {
+          return (com.google.cloud.video.livestream.v1.Event.SlateTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.SlateTask.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inserts a slate.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.SlateTask,
+            com.google.cloud.video.livestream.v1.Event.SlateTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.SlateTaskOrBuilder>
+        getSlateFieldBuilder() {
+      if (slateBuilder_ == null) {
+        if (!(taskCase_ == 14)) {
+          task_ = com.google.cloud.video.livestream.v1.Event.SlateTask.getDefaultInstance();
+        }
+        slateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.Event.SlateTask,
+                com.google.cloud.video.livestream.v1.Event.SlateTask.Builder,
+                com.google.cloud.video.livestream.v1.Event.SlateTaskOrBuilder>(
+                (com.google.cloud.video.livestream.v1.Event.SlateTask) task_,
+                getParentForChildren(),
+                isClean());
+        task_ = null;
+      }
+      taskCase_ = 14;
+      onChanged();
+      return slateBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.video.livestream.v1.Event.MuteTask,
             com.google.cloud.video.livestream.v1.Event.MuteTask.Builder,
             com.google.cloud.video.livestream.v1.Event.MuteTaskOrBuilder>
@@ -6254,12 +7424,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Mutes the stream.
+     * Mutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
      *
      * @return Whether the mute field is set.
      */
@@ -6271,12 +7439,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Mutes the stream.
+     * Mutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
      *
      * @return The mute.
      */
@@ -6298,12 +7464,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Mutes the stream.
+     * Mutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
      */
     public Builder setMute(com.google.cloud.video.livestream.v1.Event.MuteTask value) {
       if (muteBuilder_ == null) {
@@ -6322,12 +7486,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Mutes the stream.
+     * Mutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
      */
     public Builder setMute(
         com.google.cloud.video.livestream.v1.Event.MuteTask.Builder builderForValue) {
@@ -6344,12 +7506,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Mutes the stream.
+     * Mutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
      */
     public Builder mergeMute(com.google.cloud.video.livestream.v1.Event.MuteTask value) {
       if (muteBuilder_ == null) {
@@ -6378,12 +7538,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Mutes the stream.
+     * Mutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
      */
     public Builder clearMute() {
       if (muteBuilder_ == null) {
@@ -6405,12 +7563,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Mutes the stream.
+     * Mutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
      */
     public com.google.cloud.video.livestream.v1.Event.MuteTask.Builder getMuteBuilder() {
       return getMuteFieldBuilder().getBuilder();
@@ -6419,12 +7575,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Mutes the stream.
+     * Mutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
      */
     @java.lang.Override
     public com.google.cloud.video.livestream.v1.Event.MuteTaskOrBuilder getMuteOrBuilder() {
@@ -6441,12 +7595,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Mutes the stream.
+     * Mutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.video.livestream.v1.Event.MuteTask,
@@ -6481,12 +7633,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unmutes the stream.
+     * Unmutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
      *
      * @return Whether the unmute field is set.
      */
@@ -6498,12 +7648,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unmutes the stream.
+     * Unmutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
      *
      * @return The unmute.
      */
@@ -6525,12 +7673,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unmutes the stream.
+     * Unmutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
      */
     public Builder setUnmute(com.google.cloud.video.livestream.v1.Event.UnmuteTask value) {
       if (unmuteBuilder_ == null) {
@@ -6549,12 +7695,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unmutes the stream.
+     * Unmutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
      */
     public Builder setUnmute(
         com.google.cloud.video.livestream.v1.Event.UnmuteTask.Builder builderForValue) {
@@ -6571,12 +7715,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unmutes the stream.
+     * Unmutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
      */
     public Builder mergeUnmute(com.google.cloud.video.livestream.v1.Event.UnmuteTask value) {
       if (unmuteBuilder_ == null) {
@@ -6606,12 +7748,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unmutes the stream.
+     * Unmutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
      */
     public Builder clearUnmute() {
       if (unmuteBuilder_ == null) {
@@ -6633,12 +7773,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unmutes the stream.
+     * Unmutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
      */
     public com.google.cloud.video.livestream.v1.Event.UnmuteTask.Builder getUnmuteBuilder() {
       return getUnmuteFieldBuilder().getBuilder();
@@ -6647,12 +7785,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unmutes the stream.
+     * Unmutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
      */
     @java.lang.Override
     public com.google.cloud.video.livestream.v1.Event.UnmuteTaskOrBuilder getUnmuteOrBuilder() {
@@ -6669,12 +7805,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Unmutes the stream.
+     * Unmutes the stream.
      * </pre>
      *
-     * <code>
-     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.video.livestream.v1.Event.UnmuteTask,
@@ -6739,7 +7873,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public Builder setExecuteNow(boolean value) {
 
       executeNow_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6759,7 +7893,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExecuteNow() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       executeNow_ = false;
       onChanged();
       return this;
@@ -6789,7 +7923,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the executionTime field is set.
      */
     public boolean hasExecutionTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -6841,7 +7975,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         executionTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6866,7 +8000,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         executionTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6887,7 +8021,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExecutionTime(com.google.protobuf.Timestamp value) {
       if (executionTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && executionTime_ != null
             && executionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getExecutionTimeBuilder().mergeFrom(value);
@@ -6897,7 +8031,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         executionTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6917,7 +8051,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
      */
     public Builder clearExecutionTime() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       executionTime_ = null;
       if (executionTimeBuilder_ != null) {
         executionTimeBuilder_.dispose();
@@ -6942,7 +8076,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExecutionTimeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getExecutionTimeFieldBuilder().getBuilder();
     }
@@ -7036,7 +8170,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7079,7 +8213,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -7098,7 +8232,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       state_ = 0;
       onChanged();
       return this;
@@ -7121,7 +8255,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -7161,7 +8295,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7181,7 +8315,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7197,7 +8331,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -7207,7 +8341,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7222,7 +8356,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -7242,7 +8376,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }

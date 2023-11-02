@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
     uri_ = "";
     referrerUri_ = "";
     pageViewId_ = "";
-    experimentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    experimentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     recommendationToken_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EventDetail();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -245,7 +240,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
   public static final int EXPERIMENT_IDS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList experimentIds_;
+  private com.google.protobuf.LazyStringArrayList experimentIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -327,14 +323,17 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Recommendation token included in the recommendation prediction
    * response.
+   *
    * This field enables accurate attribution of recommendation model
    * performance.
+   *
    * This token enables us to accurately attribute page view or purchase back to
    * the event and the particular predict response containing this
    * clicked/purchased item. If user clicks on product K in the recommendation
    * results, pass the `PredictResponse.recommendationToken` property as a url
    * parameter to product K's page. When recording events on product K's page,
    * log the PredictResponse.recommendation_token to this field.
+   *
    * Optional, but highly encouraged for user events that are the result of a
    * recommendation prediction query.
    * </pre>
@@ -361,14 +360,17 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Recommendation token included in the recommendation prediction
    * response.
+   *
    * This field enables accurate attribution of recommendation model
    * performance.
+   *
    * This token enables us to accurately attribute page view or purchase back to
    * the event and the particular predict response containing this
    * clicked/purchased item. If user clicks on product K in the recommendation
    * results, pass the `PredictResponse.recommendationToken` property as a url
    * parameter to product K's page. When recording events on product K's page,
    * log the PredictResponse.recommendation_token to this field.
+   *
    * Optional, but highly encouraged for user events that are the result of a
    * recommendation prediction query.
    * </pre>
@@ -398,6 +400,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Extra user event features to include in the recommendation
    * model.
+   *
    * For product recommendation, an example of extra user information is
    * traffic_channel, i.e. how user arrives at the site. Users can arrive
    * at the site by coming to the site directly, or coming through Google
@@ -420,6 +423,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Extra user event features to include in the recommendation
    * model.
+   *
    * For product recommendation, an example of extra user information is
    * traffic_channel, i.e. how user arrives at the site. Users can arrive
    * at the site by coming to the site directly, or coming through Google
@@ -444,6 +448,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Extra user event features to include in the recommendation
    * model.
+   *
    * For product recommendation, an example of extra user information is
    * traffic_channel, i.e. how user arrives at the site. Users can arrive
    * at the site by coming to the site directly, or coming through Google
@@ -721,8 +726,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       uri_ = "";
       referrerUri_ = "";
       pageViewId_ = "";
-      experimentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      experimentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       recommendationToken_ = "";
       eventAttributes_ = null;
       if (eventAttributesBuilder_ != null) {
@@ -756,21 +760,11 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommendationengine.v1beta1.EventDetail buildPartial() {
       com.google.cloud.recommendationengine.v1beta1.EventDetail result =
           new com.google.cloud.recommendationengine.v1beta1.EventDetail(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.recommendationengine.v1beta1.EventDetail result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        experimentIds_ = experimentIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.experimentIds_ = experimentIds_;
     }
 
     private void buildPartial0(com.google.cloud.recommendationengine.v1beta1.EventDetail result) {
@@ -783,6 +777,10 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageViewId_ = pageViewId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        experimentIds_.makeImmutable();
+        result.experimentIds_ = experimentIds_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.recommendationToken_ = recommendationToken_;
@@ -857,7 +855,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       if (!other.experimentIds_.isEmpty()) {
         if (experimentIds_.isEmpty()) {
           experimentIds_ = other.experimentIds_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureExperimentIdsIsMutable();
           experimentIds_.addAll(other.experimentIds_);
@@ -1317,14 +1315,14 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList experimentIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList experimentIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureExperimentIdsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!experimentIds_.isModifiable()) {
         experimentIds_ = new com.google.protobuf.LazyStringArrayList(experimentIds_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1341,7 +1339,8 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the experimentIds.
      */
     public com.google.protobuf.ProtocolStringList getExperimentIdsList() {
-      return experimentIds_.getUnmodifiableView();
+      experimentIds_.makeImmutable();
+      return experimentIds_;
     }
     /**
      *
@@ -1418,6 +1417,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExperimentIdsIsMutable();
       experimentIds_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1442,6 +1442,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExperimentIdsIsMutable();
       experimentIds_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1463,6 +1464,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllExperimentIds(java.lang.Iterable<java.lang.String> values) {
       ensureExperimentIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, experimentIds_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1481,8 +1483,9 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExperimentIds() {
-      experimentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      experimentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1508,6 +1511,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureExperimentIdsIsMutable();
       experimentIds_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1519,14 +1523,17 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Recommendation token included in the recommendation prediction
      * response.
+     *
      * This field enables accurate attribution of recommendation model
      * performance.
+     *
      * This token enables us to accurately attribute page view or purchase back to
      * the event and the particular predict response containing this
      * clicked/purchased item. If user clicks on product K in the recommendation
      * results, pass the `PredictResponse.recommendationToken` property as a url
      * parameter to product K's page. When recording events on product K's page,
      * log the PredictResponse.recommendation_token to this field.
+     *
      * Optional, but highly encouraged for user events that are the result of a
      * recommendation prediction query.
      * </pre>
@@ -1552,14 +1559,17 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Recommendation token included in the recommendation prediction
      * response.
+     *
      * This field enables accurate attribution of recommendation model
      * performance.
+     *
      * This token enables us to accurately attribute page view or purchase back to
      * the event and the particular predict response containing this
      * clicked/purchased item. If user clicks on product K in the recommendation
      * results, pass the `PredictResponse.recommendationToken` property as a url
      * parameter to product K's page. When recording events on product K's page,
      * log the PredictResponse.recommendation_token to this field.
+     *
      * Optional, but highly encouraged for user events that are the result of a
      * recommendation prediction query.
      * </pre>
@@ -1585,14 +1595,17 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Recommendation token included in the recommendation prediction
      * response.
+     *
      * This field enables accurate attribution of recommendation model
      * performance.
+     *
      * This token enables us to accurately attribute page view or purchase back to
      * the event and the particular predict response containing this
      * clicked/purchased item. If user clicks on product K in the recommendation
      * results, pass the `PredictResponse.recommendationToken` property as a url
      * parameter to product K's page. When recording events on product K's page,
      * log the PredictResponse.recommendation_token to this field.
+     *
      * Optional, but highly encouraged for user events that are the result of a
      * recommendation prediction query.
      * </pre>
@@ -1617,14 +1630,17 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Recommendation token included in the recommendation prediction
      * response.
+     *
      * This field enables accurate attribution of recommendation model
      * performance.
+     *
      * This token enables us to accurately attribute page view or purchase back to
      * the event and the particular predict response containing this
      * clicked/purchased item. If user clicks on product K in the recommendation
      * results, pass the `PredictResponse.recommendationToken` property as a url
      * parameter to product K's page. When recording events on product K's page,
      * log the PredictResponse.recommendation_token to this field.
+     *
      * Optional, but highly encouraged for user events that are the result of a
      * recommendation prediction query.
      * </pre>
@@ -1645,14 +1661,17 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Recommendation token included in the recommendation prediction
      * response.
+     *
      * This field enables accurate attribution of recommendation model
      * performance.
+     *
      * This token enables us to accurately attribute page view or purchase back to
      * the event and the particular predict response containing this
      * clicked/purchased item. If user clicks on product K in the recommendation
      * results, pass the `PredictResponse.recommendationToken` property as a url
      * parameter to product K's page. When recording events on product K's page,
      * log the PredictResponse.recommendation_token to this field.
+     *
      * Optional, but highly encouraged for user events that are the result of a
      * recommendation prediction query.
      * </pre>
@@ -1685,6 +1704,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Extra user event features to include in the recommendation
      * model.
+     *
      * For product recommendation, an example of extra user information is
      * traffic_channel, i.e. how user arrives at the site. Users can arrive
      * at the site by coming to the site directly, or coming through Google
@@ -1706,6 +1726,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Extra user event features to include in the recommendation
      * model.
+     *
      * For product recommendation, an example of extra user information is
      * traffic_channel, i.e. how user arrives at the site. Users can arrive
      * at the site by coming to the site directly, or coming through Google
@@ -1733,6 +1754,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Extra user event features to include in the recommendation
      * model.
+     *
      * For product recommendation, an example of extra user information is
      * traffic_channel, i.e. how user arrives at the site. Users can arrive
      * at the site by coming to the site directly, or coming through Google
@@ -1763,6 +1785,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Extra user event features to include in the recommendation
      * model.
+     *
      * For product recommendation, an example of extra user information is
      * traffic_channel, i.e. how user arrives at the site. Users can arrive
      * at the site by coming to the site directly, or coming through Google
@@ -1790,6 +1813,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Extra user event features to include in the recommendation
      * model.
+     *
      * For product recommendation, an example of extra user information is
      * traffic_channel, i.e. how user arrives at the site. Users can arrive
      * at the site by coming to the site directly, or coming through Google
@@ -1824,6 +1848,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Extra user event features to include in the recommendation
      * model.
+     *
      * For product recommendation, an example of extra user information is
      * traffic_channel, i.e. how user arrives at the site. Users can arrive
      * at the site by coming to the site directly, or coming through Google
@@ -1850,6 +1875,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Extra user event features to include in the recommendation
      * model.
+     *
      * For product recommendation, an example of extra user information is
      * traffic_channel, i.e. how user arrives at the site. Users can arrive
      * at the site by coming to the site directly, or coming through Google
@@ -1872,6 +1898,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Extra user event features to include in the recommendation
      * model.
+     *
      * For product recommendation, an example of extra user information is
      * traffic_channel, i.e. how user arrives at the site. Users can arrive
      * at the site by coming to the site directly, or coming through Google
@@ -1898,6 +1925,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Extra user event features to include in the recommendation
      * model.
+     *
      * For product recommendation, an example of extra user information is
      * traffic_channel, i.e. how user arrives at the site. Users can arrive
      * at the site by coming to the site directly, or coming through Google

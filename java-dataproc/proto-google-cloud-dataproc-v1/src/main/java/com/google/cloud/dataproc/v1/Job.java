@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return new Job();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.JobsProto
         .internal_static_google_cloud_dataproc_v1_Job_descriptor;
@@ -82,6 +77,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int typeJobCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object typeJob_;
 
   public enum TypeJobCase
@@ -928,6 +925,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
+   *
    * **Beta** Feature: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -945,6 +943,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
+   *
    * **Beta** Feature: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -963,6 +962,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
+   *
    * **Beta** Feature: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -980,6 +980,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
+   *
    * **Beta** Feature: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -997,6 +998,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
+   *
    * **Beta** Feature: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -5616,6 +5618,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5636,6 +5639,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5656,6 +5660,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5676,6 +5681,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5703,6 +5709,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5727,6 +5734,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5753,6 +5761,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5780,6 +5789,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5804,6 +5814,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5828,6 +5839,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5852,6 +5864,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5875,6 +5888,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5898,6 +5912,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5915,6 +5930,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5936,6 +5952,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5957,6 +5974,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5974,6 +5992,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>
@@ -5992,6 +6011,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
+     *
      * **Beta** Feature: This report is available for testing purposes only. It
      * may be changed before final release.
      * </pre>

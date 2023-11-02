@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -245,6 +245,7 @@ public class ContactCenterInsightsClientTest {
             .setConversation(Conversation.newBuilder().build())
             .setConversationId("conversationId-1676095234")
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
 
     Conversation actualResponse = client.uploadConversationAsync(request).get();
@@ -258,6 +259,7 @@ public class ContactCenterInsightsClientTest {
     Assert.assertEquals(request.getConversation(), actualRequest.getConversation());
     Assert.assertEquals(request.getConversationId(), actualRequest.getConversationId());
     Assert.assertEquals(request.getRedactionConfig(), actualRequest.getRedactionConfig());
+    Assert.assertEquals(request.getSpeechConfig(), actualRequest.getSpeechConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -276,6 +278,7 @@ public class ContactCenterInsightsClientTest {
               .setConversation(Conversation.newBuilder().build())
               .setConversationId("conversationId-1676095234")
               .setRedactionConfig(RedactionConfig.newBuilder().build())
+              .setSpeechConfig(SpeechConfig.newBuilder().build())
               .build();
       client.uploadConversationAsync(request).get();
       Assert.fail("No exception raised");
@@ -1253,6 +1256,7 @@ public class ContactCenterInsightsClientTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1308,6 +1312,7 @@ public class ContactCenterInsightsClientTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1363,6 +1368,7 @@ public class ContactCenterInsightsClientTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -1410,6 +1416,7 @@ public class ContactCenterInsightsClientTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -1454,6 +1461,7 @@ public class ContactCenterInsightsClientTest {
             .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -2659,6 +2667,7 @@ public class ContactCenterInsightsClientTest {
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -2704,6 +2713,7 @@ public class ContactCenterInsightsClientTest {
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -2749,6 +2759,7 @@ public class ContactCenterInsightsClientTest {
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 

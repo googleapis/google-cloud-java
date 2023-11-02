@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public interface ListServiceAccountsRequestOrBuilder
    * response. Further accounts can subsequently be obtained by including the
    * [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token]
    * in a subsequent request.
+   *
    * The default is 20, and the maximum is 100.
    * </pre>
    *

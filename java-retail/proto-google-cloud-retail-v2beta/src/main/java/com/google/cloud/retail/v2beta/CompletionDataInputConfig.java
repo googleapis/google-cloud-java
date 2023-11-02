@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
     return new CompletionDataInputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.ImportConfigProto
         .internal_static_google_cloud_retail_v2beta_CompletionDataInputConfig_descriptor;
@@ -66,6 +61,8 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -115,6 +112,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. BigQuery input source.
+   *
    * Add the IAM permission "BigQuery Data Viewer" for
    * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
    * using this feature otherwise an error is thrown.
@@ -135,6 +133,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. BigQuery input source.
+   *
    * Add the IAM permission "BigQuery Data Viewer" for
    * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
    * using this feature otherwise an error is thrown.
@@ -158,6 +157,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. BigQuery input source.
+   *
    * Add the IAM permission "BigQuery Data Viewer" for
    * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
    * using this feature otherwise an error is thrown.
@@ -574,6 +574,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. BigQuery input source.
+     *
      * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
@@ -594,6 +595,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. BigQuery input source.
+     *
      * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
@@ -624,6 +626,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. BigQuery input source.
+     *
      * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
@@ -651,6 +654,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. BigQuery input source.
+     *
      * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
@@ -676,6 +680,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. BigQuery input source.
+     *
      * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
@@ -713,6 +718,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. BigQuery input source.
+     *
      * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
@@ -743,6 +749,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. BigQuery input source.
+     *
      * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
@@ -760,6 +767,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. BigQuery input source.
+     *
      * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
@@ -785,6 +793,7 @@ public final class CompletionDataInputConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. BigQuery input source.
+     *
      * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
     return new ImportTestCasesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.TestCaseProto
         .internal_static_google_cloud_dialogflow_cx_v3_ImportTestCasesRequest_descriptor;
@@ -69,6 +64,8 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -180,6 +177,7 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import test cases from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -201,6 +199,7 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import test cases from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -235,6 +234,7 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import test cases from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -861,6 +861,7 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -883,6 +884,7 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -918,6 +920,7 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -953,6 +956,7 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -981,6 +985,7 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1007,6 +1012,7 @@ public final class ImportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import test cases from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see

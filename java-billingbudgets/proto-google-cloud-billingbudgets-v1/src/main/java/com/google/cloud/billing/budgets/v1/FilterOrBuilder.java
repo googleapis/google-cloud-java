@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,8 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of projects of the form `projects/{project}`,
    * specifying that usage from only this set of projects should be
-   * included in the budget. If omitted, the report will include all usage for
+   * included in the budget. If omitted, the report includes all usage for
    * the billing account, regardless of which project the usage occurred on.
-   * Only zero or one project can be specified currently.
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -45,9 +44,8 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of projects of the form `projects/{project}`,
    * specifying that usage from only this set of projects should be
-   * included in the budget. If omitted, the report will include all usage for
+   * included in the budget. If omitted, the report includes all usage for
    * the billing account, regardless of which project the usage occurred on.
-   * Only zero or one project can be specified currently.
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -61,9 +59,8 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of projects of the form `projects/{project}`,
    * specifying that usage from only this set of projects should be
-   * included in the budget. If omitted, the report will include all usage for
+   * included in the budget. If omitted, the report includes all usage for
    * the billing account, regardless of which project the usage occurred on.
-   * Only zero or one project can be specified currently.
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -78,9 +75,8 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of projects of the form `projects/{project}`,
    * specifying that usage from only this set of projects should be
-   * included in the budget. If omitted, the report will include all usage for
+   * included in the budget. If omitted, the report includes all usage for
    * the billing account, regardless of which project the usage occurred on.
-   * Only zero or one project can be specified currently.
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -94,12 +90,88 @@ public interface FilterOrBuilder
    *
    *
    * <pre>
+   * Optional. A set of folder and organization names of the form
+   * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+   * usage from only this set of folders and organizations should be included in
+   * the budget. If omitted, the budget includes all usage that the billing
+   * account pays for. If the folder or organization contains projects that are
+   * paid for by a different Cloud Billing account, the budget *doesn't* apply
+   * to those projects.
+   * </pre>
+   *
+   * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the resourceAncestors.
+   */
+  java.util.List<java.lang.String> getResourceAncestorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of folder and organization names of the form
+   * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+   * usage from only this set of folders and organizations should be included in
+   * the budget. If omitted, the budget includes all usage that the billing
+   * account pays for. If the folder or organization contains projects that are
+   * paid for by a different Cloud Billing account, the budget *doesn't* apply
+   * to those projects.
+   * </pre>
+   *
+   * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of resourceAncestors.
+   */
+  int getResourceAncestorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of folder and organization names of the form
+   * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+   * usage from only this set of folders and organizations should be included in
+   * the budget. If omitted, the budget includes all usage that the billing
+   * account pays for. If the folder or organization contains projects that are
+   * paid for by a different Cloud Billing account, the budget *doesn't* apply
+   * to those projects.
+   * </pre>
+   *
+   * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The resourceAncestors at the given index.
+   */
+  java.lang.String getResourceAncestors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of folder and organization names of the form
+   * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+   * usage from only this set of folders and organizations should be included in
+   * the budget. If omitted, the budget includes all usage that the billing
+   * account pays for. If the folder or organization contains projects that are
+   * paid for by a different Cloud Billing account, the budget *doesn't* apply
+   * to those projects.
+   * </pre>
+   *
+   * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceAncestors at the given index.
+   */
+  com.google.protobuf.ByteString getResourceAncestorsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. If
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
    * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
    * subtracted from gross cost to determine the spend for threshold
    * calculations. See [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+   *
    * If
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
    * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
@@ -120,6 +192,7 @@ public interface FilterOrBuilder
    * subtracted from gross cost to determine the spend for threshold
    * calculations. See [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+   *
    * If
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
    * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
@@ -140,6 +213,7 @@ public interface FilterOrBuilder
    * subtracted from gross cost to determine the spend for threshold
    * calculations. See [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+   *
    * If
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
    * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
@@ -161,6 +235,7 @@ public interface FilterOrBuilder
    * subtracted from gross cost to determine the spend for threshold
    * calculations. See [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
+   *
    * If
    * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
    * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
@@ -208,7 +283,7 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of services of the form `services/{service_id}`,
    * specifying that usage from only this set of services should be
-   * included in the budget. If omitted, the report will include usage for
+   * included in the budget. If omitted, the report includes usage for
    * all the services.
    * The service names are available through the Catalog API:
    * https://cloud.google.com/billing/v1/how-tos/catalog-api.
@@ -225,7 +300,7 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of services of the form `services/{service_id}`,
    * specifying that usage from only this set of services should be
-   * included in the budget. If omitted, the report will include usage for
+   * included in the budget. If omitted, the report includes usage for
    * all the services.
    * The service names are available through the Catalog API:
    * https://cloud.google.com/billing/v1/how-tos/catalog-api.
@@ -242,7 +317,7 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of services of the form `services/{service_id}`,
    * specifying that usage from only this set of services should be
-   * included in the budget. If omitted, the report will include usage for
+   * included in the budget. If omitted, the report includes usage for
    * all the services.
    * The service names are available through the Catalog API:
    * https://cloud.google.com/billing/v1/how-tos/catalog-api.
@@ -260,7 +335,7 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of services of the form `services/{service_id}`,
    * specifying that usage from only this set of services should be
-   * included in the budget. If omitted, the report will include usage for
+   * included in the budget. If omitted, the report includes usage for
    * all the services.
    * The service names are available through the Catalog API:
    * https://cloud.google.com/billing/v1/how-tos/catalog-api.
@@ -280,8 +355,8 @@ public interface FilterOrBuilder
    * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
    * specifying that usage from only this set of subaccounts should be included
    * in the budget. If a subaccount is set to the name of the parent account,
-   * usage from the parent account will be included. If the field is omitted,
-   * the report will include usage from the parent account and all subaccounts,
+   * usage from the parent account is included. If the field is omitted,
+   * the report includes usage from the parent account and all subaccounts,
    * if they exist.
    * </pre>
    *
@@ -297,8 +372,8 @@ public interface FilterOrBuilder
    * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
    * specifying that usage from only this set of subaccounts should be included
    * in the budget. If a subaccount is set to the name of the parent account,
-   * usage from the parent account will be included. If the field is omitted,
-   * the report will include usage from the parent account and all subaccounts,
+   * usage from the parent account is included. If the field is omitted,
+   * the report includes usage from the parent account and all subaccounts,
    * if they exist.
    * </pre>
    *
@@ -314,8 +389,8 @@ public interface FilterOrBuilder
    * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
    * specifying that usage from only this set of subaccounts should be included
    * in the budget. If a subaccount is set to the name of the parent account,
-   * usage from the parent account will be included. If the field is omitted,
-   * the report will include usage from the parent account and all subaccounts,
+   * usage from the parent account is included. If the field is omitted,
+   * the report includes usage from the parent account and all subaccounts,
    * if they exist.
    * </pre>
    *
@@ -332,8 +407,8 @@ public interface FilterOrBuilder
    * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
    * specifying that usage from only this set of subaccounts should be included
    * in the budget. If a subaccount is set to the name of the parent account,
-   * usage from the parent account will be included. If the field is omitted,
-   * the report will include usage from the parent account and all subaccounts,
+   * usage from the parent account is included. If the field is omitted,
+   * the report includes usage from the parent account and all subaccounts,
    * if they exist.
    * </pre>
    *
@@ -349,9 +424,14 @@ public interface FilterOrBuilder
    *
    * <pre>
    * Optional. A single label and value pair specifying that usage from only
-   * this set of labeled resources should be included in the budget. Currently,
-   * multiple entries or multiple values per entry are not allowed. If omitted,
-   * the report will include all labeled and unlabeled usage.
+   * this set of labeled resources should be included in the budget. If omitted,
+   * the report includes all labeled and unlabeled usage.
+   *
+   * An object containing a single `"key": value` pair. Example: `{ "name":
+   * "wrench" }`.
+   *
+   *  _Currently, multiple entries or multiple values per entry are not
+   *  allowed._
    * </pre>
    *
    * <code>
@@ -364,9 +444,14 @@ public interface FilterOrBuilder
    *
    * <pre>
    * Optional. A single label and value pair specifying that usage from only
-   * this set of labeled resources should be included in the budget. Currently,
-   * multiple entries or multiple values per entry are not allowed. If omitted,
-   * the report will include all labeled and unlabeled usage.
+   * this set of labeled resources should be included in the budget. If omitted,
+   * the report includes all labeled and unlabeled usage.
+   *
+   * An object containing a single `"key": value` pair. Example: `{ "name":
+   * "wrench" }`.
+   *
+   *  _Currently, multiple entries or multiple values per entry are not
+   *  allowed._
    * </pre>
    *
    * <code>
@@ -382,9 +467,14 @@ public interface FilterOrBuilder
    *
    * <pre>
    * Optional. A single label and value pair specifying that usage from only
-   * this set of labeled resources should be included in the budget. Currently,
-   * multiple entries or multiple values per entry are not allowed. If omitted,
-   * the report will include all labeled and unlabeled usage.
+   * this set of labeled resources should be included in the budget. If omitted,
+   * the report includes all labeled and unlabeled usage.
+   *
+   * An object containing a single `"key": value` pair. Example: `{ "name":
+   * "wrench" }`.
+   *
+   *  _Currently, multiple entries or multiple values per entry are not
+   *  allowed._
    * </pre>
    *
    * <code>
@@ -397,9 +487,14 @@ public interface FilterOrBuilder
    *
    * <pre>
    * Optional. A single label and value pair specifying that usage from only
-   * this set of labeled resources should be included in the budget. Currently,
-   * multiple entries or multiple values per entry are not allowed. If omitted,
-   * the report will include all labeled and unlabeled usage.
+   * this set of labeled resources should be included in the budget. If omitted,
+   * the report includes all labeled and unlabeled usage.
+   *
+   * An object containing a single `"key": value` pair. Example: `{ "name":
+   * "wrench" }`.
+   *
+   *  _Currently, multiple entries or multiple values per entry are not
+   *  allowed._
    * </pre>
    *
    * <code>
@@ -416,9 +511,14 @@ public interface FilterOrBuilder
    *
    * <pre>
    * Optional. A single label and value pair specifying that usage from only
-   * this set of labeled resources should be included in the budget. Currently,
-   * multiple entries or multiple values per entry are not allowed. If omitted,
-   * the report will include all labeled and unlabeled usage.
+   * this set of labeled resources should be included in the budget. If omitted,
+   * the report includes all labeled and unlabeled usage.
+   *
+   * An object containing a single `"key": value` pair. Example: `{ "name":
+   * "wrench" }`.
+   *
+   *  _Currently, multiple entries or multiple values per entry are not
+   *  allowed._
    * </pre>
    *
    * <code>
@@ -432,9 +532,9 @@ public interface FilterOrBuilder
    *
    * <pre>
    * Optional. Specifies to track usage for recurring calendar period.
-   * For example, assume that CalendarPeriod.QUARTER is set. The budget will
-   * track usage from April 1 to June 30, when the current calendar month is
-   * April, May, June. After that, it will track usage from July 1 to
+   * For example, assume that CalendarPeriod.QUARTER is set. The budget
+   * tracks usage from April 1 to June 30, when the current calendar month is
+   * April, May, June. After that, it tracks usage from July 1 to
    * September 30 when the current calendar month is July, August, September,
    * so on.
    * </pre>
@@ -451,9 +551,9 @@ public interface FilterOrBuilder
    *
    * <pre>
    * Optional. Specifies to track usage for recurring calendar period.
-   * For example, assume that CalendarPeriod.QUARTER is set. The budget will
-   * track usage from April 1 to June 30, when the current calendar month is
-   * April, May, June. After that, it will track usage from July 1 to
+   * For example, assume that CalendarPeriod.QUARTER is set. The budget
+   * tracks usage from April 1 to June 30, when the current calendar month is
+   * April, May, June. After that, it tracks usage from July 1 to
    * September 30 when the current calendar month is July, August, September,
    * so on.
    * </pre>
@@ -470,9 +570,9 @@ public interface FilterOrBuilder
    *
    * <pre>
    * Optional. Specifies to track usage for recurring calendar period.
-   * For example, assume that CalendarPeriod.QUARTER is set. The budget will
-   * track usage from April 1 to June 30, when the current calendar month is
-   * April, May, June. After that, it will track usage from July 1 to
+   * For example, assume that CalendarPeriod.QUARTER is set. The budget
+   * tracks usage from April 1 to June 30, when the current calendar month is
+   * April, May, June. After that, it tracks usage from July 1 to
    * September 30 when the current calendar month is July, August, September,
    * so on.
    * </pre>
@@ -529,5 +629,5 @@ public interface FilterOrBuilder
    */
   com.google.cloud.billing.budgets.v1.CustomPeriodOrBuilder getCustomPeriodOrBuilder();
 
-  public com.google.cloud.billing.budgets.v1.Filter.UsagePeriodCase getUsagePeriodCase();
+  com.google.cloud.billing.budgets.v1.Filter.UsagePeriodCase getUsagePeriodCase();
 }

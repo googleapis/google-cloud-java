@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -627,6 +627,27 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateConversionEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ConversionEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateConversionEvent(
+      UpdateConversionEventRequest request, StreamObserver<ConversionEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ConversionEvent) {
+      requests.add(request);
+      responseObserver.onNext(((ConversionEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateConversionEvent, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversionEvent.class.getName(),
                   Exception.class.getName())));

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,18 +77,21 @@ public interface SearchCatalogRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be non-empty.
-   * Query strings can be simple as "x" or more qualified as:
+   * Optional. The query string in search query syntax. An empty query string
+   * will result in all data assets (in the specified scope) that the user has
+   * access to. Query strings can be simple as "x" or more qualified as:
+   *
    * * name:x
    * * column:x
    * * description:y
+   *
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
    * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
    * for more information.
    * </pre>
    *
-   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The query.
    */
@@ -97,18 +100,21 @@ public interface SearchCatalogRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be non-empty.
-   * Query strings can be simple as "x" or more qualified as:
+   * Optional. The query string in search query syntax. An empty query string
+   * will result in all data assets (in the specified scope) that the user has
+   * access to. Query strings can be simple as "x" or more qualified as:
+   *
    * * name:x
    * * column:x
    * * description:y
+   *
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
    * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
    * for more information.
    * </pre>
    *
-   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for query.
    */
@@ -133,8 +139,8 @@ public interface SearchCatalogRequestOrBuilder
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+   * which indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -150,8 +156,8 @@ public interface SearchCatalogRequestOrBuilder
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+   * which indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -169,9 +175,12 @@ public interface SearchCatalogRequestOrBuilder
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
+   *
    *   * `relevance`, only supports descending
    *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
    *     specified
+   *   * `default` that can only be descending
+   *
    * If not specified, defaults to `relevance` descending.
    * </pre>
    *
@@ -186,9 +195,12 @@ public interface SearchCatalogRequestOrBuilder
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
+   *
    *   * `relevance`, only supports descending
    *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
    *     specified
+   *   * `default` that can only be descending
+   *
    * If not specified, defaults to `relevance` descending.
    * </pre>
    *

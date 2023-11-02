@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,18 +37,13 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
   }
 
   private TestPermissionsRequest() {
-    permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    permissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TestPermissionsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -69,7 +64,8 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
   public static final int PERMISSIONS_FIELD_NUMBER = 59962500;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList permissions_;
+  private com.google.protobuf.LazyStringArrayList permissions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -333,8 +329,7 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      permissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -362,7 +357,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.TestPermissionsRequest buildPartial() {
       com.google.cloud.compute.v1.TestPermissionsRequest result =
           new com.google.cloud.compute.v1.TestPermissionsRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -370,17 +364,12 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.TestPermissionsRequest result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        permissions_ = permissions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.permissions_ = permissions_;
-    }
-
     private void buildPartial0(com.google.cloud.compute.v1.TestPermissionsRequest result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        permissions_.makeImmutable();
+        result.permissions_ = permissions_;
+      }
     }
 
     @java.lang.Override
@@ -432,7 +421,7 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
       if (!other.permissions_.isEmpty()) {
         if (permissions_.isEmpty()) {
           permissions_ = other.permissions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensurePermissionsIsMutable();
           permissions_.addAll(other.permissions_);
@@ -491,14 +480,14 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList permissions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList permissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePermissionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!permissions_.isModifiable()) {
         permissions_ = new com.google.protobuf.LazyStringArrayList(permissions_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -512,7 +501,8 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
      * @return A list containing the permissions.
      */
     public com.google.protobuf.ProtocolStringList getPermissionsList() {
-      return permissions_.getUnmodifiableView();
+      permissions_.makeImmutable();
+      return permissions_;
     }
     /**
      *
@@ -577,6 +567,7 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
       }
       ensurePermissionsIsMutable();
       permissions_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -598,6 +589,7 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
       }
       ensurePermissionsIsMutable();
       permissions_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -616,6 +608,7 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
     public Builder addAllPermissions(java.lang.Iterable<java.lang.String> values) {
       ensurePermissionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, permissions_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +624,9 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPermissions() {
-      permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      permissions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -655,6 +649,7 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensurePermissionsIsMutable();
       permissions_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

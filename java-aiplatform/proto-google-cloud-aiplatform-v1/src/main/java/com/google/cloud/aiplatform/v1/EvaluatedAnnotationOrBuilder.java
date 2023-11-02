@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,16 +57,20 @@ public interface EvaluatedAnnotationOrBuilder
    *
    * <pre>
    * Output only. The model predicted annotations.
+   *
    * For true positive, there is one and only one prediction, which matches the
    * only one ground truth annotation in
    * [ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
+   *
    * For false positive, there is one and only one prediction, which doesn't
    * match any ground truth annotation of the corresponding
    * [data_item_view_id][EvaluatedAnnotation.data_item_view_id].
+   *
    * For false negative, there are zero or more predictions which are similar to
    * the only ground truth annotation in
    * [ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths]
    * but not enough for a match.
+   *
    * The schema of the prediction is stored in
    * [ModelEvaluation.annotation_schema_uri][google.cloud.aiplatform.v1.ModelEvaluation.annotation_schema_uri]
    * </pre>
@@ -81,16 +85,20 @@ public interface EvaluatedAnnotationOrBuilder
    *
    * <pre>
    * Output only. The model predicted annotations.
+   *
    * For true positive, there is one and only one prediction, which matches the
    * only one ground truth annotation in
    * [ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
+   *
    * For false positive, there is one and only one prediction, which doesn't
    * match any ground truth annotation of the corresponding
    * [data_item_view_id][EvaluatedAnnotation.data_item_view_id].
+   *
    * For false negative, there are zero or more predictions which are similar to
    * the only ground truth annotation in
    * [ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths]
    * but not enough for a match.
+   *
    * The schema of the prediction is stored in
    * [ModelEvaluation.annotation_schema_uri][google.cloud.aiplatform.v1.ModelEvaluation.annotation_schema_uri]
    * </pre>
@@ -105,16 +113,20 @@ public interface EvaluatedAnnotationOrBuilder
    *
    * <pre>
    * Output only. The model predicted annotations.
+   *
    * For true positive, there is one and only one prediction, which matches the
    * only one ground truth annotation in
    * [ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
+   *
    * For false positive, there is one and only one prediction, which doesn't
    * match any ground truth annotation of the corresponding
    * [data_item_view_id][EvaluatedAnnotation.data_item_view_id].
+   *
    * For false negative, there are zero or more predictions which are similar to
    * the only ground truth annotation in
    * [ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths]
    * but not enough for a match.
+   *
    * The schema of the prediction is stored in
    * [ModelEvaluation.annotation_schema_uri][google.cloud.aiplatform.v1.ModelEvaluation.annotation_schema_uri]
    * </pre>
@@ -129,16 +141,20 @@ public interface EvaluatedAnnotationOrBuilder
    *
    * <pre>
    * Output only. The model predicted annotations.
+   *
    * For true positive, there is one and only one prediction, which matches the
    * only one ground truth annotation in
    * [ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
+   *
    * For false positive, there is one and only one prediction, which doesn't
    * match any ground truth annotation of the corresponding
    * [data_item_view_id][EvaluatedAnnotation.data_item_view_id].
+   *
    * For false negative, there are zero or more predictions which are similar to
    * the only ground truth annotation in
    * [ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths]
    * but not enough for a match.
+   *
    * The schema of the prediction is stored in
    * [ModelEvaluation.annotation_schema_uri][google.cloud.aiplatform.v1.ModelEvaluation.annotation_schema_uri]
    * </pre>
@@ -153,16 +169,20 @@ public interface EvaluatedAnnotationOrBuilder
    *
    * <pre>
    * Output only. The model predicted annotations.
+   *
    * For true positive, there is one and only one prediction, which matches the
    * only one ground truth annotation in
    * [ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
+   *
    * For false positive, there is one and only one prediction, which doesn't
    * match any ground truth annotation of the corresponding
    * [data_item_view_id][EvaluatedAnnotation.data_item_view_id].
+   *
    * For false negative, there are zero or more predictions which are similar to
    * the only ground truth annotation in
    * [ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths]
    * but not enough for a match.
+   *
    * The schema of the prediction is stored in
    * [ModelEvaluation.annotation_schema_uri][google.cloud.aiplatform.v1.ModelEvaluation.annotation_schema_uri]
    * </pre>
@@ -179,15 +199,19 @@ public interface EvaluatedAnnotationOrBuilder
    * <pre>
    * Output only. The ground truth Annotations, i.e. the Annotations that exist
    * in the test data the Model is evaluated on.
+   *
    * For true positive, there is one and only one ground truth annotation, which
    * matches the only prediction in
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions].
+   *
    * For false positive, there are zero or more ground truth annotations that
    * are similar to the only prediction in
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions],
    * but not enough for a match.
+   *
    * For false negative, there is one and only one ground truth annotation,
    * which doesn't match any predictions created by the model.
+   *
    * The schema of the ground truth is stored in
    * [ModelEvaluation.annotation_schema_uri][google.cloud.aiplatform.v1.ModelEvaluation.annotation_schema_uri]
    * </pre>
@@ -203,15 +227,19 @@ public interface EvaluatedAnnotationOrBuilder
    * <pre>
    * Output only. The ground truth Annotations, i.e. the Annotations that exist
    * in the test data the Model is evaluated on.
+   *
    * For true positive, there is one and only one ground truth annotation, which
    * matches the only prediction in
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions].
+   *
    * For false positive, there are zero or more ground truth annotations that
    * are similar to the only prediction in
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions],
    * but not enough for a match.
+   *
    * For false negative, there is one and only one ground truth annotation,
    * which doesn't match any predictions created by the model.
+   *
    * The schema of the ground truth is stored in
    * [ModelEvaluation.annotation_schema_uri][google.cloud.aiplatform.v1.ModelEvaluation.annotation_schema_uri]
    * </pre>
@@ -227,15 +255,19 @@ public interface EvaluatedAnnotationOrBuilder
    * <pre>
    * Output only. The ground truth Annotations, i.e. the Annotations that exist
    * in the test data the Model is evaluated on.
+   *
    * For true positive, there is one and only one ground truth annotation, which
    * matches the only prediction in
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions].
+   *
    * For false positive, there are zero or more ground truth annotations that
    * are similar to the only prediction in
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions],
    * but not enough for a match.
+   *
    * For false negative, there is one and only one ground truth annotation,
    * which doesn't match any predictions created by the model.
+   *
    * The schema of the ground truth is stored in
    * [ModelEvaluation.annotation_schema_uri][google.cloud.aiplatform.v1.ModelEvaluation.annotation_schema_uri]
    * </pre>
@@ -251,15 +283,19 @@ public interface EvaluatedAnnotationOrBuilder
    * <pre>
    * Output only. The ground truth Annotations, i.e. the Annotations that exist
    * in the test data the Model is evaluated on.
+   *
    * For true positive, there is one and only one ground truth annotation, which
    * matches the only prediction in
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions].
+   *
    * For false positive, there are zero or more ground truth annotations that
    * are similar to the only prediction in
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions],
    * but not enough for a match.
+   *
    * For false negative, there is one and only one ground truth annotation,
    * which doesn't match any predictions created by the model.
+   *
    * The schema of the ground truth is stored in
    * [ModelEvaluation.annotation_schema_uri][google.cloud.aiplatform.v1.ModelEvaluation.annotation_schema_uri]
    * </pre>
@@ -275,15 +311,19 @@ public interface EvaluatedAnnotationOrBuilder
    * <pre>
    * Output only. The ground truth Annotations, i.e. the Annotations that exist
    * in the test data the Model is evaluated on.
+   *
    * For true positive, there is one and only one ground truth annotation, which
    * matches the only prediction in
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions].
+   *
    * For false positive, there are zero or more ground truth annotations that
    * are similar to the only prediction in
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions],
    * but not enough for a match.
+   *
    * For false negative, there is one and only one ground truth annotation,
    * which doesn't match any predictions created by the model.
+   *
    * The schema of the ground truth is stored in
    * [ModelEvaluation.annotation_schema_uri][google.cloud.aiplatform.v1.ModelEvaluation.annotation_schema_uri]
    * </pre>
@@ -379,6 +419,7 @@ public interface EvaluatedAnnotationOrBuilder
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions].
    * Each element of the explanations indicates the explanation for one
    * explanation Method.
+   *
    * The attributions list in the
    * [EvaluatedAnnotationExplanation.explanation][google.cloud.aiplatform.v1.EvaluatedAnnotationExplanation.explanation]
    * object corresponds to the
@@ -400,6 +441,7 @@ public interface EvaluatedAnnotationOrBuilder
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions].
    * Each element of the explanations indicates the explanation for one
    * explanation Method.
+   *
    * The attributions list in the
    * [EvaluatedAnnotationExplanation.explanation][google.cloud.aiplatform.v1.EvaluatedAnnotationExplanation.explanation]
    * object corresponds to the
@@ -420,6 +462,7 @@ public interface EvaluatedAnnotationOrBuilder
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions].
    * Each element of the explanations indicates the explanation for one
    * explanation Method.
+   *
    * The attributions list in the
    * [EvaluatedAnnotationExplanation.explanation][google.cloud.aiplatform.v1.EvaluatedAnnotationExplanation.explanation]
    * object corresponds to the
@@ -440,6 +483,7 @@ public interface EvaluatedAnnotationOrBuilder
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions].
    * Each element of the explanations indicates the explanation for one
    * explanation Method.
+   *
    * The attributions list in the
    * [EvaluatedAnnotationExplanation.explanation][google.cloud.aiplatform.v1.EvaluatedAnnotationExplanation.explanation]
    * object corresponds to the
@@ -461,6 +505,7 @@ public interface EvaluatedAnnotationOrBuilder
    * [predictions][google.cloud.aiplatform.v1.EvaluatedAnnotation.predictions].
    * Each element of the explanations indicates the explanation for one
    * explanation Method.
+   *
    * The attributions list in the
    * [EvaluatedAnnotationExplanation.explanation][google.cloud.aiplatform.v1.EvaluatedAnnotationExplanation.explanation]
    * object corresponds to the

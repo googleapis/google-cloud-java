@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.DeleteGlobalAddressRequest;
 import com.google.cloud.compute.v1.GetGlobalAddressRequest;
 import com.google.cloud.compute.v1.InsertGlobalAddressRequest;
 import com.google.cloud.compute.v1.ListGlobalAddressesRequest;
+import com.google.cloud.compute.v1.MoveGlobalAddressRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetLabelsGlobalAddressRequest;
 import com.google.common.collect.ImmutableList;
@@ -116,6 +117,9 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
       insertOperationSettings;
   private final PagedCallSettings<ListGlobalAddressesRequest, AddressList, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<MoveGlobalAddressRequest, Operation> moveSettings;
+  private final OperationCallSettings<MoveGlobalAddressRequest, Operation, Operation>
+      moveOperationSettings;
   private final UnaryCallSettings<SetLabelsGlobalAddressRequest, Operation> setLabelsSettings;
   private final OperationCallSettings<SetLabelsGlobalAddressRequest, Operation, Operation>
       setLabelsOperationSettings;
@@ -206,6 +210,17 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
   public PagedCallSettings<ListGlobalAddressesRequest, AddressList, ListPagedResponse>
       listSettings() {
     return listSettings;
+  }
+
+  /** Returns the object with the settings used for calls to move. */
+  public UnaryCallSettings<MoveGlobalAddressRequest, Operation> moveSettings() {
+    return moveSettings;
+  }
+
+  /** Returns the object with the settings used for calls to move. */
+  public OperationCallSettings<MoveGlobalAddressRequest, Operation, Operation>
+      moveOperationSettings() {
+    return moveOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to setLabels. */
@@ -301,6 +316,8 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    moveSettings = settingsBuilder.moveSettings().build();
+    moveOperationSettings = settingsBuilder.moveOperationSettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
     setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
   }
@@ -318,6 +335,9 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
     private final PagedCallSettings.Builder<
             ListGlobalAddressesRequest, AddressList, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<MoveGlobalAddressRequest, Operation> moveSettings;
+    private final OperationCallSettings.Builder<MoveGlobalAddressRequest, Operation, Operation>
+        moveOperationSettings;
     private final UnaryCallSettings.Builder<SetLabelsGlobalAddressRequest, Operation>
         setLabelsSettings;
     private final OperationCallSettings.Builder<SetLabelsGlobalAddressRequest, Operation, Operation>
@@ -378,12 +398,19 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      moveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      moveOperationSettings = OperationCallSettings.newBuilder();
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings, setLabelsSettings);
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              moveSettings,
+              setLabelsSettings);
       initDefaults(this);
     }
 
@@ -396,12 +423,19 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      moveSettings = settings.moveSettings.toBuilder();
+      moveOperationSettings = settings.moveOperationSettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
       setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings, setLabelsSettings);
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              moveSettings,
+              setLabelsSettings);
     }
 
     private static Builder createDefault() {
@@ -439,6 +473,11 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .moveSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .setLabelsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -472,6 +511,30 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertGlobalAddressRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .moveOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<MoveGlobalAddressRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -568,6 +631,19 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
     public PagedCallSettings.Builder<ListGlobalAddressesRequest, AddressList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to move. */
+    public UnaryCallSettings.Builder<MoveGlobalAddressRequest, Operation> moveSettings() {
+      return moveSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to move. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<MoveGlobalAddressRequest, Operation, Operation>
+        moveOperationSettings() {
+      return moveOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setLabels. */

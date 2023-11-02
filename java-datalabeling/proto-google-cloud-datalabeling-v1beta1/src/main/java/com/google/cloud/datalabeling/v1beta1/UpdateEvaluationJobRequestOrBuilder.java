@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,9 +70,11 @@ public interface UpdateEvaluationJobRequestOrBuilder
    * <pre>
    * Optional. Mask for which fields to update. You can only provide the
    * following fields:
+   *
    * * `evaluationJobConfig.humanAnnotationConfig.instruction`
    * * `evaluationJobConfig.exampleCount`
    * * `evaluationJobConfig.exampleSamplePercentage`
+   *
    * You can provide more than one of these fields by separating them with
    * commas.
    * </pre>
@@ -89,9 +91,11 @@ public interface UpdateEvaluationJobRequestOrBuilder
    * <pre>
    * Optional. Mask for which fields to update. You can only provide the
    * following fields:
+   *
    * * `evaluationJobConfig.humanAnnotationConfig.instruction`
    * * `evaluationJobConfig.exampleCount`
    * * `evaluationJobConfig.exampleSamplePercentage`
+   *
    * You can provide more than one of these fields by separating them with
    * commas.
    * </pre>
@@ -108,9 +112,11 @@ public interface UpdateEvaluationJobRequestOrBuilder
    * <pre>
    * Optional. Mask for which fields to update. You can only provide the
    * following fields:
+   *
    * * `evaluationJobConfig.humanAnnotationConfig.instruction`
    * * `evaluationJobConfig.exampleCount`
    * * `evaluationJobConfig.exampleSamplePercentage`
+   *
    * You can provide more than one of these fields by separating them with
    * commas.
    * </pre>

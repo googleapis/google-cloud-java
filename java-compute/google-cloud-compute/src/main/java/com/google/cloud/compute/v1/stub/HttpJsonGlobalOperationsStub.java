@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LongRunningClient;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListGlobalOperationsRequest;
 import com.google.cloud.compute.v1.DeleteGlobalOperationRequest;
@@ -358,6 +359,12 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                 .<AggregatedListGlobalOperationsRequest, OperationAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteGlobalOperationRequest, DeleteGlobalOperationResponse>
         deleteTransportSettings =
@@ -365,21 +372,48 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                 .<DeleteGlobalOperationRequest, DeleteGlobalOperationResponse>newBuilder()
                 .setMethodDescriptor(deleteMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("operation", String.valueOf(request.getOperation()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetGlobalOperationRequest, Operation> getTransportSettings =
         HttpJsonCallSettings.<GetGlobalOperationRequest, Operation>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("operation", String.valueOf(request.getOperation()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListGlobalOperationsRequest, OperationList> listTransportSettings =
         HttpJsonCallSettings.<ListGlobalOperationsRequest, OperationList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<WaitGlobalOperationRequest, Operation> waitTransportSettings =
         HttpJsonCallSettings.<WaitGlobalOperationRequest, Operation>newBuilder()
             .setMethodDescriptor(waitMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("operation", String.valueOf(request.getOperation()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
 
     this.aggregatedListCallable =

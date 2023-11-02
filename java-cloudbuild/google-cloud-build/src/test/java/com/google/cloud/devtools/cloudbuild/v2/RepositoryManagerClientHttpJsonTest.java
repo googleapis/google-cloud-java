@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.cloudbuild.v2.BatchCreateRepositoriesResponse;
 import com.google.cloudbuild.v2.Connection;
 import com.google.cloudbuild.v2.ConnectionName;
 import com.google.cloudbuild.v2.CreateRepositoryRequest;
+import com.google.cloudbuild.v2.FetchGitRefsResponse;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse;
 import com.google.cloudbuild.v2.FetchReadTokenResponse;
@@ -612,6 +613,7 @@ public class RepositoryManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setWebhookId("webhookId-544129550")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -673,6 +675,7 @@ public class RepositoryManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setWebhookId("webhookId-544129550")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -838,6 +841,7 @@ public class RepositoryManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setWebhookId("webhookId-544129550")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -891,6 +895,7 @@ public class RepositoryManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setWebhookId("webhookId-544129550")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1370,6 +1375,94 @@ public class RepositoryManagerClientHttpJsonTest {
               .setPageToken("pageToken873572522")
               .build();
       client.fetchLinkableRepositories(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRefsTest() throws Exception {
+    FetchGitRefsResponse expectedResponse =
+        FetchGitRefsResponse.newBuilder().addAllRefNames(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    RepositoryName repository =
+        RepositoryName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]", "[REPOSITORY]");
+
+    FetchGitRefsResponse actualResponse = client.fetchGitRefs(repository);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchGitRefsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepositoryName repository =
+          RepositoryName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]", "[REPOSITORY]");
+      client.fetchGitRefs(repository);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRefsTest2() throws Exception {
+    FetchGitRefsResponse expectedResponse =
+        FetchGitRefsResponse.newBuilder().addAllRefNames(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    String repository =
+        "projects/project-6024/locations/location-6024/connections/connection-6024/repositories/repositorie-6024";
+
+    FetchGitRefsResponse actualResponse = client.fetchGitRefs(repository);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchGitRefsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String repository =
+          "projects/project-6024/locations/location-6024/connections/connection-6024/repositories/repositorie-6024";
+      client.fetchGitRefs(repository);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

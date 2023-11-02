@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.cloud.compute.v1.DeleteGlobalAddressRequest;
 import com.google.cloud.compute.v1.GetGlobalAddressRequest;
 import com.google.cloud.compute.v1.InsertGlobalAddressRequest;
 import com.google.cloud.compute.v1.ListGlobalAddressesRequest;
+import com.google.cloud.compute.v1.MoveGlobalAddressRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetLabelsGlobalAddressRequest;
 import javax.annotation.Generated;
@@ -68,6 +69,14 @@ public abstract class GlobalAddressesStub implements BackgroundResource {
 
   public UnaryCallable<ListGlobalAddressesRequest, AddressList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<MoveGlobalAddressRequest, Operation, Operation> moveOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveOperationCallable()");
+  }
+
+  public UnaryCallable<MoveGlobalAddressRequest, Operation> moveCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveCallable()");
   }
 
   public OperationCallable<SetLabelsGlobalAddressRequest, Operation, Operation>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,6 +94,5 @@ public interface ConversationDataSourceOrBuilder
   com.google.cloud.contactcenterinsights.v1.DialogflowSourceOrBuilder
       getDialogflowSourceOrBuilder();
 
-  public com.google.cloud.contactcenterinsights.v1.ConversationDataSource.SourceCase
-      getSourceCase();
+  com.google.cloud.contactcenterinsights.v1.ConversationDataSource.SourceCase getSourceCase();
 }

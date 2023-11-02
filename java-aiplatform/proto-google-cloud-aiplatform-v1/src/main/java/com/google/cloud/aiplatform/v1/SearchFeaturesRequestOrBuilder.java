@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,10 +63,12 @@ public interface SearchFeaturesRequestOrBuilder
    * Query string that is a conjunction of field-restricted queries and/or
    * field-restricted filters.  Field-restricted queries and filters can be
    * combined using `AND` to form a conjunction.
+   *
    * A field query is in the form FIELD:QUERY. This implicitly checks if QUERY
    * exists as a substring within Feature's FIELD. The QUERY
    * and the FIELD are converted to a sequence of words (i.e. tokens) for
    * comparison. This is done by:
+   *
    *   * Removing leading/trailing whitespace and tokenizing the search value.
    *   Characters that are not one of alphanumeric `[a-zA-Z0-9]`, underscore
    *   `_`, or asterisk `*` are treated as delimiters for tokens. `*` is treated
@@ -74,15 +76,20 @@ public interface SearchFeaturesRequestOrBuilder
    *   * Ignoring case.
    *   * Prepending an asterisk to the first and appending an asterisk to the
    *   last token in QUERY.
+   *
    * A QUERY must be either a singular token or a phrase. A phrase is one or
    * multiple words enclosed in double quotation marks ("). With phrases, the
    * order of the words is important. Words in the phrase must be matching in
    * order and consecutively.
+   *
    * Supported FIELDs for field-restricted queries:
+   *
    * * `feature_id`
    * * `description`
    * * `entity_type_id`
+   *
    * Examples:
+   *
    * * `feature_id: foo` --&gt; Matches a Feature with ID containing the substring
    * `foo` (eg. `foo`, `foofeature`, `barfoo`).
    * * `feature_id: foo*feature` --&gt; Matches a Feature with ID containing the
@@ -90,9 +97,12 @@ public interface SearchFeaturesRequestOrBuilder
    * * `feature_id: foo AND description: bar` --&gt; Matches a Feature with ID
    * containing the substring `foo` and description containing the substring
    * `bar`.
+   *
+   *
    * Besides field queries, the following exact-match filters are
    * supported. The exact-match filters do not support wildcards. Unlike
    * field-restricted queries, exact-match filters are case-sensitive.
+   *
    * * `feature_id`: Supports = comparisons.
    * * `description`: Supports = comparisons. Multi-token filters should be
    * enclosed in quotes.
@@ -100,7 +110,9 @@ public interface SearchFeaturesRequestOrBuilder
    * * `value_type`: Supports = and != comparisons.
    * * `labels`: Supports key-value equality as well as key presence.
    * * `featurestore_id`: Supports = comparisons.
+   *
    * Examples:
+   *
    * * `description = "foo bar"` --&gt; Any Feature with description exactly equal
    * to `foo bar`
    * * `value_type = DOUBLE` --&gt; Features whose type is DOUBLE.
@@ -122,10 +134,12 @@ public interface SearchFeaturesRequestOrBuilder
    * Query string that is a conjunction of field-restricted queries and/or
    * field-restricted filters.  Field-restricted queries and filters can be
    * combined using `AND` to form a conjunction.
+   *
    * A field query is in the form FIELD:QUERY. This implicitly checks if QUERY
    * exists as a substring within Feature's FIELD. The QUERY
    * and the FIELD are converted to a sequence of words (i.e. tokens) for
    * comparison. This is done by:
+   *
    *   * Removing leading/trailing whitespace and tokenizing the search value.
    *   Characters that are not one of alphanumeric `[a-zA-Z0-9]`, underscore
    *   `_`, or asterisk `*` are treated as delimiters for tokens. `*` is treated
@@ -133,15 +147,20 @@ public interface SearchFeaturesRequestOrBuilder
    *   * Ignoring case.
    *   * Prepending an asterisk to the first and appending an asterisk to the
    *   last token in QUERY.
+   *
    * A QUERY must be either a singular token or a phrase. A phrase is one or
    * multiple words enclosed in double quotation marks ("). With phrases, the
    * order of the words is important. Words in the phrase must be matching in
    * order and consecutively.
+   *
    * Supported FIELDs for field-restricted queries:
+   *
    * * `feature_id`
    * * `description`
    * * `entity_type_id`
+   *
    * Examples:
+   *
    * * `feature_id: foo` --&gt; Matches a Feature with ID containing the substring
    * `foo` (eg. `foo`, `foofeature`, `barfoo`).
    * * `feature_id: foo*feature` --&gt; Matches a Feature with ID containing the
@@ -149,9 +168,12 @@ public interface SearchFeaturesRequestOrBuilder
    * * `feature_id: foo AND description: bar` --&gt; Matches a Feature with ID
    * containing the substring `foo` and description containing the substring
    * `bar`.
+   *
+   *
    * Besides field queries, the following exact-match filters are
    * supported. The exact-match filters do not support wildcards. Unlike
    * field-restricted queries, exact-match filters are case-sensitive.
+   *
    * * `feature_id`: Supports = comparisons.
    * * `description`: Supports = comparisons. Multi-token filters should be
    * enclosed in quotes.
@@ -159,7 +181,9 @@ public interface SearchFeaturesRequestOrBuilder
    * * `value_type`: Supports = and != comparisons.
    * * `labels`: Supports key-value equality as well as key presence.
    * * `featurestore_id`: Supports = comparisons.
+   *
    * Examples:
+   *
    * * `description = "foo bar"` --&gt; Any Feature with description exactly equal
    * to `foo bar`
    * * `value_type = DOUBLE` --&gt; Features whose type is DOUBLE.
@@ -198,6 +222,7 @@ public interface SearchFeaturesRequestOrBuilder
    * A page token, received from a previous
    * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures],
    * except `page_size`, must match the call that provided the page token.
@@ -215,6 +240,7 @@ public interface SearchFeaturesRequestOrBuilder
    * A page token, received from a previous
    * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures],
    * except `page_size`, must match the call that provided the page token.

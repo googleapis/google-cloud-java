@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -975,6 +975,82 @@ public class ConversationsClientHttpJsonTest {
               .setMaxContextSize(-1134084212)
               .build();
       client.generateStatelessSummary(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchKnowledgeTest() throws Exception {
+    SearchKnowledgeResponse expectedResponse =
+        SearchKnowledgeResponse.newBuilder()
+            .addAllAnswers(new ArrayList<SearchKnowledgeAnswer>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SearchKnowledgeRequest request =
+        SearchKnowledgeRequest.newBuilder()
+            .setParent("projects/project-2353")
+            .setQuery(TextInput.newBuilder().build())
+            .setConversationProfile(
+                ConversationProfileName.ofProjectConversationProfileName(
+                        "[PROJECT]", "[CONVERSATION_PROFILE]")
+                    .toString())
+            .setSessionId("sessionId607796817")
+            .setConversation(
+                ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
+                    .toString())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .build();
+
+    SearchKnowledgeResponse actualResponse = client.searchKnowledge(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchKnowledgeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SearchKnowledgeRequest request =
+          SearchKnowledgeRequest.newBuilder()
+              .setParent("projects/project-2353")
+              .setQuery(TextInput.newBuilder().build())
+              .setConversationProfile(
+                  ConversationProfileName.ofProjectConversationProfileName(
+                          "[PROJECT]", "[CONVERSATION_PROFILE]")
+                      .toString())
+              .setSessionId("sessionId607796817")
+              .setConversation(
+                  ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
+                      .toString())
+              .setLatestMessage(
+                  MessageName.ofProjectConversationMessageName(
+                          "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                      .toString())
+              .build();
+      client.searchKnowledge(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ public interface SecretOrBuilder
    *
    * <pre>
    * Map of environment variable name to its encrypted value.
+   *
    * Secret environment variables must be unique across all of a build's
    * secrets, and must be used by at least one build step. Values can be at most
    * 64 KB in size. There can be at most 100 secret values across all of a
@@ -67,6 +68,7 @@ public interface SecretOrBuilder
    *
    * <pre>
    * Map of environment variable name to its encrypted value.
+   *
    * Secret environment variables must be unique across all of a build's
    * secrets, and must be used by at least one build step. Values can be at most
    * 64 KB in size. There can be at most 100 secret values across all of a
@@ -84,6 +86,7 @@ public interface SecretOrBuilder
    *
    * <pre>
    * Map of environment variable name to its encrypted value.
+   *
    * Secret environment variables must be unique across all of a build's
    * secrets, and must be used by at least one build step. Values can be at most
    * 64 KB in size. There can be at most 100 secret values across all of a
@@ -98,6 +101,7 @@ public interface SecretOrBuilder
    *
    * <pre>
    * Map of environment variable name to its encrypted value.
+   *
    * Secret environment variables must be unique across all of a build's
    * secrets, and must be used by at least one build step. Values can be at most
    * 64 KB in size. There can be at most 100 secret values across all of a
@@ -116,6 +120,7 @@ public interface SecretOrBuilder
    *
    * <pre>
    * Map of environment variable name to its encrypted value.
+   *
    * Secret environment variables must be unique across all of a build's
    * secrets, and must be used by at least one build step. Values can be at most
    * 64 KB in size. There can be at most 100 secret values across all of a

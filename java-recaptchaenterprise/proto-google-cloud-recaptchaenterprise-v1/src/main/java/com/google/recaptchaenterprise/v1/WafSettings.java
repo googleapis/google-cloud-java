@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WafSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -121,6 +116,17 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTION_TOKEN = 3;</code>
      */
     ACTION_TOKEN(3),
+    /**
+     *
+     *
+     * <pre>
+     * Use reCAPTCHA WAF express protection to protect any content other than
+     * web pages, like APIs and IoT devices.
+     * </pre>
+     *
+     * <code>EXPRESS = 5;</code>
+     */
+    EXPRESS(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -165,6 +171,17 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTION_TOKEN = 3;</code>
      */
     public static final int ACTION_TOKEN_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Use reCAPTCHA WAF express protection to protect any content other than
+     * web pages, like APIs and IoT devices.
+     * </pre>
+     *
+     * <code>EXPRESS = 5;</code>
+     */
+    public static final int EXPRESS_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -198,6 +215,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
           return SESSION_TOKEN;
         case 3:
           return ACTION_TOKEN;
+        case 5:
+          return EXPRESS;
         default:
           return null;
       }
@@ -281,6 +300,16 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>CA = 1;</code>
      */
     CA(1),
+    /**
+     *
+     *
+     * <pre>
+     * Fastly
+     * </pre>
+     *
+     * <code>FASTLY = 3;</code>
+     */
+    FASTLY(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -304,6 +333,16 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>CA = 1;</code>
      */
     public static final int CA_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Fastly
+     * </pre>
+     *
+     * <code>FASTLY = 3;</code>
+     */
+    public static final int FASTLY_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -333,6 +372,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
           return WAF_SERVICE_UNSPECIFIED;
         case 1:
           return CA;
+        case 3:
+          return FASTLY;
         default:
           return null;
       }

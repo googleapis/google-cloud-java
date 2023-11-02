@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -459,6 +459,140 @@ public class DisksClient implements BackgroundResource {
   public final UnaryCallable<AggregatedListDisksRequest, DiskAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk create a set of disks.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   BulkInsertDiskResource bulkInsertDiskResourceResource =
+   *       BulkInsertDiskResource.newBuilder().build();
+   *   Operation response =
+   *       disksClient.bulkInsertAsync(project, zone, bulkInsertDiskResourceResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param bulkInsertDiskResourceResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> bulkInsertAsync(
+      String project, String zone, BulkInsertDiskResource bulkInsertDiskResourceResource) {
+    BulkInsertDiskRequest request =
+        BulkInsertDiskRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setBulkInsertDiskResourceResource(bulkInsertDiskResourceResource)
+            .build();
+    return bulkInsertAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk create a set of disks.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   BulkInsertDiskRequest request =
+   *       BulkInsertDiskRequest.newBuilder()
+   *           .setBulkInsertDiskResourceResource(BulkInsertDiskResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = disksClient.bulkInsertAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> bulkInsertAsync(
+      BulkInsertDiskRequest request) {
+    return bulkInsertOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk create a set of disks.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   BulkInsertDiskRequest request =
+   *       BulkInsertDiskRequest.newBuilder()
+   *           .setBulkInsertDiskResourceResource(BulkInsertDiskResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       disksClient.bulkInsertOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BulkInsertDiskRequest, Operation, Operation>
+      bulkInsertOperationCallable() {
+    return stub.bulkInsertOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk create a set of disks.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   BulkInsertDiskRequest request =
+   *       BulkInsertDiskRequest.newBuilder()
+   *           .setBulkInsertDiskResourceResource(BulkInsertDiskResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.bulkInsertCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BulkInsertDiskRequest, Operation> bulkInsertCallable() {
+    return stub.bulkInsertCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1762,6 +1896,439 @@ public class DisksClient implements BackgroundResource {
    */
   public final UnaryCallable<SetLabelsDiskRequest, Operation> setLabelsCallable() {
     return stub.setLabelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts asynchronous replication. Must be invoked on the primary disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String disk = "disk3083677";
+   *   DisksStartAsyncReplicationRequest disksStartAsyncReplicationRequestResource =
+   *       DisksStartAsyncReplicationRequest.newBuilder().build();
+   *   Operation response =
+   *       disksClient
+   *           .startAsyncReplicationAsync(
+   *               project, zone, disk, disksStartAsyncReplicationRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param disk The name of the persistent disk.
+   * @param disksStartAsyncReplicationRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> startAsyncReplicationAsync(
+      String project,
+      String zone,
+      String disk,
+      DisksStartAsyncReplicationRequest disksStartAsyncReplicationRequestResource) {
+    StartAsyncReplicationDiskRequest request =
+        StartAsyncReplicationDiskRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setDisk(disk)
+            .setDisksStartAsyncReplicationRequestResource(disksStartAsyncReplicationRequestResource)
+            .build();
+    return startAsyncReplicationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts asynchronous replication. Must be invoked on the primary disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   StartAsyncReplicationDiskRequest request =
+   *       StartAsyncReplicationDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDisksStartAsyncReplicationRequestResource(
+   *               DisksStartAsyncReplicationRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = disksClient.startAsyncReplicationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> startAsyncReplicationAsync(
+      StartAsyncReplicationDiskRequest request) {
+    return startAsyncReplicationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts asynchronous replication. Must be invoked on the primary disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   StartAsyncReplicationDiskRequest request =
+   *       StartAsyncReplicationDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDisksStartAsyncReplicationRequestResource(
+   *               DisksStartAsyncReplicationRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       disksClient.startAsyncReplicationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StartAsyncReplicationDiskRequest, Operation, Operation>
+      startAsyncReplicationOperationCallable() {
+    return stub.startAsyncReplicationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts asynchronous replication. Must be invoked on the primary disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   StartAsyncReplicationDiskRequest request =
+   *       StartAsyncReplicationDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDisksStartAsyncReplicationRequestResource(
+   *               DisksStartAsyncReplicationRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.startAsyncReplicationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StartAsyncReplicationDiskRequest, Operation>
+      startAsyncReplicationCallable() {
+    return stub.startAsyncReplicationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops asynchronous replication. Can be invoked either on the primary or on the secondary disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String disk = "disk3083677";
+   *   Operation response = disksClient.stopAsyncReplicationAsync(project, zone, disk).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param disk The name of the persistent disk.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> stopAsyncReplicationAsync(
+      String project, String zone, String disk) {
+    StopAsyncReplicationDiskRequest request =
+        StopAsyncReplicationDiskRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setDisk(disk)
+            .build();
+    return stopAsyncReplicationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops asynchronous replication. Can be invoked either on the primary or on the secondary disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   StopAsyncReplicationDiskRequest request =
+   *       StopAsyncReplicationDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = disksClient.stopAsyncReplicationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> stopAsyncReplicationAsync(
+      StopAsyncReplicationDiskRequest request) {
+    return stopAsyncReplicationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops asynchronous replication. Can be invoked either on the primary or on the secondary disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   StopAsyncReplicationDiskRequest request =
+   *       StopAsyncReplicationDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       disksClient.stopAsyncReplicationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StopAsyncReplicationDiskRequest, Operation, Operation>
+      stopAsyncReplicationOperationCallable() {
+    return stub.stopAsyncReplicationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops asynchronous replication. Can be invoked either on the primary or on the secondary disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   StopAsyncReplicationDiskRequest request =
+   *       StopAsyncReplicationDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.stopAsyncReplicationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StopAsyncReplicationDiskRequest, Operation>
+      stopAsyncReplicationCallable() {
+    return stub.stopAsyncReplicationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops asynchronous replication for a consistency group of disks. Can be invoked either in the
+   * primary or secondary scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   DisksStopGroupAsyncReplicationResource disksStopGroupAsyncReplicationResourceResource =
+   *       DisksStopGroupAsyncReplicationResource.newBuilder().build();
+   *   Operation response =
+   *       disksClient
+   *           .stopGroupAsyncReplicationAsync(
+   *               project, zone, disksStopGroupAsyncReplicationResourceResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request. This must be the zone of the primary or
+   *     secondary disks in the consistency group.
+   * @param disksStopGroupAsyncReplicationResourceResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> stopGroupAsyncReplicationAsync(
+      String project,
+      String zone,
+      DisksStopGroupAsyncReplicationResource disksStopGroupAsyncReplicationResourceResource) {
+    StopGroupAsyncReplicationDiskRequest request =
+        StopGroupAsyncReplicationDiskRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setDisksStopGroupAsyncReplicationResourceResource(
+                disksStopGroupAsyncReplicationResourceResource)
+            .build();
+    return stopGroupAsyncReplicationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops asynchronous replication for a consistency group of disks. Can be invoked either in the
+   * primary or secondary scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   StopGroupAsyncReplicationDiskRequest request =
+   *       StopGroupAsyncReplicationDiskRequest.newBuilder()
+   *           .setDisksStopGroupAsyncReplicationResourceResource(
+   *               DisksStopGroupAsyncReplicationResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = disksClient.stopGroupAsyncReplicationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> stopGroupAsyncReplicationAsync(
+      StopGroupAsyncReplicationDiskRequest request) {
+    return stopGroupAsyncReplicationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops asynchronous replication for a consistency group of disks. Can be invoked either in the
+   * primary or secondary scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   StopGroupAsyncReplicationDiskRequest request =
+   *       StopGroupAsyncReplicationDiskRequest.newBuilder()
+   *           .setDisksStopGroupAsyncReplicationResourceResource(
+   *               DisksStopGroupAsyncReplicationResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       disksClient.stopGroupAsyncReplicationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StopGroupAsyncReplicationDiskRequest, Operation, Operation>
+      stopGroupAsyncReplicationOperationCallable() {
+    return stub.stopGroupAsyncReplicationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops asynchronous replication for a consistency group of disks. Can be invoked either in the
+   * primary or secondary scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   StopGroupAsyncReplicationDiskRequest request =
+   *       StopGroupAsyncReplicationDiskRequest.newBuilder()
+   *           .setDisksStopGroupAsyncReplicationResourceResource(
+   *               DisksStopGroupAsyncReplicationResource.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       disksClient.stopGroupAsyncReplicationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StopGroupAsyncReplicationDiskRequest, Operation>
+      stopGroupAsyncReplicationCallable() {
+    return stub.stopGroupAsyncReplicationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

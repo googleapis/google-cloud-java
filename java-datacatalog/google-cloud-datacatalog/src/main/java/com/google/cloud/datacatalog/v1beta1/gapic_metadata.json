@@ -67,6 +67,9 @@
             "RenameTagTemplateField": {
               "methods": ["renameTagTemplateField", "renameTagTemplateField", "renameTagTemplateField", "renameTagTemplateFieldCallable"]
             },
+            "RenameTagTemplateFieldEnumValue": {
+              "methods": ["renameTagTemplateFieldEnumValue", "renameTagTemplateFieldEnumValue", "renameTagTemplateFieldEnumValue", "renameTagTemplateFieldEnumValueCallable"]
+            },
             "SearchCatalog": {
               "methods": ["searchCatalog", "searchCatalog", "searchCatalogPagedCallable", "searchCatalogCallable"]
             },

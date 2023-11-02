@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,11 +41,6 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
     return new BatchUpdateIntentsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.IntentProto
         .internal_static_google_cloud_dialogflow_v2_BatchUpdateIntentsRequest_descriptor;
@@ -62,6 +57,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
   }
 
   private int intentBatchCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object intentBatch_;
 
   public enum IntentBatchCase

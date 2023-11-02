@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PolicySpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -263,7 +258,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.type.ExprOrBuilder getConditionOrBuilder();
 
-    public com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.KindCase getKindCase();
+    com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.KindCase getKindCase();
   }
   /**
    *
@@ -290,11 +285,6 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PolicyRule();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -453,19 +443,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       private StringValues() {
-        allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        deniedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        deniedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new StringValues();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -486,7 +471,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       public static final int ALLOWED_VALUES_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList allowedValues_;
+      private com.google.protobuf.LazyStringArrayList allowedValues_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -549,7 +535,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       public static final int DENIED_VALUES_FIELD_NUMBER = 2;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList deniedValues_;
+      private com.google.protobuf.LazyStringArrayList deniedValues_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -850,10 +837,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          deniedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          deniedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -883,7 +868,6 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues buildPartial() {
           com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues result =
               new com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -891,23 +875,17 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues result) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            allowedValues_ = allowedValues_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.allowedValues_ = allowedValues_;
-          if (((bitField0_ & 0x00000002) != 0)) {
-            deniedValues_ = deniedValues_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.deniedValues_ = deniedValues_;
-        }
-
         private void buildPartial0(
             com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            allowedValues_.makeImmutable();
+            result.allowedValues_ = allowedValues_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            deniedValues_.makeImmutable();
+            result.deniedValues_ = deniedValues_;
+          }
         }
 
         @java.lang.Override
@@ -964,7 +942,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           if (!other.allowedValues_.isEmpty()) {
             if (allowedValues_.isEmpty()) {
               allowedValues_ = other.allowedValues_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ |= 0x00000001;
             } else {
               ensureAllowedValuesIsMutable();
               allowedValues_.addAll(other.allowedValues_);
@@ -974,7 +952,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           if (!other.deniedValues_.isEmpty()) {
             if (deniedValues_.isEmpty()) {
               deniedValues_ = other.deniedValues_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ |= 0x00000002;
             } else {
               ensureDeniedValuesIsMutable();
               deniedValues_.addAll(other.deniedValues_);
@@ -1040,14 +1018,14 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList allowedValues_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList allowedValues_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureAllowedValuesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!allowedValues_.isModifiable()) {
             allowedValues_ = new com.google.protobuf.LazyStringArrayList(allowedValues_);
-            bitField0_ |= 0x00000001;
           }
+          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -1061,7 +1039,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the allowedValues.
          */
         public com.google.protobuf.ProtocolStringList getAllowedValuesList() {
-          return allowedValues_.getUnmodifiableView();
+          allowedValues_.makeImmutable();
+          return allowedValues_;
         }
         /**
          *
@@ -1126,6 +1105,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           }
           ensureAllowedValuesIsMutable();
           allowedValues_.set(index, value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1147,6 +1127,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           }
           ensureAllowedValuesIsMutable();
           allowedValues_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1165,6 +1146,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllAllowedValues(java.lang.Iterable<java.lang.String> values) {
           ensureAllowedValuesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedValues_);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1180,8 +1162,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearAllowedValues() {
-          allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          ;
           onChanged();
           return this;
         }
@@ -1204,18 +1187,19 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureAllowedValuesIsMutable();
           allowedValues_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringList deniedValues_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList deniedValues_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureDeniedValuesIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!deniedValues_.isModifiable()) {
             deniedValues_ = new com.google.protobuf.LazyStringArrayList(deniedValues_);
-            bitField0_ |= 0x00000002;
           }
+          bitField0_ |= 0x00000002;
         }
         /**
          *
@@ -1229,7 +1213,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the deniedValues.
          */
         public com.google.protobuf.ProtocolStringList getDeniedValuesList() {
-          return deniedValues_.getUnmodifiableView();
+          deniedValues_.makeImmutable();
+          return deniedValues_;
         }
         /**
          *
@@ -1294,6 +1279,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           }
           ensureDeniedValuesIsMutable();
           deniedValues_.set(index, value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1315,6 +1301,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           }
           ensureDeniedValuesIsMutable();
           deniedValues_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1333,6 +1320,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllDeniedValues(java.lang.Iterable<java.lang.String> values) {
           ensureDeniedValuesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deniedValues_);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1348,8 +1336,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDeniedValues() {
-          deniedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          deniedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
+          ;
           onChanged();
           return this;
         }
@@ -1372,6 +1361,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureDeniedValuesIsMutable();
           deniedValues_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1444,6 +1434,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int kindCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object kind_;
 
     public enum KindCase
@@ -3048,10 +3040,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An opaque tag indicating the current version of the `Policy`, used for
    * concurrency control.
+   *
    * This field is ignored if used in a `CreatePolicy` request.
+   *
    * When the `Policy` is returned from either a `GetPolicy` or a
    * `ListPolicies` request, this `etag` indicates the version of the
    * current `Policy` to use when executing a read-modify-write loop.
+   *
    * When the `Policy` is returned from a `GetEffectivePolicy` request, the
    * `etag` will be unset.
    * </pre>
@@ -3078,10 +3073,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An opaque tag indicating the current version of the `Policy`, used for
    * concurrency control.
+   *
    * This field is ignored if used in a `CreatePolicy` request.
+   *
    * When the `Policy` is returned from either a `GetPolicy` or a
    * `ListPolicies` request, this `etag` indicates the version of the
    * current `Policy` to use when executing a read-modify-write loop.
+   *
    * When the `Policy` is returned from a `GetEffectivePolicy` request, the
    * `etag` will be unset.
    * </pre>
@@ -3167,6 +3165,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Up to 10 PolicyRules are allowed.
+   *
    * In Policies for boolean constraints, the following requirements apply:
    *   - There must be one and only one PolicyRule where condition is unset.
    *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -3186,6 +3185,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Up to 10 PolicyRules are allowed.
+   *
    * In Policies for boolean constraints, the following requirements apply:
    *   - There must be one and only one PolicyRule where condition is unset.
    *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -3206,6 +3206,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Up to 10 PolicyRules are allowed.
+   *
    * In Policies for boolean constraints, the following requirements apply:
    *   - There must be one and only one PolicyRule where condition is unset.
    *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -3225,6 +3226,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Up to 10 PolicyRules are allowed.
+   *
    * In Policies for boolean constraints, the following requirements apply:
    *   - There must be one and only one PolicyRule where condition is unset.
    *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -3244,6 +3246,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Up to 10 PolicyRules are allowed.
+   *
    * In Policies for boolean constraints, the following requirements apply:
    *   - There must be one and only one PolicyRule where condition is unset.
    *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -3266,6 +3269,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Determines the inheritance behavior for this `Policy`.
+   *
    * If `inherit_from_parent` is true, PolicyRules set higher up in the
    * hierarchy (up to the closest root) are inherited and present in the
    * effective policy. If it is false, then no rules are inherited, and this
@@ -3800,10 +3804,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An opaque tag indicating the current version of the `Policy`, used for
      * concurrency control.
+     *
      * This field is ignored if used in a `CreatePolicy` request.
+     *
      * When the `Policy` is returned from either a `GetPolicy` or a
      * `ListPolicies` request, this `etag` indicates the version of the
      * current `Policy` to use when executing a read-modify-write loop.
+     *
      * When the `Policy` is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
      * </pre>
@@ -3829,10 +3836,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An opaque tag indicating the current version of the `Policy`, used for
      * concurrency control.
+     *
      * This field is ignored if used in a `CreatePolicy` request.
+     *
      * When the `Policy` is returned from either a `GetPolicy` or a
      * `ListPolicies` request, this `etag` indicates the version of the
      * current `Policy` to use when executing a read-modify-write loop.
+     *
      * When the `Policy` is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
      * </pre>
@@ -3858,10 +3868,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An opaque tag indicating the current version of the `Policy`, used for
      * concurrency control.
+     *
      * This field is ignored if used in a `CreatePolicy` request.
+     *
      * When the `Policy` is returned from either a `GetPolicy` or a
      * `ListPolicies` request, this `etag` indicates the version of the
      * current `Policy` to use when executing a read-modify-write loop.
+     *
      * When the `Policy` is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
      * </pre>
@@ -3886,10 +3899,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An opaque tag indicating the current version of the `Policy`, used for
      * concurrency control.
+     *
      * This field is ignored if used in a `CreatePolicy` request.
+     *
      * When the `Policy` is returned from either a `GetPolicy` or a
      * `ListPolicies` request, this `etag` indicates the version of the
      * current `Policy` to use when executing a read-modify-write loop.
+     *
      * When the `Policy` is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
      * </pre>
@@ -3910,10 +3926,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An opaque tag indicating the current version of the `Policy`, used for
      * concurrency control.
+     *
      * This field is ignored if used in a `CreatePolicy` request.
+     *
      * When the `Policy` is returned from either a `GetPolicy` or a
      * `ListPolicies` request, this `etag` indicates the version of the
      * current `Policy` to use when executing a read-modify-write loop.
+     *
      * When the `Policy` is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
      * </pre>
@@ -4175,6 +4194,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4197,6 +4217,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4219,6 +4240,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4241,6 +4263,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4269,6 +4292,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4295,6 +4319,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4323,6 +4348,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4351,6 +4377,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4377,6 +4404,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4403,6 +4431,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4429,6 +4458,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4454,6 +4484,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4479,6 +4510,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4497,6 +4529,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4520,6 +4553,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4543,6 +4577,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4562,6 +4597,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4582,6 +4618,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Up to 10 PolicyRules are allowed.
+     *
      * In Policies for boolean constraints, the following requirements apply:
      *   - There must be one and only one PolicyRule where condition is unset.
      *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -4620,6 +4657,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Determines the inheritance behavior for this `Policy`.
+     *
      * If `inherit_from_parent` is true, PolicyRules set higher up in the
      * hierarchy (up to the closest root) are inherited and present in the
      * effective policy. If it is false, then no rules are inherited, and this
@@ -4640,6 +4678,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Determines the inheritance behavior for this `Policy`.
+     *
      * If `inherit_from_parent` is true, PolicyRules set higher up in the
      * hierarchy (up to the closest root) are inherited and present in the
      * effective policy. If it is false, then no rules are inherited, and this
@@ -4664,6 +4703,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Determines the inheritance behavior for this `Policy`.
+     *
      * If `inherit_from_parent` is true, PolicyRules set higher up in the
      * hierarchy (up to the closest root) are inherited and present in the
      * effective policy. If it is false, then no rules are inherited, and this

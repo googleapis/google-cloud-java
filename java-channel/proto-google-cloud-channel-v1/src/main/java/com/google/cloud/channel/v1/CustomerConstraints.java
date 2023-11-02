@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   }
 
   private CustomerConstraints() {
-    allowedRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowedRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     allowedCustomerTypes_ = java.util.Collections.emptyList();
     promotionalOrderTypes_ = java.util.Collections.emptyList();
   }
@@ -47,11 +47,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CustomerConstraints();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,7 +67,8 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
   public static final int ALLOWED_REGIONS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowedRegions_;
+  private com.google.protobuf.LazyStringArrayList allowedRegions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -610,8 +606,7 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      allowedRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      allowedRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       allowedCustomerTypes_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
       promotionalOrderTypes_ = java.util.Collections.emptyList();
@@ -653,11 +648,6 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
 
     private void buildPartialRepeatedFields(
         com.google.cloud.channel.v1.CustomerConstraints result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        allowedRegions_ = allowedRegions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.allowedRegions_ = allowedRegions_;
       if (((bitField0_ & 0x00000002) != 0)) {
         allowedCustomerTypes_ = java.util.Collections.unmodifiableList(allowedCustomerTypes_);
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -672,6 +662,10 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
 
     private void buildPartial0(com.google.cloud.channel.v1.CustomerConstraints result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        allowedRegions_.makeImmutable();
+        result.allowedRegions_ = allowedRegions_;
+      }
     }
 
     @java.lang.Override
@@ -723,7 +717,7 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       if (!other.allowedRegions_.isEmpty()) {
         if (allowedRegions_.isEmpty()) {
           allowedRegions_ = other.allowedRegions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureAllowedRegionsIsMutable();
           allowedRegions_.addAll(other.allowedRegions_);
@@ -840,14 +834,14 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList allowedRegions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowedRegions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowedRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!allowedRegions_.isModifiable()) {
         allowedRegions_ = new com.google.protobuf.LazyStringArrayList(allowedRegions_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -861,7 +855,8 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
      * @return A list containing the allowedRegions.
      */
     public com.google.protobuf.ProtocolStringList getAllowedRegionsList() {
-      return allowedRegions_.getUnmodifiableView();
+      allowedRegions_.makeImmutable();
+      return allowedRegions_;
     }
     /**
      *
@@ -926,6 +921,7 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       }
       ensureAllowedRegionsIsMutable();
       allowedRegions_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -947,6 +943,7 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       }
       ensureAllowedRegionsIsMutable();
       allowedRegions_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -965,6 +962,7 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
     public Builder addAllAllowedRegions(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedRegionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedRegions_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -980,8 +978,9 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAllowedRegions() {
-      allowedRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1004,6 +1003,7 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureAllowedRegionsIsMutable();
       allowedRegions_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
     return new CreateTenantRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.TenantServiceProto
         .internal_static_google_cloud_talent_v4beta1_CreateTenantRequest_descriptor;
@@ -76,6 +71,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Resource name of the project under which the tenant is created.
+   *
    * The format is "projects/{project_id}", for example,
    * "projects/foo".
    * </pre>
@@ -103,6 +99,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Resource name of the project under which the tenant is created.
+   *
    * The format is "projects/{project_id}", for example,
    * "projects/foo".
    * </pre>
@@ -554,6 +551,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Resource name of the project under which the tenant is created.
+     *
      * The format is "projects/{project_id}", for example,
      * "projects/foo".
      * </pre>
@@ -580,6 +578,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Resource name of the project under which the tenant is created.
+     *
      * The format is "projects/{project_id}", for example,
      * "projects/foo".
      * </pre>
@@ -606,6 +605,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Resource name of the project under which the tenant is created.
+     *
      * The format is "projects/{project_id}", for example,
      * "projects/foo".
      * </pre>
@@ -631,6 +631,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Resource name of the project under which the tenant is created.
+     *
      * The format is "projects/{project_id}", for example,
      * "projects/foo".
      * </pre>
@@ -652,6 +653,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Resource name of the project under which the tenant is created.
+     *
      * The format is "projects/{project_id}", for example,
      * "projects/foo".
      * </pre>

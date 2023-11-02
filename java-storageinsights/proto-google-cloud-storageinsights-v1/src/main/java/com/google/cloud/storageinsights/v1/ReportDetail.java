@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ReportDetail();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -124,11 +119,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Metrics();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -743,10 +733,10 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
    * Prefix of the object name of each report's shard. This will have full
    * prefix except the "extension" and "shard_id".
    * For example, if the `destination_path` is
-   * "{{report-config-id}}/dt={{datetime}}", the shard object name would be
-   * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv"
+   * `{{report-config-id}}/dt={{datetime}}`, the shard object name would be
+   * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv`
    * and the value of `report_path_prefix` field would be
-   * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_".
+   * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_`.
    * </pre>
    *
    * <code>string report_path_prefix = 8;</code>
@@ -772,10 +762,10 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
    * Prefix of the object name of each report's shard. This will have full
    * prefix except the "extension" and "shard_id".
    * For example, if the `destination_path` is
-   * "{{report-config-id}}/dt={{datetime}}", the shard object name would be
-   * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv"
+   * `{{report-config-id}}/dt={{datetime}}`, the shard object name would be
+   * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv`
    * and the value of `report_path_prefix` field would be
-   * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_".
+   * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_`.
    * </pre>
    *
    * <code>string report_path_prefix = 8;</code>
@@ -1949,10 +1939,10 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
      * Prefix of the object name of each report's shard. This will have full
      * prefix except the "extension" and "shard_id".
      * For example, if the `destination_path` is
-     * "{{report-config-id}}/dt={{datetime}}", the shard object name would be
-     * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv"
+     * `{{report-config-id}}/dt={{datetime}}`, the shard object name would be
+     * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv`
      * and the value of `report_path_prefix` field would be
-     * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_".
+     * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_`.
      * </pre>
      *
      * <code>string report_path_prefix = 8;</code>
@@ -1977,10 +1967,10 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
      * Prefix of the object name of each report's shard. This will have full
      * prefix except the "extension" and "shard_id".
      * For example, if the `destination_path` is
-     * "{{report-config-id}}/dt={{datetime}}", the shard object name would be
-     * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv"
+     * `{{report-config-id}}/dt={{datetime}}`, the shard object name would be
+     * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv`
      * and the value of `report_path_prefix` field would be
-     * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_".
+     * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_`.
      * </pre>
      *
      * <code>string report_path_prefix = 8;</code>
@@ -2005,10 +1995,10 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
      * Prefix of the object name of each report's shard. This will have full
      * prefix except the "extension" and "shard_id".
      * For example, if the `destination_path` is
-     * "{{report-config-id}}/dt={{datetime}}", the shard object name would be
-     * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv"
+     * `{{report-config-id}}/dt={{datetime}}`, the shard object name would be
+     * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv`
      * and the value of `report_path_prefix` field would be
-     * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_".
+     * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_`.
      * </pre>
      *
      * <code>string report_path_prefix = 8;</code>
@@ -2032,10 +2022,10 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
      * Prefix of the object name of each report's shard. This will have full
      * prefix except the "extension" and "shard_id".
      * For example, if the `destination_path` is
-     * "{{report-config-id}}/dt={{datetime}}", the shard object name would be
-     * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv"
+     * `{{report-config-id}}/dt={{datetime}}`, the shard object name would be
+     * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv`
      * and the value of `report_path_prefix` field would be
-     * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_".
+     * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_`.
      * </pre>
      *
      * <code>string report_path_prefix = 8;</code>
@@ -2055,10 +2045,10 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
      * Prefix of the object name of each report's shard. This will have full
      * prefix except the "extension" and "shard_id".
      * For example, if the `destination_path` is
-     * "{{report-config-id}}/dt={{datetime}}", the shard object name would be
-     * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv"
+     * `{{report-config-id}}/dt={{datetime}}`, the shard object name would be
+     * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_5.csv`
      * and the value of `report_path_prefix` field would be
-     * "gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_".
+     * `gs://my-insights/1A34-F2E456-12B456-1C3D/dt=2022-05-20T06:35/1A34-F2E456-12B456-1C3D_2022-05-20T06:35_`.
      * </pre>
      *
      * <code>string report_path_prefix = 8;</code>

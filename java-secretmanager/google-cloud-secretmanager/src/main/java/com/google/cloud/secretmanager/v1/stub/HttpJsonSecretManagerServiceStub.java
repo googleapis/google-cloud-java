@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.secretmanager.v1.AccessSecretVersionRequest;
 import com.google.cloud.secretmanager.v1.AccessSecretVersionResponse;
@@ -700,42 +701,90 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
         HttpJsonCallSettings.<ListSecretsRequest, ListSecretsResponse>newBuilder()
             .setMethodDescriptor(listSecretsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateSecretRequest, Secret> createSecretTransportSettings =
         HttpJsonCallSettings.<CreateSecretRequest, Secret>newBuilder()
             .setMethodDescriptor(createSecretMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<AddSecretVersionRequest, SecretVersion> addSecretVersionTransportSettings =
         HttpJsonCallSettings.<AddSecretVersionRequest, SecretVersion>newBuilder()
             .setMethodDescriptor(addSecretVersionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetSecretRequest, Secret> getSecretTransportSettings =
         HttpJsonCallSettings.<GetSecretRequest, Secret>newBuilder()
             .setMethodDescriptor(getSecretMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateSecretRequest, Secret> updateSecretTransportSettings =
         HttpJsonCallSettings.<UpdateSecretRequest, Secret>newBuilder()
             .setMethodDescriptor(updateSecretMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("secret.name", String.valueOf(request.getSecret().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteSecretRequest, Empty> deleteSecretTransportSettings =
         HttpJsonCallSettings.<DeleteSecretRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteSecretMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListSecretVersionsRequest, ListSecretVersionsResponse>
         listSecretVersionsTransportSettings =
             HttpJsonCallSettings.<ListSecretVersionsRequest, ListSecretVersionsResponse>newBuilder()
                 .setMethodDescriptor(listSecretVersionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetSecretVersionRequest, SecretVersion> getSecretVersionTransportSettings =
         HttpJsonCallSettings.<GetSecretVersionRequest, SecretVersion>newBuilder()
             .setMethodDescriptor(getSecretVersionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<AccessSecretVersionRequest, AccessSecretVersionResponse>
         accessSecretVersionTransportSettings =
@@ -743,40 +792,82 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                 .<AccessSecretVersionRequest, AccessSecretVersionResponse>newBuilder()
                 .setMethodDescriptor(accessSecretVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DisableSecretVersionRequest, SecretVersion>
         disableSecretVersionTransportSettings =
             HttpJsonCallSettings.<DisableSecretVersionRequest, SecretVersion>newBuilder()
                 .setMethodDescriptor(disableSecretVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<EnableSecretVersionRequest, SecretVersion>
         enableSecretVersionTransportSettings =
             HttpJsonCallSettings.<EnableSecretVersionRequest, SecretVersion>newBuilder()
                 .setMethodDescriptor(enableSecretVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DestroySecretVersionRequest, SecretVersion>
         destroySecretVersionTransportSettings =
             HttpJsonCallSettings.<DestroySecretVersionRequest, SecretVersion>newBuilder()
                 .setMethodDescriptor(destroySecretVersionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listSecretsCallable =

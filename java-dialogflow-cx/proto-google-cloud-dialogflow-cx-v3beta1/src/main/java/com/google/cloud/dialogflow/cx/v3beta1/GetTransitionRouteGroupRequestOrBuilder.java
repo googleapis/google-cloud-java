@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ public interface GetTransitionRouteGroupRequestOrBuilder
    * Required. The name of the
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
    * </pre>
    *
    * <code>
@@ -47,7 +49,9 @@ public interface GetTransitionRouteGroupRequestOrBuilder
    * Required. The name of the
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
    * </pre>
    *
    * <code>
@@ -64,9 +68,11 @@ public interface GetTransitionRouteGroupRequestOrBuilder
    * <pre>
    * The language to retrieve the transition route group for. The following
    * fields are language dependent:
+   *
    * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
    * *
    * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -85,9 +91,11 @@ public interface GetTransitionRouteGroupRequestOrBuilder
    * <pre>
    * The language to retrieve the transition route group for. The following
    * fields are language dependent:
+   *
    * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
    * *
    * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

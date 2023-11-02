@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,8 +40,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   private Environment() {
     tempStoragePrefix_ = "";
     clusterManagerApiService_ = "";
-    experiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    serviceOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    experiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    serviceOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serviceKmsKeyName_ = "";
     workerPools_ = java.util.Collections.emptyList();
     dataset_ = "";
@@ -56,11 +56,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Environment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -94,7 +89,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * needed during the job execution.  NOTE: This will override the
    * value in taskrunner_settings.
    * The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
    * </pre>
@@ -127,7 +124,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * needed during the job execution.  NOTE: This will override the
    * value in taskrunner_settings.
    * The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
    * </pre>
@@ -209,7 +208,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public static final int EXPERIMENTS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList experiments_;
+  private com.google.protobuf.LazyStringArrayList experiments_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -280,7 +280,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public static final int SERVICE_OPTIONS_FIELD_NUMBER = 16;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList serviceOptions_;
+  private com.google.protobuf.LazyStringArrayList serviceOptions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -358,6 +359,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If set, contains the Cloud KMS key identifier used to encrypt data
    * at rest, AKA a Customer Managed Encryption Key (CMEK).
+   *
    * Format:
    *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
    * </pre>
@@ -384,6 +386,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If set, contains the Cloud KMS key identifier used to encrypt data
    * at rest, AKA a Customer Managed Encryption Key (CMEK).
+   *
    * Format:
    *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
    * </pre>
@@ -586,7 +589,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The dataset for the current project where various workflow
    * related tables are stored.
+   *
    * The supported resource type is:
+   *
    * Google BigQuery:
    *   bigquery.googleapis.com/{dataset}
    * </pre>
@@ -613,7 +618,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The dataset for the current project where various workflow
    * related tables are stored.
+   *
    * The supported resource type is:
+   *
    * Google BigQuery:
    *   bigquery.googleapis.com/{dataset}
    * </pre>
@@ -1432,10 +1439,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       tempStoragePrefix_ = "";
       clusterManagerApiService_ = "";
-      experiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      serviceOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      experiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      serviceOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       serviceKmsKeyName_ = "";
       if (workerPoolsBuilder_ == null) {
         workerPools_ = java.util.Collections.emptyList();
@@ -1511,16 +1516,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.Environment result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        experiments_ = experiments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.experiments_ = experiments_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        serviceOptions_ = serviceOptions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.serviceOptions_ = serviceOptions_;
       if (workerPoolsBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           workerPools_ = java.util.Collections.unmodifiableList(workerPools_);
@@ -1539,6 +1534,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.clusterManagerApiService_ = clusterManagerApiService_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        experiments_.makeImmutable();
+        result.experiments_ = experiments_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        serviceOptions_.makeImmutable();
+        result.serviceOptions_ = serviceOptions_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.serviceKmsKeyName_ = serviceKmsKeyName_;
@@ -1643,7 +1646,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (!other.experiments_.isEmpty()) {
         if (experiments_.isEmpty()) {
           experiments_ = other.experiments_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureExperimentsIsMutable();
           experiments_.addAll(other.experiments_);
@@ -1653,7 +1656,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (!other.serviceOptions_.isEmpty()) {
         if (serviceOptions_.isEmpty()) {
           serviceOptions_ = other.serviceOptions_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureServiceOptionsIsMutable();
           serviceOptions_.addAll(other.serviceOptions_);
@@ -1904,7 +1907,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * needed during the job execution.  NOTE: This will override the
      * value in taskrunner_settings.
      * The supported resource type is:
+     *
      * Google Cloud Storage:
+     *
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
      * </pre>
@@ -1936,7 +1941,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * needed during the job execution.  NOTE: This will override the
      * value in taskrunner_settings.
      * The supported resource type is:
+     *
      * Google Cloud Storage:
+     *
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
      * </pre>
@@ -1968,7 +1975,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * needed during the job execution.  NOTE: This will override the
      * value in taskrunner_settings.
      * The supported resource type is:
+     *
      * Google Cloud Storage:
+     *
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
      * </pre>
@@ -1999,7 +2008,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * needed during the job execution.  NOTE: This will override the
      * value in taskrunner_settings.
      * The supported resource type is:
+     *
      * Google Cloud Storage:
+     *
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
      * </pre>
@@ -2026,7 +2037,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * needed during the job execution.  NOTE: This will override the
      * value in taskrunner_settings.
      * The supported resource type is:
+     *
      * Google Cloud Storage:
+     *
      *   storage.googleapis.com/{bucket}/{object}
      *   bucket.storage.googleapis.com/{object}
      * </pre>
@@ -2168,14 +2181,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList experiments_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList experiments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureExperimentsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!experiments_.isModifiable()) {
         experiments_ = new com.google.protobuf.LazyStringArrayList(experiments_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -2191,7 +2204,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the experiments.
      */
     public com.google.protobuf.ProtocolStringList getExperimentsList() {
-      return experiments_.getUnmodifiableView();
+      experiments_.makeImmutable();
+      return experiments_;
     }
     /**
      *
@@ -2264,6 +2278,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExperimentsIsMutable();
       experiments_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2287,6 +2302,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExperimentsIsMutable();
       experiments_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2307,6 +2323,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllExperiments(java.lang.Iterable<java.lang.String> values) {
       ensureExperimentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, experiments_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2324,8 +2341,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExperiments() {
-      experiments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      experiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -2350,18 +2368,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureExperimentsIsMutable();
       experiments_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList serviceOptions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList serviceOptions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureServiceOptionsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!serviceOptions_.isModifiable()) {
         serviceOptions_ = new com.google.protobuf.LazyStringArrayList(serviceOptions_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -2377,7 +2396,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the serviceOptions.
      */
     public com.google.protobuf.ProtocolStringList getServiceOptionsList() {
-      return serviceOptions_.getUnmodifiableView();
+      serviceOptions_.makeImmutable();
+      return serviceOptions_;
     }
     /**
      *
@@ -2450,6 +2470,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServiceOptionsIsMutable();
       serviceOptions_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2473,6 +2494,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServiceOptionsIsMutable();
       serviceOptions_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2493,6 +2515,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllServiceOptions(java.lang.Iterable<java.lang.String> values) {
       ensureServiceOptionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceOptions_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2510,8 +2533,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceOptions() {
-      serviceOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      serviceOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -2536,6 +2560,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureServiceOptionsIsMutable();
       serviceOptions_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2547,6 +2572,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If set, contains the Cloud KMS key identifier used to encrypt data
      * at rest, AKA a Customer Managed Encryption Key (CMEK).
+     *
      * Format:
      *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
      * </pre>
@@ -2572,6 +2598,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If set, contains the Cloud KMS key identifier used to encrypt data
      * at rest, AKA a Customer Managed Encryption Key (CMEK).
+     *
      * Format:
      *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
      * </pre>
@@ -2597,6 +2624,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If set, contains the Cloud KMS key identifier used to encrypt data
      * at rest, AKA a Customer Managed Encryption Key (CMEK).
+     *
      * Format:
      *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
      * </pre>
@@ -2621,6 +2649,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If set, contains the Cloud KMS key identifier used to encrypt data
      * at rest, AKA a Customer Managed Encryption Key (CMEK).
+     *
      * Format:
      *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
      * </pre>
@@ -2641,6 +2670,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If set, contains the Cloud KMS key identifier used to encrypt data
      * at rest, AKA a Customer Managed Encryption Key (CMEK).
+     *
      * Format:
      *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
      * </pre>
@@ -3403,7 +3433,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The dataset for the current project where various workflow
      * related tables are stored.
+     *
      * The supported resource type is:
+     *
      * Google BigQuery:
      *   bigquery.googleapis.com/{dataset}
      * </pre>
@@ -3429,7 +3461,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The dataset for the current project where various workflow
      * related tables are stored.
+     *
      * The supported resource type is:
+     *
      * Google BigQuery:
      *   bigquery.googleapis.com/{dataset}
      * </pre>
@@ -3455,7 +3489,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The dataset for the current project where various workflow
      * related tables are stored.
+     *
      * The supported resource type is:
+     *
      * Google BigQuery:
      *   bigquery.googleapis.com/{dataset}
      * </pre>
@@ -3480,7 +3516,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The dataset for the current project where various workflow
      * related tables are stored.
+     *
      * The supported resource type is:
+     *
      * Google BigQuery:
      *   bigquery.googleapis.com/{dataset}
      * </pre>
@@ -3501,7 +3539,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The dataset for the current project where various workflow
      * related tables are stored.
+     *
      * The supported resource type is:
+     *
      * Google BigQuery:
      *   bigquery.googleapis.com/{dataset}
      * </pre>

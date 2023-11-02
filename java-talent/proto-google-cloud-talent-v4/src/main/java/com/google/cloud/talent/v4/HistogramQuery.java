@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
     return new HistogramQuery();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4.HistogramProto
         .internal_static_google_cloud_talent_v4_HistogramQuery_descriptor;
@@ -77,6 +72,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An expression specifies a histogram request against matching jobs for
    * searches.
+   *
    * See
    * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4.SearchJobsRequest.histogram_queries]
    * for details about syntax.
@@ -104,6 +100,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An expression specifies a histogram request against matching jobs for
    * searches.
+   *
    * See
    * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4.SearchJobsRequest.histogram_queries]
    * for details about syntax.
@@ -474,6 +471,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An expression specifies a histogram request against matching jobs for
      * searches.
+     *
      * See
      * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4.SearchJobsRequest.histogram_queries]
      * for details about syntax.
@@ -500,6 +498,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An expression specifies a histogram request against matching jobs for
      * searches.
+     *
      * See
      * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4.SearchJobsRequest.histogram_queries]
      * for details about syntax.
@@ -526,6 +525,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An expression specifies a histogram request against matching jobs for
      * searches.
+     *
      * See
      * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4.SearchJobsRequest.histogram_queries]
      * for details about syntax.
@@ -551,6 +551,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An expression specifies a histogram request against matching jobs for
      * searches.
+     *
      * See
      * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4.SearchJobsRequest.histogram_queries]
      * for details about syntax.
@@ -572,6 +573,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An expression specifies a histogram request against matching jobs for
      * searches.
+     *
      * See
      * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4.SearchJobsRequest.histogram_queries]
      * for details about syntax.

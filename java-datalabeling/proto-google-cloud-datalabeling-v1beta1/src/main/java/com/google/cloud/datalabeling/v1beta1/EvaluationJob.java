@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,11 +56,6 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
     return new EvaluationJob();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.EvaluationJobOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_EvaluationJob_descriptor;
@@ -95,6 +90,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * The job is scheduled to run at the [configured interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. You
      * can [pause][google.cloud.datalabeling.v1beta1.DataLabelingService.PauseEvaluationJob] or
      * [delete][google.cloud.datalabeling.v1beta1.DataLabelingService.DeleteEvaluationJob] the job.
+     *
      * When the job is in this state, it samples prediction input and output
      * from your model version into your BigQuery table as predictions occur.
      * </pre>
@@ -108,6 +104,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The job is currently running. When the job runs, Data Labeling Service
      * does several things:
+     *
      * 1. If you have configured your job to use Data Labeling Service for
      *    ground truth labeling, the service creates a
      *    [Dataset][google.cloud.datalabeling.v1beta1.Dataset] and a labeling task for all data sampled
@@ -124,8 +121,10 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *    sampled data, but it expects that you have already added ground truth
      *    labels to the BigQuery table by this time. The next step occurs
      *    immediately.
+     *
      * 2. Data Labeling Service creates an [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] by comparing your
      *    model version's predictions with the ground truth labels.
+     *
      * If the job remains in this state for a long time, it continues to sample
      * prediction data into your BigQuery table and will run again at the next
      * interval, even if it causes the job to run multiple times in parallel.
@@ -168,6 +167,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * The job is scheduled to run at the [configured interval][google.cloud.datalabeling.v1beta1.EvaluationJob.schedule]. You
      * can [pause][google.cloud.datalabeling.v1beta1.DataLabelingService.PauseEvaluationJob] or
      * [delete][google.cloud.datalabeling.v1beta1.DataLabelingService.DeleteEvaluationJob] the job.
+     *
      * When the job is in this state, it samples prediction input and output
      * from your model version into your BigQuery table as predictions occur.
      * </pre>
@@ -181,6 +181,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The job is currently running. When the job runs, Data Labeling Service
      * does several things:
+     *
      * 1. If you have configured your job to use Data Labeling Service for
      *    ground truth labeling, the service creates a
      *    [Dataset][google.cloud.datalabeling.v1beta1.Dataset] and a labeling task for all data sampled
@@ -197,8 +198,10 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *    sampled data, but it expects that you have already added ground truth
      *    labels to the BigQuery table by this time. The next step occurs
      *    immediately.
+     *
      * 2. Data Labeling Service creates an [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] by comparing your
      *    model version's predictions with the ground truth labels.
+     *
      * If the job remains in this state for a long time, it continues to sample
      * prediction data into your BigQuery table and will run again at the next
      * interval, even if it causes the job to run multiple times in parallel.
@@ -329,6 +332,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. After you create a job, Data Labeling Service assigns a name
    * to the job with the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
@@ -354,6 +358,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. After you create a job, Data Labeling Service assigns a name
    * to the job with the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
@@ -475,10 +480,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * Required. Describes the interval at which the job runs. This interval must
    * be at least 1 day, and it is rounded to the nearest day. For example, if
    * you specify a 50-hour interval, the job runs every 2 days.
+   *
    * You can provide the schedule in
    * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
    * [English-like
    * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+   *
    * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
    * interval from this schedule is used, not the specific time of day.
    * </pre>
@@ -506,10 +513,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * Required. Describes the interval at which the job runs. This interval must
    * be at least 1 day, and it is rounded to the nearest day. For example, if
    * you specify a 50-hour interval, the job runs every 2 days.
+   *
    * You can provide the schedule in
    * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
    * [English-like
    * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+   *
    * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
    * interval from this schedule is used, not the specific time of day.
    * </pre>
@@ -543,7 +552,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
    * input and output is sampled from this model version. When creating an
    * evaluation job, specify the model version in the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+   *
    * There can only be one evaluation job per model version.
    * </pre>
    *
@@ -571,7 +582,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
    * input and output is sampled from this model version. When creating an
    * evaluation job, specify the model version in the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+   *
    * There can only be one evaluation job per model version.
    * </pre>
    *
@@ -655,6 +668,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * labels that your machine learning model outputs. You must create this
    * resource before you create an evaluation job and provide its name in the
    * following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
@@ -682,6 +696,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    * labels that your machine learning model outputs. You must create this
    * resource before you create an evaluation job and provide its name in the
    * following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
@@ -1480,6 +1495,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. After you create a job, Data Labeling Service assigns a name
      * to the job with the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -1504,6 +1520,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. After you create a job, Data Labeling Service assigns a name
      * to the job with the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -1528,6 +1545,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. After you create a job, Data Labeling Service assigns a name
      * to the job with the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -1551,6 +1569,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. After you create a job, Data Labeling Service assigns a name
      * to the job with the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -1570,6 +1589,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. After you create a job, Data Labeling Service assigns a name
      * to the job with the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -1800,10 +1820,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * Required. Describes the interval at which the job runs. This interval must
      * be at least 1 day, and it is rounded to the nearest day. For example, if
      * you specify a 50-hour interval, the job runs every 2 days.
+     *
      * You can provide the schedule in
      * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
      * [English-like
      * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+     *
      * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
      * interval from this schedule is used, not the specific time of day.
      * </pre>
@@ -1830,10 +1852,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * Required. Describes the interval at which the job runs. This interval must
      * be at least 1 day, and it is rounded to the nearest day. For example, if
      * you specify a 50-hour interval, the job runs every 2 days.
+     *
      * You can provide the schedule in
      * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
      * [English-like
      * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+     *
      * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
      * interval from this schedule is used, not the specific time of day.
      * </pre>
@@ -1860,10 +1884,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * Required. Describes the interval at which the job runs. This interval must
      * be at least 1 day, and it is rounded to the nearest day. For example, if
      * you specify a 50-hour interval, the job runs every 2 days.
+     *
      * You can provide the schedule in
      * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
      * [English-like
      * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+     *
      * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
      * interval from this schedule is used, not the specific time of day.
      * </pre>
@@ -1889,10 +1915,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * Required. Describes the interval at which the job runs. This interval must
      * be at least 1 day, and it is rounded to the nearest day. For example, if
      * you specify a 50-hour interval, the job runs every 2 days.
+     *
      * You can provide the schedule in
      * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
      * [English-like
      * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+     *
      * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
      * interval from this schedule is used, not the specific time of day.
      * </pre>
@@ -1914,10 +1942,12 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * Required. Describes the interval at which the job runs. This interval must
      * be at least 1 day, and it is rounded to the nearest day. For example, if
      * you specify a 50-hour interval, the job runs every 2 days.
+     *
      * You can provide the schedule in
      * [crontab format](/scheduler/docs/configuring/cron-job-schedules) or in an
      * [English-like
      * format](/appengine/docs/standard/python/config/cronref#schedule_format).
+     *
      * Regardless of what you specify, the job will run at 10:00 AM UTC. Only the
      * interval from this schedule is used, not the specific time of day.
      * </pre>
@@ -1947,7 +1977,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
      * input and output is sampled from this model version. When creating an
      * evaluation job, specify the model version in the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+     *
      * There can only be one evaluation job per model version.
      * </pre>
      *
@@ -1974,7 +2006,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
      * input and output is sampled from this model version. When creating an
      * evaluation job, specify the model version in the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+     *
      * There can only be one evaluation job per model version.
      * </pre>
      *
@@ -2001,7 +2035,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
      * input and output is sampled from this model version. When creating an
      * evaluation job, specify the model version in the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+     *
      * There can only be one evaluation job per model version.
      * </pre>
      *
@@ -2027,7 +2063,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
      * input and output is sampled from this model version. When creating an
      * evaluation job, specify the model version in the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+     *
      * There can only be one evaluation job per model version.
      * </pre>
      *
@@ -2049,7 +2087,9 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction
      * input and output is sampled from this model version. When creating an
      * evaluation job, specify the model version in the following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/models/&lt;var&gt;{model_name}&lt;/var&gt;/versions/&lt;var&gt;{version_name}&lt;/var&gt;"
+     *
      * There can only be one evaluation job per model version.
      * </pre>
      *
@@ -2276,6 +2316,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * labels that your machine learning model outputs. You must create this
      * resource before you create an evaluation job and provide its name in the
      * following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
@@ -2302,6 +2343,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * labels that your machine learning model outputs. You must create this
      * resource before you create an evaluation job and provide its name in the
      * following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
@@ -2328,6 +2370,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * labels that your machine learning model outputs. You must create this
      * resource before you create an evaluation job and provide its name in the
      * following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
@@ -2353,6 +2396,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * labels that your machine learning model outputs. You must create this
      * resource before you create an evaluation job and provide its name in the
      * following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *
@@ -2374,6 +2418,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * labels that your machine learning model outputs. You must create this
      * resource before you create an evaluation job and provide its name in the
      * following format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
      * </pre>
      *

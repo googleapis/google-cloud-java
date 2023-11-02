@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListPublisherModelsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -106,6 +107,7 @@ public class ModelGardenServiceClientTest {
         PublisherModel.newBuilder()
             .setName(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
             .setVersionId("versionId-1407102957")
+            .setParent(PublisherModel.Parent.newBuilder().build())
             .setSupportedActions(PublisherModel.CallToAction.newBuilder().build())
             .addAllFrameworks(new ArrayList<String>())
             .setPublisherModelTemplate("publisherModelTemplate1940757031")
@@ -149,6 +151,7 @@ public class ModelGardenServiceClientTest {
         PublisherModel.newBuilder()
             .setName(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
             .setVersionId("versionId-1407102957")
+            .setParent(PublisherModel.Parent.newBuilder().build())
             .setSupportedActions(PublisherModel.CallToAction.newBuilder().build())
             .addAllFrameworks(new ArrayList<String>())
             .setPublisherModelTemplate("publisherModelTemplate1940757031")
@@ -180,6 +183,50 @@ public class ModelGardenServiceClientTest {
     try {
       String name = "name3373707";
       client.getPublisherModel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPublisherModelsTest() throws Exception {
+    PublisherModel responsesElement = PublisherModel.newBuilder().build();
+    ListPublisherModelsResponse expectedResponse =
+        ListPublisherModelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPublisherModels(Arrays.asList(responsesElement))
+            .build();
+    mockModelGardenService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListPublisherModelsPagedResponse pagedListResponse = client.listPublisherModels(parent);
+
+    List<PublisherModel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPublisherModelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPublisherModelsRequest actualRequest = ((ListPublisherModelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPublisherModelsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listPublisherModels(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

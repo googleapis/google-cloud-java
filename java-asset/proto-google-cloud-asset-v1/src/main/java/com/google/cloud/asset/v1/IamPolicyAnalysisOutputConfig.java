@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
     return new IamPolicyAnalysisOutputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_descriptor;
@@ -79,6 +74,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
+     *
      * If the specified Cloud Storage object already exists and there is no
      * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
      * overwritten with the analysis result.
@@ -98,6 +94,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
+     *
      * If the specified Cloud Storage object already exists and there is no
      * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
      * overwritten with the analysis result.
@@ -138,11 +135,6 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
       return new GcsDestination();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.asset.v1.AssetServiceProto
           .internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_GcsDestination_descriptor;
@@ -171,6 +163,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
+     *
      * If the specified Cloud Storage object already exists and there is no
      * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
      * overwritten with the analysis result.
@@ -201,6 +194,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
+     *
      * If the specified Cloud Storage object already exists and there is no
      * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
      * overwritten with the analysis result.
@@ -592,6 +586,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * Editing Object
        * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
        * for more information.
+       *
        * If the specified Cloud Storage object already exists and there is no
        * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
        * overwritten with the analysis result.
@@ -621,6 +616,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * Editing Object
        * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
        * for more information.
+       *
        * If the specified Cloud Storage object already exists and there is no
        * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
        * overwritten with the analysis result.
@@ -650,6 +646,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * Editing Object
        * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
        * for more information.
+       *
        * If the specified Cloud Storage object already exists and there is no
        * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
        * overwritten with the analysis result.
@@ -678,6 +675,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * Editing Object
        * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
        * for more information.
+       *
        * If the specified Cloud Storage object already exists and there is no
        * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
        * overwritten with the analysis result.
@@ -702,6 +700,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * Editing Object
        * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
        * for more information.
+       *
        * If the specified Cloud Storage object already exists and there is no
        * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
        * overwritten with the analysis result.
@@ -902,12 +901,14 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      * <pre>
      * Optional. Specifies the action that occurs if the destination table or
      * partition already exists. The following values are supported:
+     *
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
      * appends the data to the table or the latest partition.
      * * WRITE_EMPTY: If the table already exists and contains data, an error is
      * returned.
+     *
      * The default value is WRITE_APPEND. Each action is atomic and only occurs
      * if BigQuery is able to complete the job successfully. Details are at
      * https://cloud.google.com/bigquery/docs/loading-data-local#appending_to_or_overwriting_a_table_using_a_local_file.
@@ -924,12 +925,14 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      * <pre>
      * Optional. Specifies the action that occurs if the destination table or
      * partition already exists. The following values are supported:
+     *
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
      * appends the data to the table or the latest partition.
      * * WRITE_EMPTY: If the table already exists and contains data, an error is
      * returned.
+     *
      * The default value is WRITE_APPEND. Each action is atomic and only occurs
      * if BigQuery is able to complete the job successfully. Details are at
      * https://cloud.google.com/bigquery/docs/loading-data-local#appending_to_or_overwriting_a_table_using_a_local_file.
@@ -971,11 +974,6 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BigQueryDestination();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1319,12 +1317,14 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      * <pre>
      * Optional. Specifies the action that occurs if the destination table or
      * partition already exists. The following values are supported:
+     *
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
      * appends the data to the table or the latest partition.
      * * WRITE_EMPTY: If the table already exists and contains data, an error is
      * returned.
+     *
      * The default value is WRITE_APPEND. Each action is atomic and only occurs
      * if BigQuery is able to complete the job successfully. Details are at
      * https://cloud.google.com/bigquery/docs/loading-data-local#appending_to_or_overwriting_a_table_using_a_local_file.
@@ -1352,12 +1352,14 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      * <pre>
      * Optional. Specifies the action that occurs if the destination table or
      * partition already exists. The following values are supported:
+     *
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
      * appends the data to the table or the latest partition.
      * * WRITE_EMPTY: If the table already exists and contains data, an error is
      * returned.
+     *
      * The default value is WRITE_APPEND. Each action is atomic and only occurs
      * if BigQuery is able to complete the job successfully. Details are at
      * https://cloud.google.com/bigquery/docs/loading-data-local#appending_to_or_overwriting_a_table_using_a_local_file.
@@ -2200,12 +2202,14 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * <pre>
        * Optional. Specifies the action that occurs if the destination table or
        * partition already exists. The following values are supported:
+       *
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
        * appends the data to the table or the latest partition.
        * * WRITE_EMPTY: If the table already exists and contains data, an error is
        * returned.
+       *
        * The default value is WRITE_APPEND. Each action is atomic and only occurs
        * if BigQuery is able to complete the job successfully. Details are at
        * https://cloud.google.com/bigquery/docs/loading-data-local#appending_to_or_overwriting_a_table_using_a_local_file.
@@ -2232,12 +2236,14 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * <pre>
        * Optional. Specifies the action that occurs if the destination table or
        * partition already exists. The following values are supported:
+       *
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
        * appends the data to the table or the latest partition.
        * * WRITE_EMPTY: If the table already exists and contains data, an error is
        * returned.
+       *
        * The default value is WRITE_APPEND. Each action is atomic and only occurs
        * if BigQuery is able to complete the job successfully. Details are at
        * https://cloud.google.com/bigquery/docs/loading-data-local#appending_to_or_overwriting_a_table_using_a_local_file.
@@ -2264,12 +2270,14 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * <pre>
        * Optional. Specifies the action that occurs if the destination table or
        * partition already exists. The following values are supported:
+       *
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
        * appends the data to the table or the latest partition.
        * * WRITE_EMPTY: If the table already exists and contains data, an error is
        * returned.
+       *
        * The default value is WRITE_APPEND. Each action is atomic and only occurs
        * if BigQuery is able to complete the job successfully. Details are at
        * https://cloud.google.com/bigquery/docs/loading-data-local#appending_to_or_overwriting_a_table_using_a_local_file.
@@ -2295,12 +2303,14 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * <pre>
        * Optional. Specifies the action that occurs if the destination table or
        * partition already exists. The following values are supported:
+       *
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
        * appends the data to the table or the latest partition.
        * * WRITE_EMPTY: If the table already exists and contains data, an error is
        * returned.
+       *
        * The default value is WRITE_APPEND. Each action is atomic and only occurs
        * if BigQuery is able to complete the job successfully. Details are at
        * https://cloud.google.com/bigquery/docs/loading-data-local#appending_to_or_overwriting_a_table_using_a_local_file.
@@ -2322,12 +2332,14 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * <pre>
        * Optional. Specifies the action that occurs if the destination table or
        * partition already exists. The following values are supported:
+       *
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
        * appends the data to the table or the latest partition.
        * * WRITE_EMPTY: If the table already exists and contains data, an error is
        * returned.
+       *
        * The default value is WRITE_APPEND. Each action is atomic and only occurs
        * if BigQuery is able to complete the job successfully. Details are at
        * https://cloud.google.com/bigquery/docs/loading-data-local#appending_to_or_overwriting_a_table_using_a_local_file.
@@ -2418,6 +2430,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface ClusterOrBuilder
    * The name of this cluster. The name must be unique within this project
    * and location (e.g. zone or region), and can be up to 40 characters with
    * the following restrictions:
+   *
    * * Lowercase letters, numbers, and hyphens only.
    * * Must start with a letter.
    * * Must end with a number or a letter.
@@ -47,6 +48,7 @@ public interface ClusterOrBuilder
    * The name of this cluster. The name must be unique within this project
    * and location (e.g. zone or region), and can be up to 40 characters with
    * the following restrictions:
+   *
    * * Lowercase letters, numbers, and hyphens only.
    * * Must start with a letter.
    * * Must end with a number or a letter.
@@ -95,13 +97,14 @@ public interface ClusterOrBuilder
    * "node_pool" object, since this configuration (along with the
    * "node_config") will be used to create a "NodePool" object with an
    * auto-generated name. Do not use this and a node_pool at the same time.
+   *
    * This field is deprecated, use node_pool.initial_node_count instead.
    * </pre>
    *
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1566
+   *     google/container/v1/cluster_service.proto;l=1671
    * @return The initialNodeCount.
    */
   @java.lang.Deprecated
@@ -119,6 +122,7 @@ public interface ClusterOrBuilder
    * For responses, this field will be populated with the node configuration of
    * the first node pool. (For configuration of each node pool, see
    * `node_pool.config`)
+   *
    * If unspecified, the defaults are used.
    * This field is deprecated, use node_pool.config instead.
    * </pre>
@@ -126,7 +130,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1579
+   *     google/container/v1/cluster_service.proto;l=1684
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Deprecated
@@ -143,6 +147,7 @@ public interface ClusterOrBuilder
    * For responses, this field will be populated with the node configuration of
    * the first node pool. (For configuration of each node pool, see
    * `node_pool.config`)
+   *
    * If unspecified, the defaults are used.
    * This field is deprecated, use node_pool.config instead.
    * </pre>
@@ -150,7 +155,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1579
+   *     google/container/v1/cluster_service.proto;l=1684
    * @return The nodeConfig.
    */
   @java.lang.Deprecated
@@ -167,6 +172,7 @@ public interface ClusterOrBuilder
    * For responses, this field will be populated with the node configuration of
    * the first node pool. (For configuration of each node pool, see
    * `node_pool.config`)
+   *
    * If unspecified, the defaults are used.
    * This field is deprecated, use node_pool.config instead.
    * </pre>
@@ -229,11 +235,13 @@ public interface ClusterOrBuilder
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
+   *
    * * `logging.googleapis.com/kubernetes` - The Cloud Logging
    * service with a Kubernetes-native resource model
    * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
    *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
+   *
    * If left as an empty string,`logging.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
@@ -249,11 +257,13 @@ public interface ClusterOrBuilder
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
+   *
    * * `logging.googleapis.com/kubernetes` - The Cloud Logging
    * service with a Kubernetes-native resource model
    * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
    *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
+   *
    * If left as an empty string,`logging.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
@@ -270,11 +280,13 @@ public interface ClusterOrBuilder
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
+   *
    * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
    * * `none` - No metrics will be exported from the cluster.
+   *
    * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
@@ -290,11 +302,13 @@ public interface ClusterOrBuilder
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
+   *
    * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
    * * `none` - No metrics will be exported from the cluster.
+   *
    * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
@@ -499,9 +513,11 @@ public interface ClusterOrBuilder
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * are not specified during node pool creation.
+   *
    * Warning: changing cluster locations will update the
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * of all node pools and will result in nodes being added and/or removed.
@@ -519,9 +535,11 @@ public interface ClusterOrBuilder
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * are not specified during node pool creation.
+   *
    * Warning: changing cluster locations will update the
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * of all node pools and will result in nodes being added and/or removed.
@@ -539,9 +557,11 @@ public interface ClusterOrBuilder
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * are not specified during node pool creation.
+   *
    * Warning: changing cluster locations will update the
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * of all node pools and will result in nodes being added and/or removed.
@@ -560,9 +580,11 @@ public interface ClusterOrBuilder
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This field provides a default value if
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * are not specified during node pool creation.
+   *
    * Warning: changing cluster locations will update the
    * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
    * of all node pools and will result in nodes being added and/or removed.
@@ -1228,7 +1250,12 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Release channel configuration.
+   * Release channel configuration. If left unspecified on cluster creation and
+   * a version is specified, the cluster is enrolled in the most mature release
+   * channel where the version is available (first checking STABLE, then
+   * REGULAR, and finally RAPID). Otherwise, if no release channel
+   * configuration and no version is specified, the cluster is enrolled in the
+   * REGULAR channel with its default version.
    * </pre>
    *
    * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -1240,7 +1267,12 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Release channel configuration.
+   * Release channel configuration. If left unspecified on cluster creation and
+   * a version is specified, the cluster is enrolled in the most mature release
+   * channel where the version is available (first checking STABLE, then
+   * REGULAR, and finally RAPID). Otherwise, if no release channel
+   * configuration and no version is specified, the cluster is enrolled in the
+   * REGULAR channel with its default version.
    * </pre>
    *
    * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -1252,7 +1284,12 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Release channel configuration.
+   * Release channel configuration. If left unspecified on cluster creation and
+   * a version is specified, the cluster is enrolled in the most mature release
+   * channel where the version is available (first checking STABLE, then
+   * REGULAR, and finally RAPID). Otherwise, if no release channel
+   * configuration and no version is specified, the cluster is enrolled in the
+   * REGULAR channel with its default version.
    * </pre>
    *
    * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
@@ -1515,7 +1552,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1745
+   *     google/container/v1/cluster_service.proto;l=1855
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -1532,7 +1569,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1745
+   *     google/container/v1/cluster_service.proto;l=1855
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -1545,6 +1582,7 @@ public interface ClusterOrBuilder
    * [Output only] The IP address of this cluster's master endpoint.
    * The endpoint can be accessed from the internet at
    * `https://username:password&#64;endpoint/`.
+   *
    * See the `masterAuth` property of this resource for username and
    * password information.
    * </pre>
@@ -1561,6 +1599,7 @@ public interface ClusterOrBuilder
    * [Output only] The IP address of this cluster's master endpoint.
    * The endpoint can be accessed from the internet at
    * `https://username:password&#64;endpoint/`.
+   *
    * See the `masterAuth` property of this resource for username and
    * password information.
    * </pre>
@@ -1579,8 +1618,10 @@ public interface ClusterOrBuilder
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -1601,8 +1642,10 @@ public interface ClusterOrBuilder
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -1655,7 +1698,7 @@ public interface ClusterOrBuilder
    * <code>string current_node_version = 105 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1778
+   *     google/container/v1/cluster_service.proto;l=1888
    * @return The currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1674,7 +1717,7 @@ public interface ClusterOrBuilder
    * <code>string current_node_version = 105 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1778
+   *     google/container/v1/cluster_service.proto;l=1888
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1744,7 +1787,7 @@ public interface ClusterOrBuilder
    * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1790
+   *     google/container/v1/cluster_service.proto;l=1900
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -1761,7 +1804,7 @@ public interface ClusterOrBuilder
    * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1790
+   *     google/container/v1/cluster_service.proto;l=1900
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -1826,7 +1869,7 @@ public interface ClusterOrBuilder
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1806
+   *     google/container/v1/cluster_service.proto;l=1916
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -1841,7 +1884,7 @@ public interface ClusterOrBuilder
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1806
+   *     google/container/v1/cluster_service.proto;l=1916
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -1856,7 +1899,7 @@ public interface ClusterOrBuilder
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1806
+   *     google/container/v1/cluster_service.proto;l=1916
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -1872,7 +1915,7 @@ public interface ClusterOrBuilder
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1806
+   *     google/container/v1/cluster_service.proto;l=1916
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -1890,7 +1933,7 @@ public interface ClusterOrBuilder
    * <code>int32 current_node_count = 112 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1810
+   *     google/container/v1/cluster_service.proto;l=1920
    * @return The currentNodeCount.
    */
   @java.lang.Deprecated
@@ -2319,4 +2362,109 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.Fleet fleet = 140;</code>
    */
   com.google.container.v1.FleetOrBuilder getFleetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+   *
+   * @return Whether the securityPostureConfig field is set.
+   */
+  boolean hasSecurityPostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+   *
+   * @return The securityPostureConfig.
+   */
+  com.google.container.v1.SecurityPostureConfig getSecurityPostureConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Security Posture API features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecurityPostureConfig security_posture_config = 145;</code>
+   */
+  com.google.container.v1.SecurityPostureConfigOrBuilder getSecurityPostureConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs Config
+   * </pre>
+   *
+   * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+   *
+   * @return Whether the enableK8sBetaApis field is set.
+   */
+  boolean hasEnableK8SBetaApis();
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs Config
+   * </pre>
+   *
+   * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+   *
+   * @return The enableK8sBetaApis.
+   */
+  com.google.container.v1.K8sBetaAPIConfig getEnableK8SBetaApis();
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs Config
+   * </pre>
+   *
+   * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
+   */
+  com.google.container.v1.K8sBetaAPIConfigOrBuilder getEnableK8SBetaApisOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+   *
+   * @return Whether the enterpriseConfig field is set.
+   */
+  boolean hasEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+   *
+   * @return The enterpriseConfig.
+   */
+  com.google.container.v1.EnterpriseConfig getEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+   */
+  com.google.container.v1.EnterpriseConfigOrBuilder getEnterpriseConfigOrBuilder();
 }

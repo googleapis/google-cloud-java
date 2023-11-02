@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * A `Release` resource in the Google Cloud Deploy API.
+ * A `Release` resource in the Cloud Deploy API.
+ *
  * A `Release` defines a specific Skaffold configuration instance
  * that can be deployed.
  * </pre>
@@ -58,11 +59,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     return new Release();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_Release_descriptor;
@@ -80,6 +76,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         return internalGetTargetArtifacts();
       case 22:
         return internalGetTargetRenders();
+      case 25:
+        return internalGetDeployParameters();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -472,11 +470,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       return new TargetRender();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.deploy.v1.CloudDeployProto
           .internal_static_google_cloud_deploy_v1_Release_TargetRender_descriptor;
@@ -701,8 +694,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Cloud Build is not available, either because it is not enabled or
-       * because Google Cloud Deploy has insufficient permissions. See [required
-       * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+       * because Cloud Deploy has insufficient permissions. See [required
+       * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
        * </pre>
        *
        * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -723,13 +716,37 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+       * Cloud Build failed to fulfill Cloud Deploy's request. See
        * failure_message for additional details.
        * </pre>
        *
        * <code>CLOUD_BUILD_REQUEST_FAILED = 3;</code>
        */
       CLOUD_BUILD_REQUEST_FAILED(3),
+      /**
+       *
+       *
+       * <pre>
+       * The render operation did not complete successfully because the
+       * verification stanza required for verify was not found on the skaffold
+       * configuration.
+       * </pre>
+       *
+       * <code>VERIFICATION_CONFIG_NOT_FOUND = 4;</code>
+       */
+      VERIFICATION_CONFIG_NOT_FOUND(4),
+      /**
+       *
+       *
+       * <pre>
+       * The render operation did not complete successfully because the custom
+       * action required for predeploy or postdeploy was not found in the
+       * skaffold configuration. See failure_message for additional details.
+       * </pre>
+       *
+       * <code>CUSTOM_ACTION_NOT_FOUND = 5;</code>
+       */
+      CUSTOM_ACTION_NOT_FOUND(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -748,8 +765,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Cloud Build is not available, either because it is not enabled or
-       * because Google Cloud Deploy has insufficient permissions. See [required
-       * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+       * because Cloud Deploy has insufficient permissions. See [required
+       * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
        * </pre>
        *
        * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -770,13 +787,37 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+       * Cloud Build failed to fulfill Cloud Deploy's request. See
        * failure_message for additional details.
        * </pre>
        *
        * <code>CLOUD_BUILD_REQUEST_FAILED = 3;</code>
        */
       public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * The render operation did not complete successfully because the
+       * verification stanza required for verify was not found on the skaffold
+       * configuration.
+       * </pre>
+       *
+       * <code>VERIFICATION_CONFIG_NOT_FOUND = 4;</code>
+       */
+      public static final int VERIFICATION_CONFIG_NOT_FOUND_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
+       * The render operation did not complete successfully because the custom
+       * action required for predeploy or postdeploy was not found in the
+       * skaffold configuration. See failure_message for additional details.
+       * </pre>
+       *
+       * <code>CUSTOM_ACTION_NOT_FOUND = 5;</code>
+       */
+      public static final int CUSTOM_ACTION_NOT_FOUND_VALUE = 5;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -810,6 +851,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
             return EXECUTION_FAILED;
           case 3:
             return CLOUD_BUILD_REQUEST_FAILED;
+          case 4:
+            return VERIFICATION_CONFIG_NOT_FOUND;
+          case 5:
+            return CUSTOM_ACTION_NOT_FOUND;
           default:
             return null;
         }
@@ -2338,11 +2383,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       return new ReleaseReadyCondition();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.deploy.v1.CloudDeployProto
           .internal_static_google_cloud_deploy_v1_Release_ReleaseReadyCondition_descriptor;
@@ -3000,11 +3040,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SkaffoldSupportedCondition();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4343,11 +4378,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       return new ReleaseCondition();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.deploy.v1.CloudDeployProto
           .internal_static_google_cloud_deploy_v1_Release_ReleaseCondition_descriptor;
@@ -5366,9 +5396,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Release`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5391,9 +5420,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Release`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5547,9 +5575,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -5572,9 +5599,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -5588,9 +5614,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -5611,9 +5636,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -5661,14 +5685,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -5692,14 +5717,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -5714,14 +5740,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -5743,14 +5770,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -6364,8 +6392,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Skaffold version to use when operating on this release, such as
-   * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-   * specific set of versions.
+   * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+   * of versions.
+   *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>
    *
@@ -6390,8 +6419,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Skaffold version to use when operating on this release, such as
-   * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-   * specific set of versions.
+   * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+   * of versions.
+   *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>
    *
@@ -6720,6 +6750,118 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         : condition_;
   }
 
+  public static final int DEPLOY_PARAMETERS_FIELD_NUMBER = 25;
+
+  private static final class DeployParametersDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.deploy.v1.CloudDeployProto
+                .internal_static_google_cloud_deploy_v1_Release_DeployParametersEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> deployParameters_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetDeployParameters() {
+    if (deployParameters_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          DeployParametersDefaultEntryHolder.defaultEntry);
+    }
+    return deployParameters_;
+  }
+
+  public int getDeployParametersCount() {
+    return internalGetDeployParameters().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for all targets in this release.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsDeployParameters(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetDeployParameters().getMap().containsKey(key);
+  }
+  /** Use {@link #getDeployParametersMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getDeployParameters() {
+    return getDeployParametersMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for all targets in this release.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getDeployParametersMap() {
+    return internalGetDeployParameters().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for all targets in this release.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getDeployParametersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetDeployParameters().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deploy parameters to use for all targets in this release.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getDeployParametersOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetDeployParameters().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6791,6 +6933,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (condition_ != null) {
       output.writeMessage(24, getCondition());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetDeployParameters(), DeployParametersDefaultEntryHolder.defaultEntry, 25);
     getUnknownFields().writeTo(output);
   }
 
@@ -6894,6 +7038,16 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (condition_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getCondition());
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetDeployParameters().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> deployParameters__ =
+          DeployParametersDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, deployParameters__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6944,6 +7098,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (hasCondition()) {
       if (!getCondition().equals(other.getCondition())) return false;
     }
+    if (!internalGetDeployParameters().equals(other.internalGetDeployParameters())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -7016,6 +7171,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (hasCondition()) {
       hash = (37 * hash) + CONDITION_FIELD_NUMBER;
       hash = (53 * hash) + getCondition().hashCode();
+    }
+    if (!internalGetDeployParameters().getMap().isEmpty()) {
+      hash = (37 * hash) + DEPLOY_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetDeployParameters().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -7120,7 +7279,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A `Release` resource in the Google Cloud Deploy API.
+   * A `Release` resource in the Cloud Deploy API.
+   *
    * A `Release` defines a specific Skaffold configuration instance
    * that can be deployed.
    * </pre>
@@ -7147,6 +7307,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           return internalGetTargetArtifacts();
         case 22:
           return internalGetTargetRenders();
+        case 25:
+          return internalGetDeployParameters();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -7163,6 +7325,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           return internalGetMutableTargetArtifacts();
         case 22:
           return internalGetMutableTargetRenders();
+        case 25:
+          return internalGetMutableDeployParameters();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -7241,6 +7405,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
+      internalGetMutableDeployParameters().clear();
       return this;
     }
 
@@ -7360,6 +7525,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.deployParameters_ = internalGetDeployParameters();
+        result.deployParameters_.makeImmutable();
       }
     }
 
@@ -7526,6 +7695,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCondition()) {
         mergeCondition(other.getCondition());
       }
+      internalGetMutableDeployParameters().mergeFrom(other.internalGetDeployParameters());
+      bitField0_ |= 0x00100000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -7715,6 +7886,19 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00080000;
                 break;
               } // case 194
+            case 202:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    deployParameters__ =
+                        input.readMessage(
+                            DeployParametersDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableDeployParameters()
+                    .getMutableMap()
+                    .put(deployParameters__.getKey(), deployParameters__.getValue());
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7739,9 +7923,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Release`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7763,9 +7946,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Release`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7787,9 +7969,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Release`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7810,9 +7991,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Release`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7829,9 +8009,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Release`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8095,9 +8274,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8120,9 +8298,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8136,9 +8313,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8159,9 +8335,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8188,9 +8363,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8213,9 +8387,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8236,9 +8409,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8279,14 +8451,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8310,14 +8483,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8332,14 +8506,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8361,14 +8536,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8396,14 +8572,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8427,14 +8604,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8456,14 +8634,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -10523,8 +10702,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Skaffold version to use when operating on this release, such as
-     * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-     * specific set of versions.
+     * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+     * of versions.
+     *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
      *
@@ -10548,8 +10728,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Skaffold version to use when operating on this release, such as
-     * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-     * specific set of versions.
+     * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+     * of versions.
+     *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
      *
@@ -10573,8 +10754,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Skaffold version to use when operating on this release, such as
-     * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-     * specific set of versions.
+     * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+     * of versions.
+     *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
      *
@@ -10597,8 +10779,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Skaffold version to use when operating on this release, such as
-     * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-     * specific set of versions.
+     * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+     * of versions.
+     *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
      *
@@ -10617,8 +10800,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Skaffold version to use when operating on this release, such as
-     * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-     * specific set of versions.
+     * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+     * of versions.
+     *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
      *
@@ -11238,6 +11422,190 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         condition_ = null;
       }
       return conditionBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> deployParameters_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetDeployParameters() {
+      if (deployParameters_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DeployParametersDefaultEntryHolder.defaultEntry);
+      }
+      return deployParameters_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableDeployParameters() {
+      if (deployParameters_ == null) {
+        deployParameters_ =
+            com.google.protobuf.MapField.newMapField(
+                DeployParametersDefaultEntryHolder.defaultEntry);
+      }
+      if (!deployParameters_.isMutable()) {
+        deployParameters_ = deployParameters_.copy();
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return deployParameters_;
+    }
+
+    public int getDeployParametersCount() {
+      return internalGetDeployParameters().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for all targets in this release.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsDeployParameters(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetDeployParameters().getMap().containsKey(key);
+    }
+    /** Use {@link #getDeployParametersMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getDeployParameters() {
+      return getDeployParametersMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for all targets in this release.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getDeployParametersMap() {
+      return internalGetDeployParameters().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for all targets in this release.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getDeployParametersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetDeployParameters().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for all targets in this release.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getDeployParametersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetDeployParameters().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearDeployParameters() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      internalGetMutableDeployParameters().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for all targets in this release.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDeployParameters(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableDeployParameters().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableDeployParameters() {
+      bitField0_ |= 0x00100000;
+      return internalGetMutableDeployParameters().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for all targets in this release.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putDeployParameters(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableDeployParameters().getMutableMap().put(key, value);
+      bitField0_ |= 0x00100000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deploy parameters to use for all targets in this release.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; deploy_parameters = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllDeployParameters(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableDeployParameters().getMutableMap().putAll(values);
+      bitField0_ |= 0x00100000;
+      return this;
     }
 
     @java.lang.Override

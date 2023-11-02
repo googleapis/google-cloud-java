@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.analytics.data.v1alpha;
  * <pre>
  * Configures the funnel in a funnel report request. A funnel reports on users
  * as they pass through a sequence of steps.
+ *
  * Funnel exploration lets you visualize the steps your users take to complete a
  * task and quickly see how well they are succeeding or failing at each step.
  * For example, how do prospects become shoppers and then become buyers? How do
@@ -51,11 +52,6 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Funnel();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -339,6 +335,7 @@ public final class Funnel extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configures the funnel in a funnel report request. A funnel reports on users
    * as they pass through a sequence of steps.
+   *
    * Funnel exploration lets you visualize the steps your users take to complete a
    * task and quickly see how well they are succeeding or failing at each step.
    * For example, how do prospects become shoppers and then become buyers? How do

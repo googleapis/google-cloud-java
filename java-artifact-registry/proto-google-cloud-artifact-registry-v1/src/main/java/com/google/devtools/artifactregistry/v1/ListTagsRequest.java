@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
     return new ListTagsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.TagProto
         .internal_static_google_devtools_artifactregistry_v1_ListTagsRequest_descriptor;
@@ -77,7 +72,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name of the parent resource whose tags will be listed.
+   * The name of the parent package whose tags will be listed.
+   * For example:
+   * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -100,7 +97,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name of the parent resource whose tags will be listed.
+   * The name of the parent package whose tags will be listed.
+   * For example:
+   * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -130,8 +129,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
+   *
    *   * `version`
+   *
    *  An example of using a filter:
+   *
    *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
    *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
    * </pre>
@@ -158,8 +160,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
+   *
    *   * `version`
+   *
    *  An example of using a filter:
+   *
    *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
    *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
    * </pre>
@@ -668,7 +673,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the parent resource whose tags will be listed.
+     * The name of the parent package whose tags will be listed.
+     * For example:
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -690,7 +697,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the parent resource whose tags will be listed.
+     * The name of the parent package whose tags will be listed.
+     * For example:
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -712,7 +721,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the parent resource whose tags will be listed.
+     * The name of the parent package whose tags will be listed.
+     * For example:
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -733,7 +744,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the parent resource whose tags will be listed.
+     * The name of the parent package whose tags will be listed.
+     * For example:
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -750,7 +763,9 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the parent resource whose tags will be listed.
+     * The name of the parent package whose tags will be listed.
+     * For example:
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -776,8 +791,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `version`
+     *
      *  An example of using a filter:
+     *
      *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
      *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
      * </pre>
@@ -803,8 +821,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `version`
+     *
      *  An example of using a filter:
+     *
      *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
      *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
      * </pre>
@@ -830,8 +851,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `version`
+     *
      *  An example of using a filter:
+     *
      *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
      *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
      * </pre>
@@ -856,8 +880,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `version`
+     *
      *  An example of using a filter:
+     *
      *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
      *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
      * </pre>
@@ -878,8 +905,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `version`
+     *
      *  An example of using a filter:
+     *
      *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
      *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface SegmentParameterFilterScopingOrBuilder
    * applying the filter. Only supported if criteria scoping is
    * `ACROSS_ALL_SESSIONS` or `WITHIN_SAME_SESSION`. Only supported if the
    * parameter is `event_count`.
+   *
    * For example if `inAnyNDayPeriod` is 3, the event_name is "purchase",
    * the event parameter is "event_count", and the Filter's criteria is
    * greater than 5, this filter will accumulate the event count of purchase
@@ -39,6 +40,7 @@ public interface SegmentParameterFilterScopingOrBuilder
    * their count of purchase events exceeds 5 in any 3 consecutive day period.
    * For example, the periods 2021-11-01 to 2021-11-03, 2021-11-02 to
    * 2021-11-04, 2021-11-03 to 2021-11-05, and etc. will be considered.
+   *
    * The date range is not extended for the purpose of having a full N day
    * window near the start of the date range. For example if a report is for
    * 2021-11-01 to 2021-11-10 and `inAnyNDayPeriod` = 3, the first two day
@@ -46,6 +48,7 @@ public interface SegmentParameterFilterScopingOrBuilder
    * report's date range will be read. For example, the first four periods
    * will effectively be: 2021-11-01 to 2021-11-01, 2021-11-01 to 2021-11-02,
    * 2021-11-01 to 2021-11-03, and 2021-11-02 to 2021-11-04.
+   *
    * `inAnyNDayPeriod` is optional. If not specified, the
    * `segmentParameterFilter` is applied to each event individually.
    * </pre>
@@ -63,6 +66,7 @@ public interface SegmentParameterFilterScopingOrBuilder
    * applying the filter. Only supported if criteria scoping is
    * `ACROSS_ALL_SESSIONS` or `WITHIN_SAME_SESSION`. Only supported if the
    * parameter is `event_count`.
+   *
    * For example if `inAnyNDayPeriod` is 3, the event_name is "purchase",
    * the event parameter is "event_count", and the Filter's criteria is
    * greater than 5, this filter will accumulate the event count of purchase
@@ -71,6 +75,7 @@ public interface SegmentParameterFilterScopingOrBuilder
    * their count of purchase events exceeds 5 in any 3 consecutive day period.
    * For example, the periods 2021-11-01 to 2021-11-03, 2021-11-02 to
    * 2021-11-04, 2021-11-03 to 2021-11-05, and etc. will be considered.
+   *
    * The date range is not extended for the purpose of having a full N day
    * window near the start of the date range. For example if a report is for
    * 2021-11-01 to 2021-11-10 and `inAnyNDayPeriod` = 3, the first two day
@@ -78,6 +83,7 @@ public interface SegmentParameterFilterScopingOrBuilder
    * report's date range will be read. For example, the first four periods
    * will effectively be: 2021-11-01 to 2021-11-01, 2021-11-01 to 2021-11-02,
    * 2021-11-01 to 2021-11-03, and 2021-11-02 to 2021-11-04.
+   *
    * `inAnyNDayPeriod` is optional. If not specified, the
    * `segmentParameterFilter` is applied to each event individually.
    * </pre>

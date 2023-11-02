@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     name_ = "";
     displayName_ = "";
     metricsSchemaUri_ = "";
-    sliceDimensions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    sliceDimensions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     dataItemSchemaUri_ = "";
     annotationSchemaUri_ = "";
     explanationSpecs_ = java.util.Collections.emptyList();
@@ -52,11 +52,6 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ModelEvaluation();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -84,7 +79,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Explanation type.
+     *
      * For AutoML Image Classification models, possible values are:
+     *
      *   * `image-integrated-gradients`
      *   * `image-xrai`
      * </pre>
@@ -99,7 +96,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Explanation type.
+     *
      * For AutoML Image Classification models, possible values are:
+     *
      *   * `image-integrated-gradients`
      *   * `image-xrai`
      * </pre>
@@ -170,11 +169,6 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       return new ModelEvaluationExplanationSpec();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.ModelEvaluationProto
           .internal_static_google_cloud_aiplatform_v1_ModelEvaluation_ModelEvaluationExplanationSpec_descriptor;
@@ -200,7 +194,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Explanation type.
+     *
      * For AutoML Image Classification models, possible values are:
+     *
      *   * `image-integrated-gradients`
      *   * `image-xrai`
      * </pre>
@@ -226,7 +222,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Explanation type.
+     *
      * For AutoML Image Classification models, possible values are:
+     *
      *   * `image-integrated-gradients`
      *   * `image-xrai`
      * </pre>
@@ -700,7 +698,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Explanation type.
+       *
        * For AutoML Image Classification models, possible values are:
+       *
        *   * `image-integrated-gradients`
        *   * `image-xrai`
        * </pre>
@@ -725,7 +725,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Explanation type.
+       *
        * For AutoML Image Classification models, possible values are:
+       *
        *   * `image-integrated-gradients`
        *   * `image-xrai`
        * </pre>
@@ -750,7 +752,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Explanation type.
+       *
        * For AutoML Image Classification models, possible values are:
+       *
        *   * `image-integrated-gradients`
        *   * `image-xrai`
        * </pre>
@@ -774,7 +778,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Explanation type.
+       *
        * For AutoML Image Classification models, possible values are:
+       *
        *   * `image-integrated-gradients`
        *   * `image-xrai`
        * </pre>
@@ -794,7 +800,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Explanation type.
+       *
        * For AutoML Image Classification models, possible values are:
+       *
        *   * `image-integrated-gradients`
        *   * `image-xrai`
        * </pre>
@@ -1329,13 +1337,15 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   public static final int SLICE_DIMENSIONS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList sliceDimensions_;
+  private com.google.protobuf.LazyStringArrayList sliceDimensions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -1351,8 +1361,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -1368,8 +1379,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -1386,8 +1398,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -1414,6 +1427,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * [EvaluatedAnnotation.data_item_payload][google.cloud.aiplatform.v1.EvaluatedAnnotation.data_item_payload].
    * The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+   *
    * This field is not populated if there are neither EvaluatedDataItemViews nor
    * EvaluatedAnnotations under this ModelEvaluation.
    * </pre>
@@ -1443,6 +1457,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * [EvaluatedAnnotation.data_item_payload][google.cloud.aiplatform.v1.EvaluatedAnnotation.data_item_payload].
    * The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+   *
    * This field is not populated if there are neither EvaluatedDataItemViews nor
    * EvaluatedAnnotations under this ModelEvaluation.
    * </pre>
@@ -1480,6 +1495,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * [EvaluatedAnnotation.ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
    * The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+   *
    * This field is not populated if there are neither EvaluatedDataItemViews nor
    * EvaluatedAnnotations under this ModelEvaluation.
    * </pre>
@@ -1512,6 +1528,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * [EvaluatedAnnotation.ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
    * The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+   *
    * This field is not populated if there are neither EvaluatedDataItemViews nor
    * EvaluatedAnnotations under this ModelEvaluation.
    * </pre>
@@ -2075,8 +2092,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      sliceDimensions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      sliceDimensions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       dataItemSchemaUri_ = "";
       annotationSchemaUri_ = "";
       modelExplanation_ = null;
@@ -2132,11 +2148,6 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.ModelEvaluation result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        sliceDimensions_ = sliceDimensions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.sliceDimensions_ = sliceDimensions_;
       if (explanationSpecsBuilder_ == null) {
         if (((bitField0_ & 0x00000200) != 0)) {
           explanationSpecs_ = java.util.Collections.unmodifiableList(explanationSpecs_);
@@ -2164,6 +2175,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        sliceDimensions_.makeImmutable();
+        result.sliceDimensions_ = sliceDimensions_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.dataItemSchemaUri_ = dataItemSchemaUri_;
@@ -2249,7 +2264,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       if (!other.sliceDimensions_.isEmpty()) {
         if (sliceDimensions_.isEmpty()) {
           sliceDimensions_ = other.sliceDimensions_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureSliceDimensionsIsMutable();
           sliceDimensions_.addAll(other.sliceDimensions_);
@@ -3143,21 +3158,22 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       return createTimeBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList sliceDimensions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList sliceDimensions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSliceDimensionsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!sliceDimensions_.isModifiable()) {
         sliceDimensions_ = new com.google.protobuf.LazyStringArrayList(sliceDimensions_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
      *
      * <pre>
-     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-     * ModelEvaluationSlices. The dimensions can be used as the filter of the
+     * All possible
+     * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+     * of ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
      * request, in the form of `slice.dimension = &lt;dimension&gt;`.
      * </pre>
@@ -3167,14 +3183,16 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the sliceDimensions.
      */
     public com.google.protobuf.ProtocolStringList getSliceDimensionsList() {
-      return sliceDimensions_.getUnmodifiableView();
+      sliceDimensions_.makeImmutable();
+      return sliceDimensions_;
     }
     /**
      *
      *
      * <pre>
-     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-     * ModelEvaluationSlices. The dimensions can be used as the filter of the
+     * All possible
+     * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+     * of ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
      * request, in the form of `slice.dimension = &lt;dimension&gt;`.
      * </pre>
@@ -3190,8 +3208,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-     * ModelEvaluationSlices. The dimensions can be used as the filter of the
+     * All possible
+     * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+     * of ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
      * request, in the form of `slice.dimension = &lt;dimension&gt;`.
      * </pre>
@@ -3208,8 +3227,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-     * ModelEvaluationSlices. The dimensions can be used as the filter of the
+     * All possible
+     * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+     * of ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
      * request, in the form of `slice.dimension = &lt;dimension&gt;`.
      * </pre>
@@ -3226,8 +3246,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-     * ModelEvaluationSlices. The dimensions can be used as the filter of the
+     * All possible
+     * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+     * of ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
      * request, in the form of `slice.dimension = &lt;dimension&gt;`.
      * </pre>
@@ -3244,6 +3265,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       ensureSliceDimensionsIsMutable();
       sliceDimensions_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3251,8 +3273,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-     * ModelEvaluationSlices. The dimensions can be used as the filter of the
+     * All possible
+     * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+     * of ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
      * request, in the form of `slice.dimension = &lt;dimension&gt;`.
      * </pre>
@@ -3268,6 +3291,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       ensureSliceDimensionsIsMutable();
       sliceDimensions_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3275,8 +3299,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-     * ModelEvaluationSlices. The dimensions can be used as the filter of the
+     * All possible
+     * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+     * of ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
      * request, in the form of `slice.dimension = &lt;dimension&gt;`.
      * </pre>
@@ -3289,6 +3314,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public Builder addAllSliceDimensions(java.lang.Iterable<java.lang.String> values) {
       ensureSliceDimensionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sliceDimensions_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3296,8 +3322,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-     * ModelEvaluationSlices. The dimensions can be used as the filter of the
+     * All possible
+     * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+     * of ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
      * request, in the form of `slice.dimension = &lt;dimension&gt;`.
      * </pre>
@@ -3307,8 +3334,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSliceDimensions() {
-      sliceDimensions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sliceDimensions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -3316,8 +3344,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-     * ModelEvaluationSlices. The dimensions can be used as the filter of the
+     * All possible
+     * [dimensions][google.cloud.aiplatform.v1.ModelEvaluationSlice.Slice.dimension]
+     * of ModelEvaluationSlices. The dimensions can be used as the filter of the
      * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices]
      * request, in the form of `slice.dimension = &lt;dimension&gt;`.
      * </pre>
@@ -3334,6 +3363,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureSliceDimensionsIsMutable();
       sliceDimensions_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3348,6 +3378,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * [EvaluatedAnnotation.data_item_payload][google.cloud.aiplatform.v1.EvaluatedAnnotation.data_item_payload].
      * The schema is defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+     *
      * This field is not populated if there are neither EvaluatedDataItemViews nor
      * EvaluatedAnnotations under this ModelEvaluation.
      * </pre>
@@ -3376,6 +3407,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * [EvaluatedAnnotation.data_item_payload][google.cloud.aiplatform.v1.EvaluatedAnnotation.data_item_payload].
      * The schema is defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+     *
      * This field is not populated if there are neither EvaluatedDataItemViews nor
      * EvaluatedAnnotations under this ModelEvaluation.
      * </pre>
@@ -3404,6 +3436,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * [EvaluatedAnnotation.data_item_payload][google.cloud.aiplatform.v1.EvaluatedAnnotation.data_item_payload].
      * The schema is defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+     *
      * This field is not populated if there are neither EvaluatedDataItemViews nor
      * EvaluatedAnnotations under this ModelEvaluation.
      * </pre>
@@ -3431,6 +3464,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * [EvaluatedAnnotation.data_item_payload][google.cloud.aiplatform.v1.EvaluatedAnnotation.data_item_payload].
      * The schema is defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+     *
      * This field is not populated if there are neither EvaluatedDataItemViews nor
      * EvaluatedAnnotations under this ModelEvaluation.
      * </pre>
@@ -3454,6 +3488,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * [EvaluatedAnnotation.data_item_payload][google.cloud.aiplatform.v1.EvaluatedAnnotation.data_item_payload].
      * The schema is defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+     *
      * This field is not populated if there are neither EvaluatedDataItemViews nor
      * EvaluatedAnnotations under this ModelEvaluation.
      * </pre>
@@ -3487,6 +3522,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * [EvaluatedAnnotation.ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
      * The schema is defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+     *
      * This field is not populated if there are neither EvaluatedDataItemViews nor
      * EvaluatedAnnotations under this ModelEvaluation.
      * </pre>
@@ -3518,6 +3554,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * [EvaluatedAnnotation.ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
      * The schema is defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+     *
      * This field is not populated if there are neither EvaluatedDataItemViews nor
      * EvaluatedAnnotations under this ModelEvaluation.
      * </pre>
@@ -3549,6 +3586,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * [EvaluatedAnnotation.ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
      * The schema is defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+     *
      * This field is not populated if there are neither EvaluatedDataItemViews nor
      * EvaluatedAnnotations under this ModelEvaluation.
      * </pre>
@@ -3579,6 +3617,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * [EvaluatedAnnotation.ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
      * The schema is defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+     *
      * This field is not populated if there are neither EvaluatedDataItemViews nor
      * EvaluatedAnnotations under this ModelEvaluation.
      * </pre>
@@ -3605,6 +3644,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * [EvaluatedAnnotation.ground_truths][google.cloud.aiplatform.v1.EvaluatedAnnotation.ground_truths].
      * The schema is defined as an OpenAPI 3.0.2 [Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+     *
      * This field is not populated if there are neither EvaluatedDataItemViews nor
      * EvaluatedAnnotations under this ModelEvaluation.
      * </pre>

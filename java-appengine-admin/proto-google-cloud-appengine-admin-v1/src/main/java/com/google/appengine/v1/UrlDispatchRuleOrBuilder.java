@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface UrlDispatchRuleOrBuilder
    * <pre>
    * Domain name to match against. The wildcard "`*`" is supported if
    * specified before a period: "`*.`".
+   *
    * Defaults to matching all domains: "`*`".
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface UrlDispatchRuleOrBuilder
    * <pre>
    * Domain name to match against. The wildcard "`*`" is supported if
    * specified before a period: "`*.`".
+   *
    * Defaults to matching all domains: "`*`".
    * </pre>
    *
@@ -58,6 +60,7 @@ public interface UrlDispatchRuleOrBuilder
    * <pre>
    * Pathname within the host. Must start with a "`/`". A
    * single "`*`" can be included at the end of the path.
+   *
    * The sum of the lengths of the domain and path may not
    * exceed 100 characters.
    * </pre>
@@ -73,6 +76,7 @@ public interface UrlDispatchRuleOrBuilder
    * <pre>
    * Pathname within the host. Must start with a "`/`". A
    * single "`*`" can be included at the end of the path.
+   *
    * The sum of the lengths of the domain and path may not
    * exceed 100 characters.
    * </pre>

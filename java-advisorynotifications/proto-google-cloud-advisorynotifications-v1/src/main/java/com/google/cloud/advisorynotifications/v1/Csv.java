@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Csv() {
-    headers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    headers_ = com.google.protobuf.LazyStringArrayList.emptyList();
     dataRows_ = java.util.Collections.emptyList();
   }
 
@@ -47,11 +47,6 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Csv();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -149,18 +144,13 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
     }
 
     private CsvRow() {
-      entries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      entries_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CsvRow();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -181,7 +171,8 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
     public static final int ENTRIES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList entries_;
+    private com.google.protobuf.LazyStringArrayList entries_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -453,8 +444,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        entries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        entries_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -482,7 +472,6 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.advisorynotifications.v1.Csv.CsvRow buildPartial() {
         com.google.cloud.advisorynotifications.v1.Csv.CsvRow result =
             new com.google.cloud.advisorynotifications.v1.Csv.CsvRow(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -490,17 +479,12 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.advisorynotifications.v1.Csv.CsvRow result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          entries_ = entries_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.entries_ = entries_;
-      }
-
       private void buildPartial0(com.google.cloud.advisorynotifications.v1.Csv.CsvRow result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          entries_.makeImmutable();
+          result.entries_ = entries_;
+        }
       }
 
       @java.lang.Override
@@ -554,7 +538,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
         if (!other.entries_.isEmpty()) {
           if (entries_.isEmpty()) {
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureEntriesIsMutable();
             entries_.addAll(other.entries_);
@@ -613,14 +597,14 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList entries_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList entries_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureEntriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!entries_.isModifiable()) {
           entries_ = new com.google.protobuf.LazyStringArrayList(entries_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -635,7 +619,8 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the entries.
        */
       public com.google.protobuf.ProtocolStringList getEntriesList() {
-        return entries_.getUnmodifiableView();
+        entries_.makeImmutable();
+        return entries_;
       }
       /**
        *
@@ -704,6 +689,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
         }
         ensureEntriesIsMutable();
         entries_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -726,6 +712,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
         }
         ensureEntriesIsMutable();
         entries_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -745,6 +732,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllEntries(java.lang.Iterable<java.lang.String> values) {
         ensureEntriesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entries_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -761,8 +749,9 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEntries() {
-        entries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        entries_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -786,6 +775,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureEntriesIsMutable();
         entries_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -857,7 +847,8 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
   public static final int HEADERS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList headers_;
+  private com.google.protobuf.LazyStringArrayList headers_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1211,8 +1202,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      headers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      headers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (dataRowsBuilder_ == null) {
         dataRows_ = java.util.Collections.emptyList();
       } else {
@@ -1256,11 +1246,6 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.advisorynotifications.v1.Csv result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        headers_ = headers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.headers_ = headers_;
       if (dataRowsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           dataRows_ = java.util.Collections.unmodifiableList(dataRows_);
@@ -1274,6 +1259,10 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.advisorynotifications.v1.Csv result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        headers_.makeImmutable();
+        result.headers_ = headers_;
+      }
     }
 
     @java.lang.Override
@@ -1324,7 +1313,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
       if (!other.headers_.isEmpty()) {
         if (headers_.isEmpty()) {
           headers_ = other.headers_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureHeadersIsMutable();
           headers_.addAll(other.headers_);
@@ -1424,14 +1413,14 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList headers_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList headers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!headers_.isModifiable()) {
         headers_ = new com.google.protobuf.LazyStringArrayList(headers_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1445,7 +1434,8 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the headers.
      */
     public com.google.protobuf.ProtocolStringList getHeadersList() {
-      return headers_.getUnmodifiableView();
+      headers_.makeImmutable();
+      return headers_;
     }
     /**
      *
@@ -1510,6 +1500,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
       }
       ensureHeadersIsMutable();
       headers_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1531,6 +1522,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
       }
       ensureHeadersIsMutable();
       headers_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1549,6 +1541,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllHeaders(java.lang.Iterable<java.lang.String> values) {
       ensureHeadersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, headers_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1564,8 +1557,9 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHeaders() {
-      headers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      headers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1588,6 +1582,7 @@ public final class Csv extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureHeadersIsMutable();
       headers_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

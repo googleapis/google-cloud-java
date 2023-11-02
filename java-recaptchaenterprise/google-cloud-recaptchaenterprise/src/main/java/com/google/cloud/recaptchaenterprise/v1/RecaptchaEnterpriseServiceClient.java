@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,12 +35,19 @@ import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
 import com.google.recaptchaenterprise.v1.AssessmentName;
 import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
+import com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
+import com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
+import com.google.recaptchaenterprise.v1.FirewallPolicy;
+import com.google.recaptchaenterprise.v1.FirewallPolicyName;
+import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.KeyName;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -58,6 +65,7 @@ import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
+import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import java.io.IOException;
 import java.util.List;
@@ -217,7 +225,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the project in which the assessment will be created, in the
-   *     format "projects/{project}".
+   *     format `projects/{project}`.
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -251,7 +259,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the project in which the assessment will be created, in the
-   *     format "projects/{project}".
+   *     format `projects/{project}`.
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -345,7 +353,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Assessment, in the format
-   *     "projects/{project}/assessments/{assessment}".
+   *     `projects/{project}/assessments/{assessment}`.
    * @param annotation Optional. The annotation that will be assigned to the Event. This field can
    *     be left empty to provide reasons that apply to an event without concluding whether the
    *     event is legitimate or fraudulent.
@@ -385,7 +393,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Assessment, in the format
-   *     "projects/{project}/assessments/{assessment}".
+   *     `projects/{project}/assessments/{assessment}`.
    * @param annotation Optional. The annotation that will be assigned to the Event. This field can
    *     be left empty to provide reasons that apply to an event without concluding whether the
    *     event is legitimate or fraudulent.
@@ -487,7 +495,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the project in which the key will be created, in the format
-   *     "projects/{project}".
+   *     `projects/{project}`.
    * @param key Required. Information to create a reCAPTCHA Enterprise key.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -521,7 +529,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the project in which the key will be created, in the format
-   *     "projects/{project}".
+   *     `projects/{project}`.
    * @param key Required. Information to create a reCAPTCHA Enterprise key.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -612,7 +620,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the project that contains the keys that will be listed, in
-   *     the format "projects/{project}".
+   *     the format `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKeysPagedResponse listKeys(ProjectName parent) {
@@ -643,7 +651,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the project that contains the keys that will be listed, in
-   *     the format "projects/{project}".
+   *     the format `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKeysPagedResponse listKeys(String parent) {
@@ -779,7 +787,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param key Required. The public key name linked to the requested secret key in the format
-   *     "projects/{project}/keys/{key}".
+   *     `projects/{project}/keys/{key}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RetrieveLegacySecretKeyResponse retrieveLegacySecretKey(KeyName key) {
@@ -812,7 +820,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param key Required. The public key name linked to the requested secret key in the format
-   *     "projects/{project}/keys/{key}".
+   *     `projects/{project}/keys/{key}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RetrieveLegacySecretKeyResponse retrieveLegacySecretKey(String key) {
@@ -904,7 +912,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the requested key, in the format
-   *     "projects/{project}/keys/{key}".
+   *     `projects/{project}/keys/{key}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Key getKey(KeyName name) {
@@ -933,7 +941,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the requested key, in the format
-   *     "projects/{project}/keys/{key}".
+   *     `projects/{project}/keys/{key}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Key getKey(String name) {
@@ -1105,7 +1113,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the key to be deleted, in the format
-   *     "projects/{project}/keys/{key}".
+   *     `projects/{project}/keys/{key}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteKey(KeyName name) {
@@ -1134,7 +1142,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the key to be deleted, in the format
-   *     "projects/{project}/keys/{key}".
+   *     `projects/{project}/keys/{key}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteKey(String name) {
@@ -1204,8 +1212,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
   /**
    * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise. Once a key is migrated, it can
    * be used from either product. SiteVerify requests are billed as CreateAssessment calls. You must
-   * be authenticated as one of the current owners of the reCAPTCHA Site Key, and your user must
-   * have the reCAPTCHA Enterprise Admin IAM role in the destination project.
+   * be authenticated as one of the current owners of the reCAPTCHA Key, and your user must have the
+   * reCAPTCHA Enterprise Admin IAM role in the destination project.
    *
    * <p>Sample code:
    *
@@ -1237,8 +1245,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
   /**
    * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise. Once a key is migrated, it can
    * be used from either product. SiteVerify requests are billed as CreateAssessment calls. You must
-   * be authenticated as one of the current owners of the reCAPTCHA Site Key, and your user must
-   * have the reCAPTCHA Enterprise Admin IAM role in the destination project.
+   * be authenticated as one of the current owners of the reCAPTCHA Key, and your user must have the
+   * reCAPTCHA Enterprise Admin IAM role in the destination project.
    *
    * <p>Sample code:
    *
@@ -1286,7 +1294,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the requested metrics, in the format
-   *     "projects/{project}/keys/{key}/metrics".
+   *     `projects/{project}/keys/{key}/metrics`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Metrics getMetrics(MetricsName name) {
@@ -1315,7 +1323,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the requested metrics, in the format
-   *     "projects/{project}/keys/{key}/metrics".
+   *     `projects/{project}/keys/{key}/metrics`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Metrics getMetrics(String name) {
@@ -1383,6 +1391,650 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA Enterprise actions can
+   * be executed. A project may have a maximum of 1000 policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   FirewallPolicy firewallPolicy = FirewallPolicy.newBuilder().build();
+   *   FirewallPolicy response =
+   *       recaptchaEnterpriseServiceClient.createFirewallPolicy(parent, firewallPolicy);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project this policy will apply to, in the format
+   *     `projects/{project}`.
+   * @param firewallPolicy Required. Information to create the policy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallPolicy createFirewallPolicy(
+      ProjectName parent, FirewallPolicy firewallPolicy) {
+    CreateFirewallPolicyRequest request =
+        CreateFirewallPolicyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFirewallPolicy(firewallPolicy)
+            .build();
+    return createFirewallPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA Enterprise actions can
+   * be executed. A project may have a maximum of 1000 policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   FirewallPolicy firewallPolicy = FirewallPolicy.newBuilder().build();
+   *   FirewallPolicy response =
+   *       recaptchaEnterpriseServiceClient.createFirewallPolicy(parent, firewallPolicy);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project this policy will apply to, in the format
+   *     `projects/{project}`.
+   * @param firewallPolicy Required. Information to create the policy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallPolicy createFirewallPolicy(String parent, FirewallPolicy firewallPolicy) {
+    CreateFirewallPolicyRequest request =
+        CreateFirewallPolicyRequest.newBuilder()
+            .setParent(parent)
+            .setFirewallPolicy(firewallPolicy)
+            .build();
+    return createFirewallPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA Enterprise actions can
+   * be executed. A project may have a maximum of 1000 policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   CreateFirewallPolicyRequest request =
+   *       CreateFirewallPolicyRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFirewallPolicy(FirewallPolicy.newBuilder().build())
+   *           .build();
+   *   FirewallPolicy response = recaptchaEnterpriseServiceClient.createFirewallPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallPolicy createFirewallPolicy(CreateFirewallPolicyRequest request) {
+    return createFirewallPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA Enterprise actions can
+   * be executed. A project may have a maximum of 1000 policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   CreateFirewallPolicyRequest request =
+   *       CreateFirewallPolicyRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFirewallPolicy(FirewallPolicy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<FirewallPolicy> future =
+   *       recaptchaEnterpriseServiceClient.createFirewallPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   FirewallPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateFirewallPolicyRequest, FirewallPolicy>
+      createFirewallPolicyCallable() {
+    return stub.createFirewallPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all firewall policies that belong to a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (FirewallPolicy element :
+   *       recaptchaEnterpriseServiceClient.listFirewallPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to list the policies for, in the format
+   *     `projects/{project}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFirewallPoliciesPagedResponse listFirewallPolicies(ProjectName parent) {
+    ListFirewallPoliciesRequest request =
+        ListFirewallPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFirewallPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all firewall policies that belong to a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   for (FirewallPolicy element :
+   *       recaptchaEnterpriseServiceClient.listFirewallPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to list the policies for, in the format
+   *     `projects/{project}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFirewallPoliciesPagedResponse listFirewallPolicies(String parent) {
+    ListFirewallPoliciesRequest request =
+        ListFirewallPoliciesRequest.newBuilder().setParent(parent).build();
+    return listFirewallPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all firewall policies that belong to a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListFirewallPoliciesRequest request =
+   *       ListFirewallPoliciesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (FirewallPolicy element :
+   *       recaptchaEnterpriseServiceClient.listFirewallPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFirewallPoliciesPagedResponse listFirewallPolicies(
+      ListFirewallPoliciesRequest request) {
+    return listFirewallPoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all firewall policies that belong to a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListFirewallPoliciesRequest request =
+   *       ListFirewallPoliciesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<FirewallPolicy> future =
+   *       recaptchaEnterpriseServiceClient.listFirewallPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (FirewallPolicy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListFirewallPoliciesRequest, ListFirewallPoliciesPagedResponse>
+      listFirewallPoliciesPagedCallable() {
+    return stub.listFirewallPoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all firewall policies that belong to a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListFirewallPoliciesRequest request =
+   *       ListFirewallPoliciesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListFirewallPoliciesResponse response =
+   *         recaptchaEnterpriseServiceClient.listFirewallPoliciesCallable().call(request);
+   *     for (FirewallPolicy element : response.getFirewallPoliciesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse>
+      listFirewallPoliciesCallable() {
+    return stub.listFirewallPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   FirewallPolicyName name = FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]");
+   *   FirewallPolicy response = recaptchaEnterpriseServiceClient.getFirewallPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the requested policy, in the format
+   *     `projects/{project}/firewallpolicies/{firewallpolicy}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallPolicy getFirewallPolicy(FirewallPolicyName name) {
+    GetFirewallPolicyRequest request =
+        GetFirewallPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getFirewallPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String name = FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]").toString();
+   *   FirewallPolicy response = recaptchaEnterpriseServiceClient.getFirewallPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the requested policy, in the format
+   *     `projects/{project}/firewallpolicies/{firewallpolicy}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallPolicy getFirewallPolicy(String name) {
+    GetFirewallPolicyRequest request = GetFirewallPolicyRequest.newBuilder().setName(name).build();
+    return getFirewallPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   GetFirewallPolicyRequest request =
+   *       GetFirewallPolicyRequest.newBuilder()
+   *           .setName(FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]").toString())
+   *           .build();
+   *   FirewallPolicy response = recaptchaEnterpriseServiceClient.getFirewallPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallPolicy getFirewallPolicy(GetFirewallPolicyRequest request) {
+    return getFirewallPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   GetFirewallPolicyRequest request =
+   *       GetFirewallPolicyRequest.newBuilder()
+   *           .setName(FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]").toString())
+   *           .build();
+   *   ApiFuture<FirewallPolicy> future =
+   *       recaptchaEnterpriseServiceClient.getFirewallPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   FirewallPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetFirewallPolicyRequest, FirewallPolicy> getFirewallPolicyCallable() {
+    return stub.getFirewallPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   FirewallPolicy firewallPolicy = FirewallPolicy.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   FirewallPolicy response =
+   *       recaptchaEnterpriseServiceClient.updateFirewallPolicy(firewallPolicy, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param firewallPolicy Required. The policy to update.
+   * @param updateMask Optional. The mask to control which fields of the policy get updated. If the
+   *     mask is not present, all fields will be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallPolicy updateFirewallPolicy(
+      FirewallPolicy firewallPolicy, FieldMask updateMask) {
+    UpdateFirewallPolicyRequest request =
+        UpdateFirewallPolicyRequest.newBuilder()
+            .setFirewallPolicy(firewallPolicy)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateFirewallPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   UpdateFirewallPolicyRequest request =
+   *       UpdateFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy(FirewallPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   FirewallPolicy response = recaptchaEnterpriseServiceClient.updateFirewallPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallPolicy updateFirewallPolicy(UpdateFirewallPolicyRequest request) {
+    return updateFirewallPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   UpdateFirewallPolicyRequest request =
+   *       UpdateFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy(FirewallPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<FirewallPolicy> future =
+   *       recaptchaEnterpriseServiceClient.updateFirewallPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   FirewallPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateFirewallPolicyRequest, FirewallPolicy>
+      updateFirewallPolicyCallable() {
+    return stub.updateFirewallPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   FirewallPolicyName name = FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]");
+   *   recaptchaEnterpriseServiceClient.deleteFirewallPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to be deleted, in the format
+   *     `projects/{project}/firewallpolicies/{firewallpolicy}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFirewallPolicy(FirewallPolicyName name) {
+    DeleteFirewallPolicyRequest request =
+        DeleteFirewallPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteFirewallPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String name = FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]").toString();
+   *   recaptchaEnterpriseServiceClient.deleteFirewallPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to be deleted, in the format
+   *     `projects/{project}/firewallpolicies/{firewallpolicy}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFirewallPolicy(String name) {
+    DeleteFirewallPolicyRequest request =
+        DeleteFirewallPolicyRequest.newBuilder().setName(name).build();
+    deleteFirewallPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   DeleteFirewallPolicyRequest request =
+   *       DeleteFirewallPolicyRequest.newBuilder()
+   *           .setName(FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]").toString())
+   *           .build();
+   *   recaptchaEnterpriseServiceClient.deleteFirewallPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFirewallPolicy(DeleteFirewallPolicyRequest request) {
+    deleteFirewallPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   DeleteFirewallPolicyRequest request =
+   *       DeleteFirewallPolicyRequest.newBuilder()
+   *           .setName(FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       recaptchaEnterpriseServiceClient.deleteFirewallPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyCallable() {
+    return stub.deleteFirewallPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * List groups of related accounts.
    *
    * <p>Sample code:
@@ -1404,7 +2056,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the project to list related account groups from, in the
-   *     format "projects/{project}".
+   *     format `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRelatedAccountGroupsPagedResponse listRelatedAccountGroups(ProjectName parent) {
@@ -1438,7 +2090,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the project to list related account groups from, in the
-   *     format "projects/{project}".
+   *     format `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRelatedAccountGroupsPagedResponse listRelatedAccountGroups(String parent) {
@@ -1782,9 +2434,9 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Required. The name of the project to search related account group memberships
-   *     from. Specify the project name in the following format: "projects/{project}".
-   * @param hashedAccountId Optional. The unique stable hashed user identifier we should search
-   *     connections to. The identifier should correspond to a `hashed_account_id` provided in a
+   *     from. Specify the project name in the following format: `projects/{project}`.
+   * @param hashedAccountId Optional. The unique stable hashed user identifier used to search
+   *     connections. The identifier should correspond to a `hashed_account_id` provided in a
    *     previous `CreateAssessment` or `AnnotateAssessment` call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1825,9 +2477,9 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Required. The name of the project to search related account group memberships
-   *     from. Specify the project name in the following format: "projects/{project}".
-   * @param hashedAccountId Optional. The unique stable hashed user identifier we should search
-   *     connections to. The identifier should correspond to a `hashed_account_id` provided in a
+   *     from. Specify the project name in the following format: `projects/{project}`.
+   * @param hashedAccountId Optional. The unique stable hashed user identifier used to search
+   *     connections. The identifier should correspond to a `hashed_account_id` provided in a
    *     previous `CreateAssessment` or `AnnotateAssessment` call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2057,6 +2709,90 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
     protected ListKeysFixedSizeCollection createCollection(
         List<ListKeysPage> pages, int collectionSize) {
       return new ListKeysFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListFirewallPoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          ListFirewallPoliciesRequest,
+          ListFirewallPoliciesResponse,
+          FirewallPolicy,
+          ListFirewallPoliciesPage,
+          ListFirewallPoliciesFixedSizeCollection> {
+
+    public static ApiFuture<ListFirewallPoliciesPagedResponse> createAsync(
+        PageContext<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
+            context,
+        ApiFuture<ListFirewallPoliciesResponse> futureResponse) {
+      ApiFuture<ListFirewallPoliciesPage> futurePage =
+          ListFirewallPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListFirewallPoliciesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListFirewallPoliciesPagedResponse(ListFirewallPoliciesPage page) {
+      super(page, ListFirewallPoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListFirewallPoliciesPage
+      extends AbstractPage<
+          ListFirewallPoliciesRequest,
+          ListFirewallPoliciesResponse,
+          FirewallPolicy,
+          ListFirewallPoliciesPage> {
+
+    private ListFirewallPoliciesPage(
+        PageContext<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
+            context,
+        ListFirewallPoliciesResponse response) {
+      super(context, response);
+    }
+
+    private static ListFirewallPoliciesPage createEmptyPage() {
+      return new ListFirewallPoliciesPage(null, null);
+    }
+
+    @Override
+    protected ListFirewallPoliciesPage createPage(
+        PageContext<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
+            context,
+        ListFirewallPoliciesResponse response) {
+      return new ListFirewallPoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListFirewallPoliciesPage> createPageAsync(
+        PageContext<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
+            context,
+        ApiFuture<ListFirewallPoliciesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListFirewallPoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListFirewallPoliciesRequest,
+          ListFirewallPoliciesResponse,
+          FirewallPolicy,
+          ListFirewallPoliciesPage,
+          ListFirewallPoliciesFixedSizeCollection> {
+
+    private ListFirewallPoliciesFixedSizeCollection(
+        List<ListFirewallPoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListFirewallPoliciesFixedSizeCollection createEmptyCollection() {
+      return new ListFirewallPoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListFirewallPoliciesFixedSizeCollection createCollection(
+        List<ListFirewallPoliciesPage> pages, int collectionSize) {
+      return new ListFirewallPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
 

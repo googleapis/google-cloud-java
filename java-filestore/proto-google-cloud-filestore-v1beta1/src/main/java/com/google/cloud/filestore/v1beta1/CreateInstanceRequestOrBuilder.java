@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public interface CreateInstanceRequestOrBuilder
    * <pre>
    * Required. The instance's project and location, in the format
    * `projects/{project_id}/locations/{location}`. In Filestore,
-   * locations map to GCP zones, for example **us-west1-b**.
+   * locations map to Google Cloud zones, for example **us-west1-b**.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface CreateInstanceRequestOrBuilder
    * <pre>
    * Required. The instance's project and location, in the format
    * `projects/{project_id}/locations/{location}`. In Filestore,
-   * locations map to GCP zones, for example **us-west1-b**.
+   * locations map to Google Cloud zones, for example **us-west1-b**.
    * </pre>
    *
    * <code>
@@ -62,6 +62,7 @@ public interface CreateInstanceRequestOrBuilder
    * <pre>
    * Required. The ID of the instance to create.
    * The ID must be unique within the specified project and location.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
@@ -77,6 +78,7 @@ public interface CreateInstanceRequestOrBuilder
    * <pre>
    * Required. The ID of the instance to create.
    * The ID must be unique within the specified project and location.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>

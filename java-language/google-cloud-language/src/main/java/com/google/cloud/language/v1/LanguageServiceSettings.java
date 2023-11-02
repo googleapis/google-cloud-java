@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,6 +98,11 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
   /** Returns the object with the settings used for calls to classifyText. */
   public UnaryCallSettings<ClassifyTextRequest, ClassifyTextResponse> classifyTextSettings() {
     return ((LanguageServiceStubSettings) getStubSettings()).classifyTextSettings();
+  }
+
+  /** Returns the object with the settings used for calls to moderateText. */
+  public UnaryCallSettings<ModerateTextRequest, ModerateTextResponse> moderateTextSettings() {
+    return ((LanguageServiceStubSettings) getStubSettings()).moderateTextSettings();
   }
 
   /** Returns the object with the settings used for calls to annotateText. */
@@ -248,6 +253,12 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
     public UnaryCallSettings.Builder<ClassifyTextRequest, ClassifyTextResponse>
         classifyTextSettings() {
       return getStubSettingsBuilder().classifyTextSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moderateText. */
+    public UnaryCallSettings.Builder<ModerateTextRequest, ModerateTextResponse>
+        moderateTextSettings() {
+      return getStubSettingsBuilder().moderateTextSettings();
     }
 
     /** Returns the builder for the settings used for calls to annotateText. */

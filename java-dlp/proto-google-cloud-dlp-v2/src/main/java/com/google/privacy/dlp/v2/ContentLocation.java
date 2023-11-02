@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     return new ContentLocation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_ContentLocation_descriptor;
@@ -70,6 +65,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   }
 
   private int locationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object location_;
 
   public enum LocationCase
@@ -133,9 +130,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * Name of the container where the finding is located.
    * The top level name is the source file name or table name. Names of some
    * common storage containers are formatted as follows:
+   *
    * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
    * * Cloud Storage files: `gs://{bucket}/{path}`
    * * Datastore namespace: {namespace}
+   *
    * Nested names could be absent if the embedded object has no string
    * identifier (for example, an image contained within a document).
    * </pre>
@@ -163,9 +162,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * Name of the container where the finding is located.
    * The top level name is the source file name or table name. Names of some
    * common storage containers are formatted as follows:
+   *
    * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
    * * Cloud Storage files: `gs://{bucket}/{path}`
    * * Datastore namespace: {namespace}
+   *
    * Nested names could be absent if the embedded object has no string
    * identifier (for example, an image contained within a document).
    * </pre>
@@ -1079,9 +1080,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
+     *
      * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
      * * Cloud Storage files: `gs://{bucket}/{path}`
      * * Datastore namespace: {namespace}
+     *
      * Nested names could be absent if the embedded object has no string
      * identifier (for example, an image contained within a document).
      * </pre>
@@ -1108,9 +1111,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
+     *
      * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
      * * Cloud Storage files: `gs://{bucket}/{path}`
      * * Datastore namespace: {namespace}
+     *
      * Nested names could be absent if the embedded object has no string
      * identifier (for example, an image contained within a document).
      * </pre>
@@ -1137,9 +1142,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
+     *
      * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
      * * Cloud Storage files: `gs://{bucket}/{path}`
      * * Datastore namespace: {namespace}
+     *
      * Nested names could be absent if the embedded object has no string
      * identifier (for example, an image contained within a document).
      * </pre>
@@ -1165,9 +1172,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
+     *
      * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
      * * Cloud Storage files: `gs://{bucket}/{path}`
      * * Datastore namespace: {namespace}
+     *
      * Nested names could be absent if the embedded object has no string
      * identifier (for example, an image contained within a document).
      * </pre>
@@ -1189,9 +1198,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * Name of the container where the finding is located.
      * The top level name is the source file name or table name. Names of some
      * common storage containers are formatted as follows:
+     *
      * * BigQuery tables:  `{project_id}:{dataset_id}.{table_id}`
      * * Cloud Storage files: `gs://{bucket}/{path}`
      * * Datastore namespace: {namespace}
+     *
      * Nested names could be absent if the embedded object has no string
      * identifier (for example, an image contained within a document).
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
     return new ListEnvironmentsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.EnvironmentProto
         .internal_static_google_cloud_dialogflow_v2beta1_ListEnvironmentsRequest_descriptor;
@@ -79,8 +74,8 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The agent to list all environments from.
    * Format:
-   * - `projects/&lt;Project Number / ID&gt;/agent`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -107,8 +102,8 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The agent to list all environments from.
    * Format:
-   * - `projects/&lt;Project Number / ID&gt;/agent`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -597,8 +592,8 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The agent to list all environments from.
      * Format:
-     * - `projects/&lt;Project Number / ID&gt;/agent`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -624,8 +619,8 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The agent to list all environments from.
      * Format:
-     * - `projects/&lt;Project Number / ID&gt;/agent`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -651,8 +646,8 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The agent to list all environments from.
      * Format:
-     * - `projects/&lt;Project Number / ID&gt;/agent`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -677,8 +672,8 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The agent to list all environments from.
      * Format:
-     * - `projects/&lt;Project Number / ID&gt;/agent`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -699,8 +694,8 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The agent to list all environments from.
      * Format:
-     * - `projects/&lt;Project Number / ID&gt;/agent`
-     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,6 +104,10 @@ public final class JobProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_batch_v1_AllocationPolicy_NetworkPolicy_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1_AllocationPolicy_PlacementPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_batch_v1_AllocationPolicy_PlacementPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_fieldAccessorTable;
@@ -129,116 +133,126 @@ public final class JobProto {
           + "ior.proto\032\031google/api/resource.proto\032 go"
           + "ogle/cloud/batch/v1/task.proto\032\036google/p"
           + "rotobuf/duration.proto\032\037google/protobuf/"
-          + "timestamp.proto\"\220\005\n\003Job\022\021\n\004name\030\001 \001(\tB\003\340"
-          + "A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\020\n\010priority\030\003 \001(\003\022:"
-          + "\n\013task_groups\030\004 \003(\0132 .google.cloud.batch"
-          + ".v1.TaskGroupB\003\340A\002\022B\n\021allocation_policy\030"
-          + "\007 \001(\0132\'.google.cloud.batch.v1.Allocation"
-          + "Policy\0226\n\006labels\030\010 \003(\0132&.google.cloud.ba"
-          + "tch.v1.Job.LabelsEntry\0225\n\006status\030\t \001(\0132 "
-          + ".google.cloud.batch.v1.JobStatusB\003\340A\003\0224\n"
-          + "\013create_time\030\013 \001(\0132\032.google.protobuf.Tim"
-          + "estampB\003\340A\003\0224\n\013update_time\030\014 \001(\0132\032.googl"
-          + "e.protobuf.TimestampB\003\340A\003\0226\n\013logs_policy"
-          + "\030\r \001(\0132!.google.cloud.batch.v1.LogsPolic"
-          + "y\022=\n\rnotifications\030\016 \003(\0132&.google.cloud."
-          + "batch.v1.JobNotification\032-\n\013LabelsEntry\022"
-          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:Q\352AN\n\030ba"
-          + "tch.googleapis.com/Job\0222projects/{projec"
-          + "t}/locations/{location}/jobs/{job}\"\254\001\n\nL"
-          + "ogsPolicy\022B\n\013destination\030\001 \001(\0162-.google."
-          + "cloud.batch.v1.LogsPolicy.Destination\022\021\n"
-          + "\tlogs_path\030\002 \001(\t\"G\n\013Destination\022\033\n\027DESTI"
-          + "NATION_UNSPECIFIED\020\000\022\021\n\rCLOUD_LOGGING\020\001\022"
-          + "\010\n\004PATH\020\002\"\200\007\n\tJobStatus\0225\n\005state\030\001 \001(\0162&"
-          + ".google.cloud.batch.v1.JobStatus.State\0229"
-          + "\n\rstatus_events\030\002 \003(\0132\".google.cloud.bat"
-          + "ch.v1.StatusEvent\022E\n\013task_groups\030\004 \003(\01320"
-          + ".google.cloud.batch.v1.JobStatus.TaskGro"
-          + "upsEntry\022/\n\014run_duration\030\005 \001(\0132\031.google."
-          + "protobuf.Duration\032\321\001\n\016InstanceStatus\022\024\n\014"
-          + "machine_type\030\001 \001(\t\022U\n\022provisioning_model"
-          + "\030\002 \001(\01629.google.cloud.batch.v1.Allocatio"
-          + "nPolicy.ProvisioningModel\022\021\n\ttask_pack\030\003"
-          + " \001(\003\022?\n\tboot_disk\030\004 \001(\0132,.google.cloud.b"
-          + "atch.v1.AllocationPolicy.Disk\032\322\001\n\017TaskGr"
-          + "oupStatus\022L\n\006counts\030\001 \003(\0132<.google.cloud"
-          + ".batch.v1.JobStatus.TaskGroupStatus.Coun"
-          + "tsEntry\022B\n\tinstances\030\002 \003(\0132/.google.clou"
-          + "d.batch.v1.JobStatus.InstanceStatus\032-\n\013C"
-          + "ountsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\002"
-          + "8\001\032c\n\017TaskGroupsEntry\022\013\n\003key\030\001 \001(\t\022?\n\005va"
-          + "lue\030\002 \001(\01320.google.cloud.batch.v1.JobSta"
-          + "tus.TaskGroupStatus:\0028\001\"{\n\005State\022\025\n\021STAT"
-          + "E_UNSPECIFIED\020\000\022\n\n\006QUEUED\020\001\022\r\n\tSCHEDULED"
-          + "\020\002\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAILED"
-          + "\020\005\022\030\n\024DELETION_IN_PROGRESS\020\006\"\374\002\n\017JobNoti"
-          + "fication\022\024\n\014pubsub_topic\030\001 \001(\t\022?\n\007messag"
-          + "e\030\002 \001(\0132..google.cloud.batch.v1.JobNotif"
-          + "ication.Message\032\304\001\n\007Message\0229\n\004type\030\001 \001("
-          + "\0162+.google.cloud.batch.v1.JobNotificatio"
-          + "n.Type\022=\n\rnew_job_state\030\002 \001(\0162&.google.c"
-          + "loud.batch.v1.JobStatus.State\022?\n\016new_tas"
-          + "k_state\030\003 \001(\0162\'.google.cloud.batch.v1.Ta"
-          + "skStatus.State\"K\n\004Type\022\024\n\020TYPE_UNSPECIFI"
-          + "ED\020\000\022\025\n\021JOB_STATE_CHANGED\020\001\022\026\n\022TASK_STAT"
-          + "E_CHANGED\020\002\"\350\014\n\020AllocationPolicy\022H\n\010loca"
-          + "tion\030\001 \001(\01326.google.cloud.batch.v1.Alloc"
-          + "ationPolicy.LocationPolicy\022S\n\tinstances\030"
-          + "\010 \003(\0132@.google.cloud.batch.v1.Allocation"
-          + "Policy.InstancePolicyOrTemplate\022>\n\017servi"
-          + "ce_account\030\t \001(\0132%.google.cloud.batch.v1"
-          + ".ServiceAccount\022C\n\006labels\030\006 \003(\01323.google"
-          + ".cloud.batch.v1.AllocationPolicy.LabelsE"
-          + "ntry\022F\n\007network\030\007 \001(\01325.google.cloud.bat"
-          + "ch.v1.AllocationPolicy.NetworkPolicy\032+\n\016"
-          + "LocationPolicy\022\031\n\021allowed_locations\030\001 \003("
-          + "\t\032q\n\004Disk\022\017\n\005image\030\004 \001(\tH\000\022\022\n\010snapshot\030\005"
-          + " \001(\tH\000\022\014\n\004type\030\001 \001(\t\022\017\n\007size_gb\030\002 \001(\003\022\026\n"
-          + "\016disk_interface\030\006 \001(\tB\r\n\013data_source\032\212\001\n"
-          + "\014AttachedDisk\022@\n\010new_disk\030\001 \001(\0132,.google"
-          + ".cloud.batch.v1.AllocationPolicy.DiskH\000\022"
-          + "\027\n\rexisting_disk\030\002 \001(\tH\000\022\023\n\013device_name\030"
-          + "\003 \001(\tB\n\n\010attached\032K\n\013Accelerator\022\014\n\004type"
-          + "\030\001 \001(\t\022\r\n\005count\030\002 \001(\003\022\037\n\023install_gpu_dri"
-          + "vers\030\003 \001(\010B\002\030\001\032\350\002\n\016InstancePolicy\022\024\n\014mac"
-          + "hine_type\030\002 \001(\t\022\030\n\020min_cpu_platform\030\003 \001("
-          + "\t\022U\n\022provisioning_model\030\004 \001(\01629.google.c"
-          + "loud.batch.v1.AllocationPolicy.Provision"
-          + "ingModel\022I\n\014accelerators\030\005 \003(\01323.google."
-          + "cloud.batch.v1.AllocationPolicy.Accelera"
-          + "tor\022?\n\tboot_disk\030\010 \001(\0132,.google.cloud.ba"
-          + "tch.v1.AllocationPolicy.Disk\022C\n\005disks\030\006 "
-          + "\003(\01324.google.cloud.batch.v1.AllocationPo"
-          + "licy.AttachedDisk\032\261\001\n\030InstancePolicyOrTe"
-          + "mplate\022H\n\006policy\030\001 \001(\01326.google.cloud.ba"
-          + "tch.v1.AllocationPolicy.InstancePolicyH\000"
-          + "\022\033\n\021instance_template\030\002 \001(\tH\000\022\033\n\023install"
-          + "_gpu_drivers\030\003 \001(\010B\021\n\017policy_template\032W\n"
-          + "\020NetworkInterface\022\017\n\007network\030\001 \001(\t\022\022\n\nsu"
-          + "bnetwork\030\002 \001(\t\022\036\n\026no_external_ip_address"
-          + "\030\003 \001(\010\032e\n\rNetworkPolicy\022T\n\022network_inter"
-          + "faces\030\001 \003(\01328.google.cloud.batch.v1.Allo"
-          + "cationPolicy.NetworkInterface\032-\n\013LabelsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"`\n\021"
-          + "ProvisioningModel\022\"\n\036PROVISIONING_MODEL_"
-          + "UNSPECIFIED\020\000\022\014\n\010STANDARD\020\001\022\010\n\004SPOT\020\002\022\017\n"
-          + "\013PREEMPTIBLE\020\003\"\201\003\n\tTaskGroup\022\021\n\004name\030\001 \001"
-          + "(\tB\003\340A\003\0227\n\ttask_spec\030\003 \001(\0132\037.google.clou"
-          + "d.batch.v1.TaskSpecB\003\340A\002\022\022\n\ntask_count\030\004"
-          + " \001(\003\022\023\n\013parallelism\030\005 \001(\003\022=\n\021task_enviro"
-          + "nments\030\t \003(\0132\".google.cloud.batch.v1.Env"
-          + "ironment\022\033\n\023task_count_per_node\030\n \001(\003\022\032\n"
-          + "\022require_hosts_file\030\013 \001(\010\022\026\n\016permissive_"
-          + "ssh\030\014 \001(\010:o\352Al\n\036batch.googleapis.com/Tas"
-          + "kGroup\022Jprojects/{project}/locations/{lo"
-          + "cation}/jobs/{job}/taskGroups/{task_grou"
-          + "p}\"/\n\016ServiceAccount\022\r\n\005email\030\001 \001(\t\022\016\n\006s"
-          + "copes\030\002 \003(\tB\251\001\n\031com.google.cloud.batch.v"
-          + "1B\010JobProtoP\001Z/cloud.google.com/go/batch"
-          + "/apiv1/batchpb;batchpb\242\002\003GCB\252\002\025Google.Cl"
-          + "oud.Batch.V1\312\002\025Google\\Cloud\\Batch\\V1\352\002\030G"
-          + "oogle::Cloud::Batch::V1b\006proto3"
+          + "timestamp.proto\"\226\005\n\003Job\022\022\n\004name\030\001 \001(\tB\004\342"
+          + "A\001\003\022\021\n\003uid\030\002 \001(\tB\004\342A\001\003\022\020\n\010priority\030\003 \001(\003"
+          + "\022;\n\013task_groups\030\004 \003(\0132 .google.cloud.bat"
+          + "ch.v1.TaskGroupB\004\342A\001\002\022B\n\021allocation_poli"
+          + "cy\030\007 \001(\0132\'.google.cloud.batch.v1.Allocat"
+          + "ionPolicy\0226\n\006labels\030\010 \003(\0132&.google.cloud"
+          + ".batch.v1.Job.LabelsEntry\0226\n\006status\030\t \001("
+          + "\0132 .google.cloud.batch.v1.JobStatusB\004\342A\001"
+          + "\003\0225\n\013create_time\030\013 \001(\0132\032.google.protobuf"
+          + ".TimestampB\004\342A\001\003\0225\n\013update_time\030\014 \001(\0132\032."
+          + "google.protobuf.TimestampB\004\342A\001\003\0226\n\013logs_"
+          + "policy\030\r \001(\0132!.google.cloud.batch.v1.Log"
+          + "sPolicy\022=\n\rnotifications\030\016 \003(\0132&.google."
+          + "cloud.batch.v1.JobNotification\032-\n\013Labels"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:Q\352"
+          + "AN\n\030batch.googleapis.com/Job\0222projects/{"
+          + "project}/locations/{location}/jobs/{job}"
+          + "\"\254\001\n\nLogsPolicy\022B\n\013destination\030\001 \001(\0162-.g"
+          + "oogle.cloud.batch.v1.LogsPolicy.Destinat"
+          + "ion\022\021\n\tlogs_path\030\002 \001(\t\"G\n\013Destination\022\033\n"
+          + "\027DESTINATION_UNSPECIFIED\020\000\022\021\n\rCLOUD_LOGG"
+          + "ING\020\001\022\010\n\004PATH\020\002\"\200\007\n\tJobStatus\0225\n\005state\030\001"
+          + " \001(\0162&.google.cloud.batch.v1.JobStatus.S"
+          + "tate\0229\n\rstatus_events\030\002 \003(\0132\".google.clo"
+          + "ud.batch.v1.StatusEvent\022E\n\013task_groups\030\004"
+          + " \003(\01320.google.cloud.batch.v1.JobStatus.T"
+          + "askGroupsEntry\022/\n\014run_duration\030\005 \001(\0132\031.g"
+          + "oogle.protobuf.Duration\032\321\001\n\016InstanceStat"
+          + "us\022\024\n\014machine_type\030\001 \001(\t\022U\n\022provisioning"
+          + "_model\030\002 \001(\01629.google.cloud.batch.v1.All"
+          + "ocationPolicy.ProvisioningModel\022\021\n\ttask_"
+          + "pack\030\003 \001(\003\022?\n\tboot_disk\030\004 \001(\0132,.google.c"
+          + "loud.batch.v1.AllocationPolicy.Disk\032\322\001\n\017"
+          + "TaskGroupStatus\022L\n\006counts\030\001 \003(\0132<.google"
+          + ".cloud.batch.v1.JobStatus.TaskGroupStatu"
+          + "s.CountsEntry\022B\n\tinstances\030\002 \003(\0132/.googl"
+          + "e.cloud.batch.v1.JobStatus.InstanceStatu"
+          + "s\032-\n\013CountsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\003:\0028\001\032c\n\017TaskGroupsEntry\022\013\n\003key\030\001 \001(\t"
+          + "\022?\n\005value\030\002 \001(\01320.google.cloud.batch.v1."
+          + "JobStatus.TaskGroupStatus:\0028\001\"{\n\005State\022\025"
+          + "\n\021STATE_UNSPECIFIED\020\000\022\n\n\006QUEUED\020\001\022\r\n\tSCH"
+          + "EDULED\020\002\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006"
+          + "FAILED\020\005\022\030\n\024DELETION_IN_PROGRESS\020\006\"\374\002\n\017J"
+          + "obNotification\022\024\n\014pubsub_topic\030\001 \001(\t\022?\n\007"
+          + "message\030\002 \001(\0132..google.cloud.batch.v1.Jo"
+          + "bNotification.Message\032\304\001\n\007Message\0229\n\004typ"
+          + "e\030\001 \001(\0162+.google.cloud.batch.v1.JobNotif"
+          + "ication.Type\022=\n\rnew_job_state\030\002 \001(\0162&.go"
+          + "ogle.cloud.batch.v1.JobStatus.State\022?\n\016n"
+          + "ew_task_state\030\003 \001(\0162\'.google.cloud.batch"
+          + ".v1.TaskStatus.State\"K\n\004Type\022\024\n\020TYPE_UNS"
+          + "PECIFIED\020\000\022\025\n\021JOB_STATE_CHANGED\020\001\022\026\n\022TAS"
+          + "K_STATE_CHANGED\020\002\"\253\016\n\020AllocationPolicy\022H"
+          + "\n\010location\030\001 \001(\01326.google.cloud.batch.v1"
+          + ".AllocationPolicy.LocationPolicy\022S\n\tinst"
+          + "ances\030\010 \003(\0132@.google.cloud.batch.v1.Allo"
+          + "cationPolicy.InstancePolicyOrTemplate\022>\n"
+          + "\017service_account\030\t \001(\0132%.google.cloud.ba"
+          + "tch.v1.ServiceAccount\022C\n\006labels\030\006 \003(\01323."
+          + "google.cloud.batch.v1.AllocationPolicy.L"
+          + "abelsEntry\022F\n\007network\030\007 \001(\01325.google.clo"
+          + "ud.batch.v1.AllocationPolicy.NetworkPoli"
+          + "cy\022J\n\tplacement\030\n \001(\01327.google.cloud.bat"
+          + "ch.v1.AllocationPolicy.PlacementPolicy\032+"
+          + "\n\016LocationPolicy\022\031\n\021allowed_locations\030\001 "
+          + "\003(\t\032q\n\004Disk\022\017\n\005image\030\004 \001(\tH\000\022\022\n\010snapshot"
+          + "\030\005 \001(\tH\000\022\014\n\004type\030\001 \001(\t\022\017\n\007size_gb\030\002 \001(\003\022"
+          + "\026\n\016disk_interface\030\006 \001(\tB\r\n\013data_source\032\212"
+          + "\001\n\014AttachedDisk\022@\n\010new_disk\030\001 \001(\0132,.goog"
+          + "le.cloud.batch.v1.AllocationPolicy.DiskH"
+          + "\000\022\027\n\rexisting_disk\030\002 \001(\tH\000\022\023\n\013device_nam"
+          + "e\030\003 \001(\tB\n\n\010attached\032i\n\013Accelerator\022\014\n\004ty"
+          + "pe\030\001 \001(\t\022\r\n\005count\030\002 \001(\003\022\037\n\023install_gpu_d"
+          + "rivers\030\003 \001(\010B\002\030\001\022\034\n\016driver_version\030\004 \001(\t"
+          + "B\004\342A\001\001\032\203\003\n\016InstancePolicy\022\024\n\014machine_typ"
+          + "e\030\002 \001(\t\022\030\n\020min_cpu_platform\030\003 \001(\t\022U\n\022pro"
+          + "visioning_model\030\004 \001(\01629.google.cloud.bat"
+          + "ch.v1.AllocationPolicy.ProvisioningModel"
+          + "\022I\n\014accelerators\030\005 \003(\01323.google.cloud.ba"
+          + "tch.v1.AllocationPolicy.Accelerator\022?\n\tb"
+          + "oot_disk\030\010 \001(\0132,.google.cloud.batch.v1.A"
+          + "llocationPolicy.Disk\022C\n\005disks\030\006 \003(\01324.go"
+          + "ogle.cloud.batch.v1.AllocationPolicy.Att"
+          + "achedDisk\022\031\n\013reservation\030\007 \001(\tB\004\342A\001\001\032\261\001\n"
+          + "\030InstancePolicyOrTemplate\022H\n\006policy\030\001 \001("
+          + "\01326.google.cloud.batch.v1.AllocationPoli"
+          + "cy.InstancePolicyH\000\022\033\n\021instance_template"
+          + "\030\002 \001(\tH\000\022\033\n\023install_gpu_drivers\030\003 \001(\010B\021\n"
+          + "\017policy_template\032W\n\020NetworkInterface\022\017\n\007"
+          + "network\030\001 \001(\t\022\022\n\nsubnetwork\030\002 \001(\t\022\036\n\026no_"
+          + "external_ip_address\030\003 \001(\010\032e\n\rNetworkPoli"
+          + "cy\022T\n\022network_interfaces\030\001 \003(\01328.google."
+          + "cloud.batch.v1.AllocationPolicy.NetworkI"
+          + "nterface\032<\n\017PlacementPolicy\022\023\n\013collocati"
+          + "on\030\001 \001(\t\022\024\n\014max_distance\030\002 \001(\003\032-\n\013Labels"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"`\n"
+          + "\021ProvisioningModel\022\"\n\036PROVISIONING_MODEL"
+          + "_UNSPECIFIED\020\000\022\014\n\010STANDARD\020\001\022\010\n\004SPOT\020\002\022\017"
+          + "\n\013PREEMPTIBLE\020\003\"\257\004\n\tTaskGroup\022\022\n\004name\030\001 "
+          + "\001(\tB\004\342A\001\003\0228\n\ttask_spec\030\003 \001(\0132\037.google.cl"
+          + "oud.batch.v1.TaskSpecB\004\342A\001\002\022\022\n\ntask_coun"
+          + "t\030\004 \001(\003\022\023\n\013parallelism\030\005 \001(\003\022L\n\021scheduli"
+          + "ng_policy\030\006 \001(\01621.google.cloud.batch.v1."
+          + "TaskGroup.SchedulingPolicy\022=\n\021task_envir"
+          + "onments\030\t \003(\0132\".google.cloud.batch.v1.En"
+          + "vironment\022\033\n\023task_count_per_node\030\n \001(\003\022\032"
+          + "\n\022require_hosts_file\030\013 \001(\010\022\026\n\016permissive"
+          + "_ssh\030\014 \001(\010\"\\\n\020SchedulingPolicy\022!\n\035SCHEDU"
+          + "LING_POLICY_UNSPECIFIED\020\000\022\027\n\023AS_SOON_AS_"
+          + "POSSIBLE\020\001\022\014\n\010IN_ORDER\020\002:o\352Al\n\036batch.goo"
+          + "gleapis.com/TaskGroup\022Jprojects/{project"
+          + "}/locations/{location}/jobs/{job}/taskGr"
+          + "oups/{task_group}\"/\n\016ServiceAccount\022\r\n\005e"
+          + "mail\030\001 \001(\t\022\016\n\006scopes\030\002 \003(\tB\251\001\n\031com.googl"
+          + "e.cloud.batch.v1B\010JobProtoP\001Z/cloud.goog"
+          + "le.com/go/batch/apiv1/batchpb;batchpb\242\002\003"
+          + "GCB\252\002\025Google.Cloud.Batch.V1\312\002\025Google\\Clo"
+          + "ud\\Batch\\V1\352\002\030Google::Cloud::Batch::V1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -347,7 +361,7 @@ public final class JobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor,
             new java.lang.String[] {
-              "Location", "Instances", "ServiceAccount", "Labels", "Network",
+              "Location", "Instances", "ServiceAccount", "Labels", "Network", "Placement",
             });
     internal_static_google_cloud_batch_v1_AllocationPolicy_LocationPolicy_descriptor =
         internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor.getNestedTypes().get(0);
@@ -379,7 +393,7 @@ public final class JobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1_AllocationPolicy_Accelerator_descriptor,
             new java.lang.String[] {
-              "Type", "Count", "InstallGpuDrivers",
+              "Type", "Count", "InstallGpuDrivers", "DriverVersion",
             });
     internal_static_google_cloud_batch_v1_AllocationPolicy_InstancePolicy_descriptor =
         internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor.getNestedTypes().get(4);
@@ -393,6 +407,7 @@ public final class JobProto {
               "Accelerators",
               "BootDisk",
               "Disks",
+              "Reservation",
             });
     internal_static_google_cloud_batch_v1_AllocationPolicy_InstancePolicyOrTemplate_descriptor =
         internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor.getNestedTypes().get(5);
@@ -418,8 +433,16 @@ public final class JobProto {
             new java.lang.String[] {
               "NetworkInterfaces",
             });
-    internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_descriptor =
+    internal_static_google_cloud_batch_v1_AllocationPolicy_PlacementPolicy_descriptor =
         internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor.getNestedTypes().get(8);
+    internal_static_google_cloud_batch_v1_AllocationPolicy_PlacementPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1_AllocationPolicy_PlacementPolicy_descriptor,
+            new java.lang.String[] {
+              "Collocation", "MaxDistance",
+            });
+    internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_descriptor =
+        internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor.getNestedTypes().get(9);
     internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_descriptor,
@@ -436,6 +459,7 @@ public final class JobProto {
               "TaskSpec",
               "TaskCount",
               "Parallelism",
+              "SchedulingPolicy",
               "TaskEnvironments",
               "TaskCountPerNode",
               "RequireHostsFile",

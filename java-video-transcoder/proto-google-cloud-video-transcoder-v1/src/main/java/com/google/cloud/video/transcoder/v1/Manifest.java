@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   private Manifest() {
     fileName_ = "";
     type_ = 0;
-    muxStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    muxStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Manifest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -73,7 +68,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The manifest type can be either `HLS` or `DASH`.
+   * The manifest type, which corresponds to the adaptive streaming format used.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.video.transcoder.v1.Manifest.ManifestType}
@@ -93,7 +88,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Create `HLS` manifest. The corresponding file extension is `.m3u8`.
+     * Create an HLS manifest. The corresponding file extension is `.m3u8`.
      * </pre>
      *
      * <code>HLS = 1;</code>
@@ -103,7 +98,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Create `DASH` manifest. The corresponding file extension is `.mpd`.
+     * Create an MPEG-DASH manifest. The corresponding file extension is `.mpd`.
      * </pre>
      *
      * <code>DASH = 2;</code>
@@ -126,7 +121,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Create `HLS` manifest. The corresponding file extension is `.m3u8`.
+     * Create an HLS manifest. The corresponding file extension is `.m3u8`.
      * </pre>
      *
      * <code>HLS = 1;</code>
@@ -136,7 +131,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Create `DASH` manifest. The corresponding file extension is `.mpd`.
+     * Create an MPEG-DASH manifest. The corresponding file extension is `.mpd`.
      * </pre>
      *
      * <code>DASH = 2;</code>
@@ -226,6 +221,868 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.video.transcoder.v1.Manifest.ManifestType)
   }
 
+  public interface DashConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.Manifest.DashConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The segment reference scheme for a `DASH` manifest. The default is
+     * `SEGMENT_LIST`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme segment_reference_scheme = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for segmentReferenceScheme.
+     */
+    int getSegmentReferenceSchemeValue();
+    /**
+     *
+     *
+     * <pre>
+     * The segment reference scheme for a `DASH` manifest. The default is
+     * `SEGMENT_LIST`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme segment_reference_scheme = 1;
+     * </code>
+     *
+     * @return The segmentReferenceScheme.
+     */
+    com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme
+        getSegmentReferenceScheme();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * `DASH` manifest configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.transcoder.v1.Manifest.DashConfig}
+   */
+  public static final class DashConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.Manifest.DashConfig)
+      DashConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DashConfig.newBuilder() to construct.
+    private DashConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DashConfig() {
+      segmentReferenceScheme_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DashConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_Manifest_DashConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_Manifest_DashConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.transcoder.v1.Manifest.DashConfig.class,
+              com.google.cloud.video.transcoder.v1.Manifest.DashConfig.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The segment reference scheme for a `DASH` manifest.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme}
+     */
+    public enum SegmentReferenceScheme implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The segment reference scheme is not specified.
+       * </pre>
+       *
+       * <code>SEGMENT_REFERENCE_SCHEME_UNSPECIFIED = 0;</code>
+       */
+      SEGMENT_REFERENCE_SCHEME_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Lists the URLs of media files for each segment.
+       * </pre>
+       *
+       * <code>SEGMENT_LIST = 1;</code>
+       */
+      SEGMENT_LIST(1),
+      /**
+       *
+       *
+       * <pre>
+       * Lists each segment from a template with $Number$ variable.
+       * </pre>
+       *
+       * <code>SEGMENT_TEMPLATE_NUMBER = 2;</code>
+       */
+      SEGMENT_TEMPLATE_NUMBER(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * The segment reference scheme is not specified.
+       * </pre>
+       *
+       * <code>SEGMENT_REFERENCE_SCHEME_UNSPECIFIED = 0;</code>
+       */
+      public static final int SEGMENT_REFERENCE_SCHEME_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Lists the URLs of media files for each segment.
+       * </pre>
+       *
+       * <code>SEGMENT_LIST = 1;</code>
+       */
+      public static final int SEGMENT_LIST_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Lists each segment from a template with $Number$ variable.
+       * </pre>
+       *
+       * <code>SEGMENT_TEMPLATE_NUMBER = 2;</code>
+       */
+      public static final int SEGMENT_TEMPLATE_NUMBER_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SegmentReferenceScheme valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SegmentReferenceScheme forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SEGMENT_REFERENCE_SCHEME_UNSPECIFIED;
+          case 1:
+            return SEGMENT_LIST;
+          case 2:
+            return SEGMENT_TEMPLATE_NUMBER;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SegmentReferenceScheme>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<SegmentReferenceScheme>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<SegmentReferenceScheme>() {
+                public SegmentReferenceScheme findValueByNumber(int number) {
+                  return SegmentReferenceScheme.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final SegmentReferenceScheme[] VALUES = values();
+
+      public static SegmentReferenceScheme valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SegmentReferenceScheme(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme)
+    }
+
+    public static final int SEGMENT_REFERENCE_SCHEME_FIELD_NUMBER = 1;
+    private int segmentReferenceScheme_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The segment reference scheme for a `DASH` manifest. The default is
+     * `SEGMENT_LIST`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme segment_reference_scheme = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for segmentReferenceScheme.
+     */
+    @java.lang.Override
+    public int getSegmentReferenceSchemeValue() {
+      return segmentReferenceScheme_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The segment reference scheme for a `DASH` manifest. The default is
+     * `SEGMENT_LIST`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme segment_reference_scheme = 1;
+     * </code>
+     *
+     * @return The segmentReferenceScheme.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme
+        getSegmentReferenceScheme() {
+      com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme result =
+          com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme.forNumber(
+              segmentReferenceScheme_);
+      return result == null
+          ? com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (segmentReferenceScheme_
+          != com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme
+              .SEGMENT_REFERENCE_SCHEME_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, segmentReferenceScheme_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (segmentReferenceScheme_
+          != com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme
+              .SEGMENT_REFERENCE_SCHEME_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, segmentReferenceScheme_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.transcoder.v1.Manifest.DashConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.transcoder.v1.Manifest.DashConfig other =
+          (com.google.cloud.video.transcoder.v1.Manifest.DashConfig) obj;
+
+      if (segmentReferenceScheme_ != other.segmentReferenceScheme_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SEGMENT_REFERENCE_SCHEME_FIELD_NUMBER;
+      hash = (53 * hash) + segmentReferenceScheme_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.transcoder.v1.Manifest.DashConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `DASH` manifest configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.transcoder.v1.Manifest.DashConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.transcoder.v1.Manifest.DashConfig)
+        com.google.cloud.video.transcoder.v1.Manifest.DashConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_Manifest_DashConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_Manifest_DashConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.transcoder.v1.Manifest.DashConfig.class,
+                com.google.cloud.video.transcoder.v1.Manifest.DashConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.video.transcoder.v1.Manifest.DashConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        segmentReferenceScheme_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_Manifest_DashConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.Manifest.DashConfig getDefaultInstanceForType() {
+        return com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.Manifest.DashConfig build() {
+        com.google.cloud.video.transcoder.v1.Manifest.DashConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.Manifest.DashConfig buildPartial() {
+        com.google.cloud.video.transcoder.v1.Manifest.DashConfig result =
+            new com.google.cloud.video.transcoder.v1.Manifest.DashConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.video.transcoder.v1.Manifest.DashConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.segmentReferenceScheme_ = segmentReferenceScheme_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.transcoder.v1.Manifest.DashConfig) {
+          return mergeFrom((com.google.cloud.video.transcoder.v1.Manifest.DashConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.video.transcoder.v1.Manifest.DashConfig other) {
+        if (other == com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance())
+          return this;
+        if (other.segmentReferenceScheme_ != 0) {
+          setSegmentReferenceSchemeValue(other.getSegmentReferenceSchemeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  segmentReferenceScheme_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int segmentReferenceScheme_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The segment reference scheme for a `DASH` manifest. The default is
+       * `SEGMENT_LIST`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme segment_reference_scheme = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for segmentReferenceScheme.
+       */
+      @java.lang.Override
+      public int getSegmentReferenceSchemeValue() {
+        return segmentReferenceScheme_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The segment reference scheme for a `DASH` manifest. The default is
+       * `SEGMENT_LIST`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme segment_reference_scheme = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for segmentReferenceScheme to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSegmentReferenceSchemeValue(int value) {
+        segmentReferenceScheme_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The segment reference scheme for a `DASH` manifest. The default is
+       * `SEGMENT_LIST`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme segment_reference_scheme = 1;
+       * </code>
+       *
+       * @return The segmentReferenceScheme.
+       */
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme
+          getSegmentReferenceScheme() {
+        com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme result =
+            com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme
+                .forNumber(segmentReferenceScheme_);
+        return result == null
+            ? com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The segment reference scheme for a `DASH` manifest. The default is
+       * `SEGMENT_LIST`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme segment_reference_scheme = 1;
+       * </code>
+       *
+       * @param value The segmentReferenceScheme to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSegmentReferenceScheme(
+          com.google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        segmentReferenceScheme_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The segment reference scheme for a `DASH` manifest. The default is
+       * `SEGMENT_LIST`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.video.transcoder.v1.Manifest.DashConfig.SegmentReferenceScheme segment_reference_scheme = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSegmentReferenceScheme() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        segmentReferenceScheme_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.transcoder.v1.Manifest.DashConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.transcoder.v1.Manifest.DashConfig)
+    private static final com.google.cloud.video.transcoder.v1.Manifest.DashConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.transcoder.v1.Manifest.DashConfig();
+    }
+
+    public static com.google.cloud.video.transcoder.v1.Manifest.DashConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DashConfig> PARSER =
+        new com.google.protobuf.AbstractParser<DashConfig>() {
+          @java.lang.Override
+          public DashConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DashConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DashConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.Manifest.DashConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int manifestConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object manifestConfig_;
+
+  public enum ManifestConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    DASH(4),
+    MANIFESTCONFIG_NOT_SET(0);
+    private final int value;
+
+    private ManifestConfigCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ManifestConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ManifestConfigCase forNumber(int value) {
+      switch (value) {
+        case 4:
+          return DASH;
+        case 0:
+          return MANIFESTCONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ManifestConfigCase getManifestConfigCase() {
+    return ManifestConfigCase.forNumber(manifestConfigCase_);
+  }
+
   public static final int FILE_NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -285,7 +1142,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Type of the manifest, can be `HLS` or `DASH`.
+   * Required. Type of the manifest.
    * </pre>
    *
    * <code>
@@ -302,7 +1159,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Type of the manifest, can be `HLS` or `DASH`.
+   * Required. Type of the manifest.
    * </pre>
    *
    * <code>
@@ -323,13 +1180,15 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
   public static final int MUX_STREAMS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList muxStreams_;
+  private com.google.protobuf.LazyStringArrayList muxStreams_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Required. List of user given `MuxStream.key`s that should appear in this
    * manifest.
+   *
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -348,6 +1207,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. List of user given `MuxStream.key`s that should appear in this
    * manifest.
+   *
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -366,6 +1226,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. List of user given `MuxStream.key`s that should appear in this
    * manifest.
+   *
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -385,6 +1246,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. List of user given `MuxStream.key`s that should appear in this
    * manifest.
+   *
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -397,6 +1259,57 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.protobuf.ByteString getMuxStreamsBytes(int index) {
     return muxStreams_.getByteString(index);
+  }
+
+  public static final int DASH_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * `DASH` manifest configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+   *
+   * @return Whether the dash field is set.
+   */
+  @java.lang.Override
+  public boolean hasDash() {
+    return manifestConfigCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * `DASH` manifest configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+   *
+   * @return The dash.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.transcoder.v1.Manifest.DashConfig getDash() {
+    if (manifestConfigCase_ == 4) {
+      return (com.google.cloud.video.transcoder.v1.Manifest.DashConfig) manifestConfig_;
+    }
+    return com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * `DASH` manifest configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.transcoder.v1.Manifest.DashConfigOrBuilder getDashOrBuilder() {
+    if (manifestConfigCase_ == 4) {
+      return (com.google.cloud.video.transcoder.v1.Manifest.DashConfig) manifestConfig_;
+    }
+    return com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -424,6 +1337,10 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < muxStreams_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, muxStreams_.getRaw(i));
     }
+    if (manifestConfigCase_ == 4) {
+      output.writeMessage(
+          4, (com.google.cloud.video.transcoder.v1.Manifest.DashConfig) manifestConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -449,6 +1366,11 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getMuxStreamsList().size();
     }
+    if (manifestConfigCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.video.transcoder.v1.Manifest.DashConfig) manifestConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -468,6 +1390,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     if (!getFileName().equals(other.getFileName())) return false;
     if (type_ != other.type_) return false;
     if (!getMuxStreamsList().equals(other.getMuxStreamsList())) return false;
+    if (!getManifestConfigCase().equals(other.getManifestConfigCase())) return false;
+    switch (manifestConfigCase_) {
+      case 4:
+        if (!getDash().equals(other.getDash())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -486,6 +1416,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     if (getMuxStreamsCount() > 0) {
       hash = (37 * hash) + MUX_STREAMS_FIELD_NUMBER;
       hash = (53 * hash) + getMuxStreamsList().hashCode();
+    }
+    switch (manifestConfigCase_) {
+      case 4:
+        hash = (37 * hash) + DASH_FIELD_NUMBER;
+        hash = (53 * hash) + getDash().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -628,8 +1566,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       fileName_ = "";
       type_ = 0;
-      muxStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      muxStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (dashBuilder_ != null) {
+        dashBuilder_.clear();
+      }
+      manifestConfigCase_ = 0;
+      manifestConfig_ = null;
       return this;
     }
 
@@ -657,20 +1599,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.Manifest buildPartial() {
       com.google.cloud.video.transcoder.v1.Manifest result =
           new com.google.cloud.video.transcoder.v1.Manifest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.video.transcoder.v1.Manifest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        muxStreams_ = muxStreams_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.muxStreams_ = muxStreams_;
     }
 
     private void buildPartial0(com.google.cloud.video.transcoder.v1.Manifest result) {
@@ -680,6 +1614,18 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        muxStreams_.makeImmutable();
+        result.muxStreams_ = muxStreams_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.video.transcoder.v1.Manifest result) {
+      result.manifestConfigCase_ = manifestConfigCase_;
+      result.manifestConfig_ = this.manifestConfig_;
+      if (manifestConfigCase_ == 4 && dashBuilder_ != null) {
+        result.manifestConfig_ = dashBuilder_.build();
       }
     }
 
@@ -739,12 +1685,23 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       if (!other.muxStreams_.isEmpty()) {
         if (muxStreams_.isEmpty()) {
           muxStreams_ = other.muxStreams_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureMuxStreamsIsMutable();
           muxStreams_.addAll(other.muxStreams_);
         }
         onChanged();
+      }
+      switch (other.getManifestConfigCase()) {
+        case DASH:
+          {
+            mergeDash(other.getDash());
+            break;
+          }
+        case MANIFESTCONFIG_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -791,6 +1748,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
                 muxStreams_.add(s);
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getDashFieldBuilder().getBuilder(), extensionRegistry);
+                manifestConfigCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -805,6 +1768,20 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int manifestConfigCase_ = 0;
+    private java.lang.Object manifestConfig_;
+
+    public ManifestConfigCase getManifestConfigCase() {
+      return ManifestConfigCase.forNumber(manifestConfigCase_);
+    }
+
+    public Builder clearManifestConfig() {
+      manifestConfigCase_ = 0;
+      manifestConfig_ = null;
+      onChanged();
       return this;
     }
 
@@ -926,7 +1903,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Type of the manifest, can be `HLS` or `DASH`.
+     * Required. Type of the manifest.
      * </pre>
      *
      * <code>
@@ -943,7 +1920,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Type of the manifest, can be `HLS` or `DASH`.
+     * Required. Type of the manifest.
      * </pre>
      *
      * <code>
@@ -963,7 +1940,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Type of the manifest, can be `HLS` or `DASH`.
+     * Required. Type of the manifest.
      * </pre>
      *
      * <code>
@@ -984,7 +1961,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Type of the manifest, can be `HLS` or `DASH`.
+     * Required. Type of the manifest.
      * </pre>
      *
      * <code>
@@ -1007,7 +1984,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Type of the manifest, can be `HLS` or `DASH`.
+     * Required. Type of the manifest.
      * </pre>
      *
      * <code>
@@ -1023,14 +2000,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList muxStreams_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList muxStreams_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMuxStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!muxStreams_.isModifiable()) {
         muxStreams_ = new com.google.protobuf.LazyStringArrayList(muxStreams_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1038,6 +2015,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. List of user given `MuxStream.key`s that should appear in this
      * manifest.
+     *
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1048,7 +2026,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the muxStreams.
      */
     public com.google.protobuf.ProtocolStringList getMuxStreamsList() {
-      return muxStreams_.getUnmodifiableView();
+      muxStreams_.makeImmutable();
+      return muxStreams_;
     }
     /**
      *
@@ -1056,6 +2035,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. List of user given `MuxStream.key`s that should appear in this
      * manifest.
+     *
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1074,6 +2054,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. List of user given `MuxStream.key`s that should appear in this
      * manifest.
+     *
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1093,6 +2074,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. List of user given `MuxStream.key`s that should appear in this
      * manifest.
+     *
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1112,6 +2094,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. List of user given `MuxStream.key`s that should appear in this
      * manifest.
+     *
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1129,6 +2112,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMuxStreamsIsMutable();
       muxStreams_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1138,6 +2122,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. List of user given `MuxStream.key`s that should appear in this
      * manifest.
+     *
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1154,6 +2139,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMuxStreamsIsMutable();
       muxStreams_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1163,6 +2149,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. List of user given `MuxStream.key`s that should appear in this
      * manifest.
+     *
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1176,6 +2163,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMuxStreams(java.lang.Iterable<java.lang.String> values) {
       ensureMuxStreamsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, muxStreams_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1185,6 +2173,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. List of user given `MuxStream.key`s that should appear in this
      * manifest.
+     *
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1195,8 +2184,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMuxStreams() {
-      muxStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      muxStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1206,6 +2196,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. List of user given `MuxStream.key`s that should appear in this
      * manifest.
+     *
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1223,8 +2214,220 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMuxStreamsIsMutable();
       muxStreams_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.transcoder.v1.Manifest.DashConfig,
+            com.google.cloud.video.transcoder.v1.Manifest.DashConfig.Builder,
+            com.google.cloud.video.transcoder.v1.Manifest.DashConfigOrBuilder>
+        dashBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * `DASH` manifest configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+     *
+     * @return Whether the dash field is set.
+     */
+    @java.lang.Override
+    public boolean hasDash() {
+      return manifestConfigCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `DASH` manifest configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+     *
+     * @return The dash.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.Manifest.DashConfig getDash() {
+      if (dashBuilder_ == null) {
+        if (manifestConfigCase_ == 4) {
+          return (com.google.cloud.video.transcoder.v1.Manifest.DashConfig) manifestConfig_;
+        }
+        return com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance();
+      } else {
+        if (manifestConfigCase_ == 4) {
+          return dashBuilder_.getMessage();
+        }
+        return com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `DASH` manifest configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+     */
+    public Builder setDash(com.google.cloud.video.transcoder.v1.Manifest.DashConfig value) {
+      if (dashBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        manifestConfig_ = value;
+        onChanged();
+      } else {
+        dashBuilder_.setMessage(value);
+      }
+      manifestConfigCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `DASH` manifest configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+     */
+    public Builder setDash(
+        com.google.cloud.video.transcoder.v1.Manifest.DashConfig.Builder builderForValue) {
+      if (dashBuilder_ == null) {
+        manifestConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        dashBuilder_.setMessage(builderForValue.build());
+      }
+      manifestConfigCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `DASH` manifest configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+     */
+    public Builder mergeDash(com.google.cloud.video.transcoder.v1.Manifest.DashConfig value) {
+      if (dashBuilder_ == null) {
+        if (manifestConfigCase_ == 4
+            && manifestConfig_
+                != com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance()) {
+          manifestConfig_ =
+              com.google.cloud.video.transcoder.v1.Manifest.DashConfig.newBuilder(
+                      (com.google.cloud.video.transcoder.v1.Manifest.DashConfig) manifestConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          manifestConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (manifestConfigCase_ == 4) {
+          dashBuilder_.mergeFrom(value);
+        } else {
+          dashBuilder_.setMessage(value);
+        }
+      }
+      manifestConfigCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `DASH` manifest configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+     */
+    public Builder clearDash() {
+      if (dashBuilder_ == null) {
+        if (manifestConfigCase_ == 4) {
+          manifestConfigCase_ = 0;
+          manifestConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (manifestConfigCase_ == 4) {
+          manifestConfigCase_ = 0;
+          manifestConfig_ = null;
+        }
+        dashBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `DASH` manifest configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+     */
+    public com.google.cloud.video.transcoder.v1.Manifest.DashConfig.Builder getDashBuilder() {
+      return getDashFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `DASH` manifest configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.Manifest.DashConfigOrBuilder getDashOrBuilder() {
+      if ((manifestConfigCase_ == 4) && (dashBuilder_ != null)) {
+        return dashBuilder_.getMessageOrBuilder();
+      } else {
+        if (manifestConfigCase_ == 4) {
+          return (com.google.cloud.video.transcoder.v1.Manifest.DashConfig) manifestConfig_;
+        }
+        return com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `DASH` manifest configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Manifest.DashConfig dash = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.transcoder.v1.Manifest.DashConfig,
+            com.google.cloud.video.transcoder.v1.Manifest.DashConfig.Builder,
+            com.google.cloud.video.transcoder.v1.Manifest.DashConfigOrBuilder>
+        getDashFieldBuilder() {
+      if (dashBuilder_ == null) {
+        if (!(manifestConfigCase_ == 4)) {
+          manifestConfig_ =
+              com.google.cloud.video.transcoder.v1.Manifest.DashConfig.getDefaultInstance();
+        }
+        dashBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.transcoder.v1.Manifest.DashConfig,
+                com.google.cloud.video.transcoder.v1.Manifest.DashConfig.Builder,
+                com.google.cloud.video.transcoder.v1.Manifest.DashConfigOrBuilder>(
+                (com.google.cloud.video.transcoder.v1.Manifest.DashConfig) manifestConfig_,
+                getParentForChildren(),
+                isClean());
+        manifestConfig_ = null;
+      }
+      manifestConfigCase_ = 4;
+      onChanged();
+      return dashBuilder_;
     }
 
     @java.lang.Override

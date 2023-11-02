@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     return new SearchLinksRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.lineage.v1.LineageProto
         .internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksRequest_descriptor;
@@ -70,6 +65,8 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
   }
 
   private int criteriaCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object criteria_;
 
   public enum CriteriaCase
@@ -300,6 +297,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
    * Optional. The maximum number of links to return in a single page of the
    * response. A page may contain fewer links than this value. If unspecified,
    * at most 10 links are returned.
+   *
    * Maximum value is 100; values greater than 100 are reduced to 100.
    * </pre>
    *
@@ -322,6 +320,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The page token received from a previous `SearchLinksRequest`
    * call. Use it to get the next page.
+   *
    * When requesting subsequent pages of a response, remember that
    * all parameters must match the values you provided
    * in the original request.
@@ -349,6 +348,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The page token received from a previous `SearchLinksRequest`
    * call. Use it to get the next page.
+   *
    * When requesting subsequent pages of a response, remember that
    * all parameters must match the values you provided
    * in the original request.
@@ -1461,6 +1461,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      * Optional. The maximum number of links to return in a single page of the
      * response. A page may contain fewer links than this value. If unspecified,
      * at most 10 links are returned.
+     *
      * Maximum value is 100; values greater than 100 are reduced to 100.
      * </pre>
      *
@@ -1479,6 +1480,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      * Optional. The maximum number of links to return in a single page of the
      * response. A page may contain fewer links than this value. If unspecified,
      * at most 10 links are returned.
+     *
      * Maximum value is 100; values greater than 100 are reduced to 100.
      * </pre>
      *
@@ -1501,6 +1503,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      * Optional. The maximum number of links to return in a single page of the
      * response. A page may contain fewer links than this value. If unspecified,
      * at most 10 links are returned.
+     *
      * Maximum value is 100; values greater than 100 are reduced to 100.
      * </pre>
      *
@@ -1522,6 +1525,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The page token received from a previous `SearchLinksRequest`
      * call. Use it to get the next page.
+     *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
@@ -1548,6 +1552,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The page token received from a previous `SearchLinksRequest`
      * call. Use it to get the next page.
+     *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
@@ -1574,6 +1579,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The page token received from a previous `SearchLinksRequest`
      * call. Use it to get the next page.
+     *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
@@ -1599,6 +1605,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The page token received from a previous `SearchLinksRequest`
      * call. Use it to get the next page.
+     *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
@@ -1620,6 +1627,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The page token received from a previous `SearchLinksRequest`
      * call. Use it to get the next page.
+     *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.

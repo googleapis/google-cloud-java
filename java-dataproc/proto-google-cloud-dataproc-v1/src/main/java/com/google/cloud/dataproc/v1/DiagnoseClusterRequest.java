@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,17 +41,15 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     projectId_ = "";
     region_ = "";
     clusterName_ = "";
+    tarballGcsDir_ = "";
+    jobs_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    yarnApplicationIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DiagnoseClusterRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -224,6 +222,257 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int TARBALL_GCS_DIR_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tarballGcsDir_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The output Cloud Storage directory for the diagnostic
+   * tarball. If not specified, a task-specific directory in the cluster's
+   * staging bucket will be used.
+   * </pre>
+   *
+   * <code>string tarball_gcs_dir = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The tarballGcsDir.
+   */
+  @java.lang.Override
+  public java.lang.String getTarballGcsDir() {
+    java.lang.Object ref = tarballGcsDir_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tarballGcsDir_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The output Cloud Storage directory for the diagnostic
+   * tarball. If not specified, a task-specific directory in the cluster's
+   * staging bucket will be used.
+   * </pre>
+   *
+   * <code>string tarball_gcs_dir = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for tarballGcsDir.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTarballGcsDirBytes() {
+    java.lang.Object ref = tarballGcsDir_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tarballGcsDir_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DIAGNOSIS_INTERVAL_FIELD_NUMBER = 6;
+  private com.google.type.Interval diagnosisInterval_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time interval in which diagnosis should be carried out on the
+   * cluster.
+   * </pre>
+   *
+   * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the diagnosisInterval field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiagnosisInterval() {
+    return diagnosisInterval_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time interval in which diagnosis should be carried out on the
+   * cluster.
+   * </pre>
+   *
+   * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The diagnosisInterval.
+   */
+  @java.lang.Override
+  public com.google.type.Interval getDiagnosisInterval() {
+    return diagnosisInterval_ == null
+        ? com.google.type.Interval.getDefaultInstance()
+        : diagnosisInterval_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time interval in which diagnosis should be carried out on the
+   * cluster.
+   * </pre>
+   *
+   * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.type.IntervalOrBuilder getDiagnosisIntervalOrBuilder() {
+    return diagnosisInterval_ == null
+        ? com.google.type.Interval.getDefaultInstance()
+        : diagnosisInterval_;
+  }
+
+  public static final int JOBS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList jobs_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+   * Format: projects/{project}/regions/{region}/jobs/{job}
+   * </pre>
+   *
+   * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the jobs.
+   */
+  public com.google.protobuf.ProtocolStringList getJobsList() {
+    return jobs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+   * Format: projects/{project}/regions/{region}/jobs/{job}
+   * </pre>
+   *
+   * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of jobs.
+   */
+  public int getJobsCount() {
+    return jobs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+   * Format: projects/{project}/regions/{region}/jobs/{job}
+   * </pre>
+   *
+   * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The jobs at the given index.
+   */
+  public java.lang.String getJobs(int index) {
+    return jobs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+   * Format: projects/{project}/regions/{region}/jobs/{job}
+   * </pre>
+   *
+   * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the jobs at the given index.
+   */
+  public com.google.protobuf.ByteString getJobsBytes(int index) {
+    return jobs_.getByteString(index);
+  }
+
+  public static final int YARN_APPLICATION_IDS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList yarnApplicationIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of yarn applications on which diagnosis is to be
+   * performed.
+   * </pre>
+   *
+   * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the yarnApplicationIds.
+   */
+  public com.google.protobuf.ProtocolStringList getYarnApplicationIdsList() {
+    return yarnApplicationIds_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of yarn applications on which diagnosis is to be
+   * performed.
+   * </pre>
+   *
+   * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of yarnApplicationIds.
+   */
+  public int getYarnApplicationIdsCount() {
+    return yarnApplicationIds_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of yarn applications on which diagnosis is to be
+   * performed.
+   * </pre>
+   *
+   * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The yarnApplicationIds at the given index.
+   */
+  public java.lang.String getYarnApplicationIds(int index) {
+    return yarnApplicationIds_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a list of yarn applications on which diagnosis is to be
+   * performed.
+   * </pre>
+   *
+   * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the yarnApplicationIds at the given index.
+   */
+  public com.google.protobuf.ByteString getYarnApplicationIdsBytes(int index) {
+    return yarnApplicationIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -247,6 +496,18 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, region_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tarballGcsDir_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tarballGcsDir_);
+    }
+    if (diagnosisInterval_ != null) {
+      output.writeMessage(6, getDiagnosisInterval());
+    }
+    for (int i = 0; i < jobs_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, jobs_.getRaw(i));
+    }
+    for (int i = 0; i < yarnApplicationIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, yarnApplicationIds_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -264,6 +525,28 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, region_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tarballGcsDir_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tarballGcsDir_);
+    }
+    if (diagnosisInterval_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDiagnosisInterval());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < jobs_.size(); i++) {
+        dataSize += computeStringSizeNoTag(jobs_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getJobsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < yarnApplicationIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(yarnApplicationIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getYarnApplicationIdsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -284,6 +567,13 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
     if (!getClusterName().equals(other.getClusterName())) return false;
+    if (!getTarballGcsDir().equals(other.getTarballGcsDir())) return false;
+    if (hasDiagnosisInterval() != other.hasDiagnosisInterval()) return false;
+    if (hasDiagnosisInterval()) {
+      if (!getDiagnosisInterval().equals(other.getDiagnosisInterval())) return false;
+    }
+    if (!getJobsList().equals(other.getJobsList())) return false;
+    if (!getYarnApplicationIdsList().equals(other.getYarnApplicationIdsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -301,6 +591,20 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getRegion().hashCode();
     hash = (37 * hash) + CLUSTER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getClusterName().hashCode();
+    hash = (37 * hash) + TARBALL_GCS_DIR_FIELD_NUMBER;
+    hash = (53 * hash) + getTarballGcsDir().hashCode();
+    if (hasDiagnosisInterval()) {
+      hash = (37 * hash) + DIAGNOSIS_INTERVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getDiagnosisInterval().hashCode();
+    }
+    if (getJobsCount() > 0) {
+      hash = (37 * hash) + JOBS_FIELD_NUMBER;
+      hash = (53 * hash) + getJobsList().hashCode();
+    }
+    if (getYarnApplicationIdsCount() > 0) {
+      hash = (37 * hash) + YARN_APPLICATION_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getYarnApplicationIdsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -443,6 +747,14 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       projectId_ = "";
       region_ = "";
       clusterName_ = "";
+      tarballGcsDir_ = "";
+      diagnosisInterval_ = null;
+      if (diagnosisIntervalBuilder_ != null) {
+        diagnosisIntervalBuilder_.dispose();
+        diagnosisIntervalBuilder_ = null;
+      }
+      jobs_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      yarnApplicationIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -487,6 +799,23 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.clusterName_ = clusterName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.tarballGcsDir_ = tarballGcsDir_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.diagnosisInterval_ =
+            diagnosisIntervalBuilder_ == null
+                ? diagnosisInterval_
+                : diagnosisIntervalBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        jobs_.makeImmutable();
+        result.jobs_ = jobs_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        yarnApplicationIds_.makeImmutable();
+        result.yarnApplicationIds_ = yarnApplicationIds_;
       }
     }
 
@@ -551,6 +880,34 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getTarballGcsDir().isEmpty()) {
+        tarballGcsDir_ = other.tarballGcsDir_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.hasDiagnosisInterval()) {
+        mergeDiagnosisInterval(other.getDiagnosisInterval());
+      }
+      if (!other.jobs_.isEmpty()) {
+        if (jobs_.isEmpty()) {
+          jobs_ = other.jobs_;
+          bitField0_ |= 0x00000020;
+        } else {
+          ensureJobsIsMutable();
+          jobs_.addAll(other.jobs_);
+        }
+        onChanged();
+      }
+      if (!other.yarnApplicationIds_.isEmpty()) {
+        if (yarnApplicationIds_.isEmpty()) {
+          yarnApplicationIds_ = other.yarnApplicationIds_;
+          bitField0_ |= 0x00000040;
+        } else {
+          ensureYarnApplicationIdsIsMutable();
+          yarnApplicationIds_.addAll(other.yarnApplicationIds_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -595,6 +952,33 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 34:
+              {
+                tarballGcsDir_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 50:
+              {
+                input.readMessage(
+                    getDiagnosisIntervalFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureJobsIsMutable();
+                jobs_.add(s);
+                break;
+              } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureYarnApplicationIdsIsMutable();
+                yarnApplicationIds_.add(s);
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -933,6 +1317,698 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       clusterName_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object tarballGcsDir_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The output Cloud Storage directory for the diagnostic
+     * tarball. If not specified, a task-specific directory in the cluster's
+     * staging bucket will be used.
+     * </pre>
+     *
+     * <code>string tarball_gcs_dir = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The tarballGcsDir.
+     */
+    public java.lang.String getTarballGcsDir() {
+      java.lang.Object ref = tarballGcsDir_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tarballGcsDir_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The output Cloud Storage directory for the diagnostic
+     * tarball. If not specified, a task-specific directory in the cluster's
+     * staging bucket will be used.
+     * </pre>
+     *
+     * <code>string tarball_gcs_dir = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for tarballGcsDir.
+     */
+    public com.google.protobuf.ByteString getTarballGcsDirBytes() {
+      java.lang.Object ref = tarballGcsDir_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tarballGcsDir_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The output Cloud Storage directory for the diagnostic
+     * tarball. If not specified, a task-specific directory in the cluster's
+     * staging bucket will be used.
+     * </pre>
+     *
+     * <code>string tarball_gcs_dir = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The tarballGcsDir to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTarballGcsDir(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      tarballGcsDir_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The output Cloud Storage directory for the diagnostic
+     * tarball. If not specified, a task-specific directory in the cluster's
+     * staging bucket will be used.
+     * </pre>
+     *
+     * <code>string tarball_gcs_dir = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTarballGcsDir() {
+      tarballGcsDir_ = getDefaultInstance().getTarballGcsDir();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The output Cloud Storage directory for the diagnostic
+     * tarball. If not specified, a task-specific directory in the cluster's
+     * staging bucket will be used.
+     * </pre>
+     *
+     * <code>string tarball_gcs_dir = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for tarballGcsDir to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTarballGcsDirBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      tarballGcsDir_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.type.Interval diagnosisInterval_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Interval,
+            com.google.type.Interval.Builder,
+            com.google.type.IntervalOrBuilder>
+        diagnosisIntervalBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time interval in which diagnosis should be carried out on the
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the diagnosisInterval field is set.
+     */
+    public boolean hasDiagnosisInterval() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time interval in which diagnosis should be carried out on the
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The diagnosisInterval.
+     */
+    public com.google.type.Interval getDiagnosisInterval() {
+      if (diagnosisIntervalBuilder_ == null) {
+        return diagnosisInterval_ == null
+            ? com.google.type.Interval.getDefaultInstance()
+            : diagnosisInterval_;
+      } else {
+        return diagnosisIntervalBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time interval in which diagnosis should be carried out on the
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDiagnosisInterval(com.google.type.Interval value) {
+      if (diagnosisIntervalBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        diagnosisInterval_ = value;
+      } else {
+        diagnosisIntervalBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time interval in which diagnosis should be carried out on the
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDiagnosisInterval(com.google.type.Interval.Builder builderForValue) {
+      if (diagnosisIntervalBuilder_ == null) {
+        diagnosisInterval_ = builderForValue.build();
+      } else {
+        diagnosisIntervalBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time interval in which diagnosis should be carried out on the
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDiagnosisInterval(com.google.type.Interval value) {
+      if (diagnosisIntervalBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && diagnosisInterval_ != null
+            && diagnosisInterval_ != com.google.type.Interval.getDefaultInstance()) {
+          getDiagnosisIntervalBuilder().mergeFrom(value);
+        } else {
+          diagnosisInterval_ = value;
+        }
+      } else {
+        diagnosisIntervalBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time interval in which diagnosis should be carried out on the
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDiagnosisInterval() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      diagnosisInterval_ = null;
+      if (diagnosisIntervalBuilder_ != null) {
+        diagnosisIntervalBuilder_.dispose();
+        diagnosisIntervalBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time interval in which diagnosis should be carried out on the
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.type.Interval.Builder getDiagnosisIntervalBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getDiagnosisIntervalFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time interval in which diagnosis should be carried out on the
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.type.IntervalOrBuilder getDiagnosisIntervalOrBuilder() {
+      if (diagnosisIntervalBuilder_ != null) {
+        return diagnosisIntervalBuilder_.getMessageOrBuilder();
+      } else {
+        return diagnosisInterval_ == null
+            ? com.google.type.Interval.getDefaultInstance()
+            : diagnosisInterval_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time interval in which diagnosis should be carried out on the
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.type.Interval diagnosis_interval = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Interval,
+            com.google.type.Interval.Builder,
+            com.google.type.IntervalOrBuilder>
+        getDiagnosisIntervalFieldBuilder() {
+      if (diagnosisIntervalBuilder_ == null) {
+        diagnosisIntervalBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Interval,
+                com.google.type.Interval.Builder,
+                com.google.type.IntervalOrBuilder>(
+                getDiagnosisInterval(), getParentForChildren(), isClean());
+        diagnosisInterval_ = null;
+      }
+      return diagnosisIntervalBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList jobs_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureJobsIsMutable() {
+      if (!jobs_.isModifiable()) {
+        jobs_ = new com.google.protobuf.LazyStringArrayList(jobs_);
+      }
+      bitField0_ |= 0x00000020;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+     * Format: projects/{project}/regions/{region}/jobs/{job}
+     * </pre>
+     *
+     * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the jobs.
+     */
+    public com.google.protobuf.ProtocolStringList getJobsList() {
+      jobs_.makeImmutable();
+      return jobs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+     * Format: projects/{project}/regions/{region}/jobs/{job}
+     * </pre>
+     *
+     * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of jobs.
+     */
+    public int getJobsCount() {
+      return jobs_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+     * Format: projects/{project}/regions/{region}/jobs/{job}
+     * </pre>
+     *
+     * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The jobs at the given index.
+     */
+    public java.lang.String getJobs(int index) {
+      return jobs_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+     * Format: projects/{project}/regions/{region}/jobs/{job}
+     * </pre>
+     *
+     * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the jobs at the given index.
+     */
+    public com.google.protobuf.ByteString getJobsBytes(int index) {
+      return jobs_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+     * Format: projects/{project}/regions/{region}/jobs/{job}
+     * </pre>
+     *
+     * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The jobs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJobs(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureJobsIsMutable();
+      jobs_.set(index, value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+     * Format: projects/{project}/regions/{region}/jobs/{job}
+     * </pre>
+     *
+     * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The jobs to add.
+     * @return This builder for chaining.
+     */
+    public Builder addJobs(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureJobsIsMutable();
+      jobs_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+     * Format: projects/{project}/regions/{region}/jobs/{job}
+     * </pre>
+     *
+     * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The jobs to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllJobs(java.lang.Iterable<java.lang.String> values) {
+      ensureJobsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jobs_);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+     * Format: projects/{project}/regions/{region}/jobs/{job}
+     * </pre>
+     *
+     * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearJobs() {
+      jobs_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of jobs on which diagnosis is to be performed.
+     * Format: projects/{project}/regions/{region}/jobs/{job}
+     * </pre>
+     *
+     * <code>repeated string jobs = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the jobs to add.
+     * @return This builder for chaining.
+     */
+    public Builder addJobsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureJobsIsMutable();
+      jobs_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList yarnApplicationIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureYarnApplicationIdsIsMutable() {
+      if (!yarnApplicationIds_.isModifiable()) {
+        yarnApplicationIds_ = new com.google.protobuf.LazyStringArrayList(yarnApplicationIds_);
+      }
+      bitField0_ |= 0x00000040;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of yarn applications on which diagnosis is to be
+     * performed.
+     * </pre>
+     *
+     * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the yarnApplicationIds.
+     */
+    public com.google.protobuf.ProtocolStringList getYarnApplicationIdsList() {
+      yarnApplicationIds_.makeImmutable();
+      return yarnApplicationIds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of yarn applications on which diagnosis is to be
+     * performed.
+     * </pre>
+     *
+     * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of yarnApplicationIds.
+     */
+    public int getYarnApplicationIdsCount() {
+      return yarnApplicationIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of yarn applications on which diagnosis is to be
+     * performed.
+     * </pre>
+     *
+     * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The yarnApplicationIds at the given index.
+     */
+    public java.lang.String getYarnApplicationIds(int index) {
+      return yarnApplicationIds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of yarn applications on which diagnosis is to be
+     * performed.
+     * </pre>
+     *
+     * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the yarnApplicationIds at the given index.
+     */
+    public com.google.protobuf.ByteString getYarnApplicationIdsBytes(int index) {
+      return yarnApplicationIds_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of yarn applications on which diagnosis is to be
+     * performed.
+     * </pre>
+     *
+     * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The yarnApplicationIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setYarnApplicationIds(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureYarnApplicationIdsIsMutable();
+      yarnApplicationIds_.set(index, value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of yarn applications on which diagnosis is to be
+     * performed.
+     * </pre>
+     *
+     * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The yarnApplicationIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addYarnApplicationIds(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureYarnApplicationIdsIsMutable();
+      yarnApplicationIds_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of yarn applications on which diagnosis is to be
+     * performed.
+     * </pre>
+     *
+     * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The yarnApplicationIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllYarnApplicationIds(java.lang.Iterable<java.lang.String> values) {
+      ensureYarnApplicationIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, yarnApplicationIds_);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of yarn applications on which diagnosis is to be
+     * performed.
+     * </pre>
+     *
+     * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearYarnApplicationIds() {
+      yarnApplicationIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a list of yarn applications on which diagnosis is to be
+     * performed.
+     * </pre>
+     *
+     * <code>repeated string yarn_application_ids = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the yarnApplicationIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addYarnApplicationIdsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureYarnApplicationIdsIsMutable();
+      yarnApplicationIds_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

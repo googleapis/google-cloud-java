@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListCustomClassesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,10 +127,10 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Number of results per requests. A valid page_size ranges from 0 to 20
+   * Number of results per requests. A valid page_size ranges from 0 to 100
    * inclusive. If the page_size is zero or unspecified, a page size of 5 will
-   * be chosen. If the page size exceeds 20, it will be coerced down to 20. Note
-   * that a call might return fewer results than the requested page size.
+   * be chosen. If the page size exceeds 100, it will be coerced down to 100.
+   * Note that a call might return fewer results than the requested page size.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -158,6 +153,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
    * A page token, received from a previous
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
    * match the call that provided the page token.
@@ -186,6 +182,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
    * A page token, received from a previous
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
    * match the call that provided the page token.
@@ -763,10 +760,10 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Number of results per requests. A valid page_size ranges from 0 to 20
+     * Number of results per requests. A valid page_size ranges from 0 to 100
      * inclusive. If the page_size is zero or unspecified, a page size of 5 will
-     * be chosen. If the page size exceeds 20, it will be coerced down to 20. Note
-     * that a call might return fewer results than the requested page size.
+     * be chosen. If the page size exceeds 100, it will be coerced down to 100.
+     * Note that a call might return fewer results than the requested page size.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -781,10 +778,10 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Number of results per requests. A valid page_size ranges from 0 to 20
+     * Number of results per requests. A valid page_size ranges from 0 to 100
      * inclusive. If the page_size is zero or unspecified, a page size of 5 will
-     * be chosen. If the page size exceeds 20, it will be coerced down to 20. Note
-     * that a call might return fewer results than the requested page size.
+     * be chosen. If the page size exceeds 100, it will be coerced down to 100.
+     * Note that a call might return fewer results than the requested page size.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -803,10 +800,10 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Number of results per requests. A valid page_size ranges from 0 to 20
+     * Number of results per requests. A valid page_size ranges from 0 to 100
      * inclusive. If the page_size is zero or unspecified, a page size of 5 will
-     * be chosen. If the page size exceeds 20, it will be coerced down to 20. Note
-     * that a call might return fewer results than the requested page size.
+     * be chosen. If the page size exceeds 100, it will be coerced down to 100.
+     * Note that a call might return fewer results than the requested page size.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -828,6 +825,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * A page token, received from a previous
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
      * match the call that provided the page token.
@@ -855,6 +853,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * A page token, received from a previous
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
      * match the call that provided the page token.
@@ -882,6 +881,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * A page token, received from a previous
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
      * match the call that provided the page token.
@@ -908,6 +908,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * A page token, received from a previous
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
      * match the call that provided the page token.
@@ -930,6 +931,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * A page token, received from a previous
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
      * match the call that provided the page token.

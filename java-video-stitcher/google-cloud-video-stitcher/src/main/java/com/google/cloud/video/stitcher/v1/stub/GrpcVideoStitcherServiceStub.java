@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.video.stitcher.v1.stub;
 
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListCdnKeysPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListLiveAdTagDetailsPagedResponse;
+import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListLiveConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListSlatesPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodAdTagDetailsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodStitchDetailsPagedResponse;
@@ -27,16 +28,21 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.video.stitcher.v1.CdnKey;
 import com.google.cloud.video.stitcher.v1.CreateCdnKeyRequest;
+import com.google.cloud.video.stitcher.v1.CreateLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest;
 import com.google.cloud.video.stitcher.v1.CreateSlateRequest;
 import com.google.cloud.video.stitcher.v1.CreateVodSessionRequest;
 import com.google.cloud.video.stitcher.v1.DeleteCdnKeyRequest;
+import com.google.cloud.video.stitcher.v1.DeleteLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.DeleteSlateRequest;
 import com.google.cloud.video.stitcher.v1.GetCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveAdTagDetailRequest;
+import com.google.cloud.video.stitcher.v1.GetLiveConfigRequest;
 import com.google.cloud.video.stitcher.v1.GetLiveSessionRequest;
 import com.google.cloud.video.stitcher.v1.GetSlateRequest;
 import com.google.cloud.video.stitcher.v1.GetVodAdTagDetailRequest;
@@ -46,6 +52,8 @@ import com.google.cloud.video.stitcher.v1.ListCdnKeysRequest;
 import com.google.cloud.video.stitcher.v1.ListCdnKeysResponse;
 import com.google.cloud.video.stitcher.v1.ListLiveAdTagDetailsRequest;
 import com.google.cloud.video.stitcher.v1.ListLiveAdTagDetailsResponse;
+import com.google.cloud.video.stitcher.v1.ListLiveConfigsRequest;
+import com.google.cloud.video.stitcher.v1.ListLiveConfigsResponse;
 import com.google.cloud.video.stitcher.v1.ListSlatesRequest;
 import com.google.cloud.video.stitcher.v1.ListSlatesResponse;
 import com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsRequest;
@@ -53,14 +61,16 @@ import com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsResponse;
 import com.google.cloud.video.stitcher.v1.ListVodStitchDetailsRequest;
 import com.google.cloud.video.stitcher.v1.ListVodStitchDetailsResponse;
 import com.google.cloud.video.stitcher.v1.LiveAdTagDetail;
+import com.google.cloud.video.stitcher.v1.LiveConfig;
 import com.google.cloud.video.stitcher.v1.LiveSession;
+import com.google.cloud.video.stitcher.v1.OperationMetadata;
 import com.google.cloud.video.stitcher.v1.Slate;
 import com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.UpdateSlateRequest;
 import com.google.cloud.video.stitcher.v1.VodAdTagDetail;
 import com.google.cloud.video.stitcher.v1.VodSession;
 import com.google.cloud.video.stitcher.v1.VodStitchDetail;
-import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -77,13 +87,14 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
-  private static final MethodDescriptor<CreateCdnKeyRequest, CdnKey> createCdnKeyMethodDescriptor =
-      MethodDescriptor.<CreateCdnKeyRequest, CdnKey>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/CreateCdnKey")
-          .setRequestMarshaller(ProtoUtils.marshaller(CreateCdnKeyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(CdnKey.getDefaultInstance()))
-          .build();
+  private static final MethodDescriptor<CreateCdnKeyRequest, Operation>
+      createCdnKeyMethodDescriptor =
+          MethodDescriptor.<CreateCdnKeyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/CreateCdnKey")
+              .setRequestMarshaller(ProtoUtils.marshaller(CreateCdnKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<ListCdnKeysRequest, ListCdnKeysResponse>
       listCdnKeysMethodDescriptor =
@@ -103,21 +114,23 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(CdnKey.getDefaultInstance()))
           .build();
 
-  private static final MethodDescriptor<DeleteCdnKeyRequest, Empty> deleteCdnKeyMethodDescriptor =
-      MethodDescriptor.<DeleteCdnKeyRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/DeleteCdnKey")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteCdnKeyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
+  private static final MethodDescriptor<DeleteCdnKeyRequest, Operation>
+      deleteCdnKeyMethodDescriptor =
+          MethodDescriptor.<DeleteCdnKeyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/DeleteCdnKey")
+              .setRequestMarshaller(ProtoUtils.marshaller(DeleteCdnKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
-  private static final MethodDescriptor<UpdateCdnKeyRequest, CdnKey> updateCdnKeyMethodDescriptor =
-      MethodDescriptor.<UpdateCdnKeyRequest, CdnKey>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/UpdateCdnKey")
-          .setRequestMarshaller(ProtoUtils.marshaller(UpdateCdnKeyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(CdnKey.getDefaultInstance()))
-          .build();
+  private static final MethodDescriptor<UpdateCdnKeyRequest, Operation>
+      updateCdnKeyMethodDescriptor =
+          MethodDescriptor.<UpdateCdnKeyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/UpdateCdnKey")
+              .setRequestMarshaller(ProtoUtils.marshaller(UpdateCdnKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<CreateVodSessionRequest, VodSession>
       createVodSessionMethodDescriptor =
@@ -210,12 +223,12 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(LiveAdTagDetail.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<CreateSlateRequest, Slate> createSlateMethodDescriptor =
-      MethodDescriptor.<CreateSlateRequest, Slate>newBuilder()
+  private static final MethodDescriptor<CreateSlateRequest, Operation> createSlateMethodDescriptor =
+      MethodDescriptor.<CreateSlateRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/CreateSlate")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSlateRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Slate.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
   private static final MethodDescriptor<ListSlatesRequest, ListSlatesResponse>
@@ -235,20 +248,20 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Slate.getDefaultInstance()))
           .build();
 
-  private static final MethodDescriptor<UpdateSlateRequest, Slate> updateSlateMethodDescriptor =
-      MethodDescriptor.<UpdateSlateRequest, Slate>newBuilder()
+  private static final MethodDescriptor<UpdateSlateRequest, Operation> updateSlateMethodDescriptor =
+      MethodDescriptor.<UpdateSlateRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/UpdateSlate")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSlateRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Slate.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
-  private static final MethodDescriptor<DeleteSlateRequest, Empty> deleteSlateMethodDescriptor =
-      MethodDescriptor.<DeleteSlateRequest, Empty>newBuilder()
+  private static final MethodDescriptor<DeleteSlateRequest, Operation> deleteSlateMethodDescriptor =
+      MethodDescriptor.<DeleteSlateRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/DeleteSlate")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSlateRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
   private static final MethodDescriptor<CreateLiveSessionRequest, LiveSession>
@@ -273,13 +286,64 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(LiveSession.getDefaultInstance()))
               .build();
 
-  private final UnaryCallable<CreateCdnKeyRequest, CdnKey> createCdnKeyCallable;
+  private static final MethodDescriptor<CreateLiveConfigRequest, Operation>
+      createLiveConfigMethodDescriptor =
+          MethodDescriptor.<CreateLiveConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.stitcher.v1.VideoStitcherService/CreateLiveConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateLiveConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListLiveConfigsRequest, ListLiveConfigsResponse>
+      listLiveConfigsMethodDescriptor =
+          MethodDescriptor.<ListLiveConfigsRequest, ListLiveConfigsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.stitcher.v1.VideoStitcherService/ListLiveConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLiveConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLiveConfigsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLiveConfigRequest, LiveConfig>
+      getLiveConfigMethodDescriptor =
+          MethodDescriptor.<GetLiveConfigRequest, LiveConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.stitcher.v1.VideoStitcherService/GetLiveConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetLiveConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LiveConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteLiveConfigRequest, Operation>
+      deleteLiveConfigMethodDescriptor =
+          MethodDescriptor.<DeleteLiveConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.stitcher.v1.VideoStitcherService/DeleteLiveConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteLiveConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private final UnaryCallable<CreateCdnKeyRequest, Operation> createCdnKeyCallable;
+  private final OperationCallable<CreateCdnKeyRequest, CdnKey, OperationMetadata>
+      createCdnKeyOperationCallable;
   private final UnaryCallable<ListCdnKeysRequest, ListCdnKeysResponse> listCdnKeysCallable;
   private final UnaryCallable<ListCdnKeysRequest, ListCdnKeysPagedResponse>
       listCdnKeysPagedCallable;
   private final UnaryCallable<GetCdnKeyRequest, CdnKey> getCdnKeyCallable;
-  private final UnaryCallable<DeleteCdnKeyRequest, Empty> deleteCdnKeyCallable;
-  private final UnaryCallable<UpdateCdnKeyRequest, CdnKey> updateCdnKeyCallable;
+  private final UnaryCallable<DeleteCdnKeyRequest, Operation> deleteCdnKeyCallable;
+  private final OperationCallable<DeleteCdnKeyRequest, Empty, OperationMetadata>
+      deleteCdnKeyOperationCallable;
+  private final UnaryCallable<UpdateCdnKeyRequest, Operation> updateCdnKeyCallable;
+  private final OperationCallable<UpdateCdnKeyRequest, CdnKey, OperationMetadata>
+      updateCdnKeyOperationCallable;
   private final UnaryCallable<CreateVodSessionRequest, VodSession> createVodSessionCallable;
   private final UnaryCallable<GetVodSessionRequest, VodSession> getVodSessionCallable;
   private final UnaryCallable<ListVodStitchDetailsRequest, ListVodStitchDetailsResponse>
@@ -299,14 +363,31 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
       listLiveAdTagDetailsPagedCallable;
   private final UnaryCallable<GetLiveAdTagDetailRequest, LiveAdTagDetail>
       getLiveAdTagDetailCallable;
-  private final UnaryCallable<CreateSlateRequest, Slate> createSlateCallable;
+  private final UnaryCallable<CreateSlateRequest, Operation> createSlateCallable;
+  private final OperationCallable<CreateSlateRequest, Slate, OperationMetadata>
+      createSlateOperationCallable;
   private final UnaryCallable<ListSlatesRequest, ListSlatesResponse> listSlatesCallable;
   private final UnaryCallable<ListSlatesRequest, ListSlatesPagedResponse> listSlatesPagedCallable;
   private final UnaryCallable<GetSlateRequest, Slate> getSlateCallable;
-  private final UnaryCallable<UpdateSlateRequest, Slate> updateSlateCallable;
-  private final UnaryCallable<DeleteSlateRequest, Empty> deleteSlateCallable;
+  private final UnaryCallable<UpdateSlateRequest, Operation> updateSlateCallable;
+  private final OperationCallable<UpdateSlateRequest, Slate, OperationMetadata>
+      updateSlateOperationCallable;
+  private final UnaryCallable<DeleteSlateRequest, Operation> deleteSlateCallable;
+  private final OperationCallable<DeleteSlateRequest, Empty, OperationMetadata>
+      deleteSlateOperationCallable;
   private final UnaryCallable<CreateLiveSessionRequest, LiveSession> createLiveSessionCallable;
   private final UnaryCallable<GetLiveSessionRequest, LiveSession> getLiveSessionCallable;
+  private final UnaryCallable<CreateLiveConfigRequest, Operation> createLiveConfigCallable;
+  private final OperationCallable<CreateLiveConfigRequest, LiveConfig, OperationMetadata>
+      createLiveConfigOperationCallable;
+  private final UnaryCallable<ListLiveConfigsRequest, ListLiveConfigsResponse>
+      listLiveConfigsCallable;
+  private final UnaryCallable<ListLiveConfigsRequest, ListLiveConfigsPagedResponse>
+      listLiveConfigsPagedCallable;
+  private final UnaryCallable<GetLiveConfigRequest, LiveConfig> getLiveConfigCallable;
+  private final UnaryCallable<DeleteLiveConfigRequest, Operation> deleteLiveConfigCallable;
+  private final OperationCallable<DeleteLiveConfigRequest, Empty, OperationMetadata>
+      deleteLiveConfigOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -352,14 +433,14 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<CreateCdnKeyRequest, CdnKey> createCdnKeyTransportSettings =
-        GrpcCallSettings.<CreateCdnKeyRequest, CdnKey>newBuilder()
+    GrpcCallSettings<CreateCdnKeyRequest, Operation> createCdnKeyTransportSettings =
+        GrpcCallSettings.<CreateCdnKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(createCdnKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCdnKeysRequest, ListCdnKeysResponse> listCdnKeysTransportSettings =
@@ -367,9 +448,9 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
             .setMethodDescriptor(listCdnKeysMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetCdnKeyRequest, CdnKey> getCdnKeyTransportSettings =
@@ -377,29 +458,29 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
             .setMethodDescriptor(getCdnKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
-    GrpcCallSettings<DeleteCdnKeyRequest, Empty> deleteCdnKeyTransportSettings =
-        GrpcCallSettings.<DeleteCdnKeyRequest, Empty>newBuilder()
+    GrpcCallSettings<DeleteCdnKeyRequest, Operation> deleteCdnKeyTransportSettings =
+        GrpcCallSettings.<DeleteCdnKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteCdnKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
-    GrpcCallSettings<UpdateCdnKeyRequest, CdnKey> updateCdnKeyTransportSettings =
-        GrpcCallSettings.<UpdateCdnKeyRequest, CdnKey>newBuilder()
+    GrpcCallSettings<UpdateCdnKeyRequest, Operation> updateCdnKeyTransportSettings =
+        GrpcCallSettings.<UpdateCdnKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(updateCdnKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("cdn_key.name", String.valueOf(request.getCdnKey().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("cdn_key.name", String.valueOf(request.getCdnKey().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateVodSessionRequest, VodSession> createVodSessionTransportSettings =
@@ -407,9 +488,9 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
             .setMethodDescriptor(createVodSessionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetVodSessionRequest, VodSession> getVodSessionTransportSettings =
@@ -417,9 +498,9 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
             .setMethodDescriptor(getVodSessionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListVodStitchDetailsRequest, ListVodStitchDetailsResponse>
@@ -428,9 +509,9 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                 .setMethodDescriptor(listVodStitchDetailsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetVodStitchDetailRequest, VodStitchDetail>
@@ -439,9 +520,9 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                 .setMethodDescriptor(getVodStitchDetailMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListVodAdTagDetailsRequest, ListVodAdTagDetailsResponse>
@@ -450,9 +531,9 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                 .setMethodDescriptor(listVodAdTagDetailsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetVodAdTagDetailRequest, VodAdTagDetail> getVodAdTagDetailTransportSettings =
@@ -460,9 +541,9 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
             .setMethodDescriptor(getVodAdTagDetailMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListLiveAdTagDetailsRequest, ListLiveAdTagDetailsResponse>
@@ -471,9 +552,9 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                 .setMethodDescriptor(listLiveAdTagDetailsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetLiveAdTagDetailRequest, LiveAdTagDetail>
@@ -482,19 +563,19 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                 .setMethodDescriptor(getLiveAdTagDetailMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
-    GrpcCallSettings<CreateSlateRequest, Slate> createSlateTransportSettings =
-        GrpcCallSettings.<CreateSlateRequest, Slate>newBuilder()
+    GrpcCallSettings<CreateSlateRequest, Operation> createSlateTransportSettings =
+        GrpcCallSettings.<CreateSlateRequest, Operation>newBuilder()
             .setMethodDescriptor(createSlateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListSlatesRequest, ListSlatesResponse> listSlatesTransportSettings =
@@ -502,9 +583,9 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
             .setMethodDescriptor(listSlatesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetSlateRequest, Slate> getSlateTransportSettings =
@@ -512,29 +593,29 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
             .setMethodDescriptor(getSlateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
-    GrpcCallSettings<UpdateSlateRequest, Slate> updateSlateTransportSettings =
-        GrpcCallSettings.<UpdateSlateRequest, Slate>newBuilder()
+    GrpcCallSettings<UpdateSlateRequest, Operation> updateSlateTransportSettings =
+        GrpcCallSettings.<UpdateSlateRequest, Operation>newBuilder()
             .setMethodDescriptor(updateSlateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("slate.name", String.valueOf(request.getSlate().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("slate.name", String.valueOf(request.getSlate().getName()));
+                  return builder.build();
                 })
             .build();
-    GrpcCallSettings<DeleteSlateRequest, Empty> deleteSlateTransportSettings =
-        GrpcCallSettings.<DeleteSlateRequest, Empty>newBuilder()
+    GrpcCallSettings<DeleteSlateRequest, Operation> deleteSlateTransportSettings =
+        GrpcCallSettings.<DeleteSlateRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteSlateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateLiveSessionRequest, LiveSession> createLiveSessionTransportSettings =
@@ -542,9 +623,9 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
             .setMethodDescriptor(createLiveSessionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLiveSessionRequest, LiveSession> getLiveSessionTransportSettings =
@@ -552,15 +633,62 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
             .setMethodDescriptor(getLiveSessionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateLiveConfigRequest, Operation> createLiveConfigTransportSettings =
+        GrpcCallSettings.<CreateLiveConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(createLiveConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListLiveConfigsRequest, ListLiveConfigsResponse>
+        listLiveConfigsTransportSettings =
+            GrpcCallSettings.<ListLiveConfigsRequest, ListLiveConfigsResponse>newBuilder()
+                .setMethodDescriptor(listLiveConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetLiveConfigRequest, LiveConfig> getLiveConfigTransportSettings =
+        GrpcCallSettings.<GetLiveConfigRequest, LiveConfig>newBuilder()
+            .setMethodDescriptor(getLiveConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteLiveConfigRequest, Operation> deleteLiveConfigTransportSettings =
+        GrpcCallSettings.<DeleteLiveConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteLiveConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 
     this.createCdnKeyCallable =
         callableFactory.createUnaryCallable(
             createCdnKeyTransportSettings, settings.createCdnKeySettings(), clientContext);
+    this.createCdnKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            createCdnKeyTransportSettings,
+            settings.createCdnKeyOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listCdnKeysCallable =
         callableFactory.createUnaryCallable(
             listCdnKeysTransportSettings, settings.listCdnKeysSettings(), clientContext);
@@ -573,9 +701,21 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
     this.deleteCdnKeyCallable =
         callableFactory.createUnaryCallable(
             deleteCdnKeyTransportSettings, settings.deleteCdnKeySettings(), clientContext);
+    this.deleteCdnKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteCdnKeyTransportSettings,
+            settings.deleteCdnKeyOperationSettings(),
+            clientContext,
+            operationsStub);
     this.updateCdnKeyCallable =
         callableFactory.createUnaryCallable(
             updateCdnKeyTransportSettings, settings.updateCdnKeySettings(), clientContext);
+    this.updateCdnKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateCdnKeyTransportSettings,
+            settings.updateCdnKeyOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createVodSessionCallable =
         callableFactory.createUnaryCallable(
             createVodSessionTransportSettings, settings.createVodSessionSettings(), clientContext);
@@ -630,6 +770,12 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
     this.createSlateCallable =
         callableFactory.createUnaryCallable(
             createSlateTransportSettings, settings.createSlateSettings(), clientContext);
+    this.createSlateOperationCallable =
+        callableFactory.createOperationCallable(
+            createSlateTransportSettings,
+            settings.createSlateOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listSlatesCallable =
         callableFactory.createUnaryCallable(
             listSlatesTransportSettings, settings.listSlatesSettings(), clientContext);
@@ -642,9 +788,21 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
     this.updateSlateCallable =
         callableFactory.createUnaryCallable(
             updateSlateTransportSettings, settings.updateSlateSettings(), clientContext);
+    this.updateSlateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateSlateTransportSettings,
+            settings.updateSlateOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteSlateCallable =
         callableFactory.createUnaryCallable(
             deleteSlateTransportSettings, settings.deleteSlateSettings(), clientContext);
+    this.deleteSlateOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSlateTransportSettings,
+            settings.deleteSlateOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createLiveSessionCallable =
         callableFactory.createUnaryCallable(
             createLiveSessionTransportSettings,
@@ -653,6 +811,33 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
     this.getLiveSessionCallable =
         callableFactory.createUnaryCallable(
             getLiveSessionTransportSettings, settings.getLiveSessionSettings(), clientContext);
+    this.createLiveConfigCallable =
+        callableFactory.createUnaryCallable(
+            createLiveConfigTransportSettings, settings.createLiveConfigSettings(), clientContext);
+    this.createLiveConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            createLiveConfigTransportSettings,
+            settings.createLiveConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listLiveConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listLiveConfigsTransportSettings, settings.listLiveConfigsSettings(), clientContext);
+    this.listLiveConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLiveConfigsTransportSettings, settings.listLiveConfigsSettings(), clientContext);
+    this.getLiveConfigCallable =
+        callableFactory.createUnaryCallable(
+            getLiveConfigTransportSettings, settings.getLiveConfigSettings(), clientContext);
+    this.deleteLiveConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteLiveConfigTransportSettings, settings.deleteLiveConfigSettings(), clientContext);
+    this.deleteLiveConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteLiveConfigTransportSettings,
+            settings.deleteLiveConfigOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -663,8 +848,14 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
   }
 
   @Override
-  public UnaryCallable<CreateCdnKeyRequest, CdnKey> createCdnKeyCallable() {
+  public UnaryCallable<CreateCdnKeyRequest, Operation> createCdnKeyCallable() {
     return createCdnKeyCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateCdnKeyRequest, CdnKey, OperationMetadata>
+      createCdnKeyOperationCallable() {
+    return createCdnKeyOperationCallable;
   }
 
   @Override
@@ -683,13 +874,25 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
   }
 
   @Override
-  public UnaryCallable<DeleteCdnKeyRequest, Empty> deleteCdnKeyCallable() {
+  public UnaryCallable<DeleteCdnKeyRequest, Operation> deleteCdnKeyCallable() {
     return deleteCdnKeyCallable;
   }
 
   @Override
-  public UnaryCallable<UpdateCdnKeyRequest, CdnKey> updateCdnKeyCallable() {
+  public OperationCallable<DeleteCdnKeyRequest, Empty, OperationMetadata>
+      deleteCdnKeyOperationCallable() {
+    return deleteCdnKeyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCdnKeyRequest, Operation> updateCdnKeyCallable() {
     return updateCdnKeyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateCdnKeyRequest, CdnKey, OperationMetadata>
+      updateCdnKeyOperationCallable() {
+    return updateCdnKeyOperationCallable;
   }
 
   @Override
@@ -754,8 +957,14 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
   }
 
   @Override
-  public UnaryCallable<CreateSlateRequest, Slate> createSlateCallable() {
+  public UnaryCallable<CreateSlateRequest, Operation> createSlateCallable() {
     return createSlateCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateSlateRequest, Slate, OperationMetadata>
+      createSlateOperationCallable() {
+    return createSlateOperationCallable;
   }
 
   @Override
@@ -774,13 +983,25 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
   }
 
   @Override
-  public UnaryCallable<UpdateSlateRequest, Slate> updateSlateCallable() {
+  public UnaryCallable<UpdateSlateRequest, Operation> updateSlateCallable() {
     return updateSlateCallable;
   }
 
   @Override
-  public UnaryCallable<DeleteSlateRequest, Empty> deleteSlateCallable() {
+  public OperationCallable<UpdateSlateRequest, Slate, OperationMetadata>
+      updateSlateOperationCallable() {
+    return updateSlateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSlateRequest, Operation> deleteSlateCallable() {
     return deleteSlateCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSlateRequest, Empty, OperationMetadata>
+      deleteSlateOperationCallable() {
+    return deleteSlateOperationCallable;
   }
 
   @Override
@@ -791,6 +1012,44 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
   @Override
   public UnaryCallable<GetLiveSessionRequest, LiveSession> getLiveSessionCallable() {
     return getLiveSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateLiveConfigRequest, Operation> createLiveConfigCallable() {
+    return createLiveConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateLiveConfigRequest, LiveConfig, OperationMetadata>
+      createLiveConfigOperationCallable() {
+    return createLiveConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLiveConfigsRequest, ListLiveConfigsResponse> listLiveConfigsCallable() {
+    return listLiveConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLiveConfigsRequest, ListLiveConfigsPagedResponse>
+      listLiveConfigsPagedCallable() {
+    return listLiveConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLiveConfigRequest, LiveConfig> getLiveConfigCallable() {
+    return getLiveConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteLiveConfigRequest, Operation> deleteLiveConfigCallable() {
+    return deleteLiveConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteLiveConfigRequest, Empty, OperationMetadata>
+      deleteLiveConfigOperationCallable() {
+    return deleteLiveConfigOperationCallable;
   }
 
   @Override

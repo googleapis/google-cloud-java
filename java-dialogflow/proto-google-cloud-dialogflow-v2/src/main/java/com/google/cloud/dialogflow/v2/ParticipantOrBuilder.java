@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,25 +118,32 @@ public interface ParticipantOrBuilder
    * <pre>
    * Optional. Obfuscated user id that should be associated with the created
    * participant.
+   *
    * You can specify a user id as follows:
+   *
    * 1. If you set this field in
    *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
    *    or
    *    [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant],
    *    Dialogflow adds the obfuscated user id with the participant.
+   *
    * 2. If you set this field in
    *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
    *    or
    *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
    *    Dialogflow will update
    *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
+   *
    * Dialogflow returns an error if you try to add a user id for a
    * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER]
    * participant.
+   *
    * Dialogflow uses this user id for billing and measurement purposes. For
    * example, Dialogflow determines whether a user in one conversation returned
    * in a later conversation.
+   *
    * Note:
+   *
    * * Please never pass raw user ids to Dialogflow. Always obfuscate your user
    *   id first.
    * * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a
@@ -155,25 +162,32 @@ public interface ParticipantOrBuilder
    * <pre>
    * Optional. Obfuscated user id that should be associated with the created
    * participant.
+   *
    * You can specify a user id as follows:
+   *
    * 1. If you set this field in
    *    [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
    *    or
    *    [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant],
    *    Dialogflow adds the obfuscated user id with the participant.
+   *
    * 2. If you set this field in
    *    [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
    *    or
    *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
    *    Dialogflow will update
    *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
+   *
    * Dialogflow returns an error if you try to add a user id for a
    * non-[END_USER][google.cloud.dialogflow.v2.Participant.Role.END_USER]
    * participant.
+   *
    * Dialogflow uses this user id for billing and measurement purposes. For
    * example, Dialogflow determines whether a user in one conversation returned
    * in a later conversation.
+   *
    * Note:
+   *
    * * Please never pass raw user ids to Dialogflow. Always obfuscate your user
    *   id first.
    * * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a

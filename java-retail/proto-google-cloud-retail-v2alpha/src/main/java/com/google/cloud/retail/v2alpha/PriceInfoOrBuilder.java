@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,10 @@ public interface PriceInfoOrBuilder
    * <pre>
    * The 3-letter currency code defined in [ISO
    * 4217](https://www.iso.org/iso-4217-currency-codes.html).
+   *
    * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
    * error is returned.
+   *
    * The
    * [Product.Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]
    * [Product][google.cloud.retail.v2alpha.Product]s with the same
@@ -51,8 +53,10 @@ public interface PriceInfoOrBuilder
    * <pre>
    * The 3-letter currency code defined in [ISO
    * 4217](https://www.iso.org/iso-4217-currency-codes.html).
+   *
    * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
    * error is returned.
+   *
    * The
    * [Product.Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]
    * [Product][google.cloud.retail.v2alpha.Product]s with the same
@@ -73,6 +77,7 @@ public interface PriceInfoOrBuilder
    *
    * <pre>
    * Price of the product.
+   *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371). Schema.org
    * property [Offer.price](https://schema.org/price).
@@ -108,8 +113,10 @@ public interface PriceInfoOrBuilder
    * <pre>
    * The costs associated with the sale of a particular product. Used for gross
    * profit reporting.
+   *
    * * Profit = [price][google.cloud.retail.v2alpha.PriceInfo.price] -
    * [cost][google.cloud.retail.v2alpha.PriceInfo.cost]
+   *
    * Google Merchant Center property
    * [cost_of_goods_sold](https://support.google.com/merchants/answer/9017895).
    * </pre>
@@ -135,6 +142,7 @@ public interface PriceInfoOrBuilder
    * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
    * used before
    * [price_effective_time][google.cloud.retail.v2alpha.PriceInfo.price_effective_time].
+   *
    * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
    * always effective because it will cause additional latency during search.
    * </pre>
@@ -159,6 +167,7 @@ public interface PriceInfoOrBuilder
    * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
    * used before
    * [price_effective_time][google.cloud.retail.v2alpha.PriceInfo.price_effective_time].
+   *
    * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
    * always effective because it will cause additional latency during search.
    * </pre>
@@ -183,6 +192,7 @@ public interface PriceInfoOrBuilder
    * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
    * used before
    * [price_effective_time][google.cloud.retail.v2alpha.PriceInfo.price_effective_time].
+   *
    * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
    * always effective because it will cause additional latency during search.
    * </pre>
@@ -206,6 +216,7 @@ public interface PriceInfoOrBuilder
    * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
    * used after
    * [price_expire_time][google.cloud.retail.v2alpha.PriceInfo.price_expire_time].
+   *
    * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
    * always effective because it will cause additional latency during search.
    * </pre>
@@ -230,6 +241,7 @@ public interface PriceInfoOrBuilder
    * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
    * used after
    * [price_expire_time][google.cloud.retail.v2alpha.PriceInfo.price_expire_time].
+   *
    * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
    * always effective because it will cause additional latency during search.
    * </pre>
@@ -254,6 +266,7 @@ public interface PriceInfoOrBuilder
    * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
    * used after
    * [price_expire_time][google.cloud.retail.v2alpha.PriceInfo.price_expire_time].
+   *
    * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
    * always effective because it will cause additional latency during search.
    * </pre>
@@ -273,6 +286,7 @@ public interface PriceInfoOrBuilder
    * [Product][google.cloud.retail.v2alpha.Product]. Only populated for
    * [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
    * [Product][google.cloud.retail.v2alpha.Product]s.
+   *
    * Note: This field is OUTPUT_ONLY for
    * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct].
    * Do not set this field in API requests.
@@ -296,6 +310,7 @@ public interface PriceInfoOrBuilder
    * [Product][google.cloud.retail.v2alpha.Product]. Only populated for
    * [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
    * [Product][google.cloud.retail.v2alpha.Product]s.
+   *
    * Note: This field is OUTPUT_ONLY for
    * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct].
    * Do not set this field in API requests.
@@ -319,6 +334,7 @@ public interface PriceInfoOrBuilder
    * [Product][google.cloud.retail.v2alpha.Product]. Only populated for
    * [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
    * [Product][google.cloud.retail.v2alpha.Product]s.
+   *
    * Note: This field is OUTPUT_ONLY for
    * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct].
    * Do not set this field in API requests.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,10 @@ public final class VmwareengineResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmwareengine_v1_Vcenter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_PeeringRoute_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_PeeringRoute_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vmwareengine_v1_NetworkPolicy_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmwareengine_v1_NetworkPolicy_fieldAccessorTable;
@@ -99,6 +103,10 @@ public final class VmwareengineResourcesProto {
       internal_static_google_cloud_vmwareengine_v1_VmwareEngineNetwork_VpcNetwork_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmwareengine_v1_VmwareEngineNetwork_VpcNetwork_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmwareengine_v1_PrivateConnection_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmwareengine_v1_PrivateConnection_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -112,159 +120,209 @@ public final class VmwareengineResourcesProto {
           + "ine_resources.proto\022\034google.cloud.vmware"
           + "engine.v1\032\037google/api/field_behavior.pro"
           + "to\032\031google/api/resource.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\"\232\002\n\rNetworkConfig"
-          + "\022\034\n\017management_cidr\030\004 \001(\tB\003\340A\002\022V\n\025vmware"
-          + "_engine_network\030\005 \001(\tB7\340A\001\372A1\n/vmwareeng"
-          + "ine.googleapis.com/VmwareEngineNetwork\022`"
-          + "\n\037vmware_engine_network_canonical\030\006 \001(\tB"
-          + "7\340A\003\372A1\n/vmwareengine.googleapis.com/Vmw"
-          + "areEngineNetwork\0221\n$management_ip_addres"
-          + "s_layout_version\030\010 \001(\005B\003\340A\003\"I\n\016NodeTypeC"
-          + "onfig\022\027\n\nnode_count\030\001 \001(\005B\003\340A\002\022\036\n\021custom"
-          + "_core_count\030\002 \001(\005B\003\340A\001\"\245\t\n\014PrivateCloud\022"
-          + "\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\002 \001(\0132"
-          + "\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upda"
-          + "te_time\030\003 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003\0224\n\013delete_time\030\004 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\003\340A\003\0224\n\013expire_time\030\005 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022D\n\005st"
-          + "ate\030\010 \001(\01620.google.cloud.vmwareengine.v1"
-          + ".PrivateCloud.StateB\003\340A\003\022H\n\016network_conf"
-          + "ig\030\t \001(\0132+.google.cloud.vmwareengine.v1."
-          + "NetworkConfigB\003\340A\002\022`\n\022management_cluster"
-          + "\030\n \001(\0132<.google.cloud.vmwareengine.v1.Pr"
-          + "ivateCloud.ManagementClusterB\006\340A\004\340A\002\022\023\n\013"
-          + "description\030\013 \001(\t\0223\n\003hcx\030\021 \001(\0132!.google."
-          + "cloud.vmwareengine.v1.HcxB\003\340A\003\0223\n\003nsx\030\022 "
-          + "\001(\0132!.google.cloud.vmwareengine.v1.NsxB\003"
-          + "\340A\003\022;\n\007vcenter\030\023 \001(\0132%.google.cloud.vmwa"
-          + "reengine.v1.VcenterB\003\340A\003\022\020\n\003uid\030\024 \001(\tB\003\340"
-          + "A\003\032\205\002\n\021ManagementCluster\022\027\n\ncluster_id\030\001"
-          + " \001(\tB\003\340A\002\022q\n\021node_type_configs\030\007 \003(\0132Q.g"
-          + "oogle.cloud.vmwareengine.v1.PrivateCloud"
-          + ".ManagementCluster.NodeTypeConfigsEntryB"
-          + "\003\340A\002\032d\n\024NodeTypeConfigsEntry\022\013\n\003key\030\001 \001("
-          + "\t\022;\n\005value\030\002 \001(\0132,.google.cloud.vmwareen"
-          + "gine.v1.NodeTypeConfig:\0028\001\"l\n\005State\022\025\n\021S"
-          + "TATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010CREATI"
-          + "NG\020\002\022\014\n\010UPDATING\020\003\022\n\n\006FAILED\020\005\022\013\n\007DELETE"
-          + "D\020\006\022\013\n\007PURGING\020\007:t\352Aq\n(vmwareengine.goog"
-          + "leapis.com/PrivateCloud\022Eprojects/{proje"
-          + "ct}/locations/{location}/privateClouds/{"
-          + "private_cloud}\"\240\005\n\007Cluster\022\021\n\004name\030\001 \001(\t"
-          + "B\003\340A\003\0224\n\013create_time\030\002 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\0224\n\013update_time\030\003 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\022?\n\005sta"
-          + "te\030\006 \001(\0162+.google.cloud.vmwareengine.v1."
-          + "Cluster.StateB\003\340A\003\022\027\n\nmanagement\030\007 \001(\010B\003"
-          + "\340A\003\022\020\n\003uid\030\016 \001(\tB\003\340A\003\022Z\n\021node_type_confi"
-          + "gs\030\020 \003(\0132:.google.cloud.vmwareengine.v1."
-          + "Cluster.NodeTypeConfigsEntryB\003\340A\002\032d\n\024Nod"
-          + "eTypeConfigsEntry\022\013\n\003key\030\001 \001(\t\022;\n\005value\030"
-          + "\002 \001(\0132,.google.cloud.vmwareengine.v1.Nod"
-          + "eTypeConfig:\0028\001\"c\n\005State\022\025\n\021STATE_UNSPEC"
-          + "IFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010CREATING\020\002\022\014\n\010UPD"
-          + "ATING\020\003\022\014\n\010DELETING\020\004\022\r\n\tREPAIRING\020\005:\202\001\352"
-          + "A\177\n#vmwareengine.googleapis.com/Cluster\022"
-          + "Xprojects/{project}/locations/{location}"
-          + "/privateClouds/{private_cloud}/clusters/"
-          + "{cluster}\"\360\002\n\006Subnet\022\021\n\004name\030\001 \001(\tB\003\340A\003\022"
-          + "\025\n\rip_cidr_range\030\007 \001(\t\022\022\n\ngateway_ip\030\010 \001"
-          + "(\t\022\021\n\004type\030\013 \001(\tB\003\340A\003\022>\n\005state\030\r \001(\0162*.g"
-          + "oogle.cloud.vmwareengine.v1.Subnet.State"
-          + "B\003\340A\003\"T\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n"
-          + "\006ACTIVE\020\001\022\014\n\010CREATING\020\002\022\014\n\010UPDATING\020\003\022\014\n"
-          + "\010DELETING\020\004:\177\352A|\n\"vmwareengine.googleapi"
-          + "s.com/Subnet\022Vprojects/{project}/locatio"
-          + "ns/{location}/privateClouds/{private_clo"
-          + "ud}/subnets/{subnet}\"\332\002\n\010NodeType\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\003\022\031\n\014node_type_id\030\002 \001(\tB\003\340A\003\022"
-          + "\031\n\014display_name\030\003 \001(\tB\003\340A\003\022\036\n\021virtual_cp"
-          + "u_count\030\004 \001(\005B\003\340A\003\022\035\n\020total_core_count\030\005"
-          + " \001(\005B\003\340A\003\022\026\n\tmemory_gb\030\007 \001(\005B\003\340A\003\022\031\n\014dis"
-          + "k_size_gb\030\010 \001(\005B\003\340A\003\022)\n\034available_custom"
-          + "_core_counts\030\013 \003(\005B\003\340A\003:h\352Ae\n$vmwareengi"
-          + "ne.googleapis.com/NodeType\022=projects/{pr"
-          + "oject}/locations/{location}/nodeTypes/{n"
-          + "ode_type}\"1\n\013Credentials\022\020\n\010username\030\001 \001"
-          + "(\t\022\020\n\010password\030\002 \001(\t\"\302\003\n\020HcxActivationKe"
-          + "y\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\002 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022H\n\005st"
-          + "ate\030\003 \001(\01624.google.cloud.vmwareengine.v1"
-          + ".HcxActivationKey.StateB\003\340A\003\022\033\n\016activati"
-          + "on_key\030\004 \001(\tB\003\340A\003\022\020\n\003uid\030\005 \001(\tB\003\340A\003\"I\n\005S"
-          + "tate\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\tAVAILABLE"
-          + "\020\001\022\014\n\010CONSUMED\020\002\022\014\n\010CREATING\020\003:\240\001\352A\234\001\n,v"
-          + "mwareengine.googleapis.com/HcxActivation"
-          + "Key\022lprojects/{project}/locations/{locat"
-          + "ion}/privateClouds/{private_cloud}/hcxAc"
-          + "tivationKeys/{hcx_activation_key}\"\260\001\n\003Hc"
-          + "x\022\023\n\013internal_ip\030\002 \001(\t\022\017\n\007version\030\004 \001(\t\022"
-          + ";\n\005state\030\005 \001(\0162\'.google.cloud.vmwareengi"
-          + "ne.v1.Hcx.StateB\003\340A\003\022\014\n\004fqdn\030\006 \001(\t\"8\n\005St"
+          + "otobuf/timestamp.proto\"\236\002\n\rNetworkConfig"
+          + "\022\035\n\017management_cidr\030\004 \001(\tB\004\342A\001\002\022W\n\025vmwar"
+          + "e_engine_network\030\005 \001(\tB8\342A\001\001\372A1\n/vmwaree"
+          + "ngine.googleapis.com/VmwareEngineNetwork"
+          + "\022a\n\037vmware_engine_network_canonical\030\006 \001("
+          + "\tB8\342A\001\003\372A1\n/vmwareengine.googleapis.com/"
+          + "VmwareEngineNetwork\0222\n$management_ip_add"
+          + "ress_layout_version\030\010 \001(\005B\004\342A\001\003\"K\n\016NodeT"
+          + "ypeConfig\022\030\n\nnode_count\030\001 \001(\005B\004\342A\001\002\022\037\n\021c"
+          + "ustom_core_count\030\002 \001(\005B\004\342A\001\001\"\236\n\n\014Private"
+          + "Cloud\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225\n\013create_time"
+          + "\030\002 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003"
+          + "\0225\n\013update_time\030\003 \001(\0132\032.google.protobuf."
+          + "TimestampB\004\342A\001\003\0225\n\013delete_time\030\004 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\004\342A\001\003\0225\n\013expire"
+          + "_time\030\005 \001(\0132\032.google.protobuf.TimestampB"
+          + "\004\342A\001\003\022E\n\005state\030\010 \001(\01620.google.cloud.vmwa"
+          + "reengine.v1.PrivateCloud.StateB\004\342A\001\003\022I\n\016"
+          + "network_config\030\t \001(\0132+.google.cloud.vmwa"
+          + "reengine.v1.NetworkConfigB\004\342A\001\002\022_\n\022manag"
+          + "ement_cluster\030\n \001(\0132<.google.cloud.vmwar"
+          + "eengine.v1.PrivateCloud.ManagementCluste"
+          + "rB\005\342A\002\004\002\022\023\n\013description\030\013 \001(\t\0224\n\003hcx\030\021 \001"
+          + "(\0132!.google.cloud.vmwareengine.v1.HcxB\004\342"
+          + "A\001\003\0224\n\003nsx\030\022 \001(\0132!.google.cloud.vmwareen"
+          + "gine.v1.NsxB\004\342A\001\003\022<\n\007vcenter\030\023 \001(\0132%.goo"
+          + "gle.cloud.vmwareengine.v1.VcenterB\004\342A\001\003\022"
+          + "\021\n\003uid\030\024 \001(\tB\004\342A\001\003\022C\n\004type\030\026 \001(\0162/.googl"
+          + "e.cloud.vmwareengine.v1.PrivateCloud.Typ"
+          + "eB\004\342A\001\001\032\207\002\n\021ManagementCluster\022\030\n\ncluster"
+          + "_id\030\001 \001(\tB\004\342A\001\002\022r\n\021node_type_configs\030\007 \003"
+          + "(\0132Q.google.cloud.vmwareengine.v1.Privat"
+          + "eCloud.ManagementCluster.NodeTypeConfigs"
+          + "EntryB\004\342A\001\002\032d\n\024NodeTypeConfigsEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022;\n\005value\030\002 \001(\0132,.google.cloud.v"
+          + "mwareengine.v1.NodeTypeConfig:\0028\001\"l\n\005Sta"
+          + "te\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n"
+          + "\010CREATING\020\002\022\014\n\010UPDATING\020\003\022\n\n\006FAILED\020\005\022\013\n"
+          + "\007DELETED\020\006\022\013\n\007PURGING\020\007\"&\n\004Type\022\014\n\010STAND"
+          + "ARD\020\000\022\020\n\014TIME_LIMITED\020\001:t\352Aq\n(vmwareengi"
+          + "ne.googleapis.com/PrivateCloud\022Eprojects"
+          + "/{project}/locations/{location}/privateC"
+          + "louds/{private_cloud}\"\247\005\n\007Cluster\022\022\n\004nam"
+          + "e\030\001 \001(\tB\004\342A\001\003\0225\n\013create_time\030\002 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\004\342A\001\003\0225\n\013update_t"
+          + "ime\030\003 \001(\0132\032.google.protobuf.TimestampB\004\342"
+          + "A\001\003\022@\n\005state\030\006 \001(\0162+.google.cloud.vmware"
+          + "engine.v1.Cluster.StateB\004\342A\001\003\022\030\n\nmanagem"
+          + "ent\030\007 \001(\010B\004\342A\001\003\022\021\n\003uid\030\016 \001(\tB\004\342A\001\003\022[\n\021no"
+          + "de_type_configs\030\020 \003(\0132:.google.cloud.vmw"
+          + "areengine.v1.Cluster.NodeTypeConfigsEntr"
+          + "yB\004\342A\001\002\032d\n\024NodeTypeConfigsEntry\022\013\n\003key\030\001"
+          + " \001(\t\022;\n\005value\030\002 \001(\0132,.google.cloud.vmwar"
+          + "eengine.v1.NodeTypeConfig:\0028\001\"c\n\005State\022\025"
+          + "\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010CRE"
+          + "ATING\020\002\022\014\n\010UPDATING\020\003\022\014\n\010DELETING\020\004\022\r\n\tR"
+          + "EPAIRING\020\005:\202\001\352A\177\n#vmwareengine.googleapi"
+          + "s.com/Cluster\022Xprojects/{project}/locati"
+          + "ons/{location}/privateClouds/{private_cl"
+          + "oud}/clusters/{cluster}\"\220\003\n\006Subnet\022\022\n\004na"
+          + "me\030\001 \001(\tB\004\342A\001\003\022\025\n\rip_cidr_range\030\007 \001(\t\022\022\n"
+          + "\ngateway_ip\030\010 \001(\t\022\022\n\004type\030\013 \001(\tB\004\342A\001\003\022?\n"
+          + "\005state\030\r \001(\0162*.google.cloud.vmwareengine"
+          + ".v1.Subnet.StateB\004\342A\001\003\"q\n\005State\022\025\n\021STATE"
+          + "_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010CREATING\020\002"
+          + "\022\014\n\010UPDATING\020\003\022\014\n\010DELETING\020\004\022\017\n\013RECONCIL"
+          + "ING\020\005\022\n\n\006FAILED\020\006:\177\352A|\n\"vmwareengine.goo"
+          + "gleapis.com/Subnet\022Vprojects/{project}/l"
+          + "ocations/{location}/privateClouds/{priva"
+          + "te_cloud}/subnets/{subnet}\"\342\002\n\010NodeType\022"
+          + "\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\032\n\014node_type_id\030\002 \001("
+          + "\tB\004\342A\001\003\022\032\n\014display_name\030\003 \001(\tB\004\342A\001\003\022\037\n\021v"
+          + "irtual_cpu_count\030\004 \001(\005B\004\342A\001\003\022\036\n\020total_co"
+          + "re_count\030\005 \001(\005B\004\342A\001\003\022\027\n\tmemory_gb\030\007 \001(\005B"
+          + "\004\342A\001\003\022\032\n\014disk_size_gb\030\010 \001(\005B\004\342A\001\003\022*\n\034ava"
+          + "ilable_custom_core_counts\030\013 \003(\005B\004\342A\001\003:h\352"
+          + "Ae\n$vmwareengine.googleapis.com/NodeType"
+          + "\022=projects/{project}/locations/{location"
+          + "}/nodeTypes/{node_type}\"1\n\013Credentials\022\020"
+          + "\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"\307\003\n\020H"
+          + "cxActivationKey\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225\n\013c"
+          + "reate_time\030\002 \001(\0132\032.google.protobuf.Times"
+          + "tampB\004\342A\001\003\022I\n\005state\030\003 \001(\01624.google.cloud"
+          + ".vmwareengine.v1.HcxActivationKey.StateB"
+          + "\004\342A\001\003\022\034\n\016activation_key\030\004 \001(\tB\004\342A\001\003\022\021\n\003u"
+          + "id\030\005 \001(\tB\004\342A\001\003\"I\n\005State\022\025\n\021STATE_UNSPECI"
+          + "FIED\020\000\022\r\n\tAVAILABLE\020\001\022\014\n\010CONSUMED\020\002\022\014\n\010C"
+          + "REATING\020\003:\240\001\352A\234\001\n,vmwareengine.googleapi"
+          + "s.com/HcxActivationKey\022lprojects/{projec"
+          + "t}/locations/{location}/privateClouds/{p"
+          + "rivate_cloud}/hcxActivationKeys/{hcx_act"
+          + "ivation_key}\"\261\001\n\003Hcx\022\023\n\013internal_ip\030\002 \001("
+          + "\t\022\017\n\007version\030\004 \001(\t\022<\n\005state\030\005 \001(\0162\'.goog"
+          + "le.cloud.vmwareengine.v1.Hcx.StateB\004\342A\001\003"
+          + "\022\014\n\004fqdn\030\006 \001(\t\"8\n\005State\022\025\n\021STATE_UNSPECI"
+          + "FIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010CREATING\020\002\"\261\001\n\003Nsx"
+          + "\022\023\n\013internal_ip\030\002 \001(\t\022\017\n\007version\030\004 \001(\t\022<"
+          + "\n\005state\030\005 \001(\0162\'.google.cloud.vmwareengin"
+          + "e.v1.Nsx.StateB\004\342A\001\003\022\014\n\004fqdn\030\006 \001(\t\"8\n\005St"
           + "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014"
-          + "\n\010CREATING\020\002\"\260\001\n\003Nsx\022\023\n\013internal_ip\030\002 \001("
-          + "\t\022\017\n\007version\030\004 \001(\t\022;\n\005state\030\005 \001(\0162\'.goog"
-          + "le.cloud.vmwareengine.v1.Nsx.StateB\003\340A\003\022"
-          + "\014\n\004fqdn\030\006 \001(\t\"8\n\005State\022\025\n\021STATE_UNSPECIF"
-          + "IED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010CREATING\020\002\"\270\001\n\007Vcen"
-          + "ter\022\023\n\013internal_ip\030\002 \001(\t\022\017\n\007version\030\004 \001("
-          + "\t\022?\n\005state\030\005 \001(\0162+.google.cloud.vmwareen"
-          + "gine.v1.Vcenter.StateB\003\340A\003\022\014\n\004fqdn\030\006 \001(\t"
-          + "\"8\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTI"
-          + "VE\020\001\022\014\n\010CREATING\020\002\"\377\006\n\rNetworkPolicy\022\021\n\004"
-          + "name\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\002 \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\003\340A\003\0224\n\013update_"
-          + "time\030\003 \001(\0132\032.google.protobuf.TimestampB\003"
-          + "\340A\003\022S\n\017internet_access\030\006 \001(\0132:.google.cl"
-          + "oud.vmwareengine.v1.NetworkPolicy.Networ"
-          + "kService\022O\n\013external_ip\030\007 \001(\0132:.google.c"
-          + "loud.vmwareengine.v1.NetworkPolicy.Netwo"
-          + "rkService\022\037\n\022edge_services_cidr\030\t \001(\tB\003\340"
-          + "A\002\022\020\n\003uid\030\n \001(\tB\003\340A\003\022V\n\025vmware_engine_ne"
-          + "twork\030\014 \001(\tB7\340A\001\372A1\n/vmwareengine.google"
-          + "apis.com/VmwareEngineNetwork\022\030\n\013descript"
-          + "ion\030\r \001(\tB\003\340A\001\022`\n\037vmware_engine_network_"
-          + "canonical\030\016 \001(\tB7\340A\003\372A1\n/vmwareengine.go"
-          + "ogleapis.com/VmwareEngineNetwork\032\307\001\n\016Net"
-          + "workService\022\017\n\007enabled\030\001 \001(\010\022T\n\005state\030\002 "
-          + "\001(\0162@.google.cloud.vmwareengine.v1.Netwo"
-          + "rkPolicy.NetworkService.StateB\003\340A\003\"N\n\005St"
-          + "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\021\n\rUNPROVISIO"
-          + "NED\020\001\022\017\n\013RECONCILING\020\002\022\n\n\006ACTIVE\020\003:x\352Au\n"
-          + ")vmwareengine.googleapis.com/NetworkPoli"
-          + "cy\022Hprojects/{project}/locations/{locati"
-          + "on}/networkPolicies/{network_policy}\"\262\007\n"
-          + "\023VmwareEngineNetwork\022\021\n\004name\030\001 \001(\tB\003\340A\003\022"
-          + "4\n\013create_time\030\002 \001(\0132\032.google.protobuf.T"
-          + "imestampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\003\022\023\n\013descripti"
-          + "on\030\005 \001(\t\022W\n\014vpc_networks\030\006 \003(\0132<.google."
-          + "cloud.vmwareengine.v1.VmwareEngineNetwor"
-          + "k.VpcNetworkB\003\340A\003\022K\n\005state\030\007 \001(\01627.googl"
-          + "e.cloud.vmwareengine.v1.VmwareEngineNetw"
-          + "ork.StateB\003\340A\003\022I\n\004type\030\010 \001(\01626.google.cl"
-          + "oud.vmwareengine.v1.VmwareEngineNetwork."
-          + "TypeB\003\340A\002\022\020\n\003uid\030\t \001(\tB\003\340A\003\022\014\n\004etag\030\n \001("
-          + "\t\032\347\001\n\nVpcNetwork\022T\n\004type\030\001 \001(\0162A.google."
-          + "cloud.vmwareengine.v1.VmwareEngineNetwor"
-          + "k.VpcNetwork.TypeB\003\340A\003\0227\n\007network\030\002 \001(\tB"
-          + "&\340A\003\372A \n\036compute.googleapis.com/Network\""
-          + "J\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\014\n\010INTRANE"
-          + "T\020\001\022\014\n\010INTERNET\020\002\022\020\n\014GOOGLE_CLOUD\020\003\"T\n\005S"
-          + "tate\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREATING\020"
-          + "\001\022\n\n\006ACTIVE\020\002\022\014\n\010UPDATING\020\003\022\014\n\010DELETING\020"
-          + "\004\"(\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006LEGAC"
-          + "Y\020\001:\213\001\352A\207\001\n/vmwareengine.googleapis.com/"
-          + "VmwareEngineNetwork\022Tprojects/{project}/"
-          + "locations/{location}/vmwareEngineNetwork"
-          + "s/{vmware_engine_network}B\346\001\n com.google"
-          + ".cloud.vmwareengine.v1B\032VmwareengineReso"
-          + "urcesProtoP\001ZDcloud.google.com/go/vmware"
-          + "engine/apiv1/vmwareenginepb;vmwareengine"
-          + "pb\252\002\034Google.Cloud.VmwareEngine.V1\312\002\034Goog"
-          + "le\\Cloud\\VmwareEngine\\V1\352\002\037Google::Cloud"
-          + "::VmwareEngine::V1b\006proto3"
+          + "\n\010CREATING\020\002\"\271\001\n\007Vcenter\022\023\n\013internal_ip\030"
+          + "\002 \001(\t\022\017\n\007version\030\004 \001(\t\022@\n\005state\030\005 \001(\0162+."
+          + "google.cloud.vmwareengine.v1.Vcenter.Sta"
+          + "teB\004\342A\001\003\022\014\n\004fqdn\030\006 \001(\t\"8\n\005State\022\025\n\021STATE"
+          + "_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010CREATING\020\002"
+          + "\"\274\003\n\014PeeringRoute\022\030\n\ndest_range\030\001 \001(\tB\004\342"
+          + "A\001\003\022C\n\004type\030\002 \001(\0162/.google.cloud.vmwaree"
+          + "ngine.v1.PeeringRoute.TypeB\004\342A\001\003\022\035\n\017next"
+          + "_hop_region\030\003 \001(\tB\004\342A\001\003\022\026\n\010priority\030\004 \001("
+          + "\003B\004\342A\001\003\022\026\n\010imported\030\005 \001(\010B\004\342A\001\003\022M\n\tdirec"
+          + "tion\030\006 \001(\01624.google.cloud.vmwareengine.v"
+          + "1.PeeringRoute.DirectionB\004\342A\001\003\"k\n\004Type\022\024"
+          + "\n\020TYPE_UNSPECIFIED\020\000\022\031\n\025DYNAMIC_PEERING_"
+          + "ROUTE\020\001\022\030\n\024STATIC_PEERING_ROUTE\020\002\022\030\n\024SUB"
+          + "NET_PEERING_ROUTE\020\003\"B\n\tDirection\022\031\n\025DIRE"
+          + "CTION_UNSPECIFIED\020\000\022\014\n\010INCOMING\020\001\022\014\n\010OUT"
+          + "GOING\020\002\"\210\007\n\rNetworkPolicy\022\022\n\004name\030\001 \001(\tB"
+          + "\004\342A\001\003\0225\n\013create_time\030\002 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\004\342A\001\003\0225\n\013update_time\030\003 \001("
+          + "\0132\032.google.protobuf.TimestampB\004\342A\001\003\022S\n\017i"
+          + "nternet_access\030\006 \001(\0132:.google.cloud.vmwa"
+          + "reengine.v1.NetworkPolicy.NetworkService"
+          + "\022O\n\013external_ip\030\007 \001(\0132:.google.cloud.vmw"
+          + "areengine.v1.NetworkPolicy.NetworkServic"
+          + "e\022 \n\022edge_services_cidr\030\t \001(\tB\004\342A\001\002\022\021\n\003u"
+          + "id\030\n \001(\tB\004\342A\001\003\022W\n\025vmware_engine_network\030"
+          + "\014 \001(\tB8\342A\001\001\372A1\n/vmwareengine.googleapis."
+          + "com/VmwareEngineNetwork\022\031\n\013description\030\r"
+          + " \001(\tB\004\342A\001\001\022a\n\037vmware_engine_network_cano"
+          + "nical\030\016 \001(\tB8\342A\001\003\372A1\n/vmwareengine.googl"
+          + "eapis.com/VmwareEngineNetwork\032\310\001\n\016Networ"
+          + "kService\022\017\n\007enabled\030\001 \001(\010\022U\n\005state\030\002 \001(\016"
+          + "2@.google.cloud.vmwareengine.v1.NetworkP"
+          + "olicy.NetworkService.StateB\004\342A\001\003\"N\n\005Stat"
+          + "e\022\025\n\021STATE_UNSPECIFIED\020\000\022\021\n\rUNPROVISIONE"
+          + "D\020\001\022\017\n\013RECONCILING\020\002\022\n\n\006ACTIVE\020\003:x\352Au\n)v"
+          + "mwareengine.googleapis.com/NetworkPolicy"
+          + "\022Hprojects/{project}/locations/{location"
+          + "}/networkPolicies/{network_policy}\"\273\007\n\023V"
+          + "mwareEngineNetwork\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225"
+          + "\n\013create_time\030\002 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\004\342A\001\003\0225\n\013update_time\030\003 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\004\342A\001\003\022\023\n\013descript"
+          + "ion\030\005 \001(\t\022X\n\014vpc_networks\030\006 \003(\0132<.google"
+          + ".cloud.vmwareengine.v1.VmwareEngineNetwo"
+          + "rk.VpcNetworkB\004\342A\001\003\022L\n\005state\030\007 \001(\01627.goo"
+          + "gle.cloud.vmwareengine.v1.VmwareEngineNe"
+          + "twork.StateB\004\342A\001\003\022J\n\004type\030\010 \001(\01626.google"
+          + ".cloud.vmwareengine.v1.VmwareEngineNetwo"
+          + "rk.TypeB\004\342A\001\002\022\021\n\003uid\030\t \001(\tB\004\342A\001\003\022\014\n\004etag"
+          + "\030\n \001(\t\032\351\001\n\nVpcNetwork\022U\n\004type\030\001 \001(\0162A.go"
+          + "ogle.cloud.vmwareengine.v1.VmwareEngineN"
+          + "etwork.VpcNetwork.TypeB\004\342A\001\003\0228\n\007network\030"
+          + "\002 \001(\tB\'\342A\001\003\372A \n\036compute.googleapis.com/N"
+          + "etwork\"J\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\014\n\010"
+          + "INTRANET\020\001\022\014\n\010INTERNET\020\002\022\020\n\014GOOGLE_CLOUD"
+          + "\020\003\"T\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CR"
+          + "EATING\020\001\022\n\n\006ACTIVE\020\002\022\014\n\010UPDATING\020\003\022\014\n\010DE"
+          + "LETING\020\004\"(\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\n"
+          + "\n\006LEGACY\020\001:\213\001\352A\207\001\n/vmwareengine.googleap"
+          + "is.com/VmwareEngineNetwork\022Tprojects/{pr"
+          + "oject}/locations/{location}/vmwareEngine"
+          + "Networks/{vmware_engine_network}\"\304\n\n\021Pri"
+          + "vateConnection\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225\n\013cr"
+          + "eate_time\030\002 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\004\342A\001\003\0225\n\013update_time\030\003 \001(\0132\032.google."
+          + "protobuf.TimestampB\004\342A\001\003\022\031\n\013description\030"
+          + "\004 \001(\tB\004\342A\001\001\022J\n\005state\030\005 \001(\01625.google.clou"
+          + "d.vmwareengine.v1.PrivateConnection.Stat"
+          + "eB\004\342A\001\003\022W\n\025vmware_engine_network\030\010 \001(\tB8"
+          + "\342A\001\002\372A1\n/vmwareengine.googleapis.com/Vmw"
+          + "areEngineNetwork\022a\n\037vmware_engine_networ"
+          + "k_canonical\030\t \001(\tB8\342A\001\003\372A1\n/vmwareengine"
+          + ".googleapis.com/VmwareEngineNetwork\022H\n\004t"
+          + "ype\030\n \001(\01624.google.cloud.vmwareengine.v1"
+          + ".PrivateConnection.TypeB\004\342A\001\002\022\030\n\npeering"
+          + "_id\030\014 \001(\tB\004\342A\001\003\022W\n\014routing_mode\030\r \001(\0162;."
+          + "google.cloud.vmwareengine.v1.PrivateConn"
+          + "ection.RoutingModeB\004\342A\001\001\022\021\n\003uid\030\016 \001(\tB\004\342"
+          + "A\001\003\022@\n\017service_network\030\020 \001(\tB\'\342A\001\002\372A \n\036c"
+          + "ompute.googleapis.com/Network\022Y\n\rpeering"
+          + "_state\030\021 \001(\0162<.google.cloud.vmwareengine"
+          + ".v1.PrivateConnection.PeeringStateB\004\342A\001\003"
+          + "\"s\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREA"
+          + "TING\020\001\022\n\n\006ACTIVE\020\002\022\014\n\010UPDATING\020\003\022\014\n\010DELE"
+          + "TING\020\004\022\021\n\rUNPROVISIONED\020\005\022\n\n\006FAILED\020\006\"\200\001"
+          + "\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\032\n\026PRIVATE_"
+          + "SERVICE_ACCESS\020\001\022\030\n\024NETAPP_CLOUD_VOLUMES"
+          + "\020\002\022\023\n\017DELL_POWERSCALE\020\003\022\027\n\023THIRD_PARTY_S"
+          + "ERVICE\020\004\"E\n\013RoutingMode\022\034\n\030ROUTING_MODE_"
+          + "UNSPECIFIED\020\000\022\n\n\006GLOBAL\020\001\022\014\n\010REGIONAL\020\002\""
+          + "W\n\014PeeringState\022\035\n\031PEERING_STATE_UNSPECI"
+          + "FIED\020\000\022\022\n\016PEERING_ACTIVE\020\001\022\024\n\020PEERING_IN"
+          + "ACTIVE\020\002:\204\001\352A\200\001\n-vmwareengine.googleapis"
+          + ".com/PrivateConnection\022Oprojects/{projec"
+          + "t}/locations/{location}/privateConnectio"
+          + "ns/{private_connection}B\346\001\n com.google.c"
+          + "loud.vmwareengine.v1B\032VmwareengineResour"
+          + "cesProtoP\001ZDcloud.google.com/go/vmwareen"
+          + "gine/apiv1/vmwareenginepb;vmwareenginepb"
+          + "\252\002\034Google.Cloud.VmwareEngine.V1\312\002\034Google"
+          + "\\Cloud\\VmwareEngine\\V1\352\002\037Google::Cloud::"
+          + "VmwareEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -312,6 +370,7 @@ public final class VmwareengineResourcesProto {
               "Nsx",
               "Vcenter",
               "Uid",
+              "Type",
             });
     internal_static_google_cloud_vmwareengine_v1_PrivateCloud_ManagementCluster_descriptor =
         internal_static_google_cloud_vmwareengine_v1_PrivateCloud_descriptor
@@ -412,8 +471,16 @@ public final class VmwareengineResourcesProto {
             new java.lang.String[] {
               "InternalIp", "Version", "State", "Fqdn",
             });
-    internal_static_google_cloud_vmwareengine_v1_NetworkPolicy_descriptor =
+    internal_static_google_cloud_vmwareengine_v1_PeeringRoute_descriptor =
         getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_vmwareengine_v1_PeeringRoute_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_PeeringRoute_descriptor,
+            new java.lang.String[] {
+              "DestRange", "Type", "NextHopRegion", "Priority", "Imported", "Direction",
+            });
+    internal_static_google_cloud_vmwareengine_v1_NetworkPolicy_descriptor =
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_vmwareengine_v1_NetworkPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_NetworkPolicy_descriptor,
@@ -440,7 +507,7 @@ public final class VmwareengineResourcesProto {
               "Enabled", "State",
             });
     internal_static_google_cloud_vmwareengine_v1_VmwareEngineNetwork_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_vmwareengine_v1_VmwareEngineNetwork_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmwareengine_v1_VmwareEngineNetwork_descriptor,
@@ -464,6 +531,26 @@ public final class VmwareengineResourcesProto {
             internal_static_google_cloud_vmwareengine_v1_VmwareEngineNetwork_VpcNetwork_descriptor,
             new java.lang.String[] {
               "Type", "Network",
+            });
+    internal_static_google_cloud_vmwareengine_v1_PrivateConnection_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_vmwareengine_v1_PrivateConnection_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmwareengine_v1_PrivateConnection_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "Description",
+              "State",
+              "VmwareEngineNetwork",
+              "VmwareEngineNetworkCanonical",
+              "Type",
+              "PeeringId",
+              "RoutingMode",
+              "Uid",
+              "ServiceNetwork",
+              "PeeringState",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

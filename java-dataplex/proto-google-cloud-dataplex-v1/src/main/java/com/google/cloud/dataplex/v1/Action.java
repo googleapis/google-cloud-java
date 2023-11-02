@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,18 +44,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     lake_ = "";
     zone_ = "";
     asset_ = "";
-    dataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    dataLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Action();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -281,11 +276,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MissingResource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -711,11 +701,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new UnauthorizedResource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1174,11 +1159,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FailedSecurityPolicyApply();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1911,7 +1891,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     private InvalidDataFormat() {
-      sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       expectedFormat_ = "";
       newFormat_ = "";
     }
@@ -1920,11 +1900,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InvalidDataFormat();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1945,7 +1920,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public static final int SAMPLED_DATA_LOCATIONS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList sampledDataLocations_;
+    private com.google.protobuf.LazyStringArrayList sampledDataLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -2338,8 +2314,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         expectedFormat_ = "";
         newFormat_ = "";
         return this;
@@ -2369,7 +2344,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.Action.InvalidDataFormat buildPartial() {
         com.google.cloud.dataplex.v1.Action.InvalidDataFormat result =
             new com.google.cloud.dataplex.v1.Action.InvalidDataFormat(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -2377,17 +2351,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dataplex.v1.Action.InvalidDataFormat result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          sampledDataLocations_ = sampledDataLocations_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.sampledDataLocations_ = sampledDataLocations_;
-      }
-
       private void buildPartial0(com.google.cloud.dataplex.v1.Action.InvalidDataFormat result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          sampledDataLocations_.makeImmutable();
+          result.sampledDataLocations_ = sampledDataLocations_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.expectedFormat_ = expectedFormat_;
         }
@@ -2447,7 +2416,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (!other.sampledDataLocations_.isEmpty()) {
           if (sampledDataLocations_.isEmpty()) {
             sampledDataLocations_ = other.sampledDataLocations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureSampledDataLocationsIsMutable();
             sampledDataLocations_.addAll(other.sampledDataLocations_);
@@ -2528,15 +2497,15 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList sampledDataLocations_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList sampledDataLocations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureSampledDataLocationsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!sampledDataLocations_.isModifiable()) {
           sampledDataLocations_ =
               new com.google.protobuf.LazyStringArrayList(sampledDataLocations_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -2551,7 +2520,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the sampledDataLocations.
        */
       public com.google.protobuf.ProtocolStringList getSampledDataLocationsList() {
-        return sampledDataLocations_.getUnmodifiableView();
+        sampledDataLocations_.makeImmutable();
+        return sampledDataLocations_;
       }
       /**
        *
@@ -2620,6 +2590,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSampledDataLocationsIsMutable();
         sampledDataLocations_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2642,6 +2613,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSampledDataLocationsIsMutable();
         sampledDataLocations_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2661,6 +2633,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllSampledDataLocations(java.lang.Iterable<java.lang.String> values) {
         ensureSampledDataLocationsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sampledDataLocations_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2677,8 +2650,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSampledDataLocations() {
-        sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -2702,6 +2676,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureSampledDataLocationsIsMutable();
         sampledDataLocations_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3171,7 +3146,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       table_ = "";
       existingSchema_ = "";
       newSchema_ = "";
-      sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       schemaChange_ = 0;
     }
 
@@ -3179,11 +3154,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IncompatibleDataSchema();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3522,7 +3492,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public static final int SAMPLED_DATA_LOCATIONS_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList sampledDataLocations_;
+    private com.google.protobuf.LazyStringArrayList sampledDataLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3881,8 +3852,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         table_ = "";
         existingSchema_ = "";
         newSchema_ = "";
-        sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         schemaChange_ = 0;
         return this;
       }
@@ -3912,21 +3882,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema buildPartial() {
         com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema result =
             new com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema result) {
-        if (((bitField0_ & 0x00000008) != 0)) {
-          sampledDataLocations_ = sampledDataLocations_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.sampledDataLocations_ = sampledDataLocations_;
       }
 
       private void buildPartial0(
@@ -3940,6 +3900,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.newSchema_ = newSchema_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          sampledDataLocations_.makeImmutable();
+          result.sampledDataLocations_ = sampledDataLocations_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.schemaChange_ = schemaChange_;
@@ -4013,7 +3977,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (!other.sampledDataLocations_.isEmpty()) {
           if (sampledDataLocations_.isEmpty()) {
             sampledDataLocations_ = other.sampledDataLocations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureSampledDataLocationsIsMutable();
             sampledDataLocations_.addAll(other.sampledDataLocations_);
@@ -4427,15 +4391,15 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList sampledDataLocations_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList sampledDataLocations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureSampledDataLocationsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!sampledDataLocations_.isModifiable()) {
           sampledDataLocations_ =
               new com.google.protobuf.LazyStringArrayList(sampledDataLocations_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -4450,7 +4414,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the sampledDataLocations.
        */
       public com.google.protobuf.ProtocolStringList getSampledDataLocationsList() {
-        return sampledDataLocations_.getUnmodifiableView();
+        sampledDataLocations_.makeImmutable();
+        return sampledDataLocations_;
       }
       /**
        *
@@ -4519,6 +4484,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSampledDataLocationsIsMutable();
         sampledDataLocations_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4541,6 +4507,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSampledDataLocationsIsMutable();
         sampledDataLocations_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4560,6 +4527,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllSampledDataLocations(java.lang.Iterable<java.lang.String> values) {
         ensureSampledDataLocationsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sampledDataLocations_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4576,8 +4544,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSampledDataLocations() {
-        sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -4601,6 +4570,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureSampledDataLocationsIsMutable();
         sampledDataLocations_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4837,11 +4807,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InvalidDataPartition();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5616,11 +5581,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return new MissingData();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.ResourcesProto
           .internal_static_google_cloud_dataplex_v1_Action_MissingData_descriptor;
@@ -6043,11 +6003,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return new InvalidDataOrganization();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.ResourcesProto
           .internal_static_google_cloud_dataplex_v1_Action_InvalidDataOrganization_descriptor;
@@ -6444,6 +6399,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int detailsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object details_;
 
   public enum DetailsCase
@@ -6875,7 +6832,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public static final int DATA_LOCATIONS_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList dataLocations_;
+  private com.google.protobuf.LazyStringArrayList dataLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -7802,8 +7760,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       lake_ = "";
       zone_ = "";
       asset_ = "";
-      dataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      dataLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (invalidDataFormatBuilder_ != null) {
         invalidDataFormatBuilder_.clear();
       }
@@ -7856,21 +7813,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dataplex.v1.Action buildPartial() {
       com.google.cloud.dataplex.v1.Action result = new com.google.cloud.dataplex.v1.Action(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.dataplex.v1.Action result) {
-      if (((bitField0_ & 0x00000080) != 0)) {
-        dataLocations_ = dataLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.dataLocations_ = dataLocations_;
     }
 
     private void buildPartial0(com.google.cloud.dataplex.v1.Action result) {
@@ -7895,6 +7843,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.asset_ = asset_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        dataLocations_.makeImmutable();
+        result.dataLocations_ = dataLocations_;
       }
     }
 
@@ -8006,7 +7958,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (!other.dataLocations_.isEmpty()) {
         if (dataLocations_.isEmpty()) {
           dataLocations_ = other.dataLocations_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureDataLocationsIsMutable();
           dataLocations_.addAll(other.dataLocations_);
@@ -9094,14 +9046,14 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList dataLocations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList dataLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDataLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!dataLocations_.isModifiable()) {
         dataLocations_ = new com.google.protobuf.LazyStringArrayList(dataLocations_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -9119,7 +9071,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the dataLocations.
      */
     public com.google.protobuf.ProtocolStringList getDataLocationsList() {
-      return dataLocations_.getUnmodifiableView();
+      dataLocations_.makeImmutable();
+      return dataLocations_;
     }
     /**
      *
@@ -9200,6 +9153,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDataLocationsIsMutable();
       dataLocations_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9225,6 +9179,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDataLocationsIsMutable();
       dataLocations_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9247,6 +9202,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDataLocations(java.lang.Iterable<java.lang.String> values) {
       ensureDataLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataLocations_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9266,8 +9222,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataLocations() {
-      dataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      dataLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -9294,6 +9251,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDataLocationsIsMutable();
       dataLocations_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

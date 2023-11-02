@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -354,7 +354,7 @@ public interface HadoopJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
    * classes in user code.
    * </pre>
    *
@@ -368,7 +368,7 @@ public interface HadoopJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
    * classes in user code.
    * </pre>
    *
@@ -385,7 +385,7 @@ public interface HadoopJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
    * classes in user code.
    * </pre>
    *
@@ -399,7 +399,7 @@ public interface HadoopJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
    * classes in user code.
    * </pre>
    *
@@ -417,7 +417,7 @@ public interface HadoopJobOrBuilder
    * <pre>
    * Optional. A mapping of property names to values, used to configure Hadoop.
    * Properties that conflict with values set by the Dataproc API may be
-   * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site and
+   * overwritten. Can include properties set in `/etc/hadoop/conf/&#42;-site` and
    * classes in user code.
    * </pre>
    *
@@ -467,5 +467,5 @@ public interface HadoopJobOrBuilder
    */
   com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
 
-  public com.google.cloud.dataproc.v1.HadoopJob.DriverCase getDriverCase();
+  com.google.cloud.dataproc.v1.HadoopJob.DriverCase getDriverCase();
 }

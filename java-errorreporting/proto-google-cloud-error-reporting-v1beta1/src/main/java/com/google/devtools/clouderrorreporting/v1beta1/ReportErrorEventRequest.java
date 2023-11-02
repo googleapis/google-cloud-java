@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
     return new ReportErrorEventRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
         .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventRequest_descriptor;
@@ -79,6 +74,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    * as `projects/{projectId}`, where `{projectId}` is the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
+   *
    * Example: // `projects/my-project-123`.
    * </pre>
    *
@@ -108,6 +104,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    * as `projects/{projectId}`, where `{projectId}` is the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
+   *
    * Example: // `projects/my-project-123`.
    * </pre>
    *
@@ -581,6 +578,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      * as `projects/{projectId}`, where `{projectId}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
+     *
      * Example: // `projects/my-project-123`.
      * </pre>
      *
@@ -609,6 +607,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      * as `projects/{projectId}`, where `{projectId}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
+     *
      * Example: // `projects/my-project-123`.
      * </pre>
      *
@@ -637,6 +636,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      * as `projects/{projectId}`, where `{projectId}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
+     *
      * Example: // `projects/my-project-123`.
      * </pre>
      *
@@ -664,6 +664,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      * as `projects/{projectId}`, where `{projectId}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
+     *
      * Example: // `projects/my-project-123`.
      * </pre>
      *
@@ -687,6 +688,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
      * as `projects/{projectId}`, where `{projectId}` is the
      * [Google Cloud Platform project
      * ID](https://support.google.com/cloud/answer/6158840).
+     *
      * Example: // `projects/my-project-123`.
      * </pre>
      *

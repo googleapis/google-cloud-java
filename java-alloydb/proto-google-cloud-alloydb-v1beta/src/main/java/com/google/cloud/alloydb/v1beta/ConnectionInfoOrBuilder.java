@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,8 +56,9 @@ public interface ConnectionInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The IP address for the Instance.
-   * This is the connection endpoint for an end-user application.
+   * Output only. The private network IP address for the Instance. This is the
+   * default IP for the instance and is always created (even if enable_public_ip
+   * is set). This is the connection endpoint for an end-user application.
    * </pre>
    *
    * <code>string ip_address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -69,8 +70,9 @@ public interface ConnectionInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The IP address for the Instance.
-   * This is the connection endpoint for an end-user application.
+   * Output only. The private network IP address for the Instance. This is the
+   * default IP for the instance and is always created (even if enable_public_ip
+   * is set). This is the connection endpoint for an end-user application.
    * </pre>
    *
    * <code>string ip_address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -87,11 +89,15 @@ public interface ConnectionInfoOrBuilder
    * certificate. Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
-   * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=912
    * @return A list containing the pemCertificateChain.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getPemCertificateChainList();
   /**
    *
@@ -101,11 +107,15 @@ public interface ConnectionInfoOrBuilder
    * certificate. Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
-   * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=912
    * @return The count of pemCertificateChain.
    */
+  @java.lang.Deprecated
   int getPemCertificateChainCount();
   /**
    *
@@ -115,12 +125,16 @@ public interface ConnectionInfoOrBuilder
    * certificate. Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
-   * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=912
    * @param index The index of the element to return.
    * @return The pemCertificateChain at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getPemCertificateChain(int index);
   /**
    *
@@ -130,12 +144,16 @@ public interface ConnectionInfoOrBuilder
    * certificate. Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
-   * <code>repeated string pem_certificate_chain = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * repeated string pem_certificate_chain = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=912
    * @param index The index of the value to return.
    * @return The bytes of the pemCertificateChain at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getPemCertificateChainBytes(int index);
 
   /**

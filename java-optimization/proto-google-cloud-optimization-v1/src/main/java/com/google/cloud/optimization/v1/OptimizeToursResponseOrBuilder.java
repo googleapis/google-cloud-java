@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -289,7 +289,7 @@ public interface OptimizeToursResponseOrBuilder
    * <code>double total_cost = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=425
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=433
    * @return The totalCost.
    */
   @java.lang.Deprecated

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation cluster.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -39,7 +39,7 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation cluster.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,10 +52,10 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation cluster.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -64,10 +64,10 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation cluster.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -77,7 +77,8 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation
+   * cluster.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -89,7 +90,8 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation
+   * cluster.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -102,8 +104,8 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Indicates whether this resource is currently being updated to
-   * match its intended state.
+   * Output only. Indicates whether this workstation cluster is currently being
+   * updated to match its intended state.
    * </pre>
    *
    * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -116,20 +118,22 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAnnotations(java.lang.String key);
   /** Use {@link #getAnnotationsMap()} instead. */
@@ -139,20 +143,22 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
   /**
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
@@ -163,10 +169,11 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
@@ -174,22 +181,26 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation cluster and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 15;</code>
+   * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation cluster and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 15;</code>
+   * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -199,22 +210,26 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation cluster and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 15;</code>
+   * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation cluster and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 15;</code>
+   * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -225,11 +240,13 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation cluster and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 15;</code>
+   * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -237,7 +254,7 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation cluster was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -250,7 +267,7 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation cluster was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -263,7 +280,7 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation cluster was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -275,7 +292,7 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation cluster was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -288,7 +305,7 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation cluster was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -301,7 +318,7 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation cluster was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -313,7 +330,7 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation cluster was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -326,7 +343,7 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation cluster was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -339,7 +356,7 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation cluster was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -351,11 +368,12 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -364,11 +382,12 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -379,7 +398,7 @@ public interface WorkstationClusterOrBuilder
    *
    * <pre>
    * Immutable. Name of the Compute Engine network in which instances associated
-   * with this cluster will be created.
+   * with this workstation cluster will be created.
    * </pre>
    *
    * <code>string network = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -392,7 +411,7 @@ public interface WorkstationClusterOrBuilder
    *
    * <pre>
    * Immutable. Name of the Compute Engine network in which instances associated
-   * with this cluster will be created.
+   * with this workstation cluster will be created.
    * </pre>
    *
    * <code>string network = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -406,8 +425,8 @@ public interface WorkstationClusterOrBuilder
    *
    * <pre>
    * Immutable. Name of the Compute Engine subnetwork in which instances
-   * associated with this cluster will be created. Must be part of the
-   * subnetwork specified for this cluster.
+   * associated with this workstation cluster will be created. Must be part of
+   * the subnetwork specified for this workstation cluster.
    * </pre>
    *
    * <code>string subnetwork = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -420,8 +439,8 @@ public interface WorkstationClusterOrBuilder
    *
    * <pre>
    * Immutable. Name of the Compute Engine subnetwork in which instances
-   * associated with this cluster will be created. Must be part of the
-   * subnetwork specified for this cluster.
+   * associated with this workstation cluster will be created. Must be part of
+   * the subnetwork specified for this workstation cluster.
    * </pre>
    *
    * <code>string subnetwork = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -434,11 +453,42 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Configuration for private cluster.
+   * Output only. The private IP address of the control plane for this
+   * workstation cluster. Workstation VMs need access to this IP address to work
+   * with the service, so make sure that your firewall rules allow egress from
+   * the workstation VMs to this address.
+   * </pre>
+   *
+   * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The controlPlaneIp.
+   */
+  java.lang.String getControlPlaneIp();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The private IP address of the control plane for this
+   * workstation cluster. Workstation VMs need access to this IP address to work
+   * with the service, so make sure that your firewall rules allow egress from
+   * the workstation VMs to this address.
+   * </pre>
+   *
+   * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for controlPlaneIp.
+   */
+  com.google.protobuf.ByteString getControlPlaneIpBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for private workstation cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+   * .google.cloud.workstations.v1.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the privateClusterConfig field is set.
@@ -448,11 +498,11 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Configuration for private cluster.
+   * Optional. Configuration for private workstation cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+   * .google.cloud.workstations.v1.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The privateClusterConfig.
@@ -463,11 +513,11 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Configuration for private cluster.
+   * Optional. Configuration for private workstation cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+   * .google.cloud.workstations.v1.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.workstations.v1.WorkstationCluster.PrivateClusterConfigOrBuilder
@@ -477,9 +527,10 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Whether this resource is in degraded mode, in which case it
-   * may require user action to restore full functionality. Details can be found
-   * in the `conditions` field.
+   * Output only. Whether this workstation cluster is in degraded mode, in which
+   * case it may require user action to restore full functionality. Details can
+   * be found in
+   * [conditions][google.cloud.workstations.v1.WorkstationCluster.conditions].
    * </pre>
    *
    * <code>bool degraded = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -492,7 +543,8 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation cluster's current
+   * state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -503,7 +555,8 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation cluster's current
+   * state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -514,7 +567,8 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation cluster's current
+   * state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -525,7 +579,8 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation cluster's current
+   * state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -536,7 +591,8 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation cluster's current
+   * state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];

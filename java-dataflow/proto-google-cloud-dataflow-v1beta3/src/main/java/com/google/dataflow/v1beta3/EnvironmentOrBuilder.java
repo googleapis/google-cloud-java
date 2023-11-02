@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,9 @@ public interface EnvironmentOrBuilder
    * needed during the job execution.  NOTE: This will override the
    * value in taskrunner_settings.
    * The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
    * </pre>
@@ -57,7 +59,9 @@ public interface EnvironmentOrBuilder
    * needed during the job execution.  NOTE: This will override the
    * value in taskrunner_settings.
    * The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
    * </pre>
@@ -223,6 +227,7 @@ public interface EnvironmentOrBuilder
    * <pre>
    * If set, contains the Cloud KMS key identifier used to encrypt data
    * at rest, AKA a Customer Managed Encryption Key (CMEK).
+   *
    * Format:
    *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
    * </pre>
@@ -238,6 +243,7 @@ public interface EnvironmentOrBuilder
    * <pre>
    * If set, contains the Cloud KMS key identifier used to encrypt data
    * at rest, AKA a Customer Managed Encryption Key (CMEK).
+   *
    * Format:
    *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
    * </pre>
@@ -384,7 +390,9 @@ public interface EnvironmentOrBuilder
    * <pre>
    * The dataset for the current project where various workflow
    * related tables are stored.
+   *
    * The supported resource type is:
+   *
    * Google BigQuery:
    *   bigquery.googleapis.com/{dataset}
    * </pre>
@@ -400,7 +408,9 @@ public interface EnvironmentOrBuilder
    * <pre>
    * The dataset for the current project where various workflow
    * related tables are stored.
+   *
    * The supported resource type is:
+   *
    * Google BigQuery:
    *   bigquery.googleapis.com/{dataset}
    * </pre>

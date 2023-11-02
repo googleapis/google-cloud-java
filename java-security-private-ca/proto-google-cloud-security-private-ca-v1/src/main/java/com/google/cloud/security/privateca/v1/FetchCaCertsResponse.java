@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FetchCaCertsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -136,18 +131,13 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private CertChain() {
-      certificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      certificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CertChain();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -168,7 +158,8 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
     public static final int CERTIFICATES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList certificates_;
+    private com.google.protobuf.LazyStringArrayList certificates_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -431,8 +422,7 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        certificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        certificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -463,7 +453,6 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
       public com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain buildPartial() {
         com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain result =
             new com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -471,18 +460,13 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          certificates_ = certificates_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.certificates_ = certificates_;
-      }
-
       private void buildPartial0(
           com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          certificates_.makeImmutable();
+          result.certificates_ = certificates_;
+        }
       }
 
       @java.lang.Override
@@ -540,7 +524,7 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
         if (!other.certificates_.isEmpty()) {
           if (certificates_.isEmpty()) {
             certificates_ = other.certificates_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureCertificatesIsMutable();
             certificates_.addAll(other.certificates_);
@@ -599,14 +583,14 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList certificates_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList certificates_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureCertificatesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!certificates_.isModifiable()) {
           certificates_ = new com.google.protobuf.LazyStringArrayList(certificates_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -620,7 +604,8 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
        * @return A list containing the certificates.
        */
       public com.google.protobuf.ProtocolStringList getCertificatesList() {
-        return certificates_.getUnmodifiableView();
+        certificates_.makeImmutable();
+        return certificates_;
       }
       /**
        *
@@ -685,6 +670,7 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
         }
         ensureCertificatesIsMutable();
         certificates_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -706,6 +692,7 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
         }
         ensureCertificatesIsMutable();
         certificates_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -724,6 +711,7 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
       public Builder addAllCertificates(java.lang.Iterable<java.lang.String> values) {
         ensureCertificatesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, certificates_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -739,8 +727,9 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearCertificates() {
-        certificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        certificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -763,6 +752,7 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureCertificatesIsMutable();
         certificates_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }

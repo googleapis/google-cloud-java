@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public interface BinaryAuthorizationOrBuilder
    * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1613
+   *     google/container/v1beta1/cluster_service.proto;l=1823
    * @return The enabled.
    */
   @java.lang.Deprecated
@@ -67,4 +67,68 @@ public interface BinaryAuthorizationOrBuilder
    * @return The evaluationMode.
    */
   com.google.container.v1beta1.BinaryAuthorization.EvaluationMode getEvaluationMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binauthz policies that apply to this cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.container.v1beta1.BinaryAuthorization.PolicyBinding>
+      getPolicyBindingsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binauthz policies that apply to this cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.BinaryAuthorization.PolicyBinding getPolicyBindings(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binauthz policies that apply to this cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPolicyBindingsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binauthz policies that apply to this cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.container.v1beta1.BinaryAuthorization.PolicyBindingOrBuilder>
+      getPolicyBindingsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binauthz policies that apply to this cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.BinaryAuthorization.PolicyBindingOrBuilder
+      getPolicyBindingsOrBuilder(int index);
 }

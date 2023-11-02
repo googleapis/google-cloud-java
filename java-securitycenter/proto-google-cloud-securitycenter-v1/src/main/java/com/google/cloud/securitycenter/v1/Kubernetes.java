@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Kubernetes();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -240,7 +235,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kubernetes Pod.
+   * A Kubernetes Pod.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.Pod}
@@ -266,11 +261,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Pod();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -732,7 +722,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pod.
+     * A Kubernetes Pod.
      * </pre>
      *
      * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.Pod}
@@ -2050,8 +2040,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full Resource name of the Compute Engine VM running the
-     * cluster node.
+     * [Full resource name](https://google.aip.dev/122#full-resource-names) of
+     * the Compute Engine VM running the cluster node.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2063,8 +2053,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full Resource name of the Compute Engine VM running the
-     * cluster node.
+     * [Full resource name](https://google.aip.dev/122#full-resource-names) of
+     * the Compute Engine VM running the cluster node.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2077,7 +2067,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kubernetes Nodes associated with the finding.
+   * Kubernetes nodes associated with the finding.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.Node}
@@ -2100,11 +2090,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Node();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2130,8 +2115,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full Resource name of the Compute Engine VM running the
-     * cluster node.
+     * [Full resource name](https://google.aip.dev/122#full-resource-names) of
+     * the Compute Engine VM running the cluster node.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2154,8 +2139,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full Resource name of the Compute Engine VM running the
-     * cluster node.
+     * [Full resource name](https://google.aip.dev/122#full-resource-names) of
+     * the Compute Engine VM running the cluster node.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2339,7 +2324,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Nodes associated with the finding.
+     * Kubernetes nodes associated with the finding.
      * </pre>
      *
      * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.Node}
@@ -2526,8 +2511,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Full Resource name of the Compute Engine VM running the
-       * cluster node.
+       * [Full resource name](https://google.aip.dev/122#full-resource-names) of
+       * the Compute Engine VM running the cluster node.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -2549,8 +2534,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Full Resource name of the Compute Engine VM running the
-       * cluster node.
+       * [Full resource name](https://google.aip.dev/122#full-resource-names) of
+       * the Compute Engine VM running the cluster node.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -2572,8 +2557,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Full Resource name of the Compute Engine VM running the
-       * cluster node.
+       * [Full resource name](https://google.aip.dev/122#full-resource-names) of
+       * the Compute Engine VM running the cluster node.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -2594,8 +2579,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Full Resource name of the Compute Engine VM running the
-       * cluster node.
+       * [Full resource name](https://google.aip.dev/122#full-resource-names) of
+       * the Compute Engine VM running the cluster node.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -2612,8 +2597,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Full Resource name of the Compute Engine VM running the
-       * cluster node.
+       * [Full resource name](https://google.aip.dev/122#full-resource-names) of
+       * the Compute Engine VM running the cluster node.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -2705,7 +2690,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Node pool name.
+     * Kubernetes node pool name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2717,7 +2702,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Node pool name.
+     * Kubernetes node pool name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2782,7 +2767,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides GKE Node Pool information.
+   * Provides GKE node pool information.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.NodePool}
@@ -2808,11 +2793,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       return new NodePool();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.KubernetesProto
           .internal_static_google_cloud_securitycenter_v1_Kubernetes_NodePool_descriptor;
@@ -2836,7 +2816,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Node pool name.
+     * Kubernetes node pool name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2859,7 +2839,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Node pool name.
+     * Kubernetes node pool name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3127,7 +3107,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides GKE Node Pool information.
+     * Provides GKE node pool information.
      * </pre>
      *
      * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.NodePool}
@@ -3376,7 +3356,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Kubernetes Node pool name.
+       * Kubernetes node pool name.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3398,7 +3378,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Kubernetes Node pool name.
+       * Kubernetes node pool name.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3420,7 +3400,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Kubernetes Node pool name.
+       * Kubernetes node pool name.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3441,7 +3421,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Kubernetes Node pool name.
+       * Kubernetes node pool name.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3458,7 +3438,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Kubernetes Node pool name.
+       * Kubernetes node pool name.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -4003,11 +3983,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Role();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5094,7 +5069,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Namespace for binding.
+     * Namespace for the binding.
      * </pre>
      *
      * <code>string ns = 1;</code>
@@ -5106,7 +5081,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Namespace for binding.
+     * Namespace for the binding.
      * </pre>
      *
      * <code>string ns = 1;</code>
@@ -5119,7 +5094,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name for binding.
+     * Name for the binding.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -5131,7 +5106,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name for binding.
+     * Name for the binding.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -5263,11 +5238,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       return new Binding();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.KubernetesProto
           .internal_static_google_cloud_securitycenter_v1_Kubernetes_Binding_descriptor;
@@ -5291,7 +5261,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Namespace for binding.
+     * Namespace for the binding.
      * </pre>
      *
      * <code>string ns = 1;</code>
@@ -5314,7 +5284,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Namespace for binding.
+     * Namespace for the binding.
      * </pre>
      *
      * <code>string ns = 1;</code>
@@ -5342,7 +5312,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name for binding.
+     * Name for the binding.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -5365,7 +5335,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name for binding.
+     * Name for the binding.
      * </pre>
      *
      * <code>string name = 2;</code>
@@ -5992,7 +5962,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Namespace for binding.
+       * Namespace for the binding.
        * </pre>
        *
        * <code>string ns = 1;</code>
@@ -6014,7 +5984,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Namespace for binding.
+       * Namespace for the binding.
        * </pre>
        *
        * <code>string ns = 1;</code>
@@ -6036,7 +6006,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Namespace for binding.
+       * Namespace for the binding.
        * </pre>
        *
        * <code>string ns = 1;</code>
@@ -6057,7 +6027,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Namespace for binding.
+       * Namespace for the binding.
        * </pre>
        *
        * <code>string ns = 1;</code>
@@ -6074,7 +6044,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Namespace for binding.
+       * Namespace for the binding.
        * </pre>
        *
        * <code>string ns = 1;</code>
@@ -6098,7 +6068,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name for binding.
+       * Name for the binding.
        * </pre>
        *
        * <code>string name = 2;</code>
@@ -6120,7 +6090,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name for binding.
+       * Name for the binding.
        * </pre>
        *
        * <code>string name = 2;</code>
@@ -6142,7 +6112,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name for binding.
+       * Name for the binding.
        * </pre>
        *
        * <code>string name = 2;</code>
@@ -6163,7 +6133,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name for binding.
+       * Name for the binding.
        * </pre>
        *
        * <code>string name = 2;</code>
@@ -6180,7 +6150,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name for binding.
+       * Name for the binding.
        * </pre>
        *
        * <code>string name = 2;</code>
@@ -6837,7 +6807,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Authentication type for subject.
+     * Authentication type for the subject.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType kind = 1;</code>
@@ -6849,7 +6819,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Authentication type for subject.
+     * Authentication type for the subject.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType kind = 1;</code>
@@ -6862,7 +6832,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Namespace for subject.
+     * Namespace for the subject.
      * </pre>
      *
      * <code>string ns = 2;</code>
@@ -6874,7 +6844,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Namespace for subject.
+     * Namespace for the subject.
      * </pre>
      *
      * <code>string ns = 2;</code>
@@ -6887,7 +6857,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name for subject.
+     * Name for the subject.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -6899,7 +6869,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name for subject.
+     * Name for the subject.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -6912,7 +6882,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Kubernetes Subject.
+   * Represents a Kubernetes subject.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.Subject}
@@ -6939,11 +6909,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       return new Subject();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.KubernetesProto
           .internal_static_google_cloud_securitycenter_v1_Kubernetes_Subject_descriptor;
@@ -6963,7 +6928,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Auth types that can be used for Subject's kind field.
+     * Auth types that can be used for the subject's kind field.
      * </pre>
      *
      * Protobuf enum {@code google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType}
@@ -6993,7 +6958,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Users managed by Kubernetes API with credentials stored as Secrets.
+       * Users managed by Kubernetes API with credentials stored as secrets.
        * </pre>
        *
        * <code>SERVICEACCOUNT = 2;</code>
@@ -7036,7 +7001,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Users managed by Kubernetes API with credentials stored as Secrets.
+       * Users managed by Kubernetes API with credentials stored as secrets.
        * </pre>
        *
        * <code>SERVICEACCOUNT = 2;</code>
@@ -7146,7 +7111,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Authentication type for subject.
+     * Authentication type for the subject.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType kind = 1;</code>
@@ -7161,7 +7126,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Authentication type for subject.
+     * Authentication type for the subject.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType kind = 1;</code>
@@ -7185,7 +7150,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Namespace for subject.
+     * Namespace for the subject.
      * </pre>
      *
      * <code>string ns = 2;</code>
@@ -7208,7 +7173,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Namespace for subject.
+     * Namespace for the subject.
      * </pre>
      *
      * <code>string ns = 2;</code>
@@ -7236,7 +7201,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name for subject.
+     * Name for the subject.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -7259,7 +7224,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name for subject.
+     * Name for the subject.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -7466,7 +7431,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a Kubernetes Subject.
+     * Represents a Kubernetes subject.
      * </pre>
      *
      * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.Subject}
@@ -7681,7 +7646,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Authentication type for subject.
+       * Authentication type for the subject.
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType kind = 1;</code>
@@ -7696,7 +7661,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Authentication type for subject.
+       * Authentication type for the subject.
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType kind = 1;</code>
@@ -7714,7 +7679,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Authentication type for subject.
+       * Authentication type for the subject.
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType kind = 1;</code>
@@ -7733,7 +7698,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Authentication type for subject.
+       * Authentication type for the subject.
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType kind = 1;</code>
@@ -7754,7 +7719,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Authentication type for subject.
+       * Authentication type for the subject.
        * </pre>
        *
        * <code>.google.cloud.securitycenter.v1.Kubernetes.Subject.AuthType kind = 1;</code>
@@ -7773,7 +7738,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Namespace for subject.
+       * Namespace for the subject.
        * </pre>
        *
        * <code>string ns = 2;</code>
@@ -7795,7 +7760,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Namespace for subject.
+       * Namespace for the subject.
        * </pre>
        *
        * <code>string ns = 2;</code>
@@ -7817,7 +7782,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Namespace for subject.
+       * Namespace for the subject.
        * </pre>
        *
        * <code>string ns = 2;</code>
@@ -7838,7 +7803,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Namespace for subject.
+       * Namespace for the subject.
        * </pre>
        *
        * <code>string ns = 2;</code>
@@ -7855,7 +7820,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Namespace for subject.
+       * Namespace for the subject.
        * </pre>
        *
        * <code>string ns = 2;</code>
@@ -7879,7 +7844,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name for subject.
+       * Name for the subject.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -7901,7 +7866,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name for subject.
+       * Name for the subject.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -7923,7 +7888,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name for subject.
+       * Name for the subject.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -7944,7 +7909,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name for subject.
+       * Name for the subject.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -7961,7 +7926,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name for subject.
+       * Name for the subject.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -8053,7 +8018,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Group is the API Group of the Resource. "*" means all.
+     * The API group of the resource. "*" means all.
      * </pre>
      *
      * <code>string group = 1;</code>
@@ -8065,7 +8030,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Group is the API Group of the Resource. "*" means all.
+     * The API group of the resource. "*" means all.
      * </pre>
      *
      * <code>string group = 1;</code>
@@ -8107,7 +8072,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name is the name of the resource being requested. Empty means all.
+     * The name of the resource being requested. Empty means all.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -8119,7 +8084,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name is the name of the resource being requested. Empty means all.
+     * The name of the resource being requested. Empty means all.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -8132,7 +8097,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource is the optional resource type requested. "*" means all.
+     * The optional resource type requested. "*" means all.
      * </pre>
      *
      * <code>string resource = 4;</code>
@@ -8144,7 +8109,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource is the optional resource type requested. "*" means all.
+     * The optional resource type requested. "*" means all.
      * </pre>
      *
      * <code>string resource = 4;</code>
@@ -8157,7 +8122,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subresource is the optional subresource type.
+     * The optional subresource type.
      * </pre>
      *
      * <code>string subresource = 5;</code>
@@ -8169,7 +8134,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subresource is the optional subresource type.
+     * The optional subresource type.
      * </pre>
      *
      * <code>string subresource = 5;</code>
@@ -8182,8 +8147,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Verb is a Kubernetes resource API verb, like: get, list, watch, create,
-     * update, delete, proxy. "*" means all.
+     * A Kubernetes resource API verb, like get, list, watch, create, update,
+     * delete, proxy. "*" means all.
      * </pre>
      *
      * <code>string verb = 6;</code>
@@ -8195,8 +8160,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Verb is a Kubernetes resource API verb, like: get, list, watch, create,
-     * update, delete, proxy. "*" means all.
+     * A Kubernetes resource API verb, like get, list, watch, create, update,
+     * delete, proxy. "*" means all.
      * </pre>
      *
      * <code>string verb = 6;</code>
@@ -8209,7 +8174,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version is the API Version of the Resource. "*" means all.
+     * The API version of the resource. "*" means all.
      * </pre>
      *
      * <code>string version = 7;</code>
@@ -8221,7 +8186,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version is the API Version of the Resource. "*" means all.
+     * The API version of the resource. "*" means all.
      * </pre>
      *
      * <code>string version = 7;</code>
@@ -8234,8 +8199,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Conveys information about a Kubernetes access review (e.g. kubectl auth
-   * can-i ...) that was involved in a finding.
+   * Conveys information about a Kubernetes access review (such as one returned
+   * by a [`kubectl auth
+   * can-i`](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#checking-api-access)
+   * command) that was involved in a finding.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.AccessReview}
@@ -8266,11 +8233,6 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
       return new AccessReview();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.v1.KubernetesProto
           .internal_static_google_cloud_securitycenter_v1_Kubernetes_AccessReview_descriptor;
@@ -8294,7 +8256,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Group is the API Group of the Resource. "*" means all.
+     * The API group of the resource. "*" means all.
      * </pre>
      *
      * <code>string group = 1;</code>
@@ -8317,7 +8279,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Group is the API Group of the Resource. "*" means all.
+     * The API group of the resource. "*" means all.
      * </pre>
      *
      * <code>string group = 1;</code>
@@ -8400,7 +8362,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name is the name of the resource being requested. Empty means all.
+     * The name of the resource being requested. Empty means all.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -8423,7 +8385,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name is the name of the resource being requested. Empty means all.
+     * The name of the resource being requested. Empty means all.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -8451,7 +8413,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource is the optional resource type requested. "*" means all.
+     * The optional resource type requested. "*" means all.
      * </pre>
      *
      * <code>string resource = 4;</code>
@@ -8474,7 +8436,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource is the optional resource type requested. "*" means all.
+     * The optional resource type requested. "*" means all.
      * </pre>
      *
      * <code>string resource = 4;</code>
@@ -8502,7 +8464,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subresource is the optional subresource type.
+     * The optional subresource type.
      * </pre>
      *
      * <code>string subresource = 5;</code>
@@ -8525,7 +8487,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subresource is the optional subresource type.
+     * The optional subresource type.
      * </pre>
      *
      * <code>string subresource = 5;</code>
@@ -8553,8 +8515,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Verb is a Kubernetes resource API verb, like: get, list, watch, create,
-     * update, delete, proxy. "*" means all.
+     * A Kubernetes resource API verb, like get, list, watch, create, update,
+     * delete, proxy. "*" means all.
      * </pre>
      *
      * <code>string verb = 6;</code>
@@ -8577,8 +8539,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Verb is a Kubernetes resource API verb, like: get, list, watch, create,
-     * update, delete, proxy. "*" means all.
+     * A Kubernetes resource API verb, like get, list, watch, create, update,
+     * delete, proxy. "*" means all.
      * </pre>
      *
      * <code>string verb = 6;</code>
@@ -8606,7 +8568,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version is the API Version of the Resource. "*" means all.
+     * The API version of the resource. "*" means all.
      * </pre>
      *
      * <code>string version = 7;</code>
@@ -8629,7 +8591,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version is the API Version of the Resource. "*" means all.
+     * The API version of the resource. "*" means all.
      * </pre>
      *
      * <code>string version = 7;</code>
@@ -8868,8 +8830,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Conveys information about a Kubernetes access review (e.g. kubectl auth
-     * can-i ...) that was involved in a finding.
+     * Conveys information about a Kubernetes access review (such as one returned
+     * by a [`kubectl auth
+     * can-i`](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#checking-api-access)
+     * command) that was involved in a finding.
      * </pre>
      *
      * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.AccessReview}
@@ -9149,7 +9113,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Group is the API Group of the Resource. "*" means all.
+       * The API group of the resource. "*" means all.
        * </pre>
        *
        * <code>string group = 1;</code>
@@ -9171,7 +9135,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Group is the API Group of the Resource. "*" means all.
+       * The API group of the resource. "*" means all.
        * </pre>
        *
        * <code>string group = 1;</code>
@@ -9193,7 +9157,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Group is the API Group of the Resource. "*" means all.
+       * The API group of the resource. "*" means all.
        * </pre>
        *
        * <code>string group = 1;</code>
@@ -9214,7 +9178,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Group is the API Group of the Resource. "*" means all.
+       * The API group of the resource. "*" means all.
        * </pre>
        *
        * <code>string group = 1;</code>
@@ -9231,7 +9195,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Group is the API Group of the Resource. "*" means all.
+       * The API group of the resource. "*" means all.
        * </pre>
        *
        * <code>string group = 1;</code>
@@ -9371,7 +9335,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name is the name of the resource being requested. Empty means all.
+       * The name of the resource being requested. Empty means all.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -9393,7 +9357,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name is the name of the resource being requested. Empty means all.
+       * The name of the resource being requested. Empty means all.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -9415,7 +9379,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name is the name of the resource being requested. Empty means all.
+       * The name of the resource being requested. Empty means all.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -9436,7 +9400,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name is the name of the resource being requested. Empty means all.
+       * The name of the resource being requested. Empty means all.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -9453,7 +9417,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Name is the name of the resource being requested. Empty means all.
+       * The name of the resource being requested. Empty means all.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -9477,7 +9441,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Resource is the optional resource type requested. "*" means all.
+       * The optional resource type requested. "*" means all.
        * </pre>
        *
        * <code>string resource = 4;</code>
@@ -9499,7 +9463,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Resource is the optional resource type requested. "*" means all.
+       * The optional resource type requested. "*" means all.
        * </pre>
        *
        * <code>string resource = 4;</code>
@@ -9521,7 +9485,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Resource is the optional resource type requested. "*" means all.
+       * The optional resource type requested. "*" means all.
        * </pre>
        *
        * <code>string resource = 4;</code>
@@ -9542,7 +9506,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Resource is the optional resource type requested. "*" means all.
+       * The optional resource type requested. "*" means all.
        * </pre>
        *
        * <code>string resource = 4;</code>
@@ -9559,7 +9523,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Resource is the optional resource type requested. "*" means all.
+       * The optional resource type requested. "*" means all.
        * </pre>
        *
        * <code>string resource = 4;</code>
@@ -9583,7 +9547,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Subresource is the optional subresource type.
+       * The optional subresource type.
        * </pre>
        *
        * <code>string subresource = 5;</code>
@@ -9605,7 +9569,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Subresource is the optional subresource type.
+       * The optional subresource type.
        * </pre>
        *
        * <code>string subresource = 5;</code>
@@ -9627,7 +9591,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Subresource is the optional subresource type.
+       * The optional subresource type.
        * </pre>
        *
        * <code>string subresource = 5;</code>
@@ -9648,7 +9612,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Subresource is the optional subresource type.
+       * The optional subresource type.
        * </pre>
        *
        * <code>string subresource = 5;</code>
@@ -9665,7 +9629,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Subresource is the optional subresource type.
+       * The optional subresource type.
        * </pre>
        *
        * <code>string subresource = 5;</code>
@@ -9689,8 +9653,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Verb is a Kubernetes resource API verb, like: get, list, watch, create,
-       * update, delete, proxy. "*" means all.
+       * A Kubernetes resource API verb, like get, list, watch, create, update,
+       * delete, proxy. "*" means all.
        * </pre>
        *
        * <code>string verb = 6;</code>
@@ -9712,8 +9676,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Verb is a Kubernetes resource API verb, like: get, list, watch, create,
-       * update, delete, proxy. "*" means all.
+       * A Kubernetes resource API verb, like get, list, watch, create, update,
+       * delete, proxy. "*" means all.
        * </pre>
        *
        * <code>string verb = 6;</code>
@@ -9735,8 +9699,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Verb is a Kubernetes resource API verb, like: get, list, watch, create,
-       * update, delete, proxy. "*" means all.
+       * A Kubernetes resource API verb, like get, list, watch, create, update,
+       * delete, proxy. "*" means all.
        * </pre>
        *
        * <code>string verb = 6;</code>
@@ -9757,8 +9721,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Verb is a Kubernetes resource API verb, like: get, list, watch, create,
-       * update, delete, proxy. "*" means all.
+       * A Kubernetes resource API verb, like get, list, watch, create, update,
+       * delete, proxy. "*" means all.
        * </pre>
        *
        * <code>string verb = 6;</code>
@@ -9775,8 +9739,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Verb is a Kubernetes resource API verb, like: get, list, watch, create,
-       * update, delete, proxy. "*" means all.
+       * A Kubernetes resource API verb, like get, list, watch, create, update,
+       * delete, proxy. "*" means all.
        * </pre>
        *
        * <code>string verb = 6;</code>
@@ -9800,7 +9764,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Version is the API Version of the Resource. "*" means all.
+       * The API version of the resource. "*" means all.
        * </pre>
        *
        * <code>string version = 7;</code>
@@ -9822,7 +9786,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Version is the API Version of the Resource. "*" means all.
+       * The API version of the resource. "*" means all.
        * </pre>
        *
        * <code>string version = 7;</code>
@@ -9844,7 +9808,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Version is the API Version of the Resource. "*" means all.
+       * The API version of the resource. "*" means all.
        * </pre>
        *
        * <code>string version = 7;</code>
@@ -9865,7 +9829,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Version is the API Version of the Resource. "*" means all.
+       * The API version of the resource. "*" means all.
        * </pre>
        *
        * <code>string version = 7;</code>
@@ -9882,7 +9846,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Version is the API Version of the Resource. "*" means all.
+       * The API version of the resource. "*" means all.
        * </pre>
        *
        * <code>string version = 7;</code>
@@ -9974,8 +9938,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kubernetes Pods associated with the finding. This field will contain Pod
-   * records for each container that is owned by a Pod.
+   * Kubernetes
+   * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * associated with the finding. This field contains Pod records for each
+   * container that is owned by a Pod.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -9988,8 +9954,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kubernetes Pods associated with the finding. This field will contain Pod
-   * records for each container that is owned by a Pod.
+   * Kubernetes
+   * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * associated with the finding. This field contains Pod records for each
+   * container that is owned by a Pod.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -10003,8 +9971,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kubernetes Pods associated with the finding. This field will contain Pod
-   * records for each container that is owned by a Pod.
+   * Kubernetes
+   * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * associated with the finding. This field contains Pod records for each
+   * container that is owned by a Pod.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -10017,8 +9987,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kubernetes Pods associated with the finding. This field will contain Pod
-   * records for each container that is owned by a Pod.
+   * Kubernetes
+   * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * associated with the finding. This field contains Pod records for each
+   * container that is owned by a Pod.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -10031,8 +10003,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kubernetes Pods associated with the finding. This field will contain Pod
-   * records for each container that is owned by a Pod.
+   * Kubernetes
+   * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * associated with the finding. This field contains Pod records for each
+   * container that is owned by a Pod.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -10050,7 +10024,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides Kubernetes Node information.
+   * Provides Kubernetes
+   * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+   * information.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -10063,7 +10039,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides Kubernetes Node information.
+   * Provides Kubernetes
+   * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+   * information.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -10077,7 +10055,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides Kubernetes Node information.
+   * Provides Kubernetes
+   * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+   * information.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -10090,7 +10070,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides Kubernetes Node information.
+   * Provides Kubernetes
+   * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+   * information.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -10103,7 +10085,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides Kubernetes Node information.
+   * Provides Kubernetes
+   * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+   * information.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -10121,8 +10105,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * GKE Node Pools associated with the finding. This field will
-   * contain NodePool information for each Node, when it is available.
+   * GKE [node
+   * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+   * associated with the finding. This field contains node pool information for
+   * each node, when it is available.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -10135,8 +10121,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * GKE Node Pools associated with the finding. This field will
-   * contain NodePool information for each Node, when it is available.
+   * GKE [node
+   * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+   * associated with the finding. This field contains node pool information for
+   * each node, when it is available.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -10150,8 +10138,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * GKE Node Pools associated with the finding. This field will
-   * contain NodePool information for each Node, when it is available.
+   * GKE [node
+   * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+   * associated with the finding. This field contains node pool information for
+   * each node, when it is available.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -10164,8 +10154,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * GKE Node Pools associated with the finding. This field will
-   * contain NodePool information for each Node, when it is available.
+   * GKE [node
+   * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+   * associated with the finding. This field contains node pool information for
+   * each node, when it is available.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -10178,8 +10170,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * GKE Node Pools associated with the finding. This field will
-   * contain NodePool information for each Node, when it is available.
+   * GKE [node
+   * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+   * associated with the finding. This field contains node pool information for
+   * each node, when it is available.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -10198,8 +10192,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides Kubernetes role information for findings that involve
-   * Roles or ClusterRoles.
+   * Provides Kubernetes role information for findings that involve [Roles or
+   * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -10212,8 +10206,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides Kubernetes role information for findings that involve
-   * Roles or ClusterRoles.
+   * Provides Kubernetes role information for findings that involve [Roles or
+   * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -10227,8 +10221,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides Kubernetes role information for findings that involve
-   * Roles or ClusterRoles.
+   * Provides Kubernetes role information for findings that involve [Roles or
+   * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -10241,8 +10235,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides Kubernetes role information for findings that involve
-   * Roles or ClusterRoles.
+   * Provides Kubernetes role information for findings that involve [Roles or
+   * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -10255,8 +10249,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides Kubernetes role information for findings that involve
-   * Roles or ClusterRoles.
+   * Provides Kubernetes role information for findings that involve [Roles or
+   * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -10275,7 +10269,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Provides Kubernetes role binding information for findings that involve
-   * RoleBindings or ClusterRoleBindings.
+   * [RoleBindings or
+   * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -10289,7 +10284,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Provides Kubernetes role binding information for findings that involve
-   * RoleBindings or ClusterRoleBindings.
+   * [RoleBindings or
+   * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -10304,7 +10300,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Provides Kubernetes role binding information for findings that involve
-   * RoleBindings or ClusterRoleBindings.
+   * [RoleBindings or
+   * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -10318,7 +10315,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Provides Kubernetes role binding information for findings that involve
-   * RoleBindings or ClusterRoleBindings.
+   * [RoleBindings or
+   * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -10332,7 +10330,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Provides Kubernetes role binding information for findings that involve
-   * RoleBindings or ClusterRoleBindings.
+   * [RoleBindings or
+   * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -10351,8 +10350,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides information on any Kubernetes access reviews (i.e. privilege
-   * checks) relevant to the finding.
+   * Provides information on any Kubernetes access reviews (privilege checks)
+   * relevant to the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -10367,8 +10366,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides information on any Kubernetes access reviews (i.e. privilege
-   * checks) relevant to the finding.
+   * Provides information on any Kubernetes access reviews (privilege checks)
+   * relevant to the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -10384,8 +10383,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides information on any Kubernetes access reviews (i.e. privilege
-   * checks) relevant to the finding.
+   * Provides information on any Kubernetes access reviews (privilege checks)
+   * relevant to the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -10399,8 +10398,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides information on any Kubernetes access reviews (i.e. privilege
-   * checks) relevant to the finding.
+   * Provides information on any Kubernetes access reviews (privilege checks)
+   * relevant to the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -10414,8 +10413,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides information on any Kubernetes access reviews (i.e. privilege
-   * checks) relevant to the finding.
+   * Provides information on any Kubernetes access reviews (privilege checks)
+   * relevant to the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -11176,8 +11175,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11193,8 +11194,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11210,8 +11213,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11227,8 +11232,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11250,8 +11257,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11271,8 +11280,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11294,8 +11305,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11317,8 +11330,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11338,8 +11353,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11359,8 +11376,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11380,8 +11399,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11400,8 +11421,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11420,8 +11443,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11433,8 +11458,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11450,8 +11477,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11468,8 +11497,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11482,8 +11513,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11497,8 +11530,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes Pods associated with the finding. This field will contain Pod
-     * records for each container that is owned by a Pod.
+     * Kubernetes
+     * [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * associated with the finding. This field contains Pod records for each
+     * container that is owned by a Pod.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Pod pods = 1;</code>
@@ -11546,7 +11581,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11562,7 +11599,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11578,7 +11617,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11594,7 +11635,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11616,7 +11659,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11636,7 +11681,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11658,7 +11705,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11680,7 +11729,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11700,7 +11751,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11720,7 +11773,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11740,7 +11795,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11759,7 +11816,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11778,7 +11837,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11790,7 +11851,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11807,7 +11870,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11824,7 +11889,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11837,7 +11904,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11851,7 +11920,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes Node information.
+     * Provides Kubernetes
+     * [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes)
+     * information.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Node nodes = 2;</code>
@@ -11900,8 +11971,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -11918,8 +11991,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -11935,8 +12010,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -11952,8 +12029,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -11976,8 +12055,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -11997,8 +12078,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12020,8 +12103,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12044,8 +12129,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12065,8 +12152,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12086,8 +12175,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12108,8 +12199,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12128,8 +12221,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12148,8 +12243,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12162,8 +12259,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12180,8 +12279,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12198,8 +12299,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12212,8 +12315,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12228,8 +12333,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GKE Node Pools associated with the finding. This field will
-     * contain NodePool information for each Node, when it is available.
+     * GKE [node
+     * pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools)
+     * associated with the finding. This field contains node pool information for
+     * each node, when it is available.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.NodePool node_pools = 3;</code>
@@ -12277,8 +12384,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12294,8 +12401,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12311,8 +12418,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12328,8 +12435,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12351,8 +12458,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12372,8 +12479,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12395,8 +12502,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12418,8 +12525,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12439,8 +12546,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12460,8 +12567,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12481,8 +12588,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12501,8 +12608,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12521,8 +12628,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12534,8 +12641,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12552,8 +12659,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12570,8 +12677,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12584,8 +12691,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12599,8 +12706,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides Kubernetes role information for findings that involve
-     * Roles or ClusterRoles.
+     * Provides Kubernetes role information for findings that involve [Roles or
+     * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Role roles = 4;</code>
@@ -12650,7 +12757,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12667,7 +12775,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12684,7 +12793,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12701,7 +12811,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12725,7 +12836,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12746,7 +12858,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12769,7 +12882,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12793,7 +12907,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12814,7 +12929,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12835,7 +12951,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12857,7 +12974,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12877,7 +12995,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12897,7 +13016,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12911,7 +13031,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12929,7 +13050,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12947,7 +13069,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12961,7 +13084,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -12977,7 +13101,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provides Kubernetes role binding information for findings that involve
-     * RoleBindings or ClusterRoleBindings.
+     * [RoleBindings or
+     * ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Binding bindings = 5;</code>
@@ -13026,8 +13151,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13045,8 +13170,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13063,8 +13188,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13081,8 +13206,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13106,8 +13231,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13129,8 +13254,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13154,8 +13279,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13179,8 +13304,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13201,8 +13326,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13224,8 +13349,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13247,8 +13372,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13268,8 +13393,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13289,8 +13414,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13304,8 +13429,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13323,8 +13448,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13343,8 +13468,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13360,8 +13485,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;
@@ -13378,8 +13503,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides information on any Kubernetes access reviews (i.e. privilege
-     * checks) relevant to the finding.
+     * Provides information on any Kubernetes access reviews (privilege checks)
+     * relevant to the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.AccessReview access_reviews = 6;

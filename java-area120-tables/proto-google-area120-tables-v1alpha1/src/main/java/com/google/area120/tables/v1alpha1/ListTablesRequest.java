@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
     return new ListTablesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.area120.tables.v1alpha1.TablesProto
         .internal_static_google_area120_tables_v1alpha1_ListTablesRequest_descriptor;
@@ -75,6 +70,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The maximum number of tables to return. The service may return fewer than
    * this value.
+   *
    * If unspecified, at most 20 tables are returned. The maximum value is 100;
    * values above 100 are coerced to 100.
    * </pre>
@@ -98,6 +94,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * A page token, received from a previous `ListTables` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListTables` must match
    * the call that provided the page token.
    * </pre>
@@ -124,6 +121,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * A page token, received from a previous `ListTables` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListTables` must match
    * the call that provided the page token.
    * </pre>
@@ -516,6 +514,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The maximum number of tables to return. The service may return fewer than
      * this value.
+     *
      * If unspecified, at most 20 tables are returned. The maximum value is 100;
      * values above 100 are coerced to 100.
      * </pre>
@@ -534,6 +533,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The maximum number of tables to return. The service may return fewer than
      * this value.
+     *
      * If unspecified, at most 20 tables are returned. The maximum value is 100;
      * values above 100 are coerced to 100.
      * </pre>
@@ -556,6 +556,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The maximum number of tables to return. The service may return fewer than
      * this value.
+     *
      * If unspecified, at most 20 tables are returned. The maximum value is 100;
      * values above 100 are coerced to 100.
      * </pre>
@@ -578,6 +579,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A page token, received from a previous `ListTables` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListTables` must match
      * the call that provided the page token.
      * </pre>
@@ -603,6 +605,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A page token, received from a previous `ListTables` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListTables` must match
      * the call that provided the page token.
      * </pre>
@@ -628,6 +631,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A page token, received from a previous `ListTables` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListTables` must match
      * the call that provided the page token.
      * </pre>
@@ -652,6 +656,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A page token, received from a previous `ListTables` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListTables` must match
      * the call that provided the page token.
      * </pre>
@@ -672,6 +677,7 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A page token, received from a previous `ListTables` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListTables` must match
      * the call that provided the page token.
      * </pre>

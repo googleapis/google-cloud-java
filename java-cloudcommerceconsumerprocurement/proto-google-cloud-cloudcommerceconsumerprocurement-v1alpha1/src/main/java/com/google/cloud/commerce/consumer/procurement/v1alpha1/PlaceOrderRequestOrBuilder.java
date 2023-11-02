@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,6 @@ public interface PlaceOrderRequestOrBuilder
    *
    * <pre>
    * Required. The user-specified name of the order being placed.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -72,7 +71,6 @@ public interface PlaceOrderRequestOrBuilder
    *
    * <pre>
    * Required. The user-specified name of the order being placed.
-   * Must be unique within a billing account.
    * </pre>
    *
    * <code>string display_name = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -85,7 +83,8 @@ public interface PlaceOrderRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -98,7 +97,8 @@ public interface PlaceOrderRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -110,7 +110,8 @@ public interface PlaceOrderRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -122,7 +123,8 @@ public interface PlaceOrderRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -136,7 +138,8 @@ public interface PlaceOrderRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Places order for offer. Required when an offer-based order is being placed.
+   * Optional. Places order for offer. Required when an offer-based order is
+   * being placed.
    * </pre>
    *
    * <code>
@@ -153,6 +156,7 @@ public interface PlaceOrderRequestOrBuilder
    * Optional. A unique identifier for this request.
    * The server will ignore subsequent requests that provide a duplicate request
    * ID for at least 120 minutes after the first request.
+   *
    * The request ID must be a valid
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
    * </pre>
@@ -169,6 +173,7 @@ public interface PlaceOrderRequestOrBuilder
    * Optional. A unique identifier for this request.
    * The server will ignore subsequent requests that provide a duplicate request
    * ID for at least 120 minutes after the first request.
+   *
    * The request ID must be a valid
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,8 +41,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
 
   private ModelContainerSpec() {
     imageUri_ = "";
-    command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    command_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    args_ = com.google.protobuf.LazyStringArrayList.emptyList();
     env_ = java.util.Collections.emptyList();
     ports_ = java.util.Collections.emptyList();
     predictRoute_ = "";
@@ -53,11 +53,6 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ModelContainerSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -89,12 +84,15 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * publishing
    * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
    * including permissions requirements for the Vertex AI Service Agent.
+   *
    * The container image is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
    * stored internally, and this original path is afterwards not used.
+   *
    * To learn about the requirements for the Docker image itself, see
    * [Custom container
    * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#).
+   *
    * You can use the URI to one of Vertex AI's [pre-built container images for
    * prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
    * in this field.
@@ -128,12 +126,15 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * publishing
    * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
    * including permissions requirements for the Vertex AI Service Agent.
+   *
    * The container image is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
    * stored internally, and this original path is afterwards not used.
+   *
    * To learn about the requirements for the Docker image itself, see
    * [Custom container
    * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#).
+   *
    * You can use the URI to one of Vertex AI's [pre-built container images for
    * prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
    * in this field.
@@ -161,7 +162,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
   public static final int COMMAND_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList command_;
+  private com.google.protobuf.LazyStringArrayList command_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -171,6 +173,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
    * Specify this field as an array of executable and arguments, similar to a
    * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+   *
    * If you do not specify this field, then the container's `ENTRYPOINT` runs,
    * in conjunction with the
    * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -179,12 +182,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
    * `CMD` and `ENTRYPOINT`
    * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+   *
    * If you specify this field, then you can also specify the `args` field to
    * provide additional arguments for this command. However, if you specify this
    * field, then the container's `CMD` is ignored. See the
    * [Kubernetes documentation about how the
    * `command` and `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+   *
    * In this field, you can reference [environment variables set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
    * and environment variables set in the
@@ -216,6 +221,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
    * Specify this field as an array of executable and arguments, similar to a
    * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+   *
    * If you do not specify this field, then the container's `ENTRYPOINT` runs,
    * in conjunction with the
    * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -224,12 +230,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
    * `CMD` and `ENTRYPOINT`
    * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+   *
    * If you specify this field, then you can also specify the `args` field to
    * provide additional arguments for this command. However, if you specify this
    * field, then the container's `CMD` is ignored. See the
    * [Kubernetes documentation about how the
    * `command` and `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+   *
    * In this field, you can reference [environment variables set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
    * and environment variables set in the
@@ -261,6 +269,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
    * Specify this field as an array of executable and arguments, similar to a
    * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+   *
    * If you do not specify this field, then the container's `ENTRYPOINT` runs,
    * in conjunction with the
    * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -269,12 +278,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
    * `CMD` and `ENTRYPOINT`
    * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+   *
    * If you specify this field, then you can also specify the `args` field to
    * provide additional arguments for this command. However, if you specify this
    * field, then the container's `CMD` is ignored. See the
    * [Kubernetes documentation about how the
    * `command` and `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+   *
    * In this field, you can reference [environment variables set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
    * and environment variables set in the
@@ -307,6 +318,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
    * Specify this field as an array of executable and arguments, similar to a
    * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+   *
    * If you do not specify this field, then the container's `ENTRYPOINT` runs,
    * in conjunction with the
    * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -315,12 +327,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
    * `CMD` and `ENTRYPOINT`
    * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+   *
    * If you specify this field, then you can also specify the `args` field to
    * provide additional arguments for this command. However, if you specify this
    * field, then the container's `CMD` is ignored. See the
    * [Kubernetes documentation about how the
    * `command` and `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+   *
    * In this field, you can reference [environment variables set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
    * and environment variables set in the
@@ -348,7 +362,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
   public static final int ARGS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList args_;
+  private com.google.protobuf.LazyStringArrayList args_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -358,18 +373,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
    * this field as an array of executable and arguments, similar to a Docker
    * `CMD`'s "default parameters" form.
+   *
    * If you don't specify this field but do specify the
    * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
    * then the command from the `command` field runs without any additional
    * arguments. See the [Kubernetes documentation about how the `command` and
    * `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+   *
    * If you don't specify this field and don't specify the `command` field,
    * then the container's
    * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
    * `CMD` determine what runs based on their default behavior. See the Docker
    * documentation about [how `CMD` and `ENTRYPOINT`
    * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+   *
    * In this field, you can reference [environment variables
    * set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -402,18 +420,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
    * this field as an array of executable and arguments, similar to a Docker
    * `CMD`'s "default parameters" form.
+   *
    * If you don't specify this field but do specify the
    * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
    * then the command from the `command` field runs without any additional
    * arguments. See the [Kubernetes documentation about how the `command` and
    * `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+   *
    * If you don't specify this field and don't specify the `command` field,
    * then the container's
    * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
    * `CMD` determine what runs based on their default behavior. See the Docker
    * documentation about [how `CMD` and `ENTRYPOINT`
    * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+   *
    * In this field, you can reference [environment variables
    * set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -446,18 +467,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
    * this field as an array of executable and arguments, similar to a Docker
    * `CMD`'s "default parameters" form.
+   *
    * If you don't specify this field but do specify the
    * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
    * then the command from the `command` field runs without any additional
    * arguments. See the [Kubernetes documentation about how the `command` and
    * `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+   *
    * If you don't specify this field and don't specify the `command` field,
    * then the container's
    * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
    * `CMD` determine what runs based on their default behavior. See the Docker
    * documentation about [how `CMD` and `ENTRYPOINT`
    * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+   *
    * In this field, you can reference [environment variables
    * set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -491,18 +515,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
    * this field as an array of executable and arguments, similar to a Docker
    * `CMD`'s "default parameters" form.
+   *
    * If you don't specify this field but do specify the
    * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
    * then the command from the `command` field runs without any additional
    * arguments. See the [Kubernetes documentation about how the `command` and
    * `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+   *
    * If you don't specify this field and don't specify the `command` field,
    * then the container's
    * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
    * `CMD` determine what runs based on their default behavior. See the Docker
    * documentation about [how `CMD` and `ENTRYPOINT`
    * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+   *
    * In this field, you can reference [environment variables
    * set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -539,12 +566,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * Immutable. List of environment variables to set in the container. After the
    * container starts running, code running in the container can read these
    * environment variables.
+   *
    * Additionally, the
    * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
    * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
    * reference these variables. Later entries in this list can also reference
    * earlier entries. For example, the following example sets the variable
    * `VAR_2` to have the value `foo bar`:
+   *
    * ```json
    * [
    *   {
@@ -557,8 +586,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *   }
    * ]
    * ```
+   *
    * If you switch the order of the variables in the example, then the expansion
    * does not occur.
+   *
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -579,12 +610,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * Immutable. List of environment variables to set in the container. After the
    * container starts running, code running in the container can read these
    * environment variables.
+   *
    * Additionally, the
    * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
    * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
    * reference these variables. Later entries in this list can also reference
    * earlier entries. For example, the following example sets the variable
    * `VAR_2` to have the value `foo bar`:
+   *
    * ```json
    * [
    *   {
@@ -597,8 +630,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *   }
    * ]
    * ```
+   *
    * If you switch the order of the variables in the example, then the expansion
    * does not occur.
+   *
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -620,12 +655,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * Immutable. List of environment variables to set in the container. After the
    * container starts running, code running in the container can read these
    * environment variables.
+   *
    * Additionally, the
    * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
    * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
    * reference these variables. Later entries in this list can also reference
    * earlier entries. For example, the following example sets the variable
    * `VAR_2` to have the value `foo bar`:
+   *
    * ```json
    * [
    *   {
@@ -638,8 +675,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *   }
    * ]
    * ```
+   *
    * If you switch the order of the variables in the example, then the expansion
    * does not occur.
+   *
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -660,12 +699,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * Immutable. List of environment variables to set in the container. After the
    * container starts running, code running in the container can read these
    * environment variables.
+   *
    * Additionally, the
    * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
    * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
    * reference these variables. Later entries in this list can also reference
    * earlier entries. For example, the following example sets the variable
    * `VAR_2` to have the value `foo bar`:
+   *
    * ```json
    * [
    *   {
@@ -678,8 +719,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *   }
    * ]
    * ```
+   *
    * If you switch the order of the variables in the example, then the expansion
    * does not occur.
+   *
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -700,12 +743,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * Immutable. List of environment variables to set in the container. After the
    * container starts running, code running in the container can read these
    * environment variables.
+   *
    * Additionally, the
    * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
    * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
    * reference these variables. Later entries in this list can also reference
    * earlier entries. For example, the following example sets the variable
    * `VAR_2` to have the value `foo bar`:
+   *
    * ```json
    * [
    *   {
@@ -718,8 +763,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *   }
    * ]
    * ```
+   *
    * If you switch the order of the variables in the example, then the expansion
    * does not occur.
+   *
    * This field corresponds to the `env` field of the Kubernetes Containers
    * [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -748,7 +795,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [liveness and health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
    * to this port.
+   *
    * If you do not specify this field, it defaults to following value:
+   *
    * ```json
    * [
    *   {
@@ -756,6 +805,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *   }
    * ]
    * ```
+   *
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
@@ -780,7 +830,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [liveness and health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
    * to this port.
+   *
    * If you do not specify this field, it defaults to following value:
+   *
    * ```json
    * [
    *   {
@@ -788,6 +840,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *   }
    * ]
    * ```
+   *
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
@@ -813,7 +866,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [liveness and health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
    * to this port.
+   *
    * If you do not specify this field, it defaults to following value:
+   *
    * ```json
    * [
    *   {
@@ -821,6 +876,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *   }
    * ]
    * ```
+   *
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
@@ -845,7 +901,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [liveness and health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
    * to this port.
+   *
    * If you do not specify this field, it defaults to following value:
+   *
    * ```json
    * [
    *   {
@@ -853,6 +911,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *   }
    * ]
    * ```
+   *
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
@@ -877,7 +936,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [liveness and health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
    * to this port.
+   *
    * If you do not specify this field, it defaults to following value:
+   *
    * ```json
    * [
    *   {
@@ -885,6 +946,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    *   }
    * ]
    * ```
+   *
    * Vertex AI does not use ports other than the first one listed. This field
    * corresponds to the `ports` field of the Kubernetes Containers
    * [v1 core
@@ -913,21 +975,25 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1.PredictionService.Predict]
    * to this path on the container's IP address and port. Vertex AI then returns
    * the container's response in the API response.
+   *
    * For example, if you set this field to `/foo`, then when Vertex AI
    * receives a prediction request, it forwards the request body in a POST
    * request to the `/foo` path on the port of your container specified by the
    * first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+   *
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an
    * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
    * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
    * The placeholders in this value are replaced as follows:
+   *
    * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
    *   Endpoint.name][] field of the Endpoint where this Model has been
    *   deployed. (Vertex AI makes this value available to your container code
    *   as the [`AIP_ENDPOINT_ID` environment
    *  variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+   *
    * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
    * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
    * `DeployedModel`.
@@ -961,21 +1027,25 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1.PredictionService.Predict]
    * to this path on the container's IP address and port. Vertex AI then returns
    * the container's response in the API response.
+   *
    * For example, if you set this field to `/foo`, then when Vertex AI
    * receives a prediction request, it forwards the request body in a POST
    * request to the `/foo` path on the port of your container specified by the
    * first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+   *
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an
    * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
    * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
    * The placeholders in this value are replaced as follows:
+   *
    * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
    *   Endpoint.name][] field of the Endpoint where this Model has been
    *   deployed. (Vertex AI makes this value available to your container code
    *   as the [`AIP_ENDPOINT_ID` environment
    *  variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+   *
    * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
    * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
    * `DeployedModel`.
@@ -1014,20 +1084,24 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * address and port to check that the container is healthy. Read more about
    * [health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#health).
+   *
    * For example, if you set this field to `/bar`, then Vertex AI
    * intermittently sends a GET request to the `/bar` path on the port of your
    * container specified by the first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+   *
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an
    * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
    * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
    * The placeholders in this value are replaced as follows:
+   *
    * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
    *   Endpoint.name][] field of the Endpoint where this Model has been
    *   deployed. (Vertex AI makes this value available to your container code
    *   as the [`AIP_ENDPOINT_ID` environment
    *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+   *
    * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
    * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
    * `DeployedModel`.
@@ -1061,20 +1135,24 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * address and port to check that the container is healthy. Read more about
    * [health
    * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#health).
+   *
    * For example, if you set this field to `/bar`, then Vertex AI
    * intermittently sends a GET request to the `/bar` path on the port of your
    * container specified by the first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+   *
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an
    * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
    * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
    * The placeholders in this value are replaced as follows:
+   *
    * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
    *   Endpoint.name][] field of the Endpoint where this Model has been
    *   deployed. (Vertex AI makes this value available to your container code
    *   as the [`AIP_ENDPOINT_ID` environment
    *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+   *
    * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
    * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
    * `DeployedModel`.
@@ -1373,10 +1451,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       imageUri_ = "";
-      command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      command_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (envBuilder_ == null) {
         env_ = java.util.Collections.emptyList();
       } else {
@@ -1430,16 +1506,6 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
 
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1.ModelContainerSpec result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        command_ = command_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.command_ = command_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.args_ = args_;
       if (envBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
           env_ = java.util.Collections.unmodifiableList(env_);
@@ -1464,6 +1530,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.imageUri_ = imageUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        command_.makeImmutable();
+        result.command_ = command_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        args_.makeImmutable();
+        result.args_ = args_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.predictRoute_ = predictRoute_;
@@ -1527,7 +1601,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       if (!other.command_.isEmpty()) {
         if (command_.isEmpty()) {
           command_ = other.command_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureCommandIsMutable();
           command_.addAll(other.command_);
@@ -1537,7 +1611,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -1722,12 +1796,15 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * publishing
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
      * including permissions requirements for the Vertex AI Service Agent.
+     *
      * The container image is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
      * stored internally, and this original path is afterwards not used.
+     *
      * To learn about the requirements for the Docker image itself, see
      * [Custom container
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#).
+     *
      * You can use the URI to one of Vertex AI's [pre-built container images for
      * prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
      * in this field.
@@ -1760,12 +1837,15 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * publishing
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
      * including permissions requirements for the Vertex AI Service Agent.
+     *
      * The container image is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
      * stored internally, and this original path is afterwards not used.
+     *
      * To learn about the requirements for the Docker image itself, see
      * [Custom container
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#).
+     *
      * You can use the URI to one of Vertex AI's [pre-built container images for
      * prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
      * in this field.
@@ -1798,12 +1878,15 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * publishing
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
      * including permissions requirements for the Vertex AI Service Agent.
+     *
      * The container image is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
      * stored internally, and this original path is afterwards not used.
+     *
      * To learn about the requirements for the Docker image itself, see
      * [Custom container
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#).
+     *
      * You can use the URI to one of Vertex AI's [pre-built container images for
      * prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
      * in this field.
@@ -1835,12 +1918,15 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * publishing
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
      * including permissions requirements for the Vertex AI Service Agent.
+     *
      * The container image is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
      * stored internally, and this original path is afterwards not used.
+     *
      * To learn about the requirements for the Docker image itself, see
      * [Custom container
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#).
+     *
      * You can use the URI to one of Vertex AI's [pre-built container images for
      * prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
      * in this field.
@@ -1868,12 +1954,15 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * publishing
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
      * including permissions requirements for the Vertex AI Service Agent.
+     *
      * The container image is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
      * stored internally, and this original path is afterwards not used.
+     *
      * To learn about the requirements for the Docker image itself, see
      * [Custom container
      * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#).
+     *
      * You can use the URI to one of Vertex AI's [pre-built container images for
      * prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
      * in this field.
@@ -1897,14 +1986,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.LazyStringList command_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList command_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCommandIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!command_.isModifiable()) {
         command_ = new com.google.protobuf.LazyStringArrayList(command_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1915,6 +2004,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
      * Specify this field as an array of executable and arguments, similar to a
      * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+     *
      * If you do not specify this field, then the container's `ENTRYPOINT` runs,
      * in conjunction with the
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -1923,12 +2013,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
      * `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * If you specify this field, then you can also specify the `args` field to
      * provide additional arguments for this command. However, if you specify this
      * field, then the container's `CMD` is ignored. See the
      * [Kubernetes documentation about how the
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * In this field, you can reference [environment variables set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
      * and environment variables set in the
@@ -1949,7 +2041,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return A list containing the command.
      */
     public com.google.protobuf.ProtocolStringList getCommandList() {
-      return command_.getUnmodifiableView();
+      command_.makeImmutable();
+      return command_;
     }
     /**
      *
@@ -1960,6 +2053,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
      * Specify this field as an array of executable and arguments, similar to a
      * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+     *
      * If you do not specify this field, then the container's `ENTRYPOINT` runs,
      * in conjunction with the
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -1968,12 +2062,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
      * `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * If you specify this field, then you can also specify the `args` field to
      * provide additional arguments for this command. However, if you specify this
      * field, then the container's `CMD` is ignored. See the
      * [Kubernetes documentation about how the
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * In this field, you can reference [environment variables set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
      * and environment variables set in the
@@ -2005,6 +2101,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
      * Specify this field as an array of executable and arguments, similar to a
      * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+     *
      * If you do not specify this field, then the container's `ENTRYPOINT` runs,
      * in conjunction with the
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -2013,12 +2110,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
      * `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * If you specify this field, then you can also specify the `args` field to
      * provide additional arguments for this command. However, if you specify this
      * field, then the container's `CMD` is ignored. See the
      * [Kubernetes documentation about how the
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * In this field, you can reference [environment variables set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
      * and environment variables set in the
@@ -2051,6 +2150,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
      * Specify this field as an array of executable and arguments, similar to a
      * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+     *
      * If you do not specify this field, then the container's `ENTRYPOINT` runs,
      * in conjunction with the
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -2059,12 +2159,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
      * `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * If you specify this field, then you can also specify the `args` field to
      * provide additional arguments for this command. However, if you specify this
      * field, then the container's `CMD` is ignored. See the
      * [Kubernetes documentation about how the
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * In this field, you can reference [environment variables set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
      * and environment variables set in the
@@ -2097,6 +2199,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
      * Specify this field as an array of executable and arguments, similar to a
      * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+     *
      * If you do not specify this field, then the container's `ENTRYPOINT` runs,
      * in conjunction with the
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -2105,12 +2208,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
      * `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * If you specify this field, then you can also specify the `args` field to
      * provide additional arguments for this command. However, if you specify this
      * field, then the container's `CMD` is ignored. See the
      * [Kubernetes documentation about how the
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * In this field, you can reference [environment variables set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
      * and environment variables set in the
@@ -2138,6 +2243,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       }
       ensureCommandIsMutable();
       command_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2150,6 +2256,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
      * Specify this field as an array of executable and arguments, similar to a
      * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+     *
      * If you do not specify this field, then the container's `ENTRYPOINT` runs,
      * in conjunction with the
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -2158,12 +2265,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
      * `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * If you specify this field, then you can also specify the `args` field to
      * provide additional arguments for this command. However, if you specify this
      * field, then the container's `CMD` is ignored. See the
      * [Kubernetes documentation about how the
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * In this field, you can reference [environment variables set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
      * and environment variables set in the
@@ -2190,6 +2299,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       }
       ensureCommandIsMutable();
       command_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2202,6 +2312,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
      * Specify this field as an array of executable and arguments, similar to a
      * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+     *
      * If you do not specify this field, then the container's `ENTRYPOINT` runs,
      * in conjunction with the
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -2210,12 +2321,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
      * `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * If you specify this field, then you can also specify the `args` field to
      * provide additional arguments for this command. However, if you specify this
      * field, then the container's `CMD` is ignored. See the
      * [Kubernetes documentation about how the
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * In this field, you can reference [environment variables set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
      * and environment variables set in the
@@ -2239,6 +2352,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     public Builder addAllCommand(java.lang.Iterable<java.lang.String> values) {
       ensureCommandIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, command_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2251,6 +2365,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
      * Specify this field as an array of executable and arguments, similar to a
      * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+     *
      * If you do not specify this field, then the container's `ENTRYPOINT` runs,
      * in conjunction with the
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -2259,12 +2374,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
      * `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * If you specify this field, then you can also specify the `args` field to
      * provide additional arguments for this command. However, if you specify this
      * field, then the container's `CMD` is ignored. See the
      * [Kubernetes documentation about how the
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * In this field, you can reference [environment variables set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
      * and environment variables set in the
@@ -2285,8 +2402,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCommand() {
-      command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      command_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -2299,6 +2417,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
      * Specify this field as an array of executable and arguments, similar to a
      * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+     *
      * If you do not specify this field, then the container's `ENTRYPOINT` runs,
      * in conjunction with the
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
@@ -2307,12 +2426,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
      * `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * If you specify this field, then you can also specify the `args` field to
      * provide additional arguments for this command. However, if you specify this
      * field, then the container's `CMD` is ignored. See the
      * [Kubernetes documentation about how the
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * In this field, you can reference [environment variables set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
      * and environment variables set in the
@@ -2340,18 +2461,19 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureCommandIsMutable();
       command_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList args_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList args_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!args_.isModifiable()) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -2362,18 +2484,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
      * this field as an array of executable and arguments, similar to a Docker
      * `CMD`'s "default parameters" form.
+     *
      * If you don't specify this field but do specify the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
      * then the command from the `command` field runs without any additional
      * arguments. See the [Kubernetes documentation about how the `command` and
      * `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * If you don't specify this field and don't specify the `command` field,
      * then the container's
      * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
      * `CMD` determine what runs based on their default behavior. See the Docker
      * documentation about [how `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * In this field, you can reference [environment variables
      * set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -2395,7 +2520,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return A list containing the args.
      */
     public com.google.protobuf.ProtocolStringList getArgsList() {
-      return args_.getUnmodifiableView();
+      args_.makeImmutable();
+      return args_;
     }
     /**
      *
@@ -2406,18 +2532,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
      * this field as an array of executable and arguments, similar to a Docker
      * `CMD`'s "default parameters" form.
+     *
      * If you don't specify this field but do specify the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
      * then the command from the `command` field runs without any additional
      * arguments. See the [Kubernetes documentation about how the `command` and
      * `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * If you don't specify this field and don't specify the `command` field,
      * then the container's
      * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
      * `CMD` determine what runs based on their default behavior. See the Docker
      * documentation about [how `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * In this field, you can reference [environment variables
      * set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -2450,18 +2579,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
      * this field as an array of executable and arguments, similar to a Docker
      * `CMD`'s "default parameters" form.
+     *
      * If you don't specify this field but do specify the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
      * then the command from the `command` field runs without any additional
      * arguments. See the [Kubernetes documentation about how the `command` and
      * `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * If you don't specify this field and don't specify the `command` field,
      * then the container's
      * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
      * `CMD` determine what runs based on their default behavior. See the Docker
      * documentation about [how `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * In this field, you can reference [environment variables
      * set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -2495,18 +2627,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
      * this field as an array of executable and arguments, similar to a Docker
      * `CMD`'s "default parameters" form.
+     *
      * If you don't specify this field but do specify the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
      * then the command from the `command` field runs without any additional
      * arguments. See the [Kubernetes documentation about how the `command` and
      * `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * If you don't specify this field and don't specify the `command` field,
      * then the container's
      * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
      * `CMD` determine what runs based on their default behavior. See the Docker
      * documentation about [how `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * In this field, you can reference [environment variables
      * set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -2540,18 +2675,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
      * this field as an array of executable and arguments, similar to a Docker
      * `CMD`'s "default parameters" form.
+     *
      * If you don't specify this field but do specify the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
      * then the command from the `command` field runs without any additional
      * arguments. See the [Kubernetes documentation about how the `command` and
      * `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * If you don't specify this field and don't specify the `command` field,
      * then the container's
      * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
      * `CMD` determine what runs based on their default behavior. See the Docker
      * documentation about [how `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * In this field, you can reference [environment variables
      * set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -2580,6 +2718,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       }
       ensureArgsIsMutable();
       args_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2592,18 +2731,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
      * this field as an array of executable and arguments, similar to a Docker
      * `CMD`'s "default parameters" form.
+     *
      * If you don't specify this field but do specify the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
      * then the command from the `command` field runs without any additional
      * arguments. See the [Kubernetes documentation about how the `command` and
      * `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * If you don't specify this field and don't specify the `command` field,
      * then the container's
      * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
      * `CMD` determine what runs based on their default behavior. See the Docker
      * documentation about [how `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * In this field, you can reference [environment variables
      * set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -2631,6 +2773,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       }
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2643,18 +2786,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
      * this field as an array of executable and arguments, similar to a Docker
      * `CMD`'s "default parameters" form.
+     *
      * If you don't specify this field but do specify the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
      * then the command from the `command` field runs without any additional
      * arguments. See the [Kubernetes documentation about how the `command` and
      * `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * If you don't specify this field and don't specify the `command` field,
      * then the container's
      * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
      * `CMD` determine what runs based on their default behavior. See the Docker
      * documentation about [how `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * In this field, you can reference [environment variables
      * set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -2679,6 +2825,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
       ensureArgsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, args_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2691,18 +2838,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
      * this field as an array of executable and arguments, similar to a Docker
      * `CMD`'s "default parameters" form.
+     *
      * If you don't specify this field but do specify the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
      * then the command from the `command` field runs without any additional
      * arguments. See the [Kubernetes documentation about how the `command` and
      * `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * If you don't specify this field and don't specify the `command` field,
      * then the container's
      * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
      * `CMD` determine what runs based on their default behavior. See the Docker
      * documentation about [how `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * In this field, you can reference [environment variables
      * set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -2724,8 +2874,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearArgs() {
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -2738,18 +2889,21 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
      * this field as an array of executable and arguments, similar to a Docker
      * `CMD`'s "default parameters" form.
+     *
      * If you don't specify this field but do specify the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
      * then the command from the `command` field runs without any additional
      * arguments. See the [Kubernetes documentation about how the `command` and
      * `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
+     *
      * If you don't specify this field and don't specify the `command` field,
      * then the container's
      * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
      * `CMD` determine what runs based on their default behavior. See the Docker
      * documentation about [how `CMD` and `ENTRYPOINT`
      * interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+     *
      * In this field, you can reference [environment variables
      * set by Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
@@ -2778,6 +2932,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2805,12 +2960,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -2823,8 +2980,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -2848,12 +3007,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -2866,8 +3027,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -2891,12 +3054,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -2909,8 +3074,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -2934,12 +3101,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -2952,8 +3121,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -2983,12 +3154,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3001,8 +3174,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3030,12 +3205,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3048,8 +3225,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3079,12 +3258,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3097,8 +3278,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3128,12 +3311,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3146,8 +3331,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3174,12 +3361,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3192,8 +3381,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3221,12 +3412,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3239,8 +3432,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3268,12 +3463,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3286,8 +3483,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3314,12 +3513,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3332,8 +3533,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3360,12 +3563,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3378,8 +3583,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3399,12 +3606,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3417,8 +3626,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3442,12 +3653,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3460,8 +3673,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3486,12 +3701,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3504,8 +3721,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3526,12 +3745,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3544,8 +3765,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3566,12 +3789,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * Immutable. List of environment variables to set in the container. After the
      * container starts running, code running in the container can read these
      * environment variables.
+     *
      * Additionally, the
      * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
      * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
      * reference these variables. Later entries in this list can also reference
      * earlier entries. For example, the following example sets the variable
      * `VAR_2` to have the value `foo bar`:
+     *
      * ```json
      * [
      *   {
@@ -3584,8 +3809,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * If you switch the order of the variables in the example, then the expansion
      * does not occur.
+     *
      * This field corresponds to the `env` field of the Kubernetes Containers
      * [v1 core
      * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
@@ -3642,7 +3869,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -3650,6 +3879,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -3677,7 +3907,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -3685,6 +3917,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -3712,7 +3945,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -3720,6 +3955,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -3747,7 +3983,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -3755,6 +3993,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -3788,7 +4027,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -3796,6 +4037,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -3827,7 +4069,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -3835,6 +4079,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -3868,7 +4113,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -3876,6 +4123,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -3909,7 +4157,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -3917,6 +4167,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -3947,7 +4198,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -3955,6 +4208,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -3986,7 +4240,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -3994,6 +4250,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -4025,7 +4282,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -4033,6 +4292,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -4063,7 +4323,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -4071,6 +4333,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -4101,7 +4364,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -4109,6 +4374,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -4132,7 +4398,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -4140,6 +4408,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -4167,7 +4436,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -4175,6 +4446,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -4203,7 +4475,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -4211,6 +4485,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -4235,7 +4510,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -4243,6 +4520,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -4267,7 +4545,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [liveness and health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
      * to this port.
+     *
      * If you do not specify this field, it defaults to following value:
+     *
      * ```json
      * [
      *   {
@@ -4275,6 +4555,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      *   }
      * ]
      * ```
+     *
      * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core
@@ -4316,21 +4597,25 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1.PredictionService.Predict]
      * to this path on the container's IP address and port. Vertex AI then returns
      * the container's response in the API response.
+     *
      * For example, if you set this field to `/foo`, then when Vertex AI
      * receives a prediction request, it forwards the request body in a POST
      * request to the `/foo` path on the port of your container specified by the
      * first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+     *
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an
      * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
      * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
      * The placeholders in this value are replaced as follows:
+     *
      * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
      *   deployed. (Vertex AI makes this value available to your container code
      *   as the [`AIP_ENDPOINT_ID` environment
      *  variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+     *
      * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
      * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
      * `DeployedModel`.
@@ -4363,21 +4648,25 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1.PredictionService.Predict]
      * to this path on the container's IP address and port. Vertex AI then returns
      * the container's response in the API response.
+     *
      * For example, if you set this field to `/foo`, then when Vertex AI
      * receives a prediction request, it forwards the request body in a POST
      * request to the `/foo` path on the port of your container specified by the
      * first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+     *
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an
      * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
      * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
      * The placeholders in this value are replaced as follows:
+     *
      * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
      *   deployed. (Vertex AI makes this value available to your container code
      *   as the [`AIP_ENDPOINT_ID` environment
      *  variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+     *
      * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
      * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
      * `DeployedModel`.
@@ -4410,21 +4699,25 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1.PredictionService.Predict]
      * to this path on the container's IP address and port. Vertex AI then returns
      * the container's response in the API response.
+     *
      * For example, if you set this field to `/foo`, then when Vertex AI
      * receives a prediction request, it forwards the request body in a POST
      * request to the `/foo` path on the port of your container specified by the
      * first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+     *
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an
      * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
      * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
      * The placeholders in this value are replaced as follows:
+     *
      * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
      *   deployed. (Vertex AI makes this value available to your container code
      *   as the [`AIP_ENDPOINT_ID` environment
      *  variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+     *
      * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
      * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
      * `DeployedModel`.
@@ -4456,21 +4749,25 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1.PredictionService.Predict]
      * to this path on the container's IP address and port. Vertex AI then returns
      * the container's response in the API response.
+     *
      * For example, if you set this field to `/foo`, then when Vertex AI
      * receives a prediction request, it forwards the request body in a POST
      * request to the `/foo` path on the port of your container specified by the
      * first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+     *
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an
      * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
      * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
      * The placeholders in this value are replaced as follows:
+     *
      * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
      *   deployed. (Vertex AI makes this value available to your container code
      *   as the [`AIP_ENDPOINT_ID` environment
      *  variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+     *
      * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
      * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
      * `DeployedModel`.
@@ -4498,21 +4795,25 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1.PredictionService.Predict]
      * to this path on the container's IP address and port. Vertex AI then returns
      * the container's response in the API response.
+     *
      * For example, if you set this field to `/foo`, then when Vertex AI
      * receives a prediction request, it forwards the request body in a POST
      * request to the `/foo` path on the port of your container specified by the
      * first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+     *
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an
      * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
      * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
      * The placeholders in this value are replaced as follows:
+     *
      * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
      *   deployed. (Vertex AI makes this value available to your container code
      *   as the [`AIP_ENDPOINT_ID` environment
      *  variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+     *
      * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
      * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
      * `DeployedModel`.
@@ -4547,20 +4848,24 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * address and port to check that the container is healthy. Read more about
      * [health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#health).
+     *
      * For example, if you set this field to `/bar`, then Vertex AI
      * intermittently sends a GET request to the `/bar` path on the port of your
      * container specified by the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+     *
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an
      * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
      * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
      * The placeholders in this value are replaced as follows:
+     *
      * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
      *   deployed. (Vertex AI makes this value available to your container code
      *   as the [`AIP_ENDPOINT_ID` environment
      *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+     *
      * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
      * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
      * `DeployedModel`.
@@ -4593,20 +4898,24 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * address and port to check that the container is healthy. Read more about
      * [health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#health).
+     *
      * For example, if you set this field to `/bar`, then Vertex AI
      * intermittently sends a GET request to the `/bar` path on the port of your
      * container specified by the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+     *
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an
      * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
      * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
      * The placeholders in this value are replaced as follows:
+     *
      * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
      *   deployed. (Vertex AI makes this value available to your container code
      *   as the [`AIP_ENDPOINT_ID` environment
      *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+     *
      * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
      * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
      * `DeployedModel`.
@@ -4639,20 +4948,24 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * address and port to check that the container is healthy. Read more about
      * [health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#health).
+     *
      * For example, if you set this field to `/bar`, then Vertex AI
      * intermittently sends a GET request to the `/bar` path on the port of your
      * container specified by the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+     *
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an
      * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
      * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
      * The placeholders in this value are replaced as follows:
+     *
      * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
      *   deployed. (Vertex AI makes this value available to your container code
      *   as the [`AIP_ENDPOINT_ID` environment
      *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+     *
      * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
      * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
      * `DeployedModel`.
@@ -4684,20 +4997,24 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * address and port to check that the container is healthy. Read more about
      * [health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#health).
+     *
      * For example, if you set this field to `/bar`, then Vertex AI
      * intermittently sends a GET request to the `/bar` path on the port of your
      * container specified by the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+     *
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an
      * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
      * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
      * The placeholders in this value are replaced as follows:
+     *
      * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
      *   deployed. (Vertex AI makes this value available to your container code
      *   as the [`AIP_ENDPOINT_ID` environment
      *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+     *
      * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
      * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
      * `DeployedModel`.
@@ -4725,20 +5042,24 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * address and port to check that the container is healthy. Read more about
      * [health
      * checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#health).
+     *
      * For example, if you set this field to `/bar`, then Vertex AI
      * intermittently sends a GET request to the `/bar` path on the port of your
      * container specified by the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
+     *
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an
      * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
      * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
      * The placeholders in this value are replaced as follows:
+     *
      * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
      *   deployed. (Vertex AI makes this value available to your container code
      *   as the [`AIP_ENDPOINT_ID` environment
      *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
+     *
      * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
      * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
      * `DeployedModel`.

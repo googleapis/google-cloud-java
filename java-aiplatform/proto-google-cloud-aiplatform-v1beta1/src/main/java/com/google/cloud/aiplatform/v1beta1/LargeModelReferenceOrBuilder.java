@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ public interface LargeModelReferenceOrBuilder
    *
    * <pre>
    * Required. The unique name of the large Foundation or pre-built model. Like
-   * "chat-panda", "text-panda". Or model name with version ID, like
-   * "chat-panda-001", "text-panda-005", etc.
+   * "chat-bison", "text-bison". Or model name with version ID, like
+   * "chat-bison&#64;001", "text-bison&#64;005", etc.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,8 +42,8 @@ public interface LargeModelReferenceOrBuilder
    *
    * <pre>
    * Required. The unique name of the large Foundation or pre-built model. Like
-   * "chat-panda", "text-panda". Or model name with version ID, like
-   * "chat-panda-001", "text-panda-005", etc.
+   * "chat-bison", "text-bison". Or model name with version ID, like
+   * "chat-bison&#64;001", "text-bison&#64;005", etc.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

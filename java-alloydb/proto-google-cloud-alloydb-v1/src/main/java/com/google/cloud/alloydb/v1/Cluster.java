@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,11 +54,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Cluster();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -575,6 +570,971 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.alloydb.v1.Cluster.ClusterType)
   }
 
+  public interface NetworkConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1.Cluster.NetworkConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource link for the VPC network in which cluster
+     * resources are created and from which they are accessible via Private IP.
+     * The network must belong to the same project as the cluster. It is
+     * specified in the form:
+     * "projects/{project_number}/global/networks/{network_id}". This is
+     * required to create a cluster.
+     * </pre>
+     *
+     * <code>
+     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The network.
+     */
+    java.lang.String getNetwork();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource link for the VPC network in which cluster
+     * resources are created and from which they are accessible via Private IP.
+     * The network must belong to the same project as the cluster. It is
+     * specified in the form:
+     * "projects/{project_number}/global/networks/{network_id}". This is
+     * required to create a cluster.
+     * </pre>
+     *
+     * <code>
+     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for network.
+     */
+    com.google.protobuf.ByteString getNetworkBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the allocated IP range for the private IP AlloyDB
+     * cluster, for example: "google-managed-services-default". If set, the
+     * instance IPs for this cluster will be created in the allocated range. The
+     * range name must comply with RFC 1035. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
+     * </pre>
+     *
+     * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The allocatedIpRange.
+     */
+    java.lang.String getAllocatedIpRange();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the allocated IP range for the private IP AlloyDB
+     * cluster, for example: "google-managed-services-default". If set, the
+     * instance IPs for this cluster will be created in the allocated range. The
+     * range name must comply with RFC 1035. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
+     * </pre>
+     *
+     * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for allocatedIpRange.
+     */
+    com.google.protobuf.ByteString getAllocatedIpRangeBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to network configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1.Cluster.NetworkConfig}
+   */
+  public static final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1.Cluster.NetworkConfig)
+      NetworkConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use NetworkConfig.newBuilder() to construct.
+    private NetworkConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NetworkConfig() {
+      network_ = "";
+      allocatedIpRange_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NetworkConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1_Cluster_NetworkConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1_Cluster_NetworkConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1.Cluster.NetworkConfig.class,
+              com.google.cloud.alloydb.v1.Cluster.NetworkConfig.Builder.class);
+    }
+
+    public static final int NETWORK_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource link for the VPC network in which cluster
+     * resources are created and from which they are accessible via Private IP.
+     * The network must belong to the same project as the cluster. It is
+     * specified in the form:
+     * "projects/{project_number}/global/networks/{network_id}". This is
+     * required to create a cluster.
+     * </pre>
+     *
+     * <code>
+     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The network.
+     */
+    @java.lang.Override
+    public java.lang.String getNetwork() {
+      java.lang.Object ref = network_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        network_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource link for the VPC network in which cluster
+     * resources are created and from which they are accessible via Private IP.
+     * The network must belong to the same project as the cluster. It is
+     * specified in the form:
+     * "projects/{project_number}/global/networks/{network_id}". This is
+     * required to create a cluster.
+     * </pre>
+     *
+     * <code>
+     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for network.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNetworkBytes() {
+      java.lang.Object ref = network_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        network_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ALLOCATED_IP_RANGE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object allocatedIpRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the allocated IP range for the private IP AlloyDB
+     * cluster, for example: "google-managed-services-default". If set, the
+     * instance IPs for this cluster will be created in the allocated range. The
+     * range name must comply with RFC 1035. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
+     * </pre>
+     *
+     * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The allocatedIpRange.
+     */
+    @java.lang.Override
+    public java.lang.String getAllocatedIpRange() {
+      java.lang.Object ref = allocatedIpRange_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        allocatedIpRange_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the allocated IP range for the private IP AlloyDB
+     * cluster, for example: "google-managed-services-default". If set, the
+     * instance IPs for this cluster will be created in the allocated range. The
+     * range name must comply with RFC 1035. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
+     * </pre>
+     *
+     * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for allocatedIpRange.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAllocatedIpRangeBytes() {
+      java.lang.Object ref = allocatedIpRange_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        allocatedIpRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, network_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(allocatedIpRange_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, allocatedIpRange_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, network_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(allocatedIpRange_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, allocatedIpRange_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1.Cluster.NetworkConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1.Cluster.NetworkConfig other =
+          (com.google.cloud.alloydb.v1.Cluster.NetworkConfig) obj;
+
+      if (!getNetwork().equals(other.getNetwork())) return false;
+      if (!getAllocatedIpRange().equals(other.getAllocatedIpRange())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+      hash = (37 * hash) + ALLOCATED_IP_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getAllocatedIpRange().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.alloydb.v1.Cluster.NetworkConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to network configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1.Cluster.NetworkConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1.Cluster.NetworkConfig)
+        com.google.cloud.alloydb.v1.Cluster.NetworkConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1_Cluster_NetworkConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1_Cluster_NetworkConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1.Cluster.NetworkConfig.class,
+                com.google.cloud.alloydb.v1.Cluster.NetworkConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1.Cluster.NetworkConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        network_ = "";
+        allocatedIpRange_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1_Cluster_NetworkConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1.Cluster.NetworkConfig getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1.Cluster.NetworkConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1.Cluster.NetworkConfig build() {
+        com.google.cloud.alloydb.v1.Cluster.NetworkConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1.Cluster.NetworkConfig buildPartial() {
+        com.google.cloud.alloydb.v1.Cluster.NetworkConfig result =
+            new com.google.cloud.alloydb.v1.Cluster.NetworkConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.alloydb.v1.Cluster.NetworkConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.network_ = network_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.allocatedIpRange_ = allocatedIpRange_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1.Cluster.NetworkConfig) {
+          return mergeFrom((com.google.cloud.alloydb.v1.Cluster.NetworkConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.alloydb.v1.Cluster.NetworkConfig other) {
+        if (other == com.google.cloud.alloydb.v1.Cluster.NetworkConfig.getDefaultInstance())
+          return this;
+        if (!other.getNetwork().isEmpty()) {
+          network_ = other.network_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getAllocatedIpRange().isEmpty()) {
+          allocatedIpRange_ = other.allocatedIpRange_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  network_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  allocatedIpRange_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object network_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource link for the VPC network in which cluster
+       * resources are created and from which they are accessible via Private IP.
+       * The network must belong to the same project as the cluster. It is
+       * specified in the form:
+       * "projects/{project_number}/global/networks/{network_id}". This is
+       * required to create a cluster.
+       * </pre>
+       *
+       * <code>
+       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The network.
+       */
+      public java.lang.String getNetwork() {
+        java.lang.Object ref = network_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          network_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource link for the VPC network in which cluster
+       * resources are created and from which they are accessible via Private IP.
+       * The network must belong to the same project as the cluster. It is
+       * specified in the form:
+       * "projects/{project_number}/global/networks/{network_id}". This is
+       * required to create a cluster.
+       * </pre>
+       *
+       * <code>
+       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for network.
+       */
+      public com.google.protobuf.ByteString getNetworkBytes() {
+        java.lang.Object ref = network_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          network_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource link for the VPC network in which cluster
+       * resources are created and from which they are accessible via Private IP.
+       * The network must belong to the same project as the cluster. It is
+       * specified in the form:
+       * "projects/{project_number}/global/networks/{network_id}". This is
+       * required to create a cluster.
+       * </pre>
+       *
+       * <code>
+       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The network to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetwork(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        network_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource link for the VPC network in which cluster
+       * resources are created and from which they are accessible via Private IP.
+       * The network must belong to the same project as the cluster. It is
+       * specified in the form:
+       * "projects/{project_number}/global/networks/{network_id}". This is
+       * required to create a cluster.
+       * </pre>
+       *
+       * <code>
+       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNetwork() {
+        network_ = getDefaultInstance().getNetwork();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource link for the VPC network in which cluster
+       * resources are created and from which they are accessible via Private IP.
+       * The network must belong to the same project as the cluster. It is
+       * specified in the form:
+       * "projects/{project_number}/global/networks/{network_id}". This is
+       * required to create a cluster.
+       * </pre>
+       *
+       * <code>
+       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for network to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        network_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object allocatedIpRange_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the allocated IP range for the private IP AlloyDB
+       * cluster, for example: "google-managed-services-default". If set, the
+       * instance IPs for this cluster will be created in the allocated range. The
+       * range name must comply with RFC 1035. Specifically, the name must be 1-63
+       * characters long and match the regular expression
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
+       * </pre>
+       *
+       * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The allocatedIpRange.
+       */
+      public java.lang.String getAllocatedIpRange() {
+        java.lang.Object ref = allocatedIpRange_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          allocatedIpRange_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the allocated IP range for the private IP AlloyDB
+       * cluster, for example: "google-managed-services-default". If set, the
+       * instance IPs for this cluster will be created in the allocated range. The
+       * range name must comply with RFC 1035. Specifically, the name must be 1-63
+       * characters long and match the regular expression
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
+       * </pre>
+       *
+       * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for allocatedIpRange.
+       */
+      public com.google.protobuf.ByteString getAllocatedIpRangeBytes() {
+        java.lang.Object ref = allocatedIpRange_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          allocatedIpRange_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the allocated IP range for the private IP AlloyDB
+       * cluster, for example: "google-managed-services-default". If set, the
+       * instance IPs for this cluster will be created in the allocated range. The
+       * range name must comply with RFC 1035. Specifically, the name must be 1-63
+       * characters long and match the regular expression
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
+       * </pre>
+       *
+       * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The allocatedIpRange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocatedIpRange(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        allocatedIpRange_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the allocated IP range for the private IP AlloyDB
+       * cluster, for example: "google-managed-services-default". If set, the
+       * instance IPs for this cluster will be created in the allocated range. The
+       * range name must comply with RFC 1035. Specifically, the name must be 1-63
+       * characters long and match the regular expression
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
+       * </pre>
+       *
+       * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllocatedIpRange() {
+        allocatedIpRange_ = getDefaultInstance().getAllocatedIpRange();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Name of the allocated IP range for the private IP AlloyDB
+       * cluster, for example: "google-managed-services-default". If set, the
+       * instance IPs for this cluster will be created in the allocated range. The
+       * range name must comply with RFC 1035. Specifically, the name must be 1-63
+       * characters long and match the regular expression
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
+       * </pre>
+       *
+       * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for allocatedIpRange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocatedIpRangeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        allocatedIpRange_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1.Cluster.NetworkConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1.Cluster.NetworkConfig)
+    private static final com.google.cloud.alloydb.v1.Cluster.NetworkConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1.Cluster.NetworkConfig();
+    }
+
+    public static com.google.cloud.alloydb.v1.Cluster.NetworkConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NetworkConfig> PARSER =
+        new com.google.protobuf.AbstractParser<NetworkConfig>() {
+          @java.lang.Override
+          public NetworkConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NetworkConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NetworkConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.Cluster.NetworkConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface SecondaryConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1.Cluster.SecondaryConfig)
@@ -635,11 +1595,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SecondaryConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1323,18 +2278,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private PrimaryConfig() {
-      secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PrimaryConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1355,7 +2305,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public static final int SECONDARY_CLUSTER_NAMES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList secondaryClusterNames_;
+    private com.google.protobuf.LazyStringArrayList secondaryClusterNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1638,8 +2589,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -1667,7 +2617,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.alloydb.v1.Cluster.PrimaryConfig buildPartial() {
         com.google.cloud.alloydb.v1.Cluster.PrimaryConfig result =
             new com.google.cloud.alloydb.v1.Cluster.PrimaryConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1675,17 +2624,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.alloydb.v1.Cluster.PrimaryConfig result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          secondaryClusterNames_ = secondaryClusterNames_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.secondaryClusterNames_ = secondaryClusterNames_;
-      }
-
       private void buildPartial0(com.google.cloud.alloydb.v1.Cluster.PrimaryConfig result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          secondaryClusterNames_.makeImmutable();
+          result.secondaryClusterNames_ = secondaryClusterNames_;
+        }
       }
 
       @java.lang.Override
@@ -1739,7 +2683,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (!other.secondaryClusterNames_.isEmpty()) {
           if (secondaryClusterNames_.isEmpty()) {
             secondaryClusterNames_ = other.secondaryClusterNames_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureSecondaryClusterNamesIsMutable();
             secondaryClusterNames_.addAll(other.secondaryClusterNames_);
@@ -1798,15 +2742,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList secondaryClusterNames_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList secondaryClusterNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureSecondaryClusterNamesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!secondaryClusterNames_.isModifiable()) {
           secondaryClusterNames_ =
               new com.google.protobuf.LazyStringArrayList(secondaryClusterNames_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -1823,7 +2767,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the secondaryClusterNames.
        */
       public com.google.protobuf.ProtocolStringList getSecondaryClusterNamesList() {
-        return secondaryClusterNames_.getUnmodifiableView();
+        secondaryClusterNames_.makeImmutable();
+        return secondaryClusterNames_;
       }
       /**
        *
@@ -1900,6 +2845,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSecondaryClusterNamesIsMutable();
         secondaryClusterNames_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1924,6 +2870,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSecondaryClusterNamesIsMutable();
         secondaryClusterNames_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1945,6 +2892,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllSecondaryClusterNames(java.lang.Iterable<java.lang.String> values) {
         ensureSecondaryClusterNamesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secondaryClusterNames_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1963,8 +2911,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSecondaryClusterNames() {
-        secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1990,6 +2939,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureSecondaryClusterNamesIsMutable();
         secondaryClusterNames_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2059,6 +3009,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -2723,13 +3675,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The database engine major version. This is an output-only
-   * field and it's populated at the Cluster creation time. This field cannot be
-   * changed after cluster creation.
+   * Optional. The database engine major version. This is an optional field and
+   * it is populated at the Cluster creation time. If a database version is not
+   * supplied at cluster creation time, then a default database version will
+   * be used.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for databaseVersion.
@@ -2742,13 +3695,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The database engine major version. This is an output-only
-   * field and it's populated at the Cluster creation time. This field cannot be
-   * changed after cluster creation.
+   * Optional. The database engine major version. This is an optional field and
+   * it is populated at the Cluster creation time. If a database version is not
+   * supplied at cluster creation time, then a default database version will
+   * be used.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The databaseVersion.
@@ -2758,6 +3712,44 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.alloydb.v1.DatabaseVersion result =
         com.google.cloud.alloydb.v1.DatabaseVersion.forNumber(databaseVersion_);
     return result == null ? com.google.cloud.alloydb.v1.DatabaseVersion.UNRECOGNIZED : result;
+  }
+
+  public static final int NETWORK_CONFIG_FIELD_NUMBER = 29;
+  private com.google.cloud.alloydb.v1.Cluster.NetworkConfig networkConfig_;
+  /**
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkConfig() {
+    return networkConfig_ != null;
+  }
+  /**
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The networkConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.Cluster.NetworkConfig getNetworkConfig() {
+    return networkConfig_ == null
+        ? com.google.cloud.alloydb.v1.Cluster.NetworkConfig.getDefaultInstance()
+        : networkConfig_;
+  }
+  /**
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.Cluster.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+    return networkConfig_ == null
+        ? com.google.cloud.alloydb.v1.Cluster.NetworkConfig.getDefaultInstance()
+        : networkConfig_;
   }
 
   public static final int NETWORK_FIELD_NUMBER = 10;
@@ -2771,17 +3763,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Required. The resource link for the VPC network in which cluster resources
    * are created and from which they are accessible via Private IP. The network
    * must belong to the same project as the cluster. It is specified in the
-   * form: "projects/{project_number}/global/networks/{network_id}". This is
-   * required to create a cluster. It can be updated, but it cannot be removed.
+   * form: "projects/{project}/global/networks/{network_id}". This is required
+   * to create a cluster. Deprecated, use network_config.network instead.
    * </pre>
    *
    * <code>
-   * string network = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 10 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
+   *     google/cloud/alloydb/v1/resources.proto;l=543
    * @return The network.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getNetwork() {
     java.lang.Object ref = network_;
     if (ref instanceof java.lang.String) {
@@ -2800,17 +3795,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Required. The resource link for the VPC network in which cluster resources
    * are created and from which they are accessible via Private IP. The network
    * must belong to the same project as the cluster. It is specified in the
-   * form: "projects/{project_number}/global/networks/{network_id}". This is
-   * required to create a cluster. It can be updated, but it cannot be removed.
+   * form: "projects/{project}/global/networks/{network_id}". This is required
+   * to create a cluster. Deprecated, use network_config.network instead.
    * </pre>
    *
    * <code>
-   * string network = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 10 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
+   *     google/cloud/alloydb/v1/resources.proto;l=543
    * @return The bytes for network.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getNetworkBytes() {
     java.lang.Object ref = network_;
     if (ref instanceof java.lang.String) {
@@ -3073,6 +4071,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The automated backup policy for this cluster.
+   *
    * If no policy is provided then the default policy will be used. If backups
    * are supported for the cluster, the default policy takes one backup a day,
    * has a backup window of 1 hour, and retains backups for 14 days.
@@ -3093,6 +4092,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The automated backup policy for this cluster.
+   *
    * If no policy is provided then the default policy will be used. If backups
    * are supported for the cluster, the default policy takes one backup a day,
    * has a backup window of 1 hour, and retains backups for 14 days.
@@ -3115,6 +4115,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The automated backup policy for this cluster.
+   *
    * If no policy is provided then the default policy will be used. If backups
    * are supported for the cluster, the default policy takes one backup a day,
    * has a backup window of 1 hour, and retains backups for 14 days.
@@ -3138,14 +4139,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
+   *     google/cloud/alloydb/v1/resources.proto;l=578
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasSslConfig() {
     return sslConfig_ != null;
   }
@@ -3153,14 +4157,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
+   *     google/cloud/alloydb/v1/resources.proto;l=578
    * @return The sslConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.alloydb.v1.SslConfig getSslConfig() {
     return sslConfig_ == null
         ? com.google.cloud.alloydb.v1.SslConfig.getDefaultInstance()
@@ -3170,12 +4177,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * SSL configuration for this AlloyDB Cluster.
+   * SSL configuration for this AlloyDB cluster.
    * </pre>
    *
-   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+   * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.alloydb.v1.SslConfigOrBuilder getSslConfigOrBuilder() {
     return sslConfig_ == null
         ? com.google.cloud.alloydb.v1.SslConfig.getDefaultInstance()
@@ -3304,6 +4312,120 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return encryptionInfo_ == null
         ? com.google.cloud.alloydb.v1.EncryptionInfo.getDefaultInstance()
         : encryptionInfo_;
+  }
+
+  public static final int CONTINUOUS_BACKUP_CONFIG_FIELD_NUMBER = 27;
+  private com.google.cloud.alloydb.v1.ContinuousBackupConfig continuousBackupConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Continuous backup configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the continuousBackupConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasContinuousBackupConfig() {
+    return continuousBackupConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Continuous backup configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The continuousBackupConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.ContinuousBackupConfig getContinuousBackupConfig() {
+    return continuousBackupConfig_ == null
+        ? com.google.cloud.alloydb.v1.ContinuousBackupConfig.getDefaultInstance()
+        : continuousBackupConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Continuous backup configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.ContinuousBackupConfigOrBuilder
+      getContinuousBackupConfigOrBuilder() {
+    return continuousBackupConfig_ == null
+        ? com.google.cloud.alloydb.v1.ContinuousBackupConfig.getDefaultInstance()
+        : continuousBackupConfig_;
+  }
+
+  public static final int CONTINUOUS_BACKUP_INFO_FIELD_NUMBER = 28;
+  private com.google.cloud.alloydb.v1.ContinuousBackupInfo continuousBackupInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Continuous backup properties for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the continuousBackupInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasContinuousBackupInfo() {
+    return continuousBackupInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Continuous backup properties for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The continuousBackupInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.ContinuousBackupInfo getContinuousBackupInfo() {
+    return continuousBackupInfo_ == null
+        ? com.google.cloud.alloydb.v1.ContinuousBackupInfo.getDefaultInstance()
+        : continuousBackupInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Continuous backup properties for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.ContinuousBackupInfoOrBuilder
+      getContinuousBackupInfoOrBuilder() {
+    return continuousBackupInfo_ == null
+        ? com.google.cloud.alloydb.v1.ContinuousBackupInfo.getDefaultInstance()
+        : continuousBackupInfo_;
   }
 
   public static final int SECONDARY_CONFIG_FIELD_NUMBER = 22;
@@ -3496,6 +4618,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.alloydb.v1.Cluster.ClusterType.CLUSTER_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(24, clusterType_);
     }
+    if (continuousBackupConfig_ != null) {
+      output.writeMessage(27, getContinuousBackupConfig());
+    }
+    if (continuousBackupInfo_ != null) {
+      output.writeMessage(28, getContinuousBackupInfo());
+    }
+    if (networkConfig_ != null) {
+      output.writeMessage(29, getNetworkConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3595,6 +4726,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.alloydb.v1.Cluster.ClusterType.CLUSTER_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(24, clusterType_);
     }
+    if (continuousBackupConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(27, getContinuousBackupConfig());
+    }
+    if (continuousBackupInfo_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(28, getContinuousBackupInfo());
+    }
+    if (networkConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getNetworkConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3629,6 +4771,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (state_ != other.state_) return false;
     if (clusterType_ != other.clusterType_) return false;
     if (databaseVersion_ != other.databaseVersion_) return false;
+    if (hasNetworkConfig() != other.hasNetworkConfig()) return false;
+    if (hasNetworkConfig()) {
+      if (!getNetworkConfig().equals(other.getNetworkConfig())) return false;
+    }
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
@@ -3652,6 +4798,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionInfo() != other.hasEncryptionInfo()) return false;
     if (hasEncryptionInfo()) {
       if (!getEncryptionInfo().equals(other.getEncryptionInfo())) return false;
+    }
+    if (hasContinuousBackupConfig() != other.hasContinuousBackupConfig()) return false;
+    if (hasContinuousBackupConfig()) {
+      if (!getContinuousBackupConfig().equals(other.getContinuousBackupConfig())) return false;
+    }
+    if (hasContinuousBackupInfo() != other.hasContinuousBackupInfo()) return false;
+    if (hasContinuousBackupInfo()) {
+      if (!getContinuousBackupInfo().equals(other.getContinuousBackupInfo())) return false;
     }
     if (hasSecondaryConfig() != other.hasSecondaryConfig()) return false;
     if (hasSecondaryConfig()) {
@@ -3711,6 +4865,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + clusterType_;
     hash = (37 * hash) + DATABASE_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + databaseVersion_;
+    if (hasNetworkConfig()) {
+      hash = (37 * hash) + NETWORK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkConfig().hashCode();
+    }
     hash = (37 * hash) + NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getNetwork().hashCode();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
@@ -3740,6 +4898,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionInfo()) {
       hash = (37 * hash) + ENCRYPTION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionInfo().hashCode();
+    }
+    if (hasContinuousBackupConfig()) {
+      hash = (37 * hash) + CONTINUOUS_BACKUP_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getContinuousBackupConfig().hashCode();
+    }
+    if (hasContinuousBackupInfo()) {
+      hash = (37 * hash) + CONTINUOUS_BACKUP_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getContinuousBackupInfo().hashCode();
     }
     if (hasSecondaryConfig()) {
       hash = (37 * hash) + SECONDARY_CONFIG_FIELD_NUMBER;
@@ -3953,6 +5119,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       state_ = 0;
       clusterType_ = 0;
       databaseVersion_ = 0;
+      networkConfig_ = null;
+      if (networkConfigBuilder_ != null) {
+        networkConfigBuilder_.dispose();
+        networkConfigBuilder_ = null;
+      }
       network_ = "";
       etag_ = "";
       internalGetMutableAnnotations().clear();
@@ -3981,6 +5152,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (encryptionInfoBuilder_ != null) {
         encryptionInfoBuilder_.dispose();
         encryptionInfoBuilder_ = null;
+      }
+      continuousBackupConfig_ = null;
+      if (continuousBackupConfigBuilder_ != null) {
+        continuousBackupConfigBuilder_.dispose();
+        continuousBackupConfigBuilder_ = null;
+      }
+      continuousBackupInfo_ = null;
+      if (continuousBackupInfoBuilder_ != null) {
+        continuousBackupInfoBuilder_.dispose();
+        continuousBackupInfoBuilder_ = null;
       }
       secondaryConfig_ = null;
       if (secondaryConfigBuilder_ != null) {
@@ -4062,44 +5243,60 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         result.databaseVersion_ = databaseVersion_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.network_ = network_;
+        result.networkConfig_ =
+            networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.etag_ = etag_;
+        result.network_ = network_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.reconciling_ = reconciling_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.initialUser_ =
             initialUserBuilder_ == null ? initialUser_ : initialUserBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.automatedBackupPolicy_ =
             automatedBackupPolicyBuilder_ == null
                 ? automatedBackupPolicy_
                 : automatedBackupPolicyBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.sslConfig_ = sslConfigBuilder_ == null ? sslConfig_ : sslConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.encryptionConfig_ =
             encryptionConfigBuilder_ == null ? encryptionConfig_ : encryptionConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.encryptionInfo_ =
             encryptionInfoBuilder_ == null ? encryptionInfo_ : encryptionInfoBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.continuousBackupConfig_ =
+            continuousBackupConfigBuilder_ == null
+                ? continuousBackupConfig_
+                : continuousBackupConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.continuousBackupInfo_ =
+            continuousBackupInfoBuilder_ == null
+                ? continuousBackupInfo_
+                : continuousBackupInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.secondaryConfig_ =
             secondaryConfigBuilder_ == null ? secondaryConfig_ : secondaryConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.primaryConfig_ =
             primaryConfigBuilder_ == null ? primaryConfig_ : primaryConfigBuilder_.build();
       }
@@ -4196,18 +5393,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other.databaseVersion_ != 0) {
         setDatabaseVersionValue(other.getDatabaseVersionValue());
       }
+      if (other.hasNetworkConfig()) {
+        mergeNetworkConfig(other.getNetworkConfig());
+      }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       if (other.getReconciling() != false) {
         setReconciling(other.getReconciling());
       }
@@ -4225,6 +5425,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEncryptionInfo()) {
         mergeEncryptionInfo(other.getEncryptionInfo());
+      }
+      if (other.hasContinuousBackupConfig()) {
+        mergeContinuousBackupConfig(other.getContinuousBackupConfig());
+      }
+      if (other.hasContinuousBackupInfo()) {
+        mergeContinuousBackupInfo(other.getContinuousBackupInfo());
       }
       if (other.hasSecondaryConfig()) {
         mergeSecondaryConfig(other.getSecondaryConfig());
@@ -4337,13 +5543,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 82
             case 90:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 90
             case 98:
@@ -4355,19 +5561,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 98
             case 104:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 104
             case 114:
               {
                 input.readMessage(getInitialUserFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 114
             case 122:
@@ -4386,38 +5592,38 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getAutomatedBackupPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(getSslConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(
                     getEncryptionConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 154
             case 162:
               {
                 input.readMessage(getEncryptionInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 162
             case 178:
               {
                 input.readMessage(getSecondaryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 178
             case 186:
               {
                 input.readMessage(getPrimaryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 186
             case 192:
@@ -4426,6 +5632,26 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 192
+            case 218:
+              {
+                input.readMessage(
+                    getContinuousBackupConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 218
+            case 226:
+              {
+                input.readMessage(
+                    getContinuousBackupInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 226
+            case 234:
+              {
+                input.readMessage(getNetworkConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 234
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6247,13 +7473,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The database engine major version. This is an output-only
-     * field and it's populated at the Cluster creation time. This field cannot be
-     * changed after cluster creation.
+     * Optional. The database engine major version. This is an optional field and
+     * it is populated at the Cluster creation time. If a database version is not
+     * supplied at cluster creation time, then a default database version will
+     * be used.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for databaseVersion.
@@ -6266,13 +7493,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The database engine major version. This is an output-only
-     * field and it's populated at the Cluster creation time. This field cannot be
-     * changed after cluster creation.
+     * Optional. The database engine major version. This is an optional field and
+     * it is populated at the Cluster creation time. If a database version is not
+     * supplied at cluster creation time, then a default database version will
+     * be used.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for databaseVersion to set.
@@ -6288,13 +7516,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The database engine major version. This is an output-only
-     * field and it's populated at the Cluster creation time. This field cannot be
-     * changed after cluster creation.
+     * Optional. The database engine major version. This is an optional field and
+     * it is populated at the Cluster creation time. If a database version is not
+     * supplied at cluster creation time, then a default database version will
+     * be used.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The databaseVersion.
@@ -6309,13 +7538,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The database engine major version. This is an output-only
-     * field and it's populated at the Cluster creation time. This field cannot be
-     * changed after cluster creation.
+     * Optional. The database engine major version. This is an optional field and
+     * it is populated at the Cluster creation time. If a database version is not
+     * supplied at cluster creation time, then a default database version will
+     * be used.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The databaseVersion to set.
@@ -6334,13 +7564,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The database engine major version. This is an output-only
-     * field and it's populated at the Cluster creation time. This field cannot be
-     * changed after cluster creation.
+     * Optional. The database engine major version. This is an optional field and
+     * it is populated at the Cluster creation time. If a database version is not
+     * supplied at cluster creation time, then a default database version will
+     * be used.
      * </pre>
      *
      * <code>
-     * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -6352,6 +7583,155 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.alloydb.v1.Cluster.NetworkConfig networkConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.Cluster.NetworkConfig,
+            com.google.cloud.alloydb.v1.Cluster.NetworkConfig.Builder,
+            com.google.cloud.alloydb.v1.Cluster.NetworkConfigOrBuilder>
+        networkConfigBuilder_;
+    /**
+     * <code>
+     * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the networkConfig field is set.
+     */
+    public boolean hasNetworkConfig() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <code>
+     * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The networkConfig.
+     */
+    public com.google.cloud.alloydb.v1.Cluster.NetworkConfig getNetworkConfig() {
+      if (networkConfigBuilder_ == null) {
+        return networkConfig_ == null
+            ? com.google.cloud.alloydb.v1.Cluster.NetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      } else {
+        return networkConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>
+     * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkConfig(com.google.cloud.alloydb.v1.Cluster.NetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkConfig_ = value;
+      } else {
+        networkConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>
+     * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkConfig(
+        com.google.cloud.alloydb.v1.Cluster.NetworkConfig.Builder builderForValue) {
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = builderForValue.build();
+      } else {
+        networkConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>
+     * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNetworkConfig(com.google.cloud.alloydb.v1.Cluster.NetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && networkConfig_ != null
+            && networkConfig_
+                != com.google.cloud.alloydb.v1.Cluster.NetworkConfig.getDefaultInstance()) {
+          getNetworkConfigBuilder().mergeFrom(value);
+        } else {
+          networkConfig_ = value;
+        }
+      } else {
+        networkConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>
+     * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNetworkConfig() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      networkConfig_ = null;
+      if (networkConfigBuilder_ != null) {
+        networkConfigBuilder_.dispose();
+        networkConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>
+     * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.Cluster.NetworkConfig.Builder getNetworkConfigBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getNetworkConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>
+     * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.Cluster.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+      if (networkConfigBuilder_ != null) {
+        return networkConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkConfig_ == null
+            ? com.google.cloud.alloydb.v1.Cluster.NetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      }
+    }
+    /**
+     * <code>
+     * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.Cluster.NetworkConfig,
+            com.google.cloud.alloydb.v1.Cluster.NetworkConfig.Builder,
+            com.google.cloud.alloydb.v1.Cluster.NetworkConfigOrBuilder>
+        getNetworkConfigFieldBuilder() {
+      if (networkConfigBuilder_ == null) {
+        networkConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1.Cluster.NetworkConfig,
+                com.google.cloud.alloydb.v1.Cluster.NetworkConfig.Builder,
+                com.google.cloud.alloydb.v1.Cluster.NetworkConfigOrBuilder>(
+                getNetworkConfig(), getParentForChildren(), isClean());
+        networkConfig_ = null;
+      }
+      return networkConfigBuilder_;
+    }
+
     private java.lang.Object network_ = "";
     /**
      *
@@ -6360,16 +7740,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource link for the VPC network in which cluster resources
      * are created and from which they are accessible via Private IP. The network
      * must belong to the same project as the cluster. It is specified in the
-     * form: "projects/{project_number}/global/networks/{network_id}". This is
-     * required to create a cluster. It can be updated, but it cannot be removed.
+     * form: "projects/{project}/global/networks/{network_id}". This is required
+     * to create a cluster. Deprecated, use network_config.network instead.
      * </pre>
      *
      * <code>
-     * string network = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 10 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
+     *     google/cloud/alloydb/v1/resources.proto;l=543
      * @return The network.
      */
+    @java.lang.Deprecated
     public java.lang.String getNetwork() {
       java.lang.Object ref = network_;
       if (!(ref instanceof java.lang.String)) {
@@ -6388,16 +7771,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource link for the VPC network in which cluster resources
      * are created and from which they are accessible via Private IP. The network
      * must belong to the same project as the cluster. It is specified in the
-     * form: "projects/{project_number}/global/networks/{network_id}". This is
-     * required to create a cluster. It can be updated, but it cannot be removed.
+     * form: "projects/{project}/global/networks/{network_id}". This is required
+     * to create a cluster. Deprecated, use network_config.network instead.
      * </pre>
      *
      * <code>
-     * string network = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 10 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
+     *     google/cloud/alloydb/v1/resources.proto;l=543
      * @return The bytes for network.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getNetworkBytes() {
       java.lang.Object ref = network_;
       if (ref instanceof String) {
@@ -6416,23 +7802,26 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource link for the VPC network in which cluster resources
      * are created and from which they are accessible via Private IP. The network
      * must belong to the same project as the cluster. It is specified in the
-     * form: "projects/{project_number}/global/networks/{network_id}". This is
-     * required to create a cluster. It can be updated, but it cannot be removed.
+     * form: "projects/{project}/global/networks/{network_id}". This is required
+     * to create a cluster. Deprecated, use network_config.network instead.
      * </pre>
      *
      * <code>
-     * string network = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 10 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
+     *     google/cloud/alloydb/v1/resources.proto;l=543
      * @param value The network to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setNetwork(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6443,19 +7832,22 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource link for the VPC network in which cluster resources
      * are created and from which they are accessible via Private IP. The network
      * must belong to the same project as the cluster. It is specified in the
-     * form: "projects/{project_number}/global/networks/{network_id}". This is
-     * required to create a cluster. It can be updated, but it cannot be removed.
+     * form: "projects/{project}/global/networks/{network_id}". This is required
+     * to create a cluster. Deprecated, use network_config.network instead.
      * </pre>
      *
      * <code>
-     * string network = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 10 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
+     *     google/cloud/alloydb/v1/resources.proto;l=543
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -6466,24 +7858,27 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource link for the VPC network in which cluster resources
      * are created and from which they are accessible via Private IP. The network
      * must belong to the same project as the cluster. It is specified in the
-     * form: "projects/{project_number}/global/networks/{network_id}". This is
-     * required to create a cluster. It can be updated, but it cannot be removed.
+     * form: "projects/{project}/global/networks/{network_id}". This is required
+     * to create a cluster. Deprecated, use network_config.network instead.
      * </pre>
      *
      * <code>
-     * string network = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 10 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
+     *     google/cloud/alloydb/v1/resources.proto;l=543
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6550,7 +7945,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6567,7 +7962,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -6589,7 +7984,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6614,7 +8009,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return annotations_;
     }
@@ -6707,7 +8102,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -6732,7 +8127,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -6754,7 +8149,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
     /**
@@ -6770,7 +8165,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
 
@@ -6813,7 +8208,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6833,7 +8228,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -6860,7 +8255,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the initialUser field is set.
      */
     public boolean hasInitialUser() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -6906,7 +8301,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         initialUserBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6929,7 +8324,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         initialUserBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6947,7 +8342,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInitialUser(com.google.cloud.alloydb.v1.UserPassword value) {
       if (initialUserBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && initialUser_ != null
             && initialUser_ != com.google.cloud.alloydb.v1.UserPassword.getDefaultInstance()) {
           getInitialUserBuilder().mergeFrom(value);
@@ -6957,7 +8352,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         initialUserBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6974,7 +8369,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInitialUser() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       initialUser_ = null;
       if (initialUserBuilder_ != null) {
         initialUserBuilder_.dispose();
@@ -6996,7 +8391,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.alloydb.v1.UserPassword.Builder getInitialUserBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getInitialUserFieldBuilder().getBuilder();
     }
@@ -7061,6 +8456,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7073,13 +8469,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the automatedBackupPolicy field is set.
      */
     public boolean hasAutomatedBackupPolicy() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7105,6 +8502,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7124,7 +8522,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         automatedBackupPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7133,6 +8531,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7149,7 +8548,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         automatedBackupPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7158,6 +8557,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7170,7 +8570,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAutomatedBackupPolicy(
         com.google.cloud.alloydb.v1.AutomatedBackupPolicy value) {
       if (automatedBackupPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && automatedBackupPolicy_ != null
             && automatedBackupPolicy_
                 != com.google.cloud.alloydb.v1.AutomatedBackupPolicy.getDefaultInstance()) {
@@ -7181,7 +8581,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         automatedBackupPolicyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7190,6 +8590,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7200,7 +8601,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1.AutomatedBackupPolicy automated_backup_policy = 17;</code>
      */
     public Builder clearAutomatedBackupPolicy() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       automatedBackupPolicy_ = null;
       if (automatedBackupPolicyBuilder_ != null) {
         automatedBackupPolicyBuilder_.dispose();
@@ -7214,6 +8615,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7225,7 +8627,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.alloydb.v1.AutomatedBackupPolicy.Builder
         getAutomatedBackupPolicyBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getAutomatedBackupPolicyFieldBuilder().getBuilder();
     }
@@ -7234,6 +8636,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7258,6 +8661,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7294,27 +8698,33 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
+     *     google/cloud/alloydb/v1/resources.proto;l=578
      * @return Whether the sslConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasSslConfig() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
+     *     google/cloud/alloydb/v1/resources.proto;l=578
      * @return The sslConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.alloydb.v1.SslConfig getSslConfig() {
       if (sslConfigBuilder_ == null) {
         return sslConfig_ == null
@@ -7328,11 +8738,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setSslConfig(com.google.cloud.alloydb.v1.SslConfig value) {
       if (sslConfigBuilder_ == null) {
         if (value == null) {
@@ -7342,7 +8753,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         sslConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7350,18 +8761,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setSslConfig(com.google.cloud.alloydb.v1.SslConfig.Builder builderForValue) {
       if (sslConfigBuilder_ == null) {
         sslConfig_ = builderForValue.build();
       } else {
         sslConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7369,14 +8781,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeSslConfig(com.google.cloud.alloydb.v1.SslConfig value) {
       if (sslConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && sslConfig_ != null
             && sslConfig_ != com.google.cloud.alloydb.v1.SslConfig.getDefaultInstance()) {
           getSslConfigBuilder().mergeFrom(value);
@@ -7386,7 +8799,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         sslConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7394,13 +8807,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearSslConfig() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       sslConfig_ = null;
       if (sslConfigBuilder_ != null) {
         sslConfigBuilder_.dispose();
@@ -7413,13 +8827,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.alloydb.v1.SslConfig.Builder getSslConfigBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getSslConfigFieldBuilder().getBuilder();
     }
@@ -7427,11 +8842,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.alloydb.v1.SslConfigOrBuilder getSslConfigOrBuilder() {
       if (sslConfigBuilder_ != null) {
         return sslConfigBuilder_.getMessageOrBuilder();
@@ -7445,10 +8861,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL configuration for this AlloyDB Cluster.
+     * SSL configuration for this AlloyDB cluster.
      * </pre>
      *
-     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18;</code>
+     * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.alloydb.v1.SslConfig,
@@ -7491,7 +8907,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionConfig field is set.
      */
     public boolean hasEncryptionConfig() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -7543,7 +8959,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7569,7 +8985,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7590,7 +9006,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptionConfig(com.google.cloud.alloydb.v1.EncryptionConfig value) {
       if (encryptionConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && encryptionConfig_ != null
             && encryptionConfig_
                 != com.google.cloud.alloydb.v1.EncryptionConfig.getDefaultInstance()) {
@@ -7601,7 +9017,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7621,7 +9037,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEncryptionConfig() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       encryptionConfig_ = null;
       if (encryptionConfigBuilder_ != null) {
         encryptionConfigBuilder_.dispose();
@@ -7646,7 +9062,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.alloydb.v1.EncryptionConfig.Builder getEncryptionConfigBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
@@ -7726,7 +9142,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionInfo field is set.
      */
     public boolean hasEncryptionInfo() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -7770,7 +9186,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7792,7 +9208,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7809,7 +9225,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptionInfo(com.google.cloud.alloydb.v1.EncryptionInfo value) {
       if (encryptionInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && encryptionInfo_ != null
             && encryptionInfo_ != com.google.cloud.alloydb.v1.EncryptionInfo.getDefaultInstance()) {
           getEncryptionInfoBuilder().mergeFrom(value);
@@ -7819,7 +9235,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7835,7 +9251,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEncryptionInfo() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       encryptionInfo_ = null;
       if (encryptionInfoBuilder_ != null) {
         encryptionInfoBuilder_.dispose();
@@ -7856,7 +9272,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.alloydb.v1.EncryptionInfo.Builder getEncryptionInfoBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return getEncryptionInfoFieldBuilder().getBuilder();
     }
@@ -7908,6 +9324,419 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return encryptionInfoBuilder_;
     }
 
+    private com.google.cloud.alloydb.v1.ContinuousBackupConfig continuousBackupConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.ContinuousBackupConfig,
+            com.google.cloud.alloydb.v1.ContinuousBackupConfig.Builder,
+            com.google.cloud.alloydb.v1.ContinuousBackupConfigOrBuilder>
+        continuousBackupConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the continuousBackupConfig field is set.
+     */
+    public boolean hasContinuousBackupConfig() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The continuousBackupConfig.
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupConfig getContinuousBackupConfig() {
+      if (continuousBackupConfigBuilder_ == null) {
+        return continuousBackupConfig_ == null
+            ? com.google.cloud.alloydb.v1.ContinuousBackupConfig.getDefaultInstance()
+            : continuousBackupConfig_;
+      } else {
+        return continuousBackupConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContinuousBackupConfig(
+        com.google.cloud.alloydb.v1.ContinuousBackupConfig value) {
+      if (continuousBackupConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        continuousBackupConfig_ = value;
+      } else {
+        continuousBackupConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContinuousBackupConfig(
+        com.google.cloud.alloydb.v1.ContinuousBackupConfig.Builder builderForValue) {
+      if (continuousBackupConfigBuilder_ == null) {
+        continuousBackupConfig_ = builderForValue.build();
+      } else {
+        continuousBackupConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeContinuousBackupConfig(
+        com.google.cloud.alloydb.v1.ContinuousBackupConfig value) {
+      if (continuousBackupConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && continuousBackupConfig_ != null
+            && continuousBackupConfig_
+                != com.google.cloud.alloydb.v1.ContinuousBackupConfig.getDefaultInstance()) {
+          getContinuousBackupConfigBuilder().mergeFrom(value);
+        } else {
+          continuousBackupConfig_ = value;
+        }
+      } else {
+        continuousBackupConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearContinuousBackupConfig() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      continuousBackupConfig_ = null;
+      if (continuousBackupConfigBuilder_ != null) {
+        continuousBackupConfigBuilder_.dispose();
+        continuousBackupConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupConfig.Builder
+        getContinuousBackupConfigBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getContinuousBackupConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupConfigOrBuilder
+        getContinuousBackupConfigOrBuilder() {
+      if (continuousBackupConfigBuilder_ != null) {
+        return continuousBackupConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return continuousBackupConfig_ == null
+            ? com.google.cloud.alloydb.v1.ContinuousBackupConfig.getDefaultInstance()
+            : continuousBackupConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Continuous backup configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupConfig continuous_backup_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.ContinuousBackupConfig,
+            com.google.cloud.alloydb.v1.ContinuousBackupConfig.Builder,
+            com.google.cloud.alloydb.v1.ContinuousBackupConfigOrBuilder>
+        getContinuousBackupConfigFieldBuilder() {
+      if (continuousBackupConfigBuilder_ == null) {
+        continuousBackupConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1.ContinuousBackupConfig,
+                com.google.cloud.alloydb.v1.ContinuousBackupConfig.Builder,
+                com.google.cloud.alloydb.v1.ContinuousBackupConfigOrBuilder>(
+                getContinuousBackupConfig(), getParentForChildren(), isClean());
+        continuousBackupConfig_ = null;
+      }
+      return continuousBackupConfigBuilder_;
+    }
+
+    private com.google.cloud.alloydb.v1.ContinuousBackupInfo continuousBackupInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.ContinuousBackupInfo,
+            com.google.cloud.alloydb.v1.ContinuousBackupInfo.Builder,
+            com.google.cloud.alloydb.v1.ContinuousBackupInfoOrBuilder>
+        continuousBackupInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the continuousBackupInfo field is set.
+     */
+    public boolean hasContinuousBackupInfo() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The continuousBackupInfo.
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupInfo getContinuousBackupInfo() {
+      if (continuousBackupInfoBuilder_ == null) {
+        return continuousBackupInfo_ == null
+            ? com.google.cloud.alloydb.v1.ContinuousBackupInfo.getDefaultInstance()
+            : continuousBackupInfo_;
+      } else {
+        return continuousBackupInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setContinuousBackupInfo(com.google.cloud.alloydb.v1.ContinuousBackupInfo value) {
+      if (continuousBackupInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        continuousBackupInfo_ = value;
+      } else {
+        continuousBackupInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setContinuousBackupInfo(
+        com.google.cloud.alloydb.v1.ContinuousBackupInfo.Builder builderForValue) {
+      if (continuousBackupInfoBuilder_ == null) {
+        continuousBackupInfo_ = builderForValue.build();
+      } else {
+        continuousBackupInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeContinuousBackupInfo(
+        com.google.cloud.alloydb.v1.ContinuousBackupInfo value) {
+      if (continuousBackupInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)
+            && continuousBackupInfo_ != null
+            && continuousBackupInfo_
+                != com.google.cloud.alloydb.v1.ContinuousBackupInfo.getDefaultInstance()) {
+          getContinuousBackupInfoBuilder().mergeFrom(value);
+        } else {
+          continuousBackupInfo_ = value;
+        }
+      } else {
+        continuousBackupInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearContinuousBackupInfo() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      continuousBackupInfo_ = null;
+      if (continuousBackupInfoBuilder_ != null) {
+        continuousBackupInfoBuilder_.dispose();
+        continuousBackupInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupInfo.Builder
+        getContinuousBackupInfoBuilder() {
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return getContinuousBackupInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupInfoOrBuilder
+        getContinuousBackupInfoOrBuilder() {
+      if (continuousBackupInfoBuilder_ != null) {
+        return continuousBackupInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return continuousBackupInfo_ == null
+            ? com.google.cloud.alloydb.v1.ContinuousBackupInfo.getDefaultInstance()
+            : continuousBackupInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Continuous backup properties for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.ContinuousBackupInfo continuous_backup_info = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.ContinuousBackupInfo,
+            com.google.cloud.alloydb.v1.ContinuousBackupInfo.Builder,
+            com.google.cloud.alloydb.v1.ContinuousBackupInfoOrBuilder>
+        getContinuousBackupInfoFieldBuilder() {
+      if (continuousBackupInfoBuilder_ == null) {
+        continuousBackupInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1.ContinuousBackupInfo,
+                com.google.cloud.alloydb.v1.ContinuousBackupInfo.Builder,
+                com.google.cloud.alloydb.v1.ContinuousBackupInfoOrBuilder>(
+                getContinuousBackupInfo(), getParentForChildren(), isClean());
+        continuousBackupInfo_ = null;
+      }
+      return continuousBackupInfoBuilder_;
+    }
+
     private com.google.cloud.alloydb.v1.Cluster.SecondaryConfig secondaryConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.alloydb.v1.Cluster.SecondaryConfig,
@@ -7926,7 +9755,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the secondaryConfig field is set.
      */
     public boolean hasSecondaryConfig() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -7966,7 +9795,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7986,7 +9815,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8001,7 +9830,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSecondaryConfig(com.google.cloud.alloydb.v1.Cluster.SecondaryConfig value) {
       if (secondaryConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && secondaryConfig_ != null
             && secondaryConfig_
                 != com.google.cloud.alloydb.v1.Cluster.SecondaryConfig.getDefaultInstance()) {
@@ -8012,7 +9841,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -8026,7 +9855,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1.Cluster.SecondaryConfig secondary_config = 22;</code>
      */
     public Builder clearSecondaryConfig() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       secondaryConfig_ = null;
       if (secondaryConfigBuilder_ != null) {
         secondaryConfigBuilder_.dispose();
@@ -8045,7 +9874,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1.Cluster.SecondaryConfig secondary_config = 22;</code>
      */
     public com.google.cloud.alloydb.v1.Cluster.SecondaryConfig.Builder getSecondaryConfigBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return getSecondaryConfigFieldBuilder().getBuilder();
     }
@@ -8114,7 +9943,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the primaryConfig field is set.
      */
     public boolean hasPrimaryConfig() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -8158,7 +9987,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         primaryConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8180,7 +10009,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         primaryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8197,7 +10026,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePrimaryConfig(com.google.cloud.alloydb.v1.Cluster.PrimaryConfig value) {
       if (primaryConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && primaryConfig_ != null
             && primaryConfig_
                 != com.google.cloud.alloydb.v1.Cluster.PrimaryConfig.getDefaultInstance()) {
@@ -8208,7 +10037,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         primaryConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8224,7 +10053,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPrimaryConfig() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       primaryConfig_ = null;
       if (primaryConfigBuilder_ != null) {
         primaryConfigBuilder_.dispose();
@@ -8245,7 +10074,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.alloydb.v1.Cluster.PrimaryConfig.Builder getPrimaryConfigBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return getPrimaryConfigFieldBuilder().getBuilder();
     }

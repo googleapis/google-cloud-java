@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,7 @@ public interface ListTaxonomiesRequestOrBuilder
    * <pre>
    * The pagination token of the next results page. If not set,
    * the first page is returned.
+   *
    * The token is returned in the response to a previous list request.
    * </pre>
    *
@@ -86,6 +87,7 @@ public interface ListTaxonomiesRequestOrBuilder
    * <pre>
    * The pagination token of the next results page. If not set,
    * the first page is returned.
+   *
    * The token is returned in the response to a previous list request.
    * </pre>
    *

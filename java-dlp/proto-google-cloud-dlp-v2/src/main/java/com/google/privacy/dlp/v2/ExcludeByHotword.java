@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * The rule to exclude findings based on a hotword. For record inspection of
  * tables, column names are considered hotwords. An example of this is to
- * exclude a finding if a BigQuery column matches a specific pattern.
+ * exclude a finding if it belongs to a BigQuery column that matches a specific
+ * pattern.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.ExcludeByHotword}
@@ -45,11 +46,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExcludeByHotword();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -361,7 +357,8 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The rule to exclude findings based on a hotword. For record inspection of
    * tables, column names are considered hotwords. An example of this is to
-   * exclude a finding if a BigQuery column matches a specific pattern.
+   * exclude a finding if it belongs to a BigQuery column that matches a specific
+   * pattern.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.ExcludeByHotword}

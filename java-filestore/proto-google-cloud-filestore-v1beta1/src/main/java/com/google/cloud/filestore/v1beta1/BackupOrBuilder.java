@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,8 +219,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. The size of the storage used by the backup. As backups share storage,
-   * this number is expected to change with backup creation/deletion.
+   * Output only. The size of the storage used by the backup. As backups share
+   * storage, this number is expected to change with backup creation/deletion.
    * </pre>
    *
    * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -289,8 +289,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. The service tier of the source Filestore instance that this backup
-   * is created from.
+   * Output only. The service tier of the source Filestore instance that this
+   * backup is created from.
    * </pre>
    *
    * <code>
@@ -304,8 +304,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. The service tier of the source Filestore instance that this backup
-   * is created from.
+   * Output only. The service tier of the source Filestore instance that this
+   * backup is created from.
    * </pre>
    *
    * <code>
@@ -320,7 +320,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. Amount of bytes that will be downloaded if the backup is restored
+   * Output only. Amount of bytes that will be downloaded if the backup is
+   * restored
    * </pre>
    *
    * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

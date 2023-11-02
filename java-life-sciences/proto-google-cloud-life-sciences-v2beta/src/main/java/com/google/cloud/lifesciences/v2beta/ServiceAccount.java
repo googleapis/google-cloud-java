@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
 
   private ServiceAccount() {
     email_ = "";
-    scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ServiceAccount();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -124,7 +119,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   public static final int SCOPES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList scopes_;
+  private com.google.protobuf.LazyStringArrayList scopes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -403,8 +399,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       email_ = "";
-      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -432,7 +427,6 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.ServiceAccount buildPartial() {
       com.google.cloud.lifesciences.v2beta.ServiceAccount result =
           new com.google.cloud.lifesciences.v2beta.ServiceAccount(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -440,19 +434,14 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.lifesciences.v2beta.ServiceAccount result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        scopes_ = scopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.scopes_ = scopes_;
-    }
-
     private void buildPartial0(com.google.cloud.lifesciences.v2beta.ServiceAccount result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.email_ = email_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        scopes_.makeImmutable();
+        result.scopes_ = scopes_;
       }
     }
 
@@ -510,7 +499,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       if (!other.scopes_.isEmpty()) {
         if (scopes_.isEmpty()) {
           scopes_ = other.scopes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureScopesIsMutable();
           scopes_.addAll(other.scopes_);
@@ -686,14 +675,14 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList scopes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList scopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureScopesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!scopes_.isModifiable()) {
         scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -708,7 +697,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the scopes.
      */
     public com.google.protobuf.ProtocolStringList getScopesList() {
-      return scopes_.getUnmodifiableView();
+      scopes_.makeImmutable();
+      return scopes_;
     }
     /**
      *
@@ -777,6 +767,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       }
       ensureScopesIsMutable();
       scopes_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -799,6 +790,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       }
       ensureScopesIsMutable();
       scopes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -818,6 +810,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllScopes(java.lang.Iterable<java.lang.String> values) {
       ensureScopesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, scopes_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -834,8 +827,9 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScopes() {
-      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -859,6 +853,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureScopesIsMutable();
       scopes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

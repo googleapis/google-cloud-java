@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
     return new MatchIntentResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.SessionProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_MatchIntentResponse_descriptor;
@@ -68,6 +63,8 @@ public final class MatchIntentResponse extends com.google.protobuf.GeneratedMess
   }
 
   private int queryCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object query_;
 
   public enum QueryCase

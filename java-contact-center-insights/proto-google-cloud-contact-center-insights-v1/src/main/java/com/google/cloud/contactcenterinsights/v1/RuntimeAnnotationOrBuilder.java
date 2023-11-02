@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -428,5 +428,5 @@ public interface RuntimeAnnotationOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.AnswerFeedbackOrBuilder getAnswerFeedbackOrBuilder();
 
-  public com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation.DataCase getDataCase();
+  com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation.DataCase getDataCase();
 }

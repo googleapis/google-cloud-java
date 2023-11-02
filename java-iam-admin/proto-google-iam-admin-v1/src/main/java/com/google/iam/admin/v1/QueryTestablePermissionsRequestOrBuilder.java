@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface QueryTestablePermissionsRequestOrBuilder
    * <pre>
    * Required. The full resource name to query from the list of testable
    * permissions.
+   *
    * The name follows the Google Cloud Platform resource format.
    * For example, a Cloud Platform project with id `my-project` will be named
    * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -45,6 +46,7 @@ public interface QueryTestablePermissionsRequestOrBuilder
    * <pre>
    * Required. The full resource name to query from the list of testable
    * permissions.
+   *
    * The name follows the Google Cloud Platform resource format.
    * For example, a Cloud Platform project with id `my-project` will be named
    * `//cloudresourcemanager.googleapis.com/projects/my-project`.
@@ -61,6 +63,7 @@ public interface QueryTestablePermissionsRequestOrBuilder
    *
    * <pre>
    * Optional limit on the number of permissions to include in the response.
+   *
    * The default is 100, and the maximum is 1,000.
    * </pre>
    *

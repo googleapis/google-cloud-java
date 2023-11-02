@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
   }
 
   private InstanceGroupManagersApplyUpdatesRequest() {
-    instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
     minimalAction_ = "";
     mostDisruptiveAllowedAction_ = "";
   }
@@ -49,11 +49,6 @@ public final class InstanceGroupManagersApplyUpdatesRequest
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InstanceGroupManagersApplyUpdatesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -75,7 +70,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+   * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * NONE
    * REFRESH
@@ -196,7 +191,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+   * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * NONE
    * REFRESH
@@ -353,7 +348,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
   public static final int INSTANCES_FIELD_NUMBER = 29097598;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList instances_;
+  private com.google.protobuf.LazyStringArrayList instances_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -421,7 +417,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+   * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
@@ -437,7 +433,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+   * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
@@ -461,7 +457,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+   * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
@@ -490,7 +486,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+   * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
    * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
@@ -506,7 +502,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+   * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
    * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
@@ -530,7 +526,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+   * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
    * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
@@ -806,8 +802,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       super.clear();
       bitField0_ = 0;
       allInstances_ = false;
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       minimalAction_ = "";
       mostDisruptiveAllowedAction_ = "";
       return this;
@@ -839,21 +834,11 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     public com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest result =
           new com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        instances_ = instances_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.instances_ = instances_;
     }
 
     private void buildPartial0(
@@ -863,6 +848,10 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.allInstances_ = allInstances_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        instances_.makeImmutable();
+        result.instances_ = instances_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.minimalAction_ = minimalAction_;
@@ -930,7 +919,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       if (!other.instances_.isEmpty()) {
         if (instances_.isEmpty()) {
           instances_ = other.instances_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureInstancesIsMutable();
           instances_.addAll(other.instances_);
@@ -1085,14 +1074,14 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       return this;
     }
 
-    private com.google.protobuf.LazyStringList instances_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList instances_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInstancesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!instances_.isModifiable()) {
         instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1106,7 +1095,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * @return A list containing the instances.
      */
     public com.google.protobuf.ProtocolStringList getInstancesList() {
-      return instances_.getUnmodifiableView();
+      instances_.makeImmutable();
+      return instances_;
     }
     /**
      *
@@ -1171,6 +1161,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       }
       ensureInstancesIsMutable();
       instances_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1192,6 +1183,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       }
       ensureInstancesIsMutable();
       instances_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1210,6 +1202,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     public Builder addAllInstances(java.lang.Iterable<java.lang.String> values) {
       ensureInstancesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1225,8 +1218,9 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * @return This builder for chaining.
      */
     public Builder clearInstances() {
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1249,6 +1243,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       checkByteStringIsUtf8(value);
       ensureInstancesIsMutable();
       instances_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1258,7 +1253,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
@@ -1273,7 +1268,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
@@ -1296,7 +1291,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
@@ -1319,7 +1314,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
@@ -1341,7 +1336,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
@@ -1359,7 +1354,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
@@ -1384,7 +1379,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
@@ -1399,7 +1394,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
@@ -1422,7 +1417,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
@@ -1445,7 +1440,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
@@ -1467,7 +1462,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
@@ -1485,7 +1480,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance and limit disruption as much as possible. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
      * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *

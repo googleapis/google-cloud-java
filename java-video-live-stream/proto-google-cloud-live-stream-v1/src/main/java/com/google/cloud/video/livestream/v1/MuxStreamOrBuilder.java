@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,9 @@ public interface MuxStreamOrBuilder
    *
    * <pre>
    * The container format. The default is `fmp4`.
+   *
    * Supported container formats:
+   *
    * - `fmp4` - the corresponding file extension is `.m4s`
    * - `ts` - the corresponding file extension is `.ts`
    * </pre>
@@ -68,7 +70,9 @@ public interface MuxStreamOrBuilder
    *
    * <pre>
    * The container format. The default is `fmp4`.
+   *
    * Supported container formats:
+   *
    * - `fmp4` - the corresponding file extension is `.m4s`
    * - `ts` - the corresponding file extension is `.ts`
    * </pre>
@@ -86,6 +90,7 @@ public interface MuxStreamOrBuilder
    * List of `ElementaryStream`
    * [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed
    * in this stream.
+   *
    * - For `fmp4` container, must contain either one video or one audio stream.
    * - For `ts` container, must contain exactly one audio stream and up to one
    * video stream.
@@ -103,6 +108,7 @@ public interface MuxStreamOrBuilder
    * List of `ElementaryStream`
    * [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed
    * in this stream.
+   *
    * - For `fmp4` container, must contain either one video or one audio stream.
    * - For `ts` container, must contain exactly one audio stream and up to one
    * video stream.
@@ -120,6 +126,7 @@ public interface MuxStreamOrBuilder
    * List of `ElementaryStream`
    * [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed
    * in this stream.
+   *
    * - For `fmp4` container, must contain either one video or one audio stream.
    * - For `ts` container, must contain exactly one audio stream and up to one
    * video stream.
@@ -138,6 +145,7 @@ public interface MuxStreamOrBuilder
    * List of `ElementaryStream`
    * [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed
    * in this stream.
+   *
    * - For `fmp4` container, must contain either one video or one audio stream.
    * - For `ts` container, must contain exactly one audio stream and up to one
    * video stream.

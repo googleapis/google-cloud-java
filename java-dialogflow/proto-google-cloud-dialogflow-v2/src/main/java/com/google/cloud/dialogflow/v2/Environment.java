@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,16 +24,20 @@ package com.google.cloud.dialogflow.v2;
  * <pre>
  * You can create multiple versions of your agent and publish them to separate
  * environments.
+ *
  * When you edit an agent, you are editing the draft agent. At any point, you
  * can save the draft agent as an agent version, which is an immutable snapshot
  * of your agent.
+ *
  * When you save the draft agent, it is published to the default environment.
  * When you create agent versions, you can publish them to custom environments.
  * You can create a variety of custom environments for:
+ *
  * - testing
  * - development
  * - production
  * - etc.
+ *
  * For more information, see the [versions and environments
  * guide](https://cloud.google.com/dialogflow/docs/agents-versions).
  * </pre>
@@ -61,11 +65,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Environment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -276,9 +275,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The unique identifier of this agent environment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *
    * The environment ID for the default environment is `-`.
    * </pre>
    *
@@ -304,9 +305,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The unique identifier of this agent environment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *
    * The environment ID for the default environment is `-`.
    * </pre>
    *
@@ -390,6 +393,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The agent version loaded into this environment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
@@ -419,6 +423,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The agent version loaded into this environment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
@@ -884,16 +889,20 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * You can create multiple versions of your agent and publish them to separate
    * environments.
+   *
    * When you edit an agent, you are editing the draft agent. At any point, you
    * can save the draft agent as an agent version, which is an immutable snapshot
    * of your agent.
+   *
    * When you save the draft agent, it is published to the default environment.
    * When you create agent versions, you can publish them to custom environments.
    * You can create a variety of custom environments for:
+   *
    * - testing
    * - development
    * - production
    * - etc.
+   *
    * For more information, see the [versions and environments
    * guide](https://cloud.google.com/dialogflow/docs/agents-versions).
    * </pre>
@@ -1179,9 +1188,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The unique identifier of this agent environment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -1206,9 +1217,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The unique identifier of this agent environment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -1233,9 +1246,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The unique identifier of this agent environment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -1259,9 +1274,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The unique identifier of this agent environment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -1281,9 +1298,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The unique identifier of this agent environment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -1421,6 +1440,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The agent version loaded into this environment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -1449,6 +1469,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The agent version loaded into this environment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -1477,6 +1498,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The agent version loaded into this environment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -1504,6 +1526,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The agent version loaded into this environment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`
@@ -1527,6 +1550,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The agent version loaded into this environment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
      *   ID&gt;`

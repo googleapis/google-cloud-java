@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
     return new UpdateWorkflowTemplateRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
         .internal_static_google_cloud_dataproc_v1_UpdateWorkflowTemplateRequest_descriptor;
@@ -72,6 +67,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The updated workflow template.
+   *
    * The `template.version` field must match the current version.
    * </pre>
    *
@@ -90,6 +86,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The updated workflow template.
+   *
    * The `template.version` field must match the current version.
    * </pre>
    *
@@ -110,6 +107,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The updated workflow template.
+   *
    * The `template.version` field must match the current version.
    * </pre>
    *
@@ -485,6 +483,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The updated workflow template.
+     *
      * The `template.version` field must match the current version.
      * </pre>
      *
@@ -502,6 +501,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The updated workflow template.
+     *
      * The `template.version` field must match the current version.
      * </pre>
      *
@@ -525,6 +525,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The updated workflow template.
+     *
      * The `template.version` field must match the current version.
      * </pre>
      *
@@ -550,6 +551,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The updated workflow template.
+     *
      * The `template.version` field must match the current version.
      * </pre>
      *
@@ -573,6 +575,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The updated workflow template.
+     *
      * The `template.version` field must match the current version.
      * </pre>
      *
@@ -601,6 +604,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The updated workflow template.
+     *
      * The `template.version` field must match the current version.
      * </pre>
      *
@@ -623,6 +627,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The updated workflow template.
+     *
      * The `template.version` field must match the current version.
      * </pre>
      *
@@ -640,6 +645,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The updated workflow template.
+     *
      * The `template.version` field must match the current version.
      * </pre>
      *
@@ -661,6 +667,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The updated workflow template.
+     *
      * The `template.version` field must match the current version.
      * </pre>
      *

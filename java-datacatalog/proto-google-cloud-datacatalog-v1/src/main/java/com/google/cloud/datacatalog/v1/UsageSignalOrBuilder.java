@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public interface UsageSignalOrBuilder
    * <pre>
    * Output only. BigQuery usage statistics over each of the predefined time
    * ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -78,6 +79,7 @@ public interface UsageSignalOrBuilder
    * <pre>
    * Output only. BigQuery usage statistics over each of the predefined time
    * ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -96,6 +98,7 @@ public interface UsageSignalOrBuilder
    * <pre>
    * Output only. BigQuery usage statistics over each of the predefined time
    * ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -111,6 +114,7 @@ public interface UsageSignalOrBuilder
    * <pre>
    * Output only. BigQuery usage statistics over each of the predefined time
    * ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -129,6 +133,7 @@ public interface UsageSignalOrBuilder
    * <pre>
    * Output only. BigQuery usage statistics over each of the predefined time
    * ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -143,6 +148,7 @@ public interface UsageSignalOrBuilder
    *
    * <pre>
    * Common usage statistics over each of the predefined time ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
    * </pre>
    *
@@ -156,6 +162,7 @@ public interface UsageSignalOrBuilder
    *
    * <pre>
    * Common usage statistics over each of the predefined time ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
    * </pre>
    *
@@ -173,6 +180,7 @@ public interface UsageSignalOrBuilder
    *
    * <pre>
    * Common usage statistics over each of the predefined time ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
    * </pre>
    *
@@ -187,6 +195,7 @@ public interface UsageSignalOrBuilder
    *
    * <pre>
    * Common usage statistics over each of the predefined time ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
    * </pre>
    *
@@ -204,6 +213,7 @@ public interface UsageSignalOrBuilder
    *
    * <pre>
    * Common usage statistics over each of the predefined time ranges.
+   *
    * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
   private BatchTranslateTextRequest() {
     parent_ = "";
     sourceLanguageCode_ = "";
-    targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     inputConfigs_ = java.util.Collections.emptyList();
   }
 
@@ -48,11 +48,6 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchTranslateTextRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -94,8 +89,11 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Location to make a call. Must refer to a caller's project.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * The `global` location is not supported for batch translation.
+   *
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
    * error is returned.
@@ -124,8 +122,11 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Location to make a call. Must refer to a caller's project.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * The `global` location is not supported for batch translation.
+   *
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
    * error is returned.
@@ -204,7 +205,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
   public static final int TARGET_LANGUAGE_CODES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList targetLanguageCodes_;
+  private com.google.protobuf.LazyStringArrayList targetLanguageCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -301,11 +303,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -332,11 +339,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -354,11 +366,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -383,11 +400,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -724,10 +746,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -752,10 +776,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -771,10 +797,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -797,10 +825,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -1152,8 +1182,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       bitField0_ = 0;
       parent_ = "";
       sourceLanguageCode_ = "";
-      targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableModels().clear();
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
@@ -1206,11 +1235,6 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
 
     private void buildPartialRepeatedFields(
         com.google.cloud.translate.v3.BatchTranslateTextRequest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        targetLanguageCodes_ = targetLanguageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.targetLanguageCodes_ = targetLanguageCodes_;
       if (inputConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
           inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
@@ -1229,6 +1253,10 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.sourceLanguageCode_ = sourceLanguageCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        targetLanguageCodes_.makeImmutable();
+        result.targetLanguageCodes_ = targetLanguageCodes_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.models_ = internalGetModels();
@@ -1307,7 +1335,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       if (!other.targetLanguageCodes_.isEmpty()) {
         if (targetLanguageCodes_.isEmpty()) {
           targetLanguageCodes_ = other.targetLanguageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureTargetLanguageCodesIsMutable();
           targetLanguageCodes_.addAll(other.targetLanguageCodes_);
@@ -1477,8 +1505,11 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Location to make a call. Must refer to a caller's project.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * The `global` location is not supported for batch translation.
+     *
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
@@ -1506,8 +1537,11 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Location to make a call. Must refer to a caller's project.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * The `global` location is not supported for batch translation.
+     *
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
@@ -1535,8 +1569,11 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Location to make a call. Must refer to a caller's project.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * The `global` location is not supported for batch translation.
+     *
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
@@ -1563,8 +1600,11 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Location to make a call. Must refer to a caller's project.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * The `global` location is not supported for batch translation.
+     *
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
@@ -1587,8 +1627,11 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Location to make a call. Must refer to a caller's project.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+     *
      * The `global` location is not supported for batch translation.
+     *
      * Only AutoML Translation models or glossaries within the same region (have
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
@@ -1718,14 +1761,14 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       return this;
     }
 
-    private com.google.protobuf.LazyStringList targetLanguageCodes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList targetLanguageCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTargetLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!targetLanguageCodes_.isModifiable()) {
         targetLanguageCodes_ = new com.google.protobuf.LazyStringArrayList(targetLanguageCodes_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1740,7 +1783,8 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * @return A list containing the targetLanguageCodes.
      */
     public com.google.protobuf.ProtocolStringList getTargetLanguageCodesList() {
-      return targetLanguageCodes_.getUnmodifiableView();
+      targetLanguageCodes_.makeImmutable();
+      return targetLanguageCodes_;
     }
     /**
      *
@@ -1809,6 +1853,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       }
       ensureTargetLanguageCodesIsMutable();
       targetLanguageCodes_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1831,6 +1876,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       }
       ensureTargetLanguageCodesIsMutable();
       targetLanguageCodes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1850,6 +1896,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     public Builder addAllTargetLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureTargetLanguageCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetLanguageCodes_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1866,8 +1913,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTargetLanguageCodes() {
-      targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1891,6 +1939,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureTargetLanguageCodesIsMutable();
       targetLanguageCodes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1927,11 +1976,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -1958,11 +2012,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -1980,11 +2039,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -2009,11 +2073,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -2044,11 +2113,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -2075,11 +2149,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -2104,11 +2183,16 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * Optional. The models to use for translation. Map's key is target language
      * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
+     *
      * The value format depends on model type:
+     *
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+     *
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+     *
+     *
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -3016,10 +3100,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -3044,10 +3130,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -3063,10 +3151,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -3089,10 +3179,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -3121,10 +3213,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -3149,10 +3243,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -3175,10 +3271,12 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>

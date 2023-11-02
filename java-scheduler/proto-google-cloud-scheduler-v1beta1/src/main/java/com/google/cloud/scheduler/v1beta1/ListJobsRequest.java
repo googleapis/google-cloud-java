@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListJobsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -136,6 +131,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * `filter` can be used to specify a subset of jobs.
+   *
    * If `filter` equals `target_config="HttpConfig"`, then the http
    * target jobs are retrieved. If `filter` equals
    * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
@@ -165,6 +161,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * `filter` can be used to specify a subset of jobs.
+   *
    * If `filter` equals `target_config="HttpConfig"`, then the http
    * target jobs are retrieved. If `filter` equals
    * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
@@ -197,6 +194,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Requested page size.
+   *
    * The maximum page size is 500. If unspecified, the page size will
    * be the maximum. Fewer jobs than requested might be returned,
    * even if more jobs exist; use next_page_token to determine if more
@@ -863,6 +861,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * `filter` can be used to specify a subset of jobs.
+     *
      * If `filter` equals `target_config="HttpConfig"`, then the http
      * target jobs are retrieved. If `filter` equals
      * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
@@ -891,6 +890,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * `filter` can be used to specify a subset of jobs.
+     *
      * If `filter` equals `target_config="HttpConfig"`, then the http
      * target jobs are retrieved. If `filter` equals
      * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
@@ -919,6 +919,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * `filter` can be used to specify a subset of jobs.
+     *
      * If `filter` equals `target_config="HttpConfig"`, then the http
      * target jobs are retrieved. If `filter` equals
      * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
@@ -946,6 +947,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * `filter` can be used to specify a subset of jobs.
+     *
      * If `filter` equals `target_config="HttpConfig"`, then the http
      * target jobs are retrieved. If `filter` equals
      * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
@@ -969,6 +971,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * `filter` can be used to specify a subset of jobs.
+     *
      * If `filter` equals `target_config="HttpConfig"`, then the http
      * target jobs are retrieved. If `filter` equals
      * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
@@ -999,6 +1002,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Requested page size.
+     *
      * The maximum page size is 500. If unspecified, the page size will
      * be the maximum. Fewer jobs than requested might be returned,
      * even if more jobs exist; use next_page_token to determine if more
@@ -1018,6 +1022,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Requested page size.
+     *
      * The maximum page size is 500. If unspecified, the page size will
      * be the maximum. Fewer jobs than requested might be returned,
      * even if more jobs exist; use next_page_token to determine if more
@@ -1041,6 +1046,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Requested page size.
+     *
      * The maximum page size is 500. If unspecified, the page size will
      * be the maximum. Fewer jobs than requested might be returned,
      * even if more jobs exist; use next_page_token to determine if more

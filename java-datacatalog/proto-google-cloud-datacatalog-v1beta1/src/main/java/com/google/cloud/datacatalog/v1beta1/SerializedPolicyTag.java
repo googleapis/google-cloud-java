@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
   }
 
   private SerializedPolicyTag() {
+    policyTag_ = "";
     displayName_ = "";
     description_ = "";
     childPolicyTags_ = java.util.Collections.emptyList();
@@ -47,11 +48,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SerializedPolicyTag();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -69,6 +65,61 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
             com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag.Builder.class);
   }
 
+  public static final int POLICY_TAG_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object policyTag_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of the policy tag.
+   *
+   * This field will be ignored when calling ImportTaxonomies.
+   * </pre>
+   *
+   * <code>string policy_tag = 1;</code>
+   *
+   * @return The policyTag.
+   */
+  @java.lang.Override
+  public java.lang.String getPolicyTag() {
+    java.lang.Object ref = policyTag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      policyTag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of the policy tag.
+   *
+   * This field will be ignored when calling ImportTaxonomies.
+   * </pre>
+   *
+   * <code>string policy_tag = 1;</code>
+   *
+   * @return The bytes for policyTag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPolicyTagBytes() {
+    java.lang.Object ref = policyTag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      policyTag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -77,7 +128,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
+   * Required. Display name of the policy tag. Max 200 bytes when encoded in
+   * UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -100,7 +152,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
+   * Required. Display name of the policy tag. Max 200 bytes when encoded in
+   * UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -267,6 +320,9 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyTag_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, policyTag_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
@@ -285,6 +341,9 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyTag_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, policyTag_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
@@ -310,6 +369,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag other =
         (com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag) obj;
 
+    if (!getPolicyTag().equals(other.getPolicyTag())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getChildPolicyTagsList().equals(other.getChildPolicyTagsList())) return false;
@@ -324,6 +384,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + POLICY_TAG_FIELD_NUMBER;
+    hash = (53 * hash) + getPolicyTag().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
@@ -472,6 +534,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      policyTag_ = "";
       displayName_ = "";
       description_ = "";
       if (childPolicyTagsBuilder_ == null) {
@@ -480,7 +543,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         childPolicyTags_ = null;
         childPolicyTagsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -519,9 +582,9 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     private void buildPartialRepeatedFields(
         com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag result) {
       if (childPolicyTagsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           childPolicyTags_ = java.util.Collections.unmodifiableList(childPolicyTags_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.childPolicyTags_ = childPolicyTags_;
       } else {
@@ -532,9 +595,12 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     private void buildPartial0(com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.displayName_ = displayName_;
+        result.policyTag_ = policyTag_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
       }
     }
@@ -585,21 +651,26 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag other) {
       if (other == com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag.getDefaultInstance())
         return this;
+      if (!other.getPolicyTag().isEmpty()) {
+        policyTag_ = other.policyTag_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (childPolicyTagsBuilder_ == null) {
         if (!other.childPolicyTags_.isEmpty()) {
           if (childPolicyTags_.isEmpty()) {
             childPolicyTags_ = other.childPolicyTags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureChildPolicyTagsIsMutable();
             childPolicyTags_.addAll(other.childPolicyTags_);
@@ -612,7 +683,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
             childPolicyTagsBuilder_.dispose();
             childPolicyTagsBuilder_ = null;
             childPolicyTags_ = other.childPolicyTags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             childPolicyTagsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getChildPolicyTagsFieldBuilder()
@@ -648,16 +719,22 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                policyTag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -693,12 +770,129 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
+    private java.lang.Object policyTag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the policy tag.
+     *
+     * This field will be ignored when calling ImportTaxonomies.
+     * </pre>
+     *
+     * <code>string policy_tag = 1;</code>
+     *
+     * @return The policyTag.
+     */
+    public java.lang.String getPolicyTag() {
+      java.lang.Object ref = policyTag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        policyTag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the policy tag.
+     *
+     * This field will be ignored when calling ImportTaxonomies.
+     * </pre>
+     *
+     * <code>string policy_tag = 1;</code>
+     *
+     * @return The bytes for policyTag.
+     */
+    public com.google.protobuf.ByteString getPolicyTagBytes() {
+      java.lang.Object ref = policyTag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        policyTag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the policy tag.
+     *
+     * This field will be ignored when calling ImportTaxonomies.
+     * </pre>
+     *
+     * <code>string policy_tag = 1;</code>
+     *
+     * @param value The policyTag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyTag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      policyTag_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the policy tag.
+     *
+     * This field will be ignored when calling ImportTaxonomies.
+     * </pre>
+     *
+     * <code>string policy_tag = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPolicyTag() {
+      policyTag_ = getDefaultInstance().getPolicyTag();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the policy tag.
+     *
+     * This field will be ignored when calling ImportTaxonomies.
+     * </pre>
+     *
+     * <code>string policy_tag = 1;</code>
+     *
+     * @param value The bytes for policyTag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyTagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      policyTag_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object displayName_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. Max 200 bytes when encoded in
+     * UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -720,7 +914,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. Max 200 bytes when encoded in
+     * UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -742,7 +937,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. Max 200 bytes when encoded in
+     * UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -755,7 +951,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -763,7 +959,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. Max 200 bytes when encoded in
+     * UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -772,7 +969,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -780,7 +977,8 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. Max 200 bytes when encoded in
+     * UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -794,7 +992,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -867,7 +1065,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -886,7 +1084,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -910,7 +1108,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -919,11 +1117,11 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         childPolicyTags_ = java.util.Collections.emptyList();
 
     private void ensureChildPolicyTagsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         childPolicyTags_ =
             new java.util.ArrayList<com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag>(
                 childPolicyTags_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1157,7 +1355,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     public Builder clearChildPolicyTags() {
       if (childPolicyTagsBuilder_ == null) {
         childPolicyTags_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         childPolicyTagsBuilder_.clear();
@@ -1294,7 +1492,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
                 com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag.Builder,
                 com.google.cloud.datacatalog.v1beta1.SerializedPolicyTagOrBuilder>(
                 childPolicyTags_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         childPolicyTags_ = null;

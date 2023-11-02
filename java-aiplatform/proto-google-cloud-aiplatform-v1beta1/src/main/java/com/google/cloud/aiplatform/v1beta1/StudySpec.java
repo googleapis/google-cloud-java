@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StudySpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -239,6 +234,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Describes the noise level of the repeated observations.
+   *
    * "Noisy" means that the repeated observations with the same Trial parameters
    * may lead to different metric evaluations.
    * </pre>
@@ -709,11 +705,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       return new MetricSpec();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.StudyProto
           .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MetricSpec_descriptor;
@@ -967,11 +958,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new SafetyMetricConfig();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2994,6 +2980,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A conditional parameter node is active if the parameter's value matches
      * the conditional node's parent_value_condition.
+     *
      * If two items in conditional_parameter_specs have the same name, they
      * must have disjoint parent_value_condition.
      * </pre>
@@ -3011,6 +2998,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A conditional parameter node is active if the parameter's value matches
      * the conditional node's parent_value_condition.
+     *
      * If two items in conditional_parameter_specs have the same name, they
      * must have disjoint parent_value_condition.
      * </pre>
@@ -3027,6 +3015,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A conditional parameter node is active if the parameter's value matches
      * the conditional node's parent_value_condition.
+     *
      * If two items in conditional_parameter_specs have the same name, they
      * must have disjoint parent_value_condition.
      * </pre>
@@ -3042,6 +3031,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A conditional parameter node is active if the parameter's value matches
      * the conditional node's parent_value_condition.
+     *
      * If two items in conditional_parameter_specs have the same name, they
      * must have disjoint parent_value_condition.
      * </pre>
@@ -3061,6 +3051,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A conditional parameter node is active if the parameter's value matches
      * the conditional node's parent_value_condition.
+     *
      * If two items in conditional_parameter_specs have the same name, they
      * must have disjoint parent_value_condition.
      * </pre>
@@ -3072,7 +3063,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpecOrBuilder
         getConditionalParameterSpecsOrBuilder(int index);
 
-    public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ParameterValueSpecCase
+    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ParameterValueSpecCase
         getParameterValueSpecCase();
   }
   /**
@@ -3104,11 +3095,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ParameterSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3353,6 +3339,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `DOUBLE` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -3369,6 +3356,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `DOUBLE` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -3404,11 +3392,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new DoubleValueSpec();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3473,6 +3456,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `DOUBLE` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -3492,6 +3476,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `DOUBLE` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -4052,6 +4037,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `DOUBLE` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -4071,6 +4057,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `DOUBLE` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -4090,6 +4077,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `DOUBLE` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -4113,6 +4101,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `DOUBLE` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -4235,6 +4224,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for an `INTEGER` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -4251,6 +4241,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for an `INTEGER` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -4287,11 +4278,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new IntegerValueSpec();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4356,6 +4342,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for an `INTEGER` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -4375,6 +4362,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for an `INTEGER` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -4926,6 +4914,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for an `INTEGER` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -4945,6 +4934,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for an `INTEGER` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -4964,6 +4954,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for an `INTEGER` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -4987,6 +4978,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for an `INTEGER` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -5134,6 +5126,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -5150,6 +5143,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -5166,6 +5160,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -5197,7 +5192,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       private CategoricalValueSpec() {
-        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        values_ = com.google.protobuf.LazyStringArrayList.emptyList();
         defaultValue_ = "";
       }
 
@@ -5205,11 +5200,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new CategoricalValueSpec();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5233,7 +5223,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public static final int VALUES_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList values_;
+      private com.google.protobuf.LazyStringArrayList values_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -5304,6 +5295,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -5323,6 +5315,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -5350,6 +5343,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -5609,8 +5603,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          values_ = com.google.protobuf.LazyStringArrayList.emptyList();
           defaultValue_ = "";
           return this;
         }
@@ -5645,7 +5638,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec result =
               new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec(
                   this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -5653,20 +5645,14 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec
-                result) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            values_ = values_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.values_ = values_;
-        }
-
         private void buildPartial0(
             com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec
                 result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            values_.makeImmutable();
+            result.values_ = values_;
+          }
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.defaultValue_ = defaultValue_;
@@ -5733,7 +5719,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           if (!other.values_.isEmpty()) {
             if (values_.isEmpty()) {
               values_ = other.values_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ |= 0x00000001;
             } else {
               ensureValuesIsMutable();
               values_.addAll(other.values_);
@@ -5803,14 +5789,14 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList values_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList values_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureValuesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!values_.isModifiable()) {
             values_ = new com.google.protobuf.LazyStringArrayList(values_);
-            bitField0_ |= 0x00000001;
           }
+          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -5824,7 +5810,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the values.
          */
         public com.google.protobuf.ProtocolStringList getValuesList() {
-          return values_.getUnmodifiableView();
+          values_.makeImmutable();
+          return values_;
         }
         /**
          *
@@ -5889,6 +5876,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
           ensureValuesIsMutable();
           values_.set(index, value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5910,6 +5898,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
           ensureValuesIsMutable();
           values_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5928,6 +5917,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
           ensureValuesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5943,8 +5933,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearValues() {
-          values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          values_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          ;
           onChanged();
           return this;
         }
@@ -5967,6 +5958,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureValuesIsMutable();
           values_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5979,6 +5971,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -5997,6 +5990,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -6023,6 +6017,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -6049,6 +6044,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -6074,6 +6070,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -6095,6 +6092,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -6244,6 +6242,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.  It automatically rounds to the
        * nearest feasible discrete point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -6261,6 +6260,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.  It automatically rounds to the
        * nearest feasible discrete point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -6299,11 +6299,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new DiscreteValueSpec();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6393,6 +6388,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.  It automatically rounds to the
        * nearest feasible discrete point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -6413,6 +6409,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.  It automatically rounds to the
        * nearest feasible discrete point.
+       *
        * Currently only supported by the Vertex AI Vizier service. Not supported
        * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
@@ -7030,6 +7027,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.  It automatically rounds to the
          * nearest feasible discrete point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -7050,6 +7048,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.  It automatically rounds to the
          * nearest feasible discrete point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -7070,6 +7069,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.  It automatically rounds to the
          * nearest feasible discrete point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -7094,6 +7094,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.  It automatically rounds to the
          * nearest feasible discrete point.
+         *
          * Currently only supported by the Vertex AI Vizier service. Not supported
          * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
@@ -7369,7 +7370,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpecOrBuilder
           getParameterSpecOrBuilder();
 
-      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+      com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
               .ParentValueConditionCase
           getParentValueConditionCase();
     }
@@ -7402,11 +7403,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         return new ConditionalParameterSpec();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1beta1.StudyProto
             .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_descriptor;
@@ -7435,6 +7431,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. Matches values of the parent parameter of 'DISCRETE' type.
          * All values must exist in `discrete_value_spec` of parent parameter.
+         *
          * The Epsilon of the value matching is 1e-10.
          * </pre>
          *
@@ -7449,6 +7446,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. Matches values of the parent parameter of 'DISCRETE' type.
          * All values must exist in `discrete_value_spec` of parent parameter.
+         *
          * The Epsilon of the value matching is 1e-10.
          * </pre>
          *
@@ -7463,6 +7461,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. Matches values of the parent parameter of 'DISCRETE' type.
          * All values must exist in `discrete_value_spec` of parent parameter.
+         *
          * The Epsilon of the value matching is 1e-10.
          * </pre>
          *
@@ -7504,11 +7503,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           return new DiscreteValueCondition();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.aiplatform.v1beta1.StudyProto
               .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_descriptor;
@@ -7536,6 +7530,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. Matches values of the parent parameter of 'DISCRETE' type.
          * All values must exist in `discrete_value_spec` of parent parameter.
+         *
          * The Epsilon of the value matching is 1e-10.
          * </pre>
          *
@@ -7553,6 +7548,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. Matches values of the parent parameter of 'DISCRETE' type.
          * All values must exist in `discrete_value_spec` of parent parameter.
+         *
          * The Epsilon of the value matching is 1e-10.
          * </pre>
          *
@@ -7569,6 +7565,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. Matches values of the parent parameter of 'DISCRETE' type.
          * All values must exist in `discrete_value_spec` of parent parameter.
+         *
          * The Epsilon of the value matching is 1e-10.
          * </pre>
          *
@@ -8047,6 +8044,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Required. Matches values of the parent parameter of 'DISCRETE' type.
            * All values must exist in `discrete_value_spec` of parent parameter.
+           *
            * The Epsilon of the value matching is 1e-10.
            * </pre>
            *
@@ -8065,6 +8063,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Required. Matches values of the parent parameter of 'DISCRETE' type.
            * All values must exist in `discrete_value_spec` of parent parameter.
+           *
            * The Epsilon of the value matching is 1e-10.
            * </pre>
            *
@@ -8081,6 +8080,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Required. Matches values of the parent parameter of 'DISCRETE' type.
            * All values must exist in `discrete_value_spec` of parent parameter.
+           *
            * The Epsilon of the value matching is 1e-10.
            * </pre>
            *
@@ -8098,6 +8098,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Required. Matches values of the parent parameter of 'DISCRETE' type.
            * All values must exist in `discrete_value_spec` of parent parameter.
+           *
            * The Epsilon of the value matching is 1e-10.
            * </pre>
            *
@@ -8120,6 +8121,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Required. Matches values of the parent parameter of 'DISCRETE' type.
            * All values must exist in `discrete_value_spec` of parent parameter.
+           *
            * The Epsilon of the value matching is 1e-10.
            * </pre>
            *
@@ -8141,6 +8143,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Required. Matches values of the parent parameter of 'DISCRETE' type.
            * All values must exist in `discrete_value_spec` of parent parameter.
+           *
            * The Epsilon of the value matching is 1e-10.
            * </pre>
            *
@@ -8161,6 +8164,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Required. Matches values of the parent parameter of 'DISCRETE' type.
            * All values must exist in `discrete_value_spec` of parent parameter.
+           *
            * The Epsilon of the value matching is 1e-10.
            * </pre>
            *
@@ -8321,11 +8325,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new IntValueCondition();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9145,18 +9144,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
 
         private CategoricalValueCondition() {
-          values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          values_ = com.google.protobuf.LazyStringArrayList.emptyList();
         }
 
         @java.lang.Override
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new CategoricalValueCondition();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9179,7 +9173,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         public static final int VALUES_FIELD_NUMBER = 1;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList values_;
+        private com.google.protobuf.LazyStringArrayList values_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -9492,8 +9487,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           public Builder clear() {
             super.clear();
             bitField0_ = 0;
-            values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            values_ = com.google.protobuf.LazyStringArrayList.emptyList();
             return this;
           }
 
@@ -9533,7 +9527,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 result =
                     new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
                         .ConditionalParameterSpec.CategoricalValueCondition(this);
-            buildPartialRepeatedFields(result);
             if (bitField0_ != 0) {
               buildPartial0(result);
             }
@@ -9541,22 +9534,15 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             return result;
           }
 
-          private void buildPartialRepeatedFields(
-              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
-                      .CategoricalValueCondition
-                  result) {
-            if (((bitField0_ & 0x00000001) != 0)) {
-              values_ = values_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000001);
-            }
-            result.values_ = values_;
-          }
-
           private void buildPartial0(
               com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
                       .CategoricalValueCondition
                   result) {
             int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              values_.makeImmutable();
+              result.values_ = values_;
+            }
           }
 
           @java.lang.Override
@@ -9621,7 +9607,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             if (!other.values_.isEmpty()) {
               if (values_.isEmpty()) {
                 values_ = other.values_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ |= 0x00000001;
               } else {
                 ensureValuesIsMutable();
                 values_.addAll(other.values_);
@@ -9680,14 +9666,14 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
           private int bitField0_;
 
-          private com.google.protobuf.LazyStringList values_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList values_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensureValuesIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!values_.isModifiable()) {
               values_ = new com.google.protobuf.LazyStringArrayList(values_);
-              bitField0_ |= 0x00000001;
             }
+            bitField0_ |= 0x00000001;
           }
           /**
            *
@@ -9703,7 +9689,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the values.
            */
           public com.google.protobuf.ProtocolStringList getValuesList() {
-            return values_.getUnmodifiableView();
+            values_.makeImmutable();
+            return values_;
           }
           /**
            *
@@ -9776,6 +9763,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             }
             ensureValuesIsMutable();
             values_.set(index, value);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -9799,6 +9787,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             }
             ensureValuesIsMutable();
             values_.add(value);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -9819,6 +9808,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
             ensureValuesIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -9836,8 +9826,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearValues() {
-            values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            values_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000001);
+            ;
             onChanged();
             return this;
           }
@@ -9862,6 +9853,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensureValuesIsMutable();
             values_.add(value);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -9939,6 +9931,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int parentValueConditionCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object parentValueCondition_;
 
       public enum ParentValueConditionCase
@@ -11924,6 +11918,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int parameterValueSpecCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object parameterValueSpec_;
 
     public enum ParameterValueSpecCase
@@ -12335,6 +12331,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A conditional parameter node is active if the parameter's value matches
      * the conditional node's parent_value_condition.
+     *
      * If two items in conditional_parameter_specs have the same name, they
      * must have disjoint parent_value_condition.
      * </pre>
@@ -12355,6 +12352,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A conditional parameter node is active if the parameter's value matches
      * the conditional node's parent_value_condition.
+     *
      * If two items in conditional_parameter_specs have the same name, they
      * must have disjoint parent_value_condition.
      * </pre>
@@ -12377,6 +12375,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A conditional parameter node is active if the parameter's value matches
      * the conditional node's parent_value_condition.
+     *
      * If two items in conditional_parameter_specs have the same name, they
      * must have disjoint parent_value_condition.
      * </pre>
@@ -12395,6 +12394,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A conditional parameter node is active if the parameter's value matches
      * the conditional node's parent_value_condition.
+     *
      * If two items in conditional_parameter_specs have the same name, they
      * must have disjoint parent_value_condition.
      * </pre>
@@ -12414,6 +12414,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A conditional parameter node is active if the parameter's value matches
      * the conditional node's parent_value_condition.
+     *
      * If two items in conditional_parameter_specs have the same name, they
      * must have disjoint parent_value_condition.
      * </pre>
@@ -14322,6 +14323,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14345,6 +14347,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14366,6 +14369,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14388,6 +14392,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14418,6 +14423,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14446,6 +14452,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14475,6 +14482,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14505,6 +14513,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14532,6 +14541,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14560,6 +14570,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14590,6 +14601,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14614,6 +14626,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14638,6 +14651,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14657,6 +14671,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14680,6 +14695,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14705,6 +14721,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14727,6 +14744,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14750,6 +14768,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A conditional parameter node is active if the parameter's value matches
        * the conditional node's parent_value_condition.
+       *
        * If two items in conditional_parameter_specs have the same name, they
        * must have disjoint parent_value_condition.
        * </pre>
@@ -14908,11 +14927,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DecayCurveAutomatedStoppingSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -15510,11 +15524,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MedianAutomatedStoppingSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -16235,11 +16244,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ConvexAutomatedStoppingSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -17627,11 +17631,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       return new ConvexStopConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.StudyProto
           .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ConvexStopConfig_descriptor;
@@ -18778,18 +18777,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private TransferLearningConfig() {
-      priorStudyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      priorStudyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TransferLearningConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -18830,7 +18824,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     public static final int PRIOR_STUDY_NAMES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList priorStudyNames_;
+    private com.google.protobuf.LazyStringArrayList priorStudyNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -19116,8 +19111,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         disableTransferLearning_ = false;
-        priorStudyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        priorStudyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -19148,7 +19142,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig buildPartial() {
         com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig result =
             new com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -19156,20 +19149,15 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          priorStudyNames_ = priorStudyNames_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.priorStudyNames_ = priorStudyNames_;
-      }
-
       private void buildPartial0(
           com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.disableTransferLearning_ = disableTransferLearning_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          priorStudyNames_.makeImmutable();
+          result.priorStudyNames_ = priorStudyNames_;
         }
       }
 
@@ -19230,7 +19218,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (!other.priorStudyNames_.isEmpty()) {
           if (priorStudyNames_.isEmpty()) {
             priorStudyNames_ = other.priorStudyNames_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensurePriorStudyNamesIsMutable();
             priorStudyNames_.addAll(other.priorStudyNames_);
@@ -19354,14 +19342,14 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList priorStudyNames_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList priorStudyNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensurePriorStudyNamesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!priorStudyNames_.isModifiable()) {
           priorStudyNames_ = new com.google.protobuf.LazyStringArrayList(priorStudyNames_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -19376,7 +19364,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the priorStudyNames.
        */
       public com.google.protobuf.ProtocolStringList getPriorStudyNamesList() {
-        return priorStudyNames_.getUnmodifiableView();
+        priorStudyNames_.makeImmutable();
+        return priorStudyNames_;
       }
       /**
        *
@@ -19445,6 +19434,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePriorStudyNamesIsMutable();
         priorStudyNames_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -19467,6 +19457,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePriorStudyNamesIsMutable();
         priorStudyNames_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -19486,6 +19477,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllPriorStudyNames(java.lang.Iterable<java.lang.String> values) {
         ensurePriorStudyNamesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, priorStudyNames_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -19502,8 +19494,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPriorStudyNames() {
-        priorStudyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        priorStudyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -19527,6 +19520,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensurePriorStudyNamesIsMutable();
         priorStudyNames_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -19599,6 +19593,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int automatedStoppingSpecCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object automatedStoppingSpec_;
 
   public enum AutomatedStoppingSpecCase
@@ -19792,7 +19788,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=607
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=625
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Override
@@ -19813,7 +19809,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=607
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=625
    * @return The convexStopConfig.
    */
   @java.lang.Override
@@ -21535,7 +21531,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=607
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=625
      * @return Whether the convexStopConfig field is set.
      */
     @java.lang.Override
@@ -21556,7 +21552,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=607
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=625
      * @return The convexStopConfig.
      */
     @java.lang.Override

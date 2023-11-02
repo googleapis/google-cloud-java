@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,6 +123,14 @@ public final class LanguageServiceProto {
       internal_static_google_cloud_language_v1beta2_ClassifyTextResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_language_v1beta2_ClassifyTextResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_language_v1beta2_ModerateTextRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_language_v1beta2_ModerateTextRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_language_v1beta2_ModerateTextResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_language_v1beta2_ModerateTextResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -282,106 +290,118 @@ public final class LanguageServiceProto {
           + "odelOptions.V2Model.ContentCategoriesVer"
           + "sion\"V\n\030ContentCategoriesVersion\022*\n&CONT"
           + "ENT_CATEGORIES_VERSION_UNSPECIFIED\020\000\022\006\n\002"
-          + "V1\020\001\022\006\n\002V2\020\002B\014\n\nmodel_type\"\235\001\n\027AnalyzeSe"
-          + "ntimentRequest\022>\n\010document\030\001 \001(\0132\'.googl"
-          + "e.cloud.language.v1beta2.DocumentB\003\340A\002\022B"
-          + "\n\rencoding_type\030\002 \001(\0162+.google.cloud.lan"
-          + "guage.v1beta2.EncodingType\"\256\001\n\030AnalyzeSe"
-          + "ntimentResponse\022D\n\022document_sentiment\030\001 "
-          + "\001(\0132(.google.cloud.language.v1beta2.Sent"
-          + "iment\022\020\n\010language\030\002 \001(\t\022:\n\tsentences\030\003 \003"
-          + "(\0132\'.google.cloud.language.v1beta2.Sente"
-          + "nce\"\243\001\n\035AnalyzeEntitySentimentRequest\022>\n"
-          + "\010document\030\001 \001(\0132\'.google.cloud.language."
-          + "v1beta2.DocumentB\003\340A\002\022B\n\rencoding_type\030\002"
-          + " \001(\0162+.google.cloud.language.v1beta2.Enc"
-          + "odingType\"k\n\036AnalyzeEntitySentimentRespo"
-          + "nse\0227\n\010entities\030\001 \003(\0132%.google.cloud.lan"
-          + "guage.v1beta2.Entity\022\020\n\010language\030\002 \001(\t\"\234"
-          + "\001\n\026AnalyzeEntitiesRequest\022>\n\010document\030\001 "
-          + "\001(\0132\'.google.cloud.language.v1beta2.Docu"
-          + "mentB\003\340A\002\022B\n\rencoding_type\030\002 \001(\0162+.googl"
-          + "e.cloud.language.v1beta2.EncodingType\"d\n"
-          + "\027AnalyzeEntitiesResponse\0227\n\010entities\030\001 \003"
-          + "(\0132%.google.cloud.language.v1beta2.Entit"
-          + "y\022\020\n\010language\030\002 \001(\t\"\232\001\n\024AnalyzeSyntaxReq"
-          + "uest\022>\n\010document\030\001 \001(\0132\'.google.cloud.la"
-          + "nguage.v1beta2.DocumentB\003\340A\002\022B\n\rencoding"
-          + "_type\030\002 \001(\0162+.google.cloud.language.v1be"
-          + "ta2.EncodingType\"\233\001\n\025AnalyzeSyntaxRespon"
-          + "se\022:\n\tsentences\030\001 \003(\0132\'.google.cloud.lan"
-          + "guage.v1beta2.Sentence\0224\n\006tokens\030\002 \003(\0132$"
-          + ".google.cloud.language.v1beta2.Token\022\020\n\010"
-          + "language\030\003 \001(\t\"\266\001\n\023ClassifyTextRequest\022>"
+          + "V1\020\001\022\006\n\002V2\020\002B\014\n\nmodel_type\"\236\001\n\027AnalyzeSe"
+          + "ntimentRequest\022?\n\010document\030\001 \001(\0132\'.googl"
+          + "e.cloud.language.v1beta2.DocumentB\004\342A\001\002\022"
+          + "B\n\rencoding_type\030\002 \001(\0162+.google.cloud.la"
+          + "nguage.v1beta2.EncodingType\"\256\001\n\030AnalyzeS"
+          + "entimentResponse\022D\n\022document_sentiment\030\001"
+          + " \001(\0132(.google.cloud.language.v1beta2.Sen"
+          + "timent\022\020\n\010language\030\002 \001(\t\022:\n\tsentences\030\003 "
+          + "\003(\0132\'.google.cloud.language.v1beta2.Sent"
+          + "ence\"\244\001\n\035AnalyzeEntitySentimentRequest\022?"
           + "\n\010document\030\001 \001(\0132\'.google.cloud.language"
-          + ".v1beta2.DocumentB\003\340A\002\022_\n\034classification"
-          + "_model_options\030\003 \001(\01329.google.cloud.lang"
-          + "uage.v1beta2.ClassificationModelOptions\""
-          + "a\n\024ClassifyTextResponse\022I\n\ncategories\030\001 "
+          + ".v1beta2.DocumentB\004\342A\001\002\022B\n\rencoding_type"
+          + "\030\002 \001(\0162+.google.cloud.language.v1beta2.E"
+          + "ncodingType\"k\n\036AnalyzeEntitySentimentRes"
+          + "ponse\0227\n\010entities\030\001 \003(\0132%.google.cloud.l"
+          + "anguage.v1beta2.Entity\022\020\n\010language\030\002 \001(\t"
+          + "\"\235\001\n\026AnalyzeEntitiesRequest\022?\n\010document\030"
+          + "\001 \001(\0132\'.google.cloud.language.v1beta2.Do"
+          + "cumentB\004\342A\001\002\022B\n\rencoding_type\030\002 \001(\0162+.go"
+          + "ogle.cloud.language.v1beta2.EncodingType"
+          + "\"d\n\027AnalyzeEntitiesResponse\0227\n\010entities\030"
+          + "\001 \003(\0132%.google.cloud.language.v1beta2.En"
+          + "tity\022\020\n\010language\030\002 \001(\t\"\233\001\n\024AnalyzeSyntax"
+          + "Request\022?\n\010document\030\001 \001(\0132\'.google.cloud"
+          + ".language.v1beta2.DocumentB\004\342A\001\002\022B\n\renco"
+          + "ding_type\030\002 \001(\0162+.google.cloud.language."
+          + "v1beta2.EncodingType\"\233\001\n\025AnalyzeSyntaxRe"
+          + "sponse\022:\n\tsentences\030\001 \003(\0132\'.google.cloud"
+          + ".language.v1beta2.Sentence\0224\n\006tokens\030\002 \003"
+          + "(\0132$.google.cloud.language.v1beta2.Token"
+          + "\022\020\n\010language\030\003 \001(\t\"\267\001\n\023ClassifyTextReque"
+          + "st\022?\n\010document\030\001 \001(\0132\'.google.cloud.lang"
+          + "uage.v1beta2.DocumentB\004\342A\001\002\022_\n\034classific"
+          + "ation_model_options\030\003 \001(\01329.google.cloud"
+          + ".language.v1beta2.ClassificationModelOpt"
+          + "ions\"a\n\024ClassifyTextResponse\022I\n\ncategori"
+          + "es\030\001 \003(\01325.google.cloud.language.v1beta2"
+          + ".ClassificationCategory\"V\n\023ModerateTextR"
+          + "equest\022?\n\010document\030\001 \001(\0132\'.google.cloud."
+          + "language.v1beta2.DocumentB\004\342A\001\002\"l\n\024Moder"
+          + "ateTextResponse\022T\n\025moderation_categories"
+          + "\030\001 \003(\01325.google.cloud.language.v1beta2.C"
+          + "lassificationCategory\"\203\004\n\023AnnotateTextRe"
+          + "quest\022?\n\010document\030\001 \001(\0132\'.google.cloud.l"
+          + "anguage.v1beta2.DocumentB\004\342A\001\002\022S\n\010featur"
+          + "es\030\002 \001(\0132;.google.cloud.language.v1beta2"
+          + ".AnnotateTextRequest.FeaturesB\004\342A\001\002\022B\n\re"
+          + "ncoding_type\030\003 \001(\0162+.google.cloud.langua"
+          + "ge.v1beta2.EncodingType\032\221\002\n\010Features\022\026\n\016"
+          + "extract_syntax\030\001 \001(\010\022\030\n\020extract_entities"
+          + "\030\002 \001(\010\022\"\n\032extract_document_sentiment\030\003 \001"
+          + "(\010\022 \n\030extract_entity_sentiment\030\004 \001(\010\022\025\n\r"
+          + "classify_text\030\006 \001(\010\022\025\n\rmoderate_text\030\013 \001"
+          + "(\010\022_\n\034classification_model_options\030\n \001(\013"
+          + "29.google.cloud.language.v1beta2.Classif"
+          + "icationModelOptions\"\272\003\n\024AnnotateTextResp"
+          + "onse\022:\n\tsentences\030\001 \003(\0132\'.google.cloud.l"
+          + "anguage.v1beta2.Sentence\0224\n\006tokens\030\002 \003(\013"
+          + "2$.google.cloud.language.v1beta2.Token\0227"
+          + "\n\010entities\030\003 \003(\0132%.google.cloud.language"
+          + ".v1beta2.Entity\022D\n\022document_sentiment\030\004 "
+          + "\001(\0132(.google.cloud.language.v1beta2.Sent"
+          + "iment\022\020\n\010language\030\005 \001(\t\022I\n\ncategories\030\006 "
           + "\003(\01325.google.cloud.language.v1beta2.Clas"
-          + "sificationCategory\"\352\003\n\023AnnotateTextReque"
-          + "st\022>\n\010document\030\001 \001(\0132\'.google.cloud.lang"
-          + "uage.v1beta2.DocumentB\003\340A\002\022R\n\010features\030\002"
-          + " \001(\0132;.google.cloud.language.v1beta2.Ann"
-          + "otateTextRequest.FeaturesB\003\340A\002\022B\n\rencodi"
-          + "ng_type\030\003 \001(\0162+.google.cloud.language.v1"
-          + "beta2.EncodingType\032\372\001\n\010Features\022\026\n\016extra"
-          + "ct_syntax\030\001 \001(\010\022\030\n\020extract_entities\030\002 \001("
-          + "\010\022\"\n\032extract_document_sentiment\030\003 \001(\010\022 \n"
-          + "\030extract_entity_sentiment\030\004 \001(\010\022\025\n\rclass"
-          + "ify_text\030\006 \001(\010\022_\n\034classification_model_o"
-          + "ptions\030\n \001(\01329.google.cloud.language.v1b"
-          + "eta2.ClassificationModelOptions\"\344\002\n\024Anno"
-          + "tateTextResponse\022:\n\tsentences\030\001 \003(\0132\'.go"
-          + "ogle.cloud.language.v1beta2.Sentence\0224\n\006"
-          + "tokens\030\002 \003(\0132$.google.cloud.language.v1b"
-          + "eta2.Token\0227\n\010entities\030\003 \003(\0132%.google.cl"
-          + "oud.language.v1beta2.Entity\022D\n\022document_"
-          + "sentiment\030\004 \001(\0132(.google.cloud.language."
-          + "v1beta2.Sentiment\022\020\n\010language\030\005 \001(\t\022I\n\nc"
-          + "ategories\030\006 \003(\01325.google.cloud.language."
-          + "v1beta2.ClassificationCategory*8\n\014Encodi"
-          + "ngType\022\010\n\004NONE\020\000\022\010\n\004UTF8\020\001\022\t\n\005UTF16\020\002\022\t\n"
-          + "\005UTF32\020\0032\212\013\n\017LanguageService\022\327\001\n\020Analyze"
-          + "Sentiment\0226.google.cloud.language.v1beta"
-          + "2.AnalyzeSentimentRequest\0327.google.cloud"
-          + ".language.v1beta2.AnalyzeSentimentRespon"
-          + "se\"R\202\323\344\223\002(\"#/v1beta2/documents:analyzeSe"
-          + "ntiment:\001*\332A\026document,encoding_type\332A\010do"
-          + "cument\022\323\001\n\017AnalyzeEntities\0225.google.clou"
-          + "d.language.v1beta2.AnalyzeEntitiesReques"
-          + "t\0326.google.cloud.language.v1beta2.Analyz"
-          + "eEntitiesResponse\"Q\202\323\344\223\002\'\"\"/v1beta2/docu"
-          + "ments:analyzeEntities:\001*\332A\026document,enco"
-          + "ding_type\332A\010document\022\357\001\n\026AnalyzeEntitySe"
-          + "ntiment\022<.google.cloud.language.v1beta2."
-          + "AnalyzeEntitySentimentRequest\032=.google.c"
-          + "loud.language.v1beta2.AnalyzeEntitySenti"
-          + "mentResponse\"X\202\323\344\223\002.\")/v1beta2/documents"
-          + ":analyzeEntitySentiment:\001*\332A\026document,en"
-          + "coding_type\332A\010document\022\313\001\n\rAnalyzeSyntax"
-          + "\0223.google.cloud.language.v1beta2.Analyze"
-          + "SyntaxRequest\0324.google.cloud.language.v1"
-          + "beta2.AnalyzeSyntaxResponse\"O\202\323\344\223\002%\" /v1"
-          + "beta2/documents:analyzeSyntax:\001*\332A\026docum"
-          + "ent,encoding_type\332A\010document\022\256\001\n\014Classif"
-          + "yText\0222.google.cloud.language.v1beta2.Cl"
-          + "assifyTextRequest\0323.google.cloud.languag"
-          + "e.v1beta2.ClassifyTextResponse\"5\202\323\344\223\002$\"\037"
-          + "/v1beta2/documents:classifyText:\001*\332A\010doc"
-          + "ument\022\331\001\n\014AnnotateText\0222.google.cloud.la"
-          + "nguage.v1beta2.AnnotateTextRequest\0323.goo"
-          + "gle.cloud.language.v1beta2.AnnotateTextR"
-          + "esponse\"`\202\323\344\223\002$\"\037/v1beta2/documents:anno"
-          + "tateText:\001*\332A\037document,features,encoding"
-          + "_type\332A\021document,features\032z\312A\027language.g"
-          + "oogleapis.com\322A]https://www.googleapis.c"
-          + "om/auth/cloud-language,https://www.googl"
-          + "eapis.com/auth/cloud-platformBz\n!com.goo"
-          + "gle.cloud.language.v1beta2B\024LanguageServ"
-          + "iceProtoP\001Z=cloud.google.com/go/language"
-          + "/apiv1beta2/languagepb;languagepbb\006proto"
-          + "3"
+          + "sificationCategory\022T\n\025moderation_categor"
+          + "ies\030\010 \003(\01325.google.cloud.language.v1beta"
+          + "2.ClassificationCategory*8\n\014EncodingType"
+          + "\022\010\n\004NONE\020\000\022\010\n\004UTF8\020\001\022\t\n\005UTF16\020\002\022\t\n\005UTF32"
+          + "\020\0032\273\014\n\017LanguageService\022\327\001\n\020AnalyzeSentim"
+          + "ent\0226.google.cloud.language.v1beta2.Anal"
+          + "yzeSentimentRequest\0327.google.cloud.langu"
+          + "age.v1beta2.AnalyzeSentimentResponse\"R\332A"
+          + "\026document,encoding_type\332A\010document\202\323\344\223\002("
+          + "\"#/v1beta2/documents:analyzeSentiment:\001*"
+          + "\022\323\001\n\017AnalyzeEntities\0225.google.cloud.lang"
+          + "uage.v1beta2.AnalyzeEntitiesRequest\0326.go"
+          + "ogle.cloud.language.v1beta2.AnalyzeEntit"
+          + "iesResponse\"Q\332A\026document,encoding_type\332A"
+          + "\010document\202\323\344\223\002\'\"\"/v1beta2/documents:anal"
+          + "yzeEntities:\001*\022\357\001\n\026AnalyzeEntitySentimen"
+          + "t\022<.google.cloud.language.v1beta2.Analyz"
+          + "eEntitySentimentRequest\032=.google.cloud.l"
+          + "anguage.v1beta2.AnalyzeEntitySentimentRe"
+          + "sponse\"X\332A\026document,encoding_type\332A\010docu"
+          + "ment\202\323\344\223\002.\")/v1beta2/documents:analyzeEn"
+          + "titySentiment:\001*\022\313\001\n\rAnalyzeSyntax\0223.goo"
+          + "gle.cloud.language.v1beta2.AnalyzeSyntax"
+          + "Request\0324.google.cloud.language.v1beta2."
+          + "AnalyzeSyntaxResponse\"O\332A\026document,encod"
+          + "ing_type\332A\010document\202\323\344\223\002%\" /v1beta2/docu"
+          + "ments:analyzeSyntax:\001*\022\256\001\n\014ClassifyText\022"
+          + "2.google.cloud.language.v1beta2.Classify"
+          + "TextRequest\0323.google.cloud.language.v1be"
+          + "ta2.ClassifyTextResponse\"5\332A\010document\202\323\344"
+          + "\223\002$\"\037/v1beta2/documents:classifyText:\001*\022"
+          + "\256\001\n\014ModerateText\0222.google.cloud.language"
+          + ".v1beta2.ModerateTextRequest\0323.google.cl"
+          + "oud.language.v1beta2.ModerateTextRespons"
+          + "e\"5\332A\010document\202\323\344\223\002$\"\037/v1beta2/documents"
+          + ":moderateText:\001*\022\331\001\n\014AnnotateText\0222.goog"
+          + "le.cloud.language.v1beta2.AnnotateTextRe"
+          + "quest\0323.google.cloud.language.v1beta2.An"
+          + "notateTextResponse\"`\332A\037document,features"
+          + ",encoding_type\332A\021document,features\202\323\344\223\002$"
+          + "\"\037/v1beta2/documents:annotateText:\001*\032z\312A"
+          + "\027language.googleapis.com\322A]https://www.g"
+          + "oogleapis.com/auth/cloud-language,https:"
+          + "//www.googleapis.com/auth/cloud-platform"
+          + "Bz\n!com.google.cloud.language.v1beta2B\024L"
+          + "anguageServiceProtoP\001Z=cloud.google.com/"
+          + "go/language/apiv1beta2/languagepb;langua"
+          + "gepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -602,8 +622,24 @@ public final class LanguageServiceProto {
             new java.lang.String[] {
               "Categories",
             });
-    internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_descriptor =
+    internal_static_google_cloud_language_v1beta2_ModerateTextRequest_descriptor =
         getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_language_v1beta2_ModerateTextRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_language_v1beta2_ModerateTextRequest_descriptor,
+            new java.lang.String[] {
+              "Document",
+            });
+    internal_static_google_cloud_language_v1beta2_ModerateTextResponse_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_language_v1beta2_ModerateTextResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_language_v1beta2_ModerateTextResponse_descriptor,
+            new java.lang.String[] {
+              "ModerationCategories",
+            });
+    internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_descriptor =
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_descriptor,
@@ -623,15 +659,22 @@ public final class LanguageServiceProto {
               "ExtractDocumentSentiment",
               "ExtractEntitySentiment",
               "ClassifyText",
+              "ModerateText",
               "ClassificationModelOptions",
             });
     internal_static_google_cloud_language_v1beta2_AnnotateTextResponse_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_language_v1beta2_AnnotateTextResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_language_v1beta2_AnnotateTextResponse_descriptor,
             new java.lang.String[] {
-              "Sentences", "Tokens", "Entities", "DocumentSentiment", "Language", "Categories",
+              "Sentences",
+              "Tokens",
+              "Entities",
+              "DocumentSentiment",
+              "Language",
+              "Categories",
+              "ModerationCategories",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

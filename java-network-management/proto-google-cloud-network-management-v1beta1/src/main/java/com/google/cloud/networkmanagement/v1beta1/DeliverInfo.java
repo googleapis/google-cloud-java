@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeliverInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -142,7 +137,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target is a published service using [Private Service
+     * Target is a published service that uses [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
      * </pre>
      *
@@ -153,7 +148,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target is all Google APIs using [Private Service
+     * Target is all Google APIs that use [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-apis).
      * </pre>
      *
@@ -164,13 +159,23 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target is VPC-SC using [Private Service
+     * Target is a VPC-SC that uses [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-apis).
      * </pre>
      *
      * <code>PSC_VPC_SC = 8;</code>
      */
     PSC_VPC_SC(8),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a serverless network endpoint group.
+     * </pre>
+     *
+     * <code>SERVERLESS_NEG = 9;</code>
+     */
+    SERVERLESS_NEG(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -238,7 +243,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target is a published service using [Private Service
+     * Target is a published service that uses [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
      * </pre>
      *
@@ -249,7 +254,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target is all Google APIs using [Private Service
+     * Target is all Google APIs that use [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-apis).
      * </pre>
      *
@@ -260,13 +265,23 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target is VPC-SC using [Private Service
+     * Target is a VPC-SC that uses [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-apis).
      * </pre>
      *
      * <code>PSC_VPC_SC = 8;</code>
      */
     public static final int PSC_VPC_SC_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Target is a serverless network endpoint group.
+     * </pre>
+     *
+     * <code>SERVERLESS_NEG = 9;</code>
+     */
+    public static final int SERVERLESS_NEG_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -310,6 +325,8 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
           return PSC_GOOGLE_API;
         case 8:
           return PSC_VPC_SC;
+        case 9:
+          return SERVERLESS_NEG;
         default:
           return null;
       }

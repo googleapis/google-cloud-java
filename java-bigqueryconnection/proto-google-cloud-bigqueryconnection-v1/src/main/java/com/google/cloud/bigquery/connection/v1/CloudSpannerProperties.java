@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CloudSpannerProperties();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,6 +132,31 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     return useParallelism_;
   }
 
+  public static final int MAX_PARALLELISM_FIELD_NUMBER = 5;
+  private int maxParallelism_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Allows setting max parallelism per query when executing on Spanner
+   * independent compute resources. If unspecified, default values of
+   * parallelism are chosen that are dependent on the Cloud Spanner instance
+   * configuration.
+   *
+   * REQUIRES: `use_parallelism` must be set.
+   * REQUIRES: Either `use_data_boost` or `use_serverless_analytics` must be
+   * set.
+   * </pre>
+   *
+   * <code>int32 max_parallelism = 5;</code>
+   *
+   * @return The maxParallelism.
+   */
+  @java.lang.Override
+  public int getMaxParallelism() {
+    return maxParallelism_;
+  }
+
   public static final int USE_SERVERLESS_ANALYTICS_FIELD_NUMBER = 3;
   private boolean useServerlessAnalytics_ = false;
   /**
@@ -157,6 +177,29 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     return useServerlessAnalytics_;
   }
 
+  public static final int USE_DATA_BOOST_FIELD_NUMBER = 6;
+  private boolean useDataBoost_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If set, the request will be executed via Spanner independent compute
+   * resources.
+   * REQUIRES: `use_parallelism` must be set.
+   *
+   * NOTE: `use_serverless_analytics` will be deprecated. Prefer
+   * `use_data_boost` over `use_serverless_analytics`.
+   * </pre>
+   *
+   * <code>bool use_data_boost = 6;</code>
+   *
+   * @return The useDataBoost.
+   */
+  @java.lang.Override
+  public boolean getUseDataBoost() {
+    return useDataBoost_;
+  }
+
   public static final int DATABASE_ROLE_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -166,15 +209,15 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Cloud Spanner database role for fine-grained access control.
-   * A database role is a collection of fine-grained access privileges. Example:
-   * Admin predefines roles that provides user a set of permissions (SELECT,
-   * INSERT, ..). The user can then specify a predefined role on a connection to
-   * execute their Cloud Spanner query. The role is passthrough here. If the
-   * user is not authorized to use the specified role, they get an error. This
-   * validation happens on Cloud Spanner.
-   * See https://cloud.google.com/spanner/docs/fgac-about for more details.
-   * REQUIRES: database role name must start with uppercase/lowercase letter
-   * and only contain uppercase/lowercase letters, numbers, and underscores.
+   * The Cloud Spanner admin should have provisioned the database role with
+   * appropriate permissions, such as `SELECT` and `INSERT`. Other users should
+   * only use roles provided by their Cloud Spanner admins.
+   *
+   * For more details, see [About fine-grained access control]
+   * (https://cloud.google.com/spanner/docs/fgac-about).
+   *
+   * REQUIRES: The database role name must start with a letter, and can only
+   * contain letters, numbers, and underscores.
    * </pre>
    *
    * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -198,15 +241,15 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Cloud Spanner database role for fine-grained access control.
-   * A database role is a collection of fine-grained access privileges. Example:
-   * Admin predefines roles that provides user a set of permissions (SELECT,
-   * INSERT, ..). The user can then specify a predefined role on a connection to
-   * execute their Cloud Spanner query. The role is passthrough here. If the
-   * user is not authorized to use the specified role, they get an error. This
-   * validation happens on Cloud Spanner.
-   * See https://cloud.google.com/spanner/docs/fgac-about for more details.
-   * REQUIRES: database role name must start with uppercase/lowercase letter
-   * and only contain uppercase/lowercase letters, numbers, and underscores.
+   * The Cloud Spanner admin should have provisioned the database role with
+   * appropriate permissions, such as `SELECT` and `INSERT`. Other users should
+   * only use roles provided by their Cloud Spanner admins.
+   *
+   * For more details, see [About fine-grained access control]
+   * (https://cloud.google.com/spanner/docs/fgac-about).
+   *
+   * REQUIRES: The database role name must start with a letter, and can only
+   * contain letters, numbers, and underscores.
    * </pre>
    *
    * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -252,6 +295,12 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseRole_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, databaseRole_);
     }
+    if (maxParallelism_ != 0) {
+      output.writeInt32(5, maxParallelism_);
+    }
+    if (useDataBoost_ != false) {
+      output.writeBool(6, useDataBoost_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -273,6 +322,12 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseRole_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, databaseRole_);
     }
+    if (maxParallelism_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, maxParallelism_);
+    }
+    if (useDataBoost_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, useDataBoost_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -291,7 +346,9 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
 
     if (!getDatabase().equals(other.getDatabase())) return false;
     if (getUseParallelism() != other.getUseParallelism()) return false;
+    if (getMaxParallelism() != other.getMaxParallelism()) return false;
     if (getUseServerlessAnalytics() != other.getUseServerlessAnalytics()) return false;
+    if (getUseDataBoost() != other.getUseDataBoost()) return false;
     if (!getDatabaseRole().equals(other.getDatabaseRole())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -308,8 +365,12 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getDatabase().hashCode();
     hash = (37 * hash) + USE_PARALLELISM_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseParallelism());
+    hash = (37 * hash) + MAX_PARALLELISM_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxParallelism();
     hash = (37 * hash) + USE_SERVERLESS_ANALYTICS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseServerlessAnalytics());
+    hash = (37 * hash) + USE_DATA_BOOST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseDataBoost());
     hash = (37 * hash) + DATABASE_ROLE_FIELD_NUMBER;
     hash = (53 * hash) + getDatabaseRole().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -454,7 +515,9 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       bitField0_ = 0;
       database_ = "";
       useParallelism_ = false;
+      maxParallelism_ = 0;
       useServerlessAnalytics_ = false;
+      useDataBoost_ = false;
       databaseRole_ = "";
       return this;
     }
@@ -501,9 +564,15 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
         result.useParallelism_ = useParallelism_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.useServerlessAnalytics_ = useServerlessAnalytics_;
+        result.maxParallelism_ = maxParallelism_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.useServerlessAnalytics_ = useServerlessAnalytics_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.useDataBoost_ = useDataBoost_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.databaseRole_ = databaseRole_;
       }
     }
@@ -563,12 +632,18 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       if (other.getUseParallelism() != false) {
         setUseParallelism(other.getUseParallelism());
       }
+      if (other.getMaxParallelism() != 0) {
+        setMaxParallelism(other.getMaxParallelism());
+      }
       if (other.getUseServerlessAnalytics() != false) {
         setUseServerlessAnalytics(other.getUseServerlessAnalytics());
       }
+      if (other.getUseDataBoost() != false) {
+        setUseDataBoost(other.getUseDataBoost());
+      }
       if (!other.getDatabaseRole().isEmpty()) {
         databaseRole_ = other.databaseRole_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -612,15 +687,27 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
             case 24:
               {
                 useServerlessAnalytics_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
               {
                 databaseRole_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
+            case 40:
+              {
+                maxParallelism_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+            case 48:
+              {
+                useDataBoost_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -799,6 +886,80 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int maxParallelism_;
+    /**
+     *
+     *
+     * <pre>
+     * Allows setting max parallelism per query when executing on Spanner
+     * independent compute resources. If unspecified, default values of
+     * parallelism are chosen that are dependent on the Cloud Spanner instance
+     * configuration.
+     *
+     * REQUIRES: `use_parallelism` must be set.
+     * REQUIRES: Either `use_data_boost` or `use_serverless_analytics` must be
+     * set.
+     * </pre>
+     *
+     * <code>int32 max_parallelism = 5;</code>
+     *
+     * @return The maxParallelism.
+     */
+    @java.lang.Override
+    public int getMaxParallelism() {
+      return maxParallelism_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows setting max parallelism per query when executing on Spanner
+     * independent compute resources. If unspecified, default values of
+     * parallelism are chosen that are dependent on the Cloud Spanner instance
+     * configuration.
+     *
+     * REQUIRES: `use_parallelism` must be set.
+     * REQUIRES: Either `use_data_boost` or `use_serverless_analytics` must be
+     * set.
+     * </pre>
+     *
+     * <code>int32 max_parallelism = 5;</code>
+     *
+     * @param value The maxParallelism to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxParallelism(int value) {
+
+      maxParallelism_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows setting max parallelism per query when executing on Spanner
+     * independent compute resources. If unspecified, default values of
+     * parallelism are chosen that are dependent on the Cloud Spanner instance
+     * configuration.
+     *
+     * REQUIRES: `use_parallelism` must be set.
+     * REQUIRES: Either `use_data_boost` or `use_serverless_analytics` must be
+     * set.
+     * </pre>
+     *
+     * <code>int32 max_parallelism = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxParallelism() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      maxParallelism_ = 0;
+      onChanged();
+      return this;
+    }
+
     private boolean useServerlessAnalytics_;
     /**
      *
@@ -834,7 +995,7 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     public Builder setUseServerlessAnalytics(boolean value) {
 
       useServerlessAnalytics_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -852,8 +1013,76 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearUseServerlessAnalytics() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       useServerlessAnalytics_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean useDataBoost_;
+    /**
+     *
+     *
+     * <pre>
+     * If set, the request will be executed via Spanner independent compute
+     * resources.
+     * REQUIRES: `use_parallelism` must be set.
+     *
+     * NOTE: `use_serverless_analytics` will be deprecated. Prefer
+     * `use_data_boost` over `use_serverless_analytics`.
+     * </pre>
+     *
+     * <code>bool use_data_boost = 6;</code>
+     *
+     * @return The useDataBoost.
+     */
+    @java.lang.Override
+    public boolean getUseDataBoost() {
+      return useDataBoost_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the request will be executed via Spanner independent compute
+     * resources.
+     * REQUIRES: `use_parallelism` must be set.
+     *
+     * NOTE: `use_serverless_analytics` will be deprecated. Prefer
+     * `use_data_boost` over `use_serverless_analytics`.
+     * </pre>
+     *
+     * <code>bool use_data_boost = 6;</code>
+     *
+     * @param value The useDataBoost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseDataBoost(boolean value) {
+
+      useDataBoost_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the request will be executed via Spanner independent compute
+     * resources.
+     * REQUIRES: `use_parallelism` must be set.
+     *
+     * NOTE: `use_serverless_analytics` will be deprecated. Prefer
+     * `use_data_boost` over `use_serverless_analytics`.
+     * </pre>
+     *
+     * <code>bool use_data_boost = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseDataBoost() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      useDataBoost_ = false;
       onChanged();
       return this;
     }
@@ -864,15 +1093,15 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Cloud Spanner database role for fine-grained access control.
-     * A database role is a collection of fine-grained access privileges. Example:
-     * Admin predefines roles that provides user a set of permissions (SELECT,
-     * INSERT, ..). The user can then specify a predefined role on a connection to
-     * execute their Cloud Spanner query. The role is passthrough here. If the
-     * user is not authorized to use the specified role, they get an error. This
-     * validation happens on Cloud Spanner.
-     * See https://cloud.google.com/spanner/docs/fgac-about for more details.
-     * REQUIRES: database role name must start with uppercase/lowercase letter
-     * and only contain uppercase/lowercase letters, numbers, and underscores.
+     * The Cloud Spanner admin should have provisioned the database role with
+     * appropriate permissions, such as `SELECT` and `INSERT`. Other users should
+     * only use roles provided by their Cloud Spanner admins.
+     *
+     * For more details, see [About fine-grained access control]
+     * (https://cloud.google.com/spanner/docs/fgac-about).
+     *
+     * REQUIRES: The database role name must start with a letter, and can only
+     * contain letters, numbers, and underscores.
      * </pre>
      *
      * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -895,15 +1124,15 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Cloud Spanner database role for fine-grained access control.
-     * A database role is a collection of fine-grained access privileges. Example:
-     * Admin predefines roles that provides user a set of permissions (SELECT,
-     * INSERT, ..). The user can then specify a predefined role on a connection to
-     * execute their Cloud Spanner query. The role is passthrough here. If the
-     * user is not authorized to use the specified role, they get an error. This
-     * validation happens on Cloud Spanner.
-     * See https://cloud.google.com/spanner/docs/fgac-about for more details.
-     * REQUIRES: database role name must start with uppercase/lowercase letter
-     * and only contain uppercase/lowercase letters, numbers, and underscores.
+     * The Cloud Spanner admin should have provisioned the database role with
+     * appropriate permissions, such as `SELECT` and `INSERT`. Other users should
+     * only use roles provided by their Cloud Spanner admins.
+     *
+     * For more details, see [About fine-grained access control]
+     * (https://cloud.google.com/spanner/docs/fgac-about).
+     *
+     * REQUIRES: The database role name must start with a letter, and can only
+     * contain letters, numbers, and underscores.
      * </pre>
      *
      * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -926,15 +1155,15 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Cloud Spanner database role for fine-grained access control.
-     * A database role is a collection of fine-grained access privileges. Example:
-     * Admin predefines roles that provides user a set of permissions (SELECT,
-     * INSERT, ..). The user can then specify a predefined role on a connection to
-     * execute their Cloud Spanner query. The role is passthrough here. If the
-     * user is not authorized to use the specified role, they get an error. This
-     * validation happens on Cloud Spanner.
-     * See https://cloud.google.com/spanner/docs/fgac-about for more details.
-     * REQUIRES: database role name must start with uppercase/lowercase letter
-     * and only contain uppercase/lowercase letters, numbers, and underscores.
+     * The Cloud Spanner admin should have provisioned the database role with
+     * appropriate permissions, such as `SELECT` and `INSERT`. Other users should
+     * only use roles provided by their Cloud Spanner admins.
+     *
+     * For more details, see [About fine-grained access control]
+     * (https://cloud.google.com/spanner/docs/fgac-about).
+     *
+     * REQUIRES: The database role name must start with a letter, and can only
+     * contain letters, numbers, and underscores.
      * </pre>
      *
      * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -947,7 +1176,7 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       databaseRole_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -956,15 +1185,15 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Cloud Spanner database role for fine-grained access control.
-     * A database role is a collection of fine-grained access privileges. Example:
-     * Admin predefines roles that provides user a set of permissions (SELECT,
-     * INSERT, ..). The user can then specify a predefined role on a connection to
-     * execute their Cloud Spanner query. The role is passthrough here. If the
-     * user is not authorized to use the specified role, they get an error. This
-     * validation happens on Cloud Spanner.
-     * See https://cloud.google.com/spanner/docs/fgac-about for more details.
-     * REQUIRES: database role name must start with uppercase/lowercase letter
-     * and only contain uppercase/lowercase letters, numbers, and underscores.
+     * The Cloud Spanner admin should have provisioned the database role with
+     * appropriate permissions, such as `SELECT` and `INSERT`. Other users should
+     * only use roles provided by their Cloud Spanner admins.
+     *
+     * For more details, see [About fine-grained access control]
+     * (https://cloud.google.com/spanner/docs/fgac-about).
+     *
+     * REQUIRES: The database role name must start with a letter, and can only
+     * contain letters, numbers, and underscores.
      * </pre>
      *
      * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -973,7 +1202,7 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      */
     public Builder clearDatabaseRole() {
       databaseRole_ = getDefaultInstance().getDatabaseRole();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -982,15 +1211,15 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Cloud Spanner database role for fine-grained access control.
-     * A database role is a collection of fine-grained access privileges. Example:
-     * Admin predefines roles that provides user a set of permissions (SELECT,
-     * INSERT, ..). The user can then specify a predefined role on a connection to
-     * execute their Cloud Spanner query. The role is passthrough here. If the
-     * user is not authorized to use the specified role, they get an error. This
-     * validation happens on Cloud Spanner.
-     * See https://cloud.google.com/spanner/docs/fgac-about for more details.
-     * REQUIRES: database role name must start with uppercase/lowercase letter
-     * and only contain uppercase/lowercase letters, numbers, and underscores.
+     * The Cloud Spanner admin should have provisioned the database role with
+     * appropriate permissions, such as `SELECT` and `INSERT`. Other users should
+     * only use roles provided by their Cloud Spanner admins.
+     *
+     * For more details, see [About fine-grained access control]
+     * (https://cloud.google.com/spanner/docs/fgac-about).
+     *
+     * REQUIRES: The database role name must start with a letter, and can only
+     * contain letters, numbers, and underscores.
      * </pre>
      *
      * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1004,7 +1233,7 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       databaseRole_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

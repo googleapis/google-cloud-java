@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetRoleRequest extends com.google.protobuf.GeneratedMessageV3
     return new GetRoleRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_GetRoleRequest_descriptor;
@@ -82,24 +77,28 @@ public final class GetRoleRequest extends com.google.protobuf.GeneratedMessageV3
    * or
    * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
    * Each resource type's `name` value format is described below:
+   *
    * * [`roles.get()`](https://cloud.google.com/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`.
    *   This method returns results from all
    *   [predefined
    *   roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
    *   in Cloud IAM. Example request URL:
    *   `https://iam.googleapis.com/v1/roles/{ROLE_NAME}`
+   *
    * * [`projects.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/get):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * * [`organizations.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/get):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
    *   returns only [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * Note: Wildcard (*) values are invalid; you must specify a complete project
    * ID or organization ID.
    * </pre>
@@ -131,24 +130,28 @@ public final class GetRoleRequest extends com.google.protobuf.GeneratedMessageV3
    * or
    * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
    * Each resource type's `name` value format is described below:
+   *
    * * [`roles.get()`](https://cloud.google.com/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`.
    *   This method returns results from all
    *   [predefined
    *   roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
    *   in Cloud IAM. Example request URL:
    *   `https://iam.googleapis.com/v1/roles/{ROLE_NAME}`
+   *
    * * [`projects.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/get):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only
    *   [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * * [`organizations.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/get):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
    *   returns only [custom
    *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+   *
    * Note: Wildcard (*) values are invalid; you must specify a complete project
    * ID or organization ID.
    * </pre>
@@ -522,24 +525,28 @@ public final class GetRoleRequest extends com.google.protobuf.GeneratedMessageV3
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `name` value format is described below:
+     *
      * * [`roles.get()`](https://cloud.google.com/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`.
      *   This method returns results from all
      *   [predefined
      *   roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
      *   in Cloud IAM. Example request URL:
      *   `https://iam.googleapis.com/v1/roles/{ROLE_NAME}`
+     *
      * * [`projects.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/get):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * * [`organizations.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/get):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
      *   returns only [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -570,24 +577,28 @@ public final class GetRoleRequest extends com.google.protobuf.GeneratedMessageV3
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `name` value format is described below:
+     *
      * * [`roles.get()`](https://cloud.google.com/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`.
      *   This method returns results from all
      *   [predefined
      *   roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
      *   in Cloud IAM. Example request URL:
      *   `https://iam.googleapis.com/v1/roles/{ROLE_NAME}`
+     *
      * * [`projects.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/get):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * * [`organizations.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/get):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
      *   returns only [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -618,24 +629,28 @@ public final class GetRoleRequest extends com.google.protobuf.GeneratedMessageV3
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `name` value format is described below:
+     *
      * * [`roles.get()`](https://cloud.google.com/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`.
      *   This method returns results from all
      *   [predefined
      *   roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
      *   in Cloud IAM. Example request URL:
      *   `https://iam.googleapis.com/v1/roles/{ROLE_NAME}`
+     *
      * * [`projects.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/get):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * * [`organizations.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/get):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
      *   returns only [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -665,24 +680,28 @@ public final class GetRoleRequest extends com.google.protobuf.GeneratedMessageV3
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `name` value format is described below:
+     *
      * * [`roles.get()`](https://cloud.google.com/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`.
      *   This method returns results from all
      *   [predefined
      *   roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
      *   in Cloud IAM. Example request URL:
      *   `https://iam.googleapis.com/v1/roles/{ROLE_NAME}`
+     *
      * * [`projects.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/get):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * * [`organizations.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/get):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
      *   returns only [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>
@@ -708,24 +727,28 @@ public final class GetRoleRequest extends com.google.protobuf.GeneratedMessageV3
      * or
      * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
      * Each resource type's `name` value format is described below:
+     *
      * * [`roles.get()`](https://cloud.google.com/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`.
      *   This method returns results from all
      *   [predefined
      *   roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
      *   in Cloud IAM. Example request URL:
      *   `https://iam.googleapis.com/v1/roles/{ROLE_NAME}`
+     *
      * * [`projects.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/get):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only
      *   [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * * [`organizations.roles.get()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/get):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
      *   returns only [custom
      *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     *
      * Note: Wildcard (*) values are invalid; you must specify a complete project
      * ID or organization ID.
      * </pre>

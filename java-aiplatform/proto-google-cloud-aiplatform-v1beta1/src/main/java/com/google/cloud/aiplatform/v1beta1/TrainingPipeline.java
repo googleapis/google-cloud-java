@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,11 +54,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TrainingPipeline();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -576,6 +571,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The ID to use for the uploaded Model, which will become the final
    * component of the model resource name.
+   *
    * This value may be up to 63 characters, and valid characters are
    * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
    * </pre>
@@ -602,6 +598,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The ID to use for the uploaded Model, which will become the final
    * component of the model resource name.
+   *
    * This value may be up to 63 characters, and valid characters are
    * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
    * </pre>
@@ -1002,9 +999,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The labels with user-defined metadata to organize TrainingPipelines.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1028,9 +1027,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The labels with user-defined metadata to organize TrainingPipelines.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1045,9 +1046,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The labels with user-defined metadata to organize TrainingPipelines.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1069,9 +1072,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The labels with user-defined metadata to organize TrainingPipelines.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1097,6 +1102,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Customer-managed encryption key spec for a TrainingPipeline. If set, this
    * TrainingPipeline will be secured by this key.
+   *
    * Note: Model trained by this TrainingPipeline is also secured by this key if
    * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
    * is not set separately.
@@ -1116,6 +1122,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Customer-managed encryption key spec for a TrainingPipeline. If set, this
    * TrainingPipeline will be secured by this key.
+   *
    * Note: Model trained by this TrainingPipeline is also secured by this key if
    * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
    * is not set separately.
@@ -1137,6 +1144,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Customer-managed encryption key spec for a TrainingPipeline. If set, this
    * TrainingPipeline will be secured by this key.
+   *
    * Note: Model trained by this TrainingPipeline is also secured by this key if
    * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
    * is not set separately.
@@ -3426,6 +3434,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The ID to use for the uploaded Model, which will become the final
      * component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -3451,6 +3460,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The ID to use for the uploaded Model, which will become the final
      * component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -3476,6 +3486,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The ID to use for the uploaded Model, which will become the final
      * component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -3500,6 +3511,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The ID to use for the uploaded Model, which will become the final
      * component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -3520,6 +3532,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The ID to use for the uploaded Model, which will become the final
      * component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -4785,9 +4798,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The labels with user-defined metadata to organize TrainingPipelines.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -4811,9 +4826,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The labels with user-defined metadata to organize TrainingPipelines.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -4828,9 +4845,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The labels with user-defined metadata to organize TrainingPipelines.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -4852,9 +4871,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The labels with user-defined metadata to organize TrainingPipelines.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -4882,9 +4903,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The labels with user-defined metadata to organize TrainingPipelines.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -4908,9 +4931,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The labels with user-defined metadata to organize TrainingPipelines.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -4932,9 +4957,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The labels with user-defined metadata to organize TrainingPipelines.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -4958,6 +4985,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
+     *
      * Note: Model trained by this TrainingPipeline is also secured by this key if
      * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
      * is not set separately.
@@ -4976,6 +5004,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
+     *
      * Note: Model trained by this TrainingPipeline is also secured by this key if
      * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
      * is not set separately.
@@ -5000,6 +5029,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
+     *
      * Note: Model trained by this TrainingPipeline is also secured by this key if
      * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
      * is not set separately.
@@ -5026,6 +5056,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
+     *
      * Note: Model trained by this TrainingPipeline is also secured by this key if
      * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
      * is not set separately.
@@ -5050,6 +5081,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
+     *
      * Note: Model trained by this TrainingPipeline is also secured by this key if
      * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
      * is not set separately.
@@ -5080,6 +5112,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
+     *
      * Note: Model trained by this TrainingPipeline is also secured by this key if
      * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
      * is not set separately.
@@ -5103,6 +5136,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
+     *
      * Note: Model trained by this TrainingPipeline is also secured by this key if
      * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
      * is not set separately.
@@ -5121,6 +5155,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
+     *
      * Note: Model trained by this TrainingPipeline is also secured by this key if
      * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
      * is not set separately.
@@ -5144,6 +5179,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
+     *
      * Note: Model trained by this TrainingPipeline is also secured by this key if
      * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
      * is not set separately.

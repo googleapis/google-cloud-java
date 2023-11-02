@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
     return new Pubsub();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.eventarc.v1.TriggerProto
         .internal_static_google_cloud_eventarc_v1_Pubsub_descriptor;
@@ -79,6 +74,7 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
    * Optional. The name of the Pub/Sub topic created and managed by Eventarc as
    * a transport for the event delivery. Format:
    * `projects/{PROJECT_ID}/topics/{TOPIC_NAME}`.
+   *
    * You can set an existing topic for triggers of the type
    * `google.cloud.pubsub.topic.v1.messagePublished`. The topic you provide
    * here is not deleted by Eventarc at trigger deletion.
@@ -107,6 +103,7 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
    * Optional. The name of the Pub/Sub topic created and managed by Eventarc as
    * a transport for the event delivery. Format:
    * `projects/{PROJECT_ID}/topics/{TOPIC_NAME}`.
+   *
    * You can set an existing topic for triggers of the type
    * `google.cloud.pubsub.topic.v1.messagePublished`. The topic you provide
    * here is not deleted by Eventarc at trigger deletion.
@@ -554,6 +551,7 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of the Pub/Sub topic created and managed by Eventarc as
      * a transport for the event delivery. Format:
      * `projects/{PROJECT_ID}/topics/{TOPIC_NAME}`.
+     *
      * You can set an existing topic for triggers of the type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic you provide
      * here is not deleted by Eventarc at trigger deletion.
@@ -581,6 +579,7 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of the Pub/Sub topic created and managed by Eventarc as
      * a transport for the event delivery. Format:
      * `projects/{PROJECT_ID}/topics/{TOPIC_NAME}`.
+     *
      * You can set an existing topic for triggers of the type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic you provide
      * here is not deleted by Eventarc at trigger deletion.
@@ -608,6 +607,7 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of the Pub/Sub topic created and managed by Eventarc as
      * a transport for the event delivery. Format:
      * `projects/{PROJECT_ID}/topics/{TOPIC_NAME}`.
+     *
      * You can set an existing topic for triggers of the type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic you provide
      * here is not deleted by Eventarc at trigger deletion.
@@ -634,6 +634,7 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of the Pub/Sub topic created and managed by Eventarc as
      * a transport for the event delivery. Format:
      * `projects/{PROJECT_ID}/topics/{TOPIC_NAME}`.
+     *
      * You can set an existing topic for triggers of the type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic you provide
      * here is not deleted by Eventarc at trigger deletion.
@@ -656,6 +657,7 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of the Pub/Sub topic created and managed by Eventarc as
      * a transport for the event delivery. Format:
      * `projects/{PROJECT_ID}/topics/{TOPIC_NAME}`.
+     *
      * You can set an existing topic for triggers of the type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic you provide
      * here is not deleted by Eventarc at trigger deletion.

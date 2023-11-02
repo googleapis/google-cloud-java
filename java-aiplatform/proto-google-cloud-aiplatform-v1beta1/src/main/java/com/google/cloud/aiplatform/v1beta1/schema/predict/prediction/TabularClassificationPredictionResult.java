@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class TabularClassificationPredictionResult
   }
 
   private TabularClassificationPredictionResult() {
-    classes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    classes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     scores_ = emptyFloatList();
   }
 
@@ -49,11 +49,6 @@ public final class TabularClassificationPredictionResult
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TabularClassificationPredictionResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,7 +73,8 @@ public final class TabularClassificationPredictionResult
   public static final int CLASSES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList classes_;
+  private com.google.protobuf.LazyStringArrayList classes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -462,8 +458,7 @@ public final class TabularClassificationPredictionResult
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      classes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      classes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       scores_ = emptyFloatList();
       return this;
     }
@@ -517,11 +512,6 @@ public final class TabularClassificationPredictionResult
         com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
                 .TabularClassificationPredictionResult
             result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        classes_ = classes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.classes_ = classes_;
       if (((bitField0_ & 0x00000002) != 0)) {
         scores_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -534,6 +524,10 @@ public final class TabularClassificationPredictionResult
                 .TabularClassificationPredictionResult
             result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        classes_.makeImmutable();
+        result.classes_ = classes_;
+      }
     }
 
     @java.lang.Override
@@ -595,7 +589,7 @@ public final class TabularClassificationPredictionResult
       if (!other.classes_.isEmpty()) {
         if (classes_.isEmpty()) {
           classes_ = other.classes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureClassesIsMutable();
           classes_.addAll(other.classes_);
@@ -682,14 +676,14 @@ public final class TabularClassificationPredictionResult
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList classes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList classes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureClassesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!classes_.isModifiable()) {
         classes_ = new com.google.protobuf.LazyStringArrayList(classes_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -704,7 +698,8 @@ public final class TabularClassificationPredictionResult
      * @return A list containing the classes.
      */
     public com.google.protobuf.ProtocolStringList getClassesList() {
-      return classes_.getUnmodifiableView();
+      classes_.makeImmutable();
+      return classes_;
     }
     /**
      *
@@ -773,6 +768,7 @@ public final class TabularClassificationPredictionResult
       }
       ensureClassesIsMutable();
       classes_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -795,6 +791,7 @@ public final class TabularClassificationPredictionResult
       }
       ensureClassesIsMutable();
       classes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -814,6 +811,7 @@ public final class TabularClassificationPredictionResult
     public Builder addAllClasses(java.lang.Iterable<java.lang.String> values) {
       ensureClassesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, classes_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -830,8 +828,9 @@ public final class TabularClassificationPredictionResult
      * @return This builder for chaining.
      */
     public Builder clearClasses() {
-      classes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      classes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -855,6 +854,7 @@ public final class TabularClassificationPredictionResult
       checkByteStringIsUtf8(value);
       ensureClassesIsMutable();
       classes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

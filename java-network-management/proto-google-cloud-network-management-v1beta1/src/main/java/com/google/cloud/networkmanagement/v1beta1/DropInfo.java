@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DropInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -214,6 +209,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet could be dropped because it was sent from a different region
+     * to a regional forwarding without global access.
+     * </pre>
+     *
+     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
+     */
+    FORWARDING_RULE_REGION_MISMATCH(25),
+    /**
+     *
+     *
+     * <pre>
      * Forwarding rule does not have backends configured.
      * </pre>
      *
@@ -244,6 +250,26 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTANCE_NOT_RUNNING = 14;</code>
      */
     INSTANCE_NOT_RUNNING(14),
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from or to a GKE cluster that is not in running state.
+     * </pre>
+     *
+     * <code>GKE_CLUSTER_NOT_RUNNING = 27;</code>
+     */
+    GKE_CLUSTER_NOT_RUNNING(27),
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from or to a Cloud SQL instance that is not in running state.
+     * </pre>
+     *
+     * <code>CLOUD_SQL_INSTANCE_NOT_RUNNING = 28;</code>
+     */
+    CLOUD_SQL_INSTANCE_NOT_RUNNING(28),
     /**
      *
      *
@@ -318,6 +344,28 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet was dropped because the Google-managed service uses Private
+     * Service Connect (PSC), but the PSC endpoint is not found in the project.
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_NO_PSC_ENDPOINT = 38;</code>
+     */
+    GOOGLE_MANAGED_SERVICE_NO_PSC_ENDPOINT(38),
+    /**
+     *
+     *
+     * <pre>
+     * Packet was dropped because the GKE cluster uses Private Service Connect
+     * (PSC), but the PSC endpoint is not found in the project.
+     * </pre>
+     *
+     * <code>GKE_PSC_ENDPOINT_MISSING = 36;</code>
+     */
+    GKE_PSC_ENDPOINT_MISSING(36),
+    /**
+     *
+     *
+     * <pre>
      * Packet was dropped because the Cloud SQL instance has neither a private
      * nor a public IP address.
      * </pre>
@@ -329,7 +377,74 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Packet could be dropped because the Cloud function is not in an active
+     * Packet was dropped because a GKE cluster private endpoint is
+     * unreachable from a region different from the cluster's region.
+     * </pre>
+     *
+     * <code>GKE_CONTROL_PLANE_REGION_MISMATCH = 30;</code>
+     */
+    GKE_CONTROL_PLANE_REGION_MISMATCH(30),
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from a public GKE cluster control plane to a private
+     * IP address.
+     * </pre>
+     *
+     * <code>PUBLIC_GKE_CONTROL_PLANE_TO_PRIVATE_DESTINATION = 31;</code>
+     */
+    PUBLIC_GKE_CONTROL_PLANE_TO_PRIVATE_DESTINATION(31),
+    /**
+     *
+     *
+     * <pre>
+     * Packet was dropped because there is no route from a GKE cluster
+     * control plane to a destination network.
+     * </pre>
+     *
+     * <code>GKE_CONTROL_PLANE_NO_ROUTE = 32;</code>
+     */
+    GKE_CONTROL_PLANE_NO_ROUTE(32),
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from a Cloud SQL instance to an external IP address is not
+     * allowed. The Cloud SQL instance is not configured to send packets to
+     * external IP addresses.
+     * </pre>
+     *
+     * <code>CLOUD_SQL_INSTANCE_NOT_CONFIGURED_FOR_EXTERNAL_TRAFFIC = 33;</code>
+     */
+    CLOUD_SQL_INSTANCE_NOT_CONFIGURED_FOR_EXTERNAL_TRAFFIC(33),
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from a Cloud SQL instance with only a public IP address to a
+     * private IP address.
+     * </pre>
+     *
+     * <code>PUBLIC_CLOUD_SQL_INSTANCE_TO_PRIVATE_DESTINATION = 34;</code>
+     */
+    PUBLIC_CLOUD_SQL_INSTANCE_TO_PRIVATE_DESTINATION(34),
+    /**
+     *
+     *
+     * <pre>
+     * Packet was dropped because there is no route from a Cloud SQL
+     * instance to a destination network.
+     * </pre>
+     *
+     * <code>CLOUD_SQL_INSTANCE_NO_ROUTE = 35;</code>
+     */
+    CLOUD_SQL_INSTANCE_NO_ROUTE(35),
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because the Cloud Function is not in an active
      * status.
      * </pre>
      *
@@ -361,23 +476,44 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Packet could be dropped because it was sent from a different region
-     * to a regional forwarding without global access.
-     * </pre>
-     *
-     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
-     */
-    FORWARDING_RULE_REGION_MISMATCH(25),
-    /**
-     *
-     *
-     * <pre>
-     * Privte Service Connect (PSC) connection is not in accepted state.
+     * The Private Service Connect endpoint is in a project that is not approved
+     * to connect to the service.
      * </pre>
      *
      * <code>PSC_CONNECTION_NOT_ACCEPTED = 26;</code>
      */
     PSC_CONNECTION_NOT_ACCEPTED(26),
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from a Cloud Run revision that is not ready.
+     * </pre>
+     *
+     * <code>CLOUD_RUN_REVISION_NOT_READY = 29;</code>
+     */
+    CLOUD_RUN_REVISION_NOT_READY(29),
+    /**
+     *
+     *
+     * <pre>
+     * Packet was dropped inside Private Service Connect service producer.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_PSC_SERVICE_PRODUCER = 37;</code>
+     */
+    DROPPED_INSIDE_PSC_SERVICE_PRODUCER(37),
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent to a load balancer, which requires a proxy-only subnet and
+     * the subnet is not found.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_HAS_NO_PROXY_SUBNET = 39;</code>
+     */
+    LOAD_BALANCER_HAS_NO_PROXY_SUBNET(39),
     UNRECOGNIZED(-1),
     ;
 
@@ -517,6 +653,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet could be dropped because it was sent from a different region
+     * to a regional forwarding without global access.
+     * </pre>
+     *
+     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
+     */
+    public static final int FORWARDING_RULE_REGION_MISMATCH_VALUE = 25;
+    /**
+     *
+     *
+     * <pre>
      * Forwarding rule does not have backends configured.
      * </pre>
      *
@@ -547,6 +694,26 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTANCE_NOT_RUNNING = 14;</code>
      */
     public static final int INSTANCE_NOT_RUNNING_VALUE = 14;
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from or to a GKE cluster that is not in running state.
+     * </pre>
+     *
+     * <code>GKE_CLUSTER_NOT_RUNNING = 27;</code>
+     */
+    public static final int GKE_CLUSTER_NOT_RUNNING_VALUE = 27;
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from or to a Cloud SQL instance that is not in running state.
+     * </pre>
+     *
+     * <code>CLOUD_SQL_INSTANCE_NOT_RUNNING = 28;</code>
+     */
+    public static final int CLOUD_SQL_INSTANCE_NOT_RUNNING_VALUE = 28;
     /**
      *
      *
@@ -621,6 +788,28 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet was dropped because the Google-managed service uses Private
+     * Service Connect (PSC), but the PSC endpoint is not found in the project.
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_NO_PSC_ENDPOINT = 38;</code>
+     */
+    public static final int GOOGLE_MANAGED_SERVICE_NO_PSC_ENDPOINT_VALUE = 38;
+    /**
+     *
+     *
+     * <pre>
+     * Packet was dropped because the GKE cluster uses Private Service Connect
+     * (PSC), but the PSC endpoint is not found in the project.
+     * </pre>
+     *
+     * <code>GKE_PSC_ENDPOINT_MISSING = 36;</code>
+     */
+    public static final int GKE_PSC_ENDPOINT_MISSING_VALUE = 36;
+    /**
+     *
+     *
+     * <pre>
      * Packet was dropped because the Cloud SQL instance has neither a private
      * nor a public IP address.
      * </pre>
@@ -632,7 +821,74 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Packet could be dropped because the Cloud function is not in an active
+     * Packet was dropped because a GKE cluster private endpoint is
+     * unreachable from a region different from the cluster's region.
+     * </pre>
+     *
+     * <code>GKE_CONTROL_PLANE_REGION_MISMATCH = 30;</code>
+     */
+    public static final int GKE_CONTROL_PLANE_REGION_MISMATCH_VALUE = 30;
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from a public GKE cluster control plane to a private
+     * IP address.
+     * </pre>
+     *
+     * <code>PUBLIC_GKE_CONTROL_PLANE_TO_PRIVATE_DESTINATION = 31;</code>
+     */
+    public static final int PUBLIC_GKE_CONTROL_PLANE_TO_PRIVATE_DESTINATION_VALUE = 31;
+    /**
+     *
+     *
+     * <pre>
+     * Packet was dropped because there is no route from a GKE cluster
+     * control plane to a destination network.
+     * </pre>
+     *
+     * <code>GKE_CONTROL_PLANE_NO_ROUTE = 32;</code>
+     */
+    public static final int GKE_CONTROL_PLANE_NO_ROUTE_VALUE = 32;
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from a Cloud SQL instance to an external IP address is not
+     * allowed. The Cloud SQL instance is not configured to send packets to
+     * external IP addresses.
+     * </pre>
+     *
+     * <code>CLOUD_SQL_INSTANCE_NOT_CONFIGURED_FOR_EXTERNAL_TRAFFIC = 33;</code>
+     */
+    public static final int CLOUD_SQL_INSTANCE_NOT_CONFIGURED_FOR_EXTERNAL_TRAFFIC_VALUE = 33;
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from a Cloud SQL instance with only a public IP address to a
+     * private IP address.
+     * </pre>
+     *
+     * <code>PUBLIC_CLOUD_SQL_INSTANCE_TO_PRIVATE_DESTINATION = 34;</code>
+     */
+    public static final int PUBLIC_CLOUD_SQL_INSTANCE_TO_PRIVATE_DESTINATION_VALUE = 34;
+    /**
+     *
+     *
+     * <pre>
+     * Packet was dropped because there is no route from a Cloud SQL
+     * instance to a destination network.
+     * </pre>
+     *
+     * <code>CLOUD_SQL_INSTANCE_NO_ROUTE = 35;</code>
+     */
+    public static final int CLOUD_SQL_INSTANCE_NO_ROUTE_VALUE = 35;
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because the Cloud Function is not in an active
      * status.
      * </pre>
      *
@@ -664,23 +920,44 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Packet could be dropped because it was sent from a different region
-     * to a regional forwarding without global access.
-     * </pre>
-     *
-     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
-     */
-    public static final int FORWARDING_RULE_REGION_MISMATCH_VALUE = 25;
-    /**
-     *
-     *
-     * <pre>
-     * Privte Service Connect (PSC) connection is not in accepted state.
+     * The Private Service Connect endpoint is in a project that is not approved
+     * to connect to the service.
      * </pre>
      *
      * <code>PSC_CONNECTION_NOT_ACCEPTED = 26;</code>
      */
     public static final int PSC_CONNECTION_NOT_ACCEPTED_VALUE = 26;
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from a Cloud Run revision that is not ready.
+     * </pre>
+     *
+     * <code>CLOUD_RUN_REVISION_NOT_READY = 29;</code>
+     */
+    public static final int CLOUD_RUN_REVISION_NOT_READY_VALUE = 29;
+    /**
+     *
+     *
+     * <pre>
+     * Packet was dropped inside Private Service Connect service producer.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_PSC_SERVICE_PRODUCER = 37;</code>
+     */
+    public static final int DROPPED_INSIDE_PSC_SERVICE_PRODUCER_VALUE = 37;
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent to a load balancer, which requires a proxy-only subnet and
+     * the subnet is not found.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_HAS_NO_PROXY_SUBNET = 39;</code>
+     */
+    public static final int LOAD_BALANCER_HAS_NO_PROXY_SUBNET_VALUE = 39;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -730,12 +1007,18 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return UNKNOWN_INTERNAL_ADDRESS;
         case 11:
           return FORWARDING_RULE_MISMATCH;
+        case 25:
+          return FORWARDING_RULE_REGION_MISMATCH;
         case 12:
           return FORWARDING_RULE_NO_INSTANCES;
         case 13:
           return FIREWALL_BLOCKING_LOAD_BALANCER_BACKEND_HEALTH_CHECK;
         case 14:
           return INSTANCE_NOT_RUNNING;
+        case 27:
+          return GKE_CLUSTER_NOT_RUNNING;
+        case 28:
+          return CLOUD_SQL_INSTANCE_NOT_RUNNING;
         case 15:
           return TRAFFIC_TYPE_BLOCKED;
         case 16:
@@ -748,18 +1031,38 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return DROPPED_INSIDE_CLOUD_SQL_SERVICE;
         case 20:
           return GOOGLE_MANAGED_SERVICE_NO_PEERING;
+        case 38:
+          return GOOGLE_MANAGED_SERVICE_NO_PSC_ENDPOINT;
+        case 36:
+          return GKE_PSC_ENDPOINT_MISSING;
         case 21:
           return CLOUD_SQL_INSTANCE_NO_IP_ADDRESS;
+        case 30:
+          return GKE_CONTROL_PLANE_REGION_MISMATCH;
+        case 31:
+          return PUBLIC_GKE_CONTROL_PLANE_TO_PRIVATE_DESTINATION;
+        case 32:
+          return GKE_CONTROL_PLANE_NO_ROUTE;
+        case 33:
+          return CLOUD_SQL_INSTANCE_NOT_CONFIGURED_FOR_EXTERNAL_TRAFFIC;
+        case 34:
+          return PUBLIC_CLOUD_SQL_INSTANCE_TO_PRIVATE_DESTINATION;
+        case 35:
+          return CLOUD_SQL_INSTANCE_NO_ROUTE;
         case 22:
           return CLOUD_FUNCTION_NOT_ACTIVE;
         case 23:
           return VPC_CONNECTOR_NOT_SET;
         case 24:
           return VPC_CONNECTOR_NOT_RUNNING;
-        case 25:
-          return FORWARDING_RULE_REGION_MISMATCH;
         case 26:
           return PSC_CONNECTION_NOT_ACCEPTED;
+        case 29:
+          return CLOUD_RUN_REVISION_NOT_READY;
+        case 37:
+          return DROPPED_INSIDE_PSC_SERVICE_PRODUCER;
+        case 39:
+          return LOAD_BALANCER_HAS_NO_PROXY_SUBNET;
         default:
           return null;
       }

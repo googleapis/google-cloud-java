@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
   private BatchRunTestCasesRequest() {
     parent_ = "";
     environment_ = "";
-    testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    testCases_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchRunTestCasesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -189,7 +184,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
   public static final int TEST_CASES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList testCases_;
+  private com.google.protobuf.LazyStringArrayList testCases_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -488,8 +484,7 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       bitField0_ = 0;
       parent_ = "";
       environment_ = "";
-      testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      testCases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -517,21 +512,11 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
     public com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest buildPartial() {
       com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest result =
           new com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        testCases_ = testCases_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.testCases_ = testCases_;
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest result) {
@@ -541,6 +526,10 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.environment_ = environment_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        testCases_.makeImmutable();
+        result.testCases_ = testCases_;
       }
     }
 
@@ -603,7 +592,7 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       if (!other.testCases_.isEmpty()) {
         if (testCases_.isEmpty()) {
           testCases_ = other.testCases_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureTestCasesIsMutable();
           testCases_.addAll(other.testCases_);
@@ -921,14 +910,14 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.protobuf.LazyStringList testCases_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList testCases_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTestCasesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!testCases_.isModifiable()) {
         testCases_ = new com.google.protobuf.LazyStringArrayList(testCases_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -945,7 +934,8 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      * @return A list containing the testCases.
      */
     public com.google.protobuf.ProtocolStringList getTestCasesList() {
-      return testCases_.getUnmodifiableView();
+      testCases_.makeImmutable();
+      return testCases_;
     }
     /**
      *
@@ -1022,6 +1012,7 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       }
       ensureTestCasesIsMutable();
       testCases_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1046,6 +1037,7 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       }
       ensureTestCasesIsMutable();
       testCases_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1067,6 +1059,7 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
     public Builder addAllTestCases(java.lang.Iterable<java.lang.String> values) {
       ensureTestCasesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, testCases_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1085,8 +1078,9 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearTestCases() {
-      testCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      testCases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1112,6 +1106,7 @@ public final class BatchRunTestCasesRequest extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureTestCasesIsMutable();
       testCases_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

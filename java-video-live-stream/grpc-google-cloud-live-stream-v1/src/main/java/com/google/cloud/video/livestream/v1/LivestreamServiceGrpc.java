@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,8 @@ public final class LivestreamServiceGrpc {
 
   private LivestreamServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.video.livestream.v1.LivestreamService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.video.livestream.v1.LivestreamService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -767,6 +768,276 @@ public final class LivestreamServiceGrpc {
     return getDeleteEventMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.CreateAssetRequest, com.google.longrunning.Operation>
+      getCreateAssetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAsset",
+      requestType = com.google.cloud.video.livestream.v1.CreateAssetRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.CreateAssetRequest, com.google.longrunning.Operation>
+      getCreateAssetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.CreateAssetRequest,
+            com.google.longrunning.Operation>
+        getCreateAssetMethod;
+    if ((getCreateAssetMethod = LivestreamServiceGrpc.getCreateAssetMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getCreateAssetMethod = LivestreamServiceGrpc.getCreateAssetMethod) == null) {
+          LivestreamServiceGrpc.getCreateAssetMethod =
+              getCreateAssetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.CreateAssetRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAsset"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.CreateAssetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("CreateAsset"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAssetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.DeleteAssetRequest, com.google.longrunning.Operation>
+      getDeleteAssetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAsset",
+      requestType = com.google.cloud.video.livestream.v1.DeleteAssetRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.DeleteAssetRequest, com.google.longrunning.Operation>
+      getDeleteAssetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.DeleteAssetRequest,
+            com.google.longrunning.Operation>
+        getDeleteAssetMethod;
+    if ((getDeleteAssetMethod = LivestreamServiceGrpc.getDeleteAssetMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getDeleteAssetMethod = LivestreamServiceGrpc.getDeleteAssetMethod) == null) {
+          LivestreamServiceGrpc.getDeleteAssetMethod =
+              getDeleteAssetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.DeleteAssetRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAsset"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.DeleteAssetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("DeleteAsset"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAssetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.GetAssetRequest,
+          com.google.cloud.video.livestream.v1.Asset>
+      getGetAssetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAsset",
+      requestType = com.google.cloud.video.livestream.v1.GetAssetRequest.class,
+      responseType = com.google.cloud.video.livestream.v1.Asset.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.GetAssetRequest,
+          com.google.cloud.video.livestream.v1.Asset>
+      getGetAssetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.GetAssetRequest,
+            com.google.cloud.video.livestream.v1.Asset>
+        getGetAssetMethod;
+    if ((getGetAssetMethod = LivestreamServiceGrpc.getGetAssetMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getGetAssetMethod = LivestreamServiceGrpc.getGetAssetMethod) == null) {
+          LivestreamServiceGrpc.getGetAssetMethod =
+              getGetAssetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.GetAssetRequest,
+                          com.google.cloud.video.livestream.v1.Asset>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAsset"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.GetAssetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.Asset.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("GetAsset"))
+                      .build();
+        }
+      }
+    }
+    return getGetAssetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.ListAssetsRequest,
+          com.google.cloud.video.livestream.v1.ListAssetsResponse>
+      getListAssetsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAssets",
+      requestType = com.google.cloud.video.livestream.v1.ListAssetsRequest.class,
+      responseType = com.google.cloud.video.livestream.v1.ListAssetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.ListAssetsRequest,
+          com.google.cloud.video.livestream.v1.ListAssetsResponse>
+      getListAssetsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.ListAssetsRequest,
+            com.google.cloud.video.livestream.v1.ListAssetsResponse>
+        getListAssetsMethod;
+    if ((getListAssetsMethod = LivestreamServiceGrpc.getListAssetsMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getListAssetsMethod = LivestreamServiceGrpc.getListAssetsMethod) == null) {
+          LivestreamServiceGrpc.getListAssetsMethod =
+              getListAssetsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.ListAssetsRequest,
+                          com.google.cloud.video.livestream.v1.ListAssetsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAssets"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.ListAssetsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.ListAssetsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("ListAssets"))
+                      .build();
+        }
+      }
+    }
+    return getListAssetsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.GetPoolRequest,
+          com.google.cloud.video.livestream.v1.Pool>
+      getGetPoolMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPool",
+      requestType = com.google.cloud.video.livestream.v1.GetPoolRequest.class,
+      responseType = com.google.cloud.video.livestream.v1.Pool.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.GetPoolRequest,
+          com.google.cloud.video.livestream.v1.Pool>
+      getGetPoolMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.GetPoolRequest,
+            com.google.cloud.video.livestream.v1.Pool>
+        getGetPoolMethod;
+    if ((getGetPoolMethod = LivestreamServiceGrpc.getGetPoolMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getGetPoolMethod = LivestreamServiceGrpc.getGetPoolMethod) == null) {
+          LivestreamServiceGrpc.getGetPoolMethod =
+              getGetPoolMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.GetPoolRequest,
+                          com.google.cloud.video.livestream.v1.Pool>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPool"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.GetPoolRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.Pool.getDefaultInstance()))
+                      .setSchemaDescriptor(new LivestreamServiceMethodDescriptorSupplier("GetPool"))
+                      .build();
+        }
+      }
+    }
+    return getGetPoolMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.UpdatePoolRequest, com.google.longrunning.Operation>
+      getUpdatePoolMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePool",
+      requestType = com.google.cloud.video.livestream.v1.UpdatePoolRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.UpdatePoolRequest, com.google.longrunning.Operation>
+      getUpdatePoolMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.UpdatePoolRequest,
+            com.google.longrunning.Operation>
+        getUpdatePoolMethod;
+    if ((getUpdatePoolMethod = LivestreamServiceGrpc.getUpdatePoolMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getUpdatePoolMethod = LivestreamServiceGrpc.getUpdatePoolMethod) == null) {
+          LivestreamServiceGrpc.getUpdatePoolMethod =
+              getUpdatePoolMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.UpdatePoolRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePool"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.UpdatePoolRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("UpdatePool"))
+                      .build();
+        }
+      }
+    }
+    return getUpdatePoolMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static LivestreamServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<LivestreamServiceStub> factory =
@@ -1045,6 +1316,88 @@ public final class LivestreamServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Asset with the provided unique ID in the specified
+     * region.
+     * </pre>
+     */
+    default void createAsset(
+        com.google.cloud.video.livestream.v1.CreateAssetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAssetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified asset if it is not used.
+     * </pre>
+     */
+    default void deleteAsset(
+        com.google.cloud.video.livestream.v1.DeleteAssetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAssetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified asset.
+     * </pre>
+     */
+    default void getAsset(
+        com.google.cloud.video.livestream.v1.GetAssetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Asset> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAssetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all assets in the specified region.
+     * </pre>
+     */
+    default void listAssets(
+        com.google.cloud.video.livestream.v1.ListAssetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.ListAssetsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAssetsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified pool.
+     * </pre>
+     */
+    default void getPool(
+        com.google.cloud.video.livestream.v1.GetPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Pool> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPoolMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified pool.
+     * </pre>
+     */
+    default void updatePool(
+        com.google.cloud.video.livestream.v1.UpdatePoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePoolMethod(), responseObserver);
     }
   }
 
@@ -1343,6 +1696,96 @@ public final class LivestreamServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Asset with the provided unique ID in the specified
+     * region.
+     * </pre>
+     */
+    public void createAsset(
+        com.google.cloud.video.livestream.v1.CreateAssetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAssetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified asset if it is not used.
+     * </pre>
+     */
+    public void deleteAsset(
+        com.google.cloud.video.livestream.v1.DeleteAssetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAssetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified asset.
+     * </pre>
+     */
+    public void getAsset(
+        com.google.cloud.video.livestream.v1.GetAssetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Asset> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAssetMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all assets in the specified region.
+     * </pre>
+     */
+    public void listAssets(
+        com.google.cloud.video.livestream.v1.ListAssetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.ListAssetsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAssetsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified pool.
+     * </pre>
+     */
+    public void getPool(
+        com.google.cloud.video.livestream.v1.GetPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Pool> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPoolMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified pool.
+     * </pre>
+     */
+    public void updatePool(
+        com.google.cloud.video.livestream.v1.UpdatePoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePoolMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1578,6 +2021,85 @@ public final class LivestreamServiceGrpc {
         com.google.cloud.video.livestream.v1.DeleteEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Asset with the provided unique ID in the specified
+     * region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAsset(
+        com.google.cloud.video.livestream.v1.CreateAssetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified asset if it is not used.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAsset(
+        com.google.cloud.video.livestream.v1.DeleteAssetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified asset.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Asset getAsset(
+        com.google.cloud.video.livestream.v1.GetAssetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all assets in the specified region.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListAssetsResponse listAssets(
+        com.google.cloud.video.livestream.v1.ListAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified pool.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Pool getPool(
+        com.google.cloud.video.livestream.v1.GetPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePool(
+        com.google.cloud.video.livestream.v1.UpdatePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePoolMethod(), getCallOptions(), request);
     }
   }
 
@@ -1821,6 +2343,88 @@ public final class LivestreamServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteEventMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Asset with the provided unique ID in the specified
+     * region.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createAsset(com.google.cloud.video.livestream.v1.CreateAssetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAssetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified asset if it is not used.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAsset(com.google.cloud.video.livestream.v1.DeleteAssetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAssetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified asset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.video.livestream.v1.Asset>
+        getAsset(com.google.cloud.video.livestream.v1.GetAssetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAssetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all assets in the specified region.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.video.livestream.v1.ListAssetsResponse>
+        listAssets(com.google.cloud.video.livestream.v1.ListAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAssetsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified pool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.video.livestream.v1.Pool>
+        getPool(com.google.cloud.video.livestream.v1.GetPoolRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPoolMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified pool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updatePool(com.google.cloud.video.livestream.v1.UpdatePoolRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePoolMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_CHANNEL = 0;
@@ -1839,6 +2443,12 @@ public final class LivestreamServiceGrpc {
   private static final int METHODID_LIST_EVENTS = 13;
   private static final int METHODID_GET_EVENT = 14;
   private static final int METHODID_DELETE_EVENT = 15;
+  private static final int METHODID_CREATE_ASSET = 16;
+  private static final int METHODID_DELETE_ASSET = 17;
+  private static final int METHODID_GET_ASSET = 18;
+  private static final int METHODID_LIST_ASSETS = 19;
+  private static final int METHODID_GET_POOL = 20;
+  private static final int METHODID_UPDATE_POOL = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1944,6 +2554,39 @@ public final class LivestreamServiceGrpc {
           serviceImpl.deleteEvent(
               (com.google.cloud.video.livestream.v1.DeleteEventRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_ASSET:
+          serviceImpl.createAsset(
+              (com.google.cloud.video.livestream.v1.CreateAssetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_ASSET:
+          serviceImpl.deleteAsset(
+              (com.google.cloud.video.livestream.v1.DeleteAssetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_ASSET:
+          serviceImpl.getAsset(
+              (com.google.cloud.video.livestream.v1.GetAssetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Asset>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ASSETS:
+          serviceImpl.listAssets(
+              (com.google.cloud.video.livestream.v1.ListAssetsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.ListAssetsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_POOL:
+          serviceImpl.getPool(
+              (com.google.cloud.video.livestream.v1.GetPoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Pool>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_POOL:
+          serviceImpl.updatePool(
+              (com.google.cloud.video.livestream.v1.UpdatePoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2062,6 +2705,43 @@ public final class LivestreamServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.video.livestream.v1.DeleteEventRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_EVENT)))
+        .addMethod(
+            getCreateAssetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.CreateAssetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ASSET)))
+        .addMethod(
+            getDeleteAssetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.DeleteAssetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ASSET)))
+        .addMethod(
+            getGetAssetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.GetAssetRequest,
+                    com.google.cloud.video.livestream.v1.Asset>(service, METHODID_GET_ASSET)))
+        .addMethod(
+            getListAssetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.ListAssetsRequest,
+                    com.google.cloud.video.livestream.v1.ListAssetsResponse>(
+                    service, METHODID_LIST_ASSETS)))
+        .addMethod(
+            getGetPoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.GetPoolRequest,
+                    com.google.cloud.video.livestream.v1.Pool>(service, METHODID_GET_POOL)))
+        .addMethod(
+            getUpdatePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.UpdatePoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_POOL)))
         .build();
   }
 
@@ -2089,9 +2769,9 @@ public final class LivestreamServiceGrpc {
   private static final class LivestreamServiceMethodDescriptorSupplier
       extends LivestreamServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    LivestreamServiceMethodDescriptorSupplier(String methodName) {
+    LivestreamServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -2129,6 +2809,12 @@ public final class LivestreamServiceGrpc {
                       .addMethod(getListEventsMethod())
                       .addMethod(getGetEventMethod())
                       .addMethod(getDeleteEventMethod())
+                      .addMethod(getCreateAssetMethod())
+                      .addMethod(getDeleteAssetMethod())
+                      .addMethod(getGetAssetMethod())
+                      .addMethod(getListAssetsMethod())
+                      .addMethod(getGetPoolMethod())
+                      .addMethod(getUpdatePoolMethod())
                       .build();
         }
       }

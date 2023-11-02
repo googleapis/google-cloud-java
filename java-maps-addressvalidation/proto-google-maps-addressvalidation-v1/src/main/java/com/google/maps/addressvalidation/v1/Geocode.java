@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
 
   private Geocode() {
     placeId_ = "";
-    placeTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    placeTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Geocode();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -75,6 +70,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The geocoded location of the input.
+   *
    * Using place IDs is preferred over using addresses,
    * latitude/longitude coordinates, or plus codes. Using coordinates when
    * routing or calculating driving directions will always result in the point
@@ -98,6 +94,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The geocoded location of the input.
+   *
    * Using place IDs is preferred over using addresses,
    * latitude/longitude coordinates, or plus codes. Using coordinates when
    * routing or calculating driving directions will always result in the point
@@ -121,6 +118,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The geocoded location of the input.
+   *
    * Using place IDs is preferred over using addresses,
    * latitude/longitude coordinates, or plus codes. Using coordinates when
    * routing or calculating driving directions will always result in the point
@@ -263,6 +261,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The PlaceID of the place this input geocodes to.
+   *
    * For more information about Place IDs see
    * [here](https://developers.google.com/maps/documentation/places/web-service/place-id).
    * </pre>
@@ -288,6 +287,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The PlaceID of the place this input geocodes to.
+   *
    * For more information about Place IDs see
    * [here](https://developers.google.com/maps/documentation/places/web-service/place-id).
    * </pre>
@@ -312,7 +312,8 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
   public static final int PLACE_TYPES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList placeTypes_;
+  private com.google.protobuf.LazyStringArrayList placeTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -663,8 +664,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
       }
       featureSizeMeters_ = 0F;
       placeId_ = "";
-      placeTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      placeTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -692,20 +692,11 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.addressvalidation.v1.Geocode buildPartial() {
       com.google.maps.addressvalidation.v1.Geocode result =
           new com.google.maps.addressvalidation.v1.Geocode(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.maps.addressvalidation.v1.Geocode result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        placeTypes_ = placeTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.placeTypes_ = placeTypes_;
     }
 
     private void buildPartial0(com.google.maps.addressvalidation.v1.Geocode result) {
@@ -724,6 +715,10 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.placeId_ = placeId_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        placeTypes_.makeImmutable();
+        result.placeTypes_ = placeTypes_;
       }
     }
 
@@ -792,7 +787,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
       if (!other.placeTypes_.isEmpty()) {
         if (placeTypes_.isEmpty()) {
           placeTypes_ = other.placeTypes_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensurePlaceTypesIsMutable();
           placeTypes_.addAll(other.placeTypes_);
@@ -890,6 +885,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The geocoded location of the input.
+     *
      * Using place IDs is preferred over using addresses,
      * latitude/longitude coordinates, or plus codes. Using coordinates when
      * routing or calculating driving directions will always result in the point
@@ -912,6 +908,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The geocoded location of the input.
+     *
      * Using place IDs is preferred over using addresses,
      * latitude/longitude coordinates, or plus codes. Using coordinates when
      * routing or calculating driving directions will always result in the point
@@ -938,6 +935,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The geocoded location of the input.
+     *
      * Using place IDs is preferred over using addresses,
      * latitude/longitude coordinates, or plus codes. Using coordinates when
      * routing or calculating driving directions will always result in the point
@@ -968,6 +966,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The geocoded location of the input.
+     *
      * Using place IDs is preferred over using addresses,
      * latitude/longitude coordinates, or plus codes. Using coordinates when
      * routing or calculating driving directions will always result in the point
@@ -995,6 +994,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The geocoded location of the input.
+     *
      * Using place IDs is preferred over using addresses,
      * latitude/longitude coordinates, or plus codes. Using coordinates when
      * routing or calculating driving directions will always result in the point
@@ -1028,6 +1028,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The geocoded location of the input.
+     *
      * Using place IDs is preferred over using addresses,
      * latitude/longitude coordinates, or plus codes. Using coordinates when
      * routing or calculating driving directions will always result in the point
@@ -1055,6 +1056,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The geocoded location of the input.
+     *
      * Using place IDs is preferred over using addresses,
      * latitude/longitude coordinates, or plus codes. Using coordinates when
      * routing or calculating driving directions will always result in the point
@@ -1077,6 +1079,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The geocoded location of the input.
+     *
      * Using place IDs is preferred over using addresses,
      * latitude/longitude coordinates, or plus codes. Using coordinates when
      * routing or calculating driving directions will always result in the point
@@ -1101,6 +1104,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The geocoded location of the input.
+     *
      * Using place IDs is preferred over using addresses,
      * latitude/longitude coordinates, or plus codes. Using coordinates when
      * routing or calculating driving directions will always result in the point
@@ -1555,6 +1559,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The PlaceID of the place this input geocodes to.
+     *
      * For more information about Place IDs see
      * [here](https://developers.google.com/maps/documentation/places/web-service/place-id).
      * </pre>
@@ -1579,6 +1584,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The PlaceID of the place this input geocodes to.
+     *
      * For more information about Place IDs see
      * [here](https://developers.google.com/maps/documentation/places/web-service/place-id).
      * </pre>
@@ -1603,6 +1609,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The PlaceID of the place this input geocodes to.
+     *
      * For more information about Place IDs see
      * [here](https://developers.google.com/maps/documentation/places/web-service/place-id).
      * </pre>
@@ -1626,6 +1633,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The PlaceID of the place this input geocodes to.
+     *
      * For more information about Place IDs see
      * [here](https://developers.google.com/maps/documentation/places/web-service/place-id).
      * </pre>
@@ -1645,6 +1653,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The PlaceID of the place this input geocodes to.
+     *
      * For more information about Place IDs see
      * [here](https://developers.google.com/maps/documentation/places/web-service/place-id).
      * </pre>
@@ -1665,14 +1674,14 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList placeTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList placeTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePlaceTypesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!placeTypes_.isModifiable()) {
         placeTypes_ = new com.google.protobuf.LazyStringArrayList(placeTypes_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -1688,7 +1697,8 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the placeTypes.
      */
     public com.google.protobuf.ProtocolStringList getPlaceTypesList() {
-      return placeTypes_.getUnmodifiableView();
+      placeTypes_.makeImmutable();
+      return placeTypes_;
     }
     /**
      *
@@ -1761,6 +1771,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePlaceTypesIsMutable();
       placeTypes_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1784,6 +1795,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePlaceTypesIsMutable();
       placeTypes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1804,6 +1816,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPlaceTypes(java.lang.Iterable<java.lang.String> values) {
       ensurePlaceTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, placeTypes_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1821,8 +1834,9 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPlaceTypes() {
-      placeTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      placeTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -1847,6 +1861,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePlaceTypesIsMutable();
       placeTypes_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

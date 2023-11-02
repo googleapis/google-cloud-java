@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1262,6 +1262,8 @@ public class ProjectsClient implements BackgroundResource {
    * Moving VMs or disks by using this method might cause unexpected behavior. For more information,
    * see the [known
    * issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
+   * [Deprecated] This method is deprecated. See [moving instance across
+   * zones](/compute/docs/instances/moving-instance-across-zones) instead.
    *
    * <p>Sample code:
    *
@@ -1299,6 +1301,8 @@ public class ProjectsClient implements BackgroundResource {
    * Moving VMs or disks by using this method might cause unexpected behavior. For more information,
    * see the [known
    * issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
+   * [Deprecated] This method is deprecated. See [moving instance across
+   * zones](/compute/docs/instances/moving-instance-across-zones) instead.
    *
    * <p>Sample code:
    *
@@ -1335,6 +1339,8 @@ public class ProjectsClient implements BackgroundResource {
    * Moving VMs or disks by using this method might cause unexpected behavior. For more information,
    * see the [known
    * issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
+   * [Deprecated] This method is deprecated. See [moving instance across
+   * zones](/compute/docs/instances/moving-instance-across-zones) instead.
    *
    * <p>Sample code:
    *
@@ -1369,6 +1375,8 @@ public class ProjectsClient implements BackgroundResource {
    * Moving VMs or disks by using this method might cause unexpected behavior. For more information,
    * see the [known
    * issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
+   * [Deprecated] This method is deprecated. See [moving instance across
+   * zones](/compute/docs/instances/moving-instance-across-zones) instead.
    *
    * <p>Sample code:
    *

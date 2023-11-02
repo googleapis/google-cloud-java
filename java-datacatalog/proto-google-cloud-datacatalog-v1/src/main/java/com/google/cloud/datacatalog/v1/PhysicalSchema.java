@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PhysicalSchema();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -123,11 +118,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AvroSchema();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -770,11 +760,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ThriftSchema();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1423,11 +1408,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       return new ProtobufSchema();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datacatalog.v1.PhysicalSchemaProto
           .internal_static_google_cloud_datacatalog_v1_PhysicalSchema_ProtobufSchema_descriptor;
@@ -2049,11 +2029,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       return new ParquetSchema();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datacatalog.v1.PhysicalSchemaProto
           .internal_static_google_cloud_datacatalog_v1_PhysicalSchema_ParquetSchema_descriptor;
@@ -2482,11 +2457,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       return new OrcSchema();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datacatalog.v1.PhysicalSchemaProto
           .internal_static_google_cloud_datacatalog_v1_PhysicalSchema_OrcSchema_descriptor;
@@ -2910,11 +2880,6 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
       return new CsvSchema();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datacatalog.v1.PhysicalSchemaProto
           .internal_static_google_cloud_datacatalog_v1_PhysicalSchema_CsvSchema_descriptor;
@@ -3308,6 +3273,8 @@ public final class PhysicalSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int schemaCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object schema_;
 
   public enum SchemaCase

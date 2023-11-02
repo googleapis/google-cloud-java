@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SynonymSet();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -151,18 +146,13 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private Synonym() {
-      words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      words_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Synonym();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -183,7 +173,8 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
     public static final int WORDS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList words_;
+    private com.google.protobuf.LazyStringArrayList words_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -452,8 +443,7 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        words_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -481,7 +471,6 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.contentwarehouse.v1.SynonymSet.Synonym buildPartial() {
         com.google.cloud.contentwarehouse.v1.SynonymSet.Synonym result =
             new com.google.cloud.contentwarehouse.v1.SynonymSet.Synonym(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -489,17 +478,12 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.contentwarehouse.v1.SynonymSet.Synonym result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          words_ = words_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.words_ = words_;
-      }
-
       private void buildPartial0(com.google.cloud.contentwarehouse.v1.SynonymSet.Synonym result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          words_.makeImmutable();
+          result.words_ = words_;
+        }
       }
 
       @java.lang.Override
@@ -553,7 +537,7 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
         if (!other.words_.isEmpty()) {
           if (words_.isEmpty()) {
             words_ = other.words_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureWordsIsMutable();
             words_.addAll(other.words_);
@@ -612,14 +596,14 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList words_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList words_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureWordsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!words_.isModifiable()) {
           words_ = new com.google.protobuf.LazyStringArrayList(words_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -633,7 +617,8 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the words.
        */
       public com.google.protobuf.ProtocolStringList getWordsList() {
-        return words_.getUnmodifiableView();
+        words_.makeImmutable();
+        return words_;
       }
       /**
        *
@@ -698,6 +683,7 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
         }
         ensureWordsIsMutable();
         words_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -719,6 +705,7 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
         }
         ensureWordsIsMutable();
         words_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -737,6 +724,7 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllWords(java.lang.Iterable<java.lang.String> values) {
         ensureWordsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, words_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -752,8 +740,9 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearWords() {
-        words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        words_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -776,6 +765,7 @@ public final class SynonymSet extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureWordsIsMutable();
         words_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }

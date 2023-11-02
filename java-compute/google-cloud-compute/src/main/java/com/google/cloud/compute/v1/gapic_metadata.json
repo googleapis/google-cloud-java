@@ -43,6 +43,9 @@
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
+            "Move": {
+              "methods": ["moveAsync", "moveAsync", "moveOperationCallable", "moveCallable"]
+            },
             "SetLabels": {
               "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             }
@@ -196,6 +199,9 @@
             "AggregatedList": {
               "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
             },
+            "BulkInsert": {
+              "methods": ["bulkInsertAsync", "bulkInsertAsync", "bulkInsertOperationCallable", "bulkInsertCallable"]
+            },
             "CreateSnapshot": {
               "methods": ["createSnapshotAsync", "createSnapshotAsync", "createSnapshotOperationCallable", "createSnapshotCallable"]
             },
@@ -225,6 +231,15 @@
             },
             "SetLabels": {
               "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            },
+            "StartAsyncReplication": {
+              "methods": ["startAsyncReplicationAsync", "startAsyncReplicationAsync", "startAsyncReplicationOperationCallable", "startAsyncReplicationCallable"]
+            },
+            "StopAsyncReplication": {
+              "methods": ["stopAsyncReplicationAsync", "stopAsyncReplicationAsync", "stopAsyncReplicationOperationCallable", "stopAsyncReplicationCallable"]
+            },
+            "StopGroupAsyncReplication": {
+              "methods": ["stopGroupAsyncReplicationAsync", "stopGroupAsyncReplicationAsync", "stopGroupAsyncReplicationOperationCallable", "stopGroupAsyncReplicationCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -402,6 +417,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Move": {
+              "methods": ["moveAsync", "moveAsync", "moveOperationCallable", "moveCallable"]
             },
             "SetLabels": {
               "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
@@ -939,6 +957,21 @@
       "clients": {
         "grpc": {
           "libraryClient": "InterconnectLocationsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
+    "InterconnectRemoteLocations": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InterconnectRemoteLocationsClient",
           "rpcs": {
             "Get": {
               "methods": ["get", "get", "getCallable"]
@@ -1606,6 +1639,9 @@
             "AddResourcePolicies": {
               "methods": ["addResourcePoliciesAsync", "addResourcePoliciesAsync", "addResourcePoliciesOperationCallable", "addResourcePoliciesCallable"]
             },
+            "BulkInsert": {
+              "methods": ["bulkInsertAsync", "bulkInsertAsync", "bulkInsertOperationCallable", "bulkInsertCallable"]
+            },
             "CreateSnapshot": {
               "methods": ["createSnapshotAsync", "createSnapshotAsync", "createSnapshotOperationCallable", "createSnapshotCallable"]
             },
@@ -1635,6 +1671,15 @@
             },
             "SetLabels": {
               "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            },
+            "StartAsyncReplication": {
+              "methods": ["startAsyncReplicationAsync", "startAsyncReplicationAsync", "startAsyncReplicationOperationCallable", "startAsyncReplicationCallable"]
+            },
+            "StopAsyncReplication": {
+              "methods": ["stopAsyncReplicationAsync", "stopAsyncReplicationAsync", "stopAsyncReplicationOperationCallable", "stopAsyncReplicationCallable"]
+            },
+            "StopGroupAsyncReplication": {
+              "methods": ["stopGroupAsyncReplicationAsync", "stopGroupAsyncReplicationAsync", "stopGroupAsyncReplicationOperationCallable", "stopGroupAsyncReplicationCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
@@ -2193,6 +2238,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]

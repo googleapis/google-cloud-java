@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ComputeThreatListDiffRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -193,11 +188,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Constraints();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1208,9 +1198,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The threat list to update. Only a single ThreatType should be specified
-   * per request. If you want to handle multiple ThreatTypes, you must make one
-   * request per ThreatType.
+   * Required. The threat list to update. Only a single ThreatType should be
+   * specified per request. If you want to handle multiple ThreatTypes, you must
+   * make one request per ThreatType.
    * </pre>
    *
    * <code>
@@ -1227,9 +1217,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The threat list to update. Only a single ThreatType should be specified
-   * per request. If you want to handle multiple ThreatTypes, you must make one
-   * request per ThreatType.
+   * Required. The threat list to update. Only a single ThreatType should be
+   * specified per request. If you want to handle multiple ThreatTypes, you must
+   * make one request per ThreatType.
    * </pre>
    *
    * <code>
@@ -1723,9 +1713,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The threat list to update. Only a single ThreatType should be specified
-     * per request. If you want to handle multiple ThreatTypes, you must make one
-     * request per ThreatType.
+     * Required. The threat list to update. Only a single ThreatType should be
+     * specified per request. If you want to handle multiple ThreatTypes, you must
+     * make one request per ThreatType.
      * </pre>
      *
      * <code>
@@ -1742,9 +1732,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The threat list to update. Only a single ThreatType should be specified
-     * per request. If you want to handle multiple ThreatTypes, you must make one
-     * request per ThreatType.
+     * Required. The threat list to update. Only a single ThreatType should be
+     * specified per request. If you want to handle multiple ThreatTypes, you must
+     * make one request per ThreatType.
      * </pre>
      *
      * <code>
@@ -1764,9 +1754,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The threat list to update. Only a single ThreatType should be specified
-     * per request. If you want to handle multiple ThreatTypes, you must make one
-     * request per ThreatType.
+     * Required. The threat list to update. Only a single ThreatType should be
+     * specified per request. If you want to handle multiple ThreatTypes, you must
+     * make one request per ThreatType.
      * </pre>
      *
      * <code>
@@ -1785,9 +1775,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The threat list to update. Only a single ThreatType should be specified
-     * per request. If you want to handle multiple ThreatTypes, you must make one
-     * request per ThreatType.
+     * Required. The threat list to update. Only a single ThreatType should be
+     * specified per request. If you want to handle multiple ThreatTypes, you must
+     * make one request per ThreatType.
      * </pre>
      *
      * <code>
@@ -1810,9 +1800,9 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The threat list to update. Only a single ThreatType should be specified
-     * per request. If you want to handle multiple ThreatTypes, you must make one
-     * request per ThreatType.
+     * Required. The threat list to update. Only a single ThreatType should be
+     * specified per request. If you want to handle multiple ThreatTypes, you must
+     * make one request per ThreatType.
      * </pre>
      *
      * <code>

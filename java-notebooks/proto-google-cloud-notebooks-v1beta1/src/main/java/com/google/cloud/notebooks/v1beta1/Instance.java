@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     postStartupScript_ = "";
     proxyUri_ = "";
-    instanceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instanceOwners_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serviceAccount_ = "";
     machineType_ = "";
     state_ = 0;
@@ -59,11 +59,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Instance();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1357,11 +1352,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return new AcceleratorConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.notebooks.v1beta1.InstanceProto
           .internal_static_google_cloud_notebooks_v1beta1_Instance_AcceleratorConfig_descriptor;
@@ -2025,6 +2015,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int environmentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object environment_;
 
   public enum EnvironmentCase
@@ -2335,12 +2327,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public static final int INSTANCE_OWNERS_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList instanceOwners_;
+  private com.google.protobuf.LazyStringArrayList instanceOwners_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -2358,6 +2352,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -2375,6 +2370,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -2393,6 +2389,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -2419,6 +2416,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Cloud services.
    * You can use any service account within the same project, but you
    * must have the service account user permission to use the instance.
+   *
    * If not specified, the [Compute Engine default service
    * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
    * is used.
@@ -2448,6 +2446,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Cloud services.
    * You can use any service account within the same project, but you
    * must have the service account user permission to use the instance.
+   *
    * If not specified, the [Compute Engine default service
    * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
    * is used.
@@ -2895,6 +2894,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * is CMEK.
    * Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
+   *
    * Learn more about [using your own encryption
    * keys](https://cloud.google.com/kms/docs/quickstart).
    * </pre>
@@ -2923,6 +2923,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * is CMEK.
    * Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
+   *
    * Learn more about [using your own encryption
    * keys](https://cloud.google.com/kms/docs/quickstart).
    * </pre>
@@ -4091,8 +4092,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       postStartupScript_ = "";
       proxyUri_ = "";
-      instanceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      instanceOwners_ = com.google.protobuf.LazyStringArrayList.emptyList();
       serviceAccount_ = "";
       machineType_ = "";
       acceleratorConfig_ = null;
@@ -4162,21 +4162,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.notebooks.v1beta1.Instance buildPartial() {
       com.google.cloud.notebooks.v1beta1.Instance result =
           new com.google.cloud.notebooks.v1beta1.Instance(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.notebooks.v1beta1.Instance result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        instanceOwners_ = instanceOwners_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.instanceOwners_ = instanceOwners_;
     }
 
     private void buildPartial0(com.google.cloud.notebooks.v1beta1.Instance result) {
@@ -4189,6 +4180,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.proxyUri_ = proxyUri_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        instanceOwners_.makeImmutable();
+        result.instanceOwners_ = instanceOwners_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.serviceAccount_ = serviceAccount_;
@@ -4346,7 +4341,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!other.instanceOwners_.isEmpty()) {
         if (instanceOwners_.isEmpty()) {
           instanceOwners_ = other.instanceOwners_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureInstanceOwnersIsMutable();
           instanceOwners_.addAll(other.instanceOwners_);
@@ -5456,20 +5451,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList instanceOwners_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList instanceOwners_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInstanceOwnersIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!instanceOwners_.isModifiable()) {
         instanceOwners_ = new com.google.protobuf.LazyStringArrayList(instanceOwners_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5480,13 +5476,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the instanceOwners.
      */
     public com.google.protobuf.ProtocolStringList getInstanceOwnersList() {
-      return instanceOwners_.getUnmodifiableView();
+      instanceOwners_.makeImmutable();
+      return instanceOwners_;
     }
     /**
      *
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5504,6 +5502,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5522,6 +5521,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5540,6 +5540,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5557,6 +5558,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceOwnersIsMutable();
       instanceOwners_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5565,6 +5567,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5581,6 +5584,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceOwnersIsMutable();
       instanceOwners_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5589,6 +5593,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5602,6 +5607,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInstanceOwners(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceOwnersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceOwners_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5610,6 +5616,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5620,8 +5627,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstanceOwners() {
-      instanceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instanceOwners_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -5630,6 +5638,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5647,6 +5656,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInstanceOwnersIsMutable();
       instanceOwners_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5660,6 +5670,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Cloud services.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
+     *
      * If not specified, the [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
@@ -5688,6 +5699,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Cloud services.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
+     *
      * If not specified, the [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
@@ -5716,6 +5728,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Cloud services.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
+     *
      * If not specified, the [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
@@ -5743,6 +5756,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Cloud services.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
+     *
      * If not specified, the [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
@@ -5766,6 +5780,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Cloud services.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
+     *
      * If not specified, the [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
@@ -6901,6 +6916,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
+     *
      * Learn more about [using your own encryption
      * keys](https://cloud.google.com/kms/docs/quickstart).
      * </pre>
@@ -6928,6 +6944,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
+     *
      * Learn more about [using your own encryption
      * keys](https://cloud.google.com/kms/docs/quickstart).
      * </pre>
@@ -6955,6 +6972,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
+     *
      * Learn more about [using your own encryption
      * keys](https://cloud.google.com/kms/docs/quickstart).
      * </pre>
@@ -6981,6 +6999,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
+     *
      * Learn more about [using your own encryption
      * keys](https://cloud.google.com/kms/docs/quickstart).
      * </pre>
@@ -7003,6 +7022,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
+     *
      * Learn more about [using your own encryption
      * keys](https://cloud.google.com/kms/docs/quickstart).
      * </pre>

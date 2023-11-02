@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -556,6 +556,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
   /**
    * Creates a new alerting policy.
    *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -597,6 +601,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new alerting policy.
+   *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
    *
    * <p>Sample code:
    *
@@ -640,6 +648,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
   /**
    * Creates a new alerting policy.
    *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -682,6 +694,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
   /**
    * Creates a new alerting policy.
    *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -721,6 +737,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
   /**
    * Creates a new alerting policy.
    *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -750,6 +770,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
   /**
    * Creates a new alerting policy.
    *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -778,6 +802,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an alerting policy.
+   *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
    *
    * <p>Sample code:
    *
@@ -811,6 +839,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
   /**
    * Deletes an alerting policy.
    *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -839,6 +871,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an alerting policy.
+   *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
    *
    * <p>Sample code:
    *
@@ -869,6 +905,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an alerting policy.
+   *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
    *
    * <p>Sample code:
    *
@@ -901,6 +941,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * Updates an alerting policy. You can either replace the entire policy with a new one or replace
    * only certain fields in the current alerting policy by specifying the fields to be updated via
    * `updateMask`. Returns the updated alerting policy.
+   *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
    *
    * <p>Sample code:
    *
@@ -952,6 +996,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * only certain fields in the current alerting policy by specifying the fields to be updated via
    * `updateMask`. Returns the updated alerting policy.
    *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -982,6 +1030,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * Updates an alerting policy. You can either replace the entire policy with a new one or replace
    * only certain fields in the current alerting policy by specifying the fields to be updated via
    * `updateMask`. Returns the updated alerting policy.
+   *
+   * <p>Design your application to single-thread API calls that modify the state of alerting
+   * policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and
+   * UpdateAlertPolicy.
    *
    * <p>Sample code:
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,17 +24,24 @@ package com.google.cloud.dialogflow.v2beta1;
  * <pre>
  * Answer records are records to manage answer history and feedbacks for
  * Dialogflow.
+ *
  * Currently, answer record includes:
+ *
  * - human agent assistant article suggestion
  * - human agent assistant faq article
+ *
  * It doesn't include:
+ *
  * - `DetectIntent` intent matching
  * - `DetectIntent` knowledge
+ *
  * Answer records are not related to the conversation history in the
  * Dialogflow Console. A Record is generated even when the end-user disables
  * conversation history in the console. Records are created when there's a human
  * agent assistant suggestion generated.
+ *
  * A typical workflow for customers provide feedback to an answer is:
+ *
  * 1. For human agent assistant, customers get suggestion via ListSuggestions
  *    API. Together with the answers,
  *    [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] are
@@ -68,11 +75,6 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
     return new AnswerRecord();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AnswerRecordsProto
         .internal_static_google_cloud_dialogflow_v2beta1_AnswerRecord_descriptor;
@@ -89,6 +91,8 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int recordCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object record_;
 
   public enum RecordCase
@@ -502,17 +506,24 @@ public final class AnswerRecord extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Answer records are records to manage answer history and feedbacks for
    * Dialogflow.
+   *
    * Currently, answer record includes:
+   *
    * - human agent assistant article suggestion
    * - human agent assistant faq article
+   *
    * It doesn't include:
+   *
    * - `DetectIntent` intent matching
    * - `DetectIntent` knowledge
+   *
    * Answer records are not related to the conversation history in the
    * Dialogflow Console. A Record is generated even when the end-user disables
    * conversation history in the console. Records are created when there's a human
    * agent assistant suggestion generated.
+   *
    * A typical workflow for customers provide feedback to an answer is:
+   *
    * 1. For human agent assistant, customers get suggestion via ListSuggestions
    *    API. Together with the answers,
    *    [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] are

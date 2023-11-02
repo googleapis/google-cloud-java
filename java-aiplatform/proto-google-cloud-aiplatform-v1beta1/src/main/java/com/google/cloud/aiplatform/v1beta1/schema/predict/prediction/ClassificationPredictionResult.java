@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
 
   private ClassificationPredictionResult() {
     ids_ = emptyLongList();
-    displayNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    displayNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     confidences_ = emptyFloatList();
   }
 
@@ -49,11 +49,6 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ClassificationPredictionResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -129,7 +124,8 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
   public static final int DISPLAY_NAMES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList displayNames_;
+  private com.google.protobuf.LazyStringArrayList displayNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -533,8 +529,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       super.clear();
       bitField0_ = 0;
       ids_ = emptyLongList();
-      displayNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      displayNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       confidences_ = emptyFloatList();
       return this;
     }
@@ -590,11 +585,6 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ids_ = ids_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        displayNames_ = displayNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.displayNames_ = displayNames_;
       if (((bitField0_ & 0x00000004) != 0)) {
         confidences_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -606,6 +596,10 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
         com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.ClassificationPredictionResult
             result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        displayNames_.makeImmutable();
+        result.displayNames_ = displayNames_;
+      }
     }
 
     @java.lang.Override
@@ -676,7 +670,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       if (!other.displayNames_.isEmpty()) {
         if (displayNames_.isEmpty()) {
           displayNames_ = other.displayNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureDisplayNamesIsMutable();
           displayNames_.addAll(other.displayNames_);
@@ -907,14 +901,14 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       return this;
     }
 
-    private com.google.protobuf.LazyStringList displayNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList displayNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDisplayNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!displayNames_.isModifiable()) {
         displayNames_ = new com.google.protobuf.LazyStringArrayList(displayNames_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -929,7 +923,8 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
      * @return A list containing the displayNames.
      */
     public com.google.protobuf.ProtocolStringList getDisplayNamesList() {
-      return displayNames_.getUnmodifiableView();
+      displayNames_.makeImmutable();
+      return displayNames_;
     }
     /**
      *
@@ -998,6 +993,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       }
       ensureDisplayNamesIsMutable();
       displayNames_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1020,6 +1016,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       }
       ensureDisplayNamesIsMutable();
       displayNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1039,6 +1036,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
     public Builder addAllDisplayNames(java.lang.Iterable<java.lang.String> values) {
       ensureDisplayNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, displayNames_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1055,8 +1053,9 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearDisplayNames() {
-      displayNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      displayNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1080,6 +1079,7 @@ public final class ClassificationPredictionResult extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       ensureDisplayNamesIsMutable();
       displayNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

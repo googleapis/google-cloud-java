@@ -203,5 +203,5 @@ public interface ComplianceNoteOrBuilder
    */
   com.google.protobuf.ByteString getScanInstructions();
 
-  public io.grafeas.v1.ComplianceNote.ComplianceTypeCase getComplianceTypeCase();
+  io.grafeas.v1.ComplianceNote.ComplianceTypeCase getComplianceTypeCase();
 }

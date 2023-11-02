@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface ReportErrorEventRequestOrBuilder
    * as `projects/{projectId}`, where `{projectId}` is the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
+   *
    * Example: // `projects/my-project-123`.
    * </pre>
    *
@@ -49,6 +50,7 @@ public interface ReportErrorEventRequestOrBuilder
    * as `projects/{projectId}`, where `{projectId}` is the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
+   *
    * Example: // `projects/my-project-123`.
    * </pre>
    *

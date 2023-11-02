@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,17 +41,13 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
   private SuggestTrialsRequest() {
     parent_ = "";
     clientId_ = "";
+    contexts_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SuggestTrialsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -153,6 +149,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The identifier of the client that is requesting the suggestion.
+   *
    * If multiple SuggestTrialsRequests have the same `client_id`,
    * the service will return the identical suggested Trial if the Trial is
    * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -179,6 +176,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The identifier of the client that is requesting the suggestion.
+   *
    * If multiple SuggestTrialsRequests have the same `client_id`,
    * the service will return the identical suggested Trial if the Trial is
    * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -199,6 +197,262 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CONTEXTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.TrialContext> contexts_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This allows you to specify the "context" for a Trial; a context
+   * is a slice (a subspace) of the search space.
+   *
+   * Typical uses for contexts:
+   * 1) You are using Vizier to tune a server for best performance, but there's
+   *   a strong weekly cycle.  The context specifies the day-of-week.
+   *   This allows Tuesday to generalize from Wednesday without assuming that
+   *   everything is identical.
+   * 2) Imagine you're optimizing some medical treatment for people.
+   *   As they walk in the door, you know certain facts about them
+   *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+   *   context, and Vizier will adapt its suggestions to the patient.
+   * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+   *   conditions as contexts, and Vizier will generalize between "A" and "B"
+   *   conditions.  If they are similar, this will allow Vizier to converge
+   *   to the optimum faster than if "A" and "B" were separate Studies.
+   *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+   *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+   *   close association between contexts and suggestions.
+   *
+   * NOTE: All the Parameters you set in a context MUST be defined in the
+   *   Study.
+   * NOTE: You must supply 0 or $suggestion_count contexts.
+   *   If you don't supply any contexts, Vizier will make suggestions
+   *   from the full search space specified in the StudySpec; if you supply
+   *   a full set of context, each suggestion will match the corresponding
+   *   context.
+   * NOTE: A Context with no features set matches anything, and allows
+   *   suggestions from the full search space.
+   * NOTE: Contexts MUST lie within the search space specified in the
+   *   StudySpec.  It's an error if they don't.
+   * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+   *   new suggestions are generated.
+   * NOTE: Generation of suggestions involves a match between a Context and
+   *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+   *   suggestion will be geneated in the merged subspace.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.TrialContext> getContextsList() {
+    return contexts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This allows you to specify the "context" for a Trial; a context
+   * is a slice (a subspace) of the search space.
+   *
+   * Typical uses for contexts:
+   * 1) You are using Vizier to tune a server for best performance, but there's
+   *   a strong weekly cycle.  The context specifies the day-of-week.
+   *   This allows Tuesday to generalize from Wednesday without assuming that
+   *   everything is identical.
+   * 2) Imagine you're optimizing some medical treatment for people.
+   *   As they walk in the door, you know certain facts about them
+   *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+   *   context, and Vizier will adapt its suggestions to the patient.
+   * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+   *   conditions as contexts, and Vizier will generalize between "A" and "B"
+   *   conditions.  If they are similar, this will allow Vizier to converge
+   *   to the optimum faster than if "A" and "B" were separate Studies.
+   *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+   *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+   *   close association between contexts and suggestions.
+   *
+   * NOTE: All the Parameters you set in a context MUST be defined in the
+   *   Study.
+   * NOTE: You must supply 0 or $suggestion_count contexts.
+   *   If you don't supply any contexts, Vizier will make suggestions
+   *   from the full search space specified in the StudySpec; if you supply
+   *   a full set of context, each suggestion will match the corresponding
+   *   context.
+   * NOTE: A Context with no features set matches anything, and allows
+   *   suggestions from the full search space.
+   * NOTE: Contexts MUST lie within the search space specified in the
+   *   StudySpec.  It's an error if they don't.
+   * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+   *   new suggestions are generated.
+   * NOTE: Generation of suggestions involves a match between a Context and
+   *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+   *   suggestion will be geneated in the merged subspace.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TrialContextOrBuilder>
+      getContextsOrBuilderList() {
+    return contexts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This allows you to specify the "context" for a Trial; a context
+   * is a slice (a subspace) of the search space.
+   *
+   * Typical uses for contexts:
+   * 1) You are using Vizier to tune a server for best performance, but there's
+   *   a strong weekly cycle.  The context specifies the day-of-week.
+   *   This allows Tuesday to generalize from Wednesday without assuming that
+   *   everything is identical.
+   * 2) Imagine you're optimizing some medical treatment for people.
+   *   As they walk in the door, you know certain facts about them
+   *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+   *   context, and Vizier will adapt its suggestions to the patient.
+   * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+   *   conditions as contexts, and Vizier will generalize between "A" and "B"
+   *   conditions.  If they are similar, this will allow Vizier to converge
+   *   to the optimum faster than if "A" and "B" were separate Studies.
+   *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+   *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+   *   close association between contexts and suggestions.
+   *
+   * NOTE: All the Parameters you set in a context MUST be defined in the
+   *   Study.
+   * NOTE: You must supply 0 or $suggestion_count contexts.
+   *   If you don't supply any contexts, Vizier will make suggestions
+   *   from the full search space specified in the StudySpec; if you supply
+   *   a full set of context, each suggestion will match the corresponding
+   *   context.
+   * NOTE: A Context with no features set matches anything, and allows
+   *   suggestions from the full search space.
+   * NOTE: Contexts MUST lie within the search space specified in the
+   *   StudySpec.  It's an error if they don't.
+   * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+   *   new suggestions are generated.
+   * NOTE: Generation of suggestions involves a match between a Context and
+   *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+   *   suggestion will be geneated in the merged subspace.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getContextsCount() {
+    return contexts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This allows you to specify the "context" for a Trial; a context
+   * is a slice (a subspace) of the search space.
+   *
+   * Typical uses for contexts:
+   * 1) You are using Vizier to tune a server for best performance, but there's
+   *   a strong weekly cycle.  The context specifies the day-of-week.
+   *   This allows Tuesday to generalize from Wednesday without assuming that
+   *   everything is identical.
+   * 2) Imagine you're optimizing some medical treatment for people.
+   *   As they walk in the door, you know certain facts about them
+   *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+   *   context, and Vizier will adapt its suggestions to the patient.
+   * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+   *   conditions as contexts, and Vizier will generalize between "A" and "B"
+   *   conditions.  If they are similar, this will allow Vizier to converge
+   *   to the optimum faster than if "A" and "B" were separate Studies.
+   *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+   *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+   *   close association between contexts and suggestions.
+   *
+   * NOTE: All the Parameters you set in a context MUST be defined in the
+   *   Study.
+   * NOTE: You must supply 0 or $suggestion_count contexts.
+   *   If you don't supply any contexts, Vizier will make suggestions
+   *   from the full search space specified in the StudySpec; if you supply
+   *   a full set of context, each suggestion will match the corresponding
+   *   context.
+   * NOTE: A Context with no features set matches anything, and allows
+   *   suggestions from the full search space.
+   * NOTE: Contexts MUST lie within the search space specified in the
+   *   StudySpec.  It's an error if they don't.
+   * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+   *   new suggestions are generated.
+   * NOTE: Generation of suggestions involves a match between a Context and
+   *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+   *   suggestion will be geneated in the merged subspace.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrialContext getContexts(int index) {
+    return contexts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This allows you to specify the "context" for a Trial; a context
+   * is a slice (a subspace) of the search space.
+   *
+   * Typical uses for contexts:
+   * 1) You are using Vizier to tune a server for best performance, but there's
+   *   a strong weekly cycle.  The context specifies the day-of-week.
+   *   This allows Tuesday to generalize from Wednesday without assuming that
+   *   everything is identical.
+   * 2) Imagine you're optimizing some medical treatment for people.
+   *   As they walk in the door, you know certain facts about them
+   *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+   *   context, and Vizier will adapt its suggestions to the patient.
+   * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+   *   conditions as contexts, and Vizier will generalize between "A" and "B"
+   *   conditions.  If they are similar, this will allow Vizier to converge
+   *   to the optimum faster than if "A" and "B" were separate Studies.
+   *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+   *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+   *   close association between contexts and suggestions.
+   *
+   * NOTE: All the Parameters you set in a context MUST be defined in the
+   *   Study.
+   * NOTE: You must supply 0 or $suggestion_count contexts.
+   *   If you don't supply any contexts, Vizier will make suggestions
+   *   from the full search space specified in the StudySpec; if you supply
+   *   a full set of context, each suggestion will match the corresponding
+   *   context.
+   * NOTE: A Context with no features set matches anything, and allows
+   *   suggestions from the full search space.
+   * NOTE: Contexts MUST lie within the search space specified in the
+   *   StudySpec.  It's an error if they don't.
+   * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+   *   new suggestions are generated.
+   * NOTE: Generation of suggestions involves a match between a Context and
+   *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+   *   suggestion will be geneated in the merged subspace.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrialContextOrBuilder getContextsOrBuilder(int index) {
+    return contexts_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -224,6 +478,9 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clientId_);
     }
+    for (int i = 0; i < contexts_.size(); i++) {
+      output.writeMessage(4, contexts_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -241,6 +498,9 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clientId_);
+    }
+    for (int i = 0; i < contexts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, contexts_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -261,6 +521,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
     if (!getParent().equals(other.getParent())) return false;
     if (getSuggestionCount() != other.getSuggestionCount()) return false;
     if (!getClientId().equals(other.getClientId())) return false;
+    if (!getContextsList().equals(other.getContextsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -278,6 +539,10 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getSuggestionCount();
     hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getClientId().hashCode();
+    if (getContextsCount() > 0) {
+      hash = (37 * hash) + CONTEXTS_FIELD_NUMBER;
+      hash = (53 * hash) + getContextsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -422,6 +687,13 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
       parent_ = "";
       suggestionCount_ = 0;
       clientId_ = "";
+      if (contextsBuilder_ == null) {
+        contexts_ = java.util.Collections.emptyList();
+      } else {
+        contexts_ = null;
+        contextsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -449,11 +721,25 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest result =
           new com.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest result) {
+      if (contextsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          contexts_ = java.util.Collections.unmodifiableList(contexts_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.contexts_ = contexts_;
+      } else {
+        result.contexts_ = contextsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest result) {
@@ -528,6 +814,33 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (contextsBuilder_ == null) {
+        if (!other.contexts_.isEmpty()) {
+          if (contexts_.isEmpty()) {
+            contexts_ = other.contexts_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureContextsIsMutable();
+            contexts_.addAll(other.contexts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.contexts_.isEmpty()) {
+          if (contextsBuilder_.isEmpty()) {
+            contextsBuilder_.dispose();
+            contextsBuilder_ = null;
+            contexts_ = other.contexts_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            contextsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getContextsFieldBuilder()
+                    : null;
+          } else {
+            contextsBuilder_.addAllMessages(other.contexts_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -572,6 +885,20 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                com.google.cloud.aiplatform.v1beta1.TrialContext m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.TrialContext.parser(),
+                        extensionRegistry);
+                if (contextsBuilder_ == null) {
+                  ensureContextsIsMutable();
+                  contexts_.add(m);
+                } else {
+                  contextsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -771,6 +1098,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The identifier of the client that is requesting the suggestion.
+     *
      * If multiple SuggestTrialsRequests have the same `client_id`,
      * the service will return the identical suggested Trial if the Trial is
      * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -796,6 +1124,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The identifier of the client that is requesting the suggestion.
+     *
      * If multiple SuggestTrialsRequests have the same `client_id`,
      * the service will return the identical suggested Trial if the Trial is
      * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -821,6 +1150,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The identifier of the client that is requesting the suggestion.
+     *
      * If multiple SuggestTrialsRequests have the same `client_id`,
      * the service will return the identical suggested Trial if the Trial is
      * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -845,6 +1175,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The identifier of the client that is requesting the suggestion.
+     *
      * If multiple SuggestTrialsRequests have the same `client_id`,
      * the service will return the identical suggested Trial if the Trial is
      * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -865,6 +1196,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The identifier of the client that is requesting the suggestion.
+     *
      * If multiple SuggestTrialsRequests have the same `client_id`,
      * the service will return the identical suggested Trial if the Trial is
      * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -884,6 +1216,1024 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.TrialContext> contexts_ =
+        java.util.Collections.emptyList();
+
+    private void ensureContextsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        contexts_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.TrialContext>(contexts_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrialContext,
+            com.google.cloud.aiplatform.v1beta1.TrialContext.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrialContextOrBuilder>
+        contextsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.TrialContext> getContextsList() {
+      if (contextsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(contexts_);
+      } else {
+        return contextsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getContextsCount() {
+      if (contextsBuilder_ == null) {
+        return contexts_.size();
+      } else {
+        return contextsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TrialContext getContexts(int index) {
+      if (contextsBuilder_ == null) {
+        return contexts_.get(index);
+      } else {
+        return contextsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContexts(int index, com.google.cloud.aiplatform.v1beta1.TrialContext value) {
+      if (contextsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContextsIsMutable();
+        contexts_.set(index, value);
+        onChanged();
+      } else {
+        contextsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContexts(
+        int index, com.google.cloud.aiplatform.v1beta1.TrialContext.Builder builderForValue) {
+      if (contextsBuilder_ == null) {
+        ensureContextsIsMutable();
+        contexts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        contextsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addContexts(com.google.cloud.aiplatform.v1beta1.TrialContext value) {
+      if (contextsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContextsIsMutable();
+        contexts_.add(value);
+        onChanged();
+      } else {
+        contextsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addContexts(int index, com.google.cloud.aiplatform.v1beta1.TrialContext value) {
+      if (contextsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContextsIsMutable();
+        contexts_.add(index, value);
+        onChanged();
+      } else {
+        contextsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addContexts(
+        com.google.cloud.aiplatform.v1beta1.TrialContext.Builder builderForValue) {
+      if (contextsBuilder_ == null) {
+        ensureContextsIsMutable();
+        contexts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        contextsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addContexts(
+        int index, com.google.cloud.aiplatform.v1beta1.TrialContext.Builder builderForValue) {
+      if (contextsBuilder_ == null) {
+        ensureContextsIsMutable();
+        contexts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        contextsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllContexts(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.TrialContext> values) {
+      if (contextsBuilder_ == null) {
+        ensureContextsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contexts_);
+        onChanged();
+      } else {
+        contextsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearContexts() {
+      if (contextsBuilder_ == null) {
+        contexts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        contextsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeContexts(int index) {
+      if (contextsBuilder_ == null) {
+        ensureContextsIsMutable();
+        contexts_.remove(index);
+        onChanged();
+      } else {
+        contextsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TrialContext.Builder getContextsBuilder(int index) {
+      return getContextsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TrialContextOrBuilder getContextsOrBuilder(
+        int index) {
+      if (contextsBuilder_ == null) {
+        return contexts_.get(index);
+      } else {
+        return contextsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TrialContextOrBuilder>
+        getContextsOrBuilderList() {
+      if (contextsBuilder_ != null) {
+        return contextsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(contexts_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TrialContext.Builder addContextsBuilder() {
+      return getContextsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.TrialContext.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TrialContext.Builder addContextsBuilder(int index) {
+      return getContextsFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1beta1.TrialContext.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This allows you to specify the "context" for a Trial; a context
+     * is a slice (a subspace) of the search space.
+     *
+     * Typical uses for contexts:
+     * 1) You are using Vizier to tune a server for best performance, but there's
+     *   a strong weekly cycle.  The context specifies the day-of-week.
+     *   This allows Tuesday to generalize from Wednesday without assuming that
+     *   everything is identical.
+     * 2) Imagine you're optimizing some medical treatment for people.
+     *   As they walk in the door, you know certain facts about them
+     *   (e.g. sex, weight, height, blood-pressure).  Put that information in the
+     *   context, and Vizier will adapt its suggestions to the patient.
+     * 3) You want to do a fair A/B test efficiently.  Specify the "A" and "B"
+     *   conditions as contexts, and Vizier will generalize between "A" and "B"
+     *   conditions.  If they are similar, this will allow Vizier to converge
+     *   to the optimum faster than if "A" and "B" were separate Studies.
+     *   NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the
+     *   CreateTrial() RPC; that's the asynchronous option where you don't need a
+     *   close association between contexts and suggestions.
+     *
+     * NOTE: All the Parameters you set in a context MUST be defined in the
+     *   Study.
+     * NOTE: You must supply 0 or $suggestion_count contexts.
+     *   If you don't supply any contexts, Vizier will make suggestions
+     *   from the full search space specified in the StudySpec; if you supply
+     *   a full set of context, each suggestion will match the corresponding
+     *   context.
+     * NOTE: A Context with no features set matches anything, and allows
+     *   suggestions from the full search space.
+     * NOTE: Contexts MUST lie within the search space specified in the
+     *   StudySpec.  It's an error if they don't.
+     * NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before
+     *   new suggestions are generated.
+     * NOTE: Generation of suggestions involves a match between a Context and
+     *   (optionally) a REQUESTED trial; if that match is not fully specified, a
+     *   suggestion will be geneated in the merged subspace.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.TrialContext contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.TrialContext.Builder>
+        getContextsBuilderList() {
+      return getContextsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrialContext,
+            com.google.cloud.aiplatform.v1beta1.TrialContext.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrialContextOrBuilder>
+        getContextsFieldBuilder() {
+      if (contextsBuilder_ == null) {
+        contextsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.TrialContext,
+                com.google.cloud.aiplatform.v1beta1.TrialContext.Builder,
+                com.google.cloud.aiplatform.v1beta1.TrialContextOrBuilder>(
+                contexts_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        contexts_ = null;
+      }
+      return contextsBuilder_;
     }
 
     @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
     return new UpdateCompletionConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.CatalogServiceProto
         .internal_static_google_cloud_retail_v2beta_UpdateCompletionConfigRequest_descriptor;
@@ -75,9 +70,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The
    * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+   *
    * If the caller does not have permission to update the
    * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
    * PERMISSION_DENIED error is returned.
+   *
    * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
    * update does not exist, a NOT_FOUND error is returned.
    * </pre>
@@ -98,9 +95,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The
    * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+   *
    * If the caller does not have permission to update the
    * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
    * PERMISSION_DENIED error is returned.
+   *
    * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
    * update does not exist, a NOT_FOUND error is returned.
    * </pre>
@@ -123,9 +122,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The
    * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+   *
    * If the caller does not have permission to update the
    * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
    * PERMISSION_DENIED error is returned.
+   *
    * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
    * update does not exist, a NOT_FOUND error is returned.
    * </pre>
@@ -150,10 +151,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
    * Indicates which fields in the provided
    * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
    * The following are the only supported fields:
+   *
    * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
    * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
    * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
    * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -172,10 +175,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
    * Indicates which fields in the provided
    * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
    * The following are the only supported fields:
+   *
    * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
    * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
    * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
    * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -194,10 +199,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
    * Indicates which fields in the provided
    * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
    * The following are the only supported fields:
+   *
    * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
    * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
    * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
    * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -608,9 +615,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+     *
      * If the caller does not have permission to update the
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
      * PERMISSION_DENIED error is returned.
+     *
      * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
      * update does not exist, a NOT_FOUND error is returned.
      * </pre>
@@ -630,9 +639,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+     *
      * If the caller does not have permission to update the
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
      * PERMISSION_DENIED error is returned.
+     *
      * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
      * update does not exist, a NOT_FOUND error is returned.
      * </pre>
@@ -658,9 +669,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+     *
      * If the caller does not have permission to update the
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
      * PERMISSION_DENIED error is returned.
+     *
      * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
      * update does not exist, a NOT_FOUND error is returned.
      * </pre>
@@ -688,9 +701,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+     *
      * If the caller does not have permission to update the
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
      * PERMISSION_DENIED error is returned.
+     *
      * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
      * update does not exist, a NOT_FOUND error is returned.
      * </pre>
@@ -716,9 +731,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+     *
      * If the caller does not have permission to update the
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
      * PERMISSION_DENIED error is returned.
+     *
      * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
      * update does not exist, a NOT_FOUND error is returned.
      * </pre>
@@ -750,9 +767,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+     *
      * If the caller does not have permission to update the
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
      * PERMISSION_DENIED error is returned.
+     *
      * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
      * update does not exist, a NOT_FOUND error is returned.
      * </pre>
@@ -777,9 +796,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+     *
      * If the caller does not have permission to update the
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
      * PERMISSION_DENIED error is returned.
+     *
      * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
      * update does not exist, a NOT_FOUND error is returned.
      * </pre>
@@ -799,9 +820,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+     *
      * If the caller does not have permission to update the
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
      * PERMISSION_DENIED error is returned.
+     *
      * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
      * update does not exist, a NOT_FOUND error is returned.
      * </pre>
@@ -825,9 +848,11 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
+     *
      * If the caller does not have permission to update the
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig], then a
      * PERMISSION_DENIED error is returned.
+     *
      * If the [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to
      * update does not exist, a NOT_FOUND error is returned.
      * </pre>
@@ -866,10 +891,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
      * The following are the only supported fields:
+     *
      * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
      * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
      * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
      * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -887,10 +914,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
      * The following are the only supported fields:
+     *
      * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
      * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
      * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
      * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -914,10 +943,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
      * The following are the only supported fields:
+     *
      * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
      * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
      * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
      * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -943,10 +974,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
      * The following are the only supported fields:
+     *
      * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
      * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
      * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
      * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -969,10 +1002,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
      * The following are the only supported fields:
+     *
      * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
      * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
      * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
      * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1001,10 +1036,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
      * The following are the only supported fields:
+     *
      * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
      * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
      * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
      * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1027,10 +1064,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
      * The following are the only supported fields:
+     *
      * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
      * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
      * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
      * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1048,10 +1087,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
      * The following are the only supported fields:
+     *
      * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
      * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
      * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
      * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -1073,10 +1114,12 @@ public final class UpdateCompletionConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig] to update.
      * The following are the only supported fields:
+     *
      * * [CompletionConfig.matching_order][google.cloud.retail.v2beta.CompletionConfig.matching_order]
      * * [CompletionConfig.max_suggestions][google.cloud.retail.v2beta.CompletionConfig.max_suggestions]
      * * [CompletionConfig.min_prefix_length][google.cloud.retail.v2beta.CompletionConfig.min_prefix_length]
      * * [CompletionConfig.auto_learning][google.cloud.retail.v2beta.CompletionConfig.auto_learning]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,17 @@ package com.google.cloud.bigquery.analyticshub.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.bigquery.analyticshub.v1.stub.AnalyticsHubServiceStub;
 import com.google.cloud.bigquery.analyticshub.v1.stub.AnalyticsHubServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -32,6 +37,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -140,6 +146,8 @@ import javax.annotation.Generated;
 public class AnalyticsHubServiceClient implements BackgroundResource {
   private final AnalyticsHubServiceSettings settings;
   private final AnalyticsHubServiceStub stub;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of AnalyticsHubServiceClient with default settings. */
   public static final AnalyticsHubServiceClient create() throws IOException {
@@ -171,11 +179,17 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
   protected AnalyticsHubServiceClient(AnalyticsHubServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((AnalyticsHubServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected AnalyticsHubServiceClient(AnalyticsHubServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final AnalyticsHubServiceSettings getSettings() {
@@ -184,6 +198,23 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   public AnalyticsHubServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
+    return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1687,6 +1718,1056 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a Subscription to a Data Exchange. This is a long-running operation as it will create
+   * one or more linked datasets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   DataExchangeName name = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+   *   SubscribeDataExchangeResponse response =
+   *       analyticsHubServiceClient.subscribeDataExchangeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Data Exchange. e.g.
+   *     `projects/publisherproject/locations/US/dataExchanges/123`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeAsync(DataExchangeName name) {
+    SubscribeDataExchangeRequest request =
+        SubscribeDataExchangeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return subscribeDataExchangeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Subscription to a Data Exchange. This is a long-running operation as it will create
+   * one or more linked datasets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String name = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString();
+   *   SubscribeDataExchangeResponse response =
+   *       analyticsHubServiceClient.subscribeDataExchangeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Data Exchange. e.g.
+   *     `projects/publisherproject/locations/US/dataExchanges/123`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeAsync(String name) {
+    SubscribeDataExchangeRequest request =
+        SubscribeDataExchangeRequest.newBuilder().setName(name).build();
+    return subscribeDataExchangeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Subscription to a Data Exchange. This is a long-running operation as it will create
+   * one or more linked datasets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   SubscribeDataExchangeRequest request =
+   *       SubscribeDataExchangeRequest.newBuilder()
+   *           .setName(DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSubscription("subscription341203229")
+   *           .setSubscriberContact("subscriberContact-847205736")
+   *           .build();
+   *   SubscribeDataExchangeResponse response =
+   *       analyticsHubServiceClient.subscribeDataExchangeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeAsync(SubscribeDataExchangeRequest request) {
+    return subscribeDataExchangeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Subscription to a Data Exchange. This is a long-running operation as it will create
+   * one or more linked datasets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   SubscribeDataExchangeRequest request =
+   *       SubscribeDataExchangeRequest.newBuilder()
+   *           .setName(DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSubscription("subscription341203229")
+   *           .setSubscriberContact("subscriberContact-847205736")
+   *           .build();
+   *   OperationFuture<SubscribeDataExchangeResponse, OperationMetadata> future =
+   *       analyticsHubServiceClient.subscribeDataExchangeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   SubscribeDataExchangeResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeOperationCallable() {
+    return stub.subscribeDataExchangeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Subscription to a Data Exchange. This is a long-running operation as it will create
+   * one or more linked datasets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   SubscribeDataExchangeRequest request =
+   *       SubscribeDataExchangeRequest.newBuilder()
+   *           .setName(DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSubscription("subscription341203229")
+   *           .setSubscriberContact("subscriberContact-847205736")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       analyticsHubServiceClient.subscribeDataExchangeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SubscribeDataExchangeRequest, Operation>
+      subscribeDataExchangeCallable() {
+    return stub.subscribeDataExchangeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refreshes a Subscription to a Data Exchange. A Data Exchange can become stale when a publisher
+   * adds or removes data. This is a long-running operation as it may create many linked datasets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+   *   RefreshSubscriptionResponse response =
+   *       analyticsHubServiceClient.refreshSubscriptionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Subscription to refresh. e.g.
+   *     `projects/subscriberproject/locations/US/subscriptions/123`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionAsync(SubscriptionName name) {
+    RefreshSubscriptionRequest request =
+        RefreshSubscriptionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return refreshSubscriptionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refreshes a Subscription to a Data Exchange. A Data Exchange can become stale when a publisher
+   * adds or removes data. This is a long-running operation as it may create many linked datasets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString();
+   *   RefreshSubscriptionResponse response =
+   *       analyticsHubServiceClient.refreshSubscriptionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Subscription to refresh. e.g.
+   *     `projects/subscriberproject/locations/US/subscriptions/123`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionAsync(String name) {
+    RefreshSubscriptionRequest request =
+        RefreshSubscriptionRequest.newBuilder().setName(name).build();
+    return refreshSubscriptionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refreshes a Subscription to a Data Exchange. A Data Exchange can become stale when a publisher
+   * adds or removes data. This is a long-running operation as it may create many linked datasets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   RefreshSubscriptionRequest request =
+   *       RefreshSubscriptionRequest.newBuilder()
+   *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   RefreshSubscriptionResponse response =
+   *       analyticsHubServiceClient.refreshSubscriptionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionAsync(RefreshSubscriptionRequest request) {
+    return refreshSubscriptionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refreshes a Subscription to a Data Exchange. A Data Exchange can become stale when a publisher
+   * adds or removes data. This is a long-running operation as it may create many linked datasets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   RefreshSubscriptionRequest request =
+   *       RefreshSubscriptionRequest.newBuilder()
+   *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   OperationFuture<RefreshSubscriptionResponse, OperationMetadata> future =
+   *       analyticsHubServiceClient.refreshSubscriptionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RefreshSubscriptionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionOperationCallable() {
+    return stub.refreshSubscriptionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refreshes a Subscription to a Data Exchange. A Data Exchange can become stale when a publisher
+   * adds or removes data. This is a long-running operation as it may create many linked datasets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   RefreshSubscriptionRequest request =
+   *       RefreshSubscriptionRequest.newBuilder()
+   *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       analyticsHubServiceClient.refreshSubscriptionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RefreshSubscriptionRequest, Operation> refreshSubscriptionCallable() {
+    return stub.refreshSubscriptionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a Subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+   *   Subscription response = analyticsHubServiceClient.getSubscription(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subscription. e.g.
+   *     projects/123/locations/US/subscriptions/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Subscription getSubscription(SubscriptionName name) {
+    GetSubscriptionRequest request =
+        GetSubscriptionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSubscription(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a Subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString();
+   *   Subscription response = analyticsHubServiceClient.getSubscription(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subscription. e.g.
+   *     projects/123/locations/US/subscriptions/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Subscription getSubscription(String name) {
+    GetSubscriptionRequest request = GetSubscriptionRequest.newBuilder().setName(name).build();
+    return getSubscription(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a Subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   GetSubscriptionRequest request =
+   *       GetSubscriptionRequest.newBuilder()
+   *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   Subscription response = analyticsHubServiceClient.getSubscription(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Subscription getSubscription(GetSubscriptionRequest request) {
+    return getSubscriptionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a Subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   GetSubscriptionRequest request =
+   *       GetSubscriptionRequest.newBuilder()
+   *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   ApiFuture<Subscription> future =
+   *       analyticsHubServiceClient.getSubscriptionCallable().futureCall(request);
+   *   // Do something.
+   *   Subscription response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
+    return stub.getSubscriptionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all subscriptions in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Subscription element :
+   *       analyticsHubServiceClient.listSubscriptions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource path of the subscription. e.g.
+   *     projects/myproject/locations/US
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubscriptionsPagedResponse listSubscriptions(LocationName parent) {
+    ListSubscriptionsRequest request =
+        ListSubscriptionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSubscriptions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all subscriptions in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Subscription element :
+   *       analyticsHubServiceClient.listSubscriptions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource path of the subscription. e.g.
+   *     projects/myproject/locations/US
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubscriptionsPagedResponse listSubscriptions(String parent) {
+    ListSubscriptionsRequest request =
+        ListSubscriptionsRequest.newBuilder().setParent(parent).build();
+    return listSubscriptions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all subscriptions in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListSubscriptionsRequest request =
+   *       ListSubscriptionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Subscription element :
+   *       analyticsHubServiceClient.listSubscriptions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubscriptionsPagedResponse listSubscriptions(ListSubscriptionsRequest request) {
+    return listSubscriptionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all subscriptions in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListSubscriptionsRequest request =
+   *       ListSubscriptionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Subscription> future =
+   *       analyticsHubServiceClient.listSubscriptionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Subscription element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable() {
+    return stub.listSubscriptionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all subscriptions in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListSubscriptionsRequest request =
+   *       ListSubscriptionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSubscriptionsResponse response =
+   *         analyticsHubServiceClient.listSubscriptionsCallable().call(request);
+   *     for (Subscription element : response.getSubscriptionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable() {
+    return stub.listSubscriptionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all subscriptions on a given Data Exchange or Listing.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ResourceName resource = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+   *   for (Subscription element :
+   *       analyticsHubServiceClient.listSharedResourceSubscriptions(resource).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param resource Required. Resource name of the requested target. This resource may be either a
+   *     Listing or a DataExchange. e.g. projects/123/locations/US/dataExchanges/456 OR e.g.
+   *     projects/123/locations/US/dataExchanges/456/listings/789
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSharedResourceSubscriptionsPagedResponse listSharedResourceSubscriptions(
+      ResourceName resource) {
+    ListSharedResourceSubscriptionsRequest request =
+        ListSharedResourceSubscriptionsRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return listSharedResourceSubscriptions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all subscriptions on a given Data Exchange or Listing.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String resource =
+   *       DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString();
+   *   for (Subscription element :
+   *       analyticsHubServiceClient.listSharedResourceSubscriptions(resource).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param resource Required. Resource name of the requested target. This resource may be either a
+   *     Listing or a DataExchange. e.g. projects/123/locations/US/dataExchanges/456 OR e.g.
+   *     projects/123/locations/US/dataExchanges/456/listings/789
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSharedResourceSubscriptionsPagedResponse listSharedResourceSubscriptions(
+      String resource) {
+    ListSharedResourceSubscriptionsRequest request =
+        ListSharedResourceSubscriptionsRequest.newBuilder().setResource(resource).build();
+    return listSharedResourceSubscriptions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all subscriptions on a given Data Exchange or Listing.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListSharedResourceSubscriptionsRequest request =
+   *       ListSharedResourceSubscriptionsRequest.newBuilder()
+   *           .setResource(
+   *               DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
+   *           .setIncludeDeletedSubscriptions(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Subscription element :
+   *       analyticsHubServiceClient.listSharedResourceSubscriptions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSharedResourceSubscriptionsPagedResponse listSharedResourceSubscriptions(
+      ListSharedResourceSubscriptionsRequest request) {
+    return listSharedResourceSubscriptionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all subscriptions on a given Data Exchange or Listing.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListSharedResourceSubscriptionsRequest request =
+   *       ListSharedResourceSubscriptionsRequest.newBuilder()
+   *           .setResource(
+   *               DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
+   *           .setIncludeDeletedSubscriptions(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Subscription> future =
+   *       analyticsHubServiceClient
+   *           .listSharedResourceSubscriptionsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (Subscription element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsPagedResponse>
+      listSharedResourceSubscriptionsPagedCallable() {
+    return stub.listSharedResourceSubscriptionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all subscriptions on a given Data Exchange or Listing.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListSharedResourceSubscriptionsRequest request =
+   *       ListSharedResourceSubscriptionsRequest.newBuilder()
+   *           .setResource(
+   *               DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
+   *           .setIncludeDeletedSubscriptions(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSharedResourceSubscriptionsResponse response =
+   *         analyticsHubServiceClient.listSharedResourceSubscriptionsCallable().call(request);
+   *     for (Subscription element : response.getSharedResourceSubscriptionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+      listSharedResourceSubscriptionsCallable() {
+    return stub.listSharedResourceSubscriptionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revokes a given subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+   *   RevokeSubscriptionResponse response = analyticsHubServiceClient.revokeSubscription(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subscription to revoke. e.g.
+   *     projects/123/locations/US/subscriptions/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RevokeSubscriptionResponse revokeSubscription(SubscriptionName name) {
+    RevokeSubscriptionRequest request =
+        RevokeSubscriptionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return revokeSubscription(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revokes a given subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString();
+   *   RevokeSubscriptionResponse response = analyticsHubServiceClient.revokeSubscription(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subscription to revoke. e.g.
+   *     projects/123/locations/US/subscriptions/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RevokeSubscriptionResponse revokeSubscription(String name) {
+    RevokeSubscriptionRequest request =
+        RevokeSubscriptionRequest.newBuilder().setName(name).build();
+    return revokeSubscription(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revokes a given subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   RevokeSubscriptionRequest request =
+   *       RevokeSubscriptionRequest.newBuilder()
+   *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   RevokeSubscriptionResponse response = analyticsHubServiceClient.revokeSubscription(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RevokeSubscriptionResponse revokeSubscription(RevokeSubscriptionRequest request) {
+    return revokeSubscriptionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revokes a given subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   RevokeSubscriptionRequest request =
+   *       RevokeSubscriptionRequest.newBuilder()
+   *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   ApiFuture<RevokeSubscriptionResponse> future =
+   *       analyticsHubServiceClient.revokeSubscriptionCallable().futureCall(request);
+   *   // Do something.
+   *   RevokeSubscriptionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+      revokeSubscriptionCallable() {
+    return stub.revokeSubscriptionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+   *   analyticsHubServiceClient.deleteSubscriptionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subscription to delete. e.g.
+   *     projects/123/locations/US/subscriptions/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSubscriptionAsync(
+      SubscriptionName name) {
+    DeleteSubscriptionRequest request =
+        DeleteSubscriptionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteSubscriptionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString();
+   *   analyticsHubServiceClient.deleteSubscriptionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subscription to delete. e.g.
+   *     projects/123/locations/US/subscriptions/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSubscriptionAsync(String name) {
+    DeleteSubscriptionRequest request =
+        DeleteSubscriptionRequest.newBuilder().setName(name).build();
+    return deleteSubscriptionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   DeleteSubscriptionRequest request =
+   *       DeleteSubscriptionRequest.newBuilder()
+   *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   analyticsHubServiceClient.deleteSubscriptionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSubscriptionAsync(
+      DeleteSubscriptionRequest request) {
+    return deleteSubscriptionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   DeleteSubscriptionRequest request =
+   *       DeleteSubscriptionRequest.newBuilder()
+   *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       analyticsHubServiceClient.deleteSubscriptionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteSubscriptionRequest, Empty, OperationMetadata>
+      deleteSubscriptionOperationCallable() {
+    return stub.deleteSubscriptionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   DeleteSubscriptionRequest request =
+   *       DeleteSubscriptionRequest.newBuilder()
+   *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       analyticsHubServiceClient.deleteSubscriptionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSubscriptionRequest, Operation> deleteSubscriptionCallable() {
+    return stub.deleteSubscriptionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets the IAM policy.
    *
    * <p>Sample code:
@@ -2134,6 +3215,183 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
     protected ListListingsFixedSizeCollection createCollection(
         List<ListListingsPage> pages, int collectionSize) {
       return new ListListingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSubscriptionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSubscriptionsRequest,
+          ListSubscriptionsResponse,
+          Subscription,
+          ListSubscriptionsPage,
+          ListSubscriptionsFixedSizeCollection> {
+
+    public static ApiFuture<ListSubscriptionsPagedResponse> createAsync(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ApiFuture<ListSubscriptionsResponse> futureResponse) {
+      ApiFuture<ListSubscriptionsPage> futurePage =
+          ListSubscriptionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSubscriptionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSubscriptionsPagedResponse(ListSubscriptionsPage page) {
+      super(page, ListSubscriptionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSubscriptionsPage
+      extends AbstractPage<
+          ListSubscriptionsRequest,
+          ListSubscriptionsResponse,
+          Subscription,
+          ListSubscriptionsPage> {
+
+    private ListSubscriptionsPage(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ListSubscriptionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSubscriptionsPage createEmptyPage() {
+      return new ListSubscriptionsPage(null, null);
+    }
+
+    @Override
+    protected ListSubscriptionsPage createPage(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ListSubscriptionsResponse response) {
+      return new ListSubscriptionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSubscriptionsPage> createPageAsync(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ApiFuture<ListSubscriptionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSubscriptionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSubscriptionsRequest,
+          ListSubscriptionsResponse,
+          Subscription,
+          ListSubscriptionsPage,
+          ListSubscriptionsFixedSizeCollection> {
+
+    private ListSubscriptionsFixedSizeCollection(
+        List<ListSubscriptionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSubscriptionsFixedSizeCollection createEmptyCollection() {
+      return new ListSubscriptionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSubscriptionsFixedSizeCollection createCollection(
+        List<ListSubscriptionsPage> pages, int collectionSize) {
+      return new ListSubscriptionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSharedResourceSubscriptionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSharedResourceSubscriptionsRequest,
+          ListSharedResourceSubscriptionsResponse,
+          Subscription,
+          ListSharedResourceSubscriptionsPage,
+          ListSharedResourceSubscriptionsFixedSizeCollection> {
+
+    public static ApiFuture<ListSharedResourceSubscriptionsPagedResponse> createAsync(
+        PageContext<
+                ListSharedResourceSubscriptionsRequest,
+                ListSharedResourceSubscriptionsResponse,
+                Subscription>
+            context,
+        ApiFuture<ListSharedResourceSubscriptionsResponse> futureResponse) {
+      ApiFuture<ListSharedResourceSubscriptionsPage> futurePage =
+          ListSharedResourceSubscriptionsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSharedResourceSubscriptionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSharedResourceSubscriptionsPagedResponse(ListSharedResourceSubscriptionsPage page) {
+      super(page, ListSharedResourceSubscriptionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSharedResourceSubscriptionsPage
+      extends AbstractPage<
+          ListSharedResourceSubscriptionsRequest,
+          ListSharedResourceSubscriptionsResponse,
+          Subscription,
+          ListSharedResourceSubscriptionsPage> {
+
+    private ListSharedResourceSubscriptionsPage(
+        PageContext<
+                ListSharedResourceSubscriptionsRequest,
+                ListSharedResourceSubscriptionsResponse,
+                Subscription>
+            context,
+        ListSharedResourceSubscriptionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSharedResourceSubscriptionsPage createEmptyPage() {
+      return new ListSharedResourceSubscriptionsPage(null, null);
+    }
+
+    @Override
+    protected ListSharedResourceSubscriptionsPage createPage(
+        PageContext<
+                ListSharedResourceSubscriptionsRequest,
+                ListSharedResourceSubscriptionsResponse,
+                Subscription>
+            context,
+        ListSharedResourceSubscriptionsResponse response) {
+      return new ListSharedResourceSubscriptionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSharedResourceSubscriptionsPage> createPageAsync(
+        PageContext<
+                ListSharedResourceSubscriptionsRequest,
+                ListSharedResourceSubscriptionsResponse,
+                Subscription>
+            context,
+        ApiFuture<ListSharedResourceSubscriptionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSharedResourceSubscriptionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSharedResourceSubscriptionsRequest,
+          ListSharedResourceSubscriptionsResponse,
+          Subscription,
+          ListSharedResourceSubscriptionsPage,
+          ListSharedResourceSubscriptionsFixedSizeCollection> {
+
+    private ListSharedResourceSubscriptionsFixedSizeCollection(
+        List<ListSharedResourceSubscriptionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSharedResourceSubscriptionsFixedSizeCollection createEmptyCollection() {
+      return new ListSharedResourceSubscriptionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSharedResourceSubscriptionsFixedSizeCollection createCollection(
+        List<ListSharedResourceSubscriptionsPage> pages, int collectionSize) {
+      return new ListSharedResourceSubscriptionsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

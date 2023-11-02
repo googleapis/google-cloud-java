@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
     return new AudienceFilterExpression();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AudienceProto
         .internal_static_google_analytics_admin_v1alpha_AudienceFilterExpression_descriptor;
@@ -66,6 +61,8 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
   }
 
   private int exprCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object expr_;
 
   public enum ExprCase
@@ -239,9 +236,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-   * can only include a dimension_or_metric_filter. This cannot be set on the
-   * top level AudienceFilterExpression.
+   * A filter expression to be NOT'ed (For example, inverted, complemented).
+   * It can only include a dimension_or_metric_filter. This cannot be set on
+   * the top level AudienceFilterExpression.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -256,9 +253,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-   * can only include a dimension_or_metric_filter. This cannot be set on the
-   * top level AudienceFilterExpression.
+   * A filter expression to be NOT'ed (For example, inverted, complemented).
+   * It can only include a dimension_or_metric_filter. This cannot be set on
+   * the top level AudienceFilterExpression.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -276,9 +273,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-   * can only include a dimension_or_metric_filter. This cannot be set on the
-   * top level AudienceFilterExpression.
+   * A filter expression to be NOT'ed (For example, inverted, complemented).
+   * It can only include a dimension_or_metric_filter. This cannot be set on
+   * the top level AudienceFilterExpression.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -1397,9 +1394,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-     * can only include a dimension_or_metric_filter. This cannot be set on the
-     * top level AudienceFilterExpression.
+     * A filter expression to be NOT'ed (For example, inverted, complemented).
+     * It can only include a dimension_or_metric_filter. This cannot be set on
+     * the top level AudienceFilterExpression.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -1414,9 +1411,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-     * can only include a dimension_or_metric_filter. This cannot be set on the
-     * top level AudienceFilterExpression.
+     * A filter expression to be NOT'ed (For example, inverted, complemented).
+     * It can only include a dimension_or_metric_filter. This cannot be set on
+     * the top level AudienceFilterExpression.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -1441,9 +1438,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-     * can only include a dimension_or_metric_filter. This cannot be set on the
-     * top level AudienceFilterExpression.
+     * A filter expression to be NOT'ed (For example, inverted, complemented).
+     * It can only include a dimension_or_metric_filter. This cannot be set on
+     * the top level AudienceFilterExpression.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -1466,9 +1463,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-     * can only include a dimension_or_metric_filter. This cannot be set on the
-     * top level AudienceFilterExpression.
+     * A filter expression to be NOT'ed (For example, inverted, complemented).
+     * It can only include a dimension_or_metric_filter. This cannot be set on
+     * the top level AudienceFilterExpression.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -1488,9 +1485,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-     * can only include a dimension_or_metric_filter. This cannot be set on the
-     * top level AudienceFilterExpression.
+     * A filter expression to be NOT'ed (For example, inverted, complemented).
+     * It can only include a dimension_or_metric_filter. This cannot be set on
+     * the top level AudienceFilterExpression.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -1525,9 +1522,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-     * can only include a dimension_or_metric_filter. This cannot be set on the
-     * top level AudienceFilterExpression.
+     * A filter expression to be NOT'ed (For example, inverted, complemented).
+     * It can only include a dimension_or_metric_filter. This cannot be set on
+     * the top level AudienceFilterExpression.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -1552,9 +1549,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-     * can only include a dimension_or_metric_filter. This cannot be set on the
-     * top level AudienceFilterExpression.
+     * A filter expression to be NOT'ed (For example, inverted, complemented).
+     * It can only include a dimension_or_metric_filter. This cannot be set on
+     * the top level AudienceFilterExpression.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -1567,9 +1564,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-     * can only include a dimension_or_metric_filter. This cannot be set on the
-     * top level AudienceFilterExpression.
+     * A filter expression to be NOT'ed (For example, inverted, complemented).
+     * It can only include a dimension_or_metric_filter. This cannot be set on
+     * the top level AudienceFilterExpression.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -1590,9 +1587,9 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-     * can only include a dimension_or_metric_filter. This cannot be set on the
-     * top level AudienceFilterExpression.
+     * A filter expression to be NOT'ed (For example, inverted, complemented).
+     * It can only include a dimension_or_metric_filter. This cannot be set on
+     * the top level AudienceFilterExpression.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>

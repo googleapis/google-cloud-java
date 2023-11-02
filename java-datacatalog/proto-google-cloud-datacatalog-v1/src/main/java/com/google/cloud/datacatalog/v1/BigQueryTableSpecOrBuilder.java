@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,5 +128,5 @@ public interface BigQueryTableSpecOrBuilder
    */
   com.google.cloud.datacatalog.v1.TableSpecOrBuilder getTableSpecOrBuilder();
 
-  public com.google.cloud.datacatalog.v1.BigQueryTableSpec.TypeSpecCase getTypeSpecCase();
+  com.google.cloud.datacatalog.v1.BigQueryTableSpec.TypeSpecCase getTypeSpecCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InjectedSolutionConstraint();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -162,6 +157,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
+     *
      * A vehicle index is mapped the same as
      * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
      * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -184,6 +180,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
+     *
      * A vehicle index is mapped the same as
      * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
      * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -206,6 +203,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
+     *
      * A vehicle index is mapped the same as
      * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
      * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -251,11 +249,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ConstraintRelaxation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -357,6 +350,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * The number of visits at or after which the relaxation `level` may be
        * applied. If `threshold_visit_count` is 0 (or unset), the `level` may be
        * applied directly at the vehicle start.
+       *
        * If it is `route.visits_size() + 1`, the `level` may only be applied to
        * the vehicle end. If it is more than `route.visits_size() + 1`,
        * `level` is not applied at all for that route.
@@ -377,17 +371,22 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * added to those routes. Also, a vehicle's start and end time in
      * `routes` is fully constrained, unless the vehicle is empty (i.e., has no
      * visits and has `used_if_route_is_empty` set to false in the model).
+     *
      * `relaxations(i).level` specifies the constraint relaxation level applied
      * to a visit #j that satisfies:
+     *
      *   * `route.visits(j).start_time &gt;= relaxations(i).threshold_time` AND
      *   * `j + 1 &gt;= relaxations(i).threshold_visit_count`
+     *
      * Similarly, the vehicle start is relaxed to `relaxations(i).level` if it
      * satisfies:
+     *
      *   * `vehicle_start_time &gt;= relaxations(i).threshold_time` AND
      *   * `relaxations(i).threshold_visit_count == 0`
      * and the vehicle end is relaxed to `relaxations(i).level` if it satisfies:
      *   * `vehicle_end_time &gt;= relaxations(i).threshold_time` AND
      *   * `route.visits_size() + 1 &gt;= relaxations(i).threshold_visit_count`
+     *
      * To apply a relaxation level if a visit meets the `threshold_visit_count`
      * OR the `threshold_time` add two `relaxations` with the same `level`:
      * one with only `threshold_visit_count` set and the other with only
@@ -396,6 +395,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * vehicle start through the route visits in order to the vehicle end, the
      * relaxation level becomes more relaxed: i.e., the relaxation level is
      * non-decreasing as the route progresses.
+     *
      * The timing and sequence of route visits that do not satisfy the
      * threshold conditions of any `relaxations` are fully constrained
      * and no visits may be inserted into these sequences. Also, if a
@@ -426,11 +426,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return new Relaxation();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.optimization.v1.FleetRoutingProto
             .internal_static_google_cloud_optimization_v1_InjectedSolutionConstraint_ConstraintRelaxation_Relaxation_descriptor;
@@ -455,6 +450,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * Expresses the different constraint relaxation levels, which are
        * applied for a visit and those that follow when it satisfies the
        * threshold conditions.
+       *
        * The enumeration below is in order of increasing relaxation.
        * </pre>
        *
@@ -468,6 +464,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <pre>
          * Implicit default relaxation level: no constraints are relaxed,
          * i.e., all visits are fully constrained.
+         *
          * This value must not be explicitly used in `level`.
          * </pre>
          *
@@ -492,7 +489,8 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          *
          * <pre>
          * Same as `RELAX_VISIT_TIMES_AFTER_THRESHOLD`, but the visit sequence
-         * is also relaxed: visits remain simply bound to their vehicle.
+         * is also relaxed: visits can only be performed by this vehicle, but
+         * can potentially become unperformed.
          * </pre>
          *
          * <code>RELAX_VISIT_TIMES_AND_SEQUENCE_AFTER_THRESHOLD = 2;</code>
@@ -519,6 +517,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <pre>
          * Implicit default relaxation level: no constraints are relaxed,
          * i.e., all visits are fully constrained.
+         *
          * This value must not be explicitly used in `level`.
          * </pre>
          *
@@ -543,7 +542,8 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          *
          * <pre>
          * Same as `RELAX_VISIT_TIMES_AFTER_THRESHOLD`, but the visit sequence
-         * is also relaxed: visits remain simply bound to their vehicle.
+         * is also relaxed: visits can only be performed by this vehicle, but
+         * can potentially become unperformed.
          * </pre>
          *
          * <code>RELAX_VISIT_TIMES_AND_SEQUENCE_AFTER_THRESHOLD = 2;</code>
@@ -761,6 +761,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * The number of visits at or after which the relaxation `level` may be
        * applied. If `threshold_visit_count` is 0 (or unset), the `level` may be
        * applied directly at the vehicle start.
+       *
        * If it is `route.visits_size() + 1`, the `level` may only be applied to
        * the vehicle end. If it is more than `route.visits_size() + 1`,
        * `level` is not applied at all for that route.
@@ -1002,17 +1003,22 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * added to those routes. Also, a vehicle's start and end time in
        * `routes` is fully constrained, unless the vehicle is empty (i.e., has no
        * visits and has `used_if_route_is_empty` set to false in the model).
+       *
        * `relaxations(i).level` specifies the constraint relaxation level applied
        * to a visit #j that satisfies:
+       *
        *   * `route.visits(j).start_time &gt;= relaxations(i).threshold_time` AND
        *   * `j + 1 &gt;= relaxations(i).threshold_visit_count`
+       *
        * Similarly, the vehicle start is relaxed to `relaxations(i).level` if it
        * satisfies:
+       *
        *   * `vehicle_start_time &gt;= relaxations(i).threshold_time` AND
        *   * `relaxations(i).threshold_visit_count == 0`
        * and the vehicle end is relaxed to `relaxations(i).level` if it satisfies:
        *   * `vehicle_end_time &gt;= relaxations(i).threshold_time` AND
        *   * `route.visits_size() + 1 &gt;= relaxations(i).threshold_visit_count`
+       *
        * To apply a relaxation level if a visit meets the `threshold_visit_count`
        * OR the `threshold_time` add two `relaxations` with the same `level`:
        * one with only `threshold_visit_count` set and the other with only
@@ -1021,6 +1027,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * vehicle start through the route visits in order to the vehicle end, the
        * relaxation level becomes more relaxed: i.e., the relaxation level is
        * non-decreasing as the route progresses.
+       *
        * The timing and sequence of route visits that do not satisfy the
        * threshold conditions of any `relaxations` are fully constrained
        * and no visits may be inserted into these sequences. Also, if a
@@ -1579,6 +1586,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * The number of visits at or after which the relaxation `level` may be
          * applied. If `threshold_visit_count` is 0 (or unset), the `level` may be
          * applied directly at the vehicle start.
+         *
          * If it is `route.visits_size() + 1`, the `level` may only be applied to
          * the vehicle end. If it is more than `route.visits_size() + 1`,
          * `level` is not applied at all for that route.
@@ -1599,6 +1607,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * The number of visits at or after which the relaxation `level` may be
          * applied. If `threshold_visit_count` is 0 (or unset), the `level` may be
          * applied directly at the vehicle start.
+         *
          * If it is `route.visits_size() + 1`, the `level` may only be applied to
          * the vehicle end. If it is more than `route.visits_size() + 1`,
          * `level` is not applied at all for that route.
@@ -1623,6 +1632,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * The number of visits at or after which the relaxation `level` may be
          * applied. If `threshold_visit_count` is 0 (or unset), the `level` may be
          * applied directly at the vehicle start.
+         *
          * If it is `route.visits_size() + 1`, the `level` may only be applied to
          * the vehicle end. If it is more than `route.visits_size() + 1`,
          * `level` is not applied at all for that route.
@@ -1825,6 +1835,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
+     *
      * A vehicle index is mapped the same as
      * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
      * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -1850,6 +1861,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
+     *
      * A vehicle index is mapped the same as
      * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
      * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -1874,6 +1886,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
+     *
      * A vehicle index is mapped the same as
      * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
      * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -2866,6 +2879,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
+       *
        * A vehicle index is mapped the same as
        * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
        * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -2892,6 +2906,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
+       *
        * A vehicle index is mapped the same as
        * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
        * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -2916,6 +2931,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
+       *
        * A vehicle index is mapped the same as
        * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
        * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -2941,6 +2957,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
+       *
        * A vehicle index is mapped the same as
        * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
        * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -2971,6 +2988,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
+       *
        * A vehicle index is mapped the same as
        * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
        * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -3000,6 +3018,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
+       *
        * A vehicle index is mapped the same as
        * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
        * if `interpret_injected_solutions_using_labels` is true (see `fields`
@@ -3028,6 +3047,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
+       *
        * A vehicle index is mapped the same as
        * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
        * if `interpret_injected_solutions_using_labels` is true (see `fields`

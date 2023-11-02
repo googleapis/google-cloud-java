@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
     return new VersionedResource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetProto
         .internal_static_google_cloud_asset_v1_VersionedResource_descriptor;
@@ -77,6 +72,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * API version of the resource.
+   *
    * Example:
    * If the resource is an instance provided by Compute Engine v1 API as defined
    * in `https://cloud.google.com/compute/docs/reference/rest/v1/instances`,
@@ -104,6 +100,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * API version of the resource.
+   *
    * Example:
    * If the resource is an instance provided by Compute Engine v1 API as defined
    * in `https://cloud.google.com/compute/docs/reference/rest/v1/instances`,
@@ -135,11 +132,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
    * <pre>
    * JSON representation of the resource as defined by the corresponding
    * service providing this resource.
+   *
    * Example:
    * If the resource is an instance provided by Compute Engine, this field will
    * contain the JSON representation of the instance as defined by Compute
    * Engine:
    * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+   *
    * You can find the resource definition for each supported resource type in
    * this table:
    * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -159,11 +158,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
    * <pre>
    * JSON representation of the resource as defined by the corresponding
    * service providing this resource.
+   *
    * Example:
    * If the resource is an instance provided by Compute Engine, this field will
    * contain the JSON representation of the instance as defined by Compute
    * Engine:
    * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+   *
    * You can find the resource definition for each supported resource type in
    * this table:
    * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -183,11 +184,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
    * <pre>
    * JSON representation of the resource as defined by the corresponding
    * service providing this resource.
+   *
    * Example:
    * If the resource is an instance provided by Compute Engine, this field will
    * contain the JSON representation of the instance as defined by Compute
    * Engine:
    * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+   *
    * You can find the resource definition for each supported resource type in
    * this table:
    * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -579,6 +582,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * API version of the resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine v1 API as defined
      * in `https://cloud.google.com/compute/docs/reference/rest/v1/instances`,
@@ -605,6 +609,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * API version of the resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine v1 API as defined
      * in `https://cloud.google.com/compute/docs/reference/rest/v1/instances`,
@@ -631,6 +636,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * API version of the resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine v1 API as defined
      * in `https://cloud.google.com/compute/docs/reference/rest/v1/instances`,
@@ -656,6 +662,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * API version of the resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine v1 API as defined
      * in `https://cloud.google.com/compute/docs/reference/rest/v1/instances`,
@@ -677,6 +684,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * API version of the resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine v1 API as defined
      * in `https://cloud.google.com/compute/docs/reference/rest/v1/instances`,
@@ -711,11 +719,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * <pre>
      * JSON representation of the resource as defined by the corresponding
      * service providing this resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine, this field will
      * contain the JSON representation of the instance as defined by Compute
      * Engine:
      * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+     *
      * You can find the resource definition for each supported resource type in
      * this table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -734,11 +744,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * <pre>
      * JSON representation of the resource as defined by the corresponding
      * service providing this resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine, this field will
      * contain the JSON representation of the instance as defined by Compute
      * Engine:
      * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+     *
      * You can find the resource definition for each supported resource type in
      * this table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -761,11 +773,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * <pre>
      * JSON representation of the resource as defined by the corresponding
      * service providing this resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine, this field will
      * contain the JSON representation of the instance as defined by Compute
      * Engine:
      * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+     *
      * You can find the resource definition for each supported resource type in
      * this table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -792,11 +806,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * <pre>
      * JSON representation of the resource as defined by the corresponding
      * service providing this resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine, this field will
      * contain the JSON representation of the instance as defined by Compute
      * Engine:
      * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+     *
      * You can find the resource definition for each supported resource type in
      * this table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -820,11 +836,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * <pre>
      * JSON representation of the resource as defined by the corresponding
      * service providing this resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine, this field will
      * contain the JSON representation of the instance as defined by Compute
      * Engine:
      * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+     *
      * You can find the resource definition for each supported resource type in
      * this table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -854,11 +872,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * <pre>
      * JSON representation of the resource as defined by the corresponding
      * service providing this resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine, this field will
      * contain the JSON representation of the instance as defined by Compute
      * Engine:
      * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+     *
      * You can find the resource definition for each supported resource type in
      * this table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -882,11 +902,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * <pre>
      * JSON representation of the resource as defined by the corresponding
      * service providing this resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine, this field will
      * contain the JSON representation of the instance as defined by Compute
      * Engine:
      * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+     *
      * You can find the resource definition for each supported resource type in
      * this table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -905,11 +927,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * <pre>
      * JSON representation of the resource as defined by the corresponding
      * service providing this resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine, this field will
      * contain the JSON representation of the instance as defined by Compute
      * Engine:
      * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+     *
      * You can find the resource definition for each supported resource type in
      * this table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -930,11 +954,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * <pre>
      * JSON representation of the resource as defined by the corresponding
      * service providing this resource.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine, this field will
      * contain the JSON representation of the instance as defined by Compute
      * Engine:
      * `https://cloud.google.com/compute/docs/reference/rest/v1/instances`.
+     *
      * You can find the resource definition for each supported resource type in
      * this table:
      * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`

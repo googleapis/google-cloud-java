@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
 
   private OrderedJob() {
     stepId_ = "";
-    prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OrderedJob();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -80,6 +75,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int jobTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object jobType_;
 
   public enum JobTypeCase
@@ -154,10 +151,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The step id. The id must be unique among all jobs
    * within the template.
+   *
    * The step id is used as prefix for job id, as job
    * `goog-dataproc-workflow-step-id` label, and in
    * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
    * field from other steps.
+   *
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
@@ -185,10 +184,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The step id. The id must be unique among all jobs
    * within the template.
+   *
    * The step id is used as prefix for job id, as job
    * `goog-dataproc-workflow-step-id` label, and in
    * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
    * field from other steps.
+   *
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
@@ -692,11 +693,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels to associate with this job.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
@@ -720,11 +724,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels to associate with this job.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
@@ -739,11 +746,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels to associate with this job.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
@@ -765,11 +775,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels to associate with this job.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
@@ -846,7 +859,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
   public static final int PREREQUISITE_STEP_IDS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList prerequisiteStepIds_;
+  private com.google.protobuf.LazyStringArrayList prerequisiteStepIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1339,8 +1353,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
         schedulingBuilder_.dispose();
         schedulingBuilder_ = null;
       }
-      prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       jobTypeCase_ = 0;
       jobType_ = null;
       return this;
@@ -1370,21 +1383,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.OrderedJob buildPartial() {
       com.google.cloud.dataproc.v1.OrderedJob result =
           new com.google.cloud.dataproc.v1.OrderedJob(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.OrderedJob result) {
-      if (((bitField0_ & 0x00000800) != 0)) {
-        prerequisiteStepIds_ = prerequisiteStepIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
-      }
-      result.prerequisiteStepIds_ = prerequisiteStepIds_;
     }
 
     private void buildPartial0(com.google.cloud.dataproc.v1.OrderedJob result) {
@@ -1398,6 +1402,10 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        prerequisiteStepIds_.makeImmutable();
+        result.prerequisiteStepIds_ = prerequisiteStepIds_;
       }
     }
 
@@ -1488,7 +1496,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.prerequisiteStepIds_.isEmpty()) {
         if (prerequisiteStepIds_.isEmpty()) {
           prerequisiteStepIds_ = other.prerequisiteStepIds_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ |= 0x00000800;
         } else {
           ensurePrerequisiteStepIdsIsMutable();
           prerequisiteStepIds_.addAll(other.prerequisiteStepIds_);
@@ -1686,10 +1694,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The step id. The id must be unique among all jobs
      * within the template.
+     *
      * The step id is used as prefix for job id, as job
      * `goog-dataproc-workflow-step-id` label, and in
      * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
      * field from other steps.
+     *
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1716,10 +1726,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The step id. The id must be unique among all jobs
      * within the template.
+     *
      * The step id is used as prefix for job id, as job
      * `goog-dataproc-workflow-step-id` label, and in
      * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
      * field from other steps.
+     *
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1746,10 +1758,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The step id. The id must be unique among all jobs
      * within the template.
+     *
      * The step id is used as prefix for job id, as job
      * `goog-dataproc-workflow-step-id` label, and in
      * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
      * field from other steps.
+     *
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1775,10 +1789,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The step id. The id must be unique among all jobs
      * within the template.
+     *
      * The step id is used as prefix for job id, as job
      * `goog-dataproc-workflow-step-id` label, and in
      * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
      * field from other steps.
+     *
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1800,10 +1816,12 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The step id. The id must be unique among all jobs
      * within the template.
+     *
      * The step id is used as prefix for job id, as job
      * `goog-dataproc-workflow-step-id` label, and in
      * [prerequisiteStepIds][google.cloud.dataproc.v1.OrderedJob.prerequisite_step_ids]
      * field from other steps.
+     *
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -3651,11 +3669,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this job.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
@@ -3679,11 +3700,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this job.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
@@ -3698,11 +3722,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this job.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
@@ -3724,11 +3751,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this job.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
@@ -3756,11 +3786,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this job.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
@@ -3784,11 +3817,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this job.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
@@ -3810,11 +3846,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this job.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
@@ -4028,14 +4067,14 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       return schedulingBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList prerequisiteStepIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList prerequisiteStepIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePrerequisiteStepIdsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!prerequisiteStepIds_.isModifiable()) {
         prerequisiteStepIds_ = new com.google.protobuf.LazyStringArrayList(prerequisiteStepIds_);
-        bitField0_ |= 0x00000800;
       }
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -4051,7 +4090,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the prerequisiteStepIds.
      */
     public com.google.protobuf.ProtocolStringList getPrerequisiteStepIdsList() {
-      return prerequisiteStepIds_.getUnmodifiableView();
+      prerequisiteStepIds_.makeImmutable();
+      return prerequisiteStepIds_;
     }
     /**
      *
@@ -4124,6 +4164,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePrerequisiteStepIdsIsMutable();
       prerequisiteStepIds_.set(index, value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4147,6 +4188,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePrerequisiteStepIdsIsMutable();
       prerequisiteStepIds_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4167,6 +4209,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPrerequisiteStepIds(java.lang.Iterable<java.lang.String> values) {
       ensurePrerequisiteStepIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, prerequisiteStepIds_);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4184,8 +4227,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrerequisiteStepIds() {
-      prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000800);
+      ;
       onChanged();
       return this;
     }
@@ -4210,6 +4254,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePrerequisiteStepIdsIsMutable();
       prerequisiteStepIds_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ListInstancesResponseOrBuilder
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
+   *
    * If the `location_id` in the parent field of the request is "-", all regions
    * available to the project are queried, and the results aggregated.
    * If in such an aggregated query a location is unavailable, a placeholder
@@ -48,6 +49,7 @@ public interface ListInstancesResponseOrBuilder
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
+   *
    * If the `location_id` in the parent field of the request is "-", all regions
    * available to the project are queried, and the results aggregated.
    * If in such an aggregated query a location is unavailable, a placeholder
@@ -67,6 +69,7 @@ public interface ListInstancesResponseOrBuilder
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
+   *
    * If the `location_id` in the parent field of the request is "-", all regions
    * available to the project are queried, and the results aggregated.
    * If in such an aggregated query a location is unavailable, a placeholder
@@ -86,6 +89,7 @@ public interface ListInstancesResponseOrBuilder
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
+   *
    * If the `location_id` in the parent field of the request is "-", all regions
    * available to the project are queried, and the results aggregated.
    * If in such an aggregated query a location is unavailable, a placeholder
@@ -106,6 +110,7 @@ public interface ListInstancesResponseOrBuilder
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
+   *
    * If the `location_id` in the parent field of the request is "-", all regions
    * available to the project are queried, and the results aggregated.
    * If in such an aggregated query a location is unavailable, a placeholder

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,11 +56,13 @@ public interface EndpointsApiServiceOrBuilder
    * <pre>
    * Endpoints service configuration ID as specified by the Service Management
    * API. For example "2016-09-19r1".
+   *
    * By default, the rollout strategy for Endpoints is `RolloutStrategy.FIXED`.
    * This means that Endpoints starts up with a particular configuration ID.
    * When a new configuration is rolled out, Endpoints must be given the new
    * configuration ID. The `config_id` field is used to give the configuration
    * ID and is required in this case.
+   *
    * Endpoints also has a rollout strategy called `RolloutStrategy.MANAGED`.
    * When using this, Endpoints fetches the latest configuration and does not
    * need the configuration ID. In this case, `config_id` must be omitted.
@@ -77,11 +79,13 @@ public interface EndpointsApiServiceOrBuilder
    * <pre>
    * Endpoints service configuration ID as specified by the Service Management
    * API. For example "2016-09-19r1".
+   *
    * By default, the rollout strategy for Endpoints is `RolloutStrategy.FIXED`.
    * This means that Endpoints starts up with a particular configuration ID.
    * When a new configuration is rolled out, Endpoints must be given the new
    * configuration ID. The `config_id` field is used to give the configuration
    * ID and is required in this case.
+   *
    * Endpoints also has a rollout strategy called `RolloutStrategy.MANAGED`.
    * When using this, Endpoints fetches the latest configuration and does not
    * need the configuration ID. In this case, `config_id` must be omitted.

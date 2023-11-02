@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -209,7 +209,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create Featurestores. Format:
-   *     `projects/{project}/locations/{location}'`
+   *     `projects/{project}/locations/{location}`
    * @param featurestore Required. The Featurestore to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -244,7 +244,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create Featurestores. Format:
-   *     `projects/{project}/locations/{location}'`
+   *     `projects/{project}/locations/{location}`
    * @param featurestore Required. The Featurestore to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -282,7 +282,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create Featurestores. Format:
-   *     `projects/{project}/locations/{location}'`
+   *     `projects/{project}/locations/{location}`
    * @param featurestore Required. The Featurestore to create.
    * @param featurestoreId Required. The ID to use for this Featurestore, which will become the
    *     final component of the Featurestore's resource name.
@@ -327,7 +327,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create Featurestores. Format:
-   *     `projects/{project}/locations/{location}'`
+   *     `projects/{project}/locations/{location}`
    * @param featurestore Required. The Featurestore to create.
    * @param featurestoreId Required. The ID to use for this Featurestore, which will become the
    *     final component of the Featurestore's resource name.
@@ -1982,13 +1982,45 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create a Feature. Format:
-   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * @param parent
    * @param feature Required. The Feature to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       EntityTypeName parent, Feature feature) {
+    CreateFeatureRequest request =
+        CreateFeatureRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFeature(feature)
+            .build();
+    return createFeatureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Feature in a given EntityType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+   *   Feature feature = Feature.newBuilder().build();
+   *   Feature response = featurestoreServiceClient.createFeatureAsync(parent, feature).get();
+   * }
+   * }</pre>
+   *
+   * @param parent
+   * @param feature Required. The Feature to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
+      FeatureGroupName parent, Feature feature) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2018,8 +2050,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create a Feature. Format:
-   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * @param parent
    * @param feature Required. The Feature to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2052,18 +2083,58 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create a Feature. Format:
-   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * @param parent
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
    *     <p>This value may be up to 128 characters, and valid characters are `[a-z0-9_]`. The first
    *     character cannot be a number.
-   *     <p>The value must be unique within an EntityType.
+   *     <p>The value must be unique within an EntityType/FeatureGroup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       EntityTypeName parent, Feature feature, String featureId) {
+    CreateFeatureRequest request =
+        CreateFeatureRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFeature(feature)
+            .setFeatureId(featureId)
+            .build();
+    return createFeatureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Feature in a given EntityType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+   *   Feature feature = Feature.newBuilder().build();
+   *   String featureId = "featureId-420503887";
+   *   Feature response =
+   *       featurestoreServiceClient.createFeatureAsync(parent, feature, featureId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent
+   * @param feature Required. The Feature to create.
+   * @param featureId Required. The ID to use for the Feature, which will become the final component
+   *     of the Feature's resource name.
+   *     <p>This value may be up to 128 characters, and valid characters are `[a-z0-9_]`. The first
+   *     character cannot be a number.
+   *     <p>The value must be unique within an EntityType/FeatureGroup.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
+      FeatureGroupName parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2096,14 +2167,13 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create a Feature. Format:
-   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * @param parent
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
    *     <p>This value may be up to 128 characters, and valid characters are `[a-z0-9_]`. The first
    *     character cannot be a number.
-   *     <p>The value must be unique within an EntityType.
+   *     <p>The value must be unique within an EntityType/FeatureGroup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
@@ -2406,13 +2476,15 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   FeatureName name =
-   *       FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
+   *       FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+   *           "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
    *   Feature response = featurestoreServiceClient.getFeature(name);
    * }
    * }</pre>
    *
    * @param name Required. The name of the Feature resource. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Feature getFeature(FeatureName name) {
@@ -2435,7 +2507,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   String name =
-   *       FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+   *       FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+   *               "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *           .toString();
    *   Feature response = featurestoreServiceClient.getFeature(name);
    * }
@@ -2443,6 +2516,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the Feature resource. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Feature getFeature(String name) {
@@ -2466,7 +2540,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   GetFeatureRequest request =
    *       GetFeatureRequest.newBuilder()
    *           .setName(
-   *               FeatureName.of(
+   *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
    *           .build();
@@ -2497,7 +2571,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   GetFeatureRequest request =
    *       GetFeatureRequest.newBuilder()
    *           .setName(
-   *               FeatureName.of(
+   *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
    *           .build();
@@ -2535,9 +2609,43 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the Location to list Features. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFeaturesPagedResponse listFeatures(EntityTypeName parent) {
+    ListFeaturesRequest request =
+        ListFeaturesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFeatures(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Features in a given EntityType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+   *   for (Feature element : featurestoreServiceClient.listFeatures(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to list Features. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFeaturesPagedResponse listFeatures(FeatureGroupName parent) {
     ListFeaturesRequest request =
         ListFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2569,6 +2677,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the Location to list Features. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFeaturesPagedResponse listFeatures(String parent) {
@@ -2720,6 +2829,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @param feature Required. The Feature's `name` field is used to identify the Feature to be
    *     updated. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * @param updateMask Field mask is used to specify the fields to be overwritten in the Features
    *     resource by the update. The fields specified in the update_mask are relative to the
    *     resource, not the full request. A field will be overwritten if it is in the mask. If the
@@ -2807,13 +2917,15 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   FeatureName name =
-   *       FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
+   *       FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+   *           "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
    *   featurestoreServiceClient.deleteFeatureAsync(name).get();
    * }
    * }</pre>
    *
    * @param name Required. The name of the Features to be deleted. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeatureAsync(
@@ -2837,7 +2949,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   String name =
-   *       FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+   *       FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+   *               "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *           .toString();
    *   featurestoreServiceClient.deleteFeatureAsync(name).get();
    * }
@@ -2845,6 +2958,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the Features to be deleted. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeatureAsync(String name) {
@@ -2868,7 +2982,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
    *           .setName(
-   *               FeatureName.of(
+   *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
    *           .build();
@@ -2900,7 +3014,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
    *           .setName(
-   *               FeatureName.of(
+   *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
    *           .build();
@@ -2932,7 +3046,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
    *           .setName(
-   *               FeatureName.of(
+   *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
    *           .build();

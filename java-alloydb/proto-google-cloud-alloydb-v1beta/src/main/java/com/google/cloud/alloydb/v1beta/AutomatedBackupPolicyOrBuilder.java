@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -181,6 +181,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * The length of the time window during which a backup can be
    * taken. If a backup does not succeed within this time window, it will be
    * canceled and considered failed.
+   *
    * The backup window must be at least 5 minutes long. There is no upper bound
    * on the window. If not set, it defaults to 1 hour.
    * </pre>
@@ -197,6 +198,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * The length of the time window during which a backup can be
    * taken. If a backup does not succeed within this time window, it will be
    * canceled and considered failed.
+   *
    * The backup window must be at least 5 minutes long. There is no upper bound
    * on the window. If not set, it defaults to 1 hour.
    * </pre>
@@ -213,6 +215,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * The length of the time window during which a backup can be
    * taken. If a backup does not succeed within this time window, it will be
    * canceled and considered failed.
+   *
    * The backup window must be at least 5 minutes long. There is no upper bound
    * on the window. If not set, it defaults to 1 hour.
    * </pre>
@@ -277,6 +280,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * <pre>
    * The location where the backup will be stored. Currently, the only supported
    * option is to store the backup in the same region as the cluster.
+   *
    * If empty, defaults to the region of the cluster.
    * </pre>
    *
@@ -291,6 +295,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * <pre>
    * The location where the backup will be stored. Currently, the only supported
    * option is to store the backup in the same region as the cluster.
+   *
    * If empty, defaults to the region of the cluster.
    * </pre>
    *
@@ -358,7 +363,7 @@ public interface AutomatedBackupPolicyOrBuilder
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
-  public com.google.cloud.alloydb.v1beta.AutomatedBackupPolicy.ScheduleCase getScheduleCase();
+  com.google.cloud.alloydb.v1beta.AutomatedBackupPolicy.ScheduleCase getScheduleCase();
 
-  public com.google.cloud.alloydb.v1beta.AutomatedBackupPolicy.RetentionCase getRetentionCase();
+  com.google.cloud.alloydb.v1beta.AutomatedBackupPolicy.RetentionCase getRetentionCase();
 }

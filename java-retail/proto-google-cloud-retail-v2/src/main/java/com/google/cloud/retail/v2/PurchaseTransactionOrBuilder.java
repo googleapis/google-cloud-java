@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,7 @@ public interface PurchaseTransactionOrBuilder
    * All the costs associated with the products. These can be manufacturing
    * costs, shipping expenses not borne by the end user, or any other costs,
    * such that:
+   *
    * * Profit = [revenue][google.cloud.retail.v2.PurchaseTransaction.revenue] -
    * [tax][google.cloud.retail.v2.PurchaseTransaction.tax] -
    * [cost][google.cloud.retail.v2.PurchaseTransaction.cost]

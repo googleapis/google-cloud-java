@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WindowsBasedSli();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -155,7 +150,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      */
     double getThreshold();
 
-    public com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold.TypeCase getTypeCase();
+    com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold.TypeCase getTypeCase();
   }
   /**
    *
@@ -185,11 +180,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       return new PerformanceThreshold();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.monitoring.v3.ServiceMonitoringProto
           .internal_static_google_monitoring_v3_WindowsBasedSli_PerformanceThreshold_descriptor;
@@ -206,6 +196,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     }
 
     private int typeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object type_;
 
     public enum TypeCase
@@ -1466,11 +1458,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       return new MetricRange();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.monitoring.v3.ServiceMonitoringProto
           .internal_static_google_monitoring_v3_WindowsBasedSli_MetricRange_descriptor;
@@ -2333,6 +2320,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
   }
 
   private int windowCriterionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object windowCriterion_;
 
   public enum WindowCriterionCase

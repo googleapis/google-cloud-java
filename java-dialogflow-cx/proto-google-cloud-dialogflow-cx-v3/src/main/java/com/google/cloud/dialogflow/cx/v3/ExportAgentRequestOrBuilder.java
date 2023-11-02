@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public interface ExportAgentRequestOrBuilder
    * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
    * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
    * left unspecified, the serialized agent is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -82,6 +83,7 @@ public interface ExportAgentRequestOrBuilder
    * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
    * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
    * left unspecified, the serialized agent is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -158,4 +160,60 @@ public interface ExportAgentRequestOrBuilder
    * @return The bytes for environment.
    */
   com.google.protobuf.ByteString getEnvironmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git branch to export the agent to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gitDestination field is set.
+   */
+  boolean hasGitDestination();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git branch to export the agent to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gitDestination.
+   */
+  com.google.cloud.dialogflow.cx.v3.ExportAgentRequest.GitDestination getGitDestination();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git branch to export the agent to.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ExportAgentRequest.GitDestination git_destination = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.ExportAgentRequest.GitDestinationOrBuilder
+      getGitDestinationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to include BigQuery Export setting.
+   * </pre>
+   *
+   * <code>bool include_bigquery_export_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includeBigqueryExportSettings.
+   */
+  boolean getIncludeBigqueryExportSettings();
 }

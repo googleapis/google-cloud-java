@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,9 @@ public class InsightTypeConfigName implements ResourceName {
   private static final PathTemplate ORGANIZATION_LOCATION_INSIGHT_TYPE =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/locations/{location}/insightTypes/{insight_type}/config");
+  private static final PathTemplate BILLING_ACCOUNT_LOCATION_INSIGHT_TYPE =
+      PathTemplate.createWithoutUrlEncoding(
+          "billingAccounts/{billing_account}/locations/{location}/insightTypes/{insight_type}/config");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -44,6 +47,7 @@ public class InsightTypeConfigName implements ResourceName {
   private final String location;
   private final String insightType;
   private final String organization;
+  private final String billingAccount;
 
   @Deprecated
   protected InsightTypeConfigName() {
@@ -51,6 +55,7 @@ public class InsightTypeConfigName implements ResourceName {
     location = null;
     insightType = null;
     organization = null;
+    billingAccount = null;
   }
 
   private InsightTypeConfigName(Builder builder) {
@@ -58,6 +63,7 @@ public class InsightTypeConfigName implements ResourceName {
     location = Preconditions.checkNotNull(builder.getLocation());
     insightType = Preconditions.checkNotNull(builder.getInsightType());
     organization = null;
+    billingAccount = null;
     pathTemplate = PROJECT_LOCATION_INSIGHT_TYPE;
   }
 
@@ -66,7 +72,17 @@ public class InsightTypeConfigName implements ResourceName {
     location = Preconditions.checkNotNull(builder.getLocation());
     insightType = Preconditions.checkNotNull(builder.getInsightType());
     project = null;
+    billingAccount = null;
     pathTemplate = ORGANIZATION_LOCATION_INSIGHT_TYPE;
+  }
+
+  private InsightTypeConfigName(BillingAccountLocationInsightTypeBuilder builder) {
+    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    insightType = Preconditions.checkNotNull(builder.getInsightType());
+    project = null;
+    organization = null;
+    pathTemplate = BILLING_ACCOUNT_LOCATION_INSIGHT_TYPE;
   }
 
   public String getProject() {
@@ -85,6 +101,10 @@ public class InsightTypeConfigName implements ResourceName {
     return organization;
   }
 
+  public String getBillingAccount() {
+    return billingAccount;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -97,6 +117,12 @@ public class InsightTypeConfigName implements ResourceName {
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationInsightTypeBuilder newOrganizationLocationInsightTypeBuilder() {
     return new OrganizationLocationInsightTypeBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static BillingAccountLocationInsightTypeBuilder
+      newBillingAccountLocationInsightTypeBuilder() {
+    return new BillingAccountLocationInsightTypeBuilder();
   }
 
   public Builder toBuilder() {
@@ -126,6 +152,16 @@ public class InsightTypeConfigName implements ResourceName {
       String organization, String location, String insightType) {
     return newOrganizationLocationInsightTypeBuilder()
         .setOrganization(organization)
+        .setLocation(location)
+        .setInsightType(insightType)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static InsightTypeConfigName ofBillingAccountLocationInsightTypeName(
+      String billingAccount, String location, String insightType) {
+    return newBillingAccountLocationInsightTypeBuilder()
+        .setBillingAccount(billingAccount)
         .setLocation(location)
         .setInsightType(insightType)
         .build();
@@ -162,6 +198,17 @@ public class InsightTypeConfigName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatBillingAccountLocationInsightTypeName(
+      String billingAccount, String location, String insightType) {
+    return newBillingAccountLocationInsightTypeBuilder()
+        .setBillingAccount(billingAccount)
+        .setLocation(location)
+        .setInsightType(insightType)
+        .build()
+        .toString();
+  }
+
   public static InsightTypeConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -174,6 +221,10 @@ public class InsightTypeConfigName implements ResourceName {
       Map<String, String> matchMap = ORGANIZATION_LOCATION_INSIGHT_TYPE.match(formattedString);
       return ofOrganizationLocationInsightTypeName(
           matchMap.get("organization"), matchMap.get("location"), matchMap.get("insight_type"));
+    } else if (BILLING_ACCOUNT_LOCATION_INSIGHT_TYPE.matches(formattedString)) {
+      Map<String, String> matchMap = BILLING_ACCOUNT_LOCATION_INSIGHT_TYPE.match(formattedString);
+      return ofBillingAccountLocationInsightTypeName(
+          matchMap.get("billing_account"), matchMap.get("location"), matchMap.get("insight_type"));
     }
     throw new ValidationException(
         "InsightTypeConfigName.parse: formattedString not in valid format");
@@ -201,7 +252,8 @@ public class InsightTypeConfigName implements ResourceName {
 
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_LOCATION_INSIGHT_TYPE.matches(formattedString)
-        || ORGANIZATION_LOCATION_INSIGHT_TYPE.matches(formattedString);
+        || ORGANIZATION_LOCATION_INSIGHT_TYPE.matches(formattedString)
+        || BILLING_ACCOUNT_LOCATION_INSIGHT_TYPE.matches(formattedString);
   }
 
   @Override
@@ -221,6 +273,9 @@ public class InsightTypeConfigName implements ResourceName {
           }
           if (organization != null) {
             fieldMapBuilder.put("organization", organization);
+          }
+          if (billingAccount != null) {
+            fieldMapBuilder.put("billing_account", billingAccount);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -243,12 +298,13 @@ public class InsightTypeConfigName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       InsightTypeConfigName that = ((InsightTypeConfigName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.insightType, that.insightType)
-          && Objects.equals(this.organization, that.organization);
+          && Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.billingAccount, that.billingAccount);
     }
     return false;
   }
@@ -266,6 +322,8 @@ public class InsightTypeConfigName implements ResourceName {
     h ^= Objects.hashCode(insightType);
     h *= 1000003;
     h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(billingAccount);
     return h;
   }
 
@@ -353,6 +411,50 @@ public class InsightTypeConfigName implements ResourceName {
     }
 
     public OrganizationLocationInsightTypeBuilder setInsightType(String insightType) {
+      this.insightType = insightType;
+      return this;
+    }
+
+    public InsightTypeConfigName build() {
+      return new InsightTypeConfigName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * billingAccounts/{billing_account}/locations/{location}/insightTypes/{insight_type}/config.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class BillingAccountLocationInsightTypeBuilder {
+    private String billingAccount;
+    private String location;
+    private String insightType;
+
+    protected BillingAccountLocationInsightTypeBuilder() {}
+
+    public String getBillingAccount() {
+      return billingAccount;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getInsightType() {
+      return insightType;
+    }
+
+    public BillingAccountLocationInsightTypeBuilder setBillingAccount(String billingAccount) {
+      this.billingAccount = billingAccount;
+      return this;
+    }
+
+    public BillingAccountLocationInsightTypeBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public BillingAccountLocationInsightTypeBuilder setInsightType(String insightType) {
       this.insightType = insightType;
       return this;
     }

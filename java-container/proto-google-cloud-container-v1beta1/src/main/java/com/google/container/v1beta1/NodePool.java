@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,17 +30,22 @@ package com.google.container.v1beta1;
  * the workload.
  * These upgrade settings control the level of parallelism and the level of
  * disruption caused by an upgrade.
+ *
  * maxUnavailable controls the number of nodes that can be simultaneously
  * unavailable.
+ *
  * maxSurge controls the number of additional nodes that can be added to the
  * node pool temporarily for the time of the upgrade to increase the number of
  * available nodes.
+ *
  * (maxUnavailable + maxSurge) determines the level of parallelism (how many
  * nodes are being upgraded at the same time).
+ *
  * Note: upgrades inevitably introduce some disruption since workloads need to
  * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
  * this holds true. (Disruption stays within the limits of
  * PodDisruptionBudget, if it is configured.)
+ *
  * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
  * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
  * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
@@ -62,10 +67,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
   private NodePool() {
     name_ = "";
-    locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     selfLink_ = "";
     version_ = "";
-    instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
     status_ = 0;
     statusMessage_ = "";
     conditions_ = java.util.Collections.emptyList();
@@ -76,11 +81,6 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NodePool();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -469,6 +469,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * These upgrade settings configure the upgrade strategy for the node pool.
    * Use strategy to switch between the strategies applied to the node pool.
+   *
    * If the strategy is SURGE, use max_surge and max_unavailable to control
    * the level of parallelism and the level of disruption caused by upgrade.
    * 1. maxSurge controls the number of additional nodes that can be added to
@@ -478,6 +479,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * unavailable.
    * 3. (maxUnavailable + maxSurge) determines the level of parallelism (how
    * many nodes are being upgraded at the same time).
+   *
    * If the strategy is BLUE_GREEN, use blue_green_settings to configure the
    * blue-green upgrade related settings.
    * 1. standard_rollout_policy is the default policy. The policy is used to
@@ -509,11 +511,6 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new UpgradeSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -877,6 +874,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * These upgrade settings configure the upgrade strategy for the node pool.
      * Use strategy to switch between the strategies applied to the node pool.
+     *
      * If the strategy is SURGE, use max_surge and max_unavailable to control
      * the level of parallelism and the level of disruption caused by upgrade.
      * 1. maxSurge controls the number of additional nodes that can be added to
@@ -886,6 +884,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * unavailable.
      * 3. (maxUnavailable + maxSurge) determines the level of parallelism (how
      * many nodes are being upgraded at the same time).
+     *
      * If the strategy is BLUE_GREEN, use blue_green_settings to configure the
      * blue-green upgrade related settings.
      * 1. standard_rollout_policy is the default policy. The policy is used to
@@ -1675,11 +1674,6 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       return new UpdateInfo();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.container.v1beta1.ClusterServiceProto
           .internal_static_google_container_v1beta1_NodePool_UpdateInfo_descriptor;
@@ -1916,8 +1910,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
       private BlueGreenInfo() {
         phase_ = 0;
-        blueInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        blueInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bluePoolDeletionStartTime_ = "";
         greenPoolVersion_ = "";
       }
@@ -1926,11 +1920,6 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new BlueGreenInfo();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1998,6 +1987,16 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          * <code>CORDONING_BLUE_POOL = 3;</code>
          */
         CORDONING_BLUE_POOL(3),
+        /**
+         *
+         *
+         * <pre>
+         * Start waiting after cordoning the blue pool and before draining it.
+         * </pre>
+         *
+         * <code>WAITING_TO_DRAIN_BLUE_POOL = 8;</code>
+         */
+        WAITING_TO_DRAIN_BLUE_POOL(8),
         /**
          *
          *
@@ -2085,6 +2084,16 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
+         * Start waiting after cordoning the blue pool and before draining it.
+         * </pre>
+         *
+         * <code>WAITING_TO_DRAIN_BLUE_POOL = 8;</code>
+         */
+        public static final int WAITING_TO_DRAIN_BLUE_POOL_VALUE = 8;
+        /**
+         *
+         *
+         * <pre>
          * Start draining blue pool nodes.
          * </pre>
          *
@@ -2154,6 +2163,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
               return CREATING_GREEN_POOL;
             case 3:
               return CORDONING_BLUE_POOL;
+            case 8:
+              return WAITING_TO_DRAIN_BLUE_POOL;
             case 4:
               return DRAINING_BLUE_POOL;
             case 5:
@@ -2258,7 +2269,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public static final int BLUE_INSTANCE_GROUP_URLS_FIELD_NUMBER = 2;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList blueInstanceGroupUrls_;
+      private com.google.protobuf.LazyStringArrayList blueInstanceGroupUrls_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -2329,7 +2341,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public static final int GREEN_INSTANCE_GROUP_URLS_FIELD_NUMBER = 3;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList greenInstanceGroupUrls_;
+      private com.google.protobuf.LazyStringArrayList greenInstanceGroupUrls_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -2769,10 +2782,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           bitField0_ = 0;
           phase_ = 0;
-          blueInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          blueInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bluePoolDeletionStartTime_ = "";
           greenPoolVersion_ = "";
           return this;
@@ -2804,7 +2815,6 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo buildPartial() {
           com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo result =
               new com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -2812,25 +2822,19 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo result) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            blueInstanceGroupUrls_ = blueInstanceGroupUrls_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.blueInstanceGroupUrls_ = blueInstanceGroupUrls_;
-          if (((bitField0_ & 0x00000004) != 0)) {
-            greenInstanceGroupUrls_ = greenInstanceGroupUrls_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.greenInstanceGroupUrls_ = greenInstanceGroupUrls_;
-        }
-
         private void buildPartial0(
             com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo result) {
           int from_bitField0_ = bitField0_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.phase_ = phase_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            blueInstanceGroupUrls_.makeImmutable();
+            result.blueInstanceGroupUrls_ = blueInstanceGroupUrls_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            greenInstanceGroupUrls_.makeImmutable();
+            result.greenInstanceGroupUrls_ = greenInstanceGroupUrls_;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.bluePoolDeletionStartTime_ = bluePoolDeletionStartTime_;
@@ -2897,7 +2901,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           if (!other.blueInstanceGroupUrls_.isEmpty()) {
             if (blueInstanceGroupUrls_.isEmpty()) {
               blueInstanceGroupUrls_ = other.blueInstanceGroupUrls_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ |= 0x00000002;
             } else {
               ensureBlueInstanceGroupUrlsIsMutable();
               blueInstanceGroupUrls_.addAll(other.blueInstanceGroupUrls_);
@@ -2907,7 +2911,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           if (!other.greenInstanceGroupUrls_.isEmpty()) {
             if (greenInstanceGroupUrls_.isEmpty()) {
               greenInstanceGroupUrls_ = other.greenInstanceGroupUrls_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ |= 0x00000004;
             } else {
               ensureGreenInstanceGroupUrlsIsMutable();
               greenInstanceGroupUrls_.addAll(other.greenInstanceGroupUrls_);
@@ -3095,15 +3099,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.protobuf.LazyStringList blueInstanceGroupUrls_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList blueInstanceGroupUrls_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureBlueInstanceGroupUrlsIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
+          if (!blueInstanceGroupUrls_.isModifiable()) {
             blueInstanceGroupUrls_ =
                 new com.google.protobuf.LazyStringArrayList(blueInstanceGroupUrls_);
-            bitField0_ |= 0x00000002;
           }
+          bitField0_ |= 0x00000002;
         }
         /**
          *
@@ -3119,7 +3123,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the blueInstanceGroupUrls.
          */
         public com.google.protobuf.ProtocolStringList getBlueInstanceGroupUrlsList() {
-          return blueInstanceGroupUrls_.getUnmodifiableView();
+          blueInstanceGroupUrls_.makeImmutable();
+          return blueInstanceGroupUrls_;
         }
         /**
          *
@@ -3192,6 +3197,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           }
           ensureBlueInstanceGroupUrlsIsMutable();
           blueInstanceGroupUrls_.set(index, value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3215,6 +3221,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           }
           ensureBlueInstanceGroupUrlsIsMutable();
           blueInstanceGroupUrls_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3235,6 +3242,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllBlueInstanceGroupUrls(java.lang.Iterable<java.lang.String> values) {
           ensureBlueInstanceGroupUrlsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blueInstanceGroupUrls_);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3252,8 +3260,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearBlueInstanceGroupUrls() {
-          blueInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          blueInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
+          ;
           onChanged();
           return this;
         }
@@ -3278,19 +3287,20 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureBlueInstanceGroupUrlsIsMutable();
           blueInstanceGroupUrls_.add(value);
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringList greenInstanceGroupUrls_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList greenInstanceGroupUrls_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureGreenInstanceGroupUrlsIsMutable() {
-          if (!((bitField0_ & 0x00000004) != 0)) {
+          if (!greenInstanceGroupUrls_.isModifiable()) {
             greenInstanceGroupUrls_ =
                 new com.google.protobuf.LazyStringArrayList(greenInstanceGroupUrls_);
-            bitField0_ |= 0x00000004;
           }
+          bitField0_ |= 0x00000004;
         }
         /**
          *
@@ -3306,7 +3316,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the greenInstanceGroupUrls.
          */
         public com.google.protobuf.ProtocolStringList getGreenInstanceGroupUrlsList() {
-          return greenInstanceGroupUrls_.getUnmodifiableView();
+          greenInstanceGroupUrls_.makeImmutable();
+          return greenInstanceGroupUrls_;
         }
         /**
          *
@@ -3379,6 +3390,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           }
           ensureGreenInstanceGroupUrlsIsMutable();
           greenInstanceGroupUrls_.set(index, value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3402,6 +3414,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           }
           ensureGreenInstanceGroupUrlsIsMutable();
           greenInstanceGroupUrls_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3422,6 +3435,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllGreenInstanceGroupUrls(java.lang.Iterable<java.lang.String> values) {
           ensureGreenInstanceGroupUrlsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, greenInstanceGroupUrls_);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3439,8 +3453,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearGreenInstanceGroupUrls() {
-          greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
+          ;
           onChanged();
           return this;
         }
@@ -3465,6 +3480,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureGreenInstanceGroupUrlsIsMutable();
           greenInstanceGroupUrls_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4451,6 +4467,62 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return The type.
      */
     com.google.container.v1beta1.NodePool.PlacementPolicy.Type getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * TPU placement topology for pod slice node pool.
+     * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+     * </pre>
+     *
+     * <code>string tpu_topology = 2;</code>
+     *
+     * @return The tpuTopology.
+     */
+    java.lang.String getTpuTopology();
+    /**
+     *
+     *
+     * <pre>
+     * TPU placement topology for pod slice node pool.
+     * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+     * </pre>
+     *
+     * <code>string tpu_topology = 2;</code>
+     *
+     * @return The bytes for tpuTopology.
+     */
+    com.google.protobuf.ByteString getTpuTopologyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, refers to the name of a custom resource policy supplied by the
+     * user. The resource policy must be in the same project and region as the
+     * node pool. If not found, InvalidArgument error is returned.
+     * </pre>
+     *
+     * <code>string policy_name = 3;</code>
+     *
+     * @return The policyName.
+     */
+    java.lang.String getPolicyName();
+    /**
+     *
+     *
+     * <pre>
+     * If set, refers to the name of a custom resource policy supplied by the
+     * user. The resource policy must be in the same project and region as the
+     * node pool. If not found, InvalidArgument error is returned.
+     * </pre>
+     *
+     * <code>string policy_name = 3;</code>
+     *
+     * @return The bytes for policyName.
+     */
+    com.google.protobuf.ByteString getPolicyNameBytes();
   }
   /**
    *
@@ -4473,17 +4545,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
     private PlacementPolicy() {
       type_ = 0;
+      tpuTopology_ = "";
+      policyName_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PlacementPolicy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4679,6 +4748,114 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int TPU_TOPOLOGY_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object tpuTopology_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * TPU placement topology for pod slice node pool.
+     * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+     * </pre>
+     *
+     * <code>string tpu_topology = 2;</code>
+     *
+     * @return The tpuTopology.
+     */
+    @java.lang.Override
+    public java.lang.String getTpuTopology() {
+      java.lang.Object ref = tpuTopology_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tpuTopology_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TPU placement topology for pod slice node pool.
+     * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+     * </pre>
+     *
+     * <code>string tpu_topology = 2;</code>
+     *
+     * @return The bytes for tpuTopology.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTpuTopologyBytes() {
+      java.lang.Object ref = tpuTopology_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tpuTopology_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int POLICY_NAME_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object policyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * If set, refers to the name of a custom resource policy supplied by the
+     * user. The resource policy must be in the same project and region as the
+     * node pool. If not found, InvalidArgument error is returned.
+     * </pre>
+     *
+     * <code>string policy_name = 3;</code>
+     *
+     * @return The policyName.
+     */
+    @java.lang.Override
+    public java.lang.String getPolicyName() {
+      java.lang.Object ref = policyName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        policyName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, refers to the name of a custom resource policy supplied by the
+     * user. The resource policy must be in the same project and region as the
+     * node pool. If not found, InvalidArgument error is returned.
+     * </pre>
+     *
+     * <code>string policy_name = 3;</code>
+     *
+     * @return The bytes for policyName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPolicyNameBytes() {
+      java.lang.Object ref = policyName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        policyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4698,6 +4875,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(1, type_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuTopology_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tpuTopology_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, policyName_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4711,6 +4894,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           != com.google.container.v1beta1.NodePool.PlacementPolicy.Type.TYPE_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuTopology_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tpuTopology_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, policyName_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4729,6 +4918,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           (com.google.container.v1beta1.NodePool.PlacementPolicy) obj;
 
       if (type_ != other.type_) return false;
+      if (!getTpuTopology().equals(other.getTpuTopology())) return false;
+      if (!getPolicyName().equals(other.getPolicyName())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4742,6 +4933,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+      hash = (37 * hash) + TPU_TOPOLOGY_FIELD_NUMBER;
+      hash = (53 * hash) + getTpuTopology().hashCode();
+      hash = (37 * hash) + POLICY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPolicyName().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4885,6 +5080,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         type_ = 0;
+        tpuTopology_ = "";
+        policyName_ = "";
         return this;
       }
 
@@ -4923,6 +5120,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.tpuTopology_ = tpuTopology_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.policyName_ = policyName_;
         }
       }
 
@@ -4977,6 +5180,16 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
+        if (!other.getTpuTopology().isEmpty()) {
+          tpuTopology_ = other.tpuTopology_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getPolicyName().isEmpty()) {
+          policyName_ = other.policyName_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -5009,6 +5222,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 18:
+                {
+                  tpuTopology_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  policyName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5116,6 +5341,233 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tpuTopology_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * TPU placement topology for pod slice node pool.
+       * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+       * </pre>
+       *
+       * <code>string tpu_topology = 2;</code>
+       *
+       * @return The tpuTopology.
+       */
+      public java.lang.String getTpuTopology() {
+        java.lang.Object ref = tpuTopology_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tpuTopology_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * TPU placement topology for pod slice node pool.
+       * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+       * </pre>
+       *
+       * <code>string tpu_topology = 2;</code>
+       *
+       * @return The bytes for tpuTopology.
+       */
+      public com.google.protobuf.ByteString getTpuTopologyBytes() {
+        java.lang.Object ref = tpuTopology_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          tpuTopology_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * TPU placement topology for pod slice node pool.
+       * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+       * </pre>
+       *
+       * <code>string tpu_topology = 2;</code>
+       *
+       * @param value The tpuTopology to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTpuTopology(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tpuTopology_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * TPU placement topology for pod slice node pool.
+       * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+       * </pre>
+       *
+       * <code>string tpu_topology = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTpuTopology() {
+        tpuTopology_ = getDefaultInstance().getTpuTopology();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * TPU placement topology for pod slice node pool.
+       * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+       * </pre>
+       *
+       * <code>string tpu_topology = 2;</code>
+       *
+       * @param value The bytes for tpuTopology to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTpuTopologyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        tpuTopology_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object policyName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * If set, refers to the name of a custom resource policy supplied by the
+       * user. The resource policy must be in the same project and region as the
+       * node pool. If not found, InvalidArgument error is returned.
+       * </pre>
+       *
+       * <code>string policy_name = 3;</code>
+       *
+       * @return The policyName.
+       */
+      public java.lang.String getPolicyName() {
+        java.lang.Object ref = policyName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          policyName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, refers to the name of a custom resource policy supplied by the
+       * user. The resource policy must be in the same project and region as the
+       * node pool. If not found, InvalidArgument error is returned.
+       * </pre>
+       *
+       * <code>string policy_name = 3;</code>
+       *
+       * @return The bytes for policyName.
+       */
+      public com.google.protobuf.ByteString getPolicyNameBytes() {
+        java.lang.Object ref = policyName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          policyName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, refers to the name of a custom resource policy supplied by the
+       * user. The resource policy must be in the same project and region as the
+       * node pool. If not found, InvalidArgument error is returned.
+       * </pre>
+       *
+       * <code>string policy_name = 3;</code>
+       *
+       * @param value The policyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPolicyName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        policyName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, refers to the name of a custom resource policy supplied by the
+       * user. The resource policy must be in the same project and region as the
+       * node pool. If not found, InvalidArgument error is returned.
+       * </pre>
+       *
+       * <code>string policy_name = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPolicyName() {
+        policyName_ = getDefaultInstance().getPolicyName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, refers to the name of a custom resource policy supplied by the
+       * user. The resource policy must be in the same project and region as the
+       * node pool. If not found, InvalidArgument error is returned.
+       * </pre>
+       *
+       * <code>string policy_name = 3;</code>
+       *
+       * @param value The bytes for policyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPolicyNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        policyName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5305,7 +5757,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   public static final int LOCATIONS_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList locations_;
+  private com.google.protobuf.LazyStringArrayList locations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -5313,9 +5766,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * NodePool's nodes should be located.
+   *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
    * value will be used, instead.
+   *
    * Warning: changing node pool locations will result in nodes being added
    * and/or removed.
    * </pre>
@@ -5334,9 +5789,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * NodePool's nodes should be located.
+   *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
    * value will be used, instead.
+   *
    * Warning: changing node pool locations will result in nodes being added
    * and/or removed.
    * </pre>
@@ -5355,9 +5812,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * NodePool's nodes should be located.
+   *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
    * value will be used, instead.
+   *
    * Warning: changing node pool locations will result in nodes being added
    * and/or removed.
    * </pre>
@@ -5377,9 +5836,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * NodePool's nodes should be located.
+   *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
    * value will be used, instead.
+   *
    * Warning: changing node pool locations will result in nodes being added
    * and/or removed.
    * </pre>
@@ -5555,7 +6016,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   public static final int INSTANCE_GROUP_URLS_FIELD_NUMBER = 102;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList instanceGroupUrls_;
+  private com.google.protobuf.LazyStringArrayList instanceGroupUrls_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -5682,7 +6144,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3631
+   *     google/container/v1beta1/cluster_service.proto;l=4007
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -5710,7 +6172,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3631
+   *     google/container/v1beta1/cluster_service.proto;l=4007
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -6188,6 +6650,57 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int BEST_EFFORT_PROVISIONING_FIELD_NUMBER = 113;
+  private com.google.container.v1beta1.BestEffortProvisioning bestEffortProvisioning_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable best effort provisioning for nodes
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+   *
+   * @return Whether the bestEffortProvisioning field is set.
+   */
+  @java.lang.Override
+  public boolean hasBestEffortProvisioning() {
+    return bestEffortProvisioning_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable best effort provisioning for nodes
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+   *
+   * @return The bestEffortProvisioning.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.BestEffortProvisioning getBestEffortProvisioning() {
+    return bestEffortProvisioning_ == null
+        ? com.google.container.v1beta1.BestEffortProvisioning.getDefaultInstance()
+        : bestEffortProvisioning_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable best effort provisioning for nodes
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.BestEffortProvisioningOrBuilder
+      getBestEffortProvisioningOrBuilder() {
+    return bestEffortProvisioning_ == null
+        ? com.google.container.v1beta1.BestEffortProvisioning.getDefaultInstance()
+        : bestEffortProvisioning_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6258,6 +6771,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 110, etag_);
+    }
+    if (bestEffortProvisioning_ != null) {
+      output.writeMessage(113, getBestEffortProvisioning());
     }
     getUnknownFields().writeTo(output);
   }
@@ -6335,6 +6851,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(110, etag_);
     }
+    if (bestEffortProvisioning_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              113, getBestEffortProvisioning());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6393,6 +6914,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateInfo().equals(other.getUpdateInfo())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (hasBestEffortProvisioning() != other.hasBestEffortProvisioning()) return false;
+    if (hasBestEffortProvisioning()) {
+      if (!getBestEffortProvisioning().equals(other.getBestEffortProvisioning())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6464,6 +6989,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (hasBestEffortProvisioning()) {
+      hash = (37 * hash) + BEST_EFFORT_PROVISIONING_FIELD_NUMBER;
+      hash = (53 * hash) + getBestEffortProvisioning().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6575,17 +7104,22 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * the workload.
    * These upgrade settings control the level of parallelism and the level of
    * disruption caused by an upgrade.
+   *
    * maxUnavailable controls the number of nodes that can be simultaneously
    * unavailable.
+   *
    * maxSurge controls the number of additional nodes that can be added to the
    * node pool temporarily for the time of the upgrade to increase the number of
    * available nodes.
+   *
    * (maxUnavailable + maxSurge) determines the level of parallelism (how many
    * nodes are being upgraded at the same time).
+   *
    * Note: upgrades inevitably introduce some disruption since workloads need to
    * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
    * this holds true. (Disruption stays within the limits of
    * PodDisruptionBudget, if it is configured.)
+   *
    * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
    * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
    * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
@@ -6632,8 +7166,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         configBuilder_ = null;
       }
       initialNodeCount_ = 0;
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       networkConfig_ = null;
       if (networkConfigBuilder_ != null) {
         networkConfigBuilder_.dispose();
@@ -6641,8 +7174,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       selfLink_ = "";
       version_ = "";
-      instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       status_ = 0;
       statusMessage_ = "";
       autoscaling_ = null;
@@ -6684,6 +7216,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         updateInfoBuilder_ = null;
       }
       etag_ = "";
+      bestEffortProvisioning_ = null;
+      if (bestEffortProvisioningBuilder_ != null) {
+        bestEffortProvisioningBuilder_.dispose();
+        bestEffortProvisioningBuilder_ = null;
+      }
       return this;
     }
 
@@ -6720,16 +7257,6 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.container.v1beta1.NodePool result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.locations_ = locations_;
-      if (((bitField0_ & 0x00000080) != 0)) {
-        instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.instanceGroupUrls_ = instanceGroupUrls_;
       if (conditionsBuilder_ == null) {
         if (((bitField0_ & 0x00002000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
@@ -6752,6 +7279,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.initialNodeCount_ = initialNodeCount_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        locations_.makeImmutable();
+        result.locations_ = locations_;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.networkConfig_ =
             networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
@@ -6761,6 +7292,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        instanceGroupUrls_.makeImmutable();
+        result.instanceGroupUrls_ = instanceGroupUrls_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.status_ = status_;
@@ -6797,6 +7332,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.bestEffortProvisioning_ =
+            bestEffortProvisioningBuilder_ == null
+                ? bestEffortProvisioning_
+                : bestEffortProvisioningBuilder_.build();
       }
     }
 
@@ -6859,7 +7400,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -6882,7 +7423,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (!other.instanceGroupUrls_.isEmpty()) {
         if (instanceGroupUrls_.isEmpty()) {
           instanceGroupUrls_ = other.instanceGroupUrls_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureInstanceGroupUrlsIsMutable();
           instanceGroupUrls_.addAll(other.instanceGroupUrls_);
@@ -6949,6 +7490,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         etag_ = other.etag_;
         bitField0_ |= 0x00040000;
         onChanged();
+      }
+      if (other.hasBestEffortProvisioning()) {
+        mergeBestEffortProvisioning(other.getBestEffortProvisioning());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7100,6 +7644,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00040000;
                 break;
               } // case 882
+            case 906:
+              {
+                input.readMessage(
+                    getBestEffortProvisioningFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 906
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7470,14 +8021,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList locations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList locations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!locations_.isModifiable()) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -7486,9 +8037,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * NodePool's nodes should be located.
+     *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
      * value will be used, instead.
+     *
      * Warning: changing node pool locations will result in nodes being added
      * and/or removed.
      * </pre>
@@ -7498,7 +8051,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the locations.
      */
     public com.google.protobuf.ProtocolStringList getLocationsList() {
-      return locations_.getUnmodifiableView();
+      locations_.makeImmutable();
+      return locations_;
     }
     /**
      *
@@ -7507,9 +8061,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * NodePool's nodes should be located.
+     *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
      * value will be used, instead.
+     *
      * Warning: changing node pool locations will result in nodes being added
      * and/or removed.
      * </pre>
@@ -7528,9 +8084,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * NodePool's nodes should be located.
+     *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
      * value will be used, instead.
+     *
      * Warning: changing node pool locations will result in nodes being added
      * and/or removed.
      * </pre>
@@ -7550,9 +8108,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * NodePool's nodes should be located.
+     *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
      * value will be used, instead.
+     *
      * Warning: changing node pool locations will result in nodes being added
      * and/or removed.
      * </pre>
@@ -7572,9 +8132,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * NodePool's nodes should be located.
+     *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
      * value will be used, instead.
+     *
      * Warning: changing node pool locations will result in nodes being added
      * and/or removed.
      * </pre>
@@ -7591,6 +8153,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLocationsIsMutable();
       locations_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7601,9 +8164,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * NodePool's nodes should be located.
+     *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
      * value will be used, instead.
+     *
      * Warning: changing node pool locations will result in nodes being added
      * and/or removed.
      * </pre>
@@ -7619,6 +8184,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7629,9 +8195,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * NodePool's nodes should be located.
+     *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
      * value will be used, instead.
+     *
      * Warning: changing node pool locations will result in nodes being added
      * and/or removed.
      * </pre>
@@ -7644,6 +8212,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
       ensureLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, locations_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7654,9 +8223,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * NodePool's nodes should be located.
+     *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
      * value will be used, instead.
+     *
      * Warning: changing node pool locations will result in nodes being added
      * and/or removed.
      * </pre>
@@ -7666,8 +8237,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocations() {
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -7678,9 +8250,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * The list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * NodePool's nodes should be located.
+     *
      * If this value is unspecified during node pool creation, the
      * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
      * value will be used, instead.
+     *
      * Warning: changing node pool locations will result in nodes being added
      * and/or removed.
      * </pre>
@@ -7697,6 +8271,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -8117,14 +8692,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList instanceGroupUrls_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList instanceGroupUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInstanceGroupUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!instanceGroupUrls_.isModifiable()) {
         instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList(instanceGroupUrls_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -8142,7 +8717,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the instanceGroupUrls.
      */
     public com.google.protobuf.ProtocolStringList getInstanceGroupUrlsList() {
-      return instanceGroupUrls_.getUnmodifiableView();
+      instanceGroupUrls_.makeImmutable();
+      return instanceGroupUrls_;
     }
     /**
      *
@@ -8223,6 +8799,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8248,6 +8825,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8270,6 +8848,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInstanceGroupUrls(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceGroupUrlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceGroupUrls_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8289,8 +8868,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstanceGroupUrls() {
-      instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -8317,6 +8897,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8424,7 +9005,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3631
+     *     google/container/v1beta1/cluster_service.proto;l=4007
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -8451,7 +9032,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3631
+     *     google/container/v1beta1/cluster_service.proto;l=4007
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -8478,7 +9059,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3631
+     *     google/container/v1beta1/cluster_service.proto;l=4007
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -8504,7 +9085,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3631
+     *     google/container/v1beta1/cluster_service.proto;l=4007
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -8526,7 +9107,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3631
+     *     google/container/v1beta1/cluster_service.proto;l=4007
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -10220,6 +10801,195 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00040000;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1beta1.BestEffortProvisioning bestEffortProvisioning_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.BestEffortProvisioning,
+            com.google.container.v1beta1.BestEffortProvisioning.Builder,
+            com.google.container.v1beta1.BestEffortProvisioningOrBuilder>
+        bestEffortProvisioningBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable best effort provisioning for nodes
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+     *
+     * @return Whether the bestEffortProvisioning field is set.
+     */
+    public boolean hasBestEffortProvisioning() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable best effort provisioning for nodes
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+     *
+     * @return The bestEffortProvisioning.
+     */
+    public com.google.container.v1beta1.BestEffortProvisioning getBestEffortProvisioning() {
+      if (bestEffortProvisioningBuilder_ == null) {
+        return bestEffortProvisioning_ == null
+            ? com.google.container.v1beta1.BestEffortProvisioning.getDefaultInstance()
+            : bestEffortProvisioning_;
+      } else {
+        return bestEffortProvisioningBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable best effort provisioning for nodes
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+     */
+    public Builder setBestEffortProvisioning(
+        com.google.container.v1beta1.BestEffortProvisioning value) {
+      if (bestEffortProvisioningBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bestEffortProvisioning_ = value;
+      } else {
+        bestEffortProvisioningBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable best effort provisioning for nodes
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+     */
+    public Builder setBestEffortProvisioning(
+        com.google.container.v1beta1.BestEffortProvisioning.Builder builderForValue) {
+      if (bestEffortProvisioningBuilder_ == null) {
+        bestEffortProvisioning_ = builderForValue.build();
+      } else {
+        bestEffortProvisioningBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable best effort provisioning for nodes
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+     */
+    public Builder mergeBestEffortProvisioning(
+        com.google.container.v1beta1.BestEffortProvisioning value) {
+      if (bestEffortProvisioningBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && bestEffortProvisioning_ != null
+            && bestEffortProvisioning_
+                != com.google.container.v1beta1.BestEffortProvisioning.getDefaultInstance()) {
+          getBestEffortProvisioningBuilder().mergeFrom(value);
+        } else {
+          bestEffortProvisioning_ = value;
+        }
+      } else {
+        bestEffortProvisioningBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable best effort provisioning for nodes
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+     */
+    public Builder clearBestEffortProvisioning() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      bestEffortProvisioning_ = null;
+      if (bestEffortProvisioningBuilder_ != null) {
+        bestEffortProvisioningBuilder_.dispose();
+        bestEffortProvisioningBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable best effort provisioning for nodes
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+     */
+    public com.google.container.v1beta1.BestEffortProvisioning.Builder
+        getBestEffortProvisioningBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getBestEffortProvisioningFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable best effort provisioning for nodes
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+     */
+    public com.google.container.v1beta1.BestEffortProvisioningOrBuilder
+        getBestEffortProvisioningOrBuilder() {
+      if (bestEffortProvisioningBuilder_ != null) {
+        return bestEffortProvisioningBuilder_.getMessageOrBuilder();
+      } else {
+        return bestEffortProvisioning_ == null
+            ? com.google.container.v1beta1.BestEffortProvisioning.getDefaultInstance()
+            : bestEffortProvisioning_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable best effort provisioning for nodes
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.BestEffortProvisioning,
+            com.google.container.v1beta1.BestEffortProvisioning.Builder,
+            com.google.container.v1beta1.BestEffortProvisioningOrBuilder>
+        getBestEffortProvisioningFieldBuilder() {
+      if (bestEffortProvisioningBuilder_ == null) {
+        bestEffortProvisioningBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.BestEffortProvisioning,
+                com.google.container.v1beta1.BestEffortProvisioning.Builder,
+                com.google.container.v1beta1.BestEffortProvisioningOrBuilder>(
+                getBestEffortProvisioning(), getParentForChildren(), isClean());
+        bestEffortProvisioning_ = null;
+      }
+      return bestEffortProvisioningBuilder_;
     }
 
     @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
     return new CreateRepositoryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataform.v1beta1.DataformProto
         .internal_static_google_cloud_dataform_v1beta1_CreateRepositoryRequest_descriptor;
@@ -76,8 +71,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The location in which to create the repository. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;`.
+   * Required. The location in which to create the repository. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -102,8 +97,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The location in which to create the repository. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;`.
+   * Required. The location in which to create the repository. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -189,8 +184,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The ID to use for the repository, which will become the final component of
-   * the repository's resource name.
+   * Required. The ID to use for the repository, which will become the final
+   * component of the repository's resource name.
    * </pre>
    *
    * <code>string repository_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -213,8 +208,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The ID to use for the repository, which will become the final component of
-   * the repository's resource name.
+   * Required. The ID to use for the repository, which will become the final
+   * component of the repository's resource name.
    * </pre>
    *
    * <code>string repository_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -637,8 +632,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The location in which to create the repository. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;`.
+     * Required. The location in which to create the repository. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -662,8 +657,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The location in which to create the repository. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;`.
+     * Required. The location in which to create the repository. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -687,8 +682,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The location in which to create the repository. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;`.
+     * Required. The location in which to create the repository. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -711,8 +706,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The location in which to create the repository. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;`.
+     * Required. The location in which to create the repository. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -731,8 +726,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The location in which to create the repository. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;`.
+     * Required. The location in which to create the repository. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -960,8 +955,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The ID to use for the repository, which will become the final component of
-     * the repository's resource name.
+     * Required. The ID to use for the repository, which will become the final
+     * component of the repository's resource name.
      * </pre>
      *
      * <code>string repository_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -983,8 +978,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The ID to use for the repository, which will become the final component of
-     * the repository's resource name.
+     * Required. The ID to use for the repository, which will become the final
+     * component of the repository's resource name.
      * </pre>
      *
      * <code>string repository_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1006,8 +1001,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The ID to use for the repository, which will become the final component of
-     * the repository's resource name.
+     * Required. The ID to use for the repository, which will become the final
+     * component of the repository's resource name.
      * </pre>
      *
      * <code>string repository_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1028,8 +1023,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The ID to use for the repository, which will become the final component of
-     * the repository's resource name.
+     * Required. The ID to use for the repository, which will become the final
+     * component of the repository's resource name.
      * </pre>
      *
      * <code>string repository_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1046,8 +1041,8 @@ public final class CreateRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The ID to use for the repository, which will become the final component of
-     * the repository's resource name.
+     * Required. The ID to use for the repository, which will become the final
+     * component of the repository's resource name.
      * </pre>
      *
      * <code>string repository_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

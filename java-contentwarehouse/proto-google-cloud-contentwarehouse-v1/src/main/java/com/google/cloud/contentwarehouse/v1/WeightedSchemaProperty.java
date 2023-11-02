@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
 
   private WeightedSchemaProperty() {
     documentSchemaName_ = "";
-    propertyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    propertyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WeightedSchemaProperty();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -122,7 +117,8 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
   public static final int PROPERTY_NAMES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList propertyNames_;
+  private com.google.protobuf.LazyStringArrayList propertyNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -398,8 +394,7 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       documentSchemaName_ = "";
-      propertyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      propertyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -427,7 +422,6 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
     public com.google.cloud.contentwarehouse.v1.WeightedSchemaProperty buildPartial() {
       com.google.cloud.contentwarehouse.v1.WeightedSchemaProperty result =
           new com.google.cloud.contentwarehouse.v1.WeightedSchemaProperty(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -435,19 +429,14 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.contentwarehouse.v1.WeightedSchemaProperty result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        propertyNames_ = propertyNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.propertyNames_ = propertyNames_;
-    }
-
     private void buildPartial0(com.google.cloud.contentwarehouse.v1.WeightedSchemaProperty result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.documentSchemaName_ = documentSchemaName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        propertyNames_.makeImmutable();
+        result.propertyNames_ = propertyNames_;
       }
     }
 
@@ -505,7 +494,7 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       if (!other.propertyNames_.isEmpty()) {
         if (propertyNames_.isEmpty()) {
           propertyNames_ = other.propertyNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePropertyNamesIsMutable();
           propertyNames_.addAll(other.propertyNames_);
@@ -676,14 +665,14 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.protobuf.LazyStringList propertyNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList propertyNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePropertyNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!propertyNames_.isModifiable()) {
         propertyNames_ = new com.google.protobuf.LazyStringArrayList(propertyNames_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -697,7 +686,8 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
      * @return A list containing the propertyNames.
      */
     public com.google.protobuf.ProtocolStringList getPropertyNamesList() {
-      return propertyNames_.getUnmodifiableView();
+      propertyNames_.makeImmutable();
+      return propertyNames_;
     }
     /**
      *
@@ -762,6 +752,7 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       }
       ensurePropertyNamesIsMutable();
       propertyNames_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -783,6 +774,7 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       }
       ensurePropertyNamesIsMutable();
       propertyNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -801,6 +793,7 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
     public Builder addAllPropertyNames(java.lang.Iterable<java.lang.String> values) {
       ensurePropertyNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, propertyNames_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -816,8 +809,9 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPropertyNames() {
-      propertyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      propertyNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -840,6 +834,7 @@ public final class WeightedSchemaProperty extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensurePropertyNamesIsMutable();
       propertyNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

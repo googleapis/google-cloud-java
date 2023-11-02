@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ServiceOrBuilder
    * <pre>
    * Full path to the Service resource in the API.
    * Example: `apps/myapp/services/default`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface ServiceOrBuilder
    * <pre>
    * Full path to the Service resource in the API.
    * Example: `apps/myapp/services/default`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -58,6 +60,7 @@ public interface ServiceOrBuilder
    * <pre>
    * Relative name of the service within the application.
    * Example: `default`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -72,6 +75,7 @@ public interface ServiceOrBuilder
    * <pre>
    * Relative name of the service within the application.
    * Example: `default`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -129,6 +133,7 @@ public interface ServiceOrBuilder
    * propagated to the usage and billing reports, enabling fine-grain analysis
    * of costs. An example of using labels is to tag resources belonging to
    * different environments (e.g., "env=prod", "env=qa").
+   *
    * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
    * contain lowercase letters, numeric characters, underscores, dashes, and
    * international characters. Label keys must start with a lowercase letter
@@ -148,6 +153,7 @@ public interface ServiceOrBuilder
    * propagated to the usage and billing reports, enabling fine-grain analysis
    * of costs. An example of using labels is to tag resources belonging to
    * different environments (e.g., "env=prod", "env=qa").
+   *
    * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
    * contain lowercase letters, numeric characters, underscores, dashes, and
    * international characters. Label keys must start with a lowercase letter
@@ -170,6 +176,7 @@ public interface ServiceOrBuilder
    * propagated to the usage and billing reports, enabling fine-grain analysis
    * of costs. An example of using labels is to tag resources belonging to
    * different environments (e.g., "env=prod", "env=qa").
+   *
    * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
    * contain lowercase letters, numeric characters, underscores, dashes, and
    * international characters. Label keys must start with a lowercase letter
@@ -189,6 +196,7 @@ public interface ServiceOrBuilder
    * propagated to the usage and billing reports, enabling fine-grain analysis
    * of costs. An example of using labels is to tag resources belonging to
    * different environments (e.g., "env=prod", "env=qa").
+   *
    * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
    * contain lowercase letters, numeric characters, underscores, dashes, and
    * international characters. Label keys must start with a lowercase letter
@@ -212,6 +220,7 @@ public interface ServiceOrBuilder
    * propagated to the usage and billing reports, enabling fine-grain analysis
    * of costs. An example of using labels is to tag resources belonging to
    * different environments (e.g., "env=prod", "env=qa").
+   *
    * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
    * contain lowercase letters, numeric characters, underscores, dashes, and
    * international characters. Label keys must start with a lowercase letter

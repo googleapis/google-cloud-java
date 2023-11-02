@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -187,5 +187,5 @@ public interface BatchRecognizeFileMetadataOrBuilder
    */
   com.google.protobuf.FieldMaskOrBuilder getConfigMaskOrBuilder();
 
-  public com.google.cloud.speech.v2.BatchRecognizeFileMetadata.AudioSourceCase getAudioSourceCase();
+  com.google.cloud.speech.v2.BatchRecognizeFileMetadata.AudioSourceCase getAudioSourceCase();
 }

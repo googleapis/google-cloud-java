@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,13 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     zone_ = "";
     machineTypeSeries_ = "";
     machineType_ = "";
-    networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     networkInterfaces_ = java.util.Collections.emptyList();
     serviceAccount_ = "";
     diskType_ = 0;
     licenseType_ = 0;
     bootOption_ = 0;
-    additionalLicenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    additionalLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     hostname_ = "";
   }
 
@@ -58,11 +58,6 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ComputeEngineTargetDefaults();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -353,7 +348,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   public static final int NETWORK_TAGS_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList networkTags_;
+  private com.google.protobuf.LazyStringArrayList networkTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -985,7 +981,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
   public static final int ADDITIONAL_LICENSES_FIELD_NUMBER = 17;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList additionalLicenses_;
+  private com.google.protobuf.LazyStringArrayList additionalLicenses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1539,8 +1536,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       zone_ = "";
       machineTypeSeries_ = "";
       machineType_ = "";
-      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (networkInterfacesBuilder_ == null) {
         networkInterfaces_ = java.util.Collections.emptyList();
       } else {
@@ -1565,8 +1561,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       secureBoot_ = false;
       bootOption_ = 0;
       internalGetMutableMetadata().clear();
-      additionalLicenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00010000);
+      additionalLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       hostname_ = "";
       return this;
     }
@@ -1605,11 +1600,6 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
 
     private void buildPartialRepeatedFields(
         com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        networkTags_ = networkTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.networkTags_ = networkTags_;
       if (networkInterfacesBuilder_ == null) {
         if (((bitField0_ & 0x00000040) != 0)) {
           networkInterfaces_ = java.util.Collections.unmodifiableList(networkInterfaces_);
@@ -1619,11 +1609,6 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       } else {
         result.networkInterfaces_ = networkInterfacesBuilder_.build();
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
-        additionalLicenses_ = additionalLicenses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00010000);
-      }
-      result.additionalLicenses_ = additionalLicenses_;
     }
 
     private void buildPartial0(com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults result) {
@@ -1642,6 +1627,10 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        networkTags_.makeImmutable();
+        result.networkTags_ = networkTags_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.serviceAccount_ = serviceAccount_;
@@ -1675,6 +1664,10 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        additionalLicenses_.makeImmutable();
+        result.additionalLicenses_ = additionalLicenses_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.hostname_ = hostname_;
@@ -1755,7 +1748,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
@@ -1819,7 +1812,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       if (!other.additionalLicenses_.isEmpty()) {
         if (additionalLicenses_.isEmpty()) {
           additionalLicenses_ = other.additionalLicenses_;
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ |= 0x00010000;
         } else {
           ensureAdditionalLicensesIsMutable();
           additionalLicenses_.addAll(other.additionalLicenses_);
@@ -2542,14 +2535,14 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       return this;
     }
 
-    private com.google.protobuf.LazyStringList networkTags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList networkTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNetworkTagsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!networkTags_.isModifiable()) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2563,7 +2556,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return A list containing the networkTags.
      */
     public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
-      return networkTags_.getUnmodifiableView();
+      networkTags_.makeImmutable();
+      return networkTags_;
     }
     /**
      *
@@ -2628,6 +2622,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       }
       ensureNetworkTagsIsMutable();
       networkTags_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2649,6 +2644,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       }
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2667,6 +2663,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
       ensureNetworkTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2682,8 +2679,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearNetworkTags() {
-      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2706,6 +2704,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4235,14 +4234,14 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       return this;
     }
 
-    private com.google.protobuf.LazyStringList additionalLicenses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList additionalLicenses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAdditionalLicensesIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!additionalLicenses_.isModifiable()) {
         additionalLicenses_ = new com.google.protobuf.LazyStringArrayList(additionalLicenses_);
-        bitField0_ |= 0x00010000;
       }
+      bitField0_ |= 0x00010000;
     }
     /**
      *
@@ -4256,7 +4255,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return A list containing the additionalLicenses.
      */
     public com.google.protobuf.ProtocolStringList getAdditionalLicensesList() {
-      return additionalLicenses_.getUnmodifiableView();
+      additionalLicenses_.makeImmutable();
+      return additionalLicenses_;
     }
     /**
      *
@@ -4321,6 +4321,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       }
       ensureAdditionalLicensesIsMutable();
       additionalLicenses_.set(index, value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4342,6 +4343,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       }
       ensureAdditionalLicensesIsMutable();
       additionalLicenses_.add(value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4360,6 +4362,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     public Builder addAllAdditionalLicenses(java.lang.Iterable<java.lang.String> values) {
       ensureAdditionalLicensesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalLicenses_);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4375,8 +4378,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearAdditionalLicenses() {
-      additionalLicenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      additionalLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00010000);
+      ;
       onChanged();
       return this;
     }
@@ -4399,6 +4403,7 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensureAdditionalLicensesIsMutable();
       additionalLicenses_.add(value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }

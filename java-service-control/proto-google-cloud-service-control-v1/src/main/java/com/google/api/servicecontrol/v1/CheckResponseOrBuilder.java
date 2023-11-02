@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public interface CheckResponseOrBuilder
    *
    * <pre>
    * Indicate the decision of the check.
+   *
    * If no check errors are present, the service should process the operation.
    * Otherwise the service should use the list of errors to determine the
    * appropriate action.
@@ -70,6 +71,7 @@ public interface CheckResponseOrBuilder
    *
    * <pre>
    * Indicate the decision of the check.
+   *
    * If no check errors are present, the service should process the operation.
    * Otherwise the service should use the list of errors to determine the
    * appropriate action.
@@ -83,6 +85,7 @@ public interface CheckResponseOrBuilder
    *
    * <pre>
    * Indicate the decision of the check.
+   *
    * If no check errors are present, the service should process the operation.
    * Otherwise the service should use the list of errors to determine the
    * appropriate action.
@@ -96,6 +99,7 @@ public interface CheckResponseOrBuilder
    *
    * <pre>
    * Indicate the decision of the check.
+   *
    * If no check errors are present, the service should process the operation.
    * Otherwise the service should use the list of errors to determine the
    * appropriate action.
@@ -110,6 +114,7 @@ public interface CheckResponseOrBuilder
    *
    * <pre>
    * Indicate the decision of the check.
+   *
    * If no check errors are present, the service should process the operation.
    * Otherwise the service should use the list of errors to determine the
    * appropriate action.

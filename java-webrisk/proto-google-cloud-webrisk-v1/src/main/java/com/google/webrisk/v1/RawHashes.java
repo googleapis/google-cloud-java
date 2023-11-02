@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ package com.google.webrisk.v1;
  * Hashes can be anywhere from 4 to 32 bytes in size. A large majority are 4
  * bytes, but some hashes are lengthened if they collide with the hash of a
  * popular URI.
+ *
  * Used for sending ThreatEntryAdditons to clients that do not support
  * compression, or when sending non-4-byte hashes to clients that do support
  * compression.
@@ -51,11 +52,6 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RawHashes();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -286,6 +282,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
    * Hashes can be anywhere from 4 to 32 bytes in size. A large majority are 4
    * bytes, but some hashes are lengthened if they collide with the hash of a
    * popular URI.
+   *
    * Used for sending ThreatEntryAdditons to clients that do not support
    * compression, or when sending non-4-byte hashes to clients that do support
    * compression.

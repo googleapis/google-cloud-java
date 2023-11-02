@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
 
   private MergeCapacityCommitmentsRequest() {
     parent_ = "";
-    capacityCommitmentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    capacityCommitmentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MergeCapacityCommitmentsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -126,7 +121,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
   public static final int CAPACITY_COMMITMENT_IDS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList capacityCommitmentIds_;
+  private com.google.protobuf.LazyStringArrayList capacityCommitmentIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -424,8 +420,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       super.clear();
       bitField0_ = 0;
       parent_ = "";
-      capacityCommitmentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      capacityCommitmentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -456,7 +451,6 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
     public com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest buildPartial() {
       com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest result =
           new com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -464,20 +458,15 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        capacityCommitmentIds_ = capacityCommitmentIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.capacityCommitmentIds_ = capacityCommitmentIds_;
-    }
-
     private void buildPartial0(
         com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        capacityCommitmentIds_.makeImmutable();
+        result.capacityCommitmentIds_ = capacityCommitmentIds_;
       }
     }
 
@@ -539,7 +528,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       if (!other.capacityCommitmentIds_.isEmpty()) {
         if (capacityCommitmentIds_.isEmpty()) {
           capacityCommitmentIds_ = other.capacityCommitmentIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureCapacityCommitmentIdsIsMutable();
           capacityCommitmentIds_.addAll(other.capacityCommitmentIds_);
@@ -715,15 +704,15 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       return this;
     }
 
-    private com.google.protobuf.LazyStringList capacityCommitmentIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList capacityCommitmentIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCapacityCommitmentIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!capacityCommitmentIds_.isModifiable()) {
         capacityCommitmentIds_ =
             new com.google.protobuf.LazyStringArrayList(capacityCommitmentIds_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -741,7 +730,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * @return A list containing the capacityCommitmentIds.
      */
     public com.google.protobuf.ProtocolStringList getCapacityCommitmentIdsList() {
-      return capacityCommitmentIds_.getUnmodifiableView();
+      capacityCommitmentIds_.makeImmutable();
+      return capacityCommitmentIds_;
     }
     /**
      *
@@ -822,6 +812,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       }
       ensureCapacityCommitmentIdsIsMutable();
       capacityCommitmentIds_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -847,6 +838,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       }
       ensureCapacityCommitmentIdsIsMutable();
       capacityCommitmentIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -869,6 +861,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
     public Builder addAllCapacityCommitmentIds(java.lang.Iterable<java.lang.String> values) {
       ensureCapacityCommitmentIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, capacityCommitmentIds_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -888,8 +881,9 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearCapacityCommitmentIds() {
-      capacityCommitmentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      capacityCommitmentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -916,6 +910,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       checkByteStringIsUtf8(value);
       ensureCapacityCommitmentIdsIsMutable();
       capacityCommitmentIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DisableServiceRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -244,7 +239,9 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Name of the consumer and service to disable the service on.
+   *
    * The enable and disable methods currently only support projects.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com` where `123` is the
    * project number.
@@ -271,7 +268,9 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Name of the consumer and service to disable the service on.
+   *
    * The enable and disable methods currently only support projects.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com` where `123` is the
    * project number.
@@ -757,7 +756,9 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Name of the consumer and service to disable the service on.
+     *
      * The enable and disable methods currently only support projects.
+     *
      * An example name would be:
      * `projects/123/services/serviceusage.googleapis.com` where `123` is the
      * project number.
@@ -783,7 +784,9 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Name of the consumer and service to disable the service on.
+     *
      * The enable and disable methods currently only support projects.
+     *
      * An example name would be:
      * `projects/123/services/serviceusage.googleapis.com` where `123` is the
      * project number.
@@ -809,7 +812,9 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Name of the consumer and service to disable the service on.
+     *
      * The enable and disable methods currently only support projects.
+     *
      * An example name would be:
      * `projects/123/services/serviceusage.googleapis.com` where `123` is the
      * project number.
@@ -834,7 +839,9 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Name of the consumer and service to disable the service on.
+     *
      * The enable and disable methods currently only support projects.
+     *
      * An example name would be:
      * `projects/123/services/serviceusage.googleapis.com` where `123` is the
      * project number.
@@ -855,7 +862,9 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Name of the consumer and service to disable the service on.
+     *
      * The enable and disable methods currently only support projects.
+     *
      * An example name would be:
      * `projects/123/services/serviceusage.googleapis.com` where `123` is the
      * project number.

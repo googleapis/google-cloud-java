@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListNetworkEndpointGroupsRequest;
 import com.google.cloud.compute.v1.AttachNetworkEndpointsNetworkEndpointGroupRequest;
@@ -662,6 +663,12 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                     newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
         attachNetworkEndpointsTransportSettings =
@@ -669,11 +676,30 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                 .<AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(attachNetworkEndpointsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteNetworkEndpointGroupRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteNetworkEndpointGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "network_endpoint_group", String.valueOf(request.getNetworkEndpointGroup()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
         detachNetworkEndpointsTransportSettings =
@@ -681,17 +707,44 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                 .<DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(detachNetworkEndpointsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetNetworkEndpointGroupRequest, NetworkEndpointGroup>
         getTransportSettings =
             HttpJsonCallSettings.<GetNetworkEndpointGroupRequest, NetworkEndpointGroup>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertNetworkEndpointGroupRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertNetworkEndpointGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
         listTransportSettings =
@@ -699,6 +752,13 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                 .<ListNetworkEndpointGroupsRequest, NetworkEndpointGroupList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListNetworkEndpointsNetworkEndpointGroupsRequest,
@@ -710,6 +770,16 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                     newBuilder()
                 .setMethodDescriptor(listNetworkEndpointsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsNetworkEndpointGroupRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -718,6 +788,14 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                     newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
 
     this.aggregatedListCallable =

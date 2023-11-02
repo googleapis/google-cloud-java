@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     cpuOvercommitType_ = "";
     disks_ = java.util.Collections.emptyList();
     instanceConsumptionData_ = java.util.Collections.emptyList();
-    instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
     name_ = "";
     nodeType_ = "";
     serverId_ = "";
@@ -52,11 +52,6 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NodeGroupNode();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -704,7 +699,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
   public static final int INSTANCES_FIELD_NUMBER = 29097598;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList instances_;
+  private com.google.protobuf.LazyStringArrayList instances_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1580,8 +1576,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
         instanceConsumptionDataBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       name_ = "";
       nodeType_ = "";
       satisfiesPzs_ = false;
@@ -1661,11 +1656,6 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.instanceConsumptionData_ = instanceConsumptionDataBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        instances_ = instances_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.instances_ = instances_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.NodeGroupNode result) {
@@ -1681,6 +1671,10 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.cpuOvercommitType_ = cpuOvercommitType_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        instances_.makeImmutable();
+        result.instances_ = instances_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.name_ = name_;
@@ -1852,7 +1846,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       if (!other.instances_.isEmpty()) {
         if (instances_.isEmpty()) {
           instances_ = other.instances_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureInstancesIsMutable();
           instances_.addAll(other.instances_);
@@ -3468,14 +3462,14 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       return instanceConsumptionDataBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList instances_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList instances_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInstancesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!instances_.isModifiable()) {
         instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -3489,7 +3483,8 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the instances.
      */
     public com.google.protobuf.ProtocolStringList getInstancesList() {
-      return instances_.getUnmodifiableView();
+      instances_.makeImmutable();
+      return instances_;
     }
     /**
      *
@@ -3554,6 +3549,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstancesIsMutable();
       instances_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3575,6 +3571,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstancesIsMutable();
       instances_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3593,6 +3590,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInstances(java.lang.Iterable<java.lang.String> values) {
       ensureInstancesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3608,8 +3606,9 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstances() {
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -3632,6 +3631,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInstancesIsMutable();
       instances_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

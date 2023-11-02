@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
@@ -312,6 +313,156 @@ public class MockAnalyticsHubServiceImpl extends AnalyticsHubServiceImplBase {
                   "Unrecognized response type %s for method SubscribeListing, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SubscribeListingResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void subscribeDataExchange(
+      SubscribeDataExchangeRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SubscribeDataExchange, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void refreshSubscription(
+      RefreshSubscriptionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RefreshSubscription, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSubscription(
+      GetSubscriptionRequest request, StreamObserver<Subscription> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Subscription) {
+      requests.add(request);
+      responseObserver.onNext(((Subscription) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSubscription, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Subscription.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSubscriptions(
+      ListSubscriptionsRequest request,
+      StreamObserver<ListSubscriptionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSubscriptionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSubscriptionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSubscriptions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSubscriptionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSharedResourceSubscriptions(
+      ListSharedResourceSubscriptionsRequest request,
+      StreamObserver<ListSharedResourceSubscriptionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSharedResourceSubscriptionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSharedResourceSubscriptionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSharedResourceSubscriptions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSharedResourceSubscriptionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void revokeSubscription(
+      RevokeSubscriptionRequest request,
+      StreamObserver<RevokeSubscriptionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RevokeSubscriptionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RevokeSubscriptionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RevokeSubscription, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RevokeSubscriptionResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSubscription(
+      DeleteSubscriptionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSubscription, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

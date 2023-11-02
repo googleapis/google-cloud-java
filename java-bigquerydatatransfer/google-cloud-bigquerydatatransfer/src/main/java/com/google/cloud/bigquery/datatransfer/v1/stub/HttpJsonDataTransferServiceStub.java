@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse;
@@ -832,35 +833,73 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
         HttpJsonCallSettings.<GetDataSourceRequest, DataSource>newBuilder()
             .setMethodDescriptor(getDataSourceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
         listDataSourcesTransportSettings =
             HttpJsonCallSettings.<ListDataSourcesRequest, ListDataSourcesResponse>newBuilder()
                 .setMethodDescriptor(listDataSourcesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateTransferConfigRequest, TransferConfig>
         createTransferConfigTransportSettings =
             HttpJsonCallSettings.<CreateTransferConfigRequest, TransferConfig>newBuilder()
                 .setMethodDescriptor(createTransferConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateTransferConfigRequest, TransferConfig>
         updateTransferConfigTransportSettings =
             HttpJsonCallSettings.<UpdateTransferConfigRequest, TransferConfig>newBuilder()
                 .setMethodDescriptor(updateTransferConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "transfer_config.name",
+                          String.valueOf(request.getTransferConfig().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteTransferConfigRequest, Empty> deleteTransferConfigTransportSettings =
         HttpJsonCallSettings.<DeleteTransferConfigRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTransferConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetTransferConfigRequest, TransferConfig>
         getTransferConfigTransportSettings =
             HttpJsonCallSettings.<GetTransferConfigRequest, TransferConfig>newBuilder()
                 .setMethodDescriptor(getTransferConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListTransferConfigsRequest, ListTransferConfigsResponse>
         listTransferConfigsTransportSettings =
@@ -868,6 +907,12 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                 .<ListTransferConfigsRequest, ListTransferConfigsResponse>newBuilder()
                 .setMethodDescriptor(listTransferConfigsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
         scheduleTransferRunsTransportSettings =
@@ -875,6 +920,12 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                 .<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>newBuilder()
                 .setMethodDescriptor(scheduleTransferRunsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
         startManualTransferRunsTransportSettings =
@@ -882,50 +933,104 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                 .<StartManualTransferRunsRequest, StartManualTransferRunsResponse>newBuilder()
                 .setMethodDescriptor(startManualTransferRunsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetTransferRunRequest, TransferRun> getTransferRunTransportSettings =
         HttpJsonCallSettings.<GetTransferRunRequest, TransferRun>newBuilder()
             .setMethodDescriptor(getTransferRunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunTransportSettings =
         HttpJsonCallSettings.<DeleteTransferRunRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTransferRunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListTransferRunsRequest, ListTransferRunsResponse>
         listTransferRunsTransportSettings =
             HttpJsonCallSettings.<ListTransferRunsRequest, ListTransferRunsResponse>newBuilder()
                 .setMethodDescriptor(listTransferRunsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListTransferLogsRequest, ListTransferLogsResponse>
         listTransferLogsTransportSettings =
             HttpJsonCallSettings.<ListTransferLogsRequest, ListTransferLogsResponse>newBuilder()
                 .setMethodDescriptor(listTransferLogsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsTransportSettings =
             HttpJsonCallSettings.<CheckValidCredsRequest, CheckValidCredsResponse>newBuilder()
                 .setMethodDescriptor(checkValidCredsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesTransportSettings =
         HttpJsonCallSettings.<EnrollDataSourcesRequest, Empty>newBuilder()
             .setMethodDescriptor(enrollDataSourcesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.getDataSourceCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -273,7 +273,7 @@ public class UserEventServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Writes a single user event from the browser. This uses a GET request to due to browser
-   * restriction of POST-ing to a 3rd party domain.
+   * restriction of POST-ing to a third-party domain.
    *
    * <p>This method is used only by the Discovery Engine API JavaScript pixel and Google Tag
    * Manager. Users should not call this method directly.
@@ -311,7 +311,7 @@ public class UserEventServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Writes a single user event from the browser. This uses a GET request to due to browser
-   * restriction of POST-ing to a 3rd party domain.
+   * restriction of POST-ing to a third-party domain.
    *
    * <p>This method is used only by the Discovery Engine API JavaScript pixel and Google Tag
    * Manager. Users should not call this method directly.

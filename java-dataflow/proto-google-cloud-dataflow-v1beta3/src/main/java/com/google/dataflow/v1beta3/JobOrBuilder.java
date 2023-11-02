@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * The unique ID of this job.
+   *
    * This field is set by the Cloud Dataflow service when the Job is
    * created, and is immutable for the life of the job.
    * </pre>
@@ -42,6 +43,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * The unique ID of this job.
+   *
    * This field is set by the Cloud Dataflow service when the Job is
    * created, and is immutable for the life of the job.
    * </pre>
@@ -82,10 +84,12 @@ public interface JobOrBuilder
    *
    * <pre>
    * The user-specified Cloud Dataflow job name.
+   *
    * Only one Job with a given name may exist in a project at any
    * given time. If a caller attempts to create a Job with the same
    * name as an already-existing Job, the attempt returns the
    * existing Job.
+   *
    * The name must match the regular expression
    * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
@@ -100,10 +104,12 @@ public interface JobOrBuilder
    *
    * <pre>
    * The user-specified Cloud Dataflow job name.
+   *
    * Only one Job with a given name may exist in a project at any
    * given time. If a caller attempts to create a Job with the same
    * name as an already-existing Job, the attempt returns the
    * existing Job.
+   *
    * The name must match the regular expression
    * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
@@ -179,6 +185,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * Exactly one of step or steps_location should be specified.
+   *
    * The top-level steps that constitute the entire job. Only retrieved with
    * JOB_VIEW_ALL.
    * </pre>
@@ -191,6 +198,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * Exactly one of step or steps_location should be specified.
+   *
    * The top-level steps that constitute the entire job. Only retrieved with
    * JOB_VIEW_ALL.
    * </pre>
@@ -203,6 +211,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * Exactly one of step or steps_location should be specified.
+   *
    * The top-level steps that constitute the entire job. Only retrieved with
    * JOB_VIEW_ALL.
    * </pre>
@@ -215,6 +224,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * Exactly one of step or steps_location should be specified.
+   *
    * The top-level steps that constitute the entire job. Only retrieved with
    * JOB_VIEW_ALL.
    * </pre>
@@ -227,6 +237,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * Exactly one of step or steps_location should be specified.
+   *
    * The top-level steps that constitute the entire job. Only retrieved with
    * JOB_VIEW_ALL.
    * </pre>
@@ -265,11 +276,14 @@ public interface JobOrBuilder
    *
    * <pre>
    * The current state of the job.
+   *
    * Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise
    * specified.
+   *
    * A job in the `JOB_STATE_RUNNING` state may asynchronously enter a
    * terminal state. After a job has reached a terminal state, no
    * further state updates may be made.
+   *
    * This field may be mutated by the Cloud Dataflow service;
    * callers cannot mutate it.
    * </pre>
@@ -284,11 +298,14 @@ public interface JobOrBuilder
    *
    * <pre>
    * The current state of the job.
+   *
    * Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise
    * specified.
+   *
    * A job in the `JOB_STATE_RUNNING` state may asynchronously enter a
    * terminal state. After a job has reached a terminal state, no
    * further state updates may be made.
+   *
    * This field may be mutated by the Cloud Dataflow service;
    * callers cannot mutate it.
    * </pre>
@@ -339,6 +356,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * The job's requested state.
+   *
    * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
    * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
    * also be used to directly set a job's requested state to
@@ -356,6 +374,7 @@ public interface JobOrBuilder
    *
    * <pre>
    * The job's requested state.
+   *
    * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
    * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
    * also be used to directly set a job's requested state to
@@ -448,6 +467,7 @@ public interface JobOrBuilder
    * <pre>
    * If this job is an update of an existing job, this field is the job ID
    * of the job it replaced.
+   *
    * When sending a `CreateJobRequest`, you can update a job by specifying it
    * here. The job named here is stopped, and its intermediate state is
    * transferred to this job.
@@ -464,6 +484,7 @@ public interface JobOrBuilder
    * <pre>
    * If this job is an update of an existing job, this field is the job ID
    * of the job it replaced.
+   *
    * When sending a `CreateJobRequest`, you can update a job by specifying it
    * here. The job named here is stopped, and its intermediate state is
    * transferred to this job.
@@ -611,8 +632,11 @@ public interface JobOrBuilder
    * removed on job completion.
    * No duplicates are allowed.
    * No file patterns are supported.
+   *
    * The supported files are:
+   *
    * Google Cloud Storage:
+   *
    *    storage.googleapis.com/{bucket}/{object}
    *    bucket.storage.googleapis.com/{object}
    * </pre>
@@ -631,8 +655,11 @@ public interface JobOrBuilder
    * removed on job completion.
    * No duplicates are allowed.
    * No file patterns are supported.
+   *
    * The supported files are:
+   *
    * Google Cloud Storage:
+   *
    *    storage.googleapis.com/{bucket}/{object}
    *    bucket.storage.googleapis.com/{object}
    * </pre>
@@ -651,8 +678,11 @@ public interface JobOrBuilder
    * removed on job completion.
    * No duplicates are allowed.
    * No file patterns are supported.
+   *
    * The supported files are:
+   *
    * Google Cloud Storage:
+   *
    *    storage.googleapis.com/{bucket}/{object}
    *    bucket.storage.googleapis.com/{object}
    * </pre>
@@ -672,8 +702,11 @@ public interface JobOrBuilder
    * removed on job completion.
    * No duplicates are allowed.
    * No file patterns are supported.
+   *
    * The supported files are:
+   *
    * Google Cloud Storage:
+   *
    *    storage.googleapis.com/{bucket}/{object}
    *    bucket.storage.googleapis.com/{object}
    * </pre>
@@ -690,8 +723,10 @@ public interface JobOrBuilder
    *
    * <pre>
    * User-defined labels for this job.
+   *
    * The labels map can contain no more than 64 entries.  Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -706,8 +741,10 @@ public interface JobOrBuilder
    *
    * <pre>
    * User-defined labels for this job.
+   *
    * The labels map can contain no more than 64 entries.  Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -725,8 +762,10 @@ public interface JobOrBuilder
    *
    * <pre>
    * User-defined labels for this job.
+   *
    * The labels map can contain no more than 64 entries.  Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -741,8 +780,10 @@ public interface JobOrBuilder
    *
    * <pre>
    * User-defined labels for this job.
+   *
    * The labels map can contain no more than 64 entries.  Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -761,8 +802,10 @@ public interface JobOrBuilder
    *
    * <pre>
    * User-defined labels for this job.
+   *
    * The labels map can contain no more than 64 entries.  Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in

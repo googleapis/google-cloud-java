@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ public interface PredictRequestOrBuilder
    * least one serving config or placement for it. For more information, see
    * [Manage serving configs]
    * (https://cloud.google.com/retail/docs/manage-configs).
+   *
    * The full list of available serving configs can be seen at
    * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
    * </pre>
@@ -62,6 +63,7 @@ public interface PredictRequestOrBuilder
    * least one serving config or placement for it. For more information, see
    * [Manage serving configs]
    * (https://cloud.google.com/retail/docs/manage-configs).
+   *
    * The full list of available serving configs can be seen at
    * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
    * </pre>
@@ -80,6 +82,7 @@ public interface PredictRequestOrBuilder
    * they took to trigger the predict request. Note that this user event detail
    * won't be ingested to userEvent logs. Thus, a separate userEvent write
    * request is required for event logging.
+   *
    * Don't set
    * [UserEvent.visitor_id][google.cloud.retail.v2alpha.UserEvent.visitor_id] or
    * [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id] to the
@@ -106,6 +109,7 @@ public interface PredictRequestOrBuilder
    * they took to trigger the predict request. Note that this user event detail
    * won't be ingested to userEvent logs. Thus, a separate userEvent write
    * request is required for event logging.
+   *
    * Don't set
    * [UserEvent.visitor_id][google.cloud.retail.v2alpha.UserEvent.visitor_id] or
    * [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id] to the
@@ -132,6 +136,7 @@ public interface PredictRequestOrBuilder
    * they took to trigger the predict request. Note that this user event detail
    * won't be ingested to userEvent logs. Thus, a separate userEvent write
    * request is required for event logging.
+   *
    * Don't set
    * [UserEvent.visitor_id][google.cloud.retail.v2alpha.UserEvent.visitor_id] or
    * [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id] to the
@@ -202,32 +207,41 @@ public interface PredictRequestOrBuilder
    * <pre>
    * Filter for restricting prediction results with a length limit of 5,000
    * characters. Accepts values for tags and the `filterOutOfStockItems` flag.
+   *
    *  * Tag expressions. Restricts predictions to products that match all of the
    *    specified tags. Boolean operators `OR` and `NOT` are supported if the
    *    expression is enclosed in parentheses, and must be separated from the
    *    tag values by a space. `-"tagA"` is also supported and is equivalent to
    *    `NOT "tagA"`. Tag values must be double quoted UTF-8 encoded strings
    *    with a size limit of 1,000 characters.
+   *
    *    Note: "Recently viewed" models don't support tag filtering at the
    *    moment.
+   *
    *  * filterOutOfStockItems. Restricts predictions to products that do not
    *  have a
    *    stockState value of OUT_OF_STOCK.
+   *
    * Examples:
+   *
    *  * tag=("Red" OR "Blue") tag="New-Arrival" tag=(NOT "promotional")
    *  * filterOutOfStockItems  tag=(-"promotional")
    *  * filterOutOfStockItems
+   *
    * If your filter blocks all prediction results, the API will return *no*
    * results. If instead you want empty result sets to return generic
    * (unfiltered) popular products, set `strictFiltering` to False in
    * `PredictRequest.params`. Note that the API will never return items with
    * storageStatus of "EXPIRED" or "DELETED" regardless of filter choices.
+   *
    * If `filterSyntaxV2` is set to true under the `params` field, then
    * attribute-based expressions are expected instead of the above described
    * tag-based syntax. Examples:
+   *
    *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
    *  * (availability: ANY("IN_STOCK")) AND
    *    (colors: ANY("Red") OR categories: ANY("Phones"))
+   *
    * For more information, see
    * [Filter recommendations](https://cloud.google.com/retail/docs/filter-recs).
    * </pre>
@@ -243,32 +257,41 @@ public interface PredictRequestOrBuilder
    * <pre>
    * Filter for restricting prediction results with a length limit of 5,000
    * characters. Accepts values for tags and the `filterOutOfStockItems` flag.
+   *
    *  * Tag expressions. Restricts predictions to products that match all of the
    *    specified tags. Boolean operators `OR` and `NOT` are supported if the
    *    expression is enclosed in parentheses, and must be separated from the
    *    tag values by a space. `-"tagA"` is also supported and is equivalent to
    *    `NOT "tagA"`. Tag values must be double quoted UTF-8 encoded strings
    *    with a size limit of 1,000 characters.
+   *
    *    Note: "Recently viewed" models don't support tag filtering at the
    *    moment.
+   *
    *  * filterOutOfStockItems. Restricts predictions to products that do not
    *  have a
    *    stockState value of OUT_OF_STOCK.
+   *
    * Examples:
+   *
    *  * tag=("Red" OR "Blue") tag="New-Arrival" tag=(NOT "promotional")
    *  * filterOutOfStockItems  tag=(-"promotional")
    *  * filterOutOfStockItems
+   *
    * If your filter blocks all prediction results, the API will return *no*
    * results. If instead you want empty result sets to return generic
    * (unfiltered) popular products, set `strictFiltering` to False in
    * `PredictRequest.params`. Note that the API will never return items with
    * storageStatus of "EXPIRED" or "DELETED" regardless of filter choices.
+   *
    * If `filterSyntaxV2` is set to true under the `params` field, then
    * attribute-based expressions are expected instead of the above described
    * tag-based syntax. Examples:
+   *
    *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
    *  * (availability: ANY("IN_STOCK")) AND
    *    (colors: ANY("Red") OR categories: ANY("Phones"))
+   *
    * For more information, see
    * [Filter recommendations](https://cloud.google.com/retail/docs/filter-recs).
    * </pre>
@@ -300,7 +323,9 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Additional domain specific parameters for the predictions.
+   *
    * Allowed values:
+   *
    * * `returnProduct`: Boolean. If set to true, the associated product
    *    object will be returned in the `results.metadata` field in the
    *    prediction response.
@@ -334,7 +359,9 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Additional domain specific parameters for the predictions.
+   *
    * Allowed values:
+   *
    * * `returnProduct`: Boolean. If set to true, the associated product
    *    object will be returned in the `results.metadata` field in the
    *    prediction response.
@@ -371,7 +398,9 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Additional domain specific parameters for the predictions.
+   *
    * Allowed values:
+   *
    * * `returnProduct`: Boolean. If set to true, the associated product
    *    object will be returned in the `results.metadata` field in the
    *    prediction response.
@@ -405,7 +434,9 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Additional domain specific parameters for the predictions.
+   *
    * Allowed values:
+   *
    * * `returnProduct`: Boolean. If set to true, the associated product
    *    object will be returned in the `results.metadata` field in the
    *    prediction response.
@@ -443,7 +474,9 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * Additional domain specific parameters for the predictions.
+   *
    * Allowed values:
+   *
    * * `returnProduct`: Boolean. If set to true, the associated product
    *    object will be returned in the `results.metadata` field in the
    *    prediction response.
@@ -478,6 +511,7 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * The labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -489,6 +523,7 @@ public interface PredictRequestOrBuilder
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -502,6 +537,7 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * The labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -513,6 +549,7 @@ public interface PredictRequestOrBuilder
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -529,6 +566,7 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * The labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -540,6 +578,7 @@ public interface PredictRequestOrBuilder
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -553,6 +592,7 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * The labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -564,6 +604,7 @@ public interface PredictRequestOrBuilder
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -581,6 +622,7 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * The labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -592,6 +634,7 @@ public interface PredictRequestOrBuilder
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.

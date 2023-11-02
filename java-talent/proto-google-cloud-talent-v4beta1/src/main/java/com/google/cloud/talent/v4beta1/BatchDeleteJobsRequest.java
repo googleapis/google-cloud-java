@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
     return new BatchDeleteJobsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.JobServiceProto
         .internal_static_google_cloud_talent_v4beta1_BatchDeleteJobsRequest_descriptor;
@@ -77,6 +72,7 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    * is created. For example, "projects/foo".
@@ -105,6 +101,7 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
    * is created. For example, "projects/foo".
@@ -138,10 +135,14 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The filter string specifies the jobs to be deleted.
+   *
    * Supported operator: =, AND
+   *
    * The fields eligible for filtering are:
+   *
    * * `companyName` (Required)
    * * `requisitionId` (Required)
+   *
    * Sample Query: companyName = "projects/foo/companies/bar" AND
    * requisitionId = "req-1"
    * </pre>
@@ -167,10 +168,14 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The filter string specifies the jobs to be deleted.
+   *
    * Supported operator: =, AND
+   *
    * The fields eligible for filtering are:
+   *
    * * `companyName` (Required)
    * * `requisitionId` (Required)
+   *
    * Sample Query: companyName = "projects/foo/companies/bar" AND
    * requisitionId = "req-1"
    * </pre>
@@ -565,6 +570,7 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
@@ -592,6 +598,7 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
@@ -619,6 +626,7 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
@@ -645,6 +653,7 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
@@ -667,6 +676,7 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
+     *
      * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
      * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
      * is created. For example, "projects/foo".
@@ -696,10 +706,14 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The filter string specifies the jobs to be deleted.
+     *
      * Supported operator: =, AND
+     *
      * The fields eligible for filtering are:
+     *
      * * `companyName` (Required)
      * * `requisitionId` (Required)
+     *
      * Sample Query: companyName = "projects/foo/companies/bar" AND
      * requisitionId = "req-1"
      * </pre>
@@ -724,10 +738,14 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The filter string specifies the jobs to be deleted.
+     *
      * Supported operator: =, AND
+     *
      * The fields eligible for filtering are:
+     *
      * * `companyName` (Required)
      * * `requisitionId` (Required)
+     *
      * Sample Query: companyName = "projects/foo/companies/bar" AND
      * requisitionId = "req-1"
      * </pre>
@@ -752,10 +770,14 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The filter string specifies the jobs to be deleted.
+     *
      * Supported operator: =, AND
+     *
      * The fields eligible for filtering are:
+     *
      * * `companyName` (Required)
      * * `requisitionId` (Required)
+     *
      * Sample Query: companyName = "projects/foo/companies/bar" AND
      * requisitionId = "req-1"
      * </pre>
@@ -779,10 +801,14 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The filter string specifies the jobs to be deleted.
+     *
      * Supported operator: =, AND
+     *
      * The fields eligible for filtering are:
+     *
      * * `companyName` (Required)
      * * `requisitionId` (Required)
+     *
      * Sample Query: companyName = "projects/foo/companies/bar" AND
      * requisitionId = "req-1"
      * </pre>
@@ -802,10 +828,14 @@ public final class BatchDeleteJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The filter string specifies the jobs to be deleted.
+     *
      * Supported operator: =, AND
+     *
      * The fields eligible for filtering are:
+     *
      * * `companyName` (Required)
      * * `requisitionId` (Required)
+     *
      * Sample Query: companyName = "projects/foo/companies/bar" AND
      * requisitionId = "req-1"
      * </pre>

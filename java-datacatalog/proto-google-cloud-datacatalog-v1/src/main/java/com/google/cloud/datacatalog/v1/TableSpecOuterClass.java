@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,28 +55,29 @@ public final class TableSpecOuterClass {
       "\n,google/cloud/datacatalog/v1/table_spec"
           + ".proto\022\033google.cloud.datacatalog.v1\032\037goo"
           + "gle/api/field_behavior.proto\032\031google/api"
-          + "/resource.proto\"\350\001\n\021BigQueryTableSpec\022L\n"
+          + "/resource.proto\"\351\001\n\021BigQueryTableSpec\022M\n"
           + "\021table_source_type\030\001 \001(\0162,.google.cloud."
-          + "datacatalog.v1.TableSourceTypeB\003\340A\003\022:\n\tv"
-          + "iew_spec\030\002 \001(\0132%.google.cloud.datacatalo"
-          + "g.v1.ViewSpecH\000\022<\n\ntable_spec\030\003 \001(\0132&.go"
-          + "ogle.cloud.datacatalog.v1.TableSpecH\000B\013\n"
-          + "\ttype_spec\"#\n\010ViewSpec\022\027\n\nview_query\030\001 \001"
-          + "(\tB\003\340A\003\"L\n\tTableSpec\022?\n\rgrouped_entry\030\001 "
-          + "\001(\tB(\340A\003\372A\"\n datacatalog.googleapis.com/"
-          + "Entry\"\255\001\n\027BigQueryDateShardedSpec\0229\n\007dat"
-          + "aset\030\001 \001(\tB(\340A\003\372A\"\n datacatalog.googleap"
-          + "is.com/Entry\022\031\n\014table_prefix\030\002 \001(\tB\003\340A\003\022"
-          + "\030\n\013shard_count\030\003 \001(\003B\003\340A\003\022\"\n\025latest_shar"
-          + "d_resource\030\004 \001(\tB\003\340A\003*{\n\017TableSourceType"
-          + "\022!\n\035TABLE_SOURCE_TYPE_UNSPECIFIED\020\000\022\021\n\rB"
-          + "IGQUERY_VIEW\020\002\022\022\n\016BIGQUERY_TABLE\020\005\022\036\n\032BI"
-          + "GQUERY_MATERIALIZED_VIEW\020\007B\306\001\n\037com.googl"
-          + "e.cloud.datacatalog.v1P\001ZAcloud.google.c"
-          + "om/go/datacatalog/apiv1/datacatalogpb;da"
-          + "tacatalogpb\370\001\001\252\002\033Google.Cloud.DataCatalo"
-          + "g.V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Goo"
-          + "gle::Cloud::DataCatalog::V1b\006proto3"
+          + "datacatalog.v1.TableSourceTypeB\004\342A\001\003\022:\n\t"
+          + "view_spec\030\002 \001(\0132%.google.cloud.datacatal"
+          + "og.v1.ViewSpecH\000\022<\n\ntable_spec\030\003 \001(\0132&.g"
+          + "oogle.cloud.datacatalog.v1.TableSpecH\000B\013"
+          + "\n\ttype_spec\"$\n\010ViewSpec\022\030\n\nview_query\030\001 "
+          + "\001(\tB\004\342A\001\003\"M\n\tTableSpec\022@\n\rgrouped_entry\030"
+          + "\001 \001(\tB)\342A\001\003\372A\"\n datacatalog.googleapis.c"
+          + "om/Entry\"\261\001\n\027BigQueryDateShardedSpec\022:\n\007"
+          + "dataset\030\001 \001(\tB)\342A\001\003\372A\"\n datacatalog.goog"
+          + "leapis.com/Entry\022\032\n\014table_prefix\030\002 \001(\tB\004"
+          + "\342A\001\003\022\031\n\013shard_count\030\003 \001(\003B\004\342A\001\003\022#\n\025lates"
+          + "t_shard_resource\030\004 \001(\tB\004\342A\001\003*{\n\017TableSou"
+          + "rceType\022!\n\035TABLE_SOURCE_TYPE_UNSPECIFIED"
+          + "\020\000\022\021\n\rBIGQUERY_VIEW\020\002\022\022\n\016BIGQUERY_TABLE\020"
+          + "\005\022\036\n\032BIGQUERY_MATERIALIZED_VIEW\020\007B\306\001\n\037co"
+          + "m.google.cloud.datacatalog.v1P\001ZAcloud.g"
+          + "oogle.com/go/datacatalog/apiv1/datacatal"
+          + "ogpb;datacatalogpb\370\001\001\252\002\033Google.Cloud.Dat"
+          + "aCatalog.V1\312\002\033Google\\Cloud\\DataCatalog\\V"
+          + "1\352\002\036Google::Cloud::DataCatalog::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

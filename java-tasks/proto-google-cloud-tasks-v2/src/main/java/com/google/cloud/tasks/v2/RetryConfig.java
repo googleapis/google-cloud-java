@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.tasks.v2;
  *
  * <pre>
  * Retry config.
+ *
  * These settings determine when a failed task attempt is retried.
  * </pre>
  *
@@ -44,11 +45,6 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RetryConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -73,12 +69,16 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Number of attempts per task.
+   *
    * Cloud Tasks will attempt the task `max_attempts` times (that is, if the
    * first attempt fails, then there will be `max_attempts - 1` retries). Must
    * be &gt;= -1.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
+   *
    * -1 indicates unlimited attempts.
+   *
    * This field has the same meaning as
    * [task_retry_limit in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -105,10 +105,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * task has been attempted
    * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
    * further attempts will be made and the task will be deleted.
+   *
    * If zero, then the task age is unlimited.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
+   *
+   *
    * `max_retry_duration` will be truncated to the nearest second.
+   *
    * This field has the same meaning as
    * [task_age_limit in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -132,10 +137,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * task has been attempted
    * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
    * further attempts will be made and the task will be deleted.
+   *
    * If zero, then the task age is unlimited.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
+   *
+   *
    * `max_retry_duration` will be truncated to the nearest second.
+   *
    * This field has the same meaning as
    * [task_age_limit in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -161,10 +171,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * task has been attempted
    * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
    * further attempts will be made and the task will be deleted.
+   *
    * If zero, then the task age is unlimited.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
+   *
+   *
    * `max_retry_duration` will be truncated to the nearest second.
+   *
    * This field has the same meaning as
    * [task_age_limit in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -191,9 +206,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * after it fails, if the queue's
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
+   *
+   *
    * `min_backoff` will be truncated to the nearest second.
+   *
    * This field has the same meaning as
    * [min_backoff_seconds in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -217,9 +236,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * after it fails, if the queue's
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
+   *
+   *
    * `min_backoff` will be truncated to the nearest second.
+   *
    * This field has the same meaning as
    * [min_backoff_seconds in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -243,9 +266,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * after it fails, if the queue's
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
+   *
+   *
    * `min_backoff` will be truncated to the nearest second.
+   *
    * This field has the same meaning as
    * [min_backoff_seconds in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -270,9 +297,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * after it fails, if the queue's
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
+   *
+   *
    * `max_backoff` will be truncated to the nearest second.
+   *
    * This field has the same meaning as
    * [max_backoff_seconds in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -296,9 +327,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * after it fails, if the queue's
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
+   *
+   *
    * `max_backoff` will be truncated to the nearest second.
+   *
    * This field has the same meaning as
    * [max_backoff_seconds in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -322,9 +357,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * after it fails, if the queue's
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
+   *
+   *
    * `max_backoff` will be truncated to the nearest second.
+   *
    * This field has the same meaning as
    * [max_backoff_seconds in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -344,12 +383,14 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The time between retries will double `max_doublings` times.
+   *
    * A task's retry interval starts at
    * [min_backoff][google.cloud.tasks.v2.RetryConfig.min_backoff], then doubles
    * `max_doublings` times, then increases linearly, and finally
-   * retries retries at intervals of
+   * retries at intervals of
    * [max_backoff][google.cloud.tasks.v2.RetryConfig.max_backoff] up to
    * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times.
+   *
    * For example, if
    * [min_backoff][google.cloud.tasks.v2.RetryConfig.min_backoff] is 10s,
    * [max_backoff][google.cloud.tasks.v2.RetryConfig.max_backoff] is 300s, and
@@ -360,8 +401,11 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * until the task has been attempted
    * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times. Thus,
    * the requests will retry at 10s, 20s, 40s, 80s, 160s, 240s, 300s, 300s, ....
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
+   *
+   *
    * This field has the same meaning as
    * [max_doublings in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -589,6 +633,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Retry config.
+   *
    * These settings determine when a failed task attempt is retried.
    * </pre>
    *
@@ -837,12 +882,16 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Number of attempts per task.
+     *
      * Cloud Tasks will attempt the task `max_attempts` times (that is, if the
      * first attempt fails, then there will be `max_attempts - 1` retries). Must
      * be &gt;= -1.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
      * -1 indicates unlimited attempts.
+     *
      * This field has the same meaning as
      * [task_retry_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -861,12 +910,16 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Number of attempts per task.
+     *
      * Cloud Tasks will attempt the task `max_attempts` times (that is, if the
      * first attempt fails, then there will be `max_attempts - 1` retries). Must
      * be &gt;= -1.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
      * -1 indicates unlimited attempts.
+     *
      * This field has the same meaning as
      * [task_retry_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -889,12 +942,16 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Number of attempts per task.
+     *
      * Cloud Tasks will attempt the task `max_attempts` times (that is, if the
      * first attempt fails, then there will be `max_attempts - 1` retries). Must
      * be &gt;= -1.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
      * -1 indicates unlimited attempts.
+     *
      * This field has the same meaning as
      * [task_retry_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -927,10 +984,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
      * further attempts will be made and the task will be deleted.
+     *
      * If zero, then the task age is unlimited.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_retry_duration` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [task_age_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -953,10 +1015,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
      * further attempts will be made and the task will be deleted.
+     *
      * If zero, then the task age is unlimited.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_retry_duration` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [task_age_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -985,10 +1052,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
      * further attempts will be made and the task will be deleted.
+     *
      * If zero, then the task age is unlimited.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_retry_duration` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [task_age_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1019,10 +1091,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
      * further attempts will be made and the task will be deleted.
+     *
      * If zero, then the task age is unlimited.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_retry_duration` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [task_age_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1050,10 +1127,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
      * further attempts will be made and the task will be deleted.
+     *
      * If zero, then the task age is unlimited.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_retry_duration` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [task_age_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1087,10 +1169,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
      * further attempts will be made and the task will be deleted.
+     *
      * If zero, then the task age is unlimited.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_retry_duration` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [task_age_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1118,10 +1205,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
      * further attempts will be made and the task will be deleted.
+     *
      * If zero, then the task age is unlimited.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_retry_duration` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [task_age_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1144,10 +1236,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
      * further attempts will be made and the task will be deleted.
+     *
      * If zero, then the task age is unlimited.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_retry_duration` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [task_age_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1174,10 +1271,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
      * further attempts will be made and the task will be deleted.
+     *
      * If zero, then the task age is unlimited.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_retry_duration` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [task_age_limit in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1218,9 +1320,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `min_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [min_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1243,9 +1349,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `min_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [min_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1274,9 +1384,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `min_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [min_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1307,9 +1421,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `min_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [min_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1337,9 +1455,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `min_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [min_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1373,9 +1495,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `min_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [min_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1403,9 +1529,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `min_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [min_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1428,9 +1558,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `min_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [min_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1457,9 +1591,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `min_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [min_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1500,9 +1638,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [max_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1525,9 +1667,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [max_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1556,9 +1702,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [max_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1589,9 +1739,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [max_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1619,9 +1773,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [max_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1655,9 +1813,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [max_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1685,9 +1847,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [max_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1710,9 +1876,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [max_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1739,9 +1909,13 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * after it fails, if the queue's
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * `max_backoff` will be truncated to the nearest second.
+     *
      * This field has the same meaning as
      * [max_backoff_seconds in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1772,12 +1946,14 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time between retries will double `max_doublings` times.
+     *
      * A task's retry interval starts at
      * [min_backoff][google.cloud.tasks.v2.RetryConfig.min_backoff], then doubles
      * `max_doublings` times, then increases linearly, and finally
-     * retries retries at intervals of
+     * retries at intervals of
      * [max_backoff][google.cloud.tasks.v2.RetryConfig.max_backoff] up to
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times.
+     *
      * For example, if
      * [min_backoff][google.cloud.tasks.v2.RetryConfig.min_backoff] is 10s,
      * [max_backoff][google.cloud.tasks.v2.RetryConfig.max_backoff] is 300s, and
@@ -1788,8 +1964,11 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * until the task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times. Thus,
      * the requests will retry at 10s, 20s, 40s, 80s, 160s, 240s, 300s, 300s, ....
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * This field has the same meaning as
      * [max_doublings in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1808,12 +1987,14 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time between retries will double `max_doublings` times.
+     *
      * A task's retry interval starts at
      * [min_backoff][google.cloud.tasks.v2.RetryConfig.min_backoff], then doubles
      * `max_doublings` times, then increases linearly, and finally
-     * retries retries at intervals of
+     * retries at intervals of
      * [max_backoff][google.cloud.tasks.v2.RetryConfig.max_backoff] up to
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times.
+     *
      * For example, if
      * [min_backoff][google.cloud.tasks.v2.RetryConfig.min_backoff] is 10s,
      * [max_backoff][google.cloud.tasks.v2.RetryConfig.max_backoff] is 300s, and
@@ -1824,8 +2005,11 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * until the task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times. Thus,
      * the requests will retry at 10s, 20s, 40s, 80s, 160s, 240s, 300s, 300s, ....
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * This field has the same meaning as
      * [max_doublings in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
@@ -1848,12 +2032,14 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The time between retries will double `max_doublings` times.
+     *
      * A task's retry interval starts at
      * [min_backoff][google.cloud.tasks.v2.RetryConfig.min_backoff], then doubles
      * `max_doublings` times, then increases linearly, and finally
-     * retries retries at intervals of
+     * retries at intervals of
      * [max_backoff][google.cloud.tasks.v2.RetryConfig.max_backoff] up to
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times.
+     *
      * For example, if
      * [min_backoff][google.cloud.tasks.v2.RetryConfig.min_backoff] is 10s,
      * [max_backoff][google.cloud.tasks.v2.RetryConfig.max_backoff] is 300s, and
@@ -1864,8 +2050,11 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * until the task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times. Thus,
      * the requests will retry at 10s, 20s, 40s, 80s, 160s, 240s, 300s, 300s, ....
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
+     *
+     *
      * This field has the same meaning as
      * [max_doublings in
      * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).

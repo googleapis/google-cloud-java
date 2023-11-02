@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ public interface CreateSecretRequestOrBuilder
    *
    * <pre>
    * Required. This must be unique within the project.
+   *
    * A secret ID is a string with a maximum length of 255 characters and can
    * contain uppercase and lowercase letters, numerals, and the hyphen (`-`) and
    * underscore (`_`) characters.
@@ -74,6 +75,7 @@ public interface CreateSecretRequestOrBuilder
    *
    * <pre>
    * Required. This must be unique within the project.
+   *
    * A secret ID is a string with a maximum length of 255 characters and can
    * contain uppercase and lowercase letters, numerals, and the hyphen (`-`) and
    * underscore (`_`) characters.

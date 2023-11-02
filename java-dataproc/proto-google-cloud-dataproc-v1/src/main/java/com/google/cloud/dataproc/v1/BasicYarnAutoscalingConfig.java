@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     return new BasicYarnAutoscalingConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.AutoscalingPoliciesProto
         .internal_static_google_cloud_dataproc_v1_BasicYarnAutoscalingConfig_descriptor;
@@ -75,6 +70,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * Specifies the duration to wait for jobs to complete before forcefully
    * removing workers (and potentially interrupting jobs). Only applicable to
    * downscaling operations.
+   *
    * Bounds: [0s, 1d].
    * </pre>
    *
@@ -96,6 +92,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * Specifies the duration to wait for jobs to complete before forcefully
    * removing workers (and potentially interrupting jobs). Only applicable to
    * downscaling operations.
+   *
    * Bounds: [0s, 1d].
    * </pre>
    *
@@ -119,6 +116,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * Specifies the duration to wait for jobs to complete before forcefully
    * removing workers (and potentially interrupting jobs). Only applicable to
    * downscaling operations.
+   *
    * Bounds: [0s, 1d].
    * </pre>
    *
@@ -147,6 +145,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * autoscaling
    * works](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/autoscaling#how_autoscaling_works)
    * for more information.
+   *
    * Bounds: [0.0, 1.0].
    * </pre>
    *
@@ -173,6 +172,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * See [How autoscaling
    * works](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/autoscaling#how_autoscaling_works)
    * for more information.
+   *
    * Bounds: [0.0, 1.0].
    * </pre>
    *
@@ -196,6 +196,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * 0.1 means the autoscaler must recommend at least a 2-worker scale-up for
    * the cluster to scale. A threshold of 0 means the autoscaler will scale up
    * on any recommended change.
+   *
    * Bounds: [0.0, 1.0]. Default: 0.0.
    * </pre>
    *
@@ -219,6 +220,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * 0.1 means the autoscaler must recommend at least a 2 worker scale-down for
    * the cluster to scale. A threshold of 0 means the autoscaler will scale down
    * on any recommended change.
+   *
    * Bounds: [0.0, 1.0]. Default: 0.0.
    * </pre>
    *
@@ -708,6 +710,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * Specifies the duration to wait for jobs to complete before forcefully
      * removing workers (and potentially interrupting jobs). Only applicable to
      * downscaling operations.
+     *
      * Bounds: [0s, 1d].
      * </pre>
      *
@@ -728,6 +731,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * Specifies the duration to wait for jobs to complete before forcefully
      * removing workers (and potentially interrupting jobs). Only applicable to
      * downscaling operations.
+     *
      * Bounds: [0s, 1d].
      * </pre>
      *
@@ -754,6 +758,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * Specifies the duration to wait for jobs to complete before forcefully
      * removing workers (and potentially interrupting jobs). Only applicable to
      * downscaling operations.
+     *
      * Bounds: [0s, 1d].
      * </pre>
      *
@@ -782,6 +787,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * Specifies the duration to wait for jobs to complete before forcefully
      * removing workers (and potentially interrupting jobs). Only applicable to
      * downscaling operations.
+     *
      * Bounds: [0s, 1d].
      * </pre>
      *
@@ -808,6 +814,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * Specifies the duration to wait for jobs to complete before forcefully
      * removing workers (and potentially interrupting jobs). Only applicable to
      * downscaling operations.
+     *
      * Bounds: [0s, 1d].
      * </pre>
      *
@@ -839,6 +846,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * Specifies the duration to wait for jobs to complete before forcefully
      * removing workers (and potentially interrupting jobs). Only applicable to
      * downscaling operations.
+     *
      * Bounds: [0s, 1d].
      * </pre>
      *
@@ -864,6 +872,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * Specifies the duration to wait for jobs to complete before forcefully
      * removing workers (and potentially interrupting jobs). Only applicable to
      * downscaling operations.
+     *
      * Bounds: [0s, 1d].
      * </pre>
      *
@@ -884,6 +893,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * Specifies the duration to wait for jobs to complete before forcefully
      * removing workers (and potentially interrupting jobs). Only applicable to
      * downscaling operations.
+     *
      * Bounds: [0s, 1d].
      * </pre>
      *
@@ -908,6 +918,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * Specifies the duration to wait for jobs to complete before forcefully
      * removing workers (and potentially interrupting jobs). Only applicable to
      * downscaling operations.
+     *
      * Bounds: [0s, 1d].
      * </pre>
      *
@@ -945,6 +956,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * autoscaling
      * works](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/autoscaling#how_autoscaling_works)
      * for more information.
+     *
      * Bounds: [0.0, 1.0].
      * </pre>
      *
@@ -968,6 +980,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * autoscaling
      * works](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/autoscaling#how_autoscaling_works)
      * for more information.
+     *
      * Bounds: [0.0, 1.0].
      * </pre>
      *
@@ -995,6 +1008,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * autoscaling
      * works](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/autoscaling#how_autoscaling_works)
      * for more information.
+     *
      * Bounds: [0.0, 1.0].
      * </pre>
      *
@@ -1022,6 +1036,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * See [How autoscaling
      * works](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/autoscaling#how_autoscaling_works)
      * for more information.
+     *
      * Bounds: [0.0, 1.0].
      * </pre>
      *
@@ -1045,6 +1060,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * See [How autoscaling
      * works](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/autoscaling#how_autoscaling_works)
      * for more information.
+     *
      * Bounds: [0.0, 1.0].
      * </pre>
      *
@@ -1072,6 +1088,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * See [How autoscaling
      * works](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/autoscaling#how_autoscaling_works)
      * for more information.
+     *
      * Bounds: [0.0, 1.0].
      * </pre>
      *
@@ -1096,6 +1113,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * 0.1 means the autoscaler must recommend at least a 2-worker scale-up for
      * the cluster to scale. A threshold of 0 means the autoscaler will scale up
      * on any recommended change.
+     *
      * Bounds: [0.0, 1.0]. Default: 0.0.
      * </pre>
      *
@@ -1117,6 +1135,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * 0.1 means the autoscaler must recommend at least a 2-worker scale-up for
      * the cluster to scale. A threshold of 0 means the autoscaler will scale up
      * on any recommended change.
+     *
      * Bounds: [0.0, 1.0]. Default: 0.0.
      * </pre>
      *
@@ -1142,6 +1161,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * 0.1 means the autoscaler must recommend at least a 2-worker scale-up for
      * the cluster to scale. A threshold of 0 means the autoscaler will scale up
      * on any recommended change.
+     *
      * Bounds: [0.0, 1.0]. Default: 0.0.
      * </pre>
      *
@@ -1167,6 +1187,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * 0.1 means the autoscaler must recommend at least a 2 worker scale-down for
      * the cluster to scale. A threshold of 0 means the autoscaler will scale down
      * on any recommended change.
+     *
      * Bounds: [0.0, 1.0]. Default: 0.0.
      * </pre>
      *
@@ -1188,6 +1209,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * 0.1 means the autoscaler must recommend at least a 2 worker scale-down for
      * the cluster to scale. A threshold of 0 means the autoscaler will scale down
      * on any recommended change.
+     *
      * Bounds: [0.0, 1.0]. Default: 0.0.
      * </pre>
      *
@@ -1213,6 +1235,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      * 0.1 means the autoscaler must recommend at least a 2 worker scale-down for
      * the cluster to scale. A threshold of 0 means the autoscaler will scale down
      * on any recommended change.
+     *
      * Bounds: [0.0, 1.0]. Default: 0.0.
      * </pre>
      *

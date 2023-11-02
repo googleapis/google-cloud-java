@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
     return new SearchInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1beta.UserEventProto
         .internal_static_google_cloud_discoveryengine_v1beta_SearchInfo_descriptor;
@@ -78,17 +73,20 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user's search query.
+   *
    * See
    * [SearchRequest.query][google.cloud.discoveryengine.v1beta.SearchRequest.query]
    * for definition.
+   *
    * The value must be a UTF-8 encoded string with a length limit of 5,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+   *
    * At least one of
    * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
    * or
    * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
    * is required for `search` events. Other event types should not set this
-   * field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string search_query = 1;</code>
@@ -112,17 +110,20 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user's search query.
+   *
    * See
    * [SearchRequest.query][google.cloud.discoveryengine.v1beta.SearchRequest.query]
    * for definition.
+   *
    * The value must be a UTF-8 encoded string with a length limit of 5,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+   *
    * At least one of
    * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
    * or
    * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
    * is required for `search` events. Other event types should not set this
-   * field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string search_query = 1;</code>
@@ -151,13 +152,16 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The order in which products are returned, if applicable.
+   *
    * See
    * [SearchRequest.order_by][google.cloud.discoveryengine.v1beta.SearchRequest.order_by]
    * for definition and syntax.
+   *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+   *
    * This can only be set for `search` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string order_by = 2;</code>
@@ -181,13 +185,16 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The order in which products are returned, if applicable.
+   *
    * See
    * [SearchRequest.order_by][google.cloud.discoveryengine.v1beta.SearchRequest.order_by]
    * for definition and syntax.
+   *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+   *
    * This can only be set for `search` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string order_by = 2;</code>
@@ -215,12 +222,15 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An integer that specifies the current offset for pagination (the 0-indexed
    * starting location, amongst the products deemed by the API as relevant).
+   *
    * See
    * [SearchRequest.offset][google.cloud.discoveryengine.v1beta.SearchRequest.offset]
    * for definition.
-   * If this field is negative, an INVALID_ARGUMENT is returned.
+   *
+   * If this field is negative, an `INVALID_ARGUMENT` is returned.
+   *
    * This can only be set for `search` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>optional int32 offset = 3;</code>
@@ -237,12 +247,15 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An integer that specifies the current offset for pagination (the 0-indexed
    * starting location, amongst the products deemed by the API as relevant).
+   *
    * See
    * [SearchRequest.offset][google.cloud.discoveryengine.v1beta.SearchRequest.offset]
    * for definition.
-   * If this field is negative, an INVALID_ARGUMENT is returned.
+   *
+   * If this field is negative, an `INVALID_ARGUMENT` is returned.
+   *
    * This can only be set for `search` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>optional int32 offset = 3;</code>
@@ -656,17 +669,20 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user's search query.
+     *
      * See
      * [SearchRequest.query][google.cloud.discoveryengine.v1beta.SearchRequest.query]
      * for definition.
+     *
      * The value must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     *
      * At least one of
      * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
      * or
      * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
      * is required for `search` events. Other event types should not set this
-     * field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string search_query = 1;</code>
@@ -689,17 +705,20 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user's search query.
+     *
      * See
      * [SearchRequest.query][google.cloud.discoveryengine.v1beta.SearchRequest.query]
      * for definition.
+     *
      * The value must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     *
      * At least one of
      * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
      * or
      * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
      * is required for `search` events. Other event types should not set this
-     * field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string search_query = 1;</code>
@@ -722,17 +741,20 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user's search query.
+     *
      * See
      * [SearchRequest.query][google.cloud.discoveryengine.v1beta.SearchRequest.query]
      * for definition.
+     *
      * The value must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     *
      * At least one of
      * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
      * or
      * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
      * is required for `search` events. Other event types should not set this
-     * field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string search_query = 1;</code>
@@ -754,17 +776,20 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user's search query.
+     *
      * See
      * [SearchRequest.query][google.cloud.discoveryengine.v1beta.SearchRequest.query]
      * for definition.
+     *
      * The value must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     *
      * At least one of
      * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
      * or
      * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
      * is required for `search` events. Other event types should not set this
-     * field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string search_query = 1;</code>
@@ -782,17 +807,20 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user's search query.
+     *
      * See
      * [SearchRequest.query][google.cloud.discoveryengine.v1beta.SearchRequest.query]
      * for definition.
+     *
      * The value must be a UTF-8 encoded string with a length limit of 5,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     *
      * At least one of
      * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
      * or
      * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
      * is required for `search` events. Other event types should not set this
-     * field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string search_query = 1;</code>
@@ -817,13 +845,16 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The order in which products are returned, if applicable.
+     *
      * See
      * [SearchRequest.order_by][google.cloud.discoveryengine.v1beta.SearchRequest.order_by]
      * for definition and syntax.
+     *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     *
      * This can only be set for `search` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string order_by = 2;</code>
@@ -846,13 +877,16 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The order in which products are returned, if applicable.
+     *
      * See
      * [SearchRequest.order_by][google.cloud.discoveryengine.v1beta.SearchRequest.order_by]
      * for definition and syntax.
+     *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     *
      * This can only be set for `search` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string order_by = 2;</code>
@@ -875,13 +909,16 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The order in which products are returned, if applicable.
+     *
      * See
      * [SearchRequest.order_by][google.cloud.discoveryengine.v1beta.SearchRequest.order_by]
      * for definition and syntax.
+     *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     *
      * This can only be set for `search` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string order_by = 2;</code>
@@ -903,13 +940,16 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The order in which products are returned, if applicable.
+     *
      * See
      * [SearchRequest.order_by][google.cloud.discoveryengine.v1beta.SearchRequest.order_by]
      * for definition and syntax.
+     *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     *
      * This can only be set for `search` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string order_by = 2;</code>
@@ -927,13 +967,16 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The order in which products are returned, if applicable.
+     *
      * See
      * [SearchRequest.order_by][google.cloud.discoveryengine.v1beta.SearchRequest.order_by]
      * for definition and syntax.
+     *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+     *
      * This can only be set for `search` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string order_by = 2;</code>
@@ -959,12 +1002,15 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An integer that specifies the current offset for pagination (the 0-indexed
      * starting location, amongst the products deemed by the API as relevant).
+     *
      * See
      * [SearchRequest.offset][google.cloud.discoveryengine.v1beta.SearchRequest.offset]
      * for definition.
-     * If this field is negative, an INVALID_ARGUMENT is returned.
+     *
+     * If this field is negative, an `INVALID_ARGUMENT` is returned.
+     *
      * This can only be set for `search` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>optional int32 offset = 3;</code>
@@ -981,12 +1027,15 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An integer that specifies the current offset for pagination (the 0-indexed
      * starting location, amongst the products deemed by the API as relevant).
+     *
      * See
      * [SearchRequest.offset][google.cloud.discoveryengine.v1beta.SearchRequest.offset]
      * for definition.
-     * If this field is negative, an INVALID_ARGUMENT is returned.
+     *
+     * If this field is negative, an `INVALID_ARGUMENT` is returned.
+     *
      * This can only be set for `search` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>optional int32 offset = 3;</code>
@@ -1003,12 +1052,15 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An integer that specifies the current offset for pagination (the 0-indexed
      * starting location, amongst the products deemed by the API as relevant).
+     *
      * See
      * [SearchRequest.offset][google.cloud.discoveryengine.v1beta.SearchRequest.offset]
      * for definition.
-     * If this field is negative, an INVALID_ARGUMENT is returned.
+     *
+     * If this field is negative, an `INVALID_ARGUMENT` is returned.
+     *
      * This can only be set for `search` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>optional int32 offset = 3;</code>
@@ -1029,12 +1081,15 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An integer that specifies the current offset for pagination (the 0-indexed
      * starting location, amongst the products deemed by the API as relevant).
+     *
      * See
      * [SearchRequest.offset][google.cloud.discoveryengine.v1beta.SearchRequest.offset]
      * for definition.
-     * If this field is negative, an INVALID_ARGUMENT is returned.
+     *
+     * If this field is negative, an `INVALID_ARGUMENT` is returned.
+     *
      * This can only be set for `search` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>optional int32 offset = 3;</code>

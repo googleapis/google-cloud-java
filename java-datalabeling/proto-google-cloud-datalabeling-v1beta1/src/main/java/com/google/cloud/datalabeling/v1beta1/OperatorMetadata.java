@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   private OperatorMetadata() {
-    comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    comments_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OperatorMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -126,7 +121,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
   public static final int COMMENTS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList comments_;
+  private com.google.protobuf.LazyStringArrayList comments_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -423,8 +419,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       score_ = 0F;
       totalVotes_ = 0;
       labelVotes_ = 0;
-      comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      comments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -452,21 +447,11 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datalabeling.v1beta1.OperatorMetadata buildPartial() {
       com.google.cloud.datalabeling.v1beta1.OperatorMetadata result =
           new com.google.cloud.datalabeling.v1beta1.OperatorMetadata(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.datalabeling.v1beta1.OperatorMetadata result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        comments_ = comments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.comments_ = comments_;
     }
 
     private void buildPartial0(com.google.cloud.datalabeling.v1beta1.OperatorMetadata result) {
@@ -479,6 +464,10 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.labelVotes_ = labelVotes_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        comments_.makeImmutable();
+        result.comments_ = comments_;
       }
     }
 
@@ -540,7 +529,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       if (!other.comments_.isEmpty()) {
         if (comments_.isEmpty()) {
           comments_ = other.comments_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureCommentsIsMutable();
           comments_.addAll(other.comments_);
@@ -782,14 +771,14 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList comments_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList comments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCommentsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!comments_.isModifiable()) {
         comments_ = new com.google.protobuf.LazyStringArrayList(comments_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -803,7 +792,8 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * @return A list containing the comments.
      */
     public com.google.protobuf.ProtocolStringList getCommentsList() {
-      return comments_.getUnmodifiableView();
+      comments_.makeImmutable();
+      return comments_;
     }
     /**
      *
@@ -868,6 +858,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       }
       ensureCommentsIsMutable();
       comments_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -889,6 +880,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       }
       ensureCommentsIsMutable();
       comments_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -907,6 +899,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
     public Builder addAllComments(java.lang.Iterable<java.lang.String> values) {
       ensureCommentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, comments_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -922,8 +915,9 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearComments() {
-      comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      comments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -946,6 +940,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureCommentsIsMutable();
       comments_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

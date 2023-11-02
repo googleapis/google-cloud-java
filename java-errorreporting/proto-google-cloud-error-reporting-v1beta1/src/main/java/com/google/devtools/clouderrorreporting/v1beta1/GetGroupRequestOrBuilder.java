@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface GetGroupRequestOrBuilder
    * `projects/{projectID}/groups/{group_name}`. Call
    * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    * to return a list of groups belonging to this project.
+   *
    * Example: `projects/my-project-123/groups/my-group`
    * </pre>
    *
@@ -49,6 +50,7 @@ public interface GetGroupRequestOrBuilder
    * `projects/{projectID}/groups/{group_name}`. Call
    * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    * to return a list of groups belonging to this project.
+   *
    * Example: `projects/my-project-123/groups/my-group`
    * </pre>
    *

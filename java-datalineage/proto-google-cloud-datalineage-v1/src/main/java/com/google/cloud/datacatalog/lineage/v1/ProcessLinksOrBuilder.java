@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ public interface ProcessLinksOrBuilder
    * <pre>
    * An array containing link details objects of the links provided in
    * the original request.
+   *
    * A single process can result in creating multiple links.
    * If any of the links you provide in the request are created by
    * the same process, they all are included in this array.
@@ -70,6 +71,7 @@ public interface ProcessLinksOrBuilder
    * <pre>
    * An array containing link details objects of the links provided in
    * the original request.
+   *
    * A single process can result in creating multiple links.
    * If any of the links you provide in the request are created by
    * the same process, they all are included in this array.
@@ -84,6 +86,7 @@ public interface ProcessLinksOrBuilder
    * <pre>
    * An array containing link details objects of the links provided in
    * the original request.
+   *
    * A single process can result in creating multiple links.
    * If any of the links you provide in the request are created by
    * the same process, they all are included in this array.
@@ -98,6 +101,7 @@ public interface ProcessLinksOrBuilder
    * <pre>
    * An array containing link details objects of the links provided in
    * the original request.
+   *
    * A single process can result in creating multiple links.
    * If any of the links you provide in the request are created by
    * the same process, they all are included in this array.
@@ -113,6 +117,7 @@ public interface ProcessLinksOrBuilder
    * <pre>
    * An array containing link details objects of the links provided in
    * the original request.
+   *
    * A single process can result in creating multiple links.
    * If any of the links you provide in the request are created by
    * the same process, they all are included in this array.

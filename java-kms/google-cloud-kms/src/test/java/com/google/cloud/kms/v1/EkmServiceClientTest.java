@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -534,6 +534,76 @@ public class EkmServiceClientTest {
       EkmConfig ekmConfig = EkmConfig.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEkmConfig(ekmConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void verifyConnectivityTest() throws Exception {
+    VerifyConnectivityResponse expectedResponse = VerifyConnectivityResponse.newBuilder().build();
+    mockEkmService.addResponse(expectedResponse);
+
+    EkmConnectionName name = EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]");
+
+    VerifyConnectivityResponse actualResponse = client.verifyConnectivity(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEkmService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    VerifyConnectivityRequest actualRequest = ((VerifyConnectivityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void verifyConnectivityExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEkmService.addException(exception);
+
+    try {
+      EkmConnectionName name = EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]");
+      client.verifyConnectivity(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void verifyConnectivityTest2() throws Exception {
+    VerifyConnectivityResponse expectedResponse = VerifyConnectivityResponse.newBuilder().build();
+    mockEkmService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    VerifyConnectivityResponse actualResponse = client.verifyConnectivity(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEkmService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    VerifyConnectivityRequest actualRequest = ((VerifyConnectivityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void verifyConnectivityExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEkmService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.verifyConnectivity(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

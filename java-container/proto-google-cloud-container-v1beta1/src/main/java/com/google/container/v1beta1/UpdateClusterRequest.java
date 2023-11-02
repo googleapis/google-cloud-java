@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
     return new UpdateClusterRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_UpdateClusterRequest_descriptor;
@@ -87,7 +82,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2658
+   *     google/container/v1beta1/cluster_service.proto;l=2989
    * @return The projectId.
    */
   @java.lang.Override
@@ -116,7 +111,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2658
+   *     google/container/v1beta1/cluster_service.proto;l=2989
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -150,7 +145,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2665
+   *     google/container/v1beta1/cluster_service.proto;l=2996
    * @return The zone.
    */
   @java.lang.Override
@@ -179,7 +174,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2665
+   *     google/container/v1beta1/cluster_service.proto;l=2996
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -212,7 +207,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2669
+   *     google/container/v1beta1/cluster_service.proto;l=3000
    * @return The clusterId.
    */
   @java.lang.Override
@@ -240,7 +235,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2669
+   *     google/container/v1beta1/cluster_service.proto;l=3000
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -825,7 +820,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2658
+     *     google/container/v1beta1/cluster_service.proto;l=2989
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -853,7 +848,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2658
+     *     google/container/v1beta1/cluster_service.proto;l=2989
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -881,7 +876,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2658
+     *     google/container/v1beta1/cluster_service.proto;l=2989
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -908,7 +903,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2658
+     *     google/container/v1beta1/cluster_service.proto;l=2989
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -931,7 +926,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2658
+     *     google/container/v1beta1/cluster_service.proto;l=2989
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -961,7 +956,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2665
+     *     google/container/v1beta1/cluster_service.proto;l=2996
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -989,7 +984,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2665
+     *     google/container/v1beta1/cluster_service.proto;l=2996
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1017,7 +1012,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2665
+     *     google/container/v1beta1/cluster_service.proto;l=2996
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1044,7 +1039,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2665
+     *     google/container/v1beta1/cluster_service.proto;l=2996
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1067,7 +1062,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2665
+     *     google/container/v1beta1/cluster_service.proto;l=2996
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1096,7 +1091,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2669
+     *     google/container/v1beta1/cluster_service.proto;l=3000
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1123,7 +1118,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2669
+     *     google/container/v1beta1/cluster_service.proto;l=3000
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1150,7 +1145,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2669
+     *     google/container/v1beta1/cluster_service.proto;l=3000
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1176,7 +1171,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2669
+     *     google/container/v1beta1/cluster_service.proto;l=3000
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1198,7 +1193,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateClusterRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2669
+     *     google/container/v1beta1/cluster_service.proto;l=3000
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */

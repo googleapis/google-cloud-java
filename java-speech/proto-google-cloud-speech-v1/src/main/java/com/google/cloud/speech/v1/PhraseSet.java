@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PhraseSet();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,6 +125,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
    * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+   *
    * List items can also include pre-built or custom classes containing groups
    * of words that represent common concepts that occur in natural language. For
    * example, rather than providing a phrase hint for every month of the
@@ -142,6 +138,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
    * resources and inline classes. Then use the class' id wrapped in $`{...}`
    * e.g. "${my-months}". To refer to custom classes resources, use the class'
    * id wrapped in `${}` (e.g. `${my-months}`).
+   *
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
@@ -169,11 +166,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Phrase();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -448,6 +440,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
      * [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+     *
      * List items can also include pre-built or custom classes containing groups
      * of words that represent common concepts that occur in natural language. For
      * example, rather than providing a phrase hint for every month of the
@@ -460,6 +453,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      * resources and inline classes. Then use the class' id wrapped in $`{...}`
      * e.g. "${my-months}". To refer to custom classes resources, use the class'
      * id wrapped in `${}` (e.g. `${my-months}`).
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a

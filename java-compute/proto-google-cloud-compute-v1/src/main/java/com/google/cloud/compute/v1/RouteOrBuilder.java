@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -358,6 +358,43 @@ public interface RouteOrBuilder
    * @return The bytes for nextHopGateway.
    */
   com.google.protobuf.ByteString getNextHopGatewayBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+   * </pre>
+   *
+   * <code>optional string next_hop_hub = 198679219;</code>
+   *
+   * @return Whether the nextHopHub field is set.
+   */
+  boolean hasNextHopHub();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+   * </pre>
+   *
+   * <code>optional string next_hop_hub = 198679219;</code>
+   *
+   * @return The nextHopHub.
+   */
+  java.lang.String getNextHopHub();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+   * </pre>
+   *
+   * <code>optional string next_hop_hub = 198679219;</code>
+   *
+   * @return The bytes for nextHopHub.
+   */
+  com.google.protobuf.ByteString getNextHopHubBytes();
 
   /**
    *

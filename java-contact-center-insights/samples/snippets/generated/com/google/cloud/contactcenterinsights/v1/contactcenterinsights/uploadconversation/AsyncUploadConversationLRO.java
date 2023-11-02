@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient;
 import com.google.cloud.contactcenterinsights.v1.Conversation;
 import com.google.cloud.contactcenterinsights.v1.LocationName;
 import com.google.cloud.contactcenterinsights.v1.RedactionConfig;
+import com.google.cloud.contactcenterinsights.v1.SpeechConfig;
 import com.google.cloud.contactcenterinsights.v1.UploadConversationMetadata;
 import com.google.cloud.contactcenterinsights.v1.UploadConversationRequest;
 
@@ -45,6 +46,7 @@ public class AsyncUploadConversationLRO {
               .setConversation(Conversation.newBuilder().build())
               .setConversationId("conversationId-1676095234")
               .setRedactionConfig(RedactionConfig.newBuilder().build())
+              .setSpeechConfig(SpeechConfig.newBuilder().build())
               .build();
       OperationFuture<Conversation, UploadConversationMetadata> future =
           contactCenterInsightsClient.uploadConversationOperationCallable().futureCall(request);

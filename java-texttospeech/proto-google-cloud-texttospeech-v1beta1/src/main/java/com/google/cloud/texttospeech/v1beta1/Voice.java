@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Voice() {
-    languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     name_ = "";
     ssmlGender_ = 0;
   }
@@ -47,11 +47,6 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Voice();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,7 +67,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
   public static final int LANGUAGE_CODES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList languageCodes_;
+  private com.google.protobuf.LazyStringArrayList languageCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -482,8 +478,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       name_ = "";
       ssmlGender_ = 0;
       naturalSampleRateHertz_ = 0;
@@ -514,7 +509,6 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.texttospeech.v1beta1.Voice buildPartial() {
       com.google.cloud.texttospeech.v1beta1.Voice result =
           new com.google.cloud.texttospeech.v1beta1.Voice(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -522,16 +516,12 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.texttospeech.v1beta1.Voice result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        languageCodes_ = languageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.languageCodes_ = languageCodes_;
-    }
-
     private void buildPartial0(com.google.cloud.texttospeech.v1beta1.Voice result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        languageCodes_.makeImmutable();
+        result.languageCodes_ = languageCodes_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.name_ = name_;
       }
@@ -591,7 +581,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       if (!other.languageCodes_.isEmpty()) {
         if (languageCodes_.isEmpty()) {
           languageCodes_ = other.languageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureLanguageCodesIsMutable();
           languageCodes_.addAll(other.languageCodes_);
@@ -679,14 +669,14 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList languageCodes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList languageCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!languageCodes_.isModifiable()) {
         languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -702,7 +692,8 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the languageCodes.
      */
     public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
-      return languageCodes_.getUnmodifiableView();
+      languageCodes_.makeImmutable();
+      return languageCodes_;
     }
     /**
      *
@@ -775,6 +766,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLanguageCodesIsMutable();
       languageCodes_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,6 +790,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLanguageCodesIsMutable();
       languageCodes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -818,6 +811,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureLanguageCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, languageCodes_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -835,8 +829,9 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLanguageCodes() {
-      languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -861,6 +856,7 @@ public final class Voice extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLanguageCodesIsMutable();
       languageCodes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

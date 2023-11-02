@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,23 +48,23 @@ public final class ServiceProto {
           + "ce.proto\022 google.cloud.servicedirectory."
           + "v1\032\037google/api/field_behavior.proto\032\031goo"
           + "gle/api/resource.proto\032/google/cloud/ser"
-          + "vicedirectory/v1/endpoint.proto\"\353\002\n\007Serv"
-          + "ice\022\021\n\004name\030\001 \001(\tB\003\340A\005\022T\n\013annotations\030\004 "
-          + "\003(\0132:.google.cloud.servicedirectory.v1.S"
-          + "ervice.AnnotationsEntryB\003\340A\001\022B\n\tendpoint"
-          + "s\030\003 \003(\0132*.google.cloud.servicedirectory."
-          + "v1.EndpointB\003\340A\003\0322\n\020AnnotationsEntry\022\013\n\003"
-          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\177\352A|\n\'servi"
-          + "cedirectory.googleapis.com/Service\022Qproj"
-          + "ects/{project}/locations/{location}/name"
-          + "spaces/{namespace}/services/{service}B\367\001"
-          + "\n$com.google.cloud.servicedirectory.v1B\014"
-          + "ServiceProtoP\001ZPcloud.google.com/go/serv"
-          + "icedirectory/apiv1/servicedirectorypb;se"
-          + "rvicedirectorypb\370\001\001\252\002 Google.Cloud.Servi"
-          + "ceDirectory.V1\312\002 Google\\Cloud\\ServiceDir"
-          + "ectory\\V1\352\002#Google::Cloud::ServiceDirect"
-          + "ory::V1b\006proto3"
+          + "vicedirectory/v1/endpoint.proto\"\201\003\n\007Serv"
+          + "ice\022\022\n\004name\030\001 \001(\tB\004\342A\001\005\022U\n\013annotations\030\004"
+          + " \003(\0132:.google.cloud.servicedirectory.v1."
+          + "Service.AnnotationsEntryB\004\342A\001\001\022C\n\tendpoi"
+          + "nts\030\003 \003(\0132*.google.cloud.servicedirector"
+          + "y.v1.EndpointB\004\342A\001\003\022\021\n\003uid\030\007 \001(\tB\004\342A\001\003\0322"
+          + "\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
+          + "\030\002 \001(\t:\0028\001:\177\352A|\n\'servicedirectory.google"
+          + "apis.com/Service\022Qprojects/{project}/loc"
+          + "ations/{location}/namespaces/{namespace}"
+          + "/services/{service}B\367\001\n$com.google.cloud"
+          + ".servicedirectory.v1B\014ServiceProtoP\001ZPcl"
+          + "oud.google.com/go/servicedirectory/apiv1"
+          + "/servicedirectorypb;servicedirectorypb\370\001"
+          + "\001\252\002 Google.Cloud.ServiceDirectory.V1\312\002 G"
+          + "oogle\\Cloud\\ServiceDirectory\\V1\352\002#Google"
+          + "::Cloud::ServiceDirectory::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -80,7 +80,7 @@ public final class ServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_servicedirectory_v1_Service_descriptor,
             new java.lang.String[] {
-              "Name", "Annotations", "Endpoints",
+              "Name", "Annotations", "Endpoints", "Uid",
             });
     internal_static_google_cloud_servicedirectory_v1_Service_AnnotationsEntry_descriptor =
         internal_static_google_cloud_servicedirectory_v1_Service_descriptor.getNestedTypes().get(0);

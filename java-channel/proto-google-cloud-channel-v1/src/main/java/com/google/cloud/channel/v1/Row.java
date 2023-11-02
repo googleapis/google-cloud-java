@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,17 +39,13 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
 
   private Row() {
     values_ = java.util.Collections.emptyList();
+    partitionKey_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Row();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,6 +133,59 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     return values_.get(index);
   }
 
+  public static final int PARTITION_KEY_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object partitionKey_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The key for the partition this row belongs to. This field is empty
+   * if the report is not partitioned.
+   * </pre>
+   *
+   * <code>string partition_key = 2;</code>
+   *
+   * @return The partitionKey.
+   */
+  @java.lang.Override
+  public java.lang.String getPartitionKey() {
+    java.lang.Object ref = partitionKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      partitionKey_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The key for the partition this row belongs to. This field is empty
+   * if the report is not partitioned.
+   * </pre>
+   *
+   * <code>string partition_key = 2;</code>
+   *
+   * @return The bytes for partitionKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPartitionKeyBytes() {
+    java.lang.Object ref = partitionKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      partitionKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -154,6 +203,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < values_.size(); i++) {
       output.writeMessage(1, values_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partitionKey_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partitionKey_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -165,6 +217,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     for (int i = 0; i < values_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, values_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partitionKey_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partitionKey_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -182,6 +237,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.channel.v1.Row other = (com.google.cloud.channel.v1.Row) obj;
 
     if (!getValuesList().equals(other.getValuesList())) return false;
+    if (!getPartitionKey().equals(other.getPartitionKey())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -197,6 +253,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + VALUES_FIELD_NUMBER;
       hash = (53 * hash) + getValuesList().hashCode();
     }
+    hash = (37 * hash) + PARTITION_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getPartitionKey().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -341,6 +399,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         valuesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      partitionKey_ = "";
       return this;
     }
 
@@ -389,6 +448,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.channel.v1.Row result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.partitionKey_ = partitionKey_;
+      }
     }
 
     @java.lang.Override
@@ -463,6 +525,11 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.getPartitionKey().isEmpty()) {
+        partitionKey_ = other.partitionKey_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -502,6 +569,12 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                partitionKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -867,6 +940,117 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         values_ = null;
       }
       return valuesBuilder_;
+    }
+
+    private java.lang.Object partitionKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The key for the partition this row belongs to. This field is empty
+     * if the report is not partitioned.
+     * </pre>
+     *
+     * <code>string partition_key = 2;</code>
+     *
+     * @return The partitionKey.
+     */
+    public java.lang.String getPartitionKey() {
+      java.lang.Object ref = partitionKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partitionKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The key for the partition this row belongs to. This field is empty
+     * if the report is not partitioned.
+     * </pre>
+     *
+     * <code>string partition_key = 2;</code>
+     *
+     * @return The bytes for partitionKey.
+     */
+    public com.google.protobuf.ByteString getPartitionKeyBytes() {
+      java.lang.Object ref = partitionKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        partitionKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The key for the partition this row belongs to. This field is empty
+     * if the report is not partitioned.
+     * </pre>
+     *
+     * <code>string partition_key = 2;</code>
+     *
+     * @param value The partitionKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartitionKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      partitionKey_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The key for the partition this row belongs to. This field is empty
+     * if the report is not partitioned.
+     * </pre>
+     *
+     * <code>string partition_key = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPartitionKey() {
+      partitionKey_ = getDefaultInstance().getPartitionKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The key for the partition this row belongs to. This field is empty
+     * if the report is not partitioned.
+     * </pre>
+     *
+     * <code>string partition_key = 2;</code>
+     *
+     * @param value The bytes for partitionKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartitionKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      partitionKey_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

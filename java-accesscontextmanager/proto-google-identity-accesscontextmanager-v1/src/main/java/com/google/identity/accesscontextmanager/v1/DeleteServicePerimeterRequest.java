@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DeleteServicePerimeterRequest extends com.google.protobuf.Gen
     return new DeleteServicePerimeterRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.identity.accesscontextmanager.v1.AccessContextManagerProto
         .internal_static_google_identity_accesscontextmanager_v1_DeleteServicePerimeterRequest_descriptor;
@@ -78,6 +73,7 @@ public final class DeleteServicePerimeterRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. Resource name for the [Service Perimeter]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+   *
    * Format:
    * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeter_id}`
    * </pre>
@@ -106,6 +102,7 @@ public final class DeleteServicePerimeterRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. Resource name for the [Service Perimeter]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+   *
    * Format:
    * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeter_id}`
    * </pre>
@@ -492,6 +489,7 @@ public final class DeleteServicePerimeterRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. Resource name for the [Service Perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+     *
      * Format:
      * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeter_id}`
      * </pre>
@@ -519,6 +517,7 @@ public final class DeleteServicePerimeterRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. Resource name for the [Service Perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+     *
      * Format:
      * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeter_id}`
      * </pre>
@@ -546,6 +545,7 @@ public final class DeleteServicePerimeterRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. Resource name for the [Service Perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+     *
      * Format:
      * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeter_id}`
      * </pre>
@@ -572,6 +572,7 @@ public final class DeleteServicePerimeterRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. Resource name for the [Service Perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+     *
      * Format:
      * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeter_id}`
      * </pre>
@@ -594,6 +595,7 @@ public final class DeleteServicePerimeterRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. Resource name for the [Service Perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+     *
      * Format:
      * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeter_id}`
      * </pre>

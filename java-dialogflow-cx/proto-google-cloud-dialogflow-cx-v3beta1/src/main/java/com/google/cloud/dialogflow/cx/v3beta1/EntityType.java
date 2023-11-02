@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,23 +26,29 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * meaningful to your application. For example, a date range, a proper name
  * such as a geographic location or landmark, and so on. Entities represent
  * actionable data for your application.
+ *
  * When you define an entity, you can also include synonyms that all map to
  * that entity. For example, "soft drink", "soda", "pop", and so on.
+ *
  * There are three types of entities:
+ *
  * *   **System** - entities that are defined by the Dialogflow API for common
  *     data types such as date, time, currency, and so on. A system entity is
  *     represented by the `EntityType` type.
+ *
  * *   **Custom** - entities that are defined by you that represent
  *     actionable data that is meaningful to your application. For example,
  *     you could define a `pizza.sauce` entity for red or white pizza sauce,
  *     a `pizza.cheese` entity for the different types of cheese on a pizza,
  *     a `pizza.topping` entity for different toppings, and so on. A custom
  *     entity is represented by the `EntityType` type.
+ *
  * *   **User** - entities that are built for an individual user such as
  *     favorites, preferences, playlists, and so on. A user entity is
  *     represented by the
  *     [SessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityType]
  *     type.
+ *
  * For more information about entity types, see the [Dialogflow
  * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
  * </pre>
@@ -72,11 +78,6 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EntityType();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -439,9 +440,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. The primary value associated with this entity entry.
      * For example, if the entity type is *vegetable*, the value could be
      * *scallions*.
+     *
      * For `KIND_MAP` entity types:
+     *
      * *   A canonical value to be used in place of synonyms.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   A string that can contain references to other entity types (with or
      *     without aliases).
      * </pre>
@@ -458,9 +463,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. The primary value associated with this entity entry.
      * For example, if the entity type is *vegetable*, the value could be
      * *scallions*.
+     *
      * For `KIND_MAP` entity types:
+     *
      * *   A canonical value to be used in place of synonyms.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   A string that can contain references to other entity types (with or
      *     without aliases).
      * </pre>
@@ -478,7 +487,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. A collection of value synonyms. For example, if the entity type
      * is *vegetable*, and `value` is *scallions*, a synonym could be *green
      * onions*.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
@@ -494,7 +505,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. A collection of value synonyms. For example, if the entity type
      * is *vegetable*, and `value` is *scallions*, a synonym could be *green
      * onions*.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
@@ -510,7 +523,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. A collection of value synonyms. For example, if the entity type
      * is *vegetable*, and `value` is *scallions*, a synonym could be *green
      * onions*.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
@@ -527,7 +542,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. A collection of value synonyms. For example, if the entity type
      * is *vegetable*, and `value` is *scallions*, a synonym could be *green
      * onions*.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
@@ -559,18 +576,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
 
     private Entity() {
       value_ = "";
-      synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Entity();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -599,9 +611,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. The primary value associated with this entity entry.
      * For example, if the entity type is *vegetable*, the value could be
      * *scallions*.
+     *
      * For `KIND_MAP` entity types:
+     *
      * *   A canonical value to be used in place of synonyms.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   A string that can contain references to other entity types (with or
      *     without aliases).
      * </pre>
@@ -629,9 +645,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. The primary value associated with this entity entry.
      * For example, if the entity type is *vegetable*, the value could be
      * *scallions*.
+     *
      * For `KIND_MAP` entity types:
+     *
      * *   A canonical value to be used in place of synonyms.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   A string that can contain references to other entity types (with or
      *     without aliases).
      * </pre>
@@ -656,7 +676,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     public static final int SYNONYMS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList synonyms_;
+    private com.google.protobuf.LazyStringArrayList synonyms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -664,7 +685,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. A collection of value synonyms. For example, if the entity type
      * is *vegetable*, and `value` is *scallions*, a synonym could be *green
      * onions*.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
@@ -682,7 +705,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. A collection of value synonyms. For example, if the entity type
      * is *vegetable*, and `value` is *scallions*, a synonym could be *green
      * onions*.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
@@ -700,7 +725,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. A collection of value synonyms. For example, if the entity type
      * is *vegetable*, and `value` is *scallions*, a synonym could be *green
      * onions*.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
@@ -719,7 +746,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. A collection of value synonyms. For example, if the entity type
      * is *vegetable*, and `value` is *scallions*, a synonym could be *green
      * onions*.
+     *
      * For `KIND_LIST` entity types:
+     *
      * *   This collection must contain exactly one synonym equal to `value`.
      * </pre>
      *
@@ -950,8 +979,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         value_ = "";
-        synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -979,7 +1007,6 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3beta1.EntityType.Entity buildPartial() {
         com.google.cloud.dialogflow.cx.v3beta1.EntityType.Entity result =
             new com.google.cloud.dialogflow.cx.v3beta1.EntityType.Entity(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -987,19 +1014,14 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dialogflow.cx.v3beta1.EntityType.Entity result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          synonyms_ = synonyms_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.synonyms_ = synonyms_;
-      }
-
       private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.EntityType.Entity result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.value_ = value_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          synonyms_.makeImmutable();
+          result.synonyms_ = synonyms_;
         }
       }
 
@@ -1059,7 +1081,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         if (!other.synonyms_.isEmpty()) {
           if (synonyms_.isEmpty()) {
             synonyms_ = other.synonyms_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureSynonymsIsMutable();
             synonyms_.addAll(other.synonyms_);
@@ -1132,9 +1154,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. The primary value associated with this entity entry.
        * For example, if the entity type is *vegetable*, the value could be
        * *scallions*.
+       *
        * For `KIND_MAP` entity types:
+       *
        * *   A canonical value to be used in place of synonyms.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   A string that can contain references to other entity types (with or
        *     without aliases).
        * </pre>
@@ -1161,9 +1187,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. The primary value associated with this entity entry.
        * For example, if the entity type is *vegetable*, the value could be
        * *scallions*.
+       *
        * For `KIND_MAP` entity types:
+       *
        * *   A canonical value to be used in place of synonyms.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   A string that can contain references to other entity types (with or
        *     without aliases).
        * </pre>
@@ -1190,9 +1220,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. The primary value associated with this entity entry.
        * For example, if the entity type is *vegetable*, the value could be
        * *scallions*.
+       *
        * For `KIND_MAP` entity types:
+       *
        * *   A canonical value to be used in place of synonyms.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   A string that can contain references to other entity types (with or
        *     without aliases).
        * </pre>
@@ -1218,9 +1252,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. The primary value associated with this entity entry.
        * For example, if the entity type is *vegetable*, the value could be
        * *scallions*.
+       *
        * For `KIND_MAP` entity types:
+       *
        * *   A canonical value to be used in place of synonyms.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   A string that can contain references to other entity types (with or
        *     without aliases).
        * </pre>
@@ -1242,9 +1280,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. The primary value associated with this entity entry.
        * For example, if the entity type is *vegetable*, the value could be
        * *scallions*.
+       *
        * For `KIND_MAP` entity types:
+       *
        * *   A canonical value to be used in place of synonyms.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   A string that can contain references to other entity types (with or
        *     without aliases).
        * </pre>
@@ -1265,14 +1307,14 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList synonyms_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList synonyms_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureSynonymsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!synonyms_.isModifiable()) {
           synonyms_ = new com.google.protobuf.LazyStringArrayList(synonyms_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1281,7 +1323,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. A collection of value synonyms. For example, if the entity type
        * is *vegetable*, and `value` is *scallions*, a synonym could be *green
        * onions*.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
@@ -1290,7 +1334,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the synonyms.
        */
       public com.google.protobuf.ProtocolStringList getSynonymsList() {
-        return synonyms_.getUnmodifiableView();
+        synonyms_.makeImmutable();
+        return synonyms_;
       }
       /**
        *
@@ -1299,7 +1344,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. A collection of value synonyms. For example, if the entity type
        * is *vegetable*, and `value` is *scallions*, a synonym could be *green
        * onions*.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
@@ -1317,7 +1364,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. A collection of value synonyms. For example, if the entity type
        * is *vegetable*, and `value` is *scallions*, a synonym could be *green
        * onions*.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
@@ -1336,7 +1385,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. A collection of value synonyms. For example, if the entity type
        * is *vegetable*, and `value` is *scallions*, a synonym could be *green
        * onions*.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
@@ -1355,7 +1406,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. A collection of value synonyms. For example, if the entity type
        * is *vegetable*, and `value` is *scallions*, a synonym could be *green
        * onions*.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
@@ -1371,6 +1424,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSynonymsIsMutable();
         synonyms_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1381,7 +1435,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. A collection of value synonyms. For example, if the entity type
        * is *vegetable*, and `value` is *scallions*, a synonym could be *green
        * onions*.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
@@ -1396,6 +1452,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSynonymsIsMutable();
         synonyms_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1406,7 +1463,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. A collection of value synonyms. For example, if the entity type
        * is *vegetable*, and `value` is *scallions*, a synonym could be *green
        * onions*.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
@@ -1418,6 +1477,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllSynonyms(java.lang.Iterable<java.lang.String> values) {
         ensureSynonymsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, synonyms_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1428,7 +1488,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. A collection of value synonyms. For example, if the entity type
        * is *vegetable*, and `value` is *scallions*, a synonym could be *green
        * onions*.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
@@ -1437,8 +1499,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSynonyms() {
-        synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1449,7 +1512,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        * Required. A collection of value synonyms. For example, if the entity type
        * is *vegetable*, and `value` is *scallions*, a synonym could be *green
        * onions*.
+       *
        * For `KIND_LIST` entity types:
+       *
        * *   This collection must contain exactly one synonym equal to `value`.
        * </pre>
        *
@@ -1465,6 +1530,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureSynonymsIsMutable();
         synonyms_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1590,11 +1656,6 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExcludedPhrase();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2844,23 +2905,29 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * meaningful to your application. For example, a date range, a proper name
    * such as a geographic location or landmark, and so on. Entities represent
    * actionable data for your application.
+   *
    * When you define an entity, you can also include synonyms that all map to
    * that entity. For example, "soft drink", "soda", "pop", and so on.
+   *
    * There are three types of entities:
+   *
    * *   **System** - entities that are defined by the Dialogflow API for common
    *     data types such as date, time, currency, and so on. A system entity is
    *     represented by the `EntityType` type.
+   *
    * *   **Custom** - entities that are defined by you that represent
    *     actionable data that is meaningful to your application. For example,
    *     you could define a `pizza.sauce` entity for red or white pizza sauce,
    *     a `pizza.cheese` entity for the different types of cheese on a pizza,
    *     a `pizza.topping` entity for different toppings, and so on. A custom
    *     entity is represented by the `EntityType` type.
+   *
    * *   **User** - entities that are built for an individual user such as
    *     favorites, preferences, playlists, and so on. A user entity is
    *     represented by the
    *     [SessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityType]
    *     type.
+   *
    * For more information about entity types, see the [Dialogflow
    * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EvaluationConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -144,11 +139,6 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SmartReplyConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -943,11 +933,6 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       return new SmartComposeConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2.ConversationModelProto
           .internal_static_google_cloud_dialogflow_v2_EvaluationConfig_SmartComposeConfig_descriptor;
@@ -1662,6 +1647,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
   }
 
   private int modelSpecificConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object modelSpecificConfig_;
 
   public enum ModelSpecificConfigCase

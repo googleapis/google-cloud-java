@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,10 +101,13 @@ public interface KubernetesSoftwareConfigOrBuilder
    *
    * <pre>
    * The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `spark:spark.kubernetes.container.image`. The following are supported
    * prefixes and their mappings:
+   *
    * * spark:  `spark-defaults.conf`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -117,10 +120,13 @@ public interface KubernetesSoftwareConfigOrBuilder
    *
    * <pre>
    * The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `spark:spark.kubernetes.container.image`. The following are supported
    * prefixes and their mappings:
+   *
    * * spark:  `spark-defaults.conf`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -136,10 +142,13 @@ public interface KubernetesSoftwareConfigOrBuilder
    *
    * <pre>
    * The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `spark:spark.kubernetes.container.image`. The following are supported
    * prefixes and their mappings:
+   *
    * * spark:  `spark-defaults.conf`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -152,10 +161,13 @@ public interface KubernetesSoftwareConfigOrBuilder
    *
    * <pre>
    * The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `spark:spark.kubernetes.container.image`. The following are supported
    * prefixes and their mappings:
+   *
    * * spark:  `spark-defaults.conf`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -172,10 +184,13 @@ public interface KubernetesSoftwareConfigOrBuilder
    *
    * <pre>
    * The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `spark:spark.kubernetes.container.image`. The following are supported
    * prefixes and their mappings:
+   *
    * * spark:  `spark-defaults.conf`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>

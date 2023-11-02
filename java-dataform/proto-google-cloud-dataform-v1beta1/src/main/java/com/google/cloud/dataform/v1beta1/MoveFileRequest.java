@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MoveFileRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,7 +127,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The file's full path including filename, relative to the workspace root.
+   * Required. The file's full path including filename, relative to the
+   * workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -155,7 +151,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The file's full path including filename, relative to the workspace root.
+   * Required. The file's full path including filename, relative to the
+   * workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -183,7 +180,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The file's new path including filename, relative to the workspace root.
+   * Required. The file's new path including filename, relative to the workspace
+   * root.
    * </pre>
    *
    * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -206,7 +204,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The file's new path including filename, relative to the workspace root.
+   * Required. The file's new path including filename, relative to the workspace
+   * root.
    * </pre>
    *
    * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -737,7 +736,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The file's full path including filename, relative to the workspace root.
+     * Required. The file's full path including filename, relative to the
+     * workspace root.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -759,7 +759,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The file's full path including filename, relative to the workspace root.
+     * Required. The file's full path including filename, relative to the
+     * workspace root.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -781,7 +782,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The file's full path including filename, relative to the workspace root.
+     * Required. The file's full path including filename, relative to the
+     * workspace root.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -802,7 +804,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The file's full path including filename, relative to the workspace root.
+     * Required. The file's full path including filename, relative to the
+     * workspace root.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -819,7 +822,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The file's full path including filename, relative to the workspace root.
+     * Required. The file's full path including filename, relative to the
+     * workspace root.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -843,7 +847,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The file's new path including filename, relative to the workspace root.
+     * Required. The file's new path including filename, relative to the workspace
+     * root.
      * </pre>
      *
      * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -865,7 +870,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The file's new path including filename, relative to the workspace root.
+     * Required. The file's new path including filename, relative to the workspace
+     * root.
      * </pre>
      *
      * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -887,7 +893,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The file's new path including filename, relative to the workspace root.
+     * Required. The file's new path including filename, relative to the workspace
+     * root.
      * </pre>
      *
      * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -908,7 +915,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The file's new path including filename, relative to the workspace root.
+     * Required. The file's new path including filename, relative to the workspace
+     * root.
      * </pre>
      *
      * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -925,7 +933,8 @@ public final class MoveFileRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The file's new path including filename, relative to the workspace root.
+     * Required. The file's new path including filename, relative to the workspace
+     * root.
      * </pre>
      *
      * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>

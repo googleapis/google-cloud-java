@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
     return new AutomatedAgentConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.ConversationProfileProto
         .internal_static_google_cloud_dialogflow_v2_AutomatedAgentConfig_descriptor;
@@ -76,15 +71,18 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. ID of the Dialogflow agent environment to use.
+   *
    * This project needs to either be the same project as the conversation or you
    * need to grant `service-&lt;Conversation Project
    * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
    * Service Agent` role in this project.
+   *
    * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
    * specified, the default `draft` environment is used. Refer to
    * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
    * for more details.
+   *
    * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
    * or '-'&gt;`. If environment is not specified, the default `draft` environment
@@ -114,15 +112,18 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. ID of the Dialogflow agent environment to use.
+   *
    * This project needs to either be the same project as the conversation or you
    * need to grant `service-&lt;Conversation Project
    * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
    * Service Agent` role in this project.
+   *
    * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
    * specified, the default `draft` environment is used. Refer to
    * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
    * for more details.
+   *
    * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
    * or '-'&gt;`. If environment is not specified, the default `draft` environment
@@ -148,6 +149,64 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int SESSION_TTL_FIELD_NUMBER = 3;
+  private com.google.protobuf.Duration sessionTtl_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow CX session life time.
+   * By default, a Dialogflow CX session remains active and its data is stored
+   * for 30 minutes after the last request is sent for the session. This value
+   * should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sessionTtl field is set.
+   */
+  @java.lang.Override
+  public boolean hasSessionTtl() {
+    return sessionTtl_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow CX session life time.
+   * By default, a Dialogflow CX session remains active and its data is stored
+   * for 30 minutes after the last request is sent for the session. This value
+   * should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sessionTtl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getSessionTtl() {
+    return sessionTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : sessionTtl_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sets Dialogflow CX session life time.
+   * By default, a Dialogflow CX session remains active and its data is stored
+   * for 30 minutes after the last request is sent for the session. This value
+   * should be no longer than 1 day.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getSessionTtlOrBuilder() {
+    return sessionTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : sessionTtl_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -165,6 +224,9 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, agent_);
     }
+    if (sessionTtl_ != null) {
+      output.writeMessage(3, getSessionTtl());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -176,6 +238,9 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, agent_);
+    }
+    if (sessionTtl_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSessionTtl());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -194,6 +259,10 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
         (com.google.cloud.dialogflow.v2.AutomatedAgentConfig) obj;
 
     if (!getAgent().equals(other.getAgent())) return false;
+    if (hasSessionTtl() != other.hasSessionTtl()) return false;
+    if (hasSessionTtl()) {
+      if (!getSessionTtl().equals(other.getSessionTtl())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -207,6 +276,10 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + AGENT_FIELD_NUMBER;
     hash = (53 * hash) + getAgent().hashCode();
+    if (hasSessionTtl()) {
+      hash = (37 * hash) + SESSION_TTL_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionTtl().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -347,6 +420,11 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
       super.clear();
       bitField0_ = 0;
       agent_ = "";
+      sessionTtl_ = null;
+      if (sessionTtlBuilder_ != null) {
+        sessionTtlBuilder_.dispose();
+        sessionTtlBuilder_ = null;
+      }
       return this;
     }
 
@@ -385,6 +463,9 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.agent_ = agent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sessionTtl_ = sessionTtlBuilder_ == null ? sessionTtl_ : sessionTtlBuilder_.build();
       }
     }
 
@@ -439,6 +520,9 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasSessionTtl()) {
+        mergeSessionTtl(other.getSessionTtl());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -471,6 +555,12 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 26:
+              {
+                input.readMessage(getSessionTtlFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -496,15 +586,18 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. ID of the Dialogflow agent environment to use.
+     *
      * This project needs to either be the same project as the conversation or you
      * need to grant `service-&lt;Conversation Project
      * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
      * Service Agent` role in this project.
+     *
      * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
      * specified, the default `draft` environment is used. Refer to
      * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
      * for more details.
+     *
      * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
      * or '-'&gt;`. If environment is not specified, the default `draft` environment
@@ -533,15 +626,18 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. ID of the Dialogflow agent environment to use.
+     *
      * This project needs to either be the same project as the conversation or you
      * need to grant `service-&lt;Conversation Project
      * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
      * Service Agent` role in this project.
+     *
      * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
      * specified, the default `draft` environment is used. Refer to
      * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
      * for more details.
+     *
      * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
      * or '-'&gt;`. If environment is not specified, the default `draft` environment
@@ -570,15 +666,18 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. ID of the Dialogflow agent environment to use.
+     *
      * This project needs to either be the same project as the conversation or you
      * need to grant `service-&lt;Conversation Project
      * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
      * Service Agent` role in this project.
+     *
      * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
      * specified, the default `draft` environment is used. Refer to
      * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
      * for more details.
+     *
      * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
      * or '-'&gt;`. If environment is not specified, the default `draft` environment
@@ -606,15 +705,18 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. ID of the Dialogflow agent environment to use.
+     *
      * This project needs to either be the same project as the conversation or you
      * need to grant `service-&lt;Conversation Project
      * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
      * Service Agent` role in this project.
+     *
      * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
      * specified, the default `draft` environment is used. Refer to
      * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
      * for more details.
+     *
      * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
      * or '-'&gt;`. If environment is not specified, the default `draft` environment
@@ -638,15 +740,18 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. ID of the Dialogflow agent environment to use.
+     *
      * This project needs to either be the same project as the conversation or you
      * need to grant `service-&lt;Conversation Project
      * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Dialogflow API
      * Service Agent` role in this project.
+     *
      * - For ES agents, use format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agent/environments/&lt;Environment ID or '-'&gt;`. If environment is not
      * specified, the default `draft` environment is used. Refer to
      * [DetectIntentRequest](/dialogflow/docs/reference/rpc/google.cloud.dialogflow.v2#google.cloud.dialogflow.v2.DetectIntentRequest)
      * for more details.
+     *
      * - For CX agents, use format `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID
      * or '-'&gt;`. If environment is not specified, the default `draft` environment
@@ -669,6 +774,225 @@ public final class AutomatedAgentConfig extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration sessionTtl_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        sessionTtlBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow CX session life time.
+     * By default, a Dialogflow CX session remains active and its data is stored
+     * for 30 minutes after the last request is sent for the session. This value
+     * should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sessionTtl field is set.
+     */
+    public boolean hasSessionTtl() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow CX session life time.
+     * By default, a Dialogflow CX session remains active and its data is stored
+     * for 30 minutes after the last request is sent for the session. This value
+     * should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sessionTtl.
+     */
+    public com.google.protobuf.Duration getSessionTtl() {
+      if (sessionTtlBuilder_ == null) {
+        return sessionTtl_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : sessionTtl_;
+      } else {
+        return sessionTtlBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow CX session life time.
+     * By default, a Dialogflow CX session remains active and its data is stored
+     * for 30 minutes after the last request is sent for the session. This value
+     * should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSessionTtl(com.google.protobuf.Duration value) {
+      if (sessionTtlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sessionTtl_ = value;
+      } else {
+        sessionTtlBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow CX session life time.
+     * By default, a Dialogflow CX session remains active and its data is stored
+     * for 30 minutes after the last request is sent for the session. This value
+     * should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSessionTtl(com.google.protobuf.Duration.Builder builderForValue) {
+      if (sessionTtlBuilder_ == null) {
+        sessionTtl_ = builderForValue.build();
+      } else {
+        sessionTtlBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow CX session life time.
+     * By default, a Dialogflow CX session remains active and its data is stored
+     * for 30 minutes after the last request is sent for the session. This value
+     * should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSessionTtl(com.google.protobuf.Duration value) {
+      if (sessionTtlBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && sessionTtl_ != null
+            && sessionTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getSessionTtlBuilder().mergeFrom(value);
+        } else {
+          sessionTtl_ = value;
+        }
+      } else {
+        sessionTtlBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow CX session life time.
+     * By default, a Dialogflow CX session remains active and its data is stored
+     * for 30 minutes after the last request is sent for the session. This value
+     * should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSessionTtl() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sessionTtl_ = null;
+      if (sessionTtlBuilder_ != null) {
+        sessionTtlBuilder_.dispose();
+        sessionTtlBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow CX session life time.
+     * By default, a Dialogflow CX session remains active and its data is stored
+     * for 30 minutes after the last request is sent for the session. This value
+     * should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getSessionTtlBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getSessionTtlFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow CX session life time.
+     * By default, a Dialogflow CX session remains active and its data is stored
+     * for 30 minutes after the last request is sent for the session. This value
+     * should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getSessionTtlOrBuilder() {
+      if (sessionTtlBuilder_ != null) {
+        return sessionTtlBuilder_.getMessageOrBuilder();
+      } else {
+        return sessionTtl_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : sessionTtl_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sets Dialogflow CX session life time.
+     * By default, a Dialogflow CX session remains active and its data is stored
+     * for 30 minutes after the last request is sent for the session. This value
+     * should be no longer than 1 day.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getSessionTtlFieldBuilder() {
+      if (sessionTtlBuilder_ == null) {
+        sessionTtlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getSessionTtl(), getParentForChildren(), isClean());
+        sessionTtl_ = null;
+      }
+      return sessionTtlBuilder_;
     }
 
     @java.lang.Override

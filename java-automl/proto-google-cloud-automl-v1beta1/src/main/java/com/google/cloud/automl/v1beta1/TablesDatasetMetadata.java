@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TablesDatasetMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -144,10 +139,14 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * training &amp; prediction target.
    * This column must be non-nullable and have one of following data types
    * (otherwise model creation will error):
+   *
    * * CATEGORY
+   *
    * * FLOAT64
+   *
    * If the type is CATEGORY , only up to
    * 100 unique values may exist in that column across all rows.
+   *
    * NOTE: Updates of this field will instantly affect any other users
    * concurrently working with the dataset.
    * </pre>
@@ -176,10 +175,14 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * training &amp; prediction target.
    * This column must be non-nullable and have one of following data types
    * (otherwise model creation will error):
+   *
    * * CATEGORY
+   *
    * * FLOAT64
+   *
    * If the type is CATEGORY , only up to
    * 100 unique values may exist in that column across all rows.
+   *
    * NOTE: Updates of this field will instantly affect any other users
    * concurrently working with the dataset.
    * </pre>
@@ -383,8 +386,10 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only. Correlations between
+   *
    * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
    * and other columns of the
+   *
    * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
    * Only set if the target column is set. Mapping from other column spec id to
    * its CorrelationStats with the target column.
@@ -415,8 +420,10 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only. Correlations between
+   *
    * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
    * and other columns of the
+   *
    * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
    * Only set if the target column is set. Mapping from other column spec id to
    * its CorrelationStats with the target column.
@@ -438,8 +445,10 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only. Correlations between
+   *
    * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
    * and other columns of the
+   *
    * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
    * Only set if the target column is set. Mapping from other column spec id to
    * its CorrelationStats with the target column.
@@ -469,8 +478,10 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only. Correlations between
+   *
    * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
    * and other columns of the
+   *
    * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
    * Only set if the target column is set. Mapping from other column spec id to
    * its CorrelationStats with the target column.
@@ -1191,10 +1202,14 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * training &amp; prediction target.
      * This column must be non-nullable and have one of following data types
      * (otherwise model creation will error):
+     *
      * * CATEGORY
+     *
      * * FLOAT64
+     *
      * If the type is CATEGORY , only up to
      * 100 unique values may exist in that column across all rows.
+     *
      * NOTE: Updates of this field will instantly affect any other users
      * concurrently working with the dataset.
      * </pre>
@@ -1222,10 +1237,14 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * training &amp; prediction target.
      * This column must be non-nullable and have one of following data types
      * (otherwise model creation will error):
+     *
      * * CATEGORY
+     *
      * * FLOAT64
+     *
      * If the type is CATEGORY , only up to
      * 100 unique values may exist in that column across all rows.
+     *
      * NOTE: Updates of this field will instantly affect any other users
      * concurrently working with the dataset.
      * </pre>
@@ -1253,10 +1272,14 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * training &amp; prediction target.
      * This column must be non-nullable and have one of following data types
      * (otherwise model creation will error):
+     *
      * * CATEGORY
+     *
      * * FLOAT64
+     *
      * If the type is CATEGORY , only up to
      * 100 unique values may exist in that column across all rows.
+     *
      * NOTE: Updates of this field will instantly affect any other users
      * concurrently working with the dataset.
      * </pre>
@@ -1283,10 +1306,14 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * training &amp; prediction target.
      * This column must be non-nullable and have one of following data types
      * (otherwise model creation will error):
+     *
      * * CATEGORY
+     *
      * * FLOAT64
+     *
      * If the type is CATEGORY , only up to
      * 100 unique values may exist in that column across all rows.
+     *
      * NOTE: Updates of this field will instantly affect any other users
      * concurrently working with the dataset.
      * </pre>
@@ -1309,10 +1336,14 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * training &amp; prediction target.
      * This column must be non-nullable and have one of following data types
      * (otherwise model creation will error):
+     *
      * * CATEGORY
+     *
      * * FLOAT64
+     *
      * If the type is CATEGORY , only up to
      * 100 unique values may exist in that column across all rows.
+     *
      * NOTE: Updates of this field will instantly affect any other users
      * concurrently working with the dataset.
      * </pre>
@@ -1683,8 +1714,10 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Correlations between
+     *
      * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
      * and other columns of the
+     *
      * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
      * Only set if the target column is set. Mapping from other column spec id to
      * its CorrelationStats with the target column.
@@ -1715,8 +1748,10 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Correlations between
+     *
      * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
      * and other columns of the
+     *
      * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
      * Only set if the target column is set. Mapping from other column spec id to
      * its CorrelationStats with the target column.
@@ -1738,8 +1773,10 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Correlations between
+     *
      * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
      * and other columns of the
+     *
      * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
      * Only set if the target column is set. Mapping from other column spec id to
      * its CorrelationStats with the target column.
@@ -1769,8 +1806,10 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Correlations between
+     *
      * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
      * and other columns of the
+     *
      * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
      * Only set if the target column is set. Mapping from other column spec id to
      * its CorrelationStats with the target column.
@@ -1806,8 +1845,10 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Correlations between
+     *
      * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
      * and other columns of the
+     *
      * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
      * Only set if the target column is set. Mapping from other column spec id to
      * its CorrelationStats with the target column.
@@ -1838,8 +1879,10 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Correlations between
+     *
      * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
      * and other columns of the
+     *
      * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
      * Only set if the target column is set. Mapping from other column spec id to
      * its CorrelationStats with the target column.
@@ -1868,8 +1911,10 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Correlations between
+     *
      * [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
      * and other columns of the
+     *
      * [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
      * Only set if the target column is set. Mapping from other column spec id to
      * its CorrelationStats with the target column.

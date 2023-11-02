@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     return new BudgetAmount();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.billing.budgets.v1.BudgetModelProto
         .internal_static_google_cloud_billing_budgets_v1_BudgetAmount_descriptor;
@@ -66,6 +61,8 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int budgetAmountCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object budgetAmount_;
 
   public enum BudgetAmountCase

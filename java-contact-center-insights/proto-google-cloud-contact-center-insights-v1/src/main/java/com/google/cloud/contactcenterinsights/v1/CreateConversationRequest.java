@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateConversationRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -191,6 +186,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
    * A unique ID for the new conversation. This ID will become the final
    * component of the conversation's resource name. If no ID is specified, a
    * server-generated ID will be used.
+   *
    * This value should be 4-64 characters and must match the regular
    * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
    * </pre>
@@ -218,6 +214,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
    * A unique ID for the new conversation. This ID will become the final
    * component of the conversation's resource name. If no ID is specified, a
    * server-generated ID will be used.
+   *
    * This value should be 4-64 characters and must match the regular
    * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
    * </pre>
@@ -974,6 +971,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * A unique ID for the new conversation. This ID will become the final
      * component of the conversation's resource name. If no ID is specified, a
      * server-generated ID will be used.
+     *
      * This value should be 4-64 characters and must match the regular
      * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
      * </pre>
@@ -1000,6 +998,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * A unique ID for the new conversation. This ID will become the final
      * component of the conversation's resource name. If no ID is specified, a
      * server-generated ID will be used.
+     *
      * This value should be 4-64 characters and must match the regular
      * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
      * </pre>
@@ -1026,6 +1025,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * A unique ID for the new conversation. This ID will become the final
      * component of the conversation's resource name. If no ID is specified, a
      * server-generated ID will be used.
+     *
      * This value should be 4-64 characters and must match the regular
      * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
      * </pre>
@@ -1051,6 +1051,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * A unique ID for the new conversation. This ID will become the final
      * component of the conversation's resource name. If no ID is specified, a
      * server-generated ID will be used.
+     *
      * This value should be 4-64 characters and must match the regular
      * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
      * </pre>
@@ -1072,6 +1073,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * A unique ID for the new conversation. This ID will become the final
      * component of the conversation's resource name. If no ID is specified, a
      * server-generated ID will be used.
+     *
      * This value should be 4-64 characters and must match the regular
      * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
      * </pre>

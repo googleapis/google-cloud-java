@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   private ContinuousTestResult() {
     name_ = "";
     result_ = 0;
-    testCaseResults_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    testCaseResults_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ContinuousTestResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -336,7 +331,8 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
   public static final int TEST_CASE_RESULTS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList testCaseResults_;
+  private com.google.protobuf.LazyStringArrayList testCaseResults_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -688,8 +684,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       bitField0_ = 0;
       name_ = "";
       result_ = 0;
-      testCaseResults_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      testCaseResults_ = com.google.protobuf.LazyStringArrayList.emptyList();
       runTime_ = null;
       if (runTimeBuilder_ != null) {
         runTimeBuilder_.dispose();
@@ -722,21 +717,11 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult result =
           new com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        testCaseResults_ = testCaseResults_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.testCaseResults_ = testCaseResults_;
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.ContinuousTestResult result) {
@@ -746,6 +731,10 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.result_ = result_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        testCaseResults_.makeImmutable();
+        result.testCaseResults_ = testCaseResults_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.runTime_ = runTimeBuilder_ == null ? runTime_ : runTimeBuilder_.build();
@@ -809,7 +798,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       if (!other.testCaseResults_.isEmpty()) {
         if (testCaseResults_.isEmpty()) {
           testCaseResults_ = other.testCaseResults_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureTestCaseResultsIsMutable();
           testCaseResults_.addAll(other.testCaseResults_);
@@ -1121,14 +1110,14 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList testCaseResults_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList testCaseResults_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTestCaseResultsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!testCaseResults_.isModifiable()) {
         testCaseResults_ = new com.google.protobuf.LazyStringArrayList(testCaseResults_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1143,7 +1132,8 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      * @return A list containing the testCaseResults.
      */
     public com.google.protobuf.ProtocolStringList getTestCaseResultsList() {
-      return testCaseResults_.getUnmodifiableView();
+      testCaseResults_.makeImmutable();
+      return testCaseResults_;
     }
     /**
      *
@@ -1212,6 +1202,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       }
       ensureTestCaseResultsIsMutable();
       testCaseResults_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1234,6 +1225,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       }
       ensureTestCaseResultsIsMutable();
       testCaseResults_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1253,6 +1245,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
     public Builder addAllTestCaseResults(java.lang.Iterable<java.lang.String> values) {
       ensureTestCaseResultsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, testCaseResults_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1269,8 +1262,9 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTestCaseResults() {
-      testCaseResults_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      testCaseResults_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1294,6 +1288,7 @@ public final class ContinuousTestResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureTestCaseResultsIsMutable();
       testCaseResults_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

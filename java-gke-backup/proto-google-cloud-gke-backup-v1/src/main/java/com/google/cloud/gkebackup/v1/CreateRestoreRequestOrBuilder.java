@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface CreateRestoreRequestOrBuilder
    *
    * <pre>
    * Required. The RestorePlan within which to create the Restore.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateRestoreRequestOrBuilder
    *
    * <pre>
    * Required. The RestorePlan within which to create the Restore.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`
    * </pre>
    *
    * <code>
@@ -98,11 +98,12 @@ public interface CreateRestoreRequestOrBuilder
    * <pre>
    * Required. The client-provided short name for the Restore resource.
    * This name must:
-   *  - be between 1 and 63 characters long (inclusive)
-   *  - consist of only lower-case ASCII letters, numbers, and dashes
-   *  - start with a lower-case letter
-   *  - end with a lower-case letter or number
-   *  - be unique within the set of Restores in this RestorePlan.
+   *
+   * - be between 1 and 63 characters long (inclusive)
+   * - consist of only lower-case ASCII letters, numbers, and dashes
+   * - start with a lower-case letter
+   * - end with a lower-case letter or number
+   * - be unique within the set of Restores in this RestorePlan.
    * </pre>
    *
    * <code>string restore_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -116,11 +117,12 @@ public interface CreateRestoreRequestOrBuilder
    * <pre>
    * Required. The client-provided short name for the Restore resource.
    * This name must:
-   *  - be between 1 and 63 characters long (inclusive)
-   *  - consist of only lower-case ASCII letters, numbers, and dashes
-   *  - start with a lower-case letter
-   *  - end with a lower-case letter or number
-   *  - be unique within the set of Restores in this RestorePlan.
+   *
+   * - be between 1 and 63 characters long (inclusive)
+   * - consist of only lower-case ASCII letters, numbers, and dashes
+   * - start with a lower-case letter
+   * - end with a lower-case letter or number
+   * - be unique within the set of Restores in this RestorePlan.
    * </pre>
    *
    * <code>string restore_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

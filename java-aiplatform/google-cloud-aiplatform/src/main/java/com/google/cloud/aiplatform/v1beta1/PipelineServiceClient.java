@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -960,7 +960,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * @param pipelineJob Required. The PipelineJob to create.
    * @param pipelineJobId The ID to use for the PipelineJob, which will become the final component
    *     of the PipelineJob name. If not provided, an ID will be automatically generated.
-   *     <p>This value should be less than 128 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should be less than 128 characters, and valid characters are `/[a-z][0-9]-/`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PipelineJob createPipelineJob(
@@ -1000,7 +1000,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * @param pipelineJob Required. The PipelineJob to create.
    * @param pipelineJobId The ID to use for the PipelineJob, which will become the final component
    *     of the PipelineJob name. If not provided, an ID will be automatically generated.
-   *     <p>This value should be less than 128 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should be less than 128 characters, and valid characters are `/[a-z][0-9]-/`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PipelineJob createPipelineJob(

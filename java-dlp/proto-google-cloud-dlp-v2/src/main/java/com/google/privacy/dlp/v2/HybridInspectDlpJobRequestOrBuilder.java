@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface HybridInspectDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the job to execute a hybrid inspect on, for example
-   * `projects/dlp-test-project/dlpJob/53234423`.
+   * Required. Resource name of the job to execute a hybrid inspect on, for
+   * example `projects/dlp-test-project/dlpJob/53234423`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface HybridInspectDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the job to execute a hybrid inspect on, for example
-   * `projects/dlp-test-project/dlpJob/53234423`.
+   * Required. Resource name of the job to execute a hybrid inspect on, for
+   * example `projects/dlp-test-project/dlpJob/53234423`.
    * </pre>
    *
    * <code>

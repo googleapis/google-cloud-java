@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -270,9 +270,11 @@ public interface QueryResultOrBuilder
    * <pre>
    * The collected [session
    * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -294,9 +296,11 @@ public interface QueryResultOrBuilder
    * <pre>
    * The collected [session
    * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -318,9 +322,11 @@ public interface QueryResultOrBuilder
    * <pre>
    * The collected [session
    * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -576,7 +582,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=718
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
    * @return Whether the intent field is set.
    */
   @java.lang.Deprecated
@@ -596,7 +602,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=718
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
    * @return The intent.
    */
   @java.lang.Deprecated
@@ -636,7 +642,7 @@ public interface QueryResultOrBuilder
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=740
    * @return The intentDetectionConfidence.
    */
   @java.lang.Deprecated
@@ -684,8 +690,10 @@ public interface QueryResultOrBuilder
    * The free-form diagnostic info. For example, this field could contain
    * webhook call latency. The fields of this data can change without notice,
    * so you should not write code that depends on its structure.
+   *
    * One of the fields is called "Alternative Matched Intents", which may
    * aid with debugging. The following describes these intent results:
+   *
    * - The list is empty if no intent was matched to end-user input.
    * - Only intents that are referenced in the currently active flow are
    *   included.
@@ -710,8 +718,10 @@ public interface QueryResultOrBuilder
    * The free-form diagnostic info. For example, this field could contain
    * webhook call latency. The fields of this data can change without notice,
    * so you should not write code that depends on its structure.
+   *
    * One of the fields is called "Alternative Matched Intents", which may
    * aid with debugging. The following describes these intent results:
+   *
    * - The list is empty if no intent was matched to end-user input.
    * - Only intents that are referenced in the currently active flow are
    *   included.
@@ -736,8 +746,10 @@ public interface QueryResultOrBuilder
    * The free-form diagnostic info. For example, this field could contain
    * webhook call latency. The fields of this data can change without notice,
    * so you should not write code that depends on its structure.
+   *
    * One of the fields is called "Alternative Matched Intents", which may
    * aid with debugging. The following describes these intent results:
+   *
    * - The list is empty if no intent was matched to end-user input.
    * - Only intents that are referenced in the currently active flow are
    *   included.
@@ -805,5 +817,52 @@ public interface QueryResultOrBuilder
   com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResultOrBuilder
       getSentimentAnalysisResultOrBuilder();
 
-  public com.google.cloud.dialogflow.cx.v3beta1.QueryResult.QueryCase getQueryCase();
+  /**
+   *
+   *
+   * <pre>
+   * Returns the current advanced settings including IVR settings. Even though
+   * the operations configured by these settings are performed by Dialogflow,
+   * the client may need to perform special logic at the moment. For example, if
+   * Dialogflow exports audio to Google Cloud Storage, then the client may need
+   * to wait for the resulting object to appear in the bucket before proceeding.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  boolean hasAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Returns the current advanced settings including IVR settings. Even though
+   * the operations configured by these settings are performed by Dialogflow,
+   * the client may need to perform special logic at the moment. For example, if
+   * Dialogflow exports audio to Google Cloud Storage, then the client may need
+   * to wait for the resulting object to appear in the bucket before proceeding.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+   *
+   * @return The advancedSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Returns the current advanced settings including IVR settings. Even though
+   * the operations configured by these settings are performed by Dialogflow,
+   * the client may need to perform special logic at the moment. For example, if
+   * Dialogflow exports audio to Google Cloud Storage, then the client may need
+   * to wait for the resulting object to appear in the bucket before proceeding.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder getAdvancedSettingsOrBuilder();
+
+  com.google.cloud.dialogflow.cx.v3beta1.QueryResult.QueryCase getQueryCase();
 }

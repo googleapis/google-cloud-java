@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
     return new MultiCloudCluster();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1alpha2.MembershipProto
         .internal_static_google_cloud_gkehub_v1alpha2_MultiCloudCluster_descriptor;
@@ -77,6 +72,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
    * example:
+   *
    *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
    *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
    * </pre>
@@ -103,6 +99,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
    * example:
+   *
    *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
    *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
    * </pre>
@@ -515,6 +512,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
      * example:
+     *
      *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
      *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      * </pre>
@@ -540,6 +538,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
      * example:
+     *
      *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
      *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      * </pre>
@@ -565,6 +564,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
      * example:
+     *
      *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
      *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      * </pre>
@@ -589,6 +589,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
      * example:
+     *
      *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
      *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      * </pre>
@@ -609,6 +610,7 @@ public final class MultiCloudCluster extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
      * example:
+     *
      *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
      *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      * </pre>

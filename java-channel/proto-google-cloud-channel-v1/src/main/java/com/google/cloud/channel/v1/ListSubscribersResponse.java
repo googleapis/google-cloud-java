@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
 
   private ListSubscribersResponse() {
     topic_ = "";
-    serviceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    serviceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
     nextPageToken_ = "";
   }
 
@@ -47,11 +47,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListSubscribersResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -123,7 +118,8 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
   public static final int SERVICE_ACCOUNTS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList serviceAccounts_;
+  private com.google.protobuf.LazyStringArrayList serviceAccounts_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -460,8 +456,7 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       super.clear();
       bitField0_ = 0;
       topic_ = "";
-      serviceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      serviceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       nextPageToken_ = "";
       return this;
     }
@@ -490,7 +485,6 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
     public com.google.cloud.channel.v1.ListSubscribersResponse buildPartial() {
       com.google.cloud.channel.v1.ListSubscribersResponse result =
           new com.google.cloud.channel.v1.ListSubscribersResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -498,19 +492,14 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.channel.v1.ListSubscribersResponse result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        serviceAccounts_ = serviceAccounts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.serviceAccounts_ = serviceAccounts_;
-    }
-
     private void buildPartial0(com.google.cloud.channel.v1.ListSubscribersResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.topic_ = topic_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        serviceAccounts_.makeImmutable();
+        result.serviceAccounts_ = serviceAccounts_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.nextPageToken_ = nextPageToken_;
@@ -571,7 +560,7 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       if (!other.serviceAccounts_.isEmpty()) {
         if (serviceAccounts_.isEmpty()) {
           serviceAccounts_ = other.serviceAccounts_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureServiceAccountsIsMutable();
           serviceAccounts_.addAll(other.serviceAccounts_);
@@ -753,14 +742,14 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.protobuf.LazyStringList serviceAccounts_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList serviceAccounts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureServiceAccountsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!serviceAccounts_.isModifiable()) {
         serviceAccounts_ = new com.google.protobuf.LazyStringArrayList(serviceAccounts_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -774,7 +763,8 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
      * @return A list containing the serviceAccounts.
      */
     public com.google.protobuf.ProtocolStringList getServiceAccountsList() {
-      return serviceAccounts_.getUnmodifiableView();
+      serviceAccounts_.makeImmutable();
+      return serviceAccounts_;
     }
     /**
      *
@@ -839,6 +829,7 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       }
       ensureServiceAccountsIsMutable();
       serviceAccounts_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -860,6 +851,7 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       }
       ensureServiceAccountsIsMutable();
       serviceAccounts_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -878,6 +870,7 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
     public Builder addAllServiceAccounts(java.lang.Iterable<java.lang.String> values) {
       ensureServiceAccountsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceAccounts_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -893,8 +886,9 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearServiceAccounts() {
-      serviceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      serviceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -917,6 +911,7 @@ public final class ListSubscribersResponse extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureServiceAccountsIsMutable();
       serviceAccounts_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

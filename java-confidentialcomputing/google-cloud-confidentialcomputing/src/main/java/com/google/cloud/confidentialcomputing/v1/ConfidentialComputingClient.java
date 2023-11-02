@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -327,6 +327,8 @@ public class ConfidentialComputingClient implements BackgroundResource {
    *           .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
    *           .setGcpCredentials(GcpCredentials.newBuilder().build())
    *           .setTpmAttestation(TpmAttestation.newBuilder().build())
+   *           .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
+   *           .setTokenOptions(TokenOptions.newBuilder().build())
    *           .build();
    *   VerifyAttestationResponse response = confidentialComputingClient.verifyAttestation(request);
    * }
@@ -358,6 +360,8 @@ public class ConfidentialComputingClient implements BackgroundResource {
    *           .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
    *           .setGcpCredentials(GcpCredentials.newBuilder().build())
    *           .setTpmAttestation(TpmAttestation.newBuilder().build())
+   *           .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
+   *           .setTokenOptions(TokenOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<VerifyAttestationResponse> future =
    *       confidentialComputingClient.verifyAttestationCallable().futureCall(request);

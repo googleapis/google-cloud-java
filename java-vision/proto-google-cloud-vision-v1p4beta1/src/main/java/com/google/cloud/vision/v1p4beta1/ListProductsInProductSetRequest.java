@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListProductsInProductSetRequest extends com.google.protobuf.G
     return new ListProductsInProductSetRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p4beta1.ProductSearchServiceProto
         .internal_static_google_cloud_vision_v1p4beta1_ListProductsInProductSetRequest_descriptor;
@@ -78,6 +73,7 @@ public final class ListProductsInProductSetRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The ProductSet resource for which to retrieve Products.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
@@ -105,6 +101,7 @@ public final class ListProductsInProductSetRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The ProductSet resource for which to retrieve Products.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
@@ -598,6 +595,7 @@ public final class ListProductsInProductSetRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The ProductSet resource for which to retrieve Products.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -624,6 +622,7 @@ public final class ListProductsInProductSetRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The ProductSet resource for which to retrieve Products.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -650,6 +649,7 @@ public final class ListProductsInProductSetRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The ProductSet resource for which to retrieve Products.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -675,6 +675,7 @@ public final class ListProductsInProductSetRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The ProductSet resource for which to retrieve Products.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -696,6 +697,7 @@ public final class ListProductsInProductSetRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The ProductSet resource for which to retrieve Products.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>

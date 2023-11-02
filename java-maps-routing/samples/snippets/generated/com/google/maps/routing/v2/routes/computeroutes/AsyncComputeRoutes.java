@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@ import com.google.maps.routing.v2.RouteModifiers;
 import com.google.maps.routing.v2.RouteTravelMode;
 import com.google.maps.routing.v2.RoutesClient;
 import com.google.maps.routing.v2.RoutingPreference;
+import com.google.maps.routing.v2.TrafficModel;
+import com.google.maps.routing.v2.TransitPreferences;
 import com.google.maps.routing.v2.Units;
 import com.google.maps.routing.v2.Waypoint;
 import com.google.protobuf.Timestamp;
@@ -54,13 +56,17 @@ public class AsyncComputeRoutes {
               .setPolylineQuality(PolylineQuality.forNumber(0))
               .setPolylineEncoding(PolylineEncoding.forNumber(0))
               .setDepartureTime(Timestamp.newBuilder().build())
+              .setArrivalTime(Timestamp.newBuilder().build())
               .setComputeAlternativeRoutes(true)
               .setRouteModifiers(RouteModifiers.newBuilder().build())
               .setLanguageCode("languageCode-2092349083")
               .setRegionCode("regionCode-1991004415")
               .setUnits(Units.forNumber(0))
+              .setOptimizeWaypointOrder(true)
               .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
               .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
+              .setTrafficModel(TrafficModel.forNumber(0))
+              .setTransitPreferences(TransitPreferences.newBuilder().build())
               .build();
       ApiFuture<ComputeRoutesResponse> future =
           routesClient.computeRoutesCallable().futureCall(request);

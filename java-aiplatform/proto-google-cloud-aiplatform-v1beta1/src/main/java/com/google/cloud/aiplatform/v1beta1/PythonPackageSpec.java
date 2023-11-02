@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,9 +39,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
 
   private PythonPackageSpec() {
     executorImageUri_ = "";
-    packageUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    packageUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pythonModule_ = "";
-    args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    args_ = com.google.protobuf.LazyStringArrayList.emptyList();
     env_ = java.util.Collections.emptyList();
   }
 
@@ -49,11 +49,6 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PythonPackageSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -135,7 +130,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   public static final int PACKAGE_URIS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList packageUris_;
+  private com.google.protobuf.LazyStringArrayList packageUris_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -257,7 +253,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
   public static final int ARGS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList args_;
+  private com.google.protobuf.LazyStringArrayList args_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -645,11 +642,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       executorImageUri_ = "";
-      packageUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      packageUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       pythonModule_ = "";
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (envBuilder_ == null) {
         env_ = java.util.Collections.emptyList();
       } else {
@@ -694,16 +689,6 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
 
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1beta1.PythonPackageSpec result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        packageUris_ = packageUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.packageUris_ = packageUris_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.args_ = args_;
       if (envBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
           env_ = java.util.Collections.unmodifiableList(env_);
@@ -720,8 +705,16 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.executorImageUri_ = executorImageUri_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        packageUris_.makeImmutable();
+        result.packageUris_ = packageUris_;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pythonModule_ = pythonModule_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        args_.makeImmutable();
+        result.args_ = args_;
       }
     }
 
@@ -779,7 +772,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       if (!other.packageUris_.isEmpty()) {
         if (packageUris_.isEmpty()) {
           packageUris_ = other.packageUris_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePackageUrisIsMutable();
           packageUris_.addAll(other.packageUris_);
@@ -794,7 +787,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -1043,14 +1036,14 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList packageUris_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList packageUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePackageUrisIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!packageUris_.isModifiable()) {
         packageUris_ = new com.google.protobuf.LazyStringArrayList(packageUris_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1066,7 +1059,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      * @return A list containing the packageUris.
      */
     public com.google.protobuf.ProtocolStringList getPackageUrisList() {
-      return packageUris_.getUnmodifiableView();
+      packageUris_.makeImmutable();
+      return packageUris_;
     }
     /**
      *
@@ -1139,6 +1133,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       ensurePackageUrisIsMutable();
       packageUris_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1162,6 +1157,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       ensurePackageUrisIsMutable();
       packageUris_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1182,6 +1178,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     public Builder addAllPackageUris(java.lang.Iterable<java.lang.String> values) {
       ensurePackageUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, packageUris_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1199,8 +1196,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPackageUris() {
-      packageUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      packageUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1225,6 +1223,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensurePackageUrisIsMutable();
       packageUris_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1335,14 +1334,14 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList args_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList args_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!args_.isModifiable()) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1356,7 +1355,8 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      * @return A list containing the args.
      */
     public com.google.protobuf.ProtocolStringList getArgsList() {
-      return args_.getUnmodifiableView();
+      args_.makeImmutable();
+      return args_;
     }
     /**
      *
@@ -1421,6 +1421,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       ensureArgsIsMutable();
       args_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1442,6 +1443,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1460,6 +1462,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
       ensureArgsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, args_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1475,8 +1478,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearArgs() {
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1499,6 +1503,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     return new EntryGroup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_EntryGroup_descriptor;
@@ -80,7 +75,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the entry group in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+   *
    * Note that this EntryGroup and its child resources may not actually be
    * stored in the location in this name.
    * </pre>
@@ -106,7 +103,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the entry group in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+   *
    * Note that this EntryGroup and its child resources may not actually be
    * stored in the location in this name.
    * </pre>
@@ -242,7 +241,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty
+   * timestamps.
    * </pre>
    *
    * <code>
@@ -259,7 +259,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty
+   * timestamps.
    * </pre>
    *
    * <code>
@@ -278,7 +279,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty
+   * timestamps.
    * </pre>
    *
    * <code>
@@ -727,7 +729,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the entry group in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+     *
      * Note that this EntryGroup and its child resources may not actually be
      * stored in the location in this name.
      * </pre>
@@ -752,7 +756,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the entry group in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+     *
      * Note that this EntryGroup and its child resources may not actually be
      * stored in the location in this name.
      * </pre>
@@ -777,7 +783,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the entry group in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+     *
      * Note that this EntryGroup and its child resources may not actually be
      * stored in the location in this name.
      * </pre>
@@ -801,7 +809,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the entry group in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+     *
      * Note that this EntryGroup and its child resources may not actually be
      * stored in the location in this name.
      * </pre>
@@ -821,7 +831,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the entry group in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+     *
      * Note that this EntryGroup and its child resources may not actually be
      * stored in the location in this name.
      * </pre>
@@ -1079,7 +1091,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty
+     * timestamps.
      * </pre>
      *
      * <code>
@@ -1095,7 +1108,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty
+     * timestamps.
      * </pre>
      *
      * <code>
@@ -1117,7 +1131,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty
+     * timestamps.
      * </pre>
      *
      * <code>
@@ -1142,7 +1157,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty
+     * timestamps.
      * </pre>
      *
      * <code>
@@ -1164,7 +1180,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty
+     * timestamps.
      * </pre>
      *
      * <code>
@@ -1193,7 +1210,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty
+     * timestamps.
      * </pre>
      *
      * <code>
@@ -1214,7 +1232,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty
+     * timestamps.
      * </pre>
      *
      * <code>
@@ -1231,7 +1250,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty
+     * timestamps.
      * </pre>
      *
      * <code>
@@ -1252,7 +1272,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
+     * Output only. Timestamps about this EntryGroup. Default value is empty
+     * timestamps.
      * </pre>
      *
      * <code>

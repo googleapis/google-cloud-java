@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.filestore.v1beta1;
  *
  * <pre>
  * RestoreInstanceRequest restores an existing instance's file share from a
- * snapshot or backup.
+ * backup.
  * </pre>
  *
  * Protobuf type {@code google.cloud.filestore.v1beta1.RestoreInstanceRequest}
@@ -49,11 +49,6 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
     return new RestoreInstanceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
         .internal_static_google_cloud_filestore_v1beta1_RestoreInstanceRequest_descriptor;
@@ -70,12 +65,15 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    @java.lang.Deprecated
     SOURCE_SNAPSHOT(3),
     SOURCE_BACKUP(4),
     SOURCE_NOT_SET(0);
@@ -181,7 +179,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Name of the file share in the Filestore instance that the snapshot
+   * Required. Name of the file share in the Filestore instance that the backup
    * is being restored to.
    * </pre>
    *
@@ -205,7 +203,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Name of the file share in the Filestore instance that the snapshot
+   * Required. Name of the file share in the Filestore instance that the backup
    * is being restored to.
    * </pre>
    *
@@ -235,10 +233,14 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
    * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
    * </pre>
    *
-   * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+   * </code>
    *
+   * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
    * @return Whether the sourceSnapshot field is set.
    */
+  @java.lang.Deprecated
   public boolean hasSourceSnapshot() {
     return sourceCase_ == 3;
   }
@@ -250,10 +252,14 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
    * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
    * </pre>
    *
-   * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+   * </code>
    *
+   * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
    * @return The sourceSnapshot.
    */
+  @java.lang.Deprecated
   public java.lang.String getSourceSnapshot() {
     java.lang.Object ref = "";
     if (sourceCase_ == 3) {
@@ -278,10 +284,14 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
    * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
    * </pre>
    *
-   * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+   * </code>
    *
+   * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
    * @return The bytes for sourceSnapshot.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getSourceSnapshotBytes() {
     java.lang.Object ref = "";
     if (sourceCase_ == 3) {
@@ -581,7 +591,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * RestoreInstanceRequest restores an existing instance's file share from a
-   * snapshot or backup.
+   * backup.
    * </pre>
    *
    * Protobuf type {@code google.cloud.filestore.v1beta1.RestoreInstanceRequest}
@@ -958,7 +968,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Filestore instance that the snapshot
+     * Required. Name of the file share in the Filestore instance that the backup
      * is being restored to.
      * </pre>
      *
@@ -981,7 +991,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Filestore instance that the snapshot
+     * Required. Name of the file share in the Filestore instance that the backup
      * is being restored to.
      * </pre>
      *
@@ -1004,7 +1014,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Filestore instance that the snapshot
+     * Required. Name of the file share in the Filestore instance that the backup
      * is being restored to.
      * </pre>
      *
@@ -1026,7 +1036,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Filestore instance that the snapshot
+     * Required. Name of the file share in the Filestore instance that the backup
      * is being restored to.
      * </pre>
      *
@@ -1044,7 +1054,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Filestore instance that the snapshot
+     * Required. Name of the file share in the Filestore instance that the backup
      * is being restored to.
      * </pre>
      *
@@ -1072,11 +1082,16 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
      * </pre>
      *
-     * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+     * </code>
      *
+     * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+     *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
      * @return Whether the sourceSnapshot field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasSourceSnapshot() {
       return sourceCase_ == 3;
     }
@@ -1088,11 +1103,16 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
      * </pre>
      *
-     * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+     * </code>
      *
+     * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+     *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
      * @return The sourceSnapshot.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.lang.String getSourceSnapshot() {
       java.lang.Object ref = "";
       if (sourceCase_ == 3) {
@@ -1117,11 +1137,16 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
      * </pre>
      *
-     * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+     * </code>
      *
+     * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+     *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
      * @return The bytes for sourceSnapshot.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getSourceSnapshotBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 3) {
@@ -1146,11 +1171,16 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
      * </pre>
      *
-     * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+     * </code>
      *
+     * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+     *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
      * @param value The sourceSnapshot to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setSourceSnapshot(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1168,10 +1198,15 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
      * </pre>
      *
-     * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+     * </code>
      *
+     * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+     *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearSourceSnapshot() {
       if (sourceCase_ == 3) {
         sourceCase_ = 0;
@@ -1188,11 +1223,16 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
      * </pre>
      *
-     * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+     * </code>
      *
+     * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+     *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
      * @param value The bytes for sourceSnapshot to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setSourceSnapshotBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

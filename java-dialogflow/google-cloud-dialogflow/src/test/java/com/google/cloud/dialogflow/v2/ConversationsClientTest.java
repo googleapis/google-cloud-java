@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ import com.google.protobuf.Any;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -810,6 +811,81 @@ public class ConversationsClientTest {
               .setMaxContextSize(-1134084212)
               .build();
       client.generateStatelessSummary(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchKnowledgeTest() throws Exception {
+    SearchKnowledgeResponse expectedResponse =
+        SearchKnowledgeResponse.newBuilder()
+            .addAllAnswers(new ArrayList<SearchKnowledgeAnswer>())
+            .build();
+    mockConversations.addResponse(expectedResponse);
+
+    SearchKnowledgeRequest request =
+        SearchKnowledgeRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setQuery(TextInput.newBuilder().build())
+            .setConversationProfile(
+                ConversationProfileName.ofProjectConversationProfileName(
+                        "[PROJECT]", "[CONVERSATION_PROFILE]")
+                    .toString())
+            .setSessionId("sessionId607796817")
+            .setConversation(
+                ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
+                    .toString())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .build();
+
+    SearchKnowledgeResponse actualResponse = client.searchKnowledge(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConversations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchKnowledgeRequest actualRequest = ((SearchKnowledgeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertEquals(request.getConversationProfile(), actualRequest.getConversationProfile());
+    Assert.assertEquals(request.getSessionId(), actualRequest.getSessionId());
+    Assert.assertEquals(request.getConversation(), actualRequest.getConversation());
+    Assert.assertEquals(request.getLatestMessage(), actualRequest.getLatestMessage());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchKnowledgeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversations.addException(exception);
+
+    try {
+      SearchKnowledgeRequest request =
+          SearchKnowledgeRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setQuery(TextInput.newBuilder().build())
+              .setConversationProfile(
+                  ConversationProfileName.ofProjectConversationProfileName(
+                          "[PROJECT]", "[CONVERSATION_PROFILE]")
+                      .toString())
+              .setSessionId("sessionId607796817")
+              .setConversation(
+                  ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
+                      .toString())
+              .setLatestMessage(
+                  MessageName.ofProjectConversationMessageName(
+                          "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                      .toString())
+              .build();
+      client.searchKnowledge(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

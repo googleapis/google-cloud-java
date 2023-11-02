@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * Singleton resource under a WebDataStream, configuring measurement of
+ * Singleton resource under a web DataStream, configuring measurement of
  * additional site interactions and content.
  * </pre>
  *
@@ -48,11 +48,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EnhancedMeasurementSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -135,6 +130,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
    * <pre>
    * Indicates whether Enhanced Measurement Settings will be used to
    * automatically measure interactions and content on this web stream.
+   *
    * Changing this value does not affect the settings themselves, but determines
    * whether they are respected.
    * </pre>
@@ -642,7 +638,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Singleton resource under a WebDataStream, configuring measurement of
+   * Singleton resource under a web DataStream, configuring measurement of
    * additional site interactions and content.
    * </pre>
    *
@@ -1087,6 +1083,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      * <pre>
      * Indicates whether Enhanced Measurement Settings will be used to
      * automatically measure interactions and content on this web stream.
+     *
      * Changing this value does not affect the settings themselves, but determines
      * whether they are respected.
      * </pre>
@@ -1105,6 +1102,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      * <pre>
      * Indicates whether Enhanced Measurement Settings will be used to
      * automatically measure interactions and content on this web stream.
+     *
      * Changing this value does not affect the settings themselves, but determines
      * whether they are respected.
      * </pre>
@@ -1127,6 +1125,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      * <pre>
      * Indicates whether Enhanced Measurement Settings will be used to
      * automatically measure interactions and content on this web stream.
+     *
      * Changing this value does not affect the settings themselves, but determines
      * whether they are respected.
      * </pre>

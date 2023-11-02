@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -894,4 +894,58 @@ public interface NodeOrBuilder
    */
   com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfigOrBuilder
       getShieldedInstanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the Node belongs to a Multislice group.
+   * </pre>
+   *
+   * <code>bool multislice_node = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The multisliceNode.
+   */
+  boolean getMultisliceNode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot disk configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bootDiskConfig field is set.
+   */
+  boolean hasBootDiskConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot disk configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bootDiskConfig.
+   */
+  com.google.cloud.tpu.v2alpha1.BootDiskConfig getBootDiskConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot disk configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.tpu.v2alpha1.BootDiskConfigOrBuilder getBootDiskConfigOrBuilder();
 }

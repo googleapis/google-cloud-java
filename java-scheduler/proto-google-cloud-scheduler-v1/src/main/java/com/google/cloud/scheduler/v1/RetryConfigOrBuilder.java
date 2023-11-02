@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,14 +30,18 @@ public interface RetryConfigOrBuilder
    * The number of attempts that the system will make to run a job using the
    * exponential backoff procedure described by
    * [max_doublings][google.cloud.scheduler.v1.RetryConfig.max_doublings].
+   *
    * The default value of retry_count is zero.
+   *
    * If retry_count is zero, a job attempt will *not* be retried if
    * it fails. Instead the Cloud Scheduler system will wait for the
    * next scheduled execution time.
+   *
    * If retry_count is set to a non-zero number then Cloud Scheduler
    * will retry failed attempts, using exponential backoff,
    * retry_count times, or until the next scheduled execution time,
    * whichever comes first.
+   *
    * Values greater than 5 and negative values are not allowed.
    * </pre>
    *
@@ -55,6 +59,7 @@ public interface RetryConfigOrBuilder
    * execution was first attempted. If specified with
    * [retry_count][google.cloud.scheduler.v1.RetryConfig.retry_count], the job
    * will be retried until both limits are reached.
+   *
    * The default value for max_retry_duration is zero, which means retry
    * duration is unlimited.
    * </pre>
@@ -72,6 +77,7 @@ public interface RetryConfigOrBuilder
    * execution was first attempted. If specified with
    * [retry_count][google.cloud.scheduler.v1.RetryConfig.retry_count], the job
    * will be retried until both limits are reached.
+   *
    * The default value for max_retry_duration is zero, which means retry
    * duration is unlimited.
    * </pre>
@@ -89,6 +95,7 @@ public interface RetryConfigOrBuilder
    * execution was first attempted. If specified with
    * [retry_count][google.cloud.scheduler.v1.RetryConfig.retry_count], the job
    * will be retried until both limits are reached.
+   *
    * The default value for max_retry_duration is zero, which means retry
    * duration is unlimited.
    * </pre>
@@ -103,6 +110,7 @@ public interface RetryConfigOrBuilder
    * <pre>
    * The minimum amount of time to wait before retrying a job after
    * it fails.
+   *
    * The default value of this field is 5 seconds.
    * </pre>
    *
@@ -117,6 +125,7 @@ public interface RetryConfigOrBuilder
    * <pre>
    * The minimum amount of time to wait before retrying a job after
    * it fails.
+   *
    * The default value of this field is 5 seconds.
    * </pre>
    *
@@ -131,6 +140,7 @@ public interface RetryConfigOrBuilder
    * <pre>
    * The minimum amount of time to wait before retrying a job after
    * it fails.
+   *
    * The default value of this field is 5 seconds.
    * </pre>
    *
@@ -144,6 +154,7 @@ public interface RetryConfigOrBuilder
    * <pre>
    * The maximum amount of time to wait before retrying a job after
    * it fails.
+   *
    * The default value of this field is 1 hour.
    * </pre>
    *
@@ -158,6 +169,7 @@ public interface RetryConfigOrBuilder
    * <pre>
    * The maximum amount of time to wait before retrying a job after
    * it fails.
+   *
    * The default value of this field is 1 hour.
    * </pre>
    *
@@ -172,6 +184,7 @@ public interface RetryConfigOrBuilder
    * <pre>
    * The maximum amount of time to wait before retrying a job after
    * it fails.
+   *
    * The default value of this field is 1 hour.
    * </pre>
    *
@@ -184,6 +197,7 @@ public interface RetryConfigOrBuilder
    *
    * <pre>
    * The time between retries will double `max_doublings` times.
+   *
    * A job's retry interval starts at
    * [min_backoff_duration][google.cloud.scheduler.v1.RetryConfig.min_backoff_duration],
    * then doubles `max_doublings` times, then increases linearly, and finally
@@ -191,6 +205,7 @@ public interface RetryConfigOrBuilder
    * [max_backoff_duration][google.cloud.scheduler.v1.RetryConfig.max_backoff_duration]
    * up to [retry_count][google.cloud.scheduler.v1.RetryConfig.retry_count]
    * times.
+   *
    * For example, if
    * [min_backoff_duration][google.cloud.scheduler.v1.RetryConfig.min_backoff_duration]
    * is 10s,
@@ -203,6 +218,7 @@ public interface RetryConfigOrBuilder
    * [retry_count][google.cloud.scheduler.v1.RetryConfig.retry_count] times.
    * Thus, the requests will retry at 10s, 20s, 40s, 80s, 160s, 240s, 300s,
    * 300s, ....
+   *
    * The default value of this field is 5.
    * </pre>
    *

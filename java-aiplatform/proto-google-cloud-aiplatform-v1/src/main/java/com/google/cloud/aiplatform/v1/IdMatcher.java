@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
   }
 
   private IdMatcher() {
-    ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new IdMatcher();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,12 +65,14 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
   public static final int IDS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ids_;
+  private com.google.protobuf.LazyStringArrayList ids_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Required. The following are accepted as `ids`:
+   *
    *  * A single-element list containing only `*`, which selects all Features
    *  in the target EntityType, or
    *  * A list containing only Feature IDs, which selects only Features with
@@ -94,6 +91,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The following are accepted as `ids`:
+   *
    *  * A single-element list containing only `*`, which selects all Features
    *  in the target EntityType, or
    *  * A list containing only Feature IDs, which selects only Features with
@@ -112,6 +110,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The following are accepted as `ids`:
+   *
    *  * A single-element list containing only `*`, which selects all Features
    *  in the target EntityType, or
    *  * A list containing only Feature IDs, which selects only Features with
@@ -131,6 +130,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The following are accepted as `ids`:
+   *
    *  * A single-element list containing only `*`, which selects all Features
    *  in the target EntityType, or
    *  * A list containing only Feature IDs, which selects only Features with
@@ -350,8 +350,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -379,7 +378,6 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.IdMatcher buildPartial() {
       com.google.cloud.aiplatform.v1.IdMatcher result =
           new com.google.cloud.aiplatform.v1.IdMatcher(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -387,16 +385,12 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.IdMatcher result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        ids_ = ids_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.ids_ = ids_;
-    }
-
     private void buildPartial0(com.google.cloud.aiplatform.v1.IdMatcher result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        ids_.makeImmutable();
+        result.ids_ = ids_;
+      }
     }
 
     @java.lang.Override
@@ -447,7 +441,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
       if (!other.ids_.isEmpty()) {
         if (ids_.isEmpty()) {
           ids_ = other.ids_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureIdsIsMutable();
           ids_.addAll(other.ids_);
@@ -506,19 +500,21 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ids_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!ids_.isModifiable()) {
         ids_ = new com.google.protobuf.LazyStringArrayList(ids_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
      *
      * <pre>
      * Required. The following are accepted as `ids`:
+     *
      *  * A single-element list containing only `*`, which selects all Features
      *  in the target EntityType, or
      *  * A list containing only Feature IDs, which selects only Features with
@@ -530,13 +526,15 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ids.
      */
     public com.google.protobuf.ProtocolStringList getIdsList() {
-      return ids_.getUnmodifiableView();
+      ids_.makeImmutable();
+      return ids_;
     }
     /**
      *
      *
      * <pre>
      * Required. The following are accepted as `ids`:
+     *
      *  * A single-element list containing only `*`, which selects all Features
      *  in the target EntityType, or
      *  * A list containing only Feature IDs, which selects only Features with
@@ -555,6 +553,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The following are accepted as `ids`:
+     *
      *  * A single-element list containing only `*`, which selects all Features
      *  in the target EntityType, or
      *  * A list containing only Feature IDs, which selects only Features with
@@ -574,6 +573,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The following are accepted as `ids`:
+     *
      *  * A single-element list containing only `*`, which selects all Features
      *  in the target EntityType, or
      *  * A list containing only Feature IDs, which selects only Features with
@@ -593,6 +593,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The following are accepted as `ids`:
+     *
      *  * A single-element list containing only `*`, which selects all Features
      *  in the target EntityType, or
      *  * A list containing only Feature IDs, which selects only Features with
@@ -611,6 +612,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIdsIsMutable();
       ids_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -619,6 +621,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The following are accepted as `ids`:
+     *
      *  * A single-element list containing only `*`, which selects all Features
      *  in the target EntityType, or
      *  * A list containing only Feature IDs, which selects only Features with
@@ -636,6 +639,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIdsIsMutable();
       ids_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -644,6 +648,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The following are accepted as `ids`:
+     *
      *  * A single-element list containing only `*`, which selects all Features
      *  in the target EntityType, or
      *  * A list containing only Feature IDs, which selects only Features with
@@ -658,6 +663,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIds(java.lang.Iterable<java.lang.String> values) {
       ensureIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ids_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -666,6 +672,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The following are accepted as `ids`:
+     *
      *  * A single-element list containing only `*`, which selects all Features
      *  in the target EntityType, or
      *  * A list containing only Feature IDs, which selects only Features with
@@ -677,8 +684,9 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIds() {
-      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -687,6 +695,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The following are accepted as `ids`:
+     *
      *  * A single-element list containing only `*`, which selects all Features
      *  in the target EntityType, or
      *  * A list containing only Feature IDs, which selects only Features with
@@ -705,6 +714,7 @@ public final class IdMatcher extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIdsIsMutable();
       ids_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

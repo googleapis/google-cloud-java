@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface ListMigrationJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of migrationJobs.
+   * Required. The parent which owns this collection of migrationJobs.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface ListMigrationJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of migrationJobs.
+   * Required. The parent which owns this collection of migrationJobs.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface ListMigrationJobsRequestOrBuilder
    * <pre>
    * The maximum number of migration jobs to return. The service may return
    * fewer than this value. If unspecified, at most 50 migration jobs will be
-   * returned. The maximum value is 1000; values above 1000 will be coerced to
+   * returned. The maximum value is 1000; values above 1000 are coerced to
    * 1000.
    * </pre>
    *

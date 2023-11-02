@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.cloud.servicedirectory.v1beta1;
 
+import static com.google.cloud.servicedirectory.v1beta1.LookupServiceClient.ListLocationsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,8 +27,13 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.servicedirectory.v1beta1.stub.LookupServiceStubSettings;
 import java.io.IOException;
 import java.util.List;
@@ -76,6 +83,17 @@ public class LookupServiceSettings extends ClientSettings<LookupServiceSettings>
   /** Returns the object with the settings used for calls to resolveService. */
   public UnaryCallSettings<ResolveServiceRequest, ResolveServiceResponse> resolveServiceSettings() {
     return ((LookupServiceStubSettings) getStubSettings()).resolveServiceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((LookupServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((LookupServiceStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final LookupServiceSettings create(LookupServiceStubSettings stub)
@@ -197,6 +215,18 @@ public class LookupServiceSettings extends ClientSettings<LookupServiceSettings>
     public UnaryCallSettings.Builder<ResolveServiceRequest, ResolveServiceResponse>
         resolveServiceSettings() {
       return getStubSettingsBuilder().resolveServiceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

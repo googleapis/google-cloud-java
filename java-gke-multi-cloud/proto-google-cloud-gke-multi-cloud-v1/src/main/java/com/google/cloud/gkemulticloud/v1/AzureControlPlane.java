@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
     return new AzureControlPlane();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AzureControlPlane_descriptor;
@@ -92,6 +87,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The Kubernetes version to run on control plane replicas
    * (e.g. `1.19.10-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig].
@@ -119,6 +115,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The Kubernetes version to run on control plane replicas
    * (e.g. `1.19.10-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig].
@@ -156,6 +153,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * `AzureControlPlane.endpoint_subnet_id` is not specified. Similarly it will
    * be used as default for
    * `AzureClusterNetworking.service_load_balancer_subnet_id`.
+   *
    * Example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;/subnets/default`.
    * </pre>
@@ -187,6 +185,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * `AzureControlPlane.endpoint_subnet_id` is not specified. Similarly it will
    * be used as default for
    * `AzureClusterNetworking.service_load_balancer_subnet_id`.
+   *
    * Example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;/subnets/default`.
    * </pre>
@@ -217,8 +216,10 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The Azure VM size name. Example: `Standard_DS2_v2`.
+   *
    * For available VM sizes, see
    * https://docs.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions.
+   *
    * When unspecified, it defaults to `Standard_DS2_v2`.
    * </pre>
    *
@@ -243,8 +244,10 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The Azure VM size name. Example: `Standard_DS2_v2`.
+   *
    * For available VM sizes, see
    * https://docs.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions.
+   *
    * When unspecified, it defaults to `Standard_DS2_v2`.
    * </pre>
    *
@@ -332,6 +335,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * control plane replica.
+   *
    * When unspecified, it defaults to 32-GiB Azure Disk.
    * </pre>
    *
@@ -351,6 +355,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * control plane replica.
+   *
    * When unspecified, it defaults to 32-GiB Azure Disk.
    * </pre>
    *
@@ -372,6 +377,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * control plane replica.
+   *
    * When unspecified, it defaults to 32-GiB Azure Disk.
    * </pre>
    *
@@ -395,6 +401,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * Optional. Configuration related to the main volume provisioned for each
    * control plane replica.
    * The main volume is in charge of storing all of the cluster's etcd state.
+   *
    * When unspecified, it defaults to a 8-GiB Azure Disk.
    * </pre>
    *
@@ -415,6 +422,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * Optional. Configuration related to the main volume provisioned for each
    * control plane replica.
    * The main volume is in charge of storing all of the cluster's etcd state.
+   *
    * When unspecified, it defaults to a 8-GiB Azure Disk.
    * </pre>
    *
@@ -437,6 +445,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * Optional. Configuration related to the main volume provisioned for each
    * control plane replica.
    * The main volume is in charge of storing all of the cluster's etcd state.
+   *
    * When unspecified, it defaults to a 8-GiB Azure Disk.
    * </pre>
    *
@@ -736,6 +745,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Configuration for where to place the control plane replicas.
+   *
    * Up to three replica placement instances can be specified. If
    * replica_placements is set, the replica placement instances will be applied
    * to the three control plane replicas as evenly as possible.
@@ -755,6 +765,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Configuration for where to place the control plane replicas.
+   *
    * Up to three replica placement instances can be specified. If
    * replica_placements is set, the replica placement instances will be applied
    * to the three control plane replicas as evenly as possible.
@@ -774,6 +785,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Configuration for where to place the control plane replicas.
+   *
    * Up to three replica placement instances can be specified. If
    * replica_placements is set, the replica placement instances will be applied
    * to the three control plane replicas as evenly as possible.
@@ -792,6 +804,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Configuration for where to place the control plane replicas.
+   *
    * Up to three replica placement instances can be specified. If
    * replica_placements is set, the replica placement instances will be applied
    * to the three control plane replicas as evenly as possible.
@@ -810,6 +823,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Configuration for where to place the control plane replicas.
+   *
    * Up to three replica placement instances can be specified. If
    * replica_placements is set, the replica placement instances will be applied
    * to the three control plane replicas as evenly as possible.
@@ -835,6 +849,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. The ARM ID of the subnet where the control plane load balancer is
    * deployed. When unspecified, it defaults to AzureControlPlane.subnet_id.
+   *
    * Example:
    * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid123"
    * </pre>
@@ -861,6 +876,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. The ARM ID of the subnet where the control plane load balancer is
    * deployed. When unspecified, it defaults to AzureControlPlane.subnet_id.
+   *
    * Example:
    * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid123"
    * </pre>
@@ -1623,6 +1639,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The Kubernetes version to run on control plane replicas
      * (e.g. `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig].
@@ -1649,6 +1666,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The Kubernetes version to run on control plane replicas
      * (e.g. `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig].
@@ -1675,6 +1693,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The Kubernetes version to run on control plane replicas
      * (e.g. `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig].
@@ -1700,6 +1719,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The Kubernetes version to run on control plane replicas
      * (e.g. `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig].
@@ -1721,6 +1741,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The Kubernetes version to run on control plane replicas
      * (e.g. `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig].
@@ -1754,6 +1775,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * `AzureControlPlane.endpoint_subnet_id` is not specified. Similarly it will
      * be used as default for
      * `AzureClusterNetworking.service_load_balancer_subnet_id`.
+     *
      * Example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;/subnets/default`.
      * </pre>
@@ -1784,6 +1806,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * `AzureControlPlane.endpoint_subnet_id` is not specified. Similarly it will
      * be used as default for
      * `AzureClusterNetworking.service_load_balancer_subnet_id`.
+     *
      * Example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;/subnets/default`.
      * </pre>
@@ -1814,6 +1837,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * `AzureControlPlane.endpoint_subnet_id` is not specified. Similarly it will
      * be used as default for
      * `AzureClusterNetworking.service_load_balancer_subnet_id`.
+     *
      * Example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;/subnets/default`.
      * </pre>
@@ -1843,6 +1867,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * `AzureControlPlane.endpoint_subnet_id` is not specified. Similarly it will
      * be used as default for
      * `AzureClusterNetworking.service_load_balancer_subnet_id`.
+     *
      * Example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;/subnets/default`.
      * </pre>
@@ -1868,6 +1893,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * `AzureControlPlane.endpoint_subnet_id` is not specified. Similarly it will
      * be used as default for
      * `AzureClusterNetworking.service_load_balancer_subnet_id`.
+     *
      * Example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-id&gt;/subnets/default`.
      * </pre>
@@ -1894,8 +1920,10 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Azure VM size name. Example: `Standard_DS2_v2`.
+     *
      * For available VM sizes, see
      * https://docs.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions.
+     *
      * When unspecified, it defaults to `Standard_DS2_v2`.
      * </pre>
      *
@@ -1919,8 +1947,10 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Azure VM size name. Example: `Standard_DS2_v2`.
+     *
      * For available VM sizes, see
      * https://docs.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions.
+     *
      * When unspecified, it defaults to `Standard_DS2_v2`.
      * </pre>
      *
@@ -1944,8 +1974,10 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Azure VM size name. Example: `Standard_DS2_v2`.
+     *
      * For available VM sizes, see
      * https://docs.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions.
+     *
      * When unspecified, it defaults to `Standard_DS2_v2`.
      * </pre>
      *
@@ -1968,8 +2000,10 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Azure VM size name. Example: `Standard_DS2_v2`.
+     *
      * For available VM sizes, see
      * https://docs.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions.
+     *
      * When unspecified, it defaults to `Standard_DS2_v2`.
      * </pre>
      *
@@ -1988,8 +2022,10 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Azure VM size name. Example: `Standard_DS2_v2`.
+     *
      * For available VM sizes, see
      * https://docs.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions.
+     *
      * When unspecified, it defaults to `Standard_DS2_v2`.
      * </pre>
      *
@@ -2233,6 +2269,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * When unspecified, it defaults to 32-GiB Azure Disk.
      * </pre>
      *
@@ -2251,6 +2288,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * When unspecified, it defaults to 32-GiB Azure Disk.
      * </pre>
      *
@@ -2275,6 +2313,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * When unspecified, it defaults to 32-GiB Azure Disk.
      * </pre>
      *
@@ -2301,6 +2340,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * When unspecified, it defaults to 32-GiB Azure Disk.
      * </pre>
      *
@@ -2325,6 +2365,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * When unspecified, it defaults to 32-GiB Azure Disk.
      * </pre>
      *
@@ -2355,6 +2396,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * When unspecified, it defaults to 32-GiB Azure Disk.
      * </pre>
      *
@@ -2378,6 +2420,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * When unspecified, it defaults to 32-GiB Azure Disk.
      * </pre>
      *
@@ -2396,6 +2439,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * When unspecified, it defaults to 32-GiB Azure Disk.
      * </pre>
      *
@@ -2418,6 +2462,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * When unspecified, it defaults to 32-GiB Azure Disk.
      * </pre>
      *
@@ -2455,6 +2500,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * When unspecified, it defaults to a 8-GiB Azure Disk.
      * </pre>
      *
@@ -2474,6 +2520,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * When unspecified, it defaults to a 8-GiB Azure Disk.
      * </pre>
      *
@@ -2499,6 +2546,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * When unspecified, it defaults to a 8-GiB Azure Disk.
      * </pre>
      *
@@ -2526,6 +2574,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * When unspecified, it defaults to a 8-GiB Azure Disk.
      * </pre>
      *
@@ -2551,6 +2600,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * When unspecified, it defaults to a 8-GiB Azure Disk.
      * </pre>
      *
@@ -2582,6 +2632,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * When unspecified, it defaults to a 8-GiB Azure Disk.
      * </pre>
      *
@@ -2606,6 +2657,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * When unspecified, it defaults to a 8-GiB Azure Disk.
      * </pre>
      *
@@ -2625,6 +2677,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * When unspecified, it defaults to a 8-GiB Azure Disk.
      * </pre>
      *
@@ -2648,6 +2701,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * When unspecified, it defaults to a 8-GiB Azure Disk.
      * </pre>
      *
@@ -3482,6 +3536,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3504,6 +3559,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3525,6 +3581,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3546,6 +3603,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3574,6 +3632,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3599,6 +3658,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3626,6 +3686,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3654,6 +3715,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3679,6 +3741,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3704,6 +3767,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3729,6 +3793,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3753,6 +3818,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3777,6 +3843,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3795,6 +3862,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3817,6 +3885,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3839,6 +3908,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3858,6 +3928,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3878,6 +3949,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration for where to place the control plane replicas.
+     *
      * Up to three replica placement instances can be specified. If
      * replica_placements is set, the replica placement instances will be applied
      * to the three control plane replicas as evenly as possible.
@@ -3919,6 +3991,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The ARM ID of the subnet where the control plane load balancer is
      * deployed. When unspecified, it defaults to AzureControlPlane.subnet_id.
+     *
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid123"
      * </pre>
@@ -3944,6 +4017,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The ARM ID of the subnet where the control plane load balancer is
      * deployed. When unspecified, it defaults to AzureControlPlane.subnet_id.
+     *
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid123"
      * </pre>
@@ -3969,6 +4043,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The ARM ID of the subnet where the control plane load balancer is
      * deployed. When unspecified, it defaults to AzureControlPlane.subnet_id.
+     *
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid123"
      * </pre>
@@ -3993,6 +4068,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The ARM ID of the subnet where the control plane load balancer is
      * deployed. When unspecified, it defaults to AzureControlPlane.subnet_id.
+     *
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid123"
      * </pre>
@@ -4013,6 +4089,7 @@ public final class AzureControlPlane extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The ARM ID of the subnet where the control plane load balancer is
      * deployed. When unspecified, it defaults to AzureControlPlane.subnet_id.
+     *
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid123"
      * </pre>

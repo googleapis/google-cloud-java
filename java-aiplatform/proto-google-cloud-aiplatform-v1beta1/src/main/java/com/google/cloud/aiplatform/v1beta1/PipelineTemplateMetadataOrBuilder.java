@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,11 @@ public interface PipelineTemplateMetadataOrBuilder
    *
    * <pre>
    * The version_name in artifact registry.
+   *
    * Will always be presented in output if the
    * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
    * is from supported template registry.
+   *
    * Format is "sha256:abcdef123456...".
    * </pre>
    *
@@ -44,9 +46,11 @@ public interface PipelineTemplateMetadataOrBuilder
    *
    * <pre>
    * The version_name in artifact registry.
+   *
    * Will always be presented in output if the
    * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
    * is from supported template registry.
+   *
    * Format is "sha256:abcdef123456...".
    * </pre>
    *

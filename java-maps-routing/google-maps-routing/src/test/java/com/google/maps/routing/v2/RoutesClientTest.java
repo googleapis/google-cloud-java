@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,13 +103,17 @@ public class RoutesClientTest {
             .setPolylineQuality(PolylineQuality.forNumber(0))
             .setPolylineEncoding(PolylineEncoding.forNumber(0))
             .setDepartureTime(Timestamp.newBuilder().build())
+            .setArrivalTime(Timestamp.newBuilder().build())
             .setComputeAlternativeRoutes(true)
             .setRouteModifiers(RouteModifiers.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setRegionCode("regionCode-1991004415")
             .setUnits(Units.forNumber(0))
+            .setOptimizeWaypointOrder(true)
             .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
             .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
+            .setTrafficModel(TrafficModel.forNumber(0))
+            .setTransitPreferences(TransitPreferences.newBuilder().build())
             .build();
 
     ComputeRoutesResponse actualResponse = client.computeRoutes(request);
@@ -127,6 +131,7 @@ public class RoutesClientTest {
     Assert.assertEquals(request.getPolylineQuality(), actualRequest.getPolylineQuality());
     Assert.assertEquals(request.getPolylineEncoding(), actualRequest.getPolylineEncoding());
     Assert.assertEquals(request.getDepartureTime(), actualRequest.getDepartureTime());
+    Assert.assertEquals(request.getArrivalTime(), actualRequest.getArrivalTime());
     Assert.assertEquals(
         request.getComputeAlternativeRoutes(), actualRequest.getComputeAlternativeRoutes());
     Assert.assertEquals(request.getRouteModifiers(), actualRequest.getRouteModifiers());
@@ -134,9 +139,13 @@ public class RoutesClientTest {
     Assert.assertEquals(request.getRegionCode(), actualRequest.getRegionCode());
     Assert.assertEquals(request.getUnits(), actualRequest.getUnits());
     Assert.assertEquals(
+        request.getOptimizeWaypointOrder(), actualRequest.getOptimizeWaypointOrder());
+    Assert.assertEquals(
         request.getRequestedReferenceRoutesList(), actualRequest.getRequestedReferenceRoutesList());
     Assert.assertEquals(
         request.getExtraComputationsList(), actualRequest.getExtraComputationsList());
+    Assert.assertEquals(request.getTrafficModel(), actualRequest.getTrafficModel());
+    Assert.assertEquals(request.getTransitPreferences(), actualRequest.getTransitPreferences());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -159,13 +168,17 @@ public class RoutesClientTest {
               .setPolylineQuality(PolylineQuality.forNumber(0))
               .setPolylineEncoding(PolylineEncoding.forNumber(0))
               .setDepartureTime(Timestamp.newBuilder().build())
+              .setArrivalTime(Timestamp.newBuilder().build())
               .setComputeAlternativeRoutes(true)
               .setRouteModifiers(RouteModifiers.newBuilder().build())
               .setLanguageCode("languageCode-2092349083")
               .setRegionCode("regionCode-1991004415")
               .setUnits(Units.forNumber(0))
+              .setOptimizeWaypointOrder(true)
               .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
               .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
+              .setTrafficModel(TrafficModel.forNumber(0))
+              .setTransitPreferences(TransitPreferences.newBuilder().build())
               .build();
       client.computeRoutes(request);
       Assert.fail("No exception raised");
@@ -187,6 +200,7 @@ public class RoutesClientTest {
             .setStaticDuration(Duration.newBuilder().build())
             .setTravelAdvisory(RouteTravelAdvisory.newBuilder().build())
             .setFallbackInfo(FallbackInfo.newBuilder().build())
+            .setLocalizedValues(RouteMatrixElement.LocalizedValues.newBuilder().build())
             .build();
     mockRoutes.addResponse(expectedResponse);
     ComputeRouteMatrixRequest request =
@@ -196,9 +210,12 @@ public class RoutesClientTest {
             .setTravelMode(RouteTravelMode.forNumber(0))
             .setRoutingPreference(RoutingPreference.forNumber(0))
             .setDepartureTime(Timestamp.newBuilder().build())
+            .setArrivalTime(Timestamp.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setRegionCode("regionCode-1991004415")
             .addAllExtraComputations(new ArrayList<ComputeRouteMatrixRequest.ExtraComputation>())
+            .setTrafficModel(TrafficModel.forNumber(0))
+            .setTransitPreferences(TransitPreferences.newBuilder().build())
             .build();
 
     MockStreamObserver<RouteMatrixElement> responseObserver = new MockStreamObserver<>();
@@ -223,9 +240,12 @@ public class RoutesClientTest {
             .setTravelMode(RouteTravelMode.forNumber(0))
             .setRoutingPreference(RoutingPreference.forNumber(0))
             .setDepartureTime(Timestamp.newBuilder().build())
+            .setArrivalTime(Timestamp.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setRegionCode("regionCode-1991004415")
             .addAllExtraComputations(new ArrayList<ComputeRouteMatrixRequest.ExtraComputation>())
+            .setTrafficModel(TrafficModel.forNumber(0))
+            .setTransitPreferences(TransitPreferences.newBuilder().build())
             .build();
 
     MockStreamObserver<RouteMatrixElement> responseObserver = new MockStreamObserver<>();

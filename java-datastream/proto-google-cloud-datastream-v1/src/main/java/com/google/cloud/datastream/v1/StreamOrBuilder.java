@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -500,5 +500,5 @@ public interface StreamOrBuilder
    */
   com.google.protobuf.ByteString getCustomerManagedEncryptionKeyBytes();
 
-  public com.google.cloud.datastream.v1.Stream.BackfillStrategyCase getBackfillStrategyCase();
+  com.google.cloud.datastream.v1.Stream.BackfillStrategyCase getBackfillStrategyCase();
 }

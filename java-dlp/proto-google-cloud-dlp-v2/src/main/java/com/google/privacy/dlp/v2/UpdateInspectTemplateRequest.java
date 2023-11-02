@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
     return new UpdateInspectTemplateRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_UpdateInspectTemplateRequest_descriptor;
@@ -75,8 +70,8 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Resource name of organization and inspectTemplate to be updated, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
+   * Required. Resource name of organization and inspectTemplate to be updated,
+   * for example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
@@ -102,8 +97,8 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Resource name of organization and inspectTemplate to be updated, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
+   * Required. Resource name of organization and inspectTemplate to be updated,
+   * for example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
@@ -633,8 +628,8 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of organization and inspectTemplate to be updated, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of organization and inspectTemplate to be updated,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -659,8 +654,8 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of organization and inspectTemplate to be updated, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of organization and inspectTemplate to be updated,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -685,8 +680,8 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of organization and inspectTemplate to be updated, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of organization and inspectTemplate to be updated,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -710,8 +705,8 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of organization and inspectTemplate to be updated, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of organization and inspectTemplate to be updated,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -731,8 +726,8 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of organization and inspectTemplate to be updated, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of organization and inspectTemplate to be updated,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *

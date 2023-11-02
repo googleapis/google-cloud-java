@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@ public interface ListMessagesRequestOrBuilder
    * support milliseconds accuracy. E.g.,
    * `create_time_epoch_microseconds &gt; 1551790877964485` or
    * `create_time &gt; "2017-01-15T01:30:15.01Z"`.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -83,6 +84,7 @@ public interface ListMessagesRequestOrBuilder
    * support milliseconds accuracy. E.g.,
    * `create_time_epoch_microseconds &gt; 1551790877964485` or
    * `create_time &gt; "2017-01-15T01:30:15.01Z"`.
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>

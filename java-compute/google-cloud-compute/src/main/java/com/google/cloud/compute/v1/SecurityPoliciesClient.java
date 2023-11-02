@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1136,7 +1136,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified policy with the data included in the request. To clear fields in the
-   * rule, leave the fields empty and specify them in the updateMask. This cannot be used to be
+   * policy, leave the fields empty and specify them in the updateMask. This cannot be used to be
    * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
    * removeRule instead.
    *
@@ -1176,7 +1176,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified policy with the data included in the request. To clear fields in the
-   * rule, leave the fields empty and specify them in the updateMask. This cannot be used to be
+   * policy, leave the fields empty and specify them in the updateMask. This cannot be used to be
    * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
    * removeRule instead.
    *
@@ -1213,7 +1213,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified policy with the data included in the request. To clear fields in the
-   * rule, leave the fields empty and specify them in the updateMask. This cannot be used to be
+   * policy, leave the fields empty and specify them in the updateMask. This cannot be used to be
    * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
    * removeRule instead.
    *
@@ -1248,7 +1248,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified policy with the data included in the request. To clear fields in the
-   * rule, leave the fields empty and specify them in the updateMask. This cannot be used to be
+   * policy, leave the fields empty and specify them in the updateMask. This cannot be used to be
    * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
    * removeRule instead.
    *
@@ -1280,7 +1280,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches a rule at the specified priority.
+   * Patches a rule at the specified priority. To clear fields in the rule, leave the fields empty
+   * and specify them in the updateMask.
    *
    * <p>Sample code:
    *
@@ -1319,7 +1320,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches a rule at the specified priority.
+   * Patches a rule at the specified priority. To clear fields in the rule, leave the fields empty
+   * and specify them in the updateMask.
    *
    * <p>Sample code:
    *
@@ -1354,7 +1356,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches a rule at the specified priority.
+   * Patches a rule at the specified priority. To clear fields in the rule, leave the fields empty
+   * and specify them in the updateMask.
    *
    * <p>Sample code:
    *
@@ -1387,7 +1390,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches a rule at the specified priority.
+   * Patches a rule at the specified priority. To clear fields in the rule, leave the fields empty
+   * and specify them in the updateMask.
    *
    * <p>Sample code:
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -166,15 +166,23 @@ public interface PageOrBuilder
    * <pre>
    * Ordered list of
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-   * associated with the page. Transition route groups must be unique within a
-   * page.
+   * added to the page. Transition route groups must be unique within a page. If
+   * the page links both flow-level transition route groups and agent-level
+   * transition route groups, the flow-level ones will have higher priority and
+   * will be put before the agent-level ones.
+   *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
    *     transition route group -&gt; flow's transition routes.
+   *
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -189,15 +197,23 @@ public interface PageOrBuilder
    * <pre>
    * Ordered list of
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-   * associated with the page. Transition route groups must be unique within a
-   * page.
+   * added to the page. Transition route groups must be unique within a page. If
+   * the page links both flow-level transition route groups and agent-level
+   * transition route groups, the flow-level ones will have higher priority and
+   * will be put before the agent-level ones.
+   *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
    *     transition route group -&gt; flow's transition routes.
+   *
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -212,15 +228,23 @@ public interface PageOrBuilder
    * <pre>
    * Ordered list of
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-   * associated with the page. Transition route groups must be unique within a
-   * page.
+   * added to the page. Transition route groups must be unique within a page. If
+   * the page links both flow-level transition route groups and agent-level
+   * transition route groups, the flow-level ones will have higher priority and
+   * will be put before the agent-level ones.
+   *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
    *     transition route group -&gt; flow's transition routes.
+   *
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -236,15 +260,23 @@ public interface PageOrBuilder
    * <pre>
    * Ordered list of
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-   * associated with the page. Transition route groups must be unique within a
-   * page.
+   * added to the page. Transition route groups must be unique within a page. If
+   * the page links both flow-level transition route groups and agent-level
+   * transition route groups, the flow-level ones will have higher priority and
+   * will be put before the agent-level ones.
+   *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
    *     transition route group -&gt; flow's transition routes.
+   *
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -262,8 +294,10 @@ public interface PageOrBuilder
    * A list of transitions for the transition rules of this page.
    * They route the conversation to another page in the same flow, or another
    * flow.
+   *
    * When we are in a certain page, the TransitionRoutes are evalauted in the
    * following order:
+   *
    * *   TransitionRoutes defined in the page with intent specified.
    * *   TransitionRoutes defined in the
    *     [transition route
@@ -292,8 +326,10 @@ public interface PageOrBuilder
    * A list of transitions for the transition rules of this page.
    * They route the conversation to another page in the same flow, or another
    * flow.
+   *
    * When we are in a certain page, the TransitionRoutes are evalauted in the
    * following order:
+   *
    * *   TransitionRoutes defined in the page with intent specified.
    * *   TransitionRoutes defined in the
    *     [transition route
@@ -322,8 +358,10 @@ public interface PageOrBuilder
    * A list of transitions for the transition rules of this page.
    * They route the conversation to another page in the same flow, or another
    * flow.
+   *
    * When we are in a certain page, the TransitionRoutes are evalauted in the
    * following order:
+   *
    * *   TransitionRoutes defined in the page with intent specified.
    * *   TransitionRoutes defined in the
    *     [transition route
@@ -352,8 +390,10 @@ public interface PageOrBuilder
    * A list of transitions for the transition rules of this page.
    * They route the conversation to another page in the same flow, or another
    * flow.
+   *
    * When we are in a certain page, the TransitionRoutes are evalauted in the
    * following order:
+   *
    * *   TransitionRoutes defined in the page with intent specified.
    * *   TransitionRoutes defined in the
    *     [transition route
@@ -383,8 +423,10 @@ public interface PageOrBuilder
    * A list of transitions for the transition rules of this page.
    * They route the conversation to another page in the same flow, or another
    * flow.
+   *
    * When we are in a certain page, the TransitionRoutes are evalauted in the
    * following order:
+   *
    * *   TransitionRoutes defined in the page with intent specified.
    * *   TransitionRoutes defined in the
    *     [transition route
@@ -464,4 +506,84 @@ public interface PageOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.EventHandler event_handlers = 10;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.EventHandlerOrBuilder getEventHandlersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this page. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 13;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  boolean hasAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this page. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 13;</code>
+   *
+   * @return The advancedSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this page. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 13;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder getAdvancedSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knowledgeConnectorSettings field is set.
+   */
+  boolean hasKnowledgeConnectorSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knowledgeConnectorSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings getKnowledgeConnectorSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettingsOrBuilder
+      getKnowledgeConnectorSettingsOrBuilder();
 }

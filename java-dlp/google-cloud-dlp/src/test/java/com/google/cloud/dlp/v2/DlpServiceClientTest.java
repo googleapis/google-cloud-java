@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.dlp.v2;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
@@ -30,31 +31,39 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
+import com.google.privacy.dlp.v2.ActionDetails;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.ByteContentItem;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.ContentItem;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DataProfileAction;
 import com.google.privacy.dlp.v2.DeidentifyConfig;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeidentifyTemplateName;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DiscoveryConfig;
+import com.google.privacy.dlp.v2.DiscoveryConfigName;
+import com.google.privacy.dlp.v2.DiscoveryTarget;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.DlpJobType;
 import com.google.privacy.dlp.v2.Error;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
@@ -74,6 +83,8 @@ import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.JobTriggerName;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
@@ -99,6 +110,7 @@ import com.google.privacy.dlp.v2.StoredInfoTypeName;
 import com.google.privacy.dlp.v2.StoredInfoTypeVersion;
 import com.google.privacy.dlp.v2.TransformationOverview;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
@@ -2584,8 +2596,10 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -2628,6 +2642,484 @@ public class DlpServiceClientTest {
   }
 
   @Test
+  public void createDiscoveryConfigTest() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+
+    DiscoveryConfig actualResponse = client.createDiscoveryConfig(parent, discoveryConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDiscoveryConfigRequest actualRequest =
+        ((CreateDiscoveryConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(discoveryConfig, actualRequest.getDiscoveryConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDiscoveryConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+      client.createDiscoveryConfig(parent, discoveryConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDiscoveryConfigTest2() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+
+    DiscoveryConfig actualResponse = client.createDiscoveryConfig(parent, discoveryConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDiscoveryConfigRequest actualRequest =
+        ((CreateDiscoveryConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(discoveryConfig, actualRequest.getDiscoveryConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDiscoveryConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+      client.createDiscoveryConfig(parent, discoveryConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDiscoveryConfigTest() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    DiscoveryConfigName name =
+        DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+    DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DiscoveryConfig actualResponse =
+        client.updateDiscoveryConfig(name, discoveryConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDiscoveryConfigRequest actualRequest =
+        ((UpdateDiscoveryConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(discoveryConfig, actualRequest.getDiscoveryConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDiscoveryConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      DiscoveryConfigName name =
+          DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+      DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDiscoveryConfig(name, discoveryConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDiscoveryConfigTest2() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DiscoveryConfig actualResponse =
+        client.updateDiscoveryConfig(name, discoveryConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDiscoveryConfigRequest actualRequest =
+        ((UpdateDiscoveryConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(discoveryConfig, actualRequest.getDiscoveryConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDiscoveryConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDiscoveryConfig(name, discoveryConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDiscoveryConfigTest() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    DiscoveryConfigName name =
+        DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+
+    DiscoveryConfig actualResponse = client.getDiscoveryConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDiscoveryConfigRequest actualRequest = ((GetDiscoveryConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDiscoveryConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      DiscoveryConfigName name =
+          DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+      client.getDiscoveryConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDiscoveryConfigTest2() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DiscoveryConfig actualResponse = client.getDiscoveryConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDiscoveryConfigRequest actualRequest = ((GetDiscoveryConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDiscoveryConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDiscoveryConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDiscoveryConfigsTest() throws Exception {
+    DiscoveryConfig responsesElement = DiscoveryConfig.newBuilder().build();
+    ListDiscoveryConfigsResponse expectedResponse =
+        ListDiscoveryConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDiscoveryConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDiscoveryConfigsPagedResponse pagedListResponse = client.listDiscoveryConfigs(parent);
+
+    List<DiscoveryConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDiscoveryConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDiscoveryConfigsRequest actualRequest =
+        ((ListDiscoveryConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDiscoveryConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDiscoveryConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDiscoveryConfigsTest2() throws Exception {
+    DiscoveryConfig responsesElement = DiscoveryConfig.newBuilder().build();
+    ListDiscoveryConfigsResponse expectedResponse =
+        ListDiscoveryConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDiscoveryConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDiscoveryConfigsPagedResponse pagedListResponse = client.listDiscoveryConfigs(parent);
+
+    List<DiscoveryConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDiscoveryConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDiscoveryConfigsRequest actualRequest =
+        ((ListDiscoveryConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDiscoveryConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDiscoveryConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDiscoveryConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    DiscoveryConfigName name =
+        DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+
+    client.deleteDiscoveryConfig(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDiscoveryConfigRequest actualRequest =
+        ((DeleteDiscoveryConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDiscoveryConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      DiscoveryConfigName name =
+          DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+      client.deleteDiscoveryConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDiscoveryConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteDiscoveryConfig(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDiscoveryConfigRequest actualRequest =
+        ((DeleteDiscoveryConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDiscoveryConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDiscoveryConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createDlpJobTest() throws Exception {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
@@ -2636,8 +3128,10 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -2683,8 +3177,10 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -2730,8 +3226,10 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -2777,8 +3275,10 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -2824,8 +3324,10 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -2871,8 +3373,10 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -3050,8 +3554,10 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -3094,8 +3600,10 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockDlpService.addResponse(expectedResponse);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,24 +43,24 @@ public final class IAMCredentialsProto {
           + "teAccessToken\0225.google.iam.credentials.v"
           + "1.GenerateAccessTokenRequest\0326.google.ia"
           + "m.credentials.v1.GenerateAccessTokenResp"
-          + "onse\"f\202\323\344\223\002@\";/v1/{name=projects/*/servi"
-          + "ceAccounts/*}:generateAccessToken:\001*\332A\035n"
-          + "ame,delegates,scope,lifetime\022\344\001\n\017Generat"
+          + "onse\"f\332A\035name,delegates,scope,lifetime\202\323"
+          + "\344\223\002@\";/v1/{name=projects/*/serviceAccoun"
+          + "ts/*}:generateAccessToken:\001*\022\344\001\n\017Generat"
           + "eIdToken\0221.google.iam.credentials.v1.Gen"
           + "erateIdTokenRequest\0322.google.iam.credent"
-          + "ials.v1.GenerateIdTokenResponse\"j\202\323\344\223\002<\""
+          + "ials.v1.GenerateIdTokenResponse\"j\332A%name"
+          + ",delegates,audience,include_email\202\323\344\223\002<\""
           + "7/v1/{name=projects/*/serviceAccounts/*}"
-          + ":generateIdToken:\001*\332A%name,delegates,aud"
-          + "ience,include_email\022\271\001\n\010SignBlob\022*.googl"
+          + ":generateIdToken:\001*\022\271\001\n\010SignBlob\022*.googl"
           + "e.iam.credentials.v1.SignBlobRequest\032+.g"
           + "oogle.iam.credentials.v1.SignBlobRespons"
-          + "e\"T\202\323\344\223\0025\"0/v1/{name=projects/*/serviceA"
-          + "ccounts/*}:signBlob:\001*\332A\026name,delegates,"
-          + "payload\022\265\001\n\007SignJwt\022).google.iam.credent"
-          + "ials.v1.SignJwtRequest\032*.google.iam.cred"
-          + "entials.v1.SignJwtResponse\"S\202\323\344\223\0024\"//v1/"
+          + "e\"T\332A\026name,delegates,payload\202\323\344\223\0025\"0/v1/"
           + "{name=projects/*/serviceAccounts/*}:sign"
-          + "Jwt:\001*\332A\026name,delegates,payload\032Q\312A\035iamc"
+          + "Blob:\001*\022\265\001\n\007SignJwt\022).google.iam.credent"
+          + "ials.v1.SignJwtRequest\032*.google.iam.cred"
+          + "entials.v1.SignJwtResponse\"S\332A\026name,dele"
+          + "gates,payload\202\323\344\223\0024\"//v1/{name=projects/"
+          + "*/serviceAccounts/*}:signJwt:\001*\032Q\312A\035iamc"
           + "redentials.googleapis.com\322A.https://www."
           + "googleapis.com/auth/cloud-platformB\312\001\n#c"
           + "om.google.cloud.iam.credentials.v1B\023IAMC"

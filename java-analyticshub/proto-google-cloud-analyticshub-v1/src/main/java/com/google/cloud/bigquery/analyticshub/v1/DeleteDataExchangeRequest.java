@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
     return new DeleteDataExchangeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
         .internal_static_google_cloud_bigquery_analyticshub_v1_DeleteDataExchangeRequest_descriptor;
@@ -75,8 +70,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The full name of the data exchange resource that you want to delete.
-   * For example, `projects/myproject/locations/US/dataExchanges/123`.
+   * Required. The full name of the data exchange resource that you want to
+   * delete. For example, `projects/myproject/locations/US/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -101,8 +96,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The full name of the data exchange resource that you want to delete.
-   * For example, `projects/myproject/locations/US/dataExchanges/123`.
+   * Required. The full name of the data exchange resource that you want to
+   * delete. For example, `projects/myproject/locations/US/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -480,8 +475,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The full name of the data exchange resource that you want to delete.
-     * For example, `projects/myproject/locations/US/dataExchanges/123`.
+     * Required. The full name of the data exchange resource that you want to
+     * delete. For example, `projects/myproject/locations/US/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -505,8 +500,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The full name of the data exchange resource that you want to delete.
-     * For example, `projects/myproject/locations/US/dataExchanges/123`.
+     * Required. The full name of the data exchange resource that you want to
+     * delete. For example, `projects/myproject/locations/US/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -530,8 +525,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The full name of the data exchange resource that you want to delete.
-     * For example, `projects/myproject/locations/US/dataExchanges/123`.
+     * Required. The full name of the data exchange resource that you want to
+     * delete. For example, `projects/myproject/locations/US/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -554,8 +549,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The full name of the data exchange resource that you want to delete.
-     * For example, `projects/myproject/locations/US/dataExchanges/123`.
+     * Required. The full name of the data exchange resource that you want to
+     * delete. For example, `projects/myproject/locations/US/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -574,8 +569,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The full name of the data exchange resource that you want to delete.
-     * For example, `projects/myproject/locations/US/dataExchanges/123`.
+     * Required. The full name of the data exchange resource that you want to
+     * delete. For example, `projects/myproject/locations/US/dataExchanges/123`.
      * </pre>
      *
      * <code>

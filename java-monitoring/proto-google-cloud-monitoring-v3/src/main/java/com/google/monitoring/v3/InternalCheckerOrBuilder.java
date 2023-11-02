@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ public interface InternalCheckerOrBuilder
    *
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
+   *
    * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
    * the Uptime check config associated with the internal checker.
    * </pre>
@@ -44,7 +46,9 @@ public interface InternalCheckerOrBuilder
    *
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
+   *
    * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
    * the Uptime check config associated with the internal checker.
    * </pre>

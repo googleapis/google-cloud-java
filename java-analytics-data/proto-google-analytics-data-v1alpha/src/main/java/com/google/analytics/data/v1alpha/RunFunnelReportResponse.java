@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
     return new RunFunnelReportResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1alpha_RunFunnelReportResponse_descriptor;
@@ -77,6 +72,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
    * The funnel table is a report with the funnel step, segment, breakdown
    * dimension, active users, completion rate, abandonments, and abandonments
    * rate.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The breakdown dimension is only present in this response if it
    * was requested.
@@ -97,6 +93,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
    * The funnel table is a report with the funnel step, segment, breakdown
    * dimension, active users, completion rate, abandonments, and abandonments
    * rate.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The breakdown dimension is only present in this response if it
    * was requested.
@@ -119,6 +116,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
    * The funnel table is a report with the funnel step, segment, breakdown
    * dimension, active users, completion rate, abandonments, and abandonments
    * rate.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The breakdown dimension is only present in this response if it
    * was requested.
@@ -141,10 +139,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
    * <pre>
    * The funnel visualization is a report with the funnel step, segment, date,
    * next action dimension, and active users.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The date dimension is only present in this response if it was
-   * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-   * is only present in the response if it was requested.
+   * requested through the `TRENDED_FUNNEL` funnel type. The next action
+   * dimension is only present in the response if it was requested.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -161,10 +160,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
    * <pre>
    * The funnel visualization is a report with the funnel step, segment, date,
    * next action dimension, and active users.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The date dimension is only present in this response if it was
-   * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-   * is only present in the response if it was requested.
+   * requested through the `TRENDED_FUNNEL` funnel type. The next action
+   * dimension is only present in the response if it was requested.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -183,10 +183,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
    * <pre>
    * The funnel visualization is a report with the funnel step, segment, date,
    * next action dimension, and active users.
+   *
    * The segment dimension is only present in this response if a segment was
    * requested. The date dimension is only present in this response if it was
-   * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-   * is only present in the response if it was requested.
+   * requested through the `TRENDED_FUNNEL` funnel type. The next action
+   * dimension is only present in the response if it was requested.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -760,6 +761,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * The funnel table is a report with the funnel step, segment, breakdown
      * dimension, active users, completion rate, abandonments, and abandonments
      * rate.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The breakdown dimension is only present in this response if it
      * was requested.
@@ -779,6 +781,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * The funnel table is a report with the funnel step, segment, breakdown
      * dimension, active users, completion rate, abandonments, and abandonments
      * rate.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The breakdown dimension is only present in this response if it
      * was requested.
@@ -804,6 +807,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * The funnel table is a report with the funnel step, segment, breakdown
      * dimension, active users, completion rate, abandonments, and abandonments
      * rate.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The breakdown dimension is only present in this response if it
      * was requested.
@@ -831,6 +835,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * The funnel table is a report with the funnel step, segment, breakdown
      * dimension, active users, completion rate, abandonments, and abandonments
      * rate.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The breakdown dimension is only present in this response if it
      * was requested.
@@ -856,6 +861,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * The funnel table is a report with the funnel step, segment, breakdown
      * dimension, active users, completion rate, abandonments, and abandonments
      * rate.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The breakdown dimension is only present in this response if it
      * was requested.
@@ -887,6 +893,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * The funnel table is a report with the funnel step, segment, breakdown
      * dimension, active users, completion rate, abandonments, and abandonments
      * rate.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The breakdown dimension is only present in this response if it
      * was requested.
@@ -911,6 +918,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * The funnel table is a report with the funnel step, segment, breakdown
      * dimension, active users, completion rate, abandonments, and abandonments
      * rate.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The breakdown dimension is only present in this response if it
      * was requested.
@@ -930,6 +938,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * The funnel table is a report with the funnel step, segment, breakdown
      * dimension, active users, completion rate, abandonments, and abandonments
      * rate.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The breakdown dimension is only present in this response if it
      * was requested.
@@ -953,6 +962,7 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * The funnel table is a report with the funnel step, segment, breakdown
      * dimension, active users, completion rate, abandonments, and abandonments
      * rate.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The breakdown dimension is only present in this response if it
      * was requested.
@@ -989,10 +999,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * <pre>
      * The funnel visualization is a report with the funnel step, segment, date,
      * next action dimension, and active users.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The date dimension is only present in this response if it was
-     * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-     * is only present in the response if it was requested.
+     * requested through the `TRENDED_FUNNEL` funnel type. The next action
+     * dimension is only present in the response if it was requested.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -1008,10 +1019,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * <pre>
      * The funnel visualization is a report with the funnel step, segment, date,
      * next action dimension, and active users.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The date dimension is only present in this response if it was
-     * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-     * is only present in the response if it was requested.
+     * requested through the `TRENDED_FUNNEL` funnel type. The next action
+     * dimension is only present in the response if it was requested.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -1033,10 +1045,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * <pre>
      * The funnel visualization is a report with the funnel step, segment, date,
      * next action dimension, and active users.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The date dimension is only present in this response if it was
-     * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-     * is only present in the response if it was requested.
+     * requested through the `TRENDED_FUNNEL` funnel type. The next action
+     * dimension is only present in the response if it was requested.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -1060,10 +1073,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * <pre>
      * The funnel visualization is a report with the funnel step, segment, date,
      * next action dimension, and active users.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The date dimension is only present in this response if it was
-     * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-     * is only present in the response if it was requested.
+     * requested through the `TRENDED_FUNNEL` funnel type. The next action
+     * dimension is only present in the response if it was requested.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -1085,10 +1099,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * <pre>
      * The funnel visualization is a report with the funnel step, segment, date,
      * next action dimension, and active users.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The date dimension is only present in this response if it was
-     * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-     * is only present in the response if it was requested.
+     * requested through the `TRENDED_FUNNEL` funnel type. The next action
+     * dimension is only present in the response if it was requested.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -1117,10 +1132,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * <pre>
      * The funnel visualization is a report with the funnel step, segment, date,
      * next action dimension, and active users.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The date dimension is only present in this response if it was
-     * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-     * is only present in the response if it was requested.
+     * requested through the `TRENDED_FUNNEL` funnel type. The next action
+     * dimension is only present in the response if it was requested.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -1141,10 +1157,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * <pre>
      * The funnel visualization is a report with the funnel step, segment, date,
      * next action dimension, and active users.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The date dimension is only present in this response if it was
-     * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-     * is only present in the response if it was requested.
+     * requested through the `TRENDED_FUNNEL` funnel type. The next action
+     * dimension is only present in the response if it was requested.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -1161,10 +1178,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * <pre>
      * The funnel visualization is a report with the funnel step, segment, date,
      * next action dimension, and active users.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The date dimension is only present in this response if it was
-     * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-     * is only present in the response if it was requested.
+     * requested through the `TRENDED_FUNNEL` funnel type. The next action
+     * dimension is only present in the response if it was requested.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>
@@ -1185,10 +1203,11 @@ public final class RunFunnelReportResponse extends com.google.protobuf.Generated
      * <pre>
      * The funnel visualization is a report with the funnel step, segment, date,
      * next action dimension, and active users.
+     *
      * The segment dimension is only present in this response if a segment was
      * requested. The date dimension is only present in this response if it was
-     * requested via the `TRENDED_FUNNEL` funnel type. The next action dimension
-     * is only present in the response if it was requested.
+     * requested through the `TRENDED_FUNNEL` funnel type. The next action
+     * dimension is only present in the response if it was requested.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FunnelSubReport funnel_visualization = 2;</code>

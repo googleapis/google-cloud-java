@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,8 +40,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   }
 
   private VmEndpointNatMappingsInterfaceNatMappings() {
-    drainNatIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    natIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    drainNatIpPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    natIpPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     ruleMappings_ = java.util.Collections.emptyList();
     sourceAliasIpRange_ = "";
     sourceVirtualIp_ = "";
@@ -51,11 +51,6 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new VmEndpointNatMappingsInterfaceNatMappings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,7 +72,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public static final int DRAIN_NAT_IP_PORT_RANGES_FIELD_NUMBER = 395440577;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList drainNatIpPortRanges_;
+  private com.google.protobuf.LazyStringArrayList drainNatIpPortRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -140,7 +136,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   public static final int NAT_IP_PORT_RANGES_FIELD_NUMBER = 531830810;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList natIpPortRanges_;
+  private com.google.protobuf.LazyStringArrayList natIpPortRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -785,10 +782,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      drainNatIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      natIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      drainNatIpPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      natIpPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       numTotalDrainNatPorts_ = 0;
       numTotalNatPorts_ = 0;
       if (ruleMappingsBuilder_ == null) {
@@ -839,16 +834,6 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
 
     private void buildPartialRepeatedFields(
         com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        drainNatIpPortRanges_ = drainNatIpPortRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.drainNatIpPortRanges_ = drainNatIpPortRanges_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        natIpPortRanges_ = natIpPortRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.natIpPortRanges_ = natIpPortRanges_;
       if (ruleMappingsBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
           ruleMappings_ = java.util.Collections.unmodifiableList(ruleMappings_);
@@ -863,6 +848,14 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     private void buildPartial0(
         com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        drainNatIpPortRanges_.makeImmutable();
+        result.drainNatIpPortRanges_ = drainNatIpPortRanges_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        natIpPortRanges_.makeImmutable();
+        result.natIpPortRanges_ = natIpPortRanges_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.numTotalDrainNatPorts_ = numTotalDrainNatPorts_;
@@ -935,7 +928,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       if (!other.drainNatIpPortRanges_.isEmpty()) {
         if (drainNatIpPortRanges_.isEmpty()) {
           drainNatIpPortRanges_ = other.drainNatIpPortRanges_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureDrainNatIpPortRangesIsMutable();
           drainNatIpPortRanges_.addAll(other.drainNatIpPortRanges_);
@@ -945,7 +938,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       if (!other.natIpPortRanges_.isEmpty()) {
         if (natIpPortRanges_.isEmpty()) {
           natIpPortRanges_ = other.natIpPortRanges_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureNatIpPortRangesIsMutable();
           natIpPortRanges_.addAll(other.natIpPortRanges_);
@@ -1094,14 +1087,14 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList drainNatIpPortRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList drainNatIpPortRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDrainNatIpPortRangesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!drainNatIpPortRanges_.isModifiable()) {
         drainNatIpPortRanges_ = new com.google.protobuf.LazyStringArrayList(drainNatIpPortRanges_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1115,7 +1108,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return A list containing the drainNatIpPortRanges.
      */
     public com.google.protobuf.ProtocolStringList getDrainNatIpPortRangesList() {
-      return drainNatIpPortRanges_.getUnmodifiableView();
+      drainNatIpPortRanges_.makeImmutable();
+      return drainNatIpPortRanges_;
     }
     /**
      *
@@ -1180,6 +1174,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       ensureDrainNatIpPortRangesIsMutable();
       drainNatIpPortRanges_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1201,6 +1196,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       ensureDrainNatIpPortRangesIsMutable();
       drainNatIpPortRanges_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1219,6 +1215,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public Builder addAllDrainNatIpPortRanges(java.lang.Iterable<java.lang.String> values) {
       ensureDrainNatIpPortRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, drainNatIpPortRanges_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1234,8 +1231,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return This builder for chaining.
      */
     public Builder clearDrainNatIpPortRanges() {
-      drainNatIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      drainNatIpPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1258,18 +1256,19 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       checkByteStringIsUtf8(value);
       ensureDrainNatIpPortRangesIsMutable();
       drainNatIpPortRanges_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList natIpPortRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList natIpPortRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNatIpPortRangesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!natIpPortRanges_.isModifiable()) {
         natIpPortRanges_ = new com.google.protobuf.LazyStringArrayList(natIpPortRanges_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1283,7 +1282,8 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return A list containing the natIpPortRanges.
      */
     public com.google.protobuf.ProtocolStringList getNatIpPortRangesList() {
-      return natIpPortRanges_.getUnmodifiableView();
+      natIpPortRanges_.makeImmutable();
+      return natIpPortRanges_;
     }
     /**
      *
@@ -1348,6 +1348,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       ensureNatIpPortRangesIsMutable();
       natIpPortRanges_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1369,6 +1370,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       }
       ensureNatIpPortRangesIsMutable();
       natIpPortRanges_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1387,6 +1389,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     public Builder addAllNatIpPortRanges(java.lang.Iterable<java.lang.String> values) {
       ensureNatIpPortRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, natIpPortRanges_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1402,8 +1405,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return This builder for chaining.
      */
     public Builder clearNatIpPortRanges() {
-      natIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      natIpPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1426,6 +1430,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       checkByteStringIsUtf8(value);
       ensureNatIpPortRangesIsMutable();
       natIpPortRanges_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

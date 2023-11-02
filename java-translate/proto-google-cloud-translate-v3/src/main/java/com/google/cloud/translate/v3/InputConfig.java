@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     return new InputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3.TranslationServiceProto
         .internal_static_google_cloud_translation_v3_InputConfig_descriptor;
@@ -68,6 +63,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -184,9 +181,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
    * otherwise an error might be returned.
    * Note that the input tsv must be RFC 4180 compliant.
+   *
    * You could use https://github.com/Clever/csvlint to check potential
    * formatting errors in your tsv file.
    * csvlint --delimiter='&#92;t' your_input_file.tsv
+   *
    * The other supported file extensions are `.txt` or `.html`, which is
    * treated as a single large chunk of text.
    * </pre>
@@ -214,9 +213,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
    * otherwise an error might be returned.
    * Note that the input tsv must be RFC 4180 compliant.
+   *
    * You could use https://github.com/Clever/csvlint to check potential
    * formatting errors in your tsv file.
    * csvlint --delimiter='&#92;t' your_input_file.tsv
+   *
    * The other supported file extensions are `.txt` or `.html`, which is
    * treated as a single large chunk of text.
    * </pre>
@@ -247,9 +248,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
    * otherwise an error might be returned.
    * Note that the input tsv must be RFC 4180 compliant.
+   *
    * You could use https://github.com/Clever/csvlint to check potential
    * formatting errors in your tsv file.
    * csvlint --delimiter='&#92;t' your_input_file.tsv
+   *
    * The other supported file extensions are `.txt` or `.html`, which is
    * treated as a single large chunk of text.
    * </pre>
@@ -815,9 +818,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
      * Note that the input tsv must be RFC 4180 compliant.
+     *
      * You could use https://github.com/Clever/csvlint to check potential
      * formatting errors in your tsv file.
      * csvlint --delimiter='&#92;t' your_input_file.tsv
+     *
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -845,9 +850,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
      * Note that the input tsv must be RFC 4180 compliant.
+     *
      * You could use https://github.com/Clever/csvlint to check potential
      * formatting errors in your tsv file.
      * csvlint --delimiter='&#92;t' your_input_file.tsv
+     *
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -885,9 +892,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
      * Note that the input tsv must be RFC 4180 compliant.
+     *
      * You could use https://github.com/Clever/csvlint to check potential
      * formatting errors in your tsv file.
      * csvlint --delimiter='&#92;t' your_input_file.tsv
+     *
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -922,9 +931,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
      * Note that the input tsv must be RFC 4180 compliant.
+     *
      * You could use https://github.com/Clever/csvlint to check potential
      * formatting errors in your tsv file.
      * csvlint --delimiter='&#92;t' your_input_file.tsv
+     *
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -956,9 +967,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
      * Note that the input tsv must be RFC 4180 compliant.
+     *
      * You could use https://github.com/Clever/csvlint to check potential
      * formatting errors in your tsv file.
      * csvlint --delimiter='&#92;t' your_input_file.tsv
+     *
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -1003,9 +1016,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
      * Note that the input tsv must be RFC 4180 compliant.
+     *
      * You could use https://github.com/Clever/csvlint to check potential
      * formatting errors in your tsv file.
      * csvlint --delimiter='&#92;t' your_input_file.tsv
+     *
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -1043,9 +1058,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
      * Note that the input tsv must be RFC 4180 compliant.
+     *
      * You could use https://github.com/Clever/csvlint to check potential
      * formatting errors in your tsv file.
      * csvlint --delimiter='&#92;t' your_input_file.tsv
+     *
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -1070,9 +1087,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
      * Note that the input tsv must be RFC 4180 compliant.
+     *
      * You could use https://github.com/Clever/csvlint to check potential
      * formatting errors in your tsv file.
      * csvlint --delimiter='&#92;t' your_input_file.tsv
+     *
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>
@@ -1105,9 +1124,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *  translated. We recommend each row be &lt;= 10K Unicode codepoints,
      * otherwise an error might be returned.
      * Note that the input tsv must be RFC 4180 compliant.
+     *
      * You could use https://github.com/Clever/csvlint to check potential
      * formatting errors in your tsv file.
      * csvlint --delimiter='&#92;t' your_input_file.tsv
+     *
      * The other supported file extensions are `.txt` or `.html`, which is
      * treated as a single large chunk of text.
      * </pre>

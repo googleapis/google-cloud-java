@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,6 +153,7 @@ public interface TimeSeriesOrBuilder
    * The metric kind of the time series. When listing time series, this metric
    * kind might be different from the metric kind of the associated metric if
    * this time series is an alignment or reduction of other time series.
+   *
    * When creating a time series, this field is optional. If present, it must be
    * the same as the metric kind of the associated metric. If the associated
    * metric's descriptor must be auto-created, then this field specifies the
@@ -172,6 +173,7 @@ public interface TimeSeriesOrBuilder
    * The metric kind of the time series. When listing time series, this metric
    * kind might be different from the metric kind of the associated metric if
    * this time series is an alignment or reduction of other time series.
+   *
    * When creating a time series, this field is optional. If present, it must be
    * the same as the metric kind of the associated metric. If the associated
    * metric's descriptor must be auto-created, then this field specifies the
@@ -192,6 +194,7 @@ public interface TimeSeriesOrBuilder
    * The value type of the time series. When listing time series, this value
    * type might be different from the value type of the associated metric if
    * this time series is an alignment or reduction of other time series.
+   *
    * When creating a time series, this field is optional. If present, it must be
    * the same as the type of the data in the `points` field.
    * </pre>
@@ -208,6 +211,7 @@ public interface TimeSeriesOrBuilder
    * The value type of the time series. When listing time series, this value
    * type might be different from the value type of the associated metric if
    * this time series is an alignment or reduction of other time series.
+   *
    * When creating a time series, this field is optional. If present, it must be
    * the same as the type of the data in the `points` field.
    * </pre>
@@ -224,6 +228,7 @@ public interface TimeSeriesOrBuilder
    * <pre>
    * The data points of this time series. When listing time series, points are
    * returned in reverse time order.
+   *
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -240,6 +245,7 @@ public interface TimeSeriesOrBuilder
    * <pre>
    * The data points of this time series. When listing time series, points are
    * returned in reverse time order.
+   *
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -256,6 +262,7 @@ public interface TimeSeriesOrBuilder
    * <pre>
    * The data points of this time series. When listing time series, points are
    * returned in reverse time order.
+   *
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -272,6 +279,7 @@ public interface TimeSeriesOrBuilder
    * <pre>
    * The data points of this time series. When listing time series, points are
    * returned in reverse time order.
+   *
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -288,6 +296,7 @@ public interface TimeSeriesOrBuilder
    * <pre>
    * The data points of this time series. When listing time series, points are
    * returned in reverse time order.
+   *
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then

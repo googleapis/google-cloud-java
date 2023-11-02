@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     return new ListProductsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.ProductServiceProto
         .internal_static_google_cloud_retail_v2beta_ListProductsRequest_descriptor;
@@ -83,6 +78,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/0`. Use
    * `default_branch` as the branch ID, to list products under the default
    * branch.
+   *
    * If the caller does not have permission to list
    * [Product][google.cloud.retail.v2beta.Product]s under this branch,
    * regardless of whether or not this branch exists, a PERMISSION_DENIED error
@@ -115,6 +111,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/0`. Use
    * `default_branch` as the branch ID, to list products under the default
    * branch.
+   *
    * If the caller does not have permission to list
    * [Product][google.cloud.retail.v2beta.Product]s under this branch,
    * regardless of whether or not this branch exists, a PERMISSION_DENIED error
@@ -149,6 +146,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * Maximum number of [Product][google.cloud.retail.v2beta.Product]s to return.
    * If unspecified, defaults to 100. The maximum allowed value is 1000. Values
    * above 1000 will be coerced to 1000.
+   *
    * If this field is negative, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
@@ -174,6 +172,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * received from a previous
    * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
    * must match the call that provided the page token. Otherwise, an
@@ -205,6 +204,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * received from a previous
    * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
    * must match the call that provided the page token. Otherwise, an
@@ -237,6 +237,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A filter to apply on the list results. Supported features:
+   *
    * * List all the products under the parent branch if
    * [filter][google.cloud.retail.v2beta.ListProductsRequest.filter] is unset.
    * * List
@@ -255,7 +256,9 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    *     `type = "PRIMARY"`
    *     `type = "VARIANT"`
    *     `type = "COLLECTION"`
+   *
    * If the field is unrecognizable, an INVALID_ARGUMENT error is returned.
+   *
    * If the specified
    * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
    * [Product][google.cloud.retail.v2beta.Product] or
@@ -285,6 +288,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A filter to apply on the list results. Supported features:
+   *
    * * List all the products under the parent branch if
    * [filter][google.cloud.retail.v2beta.ListProductsRequest.filter] is unset.
    * * List
@@ -303,7 +307,9 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    *     `type = "PRIMARY"`
    *     `type = "VARIANT"`
    *     `type = "COLLECTION"`
+   *
    * If the field is unrecognizable, an INVALID_ARGUMENT error is returned.
+   *
    * If the specified
    * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
    * [Product][google.cloud.retail.v2beta.Product] or
@@ -337,6 +343,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
    * the responses. If not set or empty, the following fields are returned:
+   *
    * * [Product.name][google.cloud.retail.v2beta.Product.name]
    * * [Product.id][google.cloud.retail.v2beta.Product.id]
    * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -344,9 +351,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * * [Product.images][google.cloud.retail.v2beta.Product.images]
    * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
    * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+   *
    * If "*" is provided, all fields are returned.
    * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
    * no matter what mask is set.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
@@ -365,6 +374,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
    * the responses. If not set or empty, the following fields are returned:
+   *
    * * [Product.name][google.cloud.retail.v2beta.Product.name]
    * * [Product.id][google.cloud.retail.v2beta.Product.id]
    * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -372,9 +382,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * * [Product.images][google.cloud.retail.v2beta.Product.images]
    * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
    * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+   *
    * If "*" is provided, all fields are returned.
    * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
    * no matter what mask is set.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
@@ -393,6 +405,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
    * the responses. If not set or empty, the following fields are returned:
+   *
    * * [Product.name][google.cloud.retail.v2beta.Product.name]
    * * [Product.id][google.cloud.retail.v2beta.Product.id]
    * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -400,9 +413,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * * [Product.images][google.cloud.retail.v2beta.Product.images]
    * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
    * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+   *
    * If "*" is provided, all fields are returned.
    * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
    * no matter what mask is set.
+   *
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
@@ -868,6 +883,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/0`. Use
      * `default_branch` as the branch ID, to list products under the default
      * branch.
+     *
      * If the caller does not have permission to list
      * [Product][google.cloud.retail.v2beta.Product]s under this branch,
      * regardless of whether or not this branch exists, a PERMISSION_DENIED error
@@ -899,6 +915,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/0`. Use
      * `default_branch` as the branch ID, to list products under the default
      * branch.
+     *
      * If the caller does not have permission to list
      * [Product][google.cloud.retail.v2beta.Product]s under this branch,
      * regardless of whether or not this branch exists, a PERMISSION_DENIED error
@@ -930,6 +947,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/0`. Use
      * `default_branch` as the branch ID, to list products under the default
      * branch.
+     *
      * If the caller does not have permission to list
      * [Product][google.cloud.retail.v2beta.Product]s under this branch,
      * regardless of whether or not this branch exists, a PERMISSION_DENIED error
@@ -960,6 +978,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/0`. Use
      * `default_branch` as the branch ID, to list products under the default
      * branch.
+     *
      * If the caller does not have permission to list
      * [Product][google.cloud.retail.v2beta.Product]s under this branch,
      * regardless of whether or not this branch exists, a PERMISSION_DENIED error
@@ -986,6 +1005,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/0`. Use
      * `default_branch` as the branch ID, to list products under the default
      * branch.
+     *
      * If the caller does not have permission to list
      * [Product][google.cloud.retail.v2beta.Product]s under this branch,
      * regardless of whether or not this branch exists, a PERMISSION_DENIED error
@@ -1018,6 +1038,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * Maximum number of [Product][google.cloud.retail.v2beta.Product]s to return.
      * If unspecified, defaults to 100. The maximum allowed value is 1000. Values
      * above 1000 will be coerced to 1000.
+     *
      * If this field is negative, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -1036,6 +1057,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * Maximum number of [Product][google.cloud.retail.v2beta.Product]s to return.
      * If unspecified, defaults to 100. The maximum allowed value is 1000. Values
      * above 1000 will be coerced to 1000.
+     *
      * If this field is negative, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -1058,6 +1080,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * Maximum number of [Product][google.cloud.retail.v2beta.Product]s to return.
      * If unspecified, defaults to 100. The maximum allowed value is 1000. Values
      * above 1000 will be coerced to 1000.
+     *
      * If this field is negative, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
@@ -1082,6 +1105,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * received from a previous
      * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
      * must match the call that provided the page token. Otherwise, an
@@ -1112,6 +1136,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * received from a previous
      * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
      * must match the call that provided the page token. Otherwise, an
@@ -1142,6 +1167,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * received from a previous
      * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
      * must match the call that provided the page token. Otherwise, an
@@ -1171,6 +1197,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * received from a previous
      * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
      * must match the call that provided the page token. Otherwise, an
@@ -1196,6 +1223,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * received from a previous
      * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
      * must match the call that provided the page token. Otherwise, an
@@ -1224,6 +1252,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A filter to apply on the list results. Supported features:
+     *
      * * List all the products under the parent branch if
      * [filter][google.cloud.retail.v2beta.ListProductsRequest.filter] is unset.
      * * List
@@ -1242,7 +1271,9 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *     `type = "PRIMARY"`
      *     `type = "VARIANT"`
      *     `type = "COLLECTION"`
+     *
      * If the field is unrecognizable, an INVALID_ARGUMENT error is returned.
+     *
      * If the specified
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product] or
@@ -1271,6 +1302,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A filter to apply on the list results. Supported features:
+     *
      * * List all the products under the parent branch if
      * [filter][google.cloud.retail.v2beta.ListProductsRequest.filter] is unset.
      * * List
@@ -1289,7 +1321,9 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *     `type = "PRIMARY"`
      *     `type = "VARIANT"`
      *     `type = "COLLECTION"`
+     *
      * If the field is unrecognizable, an INVALID_ARGUMENT error is returned.
+     *
      * If the specified
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product] or
@@ -1318,6 +1352,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A filter to apply on the list results. Supported features:
+     *
      * * List all the products under the parent branch if
      * [filter][google.cloud.retail.v2beta.ListProductsRequest.filter] is unset.
      * * List
@@ -1336,7 +1371,9 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *     `type = "PRIMARY"`
      *     `type = "VARIANT"`
      *     `type = "COLLECTION"`
+     *
      * If the field is unrecognizable, an INVALID_ARGUMENT error is returned.
+     *
      * If the specified
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product] or
@@ -1364,6 +1401,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A filter to apply on the list results. Supported features:
+     *
      * * List all the products under the parent branch if
      * [filter][google.cloud.retail.v2beta.ListProductsRequest.filter] is unset.
      * * List
@@ -1382,7 +1420,9 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *     `type = "PRIMARY"`
      *     `type = "VARIANT"`
      *     `type = "COLLECTION"`
+     *
      * If the field is unrecognizable, an INVALID_ARGUMENT error is returned.
+     *
      * If the specified
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product] or
@@ -1406,6 +1446,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A filter to apply on the list results. Supported features:
+     *
      * * List all the products under the parent branch if
      * [filter][google.cloud.retail.v2beta.ListProductsRequest.filter] is unset.
      * * List
@@ -1424,7 +1465,9 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      *     `type = "PRIMARY"`
      *     `type = "VARIANT"`
      *     `type = "COLLECTION"`
+     *
      * If the field is unrecognizable, an INVALID_ARGUMENT error is returned.
+     *
      * If the specified
      * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
      * [Product][google.cloud.retail.v2beta.Product] or
@@ -1461,6 +1504,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
      * the responses. If not set or empty, the following fields are returned:
+     *
      * * [Product.name][google.cloud.retail.v2beta.Product.name]
      * * [Product.id][google.cloud.retail.v2beta.Product.id]
      * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -1468,9 +1512,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * * [Product.images][google.cloud.retail.v2beta.Product.images]
      * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
      * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+     *
      * If "*" is provided, all fields are returned.
      * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
      * no matter what mask is set.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1488,6 +1534,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
      * the responses. If not set or empty, the following fields are returned:
+     *
      * * [Product.name][google.cloud.retail.v2beta.Product.name]
      * * [Product.id][google.cloud.retail.v2beta.Product.id]
      * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -1495,9 +1542,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * * [Product.images][google.cloud.retail.v2beta.Product.images]
      * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
      * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+     *
      * If "*" is provided, all fields are returned.
      * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
      * no matter what mask is set.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1519,6 +1568,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
      * the responses. If not set or empty, the following fields are returned:
+     *
      * * [Product.name][google.cloud.retail.v2beta.Product.name]
      * * [Product.id][google.cloud.retail.v2beta.Product.id]
      * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -1526,9 +1576,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * * [Product.images][google.cloud.retail.v2beta.Product.images]
      * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
      * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+     *
      * If "*" is provided, all fields are returned.
      * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
      * no matter what mask is set.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1554,6 +1606,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
      * the responses. If not set or empty, the following fields are returned:
+     *
      * * [Product.name][google.cloud.retail.v2beta.Product.name]
      * * [Product.id][google.cloud.retail.v2beta.Product.id]
      * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -1561,9 +1614,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * * [Product.images][google.cloud.retail.v2beta.Product.images]
      * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
      * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+     *
      * If "*" is provided, all fields are returned.
      * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
      * no matter what mask is set.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1586,6 +1641,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
      * the responses. If not set or empty, the following fields are returned:
+     *
      * * [Product.name][google.cloud.retail.v2beta.Product.name]
      * * [Product.id][google.cloud.retail.v2beta.Product.id]
      * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -1593,9 +1649,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * * [Product.images][google.cloud.retail.v2beta.Product.images]
      * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
      * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+     *
      * If "*" is provided, all fields are returned.
      * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
      * no matter what mask is set.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1624,6 +1682,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
      * the responses. If not set or empty, the following fields are returned:
+     *
      * * [Product.name][google.cloud.retail.v2beta.Product.name]
      * * [Product.id][google.cloud.retail.v2beta.Product.id]
      * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -1631,9 +1690,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * * [Product.images][google.cloud.retail.v2beta.Product.images]
      * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
      * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+     *
      * If "*" is provided, all fields are returned.
      * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
      * no matter what mask is set.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1656,6 +1717,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
      * the responses. If not set or empty, the following fields are returned:
+     *
      * * [Product.name][google.cloud.retail.v2beta.Product.name]
      * * [Product.id][google.cloud.retail.v2beta.Product.id]
      * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -1663,9 +1725,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * * [Product.images][google.cloud.retail.v2beta.Product.images]
      * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
      * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+     *
      * If "*" is provided, all fields are returned.
      * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
      * no matter what mask is set.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1683,6 +1747,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
      * the responses. If not set or empty, the following fields are returned:
+     *
      * * [Product.name][google.cloud.retail.v2beta.Product.name]
      * * [Product.id][google.cloud.retail.v2beta.Product.id]
      * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -1690,9 +1755,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * * [Product.images][google.cloud.retail.v2beta.Product.images]
      * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
      * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+     *
      * If "*" is provided, all fields are returned.
      * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
      * no matter what mask is set.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1712,6 +1779,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The fields of [Product][google.cloud.retail.v2beta.Product] to return in
      * the responses. If not set or empty, the following fields are returned:
+     *
      * * [Product.name][google.cloud.retail.v2beta.Product.name]
      * * [Product.id][google.cloud.retail.v2beta.Product.id]
      * * [Product.title][google.cloud.retail.v2beta.Product.title]
@@ -1719,9 +1787,11 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * * [Product.images][google.cloud.retail.v2beta.Product.images]
      * * [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
      * * [Product.brands][google.cloud.retail.v2beta.Product.brands]
+     *
      * If "*" is provided, all fields are returned.
      * [Product.name][google.cloud.retail.v2beta.Product.name] is always returned
      * no matter what mask is set.
+     *
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
      * </pre>

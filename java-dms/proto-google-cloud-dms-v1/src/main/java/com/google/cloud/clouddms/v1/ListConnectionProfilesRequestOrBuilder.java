@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of connection profiles.
+   * Required. The parent which owns this collection of connection profiles.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of connection profiles.
+   * Required. The parent which owns this collection of connection profiles.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    * <pre>
    * The maximum number of connection profiles to return. The service may return
    * fewer than this value. If unspecified, at most 50 connection profiles will
-   * be returned. The maximum value is 1000; values above 1000 will be coerced
+   * be returned. The maximum value is 1000; values above 1000 are coerced
    * to 1000.
    * </pre>
    *
@@ -74,6 +74,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListConnectionProfiles` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListConnectionProfiles`
    * must match the call that provided the page token.
    * </pre>
@@ -89,6 +90,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListConnectionProfiles` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListConnectionProfiles`
    * must match the call that provided the page token.
    * </pre>
@@ -144,7 +146,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * the order by fields for the result.
+   * A comma-separated list of fields to order results according to.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -156,7 +158,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * the order by fields for the result.
+   * A comma-separated list of fields to order results according to.
    * </pre>
    *
    * <code>string order_by = 5;</code>

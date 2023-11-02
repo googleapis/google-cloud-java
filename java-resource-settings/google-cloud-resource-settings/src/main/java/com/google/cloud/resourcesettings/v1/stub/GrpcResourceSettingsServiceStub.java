@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,13 +23,13 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.resourcesettings.v1.GetSettingRequest;
 import com.google.cloud.resourcesettings.v1.ListSettingsRequest;
 import com.google.cloud.resourcesettings.v1.ListSettingsResponse;
 import com.google.cloud.resourcesettings.v1.Setting;
 import com.google.cloud.resourcesettings.v1.UpdateSettingRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -131,9 +131,9 @@ public class GrpcResourceSettingsServiceStub extends ResourceSettingsServiceStub
             .setMethodDescriptor(listSettingsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetSettingRequest, Setting> getSettingTransportSettings =
@@ -141,9 +141,9 @@ public class GrpcResourceSettingsServiceStub extends ResourceSettingsServiceStub
             .setMethodDescriptor(getSettingMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateSettingRequest, Setting> updateSettingTransportSettings =
@@ -151,9 +151,9 @@ public class GrpcResourceSettingsServiceStub extends ResourceSettingsServiceStub
             .setMethodDescriptor(updateSettingMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("setting.name", String.valueOf(request.getSetting().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("setting.name", String.valueOf(request.getSetting().getName()));
+                  return builder.build();
                 })
             .build();
 

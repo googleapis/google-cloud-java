@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
     return new UpdateFindingRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
         .internal_static_google_cloud_securitycenter_v1beta1_UpdateFindingRequest_descriptor;
@@ -73,6 +68,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
+   *
    * In the case of creation, the finding id portion of the name must
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -94,6 +90,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
+   *
    * In the case of creation, the finding id portion of the name must
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -117,6 +114,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
+   *
    * In the case of creation, the finding id portion of the name must
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -578,6 +576,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
+     *
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -598,6 +597,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
+     *
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -624,6 +624,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
+     *
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -652,6 +653,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
+     *
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -678,6 +680,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
+     *
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -709,6 +712,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
+     *
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -734,6 +738,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
+     *
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -754,6 +759,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
+     *
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -778,6 +784,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The finding resource to update or create if it does not already exist.
      * parent, security_marks, and update_time will be ignored.
+     *
      * In the case of creation, the finding id portion of the name must
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.

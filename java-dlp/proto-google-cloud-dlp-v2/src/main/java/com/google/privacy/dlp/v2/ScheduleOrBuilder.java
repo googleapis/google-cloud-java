@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,10 @@ public interface ScheduleOrBuilder
    * <pre>
    * With this option a job is started on a regular periodic basis. For
    * example: every day (86400 seconds).
+   *
    * A scheduled start time will be skipped if the previous
    * execution has not ended when its scheduled time occurs.
+   *
    * This value must be set to a time duration greater than or equal
    * to 1 day and can be no longer than 60 days.
    * </pre>
@@ -46,8 +48,10 @@ public interface ScheduleOrBuilder
    * <pre>
    * With this option a job is started on a regular periodic basis. For
    * example: every day (86400 seconds).
+   *
    * A scheduled start time will be skipped if the previous
    * execution has not ended when its scheduled time occurs.
+   *
    * This value must be set to a time duration greater than or equal
    * to 1 day and can be no longer than 60 days.
    * </pre>
@@ -63,8 +67,10 @@ public interface ScheduleOrBuilder
    * <pre>
    * With this option a job is started on a regular periodic basis. For
    * example: every day (86400 seconds).
+   *
    * A scheduled start time will be skipped if the previous
    * execution has not ended when its scheduled time occurs.
+   *
    * This value must be set to a time duration greater than or equal
    * to 1 day and can be no longer than 60 days.
    * </pre>
@@ -73,5 +79,5 @@ public interface ScheduleOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getRecurrencePeriodDurationOrBuilder();
 
-  public com.google.privacy.dlp.v2.Schedule.OptionCase getOptionCase();
+  com.google.privacy.dlp.v2.Schedule.OptionCase getOptionCase();
 }

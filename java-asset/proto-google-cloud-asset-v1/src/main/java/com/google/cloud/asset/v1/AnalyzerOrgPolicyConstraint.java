@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     return new AnalyzerOrgPolicyConstraint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_AnalyzerOrgPolicyConstraint_descriptor;
@@ -76,6 +71,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * <pre>
      * The unique name of the constraint. Format of the name should be
      * * `constraints/{constraint_name}`
+     *
      * For example, `constraints/compute.disableSerialPortAccess`.
      * </pre>
      *
@@ -90,6 +86,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * <pre>
      * The unique name of the constraint. Format of the name should be
      * * `constraints/{constraint_name}`
+     *
      * For example, `constraints/compute.disableSerialPortAccess`.
      * </pre>
      *
@@ -267,7 +264,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.BooleanConstraintOrBuilder
         getBooleanConstraintOrBuilder();
 
-    public com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.ConstraintTypeCase
+    com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.ConstraintTypeCase
         getConstraintTypeCase();
   }
   /**
@@ -300,11 +297,6 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Constraint();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -555,11 +547,6 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ListConstraint();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1216,6 +1203,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      *
      * <pre>
      * A `Constraint` that is either enforced or not.
+     *
      * For example a constraint `constraints/compute.disableSerialPortAccess`.
      * If it is enforced on a VM instance, serial port connections will not be
      * opened to that instance.
@@ -1240,11 +1228,6 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new BooleanConstraint();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1445,6 +1428,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        *
        * <pre>
        * A `Constraint` that is either enforced or not.
+       *
        * For example a constraint `constraints/compute.disableSerialPortAccess`.
        * If it is enforced on a VM instance, serial port connections will not be
        * opened to that instance.
@@ -1695,6 +1679,8 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     }
 
     private int constraintTypeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object constraintType_;
 
     public enum ConstraintTypeCase
@@ -1751,6 +1737,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * <pre>
      * The unique name of the constraint. Format of the name should be
      * * `constraints/{constraint_name}`
+     *
      * For example, `constraints/compute.disableSerialPortAccess`.
      * </pre>
      *
@@ -1776,6 +1763,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * <pre>
      * The unique name of the constraint. Format of the name should be
      * * `constraints/{constraint_name}`
+     *
      * For example, `constraints/compute.disableSerialPortAccess`.
      * </pre>
      *
@@ -2623,6 +2611,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <pre>
        * The unique name of the constraint. Format of the name should be
        * * `constraints/{constraint_name}`
+       *
        * For example, `constraints/compute.disableSerialPortAccess`.
        * </pre>
        *
@@ -2647,6 +2636,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <pre>
        * The unique name of the constraint. Format of the name should be
        * * `constraints/{constraint_name}`
+       *
        * For example, `constraints/compute.disableSerialPortAccess`.
        * </pre>
        *
@@ -2671,6 +2661,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <pre>
        * The unique name of the constraint. Format of the name should be
        * * `constraints/{constraint_name}`
+       *
        * For example, `constraints/compute.disableSerialPortAccess`.
        * </pre>
        *
@@ -2694,6 +2685,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <pre>
        * The unique name of the constraint. Format of the name should be
        * * `constraints/{constraint_name}`
+       *
        * For example, `constraints/compute.disableSerialPortAccess`.
        * </pre>
        *
@@ -2713,6 +2705,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <pre>
        * The unique name of the constraint. Format of the name should be
        * * `constraints/{constraint_name}`
+       *
        * For example, `constraints/compute.disableSerialPortAccess`.
        * </pre>
        *
@@ -3648,6 +3641,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * Name of the constraint. This is unique within the organization. Format of
      * the name should be
      * * `organizations/{organization_id}/customConstraints/{custom_constraint_id}`
+     *
      * Example :
      * "organizations/123/customConstraints/custom.createOnlyE2TypeVms"
      * </pre>
@@ -3664,6 +3658,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * Name of the constraint. This is unique within the organization. Format of
      * the name should be
      * * `organizations/{organization_id}/customConstraints/{custom_constraint_id}`
+     *
      * Example :
      * "organizations/123/customConstraints/custom.createOnlyE2TypeVms"
      * </pre>
@@ -3939,7 +3934,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
     private CustomConstraint() {
       name_ = "";
-      resourceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       methodTypes_ = java.util.Collections.emptyList();
       condition_ = "";
       actionType_ = 0;
@@ -3951,11 +3946,6 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CustomConstraint();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4331,6 +4321,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * Name of the constraint. This is unique within the organization. Format of
      * the name should be
      * * `organizations/{organization_id}/customConstraints/{custom_constraint_id}`
+     *
      * Example :
      * "organizations/123/customConstraints/custom.createOnlyE2TypeVms"
      * </pre>
@@ -4358,6 +4349,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * Name of the constraint. This is unique within the organization. Format of
      * the name should be
      * * `organizations/{organization_id}/customConstraints/{custom_constraint_id}`
+     *
      * Example :
      * "organizations/123/customConstraints/custom.createOnlyE2TypeVms"
      * </pre>
@@ -4382,7 +4374,8 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public static final int RESOURCE_TYPES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList resourceTypes_;
+    private com.google.protobuf.LazyStringArrayList resourceTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -5063,8 +5056,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         super.clear();
         bitField0_ = 0;
         name_ = "";
-        resourceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         methodTypes_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
         condition_ = "";
@@ -5111,11 +5103,6 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
       private void buildPartialRepeatedFields(
           com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.CustomConstraint result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          resourceTypes_ = resourceTypes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.resourceTypes_ = resourceTypes_;
         if (((bitField0_ & 0x00000004) != 0)) {
           methodTypes_ = java.util.Collections.unmodifiableList(methodTypes_);
           bitField0_ = (bitField0_ & ~0x00000004);
@@ -5128,6 +5115,10 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          resourceTypes_.makeImmutable();
+          result.resourceTypes_ = resourceTypes_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.condition_ = condition_;
@@ -5203,7 +5194,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         if (!other.resourceTypes_.isEmpty()) {
           if (resourceTypes_.isEmpty()) {
             resourceTypes_ = other.resourceTypes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureResourceTypesIsMutable();
             resourceTypes_.addAll(other.resourceTypes_);
@@ -5347,6 +5338,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * Name of the constraint. This is unique within the organization. Format of
        * the name should be
        * * `organizations/{organization_id}/customConstraints/{custom_constraint_id}`
+       *
        * Example :
        * "organizations/123/customConstraints/custom.createOnlyE2TypeVms"
        * </pre>
@@ -5373,6 +5365,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * Name of the constraint. This is unique within the organization. Format of
        * the name should be
        * * `organizations/{organization_id}/customConstraints/{custom_constraint_id}`
+       *
        * Example :
        * "organizations/123/customConstraints/custom.createOnlyE2TypeVms"
        * </pre>
@@ -5399,6 +5392,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * Name of the constraint. This is unique within the organization. Format of
        * the name should be
        * * `organizations/{organization_id}/customConstraints/{custom_constraint_id}`
+       *
        * Example :
        * "organizations/123/customConstraints/custom.createOnlyE2TypeVms"
        * </pre>
@@ -5424,6 +5418,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * Name of the constraint. This is unique within the organization. Format of
        * the name should be
        * * `organizations/{organization_id}/customConstraints/{custom_constraint_id}`
+       *
        * Example :
        * "organizations/123/customConstraints/custom.createOnlyE2TypeVms"
        * </pre>
@@ -5445,6 +5440,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * Name of the constraint. This is unique within the organization. Format of
        * the name should be
        * * `organizations/{organization_id}/customConstraints/{custom_constraint_id}`
+       *
        * Example :
        * "organizations/123/customConstraints/custom.createOnlyE2TypeVms"
        * </pre>
@@ -5465,14 +5461,14 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         return this;
       }
 
-      private com.google.protobuf.LazyStringList resourceTypes_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList resourceTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureResourceTypesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!resourceTypes_.isModifiable()) {
           resourceTypes_ = new com.google.protobuf.LazyStringArrayList(resourceTypes_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -5488,7 +5484,8 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * @return A list containing the resourceTypes.
        */
       public com.google.protobuf.ProtocolStringList getResourceTypesList() {
-        return resourceTypes_.getUnmodifiableView();
+        resourceTypes_.makeImmutable();
+        return resourceTypes_;
       }
       /**
        *
@@ -5561,6 +5558,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         }
         ensureResourceTypesIsMutable();
         resourceTypes_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5584,6 +5582,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         }
         ensureResourceTypesIsMutable();
         resourceTypes_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5604,6 +5603,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       public Builder addAllResourceTypes(java.lang.Iterable<java.lang.String> values) {
         ensureResourceTypesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceTypes_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5621,8 +5621,9 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * @return This builder for chaining.
        */
       public Builder clearResourceTypes() {
-        resourceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -5647,6 +5648,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         checkByteStringIsUtf8(value);
         ensureResourceTypesIsMutable();
         resourceTypes_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6411,6 +6413,8 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
   }
 
   private int constraintDefinitionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object constraintDefinition_;
 
   public enum ConstraintDefinitionCase

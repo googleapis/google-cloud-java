@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,6 +89,16 @@ public class AdvisoryNotificationsServiceSettings
   /** Returns the object with the settings used for calls to getNotification. */
   public UnaryCallSettings<GetNotificationRequest, Notification> getNotificationSettings() {
     return ((AdvisoryNotificationsServiceStubSettings) getStubSettings()).getNotificationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSettings. */
+  public UnaryCallSettings<GetSettingsRequest, Settings> getSettingsSettings() {
+    return ((AdvisoryNotificationsServiceStubSettings) getStubSettings()).getSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSettings. */
+  public UnaryCallSettings<UpdateSettingsRequest, Settings> updateSettingsSettings() {
+    return ((AdvisoryNotificationsServiceStubSettings) getStubSettings()).updateSettingsSettings();
   }
 
   public static final AdvisoryNotificationsServiceSettings create(
@@ -218,6 +228,16 @@ public class AdvisoryNotificationsServiceSettings
     public UnaryCallSettings.Builder<GetNotificationRequest, Notification>
         getNotificationSettings() {
       return getStubSettingsBuilder().getNotificationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSettings. */
+    public UnaryCallSettings.Builder<GetSettingsRequest, Settings> getSettingsSettings() {
+      return getStubSettingsBuilder().getSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSettings. */
+    public UnaryCallSettings.Builder<UpdateSettingsRequest, Settings> updateSettingsSettings() {
+      return getStubSettingsBuilder().updateSettingsSettings();
     }
 
     @Override

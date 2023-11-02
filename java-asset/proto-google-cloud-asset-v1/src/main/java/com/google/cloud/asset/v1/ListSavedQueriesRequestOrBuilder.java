@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@ public interface ListSavedQueriesRequestOrBuilder
    * operators `AND` and `OR`. When `AND` and `OR` are both used in the
    * expression, parentheses must be appropriately used to group the
    * combinations. The expression may also contain regular expressions.
+   *
    * See https://google.aip.dev/160 for more information on the grammar.
    * </pre>
    *
@@ -82,6 +83,7 @@ public interface ListSavedQueriesRequestOrBuilder
    * operators `AND` and `OR`. When `AND` and `OR` are both used in the
    * expression, parentheses must be appropriately used to group the
    * combinations. The expression may also contain regular expressions.
+   *
    * See https://google.aip.dev/160 for more information on the grammar.
    * </pre>
    *
@@ -113,6 +115,7 @@ public interface ListSavedQueriesRequestOrBuilder
    * <pre>
    * Optional. A page token, received from a previous `ListSavedQueries` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListSavedQueries` must
    * match the call that provided the page token.
    * </pre>
@@ -128,6 +131,7 @@ public interface ListSavedQueriesRequestOrBuilder
    * <pre>
    * Optional. A page token, received from a previous `ListSavedQueries` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListSavedQueries` must
    * match the call that provided the page token.
    * </pre>

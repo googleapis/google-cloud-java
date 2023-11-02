@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ public interface SuggestConversationSummaryRequestOrBuilder
    * The name of the latest conversation message used as context for
    * compiling suggestion. If empty, the latest message of the conversation will
    * be used.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -79,6 +80,7 @@ public interface SuggestConversationSummaryRequestOrBuilder
    * The name of the latest conversation message used as context for
    * compiling suggestion. If empty, the latest message of the conversation will
    * be used.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -108,7 +110,7 @@ public interface SuggestConversationSummaryRequestOrBuilder
    *
    *
    * <pre>
-   * Parameters for a human assist query.
+   * Parameters for a human assist query. Only used for POC/demo purpose.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
@@ -120,7 +122,7 @@ public interface SuggestConversationSummaryRequestOrBuilder
    *
    *
    * <pre>
-   * Parameters for a human assist query.
+   * Parameters for a human assist query. Only used for POC/demo purpose.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>
@@ -132,7 +134,7 @@ public interface SuggestConversationSummaryRequestOrBuilder
    *
    *
    * <pre>
-   * Parameters for a human assist query.
+   * Parameters for a human assist query. Only used for POC/demo purpose.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 5;</code>

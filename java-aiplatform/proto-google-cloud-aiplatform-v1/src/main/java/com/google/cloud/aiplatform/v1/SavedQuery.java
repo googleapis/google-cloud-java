@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SavedQuery();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -383,6 +378,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Problem type of the SavedQuery.
    * Allowed values:
+   *
    * * IMAGE_CLASSIFICATION_SINGLE_LABEL
    * * IMAGE_CLASSIFICATION_MULTI_LABEL
    * * IMAGE_BOUNDING_POLY
@@ -417,6 +413,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Problem type of the SavedQuery.
    * Allowed values:
+   *
    * * IMAGE_CLASSIFICATION_SINGLE_LABEL
    * * IMAGE_CLASSIFICATION_MULTI_LABEL
    * * IMAGE_BOUNDING_POLY
@@ -2027,6 +2024,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Problem type of the SavedQuery.
      * Allowed values:
+     *
      * * IMAGE_CLASSIFICATION_SINGLE_LABEL
      * * IMAGE_CLASSIFICATION_MULTI_LABEL
      * * IMAGE_BOUNDING_POLY
@@ -2060,6 +2058,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Problem type of the SavedQuery.
      * Allowed values:
+     *
      * * IMAGE_CLASSIFICATION_SINGLE_LABEL
      * * IMAGE_CLASSIFICATION_MULTI_LABEL
      * * IMAGE_BOUNDING_POLY
@@ -2093,6 +2092,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Problem type of the SavedQuery.
      * Allowed values:
+     *
      * * IMAGE_CLASSIFICATION_SINGLE_LABEL
      * * IMAGE_CLASSIFICATION_MULTI_LABEL
      * * IMAGE_BOUNDING_POLY
@@ -2125,6 +2125,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Problem type of the SavedQuery.
      * Allowed values:
+     *
      * * IMAGE_CLASSIFICATION_SINGLE_LABEL
      * * IMAGE_CLASSIFICATION_MULTI_LABEL
      * * IMAGE_BOUNDING_POLY
@@ -2153,6 +2154,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Problem type of the SavedQuery.
      * Allowed values:
+     *
      * * IMAGE_CLASSIFICATION_SINGLE_LABEL
      * * IMAGE_CLASSIFICATION_MULTI_LABEL
      * * IMAGE_BOUNDING_POLY

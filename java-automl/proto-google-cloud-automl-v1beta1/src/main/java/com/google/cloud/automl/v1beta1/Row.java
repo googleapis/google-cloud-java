@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Row() {
-    columnSpecIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    columnSpecIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     values_ = java.util.Collections.emptyList();
   }
 
@@ -46,11 +46,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Row();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public static final int COLUMN_SPEC_IDS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList columnSpecIds_;
+  private com.google.protobuf.LazyStringArrayList columnSpecIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -79,6 +75,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * The resource IDs of the column specs describing the columns of the row.
    * If set must contain, but possibly in a different order, all input
    * feature
+   *
    * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * of the Model this row is being passed to.
    * Note: The below `values` field must match order of this field, if this
@@ -99,6 +96,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * The resource IDs of the column specs describing the columns of the row.
    * If set must contain, but possibly in a different order, all input
    * feature
+   *
    * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * of the Model this row is being passed to.
    * Note: The below `values` field must match order of this field, if this
@@ -119,6 +117,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * The resource IDs of the column specs describing the columns of the row.
    * If set must contain, but possibly in a different order, all input
    * feature
+   *
    * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * of the Model this row is being passed to.
    * Note: The below `values` field must match order of this field, if this
@@ -140,6 +139,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * The resource IDs of the column specs describing the columns of the row.
    * If set must contain, but possibly in a different order, all input
    * feature
+   *
    * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * of the Model this row is being passed to.
    * Note: The below `values` field must match order of this field, if this
@@ -166,6 +166,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * Required. The values of the row cells, given in the same order as the
    * column_spec_ids, or, if not set, then in the same order as input
    * feature
+   *
    * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * of the Model this row is being passed to.
    * </pre>
@@ -183,6 +184,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * Required. The values of the row cells, given in the same order as the
    * column_spec_ids, or, if not set, then in the same order as input
    * feature
+   *
    * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * of the Model this row is being passed to.
    * </pre>
@@ -200,6 +202,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * Required. The values of the row cells, given in the same order as the
    * column_spec_ids, or, if not set, then in the same order as input
    * feature
+   *
    * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * of the Model this row is being passed to.
    * </pre>
@@ -217,6 +220,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * Required. The values of the row cells, given in the same order as the
    * column_spec_ids, or, if not set, then in the same order as input
    * feature
+   *
    * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * of the Model this row is being passed to.
    * </pre>
@@ -234,6 +238,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * Required. The values of the row cells, given in the same order as the
    * column_spec_ids, or, if not set, then in the same order as input
    * feature
+   *
    * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
    * of the Model this row is being passed to.
    * </pre>
@@ -459,8 +464,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      columnSpecIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      columnSpecIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (valuesBuilder_ == null) {
         values_ = java.util.Collections.emptyList();
       } else {
@@ -503,11 +507,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.automl.v1beta1.Row result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        columnSpecIds_ = columnSpecIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.columnSpecIds_ = columnSpecIds_;
       if (valuesBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           values_ = java.util.Collections.unmodifiableList(values_);
@@ -521,6 +520,10 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.automl.v1beta1.Row result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        columnSpecIds_.makeImmutable();
+        result.columnSpecIds_ = columnSpecIds_;
+      }
     }
 
     @java.lang.Override
@@ -571,7 +574,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       if (!other.columnSpecIds_.isEmpty()) {
         if (columnSpecIds_.isEmpty()) {
           columnSpecIds_ = other.columnSpecIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureColumnSpecIdsIsMutable();
           columnSpecIds_.addAll(other.columnSpecIds_);
@@ -669,14 +672,14 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList columnSpecIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList columnSpecIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureColumnSpecIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!columnSpecIds_.isModifiable()) {
         columnSpecIds_ = new com.google.protobuf.LazyStringArrayList(columnSpecIds_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -685,6 +688,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * The resource IDs of the column specs describing the columns of the row.
      * If set must contain, but possibly in a different order, all input
      * feature
+     *
      * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * Note: The below `values` field must match order of this field, if this
@@ -696,7 +700,8 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the columnSpecIds.
      */
     public com.google.protobuf.ProtocolStringList getColumnSpecIdsList() {
-      return columnSpecIds_.getUnmodifiableView();
+      columnSpecIds_.makeImmutable();
+      return columnSpecIds_;
     }
     /**
      *
@@ -705,6 +710,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * The resource IDs of the column specs describing the columns of the row.
      * If set must contain, but possibly in a different order, all input
      * feature
+     *
      * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * Note: The below `values` field must match order of this field, if this
@@ -725,6 +731,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * The resource IDs of the column specs describing the columns of the row.
      * If set must contain, but possibly in a different order, all input
      * feature
+     *
      * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * Note: The below `values` field must match order of this field, if this
@@ -746,6 +753,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * The resource IDs of the column specs describing the columns of the row.
      * If set must contain, but possibly in a different order, all input
      * feature
+     *
      * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * Note: The below `values` field must match order of this field, if this
@@ -767,6 +775,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * The resource IDs of the column specs describing the columns of the row.
      * If set must contain, but possibly in a different order, all input
      * feature
+     *
      * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * Note: The below `values` field must match order of this field, if this
@@ -785,6 +794,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       ensureColumnSpecIdsIsMutable();
       columnSpecIds_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -795,6 +805,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * The resource IDs of the column specs describing the columns of the row.
      * If set must contain, but possibly in a different order, all input
      * feature
+     *
      * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * Note: The below `values` field must match order of this field, if this
@@ -812,6 +823,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       ensureColumnSpecIdsIsMutable();
       columnSpecIds_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -822,6 +834,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * The resource IDs of the column specs describing the columns of the row.
      * If set must contain, but possibly in a different order, all input
      * feature
+     *
      * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * Note: The below `values` field must match order of this field, if this
@@ -836,6 +849,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllColumnSpecIds(java.lang.Iterable<java.lang.String> values) {
       ensureColumnSpecIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, columnSpecIds_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -846,6 +860,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * The resource IDs of the column specs describing the columns of the row.
      * If set must contain, but possibly in a different order, all input
      * feature
+     *
      * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * Note: The below `values` field must match order of this field, if this
@@ -857,8 +872,9 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearColumnSpecIds() {
-      columnSpecIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      columnSpecIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -869,6 +885,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * The resource IDs of the column specs describing the columns of the row.
      * If set must contain, but possibly in a different order, all input
      * feature
+     *
      * [column_spec_ids][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * Note: The below `values` field must match order of this field, if this
@@ -887,6 +904,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureColumnSpecIdsIsMutable();
       columnSpecIds_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -913,6 +931,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -933,6 +952,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -953,6 +973,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -973,6 +994,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -999,6 +1021,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1022,6 +1045,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1048,6 +1072,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1074,6 +1099,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1097,6 +1123,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1120,6 +1147,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1143,6 +1171,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1166,6 +1195,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1189,6 +1219,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1205,6 +1236,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1225,6 +1257,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1245,6 +1278,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1261,6 +1295,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>
@@ -1278,6 +1313,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      * Required. The values of the row cells, given in the same order as the
      * column_spec_ids, or, if not set, then in the same order as input
      * feature
+     *
      * [column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
      * of the Model this row is being passed to.
      * </pre>

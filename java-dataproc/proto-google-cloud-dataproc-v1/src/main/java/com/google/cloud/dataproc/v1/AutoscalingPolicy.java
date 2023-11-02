@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     return new AutoscalingPolicy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.AutoscalingPoliciesProto
         .internal_static_google_cloud_dataproc_v1_AutoscalingPolicy_descriptor;
@@ -80,6 +75,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   }
 
   private int algorithmCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object algorithm_;
 
   public enum AlgorithmCase
@@ -132,6 +129,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The policy id.
+   *
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
@@ -158,6 +156,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The policy id.
+   *
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
@@ -190,9 +189,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Output only. The "resource name" of the autoscaling policy, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.autoscalingPolicies`, the resource name of the
    *   policy has the following format:
    *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *
    * * For `projects.locations.autoscalingPolicies`, the resource name of the
    *   policy has the following format:
    *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -220,9 +221,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Output only. The "resource name" of the autoscaling policy, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.autoscalingPolicies`, the resource name of the
    *   policy has the following format:
    *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *
    * * For `projects.locations.autoscalingPolicies`, the resource name of the
    *   policy has the following format:
    *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -1090,6 +1093,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The policy id.
+     *
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1115,6 +1119,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The policy id.
+     *
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1140,6 +1145,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The policy id.
+     *
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1164,6 +1170,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The policy id.
+     *
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1184,6 +1191,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The policy id.
+     *
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of between 3 and 50 characters.
@@ -1212,9 +1220,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. The "resource name" of the autoscaling policy, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies`, the resource name of the
      *   policy has the following format:
      *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     *
      * * For `projects.locations.autoscalingPolicies`, the resource name of the
      *   policy has the following format:
      *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -1241,9 +1251,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. The "resource name" of the autoscaling policy, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies`, the resource name of the
      *   policy has the following format:
      *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     *
      * * For `projects.locations.autoscalingPolicies`, the resource name of the
      *   policy has the following format:
      *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -1270,9 +1282,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. The "resource name" of the autoscaling policy, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies`, the resource name of the
      *   policy has the following format:
      *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     *
      * * For `projects.locations.autoscalingPolicies`, the resource name of the
      *   policy has the following format:
      *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -1298,9 +1312,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. The "resource name" of the autoscaling policy, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies`, the resource name of the
      *   policy has the following format:
      *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     *
      * * For `projects.locations.autoscalingPolicies`, the resource name of the
      *   policy has the following format:
      *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
@@ -1322,9 +1338,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. The "resource name" of the autoscaling policy, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.autoscalingPolicies`, the resource name of the
      *   policy has the following format:
      *   `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+     *
      * * For `projects.locations.autoscalingPolicies`, the resource name of the
      *   policy has the following format:
      *   `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`

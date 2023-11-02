@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ public interface SpeakerDiarizationConfigOrBuilder
    *
    * <pre>
    * If 'true', enables speaker detection for each recognized word in
-   * the top alternative of the recognition result using a speaker_tag provided
-   * in the WordInfo.
+   * the top alternative of the recognition result using a speaker_label
+   * provided in the WordInfo.
    * </pre>
    *
    * <code>bool enable_speaker_diarization = 1;</code>
@@ -79,7 +79,7 @@ public interface SpeakerDiarizationConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
-   *     google/cloud/speech/v1/cloud_speech.proto;l=480
+   *     google/cloud/speech/v1/cloud_speech.proto;l=493
    * @return The speakerTag.
    */
   @java.lang.Deprecated

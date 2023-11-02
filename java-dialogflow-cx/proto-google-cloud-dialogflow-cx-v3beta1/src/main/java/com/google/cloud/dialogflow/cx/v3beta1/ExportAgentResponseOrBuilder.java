@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,9 @@ public interface ExportAgentResponseOrBuilder
    *
    *
    * <pre>
-   * Uncompressed raw byte content for agent.
+   * Uncompressed raw byte content for agent. This field is populated
+   * if none of `agent_uri` and `git_destination` are specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
    * </pre>
    *
    * <code>bytes agent_content = 2;</code>
@@ -82,7 +84,9 @@ public interface ExportAgentResponseOrBuilder
    *
    *
    * <pre>
-   * Uncompressed raw byte content for agent.
+   * Uncompressed raw byte content for agent. This field is populated
+   * if none of `agent_uri` and `git_destination` are specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
    * </pre>
    *
    * <code>bytes agent_content = 2;</code>
@@ -91,5 +95,48 @@ public interface ExportAgentResponseOrBuilder
    */
   com.google.protobuf.ByteString getAgentContent();
 
-  public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse.AgentCase getAgentCase();
+  /**
+   *
+   *
+   * <pre>
+   * Commit SHA of the git push. This field is populated if
+   * `git_destination` is specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+   * </pre>
+   *
+   * <code>string commit_sha = 3;</code>
+   *
+   * @return Whether the commitSha field is set.
+   */
+  boolean hasCommitSha();
+  /**
+   *
+   *
+   * <pre>
+   * Commit SHA of the git push. This field is populated if
+   * `git_destination` is specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+   * </pre>
+   *
+   * <code>string commit_sha = 3;</code>
+   *
+   * @return The commitSha.
+   */
+  java.lang.String getCommitSha();
+  /**
+   *
+   *
+   * <pre>
+   * Commit SHA of the git push. This field is populated if
+   * `git_destination` is specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+   * </pre>
+   *
+   * <code>string commit_sha = 3;</code>
+   *
+   * @return The bytes for commitSha.
+   */
+  com.google.protobuf.ByteString getCommitShaBytes();
+
+  com.google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse.AgentCase getAgentCase();
 }

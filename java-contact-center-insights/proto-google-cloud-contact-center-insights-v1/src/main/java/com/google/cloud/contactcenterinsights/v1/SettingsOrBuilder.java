@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -208,13 +208,16 @@ public interface SettingsOrBuilder
    * A map that maps a notification trigger to a Pub/Sub topic. Each time a
    * specified trigger occurs, Insights will notify the corresponding Pub/Sub
    * topic.
+   *
    * Keys are notification triggers. Supported keys are:
+   *
    * * "all-triggers": Notify each time any of the supported triggers occurs.
    * * "create-analysis": Notify each time an analysis is created.
    * * "create-conversation": Notify each time a conversation is created.
    * * "export-insights-data": Notify each time an export is complete.
    * * "update-conversation": Notify each time a conversation is updated via
    * UpdateConversation.
+   *
    * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
    * projects/{project}/topics/{topic}
    * </pre>
@@ -229,13 +232,16 @@ public interface SettingsOrBuilder
    * A map that maps a notification trigger to a Pub/Sub topic. Each time a
    * specified trigger occurs, Insights will notify the corresponding Pub/Sub
    * topic.
+   *
    * Keys are notification triggers. Supported keys are:
+   *
    * * "all-triggers": Notify each time any of the supported triggers occurs.
    * * "create-analysis": Notify each time an analysis is created.
    * * "create-conversation": Notify each time a conversation is created.
    * * "export-insights-data": Notify each time an export is complete.
    * * "update-conversation": Notify each time a conversation is updated via
    * UpdateConversation.
+   *
    * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
    * projects/{project}/topics/{topic}
    * </pre>
@@ -253,13 +259,16 @@ public interface SettingsOrBuilder
    * A map that maps a notification trigger to a Pub/Sub topic. Each time a
    * specified trigger occurs, Insights will notify the corresponding Pub/Sub
    * topic.
+   *
    * Keys are notification triggers. Supported keys are:
+   *
    * * "all-triggers": Notify each time any of the supported triggers occurs.
    * * "create-analysis": Notify each time an analysis is created.
    * * "create-conversation": Notify each time a conversation is created.
    * * "export-insights-data": Notify each time an export is complete.
    * * "update-conversation": Notify each time a conversation is updated via
    * UpdateConversation.
+   *
    * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
    * projects/{project}/topics/{topic}
    * </pre>
@@ -274,13 +283,16 @@ public interface SettingsOrBuilder
    * A map that maps a notification trigger to a Pub/Sub topic. Each time a
    * specified trigger occurs, Insights will notify the corresponding Pub/Sub
    * topic.
+   *
    * Keys are notification triggers. Supported keys are:
+   *
    * * "all-triggers": Notify each time any of the supported triggers occurs.
    * * "create-analysis": Notify each time an analysis is created.
    * * "create-conversation": Notify each time a conversation is created.
    * * "export-insights-data": Notify each time an export is complete.
    * * "update-conversation": Notify each time a conversation is updated via
    * UpdateConversation.
+   *
    * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
    * projects/{project}/topics/{topic}
    * </pre>
@@ -299,13 +311,16 @@ public interface SettingsOrBuilder
    * A map that maps a notification trigger to a Pub/Sub topic. Each time a
    * specified trigger occurs, Insights will notify the corresponding Pub/Sub
    * topic.
+   *
    * Keys are notification triggers. Supported keys are:
+   *
    * * "all-triggers": Notify each time any of the supported triggers occurs.
    * * "create-analysis": Notify each time an analysis is created.
    * * "create-conversation": Notify each time a conversation is created.
    * * "export-insights-data": Notify each time an export is complete.
    * * "update-conversation": Notify each time a conversation is updated via
    * UpdateConversation.
+   *
    * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
    * projects/{project}/topics/{topic}
    * </pre>
@@ -390,4 +405,48 @@ public interface SettingsOrBuilder
    * <code>.google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 10;</code>
    */
   com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder getRedactionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text resources to be used while ingesting audio
+   * files. Optional, CCAI Insights will create a default if not provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechConfig field is set.
+   */
+  boolean hasSpeechConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text resources to be used while ingesting audio
+   * files. Optional, CCAI Insights will create a default if not provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechConfig.
+   */
+  com.google.cloud.contactcenterinsights.v1.SpeechConfig getSpeechConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text resources to be used while ingesting audio
+   * files. Optional, CCAI Insights will create a default if not provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder getSpeechConfigOrBuilder();
 }

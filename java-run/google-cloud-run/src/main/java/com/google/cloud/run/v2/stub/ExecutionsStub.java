@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.run.v2.ExecutionsClient.ListExecutionsPagedRespon
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.run.v2.CancelExecutionRequest;
 import com.google.cloud.run.v2.DeleteExecutionRequest;
 import com.google.cloud.run.v2.Execution;
 import com.google.cloud.run.v2.GetExecutionRequest;
@@ -67,6 +68,15 @@ public abstract class ExecutionsStub implements BackgroundResource {
 
   public UnaryCallable<DeleteExecutionRequest, Operation> deleteExecutionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteExecutionCallable()");
+  }
+
+  public OperationCallable<CancelExecutionRequest, Execution, Execution>
+      cancelExecutionOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelExecutionOperationCallable()");
+  }
+
+  public UnaryCallable<CancelExecutionRequest, Operation> cancelExecutionCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelExecutionCallable()");
   }
 
   @Override

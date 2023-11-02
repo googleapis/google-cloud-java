@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Step();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -117,6 +112,19 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Initial state: packet originating from a Google service. Some Google
+     * services, such as health check probers or Identity Aware Proxy use
+     * special routes, outside VPC routing configuration to reach Compute Engine
+     * Instances.
+     * </pre>
+     *
+     * <code>START_FROM_GOOGLE_SERVICE = 27;</code>
+     */
+    START_FROM_GOOGLE_SERVICE(27),
+    /**
+     *
+     *
+     * <pre>
      * Initial state: packet originating from a VPC or on-premises network
      * with internal source IP.
      * If the source is a VPC network visible to the user, a NetworkInfo
@@ -148,6 +156,39 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_CLOUD_SQL_INSTANCE = 22;</code>
      */
     START_FROM_CLOUD_SQL_INSTANCE(22),
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a Cloud Function.
+     * A CloudFunctionInfo is populated with starting function information.
+     * </pre>
+     *
+     * <code>START_FROM_CLOUD_FUNCTION = 23;</code>
+     */
+    START_FROM_CLOUD_FUNCTION(23),
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from an App Engine service version.
+     * An AppEngineVersionInfo is populated with starting version information.
+     * </pre>
+     *
+     * <code>START_FROM_APP_ENGINE_VERSION = 25;</code>
+     */
+    START_FROM_APP_ENGINE_VERSION(25),
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a Cloud Run revision.
+     * A CloudRunRevisionInfo is populated with starting revision information.
+     * </pre>
+     *
+     * <code>START_FROM_CLOUD_RUN_REVISION = 26;</code>
+     */
+    START_FROM_CLOUD_RUN_REVISION(26),
     /**
      *
      *
@@ -249,6 +290,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ARRIVE_AT_VPN_TUNNEL = 13;</code>
      */
     ARRIVE_AT_VPN_TUNNEL(13),
+    /**
+     *
+     *
+     * <pre>
+     * Forwarding state: arriving at a VPC connector.
+     * </pre>
+     *
+     * <code>ARRIVE_AT_VPC_CONNECTOR = 24;</code>
+     */
+    ARRIVE_AT_VPC_CONNECTOR(24),
     /**
      *
      *
@@ -361,6 +412,19 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Initial state: packet originating from a Google service. Some Google
+     * services, such as health check probers or Identity Aware Proxy use
+     * special routes, outside VPC routing configuration to reach Compute Engine
+     * Instances.
+     * </pre>
+     *
+     * <code>START_FROM_GOOGLE_SERVICE = 27;</code>
+     */
+    public static final int START_FROM_GOOGLE_SERVICE_VALUE = 27;
+    /**
+     *
+     *
+     * <pre>
      * Initial state: packet originating from a VPC or on-premises network
      * with internal source IP.
      * If the source is a VPC network visible to the user, a NetworkInfo
@@ -392,6 +456,39 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_CLOUD_SQL_INSTANCE = 22;</code>
      */
     public static final int START_FROM_CLOUD_SQL_INSTANCE_VALUE = 22;
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a Cloud Function.
+     * A CloudFunctionInfo is populated with starting function information.
+     * </pre>
+     *
+     * <code>START_FROM_CLOUD_FUNCTION = 23;</code>
+     */
+    public static final int START_FROM_CLOUD_FUNCTION_VALUE = 23;
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from an App Engine service version.
+     * An AppEngineVersionInfo is populated with starting version information.
+     * </pre>
+     *
+     * <code>START_FROM_APP_ENGINE_VERSION = 25;</code>
+     */
+    public static final int START_FROM_APP_ENGINE_VERSION_VALUE = 25;
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a Cloud Run revision.
+     * A CloudRunRevisionInfo is populated with starting revision information.
+     * </pre>
+     *
+     * <code>START_FROM_CLOUD_RUN_REVISION = 26;</code>
+     */
+    public static final int START_FROM_CLOUD_RUN_REVISION_VALUE = 26;
     /**
      *
      *
@@ -497,6 +594,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Forwarding state: arriving at a VPC connector.
+     * </pre>
+     *
+     * <code>ARRIVE_AT_VPC_CONNECTOR = 24;</code>
+     */
+    public static final int ARRIVE_AT_VPC_CONNECTOR_VALUE = 24;
+    /**
+     *
+     *
+     * <pre>
      * Transition state: packet header translated.
      * </pre>
      *
@@ -597,12 +704,20 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return START_FROM_INSTANCE;
         case 2:
           return START_FROM_INTERNET;
+        case 27:
+          return START_FROM_GOOGLE_SERVICE;
         case 3:
           return START_FROM_PRIVATE_NETWORK;
         case 21:
           return START_FROM_GKE_MASTER;
         case 22:
           return START_FROM_CLOUD_SQL_INSTANCE;
+        case 23:
+          return START_FROM_CLOUD_FUNCTION;
+        case 25:
+          return START_FROM_APP_ENGINE_VERSION;
+        case 26:
+          return START_FROM_CLOUD_RUN_REVISION;
         case 4:
           return APPLY_INGRESS_FIREWALL_RULE;
         case 5:
@@ -623,6 +738,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return ARRIVE_AT_VPN_GATEWAY;
         case 13:
           return ARRIVE_AT_VPN_TUNNEL;
+        case 24:
+          return ARRIVE_AT_VPC_CONNECTOR;
         case 14:
           return NAT;
         case 15:
@@ -691,6 +808,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int stepInfoCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object stepInfo_;
 
   public enum StepInfoCase
@@ -701,9 +820,11 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     FIREWALL(6),
     ROUTE(7),
     ENDPOINT(8),
+    GOOGLE_SERVICE(24),
     FORWARDING_RULE(9),
     VPN_GATEWAY(10),
     VPN_TUNNEL(11),
+    VPC_CONNECTOR(21),
     DELIVER(12),
     FORWARD(13),
     ABORT(14),
@@ -712,6 +833,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     NETWORK(17),
     GKE_MASTER(18),
     CLOUD_SQL_INSTANCE(19),
+    CLOUD_FUNCTION(20),
+    APP_ENGINE_VERSION(22),
+    CLOUD_RUN_REVISION(23),
     STEPINFO_NOT_SET(0);
     private final int value;
 
@@ -738,12 +862,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return ROUTE;
         case 8:
           return ENDPOINT;
+        case 24:
+          return GOOGLE_SERVICE;
         case 9:
           return FORWARDING_RULE;
         case 10:
           return VPN_GATEWAY;
         case 11:
           return VPN_TUNNEL;
+        case 21:
+          return VPC_CONNECTOR;
         case 12:
           return DELIVER;
         case 13:
@@ -760,6 +888,12 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return GKE_MASTER;
         case 19:
           return CLOUD_SQL_INSTANCE;
+        case 20:
+          return CLOUD_FUNCTION;
+        case 22:
+          return APP_ENGINE_VERSION;
+        case 23:
+          return CLOUD_RUN_REVISION;
         case 0:
           return STEPINFO_NOT_SET;
         default:
@@ -1144,6 +1278,58 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.networkmanagement.v1.EndpointInfo.getDefaultInstance();
   }
 
+  public static final int GOOGLE_SERVICE_FIELD_NUMBER = 24;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google service
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+   *
+   * @return Whether the googleService field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleService() {
+    return stepInfoCase_ == 24;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google service
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+   *
+   * @return The googleService.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.GoogleServiceInfo getGoogleService() {
+    if (stepInfoCase_ == 24) {
+      return (com.google.cloud.networkmanagement.v1.GoogleServiceInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.GoogleServiceInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google service
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.GoogleServiceInfoOrBuilder
+      getGoogleServiceOrBuilder() {
+    if (stepInfoCase_ == 24) {
+      return (com.google.cloud.networkmanagement.v1.GoogleServiceInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.GoogleServiceInfo.getDefaultInstance();
+  }
+
   public static final int FORWARDING_RULE_FIELD_NUMBER = 9;
   /**
    *
@@ -1296,6 +1482,58 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.networkmanagement.v1.VpnTunnelInfo) stepInfo_;
     }
     return com.google.cloud.networkmanagement.v1.VpnTunnelInfo.getDefaultInstance();
+  }
+
+  public static final int VPC_CONNECTOR_FIELD_NUMBER = 21;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+   *
+   * @return Whether the vpcConnector field is set.
+   */
+  @java.lang.Override
+  public boolean hasVpcConnector() {
+    return stepInfoCase_ == 21;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+   *
+   * @return The vpcConnector.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.VpcConnectorInfo getVpcConnector() {
+    if (stepInfoCase_ == 21) {
+      return (com.google.cloud.networkmanagement.v1.VpcConnectorInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.VpcConnectorInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.VpcConnectorInfoOrBuilder
+      getVpcConnectorOrBuilder() {
+    if (stepInfoCase_ == 21) {
+      return (com.google.cloud.networkmanagement.v1.VpcConnectorInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.VpcConnectorInfo.getDefaultInstance();
   }
 
   public static final int DELIVER_FIELD_NUMBER = 12;
@@ -1708,6 +1946,162 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.networkmanagement.v1.CloudSQLInstanceInfo.getDefaultInstance();
   }
 
+  public static final int CLOUD_FUNCTION_FIELD_NUMBER = 20;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+   *
+   * @return Whether the cloudFunction field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudFunction() {
+    return stepInfoCase_ == 20;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+   *
+   * @return The cloudFunction.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.CloudFunctionInfo getCloudFunction() {
+    if (stepInfoCase_ == 20) {
+      return (com.google.cloud.networkmanagement.v1.CloudFunctionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.CloudFunctionInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.CloudFunctionInfoOrBuilder
+      getCloudFunctionOrBuilder() {
+    if (stepInfoCase_ == 20) {
+      return (com.google.cloud.networkmanagement.v1.CloudFunctionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.CloudFunctionInfo.getDefaultInstance();
+  }
+
+  public static final int APP_ENGINE_VERSION_FIELD_NUMBER = 22;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an App Engine service version.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+   *
+   * @return Whether the appEngineVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppEngineVersion() {
+    return stepInfoCase_ == 22;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an App Engine service version.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+   *
+   * @return The appEngineVersion.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.AppEngineVersionInfo getAppEngineVersion() {
+    if (stepInfoCase_ == 22) {
+      return (com.google.cloud.networkmanagement.v1.AppEngineVersionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an App Engine service version.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.AppEngineVersionInfoOrBuilder
+      getAppEngineVersionOrBuilder() {
+    if (stepInfoCase_ == 22) {
+      return (com.google.cloud.networkmanagement.v1.AppEngineVersionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.getDefaultInstance();
+  }
+
+  public static final int CLOUD_RUN_REVISION_FIELD_NUMBER = 23;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run revision.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+   *
+   * @return Whether the cloudRunRevision field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudRunRevision() {
+    return stepInfoCase_ == 23;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run revision.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+   *
+   * @return The cloudRunRevision.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo getCloudRunRevision() {
+    if (stepInfoCase_ == 23) {
+      return (com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run revision.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.CloudRunRevisionInfoOrBuilder
+      getCloudRunRevisionOrBuilder() {
+    if (stepInfoCase_ == 23) {
+      return (com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1779,6 +2173,23 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     if (stepInfoCase_ == 19) {
       output.writeMessage(
           19, (com.google.cloud.networkmanagement.v1.CloudSQLInstanceInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 20) {
+      output.writeMessage(20, (com.google.cloud.networkmanagement.v1.CloudFunctionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 21) {
+      output.writeMessage(21, (com.google.cloud.networkmanagement.v1.VpcConnectorInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 22) {
+      output.writeMessage(
+          22, (com.google.cloud.networkmanagement.v1.AppEngineVersionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 23) {
+      output.writeMessage(
+          23, (com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 24) {
+      output.writeMessage(24, (com.google.cloud.networkmanagement.v1.GoogleServiceInfo) stepInfo_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1876,6 +2287,31 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               19, (com.google.cloud.networkmanagement.v1.CloudSQLInstanceInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, (com.google.cloud.networkmanagement.v1.CloudFunctionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 21) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, (com.google.cloud.networkmanagement.v1.VpcConnectorInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 22) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, (com.google.cloud.networkmanagement.v1.AppEngineVersionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 23) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23, (com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 24) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, (com.google.cloud.networkmanagement.v1.GoogleServiceInfo) stepInfo_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1910,6 +2346,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 8:
         if (!getEndpoint().equals(other.getEndpoint())) return false;
         break;
+      case 24:
+        if (!getGoogleService().equals(other.getGoogleService())) return false;
+        break;
       case 9:
         if (!getForwardingRule().equals(other.getForwardingRule())) return false;
         break;
@@ -1918,6 +2357,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         break;
       case 11:
         if (!getVpnTunnel().equals(other.getVpnTunnel())) return false;
+        break;
+      case 21:
+        if (!getVpcConnector().equals(other.getVpcConnector())) return false;
         break;
       case 12:
         if (!getDeliver().equals(other.getDeliver())) return false;
@@ -1942,6 +2384,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         break;
       case 19:
         if (!getCloudSqlInstance().equals(other.getCloudSqlInstance())) return false;
+        break;
+      case 20:
+        if (!getCloudFunction().equals(other.getCloudFunction())) return false;
+        break;
+      case 22:
+        if (!getAppEngineVersion().equals(other.getAppEngineVersion())) return false;
+        break;
+      case 23:
+        if (!getCloudRunRevision().equals(other.getCloudRunRevision())) return false;
         break;
       case 0:
       default:
@@ -1982,6 +2433,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
         hash = (53 * hash) + getEndpoint().hashCode();
         break;
+      case 24:
+        hash = (37 * hash) + GOOGLE_SERVICE_FIELD_NUMBER;
+        hash = (53 * hash) + getGoogleService().hashCode();
+        break;
       case 9:
         hash = (37 * hash) + FORWARDING_RULE_FIELD_NUMBER;
         hash = (53 * hash) + getForwardingRule().hashCode();
@@ -1993,6 +2448,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 11:
         hash = (37 * hash) + VPN_TUNNEL_FIELD_NUMBER;
         hash = (53 * hash) + getVpnTunnel().hashCode();
+        break;
+      case 21:
+        hash = (37 * hash) + VPC_CONNECTOR_FIELD_NUMBER;
+        hash = (53 * hash) + getVpcConnector().hashCode();
         break;
       case 12:
         hash = (37 * hash) + DELIVER_FIELD_NUMBER;
@@ -2025,6 +2484,18 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 19:
         hash = (37 * hash) + CLOUD_SQL_INSTANCE_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSqlInstance().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + CLOUD_FUNCTION_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudFunction().hashCode();
+        break;
+      case 22:
+        hash = (37 * hash) + APP_ENGINE_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getAppEngineVersion().hashCode();
+        break;
+      case 23:
+        hash = (37 * hash) + CLOUD_RUN_REVISION_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudRunRevision().hashCode();
         break;
       case 0:
       default:
@@ -2185,6 +2656,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (endpointBuilder_ != null) {
         endpointBuilder_.clear();
       }
+      if (googleServiceBuilder_ != null) {
+        googleServiceBuilder_.clear();
+      }
       if (forwardingRuleBuilder_ != null) {
         forwardingRuleBuilder_.clear();
       }
@@ -2193,6 +2667,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       if (vpnTunnelBuilder_ != null) {
         vpnTunnelBuilder_.clear();
+      }
+      if (vpcConnectorBuilder_ != null) {
+        vpcConnectorBuilder_.clear();
       }
       if (deliverBuilder_ != null) {
         deliverBuilder_.clear();
@@ -2217,6 +2694,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       if (cloudSqlInstanceBuilder_ != null) {
         cloudSqlInstanceBuilder_.clear();
+      }
+      if (cloudFunctionBuilder_ != null) {
+        cloudFunctionBuilder_.clear();
+      }
+      if (appEngineVersionBuilder_ != null) {
+        appEngineVersionBuilder_.clear();
+      }
+      if (cloudRunRevisionBuilder_ != null) {
+        cloudRunRevisionBuilder_.clear();
       }
       stepInfoCase_ = 0;
       stepInfo_ = null;
@@ -2286,6 +2772,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (stepInfoCase_ == 8 && endpointBuilder_ != null) {
         result.stepInfo_ = endpointBuilder_.build();
       }
+      if (stepInfoCase_ == 24 && googleServiceBuilder_ != null) {
+        result.stepInfo_ = googleServiceBuilder_.build();
+      }
       if (stepInfoCase_ == 9 && forwardingRuleBuilder_ != null) {
         result.stepInfo_ = forwardingRuleBuilder_.build();
       }
@@ -2294,6 +2783,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       if (stepInfoCase_ == 11 && vpnTunnelBuilder_ != null) {
         result.stepInfo_ = vpnTunnelBuilder_.build();
+      }
+      if (stepInfoCase_ == 21 && vpcConnectorBuilder_ != null) {
+        result.stepInfo_ = vpcConnectorBuilder_.build();
       }
       if (stepInfoCase_ == 12 && deliverBuilder_ != null) {
         result.stepInfo_ = deliverBuilder_.build();
@@ -2318,6 +2810,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       if (stepInfoCase_ == 19 && cloudSqlInstanceBuilder_ != null) {
         result.stepInfo_ = cloudSqlInstanceBuilder_.build();
+      }
+      if (stepInfoCase_ == 20 && cloudFunctionBuilder_ != null) {
+        result.stepInfo_ = cloudFunctionBuilder_.build();
+      }
+      if (stepInfoCase_ == 22 && appEngineVersionBuilder_ != null) {
+        result.stepInfo_ = appEngineVersionBuilder_.build();
+      }
+      if (stepInfoCase_ == 23 && cloudRunRevisionBuilder_ != null) {
+        result.stepInfo_ = cloudRunRevisionBuilder_.build();
       }
     }
 
@@ -2403,6 +2904,11 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             mergeEndpoint(other.getEndpoint());
             break;
           }
+        case GOOGLE_SERVICE:
+          {
+            mergeGoogleService(other.getGoogleService());
+            break;
+          }
         case FORWARDING_RULE:
           {
             mergeForwardingRule(other.getForwardingRule());
@@ -2416,6 +2922,11 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         case VPN_TUNNEL:
           {
             mergeVpnTunnel(other.getVpnTunnel());
+            break;
+          }
+        case VPC_CONNECTOR:
+          {
+            mergeVpcConnector(other.getVpcConnector());
             break;
           }
         case DELIVER:
@@ -2456,6 +2967,21 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         case CLOUD_SQL_INSTANCE:
           {
             mergeCloudSqlInstance(other.getCloudSqlInstance());
+            break;
+          }
+        case CLOUD_FUNCTION:
+          {
+            mergeCloudFunction(other.getCloudFunction());
+            break;
+          }
+        case APP_ENGINE_VERSION:
+          {
+            mergeAppEngineVersion(other.getAppEngineVersion());
+            break;
+          }
+        case CLOUD_RUN_REVISION:
+          {
+            mergeCloudRunRevision(other.getCloudRunRevision());
             break;
           }
         case STEPINFO_NOT_SET:
@@ -2604,6 +3130,38 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
                 stepInfoCase_ = 19;
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(getCloudFunctionFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 20;
+                break;
+              } // case 162
+            case 170:
+              {
+                input.readMessage(getVpcConnectorFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 21;
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getAppEngineVersionFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 22;
+                break;
+              } // case 178
+            case 186:
+              {
+                input.readMessage(
+                    getCloudRunRevisionFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 23;
+                break;
+              } // case 186
+            case 194:
+              {
+                input.readMessage(getGoogleServiceFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 24;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3861,6 +4419,219 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.GoogleServiceInfo,
+            com.google.cloud.networkmanagement.v1.GoogleServiceInfo.Builder,
+            com.google.cloud.networkmanagement.v1.GoogleServiceInfoOrBuilder>
+        googleServiceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google service
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+     *
+     * @return Whether the googleService field is set.
+     */
+    @java.lang.Override
+    public boolean hasGoogleService() {
+      return stepInfoCase_ == 24;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google service
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+     *
+     * @return The googleService.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.GoogleServiceInfo getGoogleService() {
+      if (googleServiceBuilder_ == null) {
+        if (stepInfoCase_ == 24) {
+          return (com.google.cloud.networkmanagement.v1.GoogleServiceInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.GoogleServiceInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 24) {
+          return googleServiceBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1.GoogleServiceInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google service
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+     */
+    public Builder setGoogleService(com.google.cloud.networkmanagement.v1.GoogleServiceInfo value) {
+      if (googleServiceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        googleServiceBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google service
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+     */
+    public Builder setGoogleService(
+        com.google.cloud.networkmanagement.v1.GoogleServiceInfo.Builder builderForValue) {
+      if (googleServiceBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        googleServiceBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google service
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+     */
+    public Builder mergeGoogleService(
+        com.google.cloud.networkmanagement.v1.GoogleServiceInfo value) {
+      if (googleServiceBuilder_ == null) {
+        if (stepInfoCase_ == 24
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1.GoogleServiceInfo.getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.GoogleServiceInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1.GoogleServiceInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 24) {
+          googleServiceBuilder_.mergeFrom(value);
+        } else {
+          googleServiceBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google service
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+     */
+    public Builder clearGoogleService() {
+      if (googleServiceBuilder_ == null) {
+        if (stepInfoCase_ == 24) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 24) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        googleServiceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google service
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+     */
+    public com.google.cloud.networkmanagement.v1.GoogleServiceInfo.Builder
+        getGoogleServiceBuilder() {
+      return getGoogleServiceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google service
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.GoogleServiceInfoOrBuilder
+        getGoogleServiceOrBuilder() {
+      if ((stepInfoCase_ == 24) && (googleServiceBuilder_ != null)) {
+        return googleServiceBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 24) {
+          return (com.google.cloud.networkmanagement.v1.GoogleServiceInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.GoogleServiceInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google service
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.GoogleServiceInfo,
+            com.google.cloud.networkmanagement.v1.GoogleServiceInfo.Builder,
+            com.google.cloud.networkmanagement.v1.GoogleServiceInfoOrBuilder>
+        getGoogleServiceFieldBuilder() {
+      if (googleServiceBuilder_ == null) {
+        if (!(stepInfoCase_ == 24)) {
+          stepInfo_ = com.google.cloud.networkmanagement.v1.GoogleServiceInfo.getDefaultInstance();
+        }
+        googleServiceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.GoogleServiceInfo,
+                com.google.cloud.networkmanagement.v1.GoogleServiceInfo.Builder,
+                com.google.cloud.networkmanagement.v1.GoogleServiceInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1.GoogleServiceInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 24;
+      onChanged();
+      return googleServiceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.networkmanagement.v1.ForwardingRuleInfo,
             com.google.cloud.networkmanagement.v1.ForwardingRuleInfo.Builder,
             com.google.cloud.networkmanagement.v1.ForwardingRuleInfoOrBuilder>
@@ -4492,6 +5263,217 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 11;
       onChanged();
       return vpnTunnelBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.VpcConnectorInfo,
+            com.google.cloud.networkmanagement.v1.VpcConnectorInfo.Builder,
+            com.google.cloud.networkmanagement.v1.VpcConnectorInfoOrBuilder>
+        vpcConnectorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+     *
+     * @return Whether the vpcConnector field is set.
+     */
+    @java.lang.Override
+    public boolean hasVpcConnector() {
+      return stepInfoCase_ == 21;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+     *
+     * @return The vpcConnector.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.VpcConnectorInfo getVpcConnector() {
+      if (vpcConnectorBuilder_ == null) {
+        if (stepInfoCase_ == 21) {
+          return (com.google.cloud.networkmanagement.v1.VpcConnectorInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.VpcConnectorInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 21) {
+          return vpcConnectorBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1.VpcConnectorInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    public Builder setVpcConnector(com.google.cloud.networkmanagement.v1.VpcConnectorInfo value) {
+      if (vpcConnectorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        vpcConnectorBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    public Builder setVpcConnector(
+        com.google.cloud.networkmanagement.v1.VpcConnectorInfo.Builder builderForValue) {
+      if (vpcConnectorBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        vpcConnectorBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    public Builder mergeVpcConnector(com.google.cloud.networkmanagement.v1.VpcConnectorInfo value) {
+      if (vpcConnectorBuilder_ == null) {
+        if (stepInfoCase_ == 21
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1.VpcConnectorInfo.getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.VpcConnectorInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1.VpcConnectorInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 21) {
+          vpcConnectorBuilder_.mergeFrom(value);
+        } else {
+          vpcConnectorBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    public Builder clearVpcConnector() {
+      if (vpcConnectorBuilder_ == null) {
+        if (stepInfoCase_ == 21) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 21) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        vpcConnectorBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    public com.google.cloud.networkmanagement.v1.VpcConnectorInfo.Builder getVpcConnectorBuilder() {
+      return getVpcConnectorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.VpcConnectorInfoOrBuilder
+        getVpcConnectorOrBuilder() {
+      if ((stepInfoCase_ == 21) && (vpcConnectorBuilder_ != null)) {
+        return vpcConnectorBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 21) {
+          return (com.google.cloud.networkmanagement.v1.VpcConnectorInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.VpcConnectorInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.VpcConnectorInfo,
+            com.google.cloud.networkmanagement.v1.VpcConnectorInfo.Builder,
+            com.google.cloud.networkmanagement.v1.VpcConnectorInfoOrBuilder>
+        getVpcConnectorFieldBuilder() {
+      if (vpcConnectorBuilder_ == null) {
+        if (!(stepInfoCase_ == 21)) {
+          stepInfo_ = com.google.cloud.networkmanagement.v1.VpcConnectorInfo.getDefaultInstance();
+        }
+        vpcConnectorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.VpcConnectorInfo,
+                com.google.cloud.networkmanagement.v1.VpcConnectorInfo.Builder,
+                com.google.cloud.networkmanagement.v1.VpcConnectorInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1.VpcConnectorInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 21;
+      onChanged();
+      return vpcConnectorBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -6176,6 +7158,651 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 19;
       onChanged();
       return cloudSqlInstanceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.CloudFunctionInfo,
+            com.google.cloud.networkmanagement.v1.CloudFunctionInfo.Builder,
+            com.google.cloud.networkmanagement.v1.CloudFunctionInfoOrBuilder>
+        cloudFunctionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+     *
+     * @return Whether the cloudFunction field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudFunction() {
+      return stepInfoCase_ == 20;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+     *
+     * @return The cloudFunction.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.CloudFunctionInfo getCloudFunction() {
+      if (cloudFunctionBuilder_ == null) {
+        if (stepInfoCase_ == 20) {
+          return (com.google.cloud.networkmanagement.v1.CloudFunctionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.CloudFunctionInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 20) {
+          return cloudFunctionBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1.CloudFunctionInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    public Builder setCloudFunction(com.google.cloud.networkmanagement.v1.CloudFunctionInfo value) {
+      if (cloudFunctionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        cloudFunctionBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    public Builder setCloudFunction(
+        com.google.cloud.networkmanagement.v1.CloudFunctionInfo.Builder builderForValue) {
+      if (cloudFunctionBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudFunctionBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    public Builder mergeCloudFunction(
+        com.google.cloud.networkmanagement.v1.CloudFunctionInfo value) {
+      if (cloudFunctionBuilder_ == null) {
+        if (stepInfoCase_ == 20
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1.CloudFunctionInfo.getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.CloudFunctionInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1.CloudFunctionInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 20) {
+          cloudFunctionBuilder_.mergeFrom(value);
+        } else {
+          cloudFunctionBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    public Builder clearCloudFunction() {
+      if (cloudFunctionBuilder_ == null) {
+        if (stepInfoCase_ == 20) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 20) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        cloudFunctionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    public com.google.cloud.networkmanagement.v1.CloudFunctionInfo.Builder
+        getCloudFunctionBuilder() {
+      return getCloudFunctionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.CloudFunctionInfoOrBuilder
+        getCloudFunctionOrBuilder() {
+      if ((stepInfoCase_ == 20) && (cloudFunctionBuilder_ != null)) {
+        return cloudFunctionBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 20) {
+          return (com.google.cloud.networkmanagement.v1.CloudFunctionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.CloudFunctionInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.CloudFunctionInfo,
+            com.google.cloud.networkmanagement.v1.CloudFunctionInfo.Builder,
+            com.google.cloud.networkmanagement.v1.CloudFunctionInfoOrBuilder>
+        getCloudFunctionFieldBuilder() {
+      if (cloudFunctionBuilder_ == null) {
+        if (!(stepInfoCase_ == 20)) {
+          stepInfo_ = com.google.cloud.networkmanagement.v1.CloudFunctionInfo.getDefaultInstance();
+        }
+        cloudFunctionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.CloudFunctionInfo,
+                com.google.cloud.networkmanagement.v1.CloudFunctionInfo.Builder,
+                com.google.cloud.networkmanagement.v1.CloudFunctionInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1.CloudFunctionInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 20;
+      onChanged();
+      return cloudFunctionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.AppEngineVersionInfo,
+            com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.Builder,
+            com.google.cloud.networkmanagement.v1.AppEngineVersionInfoOrBuilder>
+        appEngineVersionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an App Engine service version.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+     *
+     * @return Whether the appEngineVersion field is set.
+     */
+    @java.lang.Override
+    public boolean hasAppEngineVersion() {
+      return stepInfoCase_ == 22;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an App Engine service version.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+     *
+     * @return The appEngineVersion.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.AppEngineVersionInfo getAppEngineVersion() {
+      if (appEngineVersionBuilder_ == null) {
+        if (stepInfoCase_ == 22) {
+          return (com.google.cloud.networkmanagement.v1.AppEngineVersionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 22) {
+          return appEngineVersionBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an App Engine service version.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+     */
+    public Builder setAppEngineVersion(
+        com.google.cloud.networkmanagement.v1.AppEngineVersionInfo value) {
+      if (appEngineVersionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        appEngineVersionBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an App Engine service version.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+     */
+    public Builder setAppEngineVersion(
+        com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.Builder builderForValue) {
+      if (appEngineVersionBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        appEngineVersionBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an App Engine service version.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+     */
+    public Builder mergeAppEngineVersion(
+        com.google.cloud.networkmanagement.v1.AppEngineVersionInfo value) {
+      if (appEngineVersionBuilder_ == null) {
+        if (stepInfoCase_ == 22
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1.AppEngineVersionInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1.AppEngineVersionInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 22) {
+          appEngineVersionBuilder_.mergeFrom(value);
+        } else {
+          appEngineVersionBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an App Engine service version.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+     */
+    public Builder clearAppEngineVersion() {
+      if (appEngineVersionBuilder_ == null) {
+        if (stepInfoCase_ == 22) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 22) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        appEngineVersionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an App Engine service version.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+     */
+    public com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.Builder
+        getAppEngineVersionBuilder() {
+      return getAppEngineVersionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an App Engine service version.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.AppEngineVersionInfoOrBuilder
+        getAppEngineVersionOrBuilder() {
+      if ((stepInfoCase_ == 22) && (appEngineVersionBuilder_ != null)) {
+        return appEngineVersionBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 22) {
+          return (com.google.cloud.networkmanagement.v1.AppEngineVersionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an App Engine service version.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.AppEngineVersionInfo,
+            com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.Builder,
+            com.google.cloud.networkmanagement.v1.AppEngineVersionInfoOrBuilder>
+        getAppEngineVersionFieldBuilder() {
+      if (appEngineVersionBuilder_ == null) {
+        if (!(stepInfoCase_ == 22)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.getDefaultInstance();
+        }
+        appEngineVersionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.AppEngineVersionInfo,
+                com.google.cloud.networkmanagement.v1.AppEngineVersionInfo.Builder,
+                com.google.cloud.networkmanagement.v1.AppEngineVersionInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1.AppEngineVersionInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 22;
+      onChanged();
+      return appEngineVersionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo,
+            com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.Builder,
+            com.google.cloud.networkmanagement.v1.CloudRunRevisionInfoOrBuilder>
+        cloudRunRevisionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run revision.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+     *
+     * @return Whether the cloudRunRevision field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudRunRevision() {
+      return stepInfoCase_ == 23;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run revision.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+     *
+     * @return The cloudRunRevision.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo getCloudRunRevision() {
+      if (cloudRunRevisionBuilder_ == null) {
+        if (stepInfoCase_ == 23) {
+          return (com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 23) {
+          return cloudRunRevisionBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run revision.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+     */
+    public Builder setCloudRunRevision(
+        com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo value) {
+      if (cloudRunRevisionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        cloudRunRevisionBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run revision.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+     */
+    public Builder setCloudRunRevision(
+        com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.Builder builderForValue) {
+      if (cloudRunRevisionBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudRunRevisionBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run revision.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+     */
+    public Builder mergeCloudRunRevision(
+        com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo value) {
+      if (cloudRunRevisionBuilder_ == null) {
+        if (stepInfoCase_ == 23
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 23) {
+          cloudRunRevisionBuilder_.mergeFrom(value);
+        } else {
+          cloudRunRevisionBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run revision.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+     */
+    public Builder clearCloudRunRevision() {
+      if (cloudRunRevisionBuilder_ == null) {
+        if (stepInfoCase_ == 23) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 23) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        cloudRunRevisionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run revision.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+     */
+    public com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.Builder
+        getCloudRunRevisionBuilder() {
+      return getCloudRunRevisionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run revision.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.CloudRunRevisionInfoOrBuilder
+        getCloudRunRevisionOrBuilder() {
+      if ((stepInfoCase_ == 23) && (cloudRunRevisionBuilder_ != null)) {
+        return cloudRunRevisionBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 23) {
+          return (com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run revision.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo,
+            com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.Builder,
+            com.google.cloud.networkmanagement.v1.CloudRunRevisionInfoOrBuilder>
+        getCloudRunRevisionFieldBuilder() {
+      if (cloudRunRevisionBuilder_ == null) {
+        if (!(stepInfoCase_ == 23)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.getDefaultInstance();
+        }
+        cloudRunRevisionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo,
+                com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo.Builder,
+                com.google.cloud.networkmanagement.v1.CloudRunRevisionInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 23;
+      onChanged();
+      return cloudRunRevisionBuilder_;
     }
 
     @java.lang.Override

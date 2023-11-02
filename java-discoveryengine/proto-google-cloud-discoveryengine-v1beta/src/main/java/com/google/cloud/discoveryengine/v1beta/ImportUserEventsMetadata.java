@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.cloud.discoveryengine.v1beta;
  *
  *
  * <pre>
- * Metadata related to the progress of the Import operation. This will be
+ * Metadata related to the progress of the Import operation. This is
  * returned by the google.longrunning.Operation.metadata field.
  * </pre>
  *
@@ -44,11 +44,6 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImportUserEventsMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -398,7 +393,7 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Metadata related to the progress of the Import operation. This will be
+   * Metadata related to the progress of the Import operation. This is
    * returned by the google.longrunning.Operation.metadata field.
    * </pre>
    *

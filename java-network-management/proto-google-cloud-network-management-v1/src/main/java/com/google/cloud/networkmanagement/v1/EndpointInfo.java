@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,17 +45,13 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
     protocol_ = "";
     sourceNetworkUri_ = "";
     destinationNetworkUri_ = "";
+    sourceAgentUri_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EndpointInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -364,6 +360,57 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SOURCE_AGENT_URI_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceAgentUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * URI of the source telemetry agent this packet originates from.
+   * </pre>
+   *
+   * <code>string source_agent_uri = 8;</code>
+   *
+   * @return The sourceAgentUri.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceAgentUri() {
+    java.lang.Object ref = sourceAgentUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceAgentUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URI of the source telemetry agent this packet originates from.
+   * </pre>
+   *
+   * <code>string source_agent_uri = 8;</code>
+   *
+   * @return The bytes for sourceAgentUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceAgentUriBytes() {
+    java.lang.Object ref = sourceAgentUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceAgentUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -399,6 +446,9 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationNetworkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, destinationNetworkUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceAgentUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, sourceAgentUri_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -429,6 +479,9 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationNetworkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, destinationNetworkUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceAgentUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, sourceAgentUri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -452,6 +505,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
     if (getDestinationPort() != other.getDestinationPort()) return false;
     if (!getSourceNetworkUri().equals(other.getSourceNetworkUri())) return false;
     if (!getDestinationNetworkUri().equals(other.getDestinationNetworkUri())) return false;
+    if (!getSourceAgentUri().equals(other.getSourceAgentUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -477,6 +531,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getSourceNetworkUri().hashCode();
     hash = (37 * hash) + DESTINATION_NETWORK_URI_FIELD_NUMBER;
     hash = (53 * hash) + getDestinationNetworkUri().hashCode();
+    hash = (37 * hash) + SOURCE_AGENT_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceAgentUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -625,6 +681,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
       destinationPort_ = 0;
       sourceNetworkUri_ = "";
       destinationNetworkUri_ = "";
+      sourceAgentUri_ = "";
       return this;
     }
 
@@ -681,6 +738,9 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.destinationNetworkUri_ = destinationNetworkUri_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.sourceAgentUri_ = sourceAgentUri_;
       }
     }
 
@@ -761,6 +821,11 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (!other.getSourceAgentUri().isEmpty()) {
+        sourceAgentUri_ = other.sourceAgentUri_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -829,6 +894,12 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                sourceAgentUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1480,6 +1551,112 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       destinationNetworkUri_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceAgentUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URI of the source telemetry agent this packet originates from.
+     * </pre>
+     *
+     * <code>string source_agent_uri = 8;</code>
+     *
+     * @return The sourceAgentUri.
+     */
+    public java.lang.String getSourceAgentUri() {
+      java.lang.Object ref = sourceAgentUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceAgentUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the source telemetry agent this packet originates from.
+     * </pre>
+     *
+     * <code>string source_agent_uri = 8;</code>
+     *
+     * @return The bytes for sourceAgentUri.
+     */
+    public com.google.protobuf.ByteString getSourceAgentUriBytes() {
+      java.lang.Object ref = sourceAgentUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceAgentUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the source telemetry agent this packet originates from.
+     * </pre>
+     *
+     * <code>string source_agent_uri = 8;</code>
+     *
+     * @param value The sourceAgentUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceAgentUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceAgentUri_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the source telemetry agent this packet originates from.
+     * </pre>
+     *
+     * <code>string source_agent_uri = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceAgentUri() {
+      sourceAgentUri_ = getDefaultInstance().getSourceAgentUri();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the source telemetry agent this packet originates from.
+     * </pre>
+     *
+     * <code>string source_agent_uri = 8;</code>
+     *
+     * @param value The bytes for sourceAgentUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceAgentUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceAgentUri_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

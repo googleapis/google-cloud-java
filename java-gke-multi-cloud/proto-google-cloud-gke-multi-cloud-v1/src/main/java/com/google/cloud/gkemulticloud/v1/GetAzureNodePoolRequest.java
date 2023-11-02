@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetAzureNodePoolRequest extends com.google.protobuf.Generated
     return new GetAzureNodePoolRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_GetAzureNodePoolRequest_descriptor;
@@ -78,8 +73,10 @@ public final class GetAzureNodePoolRequest extends com.google.protobuf.Generated
    * Required. The name of the
    * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to
    * describe.
+   *
    * `AzureNodePool` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -109,8 +106,10 @@ public final class GetAzureNodePoolRequest extends com.google.protobuf.Generated
    * Required. The name of the
    * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to
    * describe.
+   *
    * `AzureNodePool` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -485,8 +484,10 @@ public final class GetAzureNodePoolRequest extends com.google.protobuf.Generated
      * Required. The name of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to
      * describe.
+     *
      * `AzureNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -515,8 +516,10 @@ public final class GetAzureNodePoolRequest extends com.google.protobuf.Generated
      * Required. The name of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to
      * describe.
+     *
      * `AzureNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -545,8 +548,10 @@ public final class GetAzureNodePoolRequest extends com.google.protobuf.Generated
      * Required. The name of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to
      * describe.
+     *
      * `AzureNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -574,8 +579,10 @@ public final class GetAzureNodePoolRequest extends com.google.protobuf.Generated
      * Required. The name of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to
      * describe.
+     *
      * `AzureNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -599,8 +606,10 @@ public final class GetAzureNodePoolRequest extends com.google.protobuf.Generated
      * Required. The name of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to
      * describe.
+     *
      * `AzureNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>

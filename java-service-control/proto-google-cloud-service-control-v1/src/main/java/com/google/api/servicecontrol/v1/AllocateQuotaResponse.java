@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AllocateQuotaResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -205,9 +200,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * Quota metrics to indicate the result of allocation. Depending on the
    * request, one or more of the following metrics will be included:
+   *
    * 1. Per quota group or per quota metric incremental usage will be specified
    * using the following delta metric :
    *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+   *
    * 2. The quota limit reached condition will be specified using the following
    * boolean metric :
    *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -225,9 +222,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * Quota metrics to indicate the result of allocation. Depending on the
    * request, one or more of the following metrics will be included:
+   *
    * 1. Per quota group or per quota metric incremental usage will be specified
    * using the following delta metric :
    *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+   *
    * 2. The quota limit reached condition will be specified using the following
    * boolean metric :
    *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -246,9 +245,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * Quota metrics to indicate the result of allocation. Depending on the
    * request, one or more of the following metrics will be included:
+   *
    * 1. Per quota group or per quota metric incremental usage will be specified
    * using the following delta metric :
    *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+   *
    * 2. The quota limit reached condition will be specified using the following
    * boolean metric :
    *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -266,9 +267,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * Quota metrics to indicate the result of allocation. Depending on the
    * request, one or more of the following metrics will be included:
+   *
    * 1. Per quota group or per quota metric incremental usage will be specified
    * using the following delta metric :
    *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+   *
    * 2. The quota limit reached condition will be specified using the following
    * boolean metric :
    *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -286,9 +289,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * Quota metrics to indicate the result of allocation. Depending on the
    * request, one or more of the following metrics will be included:
+   *
    * 1. Per quota group or per quota metric incremental usage will be specified
    * using the following delta metric :
    *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+   *
    * 2. The quota limit reached condition will be specified using the following
    * boolean metric :
    *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1349,9 +1354,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1372,9 +1379,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1395,9 +1404,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1418,9 +1429,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1448,9 +1461,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1475,9 +1490,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1504,9 +1521,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1534,9 +1553,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1561,9 +1582,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1588,9 +1611,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1615,9 +1640,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1641,9 +1668,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1667,9 +1696,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1687,9 +1718,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1711,9 +1744,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1735,9 +1770,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1755,9 +1792,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"
@@ -1776,9 +1815,11 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Quota metrics to indicate the result of allocation. Depending on the
      * request, one or more of the following metrics will be included:
+     *
      * 1. Per quota group or per quota metric incremental usage will be specified
      * using the following delta metric :
      *   "serviceruntime.googleapis.com/api/consumer/quota_used_count"
+     *
      * 2. The quota limit reached condition will be specified using the following
      * boolean metric :
      *   "serviceruntime.googleapis.com/quota/exceeded"

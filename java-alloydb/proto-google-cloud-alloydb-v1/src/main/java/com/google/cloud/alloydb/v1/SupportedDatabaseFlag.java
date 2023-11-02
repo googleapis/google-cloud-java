@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SupportedDatabaseFlag();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -359,18 +354,13 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     }
 
     private StringRestrictions() {
-      allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new StringRestrictions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -391,7 +381,8 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public static final int ALLOWED_VALUES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList allowedValues_;
+    private com.google.protobuf.LazyStringArrayList allowedValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -665,8 +656,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -697,7 +687,6 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       public com.google.cloud.alloydb.v1.SupportedDatabaseFlag.StringRestrictions buildPartial() {
         com.google.cloud.alloydb.v1.SupportedDatabaseFlag.StringRestrictions result =
             new com.google.cloud.alloydb.v1.SupportedDatabaseFlag.StringRestrictions(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -705,18 +694,13 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.alloydb.v1.SupportedDatabaseFlag.StringRestrictions result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          allowedValues_ = allowedValues_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.allowedValues_ = allowedValues_;
-      }
-
       private void buildPartial0(
           com.google.cloud.alloydb.v1.SupportedDatabaseFlag.StringRestrictions result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          allowedValues_.makeImmutable();
+          result.allowedValues_ = allowedValues_;
+        }
       }
 
       @java.lang.Override
@@ -773,7 +757,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         if (!other.allowedValues_.isEmpty()) {
           if (allowedValues_.isEmpty()) {
             allowedValues_ = other.allowedValues_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureAllowedValuesIsMutable();
             allowedValues_.addAll(other.allowedValues_);
@@ -832,14 +816,14 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList allowedValues_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList allowedValues_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAllowedValuesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!allowedValues_.isModifiable()) {
           allowedValues_ = new com.google.protobuf.LazyStringArrayList(allowedValues_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -854,7 +838,8 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
        * @return A list containing the allowedValues.
        */
       public com.google.protobuf.ProtocolStringList getAllowedValuesList() {
-        return allowedValues_.getUnmodifiableView();
+        allowedValues_.makeImmutable();
+        return allowedValues_;
       }
       /**
        *
@@ -923,6 +908,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         }
         ensureAllowedValuesIsMutable();
         allowedValues_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -945,6 +931,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         }
         ensureAllowedValuesIsMutable();
         allowedValues_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -964,6 +951,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       public Builder addAllAllowedValues(java.lang.Iterable<java.lang.String> values) {
         ensureAllowedValuesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedValues_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -980,8 +968,9 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearAllowedValues() {
-        allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1005,6 +994,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         checkByteStringIsUtf8(value);
         ensureAllowedValuesIsMutable();
         allowedValues_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1176,11 +1166,6 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IntegerRestrictions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2121,6 +2106,8 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
   }
 
   private int restrictionsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object restrictions_;
 
   public enum RestrictionsCase

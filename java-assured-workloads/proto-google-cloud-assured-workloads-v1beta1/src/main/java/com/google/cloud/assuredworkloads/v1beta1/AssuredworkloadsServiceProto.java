@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,11 @@ public final class AssuredworkloadsServiceProto {
           + "/empty.proto2\220\013\n\027AssuredWorkloadsService"
           + "\022\371\001\n\016CreateWorkload\022<.google.cloud.assur"
           + "edworkloads.v1beta1.CreateWorkloadReques"
-          + "t\032\035.google.longrunning.Operation\"\211\001\202\323\344\223\002"
-          + "C\"7/v1beta1/{parent=organizations/*/loca"
-          + "tions/*}/workloads:\010workload\332A\017parent,wo"
-          + "rkload\312A+\n\010Workload\022\037CreateWorkloadOpera"
-          + "tionMetadata\022\230\001\n\016UpdateWorkload\022<.google"
+          + "t\032\035.google.longrunning.Operation\"\211\001\312A+\n\010"
+          + "Workload\022\037CreateWorkloadOperationMetadat"
+          + "a\332A\017parent,workload\202\323\344\223\002C\"7/v1beta1/{par"
+          + "ent=organizations/*/locations/*}/workloa"
+          + "ds:\010workload\022\230\001\n\016UpdateWorkload\022<.google"
           + ".cloud.assuredworkloads.v1beta1.UpdateWo"
           + "rkloadRequest\032/.google.cloud.assuredwork"
           + "loads.v1beta1.Workload\"\027\332A\024workload,upda"
@@ -62,9 +62,9 @@ public final class AssuredworkloadsServiceProto {
           + "ads/*}:restrictAllowedResources:\001*\022\256\001\n\016D"
           + "eleteWorkload\022<.google.cloud.assuredwork"
           + "loads.v1beta1.DeleteWorkloadRequest\032\026.go"
-          + "ogle.protobuf.Empty\"F\202\323\344\223\0029*7/v1beta1/{n"
-          + "ame=organizations/*/locations/*/workload"
-          + "s/*}\332A\004name\022\202\001\n\013GetWorkload\0229.google.clo"
+          + "ogle.protobuf.Empty\"F\332A\004name\202\323\344\223\0029*7/v1b"
+          + "eta1/{name=organizations/*/locations/*/w"
+          + "orkloads/*}\022\202\001\n\013GetWorkload\0229.google.clo"
           + "ud.assuredworkloads.v1beta1.GetWorkloadR"
           + "equest\032/.google.cloud.assuredworkloads.v"
           + "1beta1.Workload\"\007\332A\004name\022\257\001\n\023AnalyzeWork"

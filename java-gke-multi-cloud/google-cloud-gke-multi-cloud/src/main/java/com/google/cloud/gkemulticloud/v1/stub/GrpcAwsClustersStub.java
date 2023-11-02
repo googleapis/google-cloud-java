@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AwsCluster;
 import com.google.cloud.gkemulticloud.v1.AwsNodePool;
@@ -45,7 +46,6 @@ import com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse;
 import com.google.cloud.gkemulticloud.v1.OperationMetadata;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -268,9 +268,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
             .setMethodDescriptor(createAwsClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateAwsClusterRequest, Operation> updateAwsClusterTransportSettings =
@@ -278,9 +278,10 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
             .setMethodDescriptor(updateAwsClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("aws_cluster.name", String.valueOf(request.getAwsCluster().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "aws_cluster.name", String.valueOf(request.getAwsCluster().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAwsClusterRequest, AwsCluster> getAwsClusterTransportSettings =
@@ -288,9 +289,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
             .setMethodDescriptor(getAwsClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAwsClustersRequest, ListAwsClustersResponse>
@@ -299,9 +300,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                 .setMethodDescriptor(listAwsClustersMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAwsClusterRequest, Operation> deleteAwsClusterTransportSettings =
@@ -309,9 +310,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
             .setMethodDescriptor(deleteAwsClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
@@ -321,9 +322,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                 .setMethodDescriptor(generateAwsAccessTokenMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("aws_cluster", String.valueOf(request.getAwsCluster()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateAwsNodePoolRequest, Operation> createAwsNodePoolTransportSettings =
@@ -331,9 +332,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
             .setMethodDescriptor(createAwsNodePoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolTransportSettings =
@@ -341,10 +342,10 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
             .setMethodDescriptor(updateAwsNodePoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "aws_node_pool.name", String.valueOf(request.getAwsNodePool().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolTransportSettings =
@@ -352,9 +353,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
             .setMethodDescriptor(getAwsNodePoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse>
@@ -363,9 +364,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                 .setMethodDescriptor(listAwsNodePoolsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolTransportSettings =
@@ -373,9 +374,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
             .setMethodDescriptor(deleteAwsNodePoolMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAwsServerConfigRequest, AwsServerConfig>
@@ -384,9 +385,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                 .setMethodDescriptor(getAwsServerConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
 

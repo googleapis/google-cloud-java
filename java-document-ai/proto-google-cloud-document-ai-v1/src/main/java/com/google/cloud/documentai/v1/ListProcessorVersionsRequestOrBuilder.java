@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,8 +61,8 @@ public interface ListProcessorVersionsRequestOrBuilder
    *
    * <pre>
    * The maximum number of processor versions to return.
-   * If unspecified, at most 10 processor versions will be returned.
-   * The maximum value is 20; values above 20 will be coerced to 20.
+   * If unspecified, at most `10` processor versions will be returned.
+   * The maximum value is `20`. Values above `20` will be coerced to `20`.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

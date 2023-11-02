@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.tasks.v2beta3;
  *
  *
  * <pre>
- * Request message for [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue].
+ * Request message for
+ * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.PurgeQueueRequest}
@@ -45,11 +46,6 @@ public final class PurgeQueueRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PurgeQueueRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -287,7 +283,8 @@ public final class PurgeQueueRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue].
+   * Request message for
+   * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.PurgeQueueRequest}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     return new TransformationLocation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_TransformationLocation_descriptor;
@@ -68,6 +63,8 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
   }
 
   private int locationTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object locationType_;
 
   public enum LocationTypeCase

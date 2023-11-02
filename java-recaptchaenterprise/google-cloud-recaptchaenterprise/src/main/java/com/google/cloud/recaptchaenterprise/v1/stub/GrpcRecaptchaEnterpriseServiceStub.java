@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1.stub;
 
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
@@ -26,19 +27,25 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
 import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
+import com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
+import com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
+import com.google.recaptchaenterprise.v1.FirewallPolicy;
+import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -51,6 +58,7 @@ import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
+import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -167,6 +175,62 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
           .setResponseMarshaller(ProtoUtils.marshaller(Metrics.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<CreateFirewallPolicyRequest, FirewallPolicy>
+      createFirewallPolicyMethodDescriptor =
+          MethodDescriptor.<CreateFirewallPolicyRequest, FirewallPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/CreateFirewallPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateFirewallPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FirewallPolicy.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse>
+      listFirewallPoliciesMethodDescriptor =
+          MethodDescriptor.<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/ListFirewallPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListFirewallPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListFirewallPoliciesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetFirewallPolicyRequest, FirewallPolicy>
+      getFirewallPolicyMethodDescriptor =
+          MethodDescriptor.<GetFirewallPolicyRequest, FirewallPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/GetFirewallPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetFirewallPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FirewallPolicy.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateFirewallPolicyRequest, FirewallPolicy>
+      updateFirewallPolicyMethodDescriptor =
+          MethodDescriptor.<UpdateFirewallPolicyRequest, FirewallPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/UpdateFirewallPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateFirewallPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FirewallPolicy.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteFirewallPolicyRequest, Empty>
+      deleteFirewallPolicyMethodDescriptor =
+          MethodDescriptor.<DeleteFirewallPolicyRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/DeleteFirewallPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteFirewallPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<
           ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
       listRelatedAccountGroupsMethodDescriptor =
@@ -230,6 +294,16 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   private final UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable;
   private final UnaryCallable<MigrateKeyRequest, Key> migrateKeyCallable;
   private final UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable;
+  private final UnaryCallable<CreateFirewallPolicyRequest, FirewallPolicy>
+      createFirewallPolicyCallable;
+  private final UnaryCallable<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse>
+      listFirewallPoliciesCallable;
+  private final UnaryCallable<ListFirewallPoliciesRequest, ListFirewallPoliciesPagedResponse>
+      listFirewallPoliciesPagedCallable;
+  private final UnaryCallable<GetFirewallPolicyRequest, FirewallPolicy> getFirewallPolicyCallable;
+  private final UnaryCallable<UpdateFirewallPolicyRequest, FirewallPolicy>
+      updateFirewallPolicyCallable;
+  private final UnaryCallable<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyCallable;
   private final UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
       listRelatedAccountGroupsCallable;
   private final UnaryCallable<
@@ -302,9 +376,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
             .setMethodDescriptor(createAssessmentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
@@ -313,9 +387,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                 .setMethodDescriptor(annotateAssessmentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateKeyRequest, Key> createKeyTransportSettings =
@@ -323,9 +397,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
             .setMethodDescriptor(createKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListKeysRequest, ListKeysResponse> listKeysTransportSettings =
@@ -333,9 +407,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
             .setMethodDescriptor(listKeysMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
@@ -345,9 +419,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                 .setMethodDescriptor(retrieveLegacySecretKeyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("key", String.valueOf(request.getKey()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("key", String.valueOf(request.getKey()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetKeyRequest, Key> getKeyTransportSettings =
@@ -355,9 +429,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
             .setMethodDescriptor(getKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateKeyRequest, Key> updateKeyTransportSettings =
@@ -365,9 +439,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
             .setMethodDescriptor(updateKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("key.name", String.valueOf(request.getKey().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("key.name", String.valueOf(request.getKey().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteKeyRequest, Empty> deleteKeyTransportSettings =
@@ -375,9 +449,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
             .setMethodDescriptor(deleteKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<MigrateKeyRequest, Key> migrateKeyTransportSettings =
@@ -385,9 +459,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
             .setMethodDescriptor(migrateKeyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetMetricsRequest, Metrics> getMetricsTransportSettings =
@@ -395,9 +469,64 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
             .setMethodDescriptor(getMetricsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateFirewallPolicyRequest, FirewallPolicy>
+        createFirewallPolicyTransportSettings =
+            GrpcCallSettings.<CreateFirewallPolicyRequest, FirewallPolicy>newBuilder()
+                .setMethodDescriptor(createFirewallPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse>
+        listFirewallPoliciesTransportSettings =
+            GrpcCallSettings.<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listFirewallPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetFirewallPolicyRequest, FirewallPolicy> getFirewallPolicyTransportSettings =
+        GrpcCallSettings.<GetFirewallPolicyRequest, FirewallPolicy>newBuilder()
+            .setMethodDescriptor(getFirewallPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateFirewallPolicyRequest, FirewallPolicy>
+        updateFirewallPolicyTransportSettings =
+            GrpcCallSettings.<UpdateFirewallPolicyRequest, FirewallPolicy>newBuilder()
+                .setMethodDescriptor(updateFirewallPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "firewall_policy.name",
+                          String.valueOf(request.getFirewallPolicy().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyTransportSettings =
+        GrpcCallSettings.<DeleteFirewallPolicyRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteFirewallPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
@@ -407,9 +536,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                 .setMethodDescriptor(listRelatedAccountGroupsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -422,9 +551,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                 .setMethodDescriptor(listRelatedAccountGroupMembershipsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -438,9 +567,9 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                 .setMethodDescriptor(searchRelatedAccountGroupMembershipsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("project", String.valueOf(request.getProject()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
                     })
                 .build();
 
@@ -481,6 +610,36 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
     this.getMetricsCallable =
         callableFactory.createUnaryCallable(
             getMetricsTransportSettings, settings.getMetricsSettings(), clientContext);
+    this.createFirewallPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createFirewallPolicyTransportSettings,
+            settings.createFirewallPolicySettings(),
+            clientContext);
+    this.listFirewallPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listFirewallPoliciesTransportSettings,
+            settings.listFirewallPoliciesSettings(),
+            clientContext);
+    this.listFirewallPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listFirewallPoliciesTransportSettings,
+            settings.listFirewallPoliciesSettings(),
+            clientContext);
+    this.getFirewallPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getFirewallPolicyTransportSettings,
+            settings.getFirewallPolicySettings(),
+            clientContext);
+    this.updateFirewallPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateFirewallPolicyTransportSettings,
+            settings.updateFirewallPolicySettings(),
+            clientContext);
+    this.deleteFirewallPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteFirewallPolicyTransportSettings,
+            settings.deleteFirewallPolicySettings(),
+            clientContext);
     this.listRelatedAccountGroupsCallable =
         callableFactory.createUnaryCallable(
             listRelatedAccountGroupsTransportSettings,
@@ -575,6 +734,38 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   @Override
   public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
     return getMetricsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateFirewallPolicyRequest, FirewallPolicy> createFirewallPolicyCallable() {
+    return createFirewallPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse>
+      listFirewallPoliciesCallable() {
+    return listFirewallPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFirewallPoliciesRequest, ListFirewallPoliciesPagedResponse>
+      listFirewallPoliciesPagedCallable() {
+    return listFirewallPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFirewallPolicyRequest, FirewallPolicy> getFirewallPolicyCallable() {
+    return getFirewallPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateFirewallPolicyRequest, FirewallPolicy> updateFirewallPolicyCallable() {
+    return updateFirewallPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyCallable() {
+    return deleteFirewallPolicyCallable;
   }
 
   @Override

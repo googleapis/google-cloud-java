@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateSecurityMarksRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -128,6 +123,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
+   *
    * The field mask must not contain duplicate fields.
    * If empty or set to "marks", all marks will be replaced.  Individual
    * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -146,6 +142,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
+   *
    * The field mask must not contain duplicate fields.
    * If empty or set to "marks", all marks will be replaced.  Individual
    * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -164,6 +161,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
+   *
    * The field mask must not contain duplicate fields.
    * If empty or set to "marks", all marks will be replaced.  Individual
    * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -861,6 +859,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
+     *
      * The field mask must not contain duplicate fields.
      * If empty or set to "marks", all marks will be replaced.  Individual
      * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -878,6 +877,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
+     *
      * The field mask must not contain duplicate fields.
      * If empty or set to "marks", all marks will be replaced.  Individual
      * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -901,6 +901,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
+     *
      * The field mask must not contain duplicate fields.
      * If empty or set to "marks", all marks will be replaced.  Individual
      * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -926,6 +927,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
+     *
      * The field mask must not contain duplicate fields.
      * If empty or set to "marks", all marks will be replaced.  Individual
      * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -948,6 +950,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
+     *
      * The field mask must not contain duplicate fields.
      * If empty or set to "marks", all marks will be replaced.  Individual
      * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -976,6 +979,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
+     *
      * The field mask must not contain duplicate fields.
      * If empty or set to "marks", all marks will be replaced.  Individual
      * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -998,6 +1002,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
+     *
      * The field mask must not contain duplicate fields.
      * If empty or set to "marks", all marks will be replaced.  Individual
      * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -1015,6 +1020,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
+     *
      * The field mask must not contain duplicate fields.
      * If empty or set to "marks", all marks will be replaced.  Individual
      * marks can be updated using "marks.&lt;mark_key&gt;".
@@ -1036,6 +1042,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
+     *
      * The field mask must not contain duplicate fields.
      * If empty or set to "marks", all marks will be replaced.  Individual
      * marks can be updated using "marks.&lt;mark_key&gt;".

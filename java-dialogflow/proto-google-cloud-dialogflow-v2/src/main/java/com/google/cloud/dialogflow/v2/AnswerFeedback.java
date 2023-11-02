@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnswerFeedback();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -250,6 +245,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int detailFeedbackCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object detailFeedback_;
 
   public enum DetailFeedbackCase
@@ -393,8 +390,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Indicates whether the answer/item was clicked by the human agent
    * or not. Default to false.
-   * For knowledge search, the answer record is considered to be clicked if the
-   * answer was copied or any URI was clicked.
+   * For knowledge search and knowledge assist, the answer record is considered
+   * to be clicked if the answer was copied or any URI was clicked.
    * </pre>
    *
    * <code>bool clicked = 3;</code>
@@ -1372,8 +1369,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates whether the answer/item was clicked by the human agent
      * or not. Default to false.
-     * For knowledge search, the answer record is considered to be clicked if the
-     * answer was copied or any URI was clicked.
+     * For knowledge search and knowledge assist, the answer record is considered
+     * to be clicked if the answer was copied or any URI was clicked.
      * </pre>
      *
      * <code>bool clicked = 3;</code>
@@ -1390,8 +1387,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates whether the answer/item was clicked by the human agent
      * or not. Default to false.
-     * For knowledge search, the answer record is considered to be clicked if the
-     * answer was copied or any URI was clicked.
+     * For knowledge search and knowledge assist, the answer record is considered
+     * to be clicked if the answer was copied or any URI was clicked.
      * </pre>
      *
      * <code>bool clicked = 3;</code>
@@ -1412,8 +1409,8 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates whether the answer/item was clicked by the human agent
      * or not. Default to false.
-     * For knowledge search, the answer record is considered to be clicked if the
-     * answer was copied or any URI was clicked.
+     * For knowledge search and knowledge assist, the answer record is considered
+     * to be clicked if the answer was copied or any URI was clicked.
      * </pre>
      *
      * <code>bool clicked = 3;</code>

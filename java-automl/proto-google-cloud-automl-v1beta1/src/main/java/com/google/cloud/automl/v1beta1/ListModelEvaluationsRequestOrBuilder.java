@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,9 +61,12 @@ public interface ListModelEvaluationsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the results of the request.
+   *
    *   * `annotation_spec_id` - for =, !=  or existence. See example below for
    *                          the last.
+   *
    * Some examples of using the filter are:
+   *
    *   * `annotation_spec_id!=4` --&gt; The model evaluation was done for
    *                             annotation spec with ID different than 4.
    *   * `NOT annotation_spec_id:*` --&gt; The model evaluation was done for
@@ -80,9 +83,12 @@ public interface ListModelEvaluationsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the results of the request.
+   *
    *   * `annotation_spec_id` - for =, !=  or existence. See example below for
    *                          the last.
+   *
    * Some examples of using the filter are:
+   *
    *   * `annotation_spec_id!=4` --&gt; The model evaluation was done for
    *                             annotation spec with ID different than 4.
    *   * `NOT annotation_spec_id:*` --&gt; The model evaluation was done for

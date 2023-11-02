@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,6 +172,35 @@ public interface HiveMetastoreConfigOrBuilder
    * <code>.google.cloud.metastore.v1.KerberosConfig kerberos_config = 3;</code>
    */
   com.google.cloud.metastore.v1.KerberosConfigOrBuilder getKerberosConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The protocol to use for the metastore service endpoint. If unspecified,
+   * defaults to `THRIFT`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for endpointProtocol.
+   */
+  int getEndpointProtocolValue();
+  /**
+   *
+   *
+   * <pre>
+   * The protocol to use for the metastore service endpoint. If unspecified,
+   * defaults to `THRIFT`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol endpoint_protocol = 4;
+   * </code>
+   *
+   * @return The endpointProtocol.
+   */
+  com.google.cloud.metastore.v1.HiveMetastoreConfig.EndpointProtocol getEndpointProtocol();
 
   /**
    *

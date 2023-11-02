@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -322,4 +322,62 @@ public interface AnnotateTextResponseOrBuilder
    * <code>repeated .google.cloud.language.v1.ClassificationCategory categories = 6;</code>
    */
   com.google.cloud.language.v1.ClassificationCategoryOrBuilder getCategoriesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Harmful and sensitive categories identified in the input document.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.language.v1.ClassificationCategory moderation_categories = 7;
+   * </code>
+   */
+  java.util.List<com.google.cloud.language.v1.ClassificationCategory> getModerationCategoriesList();
+  /**
+   *
+   *
+   * <pre>
+   * Harmful and sensitive categories identified in the input document.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.language.v1.ClassificationCategory moderation_categories = 7;
+   * </code>
+   */
+  com.google.cloud.language.v1.ClassificationCategory getModerationCategories(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Harmful and sensitive categories identified in the input document.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.language.v1.ClassificationCategory moderation_categories = 7;
+   * </code>
+   */
+  int getModerationCategoriesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Harmful and sensitive categories identified in the input document.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.language.v1.ClassificationCategory moderation_categories = 7;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.language.v1.ClassificationCategoryOrBuilder>
+      getModerationCategoriesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Harmful and sensitive categories identified in the input document.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.language.v1.ClassificationCategory moderation_categories = 7;
+   * </code>
+   */
+  com.google.cloud.language.v1.ClassificationCategoryOrBuilder getModerationCategoriesOrBuilder(
+      int index);
 }

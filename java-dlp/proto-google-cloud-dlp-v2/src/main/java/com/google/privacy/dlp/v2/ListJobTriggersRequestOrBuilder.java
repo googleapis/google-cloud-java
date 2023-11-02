@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,16 +28,20 @@ public interface ListJobTriggersRequestOrBuilder
    *
    * <pre>
    * Required. Parent resource name.
+   *
    * The format of this value varies depending on whether you have [specified a
    * processing
    * location](https://cloud.google.com/dlp/docs/specifying-location):
+   *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
+   *
    *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *
@@ -53,16 +57,20 @@ public interface ListJobTriggersRequestOrBuilder
    *
    * <pre>
    * Required. Parent resource name.
+   *
    * The format of this value varies depending on whether you have [specified a
    * processing
    * location](https://cloud.google.com/dlp/docs/specifying-location):
+   *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
+   *
    *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *
@@ -78,7 +86,7 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from the previous call
    * to ListJobTriggers. `order_by` field must not
    * change for subsequent calls.
    * </pre>
@@ -92,7 +100,7 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from the previous call
    * to ListJobTriggers. `order_by` field must not
    * change for subsequent calls.
    * </pre>
@@ -107,7 +115,7 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Size of the page, can be limited by a server.
+   * Size of the page. This value can be limited by a server.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -121,11 +129,14 @@ public interface ListJobTriggersRequestOrBuilder
    *
    * <pre>
    * Comma separated list of triggeredJob fields to order by,
-   * followed by `asc` or `desc` postfix. This list is case-insensitive,
-   * default sorting order is ascending, redundant space characters are
+   * followed by `asc` or `desc` postfix. This list is case insensitive. The
+   * default sorting order is ascending. Redundant space characters are
    * insignificant.
+   *
    * Example: `name asc,update_time, create_time desc`
+   *
    * Supported fields are:
+   *
    * - `create_time`: corresponds to the time the JobTrigger was created.
    * - `update_time`: corresponds to the time the JobTrigger was last updated.
    * - `last_run_time`: corresponds to the last time the JobTrigger ran.
@@ -144,11 +155,14 @@ public interface ListJobTriggersRequestOrBuilder
    *
    * <pre>
    * Comma separated list of triggeredJob fields to order by,
-   * followed by `asc` or `desc` postfix. This list is case-insensitive,
-   * default sorting order is ascending, redundant space characters are
+   * followed by `asc` or `desc` postfix. This list is case insensitive. The
+   * default sorting order is ascending. Redundant space characters are
    * insignificant.
+   *
    * Example: `name asc,update_time, create_time desc`
+   *
    * Supported fields are:
+   *
    * - `create_time`: corresponds to the time the JobTrigger was created.
    * - `update_time`: corresponds to the time the JobTrigger was last updated.
    * - `last_run_time`: corresponds to the last time the JobTrigger ran.
@@ -168,7 +182,9 @@ public interface ListJobTriggersRequestOrBuilder
    *
    * <pre>
    * Allows filtering.
+   *
    * Supported syntax:
+   *
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
@@ -180,11 +196,14 @@ public interface ListJobTriggersRequestOrBuilder
    *     quotation marks. Nanoseconds are ignored.
    *     - 'error_count' - Number of errors that have occurred while running.
    * * The operator must be `=` or `!=` for status and inspected_storage.
+   *
    * Examples:
+   *
    * * inspected_storage = cloud_storage AND status = HEALTHY
    * * inspected_storage = cloud_storage OR inspected_storage = bigquery
    * * inspected_storage = cloud_storage AND (state = PAUSED OR state = HEALTHY)
    * * last_run_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+   *
    * The length of this field should be no more than 500 characters.
    * </pre>
    *
@@ -198,7 +217,9 @@ public interface ListJobTriggersRequestOrBuilder
    *
    * <pre>
    * Allows filtering.
+   *
    * Supported syntax:
+   *
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
@@ -210,11 +231,14 @@ public interface ListJobTriggersRequestOrBuilder
    *     quotation marks. Nanoseconds are ignored.
    *     - 'error_count' - Number of errors that have occurred while running.
    * * The operator must be `=` or `!=` for status and inspected_storage.
+   *
    * Examples:
+   *
    * * inspected_storage = cloud_storage AND status = HEALTHY
    * * inspected_storage = cloud_storage OR inspected_storage = bigquery
    * * inspected_storage = cloud_storage AND (state = PAUSED OR state = HEALTHY)
    * * last_run_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+   *
    * The length of this field should be no more than 500 characters.
    * </pre>
    *

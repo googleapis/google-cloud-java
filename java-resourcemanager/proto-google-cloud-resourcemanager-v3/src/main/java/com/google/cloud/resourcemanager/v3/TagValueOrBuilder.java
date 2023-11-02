@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,6 +81,7 @@ public interface TagValueOrBuilder
    * <pre>
    * Required. Immutable. User-assigned short name for TagValue. The short name
    * should be unique for TagValues within the same parent TagKey.
+   *
    * The short name must be 63 characters or less, beginning and ending with
    * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
    * dots (.), and alphanumerics between.
@@ -99,6 +100,7 @@ public interface TagValueOrBuilder
    * <pre>
    * Required. Immutable. User-assigned short name for TagValue. The short name
    * should be unique for TagValues within the same parent TagKey.
+   *
    * The short name must be 63 characters or less, beginning and ending with
    * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
    * dots (.), and alphanumerics between.
@@ -149,6 +151,7 @@ public interface TagValueOrBuilder
    * <pre>
    * Optional. User-assigned description of the TagValue.
    * Must not exceed 256 characters.
+   *
    * Read-write.
    * </pre>
    *
@@ -163,6 +166,7 @@ public interface TagValueOrBuilder
    * <pre>
    * Optional. User-assigned description of the TagValue.
    * Must not exceed 256 characters.
+   *
    * Read-write.
    * </pre>
    *

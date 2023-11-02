@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,18 +43,13 @@ public final class BatchRemoveCatalogAttributesRequest
 
   private BatchRemoveCatalogAttributesRequest() {
     attributesConfig_ = "";
-    attributeKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    attributeKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchRemoveCatalogAttributesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -134,7 +129,8 @@ public final class BatchRemoveCatalogAttributesRequest
   public static final int ATTRIBUTE_KEYS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList attributeKeys_;
+  private com.google.protobuf.LazyStringArrayList attributeKeys_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -422,8 +418,7 @@ public final class BatchRemoveCatalogAttributesRequest
       super.clear();
       bitField0_ = 0;
       attributesConfig_ = "";
-      attributeKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      attributeKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -453,7 +448,6 @@ public final class BatchRemoveCatalogAttributesRequest
     public com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest buildPartial() {
       com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest result =
           new com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -461,20 +455,15 @@ public final class BatchRemoveCatalogAttributesRequest
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        attributeKeys_ = attributeKeys_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.attributeKeys_ = attributeKeys_;
-    }
-
     private void buildPartial0(
         com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.attributesConfig_ = attributesConfig_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        attributeKeys_.makeImmutable();
+        result.attributeKeys_ = attributeKeys_;
       }
     }
 
@@ -535,7 +524,7 @@ public final class BatchRemoveCatalogAttributesRequest
       if (!other.attributeKeys_.isEmpty()) {
         if (attributeKeys_.isEmpty()) {
           attributeKeys_ = other.attributeKeys_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAttributeKeysIsMutable();
           attributeKeys_.addAll(other.attributeKeys_);
@@ -726,14 +715,14 @@ public final class BatchRemoveCatalogAttributesRequest
       return this;
     }
 
-    private com.google.protobuf.LazyStringList attributeKeys_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList attributeKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAttributeKeysIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!attributeKeys_.isModifiable()) {
         attributeKeys_ = new com.google.protobuf.LazyStringArrayList(attributeKeys_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -749,7 +738,8 @@ public final class BatchRemoveCatalogAttributesRequest
      * @return A list containing the attributeKeys.
      */
     public com.google.protobuf.ProtocolStringList getAttributeKeysList() {
-      return attributeKeys_.getUnmodifiableView();
+      attributeKeys_.makeImmutable();
+      return attributeKeys_;
     }
     /**
      *
@@ -822,6 +812,7 @@ public final class BatchRemoveCatalogAttributesRequest
       }
       ensureAttributeKeysIsMutable();
       attributeKeys_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -845,6 +836,7 @@ public final class BatchRemoveCatalogAttributesRequest
       }
       ensureAttributeKeysIsMutable();
       attributeKeys_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -865,6 +857,7 @@ public final class BatchRemoveCatalogAttributesRequest
     public Builder addAllAttributeKeys(java.lang.Iterable<java.lang.String> values) {
       ensureAttributeKeysIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, attributeKeys_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -882,8 +875,9 @@ public final class BatchRemoveCatalogAttributesRequest
      * @return This builder for chaining.
      */
     public Builder clearAttributeKeys() {
-      attributeKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      attributeKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -908,6 +902,7 @@ public final class BatchRemoveCatalogAttributesRequest
       checkByteStringIsUtf8(value);
       ensureAttributeKeysIsMutable();
       attributeKeys_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

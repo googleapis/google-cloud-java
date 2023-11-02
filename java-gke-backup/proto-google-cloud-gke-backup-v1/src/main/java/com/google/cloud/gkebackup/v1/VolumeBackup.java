@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,11 +54,6 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new VolumeBackup();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -480,7 +475,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The full name of the VolumeBackup resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -504,7 +499,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The full name of the VolumeBackup resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -687,8 +682,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-   * was created.
+   * Output only. A reference to the source Kubernetes PVC from which this
+   * VolumeBackup was created.
    * </pre>
    *
    * <code>
@@ -705,8 +700,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-   * was created.
+   * Output only. A reference to the source Kubernetes PVC from which this
+   * VolumeBackup was created.
    * </pre>
    *
    * <code>
@@ -725,8 +720,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-   * was created.
+   * Output only. A reference to the source Kubernetes PVC from which this
+   * VolumeBackup was created.
    * </pre>
    *
    * <code>
@@ -748,7 +743,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A storage system-specific opaque handle to the underlying volume backup.
+   * Output only. A storage system-specific opaque handle to the underlying
+   * volume backup.
    * </pre>
    *
    * <code>string volume_backup_handle = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -771,7 +767,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A storage system-specific opaque handle to the underlying volume backup.
+   * Output only. A storage system-specific opaque handle to the underlying
+   * volume backup.
    * </pre>
    *
    * <code>string volume_backup_handle = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -838,8 +835,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The aggregate size of the underlying artifacts associated with this
-   * VolumeBackup in the backup storage. This may change over time when
+   * Output only. The aggregate size of the underlying artifacts associated with
+   * this VolumeBackup in the backup storage. This may change over time when
    * multiple backups of the same volume share the same backup storage
    * location. In particular, this is likely to increase in size when
    * the immediately preceding backup of the same volume is deleted.
@@ -860,7 +857,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The minimum size of the disk to which this VolumeBackup can be restored.
+   * Output only. The minimum size of the disk to which this VolumeBackup can be
+   * restored.
    * </pre>
    *
    * <code>int64 disk_size_bytes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -978,8 +976,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A human readable message explaining why the VolumeBackup is in its current
-   * state.
+   * Output only. A human readable message explaining why the VolumeBackup is in
+   * its current state.
    * </pre>
    *
    * <code>string state_message = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1002,8 +1000,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A human readable message explaining why the VolumeBackup is in its current
-   * state.
+   * Output only. A human readable message explaining why the VolumeBackup is in
+   * its current state.
    * </pre>
    *
    * <code>string state_message = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1031,8 +1029,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a volume backup from overwriting each
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a volume backup from overwriting each
    * other. It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform volume backup updates in order to avoid
    * race conditions.
@@ -1058,8 +1056,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a volume backup from overwriting each
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a volume backup from overwriting each
    * other. It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform volume backup updates in order to avoid
    * race conditions.
@@ -1747,7 +1745,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the VolumeBackup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1770,7 +1768,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the VolumeBackup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1793,7 +1791,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the VolumeBackup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1815,7 +1813,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the VolumeBackup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1833,7 +1831,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the VolumeBackup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;&#47;volumeBackups/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2393,8 +2391,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-     * was created.
+     * Output only. A reference to the source Kubernetes PVC from which this
+     * VolumeBackup was created.
      * </pre>
      *
      * <code>
@@ -2410,8 +2408,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-     * was created.
+     * Output only. A reference to the source Kubernetes PVC from which this
+     * VolumeBackup was created.
      * </pre>
      *
      * <code>
@@ -2433,8 +2431,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-     * was created.
+     * Output only. A reference to the source Kubernetes PVC from which this
+     * VolumeBackup was created.
      * </pre>
      *
      * <code>
@@ -2458,8 +2456,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-     * was created.
+     * Output only. A reference to the source Kubernetes PVC from which this
+     * VolumeBackup was created.
      * </pre>
      *
      * <code>
@@ -2481,8 +2479,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-     * was created.
+     * Output only. A reference to the source Kubernetes PVC from which this
+     * VolumeBackup was created.
      * </pre>
      *
      * <code>
@@ -2509,8 +2507,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-     * was created.
+     * Output only. A reference to the source Kubernetes PVC from which this
+     * VolumeBackup was created.
      * </pre>
      *
      * <code>
@@ -2531,8 +2529,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-     * was created.
+     * Output only. A reference to the source Kubernetes PVC from which this
+     * VolumeBackup was created.
      * </pre>
      *
      * <code>
@@ -2548,8 +2546,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-     * was created.
+     * Output only. A reference to the source Kubernetes PVC from which this
+     * VolumeBackup was created.
      * </pre>
      *
      * <code>
@@ -2569,8 +2567,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference to the source Kubernetes PVC from which this VolumeBackup
-     * was created.
+     * Output only. A reference to the source Kubernetes PVC from which this
+     * VolumeBackup was created.
      * </pre>
      *
      * <code>
@@ -2599,7 +2597,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A storage system-specific opaque handle to the underlying volume backup.
+     * Output only. A storage system-specific opaque handle to the underlying
+     * volume backup.
      * </pre>
      *
      * <code>string volume_backup_handle = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2621,7 +2620,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A storage system-specific opaque handle to the underlying volume backup.
+     * Output only. A storage system-specific opaque handle to the underlying
+     * volume backup.
      * </pre>
      *
      * <code>string volume_backup_handle = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2643,7 +2643,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A storage system-specific opaque handle to the underlying volume backup.
+     * Output only. A storage system-specific opaque handle to the underlying
+     * volume backup.
      * </pre>
      *
      * <code>string volume_backup_handle = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2664,7 +2665,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A storage system-specific opaque handle to the underlying volume backup.
+     * Output only. A storage system-specific opaque handle to the underlying
+     * volume backup.
      * </pre>
      *
      * <code>string volume_backup_handle = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2681,7 +2683,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A storage system-specific opaque handle to the underlying volume backup.
+     * Output only. A storage system-specific opaque handle to the underlying
+     * volume backup.
      * </pre>
      *
      * <code>string volume_backup_handle = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2807,8 +2810,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The aggregate size of the underlying artifacts associated with this
-     * VolumeBackup in the backup storage. This may change over time when
+     * Output only. The aggregate size of the underlying artifacts associated with
+     * this VolumeBackup in the backup storage. This may change over time when
      * multiple backups of the same volume share the same backup storage
      * location. In particular, this is likely to increase in size when
      * the immediately preceding backup of the same volume is deleted.
@@ -2826,8 +2829,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The aggregate size of the underlying artifacts associated with this
-     * VolumeBackup in the backup storage. This may change over time when
+     * Output only. The aggregate size of the underlying artifacts associated with
+     * this VolumeBackup in the backup storage. This may change over time when
      * multiple backups of the same volume share the same backup storage
      * location. In particular, this is likely to increase in size when
      * the immediately preceding backup of the same volume is deleted.
@@ -2849,8 +2852,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The aggregate size of the underlying artifacts associated with this
-     * VolumeBackup in the backup storage. This may change over time when
+     * Output only. The aggregate size of the underlying artifacts associated with
+     * this VolumeBackup in the backup storage. This may change over time when
      * multiple backups of the same volume share the same backup storage
      * location. In particular, this is likely to increase in size when
      * the immediately preceding backup of the same volume is deleted.
@@ -2872,7 +2875,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The minimum size of the disk to which this VolumeBackup can be restored.
+     * Output only. The minimum size of the disk to which this VolumeBackup can be
+     * restored.
      * </pre>
      *
      * <code>int64 disk_size_bytes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2887,7 +2891,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The minimum size of the disk to which this VolumeBackup can be restored.
+     * Output only. The minimum size of the disk to which this VolumeBackup can be
+     * restored.
      * </pre>
      *
      * <code>int64 disk_size_bytes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2906,7 +2911,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The minimum size of the disk to which this VolumeBackup can be restored.
+     * Output only. The minimum size of the disk to which this VolumeBackup can be
+     * restored.
      * </pre>
      *
      * <code>int64 disk_size_bytes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3237,8 +3243,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human readable message explaining why the VolumeBackup is in its current
-     * state.
+     * Output only. A human readable message explaining why the VolumeBackup is in
+     * its current state.
      * </pre>
      *
      * <code>string state_message = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3260,8 +3266,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human readable message explaining why the VolumeBackup is in its current
-     * state.
+     * Output only. A human readable message explaining why the VolumeBackup is in
+     * its current state.
      * </pre>
      *
      * <code>string state_message = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3283,8 +3289,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human readable message explaining why the VolumeBackup is in its current
-     * state.
+     * Output only. A human readable message explaining why the VolumeBackup is in
+     * its current state.
      * </pre>
      *
      * <code>string state_message = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3305,8 +3311,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human readable message explaining why the VolumeBackup is in its current
-     * state.
+     * Output only. A human readable message explaining why the VolumeBackup is in
+     * its current state.
      * </pre>
      *
      * <code>string state_message = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3323,8 +3329,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human readable message explaining why the VolumeBackup is in its current
-     * state.
+     * Output only. A human readable message explaining why the VolumeBackup is in
+     * its current state.
      * </pre>
      *
      * <code>string state_message = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3348,8 +3354,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a volume backup from overwriting each
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a volume backup from overwriting each
      * other. It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform volume backup updates in order to avoid
      * race conditions.
@@ -3374,8 +3380,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a volume backup from overwriting each
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a volume backup from overwriting each
      * other. It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform volume backup updates in order to avoid
      * race conditions.
@@ -3400,8 +3406,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a volume backup from overwriting each
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a volume backup from overwriting each
      * other. It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform volume backup updates in order to avoid
      * race conditions.
@@ -3425,8 +3431,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a volume backup from overwriting each
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a volume backup from overwriting each
      * other. It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform volume backup updates in order to avoid
      * race conditions.
@@ -3446,8 +3452,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a volume backup from overwriting each
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a volume backup from overwriting each
      * other. It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform volume backup updates in order to avoid
      * race conditions.

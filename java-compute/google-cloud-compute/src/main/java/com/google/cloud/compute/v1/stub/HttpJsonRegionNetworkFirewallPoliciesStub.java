@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAssociationRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleRegionNetworkFirewallPolicyRequest;
@@ -1091,12 +1092,28 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                 .<AddAssociationRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(addAssociationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AddRuleRegionNetworkFirewallPolicyRequest, Operation>
         addRuleTransportSettings =
             HttpJsonCallSettings.<AddRuleRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(addRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CloneRulesRegionNetworkFirewallPolicyRequest, Operation>
         cloneRulesTransportSettings =
@@ -1104,18 +1121,42 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                 .<CloneRulesRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(cloneRulesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRegionNetworkFirewallPolicyRequest, Operation>
         deleteTransportSettings =
             HttpJsonCallSettings.<DeleteRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRegionNetworkFirewallPolicyRequest, FirewallPolicy>
         getTransportSettings =
             HttpJsonCallSettings.<GetRegionNetworkFirewallPolicyRequest, FirewallPolicy>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             GetAssociationRegionNetworkFirewallPolicyRequest, FirewallPolicyAssociation>
@@ -1125,6 +1166,14 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                     newBuilder()
                 .setMethodDescriptor(getAssociationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             GetEffectiveFirewallsRegionNetworkFirewallPolicyRequest,
@@ -1136,6 +1185,13 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                     newBuilder()
                 .setMethodDescriptor(getEffectiveFirewallsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetIamPolicyRegionNetworkFirewallPolicyRequest, Policy>
         getIamPolicyTransportSettings =
@@ -1143,6 +1199,14 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                 .<GetIamPolicyRegionNetworkFirewallPolicyRequest, Policy>newBuilder()
                 .setMethodDescriptor(getIamPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRuleRegionNetworkFirewallPolicyRequest, FirewallPolicyRule>
         getRuleTransportSettings =
@@ -1150,12 +1214,27 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                 .<GetRuleRegionNetworkFirewallPolicyRequest, FirewallPolicyRule>newBuilder()
                 .setMethodDescriptor(getRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertRegionNetworkFirewallPolicyRequest, Operation>
         insertTransportSettings =
             HttpJsonCallSettings.<InsertRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(insertMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListRegionNetworkFirewallPoliciesRequest, FirewallPolicyList>
         listTransportSettings =
@@ -1163,12 +1242,27 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                 .<ListRegionNetworkFirewallPoliciesRequest, FirewallPolicyList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionNetworkFirewallPolicyRequest, Operation>
         patchTransportSettings =
             HttpJsonCallSettings.<PatchRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(patchMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchRuleRegionNetworkFirewallPolicyRequest, Operation>
         patchRuleTransportSettings =
@@ -1176,6 +1270,14 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                 .<PatchRuleRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(patchRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RemoveAssociationRegionNetworkFirewallPolicyRequest, Operation>
         removeAssociationTransportSettings =
@@ -1183,6 +1285,14 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                 .<RemoveAssociationRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeAssociationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RemoveRuleRegionNetworkFirewallPolicyRequest, Operation>
         removeRuleTransportSettings =
@@ -1190,6 +1300,14 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                 .<RemoveRuleRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetIamPolicyRegionNetworkFirewallPolicyRequest, Policy>
         setIamPolicyTransportSettings =
@@ -1197,6 +1315,14 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                 .<SetIamPolicyRegionNetworkFirewallPolicyRequest, Policy>newBuilder()
                 .setMethodDescriptor(setIamPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             TestIamPermissionsRegionNetworkFirewallPolicyRequest, TestPermissionsResponse>
@@ -1206,6 +1332,14 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                     newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.addAssociationCallable =

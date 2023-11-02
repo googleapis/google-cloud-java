@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
 
   private GeoTaxonomy() {
     type_ = 0;
-    regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GeoTaxonomy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -289,7 +284,8 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
   public static final int REGIONS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList regions_;
+  private com.google.protobuf.LazyStringArrayList regions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -567,8 +563,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       type_ = 0;
-      regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -596,7 +591,6 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.v1.GeoTaxonomy buildPartial() {
       com.google.cloud.billing.v1.GeoTaxonomy result =
           new com.google.cloud.billing.v1.GeoTaxonomy(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -604,18 +598,14 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.billing.v1.GeoTaxonomy result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        regions_ = regions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.regions_ = regions_;
-    }
-
     private void buildPartial0(com.google.cloud.billing.v1.GeoTaxonomy result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        regions_.makeImmutable();
+        result.regions_ = regions_;
       }
     }
 
@@ -670,7 +660,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       if (!other.regions_.isEmpty()) {
         if (regions_.isEmpty()) {
           regions_ = other.regions_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureRegionsIsMutable();
           regions_.addAll(other.regions_);
@@ -825,14 +815,14 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList regions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList regions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!regions_.isModifiable()) {
         regions_ = new com.google.protobuf.LazyStringArrayList(regions_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -847,7 +837,8 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the regions.
      */
     public com.google.protobuf.ProtocolStringList getRegionsList() {
-      return regions_.getUnmodifiableView();
+      regions_.makeImmutable();
+      return regions_;
     }
     /**
      *
@@ -916,6 +907,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRegionsIsMutable();
       regions_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -938,6 +930,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRegionsIsMutable();
       regions_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -957,6 +950,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRegions(java.lang.Iterable<java.lang.String> values) {
       ensureRegionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, regions_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -973,8 +967,9 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegions() {
-      regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -998,6 +993,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRegionsIsMutable();
       regions_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

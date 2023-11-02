@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class SslPoliciesListAvailableFeaturesResponse
   }
 
   private SslPoliciesListAvailableFeaturesResponse() {
-    features_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    features_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SslPoliciesListAvailableFeaturesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class SslPoliciesListAvailableFeaturesResponse
   public static final int FEATURES_FIELD_NUMBER = 246211645;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList features_;
+  private com.google.protobuf.LazyStringArrayList features_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    * <code>repeated string features = 246211645;</code>
    *
@@ -314,8 +310,7 @@ public final class SslPoliciesListAvailableFeaturesResponse
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      features_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      features_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -345,7 +340,6 @@ public final class SslPoliciesListAvailableFeaturesResponse
     public com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse buildPartial() {
       com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse result =
           new com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -353,18 +347,13 @@ public final class SslPoliciesListAvailableFeaturesResponse
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        features_ = features_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.features_ = features_;
-    }
-
     private void buildPartial0(
         com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        features_.makeImmutable();
+        result.features_ = features_;
+      }
     }
 
     @java.lang.Override
@@ -419,7 +408,7 @@ public final class SslPoliciesListAvailableFeaturesResponse
       if (!other.features_.isEmpty()) {
         if (features_.isEmpty()) {
           features_ = other.features_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureFeaturesIsMutable();
           features_.addAll(other.features_);
@@ -478,14 +467,14 @@ public final class SslPoliciesListAvailableFeaturesResponse
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList features_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList features_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!features_.isModifiable()) {
         features_ = new com.google.protobuf.LazyStringArrayList(features_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      * <code>repeated string features = 246211645;</code>
@@ -493,7 +482,8 @@ public final class SslPoliciesListAvailableFeaturesResponse
      * @return A list containing the features.
      */
     public com.google.protobuf.ProtocolStringList getFeaturesList() {
-      return features_.getUnmodifiableView();
+      features_.makeImmutable();
+      return features_;
     }
     /**
      * <code>repeated string features = 246211645;</code>
@@ -534,6 +524,7 @@ public final class SslPoliciesListAvailableFeaturesResponse
       }
       ensureFeaturesIsMutable();
       features_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -549,6 +540,7 @@ public final class SslPoliciesListAvailableFeaturesResponse
       }
       ensureFeaturesIsMutable();
       features_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -561,6 +553,7 @@ public final class SslPoliciesListAvailableFeaturesResponse
     public Builder addAllFeatures(java.lang.Iterable<java.lang.String> values) {
       ensureFeaturesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, features_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -570,8 +563,9 @@ public final class SslPoliciesListAvailableFeaturesResponse
      * @return This builder for chaining.
      */
     public Builder clearFeatures() {
-      features_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      features_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -588,6 +582,7 @@ public final class SslPoliciesListAvailableFeaturesResponse
       checkByteStringIsUtf8(value);
       ensureFeaturesIsMutable();
       features_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

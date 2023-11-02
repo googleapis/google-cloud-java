@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * <pre>
  * Variant of the specified [Speech
  * model][google.cloud.dialogflow.cx.v3beta1.InputAudioConfig.model] to use.
+ *
  * See the [Cloud Speech
  * documentation](https://cloud.google.com/speech-to-text/docs/enhanced-models)
  * for which models have different variants. For example, the "phone_call" model
@@ -51,6 +52,7 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    * <pre>
    * Use the best available variant of the [Speech
    * model][InputAudioConfig.model] that the caller is eligible for.
+   *
    * Please see the [Dialogflow
    * docs](https://cloud.google.com/dialogflow/docs/data-logging) for
    * how to make your project eligible for enhanced models.
@@ -77,12 +79,15 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    *
    * <pre>
    * Use an enhanced model variant:
+   *
    * * If an enhanced variant does not exist for the given
    *   [model][google.cloud.dialogflow.cx.v3beta1.InputAudioConfig.model] and
    *   request language, Dialogflow falls back to the standard variant.
+   *
    *   The [Cloud Speech
    *   documentation](https://cloud.google.com/speech-to-text/docs/enhanced-models)
    *   describes which models have enhanced variants.
+   *
    * * If the API caller isn't eligible for enhanced models, Dialogflow returns
    *   an error.  Please see the [Dialogflow
    *   docs](https://cloud.google.com/dialogflow/docs/data-logging)
@@ -112,6 +117,7 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    * <pre>
    * Use the best available variant of the [Speech
    * model][InputAudioConfig.model] that the caller is eligible for.
+   *
    * Please see the [Dialogflow
    * docs](https://cloud.google.com/dialogflow/docs/data-logging) for
    * how to make your project eligible for enhanced models.
@@ -138,12 +144,15 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    *
    * <pre>
    * Use an enhanced model variant:
+   *
    * * If an enhanced variant does not exist for the given
    *   [model][google.cloud.dialogflow.cx.v3beta1.InputAudioConfig.model] and
    *   request language, Dialogflow falls back to the standard variant.
+   *
    *   The [Cloud Speech
    *   documentation](https://cloud.google.com/speech-to-text/docs/enhanced-models)
    *   describes which models have enhanced variants.
+   *
    * * If the API caller isn't eligible for enhanced models, Dialogflow returns
    *   an error.  Please see the [Dialogflow
    *   docs](https://cloud.google.com/dialogflow/docs/data-logging)

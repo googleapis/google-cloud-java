@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
     return new ImportAptArtifactsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.AptArtifactProto
         .internal_static_google_devtools_artifactregistry_v1_ImportAptArtifactsRequest_descriptor;
@@ -68,6 +63,8 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListAdminOverridesRequest extends com.google.protobuf.Generat
     return new ListAdminOverridesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ServiceUsageProto
         .internal_static_google_api_serviceusage_v1beta1_ListAdminOverridesRequest_descriptor;
@@ -78,6 +73,7 @@ public final class ListAdminOverridesRequest extends com.google.protobuf.Generat
    * <pre>
    * The resource name of the parent quota limit, returned by a
    * ListConsumerQuotaMetrics or GetConsumerQuotaMetric call.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
    * </pre>
@@ -104,6 +100,7 @@ public final class ListAdminOverridesRequest extends com.google.protobuf.Generat
    * <pre>
    * The resource name of the parent quota limit, returned by a
    * ListConsumerQuotaMetrics or GetConsumerQuotaMetric call.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
    * </pre>
@@ -595,6 +592,7 @@ public final class ListAdminOverridesRequest extends com.google.protobuf.Generat
      * <pre>
      * The resource name of the parent quota limit, returned by a
      * ListConsumerQuotaMetrics or GetConsumerQuotaMetric call.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
      * </pre>
@@ -620,6 +618,7 @@ public final class ListAdminOverridesRequest extends com.google.protobuf.Generat
      * <pre>
      * The resource name of the parent quota limit, returned by a
      * ListConsumerQuotaMetrics or GetConsumerQuotaMetric call.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
      * </pre>
@@ -645,6 +644,7 @@ public final class ListAdminOverridesRequest extends com.google.protobuf.Generat
      * <pre>
      * The resource name of the parent quota limit, returned by a
      * ListConsumerQuotaMetrics or GetConsumerQuotaMetric call.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
      * </pre>
@@ -669,6 +669,7 @@ public final class ListAdminOverridesRequest extends com.google.protobuf.Generat
      * <pre>
      * The resource name of the parent quota limit, returned by a
      * ListConsumerQuotaMetrics or GetConsumerQuotaMetric call.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
      * </pre>
@@ -689,6 +690,7 @@ public final class ListAdminOverridesRequest extends com.google.protobuf.Generat
      * <pre>
      * The resource name of the parent quota limit, returned by a
      * ListConsumerQuotaMetrics or GetConsumerQuotaMetric call.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
      * </pre>

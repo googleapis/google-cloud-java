@@ -1,0 +1,16 @@
+{
+  "api_shortname": "merchantapi",
+  "name_pretty": "Merchant API",
+  "product_documentation": "https://developers.google.com/merchant/api",
+  "api_description": "Programmatically manage your Merchant Center accounts.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-shopping-merchant-inventories/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-shopping-merchant-inventories",
+  "repo_short": "java-shopping-merchant-inventories",
+  "distribution_name": "com.google.shopping:google-shopping-merchant-inventories",
+  "api_id": "merchantapi.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

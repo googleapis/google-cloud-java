@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     return new RestoreClusterRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.alloydb.v1.ServiceProto
         .internal_static_google_cloud_alloydb_v1_RestoreClusterRequest_descriptor;
@@ -71,6 +66,8 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -78,6 +75,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BACKUP_SOURCE(4),
+    CONTINUOUS_BACKUP_SOURCE(8),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -98,6 +96,8 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       switch (value) {
         case 4:
           return BACKUP_SOURCE;
+        case 8:
+          return CONTINUOUS_BACKUP_SOURCE;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -163,6 +163,61 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       return (com.google.cloud.alloydb.v1.BackupSource) source_;
     }
     return com.google.cloud.alloydb.v1.BackupSource.getDefaultInstance();
+  }
+
+  public static final int CONTINUOUS_BACKUP_SOURCE_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * ContinuousBackup source. Continuous backup needs to be enabled in the
+   * source cluster for this operation to succeed.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+   *
+   * @return Whether the continuousBackupSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasContinuousBackupSource() {
+    return sourceCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ContinuousBackup source. Continuous backup needs to be enabled in the
+   * source cluster for this operation to succeed.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+   *
+   * @return The continuousBackupSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.ContinuousBackupSource getContinuousBackupSource() {
+    if (sourceCase_ == 8) {
+      return (com.google.cloud.alloydb.v1.ContinuousBackupSource) source_;
+    }
+    return com.google.cloud.alloydb.v1.ContinuousBackupSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ContinuousBackup source. Continuous backup needs to be enabled in the
+   * source cluster for this operation to succeed.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.ContinuousBackupSourceOrBuilder
+      getContinuousBackupSourceOrBuilder() {
+    if (sourceCase_ == 8) {
+      return (com.google.cloud.alloydb.v1.ContinuousBackupSource) source_;
+    }
+    return com.google.cloud.alloydb.v1.ContinuousBackupSource.getDefaultInstance();
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -334,11 +389,13 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
    * request ID so that if you must retry your request, the server will know to
    * ignore the request if it has already been completed. The server will
    * guarantee that for at least 60 minutes since the first request.
+   *
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
+   *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
@@ -367,11 +424,13 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
    * request ID so that if you must retry your request, the server will know to
    * ignore the request if it has already been completed. The server will
    * guarantee that for at least 60 minutes since the first request.
+   *
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
+   *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
@@ -445,6 +504,9 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     if (validateOnly_ != false) {
       output.writeBool(6, validateOnly_);
     }
+    if (sourceCase_ == 8) {
+      output.writeMessage(8, (com.google.cloud.alloydb.v1.ContinuousBackupSource) source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -474,6 +536,11 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     if (validateOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, validateOnly_);
     }
+    if (sourceCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.alloydb.v1.ContinuousBackupSource) source_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -502,6 +569,9 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     switch (sourceCase_) {
       case 4:
         if (!getBackupSource().equals(other.getBackupSource())) return false;
+        break;
+      case 8:
+        if (!getContinuousBackupSource().equals(other.getContinuousBackupSource())) return false;
         break;
       case 0:
       default:
@@ -533,6 +603,10 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       case 4:
         hash = (37 * hash) + BACKUP_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getBackupSource().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + CONTINUOUS_BACKUP_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getContinuousBackupSource().hashCode();
         break;
       case 0:
       default:
@@ -680,6 +754,9 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       if (backupSourceBuilder_ != null) {
         backupSourceBuilder_.clear();
       }
+      if (continuousBackupSourceBuilder_ != null) {
+        continuousBackupSourceBuilder_.clear();
+      }
       parent_ = "";
       clusterId_ = "";
       cluster_ = null;
@@ -728,19 +805,19 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
 
     private void buildPartial0(com.google.cloud.alloydb.v1.RestoreClusterRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.parent_ = parent_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.clusterId_ = clusterId_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.cluster_ = clusterBuilder_ == null ? cluster_ : clusterBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.requestId_ = requestId_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.validateOnly_ = validateOnly_;
       }
     }
@@ -750,6 +827,9 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       result.source_ = this.source_;
       if (sourceCase_ == 4 && backupSourceBuilder_ != null) {
         result.source_ = backupSourceBuilder_.build();
+      }
+      if (sourceCase_ == 8 && continuousBackupSourceBuilder_ != null) {
+        result.source_ = continuousBackupSourceBuilder_.build();
       }
     }
 
@@ -801,12 +881,12 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getClusterId().isEmpty()) {
         clusterId_ = other.clusterId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasCluster()) {
@@ -814,7 +894,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -824,6 +904,11 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         case BACKUP_SOURCE:
           {
             mergeBackupSource(other.getBackupSource());
+            break;
+          }
+        case CONTINUOUS_BACKUP_SOURCE:
+          {
+            mergeContinuousBackupSource(other.getContinuousBackupSource());
             break;
           }
         case SOURCE_NOT_SET:
@@ -860,19 +945,19 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 clusterId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getClusterFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
@@ -884,15 +969,22 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
             case 42:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 48:
               {
                 validateOnly_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 48
+            case 66:
+              {
+                input.readMessage(
+                    getContinuousBackupSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 8;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1135,6 +1227,228 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       return backupSourceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.ContinuousBackupSource,
+            com.google.cloud.alloydb.v1.ContinuousBackupSource.Builder,
+            com.google.cloud.alloydb.v1.ContinuousBackupSourceOrBuilder>
+        continuousBackupSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * ContinuousBackup source. Continuous backup needs to be enabled in the
+     * source cluster for this operation to succeed.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+     *
+     * @return Whether the continuousBackupSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasContinuousBackupSource() {
+      return sourceCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ContinuousBackup source. Continuous backup needs to be enabled in the
+     * source cluster for this operation to succeed.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+     *
+     * @return The continuousBackupSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.ContinuousBackupSource getContinuousBackupSource() {
+      if (continuousBackupSourceBuilder_ == null) {
+        if (sourceCase_ == 8) {
+          return (com.google.cloud.alloydb.v1.ContinuousBackupSource) source_;
+        }
+        return com.google.cloud.alloydb.v1.ContinuousBackupSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 8) {
+          return continuousBackupSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.alloydb.v1.ContinuousBackupSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ContinuousBackup source. Continuous backup needs to be enabled in the
+     * source cluster for this operation to succeed.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+     */
+    public Builder setContinuousBackupSource(
+        com.google.cloud.alloydb.v1.ContinuousBackupSource value) {
+      if (continuousBackupSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        continuousBackupSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ContinuousBackup source. Continuous backup needs to be enabled in the
+     * source cluster for this operation to succeed.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+     */
+    public Builder setContinuousBackupSource(
+        com.google.cloud.alloydb.v1.ContinuousBackupSource.Builder builderForValue) {
+      if (continuousBackupSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        continuousBackupSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ContinuousBackup source. Continuous backup needs to be enabled in the
+     * source cluster for this operation to succeed.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+     */
+    public Builder mergeContinuousBackupSource(
+        com.google.cloud.alloydb.v1.ContinuousBackupSource value) {
+      if (continuousBackupSourceBuilder_ == null) {
+        if (sourceCase_ == 8
+            && source_ != com.google.cloud.alloydb.v1.ContinuousBackupSource.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.alloydb.v1.ContinuousBackupSource.newBuilder(
+                      (com.google.cloud.alloydb.v1.ContinuousBackupSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 8) {
+          continuousBackupSourceBuilder_.mergeFrom(value);
+        } else {
+          continuousBackupSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ContinuousBackup source. Continuous backup needs to be enabled in the
+     * source cluster for this operation to succeed.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+     */
+    public Builder clearContinuousBackupSource() {
+      if (continuousBackupSourceBuilder_ == null) {
+        if (sourceCase_ == 8) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 8) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        continuousBackupSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ContinuousBackup source. Continuous backup needs to be enabled in the
+     * source cluster for this operation to succeed.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+     */
+    public com.google.cloud.alloydb.v1.ContinuousBackupSource.Builder
+        getContinuousBackupSourceBuilder() {
+      return getContinuousBackupSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ContinuousBackup source. Continuous backup needs to be enabled in the
+     * source cluster for this operation to succeed.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.ContinuousBackupSourceOrBuilder
+        getContinuousBackupSourceOrBuilder() {
+      if ((sourceCase_ == 8) && (continuousBackupSourceBuilder_ != null)) {
+        return continuousBackupSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 8) {
+          return (com.google.cloud.alloydb.v1.ContinuousBackupSource) source_;
+        }
+        return com.google.cloud.alloydb.v1.ContinuousBackupSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ContinuousBackup source. Continuous backup needs to be enabled in the
+     * source cluster for this operation to succeed.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.ContinuousBackupSource continuous_backup_source = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.ContinuousBackupSource,
+            com.google.cloud.alloydb.v1.ContinuousBackupSource.Builder,
+            com.google.cloud.alloydb.v1.ContinuousBackupSourceOrBuilder>
+        getContinuousBackupSourceFieldBuilder() {
+      if (continuousBackupSourceBuilder_ == null) {
+        if (!(sourceCase_ == 8)) {
+          source_ = com.google.cloud.alloydb.v1.ContinuousBackupSource.getDefaultInstance();
+        }
+        continuousBackupSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1.ContinuousBackupSource,
+                com.google.cloud.alloydb.v1.ContinuousBackupSource.Builder,
+                com.google.cloud.alloydb.v1.ContinuousBackupSourceOrBuilder>(
+                (com.google.cloud.alloydb.v1.ContinuousBackupSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 8;
+      onChanged();
+      return continuousBackupSourceBuilder_;
+    }
+
     private java.lang.Object parent_ = "";
     /**
      *
@@ -1206,7 +1520,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1226,7 +1540,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1251,7 +1565,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1318,7 +1632,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       clusterId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1335,7 +1649,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearClusterId() {
       clusterId_ = getDefaultInstance().getClusterId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1357,7 +1671,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       clusterId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1381,7 +1695,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the cluster field is set.
      */
     public boolean hasCluster() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1423,7 +1737,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       } else {
         clusterBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1443,7 +1757,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       } else {
         clusterBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1459,7 +1773,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeCluster(com.google.cloud.alloydb.v1.Cluster value) {
       if (clusterBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && cluster_ != null
             && cluster_ != com.google.cloud.alloydb.v1.Cluster.getDefaultInstance()) {
           getClusterBuilder().mergeFrom(value);
@@ -1469,7 +1783,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       } else {
         clusterBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1484,7 +1798,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearCluster() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       cluster_ = null;
       if (clusterBuilder_ != null) {
         clusterBuilder_.dispose();
@@ -1504,7 +1818,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.alloydb.v1.Cluster.Builder getClusterBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getClusterFieldBuilder().getBuilder();
     }
@@ -1563,11 +1877,13 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      * request ID so that if you must retry your request, the server will know to
      * ignore the request if it has already been completed. The server will
      * guarantee that for at least 60 minutes since the first request.
+     *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1595,11 +1911,13 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      * request ID so that if you must retry your request, the server will know to
      * ignore the request if it has already been completed. The server will
      * guarantee that for at least 60 minutes since the first request.
+     *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1627,11 +1945,13 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      * request ID so that if you must retry your request, the server will know to
      * ignore the request if it has already been completed. The server will
      * guarantee that for at least 60 minutes since the first request.
+     *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1646,7 +1966,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       requestId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1658,11 +1978,13 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      * request ID so that if you must retry your request, the server will know to
      * ignore the request if it has already been completed. The server will
      * guarantee that for at least 60 minutes since the first request.
+     *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1673,7 +1995,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearRequestId() {
       requestId_ = getDefaultInstance().getRequestId();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1685,11 +2007,13 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      * request ID so that if you must retry your request, the server will know to
      * ignore the request if it has already been completed. The server will
      * guarantee that for at least 60 minutes since the first request.
+     *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
+     *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1705,7 +2029,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       requestId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1745,7 +2069,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1763,7 +2087,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       validateOnly_ = false;
       onChanged();
       return this;

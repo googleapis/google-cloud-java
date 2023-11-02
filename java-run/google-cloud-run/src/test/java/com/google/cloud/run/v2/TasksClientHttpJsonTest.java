@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,6 +89,7 @@ public class TasksClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setScheduledTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setCompletionTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -164,6 +165,7 @@ public class TasksClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setScheduledTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setCompletionTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())

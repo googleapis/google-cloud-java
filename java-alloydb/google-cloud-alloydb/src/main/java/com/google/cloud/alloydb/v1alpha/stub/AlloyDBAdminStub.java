@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListClustersPa
 import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListInstancesPagedResponse;
 import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListLocationsPagedResponse;
 import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListSupportedDatabaseFlagsPagedResponse;
+import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListUsersPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -36,9 +37,11 @@ import com.google.cloud.alloydb.v1alpha.CreateClusterRequest;
 import com.google.cloud.alloydb.v1alpha.CreateInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.CreateSecondaryClusterRequest;
 import com.google.cloud.alloydb.v1alpha.CreateSecondaryInstanceRequest;
+import com.google.cloud.alloydb.v1alpha.CreateUserRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteBackupRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteInstanceRequest;
+import com.google.cloud.alloydb.v1alpha.DeleteUserRequest;
 import com.google.cloud.alloydb.v1alpha.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateResponse;
@@ -46,6 +49,8 @@ import com.google.cloud.alloydb.v1alpha.GetBackupRequest;
 import com.google.cloud.alloydb.v1alpha.GetClusterRequest;
 import com.google.cloud.alloydb.v1alpha.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1alpha.GetInstanceRequest;
+import com.google.cloud.alloydb.v1alpha.GetUserRequest;
+import com.google.cloud.alloydb.v1alpha.InjectFaultRequest;
 import com.google.cloud.alloydb.v1alpha.Instance;
 import com.google.cloud.alloydb.v1alpha.ListBackupsRequest;
 import com.google.cloud.alloydb.v1alpha.ListBackupsResponse;
@@ -55,6 +60,8 @@ import com.google.cloud.alloydb.v1alpha.ListInstancesRequest;
 import com.google.cloud.alloydb.v1alpha.ListInstancesResponse;
 import com.google.cloud.alloydb.v1alpha.ListSupportedDatabaseFlagsRequest;
 import com.google.cloud.alloydb.v1alpha.ListSupportedDatabaseFlagsResponse;
+import com.google.cloud.alloydb.v1alpha.ListUsersRequest;
+import com.google.cloud.alloydb.v1alpha.ListUsersResponse;
 import com.google.cloud.alloydb.v1alpha.OperationMetadata;
 import com.google.cloud.alloydb.v1alpha.PromoteClusterRequest;
 import com.google.cloud.alloydb.v1alpha.RestartInstanceRequest;
@@ -62,6 +69,8 @@ import com.google.cloud.alloydb.v1alpha.RestoreClusterRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateBackupRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateClusterRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateInstanceRequest;
+import com.google.cloud.alloydb.v1alpha.UpdateUserRequest;
+import com.google.cloud.alloydb.v1alpha.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -227,6 +236,15 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: failoverInstanceCallable()");
   }
 
+  public OperationCallable<InjectFaultRequest, Instance, OperationMetadata>
+      injectFaultOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: injectFaultOperationCallable()");
+  }
+
+  public UnaryCallable<InjectFaultRequest, Operation> injectFaultCallable() {
+    throw new UnsupportedOperationException("Not implemented: injectFaultCallable()");
+  }
+
   public OperationCallable<RestartInstanceRequest, Instance, OperationMetadata>
       restartInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: restartInstanceOperationCallable()");
@@ -294,6 +312,30 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoCallable() {
     throw new UnsupportedOperationException("Not implemented: getConnectionInfoCallable()");
+  }
+
+  public UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsersPagedCallable()");
+  }
+
+  public UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsersCallable()");
+  }
+
+  public UnaryCallable<GetUserRequest, User> getUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: getUserCallable()");
+  }
+
+  public UnaryCallable<CreateUserRequest, User> createUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: createUserCallable()");
+  }
+
+  public UnaryCallable<UpdateUserRequest, User> updateUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateUserCallable()");
+  }
+
+  public UnaryCallable<DeleteUserRequest, Empty> deleteUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteUserCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

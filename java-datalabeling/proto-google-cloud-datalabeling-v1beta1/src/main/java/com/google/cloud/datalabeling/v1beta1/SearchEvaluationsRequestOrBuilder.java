@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ public interface SearchEvaluationsRequestOrBuilder
    *
    * <pre>
    * Optional. To search evaluations, you can filter by the following:
+   *
    * * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id (the last part of
    *   [EvaluationJob.name][google.cloud.datalabeling.v1beta1.EvaluationJob.name])
    * * evaluation&lt;span&gt;_&lt;/span&gt;job.model_id (the &lt;var&gt;{model_name}&lt;/var&gt; portion
@@ -75,9 +76,11 @@ public interface SearchEvaluationsRequestOrBuilder
    * * annotation&lt;span&gt;_&lt;/span&gt;spec.display_name (the Evaluation contains a
    *   metric for the annotation spec with this
    *   [displayName][google.cloud.datalabeling.v1beta1.AnnotationSpec.display_name])
+   *
    * To filter by multiple critiera, use the `AND` operator or the `OR`
    * operator. The following examples shows a string that filters by several
    * critiera:
+   *
    * "evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id =
    * &lt;var&gt;{evaluation_job_id}&lt;/var&gt; AND evaluation&lt;span&gt;_&lt;/span&gt;job.model_id =
    * &lt;var&gt;{model_name}&lt;/var&gt; AND
@@ -98,6 +101,7 @@ public interface SearchEvaluationsRequestOrBuilder
    *
    * <pre>
    * Optional. To search evaluations, you can filter by the following:
+   *
    * * evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id (the last part of
    *   [EvaluationJob.name][google.cloud.datalabeling.v1beta1.EvaluationJob.name])
    * * evaluation&lt;span&gt;_&lt;/span&gt;job.model_id (the &lt;var&gt;{model_name}&lt;/var&gt; portion
@@ -114,9 +118,11 @@ public interface SearchEvaluationsRequestOrBuilder
    * * annotation&lt;span&gt;_&lt;/span&gt;spec.display_name (the Evaluation contains a
    *   metric for the annotation spec with this
    *   [displayName][google.cloud.datalabeling.v1beta1.AnnotationSpec.display_name])
+   *
    * To filter by multiple critiera, use the `AND` operator or the `OR`
    * operator. The following examples shows a string that filters by several
    * critiera:
+   *
    * "evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id =
    * &lt;var&gt;{evaluation_job_id}&lt;/var&gt; AND evaluation&lt;span&gt;_&lt;/span&gt;job.model_id =
    * &lt;var&gt;{model_name}&lt;/var&gt; AND
@@ -155,6 +161,7 @@ public interface SearchEvaluationsRequestOrBuilder
    * Typically obtained by the
    * [nextPageToken][google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse.next_page_token] of the response
    * to a previous search request.
+   *
    * If you don't specify this field, the API call requests the first page of
    * the search.
    * </pre>
@@ -172,6 +179,7 @@ public interface SearchEvaluationsRequestOrBuilder
    * Typically obtained by the
    * [nextPageToken][google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse.next_page_token] of the response
    * to a previous search request.
+   *
    * If you don't specify this field, the API call requests the first page of
    * the search.
    * </pre>

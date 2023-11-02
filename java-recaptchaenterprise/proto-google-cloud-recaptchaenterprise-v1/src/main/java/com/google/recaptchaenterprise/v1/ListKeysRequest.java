@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListKeysRequest extends com.google.protobuf.GeneratedMessageV
     return new ListKeysRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_ListKeysRequest_descriptor;
@@ -77,7 +72,7 @@ public final class ListKeysRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The name of the project that contains the keys that will be
-   * listed, in the format "projects/{project}".
+   * listed, in the format `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -103,7 +98,7 @@ public final class ListKeysRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The name of the project that contains the keys that will be
-   * listed, in the format "projects/{project}".
+   * listed, in the format `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -591,7 +586,7 @@ public final class ListKeysRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The name of the project that contains the keys that will be
-     * listed, in the format "projects/{project}".
+     * listed, in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -616,7 +611,7 @@ public final class ListKeysRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The name of the project that contains the keys that will be
-     * listed, in the format "projects/{project}".
+     * listed, in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -641,7 +636,7 @@ public final class ListKeysRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The name of the project that contains the keys that will be
-     * listed, in the format "projects/{project}".
+     * listed, in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -665,7 +660,7 @@ public final class ListKeysRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The name of the project that contains the keys that will be
-     * listed, in the format "projects/{project}".
+     * listed, in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -685,7 +680,7 @@ public final class ListKeysRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The name of the project that contains the keys that will be
-     * listed, in the format "projects/{project}".
+     * listed, in the format `projects/{project}`.
      * </pre>
      *
      * <code>

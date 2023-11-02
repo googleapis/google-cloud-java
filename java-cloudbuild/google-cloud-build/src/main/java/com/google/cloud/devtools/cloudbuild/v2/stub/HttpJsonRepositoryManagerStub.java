@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloudbuild.v2.BatchCreateRepositoriesRequest;
 import com.google.cloudbuild.v2.BatchCreateRepositoriesResponse;
@@ -43,6 +44,8 @@ import com.google.cloudbuild.v2.CreateConnectionRequest;
 import com.google.cloudbuild.v2.CreateRepositoryRequest;
 import com.google.cloudbuild.v2.DeleteConnectionRequest;
 import com.google.cloudbuild.v2.DeleteRepositoryRequest;
+import com.google.cloudbuild.v2.FetchGitRefsRequest;
+import com.google.cloudbuild.v2.FetchGitRefsResponse;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse;
 import com.google.cloudbuild.v2.FetchReadTokenRequest;
@@ -598,6 +601,41 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<FetchGitRefsRequest, FetchGitRefsResponse>
+      fetchGitRefsMethodDescriptor =
+          ApiMethodDescriptor.<FetchGitRefsRequest, FetchGitRefsResponse>newBuilder()
+              .setFullMethodName("google.devtools.cloudbuild.v2.RepositoryManager/FetchGitRefs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchGitRefsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{repository=projects/*/locations/*/connections/*/repositories/*}:fetchGitRefs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRefsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "repository", request.getRepository());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRefsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "refType", request.getRefTypeValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchGitRefsResponse>newBuilder()
+                      .setDefaultInstance(FetchGitRefsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
@@ -744,6 +782,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
   private final UnaryCallable<
           FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesPagedResponse>
       fetchLinkableRepositoriesPagedCallable;
+  private final UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -813,54 +852,114 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
         HttpJsonCallSettings.<CreateConnectionRequest, Operation>newBuilder()
             .setMethodDescriptor(createConnectionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
         HttpJsonCallSettings.<GetConnectionRequest, Connection>newBuilder()
             .setMethodDescriptor(getConnectionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListConnectionsRequest, ListConnectionsResponse>
         listConnectionsTransportSettings =
             HttpJsonCallSettings.<ListConnectionsRequest, ListConnectionsResponse>newBuilder()
                 .setMethodDescriptor(listConnectionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateConnectionRequest, Operation> updateConnectionTransportSettings =
         HttpJsonCallSettings.<UpdateConnectionRequest, Operation>newBuilder()
             .setMethodDescriptor(updateConnectionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("connection.name", String.valueOf(request.getConnection().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteConnectionRequest, Operation> deleteConnectionTransportSettings =
         HttpJsonCallSettings.<DeleteConnectionRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteConnectionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateRepositoryRequest, Operation> createRepositoryTransportSettings =
         HttpJsonCallSettings.<CreateRepositoryRequest, Operation>newBuilder()
             .setMethodDescriptor(createRepositoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchCreateRepositoriesRequest, Operation>
         batchCreateRepositoriesTransportSettings =
             HttpJsonCallSettings.<BatchCreateRepositoriesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchCreateRepositoriesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         HttpJsonCallSettings.<GetRepositoryRequest, Repository>newBuilder()
             .setMethodDescriptor(getRepositoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
         listRepositoriesTransportSettings =
             HttpJsonCallSettings.<ListRepositoriesRequest, ListRepositoriesResponse>newBuilder()
                 .setMethodDescriptor(listRepositoriesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRepositoryRequest, Operation> deleteRepositoryTransportSettings =
         HttpJsonCallSettings.<DeleteRepositoryRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRepositoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
         fetchReadWriteTokenTransportSettings =
@@ -868,12 +967,24 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                 .<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>newBuilder()
                 .setMethodDescriptor(fetchReadWriteTokenMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("repository", String.valueOf(request.getRepository()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<FetchReadTokenRequest, FetchReadTokenResponse>
         fetchReadTokenTransportSettings =
             HttpJsonCallSettings.<FetchReadTokenRequest, FetchReadTokenResponse>newBuilder()
                 .setMethodDescriptor(fetchReadTokenMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("repository", String.valueOf(request.getRepository()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse>
         fetchLinkableRepositoriesTransportSettings =
@@ -881,22 +992,57 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
                 .<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse>newBuilder()
                 .setMethodDescriptor(fetchLinkableRepositoriesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("connection", String.valueOf(request.getConnection()));
+                      return builder.build();
+                    })
                 .build();
+    HttpJsonCallSettings<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsTransportSettings =
+        HttpJsonCallSettings.<FetchGitRefsRequest, FetchGitRefsResponse>newBuilder()
+            .setMethodDescriptor(fetchGitRefsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("repository", String.valueOf(request.getRepository()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createConnectionCallable =
@@ -991,6 +1137,9 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
             fetchLinkableRepositoriesTransportSettings,
             settings.fetchLinkableRepositoriesSettings(),
             clientContext);
+    this.fetchGitRefsCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRefsTransportSettings, settings.fetchGitRefsSettings(), clientContext);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -1023,6 +1172,7 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
     methodDescriptors.add(fetchReadWriteTokenMethodDescriptor);
     methodDescriptors.add(fetchReadTokenMethodDescriptor);
     methodDescriptors.add(fetchLinkableRepositoriesMethodDescriptor);
+    methodDescriptors.add(fetchGitRefsMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
@@ -1155,6 +1305,11 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
   public UnaryCallable<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesPagedResponse>
       fetchLinkableRepositoriesPagedCallable() {
     return fetchLinkableRepositoriesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable() {
+    return fetchGitRefsCallable;
   }
 
   @Override

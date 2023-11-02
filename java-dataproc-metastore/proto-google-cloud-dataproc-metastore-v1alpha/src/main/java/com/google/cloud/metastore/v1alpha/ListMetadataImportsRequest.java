@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
     return new ListMetadataImportsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1alpha.MetastoreProto
         .internal_static_google_cloud_metastore_v1alpha_ListMetadataImportsRequest_descriptor;
@@ -81,6 +76,7 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The relative resource name of the service whose metadata imports
    * to list, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
    * </pre>
    *
@@ -108,6 +104,7 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The relative resource name of the service whose metadata imports
    * to list, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
    * </pre>
    *
@@ -161,7 +158,9 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
    * Optional. A page token, received from a previous
    * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
    * call. Provide this token to retrieve the subsequent page.
+   *
    * To retrieve the first page, supply an empty page token.
+   *
    * When paginating, other parameters provided to
    * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
    * must match the call that provided the page token.
@@ -190,7 +189,9 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
    * Optional. A page token, received from a previous
    * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
    * call. Provide this token to retrieve the subsequent page.
+   *
    * To retrieve the first page, supply an empty page token.
+   *
    * When paginating, other parameters provided to
    * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
    * must match the call that provided the page token.
@@ -767,6 +768,7 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The relative resource name of the service whose metadata imports
      * to list, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
      * </pre>
      *
@@ -793,6 +795,7 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The relative resource name of the service whose metadata imports
      * to list, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
      * </pre>
      *
@@ -819,6 +822,7 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The relative resource name of the service whose metadata imports
      * to list, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
      * </pre>
      *
@@ -844,6 +848,7 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The relative resource name of the service whose metadata imports
      * to list, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
      * </pre>
      *
@@ -865,6 +870,7 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The relative resource name of the service whose metadata imports
      * to list, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
      * </pre>
      *
@@ -953,7 +959,9 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
      * Optional. A page token, received from a previous
      * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
      * must match the call that provided the page token.
@@ -981,7 +989,9 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
      * Optional. A page token, received from a previous
      * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
      * must match the call that provided the page token.
@@ -1009,7 +1019,9 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
      * Optional. A page token, received from a previous
      * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
      * must match the call that provided the page token.
@@ -1036,7 +1048,9 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
      * Optional. A page token, received from a previous
      * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
      * must match the call that provided the page token.
@@ -1059,7 +1073,9 @@ public final class ListMetadataImportsRequest extends com.google.protobuf.Genera
      * Optional. A page token, received from a previous
      * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
      * must match the call that provided the page token.

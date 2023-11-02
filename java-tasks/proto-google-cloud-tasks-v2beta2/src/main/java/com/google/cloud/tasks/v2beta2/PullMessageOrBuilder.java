@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ public interface PullMessageOrBuilder
    *
    * <pre>
    * The task's tag.
+   *
    * Tags allow similar tasks to be processed in a batch. If you label
    * tasks with a tag, your worker can
    * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the
@@ -48,9 +49,12 @@ public interface PullMessageOrBuilder
    * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example,
    * if you want to aggregate the events associated with a specific user once a
    * day, you could tag tasks with the user ID.
+   *
    * The task's tag can only be set when the
    * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+   *
    * The tag must be less than 500 characters.
+   *
    * SDK compatibility: Although the SDK allows tags to be either
    * string or
    * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
@@ -68,6 +72,7 @@ public interface PullMessageOrBuilder
    *
    * <pre>
    * The task's tag.
+   *
    * Tags allow similar tasks to be processed in a batch. If you label
    * tasks with a tag, your worker can
    * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the
@@ -75,9 +80,12 @@ public interface PullMessageOrBuilder
    * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example,
    * if you want to aggregate the events associated with a specific user once a
    * day, you could tag tasks with the user ID.
+   *
    * The task's tag can only be set when the
    * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+   *
    * The tag must be less than 500 characters.
+   *
    * SDK compatibility: Although the SDK allows tags to be either
    * string or
    * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),

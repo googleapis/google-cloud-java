@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetDeidentifyTemplateRequest extends com.google.protobuf.Gene
     return new GetDeidentifyTemplateRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_GetDeidentifyTemplateRequest_descriptor;
@@ -75,9 +70,9 @@ public final class GetDeidentifyTemplateRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Resource name of the organization and deidentify template to be read, for
-   * example `organizations/433245324/deidentifyTemplates/432452342` or
-   * projects/project-id/deidentifyTemplates/432452342.
+   * Required. Resource name of the organization and deidentify template to be
+   * read, for example `organizations/433245324/deidentifyTemplates/432452342`
+   * or projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
    * <code>
@@ -102,9 +97,9 @@ public final class GetDeidentifyTemplateRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Resource name of the organization and deidentify template to be read, for
-   * example `organizations/433245324/deidentifyTemplates/432452342` or
-   * projects/project-id/deidentifyTemplates/432452342.
+   * Required. Resource name of the organization and deidentify template to be
+   * read, for example `organizations/433245324/deidentifyTemplates/432452342`
+   * or projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
    * <code>
@@ -474,9 +469,9 @@ public final class GetDeidentifyTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of the organization and deidentify template to be read, for
-     * example `organizations/433245324/deidentifyTemplates/432452342` or
-     * projects/project-id/deidentifyTemplates/432452342.
+     * Required. Resource name of the organization and deidentify template to be
+     * read, for example `organizations/433245324/deidentifyTemplates/432452342`
+     * or projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
      * <code>
@@ -500,9 +495,9 @@ public final class GetDeidentifyTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of the organization and deidentify template to be read, for
-     * example `organizations/433245324/deidentifyTemplates/432452342` or
-     * projects/project-id/deidentifyTemplates/432452342.
+     * Required. Resource name of the organization and deidentify template to be
+     * read, for example `organizations/433245324/deidentifyTemplates/432452342`
+     * or projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
      * <code>
@@ -526,9 +521,9 @@ public final class GetDeidentifyTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of the organization and deidentify template to be read, for
-     * example `organizations/433245324/deidentifyTemplates/432452342` or
-     * projects/project-id/deidentifyTemplates/432452342.
+     * Required. Resource name of the organization and deidentify template to be
+     * read, for example `organizations/433245324/deidentifyTemplates/432452342`
+     * or projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
      * <code>
@@ -551,9 +546,9 @@ public final class GetDeidentifyTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of the organization and deidentify template to be read, for
-     * example `organizations/433245324/deidentifyTemplates/432452342` or
-     * projects/project-id/deidentifyTemplates/432452342.
+     * Required. Resource name of the organization and deidentify template to be
+     * read, for example `organizations/433245324/deidentifyTemplates/432452342`
+     * or projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
      * <code>
@@ -572,9 +567,9 @@ public final class GetDeidentifyTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of the organization and deidentify template to be read, for
-     * example `organizations/433245324/deidentifyTemplates/432452342` or
-     * projects/project-id/deidentifyTemplates/432452342.
+     * Required. Resource name of the organization and deidentify template to be
+     * read, for example `organizations/433245324/deidentifyTemplates/432452342`
+     * or projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
      * <code>

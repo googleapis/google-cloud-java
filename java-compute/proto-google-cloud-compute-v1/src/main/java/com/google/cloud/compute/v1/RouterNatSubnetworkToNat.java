@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,19 +39,14 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
 
   private RouterNatSubnetworkToNat() {
     name_ = "";
-    secondaryIpRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    sourceIpRangesToNat_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    secondaryIpRangeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    sourceIpRangesToNat_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RouterNatSubnetworkToNat();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -322,7 +317,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   public static final int SECONDARY_IP_RANGE_NAMES_FIELD_NUMBER = 264315097;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList secondaryIpRangeNames_;
+  private com.google.protobuf.LazyStringArrayList secondaryIpRangeNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -385,7 +381,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
   public static final int SOURCE_IP_RANGES_TO_NAT_FIELD_NUMBER = 388310386;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList sourceIpRangesToNat_;
+  private com.google.protobuf.LazyStringArrayList sourceIpRangesToNat_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -687,10 +684,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      secondaryIpRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      sourceIpRangesToNat_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      secondaryIpRangeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      sourceIpRangesToNat_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -718,26 +713,11 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public com.google.cloud.compute.v1.RouterNatSubnetworkToNat buildPartial() {
       com.google.cloud.compute.v1.RouterNatSubnetworkToNat result =
           new com.google.cloud.compute.v1.RouterNatSubnetworkToNat(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.RouterNatSubnetworkToNat result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        secondaryIpRangeNames_ = secondaryIpRangeNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.secondaryIpRangeNames_ = secondaryIpRangeNames_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        sourceIpRangesToNat_ = sourceIpRangesToNat_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.sourceIpRangesToNat_ = sourceIpRangesToNat_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.RouterNatSubnetworkToNat result) {
@@ -746,6 +726,14 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        secondaryIpRangeNames_.makeImmutable();
+        result.secondaryIpRangeNames_ = secondaryIpRangeNames_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        sourceIpRangesToNat_.makeImmutable();
+        result.sourceIpRangesToNat_ = sourceIpRangesToNat_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -804,7 +792,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       if (!other.secondaryIpRangeNames_.isEmpty()) {
         if (secondaryIpRangeNames_.isEmpty()) {
           secondaryIpRangeNames_ = other.secondaryIpRangeNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureSecondaryIpRangeNamesIsMutable();
           secondaryIpRangeNames_.addAll(other.secondaryIpRangeNames_);
@@ -814,7 +802,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       if (!other.sourceIpRangesToNat_.isEmpty()) {
         if (sourceIpRangesToNat_.isEmpty()) {
           sourceIpRangesToNat_ = other.sourceIpRangesToNat_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureSourceIpRangesToNatIsMutable();
           sourceIpRangesToNat_.addAll(other.sourceIpRangesToNat_);
@@ -1006,15 +994,15 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.protobuf.LazyStringList secondaryIpRangeNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList secondaryIpRangeNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSecondaryIpRangeNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!secondaryIpRangeNames_.isModifiable()) {
         secondaryIpRangeNames_ =
             new com.google.protobuf.LazyStringArrayList(secondaryIpRangeNames_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1028,7 +1016,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * @return A list containing the secondaryIpRangeNames.
      */
     public com.google.protobuf.ProtocolStringList getSecondaryIpRangeNamesList() {
-      return secondaryIpRangeNames_.getUnmodifiableView();
+      secondaryIpRangeNames_.makeImmutable();
+      return secondaryIpRangeNames_;
     }
     /**
      *
@@ -1093,6 +1082,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       }
       ensureSecondaryIpRangeNamesIsMutable();
       secondaryIpRangeNames_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1114,6 +1104,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       }
       ensureSecondaryIpRangeNamesIsMutable();
       secondaryIpRangeNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1132,6 +1123,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public Builder addAllSecondaryIpRangeNames(java.lang.Iterable<java.lang.String> values) {
       ensureSecondaryIpRangeNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secondaryIpRangeNames_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1147,8 +1139,9 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearSecondaryIpRangeNames() {
-      secondaryIpRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      secondaryIpRangeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1171,18 +1164,19 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureSecondaryIpRangeNamesIsMutable();
       secondaryIpRangeNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList sourceIpRangesToNat_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList sourceIpRangesToNat_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSourceIpRangesToNatIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!sourceIpRangesToNat_.isModifiable()) {
         sourceIpRangesToNat_ = new com.google.protobuf.LazyStringArrayList(sourceIpRangesToNat_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1197,7 +1191,8 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * @return A list containing the sourceIpRangesToNat.
      */
     public com.google.protobuf.ProtocolStringList getSourceIpRangesToNatList() {
-      return sourceIpRangesToNat_.getUnmodifiableView();
+      sourceIpRangesToNat_.makeImmutable();
+      return sourceIpRangesToNat_;
     }
     /**
      *
@@ -1266,6 +1261,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       }
       ensureSourceIpRangesToNatIsMutable();
       sourceIpRangesToNat_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1288,6 +1284,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       }
       ensureSourceIpRangesToNatIsMutable();
       sourceIpRangesToNat_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1307,6 +1304,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
     public Builder addAllSourceIpRangesToNat(java.lang.Iterable<java.lang.String> values) {
       ensureSourceIpRangesToNatIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceIpRangesToNat_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1323,8 +1321,9 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearSourceIpRangesToNat() {
-      sourceIpRangesToNat_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sourceIpRangesToNat_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1348,6 +1347,7 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureSourceIpRangesToNatIsMutable();
       sourceIpRangesToNat_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
